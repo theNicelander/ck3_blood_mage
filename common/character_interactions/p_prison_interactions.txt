@@ -10,14 +10,15 @@ lifedrain_prisoner_interaction = {
 			is_imprisoned_by = scope:actor
 		}
 	}
-	is_valid_showing_failures_only = {
-	}
 	on_accept = {
 		scope:recipient = {
 			send_interface_toast = {
 				left_icon = scope:actor
 				custom_tooltip = lifedrain_prisoner_interaction.recipient.notification.tt
 			}
+		}
+		scope:actor = {
+			enhance_lifeforce_effect = yes
 		}
 	}
 	auto_accept = yes
