@@ -37,3 +37,21 @@ physique_drain_trait_effects = {
 		}
 	}
 }
+
+beauty_drain_trait_effects = {
+	if = {
+		limit = {
+			NOT = {
+				has_trait = beauty_good
+			}
+		}
+		add_trait = beauty_good_1
+	}
+	else = {
+		change_trait_rank = {
+			trait = beauty_good
+			rank = 1
+			max = 5
+		}
+	}
+}

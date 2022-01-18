@@ -109,3 +109,45 @@ physique_drain_prisoner_interaction = {
 		piety = 1000
 	}
 }
+
+beauty_drain_prisoner_interaction = {
+	interface_priority = 50
+	category = interaction_category_religion
+	desc = generic_drain_prisoner_trait_interaction_desc
+	#################################
+	# Show only if prisoner has trait
+	is_shown = {
+		scope:actor = {
+			has_trait = blood_mage
+		}
+		scope:recipient = {
+			AND = {
+				is_imprisoned_by = scope:actor
+				has_trait = beauty_good
+			}
+		}
+	}
+	#################################
+	# Highlight
+	is_highlighted = {
+		scope:actor = {
+			has_trait = blood_mage
+		}
+	}
+	on_accept = {
+		scope:recipient = {
+			send_interface_toast = {
+				left_icon = scope:actor
+				custom_tooltip = generic_drain_prisoner_trait_interaction.recipient.notification.tt
+			}
+		}
+		scope:actor = {
+			# Carry out logic
+			beauty_drain_trait_effects = yes
+		}
+	}
+	auto_accept = yes
+	cost = {
+		piety = 1000
+	}
+}
