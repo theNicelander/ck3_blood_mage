@@ -151,3 +151,129 @@ beauty_drain_prisoner_interaction = {
 		piety = 1000
 	}
 }
+
+fertility_drain_prisoner_interaction = {
+	interface_priority = 50
+	category = interaction_category_religion
+	desc = generic_drain_prisoner_trait_interaction_desc
+	#################################
+	# Show only if prisoner has trait
+	is_shown = {
+		scope:actor = {
+			has_trait = blood_mage
+		}
+		scope:recipient = {
+			AND = {
+				is_imprisoned_by = scope:actor
+				has_trait = fecund
+			}
+		}
+	}
+	#################################
+	# Highlight
+	is_highlighted = {
+		scope:actor = {
+			has_trait = blood_mage
+		}
+	}
+	on_accept = {
+		scope:recipient = {
+			send_interface_toast = {
+				left_icon = scope:actor
+				custom_tooltip = generic_drain_prisoner_trait_interaction.recipient.notification.tt
+			}
+		}
+		scope:actor = {
+			# Carry out logic
+			add_trait = fecund
+		}
+	}
+	auto_accept = yes
+	cost = {
+		piety = 500
+	}
+}
+
+giant_drain_prisoner_interaction = {
+	interface_priority = 50
+	category = interaction_category_religion
+	desc = generic_drain_prisoner_trait_interaction_desc
+	#################################
+	# Show only if prisoner has trait
+	is_shown = {
+		scope:actor = {
+			has_trait = blood_mage
+		}
+		scope:recipient = {
+			AND = {
+				is_imprisoned_by = scope:actor
+				has_trait = giant
+			}
+		}
+	}
+	#################################
+	# Highlight
+	is_highlighted = {
+		scope:actor = {
+			has_trait = blood_mage
+		}
+	}
+	on_accept = {
+		scope:recipient = {
+			send_interface_toast = {
+				left_icon = scope:actor
+				custom_tooltip = generic_drain_prisoner_trait_interaction.recipient.notification.tt
+			}
+		}
+		scope:actor = {
+			# Carry out logic
+			add_trait = giant
+		}
+	}
+	auto_accept = yes
+	cost = {
+		piety = 500
+	}
+}
+
+pure_blood_drain_prisoner_interaction = {
+	interface_priority = 50
+	category = interaction_category_religion
+	desc = generic_drain_prisoner_trait_interaction_desc
+	#################################
+	# Show only if prisoner has trait
+	is_shown = {
+		scope:actor = {
+			has_trait = blood_mage
+		}
+		scope:recipient = {
+			AND = {
+				is_imprisoned_by = scope:actor
+				has_trait = pure_blooded
+			}
+		}
+	}
+	#################################
+	# Highlight
+	is_highlighted = {
+		scope:actor = {
+			has_trait = blood_mage
+		}
+	}
+	on_accept = {
+		scope:recipient = {
+			send_interface_toast = {
+				left_icon = scope:actor
+				custom_tooltip = generic_drain_prisoner_trait_interaction.recipient.notification.tt
+			}
+		}
+		scope:actor = {
+			# Carry out logic
+			add_trait = pure_blooded
+		}
+	}
+	auto_accept = yes
+	cost = {
+		piety = 500
+	}
+}
