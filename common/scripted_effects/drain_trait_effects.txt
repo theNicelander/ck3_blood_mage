@@ -2,7 +2,7 @@
 	# TBD
 }
 
-drain_trait_intellect_effects = {
+intellect_drain_trait_effects = {
 	if = {
 		limit = {
 			NOT = {
@@ -15,7 +15,25 @@ drain_trait_intellect_effects = {
 		change_trait_rank = {
 			trait = intellect_good
 			rank = 1
-			max = 3
+			max = 5
+		}
+	}
+}
+
+physique_drain_trait_effects = {
+	if = {
+		limit = {
+			NOT = {
+				has_trait = physique_good
+			}
+		}
+		add_trait = physique_good_1
+	}
+	else = {
+		change_trait_rank = {
+			trait = physique_good
+			rank = 1
+			max = 5
 		}
 	}
 }

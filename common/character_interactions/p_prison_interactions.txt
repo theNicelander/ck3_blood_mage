@@ -14,7 +14,7 @@ lifedrain_prisoner_interaction = {
 		scope:recipient = {
 			send_interface_toast = {
 				left_icon = scope:actor
-				custom_tooltip = lifedrain_prisoner_interaction.recipient.notification.tt
+				custom_tooltip = generic_drain_prisoner_trait_interaction_desc.recipient.notification.tt
 			}
 		}
 		scope:actor = {
@@ -28,7 +28,7 @@ lifedrain_prisoner_interaction = {
 intellect_drain_prisoner_interaction = {
 	interface_priority = 50
 	category = interaction_category_religion
-	desc = intellect_drain_prisoner_interaction_desc
+	desc = generic_drain_prisoner_trait_interaction_desc
 	#################################
 	# Show only if prisoner has trait
 	is_shown = {
@@ -53,12 +53,55 @@ intellect_drain_prisoner_interaction = {
 		scope:recipient = {
 			send_interface_toast = {
 				left_icon = scope:actor
-				custom_tooltip = intellect_drain_prisoner_interaction.recipient.notification.tt
+				custom_tooltip = generic_drain_prisoner_trait_interaction.recipient.notification.tt
 			}
 		}
 		scope:actor = {
 			# Carry out logic
-			drain_trait_intellect_effects = yes
+			intellect_drain_trait_effects = yes
+		}
+	}
+	auto_accept = yes
+	cost = {
+		piety = 1000
+	}
+}
+
+# Gain hale / robust / (amazonian / herculean) traits
+physique_drain_prisoner_interaction = {
+	interface_priority = 50
+	category = interaction_category_religion
+	desc = generic_drain_prisoner_trait_interaction_desc
+	#################################
+	# Show only if prisoner has trait
+	is_shown = {
+		scope:actor = {
+			has_trait = blood_mage
+		}
+		scope:recipient = {
+			AND = {
+				is_imprisoned_by = scope:actor
+				has_trait = physique_good
+			}
+		}
+	}
+	#################################
+	# Highlight
+	is_highlighted = {
+		scope:actor = {
+			has_trait = blood_mage
+		}
+	}
+	on_accept = {
+		scope:recipient = {
+			send_interface_toast = {
+				left_icon = scope:actor
+				custom_tooltip = generic_drain_prisoner_trait_interaction.recipient.notification.tt
+			}
+		}
+		scope:actor = {
+			# Carry out logic
+			physique_drain_trait_effects = yes
 		}
 	}
 	auto_accept = yes

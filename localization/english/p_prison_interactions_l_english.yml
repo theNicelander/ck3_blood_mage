@@ -1,12 +1,12 @@
 ﻿l_english:
   # lifedrain
   lifedrain_prisoner_interaction:0 "Life drain"
-  lifedrain_prisoner_interaction_desc:0 "Select [recipient.GetShortUINameNoTooltip] to be life drained."
-  lifedrain_prisoner_interaction.recipient.notification.t:0 "Selected for life drained"
-  lifedrain_prisoner_interaction.recipient.notification.tt:0 "[recipient.GetShortUINameNoTooltip]'s life force will be drained"
-  lifedrain_skill_increase:0 "Hello"
-  lifedrain_skill_increase_message:0 "Lifedrain skill increase"
+  lifedrain_prisoner_interaction_desc:0 "Drain the life force from [recipient.GetShortUINameNoTooltip]"
+  lifedrain_prisoner_interaction.recipient.notification.tt:0 "[recipient.GetShortUINameNoTooltip]'s life force will be drained and added to yours"
+  generic_drain_prisoner_trait_interaction_desc:0 "Drain [recipient.GetShortUINameNoTooltip]'s extraordinary traits."
+  
+  generic_drain_prisoner_trait_interaction_desc:0 "Drain [recipient.GetShortUINameNoTooltip]'s extraordinary traits."
+  generic_drain_prisoner_trait_interaction.recipient.notification.tt:0 "[recipient.GetShortUINameNoTooltip]'s extra ordinary trait will be drained"
+
   intellect_drain_prisoner_interaction:0 "Intellect drain"
-  intellect_drain_prisoner_interaction_desc:0 "Select [recipient.GetShortUINameNoTooltip] to be intellect drained."
-  intellect_drain_prisoner_interaction.recipient.notification.t:0 "Selected for intellect draining"
-  intellect_drain_prisoner_interaction.recipient.notification.tt:0 "[recipient.GetShortUINameNoTooltip]'s intellect will be drained"
+  physique_drain_prisoner_interaction:0 "Physique drain"
