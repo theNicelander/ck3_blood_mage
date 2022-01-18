@@ -69,6 +69,10 @@ intellect_drain_prisoner_interaction = {
 			# Carry out logic
 			intellect_drain_trait_effects = yes
 		}
+		execute_prisoner_effect = {
+			VICTIM = scope:recipient
+			EXECUTIONER = scope:actor
+		}
 	}
 	auto_accept = yes
 	cost = {
@@ -112,6 +116,10 @@ physique_drain_prisoner_interaction = {
 		scope:actor = {
 			# Carry out logic
 			physique_drain_trait_effects = yes
+		}
+		execute_prisoner_effect = {
+			VICTIM = scope:recipient
+			EXECUTIONER = scope:actor
 		}
 	}
 	auto_accept = yes
@@ -157,6 +165,10 @@ beauty_drain_prisoner_interaction = {
 			# Carry out logic
 			beauty_drain_trait_effects = yes
 		}
+		execute_prisoner_effect = {
+			VICTIM = scope:recipient
+			EXECUTIONER = scope:actor
+		}
 	}
 	auto_accept = yes
 	cost = {
@@ -200,6 +212,10 @@ fertility_drain_prisoner_interaction = {
 		scope:actor = {
 			# Carry out logic
 			add_trait = fecund
+		}
+		execute_prisoner_effect = {
+			VICTIM = scope:recipient
+			EXECUTIONER = scope:actor
 		}
 	}
 	auto_accept = yes
@@ -245,6 +261,10 @@ giant_drain_prisoner_interaction = {
 			# Carry out logic
 			add_trait = giant
 		}
+		execute_prisoner_effect = {
+			VICTIM = scope:recipient
+			EXECUTIONER = scope:actor
+		}
 	}
 	auto_accept = yes
 	cost = {
@@ -288,6 +308,10 @@ pure_blooded_drain_prisoner_interaction = {
 		scope:actor = {
 			# Carry out logic
 			add_trait = pure_blooded
+		}
+		execute_prisoner_effect = {
+			VICTIM = scope:recipient
+			EXECUTIONER = scope:actor
 		}
 	}
 	auto_accept = yes
