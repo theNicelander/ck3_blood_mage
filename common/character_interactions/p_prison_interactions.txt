@@ -15,11 +15,13 @@ lifedrain_prisoner_interaction = {
 		scope:recipient = {
 			send_interface_toast = {
 				left_icon = scope:actor
-				custom_tooltip = generic_drain_prisoner_trait_interaction_desc.recipient.notification.tt
+				custom_tooltip = lifedrain_prisoner_interaction.recipient.notification.tt
 			}
 		}
 		scope:actor = {
-			drain_lifeforce_effects = yes
+			add_character_modifier = {
+				modifier = lifeforce_modifier
+			}
 		}
 	}
 	auto_accept = yes
@@ -240,6 +242,7 @@ giant_drain_prisoner_interaction = {
 	}
 }
 
+# gain pure blooded
 pure_blooded_drain_prisoner_interaction = {
 	interface_priority = 50
 	category = interaction_category_religion
