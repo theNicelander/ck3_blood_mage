@@ -1,6 +1,6 @@
 lifedrain_prisoner_interaction = {
 	interface_priority = 30
-	category = interaction_category_religion
+	category = interaction_category_blood_mage
 	desc = lifedrain_prisoner_interaction_desc
 	is_shown = {
 		scope:actor = {
@@ -18,7 +18,7 @@ lifedrain_prisoner_interaction = {
 			}
 		}
 		scope:actor = {
-			dark_insights_skill_gain_roll_effect = yes
+			drain_trait_intellect_effects = yes
 		}
 	}
 	auto_accept = yes
