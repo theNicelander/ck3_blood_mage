@@ -1,0 +1,24 @@
+lifedrain_prisoner_interaction = {
+	interface_priority = 30
+	category = interaction_category_religion
+	desc = lifedrain_prisoner_interaction_desc
+	is_shown = {
+		scope:actor = {
+			has_trait = blood_mage
+		}
+		scope:recipient = {
+			is_imprisoned_by = scope:actor
+		}
+	}
+	is_valid_showing_failures_only = {
+	}
+	on_accept = {
+		scope:recipient = {
+			send_interface_toast = {
+				left_icon = scope:actor
+				custom_tooltip = lifedrain_prisoner_interaction.recipient.notification.tt
+			}
+		}
+	}
+	auto_accept = yes
+}
