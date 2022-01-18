@@ -1,13 +1,20 @@
 blood_mage = {
+	# setup 
 	index = 666
-	diplomacy = 2
-	genetic = yes
-	physical = yes
+	fame = yes
 	good = yes
-	birth = 0.5
+	birth = 1
 	random_creation = 0.5
-	attraction_opinion = 5
-	ruler_designer_cost = 40
+	opposites = {
+		witch
+	}
+	# benefits
+	same_opinion = 10
+	opposite_opinion = -25
+	ruler_designer_cost = 100
+	flag = can_murder_own_children
+	flag = lower_chance_of_dying_in_combat
+	# description
 	desc = {
 		first_valid = {
 			triggered_desc = {
@@ -21,5 +28,17 @@ blood_mage = {
 			desc = trait_blood_mage_character_desc
 		}
 	}
+	# Make blood magic fall under witchcraft in faiths
+	triggered_opinion = {
+		parameter = witchcraft_illegal
+		opinion_modifier = witchcraft_crime
+		ignore_opinion_value_if_same_trait = yes
+	}
+	triggered_opinion = {
+		parameter = witchcraft_shunned
+		opinion_modifier = witchcraft_intolerant
+		ignore_opinion_value_if_same_trait = yes
+	}
+	# AI behaviour
 	ai_sociability = 10
 }
