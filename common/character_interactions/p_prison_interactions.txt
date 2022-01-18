@@ -1,3 +1,4 @@
+# Gain health and fertility
 lifedrain_prisoner_interaction = {
 	interface_priority = 30
 	category = interaction_category_religion
@@ -24,7 +25,7 @@ lifedrain_prisoner_interaction = {
 	auto_accept = yes
 }
 
-# Gain quick / intelligent / genius traits
+# Gain quick / intelligent / genius
 intellect_drain_prisoner_interaction = {
 	interface_priority = 50
 	category = interaction_category_religion
@@ -67,7 +68,7 @@ intellect_drain_prisoner_interaction = {
 	}
 }
 
-# Gain hale / robust / (amazonian / herculean) traits
+# Gain hale / robust / (amazonian or herculean)
 physique_drain_prisoner_interaction = {
 	interface_priority = 50
 	category = interaction_category_religion
@@ -110,6 +111,7 @@ physique_drain_prisoner_interaction = {
 	}
 }
 
+# Gain comely / (pretty or handsome) / beautiful 
 beauty_drain_prisoner_interaction = {
 	interface_priority = 50
 	category = interaction_category_religion
@@ -152,6 +154,7 @@ beauty_drain_prisoner_interaction = {
 	}
 }
 
+# Gain Fecund
 fertility_drain_prisoner_interaction = {
 	interface_priority = 50
 	category = interaction_category_religion
@@ -194,6 +197,7 @@ fertility_drain_prisoner_interaction = {
 	}
 }
 
+# Gain giant
 giant_drain_prisoner_interaction = {
 	interface_priority = 50
 	category = interaction_category_religion
@@ -236,7 +240,7 @@ giant_drain_prisoner_interaction = {
 	}
 }
 
-pure_blood_drain_prisoner_interaction = {
+pure_blooded_drain_prisoner_interaction = {
 	interface_priority = 50
 	category = interaction_category_religion
 	desc = generic_drain_prisoner_trait_interaction_desc
