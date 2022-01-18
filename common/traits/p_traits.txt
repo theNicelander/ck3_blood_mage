@@ -1,32 +1,25 @@
-#new traits start at 3500
-
 blood_mage = {
 	index = 666
-
 	diplomacy = 2
-
 	genetic = yes
 	physical = yes
 	good = yes
-
 	birth = 0.5
 	random_creation = 0.5
-
 	attraction_opinion = 5
-
 	ruler_designer_cost = 40
-
 	desc = {
 		first_valid = {
 			triggered_desc = {
 				trigger = {
-					NOT = { exists = this }
+					NOT = {
+						exists = this
+					}
 				}
 				desc = trait_blood_mage_desc
 			}
 			desc = trait_blood_mage_character_desc
 		}
 	}
-
 	ai_sociability = 10
 }
