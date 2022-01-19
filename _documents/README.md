@@ -18,7 +18,7 @@ The `chance of success` will be calculated as follows
 ```
 base_chance = 40%
 
-trait_diff_chance = base_chance + player_trait_level_negative_modifier + target_trait_level_postive_modifer
+trait_diff_chance = base_chance  + target_trait_level_modifer - player_trait_level_modifier
 
 chance_of_success = trait_diff_chance + difference_in_learrning_modifier
 ```
