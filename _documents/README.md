@@ -20,13 +20,13 @@ base_chance = 40%
 
 trait_diff_chance = base_chance  + target_trait_level_modifer - player_trait_level_modifier
 
-chance_of_success = trait_diff_chance + difference_in_learrning_modifier
+chance_of_success = trait_diff_chance + difference_in_learning_modifier
 ```
 Exampes:
 
-- Player with no trait, drains an intelligent character (level 2). They have a 90% trait_diff_chance of getting the Quick trait (level 1), before the difference_in_learrning_modifier is added
-- Player with intellligent trait (level 2) drains a genius (level 3) character. They have a 60% trait_diff_chance of getting the Genius trait (level 3) before the difference_in_learrning_modifier is added
-- Player with intelligent trait (level 2) drains a quick (levl 1) character. They have a 10% trait_diff_chance of getting the Genius trait (level 3) before the difference_in_learrning_modifier is added
+- Player with no trait, drains an intelligent character (level 2). They have a 90% trait_diff_chance of getting the Quick trait (level 1), before the difference_in_learning_modifier is added
+- Player with intellligent trait (level 2) drains a genius (level 3) character. They have a 60% trait_diff_chance of getting the Genius trait (level 3) before the difference_in_learning_modifier is added
+- Player with intelligent trait (level 2) drains a quick (levl 1) character. They have a 10% trait_diff_chance of getting the Genius trait (level 3) before the difference_in_learning_modifier is added
 
 The base chance and player/target trait levels can be visualised as follows:
 <img src="trait-base-probability-table.png"/>
