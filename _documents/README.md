@@ -33,4 +33,15 @@ Only the available ones are shown.
 
 ### Popup when draining a particular positive trait
 You can only choose one trait to be drained at a time.
+
 <img src="screenshots/trait-drain.png"/>
+
+# Probablity of getting traits
+The probability of getting traits will be based on a learning challenge between the player and the target. 
+
+The chance of success should be as follows
+
+> base_chance + player_trait_level_negative_modifier + target_trait_level_postive_modifer + difference_in_learrning_modifier
+
+The base chance and player/target trait levels can be visualised as follows:
+<img src="trait-base-probability-table.png"/>
