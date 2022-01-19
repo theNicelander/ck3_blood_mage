@@ -15,10 +15,13 @@ On succes:
 - If the player aready has the trait, it's level will increase by 1
 
 The `chance of success` will be calculated as follows
+```
+base_chance = 40%
 
-> `trait_diff_chance` = base_chance + player_trait_level_negative_modifier + target_trait_level_postive_modifer
-> `chance_of_success` = `trait_diff_chance` + difference_in_learrning_modifier
+trait_diff_chance = base_chance + player_trait_level_negative_modifier + target_trait_level_postive_modifer
 
+chance_of_success = trait_diff_chance + difference_in_learrning_modifier
+```
 Exampes:
 
 - Player with no trait, drains an intelligent character (level 2). They have a 90% trait_diff_chance + difference_in_learrning_modifier of getting the Quick trait (level 1)
