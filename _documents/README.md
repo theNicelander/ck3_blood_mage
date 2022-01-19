@@ -1,6 +1,34 @@
 # Overview
 TBD
 
+# Probablity of getting traits from trait draining
+
+The probability of getting traits will be based on multiple factors:
+- base chance
+- level of player trait
+- level of target trait
+- learning challenge between the player and the target
+
+On succes:
+
+- If the player doesn't have the trait, they will receive the first level of the trait
+- If the player aready has the trait, it's level will increase by 1
+
+The `chance of success` will be calculated as follows
+
+> `trait_diff_chance` = base_chance + player_trait_level_negative_modifier + target_trait_level_postive_modifer
+> `chance_of_success` = `trait_diff_chance` + difference_in_learrning_modifier
+
+Exampes:
+
+- Player with no trait, drains an intelligent character (level 2). They have a 90% trait_diff_chance + difference_in_learrning_modifier of getting the Quick trait (level 1)
+- Player with intellligent trait (level 2) drains a genius (level 3) character. They have a 60% trait_diff_chance + difference_in_learrning_modifier of getting the Genius trait (level 3)
+- Player with intelligent trait (level 2) drains a quick (levl 1) character. They have a 10% trait_diff_chance + difference_in_learrning_modifier of getting the Genius trait (level 3)
+
+The base chance and player/target trait levels can be visualised as follows:
+<img src="trait-base-probability-table.png"/>
+
+
 # Lifedrain
 Drain the life force from a prisoner, prolonging your life
 
@@ -36,28 +64,3 @@ You can only choose one trait to be drained at a time.
 
 <img src="screenshots/trait-drain.png"/>
 
-# Probablity of getting traits
-The probability of getting traits will be based on multiple factors:
-- base chance
-- level of player trait
-- level of target trait
-- learning challenge between the player and the target
-
-On succes:
-
-- If the player doesn't have the trait, they will receive the first level of the trait
-- If the player aready has the trait, it's level will increase by 1
-
-The `chance of success` will be calculated as follows
-
-> `trait_diff_chance` = base_chance + player_trait_level_negative_modifier + target_trait_level_postive_modifer
-> `chance_of_success` = `trait_diff_chance` + difference_in_learrning_modifier
-
-Exampes:
-
-- Player with no trait, drains an intelligent character (level 2). They have a 90% trait_diff_chance + difference_in_learrning_modifier of getting the Quick trait (level 1)
-- Player with intellligent trait (level 2) drains a genius (level 3) character. They have a 60% trait_diff_chance + difference_in_learrning_modifier of getting the Genius trait (level 3)
-- Player with intelligent trait (level 2) drains a quick (levl 1) character. They have a 10% trait_diff_chance + difference_in_learrning_modifier of getting the Genius trait (level 3)
-
-The base chance and player/target trait levels can be visualised as follows:
-<img src="trait-base-probability-table.png"/>
