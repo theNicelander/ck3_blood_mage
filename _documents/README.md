@@ -4,8 +4,9 @@ TBD
 # Screenshots
 
 ### Interaction with prisoner
-<img src="screenshots/prisoner-interaction-without-traits.png" width=800 /> 
-![](screenshots/prisoner-interaction-without-traits.png)
+<img src="screenshots/prisoner-interaction-without-traits.PNG" width=800 />
+
+![](screenshots/prisoner-interaction-without-traits.PNG)
 
 ### Interaction with prisoner that has one or more positive congenial traits
 ![](screenshots\prisoner-interaction-with-traits.png)
