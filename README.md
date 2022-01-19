@@ -1,7 +1,9 @@
 # CK3 Blood Mage Mod
 A mod to add a blood mage trait into the game. 
 
-Blood mages are able to prolong their life, by draining the life force from other humans. This process unfortunately kills the target in the process. Blood mages are also able to absorb extraordinatry traits, such as hale or quick, by draining them from their targets
+Blood mages are able to prolong their life, by draining the life force from other humans. This process unfortunately kills the target in the process. 
+
+Blood mages are also able to absorb extraordinatry traits, such as hale or quick, by draining them from their targets. Although, this isn't always successful. 
 
 ![Trait as seen in game](thumbnail.png "Blood mage trait as seen in-game")
 
