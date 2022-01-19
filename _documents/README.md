@@ -1,9 +1,8 @@
 # Overview
 TBD
 
-# Screenshots
-
-## Lifedrain
+# Lifedrain
+Drain the life force from a prisoner, prolonging your life
 
 ### Interaction with prisoner
 <img src="screenshots/prisoner-interaction-without-traits.PNG"/>
@@ -20,7 +19,8 @@ Each effect is one instance of it. So in this case, the effect shown is applied 
 
 <img src="screenshots/lifedrain-modifier.PNG"/>
 
-### Interaction with prisoners with positive congenial traits
+# Trait drain
+Drain a trait from a prisoner, making you stronger
 
 ### Interaction with prisoner that has multiple positive traits
 Only the available ones are shown
