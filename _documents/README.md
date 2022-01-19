@@ -23,7 +23,12 @@ Each effect is one instance of it. So in this case, the effect shown is applied 
 Drain a trait from a prisoner, making you stronger
 
 ### Interaction with prisoner that has multiple positive traits
-Only the available ones are shown
+Only the available ones are shown. 
+
+- If you don't have the trait, you will gain it. 
+- If you have a lower ranking one (eg. quick), you will gain 1 level higher (intelligent)
+- TODO: Make this be a chance, and the better the trait, the higher the chance. Currently it just happens 100% of the time
+
 <img src="screenshots/prisoner-interaction-with-traits.png"/>
 
 ### Popup when draining a particular positive trait
