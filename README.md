@@ -5,7 +5,7 @@ Blood mages are able to prolong their life, by draining the life force from othe
 
 Blood mages are also able to absorb extraordinary traits, such as hale or quick, by draining them from their targets. Although, this isn't always successful and kills the target in the process.
 
-See [_documents](_documents/README.md) _documents for for info and screenshots
+See [documents](_documents/README.md) for more info & screenshots
 
 
 ## Trait as it appears 
