@@ -3,8 +3,12 @@ A mod to add a blood mage trait into the game.
 
 Blood mages are able to prolong their life, by draining the life force from other humans. This process unfortunately kills the target in the process. 
 
-Blood mages are also able to absorb extraordinatry traits, such as hale or quick, by draining them from their targets. Although, this isn't always successful. 
+Blood mages are also able to absorb extraordinary traits, such as hale or quick, by draining them from their targets. Although, this isn't always successful and kills the target in the process.
 
+See [_documents](_documents/README.md) _documents for for info and screenshots
+
+
+## Trait as it appears 
 ![Trait as seen in game](thumbnail.png "Blood mage trait as seen in-game")
 
 # Development plans:
