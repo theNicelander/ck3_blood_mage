@@ -8,12 +8,14 @@ lifeforce_modifier = {
 }
 
 # House Modifier
-blood_mage_coven = {
+blood_mage_coven_learning_modifier = {
 	icon = outdoors_positive
 	learning_per_piety_level = 1
+	stacking = yes
 }
 
-grand_blood_mage_coven = {
+blood_mage_coven_prestige_modifier = {
 	icon = outdoors_positive
 	learning_per_prestige_level = 1
+	stacking = yes
 }

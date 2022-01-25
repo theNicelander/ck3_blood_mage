@@ -1,20 +1,18 @@
-﻿found_blood_mage_coven_decision_effects = {
+﻿blood_mage_coven_decision_learning_effects = {
 	save_scope_as = founder
-	custom_tooltip = found_blood_mage_coven_decision_effects.children.tt
-	custom_tooltip = found_blood_mage_coven_decision_effects.convert.tt
-	custom_tooltip = found_blood_mage_coven_decision_effects.grand_rite.tt
 	house = {
 		add_house_modifier = {
-			modifier = blood_mage_coven
+			modifier = blood_mage_coven_learning_modifier
 		}
 	}
 }
 
-found_grand_blood_mage_coven_decision_effects = {
+
+blood_mage_coven_decision_prestige_effects = {
 	save_scope_as = founder
 	house = {
 		add_house_modifier = {
-			modifier = grand_blood_mage_coven
+			modifier = blood_mage_coven_prestige_modifier
 		}
 	}
 }

@@ -1,24 +1,24 @@
-﻿found_blood_mage_coven_decision = {
+﻿found_aspiring_blood_mage_coven_decision = {
 	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
 	major = yes
 	ai_check_interval = 0
-	desc = found_blood_mage_coven_decision_desc
+	desc = found_aspiring_blood_mage_coven_decision_desc
 	is_shown = {
 		has_trait = blood_mage
 		exists = house
 		NOT = {
 			house = {
-				has_house_modifier = blood_mage_coven
+				has_house_modifier = blood_mage_coven_learning_modifier
 			}
 		}
 	}
 	is_valid = {
 		is_house_head = yes
 
-		# Want at least 10 blood mages in the family before
+		# Want at least 3 blood mages in the family before
 		house = {
 			any_adult_house_member = {
-				count >= 10
+				count >= 1
 				has_trait = blood_mage
 			}
 		}
@@ -26,7 +26,42 @@
 	is_valid_showing_failures_only = {
 	}
 	effect = {
-		found_blood_mage_coven_decision_effects = yes
+		blood_mage_coven_decision_learning_effects = yes
+	}
+}
+
+found_blood_mage_coven_decision = {
+	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
+	major = yes
+	ai_check_interval = 0
+	desc = found_blood_mage_coven_decision_desc
+	is_shown = {
+		has_trait = blood_mage
+		exists = house
+		house = {
+			has_house_modifier = blood_mage_coven_learning_modifier
+		}
+		NOT = {
+			house = {
+				has_house_modifier = blood_mage_coven_prestige_modifier
+			}
+		}
+	}
+	is_valid = {
+		is_house_head = yes
+
+		# Want at least 25 blood mages in the family before
+		house = {
+			any_adult_house_member = {
+				count >= 1
+				has_trait = blood_mage
+			}
+		}
+	}
+	is_valid_showing_failures_only = {
+	}
+	effect = {
+		blood_mage_coven_decision_prestige_effects = yes
 	}
 }
 
@@ -40,12 +75,8 @@ found_grand_blood_mage_coven_decision = {
 		exists = house
 
 		house = {
-			has_house_modifier = blood_mage_coven
-		}
-		NOT = {
-			house = {
-				has_house_modifier = grand_blood_mage_coven
-			}
+			has_house_modifier = blood_mage_coven_learning_modifier
+			has_house_modifier = blood_mage_coven_prestige_modifier
 		}
 	
 	}
@@ -63,6 +94,7 @@ found_grand_blood_mage_coven_decision = {
 	is_valid_showing_failures_only = {
 	}
 	effect = {
-		found_grand_blood_mage_coven_decision_effects = yes
+		blood_mage_coven_decision_prestige_effects = yes
+		blood_mage_coven_decision_learning_effects = yes
 	}
 }
