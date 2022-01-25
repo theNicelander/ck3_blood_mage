@@ -8,7 +8,7 @@
 		exists = house
 		NOT = {
 			house = {
-				has_house_modifier = blood_mage_coven_learning_modifier
+				has_house_modifier = blood_mage_coven_piety_modifier
 			}
 		}
 	}
@@ -26,7 +26,7 @@
 	is_valid_showing_failures_only = {
 	}
 	effect = {
-		blood_mage_coven_decision_learning_effects = yes
+		blood_mage_coven_decision_piety_effects = yes
 	}
 }
 
@@ -39,7 +39,7 @@ found_blood_mage_coven_decision = {
 		has_trait = blood_mage
 		exists = house
 		house = {
-			has_house_modifier = blood_mage_coven_learning_modifier
+			has_house_modifier = blood_mage_coven_piety_modifier
 		}
 		NOT = {
 			house = {
@@ -69,13 +69,13 @@ found_grand_blood_mage_coven_decision = {
 	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
 	major = yes
 	ai_check_interval = 0
-	desc = found_blood_mage_coven_decision_desc
+	desc = found_grand_blood_mage_coven_decision_desc
 	is_shown = {
 		has_trait = blood_mage
 		exists = house
 
 		house = {
-			has_house_modifier = blood_mage_coven_learning_modifier
+			has_house_modifier = blood_mage_coven_piety_modifier
 			has_house_modifier = blood_mage_coven_prestige_modifier
 		}
 		NOT = {
@@ -98,7 +98,7 @@ found_grand_blood_mage_coven_decision = {
 	}
 	effect = {
 		blood_mage_coven_decision_prestige_effects = yes
-		blood_mage_coven_decision_learning_effects = yes
+		blood_mage_coven_decision_piety_effects = yes
 		set_variable = {
 			name = gran_blood_mage_coven_exists
 		}
