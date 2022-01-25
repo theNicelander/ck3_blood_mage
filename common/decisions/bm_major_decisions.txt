@@ -1,0 +1,32 @@
+﻿found_blood_mage_coven_decision = {
+	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
+	major = yes
+	ai_check_interval = 0
+	desc = found_blood_mage_coven_decision_desc
+	is_shown = {
+		has_trait = blood_mage
+		exists = house
+		NOT = {
+			house = {
+				has_house_modifier = blood_mage_coven
+			}
+		}
+	}
+	is_valid = {
+		is_house_head = yes
+		#We want a certain % to be witches but also a minimum amount. So if the house is small, we use a minimum number, and if the house is larger we use %
+		house = {
+			any_adult_house_member = {
+				count >= 1
+				is_witch_known_by_trigger = {
+					CHARACTER = root
+				}
+			}
+		}
+	}
+	is_valid_showing_failures_only = {
+	}
+	effect = {
+		found_blood_mage_coven_decision_effects = yes
+	}
+}

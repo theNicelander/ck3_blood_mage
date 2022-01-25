@@ -1,0 +1,27 @@
+﻿is_blood_mage_trigger = {
+	custom_description = {
+		text = is_a_witch
+		subject = this
+		OR = {
+			has_trait = witch
+			any_secret = {
+				secret_type = secret_witch
+			}
+		}
+	}
+}
+
+is_blood_mage_known_by_trigger = {
+	OR = {
+		has_trait = blood_mage
+		custom_description = {
+			text = has_a_blood_mage_secret_known_by_character
+			subject = this
+			object = $CHARACTER$
+			any_secret = {
+				secret_type = secret_witch
+				is_known_by = $CHARACTER$
+			}
+		}
+	}
+}
