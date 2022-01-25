@@ -3,9 +3,9 @@
 		text = is_a_witch
 		subject = this
 		OR = {
-			has_trait = witch
+			has_trait = blood_mage
 			any_secret = {
-				secret_type = secret_witch
+				secret_type = secret_blood_mage
 			}
 		}
 	}
@@ -19,7 +19,7 @@ is_blood_mage_known_by_trigger = {
 			subject = this
 			object = $CHARACTER$
 			any_secret = {
-				secret_type = secret_witch
+				secret_type = secret_blood_mage
 				is_known_by = $CHARACTER$
 			}
 		}

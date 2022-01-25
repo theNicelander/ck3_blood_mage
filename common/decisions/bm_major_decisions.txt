@@ -17,8 +17,8 @@
 		#We want a certain % to be witches but also a minimum amount. So if the house is small, we use a minimum number, and if the house is larger we use %
 		house = {
 			any_adult_house_member = {
-				count >= 1
-				is_witch_known_by_trigger = {
+				count >= 10
+				is_blood_mage_known_by_trigger = {
 					CHARACTER = root
 				}
 			}
