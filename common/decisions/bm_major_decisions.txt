@@ -78,6 +78,9 @@ found_grand_blood_mage_coven_decision = {
 			has_house_modifier = blood_mage_coven_learning_modifier
 			has_house_modifier = blood_mage_coven_prestige_modifier
 		}
+		NOT = {
+			exists = var:gran_blood_mage_coven_exists
+		}
 	
 	}
 	is_valid = {
@@ -96,5 +99,8 @@ found_grand_blood_mage_coven_decision = {
 	effect = {
 		blood_mage_coven_decision_prestige_effects = yes
 		blood_mage_coven_decision_learning_effects = yes
+		set_variable = {
+			name = gran_blood_mage_coven_exists
+		}
 	}
 }
