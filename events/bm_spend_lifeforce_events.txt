@@ -1,0 +1,92 @@
+﻿# Spend life force event
+
+namespace = bm_channel_lifeforce
+
+bm_channel_lifeforce.0001 = {
+	type = character_event
+	title = channel_lifeforce_decision
+	desc = channel_lifeforce_decision_tooltip_desc
+	theme = witchcraft
+	
+	option = {
+		name = "Channel Diplomacy"
+		remove_character_modifier = lifeforce_modifier
+		add_character_modifier = {
+			modifier = diplomacy_lifeforce_modifier
+			days = 1825
+		}
+		add_piety  = -100
+		trigger = {
+			NOT = {
+				has_character_modifier = diplomacy_lifeforce_modifier
+			}
+		}
+	}
+	option = {
+		name = "Channel Martial"
+		remove_character_modifier = lifeforce_modifier
+		add_character_modifier = {
+			modifier = martial_lifeforce_modifier
+			days = 1825
+		}
+		add_piety  = -100
+		trigger = {
+			NOT = {
+				has_character_modifier = martial_lifeforce_modifier
+			}
+		}
+	}
+	option = {
+		name = "Channel Stewardship"
+		remove_character_modifier = lifeforce_modifier
+		add_character_modifier = {
+			modifier = stewardship_lifeforce_modifier
+			days = 1825
+		}
+		add_piety  = -100
+		trigger = {
+			NOT = {
+				has_character_modifier = stewardship_lifeforce_modifier
+			}
+		}
+	}
+
+	option = {
+		name = "Channel Intrigue"
+		remove_character_modifier = lifeforce_modifier
+		add_character_modifier = {
+			modifier = intrigue_lifeforce_modifier
+			days = 1825
+		}
+		add_piety  = -100
+		trigger = {
+			NOT = {
+				has_character_modifier = intrigue_lifeforce_modifier
+			}
+		}
+	}
+	option = {
+		name = "Channel Learning"
+		remove_character_modifier = lifeforce_modifier
+		add_character_modifier = {
+			modifier = learning_lifeforce_modifier
+			days = 1825
+		}
+		add_piety  = -100
+		trigger = {
+			NOT = {
+				has_character_modifier = learning_lifeforce_modifier
+			}
+		}
+	}
+	
+
+	# Do nothing
+	option = { name = "Nevermind" }
+
+	# Portraits
+	left_portrait ={
+		character = root
+		animation = ecstasy
+	}
+}
