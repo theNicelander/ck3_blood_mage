@@ -30,7 +30,21 @@ bm_lifedrain.001 = {
 		}
 		scope:actor = {
 			# Carry out logic
-			intellect_drain_trait_effects = yes
+			duel = {
+				skill = learning
+				value = 0
+				10 = {
+					compare_modifier = {
+						value = scope:duel_value
+					}
+					desc = "I drain their intellect"
+					intellect_drain_trait_effects = yes
+				}
+				10 = {
+					desc = "I fail"
+				}
+			}
+			
 		}
 		sacrifice_prisoner_effect = {
 			VICTIM = scope:recipient
@@ -50,8 +64,22 @@ bm_lifedrain.001 = {
 		}
 		scope:actor = {
 			# Carry out logic
-			physique_drain_trait_effects = yes
+			duel = {
+				skill = learning
+				value = 0
+				10 = {
+					compare_modifier = {
+						value = scope:duel_value
+					}
+					desc = "I drain their strength"
+					physique_drain_trait_effects = yes
+				}
+				10 = {
+					desc = "I fail"
+				}
+			}
 		}
+
 		sacrifice_prisoner_effect = {
 			VICTIM = scope:recipient
 			EXECUTIONER = scope:actor
@@ -69,8 +97,22 @@ bm_lifedrain.001 = {
 		}
 		scope:actor = {
 			# Carry out logic
-			beauty_drain_trait_effects = yes
+			duel = {
+				skill = learning
+				value = 0
+				10 = {
+					compare_modifier = {
+						value = scope:duel_value
+					}
+					desc = "I drain their Beauty"
+					beauty_drain_trait_effects = yes
+				}
+				10 = {
+					desc = "I fail"
+				}
+			}
 		}
+
 		sacrifice_prisoner_effect = {
 			VICTIM = scope:recipient
 			EXECUTIONER = scope:actor
@@ -86,7 +128,23 @@ bm_lifedrain.001 = {
 				has_trait = fecund
 			}
 		}
-		add_trait = fecund
+		scope:actor = {
+			# Carry out logic
+			duel = {
+				skill = learning
+				value = 0
+				20 = {
+					compare_modifier = {
+						value = scope:duel_value
+					}
+					desc = "Nice"
+					add_trait = fecund
+				}
+				10 = {
+					desc = "I fail"
+				}
+			}
+		}
 
 		sacrifice_prisoner_effect = {
 			VICTIM = scope:recipient
@@ -103,7 +161,23 @@ bm_lifedrain.001 = {
 				has_trait = giant
 			}
 		}
-		add_trait = giant
+		scope:actor = {
+			# Carry out logic
+			duel = {
+				skill = learning
+				value = 0
+				20 = {
+					compare_modifier = {
+						value = scope:duel_value
+					}
+					desc = "I become a Giant"
+					add_trait = giant
+				}
+				10 = {
+					desc = "I fail"
+				}
+			}
+		}
 		
 		sacrifice_prisoner_effect = {
 			VICTIM = scope:recipient
@@ -120,7 +194,23 @@ bm_lifedrain.001 = {
 				has_trait = pure_blooded
 			}
 		}
-		add_trait = pure_blooded
+		scope:actor = {
+			# Carry out logic
+			duel = {
+				skill = learning
+				value = 0
+				20 = {
+					compare_modifier = {
+						value = scope:duel_value
+					}
+					desc = "I become Pure Blooded"
+					add_trait = pure_blooded
+				}
+				10 = {
+					desc = "I fail"
+				}
+			}
+		}
 		
 		sacrifice_prisoner_effect = {
 			VICTIM = scope:recipient
