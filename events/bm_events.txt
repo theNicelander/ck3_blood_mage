@@ -1,0 +1,144 @@
+﻿# lifedrain event
+
+bm_lifedrain.001 = {
+	type = character_event
+	title = bm_lifedrain.001.title
+	desc = bm_lifedrain.001.desc
+	theme = witchcraft
+	
+	# Lifedrain
+	option = {
+		add_piety = -100
+		name = bm_lifedrain.001.a
+		add_character_modifier = {
+			modifier = lifeforce_modifier
+		}
+		sacrifice_prisoner_effect = {
+			VICTIM = scope:recipient
+			EXECUTIONER = scope:actor
+		}
+		
+	}
+
+	# Intellect drain -- Gain quick / intelligent / genius
+	option = {
+		add_piety = -1000
+		name = bm_lifedrain.001.b
+		trigger = {
+			scope:recipient = {
+				has_trait = intellect_good
+			}
+		}
+		scope:actor = {
+			# Carry out logic
+			intellect_drain_trait_effects = yes
+		}
+		sacrifice_prisoner_effect = {
+			VICTIM = scope:recipient
+			EXECUTIONER = scope:actor
+		}
+		
+	}
+
+	# Strength drain -- Gain hale / robust / (amazonian or herculean)
+	option = {
+		add_piety = -1000
+		name = bm_lifedrain.001.c
+		trigger = {
+			scope:recipient = {
+				has_trait = physique_good
+			}
+		}
+		scope:actor = {
+			# Carry out logic
+			physique_drain_trait_effects = yes
+		}
+		sacrifice_prisoner_effect = {
+			VICTIM = scope:recipient
+			EXECUTIONER = scope:actor
+		}
+	}
+
+	# Beauty drain -- Gain comely / (pretty or handsome) / beautiful 
+	option = {
+		add_piety = -1000
+		name = bm_lifedrain.001.d
+		trigger = {
+			scope:recipient = {
+				has_trait = beauty_good
+			}
+		}
+		scope:actor = {
+			# Carry out logic
+			beauty_drain_trait_effects = yes
+		}
+		sacrifice_prisoner_effect = {
+			VICTIM = scope:recipient
+			EXECUTIONER = scope:actor
+		}
+	}
+
+	# Fecund drain
+	option = {
+		add_piety = -500
+		name = bm_lifedrain.001.e
+		trigger = {
+			scope:recipient = {
+				has_trait = fecund
+			}
+		}
+		add_trait = fecund
+
+		sacrifice_prisoner_effect = {
+			VICTIM = scope:recipient
+			EXECUTIONER = scope:actor
+		}
+	}
+
+	# Giant drain 
+	option = {
+		add_piety = -500
+		name = bm_lifedrain.001.f
+		trigger = {
+			scope:recipient = {
+				has_trait = giant
+			}
+		}
+		add_trait = giant
+		
+		sacrifice_prisoner_effect = {
+			VICTIM = scope:recipient
+			EXECUTIONER = scope:actor
+		}
+	}
+
+	# Pure Blood drain
+	option = {
+		add_piety = -500
+		name = bm_lifedrain.001.g
+		trigger = {
+			scope:recipient = {
+				has_trait = pure_blooded
+			}
+		}
+		add_trait = pure_blooded
+		
+		sacrifice_prisoner_effect = {
+			VICTIM = scope:recipient
+			EXECUTIONER = scope:actor
+		}
+	}
+
+	# Do nothing
+	option = { name = bm_lifedrain.001.z }
+
+	# Portraits
+	left_portrait ={
+		character = root
+		animation = rage
+	}
+	right_portrait ={
+		character = scope:recipient
+		animation = beg
+	}
+}
