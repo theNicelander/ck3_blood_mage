@@ -23,4 +23,169 @@ lifedrain_prisoner_event_interaction = {
 		}
 	}
 	auto_accept = yes
+
+	# AI
+	ai_targets = {
+		ai_recipients = prisoners
+	}
+	ai_potential = {
+		is_at_war = no
+	}
+
+	ai_frequency = 12
+
+	# Same as base game AI to execute people, but slightly higher base (20 instead of 0)
+	ai_will_do = {
+		base = 20
+		opinion_modifier = {
+			trigger = {
+				NOT = {
+					scope:actor = scope:recipient
+				}
+			}
+			opinion_target = scope:recipient
+			multiplier = -1
+		}
+		ai_value_modifier = {
+			ai_compassion = -1
+		}
+		modifier = {
+			add = -20
+			ai_compassion >= low_positive_ai_value
+			scope:recipient = {
+				is_adult = no
+			}
+		}
+		# Try to avoid Kinslaying
+		modifier = {
+			add = -20
+			scope:actor.dynasty = scope:recipient.dynasty
+			NOT = {
+				faith = {
+					has_doctrine = doctrine_kinslaying_any_dynasty_member_crime
+				}
+			}
+		}
+		modifier = {
+			add = -20
+			is_close_or_extended_family_of = scope:recipient
+			NOT = {
+				faith = {
+					has_doctrine = doctrine_kinslaying_extended_family_crime
+				}
+			}
+		}
+		modifier = {
+			add = -20
+			is_close_family_of = scope:recipient
+			NOT = {
+				faith = {
+					has_doctrine = doctrine_kinslaying_close_kin_crime
+				}
+			}
+		}
+		modifier = {
+			add = 50
+			has_execute_reason = scope:recipient
+			OR = {
+				has_trait = sadistic
+				has_trait = lunatic
+			}
+		}
+		modifier = {
+			# Executing your way to new titles is a worthy cause...
+			add = 20
+			scope:actor = {
+				has_execute_reason = scope:recipient
+				ai_greed > 0
+				any_heir_title = {
+					# Execute rulers you can inherit land from
+					exists = holder
+					holder = scope:recipient
+					place_in_line_of_succession = {
+						target = scope:actor
+						value > 2
+					}
+				}
+			}
+		}
+		modifier = {
+			# Vengeful characters enjoy executing their rivals
+			add = 20
+			scope:actor = {
+				has_execute_reason = scope:recipient
+				ai_vengefulness >= medium_positive_ai_value
+				OR = {
+					has_relation_rival = scope:recipient					# Execute rivals
+					has_relation_nemesis = scope:recipient					# Execute rivals
+					scope:recipient = {
+						is_spouse_of = scope:actor
+						exposed_cheating_on_spouse_trigger = {
+							SPOUSE = scope:actor
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			# Executing your way to new titles is a worthy cause... and very greedy characters need no execution reason
+			add = 35
+			scope:actor = {
+				ai_greed >= very_high_positive_ai_value
+				any_heir_title = {
+					# Execute rulers you can inherit land from
+					exists = holder
+					holder = scope:recipient
+					place_in_line_of_succession = {
+						target = scope:actor
+						value > 2
+					}
+				}
+			}
+		}
+		modifier = {
+			# Vengeful characters enjoy executing their rivals, and very vengeful characters need no execution reason
+			add = 35
+			scope:actor = {
+				ai_vengefulness >= very_high_positive_ai_value
+				OR = {
+					has_relation_rival = scope:recipient					# Execute rivals
+					has_relation_nemesis = scope:recipient					# Execute rivals
+					scope:recipient = {
+						is_spouse_of = scope:actor
+						exposed_cheating_on_spouse_trigger = {
+							SPOUSE = scope:actor
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			scope:actor = {
+				NOR = {
+					# Do not execute unless you have some sort of reason to do it
+					has_execute_reason = scope:recipient
+					has_relation_rival = scope:recipient					# Execute rivals
+					has_relation_nemesis = scope:recipient					# Execute rivals
+					scope:recipient = {
+						is_spouse_of = scope:actor
+						exposed_cheating_on_spouse_trigger = {
+							SPOUSE = scope:actor
+						}
+					}
+					any_heir_title = {
+						# Execute rulers you can inherit land from
+						exists = holder
+						holder = scope:recipient
+						place_in_line_of_succession = {
+							target = scope:actor
+							value > 2
+						}
+					}
+					has_trait = lunatic					# Self explanatory
+				}
+			}
+		}
+	}
 }
