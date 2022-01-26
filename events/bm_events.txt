@@ -8,17 +8,37 @@ bm_lifedrain.001 = {
 	option = {
 		# Lifedrain
 		name = bm_lifedrain.001.a
+		add_character_modifier = {
+			modifier = lifeforce_modifier
+		}
+		sacrifice_prisoner_effect = {
+			VICTIM = scope:recipient
+			EXECUTIONER = scope:actor
+		}
 	}
 	option = {
-		# Intellect drain
+		# Intellect drain -- Gain quick / intelligent / genius
 		name = bm_lifedrain.001.b
 		trigger = {
 			scope:recipient = {
 				has_trait = intellect_good
 			}
-
+		}
+		scope:actor = {
+			# Carry out logic
+			intellect_drain_trait_effects = yes
+		}
+		sacrifice_prisoner_effect = {
+			VICTIM = scope:recipient
+			EXECUTIONER = scope:actor
 		}
 	}
+
+	option = {
+		# Do nothing
+		name = bm_lifedrain.001.z
+	}
+
 	left_portrait ={
 		character = root
 		animation = rage
