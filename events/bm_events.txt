@@ -8,7 +8,6 @@ bm_lifedrain.001 = {
 	
 	# Lifedrain
 	option = {
-	
 		name = bm_lifedrain.001.a
 		add_character_modifier = {
 			modifier = lifeforce_modifier
@@ -36,6 +35,7 @@ bm_lifedrain.001 = {
 			EXECUTIONER = scope:actor
 		}
 	}
+
 	# Strength drain -- Gain hale / robust / (amazonian or herculean)
 	option = {
 		name = bm_lifedrain.001.c
@@ -66,6 +66,54 @@ bm_lifedrain.001 = {
 			# Carry out logic
 			beauty_drain_trait_effects = yes
 		}
+		sacrifice_prisoner_effect = {
+			VICTIM = scope:recipient
+			EXECUTIONER = scope:actor
+		}
+	}
+
+	# Fecund drain
+	option = {
+		name = bm_lifedrain.001.e
+		trigger = {
+			scope:recipient = {
+				has_trait = fecund
+			}
+		}
+		add_trait = fecund
+
+		sacrifice_prisoner_effect = {
+			VICTIM = scope:recipient
+			EXECUTIONER = scope:actor
+		}
+	}
+
+	# Giant drain 
+	option = {
+		name = bm_lifedrain.001.f
+		trigger = {
+			scope:recipient = {
+				has_trait = giant
+			}
+		}
+		add_trait = giant
+		
+		sacrifice_prisoner_effect = {
+			VICTIM = scope:recipient
+			EXECUTIONER = scope:actor
+		}
+	}
+
+	# Pure Blood drain
+	option = {
+		name = bm_lifedrain.001.g
+		trigger = {
+			scope:recipient = {
+				has_trait = pure_blooded
+			}
+		}
+		add_trait = pure_blooded
+		
 		sacrifice_prisoner_effect = {
 			VICTIM = scope:recipient
 			EXECUTIONER = scope:actor

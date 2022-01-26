@@ -25,54 +25,6 @@ lifedrain_prisoner_event_interaction = {
 }
 ###################################################################################################
 
-# Gain Fecund
-fertility_drain_prisoner_interaction = {
-	interface_priority = 50
-	category = interaction_category_religion
-	desc = generic_drain_prisoner_trait_interaction_desc
-	#################################
-	# Show only if prisoner has trait
-	is_shown = {
-		scope:actor = {
-			has_trait = blood_mage
-		}
-		scope:recipient = {
-			AND = {
-				is_imprisoned_by = scope:actor
-				has_trait = fecund
-			}
-		}
-	}
-	#################################
-	# Highlight
-	is_highlighted = {
-		scope:actor = {
-			has_trait = blood_mage
-		}
-	}
-	on_accept = {
-		scope:recipient = {
-			send_interface_toast = {
-				left_icon = scope:actor
-				custom_tooltip = generic_drain_prisoner_trait_interaction.recipient.notification.tt
-			}
-			trigger_event = char_interaction.0171
-		}
-		scope:actor = {
-			# Carry out logic
-			add_trait = fecund
-		}
-		execute_prisoner_effect = {
-			VICTIM = scope:recipient
-			EXECUTIONER = scope:actor
-		}
-	}
-	auto_accept = yes
-	cost = {
-		piety = 500
-	}
-}
-
 # Gain giant
 giant_drain_prisoner_interaction = {
 	interface_priority = 50
