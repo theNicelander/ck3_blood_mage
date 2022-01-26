@@ -19,6 +19,9 @@ bm_lifedrain.001 = {
 			VICTIM = scope:recipient
 			EXECUTIONER = scope:actor
 		}
+		ai_chance = {
+			base = 20
+		}
 	}
 
 	# Intellect drain -- Gain quick / intelligent / genius
@@ -51,6 +54,9 @@ bm_lifedrain.001 = {
 		sacrifice_prisoner_effect = {
 			VICTIM = scope:recipient
 			EXECUTIONER = scope:actor
+		}
+		ai_chance = {
+			base = 100
 		}
 		
 	}
@@ -86,6 +92,9 @@ bm_lifedrain.001 = {
 			VICTIM = scope:recipient
 			EXECUTIONER = scope:actor
 		}
+		ai_chance = {
+			base = 90
+		}
 	}
 
 	# Beauty drain -- Gain comely / (pretty or handsome) / beautiful 
@@ -118,6 +127,9 @@ bm_lifedrain.001 = {
 		sacrifice_prisoner_effect = {
 			VICTIM = scope:recipient
 			EXECUTIONER = scope:actor
+		}
+		ai_chance = {
+			base = 80
 		}
 	}
 
@@ -152,6 +164,9 @@ bm_lifedrain.001 = {
 			VICTIM = scope:recipient
 			EXECUTIONER = scope:actor
 		}
+		ai_chance = {
+			base = 50
+		}
 	}
 
 	# Giant drain 
@@ -184,6 +199,9 @@ bm_lifedrain.001 = {
 		sacrifice_prisoner_effect = {
 			VICTIM = scope:recipient
 			EXECUTIONER = scope:actor
+		}
+		ai_chance = {
+			base = 50
 		}
 	}
 
@@ -218,10 +236,18 @@ bm_lifedrain.001 = {
 			VICTIM = scope:recipient
 			EXECUTIONER = scope:actor
 		}
+		ai_chance = {
+			base = 50
+		}
 	}
 
 	# Do nothing
-	option = { name = bm_lifedrain.001.z }
+	option = { 
+		name = bm_lifedrain.001.z 
+		ai_chance = {
+			base = 5
+		}
+	}
 
 	# Portraits
 	left_portrait ={
