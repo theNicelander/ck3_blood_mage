@@ -1,0 +1,24 @@
+grant_blood_magic_interaction = {
+	category = interaction_category_friendly
+	auto_accept = yes
+	common_interaction = yes
+	desc = grant_blood_magic_interaction_desc
+
+	is_shown = {
+		scope:actor = {
+			has_trait = blood_mage
+		}
+		scope:recipient = {
+			NOT = {
+				has_trait = blood_mage
+			}
+		}
+	}
+
+	on_accept = {
+		scope:recipient = {
+			add_trait = blood_mage
+		}
+	}
+}
+
