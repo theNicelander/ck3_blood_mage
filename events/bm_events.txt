@@ -54,6 +54,24 @@ bm_lifedrain.001 = {
 		}
 	}
 
+	# Beauty drain -- Gain comely / (pretty or handsome) / beautiful 
+	option = {
+		name = bm_lifedrain.001.d
+		trigger = {
+			scope:recipient = {
+				has_trait = beauty_good
+			}
+		}
+		scope:actor = {
+			# Carry out logic
+			beauty_drain_trait_effects = yes
+		}
+		sacrifice_prisoner_effect = {
+			VICTIM = scope:recipient
+			EXECUTIONER = scope:actor
+		}
+	}
+
 	# Do nothing
 	option = { name = bm_lifedrain.001.z }
 
