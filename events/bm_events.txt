@@ -5,8 +5,10 @@ bm_lifedrain.001 = {
 	title = bm_lifedrain.001.title
 	desc = bm_lifedrain.001.desc
 	theme = witchcraft
+	
+	# Lifedrain
 	option = {
-		# Lifedrain
+	
 		name = bm_lifedrain.001.a
 		add_character_modifier = {
 			modifier = lifeforce_modifier
@@ -16,8 +18,9 @@ bm_lifedrain.001 = {
 			EXECUTIONER = scope:actor
 		}
 	}
+
+	# Intellect drain -- Gain quick / intelligent / genius
 	option = {
-		# Intellect drain -- Gain quick / intelligent / genius
 		name = bm_lifedrain.001.b
 		trigger = {
 			scope:recipient = {
@@ -33,12 +36,28 @@ bm_lifedrain.001 = {
 			EXECUTIONER = scope:actor
 		}
 	}
-
+	# Strength drain -- Gain hale / robust / (amazonian or herculean)
 	option = {
-		# Do nothing
-		name = bm_lifedrain.001.z
+		name = bm_lifedrain.001.c
+		trigger = {
+			scope:recipient = {
+				has_trait = physique_good
+			}
+		}
+		scope:actor = {
+			# Carry out logic
+			physique_drain_trait_effects = yes
+		}
+		sacrifice_prisoner_effect = {
+			VICTIM = scope:recipient
+			EXECUTIONER = scope:actor
+		}
 	}
 
+	# Do nothing
+	option = { name = bm_lifedrain.001.z }
+
+	# Portraits
 	left_portrait ={
 		character = root
 		animation = rage
