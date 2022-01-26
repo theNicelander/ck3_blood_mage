@@ -7,6 +7,7 @@ grant_blood_magic_interaction = {
 	is_shown = {
 		scope:actor = {
 			has_trait = blood_mage
+			has_character_modifier = lifeforce_modifier
 		}
 		scope:recipient = {
 			NOT = {
