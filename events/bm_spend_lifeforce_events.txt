@@ -21,6 +21,9 @@ bm_channel_lifeforce.0001 = {
 				has_character_modifier = diplomacy_lifeforce_modifier
 			}
 		}
+		ai_chance = {
+			base = 100
+		}
 	}
 	option = {
 		name = "Channel Martial"
@@ -35,6 +38,9 @@ bm_channel_lifeforce.0001 = {
 				has_character_modifier = martial_lifeforce_modifier
 			}
 		}
+		ai_chance = {
+			base = 100
+		}
 	}
 	option = {
 		name = "Channel Stewardship"
@@ -48,6 +54,9 @@ bm_channel_lifeforce.0001 = {
 			NOT = {
 				has_character_modifier = stewardship_lifeforce_modifier
 			}
+		}
+		ai_chance = {
+			base = 100
 		}
 	}
 
@@ -64,6 +73,9 @@ bm_channel_lifeforce.0001 = {
 				has_character_modifier = intrigue_lifeforce_modifier
 			}
 		}
+		ai_chance = {
+			base = 100
+		}
 	}
 	option = {
 		name = "Channel Learning"
@@ -78,11 +90,19 @@ bm_channel_lifeforce.0001 = {
 				has_character_modifier = learning_lifeforce_modifier
 			}
 		}
+		ai_chance = {
+			base = 100
+		}
 	}
 	
 
 	# Do nothing
-	option = { name = "Nevermind" }
+	option = { 
+		name = "Nevermind"
+		ai_chance = {
+			base = 10
+		} 
+	}
 
 	# Portraits
 	left_portrait ={
