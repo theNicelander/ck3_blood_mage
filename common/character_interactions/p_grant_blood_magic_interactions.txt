@@ -1,8 +1,11 @@
 grant_blood_magic_interaction = {
-	category = interaction_category_friendly
+	category = interaction_category_religion
 	auto_accept = yes
 	common_interaction = yes
 	desc = grant_blood_magic_interaction_desc
+	interface_priority = 150
+
+	cost = { piety = 250 }
 
 	is_shown = {
 		scope:actor = {
@@ -19,6 +22,16 @@ grant_blood_magic_interaction = {
 	on_accept = {
 		scope:recipient = {
 			add_trait = blood_mage
+			add_opinion = {
+				target = scope:actor
+				modifier = granted_blood_magic_modifier
+				opinion = 50
+			}
+		}
+		scope:actor = {
+			remove_character_modifier = lifeforce_modifier
+			remove_character_modifier = lifeforce_modifier
+			remove_character_modifier = lifeforce_modifier
 		}
 	}
 }
