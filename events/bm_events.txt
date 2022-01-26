@@ -8,6 +8,7 @@ bm_lifedrain.001 = {
 	
 	# Lifedrain
 	option = {
+		add_piety = -100
 		name = bm_lifedrain.001.a
 		add_character_modifier = {
 			modifier = lifeforce_modifier
@@ -16,10 +17,12 @@ bm_lifedrain.001 = {
 			VICTIM = scope:recipient
 			EXECUTIONER = scope:actor
 		}
+		
 	}
 
 	# Intellect drain -- Gain quick / intelligent / genius
 	option = {
+		add_piety = -1000
 		name = bm_lifedrain.001.b
 		trigger = {
 			scope:recipient = {
@@ -34,10 +37,12 @@ bm_lifedrain.001 = {
 			VICTIM = scope:recipient
 			EXECUTIONER = scope:actor
 		}
+		
 	}
 
 	# Strength drain -- Gain hale / robust / (amazonian or herculean)
 	option = {
+		add_piety = -1000
 		name = bm_lifedrain.001.c
 		trigger = {
 			scope:recipient = {
@@ -56,6 +61,7 @@ bm_lifedrain.001 = {
 
 	# Beauty drain -- Gain comely / (pretty or handsome) / beautiful 
 	option = {
+		add_piety = -1000
 		name = bm_lifedrain.001.d
 		trigger = {
 			scope:recipient = {
@@ -74,6 +80,7 @@ bm_lifedrain.001 = {
 
 	# Fecund drain
 	option = {
+		add_piety = -500
 		name = bm_lifedrain.001.e
 		trigger = {
 			scope:recipient = {
@@ -90,6 +97,7 @@ bm_lifedrain.001 = {
 
 	# Giant drain 
 	option = {
+		add_piety = -500
 		name = bm_lifedrain.001.f
 		trigger = {
 			scope:recipient = {
@@ -106,6 +114,7 @@ bm_lifedrain.001 = {
 
 	# Pure Blood drain
 	option = {
+		add_piety = -500
 		name = bm_lifedrain.001.g
 		trigger = {
 			scope:recipient = {
