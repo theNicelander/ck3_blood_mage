@@ -2,7 +2,7 @@
 lifeforce_modifier = {
 	icon = health_positive
 	health = 0.5
-	fertility = 0.05
+	years_of_fertility = 5
 	life_expectancy = 5
 	stacking = yes
 }
@@ -17,5 +17,13 @@ blood_mage_coven_piety_modifier = {
 blood_mage_coven_prestige_modifier = {
 	icon = outdoors_positive
 	learning_per_prestige_level = 1
+	stacking = yes
+}
+
+# Grant blood magic modifier
+granted_blood_magic_modifier = {
+	opinion = 50
+	monthly_change = -0.1
+	decaying = yes
 	stacking = yes
 }
