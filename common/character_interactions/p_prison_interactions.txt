@@ -1,3 +1,29 @@
+# Trigger event
+lifedrain_prisoner_event_interaction = {
+	interface_priority = 30
+	category = interaction_category_religion
+	desc = lifedrain_prisoner_interaction_desc
+	is_shown = {
+		scope:actor = {
+			has_trait = blood_mage
+		}
+		scope:recipient = {
+			is_imprisoned_by = scope:actor
+		}
+	}
+	on_accept = {
+		scope:recipient = {
+			send_interface_toast = {
+				left_icon = scope:actor
+				custom_tooltip = lifedrain_prisoner_event_interaction.recipient.notification.tt
+			}
+		scope:actor = {
+			trigger_event = bm_lifedrain.001
+		}
+	}
+	auto_accept = yes
+}
+###################################################################################################
 # Gain health and fertility
 lifedrain_prisoner_interaction = {
 	interface_priority = 30
@@ -20,9 +46,7 @@ lifedrain_prisoner_interaction = {
 			trigger_event = char_interaction.0171
 		}
 		scope:actor = {
-			add_character_modifier = {
-				modifier = lifeforce_modifier
-			}
+			trigger_event = bm_lifedrain.001
 		}
 		execute_prisoner_effect = {
 			VICTIM = scope:recipient

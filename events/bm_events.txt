@@ -1,0 +1,30 @@
+﻿# lifedrain event
+
+bm_lifedrain.001 = {
+	type = character_event
+	title = bm_lifedrain.001.title
+	desc = bm_lifedrain.001.desc
+	theme = witchcraft
+	option = {
+		# Lifedrain
+		name = bm_lifedrain.001.a
+	}
+	option = {
+		# Intellect drain
+		name = bm_lifedrain.001.b
+		trigger = {
+			scope:recipient = {
+				has_trait = intellect_good
+			}
+
+		}
+	}
+	left_portrait ={
+		character = root
+		animation = rage
+	}
+	right_portrait ={
+		character = scope:recipient
+		animation = beg
+	}
+}
