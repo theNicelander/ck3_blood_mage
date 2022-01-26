@@ -1,0 +1,16 @@
+﻿channel_lifeforce_decision = {
+	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
+	major = no
+	ai_check_interval = 0
+	desc = channel_lifeforce_decision_desc
+	is_shown = {
+		has_trait = blood_mage
+		has_character_modifier = lifeforce_modifier
+	}
+	effect = {
+		trigger_event = { 
+			id = bm_channel_lifeforce.0001
+		}
+		custom_tooltip = channel_lifeforce_decision_tooltip_desc
+	}
+}
