@@ -1,0 +1,176 @@
+﻿bm_university_0 = {
+	construction_time = 3650
+
+	can_construct_potential = {
+		building_requirement_castle_city_church = { LEVEL = 01 }
+		scope:holder = {
+			has_trait = blood_mage
+		}
+		
+	}
+	
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+	
+	cost_gold = expensive_building_tier_2_cost
+	
+	character_modifier = {
+		knight_limit = 2
+		knight_effectiveness_mult = 0.25
+		army_maintenance_mult = -0.025
+	}
+	
+	next_building = bm_university_1
+	
+	type_icon = "icon_building_tradeport.dds"
+
+	type = duchy_capital
+	
+	ai_value = {
+		base = 20
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+bm_university_1 = {
+	construction_time = 3650
+
+	can_construct_potential = {
+		building_requirement_castle_city_church = { LEVEL = 01 }
+		scope:holder = {
+			has_trait = blood_mage
+		}
+		
+	}
+	
+	can_construct_showing_failures_only = {
+		
+		culture = {
+			has_innovation = innovation_burhs
+		}
+	}
+	
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+	
+	cost_gold = expensive_building_tier_2_cost
+	
+	character_modifier = {
+		knight_limit = 2
+		knight_effectiveness_mult = 0.25
+		army_maintenance_mult = -0.025
+	}
+	
+	next_building = bm_university_2
+	
+	type_icon = "icon_building_tradeport.dds"
+
+	type = duchy_capital
+	
+	ai_value = {
+		base = 20
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+bm_university_2 = {
+	construction_time = 3650
+
+	can_construct_potential = {
+		building_requirement_castle_city_church = { LEVEL = 01 }
+		scope:holder = {
+			has_trait = blood_mage
+		}
+		
+	}
+	
+	can_construct_showing_failures_only = {
+		
+		culture = {
+			has_innovation = innovation_castle_baileys
+		}
+	}
+	
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+	
+	cost_gold = expensive_building_tier_2_cost
+	
+	character_modifier = {
+		knight_limit = 2
+		knight_effectiveness_mult = 0.25
+		army_maintenance_mult = -0.025
+	}
+	
+	next_building = bm_university_3
+	
+	type_icon = "icon_building_tradeport.dds"
+
+	type = duchy_capital
+	
+	ai_value = {
+		base = 20
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+bm_university_3 = {
+	construction_time = 3650
+
+	can_construct_potential = {
+		building_requirement_castle_city_church = { LEVEL = 01 }
+		scope:holder = {
+			has_trait = blood_mage
+		}
+		
+	}
+	
+	can_construct_showing_failures_only = {
+		
+		culture = {
+			has_innovation = innovation_royal_armory
+		}
+	}
+	
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+	
+	cost_gold = expensive_building_tier_2_cost
+	
+	character_modifier = {
+		knight_limit = 2
+		knight_effectiveness_mult = 0.25
+		army_maintenance_mult = -0.025
+	}
+
+	
+	type_icon = "icon_building_tradeport.dds"
+
+	type = duchy_capital
+	
+	ai_value = {
+		base = 20
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
