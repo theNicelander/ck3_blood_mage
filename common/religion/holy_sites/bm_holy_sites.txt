@@ -1,0 +1,100 @@
+﻿
+
+#############
+# Christian #
+#############
+
+# Catholic
+
+venezia = {
+	county = c_venezia
+	barony = b_venezia
+	
+	character_modifier = {
+		development_growth_factor = 0.5
+		development_growth = 0.1
+	}
+}
+malta = {
+	county = c_malta
+	barony = b_malta
+	
+	character_modifier = {
+		learning_per_piety_level = 1
+		development_growth = 0.1
+	}
+}
+cagliari = {
+	county = c_cagliari
+	barony = b_cagliari
+	
+	character_modifier = {
+		stewardship_per_piety_level = 1
+		development_growth = 0.1
+	}
+
+}
+gran_canaria = {
+	county = c_canarias
+	barony = b_gran_canaria
+	
+	character_modifier = {
+		cultural_head_fascination_mult = 0.1
+		development_growth = 0.1
+	}
+
+}
+palma = {
+	county = c_palma
+	barony = b_palma
+	
+	character_modifier = {
+		county_opinion_add = 10
+		development_growth = 0.1
+	}
+
+}
+
+visby = {
+	county = c_gutland
+	barony = b_visby
+	
+	character_modifier = {
+		knight_limit = 2
+		prowess_per_piety_level = 2
+		development_growth = 0.1
+	}
+
+}
+
+iraklio = {
+	county = c_chandax
+	barony = b_iraklio
+	
+	character_modifier = {
+		monthly_lifestyle_xp_gain_mult = 0.1
+		development_growth = 0.1
+	}
+
+}
+
+tamrida = {
+	county = c_socotra
+	barony = b_tamrida
+	
+	character_modifier = {
+		prowess_per_piety_level = 2
+		development_growth = 0.1
+	}
+
+}
+
+reykjavik = {
+	county = c_vestrland
+	barony = b_reykjavik
+	
+	character_modifier = {
+		learning_per_piety_level = 2
+		development_growth = 0.1
+	}
+}
