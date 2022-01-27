@@ -1,15 +1,36 @@
 # CK3 Blood Mage Mod
-A mod to add a blood mage trait into the game. 
+The aim of this mod, is to make a magical playthrough work from a roleplay perspective, while not being overpowered. 
 
-Blood mages are able to prolong their life, by draining the life force from other humans. This process unfortunately kills the target in the process. 
+It also aims to not overwrite any gamefiles, to ensure `maximum compatibility with other mods`
 
-Blood mages are also able to absorb extraordinary traits, such as hale or quick, by draining them from their targets. Although, this isn't always successful and kills the target in the process.
+## What can Blood Mages do? 
+Blood mages rely heavily on `piety` and a new `lifeforce` modifier in various different ways:
 
-See [documents](_documents/README.md) for more info & screenshots
+- Spend a **small amount** of `piety` to drain `lifeforce` from prisoners, killing them in the process
+- Spend a **large amount** of `piety` for a `chance` to drain a positive trait from prisoners (`giant`, `fecund`, etc), killing them in the process
+- Spend a **VERY large amount** of faith for a `chance` to drain a positive levellable trait from prisoners (`hale`, `quick`, `comely`, etc), killing them in the process
+- Grant others the power of `blood magic`, at the cost of their own `lifeforce` and `piety`
+- Ask friends to be granted the power of blood magic, at a **VERY large** cost of `piety` 
+- Form blood mage covenants, growing in power as the dynasty grows
+- A unique blood mage faith
+- Spend `lifeforce` to gain temporary buffs to their skills
 
 
-## Trait as it appears 
-![Trait as seen in game](thumbnail.png "Blood mage trait as seen in-game")
+## Lifeforce modifier
+The `lifeforce` modifier forms the core of the power of any blood mage. 
+It allows the blood mage to prolong their life, as long as they can keep the supply of lifeforce going. 
 
-# Development plans:
+**Blood mages are _NOT_ immortal.** 
+
+They can be killed just as easily as other humans and are just as susceptible to disease and illness. 
+
+
+# Development plans
 https://trello.com/b/1qS7Y4n0/ck3-blood-mage-mod
+
+Key upcoming features: 
+
+* Unique blood mage buildings
+* Unique blood mage Men-at-arms
+* Events that effect `lifeforce`
+* 
