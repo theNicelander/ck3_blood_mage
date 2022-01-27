@@ -11,8 +11,8 @@ venezia = {
 	barony = b_venezia
 	
 	character_modifier = {
-		learning_per_piety_level = 1
-		development_growth_factor = 0.1
+		development_growth_factor = 0.5
+		development_growth = 0.1
 	}
 }
 malta = {
@@ -21,7 +21,7 @@ malta = {
 	
 	character_modifier = {
 		learning_per_piety_level = 1
-		development_growth_factor = 0.1
+		development_growth = 0.1
 	}
 }
 cagliari = {
@@ -29,8 +29,8 @@ cagliari = {
 	barony = b_cagliari
 	
 	character_modifier = {
-		learning_per_piety_level = 1
-		development_growth_factor = 0.1
+		stewardship_per_piety_level = 1
+		development_growth = 0.1
 	}
 
 }
@@ -39,8 +39,8 @@ gran_canaria = {
 	barony = b_gran_canaria
 	
 	character_modifier = {
-		learning_per_piety_level = 1
-		development_growth_factor = 0.1
+		cultural_head_fascination_mult = 0.1
+		development_growth = 0.1
 	}
 
 }
@@ -49,9 +49,42 @@ palma = {
 	barony = b_palma
 	
 	character_modifier = {
-		learning_per_piety_level = 1
-		development_growth_factor = 0.1
+		county_opinion_add = 10
+		development_growth = 0.1
 	}
 
 }
 
+visby = {
+	county = c_gutland
+	barony = b_visby
+	
+	character_modifier = {
+		knight_limit = 2
+		prowess_per_piety_level = 2
+		development_growth = 0.1
+	}
+
+}
+
+iraklio = {
+	county = c_chandax
+	barony = b_iraklio
+	
+	character_modifier = {
+		monthly_lifestyle_xp_gain_mult = 0.1
+		development_growth = 0.1
+	}
+
+}
+
+tamrida = {
+	county = c_socotra
+	barony = b_tamrida
+	
+	character_modifier = {
+		prowess_per_piety_level = 2
+		development_growth = 0.1
+	}
+
+}
