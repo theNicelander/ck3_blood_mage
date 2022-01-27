@@ -1,0 +1,51 @@
+﻿bm_holy_site_00 = {
+
+	asset = {
+		type = pdxmesh
+		name = "building_special_cathedral_pagan_mesh"
+	}
+
+	construction_time = very_slow_construction_time
+
+	type_icon = "icon_structure_cathedral_pagan.dds"
+	
+	can_construct_potential = {
+		building_requirement_tribal = no
+	}
+	
+	can_construct = {
+		barony = {
+			is_holy_site_of = scope:holder.faith
+		}
+
+		scope:holder = {
+			has_trait = blood_mage
+		}
+	}
+	
+	is_enabled = {
+		scope:holder = {
+			has_trait = blood_mage
+		}
+	}
+	
+	cost_gold = 1000
+
+	character_modifier = {
+		monthly_piety = 0.25
+	}
+	
+	county_modifier = {
+		tax_mult = 0.1
+	}
+
+	province_modifier = {
+		monthly_income = 1
+	}
+	
+	ai_value = {
+		base = 100
+	}
+	
+	type = special
+}
