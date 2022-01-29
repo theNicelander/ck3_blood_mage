@@ -10,7 +10,6 @@ bm_lifedrain.001 = {
 	
 	# Lifedrain
 	option = {
-		add_piety = -100
 		name = bm_lifedrain.001.a
 		add_character_modifier = {
 			modifier = lifeforce_modifier
@@ -315,7 +314,8 @@ bm_lifedrain.001 = {
 	}
 
 	# Do nothing
-	option = { 
+	option = {
+		add_piety = 75
 		name = bm_lifedrain.001.z 
 		ai_chance = {
 			base = 5
