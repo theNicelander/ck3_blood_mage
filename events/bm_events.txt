@@ -25,7 +25,8 @@ bm_lifedrain.001 = {
 
 	# Intellect drain -- Gain quick / intelligent / genius
 	option = {
-		add_piety = -1000
+		# More expensive, the higher the trait you're trying to drain
+		add_piety = trait_drain_intellect_cost  
 		name = bm_lifedrain.001.b
 		trigger = {
 			scope:recipient = {
@@ -87,7 +88,8 @@ bm_lifedrain.001 = {
 
 	# Strength drain -- Gain hale / robust / (amazonian or herculean)
 	option = {
-		add_piety = -1000
+		# More expensive, the higher the trait you're trying to drain
+		add_piety = trait_drain_physique_cost
 		name = bm_lifedrain.001.c
 		trigger = {
 			scope:recipient = {
@@ -147,7 +149,8 @@ bm_lifedrain.001 = {
 
 	# Beauty drain -- Gain comely / (pretty or handsome) / beautiful 
 	option = {
-		add_piety = -1000
+		# More expensive, the higher the trait you're trying to drain
+		add_piety = trait_drain_beauty_cost
 		name = bm_lifedrain.001.d
 		trigger = {
 			scope:recipient = {
@@ -207,7 +210,7 @@ bm_lifedrain.001 = {
 
 	# Fecund drain
 	option = {
-		add_piety = -500
+		add_piety = trait_drain_base_piety_cost
 		name = bm_lifedrain.001.e
 		trigger = {
 			scope:recipient = {
@@ -243,7 +246,7 @@ bm_lifedrain.001 = {
 
 	# Giant drain 
 	option = {
-		add_piety = -500
+		add_piety = trait_drain_base_piety_cost
 		name = bm_lifedrain.001.f
 		trigger = {
 			scope:recipient = {
@@ -279,7 +282,7 @@ bm_lifedrain.001 = {
 
 	# Pure Blood drain
 	option = {
-		add_piety = -500
+		add_piety = trait_drain_base_piety_cost
 		name = bm_lifedrain.001.g
 		trigger = {
 			scope:recipient = {
@@ -315,7 +318,7 @@ bm_lifedrain.001 = {
 
 	# Do nothing
 	option = {
-		add_piety = 75
+		add_piety = lifedrain_piety_cost
 		name = bm_lifedrain.001.z 
 		ai_chance = {
 			base = 5
