@@ -8,9 +8,12 @@
 	random_creation = 1
 	inherit_chance = 50
 	learning_per_stress_level = 4
+	opposites = {
+		witch
+	}
 
 	# benefits
-	ruler_designer_cost = 200
+	ruler_designer_cost = 100
 	flag = can_murder_own_children
 	# description
 	desc = {
@@ -38,5 +41,7 @@
 		ignore_opinion_value_if_same_trait = yes
 	}
 	# AI behaviour
-	ai_sociability = 10
+	ai_rationality = 30
+	ai_zeal = 30
+	ai_honor = -30
 }
