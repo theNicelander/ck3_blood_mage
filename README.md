@@ -20,7 +20,7 @@ They can expend their own `lifeforce` in various ways, as well as access a range
 - Spend `lifeforce` to gain temporary buffs to their skills
 - Unique blood mage duchy building
 
-<img src="thumbnail.png"/>
+<img src="thumbnail.jpg"/>
 
 ## Lifeforce modifier (stackable)
 The `lifeforce` modifier forms the core of the power of any blood mage. 
@@ -30,7 +30,7 @@ It allows the blood mage to prolong their life, as long as they can keep the sup
 
 They can be killed just as easily as other humans and are just as susceptible to disease and illness. 
 
-<img src="docs\screenshots\lifedrain-modifier.PNG"/>
+<img src="docs\screenshots\lifedrain-modifier.jpg"/>
 
 # Development plans
 https://trello.com/b/1qS7Y4n0/ck3-blood-mage-mod
