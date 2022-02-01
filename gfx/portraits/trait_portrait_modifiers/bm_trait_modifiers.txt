@@ -1,0 +1,72 @@
+﻿white_eyes = {
+	white_eyes = {
+		traits = { white_eyes }
+		dna_modifiers = {
+			color = {
+				gene = eye_color
+				mode = modify
+				
+				x = -1.0
+				y = -1.0
+			}
+			
+		}
+	}
+}
+
+white_hair = {
+	white_hair = {
+		traits = { white_eyes }
+		dna_modifiers = {
+			color = {
+				gene = hair_color
+				mode = modify
+				
+				x = -1.0
+				y = -1.0
+			}
+			
+		}
+	}
+}
+
+
+albino = {
+	albino = {
+		traits = { albino }
+		dna_modifiers = {
+			color = {
+				gene = skin_color
+				mode = modify
+				
+				x = -1.0
+				y = -1.0
+			}
+			color = {
+				gene = hair_color
+				mode = modify
+					
+				x = -1.0
+				y = -1.0
+			}
+			color = {
+				gene = eye_color
+				mode = modify
+					
+				x = -1.0
+				y = 0.0
+			}
+			morph = {
+				mode = modify_multiply
+				gene = gene_eyebrows_shape
+				value = 0.3
+			}
+			morph = {
+				mode = modify_multiply
+				gene = gene_eyebrows_fullness
+				value = 0.3
+			}
+		}
+	}
+}
+

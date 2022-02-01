@@ -45,3 +45,43 @@
 	ai_zeal = 30
 	ai_honor = -30
 }
+
+white_eyes = {
+	index = 334
+	genetic = yes
+	physical = yes
+	ruler_designer_cost = 0
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = {
+						exists = this
+					}
+				}
+				desc = trait_white_eyes_desc
+			}
+			desc = trait_white_eyes_character_desc
+		}
+	}
+}
+
+white_hair = {
+	index = 334
+	genetic = yes
+	physical = yes
+	ruler_designer_cost = 0
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = {
+						exists = this
+					}
+				}
+				desc = trait_white_hair_desc
+			}
+			desc = trait_white_hair_character_desc
+		}
+	}
+}
