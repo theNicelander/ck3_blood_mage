@@ -149,3 +149,229 @@ enhance_blood_mage_coven_decision_4 = {
 
 	ai_will_do = { base = 100 }
 }
+
+enhance_blood_mage_coven_decision_5 = {
+	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
+	major = yes
+	ai_check_interval = 0
+	desc = "Enhance Blood Mage Coven"
+
+	is_shown = {
+		has_trait = blood_mage
+		exists = house
+		is_house_head = yes
+		NOT = {
+			exists = var:enhance_bm_5
+		}
+	}
+
+	is_valid = {
+		house = {
+			any_adult_house_member = {
+				count >= 50
+				has_trait = blood_mage			
+			}
+		}
+		or = { # at least master
+			has_trait = blood_mage_3
+			has_trait = blood_mage_4
+			has_trait = blood_mage_5
+		}
+	}
+
+	effect = { 
+		enhance_blood_mage_coven_decision_effects = yes
+		set_variable = { 
+			name = enhance_bm_5
+		}
+	}
+
+	ai_will_do = { base = 100 }
+}
+
+enhance_blood_mage_coven_decision_6 = {
+	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
+	major = yes
+	ai_check_interval = 0
+	desc = "Enhance Blood Mage Coven"
+
+	is_shown = {
+		has_trait = blood_mage
+		exists = house
+		is_house_head = yes
+		NOT = {
+			exists = var:enhance_bm_6
+		}
+	}
+
+	is_valid = {
+		house = {
+			any_adult_house_member = {
+				count >= 50
+				has_trait = blood_mage			
+			}
+		}
+		or = { # at least arch-mage
+			has_trait = blood_mage_4
+			has_trait = blood_mage_5
+		}
+	}
+
+	effect = { 
+		enhance_blood_mage_coven_decision_effects = yes
+		set_variable = { 
+			name = enhance_bm_6
+		}
+	}
+
+	ai_will_do = { base = 100 }
+}
+
+enhance_blood_mage_coven_decision_7 = {
+	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
+	major = yes
+	ai_check_interval = 0
+	desc = "Enhance Blood Mage Coven"
+
+	is_shown = {
+		has_trait = blood_mage
+		exists = house
+		is_house_head = yes
+		NOT = {
+			exists = var:enhance_bm_7
+		}
+	}
+
+	is_valid = {
+		house = {
+			any_adult_house_member = {
+				count >= 100
+				has_trait = blood_mage			
+			}
+		}
+		or = { # at least arch-mage
+			has_trait = blood_mage_4
+			has_trait = blood_mage_5
+		}
+	}
+
+	effect = { 
+		enhance_blood_mage_coven_decision_effects = yes
+		set_variable = { 
+			name = enhance_bm_7
+		}
+	}
+
+	ai_will_do = { base = 100 }
+}
+
+enhance_blood_mage_coven_decision_8 = {
+	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
+	major = yes
+	ai_check_interval = 0
+	desc = "Enhance Blood Mage Coven"
+
+	is_shown = {
+		has_trait = blood_mage
+		exists = house
+		is_house_head = yes
+		NOT = {
+			exists = var:enhance_bm_8
+		}
+	}
+
+	is_valid = {
+		house = {
+			any_adult_house_member = {
+				count >= 100
+				has_trait = blood_mage			
+			}
+		}
+		or = { # at least supreme
+			has_trait = blood_mage_5
+		}
+	}
+
+	effect = { 
+		enhance_blood_mage_coven_decision_effects = yes
+		set_variable = { 
+			name = enhance_bm_8
+		}
+	}
+
+	ai_will_do = { base = 100 }
+}
+
+enhance_blood_mage_coven_decision_9 = {
+	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
+	major = yes
+	ai_check_interval = 0
+	desc = "Enhance Blood Mage Coven"
+
+	is_shown = {
+		has_trait = blood_mage
+		exists = house
+		is_house_head = yes
+		NOT = {
+			exists = var:enhance_bm_9
+		}
+	}
+
+	is_valid = {
+		house = {
+			any_adult_house_member = {
+				count >= 150
+				has_trait = blood_mage			
+			}
+		}
+		or = { # at least supreme
+			has_trait = blood_mage_5
+		}
+	}
+
+	effect = { 
+		enhance_blood_mage_coven_decision_effects = yes
+		set_variable = { 
+			name = enhance_bm_9
+		}
+	}
+
+	ai_will_do = { base = 100 }
+}
+
+enhance_blood_mage_coven_decision_10 = {
+	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
+	major = yes
+	ai_check_interval = 0
+	desc = "Enhance Blood Mage Coven"
+
+	is_shown = {
+		has_trait = blood_mage
+		exists = house
+		is_house_head = yes
+		NOT = {
+			exists = var:enhance_bm_10
+		}
+	}
+
+	is_valid = {
+		house = {
+			any_adult_house_member = {
+				count >= 200
+				has_trait = blood_mage			
+			}
+		}
+		or = { # at least supreme
+			has_trait = blood_mage_5
+		}
+	}
+
+	effect = { 
+		enhance_blood_mage_coven_decision_effects = yes
+		set_variable = { 
+			name = enhance_bm_10
+		}
+	}
+
+	ai_will_do = { base = 100 }
+}
