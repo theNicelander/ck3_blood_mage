@@ -1,4 +1,13 @@
-﻿lifedrain_piety_cost = 75
+﻿# Counters
+enhance_blood_mage_coven_counter = 1
+
+increment_blood_mage_counter = {
+	value = enhance_blood_mage_coven_counter
+	add = 1
+}
+
+# Lifedraining
+lifedrain_piety_cost = 75
 trait_drain_base_piety_cost = -150
 trait_drain_level_1_piety_cost = -250
 trait_drain_level_2_piety_cost = -450
