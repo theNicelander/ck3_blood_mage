@@ -1,115 +1,71 @@
-﻿found_aspiring_blood_mage_coven_decision = {
+﻿enhance_blood_mage_coven_decision_1 = {
 	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
 	major = yes
 	ai_check_interval = 0
-	desc = found_aspiring_blood_mage_coven_decision_desc
+	desc = "Enhance Blood Mage Coven"
+
 	is_shown = {
 		has_trait = blood_mage
 		exists = house
+		is_house_head = yes
 		NOT = {
-			house = {
-				has_house_modifier = blood_mage_coven_piety_modifier
-			}
+			exists = var:enhance_bm_1
 		}
 	}
-	is_valid = {
-		is_house_head = yes
 
-		# Want at least 3 blood mages in the family before
+	is_valid = {
 		house = {
 			any_adult_house_member = {
-				count >= 3
-				has_trait = blood_mage
+				count >= 1
+				has_trait = blood_mage			
 			}
 		}
 	}
-	is_valid_showing_failures_only = {
+
+	effect = { 
+		enhance_blood_mage_coven_decision_effects = yes
+		set_variable = { name = enhance_bm_1 }
 	}
-	effect = {
-		blood_mage_coven_decision_piety_effects = yes
-	}
-	ai_will_do = {
-		base = 100
-	}
+
+	ai_will_do = { base = 100 }
 }
 
-found_blood_mage_coven_decision = {
+enhance_blood_mage_coven_decision_2 = {
 	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
 	major = yes
 	ai_check_interval = 0
-	desc = found_blood_mage_coven_decision_desc
+	desc = "Enhance Blood Mage Coven"
+
 	is_shown = {
 		has_trait = blood_mage
 		exists = house
-		house = {
-			has_house_modifier = blood_mage_coven_piety_modifier
-		}
+		is_house_head = yes
 		NOT = {
-			house = {
-				has_house_modifier = blood_mage_coven_prestige_modifier
-			}
+			exists = var:enhance_bm_2
 		}
 	}
-	is_valid = {
-		is_house_head = yes
 
-		# Want at least 25 blood mages in the family before
+	is_valid = {
 		house = {
 			any_adult_house_member = {
-				count >= 25
-				has_trait = blood_mage
+				count >= 1
+				has_trait = blood_mage			
 			}
 		}
+		or = {
+			has_trait = blood_mage_2
+			has_trait = blood_mage_3
+			has_trait = blood_mage_4
+			has_trait = blood_mage_5
+		}
 	}
-	is_valid_showing_failures_only = {
-	}
-	effect = {
-		blood_mage_coven_decision_prestige_effects = yes
-	}
-	ai_will_do = {
-		base = 100
-	}
-}
 
-found_grand_blood_mage_coven_decision = {
-	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
-	major = yes
-	ai_check_interval = 0
-	desc = found_grand_blood_mage_coven_decision_desc
-	is_shown = {
-		has_trait = blood_mage
-		exists = house
+	effect = { 
+		enhance_blood_mage_coven_decision_effects = yes
+		set_variable = { 
+			name = enhance_bm_2 
+		}
+	}
 
-		house = {
-			has_house_modifier = blood_mage_coven_piety_modifier
-			has_house_modifier = blood_mage_coven_prestige_modifier
-		}
-		NOT = {
-			exists = var:gran_blood_mage_coven_exists
-		}
-	
-	}
-	is_valid = {
-		is_house_head = yes
-
-		# Want at least 100 blood mages in the family before
-		house = {
-			any_adult_house_member = {
-				count >= 100
-				has_trait = blood_mage
-			}
-		}
-	}
-	is_valid_showing_failures_only = {
-	}
-	effect = {
-		blood_mage_coven_decision_prestige_effects = yes
-		blood_mage_coven_decision_piety_effects = yes
-		set_variable = {
-			name = gran_blood_mage_coven_exists
-		}
-	}
-	ai_will_do = {
-		base = 100
-	}
+	ai_will_do = { base = 100 }
 }
