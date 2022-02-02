@@ -16,7 +16,7 @@
 	is_valid = {
 		house = {
 			any_adult_house_member = {
-				count >= 1
+				count >= 3
 				has_trait = blood_mage			
 			}
 		}
@@ -48,7 +48,7 @@ enhance_blood_mage_coven_decision_2 = {
 	is_valid = {
 		house = {
 			any_adult_house_member = {
-				count >= 1
+				count >= 10
 				has_trait = blood_mage			
 			}
 		}
@@ -89,7 +89,7 @@ enhance_blood_mage_coven_decision_3 = {
 	is_valid = {
 		house = {
 			any_adult_house_member = {
-				count >= 1
+				count >= 25
 				has_trait = blood_mage			
 			}
 		}
@@ -105,6 +105,45 @@ enhance_blood_mage_coven_decision_3 = {
 		enhance_blood_mage_coven_decision_effects = yes
 		set_variable = { 
 			name = enhance_bm_3
+		}
+	}
+
+	ai_will_do = { base = 100 }
+}
+
+enhance_blood_mage_coven_decision_4 = {
+	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
+	major = yes
+	ai_check_interval = 0
+	desc = "Enhance Blood Mage Coven"
+
+	is_shown = {
+		has_trait = blood_mage
+		exists = house
+		is_house_head = yes
+		NOT = {
+			exists = var:enhance_bm_4
+		}
+	}
+
+	is_valid = {
+		house = {
+			any_adult_house_member = {
+				count >= 25
+				has_trait = blood_mage			
+			}
+		}
+		or = { # at least master
+			has_trait = blood_mage_3
+			has_trait = blood_mage_4
+			has_trait = blood_mage_5
+		}
+	}
+
+	effect = { 
+		enhance_blood_mage_coven_decision_effects = yes
+		set_variable = { 
+			name = enhance_bm_4
 		}
 	}
 
