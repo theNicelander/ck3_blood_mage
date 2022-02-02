@@ -1,20 +1,26 @@
-﻿blood_mage = {
+﻿blood_mage_1 = {
 	# setup 
-	index = 333
+	group = lifestyle_blood_mage
+	level = 1
+	index = 330
+
+	# Genetic
 	fame = yes
 	good = yes
 	genetic = yes
-	birth = 1
-	random_creation = 1
-	inherit_chance = 50
-	learning_per_stress_level = 4
-	opposites = {
-		witch
-	}
+	birth = 0.5
+	random_creation = 0.5
+	inherit_chance = 0.5
 
 	# benefits
 	ruler_designer_cost = 100
 	flag = can_murder_own_children
+	learning_per_stress_level = 1
+
+	opposites = {
+		witch
+	}
+
 	# description
 	desc = {
 		first_valid = {
@@ -24,30 +30,64 @@
 						exists = this
 					}
 				}
-				desc = trait_blood_mage_desc
+				desc = trait_blood_mage_1_desc
 			}
-			desc = trait_blood_mage_character_desc
+			desc = trait_blood_mage_1_character_desc
 		}
 	}
-	# Make blood magic fall under witchcraft in faiths
-	triggered_opinion = {
-		parameter = witchcraft_illegal
-		opinion_modifier = witchcraft_crime
-		ignore_opinion_value_if_same_trait = yes
-	}
-	triggered_opinion = {
-		parameter = witchcraft_shunned
-		opinion_modifier = witchcraft_intolerant
-		ignore_opinion_value_if_same_trait = yes
-	}
+
 	# AI behaviour
-	ai_rationality = 30
+	ai_rationality = 100
+	ai_zeal = 30
+	ai_honor = -30
+}
+
+blood_mage_2 = {
+	# setup 
+	group = lifestyle_blood_mage
+	level = 2
+	index = 331
+
+	# Genetic
+	fame = yes
+	good = yes
+	genetic = yes
+	birth = 0.5
+	random_creation = 0.5
+	inherit_chance = 0.5
+
+	# benefits
+	ruler_designer_cost = 200
+	flag = can_murder_own_children
+	learning_per_stress_level = 2
+
+	opposites = {
+		witch
+	}
+
+	# description
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = {
+						exists = this
+					}
+				}
+				desc = trait_blood_mage_2_desc
+			}
+			desc = trait_blood_mage_2_character_desc
+		}
+	}
+	
+	# AI behaviour
+	ai_rationality = 100
 	ai_zeal = 30
 	ai_honor = -30
 }
 
 white_eyes = {
-	index = 334
+	index = 340
 	genetic = yes
 	physical = yes
 	ruler_designer_cost = 0
@@ -67,7 +107,7 @@ white_eyes = {
 }
 
 white_hair = {
-	index = 335
+	index = 341
 	genetic = yes
 	physical = yes
 	ruler_designer_cost = 0
