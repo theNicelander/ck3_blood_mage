@@ -25,7 +25,7 @@ grant_blood_magic_interaction = {
 			add_opinion = {
 				target = scope:actor
 				modifier = granted_blood_magic_modifier
-				opinion = 50
+				opinion = 100
 			}
 		}
 		scope:actor = {
@@ -126,11 +126,37 @@ ask_for_blood_magic_interaction = {
 	ai_min_reply_days = 1
 	ai_max_reply_days = 1
 
-	ai_potential = {
-		is_adult = yes
-	}
-	ai_will_do = {
-		base = 100
+	ai_potential = { is_adult = yes }
+	ai_will_do = { base = 100 }
+}
+
+grant_lifeforce_interaction = {
+	category = interaction_category_religion
+	auto_accept = yes
+	common_interaction = yes
+	desc = grant_lifeforce_interaction_desc
+	interface_priority = 150
+
+	cost = { piety = lifedrain_piety_cost }
+
+	is_shown = {
+		scope:actor = {
+			has_trait = blood_mage
+			has_character_modifier = lifeforce_modifier
+		}
 	}
 
+	on_accept = {
+		scope:recipient = {
+			add_character_modifier = lifeforce_modifier
+			add_opinion = {
+				target = scope:actor
+				modifier = granted_lifeforce_modifier
+				opinion = 50
+			}
+		}
+		scope:actor = {
+			remove_character_modifier = lifeforce_modifier
+		}
+	}
 }
