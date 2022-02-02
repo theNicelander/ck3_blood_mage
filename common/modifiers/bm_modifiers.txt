@@ -4,7 +4,7 @@ lifeforce_modifier = {
 	health = 0.5
 	years_of_fertility = 5
 	life_expectancy = 5
-	negate_prowess_penalty_add = 1
+	negate_prowess_penalty_add = 10
 	stacking = yes
 }
 
@@ -25,6 +25,12 @@ blood_mage_coven_prestige_modifier = {
 
 # Grant blood magic modifier
 granted_blood_magic_modifier = {
+	monthly_change = 0.1
+	decaying = yes
+}
+
+# Grant blood magic modifier
+granted_lifeforce_modifier = {
 	monthly_change = 0.1
 	decaying = yes
 }
