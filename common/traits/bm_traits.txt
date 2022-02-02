@@ -1,47 +1,159 @@
-﻿blood_mage = {
-	# setup 
-	index = 333
+﻿blood_mage_1 = {
+	# code stuff
+	index = 331
+	group = blood_mage
+	level = 1
+	ruler_designer_cost = 100
+
+	# trait type
 	fame = yes
 	good = yes
 	genetic = yes
+	opposites = { witch }
+
+	# genetic
+	birth = 1
+	random_creation = 1
+	inherit_chance = 75
+	both_parent_has_trait_inherit_chance = 100
+
+	# benefits
+	learning_per_stress_level = 4
+	flag = can_murder_own_children
+	years_of_fertility = 5
+	life_expectancy = 5
+
+	# description
+	desc = trait_blood_mage_desc
+
+	# AI behaviour
+	ai_rationality = 100
+}
+
+blood_mage_2 = {
+	# code stuff
+	index = 332
+	group = blood_mage
+	level = 2
+	ruler_designer_cost = 250
+
+	# trait type
+	fame = yes
+	good = yes
+	genetic = yes
+	opposites = { witch }
+
+	# genetic
 	birth = 1
 	random_creation = 1
 	inherit_chance = 50
-	learning_per_stress_level = 4
-	opposites = {
-		witch
-	}
+	both_parent_has_trait_inherit_chance = 90
 
 	# benefits
-	ruler_designer_cost = 100
+	learning_per_stress_level = 4
 	flag = can_murder_own_children
+	years_of_fertility = 10
+	life_expectancy = 10
+
 	# description
-	desc = {
-		first_valid = {
-			triggered_desc = {
-				trigger = {
-					NOT = {
-						exists = this
-					}
-				}
-				desc = trait_blood_mage_desc
-			}
-			desc = trait_blood_mage_character_desc
-		}
-	}
-	# Make blood magic fall under witchcraft in faiths
-	triggered_opinion = {
-		parameter = witchcraft_illegal
-		opinion_modifier = witchcraft_crime
-		ignore_opinion_value_if_same_trait = yes
-	}
-	triggered_opinion = {
-		parameter = witchcraft_shunned
-		opinion_modifier = witchcraft_intolerant
-		ignore_opinion_value_if_same_trait = yes
-	}
+	desc = trait_blood_mage_desc
+
 	# AI behaviour
-	ai_rationality = 30
-	ai_zeal = 30
-	ai_honor = -30
+	ai_rationality = 100
+}
+
+blood_mage_3 = {
+	# code stuff
+	index = 333
+	group = blood_mage
+	level = 3
+	ruler_designer_cost = 250
+
+	# trait type
+	fame = yes
+	good = yes
+	genetic = yes
+	opposites = { witch }
+
+	# genetic
+	birth = 1
+	random_creation = 1
+	inherit_chance = 20
+	both_parent_has_trait_inherit_chance = 50
+
+	# benefits
+	learning_per_stress_level = 4
+	flag = can_murder_own_children
+	years_of_fertility = 20
+	life_expectancy = 20
+
+	# description
+	desc = trait_blood_mage_desc
+
+	# AI behaviour
+	ai_rationality = 100
+}
+
+blood_mage_4 = {
+	# code stuff
+	index = 334
+	group = blood_mage
+	level = 4
+	ruler_designer_cost = 250
+
+	# trait type
+	fame = yes
+	good = yes
+	genetic = yes
+	opposites = { witch }
+
+	# genetic
+	birth = 1
+	random_creation = 1
+	inherit_chance = 0
+	both_parent_has_trait_inherit_chance = 33
+
+	# benefits
+	learning_per_stress_level = 4
+	flag = can_murder_own_children
+	years_of_fertility = 30
+	life_expectancy = 30
+
+	# description
+	desc = trait_blood_mage_desc
+
+	# AI behaviour
+	ai_rationality = 100
+}
+
+blood_mage_5 = {
+	# code stuff
+	index = 335
+	group = blood_mage
+	level = 5
+	ruler_designer_cost = 250
+
+	# trait type
+	fame = yes
+	good = yes
+	genetic = yes
+	opposites = { witch }
+
+	# genetic
+	birth = 1
+	random_creation = 1
+	inherit_chance = 0
+	both_parent_has_trait_inherit_chance = 10
+
+	# benefits
+	learning_per_stress_level = 4
+	flag = can_murder_own_children
+	years_of_fertility = 50
+	life_expectancy = 50
+
+	# description
+	desc = trait_blood_mage_desc
+
+	# AI behaviour
+	ai_rationality = 100
 }
