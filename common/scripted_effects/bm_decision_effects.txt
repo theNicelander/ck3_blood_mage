@@ -16,3 +16,12 @@ blood_mage_coven_decision_prestige_effects = {
 		}
 	}
 }
+
+enhance_blood_mage_coven_decision_effects = {
+	save_scope_as = founder
+	house = {
+		add_house_modifier = {
+			modifier = blood_mage_coven_modifier
+		}
+	}
+}
