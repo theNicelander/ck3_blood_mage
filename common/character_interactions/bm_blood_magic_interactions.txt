@@ -5,7 +5,7 @@
 	desc = grant_blood_magic_interaction_desc
 	interface_priority = 150
 
-	cost = { piety = 1000 }
+	cost = { piety = 500 }
 
 	is_shown = {
 		scope:recipient = { 
@@ -23,7 +23,8 @@
 
 	on_accept = {
 		scope:actor = {
-			add_trait = blood_mage
+			add_trait = blood_mage_1
+			add_piety_level = -1
 		}
 	}
 	
