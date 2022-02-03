@@ -1,0 +1,74 @@
+﻿# enhance power
+
+namespace = bm_enhance_power
+
+bm_enhance_power.001 = {
+	type = character_event
+	title = bm_enhance_power.001.title
+	desc = bm_enhance_power.001.desc
+	theme = witchcraft
+	
+	# Enhance power
+	option = {
+		name = bm_lifedrain.001.a
+
+		remove_character_modifier = lifeforce_modifier
+		
+		if = { limit = { has_trait = blood_mage_1 } add_stress = 20 }
+		if = { limit = { has_trait = blood_mage_2 } add_stress = 40 }
+		if = { limit = { has_trait = blood_mage_3 } add_stress = 60 }
+		if = { limit = { has_trait = blood_mage_4 } add_stress = 100 }
+
+		random_list = { 
+			25 = {
+				change_trait_rank = {
+					trait = blood_mage
+					rank = 1
+					max = 5
+				}
+				add_piety_level = -1
+			}
+			
+			75 = { 
+				modifier = { # 25 / (65 + 75 + 25) = ~15%
+					has_trait = blood_mage_2
+					add = 65
+				} 
+				modifier = { # 25 / (150 + 75 + 25) = ~10%
+					has_trait = blood_mage_3
+					add = 150
+				} 
+				modifier = { # 25 / (400 + 75 + 25) = ~5%
+					has_trait = blood_mage_4
+					add = 400
+				} 
+				add_character_modifier = {
+					modifier = lifeforce_modifier_negative
+					days = 365
+				}
+			}
+		}
+
+		ai_chance = {
+			base = 20
+		}
+	}
+
+	# Do nothing
+	option = {
+		name = bm_enhance_power.001.z 
+		ai_chance = {
+			base = 5
+		}
+	}
+
+	# Portraits
+	left_portrait ={
+		character = root
+		animation = rage
+	}
+	right_portrait ={
+		character = scope:recipient
+		animation = beg
+	}
+}
