@@ -8,14 +8,17 @@
 	cost = { piety = 1000 }
 
 	is_shown = {
-		scope:recipient = {
+		scope:recipient = { 
 			has_trait = blood_mage
-		}
-		scope:actor = {
-			NOT = {
-				has_trait = blood_mage
+			OR = {
+				has_relation_lover = scope:actor
+				has_relation_friend = scope:actor
+				has_relation_best_friend = scope:actor
+				has_relation_soulmate = scope:actor
 			}
 		}
+		
+		scope:actor = { NOT = { has_trait = blood_mage } }
 	}
 
 	on_accept = {
