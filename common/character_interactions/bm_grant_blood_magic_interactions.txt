@@ -1,0 +1,217 @@
+grant_blood_magic_interaction_novice = {
+	category = interaction_category_religion
+	auto_accept = yes
+	common_interaction = yes
+	desc = grant_blood_magic_interaction_desc
+	interface_priority = 150
+
+	cost = { piety = 250 }
+
+	is_shown = {
+		scope:actor = {
+			has_trait = blood_mage_1
+			has_character_modifier = lifeforce_modifier
+		}
+		
+		scope:recipient = {
+			NOT = { has_trait = blood_mage }
+		}
+	}
+
+	on_accept = {
+		scope:recipient = {
+			add_trait = blood_mage_1
+			add_opinion = {
+				target = scope:actor
+				modifier = granted_blood_magic_modifier
+				opinion = 100
+			}
+		}
+		scope:actor = {
+			add_stress = grant_blood_magic_stress_cost
+			remove_character_modifier = lifeforce_modifier
+			add_character_modifier = {
+				modifier = lifeforce_modifier_negative
+				days = 365
+			}
+		}
+	}
+
+	# AI
+	ai_potential = { is_adult = yes }
+	ai_targets = { ai_recipients = family }
+
+	# Same as witch
+	ai_will_do = {
+		base = -45
+		ai_willingness_to_do_postitive_magic = yes
+	}
+}
+
+grant_blood_magic_interaction_blood_mage = {
+	category = interaction_category_religion
+	auto_accept = yes
+	common_interaction = yes
+	desc = grant_blood_magic_interaction_desc
+	interface_priority = 150
+
+	cost = { piety = 250 }
+
+	is_shown = {
+		scope:actor = {
+			has_trait = blood_mage_2
+			has_character_modifier = lifeforce_modifier
+		}
+		
+		scope:recipient = {
+			NOT = { has_trait = blood_mage }
+		}
+	}
+
+	on_accept = {
+		scope:recipient = {
+			add_trait = blood_mage_1
+			add_opinion = {
+				target = scope:actor
+				modifier = granted_blood_magic_modifier
+				opinion = 100
+			}
+		}
+		scope:actor = {
+			add_stress = grant_blood_magic_stress_cost
+			remove_character_modifier = lifeforce_modifier
+			add_character_modifier = {
+				modifier = lifeforce_modifier_negative
+				days = 365
+			}
+		}
+	}
+
+	# AI
+	ai_potential = { is_adult = yes }
+	ai_targets = { ai_recipients = family }
+
+	# Same as witch
+	ai_will_do = {
+		base = -45
+		ai_willingness_to_do_postitive_magic = yes
+	}
+}
+
+grant_blood_magic_interaction_master = {
+	category = interaction_category_religion
+	auto_accept = yes
+	common_interaction = yes
+	desc = grant_blood_magic_interaction_desc
+	interface_priority = 150
+
+	cost = { piety = 250 }
+
+	is_shown = {
+		scope:actor = {
+			has_trait = blood_mage_3
+			has_character_modifier = lifeforce_modifier
+		}
+		
+		scope:recipient = {
+			NOT = {
+				OR = {
+					has_trait = blood_mage_2
+					has_trait = blood_mage_3
+					has_trait = blood_mage_4
+					has_trait = blood_mage_5
+				}
+			}
+		}
+	}
+
+	on_accept = {
+		scope:recipient = {
+			remove_trait = blood_mage
+			add_trait = blood_mage_2
+			add_opinion = {
+				target = scope:actor
+				modifier = granted_blood_magic_modifier
+				opinion = 100
+			}
+		}
+		scope:actor = {
+			add_stress = grant_blood_magic_stress_cost
+			remove_character_modifier = lifeforce_modifier
+			add_character_modifier = {
+				modifier = lifeforce_modifier_negative
+				days = 365
+			}
+		}
+	}
+
+	# AI
+	ai_potential = { is_adult = yes }
+	ai_targets = { ai_recipients = family }
+
+	# Same as witch
+	ai_will_do = {
+		base = -45
+		ai_willingness_to_do_postitive_magic = yes
+	}
+}
+
+grant_blood_magic_interaction_arch_or_supreme_mage = {
+	category = interaction_category_religion
+	auto_accept = yes
+	common_interaction = yes
+	desc = grant_blood_magic_interaction_desc
+	interface_priority = 150
+
+	cost = { piety = 250 }
+
+	is_shown = {
+		scope:actor = {
+			OR = {
+				has_trait = blood_mage_4
+				has_trait = blood_mage_5
+			}
+			has_character_modifier = lifeforce_modifier
+		}
+		
+		scope:recipient = {
+			NOT = {
+				OR = {
+					has_trait = blood_mage_3
+					has_trait = blood_mage_4
+					has_trait = blood_mage_5
+				}
+			}
+		}
+	}
+
+	on_accept = {
+		scope:recipient = {
+			remove_trait = blood_mage
+			add_trait = blood_mage_3
+			add_opinion = {
+				target = scope:actor
+				modifier = granted_blood_magic_modifier
+				opinion = 100
+			}
+		}
+		scope:actor = {
+			add_stress = grant_blood_magic_stress_cost
+			remove_character_modifier = lifeforce_modifier
+			add_character_modifier = {
+				modifier = lifeforce_modifier_negative
+				days = 365
+			}
+		}
+	}
+
+	# AI
+	ai_potential = { is_adult = yes }
+	ai_targets = { ai_recipients = family }
+
+	# Same as witch
+	ai_will_do = {
+		base = -45
+		ai_willingness_to_do_postitive_magic = yes
+	}
+}
