@@ -66,13 +66,20 @@ bm_stroll_town.002 = {
 	option = {
 		name = "They are about to die, might as well bolster my lifeforce"
 		add_character_modifier = { modifier = lifeforce_modifier }
+		random_list = {
 
-		root.capital_county = {
-			add_county_modifier = {
-				modifier = drained_beggar_holding
-				years = 5
+			50 = {
+				root.capital_county = {
+					add_county_modifier = {
+						modifier = drained_beggar_holding
+						years = 5
+					}
+				}
+			}
+			50 = {
 			}
 		}
+
 		scope:beggar = { death = { death_reason = death_sacrificed_to_gods } }
 
 		add_dread = 20
