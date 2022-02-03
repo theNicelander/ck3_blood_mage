@@ -25,3 +25,10 @@ enhance_blood_mage_coven_decision_effects = {
 		}
 	}
 }
+
+temporary_negative_lifeforce_effect = {
+	add_character_modifier = {
+		modifier = lifeforce_modifier_negative
+		days = 365
+	}
+}

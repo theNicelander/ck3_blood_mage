@@ -42,10 +42,7 @@ bm_enhance_power.001 = {
 					has_trait = blood_mage_4
 					add = 400
 				} 
-				add_character_modifier = {
-					modifier = lifeforce_modifier_negative
-					days = 365
-				}
+				temporary_negative_lifeforce_effect = yes
 			}
 		}
 
