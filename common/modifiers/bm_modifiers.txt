@@ -58,3 +58,16 @@ learning_lifeforce_modifier = {
 	icon = learning_positive
 	learning = 5
 }
+
+# Event modifiers
+drained_beggar_personal = {
+	icon = magic_negative
+	general_opinion = -10
+}
+drained_beggar_holding = {
+	icon = magic_negative
+	county_opinion_add = -10
+	stacking = yes
+}
+
+

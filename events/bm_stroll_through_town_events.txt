@@ -38,16 +38,58 @@ bm_stroll_town.001 = {
 bm_stroll_town.002 = {
 	type = character_event
 	title = "Found a beggar in the town square"
-	desc = "In the middle of the square, I see a man dressed in rags. He's asking people for money"
+	desc = "In the middle of the square, I see a beggar dressed in rags asking people for money"
 	theme = default
+
+	# Create the beggar
+	immediate = { 
+		hidden_effect = { 
+			create_character = {
+				name = "Beggar"
+				dynasty = beggarface
+				location = root.capital_province
+				gender_female_chance = 50
+				save_scope_as = beggar
+				culture = root.culture
+				trait = wounded_3
+				trait = ill
+				trait = one_eyed
+				trait = one_legged
+				trait = drunkard
+				trait = scarred
+				trait = spindly
+			}
+		}
+	}
+
+	# Lifedrain
+	option = {
+		name = "They are about to die, might as well bolster my lifeforce"
+		add_character_modifier = { modifier = lifeforce_modifier }
+
+		root.capital_county = {
+			add_county_modifier = {
+				modifier = drained_beggar_holding
+				years = 5
+			}
+		}
+		scope:beggar = { death = { death_reason = death_sacrificed_to_gods } }
+
+		add_dread = 20
+
+		ai_chance = { base = 10 }
+	}
+
 
 	# Do nothing
 	option = {
-		name = "Poor man, best leave him alone"
+		name = "Best to leave..."
 		ai_chance = {
 			base = 5
 		}
 	}
+
+	
 
 	# Portraits
 	left_portrait ={
@@ -55,7 +97,9 @@ bm_stroll_town.002 = {
 		animation = idle
 	}
 	right_portrait ={
-		character = bm_beggar_custom_char
-		animation = idle
+		character = scope:beggar
+		animation = beg
+
+
 	}
 }
