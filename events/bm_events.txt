@@ -33,6 +33,10 @@ bm_lifedrain.001 = {
 				has_trait = intellect_good
 			}
 		}
+		add_character_modifier = {
+			modifier = lifeforce_modifier_negative
+			days = 365
+		}
 
 		# Carry out logic
 		duel = {
@@ -75,6 +79,10 @@ bm_lifedrain.001 = {
 			scope:recipient = {
 				has_trait = physique_good
 			}
+		}
+		add_character_modifier = {
+			modifier = lifeforce_modifier_negative
+			days = 365
 		}
 
 		# Carry out logic
@@ -119,6 +127,10 @@ bm_lifedrain.001 = {
 				has_trait = beauty_good
 			}
 		}
+		add_character_modifier = {
+			modifier = lifeforce_modifier_negative
+			days = 365
+		}
 
 		# Carry out logic
 		duel = {
@@ -160,6 +172,11 @@ bm_lifedrain.001 = {
 				has_trait = fecund
 			}
 		}
+		add_character_modifier = {
+			modifier = lifeforce_modifier_negative
+			days = 365
+		}
+
 		scope:actor = {
 			# Carry out logic
 			duel = {
@@ -196,6 +213,10 @@ bm_lifedrain.001 = {
 				has_trait = giant
 			}
 		}
+		add_character_modifier = {
+			modifier = lifeforce_modifier_negative
+			days = 365
+		}
 		scope:actor = {
 			# Carry out logic
 			duel = {
@@ -231,6 +252,10 @@ bm_lifedrain.001 = {
 			scope:recipient = {
 				has_trait = pure_blooded
 			}
+		}
+		add_character_modifier = {
+			modifier = lifeforce_modifier_negative
+			days = 365
 		}
 		scope:actor = {
 			# Carry out logic
