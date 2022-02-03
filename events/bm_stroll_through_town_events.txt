@@ -1,0 +1,61 @@
+﻿# lifedrain event
+
+namespace = bm_stroll_town
+
+bm_stroll_town.001 = {
+	type = character_event
+	title = "Strolling in town"
+	desc = "As I walk through the market there are many parts of town I could explore"
+	theme = default
+	
+
+	option = {
+		name = "Find a beggar"
+		trigger_event = { 
+			id = bm_stroll_town.002
+		} 
+	}
+
+	option = {
+		name = "Go to the local hospital"
+	}
+
+	# Do nothing
+	option = {
+		name = "Go back home"
+		ai_chance = {
+			base = 5
+		}
+	}
+
+	# Portraits
+	left_portrait ={
+		character = root
+		animation = idle
+	}
+}
+
+bm_stroll_town.002 = {
+	type = character_event
+	title = "Found a beggar in the town square"
+	desc = "In the middle of the square, I see a man dressed in rags. He's asking people for money"
+	theme = default
+
+	# Do nothing
+	option = {
+		name = "Poor man, best leave him alone"
+		ai_chance = {
+			base = 5
+		}
+	}
+
+	# Portraits
+	left_portrait ={
+		character = root
+		animation = idle
+	}
+	right_portrait ={
+		character = bm_beggar_custom_char
+		animation = idle
+	}
+}
