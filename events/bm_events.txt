@@ -50,6 +50,7 @@ bm_lifedrain.001 = {
 					multiplier = 2
 				}
 				desc = "I drain their intellect"
+				if = { limit = { has_trait = intellect_good_2 } add_piety_level = -1 }
 				intellect_drain_trait_effects = yes
 			}
 			30 = {
@@ -99,6 +100,7 @@ bm_lifedrain.001 = {
 					multiplier = 2
 				}
 				desc = "I drain their strength"
+				if = { limit = { has_trait = physique_good_2 } add_piety_level = -1 }
 				physique_drain_trait_effects = yes
 			}
 			30 = {
@@ -149,6 +151,7 @@ bm_lifedrain.001 = {
 					multiplier = 2
 				}
 				desc = "I drain their Beauty"
+				if = { limit = { has_trait = beauty_good_2 } add_piety_level = -1 }
 				beauty_drain_trait_effects = yes
 			}
 			30 = {
@@ -274,7 +277,7 @@ bm_lifedrain.001 = {
 			modifier = lifeforce_modifier_negative
 			days = 365
 		}
-		
+
 		scope:actor = {
 			# Carry out logic
 			duel = {
