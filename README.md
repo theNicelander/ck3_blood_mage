@@ -15,16 +15,16 @@ They can expend their own `lifeforce` in various ways, as well as access a range
     - If the player already has the trait, it becomes less successful
 - Grant others the power of `blood magic`, at the cost of their own `lifeforce` and `piety`
 - Ask friends to be granted the power of blood magic, at a **VERY large** cost of `piety` 
-- Form blood mage covenants, growing in power as the dynasty grows
-- A unique blood mage faith, with holy sites on islands, mainly in the Mediterranean. 
+- Form Blood Mage covenants, growing in power as the dynasty grows
+- A unique Blood Mage faith, with holy sites on islands, mainly in the Mediterranean. 
 - Spend `lifeforce` to gain temporary buffs to their skills
-- Unique blood mage duchy building
+- Unique Blood Mage duchy building
 
 <img src="thumbnail.jpg"/>
 
 ## Lifeforce modifier (stackable)
-The `lifeforce` modifier forms the core of the power of any blood mage. 
-It allows the blood mage to prolong their life, as long as they can keep the supply of lifeforce going. 
+The `lifeforce` modifier forms the core of the power of any Blood Mage. 
+It allows the Blood Mage to prolong their life, as long as they can keep the supply of lifeforce going. 
 
 **Blood mages are _NOT_ immortal.** 
 
@@ -37,6 +37,6 @@ https://trello.com/b/1qS7Y4n0/ck3-blood-mage-mod
 
 Key upcoming features: 
 
-* Unique blood mage Men-at-arms
+* Unique Blood Mage Men-at-arms
 * Events that effect `lifeforce`
 * Imbue artefacts with lifeforce (1.5)
