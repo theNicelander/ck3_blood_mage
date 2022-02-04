@@ -40,6 +40,7 @@ enhance_personal_blood_mage_power = {
 	ai_will_do = { base = 10 }
 }
 
+<<<<<<< HEAD
 take_a_stroll_through_town = {
 	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
 	major = no
@@ -53,4 +54,18 @@ take_a_stroll_through_town = {
 
 	ai_will_do = { base = 10 }
 
+=======
+mass_lifedrain_prisoners_decision = {
+	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
+	major = no
+	ai_check_interval = 0
+	desc = mass_lifedrain_prisoners_decision_desc
+
+	is_shown = { has_trait = blood_mage }
+	
+	effect = { trigger_event = { id = bm_mass_lifedrain.001 } }
+	
+	# AI
+	ai_will_do = { base = 10 }
+>>>>>>> main
 }

@@ -1,0 +1,84 @@
+﻿# lifedrain event
+
+namespace = bm_mass_lifedrain
+
+bm_mass_lifedrain.001 = {
+	type = character_event
+	title = bm_lifedrain.001.title
+	desc = bm_lifedrain.001.desc
+	theme = prison
+
+	immediate = {
+		every_prisoner = { save_scope_as = everyone_in_prison }
+		every_prisoner = {
+
+			save_scope_as = everyone_in_prison_no_trait_not_related
+		}
+		
+	}
+
+	# Drain everyone
+	option = {
+		name = bm_mass_lifedrain.001.a
+		ai_chance = { base = 5 }
+
+		# Execute everyone
+		every_prisoner = {
+			# Get lifeforce
+			root = { add_character_modifier = { modifier = lifeforce_modifier } }
+
+			# Lifedrain execution
+			save_scope_as = executed
+			lifedrain_execution_effect = {
+				VICTIM = scope:executed
+				EXECUTIONER = root
+			}
+		}
+	}
+
+	# Drain everyone who's not useful
+	option = {
+		name = bm_mass_lifedrain.001.b
+		ai_chance = { base = 5 }
+
+		# Execute everyone
+		every_prisoner = {
+			limit = {
+				# Not with good traits
+				NOR = {
+					has_trait = intellect_good
+					has_trait = physique_good
+					has_trait = beauty_good
+					has_trait = giant
+					has_trait = fecund
+					has_trait = pure_blooded
+				}
+				# Not of your dynasty
+				NOT = { is_close_family_of = root }
+			}
+			save_scope_as = executed
+			# Get lifeforce
+			root = { add_character_modifier = { modifier = lifeforce_modifier } }
+
+			# Lifedrain execution
+			lifedrain_execution_effect = {
+				VICTIM = scope:executed
+				EXECUTIONER = root
+			}
+		}
+	}
+
+	# Do nothing
+	option = {
+		name = bm_mass_lifedrain.001.z 
+		ai_chance = {
+			base = 5
+		}
+	}
+	
+	# Portraits
+	left_portrait ={
+		character = root
+		animation = rage
+	}
+}
