@@ -1,0 +1,27 @@
+﻿cure_illness_interaction = {
+	interface_priority = 30
+	category = interaction_category_religion
+	desc = "Cure illness"
+	is_shown = {
+		scope:actor = { has_trait = blood_mage }
+		scope:recipient = { 
+			
+		}
+	}
+	cost = {
+		
+	}
+	on_accept = {
+		scope:recipient = {
+			send_interface_toast = {
+				left_icon = scope:actor
+
+			}
+		}
+		scope:actor = {
+
+		}
+	}
+	auto_accept = yes
+	
+}
