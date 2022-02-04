@@ -14,35 +14,43 @@ bm_enhance_power.001 = {
 
 		remove_character_modifier = lifeforce_modifier
 		
-		if = { limit = { has_trait = blood_mage_1 } add_stress = 20 }
-		if = { limit = { has_trait = blood_mage_2 } add_stress = 40 }
-		if = { limit = { has_trait = blood_mage_3 } add_stress = 60 }
-		if = { limit = { has_trait = blood_mage_4 } add_stress = 100 }
+		if = { limit = { has_trait = blood_mage_1 } add_stress = 10 }
+		if = { limit = { has_trait = blood_mage_2 } add_stress = 20 }
+		if = { limit = { has_trait = blood_mage_3 } add_stress = 40 }
+		if = { limit = { has_trait = blood_mage_4 } add_stress = 80 }
 
-		random_list = { 
-			25 = {
+		duel = { 
+			skill = learning
+			value = 0
+			0 = {
 				change_trait_rank = {
 					trait = blood_mage
 					rank = 1
 					max = 5
 				}
-				add_piety_level = -1
+				add_piety_level = enhance_blood_mage_personal_piety_level_cost_negative
+
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 2
+				}
 			}
 			
-			75 = { 
-				modifier = { # 25 / (65 + 75 + 25) = ~15%
-					has_trait = blood_mage_2
-					add = 65
-				} 
-				modifier = { # 25 / (150 + 75 + 25) = ~10%
-					has_trait = blood_mage_3
-					add = 150
-				} 
-				modifier = { # 25 / (400 + 75 + 25) = ~5%
-					has_trait = blood_mage_4
-					add = 400
-				} 
+			10 = { 
 				temporary_negative_lifeforce_effect = yes
+				
+				modifier = {
+					has_trait = blood_mage_2
+					add = 30
+				} 
+				modifier = {
+					has_trait = blood_mage_3
+					add = 90
+				} 
+				modifier = {
+					has_trait = blood_mage_4
+					add = 270
+				} 
 			}
 		}
 

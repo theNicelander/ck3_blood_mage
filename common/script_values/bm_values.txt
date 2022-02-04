@@ -60,3 +60,19 @@ enhance_blood_mage_personal_piety_level_cost = {
 		add = 3
 	}
 }
+
+enhance_blood_mage_personal_piety_level_cost_negative = {
+	add = -1
+	if = { 
+		limit = { has_trait = blood_mage_2 }
+		add = -1
+	}
+	if = { 
+		limit = { has_trait = blood_mage_3 }
+		add = -2
+	}
+	if = { 
+		limit = { has_trait = blood_mage_4 }
+		add = -3
+	}
+}
