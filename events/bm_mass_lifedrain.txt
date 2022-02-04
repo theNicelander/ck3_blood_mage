@@ -11,6 +11,38 @@ bm_mass_lifedrain.001 = {
 	immediate = {
 		every_prisoner = { save_scope_as = everyone_in_prison }
 		every_prisoner = {
+
+			save_scope_as = everyone_in_prison_no_trait_not_related
+		}
+		
+	}
+
+	# Drain everyone
+	option = {
+		name = bm_mass_lifedrain.001.a
+		ai_chance = { base = 5 }
+
+		# Execute everyone
+		every_prisoner = {
+			# Get lifeforce
+			root = { add_character_modifier = { modifier = lifeforce_modifier } }
+
+			# Lifedrain execution
+			save_scope_as = executed
+			lifedrain_execution_effect = {
+				VICTIM = scope:executed
+				EXECUTIONER = root
+			}
+		}
+	}
+
+	# Drain everyone who's not useful
+	option = {
+		name = bm_mass_lifedrain.001.b
+		ai_chance = { base = 5 }
+
+		# Execute everyone
+		every_prisoner = {
 			limit = {
 				# Not with good traits
 				NOR = {
@@ -22,28 +54,17 @@ bm_mass_lifedrain.001 = {
 					has_trait = pure_blooded
 				}
 				# Not of your dynasty
-				not = { is_close_family_of = scope:actor }
+				NOT = { is_close_family_of = root }
 			}
-			save_scope_as = everyone_in_prison_no_trait_not_related
-		}
-		
-	}
+			save_scope_as = executed
+			# Get lifeforce
+			root = { add_character_modifier = { modifier = lifeforce_modifier } }
 
-	# Drain everyone
-	option = {
-		name = bm_mass_lifedrain.001.a
-		ai_chance = { base = 5 }
-
-		# Get lifeforce before they die
-		every_prisoner = { root = { add_character_modifier = { modifier = lifeforce_modifier } } }
-		
-		# Execute everyone
-		every_prisoner = {
-			execute_prisoner_effect = {
-				VICTIM = scope:recipient
+			# Lifedrain execution
+			lifedrain_execution_effect = {
+				VICTIM = scope:executed
 				EXECUTIONER = root
 			}
-			# death = { death_reason = death_sacrificed_to_gods }
 		}
 	}
 
