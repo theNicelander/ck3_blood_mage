@@ -10,13 +10,21 @@ bm_channel_lifeforce.99 = {
 
 	option = { 
 		name = "I want to learn faster"
-		ai_chance = { base = 10 } 
+		magic_used = yes
+
 		add_piety = lifedrain_piety_cost_neg
-		trigger_event = { id = bm_channel_lifeforce.0001 }
+		add_character_modifier = {
+			modifier = exp_lifeforce_modifier
+			days = 1825
+		}
+
+		trigger = { NOT = { has_character_modifier = exp_lifeforce_modifier } }
+
+		ai_chance = { base = 10 } 
 	}
 
 	option = { 
-		name = "Focus on my skills"
+		name = "I want to improve my skills temporarily"
 		ai_chance = { base = 10 } 
 
 		trigger_event = { id = bm_channel_lifeforce.0001 }
@@ -69,6 +77,7 @@ bm_channel_lifeforce.0001 = {
 	option = {
 		name = "Channel Stewardship"
 		magic_used = yes
+
 		add_character_modifier = {
 			modifier = stewardship_lifeforce_modifier
 			days = 1825
@@ -95,6 +104,7 @@ bm_channel_lifeforce.0001 = {
 	option = {
 		name = "Channel Learning"
 		magic_used = yes
+
 		add_character_modifier = {
 			modifier = learning_lifeforce_modifier
 			days = 1825
@@ -104,7 +114,6 @@ bm_channel_lifeforce.0001 = {
 		trigger = { NOT = { has_character_modifier = learning_lifeforce_modifier } }
 		ai_chance = { base = 100 }
 	}
-	
 
 	# Do nothing
 	option = { 
