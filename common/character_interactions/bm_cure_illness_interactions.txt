@@ -45,7 +45,12 @@ heal_disease_medium = {
 
 	cost = { piety = heal_disease_medium_cost }
 	is_shown = {
-		scope:actor = { has_trait = blood_mage }
+		scope:actor = { 
+			has_trait = blood_mage_2
+			has_trait = blood_mage_3
+			has_trait = blood_mage_4
+			has_trait = blood_mage_5 
+		}
 		scope:recipient = {
 			OR = {				
 				has_trait = wounded_2
@@ -90,7 +95,11 @@ heal_disease_severe = {
 
 	cost = { piety = heal_disease_severe_cost }
 	is_shown = {
-		scope:actor = { has_trait = blood_mage }
+		scope:actor = { 
+			has_trait = blood_mage_3
+			has_trait = blood_mage_4
+			has_trait = blood_mage_5 
+		}
 		scope:recipient = {
 			OR = {				
 				has_trait = wounded_3
@@ -133,7 +142,10 @@ heal_disease_critical = {
 
 	cost = { piety = heal_disease_critical_cost }
 	is_shown = {
-		scope:actor = { has_trait = blood_mage }
+		scope:actor = {
+			has_trait = blood_mage_4
+			has_trait = blood_mage_5
+		}
 		scope:recipient = {
 			OR = {				
 				has_trait = great_pox
