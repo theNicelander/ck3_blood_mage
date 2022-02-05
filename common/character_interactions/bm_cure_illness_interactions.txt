@@ -1,27 +1,64 @@
 ﻿cure_illness_interaction = {
-	interface_priority = 300
+	interface_priority = 333
 	category = interaction_category_friendly
 	desc = "Cure illness"
 	is_shown = {
 		scope:actor = { has_trait = blood_mage }
-		scope:recipient = { 
-			
+		scope:recipient = {
+			OR = {
+				has_trait = wounded_1
+				has_trait = wounded_2
+				has_trait = wounded_3
+				has_trait = impotent
+				has_trait = infirm
+				has_trait = incapable
+				has_trait = maimed
+				has_trait = blind
+				
+				has_trait = ill
+				has_trait = pneumonic
+				has_trait = great_pox
+				has_trait = early_great_pox
+				has_trait = lovers_pox
+				has_trait = leper
+				has_trait = gout_ridden
+				has_trait = consumption
+				has_trait = cancer
+				has_trait = typhus
+				has_trait = bubonic_plague
+				has_trait = smallpox
+			}
 		}
 	}
-	cost = {
-		
+	cost = { 
+		piety = 10
+		piety = 50
 	}
 	on_accept = {
 		scope:recipient = {
-			send_interface_toast = {
-				left_icon = scope:actor
-
-			}
-		}
-		scope:actor = {
-
+			send_interface_toast = { left_icon = scope:actor }
+			remove_trait = wounded_1
+			remove_trait = wounded_2
+			remove_trait = wounded_3
+			remove_trait = impotent
+			remove_trait = infirm
+			remove_trait = incapable
+			remove_trait = maimed
+			remove_trait = blind
+			
+			remove_trait = ill
+			remove_trait = pneumonic
+			remove_trait = great_pox
+			remove_trait = early_great_pox
+			remove_trait = lovers_pox
+			remove_trait = leper
+			remove_trait = gout_ridden
+			remove_trait = consumption
+			remove_trait = cancer
+			remove_trait = typhus
+			remove_trait = bubonic_plague
+			remove_trait = smallpox
 		}
 	}
 	auto_accept = yes
-	
 }
