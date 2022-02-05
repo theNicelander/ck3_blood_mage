@@ -8,6 +8,7 @@
 	cost = { piety = 250 }
 
 	is_shown = {
+		NOT = { scope:actor = scope:recipient }
 		scope:actor = {
 			OR = {
 				has_trait = blood_mage_2
@@ -62,6 +63,7 @@ grant_blood_magic_interaction_regular = {
 	cost = { piety = 250 }
 
 	is_shown = {
+		NOT = { scope:actor = scope:recipient }
 		scope:actor = {
 			OR = {
 				has_trait = blood_mage_3
@@ -133,6 +135,7 @@ grant_blood_magic_interaction_master = {
 	cost = { piety = 250 }
 
 	is_shown = {
+		NOT = { scope:actor = scope:recipient }
 		scope:actor = {
 			OR = {
 				has_trait = blood_mage_4
