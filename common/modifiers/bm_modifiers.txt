@@ -70,4 +70,17 @@ drained_beggar_holding = {
 	stacking = yes
 }
 
+# Opinion modifiers 
+magic_opinion_positive = {
+	icon = magic_positive
+	stacking = yes
+	decaying = yes
+}
 
+magic_opinion_negative = {
+	icon = magic_negative
+	stacking = yes
+	decaying = yes
+	opinion = 75
+	years = 25
+}

@@ -4,117 +4,109 @@ cure_illness_cost_medium = 125
 cure_illness_cost_large = 200
 cure_illness_cost_xlarge = 350
 
-cure_health_cost_per_negative_trait = {
+heal_disease_minor_cost = {
 	value = 0
-
-	# Small
 	if = { 
-		limit = { has_trait = wounded_1 }
+		limit = { scope:recipient = { has_trait = wounded_1 } }
 		add = cure_illness_cost_small
 	}
+	# Small
+	if = { 
+		limit = { scope:recipient = { has_trait = ill } }
+		add = cure_illness_cost_small
+	}
+	if = { 
+		limit = { scope:recipient = { has_trait = lovers_pox } }
+		add = cure_illness_cost_small
+	}
+	if = { 
+		limit = { scope:recipient = { has_trait = gout_ridden } }
+		add = cure_illness_cost_small
+	}
+}
 
-	# Medium
+heal_disease_medium_cost = {
+	value = 0
 	if = { 
-		limit = { has_trait = wounded_2 }
+		limit = { scope:recipient = { has_trait = wounded_2 } }
 		add = cure_illness_cost_medium
 	}
 	if = { 
-		limit = { has_trait = infirm }
+		limit = { scope:recipient = { has_trait = infirm } }
 		add = cure_illness_cost_medium
 	}
 	if = { 
-		limit = { has_trait = maimed }
+		limit = { scope:recipient = { has_trait = maimed } }
 		add = cure_illness_cost_medium
 	}
 	if = { 
-		limit = { has_trait = blind }
+		limit = { scope:recipient = { has_trait = blind } }
 		add = cure_illness_cost_medium
 	}
+	if = { 
+		limit = { scope:recipient = { has_trait = wounded_2 } }
+		add = cure_illness_cost_medium
+	}
+	if = { 
+		limit = { scope:recipient = { has_trait = consumption } }
+		add = cure_illness_cost_medium
+	}
+	if = { 
+		limit = { scope:recipient = { has_trait = early_great_pox } }
+		add = cure_illness_cost_medium
+	}
+	if = { 
+		limit = { scope:recipient = { has_trait = typhus } }
+		add = cure_illness_cost_medium
+	}
+}
 
-	# Large
+heal_disease_severe_cost = {
+# Large
 	if = { 
-		limit = { has_trait = wounded_3 }
+		limit = { scope:recipient = { has_trait = wounded_3 } }
 		add = cure_illness_cost_large
 	}
 	if = { 
-		limit = { has_trait = impotent }
+		limit = { scope:recipient = { has_trait = impotent } }
 		add = cure_illness_cost_large
 	}
 	if = { 
-		limit = { has_trait = sickly }
+		limit = { scope:recipient = { has_trait = sickly } }
 		add = cure_illness_cost_large
 	}
 	if = { 
-		limit = { has_trait = incapable }
+		limit = { scope:recipient = { has_trait = incapable } }
+		add = cure_illness_cost_large
+	}
+	if = { 
+		limit = { scope:recipient = { has_trait = pneumonic } }
+		add = cure_illness_cost_large
+	}
+	if = { 
+		limit = { scope:recipient = { has_trait = leper } }
 		add = cure_illness_cost_large
 	}
 }
 
-cure_illness_cost_per_negative_trait = {
+heal_disease_critical_cost = {
 	value = 0
-
-	# Small
-	if = { 
-		limit = { has_trait = ill }
-		add = cure_illness_cost_small
-	}
-	if = { 
-		limit = { has_trait = lovers_pox }
-		add = cure_illness_cost_small
-	}
-	if = { 
-		limit = { has_trait = gout_ridden }
-		add = cure_illness_cost_small
-	}
-
-	# Medium
-	if = { 
-		limit = { has_trait = wounded_2 }
-		add = cure_illness_cost_medium
-	}
-	if = { 
-		limit = { has_trait = consumption }
-		add = cure_illness_cost_medium
-	}
-	if = { 
-		limit = { has_trait = early_great_pox }
-		add = cure_illness_cost_medium
-	}
-	if = { 
-		limit = { has_trait = typhus }
-		add = cure_illness_cost_medium
-	}
-
-
-	# Large
-	if = { 
-		limit = { has_trait = wounded_3 }
-		add = cure_illness_cost_large
-	}
-	if = { 
-		limit = { has_trait = pneumonic }
-		add = cure_illness_cost_large
-	}
-	if = { 
-		limit = { has_trait = leper }
-		add = cure_illness_cost_large
-	}
 
 	# Extra Large
 	if = { 
-		limit = { has_trait = great_pox }
+		limit = { scope:recipient = { has_trait = great_pox } }
 		add = cure_illness_cost_xlarge
 	}
 	if = { 
-		limit = { has_trait = cancer }
+		limit = { scope:recipient = { has_trait = cancer } }
 		add = cure_illness_cost_xlarge
 	}
 	if = { 
-		limit = { has_trait = bubonic_plague }
+		limit = { scope:recipient = { has_trait = bubonic_plague } }
 		add = cure_illness_cost_xlarge
 	}
 	if = { 
-		limit = { has_trait = smallpox }
+		limit = { scope:recipient = { has_trait = smallpox } }
 		add = cure_illness_cost_xlarge
 	}
 }

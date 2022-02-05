@@ -1,63 +1,164 @@
-﻿cure_illness_interaction = {
-	interface_priority = 333
+﻿heal_disease_minor = {
+	interface_priority = 200
 	category = interaction_category_friendly
-	desc = "Cure illness"
+	desc = heal_disease_minor_desc
+	common_interaction = yes
+
+	cost = { piety = heal_disease_minor_cost }
 	is_shown = {
 		scope:actor = { has_trait = blood_mage }
 		scope:recipient = {
-			OR = {
+			OR = {				
 				has_trait = wounded_1
+				has_trait = ill
+				has_trait = lovers_pox
+				has_trait = gout_ridden
+			}
+		}
+	}
+
+	on_accept = {
+		scope:actor = { minor_magic_used = yes }
+		scope:recipient = {
+			send_interface_toast = { left_icon = scope:actor }
+			remove_trait = wounded_1
+			remove_trait = ill
+			remove_trait = lovers_pox
+			remove_trait = gout_ridden
+
+			add_opinion = {
+				target = scope:actor
+				opinion = 25
+				modifier = magic_opinion_positive
+				years = 5
+			}
+		}
+	}
+	auto_accept = yes
+}
+
+heal_disease_medium = {
+	interface_priority = 200
+	category = interaction_category_friendly
+	desc = heal_disease_medium_desc
+	common_interaction = yes
+
+	cost = { piety = heal_disease_medium_cost }
+	is_shown = {
+		scope:actor = { has_trait = blood_mage }
+		scope:recipient = {
+			OR = {				
 				has_trait = wounded_2
-				has_trait = wounded_3
-				has_trait = impotent
 				has_trait = infirm
-				has_trait = incapable
 				has_trait = maimed
 				has_trait = blind
-				
-				has_trait = ill
-				has_trait = pneumonic
-				has_trait = great_pox
-				has_trait = early_great_pox
-				has_trait = lovers_pox
-				has_trait = leper
-				has_trait = gout_ridden
 				has_trait = consumption
-				has_trait = cancer
+				has_trait = early_great_pox
 				has_trait = typhus
+			}
+		}
+	}
+
+	on_accept = {
+		scope:actor = { magic_used = yes }
+		scope:recipient = {
+			send_interface_toast = { left_icon = scope:actor }
+			remove_trait = wounded_2
+			remove_trait = infirm
+			remove_trait = maimed
+			remove_trait = blind
+			remove_trait = consumption
+			remove_trait = early_great_pox
+			remove_trait = typhus
+
+			add_opinion = {
+				target = scope:actor
+				opinion = 50
+				modifier = magic_opinion_positive
+				years = 10
+			}
+		}
+	}
+	auto_accept = yes
+}
+
+heal_disease_severe = {
+	interface_priority = 200
+	category = interaction_category_friendly
+	desc = heal_disease_severe_desc
+	common_interaction = yes
+
+	cost = { piety = heal_disease_severe_cost }
+	is_shown = {
+		scope:actor = { has_trait = blood_mage }
+		scope:recipient = {
+			OR = {				
+				has_trait = wounded_3
+				has_trait = impotent
+				has_trait = sickly
+				has_trait = incapable
+				has_trait = pneumonic
+				has_trait = leper
+			}
+		}
+	}
+
+	on_accept = {
+		scope:actor = { magic_used = yes }
+		scope:recipient = {
+			send_interface_toast = { left_icon = scope:actor }
+			remove_trait = wounded_3
+			remove_trait = impotent
+			remove_trait = sickly
+			remove_trait = incapable
+			remove_trait = pneumonic
+			remove_trait = leper
+
+			add_opinion = {
+				target = scope:actor
+				opinion = 75
+				modifier = magic_opinion_positive
+				years = 25
+			}
+		}
+	}
+	auto_accept = yes
+}
+
+heal_disease_critical = {
+	interface_priority = 200
+	category = interaction_category_friendly
+	desc = heal_disease_critical_desc
+	common_interaction = yes
+
+	cost = { piety = heal_disease_critical_cost }
+	is_shown = {
+		scope:actor = { has_trait = blood_mage }
+		scope:recipient = {
+			OR = {				
+				has_trait = great_pox
+				has_trait = cancer
 				has_trait = bubonic_plague
 				has_trait = smallpox
 			}
 		}
 	}
-	cost = { 
-		piety = 10
-		piety = 50
-	}
+
 	on_accept = {
+		scope:actor = { major_magic_used = yes }
 		scope:recipient = {
 			send_interface_toast = { left_icon = scope:actor }
-			remove_trait = wounded_1
-			remove_trait = wounded_2
-			remove_trait = wounded_3
-			remove_trait = impotent
-			remove_trait = infirm
-			remove_trait = incapable
-			remove_trait = maimed
-			remove_trait = blind
-			
-			remove_trait = ill
-			remove_trait = pneumonic
 			remove_trait = great_pox
-			remove_trait = early_great_pox
-			remove_trait = lovers_pox
-			remove_trait = leper
-			remove_trait = gout_ridden
-			remove_trait = consumption
 			remove_trait = cancer
-			remove_trait = typhus
 			remove_trait = bubonic_plague
 			remove_trait = smallpox
+
+			add_opinion = {
+				target = scope:actor
+				opinion = 100
+				modifier = magic_opinion_positive
+				years = 50
+			}
 		}
 	}
 	auto_accept = yes
