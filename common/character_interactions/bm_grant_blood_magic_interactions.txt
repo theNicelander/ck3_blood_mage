@@ -1,9 +1,9 @@
 ﻿grant_blood_magic_interaction_novice = {
-	category = interaction_category_religion
+	category = interaction_category_friendly
 	auto_accept = yes
 	common_interaction = yes
 	desc = grant_blood_magic_interaction_desc
-	interface_priority = 150
+	interface_priority = 200
 
 	cost = { piety = 250 }
 
@@ -54,11 +54,11 @@
 }
 
 grant_blood_magic_interaction_regular = {
-	category = interaction_category_religion
+	category = interaction_category_friendly
 	auto_accept = yes
 	common_interaction = yes
 	desc = grant_blood_magic_interaction_desc
-	interface_priority = 150
+	interface_priority = 201
 
 	cost = { piety = 250 }
 
@@ -125,11 +125,11 @@ grant_blood_magic_interaction_regular = {
 }
 
 grant_blood_magic_interaction_master = {
-	category = interaction_category_religion
+	category = interaction_category_friendly
 	auto_accept = yes
 	common_interaction = yes
 	desc = grant_blood_magic_interaction_desc
-	interface_priority = 150
+	interface_priority = 202
 
 	cost = { piety = 250 }
 

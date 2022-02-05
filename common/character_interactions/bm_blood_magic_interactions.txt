@@ -1,5 +1,5 @@
 ﻿ask_for_blood_magic_interaction = {
-	category = interaction_category_religion
+	category = interaction_category_friendly
 	auto_accept = yes
 	common_interaction = yes
 	desc = grant_blood_magic_interaction_desc
@@ -37,11 +37,11 @@
 }
 
 grant_lifeforce_interaction = {
-	category = interaction_category_religion
+	category = interaction_category_friendly
 	auto_accept = yes
 	common_interaction = yes
 	desc = grant_lifeforce_interaction_desc
-	interface_priority = 150
+	interface_priority = 200
 
 	cost = { piety = lifedrain_piety_cost }
 
