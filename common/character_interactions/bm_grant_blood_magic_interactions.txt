@@ -15,14 +15,13 @@
 				has_trait = blood_mage_4
 				has_trait = blood_mage_5
 			}
-			has_character_modifier = lifeforce_modifier
 		}
 		
-		scope:recipient = {
-			NOT = { has_trait = blood_mage }
-		}
+		scope:recipient = { NOT = { has_trait = blood_mage } }
 	}
 
+	is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier } }
+	
 	on_accept = {
 		scope:recipient = {
 			add_trait = blood_mage_1
@@ -69,8 +68,6 @@ grant_blood_magic_interaction_regular = {
 				has_trait = blood_mage_4
 				has_trait = blood_mage_5
 			}
-			
-			has_character_modifier = lifeforce_modifier
 		}
 		
 		scope:recipient = {
@@ -84,6 +81,8 @@ grant_blood_magic_interaction_regular = {
 			}
 		}
 	}
+
+	is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier } }
 
 	on_accept = {
 		scope:recipient = {
@@ -139,7 +138,6 @@ grant_blood_magic_interaction_master = {
 				has_trait = blood_mage_4
 				has_trait = blood_mage_5
 			}
-			has_character_modifier = lifeforce_modifier
 		}
 		
 		scope:recipient = {
@@ -152,6 +150,8 @@ grant_blood_magic_interaction_master = {
 			}
 		}
 	}
+
+	is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier } }
 
 	on_accept = {
 		scope:recipient = {

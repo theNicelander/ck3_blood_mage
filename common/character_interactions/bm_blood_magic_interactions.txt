@@ -45,12 +45,9 @@ grant_lifeforce_interaction = {
 
 	cost = { piety = lifedrain_piety_cost }
 
-	is_shown = {
-		scope:actor = {
-			has_trait = blood_mage
-			has_character_modifier = lifeforce_modifier
-		}
-	}
+	is_shown = { scope:actor = { has_trait = blood_mage } }
+
+	is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier } }
 
 	on_accept = {
 		scope:recipient = {

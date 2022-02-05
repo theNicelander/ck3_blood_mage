@@ -4,16 +4,12 @@ lifedrain_prisoner_event_interaction = {
 	category = interaction_category_hostile
 	desc = lifedrain_prisoner_interaction_desc
 	is_shown = {
-		scope:actor = {
-			has_trait = blood_mage
-		}
-		scope:recipient = {
-			is_imprisoned_by = scope:actor
-		}
+		scope:actor = { has_trait = blood_mage }
+		scope:recipient = { is_imprisoned_by = scope:actor }
 	}
-	cost = {
-		piety = lifedrain_piety_cost
-	}
+
+	cost = { piety = lifedrain_piety_cost 
+}
 	on_accept = {
 		scope:recipient = {
 			send_interface_toast = {
@@ -21,19 +17,13 @@ lifedrain_prisoner_event_interaction = {
 				custom_tooltip = lifedrain_prisoner_event_interaction.recipient.notification.tt
 			}
 		}
-		scope:actor = {
-			trigger_event = bm_lifedrain.001
-		}
+		scope:actor = { trigger_event = bm_lifedrain.001 }
 	}
 	auto_accept = yes
 
 	# AI
-	ai_targets = {
-		ai_recipients = prisoners
-	}
-	ai_potential = {
-		is_at_war = no
-	}
+	ai_targets = { ai_recipients = prisoners }
+	ai_potential = { is_at_war = no }
 
 	ai_frequency = 12
 
@@ -41,17 +31,13 @@ lifedrain_prisoner_event_interaction = {
 	ai_will_do = {
 		base = 20
 		opinion_modifier = {
-			trigger = {
-				NOT = {
-					scope:actor = scope:recipient
-				}
-			}
+			trigger = { NOT = { scope:actor = scope:recipient } }
 			opinion_target = scope:recipient
 			multiplier = -1
 		}
-		ai_value_modifier = {
-			ai_compassion = -1
-		}
+
+		ai_value_modifier = { ai_compassion = -1 }
+
 		modifier = {
 			add = -20
 			ai_compassion >= low_positive_ai_value
@@ -63,29 +49,17 @@ lifedrain_prisoner_event_interaction = {
 		modifier = {
 			add = -20
 			scope:actor.dynasty = scope:recipient.dynasty
-			NOT = {
-				faith = {
-					has_doctrine = doctrine_kinslaying_any_dynasty_member_crime
-				}
-			}
+			NOT = { faith = { has_doctrine = doctrine_kinslaying_any_dynasty_member_crime } }
 		}
 		modifier = {
 			add = -20
 			is_close_or_extended_family_of = scope:recipient
-			NOT = {
-				faith = {
-					has_doctrine = doctrine_kinslaying_extended_family_crime
-				}
-			}
+			NOT = { faith = { has_doctrine = doctrine_kinslaying_extended_family_crime } }
 		}
 		modifier = {
 			add = -20
 			is_close_family_of = scope:recipient
-			NOT = {
-				faith = {
-					has_doctrine = doctrine_kinslaying_close_kin_crime
-				}
-			}
+			NOT = { faith = { has_doctrine = doctrine_kinslaying_close_kin_crime } }
 		}
 		modifier = {
 			add = 50
