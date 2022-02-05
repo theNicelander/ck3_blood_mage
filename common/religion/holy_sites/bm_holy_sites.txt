@@ -1,10 +1,118 @@
-﻿venezia = {
-	county = c_venezia
-	barony = b_venezia
+﻿reykjavik = {
+	county = c_vestisland
+	barony = b_reykjavik
 	
 	character_modifier = {
 		learning = 2
-		monthly_lifestyle_xp_gain_mult = 0.02
+		monthly_lifestyle_xp_gain_mult = 0.025
+		health = 0.25
+		development_growth = 0.1
+	}
+}
+
+london = {
+	county = c_middlesex
+	barony = b_london
+	
+	character_modifier = {
+		learning = 2
+		monthly_lifestyle_xp_gain_mult = 0.025
+		health = 0.25
+		development_growth = 0.1
+	}
+}
+
+paris = {
+	county = c_ile_de_france
+	barony = b_paris
+	
+	character_modifier = {
+		learning = 2
+		monthly_lifestyle_xp_gain_mult = 0.025
+		health = 0.25
+		development_growth = 0.1
+	}
+}
+
+madrid = {
+	county = c_madrid
+	barony = b_madrid
+	
+	character_modifier = {
+		learning = 2
+		monthly_lifestyle_xp_gain_mult = 0.025
+		health = 0.25
+		development_growth = 0.1
+	}
+}
+
+oslo = {
+	county = c_vingulmork
+	barony = b_oslosyslar
+	
+	character_modifier = {
+		learning = 2
+		monthly_lifestyle_xp_gain_mult = 0.025
+		health = 0.25
+		development_growth = 0.1
+	}
+}
+
+stockholm = {
+	county = c_sodermannaland
+	barony = b_oslosyslar
+	
+	character_modifier = {
+		learning = 2
+		monthly_lifestyle_xp_gain_mult = 0.025
+		health = 0.25
+		development_growth = 0.1
+	}
+}
+
+dublin = {
+	county = c_dublin
+	barony = b_dublin
+	
+	character_modifier = {
+		learning = 2
+		monthly_lifestyle_xp_gain_mult = 0.025
+		health = 0.25
+		development_growth = 0.1
+	}
+}
+
+berlin = {
+	county = c_berlin
+	barony = b_berlin
+	
+	character_modifier = {
+		learning = 2
+		monthly_lifestyle_xp_gain_mult = 0.025
+		health = 0.25
+		development_growth = 0.1
+	}
+}
+
+copenhagen = {
+	county = c_sjaelland
+	barony = b_hafn
+	
+	character_modifier = {
+		learning = 2
+		monthly_lifestyle_xp_gain_mult = 0.025
+		health = 0.25
+		development_growth = 0.1
+	}
+}
+
+helsinki = {
+	county = c_nyland
+	barony = b_porvoo
+	
+	character_modifier = {
+		learning = 2
+		monthly_lifestyle_xp_gain_mult = 0.025
 		health = 0.25
 		development_growth = 0.1
 	}
@@ -15,79 +123,57 @@ malta = {
 	barony = b_malta
 	
 	character_modifier = {
-		learning_per_piety_level = 1
+		learning = 2
+		monthly_lifestyle_xp_gain_mult = 0.025
+		health = 0.25
 		development_growth = 0.1
 	}
 }
 
-cagliari = {
-	county = c_cagliari
-	barony = b_cagliari
+amsterdam = {
+	county = c_holland
+	barony = b_amsterdam
 	
 	character_modifier = {
-		stewardship_per_piety_level = 1
+		learning = 2
+		monthly_lifestyle_xp_gain_mult = 0.025
+		health = 0.25
 		development_growth = 0.1
 	}
 }
 
-gran_canaria = {
-	county = c_canarias
-	barony = b_grancanaria
+warsaw = {
+	county = c_czerska
+	barony = b_warszawa
 	
 	character_modifier = {
-		cultural_head_fascination_mult = 0.1
-		development_growth = 0.1
-	}
-
-}
-
-palma = {
-	county = c_mallorca
-	barony = b_palma
-	
-	character_modifier = {
-		county_opinion_add = 10
+		learning = 2
+		monthly_lifestyle_xp_gain_mult = 0.025
+		health = 0.25
 		development_growth = 0.1
 	}
 }
 
-visby = {
-	county = c_gutland
-	barony = b_wysbu
+lisbon = {
+	county = c_lisboa
+	barony = b_lisboa
 	
 	character_modifier = {
-		knight_limit = 2
-		prowess_per_piety_level = 1
+		learning = 2
+		monthly_lifestyle_xp_gain_mult = 0.025
+		health = 0.25
 		development_growth = 0.1
 	}
 }
 
-iraklio = {
-	county = c_chandax
-	barony = b_iraklio
+moscow = {
+	county = c_moskva
+	barony = b_moskva
 	
 	character_modifier = {
-		monthly_lifestyle_xp_gain_mult = 0.1
-		development_growth = 0.1
-	}
-}
-
-tamrida = {
-	county = c_socotra
-	barony = b_suq-socotra
-	
-	character_modifier = {
-		prowess_per_piety_level = 3
-		development_growth = 0.1
-	}
-}
-
-reykjavik = {
-	county = c_vestisland
-	barony = b_reykjavik
-	
-	character_modifier = {
-		learning_per_piety_level = 2
+		learning = 2
+		monthly_lifestyle_xp_gain_mult = 0.025
+		health = 0.25
 		development_growth = 0.1
 	}
 }
