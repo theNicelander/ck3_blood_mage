@@ -1,4 +1,6 @@
 ﻿# lifedrain event
+# See dashboard on how the duel calculations are done
+# https://share.streamlit.io/thenicelander/ck3_blood_mage_viz/main
 
 namespace = bm_lifedrain
 
@@ -40,23 +42,30 @@ bm_lifedrain.001 = {
 		duel = {
 			skill = learning
 			target = scope:recipient
-			10 = {
+			0 = {
+				
+				# Multiplier increases as your blood mage power increases
 				compare_modifier = {
 					value = scope:duel_value
-					multiplier = 2
+					multiplier = lifedrain_blood_mage_rank_multiplier
 				}
+
+				# Base chance increases as your blood mage power increases 
+				modifier = { add = lifedrain_blood_mage_rank_base }
+
 				desc = "I drain their intellect"
+
+				# Draining the last level of a levellable trait costs piety level
 				if = { limit = { has_trait = intellect_good_2 } add_piety_level = -1 }
+
+				# Success! Level up trait :)
 				intellect_drain_trait_effects = yes
 			}
-			30 = {
-				compare_modifier = {
-					value = scope:duel_value
-					min = 15
-					multiplier = -2
-				}
+			10 = {
 				desc = "I fail"
 				temporary_negative_lifeforce_effect = yes
+
+				modifier = { add = trait_drain_modifer_per_trait }
 			}
 		}
 
@@ -87,23 +96,30 @@ bm_lifedrain.001 = {
 		duel = {
 			skill = learning
 			target = scope:recipient
-			10 = {
+			0 = {
+				
+				# Multiplier increases as your blood mage power increases
 				compare_modifier = {
 					value = scope:duel_value
-					multiplier = 2
+					multiplier = lifedrain_blood_mage_rank_multiplier
 				}
+
+				# Base chance increases as your blood mage power increases 
+				modifier = { add = lifedrain_blood_mage_rank_base }
+
 				desc = "I drain their strength"
+
+				# Draining the last level of a levellable trait costs piety level
 				if = { limit = { has_trait = physique_good_2 } add_piety_level = -1 }
+
+				# Success! Level up trait :)
 				physique_drain_trait_effects = yes
 			}
-			30 = {
-				compare_modifier = {
-					value = scope:duel_value
-					min = 15
-					multiplier = -2
-				}
+			10 = {
 				desc = "I fail"
 				temporary_negative_lifeforce_effect = yes
+
+				modifier = { add = trait_drain_modifer_per_trait }
 			}
 		}
 		
@@ -134,23 +150,30 @@ bm_lifedrain.001 = {
 		duel = {
 			skill = learning
 			target = scope:recipient
-			10 = {
+			0 = {
+				
+				# Multiplier increases as your blood mage power increases
 				compare_modifier = {
 					value = scope:duel_value
-					multiplier = 2
+					multiplier = lifedrain_blood_mage_rank_multiplier
 				}
-				desc = "I drain their Beauty"
+
+				# Base chance increases as your blood mage power increases 
+				modifier = { add = lifedrain_blood_mage_rank_base }
+
+				desc = "I drain their beauty"
+
+				# Draining the last level of a levellable trait costs piety level
 				if = { limit = { has_trait = beauty_good_2 } add_piety_level = -1 }
+
+				# Success! Level up trait :)
 				beauty_drain_trait_effects = yes
 			}
-			30 = {
-				compare_modifier = {
-					value = scope:duel_value
-					min = 15
-					multiplier = -2
-				}
+			10 = {
 				desc = "I fail"
 				temporary_negative_lifeforce_effect = yes
+
+				modifier = { add = trait_drain_modifer_per_trait }
 			}
 		}
 		
@@ -181,16 +204,26 @@ bm_lifedrain.001 = {
 			duel = {
 				skill = learning
 				value = 0
-				20 = {
+				0 = {
+					# Multiplier increases as your blood mage power increases
 					compare_modifier = {
 						value = scope:duel_value
+						multiplier = lifedrain_blood_mage_rank_multiplier
 					}
+	
+					# Base chance increases as your blood mage power increases 
+					modifier = { add = lifedrain_blood_mage_rank_base }
+	
 					desc = "Nice"
+		
+					# Success!
 					add_trait = fecund
 				}
 				10 = {
 					desc = "I fail"
 					temporary_negative_lifeforce_effect = yes
+	
+					modifier = { add = trait_drain_modifer_per_trait }
 				}
 			}
 		}
@@ -222,16 +255,26 @@ bm_lifedrain.001 = {
 			duel = {
 				skill = learning
 				value = 0
-				20 = {
+				0 = {
+					# Multiplier increases as your blood mage power increases
 					compare_modifier = {
 						value = scope:duel_value
+						multiplier = lifedrain_blood_mage_rank_multiplier
 					}
+	
+					# Base chance increases as your blood mage power increases 
+					modifier = { add = lifedrain_blood_mage_rank_base }
+	
 					desc = "I become a Giant"
+		
+					# Success!
 					add_trait = giant
 				}
 				10 = {
 					desc = "I fail"
 					temporary_negative_lifeforce_effect = yes
+	
+					modifier = { add = trait_drain_modifer_per_trait }
 				}
 			}
 		}
@@ -263,16 +306,26 @@ bm_lifedrain.001 = {
 			duel = {
 				skill = learning
 				value = 0
-				20 = {
+				0 = {
+					# Multiplier increases as your blood mage power increases
 					compare_modifier = {
 						value = scope:duel_value
+						multiplier = lifedrain_blood_mage_rank_multiplier
 					}
-					desc = "I become Pure Blooded"
+	
+					# Base chance increases as your blood mage power increases 
+					modifier = { add = lifedrain_blood_mage_rank_base }
+	
+					desc = "I become a pure blooded"
+		
+					# Success!
 					add_trait = pure_blooded
 				}
 				10 = {
 					desc = "I fail"
 					temporary_negative_lifeforce_effect = yes
+	
+					modifier = { add = trait_drain_modifer_per_trait }
 				}
 			}
 		}

@@ -9,6 +9,10 @@ trait_drain_base_piety_cost = -150
 trait_drain_level_1_piety_cost = -250
 trait_drain_level_2_piety_cost = -450
 
+trait_drain_modifier_1 = 50
+trait_drain_modifier_2 = 100
+trait_drain_modifier_3 = 150
+
 trait_drain_intellect_cost = {
 	add = trait_drain_base_piety_cost
 	if = { 
@@ -75,4 +79,105 @@ enhance_blood_mage_personal_piety_level_cost_negative = {
 		limit = { has_trait = blood_mage_4 }
 		add = -3
 	}
+}
+
+lifedrain_blood_mage_rank_multiplier = {
+	add = 1
+	if = { 
+		limit = { has_trait = blood_mage_2 }
+		add = 1
+	}
+	if = { 
+		limit = { has_trait = blood_mage_3 }
+		add = 3
+	}
+	if = { 
+		limit = { has_trait = blood_mage_4 }
+		add = 6
+	}
+	if = { 
+		limit = { has_trait = blood_mage_5 }
+		add = 11
+	}
+}
+
+lifedrain_blood_mage_rank_base = {
+	value = 0
+	if = { 
+		limit = { has_trait = blood_mage_2 }
+		add = 10
+	}
+	if = { 
+		limit = { has_trait = blood_mage_3 }
+		add = 30
+	}
+	if = { 
+		limit = { has_trait = blood_mage_4 }
+		add = 90
+	}
+	if = { 
+		limit = { has_trait = blood_mage_5 }
+		add = 270
+	}
+}
+
+trait_drain_modifer_per_trait = {
+	value = 0
+
+	# intellect
+	if = { 
+		limit = { has_trait = intellect_good_1 }
+		add = trait_drain_modifier_1
+	}
+	if = { 
+		limit = { has_trait = intellect_good_2 }
+		add = trait_drain_modifier_2
+	}
+	if = { 
+		limit = { has_trait = intellect_good_3 }
+		add = trait_drain_modifier_3
+	}
+
+	# Physique
+	if = { 
+		limit = { has_trait = physique_good_1 }
+		add = trait_drain_modifier_1
+	}
+	if = { 
+		limit = { has_trait = physique_good_2 }
+		add = trait_drain_modifier_2
+	}
+	if = { 
+		limit = { has_trait = physique_good_3 }
+		add = trait_drain_modifier_3
+	}
+
+	# Beauty
+	if = { 
+		limit = { has_trait = beauty_good_1 }
+		add = trait_drain_modifier_1
+	}
+	if = { 
+		limit = { has_trait = beauty_good_2 }
+		add = trait_drain_modifier_2
+	}
+	if = { 
+		limit = { has_trait = beauty_good_3 }
+		add = trait_drain_modifier_3
+	}
+
+	# Other traits
+	if = { 
+		limit = { has_trait = giant }
+		add = trait_drain_modifier_1
+	}
+	if = { 
+		limit = { has_trait = fecund }
+		add = trait_drain_modifier_1
+	}
+	if = { 
+		limit = { has_trait = pure_blooded }
+		add = trait_drain_modifier_1
+	}
+
 }
