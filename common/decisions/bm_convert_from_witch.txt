@@ -1,0 +1,20 @@
+﻿convert_to_blood_magic_from_witch = {
+	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
+	major = yes
+	desc = convert_to_blood_magic_from_witch_desc
+
+	is_shown = {
+		has_trait = witch
+		not = { has_trait = blood_mage }
+	}
+
+	effect = {
+		remove_trait = witch
+		add_trait = blood_mage_1
+
+		custom_tooltip = "Gain Novice Blood Mage"
+	}
+
+	ai_check_interval = 12
+	ai_will_do = 50
+}
