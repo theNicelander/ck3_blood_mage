@@ -22,6 +22,8 @@ bm_enhance_power.001 = {
 		duel = { 
 			skill = learning
 			value = 0
+
+			# Success
 			0 = {
 				change_trait_rank = {
 					trait = blood_mage
@@ -36,8 +38,10 @@ bm_enhance_power.001 = {
 				}
 			}
 			
+			# Failed
 			10 = { 
 				temporary_negative_lifeforce_effect = yes
+				add_piety_level = -1
 				
 				modifier = {
 					has_trait = blood_mage_2
