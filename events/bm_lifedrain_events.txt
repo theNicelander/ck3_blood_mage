@@ -1,4 +1,6 @@
 ﻿# lifedrain event
+# See dashboard on how the duel calculations are done
+# https://share.streamlit.io/thenicelander/ck3_blood_mage_viz/main
 
 namespace = bm_lifedrain
 
@@ -14,6 +16,7 @@ bm_lifedrain.001 = {
 		add_character_modifier = {
 			modifier = lifeforce_modifier
 		}
+		add_stress = lifedrain_small_stress_cost
 		sacrifice_prisoner_effect = {
 			VICTIM = scope:recipient
 			EXECUTIONER = scope:actor
@@ -25,34 +28,44 @@ bm_lifedrain.001 = {
 
 	# Intellect drain -- Gain quick / intelligent / genius
 	option = {
-		# More expensive, the higher the trait you're trying to drain
-		add_piety = trait_drain_intellect_cost  
 		name = bm_lifedrain.001.b
 		trigger = {
 			scope:recipient = {
 				has_trait = intellect_good
 			}
 		}
+		# Cost
+		add_piety = trait_drain_intellect_cost
+		add_stress = trait_drain_stress_cost
 
 		# Carry out logic
 		duel = {
 			skill = learning
 			target = scope:recipient
-			10 = {
+			0 = {
+				
+				# Multiplier increases as your blood mage power increases
 				compare_modifier = {
 					value = scope:duel_value
-					multiplier = 2
+					multiplier = lifedrain_blood_mage_rank_multiplier
 				}
+
+				# Base chance increases as your blood mage power increases 
+				modifier = { add = lifedrain_blood_mage_rank_base }
+
 				desc = "I drain their intellect"
+
+				# Draining the last level of a levellable trait costs piety level
+				if = { limit = { has_trait = intellect_good_2 } add_piety_level = -1 }
+
+				# Success! Level up trait :)
 				intellect_drain_trait_effects = yes
 			}
-			30 = {
-				compare_modifier = {
-					value = scope:duel_value
-					min = 15
-					multiplier = -2
-				}
+			10 = {
 				desc = "I fail"
+				temporary_negative_lifeforce_effect = yes
+
+				modifier = { add = trait_drain_modifer_per_trait }
 			}
 		}
 
@@ -68,8 +81,6 @@ bm_lifedrain.001 = {
 
 	# Strength drain -- Gain hale / robust / (amazonian or herculean)
 	option = {
-		# More expensive, the higher the trait you're trying to drain
-		add_piety = trait_drain_physique_cost
 		name = bm_lifedrain.001.c
 		trigger = {
 			scope:recipient = {
@@ -77,25 +88,38 @@ bm_lifedrain.001 = {
 			}
 		}
 
+		# Cost
+		add_piety = trait_drain_physique_cost
+		add_stress = trait_drain_stress_cost
+
 		# Carry out logic
 		duel = {
 			skill = learning
 			target = scope:recipient
-			10 = {
+			0 = {
+				
+				# Multiplier increases as your blood mage power increases
 				compare_modifier = {
 					value = scope:duel_value
-					multiplier = 2
+					multiplier = lifedrain_blood_mage_rank_multiplier
 				}
+
+				# Base chance increases as your blood mage power increases 
+				modifier = { add = lifedrain_blood_mage_rank_base }
+
 				desc = "I drain their strength"
+
+				# Draining the last level of a levellable trait costs piety level
+				if = { limit = { has_trait = physique_good_2 } add_piety_level = -1 }
+
+				# Success! Level up trait :)
 				physique_drain_trait_effects = yes
 			}
-			30 = {
-				compare_modifier = {
-					value = scope:duel_value
-					min = 15
-					multiplier = -2
-				}
+			10 = {
 				desc = "I fail"
+				temporary_negative_lifeforce_effect = yes
+
+				modifier = { add = trait_drain_modifer_per_trait }
 			}
 		}
 		
@@ -111,8 +135,6 @@ bm_lifedrain.001 = {
 
 	# Beauty drain -- Gain comely / (pretty or handsome) / beautiful 
 	option = {
-		# More expensive, the higher the trait you're trying to drain
-		add_piety = trait_drain_beauty_cost
 		name = bm_lifedrain.001.d
 		trigger = {
 			scope:recipient = {
@@ -120,25 +142,38 @@ bm_lifedrain.001 = {
 			}
 		}
 
+		# Cost
+		add_piety = trait_drain_beauty_cost
+		add_stress = trait_drain_stress_cost
+
 		# Carry out logic
 		duel = {
 			skill = learning
 			target = scope:recipient
-			10 = {
+			0 = {
+				
+				# Multiplier increases as your blood mage power increases
 				compare_modifier = {
 					value = scope:duel_value
-					multiplier = 2
+					multiplier = lifedrain_blood_mage_rank_multiplier
 				}
-				desc = "I drain their Beauty"
+
+				# Base chance increases as your blood mage power increases 
+				modifier = { add = lifedrain_blood_mage_rank_base }
+
+				desc = "I drain their beauty"
+
+				# Draining the last level of a levellable trait costs piety level
+				if = { limit = { has_trait = beauty_good_2 } add_piety_level = -1 }
+
+				# Success! Level up trait :)
 				beauty_drain_trait_effects = yes
 			}
-			30 = {
-				compare_modifier = {
-					value = scope:duel_value
-					min = 15
-					multiplier = -2
-				}
+			10 = {
 				desc = "I fail"
+				temporary_negative_lifeforce_effect = yes
+
+				modifier = { add = trait_drain_modifer_per_trait }
 			}
 		}
 		
@@ -153,27 +188,42 @@ bm_lifedrain.001 = {
 
 	# Fecund drain
 	option = {
-		add_piety = trait_drain_base_piety_cost
 		name = bm_lifedrain.001.e
 		trigger = {
 			scope:recipient = {
 				has_trait = fecund
 			}
 		}
+		
+		# Cost
+		add_piety = trait_drain_base_piety_cost
+		add_stress = trait_drain_stress_cost
+
 		scope:actor = {
 			# Carry out logic
 			duel = {
 				skill = learning
 				value = 0
-				20 = {
+				0 = {
+					# Multiplier increases as your blood mage power increases
 					compare_modifier = {
 						value = scope:duel_value
+						multiplier = lifedrain_blood_mage_rank_multiplier
 					}
+	
+					# Base chance increases as your blood mage power increases 
+					modifier = { add = lifedrain_blood_mage_rank_base }
+	
 					desc = "Nice"
+		
+					# Success!
 					add_trait = fecund
 				}
 				10 = {
 					desc = "I fail"
+					temporary_negative_lifeforce_effect = yes
+	
+					modifier = { add = trait_drain_modifer_per_trait }
 				}
 			}
 		}
@@ -189,27 +239,42 @@ bm_lifedrain.001 = {
 
 	# Giant drain 
 	option = {
-		add_piety = trait_drain_base_piety_cost
 		name = bm_lifedrain.001.f
 		trigger = {
 			scope:recipient = {
 				has_trait = giant
 			}
 		}
+
+		# Cost
+		add_piety = trait_drain_base_piety_cost
+		add_stress = trait_drain_stress_cost
+
 		scope:actor = {
 			# Carry out logic
 			duel = {
 				skill = learning
 				value = 0
-				20 = {
+				0 = {
+					# Multiplier increases as your blood mage power increases
 					compare_modifier = {
 						value = scope:duel_value
+						multiplier = lifedrain_blood_mage_rank_multiplier
 					}
+	
+					# Base chance increases as your blood mage power increases 
+					modifier = { add = lifedrain_blood_mage_rank_base }
+	
 					desc = "I become a Giant"
+		
+					# Success!
 					add_trait = giant
 				}
 				10 = {
 					desc = "I fail"
+					temporary_negative_lifeforce_effect = yes
+	
+					modifier = { add = trait_drain_modifer_per_trait }
 				}
 			}
 		}
@@ -225,27 +290,42 @@ bm_lifedrain.001 = {
 
 	# Pure Blood drain
 	option = {
-		add_piety = trait_drain_base_piety_cost
 		name = bm_lifedrain.001.g
 		trigger = {
 			scope:recipient = {
 				has_trait = pure_blooded
 			}
 		}
+		
+		# Cost
+		add_piety = trait_drain_base_piety_cost
+		add_stress = trait_drain_stress_cost
+
 		scope:actor = {
 			# Carry out logic
 			duel = {
 				skill = learning
 				value = 0
-				20 = {
+				0 = {
+					# Multiplier increases as your blood mage power increases
 					compare_modifier = {
 						value = scope:duel_value
+						multiplier = lifedrain_blood_mage_rank_multiplier
 					}
-					desc = "I become Pure Blooded"
+	
+					# Base chance increases as your blood mage power increases 
+					modifier = { add = lifedrain_blood_mage_rank_base }
+	
+					desc = "I become a pure blooded"
+		
+					# Success!
 					add_trait = pure_blooded
 				}
 				10 = {
 					desc = "I fail"
+					temporary_negative_lifeforce_effect = yes
+	
+					modifier = { add = trait_drain_modifer_per_trait }
 				}
 			}
 		}

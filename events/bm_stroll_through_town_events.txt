@@ -1,0 +1,112 @@
+﻿# lifedrain event
+
+namespace = bm_stroll_town
+
+bm_stroll_town.001 = {
+	type = character_event
+	title = "Strolling in town"
+	desc = "As I walk through the market there are many parts of town I could explore"
+	theme = default
+	
+
+	option = {
+		name = "Find a beggar"
+		trigger_event = { 
+			id = bm_stroll_town.002
+		} 
+	}
+
+	option = {
+		name = "Go to the local hospital"
+	}
+
+	# Do nothing
+	option = {
+		name = "Go back home"
+		ai_chance = {
+			base = 5
+		}
+	}
+
+	# Portraits
+	left_portrait ={
+		character = root
+		animation = idle
+	}
+}
+
+bm_stroll_town.002 = {
+	type = character_event
+	title = "Found a beggar in the town square"
+	desc = "In the middle of the square, I see a beggar dressed in rags asking people for money"
+	theme = default
+
+	# Create the beggar
+	immediate = { 
+		hidden_effect = { 
+			create_character = {
+				name = "Beggar"
+				dynasty = beggarface
+				location = root.capital_province
+				gender_female_chance = 50
+				save_scope_as = beggar
+				culture = root.culture
+				trait = wounded_3
+				trait = ill
+				trait = one_eyed
+				trait = one_legged
+				trait = drunkard
+				trait = scarred
+				trait = spindly
+			}
+		}
+	}
+
+	# Lifedrain
+	option = {
+		name = "They are about to die, might as well bolster my lifeforce"
+		add_character_modifier = { modifier = lifeforce_modifier }
+		random_list = {
+
+			50 = {
+				root.capital_county = {
+					add_county_modifier = {
+						modifier = drained_beggar_holding
+						years = 5
+					}
+				}
+			}
+			50 = {
+			}
+		}
+
+		scope:beggar = { death = { death_reason = death_sacrificed_to_gods } }
+
+		add_dread = 20
+
+		ai_chance = { base = 10 }
+	}
+
+
+	# Do nothing
+	option = {
+		name = "Best to leave..."
+		ai_chance = {
+			base = 5
+		}
+	}
+
+	
+
+	# Portraits
+	left_portrait ={
+		character = root
+		animation = idle
+	}
+	right_portrait ={
+		character = scope:beggar
+		animation = beg
+
+
+	}
+}

@@ -2,6 +2,47 @@
 
 namespace = bm_channel_lifeforce
 
+bm_channel_lifeforce.99 = {
+	type = character_event
+	title = channel_lifeforce_decision
+	desc = channel_lifeforce_decision_tooltip_desc
+	theme = witchcraft
+
+	option = { 
+		name = "I want to learn faster"
+		magic_used = yes
+
+		add_piety = lifedrain_piety_cost_neg
+		add_character_modifier = {
+			modifier = exp_lifeforce_modifier
+			days = 1825
+		}
+
+		trigger = { NOT = { has_character_modifier = exp_lifeforce_modifier } }
+
+		ai_chance = { base = 10 } 
+	}
+
+	option = { 
+		name = "I want to improve my skills temporarily"
+		ai_chance = { base = 10 } 
+
+		trigger_event = { id = bm_channel_lifeforce.0001 }
+	}
+
+	# Do nothing
+	option = { 
+		name = "Nevermind"
+		ai_chance = { base = 10 } 
+	}
+
+	# Portraits
+	left_portrait ={
+		character = root
+		animation = ecstasy
+	}
+}
+
 bm_channel_lifeforce.0001 = {
 	type = character_event
 	title = channel_lifeforce_decision
@@ -10,91 +51,69 @@ bm_channel_lifeforce.0001 = {
 	
 	option = {
 		name = "Channel Diplomacy"
-		remove_character_modifier = lifeforce_modifier
+		magic_used = yes
+
 		add_character_modifier = {
 			modifier = diplomacy_lifeforce_modifier
 			days = 1825
 		}
-		add_piety  = -100
-		trigger = {
-			NOT = {
-				has_character_modifier = diplomacy_lifeforce_modifier
-			}
-		}
-		ai_chance = {
-			base = 100
-		}
+		add_piety  = lifedrain_piety_cost_neg
+		trigger = { NOT = { has_character_modifier = diplomacy_lifeforce_modifier } }
+		ai_chance = { base = 100 }
 	}
 	option = {
 		name = "Channel Martial"
-		remove_character_modifier = lifeforce_modifier
+		magic_used = yes
+
 		add_character_modifier = {
 			modifier = martial_lifeforce_modifier
 			days = 1825
 		}
-		add_piety  = -100
-		trigger = {
-			NOT = {
-				has_character_modifier = martial_lifeforce_modifier
-			}
-		}
-		ai_chance = {
-			base = 100
-		}
+		
+		add_piety  = lifedrain_piety_cost_neg
+		trigger = { NOT = { has_character_modifier = martial_lifeforce_modifier } }
+		ai_chance = { base = 100 }
 	}
 	option = {
 		name = "Channel Stewardship"
-		remove_character_modifier = lifeforce_modifier
+		magic_used = yes
+
 		add_character_modifier = {
 			modifier = stewardship_lifeforce_modifier
 			days = 1825
 		}
-		add_piety  = -100
-		trigger = {
-			NOT = {
-				has_character_modifier = stewardship_lifeforce_modifier
-			}
-		}
-		ai_chance = {
-			base = 100
-		}
+		
+		add_piety  = lifedrain_piety_cost_neg
+		trigger = { NOT = { has_character_modifier = stewardship_lifeforce_modifier } }
+		ai_chance = { base = 100 }
 	}
 
 	option = {
 		name = "Channel Intrigue"
-		remove_character_modifier = lifeforce_modifier
+		magic_used = yes
+
 		add_character_modifier = {
 			modifier = intrigue_lifeforce_modifier
 			days = 1825
 		}
-		add_piety  = -100
-		trigger = {
-			NOT = {
-				has_character_modifier = intrigue_lifeforce_modifier
-			}
-		}
-		ai_chance = {
-			base = 100
-		}
+
+		add_piety  = lifedrain_piety_cost_neg
+		trigger = { NOT = { has_character_modifier = intrigue_lifeforce_modifier } }
+		ai_chance = { base = 100 }
 	}
 	option = {
 		name = "Channel Learning"
-		remove_character_modifier = lifeforce_modifier
+		magic_used = yes
+
 		add_character_modifier = {
 			modifier = learning_lifeforce_modifier
 			days = 1825
 		}
-		add_piety  = -100
-		trigger = {
-			NOT = {
-				has_character_modifier = learning_lifeforce_modifier
-			}
-		}
-		ai_chance = {
-			base = 100
-		}
+
+		add_piety  = lifedrain_piety_cost_neg
+		trigger = { NOT = { has_character_modifier = learning_lifeforce_modifier } }
+		ai_chance = { base = 100 }
 	}
-	
 
 	# Do nothing
 	option = { 

@@ -1,124 +1,30 @@
-grant_blood_magic_interaction = {
-	category = interaction_category_religion
+﻿ask_for_blood_magic_interaction = {
+	category = interaction_category_friendly
 	auto_accept = yes
 	common_interaction = yes
 	desc = grant_blood_magic_interaction_desc
 	interface_priority = 150
 
-	cost = { piety = 250 }
+	cost = { piety = 500 }
 
 	is_shown = {
-		scope:actor = {
+		scope:recipient = { 
 			has_trait = blood_mage
-			has_character_modifier = lifeforce_modifier
-		}
-		scope:recipient = {
-			NOT = {
-				has_trait = blood_mage
+			OR = {
+				has_relation_lover = scope:actor
+				has_relation_friend = scope:actor
+				has_relation_best_friend = scope:actor
+				has_relation_soulmate = scope:actor
 			}
 		}
-	}
-
-	on_accept = {
-		scope:recipient = {
-			add_trait = blood_mage
-			add_opinion = {
-				target = scope:actor
-				modifier = granted_blood_magic_modifier
-				opinion = 100
-			}
-		}
-		scope:actor = {
-			remove_character_modifier = lifeforce_modifier
-		}
-	}
-
-	# AI
-	ai_potential = {
-		is_adult = yes
-	}
-	ai_targets = {
-		ai_recipients = family
-		max = 5
-	}
-
-	# Same as witch
-	ai_will_do = {
-		base = -45
 		
-		# Do I like recipient & are they trustworthy
-		opinion_modifier = {
-			who = scope:actor
-			opinion_target = scope:recipient
-			multiplier = 0.5
-		}
-		compatibility_modifier = {
-			who = scope:actor
-			compatibility_target = scope:recipient
-			multiplier = 0.2
-		}
-		opinion_modifier = {
-			who = scope:recipient
-			opinion_target = scope:actor
-			multiplier = 0.5
-		}
-
-		# Are they important (to me)
-		modifier = {
-			add = {
-				value = scope:recipient.highest_held_title_tier
-				subtract = scope:actor.highest_held_title_tier
-				multiply = 10
-			}
-		}
-		modifier = {
-			OR = {
-				is_close_family_of = scope:recipient
-				is_consort_of = scope:recipient
-				has_relation_lover = scope:recipient
-				has_relation_friend = scope:recipient
-			}
-			add = 20
-		}
-		modifier = {
-			OR = {
-				has_relation_best_friend = scope:recipient
-				has_relation_soulmate = scope:recipient
-			}
-			add = 30
-		}
-		modifier = {
-			exists = house
-			exists = scope:recipient.house
-			house = scope:recipient.house
-			add = 10
-		}
-	}
-}
-
-ask_for_blood_magic_interaction = {
-	category = interaction_category_religion
-	auto_accept = yes
-	common_interaction = yes
-	desc = grant_blood_magic_interaction_desc
-	interface_priority = 150
-
-	cost = { piety = 1000 }
-
-	is_shown = {
-		scope:recipient = {
-			has_trait = blood_mage
-		}
-		scope:actor = {
-			NOT = {
-				has_trait = blood_mage
-			}
-		}
+		scope:actor = { NOT = { has_trait = blood_mage } }
 	}
 
 	on_accept = {
 		scope:actor = {
-			add_trait = blood_mage
+			add_trait = blood_mage_1
+			add_piety_level = -1
 		}
 	}
 	
@@ -131,32 +37,34 @@ ask_for_blood_magic_interaction = {
 }
 
 grant_lifeforce_interaction = {
-	category = interaction_category_religion
+	category = interaction_category_friendly
 	auto_accept = yes
 	common_interaction = yes
 	desc = grant_lifeforce_interaction_desc
-	interface_priority = 150
+	interface_priority = 190
 
 	cost = { piety = lifedrain_piety_cost }
 
-	is_shown = {
-		scope:actor = {
-			has_trait = blood_mage
-			has_character_modifier = lifeforce_modifier
+	is_shown = { 
+		scope:actor = { 
+			has_trait = blood_mage 
 		}
+		NOT = { scope:actor = scope:recipient } 
 	}
+
+	is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier } }
 
 	on_accept = {
 		scope:recipient = {
 			add_character_modifier = lifeforce_modifier
 			add_opinion = {
 				target = scope:actor
-				modifier = granted_lifeforce_modifier
-				opinion = 50
+				modifier = magic_opinion_positive
+				opinion = 20
 			}
 		}
 		scope:actor = {
-			remove_character_modifier = lifeforce_modifier
+			magic_used = yes
 		}
 	}
 }

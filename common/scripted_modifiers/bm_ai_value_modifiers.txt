@@ -1,0 +1,51 @@
+﻿# Lifedraining
+ai_willingness_to_do_postitive_magic = {
+	
+	# Do I like recipient & are they trustworthy
+	opinion_modifier = {
+		who = scope:actor
+		opinion_target = scope:recipient
+		multiplier = 0.5
+	}
+	compatibility_modifier = {
+		who = scope:actor
+		compatibility_target = scope:recipient
+		multiplier = 0.2
+	}
+	opinion_modifier = {
+		who = scope:recipient
+		opinion_target = scope:actor
+		multiplier = 0.5
+	}
+
+	# Are they important (to me)
+	modifier = {
+		add = {
+			value = scope:recipient.highest_held_title_tier
+			subtract = scope:actor.highest_held_title_tier
+			multiply = 10
+		}
+	}
+	modifier = {
+		OR = {
+			is_close_family_of = scope:recipient
+			is_consort_of = scope:recipient
+			has_relation_lover = scope:recipient
+			has_relation_friend = scope:recipient
+		}
+		add = 20
+	}
+	modifier = {
+		OR = {
+			has_relation_best_friend = scope:recipient
+			has_relation_soulmate = scope:recipient
+		}
+		add = 30
+	}
+	modifier = {
+		exists = house
+		exists = scope:recipient.house
+		house = scope:recipient.house
+		add = 10
+	}
+}

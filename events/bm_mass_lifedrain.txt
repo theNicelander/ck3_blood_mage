@@ -25,7 +25,10 @@ bm_mass_lifedrain.001 = {
 		# Execute everyone
 		every_prisoner = {
 			# Get lifeforce
-			root = { add_character_modifier = { modifier = lifeforce_modifier } }
+			root = { 
+				add_piety = lifedrain_piety_cost_neg
+				add_character_modifier = { modifier = lifeforce_modifier } 
+			}
 
 			# Lifedrain execution
 			save_scope_as = executed
@@ -58,7 +61,10 @@ bm_mass_lifedrain.001 = {
 			}
 			save_scope_as = executed
 			# Get lifeforce
-			root = { add_character_modifier = { modifier = lifeforce_modifier } }
+			root = { 
+				add_piety = lifedrain_piety_cost_neg
+				add_character_modifier = { modifier = lifeforce_modifier } 
+			}
 
 			# Lifedrain execution
 			lifedrain_execution_effect = {

@@ -16,3 +16,27 @@ blood_mage_coven_decision_prestige_effects = {
 		}
 	}
 }
+
+enhance_blood_mage_coven_decision_effects = {
+	save_scope_as = founder
+	house = {
+		add_house_modifier = {
+			modifier = blood_mage_coven_modifier
+		}
+	}
+}
+
+temporary_negative_lifeforce_effect = {
+	add_character_modifier = {
+		modifier = lifeforce_modifier_negative
+		days = 365
+	}
+}
+
+magic_used = {
+	remove_character_modifier = lifeforce_modifier
+	add_character_modifier = {
+		modifier = lifeforce_modifier_negative
+		days = 365
+	}
+}

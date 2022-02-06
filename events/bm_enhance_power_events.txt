@@ -1,0 +1,83 @@
+﻿# enhance power
+
+namespace = bm_enhance_power
+
+bm_enhance_power.001 = {
+	type = character_event
+	title = bm_enhance_power.001.title
+	desc = bm_enhance_power.001.desc
+	theme = witchcraft
+	
+	# Enhance power
+	option = {
+		name = bm_enhance_power.001.a
+
+		magic_used = yes
+		
+		if = { limit = { has_trait = blood_mage_1 } add_stress = 10 }
+		if = { limit = { has_trait = blood_mage_2 } add_stress = 20 }
+		if = { limit = { has_trait = blood_mage_3 } add_stress = 40 }
+		if = { limit = { has_trait = blood_mage_4 } add_stress = 80 }
+
+		duel = { 
+			skill = learning
+			value = 0
+
+			# Success
+			0 = {
+				change_trait_rank = {
+					trait = blood_mage
+					rank = 1
+					max = 5
+				}
+				add_piety_level = enhance_blood_mage_personal_piety_level_cost_negative
+
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 2
+				}
+			}
+			
+			# Failed
+			10 = { 
+				temporary_negative_lifeforce_effect = yes
+				add_piety_level = -1
+				
+				modifier = {
+					has_trait = blood_mage_2
+					add = 30
+				} 
+				modifier = {
+					has_trait = blood_mage_3
+					add = 90
+				} 
+				modifier = {
+					has_trait = blood_mage_4
+					add = 270
+				} 
+			}
+		}
+
+		ai_chance = {
+			base = 20
+		}
+	}
+
+	# Do nothing
+	option = {
+		name = bm_enhance_power.001.z 
+		ai_chance = {
+			base = 5
+		}
+	}
+
+	# Portraits
+	left_portrait ={
+		character = root
+		animation = rage
+	}
+	right_portrait ={
+		character = scope:recipient
+		animation = beg
+	}
+}
