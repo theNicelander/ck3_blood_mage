@@ -45,10 +45,12 @@ heal_disease_medium = {
 	cost = { piety = heal_disease_medium_cost }
 	is_shown = {
 		scope:actor = { 
-			has_trait = blood_mage_2
-			has_trait = blood_mage_3
-			has_trait = blood_mage_4
-			has_trait = blood_mage_5 
+			OR = {
+				has_trait = blood_mage_2
+				has_trait = blood_mage_3
+				has_trait = blood_mage_4
+				has_trait = blood_mage_5 
+			}
 		}
 		scope:recipient = {
 			OR = {				
@@ -78,7 +80,13 @@ heal_disease_medium = {
 			add_opinion = {
 				target = scope:actor
 				modifier = magic_opinion_positive
-				opinion = 40
+				opinion = 30
+			}
+
+			add_opinion = {
+				target = scope:actor
+				modifier = cured_my_illness
+				opinion = 20
 			}
 		}
 	}
@@ -94,9 +102,11 @@ heal_disease_severe = {
 	cost = { piety = heal_disease_severe_cost }
 	is_shown = {
 		scope:actor = { 
-			has_trait = blood_mage_3
-			has_trait = blood_mage_4
-			has_trait = blood_mage_5 
+			OR = {
+				has_trait = blood_mage_3
+				has_trait = blood_mage_4
+				has_trait = blood_mage_5 
+			}
 		}
 		scope:recipient = {
 			OR = {				
@@ -120,11 +130,17 @@ heal_disease_severe = {
 			remove_trait = incapable
 			remove_trait = pneumonic
 			remove_trait = leper
+			
+			add_opinion = {
+				target = scope:actor
+				modifier = magic_opinion_positive
+				opinion = 50
+			}
 
 			add_opinion = {
 				target = scope:actor
-				modifier = cured_my_severe_illness
-				opinion = 20
+				modifier = cured_my_illness
+				opinion = 30
 			}
 		}
 	}
@@ -139,9 +155,11 @@ heal_disease_critical = {
 
 	cost = { piety = heal_disease_critical_cost }
 	is_shown = {
-		scope:actor = {
-			has_trait = blood_mage_4
-			has_trait = blood_mage_5
+		scope:actor = { 
+			OR = {
+				has_trait = blood_mage_4
+				has_trait = blood_mage_5 
+			}
 		}
 		scope:recipient = {
 			OR = {				
@@ -162,9 +180,17 @@ heal_disease_critical = {
 			remove_trait = bubonic_plague
 			remove_trait = smallpox
 
+			# temporary positive opinion
 			add_opinion = {
 				target = scope:actor
 				modifier = magic_opinion_positive
+				opinion = 80
+			}
+
+			# permanent positive opinion
+			add_opinion = {
+				target = scope:actor
+				modifier = cured_my_illness
 				opinion = 50
 			}
 		}
