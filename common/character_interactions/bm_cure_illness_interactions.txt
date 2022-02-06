@@ -1,5 +1,5 @@
 ﻿heal_disease_minor = {
-	interface_priority = 200
+	interface_priority = 210
 	category = interaction_category_friendly
 	desc = heal_disease_minor_desc
 	common_interaction = yes
@@ -37,7 +37,7 @@
 }
 
 heal_disease_medium = {
-	interface_priority = 200
+	interface_priority = 211
 	category = interaction_category_friendly
 	desc = heal_disease_medium_desc
 	common_interaction = yes
@@ -86,7 +86,7 @@ heal_disease_medium = {
 }
 
 heal_disease_severe = {
-	interface_priority = 200
+	interface_priority = 212
 	category = interaction_category_friendly
 	desc = heal_disease_severe_desc
 	common_interaction = yes
@@ -123,11 +123,6 @@ heal_disease_severe = {
 
 			add_opinion = {
 				target = scope:actor
-				modifier = magic_opinion_positive
-				opinion = 50
-			}
-			add_opinion = {
-				target = scope:actor
 				modifier = cured_my_severe_illness
 				opinion = 20
 			}
@@ -137,7 +132,7 @@ heal_disease_severe = {
 }
 
 heal_disease_critical = {
-	interface_priority = 250
+	interface_priority = 213
 	category = interaction_category_friendly
 	desc = heal_disease_critical_desc
 	common_interaction = yes
