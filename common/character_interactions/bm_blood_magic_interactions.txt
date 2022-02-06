@@ -64,11 +64,7 @@ grant_lifeforce_interaction = {
 			}
 		}
 		scope:actor = {
-			remove_character_modifier = lifeforce_modifier
-			add_character_modifier = {
-				modifier = lifeforce_modifier_negative
-				days = 365
-			}
+			magic_used = yes
 		}
 	}
 }

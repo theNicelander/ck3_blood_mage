@@ -12,7 +12,7 @@ bm_enhance_power.001 = {
 	option = {
 		name = bm_enhance_power.001.a
 
-		remove_character_modifier = lifeforce_modifier
+		magic_used = yes
 		
 		if = { limit = { has_trait = blood_mage_1 } add_stress = 10 }
 		if = { limit = { has_trait = blood_mage_2 } add_stress = 20 }

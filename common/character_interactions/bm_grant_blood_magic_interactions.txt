@@ -34,11 +34,7 @@
 		}
 		scope:actor = {
 			add_stress = grant_novice_blood_magic_stress_cost
-			remove_character_modifier = lifeforce_modifier
-			add_character_modifier = {
-				modifier = lifeforce_modifier_negative
-				days = 365
-			}
+			magic_used = yes
 		}
 	}
 
@@ -106,11 +102,7 @@ grant_blood_magic_interaction_regular = {
 		}
 		scope:actor = {
 			add_stress = grant_blood_magic_stress_cost
-			remove_character_modifier = lifeforce_modifier
-			add_character_modifier = {
-				modifier = lifeforce_modifier_negative
-				days = 365
-			}
+			magic_used = yes
 		}
 	}
 
@@ -180,11 +172,7 @@ grant_blood_magic_interaction_master = {
 		}
 		scope:actor = {
 			add_stress = grant_master_blood_magic_stress_cost
-			remove_character_modifier = lifeforce_modifier
-			add_character_modifier = {
-				modifier = lifeforce_modifier_negative
-				days = 365
-			}
+			magic_used = yes
 		}
 	}
 
