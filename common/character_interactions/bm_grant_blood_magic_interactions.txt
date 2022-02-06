@@ -28,8 +28,8 @@
 			add_trait = blood_mage_1
 			add_opinion = {
 				target = scope:actor
-				modifier = granted_blood_magic_modifier
-				opinion = 100
+				modifier = made_me_a_blood_mage
+				opinion = 20
 			}
 		}
 		scope:actor = {
@@ -96,8 +96,8 @@ grant_blood_magic_interaction_regular = {
 			
 			add_opinion = {
 				target = scope:actor
-				modifier = granted_blood_magic_modifier
-				opinion = 100
+				modifier = made_me_a_blood_mage
+				opinion = 40
 			}
 		}
 		scope:actor = {
@@ -166,8 +166,8 @@ grant_blood_magic_interaction_master = {
 			else = { add_trait = blood_mage_2 }
 			add_opinion = {
 				target = scope:actor
-				modifier = granted_blood_magic_modifier
-				opinion = 100
+				modifier = made_me_a_blood_mage
+				opinion = 60
 			}
 		}
 		scope:actor = {

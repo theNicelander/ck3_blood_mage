@@ -1,26 +1,38 @@
-﻿# Grant blood magic modifier
-granted_blood_magic_modifier = {
-	monthly_change = 0.1
-	decaying = yes
-}
-
-# Grant blood magic modifier
-granted_lifeforce_modifier = {
-	monthly_change = 0.1
-	decaying = yes
-}
-
-# Opinion modifiers 
+﻿# Opinion modifiers 
 magic_opinion_positive = {
 	icon = magic_positive
+	monthly_change = 0.05
 	stacking = yes
 	decaying = yes
+}
+
+magic_opinion_positive_permanent = {
+	icon = magic_positive
+	stacking = yes
+}
+
+made_me_a_blood_mage = {
+	icon = magic_positive
+	stacking = no
+	decaying = no
 }
 
 magic_opinion_negative = {
 	icon = magic_negative
+	monthly_change = 0.05
 	stacking = yes
 	decaying = yes
-	opinion = 75
-	years = 25
+}
+
+# Cured illness
+cured_my_severe_illness = {
+	icon = magic_positive
+	stacking = yes
+	decaying = no
+}
+
+cured_my_critical_illness = {
+	icon = magic_positive
+	stacking = yes
+	decaying = no
 }

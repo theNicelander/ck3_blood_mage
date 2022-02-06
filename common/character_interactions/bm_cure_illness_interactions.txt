@@ -28,9 +28,8 @@
 
 			add_opinion = {
 				target = scope:actor
-				opinion = 25
 				modifier = magic_opinion_positive
-				years = 5
+				opinion = 20
 			}
 		}
 	}
@@ -78,9 +77,8 @@ heal_disease_medium = {
 
 			add_opinion = {
 				target = scope:actor
-				opinion = 50
 				modifier = magic_opinion_positive
-				years = 10
+				opinion = 40
 			}
 		}
 	}
@@ -125,9 +123,13 @@ heal_disease_severe = {
 
 			add_opinion = {
 				target = scope:actor
-				opinion = 75
 				modifier = magic_opinion_positive
-				years = 25
+				opinion = 50
+			}
+			add_opinion = {
+				target = scope:actor
+				modifier = cured_my_severe_illness
+				opinion = 20
 			}
 		}
 	}
@@ -135,7 +137,7 @@ heal_disease_severe = {
 }
 
 heal_disease_critical = {
-	interface_priority = 200
+	interface_priority = 250
 	category = interaction_category_friendly
 	desc = heal_disease_critical_desc
 	common_interaction = yes
@@ -157,7 +159,7 @@ heal_disease_critical = {
 	}
 
 	on_accept = {
-		scope:actor = { magic_used = yes }
+		magic_used = yes
 		scope:recipient = {
 			send_interface_toast = { left_icon = scope:actor }
 			remove_trait = great_pox
@@ -167,9 +169,8 @@ heal_disease_critical = {
 
 			add_opinion = {
 				target = scope:actor
-				opinion = 100
 				modifier = magic_opinion_positive
-				years = 50
+				opinion = 50
 			}
 		}
 	}

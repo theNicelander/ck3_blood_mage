@@ -41,7 +41,7 @@ grant_lifeforce_interaction = {
 	auto_accept = yes
 	common_interaction = yes
 	desc = grant_lifeforce_interaction_desc
-	interface_priority = 200
+	interface_priority = 190
 
 	cost = { piety = lifedrain_piety_cost }
 
@@ -59,8 +59,8 @@ grant_lifeforce_interaction = {
 			add_character_modifier = lifeforce_modifier
 			add_opinion = {
 				target = scope:actor
-				modifier = granted_lifeforce_modifier
-				opinion = 50
+				modifier = magic_opinion_positive
+				opinion = 20
 			}
 		}
 		scope:actor = {
