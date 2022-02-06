@@ -18,7 +18,7 @@
 	}
 
 	on_accept = {
-		scope:actor = { minor_magic_used = yes }
+		scope:actor = { magic_used = yes }
 		scope:recipient = {
 			send_interface_toast = { left_icon = scope:actor }
 			remove_trait = wounded_1
@@ -157,7 +157,7 @@ heal_disease_critical = {
 	}
 
 	on_accept = {
-		scope:actor = { major_magic_used = yes }
+		scope:actor = { magic_used = yes }
 		scope:recipient = {
 			send_interface_toast = { left_icon = scope:actor }
 			remove_trait = great_pox

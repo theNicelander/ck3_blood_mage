@@ -1,0 +1,26 @@
+﻿# Grant blood magic modifier
+granted_blood_magic_modifier = {
+	monthly_change = 0.1
+	decaying = yes
+}
+
+# Grant blood magic modifier
+granted_lifeforce_modifier = {
+	monthly_change = 0.1
+	decaying = yes
+}
+
+# Opinion modifiers 
+magic_opinion_positive = {
+	icon = magic_positive
+	stacking = yes
+	decaying = yes
+}
+
+magic_opinion_negative = {
+	icon = magic_negative
+	stacking = yes
+	decaying = yes
+	opinion = 75
+	years = 25
+}

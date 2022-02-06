@@ -25,18 +25,6 @@ blood_mage_coven_modifier = {
 	stacking = yes
 }
 
-# Grant blood magic modifier
-granted_blood_magic_modifier = {
-	monthly_change = 0.1
-	decaying = yes
-}
-
-# Grant blood magic modifier
-granted_lifeforce_modifier = {
-	monthly_change = 0.1
-	decaying = yes
-}
-
 # Spend lifeforce modfiers 
 diplomacy_lifeforce_modifier = {
 	icon = diplomacy_positive
@@ -63,30 +51,10 @@ exp_lifeforce_modifier = {
 	monthly_lifestyle_xp_gain_mult = 0.1
 }
 
-# Event modifiers
-drained_beggar_personal = {
-	icon = magic_negative
-	general_opinion = -10
-}
 drained_beggar_holding = {
 	icon = magic_negative
 	county_opinion_add = -10
 	stacking = yes
-}
-
-# Opinion modifiers 
-magic_opinion_positive = {
-	icon = magic_positive
-	stacking = yes
-	decaying = yes
-}
-
-magic_opinion_negative = {
-	icon = magic_negative
-	stacking = yes
-	decaying = yes
-	opinion = 75
-	years = 25
 }
 
 # Holy site
