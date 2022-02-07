@@ -1,5 +1,4 @@
 ﻿blood_mage_1 = {
-	# code stuff
 	index = 331
 	group = blood_mage
 	level = 1
@@ -31,7 +30,6 @@
 }
 
 blood_mage_2 = {
-	# code stuff
 	index = 332
 	group = blood_mage
 	level = 2
@@ -44,8 +42,8 @@ blood_mage_2 = {
 	shown_in_ruler_designer = no
 
 	# genetic
-	birth = 1
-	random_creation = 1
+	birth = 0.5
+	random_creation = 0.5
 	inherit_chance = 50
 	both_parent_has_trait_inherit_chance = 90
 
@@ -77,8 +75,8 @@ blood_mage_3 = {
 	opposites = { witch }
 
 	# genetic
-	birth = 1
-	random_creation = 1
+	birth = 0.1
+	random_creation = 0.1
 	inherit_chance = 20
 	both_parent_has_trait_inherit_chance = 50
 
@@ -111,8 +109,8 @@ blood_mage_4 = {
 	opposites = { witch }
 
 	# genetic
-	birth = 1
-	random_creation = 1
+	birth = 0
+	random_creation = 0
 	inherit_chance = 0
 	both_parent_has_trait_inherit_chance = 33
 
@@ -146,8 +144,8 @@ blood_mage_5 = {
 	opposites = { witch }
 
 	# genetic
-	birth = 1
-	random_creation = 1
+	birth = 0
+	random_creation = 0
 	inherit_chance = 0
 	both_parent_has_trait_inherit_chance = 10
 
