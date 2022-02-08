@@ -7,7 +7,7 @@
 
 	is_shown = {
 		has_trait = blood_mage
-		not = { has_trait = blood_mage_5 }
+		not = { has_trait = blood_mage_9 }
 	}
 	is_valid = { 
 		has_character_modifier = lifeforce_modifier 
@@ -90,6 +90,10 @@ enhance_blood_mage_coven_decision_2 = {
 			has_trait = blood_mage_3
 			has_trait = blood_mage_4
 			has_trait = blood_mage_5
+			has_trait = blood_mage_6
+			has_trait = blood_mage_7
+			has_trait = blood_mage_8
+			has_trait = blood_mage_9
 		}
 	}
 
@@ -136,10 +140,13 @@ enhance_blood_mage_coven_decision_3 = {
 			}
 		}
 		or = {
-			has_trait = blood_mage_2
 			has_trait = blood_mage_3
 			has_trait = blood_mage_4
 			has_trait = blood_mage_5
+			has_trait = blood_mage_6
+			has_trait = blood_mage_7
+			has_trait = blood_mage_8
+			has_trait = blood_mage_9
 		}
 	}
 
@@ -185,10 +192,13 @@ enhance_blood_mage_coven_decision_4 = {
 				has_trait = blood_mage			
 			}
 		}
-		or = { # at least master
-			has_trait = blood_mage_3
+		or = {
 			has_trait = blood_mage_4
 			has_trait = blood_mage_5
+			has_trait = blood_mage_6
+			has_trait = blood_mage_7
+			has_trait = blood_mage_8
+			has_trait = blood_mage_9
 		}
 	}
 
@@ -236,9 +246,11 @@ enhance_blood_mage_coven_decision_5 = {
 			}
 		}
 		or = { # at least master
-			has_trait = blood_mage_3
-			has_trait = blood_mage_4
 			has_trait = blood_mage_5
+			has_trait = blood_mage_6
+			has_trait = blood_mage_7
+			has_trait = blood_mage_8
+			has_trait = blood_mage_9
 		}
 	}
 
@@ -286,9 +298,11 @@ enhance_blood_mage_coven_decision_6 = {
 				has_trait = blood_mage			
 			}
 		}
-		or = { # at least arch-mage
-			has_trait = blood_mage_4
-			has_trait = blood_mage_5
+		or = {
+			has_trait = blood_mage_6
+			has_trait = blood_mage_7
+			has_trait = blood_mage_8
+			has_trait = blood_mage_9
 		}
 	}
 
@@ -337,9 +351,10 @@ enhance_blood_mage_coven_decision_7 = {
 				has_trait = blood_mage			
 			}
 		}
-		or = { # at least arch-mage
-			has_trait = blood_mage_4
-			has_trait = blood_mage_5
+		or = { 
+			has_trait = blood_mage_7
+			has_trait = blood_mage_8
+			has_trait = blood_mage_9
 		}
 	}
 
@@ -390,8 +405,9 @@ enhance_blood_mage_coven_decision_8 = {
 				has_trait = blood_mage			
 			}
 		}
-		or = { # at least supreme
-			has_trait = blood_mage_5
+		or = {
+			has_trait = blood_mage_8
+			has_trait = blood_mage_9
 		}
 	}
 
@@ -442,8 +458,8 @@ enhance_blood_mage_coven_decision_9 = {
 				has_trait = blood_mage			
 			}
 		}
-		or = { # at least supreme
-			has_trait = blood_mage_5
+		or = {
+			has_trait = blood_mage_9
 		}
 	}
 
