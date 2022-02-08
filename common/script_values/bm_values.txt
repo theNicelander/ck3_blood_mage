@@ -59,15 +59,30 @@ trait_drain_beauty_cost = {
 enhance_blood_mage_personal_piety_level_cost = {
 	add = 1
 	if = { 
-		limit = { has_trait = blood_mage_2 }
+		limit = { 
+			or = {
+				has_trait = blood_mage_3
+				has_trait = blood_mage_4
+			} 
+		}
 		add = 1
 	}
 	if = { 
-		limit = { has_trait = blood_mage_3 }
+		limit = { 
+			or = {
+				has_trait = blood_mage_5
+				has_trait = blood_mage_6
+			} 
+		}
 		add = 2
 	}
 	if = { 
-		limit = { has_trait = blood_mage_4 }
+		limit = { 
+			or = {
+				has_trait = blood_mage_7
+				has_trait = blood_mage_8
+			} 
+		}
 		add = 3
 	}
 }
@@ -75,15 +90,30 @@ enhance_blood_mage_personal_piety_level_cost = {
 enhance_blood_mage_personal_piety_level_cost_negative = {
 	add = -1
 	if = { 
-		limit = { has_trait = blood_mage_2 }
+		limit = { 
+			or = {
+				has_trait = blood_mage_3
+				has_trait = blood_mage_4
+			} 
+		}
 		add = -1
 	}
 	if = { 
-		limit = { has_trait = blood_mage_3 }
+		limit = { 
+			or = {
+				has_trait = blood_mage_5
+				has_trait = blood_mage_6
+			} 
+		}
 		add = -2
 	}
 	if = { 
-		limit = { has_trait = blood_mage_4 }
+		limit = { 
+			or = {
+				has_trait = blood_mage_7
+				has_trait = blood_mage_8
+			} 
+		}
 		add = -3
 	}
 }
