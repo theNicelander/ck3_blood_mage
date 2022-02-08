@@ -16,8 +16,12 @@ bm_enhance_power.001 = {
 		
 		if = { limit = { has_trait = blood_mage_1 } add_stress = 10 }
 		if = { limit = { has_trait = blood_mage_2 } add_stress = 20 }
-		if = { limit = { has_trait = blood_mage_3 } add_stress = 40 }
-		if = { limit = { has_trait = blood_mage_4 } add_stress = 80 }
+		if = { limit = { has_trait = blood_mage_3 } add_stress = 30 }
+		if = { limit = { has_trait = blood_mage_4 } add_stress = 40 }
+		if = { limit = { has_trait = blood_mage_5 } add_stress = 50 }
+		if = { limit = { has_trait = blood_mage_6 } add_stress = 60 }
+		if = { limit = { has_trait = blood_mage_7 } add_stress = 80 }
+		if = { limit = { has_trait = blood_mage_8 } add_stress = 100 }
 
 		duel = { 
 			skill = learning
@@ -28,7 +32,7 @@ bm_enhance_power.001 = {
 				change_trait_rank = {
 					trait = blood_mage
 					rank = 1
-					max = 5
+					max = 9
 				}
 				add_piety_level = enhance_blood_mage_personal_piety_level_cost_negative
 
@@ -42,24 +46,14 @@ bm_enhance_power.001 = {
 			10 = { 
 				temporary_negative_lifeforce_effect = yes
 				add_piety_level = -1
-				
-				modifier = {
-					has_trait = blood_mage_2
-					add = 30
-				} 
-				modifier = {
-					has_trait = blood_mage_3
-					add = 90
-				} 
-				modifier = {
-					has_trait = blood_mage_4
-					add = 270
-				} 
+
+				# Base chance decreases as your blood mage power increases 
+				modifier = { add = blood_mage_rank_base }
 			}
 		}
 
 		ai_chance = {
-			base = 20
+			base = 95
 		}
 	}
 
