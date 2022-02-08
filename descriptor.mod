@@ -8,5 +8,5 @@ tags={
 	"Alternative History"
 }
 name="Blood Mage"
-supported_version="1.4.*"
+supported_version="1.5.*"
 remote_file_id="2737082376"
