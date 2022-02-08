@@ -32,18 +32,20 @@ enhance_blood_mage_coven_decision_1 = {
 	is_shown = {
 		has_trait = blood_mage
 		exists = house
-		is_house_head = yes
+		
 		NOT = {
 			exists = var:enhance_bm_1
 		}
 	}
 
 	is_valid = {
+		is_house_head = yes
 		has_character_modifier = lifeforce_modifier
+
 		house = {
-			any_adult_house_member = {
+			any_house_member = {
 				count >= 3
-				has_trait = blood_mage			
+				has_trait = blood_mage
 			}
 		}
 	}
