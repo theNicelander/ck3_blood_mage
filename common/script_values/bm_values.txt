@@ -122,39 +122,39 @@ lifedrain_blood_mage_rank_multiplier = {
 	add = 1
 	if = { 
 		limit = { has_trait = blood_mage_2 }
-		add = 1
-	}
-	if = { 
-		limit = { has_trait = blood_mage_3 }
 		add = 2
 	}
 	if = { 
-		limit = { has_trait = blood_mage_4 }
-		add = 3
-	}
-	if = { 
-		limit = { has_trait = blood_mage_5 }
+		limit = { has_trait = blood_mage_3 }
 		add = 4
 	}
 	if = { 
-		limit = { has_trait = blood_mage_6 }
-		add = 5
-	}
-	if = { 
-		limit = { has_trait = blood_mage_7 }
+		limit = { has_trait = blood_mage_4 }
 		add = 6
 	}
 	if = { 
+		limit = { has_trait = blood_mage_5 }
+		add = 8
+	}
+	if = { 
+		limit = { has_trait = blood_mage_6 }
+		add = 10
+	}
+	if = { 
+		limit = { has_trait = blood_mage_7 }
+		add = 12
+	}
+	if = { 
 		limit = { has_trait = blood_mage_8 }
-		add = 7
+		add = 15
 	}
 	if = { 
 		limit = { has_trait = blood_mage_9 }
-		add = 8
+		add = 20
 	}
 }
 
-lifedrain_blood_mage_rank_base = {
+blood_mage_rank_base = {
 	value = 0
 	if = { 
 		limit = { has_trait = blood_mage_2 }
