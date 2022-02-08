@@ -1,11 +1,11 @@
-﻿grant_blood_magic_interaction_novice = {
+﻿grant_blood_magic_interaction_initiate = {
 	category = interaction_category_friendly
 	auto_accept = yes
 	common_interaction = yes
 	desc = grant_blood_magic_interaction_desc
 	interface_priority = 200
 
-	cost = { piety = 250 }
+	cost = { piety = 100 }
 
 	is_shown = {
 		NOT = { scope:actor = scope:recipient }
@@ -15,6 +15,10 @@
 				has_trait = blood_mage_3
 				has_trait = blood_mage_4
 				has_trait = blood_mage_5
+				has_trait = blood_mage_6
+				has_trait = blood_mage_7 
+				has_trait = blood_mage_8 
+				has_trait = blood_mage_9 
 			}
 		}
 		
@@ -33,7 +37,7 @@
 			}
 		}
 		scope:actor = {
-			add_stress = grant_novice_blood_magic_stress_cost
+			add_stress = grant_blood_magic_stress_cost_1
 			magic_used = yes
 		}
 	}
@@ -49,22 +53,25 @@
 	}
 }
 
-grant_blood_magic_interaction_regular = {
+grant_blood_magic_interaction_disciple = {
 	category = interaction_category_friendly
 	auto_accept = yes
 	common_interaction = yes
 	desc = grant_blood_magic_interaction_desc
 	interface_priority = 201
 
-	cost = { piety = 250 }
+	cost = { piety = 200 }
 
 	is_shown = {
 		NOT = { scope:actor = scope:recipient }
 		scope:actor = {
 			OR = {
-				has_trait = blood_mage_3
 				has_trait = blood_mage_4
 				has_trait = blood_mage_5
+				has_trait = blood_mage_6
+				has_trait = blood_mage_7 
+				has_trait = blood_mage_8 
+				has_trait = blood_mage_9 
 			}
 		}
 		
@@ -75,6 +82,10 @@ grant_blood_magic_interaction_regular = {
 					has_trait = blood_mage_3
 					has_trait = blood_mage_4
 					has_trait = blood_mage_5
+					has_trait = blood_mage_6
+					has_trait = blood_mage_7 
+					has_trait = blood_mage_8 
+					has_trait = blood_mage_9 
 				}
 			}
 		}
@@ -101,7 +112,7 @@ grant_blood_magic_interaction_regular = {
 			}
 		}
 		scope:actor = {
-			add_stress = grant_blood_magic_stress_cost
+			add_stress = grant_blood_magic_stress_cost_2
 			magic_used = yes
 		}
 	}
@@ -117,21 +128,23 @@ grant_blood_magic_interaction_regular = {
 	}
 }
 
-grant_blood_magic_interaction_master = {
+grant_blood_magic_interaction_adept = {
 	category = interaction_category_friendly
 	auto_accept = yes
 	common_interaction = yes
 	desc = grant_blood_magic_interaction_desc
 	interface_priority = 202
 
-	cost = { piety = 250 }
+	cost = { piety = 300 }
 
 	is_shown = {
 		NOT = { scope:actor = scope:recipient }
 		scope:actor = {
 			OR = {
-				has_trait = blood_mage_4
-				has_trait = blood_mage_5
+				has_trait = blood_mage_6
+				has_trait = blood_mage_7 
+				has_trait = blood_mage_8 
+				has_trait = blood_mage_9 
 			}
 		}
 		
@@ -141,6 +154,10 @@ grant_blood_magic_interaction_master = {
 					has_trait = blood_mage_3
 					has_trait = blood_mage_4
 					has_trait = blood_mage_5
+					has_trait = blood_mage_6
+					has_trait = blood_mage_7 
+					has_trait = blood_mage_8 
+					has_trait = blood_mage_9 
 				}
 			}
 		}
@@ -163,7 +180,7 @@ grant_blood_magic_interaction_master = {
 					max = 3
 				}
 			}
-			else = { add_trait = blood_mage_2 }
+			else = { add_trait = blood_mage_3 }
 			add_opinion = {
 				target = scope:actor
 				modifier = made_me_a_blood_mage
@@ -171,7 +188,151 @@ grant_blood_magic_interaction_master = {
 			}
 		}
 		scope:actor = {
-			add_stress = grant_master_blood_magic_stress_cost
+			add_stress = grant_blood_magic_stress_cost_3
+			magic_used = yes
+		}
+	}
+
+	# AI
+	ai_potential = { is_adult = yes }
+	ai_targets = { ai_recipients = family }
+
+	# Same as witch
+	ai_will_do = {
+		base = -45
+		ai_willingness_to_do_postitive_magic = yes
+	}
+}
+
+grant_blood_magic_interaction_master = {
+	category = interaction_category_friendly
+	auto_accept = yes
+	common_interaction = yes
+	desc = grant_blood_magic_interaction_desc
+	interface_priority = 203
+
+	cost = { piety = 400 }
+
+	is_shown = {
+		NOT = { scope:actor = scope:recipient }
+		scope:actor = {
+			OR = {
+				has_trait = blood_mage_7 
+				has_trait = blood_mage_8 
+				has_trait = blood_mage_9 
+			}
+		}
+		
+		scope:recipient = {
+			NOT = {
+				OR = {
+					has_trait = blood_mage_4
+					has_trait = blood_mage_5
+					has_trait = blood_mage_6
+					has_trait = blood_mage_7 
+					has_trait = blood_mage_8 
+					has_trait = blood_mage_9 
+				}
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier } }
+
+	on_accept = {
+		scope:recipient = {
+			if = {
+				limit = { 
+					OR = {
+						has_trait = blood_mage_1
+						has_trait = blood_mage_2
+						has_trait = blood_mage_2
+					}
+				}
+				change_trait_rank = {
+					trait = blood_mage
+					rank = 3
+					max = 4
+				}
+			}
+			else = { add_trait = blood_mage_4 }
+			add_opinion = {
+				target = scope:actor
+				modifier = made_me_a_blood_mage
+				opinion = 80
+			}
+		}
+		scope:actor = {
+			add_stress = grant_blood_magic_stress_cost_4
+			magic_used = yes
+		}
+	}
+
+	# AI
+	ai_potential = { is_adult = yes }
+	ai_targets = { ai_recipients = family }
+
+	# Same as witch
+	ai_will_do = {
+		base = -45
+		ai_willingness_to_do_postitive_magic = yes
+	}
+}
+
+grant_blood_magic_interaction_grandmaster = {
+	category = interaction_category_friendly
+	auto_accept = yes
+	common_interaction = yes
+	desc = grant_blood_magic_interaction_desc
+	interface_priority = 204
+
+	cost = { piety = 500 }
+
+	is_shown = {
+		NOT = { scope:actor = scope:recipient }
+		scope:actor = { has_trait = blood_mage_9 }
+		
+		scope:recipient = {
+			NOT = {
+				OR = {
+					has_trait = blood_mage_5
+					has_trait = blood_mage_6
+					has_trait = blood_mage_7 
+					has_trait = blood_mage_8 
+					has_trait = blood_mage_9 
+				}
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier } }
+
+	on_accept = {
+		scope:recipient = {
+			if = {
+				limit = { 
+					OR = {
+						has_trait = blood_mage_1
+						has_trait = blood_mage_2
+						has_trait = blood_mage_3
+						has_trait = blood_mage_4
+					}
+				}
+				change_trait_rank = {
+					trait = blood_mage
+					rank = 4
+					max = 5
+				}
+			}
+			else = { add_trait = blood_mage_5 }
+			add_opinion = {
+				target = scope:actor
+				modifier = made_me_a_blood_mage
+				opinion = 100
+			}
+		}
+		scope:actor = {
+			add_stress = grant_blood_magic_stress_cost_5
 			magic_used = yes
 		}
 	}
