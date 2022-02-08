@@ -26,6 +26,7 @@
 			remove_trait = lovers_pox
 			remove_trait = gout_ridden
 
+			# temporary positive opinion
 			add_opinion = {
 				target = scope:actor
 				modifier = magic_opinion_positive
@@ -46,10 +47,13 @@ heal_disease_medium = {
 	is_shown = {
 		scope:actor = { 
 			OR = {
-				has_trait = blood_mage_2
 				has_trait = blood_mage_3
 				has_trait = blood_mage_4
-				has_trait = blood_mage_5 
+				has_trait = blood_mage_5
+				has_trait = blood_mage_6
+				has_trait = blood_mage_7 
+				has_trait = blood_mage_8 
+				has_trait = blood_mage_9 
 			}
 		}
 		scope:recipient = {
@@ -77,12 +81,14 @@ heal_disease_medium = {
 			remove_trait = early_great_pox
 			remove_trait = typhus
 
+			# temporary positive opinion
 			add_opinion = {
 				target = scope:actor
 				modifier = magic_opinion_positive
 				opinion = 30
 			}
 
+			# perpmanent positive opinion
 			add_opinion = {
 				target = scope:actor
 				modifier = cured_my_illness
@@ -103,9 +109,11 @@ heal_disease_severe = {
 	is_shown = {
 		scope:actor = { 
 			OR = {
-				has_trait = blood_mage_3
-				has_trait = blood_mage_4
-				has_trait = blood_mage_5 
+				has_trait = blood_mage_5
+				has_trait = blood_mage_6
+				has_trait = blood_mage_7 
+				has_trait = blood_mage_8 
+				has_trait = blood_mage_9 
 			}
 		}
 		scope:recipient = {
@@ -130,13 +138,15 @@ heal_disease_severe = {
 			remove_trait = incapable
 			remove_trait = pneumonic
 			remove_trait = leper
-			
+
+			# temporary positive opinion
 			add_opinion = {
 				target = scope:actor
 				modifier = magic_opinion_positive
 				opinion = 50
 			}
 
+			# permanent positive opinion
 			add_opinion = {
 				target = scope:actor
 				modifier = cured_my_illness
@@ -157,8 +167,9 @@ heal_disease_critical = {
 	is_shown = {
 		scope:actor = { 
 			OR = {
-				has_trait = blood_mage_4
-				has_trait = blood_mage_5 
+				has_trait = blood_mage_7 
+				has_trait = blood_mage_8 
+				has_trait = blood_mage_9 
 			}
 		}
 		scope:recipient = {

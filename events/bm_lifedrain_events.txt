@@ -22,7 +22,7 @@ bm_lifedrain.001 = {
 			EXECUTIONER = scope:actor
 		}
 		ai_chance = {
-			base = 20
+			base = 10
 		}
 	}
 
@@ -47,11 +47,11 @@ bm_lifedrain.001 = {
 				# Multiplier increases as your blood mage power increases
 				compare_modifier = {
 					value = scope:duel_value
-					multiplier = lifedrain_blood_mage_rank_multiplier
+					multiplier = blood_mage_rank_multiplier
 				}
 
 				# Base chance increases as your blood mage power increases 
-				modifier = { add = lifedrain_blood_mage_rank_base }
+				modifier = { add = blood_mage_rank_base }
 
 				desc = "I drain their intellect"
 
@@ -101,11 +101,11 @@ bm_lifedrain.001 = {
 				# Multiplier increases as your blood mage power increases
 				compare_modifier = {
 					value = scope:duel_value
-					multiplier = lifedrain_blood_mage_rank_multiplier
+					multiplier = blood_mage_rank_multiplier
 				}
 
 				# Base chance increases as your blood mage power increases 
-				modifier = { add = lifedrain_blood_mage_rank_base }
+				modifier = { add = blood_mage_rank_base }
 
 				desc = "I drain their strength"
 
@@ -129,7 +129,7 @@ bm_lifedrain.001 = {
 			EXECUTIONER = scope:actor
 		}
 		ai_chance = {
-			base = 90
+			base = 100
 		}
 	}
 
@@ -155,11 +155,11 @@ bm_lifedrain.001 = {
 				# Multiplier increases as your blood mage power increases
 				compare_modifier = {
 					value = scope:duel_value
-					multiplier = lifedrain_blood_mage_rank_multiplier
+					multiplier = blood_mage_rank_multiplier
 				}
 
 				# Base chance increases as your blood mage power increases 
-				modifier = { add = lifedrain_blood_mage_rank_base }
+				modifier = { add = blood_mage_rank_base }
 
 				desc = "I drain their beauty"
 
@@ -182,7 +182,7 @@ bm_lifedrain.001 = {
 			EXECUTIONER = scope:actor
 		}
 		ai_chance = {
-			base = 80
+			base = 100
 		}
 	}
 
@@ -208,11 +208,11 @@ bm_lifedrain.001 = {
 					# Multiplier increases as your blood mage power increases
 					compare_modifier = {
 						value = scope:duel_value
-						multiplier = lifedrain_blood_mage_rank_multiplier
+						multiplier = blood_mage_rank_multiplier
 					}
 	
 					# Base chance increases as your blood mage power increases 
-					modifier = { add = lifedrain_blood_mage_rank_base }
+					modifier = { add = blood_mage_rank_base }
 	
 					desc = "Nice"
 		
@@ -233,7 +233,7 @@ bm_lifedrain.001 = {
 			EXECUTIONER = scope:actor
 		}
 		ai_chance = {
-			base = 50
+			base = 100
 		}
 	}
 
@@ -259,11 +259,11 @@ bm_lifedrain.001 = {
 					# Multiplier increases as your blood mage power increases
 					compare_modifier = {
 						value = scope:duel_value
-						multiplier = lifedrain_blood_mage_rank_multiplier
+						multiplier = blood_mage_rank_multiplier
 					}
 	
 					# Base chance increases as your blood mage power increases 
-					modifier = { add = lifedrain_blood_mage_rank_base }
+					modifier = { add = blood_mage_rank_base }
 	
 					desc = "I become a Giant"
 		
@@ -284,7 +284,7 @@ bm_lifedrain.001 = {
 			EXECUTIONER = scope:actor
 		}
 		ai_chance = {
-			base = 50
+			base = 100
 		}
 	}
 
@@ -310,11 +310,11 @@ bm_lifedrain.001 = {
 					# Multiplier increases as your blood mage power increases
 					compare_modifier = {
 						value = scope:duel_value
-						multiplier = lifedrain_blood_mage_rank_multiplier
+						multiplier = blood_mage_rank_multiplier
 					}
 	
 					# Base chance increases as your blood mage power increases 
-					modifier = { add = lifedrain_blood_mage_rank_base }
+					modifier = { add = blood_mage_rank_base }
 	
 					desc = "I become a pure blooded"
 		
@@ -335,7 +335,7 @@ bm_lifedrain.001 = {
 			EXECUTIONER = scope:actor
 		}
 		ai_chance = {
-			base = 50
+			base = 100
 		}
 	}
 
@@ -344,7 +344,7 @@ bm_lifedrain.001 = {
 		add_piety = lifedrain_piety_cost
 		name = bm_lifedrain.001.z 
 		ai_chance = {
-			base = 5
+			base = 1
 		}
 	}
 
