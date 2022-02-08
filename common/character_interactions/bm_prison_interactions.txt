@@ -4,14 +4,24 @@ trait_drain_prisoner_event_interaction = {
 	interface_priority = 300
 	category = interaction_category_hostile
 	desc = lifedrain_prisoner_interaction_desc
-	
+
 	is_highlighted = {
 		always = yes
 	}
 
 	is_shown = {
 		scope:actor = { has_trait = blood_mage }
-		scope:recipient = { is_imprisoned_by = scope:actor }
+		scope:recipient = { 
+			is_imprisoned_by = scope:actor 
+			or = {
+				has_trait = intellect_good 
+				has_trait = physique_good
+				has_trait = beauty_good
+				has_trait = giant
+				has_trait = fecund
+				has_trait = pure_blooded
+			}
+		}
 	}
 
 	cost = { piety = lifedrain_piety_cost }
