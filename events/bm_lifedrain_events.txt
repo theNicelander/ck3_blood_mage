@@ -10,30 +10,10 @@ bm_trait_drain.001 = {
 	desc = bm_trait_drain.001.desc
 	theme = witchcraft
 	
-	# Lifedrain
-	option = {
-		name = bm_trait_drain.001.a
-		add_character_modifier = {
-			modifier = lifeforce_modifier
-		}
-		add_stress = lifedrain_small_stress_cost
-		sacrifice_prisoner_effect = {
-			VICTIM = scope:recipient
-			EXECUTIONER = scope:actor
-		}
-		ai_chance = {
-			base = 10
-		}
-	}
-
 	# Intellect drain -- Gain quick / intelligent / genius
 	option = {
 		name = bm_trait_drain.001.b
-		trigger = {
-			scope:recipient = {
-				has_trait = intellect_good
-			}
-		}
+		trigger = { scope:recipient = { has_trait = intellect_good } }
 		# Cost
 		add_piety = trait_drain_intellect_cost
 		add_stress = trait_drain_stress_cost
@@ -82,11 +62,7 @@ bm_trait_drain.001 = {
 	# Strength drain -- Gain hale / robust / (amazonian or herculean)
 	option = {
 		name = bm_trait_drain.001.c
-		trigger = {
-			scope:recipient = {
-				has_trait = physique_good
-			}
-		}
+		trigger = { scope:recipient = { has_trait = physique_good } }
 
 		# Cost
 		add_piety = trait_drain_physique_cost
@@ -136,11 +112,7 @@ bm_trait_drain.001 = {
 	# Beauty drain -- Gain comely / (pretty or handsome) / beautiful 
 	option = {
 		name = bm_trait_drain.001.d
-		trigger = {
-			scope:recipient = {
-				has_trait = beauty_good
-			}
-		}
+		trigger = { scope:recipient = { has_trait = beauty_good } }
 
 		# Cost
 		add_piety = trait_drain_beauty_cost
@@ -189,11 +161,7 @@ bm_trait_drain.001 = {
 	# Fecund drain
 	option = {
 		name = bm_trait_drain.001.e
-		trigger = {
-			scope:recipient = {
-				has_trait = fecund
-			}
-		}
+		trigger = { scope:recipient = { has_trait = fecund } }
 		
 		# Cost
 		add_piety = trait_drain_base_piety_cost
@@ -240,11 +208,7 @@ bm_trait_drain.001 = {
 	# Giant drain 
 	option = {
 		name = bm_trait_drain.001.f
-		trigger = {
-			scope:recipient = {
-				has_trait = giant
-			}
-		}
+		trigger = { scope:recipient = { has_trait = giant } }
 
 		# Cost
 		add_piety = trait_drain_base_piety_cost
@@ -291,11 +255,7 @@ bm_trait_drain.001 = {
 	# Pure Blood drain
 	option = {
 		name = bm_trait_drain.001.g
-		trigger = {
-			scope:recipient = {
-				has_trait = pure_blooded
-			}
-		}
+		trigger = { scope:recipient = { has_trait = pure_blooded } }
 		
 		# Cost
 		add_piety = trait_drain_base_piety_cost
