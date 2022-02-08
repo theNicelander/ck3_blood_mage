@@ -1,7 +1,7 @@
 # Overview
 
 # Lifedrain
-Drain the life force from a prisoner, prolonging your life
+Drain the Lifeforce from a prisoner, prolonging your life
 
 # Popup from lifedrain
 <img src="screenshots/lifedrain-event.jpg"/>
