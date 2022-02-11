@@ -20,7 +20,6 @@
 	on_accept = {
 		scope:actor = { magic_used = yes }
 		scope:recipient = {
-			send_interface_toast = { left_icon = scope:actor }
 			remove_trait = wounded_1
 			remove_trait = ill
 			remove_trait = lovers_pox
@@ -72,7 +71,6 @@ heal_disease_medium = {
 	on_accept = {
 		scope:actor = { magic_used = yes }
 		scope:recipient = {
-			send_interface_toast = { left_icon = scope:actor }
 			remove_trait = wounded_2
 			remove_trait = infirm
 			remove_trait = maimed
@@ -131,7 +129,6 @@ heal_disease_severe = {
 	on_accept = {
 		scope:actor = { magic_used = yes }
 		scope:recipient = {
-			send_interface_toast = { left_icon = scope:actor }
 			remove_trait = wounded_3
 			remove_trait = impotent
 			remove_trait = sickly
@@ -185,7 +182,6 @@ heal_disease_critical = {
 	on_accept = {
 		magic_used = yes
 		scope:recipient = {
-			send_interface_toast = { left_icon = scope:actor }
 			remove_trait = great_pox
 			remove_trait = cancer
 			remove_trait = bubonic_plague
