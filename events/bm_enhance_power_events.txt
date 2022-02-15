@@ -45,11 +45,20 @@ bm_enhance_power.001 = {
 			# Failed
 			10 = { 
 				temporary_negative_lifeforce_effect = yes
-				add_piety_level = -1
 
 				# Base chance decreases as your blood mage power increases 
 				modifier = { add = blood_mage_rank_base }
 			}
+
+			# critical fail
+			10 = {
+				custom_tooltip = "Critical fail"
+				add_piety_level = -1
+				temporary_negative_lifeforce_effect = yes
+			}
+
+			
+
 		}
 
 		ai_chance = {
