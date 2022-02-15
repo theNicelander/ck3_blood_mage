@@ -154,6 +154,7 @@ blood_mage_5 = {  # Grandmaster
 	years_of_fertility = 35
 	life_expectancy = 35
 	no_prowess_loss_from_age = yes
+	monthly_dynasty_prestige = 0.1
 
 	# description
 	desc = trait_blood_mage_desc
@@ -189,6 +190,7 @@ blood_mage_6 = {  # Arch
 	years_of_fertility = 50
 	life_expectancy = 50
 	no_prowess_loss_from_age = yes
+	monthly_dynasty_prestige = 0.2
 
 	# description
 	desc = trait_blood_mage_desc
@@ -224,6 +226,7 @@ blood_mage_7 = {  # Exalted
 	life_expectancy = 65
 	no_prowess_loss_from_age = yes
 	flag = can_murder_own_children
+	monthly_dynasty_prestige = 0.3
 
 	# description
 	desc = trait_blood_mage_desc
@@ -259,6 +262,7 @@ blood_mage_8 = {  # Supreme
 	life_expectancy = 80
 	no_prowess_loss_from_age = yes
 	flag = can_murder_own_children
+	monthly_dynasty_prestige = 0.4
 
 	# description
 	desc = trait_blood_mage_desc
@@ -268,7 +272,7 @@ blood_mage_8 = {  # Supreme
 }
 
 
-blood_mage_9 = {  # Supreme
+blood_mage_9 = {  # Divine
 	index = 339
 	group = blood_mage
 	level = 9
@@ -295,6 +299,7 @@ blood_mage_9 = {  # Supreme
 	life_expectancy = 100
 	no_prowess_loss_from_age = yes
 	flag = can_murder_own_children
+	monthly_dynasty_prestige = 0.5
 
 	# description
 	desc = trait_blood_mage_desc
