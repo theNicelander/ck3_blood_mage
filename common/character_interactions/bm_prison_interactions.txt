@@ -1,4 +1,55 @@
 ﻿# Trigger event
+trait_drain_prisoner_event_interaction = {
+	common_interaction = yes
+	interface_priority = 300
+	category = interaction_category_hostile
+	desc = lifedrain_prisoner_interaction_desc
+
+	is_highlighted = {
+		always = yes
+	}
+
+	is_shown = {
+		scope:actor = { has_trait = blood_mage }
+		scope:recipient = { 
+			is_imprisoned_by = scope:actor 
+			or = {
+				has_trait = intellect_good 
+				has_trait = physique_good
+				has_trait = beauty_good
+				has_trait = giant
+				has_trait = fecund
+				has_trait = pure_blooded
+			}
+		}
+	}
+
+	cost = { piety = lifedrain_piety_cost }
+	
+	on_accept = {
+		scope:recipient = {
+			send_interface_toast = {
+				left_icon = scope:actor
+				custom_tooltip = lifedrain_prisoner_event_interaction.recipient.notification.tt
+			}
+		}
+		scope:actor = { trigger_event = bm_trait_drain.001 }
+	}
+	auto_accept = yes
+
+	# AI
+	ai_targets = { ai_recipients = prisoners }
+	ai_potential = { is_at_war = no }
+
+	ai_frequency = 12
+
+	# Same as base game AI to execute people, but slightly higher base (20 instead of 0)
+	ai_will_do = {
+		base = -45
+		ai_willingness_to_blood_magic_drain = yes
+	}
+}
+
 lifedrain_prisoner_event_interaction = {
 	common_interaction = yes
 	interface_priority = 300
@@ -18,7 +69,14 @@ lifedrain_prisoner_event_interaction = {
 				custom_tooltip = lifedrain_prisoner_event_interaction.recipient.notification.tt
 			}
 		}
-		scope:actor = { trigger_event = bm_lifedrain.001 }
+		scope:actor = {
+			add_character_modifier = { modifier = lifeforce_modifier }
+			add_stress = lifedrain_small_stress_cost
+		}
+		lifedrain_execution_effect = {
+			VICTIM = scope:recipient
+			EXECUTIONER = scope:actor
+		}
 	}
 	auto_accept = yes
 

@@ -2,38 +2,18 @@
 # See dashboard on how the duel calculations are done
 # https://share.streamlit.io/thenicelander/ck3_blood_mage_viz/main
 
-namespace = bm_lifedrain
+namespace = bm_trait_drain
 
-bm_lifedrain.001 = {
+bm_trait_drain.001 = {
 	type = character_event
-	title = bm_lifedrain.001.title
-	desc = bm_lifedrain.001.desc
+	title = bm_trait_drain.001.title
+	desc = bm_trait_drain.001.desc
 	theme = witchcraft
 	
-	# Lifedrain
-	option = {
-		name = bm_lifedrain.001.a
-		add_character_modifier = {
-			modifier = lifeforce_modifier
-		}
-		add_stress = lifedrain_small_stress_cost
-		sacrifice_prisoner_effect = {
-			VICTIM = scope:recipient
-			EXECUTIONER = scope:actor
-		}
-		ai_chance = {
-			base = 10
-		}
-	}
-
 	# Intellect drain -- Gain quick / intelligent / genius
 	option = {
-		name = bm_lifedrain.001.b
-		trigger = {
-			scope:recipient = {
-				has_trait = intellect_good
-			}
-		}
+		name = bm_trait_drain.001.b
+		trigger = { scope:recipient = { has_trait = intellect_good } }
 		# Cost
 		add_piety = trait_drain_intellect_cost
 		add_stress = trait_drain_stress_cost
@@ -81,12 +61,8 @@ bm_lifedrain.001 = {
 
 	# Strength drain -- Gain hale / robust / (amazonian or herculean)
 	option = {
-		name = bm_lifedrain.001.c
-		trigger = {
-			scope:recipient = {
-				has_trait = physique_good
-			}
-		}
+		name = bm_trait_drain.001.c
+		trigger = { scope:recipient = { has_trait = physique_good } }
 
 		# Cost
 		add_piety = trait_drain_physique_cost
@@ -135,12 +111,8 @@ bm_lifedrain.001 = {
 
 	# Beauty drain -- Gain comely / (pretty or handsome) / beautiful 
 	option = {
-		name = bm_lifedrain.001.d
-		trigger = {
-			scope:recipient = {
-				has_trait = beauty_good
-			}
-		}
+		name = bm_trait_drain.001.d
+		trigger = { scope:recipient = { has_trait = beauty_good } }
 
 		# Cost
 		add_piety = trait_drain_beauty_cost
@@ -188,12 +160,8 @@ bm_lifedrain.001 = {
 
 	# Fecund drain
 	option = {
-		name = bm_lifedrain.001.e
-		trigger = {
-			scope:recipient = {
-				has_trait = fecund
-			}
-		}
+		name = bm_trait_drain.001.e
+		trigger = { scope:recipient = { has_trait = fecund } }
 		
 		# Cost
 		add_piety = trait_drain_base_piety_cost
@@ -239,12 +207,8 @@ bm_lifedrain.001 = {
 
 	# Giant drain 
 	option = {
-		name = bm_lifedrain.001.f
-		trigger = {
-			scope:recipient = {
-				has_trait = giant
-			}
-		}
+		name = bm_trait_drain.001.f
+		trigger = { scope:recipient = { has_trait = giant } }
 
 		# Cost
 		add_piety = trait_drain_base_piety_cost
@@ -290,12 +254,8 @@ bm_lifedrain.001 = {
 
 	# Pure Blood drain
 	option = {
-		name = bm_lifedrain.001.g
-		trigger = {
-			scope:recipient = {
-				has_trait = pure_blooded
-			}
-		}
+		name = bm_trait_drain.001.g
+		trigger = { scope:recipient = { has_trait = pure_blooded } }
 		
 		# Cost
 		add_piety = trait_drain_base_piety_cost
@@ -342,7 +302,7 @@ bm_lifedrain.001 = {
 	# Do nothing
 	option = {
 		add_piety = lifedrain_piety_cost
-		name = bm_lifedrain.001.z 
+		name = bm_trait_drain.001.z 
 		ai_chance = {
 			base = 1
 		}
