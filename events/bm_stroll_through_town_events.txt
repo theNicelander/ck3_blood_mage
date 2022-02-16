@@ -82,6 +82,17 @@ bm_stroll_town.002 = {
 	# heal them
 	option = {
 		name = "Heal their wounds"
+		trigger = { 
+			OR = {
+				has_trait = blood_mage_3
+				has_trait = blood_mage_4
+				has_trait = blood_mage_5
+				has_trait = blood_mage_6
+				has_trait = blood_mage_7 
+				has_trait = blood_mage_8 
+				has_trait = blood_mage_9 
+			}
+		}
 		scope:beggar = { remove_trait = wounded_1 }
 		magic_used = yes
 		add_piety = cure_illness_cost_small_neg
@@ -91,10 +102,20 @@ bm_stroll_town.002 = {
 				years = 3
 			}
 		}
+		
 		ai_chance = { base = 4 }
 	}
 	option = {
 		name = "Heal their typhus"
+		trigger = { 
+			OR = {
+				has_trait = blood_mage_5
+				has_trait = blood_mage_6
+				has_trait = blood_mage_7 
+				has_trait = blood_mage_8 
+				has_trait = blood_mage_9 
+			}
+		}
 		scope:beggar = { remove_trait = typhus }
 		magic_used = yes
 		add_piety = cure_illness_cost_medium_neg
@@ -109,6 +130,14 @@ bm_stroll_town.002 = {
 	}
 	option = {
 		name = "Heal their eyes"
+		trigger = { 
+			OR = {
+				has_trait = blood_mage_6
+				has_trait = blood_mage_7 
+				has_trait = blood_mage_8 
+				has_trait = blood_mage_9 
+			}
+		}
 		scope:beggar = { remove_trait = blind }
 		magic_used = yes
 		add_piety = cure_illness_cost_large_neg
@@ -122,6 +151,12 @@ bm_stroll_town.002 = {
 	}
 	option = {
 		name = "Heal their cancer"
+		trigger = { 
+			OR = {
+				has_trait = blood_mage_8 
+				has_trait = blood_mage_9 
+			}
+		}
 		scope:beggar = { remove_trait = cancer }
 		magic_used = yes
 		add_piety = cure_illness_cost_xlarge_neg
