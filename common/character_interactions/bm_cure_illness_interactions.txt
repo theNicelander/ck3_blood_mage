@@ -63,7 +63,6 @@ heal_disease_medium = {
 				has_trait = wounded_2
 				has_trait = infirm
 				has_trait = maimed
-				has_trait = blind
 				has_trait = consumption
 				has_trait = early_great_pox
 				has_trait = typhus
@@ -77,7 +76,6 @@ heal_disease_medium = {
 			remove_trait = wounded_2
 			remove_trait = infirm
 			remove_trait = maimed
-			remove_trait = blind
 			remove_trait = consumption
 			remove_trait = early_great_pox
 			remove_trait = typhus
@@ -126,6 +124,7 @@ heal_disease_severe = {
 				has_trait = incapable
 				has_trait = pneumonic
 				has_trait = leper
+				has_trait = blind
 			}
 		}
 	}
@@ -139,6 +138,7 @@ heal_disease_severe = {
 			remove_trait = incapable
 			remove_trait = pneumonic
 			remove_trait = leper
+			remove_trait = blind
 
 			# temporary positive opinion
 			add_opinion = {
