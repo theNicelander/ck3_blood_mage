@@ -59,9 +59,22 @@ bm_stroll_town.002 = {
 	option = {
 		name = "They are about to die, might as well bolster my lifeforce"
 		add_character_modifier = { modifier = lifeforce_modifier }
-		random_list = {
+		add_dread = 20
 
-			50 = {
+		duel = { 
+			skill = intrigue
+			value = 0
+
+			0 = {
+				custom_tooltip = "No one notices you"
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 2
+				}
+			}
+
+			20 = {
+				custom_tooltip = "Someone notices you"
 				root.capital_county = {
 					add_county_modifier = {
 						modifier = drained_beggar_holding
@@ -69,12 +82,9 @@ bm_stroll_town.002 = {
 					}
 				}
 			}
-			50 = { }
 		}
 
 		scope:beggar = { death = { death_reason = death_sacrificed_to_gods } }
-
-		add_dread = 20
 
 		ai_chance = { base = 10 }
 	}
