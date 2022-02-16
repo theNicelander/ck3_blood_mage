@@ -7,6 +7,6 @@ tags={
 	"Religion"
 	"Alternative History"
 }
-name="Blood Mage"
+name="Blood Mage - Major Update for 1.5"
 supported_version="1.5.*"
 remote_file_id="2737082376"

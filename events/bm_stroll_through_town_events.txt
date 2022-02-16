@@ -8,21 +8,16 @@ bm_stroll_town.001 = {
 	desc = "As I walk through the market there are many parts of town I could explore"
 	theme = default
 	
-
 	option = {
 		name = "Find a beggar"
-		trigger_event = { 
-			id = bm_stroll_town.002
-		} 
+		trigger_event = {  id = bm_stroll_town.002 } 
 	}
 
-	option = {
-		name = "Go to the local hospital"
-	}
 
 	# Do nothing
 	option = {
-		name = "Go back home"
+		name = "Enjoy the leisurely stroll for a while and then head back home"
+		add_stress = -10
 		ai_chance = {
 			base = 5
 		}
@@ -45,17 +40,17 @@ bm_stroll_town.002 = {
 	immediate = { 
 		hidden_effect = { 
 			create_character = {
-				name = "Beggar"
+				name = "Beggar McBeggarface"
 				dynasty = beggarface
 				location = root.capital_province
 				gender_female_chance = 50
 				save_scope_as = beggar
 				culture = root.culture
-				trait = wounded_3
-				trait = ill
-				trait = one_eyed
-				trait = drunkard
-				trait = scarred
+				trait = wounded_1 	# minor
+				trait = typhus 		# medium
+				trait = blind 		# severe
+				trait = cancer 		# critical
+				trait = drunkard  	# flavour
 			}
 		}
 	}
@@ -64,9 +59,22 @@ bm_stroll_town.002 = {
 	option = {
 		name = "They are about to die, might as well bolster my lifeforce"
 		add_character_modifier = { modifier = lifeforce_modifier }
-		random_list = {
+		add_dread = 20
 
-			50 = {
+		duel = { 
+			skill = intrigue
+			value = 0
+
+			0 = {
+				custom_tooltip = "No one notices you"
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 2
+				}
+			}
+
+			20 = {
+				custom_tooltip = "Someone notices you"
 				root.capital_county = {
 					add_county_modifier = {
 						modifier = drained_beggar_holding
@@ -74,27 +82,108 @@ bm_stroll_town.002 = {
 					}
 				}
 			}
-			50 = {
-			}
 		}
 
 		scope:beggar = { death = { death_reason = death_sacrificed_to_gods } }
 
-		add_dread = 20
-
 		ai_chance = { base = 10 }
 	}
 
+	# heal them
+	option = {
+		name = "Heal their wounds"
+		trigger = { 
+			OR = {
+				has_trait = blood_mage_3
+				has_trait = blood_mage_4
+				has_trait = blood_mage_5
+				has_trait = blood_mage_6
+				has_trait = blood_mage_7 
+				has_trait = blood_mage_8 
+				has_trait = blood_mage_9 
+			}
+		}
+		scope:beggar = { remove_trait = wounded_1 }
+		magic_used = yes
+		add_piety = cure_illness_cost_small_neg
+		root.capital_county = {
+			add_county_modifier = {
+				modifier = healed_beggar_holding_1
+				years = 3
+			}
+		}
+		
+		ai_chance = { base = 4 }
+	}
+	option = {
+		name = "Heal their typhus"
+		trigger = { 
+			OR = {
+				has_trait = blood_mage_5
+				has_trait = blood_mage_6
+				has_trait = blood_mage_7 
+				has_trait = blood_mage_8 
+				has_trait = blood_mage_9 
+			}
+		}
+		scope:beggar = { remove_trait = typhus }
+		magic_used = yes
+		add_piety = cure_illness_cost_medium_neg
+
+		root.capital_county = {
+			add_county_modifier = {
+				modifier = healed_beggar_holding_2
+				years = 5
+			}
+		}
+		ai_chance = { base = 3 }
+	}
+	option = {
+		name = "Heal their eyes"
+		trigger = { 
+			OR = {
+				has_trait = blood_mage_6
+				has_trait = blood_mage_7 
+				has_trait = blood_mage_8 
+				has_trait = blood_mage_9 
+			}
+		}
+		scope:beggar = { remove_trait = blind }
+		magic_used = yes
+		add_piety = cure_illness_cost_large_neg
+		root.capital_county = {
+			add_county_modifier = {
+				modifier = healed_beggar_holding_3
+				years = 7
+			}
+		}
+		ai_chance = { base = 2 }
+	}
+	option = {
+		name = "Heal their cancer"
+		trigger = { 
+			OR = {
+				has_trait = blood_mage_8 
+				has_trait = blood_mage_9 
+			}
+		}
+		scope:beggar = { remove_trait = cancer }
+		magic_used = yes
+		add_piety = cure_illness_cost_xlarge_neg
+		root.capital_county = {
+			add_county_modifier = {
+				modifier = healed_beggar_holding_4
+				years = 10
+			}
+		}
+		ai_chance = { base = 1 }
+	}
 
 	# Do nothing
 	option = {
-		name = "Best to leave..."
-		ai_chance = {
-			base = 5
-		}
+		name = "Think I'll go back to the market"
+		trigger_event = {  id = bm_stroll_town.001 } 
 	}
-
-	
 
 	# Portraits
 	left_portrait ={

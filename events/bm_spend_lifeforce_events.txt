@@ -30,6 +30,13 @@ bm_channel_lifeforce.99 = {
 		trigger_event = { id = bm_channel_lifeforce.0001 }
 	}
 
+	option = { 
+		name = "I want to improve my skills permanently"
+		ai_chance = { base = 10 } 
+
+		trigger_event = { id = bm_channel_lifeforce.0002 }
+	}
+
 	# Do nothing
 	option = { 
 		name = "Nevermind"
@@ -50,7 +57,7 @@ bm_channel_lifeforce.0001 = {
 	theme = witchcraft
 	
 	option = {
-		name = "Channel Diplomacy"
+		name = "Temporarily boost Diplomacy"
 		magic_used = yes
 
 		add_character_modifier = {
@@ -62,7 +69,7 @@ bm_channel_lifeforce.0001 = {
 		ai_chance = { base = 100 }
 	}
 	option = {
-		name = "Channel Martial"
+		name = "Temporarily boost Martial"
 		magic_used = yes
 
 		add_character_modifier = {
@@ -75,7 +82,7 @@ bm_channel_lifeforce.0001 = {
 		ai_chance = { base = 100 }
 	}
 	option = {
-		name = "Channel Stewardship"
+		name = "Temporarily boost Stewardship"
 		magic_used = yes
 
 		add_character_modifier = {
@@ -89,7 +96,7 @@ bm_channel_lifeforce.0001 = {
 	}
 
 	option = {
-		name = "Channel Intrigue"
+		name = "Temporarily boost Intrigue"
 		magic_used = yes
 
 		add_character_modifier = {
@@ -102,7 +109,7 @@ bm_channel_lifeforce.0001 = {
 		ai_chance = { base = 100 }
 	}
 	option = {
-		name = "Channel Learning"
+		name = "Temporarily boost Learning"
 		magic_used = yes
 
 		add_character_modifier = {
@@ -112,6 +119,85 @@ bm_channel_lifeforce.0001 = {
 
 		add_piety  = lifedrain_piety_cost_neg
 		trigger = { NOT = { has_character_modifier = learning_lifeforce_modifier } }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = "Temporarily boost Prowess"
+		magic_used = yes
+
+		add_character_modifier = {
+			modifier = prowess_lifeforce_modifier
+			days = 1825
+		}
+
+		add_piety  = lifedrain_piety_cost_neg
+		trigger = { NOT = { has_character_modifier = prowess_lifeforce_modifier } }
+		ai_chance = { base = 100 }
+	}
+
+	# Do nothing
+	option = { 
+		name = "Nevermind"
+		ai_chance = {
+			base = 10
+		} 
+	}
+
+	# Portraits
+	left_portrait ={
+		character = root
+		animation = ecstasy
+	}
+}
+
+
+bm_channel_lifeforce.0002 = {
+	type = character_event
+	title = channel_lifeforce_decision
+	desc = channel_lifeforce_decision_tooltip_desc
+	theme = witchcraft
+	
+	option = {
+		name = "Permanently boost Diplomacy"
+		magic_used = yes
+		add_diplomacy_skill = 1
+		add_piety  = lifedrain_piety_cost_neg
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = "Permanently boost Martial"
+		magic_used = yes
+		add_martial_skill = 1
+		add_piety  = lifedrain_piety_cost_neg
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = "Channel Stewardship"
+		magic_used = yes
+		add_stewardship_skill = 1
+		add_piety  = lifedrain_piety_cost_neg
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = "Permanently boost Intrigue"
+		magic_used = yes
+		add_intrigue_skill = 1
+		add_piety  = lifedrain_piety_cost_neg
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = "Permanently boost Learning"
+		magic_used = yes
+		add_learning_skill = 1
+		add_piety  = lifedrain_piety_cost_neg
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = "Permanently boost Prowess"
+		magic_used = yes
+		add_prowess_skill = 2
+		add_piety  = lifedrain_piety_cost_neg
 		ai_chance = { base = 100 }
 	}
 

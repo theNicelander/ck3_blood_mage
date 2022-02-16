@@ -22,7 +22,7 @@ take_a_stroll_through_town = {
 	desc = "Take a stroll through town"
 
 	is_shown = { has_trait = blood_mage }
-	cooldown = { days = 365 }
+	cooldown = { years = 2 }
 	
 	effect = { trigger_event = { id = bm_stroll_town.001 } }
 

@@ -40,6 +40,11 @@ bm_enhance_power.001 = {
 					value = scope:duel_value
 					multiplier = 2
 				}
+				send_interface_toast = {
+					title = "Stronger Blood Mage"
+					left_icon = root
+					custom_tooltip = "You successfully increased your Blood Mage power"
+				}
 			}
 			
 			# Failed
@@ -48,6 +53,11 @@ bm_enhance_power.001 = {
 
 				# Base chance decreases as your blood mage power increases 
 				modifier = { add = blood_mage_rank_base }
+				send_interface_toast = {
+					title = "Failed to increase my power"
+					left_icon = root
+					custom_tooltip = "You failed to increase your Blood Mage power"
+				}
 			}
 
 			# critical fail
@@ -55,6 +65,11 @@ bm_enhance_power.001 = {
 				custom_tooltip = "Critical fail"
 				add_piety_level = -1
 				temporary_negative_lifeforce_effect = yes
+				send_interface_toast = {
+					title = "Critical fail"
+					left_icon = root
+					custom_tooltip = "I don't feel so good..."
+				}
 			}
 
 			
