@@ -1,0 +1,17 @@
+﻿debug_add_lifeforce = {
+	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
+	major = no
+	ai_check_interval = 0
+	desc = "BLOOD MAGE DEBUG"
+
+	is_shown = { debug_only = yes }
+
+	effect = {
+		add_character_modifier = { modifier = lifeforce_modifier }
+		add_character_modifier = { modifier = lifeforce_modifier }
+		add_character_modifier = { modifier = lifeforce_modifier }
+		add_character_modifier = { modifier = lifeforce_modifier }
+		add_character_modifier = { modifier = lifeforce_modifier }
+	}
+
+}
