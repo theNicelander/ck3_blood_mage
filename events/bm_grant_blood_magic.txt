@@ -1,0 +1,289 @@
+﻿# enhance power
+
+namespace = bm_grant_blood_magic
+
+bm_grant_blood_magic.001 = {
+	type = character_event
+	title = bm_grant_blood_magic.001.title
+	desc = bm_grant_blood_magic.001.desc
+	theme = witchcraft
+
+	# Rank 1
+	option = {
+		name = "Imbue with Initiate Blood Magic I" 
+
+		trigger = { 
+			scope:recipient = { NOT = { has_trait = blood_mage } }
+			scope:actor = {
+				OR = {
+					has_trait = blood_mage_2
+					has_trait = blood_mage_3
+					has_trait = blood_mage_4
+					has_trait = blood_mage_5
+					has_trait = blood_mage_6
+					has_trait = blood_mage_7 
+					has_trait = blood_mage_8 
+					has_trait = blood_mage_9 
+				}
+			}
+		}
+
+		# impact on recipient
+		scope:recipient = {
+			add_trait = blood_mage_1
+			add_opinion = {
+				target = scope:actor
+				modifier = made_me_a_blood_mage
+				opinion = 20
+			}
+		}
+		
+		# impact on actor
+		add_stress = grant_blood_magic_stress_cost_1
+		magic_used = yes
+
+		# AI
+		ai_chance = { base = 50 }
+	}
+
+	# Rank 2
+	option = {
+		name = "Imbue with Diciple Blood Magic II" 
+		trigger = { 
+			scope:recipient = {
+				NOT = {
+					OR = {
+						has_trait = blood_mage_2
+						has_trait = blood_mage_3
+						has_trait = blood_mage_4
+						has_trait = blood_mage_5
+						has_trait = blood_mage_6
+						has_trait = blood_mage_7 
+						has_trait = blood_mage_8 
+						has_trait = blood_mage_9 
+					}
+				}
+			}
+			scope:actor = {
+				OR = {
+					has_trait = blood_mage_4
+					has_trait = blood_mage_5
+					has_trait = blood_mage_6
+					has_trait = blood_mage_7 
+					has_trait = blood_mage_8 
+					has_trait = blood_mage_9 
+				}
+			}
+		}
+
+		# impact on recipient
+		scope:recipient = {
+			if = {
+				limit = { has_trait = blood_mage_1 }
+				change_trait_rank = {
+					trait = blood_mage
+					rank = 1
+					max = 2
+				}
+			}
+			else = {  add_trait = blood_mage_2 }
+			
+			add_opinion = {
+				target = scope:actor
+				modifier = made_me_a_blood_mage
+				opinion = 40
+			}
+		}
+		
+		# impact on actor
+		add_stress = grant_blood_magic_stress_cost_2
+		magic_used = yes
+
+		# AI
+		ai_chance = { base = 40 }
+	}
+
+	# Rank 3
+	option = {
+		name = "Imbue with Adept Blood Magic III" 
+		trigger = { 
+			scope:recipient = {
+				NOT = {
+					OR = {
+						has_trait = blood_mage_3
+						has_trait = blood_mage_4
+						has_trait = blood_mage_5
+						has_trait = blood_mage_6
+						has_trait = blood_mage_7 
+						has_trait = blood_mage_8 
+						has_trait = blood_mage_9 
+					}
+				}
+			}
+			scope:actor = {
+				OR = {
+					has_trait = blood_mage_6
+					has_trait = blood_mage_7 
+					has_trait = blood_mage_8 
+					has_trait = blood_mage_9 
+				}
+			}
+		}
+
+		# impact on recipient
+		scope:recipient = {
+			if = {
+				limit = { 
+					OR = {
+						has_trait = blood_mage_1
+						has_trait = blood_mage_2
+					}
+				}
+				change_trait_rank = {
+					trait = blood_mage
+					rank = 2
+					max = 3
+				}
+			}
+			else = { add_trait = blood_mage_3 }
+			add_opinion = {
+				target = scope:actor
+				modifier = made_me_a_blood_mage
+				opinion = 60
+			}
+		}
+		
+		# impact on actor
+		add_stress = grant_blood_magic_stress_cost_3
+		magic_used = yes
+
+		# AI
+		ai_chance = { base = 30 }
+	}
+
+
+	# Rank 4
+	option = {
+		name = "Imbue with Master Blood Magic IV" 
+		trigger = { 
+			scope:recipient = {
+				NOT = {
+					OR = {
+						has_trait = blood_mage_4
+						has_trait = blood_mage_5
+						has_trait = blood_mage_6
+						has_trait = blood_mage_7 
+						has_trait = blood_mage_8 
+						has_trait = blood_mage_9 
+					}
+				}
+			}
+			scope:actor = {
+				OR = {
+					has_trait = blood_mage_7 
+					has_trait = blood_mage_8 
+					has_trait = blood_mage_9 
+				}
+			}
+		}
+
+		# impact on recipient
+		scope:recipient = {
+			if = {
+				limit = { 
+					OR = {
+						has_trait = blood_mage_1
+						has_trait = blood_mage_2
+						has_trait = blood_mage_2
+					}
+				}
+				change_trait_rank = {
+					trait = blood_mage
+					rank = 3
+					max = 4
+				}
+			}
+			else = { add_trait = blood_mage_4 }
+			add_opinion = {
+				target = scope:actor
+				modifier = made_me_a_blood_mage
+				opinion = 80
+			}
+		}
+		
+		# impact on actor
+		add_stress = grant_blood_magic_stress_cost_4
+		magic_used = yes
+
+		# AI
+		ai_chance = { base = 20 }
+	}
+
+	# Rank 5
+	option = {
+		name = "Imbue with Grandmaster Blood Magic IV" 
+		trigger = { 
+			scope:recipient = {
+				NOT = {
+					OR = {
+						has_trait = blood_mage_5
+						has_trait = blood_mage_6
+						has_trait = blood_mage_7 
+						has_trait = blood_mage_8 
+						has_trait = blood_mage_9 
+					}
+				}
+			}
+			scope:actor = { has_trait = blood_mage_9 }
+		}
+
+		# impact on recipient
+		scope:recipient = {
+			if = {
+				limit = { 
+					OR = {
+						has_trait = blood_mage_1
+						has_trait = blood_mage_2
+						has_trait = blood_mage_3
+						has_trait = blood_mage_4
+					}
+				}
+				change_trait_rank = {
+					trait = blood_mage
+					rank = 4
+					max = 5
+				}
+			}
+			else = { add_trait = blood_mage_5 }
+			add_opinion = {
+				target = scope:actor
+				modifier = made_me_a_blood_mage
+				opinion = 100
+			}
+		}
+		
+		# impact on actor
+		add_stress = grant_blood_magic_stress_cost_5
+		magic_used = yes
+
+		# AI
+		ai_chance = { base = 10 }
+	}
+
+	# Do nothing
+	option = {
+		name = "Nevermind" 
+		ai_chance = { base = 5 }
+		add_piety = 100
+	}
+
+	# Portraits
+	left_portrait ={
+		character = root
+		animation = ecstasy
+	}
+	right_portrait ={
+		character = scope:recipient
+		animation = ecstasy
+	}
+}
