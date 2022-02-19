@@ -10,7 +10,7 @@ bm_grant_blood_magic.001 = {
 
 	# Rank 1
 	option = {
-		name = "Imbue with Initiate Blood Magic I" 
+		name = bm_grant_blood_magic.001.a
 
 		trigger = { 
 			scope:recipient = { NOT = { has_trait = blood_mage } }
@@ -48,7 +48,7 @@ bm_grant_blood_magic.001 = {
 
 	# Rank 2
 	option = {
-		name = "Imbue with Diciple Blood Magic II" 
+		name = bm_grant_blood_magic.001.b 
 		trigger = { 
 			scope:recipient = {
 				NOT = {
@@ -105,7 +105,7 @@ bm_grant_blood_magic.001 = {
 
 	# Rank 3
 	option = {
-		name = "Imbue with Adept Blood Magic III" 
+		name = bm_grant_blood_magic.001.c
 		trigger = { 
 			scope:recipient = {
 				NOT = {
@@ -164,7 +164,7 @@ bm_grant_blood_magic.001 = {
 
 	# Rank 4
 	option = {
-		name = "Imbue with Master Blood Magic IV" 
+		name = bm_grant_blood_magic.001.d
 		trigger = { 
 			scope:recipient = {
 				NOT = {
@@ -221,7 +221,7 @@ bm_grant_blood_magic.001 = {
 
 	# Rank 5
 	option = {
-		name = "Imbue with Grandmaster Blood Magic IV" 
+		name = bm_grant_blood_magic.001.e
 		trigger = { 
 			scope:recipient = {
 				NOT = {
@@ -272,7 +272,7 @@ bm_grant_blood_magic.001 = {
 
 	# Do nothing
 	option = {
-		name = "Nevermind" 
+		name = bm_grant_blood_magic.001.z
 		ai_chance = { base = 5 }
 		add_piety = 100
 	}
