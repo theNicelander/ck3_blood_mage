@@ -1,15 +1,23 @@
 ﻿l_russian:
-  trait_drain_prisoner_event_interaction:0 "Слейте положительные черты"
-  lifedrain_prisoner_interaction:0 "Слив жизни"
-  lifedrain_prisoner_interaction_desc:0 "Слейте жизненную силу из [получателя. GetShortuinamenoTooltip]"
-  lifedrain_prisoner_interaction.recipient.notification.tt:0 "[Restient.getShortuinamenOutooltip] жизненная сила будет истощена и добавлена к вам"
-  generic_drain_prisoner_trait_interaction_desc:0 "Слив [получатель. GTETSHORTUINAMENOTOLOTORTIP] необычайные черты."
-  generic_drain_prisoner_trait_interaction.recipient.notification.tt:0 "[Чрезвычайная черта получателя. GetShortuinamenoTooltip] будет осушена"
-  intellect_drain_prisoner_interaction:0 "Слив интеллекта"
-  physique_drain_prisoner_interaction:0 "Телосложение сливов"
-  beauty_drain_prisoner_interaction:0 "Слив красоты"
-  fertility_drain_prisoner_interaction:0 "Слив рождаемости"
-  giant_drain_prisoner_interaction:0 "Гигантский слиток"
-  pure_blooded_drain_prisoner_interaction:0 "Чистый слиток крови"
-  lifedrain_prisoner_event_interaction:0 "Слив жизни"
-  lifedrain_prisoner_event_interaction.recipient.notification.tt:0 "Вы будете использовать магию крови, чтобы слить [RECIPIENT.GETSHORTUINAMENOTOLTOOLTIP]"
+  # Высасывание способностей
+  trait_drain_prisoner_event_interaction:0 "Высосать положительные способности"
+  
+  # Высасывание Жизни
+  lifedrain_prisoner_interaction:0 "Высасывание жизни"
+  lifedrain_prisoner_interaction_desc:0 "Высосать Жизненную Силу [recipient.GetShortUINameNoTooltip]"
+  lifedrain_prisoner_interaction.recipient.notification.tt:0 "Жизненная сила [recipient.GetShortUINameNoTooltip] будет высосана и передана вам"
+  generic_drain_prisoner_trait_interaction_desc:0 "Высосать экстраординарные способности [recipient.GetShortUINameNoTooltip]."
+  
+  generic_drain_prisoner_trait_interaction_desc:0 "Высосать экстраординарные способности [recipient.GetShortUINameNoTooltip]."
+  generic_drain_prisoner_trait_interaction.recipient.notification.tt:0 "Экстраординарные способности будут высосаны [recipient.GetShortUINameNoTooltip]"
+
+  intellect_drain_prisoner_interaction:0 "Высасывание Интеллекта"
+  physique_drain_prisoner_interaction:0 "Высасывание Физической Силы"
+  beauty_drain_prisoner_interaction:0 "Высасывание Красоты"
+  fertility_drain_prisoner_interaction:0 "Высасывание Плодовитости"
+  giant_drain_prisoner_interaction:0 "Высасывание Гигантизма"
+  pure_blooded_drain_prisoner_interaction:0 "Высасывание Чистой Крови"
+
+  # Событие Высасывания Жизни
+  lifedrain_prisoner_event_interaction:0 "Высасывание Жизни"
+  lifedrain_prisoner_event_interaction.recipient.notification.tt:0 "Вы используете Магию Крови для осушения [recipient.GetShortUINameNoTooltip]"
