@@ -30,7 +30,6 @@
 
 
 blood_mage_2 = { # Disciple
-	index = 332
 	group = blood_mage
 	level = 2
 
@@ -43,9 +42,6 @@ blood_mage_2 = { # Disciple
 	# genetic
 	birth = 0.5
 	random_creation = 0.5
-	inherit_chance = 66
-	both_parent_has_trait_inherit_chance = 100
-
 
 	# benefits
 	monthly_learning_lifestyle_xp_gain_mult = 0.1
@@ -62,7 +58,6 @@ blood_mage_2 = { # Disciple
 }
 
 blood_mage_3 = { # Adept
-	index = 333
 	group = blood_mage
 	level = 3
 	shown_in_ruler_designer = no
@@ -73,10 +68,9 @@ blood_mage_3 = { # Adept
 	genetic = yes
 
 	# genetic
+	genetic = yes
 	birth = 0.1
 	random_creation = 0.1
-	inherit_chance = 33
-	both_parent_has_trait_inherit_chance = 66
 
 	# benefits
 	monthly_learning_lifestyle_xp_gain_mult = 0.15
@@ -93,7 +87,6 @@ blood_mage_3 = { # Adept
 }
 
 blood_mage_4 = { # Master
-	index = 334
 	group = blood_mage
 	level = 4
 	shown_in_ruler_designer = no
@@ -106,8 +99,6 @@ blood_mage_4 = { # Master
 	# genetic
 	birth = 0
 	random_creation = 0
-	inherit_chance = 10
-	both_parent_has_trait_inherit_chance = 33
 
 	# benefits
 	monthly_learning_lifestyle_xp_gain_mult = 0.2
@@ -125,7 +116,6 @@ blood_mage_4 = { # Master
 }
 
 blood_mage_5 = {  # Grandmaster
-	index = 335
 	group = blood_mage
 	level = 5
 	shown_in_ruler_designer = no
@@ -133,6 +123,7 @@ blood_mage_5 = {  # Grandmaster
 	# trait type
 	fame = yes
 	good = yes
+	genetic = yes
 
 	# benefits
 	monthly_learning_lifestyle_xp_gain_mult = 0.25
@@ -153,7 +144,6 @@ blood_mage_5 = {  # Grandmaster
 
 
 blood_mage_6 = {  # Arch
-	index = 336
 	group = blood_mage
 	level = 6
 	shown_in_ruler_designer = no
@@ -161,6 +151,7 @@ blood_mage_6 = {  # Arch
 	# trait type
 	fame = yes
 	good = yes
+	genetic = yes
 
 	# benefits
 	monthly_learning_lifestyle_xp_gain_mult = 0.30
@@ -180,7 +171,6 @@ blood_mage_6 = {  # Arch
 }
 
 blood_mage_7 = {  # Exalted
-	index = 337
 	group = blood_mage
 	level = 7
 	shown_in_ruler_designer = no
@@ -188,6 +178,7 @@ blood_mage_7 = {  # Exalted
 	# trait type
 	fame = yes
 	good = yes
+	genetic = yes
 
 	# benefits
 	monthly_learning_lifestyle_xp_gain_mult = 0.35
@@ -208,7 +199,6 @@ blood_mage_7 = {  # Exalted
 }
 
 blood_mage_8 = {  # Supreme
-	index = 338
 	group = blood_mage
 	level = 8
 	shown_in_ruler_designer = no
@@ -216,6 +206,7 @@ blood_mage_8 = {  # Supreme
 	# trait type
 	fame = yes
 	good = yes
+	genetic = yes
 
 	# benefits
 	monthly_learning_lifestyle_xp_gain_mult = 0.4
@@ -237,7 +228,6 @@ blood_mage_8 = {  # Supreme
 
 
 blood_mage_9 = {  # Divine
-	index = 339
 	group = blood_mage
 	level = 9
 	shown_in_ruler_designer = no
@@ -245,6 +235,7 @@ blood_mage_9 = {  # Divine
 	# trait type
 	fame = yes
 	good = yes
+	genetic = yes
 
 	# benefits
 	monthly_learning_lifestyle_xp_gain_mult = 0.5
