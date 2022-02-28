@@ -13,8 +13,9 @@
 	random_creation = 1
 
 	# benefits
-	monthly_learning_lifestyle_xp_gain_mult = 0.05
-	learning_per_stress_level = 2
+	monthly_learning_lifestyle_xp_gain_mult = 0.02
+	learning_per_stress_level = 1
+	learning_per_piety_level = 1
 	years_of_fertility = 5
 	life_expectancy = 5
 
@@ -41,9 +42,9 @@ blood_mage_2 = { # Disciple
 	random_creation = 0.5
 
 	# benefits
-	monthly_learning_lifestyle_xp_gain_mult = 0.1
-	learning_per_stress_level = 3
-	learning_per_piety_level = 1
+	monthly_learning_lifestyle_xp_gain_mult = 0.04
+	learning_per_stress_level = 2
+	learning_per_piety_level = 2
 	years_of_fertility = 10
 	life_expectancy = 10
 
@@ -70,9 +71,9 @@ blood_mage_3 = { # Adept
 	random_creation = 0.1
 
 	# benefits
-	monthly_learning_lifestyle_xp_gain_mult = 0.15
-	learning_per_stress_level = 4
-	learning_per_piety_level = 2
+	monthly_learning_lifestyle_xp_gain_mult = 0.06
+	learning_per_stress_level = 3
+	learning_per_piety_level = 3
 	years_of_fertility = 15
 	life_expectancy = 15
 
@@ -98,10 +99,9 @@ blood_mage_4 = { # Master
 	random_creation = 0
 
 	# benefits
-	monthly_learning_lifestyle_xp_gain_mult = 0.2
-	monthly_lifestyle_xp_gain_mult = 0.05
-	learning_per_stress_level = 5
-	learning_per_piety_level = 3
+	monthly_lifestyle_xp_gain_mult = 0.08
+	learning_per_stress_level = 4
+	learning_per_piety_level = 4
 	years_of_fertility = 25
 	life_expectancy = 25
 
@@ -123,14 +123,13 @@ blood_mage_5 = {  # Grandmaster
 	genetic = yes
 
 	# benefits
-	monthly_learning_lifestyle_xp_gain_mult = 0.25
 	monthly_lifestyle_xp_gain_mult = 0.1
-	learning_per_stress_level = 6
-	learning_per_piety_level = 4
+	learning_per_stress_level = 5
+	learning_per_piety_level = 5
 	years_of_fertility = 35
 	life_expectancy = 35
 	no_prowess_loss_from_age = yes
-	monthly_dynasty_prestige = 0.1
+	monthly_dynasty_prestige = 0.05
 
 	# description
 	desc = trait_blood_mage_desc
@@ -151,14 +150,13 @@ blood_mage_6 = {  # Arch
 	genetic = yes
 
 	# benefits
-	monthly_learning_lifestyle_xp_gain_mult = 0.30
-	monthly_lifestyle_xp_gain_mult = 0.15
-	learning_per_stress_level = 8
-	learning_per_piety_level = 5
+	monthly_lifestyle_xp_gain_mult = 0.12
+	learning_per_stress_level = 6
+	learning_per_piety_level = 6
 	years_of_fertility = 50
 	life_expectancy = 50
 	no_prowess_loss_from_age = yes
-	monthly_dynasty_prestige = 0.2
+	monthly_dynasty_prestige = 0.1
 
 	# description
 	desc = trait_blood_mage_desc
@@ -178,15 +176,14 @@ blood_mage_7 = {  # Exalted
 	genetic = yes
 
 	# benefits
-	monthly_learning_lifestyle_xp_gain_mult = 0.35
-	monthly_lifestyle_xp_gain_mult = 0.2
-	learning_per_stress_level = 10
-	learning_per_piety_level = 6
+	monthly_lifestyle_xp_gain_mult = 0.14
+	learning_per_stress_level = 7
+	learning_per_piety_level = 7
 	years_of_fertility = 65
 	life_expectancy = 65
 	no_prowess_loss_from_age = yes
 	flag = can_murder_own_children
-	monthly_dynasty_prestige = 0.3
+	monthly_dynasty_prestige = 0.15
 
 	# description
 	desc = trait_blood_mage_desc
@@ -206,15 +203,14 @@ blood_mage_8 = {  # Supreme
 	genetic = yes
 
 	# benefits
-	monthly_learning_lifestyle_xp_gain_mult = 0.4
-	monthly_lifestyle_xp_gain_mult = 0.25
-	learning_per_stress_level = 12
+	monthly_lifestyle_xp_gain_mult = 0.16
+	learning_per_stress_level = 8
 	learning_per_piety_level = 8
 	years_of_fertility = 80
 	life_expectancy = 80
 	no_prowess_loss_from_age = yes
 	flag = can_murder_own_children
-	monthly_dynasty_prestige = 0.4
+	monthly_dynasty_prestige = 0.2
 
 	# description
 	desc = trait_blood_mage_desc
@@ -235,15 +231,14 @@ blood_mage_9 = {  # Divine
 	genetic = yes
 
 	# benefits
-	monthly_learning_lifestyle_xp_gain_mult = 0.5
-	monthly_lifestyle_xp_gain_mult = 0.30
-	learning_per_stress_level = 15
+	monthly_lifestyle_xp_gain_mult = 0.2
+	learning_per_stress_level = 10
 	learning_per_piety_level = 10
 	years_of_fertility = 100
 	life_expectancy = 100
 	no_prowess_loss_from_age = yes
 	flag = can_murder_own_children
-	monthly_dynasty_prestige = 0.5
+	monthly_dynasty_prestige = 0.25
 
 	# description
 	desc = trait_blood_mage_desc
