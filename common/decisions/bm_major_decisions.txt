@@ -19,14 +19,14 @@
 		custom_tooltip = enhance_personal_blood_mage_power_tooltip_desc
 	}
 
-	ai_check_interval = 12
+	ai_check_interval = 36
 	ai_will_do = 50
 }
 
 enhance_blood_mage_coven_decision_1 = {
 	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
 	major = yes
-	ai_check_interval = 0
+	ai_check_interval = 36
 	desc = enhance_blood_mage_coven_decision_desc
 
 	is_shown = {
@@ -66,7 +66,7 @@ enhance_blood_mage_coven_decision_1 = {
 enhance_blood_mage_coven_decision_2 = {
 	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
 	major = yes
-	ai_check_interval = 0
+	ai_check_interval = 36
 	desc = enhance_blood_mage_coven_decision_desc
 
 	is_shown = {
@@ -80,13 +80,14 @@ enhance_blood_mage_coven_decision_2 = {
 	}
 
 	is_valid = {
-		has_character_modifier = lifeforce_modifier
+		exists = house
 		house = {
 			any_adult_house_member = {
-				count >= 10
-				has_trait = blood_mage			
+				count >= 3
+				has_trait = blood_mage
 			}
 		}
+
 		or = {
 			has_trait = blood_mage_2
 			has_trait = blood_mage_3
@@ -119,7 +120,7 @@ enhance_blood_mage_coven_decision_2 = {
 enhance_blood_mage_coven_decision_3 = {
 	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
 	major = yes
-	ai_check_interval = 0
+	ai_check_interval = 36
 	desc = enhance_blood_mage_coven_decision_desc
 
 	is_shown = {
@@ -171,7 +172,7 @@ enhance_blood_mage_coven_decision_3 = {
 enhance_blood_mage_coven_decision_4 = {
 	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
 	major = yes
-	ai_check_interval = 0
+	ai_check_interval = 36
 	desc = enhance_blood_mage_coven_decision_desc
 
 	is_shown = {
@@ -223,7 +224,7 @@ enhance_blood_mage_coven_decision_4 = {
 enhance_blood_mage_coven_decision_5 = {
 	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
 	major = yes
-	ai_check_interval = 0
+	ai_check_interval = 36
 	desc = enhance_blood_mage_coven_decision_desc
 
 	is_shown = {
@@ -275,7 +276,7 @@ enhance_blood_mage_coven_decision_5 = {
 enhance_blood_mage_coven_decision_6 = {
 	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
 	major = yes
-	ai_check_interval = 0
+	ai_check_interval = 36
 	desc = enhance_blood_mage_coven_decision_desc
 
 	is_shown = {
@@ -327,7 +328,7 @@ enhance_blood_mage_coven_decision_6 = {
 enhance_blood_mage_coven_decision_7 = {
 	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
 	major = yes
-	ai_check_interval = 0
+	ai_check_interval = 36
 	desc = enhance_blood_mage_coven_decision_desc
 
 	is_shown = {
@@ -379,7 +380,7 @@ enhance_blood_mage_coven_decision_7 = {
 enhance_blood_mage_coven_decision_8 = {
 	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
 	major = yes
-	ai_check_interval = 0
+	ai_check_interval = 36
 	desc = enhance_blood_mage_coven_decision_desc
 
 	is_shown = {
@@ -432,7 +433,7 @@ enhance_blood_mage_coven_decision_8 = {
 enhance_blood_mage_coven_decision_9 = {
 	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
 	major = yes
-	ai_check_interval = 0
+	ai_check_interval = 36
 	desc = enhance_blood_mage_coven_decision_desc
 
 	is_shown = {
@@ -484,7 +485,7 @@ enhance_blood_mage_coven_decision_9 = {
 enhance_blood_mage_coven_decision_10 = {
 	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
 	major = yes
-	ai_check_interval = 0
+	ai_check_interval = 36
 	desc = enhance_blood_mage_coven_decision_desc
 
 	is_shown = {
