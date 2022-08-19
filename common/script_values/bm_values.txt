@@ -9,15 +9,15 @@ grant_blood_magic_stress_cost_5 = 50
 found_bm_coven_member_count = {
 	add = 3
 	if = {
-		exists = var:enhance_bm_1
+		limit = { exists = global_var:enhance_bm_1 }
 		add = 2
 	}
 	if = {
-		limit = { exists = var:enhance_bm_2 }
+		limit = { exists = global_var:enhance_bm_2 }
 		add = found_bm_coven_member_count_1
 	}
 	if = {
-		limit = { exists = var:enhance_bm_3 }
+		limit = { exists = global_var:enhance_bm_3 }
 		add = found_bm_coven_member_count_2
 	}
 }
