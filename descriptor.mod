@@ -8,5 +8,5 @@ tags={
 	"Alternative History"
 }
 name="Nicelander's Blood Mage"
-supported_version="1.5.*"
+supported_version="1.6.*"
 remote_file_id="2737082376"

@@ -32,9 +32,10 @@ enhance_blood_mage_coven_decision_1 = {
 	is_shown = {
 		has_trait = blood_mage
 		exists = house
+		is_house_head = yes
 		
 		NOT = {
-			exists = var:enhance_bm_1
+			exists = global_var:enhance_bm_1
 		}
 	}
 
@@ -43,8 +44,15 @@ enhance_blood_mage_coven_decision_1 = {
 		has_character_modifier = lifeforce_modifier
 
 		house = {
+			custom_tooltip = {
+				text = found_bm_coven_member_count_tt
+				any_house_member = {
+					count >= found_bm_coven_member_count
+					has_trait = blood_mage
+				}
+			}
 			any_house_member = {
-				count >= 3
+				count >= found_bm_coven_member_count
 				has_trait = blood_mage
 			}
 		}
@@ -53,7 +61,7 @@ enhance_blood_mage_coven_decision_1 = {
 	effect = { 
 		magic_used = yes
 		enhance_blood_mage_coven_decision_effects = yes
-		set_variable = { name = enhance_bm_1 }
+		set_global_variable = { name = enhance_bm_1 }
 	}
 
 	cost = {
@@ -73,17 +81,24 @@ enhance_blood_mage_coven_decision_2 = {
 		has_trait = blood_mage
 		exists = house
 		is_house_head = yes
-		exists = var:enhance_bm_1
+		exists = global_var:enhance_bm_1
 		NOT = {
-			exists = var:enhance_bm_2
+			exists = global_var:enhance_bm_2
 		}
 	}
 
 	is_valid = {
 		exists = house
 		house = {
-			any_adult_house_member = {
-				count >= 3
+			custom_tooltip = {
+				text = found_bm_coven_member_count_tt
+				any_house_member = {
+					count >= found_bm_coven_member_count
+					has_trait = blood_mage
+				}
+			}
+			any_house_member = {
+				count >= found_bm_coven_member_count
 				has_trait = blood_mage
 			}
 		}
@@ -104,7 +119,7 @@ enhance_blood_mage_coven_decision_2 = {
 		magic_used = yes
 		add_piety_level = -1
 		enhance_blood_mage_coven_decision_effects = yes
-		set_variable = { 
+		set_global_variable = { 
 			name = enhance_bm_2 
 		}
 	}
@@ -127,19 +142,26 @@ enhance_blood_mage_coven_decision_3 = {
 		has_trait = blood_mage
 		exists = house
 		is_house_head = yes
-		exists = var:enhance_bm_1
-		exists = var:enhance_bm_2
+		exists = global_var:enhance_bm_1
+		exists = global_var:enhance_bm_2
 		NOT = {
-			exists = var:enhance_bm_3
+			exists = global_var:enhance_bm_3
 		}
 	}
 
 	is_valid = {
 		has_character_modifier = lifeforce_modifier
 		house = {
-			any_adult_house_member = {
-				count >= 25
-				has_trait = blood_mage			
+			custom_tooltip = {
+				text = found_bm_coven_member_count_tt
+				any_house_member = {
+					count >= found_bm_coven_member_count
+					has_trait = blood_mage
+				}
+			}
+			any_house_member = {
+				count >= found_bm_coven_member_count
+				has_trait = blood_mage
 			}
 		}
 		or = {
@@ -157,7 +179,7 @@ enhance_blood_mage_coven_decision_3 = {
 		magic_used = yes
 		add_piety_level = -1
 		enhance_blood_mage_coven_decision_effects = yes
-		set_variable = { 
+		set_global_variable = { 
 			name = enhance_bm_3
 		}
 	}
@@ -179,20 +201,27 @@ enhance_blood_mage_coven_decision_4 = {
 		has_trait = blood_mage
 		exists = house
 		is_house_head = yes
-		exists = var:enhance_bm_1
-		exists = var:enhance_bm_2
-		exists = var:enhance_bm_3
+		exists = global_var:enhance_bm_1
+		exists = global_var:enhance_bm_2
+		exists = global_var:enhance_bm_3
 		NOT = {
-			exists = var:enhance_bm_4
+			exists = global_var:enhance_bm_4
 		}
 	}
 
 	is_valid = {
 		has_character_modifier = lifeforce_modifier
 		house = {
-			any_adult_house_member = {
-				count >= 25
-				has_trait = blood_mage			
+			custom_tooltip = {
+				text = found_bm_coven_member_count_tt
+				any_house_member = {
+					count >= found_bm_coven_member_count
+					has_trait = blood_mage
+				}
+			}
+			any_house_member = {
+				count >= found_bm_coven_member_count
+				has_trait = blood_mage
 			}
 		}
 		or = {
@@ -209,7 +238,7 @@ enhance_blood_mage_coven_decision_4 = {
 		magic_used = yes
 		add_piety_level = -1
 		enhance_blood_mage_coven_decision_effects = yes
-		set_variable = { 
+		set_global_variable = { 
 			name = enhance_bm_4
 		}
 	}
@@ -231,21 +260,28 @@ enhance_blood_mage_coven_decision_5 = {
 		has_trait = blood_mage
 		exists = house
 		is_house_head = yes
-		exists = var:enhance_bm_1
-		exists = var:enhance_bm_2
-		exists = var:enhance_bm_3
-		exists = var:enhance_bm_4
+		exists = global_var:enhance_bm_1
+		exists = global_var:enhance_bm_2
+		exists = global_var:enhance_bm_3
+		exists = global_var:enhance_bm_4
 		NOT = {
-			exists = var:enhance_bm_5
+			exists = global_var:enhance_bm_5
 		}
 	}
 
 	is_valid = {
 		has_character_modifier = lifeforce_modifier
 		house = {
-			any_adult_house_member = {
-				count >= 50
-				has_trait = blood_mage			
+			custom_tooltip = {
+				text = found_bm_coven_member_count_tt
+				any_house_member = {
+					count >= found_bm_coven_member_count
+					has_trait = blood_mage
+				}
+			}
+			any_house_member = {
+				count >= found_bm_coven_member_count
+				has_trait = blood_mage
 			}
 		}
 		or = { # at least master
@@ -261,7 +297,7 @@ enhance_blood_mage_coven_decision_5 = {
 		magic_used = yes
 		add_piety_level = -2
 		enhance_blood_mage_coven_decision_effects = yes
-		set_variable = { 
+		set_global_variable = { 
 			name = enhance_bm_5
 		}
 	}
@@ -283,22 +319,29 @@ enhance_blood_mage_coven_decision_6 = {
 		has_trait = blood_mage
 		exists = house
 		is_house_head = yes
-		exists = var:enhance_bm_1
-		exists = var:enhance_bm_2
-		exists = var:enhance_bm_3
-		exists = var:enhance_bm_4
-		exists = var:enhance_bm_5
+		exists = global_var:enhance_bm_1
+		exists = global_var:enhance_bm_2
+		exists = global_var:enhance_bm_3
+		exists = global_var:enhance_bm_4
+		exists = global_var:enhance_bm_5
 		NOT = {
-			exists = var:enhance_bm_6
+			exists = global_var:enhance_bm_6
 		}
 	}
 
 	is_valid = {
 		has_character_modifier = lifeforce_modifier
 		house = {
-			any_adult_house_member = {
-				count >= 50
-				has_trait = blood_mage			
+			custom_tooltip = {
+				text = found_bm_coven_member_count_tt
+				any_house_member = {
+					count >= found_bm_coven_member_count
+					has_trait = blood_mage
+				}
+			}
+			any_house_member = {
+				count >= found_bm_coven_member_count
+				has_trait = blood_mage
 			}
 		}
 		or = {
@@ -313,7 +356,7 @@ enhance_blood_mage_coven_decision_6 = {
 		magic_used = yes
 		add_piety_level = -2
 		enhance_blood_mage_coven_decision_effects = yes
-		set_variable = { 
+		set_global_variable = { 
 			name = enhance_bm_6
 		}
 	}
@@ -335,23 +378,30 @@ enhance_blood_mage_coven_decision_7 = {
 		has_trait = blood_mage
 		exists = house
 		is_house_head = yes
-		exists = var:enhance_bm_1
-		exists = var:enhance_bm_2
-		exists = var:enhance_bm_3
-		exists = var:enhance_bm_4
-		exists = var:enhance_bm_5
-		exists = var:enhance_bm_6
+		exists = global_var:enhance_bm_1
+		exists = global_var:enhance_bm_2
+		exists = global_var:enhance_bm_3
+		exists = global_var:enhance_bm_4
+		exists = global_var:enhance_bm_5
+		exists = global_var:enhance_bm_6
 		NOT = {
-			exists = var:enhance_bm_7
+			exists = global_var:enhance_bm_7
 		}
 	}
 
 	is_valid = {
 		has_character_modifier = lifeforce_modifier
 		house = {
-			any_adult_house_member = {
-				count >= 100
-				has_trait = blood_mage			
+			custom_tooltip = {
+				text = found_bm_coven_member_count_tt
+				any_house_member = {
+					count >= found_bm_coven_member_count
+					has_trait = blood_mage
+				}
+			}
+			any_house_member = {
+				count >= found_bm_coven_member_count
+				has_trait = blood_mage
 			}
 		}
 		or = { 
@@ -365,7 +415,7 @@ enhance_blood_mage_coven_decision_7 = {
 		magic_used = yes
 		add_piety_level = -2
 		enhance_blood_mage_coven_decision_effects = yes
-		set_variable = { 
+		set_global_variable = { 
 			name = enhance_bm_7
 		}
 	}
@@ -387,25 +437,32 @@ enhance_blood_mage_coven_decision_8 = {
 		has_trait = blood_mage
 		exists = house
 		is_house_head = yes
-		exists = var:enhance_bm_1
-		exists = var:enhance_bm_2
-		exists = var:enhance_bm_3
-		exists = var:enhance_bm_4
-		exists = var:enhance_bm_5
-		exists = var:enhance_bm_6
-		exists = var:enhance_bm_7
+		exists = global_var:enhance_bm_1
+		exists = global_var:enhance_bm_2
+		exists = global_var:enhance_bm_3
+		exists = global_var:enhance_bm_4
+		exists = global_var:enhance_bm_5
+		exists = global_var:enhance_bm_6
+		exists = global_var:enhance_bm_7
 
 		NOT = {
-			exists = var:enhance_bm_8
+			exists = global_var:enhance_bm_8
 		}
 	}
 
 	is_valid = {
 		has_character_modifier = lifeforce_modifier
 		house = {
-			any_adult_house_member = {
-				count >= 100
-				has_trait = blood_mage			
+			custom_tooltip = {
+				text = found_bm_coven_member_count_tt
+				any_house_member = {
+					count >= found_bm_coven_member_count
+					has_trait = blood_mage
+				}
+			}
+			any_house_member = {
+				count >= found_bm_coven_member_count
+				has_trait = blood_mage
 			}
 		}
 		or = {
@@ -418,7 +475,7 @@ enhance_blood_mage_coven_decision_8 = {
 		magic_used = yes
 		add_piety_level = -3
 		enhance_blood_mage_coven_decision_effects = yes
-		set_variable = { 
+		set_global_variable = { 
 			name = enhance_bm_8
 		}
 	}
@@ -440,25 +497,32 @@ enhance_blood_mage_coven_decision_9 = {
 		has_trait = blood_mage
 		exists = house
 		is_house_head = yes
-		exists = var:enhance_bm_1
-		exists = var:enhance_bm_2
-		exists = var:enhance_bm_3
-		exists = var:enhance_bm_4
-		exists = var:enhance_bm_5
-		exists = var:enhance_bm_6
-		exists = var:enhance_bm_7
-		exists = var:enhance_bm_8
+		exists = global_var:enhance_bm_1
+		exists = global_var:enhance_bm_2
+		exists = global_var:enhance_bm_3
+		exists = global_var:enhance_bm_4
+		exists = global_var:enhance_bm_5
+		exists = global_var:enhance_bm_6
+		exists = global_var:enhance_bm_7
+		exists = global_var:enhance_bm_8
 		NOT = {
-			exists = var:enhance_bm_9
+			exists = global_var:enhance_bm_9
 		}
 	}
 
 	is_valid = {
 		has_character_modifier = lifeforce_modifier
 		house = {
-			any_adult_house_member = {
-				count >= 150
-				has_trait = blood_mage			
+			custom_tooltip = {
+				text = found_bm_coven_member_count_tt
+				any_house_member = {
+					count >= found_bm_coven_member_count
+					has_trait = blood_mage
+				}
+			}
+			any_house_member = {
+				count >= found_bm_coven_member_count
+				has_trait = blood_mage
 			}
 		}
 		or = {
@@ -470,7 +534,7 @@ enhance_blood_mage_coven_decision_9 = {
 		magic_used = yes
 		add_piety_level = -3
 		enhance_blood_mage_coven_decision_effects = yes
-		set_variable = { 
+		set_global_variable = { 
 			name = enhance_bm_9
 		}
 	}
@@ -492,27 +556,34 @@ enhance_blood_mage_coven_decision_10 = {
 		has_trait = blood_mage
 		exists = house
 		is_house_head = yes
-		exists = var:enhance_bm_1
-		exists = var:enhance_bm_2
-		exists = var:enhance_bm_3
-		exists = var:enhance_bm_4
-		exists = var:enhance_bm_5
-		exists = var:enhance_bm_6
-		exists = var:enhance_bm_7
-		exists = var:enhance_bm_8
-		exists = var:enhance_bm_9
+		exists = global_var:enhance_bm_1
+		exists = global_var:enhance_bm_2
+		exists = global_var:enhance_bm_3
+		exists = global_var:enhance_bm_4
+		exists = global_var:enhance_bm_5
+		exists = global_var:enhance_bm_6
+		exists = global_var:enhance_bm_7
+		exists = global_var:enhance_bm_8
+		exists = global_var:enhance_bm_9
 		
 		NOT = {
-			exists = var:enhance_bm_10
+			exists = global_var:enhance_bm_10
 		}
 	}
 
 	is_valid = {
 		has_character_modifier = lifeforce_modifier
 		house = {
-			any_adult_house_member = {
-				count >= 200
-				has_trait = blood_mage			
+			custom_tooltip = {
+				text = found_bm_coven_member_count_tt
+				any_house_member = {
+					count >= found_bm_coven_member_count
+					has_trait = blood_mage
+				}
+			}
+			any_house_member = {
+				count >= found_bm_coven_member_count
+				has_trait = blood_mage
 			}
 		}
 		or = { # at least supreme
@@ -524,7 +595,7 @@ enhance_blood_mage_coven_decision_10 = {
 		magic_used = yes
 		add_piety_level = -4
 		enhance_blood_mage_coven_decision_effects = yes
-		set_variable = { 
+		set_global_variable = { 
 			name = enhance_bm_10
 		}
 	}
