@@ -43,8 +43,15 @@ enhance_blood_mage_coven_decision_1 = {
 		has_character_modifier = lifeforce_modifier
 
 		house = {
-			any_house_member = {
-				count >= 3
+			custom_tooltip = {
+				text = found_blood_mage_coven_house_member_count_tt
+				any_adult_house_member = {
+					count >= found_blood_mage_coven_member_count_value
+					has_trait = blood_mage
+				}
+			}
+			any_adult_house_member = {
+				count >= found_blood_mage_coven_member_count_value
 				has_trait = blood_mage
 			}
 		}
