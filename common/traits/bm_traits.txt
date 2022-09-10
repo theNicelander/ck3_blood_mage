@@ -10,8 +10,8 @@
 	genetic = yes
 
 	# genetic
-	birth = 1
-	random_creation = 1
+	birth = 0.5
+	random_creation = 0.5
 
 	# benefits
 	monthly_learning_lifestyle_xp_gain_mult = 0.02
@@ -40,8 +40,8 @@ blood_mage_2 = { # Disciple
 	shown_in_ruler_designer = no
 
 	# genetic
-	birth = 0.5
-	random_creation = 0.5
+	birth = 0.25
+	random_creation = 0.25
 
 	# benefits
 	monthly_learning_lifestyle_xp_gain_mult = 0.04
@@ -70,8 +70,8 @@ blood_mage_3 = { # Adept
 
 	# genetic
 	genetic = yes
-	birth = 0.1
-	random_creation = 0.1
+	birth = 0.05
+	random_creation = 0.05
 
 	# benefits
 	monthly_learning_lifestyle_xp_gain_mult = 0.06
@@ -127,6 +127,10 @@ blood_mage_5 = {  # Grandmaster
 	good = yes
 	genetic = yes
 
+	# genetic
+	birth = 0
+	random_creation = 0
+
 	# benefits
 	monthly_lifestyle_xp_gain_mult = 0.1
 	learning_per_stress_level = 5
@@ -154,6 +158,10 @@ blood_mage_6 = {  # Arch
 	fame = yes
 	good = yes
 	genetic = yes
+	
+	# genetic
+	birth = 0
+	random_creation = 0
 
 	# benefits
 	monthly_lifestyle_xp_gain_mult = 0.12
@@ -181,6 +189,10 @@ blood_mage_7 = {  # Exalted
 	fame = yes
 	good = yes
 	genetic = yes
+
+	# genetic
+	birth = 0
+	random_creation = 0
 
 	# benefits
 	monthly_lifestyle_xp_gain_mult = 0.14
@@ -210,6 +222,10 @@ blood_mage_8 = {  # Supreme
 	good = yes
 	genetic = yes
 
+	# genetic
+	birth = 0
+	random_creation = 0
+
 	# benefits
 	monthly_lifestyle_xp_gain_mult = 0.16
 	learning_per_stress_level = 8
@@ -238,6 +254,10 @@ blood_mage_9 = {  # Divine
 	fame = yes
 	good = yes
 	genetic = yes
+
+	# genetic
+	birth = 0
+	random_creation = 0
 
 	# benefits
 	monthly_lifestyle_xp_gain_mult = 0.2
