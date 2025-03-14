@@ -22,6 +22,7 @@ take_a_stroll_through_town = {
 	major = no
 	ai_check_interval = 12
 	desc = "Take a stroll through town"
+	decision_group_type = bm_decision_group
 
 	is_shown = { has_trait = blood_mage }
 	cooldown = { years = 2 }
