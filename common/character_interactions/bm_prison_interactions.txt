@@ -10,7 +10,7 @@ trait_drain_prisoner_event_interaction = {
     }
 
     is_shown = {
-        scope:actor = { has_trait = blood_mage }
+        scope:actor = { has_trait = lifestyle_blood_mage_group }
         scope:recipient = {
             is_imprisoned_by = scope:actor
             or = {
@@ -56,7 +56,7 @@ lifedrain_prisoner_event_interaction = {
     category = interaction_category_hostile
     desc = lifedrain_prisoner_interaction_desc
     is_shown = {
-        scope:actor = { has_trait = blood_mage }
+        scope:actor = { has_trait = lifestyle_blood_mage_group }
         scope:recipient = { is_imprisoned_by = scope:actor }
     }
 
