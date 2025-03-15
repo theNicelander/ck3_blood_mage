@@ -112,30 +112,9 @@ enhance_blood_mage_personal_piety_level_cost = {
     add = 1
     if = {
         limit = {
-            or = {
-                has_trait = blood_mage_3
-                has_trait = blood_mage_4
-            }
-        }
-        add = 1
-    }
-    if = {
-        limit = {
-            or = {
-                has_trait = blood_mage_5
-                has_trait = blood_mage_6
-            }
+            has_trait = lifestyle_blood_mage_1
         }
         add = 2
-    }
-    if = {
-        limit = {
-            or = {
-                has_trait = blood_mage_7
-                has_trait = blood_mage_8
-            }
-        }
-        add = 3
     }
 }
 
@@ -143,102 +122,25 @@ enhance_blood_mage_personal_piety_level_cost_negative = {
     add = -1
     if = {
         limit = {
-            or = {
-                has_trait = blood_mage_3
-                has_trait = blood_mage_4
-            }
+            has_trait = lifestyle_blood_mage_1
         }
         add = -1
-    }
-    if = {
-        limit = {
-            or = {
-                has_trait = blood_mage_5
-                has_trait = blood_mage_6
-            }
-        }
-        add = -2
-    }
-    if = {
-        limit = {
-            or = {
-                has_trait = blood_mage_7
-                has_trait = blood_mage_8
-            }
-        }
-        add = -3
     }
 }
 
 blood_mage_rank_multiplier = {
     add = 1
     if = {
-        limit = { has_trait = blood_mage_2 }
-        add = 2
-    }
-    if = {
-        limit = { has_trait = blood_mage_3 }
-        add = 4
-    }
-    if = {
-        limit = { has_trait = blood_mage_4 }
-        add = 6
-    }
-    if = {
-        limit = { has_trait = blood_mage_5 }
-        add = 8
-    }
-    if = {
-        limit = { has_trait = blood_mage_6 }
-        add = 10
-    }
-    if = {
-        limit = { has_trait = blood_mage_7 }
-        add = 12
-    }
-    if = {
-        limit = { has_trait = blood_mage_8 }
-        add = 15
-    }
-    if = {
-        limit = { has_trait = blood_mage_9 }
-        add = 20
+        limit = { has_trait = lifestyle_blood_mage_1 }
+        add = 5
     }
 }
 
 blood_mage_rank_base = {
     value = 0
     if = {
-        limit = { has_trait = blood_mage_2 }
-        add = 10
-    }
-    if = {
-        limit = { has_trait = blood_mage_3 }
-        add = 25
-    }
-    if = {
-        limit = { has_trait = blood_mage_4 }
+        limit = { has_trait = lifestyle_blood_mage_1 }
         add = 50
-    }
-    if = {
-        limit = { has_trait = blood_mage_5 }
-        add = 90
-    }
-    if = {
-        limit = { has_trait = blood_mage_6 }
-        add = 150
-    }
-    if = {
-        limit = { has_trait = blood_mage_7 }
-        add = 270
-    }
-    if = {
-        limit = { has_trait = blood_mage_8 }
-        add = 350
-    }
-    if = {
-        limit = { has_trait = blood_mage_9 }
-        add = 500
     }
 }
 

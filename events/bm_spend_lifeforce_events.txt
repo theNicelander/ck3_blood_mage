@@ -10,7 +10,6 @@ bm_channel_lifeforce.99 = {
 
     option = {
         name = "I want to learn faster"
-        magic_used = yes
 
         add_piety = lifedrain_piety_cost_neg
         add_character_modifier = {
@@ -24,23 +23,17 @@ bm_channel_lifeforce.99 = {
     }
 
     option = {
-        name = "I want to improve my skills temporarily"
+        name = "I want to temporarily improve my skills a lot"
         ai_chance = { base = 10 }
 
         trigger_event = { id = bm_channel_lifeforce.0001 }
     }
 
     option = {
-        name = "I want to improve my skills permanently"
+        name = "I want to permanently improve my skills a little"
         ai_chance = { base = 10 }
 
         trigger_event = { id = bm_channel_lifeforce.0002 }
-    }
-
-    # Do nothing
-    option = {
-        name = "Nevermind"
-        ai_chance = { base = 10 }
     }
 
     # Portraits
@@ -58,7 +51,6 @@ bm_channel_lifeforce.0001 = {
 
     option = {
         name = "Temporarily boost Diplomacy"
-        magic_used = yes
 
         add_character_modifier = {
             modifier = diplomacy_lifeforce_modifier
@@ -70,7 +62,6 @@ bm_channel_lifeforce.0001 = {
     }
     option = {
         name = "Temporarily boost Martial"
-        magic_used = yes
 
         add_character_modifier = {
             modifier = martial_lifeforce_modifier
@@ -83,7 +74,6 @@ bm_channel_lifeforce.0001 = {
     }
     option = {
         name = "Temporarily boost Stewardship"
-        magic_used = yes
 
         add_character_modifier = {
             modifier = stewardship_lifeforce_modifier
@@ -97,7 +87,6 @@ bm_channel_lifeforce.0001 = {
 
     option = {
         name = "Temporarily boost Intrigue"
-        magic_used = yes
 
         add_character_modifier = {
             modifier = intrigue_lifeforce_modifier
@@ -110,7 +99,6 @@ bm_channel_lifeforce.0001 = {
     }
     option = {
         name = "Temporarily boost Learning"
-        magic_used = yes
 
         add_character_modifier = {
             modifier = learning_lifeforce_modifier
@@ -123,7 +111,6 @@ bm_channel_lifeforce.0001 = {
     }
     option = {
         name = "Temporarily boost Prowess"
-        magic_used = yes
 
         add_character_modifier = {
             modifier = prowess_lifeforce_modifier
@@ -150,7 +137,6 @@ bm_channel_lifeforce.0001 = {
     }
 }
 
-
 bm_channel_lifeforce.0002 = {
     type = character_event
     title = channel_lifeforce_decision
@@ -159,21 +145,18 @@ bm_channel_lifeforce.0002 = {
 
     option = {
         name = "Permanently boost Diplomacy"
-        magic_used = yes
         add_diplomacy_skill = 1
         add_piety  = lifedrain_piety_cost_neg
         ai_chance = { base = 100 }
     }
     option = {
         name = "Permanently boost Martial"
-        magic_used = yes
         add_martial_skill = 1
         add_piety  = lifedrain_piety_cost_neg
         ai_chance = { base = 100 }
     }
     option = {
         name = "Channel Stewardship"
-        magic_used = yes
         add_stewardship_skill = 1
         add_piety  = lifedrain_piety_cost_neg
         ai_chance = { base = 100 }
@@ -181,21 +164,18 @@ bm_channel_lifeforce.0002 = {
 
     option = {
         name = "Permanently boost Intrigue"
-        magic_used = yes
         add_intrigue_skill = 1
         add_piety  = lifedrain_piety_cost_neg
         ai_chance = { base = 100 }
     }
     option = {
         name = "Permanently boost Learning"
-        magic_used = yes
         add_learning_skill = 1
         add_piety  = lifedrain_piety_cost_neg
         ai_chance = { base = 100 }
     }
     option = {
         name = "Permanently boost Prowess"
-        magic_used = yes
         add_prowess_skill = 2
         add_piety  = lifedrain_piety_cost_neg
         ai_chance = { base = 100 }

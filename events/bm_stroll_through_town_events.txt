@@ -41,7 +41,6 @@ bm_stroll_town.002 = {
         hidden_effect = {
             create_character = {
                 name = "Beggar McBeggarface"
-                dynasty = beggarface
                 location = root.capital_province
                 gender_female_chance = 50
                 save_scope_as = beggar
@@ -93,18 +92,10 @@ bm_stroll_town.002 = {
     option = {
         name = "Heal their wounds"
         trigger = {
-            OR = {
-                has_trait = blood_mage_3
-                has_trait = blood_mage_4
-                has_trait = blood_mage_5
-                has_trait = blood_mage_6
-                has_trait = blood_mage_7
-                has_trait = blood_mage_8
-                has_trait = blood_mage_9
-            }
+            has_trait = lifestyle_blood_mage_group
         }
         scope:beggar = { remove_trait = wounded_1 }
-        magic_used = yes
+        blood_magic_used = yes
         add_piety = cure_illness_cost_small_neg
         root.capital_county = {
             add_county_modifier = {
@@ -118,16 +109,10 @@ bm_stroll_town.002 = {
     option = {
         name = "Heal their typhus"
         trigger = {
-            OR = {
-                has_trait = blood_mage_5
-                has_trait = blood_mage_6
-                has_trait = blood_mage_7
-                has_trait = blood_mage_8
-                has_trait = blood_mage_9
-            }
+            has_trait = lifestyle_blood_mage_group
         }
         scope:beggar = { remove_trait = typhus }
-        magic_used = yes
+        blood_magic_used = yes
         add_piety = cure_illness_cost_medium_neg
 
         root.capital_county = {
@@ -141,15 +126,10 @@ bm_stroll_town.002 = {
     option = {
         name = "Heal their eyes"
         trigger = {
-            OR = {
-                has_trait = blood_mage_6
-                has_trait = blood_mage_7
-                has_trait = blood_mage_8
-                has_trait = blood_mage_9
-            }
+            has_trait = lifestyle_blood_mage_group
         }
         scope:beggar = { remove_trait = blind }
-        magic_used = yes
+        blood_magic_used = yes
         add_piety = cure_illness_cost_large_neg
         root.capital_county = {
             add_county_modifier = {
@@ -162,13 +142,10 @@ bm_stroll_town.002 = {
     option = {
         name = "Heal their cancer"
         trigger = {
-            OR = {
-                has_trait = blood_mage_8
-                has_trait = blood_mage_9
-            }
+            has_trait = lifestyle_blood_mage_group
         }
         scope:beggar = { remove_trait = cancer }
-        magic_used = yes
+        blood_magic_used = yes
         add_piety = cure_illness_cost_xlarge_neg
         root.capital_county = {
             add_county_modifier = {

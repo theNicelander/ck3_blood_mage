@@ -1,0 +1,18 @@
+﻿channel_lifeforce_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+    ai_check_interval = 12
+    desc = channel_lifeforce_decision_desc
+    decision_group_type = bm_decision_group
+
+    cooldown = { years = 1 }
+    
+    is_shown = { has_trait = lifestyle_blood_mage_group }
+    is_valid = { has_character_modifier = lifeforce_modifier }
+    
+    effect = {
+        blood_magic_used = yes
+        trigger_event = { id = bm_channel_lifeforce.99 }
+        custom_tooltip = channel_lifeforce_decision_tooltip_desc
+    }
+    ai_will_do = { base = 10 }
+}
