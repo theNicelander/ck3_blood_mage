@@ -10,9 +10,29 @@
         scope:actor = { has_trait = lifestyle_blood_mage_group }
         scope:recipient = { NOT = { has_trait = lifestyle_blood_mage_group } }
     }
-    cost = { piety = 100 }
-    is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier } }
-    on_accept = { scope:actor = { trigger_event = bm_grant_blood_magic.001 } }
+    cost = { 
+        piety = 250 
+    }
+    is_valid_showing_failures_only = { 
+        scope:actor = { 
+            has_character_modifier = lifeforce_modifier 
+        } 
+    }
+    
+    on_accept = { 
+        scope:recipient = {
+            add_trait = lifestyle_blood_mage_group
+            add_opinion = {
+                target = scope:actor
+                modifier = magic_opinion_positive
+                opinion = 50
+            }
+        }
+        scope:actor = {
+            blood_magic_used = yes
+        }
+    }
+
     # AI
     ai_potential = { is_adult = yes }
     ai_targets = { ai_recipients = family }

@@ -35,36 +35,3 @@
     ai_potential = { is_adult = yes }
     ai_will_do = { base = 100 }
 }
-
-grant_lifeforce_interaction = {
-    category = interaction_category_friendly
-    auto_accept = yes
-    common_interaction = yes
-    desc = grant_lifeforce_interaction_desc
-    interface_priority = 190
-
-    cost = { piety = lifedrain_piety_cost }
-
-    is_shown = {
-        scope:actor = {
-            has_trait = lifestyle_blood_mage_group
-        }
-        NOT = { scope:actor = scope:recipient }
-    }
-
-    is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier } }
-
-    on_accept = {
-        scope:recipient = {
-            add_character_modifier = lifeforce_modifier
-            add_opinion = {
-                target = scope:actor
-                modifier = magic_opinion_positive
-                opinion = 20
-            }
-        }
-        scope:actor = {
-            blood_magic_used = yes
-        }
-    }
-}
