@@ -59,4 +59,13 @@ blood_magic_used = {
             value = 1
         }
     }
+    if = {
+        limit = {
+            has_trait = lifestyle_blood_mage_2
+        }
+        add_trait_xp = {
+            trait = lifestyle_blood_mage_2
+            value = 1
+        }
+    }
 }
