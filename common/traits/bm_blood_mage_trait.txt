@@ -114,45 +114,60 @@ lifestyle_blood_mage_1 = {
     # Modifiers   
     track = {
         20 = {
-            monthly_learning_lifestyle_xp_gain_mult = 0.02
-            learning_per_stress_level = 1
-            learning_per_piety_level = 1
-            years_of_fertility = 5
-            life_expectancy = 5
-            negate_health_penalty_add = 0.25
+
         }
         40 = {
-            monthly_learning_lifestyle_xp_gain_mult = 0.02
-            learning_per_stress_level = 1
-            learning_per_piety_level = 1
-            years_of_fertility = 5
-            life_expectancy = 5
-            negate_health_penalty_add = 0.25
+
         }
         60 = {
-            monthly_learning_lifestyle_xp_gain_mult = 0.02
-            learning_per_stress_level = 1
-            learning_per_piety_level = 1
-            years_of_fertility = 5
-            life_expectancy = 5
-            negate_health_penalty_add = 0.25
+
         }
         80 = {
-            monthly_learning_lifestyle_xp_gain_mult = 0.02
-            learning_per_stress_level = 1
-            learning_per_piety_level = 1
-            years_of_fertility = 5
-            life_expectancy = 5
-            negate_health_penalty_add = 0.25
+
         }
         100 = {
-            monthly_learning_lifestyle_xp_gain_mult = 0.02
-            learning_per_stress_level = 1
-            learning_per_piety_level = 1
-            years_of_fertility = 5
-            life_expectancy = 5
-            negate_health_penalty_add = 0.25
+
         }
     }
+}
+
+# Placeholder
+lifestyle_blood_mage_2 = {
+    category = lifestyle
+    flag = reweaving_lifestyle_trait
+    icon = blood_mage.dds
+    desc = trait_blood_mage_desc
+
+    # Will level up
+    group = lifestyle_blood_mage_group
+    level = 3
     
+    # genetic
+    genetic = yes
+    birth = 0
+    random_creation = 0
+    good = yes
+    
+    compatibility = {
+        witch = @neg_compat_low
+    }
+    
+    # Modifiers   
+    track = {
+        20 = {
+
+        }
+        40 = {
+
+        }
+        60 = {
+
+        }
+        80 = {
+
+        }
+        100 = {
+
+        }
+    }
 }
