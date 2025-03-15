@@ -128,6 +128,7 @@ bm_channel_lifeforce.0001 = {
         ai_chance = {
             base = 10
         }
+        trigger_event = { id = bm_channel_lifeforce.99 }
     }
 
     # Portraits
@@ -182,11 +183,13 @@ bm_channel_lifeforce.0002 = {
     }
 
     # Do nothing
+    # Do nothing
     option = {
         name = "Nevermind"
         ai_chance = {
             base = 10
         }
+        trigger_event = { id = bm_channel_lifeforce.99 }
     }
 
     # Portraits
