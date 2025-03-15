@@ -41,7 +41,7 @@ trait_drain_prisoner_event_interaction = {
     ai_targets = { ai_recipients = prisoners }
     ai_potential = { is_at_war = no }
     ai_frequency = 12
-    ai_will_do = 100
+    ai_will_do = { base = 100 }
 }
 
 lifedrain_prisoner_event_interaction = {
@@ -78,5 +78,5 @@ lifedrain_prisoner_event_interaction = {
     ai_targets = { ai_recipients = prisoners }
     ai_potential = { is_at_war = no }
     ai_frequency = 12
-    ai_will_do = 10
+    ai_will_do = { base = 10 }
 }

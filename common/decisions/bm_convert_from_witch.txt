@@ -1,6 +1,5 @@
 ﻿convert_to_blood_magic_from_witch = {
     picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
-    major = yes
     desc = convert_to_blood_magic_from_witch_desc
     decision_group_type = bm_decision_group
     
@@ -13,6 +12,6 @@
         remove_trait = witch
         add_trait = lifestyle_blood_mage
         
-        custom_tooltip = "Gain Initiate Blood Mage"
+        custom_tooltip = "Become a Blood Mage"
     }
 }
