@@ -111,8 +111,8 @@ bm_stroll_town.002 = {
             has_trait = lifestyle_blood_mage_group
         }
         scope:beggar = { remove_trait = typhus }
-        blood_magic_used = yes
         add_piety = cure_illness_cost_medium_neg
+        blood_magic_used_set_exp = { EXP = 2 }
 
         root.capital_county = {
             add_county_modifier = {
@@ -125,10 +125,14 @@ bm_stroll_town.002 = {
     option = {
         name = "I place my hands upon their sightless eyes, commanding darkness to retreat"
         trigger = {
-            has_trait = lifestyle_blood_mage_1
+            OR = {
+                has_trait = lifestyle_blood_mage_1
+                has_trait = lifestyle_blood_mage_2
+            }
+            
         }
         scope:beggar = { remove_trait = blind }
-        blood_magic_used = yes
+        blood_magic_used_set_exp = { EXP = 3 }
         add_piety = cure_illness_cost_large_neg
         root.capital_county = {
             add_county_modifier = {
@@ -141,10 +145,10 @@ bm_stroll_town.002 = {
     option = {
         name = "Even death's corruption shall yield to my command—I will purge the cancer from their flesh"
         trigger = {
-            has_trait = lifestyle_blood_mage_1
+            has_trait = lifestyle_blood_mage_2
         }
         scope:beggar = { remove_trait = cancer }
-        blood_magic_used = yes
+        blood_magic_used_set_exp = { EXP = 5 }
         add_piety = cure_illness_cost_xlarge_neg
         root.capital_county = {
             add_county_modifier = {
