@@ -14,14 +14,7 @@ bm_enhance_power.001 = {
 
         magic_used = yes
 
-        if = { limit = { has_trait = blood_mage_1 } add_stress = 10 }
-        if = { limit = { has_trait = blood_mage_2 } add_stress = 20 }
-        if = { limit = { has_trait = blood_mage_3 } add_stress = 30 }
-        if = { limit = { has_trait = blood_mage_4 } add_stress = 40 }
-        if = { limit = { has_trait = blood_mage_5 } add_stress = 50 }
-        if = { limit = { has_trait = blood_mage_6 } add_stress = 60 }
-        if = { limit = { has_trait = blood_mage_7 } add_stress = 80 }
-        if = { limit = { has_trait = blood_mage_8 } add_stress = 100 }
+        add_stress = 10
 
         duel = {
             skill = learning
@@ -93,9 +86,5 @@ bm_enhance_power.001 = {
     left_portrait ={
         character = root
         animation = rage
-    }
-    right_portrait ={
-        character = scope:recipient
-        animation = beg
     }
 }
