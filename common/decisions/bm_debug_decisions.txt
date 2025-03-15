@@ -31,14 +31,14 @@ debug_level_up_blood_mage_trait = {
     
     effect = {
         change_trait_rank = {
-            trait = blood_mage
+            trait = lifestyle_blood_mage
             rank = 1
             max = 9
         }
     }
 }
 
-debug_add_exp_blood_mage_trait = {
+debug_add_exp_blood_mage_exp = {
     picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
     ai_check_interval = 0
     decision_group_type = bm_decision_group
@@ -50,7 +50,7 @@ debug_add_exp_blood_mage_trait = {
     effect = {
         add_trait_xp = {
             trait = lifestyle_blood_mage
-            value = 5
+            value = 20
         }
     }
 }
