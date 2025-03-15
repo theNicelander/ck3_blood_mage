@@ -1,11 +1,13 @@
 ﻿debug_add_lifeforce = {
-    picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
-    major = no
-    ai_check_interval = 0
-    desc = "BLOOD MAGE DEBUG"
     decision_group_type = bm_decision_group
 
-    is_shown = { debug_only = yes }
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+    }
+    is_shown = {
+        debug_only = yes
+    }
+    ai_check_interval = 0
 
     effect = {
         add_character_modifier = { modifier = lifeforce_modifier }
@@ -19,13 +21,13 @@
 
 
 debug_level_up_blood_mage_trait = {
-    picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
-    major = no
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
     ai_check_interval = 0
-    desc = "BLOOD MAGE DEBUG"
     decision_group_type = bm_decision_group
 
-    is_shown = { debug_only = yes }
+    is_shown = {
+        debug_only = yes
+    }
 
     effect = {
         change_trait_rank = {
