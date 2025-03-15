@@ -5,7 +5,7 @@
     decision_group_type = bm_decision_group
 
     is_shown = {
-        has_trait = blood_mage
+        has_trait = lifestyle_blood_mage_group
         exists = house
         is_house_head = yes
 
@@ -23,12 +23,12 @@
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
                     count >= found_bm_coven_member_count
-                    has_trait = blood_mage
+                    has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
                 count >= found_bm_coven_member_count
-                has_trait = blood_mage
+                has_trait = lifestyle_blood_mage_group
             }
         }
     }
@@ -53,7 +53,7 @@ enhance_blood_mage_coven_decision_2 = {
     decision_group_type = bm_decision_group
 
     is_shown = {
-        has_trait = blood_mage
+        has_trait = lifestyle_blood_mage_group
         exists = house
         is_house_head = yes
         exists = global_var:enhance_bm_1
@@ -69,25 +69,16 @@ enhance_blood_mage_coven_decision_2 = {
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
                     count >= found_bm_coven_member_count
-                    has_trait = blood_mage
+                    has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
                 count >= found_bm_coven_member_count
-                has_trait = blood_mage
+                has_trait = lifestyle_blood_mage_group
             }
         }
 
-        or = {
-            has_trait = blood_mage_2
-            has_trait = blood_mage_3
-            has_trait = blood_mage_4
-            has_trait = blood_mage_5
-            has_trait = blood_mage_6
-            has_trait = blood_mage_7
-            has_trait = blood_mage_8
-            has_trait = blood_mage_9
-        }
+        has_trait = lifestyle_blood_mage_group
     }
 
     effect = {
@@ -114,7 +105,7 @@ enhance_blood_mage_coven_decision_3 = {
     decision_group_type = bm_decision_group
 
     is_shown = {
-        has_trait = blood_mage
+        has_trait = lifestyle_blood_mage_group
         exists = house
         is_house_head = yes
         exists = global_var:enhance_bm_1
@@ -131,23 +122,15 @@ enhance_blood_mage_coven_decision_3 = {
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
                     count >= found_bm_coven_member_count
-                    has_trait = blood_mage
+                    has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
                 count >= found_bm_coven_member_count
-                has_trait = blood_mage
+                has_trait = lifestyle_blood_mage_group
             }
         }
-        or = {
-            has_trait = blood_mage_3
-            has_trait = blood_mage_4
-            has_trait = blood_mage_5
-            has_trait = blood_mage_6
-            has_trait = blood_mage_7
-            has_trait = blood_mage_8
-            has_trait = blood_mage_9
-        }
+        has_trait = lifestyle_blood_mage_group
     }
 
     effect = {
@@ -173,7 +156,7 @@ enhance_blood_mage_coven_decision_4 = {
     decision_group_type = bm_decision_group
 
     is_shown = {
-        has_trait = blood_mage
+        has_trait = lifestyle_blood_mage_group
         exists = house
         is_house_head = yes
         exists = global_var:enhance_bm_1
@@ -191,21 +174,17 @@ enhance_blood_mage_coven_decision_4 = {
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
                     count >= found_bm_coven_member_count
-                    has_trait = blood_mage
+                    has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
                 count >= found_bm_coven_member_count
-                has_trait = blood_mage
+                has_trait = lifestyle_blood_mage_group
             }
         }
         or = {
-            has_trait = blood_mage_4
-            has_trait = blood_mage_5
-            has_trait = blood_mage_6
-            has_trait = blood_mage_7
-            has_trait = blood_mage_8
-            has_trait = blood_mage_9
+            has_trait = lifestyle_blood_mage_1
+            has_trait = lifestyle_blood_mage_2
         }
     }
 
@@ -232,7 +211,7 @@ enhance_blood_mage_coven_decision_5 = {
     decision_group_type = bm_decision_group
 
     is_shown = {
-        has_trait = blood_mage
+        has_trait = lifestyle_blood_mage_group
         exists = house
         is_house_head = yes
         exists = global_var:enhance_bm_1
@@ -251,20 +230,17 @@ enhance_blood_mage_coven_decision_5 = {
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
                     count >= found_bm_coven_member_count
-                    has_trait = blood_mage
+                    has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
                 count >= found_bm_coven_member_count
-                has_trait = blood_mage
+                has_trait = lifestyle_blood_mage_group
             }
         }
-        or = { # at least master
-            has_trait = blood_mage_5
-            has_trait = blood_mage_6
-            has_trait = blood_mage_7
-            has_trait = blood_mage_8
-            has_trait = blood_mage_9
+        or = {
+            has_trait = lifestyle_blood_mage_1
+            has_trait = lifestyle_blood_mage_2
         }
     }
 
@@ -291,7 +267,7 @@ enhance_blood_mage_coven_decision_6 = {
     decision_group_type = bm_decision_group
 
     is_shown = {
-        has_trait = blood_mage
+        has_trait = lifestyle_blood_mage_group
         exists = house
         is_house_head = yes
         exists = global_var:enhance_bm_1
@@ -311,19 +287,17 @@ enhance_blood_mage_coven_decision_6 = {
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
                     count >= found_bm_coven_member_count
-                    has_trait = blood_mage
+                    has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
                 count >= found_bm_coven_member_count
-                has_trait = blood_mage
+                has_trait = lifestyle_blood_mage_group
             }
         }
         or = {
-            has_trait = blood_mage_6
-            has_trait = blood_mage_7
-            has_trait = blood_mage_8
-            has_trait = blood_mage_9
+            has_trait = lifestyle_blood_mage_1
+            has_trait = lifestyle_blood_mage_2
         }
     }
 
@@ -350,7 +324,7 @@ enhance_blood_mage_coven_decision_7 = {
     decision_group_type = bm_decision_group
 
     is_shown = {
-        has_trait = blood_mage
+        has_trait = lifestyle_blood_mage_group
         exists = house
         is_house_head = yes
         exists = global_var:enhance_bm_1
@@ -371,19 +345,15 @@ enhance_blood_mage_coven_decision_7 = {
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
                     count >= found_bm_coven_member_count
-                    has_trait = blood_mage
+                    has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
                 count >= found_bm_coven_member_count
-                has_trait = blood_mage
+                has_trait = lifestyle_blood_mage_group
             }
         }
-        or = {
-            has_trait = blood_mage_7
-            has_trait = blood_mage_8
-            has_trait = blood_mage_9
-        }
+        has_trait = lifestyle_blood_mage_2
     }
 
     effect = {
@@ -409,7 +379,7 @@ enhance_blood_mage_coven_decision_8 = {
     decision_group_type = bm_decision_group
 
     is_shown = {
-        has_trait = blood_mage
+        has_trait = lifestyle_blood_mage_group
         exists = house
         is_house_head = yes
         exists = global_var:enhance_bm_1
@@ -432,18 +402,15 @@ enhance_blood_mage_coven_decision_8 = {
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
                     count >= found_bm_coven_member_count
-                    has_trait = blood_mage
+                    has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
                 count >= found_bm_coven_member_count
-                has_trait = blood_mage
+                has_trait = lifestyle_blood_mage_group
             }
         }
-        or = {
-            has_trait = blood_mage_8
-            has_trait = blood_mage_9
-        }
+        has_trait = lifestyle_blood_mage_2
     }
 
     effect = {
@@ -469,7 +436,7 @@ enhance_blood_mage_coven_decision_9 = {
     decision_group_type = bm_decision_group
 
     is_shown = {
-        has_trait = blood_mage
+        has_trait = lifestyle_blood_mage_group
         exists = house
         is_house_head = yes
         exists = global_var:enhance_bm_1
@@ -492,17 +459,15 @@ enhance_blood_mage_coven_decision_9 = {
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
                     count >= found_bm_coven_member_count
-                    has_trait = blood_mage
+                    has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
                 count >= found_bm_coven_member_count
-                has_trait = blood_mage
+                has_trait = lifestyle_blood_mage_group
             }
         }
-        or = {
-            has_trait = blood_mage_9
-        }
+        has_trait = lifestyle_blood_mage_2
     }
 
     effect = {
@@ -528,7 +493,7 @@ enhance_blood_mage_coven_decision_10 = {
     decision_group_type = bm_decision_group
 
     is_shown = {
-        has_trait = blood_mage
+        has_trait = lifestyle_blood_mage_group
         exists = house
         is_house_head = yes
         exists = global_var:enhance_bm_1
@@ -553,17 +518,15 @@ enhance_blood_mage_coven_decision_10 = {
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
                     count >= found_bm_coven_member_count
-                    has_trait = blood_mage
+                    has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
                 count >= found_bm_coven_member_count
-                has_trait = blood_mage
+                has_trait = lifestyle_blood_mage_group
             }
         }
-        or = { # at least supreme
-            has_trait = blood_mage_9
-        }
+        has_trait = lifestyle_blood_mage_2
     }
 
     effect = {
