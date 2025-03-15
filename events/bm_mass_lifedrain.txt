@@ -11,10 +11,8 @@ bm_mass_lifedrain.001 = {
     immediate = {
         every_prisoner = { save_scope_as = everyone_in_prison }
         every_prisoner = {
-
             save_scope_as = everyone_in_prison_no_trait_not_related
         }
-
     }
 
     # Drain everyone
@@ -28,6 +26,7 @@ bm_mass_lifedrain.001 = {
             root = {
                 add_piety = lifedrain_piety_cost_neg
                 add_character_modifier = { modifier = lifeforce_modifier }
+                blood_magic_exp_add = { EXP = 1}
             }
 
             # Lifedrain execution
@@ -64,6 +63,7 @@ bm_mass_lifedrain.001 = {
             root = {
                 add_piety = lifedrain_piety_cost_neg
                 add_character_modifier = { modifier = lifeforce_modifier }
+                blood_magic_exp_add = { EXP = 1}
             }
 
             # Lifedrain execution
@@ -83,7 +83,7 @@ bm_mass_lifedrain.001 = {
     }
 
     # Portraits
-    left_portrait ={
+    left_portrait = {
         character = root
         animation = rage
     }
