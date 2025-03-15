@@ -24,23 +24,17 @@ bm_channel_lifeforce.99 = {
     }
 
     option = {
-        name = "I want to improve my skills temporarily"
+        name = "I want to temporarily improve my skills a lot"
         ai_chance = { base = 10 }
 
         trigger_event = { id = bm_channel_lifeforce.0001 }
     }
 
     option = {
-        name = "I want to improve my skills permanently"
+        name = "I want to permanently improve my skills a little"
         ai_chance = { base = 10 }
 
         trigger_event = { id = bm_channel_lifeforce.0002 }
-    }
-
-    # Do nothing
-    option = {
-        name = "Nevermind"
-        ai_chance = { base = 10 }
     }
 
     # Portraits
@@ -149,7 +143,6 @@ bm_channel_lifeforce.0001 = {
         animation = ecstasy
     }
 }
-
 
 bm_channel_lifeforce.0002 = {
     type = character_event
