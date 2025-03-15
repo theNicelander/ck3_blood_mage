@@ -1,4 +1,15 @@
-﻿enhance_blood_mage_coven_decision_1 = {
+﻿@found_bm_coven_member_count_1 = 3
+@found_bm_coven_member_count_2 = 5
+@found_bm_coven_member_count_3 = 8
+@found_bm_coven_member_count_4 = 13
+@found_bm_coven_member_count_5 = 21
+@found_bm_coven_member_count_6 = 34
+@found_bm_coven_member_count_7 = 55
+@found_bm_coven_member_count_8 = 89
+@found_bm_coven_member_count_9 = 144
+@found_bm_coven_member_count_10 = 233
+
+enhance_blood_mage_coven_decision_1 = {
     picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
     ai_check_interval = 36
     desc = enhance_blood_mage_coven_decision_desc
@@ -23,12 +34,12 @@
             custom_tooltip = {
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
-                    count >= found_bm_coven_member_count
+                    count >= @found_bm_coven_member_count_1
                     has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
-                count >= found_bm_coven_member_count
+                count >= @found_bm_coven_member_count_1
                 has_trait = lifestyle_blood_mage_group
             }
         }
@@ -70,12 +81,12 @@ enhance_blood_mage_coven_decision_2 = {
             custom_tooltip = {
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
-                    count >= found_bm_coven_member_count
+                    count >= @found_bm_coven_member_count_2
                     has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
-                count >= found_bm_coven_member_count
+                count >= @found_bm_coven_member_count_2
                 has_trait = lifestyle_blood_mage_group
             }
         }
@@ -124,12 +135,12 @@ enhance_blood_mage_coven_decision_3 = {
             custom_tooltip = {
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
-                    count >= found_bm_coven_member_count
+                    count >= @found_bm_coven_member_count_3
                     has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
-                count >= found_bm_coven_member_count
+                count >= @found_bm_coven_member_count_3
                 has_trait = lifestyle_blood_mage_group
             }
         }
@@ -176,12 +187,12 @@ enhance_blood_mage_coven_decision_4 = {
             custom_tooltip = {
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
-                    count >= found_bm_coven_member_count
+                    count >= @found_bm_coven_member_count_4
                     has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
-                count >= found_bm_coven_member_count
+                count >= @found_bm_coven_member_count_4
                 has_trait = lifestyle_blood_mage_group
             }
         }
@@ -232,12 +243,12 @@ enhance_blood_mage_coven_decision_5 = {
             custom_tooltip = {
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
-                    count >= found_bm_coven_member_count
+                    count >= @found_bm_coven_member_count_5
                     has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
-                count >= found_bm_coven_member_count
+                count >= @found_bm_coven_member_count_5
                 has_trait = lifestyle_blood_mage_group
             }
         }
@@ -289,12 +300,12 @@ enhance_blood_mage_coven_decision_6 = {
             custom_tooltip = {
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
-                    count >= found_bm_coven_member_count
+                    count >= @found_bm_coven_member_count_6
                     has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
-                count >= found_bm_coven_member_count
+                count >= @found_bm_coven_member_count_6
                 has_trait = lifestyle_blood_mage_group
             }
         }
@@ -349,12 +360,12 @@ enhance_blood_mage_coven_decision_7 = {
             custom_tooltip = {
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
-                    count >= found_bm_coven_member_count
+                    count >= @found_bm_coven_member_count_7
                     has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
-                count >= found_bm_coven_member_count
+                count >= @found_bm_coven_member_count_7
                 has_trait = lifestyle_blood_mage_group
             }
         }
@@ -405,12 +416,12 @@ enhance_blood_mage_coven_decision_8 = {
             custom_tooltip = {
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
-                    count >= found_bm_coven_member_count
+                    count >= @found_bm_coven_member_count_8
                     has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
-                count >= found_bm_coven_member_count
+                count >= @found_bm_coven_member_count_8
                 has_trait = lifestyle_blood_mage_group
             }
         }
@@ -464,12 +475,12 @@ enhance_blood_mage_coven_decision_9 = {
             custom_tooltip = {
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
-                    count >= found_bm_coven_member_count
+                    count >= @found_bm_coven_member_count_9
                     has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
-                count >= found_bm_coven_member_count
+                count >= @found_bm_coven_member_count_9
                 has_trait = lifestyle_blood_mage_group
             }
         }
@@ -525,12 +536,12 @@ enhance_blood_mage_coven_decision_10 = {
             custom_tooltip = {
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
-                    count >= found_bm_coven_member_count
+                    count >= @found_bm_coven_member_count_10
                     has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
-                count >= found_bm_coven_member_count
+                count >= @found_bm_coven_member_count_10
                 has_trait = lifestyle_blood_mage_group
             }
         }
