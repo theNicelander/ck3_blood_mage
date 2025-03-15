@@ -1,36 +1,36 @@
 ﻿debug_add_lifeforce = {
-	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
-	major = no
-	ai_check_interval = 0
-	desc = "BLOOD MAGE DEBUG"
+    picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
+    major = no
+    ai_check_interval = 0
+    desc = "BLOOD MAGE DEBUG"
 
-	is_shown = { debug_only = yes }
+    is_shown = { debug_only = yes }
 
-	effect = {
-		add_character_modifier = { modifier = lifeforce_modifier }
-		add_character_modifier = { modifier = lifeforce_modifier }
-		add_character_modifier = { modifier = lifeforce_modifier }
-		add_character_modifier = { modifier = lifeforce_modifier }
-		add_character_modifier = { modifier = lifeforce_modifier }
-	}
+    effect = {
+        add_character_modifier = { modifier = lifeforce_modifier }
+        add_character_modifier = { modifier = lifeforce_modifier }
+        add_character_modifier = { modifier = lifeforce_modifier }
+        add_character_modifier = { modifier = lifeforce_modifier }
+        add_character_modifier = { modifier = lifeforce_modifier }
+    }
 
 }
 
 
 debug_level_up_blood_mage_trait = {
-	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
-	major = no
-	ai_check_interval = 0
-	desc = "BLOOD MAGE DEBUG"
+    picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
+    major = no
+    ai_check_interval = 0
+    desc = "BLOOD MAGE DEBUG"
 
-	is_shown = { debug_only = yes }
+    is_shown = { debug_only = yes }
 
-	effect = {
-		change_trait_rank = {
-			trait = blood_mage
-			rank = 1
-			max = 9
-		}
-	}
+    effect = {
+        change_trait_rank = {
+            trait = blood_mage
+            rank = 1
+            max = 9
+        }
+    }
 
 }

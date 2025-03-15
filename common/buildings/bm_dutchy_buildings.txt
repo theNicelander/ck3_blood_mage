@@ -1,238 +1,238 @@
 ﻿bm_university_0 = {
-	# 3 years
-	construction_time = 1095 
+    # 3 years
+    construction_time = 1095
 
-	can_construct_potential = {
-		building_requirement_castle_city_church = { LEVEL = 01 }
-		scope:holder = { has_trait = blood_mage }
-	}
-	
-	is_enabled = { county.duchy.holder = county.holder }
-	show_disabled = yes
-	
-	cost = {
-		gold = 250
-		piety = 250
-	}
+    can_construct_potential = {
+        building_requirement_castle_city_church = { LEVEL = 01 }
+        scope:holder = { has_trait = blood_mage }
+    }
 
-	character_modifier = {
-		monthly_income = -0.1
-		monthly_piety = -0.1
-		cultural_head_fascination_mult = 0.05
-	}
+    is_enabled = { county.duchy.holder = county.holder }
+    show_disabled = yes
 
-	duchy_capital_county_modifier = {
-		development_growth = 0.1
-	}
+    cost = {
+        gold = 250
+        piety = 250
+    }
 
-	province_modifier = {
-		development_growth = 0.1
-	}
-	
-	next_building = bm_university_1
-	
-	type_icon = "bm_university.dds"
+    character_modifier = {
+        monthly_income = -0.1
+        monthly_piety = -0.1
+        cultural_head_fascination_mult = 0.05
+    }
 
-	type = duchy_capital
-	
-	ai_value = {
-		base = 100
-		modifier = {
-			factor = 2
-			scope:holder.capital_province = this
-		}
-	}
+    duchy_capital_county_modifier = {
+        development_growth = 0.1
+    }
+
+    province_modifier = {
+        development_growth = 0.1
+    }
+
+    next_building = bm_university_1
+
+    type_icon = "bm_university.dds"
+
+    type = duchy_capital
+
+    ai_value = {
+        base = 100
+        modifier = {
+            factor = 2
+            scope:holder.capital_province = this
+        }
+    }
 }
 
 bm_university_1 = {
-	# 5 years
-	construction_time = 1825
+    # 5 years
+    construction_time = 1825
 
-	can_construct_potential = {
-		building_requirement_castle_city_church = { LEVEL = 01 }
-		scope:holder = {
-			has_trait = blood_mage
-		}
-	}
-	
-	can_construct_showing_failures_only = {
-		scope:holder = {
-			or = {
-				has_trait = blood_mage_3
-				has_trait = blood_mage_4
-				has_trait = blood_mage_5
-				has_trait = blood_mage_6
-				has_trait = blood_mage_7
-				has_trait = blood_mage_8
-				has_trait = blood_mage_9
-			}
-			
-		}
-	}
-	
-	is_enabled = {
-		county.duchy.holder = county.holder
-	}
-	show_disabled = yes
-	
-	cost = {
-		gold = 500
-		piety = 500
-	}
+    can_construct_potential = {
+        building_requirement_castle_city_church = { LEVEL = 01 }
+        scope:holder = {
+            has_trait = blood_mage
+        }
+    }
 
-	character_modifier = {
-		monthly_income = -0.25
-		monthly_piety = -0.25
-		cultural_head_fascination_mult = 0.1
-		monthly_dynasty_prestige = 0.1
-		monthly_lifestyle_xp_gain_mult = 0.03
-	}
+    can_construct_showing_failures_only = {
+        scope:holder = {
+            or = {
+                has_trait = blood_mage_3
+                has_trait = blood_mage_4
+                has_trait = blood_mage_5
+                has_trait = blood_mage_6
+                has_trait = blood_mage_7
+                has_trait = blood_mage_8
+                has_trait = blood_mage_9
+            }
 
-	duchy_capital_county_modifier = {
-		development_growth = 0.15
-	}
+        }
+    }
 
-	province_modifier = {
-		development_growth = 0.15
-	}
-	
-	next_building = bm_university_2
-	
-	type_icon = "bm_university.dds"
+    is_enabled = {
+        county.duchy.holder = county.holder
+    }
+    show_disabled = yes
 
-	type = duchy_capital
-	
-	ai_value = {
-		base = 100
-		modifier = {
-			factor = 2
-			scope:holder.capital_province = this
-		}
-	}
+    cost = {
+        gold = 500
+        piety = 500
+    }
+
+    character_modifier = {
+        monthly_income = -0.25
+        monthly_piety = -0.25
+        cultural_head_fascination_mult = 0.1
+        monthly_dynasty_prestige = 0.1
+        monthly_lifestyle_xp_gain_mult = 0.03
+    }
+
+    duchy_capital_county_modifier = {
+        development_growth = 0.15
+    }
+
+    province_modifier = {
+        development_growth = 0.15
+    }
+
+    next_building = bm_university_2
+
+    type_icon = "bm_university.dds"
+
+    type = duchy_capital
+
+    ai_value = {
+        base = 100
+        modifier = {
+            factor = 2
+            scope:holder.capital_province = this
+        }
+    }
 }
 
 bm_university_2 = {
-	# 10 years
-	construction_time = 3650
+    # 10 years
+    construction_time = 3650
 
-	can_construct_potential = {
-		building_requirement_castle_city_church = { LEVEL = 01 }
-		scope:holder = {
-			has_trait = blood_mage
-		}
-	}
-	
-	can_construct_showing_failures_only = {
-		scope:holder = {
-			or = {
-				has_trait = blood_mage_5
-				has_trait = blood_mage_6
-				has_trait = blood_mage_7
-				has_trait = blood_mage_8
-				has_trait = blood_mage_9
-			}
-			
-		}
-	}
-	
-	is_enabled = {
-		county.duchy.holder = county.holder
-	}
-	show_disabled = yes
-	
-	cost = {
-		gold = 750
-		piety = 750
-	}
+    can_construct_potential = {
+        building_requirement_castle_city_church = { LEVEL = 01 }
+        scope:holder = {
+            has_trait = blood_mage
+        }
+    }
 
-	character_modifier = {
-		monthly_income = -0.5
-		monthly_piety = -0.5
-		cultural_head_fascination_mult = 0.15
-		monthly_dynasty_prestige = 0.2
-		monthly_lifestyle_xp_gain_mult = 0.06
-	}
+    can_construct_showing_failures_only = {
+        scope:holder = {
+            or = {
+                has_trait = blood_mage_5
+                has_trait = blood_mage_6
+                has_trait = blood_mage_7
+                has_trait = blood_mage_8
+                has_trait = blood_mage_9
+            }
 
-	duchy_capital_county_modifier = {
-		development_growth = 0.2
-	}
+        }
+    }
 
-	province_modifier = {
-		development_growth = 0.2
-	}
-	
-	next_building = bm_university_3
-	
-	type_icon = "bm_university.dds"
+    is_enabled = {
+        county.duchy.holder = county.holder
+    }
+    show_disabled = yes
 
-	type = duchy_capital
-	
-	ai_value = {
-		base = 100
-		modifier = {
-			factor = 2
-			scope:holder.capital_province = this
-		}
-	}
+    cost = {
+        gold = 750
+        piety = 750
+    }
+
+    character_modifier = {
+        monthly_income = -0.5
+        monthly_piety = -0.5
+        cultural_head_fascination_mult = 0.15
+        monthly_dynasty_prestige = 0.2
+        monthly_lifestyle_xp_gain_mult = 0.06
+    }
+
+    duchy_capital_county_modifier = {
+        development_growth = 0.2
+    }
+
+    province_modifier = {
+        development_growth = 0.2
+    }
+
+    next_building = bm_university_3
+
+    type_icon = "bm_university.dds"
+
+    type = duchy_capital
+
+    ai_value = {
+        base = 100
+        modifier = {
+            factor = 2
+            scope:holder.capital_province = this
+        }
+    }
 }
 
 bm_university_3 = {
-	# 20 years
-	construction_time = 7300
+    # 20 years
+    construction_time = 7300
 
-	can_construct_potential = {
-		building_requirement_castle_city_church = { LEVEL = 01 }
-		scope:holder = {
-			has_trait = blood_mage
-		}
-	}
-	
-	can_construct_showing_failures_only = {
-		scope:holder = {
-			or = {
-				has_trait = blood_mage_7
-				has_trait = blood_mage_8
-				has_trait = blood_mage_9
-			}
-			
-		}
-	}
-	
-	is_enabled = {
-		county.duchy.holder = county.holder
-	}
-	show_disabled = yes
-	
-	cost = {
-		gold = 1000
-		piety = 1000
-	}
+    can_construct_potential = {
+        building_requirement_castle_city_church = { LEVEL = 01 }
+        scope:holder = {
+            has_trait = blood_mage
+        }
+    }
 
-	character_modifier = {
-		monthly_income = -1
-		monthly_piety = -1
-		cultural_head_fascination_mult = 0.25
-		monthly_dynasty_prestige = 0.3
-		monthly_lifestyle_xp_gain_mult = 0.1
-	}
+    can_construct_showing_failures_only = {
+        scope:holder = {
+            or = {
+                has_trait = blood_mage_7
+                has_trait = blood_mage_8
+                has_trait = blood_mage_9
+            }
 
-	duchy_capital_county_modifier = {
-		development_growth = 0.3
-	}
+        }
+    }
 
-	province_modifier = {
-		development_growth = 0.3
-	}
-	
-	type_icon = "bm_university.dds"
+    is_enabled = {
+        county.duchy.holder = county.holder
+    }
+    show_disabled = yes
 
-	type = duchy_capital
-	
-	ai_value = {
-		base = 100
-		modifier = {
-			factor = 2
-			scope:holder.capital_province = this
-		}
-	}
+    cost = {
+        gold = 1000
+        piety = 1000
+    }
+
+    character_modifier = {
+        monthly_income = -1
+        monthly_piety = -1
+        cultural_head_fascination_mult = 0.25
+        monthly_dynasty_prestige = 0.3
+        monthly_lifestyle_xp_gain_mult = 0.1
+    }
+
+    duchy_capital_county_modifier = {
+        development_growth = 0.3
+    }
+
+    province_modifier = {
+        development_growth = 0.3
+    }
+
+    type_icon = "bm_university.dds"
+
+    type = duchy_capital
+
+    ai_value = {
+        base = 100
+        modifier = {
+            factor = 2
+            scope:holder.capital_province = this
+        }
+    }
 }

@@ -1,277 +1,277 @@
 ﻿blood_mage_1 = { # Initiate
-	index = 331
-	group = blood_mage
-	level = 1
-	ruler_designer_cost = 100
+    index = 331
+    group = blood_mage
+    level = 1
+    ruler_designer_cost = 100
 
-	# trait type
-	fame = yes
-	good = yes
-	genetic = yes
+    # trait type
+    fame = yes
+    good = yes
+    genetic = yes
 
-	# genetic
-	birth = 0.5
-	random_creation = 0.5
+    # genetic
+    birth = 0.5
+    random_creation = 0.5
 
-	# benefits
-	monthly_learning_lifestyle_xp_gain_mult = 0.02
-	learning_per_stress_level = 1
-	learning_per_piety_level = 1
-	years_of_fertility = 5
-	life_expectancy = 5
+    # benefits
+    monthly_learning_lifestyle_xp_gain_mult = 0.02
+    learning_per_stress_level = 1
+    learning_per_piety_level = 1
+    years_of_fertility = 5
+    life_expectancy = 5
 
-	# description
-	desc = trait_blood_mage_desc
+    # description
+    desc = trait_blood_mage_desc
 
-	# AI behaviour
-	ai_rationality = 100
+    # AI behaviour
+    ai_rationality = 100
 }
 
 
 blood_mage_2 = { # Disciple
-	index = 332
-	group = blood_mage
-	level = 2
+    index = 332
+    group = blood_mage
+    level = 2
 
-	# trait type
-	fame = yes
-	good = yes
-	genetic = yes
-	shown_in_ruler_designer = no
+    # trait type
+    fame = yes
+    good = yes
+    genetic = yes
+    shown_in_ruler_designer = no
 
-	# genetic
-	birth = 0.25
-	random_creation = 0.25
+    # genetic
+    birth = 0.25
+    random_creation = 0.25
 
-	# benefits
-	monthly_learning_lifestyle_xp_gain_mult = 0.04
-	learning_per_stress_level = 2
-	learning_per_piety_level = 2
-	years_of_fertility = 10
-	life_expectancy = 10
+    # benefits
+    monthly_learning_lifestyle_xp_gain_mult = 0.04
+    learning_per_stress_level = 2
+    learning_per_piety_level = 2
+    years_of_fertility = 10
+    life_expectancy = 10
 
-	# description
-	desc = trait_blood_mage_desc
+    # description
+    desc = trait_blood_mage_desc
 
-	# AI behaviour
-	ai_rationality = 100
+    # AI behaviour
+    ai_rationality = 100
 }
 
 blood_mage_3 = { # Adept
-	index = 333
-	group = blood_mage
-	level = 3
-	shown_in_ruler_designer = no
+    index = 333
+    group = blood_mage
+    level = 3
+    shown_in_ruler_designer = no
 
-	# trait type
-	fame = yes
-	good = yes
-	genetic = yes
+    # trait type
+    fame = yes
+    good = yes
+    genetic = yes
 
-	# genetic
-	genetic = yes
-	birth = 0.05
-	random_creation = 0.05
+    # genetic
+    genetic = yes
+    birth = 0.05
+    random_creation = 0.05
 
-	# benefits
-	monthly_learning_lifestyle_xp_gain_mult = 0.06
-	learning_per_stress_level = 3
-	learning_per_piety_level = 3
-	years_of_fertility = 15
-	life_expectancy = 15
+    # benefits
+    monthly_learning_lifestyle_xp_gain_mult = 0.06
+    learning_per_stress_level = 3
+    learning_per_piety_level = 3
+    years_of_fertility = 15
+    life_expectancy = 15
 
-	# description
-	desc = trait_blood_mage_desc
+    # description
+    desc = trait_blood_mage_desc
 
-	# AI behaviour
-	ai_rationality = 100
+    # AI behaviour
+    ai_rationality = 100
 }
 
 blood_mage_4 = { # Master
-	index = 334
-	group = blood_mage
-	level = 4
-	shown_in_ruler_designer = no
+    index = 334
+    group = blood_mage
+    level = 4
+    shown_in_ruler_designer = no
 
-	# trait type
-	fame = yes
-	good = yes
-	genetic = yes
+    # trait type
+    fame = yes
+    good = yes
+    genetic = yes
 
-	# genetic
-	birth = 0
-	random_creation = 0
+    # genetic
+    birth = 0
+    random_creation = 0
 
-	# benefits
-	monthly_lifestyle_xp_gain_mult = 0.08
-	learning_per_stress_level = 4
-	learning_per_piety_level = 4
-	years_of_fertility = 25
-	life_expectancy = 25
+    # benefits
+    monthly_lifestyle_xp_gain_mult = 0.08
+    learning_per_stress_level = 4
+    learning_per_piety_level = 4
+    years_of_fertility = 25
+    life_expectancy = 25
 
-	# description
-	desc = trait_blood_mage_desc
+    # description
+    desc = trait_blood_mage_desc
 
-	# AI behaviour
-	ai_rationality = 100
+    # AI behaviour
+    ai_rationality = 100
 }
 
 blood_mage_5 = {  # Grandmaster
-	index = 335
-	group = blood_mage
-	level = 5
-	shown_in_ruler_designer = no
+    index = 335
+    group = blood_mage
+    level = 5
+    shown_in_ruler_designer = no
 
-	# trait type
-	fame = yes
-	good = yes
-	genetic = yes
+    # trait type
+    fame = yes
+    good = yes
+    genetic = yes
 
-	# genetic
-	birth = 0
-	random_creation = 0
+    # genetic
+    birth = 0
+    random_creation = 0
 
-	# benefits
-	monthly_lifestyle_xp_gain_mult = 0.1
-	learning_per_stress_level = 5
-	learning_per_piety_level = 5
-	years_of_fertility = 35
-	life_expectancy = 35
-	no_prowess_loss_from_age = yes
-	monthly_dynasty_prestige = 0.05
+    # benefits
+    monthly_lifestyle_xp_gain_mult = 0.1
+    learning_per_stress_level = 5
+    learning_per_piety_level = 5
+    years_of_fertility = 35
+    life_expectancy = 35
+    no_prowess_loss_from_age = yes
+    monthly_dynasty_prestige = 0.05
 
-	# description
-	desc = trait_blood_mage_desc
+    # description
+    desc = trait_blood_mage_desc
 
-	# AI behaviour
-	ai_rationality = 100
+    # AI behaviour
+    ai_rationality = 100
 }
 
 
 blood_mage_6 = {  # Arch
-	index = 336
-	group = blood_mage
-	level = 6
-	shown_in_ruler_designer = no
+    index = 336
+    group = blood_mage
+    level = 6
+    shown_in_ruler_designer = no
 
-	# trait type
-	fame = yes
-	good = yes
-	genetic = yes
-	
-	# genetic
-	birth = 0
-	random_creation = 0
+    # trait type
+    fame = yes
+    good = yes
+    genetic = yes
 
-	# benefits
-	monthly_lifestyle_xp_gain_mult = 0.12
-	learning_per_stress_level = 6
-	learning_per_piety_level = 6
-	years_of_fertility = 50
-	life_expectancy = 50
-	no_prowess_loss_from_age = yes
-	monthly_dynasty_prestige = 0.1
+    # genetic
+    birth = 0
+    random_creation = 0
 
-	# description
-	desc = trait_blood_mage_desc
+    # benefits
+    monthly_lifestyle_xp_gain_mult = 0.12
+    learning_per_stress_level = 6
+    learning_per_piety_level = 6
+    years_of_fertility = 50
+    life_expectancy = 50
+    no_prowess_loss_from_age = yes
+    monthly_dynasty_prestige = 0.1
 
-	# AI behaviour
-	ai_rationality = 100
+    # description
+    desc = trait_blood_mage_desc
+
+    # AI behaviour
+    ai_rationality = 100
 }
 
 blood_mage_7 = {  # Exalted
-	index = 337
-	group = blood_mage
-	level = 7
-	shown_in_ruler_designer = no
+    index = 337
+    group = blood_mage
+    level = 7
+    shown_in_ruler_designer = no
 
-	# trait type
-	fame = yes
-	good = yes
-	genetic = yes
+    # trait type
+    fame = yes
+    good = yes
+    genetic = yes
 
-	# genetic
-	birth = 0
-	random_creation = 0
+    # genetic
+    birth = 0
+    random_creation = 0
 
-	# benefits
-	monthly_lifestyle_xp_gain_mult = 0.14
-	learning_per_stress_level = 7
-	learning_per_piety_level = 7
-	years_of_fertility = 65
-	life_expectancy = 65
-	no_prowess_loss_from_age = yes
-	flag = can_murder_own_children
-	monthly_dynasty_prestige = 0.15
+    # benefits
+    monthly_lifestyle_xp_gain_mult = 0.14
+    learning_per_stress_level = 7
+    learning_per_piety_level = 7
+    years_of_fertility = 65
+    life_expectancy = 65
+    no_prowess_loss_from_age = yes
+    flag = can_murder_own_children
+    monthly_dynasty_prestige = 0.15
 
-	# description
-	desc = trait_blood_mage_desc
+    # description
+    desc = trait_blood_mage_desc
 
-	# AI behaviour
-	ai_rationality = 100
+    # AI behaviour
+    ai_rationality = 100
 }
 
 blood_mage_8 = {  # Supreme
-	index = 338
-	group = blood_mage
-	level = 8
-	shown_in_ruler_designer = no
+    index = 338
+    group = blood_mage
+    level = 8
+    shown_in_ruler_designer = no
 
-	# trait type
-	fame = yes
-	good = yes
-	genetic = yes
+    # trait type
+    fame = yes
+    good = yes
+    genetic = yes
 
-	# genetic
-	birth = 0
-	random_creation = 0
+    # genetic
+    birth = 0
+    random_creation = 0
 
-	# benefits
-	monthly_lifestyle_xp_gain_mult = 0.16
-	learning_per_stress_level = 8
-	learning_per_piety_level = 8
-	years_of_fertility = 80
-	life_expectancy = 80
-	no_prowess_loss_from_age = yes
-	flag = can_murder_own_children
-	monthly_dynasty_prestige = 0.2
+    # benefits
+    monthly_lifestyle_xp_gain_mult = 0.16
+    learning_per_stress_level = 8
+    learning_per_piety_level = 8
+    years_of_fertility = 80
+    life_expectancy = 80
+    no_prowess_loss_from_age = yes
+    flag = can_murder_own_children
+    monthly_dynasty_prestige = 0.2
 
-	# description
-	desc = trait_blood_mage_desc
+    # description
+    desc = trait_blood_mage_desc
 
-	# AI behaviour
-	ai_rationality = 100
+    # AI behaviour
+    ai_rationality = 100
 }
 
 
 blood_mage_9 = {  # Divine
-	index = 339
-	group = blood_mage
-	level = 9
-	shown_in_ruler_designer = no
+    index = 339
+    group = blood_mage
+    level = 9
+    shown_in_ruler_designer = no
 
-	# trait type
-	fame = yes
-	good = yes
-	genetic = yes
+    # trait type
+    fame = yes
+    good = yes
+    genetic = yes
 
-	# genetic
-	birth = 0
-	random_creation = 0
+    # genetic
+    birth = 0
+    random_creation = 0
 
-	# benefits
-	monthly_lifestyle_xp_gain_mult = 0.2
-	learning_per_stress_level = 10
-	learning_per_piety_level = 10
-	years_of_fertility = 100
-	life_expectancy = 100
-	no_prowess_loss_from_age = yes
-	flag = can_murder_own_children
-	monthly_dynasty_prestige = 0.25
+    # benefits
+    monthly_lifestyle_xp_gain_mult = 0.2
+    learning_per_stress_level = 10
+    learning_per_piety_level = 10
+    years_of_fertility = 100
+    life_expectancy = 100
+    no_prowess_loss_from_age = yes
+    flag = can_murder_own_children
+    monthly_dynasty_prestige = 0.25
 
-	# description
-	desc = trait_blood_mage_desc
+    # description
+    desc = trait_blood_mage_desc
 
-	# AI behaviour
-	ai_rationality = 100
+    # AI behaviour
+    ai_rationality = 100
 }
