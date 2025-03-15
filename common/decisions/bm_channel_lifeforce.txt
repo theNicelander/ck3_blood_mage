@@ -7,13 +7,17 @@
     cooldown = { years = 1 }
     
     is_shown = { has_trait = lifestyle_blood_mage_group }
-    is_valid = { has_character_modifier = lifeforce_modifier }
+    is_valid = { 
+        has_character_modifier = lifeforce_modifier
+        has_trait = lifestyle_blood_mage_group
+    }
     
     effect = {
+        add_piety  = lifedrain_piety_cost_neg
         blood_magic_used = yes
         trigger_event = { id = bm_channel_lifeforce.99 }
         custom_tooltip = channel_lifeforce_decision_tooltip_desc
-        add_piety  = lifedrain_piety_cost_neg
+        
     }
     ai_will_do = { base = 10 }
 }

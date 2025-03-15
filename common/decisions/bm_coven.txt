@@ -15,6 +15,7 @@
     }
 
     is_valid = {
+        has_trait = lifestyle_blood_mage_group
         is_house_head = yes
         has_character_modifier = lifeforce_modifier
 
@@ -63,6 +64,7 @@ enhance_blood_mage_coven_decision_2 = {
     }
 
     is_valid = {
+        has_trait = lifestyle_blood_mage_group
         exists = house
         house = {
             custom_tooltip = {
@@ -116,6 +118,7 @@ enhance_blood_mage_coven_decision_3 = {
     }
 
     is_valid = {
+        has_trait = lifestyle_blood_mage_group
         has_character_modifier = lifeforce_modifier
         house = {
             custom_tooltip = {
@@ -339,7 +342,9 @@ enhance_blood_mage_coven_decision_7 = {
     }
 
     is_valid = {
-        has_character_modifier = lifeforce_modifier
+        OR = {
+            has_trait = lifestyle_blood_mage_2
+        }
         house = {
             custom_tooltip = {
                 text = found_bm_coven_member_count_tt
@@ -353,7 +358,6 @@ enhance_blood_mage_coven_decision_7 = {
                 has_trait = lifestyle_blood_mage_group
             }
         }
-        has_trait = lifestyle_blood_mage_2
     }
 
     effect = {
@@ -410,7 +414,9 @@ enhance_blood_mage_coven_decision_8 = {
                 has_trait = lifestyle_blood_mage_group
             }
         }
-        has_trait = lifestyle_blood_mage_2
+        OR = {
+            has_trait = lifestyle_blood_mage_2
+        }
     }
 
     effect = {
@@ -467,7 +473,9 @@ enhance_blood_mage_coven_decision_9 = {
                 has_trait = lifestyle_blood_mage_group
             }
         }
-        has_trait = lifestyle_blood_mage_2
+        OR = {
+            has_trait = lifestyle_blood_mage_2
+        }
     }
 
     effect = {
@@ -526,7 +534,9 @@ enhance_blood_mage_coven_decision_10 = {
                 has_trait = lifestyle_blood_mage_group
             }
         }
-        has_trait = lifestyle_blood_mage_2
+        OR = {
+            has_trait = lifestyle_blood_mage_2
+        }
     }
 
     effect = {

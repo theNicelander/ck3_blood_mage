@@ -5,7 +5,9 @@
     decision_group_type = bm_decision_group
     
     is_shown = { has_trait = lifestyle_blood_mage_group }
-    is_valid = {  }
+    is_valid = { 
+        has_trait = lifestyle_blood_mage_group
+    }
     
     effect = {
 		custom_tooltip = mass_lifedrain_prisoners_decision_effect_message 
