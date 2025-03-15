@@ -1,6 +1,6 @@
 ﻿debug_add_lifeforce = {
     decision_group_type = bm_decision_group
-
+    
     picture = {
         reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
     }
@@ -8,7 +8,7 @@
         debug_only = yes
     }
     ai_check_interval = 0
-
+    
     effect = {
         add_character_modifier = { modifier = lifeforce_modifier }
         add_character_modifier = { modifier = lifeforce_modifier }
@@ -16,7 +16,7 @@
         add_character_modifier = { modifier = lifeforce_modifier }
         add_character_modifier = { modifier = lifeforce_modifier }
     }
-
+    
 }
 
 
@@ -24,11 +24,11 @@ debug_level_up_blood_mage_trait = {
     picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
     ai_check_interval = 0
     decision_group_type = bm_decision_group
-
+    
     is_shown = {
         debug_only = yes
     }
-
+    
     effect = {
         change_trait_rank = {
             trait = blood_mage
@@ -36,5 +36,21 @@ debug_level_up_blood_mage_trait = {
             max = 9
         }
     }
+}
 
+debug_add_exp_blood_mage_trait = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+    ai_check_interval = 0
+    decision_group_type = bm_decision_group
+    
+    is_shown = {
+        debug_only = yes
+    }
+    
+    effect = {
+        add_trait_xp = {
+            trait = lifestyle_blood_mage
+            value = 5
+        }
+    }
 }
