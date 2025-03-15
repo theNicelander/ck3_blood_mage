@@ -16,9 +16,14 @@
 
     effect = {
         custom_tooltip = enhance_personal_blood_mage_power_tooltip_desc
-
         add_piety_level = -3
         temporary_negative_lifeforce_effect_major = yes
+
+        change_trait_rank = {
+            trait = lifestyle_blood_mage_group
+            rank = 1
+            max = 3
+        }
     }
 
     ai_check_interval = 12
