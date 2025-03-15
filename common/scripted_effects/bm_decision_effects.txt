@@ -40,8 +40,23 @@ blood_magic_used = {
         modifier = lifeforce_modifier_negative
         days = 365
     }
-    add_trait_xp = {
-        trait = lifestyle_blood_mage_group
-        value = 1
+    # Grant exp when using magic
+    if = {
+        limit = {
+            has_trait = lifestyle_blood_mage
+        }
+        add_trait_xp = {
+            trait = lifestyle_blood_mage
+            value = 1
+        }
+    }
+    if = {
+        limit = {
+            has_trait = lifestyle_blood_mage_2
+        }
+        add_trait_xp = {
+            trait = lifestyle_blood_mage_2
+            value = 1
+        }
     }
 }
