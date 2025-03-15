@@ -4,19 +4,18 @@ namespace = bm_stroll_town
 
 bm_stroll_town.001 = {
     type = character_event
-    title = "Strolling in town"
-    desc = "As I walk through the market there are many parts of town I could explore"
+    title = "The Bustling Streets"
+    desc = "The town market teems with life as merchants hawk their wares and citizens haggle over prices. Colorful stalls line the cobblestone streets, offering everything from exotic spices to finely crafted jewelry. The scent of fresh bread mingles with the aroma of roasting meats as I consider which direction to explore."
     theme = default
 
     option = {
-        name = "Find a beggar"
-        trigger_event = {  id = bm_stroll_town.002 }
+        name = "Venture to the darker corners where the destitute gather"
+        trigger_event = { id = bm_stroll_town.002 }
     }
-
 
     # Do nothing
     option = {
-        name = "Enjoy the leisurely stroll for a while and then head back home"
+        name = "Savor the simple pleasures of town life before returning to the burdens of rulership"
         add_stress = -10
         ai_chance = {
             base = 5
@@ -24,7 +23,7 @@ bm_stroll_town.001 = {
     }
 
     # Portraits
-    left_portrait ={
+    left_portrait = {
         character = root
         animation = idle
     }
@@ -32,8 +31,8 @@ bm_stroll_town.001 = {
 
 bm_stroll_town.002 = {
     type = character_event
-    title = "Found a beggar in the town square"
-    desc = "In the middle of the square, I see a beggar dressed in rags asking people for money"
+    title = "A Desperate Soul"
+    desc = "Away from the cheerful bustle of the market, the town's true face reveals itself. In a forgotten corner of the square, a wretched figure hunches against a weathered wall. Dressed in tattered rags caked with filth, the beggar's hand trembles as it extends toward passersby, who quicken their pace to avoid the unfortunate soul. Despite the beggar's pitiable state, I sense something valuable that others cannot see—life essence ripe for the taking... or perhaps a chance to demonstrate mercy through my arcane gifts."
     theme = default
 
     # Create the beggar
@@ -45,26 +44,27 @@ bm_stroll_town.002 = {
                 gender_female_chance = 50
                 save_scope_as = beggar
                 culture = root.culture
-                trait = wounded_1 	# minor
-                trait = typhus 		# medium
-                trait = blind 		# severe
-                trait = cancer 		# critical
-                trait = drunkard  	# flavour
+                trait = wounded_1   # minor
+                trait = typhus      # medium
+                trait = blind       # severe
+                trait = cancer      # critical
+                trait = drunkard    # flavour
             }
         }
     }
 
     # Lifedrain
     option = {
-        name = "They are about to die, might as well bolster my lifeforce"
+        name = "Their lifeforce will serve a greater purpose in my hands"
         add_character_modifier = { modifier = lifeforce_modifier }
+        add_dread = 5
 
         duel = {
             skill = intrigue
             value = 0
 
             0 = {
-                custom_tooltip = "No one notices you"
+                custom_tooltip = "My actions go unnoticed in the shadows of the square"
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = 2
@@ -72,7 +72,7 @@ bm_stroll_town.002 = {
             }
 
             20 = {
-                custom_tooltip = "Someone notices you"
+                custom_tooltip = "A gasp from nearby—someone witnessed my dark harvest"
                 root.capital_county = {
                     add_county_modifier = {
                         modifier = drained_beggar_holding
@@ -89,7 +89,7 @@ bm_stroll_town.002 = {
 
     # heal them
     option = {
-        name = "Heal their wounds"
+        name = "With a subtle gesture, I channel power to mend their bleeding wounds"
         trigger = {
             has_trait = lifestyle_blood_mage_group
         }
@@ -106,7 +106,7 @@ bm_stroll_town.002 = {
         ai_chance = { base = 4 }
     }
     option = {
-        name = "Heal their typhus"
+        name = "The fever that ravages their body is no match for my blood magic"
         trigger = {
             has_trait = lifestyle_blood_mage_group
         }
@@ -123,7 +123,7 @@ bm_stroll_town.002 = {
         ai_chance = { base = 3 }
     }
     option = {
-        name = "Heal their eyes"
+        name = "I place my hands upon their sightless eyes, commanding darkness to retreat"
         trigger = {
             has_trait = lifestyle_blood_mage_1
         }
@@ -139,7 +139,7 @@ bm_stroll_town.002 = {
         ai_chance = { base = 2 }
     }
     option = {
-        name = "Heal their cancer"
+        name = "Even death's corruption shall yield to my command—I will purge the cancer from their flesh"
         trigger = {
             has_trait = lifestyle_blood_mage_1
         }
@@ -157,19 +157,20 @@ bm_stroll_town.002 = {
 
     # Do nothing
     option = {
-        name = "Think I'll go back to the market"
-        trigger_event = {  id = bm_stroll_town.001 }
+        name = "This wretch is not worth my attention—I shall return to more pleasant diversions"
+        add_stress = -10
+        ai_chance = {
+            base = 5
+        }
     }
 
     # Portraits
-    left_portrait ={
+    left_portrait = {
         character = root
         animation = idle
     }
-    right_portrait ={
+    right_portrait = {
         character = scope:beggar
         animation = beg
-
-
     }
 }
