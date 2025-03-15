@@ -1,608 +1,608 @@
 ﻿enhance_personal_blood_mage_power = {
-	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
-	major = yes
-	desc = enhance_personal_blood_mage_power_desc
+    picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
+    major = yes
+    desc = enhance_personal_blood_mage_power_desc
 
-	cooldown = { years = 5 }
+    cooldown = { years = 5 }
 
-	is_shown = {
-		has_trait = blood_mage
-		not = { has_trait = blood_mage_9 }
-	}
-	is_valid = { 
-		has_character_modifier = lifeforce_modifier 
-		piety_level >= enhance_blood_mage_personal_piety_level_cost
-	}
+    is_shown = {
+        has_trait = blood_mage
+        not = { has_trait = blood_mage_9 }
+    }
+    is_valid = {
+        has_character_modifier = lifeforce_modifier
+        piety_level >= enhance_blood_mage_personal_piety_level_cost
+    }
 
-	effect = {
-		trigger_event = {  id = bm_enhance_power.001 }
-		custom_tooltip = enhance_personal_blood_mage_power_tooltip_desc
-	}
+    effect = {
+        trigger_event = {  id = bm_enhance_power.001 }
+        custom_tooltip = enhance_personal_blood_mage_power_tooltip_desc
+    }
 
-	ai_check_interval = 36
-	ai_will_do = 50
+    ai_check_interval = 36
+    ai_will_do = 50
 }
 
 enhance_blood_mage_coven_decision_1 = {
-	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
-	major = yes
-	ai_check_interval = 36
-	desc = enhance_blood_mage_coven_decision_desc
+    picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
+    major = yes
+    ai_check_interval = 36
+    desc = enhance_blood_mage_coven_decision_desc
 
-	is_shown = {
-		has_trait = blood_mage
-		exists = house
-		is_house_head = yes
-		
-		NOT = {
-			exists = global_var:enhance_bm_1
-		}
-	}
+    is_shown = {
+        has_trait = blood_mage
+        exists = house
+        is_house_head = yes
 
-	is_valid = {
-		is_house_head = yes
-		has_character_modifier = lifeforce_modifier
+        NOT = {
+            exists = global_var:enhance_bm_1
+        }
+    }
 
-		house = {
-			custom_tooltip = {
-				text = found_bm_coven_member_count_tt
-				any_house_member = {
-					count >= found_bm_coven_member_count
-					has_trait = blood_mage
-				}
-			}
-			any_house_member = {
-				count >= found_bm_coven_member_count
-				has_trait = blood_mage
-			}
-		}
-	}
+    is_valid = {
+        is_house_head = yes
+        has_character_modifier = lifeforce_modifier
 
-	effect = { 
-		magic_used = yes
-		enhance_blood_mage_coven_decision_effects = yes
-		set_variable = { name = enhance_bm_1 }
-	}
+        house = {
+            custom_tooltip = {
+                text = found_bm_coven_member_count_tt
+                any_house_member = {
+                    count >= found_bm_coven_member_count
+                    has_trait = blood_mage
+                }
+            }
+            any_house_member = {
+                count >= found_bm_coven_member_count
+                has_trait = blood_mage
+            }
+        }
+    }
 
-	cost = {
-		piety = 100
-	}
+    effect = {
+        magic_used = yes
+        enhance_blood_mage_coven_decision_effects = yes
+        set_variable = { name = enhance_bm_1 }
+    }
 
-	ai_will_do = { base = 100 }
+    cost = {
+        piety = 100
+    }
+
+    ai_will_do = { base = 100 }
 }
 
 enhance_blood_mage_coven_decision_2 = {
-	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
-	major = yes
-	ai_check_interval = 36
-	desc = enhance_blood_mage_coven_decision_desc
+    picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
+    major = yes
+    ai_check_interval = 36
+    desc = enhance_blood_mage_coven_decision_desc
 
-	is_shown = {
-		has_trait = blood_mage
-		exists = house
-		is_house_head = yes
-		exists = global_var:enhance_bm_1
-		NOT = {
-			exists = global_var:enhance_bm_2
-		}
-	}
+    is_shown = {
+        has_trait = blood_mage
+        exists = house
+        is_house_head = yes
+        exists = global_var:enhance_bm_1
+        NOT = {
+            exists = global_var:enhance_bm_2
+        }
+    }
 
-	is_valid = {
-		exists = house
-		house = {
-			custom_tooltip = {
-				text = found_bm_coven_member_count_tt
-				any_house_member = {
-					count >= found_bm_coven_member_count
-					has_trait = blood_mage
-				}
-			}
-			any_house_member = {
-				count >= found_bm_coven_member_count
-				has_trait = blood_mage
-			}
-		}
+    is_valid = {
+        exists = house
+        house = {
+            custom_tooltip = {
+                text = found_bm_coven_member_count_tt
+                any_house_member = {
+                    count >= found_bm_coven_member_count
+                    has_trait = blood_mage
+                }
+            }
+            any_house_member = {
+                count >= found_bm_coven_member_count
+                has_trait = blood_mage
+            }
+        }
 
-		or = {
-			has_trait = blood_mage_2
-			has_trait = blood_mage_3
-			has_trait = blood_mage_4
-			has_trait = blood_mage_5
-			has_trait = blood_mage_6
-			has_trait = blood_mage_7
-			has_trait = blood_mage_8
-			has_trait = blood_mage_9
-		}
-	}
+        or = {
+            has_trait = blood_mage_2
+            has_trait = blood_mage_3
+            has_trait = blood_mage_4
+            has_trait = blood_mage_5
+            has_trait = blood_mage_6
+            has_trait = blood_mage_7
+            has_trait = blood_mage_8
+            has_trait = blood_mage_9
+        }
+    }
 
-	effect = { 
-		magic_used = yes
-		add_piety_level = -1
-		enhance_blood_mage_coven_decision_effects = yes
-		set_variable = { 
-			name = enhance_bm_2 
-		}
-	}
+    effect = {
+        magic_used = yes
+        add_piety_level = -1
+        enhance_blood_mage_coven_decision_effects = yes
+        set_variable = {
+            name = enhance_bm_2
+        }
+    }
 
-	cost = {
-		piety = 200
-	}
+    cost = {
+        piety = 200
+    }
 
-	ai_will_do = { base = 100 }
+    ai_will_do = { base = 100 }
 }
 
 
 enhance_blood_mage_coven_decision_3 = {
-	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
-	major = yes
-	ai_check_interval = 36
-	desc = enhance_blood_mage_coven_decision_desc
+    picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
+    major = yes
+    ai_check_interval = 36
+    desc = enhance_blood_mage_coven_decision_desc
 
-	is_shown = {
-		has_trait = blood_mage
-		exists = house
-		is_house_head = yes
-		exists = global_var:enhance_bm_1
-		exists = global_var:enhance_bm_2
-		NOT = {
-			exists = global_var:enhance_bm_3
-		}
-	}
+    is_shown = {
+        has_trait = blood_mage
+        exists = house
+        is_house_head = yes
+        exists = global_var:enhance_bm_1
+        exists = global_var:enhance_bm_2
+        NOT = {
+            exists = global_var:enhance_bm_3
+        }
+    }
 
-	is_valid = {
-		has_character_modifier = lifeforce_modifier
-		house = {
-			custom_tooltip = {
-				text = found_bm_coven_member_count_tt
-				any_house_member = {
-					count >= found_bm_coven_member_count
-					has_trait = blood_mage
-				}
-			}
-			any_house_member = {
-				count >= found_bm_coven_member_count
-				has_trait = blood_mage
-			}
-		}
-		or = {
-			has_trait = blood_mage_3
-			has_trait = blood_mage_4
-			has_trait = blood_mage_5
-			has_trait = blood_mage_6
-			has_trait = blood_mage_7
-			has_trait = blood_mage_8
-			has_trait = blood_mage_9
-		}
-	}
+    is_valid = {
+        has_character_modifier = lifeforce_modifier
+        house = {
+            custom_tooltip = {
+                text = found_bm_coven_member_count_tt
+                any_house_member = {
+                    count >= found_bm_coven_member_count
+                    has_trait = blood_mage
+                }
+            }
+            any_house_member = {
+                count >= found_bm_coven_member_count
+                has_trait = blood_mage
+            }
+        }
+        or = {
+            has_trait = blood_mage_3
+            has_trait = blood_mage_4
+            has_trait = blood_mage_5
+            has_trait = blood_mage_6
+            has_trait = blood_mage_7
+            has_trait = blood_mage_8
+            has_trait = blood_mage_9
+        }
+    }
 
-	effect = { 
-		magic_used = yes
-		add_piety_level = -1
-		enhance_blood_mage_coven_decision_effects = yes
-		set_variable = { 
-			name = enhance_bm_3
-		}
-	}
+    effect = {
+        magic_used = yes
+        add_piety_level = -1
+        enhance_blood_mage_coven_decision_effects = yes
+        set_variable = {
+            name = enhance_bm_3
+        }
+    }
 
-	cost = {
-		piety = 250
-	}
+    cost = {
+        piety = 250
+    }
 
-	ai_will_do = { base = 100 }
+    ai_will_do = { base = 100 }
 }
 
 enhance_blood_mage_coven_decision_4 = {
-	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
-	major = yes
-	ai_check_interval = 36
-	desc = enhance_blood_mage_coven_decision_desc
+    picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
+    major = yes
+    ai_check_interval = 36
+    desc = enhance_blood_mage_coven_decision_desc
 
-	is_shown = {
-		has_trait = blood_mage
-		exists = house
-		is_house_head = yes
-		exists = global_var:enhance_bm_1
-		exists = global_var:enhance_bm_2
-		exists = global_var:enhance_bm_3
-		NOT = {
-			exists = global_var:enhance_bm_4
-		}
-	}
+    is_shown = {
+        has_trait = blood_mage
+        exists = house
+        is_house_head = yes
+        exists = global_var:enhance_bm_1
+        exists = global_var:enhance_bm_2
+        exists = global_var:enhance_bm_3
+        NOT = {
+            exists = global_var:enhance_bm_4
+        }
+    }
 
-	is_valid = {
-		has_character_modifier = lifeforce_modifier
-		house = {
-			custom_tooltip = {
-				text = found_bm_coven_member_count_tt
-				any_house_member = {
-					count >= found_bm_coven_member_count
-					has_trait = blood_mage
-				}
-			}
-			any_house_member = {
-				count >= found_bm_coven_member_count
-				has_trait = blood_mage
-			}
-		}
-		or = {
-			has_trait = blood_mage_4
-			has_trait = blood_mage_5
-			has_trait = blood_mage_6
-			has_trait = blood_mage_7
-			has_trait = blood_mage_8
-			has_trait = blood_mage_9
-		}
-	}
+    is_valid = {
+        has_character_modifier = lifeforce_modifier
+        house = {
+            custom_tooltip = {
+                text = found_bm_coven_member_count_tt
+                any_house_member = {
+                    count >= found_bm_coven_member_count
+                    has_trait = blood_mage
+                }
+            }
+            any_house_member = {
+                count >= found_bm_coven_member_count
+                has_trait = blood_mage
+            }
+        }
+        or = {
+            has_trait = blood_mage_4
+            has_trait = blood_mage_5
+            has_trait = blood_mage_6
+            has_trait = blood_mage_7
+            has_trait = blood_mage_8
+            has_trait = blood_mage_9
+        }
+    }
 
-	effect = { 
-		magic_used = yes
-		add_piety_level = -1
-		enhance_blood_mage_coven_decision_effects = yes
-		set_variable = { 
-			name = enhance_bm_4
-		}
-	}
+    effect = {
+        magic_used = yes
+        add_piety_level = -1
+        enhance_blood_mage_coven_decision_effects = yes
+        set_variable = {
+            name = enhance_bm_4
+        }
+    }
 
-	cost = {
-		piety = 400
-	}
+    cost = {
+        piety = 400
+    }
 
-	ai_will_do = { base = 100 }
+    ai_will_do = { base = 100 }
 }
 
 enhance_blood_mage_coven_decision_5 = {
-	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
-	major = yes
-	ai_check_interval = 36
-	desc = enhance_blood_mage_coven_decision_desc
+    picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
+    major = yes
+    ai_check_interval = 36
+    desc = enhance_blood_mage_coven_decision_desc
 
-	is_shown = {
-		has_trait = blood_mage
-		exists = house
-		is_house_head = yes
-		exists = global_var:enhance_bm_1
-		exists = global_var:enhance_bm_2
-		exists = global_var:enhance_bm_3
-		exists = global_var:enhance_bm_4
-		NOT = {
-			exists = global_var:enhance_bm_5
-		}
-	}
+    is_shown = {
+        has_trait = blood_mage
+        exists = house
+        is_house_head = yes
+        exists = global_var:enhance_bm_1
+        exists = global_var:enhance_bm_2
+        exists = global_var:enhance_bm_3
+        exists = global_var:enhance_bm_4
+        NOT = {
+            exists = global_var:enhance_bm_5
+        }
+    }
 
-	is_valid = {
-		has_character_modifier = lifeforce_modifier
-		house = {
-			custom_tooltip = {
-				text = found_bm_coven_member_count_tt
-				any_house_member = {
-					count >= found_bm_coven_member_count
-					has_trait = blood_mage
-				}
-			}
-			any_house_member = {
-				count >= found_bm_coven_member_count
-				has_trait = blood_mage
-			}
-		}
-		or = { # at least master
-			has_trait = blood_mage_5
-			has_trait = blood_mage_6
-			has_trait = blood_mage_7
-			has_trait = blood_mage_8
-			has_trait = blood_mage_9
-		}
-	}
+    is_valid = {
+        has_character_modifier = lifeforce_modifier
+        house = {
+            custom_tooltip = {
+                text = found_bm_coven_member_count_tt
+                any_house_member = {
+                    count >= found_bm_coven_member_count
+                    has_trait = blood_mage
+                }
+            }
+            any_house_member = {
+                count >= found_bm_coven_member_count
+                has_trait = blood_mage
+            }
+        }
+        or = { # at least master
+            has_trait = blood_mage_5
+            has_trait = blood_mage_6
+            has_trait = blood_mage_7
+            has_trait = blood_mage_8
+            has_trait = blood_mage_9
+        }
+    }
 
-	effect = { 
-		magic_used = yes
-		add_piety_level = -2
-		enhance_blood_mage_coven_decision_effects = yes
-		set_variable = { 
-			name = enhance_bm_5
-		}
-	}
+    effect = {
+        magic_used = yes
+        add_piety_level = -2
+        enhance_blood_mage_coven_decision_effects = yes
+        set_variable = {
+            name = enhance_bm_5
+        }
+    }
 
-	cost = {
-		piety = 450
-	}
+    cost = {
+        piety = 450
+    }
 
-	ai_will_do = { base = 100 }
+    ai_will_do = { base = 100 }
 }
 
 enhance_blood_mage_coven_decision_6 = {
-	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
-	major = yes
-	ai_check_interval = 36
-	desc = enhance_blood_mage_coven_decision_desc
+    picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
+    major = yes
+    ai_check_interval = 36
+    desc = enhance_blood_mage_coven_decision_desc
 
-	is_shown = {
-		has_trait = blood_mage
-		exists = house
-		is_house_head = yes
-		exists = global_var:enhance_bm_1
-		exists = global_var:enhance_bm_2
-		exists = global_var:enhance_bm_3
-		exists = global_var:enhance_bm_4
-		exists = global_var:enhance_bm_5
-		NOT = {
-			exists = global_var:enhance_bm_6
-		}
-	}
+    is_shown = {
+        has_trait = blood_mage
+        exists = house
+        is_house_head = yes
+        exists = global_var:enhance_bm_1
+        exists = global_var:enhance_bm_2
+        exists = global_var:enhance_bm_3
+        exists = global_var:enhance_bm_4
+        exists = global_var:enhance_bm_5
+        NOT = {
+            exists = global_var:enhance_bm_6
+        }
+    }
 
-	is_valid = {
-		has_character_modifier = lifeforce_modifier
-		house = {
-			custom_tooltip = {
-				text = found_bm_coven_member_count_tt
-				any_house_member = {
-					count >= found_bm_coven_member_count
-					has_trait = blood_mage
-				}
-			}
-			any_house_member = {
-				count >= found_bm_coven_member_count
-				has_trait = blood_mage
-			}
-		}
-		or = {
-			has_trait = blood_mage_6
-			has_trait = blood_mage_7
-			has_trait = blood_mage_8
-			has_trait = blood_mage_9
-		}
-	}
+    is_valid = {
+        has_character_modifier = lifeforce_modifier
+        house = {
+            custom_tooltip = {
+                text = found_bm_coven_member_count_tt
+                any_house_member = {
+                    count >= found_bm_coven_member_count
+                    has_trait = blood_mage
+                }
+            }
+            any_house_member = {
+                count >= found_bm_coven_member_count
+                has_trait = blood_mage
+            }
+        }
+        or = {
+            has_trait = blood_mage_6
+            has_trait = blood_mage_7
+            has_trait = blood_mage_8
+            has_trait = blood_mage_9
+        }
+    }
 
-	effect = { 
-		magic_used = yes
-		add_piety_level = -2
-		enhance_blood_mage_coven_decision_effects = yes
-		set_variable = { 
-			name = enhance_bm_6
-		}
-	}
+    effect = {
+        magic_used = yes
+        add_piety_level = -2
+        enhance_blood_mage_coven_decision_effects = yes
+        set_variable = {
+            name = enhance_bm_6
+        }
+    }
 
-	cost = {
-		piety = 600
-	}
+    cost = {
+        piety = 600
+    }
 
-	ai_will_do = { base = 100 }
+    ai_will_do = { base = 100 }
 }
 
 enhance_blood_mage_coven_decision_7 = {
-	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
-	major = yes
-	ai_check_interval = 36
-	desc = enhance_blood_mage_coven_decision_desc
+    picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
+    major = yes
+    ai_check_interval = 36
+    desc = enhance_blood_mage_coven_decision_desc
 
-	is_shown = {
-		has_trait = blood_mage
-		exists = house
-		is_house_head = yes
-		exists = global_var:enhance_bm_1
-		exists = global_var:enhance_bm_2
-		exists = global_var:enhance_bm_3
-		exists = global_var:enhance_bm_4
-		exists = global_var:enhance_bm_5
-		exists = global_var:enhance_bm_6
-		NOT = {
-			exists = global_var:enhance_bm_7
-		}
-	}
+    is_shown = {
+        has_trait = blood_mage
+        exists = house
+        is_house_head = yes
+        exists = global_var:enhance_bm_1
+        exists = global_var:enhance_bm_2
+        exists = global_var:enhance_bm_3
+        exists = global_var:enhance_bm_4
+        exists = global_var:enhance_bm_5
+        exists = global_var:enhance_bm_6
+        NOT = {
+            exists = global_var:enhance_bm_7
+        }
+    }
 
-	is_valid = {
-		has_character_modifier = lifeforce_modifier
-		house = {
-			custom_tooltip = {
-				text = found_bm_coven_member_count_tt
-				any_house_member = {
-					count >= found_bm_coven_member_count
-					has_trait = blood_mage
-				}
-			}
-			any_house_member = {
-				count >= found_bm_coven_member_count
-				has_trait = blood_mage
-			}
-		}
-		or = { 
-			has_trait = blood_mage_7
-			has_trait = blood_mage_8
-			has_trait = blood_mage_9
-		}
-	}
+    is_valid = {
+        has_character_modifier = lifeforce_modifier
+        house = {
+            custom_tooltip = {
+                text = found_bm_coven_member_count_tt
+                any_house_member = {
+                    count >= found_bm_coven_member_count
+                    has_trait = blood_mage
+                }
+            }
+            any_house_member = {
+                count >= found_bm_coven_member_count
+                has_trait = blood_mage
+            }
+        }
+        or = {
+            has_trait = blood_mage_7
+            has_trait = blood_mage_8
+            has_trait = blood_mage_9
+        }
+    }
 
-	effect = { 
-		magic_used = yes
-		add_piety_level = -2
-		enhance_blood_mage_coven_decision_effects = yes
-		set_variable = { 
-			name = enhance_bm_7
-		}
-	}
+    effect = {
+        magic_used = yes
+        add_piety_level = -2
+        enhance_blood_mage_coven_decision_effects = yes
+        set_variable = {
+            name = enhance_bm_7
+        }
+    }
 
-	cost = {
-		piety = 650
-	}
+    cost = {
+        piety = 650
+    }
 
-	ai_will_do = { base = 100 }
+    ai_will_do = { base = 100 }
 }
 
 enhance_blood_mage_coven_decision_8 = {
-	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
-	major = yes
-	ai_check_interval = 36
-	desc = enhance_blood_mage_coven_decision_desc
+    picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
+    major = yes
+    ai_check_interval = 36
+    desc = enhance_blood_mage_coven_decision_desc
 
-	is_shown = {
-		has_trait = blood_mage
-		exists = house
-		is_house_head = yes
-		exists = global_var:enhance_bm_1
-		exists = global_var:enhance_bm_2
-		exists = global_var:enhance_bm_3
-		exists = global_var:enhance_bm_4
-		exists = global_var:enhance_bm_5
-		exists = global_var:enhance_bm_6
-		exists = global_var:enhance_bm_7
+    is_shown = {
+        has_trait = blood_mage
+        exists = house
+        is_house_head = yes
+        exists = global_var:enhance_bm_1
+        exists = global_var:enhance_bm_2
+        exists = global_var:enhance_bm_3
+        exists = global_var:enhance_bm_4
+        exists = global_var:enhance_bm_5
+        exists = global_var:enhance_bm_6
+        exists = global_var:enhance_bm_7
 
-		NOT = {
-			exists = global_var:enhance_bm_8
-		}
-	}
+        NOT = {
+            exists = global_var:enhance_bm_8
+        }
+    }
 
-	is_valid = {
-		has_character_modifier = lifeforce_modifier
-		house = {
-			custom_tooltip = {
-				text = found_bm_coven_member_count_tt
-				any_house_member = {
-					count >= found_bm_coven_member_count
-					has_trait = blood_mage
-				}
-			}
-			any_house_member = {
-				count >= found_bm_coven_member_count
-				has_trait = blood_mage
-			}
-		}
-		or = {
-			has_trait = blood_mage_8
-			has_trait = blood_mage_9
-		}
-	}
+    is_valid = {
+        has_character_modifier = lifeforce_modifier
+        house = {
+            custom_tooltip = {
+                text = found_bm_coven_member_count_tt
+                any_house_member = {
+                    count >= found_bm_coven_member_count
+                    has_trait = blood_mage
+                }
+            }
+            any_house_member = {
+                count >= found_bm_coven_member_count
+                has_trait = blood_mage
+            }
+        }
+        or = {
+            has_trait = blood_mage_8
+            has_trait = blood_mage_9
+        }
+    }
 
-	effect = { 
-		magic_used = yes
-		add_piety_level = -3
-		enhance_blood_mage_coven_decision_effects = yes
-		set_variable = { 
-			name = enhance_bm_8
-		}
-	}
+    effect = {
+        magic_used = yes
+        add_piety_level = -3
+        enhance_blood_mage_coven_decision_effects = yes
+        set_variable = {
+            name = enhance_bm_8
+        }
+    }
 
-	cost = {
-		piety = 900
-	}
+    cost = {
+        piety = 900
+    }
 
-	ai_will_do = { base = 100 }
+    ai_will_do = { base = 100 }
 }
 
 enhance_blood_mage_coven_decision_9 = {
-	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
-	major = yes
-	ai_check_interval = 36
-	desc = enhance_blood_mage_coven_decision_desc
+    picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
+    major = yes
+    ai_check_interval = 36
+    desc = enhance_blood_mage_coven_decision_desc
 
-	is_shown = {
-		has_trait = blood_mage
-		exists = house
-		is_house_head = yes
-		exists = global_var:enhance_bm_1
-		exists = global_var:enhance_bm_2
-		exists = global_var:enhance_bm_3
-		exists = global_var:enhance_bm_4
-		exists = global_var:enhance_bm_5
-		exists = global_var:enhance_bm_6
-		exists = global_var:enhance_bm_7
-		exists = global_var:enhance_bm_8
-		NOT = {
-			exists = global_var:enhance_bm_9
-		}
-	}
+    is_shown = {
+        has_trait = blood_mage
+        exists = house
+        is_house_head = yes
+        exists = global_var:enhance_bm_1
+        exists = global_var:enhance_bm_2
+        exists = global_var:enhance_bm_3
+        exists = global_var:enhance_bm_4
+        exists = global_var:enhance_bm_5
+        exists = global_var:enhance_bm_6
+        exists = global_var:enhance_bm_7
+        exists = global_var:enhance_bm_8
+        NOT = {
+            exists = global_var:enhance_bm_9
+        }
+    }
 
-	is_valid = {
-		has_character_modifier = lifeforce_modifier
-		house = {
-			custom_tooltip = {
-				text = found_bm_coven_member_count_tt
-				any_house_member = {
-					count >= found_bm_coven_member_count
-					has_trait = blood_mage
-				}
-			}
-			any_house_member = {
-				count >= found_bm_coven_member_count
-				has_trait = blood_mage
-			}
-		}
-		or = {
-			has_trait = blood_mage_9
-		}
-	}
+    is_valid = {
+        has_character_modifier = lifeforce_modifier
+        house = {
+            custom_tooltip = {
+                text = found_bm_coven_member_count_tt
+                any_house_member = {
+                    count >= found_bm_coven_member_count
+                    has_trait = blood_mage
+                }
+            }
+            any_house_member = {
+                count >= found_bm_coven_member_count
+                has_trait = blood_mage
+            }
+        }
+        or = {
+            has_trait = blood_mage_9
+        }
+    }
 
-	effect = { 
-		magic_used = yes
-		add_piety_level = -3
-		enhance_blood_mage_coven_decision_effects = yes
-		set_variable = { 
-			name = enhance_bm_9
-		}
-	}
+    effect = {
+        magic_used = yes
+        add_piety_level = -3
+        enhance_blood_mage_coven_decision_effects = yes
+        set_variable = {
+            name = enhance_bm_9
+        }
+    }
 
-	cost = {
-		piety = 950
-	}
+    cost = {
+        piety = 950
+    }
 
-	ai_will_do = { base = 100 }
+    ai_will_do = { base = 100 }
 }
 
 enhance_blood_mage_coven_decision_10 = {
-	picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
-	major = yes
-	ai_check_interval = 36
-	desc = enhance_blood_mage_coven_decision_desc
+    picture = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
+    major = yes
+    ai_check_interval = 36
+    desc = enhance_blood_mage_coven_decision_desc
 
-	is_shown = {
-		has_trait = blood_mage
-		exists = house
-		is_house_head = yes
-		exists = global_var:enhance_bm_1
-		exists = global_var:enhance_bm_2
-		exists = global_var:enhance_bm_3
-		exists = global_var:enhance_bm_4
-		exists = global_var:enhance_bm_5
-		exists = global_var:enhance_bm_6
-		exists = global_var:enhance_bm_7
-		exists = global_var:enhance_bm_8
-		exists = global_var:enhance_bm_9
-		
-		NOT = {
-			exists = global_var:enhance_bm_10
-		}
-	}
+    is_shown = {
+        has_trait = blood_mage
+        exists = house
+        is_house_head = yes
+        exists = global_var:enhance_bm_1
+        exists = global_var:enhance_bm_2
+        exists = global_var:enhance_bm_3
+        exists = global_var:enhance_bm_4
+        exists = global_var:enhance_bm_5
+        exists = global_var:enhance_bm_6
+        exists = global_var:enhance_bm_7
+        exists = global_var:enhance_bm_8
+        exists = global_var:enhance_bm_9
 
-	is_valid = {
-		has_character_modifier = lifeforce_modifier
-		house = {
-			custom_tooltip = {
-				text = found_bm_coven_member_count_tt
-				any_house_member = {
-					count >= found_bm_coven_member_count
-					has_trait = blood_mage
-				}
-			}
-			any_house_member = {
-				count >= found_bm_coven_member_count
-				has_trait = blood_mage
-			}
-		}
-		or = { # at least supreme
-			has_trait = blood_mage_9
-		}
-	}
+        NOT = {
+            exists = global_var:enhance_bm_10
+        }
+    }
 
-	effect = { 
-		magic_used = yes
-		add_piety_level = -4
-		enhance_blood_mage_coven_decision_effects = yes
-		set_variable = { 
-			name = enhance_bm_10
-		}
-	}
+    is_valid = {
+        has_character_modifier = lifeforce_modifier
+        house = {
+            custom_tooltip = {
+                text = found_bm_coven_member_count_tt
+                any_house_member = {
+                    count >= found_bm_coven_member_count
+                    has_trait = blood_mage
+                }
+            }
+            any_house_member = {
+                count >= found_bm_coven_member_count
+                has_trait = blood_mage
+            }
+        }
+        or = { # at least supreme
+            has_trait = blood_mage_9
+        }
+    }
 
-	cost = {
-		piety = 1000
-	}
+    effect = {
+        magic_used = yes
+        add_piety_level = -4
+        enhance_blood_mage_coven_decision_effects = yes
+        set_variable = {
+            name = enhance_bm_10
+        }
+    }
 
-	ai_will_do = { base = 100 }
+    cost = {
+        piety = 1000
+    }
+
+    ai_will_do = { base = 100 }
 }

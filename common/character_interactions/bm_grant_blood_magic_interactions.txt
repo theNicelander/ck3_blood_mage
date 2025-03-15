@@ -1,37 +1,37 @@
 ﻿grant_blood_magic_interaction = {
-	category = interaction_category_friendly
-	auto_accept = yes
-	common_interaction = yes
-	desc = grant_blood_magic_interaction_desc
-	interface_priority = 200
+    category = interaction_category_friendly
+    auto_accept = yes
+    common_interaction = yes
+    desc = grant_blood_magic_interaction_desc
+    interface_priority = 200
 
-	is_shown = {
-		NOT = { scope:actor = scope:recipient }
-		scope:actor = {
-			OR = {
-				has_trait = blood_mage_2
-				has_trait = blood_mage_3
-				has_trait = blood_mage_4
-				has_trait = blood_mage_5
-				has_trait = blood_mage_6
-				has_trait = blood_mage_7 
-				has_trait = blood_mage_8 
-				has_trait = blood_mage_9 
-			}
-		}
-		
-		scope:recipient = { NOT = { has_trait = blood_mage } }
-	}
-	cost = { piety = 100 }
-	is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier } }
-	on_accept = { scope:actor = { trigger_event = bm_grant_blood_magic.001 } }
-	# AI
-	ai_potential = { is_adult = yes }
-	ai_targets = { ai_recipients = family }
+    is_shown = {
+        NOT = { scope:actor = scope:recipient }
+        scope:actor = {
+            OR = {
+                has_trait = blood_mage_2
+                has_trait = blood_mage_3
+                has_trait = blood_mage_4
+                has_trait = blood_mage_5
+                has_trait = blood_mage_6
+                has_trait = blood_mage_7
+                has_trait = blood_mage_8
+                has_trait = blood_mage_9
+            }
+        }
 
-	# Same as witch
-	ai_will_do = {
-		base = -45
-		ai_willingness_to_do_postitive_magic = yes
-	}
+        scope:recipient = { NOT = { has_trait = blood_mage } }
+    }
+    cost = { piety = 100 }
+    is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier } }
+    on_accept = { scope:actor = { trigger_event = bm_grant_blood_magic.001 } }
+    # AI
+    ai_potential = { is_adult = yes }
+    ai_targets = { ai_recipients = family }
+
+    # Same as witch
+    ai_will_do = {
+        base = -45
+        ai_willingness_to_do_postitive_magic = yes
+    }
 }

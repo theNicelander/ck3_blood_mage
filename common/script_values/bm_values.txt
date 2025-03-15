@@ -7,43 +7,43 @@ grant_blood_magic_stress_cost_5 = 50
 
 # Coven values (based on fibbonaci sequence)
 found_bm_coven_member_count = {
-	add = 3
-	if = {
-		limit = { exists = global_var:enhance_bm_1 }
-		add = 2
-	}
-	if = {
-		limit = { exists = global_var:enhance_bm_2 }
-		add = found_bm_coven_member_count_1
-	}
-	if = {
-		limit = { exists = global_var:enhance_bm_3 }
-		add = found_bm_coven_member_count_2
-	}
-	if = {
-		limit = { exists = global_var:enhance_bm_4 }
-		add = found_bm_coven_member_count_3
-	}
-	if = {
-		limit = { exists = global_var:enhance_bm_5 }
-		add = found_bm_coven_member_count_4
-	}
-	if = {
-		limit = { exists = global_var:enhance_bm_6 }
-		add = found_bm_coven_member_count_5
-	}
-	if = {
-		limit = { exists = global_var:enhance_bm_7 }
-		add = found_bm_coven_member_count_6
-	}
-	if = {
-		limit = { exists = global_var:enhance_bm_8 }
-		add = found_bm_coven_member_count_7
-	}
-	if = {
-		limit = { exists = global_var:enhance_bm_9 }
-		add = found_bm_coven_member_count_8
-	}
+    add = 3
+    if = {
+        limit = { exists = global_var:enhance_bm_1 }
+        add = 2
+    }
+    if = {
+        limit = { exists = global_var:enhance_bm_2 }
+        add = found_bm_coven_member_count_1
+    }
+    if = {
+        limit = { exists = global_var:enhance_bm_3 }
+        add = found_bm_coven_member_count_2
+    }
+    if = {
+        limit = { exists = global_var:enhance_bm_4 }
+        add = found_bm_coven_member_count_3
+    }
+    if = {
+        limit = { exists = global_var:enhance_bm_5 }
+        add = found_bm_coven_member_count_4
+    }
+    if = {
+        limit = { exists = global_var:enhance_bm_6 }
+        add = found_bm_coven_member_count_5
+    }
+    if = {
+        limit = { exists = global_var:enhance_bm_7 }
+        add = found_bm_coven_member_count_6
+    }
+    if = {
+        limit = { exists = global_var:enhance_bm_8 }
+        add = found_bm_coven_member_count_7
+    }
+    if = {
+        limit = { exists = global_var:enhance_bm_9 }
+        add = found_bm_coven_member_count_8
+    }
 }
 
 found_bm_coven_member_count_1 = 3
@@ -73,232 +73,232 @@ trait_drain_modifier_2 = 100
 trait_drain_modifier_3 = 150
 
 trait_drain_intellect_cost = {
-	add = trait_drain_base_piety_cost
-	if = { 
-		limit = { has_trait = intellect_good_1 }
-		add = trait_drain_level_1_piety_cost
-	}
-	if = { 
-		limit = { has_trait = intellect_good_2 }
-		add = trait_drain_level_2_piety_cost
-	}
+    add = trait_drain_base_piety_cost
+    if = {
+        limit = { has_trait = intellect_good_1 }
+        add = trait_drain_level_1_piety_cost
+    }
+    if = {
+        limit = { has_trait = intellect_good_2 }
+        add = trait_drain_level_2_piety_cost
+    }
 }
 
 trait_drain_physique_cost = {
-	add = trait_drain_base_piety_cost
-	if = { 
-		limit = { has_trait = physique_good_1 }
-		add = trait_drain_level_1_piety_cost
-	}
-	if = { 
-		limit = { has_trait = physique_good_2 }
-		add = trait_drain_level_2_piety_cost
-	}
-} 
+    add = trait_drain_base_piety_cost
+    if = {
+        limit = { has_trait = physique_good_1 }
+        add = trait_drain_level_1_piety_cost
+    }
+    if = {
+        limit = { has_trait = physique_good_2 }
+        add = trait_drain_level_2_piety_cost
+    }
+}
 
 trait_drain_beauty_cost = {
-	add = trait_drain_base_piety_cost
-	if = { 
-		limit = { has_trait = beauty_good_1 }
-		add = trait_drain_level_1_piety_cost
-	}
-	if = { 
-		limit = { has_trait = beauty_good_2 }
-		add = trait_drain_level_2_piety_cost
-	}
+    add = trait_drain_base_piety_cost
+    if = {
+        limit = { has_trait = beauty_good_1 }
+        add = trait_drain_level_1_piety_cost
+    }
+    if = {
+        limit = { has_trait = beauty_good_2 }
+        add = trait_drain_level_2_piety_cost
+    }
 }
 
 enhance_blood_mage_personal_piety_level_cost = {
-	add = 1
-	if = { 
-		limit = { 
-			or = {
-				has_trait = blood_mage_3
-				has_trait = blood_mage_4
-			} 
-		}
-		add = 1
-	}
-	if = { 
-		limit = { 
-			or = {
-				has_trait = blood_mage_5
-				has_trait = blood_mage_6
-			} 
-		}
-		add = 2
-	}
-	if = { 
-		limit = { 
-			or = {
-				has_trait = blood_mage_7
-				has_trait = blood_mage_8
-			} 
-		}
-		add = 3
-	}
+    add = 1
+    if = {
+        limit = {
+            or = {
+                has_trait = blood_mage_3
+                has_trait = blood_mage_4
+            }
+        }
+        add = 1
+    }
+    if = {
+        limit = {
+            or = {
+                has_trait = blood_mage_5
+                has_trait = blood_mage_6
+            }
+        }
+        add = 2
+    }
+    if = {
+        limit = {
+            or = {
+                has_trait = blood_mage_7
+                has_trait = blood_mage_8
+            }
+        }
+        add = 3
+    }
 }
 
 enhance_blood_mage_personal_piety_level_cost_negative = {
-	add = -1
-	if = { 
-		limit = { 
-			or = {
-				has_trait = blood_mage_3
-				has_trait = blood_mage_4
-			} 
-		}
-		add = -1
-	}
-	if = { 
-		limit = { 
-			or = {
-				has_trait = blood_mage_5
-				has_trait = blood_mage_6
-			} 
-		}
-		add = -2
-	}
-	if = { 
-		limit = { 
-			or = {
-				has_trait = blood_mage_7
-				has_trait = blood_mage_8
-			} 
-		}
-		add = -3
-	}
+    add = -1
+    if = {
+        limit = {
+            or = {
+                has_trait = blood_mage_3
+                has_trait = blood_mage_4
+            }
+        }
+        add = -1
+    }
+    if = {
+        limit = {
+            or = {
+                has_trait = blood_mage_5
+                has_trait = blood_mage_6
+            }
+        }
+        add = -2
+    }
+    if = {
+        limit = {
+            or = {
+                has_trait = blood_mage_7
+                has_trait = blood_mage_8
+            }
+        }
+        add = -3
+    }
 }
 
 blood_mage_rank_multiplier = {
-	add = 1
-	if = { 
-		limit = { has_trait = blood_mage_2 }
-		add = 2
-	}
-	if = { 
-		limit = { has_trait = blood_mage_3 }
-		add = 4
-	}
-	if = { 
-		limit = { has_trait = blood_mage_4 }
-		add = 6
-	}
-	if = { 
-		limit = { has_trait = blood_mage_5 }
-		add = 8
-	}
-	if = { 
-		limit = { has_trait = blood_mage_6 }
-		add = 10
-	}
-	if = { 
-		limit = { has_trait = blood_mage_7 }
-		add = 12
-	}
-	if = { 
-		limit = { has_trait = blood_mage_8 }
-		add = 15
-	}
-	if = { 
-		limit = { has_trait = blood_mage_9 }
-		add = 20
-	}
+    add = 1
+    if = {
+        limit = { has_trait = blood_mage_2 }
+        add = 2
+    }
+    if = {
+        limit = { has_trait = blood_mage_3 }
+        add = 4
+    }
+    if = {
+        limit = { has_trait = blood_mage_4 }
+        add = 6
+    }
+    if = {
+        limit = { has_trait = blood_mage_5 }
+        add = 8
+    }
+    if = {
+        limit = { has_trait = blood_mage_6 }
+        add = 10
+    }
+    if = {
+        limit = { has_trait = blood_mage_7 }
+        add = 12
+    }
+    if = {
+        limit = { has_trait = blood_mage_8 }
+        add = 15
+    }
+    if = {
+        limit = { has_trait = blood_mage_9 }
+        add = 20
+    }
 }
 
 blood_mage_rank_base = {
-	value = 0
-	if = { 
-		limit = { has_trait = blood_mage_2 }
-		add = 10
-	}
-	if = { 
-		limit = { has_trait = blood_mage_3 }
-		add = 25
-	}
-	if = { 
-		limit = { has_trait = blood_mage_4 }
-		add = 50
-	}
-	if = { 
-		limit = { has_trait = blood_mage_5 }
-		add = 90
-	}
-	if = { 
-		limit = { has_trait = blood_mage_6 }
-		add = 150
-	}
-	if = { 
-		limit = { has_trait = blood_mage_7 }
-		add = 270
-	}
-	if = { 
-		limit = { has_trait = blood_mage_8 }
-		add = 350
-	}
-	if = { 
-		limit = { has_trait = blood_mage_9 }
-		add = 500
-	}
+    value = 0
+    if = {
+        limit = { has_trait = blood_mage_2 }
+        add = 10
+    }
+    if = {
+        limit = { has_trait = blood_mage_3 }
+        add = 25
+    }
+    if = {
+        limit = { has_trait = blood_mage_4 }
+        add = 50
+    }
+    if = {
+        limit = { has_trait = blood_mage_5 }
+        add = 90
+    }
+    if = {
+        limit = { has_trait = blood_mage_6 }
+        add = 150
+    }
+    if = {
+        limit = { has_trait = blood_mage_7 }
+        add = 270
+    }
+    if = {
+        limit = { has_trait = blood_mage_8 }
+        add = 350
+    }
+    if = {
+        limit = { has_trait = blood_mage_9 }
+        add = 500
+    }
 }
 
 trait_drain_modifer_per_trait = {
-	value = 0
+    value = 0
 
-	# intellect
-	if = { 
-		limit = { has_trait = intellect_good_1 }
-		add = trait_drain_modifier_1
-	}
-	if = { 
-		limit = { has_trait = intellect_good_2 }
-		add = trait_drain_modifier_2
-	}
-	if = { 
-		limit = { has_trait = intellect_good_3 }
-		add = trait_drain_modifier_3
-	}
+    # intellect
+    if = {
+        limit = { has_trait = intellect_good_1 }
+        add = trait_drain_modifier_1
+    }
+    if = {
+        limit = { has_trait = intellect_good_2 }
+        add = trait_drain_modifier_2
+    }
+    if = {
+        limit = { has_trait = intellect_good_3 }
+        add = trait_drain_modifier_3
+    }
 
-	# Physique
-	if = { 
-		limit = { has_trait = physique_good_1 }
-		add = trait_drain_modifier_1
-	}
-	if = { 
-		limit = { has_trait = physique_good_2 }
-		add = trait_drain_modifier_2
-	}
-	if = { 
-		limit = { has_trait = physique_good_3 }
-		add = trait_drain_modifier_3
-	}
+    # Physique
+    if = {
+        limit = { has_trait = physique_good_1 }
+        add = trait_drain_modifier_1
+    }
+    if = {
+        limit = { has_trait = physique_good_2 }
+        add = trait_drain_modifier_2
+    }
+    if = {
+        limit = { has_trait = physique_good_3 }
+        add = trait_drain_modifier_3
+    }
 
-	# Beauty
-	if = { 
-		limit = { has_trait = beauty_good_1 }
-		add = trait_drain_modifier_1
-	}
-	if = { 
-		limit = { has_trait = beauty_good_2 }
-		add = trait_drain_modifier_2
-	}
-	if = { 
-		limit = { has_trait = beauty_good_3 }
-		add = trait_drain_modifier_3
-	}
+    # Beauty
+    if = {
+        limit = { has_trait = beauty_good_1 }
+        add = trait_drain_modifier_1
+    }
+    if = {
+        limit = { has_trait = beauty_good_2 }
+        add = trait_drain_modifier_2
+    }
+    if = {
+        limit = { has_trait = beauty_good_3 }
+        add = trait_drain_modifier_3
+    }
 
-	# Other traits
-	if = { 
-		limit = { has_trait = giant }
-		add = trait_drain_modifier_1
-	}
-	if = { 
-		limit = { has_trait = fecund }
-		add = trait_drain_modifier_1
-	}
-	if = { 
-		limit = { has_trait = pure_blooded }
-		add = trait_drain_modifier_1
-	}
+    # Other traits
+    if = {
+        limit = { has_trait = giant }
+        add = trait_drain_modifier_1
+    }
+    if = {
+        limit = { has_trait = fecund }
+        add = trait_drain_modifier_1
+    }
+    if = {
+        limit = { has_trait = pure_blooded }
+        add = trait_drain_modifier_1
+    }
 
 }
