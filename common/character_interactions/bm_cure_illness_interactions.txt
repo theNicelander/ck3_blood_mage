@@ -3,6 +3,7 @@
     category = interaction_category_friendly
     desc = heal_disease_minor_desc
     common_interaction = yes
+    auto_accept = yes
 
     cost = { piety = heal_disease_minor_cost }
     is_shown = {
@@ -45,6 +46,7 @@ heal_disease_medium = {
     category = interaction_category_friendly
     desc = heal_disease_medium_desc
     common_interaction = yes
+    auto_accept = yes
 
     cost = { piety = heal_disease_medium_cost }
     is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier } }
@@ -97,6 +99,7 @@ heal_disease_severe = {
     category = interaction_category_friendly
     desc = heal_disease_severe_desc
     common_interaction = yes
+    auto_accept = yes
 
     cost = { piety = heal_disease_severe_cost }
     is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier } }
@@ -151,6 +154,7 @@ heal_disease_critical = {
     category = interaction_category_friendly
     desc = heal_disease_critical_desc
     common_interaction = yes
+    auto_accept = yes
 
     cost = { piety = heal_disease_critical_cost }
     is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier } }
