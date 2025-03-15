@@ -169,7 +169,7 @@ heal_disease_critical = {
     }
 
     on_accept = {
-        magic_used = yes
+        scope:actor = { magic_used = yes }
         scope:recipient = {
             remove_trait = great_pox
             remove_trait = cancer
