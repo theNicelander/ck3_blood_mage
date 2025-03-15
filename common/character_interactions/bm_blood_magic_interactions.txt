@@ -9,7 +9,7 @@
 
     is_shown = {
         scope:recipient = {
-            has_trait = blood_mage
+            has_trait = lifestyle_blood_mage_group
             OR = {
                 has_relation_lover = scope:actor
                 has_relation_friend = scope:actor
@@ -18,19 +18,19 @@
             }
         }
 
-        scope:actor = { NOT = { has_trait = blood_mage } }
+        scope:actor = { NOT = { has_trait = lifestyle_blood_mage_group } }
     }
 
     on_accept = {
         scope:actor = {
-            add_trait = blood_mage_1
+            add_trait = lifestyle_blood_mage_group
             add_piety_level = -1
         }
     }
 
     # AI
-    ai_min_reply_days = 1
-    ai_max_reply_days = 1
+    ai_min_reply_days = 0
+    ai_max_reply_days = 0
 
     ai_potential = { is_adult = yes }
     ai_will_do = { base = 100 }
@@ -47,7 +47,7 @@ grant_lifeforce_interaction = {
 
     is_shown = {
         scope:actor = {
-            has_trait = blood_mage
+            has_trait = lifestyle_blood_mage_group
         }
         NOT = { scope:actor = scope:recipient }
     }
