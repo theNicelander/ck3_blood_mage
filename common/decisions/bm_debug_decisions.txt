@@ -16,18 +16,6 @@
         add_character_modifier = { modifier = lifeforce_modifier }
         add_character_modifier = { modifier = lifeforce_modifier }
     }
-    
-}
-
-
-debug_level_up_blood_mage_trait = {
-    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
-    ai_check_interval = 0
-    decision_group_type = bm_decision_group
-    
-    is_shown = {
-        debug_only = yes
-    }
 }
 
 debug_add_exp_blood_mage_exp = {
