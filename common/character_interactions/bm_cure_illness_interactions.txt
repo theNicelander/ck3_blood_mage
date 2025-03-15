@@ -102,7 +102,7 @@ heal_disease_severe = {
     is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier } }
     is_shown = {
         scope:actor = {
-            has_trait = lifestyle_blood_mage_2
+            has_trait = lifestyle_blood_mage_1
         }
         scope:recipient = {
             OR = {
@@ -156,7 +156,7 @@ heal_disease_critical = {
     is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier } }
     is_shown = {
         scope:actor = {
-            has_trait = lifestyle_blood_mage_2
+            has_trait = lifestyle_blood_mage_1
         }
         scope:recipient = {
             OR = {

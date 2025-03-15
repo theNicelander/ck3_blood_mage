@@ -112,7 +112,7 @@ enhance_blood_mage_personal_piety_level_cost = {
     add = 1
     if = {
         limit = {
-            has_trait = lifestyle_blood_mage_2
+            has_trait = lifestyle_blood_mage_1
         }
         add = 2
     }
@@ -122,7 +122,7 @@ enhance_blood_mage_personal_piety_level_cost_negative = {
     add = -1
     if = {
         limit = {
-            has_trait = lifestyle_blood_mage_2
+            has_trait = lifestyle_blood_mage_1
         }
         add = -1
     }
@@ -131,7 +131,7 @@ enhance_blood_mage_personal_piety_level_cost_negative = {
 blood_mage_rank_multiplier = {
     add = 1
     if = {
-        limit = { has_trait = lifestyle_blood_mage_2 }
+        limit = { has_trait = lifestyle_blood_mage_1 }
         add = 5
     }
 }
@@ -139,7 +139,7 @@ blood_mage_rank_multiplier = {
 blood_mage_rank_base = {
     value = 0
     if = {
-        limit = { has_trait = lifestyle_blood_mage_2 }
+        limit = { has_trait = lifestyle_blood_mage_1 }
         add = 50
     }
 }

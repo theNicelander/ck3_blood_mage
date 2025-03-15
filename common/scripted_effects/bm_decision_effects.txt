@@ -43,19 +43,19 @@ blood_magic_used = {
     # Grant exp when using magic
     if = {
         limit = {
-            has_trait = lifestyle_blood_mage
+            has_trait = lifestyle_blood_mage_0
         }
         add_trait_xp = {
-            trait = lifestyle_blood_mage
+            trait = lifestyle_blood_mage_0
             value = 1
         }
     }
     if = {
         limit = {
-            has_trait = lifestyle_blood_mage_2
+            has_trait = lifestyle_blood_mage_1
         }
         add_trait_xp = {
-            trait = lifestyle_blood_mage_2
+            trait = lifestyle_blood_mage_1
             value = 1
         }
     }

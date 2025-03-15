@@ -28,14 +28,6 @@ debug_level_up_blood_mage_trait = {
     is_shown = {
         debug_only = yes
     }
-    
-    effect = {
-        change_trait_rank = {
-            trait = lifestyle_blood_mage
-            rank = 1
-            max = 9
-        }
-    }
 }
 
 debug_add_exp_blood_mage_exp = {
@@ -49,7 +41,7 @@ debug_add_exp_blood_mage_exp = {
     
     effect = {
         add_trait_xp = {
-            trait = lifestyle_blood_mage
+            trait = lifestyle_blood_mage_group
             value = 20
         }
     }
