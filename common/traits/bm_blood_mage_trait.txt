@@ -1,0 +1,84 @@
+# Standard Values
+@pos_compat_high = 30
+@pos_compat_medium = 15
+@pos_compat_low = 5
+
+@neg_compat_high = -30
+@neg_compat_medium = -15
+@neg_compat_low = -5
+
+
+lifestyle_blood_mage = {
+    category = lifestyle
+    flag = reweaving_lifestyle_trait
+    icon = blood_mage.dds
+    desc = trait_blood_mage_desc
+    ruler_designer_cost = 100
+
+    # Will level up
+    group = lifestyle_blood_mage_group
+    level = 1
+    
+    # genetic
+    genetic = yes
+    birth = 0.5
+    random_creation = 0.5
+    good = yes
+    
+    # Modifiers
+    monthly_learning_lifestyle_xp_gain_mult = 0.02
+    learning_per_stress_level = 1
+    learning_per_piety_level = 1
+    years_of_fertility = 5
+    life_expectancy = 5
+    negate_health_penalty_add = 0.25
+    
+    compatibility = {
+        witch = @neg_compat_low
+    }
+    
+    # Modifiers   
+    track = {
+        20 = {
+            monthly_learning_lifestyle_xp_gain_mult = 0.02
+            learning_per_stress_level = 1
+            learning_per_piety_level = 1
+            years_of_fertility = 5
+            life_expectancy = 5
+            negate_health_penalty_add = 0.25
+        }
+        40 = {
+            monthly_learning_lifestyle_xp_gain_mult = 0.02
+            learning_per_stress_level = 1
+            learning_per_piety_level = 1
+            years_of_fertility = 5
+            life_expectancy = 5
+            negate_health_penalty_add = 0.25
+        }
+        60 = {
+            monthly_learning_lifestyle_xp_gain_mult = 0.02
+            learning_per_stress_level = 1
+            learning_per_piety_level = 1
+            years_of_fertility = 5
+            life_expectancy = 5
+            negate_health_penalty_add = 0.25
+        }
+        80 = {
+            monthly_learning_lifestyle_xp_gain_mult = 0.02
+            learning_per_stress_level = 1
+            learning_per_piety_level = 1
+            years_of_fertility = 5
+            life_expectancy = 5
+            negate_health_penalty_add = 0.25
+        }
+        100 = {
+            monthly_learning_lifestyle_xp_gain_mult = 0.02
+            learning_per_stress_level = 1
+            learning_per_piety_level = 1
+            years_of_fertility = 5
+            life_expectancy = 5
+            negate_health_penalty_add = 0.25
+        }
+    }
+    
+}

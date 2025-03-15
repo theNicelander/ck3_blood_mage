@@ -10,7 +10,7 @@ trait_drain_prisoner_event_interaction = {
     }
 
     is_shown = {
-        scope:actor = { has_trait = blood_mage }
+        scope:actor = { has_trait = lifestyle_blood_mage_group }
         scope:recipient = {
             is_imprisoned_by = scope:actor
             or = {
@@ -40,14 +40,8 @@ trait_drain_prisoner_event_interaction = {
     # AI
     ai_targets = { ai_recipients = prisoners }
     ai_potential = { is_at_war = no }
-
     ai_frequency = 12
-
-    # Same as base game AI to execute people, but slightly higher base (20 instead of 0)
-    ai_will_do = {
-        base = -45
-        ai_willingness_to_blood_magic_drain = yes
-    }
+    ai_will_do = 100
 }
 
 lifedrain_prisoner_event_interaction = {
@@ -56,7 +50,7 @@ lifedrain_prisoner_event_interaction = {
     category = interaction_category_hostile
     desc = lifedrain_prisoner_interaction_desc
     is_shown = {
-        scope:actor = { has_trait = blood_mage }
+        scope:actor = { has_trait = lifestyle_blood_mage_group }
         scope:recipient = { is_imprisoned_by = scope:actor }
     }
 
@@ -83,12 +77,6 @@ lifedrain_prisoner_event_interaction = {
     # AI
     ai_targets = { ai_recipients = prisoners }
     ai_potential = { is_at_war = no }
-
     ai_frequency = 12
-
-    # Same as base game AI to execute people, but slightly higher base (20 instead of 0)
-    ai_will_do = {
-        base = -45
-        ai_willingness_to_blood_magic_drain = yes
-    }
+    ai_will_do = 10
 }
