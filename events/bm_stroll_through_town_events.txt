@@ -95,7 +95,7 @@ bm_stroll_town.002 = {
             has_trait = lifestyle_blood_mage_group
         }
         scope:beggar = { remove_trait = wounded_1 }
-        magic_used = yes
+        blood_magic_used = yes
         add_piety = cure_illness_cost_small_neg
         root.capital_county = {
             add_county_modifier = {
@@ -112,7 +112,7 @@ bm_stroll_town.002 = {
             has_trait = lifestyle_blood_mage_group
         }
         scope:beggar = { remove_trait = typhus }
-        magic_used = yes
+        blood_magic_used = yes
         add_piety = cure_illness_cost_medium_neg
 
         root.capital_county = {
@@ -129,7 +129,7 @@ bm_stroll_town.002 = {
             has_trait = lifestyle_blood_mage_group
         }
         scope:beggar = { remove_trait = blind }
-        magic_used = yes
+        blood_magic_used = yes
         add_piety = cure_illness_cost_large_neg
         root.capital_county = {
             add_county_modifier = {
@@ -145,7 +145,7 @@ bm_stroll_town.002 = {
             has_trait = lifestyle_blood_mage_group
         }
         scope:beggar = { remove_trait = cancer }
-        magic_used = yes
+        blood_magic_used = yes
         add_piety = cure_illness_cost_xlarge_neg
         root.capital_county = {
             add_county_modifier = {

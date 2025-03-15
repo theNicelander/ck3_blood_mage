@@ -34,10 +34,14 @@ temporary_negative_lifeforce_effect = {
     }
 }
 
-magic_used = {
+blood_magic_used = {
     remove_character_modifier = lifeforce_modifier
     add_character_modifier = {
         modifier = lifeforce_modifier_negative
         days = 365
+    }
+    add_trait_xp = {
+        trait = lifestyle_blood_mage_group
+        value = 1
     }
 }
