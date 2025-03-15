@@ -4,7 +4,7 @@
 
     can_construct_potential = {
         building_requirement_castle_city_church = { LEVEL = 01 }
-        scope:holder = { has_trait = blood_mage }
+        scope:holder = { has_trait = lifestyle_blood_mage_group }
     }
 
     is_enabled = { county.duchy.holder = county.holder }
@@ -51,21 +51,13 @@ bm_university_1 = {
     can_construct_potential = {
         building_requirement_castle_city_church = { LEVEL = 01 }
         scope:holder = {
-            has_trait = blood_mage
+            has_trait = lifestyle_blood_mage_group
         }
     }
 
     can_construct_showing_failures_only = {
         scope:holder = {
-            or = {
-                has_trait = blood_mage_3
-                has_trait = blood_mage_4
-                has_trait = blood_mage_5
-                has_trait = blood_mage_6
-                has_trait = blood_mage_7
-                has_trait = blood_mage_8
-                has_trait = blood_mage_9
-            }
+            has_trait = lifestyle_blood_mage_group
 
         }
     }
@@ -118,18 +110,15 @@ bm_university_2 = {
     can_construct_potential = {
         building_requirement_castle_city_church = { LEVEL = 01 }
         scope:holder = {
-            has_trait = blood_mage
+            has_trait = lifestyle_blood_mage_group
         }
     }
 
     can_construct_showing_failures_only = {
         scope:holder = {
             or = {
-                has_trait = blood_mage_5
-                has_trait = blood_mage_6
-                has_trait = blood_mage_7
-                has_trait = blood_mage_8
-                has_trait = blood_mage_9
+                has_trait = lifestyle_blood_mage_1
+                has_trait = lifestyle_blood_mage_2
             }
 
         }
@@ -183,16 +172,15 @@ bm_university_3 = {
     can_construct_potential = {
         building_requirement_castle_city_church = { LEVEL = 01 }
         scope:holder = {
-            has_trait = blood_mage
+            has_trait = lifestyle_blood_mage_group
         }
     }
 
     can_construct_showing_failures_only = {
         scope:holder = {
             or = {
-                has_trait = blood_mage_7
-                has_trait = blood_mage_8
-                has_trait = blood_mage_9
+                has_trait = lifestyle_blood_mage_1
+                has_trait = lifestyle_blood_mage_2
             }
 
         }

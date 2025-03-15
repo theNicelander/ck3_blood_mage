@@ -5,6 +5,9 @@
     decision_group_type = bm_decision_group
     
     is_shown = { has_trait = lifestyle_blood_mage_group }
+    is_valid = { 
+        has_trait = lifestyle_blood_mage_group
+    }
     cooldown = { years = 2 }
     
     effect = { trigger_event = { id = bm_stroll_town.001 } }

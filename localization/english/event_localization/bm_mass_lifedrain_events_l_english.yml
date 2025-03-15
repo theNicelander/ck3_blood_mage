@@ -1,13 +1,25 @@
 ﻿l_english:
   # Death reason
   death_lifedrain_reason:0 "Had his life drained out of him by a Blood Mage"
-
+  
+  # Mass lifedrain
+  mass_lifedrain_prisoners_decision:0 "Harvest Prisoners' Lifeforce"
+  mass_lifedrain_prisoners_decision_desc:0 "The dungeons are filled with prisoners whose lifeforce pulses like ripe fruit ready to be plucked. Their combined energy could fuel powerful blood magic."
+  mass_lifedrain_prisoners_decision_confirm:0 "Begin the Harvest"
+  mass_lifedrain_prisoners_decision_tooltip:0 "Select which prisoners to drain, converting their life essence into magical power for your own use."
+  mass_lifedrain_prisoners_decision_effect_message:0 "Begin a blood ritual to harvest the lifeforce of your prisoners and either\n$EFFECT_LIST_BULLET$Drain all prisoners for maximum lifeforce gain\n$EFFECT_LIST_BULLET$Spare those with valuable traits for potential future use"
+  
   # Mass Lifedrain
-  bm_mass_lifedrain.001:0 "Lifedrain all my prisoners"
-  bm_mass_lifedrain.001.title:0 "Lifedrain all my prisoners"
-  bm_mass_lifedrain.001.desc:0 "Lifedrain all my prisoners"
-
+  bm_mass_lifedrain.001:0 "The Dungeon Harvest"
+  bm_mass_lifedrain.001.title:0 "Blood Harvest"
+  bm_mass_lifedrain.001.desc:0 "You descend into the dank depths of your dungeon, feeling the pulsing lifeforce of your captives through the stone walls. Each prisoner represents raw power waiting to be claimed—their essence transformed into magical energy to fuel your arcane pursuits. The air grows thick with anticipation as you prepare the ritual."
+  
   # Options
   bm_mass_lifedrain.001.a:0 "DRAIN EVERY LAST ONE OF THEM!"
-  bm_mass_lifedrain.001.b:0 "Drain everyone who's not of use to me"
-  bm_mass_lifedrain.001.z:0 "Nevermind"
+  bm_mass_lifedrain_custom_tooltip_a:0 "All prisoners will be drained and you gain lifeforce from each prisoner and blood magic experience, but may incur tyranny for unjustified executions."
+  
+  bm_mass_lifedrain.001.b:0 "Spare the valuable ones. The rest are fodder."
+  bm_mass_lifedrain_custom_tooltip_b:0 "Prisoners with valuable traits and close family members will be spared. All others will be drained of their lifeforce."
+  
+  bm_mass_lifedrain.001.z:0 "Perhaps another time..."
+  bm_mass_lifedrain_custom_tooltip_z:0 "Cancel the ritual. No prisoners will be harmed, and no lifeforce will be gained."

@@ -7,6 +7,9 @@
     is_shown = {
         debug_only = yes
     }
+    is_valid = { 
+        has_trait = lifestyle_blood_mage_group
+    }
     ai_check_interval = 0
     
     effect = {
@@ -25,6 +28,9 @@ debug_add_exp_blood_mage_exp = {
     
     is_shown = {
         debug_only = yes
+    }
+    is_valid = { 
+        has_trait = lifestyle_blood_mage_group
     }
     
     effect = {

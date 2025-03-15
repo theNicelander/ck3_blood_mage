@@ -5,7 +5,7 @@
     decision_group_type = bm_decision_group
 
     is_shown = {
-        has_trait = blood_mage
+        has_trait = lifestyle_blood_mage_group
         exists = house
         is_house_head = yes
 
@@ -15,6 +15,7 @@
     }
 
     is_valid = {
+        has_trait = lifestyle_blood_mage_group
         is_house_head = yes
         has_character_modifier = lifeforce_modifier
 
@@ -23,18 +24,18 @@
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
                     count >= found_bm_coven_member_count
-                    has_trait = blood_mage
+                    has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
                 count >= found_bm_coven_member_count
-                has_trait = blood_mage
+                has_trait = lifestyle_blood_mage_group
             }
         }
     }
 
     effect = {
-        blood_magic_used = yes
+        blood_magic_used_set_exp = { EXP = 1 }
         enhance_blood_mage_coven_decision_effects = yes
         set_variable = { name = enhance_bm_1 }
     }
@@ -53,7 +54,7 @@ enhance_blood_mage_coven_decision_2 = {
     decision_group_type = bm_decision_group
 
     is_shown = {
-        has_trait = blood_mage
+        has_trait = lifestyle_blood_mage_group
         exists = house
         is_house_head = yes
         exists = global_var:enhance_bm_1
@@ -63,35 +64,27 @@ enhance_blood_mage_coven_decision_2 = {
     }
 
     is_valid = {
+        has_trait = lifestyle_blood_mage_group
         exists = house
         house = {
             custom_tooltip = {
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
                     count >= found_bm_coven_member_count
-                    has_trait = blood_mage
+                    has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
                 count >= found_bm_coven_member_count
-                has_trait = blood_mage
+                has_trait = lifestyle_blood_mage_group
             }
         }
 
-        or = {
-            has_trait = blood_mage_2
-            has_trait = blood_mage_3
-            has_trait = blood_mage_4
-            has_trait = blood_mage_5
-            has_trait = blood_mage_6
-            has_trait = blood_mage_7
-            has_trait = blood_mage_8
-            has_trait = blood_mage_9
-        }
+        has_trait = lifestyle_blood_mage_group
     }
 
     effect = {
-        blood_magic_used = yes
+        blood_magic_used_set_exp = { EXP = 2 }
         add_piety_level = -1
         enhance_blood_mage_coven_decision_effects = yes
         set_variable = {
@@ -114,7 +107,7 @@ enhance_blood_mage_coven_decision_3 = {
     decision_group_type = bm_decision_group
 
     is_shown = {
-        has_trait = blood_mage
+        has_trait = lifestyle_blood_mage_group
         exists = house
         is_house_head = yes
         exists = global_var:enhance_bm_1
@@ -125,33 +118,26 @@ enhance_blood_mage_coven_decision_3 = {
     }
 
     is_valid = {
+        has_trait = lifestyle_blood_mage_group
         has_character_modifier = lifeforce_modifier
         house = {
             custom_tooltip = {
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
                     count >= found_bm_coven_member_count
-                    has_trait = blood_mage
+                    has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
                 count >= found_bm_coven_member_count
-                has_trait = blood_mage
+                has_trait = lifestyle_blood_mage_group
             }
         }
-        or = {
-            has_trait = blood_mage_3
-            has_trait = blood_mage_4
-            has_trait = blood_mage_5
-            has_trait = blood_mage_6
-            has_trait = blood_mage_7
-            has_trait = blood_mage_8
-            has_trait = blood_mage_9
-        }
+        has_trait = lifestyle_blood_mage_group
     }
 
     effect = {
-        blood_magic_used = yes
+        blood_magic_used_set_exp = { EXP = 3 }
         add_piety_level = -1
         enhance_blood_mage_coven_decision_effects = yes
         set_variable = {
@@ -173,7 +159,7 @@ enhance_blood_mage_coven_decision_4 = {
     decision_group_type = bm_decision_group
 
     is_shown = {
-        has_trait = blood_mage
+        has_trait = lifestyle_blood_mage_group
         exists = house
         is_house_head = yes
         exists = global_var:enhance_bm_1
@@ -191,26 +177,22 @@ enhance_blood_mage_coven_decision_4 = {
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
                     count >= found_bm_coven_member_count
-                    has_trait = blood_mage
+                    has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
                 count >= found_bm_coven_member_count
-                has_trait = blood_mage
+                has_trait = lifestyle_blood_mage_group
             }
         }
         or = {
-            has_trait = blood_mage_4
-            has_trait = blood_mage_5
-            has_trait = blood_mage_6
-            has_trait = blood_mage_7
-            has_trait = blood_mage_8
-            has_trait = blood_mage_9
+            has_trait = lifestyle_blood_mage_1
+            has_trait = lifestyle_blood_mage_2
         }
     }
 
     effect = {
-        blood_magic_used = yes
+        blood_magic_used_set_exp = { EXP = 4 }
         add_piety_level = -1
         enhance_blood_mage_coven_decision_effects = yes
         set_variable = {
@@ -232,7 +214,7 @@ enhance_blood_mage_coven_decision_5 = {
     decision_group_type = bm_decision_group
 
     is_shown = {
-        has_trait = blood_mage
+        has_trait = lifestyle_blood_mage_group
         exists = house
         is_house_head = yes
         exists = global_var:enhance_bm_1
@@ -251,25 +233,22 @@ enhance_blood_mage_coven_decision_5 = {
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
                     count >= found_bm_coven_member_count
-                    has_trait = blood_mage
+                    has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
                 count >= found_bm_coven_member_count
-                has_trait = blood_mage
+                has_trait = lifestyle_blood_mage_group
             }
         }
-        or = { # at least master
-            has_trait = blood_mage_5
-            has_trait = blood_mage_6
-            has_trait = blood_mage_7
-            has_trait = blood_mage_8
-            has_trait = blood_mage_9
+        or = {
+            has_trait = lifestyle_blood_mage_1
+            has_trait = lifestyle_blood_mage_2
         }
     }
 
     effect = {
-        blood_magic_used = yes
+        blood_magic_used_set_exp = { EXP = 5 }
         add_piety_level = -2
         enhance_blood_mage_coven_decision_effects = yes
         set_variable = {
@@ -291,7 +270,7 @@ enhance_blood_mage_coven_decision_6 = {
     decision_group_type = bm_decision_group
 
     is_shown = {
-        has_trait = blood_mage
+        has_trait = lifestyle_blood_mage_group
         exists = house
         is_house_head = yes
         exists = global_var:enhance_bm_1
@@ -311,24 +290,22 @@ enhance_blood_mage_coven_decision_6 = {
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
                     count >= found_bm_coven_member_count
-                    has_trait = blood_mage
+                    has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
                 count >= found_bm_coven_member_count
-                has_trait = blood_mage
+                has_trait = lifestyle_blood_mage_group
             }
         }
         or = {
-            has_trait = blood_mage_6
-            has_trait = blood_mage_7
-            has_trait = blood_mage_8
-            has_trait = blood_mage_9
+            has_trait = lifestyle_blood_mage_1
+            has_trait = lifestyle_blood_mage_2
         }
     }
 
     effect = {
-        blood_magic_used = yes
+        blood_magic_used_set_exp = { EXP = 6 }
         add_piety_level = -2
         enhance_blood_mage_coven_decision_effects = yes
         set_variable = {
@@ -350,7 +327,7 @@ enhance_blood_mage_coven_decision_7 = {
     decision_group_type = bm_decision_group
 
     is_shown = {
-        has_trait = blood_mage
+        has_trait = lifestyle_blood_mage_group
         exists = house
         is_house_head = yes
         exists = global_var:enhance_bm_1
@@ -365,29 +342,26 @@ enhance_blood_mage_coven_decision_7 = {
     }
 
     is_valid = {
-        has_character_modifier = lifeforce_modifier
+        OR = {
+            has_trait = lifestyle_blood_mage_2
+        }
         house = {
             custom_tooltip = {
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
                     count >= found_bm_coven_member_count
-                    has_trait = blood_mage
+                    has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
                 count >= found_bm_coven_member_count
-                has_trait = blood_mage
+                has_trait = lifestyle_blood_mage_group
             }
-        }
-        or = {
-            has_trait = blood_mage_7
-            has_trait = blood_mage_8
-            has_trait = blood_mage_9
         }
     }
 
     effect = {
-        blood_magic_used = yes
+        blood_magic_used_set_exp = { EXP = 7 }
         add_piety_level = -2
         enhance_blood_mage_coven_decision_effects = yes
         set_variable = {
@@ -409,7 +383,7 @@ enhance_blood_mage_coven_decision_8 = {
     decision_group_type = bm_decision_group
 
     is_shown = {
-        has_trait = blood_mage
+        has_trait = lifestyle_blood_mage_group
         exists = house
         is_house_head = yes
         exists = global_var:enhance_bm_1
@@ -432,22 +406,21 @@ enhance_blood_mage_coven_decision_8 = {
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
                     count >= found_bm_coven_member_count
-                    has_trait = blood_mage
+                    has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
                 count >= found_bm_coven_member_count
-                has_trait = blood_mage
+                has_trait = lifestyle_blood_mage_group
             }
         }
-        or = {
-            has_trait = blood_mage_8
-            has_trait = blood_mage_9
+        OR = {
+            has_trait = lifestyle_blood_mage_2
         }
     }
 
     effect = {
-        blood_magic_used = yes
+        blood_magic_used_set_exp = { EXP = 8 }
         add_piety_level = -3
         enhance_blood_mage_coven_decision_effects = yes
         set_variable = {
@@ -469,7 +442,7 @@ enhance_blood_mage_coven_decision_9 = {
     decision_group_type = bm_decision_group
 
     is_shown = {
-        has_trait = blood_mage
+        has_trait = lifestyle_blood_mage_group
         exists = house
         is_house_head = yes
         exists = global_var:enhance_bm_1
@@ -492,21 +465,21 @@ enhance_blood_mage_coven_decision_9 = {
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
                     count >= found_bm_coven_member_count
-                    has_trait = blood_mage
+                    has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
                 count >= found_bm_coven_member_count
-                has_trait = blood_mage
+                has_trait = lifestyle_blood_mage_group
             }
         }
-        or = {
-            has_trait = blood_mage_9
+        OR = {
+            has_trait = lifestyle_blood_mage_2
         }
     }
 
     effect = {
-        blood_magic_used = yes
+        blood_magic_used_set_exp = { EXP = 9 }
         add_piety_level = -3
         enhance_blood_mage_coven_decision_effects = yes
         set_variable = {
@@ -528,7 +501,7 @@ enhance_blood_mage_coven_decision_10 = {
     decision_group_type = bm_decision_group
 
     is_shown = {
-        has_trait = blood_mage
+        has_trait = lifestyle_blood_mage_group
         exists = house
         is_house_head = yes
         exists = global_var:enhance_bm_1
@@ -553,21 +526,21 @@ enhance_blood_mage_coven_decision_10 = {
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
                     count >= found_bm_coven_member_count
-                    has_trait = blood_mage
+                    has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
                 count >= found_bm_coven_member_count
-                has_trait = blood_mage
+                has_trait = lifestyle_blood_mage_group
             }
         }
-        or = { # at least supreme
-            has_trait = blood_mage_9
+        OR = {
+            has_trait = lifestyle_blood_mage_2
         }
     }
 
     effect = {
-        blood_magic_used = yes
+        blood_magic_used_set_exp = { EXP = 10 }
         add_piety_level = -4
         enhance_blood_mage_coven_decision_effects = yes
         set_variable = {

@@ -12,7 +12,9 @@
             value >= 100
         }
         piety_level >= 3
+        has_trait = lifestyle_blood_mage_group
     }
+
 
     effect = {
         custom_tooltip = enhance_personal_blood_mage_power_tooltip_desc
@@ -45,6 +47,7 @@ enhance_personal_blood_mage_power_1 = {
             value >= 100
         }
         piety_level >= 5
+        has_trait = lifestyle_blood_mage_1
     }
 
     effect = {

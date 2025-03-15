@@ -22,19 +22,21 @@ bm_channel_lifeforce.99 = {
         ai_chance = { base = 10 }
     }
 
+    
     option = {
-        name = "I want to temporarily improve my skills a lot"
+        name = "Improve a skill"
+        ai_chance = { base = 10 }
+
+        trigger_event = { id = bm_channel_lifeforce.0002 }
+    }
+
+    option = {
+        name = "Improve a skill greatly, for a short while"
         ai_chance = { base = 10 }
 
         trigger_event = { id = bm_channel_lifeforce.0001 }
     }
 
-    option = {
-        name = "I want to permanently improve my skills a little"
-        ai_chance = { base = 10 }
-
-        trigger_event = { id = bm_channel_lifeforce.0002 }
-    }
 
     # Portraits
     left_portrait ={
@@ -50,81 +52,81 @@ bm_channel_lifeforce.0001 = {
     theme = witchcraft
 
     option = {
-        name = "Temporarily boost Diplomacy"
+        name = "Diplomacy"
 
         add_character_modifier = {
             modifier = diplomacy_lifeforce_modifier
             days = 1825
         }
-        add_piety  = lifedrain_piety_cost_neg
+        
         trigger = { NOT = { has_character_modifier = diplomacy_lifeforce_modifier } }
         ai_chance = { base = 100 }
     }
     option = {
-        name = "Temporarily boost Martial"
+        name = "Martial"
 
         add_character_modifier = {
             modifier = martial_lifeforce_modifier
             days = 1825
         }
 
-        add_piety  = lifedrain_piety_cost_neg
+        
         trigger = { NOT = { has_character_modifier = martial_lifeforce_modifier } }
         ai_chance = { base = 100 }
     }
     option = {
-        name = "Temporarily boost Stewardship"
+        name = "Stewardship"
 
         add_character_modifier = {
             modifier = stewardship_lifeforce_modifier
             days = 1825
         }
 
-        add_piety  = lifedrain_piety_cost_neg
+        
         trigger = { NOT = { has_character_modifier = stewardship_lifeforce_modifier } }
         ai_chance = { base = 100 }
     }
 
     option = {
-        name = "Temporarily boost Intrigue"
+        name = "Intrigue"
 
         add_character_modifier = {
             modifier = intrigue_lifeforce_modifier
             days = 1825
         }
 
-        add_piety  = lifedrain_piety_cost_neg
+        
         trigger = { NOT = { has_character_modifier = intrigue_lifeforce_modifier } }
         ai_chance = { base = 100 }
     }
     option = {
-        name = "Temporarily boost Learning"
+        name = "Learning"
 
         add_character_modifier = {
             modifier = learning_lifeforce_modifier
             days = 1825
         }
 
-        add_piety  = lifedrain_piety_cost_neg
+        
         trigger = { NOT = { has_character_modifier = learning_lifeforce_modifier } }
         ai_chance = { base = 100 }
     }
     option = {
-        name = "Temporarily boost Prowess"
+        name = "Prowess"
 
         add_character_modifier = {
             modifier = prowess_lifeforce_modifier
             days = 1825
         }
 
-        add_piety  = lifedrain_piety_cost_neg
+        
         trigger = { NOT = { has_character_modifier = prowess_lifeforce_modifier } }
         ai_chance = { base = 100 }
     }
 
     # Do nothing
     option = {
-        name = "Nevermind"
+        name = "Nevermind, let me choose something else"
         ai_chance = {
             base = 10
         }
@@ -145,47 +147,47 @@ bm_channel_lifeforce.0002 = {
     theme = witchcraft
 
     option = {
-        name = "Permanently boost Diplomacy"
+        name = "Diplomacy"
         add_diplomacy_skill = 1
-        add_piety  = lifedrain_piety_cost_neg
+        
         ai_chance = { base = 100 }
     }
     option = {
-        name = "Permanently boost Martial"
+        name = "Martial"
         add_martial_skill = 1
-        add_piety  = lifedrain_piety_cost_neg
+        
         ai_chance = { base = 100 }
     }
     option = {
-        name = "Channel Stewardship"
+        name = "Stewardship"
         add_stewardship_skill = 1
-        add_piety  = lifedrain_piety_cost_neg
+        
         ai_chance = { base = 100 }
     }
 
     option = {
-        name = "Permanently boost Intrigue"
+        name = "Intrigue"
         add_intrigue_skill = 1
-        add_piety  = lifedrain_piety_cost_neg
+        
         ai_chance = { base = 100 }
     }
     option = {
-        name = "Permanently boost Learning"
+        name = "Learning"
         add_learning_skill = 1
-        add_piety  = lifedrain_piety_cost_neg
+        
         ai_chance = { base = 100 }
     }
     option = {
-        name = "Permanently boost Prowess"
+        name = "Prowess"
         add_prowess_skill = 2
-        add_piety  = lifedrain_piety_cost_neg
+        
         ai_chance = { base = 100 }
     }
 
     # Do nothing
     # Do nothing
     option = {
-        name = "Nevermind"
+        name = "Nevermind, let me choose something else"
         ai_chance = {
             base = 10
         }
