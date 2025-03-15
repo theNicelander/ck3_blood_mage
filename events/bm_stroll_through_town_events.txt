@@ -58,7 +58,6 @@ bm_stroll_town.002 = {
     option = {
         name = "They are about to die, might as well bolster my lifeforce"
         add_character_modifier = { modifier = lifeforce_modifier }
-        add_dread = 5
 
         duel = {
             skill = intrigue
@@ -126,7 +125,7 @@ bm_stroll_town.002 = {
     option = {
         name = "Heal their eyes"
         trigger = {
-            has_trait = lifestyle_blood_mage_group
+            has_trait = lifestyle_blood_mage_1
         }
         scope:beggar = { remove_trait = blind }
         blood_magic_used = yes
@@ -142,7 +141,7 @@ bm_stroll_town.002 = {
     option = {
         name = "Heal their cancer"
         trigger = {
-            has_trait = lifestyle_blood_mage_group
+            has_trait = lifestyle_blood_mage_1
         }
         scope:beggar = { remove_trait = cancer }
         blood_magic_used = yes
