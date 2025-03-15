@@ -1,44 +1,53 @@
-﻿red_eyes = {
-	red_eyes = {
-		traits = { blood_mage_4 blood_mage_5 blood_mage_6 }
-		dna_modifiers = {
-			color = {
-				gene = eye_color
-				mode = modify
-					
-				x = -1
-				y = -0.75
-			}	
-		}
-	}
-}
-
-white_eyes = {
+﻿white_eyes = {
 	white_eyes = {
-		traits = { blood_mage_7 blood_mage_8 blood_mage_9 }
+		traits = { lifestyle_blood_mage_group }
 		dna_modifiers = {
-			color = {
-				gene = eye_color
-				mode = modify
-				
-				x = 1.0
-				y = -1.0
-			}	
+			human = {
+				color = {
+					gene = eye_color
+					mode = modify
+					
+					x = 1.0
+					y = -1.0
+				}	
+			}
+
 		}
 	}
 }
 
 white_hair = {
 	white_hair = {
-		traits = { blood_mage_9  }
+		traits = { lifestyle_blood_mage_group }
 		dna_modifiers = {
-			color = {
-				gene = hair_color
-				mode = modify
-				
-				x = -1.0
-				y = -1.0
+			human = {
+				color = {
+					gene = hair_color
+					mode = modify
+					x = -1.0
+					y = -1.0
+				}
 			}
+
 		}
 	}
 }
+
+red_eyes = {
+	red_eyes = {
+		traits = {  }
+		dna_modifiers = {
+			human = {
+				color = {
+					gene = eye_color
+					mode = modify
+						
+					x = -1
+					y = -0.75
+				}	
+			}
+
+		}
+	}
+}
+
