@@ -17,6 +17,40 @@
     effect = {
         custom_tooltip = enhance_personal_blood_mage_power_tooltip_desc
         add_piety_level = -3
+        add_piety = -1000
+        temporary_negative_lifeforce_effect_major = yes
+
+        change_trait_rank = {
+            trait = lifestyle_blood_mage_group
+            rank = 1
+            max = 3
+        }
+    }
+
+    ai_check_interval = 12
+    ai_will_do = {base = 100 }
+}
+
+enhance_personal_blood_mage_power_1 = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+    desc = enhance_personal_blood_mage_power_desc
+    decision_group_type = bm_decision_group
+
+    is_shown = {
+        has_trait = lifestyle_blood_mage_1
+    }
+    is_valid = {
+        has_trait_xp = {
+            trait = lifestyle_blood_mage_1
+            value >= 100
+        }
+        piety_level >= 5
+    }
+
+    effect = {
+        custom_tooltip = enhance_personal_blood_mage_power_tooltip_desc
+        add_piety_level = -5
+        add_piety = -2500
         temporary_negative_lifeforce_effect_major = yes
 
         change_trait_rank = {

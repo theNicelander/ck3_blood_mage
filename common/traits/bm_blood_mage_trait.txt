@@ -163,4 +163,70 @@ lifestyle_blood_mage_2 = {
     flag = reweaving_lifestyle_trait
     icon = blood_mage.dds
     desc = trait_blood_mage_desc
+
+    # Will level up
+    group = lifestyle_blood_mage_group
+    level = 3
+    
+    # genetic
+    genetic = yes
+    birth = 0
+    random_creation = 0
+    good = yes
+    
+    # Modifiers
+    monthly_learning_lifestyle_xp_gain_mult = 0.1
+    learning_per_stress_level = 5
+    learning_per_piety_level = 5
+    years_of_fertility = 25
+    life_expectancy = 25
+    negate_health_penalty_add = 1.25
+    
+    compatibility = {
+        witch = @neg_compat_low
+    }
+    
+    # Modifiers   
+    track = {
+        20 = {
+            monthly_learning_lifestyle_xp_gain_mult = 0.02
+            learning_per_stress_level = 1
+            learning_per_piety_level = 1
+            years_of_fertility = 5
+            life_expectancy = 5
+            negate_health_penalty_add = 0.25
+        }
+        40 = {
+            monthly_learning_lifestyle_xp_gain_mult = 0.02
+            learning_per_stress_level = 1
+            learning_per_piety_level = 1
+            years_of_fertility = 5
+            life_expectancy = 5
+            negate_health_penalty_add = 0.25
+        }
+        60 = {
+            monthly_learning_lifestyle_xp_gain_mult = 0.02
+            learning_per_stress_level = 1
+            learning_per_piety_level = 1
+            years_of_fertility = 5
+            life_expectancy = 5
+            negate_health_penalty_add = 0.25
+        }
+        80 = {
+            monthly_learning_lifestyle_xp_gain_mult = 0.02
+            learning_per_stress_level = 1
+            learning_per_piety_level = 1
+            years_of_fertility = 5
+            life_expectancy = 5
+            negate_health_penalty_add = 0.25
+        }
+        100 = {
+            monthly_learning_lifestyle_xp_gain_mult = 0.02
+            learning_per_stress_level = 1
+            learning_per_piety_level = 1
+            years_of_fertility = 5
+            life_expectancy = 5
+            negate_health_penalty_add = 0.25
+        }
+    }
 }
