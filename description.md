@@ -77,12 +77,6 @@ Feel free to use all the code for your own work. If you do, then please give me 
  
 [h1] Like the mod? [/h1]
 
-Checkout some of my other mods: 
-[list]
-[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2737082376] Nicelander's Blood Mage [/url]
-[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2770864953] Nicelander's Payday Loans [/url]
-[/list]
-
 Consider buying be a coffee to support my work.
 
 https://www.buymeacoffee.com/TheNicelander
