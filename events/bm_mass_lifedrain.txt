@@ -26,8 +26,7 @@ bm_mass_lifedrain.001 = {
             # Get lifeforce
             root = {
                 add_piety = lifedrain_piety_cost_neg
-                add_character_modifier = { modifier = lifeforce_modifier }
-                blood_magic_exp_add = { EXP = 1}
+                drain_lifeforce_effect = yes
             }
 
             # Lifedrain execution
@@ -64,8 +63,7 @@ bm_mass_lifedrain.001 = {
             # Get lifeforce
             root = {
                 add_piety = lifedrain_piety_cost_neg
-                add_character_modifier = { modifier = lifeforce_modifier }
-                blood_magic_exp_add = { EXP = 1}
+                drain_lifeforce_effect = yes
             }
 
             # Lifedrain execution

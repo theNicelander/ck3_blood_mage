@@ -1,29 +1,4 @@
-﻿# Personal Modifier
-lifeforce_modifier = {
-    icon = health_positive
-    health = 0.5
-    years_of_fertility = 5
-    life_expectancy = 5
-    stacking = yes
-}
-
-lifeforce_modifier_negative = {
-    icon = health_negative
-    health = -0.5
-    years_of_fertility = -5
-    life_expectancy = -5
-    stacking = yes
-}
-
-lifeforce_modifier_negative_major = {
-    icon = health_negative
-    health = -2.5
-    years_of_fertility = -25
-    life_expectancy = -25
-    stacking = yes
-}
-
-# Spend lifeforce modfiers
+﻿# Spend lifeforce modfiers
 diplomacy_lifeforce_modifier = {
     icon = diplomacy_positive
     diplomacy = 5
@@ -78,15 +53,4 @@ healed_beggar_holding_4 = {
     icon = magic_positive
     county_opinion_add = 15
     stacking = yes
-}
-
-# Holy site
-bm_holy_site_effect = {
-
-    learning = 1
-    monthly_lifestyle_xp_gain_mult = 0.01
-    life_expectancy = 5
-    years_of_fertility = 5
-    health = 0.1
-    development_growth = 0.1
 }
