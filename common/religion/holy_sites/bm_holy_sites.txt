@@ -309,7 +309,6 @@ barcelona = {
         monthly_lifestyle_xp_gain_mult = 0.02
     }
 }
-
 edinburgh = {
     county = c_lothian
     barony = b_edinburgh
@@ -319,10 +318,101 @@ edinburgh = {
         monthly_lifestyle_xp_gain_mult = 0.02
     }
 }
-
 torshavn = {
     county = c_faereyar
     barony = b_torshavn
+    character_modifier = {
+        learning = 1
+        general_opinion = 2
+        monthly_lifestyle_xp_gain_mult = 0.02
+    }
+}
+cardiff = {
+    county = c_glamorgan
+    barony = b_cardiff
+    character_modifier = {
+        learning = 1
+        general_opinion = 2
+        monthly_lifestyle_xp_gain_mult = 0.02
+    }
+}
+monaco = {
+    county = c_genoa
+    barony = b_monaco
+    character_modifier = {
+        learning = 1
+        general_opinion = 2
+        monthly_lifestyle_xp_gain_mult = 0.02
+    }
+}
+madeira = {
+    county = c_madeira
+    barony = b_madeira
+    character_modifier = {
+        learning = 1
+        general_opinion = 2
+        monthly_lifestyle_xp_gain_mult = 0.02
+    }
+}
+tenerife = {
+    county = c_canarias
+    barony = b_tenerife
+    character_modifier = {
+        learning = 1
+        general_opinion = 2
+        monthly_lifestyle_xp_gain_mult = 0.02
+    }
+}
+mallorca = {
+    county = c_mallorca
+    barony = b_palma
+    character_modifier = {
+        learning = 1
+        general_opinion = 2
+        monthly_lifestyle_xp_gain_mult = 0.02
+    }
+}
+cagliari = {
+    county = c_cagliari
+    barony = b_cagliari
+    character_modifier = {
+        learning = 1
+        general_opinion = 2
+        monthly_lifestyle_xp_gain_mult = 0.02
+    }
+}
+palermo = {
+    county = c_palermo
+    barony = b_palermo
+    character_modifier = {
+        learning = 1
+        general_opinion = 2
+        monthly_lifestyle_xp_gain_mult = 0.02
+    }
+}
+isle_of_man = {
+    county = c_isle_of_man
+    barony = b_castletown
+    character_modifier = {
+        learning = 1
+        general_opinion = 2
+        monthly_lifestyle_xp_gain_mult = 0.02
+    }
+}
+
+# Wonders
+stonehenge = {
+    county = c_wiltshire
+    barony = b_salisbury
+    character_modifier = {
+        learning = 1
+        general_opinion = 2
+        monthly_lifestyle_xp_gain_mult = 0.02
+    }
+}
+carnac = { # Ancient megalith in france
+    county = c_vannes
+    barony = b_vannes
     character_modifier = {
         learning = 1
         general_opinion = 2
