@@ -6,7 +6,7 @@
 blood_magic_used_set_exp = {
     remove_character_modifier = lifeforce_modifier
     temporary_negative_lifeforce_effect = yes
-    blood_magic_exp_add_flat = { EXP = $EXP$ }
+    blood_magic_exp_flat = { EXP = $EXP$ }
 }
 
 drain_lifeforce_effect = {
@@ -14,6 +14,6 @@ drain_lifeforce_effect = {
 
     if = { # Grant exp for novices
         limit = { has_trait = lifestyle_blood_mage_0 }
-        blood_magic_exp_add_flat = { EXP = 1 }
+        blood_magic_exp_flat = { EXP = 1 }
     }
 }

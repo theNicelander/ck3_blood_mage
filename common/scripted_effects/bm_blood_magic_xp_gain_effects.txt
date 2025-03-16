@@ -1,5 +1,5 @@
-﻿blood_magic_exp_add_flat = {
-    # Grant exp when using magic
+﻿# Grant flat exp
+blood_magic_exp_flat = { 
     if = {
         limit = { has_trait = lifestyle_blood_mage_0 }
         add_trait_xp = {
@@ -23,7 +23,8 @@
     }
 }
 
-blood_magic_exp_yearly = {
+# Gives 1 for novice, and 0-1 for others
+add_blood_magic_exp_novice_favored = {
     if = {
         limit = { has_trait = lifestyle_blood_mage_0 }
         add_trait_xp = {
@@ -47,7 +48,8 @@ blood_magic_exp_yearly = {
     }
 }
 
-blood_magic_exp_grant_lifeforce = {
+# Grant 1 xp for novice, 0-1 for regular and nothing for others
+add_blood_magic_exp_diminishing = {
     if = {
         limit = { has_trait = lifestyle_blood_mage_0 }
         add_trait_xp = {
@@ -56,16 +58,9 @@ blood_magic_exp_grant_lifeforce = {
         }
     }
     if = {
-        limit = { has_trait = lifestyle_blood_mage_0 }
+        limit = { has_trait = lifestyle_blood_mage_1 }
         add_trait_xp = {
             trait = lifestyle_blood_mage_1
-            value = { 0 1 }
-        }
-    }
-    if = {
-        limit = { has_trait = lifestyle_blood_mage_0 }
-        add_trait_xp = {
-            trait = lifestyle_blood_mage_2
             value = { 0 1 }
         }
     }

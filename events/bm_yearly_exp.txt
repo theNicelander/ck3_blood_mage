@@ -7,14 +7,14 @@ blood_mage_yearly_xp.001 = {
 		has_trait = lifestyle_blood_mage_group
 	}
 	immediate = {
-        blood_magic_exp_yearly = yes
+        add_blood_magic_exp_novice_favored = yes
 
 		# Extra exp gain if part of the religion
 		if = {
 			limit = {
 				has_religion = religion:cult_of_blood_religion
 			}
-			blood_magic_exp_yearly = yes
+			add_blood_magic_exp_novice_favored = yes
 		}
     }
 }
