@@ -1,10 +1,10 @@
 ﻿cult_of_blood_religion = {
-    family = rf_pagan
+    family = rf_abrahamic
 
     graphical_faith = pagan_gfx
     doctrine = pagan_hostility_doctrine
 
-    pagan_roots = yes
+    # pagan_roots = yes
 
     #Main Group
     doctrine = doctrine_no_head
@@ -231,8 +231,15 @@
 
             doctrine = unreformed_faith_doctrine
 
-            # EU + EEA + UK
-            holy_site = reykjavik
+
+			# Iceland 
+			holy_site = reykjavik
+			holy_site = sudurland
+			holy_site = austurland
+			holy_site = nordurland
+			holy_site = talknafjordur
+            
+			# EU + EEA + UK
             holy_site = amsterdam
             holy_site = athens
             holy_site = berlin
