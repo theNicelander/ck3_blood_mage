@@ -184,7 +184,7 @@ bm_stroll_town.003 = {
     desc = "The beggar's life flows into me as their body crumples against the wall. Their final gasp dissolves into the ambient noise of the distant market. I straighten my clothes and slip away, new power tingling beneath my skin. The shadows kept our secret—no witnesses to my dark work."
     theme = default
 
-    option { 
+    option = { 
         name = "Power has its price. Today, it was theirs."
         custom_tooltip = "No one noticed me, their lifeforce is mine"
         add_character_modifier = { modifier = lifeforce_modifier } 
@@ -203,7 +203,7 @@ bm_stroll_town.004 = {
     desc = "The beggar withers as I drain their essence, but a horrified gasp breaks my concentration. A merchant's wife stands frozen, basket clutched to her chest, witnessing the final moments of my ritual. By tomorrow, whispers of the noble who preys upon the destitute will spread. The power I've gained comes with unwanted attention."
     theme = default
 
-    option { 
+    option = { 
         name = "Carelessness has consequences. So be it."
         custom_tooltip = "Someone walked by and discovered me, the town won't be happy"
         add_character_modifier = { modifier = lifeforce_modifier }
@@ -230,7 +230,7 @@ bm_stroll_town.005 = {
     desc = "I reach for the beggar, fingers tingling with anticipation, but something goes wrong. The wretch's survival instinct flares unexpectedly. With surprising agility, they scramble away, disappearing into the warren of alleyways. The power that was nearly mine vanishes with them, leaving me empty-handed."
     theme = default
 
-    option { 
+    option = { 
         name = "Next time, I won't hesitate."
         custom_tooltip = "They got away, I'm left empty handed"
         add_stress = 5
