@@ -1,8 +1,8 @@
 ﻿cult_of_blood_religion = {
-    family = rf_abrahamic
+    family = rf_pagan
 
     graphical_faith = pagan_gfx
-    doctrine = pagan_hostility_doctrine
+    doctrine = eastern_hostility_doctrine
 
     # pagan_roots = yes
 
@@ -19,9 +19,9 @@
     doctrine = doctrine_consanguinity_cousins
 
     #Crimes
-    doctrine = doctrine_homosexuality_shunned
-    doctrine = doctrine_adultery_men_shunned
-    doctrine = doctrine_adultery_women_shunned
+    doctrine = doctrine_homosexuality_accepted
+    doctrine = doctrine_adultery_men_accepted
+    doctrine = doctrine_adultery_women_accepted
     doctrine = doctrine_kinslaying_close_kin_crime
     doctrine = doctrine_deviancy_shunned
     doctrine = doctrine_witchcraft_accepted
@@ -40,7 +40,7 @@
 
     traits = {
         virtues = { lifestyle_blood_mage_group }
-        sins = { craven arbitrary content }
+        sins = { craven arbitrary content witch }
     }
 
 	reserved_male_names = {
