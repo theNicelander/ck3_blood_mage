@@ -1,13 +1,3 @@
-# Standard Values
-@pos_compat_high = 30
-@pos_compat_medium = 15
-@pos_compat_low = 5
-
-@neg_compat_high = -30
-@neg_compat_medium = -15
-@neg_compat_low = -5
-
-
 lifestyle_blood_mage_0 = {
     category = lifestyle
     flag = reweaving_lifestyle_trait
@@ -26,15 +16,10 @@ lifestyle_blood_mage_0 = {
     random_creation = 0.5
     
     # Modifiers
-    learning = 2
     learning_per_stress_level = 2
     learning_per_piety_level = 2
-    health = 0.5
-    life_expectancy = 5
-    
-    compatibility = {
-        witch = @neg_compat_low
-    }
+    health = 1
+    life_expectancy = 10
     
     # Modifiers   
     track = {
@@ -84,15 +69,11 @@ lifestyle_blood_mage_1 = {
     random_creation = 0.25
     
     # Modifiers
-    learning = 15
+    learning = 10
     learning_per_stress_level = 4
     learning_per_piety_level = 4
-    health = 3
-    life_expectancy = 30
-    
-    compatibility = {
-        witch = @neg_compat_low
-    }
+    health = 5
+    life_expectancy = 50
     
     # Modifiers   
     track = {
@@ -141,10 +122,13 @@ lifestyle_blood_mage_2 = {
     genetic = yes
     birth = 0
     random_creation = 0
-    
-    compatibility = {
-        witch = @neg_compat_low
-    }
+
+    # Modifiers
+    learning = 20
+    learning_per_stress_level = 6
+    learning_per_piety_level = 6
+    health = 10
+    life_expectancy = 100
     
     # Modifiers   
     track = {
