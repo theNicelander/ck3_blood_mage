@@ -1,6 +1,7 @@
 ﻿cult_of_blood_religion = {
     family = rf_pagan
 
+    graphical_faith = pagan_gfx
     doctrine = pagan_hostility_doctrine
 
     pagan_roots = yes
@@ -31,156 +32,196 @@
     doctrine = doctrine_clerical_marriage_allowed
     doctrine = doctrine_clerical_succession_temporal_appointment
 
+    #Allow pilgrimages
+	doctrine = doctrine_pilgrimage_encouraged
+
+	#Funeral tradition
+	doctrine = doctrine_funeral_cremation
+
     traits = {
         virtues = { lifestyle_blood_mage_group }
         sins = { craven arbitrary content }
     }
 
+	reserved_male_names = {
+	}
+	reserved_female_names = {
+	}
+
+	custom_faith_icons = {
+		custom_faith_1 custom_faith_2 custom_faith_3 custom_faith_4 custom_faith_5 custom_faith_6 custom_faith_7 custom_faith_8 custom_faith_9 custom_faith_10 dualism_custom_1 zoroastrian_custom_1 zoroastrian_custom_2 buddhism_custom_1 buddhism_custom_2 buddhism_custom_3 buddhism_custom_4 taoism_custom_1 yazidi_custom_1 sunni_custom_2 sunni_custom_3 sunni_custom_4 muhakkima_1 muhakkima_2 muhakkima_4 muhakkima_5 muhakkima_6 judaism_custom_1 custom_faith_fp1_fenrir custom_faith_fp1_irminsul custom_faith_fp1_jormungandr custom_faith_fp1_odins_ravens custom_faith_fp1_runestone_moon custom_faith_fp1_thors_hammer custom_faith_fp1_valknut custom_faith_fp1_yggdrasil custom_faith_boromian_circles custom_faith_lotus custom_faith_aum_tibetan custom_faith_pentagram custom_faith_pentagram_inverted custom_faith_burning_bush custom_faith_allah custom_faith_gankyil custom_faith_eye_of_providence custom_faith_dove custom_faith_ichthys custom_faith_lamb custom_faith_black_sheep custom_faith_ankh custom_faith_chi_rho custom_faith_hamsa custom_faith_cool_s
+	}
+
+
+
     holy_order_names = {
-        { name = holy_order_guardians_of_divinerealm }
-        { name = holy_order_faithful_of_highgod }
-        { name = holy_order_warriors_of_the_symbol }
+        { name = "holy_order_knights_of_the_crimson_chalice" }
+        { name = "holy_order_custodians_of_the_vital_essence" }
+        { name = "holy_order_crimson_covenant" }
+        { name = "holy_order_sanguine_disciples" }
+        { name = "holy_order_crimson_tide" }
+        { name = "holy_order_bloodbound_sentinels" }
+        { name = "holy_order_scarlet_vanguard" }
     }
 
-    holy_order_maa = { horse_archers }
+    holy_order_maa = { jomsviking_pirates }
 
     localization = {
-        HighGodName = paganism_high_god_name
-        HighGodNamePossessive = paganism_high_god_name_possessive
-        HighGodNameSheHe = CHARACTER_SHEHE_SHE
-        HighGodHerselfHimself = CHARACTER_HERSELF
-        HighGodHerHis = CHARACTER_HERHIS_HER
-        HighGodNameAlternate = paganism_high_god_name_alternate
-        HighGodNameAlternatePossessive = paganism_high_god_name_alternate_possessive
+		#HighGodName
+		HighGodName = germanic_high_god_name
+		HighGodName2 = germanic_high_god_name_2
+		HighGodNamePossessive = germanic_high_god_name_possessive
+		HighGodNameSheHe = CHARACTER_SHEHE_HE
+		HighGodHerselfHimself = CHARACTER_HIMSELF
+		HighGodHerHis = CHARACTER_HERHIS_HIS
+		HighGodNameAlternate = germanic_high_god_alternate
+		HighGodNameAlternatePossessive = germanic_high_god_alternate_possessive
 
-        #Creator
-        CreatorName = paganism_creator_god_name
-        CreatorNamePossessive = paganism_creator_god_name_possessive
-        CreatorSheHe = CHARACTER_SHEHE_SHE
-        CreatorHerHis = CHARACTER_HERHIS_HER
-        CreatorHerHim = CHARACTER_HERHIM_HER
+		#Creator
+		CreatorName = germanic_creator_god_name
+		CreatorNamePossessive = germanic_creator_god_name_possessive
+		CreatorSheHe = CHARACTER_SHEHE_HE
+		CreatorHerHis = CHARACTER_HERHIS_HIS
+		CreatorHerHim = CHARACTER_HERHIM_HIM
 
-        #HealthGod
-        HealthGodName = paganism_health_god_name
-        HealthGodNamePossessive = paganism_health_god_name_possessive
-        HealthGodSheHe = CHARACTER_SHEHE_SHE
-        HealthGodHerHis = CHARACTER_HERHIS_HER
-        HealthGodHerHim = CHARACTER_HERHIM_HER
+		#HealthGod
+		HealthGodName = germanic_health_god_name
+		HealthGodNamePossessive = germanic_health_god_name_possessive
+		HealthGodSheHe = CHARACTER_SHEHE_SHE
+		HealthGodHerHis = CHARACTER_HERHIS_HER
+		HealthGodHerHim = CHARACTER_HERHIM_HER
+		
+		#FertilityGod
+		FertilityGodName = germanic_fertility_god_name
+		FertilityGodNamePossessive = germanic_fertility_god_name_possessive
+		FertilityGodSheHe = CHARACTER_SHEHE_SHE
+		FertilityGodHerHis = CHARACTER_HERHIS_HER
+		FertilityGodHerHim = CHARACTER_HERHIM_HER
 
-        #FertilityGod
-        FertilityGodName = paganism_fertility_god_name
-        FertilityGodNamePossessive = paganism_fertility_god_name_possessive
-        FertilityGodSheHe = CHARACTER_SHEHE_SHE
-        FertilityGodHerHis = CHARACTER_HERHIS_HER
-        FertilityGodHerHim = CHARACTER_HERHIM_HER
+		#WealthGod
+		WealthGodName = germanic_wealth_god_name
+		WealthGodNamePossessive = germanic_wealth_god_name_possessive
+		WealthGodSheHe = CHARACTER_SHEHE_HE
+		WealthGodHerHis = CHARACTER_HERHIS_HIS
+		WealthGodHerHim = CHARACTER_HERHIM_HIM
 
-        #WealthGod
-        WealthGodName = paganism_wealth_god_name
-        WealthGodNamePossessive = paganism_wealth_god_name_possessive
-        WealthGodSheHe = CHARACTER_SHEHE_SHE
-        WealthGodHerHis = CHARACTER_HERHIS_HER
-        WealthGodHerHim = CHARACTER_HERHIM_HER
+		#HouseholdGod
+		HouseholdGodName = germanic_household_god_name
+		HouseholdGodNamePossessive = germanic_household_god_name_possessive
+		HouseholdGodSheHe = CHARACTER_SHEHE_SHE
+		HouseholdGodHerHis = CHARACTER_HERHIS_HER
+		HouseholdGodHerHim = CHARACTER_HERHIM_HER
 
-        #HouseholdGod
-        HouseholdGodName = paganism_household_god_name
-        HouseholdGodNamePossessive = paganism_household_god_name_possessive
-        HouseholdGodSheHe = CHARACTER_SHEHE_SHE
-        HouseholdGodHerHis = CHARACTER_HERHIS_HER
-        HouseholdGodHerHim = CHARACTER_HERHIM_HER
+		#FateGod
+		FateGodName = germanic_fate_god_name
+		FateGodNamePossessive = germanic_fate_god_name_possessive
+		FateGodSheHe = CHARACTER_SHEHE_THEY
+		FateGodHerHis = CHARACTER_HERHIS_THEIR
+		FateGodHerHim = CHARACTER_HERHIM_THEM
 
-        #FateGod
-        FateGodName = paganism_fate_god_name
-        FateGodNamePossessive = paganism_fate_god_name_possessive
-        FateGodSheHe = CHARACTER_SHEHE_IT
-        FateGodHerHis = CHARACTER_HERHIS_ITS
-        FateGodHerHim = CHARACTER_HERHIM_IT
+		#KnowledgeGod
+		KnowledgeGodName = germanic_knowledge_god_name
+		KnowledgeGodNamePossessive = germanic_knowledge_god_name_possessive
+		KnowledgeGodSheHe = CHARACTER_SHEHE_HE
+		KnowledgeGodHerHis = CHARACTER_HERHIS_HIS
+		KnowledgeGodHerHim = CHARACTER_HERHIM_HIM
 
-        #KnowledgeGod
-        KnowledgeGodName = paganism_knowledge_god_name
-        KnowledgeGodNamePossessive = paganism_knowledge_god_name_possessive
-        KnowledgeGodSheHe = CHARACTER_SHEHE_SHE
-        KnowledgeGodHerHis = CHARACTER_HERHIS_HER
-        KnowledgeGodHerHim = CHARACTER_HERHIM_HER
+		#WarGod
+		WarGodName = germanic_war_god_name
+		WarGodNamePossessive = germanic_war_god_name_possessive
+		WarGodSheHe = CHARACTER_SHEHE_HE
+		WarGodHerHis = CHARACTER_HERHIS_HIS
+		WarGodHerHim = CHARACTER_HERHIM_HIM
 
-        #WarGod
-        WarGodName = paganism_war_god_name
-        WarGodNamePossessive = paganism_war_god_name_possessive
-        WarGodSheHe = CHARACTER_SHEHE_SHE
-        WarGodHerHis = CHARACTER_HERHIS_HER
-        WarGodHerHim = CHARACTER_HERHIM_HER
+		#TricksterGod
+		TricksterGodName = germanic_trickster_god_name
+		TricksterGodNamePossessive = germanic_trickster_god_name_possessive
+		TricksterGodSheHe = CHARACTER_SHEHE_HE
+		TricksterGodHerHis = CHARACTER_HERHIS_HIS
+		TricksterGodHerHim = CHARACTER_HERHIM_HIM
 
-        #TricksterGod
-        TricksterGodName = paganism_trickster_god_name
-        TricksterGodNamePossessive = paganism_trickster_god_name_possessive
-        TricksterGodSheHe = CHARACTER_SHEHE_HE
-        TricksterGodHerHis = CHARACTER_HERHIS_HIS
-        TricksterGodHerHim = CHARACTER_HERHIM_HIM
+		#NightGod
+		NightGodName = germanic_night_god_name
+		NightGodNamePossessive = germanic_night_god_name_possessive
+		NightGodSheHe = CHARACTER_SHEHE_SHE
+		NightGodHerHis = CHARACTER_HERHIS_HER
+		NightGodHerHim = CHARACTER_HERHIM_HER
 
-        #NightGod
-        NightGodName = paganism_night_god_name
-        NightGodNamePossessive = paganism_night_god_name_possessive
-        NightGodSheHe = CHARACTER_SHEHE_HE
-        NightGodHerHis = CHARACTER_HERHIS_HIS
-        NightGodHerHim = CHARACTER_HERHIM_HIM
-
-        #WaterGod
-        WaterGodName = paganism_water_god_name
-        WaterGodNamePossessive = paganism_water_god_name_possessive
-        WaterGodSheHe = CHARACTER_SHEHE_SHE
-        WaterGodHerHis = CHARACTER_HERHIS_HER
-        WaterGodHerHim = CHARACTER_HERHIM_HER
+		#WaterGod
+		WaterGodName = germanic_water_god_name
+		WaterGodNamePossessive = germanic_water_god_name_possessive
+		WaterGodSheHe = CHARACTER_SHEHE_HE
+		WaterGodHerHis = CHARACTER_HERHIS_HIS
+		WaterGodHerHim = CHARACTER_HERHIM_HIM
 
 
-        PantheonTerm = paganism_mother_earth_father_sky
-        PantheonTermHasHave = pantheon_term_have
-        GoodGodNames = { paganism_high_god_name paganism_good_god_father_sky paganism_good_god_ancestors }
-        DevilName = paganism_devil_name
-        DevilNamePossessive = paganism_devil_name_possessive
-        DevilSheHe = CHARACTER_SHEHE_IT
-        DevilHerHis = CHARACTER_HERHIS_ITS
-        DevilHerselfHimself = paganism_devil_herselfhimself
-        EvilGodNames = { paganism_devil_name paganism_evil_god_decay }
-        HouseOfWorship = paganism_house_of_worship
-        HouseOfWorshipPlural = paganism_house_of_worship_plural
-        ReligiousSymbol = paganism_religious_symbol
-        ReligiousText = paganism_religious_text
-        ReligiousHeadName = paganism_religious_head_title
-        ReligiousHeadTitleName = paganism_religious_head_title_name
-        DevoteeMale = paganism_devotee
-        DevoteeMalePlural = paganism_devoteeplural
-        DevoteeFemale = paganism_devotee
-        DevoteeFemalePlural = paganism_devoteeplural
-        DevoteeNeuter = paganism_devotee
-        DevoteeNeuterPlural = paganism_devoteeplural
-        PriestMale = paganism_priest
-        PriestMalePlural = paganism_priest_plural
-        PriestFemale = paganism_priest
-        PriestFemalePlural = paganism_priest_plural
-        PriestNeuter = paganism_priest
-        PriestNeuterPlural = paganism_priest_plural
-        AltPriestTermPlural = paganism_priest_alternate_plural
-        BishopMale = paganism_priest
-        BishopMalePlural = paganism_priest_plural
-        BishopFemale = paganism_priest
-        BishopFemalePlural = paganism_priest_plural
-        BishopNeuter = paganism_priest
-        BishopNeuterPlural = paganism_priest_plural
-        DivineRealm = paganism_divine_realm
-        PositiveAfterLife = paganism_divine_realm
-        NegativeAfterLife = paganism_afterlife
-        DeathDeityName = paganism_death_deity_name
-        DeathDeityNamePossessive = paganism_death_deity_name_possessive
-        DeathDeitySheHe = paganism_devil_shehe
-        DeathDeityHerHis = paganism_death_deity_herhis
-        WitchGodName = witchgodname_paganism_the_shadow
-        WitchGodSheHe = CHARACTER_SHEHE_IT
-        WitchGodHerHis = CHARACTER_HERHIS_ITS
-        WitchGodHerHim = CHARACTER_HERHIM_IT
-        WitchGodMistressMaster = witch_spirit
-        WitchGodMotherFather = witch_source
+		PantheonTerm = religion_the_gods
+		PantheonTerm2 = religion_the_gods_2
+		PantheonTerm3 = religion_the_gods_3
+		PantheonTermHasHave = pantheon_term_have
+		GoodGodNames = { germanic_good_god_thor germanic_good_god_baldr germanic_good_god_freyja germanic_good_god_tyr germanic_good_god_sif}
+		DevilName = germanic_devil_name
+		DevilNamePossessive = germanic_devil_name_possessive
+		DevilSheHe = CHARACTER_SHEHE_HE
+		DevilHerHis = CHARACTER_HERHIS_HIS
+		DevilHerselfHimself = CHARACTER_HIMSELF
+		EvilGodNames = { germanic_evil_god_surtr germanic_evil_god_ymir }
+		HouseOfWorship = paganism_house_of_worship
+		HouseOfWorship2 = paganism_house_of_worship_2
+		HouseOfWorship3 = paganism_house_of_worship_3
+		HouseOfWorshipPlural = paganism_house_of_worship_plural
+		ReligiousSymbol = germanic_religious_symbol
+		ReligiousSymbol2 = germanic_religious_symbol_2
+		ReligiousSymbol3 = germanic_religious_symbol_3
+		ReligiousText = germanic_religious_text
+		ReligiousText2 = germanic_religious_text_2
+		ReligiousText3 = germanic_religious_text_3
+		ReligiousHeadName = germanic_religious_head_title
+		ReligiousHeadTitleName = germanic_religious_head_title_name
+		DevoteeMale = paganism_devotee
+		DevoteeMalePlural = paganism_devoteeplural
+		DevoteeFemale = paganism_devotee
+		DevoteeFemalePlural = paganism_devoteeplural
+		DevoteeNeuter = paganism_devotee
+		DevoteeNeuterPlural = paganism_devoteeplural
+		PriestMale = germanic_priest_male
+		PriestMalePlural = germanic_priest_male_plural
+		PriestFemale = germanic_priest_female
+		PriestFemalePlural = germanic_priest_female_plural
+		PriestNeuter = germanic_priest_neuter
+		PriestNeuterPlural = germanic_priest_neuter_plural
+		AltPriestTermPlural = paganism_priest_alternate_plural
+		BishopMale = germanic_bishop_male
+		BishopMalePlural = germanic_bishop_male_plural
+		BishopFemale = germanic_bishop_female
+		BishopFemalePlural = germanic_bishop_female_plural
+		BishopNeuter = germanic_bishop_neuter
+		BishopNeuterPlural = germanic_bishop_neuter_plural
+		DivineRealm = germanic_divine_realm
+		DivineRealm2 = germanic_divine_realm_2
+		DivineRealm3 = germanic_divine_realm_3
+		PositiveAfterLife = germanic_positive_afterlife
+		PositiveAfterLife2 = germanic_positive_afterlife_2
+		PositiveAfterLife3 = germanic_positive_afterlife_3
+		NegativeAfterLife = germanic_death_deity_name
+		NegativeAfterLife2 = germanic_death_deity_name_2
+		NegativeAfterLife3 = germanic_death_deity_name_3
+		DeathDeityName = germanic_death_deity_name
+		DeathDeityNamePossessive = germanic_death_deity_name_possessive
+		DeathDeitySheHe = CHARACTER_SHEHE_SHE
+		DeathDeityHerHis = CHARACTER_HERHIS_HER
+		DeathDeityHerHim = CHARACTER_HERHIM_HER
+		WitchGodName = germanic_good_god_freyja
+		WitchGodNamePossessive = germanic_good_god_freyja_possessive
+		WitchGodHerHis = CHARACTER_HERHIS_HER
+		WitchGodSheHe = CHARACTER_SHEHE_HE
+		WitchGodHerHim = CHARACTER_HERHIM_HER
+		WitchGodMistressMaster = mistress
+		WitchGodMotherFather = mother
 
-        GHWName = ghw_great_holy_war
-        GHWNamePlural = ghw_great_holy_wars
+
+		GHWName = ghw_great_holy_war
+		GHWNamePlural = ghw_great_holy_wars
     }
 
     faiths = {
