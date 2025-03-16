@@ -1,8 +1,4 @@
-﻿@found_bm_coven_member_count_0 = 10
-@found_bm_coven_member_count_1 = 50
-@found_bm_coven_member_count_2 = 100
-
-enhance_blood_mage_coven_decision_0 = {
+﻿enhance_blood_mage_coven_decision_0 = {
     picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
     ai_check_interval = 36
     desc = enhance_blood_mage_coven_decision_desc
@@ -27,19 +23,19 @@ enhance_blood_mage_coven_decision_0 = {
             custom_tooltip = {
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
-                    count >= @found_bm_coven_member_count_0
+                    count >= 1
                     has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
-                count >= @found_bm_coven_member_count_0
+                count >= 1
                 has_trait = lifestyle_blood_mage_group
             }
         }
     }
     effect = {
         add_piety_level = -1
-        blood_magic_used_set_exp = { EXP = 1 }
+        blood_magic_used_set_exp = { EXP = 3 }
         house = {
             add_house_modifier = {
                 modifier = blood_mage_coven_modifier_0
@@ -63,6 +59,9 @@ enhance_blood_mage_coven_decision_1 = {
         has_trait = lifestyle_blood_mage_group
         exists = house
 
+        house = {
+                has_house_modifier = blood_mage_coven_modifier_0
+        }
         NOT = {
             house = {
                 has_house_modifier = blood_mage_coven_modifier_1
@@ -78,19 +77,19 @@ enhance_blood_mage_coven_decision_1 = {
             custom_tooltip = {
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
-                    count >= @found_bm_coven_member_count_1
+                    count >= 3
                     has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
-                count >= @found_bm_coven_member_count_1
+                count >= 3
                 has_trait = lifestyle_blood_mage_group
             }
         }
     }
     effect = {
         add_piety_level = -2
-        blood_magic_used_set_exp = { EXP = 3 }
+        blood_magic_used_set_exp = { EXP = 6 }
         house = {
             add_house_modifier = {
                 modifier = blood_mage_coven_modifier_1
@@ -114,6 +113,10 @@ enhance_blood_mage_coven_decision_2 = {
         has_trait = lifestyle_blood_mage_group
         exists = house
 
+        house = {
+                has_house_modifier = blood_mage_coven_modifier_0
+                has_house_modifier = blood_mage_coven_modifier_1
+        }
         NOT = {
             house = {
                 has_house_modifier = blood_mage_coven_modifier_2
@@ -129,19 +132,19 @@ enhance_blood_mage_coven_decision_2 = {
             custom_tooltip = {
                 text = found_bm_coven_member_count_tt
                 any_house_member = {
-                    count >= @found_bm_coven_member_count_2
+                    count >= 6
                     has_trait = lifestyle_blood_mage_group
                 }
             }
             any_house_member = {
-                count >= @found_bm_coven_member_count_2
+                count >= 6
                 has_trait = lifestyle_blood_mage_group
             }
         }
     }
     effect = {
         add_piety_level = -3
-        blood_magic_used_set_exp = { EXP = 5 }
+        blood_magic_used_set_exp = { EXP = 10 }
         house = {
             add_house_modifier = {
                 modifier = blood_mage_coven_modifier_2
