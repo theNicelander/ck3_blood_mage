@@ -7,12 +7,7 @@
     is_shown = {
         has_trait = lifestyle_blood_mage_group
         exists = house
-
-        NOT = {
-            house = {
-                has_house_modifier = blood_mage_coven_modifier_0
-            }
-        }
+        NOT = { house = { has_house_modifier = blood_mage_coven_modifier_0 } }
     }
     is_valid = {
         has_trait = lifestyle_blood_mage_group
@@ -35,7 +30,7 @@
     }
     effect = {
         add_piety_level = -1
-        blood_magic_used_set_exp = { EXP = 3 }
+        blood_magic_used_set_exp = { EXP = 5 }
         house = {
             add_house_modifier = {
                 modifier = blood_mage_coven_modifier_0
@@ -59,14 +54,8 @@ enhance_blood_mage_coven_decision_1 = {
         has_trait = lifestyle_blood_mage_group
         exists = house
 
-        house = {
-                has_house_modifier = blood_mage_coven_modifier_0
-        }
-        NOT = {
-            house = {
-                has_house_modifier = blood_mage_coven_modifier_1
-            }
-        }
+        house = { has_house_modifier = blood_mage_coven_modifier_0 }
+        NOT = { house = { has_house_modifier = blood_mage_coven_modifier_1 } }
     }
     is_valid = {
         has_trait = lifestyle_blood_mage_1
@@ -89,12 +78,8 @@ enhance_blood_mage_coven_decision_1 = {
     }
     effect = {
         add_piety_level = -2
-        blood_magic_used_set_exp = { EXP = 6 }
-        house = {
-            add_house_modifier = {
-                modifier = blood_mage_coven_modifier_1
-            }
-        }
+        blood_magic_used_set_exp = { EXP = 5 }
+        house = { add_house_modifier = { modifier = blood_mage_coven_modifier_1 } }
     }
     cost = {
         piety = 250
@@ -112,16 +97,11 @@ enhance_blood_mage_coven_decision_2 = {
     is_shown = {
         has_trait = lifestyle_blood_mage_group
         exists = house
-
         house = {
-                has_house_modifier = blood_mage_coven_modifier_0
-                has_house_modifier = blood_mage_coven_modifier_1
+            has_house_modifier = blood_mage_coven_modifier_0
+            has_house_modifier = blood_mage_coven_modifier_1
         }
-        NOT = {
-            house = {
-                has_house_modifier = blood_mage_coven_modifier_2
-            }
-        }
+        NOT = { house = { has_house_modifier = blood_mage_coven_modifier_2 } }
     }
     is_valid = {
         has_trait = lifestyle_blood_mage_2
@@ -144,12 +124,8 @@ enhance_blood_mage_coven_decision_2 = {
     }
     effect = {
         add_piety_level = -3
-        blood_magic_used_set_exp = { EXP = 10 }
-        house = {
-            add_house_modifier = {
-                modifier = blood_mage_coven_modifier_2
-            }
-        }
+        blood_magic_used_set_exp = { EXP = 5 }
+        house = { add_house_modifier = { modifier = blood_mage_coven_modifier_2 } }
     }
     cost = {
         piety = 500
