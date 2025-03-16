@@ -177,12 +177,12 @@ bm_stroll_town.002 = {
 
 bm_stroll_town.003 = {
     type = character_event
-title = "Silent Harvest"
-desc = "The beggar's desperate gasp is muffled by my hand as I draw the life essence from their frail body. A soft crimson mist flows from their lips, coiling around my fingers and seeping into my skin. The pitiful wretch slumps against the wall, their hollow eyes staring at nothing, just another unfortunate soul lost to the harshness of street life. I straighten my clothes and step back into the bustle of the market, the newfound power tingling beneath my skin. No one has witnessed my dark work—the shadows kept our secret well."
+    title = "Silent Harvest"
+    desc = "The beggar's life flows into me as their body crumples against the wall. Their final gasp dissolves into the ambient noise of the distant market. I straighten my clothes and slip away, new power tingling beneath my skin. The shadows kept our secret—no witnesses to my dark work."
     theme = default
 
-    option = { 
-        name = "No one noticed"
+    option { 
+        name = "Power has its price. Today, it was theirs."
         custom_tooltip = "No one noticed me, their lifeforce is mine"
         add_character_modifier = { modifier = lifeforce_modifier } 
     }
@@ -196,13 +196,13 @@ desc = "The beggar's desperate gasp is muffled by my hand as I draw the life ess
 
 bm_stroll_town.004 = {
     type = character_event
-title = "Witnessed"
-desc = "The beggar's life essence flows into me, their body shriveling as I absorb their vitality. Lost in the intoxicating surge of power, I fail to notice the approaching footsteps until it's too late. A woman's horrified gasp cuts through my concentration—a merchant's wife, basket clutched to her chest, eyes wide with terror as she witnesses the final moments of my dark ritual. She backs away, her scream gathering in her throat. By tomorrow, whispers will spread through the town of the noble who preys upon the destitute. The power I've gained comes with unwanted attention, but such is the price of carelessness."
+    title = "Witnessed"
+    desc = "The beggar withers as I drain their essence, but a horrified gasp breaks my concentration. A merchant's wife stands frozen, basket clutched to her chest, witnessing the final moments of my ritual. By tomorrow, whispers of the noble who preys upon the destitute will spread. The power I've gained comes with unwanted attention."
     theme = default
 
-    option = { 
-        name = "Someone walked by and discovered me, after the deed was done."
-        custom_tooltip = "Someone walked by and discovered me, the population won't be happy"
+    option { 
+        name = "Carelessness has consequences. So be it."
+        custom_tooltip = "Someone walked by and discovered me, the town won't be happy"
         add_character_modifier = { modifier = lifeforce_modifier }
         add_stress = 10
         add_dread = 5
@@ -223,13 +223,13 @@ desc = "The beggar's life essence flows into me, their body shriveling as I abso
 
 bm_stroll_town.005 = {
     type = character_event
-    title = "They got away"
-    desc = ""
+    title = "Lost Opportunity"
+    desc = "I reach for the beggar, fingers tingling with anticipation, but something goes wrong. The wretch's survival instinct flares unexpectedly. With surprising agility, they scramble away, disappearing into the warren of alleyways. The power that was nearly mine vanishes with them, leaving me empty-handed."
     theme = default
 
-    option = { 
-        name = "They got away."
-        custom_tooltip = "They got away, i'm left empty handed"
+    option { 
+        name = "Next time, I won't hesitate."
+        custom_tooltip = "They got away, I'm left empty handed"
         add_stress = 5
     }
 
