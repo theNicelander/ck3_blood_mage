@@ -26,11 +26,11 @@ lifestyle_blood_mage_0 = {
     random_creation = 0.5
     
     # Modifiers
-    monthly_learning_lifestyle_xp_gain_mult = 0.02
-    learning_per_stress_level = 1
-    learning_per_piety_level = 1
+    learning = 2
+    learning_per_stress_level = 2
+    learning_per_piety_level = 2
+    health = 0.5
     life_expectancy = 5
-    negate_health_penalty_add = 0.25
     
     compatibility = {
         witch = @neg_compat_low
@@ -39,44 +39,29 @@ lifestyle_blood_mage_0 = {
     # Modifiers   
     track = {
         20 = {
-            monthly_learning_lifestyle_xp_gain_mult = 0.02
-            learning_per_stress_level = 1
-            learning_per_piety_level = 1
-            years_of_fertility = 5
+            learning = 2
+            health = 0.5
             life_expectancy = 5
-            negate_health_penalty_add = 0.25
         }
         40 = {
-            monthly_learning_lifestyle_xp_gain_mult = 0.02
-            learning_per_stress_level = 1
-            learning_per_piety_level = 1
-            years_of_fertility = 5
+            learning = 2
+            health = 0.5
             life_expectancy = 5
-            negate_health_penalty_add = 0.25
         }
         60 = {
-            monthly_learning_lifestyle_xp_gain_mult = 0.02
-            learning_per_stress_level = 1
-            learning_per_piety_level = 1
-            years_of_fertility = 5
+            learning = 2
+            health = 0.5
             life_expectancy = 5
-            negate_health_penalty_add = 0.25
         }
         80 = {
-            monthly_learning_lifestyle_xp_gain_mult = 0.02
-            learning_per_stress_level = 1
-            learning_per_piety_level = 1
-            years_of_fertility = 5
+            learning = 2
+            health = 0.5
             life_expectancy = 5
-            negate_health_penalty_add = 0.25
         }
         100 = {
-            monthly_learning_lifestyle_xp_gain_mult = 0.02
-            learning_per_stress_level = 1
-            learning_per_piety_level = 1
-            years_of_fertility = 5
+            learning = 2
+            health = 0.5
             life_expectancy = 5
-            negate_health_penalty_add = 0.25
         }
     }
 }
@@ -99,12 +84,11 @@ lifestyle_blood_mage_1 = {
     random_creation = 0.25
     
     # Modifiers
-    monthly_learning_lifestyle_xp_gain_mult = 0.1
-    learning_per_stress_level = 5
-    learning_per_piety_level = 5
-    years_of_fertility = 25
-    life_expectancy = 25
-    negate_health_penalty_add = 1.25
+    learning = 15
+    learning_per_stress_level = 4
+    learning_per_piety_level = 4
+    health = 3
+    life_expectancy = 30
     
     compatibility = {
         witch = @neg_compat_low
@@ -113,19 +97,29 @@ lifestyle_blood_mage_1 = {
     # Modifiers   
     track = {
         20 = {
-
+            learning = 2
+            health = 0.5
+            life_expectancy = 5
         }
         40 = {
-
+            learning = 2
+            health = 0.5
+            life_expectancy = 5
         }
         60 = {
-
+            learning = 2
+            health = 0.5
+            life_expectancy = 5
         }
         80 = {
-
+            learning = 2
+            health = 0.5
+            life_expectancy = 5
         }
         100 = {
-
+            learning = 2
+            health = 0.5
+            life_expectancy = 5
         }
     }
 }
@@ -155,19 +149,29 @@ lifestyle_blood_mage_2 = {
     # Modifiers   
     track = {
         20 = {
-
+            learning = 2
+            health = 0.5
+            life_expectancy = 5
         }
         40 = {
-
+            learning = 2
+            health = 0.5
+            life_expectancy = 5
         }
         60 = {
-
+            learning = 2
+            health = 0.5
+            life_expectancy = 5
         }
         80 = {
-
+            learning = 2
+            health = 0.5
+            life_expectancy = 5
         }
         100 = {
-
+            learning = 2
+            health = 0.5
+            life_expectancy = 5
         }
     }
 }
