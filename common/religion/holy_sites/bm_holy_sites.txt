@@ -1,4 +1,4 @@
-﻿# EU + EEA + UK
+﻿# Iceland - Because best place
 reykjavik = {
     county = c_vestisland
     barony = b_reykjavik
@@ -8,6 +8,44 @@ reykjavik = {
         health = 0.1
     }
 }
+sudurland = {
+    county = c_sudurland
+    barony = b_stokkseyri
+    character_modifier = {
+        development_growth = 0.1
+        monthly_lifestyle_xp_gain_mult = 0.02
+        health = 0.1
+    }
+}
+austurland = {
+    county = c_austisland
+    barony = b_reydarfjall
+    character_modifier = {
+        development_growth = 0.1
+        monthly_lifestyle_xp_gain_mult = 0.02
+        health = 0.1
+    }
+}
+nordurland = {
+    county = c_nordrland
+    barony = b_husavik
+    character_modifier = {
+        development_growth = 0.1
+        monthly_lifestyle_xp_gain_mult = 0.02
+        health = 0.1
+    }
+}
+talknafjordur = {
+    county = c_vestisland
+    barony = b_vestfirdir
+    character_modifier = {
+        development_growth = 0.1
+        monthly_lifestyle_xp_gain_mult = 0.02
+        health = 0.1
+    }
+}
+
+# EU + EEA + UK
 amsterdam = {
     county = c_holland
     barony = b_amsterdam
@@ -182,15 +220,6 @@ paris = {
 prague = {
     county = c_praha
     barony = b_praha
-    character_modifier = {
-        development_growth = 0.1
-        monthly_lifestyle_xp_gain_mult = 0.02
-        health = 0.1
-    }
-}
-riga = {
-    county = c_zemigalians
-    barony = b_riga
     character_modifier = {
         development_growth = 0.1
         monthly_lifestyle_xp_gain_mult = 0.02

@@ -56,29 +56,27 @@ bm_stroll_town.002 = {
     # Lifedrain
     option = {
         name = "Their lifeforce will serve a greater purpose in my hands"
-        add_character_modifier = { modifier = lifeforce_modifier }
-        add_dread = 5
 
         duel = {
             skill = intrigue
             value = 0
 
             0 = {
-                custom_tooltip = "My actions go unnoticed in the shadows of the square"
+                custom_tooltip = "Silent Harvest"
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = 2
                 }
+                trigger_event = { id = bm_stroll_town.003 }
             }
 
+            10 = {
+                custom_tooltip = "Witnessed"
+                trigger_event = { id = bm_stroll_town.004 }
+            }
             20 = {
-                custom_tooltip = "A gasp from nearby—someone witnessed my dark harvest"
-                root.capital_county = {
-                    add_county_modifier = {
-                        modifier = drained_beggar_holding
-                        years = 5
-                    }
-                }
+                custom_tooltip = "They get away"
+                trigger_event = { id = bm_stroll_town.005 }
             }
         }
 
@@ -176,5 +174,71 @@ bm_stroll_town.002 = {
     right_portrait = {
         character = scope:beggar
         animation = beg
+    }
+}
+
+
+bm_stroll_town.003 = {
+    type = character_event
+    title = "Silent Harvest"
+    desc = "The beggar's life flows into me as their body crumples against the wall. Their final gasp dissolves into the ambient noise of the distant market. I straighten my clothes and slip away, new power tingling beneath my skin. The shadows kept our secret—no witnesses to my dark work."
+    theme = default
+
+    option = { 
+        name = "Power has its price. Today, it was theirs."
+        custom_tooltip = "No one noticed me, their lifeforce is mine"
+        add_character_modifier = { modifier = lifeforce_modifier } 
+    }
+
+    # Portraits
+    left_portrait = {
+        character = root
+        animation = idle
+    }
+}
+
+bm_stroll_town.004 = {
+    type = character_event
+    title = "Witnessed"
+    desc = "The beggar withers as I drain their essence, but a horrified gasp breaks my concentration. A merchant's wife stands frozen, basket clutched to her chest, witnessing the final moments of my ritual. By tomorrow, whispers of the noble who preys upon the destitute will spread. The power I've gained comes with unwanted attention."
+    theme = default
+
+    option = { 
+        name = "Carelessness has consequences. So be it."
+        custom_tooltip = "Someone walked by and discovered me, the town won't be happy"
+        add_character_modifier = { modifier = lifeforce_modifier }
+        add_stress = 10
+        add_dread = 5
+        root.capital_county = {
+            add_county_modifier = {
+                modifier = drained_beggar_holding
+                years = 5
+            }
+        } 
+    }
+
+    # Portraits
+    left_portrait = {
+        character = root
+        animation = idle
+    }
+}
+
+bm_stroll_town.005 = {
+    type = character_event
+    title = "Lost Opportunity"
+    desc = "I reach for the beggar, fingers tingling with anticipation, but something goes wrong. The wretch's survival instinct flares unexpectedly. With surprising agility, they scramble away, disappearing into the warren of alleyways. The power that was nearly mine vanishes with them, leaving me empty-handed."
+    theme = default
+
+    option = { 
+        name = "Next time, I won't hesitate."
+        custom_tooltip = "They got away, I'm left empty handed"
+        add_stress = 5
+    }
+
+    # Portraits
+    left_portrait = {
+        character = root
+        animation = idle
     }
 }
