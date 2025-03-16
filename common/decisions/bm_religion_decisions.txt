@@ -1,0 +1,24 @@
+﻿become_blood_cultist_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+    desc = become_blood_cultist_decision_desc
+    decision_group_type = bm_decision_group
+
+    is_shown = { 
+        has_trait = lifestyle_blood_mage_group
+    }
+    is_valid = { 
+        has_trait = lifestyle_blood_mage_group
+    }
+    cost = {
+        piety = 250
+    }
+    
+    effect = { 
+        set_character_faith = faith:cult_of_blood
+        add_piety_level = -1
+     }
+
+    # Yearly 10% chance it they take up the religion
+    ai_will_do = { base = 10 }
+    ai_check_interval = 12
+}
