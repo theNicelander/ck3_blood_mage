@@ -1,0 +1,18 @@
+﻿namespace = bm_religion
+
+bm_religion.001 = {
+    type = character_event
+    title = "Change religion"
+    desc = ""
+    theme = default
+
+    option = {
+        name = "Change religion"
+        set_character_faith = faith:cult_of_blood
+    }
+
+    option = {
+        name = "Nevermind"
+    }
+
+}
