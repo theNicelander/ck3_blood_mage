@@ -64,8 +64,7 @@ lifedrain_prisoner_event_interaction = {
             }
         }
         scope:actor = {
-            add_character_modifier = { modifier = lifeforce_modifier }
-            add_stress = lifedrain_small_stress_cost
+            drain_lifeforce_effect = yes
         }
         lifedrain_execution_effect = {
             VICTIM = scope:recipient

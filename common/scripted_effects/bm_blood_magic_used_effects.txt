@@ -66,8 +66,8 @@ blood_magic_used_set_exp = {
 
 drain_lifeforce_effect = {
     add_character_modifier = lifeforce_modifier
-    # Grant exp when using magic
-    blood_magic_exp_add = { EXP = 1 }
+    
+    # Grant exp when novice is draining
     if = {
         limit = {
             has_trait = lifestyle_blood_mage_0
