@@ -62,7 +62,7 @@ bm_stroll_town.002 = {
             value = 0
 
             0 = {
-                custom_tooltip = "My actions go unnoticed in the shadows of the square"
+                custom_tooltip = "Silent Harvest"
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = 2
@@ -70,10 +70,13 @@ bm_stroll_town.002 = {
                 trigger_event = { id = bm_stroll_town.003 }
             }
 
-            20 = {
-                custom_tooltip = "A gasp from nearby—someone witnessed my dark harvest"
-
+            10 = {
+                custom_tooltip = "Witnessed"
                 trigger_event = { id = bm_stroll_town.004 }
+            }
+            20 = {
+                custom_tooltip = "They get away"
+                trigger_event = { id = bm_stroll_town.005 }
             }
         }
 
