@@ -1,12 +1,21 @@
 ﻿namespace = blood_mage_yearly_xp
 
-# Yearly event - Add 1 xp to everyone
+# Yearly event - Add xp to Blood Mages, double if following religion
 blood_mage_yearly_xp.001 = {
 	hidden = yes
 	trigger = {
 		has_trait = lifestyle_blood_mage_group
 	}
 	immediate = {
-        blood_magic_exp_add = { EXP = 1 }
+        blood_magic_exp_yearly = yes
+
+		# Extra exp gain if part of the religion
+		if = {
+			limit = {
+				has_religion = religion:cult_of_blood_religion
+			}
+			blood_magic_exp_yearly = yes
+		}
     }
 }
+
