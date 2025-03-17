@@ -1,0 +1,52 @@
+﻿namespace = bm_convert_to_blood_cult
+
+bm_convert_to_blood_cult.001 = {
+    type = character_event
+    title = bm_convert_to_blood_cult.001.title
+    desc = bm_convert_to_blood_cult.001.desc
+    theme = witchcraft
+
+    # Attemt to convert the target
+    option = {
+        name = bm_convert_to_blood_cult.001.a
+        # Cost
+        add_piety = -150
+        blood_magic_used = yes
+
+        # Carry out logic
+        duel = {
+            skill = learning
+            target = scope:recipient
+            0 = {
+                desc = "I successfully indoctrinate them into the Blood Cult"
+                # Multiplier increases as your blood mage power increases
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = blood_mage_rank_multiplier
+                }
+                scope:recipient = { set_character_faith = faith:cult_of_blood }
+            }
+            10 = {
+                desc = "I fail"
+                temporary_negative_lifeforce_effect = yes
+            }
+        }
+        ai_chance = { base = 100 }
+    }
+
+    # Do nothing
+    option = {
+        add_piety = lifedrain_piety_cost
+        name = bm_convert_to_blood_cult.001.b
+    }
+
+    # Portraits
+    left_portrait ={
+        character = root
+        animation = rage
+    }
+    right_portrait ={
+        character = scope:recipient
+        animation = beg
+    }
+}

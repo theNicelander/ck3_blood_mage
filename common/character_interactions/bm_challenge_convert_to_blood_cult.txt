@@ -1,0 +1,36 @@
+﻿convert_to_blood_cult = {
+    common_interaction = yes
+    interface_priority = 300
+    category = interaction_category_hostile
+    desc = "Convert to Blood Cult"
+	
+    popup_on_receive = yes
+	pause_on_receive = yes
+
+    auto_accept = yes
+    is_highlighted = { always = yes }
+
+	is_shown = {
+		scope:actor = { 
+            has_trait = lifestyle_blood_mage_group 
+            has_faith = faith:cult_of_blood
+        }
+		scope:recipient = {
+			NOT = { has_faith = faith:cult_of_blood }
+		}
+		# Can't duel yourself.
+		NOT = { scope:actor = scope:recipient }
+	}
+
+	is_valid_showing_failures_only = { scope:actor = { is_imprisoned = no } }
+
+    on_accept = {
+        scope:recipient = {
+            send_interface_toast = {
+                left_icon = scope:actor
+                custom_tooltip = convert_to_blood_cult_event_interaction.recipient.notification.tt
+            }
+        }
+        scope:actor = { trigger_event = bm_convert_to_blood_cult.001 }
+    }
+}
