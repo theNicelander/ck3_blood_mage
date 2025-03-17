@@ -28,7 +28,7 @@
         scope:recipient = {
             send_interface_toast = {
                 left_icon = scope:actor
-                custom_tooltip = lifedrain_prisoner_event_interaction.recipient.notification.tt
+                custom_tooltip = convert_to_blood_cult_event_interaction.recipient.notification.tt
             }
         }
         scope:actor = { trigger_event = bm_convert_to_blood_cult.001 }
