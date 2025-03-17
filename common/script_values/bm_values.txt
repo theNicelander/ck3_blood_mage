@@ -79,7 +79,11 @@ blood_mage_rank_multiplier = {
     add = 1
     if = {
         limit = { has_trait = lifestyle_blood_mage_1 }
-        add = 5
+        add = 1
+    }
+    if = {
+        limit = { has_trait = lifestyle_blood_mage_2 }
+        add = 2
     }
 }
 
@@ -87,6 +91,10 @@ blood_mage_rank_base = {
     value = 0
     if = {
         limit = { has_trait = lifestyle_blood_mage_1 }
+        add = 25
+    }
+    if = {
+        limit = { has_trait = lifestyle_blood_mage_2 }
         add = 50
     }
 }
