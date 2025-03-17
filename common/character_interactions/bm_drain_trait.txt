@@ -22,8 +22,6 @@ trait_drain_prisoner_event_interaction = {
         }
     }
 
-    cost = { piety = lifedrain_piety_cost }
-
     on_accept = {
         scope:recipient = {
             send_interface_toast = {
