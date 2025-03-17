@@ -9,24 +9,20 @@ bm_convert_to_blood_cult.001 = {
     # Attemt to convert the target
     option = {
         name = bm_convert_to_blood_cult.001.a
-        # Cost
-        add_piety = -150
-        blood_magic_used = yes
 
         # Carry out logic
         duel = {
             skill = learning
             target = scope:recipient
-            0 = {
-                desc = "I successfully indoctrinate them into the Blood Cult"
-                # Multiplier increases as your blood mage power increases
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = blood_mage_rank_multiplier
-                }
-                scope:recipient = { set_character_faith = faith:cult_of_blood }
-            }
             10 = {
+                desc = "I successfully indoctrinate them into the Blood Cult"
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 5
+				}
+                scope:recipient = { set_character_f aith = faith:cult_of_blood }
+            }
+            30 = {
                 desc = "I fail"
                 temporary_negative_lifeforce_effect = yes
             }
