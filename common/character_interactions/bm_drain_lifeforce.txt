@@ -17,7 +17,10 @@
                 custom_tooltip = lifedrain_prisoner_event_interaction.recipient.notification.tt
             }
         }
-        scope:actor = { add_blood_magic_exp_diminishing = yes }
+        scope:actor = { 
+            add_blood_magic_exp_diminishing = yes
+            drain_lifeforce_effect = yes
+        }
         lifedrain_execution_effect = {
             VICTIM = scope:recipient
             EXECUTIONER = scope:actor
