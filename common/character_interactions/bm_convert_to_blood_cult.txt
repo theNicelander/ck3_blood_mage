@@ -1,0 +1,150 @@
+﻿
+convert_to_blood_cult_interaction = {
+	icon = icon_scheme_convert_to_witchcraft
+	category = interaction_category_friendly
+
+	interface_priority = 90
+	scheme = convert_to_blood_cult
+
+	send_name = START_SCHEME
+
+	desc = "Convert to blood cult interaction"
+
+	is_shown = {
+		scope:actor = {
+			can_start_scheme = {
+				type = convert_to_blood_cult
+				target_character = scope:recipient
+			}
+		}
+		NOT = { scope:actor = scope:recipient }
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			NOT = { is_at_war_with = scope:recipient }
+			can_start_scheme = {
+				type = convert_to_blood_cult
+				target_character = scope:recipient
+			}
+		}
+	}
+
+	on_accept = {
+		scope:actor = {
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = convert_to_blood_cult_interaction_notification
+
+				left_icon = scope:actor					
+				right_icon = scope:recipient
+
+				begin_scheme_basic_effect = {
+					SCHEME_TYPE = convert_to_blood_cult
+					TARGET_TYPE = target_character
+					TARGET_SCOPE = scope:recipient
+				}
+			}
+		}
+	}
+
+	auto_accept = yes
+
+	#AI will do
+	
+	ai_potential = {
+		is_witch_trigger = yes
+	}
+	
+	ai_target_quick_trigger = {
+		adult = yes
+	}
+
+	ai_targets = {
+		ai_recipients = family
+		max = 5
+	}
+	ai_targets = {
+		ai_recipients = guests
+		ai_recipients = courtiers
+		ai_recipients = liege
+		ai_recipients = vassals
+		chance = 0.2
+	}
+	
+	ai_frequency = 72
+
+
+	ai_will_do = {
+		base = -45
+		
+		# Do I like recipient & are they trustworthy
+		opinion_modifier = {
+			who = scope:actor
+			opinion_target = scope:recipient
+			multiplier = 0.5
+		}
+		compatibility_modifier = {
+			who = scope:actor
+			compatibility_target = scope:recipient
+			multiplier = 0.2
+		}
+		opinion_modifier = {
+			who = scope:recipient
+			opinion_target = scope:actor
+			multiplier = 0.5
+		}
+		ai_value_modifier = {
+			who = scope:recipient
+			ai_honor = 0.2
+			ai_compassion = 0.1
+			ai_rationality = 0.2
+			ai_greed = 0.2
+			ai_sociability = 0.1
+		}
+		ai_value_modifier = {
+			trigger = { trait_is_shunned_or_criminal_in_faith_trigger = { FAITH = scope:recipient.faith TRAIT = witch GENDER_CHARACTER = scope:actor } }
+			ai_zeal = -0.5
+			max = 20
+		}
+
+		# Are they important (to me)
+		modifier = {
+			add = {
+				value = scope:recipient.highest_held_title_tier
+				subtract = scope:actor.highest_held_title_tier
+				multiply = 10
+			}
+		}
+		modifier = {
+			OR = {
+				is_close_family_of = scope:recipient
+				is_consort_of = scope:recipient
+				has_relation_lover = scope:recipient
+				has_relation_friend = scope:recipient
+			}
+			add = 20
+		}
+		modifier = {
+			OR = {
+				has_relation_best_friend = scope:recipient
+				has_relation_soulmate = scope:recipient
+			}
+			add = 30
+		}
+		modifier = {
+			exists = house
+			exists = scope:recipient.house
+			house = scope:recipient.house
+			add = 10
+		}
+
+		# Do I want to spread the word
+		ai_value_modifier = {
+			ai_sociability = 0.2
+			ai_compassion = 0.1
+			ai_boldness = 0.4
+			min = -20
+		}
+	}
+}
