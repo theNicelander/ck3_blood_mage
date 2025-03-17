@@ -37,7 +37,7 @@ trait_drain_physique_cost = {
 }
 
 trait_drain_beauty_cost = {
-    add = trait_drain_base_piety_cost
+    value = trait_drain_base_piety_cost
     if = {
         limit = { has_trait = beauty_good_1 }
         add = trait_drain_level_1_piety_cost
@@ -49,7 +49,7 @@ trait_drain_beauty_cost = {
 }
 
 enhance_blood_mage_personal_piety_level_cost = {
-    add = 1
+    value = 1
     if = {
         limit = {
             has_trait = lifestyle_blood_mage_1
@@ -59,7 +59,7 @@ enhance_blood_mage_personal_piety_level_cost = {
 }
 
 enhance_blood_mage_personal_piety_level_cost_negative = {
-    add = -1
+    value = -1
     if = {
         limit = {
             has_trait = lifestyle_blood_mage_1
@@ -69,7 +69,7 @@ enhance_blood_mage_personal_piety_level_cost_negative = {
 }
 
 blood_mage_rank_multiplier = {
-    add = 1
+    value = 10
     if = {
         limit = { has_trait = lifestyle_blood_mage_1 }
         add = 1
