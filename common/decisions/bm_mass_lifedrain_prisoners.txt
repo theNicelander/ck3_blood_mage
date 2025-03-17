@@ -7,6 +7,12 @@
     is_shown = { has_trait = lifestyle_blood_mage_group }
     is_valid = { 
         has_trait = lifestyle_blood_mage_group
+        custom_tooltip = {
+			text = "Has someone imprisoned"	
+			any_prisoner = {
+				count >= 1
+			}
+		}
     }
     
     effect = {
