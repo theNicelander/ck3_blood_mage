@@ -7,36 +7,17 @@ bm_channel_lifeforce_minor.99 = {
     title = channel_lifeforce_minor_decision
     desc = channel_lifeforce_minor_decision_tooltip_desc
     theme = witchcraft
-
-    option = {
-        name = "I want to learn faster"
-
-        add_piety = lifedrain_piety_cost_neg
-        add_character_modifier = {
-            modifier = exp_lifeforce_modifier
-            days = 1825
-        }
-
-        trigger = { NOT = { has_character_modifier = exp_lifeforce_modifier } }
-
-        ai_chance = { base = 10 }
-    }
-
     
     option = {
-        name = "Improve a skill"
+        name = "Improve a skill slightly"
         ai_chance = { base = 10 }
-
         trigger_event = { id = bm_channel_lifeforce_minor.0002 }
     }
-
     option = {
         name = "Improve a skill greatly, for a short while"
         ai_chance = { base = 10 }
-
         trigger_event = { id = bm_channel_lifeforce_minor.0001 }
     }
-
 
     # Portraits
     left_portrait ={
@@ -53,73 +34,56 @@ bm_channel_lifeforce_minor.0001 = {
 
     option = {
         name = "Diplomacy"
-
         add_character_modifier = {
             modifier = diplomacy_lifeforce_modifier
             days = 1825
         }
-        
         trigger = { NOT = { has_character_modifier = diplomacy_lifeforce_modifier } }
         ai_chance = { base = 100 }
     }
     option = {
         name = "Martial"
-
         add_character_modifier = {
             modifier = martial_lifeforce_modifier
             days = 1825
         }
-
-        
         trigger = { NOT = { has_character_modifier = martial_lifeforce_modifier } }
         ai_chance = { base = 100 }
     }
     option = {
         name = "Stewardship"
-
         add_character_modifier = {
             modifier = stewardship_lifeforce_modifier
             days = 1825
         }
-
-        
         trigger = { NOT = { has_character_modifier = stewardship_lifeforce_modifier } }
         ai_chance = { base = 100 }
     }
 
     option = {
         name = "Intrigue"
-
         add_character_modifier = {
             modifier = intrigue_lifeforce_modifier
             days = 1825
         }
-
-        
         trigger = { NOT = { has_character_modifier = intrigue_lifeforce_modifier } }
         ai_chance = { base = 100 }
     }
     option = {
         name = "Learning"
-
         add_character_modifier = {
             modifier = learning_lifeforce_modifier
             days = 1825
         }
-
-        
         trigger = { NOT = { has_character_modifier = learning_lifeforce_modifier } }
         ai_chance = { base = 100 }
     }
     option = {
         name = "Prowess"
-
         add_character_modifier = {
             modifier = prowess_lifeforce_modifier
             days = 1825
         }
-
-        
         trigger = { NOT = { has_character_modifier = prowess_lifeforce_modifier } }
         ai_chance = { base = 100 }
     }
@@ -127,9 +91,7 @@ bm_channel_lifeforce_minor.0001 = {
     # Do nothing
     option = {
         name = "Nevermind, let me choose something else"
-        ai_chance = {
-            base = 10
-        }
+        ai_chance = { base = 10 }
         trigger_event = { id = bm_channel_lifeforce_minor.99 }
     }
 
@@ -149,42 +111,34 @@ bm_channel_lifeforce_minor.0002 = {
     option = {
         name = "Diplomacy"
         add_diplomacy_skill = 1
-        
         ai_chance = { base = 100 }
     }
     option = {
         name = "Martial"
         add_martial_skill = 1
-        
         ai_chance = { base = 100 }
     }
     option = {
         name = "Stewardship"
         add_stewardship_skill = 1
-        
         ai_chance = { base = 100 }
     }
-
     option = {
         name = "Intrigue"
         add_intrigue_skill = 1
-        
         ai_chance = { base = 100 }
     }
     option = {
         name = "Learning"
         add_learning_skill = 1
-        
         ai_chance = { base = 100 }
     }
     option = {
         name = "Prowess"
         add_prowess_skill = 2
-        
         ai_chance = { base = 100 }
     }
 
-    # Do nothing
     # Do nothing
     option = {
         name = "Nevermind, let me choose something else"

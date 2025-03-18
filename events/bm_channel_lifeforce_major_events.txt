@@ -1,136 +1,31 @@
 ﻿# Spend Lifeforce event
 
-namespace = bm_channel_lifeforce_minor
+namespace = bm_channel_lifeforce_major
 
-bm_channel_lifeforce_minor.99 = {
+bm_channel_lifeforce_major.99 = {
     type = character_event
-    title = channel_lifeforce_minor_decision
-    desc = channel_lifeforce_minor_decision_tooltip_desc
+    title = channel_lifeforce_major_decision
+    desc = channel_lifeforce_major_decision_tooltip_desc
     theme = witchcraft
 
     option = {
         name = "I want to learn faster"
-
-        add_piety = lifedrain_piety_cost_neg
+        trigger = { NOT = { has_character_modifier = exp_lifeforce_modifier } }
         add_character_modifier = {
             modifier = exp_lifeforce_modifier
             days = 1825
         }
-
-        trigger = { NOT = { has_character_modifier = exp_lifeforce_modifier } }
-
         ai_chance = { base = 10 }
     }
-
-    
     option = {
         name = "Improve a skill"
         ai_chance = { base = 10 }
-
-        trigger_event = { id = bm_channel_lifeforce_minor.0002 }
+        trigger_event = { id = bm_channel_lifeforce_major.0002 }
     }
-
     option = {
         name = "Improve a skill greatly, for a short while"
         ai_chance = { base = 10 }
-
-        trigger_event = { id = bm_channel_lifeforce_minor.0001 }
-    }
-
-
-    # Portraits
-    left_portrait ={
-        character = root
-        animation = ecstasy
-    }
-}
-
-bm_channel_lifeforce_minor.0001 = {
-    type = character_event
-    title = channel_lifeforce_minor_decision
-    desc = channel_lifeforce_minor_decision_tooltip_desc
-    theme = witchcraft
-
-    option = {
-        name = "Diplomacy"
-
-        add_character_modifier = {
-            modifier = diplomacy_lifeforce_modifier
-            days = 1825
-        }
-        
-        trigger = { NOT = { has_character_modifier = diplomacy_lifeforce_modifier } }
-        ai_chance = { base = 100 }
-    }
-    option = {
-        name = "Martial"
-
-        add_character_modifier = {
-            modifier = martial_lifeforce_modifier
-            days = 1825
-        }
-
-        
-        trigger = { NOT = { has_character_modifier = martial_lifeforce_modifier } }
-        ai_chance = { base = 100 }
-    }
-    option = {
-        name = "Stewardship"
-
-        add_character_modifier = {
-            modifier = stewardship_lifeforce_modifier
-            days = 1825
-        }
-
-        
-        trigger = { NOT = { has_character_modifier = stewardship_lifeforce_modifier } }
-        ai_chance = { base = 100 }
-    }
-
-    option = {
-        name = "Intrigue"
-
-        add_character_modifier = {
-            modifier = intrigue_lifeforce_modifier
-            days = 1825
-        }
-
-        
-        trigger = { NOT = { has_character_modifier = intrigue_lifeforce_modifier } }
-        ai_chance = { base = 100 }
-    }
-    option = {
-        name = "Learning"
-
-        add_character_modifier = {
-            modifier = learning_lifeforce_modifier
-            days = 1825
-        }
-
-        
-        trigger = { NOT = { has_character_modifier = learning_lifeforce_modifier } }
-        ai_chance = { base = 100 }
-    }
-    option = {
-        name = "Prowess"
-
-        add_character_modifier = {
-            modifier = prowess_lifeforce_modifier
-            days = 1825
-        }
-
-        
-        trigger = { NOT = { has_character_modifier = prowess_lifeforce_modifier } }
-        ai_chance = { base = 100 }
-    }
-
-    # Do nothing
-    option = {
-        name = "Nevermind, let me choose something else"
-        ai_chance = {
-            base = 10
-        }
-        trigger_event = { id = bm_channel_lifeforce_minor.99 }
+        trigger_event = { id = bm_channel_lifeforce_major.0001 }
     }
 
     # Portraits
@@ -140,58 +35,48 @@ bm_channel_lifeforce_minor.0001 = {
     }
 }
 
-bm_channel_lifeforce_minor.0002 = {
+bm_channel_lifeforce_major.0002 = {
     type = character_event
-    title = channel_lifeforce_minor_decision
-    desc = channel_lifeforce_minor_decision_tooltip_desc
+    title = channel_lifeforce_major_decision
+    desc = channel_lifeforce_major_decision_tooltip_desc
     theme = witchcraft
 
     option = {
         name = "Diplomacy"
-        add_diplomacy_skill = 1
-        
+        add_diplomacy_skill = 2
         ai_chance = { base = 100 }
     }
     option = {
         name = "Martial"
-        add_martial_skill = 1
-        
+        add_martial_skill = 2
         ai_chance = { base = 100 }
     }
     option = {
         name = "Stewardship"
-        add_stewardship_skill = 1
-        
+        add_stewardship_skill = 2
         ai_chance = { base = 100 }
     }
-
     option = {
         name = "Intrigue"
-        add_intrigue_skill = 1
-        
+        add_intrigue_skill = 2
         ai_chance = { base = 100 }
     }
     option = {
         name = "Learning"
-        add_learning_skill = 1
-        
+        add_learning_skill = 2
         ai_chance = { base = 100 }
     }
     option = {
         name = "Prowess"
-        add_prowess_skill = 2
-        
+        add_prowess_skill = 4
         ai_chance = { base = 100 }
     }
 
     # Do nothing
-    # Do nothing
     option = {
         name = "Nevermind, let me choose something else"
-        ai_chance = {
-            base = 10
-        }
-        trigger_event = { id = bm_channel_lifeforce_minor.99 }
+        trigger_event = { id = bm_channel_lifeforce_major.99 }
+        ai_chance = { base = 10 }
     }
 
     # Portraits
