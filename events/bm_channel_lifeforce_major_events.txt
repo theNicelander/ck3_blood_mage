@@ -21,11 +21,7 @@ bm_channel_lifeforce_major.99 = {
         name = "Improve a skill"
         ai_chance = { base = 10 }
         trigger_event = { id = bm_channel_lifeforce_major.0002 }
-    }
-    option = {
-        name = "Improve a skill greatly, for a short while"
-        ai_chance = { base = 10 }
-        trigger_event = { id = bm_channel_lifeforce_major.0001 }
+        custom_tooltip = "Choose a skill to permanently improve by 2"
     }
 
     # Portraits
