@@ -89,3 +89,27 @@ add_blood_mage_exp_trait_drain = {
         }
     }
 }
+
+add_blood_mage_exp_grant_blood_mage_trait = {
+        if = {
+        limit = { has_trait = lifestyle_blood_mage_0 }
+        add_trait_xp = {
+            trait = lifestyle_blood_mage_0
+            value = 2
+        }
+    }
+    if = {
+        limit = { has_trait = lifestyle_blood_mage_1 }
+        add_trait_xp = {
+            trait = lifestyle_blood_mage_1
+            value = 1
+        }
+    }
+    if = {
+        limit = { has_trait = lifestyle_blood_mage_2 }
+        add_trait_xp = {
+            trait = lifestyle_blood_mage_2
+            value = {0 1}
+        }
+    }
+}
