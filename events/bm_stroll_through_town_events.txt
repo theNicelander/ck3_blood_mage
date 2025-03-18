@@ -68,11 +68,13 @@ bm_stroll_town.002 = {
                     multiplier = 2
                 }
                 trigger_event = { id = bm_stroll_town.003 }
+                scope:beggar = { death = { death_reason = death_sacrificed_to_gods } }
             }
 
             10 = {
                 custom_tooltip = "Witnessed"
                 trigger_event = { id = bm_stroll_town.004 }
+                scope:beggar = { death = { death_reason = death_sacrificed_to_gods } }
             }
             20 = {
                 custom_tooltip = "They get away"
@@ -80,7 +82,7 @@ bm_stroll_town.002 = {
             }
         }
 
-        scope:beggar = { death = { death_reason = death_sacrificed_to_gods } }
+        
 
         ai_chance = { base = 10 }
     }
@@ -92,7 +94,7 @@ bm_stroll_town.002 = {
             has_trait = lifestyle_blood_mage_group
         }
         scope:beggar = { remove_trait = wounded_1 }
-        blood_magic_used = yes
+        blood_magic_used_set_exp = { EXP = 1 }
         add_piety = cure_illness_cost_small_neg
         root.capital_county = {
             add_county_modifier = {
