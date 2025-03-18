@@ -1,0 +1,83 @@
+﻿# Spend Lifeforce event
+
+namespace = bm_channel_lifeforce_major
+
+bm_channel_lifeforce_major.99 = {
+    type = character_event
+    title = channel_lifeforce_major_decision
+    desc = channel_lifeforce_major_decision_tooltip_desc
+    theme = witchcraft
+
+    option = {
+        name = "I want to learn faster"
+        trigger = { NOT = { has_character_modifier = exp_lifeforce_modifier } }
+        add_character_modifier = {
+            modifier = exp_lifeforce_modifier
+            days = 1825
+        }
+        ai_chance = { base = 10 }
+    }
+    option = {
+        name = "Improve a skill"
+        ai_chance = { base = 10 }
+        trigger_event = { id = bm_channel_lifeforce_major.0002 }
+        custom_tooltip = "Choose a skill to permanently improve by 2"
+    }
+
+    # Portraits
+    left_portrait ={
+        character = root
+        animation = ecstasy
+    }
+}
+
+bm_channel_lifeforce_major.0002 = {
+    type = character_event
+    title = channel_lifeforce_major_decision
+    desc = channel_lifeforce_major_decision_tooltip_desc
+    theme = witchcraft
+
+    option = {
+        name = "Diplomacy"
+        add_diplomacy_skill = 2
+        ai_chance = { base = 100 }
+    }
+    option = {
+        name = "Martial"
+        add_martial_skill = 2
+        ai_chance = { base = 100 }
+    }
+    option = {
+        name = "Stewardship"
+        add_stewardship_skill = 2
+        ai_chance = { base = 100 }
+    }
+    option = {
+        name = "Intrigue"
+        add_intrigue_skill = 2
+        ai_chance = { base = 100 }
+    }
+    option = {
+        name = "Learning"
+        add_learning_skill = 2
+        ai_chance = { base = 100 }
+    }
+    option = {
+        name = "Prowess"
+        add_prowess_skill = 4
+        ai_chance = { base = 100 }
+    }
+
+    # Do nothing
+    option = {
+        name = "Nevermind, let me choose something else"
+        trigger_event = { id = bm_channel_lifeforce_major.99 }
+        ai_chance = { base = 10 }
+    }
+
+    # Portraits
+    left_portrait ={
+        character = root
+        animation = ecstasy
+    }
+}

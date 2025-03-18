@@ -61,7 +61,7 @@ bm_stroll_town.002 = {
             skill = intrigue
             value = 0
 
-            0 = {
+            10 = {
                 custom_tooltip = "Silent Harvest"
                 compare_modifier = {
                     value = scope:duel_value
@@ -71,7 +71,7 @@ bm_stroll_town.002 = {
                 scope:beggar = { death = { death_reason = death_sacrificed_to_gods } }
             }
 
-            10 = {
+            20 = {
                 custom_tooltip = "Witnessed"
                 trigger_event = { id = bm_stroll_town.004 }
                 scope:beggar = { death = { death_reason = death_sacrificed_to_gods } }

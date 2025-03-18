@@ -22,13 +22,13 @@ bm_trait_drain.001 = {
         duel = {
             skill = learning
             target = scope:recipient
-            0 = {
+            10 = {
                 desc = "I drain their intellect"
 
                 # Multiplier increases as your blood mage power increases
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = blood_mage_rank_multiplier
+                    multiplier = 2
                 }
 
                 # Base chance increases as your blood mage power increases
@@ -41,7 +41,7 @@ bm_trait_drain.001 = {
                 intellect_drain_trait_effects = yes
                 add_blood_mage_exp_trait_drain = yes
             }
-            10 = {
+            30 = {
                 desc = "I fail"
                 temporary_negative_lifeforce_effect = yes
                 modifier = { add = trait_drain_modifer_per_trait }
@@ -53,7 +53,6 @@ bm_trait_drain.001 = {
             EXECUTIONER = scope:actor
         }
         ai_chance = { base = 100 }
-
     }
 
     # Strength drain -- Gain hale / robust / (amazonian or herculean)
@@ -68,13 +67,13 @@ bm_trait_drain.001 = {
         duel = {
             skill = learning
             target = scope:recipient
-            0 = {
+            10 = {
                 desc = "I drain their strength"
 
                 # Multiplier increases as your blood mage power increases
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = blood_mage_rank_multiplier
+                    multiplier = 2
                 }
 
                 # Base chance increases as your blood mage power increases
@@ -87,7 +86,7 @@ bm_trait_drain.001 = {
                 physique_drain_trait_effects = yes
                 add_blood_mage_exp_trait_drain = yes
             }
-            10 = {
+            30 = {
                 desc = "I fail"
                 temporary_negative_lifeforce_effect = yes
 
@@ -115,13 +114,13 @@ bm_trait_drain.001 = {
         duel = {
             skill = learning
             target = scope:recipient
-            0 = {
+            10 = {
                 desc = "I drain their beauty"
 
                 # Multiplier increases as your blood mage power increases
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = blood_mage_rank_multiplier
+                    multiplier = 2
                 }
 
                 # Base chance increases as your blood mage power increases
@@ -134,7 +133,7 @@ bm_trait_drain.001 = {
                 beauty_drain_trait_effects = yes
                 add_blood_mage_exp_trait_drain = yes
             }
-            10 = {
+            30 = {
                 desc = "I fail"
                 temporary_negative_lifeforce_effect = yes
 
@@ -162,12 +161,12 @@ bm_trait_drain.001 = {
             duel = {
                 skill = learning
                 value = 0
-                0 = {
+                10 = {
                     desc = "Nice"
                     # Multiplier increases as your blood mage power increases
                     compare_modifier = {
                         value = scope:duel_value
-                        multiplier = blood_mage_rank_multiplier
+                        multiplier = 2
                     }
 
                     # Base chance increases as your blood mage power increases
@@ -177,7 +176,7 @@ bm_trait_drain.001 = {
                     add_trait = fecund
                     add_blood_mage_exp_trait_drain = yes
                 }
-                10 = {
+                30 = {
                     desc = "I fail"
                     temporary_negative_lifeforce_effect = yes
 
@@ -206,12 +205,12 @@ bm_trait_drain.001 = {
             duel = {
                 skill = learning
                 value = 0
-                0 = {
+                10 = {
                     desc = "I become a Giant"
                     # Multiplier increases as your blood mage power increases
                     compare_modifier = {
                         value = scope:duel_value
-                        multiplier = blood_mage_rank_multiplier
+                        multiplier = 2
                     }
 
                     # Base chance increases as your blood mage power increases
@@ -221,7 +220,7 @@ bm_trait_drain.001 = {
                     add_trait = giant
                     add_blood_mage_exp_trait_drain = yes
                 }
-                10 = {
+                30 = {
                     desc = "I fail"
                     temporary_negative_lifeforce_effect = yes
 
@@ -250,12 +249,12 @@ bm_trait_drain.001 = {
             duel = {
                 skill = learning
                 value = 0
-                0 = {
+                10 = {
                     desc = "I become a pure blooded"
                     # Multiplier increases as your blood mage power increases
                     compare_modifier = {
                         value = scope:duel_value
-                        multiplier = blood_mage_rank_multiplier
+                        multiplier = 2
                     }
 
                     # Base chance increases as your blood mage power increases
@@ -265,7 +264,7 @@ bm_trait_drain.001 = {
                     add_trait = pure_blooded
                     add_blood_mage_exp_trait_drain = yes
                 }
-                10 = {
+                30 = {
                     desc = "I fail"
                     temporary_negative_lifeforce_effect = yes
 
