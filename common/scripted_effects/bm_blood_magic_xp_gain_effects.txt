@@ -25,6 +25,10 @@ blood_magic_exp_flat = {
 
 # Gives 1 for novice, and 0-1 for others
 add_blood_magic_exp_novice_favored = {
+    add_trait_xp = {
+        trait = lifestyle_blood_mage_0
+        value = { 0 1 }
+    }
     if = {
         limit = { has_trait = lifestyle_blood_mage_0 }
         add_trait_xp = {
