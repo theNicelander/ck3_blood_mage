@@ -14,7 +14,7 @@ bm_convert_to_blood_cult.001 = {
         duel = {
             skill = learning
             target = scope:recipient
-            10 = {
+            50 = {
                 desc = "I successfully indoctrinate them into the Blood Cult"
 				compare_modifier = {
 					value = scope:duel_value
@@ -22,7 +22,7 @@ bm_convert_to_blood_cult.001 = {
 				}
                 scope:recipient = { set_character_faith = faith:cult_of_blood }
             }
-            30 = {
+            50 = {
                 desc = "I fail"
                 temporary_negative_lifeforce_effect = yes
             }

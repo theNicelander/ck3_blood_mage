@@ -39,373 +39,209 @@ talknafjordur = {
 amsterdam = {
     county = c_holland
     barony = b_amsterdam
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { intrigue = 1 }
 }
 berlin = {
     county = c_berlin
     barony = b_berlin
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { stewardship = 1 }
 }
 bern = {
     county = c_bern
     barony = b_bern
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { diplomacy = 1 }
 }
 bratislava = {
     county = c_poszony
     barony = b_poszony
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { stewardship = 1 }
 }
 brussels = {
     county = c_brabant
     barony = b_brussels
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { martial = 1 }
 }
 bucharest = {
     county = c_bucuresti
     barony = b_bucuresti
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { diplomacy = 1 }
 }
 budapest = {
     county = c_visegrad
     barony = b_visegrad_hun # kinda accurate, prefer to have it the dutchy capital and close enough?
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { intrigue = 1 }
 }
 copenhagen = {
     county = c_sjaelland
     barony = b_hafn
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { martial = 1 }
 }
 dublin = {
     county = c_dublin
     barony = b_dublin
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { stewardship = 1 }
 }
 helsinki = {
     county = c_nyland
     barony = b_porvoo
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { martial = 1 }
 }
 lisbon = {
     county = c_lisboa
     barony = b_lisboa
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { intrigue = 1 }
 }
 ljubljana = {
     county = c_ljubljana
     barony = b_ljubljana
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { prowess = 2 }
 }
 london = {
     county = c_middlesex
     barony = b_london
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { martial = 1 }
 }
 luxembourg = {
     county = c_luxembourg
     barony = b_luxembourg
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { diplomacy = 1 }
 }
 madrid = {
     county = c_madrid
     barony = b_madrid
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { stewardship = 1 }
 }
 nicosia = {
     county = c_nicosia
     barony = b_nicosia
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { stewardship = 1 }
 }
 moscow = {
     county = c_moskva
     barony = b_moskva
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { learning = 1 }
 }
 oslo = {
     county = c_vingulmork
     barony = b_oslosyslar
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { learning = 1 }
 }
 paris = {
     county = c_ile_de_france
     barony = b_paris
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { martial = 1 }
 }
 prague = {
     county = c_praha
     barony = b_praha
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { intrigue = 1 }
 }
 sofia = {
     county = c_sredets
     barony = b_sredets
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { intrigue = 1 }
 }
 stockholm = {
     county = c_sodermannaland
     barony = b_strigines
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { stewardship = 1 }
 }
 tallinn = {
     county = c_reval
     barony = b_reval
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { prowess = 2 }
 }
 valletta = {
     county = c_malta
     barony = b_malta
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { martial = 1 }
 }
 vienna = {
     county = c_vienna
     barony = b_vienna
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { stewardship = 1 }
 }
 vilnius = {
     county = c_kernave
     barony = b_vilnius
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { learning = 1 }
 }
 warsaw = {
     county = c_czerska
     barony = b_warszawa
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { diplomacy = 1 }
 }
 zagreb = {
     county = c_zagreb
     barony = b_zagreb
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { martial = 1 }
 }
 
 # others
 barcelona = {
     county = c_barcelona
     barony = b_barcelona
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { diplomacy = 1 }
 }
 edinburgh = {
     county = c_lothian
     barony = b_edinburgh
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { prowess = 2 }
 }
 torshavn = {
     county = c_faereyar
     barony = b_torshavn
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { martial = 1 }
 }
 cardiff = {
     county = c_glamorgan
     barony = b_cardiff
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { diplomacy = 1 }
 }
 monaco = {
     county = c_genoa
     barony = b_monaco
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { martial = 1 }
 }
 madeira = {
     county = c_madeira
     barony = b_madeira
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { martial = 1 }
 }
 tenerife = {
     county = c_canarias
     barony = b_tenerife
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { diplomacy = 1 }
 }
 mallorca = {
     county = c_mallorca
     barony = b_palma
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { intrigue = 1 }
 }
 cagliari = {
     county = c_cagliari
     barony = b_cagliari
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { stewardship = 1 }
 }
 palermo = {
     county = c_palermo
     barony = b_palermo
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { learning = 1 }
 }
 isle_of_man = {
     county = c_isle_of_man
     barony = b_castletown
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { intrigue = 1 }
 }
 
 # Wonders
 stonehenge = {
     county = c_wiltshire
     barony = b_salisbury
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { stewardship = 1 }
 }
 carnac = { # Ancient megalith in france
     county = c_vannes
     barony = b_vannes
-    character_modifier = {
-        learning = 1
-        general_opinion = 2
-        monthly_lifestyle_xp_gain_mult = 0.02
-    }
+    character_modifier = { diplomacy = 1 }
 }
