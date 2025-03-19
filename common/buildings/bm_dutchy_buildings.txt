@@ -6,8 +6,6 @@
         building_requirement_castle_city_church = { LEVEL = 01 }
         scope:holder = { has_trait = lifestyle_blood_mage_group }
     }
-
-    is_enabled = { county.duchy.holder = county.holder }
     show_disabled = yes
 
     cost = {
@@ -21,7 +19,7 @@
         cultural_head_fascination_mult = 0.05
     }
 
-    duchy_capital_county_modifier = {
+    county_modifier = {
         development_growth = 0.1
     }
 
@@ -33,7 +31,7 @@
 
     type_icon = "bm_university.dds"
 
-    type = duchy_capital
+    # type = duchy_capital
 
     ai_value = {
         base = 100
@@ -62,9 +60,6 @@ bm_university_1 = {
         }
     }
 
-    is_enabled = {
-        county.duchy.holder = county.holder
-    }
     show_disabled = yes
 
     cost = {
@@ -80,7 +75,7 @@ bm_university_1 = {
         monthly_lifestyle_xp_gain_mult = 0.03
     }
 
-    duchy_capital_county_modifier = {
+    county_modifier = {
         development_growth = 0.15
     }
 
@@ -92,7 +87,7 @@ bm_university_1 = {
 
     type_icon = "bm_university.dds"
 
-    type = duchy_capital
+    # type = duchy_capital
 
     ai_value = {
         base = 100
@@ -124,9 +119,6 @@ bm_university_2 = {
         }
     }
 
-    is_enabled = {
-        county.duchy.holder = county.holder
-    }
     show_disabled = yes
 
     cost = {
@@ -142,7 +134,7 @@ bm_university_2 = {
         monthly_lifestyle_xp_gain_mult = 0.06
     }
 
-    duchy_capital_county_modifier = {
+    county_modifier = {
         development_growth = 0.2
     }
 
@@ -154,7 +146,7 @@ bm_university_2 = {
 
     type_icon = "bm_university.dds"
 
-    type = duchy_capital
+    # type = duchy_capital
 
     ai_value = {
         base = 100
@@ -185,9 +177,6 @@ bm_university_3 = {
         }
     }
 
-    is_enabled = {
-        county.duchy.holder = county.holder
-    }
     show_disabled = yes
 
     cost = {
@@ -203,7 +192,7 @@ bm_university_3 = {
         monthly_lifestyle_xp_gain_mult = 0.1
     }
 
-    duchy_capital_county_modifier = {
+    county_modifier = {
         development_growth = 0.3
     }
 
@@ -213,7 +202,7 @@ bm_university_3 = {
 
     type_icon = "bm_university.dds"
 
-    type = duchy_capital
+    # type = duchy_capital
 
     ai_value = {
         base = 100
