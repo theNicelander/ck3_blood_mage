@@ -1,0 +1,112 @@
+# Crusader Kings 3 Traits System Reference Guide
+
+## Overview of Traits
+Traits in CK3 represent a character's personality, abilities, physical characteristics, and reputation. They affect attributes, opinions, stress, and provide special options in events. Most traits have point costs in the Ruler Designer.
+
+## Personality Traits
+
+Personality traits define a character's core behavior and significantly impact stress gain/loss. Characters typically have 2-3 personality traits, which are difficult to change once set.
+
+Key examples:
+- **Ambitious**: +1 to all skills, -15 Opinion of Liege, +25% Stress Gain
+- **Diligent**: +2 Diplomacy, +3 Stewardship, +3 Learning, -50% Stress Loss
+- **Honest**: +2 Diplomacy, -4 Intrigue, gains stress when lying/blackmailing
+- **Just**: +2 Stewardship, -3 Intrigue, +1 Learning, +15 Minority Vassal Opinion
+- **Zealous**: +2 Martial, +20% Monthly Piety, -35 Opinion of Different Faith
+- **Paranoid**: -1 Diplomacy, +3 Intrigue, +100% Stress gain, +25% Dread Gain
+- **Sadistic**: +2 Intrigue, +4 Prowess, +35 Natural Dread, -10 General Opinion
+
+## Education Traits
+
+Education traits are gained at age 16 based on childhood education and determine a character's skill specialty.
+
+Notable traits:
+- **Diplomacy**: Range from Naive Appeaser (+2) to Grey Eminence (+8)
+- **Martial**: Range from Misguided Warrior (+2) to Brilliant Strategist (+8)
+- **Stewardship**: Range from Indulgent Wastrel (+2) to Midas Touched (+8)
+- **Intrigue**: Range from Amateurish Plotter (+2) to Elusive Shadow (+8)
+- **Learning**: Range from Conscientious Scribe (+2) to Mastermind Philosopher (+8)
+
+Level 5 traits (Virtuoso Arbitrator, Exalted Warlord, etc.) can be obtained with Legitimacy dynasty legacy or Education Hall upgrades.
+
+## Congenital Traits
+
+Heritable traits that can be passed to descendants with varying probabilities.
+
+Important examples:
+- **Fecund**: +50% Fertility, +5 Years Life Expectancy, +5 Years of Fertility
+- **Pure-blooded**: +10% Fertility, +0.25 Health, -50% Inbreeding Chance
+- **Giant**: +6 Prowess, -0.25 Health, reduced fertility
+- **Albino**: +15 Natural Dread, -10 General Opinion
+- **Melancholic**: -1 to several stats, -10% Fertility, -0.5 Health
+- **Lunatic**: -0.25 Health, -10 Attraction Opinion, -10 Vassal Opinion
+- **Possessed**: -0.5 Health, -10 Attraction Opinion, +10% Monthly Learning Lifestyle Experience
+
+## Leveled Congenital Traits
+
+These traits come in multiple levels (negative 3 to positive 3) that can increase in level if both parents have the same trait.
+
+Three key categories:
+- **Appearance**: Hideous (-3) to Beautiful (+3)
+- **Intelligence**: Imbecile (-3) to Genius (+3)
+- **Physique**: Feeble (-3) to Amazonian/Herculean (+3)
+
+## Physical Traits
+
+Non-genetic traits obtained through events or decisions:
+- **Shrewd**: +2 to all skills, +50 Rationality
+- **Strong**: +4 Prowess, +0.5 Health, +20 Energy
+
+## Traits Relevant for Blood Mage Gameplay
+
+### Learning-Focused Traits
+- **Learning education traits**: Gives significant bonuses to Learning skill
+- **Genius/Intelligent/Quick**: +5/+3/+1 Learning, increased lifestyle experience
+- **Shrewd**: +2 Learning, good rationality
+- **Zealous**: +20% Monthly Piety
+- **Zealot Vassal Opinion**: Several traits offer bonuses for this
+- **Scholar** (lifestyle trait): +10% Monthly Learning Lifestyle Experience
+
+### Health and Longevity
+- **Physique traits**: Herculean/Robust/Hale provide health bonuses
+- **Temperate**: +0.25 Health
+- **Fecund**: +5 Years Life Expectancy
+- **Pure-blooded**: +0.25 Health
+- **Health penalties**: Melancholic (-0.5), Lunatic (-0.25), Possessed (-0.5)
+- **Disease traits**: Various health penalties
+
+### Fertility Traits
+- **Fecund**: +50% Fertility
+- **Lustful**: +25% Fertility
+- **Chaste**: -25% Fertility
+- **Pure-blooded**: +10% Fertility
+- **Appearance traits**: Beauty affects attraction and fertility
+
+### Drainable Traits
+The Blood Mage mod allows draining several valuable traits:
+- **Intelligence traits**: Quick/Intelligent/Genius
+- **Physique traits**: Hale/Robust/Herculean/Strong
+- **Beauty traits**: Comely/Pretty/Handsome/Beautiful
+- **Giant**: Provides prowess bonus
+- **Fecund**: Enhances fertility and lifespan
+- **Pure-blooded**: Reduces inbreeding chance
+
+### Other Useful Traits
+- **Ambitious**: +1 to all skills including Learning
+- **Diligent**: +3 Learning, enables "Develop Capital" decision
+- **Patient**: +2 Learning, bonus to scheme resistance
+- **Just**: +1 Learning, provides legitimacy
+- **Cynical**: +2 Learning, -20% Monthly Piety
+
+## Key Traits for Blood Mage Gameplay
+
+1. **Learning-boosters**: Genius, Intelligent, Quick, Learning education traits
+2. **Piety-generators**: Zealous, Faithful, Devoted
+3. **Health-enhancers**: Herculean/Robust/Hale, Temperate, Pure-blooded
+4. **Fertility-boosters**: Fecund, Lustful, Beautiful/Pretty/Handsome
+5. **Drainable traits**: All congenital traits (particularly intelligence, physique, beauty)
+6. **Personality traits that reduce stress**: Important for balancing stress from blood magic
+7. **Rationality traits**: Help with decision-making and scheme success
+8. **Traits with monthly experience bonuses**: Speed up lifestyle progression
+
+The Blood Mage mod adds significant depth to trait management, as you can actively drain traits from prisoners rather than relying solely on marriage and inheritance to improve your dynasty's genetic profile. This creates interesting strategic decisions about which prisoners to keep for draining and which traits to prioritize.
