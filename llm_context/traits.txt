@@ -1,0 +1,247 @@
+# CK3 Traits Technical Reference
+
+## Congenital Traits System
+
+### Inheritance Mechanics
+Congenital traits have natural prevalence rates and inheritance probabilities. They can be:
+- **Active** (visible with effects)
+- **Inactive** (hidden, can be passed to descendants)
+
+### Inheritance Probabilities
+
+**Active Trait Inheritance**:
+
+| Mother \ Father | None | Inactive | Active |
+|-----------------|------|----------|--------|
+| None            | 0%   | 2%       | 25%    |
+| Inactive        | 2%   | 10%      | 50%    |
+| Active          | 25%  | 50%      | 80%    |
+
+**Inactive Trait Inheritance** (if not inherited actively):
+
+| Mother \ Father | None | Inactive | Active |
+|-----------------|------|----------|--------|
+| None            | 0%   | 25%      | 75%    |
+| Inactive        | 25%  | 50%      | 100%   |
+| Active          | 75%  | 100%     | 150%   |
+
+### Natural Prevalence Rates
+- **Mental Traits**: Melancholic (0.5%), Lunatic (0.5%), Possessed (0.5%)
+- **Tier 1 Traits** (+/-): Beauty/Intelligence/Physique: 0.5%
+- **Tier 2 Traits** (+/-): Beauty/Intelligence/Physique: 0.25%
+- **Tier 3 Traits** (+/-): Beauty/Intelligence/Physique: 0.15% (0.05% for Imbecile)
+- **Other Traits**: Most have 0.5% prevalence (Fecund: 0%)
+
+### Special Traits
+- **Pure-blooded**: -50% Inbreeding Chance, +10% Fertility, +0.25 Health
+- **Giant**: +6 Prowess, -0.25 Health, -5 Attraction Opinion
+- **Fecund**: +50% Fertility, +5 Years Life Expectancy, +5 Years of Fertility
+
+## Leveled Congenital Traits
+
+### Appearance Traits
+| Level | Trait | Diplomacy | Fertility | Attraction | Cost |
+|-------|-------|-----------|-----------|------------|------|
+| -3 | Hideous | -3 | -30% | -30 | -30 |
+| -2 | Ugly | -2 | -20% | -20 | -20 |
+| -1 | Homely | -1 | -10% | -10 | -10 |
+| +1 | Comely | +1 | +10% | +10 | +40 |
+| +2 | Pretty/Handsome | +2 | +20% | +20 | +80 |
+| +3 | Beautiful | +3 | +30% | +30 | +120 |
+
+### Intelligence Traits
+| Level | Trait | All Skills | Lifestyle XP | AI Rationality | Cost |
+|-------|-------|------------|--------------|----------------|------|
+| -3 | Imbecile | -8 | -30% | -200 | -45 |
+| -2 | Stupid | -4 | -20% | -75 | -30 |
+| -1 | Slow | -2 | -10% | -50 | -15 |
+| +1 | Quick | +1 | +10% | +50 | +80 |
+| +2 | Intelligent | +3 | +20% | +75 | +160 |
+| +3 | Genius | +5 | +30% | +200 | +240 |
+
+### Physique Traits
+| Level | Trait | Prowess | Health | Attraction | Cost |
+|-------|-------|---------|--------|------------|------|
+| -3 | Feeble | -6 | -1 | -10 | -45 |
+| -2 | Frail | -4 | -0.5 | -5 | -30 |
+| -1 | Delicate | -2 | -0.25 | 0 | -15 |
+| +1 | Hale | +2 | +0.25 | +5 | +60 |
+| +2 | Robust | +4 | +0.5 | +10 | +120 |
+| +3 | Amazonian/Herculean | +8 | +1 | +15 | +180 |
+
+## Physical Traits
+
+Non-genetic traits gained through events or decisions:
+
+| Trait | Effects | Cost |
+|-------|---------|------|
+| Shrewd | +2 All Skills, +50 Rationality | +50 |
+| Strong | +4 Prowess, +0.5 Health, +20 Energy | +50 |
+
+## Health Conditions
+
+### Injury Types
+| Trait | Health | Martial/Intrigue | Prowess | Dread | Attraction | Curable |
+|-------|--------|------------------|---------|-------|------------|---------|
+| Wounded | -1 | -1 | -2 | -10 | 0 | Yes |
+| Severely Injured | -2 | -2 | -4 | -15 | -10 | Yes |
+| Brutally Mauled | -4 | -4 | -8 | -20 | -20 | Yes |
+| Maimed | -3 | -2 | -4 | -15 | -10 | No |
+
+### Major Conditions
+| Trait | All Skills | Health | Stress Effect | Fertility | Cost |
+|-------|------------|--------|--------------|-----------|------|
+| Infirm | -3 | -1 | +100% Dread Loss | -30% | -20 |
+| Incapable | -6 | -3 | +100% Dread Loss | -1000% | N/A |
+| Blind | -2 to -6 | -0.25 | N/A | 0 | -10 |
+| Inbred | -5 | -1.5 | N/A | -50% | -30 |
+
+## Disease System
+
+- Base annual disease chance: 10% (can be reduced)
+- Immunity: Permanent for Bubonic Plague, Smallpox, Measles; 20 years for others
+- No immunity against the Ill trait
+- STDs are congenital and spread through sexual relations
+
+### Major Diseases
+| Disease | Health Penalty | Fertility | Skills Affected | Curable |
+|---------|---------------|-----------|-----------------|---------|
+| Bubonic Plague | Critical | -50% | All skills -2/-3 | Yes |
+| Cancer | Critical | -20% | None | Yes |
+| Great Pox | Severe | -20% | All skills -1 | Yes |
+| Leper | Severe | -95% | Prowess -8 | No |
+| Smallpox | Catastrophic | -25% | Several skills -2 | Yes |
+| Pneumonia | Critical | -50% | All skills -2 | Yes |
+
+## Education Traits
+
+Characters receive education traits at adulthood (age 16) based on childhood education.
+
+### Education Score System
+- Points accumulate through yearly rolls until age 16
+- Final trait level based on score: 0-7 (★), 8-12 (★★), 13-17 (★★★), 18+ (★★★★)
+- Level 5 traits require Legitimacy legacy or Education Hall
+
+### Diplomacy Education
+| Level | Trait | Skill | XP Bonus | Cost |
+|-------|-------|------|----------|------|
+| 1 | Naive Appeaser | +2 | +10% | 0 |
+| 2 | Adequate Bargainer | +4 | +20% | +20 |
+| 3 | Charismatic Negotiator | +6 | +30% | +40 |
+| 4 | Grey Eminence | +8 | +40% | +80 |
+| 5 | Virtuoso Arbitrator | +10 | +50% | +150 |
+
+### Martial Education
+| Level | Trait | Skill | XP Bonus | Cost |
+|-------|-------|------|----------|------|
+| 1 | Misguided Warrior | +2 | +10% | 0 |
+| 2 | Tough Soldier | +4 | +20% | +20 |
+| 3 | Skilled Tactician | +6 | +30% | +40 |
+| 4 | Brilliant Strategist | +8 | +40% | +80 |
+| 5 | Exalted Warlord | +10 | +50% | +150 |
+
+### Stewardship Education
+| Level | Trait | Skill | XP Bonus | Cost |
+|-------|-------|------|----------|------|
+| 1 | Indulgent Wastrel | +2 | +10% | 0 |
+| 2 | Thrifty Clerk | +4 | +20% | +20 |
+| 3 | Fortune Builder | +6 | +30% | +40 |
+| 4 | Midas Touched | +8 | +40% | +80 |
+| 5 | Golden Sovereign | +10 | +50% | +150 |
+
+### Intrigue Education
+| Level | Trait | Skill | XP Bonus | Cost |
+|-------|-------|------|----------|------|
+| 1 | Amateurish Plotter | +2 | +10% | 0 |
+| 2 | Flamboyant Trickster | +4 | +20% | +20 |
+| 3 | Intricate Webweaver | +6 | +30% | +40 |
+| 4 | Elusive Shadow | +8 | +40% | +80 |
+| 5 | Conniving Puppetmaster | +10 | +50% | +150 |
+
+### Learning Education
+| Level | Trait | Skill | XP Bonus | Cost |
+|-------|-------|------|----------|------|
+| 1 | Conscientious Scribe | +2 | +10% | 0 |
+| 2 | Insightful Thinker | +4 | +20% | +20 |
+| 3 | Astute Intellectual | +6 | +30% | +40 |
+| 4 | Mastermind Philosopher | +8 | +40% | +80 |
+| 5 | Erudite Oracle | +10 | +50% | +150 |
+
+## Commander Traits
+
+Commander traits give bonuses to armies led by characters with such traits.
+
+- Level progression through relevant battlefield performance
+- Level 2: Trait bonuses double
+- Level 3: Trait bonuses triple + 1 Advantage
+- Level 4: Trait bonuses quadruple + 2 Advantage + 1 Martial
+- Each trait costs 25 customization points
+
+| Trait | Effect | How To Level |
+|-------|--------|-------------|
+| Aggressive Attacker | +10% Enemy Fatal Casualties | Win battles as attacker |
+| Defender | -10% Friendly Fatal Casualties | Win battles as defender |
+| Faithful Blade | +4 Faith Hostility Advantage | Win battles vs. different religion |
+| Flexible Leader | -20% Enemy Defensive Advantage | Win any battles |
+| Forder | Crosses Rivers/Straits without penalties, +5 Travel Speed | Win battles in coastal/riverside provinces |
+| Logistician | +40% Supply Duration, +4 Travel Safety | Army movement to new provinces |
+
+## Faith Traits
+
+Traits specific to certain faiths that affect attributes, opinions, and capabilities.
+
+| Trait | Main Effects | AI Modifiers | Cost | Requirements |
+|-------|-------------|-------------|------|--------------|
+| Berserker | +2 Martial, +5 Prowess, +15 Natural Dread | +35 Boldness, -35 Rationality | +40 | Faith with Warmonger tenet |
+| Hajji | +5 Travel Speed/Safety, +5 Muslim Opinion | +20 Zeal | +30 | Completed Hajj pilgrimage |
+| Devoted | +0.3 Monthly Piety, +5 Same Faith Opinion | -10 Sociability | N/A | Faith with Monasticism tenet |
+| Order Member | +1 Martial, +4 Prowess, +15 Same Trait Opinion | +10 Zeal, +5 Honor | N/A | Holy Order member |
+| Crusader/Mujahid | +2 Martial, +3 Prowess, +15 Clergy Opinion | +10 Zeal | +50 | Participated in Crusade/Jihad |
+| Holy Monarch | +3 Martial, +0.5 Control Growth, +35 Popular Opinion | +25 Zeal | +120 | Great Holy War beneficiary |
+
+## Lifestyle Traits
+
+Traits gained from completing Lifestyle perk trees.
+
+| Lifestyle | Final Trait | Key Effects | AI Effects | Cost |
+|-----------|-------------|-------------|------------|------|
+| Diplomacy | August | +2 Diplomacy, +1 Martial, +1.00 Monthly Prestige | +20 Energy | +50 |
+| Diplomacy | Diplomat | +3 Diplomacy, +20 Independent Ruler Opinion | +20 Energy, +20 Sociability | +50 |
+| Diplomacy | Patriarch/Matriarch | +20% Fertility, +20% Stress Loss, +15 Family Opinion | +20 Energy, +20 Sociability | +50 |
+| Martial | Gallant | +2 Martial, +4 Prowess, +20% Monthly Prestige | +35 Boldness, +20 Honor | +50 |
+| Martial | Overseer | +2 Martial, +2 Stewardship, +0.50 Control Growth | +20 Rationality | +50 |
+| Martial | Strategist | +1 Diplomacy, +3 Martial, +25% Enemy Fatal Casualties | +30 Rationality | +50 |
+| Stewardship | Administrator | +1 Diplomacy, +3 Stewardship, +5 Vassal Opinion | +20 Rationality, +10 Energy | +50 |
+| Stewardship | Architect | +2 Stewardship, -15% Building Construction Time/Cost | +10 Energy, +5 Rationality | +50 |
+| Stewardship | Avaricious | +2 Stewardship, +15% Holding Taxes | +30 Greed, -20 Honor | +50 |
+| Intrigue | Schemer | +5 Intrigue, -20 Days Hostile Scheme Phase Length | -20 Honor | +50 |
+| Intrigue | Seducer/Seductress | +3 Intrigue, +20% Fertility, +40 Attraction Opinion | +20 Sociability, -10 Honor | +50 |
+| Intrigue | Torturer | +4 Prowess, +50% Dread Gain, +10% Levy Size | +20 Boldness, -30 Honor | +50 |
+| Learning | Scholar | +3 Learning, +10% Hostile/Personal Scheme Success | +30 Rationality | +50 |
+| Learning | Theologian | +3 Learning, +20% Monthly Piety, +15% Legend Seed chance | +20 Zeal, +10 Rationality | +50 |
+| Learning | Whole of Body | +20% Fertility, +0.50 Health, -20% Stress Gain | +20 Energy | +75 |
+
+## Personality Traits
+
+Key personality traits affect stress gain/loss and AI behavior. Characters typically have 2-3 personality traits.
+
+### Important Trait Pairs
+
+| Trait 1 | Effects | Trait 2 (Opposite) | Effects | Cost |
+|---------|---------|-------------------|---------|------|
+| Brave | +2 Martial, +3 Prowess, +10 Attraction | Craven | -2 Martial, +2 Intrigue, -3 Prowess | +40/-10 |
+| Calm | +1 Diplomacy/Intrigue, +10% Stress Loss | Wrathful | -1 Diplomacy, +3 Martial, +20 Natural Dread | +25/+30 |
+| Chaste | +2 Learning, -25% Fertility | Lustful | +2 Intrigue, +25% Fertility | +20/+25 |
+| Content | -1 Intrigue, +2 Learning, +20 Opinion of Liege | Ambitious | +1 All Skills, -15 Opinion of Liege | +20/+40 |
+| Diligent | +2 Diplomacy, +3 Stewardship/Learning | Lazy | -1 to All Skills, +50% Stress Loss | +40/-10 |
+| Forgiving | +2 Diplomacy, -2 Intrigue, +15 Prisoner Opinion | Vengeful | -2 Diplomacy, +2 Intrigue, +15% Dread Gain | +25/+30 |
+| Generous | +3 Diplomacy, -10% Monthly Income | Greedy | -2 Diplomacy, +5-10% Monthly Income | +20/+30 |
+| Gregarious | +2 Diplomacy, +0.10 Monthly Influence | Shy | -2 Diplomacy, +1 Learning, -5 Attraction | +30/-10 |
+| Honest | +2 Diplomacy, -4 Intrigue | Deceitful | -2 Diplomacy, +4 Intrigue | +20/+30 |
+| Humble | +0.5 Monthly Piety, +10 Opinion metrics | Arrogant | +1.00 Monthly Prestige, -5 Opinion metrics | +20/+20 |
+| Just | +2 Stewardship, -3 Intrigue, +1 Learning | Arbitrary | -2 Stewardship, +3 Intrigue, -1 Learning | +40/+30 |
+| Patient | +2 Learning, +10 Enemy Scheme Phase Length | Impatient | -2 Learning, +20% Monthly Prestige | +30/+25 |
+| Temperate | +2 Stewardship, +0.25 Health | Gluttonous | -2 Stewardship, +10% Stress Loss | +40/+20 |
+| Trusting | +2 Diplomacy, -2 Intrigue | Paranoid | -1 Diplomacy, +3 Intrigue | +10/-10 |
+| Zealous | +2 Martial, +20% Monthly Piety | Cynical | +2 Intrigue, +2 Learning, -20% Monthly Piety | +30/+30 |
+| Compassionate | +2 Diplomacy, -2 Intrigue, -15 Natural Dread | Callous | -2 Diplomacy, +2 Intrigue, +25% Dread Gain | +10/+40 |
