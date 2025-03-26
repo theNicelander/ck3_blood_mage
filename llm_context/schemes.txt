@@ -1,0 +1,105 @@
+# CK3 Schemes System Reference
+
+## Core Scheme Mechanics
+
+Every scheme in CK3 operates on two fundamental values:
+
+- **Success Chance**: Determines likelihood of scheme success when executed; grows over time
+- **Phase Length**: Controls scheme progression speed
+  - For Personal schemes: Time until completion
+  - For Hostile/Political schemes: Time to gain Advantage
+
+### Hostile and Political Scheme Values
+
+| Value | Description |
+|-------|-------------|
+| **Potential** | Maximum Success Chance (capped at 95%, except contracts)<br>- Schemer skills provide up to 30% Potential<br>- Remaining Potential comes from agents |
+| **Secrecy** | Likelihood of scheme remaining undetected<br>- Discovery chance on execution = missing Secrecy<br>- Monthly Breach chance = 1/10 of missing Secrecy<br>- Inactive during Grace period (6 months, 10 months with Court of Shadows perk) |
+| **Breaches** | Count of times scheme has been discovered<br>- Reduces Success Chance<br>- At 5 Breaches: automatic scheme failure |
+| **Advantage** | Resources for scheme execution or agent enticement<br>- Can execute scheme at 5+ Advantage<br>- Higher execution thresholds (10/15/20) increase Success Chance<br>- Starting Advantage = 1 per 5 points of Intrigue above 15 |
+
+### Scheme Targeting Restrictions
+- Cannot target own children with hostile schemes (except with Sadistic trait)
+- At war penalties: -50 Success Chance for Murder, -200 for Abduction
+
+## Hostile Schemes
+
+| Scheme | Skill | Max Secrecy | Success Effect | Secrecy Effect | Requirements |
+|--------|-------|-------------|----------------|----------------|--------------|
+| Murder | Intrigue | 95% | Target is killed | Only gain Murder/Attempted Murder secret | None |
+| Abduct | Intrigue | 85% | Target is imprisoned | Not accused of kidnapping crime | Kidnapper perk |
+| Fabricate Hook | Intrigue | 95% | Gain Hook on target | Can execute scheme again | Truth is Relative perk or Vengeful trait against Rival |
+| Claim Throne | Learning | 95% | Gain Pressed Claim on Liege's Primary Title | Don't lose large Prestige | Meritocracy perk, Landed |
+| Steal Artifact | Intrigue | 95% | Gain targeted artifact | Don't gain Stole Artifact crime | Artifact claim |
+| Overthrow Regent | Intrigue | 85% | Become new regent | Not accused of usurping regent crime | Target is regent of same liege |
+| Seize Realm | Intrigue | 95% | Take target's titles | Vassals less likely to become independent | Illustrious fame level, Target is duke+ |
+
+## Personal Schemes
+
+*No secrecy or agents. Failure prevents reuse against same character and may cause penalties.*
+
+| Scheme | Skill | Success Effect | Failure Effect | Requirements |
+|--------|-------|----------------|----------------|--------------|
+| Sway | Diplomacy | 95%: +25 Opinion<br>5%: +30 Opinion | 2%: -10 Opinion<br>2%: -10 Opinion + target gains +1 Intrigue and +8 Hostile Scheme Resistance for 5 years | None |
+| Learn Language | Learning | Learn target's language | Can choose half progress loss for 35 Stress<br>With Diplomat trait: +25 Opinion option | Target's language not known |
+| Seduce | Diplomacy | +20 Opinion<br>Chance of pregnancy if opposite gender<br>Becomes Lover if compatible sexuality<br>May gain relevant secrets | 40%: -10 Opinion<br>20%: Gain negative trait (Adulterer/Fornicator/Incestuous/Sodomite)<br>20%: -10 Opinion + negative trait | Target's sexuality compatible |
+| Romance | Diplomacy | Target becomes Soulmate<br>Can attempt to kill their Lover (50% discovery) | If no Lover: -10 Opinion | Both characters' sexuality compatible |
+| Befriend | Diplomacy | Friend becomes Best Friend<br>Rival ends rivalry<br>Faction members/leaders leave faction | -20 Opinion<br>With rival: -15 Opinion with every courtier<br>With Faction Leader: +20 Faction Discontent<br>With Spouse: exposes secret unless pay 100 Gold/have Hook<br>With Theocracy Vassal: realm capital -10 Control<br>With Direct Liege: -150 Prestige | Befriend Perk |
+| Elope | Intrigue | Target joins court and marries schemer<br>Divorces current spouses if married | 50% chance Lovers secret exposed | Target is Lover/Soulmate<br>Target is unlanded<br>Target in different court |
+| Convert to Witchcraft | Learning | With Accepted doctrine: gains Witch trait<br>With Shunned/Crime doctrine: gains "Is a Witch" secret<br>Either character's Witch secret is discovered | If schemer has Witch secret and both are vassals of same liege: liege discovers secret | Witch trait or secret |
+
+## Political Schemes (Roads to Power DLC)
+
+*For Administrative government characters only. No failure effects beyond Stress except Raid Estate.*
+
+| Scheme | Skill | Max Secrecy | Success Effect | Requirements |
+|--------|-------|-------------|----------------|--------------|
+| Challenge Status | Learning | Yes | Take Influence = to Scheme Success Chance<br>Target loses 5% Powerful Family Rating | None |
+| Promote | Diplomacy | No | Target gets Promoted modifier (10 years):<br>+20 Appointment Succession Score<br>+30 Acclamation Succession Score | None |
+| Slander | Diplomacy | Yes | Target gets Slandered modifier (10 years):<br>-25 Appointment Succession Score<br>-50 Acclamation Succession Score<br>-5% Governor Efficiency<br>20% chance for negative Nickname | Target is liege |
+| Damage Legitimacy | Intrigue | No | Target loses 50 Legitimacy | Target is liege |
+| Foster Legitimacy | Intrigue | No | Target gains 100 Legitimacy<br>75-89% Success Chance: 50% for Weak Hook<br>90-100% Success Chance: 50% for Strong Hook | Target is liege |
+| Raid Estate | Intrigue | Yes | Gain Gold<br>Target's House members might be killed/maimed/imprisoned<br>Estate building destroyed<br>Target's House gets Estate Raided modifier:<br>-25% Domain Taxes<br>+25 Domicile Building Construction Time | House Head<br>Target is House Head |
+| Border Dispute | Diplomacy | No | Take target's selected County | Target is neighbor<br>Target is liege<br>No Fixed Border Policy |
+| Subsume Governorship | Diplomacy | No | Take target's selected Duchy | Head of Powerful/Dominant family<br>Target is neighbor<br>Target not liege<br>No Fixed Border Policy |
+| Ingratiate Family | Diplomacy | No | +60 Influence<br>House gets +5% Influence (10 years)<br>+30 Opinion with target<br>Chance to grow friendship | Fine Living Quarters estate upgrade |
+| Mentor in Governance | Stewardship | No | +60 Influence<br>+15 Opinion with target<br>Target gains Governor trait or experience | Private Study estate upgrade<br>Target not rival |
+| Depose | Intrigue | Yes | Replace the top liege | Head of Powerful/Dominant family |
+
+## Agent Mechanics
+
+Agents can significantly affect a scheme's chance of success. Different types have distinct effects:
+
+### Swaying Agents
+- Involves characters that can help in the scheme
+- All schemes have a base Swaying Chance depending on the scheme type
+- **Acceptance Bonus Factors**:
+  - Opinion +0.5 per point
+  - Traits (Content: -10, Brave: +10, etc.)
+  - Convinced by Hook: Weak +10, Strong +20
+  - Direct bribe from 0-10 depending on Greed
+
+### Scheme Potential Agents
+- Affects maximum Success Chance
+- **Contribution factors**:
+  - Agent Skill +1 per 3 points
+  - Agent relevance (Physician for Murder: +3, etc.)
+  - Agent position (Spouse: +5, etc.)
+  - Agent Opinion of schemer +0.05 per point
+
+### Administrative Agents
+- Only for Political schemes
+- Base contribution based on family rank and position
+- Additional bonuses from skills and traits
+
+### Phase Length and Secrecy Agents
+- Affect how quickly scheme progresses and how secret it remains
+- Based on agent skills, traits, and relationship to target
+
+### Countermeasure Focus
+- Defensive actions to protect against hostile schemes
+- +30% chance to discover schemes against self
+- +20% chance to discover schemes against spouse
+- +15% chance to discover schemes against court and others
+
+This reference provides a comprehensive overview of the scheme system for modding purposes, preserving all numerical values and relationships between different scheme components.
