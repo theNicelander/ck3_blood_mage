@@ -1,0 +1,204 @@
+I'll create a comprehensive technical overview of CK3's activity mechanics based on the wiki pages you've provided. This summary will be structured for easy reference while preserving all the important technical details.
+
+# CK3 Activity System Technical Reference
+
+## Core Mechanics
+
+- **Definition**: Activities are special occasions hosted by characters with multiple variants and phases
+- **Progression**: Each activity phase has a 7-day event check chance
+- **Limitations**: 
+  - Characters can participate in only one activity at a time
+  - Characters with the Incapable trait cannot host or join activities
+  - Requires at least one other character to join (otherwise canceled with +20 Stress penalty)
+  - AI refuses to join if plague exists in capital or destination barony
+
+## Activity Hosting Mechanics
+
+- **Host Selection**: Character starting the activity becomes the Host
+- **Location**: Host chooses a barony (map pins best 5, but any valid barony can be selected)
+- **Travel**: All attendees must travel to the designated barony (unless it's their realm capital)
+- **Entourage**: Each attendee travels with activity-relevant characters
+
+## Cost Calculation
+
+Base costs depend on host's primary title:
+
+| Government Type | County | Duchy | Kingdom | Empire |
+|----------------|--------|-------|---------|--------|
+| Tribal | 15 | 30 | 95 | 110 |
+| Feudal/Clan/Administrative | 30 | 60 | 140 | 170 |
+
+Modifiers applied:
+- Cultural/religious/event modifiers
+- Culture era adjustments
+- Activity options additional costs
+- Travel options costs
+- Caravan master fees
+
+## Regular Activities
+
+### Hunt
+- **Location**: Realm
+- **Options**: Attendants, Party Size
+- **Rewards**: Prestige, Legitimacy, Stress Loss, Glory, Hound Vassal Opinion, Trophy artifacts, Hunter trait
+- **Variants**:
+  - Regular Hunt: Prestige
+  - Legendary: Prestige, Legend Seed
+  - Falconry: (Tours and Tournaments DLC)
+- **Requirements**: Adult, no Vegetarians tradition
+- **Cooldown**: 2 years
+
+### Pilgrimage
+- **Location**: Holy Site
+- **Options**: Fidelity, Pomp
+- **Rewards**: Piety, Legitimacy, Stress Loss, Pilgrim trait
+- **Variants**:
+  - Pious Pilgrimage: Piety, Hajji trait (if faith has it)
+  - Worldly Pilgrimage: Culture modifier, Hajji trait (if faith has it)
+  - Hajj: Hajji trait
+- **Requirements**: Adult, Hajj doctrine (for Hajj variant)
+- **Cooldown**: 5 years per Holy Site
+
+### Feast
+- **Location**: Domain
+- **Options**: Dish Complexity, Number of Courses
+- **Rewards**: Prestige, Legitimacy, Opinion, Stress Loss, Eager Reveler trait
+- **Variants**:
+  - Regular Feast: Opinion, Stress Loss, Chance to discover secrets
+  - Legendary Feast: Opinion, Stress Loss, Chance to spread the legend
+  - Murder Feast: Chance to kill a designated character (Tours and Tournaments DLC)
+- **Requirements**: Adult, Landed, (Owning/promoting a legend for Legendary, Forever Infamous lifestyle perk for Murder)
+- **Cooldown**: 5 years (15 years for Legendary/Murder)
+
+### Meet Peers
+- **Location**: Realm Capital
+- **Rewards**: Opinion
+- **Requirements**: Age 4-13
+- **Cooldown**: 3 years
+
+### Grand Rite
+- **Location**: Realm Capital
+- **Rewards**: Opinion, Stress Loss, Lifestyle Experience
+- **Requirements**: Adult, Witch trait, Witch Coven house modifier
+- **Cooldown**: 5 years
+
+### Festival/Blót
+- **Location**: Domain and faith with Gruesome Festivals tenet
+- **Options**: Festival Size, Sacrifice Fodder
+- **Rewards**: Piety, Opinion
+- **Requirements**: Adult, Landed, Faith has Gruesome Festivals tenet
+- **Cooldown**: 9 years
+
+### University Visit
+- **Location**: University or holy building
+- **Options**: Study Materials
+- **Rewards**: Lifestyle Experience, Book artifacts, Lifestyle trait, Education trait upgrades, Skill points, Recruit skilled character
+- **Requirements**: Adult, Tier 5 education trait, Wards & Wardens DLC
+- **Cooldown**: 20 years
+
+### Funeral
+- **Location**: Realm Capital or Temple holding
+- **Options**: Ceremonials
+- **Rewards**: Piety, Legitimacy, Opinion, Stress Loss
+- **Requirements**: Adult, Landed, Dead relative without funeral, Legends of the Dead DLC
+- **Cooldown**: Not specified
+
+### Camp Revelry
+- **Location**: Camp
+- **Options**: Food, Drinks
+- **Rewards**: Provisions, Stress Loss, Contracts, Artifacts, Skill points, Followers
+- **Requirements**: Adventurer trait
+- **Cooldown**: 2 years
+
+## Wandering Activities (Wandering Nobles DLC)
+
+For adult Dukes or above with specific Wandering lifestyle perks:
+
+### Hike
+- **Options**: Travel Length
+- **Rewards**: Fame, Opinion, Stress Loss, Wise Man/Woman trait, Traveling Companion interactions
+- **Location**: Realm
+- **Required Perk**: Storyteller
+- **Cooldown**: 1.5 years
+
+### Inspection
+- **Options**: Inspection Finances
+- **Rewards**: Pressed Claim, Taxes, Levies, Control, Development, Offer Vassalization acceptance, Opinion, Popular Opinion
+- **Location**: Realm
+- **Required Perk**: Inspection
+- **Cooldown**: 2 years
+
+### Monument Expedition
+- **Options**: Scribes
+- **Rewards**: Skill points, Prestige
+- **Location**: Special Building
+- **Required Perk**: Journey
+- **Cooldown**: 3 years
+
+## Chariot Race (Roads to Power DLC)
+
+- **Eligibility**: Adult Emperors with Roman Ceremonies tradition
+- **Location**: Realm capital
+- **Frequency**: Every 10 years
+- **Option**: Spectacles (affects Legitimacy/Popular Opinion gains)
+- **Initial Bonuses**: +30 Development progress, +30 Influence
+- **Mechanics**:
+  - Four competing teams (Venetoi, Prasinoi, Leukoi, Rhousioi) with 2-3 members each
+  - Characters sorted by Charioteer trait experience
+  - Betting system with various stakes (50-200 Gold)
+  - Champion Charioteer appointment (costs 60 Influence)
+  - Experience gained for Charioteer trait based on race placement
+
+## Grand Activities
+
+### Grand Tour (Tours and Tournaments DLC)
+- **Location**: Vassal Realm Capital
+- **Options**: Entourage, Luxuries
+- **Rewards**: Legitimacy, County Control, Popular Opinion, Stress Loss
+- **Variants**:
+  - Majesty Tour: Prestige, Renown, Vassal Opinion
+  - Intimidation Tour: Dread, Force Vassals out of Factions
+  - Taxation Tour: Gold
+- **Requirements**: Adult, 3 Vassals, Duke or higher title, Administrative government (Tribal for Taxation)
+- **Cooldown**: 10 years
+
+### Grand Wedding
+- **Location**: Domain
+- **Options**: Entertainment, Food and Drinks, Wedding Venue
+- **Rewards**: Marriage, Legitimacy, Prestige, Opinion, Stress Loss, Eager Reveler trait, Accolade glory, Host modifiers
+- **Variants**:
+  - Regular Grand Wedding: Fulfills promise, possible artifacts
+  - Bloody Wedding: Chance to kill spouse's family
+- **Requirements**: Both adults, Grand Wedding promise, Accomplished Forger perk (for Bloody)
+- **Cooldown**: 15 years
+
+### Grand Tournament
+- **Location**: Domain barony
+- **Frequency**: Every 10 years
+- **Options**:
+  - Accommodations: 20/60/180 Gold (affects negative event chances)
+  - Prizes: 20-720 Gold (determines artifact quality from Common to Illustrious)
+- **Champion**: Appointable role who shares rewards with liege
+- **Structure**: 1-5 Contests (participate or observe)
+- **Participation Benefits**: Hastiluder trait, 5-year modifier, artifact (for winners)
+- **Contest Types**:
+
+| Contest | Skill | Cost | Defeat Modifier | Victory Modifier | Notes |
+|---------|-------|------|-----------------|------------------|-------|
+| Archery | Bow | 100 | +1 Injury Resistance, +2 Archer Damage, +5% Hastiluder XP | +3 all above, +10% XP | May win bow |
+| Board Game | Wit | 100 | +1 Learning, +2 Max Battle Roll, +10% XP | +3 Learning, +3 Max Roll, +10% XP | |
+| Duel | Foot | 100 | +1 Prowess, +1 Prowess per Fame Level, +5% XP | +3 Prowess, +2 per Fame, +10% XP | May win weapon/armor |
+| Horse Race | Horse | 150 | +25% Supply Limit, +10% Travel Speed, +5% XP | +50% Supply, +25% Speed, +10% XP | |
+| Melee | Foot/Horse | 100 | +3 Martial, +10% Martial XP, +5% Hastiluder XP | +3 Martial, +10% Martial XP, +10% Hastiluder XP | May win weapon/armor |
+| Recital | Wit | 50 | +1 Diplomacy, +20% Language Scheme, +5% XP | +3 Diplomacy, +30% Language, +10% XP | |
+| Wrestling | Foot | 100 | +0.5 Health, +25% Scheme Resistance, +5% XP | +1 Health, +50% Resistance, +10% XP | |
+| Joust | Foot/Horse | 200 | +10 Glory Opinion, +5 Heavy Cavalry Damage, +5% XP | +20 Glory Opinion, +10 Damage, +10% XP | May win weapon/armor; Requires Horseshoes and Arched Saddle innovations |
+
+- **Tournament Areas** (3 weeks after hosting):
+  - Artisan Quarters: Artifact maintenance, new clothes, weapon improvements
+  - Tavern: Stress reduction
+  - Temple: Prayer, faith testing
+  - Tent Camp: Meet/sabotage contestants
+  - Tourney Grounds: Progress to victory, Accolade glory (with "Triumph" intent)
+
+This technical reference covers all the key details about the CK3 activity system while organizing them for clarity and ease of use during modding or gameplay analysis.

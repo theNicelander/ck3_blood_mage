@@ -1,0 +1,65 @@
+# CK3 Dynasty System Reference Guide
+
+## Renown System
+
+### Core Mechanics
+- **Renown**: Main resource for dynasties used for powerful Dynasty Head interactions, unlocking legacies, and increasing Splendor level
+- **Accumulation**: Each living dynasty member contributes renown based on their rank
+- **Caps**: Renown gain from non-rulers capped at +2 (100 members); Dynasty Head prestige gain capped at +3; House Head prestige gain capped at +5
+
+### Renown Income by Title Rank
+| Title Rank | Monthly Renown | Dynasty Head Prestige | House Head Prestige | Marriage Renown |
+|------------|----------------|----------------------|---------------------|-----------------|
+| Unlanded   | +0.02          | +0.01                | +0.02               | 0               |
+| Baron      | +0.12          | +0.01                | +0.02               | +0.1            |
+| Count      | +0.25          | +0.02                | +0.04               | +0.2            |
+| Duke       | +0.5           | +0.03                | +0.06               | +0.4            |
+| King       | +1             | +0.04                | +0.08               | +0.8            |
+| Emperor    | +2             | +0.5                 | +0.1                | +1.6            |
+
+### Additional Renown Sources
+- **Interdynastic Marriage**: 80% of spouse's primary title renown
+- **Vassalage Limitations**: Rulers don't add renown if any liege is from the same dynasty
+
+## Disinheritance System
+
+### Standard Disinheritance
+- **Cost**: 150 Renown + 300 Prestige (heir to title)
+- **Cost**: 225 Renown + 900 Prestige (landed/administrative family)
+- **Legitimacy Gain**: 
+  - 50 if not Dynasty Head's child/primary heir
+  - 100 if Dynasty Head's child but not primary heir
+  - 200 if Dynasty Head's primary heir
+- **Opinion Effect**: +20 General Opinion for 5 years
+
+### Special Disinheritance
+- **Fate of Iberia DLC**: Dynasty members can disinherit their own children with the Coterie Tier 5 legacy
+- **Cost**: No renown cost
+- **Penalty**: -30 Opinion with all vassals
+
+## Level of Splendor System
+
+| Level | Renown Required | Birth Legitimacy | Birth Prestige | Marriage Prestige | Alliance Acceptance | Max Long Reign | Congenital Traits | Banner Quality |
+|-------|-----------------|------------------|----------------|-------------------|--------------------|-----------------|--------------------|----------------|
+| Base Origins | 0 | 0 | 0 | -100 | -5 | +5 | Common | 0 |
+| Obscure | 300 | +50 | +100 | 0 | 0 | +10 | Common | 0 |
+| Insignificant | 1,000 | +100 | +200 | +100 | +5 | +15 | Common | 0 |
+| Noteworthy | 2,000 | +150 | +300 | +200 | +10 | +20 | Common | 0 |
+| Reputable | 4,000 | +200 | +400 | +300 | +15 | +25 | Masterwork | 0 |
+| Well-known | 7,000 | +250 | +500 | +400 | +20 | +30 | Masterwork | 0 |
+| Significant | 11,000 | +300 | +600 | +500 | +25 | +35 | Masterwork | 0 |
+| Famous | 16,000 | +350 | +700 | +600 | +30 | +40 | Famed | 0 |
+| Glorious | 22,000 | +400 | +800 | +700 | +35 | +45 | Famed | 0 |
+| Fabled | 29,000 | +450 | +900 | +800 | +40 | +50 | Famed | 0 |
+| Legendary | 37,000 | +500 | +1000 | +900 | +45 | +55 | Illustrious | 0 |
+
+## Opinion Modifiers
+
+| Relation | Opinion Bonus |
+|----------|---------------|
+| Parent-Child | +50 |
+| Sibling (includes half-siblings) | +25 |
+| Spouse (includes secondary spouses) | +25 |
+| Same Dynasty | +5 |
+
+*Note: Opinion bonuses only apply to public connections; secret family relations provide no bonuses. Multiple relation types stack their bonuses.*

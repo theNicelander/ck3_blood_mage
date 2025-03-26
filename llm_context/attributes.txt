@@ -1,0 +1,118 @@
+# CK3 Character Attributes - Reference Guide
+
+## Age & Lifecycle
+- Characters are children until age 16, then adults
+- Health deterioration begins at age 25 (7.5% chance to lose -0.125 health yearly, increasing by 2.2% each year)
+- Prowess loss begins at age 45 (10% chance to lose 1 prowess yearly, increasing by 1.5% each year)
+- Characters can die of old age after 60 years
+
+## Skills System
+Skills determine expertise across various fields and cap at 100:
+
+### Diplomacy
+- +1% Monthly Prestige (starting from -8 at level 0)
+- +1 General Opinion (starting from -8 at level 0)
+- Increases effectiveness of Diplomacy schemes
+- Increases initial legitimacy
+
+### Martial
+- -1% Army Gold Maintenance (starting from +8% at level 0)
+- +1% Army Toughness (starting from -8% at level 0)
+- +1 Knight per 5 levels
+- +2.5% Levy Reinforcement Rate (starting from -20% at level 0)
+- +1 Travel Safety
+- +1 Advantage in combat
+
+### Stewardship
+- +2% Domain Taxes (starting from -16% at level 0)
+- +4% Domicile Income (starting from -32% at level 0)
+- +1 Travel Speed
+- +1 Domain Limit per 6 levels
+
+### Intrigue
+- +2% Scheme Secrecy
+- -0.5% Enemy Scheme Secrecy
+- +1 Scheme Advantage per 5 levels above 15
+- Increases starting success chance of Intrigue schemes
+- Improves imprisonment success chance
+
+### Learning
+- +0.1 Monthly Piety
+- Reduces Crown Authority Prestige cost
+- Improves Demand Conversion acceptance
+- -1% Conversion Cost
+- +0.2 Foreign Language Limit
+- +1% Cultural Fascination bonus if cultural head
+
+### Prowess
+- +100 Damage as knight
+- +10 Toughness as knight
+- Determines combat moves in duels
+- Affects muscle mass in appearance
+- Influences injury/death risk in battles
+
+## Health
+- Base range: 4.5-4.9 for males, 5.0-5.4 for females
+- Health levels: Dying (<0), Near Death (0-1), Poor (1-3), Fine (3-5), Good (5-7), Excellent (≥7)
+- Characters can die when health is Poor or worse
+- Disease resistance negates health penalties
+
+## Legitimacy
+- Measures a ruler's right to rule (0-2800 scale)
+- Six levels: Illegitimate, Aspiring, Recognized, Rightful, True, Ordained
+- Gained through creating titles, releasing prisoners, holding court, winning wars
+- Lost through losing titles, accepting faction demands, tyrannical actions
+- Inheritance: heirs inherit partial legitimacy based on relation to predecessor
+- Starting legitimacy based on Dynasty Splendor, Court Grandeur, Diplomacy skill, traits
+
+## Dread (0-100)
+- Measures how feared a ruler is by vassals and courtiers
+- Characters become intimidated (dread 20+ above boldness) or terrified (dread 45+ above boldness)
+- Terrified characters never join factions/schemes against their ruler
+- Significantly affects diplomatic interaction acceptance
+- Modified by traits, perks, buildings, and modifiers
+- Decays at 0.5 per month by default ("Forever Infamous" perk prevents decay)
+
+## Fertility
+- Base fertility: 50% (modified by traits, artifacts)
+- Age multiplier: Males (1.0 age 16-35, declining to 0.5 at 70+), Females (1.0 age 16-25, declining to 0.33 at 41-45)
+- Secondary spouses have half fertility
+- -5% fertility per childbirth for mothers
+- -15% fertility between non-ruler characters
+- Monthly pregnancy chance = average fertility of parents × 4.75
+
+## Stress (0-400)
+- Gained when acting against personality traits or when close relations die
+- Four levels with increasing penalties:
+  - Level 1 (100-199): -10% Fertility
+  - Level 2 (200-299): -30% Fertility, Major Health penalty (-1)
+  - Level 3 (300-399): -50% Fertility, Severe Health penalty (-2)
+- Mental breaks occur at each stress threshold (once every 5 years)
+- Can gain coping mechanism traits that provide +20% stress loss
+
+## Domain
+- Base limit determined by game rules
+- +1 per 6 points of Stewardship
+- +2/+2/+3/+4 based on primary title rank (Count/Duke/King/Emperor)
+- Additional bonuses from innovations, perks, dynasty legacies, artifacts
+
+## Education
+- Childhood focus chosen at age 6
+- Education score increases through yearly rolls until age 16
+- Final education trait level based on score: 0-7 (★), 8-12 (★★), 13-17 (★★★), 18+ (★★★★)
+- Success chance affected by guardian's skills, traits, and cultural traditions
+- University education provides +12 guaranteed points
+- Court Tutor adds additional points at age 16
+- Martial education can include Prowess education trait with Knighthood innovation
+
+## Governor Efficiency (-50% to +50%)
+- Only for Administrative government
+- Affects domain taxes, levies, and title men-at-arms effectiveness
+- +1.7 per skill point
+- Bonuses from education traits, Governor traits, and Eunuch trait
+
+## Known Languages
+- Each character knows their culture's language
+- Foreign language limit: 1 + (Learning ÷ 5)
+- Speaking another culture's language halves opinion penalties
+- Exceeding language limit risks forgetting languages

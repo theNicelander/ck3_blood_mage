@@ -1,0 +1,61 @@
+# CK3 Resources Summary
+
+## Gold
+- **Definition**: Liquid wealth reserves; rulers start with ~18 months of income
+- **Sources**: Holdings/buildings, vassals (10-20%), ransoming prisoners, raiding, inheritance
+- **Uses**: Buildings, men-at-arms, creating titles, troops/mercenaries, feasts/hunts, bribes
+- **Debt Effects**: Scaling penalties by years in debt:
+  - Can't declare war, counties gain corruption, men-at-arms don't reinforce
+  - Penalties up to -90% levy size/reinforcement/development and -50 opinion at 10 years
+  - Debt cannot be inherited (can escape via abdication/death)
+
+### Income Breakdown
+- **Domain Tax** from personal holdings, increased by:
+  - Steward court position (+10-20%)
+  - Avaricious trait (+15%)
+  - Stewardship skill (+2% per level above 8)
+  - "Collect Taxes" council task (+0.5% per Stewardship level)
+  - County development (+0.5% per level)
+- **Domicile Income** from Estates (+4% per Stewardship level above 8)
+- **Vassal Tax** varies by government type:
+  - Castles: 10% of domain tax
+  - Cities: 20% of domain tax
+  - Feudal vassals: based on contracts
+  - Clan vassals: based on opinion (min determined by crown authority)
+  - Tribal vassals: based on liege's fame level
+  - Temples: based on faith doctrine (Lay Clergy vs Theocratic)
+
+### Expenses
+- **Army**: Men-at-arms maintenance (reduced by Martial, dread, perks)
+- **Court Positions**: Salaries paid to courtiers/vassals
+- **Court Amenities**: Standard of living costs
+
+## Prestige
+- **Function**: Political capital and social influence
+- **Sources**: Title holding, Diplomacy skill, events
+- **Uses**: Secular realm management, vassal interactions, non-holy wars
+- **Fame Levels** (with respective bonuses):
+  | Level | Secular Opinion | Knights | Tribal Tax | Tribal Levies | Max Conquest | Fame Required |
+  |-------|----------------|---------|------------|---------------|--------------|---------------|
+  | Disgraced | -10 | -1 | 0% | 0% | None | 0 |
+  | Established | 0 | 0 | 8% | 15% | County | 1000 |
+  | Distinguished | +5 | +1 | 16% | 30% | County | 2000 |
+  | Illustrious | +10 | +2 | 24% | 45% | Duchy | 5000 |
+  | Exalted | +20 | +3 | 32% | 60% | Kingdom | 10000 |
+  | Living Legend | +30 | +4 | 40% | 75% | Kingdom | 25000 |
+
+## Piety
+- **Function**: Religious virtue measure
+- **Sources**: Religious relations, Learning skill, virtuous traits
+- **Uses**: Church interactions, holy wars
+- **Devotion Levels** (with respective bonuses):
+  | Level | Clergy Opinion | Same Faith Opinion | Theocracy Tax | Theocracy Levies | Holy War Rank | Devotion Required |
+  |-------|---------------|-------------------|--------------|-----------------|--------------|-------------------|
+  | Sinner | -10 | - | 0% | 0% | None | 0 |
+  | Dutiful | 0 | 0 | 15% | 10% | County | 1000 |
+  | Faithful | +5 | +3 | 25% | 20% | Duchy | 1500 |
+  | Devoted Servant | +10 | +5 | 35% | 30% | Duchy | 2500 |
+  | Paragon of Virtue | +20 | +10 | 45% | 40% | Kingdom | 4500 |
+  | Religious Icon | +30 | +15 | 55% | 50% | Kingdom | 8500 |
+
+This summary maintains all key numerical values and specific mechanics while organizing the information in a more structured, LLM-friendly format for modding reference.
