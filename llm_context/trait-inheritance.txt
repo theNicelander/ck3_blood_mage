@@ -1,0 +1,155 @@
+# CK3 Trait Inheritance System Reference
+
+## Basic Inheritance Mechanics
+
+CK3 uses a sophisticated genetic system with active (visible) and inactive (hidden) traits. Characters can inherit traits from their parents or gain them through random chance based on natural prevalence.
+
+## Active Trait Inheritance
+
+The probability of a child inheriting a trait as active (visible with effects) depends on the parents' trait status:
+
+| Mother \ Father | None    | Inactive | Active  |
+|-----------------|---------|----------|---------|
+| None            | 0%      | 2%       | 25%     |
+| Inactive        | 2%      | 10%      | 50%     |
+| Active          | 25%     | 50%      | 80%     |
+
+## Inactive Trait Inheritance
+
+If a trait isn't inherited actively, there's still a chance to inherit it as inactive (hidden but can be passed to future generations):
+
+| Mother \ Father | None    | Inactive | Active  |
+|-----------------|---------|----------|---------|
+| None            | 0%      | 25%      | 75%     |
+| Inactive        | 25%     | 50%      | 100%    |
+| Active          | 75%     | 100%     | 150%    |
+
+## Tiered Trait Inheritance Logic
+
+For multi-level traits (like beauty or intelligence tiers), the inheritance follows this algorithm:
+
+1. Start from highest tier present in parents
+2. Calculate active inheritance chance (lower tiers count as inactive of the highest tier)
+3. Each level below the highest reduces chance by a factor (defined in game code)
+4. If trait becomes active, use that tier; otherwise:
+5. Go down one tier level and recalculate with modified parent counts
+   - If previous tier was inactive, count as one more parent with active
+   - Otherwise, count as one more parent with inactive
+
+When inheriting from a parent with a lower tier:
+- System treats it as if they have the higher tier recessively
+- Reduces inheritance chance by 20% per tier difference beyond the first
+- When going down a tier, add 40% to inheritance chance
+
+## Trait Inheritance Modifiers
+
+Several modifiers affect trait inheritance probability:
+- **Strong Blood**: +40% chance of inheriting positive traits, +400% natural prevalence
+- **Blood Legacy Tier 1**: +30% chance of positive traits
+- **Blood Legacy Tier 3**: -30% chance of negative/mixed traits
+- **Blood Legacy Tier 4**: Increases chance for selected traits to become more prevalent
+
+## Congenital Traits List
+
+Natural prevalence percentages for all congenital traits (chance of random appearance at birth):
+
+### Mental Traits (Initially Hidden)
+- **Melancholic**: 0.5% (activates between 10-13.75 years)
+- **Lunatic**: 0.5% (activates between 16-30 years)
+- **Possessed**: 0.5% (activates between 10-20 years)
+
+### Physical Tier Traits
+| Group | Negative Tiers | Prevalence | Positive Tiers | Prevalence |
+|-------|----------------|------------|----------------|------------|
+| Beauty | Homely (-1) | 0.5% | Comely (+1) | 0.5% |
+|        | Ugly (-2) | 0.25% | Pretty/Handsome (+2) | 0.25% |
+|        | Hideous (-3) | 0.15% | Beautiful (+3) | 0.15% |
+| Intelligence | Slow (-1) | 0.5% | Quick (+1) | 0.5% |
+|              | Stupid (-2) | 0.25% | Intelligent (+2) | 0.25% |
+|              | Imbecile (-3) | 0.05% | Genius (+3) | 0.05% |
+| Physique | Delicate (-1) | 0.5% | Hale (+1) | 0.5% |
+|          | Frail (-2) | 0.25% | Robust (+2) | 0.25% |
+|          | Feeble (-3) | 0.15% | Amazonian/Herculean (+3) | 0.15% |
+
+### Other Congenital Traits
+- **Fecund**: 0% at birth
+- **Club-footed**: 0.5% (also from inbreeding)
+- **Hunchbacked**: 0.5% (also from inbreeding)
+- **Lisping**: 0.5%
+- **Stuttering**: 0.5%
+- **Dwarf**: 0.5% (also from inbreeding)
+- **Giant**: 0.5% (also from inbreeding)
+- **Spindly**: 0.5% (also from inbreeding)
+- **Scaly**: 0.5% (also from inbreeding)
+- **Albino**: 0.5%
+- **Wheezing**: 0.5% (also from inbreeding)
+- **Bleeder**: 0.5% (also from inbreeding)
+- **Barren/Sterile**: 0.5% (also from inbreeding)
+
+## Special Inheritance Traits
+
+| Trait | Single Parent Chance | Both Parents Chance | Notes |
+|-------|----------------------|---------------------|-------|
+| Great Pox | 10% | - | STD |
+| Lover's Pox | 10% | - | STD |
+| Pure-blooded | 15% | 75% | Initially from inbreeding |
+| Inbred | 15% | - | Initially from inbreeding |
+| Sayyid | 100% | - | Only from apparent father |
+| Saoshyant/Descendant | 100% | - | Descendant when parent is Saoshyant |
+| Paragon/Consecrated Blood | 100% | - | Consecrated when parent is Paragon |
+| The Savior/Divine Blood | 100% | - | Divine Blood when parent is The Savior |
+
+## Inbreeding Mechanics
+
+### Common Ancestor Impact
+
+The chance of inbreeding effects depends on:
+- **Number of common ancestors** within 4 generations
+- **Inbreeding factor** (relatedness coefficient × 0.3)
+
+#### Example Relatedness Values:
+- Full siblings: 30 common ancestors (maximum possible)
+- Parent-child: 15 common ancestors
+- Half-siblings: 15 common ancestors
+- First cousins: 14 common ancestors
+- Uncle-niece/aunt-nephew: 14 common ancestors
+- Second cousins: 6 common ancestors
+- Third cousins: 2 common ancestors
+
+#### Inbreeding Chances By Relation:
+- Siblings: 15% chance (50% relatedness coefficient)
+- Half-siblings: 7.5% chance (25% relatedness coefficient)
+
+### Pure-blooded Effect
+
+The Pure-blooded trait reduces inbreeding chance by 50% per parent:
+- One parent: -50% chance of inbreeding effects
+- Both parents: No chance of inbreeding effects (except natural trait prevalence)
+
+### Traits From Inbreeding
+
+When inbreeding occurs, offspring may gain these traits (if parents don't have them):
+- Barren/Sterile
+- Scaly
+- Club-footed
+- Wheezing
+- Spindly
+- Giant
+- Hunchbacked
+- Bleeder
+- Dwarf
+
+Additionally, the Inbred trait may be gained if a character with any general inbred trait has children with someone sharing a common ancestor. Pure-blooded may be gained as a rare positive outcome of inbreeding.
+
+## Base Calculations for Modding
+
+- Parents with no genetic traits still have a 12.7% chance to have a child with congenital traits:
+  - 2.6% positive traits
+  - 10.1% mixed/negative traits
+
+- The "Strong Blood" modifier increases natural prevalence of positive traits by 400%
+- The Blood Legacy can further modify these chances:
+  - Tier 1: +30% chance of positive traits
+  - Tier 3: -30% chance of negative/mixed traits
+
+This reference should provide all necessary details for implementing or modifying trait inheritance in CK3 mods.

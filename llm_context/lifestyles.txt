@@ -1,0 +1,184 @@
+I'll create a comprehensive technical reference for CK3's lifestyle mechanics based on the wiki documentation you provided.
+
+# CK3 Lifestyle System Technical Reference
+
+## Core Mechanics
+
+- Lifestyles represent a character's specialization in one of six skill areas
+- Each lifestyle contains 3 focuses and 3 perk trees
+- Characters gain lifestyle experience over time (+25 monthly baseline from focus)
+- Experience gain is influenced by education and other factors
+- Random lifestyle events trigger based on current focus (with possibility of events from other focuses in same lifestyle)
+- Characters must have a playable government or be heirs to gain lifestyle experience
+
+## The Six Lifestyles
+
+1. **Diplomacy**: Understanding people, realm relations, subject loyalty
+2. **Martial**: Realm control, honorable conduct, warfare strategies
+3. **Stewardship**: Justice, land administration, wealth accumulation
+4. **Intrigue**: Manipulation, secrets, plots
+5. **Learning**: Knowledge, divinity, life secrets
+6. **Wandering**: World exploration, travel (requires Wandering Nobles DLC)
+
+## Lifestyle Focus Effects
+
+### Diplomacy
+- **Family**: +2 Diplomacy, +20% Fertility
+- **Foreign Affairs**: +3 Diplomacy
+- **Majesty**: +1 Diplomacy, +1.00 Monthly Prestige
+
+### Martial
+- **Authority**: +1 Martial, +20% Dread Gain, +0.30 Monthly Control Growth
+- **Chivalry**: +3 Prowess, +10 Attraction Opinion, +5 Advantage
+- **Strategy**: +3 Martial
+
+### Stewardship
+- **Domain**: +3 Stewardship
+- **Duty**: -10 Enemy Agent Acceptance, -20 Vassal Faction Commitment, +1 Stewardship
+- **Wealth**: +10% Monthly Income
+
+### Intrigue
+- **Intimidation**: +2 Intrigue, -25% Dread Loss, +30 Natural Dread
+- **Skulduggery**: +10 Agent Acceptance, +3 Intrigue, +15% Scheme Secrecy
+- **Temptation**: +20% Fertility, +10 Attraction Opinion, -20 Days Seduce Phase Length
+
+### Learning
+- **Medicine**: +1 Learning, +0.25 Health
+- **Scholarship**: +3 Learning, +15% Development Growth
+- **Theology**: +2 Learning, +1.0 Monthly Piety, +10 Head of Faith Opinion
+
+### Wandering
+- **Destination**: +50 Prestige per visited Point of Interest, +1 Martial, +1 Stewardship
+- **Internal Affairs**: +1 Stewardship, +1 Intrigue, +0.30 Monthly Control Growth
+- **Journey**: -2 Stress per visited Travel Location, +2 Diplomacy
+
+## Education Focus System
+
+- Available to characters ages 6-9
+- Grants +1 to matching skill
+- Determines adult education trait level based on:
+  - Guardian quality
+  - Childhood trait compatibility with education focus
+- Education focus can only be changed once
+
+### Education Focus Compatibility
+
+| Focus | Helpful Traits | Struggling Trait | Description |
+|-------|----------------|------------------|-------------|
+| Diplomacy | Charming, Curious | Bossy | Etiquette, communication, courtly practices |
+| Martial | Bossy, Rowdy | Curious | Warfare, combat, army command |
+| Stewardship | Bossy, Pensive | Charming | Administration, management, finance |
+| Intrigue | Charming, Rowdy | Pensive | Secrecy, shadows, planning |
+| Learning | Pensive, Curious | Rowdy | Scholarship, theology, knowledge |
+
+## Perk Trees
+
+- Each lifestyle has 3 perk trees, each with 9 perks
+- Each perk costs 1000 experience
+- Final perk in each tree awards a powerful trait
+- Unlocking requires all perks above it to be unlocked
+- Average unlock rate: one perk every few years
+- Perks can be reset once per lifetime at cost of one stress level (also removes final traits)
+- Rulers and adventurers use different sets of perk trees (converting between ruler/adventurer updates perks)
+
+### Diplomacy Perk Trees
+
+1. **Diplomat**
+   - Final Trait: Diplomat
+   - Key Perks: Thoughtful, Ducal Conquest, Embassies, Accomplished Forger
+
+2. **August**
+   - Final Trait: August
+   - Key Perks: Benevolent Intent, True Ruler, Writing History, A Life of Glory
+
+3. **Family Hierarch**
+   - Final Trait: Patriarch/Matriarch
+   - Key Perks: Befriend, Heart of the Family, Confidants, Friendly Counsel
+
+### Martial Perk Trees
+
+1. **Strategist**
+   - Final Trait: Strategist
+   - Key Perks: Bellum Justum, Organized March, Engineered for Destruction, Sappers
+
+2. **Overseer**
+   - Final Trait: Overseer
+   - Key Perks: Serve the Crown, Enduring Hardships, Hard Rule, Absolute Control
+
+3. **Gallant**
+   - Final Trait: Gallant
+   - Key Perks: Stalwart Leader, Chivalric Dominance, Never Back Down, Peacemaker
+
+### Stewardship Perk Trees
+
+1. **Avaricious**
+   - Final Trait: Avaricious
+   - Key Perks: Golden Obligations, War Profiteer, Fearful Troops, At Any Cost
+
+2. **Architect**
+   - Final Trait: Architect
+   - Key Perks: Tax Man, Cutting Cornerstones, Professional Workforce, Divided Attention
+
+3. **Administrator**
+   - Final Trait: Administrator
+   - Key Perks: Meritocracy, Large Levies, Soon Forgiven, Honored to Serve
+
+### Intrigue Perk Trees
+
+1. **Schemer**
+   - Final Trait: Schemer
+   - Key Perks: Truth is Relative, Court of Shadows, Kidnapper, Twice Schemed
+
+2. **Seducer**
+   - Final Trait: Seducer/Seductress
+   - Key Perks: Like Weeds in a Garden, Unshackled Lust, Graceful Recovery, Smooth Operator
+
+3. **Torturer**
+   - Final Trait: Torturer
+   - Key Perks: Dark Insights, Divine Retribution, Thriving in Chaos, Forever Infamous
+
+### Learning Perk Trees
+
+1. **Whole of Body**
+   - Final Trait: Whole of Body
+   - Key Perks: Anatomical Studies, Wash Your Hands, Know Thyself, Iron Constitution
+
+2. **Scholar**
+   - Final Trait: Scholar
+   - Key Perks: Pedagogy, Open-Minded, Apostate, Sanctioned Loopholes
+
+3. **Theologian**
+   - Final Trait: Theologian (Faithful)
+   - Key Perks: Zealous Proselytizer, Religious Icon, Prophet, Defender of Faith
+
+### Wandering Perk Trees (Wandering Nobles DLC)
+
+1. **Inspector**
+   - Final Trait: Inspector
+   - Key Perks: Detailed Reports, Personal Visit, Uncover Intrigue, Sharp Eye
+
+2. **Wayfarer**
+   - Final Trait: Wayfarer
+   - Key Perks: Call of the Open Road, Reliable Contacts, Comfortable Travel, Experienced Traveler
+
+3. **Voyager**
+   - Final Trait: Voyager
+   - Key Perks: Wanderlust, Seasoned, Pilgrim Tales, Experienced Traveler
+
+## Lifestyle Experience Mechanics
+
+- Base monthly experience: +25 from focus
+- New perk unlocked approximately every few years
+- Experience required per perk: 1000
+- Characters must have playable government or be heirs to gain lifestyle experience
+- Focus can be changed once every 5 years
+- Events can provide additional experience
+
+## Special Mechanics
+
+- **Perk Reset**: Available once per lifetime at cost of one stress level
+- **Ruler/Adventurer Transition**: All perks automatically convert between variants
+- **Lifestyle Traits**: Final perks in each tree grant powerful traits that are lost if perks are reset
+- **Events**: Random lifestyle events provide additional bonuses, perks, or traits (6 unique traits possible through events)
+
+This technical reference provides a comprehensive overview of the lifestyle system in CK3, including all mechanics, focuses, education compatibility, and perk trees, organized for easy reference during modding or gameplay strategy development.

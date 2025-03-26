@@ -1,0 +1,67 @@
+Source: https://ck3.paradoxwikis.com/Character
+
+# CK3 Character Opinion System - Reference Guide
+
+## Core Opinion Mechanics
+- Each character has an opinion of every other character, affecting interactions and behavior
+- Player character's opinion affects success rates of actions targeting other characters
+- AI characters' opinions determine their behavior toward other characters
+- When a character dies, their heir inherits part of vassals' opinions: 25% of positive opinion and 50% of negative opinion
+
+## Opinion Modifiers
+
+### General Opinion
+Affects every character except Popular Opinion of Counties.
+- +10 Dynasty Legacy "Glory" (tier 5)
+- -8 to +92 from Personal Diplomacy Skill
+- -2 to -126 from Trait "Gallows bait"
+- -1 to -1000 from Tyranny
+- -10 from Trait "Peasant Leader"
+- -10 from Trait "Sadistic"
+- -15 from Trait "Murderer"
+- -25 from Modifier "Attacked An Ally"
+- -50 from Modifier "Broken Truce"
+
+### Attraction Opinion
+Only applies between characters based on sexual orientation preference.
+- Only affects adults (16+ years)
+- Male characters above 65 years and female characters above 50 years not affected
+- +10 from Trait "Brave"
+- +5/+10 from Trait "Hunter" (levels 1/2)
+- +5/+10/+15 from Traits "Hale"/"Robust"/"Herculean"/"Amazonian"
+- +5 from Trait "Gregarious"
+- -30/-20/-10/+10/+20/+30 from Traits "Hideous"/"Ugly"/"Homely"/"Comely"/"Handsome"("Pretty")/"Beautiful"
+
+### Dynastic Modifiers
+- Same Dynasty: +5 base, +10 from "Mystical Ancestors" Tradition, +5 from Tier-3 "Legitimacy" Legacy, +5 from Tier-4 "Kin" Legacy
+- Negative modifiers: "Dynastic Kinslayer" (-5), "Familial Kinslayer" (-5), "Kinslayer" (-5), "Disinherited" (-5), "Gallivanter" (-10), "Legitimized Bastard" (-10), "Bastard" (-15)
+
+### Religious Modifiers
+- Faith Hostility: Righteous (0), Astray (-10), Hostile (-20), Evil (-30)
+- "Pluralist" Doctrine: -50% faith hostility opinion malus
+- "Fundamentalist" Doctrine: +100% faith hostility opinion malus
+- Virtues and Sins affect opinion across faiths (+10/-10)
+- Religion-specific bonuses: "Sayyid" trait +5 Muslim Opinion, "Chakravarti" trait +20 Jain/Buddhist/Hindu Opinion
+
+### Character Relations
+Three types with three levels each:
+1. Friendship
+   - Friend: +60 opinion, +20% Efficiency as councilor
+   - Best Friend: +120 opinion, +30% Efficiency as councilor
+   - Both give +10 stress when character dies
+
+2. Love
+   - Lover: +60 opinion, +25% fertility
+   - Soulmate: +120 opinion, +25% fertility
+   - Both give +10 stress when character dies
+
+3. Conflict
+   - Rival: -60 opinion, -20% Efficiency as councilor
+   - Nemesis: -120 opinion, -30% Efficiency as councilor
+   - Both give -35 stress when character dies
+
+### Tyranny
+- Maximum: 1000
+- Causes: imprisoning (+20), increasing feudal obligations (+20), revoking titles (+20), retracting vassals (+5), banishing vassals (+5), executing vassals (+10)
+- Monthly decay: -0.25 default, -0.15 with "Soon Forgiven" perk, -0.05 with "Venial" Dynasty perk
+- Various modifiers increase/decrease tyranny gain (-75% to +100%)
