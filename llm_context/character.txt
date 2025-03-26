@@ -1,0 +1,105 @@
+**CK3 Character System Summary (Optimized for RAG/Modding Context)**
+
+Source: https://ck3.paradoxwikis.com/Character
+
+**1. Character Overview**
+- A *character* is a unique individual entity, with autonomy and potential to alter history.
+- Types:
+  - **Noble**: Part of a dynasty.
+  - **Lowborn**: Not from a dynasty unless they gain titles.
+  - **Landed**: Holds one or more holdings.
+  - **Unlanded**: Does not hold land; leasing (e.g. Realm Priests) counts as unlanded.
+
+**2. Key Attributes**
+- Every character belongs to a **religion** and **culture**.
+- Core mechanics include: **Attributes**, **Traits**, **Modifiers**, **Resources**, **Schemes**, **Government**, **Council** roles, **Lifestyles**, **Courts**, and **Titles**.
+
+**3. Appearance (Modding-Relevant)**
+- Uses a 3D portrait system driven by **DNA**, inheritable with dominant/recessive genes.
+- Influenced by **age**, **weight**, **traits**, **illness**, **injury**.
+- Players can modify visual appearance through the **Barbershop**.
+
+**4. Sexual Orientation**
+- Fixed at age 10.
+- Four types: Heterosexual, Homosexual, Bisexual, Asexual.
+- Determines attraction opinion and lover eligibility.
+- Game rule affects orientation distribution; players may select for their child 20% of the time.
+
+**5. Opinion System**
+- Characters have an **opinion score** of every other character.
+- Influences AI behavior and success of player interactions.
+- **Opinion inheritance** occurs on death:
+  - +25% of positive opinion inherited.
+  - +50% of negative opinion inherited.
+
+**6. Opinion Modifiers (Categories & Examples)**
+- **General**:
+  - Based on traits, diplomacy skill, tyranny.
+  - E.g., Trait "Murderer" -15, Trait "Sadistic" -10, Tyranny up to -1000.
+- **Attraction**:
+  - Based on appearance and personality traits.
+  - E.g., "Beautiful" +30, "Ugly" -20, "Brave" +10.
+  - Only applies if orientation is compatible and character is an adult.
+- **Dynasty & House**:
+  - Same Dynasty: +5, "Mystical Ancestors" +10, "Kinslayer" -5.
+  - Same House: inherits dynasty modifiers.
+- **Vassalage**:
+  - Opinion categories: Liege, Of Liege, Fellow Vassals, Direct Vassals, Stance-Based, Independent Rulers.
+- **Religion**:
+  - **Virtue/Sin** depends on the observer’s faith.
+  - **Faith Hostility** tiers: Righteous (0), Astray (-10), Hostile (-20), Evil (-30).
+  - Doctrines modify impact (Pluralist: -50%, Fundamentalist: +100%).
+  - "Sayyid" trait: +5 Muslim Opinion, "Chakravarti": +20 Hindu/Buddhist/Jain.
+
+**7. Relations System**
+- 3 types: **Friendship**, **Love**, **Conflict**.
+- 3 levels each: Childhood → Adulthood → Lifelong.
+- Effects include opinion boosts, fertility bonuses, councilor efficiency, and stress changes.
+
+| Relation Type | Levels         | Opinion | Effects                                             | Endable? |
+|---------------|----------------|---------|-----------------------------------------------------|----------|
+| Friendship    | Friend > Best Friend | +60 > +120 | Council boost, stress on death                      | No       |
+| Love          | Lover > Soulmate    | +60 > +120 | +25% fertility, stress on death                     | Yes      |
+| Conflict      | Rival > Nemesis     | -60 > -120 | Council penalty, stress relief on rival’s death     | No       |
+
+**8. Tyranny System**
+- Tyranny = negative opinion from unjust actions.
+- Max value: 1000.
+- Gained via actions (e.g. +20 for imprisoning without reason).
+- Reduced via events and modifiers:
+  - Monthly decay: -0.25 (default).
+  - Perks: "Soon Forgiven" (Duty), "Venial" (Guile).
+  - Traditions and Artifacts can increase/reduce tyranny.
+  - Example modifiers:
+    - "Shwedagon Pagoda": -10%
+    - Trait "Callous": -20%
+    - Easy difficulty: -25% tyranny gain.
+
+**9. Diplomatic Range**
+- Governs character interaction distance.
+- Affected by:
+  - **Adventure Legacy (Northern Lords DLC)**: +30% range.
+  - **Rock of Gibraltar (building)**: +20%.
+  - Debug map mode: displays diplomatic range overlay.
+
+**10. Nicknames**
+- Gained via decisions or events.
+- Appear before or after names.
+- Can reflect deeds, traits, or titles.
+
+**11. AI Personality (Modding Hooks)**
+- Defined by traits and 7 behavioral attributes:
+  - **Boldness**: risk-taking, fear of dread.
+  - **Compassion**: kindness, opposition to cruelty.
+  - **Greed**: short-termism, money focus.
+  - **Honor**: law-abiding, alliance-keeping.
+  - **Rationality**: long-term strategic thinking.
+  - **Sociability**: likelihood to interact.
+  - **Vengefulness**: tendency to punish transgressions.
+  - **Zeal**: faith adherence and piety-seeking.
+- Personality tags drive event choices, decisions, and AI behavior in schemes, war, etc.
+- Modding use: governs AI response to blood magic or other custom traits/decisions.
+
+---
+
+This document summarizes CK3's character system with a focus on modding and RAG integration, preserving semantic structures for efficient retrieval. It includes critical gameplay and opinion mechanics, relevant trait interactions, and structured data categories for AI-based querying.
