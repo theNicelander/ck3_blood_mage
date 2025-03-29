@@ -11,9 +11,8 @@
         scope:actor = { has_trait = lifestyle_blood_mage }
         NOT = { scope:actor = scope:recipient }
     }
-
     is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier } }
-
+    
     on_accept = {
         scope:recipient = {
             add_character_modifier = lifeforce_modifier
@@ -23,6 +22,9 @@
                 opinion = 20
             }
         }
-        scope:actor = { add_xp_benediction = yes }
+        scope:actor = { 
+            add_xp_benediction = yes 
+            remove_character_modifier = lifeforce_modifier
+        }
     }
 }
