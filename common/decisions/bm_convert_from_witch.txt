@@ -5,17 +5,12 @@
     
     is_shown = {
         has_trait = witch
-        not = { has_trait = lifestyle_blood_mage }
-    }
-
-    is_valid = { 
-        has_trait = lifestyle_blood_mage
+        NOT = { has_trait = lifestyle_blood_mage }
     }
     
     effect = {
         remove_trait = witch
         add_trait = lifestyle_blood_mage
-        
         custom_tooltip = "Become a Blood Mage"
     }
 }
