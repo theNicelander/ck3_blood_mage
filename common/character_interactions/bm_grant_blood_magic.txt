@@ -9,8 +9,8 @@
 
     is_shown = {
         NOT = { scope:actor = scope:recipient }
-        scope:actor = { has_trait = lifestyle_blood_mage_group }
-        scope:recipient = { NOT = { has_trait = lifestyle_blood_mage_group } }
+        scope:actor = { has_trait = lifestyle_blood_mage }
+        scope:recipient = { NOT = { has_trait = lifestyle_blood_mage } }
     }
     cost = { 
         piety = 100 
@@ -23,7 +23,7 @@
     
     on_accept = { 
         scope:recipient = {
-            add_trait = lifestyle_blood_mage_0
+            add_trait = lifestyle_blood_mage
             add_opinion = {
                 target = scope:actor
                 modifier = magic_opinion_positive

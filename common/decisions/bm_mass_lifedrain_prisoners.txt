@@ -4,9 +4,9 @@
     desc = mass_lifedrain_prisoners_decision_desc
     decision_group_type = bm_decision_group
     
-    is_shown = { has_trait = lifestyle_blood_mage_group }
+    is_shown = { has_trait = lifestyle_blood_mage }
     is_valid = { 
-        has_trait = lifestyle_blood_mage_group
+        has_trait = lifestyle_blood_mage
         custom_tooltip = {
 			text = "Has someone imprisoned"	
 			any_prisoner = {

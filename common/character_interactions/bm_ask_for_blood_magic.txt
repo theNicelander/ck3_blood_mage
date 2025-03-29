@@ -9,7 +9,7 @@
 
     is_shown = {
         scope:recipient = {
-            has_trait = lifestyle_blood_mage_group
+            has_trait = lifestyle_blood_mage
             OR = {
                 has_relation_lover = scope:actor
                 has_relation_friend = scope:actor
@@ -18,12 +18,12 @@
             }
         }
 
-        scope:actor = { NOT = { has_trait = lifestyle_blood_mage_group } }
+        scope:actor = { NOT = { has_trait = lifestyle_blood_mage } }
     }
 
     on_accept = {
         scope:actor = {
-            add_trait = lifestyle_blood_mage_group
+            add_trait = lifestyle_blood_mage
             add_piety_level = -1
         }
     }
