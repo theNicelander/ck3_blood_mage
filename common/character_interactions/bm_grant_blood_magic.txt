@@ -12,14 +12,8 @@
         scope:actor = { has_trait = lifestyle_blood_mage }
         scope:recipient = { NOT = { has_trait = lifestyle_blood_mage } }
     }
-    cost = { 
-        piety = 100 
-    }
-    is_valid_showing_failures_only = { 
-        scope:actor = { 
-            has_character_modifier = lifeforce_modifier 
-        } 
-    }
+    cost = { piety = 100 }
+    is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier } }
     
     on_accept = { 
         scope:recipient = {
@@ -30,7 +24,7 @@
                 opinion = 50
             }
         }
-        scope:actor = { add_blood_mage_exp_grant_blood_mage_trait = yes }
+        scope:actor = { add_xp_benediction = yes }
     }
 
     # AI
