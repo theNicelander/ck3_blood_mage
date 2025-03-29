@@ -8,7 +8,7 @@
     cost = { piety = heal_disease_minor_cost }
     is_shown = {
         scope:actor = {
-            has_trait = lifestyle_blood_mage_group
+            has_trait = lifestyle_blood_mage
         }
         scope:recipient = {
             OR = {
@@ -55,7 +55,7 @@ heal_disease_medium = {
     is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier } }
     is_shown = {
         scope:actor = {
-            has_trait = lifestyle_blood_mage_group
+            has_trait = lifestyle_blood_mage
         }
         scope:recipient = {
             OR = {
@@ -111,11 +111,7 @@ heal_disease_severe = {
     is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier } }
     is_shown = {
         scope:actor = {
-            OR = {
-                has_trait = lifestyle_blood_mage_1
-                has_trait = lifestyle_blood_mage_2
-            }
-            
+            has_trait = lifestyle_blood_mage            
         }
         scope:recipient = {
             OR = {
@@ -175,7 +171,7 @@ heal_disease_critical = {
     is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier } }
     is_shown = {
         scope:actor = {
-            has_trait = lifestyle_blood_mage_2
+            has_trait = lifestyle_blood_mage
         }
         scope:recipient = {
             OR = {
