@@ -1,161 +1,162 @@
-lifestyle_blood_mage_0 = {
+lifestyle_blood_mage = {
     category = lifestyle
     flag = reweaving_lifestyle_trait
     icon = blood_mage.dds
     desc = trait_blood_mage_desc
     ruler_designer_cost = 100
 
-    # Will level up
-    group = lifestyle_blood_mage_group
-    level = 1
-    
     # genetic
     good = yes
     genetic = yes
     birth = 0.5
     random_creation = 0.5
-    
-    # Modifiers
-    learning_per_stress_level = 2
-    learning_per_piety_level = 2
-    health = 1
-    life_expectancy = 10
-    
-    # Modifiers   
-    track = {
-        20 = {
-            learning = 2
-            health = 0.5
-            life_expectancy = 2
-        }
-        40 = {
-            learning = 2
-            health = 0.5
-            life_expectancy = 2
-        }
-        60 = {
-            learning = 2
-            health = 0.5
-            life_expectancy = 2
-        }
-        80 = {
-            learning = 2
-            health = 0.5
-            life_expectancy = 2
-        }
-        100 = {
-            learning = 2
-            health = 0.5
-            life_expectancy = 2
-        }
-    }
-}
 
-lifestyle_blood_mage_1 = {
-    category = lifestyle
-    flag = reweaving_lifestyle_trait
-    icon = blood_mage.dds
-    desc = trait_blood_mage_desc
-    ruler_designer_cost = 250
+    # Base trait benefit
+    learning_per_piety_level = 1
 
-    # Will level up
-    group = lifestyle_blood_mage_group
-    level = 2
-    
-    # genetic
-    good = yes
-    genetic = yes
-    birth = 0.25
-    random_creation = 0.25
-    
-    # Modifiers
-    learning = 10
-    learning_per_stress_level = 4
-    learning_per_piety_level = 4
-    health = 5
-    life_expectancy = 25
-    
-    # Modifiers   
-    track = {
-        20 = {
-            learning = 2
-            health = 0.5
-            life_expectancy = 3
+    tracks = {
+        enlightenment = {
+            5 = {
+                health = 0.1
+                life_expectancy = 1
+                learning = 1
+                monthly_lifestyle_xp_gain_mult = 0.02
+            }
+            15 = {
+                health = 0.1
+                life_expectancy = 1
+                learning = 1 
+                monthly_lifestyle_xp_gain_mult = 0.02
+            }
+            30 = {
+                health = 0.1
+                life_expectancy = 1
+                learning = 1 
+                monthly_lifestyle_xp_gain_mult = 0.02
+            }
+            50 = {
+                health = 0.1
+                life_expectancy = 1
+                learning = 1 
+                monthly_lifestyle_xp_gain_mult = 0.02
+            }
+            75 = {
+                health = 0.1
+                life_expectancy = 1
+                learning = 1 
+                monthly_lifestyle_xp_gain_mult = 0.02
+            }
+            100 = {
+                health = 0.1
+                life_expectancy = 1
+                learning = 1
+                monthly_lifestyle_xp_gain_mult = 0.02
+            }
         }
-        40 = {
-            learning = 2
-            health = 0.5
-            life_expectancy = 3
-        }
-        60 = {
-            learning = 2
-            health = 0.5
-            life_expectancy = 3
-        }
-        80 = {
-            learning = 2
-            health = 0.5
-            life_expectancy = 3
-        }
-        100 = {
-            learning = 2
-            health = 0.5
-            life_expectancy = 3
-        }
-    }
-}
 
-# Placeholder
-lifestyle_blood_mage_2 = {
-    category = lifestyle
-    flag = reweaving_lifestyle_trait
-    icon = blood_mage.dds
-    desc = trait_blood_mage_desc
-    ruler_designer_cost = 1000
+        bloodline = {
+            5 = {
+                health = 0.1
+                life_expectancy = 1
+                monthly_dynasty_prestige = 0.01
+            }
+            15 = {
+                health = 0.1
+                life_expectancy = 1
+                monthly_dynasty_prestige = 0.01
+            }
+            30 = {
+                health = 0.1
+                life_expectancy = 1
+                monthly_dynasty_prestige = 0.01
+            }
+            50 = {
+                health = 0.1
+                life_expectancy = 1
+                monthly_dynasty_prestige = 0.01
+            }
+            75 = {
+                health = 0.1
+                life_expectancy = 1
+                monthly_dynasty_prestige = 0.01
+            }
+            100 = {
+                health = 0.1
+                life_expectancy = 1
+                monthly_dynasty_prestige = 0.01
+            }
+        }
 
-    # Will level up
-    group = lifestyle_blood_mage_group
-    level = 3
-    
-    # genetic
-    good = yes
-    genetic = yes
-    birth = 0
-    random_creation = 0
+        benediction = {
+            5 = {
+                health = 0.1
+                life_expectancy = 1
+                general_opinion = 1
+            }
+            15 = {
+                health = 0.1
+                life_expectancy = 1
+                general_opinion = 1
+            }
+            30 = {
+                health = 0.1
+                life_expectancy = 1
+                general_opinion = 1
+            }
+            50 = {
+                health = 0.1
+                life_expectancy = 1
+                general_opinion = 1
+            }
+            75 = {
+                health = 0.1
+                life_expectancy = 1
+                general_opinion = 1
+            }
+            100 = {
+                health = 0.1
+                life_expectancy = 1
+                general_opinion = 1
+            }
+        }
 
-    # Modifiers
-    learning = 20
-    learning_per_stress_level = 6
-    learning_per_piety_level = 6
-    health = 10
-    life_expectancy = 40
-    
-    # Modifiers   
-    track = {
-        20 = {
-            learning = 2
-            health = 0.5
-            life_expectancy = 4
-        }
-        40 = {
-            learning = 2
-            health = 0.5
-            life_expectancy = 4
-        }
-        60 = {
-            learning = 2
-            health = 0.5
-            life_expectancy = 4
-        }
-        80 = {
-            learning = 2
-            health = 0.5
-            life_expectancy = 4
-        }
-        100 = {
-            learning = 2
-            health = 0.5
-            life_expectancy = 4
+        hematurgy = {
+            5 = {
+                health = 0.1
+                life_expectancy = 1
+                prowess = 1
+                advantage = 1
+            }
+            15 = {
+                health = 0.1
+                life_expectancy = 1
+                prowess = 1
+                advantage = 1
+            }
+            30 = {
+                health = 0.1
+                life_expectancy = 1
+                prowess = 1
+                advantage = 1
+            }
+            50 = {
+                health = 0.1
+                life_expectancy = 1
+                prowess = 1
+                advantage = 1
+            }
+            75 = {
+                health = 0.1
+                life_expectancy = 1
+                prowess = 1
+                advantage = 1
+            }
+            100 = {
+                health = 0.1
+                life_expectancy = 1
+                prowess = 1
+                advantage = 1
+            }
         }
     }
 }
