@@ -14,13 +14,12 @@
 
 	is_shown = {
 		scope:actor = { 
-            has_trait = lifestyle_blood_mage_group 
+            has_trait = lifestyle_blood_mage 
             has_faith = faith:cult_of_blood
         }
-		scope:recipient = {
-			NOT = { has_faith = faith:cult_of_blood }
-		}
-		# Can't duel yourself.
+		scope:recipient = { NOT = { has_faith = faith:cult_of_blood } }
+		
+        # Can't duel yourself.
 		NOT = { scope:actor = scope:recipient }
 	}
 

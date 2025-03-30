@@ -70,7 +70,6 @@ bm_stroll_town.002 = {
                 trigger_event = { id = bm_stroll_town.003 }
                 scope:beggar = { death = { death_reason = death_sacrificed_to_gods } }
             }
-
             20 = {
                 custom_tooltip = "Witnessed"
                 trigger_event = { id = bm_stroll_town.004 }
@@ -81,20 +80,15 @@ bm_stroll_town.002 = {
                 trigger_event = { id = bm_stroll_town.005 }
             }
         }
-
-        
-
         ai_chance = { base = 10 }
     }
 
     # heal them
     option = {
         name = "With a subtle gesture, I channel power to mend their bleeding wounds"
-        trigger = {
-            has_trait = lifestyle_blood_mage_group
-        }
+        trigger = { has_trait = lifestyle_blood_mage }
         scope:beggar = { remove_trait = wounded_1 }
-        blood_magic_used_set_exp = { EXP = 1 }
+        benediction_magic_cast_effect = yes
         add_piety = cure_illness_cost_small_neg
         root.capital_county = {
             add_county_modifier = {
@@ -102,17 +96,14 @@ bm_stroll_town.002 = {
                 years = 3
             }
         }
-
         ai_chance = { base = 4 }
     }
     option = {
         name = "The fever that ravages their body is no match for my blood magic"
-        trigger = {
-            has_trait = lifestyle_blood_mage_group
-        }
+        trigger = { has_trait = lifestyle_blood_mage }
         scope:beggar = { remove_trait = typhus }
         add_piety = cure_illness_cost_medium_neg
-        blood_magic_used_set_exp = { EXP = 2 }
+        benediction_magic_cast_effect = yes
 
         root.capital_county = {
             add_county_modifier = {
@@ -124,15 +115,9 @@ bm_stroll_town.002 = {
     }
     option = {
         name = "I place my hands upon their sightless eyes, commanding darkness to retreat"
-        trigger = {
-            OR = {
-                has_trait = lifestyle_blood_mage_1
-                has_trait = lifestyle_blood_mage_2
-            }
-            
-        }
+        trigger = { has_trait = lifestyle_blood_mage }
         scope:beggar = { remove_trait = blind }
-        blood_magic_used_set_exp = { EXP = 3 }
+        benediction_magic_cast_effect = yes
         add_piety = cure_illness_cost_large_neg
         root.capital_county = {
             add_county_modifier = {
@@ -144,11 +129,9 @@ bm_stroll_town.002 = {
     }
     option = {
         name = "Even death's corruption shall yield to my command—I will purge the cancer from their flesh"
-        trigger = {
-            has_trait = lifestyle_blood_mage_2
-        }
+        trigger = { has_trait = lifestyle_blood_mage }
         scope:beggar = { remove_trait = cancer }
-        blood_magic_used_set_exp = { EXP = 5 }
+        benediction_magic_cast_effect = yes
         add_piety = cure_illness_cost_xlarge_neg
         root.capital_county = {
             add_county_modifier = {
@@ -163,9 +146,7 @@ bm_stroll_town.002 = {
     option = {
         name = "This wretch is not worth my attention—I shall return to more pleasant diversions"
         add_stress = -10
-        ai_chance = {
-            base = 5
-        }
+        ai_chance = { base = 5 }
     }
 
     # Portraits
@@ -189,7 +170,7 @@ bm_stroll_town.003 = {
     option = { 
         name = "Power has its price. Today, it was theirs."
         custom_tooltip = "No one noticed me, their lifeforce is mine"
-        add_character_modifier = { modifier = lifeforce_modifier } 
+        hematurgy_magic_cast_effect = yes
     }
 
     # Portraits
@@ -208,7 +189,7 @@ bm_stroll_town.004 = {
     option = { 
         name = "Carelessness has consequences. So be it."
         custom_tooltip = "Someone walked by and discovered me, the town won't be happy"
-        add_character_modifier = { modifier = lifeforce_modifier }
+        hematurgy_magic_cast_effect = yes
         add_stress = 10
         add_dread = 5
         root.capital_county = {

@@ -8,7 +8,7 @@ trait_drain_prisoner_event_interaction = {
     is_highlighted = { always = yes }
 
     is_shown = {
-        scope:actor = { has_trait = lifestyle_blood_mage_group }
+        scope:actor = { has_trait = lifestyle_blood_mage }
         scope:recipient = {
             is_imprisoned_by = scope:actor
             or = {

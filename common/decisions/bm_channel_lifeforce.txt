@@ -7,10 +7,10 @@
     cooldown = { years = 1 }
     cost = { piety = 50 }
     
-    is_shown = { has_trait = lifestyle_blood_mage_group }
+    is_shown = { has_trait = lifestyle_blood_mage }
     is_valid = { 
         has_character_modifier = lifeforce_modifier
-        has_trait = lifestyle_blood_mage_group
+        has_trait = lifestyle_blood_mage
     }
     
     effect = {
@@ -31,10 +31,10 @@ channel_lifeforce_major_decision = {
     cooldown = { years = 2 }
     cost = { piety = 100 }
     
-    is_shown = { has_trait = lifestyle_blood_mage_group }
+    is_shown = { has_trait = lifestyle_blood_mage }
     is_valid = { 
         has_character_modifier = lifeforce_modifier
-        has_trait = lifestyle_blood_mage_group
+        has_trait = lifestyle_blood_mage
     }
     
     effect = {

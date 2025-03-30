@@ -1,19 +1,14 @@
-﻿blood_magic_used_minor = {
+﻿blood_magic_used_set_exp = {
     remove_character_modifier = lifeforce_modifier
     temporary_negative_lifeforce_effect = yes
 }
 
-blood_magic_used_set_exp = {
-    remove_character_modifier = lifeforce_modifier
-    temporary_negative_lifeforce_effect = yes
-    blood_magic_exp_flat = { EXP = $EXP$ }
-}
-
-drain_lifeforce_effect = {
+hematurgy_magic_cast_effect = {
     add_character_modifier = lifeforce_modifier
+    add_xp_hematurgy = yes
+}
 
-    if = { # Grant exp for novices
-        limit = { has_trait = lifestyle_blood_mage_0 }
-        blood_magic_exp_flat = { EXP = 1 }
-    }
+benediction_magic_cast_effect = {
+    remove_character_modifier = lifeforce_modifier
+    add_xp_benediction = yes
 }
