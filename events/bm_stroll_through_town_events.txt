@@ -170,7 +170,7 @@ bm_stroll_town.003 = {
     option = { 
         name = "Power has its price. Today, it was theirs."
         custom_tooltip = "No one noticed me, their lifeforce is mine"
-        drain_lifeforce_effect = yes
+        hematurgy_magic_cast_effect = yes
     }
 
     # Portraits
@@ -189,7 +189,7 @@ bm_stroll_town.004 = {
     option = { 
         name = "Carelessness has consequences. So be it."
         custom_tooltip = "Someone walked by and discovered me, the town won't be happy"
-        drain_lifeforce_effect = yes
+        hematurgy_magic_cast_effect = yes
         add_stress = 10
         add_dread = 5
         root.capital_county = {

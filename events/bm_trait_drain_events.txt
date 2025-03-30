@@ -37,9 +37,9 @@ bm_trait_drain.001 = {
                 # Draining the last level of a levellable trait costs piety level
                 if = { limit = { has_trait = intellect_good_2 } add_piety_level = -1 }
 
-                # Success! Level up trait !
+                # Success! Level up trait :)
                 intellect_drain_trait_effects = yes
-                add_xp_hematurgy = yes
+                hematurgy_magic_cast_effect = yes
             }
             30 = {
                 desc = "I fail"
@@ -82,9 +82,9 @@ bm_trait_drain.001 = {
                 # Draining the last level of a levellable trait costs piety level
                 if = { limit = { has_trait = physique_good_2 } add_piety_level = -1 }
 
-                # Success! Level up trait !
+                # Success! Level up trait :)
                 physique_drain_trait_effects = yes
-                add_xp_hematurgy = yes
+                hematurgy_magic_cast_effect = yes
             }
             30 = {
                 desc = "I fail"
@@ -129,9 +129,9 @@ bm_trait_drain.001 = {
                 # Draining the last level of a levellable trait costs piety level
                 if = { limit = { has_trait = beauty_good_2 } add_piety_level = -1 }
 
-                # Success! Level up trait !
+                # Success! Level up trait :)
                 beauty_drain_trait_effects = yes
-                add_xp_hematurgy = yes
+                hematurgy_magic_cast_effect = yes
             }
             30 = {
                 desc = "I fail"
@@ -174,7 +174,7 @@ bm_trait_drain.001 = {
 
                     # Success!
                     add_trait = fecund
-                    add_xp_hematurgy = yes
+                    hematurgy_magic_cast_effect = yes
                 }
                 30 = {
                     desc = "I fail"
@@ -218,7 +218,7 @@ bm_trait_drain.001 = {
 
                     # Success!
                     add_trait = giant
-                    add_xp_hematurgy = yes
+                    hematurgy_magic_cast_effect = yes
                 }
                 30 = {
                     desc = "I fail"
@@ -262,7 +262,7 @@ bm_trait_drain.001 = {
 
                     # Success!
                     add_trait = pure_blooded
-                    add_xp_hematurgy = yes
+                    hematurgy_magic_cast_effect = yes
                 }
                 30 = {
                     desc = "I fail"
