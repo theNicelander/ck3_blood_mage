@@ -23,11 +23,7 @@
     is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier } }
 
     on_accept = {
-        scope:actor = { 
-            blood_magic_used_set_exp = {
-                EXP = 1
-            }
-         }
+        scope:actor = { benediction_magic_cast_effect = yes }
         scope:recipient = {
             remove_trait = wounded_1
             remove_trait = ill
@@ -70,11 +66,7 @@ heal_disease_medium = {
     }
 
     on_accept = {
-        scope:actor = { 
-            blood_magic_used_set_exp = {
-                EXP = 2
-            }
-         }
+        scope:actor = { benediction_magic_cast_effect = yes }
         scope:recipient = {
             remove_trait = wounded_2
             remove_trait = infirm
@@ -110,9 +102,7 @@ heal_disease_severe = {
     cost = { piety = heal_disease_severe_cost }
     is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier } }
     is_shown = {
-        scope:actor = {
-            has_trait = lifestyle_blood_mage            
-        }
+        scope:actor = { has_trait = lifestyle_blood_mage }
         scope:recipient = {
             OR = {
                 has_trait = wounded_3
@@ -127,11 +117,7 @@ heal_disease_severe = {
     }
 
     on_accept = {
-        scope:actor = { 
-            blood_magic_used_set_exp = {
-                EXP = 3
-            }
-         }
+        scope:actor = scope:actor = { benediction_magic_cast_effect = yes }
         scope:recipient = {
             remove_trait = wounded_3
             remove_trait = impotent
@@ -184,11 +170,7 @@ heal_disease_critical = {
     }
 
     on_accept = {
-        scope:actor = { 
-            blood_magic_used_set_exp = {
-                EXP = 5
-            }
-         }
+        scope:actor = scope:actor = { benediction_magic_cast_effect = yes }
         scope:recipient = {
             remove_trait = great_pox
             remove_trait = cancer

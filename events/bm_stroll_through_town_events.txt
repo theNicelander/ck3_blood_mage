@@ -88,7 +88,7 @@ bm_stroll_town.002 = {
         name = "With a subtle gesture, I channel power to mend their bleeding wounds"
         trigger = { has_trait = lifestyle_blood_mage }
         scope:beggar = { remove_trait = wounded_1 }
-        add_xp_benediction = yes
+        benediction_magic_cast_effect = yes
         add_piety = cure_illness_cost_small_neg
         root.capital_county = {
             add_county_modifier = {
@@ -103,7 +103,7 @@ bm_stroll_town.002 = {
         trigger = { has_trait = lifestyle_blood_mage }
         scope:beggar = { remove_trait = typhus }
         add_piety = cure_illness_cost_medium_neg
-        add_xp_benediction = yes
+        benediction_magic_cast_effect = yes
 
         root.capital_county = {
             add_county_modifier = {
@@ -117,7 +117,7 @@ bm_stroll_town.002 = {
         name = "I place my hands upon their sightless eyes, commanding darkness to retreat"
         trigger = { has_trait = lifestyle_blood_mage }
         scope:beggar = { remove_trait = blind }
-        add_xp_benediction = yes
+        benediction_magic_cast_effect = yes
         add_piety = cure_illness_cost_large_neg
         root.capital_county = {
             add_county_modifier = {
@@ -131,7 +131,7 @@ bm_stroll_town.002 = {
         name = "Even death's corruption shall yield to my command—I will purge the cancer from their flesh"
         trigger = { has_trait = lifestyle_blood_mage }
         scope:beggar = { remove_trait = cancer }
-        add_xp_benediction = yes
+        benediction_magic_cast_effect = yes
         add_piety = cure_illness_cost_xlarge_neg
         root.capital_county = {
             add_county_modifier = {
@@ -170,8 +170,7 @@ bm_stroll_town.003 = {
     option = { 
         name = "Power has its price. Today, it was theirs."
         custom_tooltip = "No one noticed me, their lifeforce is mine"
-        add_character_modifier = { modifier = lifeforce_modifier } 
-        add_xp_hematurgy = yes
+        drain_lifeforce_effect = yes
     }
 
     # Portraits
@@ -190,8 +189,7 @@ bm_stroll_town.004 = {
     option = { 
         name = "Carelessness has consequences. So be it."
         custom_tooltip = "Someone walked by and discovered me, the town won't be happy"
-        add_character_modifier = { modifier = lifeforce_modifier }
-        add_xp_hematurgy = yes
+        drain_lifeforce_effect = yes
         add_stress = 10
         add_dread = 5
         root.capital_county = {

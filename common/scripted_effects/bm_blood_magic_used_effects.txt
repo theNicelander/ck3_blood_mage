@@ -7,3 +7,8 @@ drain_lifeforce_effect = {
     add_character_modifier = lifeforce_modifier
     add_xp_hematurgy = yes
 }
+
+benediction_magic_cast_effect = {
+    remove_character_modifier = lifeforce_modifier
+    add_xp_benediction = yes
+}

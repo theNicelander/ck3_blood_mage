@@ -22,9 +22,6 @@
                 opinion = 20
             }
         }
-        scope:actor = { 
-            add_xp_benediction = yes 
-            remove_character_modifier = lifeforce_modifier
-        }
+        scope:actor = { benediction_magic_cast_effect = yes }
     }
 }
