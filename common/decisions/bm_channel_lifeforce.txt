@@ -5,15 +5,17 @@
     decision_group_type = bm_decision_group
 
     cooldown = { years = 1 }
+    cost = { piety = 150 }
     
     is_shown = { has_trait = lifestyle_blood_mage }
     is_valid = { 
         has_character_modifier = lifeforce_modifier
         has_trait = lifestyle_blood_mage
     }
-    
     effect = {
         trigger_event = { id = bm_channel_lifeforce_minor.99 }
+        remove_character_modifier = lifeforce_modifier
+        add_xp_enlightenment = yes
     }
     ai_will_do = { base = 10 }
 }
@@ -24,16 +26,19 @@ channel_lifeforce_bloodline = {
     desc = "Channel your blood magic to enhance your entire dynasty with crimson power. This requires significant lifeforce and piety, but the effects reach beyond yourself to all your bloodline."
     decision_group_type = bm_decision_group
 
-    cooldown = { years = 5 }
+    cooldown = { years = 3 }
+    cost = { piety = 250 }
     
     is_shown = { has_trait = lifestyle_blood_mage }
     is_valid = { 
         has_character_modifier = lifeforce_modifier
-        has_trait = lifestyle_blood_mage
+        is_house_head = yes
     }
-    
     effect = {
         trigger_event = { id = bm_channel_lifeforce_bloodline.001 }
+        add_xp_bloodline = yes
+        remove_character_modifier = lifeforce_modifier
+        add_stress = 20
     }
     ai_will_do = { base = 10 }
 }
