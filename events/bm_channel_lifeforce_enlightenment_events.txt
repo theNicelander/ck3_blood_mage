@@ -1,0 +1,110 @@
+﻿# Spend Lifeforce event
+
+namespace = bm_channel_lifeforce_enlightenment
+
+bm_channel_lifeforce_enlightenment.99 = {
+    type = character_event
+    title = ""
+    desc = ""
+    theme = witchcraft
+    
+    option = {
+        name = "Improve a skill slightly"
+        ai_chance = { base = 10 }
+        trigger_event = { id = bm_channel_lifeforce_enlightenment.001 }
+    }
+    option = {
+        name = "Improve a skill greatly, for a short while"
+        ai_chance = { base = 10 }
+        trigger_event = { id = bm_channel_lifeforce_enlightenment.002 }
+    }
+    # Portraits
+    left_portrait ={
+        character = root
+        animation = ecstasy
+    }
+}
+
+bm_channel_lifeforce_enlightenment.001 = {
+    type = character_event
+    title = "Channel Crimson Aspects"
+    desc = "The blood magic within me stirs, ready to be shaped according to my will. Which aspect of power shall I manifest?"
+    theme = witchcraft
+
+    # Crimson Charisma
+    option = {
+        name = "My words shall carry the weight of blood"
+        add_character_modifier = { modifier = crimson_charisma_modifier }
+        trigger = { NOT = { has_character_modifier = crimson_charisma_modifier } }
+        ai_chance = { base = 10 }
+    }
+
+    # Crimson Fury
+    option = {
+        name = "Blood demands violence and glory"
+        add_character_modifier = { modifier = crimson_fury_modifier }
+        trigger = { NOT = { has_character_modifier = crimson_fury_modifier } }
+        ai_chance = { base = 10 }
+    }
+
+    # Crimson Prosperity
+    option = {
+        name = "The crimson tide shall fill my coffers"
+        add_character_modifier = { modifier = crimson_prosperity_modifier }
+        trigger = { NOT = { has_character_modifier = crimson_prosperity_modifier } }
+        ai_chance = { base = 10 }
+    }
+
+    # Crimson Shadows
+    option = {
+        name = "Blood flows unseen in the darkness"
+        add_character_modifier = { modifier = crimson_shadows_modifier }
+        trigger = { NOT = { has_character_modifier = crimson_shadows_modifier } }
+        ai_chance = { base = 10 }
+    }
+
+    # Crimson Insight
+    option = {
+        name = "In blood lies the wisdom of ages"
+        add_character_modifier = { modifier = crimson_insight_modifier }
+        trigger = { NOT = { has_character_modifier = crimson_insight_modifier } }
+        ai_chance = { base = 10 }
+    }
+
+    # Crimson Resilience
+    option = {
+        name = "Blood strengthens the vessel that carries it"
+        add_character_modifier = { modifier = crimson_resilience_modifier }
+        trigger = { NOT = { has_character_modifier = crimson_resilience_modifier } }
+        ai_chance = { base = 10 }
+    }
+
+    # Crimson Legacy
+    option = {
+        name = "My bloodline shall grow ever stronger"
+        add_character_modifier = { modifier = crimson_legacy_modifier }
+        trigger = { NOT = { has_character_modifier = crimson_legacy_modifier } }
+        ai_chance = { base = 10 }
+    }
+
+    # Crimson Expertise
+    option = {
+        name = "Blood magic yearns to teach its secrets"
+        add_character_modifier = { modifier = crimson_expertise_modifier }
+        trigger = { NOT = { has_character_modifier = crimson_expertise_modifier } }
+        ai_chance = { base = 10 }
+    }
+
+    # Let me choose something else
+    option = {
+        name = "The time is not yet right"
+        ai_chance = { base = 5 }
+        trigger_event = { id = bm_channel_lifeforce_enlightenment.99 }
+    }
+    
+    # Portraits
+    left_portrait = {
+        character = root
+        animation = personality_rational
+    }
+}
