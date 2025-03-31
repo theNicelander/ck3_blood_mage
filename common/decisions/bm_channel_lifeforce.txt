@@ -5,7 +5,7 @@
     decision_group_type = bm_decision_group
 
     cooldown = { years = 1 }
-    cost = { piety = 150 }
+    cost = { piety = 75 }
     
     is_shown = { has_trait = lifestyle_blood_mage }
     is_valid = { 
@@ -13,7 +13,7 @@
         has_trait = lifestyle_blood_mage
     }
     effect = {
-        trigger_event = { id = bm_channel_lifeforce_minor.99 }
+        trigger_event = { id = bm_channel_lifeforce_enlightenment.99 }
         blood_magic_used = yes
         add_xp_enlightenment = yes
     }
@@ -27,7 +27,7 @@ channel_lifeforce_bloodline = {
     decision_group_type = bm_decision_group
 
     cooldown = { years = 3 }
-    cost = { piety = 250 }
+    cost = { piety = 150 }
     
     is_shown = { has_trait = lifestyle_blood_mage }
     is_valid = { 
