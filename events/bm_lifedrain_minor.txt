@@ -1,0 +1,66 @@
+﻿namespace = bm_lifedrain_minor
+
+bm_lifedrain_minor.001 = {
+    type = character_event
+    title = ""
+    desc = ""
+    theme = witchcraft
+
+    # Intellect drain -- Gain quick / intelligent / genius
+    option = {
+        name = ""
+
+        # Carry out logic
+        duel = {
+            skill = learning
+            target = scope:recipient
+            10 = {
+                desc = "Minor lifedrain"
+
+                # Multiplier increases as your blood mage power increases
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 2
+                }
+            }
+            10 = {
+                desc = "I fail"
+                temporary_negative_lifeforce_effect = yes
+                modifier = { add = trait_drain_modifier_per_trait }
+
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = -1
+                }
+            }
+
+            10 = {
+                desc = "Critical fail"
+                temporary_negative_lifeforce_effect = yes
+                modifier = { add = trait_drain_modifier_per_trait }
+
+                sacrifice_prisoner_effect = {
+                    VICTIM = scope:recipient
+                    EXECUTIONER = scope:actor
+                }
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = -2
+                }
+            }
+        }
+
+
+        ai_chance = { base = 100 }
+    }
+
+    # Portraits
+    left_portrait ={
+        character = root
+        animation = rage
+    }
+    right_portrait ={
+        character = scope:recipient
+        animation = beg
+    }
+}
