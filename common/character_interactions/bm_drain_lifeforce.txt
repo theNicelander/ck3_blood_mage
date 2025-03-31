@@ -9,7 +9,6 @@
     }
 
     cost = { piety = lifedrain_piety_cost }
-
     on_accept = {
         scope:recipient = {
             send_interface_toast = {
@@ -51,7 +50,7 @@ lifedrain_courtier_event_interaction = {
                 custom_tooltip = lifedrain_prisoner_event_interaction.recipient.notification.tt
             }
         }
-        scope:actor = { 
+        scope:actor = {
             hematurgy_magic_cast_effect = yes
             trigger_event = bm_drain_courtier.001
         }

@@ -117,7 +117,7 @@ heal_disease_severe = {
     }
 
     on_accept = {
-        scope:actor = scope:actor = { benediction_magic_cast_effect = yes }
+        scope:actor = { benediction_magic_cast_effect = yes }
         scope:recipient = {
             remove_trait = wounded_3
             remove_trait = impotent
@@ -170,7 +170,7 @@ heal_disease_critical = {
     }
 
     on_accept = {
-        scope:actor = scope:actor = { benediction_magic_cast_effect = yes }
+        scope:actor = { benediction_magic_cast_effect = yes }
         scope:recipient = {
             remove_trait = great_pox
             remove_trait = cancer
