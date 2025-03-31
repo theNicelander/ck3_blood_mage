@@ -2,18 +2,18 @@
 
 # Yearly event - Add xp to Blood Mages, double if following religion
 blood_mage_yearly_xp.001 = {
-	hidden = yes
-	trigger = { has_trait = lifestyle_blood_mage }
-	immediate = {
+    hidden = yes
+    trigger = { has_trait = lifestyle_blood_mage }
+    immediate = {
         add_xp_enlightenment = yes
-		
-		# TODO: If bloodline has some modifier
-		if = {
-			limit = {
-				
-			}
-			add_xp_bloodline = yes
-		}
+
+        # TODO: If bloodline has some modifier
+        if = {
+            limit = {
+
+            }
+            add_xp_bloodline = yes
+        }
     }
 }
 

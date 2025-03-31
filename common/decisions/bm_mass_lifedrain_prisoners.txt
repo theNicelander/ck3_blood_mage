@@ -3,23 +3,23 @@
     ai_check_interval = 12
     desc = mass_lifedrain_prisoners_decision_desc
     decision_group_type = bm_decision_group
-    
+
     is_shown = { has_trait = lifestyle_blood_mage }
-    is_valid = { 
+    is_valid = {
         has_trait = lifestyle_blood_mage
         custom_tooltip = {
-			text = "Has someone imprisoned"	
-			any_prisoner = {
-				count >= 1
-			}
-		}
+            text = "Has someone imprisoned"
+            any_prisoner = {
+                count >= 1
+            }
+        }
     }
 
     effect = {
-		custom_tooltip = mass_lifedrain_prisoners_decision_effect_message 
-        trigger_event = { id = bm_mass_lifedrain.001 } 
+        custom_tooltip = mass_lifedrain_prisoners_decision_effect_message
+        trigger_event = { id = bm_mass_lifedrain.001 }
     }
-    
+
     # AI
     ai_will_do = { base = 10 }
 }

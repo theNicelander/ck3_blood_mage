@@ -2,12 +2,12 @@
     picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
     desc = convert_to_blood_magic_from_witch_desc
     decision_group_type = bm_decision_group
-    
+
     is_shown = {
         has_trait = witch
         NOT = { has_trait = lifestyle_blood_mage }
     }
-    
+
     effect = {
         remove_trait = witch
         add_trait = lifestyle_blood_mage

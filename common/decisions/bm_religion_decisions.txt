@@ -3,14 +3,14 @@
     desc = become_blood_cultist_decision_desc
     decision_group_type = bm_decision_group
 
-    is_shown = {  
+    is_shown = {
         has_trait = lifestyle_blood_mage
         not = { has_faith = faith:cult_of_blood }
     }
     is_valid = { has_trait = lifestyle_blood_mage }
-    
+
     cost = { piety = 250 }
-    
+
     effect = {  set_character_faith = faith:cult_of_blood }
 
     # Yearly 10% chance AI take up the religion if they are a blood mage

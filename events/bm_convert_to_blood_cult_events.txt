@@ -16,10 +16,10 @@ bm_convert_to_blood_cult.001 = {
             target = scope:recipient
             50 = {
                 desc = "I successfully indoctrinate them into the Blood Cult"
-				compare_modifier = {
-					value = scope:duel_value
-					multiplier = 5
-				}
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 5
+                }
                 scope:recipient = { set_character_faith = faith:cult_of_blood }
             }
             50 = {

@@ -3,27 +3,27 @@
     interface_priority = 300
     category = interaction_category_hostile
     desc = "Convert to Blood Cult"
-	
+
     popup_on_receive = yes
-	pause_on_receive = yes
+    pause_on_receive = yes
 
     auto_accept = yes
     is_highlighted = { always = yes }
 
     cost = { piety = 50 }
 
-	is_shown = {
-		scope:actor = { 
-            has_trait = lifestyle_blood_mage 
+    is_shown = {
+        scope:actor = {
+            has_trait = lifestyle_blood_mage
             has_faith = faith:cult_of_blood
         }
-		scope:recipient = { NOT = { has_faith = faith:cult_of_blood } }
-		
-        # Can't duel yourself.
-		NOT = { scope:actor = scope:recipient }
-	}
+        scope:recipient = { NOT = { has_faith = faith:cult_of_blood } }
 
-	is_valid_showing_failures_only = { scope:actor = { is_imprisoned = no } }
+        # Can't duel yourself.
+        NOT = { scope:actor = scope:recipient }
+    }
+
+    is_valid_showing_failures_only = { scope:actor = { is_imprisoned = no } }
 
     on_accept = {
         scope:recipient = {
