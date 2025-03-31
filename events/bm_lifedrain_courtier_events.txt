@@ -14,23 +14,21 @@ bm_lifedrain_courtier.001 = {
         duel = {
             skill = learning
             target = scope:recipient
-            10 = {
+            50 = {
                 desc = "Minor lifedrain"
 
-                # Multiplier increases as your blood mage power increases
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = 2
+                    multiplier = 1
                 }
             }
-            10 = {
+            40 = {
                 desc = "I fail"
                 temporary_negative_lifeforce_effect = yes
-                modifier = { add = trait_drain_modifier_per_trait }
 
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = -1
+                    multiplier = -2
                 }
             }
 
@@ -45,7 +43,7 @@ bm_lifedrain_courtier.001 = {
                 }
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = -2
+                    multiplier = -0.5
                 }
             }
         }
