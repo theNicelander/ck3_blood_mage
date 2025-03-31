@@ -1,0 +1,80 @@
+﻿# Spend Lifeforce event
+
+namespace = bm_channel_lifeforce_bloodline
+
+bm_channel_lifeforce_bloodline.001 = {
+    type = character_event
+    title = "Channel Dynasty Crimson Aspects"
+    desc = "With greater sacrifice and concentration, my blood magic can extend beyond my person to influence my entire bloodline. Which aspect shall I bestow upon my dynasty?"
+    theme = witchcraft
+
+    # Dynasty Crimson Charisma
+    option = {
+        name = "Our words shall echo with blood-given authority"
+        add_character_modifier = { modifier = dynasty_crimson_charisma_modifier }
+        trigger = { NOT = { has_character_modifier = dynasty_crimson_charisma_modifier } }
+        ai_chance = { base = 10 }
+    }
+
+    # Dynasty Crimson Fury
+    option = {
+        name = "The martial prowess of our line shall be legendary"
+        add_character_modifier = { modifier = dynasty_crimson_fury_modifier }
+        trigger = { NOT = { has_character_modifier = dynasty_crimson_fury_modifier } }
+        ai_chance = { base = 10 }
+    }
+
+    # Dynasty Crimson Prosperity
+    option = {
+        name = "Blood-wealth shall flow through our domains"
+        add_character_modifier = { modifier = dynasty_crimson_prosperity_modifier }
+        trigger = { NOT = { has_character_modifier = dynasty_crimson_prosperity_modifier } }
+        ai_chance = { base = 10 }
+    }
+
+    # Dynasty Crimson Shadows
+    option = {
+        name = "Our family shall master the arts of blood and shadow"
+        add_character_modifier = { modifier = dynasty_crimson_shadows_modifier }
+        trigger = { NOT = { has_character_modifier = dynasty_crimson_shadows_modifier } }
+        ai_chance = { base = 10 }
+    }
+
+    # Dynasty Crimson Insight
+    option = {
+        name = "Blood-wisdom shall guide our entire line"
+        add_character_modifier = { modifier = dynasty_crimson_insight_modifier }
+        trigger = { NOT = { has_character_modifier = dynasty_crimson_insight_modifier } }
+        ai_chance = { base = 10 }
+    }
+
+    # Dynasty Crimson Resilience
+    option = {
+        name = "The vitality of our blood shall sustain our dynasty"
+        add_character_modifier = { modifier = dynasty_crimson_resilience_modifier }
+        trigger = { NOT = { has_character_modifier = dynasty_crimson_resilience_modifier } }
+        ai_chance = { base = 10 }
+    }
+
+    # Dynasty Crimson Legacy
+    option = {
+        name = "The strength of our blood shall grow with each generation"
+        add_character_modifier = { modifier = dynasty_crimson_legacy_modifier }
+        trigger = { NOT = { has_character_modifier = dynasty_crimson_legacy_modifier } }
+        ai_chance = { base = 10 }
+    }
+
+    # Dynasty Crimson Expertise
+    option = {
+        name = "Blood's ancient knowledge shall flow through our line"
+        add_character_modifier = { modifier = dynasty_crimson_expertise_modifier }
+        trigger = { NOT = { has_character_modifier = dynasty_crimson_expertise_modifier } }
+        ai_chance = { base = 10 }
+    }
+    
+    # Portraits
+    left_portrait = {
+        character = root
+        animation = personality_rational
+    }
+}
