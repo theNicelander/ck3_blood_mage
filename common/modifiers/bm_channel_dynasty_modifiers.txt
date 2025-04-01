@@ -2,20 +2,18 @@
 # Dynasty - Crimson Charisma
 dynasty_crimson_charisma_modifier = {
     icon = magic_positive
-    stacking = no
 
-    diplomacy = 1
-    general_opinion = 1
-    monthly_prestige = 0.125
+    diplomacy = 2
+    general_opinion = 2
+    monthly_prestige = 0.15
 }
 
 # Dynasty - Crimson Fury
 dynasty_crimson_fury_modifier = {
     icon = magic_positive
-    stacking = no
 
-    martial = 1
-    advantage = 1
+    martial = 2
+    advantage = 2
     knight_limit = 1
     knight_effectiveness_mult = 0.1
 }
@@ -23,46 +21,42 @@ dynasty_crimson_fury_modifier = {
 # Dynasty - Crimson Prosperity
 dynasty_crimson_prosperity_modifier = {
     icon = magic_positive
-    stacking = no
 
-    stewardship = 1
-    monthly_income = 0.125
+    stewardship = 2
+    monthly_income = 0.15
     monthly_county_control_growth_add = 0.05
 }
 
 # Dynasty - Crimson Shadows
 dynasty_crimson_shadows_modifier = {
     icon = magic_positive
-    stacking = no
 
-    intrigue = 1
-    hostile_scheme_success_chance = 2.5
+    intrigue = 2
+    owned_hostile_scheme_success_chance_add = 5
+    enemy_hostile_scheme_success_chance_add = -5
 }
 
 # Dynasty - Crimson Insight
 dynasty_crimson_insight_modifier = {
     icon = magic_positive
-    stacking = no
 
-    learning = 1
-    monthly_piety = 0.125
+    learning = 2
+    monthly_piety = 0.2
     character_capital_county_monthly_development_growth_add = 0.05
 }
 
 # Dynasty - Crimson Resilience
 dynasty_crimson_resilience_modifier = {
     icon = magic_positive
-    stacking = no
 
-    health = 0.1
-    stress_loss_mult = 0.05
-    fertility = 0.025
+    health = 0.2
+    stress_loss_mult = 0.1
+    fertility = 0.1
 }
 
 # Dynasty - Crimson Legacy
 dynasty_crimson_legacy_modifier = {
     icon = magic_positive
-    stacking = no
 
     positive_random_genetic_chance = 0.05
     genetic_trait_strengthen_chance = 0.05
@@ -75,8 +69,7 @@ dynasty_crimson_legacy_modifier = {
 # Dynasty - Crimson Expertise
 dynasty_crimson_expertise_modifier = {
     icon = magic_positive
-    stacking = no
 
-    monthly_lifestyle_xp_gain_mult = 0.025
-    learning_lifestyle_xp_gain_mult = 0.025
+    monthly_lifestyle_xp_gain_mult = 0.05
+    learning_lifestyle_xp_gain_mult = 0.05
 }
