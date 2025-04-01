@@ -1,42 +1,36 @@
 ﻿namespace = bm_lifedrain_courtier
 
 bm_lifedrain_courtier.001 = {
+    title = bm_lifedrain_courtier.001.title
+    desc = bm_lifedrain_courtier.001.desc
     type = character_event
-    title = ""
-    desc = ""
     theme = witchcraft
 
-    # Intellect drain -- Gain quick / intelligent / genius
     option = {
-        name = ""
-
+        name = bm_lifedrain_courtier.001.a
         # Carry out logic
         duel = {
             skill = learning
             target = scope:recipient
             50 = {
-                desc = "Minor lifedrain"
-
+                desc = bm_lifedrain_courtier.001.a.success_desc
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = 1
                 }
             }
             40 = {
-                desc = "I fail"
+                desc = bm_lifedrain_courtier.001.a.fail_desc
                 temporary_negative_lifeforce_effect = yes
-
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = -2
                 }
             }
-
             10 = {
-                desc = "Critical fail"
+                desc = bm_lifedrain_courtier.001.a.critical_fail_desc
                 temporary_negative_lifeforce_effect = yes
                 modifier = { add = trait_drain_modifier_per_trait }
-
                 sacrifice_prisoner_effect = {
                     VICTIM = scope:recipient
                     EXECUTIONER = scope:actor
@@ -47,17 +41,15 @@ bm_lifedrain_courtier.001 = {
                 }
             }
         }
-
-
         ai_chance = { base = 100 }
     }
 
     # Portraits
-    left_portrait ={
+    left_portrait = {
         character = root
         animation = rage
     }
-    right_portrait ={
+    right_portrait = {
         character = scope:recipient
         animation = beg
     }
