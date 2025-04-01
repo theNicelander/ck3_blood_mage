@@ -4,17 +4,15 @@ namespace = bm_channel_lifeforce_enlightenment
 
 bm_channel_lifeforce_enlightenment.99 = {
     type = character_event
-    title = ""
-    desc = ""
     theme = witchcraft
 
     option = {
-        name = "Improve a skill slightly"
+        name = bm_channel_lifeforce_enlightenment.99.a
         ai_chance = { base = 10 }
         trigger_event = { id = bm_channel_lifeforce_enlightenment.001 }
     }
     option = {
-        name = "Improve a skill greatly, for a short while"
+        name = bm_channel_lifeforce_enlightenment.99.b
         ai_chance = { base = 10 }
         trigger_event = { id = bm_channel_lifeforce_enlightenment.002 }
     }
@@ -33,7 +31,7 @@ bm_channel_lifeforce_enlightenment.001 = {
 
     # Crimson Charisma
     option = {
-        name = "My words shall carry the weight of blood"
+        name = bm_channel_lifeforce_enlightenment.001.a
         add_character_modifier = { modifier = crimson_charisma_modifier }
         trigger = { NOT = { has_character_modifier = crimson_charisma_modifier } }
         ai_chance = { base = 10 }
@@ -41,7 +39,7 @@ bm_channel_lifeforce_enlightenment.001 = {
 
     # Crimson Fury
     option = {
-        name = "Blood demands violence and glory"
+        name = bm_channel_lifeforce_enlightenment.001.b
         add_character_modifier = { modifier = crimson_fury_modifier }
         trigger = { NOT = { has_character_modifier = crimson_fury_modifier } }
         ai_chance = { base = 10 }
@@ -49,7 +47,7 @@ bm_channel_lifeforce_enlightenment.001 = {
 
     # Crimson Prosperity
     option = {
-        name = "The crimson tide shall fill my coffers"
+        name = bm_channel_lifeforce_enlightenment.001.c
         add_character_modifier = { modifier = crimson_prosperity_modifier }
         trigger = { NOT = { has_character_modifier = crimson_prosperity_modifier } }
         ai_chance = { base = 10 }
@@ -57,7 +55,7 @@ bm_channel_lifeforce_enlightenment.001 = {
 
     # Crimson Shadows
     option = {
-        name = "Blood flows unseen in the darkness"
+        name = bm_channel_lifeforce_enlightenment.001.d
         add_character_modifier = { modifier = crimson_shadows_modifier }
         trigger = { NOT = { has_character_modifier = crimson_shadows_modifier } }
         ai_chance = { base = 10 }
@@ -65,7 +63,7 @@ bm_channel_lifeforce_enlightenment.001 = {
 
     # Crimson Insight
     option = {
-        name = "In blood lies the wisdom of ages"
+        name = bm_channel_lifeforce_enlightenment.001.e
         add_character_modifier = { modifier = crimson_insight_modifier }
         trigger = { NOT = { has_character_modifier = crimson_insight_modifier } }
         ai_chance = { base = 10 }
@@ -73,7 +71,7 @@ bm_channel_lifeforce_enlightenment.001 = {
 
     # Crimson Resilience
     option = {
-        name = "Blood strengthens the vessel that carries it"
+        name = bm_channel_lifeforce_enlightenment.001.f
         add_character_modifier = { modifier = crimson_resilience_modifier }
         trigger = { NOT = { has_character_modifier = crimson_resilience_modifier } }
         ai_chance = { base = 10 }
@@ -81,7 +79,7 @@ bm_channel_lifeforce_enlightenment.001 = {
 
     # Crimson Legacy
     option = {
-        name = "My bloodline shall grow ever stronger"
+        name = bm_channel_lifeforce_enlightenment.001.g
         add_character_modifier = { modifier = crimson_legacy_modifier }
         trigger = { NOT = { has_character_modifier = crimson_legacy_modifier } }
         ai_chance = { base = 10 }
@@ -89,7 +87,7 @@ bm_channel_lifeforce_enlightenment.001 = {
 
     # Crimson Expertise
     option = {
-        name = "Blood magic yearns to teach its secrets"
+        name = bm_channel_lifeforce_enlightenment.001.h
         add_character_modifier = { modifier = crimson_expertise_modifier }
         trigger = { NOT = { has_character_modifier = crimson_expertise_modifier } }
         ai_chance = { base = 10 }
@@ -97,7 +95,7 @@ bm_channel_lifeforce_enlightenment.001 = {
 
     # Let me choose something else
     option = {
-        name = "The time is not yet right"
+        name = bm_channel_lifeforce_enlightenment.001.i
         ai_chance = { base = 5 }
         trigger_event = { id = bm_channel_lifeforce_enlightenment.99 }
     }
