@@ -16,7 +16,7 @@
                 custom_tooltip = lifedrain_prisoner_event_interaction.recipient.notification.tt
             }
         }
-        scope:actor = { hematurgy_magic_cast_effect = yes }
+        scope:actor = { hematurgy_magic_cast_effect_major = yes }
         lifedrain_execution_effect = {
             VICTIM = scope:recipient
             EXECUTIONER = scope:actor
