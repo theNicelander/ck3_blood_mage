@@ -88,7 +88,7 @@ bm_stroll_town.002 = {
         name = "With a subtle gesture, I channel power to mend their bleeding wounds"
         trigger = { has_trait = lifestyle_blood_mage }
         scope:beggar = { remove_trait = wounded_1 }
-        benediction_magic_cast_effect = yes
+        benediction_magic_cast_effect_major = yes
         add_piety = cure_illness_cost_small_neg
         root.capital_county = {
             add_county_modifier = {
@@ -103,7 +103,7 @@ bm_stroll_town.002 = {
         trigger = { has_trait = lifestyle_blood_mage }
         scope:beggar = { remove_trait = typhus }
         add_piety = cure_illness_cost_medium_neg
-        benediction_magic_cast_effect = yes
+        benediction_magic_cast_effect_major = yes
 
         root.capital_county = {
             add_county_modifier = {
@@ -117,7 +117,7 @@ bm_stroll_town.002 = {
         name = "I place my hands upon their sightless eyes, commanding darkness to retreat"
         trigger = { has_trait = lifestyle_blood_mage }
         scope:beggar = { remove_trait = blind }
-        benediction_magic_cast_effect = yes
+        benediction_magic_cast_effect_major = yes
         add_piety = cure_illness_cost_large_neg
         root.capital_county = {
             add_county_modifier = {
@@ -131,7 +131,7 @@ bm_stroll_town.002 = {
         name = "Even death's corruption shall yield to my command—I will purge the cancer from their flesh"
         trigger = { has_trait = lifestyle_blood_mage }
         scope:beggar = { remove_trait = cancer }
-        benediction_magic_cast_effect = yes
+        benediction_magic_cast_effect_major = yes
         add_piety = cure_illness_cost_xlarge_neg
         root.capital_county = {
             add_county_modifier = {

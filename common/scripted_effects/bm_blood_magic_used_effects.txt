@@ -1,19 +1,19 @@
 ﻿blood_magic_used_major = {
-    remove_character_modifier = lifeforce_modifier
+    remove_character_modifier = lifeforce_modifier_major
     temporary_negative_lifeforce_effect_major = yes
 }
 
 blood_magic_used_minor = {
     remove_character_modifier = lifeforce_modifier_minor
-    temporary_negative_lifeforce_effect_major_minor = yes
+    temporary_negative_lifeforce_effect_minor = yes
 }
 
 hematurgy_magic_cast_effect = {
-    add_character_modifier =  {modifier = lifeforce_modifier }
+    add_character_modifier =  { modifier = lifeforce_modifier_major }
     add_xp_hematurgy = yes
 }
 
-benediction_magic_cast_effect = {
-    remove_character_modifier = lifeforce_modifier
+benediction_magic_cast_effect_major = {
+    remove_character_modifier = lifeforce_modifier_major
     add_xp_benediction = yes
 }
