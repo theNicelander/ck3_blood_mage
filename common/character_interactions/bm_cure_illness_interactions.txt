@@ -20,7 +20,7 @@
         }
     }
 
-    is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier } }
+    is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier_major } }
 
     on_accept = {
         scope:actor = { benediction_magic_cast_effect = yes }
@@ -48,7 +48,7 @@ heal_disease_medium = {
     auto_accept = yes
 
     cost = { piety = heal_disease_medium_cost }
-    is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier } }
+    is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier_major } }
     is_shown = {
         scope:actor = {
             has_trait = lifestyle_blood_mage
@@ -100,7 +100,7 @@ heal_disease_severe = {
     auto_accept = yes
 
     cost = { piety = heal_disease_severe_cost }
-    is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier } }
+    is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier_major } }
     is_shown = {
         scope:actor = { has_trait = lifestyle_blood_mage }
         scope:recipient = {
@@ -154,7 +154,7 @@ heal_disease_critical = {
     cost = {
         piety = heal_disease_critical_cost
     }
-    is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier } }
+    is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier_major } }
     is_shown = {
         scope:actor = {
             has_trait = lifestyle_blood_mage

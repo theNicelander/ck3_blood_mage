@@ -50,10 +50,7 @@ lifedrain_courtier_event_interaction = {
                 custom_tooltip = lifedrain_prisoner_event_interaction.recipient.notification.tt
             }
         }
-        scope:actor = {
-            hematurgy_magic_cast_effect = yes
-            trigger_event = bm_lifedrain_courtier.001
-        }
+        scope:actor = { trigger_event = bm_lifedrain_courtier.001 }
     }
 
     # AI

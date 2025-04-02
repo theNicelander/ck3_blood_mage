@@ -30,7 +30,6 @@ bm_lifedrain_courtier.001 = {
             10 = {
                 desc = bm_lifedrain_courtier.001.a.critical_fail_desc
                 temporary_negative_lifeforce_effect = yes
-                modifier = { add = trait_drain_modifier_per_trait }
                 sacrifice_prisoner_effect = {
                     VICTIM = scope:recipient
                     EXECUTIONER = scope:actor
