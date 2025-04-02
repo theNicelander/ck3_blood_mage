@@ -21,7 +21,7 @@ bm_lifedrain_courtier.001 = {
             }
             40 = {
                 desc = bm_lifedrain_courtier.001.a.fail_desc
-                temporary_negative_lifeforce_effect = yes
+                temporary_negative_lifeforce_effect_major = yes
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = -2
@@ -29,7 +29,7 @@ bm_lifedrain_courtier.001 = {
             }
             10 = {
                 desc = bm_lifedrain_courtier.001.a.critical_fail_desc
-                temporary_negative_lifeforce_effect = yes
+                temporary_negative_lifeforce_effect_major = yes
                 sacrifice_prisoner_effect = {
                     VICTIM = scope:recipient
                     EXECUTIONER = scope:actor

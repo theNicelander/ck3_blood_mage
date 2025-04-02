@@ -16,7 +16,7 @@ duel = {
     }
     30 = {
         desc = "I fail"
-        temporary_negative_lifeforce_effect = yes
+        temporary_negative_lifeforce_effect_major = yes
     }
 }
 ```
@@ -25,7 +25,7 @@ duel = {
 
 ```
 My stat:        27
-Their stat:     7 
+Their stat:     7
 
 
 # Calculate difference in skill:
