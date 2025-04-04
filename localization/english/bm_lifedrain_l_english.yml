@@ -1,7 +1,32 @@
 ﻿l_english:
-bm_lifedrain_courtier.001.title:0 "Life Drain"
+  # Lifedrain courtier (minor)
+lifedrain_courtier_event_interaction:0 "Minor Lifedrain"
+lifedrain_courtier_event_interaction.recipient.notification.tt:0 "You will use blood magic to partially drain [recipient.GetShortUINameNoTooltip], without killing them"
+bm_lifedrain_courtier.001.title:0 "Minor Lifedrain"
 bm_lifedrain_courtier.001.desc:0 "Your courtier stands before you, unaware of your intentions. Their lifeforce pulses invitingly, waiting to be harnessed."
-bm_lifedrain_courtier.001.a:0 "Drain their lifeforce"
-bm_lifedrain_courtier.001.a.success_desc:0 "You successfully harvest a portion of their lifeforce, leaving them weakened but alive."
-bm_lifedrain_courtier.001.a.fail_desc:0 "Your attempt fails, and the ritual backlashes against you."
+bm_lifedrain_courtier.001.a:0 "Drain part of their lifeforce"
+bm_lifedrain_courtier.001.a.success_desc:0 "You successfully harvest a portion of their lifeforce"
+bm_lifedrain_courtier.001.a.fail_desc:0 "You harvest a portion of their lifeforce, but injure the victim"
 bm_lifedrain_courtier.001.a.critical_fail_desc:0 "The ritual spirals out of control. Your courtier collapses, their life essence violently consumed."
+  
+  # lifedrain prisoner (major)
+lifedrain_prisoner_event_interaction:0 "Major Lifedrain"
+lifedrain_prisoner_event_interaction.recipient.notification.tt:0 "You will use blood magic to drain [recipient.GetShortUINameNoTooltip], killing them in the process"
+lifedrain_prisoner_interaction:0 "Major Lifedrain"
+lifedrain_prisoner_interaction_desc:0 "Completely drain the life force from [recipient.GetShortUINameNoTooltip]"
+lifedrain_prisoner_interaction.recipient.notification.tt:0 "[recipient.GetShortUINameNoTooltip]'s life force will be drained and added to yours"
+   
+  # Trait drain
+trait_drain_prisoner_event_interaction:0 "Drain positive traits"
+generic_drain_prisoner_trait_interaction_desc:0 "Drain [recipient.GetShortUINameNoTooltip]'s extraordinary traits."
+generic_drain_prisoner_trait_interaction.recipient.notification.tt:0 "[recipient.GetShortUINameNoTooltip]'s extraordinary trait will be drained"
+  
+intellect_drain_prisoner_interaction:0 "Intellect drain"
+physique_drain_prisoner_interaction:0 "Physique drain"
+beauty_drain_prisoner_interaction:0 "Beauty drain"
+fertility_drain_prisoner_interaction:0 "Fertility drain"
+giant_drain_prisoner_interaction:0 "Giant drain"
+pure_blooded_drain_prisoner_interaction:0 "Pure Blood drain"
+  
+  
+  

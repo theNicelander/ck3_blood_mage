@@ -22,7 +22,14 @@ add_xp_benediction = {
     }
 }
 
-add_xp_hematurgy = {
+add_xp_hematurgy_major = {
+    add_trait_xp = {
+        trait = lifestyle_blood_mage
+        track = hematurgy
+        value = 2
+    }
+}
+add_xp_hematurgy_minor = {
     add_trait_xp = {
         trait = lifestyle_blood_mage
         track = hematurgy
