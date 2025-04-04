@@ -11,11 +11,6 @@ bm_channel_lifeforce_enlightenment.99 = {
         ai_chance = { base = 10 }
         trigger_event = { id = bm_channel_lifeforce_enlightenment.001 }
     }
-    option = {
-        name = bm_channel_lifeforce_enlightenment.99.b
-        ai_chance = { base = 10 }
-        trigger_event = { id = bm_channel_lifeforce_enlightenment.002 }
-    }
     # Portraits
     left_portrait ={
         character = root
@@ -66,14 +61,6 @@ bm_channel_lifeforce_enlightenment.001 = {
         name = bm_channel_lifeforce_enlightenment.001.e
         add_character_modifier = { modifier = crimson_insight_modifier }
         trigger = { NOT = { has_character_modifier = crimson_insight_modifier } }
-        ai_chance = { base = 10 }
-    }
-
-    # Crimson Resilience
-    option = {
-        name = bm_channel_lifeforce_enlightenment.001.f
-        add_character_modifier = { modifier = crimson_resilience_modifier }
-        trigger = { NOT = { has_character_modifier = crimson_resilience_modifier } }
         ai_chance = { base = 10 }
     }
 

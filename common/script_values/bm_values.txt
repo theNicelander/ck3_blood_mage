@@ -50,50 +50,6 @@ trait_drain_beauty_cost = {
     }
 }
 
-enhance_blood_mage_personal_piety_level_cost = {
-    value = 1
-    if = {
-        limit = {
-            has_trait = lifestyle_blood_mage_1
-        }
-        add = 2
-    }
-}
-
-enhance_blood_mage_personal_piety_level_cost_negative = {
-    value = -1
-    if = {
-        limit = {
-            has_trait = lifestyle_blood_mage_1
-        }
-        add = -1
-    }
-}
-
-blood_mage_rank_multiplier = {
-    value = 10
-    if = {
-        limit = { has_trait = lifestyle_blood_mage_1 }
-        add = 1
-    }
-    if = {
-        limit = { has_trait = lifestyle_blood_mage_2 }
-        add = 2
-    }
-}
-
-blood_mage_rank_base = {
-    value = 0
-    if = {
-        limit = { has_trait = lifestyle_blood_mage_1 }
-        add = 25
-    }
-    if = {
-        limit = { has_trait = lifestyle_blood_mage_2 }
-        add = 50
-    }
-}
-
 trait_drain_modifier_per_trait = {
     value = 0
 

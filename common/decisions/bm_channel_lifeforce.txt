@@ -8,7 +8,7 @@
 
     is_shown = { has_trait = lifestyle_blood_mage }
     is_valid = {
-        has_character_modifier = lifeforce_modifier
+        has_character_modifier = lifeforce_modifier_major
         has_trait = lifestyle_blood_mage
     }
     effect = {
@@ -29,7 +29,7 @@ channel_lifeforce_bloodline = {
 
     is_shown = { has_trait = lifestyle_blood_mage }
     is_valid = {
-        has_character_modifier = lifeforce_modifier
+        has_character_modifier = lifeforce_modifier_major
         is_house_head = yes
     }
     effect = {

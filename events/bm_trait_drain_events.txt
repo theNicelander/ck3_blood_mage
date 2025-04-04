@@ -31,8 +31,7 @@ bm_trait_drain.001 = {
                     multiplier = 2
                 }
 
-                # Base chance increases as your blood mage power increases
-                modifier = { add = blood_mage_rank_base }
+                # TODO: Base chance increases as your blood mage power increases
 
                 # Draining the last level of a levellable trait costs piety level
                 if = { limit = { has_trait = intellect_good_2 } add_piety_level = -1 }
@@ -76,8 +75,7 @@ bm_trait_drain.001 = {
                     multiplier = 2
                 }
 
-                # Base chance increases as your blood mage power increases
-                modifier = { add = blood_mage_rank_base }
+                # TODO: Base chance increases as your blood mage power increases
 
                 # Draining the last level of a levellable trait costs piety level
                 if = { limit = { has_trait = physique_good_2 } add_piety_level = -1 }
@@ -123,8 +121,7 @@ bm_trait_drain.001 = {
                     multiplier = 2
                 }
 
-                # Base chance increases as your blood mage power increases
-                modifier = { add = blood_mage_rank_base }
+                # TODO: Base chance increases as your blood mage power increases
 
                 # Draining the last level of a levellable trait costs piety level
                 if = { limit = { has_trait = beauty_good_2 } add_piety_level = -1 }
@@ -169,8 +166,7 @@ bm_trait_drain.001 = {
                         multiplier = 2
                     }
 
-                    # Base chance increases as your blood mage power increases
-                    modifier = { add = blood_mage_rank_base }
+                    # TODO: Base chance increases as your blood mage power increases
 
                     # Success!
                     add_trait = fecund
@@ -213,8 +209,7 @@ bm_trait_drain.001 = {
                         multiplier = 2
                     }
 
-                    # Base chance increases as your blood mage power increases
-                    modifier = { add = blood_mage_rank_base }
+                    # TODO: Base chance increases as your blood mage power increases
 
                     # Success!
                     add_trait = giant
@@ -257,8 +252,7 @@ bm_trait_drain.001 = {
                         multiplier = 2
                     }
 
-                    # Base chance increases as your blood mage power increases
-                    modifier = { add = blood_mage_rank_base }
+                    # TODO: Base chance increases as your blood mage power increases
 
                     # Success!
                     add_trait = pure_blooded
