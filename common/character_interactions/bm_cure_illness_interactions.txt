@@ -20,10 +20,10 @@
         }
     }
 
-    is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier_major } }
+    is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier_minor } }
 
     on_accept = {
-        scope:actor = { benediction_magic_cast_effect_major = yes }
+        scope:actor = { benediction_magic_cast_effect_minor = yes }
         scope:recipient = {
             remove_trait = wounded_1
             remove_trait = ill

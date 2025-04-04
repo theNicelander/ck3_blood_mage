@@ -1,15 +1,8 @@
 ﻿debug_add_lifeforce = {
     decision_group_type = bm_decision_group
-
-    picture = {
-        reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
-    }
-    is_shown = {
-        debug_only = yes
-    }
-    is_valid = {
-        has_trait = lifestyle_blood_mage
-    }
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+    is_shown = { debug_only = yes }
+    is_valid = { has_trait = lifestyle_blood_mage }
     ai_check_interval = 0
 
     effect = {
@@ -21,17 +14,28 @@
     }
 }
 
-debug_add_exp_blood_mage_exp = {
-    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
-    ai_check_interval = 0
+debug_add_lifeforce_minor = {
     decision_group_type = bm_decision_group
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+    is_shown = { debug_only = yes }
+    is_valid = { has_trait = lifestyle_blood_mage }
+    ai_check_interval = 0
 
-    is_shown = {
-        debug_only = yes
+    effect = {
+        add_character_modifier = { modifier = lifeforce_modifier_minor }
+        add_character_modifier = { modifier = lifeforce_modifier_minor }
+        add_character_modifier = { modifier = lifeforce_modifier_minor }
+        add_character_modifier = { modifier = lifeforce_modifier_minor }
+        add_character_modifier = { modifier = lifeforce_modifier_minor }
     }
-    is_valid = {
-        has_trait = lifestyle_blood_mage
-    }
+}
+
+debug_add_exp_blood_mage_exp = {
+    decision_group_type = bm_decision_group
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+    is_shown = { debug_only = yes }
+    is_valid = { has_trait = lifestyle_blood_mage }
+    ai_check_interval = 0
 
     effect = {
         add_trait_xp = {

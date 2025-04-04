@@ -9,14 +9,30 @@ blood_magic_used_minor = {
 
 hematurgy_magic_cast_effect_major = {
     add_character_modifier =  { modifier = lifeforce_modifier_major }
-    add_xp_hematurgy_major = yes
+    add_xp_bm_dynamic = {
+        TRACK = hematurgy
+        XP = 2
+    }
 }
 hematurgy_magic_cast_effect_minor = {
     add_character_modifier =  { modifier = lifeforce_modifier_minor }
-    add_xp_hematurgy_minor = yes
+    add_xp_bm_dynamic = {
+        TRACK = hematurgy
+        XP = 1
+    }
 }
 
 benediction_magic_cast_effect_major = {
     remove_character_modifier = lifeforce_modifier_major
-    add_xp_benediction = yes
+    add_xp_bm_dynamic = {
+        TRACK = benediction
+        XP = 2
+    }
+}
+benediction_magic_cast_effect_minor = {
+    remove_character_modifier = lifeforce_modifier_minor
+    add_xp_bm_dynamic = {
+        TRACK = benediction
+        XP = 1
+    }
 }
