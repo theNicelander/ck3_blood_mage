@@ -5,7 +5,7 @@
     desc = grant_lifeforce_interaction_desc
     interface_priority = 190
 
-    cost = { piety = lifedrain_piety_cost }
+    cost = { piety = lifedrain_piety_cost_minor }
 
     is_shown = {
         scope:actor = { has_trait = lifestyle_blood_mage }
