@@ -1,0 +1,207 @@
+﻿# lifedrain event
+
+namespace = seek_power
+
+seek_power.001 = {
+    type = character_event
+    title = "The Untamed Wilds"
+    desc = "The wilderness beyond your settlement pulses with life energy. Ancient trees reach toward the sky, their roots drinking deep from soil enriched by countless cycles of death and rebirth. As you venture deeper into nature's domain, you feel the primal power of blood magic growing stronger, drawing you toward potential sacrifices that might feed your arcane hunger."
+    theme = hunt_activity
+
+    option = {
+        name = "Follow my instincts to seek worthy prey"
+        
+        duel = {
+            skill = intrigue
+            value = 0
+            
+            70 = {
+                desc = "I encounter wild game"
+                trigger_event = { id = seek_power.002 }
+            }
+            30 = {
+                desc = "I discover a lost traveler"
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 1
+                }
+                trigger_event = { id = seek_power.003 }
+            }
+        }
+    }
+
+    # Do nothing
+    option = {
+        name = "Savor the tranquility of nature before returning to the burdens of rulership"
+        add_stress = -10
+        ai_chance = {
+            base = 5
+        }
+    }
+
+    # Portraits
+    left_portrait = {
+        character = root
+        animation = idle
+    }
+}
+
+# New event for animal sacrifice
+seek_power.002 = {
+    type = character_event
+    title = "Wilderness Harvest"
+    desc = "Your hunt leads you to a magnificent stag, its breath creating clouds of mist in the cold air. The creature stands proud, unaware of your approach as you prepare your ritual. Blood magic requires no bow or blade—just your will and the ancient words of power. As you begin the incantation, you feel the connection forming between your essence and the animal's life force."
+    theme = hunt_activity
+
+    option = {
+        name = "Drain its life force for my power"
+        hematurgy_magic_cast_effect_minor = yes
+        add_xp_hematurgy_minor = yes
+    }
+
+    option = {
+        name = "Let the creature go and continue my search"
+        add_stress = 5
+    }
+
+    # Portraits
+    left_portrait = {
+        character = root
+        animation = idle
+    }
+}
+
+seek_power.003 = {
+    type = character_event
+    title = "A Lost Soul"
+    desc = "Deep in the wilderness, far from any path, you encounter a solitary figure. Dressed in tattered clothes and trembling from exposure, the traveler appears to have lost their way days ago. Gaunt and weakened, they look up at your approach with both hope and fear in their eyes. Despite their pitiable state, you sense something valuable that others would overlook—life essence ripe for the taking... or perhaps a chance to demonstrate mercy through your arcane gifts."
+    theme = hunt_activity
+
+    # Create the beggar/lost traveler
+    immediate = {
+        hidden_effect = {
+            create_character = {
+                name = "Beggar McBeggarface"
+                location = root.capital_province
+                gender_female_chance = 50
+                save_scope_as = beggar
+                culture = root.culture
+                trait = wounded_1   # minor
+                trait = typhus      # medium
+                trait = blind       # severe
+                trait = cancer      # critical
+                trait = drunkard    # flavour
+            }
+        }
+    }
+
+    # Lifedrain
+    option = {
+        name = "Their lifeforce will serve a greater purpose in my hands"
+
+        duel = {
+            skill = intrigue
+            value = 0
+
+            10 = {
+                desc = "Silent Harvest"
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 2
+                }
+                trigger_event = { id = seek_power.0031 }
+                scope:beggar = { death = { death_reason = death_sacrificed_to_gods } }
+            }
+            20 = {
+                desc = "Witnessed"
+                trigger_event = { id = seek_power.0032 }
+                scope:beggar = { death = { death_reason = death_sacrificed_to_gods } }
+            }
+            20 = {
+                desc = "They escape"
+                trigger_event = { id = seek_power.0033 }
+            }
+        }
+        ai_chance = { base = 10 }
+    }
+
+    # Do nothing
+    option = {
+        name = "This wanderer is not worth my attention—I shall continue my search elsewhere"
+        add_stress = -10
+        ai_chance = { base = 5 }
+    }
+
+    # Portraits
+    left_portrait = {
+        character = root
+        animation = idle
+    }
+    right_portrait = {
+        character = scope:beggar
+        animation = beg
+    }
+}
+
+
+seek_power.0031 = {
+    type = character_event
+    title = "Wilderness Sacrifice"
+    desc = "The traveler's life flows into me as their body crumples to the forest floor. Their final breath mingles with the whisper of wind through ancient trees. I leave the empty vessel for nature to reclaim, new power tingling beneath my skin. The wilderness keeps my secret—only the silent watchers of the forest bear witness to my dark work."
+    theme = hunt_activity
+
+    option = {
+        name = "Power has its price. Today, it was theirs."
+        hematurgy_magic_cast_effect_major = yes
+    }
+
+    # Portraits
+    left_portrait = {
+        character = root
+        animation = idle
+    }
+}
+
+seek_power.0032 = {
+    type = character_event
+    title = "Witnessed"
+    desc = "The traveler withers as I drain their essence, but a horrified gasp breaks my concentration. A hunter stands frozen at the edge of the clearing, witnessing the final moments of my ritual. Though we are far from civilization, word of a noble who preys upon the lost will eventually spread. The power I've gained comes with unwanted attention."
+    theme = hunt_activity
+
+    option = {
+        name = "A witness survived to tell the tale."
+        hematurgy_magic_cast_effect_major = yes
+        add_stress = 10
+        add_dread = 5
+        root.capital_county = {
+            add_county_modifier = {
+                modifier = drained_beggar_holding
+                years = 5
+            }
+        }
+    }
+
+    # Portraits
+    left_portrait = {
+        character = root
+        animation = idle
+    }
+}
+
+seek_power.0033 = {
+    type = character_event
+    title = "Lost Opportunity"
+    desc = "I reach for the traveler, fingers tingling with anticipation, but something goes wrong. Perhaps it was the snap of a twig or the howl of a distant wolf, but the wanderer's survival instinct flares unexpectedly. With surprising vigor, they scramble away, disappearing into the thick undergrowth. The power that was nearly mine vanishes with them, leaving me empty-handed."
+    theme = hunt_activity
+
+    option = {
+        name = "They got away, I'm left empty handed."
+        add_stress = 5
+    }
+
+    # Portraits
+    left_portrait = {
+        character = root
+        animation = idle
+    }
+}

@@ -16,14 +16,6 @@
                 has_trait = ill
                 has_trait = lovers_pox
                 has_trait = gout_ridden
-
-                has_trait = wounded_2
-                has_trait = infirm
-                has_trait = maimed
-                has_trait = consumption
-               
-                has_trait = typhus
-                depressed_1
             }
         }
     }
@@ -63,14 +55,18 @@ heal_disease_major = {
         }
         scope:recipient = {
             OR = {
-                has_trait = wounded_3
-                has_trait = impotent
-                has_trait = sickly
+                has_trait = wounded_2
                 has_trait = incapable
                 has_trait = pneumonic
                 has_trait = early_great_pox
-                
-                
+                has_trait = infirm
+                has_trait = maimed
+                has_trait = consumption
+                has_trait = typhus
+                has_trait = measles
+                has_trait = blind
+                has_trait = maimed
+                has_trait = one_eyed
             }
         }
     }
@@ -78,7 +74,18 @@ heal_disease_major = {
     on_accept = {
         scope:actor = { benediction_magic_cast_effect_major = yes }
         scope:recipient = {
-
+            remove_trait = wounded_2
+            remove_trait = incapable
+            remove_trait = pneumonic
+            remove_trait = early_great_pox
+            remove_trait = infirm
+            remove_trait = maimed
+            remove_trait = consumption
+            remove_trait = typhus
+            remove_trait = measles
+            remove_trait = blind
+            remove_trait = one_eyed
+            
             # temporary positive opinion
             add_opinion = {
                 target = scope:actor
@@ -103,18 +110,24 @@ heal_disease_benediction = {
     common_interaction = yes
     auto_accept = yes
 
-    cost = { piety = heal_disease_severe_cost }
+    cost = { piety = cure_illness_cost_benediction }
     is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier_major } }
     is_shown = {
         scope:actor = { has_trait = lifestyle_blood_mage }
         scope:recipient = {
             OR = {
+                has_trait = wounded_3
+                has_trait = sickly
                 has_trait = great_pox
                 has_trait = cancer
                 has_trait = bubonic_plague
                 has_trait = smallpox
                 has_trait = leper
                 has_trait = blind
+                has_trait = impotent
+                has_trait = dysentery
+                has_trait = ergotism
+                has_trait = disfigured
             }
         }
     }
@@ -122,7 +135,18 @@ heal_disease_benediction = {
     on_accept = {
         scope:actor = { benediction_magic_cast_effect_major = yes }
         scope:recipient = {
-
+            remove_trait = wounded_3
+            remove_trait = sickly
+            remove_trait = great_pox
+            remove_trait = cancer
+            remove_trait = bubonic_plague
+            remove_trait = smallpox
+            remove_trait = leper
+            remove_trait = blind
+            remove_trait = impotent
+            remove_trait = dysentery
+            remove_trait = ergotism
+            remove_trait = disfigured
 
             # temporary positive opinion
             add_opinion = {

@@ -1,32 +1,33 @@
 ﻿# Lifedraining
-cure_illness_cost_small = 15
-cure_illness_cost_medium = 35
-cure_illness_cost_large = 100
-cure_illness_cost_xlarge = 500
+cure_illness_cost_minor = 15
+cure_illness_cost_major = 35
+cure_illness_cost_benediction = 100
 
-cure_illness_cost_small_neg = -50
-cure_illness_cost_medium_neg = -150
-cure_illness_cost_large_neg = -300
-cure_illness_cost_xlarge_neg = -500
+cure_illness_cost_minor_neg = -15
+cure_illness_cost_major_neg = -35
+cure_illness_cost_benediction_neg = -100
 
 heal_disease_minor_cost = {
     value = 0
     if = {
         limit = { scope:recipient = { has_trait = wounded_1 } }
-        add = cure_illness_cost_small
+        add = cure_illness_cost_minor
     }
-    # Small
     if = {
         limit = { scope:recipient = { has_trait = ill } }
-        add = cure_illness_cost_small
+        add = cure_illness_cost_minor
     }
     if = {
         limit = { scope:recipient = { has_trait = lovers_pox } }
-        add = cure_illness_cost_small
+        add = cure_illness_cost_minor
     }
     if = {
         limit = { scope:recipient = { has_trait = gout_ridden } }
-        add = cure_illness_cost_small
+        add = cure_illness_cost_minor
+    }
+    if = {
+        limit = { scope:recipient = { has_trait = disfigured } }
+        add = cure_illness_cost_minor
     }
 }
 
@@ -34,84 +35,90 @@ heal_disease_major_cost = {
     value = 0
     if = {
         limit = { scope:recipient = { has_trait = wounded_2 } }
-        add = cure_illness_cost_medium
+        add = cure_illness_cost_major
     }
     if = {
         limit = { scope:recipient = { has_trait = infirm } }
-        add = cure_illness_cost_medium
+        add = cure_illness_cost_major
     }
     if = {
         limit = { scope:recipient = { has_trait = maimed } }
-        add = cure_illness_cost_medium
+        add = cure_illness_cost_major
     }
     if = {
         limit = { scope:recipient = { has_trait = blind } }
-        add = cure_illness_cost_medium
-    }
-    if = {
-        limit = { scope:recipient = { has_trait = wounded_2 } }
-        add = cure_illness_cost_medium
+        add = cure_illness_cost_major
     }
     if = {
         limit = { scope:recipient = { has_trait = consumption } }
-        add = cure_illness_cost_medium
+        add = cure_illness_cost_major
     }
     if = {
         limit = { scope:recipient = { has_trait = early_great_pox } }
-        add = cure_illness_cost_medium
+        add = cure_illness_cost_major
     }
     if = {
         limit = { scope:recipient = { has_trait = typhus } }
-        add = cure_illness_cost_medium
-    }
-}
-
-heal_disease_severe_cost = {
-    # Large
-    if = {
-        limit = { scope:recipient = { has_trait = wounded_3 } }
-        add = cure_illness_cost_large
+        add = cure_illness_cost_major
     }
     if = {
-        limit = { scope:recipient = { has_trait = impotent } }
-        add = cure_illness_cost_large
-    }
-    if = {
-        limit = { scope:recipient = { has_trait = sickly } }
-        add = cure_illness_cost_large
-    }
-    if = {
-        limit = { scope:recipient = { has_trait = incapable } }
-        add = cure_illness_cost_large
+        limit = { scope:recipient = { has_trait = measles } }
+        add = cure_illness_cost_major
     }
     if = {
         limit = { scope:recipient = { has_trait = pneumonic } }
-        add = cure_illness_cost_large
+        add = cure_illness_cost_major
     }
     if = {
-        limit = { scope:recipient = { has_trait = leper } }
-        add = cure_illness_cost_large
+        limit = { scope:recipient = { has_trait = one_eyed } }
+        add = cure_illness_cost_major
     }
 }
 
-heal_disease_critical_cost = {
+heal_disease_benediction_cost = {
     value = 0
-
-    # Extra Large
+    if = {
+        limit = { scope:recipient = { has_trait = wounded_3 } }
+        add = cure_illness_cost_benediction
+    }
+    if = {
+        limit = { scope:recipient = { has_trait = incapable } }
+        add = cure_illness_cost_benediction
+    }
+    if = {
+        limit = { scope:recipient = { has_trait = sickly } }
+        add = cure_illness_cost_benediction
+    }
     if = {
         limit = { scope:recipient = { has_trait = great_pox } }
-        add = cure_illness_cost_xlarge
+        add = cure_illness_cost_benediction
     }
     if = {
         limit = { scope:recipient = { has_trait = cancer } }
-        add = cure_illness_cost_xlarge
+        add = cure_illness_cost_benediction
     }
     if = {
         limit = { scope:recipient = { has_trait = bubonic_plague } }
-        add = cure_illness_cost_xlarge
+        add = cure_illness_cost_benediction
     }
     if = {
         limit = { scope:recipient = { has_trait = smallpox } }
-        add = cure_illness_cost_xlarge
+        add = cure_illness_cost_benediction
+    }
+    if = {
+        limit = { scope:recipient = { has_trait = leper } }
+        add = cure_illness_cost_benediction
+    }
+    if = {
+        limit = { scope:recipient = { has_trait = impotent } }
+        add = cure_illness_cost_benediction
+    }
+    if = {
+        limit = { scope:recipient = { has_trait = dysentery } }
+        add = cure_illness_cost_benediction
+    }
+    if = {
+        limit = { scope:recipient = { has_trait = ergotism } }
+        add = cure_illness_cost_benediction
     }
 }
