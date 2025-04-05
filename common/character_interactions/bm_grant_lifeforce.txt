@@ -5,23 +5,27 @@
     desc = grant_lifeforce_interaction_desc
     interface_priority = 190
 
-    cost = { piety = lifedrain_piety_cost }
+    cost = { piety = lifedrain_piety_cost_minor }
 
     is_shown = {
         scope:actor = { has_trait = lifestyle_blood_mage }
         NOT = { scope:actor = scope:recipient }
+        scope:recipient = { has_character_modifier = lifedrained_modifier }
     }
-    is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier } }
+    is_valid_showing_failures_only = { 
+        scope:actor = { has_character_modifier = lifeforce_modifier_major }
+    }
 
     on_accept = {
         scope:recipient = {
-            add_character_modifier = lifeforce_modifier
+            remove_character_modifier = lifedrained_modifier
+            add_character_modifier = lifeforce_modifier_minor
             add_opinion = {
                 target = scope:actor
                 modifier = magic_opinion_positive
                 opinion = 20
             }
         }
-        scope:actor = { benediction_magic_cast_effect = yes }
+        scope:actor = { benediction_magic_cast_effect_major = yes }
     }
 }

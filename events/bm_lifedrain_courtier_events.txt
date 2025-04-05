@@ -1,0 +1,57 @@
+﻿namespace = bm_lifedrain_courtier
+
+bm_lifedrain_courtier.001 = {
+    title = bm_lifedrain_courtier.001.title
+    desc = bm_lifedrain_courtier.001.desc
+    type = character_event
+    theme = witchcraft
+
+    option = {
+        name = bm_lifedrain_courtier.001.a
+        # Carry out logic
+        hematurgy_magic_cast_effect_minor = yes
+        scope:recipient = { add_character_modifier =  { modifier = lifedrained_modifier } }
+        duel = {
+            skills = { intrigue learning }
+            target = scope:recipient
+            50 = {
+                desc = bm_lifedrain_courtier.001.a.success_desc
+
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 3
+                }
+            }
+            50 = {
+                desc = bm_lifedrain_courtier.001.a.fail_desc
+                temporary_negative_lifeforce_effect_minor = yes
+                scope:recipient = { add_trait = wounded_1 }
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = -2
+                }
+            }
+            10 = {
+                desc = bm_lifedrain_courtier.001.a.critical_fail_desc
+                temporary_negative_lifeforce_effect_minor = yes
+                add_trait = wounded_1
+                scope:recipient = { add_trait = wounded_2 }
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = -0.5
+                }
+            }
+        }
+        ai_chance = { base = 100 }
+    }
+
+    # Portraits
+    left_portrait = {
+        character = root
+        animation = rage
+    }
+    right_portrait = {
+        character = scope:recipient
+        animation = beg
+    }
+}

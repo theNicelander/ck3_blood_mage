@@ -1,14 +1,38 @@
-﻿blood_magic_used = {
-    remove_character_modifier = lifeforce_modifier
-    temporary_negative_lifeforce_effect = yes
+﻿blood_magic_used_major = {
+    remove_character_modifier = lifeforce_modifier_major
+    temporary_negative_lifeforce_effect_major = yes
+}
+blood_magic_used_minor = {
+    remove_character_modifier = lifeforce_modifier_minor
+    temporary_negative_lifeforce_effect_minor = yes
 }
 
-hematurgy_magic_cast_effect = {
-    add_character_modifier = lifeforce_modifier
-    add_xp_hematurgy = yes
+hematurgy_magic_cast_effect_major = {
+    add_character_modifier =  { modifier = lifeforce_modifier_major }
+    add_xp_bm_dynamic = {
+        TRACK = hematurgy
+        XP = 2
+    }
+}
+hematurgy_magic_cast_effect_minor = {
+    add_character_modifier =  { modifier = lifeforce_modifier_minor }
+    add_xp_bm_dynamic = {
+        TRACK = hematurgy
+        XP = 1
+    }
 }
 
-benediction_magic_cast_effect = {
-    remove_character_modifier = lifeforce_modifier
-    add_xp_benediction = yes
+benediction_magic_cast_effect_major = {
+    remove_character_modifier = lifeforce_modifier_major
+    add_xp_bm_dynamic = {
+        TRACK = benediction
+        XP = 2
+    }
+}
+benediction_magic_cast_effect_minor = {
+    remove_character_modifier = lifeforce_modifier_minor
+    add_xp_bm_dynamic = {
+        TRACK = benediction
+        XP = 1
+    }
 }

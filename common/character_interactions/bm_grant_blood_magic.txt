@@ -13,7 +13,7 @@
         scope:recipient = { NOT = { has_trait = lifestyle_blood_mage } }
     }
     cost = { piety = 100 }
-    is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier } }
+    is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier_major } }
 
     on_accept = {
         scope:recipient = {
@@ -24,7 +24,7 @@
                 opinion = 50
             }
         }
-        scope:actor = { benediction_magic_cast_effect = yes }
+        scope:actor = { benediction_magic_cast_effect_major = yes }
     }
 
     # AI
@@ -38,5 +38,3 @@
         ai_willingness_to_do_postitive_magic = yes
     }
 }
-
-
