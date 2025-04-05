@@ -17,13 +17,23 @@
             has_trait = lifestyle_blood_mage
             has_faith = faith:cult_of_blood
         }
-        scope:recipient = { NOT = { has_faith = faith:cult_of_blood } }
-
+        scope:recipient = { 
+            NOT = { has_faith = faith:cult_of_blood } 
+            OR = {
+                is_imprisoned_by = scope:actor
+                is_courtier_of = scope:actor
+            } 
+        }
         # Can't duel yourself.
         NOT = { scope:actor = scope:recipient }
     }
 
-    is_valid_showing_failures_only = { scope:actor = { is_imprisoned = no } }
+    is_valid_showing_failures_only = {
+        scope:actor = { 
+            is_imprisoned = no
+            has_character_modifier = lifeforce_modifier_minor
+        }
+    }
 
     on_accept = {
         scope:recipient = {
@@ -32,6 +42,8 @@
                 custom_tooltip = convert_to_blood_cult_event_interaction.recipient.notification.tt
             }
         }
-        scope:actor = { trigger_event = bm_convert_to_blood_cult.001 }
+        scope:actor = { 
+            trigger_event = bm_convert_to_blood_cult.001 
+        }
     }
 }

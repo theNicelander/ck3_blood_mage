@@ -2,21 +2,7 @@
 
 namespace = bm_channel_lifeforce_enlightenment
 
-bm_channel_lifeforce_enlightenment.99 = {
-    type = character_event
-    theme = witchcraft
 
-    option = {
-        name = bm_channel_lifeforce_enlightenment.99.a
-        ai_chance = { base = 10 }
-        trigger_event = { id = bm_channel_lifeforce_enlightenment.001 }
-    }
-    # Portraits
-    left_portrait ={
-        character = root
-        animation = ecstasy
-    }
-}
 
 bm_channel_lifeforce_enlightenment.001 = {
     type = character_event
@@ -80,11 +66,10 @@ bm_channel_lifeforce_enlightenment.001 = {
         ai_chance = { base = 10 }
     }
 
-    # Let me choose something else
     option = {
-        name = bm_channel_lifeforce_enlightenment.001.i
-        ai_chance = { base = 5 }
-        trigger_event = { id = bm_channel_lifeforce_enlightenment.99 }
+        name = "Improve all skills"
+        # TODO: Implement this
+        ai_chance = { base = 10 }
     }
 
     # Portraits

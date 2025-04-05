@@ -54,14 +54,17 @@ seek_power.002 = {
     theme = hunt_activity
 
     option = {
-        name = "Drain its life force for my power"
-        hematurgy_magic_cast_effect_minor = yes
-        add_xp_hematurgy_minor = yes
+        name = "I drain the stag"
+        send_interface_toast  = {
+            title = "I drained the stag"
+            left_icon = scope:actor
+            hematurgy_magic_cast_effect_minor = yes 
+        }
     }
 
     option = {
         name = "Let the creature go and continue my search"
-        add_stress = 5
+        add_stress = -10
     }
 
     # Portraits
@@ -86,11 +89,7 @@ seek_power.003 = {
                 gender_female_chance = 50
                 save_scope_as = beggar
                 culture = root.culture
-                trait = wounded_1   # minor
-                trait = typhus      # medium
-                trait = blind       # severe
-                trait = cancer      # critical
-                trait = drunkard    # flavour
+                trait = drunkard
             }
         }
     }
@@ -100,7 +99,7 @@ seek_power.003 = {
         name = "Their lifeforce will serve a greater purpose in my hands"
 
         duel = {
-            skill = intrigue
+            skills = { intrigue prowess }
             value = 0
 
             10 = {
@@ -109,20 +108,43 @@ seek_power.003 = {
                     value = scope:duel_value
                     multiplier = 2
                 }
-                trigger_event = { id = seek_power.0031 }
                 scope:beggar = { death = { death_reason = death_sacrificed_to_gods } }
-            }
-            20 = {
-                desc = "Witnessed"
-                trigger_event = { id = seek_power.0032 }
-                scope:beggar = { death = { death_reason = death_sacrificed_to_gods } }
+                send_interface_toast  = {
+                    title = "I drain the traveller without anyone noticing"
+                    left_icon = scope:actor
+                    right_icon = scope:beggar
+                    hematurgy_magic_cast_effect_major = yes
+                }
             }
             20 = {
                 desc = "They escape"
-                trigger_event = { id = seek_power.0033 }
+                send_interface_toast  = {
+                    title = "They got away, I'm left empty handed"
+                    left_icon = scope:actor
+                    right_icon = scope:beggar
+                    add_stress = 5
+                }
+            }
+            20 = {
+                desc = "Witnessed"
+                scope:beggar = { death = { death_reason = death_sacrificed_to_gods } }
+                send_interface_toast  = {
+                    title = "A witness survived to tell the tale"
+                    left_icon = scope:actor
+                    right_icon = scope:beggar
+                    hematurgy_magic_cast_effect_major = yes
+                    add_stress = 10
+                    add_dread = 5
+                    root.capital_county = {
+                        add_county_modifier = {
+                            modifier = drained_beggar_holding
+                            years = 5
+                        }
+                    }
+                }
             }
         }
-        ai_chance = { base = 10 }
+        ai_chance = { base = 25 }
     }
 
     # Do nothing
@@ -140,68 +162,5 @@ seek_power.003 = {
     right_portrait = {
         character = scope:beggar
         animation = beg
-    }
-}
-
-
-seek_power.0031 = {
-    type = character_event
-    title = "Wilderness Sacrifice"
-    desc = "The traveler's life flows into me as their body crumples to the forest floor. Their final breath mingles with the whisper of wind through ancient trees. I leave the empty vessel for nature to reclaim, new power tingling beneath my skin. The wilderness keeps my secret—only the silent watchers of the forest bear witness to my dark work."
-    theme = hunt_activity
-
-    option = {
-        name = "Power has its price. Today, it was theirs."
-        hematurgy_magic_cast_effect_major = yes
-    }
-
-    # Portraits
-    left_portrait = {
-        character = root
-        animation = idle
-    }
-}
-
-seek_power.0032 = {
-    type = character_event
-    title = "Witnessed"
-    desc = "The traveler withers as I drain their essence, but a horrified gasp breaks my concentration. A hunter stands frozen at the edge of the clearing, witnessing the final moments of my ritual. Though we are far from civilization, word of a noble who preys upon the lost will eventually spread. The power I've gained comes with unwanted attention."
-    theme = hunt_activity
-
-    option = {
-        name = "A witness survived to tell the tale."
-        hematurgy_magic_cast_effect_major = yes
-        add_stress = 10
-        add_dread = 5
-        root.capital_county = {
-            add_county_modifier = {
-                modifier = drained_beggar_holding
-                years = 5
-            }
-        }
-    }
-
-    # Portraits
-    left_portrait = {
-        character = root
-        animation = idle
-    }
-}
-
-seek_power.0033 = {
-    type = character_event
-    title = "Lost Opportunity"
-    desc = "I reach for the traveler, fingers tingling with anticipation, but something goes wrong. Perhaps it was the snap of a twig or the howl of a distant wolf, but the wanderer's survival instinct flares unexpectedly. With surprising vigor, they scramble away, disappearing into the thick undergrowth. The power that was nearly mine vanishes with them, leaving me empty-handed."
-    theme = hunt_activity
-
-    option = {
-        name = "They got away, I'm left empty handed."
-        add_stress = 5
-    }
-
-    # Portraits
-    left_portrait = {
-        character = root
-        animation = idle
     }
 }

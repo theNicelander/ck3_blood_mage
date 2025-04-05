@@ -15,7 +15,7 @@ heal_disease_minor_cost = {
     }
     if = {
         limit = { scope:recipient = { has_trait = ill } }
-        add = cure_illness_cost_minor
+        add = cure_illness_cost_major
     }
     if = {
         limit = { scope:recipient = { has_trait = lovers_pox } }
