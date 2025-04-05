@@ -74,7 +74,18 @@ heal_disease_major = {
     on_accept = {
         scope:actor = { benediction_magic_cast_effect_major = yes }
         scope:recipient = {
-
+            remove_trait = wounded_2
+            remove_trait = incapable
+            remove_trait = pneumonic
+            remove_trait = early_great_pox
+            remove_trait = infirm
+            remove_trait = maimed
+            remove_trait = consumption
+            remove_trait = typhus
+            remove_trait = measles
+            remove_trait = blind
+            remove_trait = one_eyed
+            
             # temporary positive opinion
             add_opinion = {
                 target = scope:actor
@@ -124,7 +135,18 @@ heal_disease_benediction = {
     on_accept = {
         scope:actor = { benediction_magic_cast_effect_major = yes }
         scope:recipient = {
-
+            remove_trait = wounded_3
+            remove_trait = sickly
+            remove_trait = great_pox
+            remove_trait = cancer
+            remove_trait = bubonic_plague
+            remove_trait = smallpox
+            remove_trait = leper
+            remove_trait = blind
+            remove_trait = impotent
+            remove_trait = dysentery
+            remove_trait = ergotism
+            remove_trait = disfigured
 
             # temporary positive opinion
             add_opinion = {
