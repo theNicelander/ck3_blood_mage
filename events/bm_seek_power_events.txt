@@ -55,8 +55,8 @@ seek_power.002 = {
 
     option = {
         name = "Drain its life force for my power"
-        hematurgy_magic_cast_effect_minor = yes
-        add_xp_hematurgy_minor = yes
+        send_interface_message = {hematurgy_magic_cast_effect_minor = yes }
+        
     }
 
     option = {

@@ -9,11 +9,13 @@ bm_convert_to_blood_cult.001 = {
     # Attemt to convert the target
     option = {
         name = bm_convert_to_blood_cult.001.a
-
+        blood_magic_used_minor = yes
+        add_xp_benediction = yes
         # Carry out logic
         duel = {
             skill = learning
             target = scope:recipient
+
             50 = {
                 desc = "I successfully indoctrinate them into the Blood Cult"
                 compare_modifier = {
@@ -21,10 +23,19 @@ bm_convert_to_blood_cult.001 = {
                     multiplier = 5
                 }
                 scope:recipient = { set_character_faith = faith:cult_of_blood }
+                send_interface_toast  = {
+                    title = "[recipient.GetShortUINameNoTooltip] was successfully converted"
+                    left_icon = scope:actor
+				    right_icon = scope:recipient
+                }
             }
             50 = {
                 desc = "I fail"
-                temporary_negative_lifeforce_effect_major = yes
+                send_interface_toast  = {
+                    title = "[recipient.GetShortUINameNoTooltip] was not converted"
+                    left_icon = scope:actor
+				    right_icon = scope:recipient
+                }
             }
         }
         ai_chance = { base = 100 }
