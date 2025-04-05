@@ -16,7 +16,7 @@ seek_power.001 = {
             value = 0
             
             70 = {
-                name = "I encounter wild game"
+                desc = "I encounter wild game"
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = 1
@@ -24,7 +24,7 @@ seek_power.001 = {
                 trigger_event = { id = seek_power.002 }
             }
             30 = {
-                name = "I discover a lost traveler"
+                desc = "I discover a lost traveler"
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = 2
@@ -108,7 +108,7 @@ seek_power.003 = {
             value = 0
 
             10 = {
-                name = "Silent Harvest"
+                desc = "Silent Harvest"
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = 2
@@ -117,12 +117,12 @@ seek_power.003 = {
                 scope:beggar = { death = { death_reason = death_sacrificed_to_gods } }
             }
             20 = {
-                name = "Witnessed"
+                desc = "Witnessed"
                 trigger_event = { id = seek_power.0032 }
                 scope:beggar = { death = { death_reason = death_sacrificed_to_gods } }
             }
             20 = {
-                name = "They escape"
+                desc = "They escape"
                 trigger_event = { id = seek_power.0033 }
             }
         }
