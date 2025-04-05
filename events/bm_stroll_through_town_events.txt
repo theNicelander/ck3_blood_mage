@@ -83,65 +83,6 @@ bm_stroll_town.002 = {
         ai_chance = { base = 10 }
     }
 
-    # heal them
-    option = {
-        name = "With a subtle gesture, I channel power to mend their bleeding wounds"
-        trigger = { has_trait = lifestyle_blood_mage }
-        scope:beggar = { remove_trait = wounded_1 }
-        benediction_magic_cast_effect_major = yes
-        add_piety = cure_illness_cost_small_neg
-        root.capital_county = {
-            add_county_modifier = {
-                modifier = healed_beggar_holding_1
-                years = 3
-            }
-        }
-        ai_chance = { base = 4 }
-    }
-    option = {
-        name = "The fever that ravages their body is no match for my blood magic"
-        trigger = { has_trait = lifestyle_blood_mage }
-        scope:beggar = { remove_trait = typhus }
-        add_piety = cure_illness_cost_medium_neg
-        benediction_magic_cast_effect_major = yes
-
-        root.capital_county = {
-            add_county_modifier = {
-                modifier = healed_beggar_holding_2
-                years = 5
-            }
-        }
-        ai_chance = { base = 3 }
-    }
-    option = {
-        name = "I place my hands upon their sightless eyes, commanding darkness to retreat"
-        trigger = { has_trait = lifestyle_blood_mage }
-        scope:beggar = { remove_trait = blind }
-        benediction_magic_cast_effect_major = yes
-        add_piety = cure_illness_cost_large_neg
-        root.capital_county = {
-            add_county_modifier = {
-                modifier = healed_beggar_holding_3
-                years = 7
-            }
-        }
-        ai_chance = { base = 2 }
-    }
-    option = {
-        name = "Even death's corruption shall yield to my command—I will purge the cancer from their flesh"
-        trigger = { has_trait = lifestyle_blood_mage }
-        scope:beggar = { remove_trait = cancer }
-        benediction_magic_cast_effect_major = yes
-        add_piety = cure_illness_cost_xlarge_neg
-        root.capital_county = {
-            add_county_modifier = {
-                modifier = healed_beggar_holding_4
-                years = 10
-            }
-        }
-        ai_chance = { base = 1 }
-    }
-
     # Do nothing
     option = {
         name = "This wretch is not worth my attention—I shall return to more pleasant diversions"

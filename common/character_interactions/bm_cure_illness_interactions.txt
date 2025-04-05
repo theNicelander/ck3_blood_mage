@@ -110,7 +110,7 @@ heal_disease_benediction = {
     common_interaction = yes
     auto_accept = yes
 
-    cost = { piety = heal_disease_severe_cost }
+    cost = { piety = cure_illness_cost_benediction }
     is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier_major } }
     is_shown = {
         scope:actor = { has_trait = lifestyle_blood_mage }
