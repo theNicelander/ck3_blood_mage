@@ -16,14 +16,6 @@
                 has_trait = ill
                 has_trait = lovers_pox
                 has_trait = gout_ridden
-
-                has_trait = wounded_2
-                has_trait = infirm
-                has_trait = maimed
-                has_trait = consumption
-               
-                has_trait = typhus
-                depressed_1
             }
         }
     }
@@ -63,14 +55,18 @@ heal_disease_major = {
         }
         scope:recipient = {
             OR = {
-                has_trait = wounded_3
-                has_trait = impotent
-                has_trait = sickly
+                has_trait = wounded_2
                 has_trait = incapable
                 has_trait = pneumonic
                 has_trait = early_great_pox
-                
-                
+                has_trait = infirm
+                has_trait = maimed
+                has_trait = consumption
+                has_trait = typhus
+                has_trait = measles
+                has_trait = blind
+                has_trait = maimed
+                has_trait = one_eyed
             }
         }
     }
@@ -109,12 +105,18 @@ heal_disease_benediction = {
         scope:actor = { has_trait = lifestyle_blood_mage }
         scope:recipient = {
             OR = {
+                has_trait = wounded_3
+                has_trait = sickly
                 has_trait = great_pox
                 has_trait = cancer
                 has_trait = bubonic_plague
                 has_trait = smallpox
                 has_trait = leper
                 has_trait = blind
+                has_trait = impotent
+                has_trait = dysentery
+                has_trait = ergotism
+                has_trait = disfigured
             }
         }
     }
