@@ -48,11 +48,12 @@ heal_disease_major = {
     auto_accept = yes
 
     cost = { piety = heal_disease_major_cost }
-    is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier_major } }
+    is_valid_showing_failures_only = { scope:actor = { 
+        has_character_modifier = lifeforce_modifier_major
+        # TODO: This should only be allowed if over certain XP or with finisher effect
+    } }
     is_shown = {
-        scope:actor = {
-            has_trait = lifestyle_blood_mage
-        }
+        scope:actor = { has_trait = lifestyle_blood_mage }
         scope:recipient = {
             OR = {
                 has_trait = wounded_2
