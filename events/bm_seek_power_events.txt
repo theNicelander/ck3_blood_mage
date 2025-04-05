@@ -16,7 +16,7 @@ seek_power.001 = {
             value = 0
             
             70 = {
-                desc = "I encounter wild game"
+                name = "I encounter wild game"
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = 1
@@ -24,7 +24,7 @@ seek_power.001 = {
                 trigger_event = { id = seek_power.002 }
             }
             30 = {
-                desc = "I discover a lost traveler"
+                name = "I discover a lost traveler"
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = 2
@@ -59,7 +59,6 @@ seek_power.002 = {
 
     option = {
         name = "Drain its life force for my power"
-        desc = "The animal's essence flows into you"
         hematurgy_magic_cast_effect_minor = yes
         add_xp_hematurgy_minor = yes
     }
@@ -109,7 +108,7 @@ seek_power.003 = {
             value = 0
 
             10 = {
-                desc = "Silent Harvest"
+                name = "Silent Harvest"
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = 2
@@ -118,12 +117,12 @@ seek_power.003 = {
                 scope:beggar = { death = { death_reason = death_sacrificed_to_gods } }
             }
             20 = {
-                desc = "Witnessed"
+                name = "Witnessed"
                 trigger_event = { id = seek_power.0032 }
                 scope:beggar = { death = { death_reason = death_sacrificed_to_gods } }
             }
             20 = {
-                desc = "They escape"
+                name = "They escape"
                 trigger_event = { id = seek_power.0033 }
             }
         }
@@ -157,7 +156,6 @@ seek_power.0031 = {
 
     option = {
         name = "Power has its price. Today, it was theirs."
-        desc = "The wilderness conceals your deed, their lifeforce is mine"
         hematurgy_magic_cast_effect_major = yes
     }
 
@@ -175,8 +173,7 @@ seek_power.0032 = {
     theme = hunt_activity
 
     option = {
-        name = "Carelessness has consequences. So be it."
-        desc = "A witness survived to tell the tale"
+        name = "A witness survived to tell the tale."
         hematurgy_magic_cast_effect_major = yes
         add_stress = 10
         add_dread = 5
@@ -202,8 +199,7 @@ seek_power.0033 = {
     theme = hunt_activity
 
     option = {
-        name = "Next time, I won't hesitate."
-        desc = "They got away, I'm left empty handed"
+        name = "They got away, I'm left empty handed."
         add_stress = 5
     }
 
