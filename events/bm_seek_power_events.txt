@@ -17,17 +17,13 @@ seek_power.001 = {
             
             70 = {
                 desc = "I encounter wild game"
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 1
-                }
                 trigger_event = { id = seek_power.002 }
             }
             30 = {
                 desc = "I discover a lost traveler"
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = 2
+                    multiplier = 1
                 }
                 trigger_event = { id = seek_power.003 }
             }
