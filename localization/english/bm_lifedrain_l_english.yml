@@ -5,9 +5,9 @@ lifedrain_courtier_event_interaction.recipient.notification.tt:0 "You start a bl
 bm_lifedrain_courtier.001.title:0 "Minor Lifedrain"
 bm_lifedrain_courtier.001.desc:0 "Your courtier stands before you, unaware of your intentions. Their lifeforce pulses invitingly, waiting to be harnessed."
 bm_lifedrain_courtier.001.a:0 "Drain part of their lifeforce"
-bm_lifedrain_courtier.001.a.success_desc:0 "You successfully harvest a portion of their lifeforce"
-bm_lifedrain_courtier.001.a.fail_desc:0 "You harvest a portion of their lifeforce, but injure the victim"
-bm_lifedrain_courtier.001.a.critical_fail_desc:0 "The ritual spirals out of control, injuring both you and the victim"
+bm_lifedrain_courtier.001.a.success_desc:0 "You successfully harvest a portion of [recipient.GetShortUINameNoTooltip]'s lifeforce"
+bm_lifedrain_courtier.001.a.fail_desc:0 "You harvest a portion of [recipient.GetShortUINameNoTooltip]'s' lifeforce, but leave them injured"
+bm_lifedrain_courtier.001.a.critical_fail_desc:0 "The ritual spirals out of control, injuring both you and [recipient.GetShortUINameNoTooltip]"
   
   # lifedrain prisoner (major)
 lifedrain_prisoner_event_interaction:0 "Major Lifedrain"
