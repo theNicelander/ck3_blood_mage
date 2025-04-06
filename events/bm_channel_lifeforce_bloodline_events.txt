@@ -78,6 +78,16 @@ bm_channel_lifeforce_bloodline.001 = {
         ai_chance = { base = 10 }
     }
 
+    # Dynasty Crimson Bloodline
+    option = {
+        name = bm_channel_lifeforce_bloodline.001.z
+        house = {
+            add_house_modifier = { modifier = dynasty_crimson_bloodline_modifier }
+        }
+        trigger = { NOT = { house = { has_house_modifier = dynasty_crimson_bloodline_modifier } } }
+        ai_chance = { base = 50 }
+    }
+
     # Portraits
     left_portrait = {
         character = root

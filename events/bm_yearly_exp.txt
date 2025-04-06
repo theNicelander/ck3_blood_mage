@@ -5,16 +5,18 @@ blood_mage_yearly_xp.001 = {
     hidden = yes
     trigger = { has_trait = lifestyle_blood_mage }
     immediate = {
-         add_trait_xp = {
+        add_trait_xp = {
             trait = lifestyle_blood_mage
             track = ancient
             value = 1
         }
-        # TODO: If bloodline has some modifier
         if = {
-            limit = {
-            }
-            # add_xp_bloodline = yes
+            limit = { house = { has_house_modifier = dynasty_crimson_bloodline_modifier } }
+            add_trait_xp = {
+            trait = lifestyle_blood_mage
+            track = bloodline
+            value = {0 1}
+        }
         }
     }
     
