@@ -46,6 +46,10 @@ ai_willingness_to_do_postitive_magic = {
         exists = house
         exists = scope:recipient.house
         house = scope:recipient.house
-        add = 10
+        add = 30
+    }
+    modifier = {
+        is_knight_of = scope:actor
+        add = 30
     }
 }

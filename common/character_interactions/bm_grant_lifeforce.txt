@@ -28,4 +28,13 @@
         }
         scope:actor = { benediction_magic_cast_effect_major = yes }
     }
+    ai_will_do = { 
+        base = -10
+        ai_willingness_to_do_postitive_magic = yes
+        
+        modifier = {
+            is_knight_of = scope:actor
+            add = 30
+        }
+    }
 }

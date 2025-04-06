@@ -1,6 +1,5 @@
 ﻿channel_lifeforce_enlightenment_major = {
     picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
-    ai_check_interval = 12
     decision_group_type = bm_decision_group
 
     cooldown = { years = 3 }
@@ -19,12 +18,12 @@
             XP = 3
         }
     }
-    ai_will_do = { base = 33 }
+    ai_check_interval = 12
+    ai_will_do = { base = 10 }
 }
 
 channel_lifeforce_enlightenment_minor = {
     picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
-    ai_check_interval = 12
     decision_group_type = bm_decision_group
 
     cooldown = { years = 1 }
@@ -43,12 +42,13 @@ channel_lifeforce_enlightenment_minor = {
             XP = 1
         }
     }
-    ai_will_do = { base = 75 }
+    ai_check_interval = 6
+    ai_will_do = { base = 33 }
 }
 
 channel_lifeforce_bloodline = {
     picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
-    ai_check_interval = 12
+    
     decision_group_type = bm_decision_group
 
     cooldown = { years = 3 }
@@ -68,5 +68,6 @@ channel_lifeforce_bloodline = {
         blood_magic_used_major = yes
         add_stress = 20
     }
-    ai_will_do = { base = 33 }
+    ai_check_interval = 12
+    ai_will_do = { base = 10 }
 }

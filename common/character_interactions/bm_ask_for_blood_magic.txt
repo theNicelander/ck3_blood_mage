@@ -5,7 +5,7 @@
     desc = grant_blood_magic_interaction_desc
     interface_priority = 150
 
-    cost = { piety = 500 }
+    cost = { piety = 300 }
 
     is_shown = {
         scope:recipient = {
@@ -17,7 +17,6 @@
                 has_relation_soulmate = scope:actor
             }
         }
-
         scope:actor = { NOT = { has_trait = lifestyle_blood_mage } }
     }
 
