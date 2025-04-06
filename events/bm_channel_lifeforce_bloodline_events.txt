@@ -4,13 +4,13 @@ namespace = bm_channel_lifeforce_bloodline
 
 bm_channel_lifeforce_bloodline.001 = {
     type = character_event
-    title = "Channel Dynasty Crimson Aspects"
-    desc = "With greater sacrifice and concentration, my blood magic can extend beyond my person to influence my entire bloodline. Which aspect shall I bestow upon my dynasty?"
+    title = bm_channel_lifeforce_bloodline.001.title
+    desc = bm_channel_lifeforce_bloodline.001.desc
     theme = witchcraft
 
     # Dynasty Crimson Charisma
     option = {
-        name = "Our words shall echo with blood-given authority"
+        name = bm_channel_lifeforce_bloodline.001.a
         house = {
             add_house_modifier = { modifier = dynasty_crimson_charisma_modifier }
         }
@@ -20,7 +20,7 @@ bm_channel_lifeforce_bloodline.001 = {
 
     # Dynasty Crimson Fury
     option = {
-        name = "The martial prowess of our line shall be legendary"
+        name = bm_channel_lifeforce_bloodline.001.b
         house = {
             add_house_modifier = { modifier = dynasty_crimson_fury_modifier }
         }
@@ -30,7 +30,7 @@ bm_channel_lifeforce_bloodline.001 = {
 
     # Dynasty Crimson Prosperity
     option = {
-        name = "Blood-wealth shall flow through our domains"
+        name = bm_channel_lifeforce_bloodline.001.c
         house = {
             add_house_modifier = { modifier = dynasty_crimson_prosperity_modifier }
         }
@@ -40,7 +40,7 @@ bm_channel_lifeforce_bloodline.001 = {
 
     # Dynasty Crimson Shadows
     option = {
-        name = "Our family shall master the arts of blood and shadow"
+        name = bm_channel_lifeforce_bloodline.001.d
         house = {
             add_house_modifier = { modifier = dynasty_crimson_shadows_modifier }
         }
@@ -50,7 +50,7 @@ bm_channel_lifeforce_bloodline.001 = {
 
     # Dynasty Crimson Insight
     option = {
-        name = "Blood-wisdom shall guide our entire line"
+        name = bm_channel_lifeforce_bloodline.001.e
         house = {
             add_house_modifier = { modifier = dynasty_crimson_insight_modifier }
         }
@@ -60,7 +60,7 @@ bm_channel_lifeforce_bloodline.001 = {
 
     # Dynasty Crimson Resilience
     option = {
-        name = "The vitality of our blood shall sustain our dynasty"
+        name = bm_channel_lifeforce_bloodline.001.f
         house = {
             add_house_modifier = { modifier = dynasty_crimson_resilience_modifier }
         }
@@ -70,7 +70,7 @@ bm_channel_lifeforce_bloodline.001 = {
 
     # Dynasty Crimson Legacy
     option = {
-        name = "The strength of our blood shall grow with each generation"
+        name = bm_channel_lifeforce_bloodline.001.g
         house = {
             add_house_modifier = { modifier = dynasty_crimson_legacy_modifier }
         }
@@ -80,7 +80,7 @@ bm_channel_lifeforce_bloodline.001 = {
 
     # Dynasty Crimson Expertise
     option = {
-        name = "Blood's ancient knowledge shall flow through our line"
+        name = bm_channel_lifeforce_bloodline.001.h
         house = {
             add_house_modifier = { modifier = dynasty_crimson_expertise_modifier }
         }
