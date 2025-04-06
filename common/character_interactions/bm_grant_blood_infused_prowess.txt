@@ -1,0 +1,30 @@
+﻿grant_crimson_warrior_interaction = {
+    category = interaction_category_friendly
+    auto_accept = yes
+    common_interaction = yes
+    desc = grant_crimson_warrior_interaction
+    interface_priority = 190
+
+    cost = { piety = lifedrain_piety_cost_minor }
+
+    is_shown = {
+        scope:actor = { has_trait = lifestyle_blood_mage }
+        NOT = { scope:actor = scope:recipient }
+        scope:recipient  = {is_courtier_of = scope:actor}
+    }
+    is_valid_showing_failures_only = { 
+        scope:actor = { has_character_modifier = lifeforce_modifier_crimson_warrior }
+    }
+
+    on_accept = {
+        scope:recipient = {
+            add_character_modifier = lifeforce_modifier_crimson_warrior
+            add_opinion = {
+                target = scope:actor
+                modifier = magic_opinion_positive
+                opinion = 20
+            }
+        }
+        scope:actor = { benediction_magic_cast_effect_minor = yes }
+    }
+}
