@@ -68,7 +68,12 @@ bm_channel_lifeforce_enlightenment.001 = {
 
     option = {
         name = "Improve all skills"
-        # TODO: Implement this
+        add_diplomacy_skill = 1
+        add_martial_skill = 1
+        add_stewardship_skill = 1
+        add_intrigue_skill = 1
+        add_learning_skill = 1
+        add_prowess_skill = 2
         ai_chance = { base = 10 }
     }
 
