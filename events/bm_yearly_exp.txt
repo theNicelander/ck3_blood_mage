@@ -5,6 +5,22 @@ blood_mage_yearly_xp.001 = {
     hidden = yes
     trigger = { has_trait = lifestyle_blood_mage }
     immediate = {
+        add_xp_bm_dynamic = {
+            TRACK = enlightenment
+            XP = {0 1}
+        }
+        add_xp_bm_dynamic = {
+            TRACK = bloodline
+            XP = {0 1}
+        }
+        add_xp_bm_dynamic = {
+            TRACK = hematurgy
+            XP = {0 1}
+        }
+        add_xp_bm_dynamic = {
+            TRACK = benediction
+            XP = {0 1}
+        }
         add_xp_enlightenment = yes
 
         # TODO: If bloodline has some modifier
@@ -14,5 +30,6 @@ blood_mage_yearly_xp.001 = {
             # add_xp_bloodline = yes
         }
     }
+    
 }
 
