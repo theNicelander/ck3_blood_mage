@@ -13,7 +13,9 @@
         scope:recipient = { NOT = { has_trait = lifestyle_blood_mage } }
     }
     cost = { piety = 100 }
-    is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier_major } }
+    is_valid_showing_failures_only = { 
+        scope:actor = { has_character_modifier = lifeforce_modifier_major }
+    }
 
     on_accept = {
         scope:recipient = {
@@ -32,9 +34,15 @@
     ai_targets = { ai_recipients = family }
     ai_frequency = 12
 
-    # Same as witch
     ai_will_do = {
         base = -10
-        ai_willingness_to_do_postitive_magic = yes
+        modifier = {
+            scope:recipient = { is_courtier_of = scope:actor } 
+            add = 30
+        }
+        modifier = {
+            is_knight_of = scope:actor
+            add = 30
+        }
     }
 }

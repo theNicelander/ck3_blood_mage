@@ -20,7 +20,10 @@
         }
     }
 
-    is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier_minor } }
+    is_valid_showing_failures_only = { 
+        scope:actor = { has_character_modifier = lifeforce_modifier_minor } 
+        scope:recipient = { is_courtier_of = scope:actor }
+    }
 
     on_accept = {
         scope:actor = { benediction_magic_cast_effect_minor = yes }
@@ -36,6 +39,17 @@
                 modifier = magic_opinion_positive
                 opinion = 20
             }
+        }
+    }
+    ai_will_do = {
+        base = -10
+        modifier = {
+            scope:recipient = { is_courtier_of = scope:actor } 
+            add = 15
+        }
+        modifier = {
+            is_knight_of = scope:actor
+            add = 10
         }
     }
 }
@@ -102,6 +116,17 @@ heal_disease_major = {
             }
         }
     }
+    ai_will_do = {
+        base = -10
+        modifier = {
+            scope:recipient = { is_courtier_of = scope:actor } 
+            add = 15
+        }
+        modifier = {
+            is_knight_of = scope:actor
+            add = 10
+        }
+    }
 }
 
 heal_disease_benediction = {
@@ -162,6 +187,17 @@ heal_disease_benediction = {
                 modifier = cured_my_illness
                 opinion = 30
             }
+        }
+    }
+    ai_will_do = {
+        base = -10
+        modifier = {
+            scope:recipient = { is_courtier_of = scope:actor } 
+            add = 15
+        }
+        modifier = {
+            is_knight_of = scope:actor
+            add = 10
         }
     }
 }
