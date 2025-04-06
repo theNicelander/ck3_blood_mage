@@ -31,14 +31,18 @@
         scope:actor = { benediction_magic_cast_effect_minor = yes }
     }
     ai_frequency = 6
-    ai_will_do = { 
+    ai_will_do = {
         base = -10
-        ai_willingness_to_do_postitive_magic = yes
+        modifier = {
+            scope:recipient = { is_courtier_of = scope:actor } 
+            add = 30
+        }
+        modifier = {
+            is_knight_of = scope:actor
+            add = 30
+        }
     }
-    modifier = {
-        is_knight_of = scope:actor
-        add = 50
-    }
+
 }
 
 grant_crimson_champion_interaction = {
@@ -75,12 +79,15 @@ grant_crimson_champion_interaction = {
         scope:actor = { benediction_magic_cast_effect_major = yes }
     }
     ai_frequency = 6
-    ai_will_do = { 
+    ai_will_do = {
         base = -10
-        ai_willingness_to_do_postitive_magic = yes
+        modifier = {
+            scope:recipient = { is_courtier_of = scope:actor } 
+            add = 30
+        }
         modifier = {
             is_knight_of = scope:actor
-            add = 50
+            add = 30
         }
     }
 }

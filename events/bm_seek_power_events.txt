@@ -13,30 +13,37 @@ seek_power.001 = {
         
         duel = {
             skill = prowess
-            value = 0
-
-            30 = {
-                desc = "I discover a lost traveler"
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 1
-                }
-                trigger_event = { id = seek_power.003 }
-            }
+            target = scope:actor
+            
             30 = {
                 desc = "I encounter wild game"
                 trigger_event = { id = seek_power.002 }
             }
+            30 = {
+                desc = "I discover a lost traveler"
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 2
+                }
+                trigger_event = { id = seek_power.003 }
+            }
+            5 = {
+                desc = "I encounter a legendary beast"
+                trigger_event = { id = seek_power.004 }
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 1
+                }
+            }
         }
+        ai_chance = { base = 50 }
     }
 
     # Do nothing
     option = {
         name = "Savor the tranquility of nature before returning to the burdens of rulership"
         add_stress = -10
-        ai_chance = {
-            base = 5
-        }
+        ai_chance = { base = 5 }
     }
 
     # Portraits
@@ -60,11 +67,13 @@ seek_power.002 = {
             left_icon = scope:actor
             hematurgy_magic_cast_effect_minor = yes 
         }
+        ai_chance = { base = 50 }
     }
 
     option = {
         name = "Let the creature go and continue my search"
         add_stress = -10
+        ai_chance = { base = 5 }
     }
 
     # Portraits
@@ -97,10 +106,11 @@ seek_power.003 = {
     # Lifedrain
     option = {
         name = "Their lifeforce will serve a greater purpose in my hands"
-
+        ai_chance = { base = 50 }
         duel = {
             skills = { intrigue prowess }
             value = 0
+            
 
             10 = {
                 desc = "Silent Harvest"
@@ -144,7 +154,6 @@ seek_power.003 = {
                 }
             }
         }
-        ai_chance = { base = 25 }
     }
 
     # Do nothing
@@ -162,5 +171,30 @@ seek_power.003 = {
     right_portrait = {
         character = scope:beggar
         animation = beg
+    }
+}
+
+
+seek_power.004 = {
+    type = character_event
+    title = "The Bleeding Heart of the Forest"
+    desc = "Deep within the primal forest, where sunlight rarely filters through the thick canopy, you discover an aberration of nature—a massive oak tree unlike any you've ever seen. Its trunk, wide as a castle wall, pulses with visible rhythm. Ancient runes are carved into its bark, their meanings lost to time.\n\nWhen you place your hand upon its surface, it's warm like flesh. You feel drawn to make a small cut in the bark, and to your astonishment, crimson sap that looks and smells exactly like blood begins to flow freely. It's not just tree sap—this ancient sentinel has absorbed the essence of thousands of creatures over centuries, creating a nexus of pure life energy.\n\nAs your fingers touch the crimson liquid, visions flood your mind—ancient beasts, forgotten civilizations, and secrets buried by time. This tree has witnessed everything, its roots reaching deep into the heart of the world itself. Such power could fuel your magic beyond measure, but taking too much might anger whatever primordial force sustains this marvel."
+    theme = hunt_activity
+
+    option = {
+        name = "Collect the sacred blood carefully, taking only what I need"
+        send_interface_toast = {
+            title = "Ancient Lifeforce Harvested"
+            left_icon = scope:actor
+            hematurgy_magic_cast_effect_minor = yes
+            hematurgy_magic_cast_effect_major = yes
+        }
+        ai_chance = { base = 50 }
+    }
+
+    # Portraits
+    left_portrait = {
+        character = root
+        animation = idle
     }
 }

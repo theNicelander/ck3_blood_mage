@@ -1,6 +1,6 @@
 ﻿mass_lifedrain_prisoners_decision = {
     picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
-    ai_check_interval = 12
+    
     desc = mass_lifedrain_prisoners_decision_desc
     decision_group_type = bm_decision_group
 
@@ -21,5 +21,6 @@
     }
 
     # AI
-    ai_will_do = { base = 10 }
+    ai_check_interval = 3
+    ai_will_do = { base = 25 }
 }

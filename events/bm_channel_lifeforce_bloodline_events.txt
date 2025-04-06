@@ -58,19 +58,9 @@ bm_channel_lifeforce_bloodline.001 = {
         ai_chance = { base = 10 }
     }
 
-    # Dynasty Crimson Resilience
-    option = {
-        name = bm_channel_lifeforce_bloodline.001.f
-        house = {
-            add_house_modifier = { modifier = dynasty_crimson_resilience_modifier }
-        }
-        trigger = { NOT = { house = { has_house_modifier = dynasty_crimson_resilience_modifier } } }
-        ai_chance = { base = 10 }
-    }
-
     # Dynasty Crimson Legacy
     option = {
-        name = bm_channel_lifeforce_bloodline.001.g
+        name = bm_channel_lifeforce_bloodline.001.f
         house = {
             add_house_modifier = { modifier = dynasty_crimson_legacy_modifier }
         }
@@ -80,12 +70,22 @@ bm_channel_lifeforce_bloodline.001 = {
 
     # Dynasty Crimson Expertise
     option = {
-        name = bm_channel_lifeforce_bloodline.001.h
+        name = bm_channel_lifeforce_bloodline.001.g
         house = {
             add_house_modifier = { modifier = dynasty_crimson_expertise_modifier }
         }
         trigger = { NOT = { house = { has_house_modifier = dynasty_crimson_expertise_modifier } } }
         ai_chance = { base = 10 }
+    }
+
+    # Dynasty Crimson Bloodline
+    option = {
+        name = bm_channel_lifeforce_bloodline.001.z
+        house = {
+            add_house_modifier = { modifier = dynasty_crimson_bloodline_modifier }
+        }
+        trigger = { NOT = { house = { has_house_modifier = dynasty_crimson_bloodline_modifier } } }
+        ai_chance = { base = 50 }
     }
 
     # Portraits
