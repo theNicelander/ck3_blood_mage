@@ -58,16 +58,6 @@ bm_channel_lifeforce_bloodline.001 = {
         ai_chance = { base = 10 }
     }
 
-    # Dynasty Crimson Resilience
-    option = {
-        name = bm_channel_lifeforce_bloodline.001.f
-        house = {
-            add_house_modifier = { modifier = dynasty_crimson_resilience_modifier }
-        }
-        trigger = { NOT = { house = { has_house_modifier = dynasty_crimson_resilience_modifier } } }
-        ai_chance = { base = 10 }
-    }
-
     # Dynasty Crimson Legacy
     option = {
         name = bm_channel_lifeforce_bloodline.001.g
