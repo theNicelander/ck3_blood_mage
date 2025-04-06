@@ -55,6 +55,7 @@ grant_crimson_champion_interaction = {
 
     on_accept = {
         scope:recipient = {
+            remove_character_modifier = lifeforce_modifier_crimson_warrior
             add_character_modifier = lifeforce_modifier_crimson_champion
             add_opinion = {
                 target = scope:actor
