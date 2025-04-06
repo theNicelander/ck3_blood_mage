@@ -2,9 +2,12 @@
 crimson_charisma_modifier = {
     icon = magic_positive
 
-    diplomacy = 2
-    general_opinion = 2
-    monthly_prestige = 0.25
+    diplomacy = 3
+    general_opinion = 3
+    vassal_opinion = 3
+    courtly_opinion = 3
+    attraction_opinion = 3
+    monthly_prestige = 0.35
 }
 
 # Crimson Fury - Martial
@@ -12,25 +15,27 @@ crimson_fury_modifier = {
     icon = magic_positive
 
     martial = 2
+    prowess = 4
     advantage = 2
     knight_limit = 2
-    knight_effectiveness_mult = 0.2
+    knight_effectiveness_mult = 0.25
 }
 
 # Crimson Prosperity - Stewardship
 crimson_prosperity_modifier = {
     icon = magic_positive
 
-    stewardship = 2
+    stewardship = 3
     monthly_income = 0.25
-    monthly_county_control_growth_add = 0.1
+    monthly_county_control_growth_add = 0.2
+    domain_limit = 1
 }
 
 # Crimson Shadows - Intrigue
 crimson_shadows_modifier = {
     icon = magic_positive
 
-    intrigue = 2
+    intrigue = 3
     enemy_hostile_scheme_success_chance_add = -5
     owned_hostile_scheme_success_chance_add = 5
 }
@@ -39,21 +44,22 @@ crimson_shadows_modifier = {
 crimson_insight_modifier = {
     icon = magic_positive
 
-    learning = 2
-    monthly_piety = 0.25
-    character_capital_county_monthly_development_growth_add = 0.1
+    learning = 3
+    monthly_piety = 0.5
+    character_capital_county_monthly_development_growth_add = 0.2
 }
+
 
 # Crimson Legacy - Traits
 crimson_legacy_modifier = {
     icon = magic_positive
 
-    positive_random_genetic_chance = 0.1
-    genetic_trait_strengthen_chance = 0.1
-    positive_inactive_inheritance_chance = 0.1
-    inbreeding_chance  = -0.1
-    negative_inactive_inheritance_chance = -0.1
-    negative_random_genetic_chance = -0.1
+    positive_random_genetic_chance = 0.15
+    genetic_trait_strengthen_chance = 0.15
+    positive_inactive_inheritance_chance = 0.15
+    inbreeding_chance  = -0.15
+    negative_inactive_inheritance_chance = -0.15
+    negative_random_genetic_chance = -0.15
 }
 
 # Crimson Expertise - Experience

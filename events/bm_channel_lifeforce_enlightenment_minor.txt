@@ -1,0 +1,94 @@
+﻿# Spend Lifeforce event
+
+namespace = bm_channel_lifeforce_enlightenment_minor
+
+
+bm_channel_lifeforce_enlightenment_minor.001 = {
+    type = character_event
+    title = "Channel Crimson Aspects"
+    desc = "The blood magic within me stirs, ready to be shaped according to my will. Which aspect of power shall I manifest?"
+    theme = witchcraft
+
+    # Diplomacy boost
+    option = {
+        name = bm_channel_lifeforce_enlightenment_minor.001.a
+        add_character_modifier = { 
+            modifier = diplomacy_lifeforce_modifier
+            years = 5 
+        }
+        trigger = { NOT = { has_character_modifier = diplomacy_lifeforce_modifier } }
+        ai_chance = { base = 10 }
+    }
+
+    # Martial boost
+    option = {
+        name = bm_channel_lifeforce_enlightenment_minor.001.b
+        add_character_modifier = { 
+            modifier = martial_lifeforce_modifier
+            years = 5 
+        }
+        trigger = { NOT = { has_character_modifier = martial_lifeforce_modifier } }
+        ai_chance = { base = 10 }
+    }
+
+    # Stewardship boost
+    option = {
+        name = bm_channel_lifeforce_enlightenment_minor.001.c
+        add_character_modifier = { 
+            modifier = stewardship_lifeforce_modifier
+            years = 5 
+        }
+        trigger = { NOT = { has_character_modifier = stewardship_lifeforce_modifier } }
+        ai_chance = { base = 10 }
+    }
+
+    # Intrigue boost
+    option = {
+        name = bm_channel_lifeforce_enlightenment_minor.001.d
+        add_character_modifier = { 
+            modifier = intrigue_lifeforce_modifier
+            years = 5 
+        }
+        trigger = { NOT = { has_character_modifier = intrigue_lifeforce_modifier } }
+        ai_chance = { base = 10 }
+    }
+
+    # Learning boost
+    option = {
+        name = bm_channel_lifeforce_enlightenment_minor.001.e
+        add_character_modifier = { 
+            modifier = learning_lifeforce_modifier
+            years = 5 
+        }
+        trigger = { NOT = { has_character_modifier = learning_lifeforce_modifier } }
+        ai_chance = { base = 10 }
+    }
+
+    # Prowess boost
+    option = {
+        name = bm_channel_lifeforce_enlightenment_minor.001.f
+        add_character_modifier = { 
+            modifier = prowess_lifeforce_modifier
+            years = 5 
+        }
+        trigger = { NOT = { has_character_modifier = prowess_lifeforce_modifier } }
+        ai_chance = { base = 10 }
+    }
+
+    # Experience gain boost
+    option = {
+        name = bm_channel_lifeforce_enlightenment_minor.001.g
+        add_character_modifier = { 
+            modifier = exp_lifeforce_modifier
+            years = 5 
+        }
+        trigger = { NOT = { has_character_modifier = exp_lifeforce_modifier } }
+        ai_chance = { base = 10 }
+    }
+
+    # Portraits
+    left_portrait = {
+        character = root
+        animation = personality_rational
+    }
+}
