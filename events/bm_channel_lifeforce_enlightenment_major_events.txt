@@ -1,18 +1,17 @@
 ﻿# Spend Lifeforce event
 
-namespace = bm_channel_lifeforce_enlightenment
+namespace = bm_channel_lifeforce_enlightenment_major
 
 
-
-bm_channel_lifeforce_enlightenment.001 = {
+bm_channel_lifeforce_enlightenment_major.001 = {
     type = character_event
-    title = "Channel Crimson Aspects"
-    desc = "The blood magic within me stirs, ready to be shaped according to my will. Which aspect of power shall I manifest?"
+    title = bm_channel_lifeforce_enlightenment_major.001.title
+    desc = bm_channel_lifeforce_enlightenment_major.001.desc
     theme = witchcraft
 
     # Crimson Charisma
     option = {
-        name = bm_channel_lifeforce_enlightenment.001.a
+        name = bm_channel_lifeforce_enlightenment_major.001.a
         add_character_modifier = { modifier = crimson_charisma_modifier }
         trigger = { NOT = { has_character_modifier = crimson_charisma_modifier } }
         ai_chance = { base = 10 }
@@ -20,7 +19,7 @@ bm_channel_lifeforce_enlightenment.001 = {
 
     # Crimson Fury
     option = {
-        name = bm_channel_lifeforce_enlightenment.001.b
+        name = bm_channel_lifeforce_enlightenment_major.001.b
         add_character_modifier = { modifier = crimson_fury_modifier }
         trigger = { NOT = { has_character_modifier = crimson_fury_modifier } }
         ai_chance = { base = 10 }
@@ -28,7 +27,7 @@ bm_channel_lifeforce_enlightenment.001 = {
 
     # Crimson Prosperity
     option = {
-        name = bm_channel_lifeforce_enlightenment.001.c
+        name = bm_channel_lifeforce_enlightenment_major.001.c
         add_character_modifier = { modifier = crimson_prosperity_modifier }
         trigger = { NOT = { has_character_modifier = crimson_prosperity_modifier } }
         ai_chance = { base = 10 }
@@ -36,7 +35,7 @@ bm_channel_lifeforce_enlightenment.001 = {
 
     # Crimson Shadows
     option = {
-        name = bm_channel_lifeforce_enlightenment.001.d
+        name = bm_channel_lifeforce_enlightenment_major.001.d
         add_character_modifier = { modifier = crimson_shadows_modifier }
         trigger = { NOT = { has_character_modifier = crimson_shadows_modifier } }
         ai_chance = { base = 10 }
@@ -44,7 +43,7 @@ bm_channel_lifeforce_enlightenment.001 = {
 
     # Crimson Insight
     option = {
-        name = bm_channel_lifeforce_enlightenment.001.e
+        name = bm_channel_lifeforce_enlightenment_major.001.e
         add_character_modifier = { modifier = crimson_insight_modifier }
         trigger = { NOT = { has_character_modifier = crimson_insight_modifier } }
         ai_chance = { base = 10 }
@@ -52,7 +51,7 @@ bm_channel_lifeforce_enlightenment.001 = {
 
     # Crimson Legacy
     option = {
-        name = bm_channel_lifeforce_enlightenment.001.g
+        name = bm_channel_lifeforce_enlightenment_major.001.g
         add_character_modifier = { modifier = crimson_legacy_modifier }
         trigger = { NOT = { has_character_modifier = crimson_legacy_modifier } }
         ai_chance = { base = 10 }
@@ -60,7 +59,7 @@ bm_channel_lifeforce_enlightenment.001 = {
 
     # Crimson Expertise
     option = {
-        name = bm_channel_lifeforce_enlightenment.001.h
+        name = bm_channel_lifeforce_enlightenment_major.001.h
         add_character_modifier = { modifier = crimson_expertise_modifier }
         trigger = { NOT = { has_character_modifier = crimson_expertise_modifier } }
         ai_chance = { base = 10 }
@@ -68,7 +67,12 @@ bm_channel_lifeforce_enlightenment.001 = {
 
     option = {
         name = "Improve all skills"
-        # TODO: Implement this
+        add_diplomacy_skill = 1
+        add_martial_skill = 1
+        add_stewardship_skill = 1
+        add_intrigue_skill = 1
+        add_learning_skill = 1
+        add_prowess_skill = 2
         ai_chance = { base = 10 }
     }
 

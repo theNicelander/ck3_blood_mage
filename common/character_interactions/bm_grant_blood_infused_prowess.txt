@@ -1,0 +1,86 @@
+﻿grant_crimson_warrior_interaction = {
+    category = interaction_category_friendly
+    auto_accept = yes
+    common_interaction = yes
+    desc = grant_crimson_warrior_interaction
+    interface_priority = 190
+
+    cost = { piety = lifedrain_piety_cost_minor }
+
+    is_shown = {
+        scope:actor = { has_trait = lifestyle_blood_mage }
+        NOT = { scope:actor = scope:recipient }
+        scope:recipient  = {
+            is_courtier_of = scope:actor
+            NOT = { has_character_modifier = lifeforce_modifier_crimson_warrior }
+        }
+    }
+    is_valid_showing_failures_only = { 
+        scope:actor = { has_character_modifier = lifeforce_modifier_minor }
+    }
+
+    on_accept = {
+        scope:recipient = {
+            add_character_modifier = lifeforce_modifier_crimson_warrior
+            add_opinion = {
+                target = scope:actor
+                modifier = magic_opinion_positive
+                opinion = 20
+            }
+        }
+        scope:actor = { benediction_magic_cast_effect_minor = yes }
+    }
+    ai_frequency = 6
+    ai_will_do = { 
+        base = -10
+        ai_willingness_to_do_postitive_magic = yes
+    }
+    modifier = {
+        is_knight_of = scope:actor
+        add = 50
+    }
+}
+
+grant_crimson_champion_interaction = {
+    category = interaction_category_friendly
+    auto_accept = yes
+    common_interaction = yes
+    desc = grant_crimson_champion_interaction
+    interface_priority = 190
+
+    cost = { piety = lifedrain_piety_cost_minor }
+
+    is_shown = {
+        scope:actor = { has_trait = lifestyle_blood_mage }
+        NOT = { scope:actor = scope:recipient }
+        scope:recipient  = {
+            is_courtier_of = scope:actor
+            has_character_modifier = lifeforce_modifier_crimson_warrior
+        }
+    }
+    is_valid_showing_failures_only = { 
+        scope:actor = { has_character_modifier = lifeforce_modifier_major }
+    }
+
+    on_accept = {
+        scope:recipient = {
+            remove_character_modifier = lifeforce_modifier_crimson_warrior
+            add_character_modifier = lifeforce_modifier_crimson_champion
+            add_opinion = {
+                target = scope:actor
+                modifier = magic_opinion_positive
+                opinion = 35
+            }
+        }
+        scope:actor = { benediction_magic_cast_effect_major = yes }
+    }
+    ai_frequency = 6
+    ai_will_do = { 
+        base = -10
+        ai_willingness_to_do_postitive_magic = yes
+        modifier = {
+            is_knight_of = scope:actor
+            add = 50
+        }
+    }
+}

@@ -2,9 +2,12 @@
 crimson_charisma_modifier = {
     icon = magic_positive
 
-    diplomacy = 2
-    general_opinion = 2
-    monthly_prestige = 0.25
+    diplomacy = 3
+    general_opinion = 3
+    vassal_opinion = 3
+    courtly_opinion = 3
+    attraction_opinion = 3
+    monthly_prestige = 0.3
 }
 
 # Crimson Fury - Martial
@@ -12,6 +15,7 @@ crimson_fury_modifier = {
     icon = magic_positive
 
     martial = 2
+    prowess = 4
     advantage = 2
     knight_limit = 2
     knight_effectiveness_mult = 0.2
@@ -20,29 +24,31 @@ crimson_fury_modifier = {
 # Crimson Prosperity - Stewardship
 crimson_prosperity_modifier = {
     icon = magic_positive
-
-    stewardship = 2
-    monthly_income = 0.25
+    
+    stewardship = 3
     monthly_county_control_growth_add = 0.1
+    domain_limit = 1
 }
 
 # Crimson Shadows - Intrigue
 crimson_shadows_modifier = {
     icon = magic_positive
 
-    intrigue = 2
-    enemy_hostile_scheme_success_chance_add = -5
-    owned_hostile_scheme_success_chance_add = 5
+    intrigue = 3
+    enemy_hostile_scheme_success_chance_add = -10
+    owned_hostile_scheme_success_chance_add = 10
 }
 
 # Crimson Insight - Learning
 crimson_insight_modifier = {
     icon = magic_positive
 
-    learning = 2
+    learning = 3
     monthly_piety = 0.25
     character_capital_county_monthly_development_growth_add = 0.1
+    disease_resistance = 5
 }
+
 
 # Crimson Legacy - Traits
 crimson_legacy_modifier = {
@@ -62,4 +68,6 @@ crimson_expertise_modifier = {
 
     monthly_lifestyle_xp_gain_mult = 0.1
     learning_lifestyle_xp_gain_mult = 0.1
+    stress_loss_mult = 0.1
+    stress_gain_mult = -0.1
 }
