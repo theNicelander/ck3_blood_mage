@@ -12,13 +12,9 @@ seek_power.001 = {
         name = "Follow my instincts to seek worthy prey"
         
         duel = {
-            skill = intrigue
+            skill = prowess
             value = 0
-            
-            70 = {
-                desc = "I encounter wild game"
-                trigger_event = { id = seek_power.002 }
-            }
+
             30 = {
                 desc = "I discover a lost traveler"
                 compare_modifier = {
@@ -26,6 +22,10 @@ seek_power.001 = {
                     multiplier = 1
                 }
                 trigger_event = { id = seek_power.003 }
+            }
+            30 = {
+                desc = "I encounter wild game"
+                trigger_event = { id = seek_power.002 }
             }
         }
     }
