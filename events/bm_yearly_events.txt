@@ -1,7 +1,7 @@
-﻿namespace = blood_mage_yearly_xp
+﻿namespace = blood_mage_yearly_events
 
 # Yearly event - Add xp to Blood Mages, double if following religion
-blood_mage_yearly_xp.001 = {
+blood_mage_yearly_events.001 = {
     hidden = yes
     trigger = { has_trait = lifestyle_blood_mage }
     immediate = {
@@ -13,10 +13,10 @@ blood_mage_yearly_xp.001 = {
         if = {
             limit = { house = { has_house_modifier = dynasty_crimson_bloodline_modifier } }
             add_trait_xp = {
-            trait = lifestyle_blood_mage
-            track = bloodline
-            value = {0 1}
-        }
+                trait = lifestyle_blood_mage
+                track = bloodline
+                value = {0 1}
+            }   
         }
     }
     
