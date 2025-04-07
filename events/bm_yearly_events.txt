@@ -5,59 +5,126 @@ blood_mage_yearly_events.001 = {
     hidden = yes
     trigger = { has_trait = lifestyle_blood_mage }
     immediate = {
+        # Base XP gain for all Blood Mages
         add_trait_xp = {
             trait = lifestyle_blood_mage
             track = ancient
             value = 1
         }
+        
+        # Dynasty bloodline modifier check
         if = {
             limit = { house = { has_house_modifier = dynasty_crimson_bloodline_modifier } }
-            add_trait_xp = {
-                trait = lifestyle_blood_mage
-                track = bloodline
-                value = {0 1}
-            }   
+            random = {
+                chance = 50
+                send_interface_toast = {
+                    title = "Your Dynasty's Crimson Bloodline granted you experience"
+                    left_icon = root
+                    add_trait_xp = {
+                        trait = lifestyle_blood_mage
+                        track = bloodline
+                        value = 1
+                    }
+                }
+            }
         }
+        
+        # Lifeforce attunement check
         if = {
-            limit = { has_character_modifier = ancient_attuned }
-            add_trait_xp = {
-                trait = lifestyle_blood_mage
-                track = ancient
-                value = {0 1}
-            }   
-        }
-        if = {
-            limit = { has_character_modifier = enlightenment_attuned }
-            add_trait_xp = {
-                trait = lifestyle_blood_mage
-                track = enlightenment
-                value = {0 1}
-            }   
-        }
-        if = {
-            limit = { has_character_modifier = bloodline_attuned }
-            add_trait_xp = {
-                trait = lifestyle_blood_mage
-                track = bloodline
-                value = {0 1}
-            }   
-        }
-        if = {
-            limit = { has_character_modifier = benediction_attuned }
-            add_trait_xp = {
-                trait = lifestyle_blood_mage
-                track = benediction
-                value = {0 1}
-            }   
-        }
-        if = {
-            limit = { has_character_modifier = hematurgy_attuned }
-            add_trait_xp = {
-                trait = lifestyle_blood_mage
-                track = hematurgy
-                value = {0 1}
-            }   
+            limit = { has_character_modifier = lifeforce_attuned }
+            random = {
+                chance = 50
+                send_interface_toast = {
+                    title = "Your lifeforce attunement granted you lifeforce"
+                    left_icon = root
+                    add_character_modifier = { modifier = lifeforce_modifier_minor }
+                }
+            }
         }
 
+        # Ancient attunement check
+        if = {
+            limit = { has_character_modifier = ancient_attuned }
+            random = {
+                chance = 50
+                send_interface_toast = {
+                    title = "Your Ancient attunement granted you experience"
+                    left_icon = root
+                    add_trait_xp = {
+                        trait = lifestyle_blood_mage
+                        track = ancient
+                        value = 1
+                    }
+                }
+            }
+        }
+        
+        # Enlightenment attunement check
+        if = {
+            limit = { has_character_modifier = enlightenment_attuned }
+            random = {
+                chance = 50
+                send_interface_toast = {
+                    title = "Your Enlightenment attunement granted you experience"
+                    left_icon = root
+                    add_trait_xp = {
+                        trait = lifestyle_blood_mage
+                        track = enlightenment
+                        value = 1
+                    }
+                }
+            }
+        }
+        
+        # Bloodline attunement check
+        if = {
+            limit = { has_character_modifier = bloodline_attuned }
+            random = {
+                chance = 50
+                send_interface_toast = {
+                    title = "Your Bloodline attunement granted you experience"
+                    left_icon = root
+                    add_trait_xp = {
+                        trait = lifestyle_blood_mage
+                        track = bloodline
+                        value = 1
+                    }
+                }
+            }
+        }
+        
+        # Benediction attunement check
+        if = {
+            limit = { has_character_modifier = benediction_attuned }
+            random = {
+                chance = 50
+                send_interface_toast = {
+                    title = "Your Benediction attunement granted you experience"
+                    left_icon = root
+                    add_trait_xp = {
+                        trait = lifestyle_blood_mage
+                        track = benediction
+                        value = 1
+                    }
+                }
+            }
+        }
+        
+        # Hematurgy attunement check
+        if = {
+            limit = { has_character_modifier = hematurgy_attuned }
+            random = {
+                chance = 50
+                send_interface_toast = {
+                    title = "Your Hematurgy attunement granted you experience"
+                    left_icon = root
+                    add_trait_xp = {
+                        trait = lifestyle_blood_mage
+                        track = hematurgy
+                        value = 1
+                    }
+                }
+            }
+        }
     }
 }
