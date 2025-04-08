@@ -9,11 +9,11 @@
     # genetic
     good = yes
     genetic = yes
-    birth = 0.5
-    random_creation = 0.5
+    birth = 0.75
+    random_creation = 0.75
 
     # Base trait benefit
-    learning_per_piety_level = 1
+    learning_per_piety_level = 2
 
     tracks = {
         ancient = {
@@ -21,61 +21,55 @@
                 health = 0.1
                 life_expectancy = 1
                 epidemic_resistance = 1
-                learning = 2
+                learning = 1
             }
             20 = {
                 health = 0.1
                 life_expectancy = 1
                 epidemic_resistance = 1
-                learning = 2
+                learning = 1
             }
             30 = {
                 health = 0.1
                 life_expectancy = 1
                 epidemic_resistance = 1
-                learning = 2
+                learning = 1
             }
             40 = {
                 health = 0.1
                 life_expectancy = 1
                 epidemic_resistance = 1
-                learning = 2
+                learning = 1
             }
             50 = {
-                health = 0.1
-                life_expectancy = 1
-                epidemic_resistance = 1
-                learning = 2
+                learning_per_piety_level = 2
             }
             60 = {
                 health = 0.1
                 life_expectancy = 1
                 epidemic_resistance = 1
-                learning = 2
+                learning = 1
             }
             70 = {
                 health = 0.1
                 life_expectancy = 1
                 epidemic_resistance = 1
-                learning = 2
+                learning = 1
             }
             80 = {
                 health = 0.1
                 life_expectancy = 1
                 epidemic_resistance = 1
-                learning = 2
+                learning = 1
             }
             90 = {
                 health = 0.1
                 life_expectancy = 1
                 epidemic_resistance = 1
-                learning = 2
+                learning = 1
             }
             100 = {
-                health = 0.1
-                life_expectancy = 1
-                epidemic_resistance = 1
-                learning = 2
+                learning_per_piety_level = 2
             }
         }
 
@@ -84,61 +78,61 @@
                 health = 0.1
                 life_expectancy = 1
                 monthly_lifestyle_xp_gain_mult = 0.02
-                monthly_learning_lifestyle_xp_gain_mult = 0.01
+                monthly_learning_lifestyle_xp_gain_mult = 0.02
             }
             20 = {
                 health = 0.1
                 life_expectancy = 1
                 monthly_lifestyle_xp_gain_mult = 0.02
-                monthly_learning_lifestyle_xp_gain_mult = 0.01
+                monthly_learning_lifestyle_xp_gain_mult = 0.02
             }
             30 = {
                 health = 0.1
                 life_expectancy = 1
                 monthly_lifestyle_xp_gain_mult = 0.02
-                monthly_learning_lifestyle_xp_gain_mult = 0.01
+                monthly_learning_lifestyle_xp_gain_mult = 0.02
             }
             40 = {
                 health = 0.1
                 life_expectancy = 1
                 monthly_lifestyle_xp_gain_mult = 0.02
-                monthly_learning_lifestyle_xp_gain_mult = 0.01
+                monthly_learning_lifestyle_xp_gain_mult = 0.02
             }
             50 = {
                 health = 0.1
                 life_expectancy = 1
                 monthly_lifestyle_xp_gain_mult = 0.02
-                monthly_learning_lifestyle_xp_gain_mult = 0.01
+                monthly_learning_lifestyle_xp_gain_mult = 0.02
             }
             60 = {
                 health = 0.1
                 life_expectancy = 1
                 monthly_lifestyle_xp_gain_mult = 0.02
-                monthly_learning_lifestyle_xp_gain_mult = 0.01
+                monthly_learning_lifestyle_xp_gain_mult = 0.02
             }
             70 = {
                 health = 0.1
                 life_expectancy = 1
                 monthly_lifestyle_xp_gain_mult = 0.02
-                monthly_learning_lifestyle_xp_gain_mult = 0.01
+                monthly_learning_lifestyle_xp_gain_mult = 0.02
             }
             80 = {
                 health = 0.1
                 life_expectancy = 1
                 monthly_lifestyle_xp_gain_mult = 0.02
-                monthly_learning_lifestyle_xp_gain_mult = 0.01
+                monthly_learning_lifestyle_xp_gain_mult = 0.02
             }
             90 = {
                 health = 0.1
                 life_expectancy = 1
                 monthly_lifestyle_xp_gain_mult = 0.02
-                monthly_learning_lifestyle_xp_gain_mult = 0.01
+                monthly_learning_lifestyle_xp_gain_mult = 0.02
             }
             100 = {
                 health = 0.1
                 life_expectancy = 1
                 monthly_lifestyle_xp_gain_mult = 0.02
-                monthly_learning_lifestyle_xp_gain_mult = 0.01
+                monthly_learning_lifestyle_xp_gain_mult = 0.02
             }
         }
 
@@ -252,62 +246,57 @@
             10 = {
                 health = 0.1
                 life_expectancy = 1
-                prowess = 1
+                prowess = 2
                 dread_baseline_add = 1
             }
             20 = {
                 health = 0.1
                 life_expectancy = 1
-                prowess = 1
+                prowess = 2
                 dread_baseline_add = 1
             }
             30 = {
                 health = 0.1
                 life_expectancy = 1
-                prowess = 1
+                prowess = 2
                 dread_baseline_add = 1
             }
             40 = {
                 health = 0.1
                 life_expectancy = 1
-                prowess = 1
+                prowess = 2
                 dread_baseline_add = 1
             }
             50 = {
-                health = 0.1
-                life_expectancy = 1
-                prowess = 1
-                dread_baseline_add = 1
+                prowess_per_piety_level = 2
             }
             60 = {
                 health = 0.1
                 life_expectancy = 1
-                prowess = 1
+                prowess = 2
                 dread_baseline_add = 1
             }
             70 = {
                 health = 0.1
                 life_expectancy = 1
-                prowess = 1
+                prowess = 2
                 dread_baseline_add = 1
             }
             80 = {
                 health = 0.1
                 life_expectancy = 1
-                prowess = 1
+                prowess = 2
                 dread_baseline_add = 1
             }
             90 = {
                 health = 0.1
                 life_expectancy = 1
-                prowess = 1
+                prowess = 2
                 dread_baseline_add = 1
             }
             100 = {
-                health = 0.1
-                life_expectancy = 1
-                prowess = 1
-                dread_baseline_add = 1
+                no_prowess_loss_from_age = yes
+                prowess_per_piety_level = 2
             }
         }
     }
