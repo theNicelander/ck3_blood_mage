@@ -1,0 +1,78 @@
+﻿namespace = bm_attune_lifeforce
+
+bm_attune_lifeforce.001 = {
+    type = character_event
+    title = bm_attune_lifeforce.001.title
+    desc = bm_attune_lifeforce.001.desc
+    theme = witchcraft
+
+    immediate = {
+        remove_all_attunement = yes
+    }
+
+    # Chance to get lifeforce per year
+    option = {
+        name = bm_attune_lifeforce.001.a
+        add_character_modifier = { 
+            modifier = lifeforce_attuned
+        }
+        trigger = { NOT = { has_character_modifier = lifeforce_attuned } }
+        ai_chance = { base = 10 }
+    }
+    
+    # Chance to get Ancient trait xp per year
+    option = {
+        name = bm_attune_lifeforce.001.b
+        add_character_modifier = { 
+            modifier = ancient_attuned
+        }
+        trigger = { NOT = { has_character_modifier = ancient_attuned } }
+        ai_chance = { base = 10 }
+    }
+    
+    # Chance to get Enlightenment trait xp per year
+    option = {
+        name = bm_attune_lifeforce.001.c
+        add_character_modifier = { 
+            modifier = enlightenment_attuned
+        }
+        trigger = { NOT = { has_character_modifier = enlightenment_attuned } }
+        ai_chance = { base = 10 }
+    }
+    
+    # Chance to get Bloodline trait xp per year
+    option = {
+        name = bm_attune_lifeforce.001.d
+        add_character_modifier = { 
+            modifier = bloodline_attuned
+        }
+        trigger = { NOT = { has_character_modifier = bloodline_attuned } }
+        ai_chance = { base = 10 }
+    }
+    
+    # Chance to get Benediction trait xp per year
+    option = {
+        name = bm_attune_lifeforce.001.e
+        add_character_modifier = { 
+            modifier = benediction_attuned
+        }
+        trigger = { NOT = { has_character_modifier = benediction_attuned } }
+        ai_chance = { base = 10 }
+    }
+    
+    # Chance to get Hematurgy trait xp per year
+    option = {
+        name = bm_attune_lifeforce.001.f
+        add_character_modifier = { 
+            modifier = hematurgy_attuned
+        }
+        trigger = { NOT = { has_character_modifier = hematurgy_attuned } }
+        ai_chance = { base = 10 }
+    }
+
+    # Portraits
+    left_portrait = {
+        character = root
+        animation = personality_rational
+    }
+}
