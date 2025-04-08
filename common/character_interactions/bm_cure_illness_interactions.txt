@@ -58,6 +58,10 @@
             is_knight_of = scope:actor
             add = 10
         }
+        modifier = {
+            scope:actor = scope:recipient
+            add = 100
+        }
     }
 }
 
@@ -138,6 +142,10 @@ heal_disease_major = {
         modifier = {
             is_knight_of = scope:actor
             add = 10
+        }
+        modifier = {
+            scope:actor = scope:recipient
+            add = 100
         }
     }
 }
@@ -221,6 +229,10 @@ heal_disease_benediction = {
         modifier = {
             is_knight_of = scope:actor
             add = 10
+        }
+        modifier = {
+            scope:actor = scope:recipient
+            add = 100
         }
     }
 }
