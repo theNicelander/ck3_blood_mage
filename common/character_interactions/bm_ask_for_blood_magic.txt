@@ -17,7 +17,6 @@
                 has_relation_soulmate = scope:actor
             }
         }
-        NOT = { scope:actor = scope:recipient }
         scope:actor = { NOT = { has_trait = lifestyle_blood_mage } }
     }
 
