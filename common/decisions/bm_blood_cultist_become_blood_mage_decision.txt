@@ -1,0 +1,18 @@
+﻿bm_blood_cultist_become_blood_mage_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
+    desc = bm_blood_cultist_become_blood_mage_decision_desc
+    decision_group_type = bm_decision_group
+
+    is_shown = {
+        has_faith = faith:cult_of_blood
+        not = { has_trait = lifestyle_blood_mage }
+    }
+
+    cost = { piety = 100 }
+
+    effect = {  add_trait = lifestyle_blood_mage }
+
+    # Yearly 33% chance AI take up the religion if they are a blood mage
+    ai_will_do = { base = 10 }
+    ai_check_interval = 12
+}

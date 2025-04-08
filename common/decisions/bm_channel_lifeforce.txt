@@ -26,8 +26,12 @@
             add = 100
         }
         modifier = {
-            health > fine_health
+            health > good_health
             add = 50
+        }
+        modifier = {
+            health > fine_health
+            add = 10
         }
     }
 }
@@ -88,7 +92,7 @@ channel_lifeforce_bloodline = {
         base = 0
         modifier = {
             health > good_health
-            add = 100
+            add = 50
         }
     }
 }
