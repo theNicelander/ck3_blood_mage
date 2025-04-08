@@ -17,7 +17,7 @@ bm_attune_lifeforce.001 = {
             modifier = lifeforce_attuned
         }
         trigger = { NOT = { has_character_modifier = lifeforce_attuned } }
-        ai_chance = { base = 10 }
+        ai_chance = { base = 50 }
     }
     
     # Chance to get Ancient trait xp per year
