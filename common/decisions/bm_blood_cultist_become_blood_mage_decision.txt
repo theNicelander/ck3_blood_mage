@@ -12,7 +12,7 @@
 
     effect = {  add_trait = lifestyle_blood_mage }
 
-    # Yearly 33% chance AI take up the religion if they are a blood mage
-    ai_will_do = { base = 10 }
+    # Yearly chance that AI become blood mage, if they are blood cultist
+    ai_will_do = { base = 33 }
     ai_check_interval = 12
 }
