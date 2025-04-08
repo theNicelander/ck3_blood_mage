@@ -17,7 +17,6 @@
             has_trait = lifestyle_blood_mage
             has_faith = faith:cult_of_blood
         }
-        NOT = { scope:actor = scope:recipient }
         scope:recipient = { 
             NOT = { has_faith = faith:cult_of_blood } 
             OR = {
@@ -25,7 +24,6 @@
                 is_courtier_of = scope:actor
             } 
         }
-        NOT = { scope:actor = scope:recipient }
     }
 
     is_valid_showing_failures_only = {
