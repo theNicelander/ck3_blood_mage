@@ -24,8 +24,6 @@
                 is_courtier_of = scope:actor
             } 
         }
-        # Can't duel yourself.
-        NOT = { scope:actor = scope:recipient }
     }
 
     is_valid_showing_failures_only = {

@@ -21,8 +21,11 @@
     }
 
     is_valid_showing_failures_only = { 
-        scope:actor = { has_character_modifier = lifeforce_modifier_minor } 
-        scope:recipient = { is_courtier_of = scope:actor }
+        scope:actor = { has_character_modifier = lifeforce_modifier_minor }
+        OR = { # self or courtiers
+            scope:actor = scope:recipient
+            scope:recipient = { is_courtier_of = scope:actor }
+        }
     }
 
     on_accept = {
@@ -62,10 +65,13 @@ heal_disease_major = {
     auto_accept = yes
 
     cost = { piety = heal_disease_major_cost }
-    is_valid_showing_failures_only = { scope:actor = { 
-        has_character_modifier = lifeforce_modifier_major
-        # TODO: This should only be allowed if over certain XP or with finisher effect
-    } }
+    is_valid_showing_failures_only = {
+        OR = { # self or courtiers
+            scope:actor = scope:recipient
+            scope:recipient = { is_courtier_of = scope:actor }
+        }
+        scope:actor = {  has_character_modifier = lifeforce_modifier_major } 
+    }
     is_shown = {
         scope:actor = { has_trait = lifestyle_blood_mage }
         scope:recipient = {
@@ -137,7 +143,14 @@ heal_disease_benediction = {
     auto_accept = yes
 
     cost = { piety = cure_illness_cost_benediction }
-    is_valid_showing_failures_only = { scope:actor = { has_character_modifier = lifeforce_modifier_major } }
+    # TODO: This should only be allowed if over certain XP or with finisher effect
+    is_valid_showing_failures_only = {
+        OR = { # self or courtiers
+            scope:actor = scope:recipient
+            scope:recipient = { is_courtier_of = scope:actor }
+        }
+        scope:actor = {  has_character_modifier = lifeforce_modifier_major } 
+    }
     is_shown = {
         scope:actor = { has_trait = lifestyle_blood_mage }
         scope:recipient = {
