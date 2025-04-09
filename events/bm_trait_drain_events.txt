@@ -23,13 +23,14 @@ bm_trait_drain.001 = {
         duel = {
             skill = learning
             target = scope:recipient
-            10 = {
+            50 = {
                 desc = "I drain their intellect"
 
                 # Difficulty
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = 4
+                    multiplier = 5
+                    min = -40
                 }
                 modifier = trait_drain_harder_per_trait_modifier
                 
@@ -42,7 +43,7 @@ bm_trait_drain.001 = {
                     EXECUTIONER = scope:actor
                 }
             }
-            30 = {
+            50 = {
                 desc = "I fail"
                 drain_trait_failed_effects = yes
                 modifier = { add = trait_drain_modifier_per_trait }
@@ -70,7 +71,7 @@ bm_trait_drain.001 = {
                 # Difficulty
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = 4
+                    multiplier = 5
                 }
                 modifier = trait_drain_harder_per_trait_modifier
 
@@ -112,7 +113,7 @@ bm_trait_drain.001 = {
                 # Difficulty
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = 4
+                    multiplier = 5
                 }
                 modifier = trait_drain_harder_per_trait_modifier
 
@@ -155,7 +156,7 @@ bm_trait_drain.001 = {
                 # Difficulty
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = 4
+                    multiplier = 5
                 }
                 modifier = trait_drain_harder_per_trait_modifier
 
@@ -199,7 +200,7 @@ bm_trait_drain.001 = {
                  # Difficulty
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = 4
+                    multiplier = 5
                 }
                 modifier = trait_drain_harder_per_trait_modifier
 
@@ -244,7 +245,7 @@ bm_trait_drain.001 = {
                 # Difficulty
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = 4
+                    multiplier = 5
                 }
                 modifier = trait_drain_harder_per_trait_modifier
 
