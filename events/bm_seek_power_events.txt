@@ -15,11 +15,11 @@ seek_power.001 = {
             skill = prowess
             target = scope:actor
             
-            30 = {
+            3 = {
                 desc = "I encounter wild game"
                 trigger_event = { id = seek_power.002 }
             }
-            30 = {
+            500 = {
                 desc = "I discover a lost traveler"
                 compare_modifier = {
                     value = scope:duel_value
@@ -65,7 +65,7 @@ seek_power.002 = {
         send_interface_toast  = {
             title = "I drained the stag"
             left_icon = scope:actor
-            hematurgy_magic_cast_effect_minor = yes 
+            add_character_modifier = { modifier = lifeforce_modifier_minor } 
         }
         ai_chance = { base = 50 }
     }
@@ -96,9 +96,10 @@ seek_power.003 = {
                 name = "Beggar McBeggarface"
                 location = root.capital_province
                 gender_female_chance = 50
-                save_scope_as = beggar
+                save_scope_as = recipient 
                 culture = root.culture
                 trait = drunkard
+                trait = intellect_good_1
             }
         }
     }
@@ -118,11 +119,11 @@ seek_power.003 = {
                     value = scope:duel_value
                     multiplier = 2
                 }
-                scope:beggar = { death = { death_reason = death_sacrificed_to_gods } }
+                scope:recipient  = { death = { death_reason = death_sacrificed_to_gods } }
                 send_interface_toast  = {
                     title = "I drain the traveller without anyone noticing"
                     left_icon = scope:actor
-                    right_icon = scope:beggar
+                    right_icon = scope:recipient 
                     hematurgy_magic_cast_effect_major = yes
                 }
             }
@@ -131,17 +132,17 @@ seek_power.003 = {
                 send_interface_toast  = {
                     title = "They got away, I'm left empty handed"
                     left_icon = scope:actor
-                    right_icon = scope:beggar
+                    right_icon = scope:recipient 
                     add_stress = 5
                 }
             }
             20 = {
                 desc = "Witnessed"
-                scope:beggar = { death = { death_reason = death_sacrificed_to_gods } }
+                scope:recipient  = { death = { death_reason = death_sacrificed_to_gods } }
                 send_interface_toast  = {
                     title = "A witness survived to tell the tale"
                     left_icon = scope:actor
-                    right_icon = scope:beggar
+                    right_icon = scope:recipient 
                     hematurgy_magic_cast_effect_major = yes
                     add_stress = 10
                     add_dread = 5
@@ -153,6 +154,27 @@ seek_power.003 = {
                     }
                 }
             }
+        }
+    }
+
+    # Trait drain, if they have traits
+    option = {
+        name = "Drain their traits"
+        ai_chance = { base = 500 }
+        trigger_event = bm_trait_drain.001
+        remove_character_modifier = lifeforce_modifier_major
+        trigger = { 
+            has_character_modifier = lifeforce_modifier_major 
+            scope:recipient = {
+                OR = {
+                    has_trait = intellect_good
+                    has_trait = physique_good
+                    has_trait = beauty_good
+                    has_trait = giant
+                    has_trait = fecund
+                    has_trait = pure_blooded
+                }         
+            } 
         }
     }
 
@@ -169,7 +191,7 @@ seek_power.003 = {
         animation = idle
     }
     right_portrait = {
-        character = scope:beggar
+        character = scope:recipient
         animation = beg
     }
 }
