@@ -11,6 +11,7 @@ bm_channel_lifeforce_bloodline.001 = {
     # Dynasty Crimson Charisma
     option = {
         name = bm_channel_lifeforce_bloodline.001.a
+        add_piety_level = -1
         house = {
             add_house_modifier = { modifier = dynasty_crimson_charisma_modifier }
         }
@@ -21,6 +22,7 @@ bm_channel_lifeforce_bloodline.001 = {
     # Dynasty Crimson Fury
     option = {
         name = bm_channel_lifeforce_bloodline.001.b
+        add_piety_level = -1
         house = {
             add_house_modifier = { modifier = dynasty_crimson_fury_modifier }
         }
@@ -31,6 +33,7 @@ bm_channel_lifeforce_bloodline.001 = {
     # Dynasty Crimson Prosperity
     option = {
         name = bm_channel_lifeforce_bloodline.001.c
+        add_piety_level = -1
         house = {
             add_house_modifier = { modifier = dynasty_crimson_prosperity_modifier }
         }
@@ -41,6 +44,7 @@ bm_channel_lifeforce_bloodline.001 = {
     # Dynasty Crimson Shadows
     option = {
         name = bm_channel_lifeforce_bloodline.001.d
+        add_piety_level = -1
         house = {
             add_house_modifier = { modifier = dynasty_crimson_shadows_modifier }
         }
@@ -51,6 +55,7 @@ bm_channel_lifeforce_bloodline.001 = {
     # Dynasty Crimson Insight
     option = {
         name = bm_channel_lifeforce_bloodline.001.e
+        add_piety_level = -1
         house = {
             add_house_modifier = { modifier = dynasty_crimson_insight_modifier }
         }
@@ -61,6 +66,7 @@ bm_channel_lifeforce_bloodline.001 = {
     # Dynasty Crimson Legacy
     option = {
         name = bm_channel_lifeforce_bloodline.001.f
+        add_piety_level = -1
         house = {
             add_house_modifier = { modifier = dynasty_crimson_legacy_modifier }
         }
@@ -71,6 +77,7 @@ bm_channel_lifeforce_bloodline.001 = {
     # Dynasty Crimson Expertise
     option = {
         name = bm_channel_lifeforce_bloodline.001.g
+        add_piety_level = -1
         house = {
             add_house_modifier = { modifier = dynasty_crimson_expertise_modifier }
         }
@@ -81,11 +88,55 @@ bm_channel_lifeforce_bloodline.001 = {
     # Dynasty Crimson Bloodline
     option = {
         name = bm_channel_lifeforce_bloodline.001.z
+        add_piety_level = -1
         house = {
             add_house_modifier = { modifier = dynasty_crimson_bloodline_modifier }
         }
         trigger = { NOT = { house = { has_house_modifier = dynasty_crimson_bloodline_modifier } } }
         ai_chance = { base = 50 }
+    }
+
+    # Fallback
+    # TODO. add to every house member? 
+    option = {
+        name = bm_channel_lifeforce_bloodline.001.x
+        add_piety_level = -1
+        send_interface_toast  = {
+            title = "Crimson Empowered"
+            left_icon = this
+            house = {
+                add_house_modifier = {
+                    modifier = temporary_buff_bloodline
+                    days = 3650
+                }
+            }
+            # Chance to perm add skill, based on each skill respectively
+            random = { # Diplomacy
+                chance = { value = 10 add = this.diplomacy }
+                add_diplomacy_skill = 1
+            }
+            random = { # Learning
+                chance = { value = 10 add = this.learning }
+                add_learning_skill = 1
+            }
+            random = { # Martial
+                chance = { value = 10 add = this.martial }
+                add_martial_skill = 1
+            }
+            random = { # Intrigue
+                chance = { value = 10 add = this.intrigue }
+                add_intrigue_skill = 1
+            }
+            random = { # Stewardship
+                chance = { value = 10 add = this.stewardship }
+                add_stewardship_skill = 1
+            }
+            random = { # Prowess
+                chance = { value = 10 add = this.prowess }
+                add_prowess_skill = 2
+            }
+        }
+        ai_chance = { base = 5 }
     }
 
     # Portraits
