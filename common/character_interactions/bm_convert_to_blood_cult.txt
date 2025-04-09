@@ -44,8 +44,19 @@
             trigger_event = bm_convert_to_blood_cult.001 
         }
     }
-    ai_will_do = { 
-        base = 10
-        ai_willingness_to_do_postitive_magic = yes
+    ai_will_do = {
+        base = -10
+        modifier = {
+            scope:recipient = { is_courtier_of = scope:actor } 
+            add = 30
+        }
+        modifier = {
+            is_knight_of = scope:actor
+            add = 30
+        }
+        modifier = {
+            scope:recipient = { is_powerful_vassal_of = scope:actor }
+            add = 30
+        }
     }
 }

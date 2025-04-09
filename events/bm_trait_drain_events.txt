@@ -1,8 +1,4 @@
-﻿# lifedrain event
-# See dashboard on how the duel calculations are done
-# https://share.streamlit.io/thenicelander/ck3_blood_mage_viz/main
-
-namespace = bm_trait_drain
+﻿namespace = bm_trait_drain
 
 bm_trait_drain.001 = {
     type = character_event
@@ -44,9 +40,13 @@ bm_trait_drain.001 = {
                 }
             }
             50 = {
-                desc = "I fail"
-                drain_trait_failed_effects = yes
                 modifier = { add = trait_drain_modifier_per_trait }
+                send_interface_toast = {
+                    title = "I fail to drain their trait"
+                    drain_trait_failed_effects = yes
+                    left_icon = scope:actor
+                    right_icon = scope:recipient
+                }
             }
         }
         ai_chance = { base = 100 }
@@ -86,9 +86,13 @@ bm_trait_drain.001 = {
                 }
             }
             50 = {
-                desc = "I fail"
-                drain_trait_failed_effects = yes
                 modifier = { add = trait_drain_modifier_per_trait }
+                send_interface_toast = {
+                    title = "I fail to drain their trait"
+                    drain_trait_failed_effects = yes
+                    left_icon = scope:actor
+                    right_icon = scope:recipient
+                }
             }
         }
         ai_chance = { base = 100 }
@@ -128,9 +132,13 @@ bm_trait_drain.001 = {
                 }
             }
             50 = {
-                desc = "I fail"
-                drain_trait_failed_effects = yes
                 modifier = { add = trait_drain_modifier_per_trait }
+                send_interface_toast = {
+                    title = "I fail to drain their trait"
+                    drain_trait_failed_effects = yes
+                    left_icon = scope:actor
+                    right_icon = scope:recipient
+                }
             }
         }
         ai_chance = { base = 100 }
@@ -172,9 +180,13 @@ bm_trait_drain.001 = {
                 }
             }
             50 = {
-                desc = "I fail"
-                drain_trait_failed_effects = yes
                 modifier = { add = trait_drain_modifier_per_trait }
+                send_interface_toast = {
+                    title = "I fail to drain their trait"
+                    drain_trait_failed_effects = yes
+                    left_icon = scope:actor
+                    right_icon = scope:recipient
+                }
             }
         }
 
@@ -216,9 +228,13 @@ bm_trait_drain.001 = {
                 }
             }
             50 = {
-                desc = "I fail"
-                drain_trait_failed_effects = yes
                 modifier = { add = trait_drain_modifier_per_trait }
+                send_interface_toast = {
+                    title = "I fail to drain their trait"
+                    drain_trait_failed_effects = yes
+                    left_icon = scope:actor
+                    right_icon = scope:recipient
+                }
             }
         }
 
@@ -261,9 +277,13 @@ bm_trait_drain.001 = {
                 }
             }
             50 = {
-                desc = "I fail"
-                drain_trait_failed_effects = yes
                 modifier = { add = trait_drain_modifier_per_trait }
+                send_interface_toast = {
+                    title = "I fail to drain their trait"
+                    drain_trait_failed_effects = yes
+                    left_icon = scope:actor
+                    right_icon = scope:recipient
+                }
             }
         }
 

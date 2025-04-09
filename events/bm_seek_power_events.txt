@@ -15,7 +15,7 @@ seek_power.001 = {
             skill = prowess
             target = scope:actor
             
-            30 = {
+            50 = {
                 desc = "I encounter wild game"
                 trigger_event = { id = seek_power.002 }
             }
@@ -32,7 +32,7 @@ seek_power.001 = {
                 trigger_event = { id = seek_power.004 }
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = 1
+                    multiplier = 0.5
                 }
             }
         }
@@ -64,8 +64,8 @@ seek_power.002 = {
         name = "I drain the stag"
         send_interface_toast  = {
             title = "I drained the stag"
-            left_icon = scope:actor
-            hematurgy_magic_cast_effect_minor = yes 
+            left_icon = this
+            add_character_modifier = { modifier = lifeforce_modifier_minor } 
         }
         ai_chance = { base = 50 }
     }
@@ -89,17 +89,17 @@ seek_power.003 = {
     desc = "Deep in the wilderness, far from any path, you encounter a solitary figure. Dressed in tattered clothes and trembling from exposure, the traveler appears to have lost their way days ago. Gaunt and weakened, they look up at your approach with both hope and fear in their eyes. Despite their pitiable state, you sense something valuable that others would overlook—life essence ripe for the taking... or perhaps a chance to demonstrate mercy through your arcane gifts."
     theme = hunt_activity
 
+
     # Create the beggar/lost traveler
     immediate = {
         hidden_effect = {
-            create_character = {
-                name = "Beggar McBeggarface"
+			create_character = {
+				template = traveller_character_template
+				save_scope_as = recipient
                 location = root.capital_province
-                gender_female_chance = 50
-                save_scope_as = beggar
                 culture = root.culture
-                trait = drunkard
-            }
+                faith = root.capital_county.faith
+			}
         }
     }
 
@@ -118,11 +118,11 @@ seek_power.003 = {
                     value = scope:duel_value
                     multiplier = 2
                 }
-                scope:beggar = { death = { death_reason = death_sacrificed_to_gods } }
+                scope:recipient  = { death = { death_reason = death_sacrificed_to_gods } }
                 send_interface_toast  = {
                     title = "I drain the traveller without anyone noticing"
-                    left_icon = scope:actor
-                    right_icon = scope:beggar
+                    left_icon = thi
+                    right_icon = scope:recipient 
                     hematurgy_magic_cast_effect_major = yes
                 }
             }
@@ -130,18 +130,18 @@ seek_power.003 = {
                 desc = "They escape"
                 send_interface_toast  = {
                     title = "They got away, I'm left empty handed"
-                    left_icon = scope:actor
-                    right_icon = scope:beggar
+                    left_icon = this
+                    right_icon = scope:recipient 
                     add_stress = 5
                 }
             }
             20 = {
                 desc = "Witnessed"
-                scope:beggar = { death = { death_reason = death_sacrificed_to_gods } }
+                scope:recipient  = { death = { death_reason = death_sacrificed_to_gods } }
                 send_interface_toast  = {
                     title = "A witness survived to tell the tale"
-                    left_icon = scope:actor
-                    right_icon = scope:beggar
+                    left_icon = this
+                    right_icon = scope:recipient 
                     hematurgy_magic_cast_effect_major = yes
                     add_stress = 10
                     add_dread = 5
@@ -154,6 +154,59 @@ seek_power.003 = {
                 }
             }
         }
+    }
+
+    # Trait drain, if they have traits
+    option = {
+        name = "Drain their traits"
+        ai_chance = { base = 500 }
+        trigger_event = bm_trait_drain.001
+        remove_character_modifier = lifeforce_modifier_major
+        trigger = { 
+            has_character_modifier = lifeforce_modifier_major 
+            scope:recipient = {
+                OR = {
+                    has_trait = intellect_good
+                    has_trait = physique_good
+                    has_trait = beauty_good
+                    has_trait = giant
+                    has_trait = fecund
+                    has_trait = pure_blooded
+                }         
+            } 
+        }
+    }
+
+    # Convince them to join my court
+    option = {
+        name = "I wonder if they'll join me"
+        ai_chance = { base = 50 }
+        duel = {
+            skills = { diplomacy learning }
+            20 = {
+                desc = "They join me"
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 2
+                }
+                send_interface_toast  = {
+                    title = "They join me"
+                    left_icon = this
+                    right_icon = scope:recipient
+                    add_courtier = scope:recipient
+                }
+            }
+            20 = {
+                desc = "They go their separate ways"
+                send_interface_toast  = {
+                    title = "They go their separate ways"
+                    left_icon = this
+                    right_icon = scope:recipient
+
+                }
+            }
+        }
+        ai_chance = { base = 5 }
     }
 
     # Do nothing
@@ -169,7 +222,7 @@ seek_power.003 = {
         animation = idle
     }
     right_portrait = {
-        character = scope:beggar
+        character = scope:recipient
         animation = beg
     }
 }
@@ -185,9 +238,9 @@ seek_power.004 = {
         name = "Collect the sacred blood carefully, taking only what I need"
         send_interface_toast = {
             title = "Ancient Lifeforce Harvested"
-            left_icon = scope:actor
+            left_icon = this
+            add_character_modifier = { modifier = lifeforce_modifier_major } 
             hematurgy_magic_cast_effect_minor = yes
-            hematurgy_magic_cast_effect_major = yes
         }
         ai_chance = { base = 50 }
     }

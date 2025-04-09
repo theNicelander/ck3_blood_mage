@@ -38,5 +38,9 @@
             is_knight_of = scope:actor
             add = 30
         }
+        modifier = {
+            scope:recipient = { is_powerful_vassal_of = scope:actor }
+            add = 30
+        }
     }
 }
