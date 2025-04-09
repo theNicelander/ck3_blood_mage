@@ -7,6 +7,13 @@ trait_drain_prisoner_event_interaction = {
 
     is_highlighted = { always = yes }
 
+    is_valid_showing_failures_only = { 
+        scope:actor = { 
+            has_character_modifier = lifeforce_modifier_major
+            NOT = { has_character_modifier = trait_drain_attempted } 
+        }
+    }
+
     is_shown = {
         scope:actor = { has_trait = lifestyle_blood_mage }
         scope:recipient = {
@@ -29,7 +36,11 @@ trait_drain_prisoner_event_interaction = {
                 custom_tooltip = lifedrain_prisoner_event_interaction.recipient.notification.tt
             }
         }
-        scope:actor = { trigger_event = bm_trait_drain.001 }
+        scope:actor = { 
+            trigger_event = bm_trait_drain.001
+            remove_character_modifier = lifeforce_modifier_major
+        }
+        
     }
 
     # AI

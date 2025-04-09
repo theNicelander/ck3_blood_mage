@@ -17,6 +17,7 @@ bm_trait_drain.001 = {
 
         # Cost
         add_piety = trait_drain_intellect_cost
+        temporary_trait_drain_attempted = yes
 
         # Carry out logic
         duel = {
@@ -24,19 +25,14 @@ bm_trait_drain.001 = {
             target = scope:recipient
             10 = {
                 desc = "I drain their intellect"
-
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = 2
+                    multiplier = 4
                 }
-
-                # Draining the last level of a levellable trait costs piety level
-                if = { limit = { has_trait = intellect_good_2 } add_piety_level = -1 }
 
                 # Success! Level up trait :)
                 intellect_drain_trait_effects = yes
-                hematurgy_magic_cast_effect_major = yes
-
+            
                 # Prisoner dies
                 sacrifice_prisoner_effect = {
                     VICTIM = scope:recipient
@@ -45,11 +41,10 @@ bm_trait_drain.001 = {
             }
             30 = {
                 desc = "I fail"
-                temporary_negative_lifeforce_effect_major = yes
+                drain_trait_failed_effects = yes
                 modifier = { add = trait_drain_modifier_per_trait }
             }
         }
-
         ai_chance = { base = 100 }
     }
 
@@ -256,7 +251,6 @@ bm_trait_drain.001 = {
                 30 = {
                     desc = "I fail"
                     temporary_negative_lifeforce_effect_major = yes
-
                     modifier = { add = trait_drain_modifier_per_trait }
                 }
             }
@@ -268,6 +262,7 @@ bm_trait_drain.001 = {
     option = {
         name = bm_trait_drain.001.z
         ai_chance = { base = 5 }
+        add_character_modifier = lifeforce_modifier_major
     }
 
     # Portraits
