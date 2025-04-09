@@ -1,42 +1,4 @@
-﻿channel_lifeforce_enlightenment_major = {
-    picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
-    decision_group_type = bm_decision_group
-
-    cooldown = { years = 3 }
-    cost = { piety = 100 }
-
-    is_shown = { has_trait = lifestyle_blood_mage }
-    is_valid = {
-        has_character_modifier = lifeforce_modifier_major
-        has_trait = lifestyle_blood_mage
-    }
-    effect = {
-        trigger_event = { id = bm_channel_lifeforce_enlightenment_major.001 }
-        blood_magic_used_major = yes
-        add_xp_bm_dynamic = {
-            TRACK = enlightenment
-            XP = 10
-        }
-    }
-    ai_check_interval = 6
-    ai_will_do = { 
-        base = 0
-        modifier = {
-            health > excellent_health
-            add = 100
-        }
-        modifier = {
-            health > good_health
-            add = 50
-        }
-        modifier = {
-            health > fine_health
-            add = 10
-        }
-    }
-}
-
-channel_lifeforce_enlightenment_minor = {
+﻿channel_lifeforce_enlightenment_minor = {
     picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
     decision_group_type = bm_decision_group
 
@@ -66,6 +28,46 @@ channel_lifeforce_enlightenment_minor = {
     }
 }
 
+channel_lifeforce_enlightenment_major = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
+    decision_group_type = bm_decision_group
+
+    cooldown = { years = 3 }
+    cost = { piety = 100 }
+
+    is_shown = { has_trait = lifestyle_blood_mage }
+    is_valid = {
+        has_character_modifier = lifeforce_modifier_major
+        has_trait = lifestyle_blood_mage
+        piety_level >= 1
+    }
+    effect = {
+        trigger_event = { id = bm_channel_lifeforce_enlightenment_major.001 }
+        blood_magic_used_major = yes
+        add_xp_bm_dynamic = {
+            TRACK = enlightenment
+            XP = 10
+        }
+    }
+    ai_check_interval = 6
+    ai_will_do = { 
+        base = 0
+        modifier = {
+            health > excellent_health
+            add = 100
+        }
+        modifier = {
+            health > good_health
+            add = 50
+        }
+        modifier = {
+            health > fine_health
+            add = 10
+        }
+    }
+}
+
+
 channel_lifeforce_bloodline = {
     picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
     
@@ -78,6 +80,7 @@ channel_lifeforce_bloodline = {
     is_valid = {
         has_character_modifier = lifeforce_modifier_major
         is_house_head = yes
+        piety_level >= 1
     }
     effect = {
         trigger_event = { id = bm_channel_lifeforce_bloodline.001 }
