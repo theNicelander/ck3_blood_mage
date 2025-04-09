@@ -97,6 +97,8 @@ seek_power.003 = {
 				template = traveller_character_template
 				save_scope_as = recipient
                 location = root.capital_province
+                culture = root.culture
+                faith = root.capital_county.faith
 			}
         }
     }
@@ -173,6 +175,38 @@ seek_power.003 = {
                 }         
             } 
         }
+    }
+
+    # Convince them to join my court
+    option = {
+        name = "I wonder if they'll join me"
+        ai_chance = { base = 50 }
+        duel = {
+            skills = { diplomacy learning }
+            20 = {
+                desc = "They join me"
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 2
+                }
+                send_interface_toast  = {
+                    title = "They join me"
+                    left_icon = scope:actor
+                    right_icon = scope:recipient
+                    add_courtier = scope:recipient
+                }
+            }
+            20 = {
+                desc = "They go their separate ways"
+                send_interface_toast  = {
+                    title = "They go their separate ways"
+                    left_icon = scope:actor
+                    right_icon = scope:recipient
+
+                }
+            }
+        }
+        ai_chance = { base = 5 }
     }
 
     # Do nothing

@@ -1,8 +1,6 @@
 ﻿# Travellers
 traveller_character_template = {
-	name = "The Wanderer"
 	dynasty = none
-	culture = root.location.culture
 	gender_female_chance = 50
 	age = { 18 50 }
 
@@ -73,5 +71,12 @@ traveller_character_template = {
 
 		# Low chance to be immportal
 		immortal = { weight = { base = 5 } }
+	}
+	after_creation = {
+		give_nickname = nick_the_wanderer
+		if = {
+			limit = { has_trait = immortal }
+			give_nickname = nick_the_immortal
+		}
 	}
 }
