@@ -1,5 +1,6 @@
 ﻿intellect_drain_trait_effects = {
     hematurgy_magic_cast_effect_major = yes
+    if = { limit = { has_trait = intellect_good_2 } add_piety_level = -1 }
     if = {
         limit = { NOT = { has_trait = intellect_good } }
         add_trait = intellect_good_1
@@ -11,13 +12,15 @@
             max = 5
         }
     }
-    if = { limit = { has_trait = intellect_good_2 } add_piety_level = -1 }
+
 }
 physique_drain_trait_effects = {
     hematurgy_magic_cast_effect_major = yes
-    if = { limit = {  NOT = { has_trait = physique_good } } }
-    add_trait = physique_good_1
-
+    if = { limit = { has_trait = physique_good_2 } add_piety_level = -1 }
+    if = { 
+        limit = { NOT = { has_trait = physique_good } } 
+        add_trait = physique_good_1
+    }
     else = {
         change_trait_rank = {
             trait = physique_good
@@ -25,13 +28,15 @@ physique_drain_trait_effects = {
             max = 5
         }
     }
-    if = { limit = { has_trait = physique_good_2 } add_piety_level = -1 }
+    
 }
 beauty_drain_trait_effects = {
     hematurgy_magic_cast_effect_major = yes
-    if = { limit = { NOT = { has_trait = beauty_good } } }
-    add_trait = beauty_good_1
-    
+    if = { limit = { has_trait = beauty_good_2 } add_piety_level = -1 }
+    if = { 
+        limit = { NOT = { has_trait = beauty_good } }
+        add_trait = beauty_good_1
+    }
     else = {
         change_trait_rank = {
             trait = beauty_good
@@ -39,7 +44,6 @@ beauty_drain_trait_effects = {
             max = 5
         }
     }
-    if = { limit = { has_trait = beauty_good_2 } add_piety_level = -1 }
 }
 
 drain_trait_failed_effects = {
