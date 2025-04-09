@@ -25,13 +25,10 @@ bm_trait_drain.001 = {
             10 = {
                 desc = "I drain their intellect"
 
-                # Multiplier increases as your blood mage power increases
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = 2
                 }
-
-                # TODO: Base chance increases as your blood mage power increases
 
                 # Draining the last level of a levellable trait costs piety level
                 if = { limit = { has_trait = intellect_good_2 } add_piety_level = -1 }
@@ -39,6 +36,12 @@ bm_trait_drain.001 = {
                 # Success! Level up trait :)
                 intellect_drain_trait_effects = yes
                 hematurgy_magic_cast_effect_major = yes
+
+                # Prisoner dies
+                sacrifice_prisoner_effect = {
+                    VICTIM = scope:recipient
+                    EXECUTIONER = scope:actor
+                }
             }
             30 = {
                 desc = "I fail"
@@ -47,10 +50,6 @@ bm_trait_drain.001 = {
             }
         }
 
-        sacrifice_prisoner_effect = {
-            VICTIM = scope:recipient
-            EXECUTIONER = scope:actor
-        }
         ai_chance = { base = 100 }
     }
 
@@ -69,13 +68,10 @@ bm_trait_drain.001 = {
             10 = {
                 desc = "I drain their strength"
 
-                # Multiplier increases as your blood mage power increases
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = 2
                 }
-
-                # TODO: Base chance increases as your blood mage power increases
 
                 # Draining the last level of a levellable trait costs piety level
                 if = { limit = { has_trait = physique_good_2 } add_piety_level = -1 }
@@ -83,6 +79,12 @@ bm_trait_drain.001 = {
                 # Success! Level up trait :)
                 physique_drain_trait_effects = yes
                 hematurgy_magic_cast_effect_major = yes
+                
+                # Prisoner dies
+                sacrifice_prisoner_effect = {
+                    VICTIM = scope:recipient
+                    EXECUTIONER = scope:actor
+                }
             }
             30 = {
                 desc = "I fail"
@@ -90,12 +92,6 @@ bm_trait_drain.001 = {
 
                 modifier = { add = trait_drain_modifier_per_trait }
             }
-        }
-
-
-        sacrifice_prisoner_effect = {
-            VICTIM = scope:recipient
-            EXECUTIONER = scope:actor
         }
         ai_chance = { base = 100 }
     }
@@ -114,14 +110,10 @@ bm_trait_drain.001 = {
             target = scope:recipient
             10 = {
                 desc = "I drain their beauty"
-
-                # Multiplier increases as your blood mage power increases
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = 2
                 }
-
-                # TODO: Base chance increases as your blood mage power increases
 
                 # Draining the last level of a levellable trait costs piety level
                 if = { limit = { has_trait = beauty_good_2 } add_piety_level = -1 }
@@ -129,6 +121,12 @@ bm_trait_drain.001 = {
                 # Success! Level up trait :)
                 beauty_drain_trait_effects = yes
                 hematurgy_magic_cast_effect_major = yes
+                
+                # Prisoner dies
+                sacrifice_prisoner_effect = {
+                    VICTIM = scope:recipient
+                    EXECUTIONER = scope:actor
+                }
             }
             30 = {
                 desc = "I fail"
@@ -136,11 +134,6 @@ bm_trait_drain.001 = {
 
                 modifier = { add = trait_drain_modifier_per_trait }
             }
-        }
-
-        sacrifice_prisoner_effect = {
-            VICTIM = scope:recipient
-            EXECUTIONER = scope:actor
         }
         ai_chance = { base = 100 }
     }
@@ -160,17 +153,20 @@ bm_trait_drain.001 = {
                 value = 0
                 10 = {
                     desc = "Nice"
-                    # Multiplier increases as your blood mage power increases
                     compare_modifier = {
                         value = scope:duel_value
                         multiplier = 2
                     }
 
-                    # TODO: Base chance increases as your blood mage power increases
-
                     # Success!
                     add_trait = fecund
                     hematurgy_magic_cast_effect_major = yes
+
+                    # Prisoner dies
+                    sacrifice_prisoner_effect = {
+                        VICTIM = scope:recipient
+                        EXECUTIONER = scope:actor
+                    }
                 }
                 30 = {
                     desc = "I fail"
@@ -179,11 +175,6 @@ bm_trait_drain.001 = {
                     modifier = { add = trait_drain_modifier_per_trait }
                 }
             }
-        }
-
-        sacrifice_prisoner_effect = {
-            VICTIM = scope:recipient
-            EXECUTIONER = scope:actor
         }
         ai_chance = { base = 100 }
     }
@@ -203,17 +194,20 @@ bm_trait_drain.001 = {
                 value = 0
                 10 = {
                     desc = "I become a Giant"
-                    # Multiplier increases as your blood mage power increases
                     compare_modifier = {
                         value = scope:duel_value
                         multiplier = 2
                     }
 
-                    # TODO: Base chance increases as your blood mage power increases
-
                     # Success!
                     add_trait = giant
                     hematurgy_magic_cast_effect_major = yes
+                    
+                    # Prisoner dies
+                    sacrifice_prisoner_effect = {
+                        VICTIM = scope:recipient
+                        EXECUTIONER = scope:actor
+                    }
                 }
                 30 = {
                     desc = "I fail"
@@ -222,11 +216,6 @@ bm_trait_drain.001 = {
                     modifier = { add = trait_drain_modifier_per_trait }
                 }
             }
-        }
-
-        sacrifice_prisoner_effect = {
-            VICTIM = scope:recipient
-            EXECUTIONER = scope:actor
         }
         ai_chance = { base = 100 }
     }
@@ -257,6 +246,12 @@ bm_trait_drain.001 = {
                     # Success!
                     add_trait = pure_blooded
                     hematurgy_magic_cast_effect_major = yes
+
+                    # Prisoner dies
+                    sacrifice_prisoner_effect = {
+                        VICTIM = scope:recipient
+                        EXECUTIONER = scope:actor
+                    }
                 }
                 30 = {
                     desc = "I fail"
@@ -266,19 +261,13 @@ bm_trait_drain.001 = {
                 }
             }
         }
-
-        sacrifice_prisoner_effect = {
-            VICTIM = scope:recipient
-            EXECUTIONER = scope:actor
-        }
         ai_chance = { base = 100 }
     }
 
     # Do nothing
     option = {
-        add_piety = lifedrain_piety_cost
         name = bm_trait_drain.001.z
-        ai_chance = { base = 0 }
+        ai_chance = { base = 5 }
     }
 
     # Portraits
