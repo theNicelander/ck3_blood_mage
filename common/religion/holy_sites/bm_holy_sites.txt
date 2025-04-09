@@ -3,35 +3,35 @@ reykjavik = {
     county = c_vestisland
     barony = b_reykjavik
     character_modifier = {
-        learning_per_piety_level = 1
+        diplomacy = 1
     }
 }
 sudurland = {
     county = c_sudurland
     barony = b_stokkseyri
     character_modifier = {
-        diplomacy_per_piety_level = 1
+        martial = 1
     }
 }
 austurland = {
     county = c_austisland
     barony = b_reydarfjall
     character_modifier = {
-        stewardship_per_piety_level = 1
+        prowess = 2
     }
 }
 nordurland = {
     county = c_nordrland
     barony = b_husavik
     character_modifier = {
-        martial_per_piety_level = 1
+        intrigue = 1
     }
 }
 talknafjordur = {
     county = c_vestisland
     barony = b_vestfirdir
     character_modifier = {
-        intrigue_per_piety_level = 1
+        learning_per_piety_level = 1
     }
 }
 
@@ -99,7 +99,7 @@ ljubljana = {
 london = {
     county = c_middlesex
     barony = b_london
-    character_modifier = { martial = 1 }
+    character_modifier = { diplomacy_per_piety_level = 1 }
 }
 luxembourg = {
     county = c_luxembourg
@@ -109,7 +109,7 @@ luxembourg = {
 madrid = {
     county = c_madrid
     barony = b_madrid
-    character_modifier = { stewardship = 1 }
+    character_modifier = { stewardship_per_piety_level = 1 }
 }
 nicosia = {
     county = c_nicosia
@@ -124,12 +124,12 @@ moscow = {
 oslo = {
     county = c_vingulmork
     barony = b_oslosyslar
-    character_modifier = { learning = 1 }
+    character_modifier = { martial_per_piety_level = 1 }
 }
 paris = {
     county = c_ile_de_france
     barony = b_paris
-    character_modifier = { martial = 1 }
+    character_modifier = { intrigue_per_piety_level = 1 }
 }
 prague = {
     county = c_praha
@@ -144,7 +144,7 @@ sofia = {
 stockholm = {
     county = c_sodermannaland
     barony = b_strigines
-    character_modifier = { stewardship = 1 }
+    character_modifier = { prowess_per_piety_level = 2 }
 }
 tallinn = {
     county = c_reval

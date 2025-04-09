@@ -16,7 +16,7 @@ blood_mage_yearly_events.001 = {
         if = {
             limit = { house = { has_house_modifier = dynasty_crimson_bloodline_modifier } }
             random = {
-                chance = 100
+                chance = 25
                 send_interface_toast = {
                     title = "Your Dynasty's Crimson Bloodline granted you experience"
                     left_icon = root
@@ -33,7 +33,7 @@ blood_mage_yearly_events.001 = {
         if = {
             limit = { has_character_modifier = lifeforce_attuned }
             random = {
-                chance = 100
+                chance = 33
                 send_interface_toast = {
                     title = "Your lifeforce attunement granted you lifeforce"
                     left_icon = root
@@ -46,7 +46,7 @@ blood_mage_yearly_events.001 = {
         if = {
             limit = { has_character_modifier = ancient_attuned }
             random = {
-                chance = 100
+                chance = 50
                 send_interface_toast = {
                     title = "Your Ancient attunement granted you experience"
                     left_icon = root
@@ -63,7 +63,7 @@ blood_mage_yearly_events.001 = {
         if = {
             limit = { has_character_modifier = enlightenment_attuned }
             random = {
-                chance = 100
+                chance = 50
                 send_interface_toast = {
                     title = "Your Enlightenment attunement granted you experience"
                     left_icon = root
@@ -80,7 +80,7 @@ blood_mage_yearly_events.001 = {
         if = {
             limit = { has_character_modifier = bloodline_attuned }
             random = {
-                chance = 100
+                chance = 50
                 send_interface_toast = {
                     title = "Your Bloodline attunement granted you experience"
                     left_icon = root
@@ -97,7 +97,7 @@ blood_mage_yearly_events.001 = {
         if = {
             limit = { has_character_modifier = benediction_attuned }
             random = {
-                chance = 100
+                chance = 50
                 send_interface_toast = {
                     title = "Your Benediction attunement granted you experience"
                     left_icon = root
@@ -114,7 +114,7 @@ blood_mage_yearly_events.001 = {
         if = {
             limit = { has_character_modifier = hematurgy_attuned }
             random = {
-                chance = 100
+                chance = 50
                 send_interface_toast = {
                     title = "Your Hematurgy attunement granted you experience"
                     left_icon = root

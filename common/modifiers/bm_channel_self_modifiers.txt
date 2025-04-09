@@ -1,31 +1,33 @@
 ﻿# Crimson Charisma - Diplomacy
 crimson_charisma_modifier = {
     icon = magic_positive
-
-    diplomacy = 3
+    
+    diplomacy = 2
+    diplomacy_per_piety_level = 1
     general_opinion = 3
     vassal_opinion = 3
     courtly_opinion = 3
     attraction_opinion = 3
-    monthly_prestige = 0.3
+    monthly_prestige = 0.35
 }
 
 # Crimson Fury - Martial
 crimson_fury_modifier = {
     icon = magic_positive
-
+    
     martial = 2
+    martial_per_piety_level = 1
     prowess = 4
-    advantage = 2
-    knight_limit = 2
-    knight_effectiveness_mult = 0.2
+    prowess_per_piety_level = 2
+    knight_effectiveness_mult = 0.35
 }
 
 # Crimson Prosperity - Stewardship
 crimson_prosperity_modifier = {
     icon = magic_positive
     
-    stewardship = 3
+    stewardship = 2
+    stewardship_per_piety_level = 1
     monthly_county_control_growth_add = 0.1
     domain_limit = 1
 }
@@ -33,8 +35,9 @@ crimson_prosperity_modifier = {
 # Crimson Shadows - Intrigue
 crimson_shadows_modifier = {
     icon = magic_positive
-
-    intrigue = 3
+    
+    intrigue = 2
+    intrigue_per_piety_level = 1
     enemy_hostile_scheme_success_chance_add = -10
     owned_hostile_scheme_success_chance_add = 10
 }
@@ -42,22 +45,23 @@ crimson_shadows_modifier = {
 # Crimson Insight - Learning
 crimson_insight_modifier = {
     icon = magic_positive
-
-    learning = 3
-    monthly_piety = 0.25
+    
+    learning = 2
+    learning_per_piety_level = 1
+    monthly_piety = 0.35
     character_capital_county_monthly_development_growth_add = 0.1
     epidemic_resistance = 5
 }
 
-
 # Crimson Legacy - Traits
 crimson_legacy_modifier = {
     icon = magic_positive
-
+    
+    fertility = 0.1
     positive_random_genetic_chance = 0.1
     genetic_trait_strengthen_chance = 0.1
     positive_inactive_inheritance_chance = 0.1
-    inbreeding_chance  = -0.1
+    inbreeding_chance = -0.1
     negative_inactive_inheritance_chance = -0.1
     negative_random_genetic_chance = -0.1
 }
@@ -65,7 +69,6 @@ crimson_legacy_modifier = {
 # Crimson Expertise - Experience
 crimson_expertise_modifier = {
     icon = magic_positive
-
     monthly_lifestyle_xp_gain_mult = 0.1
     learning_lifestyle_xp_gain_mult = 0.1
     stress_loss_mult = 0.1
