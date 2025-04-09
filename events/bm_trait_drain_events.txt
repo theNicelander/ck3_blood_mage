@@ -32,7 +32,7 @@ bm_trait_drain.001 = {
                     multiplier = 5
                     min = -40
                 }
-                modifier = trait_drain_harder_per_trait_modifier
+                modifier = { add = trait_drain_harder_per_trait_modifier }
                 
                 # Success! Level up trait!
                 intellect_drain_trait_effects = yes
@@ -65,15 +65,16 @@ bm_trait_drain.001 = {
         duel = {
             skill = learning
             target = scope:recipient
-            10 = {
+            50 = {
                 desc = "I drain their strength"
 
                 # Difficulty
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = 5
+                    min = -40
                 }
-                modifier = trait_drain_harder_per_trait_modifier
+                modifier = { add = trait_drain_harder_per_trait_modifier }
 
                 # Success! Level up trait!
                 physique_drain_trait_effects = yes
@@ -84,10 +85,9 @@ bm_trait_drain.001 = {
                     EXECUTIONER = scope:actor
                 }
             }
-            30 = {
+            50 = {
                 desc = "I fail"
-                temporary_negative_lifeforce_effect_major = yes
-
+                drain_trait_failed_effects = yes
                 modifier = { add = trait_drain_modifier_per_trait }
             }
         }
@@ -107,15 +107,16 @@ bm_trait_drain.001 = {
         duel = {
             skill = learning
             target = scope:recipient
-            10 = {
+            50 = {
                 desc = "I drain their beauty"
                 
                 # Difficulty
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = 5
+                    min = -40
                 }
-                modifier = trait_drain_harder_per_trait_modifier
+                modifier = { add = trait_drain_harder_per_trait_modifier }
 
                 # Success! Level up trait!
                 beauty_drain_trait_effects = yes
@@ -126,10 +127,9 @@ bm_trait_drain.001 = {
                     EXECUTIONER = scope:actor
                 }
             }
-            30 = {
+            50 = {
                 desc = "I fail"
-                temporary_negative_lifeforce_effect_major = yes
-
+                drain_trait_failed_effects = yes
                 modifier = { add = trait_drain_modifier_per_trait }
             }
         }
@@ -149,16 +149,17 @@ bm_trait_drain.001 = {
         # Carry out logic
         duel = {
             skill = learning
-            value = 0
-            10 = {
+            target = scope:recipient
+            50 = {
                 desc = "Nice"
 
                 # Difficulty
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = 5
+                    min = -40
                 }
-                modifier = trait_drain_harder_per_trait_modifier
+                modifier = { add = trait_drain_harder_per_trait_modifier }
 
                 # Success!
                 add_trait = fecund
@@ -170,10 +171,9 @@ bm_trait_drain.001 = {
                     EXECUTIONER = scope:actor
                 }
             }
-            30 = {
+            50 = {
                 desc = "I fail"
-                temporary_negative_lifeforce_effect_major = yes
-
+                drain_trait_failed_effects = yes
                 modifier = { add = trait_drain_modifier_per_trait }
             }
         }
@@ -194,15 +194,16 @@ bm_trait_drain.001 = {
         # Carry out logic
         duel = {
             skill = learning
-            value = 0
-            10 = {
+            target = scope:recipient
+            50 = {
                 desc = "I become a Giant"
                  # Difficulty
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = 5
+                    min = -40
                 }
-                modifier = trait_drain_harder_per_trait_modifier
+                modifier = { add = trait_drain_harder_per_trait_modifier }
 
                 # Success!
                 add_trait = giant
@@ -214,10 +215,9 @@ bm_trait_drain.001 = {
                     EXECUTIONER = scope:actor
                 }
             }
-            30 = {
+            50 = {
                 desc = "I fail"
-                temporary_negative_lifeforce_effect_major = yes
-
+                drain_trait_failed_effects = yes
                 modifier = { add = trait_drain_modifier_per_trait }
             }
         }
@@ -238,16 +238,17 @@ bm_trait_drain.001 = {
         # Carry out logic
         duel = {
             skill = learning
-            value = 0
-            10 = {
+            target = scope:recipient
+            50 = {
                 desc = "I become a pure blooded"
 
                 # Difficulty
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = 5
+                    min = -40
                 }
-                modifier = trait_drain_harder_per_trait_modifier
+                modifier = { add = trait_drain_harder_per_trait_modifier }
 
                 # Success!
                 add_trait = pure_blooded
@@ -259,9 +260,9 @@ bm_trait_drain.001 = {
                     EXECUTIONER = scope:actor
                 }
             }
-            30 = {
+            50 = {
                 desc = "I fail"
-                temporary_negative_lifeforce_effect_major = yes
+                drain_trait_failed_effects = yes
                 modifier = { add = trait_drain_modifier_per_trait }
             }
         }
