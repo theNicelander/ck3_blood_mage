@@ -19,7 +19,7 @@ seek_power.001 = {
                 desc = "I encounter wild game"
                 trigger_event = { id = seek_power.002 }
             }
-            500 = {
+            5 = {
                 desc = "I discover a lost traveler"
                 compare_modifier = {
                     value = scope:duel_value
@@ -27,7 +27,7 @@ seek_power.001 = {
                 }
                 trigger_event = { id = seek_power.003 }
             }
-            5 = {
+            500 = {
                 desc = "I encounter a legendary beast"
                 trigger_event = { id = seek_power.004 }
                 compare_modifier = {
@@ -64,7 +64,7 @@ seek_power.002 = {
         name = "I drain the stag"
         send_interface_toast  = {
             title = "I drained the stag"
-            left_icon = scope:actor
+            left_icon = this
             add_character_modifier = { modifier = lifeforce_modifier_minor } 
         }
         ai_chance = { base = 50 }
@@ -121,7 +121,7 @@ seek_power.003 = {
                 scope:recipient  = { death = { death_reason = death_sacrificed_to_gods } }
                 send_interface_toast  = {
                     title = "I drain the traveller without anyone noticing"
-                    left_icon = scope:actor
+                    left_icon = thi
                     right_icon = scope:recipient 
                     hematurgy_magic_cast_effect_major = yes
                 }
@@ -130,7 +130,7 @@ seek_power.003 = {
                 desc = "They escape"
                 send_interface_toast  = {
                     title = "They got away, I'm left empty handed"
-                    left_icon = scope:actor
+                    left_icon = this
                     right_icon = scope:recipient 
                     add_stress = 5
                 }
@@ -140,7 +140,7 @@ seek_power.003 = {
                 scope:recipient  = { death = { death_reason = death_sacrificed_to_gods } }
                 send_interface_toast  = {
                     title = "A witness survived to tell the tale"
-                    left_icon = scope:actor
+                    left_icon = this
                     right_icon = scope:recipient 
                     hematurgy_magic_cast_effect_major = yes
                     add_stress = 10
@@ -191,7 +191,7 @@ seek_power.003 = {
                 }
                 send_interface_toast  = {
                     title = "They join me"
-                    left_icon = scope:actor
+                    left_icon = this
                     right_icon = scope:recipient
                     add_courtier = scope:recipient
                 }
@@ -200,7 +200,7 @@ seek_power.003 = {
                 desc = "They go their separate ways"
                 send_interface_toast  = {
                     title = "They go their separate ways"
-                    left_icon = scope:actor
+                    left_icon = this
                     right_icon = scope:recipient
 
                 }
@@ -238,7 +238,7 @@ seek_power.004 = {
         name = "Collect the sacred blood carefully, taking only what I need"
         send_interface_toast = {
             title = "Ancient Lifeforce Harvested"
-            left_icon = scope:actor
+            left_icon = this
             add_character_modifier = { modifier = lifeforce_modifier_major } 
             hematurgy_magic_cast_effect_minor = yes
         }
