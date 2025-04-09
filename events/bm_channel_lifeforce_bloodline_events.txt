@@ -95,13 +95,45 @@ bm_channel_lifeforce_bloodline.001 = {
         trigger = { NOT = { house = { has_house_modifier = dynasty_crimson_bloodline_modifier } } }
         ai_chance = { base = 50 }
     }
+
+    # Fallback
+    # TODO. add to every house member? 
     option = {
         name = bm_channel_lifeforce_bloodline.001.x
         add_piety_level = -1
-        house = {
-            add_house_modifier = {
-                modifier = temporary_buff_bloodline
-                days = 3650
+        send_interface_toast  = {
+            title = "Crimson Empowered"
+            left_icon = this
+            house = {
+                add_house_modifier = {
+                    modifier = temporary_buff_bloodline
+                    days = 3650
+                }
+            }
+            # Chance to perm add skill, based on each skill respectively
+            random = { # Diplomacy
+                chance = { value = 10 add = this.diplomacy }
+                add_diplomacy_skill = 1
+            }
+            random = { # Learning
+                chance = { value = 10 add = this.learning }
+                add_learning_skill = 1
+            }
+            random = { # Martial
+                chance = { value = 10 add = this.martial }
+                add_martial_skill = 1
+            }
+            random = { # Intrigue
+                chance = { value = 10 add = this.intrigue }
+                add_intrigue_skill = 1
+            }
+            random = { # Stewardship
+                chance = { value = 10 add = this.stewardship }
+                add_stewardship_skill = 1
+            }
+            random = { # Prowess
+                chance = { value = 10 add = this.prowess }
+                add_prowess_skill = 2
             }
         }
         ai_chance = { base = 5 }
