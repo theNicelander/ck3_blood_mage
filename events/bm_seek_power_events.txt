@@ -239,8 +239,8 @@ seek_power.004 = {
         send_interface_toast = {
             title = "Ancient Lifeforce Harvested"
             left_icon = scope:actor
+            add_character_modifier = { modifier = lifeforce_modifier_major } 
             hematurgy_magic_cast_effect_minor = yes
-            hematurgy_magic_cast_effect_major = yes
         }
         ai_chance = { base = 50 }
     }
