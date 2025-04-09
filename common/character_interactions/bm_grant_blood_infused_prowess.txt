@@ -16,7 +16,9 @@
         }
     }
     is_valid_showing_failures_only = { 
-        scope:actor = { has_character_modifier = lifeforce_modifier_minor }
+        scope:actor = { 
+            has_character_modifier = lifeforce_modifier_minor 
+        }
     }
 
     on_accept = {

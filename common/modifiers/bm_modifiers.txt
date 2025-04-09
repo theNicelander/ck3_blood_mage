@@ -53,3 +53,15 @@ benediction_attuned = {
 hematurgy_attuned = {
     icon = magic_positive
 }
+
+# Attempted lifedrain
+trait_drain_attempted = {
+    icon = magic_negative
+
+    health = -0.2
+    years_of_fertility = -2
+    life_expectancy = -2
+    epidemic_resistance = -2
+    negate_health_penalty_add = -0.2
+    prowess = -1
+}

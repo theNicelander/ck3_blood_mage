@@ -42,7 +42,10 @@
                 learning = 1
             }
             50 = {
-                learning_per_piety_level = 2
+                health = 0.1
+                life_expectancy = 1
+                epidemic_resistance = 1
+                learning_per_piety_level = 1
             }
             60 = {
                 health = 0.1
@@ -69,7 +72,10 @@
                 learning = 1
             }
             100 = {
-                learning_per_piety_level = 2
+                health = 0.1
+                life_expectancy = 1
+                epidemic_resistance = 1
+                learning_per_piety_level = 1
             }
         }
 
@@ -268,6 +274,7 @@
                 dread_baseline_add = 1
             }
             50 = {
+                intrigue_per_piety_level = 1
                 prowess_per_piety_level = 2
             }
             60 = {
@@ -296,6 +303,7 @@
             }
             100 = {
                 no_prowess_loss_from_age = yes
+                intrigue_per_piety_level = 1
                 prowess_per_piety_level = 2
             }
         }
