@@ -89,18 +89,15 @@ seek_power.003 = {
     desc = "Deep in the wilderness, far from any path, you encounter a solitary figure. Dressed in tattered clothes and trembling from exposure, the traveler appears to have lost their way days ago. Gaunt and weakened, they look up at your approach with both hope and fear in their eyes. Despite their pitiable state, you sense something valuable that others would overlook—life essence ripe for the taking... or perhaps a chance to demonstrate mercy through your arcane gifts."
     theme = hunt_activity
 
+
     # Create the beggar/lost traveler
     immediate = {
         hidden_effect = {
-            create_character = {
-                name = "Beggar McBeggarface"
+			create_character = {
+				template = traveller_character_template
+				save_scope_as = recipient
                 location = root.capital_province
-                gender_female_chance = 50
-                save_scope_as = recipient 
-                culture = root.culture
-                trait = drunkard
-                trait = intellect_good_1
-            }
+			}
         }
     }
 

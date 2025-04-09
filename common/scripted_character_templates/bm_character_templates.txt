@@ -1,0 +1,43 @@
+﻿# Travellers
+traveller_character_template = {
+	name = "The Nameless"
+	dynasty = none
+
+	culture = root.location.culture
+	# Any faith existing in the realm
+	random_traits = yes
+	gender_female_chance = 50
+	learning = { 5 20 }
+	age = { 18 50 }
+
+	random_traits_list = {
+		count = 1
+		education_learning_1 = {}
+		education_learning_2 = {}
+		education_learning_3 = {}
+		education_learning_4 = {}
+		education_learning_5 = {}
+	}
+	random_traits_list = {
+		count = { 0 1 }
+		intellect_good_1 = {}
+		physique_good_1 = {}
+		beauty_good_1 = {}
+		giant = {}
+		fecund = {}
+		pure_blooded = {}
+	}
+
+	random_traits_list = {
+		count = { 0 1 }
+		theologian = {}
+		scholar = {}
+	}
+	random_traits_list = {
+		count = { 0 1 }
+		eunuch_1 = {}
+		beardless_eunuch = {}
+		blind = {}
+		infirm = {}
+	}
+}
