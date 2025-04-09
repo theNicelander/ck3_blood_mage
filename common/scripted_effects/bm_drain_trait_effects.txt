@@ -25,6 +25,7 @@ physique_drain_trait_effects = {
             max = 5
         }
     }
+    if = { limit = { has_trait = physique_good_2 } add_piety_level = -1 }
 }
 beauty_drain_trait_effects = {
     hematurgy_magic_cast_effect_major = yes
@@ -38,6 +39,7 @@ beauty_drain_trait_effects = {
             max = 5
         }
     }
+    if = { limit = { has_trait = beauty_good_2 } add_piety_level = -1 }
 }
 
 drain_trait_failed_effects = {

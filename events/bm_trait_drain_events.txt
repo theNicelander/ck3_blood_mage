@@ -25,12 +25,15 @@ bm_trait_drain.001 = {
             target = scope:recipient
             10 = {
                 desc = "I drain their intellect"
+
+                # Difficulty
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = 4
                 }
-
-                # Success! Level up trait :)
+                modifier = trait_drain_harder_per_trait_modifier
+                
+                # Success! Level up trait!
                 intellect_drain_trait_effects = yes
             
                 # Prisoner dies
@@ -55,6 +58,7 @@ bm_trait_drain.001 = {
 
         # Cost
         add_piety = trait_drain_physique_cost
+        temporary_trait_drain_attempted = yes
 
         # Carry out logic
         duel = {
@@ -63,17 +67,15 @@ bm_trait_drain.001 = {
             10 = {
                 desc = "I drain their strength"
 
+                # Difficulty
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = 2
+                    multiplier = 4
                 }
+                modifier = trait_drain_harder_per_trait_modifier
 
-                # Draining the last level of a levellable trait costs piety level
-                if = { limit = { has_trait = physique_good_2 } add_piety_level = -1 }
-
-                # Success! Level up trait :)
+                # Success! Level up trait!
                 physique_drain_trait_effects = yes
-                hematurgy_magic_cast_effect_major = yes
                 
                 # Prisoner dies
                 sacrifice_prisoner_effect = {
@@ -98,6 +100,7 @@ bm_trait_drain.001 = {
 
         # Cost
         add_piety = trait_drain_beauty_cost
+        temporary_trait_drain_attempted = yes
 
         # Carry out logic
         duel = {
@@ -105,17 +108,16 @@ bm_trait_drain.001 = {
             target = scope:recipient
             10 = {
                 desc = "I drain their beauty"
+                
+                # Difficulty
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = 2
+                    multiplier = 4
                 }
+                modifier = trait_drain_harder_per_trait_modifier
 
-                # Draining the last level of a levellable trait costs piety level
-                if = { limit = { has_trait = beauty_good_2 } add_piety_level = -1 }
-
-                # Success! Level up trait :)
+                # Success! Level up trait!
                 beauty_drain_trait_effects = yes
-                hematurgy_magic_cast_effect_major = yes
                 
                 # Prisoner dies
                 sacrifice_prisoner_effect = {
@@ -140,37 +142,41 @@ bm_trait_drain.001 = {
 
         # Cost
         add_piety = trait_drain_base_piety_cost
+        temporary_trait_drain_attempted = yes
 
-        scope:actor = {
-            # Carry out logic
-            duel = {
-                skill = learning
-                value = 0
-                10 = {
-                    desc = "Nice"
-                    compare_modifier = {
-                        value = scope:duel_value
-                        multiplier = 2
-                    }
 
-                    # Success!
-                    add_trait = fecund
-                    hematurgy_magic_cast_effect_major = yes
+        # Carry out logic
+        duel = {
+            skill = learning
+            value = 0
+            10 = {
+                desc = "Nice"
 
-                    # Prisoner dies
-                    sacrifice_prisoner_effect = {
-                        VICTIM = scope:recipient
-                        EXECUTIONER = scope:actor
-                    }
+                # Difficulty
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 4
                 }
-                30 = {
-                    desc = "I fail"
-                    temporary_negative_lifeforce_effect_major = yes
+                modifier = trait_drain_harder_per_trait_modifier
 
-                    modifier = { add = trait_drain_modifier_per_trait }
+                # Success!
+                add_trait = fecund
+                hematurgy_magic_cast_effect_major = yes
+
+                # Prisoner dies
+                sacrifice_prisoner_effect = {
+                    VICTIM = scope:recipient
+                    EXECUTIONER = scope:actor
                 }
             }
+            30 = {
+                desc = "I fail"
+                temporary_negative_lifeforce_effect_major = yes
+
+                modifier = { add = trait_drain_modifier_per_trait }
+            }
         }
+
         ai_chance = { base = 100 }
     }
 
@@ -181,37 +187,40 @@ bm_trait_drain.001 = {
 
         # Cost
         add_piety = trait_drain_base_piety_cost
+        temporary_trait_drain_attempted = yes
 
-        scope:actor = {
-            # Carry out logic
-            duel = {
-                skill = learning
-                value = 0
-                10 = {
-                    desc = "I become a Giant"
-                    compare_modifier = {
-                        value = scope:duel_value
-                        multiplier = 2
-                    }
 
-                    # Success!
-                    add_trait = giant
-                    hematurgy_magic_cast_effect_major = yes
-                    
-                    # Prisoner dies
-                    sacrifice_prisoner_effect = {
-                        VICTIM = scope:recipient
-                        EXECUTIONER = scope:actor
-                    }
+        # Carry out logic
+        duel = {
+            skill = learning
+            value = 0
+            10 = {
+                desc = "I become a Giant"
+                 # Difficulty
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 4
                 }
-                30 = {
-                    desc = "I fail"
-                    temporary_negative_lifeforce_effect_major = yes
+                modifier = trait_drain_harder_per_trait_modifier
 
-                    modifier = { add = trait_drain_modifier_per_trait }
+                # Success!
+                add_trait = giant
+                hematurgy_magic_cast_effect_major = yes
+                
+                # Prisoner dies
+                sacrifice_prisoner_effect = {
+                    VICTIM = scope:recipient
+                    EXECUTIONER = scope:actor
                 }
             }
+            30 = {
+                desc = "I fail"
+                temporary_negative_lifeforce_effect_major = yes
+
+                modifier = { add = trait_drain_modifier_per_trait }
+            }
         }
+
         ai_chance = { base = 100 }
     }
 
@@ -222,39 +231,40 @@ bm_trait_drain.001 = {
 
         # Cost
         add_piety = trait_drain_base_piety_cost
+        temporary_trait_drain_attempted = yes
 
-        scope:actor = {
-            # Carry out logic
-            duel = {
-                skill = learning
-                value = 0
-                10 = {
-                    desc = "I become a pure blooded"
-                    # Multiplier increases as your blood mage power increases
-                    compare_modifier = {
-                        value = scope:duel_value
-                        multiplier = 2
-                    }
 
-                    # TODO: Base chance increases as your blood mage power increases
+        # Carry out logic
+        duel = {
+            skill = learning
+            value = 0
+            10 = {
+                desc = "I become a pure blooded"
 
-                    # Success!
-                    add_trait = pure_blooded
-                    hematurgy_magic_cast_effect_major = yes
-
-                    # Prisoner dies
-                    sacrifice_prisoner_effect = {
-                        VICTIM = scope:recipient
-                        EXECUTIONER = scope:actor
-                    }
+                # Difficulty
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 4
                 }
-                30 = {
-                    desc = "I fail"
-                    temporary_negative_lifeforce_effect_major = yes
-                    modifier = { add = trait_drain_modifier_per_trait }
+                modifier = trait_drain_harder_per_trait_modifier
+
+                # Success!
+                add_trait = pure_blooded
+                hematurgy_magic_cast_effect_major = yes
+
+                # Prisoner dies
+                sacrifice_prisoner_effect = {
+                    VICTIM = scope:recipient
+                    EXECUTIONER = scope:actor
                 }
             }
+            30 = {
+                desc = "I fail"
+                temporary_negative_lifeforce_effect_major = yes
+                modifier = { add = trait_drain_modifier_per_trait }
+            }
         }
+
         ai_chance = { base = 100 }
     }
 

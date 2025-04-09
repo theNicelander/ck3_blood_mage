@@ -10,9 +10,73 @@ trait_drain_base_piety_cost = -100
 trait_drain_level_2_piety_cost = -75
 trait_drain_level_3_piety_cost = -150
 
+# Modifiers
 trait_drain_modifier_1 = 10
 trait_drain_modifier_2 = 25
 trait_drain_modifier_3 = 50
+
+trait_drain_modifier_1_neg = -10
+trait_drain_modifier_2_neg = -25
+trait_drain_modifier_3_neg = -50
+
+trait_drain_harder_per_trait_modifier = {
+    # Intellect
+    if = {
+        limit = { has_trait = intellect_good_1 }
+        add = trait_drain_modifier_1_neg
+    }
+    if = {
+        limit = { has_trait = intellect_good_2 }
+        add = trait_drain_modifier_2_neg
+    }
+    if = {
+        limit = { has_trait = intellect_good_3 }
+        add = trait_drain_modifier_3_neg
+    }
+    
+    # Physique
+    if = {
+        limit = { has_trait = physique_good_1 }
+        add = trait_drain_modifier_1_neg
+    }
+    if = {
+        limit = { has_trait = physique_good_2 }
+        add = trait_drain_modifier_2_neg
+    }
+    if = {
+        limit = { has_trait = physique_good_3 }
+        add = trait_drain_modifier_3_neg
+    }
+
+    # Beauty
+    if = {
+        limit = { has_trait = beauty_good_1 }
+        add = trait_drain_modifier_1_neg
+    }
+    if = {
+        limit = { has_trait = beauty_good_2 }
+        add = trait_drain_modifier_2_neg
+    }
+    if = {
+        limit = { has_trait = beauty_good_3 }
+        add = trait_drain_modifier_3_neg
+    }
+
+    # Other traits
+    if = {
+        limit = { has_trait = fecund }
+        add = trait_drain_modifier_1_neg
+    }
+    if = {
+        limit = { has_trait = giant }
+        add = trait_drain_modifier_1_neg
+    }
+    if = {
+        limit = { has_trait = pure_blooded }
+        add = trait_drain_modifier_1_neg
+    }
+}
+
 
 trait_drain_intellect_cost = {
     add = trait_drain_base_piety_cost
