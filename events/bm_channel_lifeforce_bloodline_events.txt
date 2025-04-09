@@ -95,6 +95,17 @@ bm_channel_lifeforce_bloodline.001 = {
         trigger = { NOT = { house = { has_house_modifier = dynasty_crimson_bloodline_modifier } } }
         ai_chance = { base = 50 }
     }
+    option = {
+        name = bm_channel_lifeforce_bloodline.001.x
+        add_piety_level = -1
+        house = {
+            add_house_modifier = {
+                modifier = temporary_buff_bloodline
+                days = 3650
+            }
+        }
+        ai_chance = { base = 5 }
+    }
 
     # Portraits
     left_portrait = {

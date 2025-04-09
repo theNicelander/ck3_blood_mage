@@ -72,6 +72,17 @@ bm_channel_lifeforce_enlightenment_major.001 = {
         ai_chance = { base = 10 }
     }
 
+    # Fallback
+    option = {
+        name = bm_channel_lifeforce_enlightenment_major.001.x
+        add_piety_level = -1
+        add_character_modifier = {
+            modifier = temporary_buff_self
+            days = 3650
+        }
+        ai_chance = { base = 5 }
+    }
+
     # Portraits
     left_portrait = {
         character = root

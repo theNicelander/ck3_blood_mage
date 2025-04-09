@@ -65,3 +65,27 @@ trait_drain_attempted = {
     negate_health_penalty_add = -0.2
     prowess = -1
 }
+
+# Bloodline
+temporary_buff_bloodline = {
+    icon = magic_positive
+    stacking = yes
+
+    diplomacy = 1
+    martial = 1
+    intrigue = 1
+    stewardship = 1
+    learning = 1
+    prowess = 2
+}
+temporary_buff_self = {
+    icon = magic_positive
+    stacking = yes
+    
+    diplomacy = 2
+    martial = 2
+    intrigue = 2
+    stewardship = 2
+    learning = 2
+    prowess = 5
+}
