@@ -27,16 +27,14 @@
             }
         }
         scope:actor = { bloodline_magic_cast_effect_major = yes }
-        debug_log = "BloodMageDebug: Granted blood magic"
+        debug_log = "BloodMageDebug: [recipient.GetShortUINameNoTooltip] Granted blood magic by [actor.GetShortUINameNoTooltip]"
         debug_log_scopes = yes
     }
 
     # AI
-    ai_potential = { is_adult = yes }
-    ai_frequency = 12
-
+    ai_frequency = 1
     ai_will_do = {
-        base = -10
+        base = 0
         modifier = {
             scope:recipient = { is_courtier_of = scope:actor } 
             add = 30
@@ -50,7 +48,7 @@
             add = 30
         }
         modifier = {
-            health < good_health
+            scope:actor = { health < good_health } 
             add = -100
         }
     }
