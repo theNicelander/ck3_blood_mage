@@ -42,7 +42,8 @@
                 learning = 1
             }
             50 = {
-                monthly_piety_gain_mult = 0.5
+                no_prowess_loss_from_age = yes
+                monthly_piety = 0.5
                 learning_per_piety_level = 1
             }
             60 = {
@@ -70,8 +71,8 @@
                 learning = 1
             }
             100 = {
-                no_prowess_loss_from_age = yes
-                monthly_piety_gain_mult = 0.5
+                max_personal_schemes_add = 1
+                monthly_piety = 0.5
                 learning_per_piety_level = 1
             }
         }
@@ -161,7 +162,6 @@
                 monthly_dynasty_prestige = 0.025
             }
             50 = {
-                martial_per_piety_level = 1
                 monthly_dynasty_prestige = 0.05
             }
             60 = {
@@ -185,7 +185,7 @@
                 monthly_dynasty_prestige = 0.025
             }
             100 = {
-                stewardship_per_piety_level = 1
+                
                 monthly_dynasty_prestige = 0.05
             }
         }
@@ -237,7 +237,7 @@
             }
             100 = {
                 diplomacy_per_piety_level = 1
-                max_personal_schemes_add = 1
+                
             }
         }
 
