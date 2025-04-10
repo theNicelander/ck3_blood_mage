@@ -17,7 +17,16 @@ bm_attune_lifeforce.001 = {
             modifier = lifeforce_attuned
         }
         trigger = { NOT = { has_character_modifier = lifeforce_attuned } }
-        ai_chance = { base = 50 }
+        ai_chance = { 
+            base = 50
+            modifier = {
+                AND = {
+                    has_character_modifier = lifeforce_modifier_minor
+                    health > excellen_health
+                }
+                add = -40
+            }
+        }
     }
     
     # Chance to get Ancient trait xp per year
@@ -27,7 +36,33 @@ bm_attune_lifeforce.001 = {
             modifier = ancient_attuned
         }
         trigger = { NOT = { has_character_modifier = ancient_attuned } }
-        ai_chance = { base = 10 }
+        ai_chance = { 
+            base = 15
+            modifier = {
+                has_trait_xp = {
+                    trait = lifestyle_blood_mage
+                    track = ancient
+                    value >= 100
+                }
+                add = -100
+            }
+            modifier = {
+                has_trait_xp = {
+                    trait = lifestyle_blood_mage
+                    track = ancient
+                    value >= 50
+                }
+                add = -5
+            }
+            modifier = {
+                has_trait_xp = {
+                    trait = lifestyle_blood_mage
+                    track = ancient
+                    value >= 20
+                }
+                add = -5
+            }
+        }
     }
     
     # Chance to get Enlightenment trait xp per year

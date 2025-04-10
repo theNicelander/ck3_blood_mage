@@ -121,7 +121,7 @@ seek_power.003 = {
                 scope:recipient  = { death = { death_reason = death_sacrificed_to_gods } }
                 send_interface_toast  = {
                     title = "I drain the traveller without anyone noticing"
-                    left_icon = thi
+                    left_icon = this
                     right_icon = scope:recipient 
                     hematurgy_magic_cast_effect_major = yes
                 }
@@ -206,7 +206,6 @@ seek_power.003 = {
                 }
             }
         }
-        ai_chance = { base = 5 }
     }
 
     # Do nothing
