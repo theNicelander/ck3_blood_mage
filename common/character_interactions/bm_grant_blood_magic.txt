@@ -26,27 +26,33 @@
                 opinion = 50
             }
         }
-        scope:actor = { benediction_magic_cast_effect_major = yes }
+        scope:actor = { bloodline_magic_cast_effect_major = yes }
+        debug_log = "BloodMageDebug: [recipient.GetShortUINameNoTooltip] Granted blood magic by [actor.GetShortUINameNoTooltip]"
     }
 
     # AI
-    ai_potential = { is_adult = yes }
-    ai_targets = { ai_recipients = family }
-    ai_frequency = 12
-
+    ai_frequency = 6
     ai_will_do = {
         base = -10
         modifier = {
-            scope:recipient = { is_courtier_of = scope:actor } 
             add = 30
+            scope:recipient = { is_courtier_of = scope:actor }
         }
         modifier = {
-            is_knight_of = scope:actor
             add = 30
+            scope:recipient = { is_knight_of = scope:actor }
         }
         modifier = {
+            add = 30
             scope:recipient = { is_powerful_vassal_of = scope:actor }
-            add = 30
         }
+        modifier = {
+            add = -100
+            scope:actor = { health < good_health } 
+        }
+		modifier = {
+			add = 50
+			target_is_liege_or_above = scope:recipient
+		}
     }
 }

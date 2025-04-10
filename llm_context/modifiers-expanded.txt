@@ -1,0 +1,122 @@
+# CK3 Modifier System Reference - Enhanced
+
+This comprehensive guide explains the modifier system in Crusader Kings 3, showing how to create and implement modifiers that affect characters, provinces, and game mechanics.
+
+## Core Concepts
+* **Modifiers** are effects applied to game entities (characters, provinces, etc.) that alter their attributes or behaviors
+* Two types exist: long-term bonuses/penalties and chance modifiers (for random events)
+* Defined in .txt files in `/common/modifiers/` directory
+
+## Creating Character Modifiers
+Basic syntax includes the modifier name, icon, and effects. Icons are found in `gfx/interface/icons/modifiers/`.
+
+## Modifier Categories with Scope Information
+
+### Character Attributes (Character scope)
+* **Skills**: `diplomacy`, `martial`, `stewardship`, `intrigue`, `learning`, `prowess`
+  * Example: `diplomacy = 2` adds 2 points to character's Diplomacy skill
+* **Skill penalties negation**: `negate_X_penalty_add` (where X is any skill)
+  * Example: `negate_learning_penalty_add = 0.5` reduces Learning penalties by 50%
+* **Age effects**: `no_prowess_loss_from_age` prevents age-related Prowess decline
+* **Scaled by level**: `X_per_Y_level` (where X is any skill and Y is piety/prestige/stress)
+  * Example: `learning_per_piety_level = 1` grants +1 Learning per Piety level
+
+### Character Resources (Character scope)
+* **Health/Fertility**: `health`, `fertility`, `negate_fertility_penalty_add`
+  * Example: `health = 0.5` improves character health by 0.5
+* **Income**: `monthly_income`, `monthly_income_mult`, `monthly_war_income_add`
+  * Example: `monthly_income_mult = 0.1` increases monthly income by 10%
+* **Piety/Prestige**: `monthly_piety`, `monthly_prestige`, `monthly_piety_gain_mult`
+  * Example: `monthly_prestige = 0.5` adds 0.5 Prestige per month
+* **Dynasty**: `monthly_dynasty_prestige`, `monthly_dynasty_prestige_mult`
+* **Influence**: `monthly_influence`, `monthly_influence_mult` (Roads to Power DLC)
+
+### Stress & Dread (Character scope)
+* **Stress**: `stress_gain_mult`, `stress_loss_mult`
+  * Example: `stress_loss_mult = 0.25` increases stress reduction by 25%
+* **Dread**: `dread_gain_mult`, `dread_loss_mult`, `dread_baseline_add`
+  * Example: `dread_baseline_add = 10` adds 10 points to character's base Dread
+
+### Domain Management (Character scope)
+* **Limits**: `domain_limit`, `vassal_limit`
+  * Example: `domain_limit = 1` increases maximum domain size by 1
+* **Taxes**: `domain_tax_mult`, `vassal_tax_mult`
+  * Example: `domain_tax_mult = 0.15` increases domain taxes by 15%
+* **Maintenance**: `men_at_arms_maintenance`, `army_maintenance_mult`
+  * Example: `men_at_arms_maintenance = -0.1` reduces Men-at-Arms upkeep by 10%
+
+### Genetic & Birth Effects (Character scope)
+* **Inheritance**: `inbreeding_chance`, `positive_inactive_inheritance_chance`
+  * Example: `positive_inactive_inheritance_chance = 0.1` increases chance of inheriting positive traits by 10%
+* **Random traits**: `positive_random_genetic_chance`, `genetic_trait_strengthen_chance`
+* **Life span**: `life_expectancy`, `years_of_fertility`
+  * Example: `life_expectancy = 10` increases expected lifespan by 10 years
+
+### Opinion Modifiers (Character scope)
+* **Culture/Faith**: `same_culture_opinion`, `different_faith_opinion`
+  * Example: `same_faith_opinion = 10` adds +10 Opinion with characters of same faith
+* **Hierarchy**: `opinion_of_liege`, `vassal_opinion`, `powerful_vassal_opinion`
+* **Family**: `dynasty_opinion`, `spouse_opinion`, `child_opinion`
+  * Example: `spouse_opinion = 15` adds +15 Opinion with spouse
+
+### Combat Modifiers (Character scope, sometimes Province scope)
+* **Efficiency**: `pursue_efficiency`, `counter_efficiency`
+* **Combat rolls**: `min_combat_roll`, `max_combat_roll`
+  * Example: `max_combat_roll = 2` increases maximum roll in combat by 2
+* **Army size**: `men_at_arms_limit`, `men_at_arms_cap`
+* **Movement**: `movement_speed`, `embarkation_cost_mult`, `naval_movement_speed_mult`
+  * Example: `movement_speed = 0.15` increases army movement speed by 15%
+
+### Siege & Government (Character, Province, County scopes)
+* **Siege effects**: `siege_phase_time`, `siege_morale_loss` (Province scope)
+  * Example: `siege_phase_time = -0.1` reduces siege phase duration by 10%
+* **Vassal contributions**: `vassal_tax_contribution_add`, `vassal_levy_contribution_mult` (Character, Government scope)
+  * Example: `vassal_levy_contribution_mult = 0.2` increases levy contribution by 20%
+
+### Scheme-Related (Character, Scheme scopes)
+* **Base modifiers**: `scheme_power`, `scheme_resistance`, `scheme_secrecy`
+  * Example: `scheme_secrecy = 10` adds 10 points to scheme secrecy
+* **Character specific**: `hostile_scheme_power_add`, `personal_scheme_resistance_mult`
+* **Skill-specific**: `diplomacy_scheme_power`, `learning_scheme_resistance`
+
+### Development & County Modifiers (Character, Province, County scopes)
+* **Development**: `development_growth`, `development_growth_factor`
+  * Example: `development_growth = 0.2` adds 0.2 monthly development growth
+* **Control**: `monthly_county_control_growth_add`, `monthly_county_control_growth_factor`
+  * Example: `monthly_county_control_growth_add = 0.3` adds 0.3 monthly control growth
+
+### Dynamic Modifiers by Type
+
+#### Vassal Stance Modifiers (Character scope)
+* `<vassal_stance>_opinion` (e.g., `courtly_opinion`, `glory_hound_opinion`)
+* `<vassal_stance>_tax_contribution_mult`
+  * Example: `glory_hound_levy_contribution_add = 0.05` increases levy from glory hound vassals by 5%
+
+#### Government-Type Modifiers (Character scope)
+* `<government_name>_opinion` (e.g., `feudal_government_opinion`)
+* `<government_name>_tax_contribution_add`
+  * Example: `republic_government_tax_contribution_mult = 0.1` increases taxes from republic vassals by 10%
+
+#### Holding-Type Modifiers (Character, Province, County scopes)
+* `<holding>_build_speed` (e.g., `castle_holding_build_speed`)
+* `<holding>_build_gold_cost`
+  * Example: `city_holding_build_gold_cost = -0.15` reduces city building costs by 15%
+
+#### Scheme Modifiers (Character, Scheme scopes)
+* `max_<scheme_name>_schemes_add` (e.g., `max_murder_schemes_add`)
+* `<scheme_name>_scheme_power_add`
+  * Example: `seduce_scheme_power_add = 15` adds 15 power to seduction schemes
+
+#### Terrain Modifiers (Character, Province, Combat scopes)
+* `<terrain_name>_attrition_mult` (e.g., `mountains_attrition_mult`)
+* `<terrain_name>_advantage`
+  * Example: `forest_advantage = 3` adds 3 advantage when fighting in forests
+
+#### Men-at-Arms Modifiers (Character, Combat scopes)
+* `<men_at_arms_name>_maintenance_cost_mult` (e.g., `heavy_infantry_maintenance_cost_mult`)
+* `<men_at_arms_name>_damage_add`, `<men_at_arms_name>_toughness_mult`
+  * Example: `archers_damage_add = 25` adds 25 damage to archer regiments
+* `stationed_<men_at_arms_name>_siege_value_add` (Province scope)
+  * Example: `stationed_siege_weapon_siege_value_add = 0.2` increases siege weapons' effectiveness by 20% in province
+
+This reference covers the fundamental modifier system in CK3, providing a framework for understanding how modifiers affect different scopes and how to alter game mechanics through custom modifiers.
