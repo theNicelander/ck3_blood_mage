@@ -27,6 +27,8 @@
             }
         }
         scope:actor = { bloodline_magic_cast_effect_major = yes }
+        debug_log = "BloodMageDebug: Granted blood magic"
+        debug_log_scopes = yes
     }
 
     # AI
