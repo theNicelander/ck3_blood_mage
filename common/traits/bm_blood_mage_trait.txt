@@ -45,6 +45,7 @@
                 health = 0.1
                 life_expectancy = 1
                 epidemic_resistance = 1
+
                 learning_per_piety_level = 1
             }
             60 = {
@@ -75,6 +76,7 @@
                 health = 0.1
                 life_expectancy = 1
                 epidemic_resistance = 1
+                
                 learning_per_piety_level = 1
             }
         }
@@ -218,6 +220,7 @@
             }
             50 = {
                 health = 0.1
+                diplomacy_per_piety_level = 1
                 life_expectancy = 1
                 general_opinion = 1
             }
@@ -245,6 +248,7 @@
                 health = 0.1
                 life_expectancy = 1
                 general_opinion = 1
+                diplomacy_per_piety_level = 1
             }
         }
 
@@ -274,6 +278,8 @@
                 dread_baseline_add = 1
             }
             50 = {
+                health = 0.1
+                life_expectancy = 1
                 intrigue_per_piety_level = 1
                 prowess_per_piety_level = 2
             }
@@ -302,6 +308,8 @@
                 dread_baseline_add = 1
             }
             100 = {
+                health = 0.1
+                life_expectancy = 1
                 no_prowess_loss_from_age = yes
                 intrigue_per_piety_level = 1
                 prowess_per_piety_level = 2
