@@ -45,10 +45,28 @@ bloodline_magic_cast_effect_major = {
 }
 
 remove_all_attunement = {
-    remove_character_modifier = bloodline_attuned
-    remove_character_modifier = lifeforce_attuned
-    remove_character_modifier = ancient_attuned
-    remove_character_modifier = enlightenment_attuned
-    remove_character_modifier = benediction_attuned
-    remove_character_modifier = hematurgy_attuned
+    if = {
+        limit = { has_character_modifier = bloodline_attuned }
+        remove_character_modifier = bloodline_attuned
+    }
+    if = {
+        limit = { has_character_modifier = lifeforce_attuned }
+        remove_character_modifier = lifeforce_attuned
+    }
+    if = {
+        limit = { has_character_modifier = ancient_attuned }
+        remove_character_modifier = ancient_attuned
+    }
+    if = {
+        limit = { has_character_modifier = enlightenment_attuned }
+        remove_character_modifier = enlightenment_attuned
+    }
+    if = {
+        limit = { has_character_modifier = benediction_attuned }
+        remove_character_modifier = benediction_attuned
+    }
+    if = {
+        limit = { has_character_modifier = hematurgy_attuned }
+        remove_character_modifier = hematurgy_attuned
+    }
 }
