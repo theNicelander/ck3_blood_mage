@@ -53,3 +53,46 @@ ai_willingness_to_do_postitive_magic = {
         add = 30
     }
 }
+
+ai_chance_scale_based_on_xp_in_track = {
+    modifier = {
+        has_trait_xp = {
+            trait = lifestyle_blood_mage
+            track = $TRACK$
+            value >= 100
+        }
+        add = -100
+    }
+    modifier = {
+        has_trait_xp = {
+            trait = lifestyle_blood_mage
+            track = $TRACK$
+            value >= 80
+        }
+        add = -5
+    }
+    modifier = {
+        has_trait_xp = {
+            trait = lifestyle_blood_mage
+            track = $TRACK$
+            value >= 60
+        }
+        add = -5
+    }
+    modifier = {
+        has_trait_xp = {
+            trait = lifestyle_blood_mage
+            track = $TRACK$
+            value >= 30
+        }
+        add = -5
+    }
+    modifier = {
+        has_trait_xp = {
+            trait = lifestyle_blood_mage
+            track = $TRACK$
+            value <= 10
+        }
+        add = 5
+    }
+}
