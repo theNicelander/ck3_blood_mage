@@ -2,23 +2,17 @@
 crimson_charisma_modifier = {
     icon = magic_positive
     
-    diplomacy = 2
-    diplomacy_per_piety_level = 1
-    general_opinion = 3
-    vassal_opinion = 3
-    courtly_opinion = 3
-    attraction_opinion = 3
-    monthly_prestige = 0.35
+    diplomacy_per_piety_level = 2
+    general_opinion = 5
 }
 
 # Crimson Fury - Martial
 crimson_fury_modifier = {
     icon = magic_positive
     
-    martial = 2
-    martial_per_piety_level = 1
-    prowess = 4
-    prowess_per_piety_level = 2
+    martial_per_piety_level = 2
+    prowess_per_piety_level = 3
+    knight_limit = 2
     knight_effectiveness_mult = 0.35
 }
 
@@ -26,9 +20,8 @@ crimson_fury_modifier = {
 crimson_prosperity_modifier = {
     icon = magic_positive
     
-    stewardship = 2
-    stewardship_per_piety_level = 1
-    monthly_county_control_growth_add = 0.1
+    stewardship_per_piety_level = 2
+    monthly_county_control_growth_add = 0.25
     domain_limit = 1
 }
 
@@ -36,8 +29,7 @@ crimson_prosperity_modifier = {
 crimson_shadows_modifier = {
     icon = magic_positive
     
-    intrigue = 2
-    intrigue_per_piety_level = 1
+    intrigue_per_piety_level = 2
     
     # Make BM's schemes better
     owned_hostile_scheme_success_chance_add = 10
@@ -52,8 +44,7 @@ crimson_shadows_modifier = {
 crimson_insight_modifier = {
     icon = magic_positive
     
-    learning = 2
-    learning_per_piety_level = 1
+    learning_per_piety_level = 2
     monthly_piety = 0.35
     character_capital_county_monthly_development_growth_add = 0.1
     epidemic_resistance = 5

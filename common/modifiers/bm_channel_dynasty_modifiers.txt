@@ -2,32 +2,24 @@
 dynasty_crimson_charisma_modifier = {
     icon = magic_positive
 
-    diplomacy = 1
-    general_opinion = 1
-    vassal_opinion = 1
-    courtly_opinion = 1
-    attraction_opinion = 1
-    monthly_prestige = 0.15
+    diplomacy_per_piety_level = 1
+    general_opinion = 5
 }
 
 # Dynasty - Crimson Fury
 dynasty_crimson_fury_modifier = {
     icon = magic_positive
 
-    martial = 1
-    prowess = 2
-    advantage = 1
-    knight_limit = 1
-    knight_effectiveness_mult = 0.1
+    martial_per_piety_level = 1
+    prowess_per_piety_level = 2
 }
 
 # Dynasty - Crimson Prosperity
 dynasty_crimson_prosperity_modifier = {
     icon = magic_positive
     
-    stewardship = 1
-    monthly_income = 0.1
-    monthly_county_control_growth_add = 0.05
+    stewardship_per_piety_level = 1
+    monthly_county_control_growth_add = 0.1
 }
 
 # Dynasty - Crimson Shadows
@@ -43,8 +35,8 @@ dynasty_crimson_shadows_modifier = {
 dynasty_crimson_insight_modifier = {
     icon = magic_positive
 
-    learning = 1
-    monthly_piety = 0.1
+    learning_per_piety_level = 1
+    monthly_piety = 0.15
     character_capital_county_monthly_development_growth_add = 0.05
     epidemic_resistance = 2
 }
