@@ -42,10 +42,7 @@
                 learning = 1
             }
             50 = {
-                health = 0.1
-                life_expectancy = 1
-                epidemic_resistance = 1
-
+                monthly_piety_gain_mult = 0.5
                 learning_per_piety_level = 1
             }
             60 = {
@@ -73,10 +70,8 @@
                 learning = 1
             }
             100 = {
-                health = 0.1
-                life_expectancy = 1
-                epidemic_resistance = 1
-                
+                no_prowess_loss_from_age = yes
+                monthly_piety_gain_mult = 0.5
                 learning_per_piety_level = 1
             }
         }
@@ -109,8 +104,8 @@
             50 = {
                 health = 0.1
                 life_expectancy = 1
-                monthly_lifestyle_xp_gain_mult = 0.02
-                monthly_learning_lifestyle_xp_gain_mult = 0.02
+                monthly_lifestyle_xp_gain_mult = 0.05
+                monthly_learning_lifestyle_xp_gain_mult = 0.05
             }
             60 = {
                 health = 0.1
@@ -139,8 +134,8 @@
             100 = {
                 health = 0.1
                 life_expectancy = 1
-                monthly_lifestyle_xp_gain_mult = 0.02
-                monthly_learning_lifestyle_xp_gain_mult = 0.02
+                monthly_lifestyle_xp_gain_mult = 0.05
+                monthly_learning_lifestyle_xp_gain_mult = 0.05
             }
         }
 
@@ -166,9 +161,8 @@
                 monthly_dynasty_prestige = 0.01
             }
             50 = {
-                health = 0.1
-                life_expectancy = 1
-                monthly_dynasty_prestige = 0.01
+                martial_per_piety_level = 1
+                monthly_dynasty_prestige = 0.05
             }
             60 = {
                 health = 0.1
@@ -191,9 +185,8 @@
                 monthly_dynasty_prestige = 0.01
             }
             100 = {
-                health = 0.1
-                life_expectancy = 1
-                monthly_dynasty_prestige = 0.01
+                stewardship_per_piety_level = 1
+                monthly_dynasty_prestige = 0.05
             }
         }
 
@@ -219,10 +212,8 @@
                 general_opinion = 1
             }
             50 = {
-                health = 0.1
+                general_opinion = 5
                 diplomacy_per_piety_level = 1
-                life_expectancy = 1
-                general_opinion = 1
             }
             60 = {
                 health = 0.1
@@ -245,10 +236,8 @@
                 general_opinion = 1
             }
             100 = {
-                health = 0.1
-                life_expectancy = 1
-                general_opinion = 1
                 diplomacy_per_piety_level = 1
+                max_personal_schemes_add = 1
             }
         }
 
@@ -278,8 +267,6 @@
                 dread_baseline_add = 1
             }
             50 = {
-                health = 0.1
-                life_expectancy = 1
                 intrigue_per_piety_level = 1
                 prowess_per_piety_level = 2
             }
@@ -307,12 +294,10 @@
                 prowess = 2
                 dread_baseline_add = 1
             }
-            100 = {
-                health = 0.1
-                life_expectancy = 1
-                no_prowess_loss_from_age = yes
+            100 = {               
                 intrigue_per_piety_level = 1
                 prowess_per_piety_level = 2
+                flag = lower_chance_of_dying_in_combat
             }
         }
     }
