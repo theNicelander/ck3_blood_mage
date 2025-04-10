@@ -12,7 +12,7 @@
         scope:actor = { has_trait = lifestyle_blood_mage }
         scope:recipient = { NOT = { has_trait = lifestyle_blood_mage } }
     }
-    cost = { piety = 100 }
+    cost = { piety = 0 }
     is_valid_showing_failures_only = { 
         scope:actor = { has_character_modifier = lifeforce_modifier_major }
     }
@@ -28,28 +28,27 @@
         }
         scope:actor = { bloodline_magic_cast_effect_major = yes }
         debug_log = "BloodMageDebug: [recipient.GetShortUINameNoTooltip] Granted blood magic by [actor.GetShortUINameNoTooltip]"
-        debug_log_scopes = yes
     }
 
     # AI
-    ai_frequency = 1
+    ai_frequency = 6
     ai_will_do = {
-        base = 0
+        base = 10
         modifier = {
-            scope:recipient = { is_courtier_of = scope:actor } 
             add = 30
+            scope:recipient = { is_courtier_of = scope:actor }
         }
         modifier = {
-            is_knight_of = scope:actor
             add = 30
+            scope:recipient = { is_knight_of = scope:actor }
         }
         modifier = {
+            add = 30
             scope:recipient = { is_powerful_vassal_of = scope:actor }
-            add = 30
         }
         modifier = {
-            scope:actor = { health < good_health } 
             add = -100
+            scope:actor = { health < good_health } 
         }
     }
 }

@@ -13,12 +13,12 @@
         scope:recipient  = {
             is_courtier_of = scope:actor
             NOT = { has_character_modifier = lifeforce_modifier_crimson_warrior }
+            NOT = { has_character_modifier = lifeforce_modifier_crimson_champion }
         }
     }
     is_valid_showing_failures_only = { 
-        scope:actor = { 
-            has_character_modifier = lifeforce_modifier_minor 
-        }
+        scope:actor = { has_character_modifier = lifeforce_modifier_minor 
+        scope:recipient = { is_knight_of = scope:actor }}
     }
 
     on_accept = {
@@ -35,17 +35,12 @@
     }
     ai_frequency = 6
     ai_will_do = {
-        base = -10
-        modifier = {
-            scope:recipient = { is_courtier_of = scope:actor } 
-            add = 30
-        }
-        modifier = {
-            is_knight_of = scope:actor
-            add = 30
-        }
+        base = 10
+        # modifier = {
+        #     is_knight_of = scope:actor
+        #     add = 50
+        # }
     }
-
 }
 
 grant_crimson_champion_interaction = {
