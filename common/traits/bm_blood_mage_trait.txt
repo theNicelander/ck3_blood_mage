@@ -41,15 +41,11 @@
                 epidemic_resistance = 1
                 monthly_piety = 0.2
             }
-            50 = {
-                health = 0.1
-                life_expectancy = 1
-                epidemic_resistance = 1
-                monthly_piety = 0.2
-                
+            50 = {             
                 # Milestone bonus
-                no_prowess_loss_from_age = yes
+                prowess_per_piety_level = 1
                 learning_per_piety_level = 1
+                
             }
             60 = {
                 health = 0.1
@@ -75,14 +71,9 @@
                 epidemic_resistance = 1
                 monthly_piety = 0.2
             }
-            100 = {
-                health = 0.1
-                life_expectancy = 1
-                epidemic_resistance = 1
-                monthly_piety = 0.2
-                
+            100 = {                
                 # Milestone bonus
-                max_personal_schemes_add = 1
+                no_prowess_loss_from_age = yes
                 learning_per_piety_level = 1
             }
         }
@@ -92,61 +83,59 @@
                 health = 0.1
                 life_expectancy = 1
                 epidemic_resistance = 1
-                monthly_lifestyle_xp_gain_mult = 0.03
+                monthly_lifestyle_xp_gain_mult = 0.03125
             }
             20 = {
                 health = 0.1
                 life_expectancy = 1
                 epidemic_resistance = 1
-                monthly_lifestyle_xp_gain_mult = 0.03
+                monthly_lifestyle_xp_gain_mult = 0.03125
             }
             30 = {
                 health = 0.1
                 life_expectancy = 1
                 epidemic_resistance = 1
-                monthly_lifestyle_xp_gain_mult = 0.03
+                monthly_lifestyle_xp_gain_mult = 0.03125
             }
             40 = {
                 health = 0.1
                 life_expectancy = 1
                 epidemic_resistance = 1
-                monthly_lifestyle_xp_gain_mult = 0.03
+                monthly_lifestyle_xp_gain_mult = 0.03125
             }
             50 = {
-                health = 0.1
-                life_expectancy = 1
-                epidemic_resistance = 1
-                monthly_lifestyle_xp_gain_mult = 0.03
+                # Milestone Bonus
+                martial_per_piety_level = 1
+                prowess_per_piety_level = 1
             }
             60 = {
                 health = 0.1
                 life_expectancy = 1
                 epidemic_resistance = 1
-                monthly_lifestyle_xp_gain_mult = 0.03
+                monthly_lifestyle_xp_gain_mult = 0.03125
             }
             70 = {
                 health = 0.1
                 life_expectancy = 1
                 epidemic_resistance = 1
-                monthly_lifestyle_xp_gain_mult = 0.03
+                monthly_lifestyle_xp_gain_mult = 0.03125
             }
             80 = {
                 health = 0.1
                 life_expectancy = 1
                 epidemic_resistance = 1
-                monthly_lifestyle_xp_gain_mult = 0.03
+                monthly_lifestyle_xp_gain_mult = 0.03125
             }
             90 = {
                 health = 0.1
                 life_expectancy = 1
                 epidemic_resistance = 1
-                monthly_lifestyle_xp_gain_mult = 0.03
+                monthly_lifestyle_xp_gain_mult = 0.03125
             }
             100 = {
-                health = 0.1
-                life_expectancy = 1
-                epidemic_resistance = 1
-                monthly_lifestyle_xp_gain_mult = 0.03
+                # Milestone bonus
+                martial_per_piety_level = 1
+                no_prowess_loss_from_age = yes
             }
         }
 
@@ -176,10 +165,9 @@
                 monthly_dynasty_prestige = 0.05
             }
             50 = {
-                health = 0.1
-                life_expectancy = 1
-                epidemic_resistance = 1
-                monthly_dynasty_prestige = 0.05
+                # Milestone bonus
+                stewardship_per_piety_level = 1
+                prowess_per_piety_level = 1
             }
             60 = {
                 health = 0.1
@@ -206,10 +194,9 @@
                 monthly_dynasty_prestige = 0.05
             }
             100 = {
-                health = 0.1
-                life_expectancy = 1
-                epidemic_resistance = 1
-                monthly_dynasty_prestige = 0.05
+                # Milestone bonus
+                stewardship_per_piety_level = 1
+                no_prowess_loss_from_age = yes
             }
         }
 
@@ -218,61 +205,59 @@
                 health = 0.1
                 life_expectancy = 1
                 epidemic_resistance = 1
-                diplomacy = 1
+                general_opinion = 2.5
             }
             20 = {
                 health = 0.1
                 life_expectancy = 1
                 epidemic_resistance = 1
-                diplomacy = 1
+                general_opinion = 2.5
             }
             30 = {
                 health = 0.1
                 life_expectancy = 1
                 epidemic_resistance = 1
-                diplomacy = 1
+                general_opinion = 2.5
             }
             40 = {
                 health = 0.1
                 life_expectancy = 1
                 epidemic_resistance = 1
-                diplomacy = 1
+                general_opinion = 2.5
             }
             50 = {
-                health = 0.1
-                life_expectancy = 1
-                epidemic_resistance = 1
+                # Milestone bonus
                 diplomacy_per_piety_level = 1
+                prowess_per_piety_level = 1
             }
             60 = {
                 health = 0.1
                 life_expectancy = 1
                 epidemic_resistance = 1
-                diplomacy = 1
+                general_opinion = 2.5
             }
             70 = {
                 health = 0.1
                 life_expectancy = 1
                 epidemic_resistance = 1
-                diplomacy = 1
+                general_opinion = 2.5
             }
             80 = {
                 health = 0.1
                 life_expectancy = 1
                 epidemic_resistance = 1
-                diplomacy = 1
+                general_opinion = 2.5
             }
             90 = {
                 health = 0.1
                 life_expectancy = 1
                 epidemic_resistance = 1
-                diplomacy = 1
+                general_opinion = 2.5
             }
             100 = {
-                health = 0.1
-                life_expectancy = 1
-                epidemic_resistance = 1
+                # Milestone bonus
                 diplomacy_per_piety_level = 1
+                no_prowess_loss_from_age = yes
             }
         }
 
@@ -302,11 +287,9 @@
                 enemy_hostile_scheme_success_chance_add = -5
             }
             50 = {
-                health = 0.1
-                life_expectancy = 1
-                epidemic_resistance = 1
+                # Milestone bonus
                 intrigue_per_piety_level = 1
-                prowess_per_piety_level = 2
+                prowess_per_piety_level = 1
             }
             60 = {
                 health = 0.1
@@ -333,11 +316,9 @@
                 enemy_hostile_scheme_success_chance_add = -5
             }
             100 = {
-                health = 0.1
-                life_expectancy = 1
-                epidemic_resistance = 1
+                # Milestone bonus
                 intrigue_per_piety_level = 1
-                prowess_per_piety_level = 2
+                no_prowess_loss_from_age = yes
             }
         }
     }
