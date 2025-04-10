@@ -17,7 +17,16 @@ bm_attune_lifeforce.001 = {
             modifier = lifeforce_attuned
         }
         trigger = { NOT = { has_character_modifier = lifeforce_attuned } }
-        ai_chance = { base = 50 }
+        ai_chance = { 
+            base = 50
+            modifier = {
+                AND = {
+                    has_character_modifier = lifeforce_modifier_minor
+                    health > excellent_health
+                }
+                add = -25
+            }
+        }
     }
     
     # Chance to get Ancient trait xp per year
@@ -27,7 +36,10 @@ bm_attune_lifeforce.001 = {
             modifier = ancient_attuned
         }
         trigger = { NOT = { has_character_modifier = ancient_attuned } }
-        ai_chance = { base = 10 }
+        ai_chance = {
+            base = 20 
+            ai_chance_scale_based_on_xp_in_track = { TRACK = ancient}
+        }
     }
     
     # Chance to get Enlightenment trait xp per year
@@ -37,7 +49,10 @@ bm_attune_lifeforce.001 = {
             modifier = enlightenment_attuned
         }
         trigger = { NOT = { has_character_modifier = enlightenment_attuned } }
-        ai_chance = { base = 10 }
+        ai_chance = {
+            base = 20 
+            ai_chance_scale_based_on_xp_in_track = { TRACK = enlightenment} 
+        }
     }
     
     # Chance to get Bloodline trait xp per year
@@ -47,7 +62,10 @@ bm_attune_lifeforce.001 = {
             modifier = bloodline_attuned
         }
         trigger = { NOT = { has_character_modifier = bloodline_attuned } }
-        ai_chance = { base = 10 }
+        ai_chance = { 
+            base = 20
+            ai_chance_scale_based_on_xp_in_track = { TRACK = bloodline} 
+        }
     }
     
     # Chance to get Benediction trait xp per year
@@ -57,7 +75,10 @@ bm_attune_lifeforce.001 = {
             modifier = benediction_attuned
         }
         trigger = { NOT = { has_character_modifier = benediction_attuned } }
-        ai_chance = { base = 10 }
+        ai_chance = { 
+            base = 20 
+            ai_chance_scale_based_on_xp_in_track = { TRACK = benediction} 
+        }
     }
     
     # Chance to get Hematurgy trait xp per year
@@ -67,7 +88,10 @@ bm_attune_lifeforce.001 = {
             modifier = hematurgy_attuned
         }
         trigger = { NOT = { has_character_modifier = hematurgy_attuned } }
-        ai_chance = { base = 10 }
+        ai_chance = { 
+            base = 20 
+            ai_chance_scale_based_on_xp_in_track = { TRACK = hematurgy} 
+        }
     }
 
     # Portraits
