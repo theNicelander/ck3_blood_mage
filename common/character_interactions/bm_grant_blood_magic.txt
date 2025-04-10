@@ -26,12 +26,11 @@
                 opinion = 50
             }
         }
-        scope:actor = { benediction_magic_cast_effect_major = yes }
+        scope:actor = { bloodline_magic_cast_effect_major = yes }
     }
 
     # AI
     ai_potential = { is_adult = yes }
-    ai_targets = { ai_recipients = family }
     ai_frequency = 12
 
     ai_will_do = {
@@ -47,6 +46,10 @@
         modifier = {
             scope:recipient = { is_powerful_vassal_of = scope:actor }
             add = 30
+        }
+        modifier = {
+            health < good_health
+            add = -100
         }
     }
 }
