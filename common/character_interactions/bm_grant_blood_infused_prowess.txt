@@ -34,13 +34,7 @@
         debug_log = "BloodMageDebug: [recipient.GetShortUINameNoTooltip] Granted blood prowes by [actor.GetShortUINameNoTooltip]"
     }
     ai_frequency = 6
-    ai_will_do = {
-        base = 10
-        # modifier = {
-        #     is_knight_of = scope:actor
-        #     add = 50
-        # }
-    }
+    ai_will_do = { base = 33 }
 }
 
 grant_crimson_champion_interaction = {

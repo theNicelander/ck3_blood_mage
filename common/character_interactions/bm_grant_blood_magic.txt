@@ -33,7 +33,7 @@
     # AI
     ai_frequency = 6
     ai_will_do = {
-        base = 10
+        base = -10
         modifier = {
             add = 30
             scope:recipient = { is_courtier_of = scope:actor }
@@ -50,5 +50,9 @@
             add = -100
             scope:actor = { health < good_health } 
         }
+		modifier = {
+			add = 50
+			target_is_liege_or_above = scope:recipient
+		}
     }
 }
