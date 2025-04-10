@@ -11,6 +11,23 @@ blood_mage_yearly_events.001 = {
             track = ancient
             value = 1
         }
+
+        # Dynasty bloodline, get XP based on number of dynasty modifiers
+        if = {
+            random = {
+                chance = 0
+                bloodline_xp_from_dynasty_modifiers = yes
+                send_interface_toast = {
+                    title = "Your Dynasty's legacy modifiers granted you experience"
+                    left_icon = root
+                    add_trait_xp = {
+                        trait = lifestyle_blood_mage
+                        track = bloodline
+                        value = 1
+                    }
+                }
+            }
+        }
         
         # Dynasty bloodline modifier check
         if = {
