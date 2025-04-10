@@ -38,8 +38,14 @@ crimson_shadows_modifier = {
     
     intrigue = 2
     intrigue_per_piety_level = 1
-    enemy_hostile_scheme_success_chance_add = -10
+    
+    # Make BM's schemes better
     owned_hostile_scheme_success_chance_add = 10
+    hostile_scheme_phase_duration_add = -10
+
+    # Disrupt other schemes
+    enemy_hostile_scheme_phase_duration_add = 10
+    enemy_hostile_scheme_success_chance_add = -10
 }
 
 # Crimson Insight - Learning
