@@ -12,9 +12,7 @@ seek_power.001 = {
         name = "Follow my instincts to seek worthy prey"
         
         duel = {
-            skill = prowess
-            target = scope:actor
-            
+            skill = prowess            
             50 = {
                 desc = "I encounter wild game"
                 trigger_event = { id = seek_power.002 }
@@ -110,7 +108,6 @@ seek_power.003 = {
         duel = {
             skills = { intrigue prowess }
             value = 0
-            
 
             10 = {
                 desc = "Silent Harvest"
