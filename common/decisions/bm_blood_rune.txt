@@ -4,7 +4,11 @@
 
     cooldown = { years = 3 }
     cost = { piety = 100 }
-    is_shown = { has_trait = lifestyle_blood_mage }
+    is_shown = { 
+        has_trait = lifestyle_blood_mage
+        # don't show if has the final one
+        NOT = {has_character_modifier = superior_crimson_rune_modifier}
+    }
     is_valid = {
         has_character_modifier = lifeforce_modifier_major
         has_trait = lifestyle_blood_mage
@@ -17,7 +21,8 @@
             TRACK = benediction
             XP = 10
         }
-    }
+        custom_tooltip = crimson_runes_effects_list.effects_list
+
     ai_check_interval = 6
     ai_will_do = { base = 100 }
 }
