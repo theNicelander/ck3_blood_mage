@@ -44,7 +44,7 @@ bm_attune_lifeforce.001 = {
         }
         trigger = { NOT = { has_character_modifier = bloodline_attuned } }
         ai_chance = { 
-            base = 20
+            base = 50
             ai_chance_scale_based_on_xp_in_track = { TRACK = bloodline} 
         }
     }
@@ -57,7 +57,7 @@ bm_attune_lifeforce.001 = {
         }
         trigger = { NOT = { has_character_modifier = benediction_attuned } }
         ai_chance = { 
-            base = 20 
+            base = 50 
             ai_chance_scale_based_on_xp_in_track = { TRACK = benediction} 
         }
     }
@@ -70,7 +70,7 @@ bm_attune_lifeforce.001 = {
         }
         trigger = { NOT = { has_character_modifier = hematurgy_attuned } }
         ai_chance = { 
-            base = 20 
+            base = 10 
             ai_chance_scale_based_on_xp_in_track = { TRACK = hematurgy} 
         }
     }
