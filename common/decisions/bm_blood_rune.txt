@@ -1,0 +1,25 @@
+﻿bm_blood_rune_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
+    decision_group_type = bm_decision_group
+
+    cooldown = { years = 3 }
+    cost = { piety = 100 }
+    is_shown = { has_trait = lifestyle_blood_mage }
+    is_valid = {
+        has_character_modifier = lifeforce_modifier_major
+        has_trait = lifestyle_blood_mage
+        piety_level >= 1
+    }
+    effect = {
+        trigger_event = { id = bm_blood_rune_events.001 }
+        blood_magic_used_major_minor = yes
+        add_xp_bm_dynamic = {
+            TRACK = benediction
+            XP = 10
+        }
+    }
+    ai_check_interval = 6
+    ai_will_do = { base = 100 }
+}
+
+
