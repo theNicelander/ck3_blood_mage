@@ -1,5 +1,11 @@
 # Changelog by Date
 
+## Aprl 12, 2025
+- Can etch blood runes into character, new modifier granting yearly chance of lifeforce
+- Seek power every 1 year, if wanderer
+- Tweaked traveller trait list chances
+- Yearly chance of getting bloodline XP, depends on number of dynasty modifiers
+
 ## April 6, 2025
 - 15.22: Crimson Warrior/Champion + Minor channel lifeforce + Tweak personal/dynasty modifiers + {01} xp/year all tracks + more tracks in trait + AI tweaks (#57)
 
