@@ -2,7 +2,7 @@
     picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
     decision_group_type = bm_decision_group
 
-    cooldown = { years = 3 }
+    cooldown = { years = 5 }
     cost = { piety = 100 }
     is_shown = { 
         has_trait = lifestyle_blood_mage
@@ -22,9 +22,10 @@
             XP = 10
         }
         custom_tooltip = crimson_runes_effects_list.effects_list
-
+    }
     ai_check_interval = 6
     ai_will_do = { base = 100 }
+
 }
 
 

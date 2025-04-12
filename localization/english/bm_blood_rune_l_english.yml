@@ -8,7 +8,7 @@
   
   superior_crimson_rune_modifier:0 "Superior Crimson Rune"
   superior_crimson_rune_modifier_desc:0 "High yearly chance to randomly get [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip]. Medium yearly chance to randomly get [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]. \n\nMasterful blood inscriptions cover your vital areas, sometimes shifting beneath your skin with a life of their own. Your body has become a constant conduit for lifeforce, drawing power from the very air you breathe."
-  crimson_runes_effects_list.effects_list:0 "Can get one rune after the other [modifiers|E]:\n#indent_newline:0 $EFFECT_LIST_BULLET$ [GetModifier('minor_crimson_rune_modifier').GetNameWithTooltip]\n#indent_newline:0 $EFFECT_LIST_BULLET$ [GetModifier('major_crimson_rune_modifier').GetNameWithTooltip]\n#indent_newline:0 $EFFECT_LIST_BULLET$ [GetModifier('superior_crimson_rune_modifier').GetNameWithTooltip]"
+  crimson_runes_effects_list.effects_list:0 "Gain increasingly powerful Blood Runes (each tier replaces the previous):\n#indent_newline:0 $EFFECT_LIST_BULLET$ [GetModifier('minor_crimson_rune_modifier').GetNameWithTooltip]\n#indent_newline:0 $EFFECT_LIST_BULLET$ [GetModifier('major_crimson_rune_modifier').GetNameWithTooltip]\n#indent_newline:0 $EFFECT_LIST_BULLET$ [GetModifier('superior_crimson_rune_modifier').GetNameWithTooltip]"
 
 
   # Crimson Rune Event
