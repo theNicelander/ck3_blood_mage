@@ -17,58 +17,61 @@ traveller_character_template = {
 	trait = lifestyle_traveler
 	random_traits_list = {
 		count = { 0 5 }
+		# Blood mage, 2x as likely 
+		lifestyle_blood_mage = { weight = { base = 60 } }
+
 		# Can be drained
 		intellect_good_1 = { weight = { base = 20 } }
 		physique_good_1 = { weight = { base = 20 } }
 		beauty_good_1 = { weight = { base = 20 } }
 		giant = { weight = { base = 20 } }
 		fecund = { weight = { base = 20 } }
-		pure_blooded = { weight = { base = 20 } }
+		pure_blooded = { weight = { base = 10 } }
 		intellect_good_2 = { weight = { base = 10 } }
 		physique_good_2 = { weight = { base = 10 } }
 		beauty_good_2 = { weight = { base = 10 } }
 
 		# Bad, not drainable
-		intellect_bad_1 = { weight = { base = 20 } }
-		physique_bad_1 = { weight = { base = 20 } }
-		beauty_bad_1 = { weight = { base = 20 } }
+		intellect_bad_1 = { weight = { base = 30 } }
+		physique_bad_1 = { weight = { base = 30 } }
+		beauty_bad_1 = { weight = { base = 30 } }
 		intellect_bad_2 = { weight = { base = 10 } }
 		physique_bad_2 = { weight = { base = 10 } }
 		beauty_bad_2 = { weight = { base = 10 } }
-		intellect_bad_3 = { weight = { base = 20 } }
-		physique_bad_3 = { weight = { base = 20 } }
-		beauty_bad_3 = { weight = { base = 20 } }
+		intellect_bad_3 = { weight = { base = 30 } }
+		physique_bad_3 = { weight = { base = 30 } }
+		beauty_bad_3 = { weight = { base = 30 } }
 
 		# Bad, flavour
-		eunuch_1 = { weight = { base = 20 } }
-		beardless_eunuch = { weight = { base = 20 } }
-		blind = { weight = { base = 20 } }
-		one_eyed = { weight = { base = 20 } }
-		scarred = { weight = { base = 20 } }
-		drunkard = { weight = { base = 20 } }
-		lunatic_1 = { weight = { base = 20 } }
-		wounded_1 = { weight = { base = 20 } }	
-		dwarf = { weight = { base = 20 } }
-		dull = { weight = { base = 20 } }
+		eunuch_1 = { weight = { base = 30 } }
+		beardless_eunuch = { weight = { base = 30 } }
+		blind = { weight = { base = 30 } }
+		one_eyed = { weight = { base = 30 } }
+		scarred = { weight = { base = 30 } }
+		drunkard = { weight = { base = 30 } }
+		lunatic_1 = { weight = { base = 30 } }
+		wounded_1 = { weight = { base = 30 } }	
+		dwarf = { weight = { base = 30 } }
+		dull = { weight = { base = 30 } }
 
 		# Flavour
-		shrewd = { weight = { base = 20 } }
-		theologian = { weight = { base = 20 } }
-		scholar = { weight = { base = 20 } }
-		athletic = { weight = { base = 20 } }
-		lifestyle_blood_mage = { weight = { base = 20 } }
-		lifestyle_blademaster = { weight = { base = 20 } }
-		lifestyle_reveler = { weight = { base = 20 } }
-		lifestyle_hunter = { weight = { base = 20 } }
-		lifestyle_mystic = { weight = { base = 20 } }
-		pilgrim = { weight = { base = 20 } }
-		berserker = { weight = { base = 20 } }
-		varangian = { weight = { base = 20 } }
-		poet = { weight = { base = 20 } }
-		cannibal = { weight = { base = 20 } }
-		viking = { weight = { base = 20 } }
-		witch = { weight = { base = 20 } }
-		loyal = { weight = { base = 20 } }
+		shrewd = { weight = { base = 30 } }
+		theologian = { weight = { base = 30 } }
+		scholar = { weight = { base = 30 } }
+		athletic = { weight = { base = 30 } }
+
+		lifestyle_blademaster = { weight = { base = 30 } }
+		lifestyle_reveler = { weight = { base = 30 } }
+		lifestyle_hunter = { weight = { base = 30 } }
+		lifestyle_mystic = { weight = { base = 30 } }
+		pilgrim = { weight = { base = 30 } }
+		berserker = { weight = { base = 30 } }
+		varangian = { weight = { base = 30 } }
+		poet = { weight = { base = 30 } }
+		cannibal = { weight = { base = 30 } }
+		viking = { weight = { base = 30 } }
+		witch = { weight = { base = 30 } }
+		loyal = { weight = { base = 30 } }
 
 		# Low chance to be immportal
 		immortal = { weight = { base = 5 } }

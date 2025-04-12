@@ -1,6 +1,6 @@
 ﻿namespace = blood_mage_yearly_events
 
-# Yearly event - Add xp to Blood Mages, double if following religion
+# Yearly event - Add xp to Blood Mages
 blood_mage_yearly_events.001 = {
     hidden = yes
     trigger = { has_trait = lifestyle_blood_mage }
@@ -11,33 +11,18 @@ blood_mage_yearly_events.001 = {
             track = ancient
             value = 1
         }
-        
-        # Dynasty bloodline modifier check
-        if = {
-            limit = { house = { has_house_modifier = dynasty_crimson_bloodline_modifier } }
-            random = {
-                chance = 25
-                send_interface_toast = {
-                    title = "Your Dynasty's Crimson Bloodline granted you experience"
-                    left_icon = root
-                    add_trait_xp = {
-                        trait = lifestyle_blood_mage
-                        track = bloodline
-                        value = 1
-                    }
-                }
-            }
-        }
-        
-        # Lifeforce attunement check
-        if = {
-            limit = { has_character_modifier = lifeforce_attuned }
-            random = {
-                chance = 33
-                send_interface_toast = {
-                    title = "Your lifeforce attunement granted you lifeforce"
-                    left_icon = root
-                    add_character_modifier = { modifier = lifeforce_modifier_minor }
+
+        # Dynasty bloodline, get XP based on number of dynasty modifiers
+        random = {
+            chance = 0
+            bloodline_xp_from_dynasty_modifiers = yes
+            send_interface_toast = {
+                title = "Your Dynasty's legacy modifiers granted you experience"
+                left_icon = root
+                add_trait_xp = {
+                    trait = lifestyle_blood_mage
+                    track = bloodline
+                    value = 1
                 }
             }
         }
@@ -122,6 +107,124 @@ blood_mage_yearly_events.001 = {
                         trait = lifestyle_blood_mage
                         track = hematurgy
                         value = 1
+                    }
+                }
+            }
+        }
+    }
+}
+
+blood_mage_yearly_events.002 = {
+    hidden = yes
+    trigger = { has_trait = lifestyle_blood_mage }
+    immediate = {
+        # Dynasty bloodline, get XP based on number of dynasty modifiers
+        random = {
+            chance = 0
+            modifier = {
+                house = { has_house_modifier = dynasty_crimson_charisma_modifier }
+                add = 10
+            }
+            modifier = {
+                house = { has_house_modifier = dynasty_crimson_fury_modifier }
+                add = 10
+            }
+            modifier = {
+                house = { has_house_modifier = dynasty_crimson_prosperity_modifier }
+                add = 10
+            }
+            modifier = {
+                house = { has_house_modifier = dynasty_crimson_shadows_modifier }
+                add = 10
+            }
+            modifier = {
+                house = { has_house_modifier = dynasty_crimson_insight_modifier }
+                add = 10
+            }
+            modifier = {
+                house = { has_house_modifier = dynasty_crimson_legacy_modifier }
+                add = 10
+            }
+            modifier = {
+                house = { has_house_modifier = dynasty_crimson_expertise_modifier }
+                add = 10
+            }
+            modifier = {
+                house = { has_house_modifier = dynasty_crimson_expertise_modifier }
+                add = 10
+            }
+            # Give XP
+            send_interface_toast = {
+                title = "Your Dynasty's legacy modifiers granted you experience"
+                left_icon = root
+                add_trait_xp = {
+                    trait = lifestyle_blood_mage
+                    track = bloodline
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+blood_mage_yearly_events.003 = {
+    hidden = yes
+    trigger = { has_trait = lifestyle_blood_mage }
+    immediate = {
+        if = {
+            limit = { has_character_modifier = minor_crimson_rune_modifier }
+            duel = {
+                skill = learning 
+                75 = {  } # chance of nothing happening 
+                25 = {
+                    send_interface_toast = {
+                        title = bm_crimson_rune_yearly_event_popup.title
+                        left_icon = root
+                        add_character_modifier = { modifier = lifeforce_modifier_minor }
+                    }
+                }
+            }
+        }
+        if = {
+            limit = { has_character_modifier = major_crimson_rune_modifier }
+            duel = {
+                skill = learning
+                50 = {  } # chance of nothing happening 
+                40 = { # minor lifeforce
+                    send_interface_toast = {
+                        title = bm_crimson_rune_yearly_event_popup.title
+                        left_icon = root
+                        add_character_modifier = { modifier = lifeforce_modifier_minor }
+                    }
+                }
+                10 = { # minor and major life force
+                    send_interface_toast = {
+                        title = bm_crimson_rune_yearly_event_popup.title
+                        left_icon = root
+                        add_character_modifier = { modifier = lifeforce_modifier_major }
+                        add_character_modifier = { modifier = lifeforce_modifier_minor }
+                    }
+                }
+            }
+        }
+        if = {
+            limit = { has_character_modifier = superior_crimson_rune_modifier }
+            duel = {
+                skill = learning
+                25 = { } # chance of nothing happening 
+                50 = { # minor lifeforce
+                    send_interface_toast = {
+                        title = bm_crimson_rune_yearly_event_popup.title
+                        left_icon = root
+                        add_character_modifier = { modifier = lifeforce_modifier_minor }
+                    }
+                }
+                25 = { # minor and major life force
+                    send_interface_toast = {
+                        title = bm_crimson_rune_yearly_event_popup.title
+                        left_icon = root
+                        add_character_modifier = { modifier = lifeforce_modifier_major }
+                        add_character_modifier = { modifier = lifeforce_modifier_minor }
                     }
                 }
             }

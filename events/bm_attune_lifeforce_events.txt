@@ -10,25 +10,6 @@ bm_attune_lifeforce.001 = {
         remove_all_attunement = yes
     }
 
-    # Chance to get lifeforce per year
-    option = {
-        name = bm_attune_lifeforce.001.a
-        add_character_modifier = { 
-            modifier = lifeforce_attuned
-        }
-        trigger = { NOT = { has_character_modifier = lifeforce_attuned } }
-        ai_chance = { 
-            base = 50
-            modifier = {
-                AND = {
-                    has_character_modifier = lifeforce_modifier_minor
-                    health > excellent_health
-                }
-                add = -25
-            }
-        }
-    }
-    
     # Chance to get Ancient trait xp per year
     option = {
         name = bm_attune_lifeforce.001.b
@@ -63,7 +44,7 @@ bm_attune_lifeforce.001 = {
         }
         trigger = { NOT = { has_character_modifier = bloodline_attuned } }
         ai_chance = { 
-            base = 20
+            base = 50
             ai_chance_scale_based_on_xp_in_track = { TRACK = bloodline} 
         }
     }
@@ -76,7 +57,7 @@ bm_attune_lifeforce.001 = {
         }
         trigger = { NOT = { has_character_modifier = benediction_attuned } }
         ai_chance = { 
-            base = 20 
+            base = 50 
             ai_chance_scale_based_on_xp_in_track = { TRACK = benediction} 
         }
     }
@@ -89,7 +70,7 @@ bm_attune_lifeforce.001 = {
         }
         trigger = { NOT = { has_character_modifier = hematurgy_attuned } }
         ai_chance = { 
-            base = 20 
+            base = 10 
             ai_chance_scale_based_on_xp_in_track = { TRACK = hematurgy} 
         }
     }
