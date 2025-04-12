@@ -13,21 +13,20 @@ blood_mage_yearly_events.001 = {
         }
 
         # Dynasty bloodline, get XP based on number of dynasty modifiers
-        if = {
-            random = {
-                chance = 0
-                bloodline_xp_from_dynasty_modifiers = yes
-                send_interface_toast = {
-                    title = "Your Dynasty's legacy modifiers granted you experience"
-                    left_icon = root
-                    add_trait_xp = {
-                        trait = lifestyle_blood_mage
-                        track = bloodline
-                        value = 1
-                    }
+        random = {
+            chance = 0
+            bloodline_xp_from_dynasty_modifiers = yes
+            send_interface_toast = {
+                title = "Your Dynasty's legacy modifiers granted you experience"
+                left_icon = root
+                add_trait_xp = {
+                    trait = lifestyle_blood_mage
+                    track = bloodline
+                    value = 1
                 }
             }
         }
+
         
         # Dynasty bloodline modifier check
         if = {
@@ -42,19 +41,6 @@ blood_mage_yearly_events.001 = {
                         track = bloodline
                         value = 1
                     }
-                }
-            }
-        }
-        
-        # Lifeforce attunement check
-        if = {
-            limit = { has_character_modifier = lifeforce_attuned }
-            random = {
-                chance = 33
-                send_interface_toast = {
-                    title = "Your lifeforce attunement granted you lifeforce"
-                    left_icon = root
-                    add_character_modifier = { modifier = lifeforce_modifier_minor }
                 }
             }
         }

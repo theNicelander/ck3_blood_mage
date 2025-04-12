@@ -55,10 +55,6 @@ remove_all_attunement = {
         remove_character_modifier = bloodline_attuned
     }
     if = {
-        limit = { has_character_modifier = lifeforce_attuned }
-        remove_character_modifier = lifeforce_attuned
-    }
-    if = {
         limit = { has_character_modifier = ancient_attuned }
         remove_character_modifier = ancient_attuned
     }
