@@ -1,13 +1,14 @@
 ﻿l_english:
   # Crimson Rune Modifiers
   minor_crimson_rune_modifier:0 "Minor Crimson Rune"
-  minor_crimson_rune_modifier_desc:0 "Low yearly chance to randomly get [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip]. \n\nBlood-etched arcane symbols covering your heart area pulse faintly beneath your skin, drawing ambient lifeforce into your body like a slowly beating second heart."
-  
+  minor_crimson_rune_modifier_desc:0 "These rudimentary blood symbols rarely harvest [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] for your use. \n\nBlood-etched arcane symbols covering your heart area pulse faintly beneath your skin, drawing ambient lifeforce into your body like a slowly beating second heart."
+
   major_crimson_rune_modifier:0 "Major Crimson Rune"
-  major_crimson_rune_modifier_desc:0 "Medium yearly chance to randomly get [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip]. Low yearly chance to randomly get [GetModifier('lifeforce_modifier_major').GetNameWithTooltip].\n\nElaborate crimson tattoos flow across your torso and arms like living veins, constantly harvesting the vital essence around you and channeling it into your magical reserves."
-  
+  major_crimson_rune_modifier_desc:0 "These complex runes sometimes harvest [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] from your surroundings, with occasional bursts of [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]. Rarely, they may capture both types simultaneously. \n\nElaborate crimson tattoos flow across your torso and arms like living veins, constantly harvesting the vital essence around you and channeling it into your magical reserves."
+
   superior_crimson_rune_modifier:0 "Superior Crimson Rune"
-  superior_crimson_rune_modifier_desc:0 "High yearly chance to randomly get [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip]. Medium yearly chance to randomly get [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]. \n\nMasterful blood inscriptions cover your vital areas, sometimes shifting beneath your skin with a life of their own. Your body has become a constant conduit for lifeforce, drawing power from the very air you breathe."
+  superior_crimson_rune_modifier_desc:0 "These masterful blood inscriptions often draw [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] to you unbidden. They frequently capture [GetModifier('lifeforce_modifier_major').GetNameWithTooltip], and sometimes manifest both types of power at once. \n\nMasterful blood inscriptions cover your vital areas, sometimes shifting beneath your skin with a life of their own. Your body has become a constant conduit for lifeforce, drawing power from the very air you breathe."
+
   crimson_runes_effects_list.effects_list:0 "Gain increasingly powerful Blood Runes (each tier replaces the previous):\n#indent_newline:0 $EFFECT_LIST_BULLET$ [GetModifier('minor_crimson_rune_modifier').GetNameWithTooltip]\n#indent_newline:0 $EFFECT_LIST_BULLET$ [GetModifier('major_crimson_rune_modifier').GetNameWithTooltip]\n#indent_newline:0 $EFFECT_LIST_BULLET$ [GetModifier('superior_crimson_rune_modifier').GetNameWithTooltip]"
 
 
