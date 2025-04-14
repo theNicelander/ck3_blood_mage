@@ -27,11 +27,20 @@ hematurgy_magic_cast_effect_minor = {
     }
 }
 
+benediction_magic_cast_effect_major_minor = {
+    remove_character_modifier = lifeforce_modifier_minor
+    remove_character_modifier = lifeforce_modifier_major
+    temporary_negative_lifeforce_effect_major = yes
+    add_xp_bm_dynamic = {
+        TRACK = benediction
+        XP = 8
+    }
+}
 benediction_magic_cast_effect_major = {
     remove_character_modifier = lifeforce_modifier_major
     add_xp_bm_dynamic = {
         TRACK = benediction
-        XP = 5
+        XP = 4
     }
 }
 benediction_magic_cast_effect_minor = {
