@@ -1,0 +1,54 @@
+﻿namespace = blood_golem
+
+blood_golem.001 = {
+    type = character_event
+    title = blood_golem.001.title
+    desc = blood_golem.001.desc
+    theme = witchcraft
+
+    # Create the blood golem
+    immediate = {
+        hidden_effect = {
+            create_character = {
+                template = blood_golem_template
+                save_scope_as = blood_golem
+                location = root.capital_province
+                culture = root.culture
+                faith = root.faith
+                gender = male
+                age = 20
+            }
+        }
+    }
+
+    # Complete the creation ritual
+    option = {
+        name = blood_golem.001.a
+        add_piety = -100
+
+        scope:blood_golem = {
+            set_relation_blood_creator = scope:root
+            add_opinion = {
+                target = root
+                modifier = blood_golem_creator
+                opinion = 100
+            }
+        }
+
+        # Add golem to court
+        add_courtier = scope:blood_golem
+
+        # Progress to enhancement event
+        trigger_event = { id = blood_golem.002 days = 7 }
+    }
+
+    # Portraits
+    left_portrait = {
+        character = root
+        animation = personality_rational
+    }
+    right_portrait = {
+        character = scope:blood_golem
+        animation = idle
+    }
+}
