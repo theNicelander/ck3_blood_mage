@@ -17,6 +17,7 @@
             TRACK = enlightenment
             XP = 1
         }
+        custom_tooltip = channel_lifeforce_enlightenment_minor.effects_list
     }
     ai_check_interval = 6
     ai_will_do = { 
@@ -46,8 +47,9 @@ channel_lifeforce_enlightenment_major = {
         blood_magic_used_major = yes
         add_xp_bm_dynamic = {
             TRACK = enlightenment
-            XP = 10
+            XP = 5
         }
+        custom_tooltip = channel_lifeforce_enlightenment_major.effects_list
     }
     ai_check_interval = 6
     ai_will_do = { 
@@ -89,6 +91,7 @@ channel_lifeforce_bloodline = {
             XP = 5
         }
         blood_magic_used_major = yes
+        custom_tooltip = channel_lifeforce_bloodline.effects_list
     }
     ai_check_interval = 12
     ai_will_do = { 

@@ -40,12 +40,15 @@
             remove_trait = lovers_pox
             remove_trait = gout_ridden
 
+            if = {
             # temporary positive opinion
             add_opinion = {
                 target = scope:actor
                 modifier = magic_opinion_positive
                 opinion = 20
             }
+            }
+
         }
     }
 
@@ -118,20 +121,24 @@ heal_disease_major = {
             remove_trait = measles
             remove_trait = blind
             remove_trait = one_eyed
-            
-            # temporary positive opinion
-            add_opinion = {
-                target = scope:actor
-                modifier = magic_opinion_positive
-                opinion = 30
+
+            if = {
+                trigger = {NOT = { scope:actor = scope:recipient }}
+                # temporary positive opinion
+                add_opinion = {
+                    target = scope:actor
+                    modifier = magic_opinion_positive
+                    opinion = 30
+                }
+
+                # perpmanent positive opinion
+                add_opinion = {
+                    target = scope:actor
+                    modifier = cured_my_illness
+                    opinion = 20
+                }
             }
 
-            # perpmanent positive opinion
-            add_opinion = {
-                target = scope:actor
-                modifier = cured_my_illness
-                opinion = 20
-            }
         }
     }
     ai_will_do = {
@@ -161,7 +168,10 @@ heal_disease_benediction = {
     cost = { piety = cure_illness_cost_benediction }
     # TODO: This should only be allowed if over certain XP or with finisher effect
     is_valid_showing_failures_only = {
-        scope:actor = { has_character_modifier = lifeforce_modifier_major }
+        scope:actor = {
+            has_character_modifier = lifeforce_modifier_minor
+            has_character_modifier = lifeforce_modifier_major 
+        }
         custom_tooltip = { 
             text = IN_COURT_OR_IMPRISONED
             OR = { # self or courtiers
@@ -191,7 +201,7 @@ heal_disease_benediction = {
     }
 
     on_accept = {
-        scope:actor = { benediction_magic_cast_effect_major = yes }
+        scope:actor = { benediction_magic_cast_effect_major_minor = yes }
         scope:recipient = {
             remove_trait = wounded_3
             remove_trait = sickly
@@ -206,18 +216,21 @@ heal_disease_benediction = {
             remove_trait = ergotism
             remove_trait = disfigured
 
-            # temporary positive opinion
-            add_opinion = {
-                target = scope:actor
-                modifier = magic_opinion_positive
-                opinion = 50
-            }
+            if = {
+                trigger = {NOT = { scope:actor = scope:recipient }}
+                # temporary positive opinion
+                add_opinion = {
+                    target = scope:actor
+                    modifier = magic_opinion_positive
+                    opinion = 50
+                }
 
-            # permanent positive opinion
-            add_opinion = {
-                target = scope:actor
-                modifier = cured_my_illness
-                opinion = 30
+                # permanent positive opinion
+                add_opinion = {
+                    target = scope:actor
+                    modifier = cured_my_illness
+                    opinion = 30
+                }
             }
         }
     }
