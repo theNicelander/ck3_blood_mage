@@ -43,3 +43,101 @@ blood_golem.001 = {
         animation = idle
     }
 }
+
+blood_golem.002 = {
+    type = character_event
+    title = blood_golem.002.title
+    desc = blood_golem.002.desc
+    theme = witchcraft
+
+    # Athletic trait enhancement
+    option = {
+        name = blood_golem.002.a
+        trigger = { scope:blood_golem = { NOT = { has_trait = athletic } } }
+        duel = {
+            skill = learning
+            target = scope:blood_golem
+            value = 0
+            60 = {
+                desc = "I successfully enhance my golem's physical capabilities"
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 3
+                    min = -40
+                }
+                scope:blood_golem = { add_trait = athletic }
+                send_interface_toast = {
+                    title = "Blood Golem Enhanced"
+                    left_icon = root
+                    right_icon = scope:blood_golem
+                    custom_tooltip = "Your blood golem is now more physically capable"
+                }
+            }
+            40 = {
+                desc = "The ritual falters"
+                send_interface_toast = {
+                    title = "Enhancement Failed"
+                    left_icon = root
+                    right_icon = scope:blood_golem
+                    custom_tooltip = "The blood magic dissipates without effect"
+                    add_stress = 10
+                }
+            }
+        }
+        trigger_event = { id = blood_golem.002 days = 7 }
+    }
+
+    # Loyal trait enhancement
+    option = {
+        name = blood_golem.002.b
+        trigger = { scope:blood_golem = { NOT = { has_trait = loyal } } }
+        duel = {
+            skill = learning
+            target = scope:blood_golem
+            value = 0
+            60 = {
+                desc = "I successfully bind my golem's loyalty"
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 3
+                    min = -40
+                }
+                scope:blood_golem = { add_trait = loyal }
+                send_interface_toast = {
+                    title = "Blood Golem Enhanced"
+                    left_icon = root
+                    right_icon = scope:blood_golem
+                    custom_tooltip = "Your blood golem is now unwaveringly loyal"
+                }
+            }
+            40 = {
+                desc = "The ritual falters"
+                send_interface_toast = {
+                    title = "Enhancement Failed"
+                    left_icon = root
+                    right_icon = scope:blood_golem
+                    custom_tooltip = "The blood magic dissipates without effect"
+                    add_stress = 10
+                }
+            }
+        }
+        trigger_event = { id = blood_golem.002 days = 7 }
+    }
+
+    # Complete ritual option
+    option = {
+        name = blood_golem.002.z
+        custom_tooltip = blood_golem.002.z.tooltip
+        add_piety = 50
+        send_interface_toast = {
+            title = "Blood Golem Completed"
+            left_icon = root
+            right_icon = scope:blood_golem
+            custom_tooltip = "Your blood golem is now complete and will serve you faithfully"
+        }
+    }
+
+    # Portraits
+    left_portrait = { character = root animation = personality_rational }
+    right_portrait = { character = scope:blood_golem animation = idle }
+}
