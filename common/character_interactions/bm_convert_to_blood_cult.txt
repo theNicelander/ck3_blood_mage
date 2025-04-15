@@ -17,17 +17,17 @@
             has_trait = lifestyle_blood_mage
             has_faith = faith:cult_of_blood
         }
-        scope:recipient = { 
-            NOT = { has_faith = faith:cult_of_blood } 
+        scope:recipient = {
+            NOT = { has_faith = faith:cult_of_blood }
             OR = {
                 is_imprisoned_by = scope:actor
                 is_courtier_of = scope:actor
-            } 
+            }
         }
     }
 
     is_valid_showing_failures_only = {
-        scope:actor = { 
+        scope:actor = {
             is_imprisoned = no
             has_character_modifier = lifeforce_modifier_minor
         }
@@ -40,14 +40,76 @@
                 custom_tooltip = convert_to_blood_cult_event_interaction.recipient.notification.tt
             }
         }
-        scope:actor = { 
-            trigger_event = bm_convert_to_blood_cult.001 
+        scope:actor = {
+            trigger_event = bm_convert_to_blood_cult.001
         }
     }
     ai_will_do = {
         base = -10
         modifier = {
-            scope:recipient = { is_courtier_of = scope:actor } 
+            scope:recipient = { is_courtier_of = scope:actor }
+            add = 30
+        }
+        modifier = {
+            is_knight_of = scope:actor
+            add = 30
+        }
+        modifier = {
+            scope:recipient = { is_powerful_vassal_of = scope:actor }
+            add = 30
+        }
+    }
+}
+
+convert_to_blood_cult_wanderer = {
+    common_interaction = yes
+    interface_priority = 300
+    category = interaction_category_friendly
+    desc = "Convert to Blood Cult"
+
+    popup_on_receive = yes
+    pause_on_receive = yes
+
+    auto_accept = yes
+    is_highlighted = { always = yes }
+
+    cost = { piety = 50 }
+
+    is_shown = {
+        scope:actor = {
+            is_landless_adventurer = yes
+            has_trait = lifestyle_blood_mage
+            has_faith = faith:cult_of_blood
+        }
+        scope:recipient = {
+            NOT = { has_faith = faith:cult_of_blood }
+        }
+    }
+
+    is_valid_showing_failures_only = {
+        scope:actor = {
+            is_imprisoned = no
+            has_character_modifier = lifeforce_modifier_minor
+            has_usable_hook = scope:recipient
+        }
+    }
+
+    on_accept = {
+        scope:recipient = {
+            send_interface_toast = {
+                left_icon = scope:actor
+                custom_tooltip = convert_to_blood_cult_event_interaction.recipient.notification.tt
+            }
+        }
+        scope:actor = {
+            # TODO: Remove hook
+            trigger_event = bm_convert_to_blood_cult.001
+        }
+    }
+    ai_will_do = {
+        base = -10
+        modifier = {
+            scope:recipient = { is_courtier_of = scope:actor }
             add = 30
         }
         modifier = {
