@@ -26,15 +26,6 @@ blood_golem.001 = {
         name = blood_golem.001.a
         add_piety = -100
 
-        scope:blood_golem = {
-            set_relation_blood_creator = scope:root
-            add_opinion = {
-                target = root
-                modifier = blood_golem_creator
-                opinion = 100
-            }
-        }
-
         # Add golem to court
         add_courtier = scope:blood_golem
 

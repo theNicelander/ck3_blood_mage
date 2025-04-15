@@ -17,7 +17,7 @@ traveller_character_template = {
 	trait = lifestyle_traveler
 	random_traits_list = {
 		count = { 0 5 }
-		# Blood mage, 2x as likely 
+		# Blood mage, 2x as likely
 		lifestyle_blood_mage = { weight = { base = 60 } }
 
 		# Can be drained
@@ -50,7 +50,7 @@ traveller_character_template = {
 		scarred = { weight = { base = 30 } }
 		drunkard = { weight = { base = 30 } }
 		lunatic_1 = { weight = { base = 30 } }
-		wounded_1 = { weight = { base = 30 } }	
+		wounded_1 = { weight = { base = 30 } }
 		dwarf = { weight = { base = 30 } }
 		dull = { weight = { base = 30 } }
 
@@ -83,4 +83,25 @@ traveller_character_template = {
 			give_nickname = nick_the_immortal
 		}
 	}
+}
+
+# Blood golem
+blood_golem_template = {
+	dynasty = none
+	gender_female_chance = 50
+	age = { 18 30 }
+
+	# Base stats
+	prowess = { 0 15 }
+	learning = 0
+	intrigue = 0
+	martial = 0
+	stewardship = 0
+	diplomacy = 0
+
+	trait = eunuch_1
+	trait = dull
+	trait = giant
+	trait = berserker
+	trait = lifestyle_blademaster
 }
