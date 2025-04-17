@@ -11,7 +11,7 @@
                 min = -40
             }
             send_interface_toast = {
-                title = blood_golem.002.toast.success
+                title = blood_golem.002.success
                 left_icon = root
                 right_icon = scope:blood_golem
                 scope:blood_golem = { add_trait = $TRAIT$ }
@@ -20,7 +20,7 @@
         40 = {
             desc = blood_golem.002.fail
             send_interface_toast = {
-                title = blood_golem.002.toast.fail
+                title = blood_golem.002.fail
                 left_icon = root
                 right_icon = scope:blood_golem
                 add_stress = 10
@@ -42,7 +42,7 @@ golem_duel_effect_physique = {
                 min = -40
             }
             send_interface_toast = {
-                title = blood_golem.002.toast.success
+                title = blood_golem.002.success
                 left_icon = root
                 right_icon = scope:blood_golem
 
@@ -64,7 +64,7 @@ golem_duel_effect_physique = {
         40 = {
             desc = blood_golem.002.fail
             send_interface_toast = {
-                title = blood_golem.002.toast.fail
+                title = blood_golem.002.fail
                 left_icon = root
                 right_icon = scope:blood_golem
                 add_stress = 10
