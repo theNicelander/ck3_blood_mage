@@ -53,7 +53,7 @@ blood_golem.002 = {
         trigger = { scope:blood_golem = { NOT = { has_trait = athletic } } }
         temporary_negative_lifeforce_effect_minor = yes
         trigger_event = { id = blood_golem.002 }
-        golem_duel_effect = { trait = athletic }
+        golem_duel_effect = { TRAIT = athletic }
     }
 
     # Blademaster trait option
@@ -62,7 +62,7 @@ blood_golem.002 = {
         trigger = { scope:blood_golem = { NOT = { has_trait = lifestyle_blademaster } } }
         temporary_negative_lifeforce_effect_minor = yes
         trigger_event = { id = blood_golem.002 }
-        golem_duel_effect = { trait = lifestyle_blademaster }
+        golem_duel_effect = { TRAIT = lifestyle_blademaster }
     }
 
     # Berserker trait option
@@ -71,7 +71,7 @@ blood_golem.002 = {
         trigger = { scope:blood_golem = { NOT = { has_trait = berserker } } }
         temporary_negative_lifeforce_effect_minor = yes
         trigger_event = { id = blood_golem.002 }
-        golem_duel_effect = { trait = berserker }
+        golem_duel_effect = { TRAIT = berserker }
     }
 
     # Viking trait option
@@ -80,7 +80,7 @@ blood_golem.002 = {
         trigger = { scope:blood_golem = { NOT = { has_trait = viking } } }
         temporary_negative_lifeforce_effect_minor = yes
         trigger_event = { id = blood_golem.002 }
-        golem_duel_effect = { trait = viking }
+        golem_duel_effect = { TRAIT = viking }
     }
 
     # Hunter trait option
@@ -89,7 +89,7 @@ blood_golem.002 = {
         trigger = { scope:blood_golem = { NOT = { has_trait = lifestyle_hunter } } }
         temporary_negative_lifeforce_effect_minor = yes
         trigger_event = { id = blood_golem.002 }
-        golem_duel_effect = { trait = lifestyle_hunter }
+        golem_duel_effect = { TRAIT = lifestyle_hunter }
     }
 
     # Physique good trait option
@@ -104,10 +104,10 @@ blood_golem.002 = {
     # Raider trait option
     option = {
         name = blood_golem.002.raider
-        trigger = { scope:blood_golem = { NOT = { has_trait = raider } } }
+        trigger = { scope:blood_golem = { NOT = { has_trait = viking } } }
         temporary_negative_lifeforce_effect_minor = yes
         trigger_event = { id = blood_golem.002 }
-        golem_duel_effect = { trait = raider }
+        golem_duel_effect = { TRAIT = viking }
     }
 
     # Complete ritual option

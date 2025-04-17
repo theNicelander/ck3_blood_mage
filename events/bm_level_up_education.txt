@@ -10,10 +10,10 @@ bm_education_enhancement.001 = {
     # Diplomacy education enhancement
     option = {
         name = bm_education_enhancement.001.a
-        trigger = { has_education_trait_diplomacy_any_trigger = yes }
+        trigger = { has_trait = education_diplomacy }
         duel = {
-            skill = learning
-            target = this
+            skill = diplomacy
+            target = root
             # Success
             50 = {
                 desc = "Success"
@@ -21,22 +21,6 @@ bm_education_enhancement.001 = {
                     value = scope:duel_value
                     multiplier = 5
                     min = -40
-                }
-                modifier = {
-                    has_education_trait_level = { trait_category = diplomacy level = 1 }
-                    add = 20
-                }
-                modifier = {
-                    has_education_trait_level = { trait_category = diplomacy level = 2 }
-                    add = 0
-                }
-                modifier = {
-                    has_education_trait_level = { trait_category = diplomacy level = 3 }
-                    add = -20
-                }
-                modifier = {
-                    has_education_trait_level = { trait_category = diplomacy level = 4 }
-                    add = -40
                 }
                 send_interface_toast = {
                     title = bm_education_enhancement.success.diplomacy
@@ -66,10 +50,16 @@ bm_education_enhancement.001 = {
     # Martial education enhancement
     option = {
         name = bm_education_enhancement.001.b
-        trigger = { has_education_trait_martial_any_trigger = yes }
+        trigger = { 
+            AND = {
+                has_trait = education_martial
+                NOT = { education_martial_5 }
+            }
+            
+        }
         duel = {
-            skill = learning
-            target = this
+            skill = martial
+            target = root
             # Success
             50 = {
                 desc = "Success"
@@ -77,22 +67,6 @@ bm_education_enhancement.001 = {
                     value = scope:duel_value
                     multiplier = 5
                     min = -40
-                }
-                modifier = {
-                    has_education_trait_level = { trait_category = martial level = 1 }
-                    add = 20
-                }
-                modifier = {
-                    has_education_trait_level = { trait_category = martial level = 2 }
-                    add = 0
-                }
-                modifier = {
-                    has_education_trait_level = { trait_category = martial level = 3 }
-                    add = -20
-                }
-                modifier = {
-                    has_education_trait_level = { trait_category = martial level = 4 }
-                    add = -40
                 }
                 send_interface_toast = {
                     title = bm_education_enhancement.success.martial
@@ -190,22 +164,6 @@ bm_education_enhancement.001 = {
                     multiplier = 5
                     min = -40
                 }
-                modifier = {
-                    has_education_trait_level = { trait_category = intrigue level = 1 }
-                    add = 20
-                }
-                modifier = {
-                    has_education_trait_level = { trait_category = intrigue level = 2 }
-                    add = 0
-                }
-                modifier = {
-                    has_education_trait_level = { trait_category = intrigue level = 3 }
-                    add = -20
-                }
-                modifier = {
-                    has_education_trait_level = { trait_category = intrigue level = 4 }
-                    add = -40
-                }
                 send_interface_toast = {
                     title = bm_education_enhancement.success.intrigue
                     left_icon = root
@@ -245,22 +203,6 @@ bm_education_enhancement.001 = {
                     value = scope:duel_value
                     multiplier = 5
                     min = -40
-                }
-                modifier = {
-                    has_education_trait_level = { trait_category = learning level = 1 }
-                    add = 20
-                }
-                modifier = {
-                    has_education_trait_level = { trait_category = learning level = 2 }
-                    add = 0
-                }
-                modifier = {
-                    has_education_trait_level = { trait_category = learning level = 3 }
-                    add = -20
-                }
-                modifier = {
-                    has_education_trait_level = { trait_category = learning level = 4 }
-                    add = -40
                 }
                 send_interface_toast = {
                     title = bm_education_enhancement.success.learning
