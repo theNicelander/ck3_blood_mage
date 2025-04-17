@@ -1,0 +1,123 @@
+﻿namespace = blood_golem
+
+blood_golem.001 = {
+    type = character_event
+    title = blood_golem.001.title
+    desc = blood_golem.001.desc
+    theme = witchcraft
+
+    # Create the blood golem
+    immediate = {
+        hidden_effect = {
+            create_character = {
+                template = blood_golem_template
+                save_scope_as = blood_golem
+                location = root.capital_province
+                culture = root.culture
+                faith = root.faith
+            }
+        }
+    }
+
+    # Complete the creation ritual
+    option = {
+        name = blood_golem.001.a
+
+        # Add golem to court
+        add_courtier = scope:blood_golem
+
+        # Progress to enhancement event
+        trigger_event = { id = blood_golem.002 }
+    }
+
+    # Portraits
+    left_portrait = {
+        character = root
+        animation = personality_rational
+    }
+    right_portrait = {
+        character = scope:blood_golem
+        animation = idle
+    }
+}
+
+blood_golem.002 = {
+    type = character_event
+    title = blood_golem.002.title
+    desc = blood_golem.002.desc
+    theme = witchcraft
+
+    # Athletic trait option
+    option = {
+        name = blood_golem.002.athletic
+        trigger = { scope:blood_golem = { NOT = { has_trait = athletic } } }
+        temporary_negative_lifeforce_effect_minor = yes
+        trigger_event = { id = blood_golem.002 }
+        golem_duel_effect = { trait = athletic }
+    }
+
+    # Blademaster trait option
+    option = {
+        name = blood_golem.002.blademaster
+        trigger = { scope:blood_golem = { NOT = { has_trait = lifestyle_blademaster } } }
+        temporary_negative_lifeforce_effect_minor = yes
+        trigger_event = { id = blood_golem.002 }
+        golem_duel_effect = { trait = lifestyle_blademaster }
+    }
+
+    # Berserker trait option
+    option = {
+        name = blood_golem.002.berserker
+        trigger = { scope:blood_golem = { NOT = { has_trait = berserker } } }
+        temporary_negative_lifeforce_effect_minor = yes
+        trigger_event = { id = blood_golem.002 }
+        golem_duel_effect = { trait = berserker }
+    }
+
+    # Viking trait option
+    option = {
+        name = blood_golem.002.viking
+        trigger = { scope:blood_golem = { NOT = { has_trait = viking } } }
+        temporary_negative_lifeforce_effect_minor = yes
+        trigger_event = { id = blood_golem.002 }
+        golem_duel_effect = { trait = viking }
+    }
+
+    # Hunter trait option
+    option = {
+        name = blood_golem.002.hunter
+        trigger = { scope:blood_golem = { NOT = { has_trait = lifestyle_hunter } } }
+        temporary_negative_lifeforce_effect_minor = yes
+        trigger_event = { id = blood_golem.002 }
+        golem_duel_effect = { trait = lifestyle_hunter }
+    }
+
+    # Physique good trait option
+    option = {
+        name = blood_golem.002.physique
+        trigger = { scope:blood_golem = { NOT = { has_trait = physique_good_3 } } }
+        temporary_negative_lifeforce_effect_minor = yes
+        trigger_event = { id = blood_golem.002 }
+        golem_duel_effect_physique = yes
+    }
+
+    # Raider trait option
+    option = {
+        name = blood_golem.002.raider
+        trigger = { scope:blood_golem = { NOT = { has_trait = raider } } }
+        temporary_negative_lifeforce_effect_minor = yes
+        trigger_event = { id = blood_golem.002 }
+        golem_duel_effect = { trait = raider }
+    }
+
+    # Complete ritual option
+    option = {
+        name = blood_golem.002.complete
+        custom_tooltip = blood_golem.002.complete.tooltip
+        add_piety = 50
+    }
+
+    # Portraits
+    left_portrait = { character = root animation = personality_rational }
+    right_portrait = { character = scope:blood_golem animation = idle }
+}

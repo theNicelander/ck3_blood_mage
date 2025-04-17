@@ -1,0 +1,28 @@
+﻿# common/decisions/bm_education_enhancement.txt
+enhance_education_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
+    decision_group_type = bm_decision_group
+
+    cooldown = { years = 3 }
+    cost = { piety = 100 }
+
+    is_shown = {
+        has_trait = lifestyle_blood_mage
+        NOT = {
+            has_trait = education_diplomacy_5
+            has_trait = martial_diplomacy_5
+            has_trait = stewardship_diplomacy_5
+            has_trait = diplomacy_diplomacy_5
+            has_trait = intrigue_diplomacy_5
+        }
+    }
+    is_valid = {
+        has_character_modifier = lifeforce_modifier_major
+        piety_level >= 1
+    }
+    effect = {
+        blood_magic_used_major = yes
+        trigger_event = { id = bm_education_enhancement.001 }
+    }
+    ai_check_interval = 6
+}
