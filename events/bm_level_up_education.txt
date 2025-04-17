@@ -16,33 +16,7 @@ bm_education_enhancement.001 = {
                 NOT = {has_trait = education_diplomacy_5 }
             }
         }
-        duel = {
-            skill = diplomacy
-            target = root
-            # Success
-            50 = {
-                desc = bm_education_enhancement.success
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 5
-                    min = -40
-                }
-                send_interface_toast = {
-                    title = bm_education_enhancement.success
-                    left_icon = root
-                    level_up_trait_effect = {trait = education_diplomacy}
-                }
-            }
-            # Failure
-            50 = {
-                desc = bm_education_enhancement.failure
-                send_interface_toast = {
-                    title = bm_education_enhancement.failure
-                    left_icon = root
-                    temporary_negative_lifeforce_effect_minor = yes
-                }
-            }
-        }
+        education_duel_effect = {trait = diplomacy}
         ai_chance = { base = 100 }
     }
 
@@ -55,33 +29,7 @@ bm_education_enhancement.001 = {
                 NOT = {has_trait = education_martial_5 }
             }
         }
-        duel = {
-            skill = martial
-            target = root
-            # Success
-            50 = {
-                desc = bm_education_enhancement.success
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 5
-                    min = -40
-                }
-                send_interface_toast = {
-                    title = bm_education_enhancement.success
-                    left_icon = root
-                    level_up_trait_effect = {trait = education_martial}
-                }
-            }
-            # Failure
-            50 = {
-                desc = bm_education_enhancement.failure
-                send_interface_toast = {
-                    title = bm_education_enhancement.failure
-                    left_icon = root
-                    temporary_negative_lifeforce_effect_minor = yes
-                }
-            }
-        }
+        education_duel_effect = {trait = martial}
         ai_chance = { base = 100 }
     }
 
@@ -94,33 +42,7 @@ bm_education_enhancement.001 = {
                 NOT = {has_trait = education_stewardship_5 }
             }
         }
-        duel = {
-            skill = stewardship
-            target = root
-            # Success
-            50 = {
-                desc = bm_education_enhancement.success
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 5
-                    min = -40
-                }
-                send_interface_toast = {
-                    title = bm_education_enhancement.success
-                    left_icon = root
-                    level_up_trait_effect = {trait = education_stewardship}
-                }
-            }
-            # Failure
-            50 = {
-                desc = bm_education_enhancement.failure
-                send_interface_toast = {
-                    title = bm_education_enhancement.failure
-                    left_icon = root
-                    temporary_negative_lifeforce_effect_minor = yes
-                }
-            }
-        }
+        education_duel_effect = {trait = stewardship}
         ai_chance = { base = 100 }
     }
 
@@ -133,33 +55,7 @@ bm_education_enhancement.001 = {
                 NOT = {has_trait = education_intrigue_5 }
             }
         }
-        duel = {
-            skill = intrigue
-            target = root
-            # Success
-            50 = {
-                desc = bm_education_enhancement.success
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 5
-                    min = -40
-                }
-                send_interface_toast = {
-                    title = bm_education_enhancement.success
-                    left_icon = root
-                    level_up_trait_effect = {trait = education_intrigue}
-                }
-            }
-            # Failure
-            50 = {
-                desc = bm_education_enhancement.failure
-                send_interface_toast = {
-                    title = bm_education_enhancement.failure
-                    left_icon = root
-                    temporary_negative_lifeforce_effect_minor = yes
-                }
-            }
-        }
+        education_duel_effect = {trait = intrigue}
         ai_chance = { base = 100 }
     }
 
@@ -172,33 +68,7 @@ bm_education_enhancement.001 = {
                 NOT = {has_trait = education_learning_5 }
             }
         }
-        duel = {
-            skill = learning
-            target = root
-            # Success
-            50 = {
-                desc = bm_education_enhancement.success
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 5
-                    min = -40
-                }
-                send_interface_toast = {
-                    title = bm_education_enhancement.success
-                    left_icon = root
-                    level_up_trait_effect = {trait = education_learning}
-                }
-            }
-            # Failure
-            50 = {
-                desc = bm_education_enhancement.failure
-                send_interface_toast = {
-                    title = bm_education_enhancement.failure
-                    left_icon = root
-                    temporary_negative_lifeforce_effect_minor = yes
-                }
-            }
-        }
+        education_duel_effect = {trait = learning}
         ai_chance = { base = 100 }
     }
 
