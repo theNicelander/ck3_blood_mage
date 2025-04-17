@@ -15,8 +15,6 @@ blood_golem.001 = {
                 location = root.capital_province
                 culture = root.culture
                 faith = root.faith
-                gender = male
-                age = 20
             }
         }
     }
@@ -24,13 +22,12 @@ blood_golem.001 = {
     # Complete the creation ritual
     option = {
         name = blood_golem.001.a
-        add_piety = -100
 
         # Add golem to court
         add_courtier = scope:blood_golem
 
         # Progress to enhancement event
-        trigger_event = { id = blood_golem.002 days = 7 }
+        trigger_event = { id = blood_golem.002 }
     }
 
     # Portraits
