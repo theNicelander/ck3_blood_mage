@@ -1,0 +1,295 @@
+﻿# events/bm_education_enhancement_events.txt
+namespace = bm_education_enhancement
+
+bm_education_enhancement.001 = {
+    type = character_event
+    title = bm_education_enhancement.001.title
+    desc = bm_education_enhancement.001.desc
+    theme = witchcraft
+
+    # Diplomacy education enhancement
+    option = {
+        name = bm_education_enhancement.001.a
+        trigger = { has_education_trait_diplomacy_any_trigger = yes }
+        duel = {
+            skill = learning
+            target = this
+            # Success
+            50 = {
+                desc = "Success"
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 5
+                    min = -40
+                }
+                modifier = {
+                    has_education_trait_level = { trait_category = diplomacy level = 1 }
+                    add = 20
+                }
+                modifier = {
+                    has_education_trait_level = { trait_category = diplomacy level = 2 }
+                    add = 0
+                }
+                modifier = {
+                    has_education_trait_level = { trait_category = diplomacy level = 3 }
+                    add = -20
+                }
+                modifier = {
+                    has_education_trait_level = { trait_category = diplomacy level = 4 }
+                    add = -40
+                }
+                send_interface_toast = {
+                    title = bm_education_enhancement.success.diplomacy
+                    left_icon = root
+
+                    if = {
+                        limit = { has_education_trait_level = { trait_category = diplomacy level < 4 } }
+                        change_education_trait_rank_effect = {
+                            TRAIT_CATEGORY = diplomacy
+                            RANK = 1
+                        }
+                    }
+                }
+            }
+            # Failure
+            50 = {
+                send_interface_toast = {
+                    title = bm_education_enhancement.failure
+                    left_icon = root
+                    temporary_negative_lifeforce_effect_minor = yes
+                }
+            }
+        }
+        ai_chance = { base = 100 }
+    }
+
+    # Martial education enhancement
+    option = {
+        name = bm_education_enhancement.001.b
+        trigger = { has_education_trait_martial_any_trigger = yes }
+        duel = {
+            skill = learning
+            target = this
+            # Success
+            50 = {
+                desc = "Success"
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 5
+                    min = -40
+                }
+                modifier = {
+                    has_education_trait_level = { trait_category = martial level = 1 }
+                    add = 20
+                }
+                modifier = {
+                    has_education_trait_level = { trait_category = martial level = 2 }
+                    add = 0
+                }
+                modifier = {
+                    has_education_trait_level = { trait_category = martial level = 3 }
+                    add = -20
+                }
+                modifier = {
+                    has_education_trait_level = { trait_category = martial level = 4 }
+                    add = -40
+                }
+                send_interface_toast = {
+                    title = bm_education_enhancement.success.martial
+                    left_icon = root
+
+                    if = {
+                        limit = { has_education_trait_level = { trait_category = martial level < 4 } }
+                        change_education_trait_rank_effect = {
+                            TRAIT_CATEGORY = martial
+                            RANK = 1
+                        }
+                    }
+                }
+            }
+            # Failure
+            50 = {
+                send_interface_toast = {
+                    title = bm_education_enhancement.failure
+                    left_icon = root
+                    temporary_negative_lifeforce_effect_minor = yes
+                }
+            }
+        }
+        ai_chance = { base = 100 }
+    }
+
+    # Stewardship education enhancement
+    option = {
+        name = bm_education_enhancement.001.c
+        trigger = { has_education_trait_stewardship_any_trigger = yes }
+        duel = {
+            skill = learning
+            target = this
+            # Success
+            50 = {
+                desc = "Success"
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 5
+                    min = -40
+                }
+                modifier = {
+                    has_education_trait_level = { trait_category = stewardship level = 1 }
+                    add = 20
+                }
+                modifier = {
+                    has_education_trait_level = { trait_category = stewardship level = 2 }
+                    add = 0
+                }
+                modifier = {
+                    has_education_trait_level = { trait_category = stewardship level = 3 }
+                    add = -20
+                }
+                modifier = {
+                    has_education_trait_level = { trait_category = stewardship level = 4 }
+                    add = -40
+                }
+                send_interface_toast = {
+                    title = bm_education_enhancement.success.stewardship
+                    left_icon = root
+
+                    if = {
+                        limit = { has_education_trait_level = { trait_category = stewardship level < 4 } }
+                        change_education_trait_rank_effect = {
+                            TRAIT_CATEGORY = stewardship
+                            RANK = 1
+                        }
+                    }
+                }
+            }
+            # Failure
+            50 = {
+                send_interface_toast = {
+                    title = bm_education_enhancement.failure
+                    left_icon = root
+                    temporary_negative_lifeforce_effect_minor = yes
+                }
+            }
+        }
+        ai_chance = { base = 100 }
+    }
+
+    # Intrigue education enhancement
+    option = {
+        name = bm_education_enhancement.001.d
+        trigger = { has_education_trait_intrigue_any_trigger = yes }
+        duel = {
+            skill = learning
+            target = this
+            # Success
+            50 = {
+                desc = "Success"
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 5
+                    min = -40
+                }
+                modifier = {
+                    has_education_trait_level = { trait_category = intrigue level = 1 }
+                    add = 20
+                }
+                modifier = {
+                    has_education_trait_level = { trait_category = intrigue level = 2 }
+                    add = 0
+                }
+                modifier = {
+                    has_education_trait_level = { trait_category = intrigue level = 3 }
+                    add = -20
+                }
+                modifier = {
+                    has_education_trait_level = { trait_category = intrigue level = 4 }
+                    add = -40
+                }
+                send_interface_toast = {
+                    title = bm_education_enhancement.success.intrigue
+                    left_icon = root
+
+                    if = {
+                        limit = { has_education_trait_level = { trait_category = intrigue level < 4 } }
+                        change_education_trait_rank_effect = {
+                            TRAIT_CATEGORY = intrigue
+                            RANK = 1
+                        }
+                    }
+                }
+            }
+            # Failure
+            50 = {
+                send_interface_toast = {
+                    title = bm_education_enhancement.failure
+                    left_icon = root
+                    temporary_negative_lifeforce_effect_minor = yes
+                }
+            }
+        }
+        ai_chance = { base = 100 }
+    }
+
+    # Learning education enhancement
+    option = {
+        name = bm_education_enhancement.001.e
+        trigger = { has_education_trait_learning_any_trigger = yes }
+        duel = {
+            skill = learning
+            target = this
+            # Success
+            50 = {
+                desc = "Success"
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 5
+                    min = -40
+                }
+                modifier = {
+                    has_education_trait_level = { trait_category = learning level = 1 }
+                    add = 20
+                }
+                modifier = {
+                    has_education_trait_level = { trait_category = learning level = 2 }
+                    add = 0
+                }
+                modifier = {
+                    has_education_trait_level = { trait_category = learning level = 3 }
+                    add = -20
+                }
+                modifier = {
+                    has_education_trait_level = { trait_category = learning level = 4 }
+                    add = -40
+                }
+                send_interface_toast = {
+                    title = bm_education_enhancement.success.learning
+                    left_icon = root
+
+                    if = {
+                        limit = { has_education_trait_level = { trait_category = learning level < 4 } }
+                        change_education_trait_rank_effect = {
+                            TRAIT_CATEGORY = learning
+                            RANK = 1
+                        }
+                    }
+                }
+            }
+            # Failure
+            50 = {
+                send_interface_toast = {
+                    title = bm_education_enhancement.failure
+                    left_icon = root
+                    temporary_negative_lifeforce_effect_minor = yes
+                }
+            }
+        }
+        ai_chance = { base = 100 }
+    }
+
+    # Portraits
+    left_portrait = {
+        character = root
+        animation = personality_rational
+    }
+}
