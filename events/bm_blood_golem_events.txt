@@ -50,78 +50,67 @@ blood_golem.002 = {
     desc = blood_golem.002.desc
     theme = witchcraft
 
-    # Athletic trait enhancement
+    # Athletic trait option
     option = {
-        name = blood_golem.002.a
+        name = blood_golem.002.athletic
         trigger = { scope:blood_golem = { NOT = { has_trait = athletic } } }
-        duel = {
-            skill = learning
-            target = scope:blood_golem
-            value = 0
-            60 = {
-                desc = "I successfully enhance my golem's physical capabilities"
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 3
-                    min = -40
-                }
-                scope:blood_golem = { add_trait = athletic }
-                send_interface_toast = {
-                    title = "Blood Golem Enhanced"
-                    left_icon = root
-                    right_icon = scope:blood_golem
-                    custom_tooltip = "Your blood golem is now more physically capable"
-                }
-            }
-            40 = {
-                desc = "The ritual falters"
-                send_interface_toast = {
-                    title = "Enhancement Failed"
-                    left_icon = root
-                    right_icon = scope:blood_golem
-                    custom_tooltip = "The blood magic dissipates without effect"
-                    add_stress = 10
-                }
-            }
-        }
-        trigger_event = { id = blood_golem.002 days = 7 }
+        temporary_negative_lifeforce_effect_minor = yes
+        trigger_event = { id = blood_golem.002 }
+        golem_duel_effect = { trait = athletic }
     }
 
-    # Loyal trait enhancement
+    # Blademaster trait option
     option = {
-        name = blood_golem.002.b
-        trigger = { scope:blood_golem = { NOT = { has_trait = loyal } } }
-        duel = {
-            skill = learning
-            target = scope:blood_golem
-            value = 0
-            60 = {
-                desc = "I successfully bind my golem's loyalty"
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 3
-                    min = -40
-                }
-                scope:blood_golem = { add_trait = loyal }
-                send_interface_toast = {
-                    title = "Blood Golem Enhanced"
-                    left_icon = root
-                    right_icon = scope:blood_golem
-                    custom_tooltip = "Your blood golem is now unwaveringly loyal"
-                }
-            }
-            40 = {
-                desc = "The ritual falters"
-                send_interface_toast = {
-                    title = "Enhancement Failed"
-                    left_icon = root
-                    right_icon = scope:blood_golem
-                    custom_tooltip = "The blood magic dissipates without effect"
-                    add_stress = 10
-                }
-            }
-        }
-        trigger_event = { id = blood_golem.002 days = 7 }
+        name = blood_golem.002.blademaster
+        trigger = { scope:blood_golem = { NOT = { has_trait = lifestyle_blademaster } } }
+        temporary_negative_lifeforce_effect_minor = yes
+        trigger_event = { id = blood_golem.002 }
+        golem_duel_effect = { trait = lifestyle_blademaster }
+    }
+
+    # Berserker trait option
+    option = {
+        name = blood_golem.002.berserker
+        trigger = { scope:blood_golem = { NOT = { has_trait = berserker } } }
+        temporary_negative_lifeforce_effect_minor = yes
+        trigger_event = { id = blood_golem.002 }
+        golem_duel_effect = { trait = berserker }
+    }
+
+    # Viking trait option
+    option = {
+        name = blood_golem.002.viking
+        trigger = { scope:blood_golem = { NOT = { has_trait = viking } } }
+        temporary_negative_lifeforce_effect_minor = yes
+        trigger_event = { id = blood_golem.002 }
+        golem_duel_effect = { trait = viking }
+    }
+
+    # Hunter trait option
+    option = {
+        name = blood_golem.002.hunter
+        trigger = { scope:blood_golem = { NOT = { has_trait = lifestyle_hunter } } }
+        temporary_negative_lifeforce_effect_minor = yes
+        trigger_event = { id = blood_golem.002 }
+        golem_duel_effect = { trait = lifestyle_hunter }
+    }
+
+    # Physique good trait option
+    option = {
+        name = blood_golem.002.physique
+        trigger = { scope:blood_golem = { NOT = { has_trait = physique_good_3 } } }
+        temporary_negative_lifeforce_effect_minor = yes
+        trigger_event = { id = blood_golem.002 }
+        golem_duel_effect_physique = yes
+    }
+
+    # Raider trait option
+    option = {
+        name = blood_golem.002.raider
+        trigger = { scope:blood_golem = { NOT = { has_trait = raider } } }
+        temporary_negative_lifeforce_effect_minor = yes
+        trigger_event = { id = blood_golem.002 }
+        golem_duel_effect = { trait = raider }
     }
 
     # Complete ritual option
@@ -130,10 +119,10 @@ blood_golem.002 = {
         custom_tooltip = blood_golem.002.z.tooltip
         add_piety = 50
         send_interface_toast = {
-            title = "Blood Golem Completed"
+            title = blood_golem.002.toast.complete
             left_icon = root
             right_icon = scope:blood_golem
-            custom_tooltip = "Your blood golem is now complete and will serve you faithfully"
+            custom_tooltip = blood_golem.002.tooltip.complete
         }
     }
 
