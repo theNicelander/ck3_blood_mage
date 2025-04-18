@@ -1,98 +1,11 @@
-﻿# Lifedraining
-ai_willingness_to_do_postitive_magic = {
-
-    # Do I like recipient & are they trustworthy
-    opinion_modifier = {
-        who = scope:actor
-        opinion_target = scope:recipient
-        multiplier = 0.5
-    }
-    compatibility_modifier = {
-        who = scope:actor
-        compatibility_target = scope:recipient
-        multiplier = 0.2
-    }
-    opinion_modifier = {
-        who = scope:recipient
-        opinion_target = scope:actor
-        multiplier = 0.5
-    }
-
-    # Are they important (to me)
-    modifier = {
-        add = {
-            value = scope:recipient.highest_held_title_tier
-            subtract = scope:actor.highest_held_title_tier
-            multiply = 10
-        }
-    }
-    modifier = {
-        OR = {
-            is_close_family_of = scope:recipient
-            is_consort_of = scope:recipient
-            has_relation_lover = scope:recipient
-            has_relation_friend = scope:recipient
-        }
-        add = 20
-    }
-    modifier = {
-        OR = {
-            has_relation_best_friend = scope:recipient
-            has_relation_soulmate = scope:recipient
-        }
-        add = 30
-    }
-    modifier = {
-        exists = house
-        exists = scope:recipient.house
-        house = scope:recipient.house
-        add = 30
-    }
-    modifier = {
-        is_knight_of = scope:actor
-        add = 30
-    }
-}
-
-ai_chance_scale_based_on_xp_in_track = {
-    modifier = {
-        has_trait_xp = {
-            trait = lifestyle_blood_mage
-            track = $TRACK$
-            value >= 100
-        }
-        add = -100
-    }
-    modifier = {
-        has_trait_xp = {
-            trait = lifestyle_blood_mage
-            track = $TRACK$
-            value >= 80
-        }
-        add = -5
-    }
-    modifier = {
-        has_trait_xp = {
-            trait = lifestyle_blood_mage
-            track = $TRACK$
-            value >= 60
-        }
-        add = -5
-    }
-    modifier = {
-        has_trait_xp = {
-            trait = lifestyle_blood_mage
-            track = $TRACK$
-            value >= 30
-        }
-        add = -5
-    }
-    modifier = {
-        has_trait_xp = {
-            trait = lifestyle_blood_mage
-            track = $TRACK$
-            value <= 10
-        }
-        add = 5
-    }
+﻿scale_cost_by_number_of_traits_golem_has = {
+    modifier = { scope:blood_golem = {has_trait = athletic} add = 10 }
+    modifier = { scope:blood_golem = {has_trait = lifestyle_blademaster} add = 10 }
+    modifier = { scope:blood_golem = {has_trait = berserker} add = 10 }
+    modifier = { scope:blood_golem = {has_trait = viking} add = 10 }
+    modifier = { scope:blood_golem = {has_trait = lifestyle_hunter} add = 10 }
+    modifier = { scope:blood_golem = {has_trait = physique_good_1} add = 10 }
+    modifier = { scope:blood_golem = {has_trait = physique_good_2} add = 20 }
+    modifier = { scope:blood_golem = {has_trait = physique_good_3} add = 30 }
+    modifier = { scope:blood_golem = {has_trait = raider} add = 10 }
 }
