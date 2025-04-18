@@ -2,11 +2,11 @@
     duel = {
         skill = $trait$
         # Success
-        50 = {
+        0 = {
             desc = bm_education_enhancement.success
             compare_modifier = {
                 value = scope:duel_value
-                multiplier = 2
+                multiplier = 5
             }
             send_interface_toast = {
                 title = bm_education_enhancement.success
@@ -16,10 +16,9 @@
         }
         # Failure
         50 = {
-            modifier = { has_trait = education_$trait$_1 add = 10 }
-            modifier = { has_trait = education_$trait$_2 add = 25 }
-            modifier = { has_trait = education_$trait$_3 add = 50 }
-            modifier = { has_trait = education_$trait$_4 add = 100 }
+            modifier = { has_trait = education_$trait$_2 add = 50 }
+            modifier = { has_trait = education_$trait$_3 add = 100 }
+            modifier = { has_trait = education_$trait$_4 add = 200 }
             desc = bm_education_enhancement.failure
             send_interface_toast = {
                 title = bm_education_enhancement.failure
