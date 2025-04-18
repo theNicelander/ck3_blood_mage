@@ -98,15 +98,6 @@ blood_golem.002 = {
         golem_duel_effect_physique = yes
     }
 
-    # Raider trait option
-    option = {
-        name = blood_golem.002.raider
-        trigger = { scope:blood_golem = { NOT = { has_trait = viking } } }
-        add_xp_bloodline = yes
-        trigger_event = { id = blood_golem.002 }
-        golem_duel_effect = { TRAIT = viking }
-    }
-
     # Complete ritual option
     option = {
         name = blood_golem.002.complete
