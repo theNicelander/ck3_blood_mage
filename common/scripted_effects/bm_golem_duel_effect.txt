@@ -22,15 +22,7 @@
                 right_icon = scope:blood_golem
                 temporary_negative_lifeforce_effect_minor = yes
             }
-            modifier = { scope:blood_golem = {has_trait = athletic} add = 10 }
-            modifier = { scope:blood_golem = {has_trait = lifestyle_blademaster} add = 10 }
-            modifier = { scope:blood_golem = {has_trait = berserker} add = 10 }
-            modifier = { scope:blood_golem = {has_trait = viking} add = 10 }
-            modifier = { scope:blood_golem = {has_trait = lifestyle_hunter} add = 10 }
-            modifier = { scope:blood_golem = {has_trait = physique_good_1} add = 10 }
-            modifier = { scope:blood_golem = {has_trait = physique_good_2} add = 20 }
-            modifier = { scope:blood_golem = {has_trait = physique_good_3} add = 30 }
-            modifier = { scope:blood_golem = {has_trait = raider} add = 10 }
+            scale_cost_by_number_of_traits_golem_has = yes
         }
     }
 }
@@ -72,15 +64,7 @@ golem_duel_effect_physique = {
                 right_icon = scope:blood_golem
                 temporary_negative_lifeforce_effect_minor = yes
             }
-            modifier = { scope:blood_golem = {has_trait = athletic} add = 10 }
-            modifier = { scope:blood_golem = {has_trait = lifestyle_blademaster} add = 10 }
-            modifier = { scope:blood_golem = {has_trait = berserker} add = 10 }
-            modifier = { scope:blood_golem = {has_trait = viking} add = 10 }
-            modifier = { scope:blood_golem = {has_trait = lifestyle_hunter} add = 10 }
-            modifier = { scope:blood_golem = {has_trait = physique_good_1} add = 10 }
-            modifier = { scope:blood_golem = {has_trait = physique_good_2} add = 20 }
-            modifier = { scope:blood_golem = {has_trait = physique_good_3} add = 30 }
-            modifier = { scope:blood_golem = {has_trait = raider} add = 10 }
+            scale_cost_by_number_of_traits_golem_has = yes
         }
     }
 }
