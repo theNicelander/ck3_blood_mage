@@ -12,7 +12,6 @@ bm_channel_lifeforce_enlightenment_major.001 = {
     # Crimson Charisma
     option = {
         name = bm_channel_lifeforce_enlightenment_major.001.a
-        add_piety_level = -1
         add_character_modifier = { modifier = crimson_charisma_modifier }
         trigger = { NOT = { has_character_modifier = crimson_charisma_modifier } }
         ai_chance = { base = 10 }
@@ -21,7 +20,6 @@ bm_channel_lifeforce_enlightenment_major.001 = {
     # Crimson Fury
     option = {
         name = bm_channel_lifeforce_enlightenment_major.001.b
-        add_piety_level = -1
         add_character_modifier = { modifier = crimson_fury_modifier }
         trigger = { NOT = { has_character_modifier = crimson_fury_modifier } }
         ai_chance = { base = 10 }
@@ -30,7 +28,6 @@ bm_channel_lifeforce_enlightenment_major.001 = {
     # Crimson Prosperity
     option = {
         name = bm_channel_lifeforce_enlightenment_major.001.c
-        add_piety_level = -1
         add_character_modifier = { modifier = crimson_prosperity_modifier }
         trigger = { NOT = { has_character_modifier = crimson_prosperity_modifier } }
         ai_chance = { base = 10 }
@@ -39,7 +36,6 @@ bm_channel_lifeforce_enlightenment_major.001 = {
     # Crimson Shadows
     option = {
         name = bm_channel_lifeforce_enlightenment_major.001.d
-        add_piety_level = -1
         add_character_modifier = { modifier = crimson_shadows_modifier }
         trigger = { NOT = { has_character_modifier = crimson_shadows_modifier } }
         ai_chance = { base = 10 }
@@ -48,7 +44,6 @@ bm_channel_lifeforce_enlightenment_major.001 = {
     # Crimson Insight
     option = {
         name = bm_channel_lifeforce_enlightenment_major.001.e
-        add_piety_level = -1
         add_character_modifier = { modifier = crimson_insight_modifier }
         trigger = { NOT = { has_character_modifier = crimson_insight_modifier } }
         ai_chance = { base = 10 }
@@ -57,7 +52,6 @@ bm_channel_lifeforce_enlightenment_major.001 = {
     # Crimson Legacy
     option = {
         name = bm_channel_lifeforce_enlightenment_major.001.f
-        add_piety_level = -1
         add_character_modifier = { modifier = crimson_legacy_modifier }
         trigger = { NOT = { has_character_modifier = crimson_legacy_modifier } }
         ai_chance = { base = 10 }
@@ -66,7 +60,6 @@ bm_channel_lifeforce_enlightenment_major.001 = {
     # Crimson Expertise
     option = {
         name = bm_channel_lifeforce_enlightenment_major.001.g
-        add_piety_level = -1
         add_character_modifier = { modifier = crimson_expertise_modifier }
         trigger = { NOT = { has_character_modifier = crimson_expertise_modifier } }
         ai_chance = { base = 10 }
@@ -75,7 +68,6 @@ bm_channel_lifeforce_enlightenment_major.001 = {
     # Fallback
     option = {
         name = bm_channel_lifeforce_enlightenment_major.001.x
-        add_piety_level = -1
         send_interface_toast  = {
             title = "Crimson Empowered"
             left_icon = this

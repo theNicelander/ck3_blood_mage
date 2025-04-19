@@ -123,7 +123,7 @@ heal_disease_major = {
             remove_trait = one_eyed
 
             if = {
-                trigger = {NOT = { scope:actor = scope:recipient }}
+                limit = {NOT = { scope:actor = scope:recipient }}
                 # temporary positive opinion
                 add_opinion = {
                     target = scope:actor
@@ -217,7 +217,7 @@ heal_disease_benediction = {
             remove_trait = disfigured
 
             if = {
-                trigger = {NOT = { scope:actor = scope:recipient }}
+                limit = {NOT = { scope:actor = scope:recipient }}
                 # temporary positive opinion
                 add_opinion = {
                     target = scope:actor

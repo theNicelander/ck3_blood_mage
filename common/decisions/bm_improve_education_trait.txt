@@ -8,13 +8,29 @@ enhance_education_decision = {
 
     is_shown = {
         has_trait = lifestyle_blood_mage
-        NOT = {
-            has_trait = education_diplomacy_5
-            has_trait = martial_diplomacy_5
-            has_trait = stewardship_diplomacy_5
-            has_trait = diplomacy_diplomacy_5
-            has_trait = intrigue_diplomacy_5
+        OR = {
+            AND = {
+                has_trait = education_diplomacy
+                NOT = {has_trait = education_diplomacy_5}
+            }
+            AND = {
+                has_trait = education_martial
+                NOT = {has_trait = education_martial_5}
+            }
+            AND = {
+                has_trait = education_learning
+                NOT = {has_trait = education_learning_5}
+            }
+            AND = {
+                has_trait = education_stewardship
+                NOT = {has_trait = education_stewardship_5}
+            }
+            AND = {
+                has_trait = education_intrigue
+                NOT = {has_trait = education_intrigue_5}
+            }
         }
+
     }
     is_valid = {
         has_character_modifier = lifeforce_modifier_major
@@ -23,6 +39,11 @@ enhance_education_decision = {
     effect = {
         blood_magic_used_major = yes
         trigger_event = { id = bm_education_enhancement.001 }
+        add_piety_level = -1
+        add_xp_bm_dynamic = {
+            TRACK = enlightenment
+            XP = 5
+        }
     }
     ai_check_interval = 6
 }

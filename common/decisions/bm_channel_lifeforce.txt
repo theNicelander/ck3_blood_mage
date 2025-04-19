@@ -44,6 +44,7 @@ channel_lifeforce_enlightenment_major = {
     }
     effect = {
         trigger_event = { id = bm_channel_lifeforce_enlightenment_major.001 }
+        add_piety_level = -1
         blood_magic_used_major = yes
         add_xp_bm_dynamic = {
             TRACK = enlightenment
@@ -86,6 +87,7 @@ channel_lifeforce_bloodline = {
     }
     effect = {
         trigger_event = { id = bm_channel_lifeforce_bloodline.001 }
+        add_piety_level = -1
         add_xp_bm_dynamic = {
             TRACK = bloodline
             XP = 5

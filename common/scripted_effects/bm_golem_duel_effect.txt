@@ -1,14 +1,11 @@
 ﻿golem_duel_effect = {
     duel = {
         skill = learning
-        target = scope:blood_golem
-        value = 0
-        60 = {
+        40 = {
             desc = blood_golem.002.success
             compare_modifier = {
                 value = scope:duel_value
                 multiplier = 3
-                min = -40
             }
             send_interface_toast = {
                 title = blood_golem.002.success
@@ -17,14 +14,15 @@
                 scope:blood_golem = { add_trait = $TRAIT$ }
             }
         }
-        40 = {
+        60 = {
             desc = blood_golem.002.fail
             send_interface_toast = {
                 title = blood_golem.002.fail
                 left_icon = root
                 right_icon = scope:blood_golem
-                add_stress = 10
+                temporary_negative_lifeforce_effect_minor = yes
             }
+            scale_cost_by_number_of_traits_golem_has = yes
         }
     }
 }
@@ -32,14 +30,11 @@
 golem_duel_effect_physique = {
     duel = {
         skill = learning
-        target = scope:blood_golem
-        value = 0
-        60 = {
+        40 = {
             desc = blood_golem.002.success
             compare_modifier = {
                 value = scope:duel_value
                 multiplier = 3
-                min = -40
             }
             send_interface_toast = {
                 title = blood_golem.002.success
@@ -61,14 +56,15 @@ golem_duel_effect_physique = {
                 }
             }
         }
-        40 = {
+        60 = {
             desc = blood_golem.002.fail
             send_interface_toast = {
                 title = blood_golem.002.fail
                 left_icon = root
                 right_icon = scope:blood_golem
-                add_stress = 10
+                temporary_negative_lifeforce_effect_minor = yes
             }
+            scale_cost_by_number_of_traits_golem_has = yes
         }
     }
 }
