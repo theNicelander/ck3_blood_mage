@@ -1,0 +1,46 @@
+﻿# common/decisions/bm_enhance_lifeforce.txt
+bm_enhance_minor_to_major_lifeforce = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
+    desc = bm_enhance_minor_to_major_lifeforce_desc
+    decision_group_type = bm_decision_group
+
+    is_shown = { has_trait = lifestyle_blood_mage }
+    is_valid = {
+        has_character_modifier = lifeforce_modifier_minor
+    }
+    cooldown = { years = 1 }
+
+    cost = { piety = 25 }
+
+    effect = {  
+        duel = {
+            skill = learning
+            value = 0
+            40 = {
+                desc = "Success"
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 3
+                }
+                send_interface_toast = {
+                    title = bm_enhance_minor_to_major_success_toast
+                    left_icon = root
+                    custom_tooltip = bm_enhance_minor_to_major_success_toast_desc
+                    remove_character_modifier = lifeforce_modifier_minor
+                    add_character_modifier = { modifier = lifeforce_modifier_major }
+                }
+            }
+            60 = {
+                desc = "Failure"
+                send_interface_toast = {
+                    title = bm_enhance_minor_to_major_failure_toast
+                    left_icon = root
+                    custom_tooltip = bm_enhance_minor_to_major_failure_toast_desc
+                }
+            }
+        }
+    }
+
+    ai_will_do = { base = 50 }
+    ai_check_interval = 6
+}
