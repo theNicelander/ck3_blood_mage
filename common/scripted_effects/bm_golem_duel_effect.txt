@@ -13,6 +13,7 @@
                 left_icon = root
                 right_icon = scope:blood_golem
                 scope:blood_golem = { add_trait = $TRAIT$ }
+                add_xp_bloodline = yes
             }
         }
         60 = {
@@ -41,6 +42,7 @@ golem_duel_effect_level = {
                 title = blood_golem.002.success
                 left_icon = root
                 right_icon = scope:blood_golem
+                add_xp_bloodline = yes
 
                 scope:blood_golem = {
                     if = {
