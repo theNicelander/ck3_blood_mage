@@ -12,7 +12,8 @@ seek_power.001 = {
         name = "Follow my instincts to seek worthy prey"
         
         duel = {
-            skill = prowess            
+            skill = prowess    
+            value = 0        
             50 = {
                 desc = "I encounter wild game"
                 trigger_event = { id = seek_power.002 }
