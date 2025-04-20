@@ -87,19 +87,26 @@ traveller_character_template = {
 
 # Blood golem
 blood_golem_template = {
-	dynasty = none
-	gender_female_chance = 50
+	dynasty_house = house:house_golem
 	age = { 18 30 }
+	random_traits = no
 
 	# Base stats
-	prowess = { 10 20 }
-	learning = 5
-	intrigue = 5
-	martial = 5
-	stewardship = 5
-	diplomacy = 5
+	prowess = { 15 25 }
+	learning = { 1 9 }
+	intrigue = { 1 9 }
+	martial = { 1 9 }
+	stewardship = { 1 9 }
+	diplomacy = { 1 9 }
 
+	# Personality
+	trait = content
+	trait = humble
+	trait = trusting
+
+	# Physical
 	trait = eunuch_1
 	trait = loyal
 	trait = giant
+	trait = education_martial_2
 }
