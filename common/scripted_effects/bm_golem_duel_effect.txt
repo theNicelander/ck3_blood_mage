@@ -27,7 +27,7 @@
     }
 }
 
-golem_duel_effect_physique = {
+golem_duel_effect_level = {
     duel = {
         skill = learning
         40 = {
@@ -43,14 +43,14 @@ golem_duel_effect_physique = {
 
                 scope:blood_golem = {
                     if = {
-                        limit = { NOT = { has_trait = physique_good } }
-                        add_trait = physique_good_1
+                        limit = { NOT = { has_trait = $trait$ } }
+                        add_trait = $trait$_1
                     }
                     else = {
                         change_trait_rank = {
-                            trait = physique_good
+                            trait = $trait$
                             rank = 1
-                            max = 3
+                            max = 4
                         }
                     }
                 }
