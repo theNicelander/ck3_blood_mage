@@ -99,7 +99,6 @@ blood_golem.002 = {
     }
 
     # Martial education
-    trait = education_martial_prowess_4
     option = {
         name = blood_golem.002.prowess
         trigger = { scope:blood_golem = { NOT = { has_trait = education_martial_prowess_4 } } }
