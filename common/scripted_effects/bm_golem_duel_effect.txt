@@ -1,6 +1,7 @@
 ﻿golem_duel_effect = {
     duel = {
         skill = learning
+        value = 0
         40 = {
             desc = blood_golem.002.success
             compare_modifier = {
@@ -12,6 +13,7 @@
                 left_icon = root
                 right_icon = scope:blood_golem
                 scope:blood_golem = { add_trait = $TRAIT$ }
+                add_xp_bloodline = yes
             }
         }
         60 = {
@@ -28,6 +30,8 @@
 }
 
 golem_duel_effect_level = {
+    add_stress = 5
+    add_piety = -10
     duel = {
         skill = learning
         40 = {
@@ -40,6 +44,7 @@ golem_duel_effect_level = {
                 title = blood_golem.002.success
                 left_icon = root
                 right_icon = scope:blood_golem
+                add_xp_bloodline = yes
 
                 scope:blood_golem = {
                     if = {

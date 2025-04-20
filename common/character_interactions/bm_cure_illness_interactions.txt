@@ -40,15 +40,12 @@
             remove_trait = lovers_pox
             remove_trait = gout_ridden
 
-            if = {
             # temporary positive opinion
             add_opinion = {
                 target = scope:actor
                 modifier = magic_opinion_positive
                 opinion = 20
             }
-            }
-
         }
     }
 

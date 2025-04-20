@@ -161,6 +161,7 @@ blood_mage_yearly_events.003 = {
             limit = { has_character_modifier = minor_crimson_rune_modifier }
             duel = {
                 skill = learning 
+                value = 0
                 80 = {  } # chance of nothing happening 
                 20 = { # minor lifeforce only
                     send_interface_toast = {
@@ -175,6 +176,7 @@ blood_mage_yearly_events.003 = {
             limit = { has_character_modifier = major_crimson_rune_modifier }
             duel = {
                 skill = learning
+                value = 0
                 65 = {  } # chance of nothing happening 
                 20 = { # minor lifeforce only
                     send_interface_toast = {
@@ -204,6 +206,7 @@ blood_mage_yearly_events.003 = {
             limit = { has_character_modifier = superior_crimson_rune_modifier }
             duel = {
                 skill = learning
+                value = 0
                 50 = { } # chance of nothing happening 
                 30 = { # minor lifeforce only
                     send_interface_toast = {
