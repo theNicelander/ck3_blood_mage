@@ -17,7 +17,7 @@ bm_enhance_minor_to_major_lifeforce = {
             skill = learning
             value = 0
             40 = {
-                desc = "Success"
+                desc = bm_enhance_minor_to_major_success_toast
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = 3
@@ -25,17 +25,17 @@ bm_enhance_minor_to_major_lifeforce = {
                 send_interface_toast = {
                     title = bm_enhance_minor_to_major_success_toast
                     left_icon = root
-                    custom_tooltip = bm_enhance_minor_to_major_success_toast_desc
                     remove_character_modifier = lifeforce_modifier_minor
                     add_character_modifier = { modifier = lifeforce_modifier_major }
+                    add_xp_benediction = yes
                 }
             }
             60 = {
-                desc = "Failure"
+                desc = bm_enhance_minor_to_major_failure_toast
                 send_interface_toast = {
                     title = bm_enhance_minor_to_major_failure_toast
                     left_icon = root
-                    custom_tooltip = bm_enhance_minor_to_major_failure_toast_desc
+                    temporary_negative_lifeforce_effect_minor = yes
                 }
             }
         }
