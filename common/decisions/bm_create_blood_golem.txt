@@ -7,6 +7,7 @@
         has_character_modifier = lifeforce_modifier_major
         piety_level >= 2
     }
+    cost = { piety = 100 }
 
     effect = {
         trigger_event = { id = blood_golem.001 }
