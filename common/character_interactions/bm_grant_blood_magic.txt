@@ -12,7 +12,7 @@
         scope:actor = { has_trait = lifestyle_blood_mage }
         scope:recipient = { NOT = { has_trait = lifestyle_blood_mage } }
     }
-    cost = { piety = 100 }
+    cost = { piety = 75 }
     is_valid_showing_failures_only = { 
         scope:actor = { has_character_modifier = lifeforce_modifier_major }
     }
