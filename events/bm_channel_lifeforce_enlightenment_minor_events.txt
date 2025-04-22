@@ -1,12 +1,10 @@
 ﻿# Spend Lifeforce event
-
 namespace = bm_channel_lifeforce_enlightenment_minor
-
 
 bm_channel_lifeforce_enlightenment_minor.001 = {
     type = character_event
-    title = "Channel Crimson Aspects"
-    desc = "The blood magic within me stirs, ready to be shaped according to my will. Which aspect of power shall I manifest?"
+    title = bm_channel_lifeforce_enlightenment_minor.001.title
+    desc = bm_channel_lifeforce_enlightenment_minor.001.desc
     theme = witchcraft
 
     # Diplomacy boost
@@ -64,17 +62,6 @@ bm_channel_lifeforce_enlightenment_minor.001 = {
         ai_chance = { base = 10 }
     }
 
-    # Prowess boost
-    option = {
-        name = bm_channel_lifeforce_enlightenment_minor.001.f
-        add_character_modifier = { 
-            modifier = prowess_lifeforce_modifier
-            years = 5 
-        }
-        trigger = { NOT = { has_character_modifier = prowess_lifeforce_modifier } }
-        ai_chance = { base = 10 }
-    }
-
     # Experience gain boost
     option = {
         name = bm_channel_lifeforce_enlightenment_minor.001.g
@@ -83,6 +70,17 @@ bm_channel_lifeforce_enlightenment_minor.001 = {
             years = 5 
         }
         trigger = { NOT = { has_character_modifier = exp_lifeforce_modifier } }
+        ai_chance = { base = 10 }
+    }
+
+    # Prowess boost
+    option = {
+        name = bm_channel_lifeforce_enlightenment_minor.001.h
+        add_character_modifier = { 
+            modifier = prowess_lifeforce_modifier
+            years = 5 
+        }
+        trigger = { NOT = { has_character_modifier = prowess_lifeforce_modifier } }
         ai_chance = { base = 10 }
     }
 
