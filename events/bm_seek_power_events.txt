@@ -38,13 +38,6 @@ seek_power.001 = {
         ai_chance = { base = 50 }
     }
 
-    # Do nothing
-    option = {
-        name = "Savor the tranquility of nature before returning to the burdens of rulership"
-        add_stress = -10
-        ai_chance = { base = 5 }
-    }
-
     # Portraits
     left_portrait = {
         character = root
@@ -67,12 +60,6 @@ seek_power.002 = {
             add_character_modifier = { modifier = lifeforce_modifier_minor } 
         }
         ai_chance = { base = 50 }
-    }
-
-    option = {
-        name = "Let the creature go and continue my search"
-        add_stress = -10
-        ai_chance = { base = 5 }
     }
 
     # Portraits
