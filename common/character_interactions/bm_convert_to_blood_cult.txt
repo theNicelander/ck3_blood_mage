@@ -40,32 +40,35 @@
                 custom_tooltip = convert_to_blood_cult_event_interaction.recipient.notification.tt
             }
         }
-        duel = {
-            skill = learning
-            target = scope:recipient
+        scope:actor = {
+            duel = {
+                skill = learning
+                target = scope:recipient
 
-            50 = {
-                desc = "I successfully indoctrinate them into the Blood Cult"
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 3
+                50 = {
+                    desc = "I successfully indoctrinate them into the Blood Cult"
+                    compare_modifier = {
+                        value = scope:duel_value
+                        multiplier = 3
+                    }
+                    scope:recipient = { set_character_faith = faith:cult_of_blood }
+                    send_interface_toast  = {
+                        title = "[recipient.GetShortUINameNoTooltip] was successfully converted"
+                        left_icon = scope:actor
+                        right_icon = scope:recipient
+                    }
                 }
-                scope:recipient = { set_character_faith = faith:cult_of_blood }
-                send_interface_toast  = {
-                    title = "[recipient.GetShortUINameNoTooltip] was successfully converted"
-                    left_icon = scope:actor
-				    right_icon = scope:recipient
-                }
-            }
-            50 = {
-                desc = "I fail"
-                send_interface_toast  = {
-                    title = "[recipient.GetShortUINameNoTooltip] was not converted"
-                    left_icon = scope:actor
-				    right_icon = scope:recipient
+                50 = {
+                    desc = "I fail"
+                    send_interface_toast  = {
+                        title = "[recipient.GetShortUINameNoTooltip] was not converted"
+                        left_icon = scope:actor
+                        right_icon = scope:recipient
+                    }
                 }
             }
         }
+
     }
     ai_will_do = {
         base = -10
@@ -122,29 +125,31 @@ convert_to_blood_cult_wanderer = {
                 custom_tooltip = convert_to_blood_cult_event_interaction.recipient.notification.tt
             }
         }
-        duel = {
-            skill = learning
-            target = scope:recipient
+        scope:actor = {
+            duel = {
+                skill = learning
+                target = scope:recipient
 
-            50 = {
-                desc = "I successfully indoctrinate them into the Blood Cult"
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 3
+                50 = {
+                    desc = "I successfully indoctrinate them into the Blood Cult"
+                    compare_modifier = {
+                        value = scope:duel_value
+                        multiplier = 3
+                    }
+                    scope:recipient = { set_character_faith = faith:cult_of_blood }
+                    send_interface_toast  = {
+                        title = "[recipient.GetShortUINameNoTooltip] was successfully converted"
+                        left_icon = scope:actor
+                        right_icon = scope:recipient
+                    }
                 }
-                scope:recipient = { set_character_faith = faith:cult_of_blood }
-                send_interface_toast  = {
-                    title = "[recipient.GetShortUINameNoTooltip] was successfully converted"
-                    left_icon = scope:actor
-				    right_icon = scope:recipient
-                }
-            }
-            50 = {
-                desc = "I fail"
-                send_interface_toast  = {
-                    title = "[recipient.GetShortUINameNoTooltip] was not converted"
-                    left_icon = scope:actor
-				    right_icon = scope:recipient
+                50 = {
+                    desc = "I fail"
+                    send_interface_toast  = {
+                        title = "[recipient.GetShortUINameNoTooltip] was not converted"
+                        left_icon = scope:actor
+                        right_icon = scope:recipient
+                    }
                 }
             }
         }
