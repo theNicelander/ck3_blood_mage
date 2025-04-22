@@ -1,0 +1,29 @@
+﻿l_english:
+  # Lifedrain courtier (minor)
+lifedrain_courtier_event_interaction: "Minor Lifedrain"
+lifedrain_courtier_event_interaction.recipient.notification.tt: "You start a blood magic ritual to partially drain [recipient.GetShortUINameNoTooltip], which might injure them in the process if you're not careful"
+bm_lifedrain_courtier.001.title: "Minor Lifedrain"
+bm_lifedrain_courtier.001.desc: "Your courtier stands before you, unaware of your intentions. Their lifeforce pulses invitingly, waiting to be harnessed."
+bm_lifedrain_courtier.001.a: "Drain part of their lifeforce"
+bm_lifedrain_courtier.001.a.success_desc: "You successfully harvest a portion of [recipient.GetShortUINameNoTooltip]'s lifeforce"
+bm_lifedrain_courtier.001.a.fail_desc: "You harvest a portion of [recipient.GetShortUINameNoTooltip]'s' lifeforce, but leave them injured"
+bm_lifedrain_courtier.001.a.critical_fail_desc: "The ritual spirals out of control, injuring both you and [recipient.GetShortUINameNoTooltip]"
+
+  # lifedrain prisoner (major)
+lifedrain_prisoner_event_interaction: "Major Lifedrain"
+lifedrain_prisoner_event_interaction.recipient.notification.tt: "You will use blood magic to drain [recipient.GetShortUINameNoTooltip], killing them in the process"
+lifedrain_prisoner_interaction: "Major Lifedrain"
+lifedrain_prisoner_interaction_desc: "Completely drain the life force from [recipient.GetShortUINameNoTooltip]"
+lifedrain_prisoner_interaction.recipient.notification.tt: "[recipient.GetShortUINameNoTooltip]'s life force will be drained and added to yours"
+
+  # Trait drain
+trait_drain_prisoner_event_interaction: "Drain Positive Traits"
+generic_drain_prisoner_trait_interaction_desc: "You will attempt to drain [recipient.GetShortUINameNoTooltip]'s extraordinary traits and make them your own, killing them in the process"
+generic_drain_prisoner_trait_interaction.recipient.notification.tt: "[recipient.GetShortUINameNoTooltip]'s extraordinary trait will be drained"
+
+intellect_drain_prisoner_interaction: "Intellect drain"
+physique_drain_prisoner_interaction: "Physique drain"
+beauty_drain_prisoner_interaction: "Beauty drain"
+fertility_drain_prisoner_interaction: "Fertility drain"
+giant_drain_prisoner_interaction: "Giant drain"
+pure_blooded_drain_prisoner_interaction: "Pure Blood drain"

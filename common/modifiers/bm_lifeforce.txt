@@ -1,5 +1,5 @@
 ﻿# Personal Modifier
-lifeforce_modifier = {
+lifeforce_modifier_major = {
     icon = health_positive
     stacking = yes
 
@@ -8,9 +8,22 @@ lifeforce_modifier = {
     life_expectancy = 5
     epidemic_resistance = 5
     negate_health_penalty_add = 0.5
+    prowess = 2
 }
 
-lifeforce_modifier_negative = {
+lifeforce_modifier_minor = {
+    icon = health_positive
+    stacking = yes
+
+    health = 0.2
+    years_of_fertility = 2
+    life_expectancy = 2
+    epidemic_resistance = 2
+    negate_health_penalty_add = 0.2
+    prowess = 1
+}
+
+lifeforce_modifier_negative_major = {
     icon = health_negative
     stacking = yes
 
@@ -19,15 +32,41 @@ lifeforce_modifier_negative = {
     life_expectancy = -5
     epidemic_resistance = -5
     negate_health_penalty_add = -0.5
+    prowess = -2
 }
 
-lifeforce_modifier_negative_major = {
+lifeforce_modifier_negative_minor = {
     icon = health_negative
     stacking = yes
 
-    health = -1.5
-    years_of_fertility = -15
-    life_expectancy = -15
-    epidemic_resistance = -15
-    negate_health_penalty_add = -1.5
+    health = -0.2
+    years_of_fertility = -2
+    life_expectancy = -2
+    epidemic_resistance = -2
+    negate_health_penalty_add = -0.2
+    prowess = -1
+}
+
+lifedrained_modifier = {
+    icon = health_negative
+    stacking = yes
+
+    health = -0.5
+    years_of_fertility = -5
+    life_expectancy = -10
+    epidemic_resistance = -5
+    negate_health_penalty_add = -0.5
+    prowess = -5
+}
+
+lifeforce_modifier_crimson_warrior = {
+    icon = blood_positive
+    health = 0.5
+    prowess = 5
+}
+
+lifeforce_modifier_crimson_champion = {
+    icon = blood_positive
+    health = -0.5
+    prowess = 10
 }

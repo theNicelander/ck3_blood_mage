@@ -1,0 +1,29 @@
+﻿l_english:
+  # Crimson Rune Modifiers
+  minor_crimson_rune_modifier: "Minor Crimson Rune"
+  minor_crimson_rune_modifier_desc: "These rudimentary blood symbols rarely harvest [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] for your use. \n\nBlood-etched arcane symbols covering your heart area pulse faintly beneath your skin, drawing ambient lifeforce into your body like a slowly beating second heart."
+
+  major_crimson_rune_modifier: "Major Crimson Rune"
+  major_crimson_rune_modifier_desc: "These complex runes sometimes harvest [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] from your surroundings, with occasional bursts of [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]. Rarely, they may capture both types simultaneously. \n\nElaborate crimson tattoos flow across your torso and arms like living veins, constantly harvesting the vital essence around you and channeling it into your magical reserves."
+
+  superior_crimson_rune_modifier: "Superior Crimson Rune"
+  superior_crimson_rune_modifier_desc: "These masterful blood inscriptions often draw [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] to you unbidden. They frequently capture [GetModifier('lifeforce_modifier_major').GetNameWithTooltip], and sometimes manifest both types of power at once. \n\nMasterful blood inscriptions cover your vital areas, sometimes shifting beneath your skin with a life of their own. Your body has become a constant conduit for lifeforce, drawing power from the very air you breathe."
+
+  crimson_runes_effects_list.effects_list: "Gain increasingly powerful Blood Runes (each tier replaces the previous):\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('minor_crimson_rune_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('major_crimson_rune_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('superior_crimson_rune_modifier').GetNameWithTooltip]"
+
+
+  # Crimson Rune Event
+  bm_crimson_rune.001.title: "Inscribe the Blood Runes"
+  bm_crimson_rune.001.desc: "You unfurl ancient scrolls depicting intricate patterns of power - blood runes that transform the mage's own body into a vessel for harvesting lifeforce. The ritual requires special needles forged in blood-quenched fire, inks mixed with your own essence, and the steady hand of one who understands that each line is not merely drawn but bound to your very being.\n\nThe pain will be excruciating, the commitment permanent. Yet with each drop of blood and ink merged into your flesh, your connection to the crimson arts will deepen. Such markings are the sign of a blood mage who seeks true mastery - one who becomes not merely a wielder of blood magic, but a living embodiment of it."
+
+  bm_crimson_rune.001.minor: "The Minor Crimson Rune - a pulsing sigil over my heart"
+  bm_crimson_rune.001.major: "The Major Crimson Rune - a network of power flowing across my flesh"
+  bm_crimson_rune.001.superior: "The Superior Crimson Rune - transform my skin into a living grimoire of blood magic"
+  bm_crimson_rune.001.z: "My current markings serve me well enough"
+  bm_crimson_rune_yearly_event_popup.title: "Your Crimson Rune granted you lifeforce"
+
+  # Decision
+  bm_blood_rune_decision: "Inscribe Blood Runes"
+  bm_blood_rune_decision_confirm: "Begin the Blood Inscription"
+  bm_blood_rune_decision_desc: "Use ancient blood magic to inscribe your flesh with permanent runes that enhance your connection to lifeforce. These arcane tattoos will allow you to passively harvest ambient life energy, strengthening your powers over time."
+  bm_blood_rune_decision_tooltip: "Permanently mark your body with blood runes that generate lifeforce over time"

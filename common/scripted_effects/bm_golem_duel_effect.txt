@@ -1,0 +1,77 @@
+﻿golem_duel_effect = {
+    add_stress = 5
+    add_piety = -25
+    duel = {
+        skill = learning
+        value = 0
+        40 = {
+            desc = blood_golem.002.success
+            compare_modifier = {
+                value = scope:duel_value
+                multiplier = 3
+            }
+            send_interface_toast = {
+                title = blood_golem.002.success
+                left_icon = root
+                right_icon = scope:blood_golem
+                scope:blood_golem = { add_trait = $TRAIT$ }
+                add_xp_bloodline = yes
+            }
+        }
+        60 = {
+            desc = blood_golem.002.fail
+            send_interface_toast = {
+                title = blood_golem.002.fail
+                left_icon = root
+                right_icon = scope:blood_golem
+                temporary_negative_lifeforce_effect_minor = yes
+            }
+            scale_cost_by_number_of_traits_golem_has = yes
+        }
+    }
+}
+
+golem_duel_effect_level = {
+    add_stress = 5
+    add_piety = -25
+    duel = {
+        skill = learning
+        40 = {
+            desc = blood_golem.002.success
+            compare_modifier = {
+                value = scope:duel_value
+                multiplier = 3
+            }
+            send_interface_toast = {
+                title = blood_golem.002.success
+                left_icon = root
+                right_icon = scope:blood_golem
+                add_xp_bloodline = yes
+
+                scope:blood_golem = {
+                    if = {
+                        limit = { NOT = { has_trait = $trait$ } }
+                        add_trait = $trait$_1
+                    }
+                    else = {
+                        change_trait_rank = {
+                            trait = $trait$
+                            rank = 1
+                            max = 4
+                        }
+                    }
+                }
+            }
+        }
+        60 = {
+            desc = blood_golem.002.fail
+            send_interface_toast = {
+                title = blood_golem.002.fail
+                left_icon = root
+                right_icon = scope:blood_golem
+                temporary_negative_lifeforce_effect_minor = yes
+            }
+            scale_cost_by_number_of_traits_golem_has = yes
+        }
+    }
+}

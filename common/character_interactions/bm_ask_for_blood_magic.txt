@@ -5,11 +5,11 @@
     desc = grant_blood_magic_interaction_desc
     interface_priority = 150
 
-    cost = { piety = 500 }
+    cost = { piety = 300 }
 
     is_shown = {
         scope:recipient = {
-            has_trait = lifestyle_blood_mage_group
+            has_trait = lifestyle_blood_mage
             OR = {
                 has_relation_lover = scope:actor
                 has_relation_friend = scope:actor
@@ -17,14 +17,12 @@
                 has_relation_soulmate = scope:actor
             }
         }
-
-        scope:actor = { NOT = { has_trait = lifestyle_blood_mage_group } }
+        scope:actor = { NOT = { has_trait = lifestyle_blood_mage } }
     }
 
     on_accept = {
         scope:actor = {
-            add_trait = lifestyle_blood_mage_group
-            add_piety_level = -1
+            add_trait = lifestyle_blood_mage
         }
     }
 

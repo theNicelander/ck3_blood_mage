@@ -1,0 +1,77 @@
+﻿# Dynasty - Crimson Charisma
+dynasty_crimson_charisma_modifier = {
+    icon = blood_magic
+    
+    diplomacy = 2
+    general_opinion = 5
+    monthly_prestige = 0.1
+}
+
+# Dynasty - Crimson Fury
+dynasty_crimson_fury_modifier = {
+    icon = blood_magic
+
+    martial = 2
+    prowess = 3
+    knight_effectiveness_mult = 0.15
+    knight_limit = 1
+}
+
+# Dynasty - Crimson Prosperity
+dynasty_crimson_prosperity_modifier = {
+    icon = blood_magic
+
+    stewardship = 2
+    monthly_county_control_growth_add = 0.1
+    domain_tax_mult = 0.05
+    development_growth = 0.05
+}
+
+# Dynasty - Crimson Shadows
+dynasty_crimson_shadows_modifier = {
+    icon = blood_magic
+
+    intrigue = 2
+    # Make BM's schemes better
+    owned_hostile_scheme_success_chance_add = 5
+    hostile_scheme_phase_duration_add = -5
+
+    # Disrupt other schemes
+    enemy_hostile_scheme_phase_duration_add = 5
+    enemy_hostile_scheme_success_chance_add = -5
+}
+
+# Dynasty - Crimson Insight
+dynasty_crimson_insight_modifier = {
+    icon = blood_magic
+
+    learning = 2
+    monthly_piety = 0.15
+    character_capital_county_monthly_development_growth_add = 0.05
+    epidemic_resistance = 2
+}
+
+# Dynasty - Crimson Legacy
+dynasty_crimson_legacy_modifier = {
+    icon = blood_magic
+
+    fertility = 0.05
+    positive_random_genetic_chance = 0.05
+    genetic_trait_strengthen_chance = 0.05
+    positive_inactive_inheritance_chance = 0.05
+    inbreeding_chance = -0.05
+    negative_inactive_inheritance_chance = -0.05
+    negative_random_genetic_chance = -0.05
+    health = 0.3
+}
+
+# Dynasty - Crimson Expertise
+dynasty_crimson_expertise_modifier = {
+    icon = blood_magic
+
+    monthly_lifestyle_xp_gain_mult = 0.05
+    learning_lifestyle_xp_gain_mult = 0.05
+    stress_loss_mult = 0.05
+    stress_gain_mult = -0.05
+    learn_language_scheme_phase_duration_add = -15
+}

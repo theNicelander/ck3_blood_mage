@@ -1,47 +1,104 @@
-﻿channel_lifeforce_minor_decision = {
+﻿channel_lifeforce_enlightenment_minor = {
     picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
-    ai_check_interval = 12
-    desc = channel_lifeforce_minor_decision_desc
     decision_group_type = bm_decision_group
 
     cooldown = { years = 1 }
     cost = { piety = 50 }
-    
-    is_shown = { has_trait = lifestyle_blood_mage_group }
-    is_valid = { 
-        has_character_modifier = lifeforce_modifier
-        has_trait = lifestyle_blood_mage_group
+
+    is_shown = { has_trait = lifestyle_blood_mage }
+    is_valid = {
+        has_character_modifier = lifeforce_modifier_minor
+        has_trait = lifestyle_blood_mage
     }
-    
     effect = {
+        trigger_event = { id = bm_channel_lifeforce_enlightenment_minor.001 }
         blood_magic_used_minor = yes
-        blood_magic_exp_flat = { EXP = 1 }
-        trigger_event = { id = bm_channel_lifeforce_minor.99 }
-        custom_tooltip = channel_lifeforce_minor_decision_tooltip_desc
+        add_xp_bm_dynamic = {
+            TRACK = enlightenment
+            XP = 1
+        }
+        custom_tooltip = channel_lifeforce_enlightenment_minor.effects_list
     }
-    ai_will_do = { base = 10 }
+    ai_check_interval = 6
+    ai_will_do = { 
+        base = 0
+        modifier = {
+            health > fine_health
+            add = 100
+        }
+    }
 }
 
-channel_lifeforce_major_decision = {
+channel_lifeforce_enlightenment_major = {
     picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
-    ai_check_interval = 12
-    desc = channel_lifeforce_major_decision_desc
     decision_group_type = bm_decision_group
 
-    cooldown = { years = 2 }
-    cost = { piety = 100 }
-    
-    is_shown = { has_trait = lifestyle_blood_mage_group }
-    is_valid = { 
-        has_character_modifier = lifeforce_modifier
-        has_trait = lifestyle_blood_mage_group
+    cooldown = { years = 3 }
+    cost = { piety = 150 }
+
+    is_shown = { has_trait = lifestyle_blood_mage }
+    is_valid = {
+        has_character_modifier = lifeforce_modifier_major
+        has_trait = lifestyle_blood_mage
+        piety_level >= 1
     }
-    
     effect = {
-        blood_magic_used_minor = yes
-        blood_magic_exp_flat = { EXP = -1 }
-        trigger_event = { id = bm_channel_lifeforce_major.99 }
-        custom_tooltip = channel_lifeforce_major_decision_tooltip_desc
+        trigger_event = { id = bm_channel_lifeforce_enlightenment_major.001 }
+        blood_magic_used_major = yes
+        add_xp_bm_dynamic = {
+            TRACK = enlightenment
+            XP = 5
+        }
+        custom_tooltip = channel_lifeforce_enlightenment_major.effects_list
     }
-    ai_will_do = { base = 10 }
+    ai_check_interval = 6
+    ai_will_do = { 
+        base = 0
+        modifier = {
+            health > excellent_health
+            add = 100
+        }
+        modifier = {
+            health > good_health
+            add = 50
+        }
+        modifier = {
+            health > fine_health
+            add = 10
+        }
+    }
+}
+
+
+channel_lifeforce_bloodline = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
+    
+    decision_group_type = bm_decision_group
+
+    cooldown = { years = 3 }
+    cost = { piety = 200 }
+
+    is_shown = { has_trait = lifestyle_blood_mage }
+    is_valid = {
+        has_character_modifier = lifeforce_modifier_major
+        is_house_head = yes
+        piety_level >= 1
+    }
+    effect = {
+        trigger_event = { id = bm_channel_lifeforce_bloodline.001 }
+        add_xp_bm_dynamic = {
+            TRACK = bloodline
+            XP = 5
+        }
+        blood_magic_used_major = yes
+        custom_tooltip = channel_lifeforce_bloodline.effects_list
+    }
+    ai_check_interval = 12
+    ai_will_do = { 
+        base = 0
+        modifier = {
+            health > good_health
+            add = 50
+        }
+    }
 }

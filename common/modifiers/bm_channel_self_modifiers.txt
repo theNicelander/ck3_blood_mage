@@ -1,0 +1,89 @@
+﻿# Crimson Charisma - Diplomacy
+crimson_charisma_modifier = {
+    icon = blood_magic
+    
+    diplomacy = 3
+    diplomacy_per_piety_level = 1
+    general_opinion = 5
+    monthly_prestige_gain_mult = 0.1
+    monthly_prestige = 0.25
+}
+
+# Crimson Fury - Martial
+crimson_fury_modifier = {
+    icon = blood_magic
+    
+    martial = 2
+    prowess = 4
+    martial_per_piety_level = 1
+    prowess_per_piety_level = 2
+    knight_limit = 2
+    knight_effectiveness_mult = 0.35
+    advantage = 2
+}
+
+# Crimson Prosperity - Stewardship
+crimson_prosperity_modifier = {
+    icon = blood_magic
+    
+    stewardship = 3
+    stewardship_per_piety_level = 1
+    monthly_county_control_growth_add = 0.25
+    domain_limit = 1
+    domain_tax_mult = 0.15
+    development_growth = 0.10
+}
+
+# Crimson Shadows - Intrigue
+crimson_shadows_modifier = {
+    icon = blood_magic
+    
+    intrigue = 3
+    intrigue_per_piety_level = 1
+    
+    # Make BM's schemes better
+    owned_hostile_scheme_success_chance_add = 10
+    hostile_scheme_phase_duration_add = -10
+
+    # Disrupt other schemes
+    enemy_hostile_scheme_phase_duration_add = 10
+    enemy_hostile_scheme_success_chance_add = -10
+}
+
+# Crimson Insight - Learning
+crimson_insight_modifier = {
+    icon = blood_magic
+    
+    learning = 3
+    learning_per_piety_level = 1
+    monthly_piety = 0.25
+    monthly_piety_gain_mult = 0.1
+    character_capital_county_monthly_development_growth_add = 0.1
+    epidemic_resistance = 5
+}
+
+# Crimson Legacy - Traits
+crimson_legacy_modifier = {
+    icon = blood_magic
+    
+    fertility = 0.15
+    positive_random_genetic_chance = 0.15
+    genetic_trait_strengthen_chance = 0.15
+    positive_inactive_inheritance_chance = 0.15
+    inbreeding_chance = -0.15
+    negative_inactive_inheritance_chance = -0.15
+    negative_random_genetic_chance = -0.15
+    health = 1
+}
+
+# Crimson Expertise - Experience
+crimson_expertise_modifier = {
+    icon = blood_magic
+    
+    monthly_lifestyle_xp_gain_mult = 0.15
+    learning_lifestyle_xp_gain_mult = 0.1
+    stress_loss_mult = 0.1
+    stress_gain_mult = -0.1
+    max_learn_language_schemes_add = 2
+    learn_language_scheme_phase_duration_add = -40
+}

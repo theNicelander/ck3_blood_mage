@@ -1,69 +1,136 @@
 ﻿l_english:
-  lifeforce_modifier:0 "Lifeforce"
-  lifeforce_modifier_desc:0 "Lifeforce"
-  lifeforce_modifier_negative:0 "Lifeforce drained"
-  lifeforce_modifier_negative_desc:0 "Lifeforce drained"
-  
-  lifeforce_modifier_negative_major:0 "Lifeforce drained (major)"
-  lifeforce_modifier_negative_major_desc:0 "Lifeforce drained (major)"
-  
+lifedrained_modifier: "Lifedrained"
+
+lifeforce_modifier_minor: "Minor Lifeforce"
+lifeforce_modifier_minor_desc: "Minor Lifeforce"
+
+lifeforce_modifier_major: "Lifeforce"
+lifeforce_modifier_major_desc: "Lifeforce"
+
+lifeforce_modifier_negative_minor: "Cast Minor Blood Magic"
+lifeforce_modifier_negative_minor_desc: "Cast Minor Blood Magic"
+
+lifeforce_modifier_negative_major: "Cast Major Blood Magic"
+lifeforce_modifier_negative_major_desc: "Cast Major Blood Magic"
+
   # Dynasty
-  blood_mage_coven_modifier:0 "Enhanced dynasty blood potency"
-  blood_mage_coven_modifier_desc:0 "Enhanced dynasty blood potency"
-  
+blood_mage_coven_modifier: "Enhanced dynasty blood potency"
+blood_mage_coven_modifier_desc: "Enhanced dynasty blood potency"
+
   # Grant / Recieve blood magic
-  granted_blood_magic_modifier:0 "Granted Blood Magic"
-  granted_blood_magic_modifier_desc:0 "This character was recently granted Blood Magic by another"
-  
-  # Spend lifeforce on skills 
-  diplomacy_lifeforce_modifier:0 "Channel Diplomacy"
-  diplomacy_lifeforce_modifier_desc:0 "Blood Magic temporarily improving Diplomacy"
-  
-  martial_lifeforce_modifier:0 "Channel Martial"
-  martial_lifeforce_modifier_desc:0 "Blood Magic temporarily improving Martial"
-  
-  stewardship_lifeforce_modifier:0 "Channel Stewardship"
-  stewardship_lifeforce_modifier_desc:0 "Blood Magic temporarily improving Stewardship"
-  
-  intrigue_lifeforce_modifier:0 "Channel Intrigue"
-  intrigue_lifeforce_modifier_desc:0 "Blood Magic temporarily improving Intrigue"
-  
-  learning_lifeforce_modifier:0 "Channel Learning"
-  learning_lifeforce_modifier_desc:0 "Blood Magic temporarily improving Learning"
-  
-  prowess_lifeforce_modifier:0 "Channel Prowess"
-  prowess_lifeforce_modifier_desc:0 "Blood Magic temporarily improving Prowess"
-  
-  exp_lifeforce_modifier:0 "Channel Experience Gain"
-  exp_lifeforce_modifier_desc:0 "Blood Magic temporarily improving all experience gain"
-  
+granted_blood_magic_modifier: "Granted Blood Magic"
+granted_blood_magic_modifier_desc: "This character was recently granted Blood Magic by another"
+
+  # Spend lifeforce on skills
+diplomacy_lifeforce_modifier: "Channel Diplomacy"
+diplomacy_lifeforce_modifier_desc: "Blood Magic temporarily improving Diplomacy"
+
+martial_lifeforce_modifier: "Channel Martial"
+martial_lifeforce_modifier_desc: "Blood Magic temporarily improving Martial"
+
+stewardship_lifeforce_modifier: "Channel Stewardship"
+stewardship_lifeforce_modifier_desc: "Blood Magic temporarily improving Stewardship"
+
+intrigue_lifeforce_modifier: "Channel Intrigue"
+intrigue_lifeforce_modifier_desc: "Blood Magic temporarily improving Intrigue"
+
+learning_lifeforce_modifier: "Channel Learning"
+learning_lifeforce_modifier_desc: "Blood Magic temporarily improving Learning"
+
+prowess_lifeforce_modifier: "Channel Prowess"
+prowess_lifeforce_modifier_desc: "Blood Magic temporarily improving Prowess"
+
+exp_lifeforce_modifier: "Channel Experience Gain"
+exp_lifeforce_modifier_desc: "Blood Magic temporarily improving all experience gain"
+
   # Event modifiers
-  drained_beggar_personal:0 "Drained beggar"
-  drained_beggar_personal_desc:0 "Drained a beggar in the streets"
-  
-  drained_beggar_holding:0 "Drained beggar"
-  drained_beggar_holding_desc:0 "Drained a beggar in the streets"
-  
-  healed_beggar_holding_1:0 "Healed a wounded beggar"
-  healed_beggar_holding_1_desc:0 "Healed a beggar in the streets"
-  
-  healed_beggar_holding_2:0 "Healed a beggar with typhus"
-  healed_beggar_holding_2_desc:0 "Healed a beggar in the streets"
-  
-  healed_beggar_holding_3:0 "Healed a blind beggar"
-  healed_beggar_holding_3_desc:0 "Healed a beggar in the streets"
-  
-  healed_beggar_holding_4:0 "Healed a beggar with cancer"
-  healed_beggar_holding_4_desc:0 "Healed a beggar in the streets"
-  
-  magic_opinion_positive:0 "Blood Magic"
-  magic_opinion_positive_desc:0 "Blood Magic"
-  
-  magic_opinion_negative:0 "Blood Magic"
-  magic_opinion_negative_desc:0 "Blood Magic"
-  
-  made_me_a_blood_mage:0 "Made me a blood mage"
-  made_me_a_blood_mage_desc:0 "Made me a blood mage"
-  
-  cured_my_illness:0 "Cured my illness"
-  cured_my_illness_desc:0 "Cured my illness"
+drained_beggar_personal: "Drained beggar"
+drained_beggar_personal_desc: "Drained a beggar in the streets"
+
+drained_beggar_holding: "Drained beggar"
+drained_beggar_holding_desc: "Drained a beggar in the streets"
+
+healed_beggar_holding_1: "Healed a wounded beggar"
+healed_beggar_holding_1_desc: "Healed a beggar in the streets"
+
+healed_beggar_holding_2: "Healed a beggar with typhus"
+healed_beggar_holding_2_desc: "Healed a beggar in the streets"
+
+healed_beggar_holding_3: "Healed a blind beggar"
+healed_beggar_holding_3_desc: "Healed a beggar in the streets"
+
+healed_beggar_holding_4: "Healed a beggar with cancer"
+healed_beggar_holding_4_desc: "Healed a beggar in the streets"
+
+magic_opinion_positive: "Blood Magic"
+magic_opinion_positive_desc: "Blood Magic"
+
+magic_opinion_negative: "Blood Magic"
+magic_opinion_negative_desc: "Blood Magic"
+
+made_me_a_blood_mage: "Made me a blood mage"
+made_me_a_blood_mage_desc: "Made me a blood mage"
+
+cured_my_illness: "Cured my illness"
+cured_my_illness_desc: "Cured my illness"
+
+lifedrained_me: "Lifedrained me"
+lifedrained_me_desc: "Lifedrained me"
+
+  # Dynasty modifiers
+dynasty_crimson_charisma_modifier: "Dynastic Crimson Charisma"
+dynasty_crimson_charisma_modifier_desc: "Blood magic enhances the diplomatic prowess of your entire dynasty."
+
+dynasty_crimson_fury_modifier: "Dynastic Crimson Fury"
+dynasty_crimson_fury_modifier_desc: "Your dynasty's warriors are empowered by blood magic in battle."
+
+dynasty_crimson_prosperity_modifier: "Dynastic Crimson Prosperity"
+dynasty_crimson_prosperity_modifier_desc: "Blood-infused administration increases your dynasty's wealth and control."
+
+dynasty_crimson_shadows_modifier: "Dynastic Crimson Shadows"
+dynasty_crimson_shadows_modifier_desc: "Your dynasty excels in the shadows through blood-enhanced intrigue."
+
+dynasty_crimson_insight_modifier: "Dynastic Crimson Insight"
+dynasty_crimson_insight_modifier_desc: "Blood magic bestows arcane knowledge upon your dynasty."
+
+dynasty_crimson_resilience_modifier: "Dynastic Crimson Resilience"
+dynasty_crimson_resilience_modifier_desc: "Blood magic strengthens your dynasty's vitality and endurance."
+
+dynasty_crimson_legacy_modifier: "Dynastic Crimson Legacy"
+dynasty_crimson_legacy_modifier_desc: "Your dynasty's bloodline is magically fortified against weakness."
+
+dynasty_crimson_expertise_modifier: "Dynastic Crimson Expertise"
+dynasty_crimson_expertise_modifier_desc: "Blood magic accelerates your dynasty's aptitude for learning."
+
+  # Personal modifiers
+crimson_charisma_modifier: "Crimson Charisma"
+crimson_charisma_modifier_desc: "Your words and presence are enhanced by blood magic."
+
+crimson_fury_modifier: "Crimson Fury"
+crimson_fury_modifier_desc: "Blood magic fuels your martial prowess and command of knights."
+
+crimson_prosperity_modifier: "Crimson Prosperity"
+crimson_prosperity_modifier_desc: "Your administration is empowered by blood magic."
+
+crimson_shadows_modifier: "Crimson Shadows"
+crimson_shadows_modifier_desc: "Blood magic enhances your schemes and plots."
+
+crimson_insight_modifier: "Crimson Insight"
+crimson_insight_modifier_desc: "Arcane knowledge flows through your blood."
+
+crimson_legacy_modifier: "Crimson Legacy"
+crimson_legacy_modifier_desc: "Blood magic strengthens your genetic potential."
+
+crimson_expertise_modifier: "Crimson Expertise"
+crimson_expertise_modifier_desc: "Blood magic accelerates your learning capabilities."
+
+# Trait drain attempted
+trait_drain_attempted: "Trait Drain Recently Attempted"
+trait_drain_attempted_desc: "I must wait before trying to trait drain again"
+
+# Major, temporary buffs (fallback so you can always get something)
+temporary_buff_bloodline: "Bloodline Crimson Empowered"
+temporary_buff_bloodline_desc: "Bloodline Crimson Empowered"
+
+temporary_buff_self: "Crimson Empowered"
+temporary_buff_self_desc: "Crimson Empowered"

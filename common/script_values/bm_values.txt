@@ -1,98 +1,120 @@
 ﻿
 # Lifedraining
-lifedrain_piety_cost = 25
-lifedrain_piety_cost_neg = -25
+lifedrain_piety_cost = 50
+lifedrain_piety_cost_neg = -50
+lifedrain_piety_cost_minor = 25
+lifedrain_piety_cost_minor_neg = -25
 
 # Trait draining
 trait_drain_base_piety_cost = -100
-trait_drain_level_1_piety_cost = -150
-trait_drain_level_2_piety_cost = -250
+trait_drain_level_2_piety_cost = -75
+trait_drain_level_3_piety_cost = -150
 
-trait_drain_modifier_1 = 50
-trait_drain_modifier_2 = 100
-trait_drain_modifier_3 = 150
+# Modifiers
+trait_drain_modifier_1 = 10
+trait_drain_modifier_2 = 25
+trait_drain_modifier_3 = 50
+
+trait_drain_modifier_1_neg = -10
+trait_drain_modifier_2_neg = -25
+trait_drain_modifier_3_neg = -50
+
+trait_drain_harder_per_trait_modifier = {
+    # Intellect
+    if = {
+        limit = { has_trait = intellect_good_1 }
+        add = trait_drain_modifier_1_neg
+    }
+    if = {
+        limit = { has_trait = intellect_good_2 }
+        add = trait_drain_modifier_2_neg
+    }
+    if = {
+        limit = { has_trait = intellect_good_3 }
+        add = trait_drain_modifier_3_neg
+    }
+    
+    # Physique
+    if = {
+        limit = { has_trait = physique_good_1 }
+        add = trait_drain_modifier_1_neg
+    }
+    if = {
+        limit = { has_trait = physique_good_2 }
+        add = trait_drain_modifier_2_neg
+    }
+    if = {
+        limit = { has_trait = physique_good_3 }
+        add = trait_drain_modifier_3_neg
+    }
+
+    # Beauty
+    if = {
+        limit = { has_trait = beauty_good_1 }
+        add = trait_drain_modifier_1_neg
+    }
+    if = {
+        limit = { has_trait = beauty_good_2 }
+        add = trait_drain_modifier_2_neg
+    }
+    if = {
+        limit = { has_trait = beauty_good_3 }
+        add = trait_drain_modifier_3_neg
+    }
+
+    # Other traits
+    if = {
+        limit = { has_trait = fecund }
+        add = trait_drain_modifier_1_neg
+    }
+    if = {
+        limit = { has_trait = giant }
+        add = trait_drain_modifier_1_neg
+    }
+    if = {
+        limit = { has_trait = pure_blooded }
+        add = trait_drain_modifier_1_neg
+    }
+}
+
 
 trait_drain_intellect_cost = {
     add = trait_drain_base_piety_cost
     if = {
-        limit = { has_trait = intellect_good_1 }
-        add = trait_drain_level_1_piety_cost
-    }
-    if = {
         limit = { has_trait = intellect_good_2 }
         add = trait_drain_level_2_piety_cost
+    }
+    if = {
+        limit = { has_trait = intellect_good_3 }
+        add = trait_drain_level_3_piety_cost
     }
 }
 
 trait_drain_physique_cost = {
     add = trait_drain_base_piety_cost
     if = {
-        limit = { has_trait = physique_good_1 }
-        add = trait_drain_level_1_piety_cost
-    }
-    if = {
         limit = { has_trait = physique_good_2 }
         add = trait_drain_level_2_piety_cost
+    }
+    if = {
+        limit = { has_trait = physique_good_3 }
+        add = trait_drain_level_3_piety_cost
     }
 }
 
 trait_drain_beauty_cost = {
     value = trait_drain_base_piety_cost
     if = {
-        limit = { has_trait = beauty_good_1 }
-        add = trait_drain_level_1_piety_cost
-    }
-    if = {
         limit = { has_trait = beauty_good_2 }
         add = trait_drain_level_2_piety_cost
     }
-}
-
-enhance_blood_mage_personal_piety_level_cost = {
-    value = 1
     if = {
-        limit = {
-            has_trait = lifestyle_blood_mage_1
-        }
-        add = 2
+        limit = { has_trait = beauty_good_3 }
+        add = trait_drain_level_3_piety_cost
     }
 }
 
-enhance_blood_mage_personal_piety_level_cost_negative = {
-    value = -1
-    if = {
-        limit = {
-            has_trait = lifestyle_blood_mage_1
-        }
-        add = -1
-    }
-}
-
-blood_mage_rank_multiplier = {
-    value = 10
-    if = {
-        limit = { has_trait = lifestyle_blood_mage_1 }
-        add = 1
-    }
-    if = {
-        limit = { has_trait = lifestyle_blood_mage_2 }
-        add = 2
-    }
-}
-
-blood_mage_rank_base = {
-    value = 0
-    if = {
-        limit = { has_trait = lifestyle_blood_mage_1 }
-        add = 25
-    }
-    if = {
-        limit = { has_trait = lifestyle_blood_mage_2 }
-        add = 50
-    }
-}
-
-trait_drain_modifer_per_trait = {
+trait_drain_modifier_per_trait = {
     value = 0
 
     # intellect

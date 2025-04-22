@@ -1,13 +1,19 @@
-﻿temporary_negative_lifeforce_effect = {
+﻿temporary_negative_lifeforce_effect_major = {
     add_character_modifier = {
-        modifier = lifeforce_modifier_negative
-        days = 365
+        modifier = lifeforce_modifier_negative_major
+        days = 1095
     }
 }
 
-temporary_negative_lifeforce_effect_major = {
+temporary_negative_lifeforce_effect_minor = {
     add_character_modifier = {
-        modifier = lifeforce_modifier_negative_major
-        days = 3650
+        modifier = lifeforce_modifier_negative_minor
+        days = 365
+    }
+}
+temporary_trait_drain_attempted = {
+    add_character_modifier = {
+        modifier = trait_drain_attempted
+        days = 185
     }
 }

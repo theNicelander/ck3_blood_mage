@@ -4,7 +4,7 @@
 
     can_construct_potential = {
         building_requirement_castle_city_church = { LEVEL = 01 }
-        scope:holder = { has_trait = lifestyle_blood_mage_group }
+        scope:holder = { has_trait = lifestyle_blood_mage }
     }
 
     is_enabled = { county.duchy.holder = county.holder }
@@ -51,14 +51,7 @@ bm_university_1 = {
     can_construct_potential = {
         building_requirement_castle_city_church = { LEVEL = 01 }
         scope:holder = {
-            has_trait = lifestyle_blood_mage_group
-        }
-    }
-
-    can_construct_showing_failures_only = {
-        scope:holder = {
-            has_trait = lifestyle_blood_mage_group
-
+            has_trait = lifestyle_blood_mage
         }
     }
 
@@ -110,17 +103,7 @@ bm_university_2 = {
     can_construct_potential = {
         building_requirement_castle_city_church = { LEVEL = 01 }
         scope:holder = {
-            has_trait = lifestyle_blood_mage_group
-        }
-    }
-
-    can_construct_showing_failures_only = {
-        scope:holder = {
-            or = {
-                has_trait = lifestyle_blood_mage_1
-                has_trait = lifestyle_blood_mage_2
-            }
-
+            has_trait = lifestyle_blood_mage
         }
     }
 
@@ -172,16 +155,7 @@ bm_university_3 = {
     can_construct_potential = {
         building_requirement_castle_city_church = { LEVEL = 01 }
         scope:holder = {
-            has_trait = lifestyle_blood_mage_group
-        }
-    }
-
-    can_construct_showing_failures_only = {
-        scope:holder = {
-            or = {
-                has_trait = lifestyle_blood_mage_2
-            }
-
+            has_trait = lifestyle_blood_mage
         }
     }
 

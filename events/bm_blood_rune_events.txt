@@ -1,0 +1,56 @@
+﻿namespace = bm_crimson_rune
+
+bm_crimson_rune.001 = {
+    type = character_event
+    title = bm_crimson_rune.001.title
+    desc = bm_crimson_rune.001.desc
+    theme = witchcraft
+
+    # Minor Crimson Rune
+    option = {
+        name = bm_crimson_rune.001.minor
+        trigger = {
+            NOT = {
+                has_character_modifier = minor_crimson_rune_modifier
+                has_character_modifier = major_crimson_rune_modifier
+                has_character_modifier = superior_crimson_rune_modifier
+            }
+        }
+        add_character_modifier = {
+            modifier = minor_crimson_rune_modifier
+        }
+        ai_chance = {  base = 100 }
+    }
+
+    # Major Crimson Rune
+    option = {
+        name = bm_crimson_rune.001.major
+        trigger = {
+            has_character_modifier = minor_crimson_rune_modifier
+        }
+        add_character_modifier = {
+            modifier = major_crimson_rune_modifier
+        }
+        remove_character_modifier = minor_crimson_rune_modifier
+        ai_chance = {  base = 100 }
+    }
+
+    # Superior Crimson Rune
+    option = {
+        name = bm_crimson_rune.001.superior
+        trigger = {
+            has_character_modifier = major_crimson_rune_modifier
+        }
+        add_character_modifier = {
+            modifier = superior_crimson_rune_modifier
+        }
+        remove_character_modifier = major_crimson_rune_modifier
+        ai_chance = {  base = 100 }
+    }
+
+    # Portraits
+    left_portrait = {
+        character = root
+        animation = pain
+    }
+}

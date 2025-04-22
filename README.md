@@ -1,42 +1,80 @@
 # CK3 Blood Mage Mod
-The aim of this mod, is to make a magical playthrough work from a roleplay perspective, while not being overpowered. 
 
-It also aims to not overwrite any gamefiles, to ensure `maximum compatibility with other mods`
+This mod incorporates low-fantasy blood magic into CK3 in a balanced, immersive way. Play as a powerful Blood Mage who harnesses life essence to extend their lifespan, gain supernatural abilities, and even absorb traits from others.
 
-## What can Blood Mages do? 
-Blood mages rely heavily on `piety` and a new `lifeforce` modifier which increases their lifespan. 
+**Maximum compatibility**: This mod doesn't overwrite any base game files, ensuring it works alongside other mods.
 
-They can expend their own `lifeforce` in various ways, as well as access a range of other abilities. 
+## Blood Mage Trait and Progression
 
-- Spend a **small amount** of `piety` to drain `lifeforce` from prisoners, killing them in the process
-- Spend a **large amount** of `piety` for a `chance` to drain a positive trait from prisoners (`giant`, `fecund`, etc), killing them in the process
-- Spend a **VERY large amount** of faith for a `chance` to drain a positive levellable trait from prisoners (`hale`, `quick`, `comely`, etc), killing them in the process
-    - The higher level the trait is, the more likely the drain is to be successful
-    - If the player already has the trait, it becomes less successful
-- Grant others the power of `blood magic`, at the cost of their own `lifeforce` and `piety`
-- Ask friends to be granted the power of blood magic, at a **VERY large** cost of `piety` 
-- Form Blood Mage covenants, growing in power as the dynasty grows
-- A unique Blood Mage faith, with holy sites on islands, mainly in the Mediterranean. 
-- Spend `lifeforce` to gain temporary buffs to their skills
-- Unique Blood Mage duchy building
+The Blood Mage trait now features a progression system with four distinct specialization tracks:
 
-<img src="thumbnail.jpg"/>
+- **Enlightenment**: Focus on personal power and knowledge
+- **Bloodline**: Strengthen your dynasty through blood magic
+- **Benediction**: Master healing and enhancement of others
+- **Hematurgy**: Perfect the art of draining lifeforce and traits
 
-## Lifeforce modifier (stackable)
-The `lifeforce` modifier forms the core of the power of any Blood Mage. 
-It allows the Blood Mage to prolong their life, as long as they can keep the supply of lifeforce going. 
+Each track gains experience (1 XP/year baseline) as you use related abilities, with higher ranks providing escalating benefits like increased lifespan, skill bonuses, and special abilities.
 
-**Blood mages are _NOT_ immortal.** 
+## Lifeforce System
 
-They can be killed just as easily as other humans and are just as susceptible to disease and illness. 
+Lifeforce is the fundamental resource of Blood Mages, available in two tiers:
 
-<img src="docs\screenshots\lifedrain-modifier.jpg"/>
+- **Minor Lifeforce**: Smaller bonuses, used for less powerful abilities
+- **Major Lifeforce**: Significant bonuses, required for powerful magic
 
-# Development plans
-https://trello.com/b/1qS7Y4n0/ck3-blood-mage-mod
+Both provide:
+- Extended lifespan and fertility years
+- Disease resistance
+- Physical prowess
+- Health bonuses
 
-Key upcoming features: 
+**Blood mages are NOT immortal** - they can still be killed in combat or succumb to illness if their lifeforce is depleted.
 
-* Unique Blood Mage Men-at-arms
-* Events that effect `lifeforce`
-* Imbue artefacts with lifeforce (1.5)
+## Blood Magic Abilities
+
+### Personal Powers
+- **Channel Lifeforce**: Temporarily boost a specific skill (+5 for 5 years)
+- **Channel Major Blood Magic**: Gain powerful personal modifiers like:
+  - Crimson Charisma (Diplomacy)
+  - Crimson Fury (Martial)
+  - Crimson Shadows (Intrigue)
+  - Crimson Prosperity (Stewardship)
+  - Crimson Insight (Learning)
+
+### Dynasty Enhancement
+- **Infuse Dynasty with Blood Magic**: Grant permanent bonuses to all dynasty members
+- Create powerful Crimson Warriors and Champions among your knights
+
+### Trait Acquisition
+- **Drain Traits**: Absorb congenital traits from prisoners (beauty, intelligence, physique)
+- **Steal Special Traits**: Absorb rare traits like Giant, Fecund, and Pure-Blooded
+- Success chance depends on your Learning skill and Blood Mage level
+
+### Healing and Enhancement
+- **Cure Illnesses**: Heal ailments of varying severity based on your power level
+- **Grant Lifeforce**: Transfer lifeforce to others
+- **Reverse Lifedrain**: Restore those who have been drained
+
+### Seeking Power
+- **Seek Power in Nature**: Venture into the wilderness to find sacrifices
+- **Mass Lifedrain**: Harvest lifeforce from multiple prisoners at once
+
+## The Cult of Blood
+
+Blood Mages can follow their own unique faith, hated by most of the world:
+
+- **Holy Sites**: Numerous sites across Europe, particularly in Iceland and capital cities
+- **Holy Site Bonuses**: +1 to various skills, making pilgrimages valuable
+- **Conversion**: Use blood magic to convert others to your faith
+
+## Getting Started
+
+1. Select the Blood Mage trait at character creation
+2. Alternatively:
+   - Ask a Blood Mage friend/lover/soulmate to grant you the power
+   - Convert from being a witch to a Blood Mage
+
+## Technical Details
+
+- **Dashboard**: View success chance formulas at https://share.streamlit.io/thenicelander/ck3_blood_mage_viz/main
+- **Compatible with**: CK3 version 1.15.* 

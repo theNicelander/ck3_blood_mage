@@ -12,7 +12,7 @@
 #     option = {
 #         name = bm_enhance_power.001.a
 
-#         blood_magic_used_minor = yes
+#         blood_magic_used_major_minor = yes
 
 #         add_stress = 10
 
@@ -42,7 +42,7 @@
 
 #             # Failed
 #             10 = {
-#                 temporary_negative_lifeforce_effect = yes
+#                 temporary_negative_lifeforce_effect_major = yes
 
 #                 # Base chance decreases as your blood mage power increases
 #                 modifier = { add = blood_mage_rank_base }
@@ -57,7 +57,7 @@
 #             10 = {
 #                 custom_tooltip = "Critical fail"
 #                 add_piety_level = -1
-#                 temporary_negative_lifeforce_effect = yes
+#                 temporary_negative_lifeforce_effect_major = yes
 #                 send_interface_toast = {
 #                     title = "Critical fail"
 #                     left_icon = root

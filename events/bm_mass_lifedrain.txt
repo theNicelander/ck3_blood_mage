@@ -19,14 +19,14 @@ bm_mass_lifedrain.001 = {
     option = {
         name = bm_mass_lifedrain.001.a
         custom_tooltip = bm_mass_lifedrain_custom_tooltip_a
-        ai_chance = { base = 5 }
+        ai_chance = { base = 0 }
 
         # Execute everyone
         every_prisoner = {
             # Get lifeforce
             root = {
                 add_piety = lifedrain_piety_cost_neg
-                drain_lifeforce_effect = yes
+                hematurgy_magic_cast_effect_major = yes
             }
 
             # Lifedrain execution
@@ -63,7 +63,7 @@ bm_mass_lifedrain.001 = {
             # Get lifeforce
             root = {
                 add_piety = lifedrain_piety_cost_neg
-                drain_lifeforce_effect = yes
+                hematurgy_magic_cast_effect_major = yes
             }
 
             # Lifedrain execution
@@ -78,9 +78,7 @@ bm_mass_lifedrain.001 = {
     option = {
         name = bm_mass_lifedrain.001.z
         custom_tooltip = bm_mass_lifedrain_custom_tooltip_z
-        ai_chance = {
-            base = 5
-        }
+        ai_chance = { base = 5 }
     }
 
     # Portraits

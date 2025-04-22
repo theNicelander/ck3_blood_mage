@@ -1,0 +1,50 @@
+﻿# common/decisions/bm_education_enhancement.txt
+enhance_education_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
+    decision_group_type = bm_decision_group
+
+    cooldown = { years = 3 }
+    cost = { piety = 100 }
+
+    is_shown = {
+        has_trait = lifestyle_blood_mage
+        OR = {
+            AND = {
+                has_trait = education_diplomacy
+                NOT = {has_trait = education_diplomacy_5}
+            }
+            AND = {
+                has_trait = education_martial
+                NOT = {has_trait = education_martial_5}
+            }
+            AND = {
+                has_trait = education_learning
+                NOT = {has_trait = education_learning_5}
+            }
+            AND = {
+                has_trait = education_stewardship
+                NOT = {has_trait = education_stewardship_5}
+            }
+            AND = {
+                has_trait = education_intrigue
+                NOT = {has_trait = education_intrigue_5}
+            }
+        }
+
+    }
+    is_valid = {
+        has_character_modifier = lifeforce_modifier_major
+        piety_level >= 2
+    }
+    effect = {
+        blood_magic_used_major = yes
+        trigger_event = { id = bm_education_enhancement.001 }
+        add_piety_level = -1
+        add_xp_bm_dynamic = {
+            TRACK = enlightenment
+            XP = 5
+        }
+        custom_tooltip = enhance_education_decision_tt
+    }
+    ai_check_interval = 6
+}

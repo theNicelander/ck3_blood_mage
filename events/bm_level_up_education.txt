@@ -1,0 +1,80 @@
+﻿# events/bm_education_enhancement_events.txt
+namespace = bm_education_enhancement
+
+bm_education_enhancement.001 = {
+    type = character_event
+    title = bm_education_enhancement.001.title
+    desc = bm_education_enhancement.001.desc
+    theme = witchcraft
+
+    # Diplomacy education enhancement
+    option = {
+        name = bm_education_enhancement.001.diplomacy
+        trigger = { 
+            AND = {
+                has_trait = education_diplomacy
+                NOT = {has_trait = education_diplomacy_5 }
+            }
+        }
+        education_duel_effect = {trait = diplomacy}
+        ai_chance = { base = 100 }
+    }
+
+    # Martial education enhancement
+    option = {
+        name = bm_education_enhancement.001.martial
+        trigger = { 
+            AND = {
+                has_trait = education_martial
+                NOT = {has_trait = education_martial_5 }
+            }
+        }
+        education_duel_effect = {trait = martial}
+        ai_chance = { base = 100 }
+    }
+
+    # Stewardship education enhancement
+    option = {
+        name = bm_education_enhancement.001.stewardship
+        trigger = { 
+            AND = {
+                has_trait = education_stewardship
+                NOT = {has_trait = education_stewardship_5 }
+            }
+        }
+        education_duel_effect = {trait = stewardship}
+        ai_chance = { base = 100 }
+    }
+
+    # Intrigue education enhancement
+    option = {
+        name = bm_education_enhancement.001.intrigue
+        trigger = { 
+            AND = {
+                has_trait = education_intrigue
+                NOT = {has_trait = education_intrigue_5 }
+            }
+        }
+        education_duel_effect = {trait = intrigue}
+        ai_chance = { base = 100 }
+    }
+
+    # Learning education enhancement
+    option = {
+        name = bm_education_enhancement.001.learning
+        trigger = { 
+            AND = {
+                has_trait = education_learning
+                NOT = {has_trait = education_learning_5 }
+            }
+        }
+        education_duel_effect = {trait = learning}
+        ai_chance = { base = 100 }
+    }
+
+    # Portraits
+    left_portrait = {
+        character = root
+        animation = personality_rational
+    }
+}

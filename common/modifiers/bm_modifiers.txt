@@ -1,27 +1,27 @@
-﻿# Spend lifeforce modfiers
+﻿# Spend minor lifeforce modfiers
 diplomacy_lifeforce_modifier = {
     icon = diplomacy_positive
-    diplomacy = 5
+    diplomacy = 4
 }
 martial_lifeforce_modifier = {
     icon = martial_positive
-    martial = 5
+    martial = 4
 }
 stewardship_lifeforce_modifier = {
     icon = stewardship_positive
-    stewardship = 5
+    stewardship = 4
 }
 intrigue_lifeforce_modifier = {
     icon = intrigue_positive
-    intrigue = 5
+    intrigue = 4
 }
 learning_lifeforce_modifier = {
     icon = learning_positive
-    learning = 5
+    learning = 4
 }
 prowess_lifeforce_modifier = {
     icon = prowess_positive
-    prowess = 10
+    prowess = 6
 }
 exp_lifeforce_modifier = {
     icon = magic_positive
@@ -34,23 +34,55 @@ drained_beggar_holding = {
     stacking = yes
 }
 
-healed_beggar_holding_1 = {
-    icon = magic_positive
-    county_opinion_add = 3
-    stacking = yes
+# XP attunement
+ancient_attuned = {
+    icon = blood_magic
 }
-healed_beggar_holding_2 = {
-    icon = magic_positive
-    county_opinion_add = 6
-    stacking = yes
+enlightenment_attuned = {
+    icon = blood_magic
 }
-healed_beggar_holding_3 = {
-    icon = magic_positive
-    county_opinion_add = 10
-    stacking = yes
+bloodline_attuned = {
+    icon = blood_magic
 }
-healed_beggar_holding_4 = {
-    icon = magic_positive
-    county_opinion_add = 15
+benediction_attuned = {
+    icon = blood_magic
+}
+hematurgy_attuned = {
+    icon = blood_magic
+}
+
+# Attempted lifedrain
+trait_drain_attempted = {
+    icon = magic_negative
+
+    health = -0.2
+    years_of_fertility = -2
+    life_expectancy = -2
+    epidemic_resistance = -2
+    negate_health_penalty_add = -0.2
+    prowess = -1
+}
+
+# Bloodline
+temporary_buff_bloodline = {
+    icon = blood_magic
     stacking = yes
+
+    diplomacy = 1
+    martial = 1
+    intrigue = 1
+    stewardship = 1
+    learning = 1
+    prowess = 2
+}
+temporary_buff_self = {
+    icon = blood_magic
+    stacking = yes
+    
+    diplomacy = 2
+    martial = 2
+    intrigue = 2
+    stewardship = 2
+    learning = 2
+    prowess = 4
 }
