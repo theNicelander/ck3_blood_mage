@@ -1,0 +1,88 @@
+﻿manifest_lifeforce_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
+    decision_group_type = bm_decision_group
+
+    is_shown = { has_trait = lifestyle_blood_mage }
+
+    is_valid = {
+        piety_level >= 1
+    }
+    
+    cost = { piety = 500 }
+    cooldown = { years = 1 }
+
+    effect = {
+        duel = {
+            skill = learning
+            value = 0
+            
+            # Success - major lifeforce
+            0 = {
+                desc = manifest_lifeforce_major_success_tt
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 1
+                }
+                send_interface_toast = {
+                    title = manifest_lifeforce_major_success_tt
+                    left_icon = root
+                    add_character_modifier = { modifier = lifeforce_modifier_major }
+                }
+            }
+            
+            # Partial success - minor lifeforce
+            40 = {
+                desc = manifest_lifeforce_minor_success_tt
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 2
+                }
+                send_interface_toast = {
+                    title = manifest_lifeforce_minor_success_tt
+                    left_icon = root
+                    add_character_modifier = { modifier = lifeforce_modifier_minor }
+                }
+            }
+            
+            # Failure - nothing happens
+            40 = {
+                desc = manifest_lifeforce_minor_failure_tt
+                send_interface_toast = {
+                    title = manifest_lifeforce_minor_failure_tt
+                    left_icon = root
+                }
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = -0.5
+                }
+            }
+            
+            # Critical failure
+            20 = {
+                desc = manifest_lifeforce_major_failure_tt
+                send_interface_toast = {
+                    title = manifest_lifeforce_major_failure_tt
+                    left_icon = root
+                    temporary_negative_lifeforce_effect_minor = yes
+                }
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = -0.25
+                }
+            }
+        }
+    }
+
+    ai_check_interval = 12
+    ai_will_do = {
+        base = 5
+        modifier = {
+            piety > 300
+            add = 20
+        }
+        modifier = {
+            NOT = { has_character_modifier = lifeforce_modifier_major }
+            add = 20
+        }
+    }
+}
