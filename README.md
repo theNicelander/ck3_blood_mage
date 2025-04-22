@@ -57,12 +57,12 @@ Both provide:
 
 ### Hematurgy
 - **Drain Traits**: Absorb congenital traits from prisoners (beauty, intelligence, physique)
-- **Steal Special Traits**: Absorb rare traits like Giant, Fecund, and Pure-Blooded
-- **Seek Power in Nature**: Find sacrifices in the wilderness
+- **Steal Special Traits**: Absorb rare traits from prisoners like Giant, Fecund, and Pure-Blooded
+- **Seek Power in Nature**: Find sacrifices in the wilderness to gain lifeforce
 
 ## The Cult of Blood
 
-Blood Mages can follow their own unique faith:
+Blood Mages can follow their own unique faith, the Cult of Blood:
 
 - **Holy Sites**: Numerous locations across Europe
 - **Special Bonuses**: Each site grants +1 to various skills, to balance the number of sites
@@ -89,11 +89,5 @@ Blood Mages have unique character interactions:
 
 Blood Magic offers powerful advantages but requires careful management:
 - Balance using lifeforce for spells against preserving it for longevity
-- Choose specialization paths based on your playstyle and goals
+- Choose specialization paths based on your playstyle and goals, or balance all of them
 - Build a dynasty of blood mages for maximum power
-- Decide between keeping your powers secret or establishing the Cult of Blood openly
-
-## Technical Details
-
-Dashboard for success formulas: https://share.streamlit.io/thenicelander/ck3_blood_mage_viz/main  
-Compatible with CK3 version 1.15.*
