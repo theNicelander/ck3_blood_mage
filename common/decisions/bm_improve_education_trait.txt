@@ -34,7 +34,7 @@ enhance_education_decision = {
     }
     is_valid = {
         has_character_modifier = lifeforce_modifier_major
-        piety_level >= 1
+        piety_level >= 2
     }
     effect = {
         blood_magic_used_major = yes
@@ -44,6 +44,7 @@ enhance_education_decision = {
             TRACK = enlightenment
             XP = 5
         }
+        custom_tooltip = enhance_education_decision_tt
     }
     ai_check_interval = 6
 }

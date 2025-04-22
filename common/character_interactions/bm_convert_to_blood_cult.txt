@@ -10,7 +10,7 @@
     auto_accept = yes
     is_highlighted = { always = yes }
 
-    cost = { piety = 50 }
+    cost = { piety = 35 }
 
     is_shown = {
         scope:actor = {
@@ -41,8 +41,36 @@
             }
         }
         scope:actor = {
-            trigger_event = bm_convert_to_blood_cult.001
+            blood_magic_used_minor = yes
+            add_xp_benediction = yes
+            duel = {
+                skill = learning
+                target = scope:recipient
+
+                50 = {
+                    desc = "I successfully indoctrinate them into the Blood Cult"
+                    compare_modifier = {
+                        value = scope:duel_value
+                        multiplier = 3
+                    }
+                    scope:recipient = { set_character_faith = faith:cult_of_blood }
+                    send_interface_toast  = {
+                        title = "[recipient.GetShortUINameNoTooltip] was successfully converted"
+                        left_icon = scope:actor
+                        right_icon = scope:recipient
+                    }
+                }
+                50 = {
+                    desc = "I fail"
+                    send_interface_toast  = {
+                        title = "[recipient.GetShortUINameNoTooltip] was not converted"
+                        left_icon = scope:actor
+                        right_icon = scope:recipient
+                    }
+                }
+            }
         }
+
     }
     ai_will_do = {
         base = -10
@@ -73,7 +101,7 @@ convert_to_blood_cult_wanderer = {
     auto_accept = yes
     is_highlighted = { always = yes }
 
-    cost = { piety = 50 }
+    cost = { piety = 35 }
 
     is_shown = {
         scope:actor = {
@@ -81,16 +109,14 @@ convert_to_blood_cult_wanderer = {
             has_trait = lifestyle_blood_mage
             has_faith = faith:cult_of_blood
         }
-        scope:recipient = {
-            NOT = { has_faith = faith:cult_of_blood }
-        }
+        scope:recipient = { NOT = { has_faith = faith:cult_of_blood } }
     }
 
     is_valid_showing_failures_only = {
+        scope:recipient = {is_contact_of = scope:actor}
         scope:actor = {
             is_imprisoned = no
             has_character_modifier = lifeforce_modifier_minor
-            has_usable_hook = scope:recipient
         }
     }
 
@@ -102,8 +128,34 @@ convert_to_blood_cult_wanderer = {
             }
         }
         scope:actor = {
-            # TODO: Remove hook
-            trigger_event = bm_convert_to_blood_cult.001
+            blood_magic_used_minor = yes
+            add_xp_benediction = yes
+            duel = {
+                skill = learning
+                target = scope:recipient
+
+                50 = {
+                    desc = "I successfully indoctrinate them into the Blood Cult"
+                    compare_modifier = {
+                        value = scope:duel_value
+                        multiplier = 3
+                    }
+                    scope:recipient = { set_character_faith = faith:cult_of_blood }
+                    send_interface_toast  = {
+                        title = "[recipient.GetShortUINameNoTooltip] was successfully converted"
+                        left_icon = scope:actor
+                        right_icon = scope:recipient
+                    }
+                }
+                50 = {
+                    desc = "I fail"
+                    send_interface_toast  = {
+                        title = "[recipient.GetShortUINameNoTooltip] was not converted"
+                        left_icon = scope:actor
+                        right_icon = scope:recipient
+                    }
+                }
+            }
         }
     }
     ai_will_do = {

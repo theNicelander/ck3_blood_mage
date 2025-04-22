@@ -2,8 +2,10 @@
   # Decision
   bm_attune_lifeforce_decision: "Attune Blood Magic"
   bm_attune_lifeforce_decision_confirm: "Attune Blood Magic"
-  bm_attune_lifeforce_decision_desc: "Determine which area I should attune myself towards"
-  bm_attune_lifeforce_decision_tooltip: "Determine which area I should attune myself towards"
+  bm_attune_lifeforce_decision_desc: "Select which aspect of blood magic to attune yourself toward. Each attunement grants you a yearly chance to gain experience in a specific track of blood magic."
+  bm_attune_lifeforce_decision_tooltip: "Attune your blood magic to one specific track to gain yearly experience"
+  attunement_effects_list: "Choose one of the following attunements (you can only have one at a time):\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('ancient_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('enlightenment_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('bloodline_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('benediction_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('hematurgy_attuned').GetNameWithTooltip]"
+
   # Event
   bm_attune_lifeforce.001.title: "Attune Blood Magic"
   bm_attune_lifeforce.001.desc: "The crimson essence within my veins pulses with potential, waiting to be directed. By attuning my magic to a specific aspect, I can strengthen my connection to that particular facet of blood magic, potentially hastening my mastery of it."
@@ -29,3 +31,6 @@
 
   hematurgy_attuned: "Attuned to Hematurgy"
   hematurgy_attuned_desc: "Grants a yearly chance to gain 1 XP in the Hematurgy Blood Mage trait"
+
+
+  # List of attunements using GetModifier
