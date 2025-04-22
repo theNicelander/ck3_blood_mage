@@ -13,7 +13,8 @@ crimson_charisma_modifier = {
 crimson_fury_modifier = {
     icon = blood_magic
     
-    martial = 3
+    martial = 2
+    prowess = 4
     martial_per_piety_level = 1
     prowess_per_piety_level = 2
     knight_limit = 2
@@ -29,7 +30,7 @@ crimson_prosperity_modifier = {
     stewardship_per_piety_level = 1
     monthly_county_control_growth_add = 0.25
     domain_limit = 1
-    domain_tax_mult = 0.1
+    domain_tax_mult = 0.15
     development_growth = 0.10
 }
 
@@ -43,7 +44,6 @@ crimson_shadows_modifier = {
     # Make BM's schemes better
     owned_hostile_scheme_success_chance_add = 10
     hostile_scheme_phase_duration_add = -10
-    scheme_secrecy = 10
 
     # Disrupt other schemes
     enemy_hostile_scheme_phase_duration_add = 10
@@ -79,6 +79,7 @@ crimson_legacy_modifier = {
 # Crimson Expertise - Experience
 crimson_expertise_modifier = {
     icon = blood_magic
+    
     monthly_lifestyle_xp_gain_mult = 0.15
     learning_lifestyle_xp_gain_mult = 0.1
     stress_loss_mult = 0.1
