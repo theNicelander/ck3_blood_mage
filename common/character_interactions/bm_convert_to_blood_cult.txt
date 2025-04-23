@@ -97,19 +97,9 @@
         }
 
     }
+    ai_frequency = 6
     ai_will_do = {
-        base = -10
-        modifier = {
-            scope:recipient = { is_courtier_of = scope:actor }
-            add = 20
-        }
-        modifier = {
-            scope:recipient = { is_knight_of = scope:actor }
-            add = 40
-        }
-        modifier = {
-            scope:recipient = { is_powerful_vassal_of = scope:actor }
-            add = 50
-        }
+        base = 0
+        ai_willingness_to_do_postitive_magic = yes
     }
 }

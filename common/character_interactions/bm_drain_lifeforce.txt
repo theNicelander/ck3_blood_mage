@@ -31,7 +31,10 @@
     ai_targets = { ai_recipients = prisoners }
     ai_potential = { is_at_war = no }
     ai_frequency = 3
-    ai_will_do = { base = 50 }
+    ai_will_do = {
+        base = 50
+        ai_willingness_to_lifedrain = yes 
+    }
 }
 
 lifedrain_courtier_event_interaction = {
@@ -131,10 +134,7 @@ lifedrain_courtier_event_interaction = {
     auto_accept = yes
     ai_frequency = 3
     ai_will_do = {
-        base = 25
-        modifier = {
-            is_knight_of = scope:actor
-            add = -30
-        }
+        base = 20
+        ai_willingness_to_lifedrain = yes
     }
 }

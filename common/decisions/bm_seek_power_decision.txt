@@ -23,6 +23,7 @@ seek_power_decision_wanderer = {
         has_trait = lifestyle_blood_mage
         is_landless_adventurer = yes
     }
+    # Can do it more often if landless, as it's harder to find prisoners
     cooldown = { years = 1 }
     effect = { trigger_event = { id = seek_power.001 } }
 

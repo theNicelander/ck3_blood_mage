@@ -21,6 +21,9 @@
         }
     }
 
-    ai_check_interval = 12
-    ai_will_do = { base = 10 }
+    ai_check_interval = 6
+    ai_will_do = { 
+        base = 0
+        ai_modifier_based_on_health = yes
+    }
 }

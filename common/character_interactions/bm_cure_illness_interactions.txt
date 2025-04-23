@@ -48,20 +48,13 @@
             }
         }
     }
-
+    ai_frequency = 6
     ai_will_do = {
-        base = -10
-        modifier = {
-            scope:recipient = { is_courtier_of = scope:actor } 
-            add = 15
-        }
-        modifier = {
-            scope:recipient = { is_knight_of = scope:actor }
-            add = 10
-        }
-        modifier = {
+        base = 0
+        ai_willingness_to_do_postitive_magic = yes
+        modifier = { # want to cure myself
             scope:actor = scope:recipient
-            add = 100
+            add = 999
         }
     }
 }
@@ -138,19 +131,13 @@ heal_disease_major = {
 
         }
     }
+    ai_frequency = 6
     ai_will_do = {
-        base = -10
-        modifier = {
-            scope:recipient = { is_courtier_of = scope:actor } 
-            add = 15
-        }
-        modifier = {
-            scope:recipient = { is_knight_of = scope:actor }
-            add = 10
-        }
-        modifier = {
+        base = 0
+        ai_willingness_to_do_postitive_magic = yes
+        modifier = { # want to cure myself
             scope:actor = scope:recipient
-            add = 100
+            add = 999
         }
     }
 }
@@ -231,19 +218,13 @@ heal_disease_benediction = {
             }
         }
     }
+    ai_frequency = 6
     ai_will_do = {
-        base = -10
-        modifier = {
-            scope:recipient = { is_courtier_of = scope:actor } 
-            add = 15
-        }
-        modifier = {
-            scope:recipient = { is_knight_of = scope:actor }
-            add = 10
-        }
-        modifier = {
+        base = 0
+        ai_willingness_to_do_postitive_magic = yes
+        modifier = { # want to cure myself
             scope:actor = scope:recipient
-            add = 100
+            add = 999
         }
     }
 }

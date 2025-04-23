@@ -45,6 +45,10 @@ enhance_education_decision = {
         custom_tooltip = enhance_education_decision_tt
     }
     ai_check_interval = 6
+    ai_will_do = { 
+        base = 0
+        ai_modifier_based_on_health = yes
+    }
 }
 
 new_education_decision = {
@@ -105,4 +109,8 @@ new_education_decision = {
         custom_tooltip = new_education_decision_tt
     }
     ai_check_interval = 6
+    ai_will_do = { 
+        base = 0
+        ai_modifier_based_on_health = yes
+    }
 }

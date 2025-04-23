@@ -75,14 +75,14 @@
 
     ai_check_interval = 12
     ai_will_do = {
-        base = 5
+        base = 10
         modifier = {
-            piety > 300
-            add = 20
+            piety > 2000
+            add = 1000
         }
         modifier = {
             NOT = { has_character_modifier = lifeforce_modifier_major }
-            add = 20
+            add = 50
         }
     }
 }
