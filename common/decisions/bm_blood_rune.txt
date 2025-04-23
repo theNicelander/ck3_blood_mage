@@ -3,7 +3,7 @@
     decision_group_type = bm_decision_group
 
     cooldown = { years = 5 }
-    cost = { piety = 100 }
+    cost = { piety = bm_blood_rune_piety_cost }
     is_shown = { 
         has_trait = lifestyle_blood_mage
         # don't show if has the final one
