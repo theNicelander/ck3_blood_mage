@@ -20,7 +20,7 @@ blood_golem.001 = {
         }
     }
 
-    # Complete the creation ritual
+    # Start the creation ritual
     option = {
         name = blood_golem.001.a
         add_courtier = scope:blood_golem
@@ -47,7 +47,10 @@ blood_golem.002 = {
     # Athletic trait option
     option = {
         name = blood_golem.002.athletic
-        trigger = { scope:blood_golem = { NOT = { has_trait = athletic } } }
+        trigger = { 
+            scope:blood_golem = { NOT = { has_trait = athletic } }
+            piety >= 0
+        }
         trigger_event = { id = blood_golem.002 }
         golem_duel_effect = { TRAIT = athletic }
     }
@@ -55,7 +58,10 @@ blood_golem.002 = {
     # Blademaster trait option
     option = {
         name = blood_golem.002.blademaster
-        trigger = { scope:blood_golem = { NOT = { has_trait = lifestyle_blademaster } } }
+        trigger = { 
+            scope:blood_golem = { NOT = { has_trait = lifestyle_blademaster } }
+            piety >= 0
+        }
         trigger_event = { id = blood_golem.002 }
         golem_duel_effect = { TRAIT = lifestyle_blademaster }
     }
@@ -63,7 +69,10 @@ blood_golem.002 = {
     # Berserker trait option
     option = {
         name = blood_golem.002.berserker
-        trigger = { scope:blood_golem = { NOT = { has_trait = berserker } } }
+        trigger = { 
+            scope:blood_golem = { NOT = { has_trait = berserker } }
+            piety >= 0
+        }
         trigger_event = { id = blood_golem.002 }
         golem_duel_effect = { TRAIT = berserker }
     }
@@ -71,7 +80,10 @@ blood_golem.002 = {
     # Viking trait option
     option = {
         name = blood_golem.002.viking
-        trigger = { scope:blood_golem = { NOT = { has_trait = viking } } }
+        trigger = { 
+            scope:blood_golem = { NOT = { has_trait = viking } }
+            piety >= 0
+        }
         trigger_event = { id = blood_golem.002 }
         golem_duel_effect = { TRAIT = viking }
     }
@@ -79,7 +91,10 @@ blood_golem.002 = {
     # Hunter trait option
     option = {
         name = blood_golem.002.hunter
-        trigger = { scope:blood_golem = { NOT = { has_trait = lifestyle_hunter } } }
+        trigger = { 
+            scope:blood_golem = { NOT = { has_trait = lifestyle_hunter } }
+            piety >= 0
+        }
         trigger_event = { id = blood_golem.002 }
         golem_duel_effect = { TRAIT = lifestyle_hunter }
     }
@@ -87,17 +102,23 @@ blood_golem.002 = {
     # Physique good trait option
     option = {
         name = blood_golem.002.physique
-        trigger = { scope:blood_golem = { NOT = { has_trait = physique_good_3 } } }
+        trigger = { 
+            scope:blood_golem = { NOT = { has_trait = physique_good_3 } }
+            piety >= 0
+        }
         trigger_event = { id = blood_golem.002 }
-        golem_duel_effect_level = {trait = physique_good }
+        golem_duel_effect_level = {TRAIT = physique_good }
     }
 
     # Martial education
     option = {
         name = blood_golem.002.prowess
-        trigger = { scope:blood_golem = { NOT = { has_trait = education_martial_prowess_4 } } }
+        trigger = { 
+            scope:blood_golem = { NOT = { has_trait = education_martial_prowess_4 } }
+            piety >= 0
+        }
         trigger_event = { id = blood_golem.002 }
-        golem_duel_effect_level = {trait = education_martial_prowess }
+        golem_duel_effect_level = {TRAIT = education_martial_prowess }
     }
 
     # Complete ritual option
