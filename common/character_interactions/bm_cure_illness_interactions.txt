@@ -56,7 +56,7 @@
             add = 15
         }
         modifier = {
-            is_knight_of = scope:actor
+            scope:recipient = { is_knight_of = scope:actor }
             add = 10
         }
         modifier = {
@@ -145,7 +145,7 @@ heal_disease_major = {
             add = 15
         }
         modifier = {
-            is_knight_of = scope:actor
+            scope:recipient = { is_knight_of = scope:actor }
             add = 10
         }
         modifier = {
@@ -238,7 +238,7 @@ heal_disease_benediction = {
             add = 15
         }
         modifier = {
-            is_knight_of = scope:actor
+            scope:recipient = { is_knight_of = scope:actor }
             add = 10
         }
         modifier = {

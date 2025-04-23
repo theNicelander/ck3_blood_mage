@@ -78,7 +78,7 @@ grant_crimson_champion_interaction = {
             add = 30
         }
         modifier = {
-            is_knight_of = scope:actor
+            scope:recipient = { is_knight_of = scope:actor } 
             add = 30
         }
     }

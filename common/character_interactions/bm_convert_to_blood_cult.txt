@@ -2,7 +2,7 @@
     common_interaction = yes
     interface_priority = 300
     category = interaction_category_friendly
-    desc = "Convert to Blood Cult"
+    desc = convert_to_blood_cult_event_interaction.recipient.notification.tt
 
     popup_on_receive = yes
     pause_on_receive = yes
@@ -19,14 +19,27 @@
         }
         scope:recipient = {
             NOT = { has_faith = faith:cult_of_blood }
+        }
+    }
+	should_use_extra_icon = {
+		scope:actor = { has_usable_hook = scope:recipient }
+	}
+    extra_icon = "gfx/interface/icons/character_interactions/hook_icon.dds"
+
+    is_valid_showing_failures_only = {
+        custom_description = {
+            text = "convert_to_blood_cult_requirement"
             OR = {
-                is_imprisoned_by = scope:actor
-                is_courtier_of = scope:actor
+                scope:actor = { has_usable_hook = scope:recipient }
+                scope:recipient = {
+                    OR = {
+                        is_imprisoned_by = scope:actor
+                        is_courtier_of = scope:actor
+                        is_contact_of = scope:actor
+                    }
+                }
             }
         }
-    }
-
-    is_valid_showing_failures_only = {
         scope:actor = {
             is_imprisoned = no
             has_character_modifier = lifeforce_modifier_minor
@@ -47,23 +60,35 @@
                 skill = learning
                 target = scope:recipient
 
-                50 = {
-                    desc = "I successfully indoctrinate them into the Blood Cult"
+                0 = {
+                    desc = convert_to_blood_cult.success
                     compare_modifier = {
                         value = scope:duel_value
-                        multiplier = 3
+                        multiplier = 5
+                    }
+                    modifier = {
+                        scope:recipient = { is_courtier_of = scope:actor } 
+                        add = 30
+                    }
+                    modifier = {
+                        scope:recipient = { is_imprisoned_by = scope:actor } 
+                        add = 100
+                    }
+                    modifier = {
+                        scope:recipient = { is_knight_of = scope:actor } 
+                        add = 50
                     }
                     scope:recipient = { set_character_faith = faith:cult_of_blood }
                     send_interface_toast  = {
-                        title = "[recipient.GetShortUINameNoTooltip] was successfully converted"
+                        title = convert_to_blood_cult.success.toast
                         left_icon = scope:actor
                         right_icon = scope:recipient
                     }
                 }
                 50 = {
-                    desc = "I fail"
+                    desc = convert_to_blood_cult.fail
                     send_interface_toast  = {
-                        title = "[recipient.GetShortUINameNoTooltip] was not converted"
+                        title = convert_to_blood_cult.fail.toast
                         left_icon = scope:actor
                         right_icon = scope:recipient
                     }
@@ -76,101 +101,15 @@
         base = -10
         modifier = {
             scope:recipient = { is_courtier_of = scope:actor }
-            add = 30
+            add = 20
         }
         modifier = {
-            is_knight_of = scope:actor
-            add = 30
-        }
-        modifier = {
-            scope:recipient = { is_powerful_vassal_of = scope:actor }
-            add = 30
-        }
-    }
-}
-
-convert_to_blood_cult_wanderer = {
-    common_interaction = yes
-    interface_priority = 300
-    category = interaction_category_friendly
-    desc = "Convert to Blood Cult"
-
-    popup_on_receive = yes
-    pause_on_receive = yes
-
-    auto_accept = yes
-    is_highlighted = { always = yes }
-
-    cost = { piety = 35 }
-
-    is_shown = {
-        scope:actor = {
-            is_landless_adventurer = yes
-            has_trait = lifestyle_blood_mage
-            has_faith = faith:cult_of_blood
-        }
-        scope:recipient = { NOT = { has_faith = faith:cult_of_blood } }
-    }
-
-    is_valid_showing_failures_only = {
-        scope:recipient = {is_contact_of = scope:actor}
-        scope:actor = {
-            is_imprisoned = no
-            has_character_modifier = lifeforce_modifier_minor
-        }
-    }
-
-    on_accept = {
-        scope:recipient = {
-            send_interface_toast = {
-                left_icon = scope:actor
-                custom_tooltip = convert_to_blood_cult_event_interaction.recipient.notification.tt
-            }
-        }
-        scope:actor = {
-            blood_magic_used_minor = yes
-            add_xp_bloodline = yes
-            duel = {
-                skill = learning
-                target = scope:recipient
-
-                50 = {
-                    desc = "I successfully indoctrinate them into the Blood Cult"
-                    compare_modifier = {
-                        value = scope:duel_value
-                        multiplier = 3
-                    }
-                    scope:recipient = { set_character_faith = faith:cult_of_blood }
-                    send_interface_toast  = {
-                        title = "[recipient.GetShortUINameNoTooltip] was successfully converted"
-                        left_icon = scope:actor
-                        right_icon = scope:recipient
-                    }
-                }
-                50 = {
-                    desc = "I fail"
-                    send_interface_toast  = {
-                        title = "[recipient.GetShortUINameNoTooltip] was not converted"
-                        left_icon = scope:actor
-                        right_icon = scope:recipient
-                    }
-                }
-            }
-        }
-    }
-    ai_will_do = {
-        base = -10
-        modifier = {
-            scope:recipient = { is_courtier_of = scope:actor }
-            add = 30
-        }
-        modifier = {
-            is_knight_of = scope:actor
-            add = 30
+            scope:recipient = { is_knight_of = scope:actor }
+            add = 40
         }
         modifier = {
             scope:recipient = { is_powerful_vassal_of = scope:actor }
-            add = 30
+            add = 50
         }
     }
 }

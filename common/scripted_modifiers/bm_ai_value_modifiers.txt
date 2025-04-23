@@ -49,7 +49,7 @@ ai_willingness_to_do_postitive_magic = {
         add = 30
     }
     modifier = {
-        is_knight_of = scope:actor
+        scope:recipient = { is_knight_of = scope:actor }
         add = 30
     }
 }
