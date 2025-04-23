@@ -1,6 +1,18 @@
 # Changelog by Date
 
-## Aprl 12, 2025
+## April 23, 2025
+* Update readme
+* Convert to BM, now can be done with a hook + better localisation
+* Fixed issue with `scope:recipient = { is_knight_of = scope:actor }`
+* Tweaked piety level requirements for all decisions
+* Piety now generally more expensive
+* Enhance lifeforce removed (not fun)
+* Can now get new education trait, if we have level 5
+* Use localisation everywhere now
+* Golem attributes cost scaling amounts of piety, no longer grant bloodline XP for each attribute added, and cannot continue without piety
+* Lots of AI balances
+
+## April 12, 2025
 - Can etch blood runes into character, new modifier granting yearly chance of lifeforce
 - Seek power every 1 year, if wanderer
 - Tweaked traveller trait list chances
