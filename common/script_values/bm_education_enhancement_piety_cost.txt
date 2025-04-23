@@ -1,0 +1,120 @@
+﻿education_base_cost = -50
+education_level_1_cost = -25
+education_level_2_cost = -75
+education_level_3_cost = -150
+education_level_4_cost = -300
+education_level_5_cost = -500
+
+scaled_education_enhancement_cost = {
+    add = education_base_cost
+    
+    # Level 1 traits
+    if = {
+        limit = { has_trait = education_diplomacy_1 }
+        add = education_level_1_cost
+    }
+    if = {
+        limit = { has_trait = education_martial_1 }
+        add = education_level_1_cost
+    }
+    if = {
+        limit = { has_trait = education_stewardship_1 }
+        add = education_level_1_cost
+    }
+    if = {
+        limit = { has_trait = education_intrigue_1 }
+        add = education_level_1_cost
+    }
+    if = {
+        limit = { has_trait = education_learning_1 }
+        add = education_level_1_cost
+    }
+    
+    # Level 2 traits
+    if = {
+        limit = { has_trait = education_diplomacy_2 }
+        add = education_level_2_cost
+    }
+    if = {
+        limit = { has_trait = education_martial_2 }
+        add = education_level_2_cost
+    }
+    if = {
+        limit = { has_trait = education_stewardship_2 }
+        add = education_level_2_cost
+    }
+    if = {
+        limit = { has_trait = education_intrigue_2 }
+        add = education_level_2_cost
+    }
+    if = {
+        limit = { has_trait = education_learning_2 }
+        add = education_level_2_cost
+    }
+    
+    # Level 3 traits
+    if = {
+        limit = { has_trait = education_diplomacy_3 }
+        add = education_level_3_cost
+    }
+    if = {
+        limit = { has_trait = education_martial_3 }
+        add = education_level_3_cost
+    }
+    if = {
+        limit = { has_trait = education_stewardship_3 }
+        add = education_level_3_cost
+    }
+    if = {
+        limit = { has_trait = education_intrigue_3 }
+        add = education_level_3_cost
+    }
+    if = {
+        limit = { has_trait = education_learning_3 }
+        add = education_level_3_cost
+    }
+    
+    # Level 4 traits
+    if = {
+        limit = { has_trait = education_diplomacy_4 }
+        add = education_level_4_cost
+    }
+    if = {
+        limit = { has_trait = education_martial_4 }
+        add = education_level_4_cost
+    }
+    if = {
+        limit = { has_trait = education_stewardship_4 }
+        add = education_level_4_cost
+    }
+    if = {
+        limit = { has_trait = education_intrigue_4 }
+        add = education_level_4_cost
+    }
+    if = {
+        limit = { has_trait = education_learning_4 }
+        add = education_level_4_cost
+    }
+    
+    # Level 5 traits
+    if = {
+        limit = { has_trait = education_diplomacy_5 }
+        add = education_level_5_cost
+    }
+    if = {
+        limit = { has_trait = education_martial_5 }
+        add = education_level_5_cost
+    }
+    if = {
+        limit = { has_trait = education_stewardship_5 }
+        add = education_level_5_cost
+    }
+    if = {
+        limit = { has_trait = education_intrigue_5 }
+        add = education_level_5_cost
+    }
+    if = {
+        limit = { has_trait = education_learning_5 }
+        add = education_level_5_cost
+    }
+}
