@@ -141,7 +141,7 @@ seek_power.003 = {
         }
     }
 
-    # Trait drain, if they have traits
+    # Trait drain, if they have traits that I don't have
     option = {
         name = seek_power.003.b
         ai_chance = { base = 500 }
@@ -175,16 +175,6 @@ seek_power.003 = {
                     NOT = {has_trait = pure_blooded}
                 }
             }
-            scope:recipient = {
-                OR = {
-                    has_trait = intellect_good
-                    has_trait = physique_good
-                    has_trait = beauty_good
-                    has_trait = giant
-                    has_trait = fecund
-                    has_trait = pure_blooded
-                }         
-            } 
         }
     }
 
