@@ -7,12 +7,13 @@
             desc = bm_education_enhancement.success
             compare_modifier = {
                 value = scope:duel_value
-                multiplier = 5
+                multiplier = 10
             }
             send_interface_toast = {
                 title = bm_education_enhancement.success
                 left_icon = root
                 level_up_trait_effect = {trait = education_$trait$}
+                add_piety_level = -1
             }
         }
         # Failure
@@ -25,6 +26,22 @@
                 title = bm_education_enhancement.failure
                 left_icon = root
                 temporary_negative_lifeforce_effect_minor = yes
+            }
+        }
+        0 = {
+            compare_modifier = {
+                value = scope:duel_value
+                multiplier = -1
+            }
+            modifier = { has_trait = education_$trait$_2 add = 20 }
+            modifier = { has_trait = education_$trait$_3 add = 50 }
+            modifier = { has_trait = education_$trait$_4 add = 100 }
+            desc = bm_education_enhancement.failure
+            send_interface_toast = {
+                title = bm_education_enhancement.failure
+                left_icon = root
+                add_piety_level = -1
+                temporary_negative_lifeforce_effect_major = yes
             }
         }
     }

@@ -1,0 +1,63 @@
+﻿# events/bm_education_new_events.txt
+namespace = bm_education_new
+
+bm_education_new.001 = {
+    type = character_event
+    title = bm_education_new.001.title
+    desc = bm_education_new.001.desc
+    theme = witchcraft
+
+    # Diplomacy
+    option = {
+        name = bm_education_new.001.diplomacy
+        trigger = { NOT = {has_trait = education_diplomacy} }
+        add_trait = education_diplomacy_1
+        ai_chance = { base = 100 }
+    }
+
+    # Martial
+    option = {
+        name = bm_education_new.001.martial
+        trigger = { NOT = {has_trait = education_martial} }
+        add_trait = education_martial_1
+        ai_chance = { base = 100 }
+    }
+
+    # Stewardship
+    option = {
+        name = bm_education_new.001.stewardship
+        trigger = { NOT = {has_trait = education_stewardship} }
+        add_trait = education_stewardship_1
+        ai_chance = { base = 100 }
+    }
+
+    # Intrigue
+    option = {
+        name = bm_education_new.001.intrigue
+        trigger = { NOT = {has_trait = education_intrigue} }
+        add_trait = education_intrigue_1
+        ai_chance = { base = 100 }
+    }
+
+    # Learning
+    option = {
+        name = bm_education_new.001.learning
+        trigger = { NOT = {has_trait = education_learning} }
+        add_trait = education_learning_1
+        ai_chance = { base = 100 }
+    }
+
+    # prowess
+    option = {
+        name = bm_education_new.001.prowess
+        trigger = { NOT = {has_trait = education_martial_prowess} }
+        add_trait = education_martial_prowess_1
+        ai_chance = { base = 100 }
+    }
+
+    # Portraits
+    left_portrait = {
+        character = root
+        animation = personality_rational
+    }
+}
