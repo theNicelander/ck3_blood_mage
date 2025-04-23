@@ -11,7 +11,11 @@
     effect = {
         remove_trait = witch
         add_trait = lifestyle_blood_mage
-        custom_tooltip = "Become a Blood Mage"
+        custom_tooltip = convert_to_blood_magic_from_witch.tooltip
     }
-    ai_will_do = { base = 50 }
+    ai_check_interval = 6
+    ai_will_do = { 
+        base = 0
+        ai_modifier_based_on_health = yes
+    }
 }

@@ -22,10 +22,7 @@
     ai_check_interval = 6
     ai_will_do = { 
         base = 0
-        modifier = {
-            health > fine_health
-            add = 100
-        }
+        ai_modifier_based_on_health = yes
     }
 }
 
@@ -34,7 +31,7 @@ channel_lifeforce_enlightenment_major = {
     decision_group_type = bm_decision_group
 
     cooldown = { years = 3 }
-    cost = { piety = 150 }
+    cost = { piety = 250 }
 
     is_shown = { has_trait = lifestyle_blood_mage }
     is_valid = {
@@ -54,18 +51,7 @@ channel_lifeforce_enlightenment_major = {
     ai_check_interval = 6
     ai_will_do = { 
         base = 0
-        modifier = {
-            health > excellent_health
-            add = 100
-        }
-        modifier = {
-            health > good_health
-            add = 50
-        }
-        modifier = {
-            health > fine_health
-            add = 10
-        }
+        ai_modifier_based_on_health = yes
     }
 }
 
@@ -76,7 +62,7 @@ channel_lifeforce_bloodline = {
     decision_group_type = bm_decision_group
 
     cooldown = { years = 3 }
-    cost = { piety = 200 }
+    cost = { piety = 350 }
 
     is_shown = { has_trait = lifestyle_blood_mage }
     is_valid = {
@@ -93,12 +79,9 @@ channel_lifeforce_bloodline = {
         blood_magic_used_major = yes
         custom_tooltip = channel_lifeforce_bloodline.effects_list
     }
-    ai_check_interval = 12
+    ai_check_interval = 6
     ai_will_do = { 
         base = 0
-        modifier = {
-            health > good_health
-            add = 50
-        }
+        ai_modifier_based_on_health = yes
     }
 }

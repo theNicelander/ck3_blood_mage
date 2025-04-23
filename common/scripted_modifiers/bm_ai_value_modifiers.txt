@@ -1,7 +1,94 @@
-﻿# Lifedraining
-ai_willingness_to_do_postitive_magic = {
+﻿
+#HEALTH
+excellent_health = 7
+good_health = 5
+medium_health = 4
+fine_health = 3 #The names of these should be updated to match the defines (HEALTH_STATE_LEVELS_VALUES, HEALTH_STATE_LEVELS_TEXTS)
+poor_health = 1
+dying_health = 0
 
-    # Do I like recipient & are they trustworthy
+ai_modifier_based_on_health  = {
+    modifier = {
+        add = 100
+        scope:actor = { health > excellent_health } 
+    }
+    modifier = {
+        add = 40
+        scope:actor = { health > good_health } 
+    }
+    modifier = {
+        add = 20
+        scope:actor = { health > fine_health } 
+    }
+    modifier = { # don't do magic, if dying
+        add = -999
+        scope:actor = { health < poor_health } 
+    }
+}
+
+# Lifedraining
+ai_willingness_to_lifedrain = {
+    modifier = {
+        is_knight_of = scope:actor
+        add = -100
+    }
+
+    # Do I DISLIKE recipient & are they trustworthy
+    opinion_modifier = {
+        who = scope:actor
+        opinion_target = scope:recipient
+        multiplier = -0.5
+    }
+    compatibility_modifier = {
+        who = scope:actor
+        compatibility_target = scope:recipient
+        multiplier = -0.2
+    }
+    opinion_modifier = {
+        who = scope:recipient
+        opinion_target = scope:actor
+        multiplier = -0.5
+    }
+
+    # Are they important (to me)
+    modifier = {
+        add = {
+            value = scope:recipient.highest_held_title_tier
+            subtract = scope:actor.highest_held_title_tier
+            multiply = -50
+        }
+    }
+    modifier = {
+        OR = {
+            is_close_family_of = scope:recipient
+            has_relation_friend = scope:recipient
+        }
+        add = -50
+    }
+    modifier = {
+        OR = {
+            has_relation_best_friend = scope:recipient
+            has_relation_soulmate = scope:recipient
+            is_consort_of = scope:recipient
+            has_relation_lover = scope:recipient
+        }
+        add = -50
+    }
+    modifier = {
+        exists = house
+        exists = scope:recipient.house
+        house = scope:recipient.house
+        add = -50
+    }
+}
+
+ai_willingness_to_do_postitive_magic = {
+    modifier = { # don't do magic, if dying
+        add = -999
+        scope:actor = { health < good_health } 
+    }
+
+    # Do I LIKE recipient & are they trustworthy
     opinion_modifier = {
         who = scope:actor
         opinion_target = scope:recipient
@@ -23,14 +110,12 @@ ai_willingness_to_do_postitive_magic = {
         add = {
             value = scope:recipient.highest_held_title_tier
             subtract = scope:actor.highest_held_title_tier
-            multiply = 10
+            multiply = 20
         }
     }
     modifier = {
         OR = {
             is_close_family_of = scope:recipient
-            is_consort_of = scope:recipient
-            has_relation_lover = scope:recipient
             has_relation_friend = scope:recipient
         }
         add = 20
@@ -39,8 +124,10 @@ ai_willingness_to_do_postitive_magic = {
         OR = {
             has_relation_best_friend = scope:recipient
             has_relation_soulmate = scope:recipient
+            is_consort_of = scope:recipient
+            has_relation_lover = scope:recipient
         }
-        add = 30
+        add = 50
     }
     modifier = {
         exists = house
@@ -49,7 +136,15 @@ ai_willingness_to_do_postitive_magic = {
         add = 30
     }
     modifier = {
-        is_knight_of = scope:actor
+        scope:recipient = { is_knight_of = scope:actor }
+        add = 40
+    }
+    modifier = {
+        scope:recipient = { is_powerful_vassal_of = scope:actor }
+        add = 30
+    }
+    modifier = {
+        scope:recipient = { is_courtier_of = scope:actor } 
         add = 30
     }
 }
@@ -96,5 +191,6 @@ ai_chance_scale_based_on_xp_in_track = {
         add = 5
     }
 }
+
 
 

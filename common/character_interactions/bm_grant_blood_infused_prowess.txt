@@ -72,14 +72,11 @@ grant_crimson_champion_interaction = {
     }
     ai_frequency = 6
     ai_will_do = {
-        base = -10
+        base = 0
+        ai_willingness_to_do_postitive_magic = yes
         modifier = {
-            scope:recipient = { is_courtier_of = scope:actor } 
-            add = 30
-        }
-        modifier = {
-            is_knight_of = scope:actor
-            add = 30
+            scope:recipient = { is_knight_of = scope:actor }
+            add = 100
         }
     }
 }

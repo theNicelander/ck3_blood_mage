@@ -4,22 +4,22 @@ namespace = seek_power
 
 seek_power.001 = {
     type = character_event
-    title = "The Untamed Wilds"
-    desc = "The wilderness beyond your settlement pulses with life energy. Ancient trees reach toward the sky, their roots drinking deep from soil enriched by countless cycles of death and rebirth. As you venture deeper into nature's domain, you feel the primal power of blood magic growing stronger, drawing you toward potential sacrifices that might feed your arcane hunger."
+    title = seek_power.001.title
+    desc = seek_power.001.desc
     theme = hunt_activity
 
     option = {
-        name = "Follow my instincts to seek worthy prey"
+        name = seek_power.001.a
         
         duel = {
             skill = prowess    
             value = 0        
             50 = {
-                desc = "I encounter wild game"
+                desc = seek_power.duel.animal
                 trigger_event = { id = seek_power.002 }
             }
             30 = {
-                desc = "I discover a lost traveler"
+                desc = seek_power.duel.traveler
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = 2
@@ -27,7 +27,7 @@ seek_power.001 = {
                 trigger_event = { id = seek_power.003 }
             }
             5 = {
-                desc = "I encounter a legendary beast"
+                desc = seek_power.duel.legendary
                 trigger_event = { id = seek_power.004 }
                 compare_modifier = {
                     value = scope:duel_value
@@ -48,14 +48,14 @@ seek_power.001 = {
 # New event for animal sacrifice
 seek_power.002 = {
     type = character_event
-    title = "Wilderness Harvest"
-    desc = "Your hunt leads you to a magnificent stag, its breath creating clouds of mist in the cold air. The creature stands proud, unaware of your approach as you prepare your ritual. Blood magic requires no bow or blade—just your will and the ancient words of power. As you begin the incantation, you feel the connection forming between your essence and the animal's life force."
+    title = seek_power.002.title
+    desc = seek_power.002.desc
     theme = hunt_activity
 
     option = {
-        name = "I drain the stag"
+        name = seek_power.002.a
         send_interface_toast  = {
-            title = "I drained the stag"
+            title = seek_power.toast.stag
             left_icon = this
             add_character_modifier = { modifier = lifeforce_modifier_minor } 
         }
@@ -71,8 +71,8 @@ seek_power.002 = {
 
 seek_power.003 = {
     type = character_event
-    title = "A Lost Soul"
-    desc = "Deep in the wilderness, far from any path, you encounter a solitary figure. Dressed in tattered clothes and trembling from exposure, the traveler appears to have lost their way days ago. Gaunt and weakened, they look up at your approach with both hope and fear in their eyes. Despite their pitiable state, you sense something valuable that others would overlook—life essence ripe for the taking... or perhaps a chance to demonstrate mercy through your arcane gifts."
+    title = seek_power.003.title
+    desc = seek_power.003.desc
     theme = hunt_activity
 
 
@@ -91,40 +91,40 @@ seek_power.003 = {
 
     # Lifedrain
     option = {
-        name = "Their lifeforce will serve a greater purpose in my hands"
+        name = seek_power.003.a
         ai_chance = { base = 50 }
         duel = {
             skills = { intrigue prowess }
             value = 0
 
             10 = {
-                desc = "Silent Harvest"
+                desc = seek_power.duel.silent_harvest
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = 2
                 }
                 scope:recipient  = { death = { death_reason = death_sacrificed_to_gods } }
                 send_interface_toast  = {
-                    title = "I drain the traveller without anyone noticing"
+                    title = seek_power.toast.silent_drain
                     left_icon = this
                     right_icon = scope:recipient 
                     hematurgy_magic_cast_effect_major = yes
                 }
             }
             20 = {
-                desc = "They escape"
+                desc = seek_power.duel.escape
                 send_interface_toast  = {
-                    title = "They got away, I'm left empty handed"
+                    title = seek_power.toast.escape
                     left_icon = this
                     right_icon = scope:recipient 
                     add_stress = 5
                 }
             }
             20 = {
-                desc = "Witnessed"
+                desc = seek_power.duel.witnessed
                 scope:recipient  = { death = { death_reason = death_sacrificed_to_gods } }
                 send_interface_toast  = {
-                    title = "A witness survived to tell the tale"
+                    title = seek_power.toast.witnessed
                     left_icon = this
                     right_icon = scope:recipient 
                     hematurgy_magic_cast_effect_major = yes
@@ -143,7 +143,7 @@ seek_power.003 = {
 
     # Trait drain, if they have traits
     option = {
-        name = "Drain their traits"
+        name = seek_power.003.b
         ai_chance = { base = 500 }
         trigger_event = bm_trait_drain.001
         remove_character_modifier = lifeforce_modifier_major
@@ -164,30 +164,29 @@ seek_power.003 = {
 
     # Convince them to join my court
     option = {
-        name = "I wonder if they'll join me"
+        name = seek_power.003.c
         ai_chance = { base = 50 }
         duel = {
             skills = { diplomacy learning }
             20 = {
-                desc = "They join me"
+                desc = seek_power.duel.join
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = 2
                 }
                 send_interface_toast  = {
-                    title = "They join me"
+                    title = seek_power.toast.join
                     left_icon = this
                     right_icon = scope:recipient
                     add_courtier = scope:recipient
                 }
             }
             20 = {
-                desc = "They go their separate ways"
+                desc = seek_power.duel.separate
                 send_interface_toast  = {
-                    title = "They go their separate ways"
+                    title = seek_power.toast.separate
                     left_icon = this
                     right_icon = scope:recipient
-
                 }
             }
         }
@@ -195,7 +194,7 @@ seek_power.003 = {
 
     # Do nothing
     option = {
-        name = "This wanderer is not worth my attention—I shall continue my search elsewhere"
+        name = seek_power.003.d
         add_stress = -10
         ai_chance = { base = 5 }
     }
@@ -214,14 +213,14 @@ seek_power.003 = {
 
 seek_power.004 = {
     type = character_event
-    title = "The Bleeding Heart of the Forest"
-    desc = "Deep within the primal forest, where sunlight rarely filters through the thick canopy, you discover an aberration of nature—a massive oak tree unlike any you've ever seen. Its trunk, wide as a castle wall, pulses with visible rhythm. Ancient runes are carved into its bark, their meanings lost to time.\n\nWhen you place your hand upon its surface, it's warm like flesh. You feel drawn to make a small cut in the bark, and to your astonishment, crimson sap that looks and smells exactly like blood begins to flow freely. It's not just tree sap—this ancient sentinel has absorbed the essence of thousands of creatures over centuries, creating a nexus of pure life energy.\n\nAs your fingers touch the crimson liquid, visions flood your mind—ancient beasts, forgotten civilizations, and secrets buried by time. This tree has witnessed everything, its roots reaching deep into the heart of the world itself. Such power could fuel your magic beyond measure, but taking too much might anger whatever primordial force sustains this marvel."
+    title = seek_power.004.title
+    desc = seek_power.004.desc
     theme = hunt_activity
 
     option = {
-        name = "Collect the sacred blood carefully, taking only what I need"
+        name = seek_power.004.a
         send_interface_toast = {
-            title = "Ancient Lifeforce Harvested"
+            title = seek_power.toast.ancient_lifeforce
             left_icon = this
             add_character_modifier = { modifier = lifeforce_modifier_major } 
             hematurgy_magic_cast_effect_minor = yes
