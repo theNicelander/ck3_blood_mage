@@ -1,69 +1,75 @@
-# Changelog by Date
+# Changelog - Highlights
 
-## April 23, 2025
-* Update readme
-* Convert to BM, now can be done with a hook + better localisation
-* Fixed issue with `scope:recipient = { is_knight_of = scope:actor }`
+## 15.34
+* Converting others to blood mages, now can be done with a hook
 * Tweaked piety level requirements for all decisions
+    * blood runes: lvl 2
+    * channel: lvl 1
+    * education: lvl 2 to improve, lvl 3 for new one
+    * manifesting: lvl 2
+* Piety level only reduced for runes and chance to happen with education
 * Piety now generally more expensive
 * Enhance lifeforce removed (not fun)
+
 * Can now get new education trait, if we have level 5
-* Use localisation everywhere now
 * Golem attributes cost scaling amounts of piety, no longer grant bloodline XP for each attribute added, and cannot continue without piety
-* Lots of AI balances
+* Lots of AI balances, so AI considers relationship with target and it's own health before doing actions
 
-## April 12, 2025
-- Can etch blood runes into character, new modifier granting yearly chance of lifeforce
-- Seek power every 1 year, if wanderer
-- Tweaked traveller trait list chances
-- Yearly chance of getting bloodline XP, depends on number of dynasty modifiers
+## 15.33
+* Character interactions dont trigger events, if there's only one outcome (blood cult + drain lifeforce), instead show up in the character interaction
+* Creating golem traits cost piety each time
+* New decision: Manifest lifeforce, at great cost of piety
+* Balance dynasty/major modifiers, generally stronger
+* Balance blood mage trait, generally stronger
+* Golems belong to same dynasty/house 
 
-## April 6, 2025
-- 15.22: Crimson Warrior/Champion + Minor channel lifeforce + Tweak personal/dynasty modifiers + {01} xp/year all tracks + more tracks in trait + AI tweaks (#57)
+## 15.32
+* New decisions: Enhance lifeforce, to convert minor to major (later removed)
+* New Blood Mage icons for modifiers (white)
+* Can level up education with decision, at high cost of piety
+* Can create blood golem, high prowess courtiers, at high cost to piety
 
-## April 5, 2025
-- 15.21: Interface toasts added to convert to cult, seeking power + Can only convert courtiers to cult + Removed coven/negative holding effects (#56)
-- 15.20: Cure illness update + Seek Power (instead of stroll) + Delete coven (#55)
-- 15.18: Minor/major lifeforce + grant lifeforce reverts minor lifedrain + start updating healing + add xp dynamic + remove redundant code (#53)
+## 15.30
+* Healing pox more costly (piety + major & minor lifeforce)
+* Channelling decisions, show potential modifiers before casting decision
+* New decision: blood runes for chance to get yearly lifeforce (minor or major, depends on rune level)
+* Wandering characters, can seek power every 1 year, instead of 2 to balance (easier to get lifeforce for landed)
+* Bloodline xp yearly, scales with number of dynasty modifiers
 
-## April 1, 2025
-- 15.19 playtest (#54)
+## 15.29
+* Balance blood mage trait, all tracks negate prowess loss at 100xp
+* Balance dynasty/major modifiers, more x_per_piety_level now
+* AI chooses attunement, based on XP levels
+* Seek power wanderer, can have traits, some drainable. Can also join the player's court
+* Major channelling can only be done if piety level is positive
+* Drain trait harder, the more traits you have + 6 month cooldown
+* LLM context updated: more modifiers
 
-## March 31, 2025
-- Formatting localisation (#52)
-- Create .pre-commit-config.yaml (#52)
-- Formatting (#52)
-- 15.17: Update Channel lifeforce decision & modifiers (#52)
+# 15.25
+* Cultists can become blood mages, with decision and wise versa
+* Trait, modifier and holy site balancing
+* Attune lifeforce, chance to get extra XP per year
+* New ANCIENT track in trat, 1xp per year, for rewarding long living characters
+* Channel minor lifeforce, for temporary bonuses 
+* More interface toasts, to get feedback on what happened
+* Can only convert courtiers/prisoners to cult
+* Create crimson warriors/champions, granting knights extra prowess
 
-## March 30, 2025
-- 15.16: (untested) BM trait in tracks, new XP gains, update events (beggar, lifedrain, traitdrain), enchance BM trait removed (#51)
+# 15.20
+* Update trait to new format, with tracks
+* Seek power event/decision, rather than stroll through town (better theme with wandering)
+* Split lifeforce into major/minor. Minor draining doesn't kill
+* Granting lifeforce, reverts minor lifedraining
+* Update icon graphics
+* Add LLM RAG documents for context
+* Create channel (major) lifeforce decision, strong permanent buffs for self or dynasty
+* Create .pre-commit-config.yaml
 
-## March 26, 2025
-- Update rag (#50)
-- Add RAG context (#49)
-
-## March 18, 2025
-- 15.14: Religion unreformed + Holysites give +1 to a random skill (#47)
-- 15.13: Grant trait gives scaling XP + Channel minor/major lifeforce events + Religion is now reformed + fix trait drain duel values (#46)
-- 15.12: Playtest -- Tweak cost+ Coven requires piety rank + Mass drain needs prisoners + Coven balance + Duel docs + Tweak convert cult duel (#45)
-
-## March 17, 2025
-- 15.11: Convert to blood cult interaction + Tweak Iceland holy Sites (#44)
-- Various commits related to try event and bm_convert_to_blood_cult.txt
-
-## March 16, 2025
-- 15.10: Create flat/favoured/diminishing XP gains + Set XP lifeforce/trait drain, grant lifeforce, channel lifeforce, coven, yearly -> Based on google drive (#43)
-- 15.9: Rebalance traits/lifeforce + Rebalance/add more holy sites + Drain lifeforce grants XP if novice (#42)
-- 15.8: Take up blood cultist faith decision (#41)
-- 15.7: Yearly XP gain + Religion working (needs balancing) + Stroll tells you what the outcome was, added flavour (#40)
-- 1.15: White eyes only (#39)
-- 1.15: Simplified coven massively + Flavour text (#38)
-
-## March 15, 2025
-- 1.15: Dutchy building working + Coven decision working + All decisions show required trait + Flavour texts + Can add experience alone (#37)
-- 1.15: Can level up trait + Custom EXP function + fixed giving blood magic + Flavour texts + Simplify events (#36)
-- 1.15: Using blood magic adds 1exp + Channel lifeforce adds exp + Strolling working + Add level 2 description (#35)
-- 1.15: Add level 2 Trait + Fix DNA + All character interactions working (#34)
-- Delete all non english localisation (#33)
-- 1.15: Create new levelleable trait, delete old traits, debug decision to level up (#32)
-- 1.15: Decisions show up in own group (#30)
+# 15.15
+* Religion unreformed, and syncs with christians (less hate)
+* Add more holy Sites, and each grant +1 skill
+* Mass drain needs prisoners
+* Can spend minor lifeforce to convert to cult
+* Blood mages can convert to cult
+* Blood mages have white eyes
+* Decisions show up in own group (#30)
