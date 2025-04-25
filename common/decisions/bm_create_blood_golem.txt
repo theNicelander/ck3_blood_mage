@@ -7,6 +7,34 @@
         has_character_modifier = lifeforce_modifier_major
         piety_level >= 3
         piety >= 1000
+
+        OR = {
+            has_trait_xp = {
+                trait = lifestyle_blood_mage
+                track = ancient
+                value >= 50
+            }
+            has_trait_xp = {
+                trait = lifestyle_blood_mage
+                track = enlightenment
+                value >= 50
+            }
+            has_trait_xp = {
+                trait = lifestyle_blood_mage
+                track = bloodline
+                value >= 50
+            }
+            has_trait_xp = {
+                trait = lifestyle_blood_mage
+                track = benediction
+                value >= 50
+            }
+            has_trait_xp = {
+                trait = lifestyle_blood_mage
+                track = hematurgy
+                value >= 50
+            }
+        }
     }
     cost = { piety = 750 }
     cooldown = { years = 3 }
@@ -19,6 +47,7 @@
             track = bloodline
             value = 5
         }
+        custom_tooltip = blood_golem_creation_decision_tt
     }
 
     ai_check_interval = 6

@@ -34,6 +34,43 @@ enhance_education_decision = {
     is_valid = {
         has_character_modifier = lifeforce_modifier_major
         piety_level >= 3
+        OR = {
+            has_trait_xp = {
+                trait = lifestyle_crimson_empowerment
+                track = charisma
+                value >= 30
+            }
+            has_trait_xp = {
+                trait = lifestyle_crimson_empowerment
+                track = fury
+                value >= 30
+            }
+            has_trait_xp = {
+                trait = lifestyle_crimson_empowerment
+                track = prosperity
+                value >= 30
+            }
+            has_trait_xp = {
+                trait = lifestyle_crimson_empowerment
+                track = shadows
+                value >= 30
+            }
+            has_trait_xp = {
+                trait = lifestyle_crimson_empowerment
+                track = insight
+                value >= 30
+            }
+            has_trait_xp = {
+                trait = lifestyle_crimson_empowerment
+                track = legacy
+                value >= 30
+            }
+            has_trait_xp = {
+                trait = lifestyle_crimson_empowerment
+                track = expertise
+                value >= 30
+            }
+        }
     }
     effect = {
         blood_magic_used_major = yes
@@ -98,6 +135,44 @@ new_education_decision = {
     is_valid = {
         has_character_modifier = lifeforce_modifier_major
         piety_level >= 4
+
+        OR = {
+            has_trait_xp = {
+                trait = lifestyle_crimson_empowerment
+                track = charisma
+                value >= 60
+            }
+            has_trait_xp = {
+                trait = lifestyle_crimson_empowerment
+                track = fury
+                value >= 60
+            }
+            has_trait_xp = {
+                trait = lifestyle_crimson_empowerment
+                track = prosperity
+                value >= 60
+            }
+            has_trait_xp = {
+                trait = lifestyle_crimson_empowerment
+                track = shadows
+                value >= 60
+            }
+            has_trait_xp = {
+                trait = lifestyle_crimson_empowerment
+                track = insight
+                value >= 60
+            }
+            has_trait_xp = {
+                trait = lifestyle_crimson_empowerment
+                track = legacy
+                value >= 60
+            }
+            has_trait_xp = {
+                trait = lifestyle_crimson_empowerment
+                track = expertise
+                value >= 60
+            }
+        }
     }
     effect = {
         blood_magic_used_major = yes
