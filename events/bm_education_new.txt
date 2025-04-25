@@ -47,14 +47,6 @@ bm_education_new.001 = {
         ai_chance = { base = 100 }
     }
 
-    # prowess
-    option = {
-        name = bm_education_new.001.prowess
-        trigger = { NOT = {has_trait = education_martial_prowess} }
-        add_trait = education_martial_prowess_1
-        ai_chance = { base = 100 }
-    }
-
     # Portraits
     left_portrait = {
         character = root
