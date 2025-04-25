@@ -101,44 +101,44 @@ blood_mage_yearly_events.001 = {
 
 blood_mage_yearly_events.002 = {
     hidden = yes
-    trigger = { has_trait = lifestyle_blood_mage }
+    trigger = { 
+        has_trait = lifestyle_blood_mage
+        exists = house 
+    }
     immediate = {
         # Dynasty bloodline, get XP based on number of dynasty modifiers
         random = {
-            chance = 0
-            modifier = {
-                house = { has_house_modifier = dynasty_crimson_charisma_modifier }
-                add = 5
+            chance =  {
+                value = 0
+                if = {
+                    trigger = {house = { has_house_modifier = dynasty_crimson_charisma_modifier }}
+                    add = 5
+                }
+                if = {
+                    trigger = {house = { has_house_modifier = dynasty_crimson_fury_modifier }}
+                    add = 5
+                }
+                if = {
+                    trigger = {house = { has_house_modifier = dynasty_crimson_prosperity_modifier }}
+                    add = 5
+                }
+                if = {
+                    trigger = {house = { has_house_modifier = dynasty_crimson_shadows_modifier }}
+                    add = 5
+                }
+                if = {
+                    trigger = {house = { has_house_modifier = dynasty_crimson_insight_modifier }}
+                    add = 5
+                }
+                if = {
+                    trigger = {house = { has_house_modifier = dynasty_crimson_legacy_modifier }}
+                    add = 5
+                }
+                if = {
+                    trigger = {house = { has_house_modifier = dynasty_crimson_expertise_modifier }}
+                    add = 5
+                }
             }
-            modifier = {
-                house = { has_house_modifier = dynasty_crimson_fury_modifier }
-                add = 5
-            }
-            modifier = {
-                house = { has_house_modifier = dynasty_crimson_prosperity_modifier }
-                add = 5
-            }
-            modifier = {
-                house = { has_house_modifier = dynasty_crimson_shadows_modifier }
-                add = 5
-            }
-            modifier = {
-                house = { has_house_modifier = dynasty_crimson_insight_modifier }
-                add = 5
-            }
-            modifier = {
-                house = { has_house_modifier = dynasty_crimson_legacy_modifier }
-                add = 5
-            }
-            modifier = {
-                house = { has_house_modifier = dynasty_crimson_expertise_modifier }
-                add = 5
-            }
-            modifier = {
-                house = { has_house_modifier = dynasty_crimson_expertise_modifier }
-                add = 5
-            }
-
             # Give XP
             send_interface_toast = {
                 title = "Your Dynasty's legacy modifiers granted you experience"
