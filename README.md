@@ -6,19 +6,25 @@ This mod is for you if:
 - You want a way for your character to live forever, without being completely immortal
 - You want your character to gain positive physical traits (intelligent, beautiful, etc) in a way that feels part of the game
 
+Blood Mages can drain **Lifeforce** out of other characters, to extend their lifespan. The life
+
 **Maximum compatibility**: Doesn't overwrite any base game files to work with most other mods, even large overhaul mods such as EK2 or AGOT (tested).
+
+## High level
+
+
 
 ## Blood Mage Trait and Specialisation
 
 The Blood Mage trait features five unique specialisation tracks:
 
-- **Ancient**: Master longevity and defy aging
-- **Enlightenment**: Enhance personal magical power and potential  
-- **Bloodline**: Strengthen your dynasty through blood magic
-- **Benediction**: Perfect healing and enhancement of others
-- **Hematurgy**: Absorb traits and harvest lifeforce from the unworthy
+- **Ancient**: Survive
+- **Enlightenment**: Strengthen yourself  
+- **Bloodline**: Strengthen your dynasty
+- **Benediction**: Healing and strengthen others
+- **Hematurgy**: Absorb traits and harvest lifeforce
 
-Each track gains experience as you use related abilities, with progressive tiers providing escalating benefits like increased lifespan, skill bonuses, and exclusive abilities.
+Each track gains experience as you use related abilities, each with 10 tiers with benefits like increased lifespan, skill bonuses.
 
 ## Lifeforce System
 
