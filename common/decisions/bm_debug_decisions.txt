@@ -65,3 +65,55 @@ debug_add_exp_blood_mage_exp = {
         }
     }
 }
+
+
+debug_add_crimson_empowerment_exp = {
+    decision_group_type = bm_decision_group
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+    is_shown = { debug_only = yes }
+    is_valid = { has_trait = lifestyle_blood_mage }
+    ai_check_interval = 0
+
+    effect = {
+        if = {
+            limit = { NOT = { has_trait = lifestyle_crimson_empowerment } }
+            add_trait = lifestyle_crimson_empowerment
+        }
+
+        add_trait_xp = {
+            trait = lifestyle_crimson_empowerment
+            track = charisma
+            value = 20
+        }
+        add_trait_xp = {
+            trait = lifestyle_crimson_empowerment
+            track = fury
+            value = 20
+        }
+        add_trait_xp = {
+            trait = lifestyle_crimson_empowerment
+            track = prosperity
+            value = 20
+        }
+        add_trait_xp = {
+            trait = lifestyle_crimson_empowerment
+            track = shadows
+            value = 20
+        }
+        add_trait_xp = {
+            trait = lifestyle_crimson_empowerment
+            track = insight
+            value = 20
+        }
+        add_trait_xp = {
+            trait = lifestyle_crimson_empowerment
+            track = legacy
+            value = 20
+        }
+        add_trait_xp = {
+            trait = lifestyle_crimson_empowerment
+            track = expertise
+            value = 20
+        }
+    }
+}
