@@ -69,3 +69,18 @@ Blood Mages can follow their own unique faith, the Cult of Blood:
    - Convert from being a witch to a Blood Mage
    - Join the Cult of Blood and complete the transformation ritual
 
+
+
+## Miscellaneous
+
+**Development plans**: https://trello.com/b/1qS7Y4n0/ck3-blood-mage-mod
+
+**Github repo**: https://github.com/theNicelander/ck3_blood_mage
+
+Feel free to use all the code for your own work. If you do, then please give me a shoutout :)
+
+## Like the mod?
+
+Consider buying be a coffee to support my work 😀
+
+https://www.buymeacoffee.com/TheNicelander
