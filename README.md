@@ -4,19 +4,17 @@ This mod is for you if:
 
 - You love playing a single character
 - You want a way for your character to live forever, without being completely immortal
-- You want your character to gain positive physical traits (intelligent, beautiful, etc) in a way that feels part of the game
-
-Blood Mages can drain **Lifeforce** out of other characters, to extend their lifespan. The life
+- You want your character to gain and level up positive physical traits (intelligent, beautiful, etc) in a way that feels part of the game
 
 **Maximum compatibility**: Doesn't overwrite any base game files to work with most other mods, even large overhaul mods such as EK2 or AGOT (tested).
 
-## High level
+## Overview
 
-
+They drain **Lifeforce** from others to extend their own lifespan and cast powerful spells. This power can be used to heal, enhance abilities, absorb traits, and more, at the cost of their own health.
 
 ## Blood Mage Trait and Specialisation
 
-The Blood Mage trait features five unique specialisation tracks:
+The Blood Mage trait features five distinct tracks:
 
 - **Ancient**: Survive
 - **Enlightenment**: Strengthen yourself  
@@ -24,90 +22,41 @@ The Blood Mage trait features five unique specialisation tracks:
 - **Benediction**: Healing and strengthen others
 - **Hematurgy**: Absorb traits and harvest lifeforce
 
-Each track gains experience as you use related abilities, each with 10 tiers with benefits like increased lifespan, skill bonuses.
+Each track gains experience as you use related abilities, with ten progressive tiers of power. Maxing them all out might take you over 100 years, costing tens of thousands of piety, and the benefits reflect that. 
 
 ## Lifeforce System
 
-Lifeforce is the fundamental resource for Blood Mages, and can be:
-- Violently extracted from other human beings
-- Manifested directly through powerful rituals
-- Passively generated through Blood Runes
-- Found in nature by seeking power
+Lifeforce is the fundamental resource for Blood Mages, that's primarily gained through draining other characters, such as prisoners or courtiers. Other ways do exist, but you'll have to discover those.
 
 Two types exist:
 - **Minor Lifeforce**: Smaller bonuses, used for less potent magic
 - **Major Lifeforce**: Significant bonuses, required for powerful rituals
 
-Both provide:
-- Extended lifespan and fertility years
-- Disease resistance and health
-- Physical prowess
+Both provide increased lifespan, fertility, disease resistance, health and prowess. 
 
-**Blood Mages are NOT immortal** - they can still be assassinated, killed in combat or by illness if their lifeforce becomes depleted.
+Using magic uses up Lifeforce, and grants a temporary negative Lifeforce modifier. This means **Blood Mages are NOT immortal** - they can still be assassinated, killed in combat or by illness if their lifeforce becomes depleted. 
+
+You need to manage your Lifeforce. Balance health and lifespan VS short term gain 
 
 ## Blood Magic Abilities
 
-### Personal Enhancement
-- **Channel Lifeforce**: Temporarily boost specific skills
-- **Manifest Crimson Power**: Grant permanent bonuses to yourself
-- **Enhance Education**: Improve education trait levels through blood magic
-- **Attune Blood Magic**: Focus your power on specific specialisation tracks
-- **Crimson Empowerment**: Permanently enhance your character through dedicated paths
-- **Blood Runes**: Inscribe your body with runes that passively generate lifeforce
-
-### Healing & Enhancement
-- **Cure Illnesses**: Heal ailments of varying severity
-- **Grant Blood Magic**: Pass your power to worthy individuals
-- **Reverse Lifedrain**: Restore those who have been drained
-- **Crimson Warriors/Champions**: Empower your knights with blood magic
-
-### Dynasty Enhancement
-- **Infuse Dynasty**: Grant permanent bonuses to all dynasty members
-- **Create Blood Golems**: Craft loyal servants bound to your blood
-- **Conversion**: Use blood magic to convert others to your faith
-
-### Hematurgy
-- **Drain Traits**: Absorb congenital traits from prisoners (beauty, intelligence, physique)
-- **Steal Special Traits**: Absorb rare traits from prisoners like Giant, Fecund, and Pure-Blooded
-- **Seek Power in Nature**: Find sacrifices in the wilderness to gain lifeforce
-- **Mass Lifedrain**: Harvest lifeforce from multiple prisoners simultaneously
+- Temporarily or permanently boost your skills, or your dynasty's
+- Improve education trait, or gain new ones
+- Inscribe your body with runes that passively generate lifeforce
+- Heal some wounds and illnesses of varying severity
+- Make others Blood Mages or convert to the Blood Cult
+- Restore those who have been drained
+- Empower your knights with blood magic
+- Create Blood Golems, and enhance their traits at the cost of piety
+- Drain congenital traits from prisoners (beauty, intelligence, physique, giant, fecund)
 
 ## The Cult of Blood
 
 Blood Mages can follow their own unique faith, the Cult of Blood:
 
-- **Holy Sites**: Numerous locations across Europe
-- **Special Bonuses**: Each site grants +1 to various skills, to balance the number of sites
+- **Holy Sites**: Almost 50 locations across Europe
+- **Special Bonuses**: Each site grants +1 to skills, to balance the number of sites
 - **Blood Magic University**: Build special duchy buildings to enhance magical study
-
-## Advanced Systems
-
-### Crimson Empowerment
-Seven powerful specialisation paths for permanent character enhancement:
-- **Charisma**: Diplomatic presence and persuasion
-- **Fury**: Martial prowess and battlefield dominance
-- **Prosperity**: Stewardship and domain management
-- **Shadows**: Enhanced scheming and intrigue
-- **Insight**: Learning and knowledge
-- **Legacy**: Bloodline enhancement and genetic traits
-- **Expertise**: Accelerated skill acquisition
-
-### Blood Runes
-Three tiers of blood runes that can be inscribed on your body:
-- **Minor Crimson Rune**: Occasionally generates minor lifeforce
-- **Major Crimson Rune**: Better chance of generating lifeforce, including major lifeforce
-- **Superior Crimson Rune**: Highest chance of generating both types of lifeforce
-
-### Education Enhancement
-Two powerful educational abilities:
-- **Enhance Education**: Improve existing education traits up to level 5
-- **Embrace New Knowledge**: Gain education in disciplines you haven't mastered
-
-### Blood Golems
-Create and enhance loyal servants animated by your blood essence:
-- Customize traits and abilities
-- Powerful guardians and fighters bound to your service
-- Stronger than typical knights and completely loyal
 
 ## Getting Started
 
@@ -117,21 +66,3 @@ Create and enhance loyal servants animated by your blood essence:
    - Convert from being a witch to a Blood Mage
    - Join the Cult of Blood and complete the transformation ritual
 
-## Character Interactions
-
-Blood Mages have unique character interactions:
-- **Lifedrain**: Extract lifeforce from courtiers or prisoners
-- **Trait Drain**: Absorb congenital traits from prisoners
-- **Grant Blood Magic**: Pass on your power to worthy individuals
-- **Convert to Blood Cult**: Bring others into the crimson faith
-- **Heal Ailments**: Cure diseases and injuries of various severity
-- **Grant Crimson Warrior/Champion**: Enhance your knights with blood power
-
-## Strategic Gameplay
-
-Blood Magic offers powerful advantages but requires careful management:
-- Balance using lifeforce for spells against preserving it for longevity
-- Choose specialization paths based on your playstyle and goals
-- Build a dynasty of blood mages for maximum power
-- Create passive lifeforce generation through blood runes
-- Enhance your education to unlock powerful trait combinations
