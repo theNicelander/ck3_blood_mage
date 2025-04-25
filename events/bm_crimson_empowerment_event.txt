@@ -1,6 +1,4 @@
-﻿# Spend Lifeforce event
-
-namespace = bm_crimson_empowerment_event
+﻿namespace = bm_crimson_empowerment_event
 
 
 bm_crimson_empowerment_event.001 = {
@@ -11,8 +9,7 @@ bm_crimson_empowerment_event.001 = {
 
     # Crimson Charisma
     option = {
-        name = bm_crimson_empowerment_event.001.a
-        add_crimson_empowerment_xp = { TRACK = charisma }
+        name = bm_crimson_empowerment_event.001.charisma
         trigger = { 
             has_trait_xp = {
             trait = lifestyle_crimson_empowerment
@@ -21,12 +18,16 @@ bm_crimson_empowerment_event.001 = {
         }
         }
         ai_chance = { base = 100 }
+        send_interface_toast = {
+            title = bm_crimson_empowerment_event.001.toast
+            left_icon = this
+            add_crimson_empowerment_xp = { TRACK = charisma }
+        }
     }
 
     # Crimson Fury
     option = {
-        name = bm_crimson_empowerment_event.001.b
-        add_crimson_empowerment_xp = { TRACK = fury }
+        name = bm_crimson_empowerment_event.001.fury
         trigger = { 
             has_trait_xp = {
                 trait = lifestyle_crimson_empowerment
@@ -35,12 +36,16 @@ bm_crimson_empowerment_event.001 = {
             }
         }
         ai_chance = { base = 100 }
+         send_interface_toast = {
+            title = bm_crimson_empowerment_event.001.toast
+            left_icon = this
+            add_crimson_empowerment_xp = { TRACK = fury }
+        }
     }
 
     # Crimson Prosperity
     option = {
-        name = bm_crimson_empowerment_event.001.c
-        add_crimson_empowerment_xp = { TRACK = prosperity }
+        name = bm_crimson_empowerment_event.001.prosperity
         trigger = { 
             has_trait_xp = {
                 trait = lifestyle_crimson_empowerment
@@ -49,12 +54,16 @@ bm_crimson_empowerment_event.001 = {
             }
         }
         ai_chance = { base = 100 }
+         send_interface_toast = {
+            title = bm_crimson_empowerment_event.001.toast
+            left_icon = this
+            add_crimson_empowerment_xp = { TRACK = prosperity }
+        }
     }
 
     # Crimson Shadows
     option = {
-        name = bm_crimson_empowerment_event.001.d
-        add_crimson_empowerment_xp = { TRACK = shadows }
+        name = bm_crimson_empowerment_event.001.shadows
         trigger = { 
             has_trait_xp = {
                 trait = lifestyle_crimson_empowerment
@@ -63,12 +72,16 @@ bm_crimson_empowerment_event.001 = {
             }
         }
         ai_chance = { base = 100 }
+         send_interface_toast = {
+            title = bm_crimson_empowerment_event.001.toast
+            left_icon = this
+            add_crimson_empowerment_xp = { TRACK = shadows }
+        }
     }
 
     # Crimson Insight
     option = {
-        name = bm_crimson_empowerment_event.001.e
-        add_crimson_empowerment_xp = { TRACK = insight }
+        name = bm_crimson_empowerment_event.001.insight
         trigger = { 
             has_trait_xp = {
                 trait = lifestyle_crimson_empowerment
@@ -77,12 +90,16 @@ bm_crimson_empowerment_event.001 = {
             }
         }
         ai_chance = { base = 100 }
+         send_interface_toast = {
+            title = bm_crimson_empowerment_event.001.toast
+            left_icon = this
+            add_crimson_empowerment_xp = { TRACK = insight }
+        }
     }
 
     # Crimson Legacy
     option = {
-        name = bm_crimson_empowerment_event.001.f
-        add_crimson_empowerment_xp = { TRACK = legacy }
+        name = bm_crimson_empowerment_event.001.legacy
         trigger = { 
             has_trait_xp = {
                 trait = lifestyle_crimson_empowerment
@@ -91,12 +108,16 @@ bm_crimson_empowerment_event.001 = {
             }
         }
         ai_chance = { base = 100 }
+         send_interface_toast = {
+            title = bm_crimson_empowerment_event.001.toast
+            left_icon = this
+            add_crimson_empowerment_xp = { TRACK = legacy }
+        }
     }
 
     # Crimson Expertise
     option = {
-        name = bm_crimson_empowerment_event.001.g
-        add_crimson_empowerment_xp = { TRACK = expertise }
+        name = bm_crimson_empowerment_event.001.expertise
         trigger = { 
             has_trait_xp = {
                 trait = lifestyle_crimson_empowerment
@@ -105,42 +126,47 @@ bm_crimson_empowerment_event.001 = {
             }
         }
         ai_chance = { base = 100 }
+         send_interface_toast = {
+            title = bm_crimson_empowerment_event.001.toast
+            left_icon = this
+            add_crimson_empowerment_xp = { TRACK = expertise }
+        }
     }
     # Fallback
     option = {
-        name = bm_crimson_empowerment_event.001.x
+        name = bm_crimson_empowerment_event.001.versatility
         send_interface_toast = {
-            title = "Crimson Empowered"
+            title = bm_crimson_empowerment_event.001.toast
             left_icon = this
-            add_character_modifier = {
-                modifier = temporary_crimson_empowerment
-                days = 3650
-            }
-            # Chance to perm add skill, based on each skill respectively, plus 10
-            random = { # Diplomacy
-                chance = { value = 10 add = this.diplomacy }
-                add_diplomacy_skill = 1
-            }
-            random = { # Learning
-                chance = { value = 10 add = this.learning }
-                add_learning_skill = 1
-            }
-            random = { # Martial
-                chance = { value = 10 add = this.martial }
-                add_martial_skill = 1
-            }
-            random = { # Intrigue
-                chance = { value = 10 add = this.intrigue }
-                add_intrigue_skill = 1
-            }
-            random = { # Stewardship
-                chance = { value = 10 add = this.stewardship }
-                add_stewardship_skill = 1
-            }
-            random = { # Prowess
-                chance = { value = 10 add = this.prowess }
-                add_prowess_skill = 2
-            }
+        }
+        add_character_modifier = {
+            modifier = temporary_crimson_empowerment
+            days = 3650
+        }
+        # Chance to perm add skill, based on each skill respectively, plus 10
+        random = { # Diplomacy
+            chance = { value = 10 add = this.diplomacy }
+            add_diplomacy_skill = 1
+        }
+        random = { # Learning
+            chance = { value = 10 add = this.learning }
+            add_learning_skill = 1
+        }
+        random = { # Martial
+            chance = { value = 10 add = this.martial }
+            add_martial_skill = 1
+        }
+        random = { # Intrigue
+            chance = { value = 10 add = this.intrigue }
+            add_intrigue_skill = 1
+        }
+        random = { # Stewardship
+            chance = { value = 10 add = this.stewardship }
+            add_stewardship_skill = 1
+        }
+        random = { # Prowess
+            chance = { value = 10 add = this.prowess }
+            add_prowess_skill = 2
         }
         ai_chance = { base = 10 }
     }
