@@ -1,7 +1,10 @@
-﻿required_xp_improve_education = 30
-required_xp_new_education = 75
+﻿required_xp_new_education = 75
 required_xp_manifest_lifeforce = 75
 required_xp_blood_golem = 50
+
+education_level_2_cost_xp = 10 # From 2->3
+education_level_3_cost_xp = 30 # From 3->4
+education_level_4_cost_xp = 50 # From 4->5
 
 bm_blood_rune_minimum_xp = {
     value = 25
@@ -15,9 +18,6 @@ bm_blood_rune_minimum_xp = {
     }
 }
 
-education_level_2_cost = 10 # From 2->3
-education_level_3_cost = 30 # From 3->4
-education_level_4_cost = 50 # From 4->5
 
 required_xp_improve_education = {
     value = 0
@@ -25,66 +25,66 @@ required_xp_improve_education = {
     # Level 2 traits
     if = {
         limit = { has_trait = education_diplomacy_2 }
-        add = education_level_2_cost
+        add = education_level_2_cost_xp
     }
     if = {
         limit = { has_trait = education_martial_2 }
-        add = education_level_2_cost
+        add = education_level_2_cost_xp
     }
     if = {
         limit = { has_trait = education_stewardship_2 }
-        add = education_level_2_cost
+        add = education_level_2_cost_xp
     }
     if = {
         limit = { has_trait = education_intrigue_2 }
-        add = education_level_2_cost
+        add = education_level_2_cost_xp
     }
     if = {
         limit = { has_trait = education_learning_2 }
-        add = education_level_2_cost
+        add = education_level_2_cost_xp
     }
     
     # Level 3 traits
     if = {
         limit = { has_trait = education_diplomacy_3 }
-        add = education_level_3_cost
+        add = education_level_3_cost_xp
     }
     if = {
         limit = { has_trait = education_martial_3 }
-        add = education_level_3_cost
+        add = education_level_3_cost_xp
     }
     if = {
         limit = { has_trait = education_stewardship_3 }
-        add = education_level_3_cost
+        add = education_level_3_cost_xp
     }
     if = {
         limit = { has_trait = education_intrigue_3 }
-        add = education_level_3_cost
+        add = education_level_3_cost_xp
     }
     if = {
         limit = { has_trait = education_learning_3 }
-        add = education_level_3_cost
+        add = education_level_3_cost_xp
     }
     
     # Level 4 traits
     if = {
         limit = { has_trait = education_diplomacy_4 }
-        add = education_level_4_cost
+        add = education_level_4_cost_xp
     }
     if = {
         limit = { has_trait = education_martial_4 }
-        add = education_level_4_cost
+        add = education_level_4_cost_xp
     }
     if = {
         limit = { has_trait = education_stewardship_4 }
-        add = education_level_4_cost
+        add = education_level_4_cost_xp
     }
     if = {
         limit = { has_trait = education_intrigue_4 }
-        add = education_level_4_cost
+        add = education_level_4_cost_xp
     }
     if = {
         limit = { has_trait = education_learning_4 }
-        add = education_level_4_cost
+        add = education_level_4_cost_xp
     }
 }
