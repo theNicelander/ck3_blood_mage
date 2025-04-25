@@ -1,0 +1,29 @@
+﻿has_blood_mage_trait_xp_any_track = {
+    OR = {
+        has_trait_xp = {
+            trait = lifestyle_blood_mage
+            track = ancient
+            value >= $VALUE$
+        }
+        has_trait_xp = {
+            trait = lifestyle_blood_mage
+            track = enlightenment
+            value >= $VALUE$
+        }
+        has_trait_xp = {
+            trait = lifestyle_blood_mage
+            track = bloodline
+            value >= $VALUE$
+        }
+        has_trait_xp = {
+            trait = lifestyle_blood_mage
+            track = benediction
+            value >= $VALUE$
+        }
+        has_trait_xp = {
+            trait = lifestyle_blood_mage
+            track = hematurgy
+            value >= $VALUE$
+        }
+    }
+}

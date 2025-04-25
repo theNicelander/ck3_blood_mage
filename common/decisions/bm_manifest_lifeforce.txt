@@ -6,9 +6,37 @@
 
     is_valid = {
         piety_level >= 2
+
+        OR = {
+            has_trait_xp = {
+                trait = lifestyle_blood_mage
+                track = ancient
+                value >= 75
+            }
+            has_trait_xp = {
+                trait = lifestyle_blood_mage
+                track = enlightenment
+                value >= 75
+            }
+            has_trait_xp = {
+                trait = lifestyle_blood_mage
+                track = bloodline
+                value >= 75
+            }
+            has_trait_xp = {
+                trait = lifestyle_blood_mage
+                track = benediction
+                value >= 75
+            }
+            has_trait_xp = {
+                trait = lifestyle_blood_mage
+                track = hematurgy
+                value >= 75
+            }
+        }
     }
     
-    cost = { piety = 1000 }
+    cost = { piety = 500 }
     cooldown = { years = 1 }
 
     effect = {
@@ -17,7 +45,7 @@
             value = 0
             
             # Success - major lifeforce
-            0 = {
+            15 = {
                 desc = manifest_lifeforce_major_success_tt
                 compare_modifier = {
                     value = scope:duel_value
@@ -58,7 +86,7 @@
             }
             
             # Critical failure
-            20 = {
+            15 = {
                 desc = manifest_lifeforce_major_failure_tt
                 send_interface_toast = {
                     title = manifest_lifeforce_major_failure_tt

@@ -26,36 +26,6 @@
     }
 }
 
-channel_lifeforce_enlightenment_major = {
-    picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
-    decision_group_type = bm_decision_group
-
-    cooldown = { years = 3 }
-    cost = { piety = 250 }
-
-    is_shown = { has_trait = lifestyle_blood_mage }
-    is_valid = {
-        has_character_modifier = lifeforce_modifier_major
-        has_trait = lifestyle_blood_mage
-        piety_level >= 1
-    }
-    effect = {
-        trigger_event = { id = bm_channel_lifeforce_enlightenment_major.001 }
-        blood_magic_used_major = yes
-        add_xp_bm_dynamic = {
-            TRACK = enlightenment
-            XP = 5
-        }
-        custom_tooltip = channel_lifeforce_enlightenment_major.effects_list
-    }
-    ai_check_interval = 6
-    ai_will_do = { 
-        base = 0
-        ai_modifier_based_on_health = yes
-    }
-}
-
-
 channel_lifeforce_bloodline = {
     picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
     
