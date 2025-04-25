@@ -1,28 +1,22 @@
 ﻿
 #HEALTH
-excellent_health = 7
-good_health = 5
-medium_health = 4
-fine_health = 3 #The names of these should be updated to match the defines (HEALTH_STATE_LEVELS_VALUES, HEALTH_STATE_LEVELS_TEXTS)
-poor_health = 1
-dying_health = 0
 
 ai_modifier_based_on_health  = {
     modifier = {
         add = 100
-        scope:actor = { health > excellent_health } 
+        root = { health > excellent_health } 
     }
     modifier = {
         add = 40
-        scope:actor = { health > good_health } 
+        root = { health > good_health } 
     }
     modifier = {
         add = 20
-        scope:actor = { health > fine_health } 
+        root = { health > fine_health } 
     }
     modifier = { # don't do magic, if dying
         add = -999
-        scope:actor = { health < poor_health } 
+        root = { health < poor_health } 
     }
 }
 

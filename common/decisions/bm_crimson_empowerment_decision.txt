@@ -1,0 +1,34 @@
+﻿bm_crimson_empowerment_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
+    decision_group_type = bm_decision_group
+
+    cooldown = { years = 2 }
+    cost = { piety = 150 }
+    is_shown = { 
+        has_trait = lifestyle_blood_mage
+    }
+    is_valid = {
+        has_character_modifier = lifeforce_modifier_major
+        has_character_modifier = lifeforce_modifier_minor
+        piety_level >= 1
+    }
+    effect = {
+        if = {
+            limit = { NOT = { has_trait = lifestyle_crimson_empowerment } }
+            add_trait = lifestyle_crimson_empowerment
+        }
+        trigger_event = { id = bm_crimson_empowerment_event.001 }
+        blood_magic_used_major = yes
+        add_xp_bm_dynamic = {
+            TRACK = enlightenment
+            XP = 3
+        }
+    }
+    ai_check_interval = 6
+    ai_will_do = { 
+        base = 50 
+        ai_modifier_based_on_health = yes
+    }
+}
+
+

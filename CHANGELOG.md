@@ -1,5 +1,14 @@
 # Changelog - Highlights
 
+## 15.35
+* Can convert friend/soulmate/consort/family to cult
+* Various decisions have XP requirements now: Enhance and new Education / manifest lifeforce / create blood golem / blood rune
+* Removed channel major, and replaced with new Trait: Crimson Empowerment
+    * Cast Lifeforce, to gain 10xp in one of 7 tracks, each 10xp gives a differnt bonus
+    * Tracks are based around diplomacy/martial/stewardship/intrigue/learning/genetics/lifestyle xp gain
+* Blood cost (piety / xp level) scales with which rune you have
+* Levelling up education, cost and xp scales with eduation level
+
 ## 15.34
 * Converting others to blood mages, now can be done with a hook
 * Tweaked piety level requirements for all decisions
