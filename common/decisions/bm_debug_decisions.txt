@@ -1,7 +1,10 @@
 ﻿debug_become_blood_mage = {
     decision_group_type = debug
     picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
-    is_shown = { debug_only = yes }
+    is_shown = { 
+        debug_only = yes
+        scope:actor = {NOT={has_trait=lifestyle_blood_mage}} 
+    }
     effect = {
         add_trait = lifestyle_blood_mage
     }
