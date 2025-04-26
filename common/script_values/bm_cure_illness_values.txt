@@ -38,6 +38,10 @@ heal_disease_major_cost = {
         add = cure_illness_cost_major
     }
     if = {
+        limit = { scope:recipient = { has_trait = weak } }
+        add = cure_illness_cost_major
+    }
+    if = {
         limit = { scope:recipient = { has_trait = infirm } }
         add = cure_illness_cost_major
     }
@@ -79,6 +83,10 @@ heal_disease_benediction_cost = {
     value = 0
     if = {
         limit = { scope:recipient = { has_trait = wounded_3 } }
+        add = cure_illness_cost_benediction
+    }
+    if = {
+        limit = { scope:recipient = { has_trait = one_legged } }
         add = cure_illness_cost_benediction
     }
     if = {

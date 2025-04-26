@@ -93,6 +93,7 @@ heal_disease_major = {
                 has_trait = blind
                 has_trait = maimed
                 has_trait = one_eyed
+                has_trait = weak
             }
         }
     }
@@ -111,6 +112,7 @@ heal_disease_major = {
             remove_trait = measles
             remove_trait = blind
             remove_trait = one_eyed
+            has_trait = weak
 
             if = {
                 limit = {NOT = { scope:actor = scope:recipient }}
@@ -175,11 +177,11 @@ heal_disease_benediction = {
                 has_trait = bubonic_plague
                 has_trait = smallpox
                 has_trait = leper
-                has_trait = blind
                 has_trait = impotent
                 has_trait = dysentery
                 has_trait = ergotism
                 has_trait = disfigured
+                has_trait = one_legged
             }
         }
     }
@@ -194,11 +196,11 @@ heal_disease_benediction = {
             remove_trait = bubonic_plague
             remove_trait = smallpox
             remove_trait = leper
-            remove_trait = blind
             remove_trait = impotent
             remove_trait = dysentery
             remove_trait = ergotism
             remove_trait = disfigured
+            remove_trait = one_legged
 
             if = {
                 limit = {NOT = { scope:actor = scope:recipient }}
