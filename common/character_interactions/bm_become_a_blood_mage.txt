@@ -127,6 +127,7 @@ get_blood_magic_from_prisoner_interaction = {
 
     # AI
     ai_targets = { ai_recipients = prisoners }
+    ai_potential = { always = yes }
     ai_frequency = 3
     ai_will_do = { base = 50 }
 }

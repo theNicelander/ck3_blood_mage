@@ -71,14 +71,15 @@ grant_crimson_champion_interaction = {
             }
         }
     }
+    # AI
     ai_potential = { always = yes }
     ai_frequency = 6
     ai_will_do = {
-        base = 1
-        is_healthy = yes
-        modifier = {
-            scope:recipient = { is_knight_of = scope:actor }
-            add = 100
+        base = 0
+        modifier = { # only do if healthy
+            scope:actor != scope:recipient
+            scope:actor = {is_healthy = yes}
+            add = 10
         }
     }
 }

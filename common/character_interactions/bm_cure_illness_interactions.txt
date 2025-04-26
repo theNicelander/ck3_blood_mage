@@ -48,13 +48,18 @@
             }
         }
     }
+    ai_potential = { always = yes }
     ai_frequency = 6
     ai_will_do = {
         base = 0
-        ai_willingness_to_do_postitive_magic = yes
         modifier = { # want to cure myself
             scope:actor = scope:recipient
-            add = 999
+            add = 100
+        }
+        modifier = { # only cure others, if I'm healthy
+                scope:actor != scope:recipient
+                scope:actor = {is_healthy = yes}
+            add = 10
         }
     }
 }
@@ -133,13 +138,18 @@ heal_disease_major = {
 
         }
     }
+    ai_potential = { always = yes }
     ai_frequency = 6
     ai_will_do = {
         base = 0
-        ai_willingness_to_do_postitive_magic = yes
         modifier = { # want to cure myself
             scope:actor = scope:recipient
-            add = 999
+            add = 100
+        }
+        modifier = { # only cure others, if I'm healthy
+            scope:actor != scope:recipient
+            scope:actor = {is_healthy = yes}
+            add = 10
         }
     }
 }
@@ -224,7 +234,15 @@ heal_disease_benediction = {
     ai_frequency = 6
     ai_will_do = {
         base = 0
-        is_healthy = yes
+        modifier = { # want to cure myself
+            scope:actor = scope:recipient
+            add = 100
+        }
+        modifier = { # only cure others, if I'm healthy
+            scope:actor != scope:recipient
+            scope:actor = {is_healthy = yes}
+            add = 10
+        }
     }
 }
 

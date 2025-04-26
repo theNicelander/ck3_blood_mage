@@ -50,10 +50,9 @@
         }
     }
     ai_potential = { always = yes }
-    ai_frequency = 3
+    ai_frequency = 6
     ai_will_do = {
         base = 1
-        is_healthy = yes 
 		modifier = { # if AI doesn't have any attunement, they should always do that first
 			add = 100
 			scope:attune_lifeforce = yes
@@ -74,7 +73,13 @@
 		modifier = {
 			add = 5
 			scope:channel_minor = yes
-		}
+            scope:actor = {is_healthy = yes}
+            add = 10
+        }
+        modifier = { # only do if healthy
+            NOT = {scope:actor = {is_healthy = yes} }
+            add = -100
+        }
     }
 }
 

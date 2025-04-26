@@ -34,7 +34,11 @@
     ai_potential = { always = yes }
     ai_frequency = 6
     ai_will_do = {
-        base = 1
-        is_healthy = yes
+        base = 0
+        modifier = { # only do if healthy
+            scope:actor = {is_healthy = yes}
+            scope:actor != scope:recipient
+            add = 10
+        }
     }
 }

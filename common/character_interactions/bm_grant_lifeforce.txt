@@ -28,10 +28,15 @@
         }
         scope:actor = { benediction_magic_cast_effect_major = yes }
     }
+    # AI
     ai_potential = { always = yes }
     ai_frequency = 6
     ai_will_do = {
-        base = 1
-        is_healthy = yes
+        base = 0
+        modifier = { # only do if healthy
+            scope:actor != scope:recipient
+            scope:actor = {is_healthy = yes}
+            add = 10
+        }
     }
 }

@@ -106,6 +106,10 @@
     ai_frequency = 6
     ai_will_do = {
         base = 0
-        is_healthy = yes
+        modifier = { # only do if healthy
+            scope:actor = {is_healthy = yes}
+            scope:actor != scope:recipient
+            add = 10
+        }
     }
 }
