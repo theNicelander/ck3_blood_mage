@@ -1,84 +1,76 @@
-This Blood Mage mod strives to incorporate low-fantasy magic into CK3 in a balanced way. The mod doesn't overwrite any base game files, so it should be compatible with all mods. 
+This mod is for you if:
 
-Ever wanted to have a way for your character to live forever, without being completely immortal? 
-Ever wanted for your playable character to be able to gain positive physical traits (intelligent, beautiful) in a way that feels part of the game?
+- You love playing a single character
+- You want a way for your character to live forever, without being completely immortal
+- You want your character to gain and level up positive physical traits (intelligent, beautiful, etc) in a way that feels part of the game
 
-Then this mod is for you.  
+The mod doesn't overwrite any base game files, so it should be compatible with most other mods.
 
-[h1] Blood Mage [/h1]
+[h1]Overview[/h1]
+Blood Mages drain [b]Lifeforce[/b] from others to extend their own lifespan and cast powerful spells. This power can be used to heal, enhance abilities, absorb traits, and more, at the cost of their own health.
 
-Dashboard: https://share.streamlit.io/thenicelander/ck3_blood_mage_viz/main
+[h1]Blood Mage Trait and Specialisation[/h1]
+The Blood Mage trait features five distinct tracks:
 
-The Blood Mage trait comes in 9 levels. Only the first, Blood Mage Initiate, can be selected at the start. The remaining 8 have to be earned by levelling up. 
+- [b]Ancient[/b]: Survive
+- [b]Enlightenment[/b]: Strengthen yourself  
+- [b]Bloodline[/b]: Strengthen your dynasty
+- [b]Benediction[/b]: Healing and strengthen others
+- [b]Hematurgy[/b]: Absorb traits and harvest lifeforce
 
-You can also gain the initial trait by asking your blood mage friend/lover/soulmate to grant you the power or by becoming a witch and converting to a Blood Mage. 
+Each track gains experience as you use related abilities, with ten progressive tiers of power. Maxing them all out might take you 100 years, costing tens of thousands of piety, and the benefits reflect that.
 
-[h1] So what can Blood Mages do? [/h1]
+[h1]Lifeforce System[/h1]
+Lifeforce is the fundamental resource for Blood Mages, that's primarily gained through draining other characters, such as prisoners or courtiers. Other ways do exist, but you'll have to discover those.
 
-Blood Mages have magic flowing through their veins, and this magic can be made increasingly powerful. 
-This power extends a Blood Mage's life and allows them to cast increasingly powerful spells and become more proficient at the spells they know already. 
+Two types exist:
+- [b]Minor Lifeforce[/b]: Smaller bonuses, used for less potent magic
+- [b]Major Lifeforce[/b]: Significant bonuses, required for powerful rituals
 
-Blood Mages rely on piety and a new [b]Lifeforce[/b] modifier to cast spells. 
+Both provide increased lifespan, fertility, disease resistance, health and prowess.
 
-[h1]Lifeforce [/h1]
+Using magic uses up Lifeforce, and grants a temporary negative Lifeforce modifier. This means [b]Blood Mages are NOT immortal[/b] - they can still be assassinated, killed in combat or by illness if their lifeforce becomes depleted.
 
-Lifeforce is the fundamental power of Blood Mages. It can be violently extracted from other human beings. 
+Managing Lifeforce requires careful balance between health and longevity versus short-term power gains.
 
-By itself, Lifeforce prolongs your life or it can be expended to cast spells such as:
+[h1]Blood Magic Abilities[/h1]
+Blood Mages can use this Lifeforce to perform various actions:
 
 [list]
-    [*] Transfer Lifeforce to others
-    [*] Cure wounds and illnesses. The more severe the illness, the higher the blood mage trait required to cast it. 
-    [*] Drain traits from others (such as Intelligent, Beautiful, Giant, Robust). The higher your learning and Blood Mage trait, the more successful you'll be (see Dashboard for details)
-    [*] Increase your Blood Potency (increasing the Blood Mage trait rank)
-    [*] Increasing the Blood Mage power of your dynasty
-    [*] Increase your skill temporarily (+5 for 5 years)
-    [*] Increase your skill permanently (+1)
-    [*] Grant others Blood Magic (the rank depends on your rank)
+    [*] Level up a unique Crimson Empowerment trait, for permanent buffs
+    [*] Get temporary buffs, or buff their dynasty permanently
+    [*] Improve education trait, or gain new ones
+    [*] Inscribe their body with runes that passively generate lifeforce
+    [*] Heal some wounds and illnesses of varying severity
+    [*] Make others Blood Mages or convert to the Blood Cult
+    [*] Restore those who have been drained
+    [*] Empower their knights with blood magic
+    [*] Create Blood Golems, and enhance their traits at the cost of piety
+    [*] Drain congenital traits from prisoners (beauty, intelligence, physique, giant, fecund)
 [/list]
 
-[h1]Cult of Blood - New faith[/h1]
+[h1]The Cult of Blood[/h1]
+Blood Mages can follow their own unique faith, the Cult of Blood:
 
-Blood Mages can optionally follow their own unreformed religion, that's hated by the rest of the world, making playing as one even harder.
+- [b]Holy Sites[/b]: Almost 50 locations across Europe
+- [b]Special Bonuses[/b]: Each site grants +1 to skills, to balance the number of sites
+- [b]Blood Magic University[/b]: Build special duchy buildings to enhance magical study
 
-Places of power (holy sites) exist across Europe, in most many major cities. However, the bonuses are small each time, in attempt to balance out the number of sites.
+[h1]Getting Started[/h1]
+1. Select the Blood Mage trait at character creation
+2. Alternatively:
+   - Ask a Blood Mage friend/lover/soulmate to grant you the power
+   - Convert from being a witch to a Blood Mage
+   - Join the Cult of Blood and complete the transformation ritual
 
-[h1]Resources[/h1]
+[h1]Miscellaneous[/h1]
+[b]Development plans[/b]: https://trello.com/b/1qS7Y4n0/ck3-blood-mage-mod
 
-Absorbing traits and levelling up follow a formula that depends on many factors, such as the number of traits you already have, your learning, your target's learning and your Blood Mage Level.
-
-It's easiest to understand by visualising how it works. Which is exactly what I've done, by creating this interactive dashboard:
-
-https://share.streamlit.io/thenicelander/ck3_blood_mage_viz/main
-
-[h1]Localisation[/h1]
-
-Proper Localisation / Translations 
-- Russian (Thanks to [url=https://steamcommunity.com/id/VasiliyTheWorm] Roy P. Drill [/url] )
-
-Localisation / Translations done by Google translate:
-- French 
-- German
-- Spanish
-- Korean
-- Chinese (simplified)
-
-The translations were done automatically using a python script I wrote. Feel free to use it in your own mods
- https://github.com/theNicelander/ck3_ml_translator
-
-[hr] [/HR] 
-
-[h1]Miscelaneous things[/h1]
-
-Development plans:
-https://trello.com/b/1qS7Y4n0/ck3-blood-mage-mod
-
-Github repo: https://github.com/theNicelander/ck3_blood_mage
+[b]Github repo[/b]: https://github.com/theNicelander/ck3_blood_mage
 
 Feel free to use all the code for your own work. If you do, then please give me a shoutout :)
- 
-Like the mod?
 
-Consider buying be a coffee to support my work.
+[h1]Like the mod?[/h1]
+Consider buying be a coffee to support my work 😀
 
 https://www.buymeacoffee.com/TheNicelander

@@ -20,7 +20,7 @@ bm_trait_drain.001 = {
             skill = learning
             target = scope:recipient
             50 = {
-                desc = "I drain their intellect"
+                desc = bm_trait_drain.001.success
 
                 # Difficulty
                 compare_modifier = {
@@ -42,7 +42,7 @@ bm_trait_drain.001 = {
             50 = {
                 modifier = { add = trait_drain_modifier_per_trait }
                 send_interface_toast = {
-                    title = "I fail to drain their trait"
+                    title = bm_trait_drain.001.fail
                     drain_trait_failed_effects = yes
                     left_icon = root
                     right_icon = scope:recipient
@@ -66,7 +66,7 @@ bm_trait_drain.001 = {
             skill = learning
             target = scope:recipient
             50 = {
-                desc = "I drain their strength"
+                desc = bm_trait_drain.001.success
 
                 # Difficulty
                 compare_modifier = {
@@ -88,7 +88,7 @@ bm_trait_drain.001 = {
             50 = {
                 modifier = { add = trait_drain_modifier_per_trait }
                 send_interface_toast = {
-                    title = "I fail to drain their trait"
+                    title = bm_trait_drain.001.fail
                     drain_trait_failed_effects = yes
                     left_icon = root
                     right_icon = scope:recipient
@@ -112,7 +112,7 @@ bm_trait_drain.001 = {
             skill = learning
             target = scope:recipient
             50 = {
-                desc = "I drain their beauty"
+                desc = bm_trait_drain.001.success
                 
                 # Difficulty
                 compare_modifier = {
@@ -134,7 +134,7 @@ bm_trait_drain.001 = {
             50 = {
                 modifier = { add = trait_drain_modifier_per_trait }
                 send_interface_toast = {
-                    title = "I fail to drain their trait"
+                    title = bm_trait_drain.001.fail
                     drain_trait_failed_effects = yes
                     left_icon = root
                     right_icon = scope:recipient
@@ -182,7 +182,7 @@ bm_trait_drain.001 = {
             50 = {
                 modifier = { add = trait_drain_modifier_per_trait }
                 send_interface_toast = {
-                    title = "I fail to drain their trait"
+                    title = bm_trait_drain.001.fail
                     drain_trait_failed_effects = yes
                     left_icon = root
                     right_icon = scope:recipient
@@ -208,7 +208,7 @@ bm_trait_drain.001 = {
             skill = learning
             target = scope:recipient
             50 = {
-                desc = "I become a Giant"
+                desc = bm_trait_drain.001.success
                  # Difficulty
                 compare_modifier = {
                     value = scope:duel_value
@@ -230,7 +230,7 @@ bm_trait_drain.001 = {
             50 = {
                 modifier = { add = trait_drain_modifier_per_trait }
                 send_interface_toast = {
-                    title = "I fail to drain their trait"
+                    title = bm_trait_drain.001.fail
                     drain_trait_failed_effects = yes
                     left_icon = root
                     right_icon = scope:recipient
@@ -256,7 +256,7 @@ bm_trait_drain.001 = {
             skill = learning
             target = scope:recipient
             50 = {
-                desc = "I become a pure blooded"
+                desc = bm_trait_drain.001.success
 
                 # Difficulty
                 compare_modifier = {
@@ -279,7 +279,7 @@ bm_trait_drain.001 = {
             50 = {
                 modifier = { add = trait_drain_modifier_per_trait }
                 send_interface_toast = {
-                    title = "I fail to drain their trait"
+                    title = bm_trait_drain.001.fail
                     drain_trait_failed_effects = yes
                     left_icon = root
                     right_icon = scope:recipient

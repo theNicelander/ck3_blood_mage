@@ -1,5 +1,5 @@
 ﻿debug_add_lifeforce = {
-    decision_group_type = bm_decision_group
+    decision_group_type = debug
     picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
     is_shown = { debug_only = yes }
     is_valid = { has_trait = lifestyle_blood_mage }
@@ -15,7 +15,7 @@
 }
 
 debug_add_lifeforce_minor = {
-    decision_group_type = bm_decision_group
+    decision_group_type = debug
     picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
     is_shown = { debug_only = yes }
     is_valid = { has_trait = lifestyle_blood_mage }
@@ -31,7 +31,7 @@ debug_add_lifeforce_minor = {
 }
 
 debug_add_exp_blood_mage_exp = {
-    decision_group_type = bm_decision_group
+    decision_group_type = debug
     picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
     is_shown = { debug_only = yes }
     is_valid = { has_trait = lifestyle_blood_mage }
@@ -68,7 +68,7 @@ debug_add_exp_blood_mage_exp = {
 
 
 debug_add_crimson_empowerment_exp = {
-    decision_group_type = bm_decision_group
+    decision_group_type = debug
     picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
     is_shown = { debug_only = yes }
     is_valid = { has_trait = lifestyle_blood_mage }

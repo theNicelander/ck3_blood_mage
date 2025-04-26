@@ -83,11 +83,11 @@
                         scope:recipient = { is_knight_of = scope:actor } 
                         add = 50
                     }
-                    scope:recipient = { set_character_faith = faith:cult_of_blood }
                     send_interface_toast  = {
                         title = convert_to_blood_cult.success.toast
                         left_icon = scope:actor
                         right_icon = scope:recipient
+                        scope:recipient = { set_character_faith = faith:cult_of_blood }
                     }
                 }
                 50 = {

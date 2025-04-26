@@ -1,0 +1,132 @@
+﻿ask_for_blood_magic_interaction = {
+    category = interaction_category_friendly
+    auto_accept = yes
+    common_interaction = yes
+    desc = grant_blood_magic_interaction_desc
+    interface_priority = 150
+    is_highlighted = { always = yes }
+
+    cost = { piety = 100 }
+
+    is_shown = {
+        scope:recipient = {
+            has_trait = lifestyle_blood_mage
+            OR = {
+                has_relation_lover = scope:actor
+                has_relation_friend = scope:actor
+                has_relation_best_friend = scope:actor
+                has_relation_soulmate = scope:actor
+            }
+        }
+        scope:actor = { NOT = { has_trait = lifestyle_blood_mage } }
+    }
+
+    on_accept = {
+        scope:actor = {
+            add_trait = lifestyle_blood_mage
+        }
+    }
+
+    # AI
+    ai_min_reply_days = 0
+    ai_max_reply_days = 0
+    ai_frequency = 6
+    ai_potential = { is_adult = yes }
+    ai_will_do = { base = 100 }
+}
+
+
+# Trigger event
+get_blood_magic_from_prisoner_interaction = {
+    common_interaction = yes
+    auto_accept = yes
+    interface_priority = 999
+    category = interaction_category_hostile
+    desc = get_blood_magic_from_prisoner_interaction.desc
+
+    is_highlighted = { always = yes }
+    cost = { piety = 100 }
+
+    is_shown = {
+        scope:actor = { NOT = { has_trait = lifestyle_blood_mage } }
+        scope:recipient = {
+            is_imprisoned_by = scope:actor
+            has_trait = lifestyle_blood_mage
+        }
+    }
+
+    on_accept = {
+        if = {
+            limit = {scope:recipient = {has_trait = maimed }}
+            scope:actor = {add_trait = cannibal}
+            lifedrain_execution_effect = {
+                VICTIM = scope:recipient
+                EXECUTIONER = scope:actor
+            }
+        }
+        scope:recipient = {
+            send_interface_toast = {
+                left_icon = scope:actor
+                custom_tooltip = get_blood_magic_from_prisoner_interaction.desc
+                if = {
+                    limit = {has_trait = maimed}
+                    add_trait = maimed
+                }
+                if = {
+                    limit = {has_trait = one_legged}
+                    add_trait = maimed
+                }
+                add_trait = one_legged
+            }
+        }
+        scope:actor = {
+            duel = {
+                skills = {learning intrigue prowess}
+                target = scope:recipient
+                35 = {
+                    desc = get_blood_magic_from_prisoner_interaction.success
+                    scope:actor = { add_trait = lifestyle_blood_mage }
+
+                    compare_modifier = {
+                        value = scope:duel_value
+                        multiplier = 3
+                    }
+
+                    send_interface_toast  = {
+                        title = get_blood_magic_from_prisoner_interaction.success
+                        left_icon = scope:actor
+                        right_icon = scope:recipient
+                    }
+                }
+                65 = {
+                    desc = get_blood_magic_from_prisoner_interaction.fail
+                     send_interface_toast  = {
+                        title = get_blood_magic_from_prisoner_interaction.fail
+                        left_icon = scope:actor
+                        right_icon = scope:recipient
+                        if = {
+                            limit = {has_trait = blind}
+                            add_trait = ergotism
+                        }
+                        if = {
+                            limit = {has_trait = one_eyed}
+                            add_trait = blind
+                        }
+                        if = {
+                            limit = {has_trait = wounded_1}
+                            add_trait = one_eyed
+                        }
+                        add_trait = wounded_1
+                        add_trait = scarred
+                    }
+                }
+            }
+        }
+
+    }
+
+    # AI
+    ai_targets = { ai_recipients = prisoners }
+    ai_frequency = 3
+    ai_will_do = { base = 50 }
+}
