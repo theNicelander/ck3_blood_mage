@@ -23,6 +23,10 @@ bm_mass_lifedrain.001 = {
 
         # Execute everyone
         every_prisoner = {
+            limit = {
+                # Not of your dynasty
+                NOT = { is_close_family_of = root }
+            }
             # Get lifeforce
             root = {
                 add_piety = lifedrain_piety_cost_neg

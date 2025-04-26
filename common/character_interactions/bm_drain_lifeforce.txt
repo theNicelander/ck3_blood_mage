@@ -29,7 +29,7 @@
     # AI
     auto_accept = yes
     ai_targets = { ai_recipients = prisoners }
-    ai_potential = { is_at_war = no }
+    ai_potential = { always = yes }
     ai_frequency = 3
     ai_will_do = {
         base = 50
