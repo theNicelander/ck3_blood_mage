@@ -53,8 +53,7 @@
     ai_frequency = 3
     ai_will_do = {
         base = 1
-        # Scale up or down based one health
-        ai_modifier_based_on_health = yes 
+        is_healthy = yes 
 		modifier = { # if AI doesn't have any attunement, they should always do that first
 			add = 100
 			scope:attune_lifeforce = yes

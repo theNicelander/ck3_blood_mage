@@ -102,9 +102,10 @@
         }
 
     }
+    ai_potential = { always = yes }
     ai_frequency = 6
     ai_will_do = {
         base = 0
-        ai_willingness_to_do_postitive_magic = yes
+        is_healthy = yes
     }
 }
