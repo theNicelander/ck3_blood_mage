@@ -16,36 +16,36 @@
     send_options_exclusive = yes
 
 
-    send_option = {
+    send_option = { # Channel minor lifeforce
         localization = bm_cast_blood_magic_self_minor.channel_minor
         flag = channel_minor
         is_valid = {
-            scope:actor = {piety >= 50}
+            scope:actor = {piety >= 75}
         }
     }
-    send_option = {
+    send_option = { # Attune lifeforce
         localization = bm_cast_blood_magic_self_minor.attune_lifeforce
         flag = attune_lifeforce
-
-
+        is_valid = {
+            scope:actor = {piety >= 25}
+        }
     }
     on_accept = {
         scope:actor = {
-            if = { # Attune lifeforce
-                limit = {scope:attune_lifeforce = yes}
-                trigger_event = { id = bm_attune_lifeforce.001 } 
-                add_xp_enlightenment = yes
-                remove_character_modifier = lifeforce_modifier_minor
-                custom_tooltip = bm_attune_lifeforce.effects_list
-            }
             if = { # Channel minor lifeforce
                 limit = {scope:channel_minor = yes}
                 trigger_event = { id = bm_channel_lifeforce_enlightenment_minor.001 }
-                add_xp_enlightenment = yes
                 remove_character_modifier = lifeforce_modifier_minor
-                add_piety = -50
-
+                add_xp_enlightenment = yes
+                add_piety = -75
                 custom_tooltip = channel_lifeforce_enlightenment_minor.effects_list
+            }
+            if = { # Attune lifeforce
+                limit = {scope:attune_lifeforce = yes}
+                trigger_event = { id = bm_attune_lifeforce.001 } 
+                remove_character_modifier = lifeforce_modifier_minor
+                add_piety = -25
+                custom_tooltip = bm_attune_lifeforce.effects_list
             }
         }
     }
