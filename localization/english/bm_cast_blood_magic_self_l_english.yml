@@ -1,6 +1,7 @@
 ﻿l_english:
 ############### MINOR ###############
     bm_cast_blood_magic_self_minor: "Cast Minor Blood Magic"
+    bm_cast_blood_magic_self_minor_desc: "Channel [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] to cast weak Blood Magic on yourself"
 
     # Attune lifeforce
     bm_cast_blood_magic_self_minor.attune_lifeforce: "Attune Lifeforce"
@@ -29,3 +30,17 @@
 
 ############### MAJOR ###############
     bm_cast_blood_magic_self_major: "Cast Major Blood Magic"
+    bm_cast_blood_magic_self_major_desc: "Channel [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to cast strong Blood Magic on yourself"
+
+    # Education improvement
+    bm_cast_blood_magic_self_major.education_improve: "Enhance Education"
+    bm_cast_blood_magic_self_major.education_improve.desc: "You attempt to improve one of your education traits"
+    bm_education_enhancement.001.title: "Blood Infusion of Knowledge"
+    bm_education_enhancement.001.desc: "The crimson essence flows through special channels you've prepared, each inscribed with runes of knowledge and power. As you begin the ritual, you must decide which aspect of your education to enhance through blood magic. The ritual will be challenging - as your education level increases, the difficulty of further enhancement grows significantly."
+    bm_education_enhancement.001.diplomacy: "Enhance my diplomatic education"
+    bm_education_enhancement.001.martial: "Enhance my martial education"
+    bm_education_enhancement.001.stewardship: "Enhance my stewardship education"
+    bm_education_enhancement.001.intrigue: "Enhance my intrigue education"
+    bm_education_enhancement.001.learning: "Enhance my learning education"
+    bm_education_enhancement.success: "Education Enhanced"
+    bm_education_enhancement.failure: "Blood Infusion Failed"

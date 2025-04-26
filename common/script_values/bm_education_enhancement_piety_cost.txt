@@ -118,3 +118,11 @@ scaled_education_enhancement_cost = {
         add = education_level_5_cost
     }
 }
+
+scaled_education_enhancement_cost_neg = {
+    value = 0
+	add = {
+		value = scaled_education_enhancement_cost
+		multiply = -1
+	}
+}

@@ -64,6 +64,9 @@ bm_cast_blood_magic_self_major = {
     common_interaction = yes
     interface_priority = 999
 
+    send_name = bm_cast_blood_magic_self_major
+    desc = bm_cast_blood_magic_self_major_desc
+
     is_shown = {
         scope:actor = { has_trait = lifestyle_blood_mage }
         scope:actor = scope:recipient 
@@ -74,17 +77,22 @@ bm_cast_blood_magic_self_major = {
     send_options_exclusive = yes
 
 
-    send_option = {
-        localization = "Improve Education"
+    send_option = { # Improve education
+        localization = bm_cast_blood_magic_self_major.education_improve
         flag = improve_education
+        is_valid = {
+            scope:actor = {piety >= scaled_education_enhancement_cost}
+        }
     }
 
     on_accept = {
         scope:actor = {
             remove_character_modifier = lifeforce_modifier_major
-            if = {
+            if = { # Improve education
                 limit = {scope:improve_education = yes}
-                trigger_event = { id = bm_education_enhancement.001 } 
+                trigger_event = { id = bm_education_enhancement.001 }
+                add_piety = scaled_education_enhancement_cost_neg
+                custom_tooltip = bm_cast_blood_magic_self_major.education_improve.desc
             }
         }
     }
