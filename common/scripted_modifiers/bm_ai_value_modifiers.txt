@@ -15,7 +15,7 @@ ai_modifier_based_on_health  = {
         root = { health >= fine_health } 
     }
     modifier = { # don't do magic, if dying
-        add = -999
+        add = -100
         root = { health <= poor_health } 
     }
 }
@@ -79,10 +79,10 @@ ai_willingness_to_lifedrain = {
 ai_willingness_to_do_postitive_magic = {
     modifier = { # Prioritise myself
         scope:actor = scope:recipient
-        add = 999
+        add = 100
     }
     modifier = { # don't do magic, if dying
-        add = -500
+        add = -100
         scope:actor = { health < good_health } 
     }
     # Do I LIKE recipient & are they trustworthy
