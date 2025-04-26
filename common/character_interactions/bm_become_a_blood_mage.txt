@@ -56,8 +56,14 @@ get_blood_magic_from_prisoner_interaction = {
     }
 
     on_accept = {
-
-
+        if = {
+            limit = {scope:recipient = {has_trait = maimed }}
+            scope:actor = {add_trait = cannibal}
+            lifedrain_execution_effect = {
+                VICTIM = scope:recipient
+                EXECUTIONER = scope:actor
+            }
+        }
         scope:recipient = {
             send_interface_toast = {
                 left_icon = scope:actor
@@ -116,14 +122,7 @@ get_blood_magic_from_prisoner_interaction = {
                 }
             }
         }
-        if = {
-            scope:recipient = {limit = {has_trait = maimed}}
-            lifedrain_execution_effect = {
-                VICTIM = scope:recipient
-                EXECUTIONER = scope:actor
-            }
-            scope:actor = {add_trait = cannibal}
-        }
+
     }
 
     # AI
