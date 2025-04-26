@@ -42,7 +42,7 @@ get_blood_magic_from_prisoner_interaction = {
     auto_accept = yes
     interface_priority = 999
     category = interaction_category_hostile
-    desc = generic_drain_prisoner_trait_interaction_desc
+    desc = get_blood_magic_from_prisoner_interaction.desc
 
     is_highlighted = { always = yes }
     cost = { piety = 100 }
@@ -56,53 +56,44 @@ get_blood_magic_from_prisoner_interaction = {
     }
 
     on_accept = {
-        scope:actor = {
-            duel = {
-                skill = learning
-                target = scope:recipient
+        duel = {
+            skills = {learning intrigue prowess}
+            target = scope:recipient
+            35 = {
+                desc = get_blood_magic_from_prisoner_interaction.success
+                scope:actor = { add_trait = lifestyle_blood_mage }
 
-                35 = {
-                    desc = convert_to_blood_cult.success
-                    scope:actor = { add_trait = lifestyle_blood_mage }
-
-                    compare_modifier = {
-                        value = scope:duel_value
-                        multiplier = 3
-                    }
-                    send_interface_toast  = {
-                        title = convert_to_blood_cult.success.toast
-                        left_icon = scope:actor
-                        right_icon = scope:recipient
-                    }
-                    lifedrain_execution_effect = {
-                        VICTIM = scope:recipient
-                        EXECUTIONER = scope:actor
-                    }
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 3
                 }
-                65 = {
-                    desc = convert_to_blood_cult.fail
+
+                send_interface_toast  = {
+                    title = get_blood_magic_from_prisoner_interaction.success
+                    left_icon = scope:actor
+                    right_icon = scope:recipient
+                }
+            }
+            65 = {
+                desc = get_blood_magic_from_prisoner_interaction.fail
                     send_interface_toast  = {
-                        title = convert_to_blood_cult.fail.toast
-                        left_icon = scope:actor
-                        right_icon = scope:recipient
-                        if = {
-                            limit = {has_trait = blind}
-                            add_trait = ergotism
-                        }
-                        if = {
-                            limit = {has_trait = one_eyed}
-                            add_trait = blind
-                        }
-                        if = {
-                            limit = {has_trait = wounded_1}
-                            add_trait = one_eyed
-                        }
-
-                        add_trait = wounded_1
-                        add_trait = scarred
-
+                    title = get_blood_magic_from_prisoner_interaction.fail
+                    left_icon = scope:actor
+                    right_icon = scope:recipient
+                    if = {
+                        limit = {has_trait = blind}
+                        add_trait = ergotism
                     }
-
+                    if = {
+                        limit = {has_trait = one_eyed}
+                        add_trait = blind
+                    }
+                    if = {
+                        limit = {has_trait = wounded_1}
+                        add_trait = one_eyed
+                    }
+                    add_trait = wounded_1
+                    add_trait = scarred
                 }
             }
         }

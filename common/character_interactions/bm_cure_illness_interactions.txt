@@ -112,7 +112,7 @@ heal_disease_major = {
             remove_trait = measles
             remove_trait = blind
             remove_trait = one_eyed
-            has_trait = weak
+            remove_trait = weak
 
             if = {
                 limit = {NOT = { scope:actor = scope:recipient }}
