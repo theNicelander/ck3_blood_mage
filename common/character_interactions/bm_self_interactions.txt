@@ -73,11 +73,10 @@
 		modifier = {
 			add = 5
 			scope:channel_minor = yes
-            scope:actor = {is_healthy = yes}
             add = 10
         }
         modifier = { # only do if healthy
-            NOT = {scope:actor = {is_healthy = yes} }
+           scope:actor = {health <= fine_health} 
             add = -100
         }
     }

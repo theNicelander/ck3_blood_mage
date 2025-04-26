@@ -57,8 +57,8 @@
             add = 100
         }
         modifier = { # only cure others, if I'm healthy
-                scope:actor != scope:recipient
-                scope:actor = {is_healthy = yes}
+            scope:actor != scope:recipient
+            scope:actor = {health >= fine_health}
             add = 10
         }
     }
@@ -148,7 +148,7 @@ heal_disease_major = {
         }
         modifier = { # only cure others, if I'm healthy
             scope:actor != scope:recipient
-            scope:actor = {is_healthy = yes}
+            scope:actor = {health >= fine_health}
             add = 10
         }
     }
@@ -240,7 +240,7 @@ heal_disease_benediction = {
         }
         modifier = { # only cure others, if I'm healthy
             scope:actor != scope:recipient
-            scope:actor = {is_healthy = yes}
+            scope:actor = {health >= fine_health}
             add = 10
         }
     }

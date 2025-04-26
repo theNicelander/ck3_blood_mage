@@ -35,7 +35,7 @@
         base = 0
         modifier = { # only do if healthy
             scope:actor != scope:recipient
-            scope:actor = {is_healthy = yes}
+            scope:actor = {health >= fine_health}
             add = 10
         }
     }

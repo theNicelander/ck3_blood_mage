@@ -36,7 +36,7 @@
     ai_will_do = {
         base = 0
         modifier = { # only do if healthy
-            scope:actor = {is_healthy = yes}
+            scope:actor = {health >= fine_health}
             scope:actor != scope:recipient
             add = 10
         }
