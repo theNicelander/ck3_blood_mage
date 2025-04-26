@@ -222,10 +222,6 @@ heal_disease_benediction = {
     ai_will_do = {
         base = 0
         ai_willingness_to_do_postitive_magic = yes
-        modifier = { # want to cure myself
-            scope:actor = scope:recipient
-            add = 999
-        }
     }
 }
 
