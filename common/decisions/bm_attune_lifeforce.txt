@@ -7,7 +7,7 @@
     is_shown = { has_trait = lifestyle_blood_mage }
     effect = { 
         trigger_event = { id = bm_attune_lifeforce.001 } 
-        custom_tooltip = attunement_effects_list
+        custom_tooltip = bm_attune_lifeforce.effects_list
     }
     ai_check_interval = 6
     ai_will_do = { base = 33 }

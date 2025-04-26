@@ -28,7 +28,7 @@
         scope:actor = {
             if = {
                 limit = {scope:attune_lifeforce = yes}
-                custom_tooltip = attunement_effects_list
+                custom_tooltip = bm_attune_lifeforce.effects_list
                 trigger_event = { id = bm_attune_lifeforce.001 } 
                 add_xp_enlightenment = yes
                 remove_character_modifier = lifeforce_modifier_minor
