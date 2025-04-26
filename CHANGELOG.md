@@ -1,5 +1,11 @@
 # Changelog - Highlights
 
+## 15.36
+* Can become blood mage, if you have a prisoner that's a blood mage, by consuming their flesh.
+* Can heal weak and one legged as well  
+* AI Prioritise self, for casting positive magic
+* Golems are beardless albinos 
+
 ## 15.35
 * Can convert friend/soulmate/consort/family to cult
 * Various decisions have XP requirements now: Enhance and new Education / manifest lifeforce / create blood golem / blood rune
