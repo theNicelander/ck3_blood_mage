@@ -1,0 +1,92 @@
+﻿bm_cast_blood_magic_self_minor = {
+    category = interaction_category_friendly
+    auto_accept = yes
+    common_interaction = yes
+    interface_priority = 999
+    send_name = bm_cast_blood_magic_self_minor
+    desc = bm_cast_blood_magic_self_minor_desc
+
+    is_shown = {
+        scope:actor = { has_trait = lifestyle_blood_mage }
+        scope:actor = scope:recipient 
+    }
+    is_valid_showing_failures_only = { 
+        scope:actor = { has_character_modifier = lifeforce_modifier_minor }
+    }
+    send_options_exclusive = yes
+
+    send_option = {
+        localization = "Attune Lifeforce"
+        flag = attune_lifeforce
+    }
+    send_option = {
+        localization = "Channel minor magic"
+        flag = channel_minor
+    }
+
+    on_accept = {
+        scope:actor = {
+            if = {
+                limit = {scope:attune_lifeforce = yes}
+                custom_tooltip = attunement_effects_list
+                trigger_event = { id = bm_attune_lifeforce.001 } 
+                add_xp_enlightenment = yes
+                remove_character_modifier = lifeforce_modifier_minor
+            }
+            if = {
+                limit = {scope:channel_minor = yes}
+                custom_tooltip = channel_lifeforce_enlightenment_minor.effects_list
+                trigger_event = { id = bm_channel_lifeforce_enlightenment_minor.001 }
+                add_xp_enlightenment = yes
+                remove_character_modifier = lifeforce_modifier_minor
+            }
+        }
+    }
+
+
+    ai_frequency = 6
+    ai_will_do = {
+        base = 0
+        ai_modifier_based_on_health = yes
+    }
+}
+
+
+bm_cast_blood_magic_self_major = {
+    category = interaction_category_friendly
+    auto_accept = yes
+    common_interaction = yes
+    interface_priority = 999
+
+    is_shown = {
+        scope:actor = { has_trait = lifestyle_blood_mage }
+        scope:actor = scope:recipient 
+    }
+    is_valid_showing_failures_only = { 
+        scope:actor = { has_character_modifier = lifeforce_modifier_major }
+    }
+    send_options_exclusive = yes
+
+
+    send_option = {
+        localization = "Improve Education"
+        flag = improve_education
+    }
+
+    on_accept = {
+        scope:actor = {
+            remove_character_modifier = lifeforce_modifier_major
+            if = {
+                limit = {scope:improve_education = yes}
+                trigger_event = { id = bm_education_enhancement.001 } 
+            }
+        }
+    }
+
+
+    ai_frequency = 6
+    ai_will_do = {
+        base = 0
+        ai_modifier_based_on_health = yes
+    }
+}
