@@ -1,0 +1,35 @@
+l_russian:
+  # Решение
+  bm_attune_lifeforce_decision: "Настроить Кровавую Магию"
+  bm_attune_lifeforce_decision_confirm: "Настроить Кровавую Магию"
+  bm_attune_lifeforce_decision_desc: "Выберите аспект кровавой магии, на который вы хотите настроиться. Каждая настройка даёт вам ежегодный шанс получить опыт в определённом пути кровавой магии."
+  bm_attune_lifeforce_decision_tooltip: "Настройте свою кровавую магию на один конкретный путь, чтобы ежегодно получать опыт"
+  attunement_effects_list: "Выберите одну из следующих настроек (вы можете иметь только одну одновременно):\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('ancient_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('enlightenment_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('bloodline_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('benediction_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('hematurgy_attuned').GetNameWithTooltip]"
+
+  # Событие
+  bm_attune_lifeforce.001.title: "Настроить Кровавую Магию"
+  bm_attune_lifeforce.001.desc: "Багровая сущность в моих венах пульсирует потенциалом, ожидая направления. Настроив свою магию на определённый аспект, я могу укрепить свою связь с этой гранью кровавой магии, что, возможно, ускорит моё овладение ею."
+
+  bm_attune_lifeforce.001.b: "Древний - Продлить мои годы и обрести мудрость веков"
+  bm_attune_lifeforce.001.c: "Просветление - Ускорить моё личное магическое развитие"
+  bm_attune_lifeforce.001.d: "Кровная Линия - Укрепить магическое наследие моей династии"
+  bm_attune_lifeforce.001.e: "Благословение - Улучшить мои способности к исцелению и усилению"
+  bm_attune_lifeforce.001.f: "Гематургия - Отточить мои навыки в сборе жизненной силы"
+
+  # Модификаторы
+  ancient_attuned: "Настроен на Древний"
+  ancient_attuned_desc: "Даёт ежегодный шанс получить 1 опыт в пути Древнего Кровавого Мага"
+
+  enlightenment_attuned: "Настроен на Просветление"
+  enlightenment_attuned_desc: "Даёт ежегодный шанс получить 1 опыт в пути Просветления Кровавого Мага"
+
+  bloodline_attuned: "Настроен на Кровную Линию"
+  bloodline_attuned_desc: "Даёт ежегодный шанс получить 1 опыт в пути Кровной Линии Кровавого Мага"
+
+  benediction_attuned: "Настроен на Благословение"
+  benediction_attuned_desc: "Даёт ежегодный шанс получить 1 опыт в пути Благословения Кровавого Мага"
+
+  hematurgy_attuned: "Настроен на Гематургию"
+  hematurgy_attuned_desc: "Даёт ежегодный шанс получить 1 опыт в пути Гематургии Кровавого Мага"
+
+  # Список настроек с использованием GetModifier

@@ -1,0 +1,41 @@
+l_russian:
+  # Даровать кровавую магию
+  grant_blood_magic_interaction: "Сделать Кровавым Магом"
+  grant_blood_magic_interaction_desc: "[recipient.GetShortUINameNoTooltip] будет дарована сила кровавой магии"
+
+  # Попросить кровавую магию
+  ask_for_blood_magic_interaction: "Попросить Кровавую Магию"
+  ask_for_blood_magic_interaction_desc: "[recipient.GetShortUINameNoTooltip] дарует силу кровавой магии"
+
+  # Получить кровавую магию от пленника
+  get_blood_magic_from_prisoner_interaction: "Получить кровавую магию от пленника"
+  get_blood_magic_from_prisoner_interaction.success: "Я становлюсь Кровавым Магом"
+  get_blood_magic_from_prisoner_interaction.fail: "Мне не удалось стать Кровавым Магом"
+  get_blood_magic_from_prisoner_interaction.desc: "Я поглощаю их плоть, чтобы попытаться обрести их кровавую магию"
+
+  # Даровать жизненную силу
+  grant_lifeforce_interaction: "Обратное Истощение"
+  grant_lifeforce_interaction_desc: "[recipient.GetShortUINameNoTooltip] был истощён, но я могу вернуть им жизненную силу"
+
+  # Исцеление болезней
+  heal_disease_minor: "Исцелить лёгкий Недуг"
+  heal_disease_major: "Исцелить недуг"
+  heal_disease_benediction: "Исцелить смертельный Недуг"
+
+  heal_disease_minor_desc: "Исцелить лёгкий недуг"
+  heal_disease_major_desc: "Исцелить недуг"
+  heal_disease_benediction_desc: "Исцелить смертельный недуг"
+
+  # Даровать боевую мощь через кровь
+  grant_crimson_warrior_interaction: "Сделать Багровым Воином"
+  grant_crimson_warrior_interaction_desc: "Направьте свою жизненную силу в [recipient.GetShortUINameNoTooltip], навсегда усилив их боевые способности через кровавую магию"
+  lifeforce_modifier_crimson_warrior: "Багровый Воин"
+  lifeforce_modifier_crimson_warrior_desc: "Кровь этого воина была наполнена магической силой, дарующей сверхъестественные боевые способности."
+
+  grant_crimson_champion_interaction: "Сделать Багровым Чемпионом"
+  grant_crimson_champion_interaction_desc: "Направьте свою жизненную силу в [recipient.GetShortUINameNoTooltip], навсегда усилив их боевые способности через кровавую магию"
+  lifeforce_modifier_crimson_champion: "Багровый Чемпион"
+  lifeforce_modifier_crimson_champion_desc: "Кровь этого воина была наполнена магической силой, дарующей сверхъестественные боевые способности."
+
+  # Подсказки
+  IN_COURT_OR_IMPRISONED: "Можно исцелить только себя или своих придворных"
