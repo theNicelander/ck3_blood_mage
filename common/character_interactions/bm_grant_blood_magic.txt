@@ -33,12 +33,17 @@
     # AI
     ai_potential = { always = yes }
     ai_frequency = 6
+    ai_targets = { 
+        ai_recipients = dynasty
+        ai_recipients = spouses
+        ai_recipients = family
+        ai_recipients = children
+        ai_recipients = courtiers
+        ai_recipients = councillors
+        ai_recipients = liege
+    }
     ai_will_do = {
         base = 0
-        modifier = { # only do if healthy
-            scope:actor = {health >= fine_health}
-            scope:actor != scope:recipient
-            add = 10
-        }
+        ai_willingness_to_do_postitive_magic = yes
     }
 }

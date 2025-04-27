@@ -34,6 +34,14 @@
         debug_log = "BloodMageDebug: [recipient.GetShortUINameNoTooltip] Granted blood prowes by [actor.GetShortUINameNoTooltip]"
     }
     ai_potential = { always = yes }
+    ai_targets = { 
+            ai_recipients = dynasty
+            ai_recipients = spouses
+            ai_recipients = family
+            ai_recipients = children
+            ai_recipients = courtiers
+            ai_recipients = councillors
+        }
     ai_frequency = 6
     ai_will_do = { base = 33 }
 }

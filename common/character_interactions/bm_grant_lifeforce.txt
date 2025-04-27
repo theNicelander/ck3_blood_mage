@@ -29,14 +29,20 @@
         scope:actor = { benediction_magic_cast_effect_major = yes }
     }
     # AI
+    ai_targets = { 
+        ai_recipients = self
+        ai_recipients = dynasty
+        ai_recipients = spouses
+        ai_recipients = family
+        ai_recipients = children
+        ai_recipients = courtiers
+        ai_recipients = councillors
+        ai_recipients = liege
+    }
     ai_potential = { always = yes }
-    ai_frequency = 6
+    ai_frequency = 12
     ai_will_do = {
-        base = 0
-        modifier = { # only do if healthy
-            scope:actor != scope:recipient
-            scope:actor = {health >= fine_health}
-            add = 10
-        }
+        base = -10
+        ai_willingness_to_do_postitive_magic = yes
     }
 }
