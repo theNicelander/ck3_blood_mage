@@ -62,7 +62,7 @@
     }
     ai_frequency = 6
     ai_will_do = {
-        base = 0
+        base = -20
         modifier = { # want to cure myself
             scope:actor = scope:recipient
             add = 100
@@ -157,7 +157,7 @@ heal_disease_major = {
         ai_recipients = councillors
     }
     ai_will_do = {
-        base = 0
+        base = -50
         modifier = { # want to cure myself
             scope:actor = scope:recipient
             add = 100
@@ -254,7 +254,7 @@ heal_disease_benediction = {
         ai_recipients = councillors
     }
     ai_will_do = {
-        base = 0
+        base = -75
         modifier = { # want to cure myself
             scope:actor = scope:recipient
             add = 100
