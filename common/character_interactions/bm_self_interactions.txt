@@ -49,38 +49,38 @@
             }
         }
     }
+    ai_targets = { ai_recipients = self }
     ai_potential = { always = yes }
-    ai_frequency = 1
-    ai_will_do = {base = 100}
-    # ai_will_do = {
-    #     base = 1
-	# 	modifier = { # if AI doesn't have any attunement, they should always do that first
-	# 		add = 100
-	# 		scope:attune_lifeforce = yes
-    #         scope:actor = {
-    #             NOT = {
-    #                has_character_modifier = ancient_attuned
-    #                has_character_modifier = enlightenment_attuned
-    #                has_character_modifier = bloodline_attuned
-    #                has_character_modifier = benediction_attuned
-    #                has_character_modifier = hematurgy_attuned 
-    #             }
-    #         }
-	# 	}
-	# 	modifier = {
-	# 		add = 1
-	# 		scope:attune_lifeforce = yes
-	# 	}
-	# 	modifier = {
-	# 		add = 5
-	# 		scope:channel_minor = yes
-    #         add = 10
-    #     }
-    #     modifier = { # only do if healthy
-    #        scope:actor = {health <= fine_health} 
-    #         add = -100
-    #     }
-    # }
+    ai_frequency = 6
+    ai_will_do = {
+        base = 1
+		modifier = { # if AI doesn't have any attunement, they should always do that first
+			add = 100
+			scope:attune_lifeforce = yes
+            scope:actor = {
+                NOT = {
+                   has_character_modifier = ancient_attuned
+                   has_character_modifier = enlightenment_attuned
+                   has_character_modifier = bloodline_attuned
+                   has_character_modifier = benediction_attuned
+                   has_character_modifier = hematurgy_attuned 
+                }
+            }
+		}
+		modifier = {
+			add = 1
+			scope:attune_lifeforce = yes
+		}
+		modifier = {
+			add = 5
+			scope:channel_minor = yes
+            add = 10
+        }
+        modifier = { # only do if healthy
+           scope:actor = {health <= fine_health} 
+            add = -100
+        }
+    }
 }
 
 
@@ -155,11 +155,14 @@ bm_cast_blood_magic_self_major = {
             }
         }
     }
-
+    ai_targets = { ai_recipients = self }
     ai_potential = { always = yes }
-    ai_frequency = 3
+    ai_frequency = 6
     ai_will_do = {
         base = 1
-        ai_modifier_based_on_health = yes
+        modifier = { # only do if healthy
+           scope:actor = {health <= fine_health} 
+            add = -100
+        }
     }
 }
