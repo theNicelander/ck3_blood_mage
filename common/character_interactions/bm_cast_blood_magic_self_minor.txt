@@ -6,6 +6,9 @@
     send_name = bm_cast_blood_magic_self_channel_minor_lifeforce
     desc = bm_cast_blood_magic_self_channel_minor_lifeforce_desc
 
+    cooldown = { years = 2 }
+    cost = { piety = 75 }
+
     is_shown = {
         scope:actor = { has_trait = lifestyle_blood_mage }
         scope:actor = scope:recipient 
@@ -42,8 +45,11 @@ bm_cast_blood_magic_self_attune_lifeforce = {
     auto_accept = yes
     common_interaction = yes
     interface_priority = 999
-    send_name = bm_cast_blood_magic_self_channel_minor_lifeforce
-    desc = bm_cast_blood_magic_self_channel_minor_lifeforce_desc
+    send_name = bm_cast_blood_magic_self_attune_lifeforce
+    desc = bm_cast_blood_magic_self_attune_lifeforce_desc
+
+    cooldown = { years = 5 }
+    cost = { piety = 25 }
 
     is_shown = {
         scope:actor = { has_trait = lifestyle_blood_mage }

@@ -1,11 +1,10 @@
 ﻿l_english:
 ############### MINOR ###############
-    bm_cast_blood_magic_self_minor: "Cast Minor Blood Magic"
-    bm_cast_blood_magic_self_minor_desc: "Channel [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] to cast weak Blood Magic on yourself"
-
     # Attune lifeforce
-    bm_cast_blood_magic_self_minor.attune_lifeforce: "Attune Lifeforce"
+    bm_cast_blood_magic_self_attune_lifeforce: "Attune Lifeforce"
+    bm_cast_blood_magic_self_attune_lifeforce_desc: "Channel [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] to attune your Blood Magic towards a particular [GetTrait('lifestyle_blood_mage').GetName( GetNullCharacter )] trait path."
     bm_attune_lifeforce.effects_list: "Choose one of the following attunements (you can only have one at a time):\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('ancient_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('enlightenment_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('bloodline_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('benediction_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('hematurgy_attuned').GetNameWithTooltip]"
+    
     bm_attune_lifeforce.001.title: "Attune Blood Magic"
     bm_attune_lifeforce.001.desc: "The crimson essence within my veins pulses with potential, waiting to be directed. By attuning my magic to a specific aspect, I can strengthen my connection to that particular facet of blood magic, potentially hastening my mastery of it."
     bm_attune_lifeforce.001.b: "Ancient - Extend my years and wisdom of ages"
@@ -15,8 +14,10 @@
     bm_attune_lifeforce.001.f: "Hematurgy - Sharpen my skills in harvesting lifeforce"
 
     # Channel lifeforce minor
-    bm_cast_blood_magic_self_minor.channel_minor: "Channel minor magic"
+    bm_cast_blood_magic_self_channel_minor_lifeforce: "Channel Minor Lifeforce"
+    bm_cast_blood_magic_self_channel_minor_lifeforce_desc: "Channel [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] for a small temporary boost."
     channel_lifeforce_enlightenment_minor.effects_list: "Channel minor blood magic to temporarily enhance one attribute:\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('diplomacy_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('martial_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('stewardship_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('intrigue_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('learning_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('prowess_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('exp_lifeforce_modifier').GetNameWithTooltip]"
+    
     bm_channel_lifeforce_enlightenment_minor.001.title: "Subtle Blood Awakening"
     bm_channel_lifeforce_enlightenment_minor.001.desc: "A whisper of power stirs within my veins, not the roar of a full ritual but enough to grant me some advantage. With careful focus, I can direct this modest crimson current to temporarily enhance a single facet of my being."
     bm_channel_lifeforce_enlightenment_minor.001.a: "Diplomacy - A drop of blood on my tongue loosens secrets"
