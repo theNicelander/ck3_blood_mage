@@ -16,7 +16,6 @@
     is_valid_showing_failures_only = { 
         scope:actor = { has_character_modifier = lifeforce_modifier_minor }
     }
-    send_options_exclusive = yes
 
     on_accept = {
         scope:actor = {
@@ -58,7 +57,6 @@ bm_cast_blood_magic_self_attune_lifeforce = {
     is_valid_showing_failures_only = { 
         scope:actor = { has_character_modifier = lifeforce_modifier_minor }
     }
-    send_options_exclusive = yes
 
     on_accept = {
         scope:actor = {

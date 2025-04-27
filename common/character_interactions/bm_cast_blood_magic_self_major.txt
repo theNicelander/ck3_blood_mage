@@ -42,7 +42,6 @@
         scope:actor = { has_character_modifier = lifeforce_modifier_major }
         scope:actor = { piety_level >= 3 }
     }
-    send_options_exclusive = yes
 
     on_accept = {
         scope:actor = {
@@ -163,9 +162,7 @@ bm_cast_blood_magic_self_major_new_education = {
                 }
             }
         }
-
     }
-    send_options_exclusive = yes
 
     on_accept = {
         scope:actor = {
@@ -176,6 +173,87 @@ bm_cast_blood_magic_self_major_new_education = {
                 XP = 5
             }
             custom_tooltip = bm_cast_blood_magic_self_major_new_education_desc
+        }
+    }
+    ai_targets = { ai_recipients = self }
+    ai_potential = { always = yes }
+    ai_frequency = 6
+    ai_will_do = {
+        base = 10
+        modifier = { # only do if healthy
+           scope:actor = {health <= fine_health} 
+            add = -100
+        }
+    }
+}
+
+bm_cast_blood_magic_self_major_blood_rune = {
+    category = interaction_category_friendly
+    auto_accept = yes
+    common_interaction = yes
+    interface_priority = 999
+
+    send_name = bm_cast_blood_magic_self_major_blood_rune
+    desc = bm_cast_blood_magic_self_major_blood_rune_desc
+
+    cooldown = { years = 5 }
+    cost = { piety = bm_blood_rune_piety_cost }
+
+    is_shown = {
+        scope:actor = { has_trait = lifestyle_blood_mage }
+        scope:actor = scope:recipient 
+        # don't show if has the final one
+        NOT = {has_character_modifier = superior_crimson_rune_modifier}
+    }
+    is_valid_showing_failures_only = { 
+        has_character_modifier = lifeforce_modifier_major
+        has_character_modifier = lifeforce_modifier_minor
+        piety_level >= 2
+
+        custom_description = {
+            text = "bm_cast_blood_magic_self_major_blood_rune_xp_requirement"
+            OR = {
+                has_trait_xp = {
+                    trait = lifestyle_blood_mage
+                    track = ancient
+                    value >= bm_blood_rune_minimum_xp
+                }
+                has_trait_xp = {
+                    trait = lifestyle_blood_mage
+                    track = enlightenment
+                    value >= bm_blood_rune_minimum_xp
+                }
+                has_trait_xp = {
+                    trait = lifestyle_blood_mage
+                    track = bloodline
+                    value >= bm_blood_rune_minimum_xp
+                }
+                has_trait_xp = {
+                    trait = lifestyle_blood_mage
+                    track = benediction
+                    value >= bm_blood_rune_minimum_xp
+                }
+                has_trait_xp = {
+                    trait = lifestyle_blood_mage
+                    track = hematurgy
+                    value >= bm_blood_rune_minimum_xp
+                }
+            }
+        }
+
+    }
+    
+
+    on_accept = {
+        scope:actor = {
+            trigger_event = { id = bm_crimson_rune.001 }
+            blood_magic_used_major_minor = yes
+            add_piety_level = -1
+            add_xp_bm_dynamic = {
+                TRACK = benediction
+                XP = 5
+            }
+            custom_tooltip = crimson_runes_effects_list.effects_list
         }
     }
     ai_targets = { ai_recipients = self }
