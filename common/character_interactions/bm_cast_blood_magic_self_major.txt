@@ -313,3 +313,54 @@ bm_cast_blood_magic_self_major_blood_rune = {
         }
     }
 }
+
+
+
+bm_cast_blood_magic_self_major_crimson_empowerment = {
+    category = interaction_category_friendly
+    auto_accept = yes
+    common_interaction = yes
+    interface_priority = 999
+
+    send_name = bm_cast_blood_magic_self_major_crimson_empowerment
+    desc = bm_cast_blood_magic_self_major_crimson_empowerment_desc
+
+    cooldown = { years = 2 }
+    cost = { piety = 150 }
+
+    is_shown = {
+        scope:actor = { has_trait = lifestyle_blood_mage }
+        scope:actor = scope:recipient 
+        # don't show if has the final one
+        NOT = {has_character_modifier = superior_crimson_rune_modifier}
+    }
+    is_valid_showing_failures_only = { 
+        has_character_modifier = lifeforce_modifier_major
+        piety_level >= 1
+    }
+
+    on_accept = {
+        scope:actor = {
+            if = {
+                limit = { NOT = { has_trait = lifestyle_crimson_empowerment } }
+                add_trait = lifestyle_crimson_empowerment
+            }
+            trigger_event = { id = bm_crimson_empowerment_event.001 }
+            blood_magic_used_major = yes
+            add_xp_bm_dynamic = {
+                TRACK = enlightenment
+                XP = 3
+            }
+        }
+    }
+    ai_targets = { ai_recipients = self }
+    ai_potential = { always = yes }
+    ai_frequency = 6
+    ai_will_do = {
+        base = 10
+        modifier = { # only do if healthy
+           scope:actor = {health <= fine_health} 
+            add = -100
+        }
+    }
+}

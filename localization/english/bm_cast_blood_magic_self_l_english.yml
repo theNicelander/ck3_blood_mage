@@ -63,7 +63,26 @@
     bm_education_new.001.learning: "Gain new learning education"
 
     # Blood Rrune
-    bm_cast_blood_magic_self_major_blood_rune: "Inscribe Blood Runes"
+    bm_cast_blood_magic_self_major_blood_rune: "Inscribe with Blood Runes"
     bm_cast_blood_magic_self_major_blood_rune_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to attempt to improve one of your Education traits"
     bm_cast_blood_magic_self_major_blood_rune_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('bm_blood_rune_minimum_xp')|0] Experience in [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]"
     NOT_bm_cast_blood_magic_self_major_blood_rune_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('bm_blood_rune_minimum_xp')|0] Experience in [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]"
+
+
+    # Crimson Empowerment
+    bm_cast_blood_magic_self_major_crimson_empowerment: "Channel Crimson Empowerment"
+    bm_cast_blood_magic_self_major_crimson_empowerment_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to permanently enhance your physical and mental attributes"
+
+    bm_crimson_empowerment_event.001.title: "Crimson Empowerment"
+    bm_crimson_empowerment_event.001.desc: "The blood magic roars within me like a caged beast, desperate for expression. I can feel it straining against my flesh, eager to reshape my very essence according to my desires. Which aspect shall I allow it to transform today?"
+    bm_crimson_empowerment_event.001.toast: "Crimson Empowerment"
+    
+    bm_crimson_empowerment_event.001.charisma: "Charisma - My words shall drip with persuasive venom"
+    bm_crimson_empowerment_event.001.fury: "Fury - The battlefield will run red with my triumph"
+    bm_crimson_empowerment_event.001.prosperity: "Prosperity - Wealth shall flow like blood into my waiting hands"
+    bm_crimson_empowerment_event.001.shadows: "Shadows - My enemies' secrets shall bleed into my waiting ears"
+    bm_crimson_empowerment_event.001.insight: "Insight - Ancient blood-wisdom shall flood my mind"
+    bm_crimson_empowerment_event.001.legacy: "Legacy - My bloodline shall thrive with potent vitality"
+    bm_crimson_empowerment_event.001.expertise: "Expertise - Blood remembers all it has witnessed through the ages"
+    bm_crimson_empowerment_event.001.versatility: "Versatility - My power shall transcend all boundaries"
+
