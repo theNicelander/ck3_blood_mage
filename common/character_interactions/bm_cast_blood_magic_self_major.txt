@@ -100,7 +100,7 @@
     ai_potential = { always = yes }
     ai_frequency = 6
     ai_will_do = {
-        base = 10
+        base = 100
         modifier = { # only do if healthy
            scope:actor = {health <= fine_health} 
             add = -100
@@ -224,7 +224,7 @@ bm_cast_blood_magic_self_major_new_education = {
     ai_potential = { always = yes }
     ai_frequency = 6
     ai_will_do = {
-        base = 10
+        base = 100
         modifier = { # only do if healthy
            scope:actor = {health <= fine_health} 
             add = -100
@@ -251,10 +251,11 @@ bm_cast_blood_magic_self_major_blood_rune = {
         NOT = {has_character_modifier = superior_crimson_rune_modifier}
     }
     is_valid_showing_failures_only = { 
-        has_character_modifier = lifeforce_modifier_major
-        has_character_modifier = lifeforce_modifier_minor
-        piety_level >= 2
-
+        scope:actor = {
+            has_character_modifier = lifeforce_modifier_major
+            has_character_modifier = lifeforce_modifier_minor
+            piety_level >= 2
+        }
         custom_description = {
             text = "bm_cast_blood_magic_self_major_blood_rune_xp_requirement"
             scope:actor = {
@@ -306,7 +307,7 @@ bm_cast_blood_magic_self_major_blood_rune = {
     ai_potential = { always = yes }
     ai_frequency = 6
     ai_will_do = {
-        base = 10
+        base = 100
         modifier = { # only do if healthy
            scope:actor = {health <= fine_health} 
             add = -100
@@ -335,8 +336,10 @@ bm_cast_blood_magic_self_major_crimson_empowerment = {
         NOT = {has_character_modifier = superior_crimson_rune_modifier}
     }
     is_valid_showing_failures_only = { 
-        has_character_modifier = lifeforce_modifier_major
-        piety_level >= 1
+        scope:actor = {
+            has_character_modifier = lifeforce_modifier_major
+            piety_level >= 1
+        }
     }
 
     on_accept = {
@@ -357,7 +360,7 @@ bm_cast_blood_magic_self_major_crimson_empowerment = {
     ai_potential = { always = yes }
     ai_frequency = 6
     ai_will_do = {
-        base = 10
+        base = 100
         modifier = { # only do if healthy
            scope:actor = {health <= fine_health} 
             add = -100
