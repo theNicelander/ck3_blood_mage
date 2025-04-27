@@ -1,0 +1,82 @@
+﻿bm_cast_blood_magic_self_major = {
+    category = interaction_category_friendly
+    auto_accept = yes
+    common_interaction = yes
+    interface_priority = 999
+
+    send_name = bm_cast_blood_magic_self_major
+    desc = bm_cast_blood_magic_self_major_desc
+
+    is_shown = {
+        scope:actor = { has_trait = lifestyle_blood_mage }
+        scope:actor = scope:recipient 
+    }
+    is_valid_showing_failures_only = { 
+        scope:actor = { has_character_modifier = lifeforce_modifier_major }
+    }
+    send_options_exclusive = yes
+
+
+    send_option = { # Improve education
+        localization = bm_cast_blood_magic_self_major.education_improve
+        flag = improve_education
+        is_valid = {
+            scope:actor = {
+                piety >= scaled_education_enhancement_cost
+                piety_level >= 3
+            }
+        }
+        is_shown = {
+            scope:actor = {
+                OR = { # Has a non level 5 education trait
+                    AND = {
+                        has_trait = education_diplomacy
+                        NOT = {has_trait = education_diplomacy_5}
+                    }
+                    AND = {
+                        has_trait = education_martial
+                        NOT = {has_trait = education_martial_5}
+                    }
+                    AND = {
+                        has_trait = education_learning
+                        NOT = {has_trait = education_learning_5}
+                    }
+                    AND = {
+                        has_trait = education_stewardship
+                        NOT = {has_trait = education_stewardship_5}
+                    }
+                    AND = {
+                        has_trait = education_intrigue
+                        NOT = {has_trait = education_intrigue_5}
+                    }
+                }
+            }
+        }
+    }
+
+    on_accept = {
+        scope:actor = {
+            if = { # Improve education
+                limit = {scope:improve_education = yes}
+                trigger_event = { id = bm_education_enhancement.001 }
+                add_piety = scaled_education_enhancement_cost_neg
+                blood_magic_used_major = yes
+                add_xp_bm_dynamic = {
+                    TRACK = enlightenment
+                    XP = 5
+                }
+                custom_tooltip = bm_cast_blood_magic_self_major.education_improve.desc
+            }
+        }
+    }
+    ai_targets = { ai_recipients = self }
+    ai_potential = { always = yes }
+    ai_frequency = 6
+    ai_will_do = {
+        base = 1
+        modifier = { # only do if healthy
+           scope:actor = {health <= fine_health} 
+            add = -100
+        }
+    }
+}
