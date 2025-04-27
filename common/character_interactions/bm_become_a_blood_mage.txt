@@ -28,11 +28,20 @@
     }
 
     # AI
-    ai_min_reply_days = 0
-    ai_max_reply_days = 0
+    ai_targets = { 
+        ai_recipients = dynasty
+        ai_recipients = spouses 
+        ai_recipients = family 
+        ai_recipients = children 
+        ai_recipients = courtiers 
+        ai_recipients = councillors 
+        ai_recipients = liege
+    }
+    ai_potential = { always = yes }
     ai_frequency = 6
-    ai_potential = { is_adult = yes }
-    ai_will_do = { base = 100 }
+    ai_will_do = { 
+        base = 10
+    }
 }
 
 
@@ -126,7 +135,12 @@ get_blood_magic_from_prisoner_interaction = {
     }
 
     # AI
-    ai_targets = { ai_recipients = prisoners }
-    ai_frequency = 3
-    ai_will_do = { base = 50 }
+    ai_targets = { 
+        ai_recipients = prisoners 
+    }
+    ai_potential = { always = yes }
+    ai_frequency = 6
+    ai_will_do = { 
+        base = 33
+    }
 }
