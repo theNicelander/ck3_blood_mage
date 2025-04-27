@@ -51,7 +51,15 @@
     auto_accept = yes
     ai_accept = { base = 100 }
     ai_potential = { always = yes }
-    ai_targets = {ai_recipients = spouses}
+    ai_targets = { 
+        ai_recipients = self
+        ai_recipients = dynasty
+        ai_recipients = spouses
+        ai_recipients = family
+        ai_recipients = children
+        ai_recipients = courtiers
+        ai_recipients = councillors
+    }
     ai_frequency = 6
     ai_will_do = {
         base = 0
@@ -59,11 +67,7 @@
             scope:actor = scope:recipient
             add = 100
         }
-        modifier = { # only cure others, if I'm healthy
-            scope:actor != scope:recipient
-            scope:actor = {health >= fine_health}
-            add = 10
-        }
+        ai_willingness_to_do_postitive_magic = yes
     }
 }
 
@@ -143,17 +147,22 @@ heal_disease_major = {
     }
     ai_potential = { always = yes }
     ai_frequency = 6
+    ai_targets = { 
+        ai_recipients = self
+        ai_recipients = dynasty
+        ai_recipients = spouses
+        ai_recipients = family
+        ai_recipients = children
+        ai_recipients = courtiers
+        ai_recipients = councillors
+    }
     ai_will_do = {
         base = 0
         modifier = { # want to cure myself
             scope:actor = scope:recipient
             add = 100
         }
-        modifier = { # only cure others, if I'm healthy
-            scope:actor != scope:recipient
-            scope:actor = {health >= fine_health}
-            add = 10
-        }
+        ai_willingness_to_do_postitive_magic = yes
     }
 }
 
@@ -235,17 +244,22 @@ heal_disease_benediction = {
     }
     ai_potential = { always = yes }
     ai_frequency = 6
+    ai_targets = { 
+        ai_recipients = self
+        ai_recipients = dynasty
+        ai_recipients = spouses
+        ai_recipients = family
+        ai_recipients = children
+        ai_recipients = courtiers
+        ai_recipients = councillors
+    }
     ai_will_do = {
         base = 0
         modifier = { # want to cure myself
             scope:actor = scope:recipient
             add = 100
         }
-        modifier = { # only cure others, if I'm healthy
-            scope:actor != scope:recipient
-            scope:actor = {health >= fine_health}
-            add = 10
-        }
+        ai_willingness_to_do_postitive_magic = yes
     }
 }
 
