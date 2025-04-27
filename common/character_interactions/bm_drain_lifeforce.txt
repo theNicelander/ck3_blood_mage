@@ -133,6 +133,11 @@ lifedrain_courtier_event_interaction = {
     # AI
     auto_accept = yes
     ai_frequency = 3
+    ai_targets = { 
+        ai_recipients = courtiers 
+        ai_recipients = guests
+        ai_recipients = prisoners
+    }
     ai_will_do = {
         base = 20
         ai_willingness_to_lifedrain = yes
