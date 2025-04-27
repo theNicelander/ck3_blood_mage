@@ -41,6 +41,48 @@
     is_valid_showing_failures_only = { 
         scope:actor = { has_character_modifier = lifeforce_modifier_major }
         scope:actor = { piety_level >= 3 }
+        custom_description = {
+            text = "bm_cast_blood_magic_self_major_improve_education_xp_requirement"
+            scope:actor = {
+                OR = {
+                    has_trait_xp = {
+                        trait = lifestyle_crimson_empowerment
+                        track = charisma
+                        value >= required_xp_improve_education
+                    }
+                    has_trait_xp = {
+                        trait = lifestyle_crimson_empowerment
+                        track = fury
+                        value >= required_xp_improve_education
+                    }
+                    has_trait_xp = {
+                        trait = lifestyle_crimson_empowerment
+                        track = prosperity
+                        value >= required_xp_improve_education
+                    }
+                    has_trait_xp = {
+                        trait = lifestyle_crimson_empowerment
+                        track = shadows
+                        value >= required_xp_improve_education
+                    }
+                    has_trait_xp = {
+                        trait = lifestyle_crimson_empowerment
+                        track = insight
+                        value >= required_xp_improve_education
+                    }
+                    has_trait_xp = {
+                        trait = lifestyle_crimson_empowerment
+                        track = legacy
+                        value >= required_xp_improve_education
+                    }
+                    has_trait_xp = {
+                        trait = lifestyle_crimson_empowerment
+                        track = expertise
+                        value >= required_xp_improve_education
+                    }
+                }
+            }
+        }
     }
 
     on_accept = {
@@ -124,43 +166,46 @@ bm_cast_blood_magic_self_major_new_education = {
         scope:actor = { piety_level >= 4 }
         custom_description = {
             text = "bm_cast_blood_magic_self_major_new_education_xp_requirement"
-            OR = {
-                has_trait_xp = {
-                    trait = lifestyle_crimson_empowerment
-                    track = charisma
-                    value >= required_xp_new_education
-                }
-                has_trait_xp = {
-                    trait = lifestyle_crimson_empowerment
-                    track = fury
-                    value >= required_xp_new_education
-                }
-                has_trait_xp = {
-                    trait = lifestyle_crimson_empowerment
-                    track = prosperity
-                    value >= required_xp_new_education
-                }
-                has_trait_xp = {
-                    trait = lifestyle_crimson_empowerment
-                    track = shadows
-                    value >= required_xp_new_education
-                }
-                has_trait_xp = {
-                    trait = lifestyle_crimson_empowerment
-                    track = insight
-                    value >= required_xp_new_education
-                }
-                has_trait_xp = {
-                    trait = lifestyle_crimson_empowerment
-                    track = legacy
-                    value >= required_xp_new_education
-                }
-                has_trait_xp = {
-                    trait = lifestyle_crimson_empowerment
-                    track = expertise
-                    value >= required_xp_new_education
+            scope:actor = {
+                OR = {
+                    has_trait_xp = {
+                        trait = lifestyle_crimson_empowerment
+                        track = charisma
+                        value >= required_xp_new_education
+                    }
+                    has_trait_xp = {
+                        trait = lifestyle_crimson_empowerment
+                        track = fury
+                        value >= required_xp_new_education
+                    }
+                    has_trait_xp = {
+                        trait = lifestyle_crimson_empowerment
+                        track = prosperity
+                        value >= required_xp_new_education
+                    }
+                    has_trait_xp = {
+                        trait = lifestyle_crimson_empowerment
+                        track = shadows
+                        value >= required_xp_new_education
+                    }
+                    has_trait_xp = {
+                        trait = lifestyle_crimson_empowerment
+                        track = insight
+                        value >= required_xp_new_education
+                    }
+                    has_trait_xp = {
+                        trait = lifestyle_crimson_empowerment
+                        track = legacy
+                        value >= required_xp_new_education
+                    }
+                    has_trait_xp = {
+                        trait = lifestyle_crimson_empowerment
+                        track = expertise
+                        value >= required_xp_new_education
+                    }
                 }
             }
+
         }
     }
 
@@ -212,35 +257,36 @@ bm_cast_blood_magic_self_major_blood_rune = {
 
         custom_description = {
             text = "bm_cast_blood_magic_self_major_blood_rune_xp_requirement"
-            OR = {
-                has_trait_xp = {
-                    trait = lifestyle_blood_mage
-                    track = ancient
-                    value >= bm_blood_rune_minimum_xp
-                }
-                has_trait_xp = {
-                    trait = lifestyle_blood_mage
-                    track = enlightenment
-                    value >= bm_blood_rune_minimum_xp
-                }
-                has_trait_xp = {
-                    trait = lifestyle_blood_mage
-                    track = bloodline
-                    value >= bm_blood_rune_minimum_xp
-                }
-                has_trait_xp = {
-                    trait = lifestyle_blood_mage
-                    track = benediction
-                    value >= bm_blood_rune_minimum_xp
-                }
-                has_trait_xp = {
-                    trait = lifestyle_blood_mage
-                    track = hematurgy
-                    value >= bm_blood_rune_minimum_xp
+            scope:actor = {
+                OR = {
+                    has_trait_xp = {
+                        trait = lifestyle_blood_mage
+                        track = ancient
+                        value >= bm_blood_rune_minimum_xp
+                    }
+                    has_trait_xp = {
+                        trait = lifestyle_blood_mage
+                        track = enlightenment
+                        value >= bm_blood_rune_minimum_xp
+                    }
+                    has_trait_xp = {
+                        trait = lifestyle_blood_mage
+                        track = bloodline
+                        value >= bm_blood_rune_minimum_xp
+                    }
+                    has_trait_xp = {
+                        trait = lifestyle_blood_mage
+                        track = benediction
+                        value >= bm_blood_rune_minimum_xp
+                    }
+                    has_trait_xp = {
+                        trait = lifestyle_blood_mage
+                        track = hematurgy
+                        value >= bm_blood_rune_minimum_xp
+                    }
                 }
             }
         }
-
     }
     
 

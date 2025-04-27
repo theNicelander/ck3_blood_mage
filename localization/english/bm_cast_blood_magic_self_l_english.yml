@@ -1,7 +1,7 @@
 ﻿l_english:
 ############### MINOR ###############
     # Attune lifeforce
-    bm_cast_blood_magic_self_attune_lifeforce: "Attune Lifeforce"
+    bm_cast_blood_magic_self_attune_lifeforce: "Lifeforce Attunement"
     bm_cast_blood_magic_self_attune_lifeforce_desc: "Spend [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] to attune your Blood Magic towards a particular [GetTrait('lifestyle_blood_mage').GetName( GetNullCharacter )] trait path for increased experience gain."
     bm_attune_lifeforce.effects_list: "Choose one of the following attunements (you can only have one at a time):\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('ancient_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('enlightenment_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('bloodline_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('benediction_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('hematurgy_attuned').GetNameWithTooltip]"
     
@@ -33,8 +33,8 @@
     # Education improvement
     bm_cast_blood_magic_self_major_improve_education: "Enhance Education"
     bm_cast_blood_magic_self_major_improve_education_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to attempt to improve one of your Education traits"
-    bm_cast_blood_magic_self_major_improve_education_xp_requirement: "Needs more Experience in the [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )] trait"
-    NOT_bm_cast_blood_magic_self_major_improve_education_xp_requirement: "Needs more Experience in the [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )] trait"
+    bm_cast_blood_magic_self_major_improve_education_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_improve_education')|0] Experience in [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]"
+    NOT_bm_cast_blood_magic_self_major_improve_education_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_improve_education')|0] Experience in [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]"
 
     bm_education_enhancement.001.title: "Blood Infusion of Knowledge"
     bm_education_enhancement.001.desc: "The crimson essence flows through special channels you've prepared, each inscribed with runes of knowledge and power. As you begin the ritual, you must decide which aspect of your education to enhance through blood magic. The ritual will be challenging - as your education level increases, the difficulty of further enhancement grows significantly."
@@ -49,8 +49,8 @@
     # New Education
     bm_cast_blood_magic_self_major_new_education: "Embrace New Education"
     bm_cast_blood_magic_self_major_new_education_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to attempt to improve one of your Education traits"
-    bm_cast_blood_magic_self_major_new_education_xp_requirement: "Needs more Experience in the [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )] trait"
-    NOT_bm_cast_blood_magic_self_major_new_education_xp_requirement: "Needs more Experience in the [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )] trait"
+    bm_cast_blood_magic_self_major_new_education_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_new_education')|0] Experience in [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]"
+    NOT_bm_cast_blood_magic_self_major_new_education_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_new_education')|0] Experience in [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]"
 
     new_education_decision: "Embrace New Knowledge"
     bm_cast_blood_magic_self_major_new_education_desc: "Gain an education trait in a discipline you haven't mastered yet"
@@ -61,3 +61,9 @@
     bm_education_new.001.stewardship: "Gain new stewardship education"
     bm_education_new.001.intrigue: "Gain new intrigue education"
     bm_education_new.001.learning: "Gain new learning education"
+
+    # Blood Rrune
+    bm_cast_blood_magic_self_major_blood_rune: "Inscribe Blood Runes"
+    bm_cast_blood_magic_self_major_blood_rune_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to attempt to improve one of your Education traits"
+    bm_cast_blood_magic_self_major_blood_rune_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('bm_blood_rune_minimum_xp')|0] Experience in [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]"
+    NOT_bm_cast_blood_magic_self_major_blood_rune_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('bm_blood_rune_minimum_xp')|0] Experience in [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]"
