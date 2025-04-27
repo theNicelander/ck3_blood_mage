@@ -3,7 +3,7 @@
     category = interaction_category_friendly
     desc = heal_disease_minor_desc
     common_interaction = yes
-    auto_accept = yes
+    
 
     cost = { piety = heal_disease_minor_cost }
     is_shown = {
@@ -48,7 +48,10 @@
             }
         }
     }
+    auto_accept = yes
+    ai_accept = {base=100}
     ai_potential = { always = yes }
+    ai_targets = {ai_recipients = spouses}
     ai_frequency = 6
     ai_will_do = {
         base = 0
