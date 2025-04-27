@@ -2,7 +2,7 @@
 ############### MINOR ###############
     # Attune lifeforce
     bm_cast_blood_magic_self_attune_lifeforce: "Attune Lifeforce"
-    bm_cast_blood_magic_self_attune_lifeforce_desc: "Channel [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] to attune your Blood Magic towards a particular [GetTrait('lifestyle_blood_mage').GetName( GetNullCharacter )] trait path."
+    bm_cast_blood_magic_self_attune_lifeforce_desc: "Spend [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] to attune your Blood Magic towards a particular [GetTrait('lifestyle_blood_mage').GetName( GetNullCharacter )] trait path."
     bm_attune_lifeforce.effects_list: "Choose one of the following attunements (you can only have one at a time):\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('ancient_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('enlightenment_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('bloodline_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('benediction_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('hematurgy_attuned').GetNameWithTooltip]"
     
     bm_attune_lifeforce.001.title: "Attune Blood Magic"
@@ -15,7 +15,7 @@
 
     # Channel lifeforce minor
     bm_cast_blood_magic_self_channel_minor_lifeforce: "Channel Minor Lifeforce"
-    bm_cast_blood_magic_self_channel_minor_lifeforce_desc: "Channel [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] for a small temporary boost."
+    bm_cast_blood_magic_self_channel_minor_lifeforce_desc: "Spend [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] for a small temporary boost."
     channel_lifeforce_enlightenment_minor.effects_list: "Channel minor blood magic to temporarily enhance one attribute:\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('diplomacy_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('martial_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('stewardship_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('intrigue_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('learning_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('prowess_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('exp_lifeforce_modifier').GetNameWithTooltip]"
     
     bm_channel_lifeforce_enlightenment_minor.001.title: "Subtle Blood Awakening"
@@ -30,12 +30,10 @@
     bm_channel_lifeforce_enlightenment_minor.001.h: "Prowess - The blade shall be quenched in blood"
 
 ############### MAJOR ###############
-    bm_cast_blood_magic_self_major: "Cast Major Blood Magic"
-    bm_cast_blood_magic_self_major_desc: "Channel [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to cast strong Blood Magic on yourself"
-
     # Education improvement
-    bm_cast_blood_magic_self_major.education_improve: "Enhance Education"
-    bm_cast_blood_magic_self_major.education_improve.desc: "You attempt to improve one of your education traits"
+    bm_cast_blood_magic_self_major_improve_education: "Enhance Education"
+    bm_cast_blood_magic_self_major_improve_education_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to attempt to improve one of your Education traits"
+
     bm_education_enhancement.001.title: "Blood Infusion of Knowledge"
     bm_education_enhancement.001.desc: "The crimson essence flows through special channels you've prepared, each inscribed with runes of knowledge and power. As you begin the ritual, you must decide which aspect of your education to enhance through blood magic. The ritual will be challenging - as your education level increases, the difficulty of further enhancement grows significantly."
     bm_education_enhancement.001.diplomacy: "Enhance my diplomatic education"
