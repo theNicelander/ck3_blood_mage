@@ -15,7 +15,7 @@ ai_modifier_based_on_health  = {
         root = { health >= fine_health } 
     }
     modifier = { # don't do magic, if dying
-        add = -100
+        add = -250
         root = { health <= poor_health } 
     }
 }
