@@ -62,7 +62,7 @@
     ai_potential = { always = yes }
     ai_frequency = 6
     ai_will_do = {
-        base = 1
+        base = 10
         modifier = { # only do if healthy
            scope:actor = {health <= fine_health} 
             add = -100
