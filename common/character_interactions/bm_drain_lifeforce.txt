@@ -29,7 +29,7 @@
     # AI
     auto_accept = yes
     ai_targets = { ai_recipients = prisoners }
-    ai_potential = { is_at_war = no }
+    ai_potential = { always = yes }
     ai_frequency = 3
     ai_will_do = {
         base = 50
@@ -54,6 +54,7 @@ lifedrain_courtier_event_interaction = {
     is_valid_showing_failures_only = { scope:recipient = { NOT = { has_character_modifier = lifedrained_modifier } } }
 
     cost = { piety = lifedrain_piety_cost_minor }
+    cooldown = { months = 6 }
 
     on_accept = {
         scope:recipient = {
@@ -133,6 +134,12 @@ lifedrain_courtier_event_interaction = {
     # AI
     auto_accept = yes
     ai_frequency = 3
+    ai_potential = { always = yes }
+    ai_targets = { 
+        ai_recipients = courtiers 
+        ai_recipients = guests
+        ai_recipients = prisoners
+    }
     ai_will_do = {
         base = 20
         ai_willingness_to_lifedrain = yes

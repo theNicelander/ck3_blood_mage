@@ -1,10 +1,18 @@
-﻿debug_add_lifeforce = {
+﻿debug_become_blood_mage = {
+    decision_group_type = debug
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+    is_shown = { 
+        debug_only = yes
+    }
+    effect = {
+        add_trait = lifestyle_blood_mage
+    }
+}
+
+debug_add_lifeforce = {
     decision_group_type = debug
     picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
     is_shown = { debug_only = yes }
-    is_valid = { has_trait = lifestyle_blood_mage }
-    ai_check_interval = 0
-
     effect = {
         add_character_modifier = { modifier = lifeforce_modifier_major }
         add_character_modifier = { modifier = lifeforce_modifier_major }
@@ -18,9 +26,6 @@ debug_add_lifeforce_minor = {
     decision_group_type = debug
     picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
     is_shown = { debug_only = yes }
-    is_valid = { has_trait = lifestyle_blood_mage }
-    ai_check_interval = 0
-
     effect = {
         add_character_modifier = { modifier = lifeforce_modifier_minor }
         add_character_modifier = { modifier = lifeforce_modifier_minor }
@@ -34,9 +39,6 @@ debug_add_exp_blood_mage_exp = {
     decision_group_type = debug
     picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
     is_shown = { debug_only = yes }
-    is_valid = { has_trait = lifestyle_blood_mage }
-    ai_check_interval = 0
-
     effect = {
         add_trait_xp = {
             trait = lifestyle_blood_mage
@@ -71,9 +73,6 @@ debug_add_crimson_empowerment_exp = {
     decision_group_type = debug
     picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
     is_shown = { debug_only = yes }
-    is_valid = { has_trait = lifestyle_blood_mage }
-    ai_check_interval = 0
-
     effect = {
         if = {
             limit = { NOT = { has_trait = lifestyle_crimson_empowerment } }

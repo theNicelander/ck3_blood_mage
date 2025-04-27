@@ -1,5 +1,17 @@
 # Changelog - Highlights
 
+## 15.37
+* Changed decisions targetting player, into character interactions instead: Blood Rune / Education / Crimson Empowerment / Attune Lifeforce / Channel lifeforce 
+* Lots of testing, to make sure AI uses the interactions, some they weren't doing before
+* Convert from witch to blood mage, no longer used by AI, to allow for witches and compatibility with Witchcraft mod
+* Lowered chance of AI taking up blood cultist faith to 5% yearly, felt it was happening too frequently
+* Minor lifedrain now has a 6 month cooldown for balance/AI reasons
+* Mass lifedrain (that AI sometimes uses) skips dynasty members by default, to avoid them getting kinslayer trait
+* Attunement grants small bonuses, around 2x what 10xp in the track would give
+* Lowered cost of blood runes to 0/200/400 instead of 100/500/1000
+* Blood golem slightly less OP, with 5 in all stats and 15 in prowess
+* New thumbnail
+
 ## 15.36
 * Can become blood mage, if you have a prisoner that's a blood mage, by consuming their flesh.
 * Can heal weak and one legged as well  

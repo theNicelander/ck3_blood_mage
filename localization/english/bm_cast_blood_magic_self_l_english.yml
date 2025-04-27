@@ -1,0 +1,88 @@
+﻿l_english:
+############### MINOR ###############
+    # Attune lifeforce
+    bm_cast_blood_magic_self_attune_lifeforce: "Lifeforce Attunement"
+    bm_cast_blood_magic_self_attune_lifeforce_desc: "Spend [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] to attune your Blood Magic towards a particular [GetTrait('lifestyle_blood_mage').GetName( GetNullCharacter )] trait path for increased experience gain."
+    bm_attune_lifeforce.effects_list: "Choose one of the following attunements (you can only have one at a time):\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('ancient_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('enlightenment_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('bloodline_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('benediction_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('hematurgy_attuned').GetNameWithTooltip]"
+    
+    bm_attune_lifeforce.001.title: "Attune Blood Magic"
+    bm_attune_lifeforce.001.desc: "The crimson essence within my veins pulses with potential, waiting to be directed. By attuning my magic to a specific aspect, I can strengthen my connection to that particular facet of blood magic, potentially hastening my mastery of it."
+    bm_attune_lifeforce.001.b: "Ancient - Extend my years and wisdom of ages"
+    bm_attune_lifeforce.001.c: "Enlightenment - Quicken my personal magical development"
+    bm_attune_lifeforce.001.d: "Bloodline - Strengthen my dynasty's magical heritage"
+    bm_attune_lifeforce.001.e: "Benediction - Improve my healing and enhancement capabilities"
+    bm_attune_lifeforce.001.f: "Hematurgy - Sharpen my skills in harvesting lifeforce"
+
+    # Channel lifeforce minor
+    bm_cast_blood_magic_self_channel_minor_lifeforce: "Channel Minor Lifeforce"
+    bm_cast_blood_magic_self_channel_minor_lifeforce_desc: "Spend [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] for a small temporary boost."
+    channel_lifeforce_enlightenment_minor.effects_list: "Channel minor blood magic to temporarily enhance one attribute:\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('diplomacy_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('martial_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('stewardship_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('intrigue_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('learning_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('prowess_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('exp_lifeforce_modifier').GetNameWithTooltip]"
+    
+    bm_channel_lifeforce_enlightenment_minor.001.title: "Subtle Blood Awakening"
+    bm_channel_lifeforce_enlightenment_minor.001.desc: "A whisper of power stirs within my veins, not the roar of a full ritual but enough to grant me some advantage. With careful focus, I can direct this modest crimson current to temporarily enhance a single facet of my being."
+    bm_channel_lifeforce_enlightenment_minor.001.a: "Diplomacy - A drop of blood on my tongue loosens secrets"
+    bm_channel_lifeforce_enlightenment_minor.001.b: "Martial - My blade thirsts for a taste of battle"
+    bm_channel_lifeforce_enlightenment_minor.001.c: "Stewardship - Blood-tinged vision reveals hidden values"
+    bm_channel_lifeforce_enlightenment_minor.001.d: "Intrigue - Shadows part before my crimson gaze"
+    bm_channel_lifeforce_enlightenment_minor.001.e: "Learning - Knowledge pulses with each heartbeat"
+    bm_channel_lifeforce_enlightenment_minor.001.f: "Fertility - May our offspring flourish"
+    bm_channel_lifeforce_enlightenment_minor.001.g: "Experience - Blood remembers the paths to power"
+    bm_channel_lifeforce_enlightenment_minor.001.h: "Prowess - The blade shall be quenched in blood"
+
+############### MAJOR ###############
+    # Education improvement
+    bm_cast_blood_magic_self_major_improve_education: "Enhance Education"
+    bm_cast_blood_magic_self_major_improve_education_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to attempt to improve one of your Education traits"
+    bm_cast_blood_magic_self_major_improve_education_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_improve_education')|0] Experience in [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]"
+    NOT_bm_cast_blood_magic_self_major_improve_education_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_improve_education')|0] Experience in [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]"
+
+    bm_education_enhancement.001.title: "Blood Infusion of Knowledge"
+    bm_education_enhancement.001.desc: "The crimson essence flows through special channels you've prepared, each inscribed with runes of knowledge and power. As you begin the ritual, you must decide which aspect of your education to enhance through blood magic. The ritual will be challenging - as your education level increases, the difficulty of further enhancement grows significantly."
+    bm_education_enhancement.001.diplomacy: "Enhance my diplomatic education"
+    bm_education_enhancement.001.martial: "Enhance my martial education"
+    bm_education_enhancement.001.stewardship: "Enhance my stewardship education"
+    bm_education_enhancement.001.intrigue: "Enhance my intrigue education"
+    bm_education_enhancement.001.learning: "Enhance my learning education"
+    bm_education_enhancement.success: "Education Enhanced"
+    bm_education_enhancement.failure: "Blood Infusion Failed"
+
+    # New Education
+    bm_cast_blood_magic_self_major_new_education: "Embrace New Education"
+    bm_cast_blood_magic_self_major_new_education_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to attempt to improve one of your Education traits"
+    bm_cast_blood_magic_self_major_new_education_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_new_education')|0] Experience in [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]"
+    NOT_bm_cast_blood_magic_self_major_new_education_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_new_education')|0] Experience in [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]"
+
+    new_education_decision: "Embrace New Knowledge"
+    bm_cast_blood_magic_self_major_new_education_desc: "Gain an education trait in a discipline you haven't mastered yet"
+    bm_education_new.001.title: "Forging New Neural Pathways"
+    bm_education_new.001.desc: "Ancient tomes open before you as you prepare the ritual space. Unlike your previous work enhancing existing knowledge, this endeavor requires breaking down mental barriers and creating entirely new structures of understanding. The crimson runes you've painted on your temples pulse with anticipation—they will serve as conduits for knowledge to flood directly into your consciousness. Which unfamiliar discipline will you force your mind to embrace today?"
+    bm_education_new.001.diplomacy: "Gain new diplomatic education"
+    bm_education_new.001.martial: "Gain new martial education"
+    bm_education_new.001.stewardship: "Gain new stewardship education"
+    bm_education_new.001.intrigue: "Gain new intrigue education"
+    bm_education_new.001.learning: "Gain new learning education"
+
+    # Blood Rrune
+    bm_cast_blood_magic_self_major_blood_rune: "Inscribe with Blood Runes"
+    bm_cast_blood_magic_self_major_blood_rune_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to attempt to improve one of your Education traits"
+    bm_cast_blood_magic_self_major_blood_rune_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('bm_blood_rune_minimum_xp')|0] Experience in [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]"
+    NOT_bm_cast_blood_magic_self_major_blood_rune_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('bm_blood_rune_minimum_xp')|0] Experience in [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]"
+
+
+    # Crimson Empowerment
+    bm_cast_blood_magic_self_major_crimson_empowerment: "Channel Crimson Empowerment"
+    bm_cast_blood_magic_self_major_crimson_empowerment_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to permanently enhance your physical and mental attributes"
+
+    bm_crimson_empowerment_event.001.title: "Crimson Empowerment"
+    bm_crimson_empowerment_event.001.desc: "The blood magic roars within me like a caged beast, desperate for expression. I can feel it straining against my flesh, eager to reshape my very essence according to my desires. Which aspect shall I allow it to transform today?"
+    bm_crimson_empowerment_event.001.toast: "Crimson Empowerment"
+    
+    bm_crimson_empowerment_event.001.charisma: "Charisma - My words shall drip with persuasive venom"
+    bm_crimson_empowerment_event.001.fury: "Fury - The battlefield will run red with my triumph"
+    bm_crimson_empowerment_event.001.prosperity: "Prosperity - Wealth shall flow like blood into my waiting hands"
+    bm_crimson_empowerment_event.001.shadows: "Shadows - My enemies' secrets shall bleed into my waiting ears"
+    bm_crimson_empowerment_event.001.insight: "Insight - Ancient blood-wisdom shall flood my mind"
+    bm_crimson_empowerment_event.001.legacy: "Legacy - My bloodline shall thrive with potent vitality"
+    bm_crimson_empowerment_event.001.expertise: "Expertise - Blood remembers all it has witnessed through the ages"
+    bm_crimson_empowerment_event.001.versatility: "Versatility - My power shall transcend all boundaries"
+

@@ -37,18 +37,26 @@ drained_beggar_holding = {
 # XP attunement
 ancient_attuned = {
     icon = blood_magic
+    monthly_piety = 0.5
+    monthly_piety_gain_mult = 0.1
 }
 enlightenment_attuned = {
     icon = blood_magic
+    monthly_lifestyle_xp_gain_mult = 0.1
 }
 bloodline_attuned = {
     icon = blood_magic
+    monthly_dynasty_prestige = 0.2
 }
 benediction_attuned = {
     icon = blood_magic
+    general_opinion = 5
+    monthly_prestige = 0.5
+    monthly_prestige_gain_mult = 0.1
 }
 hematurgy_attuned = {
     icon = blood_magic
+    enemy_hostile_scheme_success_chance_add = -10
 }
 
 # Attempted lifedrain
