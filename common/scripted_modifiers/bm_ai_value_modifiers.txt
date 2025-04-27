@@ -66,6 +66,7 @@ ai_willingness_to_lifedrain = {
         OR = {
             scope:recipient = {is_knight_of = scope:actor}
             scope:recipient = {is_councillor_of = scope:actor}
+            scope:recipient = {is_powerful_vassal_of = scope:actor}
         }
         add = -50
     }
