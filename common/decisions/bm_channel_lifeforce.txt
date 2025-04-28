@@ -13,6 +13,7 @@
         piety_level >= 1
     }
     effect = {
+        debug_log = debug_log.channel_lifeforce_bloodline
         trigger_event = { id = bm_channel_lifeforce_bloodline.001 }
         add_xp_bm_dynamic = {
             TRACK = bloodline

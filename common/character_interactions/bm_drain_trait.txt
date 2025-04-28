@@ -20,7 +20,7 @@ trait_drain_prisoner_event_interaction = {
             is_imprisoned_by = scope:actor
             or = {
                 has_trait = intellect_good
-                has_trait = physique_good
+                has_trait = physique_goodEMIRATES 3=
                 has_trait = beauty_good
                 has_trait = giant
                 has_trait = fecund
@@ -30,6 +30,8 @@ trait_drain_prisoner_event_interaction = {
     }
 
     on_accept = {
+        debug_log_scopes = yes
+        debug_log = debug_log.trait_drain_prisoner_event_interaction
         scope:recipient = {
             send_interface_toast = {
                 left_icon = scope:actor

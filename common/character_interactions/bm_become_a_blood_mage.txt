@@ -22,6 +22,8 @@
     }
 
     on_accept = {
+        debug_log_scopes = yes
+        debug_log = debug_log.ask_for_blood_magic_interaction
         scope:actor = {
             add_trait = lifestyle_blood_mage
         }
@@ -46,12 +48,12 @@
 
 
 # Trigger event
-get_blood_magic_from_prisoner_interaction = {
+bm_get_blood_magic_from_prisoner_interaction = {
     common_interaction = yes
     auto_accept = yes
     interface_priority = 999
     category = interaction_category_hostile
-    desc = get_blood_magic_from_prisoner_interaction.desc
+    desc = bm_get_blood_magic_from_prisoner_interaction.desc
 
     is_highlighted = { always = yes }
     cost = { piety = 100 }
@@ -65,6 +67,8 @@ get_blood_magic_from_prisoner_interaction = {
     }
 
     on_accept = {
+        debug_log_scopes = yes
+        debug_log = debug_log.bm_get_blood_magic_from_prisoner_interaction
         if = {
             limit = {scope:recipient = {has_trait = maimed }}
             scope:actor = {add_trait = cannibal}
@@ -76,7 +80,7 @@ get_blood_magic_from_prisoner_interaction = {
         scope:recipient = {
             send_interface_toast = {
                 left_icon = scope:actor
-                custom_tooltip = get_blood_magic_from_prisoner_interaction.desc
+                custom_tooltip = bm_get_blood_magic_from_prisoner_interaction.desc
                 if = {
                     limit = {has_trait = maimed}
                     add_trait = maimed
@@ -93,7 +97,7 @@ get_blood_magic_from_prisoner_interaction = {
                 skills = {learning intrigue prowess}
                 target = scope:recipient
                 35 = {
-                    desc = get_blood_magic_from_prisoner_interaction.success
+                    desc = bm_get_blood_magic_from_prisoner_interaction.success
                     scope:actor = { add_trait = lifestyle_blood_mage }
 
                     compare_modifier = {
@@ -102,15 +106,15 @@ get_blood_magic_from_prisoner_interaction = {
                     }
 
                     send_interface_toast  = {
-                        title = get_blood_magic_from_prisoner_interaction.success
+                        title = bm_get_blood_magic_from_prisoner_interaction.success
                         left_icon = scope:actor
                         right_icon = scope:recipient
                     }
                 }
                 65 = {
-                    desc = get_blood_magic_from_prisoner_interaction.fail
+                    desc = bm_get_blood_magic_from_prisoner_interaction.fail
                      send_interface_toast  = {
-                        title = get_blood_magic_from_prisoner_interaction.fail
+                        title = bm_get_blood_magic_from_prisoner_interaction.fail
                         left_icon = scope:actor
                         right_icon = scope:recipient
                         if = {

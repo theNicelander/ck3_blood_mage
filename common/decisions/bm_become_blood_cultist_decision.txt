@@ -11,7 +11,10 @@
 
     cost = { piety = 100 }
 
-    effect = {  set_character_faith = faith:cult_of_blood }
+    effect = { 
+        debug_log = debug_log.become_blood_cultist_decision
+        set_character_faith = faith:cult_of_blood 
+    }
 
     # Yearly chance AI take up the religion if they are a blood mage
     ai_will_do = { base = 5 }
