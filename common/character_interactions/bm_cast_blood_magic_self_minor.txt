@@ -18,7 +18,7 @@
     }
 
     on_accept = {
-        debug_log = debug_log.bm_cast_blood_magic_self_channel_minor_lifeforce
+        debug_log = debug_log.blood_mage_log
         scope:actor = {
             trigger_event = { id = bm_channel_lifeforce_enlightenment_minor.001 }
             remove_character_modifier = lifeforce_modifier_minor

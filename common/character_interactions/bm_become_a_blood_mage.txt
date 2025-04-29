@@ -68,7 +68,7 @@ bm_get_blood_magic_from_prisoner_interaction = {
 
     on_accept = {
         
-        scope:actor = { debug_log = debug_log.bm_get_blood_magic_from_prisoner_interaction }
+        scope:actor = { debug_log = debug_log.blood_mage_log }
         
         if = {
             limit = {scope:recipient = {has_trait = maimed }}
