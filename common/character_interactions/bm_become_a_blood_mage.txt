@@ -22,8 +22,8 @@
     }
 
     on_accept = {
-        debug_log_scopes = yes
-        scope:actor = { debug_log = debug_log.ask_for_blood_magic_interaction }
+        
+        scope:actor = { debug_log = debug_log.blood_mage_log }
         scope:actor = {
             add_trait = lifestyle_blood_mage
         }
@@ -67,7 +67,7 @@ bm_get_blood_magic_from_prisoner_interaction = {
     }
 
     on_accept = {
-        debug_log_scopes = yes
+        
         scope:actor = { debug_log = debug_log.bm_get_blood_magic_from_prisoner_interaction }
         
         if = {

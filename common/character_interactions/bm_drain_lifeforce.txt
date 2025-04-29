@@ -13,8 +13,8 @@
     is_valid_showing_failures_only = { scope:recipient = { NOT = { has_character_modifier = lifedrained_modifier } } }
 
     on_accept = {
-        debug_log_scopes = yes
-        scope:actor = {debug_log = debug_log.lifedrain_prisoner_event_interaction}
+        
+        scope:actor = {debug_log = debug_log.blood_mage_log}
         scope:recipient = {
             send_interface_toast = {
                 left_icon = scope:actor
@@ -59,8 +59,8 @@ lifedrain_courtier_event_interaction = {
     cooldown = { months = 6 }
 
     on_accept = {
-        debug_log_scopes = yes
-        scope:actor = {debug_log = debug_log.lifedrain_courtier_event_interaction}
+        
+        scope:actor = {debug_log = debug_log.blood_mage_log}
         scope:recipient = {
             send_interface_toast = {
                 left_icon = scope:actor

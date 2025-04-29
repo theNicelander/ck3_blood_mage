@@ -9,7 +9,7 @@
     }
     cooldown = { years = 2 }
     effect = { 
-        debug_log = debug_log.seek_power_decision
+        debug_log = debug_log.blood_mage_log
         trigger_event = { id = seek_power.001 } 
     }
 
@@ -29,7 +29,7 @@ seek_power_decision_wanderer = {
     # Can do it more often if landless, as it's harder to find prisoners
     cooldown = { years = 1 }
     effect = { 
-        debug_log = debug_log.seek_power_decision_wanderer
+        debug_log = debug_log.blood_mage_log
         trigger_event = { id = seek_power.001 } 
     }
 

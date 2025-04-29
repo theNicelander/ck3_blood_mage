@@ -86,8 +86,8 @@
     }
 
     on_accept = {
-        debug_log_scopes = yes
-        debug_log = debug_log.bm_cast_blood_magic_self_major_improve_education
+        
+        debug_log = debug_log.blood_mage_log
         scope:actor = {
             trigger_event = { id = bm_education_enhancement.001 }
             blood_magic_used_major = yes
@@ -212,7 +212,7 @@ bm_cast_blood_magic_self_major_new_education = {
     }
 
     on_accept = {
-        debug_log_scopes = yes
+        
         debug_log = debug_log.bm_cast_blood_magic_self_major_new_education
         scope:actor = {
             trigger_event = { id = bm_education_new.001 }
@@ -296,8 +296,7 @@ bm_cast_blood_magic_self_major_blood_rune = {
     
 
     on_accept = {
-        debug_log_scopes = yes
-        scope:actor = {debug_log = debug_log.bm_cast_blood_magic_self_major_blood_rune}
+        scope:actor = {debug_log = debug_log.blood_mage_log}
         scope:actor = {
             trigger_event = { id = bm_crimson_rune.001 }
             blood_magic_used_major_minor = yes
@@ -349,13 +348,8 @@ bm_cast_blood_magic_self_major_crimson_empowerment = {
     }
 
     on_accept = {
-        debug_log_scopes = yes
         scope:actor = {debug_log = debug_log.bm_cast_blood_magic_self_major_crimson_empowerment}
         scope:actor = {
-            if = {
-                limit = { NOT = { has_trait = lifestyle_crimson_empowerment } }
-                add_trait = lifestyle_crimson_empowerment
-            }
             trigger_event = { id = bm_crimson_empowerment_event.001 }
             blood_magic_used_major = yes
             add_xp_bm_dynamic = {

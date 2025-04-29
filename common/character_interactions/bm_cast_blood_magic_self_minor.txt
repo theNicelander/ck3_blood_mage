@@ -60,8 +60,8 @@ bm_cast_blood_magic_self_attune_lifeforce = {
     }
 
     on_accept = {
-        debug_log_scopes = yes
-        scope:actor = {debug_log = debug_log.bm_cast_blood_magic_self_attune_lifeforce}
+        
+        scope:actor = {debug_log = debug_log.blood_mage_log}
         scope:actor = {
             trigger_event = { id = bm_attune_lifeforce.001 } 
             remove_character_modifier = lifeforce_modifier_minor
