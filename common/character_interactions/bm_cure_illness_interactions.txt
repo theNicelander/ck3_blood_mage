@@ -33,6 +33,8 @@
     }
 
     on_accept = {
+        
+        debug_log = debug_log.blood_mage_log
         scope:actor = { benediction_magic_cast_effect_minor = yes }
         scope:recipient = {
             remove_trait = wounded_1
@@ -111,6 +113,8 @@ heal_disease_major = {
     }
 
     on_accept = {
+        
+        debug_log = debug_log.blood_mage_log
         scope:actor = { benediction_magic_cast_effect_major = yes }
         scope:recipient = {
             remove_trait = wounded_2
@@ -189,6 +193,7 @@ heal_disease_benediction = {
         }
     }
     is_shown = {
+        
         scope:actor = { has_trait = lifestyle_blood_mage }
         scope:recipient = {
             OR = {
@@ -209,6 +214,7 @@ heal_disease_benediction = {
     }
 
     on_accept = {
+        debug_log = debug_log.blood_mage_log
         scope:actor = { benediction_magic_cast_effect_major_minor = yes }
         scope:recipient = {
             remove_trait = wounded_3

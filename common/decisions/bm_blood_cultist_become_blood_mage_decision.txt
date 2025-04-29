@@ -10,7 +10,10 @@
 
     cost = { piety = 100 }
 
-    effect = {  add_trait = lifestyle_blood_mage }
+    effect = { 
+        debug_log = debug_log.blood_mage_log
+        add_trait = lifestyle_blood_mage 
+    }
 
     # Yearly chance that AI become blood mage, if they are blood cultist
     ai_will_do = { base = 33 }
