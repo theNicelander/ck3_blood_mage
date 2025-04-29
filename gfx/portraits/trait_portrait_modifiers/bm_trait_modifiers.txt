@@ -1,19 +1,36 @@
-﻿white_eyes = {
-	white_eyes = { 
+﻿# white_eyes = {
+# 	white_eyes = { 
+# 		traits = { lifestyle_blood_mage }
+# 		dna_modifiers = {
+# 			human = {
+# 				color = {
+# 					gene = eye_color
+# 					mode = modify
+# 					x = 1.0
+# 					y = -1.0
+# 				}	
+# 			}
+# 		}
+# 	}
+# }
+
+
+red_eyes = {
+	red_eyes = {
 		traits = { lifestyle_blood_mage }
 		dna_modifiers = {
 			human = {
 				color = {
 					gene = eye_color
-					mode = modify
-					x = 1.0
-					y = -1.0
-				}	
+					mode = replace
+					x = -1
+					y = 0.2
+				}
 			}
+
 		}
 	}
 }
-
 
 # white_hair = {
 # 	white_hair = {
