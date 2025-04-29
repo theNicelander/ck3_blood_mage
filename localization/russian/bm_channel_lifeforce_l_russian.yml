@@ -1,42 +1,25 @@
-l_russian:
-  # Незначительные решения
-  channel_lifeforce_enlightenment_minor: "Направить малую кровавую магию"
-  channel_lifeforce_enlightenment_minor_confirm: "Вкусить багровую силу"
-  channel_lifeforce_enlightenment_minor_tooltip: "Используйте небольшую часть своей кровавой магии, чтобы временно усилить один из своих аспектов."
-  channel_lifeforce_enlightenment_minor_desc: "Даже скромное использование кровавой магии может предоставить полезные способности, хотя и на короткое время."
-  channel_lifeforce_enlightenment_minor.effects_list: "Направьте малую кровавую магию, чтобы временно усилить один атрибут:\n#indent_newline: $EFFECT_LIST_BULLET$ Дипломатия: [GetModifier('diplomacy_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ Военное дело: [GetModifier('martial_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ Управление: [GetModifier('stewardship_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ Интриги: [GetModifier('intrigue_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ Учёность: [GetModifier('learning_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ Доблесть: [GetModifier('prowess_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ Опыт: [GetModifier('exp_lifeforce_modifier').GetNameWithTooltip]"
+﻿l_russian:
 
-  bm_channel_lifeforce_enlightenment_minor.001.title: "Тонкое пробуждение крови"
-  bm_channel_lifeforce_enlightenment_minor.001.desc: "Шёпот силы пробуждается в моих венах, не рев полного ритуала, но достаточно, чтобы дать мне некоторое преимущество. Сосредоточившись, я могу направить этот скромный багровый поток, чтобы временно усилить одну грань моего существа."
 
-  bm_channel_lifeforce_enlightenment_minor.001.a: "Дипломатия - Капля крови на языке развязывает секреты"
-  bm_channel_lifeforce_enlightenment_minor.001.b: "Военное дело - Мой клинок жаждет вкуса битвы"
-  bm_channel_lifeforce_enlightenment_minor.001.c: "Управление - Кровавое видение раскрывает скрытые ценности"
-  bm_channel_lifeforce_enlightenment_minor.001.d: "Интриги - Тени расступаются перед моим багровым взором"
-  bm_channel_lifeforce_enlightenment_minor.001.e: "Учёность - Знания пульсируют с каждым ударом сердца"
-  bm_channel_lifeforce_enlightenment_minor.001.f: "Плодовитость - Пусть наши потомки процветают"
-  bm_channel_lifeforce_enlightenment_minor.001.g: "Опыт - Кровь помнит пути к власти"
-  bm_channel_lifeforce_enlightenment_minor.001.h: "Доблесть - Клинок будет закален в крови"
+  # Dynasty Decisions
+  channel_lifeforce_bloodline: "Наполнить Династию Кровавой Магией"
+  channel_lifeforce_bloodline_confirm: "Связать Нашу Родословную"
+  channel_lifeforce_bloodline_tooltip: "Выполнить могущественный ритуал, который навсегда усиливает всю вашу династию сущностью вашей кровавой магии."
+  channel_lifeforce_bloodline_desc: "Каждый модификатор Багровой Династии дает династии шанс получить опыт в Ветви Родословной. \n\nЧерез священный ритуал и значительную жертву, ваша кровавая магия может выйти за пределы вашей личности, чтобы наполнить весь ваш род сверхъестественной силой."
+  channel_lifeforce_bloodline.effects_list: "Наполните всю вашу династию мощными эффектами кровавой магии:\n#indent_newline: $EFFECT_LIST_BULLET$ Дипломатия: [GetModifier('dynasty_crimson_charisma_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ Воинственность: [GetModifier('dynasty_crimson_fury_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ Управление: [GetModifier('dynasty_crimson_prosperity_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ Интрига: [GetModifier('dynasty_crimson_shadows_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ Обучение: [GetModifier('dynasty_crimson_insight_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ Генетика: [GetModifier('dynasty_crimson_legacy_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ Опыт: [GetModifier('dynasty_crimson_expertise_modifier').GetNameWithTooltip]"
 
-  # Решения для династии
-  channel_lifeforce_bloodline: "Напитать династию кровавой магией"
-  channel_lifeforce_bloodline_confirm: "Связать нашу кровь"
-  channel_lifeforce_bloodline_tooltip: "Проведите мощный ритуал, который навсегда усилит всю вашу династию сущностью вашей кровавой магии."
-  channel_lifeforce_bloodline_desc: "Каждый модификатор Багровой Династии даёт династии шанс получить опыт в Пути Кровной Линии. \n\nЧерез священный ритуал и значительные жертвы ваша кровавая магия может выйти за пределы вашей личности, чтобы напитать всю вашу родословную сверхъестественной силой."
-  channel_lifeforce_bloodline.effects_list: "Напитайте всю вашу династию мощными эффектами кровавой магии:\n#indent_newline: $EFFECT_LIST_BULLET$ Дипломатия: [GetModifier('dynasty_crimson_charisma_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ Военное дело: [GetModifier('dynasty_crimson_fury_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ Управление: [GetModifier('dynasty_crimson_prosperity_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ Интриги: [GetModifier('dynasty_crimson_shadows_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ Учёность: [GetModifier('dynasty_crimson_insight_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ Генетика: [GetModifier('dynasty_crimson_legacy_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ Опыт: [GetModifier('dynasty_crimson_expertise_modifier').GetNameWithTooltip]"
+  bm_channel_lifeforce_bloodline.001.title: "Кровавый Завет Рода"
+  bm_channel_lifeforce_bloodline.001.desc: "Ритуальный круг нарисован моей собственной кровью, священные символы соединяют меня с каждым членом моего дома. Когда я произношу древние слова, я чувствую, как щупальца силы простираются сквозь время и пространство, ища тех, кто разделяет мою кровь. Какой дар я дарую своей династии на грядущие поколения?"
 
-  bm_channel_lifeforce_bloodline.001.title: "Кровавый завет родословной"
-  bm_channel_lifeforce_bloodline.001.desc: "Ритуальный круг нарисован моей собственной кровью, священные символы соединяют меня с каждым членом моего дома. Когда я произношу древние слова, я чувствую, как нити силы проникают сквозь время и пространство, отыскивая тех, кто разделяет мою кровь. Какой дар я передам своей династии на поколения вперёд?"
-
-  bm_channel_lifeforce_bloodline.001.a: "Дипломатия - Наши слова будут звучать с кровавой властью"
-  bm_channel_lifeforce_bloodline.001.b: "Военное дело - Кровь завоевателей никогда не истончится в наших жилах"
-  bm_channel_lifeforce_bloodline.001.c: "Управление - Богатство и процветание будут притягиваться к нашей крови"
-  bm_channel_lifeforce_bloodline.001.d: "Интриги - Наша кровь даст нам глаза в самых тёмных тенях"
-  bm_channel_lifeforce_bloodline.001.e: "Учёность - Предания предков будут направлять нашу родословную вечно"
+  bm_channel_lifeforce_bloodline.001.a: "Дипломатия - Наши слова будут командовать с властью, скрепленной кровью"
+  bm_channel_lifeforce_bloodline.001.b: "Воинственность - Кровь завоевателей никогда не истончится в наших венах"
+  bm_channel_lifeforce_bloodline.001.c: "Управление - Богатство и процветание будут притягиваться к нашей родословной"
+  bm_channel_lifeforce_bloodline.001.d: "Интрига - Наша кровь даст нам глаза в самых темных тенях"
+  bm_channel_lifeforce_bloodline.001.e: "Обучение - Шепот предков будет направлять наш род вечно"
   bm_channel_lifeforce_bloodline.001.f: "Здоровье - Наша кровь будет сопротивляться порче и разложению"
   bm_channel_lifeforce_bloodline.001.g: "Черты - Каждое поколение будет рождаться сильнее предыдущего"
-  bm_channel_lifeforce_bloodline.001.h: "Опыт - Древние секреты откроются перед взором нашей линии"
-  bm_channel_lifeforce_bloodline.001.x: "Багровое усиление"
-
-  # Ежегодный опыт для кровной линии
-  blood_mage_yearly_events.002.success: "Модификаторы наследия вашей династии принесли вам опыт"
+  bm_channel_lifeforce_bloodline.001.h: "Опыт - Древние секреты раскроются перед взором нашего рода"
+  bm_channel_lifeforce_bloodline.001.x: "Багровое Усиление"
+  
+  # Yearly bloodline XP 
+  blood_mage_yearly_events.002.success: "Модификаторы наследия вашей Династии даровали вам опыт"

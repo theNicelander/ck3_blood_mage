@@ -1,29 +1,29 @@
-l_russian:
-    # Истощение жизненной силы придворного (малая)
-  lifedrain_courtier_event_interaction: "Малое истощение жизненной силы"
-  lifedrain_courtier_event_interaction.recipient.notification.tt: "Вы начинаете ритуал кровавой магии, чтобы частично истощить [recipient.GetShortUINameNoTooltip], что может ранить их в процессе, если вы будете неосторожны"
-  bm_lifedrain_courtier.001.title: "Малое истощение жизненной силы"
-  bm_lifedrain_courtier.001.desc: "Ваш придворный стоит перед вами, не подозревая о ваших намерениях. Их жизненная сила пульсирует заманчиво, ожидая, чтобы быть использованной."
-  bm_lifedrain_courtier.001.a: "Истощить часть их жизненной силы"
-  bm_lifedrain_courtier.001.a.success_desc: "Вы успешно извлекаете часть жизненной силы [recipient.GetShortUINameNoTooltip]"
-  bm_lifedrain_courtier.001.a.fail_desc: "Вы извлекаете часть жизненной силы [recipient.GetShortUINameNoTooltip], но оставляете их раненым"
-  bm_lifedrain_courtier.001.a.critical_fail_desc: "Ритуал выходит из-под контроля, ранив как вас, так и [recipient.GetShortUINameNoTooltip]"
+﻿l_russian:
+  # Lifedrain courtier (minor)
+lifedrain_courtier_event_interaction: "Малое Поглощение Жизни"
+lifedrain_courtier_event_interaction.recipient.notification.tt: "Вы начинаете ритуал кровавой магии, чтобы частично высосать жизненную силу из [recipient.GetShortUINameNoTooltip], что может нанести им вред в процессе, если вы будете неосторожны"
+bm_lifedrain_courtier.001.title: "Малое Поглощение Жизни"
+bm_lifedrain_courtier.001.desc: "Ваш придворный стоит перед вами, не подозревая о ваших намерениях. Их жизненная сила пульсирует заманчиво, ожидая, когда её обуздают."
+bm_lifedrain_courtier.001.a: "Высосать часть их жизненной силы"
+bm_lifedrain_courtier.001.a.success_desc: "Вы успешно извлекаете часть жизненной силы [recipient.GetShortUINameNoTooltip]"
+bm_lifedrain_courtier.001.a.fail_desc: "Вы извлекаете часть жизненной силы [recipient.GetShortUINameNoTooltip], но оставляете их раненными"
+bm_lifedrain_courtier.001.a.critical_fail_desc: "Ритуал выходит из-под контроля, раня и вас, и [recipient.GetShortUINameNoTooltip]"
 
-    # Истощение жизненной силы пленника (большая)
-  lifedrain_prisoner_event_interaction: "Большое истощение жизненной силы"
-  lifedrain_prisoner_event_interaction.recipient.notification.tt: "Вы используете кровавую магию, чтобы истощить [recipient.GetShortUINameNoTooltip], убив их в процессе"
-  lifedrain_prisoner_interaction: "Большое истощение жизненной силы"
-  lifedrain_prisoner_interaction_desc: "Полностью истощить жизненную силу [recipient.GetShortUINameNoTooltip]"
-  lifedrain_prisoner_interaction.recipient.notification.tt: "Жизненная сила [recipient.GetShortUINameNoTooltip] будет истощена и добавлена к вашей"
+  # lifedrain prisoner (major)
+lifedrain_prisoner_event_interaction: "Большое Поглощение Жизни"
+lifedrain_prisoner_event_interaction.recipient.notification.tt: "Вы используете кровавую магию, чтобы высосать жизненную силу из [recipient.GetShortUINameNoTooltip], убивая их в процессе"
+lifedrain_prisoner_interaction: "Большое Поглощение Жизни"
+lifedrain_prisoner_interaction_desc: "Полностью высосать жизненную силу из [recipient.GetShortUINameNoTooltip]"
+lifedrain_prisoner_interaction.recipient.notification.tt: "Жизненная сила [recipient.GetShortUINameNoTooltip] будет высосана и добавлена к вашей"
 
-    # Истощение черт
-  trait_drain_prisoner_event_interaction: "Истощение положительных черт"
-  generic_drain_prisoner_trait_interaction_desc: "Вы попытаетесь истощить выдающиеся черты [recipient.GetShortUINameNoTooltip] и сделать их своими, убив их в процессе"
-  generic_drain_prisoner_trait_interaction.recipient.notification.tt: "Выдающаяся черта [recipient.GetShortUINameNoTooltip] будет истощена"
+  # Trait drain
+trait_drain_prisoner_event_interaction: "Поглотить Положительные Черты"
+generic_drain_prisoner_trait_interaction_desc: "Вы попытаетесь высосать необычайные черты [recipient.GetShortUINameNoTooltip] и сделать их своими, убивая их в процессе"
+generic_drain_prisoner_trait_interaction.recipient.notification.tt: "Необычайная черта [recipient.GetShortUINameNoTooltip] будет высосана"
 
-  intellect_drain_prisoner_interaction: "Истощение интеллекта"
-  physique_drain_prisoner_interaction: "Истощение физической силы"
-  beauty_drain_prisoner_interaction: "Истощение красоты"
-  fertility_drain_prisoner_interaction: "Истощение плодовитости"
-  giant_drain_prisoner_interaction: "Истощение гигантства"
-  pure_blooded_drain_prisoner_interaction: "Истощение чистой крови"
+intellect_drain_prisoner_interaction: "Поглощение Интеллекта"
+physique_drain_prisoner_interaction: "Поглощение Телосложения"
+beauty_drain_prisoner_interaction: "Поглощение Красоты"
+fertility_drain_prisoner_interaction: "Поглощение Плодовитости"
+giant_drain_prisoner_interaction: "Поглощение Гигантизма"
+pure_blooded_drain_prisoner_interaction: "Поглощение Чистой Крови"
