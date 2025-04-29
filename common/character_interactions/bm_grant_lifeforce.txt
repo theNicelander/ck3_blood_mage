@@ -28,9 +28,21 @@
         }
         scope:actor = { benediction_magic_cast_effect_major = yes }
     }
-    ai_frequency = 6
+    # AI
+    ai_targets = { 
+        ai_recipients = self
+        ai_recipients = dynasty
+        ai_recipients = spouses
+        ai_recipients = family
+        ai_recipients = children
+        ai_recipients = courtiers
+        ai_recipients = councillors
+        ai_recipients = liege
+    }
+    ai_potential = { always = yes }
+    ai_frequency = 12
     ai_will_do = {
-        base = 0
+        base = -10
         ai_willingness_to_do_postitive_magic = yes
     }
 }
