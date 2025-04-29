@@ -14,7 +14,7 @@
 
     on_accept = {
         debug_log_scopes = yes
-        debug_log = debug_log.lifedrain_prisoner_event_interaction
+        scope:actor = {debug_log = debug_log.lifedrain_prisoner_event_interaction}
         scope:recipient = {
             send_interface_toast = {
                 left_icon = scope:actor
@@ -60,7 +60,7 @@ lifedrain_courtier_event_interaction = {
 
     on_accept = {
         debug_log_scopes = yes
-        debug_log = debug_log.lifedrain_courtier_event_interaction
+        scope:actor = {debug_log = debug_log.lifedrain_courtier_event_interaction}
         scope:recipient = {
             send_interface_toast = {
                 left_icon = scope:actor
