@@ -253,7 +253,7 @@ bm_cast_blood_magic_self_major_blood_rune = {
             has_trait = lifestyle_blood_mage
             scope:actor = scope:recipient 
             # don't show if has the final one
-            has_character_modifier = superior_crimson_rune_modifier
+            NOT = {has_character_modifier = superior_crimson_rune_modifier}
         }
     }
     is_valid_showing_failures_only = { 
