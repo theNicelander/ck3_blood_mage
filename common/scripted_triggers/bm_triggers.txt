@@ -1,0 +1,9 @@
+﻿is_playing_overhaul_mod = {
+    OR = {
+        # Lord of the Rings
+        has_global_variable  = sauron_destroyed
+        # Prince of Darkness
+        has_global_variable  = sp_end_date
+    }
+
+}
