@@ -1,0 +1,66 @@
+﻿l_korean:
+ NOT_bm_cast_blood_magic_self_major_blood_rune_xp_requirement: "다음 분야 경험 [GetPlayer.MakeScope.ScriptValue('bm_blood_rune_minimum_xp')|0] 이상 필요 [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]" #deepl:1158450275
+ NOT_bm_cast_blood_magic_self_major_improve_education_xp_requirement: "다음 분야 경험 [GetPlayer.MakeScope.ScriptValue('required_xp_improve_education')|0] 이상 필요 [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]" #deepl:3697626928
+ NOT_bm_cast_blood_magic_self_major_new_education_xp_requirement: "다음 분야 경험 [GetPlayer.MakeScope.ScriptValue('required_xp_new_education')|0] 이상 필요 [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]" #deepl:1928749406
+ bm_attune_lifeforce.001.b: "고대 - 세월의 연륜과 지혜를 연장합니다." #deepl:2434000105
+ bm_attune_lifeforce.001.c: "깨달음 - 내 개인적인 마법 개발 가속화" #deepl:850603142
+ bm_attune_lifeforce.001.d: "혈통 - 내 왕조의 마법 유산 강화하기" #deepl:3957659830
+ bm_attune_lifeforce.001.desc: "내 혈관 속 진홍색 정수는 잠재력을 품고 맥박을 뛰며 지시를 기다립니다. 내 마법을 특정 측면에 조율함으로써, 나는 피 마법의 특정 측면과의 연결을 강화할 수 있고, 잠재적으로 피 마법의 숙달을 앞당길 수 있습니다." #deepl:2597125817
+ bm_attune_lifeforce.001.e: "축도 - 내 치유 및 강화 능력 향상" #deepl:3225610098
+ bm_attune_lifeforce.001.f: "혈액학 - 생명력 채취 기술을 연마하세요." #deepl:2379642238
+ bm_attune_lifeforce.001.title: "피의 마법 조율" #deepl:689817535
+ bm_attune_lifeforce.effects_list: "다음 조율 중 하나를 선택합니다(한 번에 하나만 사용할 수 있음):\n#인덴터_새줄: $EFFECT_LIST_BULLET$ [GetModifier('ancient_attuned').GetNameWithTooltip]\n#인덴터_새줄: $EFFECT_LIST_BULLET$ [GetModifier('enlightenment_attuned').GetNameWithTooltip]\n#인덴터_새줄: $EFFECT_LIST_BULLET$ [GetModifier('bloodline_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('benediction_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('hematurgy_attuned').GetNameWithTooltip]" #deepl:4106388187
+ bm_cast_blood_magic_self_attune_lifeforce: "생명력 조율" #deepl:685669057
+ bm_cast_blood_magic_self_attune_lifeforce_desc: "[GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] 을 사용해 피의 마법을 특정 특성 경로( [GetTrait('lifestyle_blood_mage').GetName( GetNullCharacter )] )로 조정하면 경험치 획득량이 증가합니다." #deepl:4264263650
+ bm_cast_blood_magic_self_channel_minor_lifeforce: "채널 마이너 생명력" #deepl:3237289768
+ bm_cast_blood_magic_self_channel_minor_lifeforce_desc: "[GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] 을 사용하면 일시적으로 약간의 부스트를 얻을 수 있습니다." #deepl:3717592838
+ bm_cast_blood_magic_self_major_blood_rune: "피의 룬으로 각인" #deepl:2885668122
+ bm_cast_blood_magic_self_major_blood_rune_desc: "[GetModifier('lifeforce_modifier_major').GetNameWithTooltip] 을 사용하여 교육 특성 중 하나를 향상시키려고 시도합니다." #deepl:2442690779
+ bm_cast_blood_magic_self_major_blood_rune_xp_requirement: "다음 분야 경험 [GetPlayer.MakeScope.ScriptValue('bm_blood_rune_minimum_xp')|0] 이상 필요 [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]" #deepl:1158450275
+ bm_cast_blood_magic_self_major_crimson_empowerment: "채널 크림슨 역량 강화" #deepl:168551403
+ bm_cast_blood_magic_self_major_crimson_empowerment_desc: "[GetModifier('lifeforce_modifier_major').GetNameWithTooltip] 을 사용하여 신체적, 정신적 속성을 영구적으로 강화하세요." #deepl:811805739
+ bm_cast_blood_magic_self_major_improve_education: "교육 강화" #deepl:2775586975
+ bm_cast_blood_magic_self_major_improve_education_desc: "[GetModifier('lifeforce_modifier_major').GetNameWithTooltip] 을 사용하여 교육 특성 중 하나를 향상시키려고 시도합니다." #deepl:2442690779
+ bm_cast_blood_magic_self_major_improve_education_xp_requirement: "다음 분야 경험 [GetPlayer.MakeScope.ScriptValue('required_xp_improve_education')|0] 이상 필요 [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]" #deepl:3697626928
+ bm_cast_blood_magic_self_major_new_education: "새로운 교육 수용" #deepl:2013320360
+ bm_cast_blood_magic_self_major_new_education_desc: "[GetModifier('lifeforce_modifier_major').GetNameWithTooltip] 을 사용하여 교육 특성 중 하나를 향상시키려고 시도합니다." #deepl:2442690779
+ bm_cast_blood_magic_self_major_new_education_xp_requirement: "다음 분야 경험 [GetPlayer.MakeScope.ScriptValue('required_xp_new_education')|0] 이상 필요 [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]" #deepl:1928749406
+ bm_channel_lifeforce_enlightenment_minor.001.a: "외교 - 혀에 묻은 피 한 방울이 비밀을 풀어줍니다." #deepl:1471121807
+ bm_channel_lifeforce_enlightenment_minor.001.b: "무술 - 내 칼날은 전투의 맛을 갈망합니다." #deepl:142500338
+ bm_channel_lifeforce_enlightenment_minor.001.c: "스튜어드십 - 피투성이가 된 시각으로 숨겨진 가치 드러내기" #deepl:3615882048
+ bm_channel_lifeforce_enlightenment_minor.001.d: "음모 - 내 붉은 시선 앞에 그림자가 드리워지다" #deepl:1263487318
+ bm_channel_lifeforce_enlightenment_minor.001.desc: "완전한 의식의 포효는 아니지만 내게 약간의 이점을 부여하기에 충분한 힘의 속삭임이 내 혈관에서 꿈틀거립니다. 주의 깊게 집중하면 이 미미한 붉은 기운이 내 존재의 한 측면을 일시적으로 강화하도록 유도할 수 있습니다." #deepl:1703482046
+ bm_channel_lifeforce_enlightenment_minor.001.e: "학습 - 심장 박동과 함께 지식이 펄떡입니다." #deepl:1501063660
+ bm_channel_lifeforce_enlightenment_minor.001.f: "다산 - 자손의 번창을 기원합니다." #deepl:1431913658
+ bm_channel_lifeforce_enlightenment_minor.001.g: "경험 - 피는 권력을 향한 길을 기억합니다." #deepl:87837522
+ bm_channel_lifeforce_enlightenment_minor.001.h: "기교 - 칼날을 피로 담금질해야 합니다." #deepl:3537462123
+ bm_channel_lifeforce_enlightenment_minor.001.title: "미묘한 피의 각성" #deepl:683658949
+ bm_crimson_empowerment_event.001.charisma: "카리스마 - 내 말은 설득력 있는 독으로 떨어질 것이다." #deepl:1006535072
+ bm_crimson_empowerment_event.001.desc: "피의 마법이 우리에 갇힌 짐승처럼 내 안에서 포효하며 표현을 갈망하고 있습니다. 내 욕망에 따라 내 본질을 바꾸고 싶어 내 육체를 조여오는 것이 느껴집니다. 오늘은 어떤 면을 변화시켜야 할까요?" #deepl:1680709901
+ bm_crimson_empowerment_event.001.expertise: "전문성 - Blood는 오랜 세월 동안 목격한 모든 것을 기억합니다." #deepl:1330967686
+ bm_crimson_empowerment_event.001.fury: "Fury - 나의 승리로 전장이 붉게 달아오를 것입니다." #deepl:2083508541
+ bm_crimson_empowerment_event.001.insight: "통찰력 - 고대의 혈통적 지혜가 내 마음에 넘치리라" #deepl:3410912852
+ bm_crimson_empowerment_event.001.legacy: "유산 - 나의 핏줄은 강력한 생명력으로 번성할 것이다." #deepl:3550017045
+ bm_crimson_empowerment_event.001.prosperity: "번영 - 부는 나의 기다리는 손에 피처럼 흐르게 될 것이다." #deepl:1650154842
+ bm_crimson_empowerment_event.001.shadows: "그림자 - 적들의 비밀이 나의 기다리는 귀에 흘러들어갈 것이다." #deepl:2561900533
+ bm_crimson_empowerment_event.001.title: "크림슨 임파워먼트" #deepl:3225279380
+ bm_crimson_empowerment_event.001.toast: "크림슨 임파워먼트" #deepl:3225279380
+ bm_crimson_empowerment_event.001.versatility: "다재다능함 - 나의 힘은 모든 경계를 초월할 것이다." #deepl:1256420857
+ bm_education_enhancement.001.desc: "진홍색 정수는 지식과 힘의 룬이 새겨진 특별한 통로를 통해 흐르며, 각 통로에는 지식과 힘의 룬이 새겨져 있습니다. 의식을 시작할 때, 피의 마법을 통해 어느 부분을 강화할지 결정해야 합니다. 이 의식은 난이도가 높으며, 교육 수준이 높아질수록 추가 강화의 난이도가 크게 증가합니다." #deepl:2875758030
+ bm_education_enhancement.001.diplomacy: "외교 교육 강화" #deepl:29396934
+ bm_education_enhancement.001.intrigue: "내 호기심 교육 강화" #deepl:1210374572
+ bm_education_enhancement.001.learning: "학습 교육 강화" #deepl:2315207055
+ bm_education_enhancement.001.martial: "무술 교육 강화" #deepl:1434167004
+ bm_education_enhancement.001.stewardship: "스튜어드십 교육 강화" #deepl:1977254667
+ bm_education_enhancement.001.title: "지식의 피 주입" #deepl:3187099357
+ bm_education_enhancement.failure: "혈액 주입 실패" #deepl:1887543710
+ bm_education_enhancement.success: "교육 강화" #deepl:288324795
+ bm_education_new.001.desc: "의식 공간을 준비하는 동안 고대의 책들이 눈앞에 펼쳐집니다. 기존 지식을 강화하는 이전 작업과는 달리, 이 작업은 정신적 장벽을 허물고 완전히 새로운 이해의 구조를 만들어야 합니다. 관자놀이에 그려 넣은 진홍색 룬은 기대감으로 가슴을 뛰게 하며, 지식이 여러분의 의식으로 직접 흘러들어오는 통로 역할을 할 것입니다. 오늘은 어떤 낯선 학문을 마음속에 받아들이고 싶으신가요?" #deepl:1130445818
+ bm_education_new.001.diplomacy: "새로운 외교 교육 받기" #deepl:248739521
+ bm_education_new.001.intrigue: "새로운 흥미 유발 교육 받기" #deepl:3706992381
+ bm_education_new.001.learning: "새로운 학습 교육 받기" #deepl:489664222
+ bm_education_new.001.martial: "새로운 무술 교육 받기" #deepl:1203559877
+ bm_education_new.001.stewardship: "새로운 스튜어드십 교육 받기" #deepl:4011432698
+ bm_education_new.001.title: "새로운 신경 경로 구축" #deepl:3218545016
+ channel_lifeforce_enlightenment_minor.effects_list: "사소한 피의 마법을 통해 한 가지 속성을 일시적으로 강화합니다:\n#indent_새줄: $EFFECT_LIST_BULLET$ [GetModifier('diplomacy_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('martial_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('stewardship_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('intrigue_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('learning_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('prowess_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('exp_lifeforce_modifier').GetNameWithTooltip]" #deepl:3506541720
+ new_education_decision: "새로운 지식 수용" #deepl:3141631084

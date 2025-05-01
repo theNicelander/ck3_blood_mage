@@ -1,0 +1,66 @@
+﻿l_german:
+ NOT_bm_cast_blood_magic_self_major_blood_rune_xp_requirement: "Sie benötigen mindestens [GetPlayer.MakeScope.ScriptValue('bm_blood_rune_minimum_xp')|0] Erfahrung in [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]" #deepl:1158450275
+ NOT_bm_cast_blood_magic_self_major_improve_education_xp_requirement: "Sie benötigen mindestens [GetPlayer.MakeScope.ScriptValue('required_xp_improve_education')|0] Erfahrung in [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]" #deepl:3697626928
+ NOT_bm_cast_blood_magic_self_major_new_education_xp_requirement: "Sie benötigen mindestens [GetPlayer.MakeScope.ScriptValue('required_xp_new_education')|0] Erfahrung in [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]" #deepl:1928749406
+ bm_attune_lifeforce.001.b: "Ancient - Verlängere meine Jahre und die Weisheit des Alters" #deepl:2434000105
+ bm_attune_lifeforce.001.c: "Enlightenment - Beschleunigen Sie meine persönliche magische Entwicklung" #deepl:850603142
+ bm_attune_lifeforce.001.d: "Blutlinie - Stärkt das magische Erbe meiner Dynastie" #deepl:3957659830
+ bm_attune_lifeforce.001.desc: "Die karmesinrote Essenz in meinen Adern pulsiert voller Potenzial und wartet darauf, gelenkt zu werden. Indem ich meine Magie auf einen bestimmten Aspekt abstimme, kann ich meine Verbindung zu dieser speziellen Facette der Blutmagie stärken und so möglicherweise meine Beherrschung beschleunigen." #deepl:2597125817
+ bm_attune_lifeforce.001.e: "Segen - Verbesserung meiner Heilungs- und Verbesserungsfähigkeiten" #deepl:3225610098
+ bm_attune_lifeforce.001.f: "Hämaturgie - Meine Fähigkeiten im Sammeln von Lebenskraft schärfen" #deepl:2379642238
+ bm_attune_lifeforce.001.title: "Blutmagie abstimmen" #deepl:689817535
+ bm_attune_lifeforce.effects_list: "Wähle eine der folgenden Einstimmungen (du kannst immer nur eine haben):\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('ancient_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('enlightenment_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('bloodline_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('benediction_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('hematurgy_attuned').GetNameWithTooltip]" #deepl:4106388187
+ bm_cast_blood_magic_self_attune_lifeforce: "Einstimmung auf die Lebenskraft" #deepl:685669057
+ bm_cast_blood_magic_self_attune_lifeforce_desc: "Gib [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] aus, um deine Blutmagie auf einen bestimmten [GetTrait('lifestyle_blood_mage').GetName( GetNullCharacter )] Eigenschaftspfad einzustimmen und dadurch mehr Erfahrung zu gewinnen." #deepl:4264263650
+ bm_cast_blood_magic_self_channel_minor_lifeforce: "Geringe Lebenskraft kanalisieren" #deepl:3237289768
+ bm_cast_blood_magic_self_channel_minor_lifeforce_desc: "Geben Sie [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] für einen kleinen vorübergehenden Schub aus." #deepl:3717592838
+ bm_cast_blood_magic_self_major_blood_rune: "Mit Blutrunen beschriften" #deepl:2885668122
+ bm_cast_blood_magic_self_major_blood_rune_desc: "Gib [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] aus, um zu versuchen, eine deiner Bildungseigenschaften zu verbessern." #deepl:2442690779
+ bm_cast_blood_magic_self_major_blood_rune_xp_requirement: "Sie benötigen mindestens [GetPlayer.MakeScope.ScriptValue('bm_blood_rune_minimum_xp')|0] Erfahrung in [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]" #deepl:1158450275
+ bm_cast_blood_magic_self_major_crimson_empowerment: "Channel Crimson Empowerment" #deepl:168551403
+ bm_cast_blood_magic_self_major_crimson_empowerment_desc: "Gib [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] aus, um deine körperlichen und geistigen Eigenschaften dauerhaft zu verbessern." #deepl:811805739
+ bm_cast_blood_magic_self_major_improve_education: "Bildung verbessern" #deepl:2775586975
+ bm_cast_blood_magic_self_major_improve_education_desc: "Gib [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] aus, um zu versuchen, eine deiner Bildungseigenschaften zu verbessern." #deepl:2442690779
+ bm_cast_blood_magic_self_major_improve_education_xp_requirement: "Sie benötigen mindestens [GetPlayer.MakeScope.ScriptValue('required_xp_improve_education')|0] Erfahrung in [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]" #deepl:3697626928
+ bm_cast_blood_magic_self_major_new_education: "Neue Bildungswege einschlagen" #deepl:2013320360
+ bm_cast_blood_magic_self_major_new_education_desc: "Gib [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] aus, um zu versuchen, eine deiner Bildungseigenschaften zu verbessern." #deepl:2442690779
+ bm_cast_blood_magic_self_major_new_education_xp_requirement: "Sie benötigen mindestens [GetPlayer.MakeScope.ScriptValue('required_xp_new_education')|0] Erfahrung in [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]" #deepl:1928749406
+ bm_channel_lifeforce_enlightenment_minor.001.a: "Diplomatie - Ein Blutstropfen auf meiner Zunge löst Geheimnisse" #deepl:1471121807
+ bm_channel_lifeforce_enlightenment_minor.001.b: "Martial - Meine Klinge dürstet nach dem Geschmack des Kampfes" #deepl:142500338
+ bm_channel_lifeforce_enlightenment_minor.001.c: "Stewardship - Blutige Vision offenbart verborgene Werte" #deepl:3615882048
+ bm_channel_lifeforce_enlightenment_minor.001.d: "Intrige - Schatten teilen sich vor meinem karminroten Blick" #deepl:1263487318
+ bm_channel_lifeforce_enlightenment_minor.001.desc: "Ein Flüstern der Macht rührt sich in meinen Adern, nicht das Getöse eines vollständigen Rituals, aber genug, um mir einen gewissen Vorteil zu verschaffen. Mit sorgfältiger Konzentration kann ich diesen bescheidenen karminroten Strom so lenken, dass er eine einzelne Facette meines Wesens vorübergehend verstärkt." #deepl:1703482046
+ bm_channel_lifeforce_enlightenment_minor.001.e: "Lernen - Wissen pulsiert mit jedem Herzschlag" #deepl:1501063660
+ bm_channel_lifeforce_enlightenment_minor.001.f: "Fruchtbarkeit - Möge unsere Nachkommenschaft gedeihen" #deepl:1431913658
+ bm_channel_lifeforce_enlightenment_minor.001.g: "Erfahrung - Blut erinnert an die Wege zur Macht" #deepl:87837522
+ bm_channel_lifeforce_enlightenment_minor.001.h: "Tüchtigkeit - Die Klinge soll in Blut getränkt werden" #deepl:3537462123
+ bm_channel_lifeforce_enlightenment_minor.001.title: "Subtiles Blut-Erwachen" #deepl:683658949
+ bm_crimson_empowerment_event.001.charisma: "Charisma - Meine Worte sollen mit überzeugendem Gift triefen" #deepl:1006535072
+ bm_crimson_empowerment_event.001.desc: "Die Blutmagie brüllt in mir wie ein gefangenes Tier, das verzweifelt nach Ausdruck verlangt. Ich spüre, wie sie sich gegen mein Fleisch stemmt und darauf brennt, mein Wesen nach meinen Wünschen umzugestalten. Welchen Aspekt soll ich ihr heute erlauben, zu verändern?" #deepl:1680709901
+ bm_crimson_empowerment_event.001.expertise: "Fachwissen - Blut erinnert sich an alles, was es im Laufe der Jahrhunderte erlebt hat" #deepl:1330967686
+ bm_crimson_empowerment_event.001.fury: "Wut - Das Schlachtfeld wird rot sein von meinem Triumph" #deepl:2083508541
+ bm_crimson_empowerment_event.001.insight: "Einsicht - Alte Blut-Weisheit wird meinen Geist durchfluten" #deepl:3410912852
+ bm_crimson_empowerment_event.001.legacy: "Vermächtnis - Meine Blutlinie soll mit starker Vitalität gedeihen" #deepl:3550017045
+ bm_crimson_empowerment_event.001.prosperity: "Wohlstand - Reichtum wird wie Blut in meine wartenden Hände fließen" #deepl:1650154842
+ bm_crimson_empowerment_event.001.shadows: "Shadows - Die Geheimnisse meiner Feinde sollen in meine wartenden Ohren dringen" #deepl:2561900533
+ bm_crimson_empowerment_event.001.title: "Karmesinrote Ermächtigung" #deepl:3225279380
+ bm_crimson_empowerment_event.001.toast: "Karmesinrote Ermächtigung" #deepl:3225279380
+ bm_crimson_empowerment_event.001.versatility: "Vielseitigkeit - Meine Macht wird alle Grenzen überschreiten" #deepl:1256420857
+ bm_education_enhancement.001.desc: "Die karmesinrote Essenz fließt durch spezielle Kanäle, die du vorbereitet hast und die jeweils mit Runen des Wissens und der Macht beschriftet sind. Zu Beginn des Rituals musst du entscheiden, welchen Aspekt deiner Ausbildung du durch Blutmagie verbessern willst. Das Ritual wird eine Herausforderung sein - je höher deine Ausbildung ist, desto schwieriger wird es, sie weiter zu verbessern." #deepl:2875758030
+ bm_education_enhancement.001.diplomacy: "Meine diplomatische Ausbildung verbessern" #deepl:29396934
+ bm_education_enhancement.001.intrigue: "Meine Intrigenausbildung verbessern" #deepl:1210374572
+ bm_education_enhancement.001.learning: "Meine Ausbildung verbessern" #deepl:2315207055
+ bm_education_enhancement.001.martial: "Meine Kampfsportausbildung zu verbessern" #deepl:1434167004
+ bm_education_enhancement.001.stewardship: "Meine Ausbildung im Bereich Stewardship verbessern" #deepl:1977254667
+ bm_education_enhancement.001.title: "Blutinfusion des Wissens" #deepl:3187099357
+ bm_education_enhancement.failure: "Blutinfusion fehlgeschlagen" #deepl:1887543710
+ bm_education_enhancement.success: "Bildung Verbessert" #deepl:288324795
+ bm_education_new.001.desc: "Während Sie den Ritualraum vorbereiten, öffnen sich uralte Bücher vor Ihnen. Im Gegensatz zu Ihrer bisherigen Arbeit, bei der Sie bereits vorhandenes Wissen erweitert haben, müssen Sie bei diesem Unterfangen geistige Barrieren niederreißen und völlig neue Strukturen des Verständnisses schaffen. Die purpurnen Runen, die du auf deine Schläfen gemalt hast, pulsieren vor Erwartung - sie werden als Kanäle dienen, durch die das Wissen direkt in dein Bewusstsein strömt. Zu welcher ungewohnten Disziplin werden Sie Ihren Geist heute zwingen?" #deepl:1130445818
+ bm_education_new.001.diplomacy: "Eine neue diplomatische Ausbildung erhalten" #deepl:248739521
+ bm_education_new.001.intrigue: "Gewinnung neuer Intrigenbildung" #deepl:3706992381
+ bm_education_new.001.learning: "Neue Lerninhalte erlangen" #deepl:489664222
+ bm_education_new.001.martial: "Neue kriegerische Ausbildung erlangen" #deepl:1203559877
+ bm_education_new.001.stewardship: "Neue Schulungen zum Thema Stewardship erhalten" #deepl:4011432698
+ bm_education_new.001.title: "Neue neuronale Pfade schaffen" #deepl:3218545016
+ channel_lifeforce_enlightenment_minor.effects_list: "Kanalisiert kleinere Blutmagie, um ein Attribut vorübergehend zu verbessern: \n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('diplomacy_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('martial_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('stewardship_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('intrigue_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('learning_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('prowess_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('exp_lifeforce_modifier').GetNameWithTooltip]" #deepl:3506541720
+ new_education_decision: "Neues Wissen annehmen" #deepl:3141631084
