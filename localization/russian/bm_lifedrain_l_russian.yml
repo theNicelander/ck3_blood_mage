@@ -1,0 +1,29 @@
+﻿l_russian:
+  # Lifedrain courtier (minor)
+lifedrain_courtier_event_interaction: "Малое Поглощение Жизни"
+lifedrain_courtier_event_interaction.recipient.notification.tt: "Вы начинаете ритуал кровавой магии, чтобы частично высосать жизненную силу из [recipient.GetShortUINameNoTooltip], что может нанести им вред в процессе, если вы будете неосторожны"
+bm_lifedrain_courtier.001.title: "Малое Поглощение Жизни"
+bm_lifedrain_courtier.001.desc: "Ваш придворный стоит перед вами, не подозревая о ваших намерениях. Их жизненная сила пульсирует заманчиво, ожидая, когда её обуздают."
+bm_lifedrain_courtier.001.a: "Высосать часть их жизненной силы"
+bm_lifedrain_courtier.001.a.success_desc: "Вы успешно извлекаете часть жизненной силы [recipient.GetShortUINameNoTooltip]"
+bm_lifedrain_courtier.001.a.fail_desc: "Вы извлекаете часть жизненной силы [recipient.GetShortUINameNoTooltip], но оставляете их раненными"
+bm_lifedrain_courtier.001.a.critical_fail_desc: "Ритуал выходит из-под контроля, раня и вас, и [recipient.GetShortUINameNoTooltip]"
+
+  # lifedrain prisoner (major)
+lifedrain_prisoner_event_interaction: "Большое Поглощение Жизни"
+lifedrain_prisoner_event_interaction.recipient.notification.tt: "Вы используете кровавую магию, чтобы высосать жизненную силу из [recipient.GetShortUINameNoTooltip], убивая их в процессе"
+lifedrain_prisoner_interaction: "Большое Поглощение Жизни"
+lifedrain_prisoner_interaction_desc: "Полностью высосать жизненную силу из [recipient.GetShortUINameNoTooltip]"
+lifedrain_prisoner_interaction.recipient.notification.tt: "Жизненная сила [recipient.GetShortUINameNoTooltip] будет высосана и добавлена к вашей"
+
+  # Trait drain
+trait_drain_prisoner_event_interaction: "Поглотить Положительные Черты"
+generic_drain_prisoner_trait_interaction_desc: "Вы попытаетесь высосать необычайные черты [recipient.GetShortUINameNoTooltip] и сделать их своими, убивая их в процессе"
+generic_drain_prisoner_trait_interaction.recipient.notification.tt: "Необычайная черта [recipient.GetShortUINameNoTooltip] будет высосана"
+
+intellect_drain_prisoner_interaction: "Поглощение Интеллекта"
+physique_drain_prisoner_interaction: "Поглощение Телосложения"
+beauty_drain_prisoner_interaction: "Поглощение Красоты"
+fertility_drain_prisoner_interaction: "Поглощение Плодовитости"
+giant_drain_prisoner_interaction: "Поглощение Гигантизма"
+pure_blooded_drain_prisoner_interaction: "Поглощение Чистой Крови"

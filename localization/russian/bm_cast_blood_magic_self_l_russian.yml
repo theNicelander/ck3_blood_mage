@@ -1,0 +1,65 @@
+﻿l_russian:
+############### MINOR ###############
+    # Attune lifeforce
+    bm_cast_blood_magic_self_attune_lifeforce: "Настройка Жизненной Силы"
+    bm_cast_blood_magic_self_attune_lifeforce_desc: "Потратить [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip], чтобы настроить вашу Кровавую Магию на определенный путь черты [GetTrait('lifestyle_blood_mage').GetName( GetNullCharacter )] для увеличения получения опыта."
+    bm_attune_lifeforce.effects_list: "Выберите одну из следующих настроек (у вас может быть только одна одновременно):\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('ancient_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('enlightenment_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('bloodline_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('benediction_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('hematurgy_attuned').GetNameWithTooltip]"
+    
+    bm_attune_lifeforce.001.title: "Настройка Кровавой Магии"
+    bm_attune_lifeforce.001.desc: "Багровая сущность в моих венах пульсирует потенциалом, ожидая направления. Настраивая мою магию на определённый аспект, я могу усилить свою связь с этой конкретной гранью кровавой магии, потенциально ускоряя моё овладение ею."
+    bm_attune_lifeforce.001.b: "Древность - Продлить мои годы и мудрость веков"
+    bm_attune_lifeforce.001.c: "Просветление - Ускорить моё личное магическое развитие"
+    bm_attune_lifeforce.001.d: "Родословная - Укрепить магическое наследие моей династии"
+    bm_attune_lifeforce.001.e: "Благословение - Улучшить мои способности исцеления и усиления"
+    bm_attune_lifeforce.001.f: "Гематургия - Отточить мои навыки сбора жизненной силы"
+
+    # Channel lifeforce minor
+    bm_cast_blood_magic_self_channel_minor_lifeforce: "Канализировать Малую Жизненную Силу"
+    bm_cast_blood_magic_self_channel_minor_lifeforce_desc: "Потратить [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] для небольшого временного усиления."
+    channel_lifeforce_enlightenment_minor.effects_list: "Канализировать малую кровавую магию для временного усиления одного атрибута:\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('diplomacy_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('martial_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('stewardship_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('intrigue_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('learning_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('prowess_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('exp_lifeforce_modifier').GetNameWithTooltip]"
+    
+    bm_channel_lifeforce_enlightenment_minor.001.title: "Тонкое Пробуждение Крови"
+    bm_channel_lifeforce_enlightenment_minor.001.desc: "Шёпот силы шевелится в моих венах, не рёв полного ритуала, но достаточно, чтобы дать мне некоторое преимущество. С тщательной концентрацией я могу направить этот скромный багровый поток, чтобы временно усилить одну грань моего существа."
+    bm_channel_lifeforce_enlightenment_minor.001.a: "Дипломатия - Капля крови на моём языке развязывает секреты"
+    bm_channel_lifeforce_enlightenment_minor.001.b: "Воинственность - Мой клинок жаждет вкуса битвы"
+    bm_channel_lifeforce_enlightenment_minor.001.c: "Управление - Окрашенное кровью зрение раскрывает скрытые ценности"
+    bm_channel_lifeforce_enlightenment_minor.001.d: "Интрига - Тени расступаются перед моим багровым взглядом"
+    bm_channel_lifeforce_enlightenment_minor.001.e: "Обучение - Знание пульсирует с каждым ударом сердца"
+    bm_channel_lifeforce_enlightenment_minor.001.f: "Плодовитость - Пусть наше потомство процветает"
+    bm_channel_lifeforce_enlightenment_minor.001.g: "Опыт - Кровь помнит пути к власти"
+    bm_channel_lifeforce_enlightenment_minor.001.h: "Доблесть - Клинок будет закалён в крови"
+
+    new_education_decision: "Принять Новое Знание"
+    bm_cast_blood_magic_self_major_new_education_desc: "Получить образовательную черту в дисциплине, которой вы ещё не овладели"
+    bm_education_new.001.title: "Создание Новых Нейронных Путей"
+    bm_education_new.001.desc: "Древние фолианты открываются перед вами, пока вы готовите ритуальное пространство. В отличие от вашей предыдущей работы по улучшению существующих знаний, это начинание требует разрушения ментальных барьеров и создания совершенно новых структур понимания. Багровые руны, которые вы нарисовали на своих висках, пульсируют в предвкушении — они будут служить проводниками для знаний, которые хлынут прямо в ваше сознание. Какую незнакомую дисциплину вы заставите свой разум принять сегодня?"
+    bm_education_new.001.diplomacy: "Получить новое дипломатическое образование"
+    bm_education_new.001.martial: "Получить новое воинское образование"
+    bm_education_new.001.stewardship: "Получить новое образование в управлении"
+    bm_education_new.001.intrigue: "Получить новое образование в интригах"
+    bm_education_new.001.learning: "Получить новое образование в обучении"
+
+    # Blood Rrune
+    bm_cast_blood_magic_self_major_blood_rune: "Начертать Кровавые Руны"
+    bm_cast_blood_magic_self_major_blood_rune_desc: "Потратить [GetModifier('lifeforce_modifier_major').GetNameWithTooltip], чтобы попытаться улучшить одну из ваших образовательных черт"
+    bm_cast_blood_magic_self_major_blood_rune_xp_requirement: "Требуется не менее [GetPlayer.MakeScope.ScriptValue('bm_blood_rune_minimum_xp')|0] опыта в [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]"
+    NOT_bm_cast_blood_magic_self_major_blood_rune_xp_requirement: "Требуется не менее [GetPlayer.MakeScope.ScriptValue('bm_blood_rune_minimum_xp')|0] опыта в [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]"
+
+
+    # Crimson Empowerment
+    bm_cast_blood_magic_self_major_crimson_empowerment: "Канализировать Багровое Усиление"
+    bm_cast_blood_magic_self_major_crimson_empowerment_desc: "Потратить [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] для постоянного улучшения ваших физических и ментальных атрибутов"
+
+    bm_crimson_empowerment_event.001.title: "Багровое Усиление"
+    bm_crimson_empowerment_event.001.desc: "Кровавая магия ревёт внутри меня, как загнанный в клетку зверь, жаждущий выражения. Я чувствую, как она напрягается против моей плоти, стремясь изменить самую мою сущность согласно моим желаниям. Какой аспект я позволю ей преобразить сегодня?"
+    bm_crimson_empowerment_event.001.toast: "Багровое Усиление"
+    
+    bm_crimson_empowerment_event.001.charisma: "Харизма - Мои слова будут сочиться убедительным ядом"
+    bm_crimson_empowerment_event.001.fury: "Ярость - Поле битвы станет красным от моего триумфа"
+    bm_crimson_empowerment_event.001.prosperity: "Процветание - Богатство потечёт как кровь в мои ожидающие руки"
+    bm_crimson_empowerment_event.001.shadows: "Тени - Секреты моих врагов прольются в мои жаждущие уши"
+    bm_crimson_empowerment_event.001.insight: "Проницательность - Древняя кровавая мудрость затопит мой разум"
+    bm_crimson_empowerment_event.001.legacy: "Наследие - Моя родословная будет процветать с могущественной жизненной силой"
+    bm_crimson_empowerment_event.001.expertise: "Мастерство - Кровь помнит всё, что она видела сквозь века"
+    bm_crimson_empowerment_event.001.versatility: "Универсальность - Моя сила превзойдёт все границы"
+
