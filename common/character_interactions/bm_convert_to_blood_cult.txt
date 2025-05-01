@@ -20,6 +20,8 @@
         scope:recipient = {
             NOT = { has_faith = faith:cult_of_blood }
         }
+        # Disable for overhaul mods
+        NOT = { is_playing_overhaul_mod = yes }
     }
 	should_use_extra_icon = {
 		scope:actor = { has_usable_hook = scope:recipient }
