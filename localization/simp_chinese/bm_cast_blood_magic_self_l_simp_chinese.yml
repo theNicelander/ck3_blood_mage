@@ -1,0 +1,66 @@
+﻿l_simp_chinese:
+ NOT_bm_cast_blood_magic_self_major_blood_rune_xp_requirement: "至少需要[GetPlayer.MakeScope.ScriptValue('bm_blood_rune_minimum_xp')|0] 以下方面的经验[GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]" #deepl:1158450275
+ NOT_bm_cast_blood_magic_self_major_improve_education_xp_requirement: "至少需要[GetPlayer.MakeScope.ScriptValue('required_xp_improve_education')|0] 以下方面的经验[GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]" #deepl:3697626928
+ NOT_bm_cast_blood_magic_self_major_new_education_xp_requirement: "至少需要[GetPlayer.MakeScope.ScriptValue('required_xp_new_education')|0] 以下方面的经验[GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]" #deepl:1928749406
+ bm_attune_lifeforce.001.b: "古老 - 延续我的年华和岁月的智慧" #deepl:2434000105
+ bm_attune_lifeforce.001.c: "启迪 - 加速我的个人魔法发展" #deepl:850603142
+ bm_attune_lifeforce.001.d: "血脉 - 加强我的王朝的魔法传承" #deepl:3957659830
+ bm_attune_lifeforce.001.desc: "我血管中的深红色精华蕴藏着无限潜能，正等待着我去激发。通过将我的魔法调整到特定方面，我可以加强与血魔法特定方面的联系，从而加速我对血魔法的掌握。" #deepl:2597125817
+ bm_attune_lifeforce.001.e: "祝祷 - 提高我的治疗和强化能力" #deepl:3225610098
+ bm_attune_lifeforce.001.f: "血统术 - 提高我收获生命力的技能" #deepl:2379642238
+ bm_attune_lifeforce.001.title: "调整血魔法" #deepl:689817535
+ bm_attune_lifeforce.effects_list: "从以下符咒中选择一个（一次只能选择一个）： \n#indent_newline： $EFFECT_LIST_BULLET$ [GetModifier('ancient_attuned').GetNameWithTooltip]\（n#indent_newline： $EFFECT_LIST_BULLET$ [GetModifier('enlightenment_attuned').GetNameWithTooltip]\n#indent_newline： $EFFECT_LIST_BULLET$ [GetModifier('bloodline_attuned').GetNameWithTooltip]\n#indent_newline： $EFFECT_LIST_BULLET$ [GetModifier('benediction_attuned').GetNameWithTooltip]\n#indent_newline:$EFFECT_LIST_BULLET$ [GetModifier('hematurgy_attuned').GetNameWithTooltip]" #deepl:4106388187
+ bm_cast_blood_magic_self_attune_lifeforce: "生命力调适" #deepl:685669057
+ bm_cast_blood_magic_self_attune_lifeforce_desc: "花费[GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] 将你的血魔法调整到特定的[GetTrait('lifestyle_blood_mage').GetName( GetNullCharacter )] 特质路径，以增加经验值。" #deepl:4264263650
+ bm_cast_blood_magic_self_channel_minor_lifeforce: "输送少量生命力" #deepl:3237289768
+ bm_cast_blood_magic_self_channel_minor_lifeforce_desc: "花费[GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] 可获得短暂的小幅提升。" #deepl:3717592838
+ bm_cast_blood_magic_self_major_blood_rune: "铭刻血色符文" #deepl:2885668122
+ bm_cast_blood_magic_self_major_blood_rune_desc: "花费[GetModifier('lifeforce_modifier_major').GetNameWithTooltip] 尝试改善您的一项教育特质" #deepl:2442690779
+ bm_cast_blood_magic_self_major_blood_rune_xp_requirement: "至少需要[GetPlayer.MakeScope.ScriptValue('bm_blood_rune_minimum_xp')|0] 以下方面的经验[GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]" #deepl:1158450275
+ bm_cast_blood_magic_self_major_crimson_empowerment: "深红通道赋能" #deepl:168551403
+ bm_cast_blood_magic_self_major_crimson_empowerment_desc: "花费[GetModifier('lifeforce_modifier_major').GetNameWithTooltip] ，永久增强你的身体和精神属性" #deepl:811805739
+ bm_cast_blood_magic_self_major_improve_education: "加强教育" #deepl:2775586975
+ bm_cast_blood_magic_self_major_improve_education_desc: "花费[GetModifier('lifeforce_modifier_major').GetNameWithTooltip] 尝试改善您的一项教育特质" #deepl:2442690779
+ bm_cast_blood_magic_self_major_improve_education_xp_requirement: "至少需要[GetPlayer.MakeScope.ScriptValue('required_xp_improve_education')|0] 以下方面的经验[GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]" #deepl:3697626928
+ bm_cast_blood_magic_self_major_new_education: "拥抱新教育" #deepl:2013320360
+ bm_cast_blood_magic_self_major_new_education_desc: "花费[GetModifier('lifeforce_modifier_major').GetNameWithTooltip] 尝试改善您的一项教育特质" #deepl:2442690779
+ bm_cast_blood_magic_self_major_new_education_xp_requirement: "至少需要[GetPlayer.MakeScope.ScriptValue('required_xp_new_education')|0] 以下方面的经验[GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]" #deepl:1928749406
+ bm_channel_lifeforce_enlightenment_minor.001.a: "外交--舌尖上的一滴血，让秘密不再泄露" #deepl:1471121807
+ bm_channel_lifeforce_enlightenment_minor.001.b: "Martial - 我的刀锋渴求战斗的滋味" #deepl:142500338
+ bm_channel_lifeforce_enlightenment_minor.001.c: "管家精神--血脉贲张的愿景揭示隐藏的价值" #deepl:3615882048
+ bm_channel_lifeforce_enlightenment_minor.001.d: "阴谋--阴影在我深红的目光中散开" #deepl:1263487318
+ bm_channel_lifeforce_enlightenment_minor.001.desc: "一股低语般的力量在我的血管中激荡，虽然没有完整仪式的轰鸣声，但足以让我获得一些优势。只要集中精力，我就能引导这股微弱的深红色电流暂时增强我的某一个方面。" #deepl:1703482046
+ bm_channel_lifeforce_enlightenment_minor.001.e: "学习--知识随着心跳跳动" #deepl:1501063660
+ bm_channel_lifeforce_enlightenment_minor.001.f: "生育 - 愿我们的后代茁壮成长" #deepl:1431913658
+ bm_channel_lifeforce_enlightenment_minor.001.g: "经验--鲜血铭记权力之路" #deepl:87837522
+ bm_channel_lifeforce_enlightenment_minor.001.h: "Prowess - 刀锋将在鲜血中淬火" #deepl:3537462123
+ bm_channel_lifeforce_enlightenment_minor.001.title: "微妙的血液觉醒" #deepl:683658949
+ bm_crimson_empowerment_event.001.charisma: "魅力--我的言语中将掺杂说服力的毒液" #deepl:1006535072
+ bm_crimson_empowerment_event.001.desc: "血魔法在我体内咆哮，就像一头被关在笼子里的野兽，急切地想要表达。我能感觉到它在我的肉体上挣扎，渴望按照我的愿望重塑我的本质。今天，我该让它改造哪一方面呢？" #deepl:1680709901
+ bm_crimson_empowerment_event.001.expertise: "专业知识--血液会记住它历经沧桑所见证的一切" #deepl:1330967686
+ bm_crimson_empowerment_event.001.fury: "愤怒 - 我的胜利将染红战场" #deepl:2083508541
+ bm_crimson_empowerment_event.001.insight: "洞察力--古老的血性智慧将充斥我的思想" #deepl:3410912852
+ bm_crimson_empowerment_event.001.legacy: "遗产 - 我的血脉将以强大的生命力茁壮成长" #deepl:3550017045
+ bm_crimson_empowerment_event.001.prosperity: "繁荣 - 财富将像鲜血一样流淌在我等待的手中" #deepl:1650154842
+ bm_crimson_empowerment_event.001.shadows: "阴影 - 敌人的秘密将渗入我等待的耳朵" #deepl:2561900533
+ bm_crimson_empowerment_event.001.title: "深红赋能" #deepl:3225279380
+ bm_crimson_empowerment_event.001.toast: "深红赋能" #deepl:3225279380
+ bm_crimson_empowerment_event.001.versatility: "多才多艺 - 我的力量将超越一切界限" #deepl:1256420857
+ bm_education_enhancement.001.desc: "深红色的精华流经你准备好的特殊通道，每个通道都刻有知识和力量的符文。在开始仪式时，你必须决定通过血魔法提升你的教育水平的哪一方面。这个仪式将极具挑战性--随着你教育水平的提高，进一步提升的难度也会大大增加。" #deepl:2875758030
+ bm_education_enhancement.001.diplomacy: "加强我的外交教育" #deepl:29396934
+ bm_education_enhancement.001.intrigue: "加强我的好奇心教育" #deepl:1210374572
+ bm_education_enhancement.001.learning: "加强我的学习教育" #deepl:2315207055
+ bm_education_enhancement.001.martial: "加强我的武术教育" #deepl:1434167004
+ bm_education_enhancement.001.stewardship: "加强我的管理教育" #deepl:1977254667
+ bm_education_enhancement.001.title: "注入知识的血液" #deepl:3187099357
+ bm_education_enhancement.failure: "输血失败" #deepl:1887543710
+ bm_education_enhancement.success: "加强教育" #deepl:288324795
+ bm_education_new.001.desc: "当你准备仪式空间时，古老的书籍在你面前打开。与你之前强化现有知识的工作不同，这项工作需要打破心理障碍，创造全新的理解结构。你画在太阳穴上的深红色符文充满期待--它们将成为知识直接涌入你意识的通道。今天，你要强迫自己的大脑接受哪门陌生的学科呢？" #deepl:1130445818
+ bm_education_new.001.diplomacy: "获得新的外交教育" #deepl:248739521
+ bm_education_new.001.intrigue: "获得新的好奇心教育" #deepl:3706992381
+ bm_education_new.001.learning: "获得新的学习教育" #deepl:489664222
+ bm_education_new.001.martial: "获得新的武术教育" #deepl:1203559877
+ bm_education_new.001.stewardship: "获得新的管理教育" #deepl:4011432698
+ bm_education_new.001.title: "打造新的神经通路" #deepl:3218545016
+ channel_lifeforce_enlightenment_minor.effects_list: "使用轻微的血液魔法暂时增强一种属性： （n#indent_newline： $EFFECT_LIST_BULLET$ [GetModifier('diplomacy_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline： $EFFECT_LIST_BULLET$ [GetModifier('martial_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline： $EFFECT_LIST_BULLET$ [GetModifier('stewardship_lifeforce_modifier').GetNameWithTooltip]#indent_newline： $EFFECT_LIST_BULLET$ [GetModifier('intrigue_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline： $EFFECT_LIST_BULLET$ [GetModifier('learning_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline： $EFFECT_LIST_BULLET$ [GetModifier('prowess_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline:$EFFECT_LIST_BULLET$ [GetModifier('exp_lifeforce_modifier').GetNameWithTooltip]" #deepl:3506541720
+ new_education_decision: "拥抱新知识" #deepl:3141631084
