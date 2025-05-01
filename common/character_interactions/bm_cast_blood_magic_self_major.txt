@@ -249,10 +249,12 @@ bm_cast_blood_magic_self_major_blood_rune = {
     cost = { piety = bm_blood_rune_piety_cost }
 
     is_shown = {
-        scope:actor = { has_trait = lifestyle_blood_mage }
-        scope:actor = scope:recipient 
-        # don't show if has the final one
-        NOT = {has_character_modifier = superior_crimson_rune_modifier}
+        scope:actor = { 
+            has_trait = lifestyle_blood_mage
+            scope:actor = scope:recipient 
+            # don't show if has the final one
+            has_character_modifier = superior_crimson_rune_modifier
+        }
     }
     is_valid_showing_failures_only = { 
         scope:actor = {
@@ -335,10 +337,10 @@ bm_cast_blood_magic_self_major_crimson_empowerment = {
     cost = { piety = 150 }
 
     is_shown = {
-        scope:actor = { has_trait = lifestyle_blood_mage }
-        scope:actor = scope:recipient 
-        # don't show if has the final one
-        NOT = {has_character_modifier = superior_crimson_rune_modifier}
+        scope:actor = { 
+            has_trait = lifestyle_blood_mage 
+            scope:actor = scope:recipient
+        }
     }
     is_valid_showing_failures_only = { 
         scope:actor = {
