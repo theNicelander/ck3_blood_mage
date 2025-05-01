@@ -6,6 +6,8 @@
     is_shown = {
         has_trait = lifestyle_blood_mage
         not = { has_faith = faith:cult_of_blood }
+        # Disable for overhaul mods
+        NOT = { is_playing_overhaul_mod = yes }
     }
     is_valid = { has_trait = lifestyle_blood_mage }
 

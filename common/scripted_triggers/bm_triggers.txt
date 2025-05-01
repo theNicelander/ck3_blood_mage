@@ -1,9 +1,14 @@
 ﻿is_playing_overhaul_mod = {
     OR = {
-        # Lord of the Rings
+        # Lord of the Rings (2291024373)
         has_global_variable  = sauron_destroyed
-        # Prince of Darkness
-        has_global_variable  = sp_end_date
+        # Elder Kings (2887120253)
+        OR = {
+            has_global_variable = almsivi_almalexia_power
+            has_global_variable = almsivi_sotha_power
+            has_global_variable = almsivi_vivec_power
+        }
+        # AGOT (2962333032)
+        has_global_variable = AGOT_is_loaded
     }
-
 }
