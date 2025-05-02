@@ -94,7 +94,7 @@ grant_lifeforce_interaction = {
         is_valid = {
             scope:actor = { 
                 has_character_modifier = lifeforce_modifier_major 
-                piety >= lifedrain_piety_cost
+                piety >= lifedrain_piety_cost_major
             }
             
         }
@@ -102,40 +102,51 @@ grant_lifeforce_interaction = {
 
     on_accept = {
         debug_log = debug_log.blood_mage_log
-        send_interface_toast = {
-            title = grant_lifeforce_interaction.toast
-            left_icon = scope:actor
-            right_icon = scope:recipient
 
-            if = { # Grant minor lifeforce
-                limit = {scope:grant_minor = yes}
-                scope:actor = {
+        # Grant minor lifeforce
+        if = { 
+            limit = {scope:grant_minor = yes}
+            scope:actor = {
+                send_interface_toast = {
+                    type = event_toast_effect_neutral
+                    title = grant_lifeforce_interaction.toast
+                    left_icon = scope:actor
+                    right_icon = scope:recipient
+
                     remove_character_modifier = lifeforce_modifier_minor
                     add_piety = lifedrain_piety_cost_minor_neg
                     add_xp_enlightenment = yes
-                }
-                scope:recipient = { 
-                    add_character_modifier = lifeforce_modifier_minor
-                    add_opinion = {
-                        target = scope:actor
-                        modifier = magic_opinion_positive
-                        opinion = 10
+                    scope:recipient = { 
+                        add_character_modifier = lifeforce_modifier_minor
+                        add_opinion = {
+                            target = scope:actor
+                            modifier = magic_opinion_positive
+                            opinion = 10
+                        }
                     }
                 }
             }
-            if = { # Grant major lifeforce
-                limit = {scope:grant_major = yes}
-                scope:actor = {
+        }
+        # Grant major lifeforce
+        if = { 
+            limit = {scope:grant_major = yes}
+            scope:actor = {
+                send_interface_toast = {
+                    type = event_toast_effect_neutral
+                    title = grant_lifeforce_interaction.toast
+                    left_icon = scope:actor
+                    right_icon = scope:recipient
+
                     remove_character_modifier = lifeforce_modifier_major
-                    add_piety = lifedrain_piety_cost_neg 
-                    add_xp_enlightenment = yes
-                }
-                scope:recipient = { 
-                    add_character_modifier = lifeforce_modifier_major
-                    add_opinion = {
-                        target = scope:actor
-                        modifier = magic_opinion_positive
-                        opinion = 20
+                    add_piety = lifedrain_piety_cost_major_neg
+                    add_xp_bm_dynamic = {TRACK = enlightenment XP = 2 }
+                    scope:recipient = { 
+                        add_character_modifier = lifeforce_modifier_major
+                        add_opinion = {
+                            target = scope:actor
+                            modifier = magic_opinion_positive
+                            opinion = 25
+                        }
                     }
                 }
             }
