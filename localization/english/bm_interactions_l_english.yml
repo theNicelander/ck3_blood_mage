@@ -14,8 +14,18 @@
   bm_get_blood_magic_from_prisoner_interaction.desc: "I consume their flesh, in an attempt to gain their Blood Magic"
 
   # Grant Lifeforce
-  grant_lifeforce_interaction: "Reverse Lifedrain"
-  grant_lifeforce_interaction_desc: "[recipient.GetShortUINameNoTooltip] was lifedrained, but I can give it back to them"
+  grant_lifeforce_interaction: "Grant Lifeforce"
+  grant_lifeforce_interaction_desc: "Channel your lifeforce into [recipient.GetShortUINameNoTooltip]."  
+  grant_lifeforce_interaction.grant_minor: "Grant Minor Lifeforce"
+  grant_lifeforce_interaction.grant_major: "Grant Major Lifeforce"
+  grant_lifeforce_interaction.toast: "I granted [recipient.GetShortUINameNoTooltip] lifeforce"
+  grant_lifeforce_interaction_requirement: "You need either [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] or [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to grant lifeforce."
+  NOT_grant_lifeforce_interaction_requirement: "You need either [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] or [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to grant lifeforce."
+
+
+  # Reverse lifedrained
+  grant_lifeforce_interaction_reversed: "Reverse Lifedrain"
+  grant_lifeforce_interaction_reversed_desc: "[recipient.GetShortUINameNoTooltip] was [GetModifier('lifedrained_modifier').GetNameWithTooltip], but I can give it back to them"
 
   # Cure illness
   heal_disease_minor: "Heal Minor Ailment"

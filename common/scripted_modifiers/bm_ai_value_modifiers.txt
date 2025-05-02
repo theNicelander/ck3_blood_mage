@@ -39,18 +39,46 @@ ai_willingness_to_lifedrain = {
     }
     # Are they close to me?
     modifier = {
-        OR = {
-            scope:actor = {has_relation_friend = scope:recipient}
-            scope:actor = {has_relation_ward = scope:recipient}
-            scope:actor = {has_relation_best_friend = scope:recipient}
-            scope:actor = {has_relation_soulmate = scope:recipient}
-            scope:actor = {has_relation_lover = scope:recipient}
-            scope:actor = {is_close_family_of = scope:recipient}
-            scope:actor = {is_consort_of = scope:recipient}
-            scope:actor = {is_spouse_of = scope:recipient}
+        scope:actor = {
+            OR = {
+                is_close_family_of = scope:recipient
+                has_relation_friend = scope:recipient
+                has_relation_best_friend = scope:recipient
+                has_relation_soulmate = scope:recipient
+                has_relation_lover = scope:recipient
+                has_relation_ward = scope:recipient
+                is_consort_of = scope:recipient
+                has_secret_relation_lover = scope:recipient
+                opinion = {
+                    target = scope:recipient
+                    value > very_high_positive_opinion
+                }
+            }
         }
-        add = -100
+        add = -1000
     }
+    modifier = { # not your own children... unless they're your rival/nemesis
+        scope:recipient = {
+            is_child_of = scope:actor
+            NOR = {
+                has_relation_rival = scope:actor
+                has_relation_nemesis = scope:actor
+            }
+        }
+        add = -1000
+    }
+
+    modifier = { # not your spouse, unless they're your rival/have cheated on you
+        scope:recipient = {
+            is_spouse_of = scope:actor
+            NOR = {
+                has_relation_rival = scope:actor
+                has_relation_nemesis = scope:actor
+                exposed_cheating_on_spouse_trigger = { SPOUSE = scope:actor }
+            }
+        }
+        add = -1000
+		}
     # Do they serve an important function?
     modifier = {
         OR = {

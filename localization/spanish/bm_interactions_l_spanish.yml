@@ -1,5 +1,6 @@
 ﻿l_spanish:
  IN_COURT_OR_IMPRISONED: "Sólo puede curarse a sí mismo o a sus cortesanos" #deepl:928610819
+ NOT_grant_lifeforce_interaction_requirement: "Necesitas [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] o [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] para conceder fuerza vital." #deepl:2149478437
  ask_for_blood_magic_interaction: "Pregunte por Blood Magic" #deepl:37038492
  ask_for_blood_magic_interaction_desc: "[recipient.GetShortUINameNoTooltip] se le concede el poder de la magia de sangre" #deepl:1589689772
  bm_get_blood_magic_from_prisoner_interaction: "Obtener magia de sangre del prisionero" #deepl:3055816831
@@ -12,8 +13,14 @@
  grant_crimson_champion_interaction_desc: "Canaliza tu fuerza vital en [recipient.GetShortUINameNoTooltip], mejorando permanentemente sus habilidades de combate mediante magia de sangre." #deepl:2258187127
  grant_crimson_warrior_interaction: "Convertir en Guerrero Carmesí" #deepl:2018519808
  grant_crimson_warrior_interaction_desc: "Canaliza tu fuerza vital en [recipient.GetShortUINameNoTooltip], mejorando permanentemente sus habilidades de combate mediante magia de sangre." #deepl:2258187127
- grant_lifeforce_interaction: "Drenaje inverso" #deepl:2512164098
- grant_lifeforce_interaction_desc: "[recipient.GetShortUINameNoTooltip] fue lifedrained, pero puedo devolverlo a ellos" #deepl:1345146973
+ grant_lifeforce_interaction: "Conceder fuerza vital" #deepl:2025139764
+ grant_lifeforce_interaction.grant_major: "Conceder mayor fuerza vital" #deepl:3131760285
+ grant_lifeforce_interaction.grant_minor: "Conceder fuerza vital menor" #deepl:823894677
+ grant_lifeforce_interaction.toast: "Concedí [recipient.GetShortUINameNoTooltip] fuerza vital" #deepl:1722360946
+ grant_lifeforce_interaction_desc: "Canaliza tu fuerza vital en [recipient.GetShortUINameNoTooltip]." #deepl:1416711648
+ grant_lifeforce_interaction_requirement: "Necesitas [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] o [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] para conceder fuerza vital." #deepl:2149478437
+ grant_lifeforce_interaction_reversed: "Drenaje inverso" #deepl:2512164098
+ grant_lifeforce_interaction_reversed_desc: "[recipient.GetShortUINameNoTooltip] era [GetModifier('lifedrained_modifier').GetNameWithTooltip], pero puedo devolvérselo" #deepl:687278259
  heal_disease_benediction: "Curar dolencias mortales" #deepl:3480333402
  heal_disease_benediction_desc: "Curar dolencias mortales" #deepl:3480333402
  heal_disease_major: "Curar dolencia" #deepl:442751769

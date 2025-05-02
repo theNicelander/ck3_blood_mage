@@ -1,5 +1,6 @@
 ﻿l_korean:
  IN_COURT_OR_IMPRISONED: "자신 또는 궁정인만 치유할 수 있습니다." #deepl:928610819
+ NOT_grant_lifeforce_interaction_requirement: "생명력을 부여하려면 [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] 또는 [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] 이 필요합니다." #deepl:2149478437
  ask_for_blood_magic_interaction: "피의 마법 요청하기" #deepl:37038492
  ask_for_blood_magic_interaction_desc: "[recipient.GetShortUINameNoTooltip] 피의 마법의 힘을 부여받습니다." #deepl:1589689772
  bm_get_blood_magic_from_prisoner_interaction: "죄수에게서 피의 마법 얻기" #deepl:3055816831
@@ -12,8 +13,14 @@
  grant_crimson_champion_interaction_desc: "생명력을 [recipient.GetShortUINameNoTooltip] 에 전달하여 피의 마법을 통해 전투 능력을 영구적으로 강화하세요." #deepl:2258187127
  grant_crimson_warrior_interaction: "크림슨 워리어로 만들기" #deepl:2018519808
  grant_crimson_warrior_interaction_desc: "생명력을 [recipient.GetShortUINameNoTooltip] 에 전달하여 피의 마법을 통해 전투 능력을 영구적으로 강화하세요." #deepl:2258187127
- grant_lifeforce_interaction: "리버스 라이프 드레인" #deepl:2512164098
- grant_lifeforce_interaction_desc: "[recipient.GetShortUINameNoTooltip] 목숨을 잃었지만 다시 돌려줄 수 있습니다." #deepl:1345146973
+ grant_lifeforce_interaction: "그랜트 라이프포스" #deepl:2025139764
+ grant_lifeforce_interaction.grant_major: "주요 생명력 부여" #deepl:3131760285
+ grant_lifeforce_interaction.grant_minor: "미성년자 생명력 부여" #deepl:823894677
+ grant_lifeforce_interaction.toast: "[recipient.GetShortUINameNoTooltip] 생명력을 부여했습니다." #deepl:1722360946
+ grant_lifeforce_interaction_desc: "[recipient.GetShortUINameNoTooltip]." #deepl:1416711648
+ grant_lifeforce_interaction_requirement: "생명력을 부여하려면 [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] 또는 [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] 이 필요합니다." #deepl:2149478437
+ grant_lifeforce_interaction_reversed: "리버스 라이프 드레인" #deepl:2512164098
+ grant_lifeforce_interaction_reversed_desc: "[recipient.GetShortUINameNoTooltip] 는 [GetModifier('lifedrained_modifier').GetNameWithTooltip] 이었지만, 다시 돌려줄 수 있습니다." #deepl:687278259
  heal_disease_benediction: "치명적 질병 치유" #deepl:3480333402
  heal_disease_benediction_desc: "치명적 질병 치유" #deepl:3480333402
  heal_disease_major: "질병 치유" #deepl:442751769

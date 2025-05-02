@@ -1,15 +1,14 @@
-﻿grant_lifeforce_interaction = {
+﻿grant_lifeforce_interaction_reversed = {
     category = interaction_category_friendly
     auto_accept = yes
     common_interaction = yes
-    desc = grant_lifeforce_interaction_desc
+    desc = grant_lifeforce_interaction_reversed_desc
     interface_priority = 190
 
     cost = { piety = lifedrain_piety_cost_minor }
 
     is_shown = {
         scope:actor = { has_trait = lifestyle_blood_mage }
-        NOT = { scope:actor = scope:recipient }
         scope:recipient = { has_character_modifier = lifedrained_modifier }
     }
     is_valid_showing_failures_only = { 
@@ -46,4 +45,116 @@
         base = -10
         ai_willingness_to_do_postitive_magic = yes
     }
+}
+
+grant_lifeforce_interaction = {
+    category = interaction_category_friendly
+    auto_accept = yes
+    common_interaction = yes
+    desc = grant_lifeforce_interaction_desc
+    interface_priority = 190
+
+    cost = {    }
+
+    is_shown = {
+        scope:actor = { has_trait = lifestyle_blood_mage }
+        NOT = { scope:actor = scope:recipient }
+        scope:recipient = {
+            OR = {
+                is_imprisoned_by = scope:actor
+                is_courtier_of = scope:actor
+            }
+         }
+    }
+    is_valid_showing_failures_only = {
+        custom_description = {
+            text = "grant_lifeforce_interaction_requirement"
+            scope:actor = {
+                OR = {
+                    has_character_modifier = lifeforce_modifier_minor
+                    has_character_modifier = lifeforce_modifier_major
+                }
+            }
+        }
+
+    }
+    send_option = { # Give minor
+        localization = grant_lifeforce_interaction.grant_minor
+        flag = grant_minor
+        is_valid = {
+            scope:actor = { 
+                has_character_modifier = lifeforce_modifier_minor 
+                piety >= lifedrain_piety_cost_minor
+            }
+        }
+    }
+    send_option = { # Give major
+        localization = grant_lifeforce_interaction.grant_major
+        flag = grant_major
+        is_valid = {
+            scope:actor = { 
+                has_character_modifier = lifeforce_modifier_major 
+                piety >= lifedrain_piety_cost_major
+            }
+            
+        }
+    }
+
+    on_accept = {
+        debug_log = debug_log.blood_mage_log
+
+        # Grant minor lifeforce
+        if = { 
+            limit = {scope:grant_minor = yes}
+            scope:actor = {
+                send_interface_toast = {
+                    type = event_toast_effect_neutral
+                    title = grant_lifeforce_interaction.toast
+                    left_icon = scope:actor
+                    right_icon = scope:recipient
+
+                    remove_character_modifier = lifeforce_modifier_minor
+                    add_piety = lifedrain_piety_cost_minor_neg
+                    add_xp_enlightenment = yes
+                    scope:recipient = { 
+                        add_character_modifier = lifeforce_modifier_minor
+                        add_opinion = {
+                            target = scope:actor
+                            modifier = magic_opinion_positive
+                            opinion = 10
+                        }
+                    }
+                }
+            }
+        }
+        # Grant major lifeforce
+        if = { 
+            limit = {scope:grant_major = yes}
+            scope:actor = {
+                send_interface_toast = {
+                    type = event_toast_effect_neutral
+                    title = grant_lifeforce_interaction.toast
+                    left_icon = scope:actor
+                    right_icon = scope:recipient
+
+                    remove_character_modifier = lifeforce_modifier_major
+                    add_piety = lifedrain_piety_cost_major_neg
+                    add_xp_bm_dynamic = {TRACK = enlightenment XP = 2 }
+                    scope:recipient = { 
+                        add_character_modifier = lifeforce_modifier_major
+                        add_opinion = {
+                            target = scope:actor
+                            modifier = magic_opinion_positive
+                            opinion = 25
+                        }
+                    }
+                }
+            }
+        }
+    }
+    # AI won't do for now
+    # ai_targets = { }
+    ai_potential = { always = no }
+    # ai_will_do = { 0  }
+    ai_frequency = 100
 }
