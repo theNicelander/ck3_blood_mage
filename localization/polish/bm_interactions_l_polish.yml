@@ -1,5 +1,6 @@
 ﻿l_polish:
  IN_COURT_OR_IMPRISONED: "Może leczyć tylko siebie lub swoich dworzan" #deepl:928610819
+ NOT_grant_lifeforce_interaction_requirement: "Do przyznania siły życiowej potrzebne są [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] lub [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]." #deepl:2149478437
  ask_for_blood_magic_interaction: "Poproś o Magię Krwi" #deepl:37038492
  ask_for_blood_magic_interaction_desc: "[recipient.GetShortUINameNoTooltip] otrzymuje moc magii krwi" #deepl:1589689772
  bm_get_blood_magic_from_prisoner_interaction: "Zdobądź magię krwi od więźnia" #deepl:3055816831
@@ -12,8 +13,14 @@
  grant_crimson_champion_interaction_desc: "Przekieruj swoją siłę życiową do [recipient.GetShortUINameNoTooltip], trwale zwiększając ich zdolności bojowe dzięki magii krwi." #deepl:2258187127
  grant_crimson_warrior_interaction: "Zmień się w Karmazynowego Wojownika" #deepl:2018519808
  grant_crimson_warrior_interaction_desc: "Przekieruj swoją siłę życiową do [recipient.GetShortUINameNoTooltip], trwale zwiększając ich zdolności bojowe dzięki magii krwi." #deepl:2258187127
+ grant_lifeforce_interaction: "Przyznanie siły życiowej" #deepl:2025139764
+ grant_lifeforce_interaction.grant_major: "Przyznanie Głównej Siły Życiowej" #deepl:3131760285
+ grant_lifeforce_interaction.grant_minor: "Przyznanie niewielkiej siły życiowej" #deepl:823894677
+ grant_lifeforce_interaction.toast: "Przyznałem [recipient.GetShortUINameNoTooltip] siłę życiową" #deepl:1722360946
+ grant_lifeforce_interaction_desc: "Przekieruj swoją siłę życiową na [recipient.GetShortUINameNoTooltip]." #deepl:1416711648
+ grant_lifeforce_interaction_requirement: "Do przyznania siły życiowej potrzebne są [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] lub [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]." #deepl:2149478437
  grant_lifeforce_interaction_reversed: "Reverse Lifedrain" #deepl:2512164098
- grant_lifeforce_interaction_reversed_desc: "[recipient.GetShortUINameNoTooltip] został wydrenowany, ale mogę go im oddać" #deepl:1345146973
+ grant_lifeforce_interaction_reversed_desc: "[recipient.GetShortUINameNoTooltip] był [GetModifier('lifedrained_modifier').GetNameWithTooltip], ale mogę im go zwrócić" #deepl:687278259
  heal_disease_benediction: "Leczy śmiertelne dolegliwości" #deepl:3480333402
  heal_disease_benediction_desc: "Leczy śmiertelne dolegliwości" #deepl:3480333402
  heal_disease_major: "Leczenie dolegliwości" #deepl:442751769

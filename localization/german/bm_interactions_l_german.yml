@@ -1,5 +1,6 @@
 ﻿l_german:
  IN_COURT_OR_IMPRISONED: "Kann nur dich selbst oder deine Höflinge heilen" #deepl:928610819
+ NOT_grant_lifeforce_interaction_requirement: "Sie benötigen entweder [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] oder [GetModifier('lifeforce_modifier_major').GetNameWithTooltip], um Lebenskraft zu gewähren." #deepl:2149478437
  ask_for_blood_magic_interaction: "Fragen Sie nach Blutmagie" #deepl:37038492
  ask_for_blood_magic_interaction_desc: "[recipient.GetShortUINameNoTooltip] wird die Macht der Blutmagie verliehen" #deepl:1589689772
  bm_get_blood_magic_from_prisoner_interaction: "Blutmagie vom Gefangenen erhalten" #deepl:3055816831
@@ -12,8 +13,14 @@
  grant_crimson_champion_interaction_desc: "Leite deine Lebenskraft in [recipient.GetShortUINameNoTooltip] und verbessere ihre Kampffähigkeiten durch Blutmagie dauerhaft." #deepl:2258187127
  grant_crimson_warrior_interaction: "Verwandle dich in einen Karmesinkrieger" #deepl:2018519808
  grant_crimson_warrior_interaction_desc: "Leite deine Lebenskraft in [recipient.GetShortUINameNoTooltip] und verbessere ihre Kampffähigkeiten durch Blutmagie dauerhaft." #deepl:2258187127
+ grant_lifeforce_interaction: "Grant Lifeforce" #deepl:2025139764
+ grant_lifeforce_interaction.grant_major: "Grant Major Lebenskraft" #deepl:3131760285
+ grant_lifeforce_interaction.grant_minor: "Minderjährige Lebenskraft gewähren" #deepl:823894677
+ grant_lifeforce_interaction.toast: "Ich gewährte [recipient.GetShortUINameNoTooltip] Lebenskraft" #deepl:1722360946
+ grant_lifeforce_interaction_desc: "Kanalisieren Sie Ihre Lebenskraft in [recipient.GetShortUINameNoTooltip]." #deepl:1416711648
+ grant_lifeforce_interaction_requirement: "Sie benötigen entweder [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] oder [GetModifier('lifeforce_modifier_major').GetNameWithTooltip], um Lebenskraft zu gewähren." #deepl:2149478437
  grant_lifeforce_interaction_reversed: "Reverse Lifedrain" #deepl:2512164098
- grant_lifeforce_interaction_reversed_desc: "[recipient.GetShortUINameNoTooltip] wurde mit dem Leben bezahlt, aber ich kann es ihnen zurückgeben" #deepl:1345146973
+ grant_lifeforce_interaction_reversed_desc: "[recipient.GetShortUINameNoTooltip] war [GetModifier('lifedrained_modifier').GetNameWithTooltip], aber ich kann es ihnen zurückgeben" #deepl:687278259
  heal_disease_benediction: "Tödliche Krankheit heilen" #deepl:3480333402
  heal_disease_benediction_desc: "Tödliche Krankheit heilen" #deepl:3480333402
  heal_disease_major: "Gebrechen heilen" #deepl:442751769

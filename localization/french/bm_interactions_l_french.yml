@@ -1,5 +1,6 @@
 ﻿l_french:
  IN_COURT_OR_IMPRISONED: "Ne peut guérir que soi-même ou ses courtisans" #deepl:928610819
+ NOT_grant_lifeforce_interaction_requirement: "Il faut [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] ou [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] pour accorder la force de vie." #deepl:2149478437
  ask_for_blood_magic_interaction: "Demandez la magie du sang" #deepl:37038492
  ask_for_blood_magic_interaction_desc: "[recipient.GetShortUINameNoTooltip] se voit accorder le pouvoir de la magie du sang" #deepl:1589689772
  bm_get_blood_magic_from_prisoner_interaction: "Obtenir la magie du sang du prisonnier" #deepl:3055816831
@@ -12,8 +13,14 @@
  grant_crimson_champion_interaction_desc: "Canalisez votre force vitale dans [recipient.GetShortUINameNoTooltip], en améliorant en permanence leurs capacités de combat grâce à la magie du sang." #deepl:2258187127
  grant_crimson_warrior_interaction: "Se transformer en guerrier cramoisi" #deepl:2018519808
  grant_crimson_warrior_interaction_desc: "Canalisez votre force vitale dans [recipient.GetShortUINameNoTooltip], en améliorant en permanence leurs capacités de combat grâce à la magie du sang." #deepl:2258187127
+ grant_lifeforce_interaction: "Octroi de la force vitale" #deepl:2025139764
+ grant_lifeforce_interaction.grant_major: "Octroi de la force vitale majeure" #deepl:3131760285
+ grant_lifeforce_interaction.grant_minor: "Accorder une force de vie mineure" #deepl:823894677
+ grant_lifeforce_interaction.toast: "J'ai accordé à [recipient.GetShortUINameNoTooltip] la force vitale" #deepl:1722360946
+ grant_lifeforce_interaction_desc: "Canalisez votre force vitale sur [recipient.GetShortUINameNoTooltip]." #deepl:1416711648
+ grant_lifeforce_interaction_requirement: "Il faut [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] ou [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] pour accorder la force de vie." #deepl:2149478437
  grant_lifeforce_interaction_reversed: "Lifedrain inversé" #deepl:2512164098
- grant_lifeforce_interaction_reversed_desc: "[recipient.GetShortUINameNoTooltip] a été drainé à vie, mais je peux le leur rendre" #deepl:1345146973
+ grant_lifeforce_interaction_reversed_desc: "[recipient.GetShortUINameNoTooltip] était [GetModifier('lifedrained_modifier').GetNameWithTooltip], mais je peux le leur rendre" #deepl:687278259
  heal_disease_benediction: "Guérir les maladies mortelles" #deepl:3480333402
  heal_disease_benediction_desc: "Guérir les maladies mortelles" #deepl:3480333402
  heal_disease_major: "Guérir les maux" #deepl:442751769

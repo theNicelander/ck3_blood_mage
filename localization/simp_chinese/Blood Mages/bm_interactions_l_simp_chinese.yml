@@ -1,5 +1,6 @@
 ﻿l_simp_chinese:
  IN_COURT_OR_IMPRISONED: "只能治疗你自己或廷臣"
+ NOT_grant_lifeforce_interaction_requirement: "授予生命力需要[GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] 或[GetModifier('lifeforce_modifier_major').GetNameWithTooltip] 。" #deepl:2149478437
  ask_for_blood_magic_interaction: "请求血魔法"
  ask_for_blood_magic_interaction_desc: "[recipient.GetShortUINameNoTooltip]将被授予血魔法"
  bm_get_blood_magic_from_prisoner_interaction: "从囚犯身上获取血魔法" #deepl:3055816831
@@ -12,6 +13,12 @@
  grant_crimson_champion_interaction_desc: "将你的生命力灌注给[recipient.GetShortUINameNoTooltip]，通过血魔法永久增强对方战斗能力。"
  grant_crimson_warrior_interaction: "血能灌注"
  grant_crimson_warrior_interaction_desc: "将你的生命力灌注给[recipient.GetShortUINameNoTooltip]，通过血魔法永久增强对方战斗能力。"
+ grant_lifeforce_interaction: "授予生命力" #deepl:2025139764
+ grant_lifeforce_interaction.grant_major: "授予主要生命力" #deepl:3131760285
+ grant_lifeforce_interaction.grant_minor: "授予小生命力" #deepl:823894677
+ grant_lifeforce_interaction.toast: "我授予[recipient.GetShortUINameNoTooltip] 生命力" #deepl:1722360946
+ grant_lifeforce_interaction_desc: "将您的生命力注入[recipient.GetShortUINameNoTooltip]." #deepl:1416711648
+ grant_lifeforce_interaction_requirement: "授予生命力需要[GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] 或[GetModifier('lifeforce_modifier_major').GetNameWithTooltip] 。" #deepl:2149478437
  grant_lifeforce_interaction_reversed: "生命归还"
  grant_lifeforce_interaction_reversed_desc: "[recipient.GetShortUINameNoTooltip]奄奄一息，但我可以将生命归还"
  heal_disease_benediction: "治愈致命疾病"
