@@ -54,7 +54,7 @@ grant_lifeforce_interaction = {
     desc = grant_lifeforce_interaction_desc
     interface_priority = 190
 
-    cost = { piety = lifedrain_piety_cost_minor }
+    cost = {    }
 
     is_shown = {
         scope:actor = { has_trait = lifestyle_blood_mage }
@@ -82,14 +82,21 @@ grant_lifeforce_interaction = {
         localization = grant_lifeforce_interaction.grant_minor
         flag = grant_minor
         is_valid = {
-            scope:actor = { has_character_modifier = lifeforce_modifier_minor }
+            scope:actor = { 
+                has_character_modifier = lifeforce_modifier_minor 
+                piety >= lifedrain_piety_cost_minor
+            }
         }
     }
     send_option = { # Give major
         localization = grant_lifeforce_interaction.grant_major
         flag = grant_major
         is_valid = {
-            scope:actor = { has_character_modifier = lifeforce_modifier_major }
+            scope:actor = { 
+                has_character_modifier = lifeforce_modifier_major 
+                piety >= lifedrain_piety_cost_major
+            }
+            
         }
     }
 
@@ -98,6 +105,7 @@ grant_lifeforce_interaction = {
         if = { # Grant minor lifeforce
             limit = {scope:grant_minor = yes}
             remove_character_modifier = lifeforce_modifier_minor
+            add_piety = lifedrain_piety_cost_minor_neg
             add_xp_enlightenment = yes
             scope:recipient = { 
                 add_character_modifier = lifeforce_modifier_minor
@@ -111,7 +119,11 @@ grant_lifeforce_interaction = {
         if = { # Grant major lifeforce
             limit = {scope:grant_major = yes}
             remove_character_modifier = lifeforce_modifier_major
-            add_xp_enlightenment = yes
+            add_piety = lifedrain_piety_cost_neg
+            add_xp_bm_dynamic = {
+                TRACK = enlightenment
+                XP = 2
+            }
             scope:recipient = { 
                 add_character_modifier = lifeforce_modifier_major
                 add_opinion = {
