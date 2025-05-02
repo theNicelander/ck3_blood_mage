@@ -94,49 +94,56 @@ grant_lifeforce_interaction = {
         is_valid = {
             scope:actor = { 
                 has_character_modifier = lifeforce_modifier_major 
-                piety >= lifedrain_piety_cost_major
+                piety >= lifedrain_piety_cost
             }
             
         }
     }
 
     on_accept = {
-        scope:actor =  {debug_log = debug_log.blood_mage_log}
-        if = { # Grant minor lifeforce
-            limit = {scope:grant_minor = yes}
-            remove_character_modifier = lifeforce_modifier_minor
-            add_piety = lifedrain_piety_cost_minor_neg
-            add_xp_enlightenment = yes
-            scope:recipient = { 
-                add_character_modifier = lifeforce_modifier_minor
-                add_opinion = {
-                    target = scope:actor
-                    modifier = magic_opinion_positive
-                    opinion = 10
+        debug_log = debug_log.blood_mage_log
+        send_interface_toast = {
+            title = grant_lifeforce_interaction.toast
+            left_icon = scope:actor
+            right_icon = scope:recipient
+
+            if = { # Grant minor lifeforce
+                limit = {scope:grant_minor = yes}
+                scope:actor = {
+                    remove_character_modifier = lifeforce_modifier_minor
+                    add_piety = lifedrain_piety_cost_minor_neg
+                    add_xp_enlightenment = yes
+                }
+                scope:recipient = { 
+                    add_character_modifier = lifeforce_modifier_minor
+                    add_opinion = {
+                        target = scope:actor
+                        modifier = magic_opinion_positive
+                        opinion = 10
+                    }
                 }
             }
-        }
-        if = { # Grant major lifeforce
-            limit = {scope:grant_major = yes}
-            remove_character_modifier = lifeforce_modifier_major
-            add_piety = lifedrain_piety_cost_neg
-            add_xp_bm_dynamic = {
-                TRACK = enlightenment
-                XP = 2
-            }
-            scope:recipient = { 
-                add_character_modifier = lifeforce_modifier_major
-                add_opinion = {
-                    target = scope:actor
-                    modifier = magic_opinion_positive
-                    opinion = 25
+            if = { # Grant major lifeforce
+                limit = {scope:grant_major = yes}
+                scope:actor = {
+                    remove_character_modifier = lifeforce_modifier_major
+                    add_piety = lifedrain_piety_cost_neg 
+                    add_xp_enlightenment = yes
+                }
+                scope:recipient = { 
+                    add_character_modifier = lifeforce_modifier_major
+                    add_opinion = {
+                        target = scope:actor
+                        modifier = magic_opinion_positive
+                        opinion = 20
+                    }
                 }
             }
         }
     }
     # AI won't do for now
-    ai_targets = { }
+    # ai_targets = { }
     ai_potential = { always = no }
-    ai_will_do = { 0  }
-    # ai_frequency = 12
+    # ai_will_do = { 0  }
+    ai_frequency = 100
 }
