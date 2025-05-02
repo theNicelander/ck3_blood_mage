@@ -18,6 +18,9 @@
   grant_lifeforce_interaction_desc: "Channel your lifeforce into [recipient.GetShortUINameNoTooltip]."  
   grant_lifeforce_interaction.grant_minor: "Grant Minor Lifeforce"
   grant_lifeforce_interaction.grant_major: "Grant Major Lifeforce"
+  grant_lifeforce_interaction_requirement: "You need either [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] or [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to grant lifeforce."
+  NOT_grant_lifeforce_interaction_requirement: "You need either [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] or [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to grant lifeforce."
+
 
   # Reverse lifedrained
   grant_lifeforce_interaction_reversed: "Reverse Lifedrain"
