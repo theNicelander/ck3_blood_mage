@@ -10,14 +10,18 @@
 
     is_valid_showing_failures_only = { 
         piety_level >= 2
-        scope:recipient = {
-            OR = {
-                has_relation_lover = scope:actor
-                has_relation_friend = scope:actor
-                has_relation_best_friend = scope:actor
-                has_relation_soulmate = scope:actor
+        custom_description = {
+            text = "ask_for_blood_magic_interaction_requirement"
+            scope:recipient = {
+                OR = {
+                    has_relation_lover = scope:actor
+                    has_relation_friend = scope:actor
+                    has_relation_best_friend = scope:actor
+                    has_relation_soulmate = scope:actor
+                }
             }
         }
+
     }
 
     is_shown = {
