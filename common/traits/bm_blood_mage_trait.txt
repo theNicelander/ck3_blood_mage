@@ -7,7 +7,9 @@
     group = lifestyle_blood_mage_group
 
     # genetic
-    genetic = yes
+    # genetic = yes
+    inherit_chance = 25
+    both_parent_has_trait_inherit_chance = 100
     birth = 0.25
     random_creation = 0.25
 
