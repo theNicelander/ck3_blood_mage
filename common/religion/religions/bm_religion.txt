@@ -1,7 +1,6 @@
-﻿cult_of_blood_religion = {
-    family = rf_blood_mage
+﻿quintessence_religion = {
+    family = rf_quintessence
 
-    graphical_faith = pagan_gfx
     doctrine = pagan_hostility_doctrine
 
     # pagan_roots = yes
@@ -48,6 +47,7 @@
     }
 
     custom_faith_icons = {
+        quintessence_faith quintessence_faith_reformed
         custom_faith_1 custom_faith_2 custom_faith_3 custom_faith_4 custom_faith_5 custom_faith_6 custom_faith_7 custom_faith_8 custom_faith_9 custom_faith_10 dualism_custom_1 zoroastrian_custom_1 zoroastrian_custom_2 buddhism_custom_1 buddhism_custom_2 buddhism_custom_3 buddhism_custom_4 taoism_custom_1 yazidi_custom_1 sunni_custom_2 sunni_custom_3 sunni_custom_4 muhakkima_1 muhakkima_2 muhakkima_4 muhakkima_5 muhakkima_6 judaism_custom_1 custom_faith_fp1_fenrir custom_faith_fp1_irminsul custom_faith_fp1_jormungandr custom_faith_fp1_odins_ravens custom_faith_fp1_runestone_moon custom_faith_fp1_thors_hammer custom_faith_fp1_valknut custom_faith_fp1_yggdrasil custom_faith_boromian_circles custom_faith_lotus custom_faith_aum_tibetan custom_faith_pentagram custom_faith_pentagram_inverted custom_faith_burning_bush custom_faith_allah custom_faith_gankyil custom_faith_eye_of_providence custom_faith_dove custom_faith_ichthys custom_faith_lamb custom_faith_black_sheep custom_faith_ankh custom_faith_chi_rho custom_faith_hamsa custom_faith_cool_s
     }
 
@@ -220,7 +220,7 @@
     }
 
     faiths = {
-        cult_of_blood = {
+        quintessence_faith = {
             color = { 0.0 0.0 0.0 }
 
             doctrine = divine_destiny_doctrine
@@ -234,10 +234,44 @@
             holy_site = talknafjordur
             holy_site = reykjavik
 
+            # Holy  sites with X_per_piety_level
+            holy_site = london
+            holy_site = madrid
+            holy_site = oslo
+            holy_site = paris
+            holy_site = berlin
+
+            # Other cities in base game to fill in map
+            # Selected due to signifigance OR  minor bonuses
+            holy_site = alexandria
+            holy_site = beirut
+            # holy_site = kent # canterbury
+            holy_site = carthage
+            holy_site = cologne
+            holy_site = constantinople # constantinoble
+            holy_site = cordoba
+            holy_site = damascus
+            holy_site = fes
+            # holy_site = hiiumaa
+            # holy_site = iona
+            holy_site = jerusalem
+            holy_site = kiev
+            holy_site = colonea # kolenia
+            holy_site = mecca
+            holy_site = medina
+            holy_site = olympus # mount olympus
+            # holy_site = plock
+            # holy_site = preslav
+            # holy_site = ragusa
+            holy_site = ranaheim
+            holy_site = santiago
+            holy_site = sinai
+            # holy_site = tinmallal
+            # holy_site = uppsala
+
             # EU + EEA + UK
             holy_site = amsterdam
             holy_site = athens
-            holy_site = berlin
             holy_site = bern
             holy_site = bratislava
             holy_site = brussels
@@ -248,12 +282,8 @@
             holy_site = helsinki
             holy_site = lisbon
             holy_site = ljubljana
-            holy_site = london
             holy_site = luxembourg
-            holy_site = madrid
             holy_site = nicosia
-            holy_site = oslo
-            holy_site = paris
             holy_site = prague
             holy_site = rome
             holy_site = sofia
@@ -265,33 +295,7 @@
             holy_site = warsaw
             holy_site = zagreb
 
-            # Other cities in base game to fill in map
-            # Selected due to signifigance OR  minor bonuses
-            holy_site = alexandria
-            holy_site = beirut
-            holy_site = kent # canterbury
-            holy_site = carthage
-            holy_site = cologne
-            holy_site = constantinople # constantinoble
-            holy_site = cordoba
-            holy_site = damascus
-            holy_site = fes
-            holy_site = hiiumaa
-            holy_site = iona
-            holy_site = jerusalem
-            holy_site = kiev
-            holy_site = colonea # kolenia
-            holy_site = mecca
-            holy_site = medina
-            holy_site = olympus # mount olympus
-            holy_site = plock
-            holy_site = preslav
-            holy_site = ragusa
-            holy_site = ranaheim
-            holy_site = santiago
-            holy_site = sinai
-            holy_site = tinmallal
-            holy_site = uppsala
+
 
             # Other intersting cities + islands
             holy_site = barcelona
@@ -305,7 +309,7 @@
             holy_site = cagliari
             holy_site = palermo
             holy_site = isle_of_man
-            holy_site = stonehenge
+            # holy_site = stonehenge
             holy_site = carnac
         }
     }
