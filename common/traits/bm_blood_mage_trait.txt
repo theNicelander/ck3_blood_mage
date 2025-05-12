@@ -7,10 +7,11 @@
     group = lifestyle_blood_mage_group
 
     # genetic
-    good = yes
-    genetic = yes
-    birth = 0.5
-    random_creation = 0.5
+    # genetic = yes
+    inherit_chance = 25
+    both_parent_has_trait_inherit_chance = 100
+    birth = 0.25
+    random_creation = 0.25
 
     # Base trait benefit
     learning_per_piety_level = 2
