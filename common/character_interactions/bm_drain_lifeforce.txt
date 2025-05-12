@@ -15,12 +15,6 @@
     on_accept = {
         
         scope:actor = {debug_log = debug_log.blood_mage_log}
-        scope:recipient = {
-            send_interface_toast = {
-                left_icon = scope:actor
-                custom_tooltip = lifedrain_prisoner_event_interaction.recipient.notification.tt
-            }
-        }
         scope:actor = { hematurgy_magic_cast_effect_major = yes }
         lifedrain_execution_effect = {
             VICTIM = scope:recipient
@@ -61,13 +55,7 @@ lifedrain_courtier_event_interaction = {
     on_accept = {
         
         scope:actor = {debug_log = debug_log.blood_mage_log}
-        scope:recipient = {
-            send_interface_toast = {
-                left_icon = scope:actor
-                custom_tooltip = lifedrain_courtier_event_interaction.recipient.notification.tt
-            }
-            add_character_modifier =  { modifier = lifedrained_modifier }
-        }
+        scope:recipient = { add_character_modifier =  { modifier = lifedrained_modifier } }
         scope:actor = { hematurgy_magic_cast_effect_minor = yes }
         scope:actor ={
             duel = {
@@ -139,9 +127,7 @@ lifedrain_courtier_event_interaction = {
     auto_accept = yes
     ai_frequency = 3
     ai_potential = { always = yes }
-    ai_targets = { 
-        ai_recipients = courtiers 
-        ai_recipients = guests
+    ai_targets = {
         ai_recipients = prisoners
     }
     ai_will_do = {

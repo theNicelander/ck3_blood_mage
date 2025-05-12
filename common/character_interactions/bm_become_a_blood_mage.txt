@@ -6,7 +6,7 @@
     interface_priority = 150
     is_highlighted = { always = yes }
 
-    cost = { piety = 100 }
+    cost = { piety = 500 }
 
     is_shown = {
         scope:recipient = {
@@ -22,7 +22,6 @@
     }
 
     on_accept = {
-        
         scope:actor = { debug_log = debug_log.blood_mage_log }
         scope:actor = {
             add_trait = lifestyle_blood_mage

@@ -1,32 +1,4 @@
 ﻿# Iceland - Because best place
-reykjavik = {
-    county = c_vestisland
-    barony = b_reykjavik
-    character_modifier = {
-        prowess = 2
-    }
-}
-sudurland = {
-    county = c_sudurland
-    barony = b_stokkseyri
-    character_modifier = {
-        martial = 1
-    }
-}
-austurland = {
-    county = c_austisland
-    barony = b_reydarfjall
-    character_modifier = {
-        prowess = 2
-    }
-}
-nordurland = {
-    county = c_nordrland
-    barony = b_husavik
-    character_modifier = {
-        intrigue = 1
-    }
-}
 talknafjordur = {
     county = c_vestisland
     barony = b_vestfirdir
@@ -34,92 +6,40 @@ talknafjordur = {
         learning_per_piety_level = 1
     }
 }
+reykjavik = {
+    county = c_vestisland
+    barony = b_reykjavik
+    character_modifier = {
+        health = 0.25
+    }
+}
 
-# EU + EEA + UK
-amsterdam = {
-    county = c_holland
-    barony = b_amsterdam
-    character_modifier = { intrigue = 1 }
-}
-berlin = {
-    county = c_berlin
-    barony = b_berlin
-    character_modifier = { stewardship = 1 }
-}
-bern = {
-    county = c_bern
-    barony = b_bern
-    character_modifier = { diplomacy = 1 }
-}
-bratislava = {
-    county = c_poszony
-    barony = b_poszony
-    character_modifier = { stewardship = 1 }
-}
-brussels = {
-    county = c_brabant
-    barony = b_brussels
-    character_modifier = { martial = 1 }
-}
-bucharest = {
-    county = c_bucuresti
-    barony = b_bucuresti
-    character_modifier = { diplomacy = 1 }
-}
-budapest = {
-    county = c_visegrad
-    barony = b_visegrad_hun # kinda accurate, prefer to have it the dutchy capital and close enough?
-    character_modifier = { intrigue = 1 }
-}
-copenhagen = {
-    county = c_sjaelland
-    barony = b_hafn
-    character_modifier = { martial = 1 }
-}
-dublin = {
-    county = c_dublin
-    barony = b_dublin
-    character_modifier = { stewardship = 1 }
-}
-helsinki = {
-    county = c_nyland
-    barony = b_porvoo
-    character_modifier = { martial = 1 }
-}
-lisbon = {
-    county = c_lisboa
-    barony = b_lisboa
-    character_modifier = { intrigue = 1 }
-}
-ljubljana = {
-    county = c_ljubljana
-    barony = b_ljubljana
-    character_modifier = { prowess = 2 }
-}
+# sudurland = {
+#     county = c_sudurland
+#     barony = b_stokkseyri
+#     character_modifier = { epidemic_resistance = 1 }
+# }
+# austurland = {
+#     county = c_austisland
+#     barony = b_reydarfjall
+#     character_modifier = { life_expectancy = 1 }
+# }
+# nordurland = {
+#     county = c_nordrland
+#     barony = b_husavik
+#     character_modifier = { health = 0.25 }
+# }
+
+# Holy sites with X_per_piety_level
 london = {
     county = c_middlesex
     barony = b_london
     character_modifier = { diplomacy_per_piety_level = 1 }
 }
-luxembourg = {
-    county = c_luxembourg
-    barony = b_luxembourg
-    character_modifier = { diplomacy = 1 }
-}
 madrid = {
     county = c_madrid
     barony = b_madrid
     character_modifier = { stewardship_per_piety_level = 1 }
-}
-nicosia = {
-    county = c_nicosia
-    barony = b_nicosia
-    character_modifier = { stewardship = 1 }
-}
-moscow = {
-    county = c_moskva
-    barony = b_moskva
-    character_modifier = { learning = 1 }
 }
 oslo = {
     county = c_vingulmork
@@ -131,117 +51,191 @@ paris = {
     barony = b_paris
     character_modifier = { intrigue_per_piety_level = 1 }
 }
+berlin = {
+    county = c_berlin
+    barony = b_berlin
+    character_modifier = { prowess_per_piety_level = 2 }
+}
+
+# Health-based holy sites (all others)
+amsterdam = {
+    county = c_holland
+    barony = b_amsterdam
+    character_modifier = { epidemic_resistance = 1 }
+}
+
+bern = {
+    county = c_bern
+    barony = b_bern
+    character_modifier = { life_expectancy = 1 }
+}
+bratislava = {
+    county = c_poszony
+    barony = b_poszony
+    character_modifier = { health = 0.25 }
+}
+brussels = {
+    county = c_brabant
+    barony = b_brussels
+    character_modifier = { epidemic_resistance = 1 }
+}
+bucharest = {
+    county = c_bucuresti
+    barony = b_bucuresti
+    character_modifier = { life_expectancy = 1 }
+}
+budapest = {
+    county = c_visegrad
+    barony = b_visegrad_hun
+    character_modifier = { health = 0.25 }
+}
+copenhagen = {
+    county = c_sjaelland
+    barony = b_hafn
+    character_modifier = { epidemic_resistance = 1 }
+}
+dublin = {
+    county = c_dublin
+    barony = b_dublin
+    character_modifier = { life_expectancy = 1 }
+}
+helsinki = {
+    county = c_nyland
+    barony = b_porvoo
+    character_modifier = { health = 0.25 }
+}
+lisbon = {
+    county = c_lisboa
+    barony = b_lisboa
+    character_modifier = { epidemic_resistance = 1 }
+}
+ljubljana = {
+    county = c_ljubljana
+    barony = b_ljubljana
+    character_modifier = { life_expectancy = 1 }
+}
+luxembourg = {
+    county = c_luxembourg
+    barony = b_luxembourg
+    character_modifier = { health = 0.25 }
+}
+nicosia = {
+    county = c_nicosia
+    barony = b_nicosia
+    character_modifier = { epidemic_resistance = 1 }
+}
+moscow = {
+    county = c_moskva
+    barony = b_moskva
+    character_modifier = { life_expectancy = 1 }
+}
 prague = {
     county = c_praha
     barony = b_praha
-    character_modifier = { intrigue = 1 }
+    character_modifier = { health = 0.25 }
 }
 sofia = {
     county = c_sredets
     barony = b_sredets
-    character_modifier = { intrigue = 1 }
+    character_modifier = { epidemic_resistance = 1 }
 }
 stockholm = {
     county = c_sodermannaland
     barony = b_strigines
-    character_modifier = { prowess_per_piety_level = 2 }
+    character_modifier = { life_expectancy = 1 }
 }
 tallinn = {
     county = c_reval
     barony = b_reval
-    character_modifier = { prowess = 2 }
+    character_modifier = { life_expectancy = 1 }
 }
 valletta = {
     county = c_malta
     barony = b_malta
-    character_modifier = { martial = 1 }
+    character_modifier = { health = 0.25 }
 }
 vienna = {
     county = c_vienna
     barony = b_vienna
-    character_modifier = { stewardship = 1 }
+    character_modifier = { epidemic_resistance = 1 }
 }
 vilnius = {
     county = c_kernave
     barony = b_vilnius
-    character_modifier = { learning = 1 }
+    character_modifier = { life_expectancy = 1 }
 }
 warsaw = {
     county = c_czerska
     barony = b_warszawa
-    character_modifier = { diplomacy = 1 }
+    character_modifier = { health = 0.25 }
 }
 zagreb = {
     county = c_zagreb
     barony = b_zagreb
-    character_modifier = { martial = 1 }
+    character_modifier = { epidemic_resistance = 1 }
 }
-
-# others
 barcelona = {
     county = c_barcelona
     barony = b_barcelona
-    character_modifier = { diplomacy = 1 }
+    character_modifier = { life_expectancy = 1 }
 }
 edinburgh = {
     county = c_lothian
     barony = b_edinburgh
-    character_modifier = { prowess = 2 }
+    character_modifier = { health = 0.25 }
 }
 torshavn = {
     county = c_faereyar
     barony = b_torshavn
-    character_modifier = { martial = 1 }
+    character_modifier = { epidemic_resistance = 1 }
 }
 cardiff = {
     county = c_glamorgan
     barony = b_cardiff
-    character_modifier = { diplomacy = 1 }
+    character_modifier = { life_expectancy = 1 }
 }
 monaco = {
     county = c_genoa
     barony = b_monaco
-    character_modifier = { martial = 1 }
+    character_modifier = { health = 0.25 }
 }
 madeira = {
     county = c_madeira
     barony = b_madeira
-    character_modifier = { martial = 1 }
+    character_modifier = { epidemic_resistance = 1 }
 }
 tenerife = {
     county = c_canarias
     barony = b_tenerife
-    character_modifier = { diplomacy = 1 }
+    character_modifier = { life_expectancy = 1 }
 }
 mallorca = {
     county = c_mallorca
     barony = b_palma
-    character_modifier = { intrigue = 1 }
+    character_modifier = { health = 0.25 }
 }
 cagliari = {
     county = c_cagliari
     barony = b_cagliari
-    character_modifier = { stewardship = 1 }
+    character_modifier = { epidemic_resistance = 1 }
 }
 palermo = {
     county = c_palermo
     barony = b_palermo
-    character_modifier = { learning = 1 }
+    character_modifier = { life_expectancy = 1 }
 }
 isle_of_man = {
     county = c_isle_of_man
     barony = b_castletown
-    character_modifier = { intrigue = 1 }
+    character_modifier = { health = 0.25 }
 }
-
-# Wonders
 stonehenge = {
     county = c_wiltshire
     barony = b_salisbury
-    character_modifier = { stewardship = 1 }
+    character_modifier = { epidemic_resistance = 1 }
 }
-carnac = { # Ancient megalith in france
+carnac = {
     county = c_vannes
     barony = b_vannes
-    character_modifier = { diplomacy = 1 }
+    character_modifier = { life_expectancy = 1 }
 }

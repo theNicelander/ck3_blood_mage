@@ -30,13 +30,7 @@ trait_drain_prisoner_event_interaction = {
     }
 
     on_accept = {
-        
         scope:actor = {debug_log = debug_log.blood_mage_log}
-        scope:recipient = {
-            send_interface_toast = {
-                left_icon = scope:actor
-            }
-        }
         scope:actor = { 
             trigger_event = bm_trait_drain.001
             remove_character_modifier = lifeforce_modifier_major
@@ -49,6 +43,6 @@ trait_drain_prisoner_event_interaction = {
     auto_accept = yes
     ai_potential = { always = yes }
     ai_targets = { ai_recipients = prisoners }
-    ai_frequency = 6
-    ai_will_do = { base = 100 }
+    ai_frequency = 3
+    ai_will_do = { base = 10 }
 }
