@@ -3,6 +3,8 @@
     desc = become_blood_cultist_decision_desc
     decision_group_type = bm_decision_group
 
+    cooldown = {years = 10}
+
     is_shown = {
         has_trait = lifestyle_blood_mage
         not = { has_faith = faith:cult_of_blood }
