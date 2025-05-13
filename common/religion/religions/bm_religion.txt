@@ -6,7 +6,7 @@
     # pagan_roots = yes
 
     #Main Group
-    doctrine = doctrine_spiritual_head
+    doctrine = doctrine_temporal_head
     doctrine = doctrine_gender_equal
     doctrine = doctrine_pluralism_righteous
     doctrine = doctrine_theocracy_lay_clergy
@@ -23,7 +23,7 @@
     doctrine = doctrine_adultery_men_accepted
     doctrine = doctrine_adultery_women_accepted
     doctrine = doctrine_kinslaying_close_kin_crime
-    doctrine = doctrine_deviancy_shunned
+    doctrine = doctrine_deviancy_accepted
     doctrine = doctrine_witchcraft_accepted
 
     #Clerical Functions
@@ -37,8 +37,8 @@
     doctrine = doctrine_funeral_mummification
 
     traits = {
-        virtues = { lifestyle_blood_mage }
-        sins = { craven arbitrary content witch }
+        virtues = { lifestyle_blood_mage wise_man pilgrim }
+        sins = { craven arbitrary content witch  }
     }
 
     reserved_male_names = {
@@ -225,8 +225,8 @@
             doctrine = unreformed_faith_doctrine
 
             doctrine = tenet_christian_syncretism
-            doctrine = tenet_esotericism
-            doctrine = tenet_exaltation_of_pain
+            doctrine = core_tenet_sacred_shadows
+            doctrine = tenet_mendicant_preachers
 
             # Iceland - because best place
             holy_site = talknafjordur
