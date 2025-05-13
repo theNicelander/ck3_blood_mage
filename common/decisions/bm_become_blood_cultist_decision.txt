@@ -13,10 +13,10 @@
     }
     is_valid = { 
         has_trait = lifestyle_blood_mage
-        piety_level >= 2
+        piety_level >= 3
     }
 
-    cost = { piety = 250 }
+    cost = { piety = 500 }
 
     effect = { 
         debug_log = debug_log.blood_mage_log
