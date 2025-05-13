@@ -116,3 +116,33 @@ debug_add_crimson_empowerment_exp = {
         }
     }
 }
+
+
+debug_remove_lifeforce = {
+    decision_group_type = debug
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+    is_shown = { debug_only = yes }
+    effect = {
+        remove_character_modifier = lifeforce_modifier_major 
+        remove_character_modifier = lifeforce_modifier_major
+        remove_character_modifier = lifeforce_modifier_major
+        remove_character_modifier = lifeforce_modifier_major
+        remove_character_modifier = lifeforce_modifier_major
+        remove_character_modifier = lifeforce_modifier_major 
+        remove_character_modifier = lifeforce_modifier_major
+        remove_character_modifier = lifeforce_modifier_major
+        remove_character_modifier = lifeforce_modifier_major
+        remove_character_modifier = lifeforce_modifier_major
+
+        remove_character_modifier = lifeforce_modifier_minor 
+        remove_character_modifier = lifeforce_modifier_minor
+        remove_character_modifier = lifeforce_modifier_minor
+        remove_character_modifier = lifeforce_modifier_minor
+        remove_character_modifier = lifeforce_modifier_minor
+        remove_character_modifier = lifeforce_modifier_minor 
+        remove_character_modifier = lifeforce_modifier_minor
+        remove_character_modifier = lifeforce_modifier_minor
+        remove_character_modifier = lifeforce_modifier_minor
+        remove_character_modifier = lifeforce_modifier_minor
+    }
+}
