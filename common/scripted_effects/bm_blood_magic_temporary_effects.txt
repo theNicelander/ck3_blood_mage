@@ -17,3 +17,9 @@ temporary_trait_drain_attempted = {
         days = 185
     }
 }
+temporary_negative_recently_trait_drained = {
+    add_character_modifier = {
+        modifier = trait_drained_attempted_modifier
+        days = 365
+    }
+}

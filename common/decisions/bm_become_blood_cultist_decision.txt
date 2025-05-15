@@ -10,6 +10,7 @@
         NOT = { faith = { religion = { is_in_family = rf_quintessence } } }
         # Disable for overhaul mods
         NOT = { is_playing_overhaul_mod = yes }
+        has_game_rule = quintessence_religion_enabled
     }
     is_valid = { 
         has_trait = lifestyle_blood_mage
@@ -24,6 +25,22 @@
     }
 
     # Yearly chance AI take up the religion if they are a blood mage
-    ai_will_do = { base = 10 }
     ai_check_interval = 12
+    ai_will_do = { 
+        base = 10 
+        modifier = {
+            add = -100
+            OR = {
+                has_trait = zealous
+                has_trait = content
+            }
+        }
+        modifier = {
+            add = 10
+            OR = {
+                has_trait = ambitious
+                has_trait = wise_man
+            }
+        }
+    }
 }

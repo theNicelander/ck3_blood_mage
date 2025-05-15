@@ -58,6 +58,16 @@ lifedrained_modifier = {
     prowess = -5
 }
 
+trait_drained_attempted_modifier = {
+    icon = health_negative
+    stacking = yes
+
+    health = -0.5
+    life_expectancy = -5
+    epidemic_resistance = -5
+    negate_health_penalty_add = -0.5
+}
+
 lifeforce_modifier_crimson_warrior = {
     icon = blood_positive
     health = -0.2
