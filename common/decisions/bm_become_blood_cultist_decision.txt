@@ -10,7 +10,14 @@
         NOT = { faith = { religion = { is_in_family = rf_quintessence } } }
         # Disable for overhaul mods
         NOT = { is_playing_overhaul_mod = yes }
-        has_game_rule = quintessence_religion_enabled
+
+        OR = {
+            has_game_rule = quintessence_religion_enabled
+            AND = {
+                has_game_rule = quintessence_religion_enabled_player_only
+                is_ai = no
+            }
+        }
     }
     is_valid = { 
         has_trait = lifestyle_blood_mage
