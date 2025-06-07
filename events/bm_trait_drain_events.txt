@@ -15,7 +15,6 @@ bm_trait_drain.001 = {
                 NOT = { has_trait = intellect_good_3 }
             }
         }
-        trigger = { scope:recipient = { has_trait = intellect_good } }
 
         # Cost
         add_piety = trait_drain_intellect_cost
