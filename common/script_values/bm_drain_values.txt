@@ -9,24 +9,14 @@ trait_drain_base_piety_cost = -100
 trait_drain_level_2_piety_cost = -75
 trait_drain_level_3_piety_cost = -150
 trait_drain_level_4_piety_cost = -200
-trait_drain_level_5_piety_cost = -250
-trait_drain_level_6_piety_cost = -300
-trait_drain_level_7_piety_cost = -350
-trait_drain_level_8_piety_cost = -400
-trait_drain_level_9_piety_cost = -450
-trait_drain_level_10_piety_cost = -500
+
 
 # Modifiers, only 1-3 are used in the game, 4-10 are for mods
 trait_drain_modifier_1 = 10
 trait_drain_modifier_2 = 25
 trait_drain_modifier_3 = 50
 trait_drain_modifier_4 = 75
-trait_drain_modifier_5 = 100
-trait_drain_modifier_6 = 125
-trait_drain_modifier_7 = 150
-trait_drain_modifier_8 = 175
-trait_drain_modifier_9 = 200
-trait_drain_modifier_10 = 250
+
 
 
 # Modifiers for the trait drain
@@ -94,44 +84,38 @@ trait_drain_harder_per_trait_modifier = {
 
     # Blood of Numenor
     if = {
-        limit = { has_trait = blood_of_numenor_1 }
+        limit = { 
+            OR = {
+                has_trait = blood_of_numenor_1
+                has_trait = blood_of_numenor_2
+                has_trait = blood_of_numenor_3
+            }
+        }
         subtract = trait_drain_modifier_1
     }
     if = {
-        limit = { has_trait = blood_of_numenor_2 }
+        limit = { 
+            OR = {
+                has_trait = blood_of_numenor_4
+                has_trait = blood_of_numenor_5
+                has_trait = blood_of_numenor_6
+            }
+        }
         subtract = trait_drain_modifier_2
     }
     if = {
-        limit = { has_trait = blood_of_numenor_3 }
+        limit = { 
+            OR = {
+                has_trait = blood_of_numenor_7
+                has_trait = blood_of_numenor_8
+                has_trait = blood_of_numenor_9
+            }
+        }
         subtract = trait_drain_modifier_3
     }
     if = {
-        limit = { has_trait = blood_of_numenor_4 }
-        subtract = trait_drain_modifier_4
-    }
-    if = {
-        limit = { has_trait = blood_of_numenor_5 }
-        subtract = trait_drain_modifier_5
-    }
-    if = {
-        limit = { has_trait = blood_of_numenor_6 }
-        subtract = trait_drain_modifier_6
-    }
-    if = {
-        limit = { has_trait = blood_of_numenor_7 }
-        subtract = trait_drain_modifier_7
-    }
-    if = {
-        limit = { has_trait = blood_of_numenor_8 }
-        subtract = trait_drain_modifier_8
-    }
-    if = {
-        limit = { has_trait = blood_of_numenor_9 }
-        subtract = trait_drain_modifier_9
-    }
-    if = {
         limit = { has_trait = blood_of_numenor_10 }
-        subtract = trait_drain_modifier_10
+        subtract = trait_drain_modifier_4
     }
 }
 
@@ -274,43 +258,37 @@ trait_drain_modifier_per_trait = {
 
     # Blood of Numenor
     if = {
-        limit = { has_trait = blood_of_numenor_1 }
+        limit = { 
+            OR = {
+                has_trait = blood_of_numenor_1
+                has_trait = blood_of_numenor_2
+                has_trait = blood_of_numenor_3
+            }
+        }
         add = trait_drain_modifier_1
     }
     if = {
-        limit = { has_trait = blood_of_numenor_2 }
+        limit = { 
+            OR = {
+                has_trait = blood_of_numenor_4
+                has_trait = blood_of_numenor_5
+                has_trait = blood_of_numenor_6
+            }
+        }
         add = trait_drain_modifier_2
     }
     if = {
-        limit = { has_trait = blood_of_numenor_3 }
+        limit = { 
+            OR = {
+                has_trait = blood_of_numenor_7
+                has_trait = blood_of_numenor_8
+                has_trait = blood_of_numenor_9
+            }
+        }
         add = trait_drain_modifier_3
     }
     if = {
-        limit = { has_trait = blood_of_numenor_4 }
-        add = trait_drain_modifier_4
-    }
-    if = {
-        limit = { has_trait = blood_of_numenor_5 }
-        add = trait_drain_modifier_5
-    }
-    if = {
-        limit = { has_trait = blood_of_numenor_6 }
-        add = trait_drain_modifier_6
-    }
-    if = {
-        limit = { has_trait = blood_of_numenor_7 }
-        add = trait_drain_modifier_7
-    }
-    if = {
-        limit = { has_trait = blood_of_numenor_8 }
-        add = trait_drain_modifier_8
-    }
-    if = {
-        limit = { has_trait = blood_of_numenor_9 }
-        add = trait_drain_modifier_9
-    }
-    if = {
         limit = { has_trait = blood_of_numenor_10 }
-        add = trait_drain_modifier_10
+        add = trait_drain_modifier_4
     }
 }
