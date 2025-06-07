@@ -1,5 +1,4 @@
-﻿
-# Lifedraining
+﻿# Lifedraining
 lifedrain_piety_cost_major = 50
 lifedrain_piety_cost_major_neg = -50
 lifedrain_piety_cost_minor = 25
@@ -9,27 +8,18 @@ lifedrain_piety_cost_minor_neg = -25
 trait_drain_base_piety_cost = -100
 trait_drain_level_2_piety_cost = -75
 trait_drain_level_3_piety_cost = -150
+trait_drain_level_4_piety_cost = -200
+trait_drain_level_5_piety_cost = -250
+trait_drain_level_6_piety_cost = -300
+trait_drain_level_7_piety_cost = -350
+trait_drain_level_8_piety_cost = -400
+trait_drain_level_9_piety_cost = -450
+trait_drain_level_10_piety_cost = -500
 
-# Modifiers
+# Modifiers, only 1-3 are used in the game, 4-10 are for mods
 trait_drain_modifier_1 = 10
 trait_drain_modifier_2 = 25
 trait_drain_modifier_3 = 50
-
-trait_drain_modifier_1_neg = -10
-trait_drain_modifier_2_neg = -25
-trait_drain_modifier_3_neg = -50
-
-# LOTR Piety costs for trait drain
-trait_drain_level_2_piety_cost_numenor = -50
-trait_drain_level_3_piety_cost_numenor = -100
-trait_drain_level_4_piety_cost_numenor = -150
-trait_drain_level_5_piety_cost_numenor = -200
-trait_drain_level_6_piety_cost_numenor = -250
-trait_drain_level_7_piety_cost_numenor = -300
-trait_drain_level_8_piety_cost_numenor = -350
-trait_drain_level_9_piety_cost_numenor = -400
-trait_drain_level_10_piety_cost_numenor = -500
-# Trait drain modifiers for LOTR traits
 trait_drain_modifier_4 = 75
 trait_drain_modifier_5 = 100
 trait_drain_modifier_6 = 125
@@ -37,118 +27,111 @@ trait_drain_modifier_7 = 150
 trait_drain_modifier_8 = 175
 trait_drain_modifier_9 = 200
 trait_drain_modifier_10 = 250
-# Negative modifiers for LOTR traits
-trait_drain_modifier_4_neg = -75
-trait_drain_modifier_5_neg = -100
-trait_drain_modifier_6_neg = -125
-trait_drain_modifier_7_neg = -150
-trait_drain_modifier_8_neg = -175
-trait_drain_modifier_9_neg = -200
-trait_drain_modifier_10_neg = -250
 
+
+# Modifiers for the trait drain
 trait_drain_easier_with_age = {
     value = age
     multiply = 2
 }
 
-
 trait_drain_harder_per_trait_modifier = {
     # Intellect
     if = {
         limit = { has_trait = intellect_good_1 }
-        add = trait_drain_modifier_1_neg
+        subtract = trait_drain_modifier_1
     }
     if = {
         limit = { has_trait = intellect_good_2 }
-        add = trait_drain_modifier_2_neg
+        subtract = trait_drain_modifier_2
     }
     if = {
         limit = { has_trait = intellect_good_3 }
-        add = trait_drain_modifier_3_neg
+        subtract = trait_drain_modifier_3
     }
     
     # Physique
     if = {
         limit = { has_trait = physique_good_1 }
-        add = trait_drain_modifier_1_neg
+        subtract = trait_drain_modifier_1
     }
     if = {
         limit = { has_trait = physique_good_2 }
-        add = trait_drain_modifier_2_neg
+        subtract = trait_drain_modifier_2
     }
     if = {
         limit = { has_trait = physique_good_3 }
-        add = trait_drain_modifier_3_neg
+        subtract = trait_drain_modifier_3
     }
 
     # Beauty
     if = {
         limit = { has_trait = beauty_good_1 }
-        add = trait_drain_modifier_1_neg
+        subtract = trait_drain_modifier_1
     }
     if = {
         limit = { has_trait = beauty_good_2 }
-        add = trait_drain_modifier_2_neg
+        subtract = trait_drain_modifier_2
     }
     if = {
         limit = { has_trait = beauty_good_3 }
-        add = trait_drain_modifier_3_neg
+        subtract = trait_drain_modifier_3
     }
 
     # Other traits
     if = {
         limit = { has_trait = fecund }
-        add = trait_drain_modifier_1_neg
+        subtract = trait_drain_modifier_1
     }
     if = {
         limit = { has_trait = giant }
-        add = trait_drain_modifier_1_neg
+        subtract = trait_drain_modifier_1
     }
     if = {
         limit = { has_trait = pure_blooded }
-        add = trait_drain_modifier_1_neg
+        subtract = trait_drain_modifier_1
     }
 
     # Blood of Numenor
     if = {
         limit = { has_trait = blood_of_numenor_1 }
-        add = trait_drain_modifier_1_neg
+        subtract = trait_drain_modifier_1
     }
     if = {
         limit = { has_trait = blood_of_numenor_2 }
-        add = trait_drain_modifier_2_neg
+        subtract = trait_drain_modifier_2
     }
     if = {
         limit = { has_trait = blood_of_numenor_3 }
-        add = trait_drain_modifier_3_neg
+        subtract = trait_drain_modifier_3
     }
     if = {
         limit = { has_trait = blood_of_numenor_4 }
-        add = trait_drain_modifier_4_neg
+        subtract = trait_drain_modifier_4
     }
     if = {
         limit = { has_trait = blood_of_numenor_5 }
-        add = trait_drain_modifier_5_neg
+        subtract = trait_drain_modifier_5
     }
     if = {
         limit = { has_trait = blood_of_numenor_6 }
-        add = trait_drain_modifier_6_neg
+        subtract = trait_drain_modifier_6
     }
     if = {
         limit = { has_trait = blood_of_numenor_7 }
-        add = trait_drain_modifier_7_neg
+        subtract = trait_drain_modifier_7
     }
     if = {
         limit = { has_trait = blood_of_numenor_8 }
-        add = trait_drain_modifier_8_neg
+        subtract = trait_drain_modifier_8
     }
     if = {
         limit = { has_trait = blood_of_numenor_9 }
-        add = trait_drain_modifier_9_neg
+        subtract = trait_drain_modifier_9
     }
     if = {
         limit = { has_trait = blood_of_numenor_10 }
-        add = trait_drain_modifier_10_neg
+        subtract = trait_drain_modifier_10
     }
 }
 
@@ -157,39 +140,39 @@ trait_drain_numenor_cost = {
     add = trait_drain_base_piety_cost
     if = {
         limit = { has_trait = blood_of_numenor_2 }
-        add = trait_drain_level_2_piety_cost_numenor
+        add = trait_drain_level_2_piety_cost
     }
     if = {
         limit = { has_trait = blood_of_numenor_3 }
-        add = trait_drain_level_3_piety_cost_numenor
+        add = trait_drain_level_3_piety_cost
     }
     if = {
         limit = { has_trait = blood_of_numenor_4 }
-        add = trait_drain_level_4_piety_cost_numenor
+        add = trait_drain_level_4_piety_cost
     }
     if = {
         limit = { has_trait = blood_of_numenor_5 }
-        add = trait_drain_level_5_piety_cost_numenor
+        add = trait_drain_level_5_piety_cost
     }
     if = {
         limit = { has_trait = blood_of_numenor_6 }
-        add = trait_drain_level_6_piety_cost_numenor
+        add = trait_drain_level_6_piety_cost
     }
     if = {
         limit = { has_trait = blood_of_numenor_7 }
-        add = trait_drain_level_7_piety_cost_numenor
+        add = trait_drain_level_7_piety_cost
     }
     if = {
         limit = { has_trait = blood_of_numenor_8 }
-        add = trait_drain_level_8_piety_cost_numenor
+        add = trait_drain_level_8_piety_cost
     }
     if = {
         limit = { has_trait = blood_of_numenor_9 }
-        add = trait_drain_level_9_piety_cost_numenor
+        add = trait_drain_level_9_piety_cost
     }
     if = {
         limit = { has_trait = blood_of_numenor_10 }
-        add = trait_drain_level_10_piety_cost_numenor
+        add = trait_drain_level_10_piety_cost
     }
 }
 
