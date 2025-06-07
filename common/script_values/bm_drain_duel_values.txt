@@ -4,10 +4,13 @@ trait_drain_modifier_2 = 25
 trait_drain_modifier_3 = 50
 trait_drain_modifier_4 = 75
 
-# Modifiers for the trait drain
-trait_drain_easier_with_age = {
-    value = age
-    multiply = 2
+trait_drain_easier_with_xp = {
+    value = 0
+    add = "has_trait_xp(lifestyle_blood_mage|ancient)"
+    add = "has_trait_xp(lifestyle_blood_mage|enlightenment)"
+    add = "has_trait_xp(lifestyle_blood_mage|bloodline)"
+    add = "has_trait_xp(lifestyle_blood_mage|benediction)"
+    add = "has_trait_xp(lifestyle_blood_mage|hematurgy)"
 }
 
 trait_drain_harder_per_trait_modifier = {
@@ -102,6 +105,11 @@ trait_drain_harder_per_trait_modifier = {
         limit = { has_trait = blood_of_numenor_10 }
         subtract = trait_drain_modifier_4
     }
+}
+
+trait_drain_modifier = {
+    add = trait_drain_harder_per_trait_modifier
+    add = trait_drain_easier_with_xp
 }
 
 recipient_trait_drain_modifier_per_trait = {
