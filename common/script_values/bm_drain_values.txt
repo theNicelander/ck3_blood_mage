@@ -271,4 +271,46 @@ trait_drain_modifier_per_trait = {
         limit = { has_trait = pure_blooded }
         add = trait_drain_modifier_1
     }
+
+    # Blood of Numenor
+    if = {
+        limit = { has_trait = blood_of_numenor_1 }
+        add = trait_drain_modifier_1
+    }
+    if = {
+        limit = { has_trait = blood_of_numenor_2 }
+        add = trait_drain_modifier_2
+    }
+    if = {
+        limit = { has_trait = blood_of_numenor_3 }
+        add = trait_drain_modifier_3
+    }
+    if = {
+        limit = { has_trait = blood_of_numenor_4 }
+        add = trait_drain_modifier_4
+    }
+    if = {
+        limit = { has_trait = blood_of_numenor_5 }
+        add = trait_drain_modifier_5
+    }
+    if = {
+        limit = { has_trait = blood_of_numenor_6 }
+        add = trait_drain_modifier_6
+    }
+    if = {
+        limit = { has_trait = blood_of_numenor_7 }
+        add = trait_drain_modifier_7
+    }
+    if = {
+        limit = { has_trait = blood_of_numenor_8 }
+        add = trait_drain_modifier_8
+    }
+    if = {
+        limit = { has_trait = blood_of_numenor_9 }
+        add = trait_drain_modifier_9
+    }
+    if = {
+        limit = { has_trait = blood_of_numenor_10 }
+        add = trait_drain_modifier_10
+    }
 }
