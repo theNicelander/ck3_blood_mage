@@ -296,6 +296,53 @@ bm_trait_drain.001 = {
         ai_chance = { base = 100 }
     }
 
+    # Blood of Numenor drain
+    option = {
+        name = bm_trait_drain.001.numenor
+        trigger = { scope:recipient = { has_trait = blood_of_numenor } }
+
+        # Cost
+        add_piety = trait_drain_numenor_cost
+        temporary_trait_drain_attempted = yes
+
+        # Carry out logic
+        duel = {
+            skill = learning
+            target = scope:recipient
+            50 = {
+                desc = bm_trait_drain.001.success
+
+                # Difficulty
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 5
+                    min = -40
+                }
+                modifier = { add = trait_drain_harder_per_trait_modifier }
+                
+                # Success! Level up trait!
+                blood_of_numenor_drain_trait_effects = yes
+            
+                # Prisoner dies
+                sacrifice_prisoner_effect = {
+                    VICTIM = scope:recipient
+                    EXECUTIONER = root
+                }
+            }
+            50 = {
+                scope:recipient = { temporary_negative_recently_trait_drained = yes }
+                modifier = { add = trait_drain_modifier_per_trait }
+                send_interface_toast = {
+                    title = bm_trait_drain.001.fail
+                    drain_trait_failed_effects = yes
+                    left_icon = root
+                    right_icon = scope:recipient
+                }
+            }
+        }
+        ai_chance = { base = 100 }
+    }
+
     # Do nothing
     option = {
         name = bm_trait_drain.001.z
