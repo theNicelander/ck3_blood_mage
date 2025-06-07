@@ -28,23 +28,29 @@ trait_drain_level_6_piety_cost_numenor = -250
 trait_drain_level_7_piety_cost_numenor = -300
 trait_drain_level_8_piety_cost_numenor = -350
 trait_drain_level_9_piety_cost_numenor = -400
-trait_drain_level_10_piety_cost_numenor = -450
+trait_drain_level_10_piety_cost_numenor = -500
 # Trait drain modifiers for LOTR traits
 trait_drain_modifier_4 = 75
 trait_drain_modifier_5 = 100
-trait_drain_modifier_6 = 150
-trait_drain_modifier_7 = 200
-trait_drain_modifier_8 = 250
-trait_drain_modifier_9 = 300
-trait_drain_modifier_10 = 350
+trait_drain_modifier_6 = 125
+trait_drain_modifier_7 = 150
+trait_drain_modifier_8 = 175
+trait_drain_modifier_9 = 200
+trait_drain_modifier_10 = 250
 # Negative modifiers for LOTR traits
 trait_drain_modifier_4_neg = -75
 trait_drain_modifier_5_neg = -100
-trait_drain_modifier_6_neg = -150
-trait_drain_modifier_7_neg = -200
-trait_drain_modifier_8_neg = -250
-trait_drain_modifier_9_neg = -300
-trait_drain_modifier_10_neg = -350
+trait_drain_modifier_6_neg = -125
+trait_drain_modifier_7_neg = -150
+trait_drain_modifier_8_neg = -175
+trait_drain_modifier_9_neg = -200
+trait_drain_modifier_10_neg = -250
+
+trait_drain_easier_with_age = {
+    value = age
+    multiply = 2
+}
+
 
 trait_drain_harder_per_trait_modifier = {
     # Intellect
@@ -282,5 +288,4 @@ trait_drain_modifier_per_trait = {
         limit = { has_trait = pure_blooded }
         add = trait_drain_modifier_1
     }
-
 }
