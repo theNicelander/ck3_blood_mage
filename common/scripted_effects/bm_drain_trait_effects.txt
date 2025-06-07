@@ -64,3 +64,32 @@ beauty_drain_trait_effects = {
 drain_trait_failed_effects = {
     temporary_negative_lifeforce_effect_major = yes
 }
+
+# Blood of Numenor (LOTR)
+blood_of_numenor_drain_trait_effects = {
+    hematurgy_magic_cast_effect_major = yes
+    if = { 
+        limit = {
+            OR = {
+                has_trait = blood_of_numenor_10
+                has_trait = blood_of_numenor_9
+                has_trait = blood_of_numenor_8
+                has_trait = blood_of_numenor_7
+                has_trait = blood_of_numenor_6
+                has_trait = blood_of_numenor_5
+            }
+        } 
+        add_piety_level = -1
+    }
+    if = {
+        limit = { NOT = { has_trait = blood_of_numenor } }
+        add_trait = blood_of_numenor_1
+    }
+    else = {
+        change_trait_rank = {
+            trait = blood_of_numenor
+            rank = 1
+            max = 10
+        }
+    }
+}

@@ -75,6 +75,9 @@ traveller_character_template = {
 
 		# Low chance to be immportal
 		immortal = { weight = { base = 5 } }
+
+		# LOTR traits
+		blood_of_numenor_1 = { weight = { base = 10 } }
 	}
 	after_creation = {
 		give_nickname = nick_the_wanderer
