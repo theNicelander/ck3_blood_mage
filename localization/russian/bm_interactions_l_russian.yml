@@ -1,35 +1,35 @@
 ﻿l_russian:
- IN_COURT_OR_IMPRISONED: "Можно лечить только себя или своих придворных"
+ IN_COURT_OR_IMPRISONED: "Вы можете исцелить только себя или своих придворных" #deepl:928610819
  NOT_ask_for_blood_magic_interaction_requirement: "Должен стать вашим другом, лучшим другом, любовником или второй половинкой" #deepl:3542861113
  NOT_grant_lifeforce_interaction_requirement: "Для получения жизненной силы вам понадобится либо [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip], либо [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]." #deepl:2149478437
- ask_for_blood_magic_interaction: "Попросить Кровавую Магию"
- ask_for_blood_magic_interaction_desc: "[recipient.GetShortUINameNoTooltip] дарует силу кровавой магии"
+ ask_for_blood_magic_interaction: "Попросите Магию крови" #deepl:37038492
+ ask_for_blood_magic_interaction_desc: "[recipient.GetShortUINameNoTooltip] получает силу магии крови" #deepl:1589689772
  ask_for_blood_magic_interaction_requirement: "Должен стать вашим другом, лучшим другом, любовником или второй половинкой" #deepl:3542861113
- bm_get_blood_magic_from_prisoner_interaction: "Получить кровавую магию от заключённого"
- bm_get_blood_magic_from_prisoner_interaction.desc: "Я поглощаю их плоть в попытке обрести их Кровавую Магию"
- bm_get_blood_magic_from_prisoner_interaction.fail: "Мне не удаётся стать Кровавым Магом"
- bm_get_blood_magic_from_prisoner_interaction.success: "Я становлюсь Кровавым Магом"
- grant_blood_magic_interaction: "Сделать их Кровавым Магом"
- grant_blood_magic_interaction_desc: "[recipient.GetShortUINameNoTooltip] будет дарована сила кровавой магии"
- grant_crimson_champion_interaction: "Превратить в Багрового Чемпиона"
- grant_crimson_champion_interaction_desc: "Направить вашу жизненную силу в [recipient.GetShortUINameNoTooltip], навсегда улучшая их боевые способности с помощью кровавой магии."
- grant_crimson_warrior_interaction: "Превратить в Багрового Воина"
- grant_crimson_warrior_interaction_desc: "Направить вашу жизненную силу в [recipient.GetShortUINameNoTooltip], навсегда улучшая их боевые способности с помощью кровавой магии."
+ bm_get_blood_magic_from_prisoner_interaction: "Получите магию крови от заключенного" #deepl:3055816831
+ bm_get_blood_magic_from_prisoner_interaction.desc: "Я поглощаю их плоть, пытаясь получить их магию крови." #deepl:204884809
+ bm_get_blood_magic_from_prisoner_interaction.fail: "Мне не удается стать магом крови" #deepl:2306158430
+ bm_get_blood_magic_from_prisoner_interaction.success: "Я становлюсь магом крови" #deepl:1851986320
+ grant_blood_magic_interaction: "Сделайте их магами крови" #deepl:2326959525
+ grant_blood_magic_interaction_desc: "[recipient.GetShortUINameNoTooltip] получит силу магии крови" #deepl:245601515
+ grant_crimson_champion_interaction: "Станьте багровым чемпионом" #deepl:1289707598
+ grant_crimson_champion_interaction_desc: "Направьте свою жизненную силу в [recipient.GetShortUINameNoTooltip], постоянно усиливая их боевые способности с помощью магии крови." #deepl:2258187127
+ grant_crimson_warrior_interaction: "Превращение в багрового воина" #deepl:2018519808
+ grant_crimson_warrior_interaction_desc: "Направьте свою жизненную силу в [recipient.GetShortUINameNoTooltip], постоянно усиливая их боевые способности с помощью магии крови." #deepl:2258187127
  grant_lifeforce_interaction: "Предоставить жизненную силу" #deepl:2025139764
  grant_lifeforce_interaction.grant_major: "Грант Майор Жизненная сила" #deepl:3131760285
  grant_lifeforce_interaction.grant_minor: "Предоставление незначительной жизненной силы" #deepl:823894677
  grant_lifeforce_interaction.toast: "Я даровал [recipient.GetShortUINameNoTooltip] жизненную силу." #deepl:1722360946
  grant_lifeforce_interaction_desc: "Направьте свою жизненную силу в [recipient.GetShortUINameNoTooltip]." #deepl:1416711648
  grant_lifeforce_interaction_requirement: "Для получения жизненной силы вам понадобится либо [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip], либо [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]." #deepl:2149478437
- grant_lifeforce_interaction_reversed: "Обратить Поглощение Жизни"
- grant_lifeforce_interaction_reversed_desc: "Из [recipient.GetShortUINameNoTooltip] была высосана жизненная сила, но я могу вернуть её обратно"
- heal_disease_benediction: "Излечить Смертельный Недуг"
- heal_disease_benediction_desc: "Излечить Смертельный Недуг"
- heal_disease_major: "Излечить Недуг"
- heal_disease_major_desc: "Излечить Недуг"
- heal_disease_minor: "Излечить Незначительный Недуг"
- heal_disease_minor_desc: "Излечить Незначительный Недуг"
- lifeforce_modifier_crimson_champion: "Багровый Чемпион"
- lifeforce_modifier_crimson_champion_desc: "Кровь этого воина наполнена тайной силой, дарующей сверхъестественные боевые способности."
- lifeforce_modifier_crimson_warrior: "Багровый Воин"
- lifeforce_modifier_crimson_warrior_desc: "Кровь этого воина наполнена тайной силой, дарующей сверхъестественные боевые способности."
+ grant_lifeforce_interaction_reversed: "Обратный лифедрен" #deepl:2512164098
+ grant_lifeforce_interaction_reversed_desc: "[recipient.GetShortUINameNoTooltip] был [GetModifier('lifedrained_modifier').GetNameWithTooltip], но я могу вернуть его им." #deepl:687278259
+ heal_disease_benediction: "Исцеление смертельных недугов" #deepl:3480333402
+ heal_disease_benediction_desc: "Исцеление смертельных недугов" #deepl:3480333402
+ heal_disease_major: "Исцелить недуг" #deepl:442751769
+ heal_disease_major_desc: "Исцелить недуг" #deepl:442751769
+ heal_disease_minor: "Исцеление незначительных недугов" #deepl:3250309205
+ heal_disease_minor_desc: "Исцеление незначительных недугов" #deepl:3250309205
+ lifeforce_modifier_crimson_champion: "Багровый чемпион" #deepl:2139071365
+ lifeforce_modifier_crimson_champion_desc: "В кровь этого воина была влита арканная сила, наделяющая его сверхъестественными боевыми способностями." #deepl:1801694215
+ lifeforce_modifier_crimson_warrior: "Багровый воин" #deepl:338121836
+ lifeforce_modifier_crimson_warrior_desc: "В кровь этого воина была влита арканная сила, наделяющая его сверхъестественными боевыми способностями." #deepl:1801694215
