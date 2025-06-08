@@ -42,21 +42,21 @@
             remove_trait = ill
             remove_trait = lovers_pox
             remove_trait = gout_ridden
-            # if = {
-            #     limit = { 
-            #         has_trait_xp = {
-            #             trait = lifestyle_blood_mage
-            #             value >= 0
-            #         }
-            #         add_trait_xp = {
-            #             trait = scarred
-            #             value = -50
-            #         }
-            #      }
+            if = {
+                limit = { 
+                    has_trait_xp = {
+                        trait = scarred
+                        value > 0
+                    }
+                 }
+                add_trait_xp = {
+                    trait = scarred
+                    value = -50
+                }
                 
-            # } else = {
-            #     remove_trait = scarred
-            # }
+            } else = {
+                remove_trait = scarred
+            }
 
             # temporary positive opinion
             add_opinion = {
@@ -124,6 +124,10 @@ heal_disease_major = {
                 has_trait = maimed
                 has_trait = one_eyed
                 has_trait = weak
+                has_trait = lunatic
+                has_trait = possessed_1
+                has_trait = dull
+                has_trait = depressed_1
             }
         }
     }
@@ -145,6 +149,10 @@ heal_disease_major = {
             remove_trait = blind
             remove_trait = one_eyed
             remove_trait = weak
+            remove_trait = lunatic
+            remove_trait = possessed_1
+            remove_trait = dull
+            remove_trait = depressed_1
 
             if = {
                 limit = {NOT = { scope:actor = scope:recipient }}
