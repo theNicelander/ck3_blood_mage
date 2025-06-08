@@ -1,0 +1,216 @@
+﻿bm_blood_cultist_become_blood_mage_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
+    desc = bm_blood_cultist_become_blood_mage_decision_desc
+    decision_group_type = bm_decision_group
+
+    is_shown = {
+        has_faith = faith:quintessence_faith
+        not = { has_trait = lifestyle_blood_mage }
+    }
+
+    cost = { piety = 100 }
+
+    is_valid = {
+        piety_level >= 3
+    }
+
+    effect = { 
+        debug_log = debug_log.blood_mage_log
+        add_trait = lifestyle_blood_mage 
+    }
+
+    # Yearly chance that AI become blood mage, if they are blood cultist
+    ai_will_do = { base = 10 }
+    ai_check_interval = 12
+}
+
+
+bm_enhance_blood_ritual_decision = {
+    decision_group_type = major
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
+
+    desc = bm_enhance_blood_ritual_decision_desc
+
+    is_shown = {
+        is_adult = yes
+        is_imprisoned = no
+        NOT = { has_trait = lifestyle_blood_mage }
+    }
+
+    is_valid = {
+        piety_level >= 2
+        OR = {
+            learning >= 20
+            has_trait = education_learning_4
+            has_trait = education_learning_5
+            has_trait = intellect_good_3
+			has_trait_xp = {
+				trait = lifestyle_mystic
+				value >= 100
+			}
+            stress_level >= 3
+            AND = {
+                has_trait = scholar
+                has_trait = theologian
+            }
+        }
+    }
+
+    # cooldown = { years = 1 }
+    cost = {
+        piety = 250
+    }
+
+    effect = {
+        # This duel represents the internal struggle against the raw power of blood.
+        # It has no target; the outcomes are weighted based on the character's Learning skill.
+        if = {
+            limit = { NOT = { has_trait = scarred } }
+            add_trait = scarred
+        } else = {
+            add_trait_xp = {
+                trait = scarred
+                value = 50
+            }
+        }
+        duel = {
+            skill = learning
+            target = root
+            
+            # SUCCESS 
+            0 = {
+                desc = bm_enhance_blood_ritual_decision.success_tt
+        
+                # Higher learning significantly increases the weight of this successful outcome.
+                compare_modifier = {
+                    value = root.learning
+                    multiplier = 2
+                }
+                # Older characters have a higher chance of success.
+                modifier = {add = root.age}
+
+                # Traits that increase the chance of success.
+                modifier = { has_trait = scholar add = 10 }
+                modifier = { has_trait = theologian add = 10 }
+                modifier = { has_trait = whole_of_body add = 10 }
+                modifier = { has_trait = education_learning_4 add = 10 }
+                modifier = { has_trait = education_learning_5 add = 25 }
+                modifier = { has_trait = intellect_good_3 add = 25 }
+                modifier = { has_trait = intellect_good_2 add = 10 }
+                modifier = { has_trait = lifestyle_mystic add = 10 }
+                modifier = { has_trait = lunatic add = 20 }
+                modifier = { has_trait = possessed_1 add = 10 }
+                modifier = { has_trait = one_eyed add = 10 }
+                modifier = { has_trait = blind add = 20 }
+                modifier = { stress_level >= 3 add = 20 }
+                modifier = { has_trait = scarred add = 5 }
+                modifier = { health >= excellent_health add = 10 }
+                
+                # XP modifiers
+                modifier = { 
+                    has_trait_xp = {
+                        trait = lifestyle_mystic
+                        value >= 100
+                    }
+                    add = 10 
+                }
+                modifier = { 
+                    has_trait_xp = {
+                        trait = scarred
+                        value >= 50
+                    }
+                    add = 5 
+                }
+                modifier = { 
+                    has_trait_xp = {
+                        trait = scarred
+                        value >= 100
+                    }
+                    add = 5 
+                }
+
+
+                send_interface_toast = {
+                    title = bm_enhance_blood_ritual_decision.success_tt
+                    left_icon = root
+                    add_trait = lifestyle_blood_mage
+                }
+            }
+
+            # FAILURE - MENTAL COLLAPSE 
+            75 = {
+                desc = bm_enhance_blood_ritual_decision.mental_failure_tt
+                send_interface_toast = {
+                    title = bm_enhance_blood_ritual_decision.physical_failure_tt
+                    left_icon = root
+                    add_stress = 30
+
+                    if = {
+                        limit = {has_trait = lunatic_1}
+                        add_trait = dull
+                    }
+                    if = {
+                        limit = {has_trait = depressed_1}
+                        add_trait = lunatic_1
+                    }
+                    if = {
+                        limit = {has_trait = possessed_1}
+                        add_trait = depressed_1
+                    }
+                    add_trait = possessed_1
+                }
+
+            }
+
+            # FAILURE - PHYSICAL TRAUMA 
+            75 = {
+                desc = bm_enhance_blood_ritual_decision.physical_failure_tt
+                send_interface_toast = {
+                    title = bm_enhance_blood_ritual_decision.physical_failure_tt
+                    left_icon = root
+                    add_stress = 20
+                    if = {
+                        limit = {has_trait = blind}
+                        add_piety_level = -1
+                    }
+                    
+                    if = {
+                        limit = {has_trait = one_eyed}
+                        add_trait = blind
+                    }
+                    if = {
+                        limit = {has_trait = weak}
+                        add_trait = one_eyed
+                    }
+                    add_trait = weak
+                }
+            }
+            # FAILURE - INJURY
+            150 = { # Injury
+                desc = bm_enhance_blood_ritual_decision.injury_failure_tt
+                send_interface_toast = {
+                    title = bm_enhance_blood_ritual_decision.injury_failure_tt
+                    left_icon = root
+                    add_stress = 10
+
+                    if = {
+                        limit = {  has_trait = wounded_2 }
+                        add_trait = maimed
+                    }
+
+                    if = {
+                        limit = { NOT = { has_trait = wounded_1 } }
+                        add_trait = wounded_1
+                    } else = {
+                        change_trait_rank = {
+                            trait = wounded
+                            rank = 1
+                            max = 2
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ai_will_do  = {base = 10}
+}

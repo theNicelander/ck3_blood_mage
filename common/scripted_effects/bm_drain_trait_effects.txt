@@ -1,5 +1,4 @@
 ﻿level_up_trait_effect = {
-    
     if = {
         limit = { NOT = { has_trait = $trait$ } }
         add_trait = $trait$_1
@@ -14,7 +13,10 @@
 }
 
 intellect_drain_trait_effects = {
-    hematurgy_magic_cast_effect_major = yes
+    add_xp_bm_dynamic = {
+        TRACK = hematurgy
+        XP = 2
+    }
     if = { limit = { has_trait = intellect_good_2 } add_piety_level = -1 }
     if = {
         limit = { NOT = { has_trait = intellect_good } }
@@ -30,7 +32,10 @@ intellect_drain_trait_effects = {
 }
 
 physique_drain_trait_effects = {
-    hematurgy_magic_cast_effect_major = yes
+    add_xp_bm_dynamic = {
+        TRACK = hematurgy
+        XP = 2
+    }
     if = { limit = { has_trait = physique_good_2 } add_piety_level = -1 }
     if = { 
         limit = { NOT = { has_trait = physique_good } } 
@@ -46,7 +51,10 @@ physique_drain_trait_effects = {
 }
 
 beauty_drain_trait_effects = {
-    hematurgy_magic_cast_effect_major = yes
+    add_xp_bm_dynamic = {
+        TRACK = hematurgy
+        XP = 2
+    }
     if = { limit = { has_trait = beauty_good_2 } add_piety_level = -1 }
     if = { 
         limit = { NOT = { has_trait = beauty_good } }
@@ -63,4 +71,29 @@ beauty_drain_trait_effects = {
 
 drain_trait_failed_effects = {
     temporary_negative_lifeforce_effect_major = yes
+}
+
+# Blood of Numenor (LOTR)
+blood_of_numenor_drain_trait_effects = {
+    add_xp_bm_dynamic = {
+        TRACK = hematurgy
+        XP = 2
+    }
+    if = { 
+        limit = {
+            has_trait = blood_of_numenor_10
+        } 
+        add_piety_level = -1
+    }
+    if = {
+        limit = { NOT = { has_trait = blood_of_numenor } }
+        add_trait = blood_of_numenor_1
+    }
+    else = {
+        change_trait_rank = {
+            trait = blood_of_numenor
+            rank = 1
+            max = 10
+        }
+    }
 }

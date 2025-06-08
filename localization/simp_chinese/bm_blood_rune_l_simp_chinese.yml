@@ -1,0 +1,19 @@
+﻿l_simp_chinese:
+ bm_blood_rune_decision: "铭刻血符文" #deepl:3737120221
+ bm_blood_rune_decision_confirm: "开始血色铭文" #deepl:4124455472
+ bm_blood_rune_decision_desc: "用古老的血液魔法在你的肉体上刻上永久的符文，增强你与生命力的联系。这些神秘的纹身可以让你被动地获取周围的生命能量，随着时间的推移增强你的力量。" #deepl:815936124
+ bm_blood_rune_decision_tooltip: "在你的身体上永久刻上能产生生命力的血液符文" #deepl:3594712456
+ bm_crimson_rune.001.desc: "你展开古老的卷轴，上面描绘着错综复杂的力量图案--血色符文将法师自己的身体转化为采集生命力的容器。这个仪式需要用淬过血的火焰锻造的特殊针头，混合了你自身精华的墨水，以及一个明白每条线都不仅仅是画出来的，而是与你的本体紧密相连的人的稳定的手。然而随着每一滴血和墨水融入你的肉体 你与深红艺术的联系就会加深这些印记是血魔法师真正掌握血魔法的标志--他们不仅仅是血魔法的施法者，更是血魔法的化身。" #deepl:37387575
+ bm_crimson_rune.001.major: "主要深红符文--流淌在我肉体上的力量网络" #deepl:2349098484
+ bm_crimson_rune.001.minor: "小深红符文--我心上的脉动符文" #deepl:3026977512
+ bm_crimson_rune.001.superior: "高级深红符文--将我的皮肤变成活生生的血魔法书" #deepl:3284087262
+ bm_crimson_rune.001.title: "铭刻血色符文" #deepl:40768940
+ bm_crimson_rune.001.z: "我现在的标记已经足够了" #deepl:1287242383
+ bm_crimson_rune_yearly_event_popup.title: "你的深红符文赋予你生命力" #deepl:2384530305
+ crimson_runes_effects_list.effects_list: "获得越来越强大的鲜血符文（每一层都会取代上一层）： \n#indent_newline： $EFFECT_LIST_BULLET$ [GetModifier('minor_crimson_rune_modifier').GetNameWithTooltip]\n#indent_newline： $EFFECT_LIST_BULLET$ [GetModifier('major_crimson_rune_modifier').GetNameWithTooltip]\$EFFECT_LIST_BULLET$ [GetModifier('superior_crimson_rune_modifier').GetNameWithTooltip]" #deepl:1595541502
+ major_crimson_rune_modifier: "主要深红符文" #deepl:523788520
+ major_crimson_rune_modifier_desc: "这些复杂的符文有时会从周围环境中获取[GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] ，偶尔也会爆发[GetModifier('lifeforce_modifier_major').GetNameWithTooltip] 。罕见的是，它们可能会同时捕捉两种类型。\精心制作的深红色纹身像有生命的血管一样流淌在你的躯干和手臂上，不断采集你周围的生命精华，并将其输送到你的魔法储备中。" #deepl:2556745231
+ minor_crimson_rune_modifier: "次要深红符文" #deepl:502427400
+ minor_crimson_rune_modifier_desc: "[GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] 。\覆盖在你心脏部位的血蚀奥术符号在你的皮肤下微弱地跳动着，像缓慢跳动的第二颗心脏一样将周围的生命力吸入你的身体。" #deepl:3491091936
+ superior_crimson_rune_modifier: "高级深红符文" #deepl:599601596
+ superior_crimson_rune_modifier_desc: "这些高超的血色铭文往往会不由自主地吸引[GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] 。它们经常捕获[GetModifier('lifeforce_modifier_major').GetNameWithTooltip] ，有时还会同时显现出两种力量。\高超的血液铭文覆盖着你的重要部位，有时会在你的皮肤下移动，拥有自己的生命。你的身体已经成为生命力的恒定通道，从你呼吸的空气中汲取力量。" #deepl:3942760719

@@ -1,0 +1,215 @@
+﻿# Modifiers, only 1-3 are used in the game, 4-10 are for mods
+trait_drain_modifier_1 = 50
+trait_drain_modifier_2 = 100
+trait_drain_modifier_3 = 200
+trait_drain_modifier_4 = 300
+
+trait_drain_easier_with_xp = {
+    value = 0
+    add = "has_trait_xp(lifestyle_blood_mage|ancient)"
+    add = "has_trait_xp(lifestyle_blood_mage|enlightenment)"
+    add = "has_trait_xp(lifestyle_blood_mage|bloodline)"
+    add = "has_trait_xp(lifestyle_blood_mage|benediction)"
+    add = "has_trait_xp(lifestyle_blood_mage|hematurgy)"
+}
+
+trait_drain_harder_per_trait_modifier = {
+    # Intellect
+    if = {
+        limit = { has_trait = intellect_good_1 }
+        subtract = trait_drain_modifier_1
+    }
+    if = {
+        limit = { has_trait = intellect_good_2 }
+        subtract = trait_drain_modifier_2
+    }
+    if = {
+        limit = { has_trait = intellect_good_3 }
+        subtract = trait_drain_modifier_3
+    }
+    
+    # Physique
+    if = {
+        limit = { has_trait = physique_good_1 }
+        subtract = trait_drain_modifier_1
+    }
+    if = {
+        limit = { has_trait = physique_good_2 }
+        subtract = trait_drain_modifier_2
+    }
+    if = {
+        limit = { has_trait = physique_good_3 }
+        subtract = trait_drain_modifier_3
+    }
+
+    # Beauty
+    if = {
+        limit = { has_trait = beauty_good_1 }
+        subtract = trait_drain_modifier_1
+    }
+    if = {
+        limit = { has_trait = beauty_good_2 }
+        subtract = trait_drain_modifier_2
+    }
+    if = {
+        limit = { has_trait = beauty_good_3 }
+        subtract = trait_drain_modifier_3
+    }
+
+    # Other traits
+    if = {
+        limit = { has_trait = fecund }
+        subtract = trait_drain_modifier_1
+    }
+    if = {
+        limit = { has_trait = giant }
+        subtract = trait_drain_modifier_1
+    }
+    if = {
+        limit = { has_trait = pure_blooded }
+        subtract = trait_drain_modifier_1
+    }
+
+    # Blood of Numenor
+    if = {
+        limit = { 
+            OR = {
+                has_trait = blood_of_numenor_1
+                has_trait = blood_of_numenor_2
+                has_trait = blood_of_numenor_3
+            }
+        }
+        subtract = trait_drain_modifier_1
+    }
+    if = {
+        limit = { 
+            OR = {
+                has_trait = blood_of_numenor_4
+                has_trait = blood_of_numenor_5
+                has_trait = blood_of_numenor_6
+            }
+        }
+        subtract = trait_drain_modifier_2
+    }
+    if = {
+        limit = { 
+            OR = {
+                has_trait = blood_of_numenor_7
+                has_trait = blood_of_numenor_8
+                has_trait = blood_of_numenor_9
+            }
+        }
+        subtract = trait_drain_modifier_3
+    }
+    if = {
+        limit = { has_trait = blood_of_numenor_10 }
+        subtract = trait_drain_modifier_4
+    }
+}
+
+trait_drain_modifier = {
+    add = trait_drain_harder_per_trait_modifier
+    add = trait_drain_easier_with_xp
+}
+
+recipient_trait_drain_modifier_per_trait = {
+    value = 0
+
+    # intellect
+    if = {
+        limit = { scope:recipient = { has_trait = intellect_good_1 } }
+        add = trait_drain_modifier_1
+    }
+    if = {
+        limit = { scope:recipient = { has_trait = intellect_good_2 } }
+        add = trait_drain_modifier_2
+    }
+    if = {
+        limit = { scope:recipient = { has_trait = intellect_good_3 } }
+        add = trait_drain_modifier_3
+    }
+
+    # Physique
+    if = {
+        limit = { scope:recipient = { has_trait = physique_good_1 } }
+        add = trait_drain_modifier_1
+    }
+    if = {
+        limit = { scope:recipient = { has_trait = physique_good_2 } }
+        add = trait_drain_modifier_2
+    }
+    if = {
+        limit = { scope:recipient = { has_trait = physique_good_3 } }
+        add = trait_drain_modifier_3
+    }
+
+    # Beauty
+    if = {
+        limit = { scope:recipient = { has_trait = beauty_good_1 } }
+        add = trait_drain_modifier_1
+    }
+    if = {
+        limit = { scope:recipient = { has_trait = beauty_good_2 } }
+        add = trait_drain_modifier_2
+    }
+    if = {
+        limit = { scope:recipient = { has_trait = beauty_good_3 } }
+        add = trait_drain_modifier_3
+    }
+
+    # Other traits
+    if = {
+        limit = { scope:recipient = { has_trait = giant } }
+        add = trait_drain_modifier_1
+    }
+    if = {
+        limit = { scope:recipient = { has_trait = fecund } }
+        add = trait_drain_modifier_1
+    }
+    if = {
+        limit = { scope:recipient = { has_trait = pure_blooded } }
+        add = trait_drain_modifier_1
+    }
+
+    # Blood of Numenor
+    if = {
+        limit = { 
+            scope:recipient = { 
+                OR = {
+                    has_trait = blood_of_numenor_1
+                    has_trait = blood_of_numenor_2
+                    has_trait = blood_of_numenor_3
+                }
+            }
+        }
+        add = trait_drain_modifier_1
+    }
+    if = {
+        limit = { 
+            scope:recipient = { 
+                OR = {
+                    has_trait = blood_of_numenor_4
+                    has_trait = blood_of_numenor_5
+                    has_trait = blood_of_numenor_6
+                }
+            }
+        }
+        add = trait_drain_modifier_2
+    }
+    if = {
+        limit = { 
+            scope:recipient = { 
+                OR = {
+                    has_trait = blood_of_numenor_7
+                    has_trait = blood_of_numenor_8
+                    has_trait = blood_of_numenor_9
+                }
+            }
+        }
+        add = trait_drain_modifier_3
+    }
+    if = {
+        limit = { scope:recipient = { has_trait = blood_of_numenor_10 } }
+        add = trait_drain_modifier_4
+    }
+}

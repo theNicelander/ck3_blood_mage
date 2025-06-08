@@ -12,7 +12,7 @@ duel = {
             value = scope:duel_value
             multiplier = 5
         }
-        scope:recipient = { set_character_f aith = faith:cult_of_blood }
+        scope:recipient = { set_character_f aith = faith:quintessence_faith }
     }
     30 = {
         desc = "I fail"
