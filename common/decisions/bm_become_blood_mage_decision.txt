@@ -38,24 +38,25 @@ bm_enhance_blood_ritual_decision = {
     }
 
     is_valid = {
-        
-        piety_level >= 3
+        piety_level >= 2
         OR = {
             learning >= 20
             has_trait = education_learning_4
             has_trait = education_learning_5
             has_trait = intellect_good_3
-            has_trait = scholar
 			has_trait_xp = {
 				trait = lifestyle_mystic
 				value >= 100
 			}
             stress_level >= 3
-            
+            AND = {
+                has_trait = scholar
+                has_trait = theologian
+            }
         }
     }
 
-    # cooldown = { years = 3 }
+    cooldown = { years = 1 }
     cost = {
         piety = 250
     }
@@ -77,14 +78,21 @@ bm_enhance_blood_ritual_decision = {
             target = root
             
             # SUCCESS 
-            0 = {
+            -20 = {
                 desc = bm_enhance_blood_ritual_decision.success_tt
+        
                 # Higher learning significantly increases the weight of this successful outcome.
                 compare_modifier = {
                     value = root.learning
                     multiplier = 2
                 }
+                # Older characters have a higher chance of success.
+                modifier = {add = root.age}
+
+                # Traits that increase the chance of success.
                 modifier = { has_trait = scholar add = 10 }
+                modifier = { has_trait = theologian add = 10 }
+                modifier = { has_trait = whole_of_body add = 10 }
                 modifier = { has_trait = education_learning_4 add = 10 }
                 modifier = { has_trait = education_learning_5 add = 25 }
                 modifier = { has_trait = intellect_good_3 add = 25 }
@@ -94,13 +102,31 @@ bm_enhance_blood_ritual_decision = {
                 modifier = { has_trait = possessed_1 add = 10 }
                 modifier = { has_trait = one_eyed add = 10 }
                 modifier = { has_trait = blind add = 20 }
+                modifier = { stress_level >= 3 add = 20 }
+                modifier = { has_trait = scarred add = 5 }
+                modifier = { health >= excellent_health add = 10 }
                 
+                # XP modifiers
                 modifier = { 
                     has_trait_xp = {
                         trait = lifestyle_mystic
                         value >= 100
                     }
                     add = 10 
+                }
+                modifier = { 
+                    has_trait_xp = {
+                        trait = scarred
+                        value >= 50
+                    }
+                    add = 5 
+                }
+                modifier = { 
+                    has_trait_xp = {
+                        trait = scarred
+                        value >= 100
+                    }
+                    add = 5 
                 }
 
 
@@ -112,12 +138,12 @@ bm_enhance_blood_ritual_decision = {
             }
 
             # FAILURE - MENTAL COLLAPSE 
-            25 = {
+            75 = {
                 desc = bm_enhance_blood_ritual_decision.mental_failure_tt
                 send_interface_toast = {
                     title = bm_enhance_blood_ritual_decision.physical_failure_tt
                     left_icon = root
-                    add_stress = 50
+                    add_stress = 30
 
                     if = {
                         limit = {has_trait = lunatic_1}
@@ -137,12 +163,12 @@ bm_enhance_blood_ritual_decision = {
             }
 
             # FAILURE - PHYSICAL TRAUMA 
-            25 = {
+            75 = {
                 desc = bm_enhance_blood_ritual_decision.physical_failure_tt
                 send_interface_toast = {
                     title = bm_enhance_blood_ritual_decision.physical_failure_tt
                     left_icon = root
-                    add_stress = 25
+                    add_stress = 20
                     if = {
                         limit = {has_trait = blind}
                         add_piety_level = -1
@@ -160,7 +186,7 @@ bm_enhance_blood_ritual_decision = {
                 }
             }
             # FAILURE - INJURY
-            50 = { # Injury
+            150 = { # Injury
                 desc = bm_enhance_blood_ritual_decision.injury_failure_tt
                 send_interface_toast = {
                     title = bm_enhance_blood_ritual_decision.injury_failure_tt
@@ -186,5 +212,5 @@ bm_enhance_blood_ritual_decision = {
             }
         }
     }
-    ai_will_do = {base = 0}
+    ai_will_do  = {base = 10}
 }

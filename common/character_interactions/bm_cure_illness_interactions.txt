@@ -16,6 +16,7 @@
                 has_trait = ill
                 has_trait = lovers_pox
                 has_trait = gout_ridden
+                has_trait = scarred
             }
         }
     }
@@ -41,6 +42,21 @@
             remove_trait = ill
             remove_trait = lovers_pox
             remove_trait = gout_ridden
+            # if = {
+            #     limit = { 
+            #         has_trait_xp = {
+            #             trait = lifestyle_blood_mage
+            #             value >= 0
+            #         }
+            #         add_trait_xp = {
+            #             trait = scarred
+            #             value = -50
+            #         }
+            #      }
+                
+            # } else = {
+            #     remove_trait = scarred
+            # }
 
             # temporary positive opinion
             add_opinion = {
