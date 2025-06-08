@@ -38,8 +38,21 @@ bm_enhance_blood_ritual_decision = {
     }
 
     is_valid = {
-        learning >= 20
+        
         piety_level >= 3
+        OR = {
+            learning >= 20
+            has_trait = education_learning_4
+            has_trait = education_learning_5
+            has_trait = intellect_good_3
+            has_trait = scholar
+			has_trait_xp = {
+				trait = lifestyle_mystic
+				value >= 100
+			}
+            stress_level >= 3
+            
+        }
     }
 
     # cooldown = { years = 3 }
@@ -69,8 +82,28 @@ bm_enhance_blood_ritual_decision = {
                 # Higher learning significantly increases the weight of this successful outcome.
                 compare_modifier = {
                     value = root.learning
-                    multiplier = 3
+                    multiplier = 2
                 }
+                modifier = { has_trait = scholar add = 10 }
+                modifier = { has_trait = education_learning_4 add = 10 }
+                modifier = { has_trait = education_learning_5 add = 25 }
+                modifier = { has_trait = intellect_good_3 add = 25 }
+                modifier = { has_trait = intellect_good_2 add = 10 }
+                modifier = { has_trait = lifestyle_mystic add = 10 }
+                modifier = { has_trait = lunatic add = 20 }
+                modifier = { has_trait = possessed_1 add = 10 }
+                modifier = { has_trait = one_eyed add = 10 }
+                modifier = { has_trait = blind add = 20 }
+                
+                modifier = { 
+                    has_trait_xp = {
+                        trait = lifestyle_mystic
+                        value >= 100
+                    }
+                    add = 10 
+                }
+
+
                 send_interface_toast = {
                     title = bm_enhance_blood_ritual_decision.success_tt
                     left_icon = root
@@ -127,7 +160,7 @@ bm_enhance_blood_ritual_decision = {
                 }
             }
             # FAILURE - INJURY
-            100 = { # Injury
+            50 = { # Injury
                 desc = bm_enhance_blood_ritual_decision.injury_failure_tt
                 send_interface_toast = {
                     title = bm_enhance_blood_ritual_decision.injury_failure_tt
