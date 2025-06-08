@@ -16,8 +16,14 @@
   become_blood_cultist_decision_tooltip: "Renounce your current faith and embrace the forbidden power of blood magic"
   become_blood_cultist_decision_desc: "The whispers have grown too persistent to ignore. Tales of immortality, of power drawn from the very essence of life itself. The old faiths are hollow shells compared to the tangible power offered by the Cult of Blood. Their sacred texts speak of transcendence through sacrifice, of bending the laws of nature through the manipulation of life's crimson currency. Perhaps it is time to abandon the empty promises of old gods and embrace the visceral truth that flows through every living being."
 
+  # Become a blood mage
+  bm_self_initiation_decision: "Attempt the Self-Initiation"
+  bm_self_initiation_decision_confirm: "I am my own crucible."
+  bm_self_initiation_decision_desc: "The tomes and scrolls offer fragmented clues, but I have no mentor to guide me, no subject to practice upon. The only path forward is the most perilous: to perform the initiation ritual upon myself. I must become both surgeon and patient, sorcerer and sacrifice.\n\nMy own blood will be the medium, my mind the battlefield where I wrestle raw power into submission. There is no dogma here, only dangerous knowledge and the strength of my own will. If I succeed, I will command the very essence of life. If I fail, my mind and body will be the price."
+  bm_self_initiation_decision_tooltip: "Use forbidden knowledge to perform an initiation ritual upon yourself. Without a guide, the risks are immense. Failure could shatter your mind or break your body."
+  
   # Become blood mage, from blood cultist
-  bm_blood_cultist_become_blood_mage_decision: "Become Blood Mage"
+  bm_blood_cultist_become_blood_mage_decision: "Blood Cultist: Become Blood Mage"
   bm_blood_cultist_become_blood_mage_decision_confirm: "My flesh shall channel the crimson power"
   bm_blood_cultist_become_blood_mage_decision_tooltip: "Complete the sacred rite to transform from a mere follower into a true wielder of blood magic"
   bm_blood_cultist_become_blood_mage_decision_desc: "As a devoted follower of the Cult of Blood, I've witnessed the raw power wielded by our most exalted members. While faith alone has granted me glimpses of blood's true potential, to become a Blood Mage is to transcend mortal limitations. The ritual requires sacrifice—both literal and symbolic—as my body becomes a vessel for ancient power. The transition will be agonizing, but those who emerge from the crimson baptism gain mastery over life itself. The time has come to evolve from worshipper to wielder."
@@ -32,3 +38,12 @@
   manifest_lifeforce_minor_success_tt: "You Sucessfully manifested Lifeforce"
   manifest_lifeforce_major_failure_tt: "You failed to manifest Lifeforce"
   manifest_lifeforce_minor_failure_tt: "You failed to manifest Lifeforce"
+
+  # Become blood mage Decision
+  bm_enhance_blood_ritual_decision: "Ritual of Crimson Initiation"
+  bm_enhance_blood_ritual_decision_confirm: "Unleash the Power Within"
+  bm_enhance_blood_ritual_decision_desc: "My research into the crimson arts is complete. Lacking a mentor, I must turn the ritual inward and become my own crucible, using my own vitality as the catalyst. Success promises mastery over the latent power in my blood; failure guarantees a broken mind or a ruined body."
+  bm_enhance_blood_ritual_decision.success_tt: "Success! The power is mine!"
+  bm_enhance_blood_ritual_decision.mental_failure_tt: "My mind is shattered!"
+  bm_enhance_blood_ritual_decision.physical_failure_tt: "My body is broken!"
+  bm_enhance_blood_ritual_decision.injury_failure_tt: "I am scarred, but I survived."
