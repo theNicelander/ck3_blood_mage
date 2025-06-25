@@ -6,11 +6,12 @@ trait_drain_prisoner_event_interaction = {
     desc = generic_drain_prisoner_trait_interaction_desc
 
     is_highlighted = { always = yes }
+    cooldown = { days = 60 }
+    cooldown_against_recipient = { days = 180 }
 
     is_valid_showing_failures_only = { 
         scope:actor = { 
             has_character_modifier = lifeforce_modifier_major
-            NOT = { has_character_modifier = trait_drain_attempted } 
         }
     }
 

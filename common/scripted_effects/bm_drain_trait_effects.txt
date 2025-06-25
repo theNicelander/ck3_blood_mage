@@ -19,6 +19,18 @@ intellect_drain_trait_effects = {
     }
     if = { limit = { has_trait = intellect_good_2 } add_piety_level = -1 }
     if = {
+        limit = { has_trait = intellect_bad_1 }
+        remove_trait = intellect_bad_1
+    }
+    else_if = {
+        limit = { has_trait = intellect_bad }
+        change_trait_rank = {
+            trait = intellect_bad
+            rank = -1
+            max = 5
+        }
+    }
+    else_if = {
         limit = { NOT = { has_trait = intellect_good } }
         add_trait = intellect_good_1
     }
@@ -37,8 +49,20 @@ physique_drain_trait_effects = {
         XP = 2
     }
     if = { limit = { has_trait = physique_good_2 } add_piety_level = -1 }
-    if = { 
-        limit = { NOT = { has_trait = physique_good } } 
+    if = {
+        limit = { has_trait = physique_bad_1 }
+        remove_trait = physique_bad_1
+    }
+    else_if = {
+        limit = { has_trait = physique_bad }
+        change_trait_rank = {
+            trait = physique_bad
+            rank = -1
+            max = 5
+        }
+    }
+    else_if = {
+        limit = { NOT = { has_trait = physique_good } }
         add_trait = physique_good_1
     }
     else = {
@@ -56,7 +80,19 @@ beauty_drain_trait_effects = {
         XP = 2
     }
     if = { limit = { has_trait = beauty_good_2 } add_piety_level = -1 }
-    if = { 
+    if = {
+        limit = { has_trait = beauty_bad_1 }
+        remove_trait = beauty_bad_1
+    }
+    else_if = {
+        limit = { has_trait = beauty_bad }
+        change_trait_rank = {
+            trait = beauty_bad
+            rank = -1
+            max = 5
+        }
+    }
+    else_if = {
         limit = { NOT = { has_trait = beauty_good } }
         add_trait = beauty_good_1
     }
