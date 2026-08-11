@@ -116,6 +116,9 @@ heal_disease_major = {
                 has_trait = pneumonic
                 has_trait = early_great_pox
                 has_trait = infirm
+                has_trait = withering_mind
+                has_trait = clouded_eyes
+                has_trait = fragile_bones
                 has_trait = maimed
                 has_trait = consumption
                 has_trait = typhus
@@ -142,6 +145,9 @@ heal_disease_major = {
             remove_trait = pneumonic
             remove_trait = early_great_pox
             remove_trait = infirm
+            remove_trait = withering_mind
+            remove_trait = clouded_eyes
+            remove_trait = fragile_bones
             remove_trait = maimed
             remove_trait = consumption
             remove_trait = typhus
@@ -233,6 +239,7 @@ heal_disease_benediction = {
                 has_trait = ergotism
                 has_trait = disfigured
                 has_trait = one_legged
+                has_trait = faltering_heart
             }
         }
     }
@@ -253,6 +260,7 @@ heal_disease_benediction = {
             remove_trait = ergotism
             remove_trait = disfigured
             remove_trait = one_legged
+            remove_trait = faltering_heart
 
             if = {
                 limit = {NOT = { scope:actor = scope:recipient }}
