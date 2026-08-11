@@ -1,7 +1,27 @@
 ﻿random_yearly_everyone_pulse = {
+    on_actions = {
+        bm_review_unmarked_blood_mage_prevalence
+    }
     events = {
         blood_mage_yearly_events.001
         blood_mage_yearly_events.002
         blood_mage_yearly_events.003
+    }
+}
+
+bm_review_unmarked_blood_mage_prevalence = {
+    trigger = {
+        is_ai = yes
+        has_trait = lifestyle_blood_mage
+        NOT = { has_character_flag = bm_blood_mage_prevalence_reviewed }
+        OR = {
+            has_game_rule = bm_prevalence_player_only
+            has_game_rule = bm_prevalence_extremely_rare
+            has_game_rule = bm_prevalence_rare
+            has_game_rule = bm_prevalence_uncommon
+        }
+    }
+    effect = {
+        bm_apply_blood_mage_prevalence_retention_effect = yes
     }
 }

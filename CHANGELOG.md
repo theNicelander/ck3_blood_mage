@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+* Added a Blood Mage Prevalence game rule with Player Only, Extremely Rare, Rare, Uncommon, Default, and More Frequent settings. It scales AI initiation decisions and interactions, controls naturally generated and inherited Blood Mage retention, adjusts newborn prevalence, and keeps the existing behavior as the default.
 * Added a Blood Mage Appearance game rule with No Alteration, Eyes Only, and Eyes and Hair settings. Eyes and Hair preserves the existing transformation as the default, and all supported languages include the new rule text.
 * Updated Blood Mage healing for every CK3 1.19 age-related ailment: Heal Ailment now cures Withering Mind, Clouded Eyes, and Fragile Bones alongside Infirm, while Heal Deadly Ailment cures Faltering Heart.
 * Added a game rule that makes the Blood Cultist initiation ritual require a dedicated Blood Magic cult faith or additionally allow faiths with Witchcraft Accepted, with the strict dedicated-cult mode as the default, and completed the hidden cult identity doctrine's UI metadata.

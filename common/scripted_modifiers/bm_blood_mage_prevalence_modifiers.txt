@@ -1,0 +1,22 @@
+﻿bm_blood_mage_prevalence_ai_acquisition_modifier = {
+	modifier = {
+		factor = 0
+		has_game_rule = bm_prevalence_player_only
+	}
+	modifier = {
+		factor = 0.01
+		has_game_rule = bm_prevalence_extremely_rare
+	}
+	modifier = {
+		factor = 0.1
+		has_game_rule = bm_prevalence_rare
+	}
+	modifier = {
+		factor = 0.5
+		has_game_rule = bm_prevalence_uncommon
+	}
+	modifier = {
+		factor = 2
+		has_game_rule = bm_prevalence_more_frequent
+	}
+}

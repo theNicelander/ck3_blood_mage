@@ -18,6 +18,34 @@ optional because Blood Mages does not reference its database identifiers.
 The **Blood Mage Initiation Faith** game rule chooses whether the cultist initiation ritual requires
 this dedicated marker or also permits characters whose faith accepts witchcraft.
 
+The **Blood Mage Prevalence** game rule controls how readily Blood Magic spreads beyond player
+characters:
+
+| Setting | AI acquisition weight | Naturally generated/inherited AI traits retained |
+| --- | --- | --- |
+| Player Only | 0× | 0% |
+| Extremely Rare | 0.01× Default | 10% |
+| Rare | 0.10× Default | 40% |
+| Uncommon | 0.50× Default | 70% |
+| Default | 1.00× | 100% |
+| More Frequent | 2.00× Default | 100%, plus increased newborn prevalence |
+
+The acquisition multiplier scales each AI decision or interaction's existing weight; it is not an
+absolute chance that every AI character becomes a Blood Mage. For example, the two annually checked
+initiation decisions have a 10% Default AI chance when eligible, so Rare changes each to 1% and
+Extremely Rare changes each to 0.1%. Character interactions also depend on valid targets, check
+cadence, relationships, and their own willingness modifiers, so they do not have one universal
+absolute probability.
+
+The retention percentage is a separate one-time roll for AI traits assigned through natural
+generation or inheritance. The rule does not reduce player access to Blood Mage decisions or
+interactions. **Default**
+preserves the mod's original balance, **Uncommon** provides a moderate reduction, and **Rare** and **Extremely Rare** are intended
+for long campaigns where unrestricted AI propagation would otherwise saturate major dynasties.
+
+The update is compatible with existing saves, which continue with **Default** behavior and do not
+retroactively remove Blood Mages. Select a different prevalence setting when starting a new campaign.
+
 Choose **Blood Mage Lore: Historical** for vanilla CK3. For AGOT, load the small optional
 [**Blood Mages - AGOT Religions**](https://steamcommunity.com/sharedfiles/filedetails/?id=3775630683) companion after A Game of Thrones and Blood Mages, then choose
 **Blood Mage Lore: A Game of Thrones**. The companion swaps out the vanilla-world cult database

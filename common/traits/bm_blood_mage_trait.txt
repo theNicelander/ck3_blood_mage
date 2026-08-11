@@ -4,6 +4,12 @@
     icon = blood_mage.dds
     desc = trait_blood_mage_desc
     ruler_designer_cost = 100
+	potential = {
+		OR = {
+			is_ai = no
+			NOT = { has_game_rule = bm_prevalence_player_only }
+		}
+	}
     # Use CK3's manual inheritance chances rather than its recessive genetic system.
     inherit_chance = 25
     both_parent_has_trait_inherit_chance = 100

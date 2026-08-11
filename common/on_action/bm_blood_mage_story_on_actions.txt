@@ -1,6 +1,19 @@
 ﻿on_game_start_after_lobby = {
 	on_actions = {
+		bm_initialize_blood_mage_prevalence
 		bm_initialize_blood_mage_stories
+	}
+}
+
+bm_initialize_blood_mage_prevalence = {
+	effect = {
+		every_living_character = {
+			limit = {
+				is_ai = yes
+				has_trait = lifestyle_blood_mage
+			}
+			bm_apply_blood_mage_prevalence_retention_effect = yes
+		}
 	}
 }
 
