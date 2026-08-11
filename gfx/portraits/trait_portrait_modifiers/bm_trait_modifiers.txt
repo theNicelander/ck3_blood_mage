@@ -1,11 +1,15 @@
 ﻿# The first valid entry in this group is applied. These modifiers only adjust
 # rendered colours; they do not replace a character's stored DNA.
-bm_blood_mage_divine_appearance = {
-	# Complete mastery: white eyes and white hair.
-	bm_blood_mage_divine_appearance_5 = {
+bm_blood_mage_divine_eyes = {
+	# Complete mastery: white eyes.
+	bm_blood_mage_divine_eyes_5 = {
 		traits = { lifestyle_blood_mage }
 		trigger = {
 			exists = root
+			OR = {
+				has_game_rule = bm_physical_alteration_eyes
+				has_game_rule = bm_physical_alteration_eyes_hair
+			}
 			root = { bm_blood_mage_total_trait_xp_value >= 500 }
 		}
 		dna_modifiers = {
@@ -16,21 +20,19 @@ bm_blood_mage_divine_appearance = {
 					x = 1.0
 					y = -1.0
 				}
-				color = {
-					gene = hair_color
-					mode = modify
-					x = -1.0
-					y = -1.0
-				}
 			}
 		}
 	}
 
-	# Near mastery: pale eyes and noticeably whitening hair.
-	bm_blood_mage_divine_appearance_4 = {
+	# Near mastery: pale eyes.
+	bm_blood_mage_divine_eyes_4 = {
 		traits = { lifestyle_blood_mage }
 		trigger = {
 			exists = root
+			OR = {
+				has_game_rule = bm_physical_alteration_eyes
+				has_game_rule = bm_physical_alteration_eyes_hair
+			}
 			root = { bm_blood_mage_total_trait_xp_value >= 400 }
 		}
 		dna_modifiers = {
@@ -41,21 +43,19 @@ bm_blood_mage_divine_appearance = {
 					x = 0.5
 					y = -0.75
 				}
-				color = {
-					gene = hair_color
-					mode = modify
-					x = -0.55
-					y = -0.55
-				}
 			}
 		}
 	}
 
-	# Advanced mastery: vivid blood-red eyes and the first pale hair.
-	bm_blood_mage_divine_appearance_3 = {
+	# Advanced mastery: vivid blood-red eyes.
+	bm_blood_mage_divine_eyes_3 = {
 		traits = { lifestyle_blood_mage }
 		trigger = {
 			exists = root
+			OR = {
+				has_game_rule = bm_physical_alteration_eyes
+				has_game_rule = bm_physical_alteration_eyes_hair
+			}
 			root = { bm_blood_mage_total_trait_xp_value >= 300 }
 		}
 		dna_modifiers = {
@@ -66,21 +66,19 @@ bm_blood_mage_divine_appearance = {
 					x = -1.0
 					y = -0.75
 				}
-				color = {
-					gene = hair_color
-					mode = modify
-					x = -0.2
-					y = -0.2
-				}
 			}
 		}
 	}
 
 	# Established mastery: clearly supernatural red eyes.
-	bm_blood_mage_divine_appearance_2 = {
+	bm_blood_mage_divine_eyes_2 = {
 		traits = { lifestyle_blood_mage }
 		trigger = {
 			exists = root
+			OR = {
+				has_game_rule = bm_physical_alteration_eyes
+				has_game_rule = bm_physical_alteration_eyes_hair
+			}
 			root = { bm_blood_mage_total_trait_xp_value >= 200 }
 		}
 		dna_modifiers = {
@@ -96,10 +94,14 @@ bm_blood_mage_divine_appearance = {
 	}
 
 	# Awakening: a subtle red cast to the eyes.
-	bm_blood_mage_divine_appearance_1 = {
+	bm_blood_mage_divine_eyes_1 = {
 		traits = { lifestyle_blood_mage }
 		trigger = {
 			exists = root
+			OR = {
+				has_game_rule = bm_physical_alteration_eyes
+				has_game_rule = bm_physical_alteration_eyes_hair
+			}
 			root = { bm_blood_mage_total_trait_xp_value >= 100 }
 		}
 		dna_modifiers = {
@@ -109,6 +111,68 @@ bm_blood_mage_divine_appearance = {
 					mode = modify
 					x = -0.25
 					y = -0.15
+				}
+			}
+		}
+	}
+}
+
+bm_blood_mage_divine_hair = {
+	# Complete mastery: white hair.
+	bm_blood_mage_divine_hair_5 = {
+		traits = { lifestyle_blood_mage }
+		trigger = {
+			exists = root
+			has_game_rule = bm_physical_alteration_eyes_hair
+			root = { bm_blood_mage_total_trait_xp_value >= 500 }
+		}
+		dna_modifiers = {
+			human = {
+				color = {
+					gene = hair_color
+					mode = modify
+					x = -1.0
+					y = -1.0
+				}
+			}
+		}
+	}
+
+	# Near mastery: noticeably whitening hair.
+	bm_blood_mage_divine_hair_4 = {
+		traits = { lifestyle_blood_mage }
+		trigger = {
+			exists = root
+			has_game_rule = bm_physical_alteration_eyes_hair
+			root = { bm_blood_mage_total_trait_xp_value >= 400 }
+		}
+		dna_modifiers = {
+			human = {
+				color = {
+					gene = hair_color
+					mode = modify
+					x = -0.55
+					y = -0.55
+				}
+			}
+		}
+	}
+
+	# Advanced mastery: the first pale hair.
+	bm_blood_mage_divine_hair_3 = {
+		traits = { lifestyle_blood_mage }
+		trigger = {
+			exists = root
+			has_game_rule = bm_physical_alteration_eyes_hair
+			root = { bm_blood_mage_total_trait_xp_value >= 300 }
+		}
+		dna_modifiers = {
+			human = {
+				color = {
+					gene = hair_color
+					mode = modify
+					x = -0.2
+					y = -0.2
 				}
 			}
 		}
