@@ -1,17 +1,19 @@
 ﻿debug_become_blood_mage = {
     decision_group_type = debug
+    ai_check_interval = 0
     picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
     is_shown = { 
         debug_only = yes
         not = { has_trait = lifestyle_blood_mage }
     }
     effect = {
-        add_trait = lifestyle_blood_mage
+        bm_become_blood_mage_effect = yes
     }
 }
 
 debug_add_lifeforce = {
     decision_group_type = debug
+    ai_check_interval = 0
     picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
     is_shown = { debug_only = yes }
     effect = {
@@ -25,6 +27,7 @@ debug_add_lifeforce = {
 
 debug_add_lifeforce_minor = {
     decision_group_type = debug
+    ai_check_interval = 0
     picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
     is_shown = { debug_only = yes }
     effect = {
@@ -38,6 +41,7 @@ debug_add_lifeforce_minor = {
 
 debug_add_exp_blood_mage_exp = {
     decision_group_type = debug
+    ai_check_interval = 0
     picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
     is_shown = { debug_only = yes }
     effect = {
@@ -72,6 +76,7 @@ debug_add_exp_blood_mage_exp = {
 
 debug_add_crimson_empowerment_exp = {
     decision_group_type = debug
+    ai_check_interval = 0
     picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
     is_shown = { debug_only = yes }
     effect = {
@@ -121,6 +126,7 @@ debug_add_crimson_empowerment_exp = {
 
 debug_remove_lifeforce = {
     decision_group_type = debug
+    ai_check_interval = 0
     picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
     is_shown = { debug_only = yes }
     effect = {

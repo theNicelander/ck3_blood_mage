@@ -1,0 +1,93 @@
+﻿bm_convert_to_blood_cult_by_heritage_effect = {
+	# The standalone mod preserves broad religious heritage with Quintessence
+	# syncretism variants. The optional Native Religions submod replaces this
+	# exact virtual file with religion-specific faith routing.
+	if = {
+		limit = {
+			faith = {
+				OR = {
+					has_doctrine = special_doctrine_is_christian_faith
+					has_doctrine = tenet_christian_syncretism
+				}
+			}
+		}
+		set_character_faith = faith:quintessence_faith
+	}
+	else_if = {
+		limit = {
+			faith = {
+				OR = {
+					has_doctrine = special_doctrine_is_islamic_faith
+					has_doctrine = tenet_islamic_syncretism
+				}
+			}
+		}
+		set_character_faith = faith:quintessence_faith_islamic
+	}
+	else_if = {
+		limit = {
+			faith = {
+				OR = {
+					has_doctrine = special_doctrine_is_jewish_faith
+					has_doctrine = tenet_jewish_syncretism
+				}
+			}
+		}
+		set_character_faith = faith:quintessence_faith_jewish
+	}
+	else_if = {
+		limit = {
+			faith = {
+				OR = {
+					has_doctrine = special_doctrine_is_eastern_faith
+					has_doctrine = tenet_eastern_syncretism
+				}
+			}
+		}
+		set_character_faith = faith:quintessence_faith_eastern
+	}
+	else_if = {
+		limit = {
+			faith = {
+				OR = {
+					has_doctrine = special_doctrine_is_sinitic_faith
+					has_doctrine = tenet_sinitic_syncretism
+				}
+			}
+		}
+		set_character_faith = faith:quintessence_faith_sinitic
+	}
+	else_if = {
+		limit = {
+			faith = { religion_tag = germanic_religion }
+		}
+		hidden_effect = {
+			faith:quintessence_faith_asatru = {
+				if = {
+					limit = {
+						NOT = { has_doctrine = tenet_mendicant_preachers }
+					}
+					add_doctrine = tenet_mendicant_preachers
+				}
+			}
+		}
+		set_character_faith = faith:quintessence_faith_asatru
+	}
+	else_if = {
+		limit = {
+			faith = {
+				OR = {
+					has_doctrine = unreformed_faith_doctrine
+					has_doctrine = west_african_unreformed_faith_doctrine
+					has_doctrine = tenet_unreformed_syncretism
+				}
+			}
+		}
+		set_character_faith = faith:quintessence_faith_unreformed
+	}
+	else = {
+		# CK3 has no dedicated syncretism tenet for every religion. Keep
+		# Christian Syncretism as the backwards-compatible fallback.
+		set_character_faith = faith:quintessence_faith
+	}
+}

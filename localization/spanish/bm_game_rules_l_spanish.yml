@@ -1,8 +1,39 @@
 ﻿l_spanish:
- rule_quintessence_religion: "Mago de Sangre: Quintessence Cult" #deepl:3012118011
- setting_quintessence_religion_disabled: "Discapacitados" #deepl:1603118088
- setting_quintessence_religion_disabled_desc: "Unirse a la decisión de culto DISABLED." #deepl:1491276764
- setting_quintessence_religion_enabled: "Activado" #deepl:3001197554
- setting_quintessence_religion_enabled_desc: "Unirse a la decisión de culto HABILITADO." #deepl:1276838154
- setting_quintessence_religion_enabled_player_only: "Sólo jugadores" #deepl:3920533262
- setting_quintessence_religion_enabled_player_only_desc: "Unirse a la decisión de culto HABILITADO sólo para jugadores" #deepl:3215730772
+  game_rule_category_blood_mages: "@bm_game_rule_icon! Magos de Sangre"
+  rule_bm_blood_mage_prevalence: "Prevalencia de magos de sangre"
+  setting_bm_prevalence_player_only: "Solo jugadores"
+  setting_bm_prevalence_player_only_desc: "Solo los personajes controlados por jugadores pueden adquirir el rasgo de mago de sangre. La adquisición por la IA, incluida la aparición natural y la herencia, queda bloqueada."
+  setting_bm_prevalence_extremely_rare: "Extremadamente rara"
+  setting_bm_prevalence_extremely_rare_desc: "Multiplica por 0,01 (una centésima del valor predeterminado) los pesos de decisiones e interacciones de la IA para adquirir magia de sangre. Los personajes de la IA conservan el 10% de los rasgos de mago de sangre generados de forma natural o heredados."
+  setting_bm_prevalence_rare: "Rara"
+  setting_bm_prevalence_rare_desc: "Multiplica por 0,10 (una décima del valor predeterminado) los pesos de decisiones e interacciones de la IA para adquirir magia de sangre. Los personajes de la IA conservan el 40% de los rasgos de mago de sangre generados de forma natural o heredados."
+  setting_bm_prevalence_uncommon: "Poco frecuente"
+  setting_bm_prevalence_uncommon_desc: "Multiplica por 0,50 (la mitad del valor predeterminado) los pesos de decisiones e interacciones de la IA para adquirir magia de sangre. Los personajes de la IA conservan el 70% de los rasgos de mago de sangre generados de forma natural o heredados."
+  setting_bm_prevalence_default: "Predeterminada"
+  setting_bm_prevalence_default_desc: "Utiliza las frecuencias originales de aparición, herencia, rituales e interacciones."
+  setting_bm_prevalence_more_frequent: "Más frecuente"
+  setting_bm_prevalence_more_frequent_desc: "Multiplica por 2,00 los pesos de decisiones e interacciones de la IA para adquirir magia de sangre. Los recién nacidos de la IA tienen aproximadamente un 50% de probabilidad de heredarla de un progenitor mago de sangre y cerca de un 1,25% de aparecer espontáneamente."
+  rule_bm_lore: "Ambientación de los Magos de Sangre"
+  setting_bm_lore_historical: "Histórica"
+  setting_bm_lore_historical_desc: "Utiliza el Culto de la Quintaesencia, su legado religioso adaptado al mundo histórico y su red de lugares sagrados."
+  setting_bm_lore_agot: "Juego de tronos"
+  setting_bm_lore_agot_desc: "Al cargar el complemento Blood Mages - AGOT Religions, sustituye los cultos del mundo histórico por tradiciones fieles al universo de los Siete, los Antiguos Dioses, el Dios Ahogado, R'hllor, el Rhoyne y Valyria."
+  rule_bm_physical_alteration: "Apariencia de los magos de sangre"
+  setting_bm_physical_alteration_none: "Sin alteración"
+  setting_bm_physical_alteration_none_desc: "La magia de sangre no altera el color de ojos ni de cabello de los magos de sangre."
+  setting_bm_physical_alteration_eyes: "Solo ojos"
+  setting_bm_physical_alteration_eyes_desc: "La magia de sangre altera progresivamente el color de ojos de los magos de sangre a medida que aumenta su dominio, pero no cambia su cabello."
+  setting_bm_physical_alteration_eyes_hair: "Ojos y cabello"
+  setting_bm_physical_alteration_eyes_hair_desc: "La magia de sangre altera progresivamente los ojos de los magos de sangre y, con mayor dominio, vuelve blanco su cabello."
+  rule_bm_initiation_faith_requirement: "Fe para la iniciación de magos de sangre"
+  setting_bm_initiation_dedicated_cult: "Culto de sangre específico"
+  setting_bm_initiation_dedicated_cult_desc: "Solo los seguidores del Culto de la Quintaesencia o de una fe marcada expresamente como culto de magia de sangre pueden realizar el rito de iniciación."
+  setting_bm_initiation_cult_or_witchcraft_accepted: "Culto de sangre o brujería aceptada"
+  setting_bm_initiation_cult_or_witchcraft_accepted_desc: "Los personajes pueden realizar el rito de iniciación si siguen el Culto de la Quintaesencia, una fe marcada expresamente como culto de magia de sangre o una fe que acepta la brujería."
+  rule_quintessence_religion: "Religión del mago de sangre"
+  setting_quintessence_religion_enabled: "Habilitado"
+  setting_quintessence_religion_enabled_desc: "Se habilita la decisión de abrazar una fe de Mago de Sangre."
+  setting_quintessence_religion_disabled: "Deshabilitado"
+  setting_quintessence_religion_disabled_desc: "La decisión de abrazar una fe de Mago de Sangre está desactivada."
+  setting_quintessence_religion_enabled_player_only: "Sólo jugador"
+  setting_quintessence_religion_enabled_player_only_desc: "Sólo los jugadores pueden utilizar la decisión de abrazar una fe de Mago de Sangre."

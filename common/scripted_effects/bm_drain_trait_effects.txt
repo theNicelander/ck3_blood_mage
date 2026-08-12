@@ -108,28 +108,3 @@ beauty_drain_trait_effects = {
 drain_trait_failed_effects = {
     temporary_negative_lifeforce_effect_major = yes
 }
-
-# Blood of Numenor (LOTR)
-blood_of_numenor_drain_trait_effects = {
-    add_xp_bm_dynamic = {
-        TRACK = hematurgy
-        XP = 2
-    }
-    if = { 
-        limit = {
-            has_trait = blood_of_numenor_10
-        } 
-        add_piety_level = -1
-    }
-    if = {
-        limit = { NOT = { has_trait = blood_of_numenor } }
-        add_trait = blood_of_numenor_1
-    }
-    else = {
-        change_trait_rank = {
-            trait = blood_of_numenor
-            rank = 1
-            max = 10
-        }
-    }
-}

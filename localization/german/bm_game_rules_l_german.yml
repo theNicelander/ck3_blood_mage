@@ -1,8 +1,39 @@
 ﻿l_german:
- rule_quintessence_religion: "Blutmagier: Quintessenz-Kult" #deepl:3012118011
- setting_quintessence_religion_disabled: "Behinderte" #deepl:1603118088
- setting_quintessence_religion_disabled_desc: "Beitritt zur Kultentscheidung DISABLED." #deepl:1491276764
- setting_quintessence_religion_enabled: "Aktiviert" #deepl:3001197554
- setting_quintessence_religion_enabled_desc: "Entscheidung zum Beitritt zum Kult AKTIVIERT." #deepl:1276838154
- setting_quintessence_religion_enabled_player_only: "Nur Spieler" #deepl:3920533262
- setting_quintessence_religion_enabled_player_only_desc: "Die Entscheidung, dem Kult beizutreten, ist nur für Spieler AKTIVIERT" #deepl:3215730772
+  game_rule_category_blood_mages: "@bm_game_rule_icon! Blutmagier"
+  rule_bm_blood_mage_prevalence: "Verbreitung der Blutmagier"
+  setting_bm_prevalence_player_only: "Nur Spieler"
+  setting_bm_prevalence_player_only_desc: "Nur spielergesteuerte Charaktere können die Blutmagier-Eigenschaft erhalten. Für KI-Charaktere sind auch natürliches Auftreten und Vererbung blockiert."
+  setting_bm_prevalence_extremely_rare: "Extrem selten"
+  setting_bm_prevalence_extremely_rare_desc: "Multipliziert die KI-Gewichte von Entscheidungen und Interaktionen zum Erwerb von Blutmagie mit 0,01 (einem Hundertstel des Standards). KI-Charaktere behalten 10 % der natürlich erzeugten oder geerbten Blutmagier-Eigenschaften."
+  setting_bm_prevalence_rare: "Selten"
+  setting_bm_prevalence_rare_desc: "Multipliziert die KI-Gewichte von Entscheidungen und Interaktionen zum Erwerb von Blutmagie mit 0,10 (einem Zehntel des Standards). KI-Charaktere behalten 40 % der natürlich erzeugten oder geerbten Blutmagier-Eigenschaften."
+  setting_bm_prevalence_uncommon: "Ungewöhnlich"
+  setting_bm_prevalence_uncommon_desc: "Multipliziert die KI-Gewichte von Entscheidungen und Interaktionen zum Erwerb von Blutmagie mit 0,50 (der Hälfte des Standards). KI-Charaktere behalten 70 % der natürlich erzeugten oder geerbten Blutmagier-Eigenschaften."
+  setting_bm_prevalence_default: "Standard"
+  setting_bm_prevalence_default_desc: "Verwendet die ursprünglichen Raten für Auftreten, Vererbung, Rituale und Interaktionen."
+  setting_bm_prevalence_more_frequent: "Häufiger"
+  setting_bm_prevalence_more_frequent_desc: "Multipliziert die KI-Gewichte von Entscheidungen und Interaktionen zum Erwerb von Blutmagie mit 2,00. KI-Neugeborene erben sie von einem Blutmagier-Elternteil mit ungefähr 50 % Wahrscheinlichkeit und erhalten sie spontan mit etwa 1,25 %."
+  rule_bm_lore: "Welt der Blutmagier"
+  setting_bm_lore_historical: "Historisch"
+  setting_bm_lore_historical_desc: "Verwendet den Kult der Quintessenz mit seinem religiösen Erbe der historischen Spielwelt und seinem Netzwerk heiliger Stätten."
+  setting_bm_lore_agot: "Das Lied von Eis und Feuer"
+  setting_bm_lore_agot_desc: "Wenn das Begleitmodul Blood Mages - AGOT Religions geladen ist, werden die Kulte der historischen Spielwelt durch weltgetreue Traditionen der Sieben, der Alten Götter, des Ertrunkenen Gottes, R'hllors, der Rhoyne und Valyrias ersetzt."
+  rule_bm_physical_alteration: "Erscheinungsbild der Blutmagier"
+  setting_bm_physical_alteration_none: "Keine Veränderung"
+  setting_bm_physical_alteration_none_desc: "Blutmagie verändert weder die Augen- noch die Haarfarbe eines Blutmagiers."
+  setting_bm_physical_alteration_eyes: "Nur Augen"
+  setting_bm_physical_alteration_eyes_desc: "Blutmagie verändert mit zunehmender Meisterschaft schrittweise die Augenfarbe eines Blutmagiers, lässt das Haar jedoch unverändert."
+  setting_bm_physical_alteration_eyes_hair: "Augen und Haare"
+  setting_bm_physical_alteration_eyes_hair_desc: "Blutmagie verändert schrittweise die Augen eines Blutmagiers und lässt mit zunehmender Meisterschaft dessen Haar weiß werden."
+  rule_bm_initiation_faith_requirement: "Glaube für die Blutmagier-Initiation"
+  setting_bm_initiation_dedicated_cult: "Eigener Blutkult"
+  setting_bm_initiation_dedicated_cult_desc: "Nur Anhänger des Kults der Quintessenz oder eines ausdrücklich als Blutmagiekult gekennzeichneten Glaubens können das Initiationsritual durchführen."
+  setting_bm_initiation_cult_or_witchcraft_accepted: "Blutkult oder Hexerei akzeptiert"
+  setting_bm_initiation_cult_or_witchcraft_accepted_desc: "Charaktere können das Initiationsritual durchführen, wenn sie dem Kult der Quintessenz, einem ausdrücklich als Blutmagiekult gekennzeichneten Glauben oder einem Glauben folgen, der Hexerei akzeptiert."
+  rule_quintessence_religion: "Religion der Blutmagier"
+  setting_quintessence_religion_enabled: "Aktiviert"
+  setting_quintessence_religion_enabled_desc: "Die Entscheidung, einen Blutmagier-Glauben anzunehmen, ist möglich."
+  setting_quintessence_religion_disabled: "Deaktiviert"
+  setting_quintessence_religion_disabled_desc: "Die Entscheidung, einen Blutmagier-Glauben anzunehmen, ist deaktiviert."
+  setting_quintessence_religion_enabled_player_only: "Nur für Spieler"
+  setting_quintessence_religion_enabled_player_only_desc: "Nur Spieler können die Entscheidung treffen, einen Blutmagier-Glauben anzunehmen."

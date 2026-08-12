@@ -69,42 +69,6 @@ trait_drain_harder_per_trait_modifier = {
         limit = { has_trait = pure_blooded }
         subtract = trait_drain_modifier_1
     }
-
-    # Blood of Numenor
-    if = {
-        limit = { 
-            OR = {
-                has_trait = blood_of_numenor_1
-                has_trait = blood_of_numenor_2
-                has_trait = blood_of_numenor_3
-            }
-        }
-        subtract = trait_drain_modifier_1
-    }
-    if = {
-        limit = { 
-            OR = {
-                has_trait = blood_of_numenor_4
-                has_trait = blood_of_numenor_5
-                has_trait = blood_of_numenor_6
-            }
-        }
-        subtract = trait_drain_modifier_2
-    }
-    if = {
-        limit = { 
-            OR = {
-                has_trait = blood_of_numenor_7
-                has_trait = blood_of_numenor_8
-                has_trait = blood_of_numenor_9
-            }
-        }
-        subtract = trait_drain_modifier_3
-    }
-    if = {
-        limit = { has_trait = blood_of_numenor_10 }
-        subtract = trait_drain_modifier_4
-    }
 }
 
 trait_drain_modifier = {
@@ -169,47 +133,5 @@ recipient_trait_drain_modifier_per_trait = {
     if = {
         limit = { scope:recipient = { has_trait = pure_blooded } }
         add = trait_drain_modifier_1
-    }
-
-    # Blood of Numenor
-    if = {
-        limit = { 
-            scope:recipient = { 
-                OR = {
-                    has_trait = blood_of_numenor_1
-                    has_trait = blood_of_numenor_2
-                    has_trait = blood_of_numenor_3
-                }
-            }
-        }
-        add = trait_drain_modifier_1
-    }
-    if = {
-        limit = { 
-            scope:recipient = { 
-                OR = {
-                    has_trait = blood_of_numenor_4
-                    has_trait = blood_of_numenor_5
-                    has_trait = blood_of_numenor_6
-                }
-            }
-        }
-        add = trait_drain_modifier_2
-    }
-    if = {
-        limit = { 
-            scope:recipient = { 
-                OR = {
-                    has_trait = blood_of_numenor_7
-                    has_trait = blood_of_numenor_8
-                    has_trait = blood_of_numenor_9
-                }
-            }
-        }
-        add = trait_drain_modifier_3
-    }
-    if = {
-        limit = { scope:recipient = { has_trait = blood_of_numenor_10 } }
-        add = trait_drain_modifier_4
     }
 }

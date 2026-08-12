@@ -1,3 +1,12 @@
+[h1]Fork Information[/h1]
+This is an independent CK3 1.19 compatibility fork of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3470491478]Blood Mages by Nicelander[/url], with evolving Blood Mage portrait effects.
+
+[list]
+    [*] Original mod and concept: Nicelander
+    [*] Fork source: https://github.com/ck3-mods/blood-mages-1-19
+    [*] Distributed under the Apache License 2.0 included with the mod
+[/list]
+
 [h1]Overview[/h1]
 Blood Mages drain [b]Lifeforce[/b] from others to extend their own lifespan and cast powerful spells. This power can be used to heal, enhance abilities, absorb traits, and more, at the cost of their own health.
 
@@ -51,7 +60,6 @@ Blood Mages can use this Lifeforce to perform various actions:
     [*] Create Blood Golems, and enhance their traits at the cost of piety
     [*] Drain GOOD congenital traits from prisoners (beauty, intelligence, physique, giant, fecund)
     [*] Remove their own BAD congenital traits, by draining prisoners (ugly, slow, delicate)
-    [*] Drain some overhaul traits (currently only Blood of Numenor from LOTR, more WIP)
 [/list]
 
 [h1]The Cult of Quintessence[/h1]
@@ -60,10 +68,23 @@ Blood Mages can follow their own unique faith, The Cult of Quintessence: https:/
     [*] [b]Holy Sites[/b]: Almost 50 locations across Europe
     [*] [b]Special Bonuses[/b]: A few special ones, but most grant a small bonus to lifespan / health / disease resistance to balance the number of sites
     [*] [b]Blood Magic University[/b]: Build special duchy buildings to enhance magical study
-    [*] [b]Christian Syncretism[/b] allows Blood Cultists to live their pagan ways without being hated by their Christian neighbours.
+    [*] [b]Automatic Religious Heritage[/b]: There is no manual selector—conversion examines the character's previous faith and chooses Christian, Islamic, Jewish, Eastern, or Sinitic Syncretism; an Ásatrú-specific traditional faith; or a faith for other unreformed traditions
+    [*] All seven variants are standalone faiths within the Cult of Quintessence, preserving the main mod's compatibility with vanilla religions
+    [*] Faiths outside the recognized families use Christian Syncretism as a backwards-compatible fallback
+    [*] The [b]Blood Mage Religion[/b] game rule can enable the embrace-faith decision for everyone, restrict it to players, or disable it entirely
 [/list]
 
-Off for AI by default, but can be enabled via game rule or disabled completely. It is disabled for LOTR/EK2/AGOT but works in PoD. 
+[h1]Optional Vanilla Religions Submod[/h1]
+The separate [b]Blood Mages - Vanilla Religions[/b] compatibility submod places a distinct, lore-specific Blood Mage cult inside every vanilla religion.
+[list]
+    [*] Automatic conversion to the native cult belonging to the character's previous religion
+    [*] Distinct names, lore, adherents, and thematic tenets for all 49 vanilla religions
+    [*] Each native cult combines its parent religion's holy sites with the complete Quintessence network
+    [*] Includes the Cult of the Crimson Ka as the Egyptian-Kushite branch
+    [*] Optional because native faith registration requires complete vanilla religion overlays and can conflict with religion mods
+[/list]
+
+The main mod's Cult of Quintessence religion text and game-rule descriptions are refreshed across English, French, German, Korean, Polish, Russian, Simplified Chinese, and Spanish. Translation coverage outside those areas varies by language; see the localization notes below.
 
 [h1]Getting Started[/h1]
 There are various ways to gain the Blood Mage trait
@@ -91,15 +112,18 @@ Feel free to use all the code for your own work. If you do, then please give me 
 
 [h1]Language localizations[/h1]
 [list]
-    [*] [b]Chinese[/b]: done by [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3403925213]  牛奶大魔王 and this mod [/url]. See also  See pinned discussion for translation of the mod page. Some missing localizations were translated with pdx-deepl, but most are done by hand
-    [*] [b]Russian[/b]: Done by [url=https://github.com/im-mortal] im-mortal on github [/url]
-    [*] [b]French[/b]: Done with pdx-deepl for now, but [url=https://steamcommunity.com/profiles/76561198142232656] WIP by TesaVonAtti [/url]  
-    [*] [b]Spanish/German/Polish/Korean[/b]: Machine translation, using pdx-deepl
+    [*] [b]English[/b]: original text
+    [*] [b]Simplified Chinese[/b]: predominantly translated by [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3403925213]牛奶大魔王 and this mod[/url], with some gaps filled by machine translation; see the pinned discussion for a translation of the mod page
+    [*] [b]Russian[/b]: community translation by [url=https://github.com/im-mortal]im-mortal on GitHub[/url]
+    [*] [b]French[/b]: currently a mixture of reviewed text and machine translation, with a human revision in progress by [url=https://steamcommunity.com/profiles/76561198142232656]TesaVonAtti[/url]
+    [*] [b]German, Korean, Polish, and Spanish[/b]: machine translated with pdx-deepl and subsequently corrected where clear errors were found
 [/list]
+
+Machine-translated text may still contain errors or awkward phrasing. Native-speaker corrections are welcome.
 
 If you want to help with translations, please let me know! Easiest way is to fork the repo and send me a pull request on github. Or just send me a message and I can add the translation in.
 
-Machine translations done by pdx-deepl tool: https://github.com/kaiser-chris/pdx-deepl
+Machine translations use the pdx-deepl tool: https://github.com/kaiser-chris/pdx-deepl
 
 [h1]Like the mod?[/h1]
 Consider buying me a coffee to support my work 😀

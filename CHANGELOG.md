@@ -1,5 +1,29 @@
 # Changelog - Highlights
 
+## Unreleased
+
+* Fixed Cult of Quintessence reformation being blocked after the player became its pre-reformation temporal Head of Faith. Unreformed Cult faiths now begin without a Head of Faith, and affected existing saves receive a repair decision that detaches the premature headship without destroying its holder's title or disrupting the realm.
+* Added a Blood Mage Prevalence game rule with Player Only, Extremely Rare, Rare, Uncommon, Default, and More Frequent settings. It scales AI initiation decisions and interactions, controls naturally generated and inherited Blood Mage retention, adjusts newborn prevalence, and keeps the existing behavior as the default.
+* Added a Blood Mage Appearance game rule with No Alteration, Eyes Only, and Eyes and Hair settings. Eyes and Hair preserves the existing transformation as the default, and all supported languages include the new rule text.
+* Updated Blood Mage healing for every CK3 1.19 age-related ailment: Heal Ailment now cures Withering Mind, Clouded Eyes, and Fragile Bones alongside Infirm, while Heal Deadly Ailment cures Faltering Heart.
+* Added a game rule that makes the Blood Cultist initiation ritual require a dedicated Blood Magic cult faith or additionally allow faiths with Witchcraft Accepted, with the strict dedicated-cult mode as the default, and completed the hidden cult identity doctrine's UI metadata.
+* Added a dedicated, icon-backed Blood Mages game-rule category and a Blood Mage Lore rule with Historical and A Game of Thrones settings for the optional AGOT religion companion.
+* Corrected mistranslated religious terminology, dynamic substitutions, and duplicated legacy text across the supported non-English localizations.
+* Renamed the religion game rule to remain accurate with optional native faith integrations, expanded the Cult of the Quintessence religion-family description, and refreshed religion localization across all supported languages.
+* Added a hidden Blood Magic identity doctrine and taught cult eligibility to recognize the shared `blood_magic_cult_faith` parameter, allowing optional religion integrations without static dependencies.
+* Retained all seven standalone Cult of Quintessence heritage faiths and added automatic conversion routing for Christian, Islamic, Jewish, Eastern, Sinitic, Ásatrú, and other unreformed origins, with a documented Christian Syncretism fallback.
+* Moved native-religion integration, including the Cult of the Crimson Ka, into the optional Blood Mages - Vanilla Religions submod so the main mod no longer overlays vanilla religions.
+* Moved the Blood Magic story panel, progression display, and lifecycle initialization into Blood Mages so compatibility submods only extend the base-owned panel.
+* Added exact Major/Minor Lifeforce stack counts and independently collapsible, scrollable Blood Golem and Crimson retinue rosters after the Blood Magic decisions, with compact empty states, atomic story creation across every Blood Mage acquisition path, missing-story reconciliation when Situations opens, automatic refresh, and a compact standard refresh control on each roster.
+* Added inline mechanic tooltips to the Lifeforce and Attunement status lines.
+* Condensed the five discipline counters into a two-row grid with their dedicated trait-track icons.
+* Fixed folded and empty character rosters retaining the expanded scroll-area height while preserving expandable content, and completed the refresh control's fade-out/fade-in cycle.
+
+## 1.19 compatibility
+* Migrated religion definitions to the CK3 1.19 folder structure.
+* Updated duel, decision AI, trait, and character-template definitions for the 1.19 parser.
+* Replaced duplicate and inline localization keys with mod-scoped localization.
+
 ## 15.37
 * Changed decisions targetting player, into character interactions instead: Blood Rune / Education / Crimson Empowerment / Attune Lifeforce / Channel lifeforce 
 * Lots of testing, to make sure AI uses the interactions, some they weren't doing before

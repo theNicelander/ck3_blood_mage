@@ -43,10 +43,6 @@ trait_drain_prisoner_event_interaction = {
                 scope:actor = { NOT = { has_trait = pure_blooded } }
                 scope:recipient = { has_trait = pure_blooded }
             }
-            AND = {
-                scope:actor = { NOT = { has_trait = blood_of_numenor_10 } }
-                scope:recipient = { has_trait = blood_of_numenor }
-            }
         }
     }
 

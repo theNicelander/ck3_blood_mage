@@ -1,0 +1,77 @@
+﻿bm_prepare_blood_magic_story_gui = {
+	scope = character
+
+	effect = {
+		bm_ensure_blood_mage_story_effect = yes
+
+		if = {
+			limit = { has_trait = lifestyle_blood_mage }
+			bm_refresh_blood_magic_rosters_effect = yes
+		}
+	}
+}
+
+bm_refresh_blood_magic_rosters_gui = {
+	scope = character
+	saved_scopes = { story }
+
+	is_shown = {
+		scope:story = { story_type = bm_blood_mage_story }
+	}
+
+	is_valid = {
+		has_trait = lifestyle_blood_mage
+		scope:story = { story_type = bm_blood_mage_story }
+	}
+
+	effect = {
+		if = {
+			limit = {
+				has_trait = lifestyle_blood_mage
+				scope:story = { story_type = bm_blood_mage_story }
+			}
+			bm_refresh_blood_magic_rosters_effect = yes
+		}
+	}
+}
+
+# Shared UI contract for story panels whose character lists use Blood Mages'
+# compact foldout renderer. Compatibility submods can replace these two generic
+# scripted GUIs without making the base mod reference optional identifiers.
+bm_story_uses_refreshable_character_lists_gui = {
+	scope = character
+	saved_scopes = { story }
+
+	is_shown = {
+		scope:story = { story_type = bm_blood_mage_story }
+	}
+
+	is_valid = {
+		has_trait = lifestyle_blood_mage
+		scope:story = { story_type = bm_blood_mage_story }
+	}
+}
+
+bm_refresh_story_character_lists_gui = {
+	scope = character
+	saved_scopes = { story }
+
+	is_shown = {
+		scope:story = { story_type = bm_blood_mage_story }
+	}
+
+	is_valid = {
+		has_trait = lifestyle_blood_mage
+		scope:story = { story_type = bm_blood_mage_story }
+	}
+
+	effect = {
+		if = {
+			limit = {
+				has_trait = lifestyle_blood_mage
+				scope:story = { story_type = bm_blood_mage_story }
+			}
+			bm_refresh_blood_magic_rosters_effect = yes
+		}
+	}
+}

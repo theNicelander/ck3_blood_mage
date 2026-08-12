@@ -1,8 +1,39 @@
 ﻿l_french:
- rule_quintessence_religion: "Mage de sang : Culte de la Quintessence" #deepl:3012118011
- setting_quintessence_religion_disabled: "Handicapés" #deepl:1603118088
- setting_quintessence_religion_disabled_desc: "Rejoindre la décision de la secte DISABLED." #deepl:1491276764
- setting_quintessence_religion_enabled: "Activé" #deepl:3001197554
- setting_quintessence_religion_enabled_desc: "Rejoindre la décision de la secte ENABLED." #deepl:1276838154
- setting_quintessence_religion_enabled_player_only: "Joueur uniquement" #deepl:3920533262
- setting_quintessence_religion_enabled_player_only_desc: "Rejoindre la décision de la secte ENABLED for Player Only" #deepl:3215730772
+ game_rule_category_blood_mages: "@bm_game_rule_icon! Hématurges"
+ rule_bm_blood_mage_prevalence: "Prévalence des hématurges"
+ setting_bm_prevalence_player_only: "Joueurs uniquement"
+ setting_bm_prevalence_player_only_desc: "Seuls les personnages contrôlés par un joueur peuvent acquérir le trait d'hématurge. Toute acquisition par l'IA, y compris l'apparition naturelle et l'hérédité, est bloquée."
+ setting_bm_prevalence_extremely_rare: "Extrêmement rare"
+ setting_bm_prevalence_extremely_rare_desc: "Multiplie par 0,01 (un centième de la valeur par défaut) les poids des décisions et interactions de l'IA permettant d'acquérir la magie du sang. Les personnages IA conservent 10 % des traits d'hématurge générés naturellement ou hérités."
+ setting_bm_prevalence_rare: "Rare"
+ setting_bm_prevalence_rare_desc: "Multiplie par 0,10 (un dixième de la valeur par défaut) les poids des décisions et interactions de l'IA permettant d'acquérir la magie du sang. Les personnages IA conservent 40 % des traits d'hématurge générés naturellement ou hérités."
+ setting_bm_prevalence_uncommon: "Peu fréquent"
+ setting_bm_prevalence_uncommon_desc: "Multiplie par 0,50 (la moitié de la valeur par défaut) les poids des décisions et interactions de l'IA permettant d'acquérir la magie du sang. Les personnages IA conservent 70 % des traits d'hématurge générés naturellement ou hérités."
+ setting_bm_prevalence_default: "Par défaut"
+ setting_bm_prevalence_default_desc: "Utilise les taux d'apparition, d'hérédité, de rituel et d'interaction d'origine."
+ setting_bm_prevalence_more_frequent: "Plus fréquent"
+ setting_bm_prevalence_more_frequent_desc: "Multiplie par 2,00 les poids des décisions et interactions de l'IA permettant d'acquérir la magie du sang. Les nouveau-nés IA ont environ 50 % de chances d'hériter d'un parent hématurge et environ 1,25 % de chances d'apparaître spontanément."
+ rule_bm_lore: "Univers des hématurges"
+ setting_bm_lore_historical: "Historique"
+ setting_bm_lore_historical_desc: "Utilise le Culte de la Quintessence, son héritage religieux adapté au monde historique et son réseau de lieux saints."
+ setting_bm_lore_agot: "Le Trône de fer"
+ setting_bm_lore_agot_desc: "Lorsque le module Blood Mages - AGOT Religions est chargé, remplace les cultes du monde historique par des traditions fidèles à l'univers des Sept, des Anciens Dieux, du Dieu Noyé, de R'hllor, de la Rhoyne et de Valyria."
+ rule_bm_physical_alteration: "Apparence des hématurges"
+ setting_bm_physical_alteration_none: "Aucune altération"
+ setting_bm_physical_alteration_none_desc: "La magie du sang ne modifie ni la couleur des yeux ni celle des cheveux des hématurges."
+ setting_bm_physical_alteration_eyes: "Yeux uniquement"
+ setting_bm_physical_alteration_eyes_desc: "La magie du sang modifie progressivement la couleur des yeux des hématurges à mesure que leur maîtrise augmente, mais laisse leurs cheveux inchangés."
+ setting_bm_physical_alteration_eyes_hair: "Yeux et cheveux"
+ setting_bm_physical_alteration_eyes_hair_desc: "La magie du sang modifie progressivement les yeux des hématurges et, à mesure que leur maîtrise augmente, blanchit leurs cheveux."
+ rule_bm_initiation_faith_requirement: "Foi requise pour l'initiation"
+ setting_bm_initiation_dedicated_cult: "Culte du sang consacré"
+ setting_bm_initiation_dedicated_cult_desc: "Seuls les personnages qui suivent le Culte de la Quintessence ou une foi explicitement désignée comme culte de la magie du sang peuvent accomplir le rite d'initiation."
+ setting_bm_initiation_cult_or_witchcraft_accepted: "Culte du sang ou sorcellerie acceptée"
+ setting_bm_initiation_cult_or_witchcraft_accepted_desc: "Les personnages peuvent accomplir le rite d'initiation s'ils suivent le Culte de la Quintessence, une foi explicitement désignée comme culte de la magie du sang ou une foi qui accepte la sorcellerie."
+ rule_quintessence_religion: "Religion des hématurges"
+ setting_quintessence_religion_disabled: "Désactivé"
+ setting_quintessence_religion_disabled_desc: "La décision permettant d'embrasser une foi d'hématurge est désactivée."
+ setting_quintessence_religion_enabled: "Activé"
+ setting_quintessence_religion_enabled_desc: "La décision permettant d'embrasser une foi d'hématurge est accessible à tous."
+ setting_quintessence_religion_enabled_player_only: "Joueur uniquement"
+ setting_quintessence_religion_enabled_player_only_desc: "Seuls les personnages joueurs peuvent décider d'embrasser une foi d'hématurge."

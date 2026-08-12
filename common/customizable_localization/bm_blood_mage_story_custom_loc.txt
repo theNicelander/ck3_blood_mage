@@ -1,0 +1,35 @@
+﻿BM_BLOOD_MAGE_LIFEFORCE_DISPLAY = {
+	type = character
+	text = {
+		fallback = yes
+		localization_key = bm_blood_mage_lifeforce_stacks
+	}
+}
+
+BM_BLOOD_MAGE_ATTUNEMENT_DISPLAY = {
+	type = character
+	text = {
+		trigger = { has_character_modifier = ancient_attuned }
+		localization_key = bm_blood_mage_attunement_ancient
+	}
+	text = {
+		trigger = { has_character_modifier = enlightenment_attuned }
+		localization_key = bm_blood_mage_attunement_enlightenment
+	}
+	text = {
+		trigger = { has_character_modifier = bloodline_attuned }
+		localization_key = bm_blood_mage_attunement_bloodline
+	}
+	text = {
+		trigger = { has_character_modifier = benediction_attuned }
+		localization_key = bm_blood_mage_attunement_benediction
+	}
+	text = {
+		trigger = { has_character_modifier = hematurgy_attuned }
+		localization_key = bm_blood_mage_attunement_hematurgy
+	}
+	text = {
+		fallback = yes
+		localization_key = bm_blood_mage_attunement_none
+	}
+}

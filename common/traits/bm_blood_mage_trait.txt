@@ -4,14 +4,23 @@
     icon = blood_mage.dds
     desc = trait_blood_mage_desc
     ruler_designer_cost = 100
-    group = lifestyle_blood_mage_group
-
-    # genetic
-    genetic = yes
-    good = yes
+	potential = {
+		OR = {
+			is_ai = no
+			NOT = { has_game_rule = bm_prevalence_player_only }
+		}
+	}
+    # Use CK3's manual inheritance chances rather than its recessive genetic system.
     inherit_chance = 25
     both_parent_has_trait_inherit_chance = 100
+
+    # These values are percentages: 0.25 means 0.25% (roughly 1 in 400), not 25%.
+    # birth gives non-inheriting newborns a small chance to become a Blood Mage.
+    #tiger-ignore(key=validation) -- CK3's schema permits generation fields on inheritable traits.
     birth = 0.25
+    # random_creation gives eligible randomly generated characters the same chance.
+    # CK3 1.19 allows this for inheritable or genetic traits; Tiger currently checks genetic only.
+    #tiger-ignore(key=validation) -- inherit_chance makes this trait inheritable without genetic = yes.
     random_creation = 0.25
 
     # Base trait benefit

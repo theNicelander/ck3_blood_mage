@@ -1,0 +1,85 @@
+[h1]Blood Mages — CK3 1.19 Fork[/h1]
+
+This is an independent compatibility fork of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3470491478]Blood Mages by Nicelander[/url].
+
+[h2]Blood Magic[/h2]
+
+Become a Blood Mage and drain [b]Lifeforce[/b] from other characters to extend your lifespan and fuel powerful magic.
+
+Develop five distinct mastery tracks:
+
+[list]
+[*] [b]Ancient[/b] — grow stronger as you survive through the centuries
+[*] [b]Enlightenment[/b] — enhance yourself through blood magic
+[*] [b]Bloodline[/b] — strengthen your dynasty
+[*] [b]Benediction[/b] — heal and empower others
+[*] [b]Hematurgy[/b] — harvest Lifeforce and absorb valuable traits
+[/list]
+
+Blood Mages can heal ailments, improve congenital and education traits, create Blood Golems, empower knights, inscribe magical runes, establish the Cult of Quintessence, and perform many other rituals.
+
+Blood Mages are exceptionally long-lived, but they are [b]not immortal[/b]. They can still die from combat, murder, disease, and depleted Lifeforce.
+
+[h2]What This Fork Adds[/h2]
+
+[h3]Crusader Kings III 1.19 Compatibility[/h3]
+
+The original mod has been updated for CK3 1.19 so its Blood Magic systems continue to work with the current game.
+
+[h3]Evolving Blood Mage Appearance[/h3]
+
+A Blood Mage's mastery now visibly transforms them, from subtly reddened eyes to an increasingly supernatural gaze and whitening hair.
+
+[h3]Blood Magic Story Situation[/h3]
+
+A dedicated panel brings together all five mastery tracks, exact Major and Minor Lifeforce counts, attunement, core decisions, and collapsible rosters for Blood Golems and Crimson Warriors or Champions.
+
+[h3]Lore, Religion Rules, and Localization[/h3]
+
+The dedicated [b]Blood Mages[/b] game-rule category includes [b]Blood Mage Lore[/b] for choosing the historical or AGOT religion set, [b]Blood Mage Initiation Faith[/b] for requiring a dedicated Blood Magic cult or additionally allowing faiths that accept Witchcraft, and [b]Blood Mage Religion[/b] for enabling the conversion decision for everyone, restricting it to players, or disabling it entirely. Cult of Quintessence religion text has also been expanded and refreshed across English, French, German, Korean, Polish, Russian, Simplified Chinese, and Spanish.
+
+English is the original text. Simplified Chinese is predominantly community-translated and Russian is community-translated. French contains both reviewed and machine-translated text; German, Korean, Polish, and Spanish are machine translated. Clear errors have been corrected, but machine-translated text may still contain mistakes or awkward phrasing.
+
+[h3]Automatic Syncretism Faith Selection[/h3]
+
+An automatic religion-type selection happens when a character embraces the Cult of Quintessence. Conversion examines the character's previous faith, including any syncretism it already follows, and automatically chooses the matching cult variant:
+
+[list]
+[*] [b]Christian Syncretism[/b] for Christian faiths and faiths with Christian Syncretism
+[*] [b]Islamic Syncretism[/b] for Islamic faiths and faiths with Islamic Syncretism
+[*] [b]Jewish Syncretism[/b] for Jewish faiths and faiths with Jewish Syncretism
+[*] [b]Eastern Syncretism[/b] for Eastern faiths and faiths with Eastern Syncretism
+[*] [b]Sinitic Syncretism[/b] for Sinitic faiths and faiths with Sinitic Syncretism
+[*] [b]Syncretic Folk Traditions[/b] for other unreformed traditions and faiths that already follow this syncretism
+[*] An [b]Ásatrú-specific tradition[/b] for Germanic faiths, centered on war, sacrifice, and sacred shadows
+[/list]
+
+All seven variants remain standalone faiths within the Cult of Quintessence, so this feature does not overwrite vanilla religions. A faith outside the recognized families uses Christian Syncretism as the backwards-compatible fallback.
+
+[h2]Optional Submods[/h2]
+
+[h3]Blood Mages — Vanilla Religions[/h3]
+
+The separate [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3774392244][b]Blood Mages — Vanilla Religions[/b][/url] compatibility submod adds one lore-specific Blood Mage cult to every vanilla religion, including the Egyptian–Kushite Cult of the Crimson Ka. Each native cult inherits its parent religion and combines that religion's holy sites with the complete Quintessence network.
+
+[h3]Blood Mages — AGOT Religions[/h3]
+
+The separate [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3775630683][b]Blood Mages — AGOT Religions[/b][/url] companion replaces the vanilla-world cult database with six lore-specific traditions for the Faith of the Seven, Old Gods, Drowned God, R'hllor, Mother Rhoyne, and Valyrian gods. Load it after A Game of Thrones and Blood Mages, then select [b]Blood Mage Lore: A Game of Thrones[/b].
+
+[h3]Dracul — Vampires & Blood Mages[/h3]
+
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3765753769][b]Dracul — Vampires & Blood Mages[/b][/url] makes both supernatural systems recognize and prey on one another, adds Dracula-themed military gameplay, and opens a path from secret vampire rule to an openly vampiric faith.
+
+[h2]Compatibility[/h2]
+
+The main mod does not overwrite vanilla religion definitions and should therefore remain compatible with most other mods, including major total conversions. Use Vanilla Religions for vanilla-world campaigns or the dedicated AGOT Religions companion for A Game of Thrones; do not load both religion companions together.
+
+[h2]Credits[/h2]
+
+[list]
+[*] Original mod, concept, and implementation: [b]Nicelander[/b]
+[*] Original Workshop page: https://steamcommunity.com/sharedfiles/filedetails/?id=3470491478
+[*] Fork source code: https://github.com/CamilleHbp/ck3_blood_mage
+[/list]
+
+This fork is distributed under the Apache License 2.0 included with the mod.

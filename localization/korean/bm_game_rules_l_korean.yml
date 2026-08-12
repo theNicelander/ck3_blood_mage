@@ -1,8 +1,39 @@
 ﻿l_korean:
- rule_quintessence_religion: "블러드 메이지: 정수 숭배" #deepl:3012118011
- setting_quintessence_religion_disabled: "장애인" #deepl:1603118088
- setting_quintessence_religion_disabled_desc: "컬트 결정에 참여하기 비활성화됨." #deepl:1491276764
- setting_quintessence_religion_enabled: "활성화됨" #deepl:3001197554
- setting_quintessence_religion_enabled_desc: "컬트 결정에 참여하기 사용 가능." #deepl:1276838154
- setting_quintessence_religion_enabled_player_only: "플레이어 전용" #deepl:3920533262
- setting_quintessence_religion_enabled_player_only_desc: "컬트 결정에 참여하기 플레이어만 사용 가능" #deepl:3215730772
+  game_rule_category_blood_mages: "@bm_game_rule_icon! 혈법사"
+  rule_bm_blood_mage_prevalence: "혈법사 출현 빈도"
+  setting_bm_prevalence_player_only: "플레이어 전용"
+  setting_bm_prevalence_player_only_desc: "플레이어가 조종하는 인물만 혈법사 특성을 얻을 수 있습니다. 자연 발생과 유전을 포함한 AI 인물의 획득은 차단됩니다."
+  setting_bm_prevalence_extremely_rare: "극히 희귀"
+  setting_bm_prevalence_extremely_rare_desc: "혈마법 획득에 관한 AI 결정 및 상호작용 가중치에 0.01(기본값의 100분의 1)을 곱합니다. AI 인물은 자연 생성되거나 유전된 혈법사 특성의 10%를 유지합니다."
+  setting_bm_prevalence_rare: "희귀"
+  setting_bm_prevalence_rare_desc: "혈마법 획득에 관한 AI 결정 및 상호작용 가중치에 0.10(기본값의 10분의 1)을 곱합니다. AI 인물은 자연 생성되거나 유전된 혈법사 특성의 40%를 유지합니다."
+  setting_bm_prevalence_uncommon: "드문 편"
+  setting_bm_prevalence_uncommon_desc: "혈마법 획득에 관한 AI 결정 및 상호작용 가중치에 0.50(기본값의 절반)을 곱합니다. AI 인물은 자연 생성되거나 유전된 혈법사 특성의 70%를 유지합니다."
+  setting_bm_prevalence_default: "기본"
+  setting_bm_prevalence_default_desc: "기존 혈법사 자연 발생, 유전, 의식 및 상호작용 빈도를 사용합니다."
+  setting_bm_prevalence_more_frequent: "더 자주"
+  setting_bm_prevalence_more_frequent_desc: "혈마법 획득에 관한 AI 결정 및 상호작용 가중치에 2.00을 곱합니다. AI 신생아는 혈법사 부모 한 명에게서 약 50% 확률로 유전받고 약 1.25% 확률로 자연 발생합니다."
+  rule_bm_lore: "혈법사 세계관"
+  setting_bm_lore_historical: "역사적 세계"
+  setting_bm_lore_historical_desc: "정수 교단과 역사 세계에 맞춘 종교적 유산 및 성지망을 사용합니다."
+  setting_bm_lore_agot: "왕좌의 게임"
+  setting_bm_lore_agot_desc: "Blood Mages - AGOT Religions 보조 모드를 함께 불러오면 역사 세계의 교단을 칠신, 옛 신, 익사한 신, 를로르, 로인과 발리리아의 설정에 맞는 전통으로 대체합니다."
+  rule_bm_physical_alteration: "혈법사 외형"
+  setting_bm_physical_alteration_none: "변화 없음"
+  setting_bm_physical_alteration_none_desc: "혈마법은 혈법사의 눈동자색이나 머리카락색을 바꾸지 않습니다."
+  setting_bm_physical_alteration_eyes: "눈만"
+  setting_bm_physical_alteration_eyes_desc: "혈마법 숙련도가 높아질수록 혈법사의 눈동자색이 점차 변하지만 머리카락은 변하지 않습니다."
+  setting_bm_physical_alteration_eyes_hair: "눈과 머리카락"
+  setting_bm_physical_alteration_eyes_hair_desc: "혈마법 숙련도가 높아질수록 혈법사의 눈이 점차 변하고, 높은 숙련도에서는 머리카락이 하얗게 변합니다."
+  rule_bm_initiation_faith_requirement: "혈법사 입문 신앙"
+  setting_bm_initiation_dedicated_cult: "전용 피의 교단"
+  setting_bm_initiation_dedicated_cult_desc: "정수 교단 또는 혈마법 교단으로 명시된 신앙의 추종자만 입문 의식을 사용할 수 있습니다."
+  setting_bm_initiation_cult_or_witchcraft_accepted: "피의 교단 또는 주술 허용"
+  setting_bm_initiation_cult_or_witchcraft_accepted_desc: "정수 교단, 혈마법 교단으로 명시된 신앙 또는 주술을 허용하는 신앙의 추종자는 입문 의식을 사용할 수 있습니다."
+  rule_quintessence_religion: "혈마법사 종교"
+  setting_quintessence_religion_enabled: "활성화됨"
+  setting_quintessence_religion_enabled_desc: "혈법사 신앙을 받아들이기로 한 결정이 가능해졌습니다."
+  setting_quintessence_religion_disabled: "비활성화됨"
+  setting_quintessence_religion_disabled_desc: "혈법사 신앙을 받아들이기로 한 결정은 무효화됩니다."
+  setting_quintessence_religion_enabled_player_only: "플레이어 전용"
+  setting_quintessence_religion_enabled_player_only_desc: "오직 플레이어만이 혈법사 신앙을 받아들이기로 한 결정을 사용할 수 있습니다."

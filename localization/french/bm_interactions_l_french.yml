@@ -1,35 +1,35 @@
 ﻿l_french:
- IN_COURT_OR_IMPRISONED: "Ne peut guérir que soi-même ou ses courtisans" #deepl:928610819
- NOT_ask_for_blood_magic_interaction_requirement: "Doit être votre ami, votre meilleur ami, votre amant ou votre âme sœur." #deepl:3542861113
- NOT_grant_lifeforce_interaction_requirement: "Il faut [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] ou [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] pour accorder la force de vie." #deepl:2149478437
- ask_for_blood_magic_interaction: "Demandez la magie du sang" #deepl:37038492
- ask_for_blood_magic_interaction_desc: "[recipient.GetShortUINameNoTooltip] se voit accorder le pouvoir de la magie du sang" #deepl:1589689772
- ask_for_blood_magic_interaction_requirement: "Doit être votre ami, votre meilleur ami, votre amant ou votre âme sœur." #deepl:3542861113
- bm_get_blood_magic_from_prisoner_interaction: "Obtenir la magie du sang du prisonnier" #deepl:3055816831
- bm_get_blood_magic_from_prisoner_interaction.desc: "Je consomme leur chair pour tenter d'acquérir leur magie sanguine." #deepl:204884809
- bm_get_blood_magic_from_prisoner_interaction.fail: "Je ne parviens pas à devenir un mage de sang" #deepl:2306158430
- bm_get_blood_magic_from_prisoner_interaction.success: "Je deviens un mage de sang" #deepl:1851986320
- grant_blood_magic_interaction: "Faites-en un mage de sang" #deepl:2326959525
- grant_blood_magic_interaction_desc: "[recipient.GetShortUINameNoTooltip] se verra accorder le pouvoir de la magie du sang" #deepl:245601515
- grant_crimson_champion_interaction: "Devenir Crimson Champion" #deepl:1289707598
- grant_crimson_champion_interaction_desc: "Canalisez votre force vitale dans [recipient.GetShortUINameNoTooltip], en améliorant en permanence leurs capacités de combat grâce à la magie du sang." #deepl:2258187127
- grant_crimson_warrior_interaction: "Se transformer en guerrier cramoisi" #deepl:2018519808
- grant_crimson_warrior_interaction_desc: "Canalisez votre force vitale dans [recipient.GetShortUINameNoTooltip], en améliorant en permanence leurs capacités de combat grâce à la magie du sang." #deepl:2258187127
- grant_lifeforce_interaction: "Octroi de la force vitale" #deepl:2025139764
- grant_lifeforce_interaction.grant_major: "Octroi de la force vitale majeure" #deepl:3131760285
- grant_lifeforce_interaction.grant_minor: "Accorder une force de vie mineure" #deepl:823894677
- grant_lifeforce_interaction.toast: "J'ai accordé à [recipient.GetShortUINameNoTooltip] la force vitale" #deepl:1722360946
- grant_lifeforce_interaction_desc: "Canalisez votre force vitale sur [recipient.GetShortUINameNoTooltip]." #deepl:1416711648
- grant_lifeforce_interaction_requirement: "Il faut [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] ou [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] pour accorder la force de vie." #deepl:2149478437
- grant_lifeforce_interaction_reversed: "Lifedrain inversé" #deepl:2512164098
- grant_lifeforce_interaction_reversed_desc: "[recipient.GetShortUINameNoTooltip] était [GetModifier('lifedrained_modifier').GetNameWithTooltip], mais je peux le leur rendre" #deepl:687278259
- heal_disease_benediction: "Guérir les maladies mortelles" #deepl:3480333402
- heal_disease_benediction_desc: "Guérir les maladies mortelles" #deepl:3480333402
- heal_disease_major: "Guérir les maux" #deepl:442751769
- heal_disease_major_desc: "Guérir les maux" #deepl:442751769
- heal_disease_minor: "Guérison d'une maladie mineure" #deepl:3250309205
- heal_disease_minor_desc: "Guérison d'une maladie mineure" #deepl:3250309205
- lifeforce_modifier_crimson_champion: "Champion cramoisi" #deepl:2139071365
- lifeforce_modifier_crimson_champion_desc: "Le sang de ce guerrier a été imprégné de la puissance des arcanes, ce qui lui confère des capacités de combat surnaturelles." #deepl:1801694215
- lifeforce_modifier_crimson_warrior: "Guerrier cramoisi" #deepl:338121836
- lifeforce_modifier_crimson_warrior_desc: "Le sang de ce guerrier a été imprégné de la puissance des arcanes, ce qui lui confère des capacités de combat surnaturelles." #deepl:1801694215
+ IN_COURT_OR_IMPRISONED: "Vous ne pouvez soigner que votre propre personne ou les membres de votre cour"
+ NOT_ask_for_blood_magic_interaction_requirement: "Cette personne doit être votre amie, votre meilleure amie, votre amante ou votre âme sœur."
+ NOT_grant_lifeforce_interaction_requirement: "Il faut [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] ou [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] pour accorder de la force vitale."
+ ask_for_blood_magic_interaction: "Demander le don de l'hématurgie"
+ ask_for_blood_magic_interaction_desc: "Demandez à [recipient.GetShortUINameNoTooltip] de vous transmettre le pouvoir de l'hématurgie."
+ ask_for_blood_magic_interaction_requirement: "Cette personne doit être votre amie, votre meilleure amie, votre amante ou votre âme sœur."
+ bm_get_blood_magic_from_prisoner_interaction: "Dévorer un hématurge"
+ bm_get_blood_magic_from_prisoner_interaction.desc: "Je dévorerai la chair de cette personne dans l'espoir de m'approprier son hématurgie."
+ bm_get_blood_magic_from_prisoner_interaction.fail: "Je ne parviens pas à m'approprier l'hématurgie"
+ bm_get_blood_magic_from_prisoner_interaction.success: "Je deviens hématurge"
+ grant_blood_magic_interaction: "Transmettre l'hématurgie"
+ grant_blood_magic_interaction_desc: "Accordez à [recipient.GetShortUINameNoTooltip] le pouvoir de l'hématurgie."
+ grant_crimson_champion_interaction: "Faire de cette personne un champion écarlate"
+ grant_crimson_champion_interaction_desc: "Insufflez votre force vitale à [recipient.GetShortUINameNoTooltip] afin d'accroître définitivement ses capacités martiales par l'hématurgie."
+ grant_crimson_warrior_interaction: "Faire de cette personne un guerrier écarlate"
+ grant_crimson_warrior_interaction_desc: "Insufflez votre force vitale à [recipient.GetShortUINameNoTooltip] afin d'accroître définitivement ses capacités martiales par l'hématurgie."
+ grant_lifeforce_interaction: "Accorder de la force vitale"
+ grant_lifeforce_interaction.grant_major: "Accorder une force vitale majeure"
+ grant_lifeforce_interaction.grant_minor: "Accorder une force vitale mineure"
+ grant_lifeforce_interaction.toast: "J'ai accordé de la force vitale à [recipient.GetShortUINameNoTooltip]"
+ grant_lifeforce_interaction_desc: "Transmettez une part de votre force vitale à [recipient.GetShortUINameNoTooltip]."
+ grant_lifeforce_interaction_requirement: "Il faut [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] ou [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] pour accorder de la force vitale."
+ grant_lifeforce_interaction_reversed: "Restaurer la force vitale"
+ grant_lifeforce_interaction_reversed_desc: "[recipient.GetShortUINameNoTooltip] a été [GetModifier('lifedrained_modifier').GetNameWithTooltip] ; je peux lui rendre la force qui lui a été arrachée."
+ heal_disease_benediction: "Guérir un mal mortel"
+ heal_disease_benediction_desc: "Guérir un mal mortel"
+ heal_disease_major: "Guérir un mal grave"
+ heal_disease_major_desc: "Guérir un mal grave"
+ heal_disease_minor: "Guérir un mal bénin"
+ heal_disease_minor_desc: "Guérir un mal bénin"
+ lifeforce_modifier_crimson_champion: "Champion écarlate"
+ lifeforce_modifier_crimson_champion_desc: "Le sang de ce guerrier a été imprégné de puissance arcanique, lui conférant des capacités martiales surnaturelles."
+ lifeforce_modifier_crimson_warrior: "Guerrier écarlate"
+ lifeforce_modifier_crimson_warrior_desc: "Le sang de ce guerrier a été imprégné de puissance arcanique, lui conférant des capacités martiales surnaturelles."

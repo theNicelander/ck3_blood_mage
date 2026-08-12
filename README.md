@@ -1,12 +1,55 @@
 # Blood Mages
 
+## Local fork
+
+This repository is an independent CK3 1.19 compatibility fork of [Blood Mages by Nicelander](https://steamcommunity.com/sharedfiles/filedetails/?id=3470491478). Relative to the original mod, it rebases religion, duel, decision-AI, trait, and character-template definitions for CK3 1.19; scopes duplicate localization keys; and adds portrait effects that evolve with Blood Mage mastery. The detailed gameplay history and local compatibility summary are in `CHANGELOG.md`.
+
 This mod is for you if:
 
 - You love playing a single character
 - You want a way for your character to live forever, without being completely immortal
 - You want your character to gain and level up positive physical traits (intelligent, beautiful, etc) in a way that feels part of the game
 
-**Maximum compatibility**: Doesn't overwrite any base game files to work with most other mods, even large overhaul mods such as EK2 or AGOT (tested).
+**Compatibility**: Uses namespaced content and does not overlay vanilla religion definitions. The
+optional **Blood Mages - Vanilla Religions** submod provides native parent-religion integration for
+players who prefer it and can accept religion-mod conflicts. Other mods can mark a faith as a Blood
+Magic cult with the hidden `blood_magic_cult_faith` doctrine parameter; the provider remains
+optional because Blood Mages does not reference its database identifiers.
+The **Blood Mage Initiation Faith** game rule chooses whether the cultist initiation ritual requires
+this dedicated marker or also permits characters whose faith accepts witchcraft.
+
+The **Blood Mage Prevalence** game rule controls how readily Blood Magic spreads beyond player
+characters:
+
+| Setting | AI acquisition weight | Naturally generated/inherited AI traits retained |
+| --- | --- | --- |
+| Player Only | 0× | 0% |
+| Extremely Rare | 0.01× Default | 10% |
+| Rare | 0.10× Default | 40% |
+| Uncommon | 0.50× Default | 70% |
+| Default | 1.00× | 100% |
+| More Frequent | 2.00× Default | 100%, plus increased newborn prevalence |
+
+The acquisition multiplier scales each AI decision or interaction's existing weight; it is not an
+absolute chance that every AI character becomes a Blood Mage. For example, the two annually checked
+initiation decisions have a 10% Default AI chance when eligible, so Rare changes each to 1% and
+Extremely Rare changes each to 0.1%. Character interactions also depend on valid targets, check
+cadence, relationships, and their own willingness modifiers, so they do not have one universal
+absolute probability.
+
+The retention percentage is a separate one-time roll for AI traits assigned through natural
+generation or inheritance. The rule does not reduce player access to Blood Mage decisions or
+interactions. **Default**
+preserves the mod's original balance, **Uncommon** provides a moderate reduction, and **Rare** and **Extremely Rare** are intended
+for long campaigns where unrestricted AI propagation would otherwise saturate major dynasties.
+
+The update is compatible with existing saves, which continue with **Default** behavior and do not
+retroactively remove Blood Mages. Select a different prevalence setting when starting a new campaign.
+
+Choose **Blood Mage Lore: Historical** for vanilla CK3. For AGOT, load the small optional
+[**Blood Mages - AGOT Religions**](https://steamcommunity.com/sharedfiles/filedetails/?id=3775630683) companion after A Game of Thrones and Blood Mages, then choose
+**Blood Mage Lore: A Game of Thrones**. The companion swaps out the vanilla-world cult database
+for Westerosi traditions and holy sites without making AGOT a dependency of the main mod.
 
 ## Overview
 
@@ -23,6 +66,25 @@ The Blood Mage trait features five distinct tracks:
 - **Hematurgy**: Absorb traits and harvest lifeforce
 
 Each track gains experience as you use related abilities, with ten progressive tiers of power. Maxing them all out might take you 100 years, costing tens of thousands of piety, and the benefits reflect that. 
+
+Blood Mages owns a Blood Magic story panel that tracks all five disciplines in
+a compact two-row icon grid, the exact Major and Minor Lifeforce stack counts,
+attunement, and the core
+progression decisions. After those decisions it shows independently
+collapsible, scrollable rosters for the Blood Golems and the Crimson
+Warriors/Champions currently serving at the Blood Mage's court; an empty
+roster collapses to a compact `None` row. Opening the Situations window repairs
+a missing player story when necessary and refreshes the counters and rosters;
+each roster has a small standard refresh button for manual updates. Lifeforce
+and Attunement labels explain their resource and advancement rules on hover.
+
+Compatibility submods can shadow the story definition at its exact virtual path
+to add integration-only features without taking ownership of its lifecycle,
+progression display, or roster implementation. The interactive roster control
+requires a complete CK3 1.19.0.6 overlay of `gui/window_situation_list.gui`
+because the vanilla story-cycle row exposes no additive widget hook. Generic
+scripted-GUI contracts gate and refresh the custom renderer, allowing a later
+compatibility submod to extend it without optional links in Blood Mages.
 
 ## Lifeforce System
 
@@ -53,13 +115,34 @@ Blood Mages can use this Lifeforce to perform various actions:
 - Create Blood Golems, and enhance their traits at the cost of piety
 - Drain congenital traits from prisoners (beauty, intelligence, physique, giant, fecund)
 
-## The Cult of Blood
+## The Cult of Quintessence
 
-Blood Mages can follow their own unique faith, the Cult of Blood:
+Blood Mages can follow their own unique religion, the Cult of Quintessence:
 
 - **Holy Sites**: Almost 50 locations across Europe
 - **Special Bonuses**: Each site grants +1 to skills, to balance the number of sites
 - **Blood Magic University**: Build special duchy buildings to enhance magical study
+
+### Automatic syncretism faith selection
+
+There is no manual religion-type selector when a character converts. The conversion automatically
+examines the character's previous faith and chooses the matching Cult of Quintessence variant:
+Christian, Islamic, Jewish, Eastern, or Sinitic Syncretism; an Ásatrú-specific traditional faith;
+or a faith for other unreformed traditions. These are standalone faiths within the Cult of
+Quintessence religion, so the main mod does not modify any vanilla religion definitions. If the
+previous faith does not match a supported religious family, the Christian Syncretism variant is
+used as the backwards-compatible fallback.
+
+### Optional Vanilla Religions submod
+
+**Blood Mages - Vanilla Religions** moves native integration into a separate compatibility submod.
+It adds one lore-specific Blood Mage cult to every vanilla religion, automatically converts each
+character to the cult belonging to their previous religion, and combines that religion's complete
+holy-site set with the Quintessence network.
+
+The Cult of the Crimson Ka is its Egyptian–Kushite branch. Because CK3 requires complete religion
+overlays to add faiths to existing religions, the submod is intentionally optional while this main
+mod remains free of vanilla religion overrides.
 
 ## Getting Started
 
