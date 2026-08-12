@@ -1,0 +1,15 @@
+﻿namespace = bm_reformation_repair
+
+# Console fallback for affected saves: event bm_reformation_repair.0001
+bm_reformation_repair.0001 = {
+	type = character_event
+	hidden = yes
+
+	trigger = {
+		bm_can_repair_quintessence_reformation_trigger = yes
+	}
+
+	immediate = {
+		bm_repair_quintessence_reformation_effect = yes
+	}
+}
