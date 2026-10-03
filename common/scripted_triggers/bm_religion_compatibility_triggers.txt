@@ -1,0 +1,24 @@
+﻿bm_is_blood_cult_faith_trigger = {
+	faith = {
+		OR = {
+			religion = { is_in_family = rf_quintessence }
+			has_doctrine_parameter = blood_magic_cult_faith
+		}
+	}
+}
+
+bm_meets_blood_mage_initiation_faith_requirement_trigger = {
+	OR = {
+		AND = {
+			has_game_rule = bm_initiation_dedicated_cult
+			bm_is_blood_cult_faith_trigger = yes
+		}
+		AND = {
+			has_game_rule = bm_initiation_cult_or_witchcraft_accepted
+			OR = {
+				bm_is_blood_cult_faith_trigger = yes
+				faith = { has_doctrine_parameter = witchcraft_accepted }
+			}
+		}
+	}
+}

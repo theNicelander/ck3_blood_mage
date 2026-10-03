@@ -1,5 +1,13 @@
 # Changelog - Highlights
 
+## Unreleased
+* Migrated religion definitions to the CK3 1.19 folder structure (`religion_types/`, `holy_site_types/`, `religion_family_types/`, `doctrine_types/`, `doctrine_group_types/`).
+* Retained standalone Cult of Quintessence heritage faiths and added automatic conversion routing by religious origin (`bm_convert_to_blood_cult_by_heritage_effect`).
+* Added `bm_initiation_faith_requirement` game rule with Dedicated Blood Cult (default) and Blood Cult or Witchcraft Accepted settings.
+* Added hidden `blood_magic_cult_faith` doctrine parameter for cross-mod integration.
+* Added cult reformation repair decision (`bm_repair_quintessence_reformation_decision`) and event fallback.
+* Refreshed religion localization and game rule text across all supported languages.
+
 ## 15.37
 * Changed decisions targetting player, into character interactions instead: Blood Rune / Education / Crimson Empowerment / Attune Lifeforce / Channel lifeforce 
 * Lots of testing, to make sure AI uses the interactions, some they weren't doing before

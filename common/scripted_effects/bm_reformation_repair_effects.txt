@@ -1,0 +1,13 @@
+﻿bm_repair_quintessence_reformation_effect = {
+	faith = {
+		remove_religious_head_title = yes
+		if = {
+			limit = { has_doctrine = doctrine_temporal_head }
+			remove_doctrine = doctrine_temporal_head
+		}
+		if = {
+			limit = { NOT = { has_doctrine = doctrine_no_head } }
+			add_doctrine = doctrine_no_head
+		}
+	}
+}
