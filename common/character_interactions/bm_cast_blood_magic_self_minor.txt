@@ -23,7 +23,6 @@
             trigger_event = { id = bm_channel_lifeforce_enlightenment_minor.001 }
             remove_character_modifier = lifeforce_modifier_minor
             add_xp_enlightenment = yes
-            add_piety = -75
             custom_tooltip = channel_lifeforce_enlightenment_minor.effects_list
         }
     }
@@ -65,7 +64,6 @@ bm_cast_blood_magic_self_attune_lifeforce = {
         scope:actor = {
             trigger_event = { id = bm_attune_lifeforce.001 } 
             remove_character_modifier = lifeforce_modifier_minor
-            add_piety = -25
             custom_tooltip = bm_attune_lifeforce.effects_list
         }
     }

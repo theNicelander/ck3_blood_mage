@@ -1,5 +1,9 @@
 # Changelog - Highlights
 
+## Unreleased
+* Updated Blood Mage healing for CK3 1.19 age-related ailments: Heal Ailment now cures Withering Mind, Clouded Eyes, and Fragile Bones alongside Infirm, while Heal Deadly Ailment cures Faltering Heart.
+* Fixed duplicate piety deduction when channeling minor lifeforce or attuning lifeforce.
+
 ## 15.37
 * Changed decisions targetting player, into character interactions instead: Blood Rune / Education / Crimson Empowerment / Attune Lifeforce / Channel lifeforce 
 * Lots of testing, to make sure AI uses the interactions, some they weren't doing before
