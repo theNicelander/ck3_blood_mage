@@ -19,6 +19,7 @@ Deeper CK3 patterns live in `.agents/rules/`:
 - `ck3-characters.md`: traits, XP tracks, characters, stories.
 - `ck3-ai.md`: `ai_will_do`, `ai_check_interval`, interaction targeting, weights.
 - `ck3-script-values.md`: script values, math, scopes, localization formatting.
+- `pr-context.md`: persisting branch/PR context, core concepts, and key decisions in `docs-ai/<pr-name>.md`.
 
 ## Branch awareness
 
@@ -36,7 +37,7 @@ Parts of this file describe the **1.19 line** (PR #94): the `religion_types` lay
 | `localization/<language>/` | `.yml` per language. English is the source. |
 | `llm_context/` | Reference notes about CK3 for LLMs (traits, modifiers, effects). Read them before writing new content. |
 | `docs/` | Images used by README/Workshop. Put images here only. |
-| `docs-ai/` | Written documentation for humans and agents (e.g. PR reviews). Put new `.md` docs here, not in `docs/`. |
+| `docs-ai/` | Written documentation for humans and agents (e.g. PR reviews, `docs-ai/<pr-name>.md` branch/PR context docs). Put new `.md` docs here, not in `docs/`. |
 | `steam-workshop/`, `description.txt`, `description.md`, `README.md`, `CHANGELOG.md` | Release material |
 
 ## Naming conventions
@@ -90,16 +91,17 @@ Parts of this file describe the **1.19 line** (PR #94): the `religion_types` lay
 
 ## Workflow for changes
 
-1. Read the relevant existing files and `llm_context/` before writing.
+1. When working on a branch or PR, check `docs-ai/<pr-name>.md` to load the current state, core concepts, and key decisions before starting work. Read relevant existing files and `llm_context/` before writing.
 2. Make the smallest change that works. Do not reformat, rename or reorder unrelated code.
 3. If you add a new key, effect, trigger or value, search the repo to confirm it is not already defined (`grep -rn "name =" common`).
 4. Update localization (all languages, see above).
 5. Add a line to `CHANGELOG.md` under the current unreleased version for any user-visible change, and update `README.md` if the feature is documented there.
-6. Validate:
+6. Keep `docs-ai/<pr-name>.md` updated with the current state (summary/motivation, core concepts/high-level additions, key decisions). Omit minor edits like renames or file moves.
+7. Validate:
    - `git diff --check` for whitespace errors.
    - **CK3-Tiger** (`ck3-tiger`) against the matching game version is the main static validator. Treat new errors as blockers. Existing warnings (deprecated `ai_potential`, legacy religion localization) are known.
    - Ask the user to check `error.log` in `Documents/Paradox Interactive/Crusader Kings III/logs/` after a test run. You cannot launch the game.
-7. Tell the user what you could not verify. In-game behaviour (UI layout, AI behaviour, portraits) cannot be confirmed from the files alone.
+8. Tell the user what you could not verify. In-game behaviour (UI layout, AI behaviour, portraits) cannot be confirmed from the files alone.
 
 ## Things to avoid
 
