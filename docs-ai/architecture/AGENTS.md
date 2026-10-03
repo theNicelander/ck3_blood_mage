@@ -44,6 +44,7 @@ Keep each doc light. Use these headings, in this order:
 | `blood-mage-story.md` | The Blood Magic panel (story cycle) and its rosters |
 | `blood-mage-decisions.md` | The actions a blood mage can take and the routes into blood magic |
 | `blood-mage-traits.md` | The two lifestyle traits and their progression tracks |
+| `blood-mage-dynasty.md` | Bloodline house modifiers and the Golem house |
 
 Keep this table in step with the folder.
 
