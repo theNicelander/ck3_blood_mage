@@ -79,7 +79,7 @@ Parts of this file describe the **1.19 line** (PR #94): the `religion_types` lay
 - Every key used in script (titles, descs, option names, trigger/effect tooltips, modifier names, traits, game rules) needs an entry. Modifier descriptions use `<modifier_key>_desc`. Event text uses `<event_id>.t`, `.desc`, `.a` (or follow the repo's `.title` / `.desc` / `.a` style).
 - Use **mod-scoped keys** (`bm_...`). Do not reuse or override vanilla keys. Duplicate keys across files cause conflicts. Search for the key before adding it: `grep -rn "my_key" localization/english`.
 - Formatting and references: `[GetTrait('x').GetName(...)]`, `$other_key$`, `#bold text#!`, `@icon!`, `#tooltip:key text#!`. Check that brackets balance.
-- When adding or changing an English string, **add the key to every other language folder**. If you can't translate it, copy the English text rather than leaving the key missing, and say so in your summary. Don't machine-translate religious terms without checking existing translations.
+- **English is the single source of truth** in `localization/english/`. Non-English localizations are git-ignored and generated automatically via an external translation tool (e.g. [Paradox Translation Toolkit](https://github.com/khoeos/paradox-translation-toolkit) or `pdx-deepl` with `translation-config.json`). Do **not** manually duplicate keys across other language folders in Git.
 - Event localization lives in `localization/<lang>/event_localization/`.
 
 ## GUI rules
@@ -93,7 +93,7 @@ Parts of this file describe the **1.19 line** (PR #94): the `religion_types` lay
 1. Read the relevant existing files and `llm_context/` before writing.
 2. Make the smallest change that works. Do not reformat, rename or reorder unrelated code.
 3. If you add a new key, effect, trigger or value, search the repo to confirm it is not already defined (`grep -rn "name =" common`).
-4. Update localization (all languages, see above).
+4. Update English localization in `localization/english/` (non-English localizations are generated via translation tool and ignored by Git).
 5. Add a line to `CHANGELOG.md` under the current unreleased version for any user-visible change, and update `README.md` if the feature is documented there.
 6. Validate:
    - `git diff --check` for whitespace errors.
