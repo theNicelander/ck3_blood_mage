@@ -1,6 +1,38 @@
-﻿quintessence_religion = {
+﻿bm_physical_alteration = {
 	categories = {
-		game_modes tweaks faith
+		blood_mages game_modes tweaks
+	}
+	default = bm_physical_alteration_eyes_hair
+	bm_physical_alteration_none = {
+	}
+	bm_physical_alteration_eyes = {
+	}
+	bm_physical_alteration_eyes_hair = {
+	}
+}
+
+bm_blood_mage_prevalence = {
+	categories = {
+		blood_mages game_modes tweaks
+	}
+	default = bm_prevalence_default
+	bm_prevalence_player_only = {
+	}
+	bm_prevalence_extremely_rare = {
+	}
+	bm_prevalence_rare = {
+	}
+	bm_prevalence_uncommon = {
+	}
+	bm_prevalence_default = {
+	}
+	bm_prevalence_more_frequent = {
+	}
+}
+
+quintessence_religion = {
+	categories = {
+		blood_mages game_modes tweaks faith
 	}
 	default = quintessence_religion_enabled_player_only
     quintessence_religion_enabled = {

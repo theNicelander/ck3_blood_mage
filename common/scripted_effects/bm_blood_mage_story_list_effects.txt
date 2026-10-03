@@ -1,0 +1,76 @@
+﻿bm_recount_lifeforce_stacks_effect = {
+	# CK3 exposes whether a static modifier exists, but not its stack count.
+	# Rebuild these permanent, identical stacks in one effect so the panel can
+	# retain exact counters, including saves created before the panel existed.
+	set_variable = {
+		name = bm_lifeforce_major_stacks
+		value = 0
+	}
+	while = {
+		limit = { has_character_modifier = lifeforce_modifier_major }
+		remove_character_modifier = lifeforce_modifier_major
+		change_variable = {
+			name = bm_lifeforce_major_stacks
+			add = 1
+		}
+	}
+	while = {
+		count = var:bm_lifeforce_major_stacks
+		add_character_modifier = lifeforce_modifier_major
+	}
+
+	set_variable = {
+		name = bm_lifeforce_minor_stacks
+		value = 0
+	}
+	while = {
+		limit = { has_character_modifier = lifeforce_modifier_minor }
+		remove_character_modifier = lifeforce_modifier_minor
+		change_variable = {
+			name = bm_lifeforce_minor_stacks
+			add = 1
+		}
+	}
+	while = {
+		count = var:bm_lifeforce_minor_stacks
+		add_character_modifier = lifeforce_modifier_minor
+	}
+}
+
+bm_refresh_blood_magic_rosters_effect = {
+	bm_recount_lifeforce_stacks_effect = yes
+
+	random_owned_story = {
+		type = bm_blood_mage_story
+		clear_variable_list = bm_owned_blood_golems
+		clear_variable_list = bm_crimson_retinue
+		save_scope_as = bm_blood_mage_story_scope
+	}
+
+	every_courtier = {
+		limit = { house = house:bm_house_golem }
+
+		scope:bm_blood_mage_story_scope = {
+			add_to_variable_list = {
+				name = bm_owned_blood_golems
+				target = prev
+			}
+		}
+	}
+
+	every_courtier = {
+		limit = {
+			OR = {
+				has_character_modifier = lifeforce_modifier_crimson_warrior
+				has_character_modifier = lifeforce_modifier_crimson_champion
+			}
+		}
+
+		scope:bm_blood_mage_story_scope = {
+			add_to_variable_list = {
+				name = bm_crimson_retinue
+				target = prev
+			}
+		}
+	}
+}

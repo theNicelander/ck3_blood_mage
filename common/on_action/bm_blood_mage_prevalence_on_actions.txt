@@ -1,0 +1,41 @@
+﻿on_birth_child = {
+	on_actions = {
+		bm_apply_blood_mage_prevalence_at_birth
+	}
+}
+
+bm_apply_blood_mage_prevalence_at_birth = {
+	effect = {
+		if = {
+			limit = {
+				is_ai = yes
+				has_trait = lifestyle_blood_mage
+			}
+			bm_apply_blood_mage_prevalence_retention_effect = yes
+		}
+		else_if = {
+			limit = {
+				is_ai = yes
+				has_game_rule = bm_prevalence_more_frequent
+			}
+			if = {
+				limit = {
+					OR = {
+						scope:mother = { has_trait = lifestyle_blood_mage }
+						scope:real_father ?= { has_trait = lifestyle_blood_mage }
+					}
+				}
+				random = {
+					chance = 35
+					bm_become_blood_mage_effect = yes
+				}
+			}
+			else = {
+				random = {
+					chance = 1
+					bm_become_blood_mage_effect = yes
+				}
+			}
+		}
+	}
+}

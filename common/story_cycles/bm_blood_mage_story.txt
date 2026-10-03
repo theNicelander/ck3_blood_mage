@@ -1,0 +1,41 @@
+﻿bm_blood_mage_story = {
+	visible = yes
+
+	icon = {
+		trigger = { always = yes }
+		reference = "gfx/interface/icons/traits/blood_mage.dds"
+	}
+	background = {
+		reference = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds"
+	}
+
+	visualization = {
+		custom_string_key = "BM_BLOOD_MAGE_INFORMATION_STRING"
+		character_list = {
+			variable_name = "bm_owned_blood_golems"
+			label = "BM_OWNED_BLOOD_GOLEMS"
+		}
+		character_list = {
+			variable_name = "bm_crimson_retinue"
+			label = "BM_CRIMSON_RETINUE"
+		}
+		decisions = {
+			seek_power_decision
+			seek_power_decision_wanderer
+			manifest_lifeforce_decision
+			channel_lifeforce_bloodline
+			blood_golem_creation_decision
+			mass_lifedrain_prisoners_decision
+		}
+	}
+
+	on_setup = {
+		story_owner = {
+			bm_refresh_blood_magic_rosters_effect = yes
+		}
+	}
+
+	on_owner_death = {
+		scope:story = { end_story = yes }
+	}
+}
