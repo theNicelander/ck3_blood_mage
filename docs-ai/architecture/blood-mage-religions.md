@@ -18,7 +18,7 @@ The Cult of Quintessence religion provides an in-game religious foundation for b
   - `quintessence_faith_asatru`: Norse/Ásatrú branch focused on human sacrifice and warmongering.
   - `quintessence_faith_unreformed`: Syncretic pagan traditionalist branch.
 - **Mainline Rites**: Each faith has a 1:1 scripted mainline rite in `common/religion/rite_types/`. These rites carry the core ritual identity, matching tenets, and doctrines of each faith to avoid arbitrary engine-generated dynamic rites.
-- **Eminent & Regular Holy Sites**: Holy sites in `common/religion/holy_site_types/` give bonuses to county holders (`county_holder_character_modifier`) and global bonuses to all adherents when designated as an Eminent Holy Site (`faith_character_modifier`). Iceland's `talknafjordur` and `reykjavik` serve as the universal eminent cradle.
+- **Eminent & Regular Holy Sites**: Holy sites in `common/religion/holy_site_types/` give bonuses to county holders (`county_holder_character_modifier`) and global bonuses to all adherents when designated as an Eminent Holy Site (`faith_character_modifier`). Iceland's `talknafjordur` and `reykjavik` (along with a branch signature site) serve as the universal eminent cradle, while the full network of European capitals and major regional sites are active regular holy sites across all Quintessence faiths.
 - **Hidden Identity Doctrine (`bm_quintessence_identity_doctrine`)**: A non-visible doctrine providing the `blood_magic_cult_faith` parameter, allowing companion submods or foreign faiths to opt into blood magic cult mechanics without static code coupling.
 
 ## 3. Where the details live
