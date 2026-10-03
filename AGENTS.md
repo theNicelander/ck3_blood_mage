@@ -22,7 +22,7 @@ In `.agents/rules/`:
 - `/.agents/rules`: CK3 reference notes. Read before writing new content.
 - `docs/`: images only. `docs-ai/`: written docs for humans and agents.
 - `docs-ai/architecture/`: one doc per subsystem (e.g. `blood-mage-story.md`), always describing the **current state of the mod** and nothing else: no history, changelog or decision log. **Read the matching doc before changing that part of the codebase, and update it in the same change so it stays true.** Add a doc when you introduce a subsystem, and delete or rewrite text that is no longer true. Keep them conceptual (no costs, thresholds or other tunable numbers). See `docs-ai/architecture/AGENTS.md`.
-- Religion uses the 1.20 layout `common/religion/{religion_types,religion_family_types,holy_site_types,doctrine_types,doctrine_group_types}`. Branches based on older `main` may still have `religions/`, `religion_families/`, `holy_sites/` and a bare `add_trait = lifestyle_blood_mage`. **Check which layout the branch has. Never mix them.**
+- Religion uses the 1.20 layout `common/religion/{religion_family_types,religion_types,faith_types,rite_types,holy_site_types,doctrine_group_types,doctrine_types}`. Branches based on older `main` may still have `religions/`, `religion_families/`, `holy_sites/` and a bare `add_trait = lifestyle_blood_mage`. **Check which layout the branch has. Never mix them.**
 
 ## Naming
 
