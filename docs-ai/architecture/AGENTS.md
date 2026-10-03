@@ -45,6 +45,17 @@ Keep each doc light. Use these headings, in this order:
 | `blood-mage-decisions.md` | The actions a blood mage can take and the routes into blood magic |
 | `blood-mage-traits.md` | The two lifestyle traits and their progression tracks |
 | `blood-mage-dynasty.md` | Bloodline house modifiers and the Golem house |
+| `blood-mage-lifeforce.md` | The Lifeforce resource, positive/negative modifiers, and harvesting |
+| `blood-mage-progression.md` | Dynamic XP gains, requirement gates, cost scaling, and AI weighting |
+| `blood-mage-interactions.md` | Character interactions (draining, granting, curing, and self-casting) |
+| `blood-mage-blood-runes.md` | Crimson Runes and blood university duchy buildings |
+| `blood-mage-golems.md` | Blood golem lifecycle, creation decision, shaping duels, and template |
+| `blood-mage-crimson-empowerment.md` | The Crimson Empowerment trait, self-advancement, and warrior retinue |
+| `blood-mage-duels-and-education.md` | Duel calculations, trait draining, education enhancement, and mass lifedrain |
+| `blood-mage-prevalence-and-lifecycle.md` | Trait acquisition, birth inheritance, yearly pulses, and retention audits |
+| `blood-mage-game-rules.md` | Campaign game rules (prevalence, alterations, and religion availability) |
+| `blood-mage-events-overview.md` | Mapping of all event files to their triggering mechanisms and sibling docs |
+| `blood-mage-shared-scripting.md` | Shared triggers, opinion modifiers, nicknames, death reasons, icons, and compat |
 
 Keep this table in step with the folder.
 
