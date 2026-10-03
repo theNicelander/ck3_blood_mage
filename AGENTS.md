@@ -21,6 +21,7 @@ In `.agents/rules/`:
 - `common/`, `events/`, `gui/`, `gfx/`, `localization/<language>/` mirror vanilla.
 - `/.agents/rules`: CK3 reference notes. Read before writing new content.
 - `docs/`: images only. `docs-ai/`: written docs for humans and agents.
+- `docs-ai/architecture/`: one doc per subsystem (e.g. `blood-mage-story.md`), always describing the **current state of the mod** and nothing else: no history, changelog or decision log. **Read the matching doc before changing that part of the codebase, and update it in the same change so it stays true.** Add a doc when you introduce a subsystem, and delete or rewrite text that is no longer true. Keep them conceptual (no costs, thresholds or other tunable numbers). See `docs-ai/architecture/AGENTS.md`.
 - Religion uses the 1.20 layout `common/religion/{religion_types,religion_family_types,holy_site_types,doctrine_types,doctrine_group_types}`. Branches based on older `main` may still have `religions/`, `religion_families/`, `holy_sites/` and a bare `add_trait = lifestyle_blood_mage`. **Check which layout the branch has. Never mix them.**
 
 ## Naming
@@ -48,9 +49,10 @@ In `.agents/rules/`:
 
 ## Workflow
 
-1. Read `docs-ai/<branch-or-pr-name>.md` (if it exists), the matching rules file, and `llm_context/`.
+1. Read `docs-ai/branch-context/<branch-or-pr-name>.md` (if it exists), the matching rules file, the relevant `docs-ai/architecture/*.md`, and `llm_context/`.
 2. Smallest change that works. `grep -rn` to confirm a new key or effect isn't already defined.
 3. Update localization (english only)
-4. Follow `pr-context.md`: Keep `docs-ai/<name>.md` current with: **Summary & Motivation**, **Core Concepts & High-Level Changes**, **Key Decisions** ("decided X because Y"). Skip renames, moves, minor fixes.
+3a. Update the matching `docs-ai/architecture/*.md` so it describes the mod as it is now.
+4. Follow `pr-context.md`: Keep `docs-ai/branch-context/<name>.md` current with: **Summary & Motivation**, **Core Concepts & High-Level Changes**, **Key Decisions** ("decided X because Y"). Skip renames, moves, minor fixes.
 5. Validate: `python scripts/check_repo.py`, `git diff --check`, and `ck3-tiger` (new errors are blockers; existing deprecated `ai_potential` and legacy religion loc warnings are known).
 6. Final summary must state what you could not verify. In-game behaviour (UI, AI, portraits) can't be confirmed from files. Ask the user to check `error.log` after a test run.
