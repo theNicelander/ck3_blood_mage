@@ -1,7 +1,16 @@
-﻿repos:
-# Basic file checks and fixes
-- repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v4.2.0
-  hooks:
-    - id: trailing-whitespace
-    - id: end-of-file-fixer
+# See https://pre-commit.com for more information
+repos:
+  - repo: local
+    hooks:
+      - id: check-git-diff
+        name: Check git whitespace and conflict markers
+        entry: git diff --cached --check
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: check-ck3-repo
+        name: Check CK3 mod files (BOM, braces, newlines)
+        entry: uv run scripts/check_repo.py
+        language: system
+        files: '^(common|events|gui|localization)/.*\.(txt|gui|yml)$'
+        pass_filenames: true
