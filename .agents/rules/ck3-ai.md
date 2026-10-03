@@ -9,12 +9,12 @@ Sources: CK3 wiki (AI modding, fetched through search because the page itself wa
 
 ## Where AI is controlled
 
-| Context | Keys |
-|---|---|
-| Decision | `ai_check_interval`, `ai_will_do`, `ai_potential` (deprecated warning in 1.19; existing uses are known) |
-| Character interaction | `ai_targets`, `ai_frequency`, `ai_potential`, `ai_will_do`, `ai_accept` (the recipient's acceptance) |
-| Event option | `ai_chance = { base = N modifier = { ... } }` (relative weights between options) |
-| Scheme / activity / others | Own keys. Read the `.info` file in vanilla `game/common/<type>/` |
+| Context                    | Keys                                                                                                    |
+| -------------------------- | ------------------------------------------------------------------------------------------------------- |
+| Decision                   | `ai_check_interval`, `ai_will_do`, `ai_potential` (deprecated warning in 1.19; existing uses are known) |
+| Character interaction      | `ai_targets`, `ai_frequency`, `ai_potential`, `ai_will_do`, `ai_accept` (the recipient's acceptance)    |
+| Event option               | `ai_chance = { base = N modifier = { ... } }` (relative weights between options)                        |
+| Scheme / activity / others | Own keys. Read the `.info` file in vanilla `game/common/<type>/`                                        |
 
 ## Weight blocks
 
