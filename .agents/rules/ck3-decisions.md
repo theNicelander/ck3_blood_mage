@@ -31,4 +31,4 @@ Copy a nearby decision in `common/decisions/` for structure.
 2. Every grey-out reason explained?
 3. Cost declared once?
 4. `ai_*` set deliberately?
-5. English loc keys added for every sibling key (`ck3-localization.md`), `CHANGELOG.md` line added, Tiger clean?
+5. English loc keys added for every sibling key (`ck3-localization.md`), `CHANGELOG.md` line added?

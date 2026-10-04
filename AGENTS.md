@@ -36,7 +36,13 @@ Rules: `ck3-scripting.md` (always on), `ck3-localization.md` (always on), `ck3-d
 
 - `.txt`, `.gui`, `.yml`: UTF-8 **with BOM**, trailing newline, balanced braces.
 - Preserve each file's line endings (many are CRLF) and indentation (tabs/4 spaces mixed). Don't reformat unrelated lines.
-- Keep comments. `#tiger-ignore(...)` needs a justification comment.
+- Keep comments.
+- Use `scripts/read_ck3.py` (CLI or imported `read_ck3_file`, `find_block`, `search_files`) to read files, extract balanced `{ ... }` blocks, or inspect vanilla (`/Users/clarabotet/Petur/ck3-full`) transparently without encoding or BOM issues:
+  - CLI read: `python3 scripts/read_ck3.py read <file> [--lines start:end]`
+  - CLI extract block: `python3 scripts/read_ck3.py block <file> <block_name>` (e.g. `block <file> eminent_holy_sites`)
+  - CLI vanilla search: `python3 scripts/read_ck3.py search <pattern> --vanilla [--subpath common/religion]`
+  - Python import: `from scripts.read_ck3 import read_ck3_file, find_block, search_files`
+- Inspect game errors at `~/Documents/Paradox Interactive/Crusader Kings III/logs/error.log` (e.g. `tail -n 100 ~/Documents/"Paradox Interactive"/"Crusader Kings III"/logs/error.log`).
 
 ## Localization
 

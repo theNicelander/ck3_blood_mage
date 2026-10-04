@@ -19,4 +19,8 @@ description: Generic CK3 scripting traps and script values. Always applies when 
    - No random ranges in costs: they re-roll on every read.
    - Display in localization with `[GetPlayer.MakeScope.ScriptValue('x')|0]`.
 
+9. File reading and inspection:
+   - CK3 files use UTF-8 with BOM (`utf-8-sig`) and mixed line endings.
+   - Use `python3 scripts/read_ck3.py read <file>`, `block <file> <name>`, or `search <pattern>` (or import `scripts.read_ck3`) when analyzing mod or vanilla files (`/Users/clarabotet/Petur/ck3-full`).
+
 Mod-specific conventions (shared effects, story/roster UI, script value files) are in `docs-ai/architecture/`. Start at `docs-ai/architecture/README.md`.
