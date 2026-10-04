@@ -55,7 +55,7 @@ Costs, gating, cooldowns and AI weights are in those files. Descriptions and too
 ## How the parts connect
 
 - Gating is progression-driven. Stronger actions need more standing and more experience in the blood mage tracks (see `blood-mage-traits.md`). Using blood magic in turn grants track XP.
-- Decisions mostly trigger events (`seek_power.*`, `blood_golem.*`, `bm_channel_lifeforce_bloodline.*`, `bm_mass_lifedrain.*`, `bm_reykjavik.*`). The decision is the entry point and the event holds the story and the outcome.
+- Decisions mostly trigger events (`seek_power.*`, `blood_golem.*`, `bm_channel_lifeforce_bloodline.*`, `bm_mass_lifedrain.*`, `bm_reykjavik.*`, `bm_blood_cultist.*`). The decision is the entry point and the event holds the story and the outcome.
 - Acquisition routes share `bm_become_blood_mage_effect`, which also creates the story cycle.
 - AI uses a few shared modifiers: one for self-preservation (health) and one for acquisition through the prevalence rule. Player-only actions switch the AI off.
 

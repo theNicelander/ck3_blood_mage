@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+* Consolidated the Cult of Quintessence into a single unified faith (Cult of the Quintessence), replaced syncretic variants with universal tolerance mechanics (Adaptive tenet, Pluralistic doctrine, and cult identity opinion buffering), and converted the "Embrace the Blood Cultist Faith" decision into an interactive narrative event with choices.
+
 * Added the "Challenge the Blood Mage of Reykjavik" decision, allowing non-blood-mage characters in Vestisland (Reykjavik) to challenge an occult hermit in a Learning and Prowess duel to awaken blood magic, risking the mental and physical backlash of Crimson Initiation upon defeat.
 * Fixed Cult of Quintessence reformation being blocked after the player became its pre-reformation temporal Head of Faith. Unreformed Cult faiths now begin without a Head of Faith, and affected existing saves receive a repair decision that detaches the premature headship without destroying its holder's title or disrupting the realm.
 * Added a Blood Mage Prevalence game rule with Player Only, Extremely Rare, Rare, Uncommon, Default, and More Frequent settings. It scales AI initiation decisions and interactions, controls naturally generated and inherited Blood Mage retention, adjusts newborn prevalence, and keeps the existing behavior as the default.
@@ -26,7 +28,7 @@
 * Replaced duplicate and inline localization keys with mod-scoped localization.
 
 ## 15.37
-* Changed decisions targetting player, into character interactions instead: Blood Rune / Education / Crimson Empowerment / Attune Lifeforce / Channel lifeforce 
+* Changed decisions targetting player, into character interactions instead: Blood Rune / Education / Crimson Empowerment / Attune Lifeforce / Channel lifeforce
 * Lots of testing, to make sure AI uses the interactions, some they weren't doing before
 * Convert from witch to blood mage, no longer used by AI, to allow for witches and compatibility with Witchcraft mod
 * Lowered chance of AI taking up blood cultist faith to 5% yearly, felt it was happening too frequently
@@ -39,9 +41,9 @@
 
 ## 15.36
 * Can become blood mage, if you have a prisoner that's a blood mage, by consuming their flesh.
-* Can heal weak and one legged as well  
+* Can heal weak and one legged as well
 * AI Prioritise self, for casting positive magic
-* Golems are beardless albinos 
+* Golems are beardless albinos
 
 ## 15.35
 * Can convert friend/soulmate/consort/family to cult
@@ -73,7 +75,7 @@
 * New decision: Manifest lifeforce, at great cost of piety
 * Balance dynasty/major modifiers, generally stronger
 * Balance blood mage trait, generally stronger
-* Golems belong to same dynasty/house 
+* Golems belong to same dynasty/house
 
 ## 15.32
 * New decisions: Enhance lifeforce, to convert minor to major (later removed)
@@ -102,7 +104,7 @@
 * Trait, modifier and holy site balancing
 * Attune lifeforce, chance to get extra XP per year
 * New ANCIENT track in trat, 1xp per year, for rewarding long living characters
-* Channel minor lifeforce, for temporary bonuses 
+* Channel minor lifeforce, for temporary bonuses
 * More interface toasts, to get feedback on what happened
 * Can only convert courtiers/prisoners to cult
 * Create crimson warriors/champions, granting knights extra prowess
