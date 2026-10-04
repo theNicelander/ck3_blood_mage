@@ -21,4 +21,3 @@ Read first: `docs-ai/architecture/blood-mage-religions.md` and [ck3-religions](.
 ## Verify
 
 - The faith key appears in `faith_types`, the rite and the loc file.
-- `ck3-tiger` reports no new religion errors.

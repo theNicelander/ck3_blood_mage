@@ -36,7 +36,7 @@ Rules: `ck3-scripting.md` (always on), `ck3-localization.md` (always on), `ck3-d
 
 - `.txt`, `.gui`, `.yml`: UTF-8 **with BOM**, trailing newline, balanced braces.
 - Preserve each file's line endings (many are CRLF) and indentation (tabs/4 spaces mixed). Don't reformat unrelated lines.
-- Keep comments. `#tiger-ignore(...)` needs a justification comment.
+- Keep comments.
 
 ## Localization
 
