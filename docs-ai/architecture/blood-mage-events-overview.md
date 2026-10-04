@@ -12,6 +12,10 @@ This document maps all event files in the `events/` directory to their correspon
 - **Duel Resolution.** Several event files resolve contested attribute challenges (such as duels for education, golem creation, or trait theft).
 - **Yearly Maintenance.** Background narrative events and progression checks are dispatched via pulse events.
 
+## Mod conventions
+
+- **One namespace per event file.** Each file in `events/` declares a single namespace.
+
 ## Where the details live
 
 | Event File | Namespace | Triggered By | Subsystem & Sibling Doc |

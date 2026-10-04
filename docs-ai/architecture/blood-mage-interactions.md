@@ -34,7 +34,7 @@ Character interactions provide targeted, interpersonal expressions of blood magi
 - Interactions trigger scripted effects in `bm_blood_magic_used_effects.txt` for Lifeforce consumption and XP award.
 - Self-targeted interactions hand off to event chains (such as `bm_education_enhance.txt`, `bm_crimson_rune.001`, and `bm_crimson_empowerment_event.001`).
 - Granting martial prowess applies warrior/champion modifiers and adds those courtiers to the story roster described in `blood-mage-story.md`.
-- AI targeting strictly follows the patterns documented in `.agents/rules/ck3-decisions-ai.md` and `ck3-ai.md` using `ai_targets` scopes to avoid expensive global character scans.
+- AI targeting strictly follows the patterns documented in `.agents/rules/ck3-decisions.md` and `ck3-ai.md` using `ai_targets` scopes to avoid expensive global character scans.
 
 ## Gotchas
 

@@ -1,6 +1,6 @@
 ---
 trigger: model_decision
-description: Religions, faiths, rites, doctrines, holy sites and cross-mod compatibility in this mod. Read before touching common/religion or faith-related script/localization.
+description: Religions, faiths, rites, doctrines, holy sites and cross-mod compatibility. Read before touching common/religion or faith-related script/localization.
 ---
 
 # Religions, Faiths and Rites (CK3 1.20)
@@ -24,16 +24,15 @@ The 1.20 religion system is split into specialized subdirectories under `common/
 
 - Hierarchy: family → religion → faith → rite; lower levels override higher.
 - Faith Holy Sites: Split into `eminent_holy_sites = { ... }` (up to `eminent_holy_sites_max`, default 3; gives global `faith_character_modifier`) and `holy_sites = { ... }` (regular sites; gives local `county_holder_character_modifier`).
-- Mainline Rites: Always script a 1:1 mainline rite in `bm_rite_types.txt` for any new faith, and link it via `main_rite = <rite_key>` in `bm_faith_types.txt`.
-- Hidden Identity Doctrine: The hidden doctrine carrying `blood_magic_cult_faith` must have complete UI metadata (`icon`, name key, `visible = no`) and link to its group via `doctrine_group_type`.
+- Mainline Rites: Always script a 1:1 mainline rite in `rite_types` for any new faith, and link it via `main_rite = <rite_key>` in the faith definition.
+- Hidden doctrines used as flags still need complete UI metadata (`icon`, name key, `visible = no`) and a `doctrine_group_type`.
 - Mutating Faiths: `add_doctrine` mutates the faith for all followers globally: always guard with `NOT = { has_doctrine = x }` and `hidden_effect`.
 
 ## Compatibility (non-negotiable)
 
 - Don't redefine a vanilla religion or faith: a same-key definition replaces it and every other mod's changes.
 - No `replace_path` for religion folders.
-- No `faith:<other_mods_faith>` in this repo. Detect optional mods via global variables or doctrine parameters (`blood_magic_cult_faith`); route conversion through the scripted effect (`bm_religion_conversion_effects.txt`) that companion mods can override.
-- Native-faith integration lives in optional companion mods outside this repo.
+- No `faith:<other_mods_faith>` in this repo. Detect optional mods via global variables or doctrine parameters, and route faith conversion through a scripted effect other mods can override.
 
 ## Localization
 

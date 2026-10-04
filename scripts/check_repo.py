@@ -25,7 +25,6 @@ EXCLUDE_DIRS = {
     ".agents",
     "docs",
     "docs-ai",
-    "llm_context",
     "steam-workshop",
     "tests",
     "scratch",

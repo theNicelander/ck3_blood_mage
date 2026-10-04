@@ -14,6 +14,11 @@ Prevalence and lifecycle logic controls how blood mages appear, spread, age, and
 - **Yearly Review Pulse.** `yearly_blood_mage_pulse` in `common/on_action/bm_yearly_pulse.txt` periodically audits characters across the realm, firing yearly progression events (`events/bm_yearly_events.txt`) and enforcing prevalence caps on unreviewed AI mages.
 - **Character Templates.** Preset templates in `bm_character_templates.txt` provide baseline parameters for spawning new blood mages, wandering practitioners, and artificial constructs.
 
+## Mod conventions
+
+- **Single entry point.** The trait is granted only through `bm_become_blood_mage_effect`, which also creates the story. Never use a bare `add_trait = lifestyle_blood_mage` elsewhere.
+- **AI acquisition and retention follow the prevalence rule.** They go through the prevalence effects and scripted modifiers, not hard-coded chances.
+
 ## Where the details live
 
 | Piece | File |

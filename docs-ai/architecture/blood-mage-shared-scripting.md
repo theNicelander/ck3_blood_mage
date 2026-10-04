@@ -15,6 +15,10 @@ This document covers cross-cutting system assets and conventions that underpin a
 - **Third-Party Compatibility.** External overhaul mod traits, faiths, or mechanics must never be referenced directly. Mod compatibility is achieved by querying global flags (e.g. `has_global_variable = AGOT_is_loaded`) as detailed in `.agents/rules/ck3-religions.md`.
 - **Validation Standards.** Script files must be UTF-8 with BOM, use trailing newlines, and maintain balanced braces.
 
+## Mod conventions
+
+- **Optional-mod compatibility.** Guard with `has_global_variable = AGOT_is_loaded` or doctrine parameters. Never reference another mod's traits, faiths or titles directly.
+
 ## Where the details live
 
 | Piece | File |

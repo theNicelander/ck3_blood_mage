@@ -26,6 +26,11 @@ The Cult of Quintessence religion family provides an in-game spiritual and theol
 - **Faith-Gated Blood Initiation.** Initiation into blood magic through the cult decision is governed by campaign game rules (`bm_initiation_faith_requirement`). Depending on the rule, initiation may require following a recognized cult faith or accept faiths where witchcraft is tolerated or celebrated.
 - **Reformation Repair.** Unreformed Quintessence faiths are designed without a temporal head of faith. To prevent game engine edge cases or legacy headship states from blocking faith reformation, human rulers can use a repair decision to safely clear temporal titles and reset headship to no head.
 
+## Mod conventions
+
+- **Heritage conversion is the extension point.** Conversion routing lives in one scripted effect so companion mods can override it. Optional native-faith integration lives outside this repo.
+- **The hidden identity doctrine needs UI metadata.** It carries `icon`, a name key and `visible = no`, and links to its group through `doctrine_group_type`.
+
 ## Where the details live
 
 | Concept | File |

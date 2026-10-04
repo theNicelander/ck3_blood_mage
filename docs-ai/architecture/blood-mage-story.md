@@ -13,6 +13,11 @@ A per-character story cycle that backs the "Blood Magic" panel. It gives a blood
 - **Lifeforce counters.** The refresh also recounts Lifeforce modifier stacks, because script can't read a modifier's stack count.
 - **Lifetime.** The story is created once per blood mage, rebuilt on setup and ended when the owner dies.
 
+## Mod conventions
+
+- **Adding a story field.** Update in order: story effects, scripted GUI, localization, then `window_situation_list.gui` (Blood Mage sections only).
+- **New blood magic decisions** must be added to the story's decision list to show in the panel.
+
 ## Where the details live
 
 | Piece | File |
