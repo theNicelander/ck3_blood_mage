@@ -56,6 +56,7 @@ Keep each doc light. Use these headings, in this order:
 | `blood-mage-game-rules.md` | Campaign game rules (prevalence, alterations, and religion availability) |
 | `blood-mage-events-overview.md` | Mapping of all event files to their triggering mechanisms and sibling docs |
 | `blood-mage-shared-scripting.md` | Shared triggers, opinion modifiers, nicknames, death reasons, icons, and compat |
+| `blood-mage-trait-inheritance.md` | Direct trait inheritance, birth prevalence auditing, and lineage modifiers |
 | `blood-mage-religions.md` | The Cult of Quintessence religion family, 7 syncretic faiths, mainline rites, and holy sites |
 
 Keep this table in step with the folder.

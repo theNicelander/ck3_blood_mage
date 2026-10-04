@@ -51,7 +51,7 @@ All routes call `bm_become_blood_mage_effect`. They differ in fantasy:
 - **Taught by a mage.** A blood mage grants blood magic to someone, who gains opinion of them. Non-mages can also ask a mage who is their friend, lover or soulmate.
 - **Taken from a prisoner.** A non-mage can try to take blood magic from an imprisoned mage, at a terrible cost to the prisoner.
 - **Conversion.** A witch can trade witchcraft for blood magic.
-- **Birth and inheritance.** The trait is hereditary. The prevalence game rules decide how often AI children get it, and whether AI characters keep it.
+- **Birth and inheritance.** The trait is hereditary (see `blood-mage-trait-inheritance.md`). The prevalence game rules decide how often AI children get it, and whether AI characters keep it.
 - **Scripted starts.** Character templates can give the trait.
 - **AI.** The AI uses the ask and grant interactions. Their willingness is scaled by the prevalence rule.
 
