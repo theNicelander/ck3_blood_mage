@@ -9,10 +9,15 @@ Prevalence and lifecycle logic controls how blood mages appear, spread, age, and
 ## Concepts
 
 - **Lifecycle Entrypoint.** Every route that awards `lifestyle_blood_mage` is routed through the central scripted effect `bm_become_blood_mage_effect`. This guarantees that the Blood Magic story cycle is immediately created (`bm_ensure_blood_mage_story_effect`) and prevalence review flags are applied.
-- **Birth Inheritance.** On-action `on_birth_child` triggers `bm_apply_blood_mage_prevalence_at_birth`. Depending on game rule settings, children born to blood mage parents may inherit the trait, and rare spontaneous manifestations can occur.
+- **Birth Inheritance.** On-action `on_birth_child` triggers `bm_apply_blood_mage_prevalence_at_birth`. Depending on game rule settings, children born to blood mage parents may inherit the trait, and rare spontaneous manifestations can occur (see `blood-mage-trait-inheritance.md`).
 - **Retention Filtering.** When game rules restrict prevalence (e.g. Rare, Extremely Rare, or Player Only), `bm_apply_blood_mage_prevalence_retention_effect` rolls against retention chances. AI characters who fail retention have the trait stripped immediately upon generation.
 - **Yearly Review Pulse.** `yearly_blood_mage_pulse` in `common/on_action/bm_yearly_pulse.txt` periodically audits characters across the realm, firing yearly progression events (`events/bm_yearly_events.txt`) and enforcing prevalence caps on unreviewed AI mages.
 - **Character Templates.** Preset templates in `bm_character_templates.txt` provide baseline parameters for spawning new blood mages, wandering practitioners, and artificial constructs.
+
+## Mod conventions
+
+- **Single entry point.** The trait is granted only through `bm_become_blood_mage_effect`, which also creates the story. Never use a bare `add_trait = lifestyle_blood_mage` elsewhere.
+- **AI acquisition and retention follow the prevalence rule.** They go through the prevalence effects and scripted modifiers, not hard-coded chances.
 
 ## Where the details live
 

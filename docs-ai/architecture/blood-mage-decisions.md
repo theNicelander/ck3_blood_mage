@@ -60,7 +60,7 @@ Costs, gating, cooldowns and AI weights are in those files. Descriptions and too
 ## Gotchas
 
 - A new blood magic decision must be added to the story's decision list to appear in the panel.
-- Costs are charged by the engine from the decision's `cost`. Don't charge them again in the effect (see `.agents/rules/ck3-decisions-ai.md`).
+- Costs are charged by the engine from the decision's `cost`. Don't charge them again in the effect (see `.agents/rules/ck3-decisions.md`).
 - Keep acquisition routes going through the shared effect. Don't add the trait directly.
 
 ## Not verified

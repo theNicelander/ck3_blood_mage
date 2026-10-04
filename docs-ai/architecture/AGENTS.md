@@ -1,6 +1,6 @@
 # AGENTS.md — How to write architecture docs
 
-This folder holds one doc per subsystem of the Blood Mages mod. They explain **what each part is for and how the parts fit together**. They are not a copy of the script.
+This folder holds one doc per subsystem of the Blood Mages mod. They explain **what each part is for and how the parts fit together**. They are not a copy of the script. `README.md` in this folder indexes them by source path. Generic CK3 guidance lives in `.agents/rules/`, not here: these docs cover only this mod.
 
 They describe the **current state of the mod and nothing else**. No history, no changelog, no decision log, no "previously" or "now". When something changes, rewrite the text so it is true today. Branch and PR history belongs in `docs-ai/branch-context/`.
 
@@ -25,10 +25,11 @@ Keep each doc light. Use these headings, in this order:
 
 1. **Purpose.** What the subsystem is and why the mod has it.
 2. **Concepts.** The parts, each in a sentence or two. Name the idea and how it differs from its neighbours. For example, say that landless adventurers use a variant of the same action.
-3. **Where the details live.** A table of concept to file. This is the one place to be precise about location.
-4. **How the parts connect.** Which effects, events, on-actions, stories or GUI tie it together, and the direction of dependency.
-5. **Gotchas.** Cross-cutting traps that stay true after rebalancing, such as "add new decisions to the story list too". Skip numeric oddities. Fix those in the script or put them in the PR notes.
-6. **Not verified.** What can't be confirmed from files, such as in-game behaviour, AI and UI.
+3. **Mod conventions** (optional, between Concepts and Where the details live). Rules a contributor must follow in this mod, such as which shared effect to call. Concepts only.
+4. **Where the details live.** A table of concept to file. This is the one place to be precise about location.
+5. **How the parts connect.** Which effects, events, on-actions, stories or GUI tie it together, and the direction of dependency.
+6. **Gotchas.** Cross-cutting traps that stay true after rebalancing, such as "add new decisions to the story list too". Skip numeric oddities. Fix those in the script or put them in the PR notes.
+7. **Not verified.** What can't be confirmed from files, such as in-game behaviour, AI and UI.
 
 ## Keeping them current
 
@@ -56,9 +57,10 @@ Keep each doc light. Use these headings, in this order:
 | `blood-mage-game-rules.md` | Campaign game rules (prevalence, alterations, and religion availability) |
 | `blood-mage-events-overview.md` | Mapping of all event files to their triggering mechanisms and sibling docs |
 | `blood-mage-shared-scripting.md` | Shared triggers, opinion modifiers, nicknames, death reasons, icons, and compat |
+| `blood-mage-trait-inheritance.md` | Direct trait inheritance, birth prevalence auditing, and lineage modifiers |
 | `blood-mage-religions.md` | The Cult of Quintessence religion family, 7 syncretic faiths, mainline rites, and holy sites |
 
-Keep this table in step with the folder.
+Keep this table and `README.md` in step with the folder.
 
 ## Format
 

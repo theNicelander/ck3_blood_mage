@@ -23,7 +23,7 @@ ai_will_do = {
 	base = -10                              # starting value
 	modifier = { add = 20 has_trait = ambitious }      # flat change when the triggers pass
 	modifier = { factor = 0 has_trait = wounded_1 }    # multiply; 0 vetoes the action
-	ai_willingness_to_do_postitive_magic = yes # a scripted modifier (see bm_ai_value_modifiers.txt)
+	my_scripted_ai_modifier = yes              # a reusable scripted modifier (defined in common/scripted_modifiers)
 }
 ```
 
@@ -42,9 +42,9 @@ ai_will_do = {
 ## Rules for this repo
 
 1. **Conservative changes.** This mod's AI balance was tuned by hand and is logged in `CHANGELOG.md`. Do not raise `base` or shorten intervals without a stated reason.
-2. **Self-preservation first.** The AI should check its own health, resources (piety/lifeforce) and its opinion of the target before harmful or costly actions. Copy the pattern in `bm_ai_value_modifiers.txt` rather than writing new inline checks.
+2. **Self-preservation first.** The AI should check its own health, resources (piety/lifeforce) and its opinion of the target before harmful or costly actions. Reuse an existing scripted modifier for self-preservation checks rather than writing new inline checks.
 3. **Player-only actions** use `ai_check_interval = 0` (decisions) or no `ai_potential = { always = yes }` (interactions).
-4. **Respect the prevalence game rule.** AI acquisition and retention of the Blood Mage trait must go through the rule-aware effects and modifiers (`bm_blood_mage_prevalence_*` on the 1.19 line) and not hard-coded chances.
+4. **Respect game rules.** If a game rule governs how the AI acquires or keeps a trait, route trait acquisition through the mod's rule-aware effect and not hard-coded chances. See `docs-ai/architecture/`.
 5. **No hidden AI costs.** If an interaction charges a cost, the AI must be unable to take it when it cannot afford it (check in `is_valid` and not only in `ai_will_do`).
 6. **Do not use `is_ai = yes` to bypass validity.** Validity and cost apply to the AI too.
 7. **Test with `-debug_mode`.** Watch whether the AI actually uses the decision or interaction over several game years. You cannot verify this from the files, so say so in your summary.

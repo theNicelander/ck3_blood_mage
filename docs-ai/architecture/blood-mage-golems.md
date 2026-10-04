@@ -14,6 +14,10 @@ Blood Golems are artificial beings forged from raw vitality, dark magic, and phy
 - **Shaping Ritual and Duels.** Creation event `blood_golem.001` spawns the construct and launches `blood_golem.002`. Through this event, the creator spends piety to mold the golem with desirable physical and martial traits (e.g. Athletic, Blademaster, Berserker, Physique, Martial Education) using the scripted effect `golem_duel_effect`.
 - **Failed Creation.** If the creator fails during the binding process or is physically overwhelmed, the creation ritual aborts with potential injury or death (`death_blood_golem_failed`).
 
+## Mod conventions
+
+- **Roster refresh.** Anything that adds a golem or retinue member to a court must refresh the story rosters with `bm_refresh_blood_magic_rosters_effect`, so the member shows in the Blood Magic panel.
+
 ## Where the details live
 
 | Piece | File |

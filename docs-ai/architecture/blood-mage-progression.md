@@ -18,6 +18,12 @@ Progression governs how a blood mage expands their mastery across different scho
 - **Cost Scaling.** `bm_cost_modifiers.txt` adjusts the gold, piety, or prestige costs of blood magic actions based on character traits, skills, and supernatural attunement.
 - **AI Value Modifiers.** `bm_ai_value_modifiers.txt` adjusts how appealing blood magic actions are to AI rulers based on personality archetypes, ambition, and supernatural inclination.
 
+## Mod conventions
+
+- **XP helper.** XP is added through `add_trait_xp` with the track name (see `bm_trait_track_xp_gain_effects.txt`), never by setting values by hand.
+- **Shared script values** live in `common/script_values/`: piety costs per action (`bm_drain_piety_cost.txt`, `bm_education_enhancement_piety_cost.txt`, `bm_golem_piety_values.txt`, `bm_blood_rune_cost.txt`), requirement gates (`bm_xp_requirement_values.txt`), duel maths (`bm_drain_duel_values.txt`) and panel values (`bm_blood_mage_story_values.txt`). Reuse them instead of repeating numbers.
+- **AI self-preservation** reuses the scripted modifiers in `common/scripted_modifiers/bm_ai_value_modifiers.txt` (health, piety or lifeforce, opinion of the target) instead of inline checks.
+
 ## Where the details live
 
 | Piece | File |
