@@ -13,6 +13,7 @@ Decisions are the player-facing actions of a blood mage, plus the routes into bl
 There are several ways in, and all end in the shared `bm_become_blood_mage_effect`.
 
 - **Enhance Blood Ritual** is the risky route for an outsider who is capable and desperate enough. It is a struggle against the raw power of blood. Success makes them a blood mage and failure leaves lasting mental, physical or injury scars.
+- **Challenge the Blood Mage of Reykjavik** is an initiation duel located at the holy site in Reykjavik. An outsider challenges a hermit blood mage in an arcane contest of Learning backed by Prowess, awakening blood magic on victory or suffering severe backlash on defeat.
 - **Blood Cultist to Blood Mage** is the route for followers of the Quintessence faith. It is a deliberate, low-risk initiation.
 - **Convert from Witch** is a conversion that swaps witchcraft for blood magic. It is player-only.
 
@@ -39,6 +40,7 @@ Debug decisions exist to add or remove Lifeforce and XP while testing. They aren
 | Concept | File in `common/decisions/` |
 | --- | --- |
 | Enhance Blood Ritual, Blood Cultist to Blood Mage | `bm_become_blood_mage_decision.txt` |
+| Challenge the Blood Mage of Reykjavik | `bm_reykjavik_blood_mage_duel_decision.txt` |
 | Convert from Witch | `bm_convert_from_witch.txt` |
 | Seek Power (normal and wanderer) | `bm_seek_power_decision.txt` |
 | Manifest Lifeforce | `bm_manifest_lifeforce.txt` |
