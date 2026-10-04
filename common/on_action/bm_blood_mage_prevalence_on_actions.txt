@@ -16,7 +16,38 @@ bm_apply_blood_mage_prevalence_at_birth = {
 		else_if = {
 			limit = {
 				is_ai = yes
-				has_game_rule = bm_prevalence_more_frequent
+				has_game_rule = bm_prevalence_everyone
+			}
+			bm_become_blood_mage_effect = yes
+		}
+		else_if = {
+			limit = {
+				is_ai = yes
+				has_game_rule = bm_prevalence_one_in_10
+			}
+			if = {
+				limit = {
+					OR = {
+						scope:mother = { has_trait = lifestyle_blood_mage }
+						scope:real_father ?= { has_trait = lifestyle_blood_mage }
+					}
+				}
+				random = {
+					chance = 60
+					bm_become_blood_mage_effect = yes
+				}
+			}
+			else = {
+				random = {
+					chance = 10
+					bm_become_blood_mage_effect = yes
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				is_ai = yes
+				has_game_rule = bm_prevalence_one_in_100
 			}
 			if = {
 				limit = {
