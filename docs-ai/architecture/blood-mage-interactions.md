@@ -40,6 +40,7 @@ Character interactions provide targeted, interpersonal expressions of blood magi
 
 - Self-targeted interactions require `ai_targets = { ai_recipients = self }` to allow AI mages to trigger them.
 - Draining interactions consider imprisonment status, dread, and opinion penalties. Executing via lifedrain applies kinslayer penalties if the victim is family.
+- AI harvesting of courtiers enforces strict `factor = 0` vetoes to prevent draining close family, children, spouses/consorts, friends/lovers, knights, councillors, and high-opinion subjects.
 - Many interactions hide themselves if the actor lacks positive Lifeforce modifiers or prerequisite XP thresholds.
 
 ## Not verified
