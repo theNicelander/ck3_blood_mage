@@ -23,6 +23,7 @@ Blood magic can be used to violently extract knowledge, congenital traits, and v
 | --- | --- |
 | Duel mechanics guide | `events/_duels.md` |
 | Reykjavik initiation duel decision | `common/decisions/bm_reykjavik_blood_mage_duel_decision.txt` |
+| Reykjavik initiation duel events | `events/bm_reykjavik_events.txt` (`bm_reykjavik.0001`) |
 | Reykjavik duel script values | `common/script_values/bm_reykjavik_duel_values.txt` |
 | Trait drain interaction | `common/character_interactions/bm_drain_trait.txt` |
 | Trait drain events | `events/bm_trait_drain_events.txt` (`bm_trait_drain.001`) |

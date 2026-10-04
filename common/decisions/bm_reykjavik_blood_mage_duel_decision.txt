@@ -12,6 +12,10 @@ bm_reykjavik_blood_mage_duel_decision = {
 		NOT = { has_trait = lifestyle_blood_mage }
 	}
 
+	is_valid = {
+		piety_level >= 3
+	}
+
 	is_valid_showing_failures_only = {
 		is_imprisoned = no
 		is_incapable = no
@@ -21,133 +25,15 @@ bm_reykjavik_blood_mage_duel_decision = {
 		}
 	}
 
-	cooldown = { years = 5 }
+	cooldown = { years = 3 }
 	cost = {
 		piety = bm_reykjavik_duel_piety_cost
 	}
 
 	effect = {
-		hidden_effect = {
-			create_character = {
-				age = { 35 45 }
-				gender_female_chance = 50
-				location = root.location
-				culture = root.culture
-				faith = faith:quintessence_faith
-				trait = lifestyle_blood_mage
-				trait = education_learning_4
-				learning = 22
-				prowess = 18
-				save_scope_as = bm_reykjavik_rival
-			}
-		}
-
-		duel = {
-			skill = learning
-			target = scope:bm_reykjavik_rival
-
-			# SUCCESS
-			0 = {
-				desc = bm_reykjavik_blood_mage_duel_decision.success_tt
-
-				compare_modifier = {
-					value = scope:duel_value
-					multiplier = 2
-				}
-				modifier = {
-					add = bm_reykjavik_duel_prowess_bonus_value
-				}
-
-				send_interface_toast = {
-					title = bm_reykjavik_blood_mage_duel_decision.success_tt
-					left_icon = root
-					bm_become_blood_mage_effect = yes
-				}
-			}
-
-			# FAILURE - MENTAL COLLAPSE
-			75 = {
-				desc = bm_reykjavik_blood_mage_duel_decision.mental_failure_tt
-				send_interface_toast = {
-					title = bm_reykjavik_blood_mage_duel_decision.mental_failure_tt
-					left_icon = root
-					add_stress = 30
-
-					if = {
-						limit = { has_trait = lunatic_1 }
-						add_trait = dull
-					}
-					if = {
-						limit = { has_trait = depressed_1 }
-						add_trait = lunatic_1
-					}
-					if = {
-						limit = { has_trait = possessed_1 }
-						add_trait = depressed_1
-					}
-					add_trait = possessed_1
-				}
-			}
-
-			# FAILURE - PHYSICAL TRAUMA
-			75 = {
-				desc = bm_reykjavik_blood_mage_duel_decision.physical_failure_tt
-				send_interface_toast = {
-					title = bm_reykjavik_blood_mage_duel_decision.physical_failure_tt
-					left_icon = root
-					add_stress = 20
-					if = {
-						limit = { has_trait = blind }
-						add_piety_level = -1
-					}
-					if = {
-						limit = { has_trait = one_eyed }
-						add_trait = blind
-					}
-					if = {
-						limit = { has_trait = weak }
-						add_trait = one_eyed
-					}
-					add_trait = weak
-				}
-			}
-
-			# FAILURE - INJURY
-			150 = {
-				desc = bm_reykjavik_blood_mage_duel_decision.injury_failure_tt
-				send_interface_toast = {
-					title = bm_reykjavik_blood_mage_duel_decision.injury_failure_tt
-					left_icon = root
-					add_stress = 10
-
-					if = {
-						limit = { has_trait = wounded_2 }
-						add_trait = maimed
-					}
-
-					if = {
-						limit = { NOT = { has_trait = wounded_1 } }
-						add_trait = wounded_1
-					}
-					else = {
-						change_trait_rank = {
-							trait = wounded
-							rank = 1
-							max = 2
-						}
-					}
-				}
-			}
-		}
-
-		hidden_effect = {
-			if = {
-				limit = { exists = scope:bm_reykjavik_rival }
-				scope:bm_reykjavik_rival = {
-					death = { death_reason = death_vanished }
-				}
-			}
-		}
+		add_piety_level = -1
+		custom_tooltip = bm_reykjavik_blood_mage_duel_decision_effect_tt
+		trigger_event = { id = bm_reykjavik.0001 }
 	}
 
 	ai_will_do = {
