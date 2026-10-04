@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-* Consolidated the Cult of Quintessence into a single unified faith (Cult of the Quintessence), replaced syncretic variants with universal tolerance mechanics (Adaptive tenet, Pluralistic doctrine, and cult identity opinion buffering), and converted the "Embrace the Blood Cultist Faith" decision into an interactive narrative event with choices.
+* Consolidated the Cult of Quintessence into a single unified faith (Cult of the Quintessence), replaced syncretic variants with universal tolerance mechanics (Adaptive tenet, Pluralistic doctrine, and cult identity opinion buffering), and tuned the "Embrace the Blood Cultist Faith" decision to require 1 Major Lifeforce and rank 3 Devotion with no piety cost.
 
 * Added the "Challenge the Blood Mage of Reykjavik" decision, allowing non-blood-mage characters in Vestisland (Reykjavik) to challenge an occult hermit in a Learning and Prowess duel to awaken blood magic, risking the mental and physical backlash of Crimson Initiation upon defeat.
 * Fixed Cult of Quintessence reformation being blocked after the player became its pre-reformation temporal Head of Faith. Unreformed Cult faiths now begin without a Head of Faith, and affected existing saves receive a repair decision that detaches the premature headship without destroying its holder's title or disrupting the realm.

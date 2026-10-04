@@ -15,7 +15,7 @@ The Cult of Quintessence religion family provides an in-game spiritual and theol
 - **Holy Site Network.** A two-tier holy site network across Europe and Iceland:
   - Eminent Holy Sites: Primary spiritual centers and power capitals granting global faith-wide stat/piety modifiers (Iceland centers `talknafjordur` and `reykjavik`, major stat capitals `london`, `madrid`, `oslo`, `paris`, `berlin`, and prominent historical/religious centers including `rome`, `constantinople`, `jerusalem`, `mecca`).
   - Regular Holy Sites: European regional sanctuaries granting local health, life expectancy, or epidemic resistance modifiers to county holders.
-- **Event-Driven Conversion.** Taking the decision to embrace the faith triggers an interactive narrative event (`bm_blood_cultist.0001`), allowing the character to choose between an open proclamation or a veiled, hermetic path.
+- **Cult Conversion Decision.** Taking the decision to embrace the faith requires rank 3 devotion and one major lifeforce, converting the character directly to the Cult of the Quintessence.
 - **Hidden Identity Doctrine (`bm_quintessence_identity_doctrine`).** A non-visible doctrine that exposes the `blood_magic_cult_faith` parameter and applies global different-faith opinion buffering. Triggers check this parameter (`bm_is_blood_cult_faith_trigger`), allowing external faiths and companion mods to access blood cult mechanics without hardcoded dependencies.
 - **Faith-Gated Blood Initiation.** Initiation into blood magic through the cult decision is governed by campaign game rules (`bm_initiation_faith_requirement`). Depending on the rule, initiation may require following a recognized cult faith or accept faiths where witchcraft is tolerated or celebrated.
 - **Reformation Repair.** Unreformed Quintessence faiths are designed without a temporal head of faith. To prevent game engine edge cases or legacy headship states from blocking faith reformation, human rulers can use a repair decision to safely clear temporal titles and reset headship to no head.
@@ -42,13 +42,12 @@ The Cult of Quintessence religion family provides an in-game spiritual and theol
 | Reformation Repair Effects & Triggers | `common/scripted_effects/bm_reformation_repair_effects.txt`, `common/scripted_triggers/bm_reformation_repair_triggers.txt` |
 | Reformation Repair Events | `events/bm_reformation_repair_events.txt` |
 | Cult Decision | `common/decisions/bm_become_blood_cultist_decision.txt` |
-| Cult Conversion Event | `events/bm_blood_cultist_events.txt` |
 | Cult Initiation Decision | `common/decisions/bm_become_blood_mage_decision.txt` |
 | Religion & Initiation Game Rules | `common/game_rules/bm_game_rules.txt` (`quintessence_religion`, `bm_initiation_faith_requirement`) |
 
 ## How the parts connect
 
-- When a blood mage decides to convert via `become_blood_cultist_decision`, the decision triggers event `bm_blood_cultist.0001`, offering choices on how to embrace `quintessence_faith` (open proclamation vs. veiled path).
+- When a blood mage decides to convert via `become_blood_cultist_decision`, the decision consumes one major lifeforce and converts the character to `quintessence_faith`.
 - Non-mages seeking blood magic via `bm_blood_cultist_become_blood_mage_decision` check `bm_meets_blood_mage_initiation_faith_requirement_trigger`, which evaluates the character's faith against the active initiation rule.
 - Both decisions rely on `bm_is_blood_cult_faith_trigger`, which returns true if the character's faith belongs to `rf_quintessence` or possesses the `blood_magic_cult_faith` doctrine parameter.
 - Faiths define their core tenets and link to their corresponding mainline rite via `main_rite`.
