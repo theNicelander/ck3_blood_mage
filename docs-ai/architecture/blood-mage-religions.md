@@ -10,7 +10,7 @@ The Cult of Quintessence religion family provides an in-game spiritual and theol
 
 - **Cult of Quintessence (`quintessence_religion`).** The primary religion in the `rf_quintessence` religious family. It venerates the vital current and quintessence of life, treating blood magic and mysticism as divine virtues. It utilizes pluralistic doctrines to avoid extreme hostility with surrounding global faiths.
 - **Faith Structure.** The religion centers on a single base faith:
-  - `quintessence_faith`: Cult of the Quintessence. Equipped with adaptive tolerance, sacred shadows, and ritual celebration tenets, allowing stable realm integration without requiring separate syncretic faith variants.
+  - `quintessence_faith`: Cult of the Quintessence. Equipped with adaptive tolerance, ancestor worship, and ritual celebration tenets, allowing stable realm integration without requiring separate syncretic faith variants.
 - **Mainline Rite.** The faith links 1:1 to a scripted mainline rite in `common/religion/rite_types/bm_rite_types.txt`. This rite anchors the faith's ritual traditions, colors, and doctrines, preventing the engine from generating untracked dynamic rites.
 - **Holy Site Network.** A two-tier holy site network across Europe and Iceland:
   - Eminent Holy Sites: Primary spiritual centers and power capitals granting global faith-wide stat/piety modifiers (Iceland centers `talknafjordur` and `reykjavik`, major stat capitals `london`, `madrid`, `oslo`, `paris`, `berlin`, and prominent historical/religious centers including `rome`, `constantinople`, `jerusalem`, `mecca`).
