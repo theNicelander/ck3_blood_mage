@@ -11,7 +11,7 @@
 				}
 			}
 		}
-		set_character_faith = faith:quintessence_faith
+		set_character_faith = faith:quintessence_faith_christian
 	}
 	else_if = {
 		limit = {
@@ -60,16 +60,6 @@
 	else_if = {
 		limit = {
 			faith = { religion_tag = germanic_religion }
-		}
-		hidden_effect = {
-			faith:quintessence_faith_asatru = {
-				if = {
-					limit = {
-						NOT = { has_doctrine = tenet_mendicant_preachers }
-					}
-					add_doctrine = tenet_mendicant_preachers
-				}
-			}
 		}
 		set_character_faith = faith:quintessence_faith_asatru
 	}

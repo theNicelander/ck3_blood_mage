@@ -9,19 +9,20 @@ The Cult of Quintessence religion family provides an in-game spiritual and theol
 ## Concepts
 
 - **Cult of Quintessence (`quintessence_religion`).** The primary religion in the `rf_quintessence` religious family. It venerates the vital current and quintessence of life, treating blood magic and mysticism as divine virtues.
-- **Syncretic Blood Faiths.** Seven distinct faiths representing theological adaptations across cultural spheres:
-  - `quintessence_faith`: Christian syncretic branch.
-  - `quintessence_faith_islamic`: Islamic syncretic branch.
-  - `quintessence_faith_jewish`: Jewish syncretic branch.
-  - `quintessence_faith_eastern`: Dharmic and Eastern syncretic branch.
-  - `quintessence_faith_sinitic`: Taoist and Confucian syncretic branch.
-  - `quintessence_faith_asatru`: Norse and Ásatrú branch focused on human sacrifice and martial devotion.
-  - `quintessence_faith_unreformed`: Syncretic branch for traditionalist and unreformed pagan heritages.
+- **Faith Structure.** The religion comprises a pure top-level faith and distinct syncretic branches adapting theology across cultural spheres:
+  - `quintessence_faith`: Cult of the Quintessence (pure top-level faith without external syncretism).
+  - `quintessence_faith_christian`: Quintessence Christian (Christian syncretic branch).
+  - `quintessence_faith_islamic`: Quintessence Islamic (Islamic syncretic branch).
+  - `quintessence_faith_jewish`: Quintessence Jewish (Jewish syncretic branch).
+  - `quintessence_faith_eastern`: Quintessence Eastern (Dharmic and Eastern syncretic branch).
+  - `quintessence_faith_sinitic`: Quintessence Sinitic (Taoist and Confucian syncretic branch).
+  - `quintessence_faith_asatru`: Quintessence Asatru (Norse and Ásatrú martial branch).
+  - `quintessence_faith_unreformed`: Quintessence Unreformed (Syncretic branch for traditionalist and unreformed pagan heritages).
 - **Mainline Rites.** Each faith links 1:1 to a scripted mainline rite in `common/religion/rite_types/`. These rites anchor the faith's ritual traditions, colors, and doctrines, preventing the engine from generating untracked dynamic rites.
 - **Holy Site Network.** A two-tier holy site network across Europe and Iceland:
   - Eminent Holy Sites: Primary spiritual centers and power capitals granting global faith-wide stat/piety modifiers (Iceland centers `talknafjordur` and `reykjavik`, major stat capitals `london`, `madrid`, `oslo`, `paris`, `berlin`, and prominent historical/religious centers including `rome`, `constantinople`, `jerusalem`, `mecca`).
   - Regular Holy Sites: European regional sanctuaries granting local health, life expectancy, or epidemic resistance modifiers to county holders.
-- **Conversion by Heritage.** Taking the decision to join the cult does not require manual selection from a menu. The scripted conversion effect inspects the convert's previous faith and doctrines, automatically routing them to the matching Quintessence syncretism branch, with Christian syncretism serving as the universal fallback.
+- **Conversion by Heritage.** Taking the decision to join the cult does not require manual selection from a menu. The scripted conversion effect inspects the convert's previous faith and doctrines, automatically routing them to the matching Quintessence syncretism branch, with the base Cult of the Quintessence serving as the universal fallback.
 - **Hidden Identity Doctrine (`bm_quintessence_identity_doctrine`).** A non-visible doctrine that exposes the `blood_magic_cult_faith` parameter. Triggers check this parameter (`bm_is_blood_cult_faith_trigger`), allowing external faiths and companion mods to access blood cult mechanics without hardcoded dependencies.
 - **Faith-Gated Blood Initiation.** Initiation into blood magic through the cult decision is governed by campaign game rules (`bm_initiation_faith_requirement`). Depending on the rule, initiation may require following a recognized cult faith or accept faiths where witchcraft is tolerated or celebrated.
 - **Reformation Repair.** Unreformed Quintessence faiths are designed without a temporal head of faith. To prevent game engine edge cases or legacy headship states from blocking faith reformation, human rulers can use a repair decision to safely clear temporal titles and reset headship to no head.
