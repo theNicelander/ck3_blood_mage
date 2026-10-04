@@ -13,12 +13,12 @@
         scope:recipient = { NOT = { has_trait = lifestyle_blood_mage } }
     }
     cost = { piety = 75 }
-    is_valid_showing_failures_only = { 
+    is_valid_showing_failures_only = {
         scope:actor = { has_character_modifier = lifeforce_modifier_major }
     }
 
     on_accept = {
-        
+
         scope:actor = {debug_log = debug_log.blood_mage_log}
         scope:recipient = {
             bm_become_blood_mage_effect = yes
@@ -35,17 +35,37 @@
     # AI
     ai_potential = { always = yes }
     ai_frequency = 6
-    ai_targets = { 
-        ai_recipients = dynasty
+    ai_targets = {
         ai_recipients = spouses
-        ai_recipients = family
         ai_recipients = children
-        ai_recipients = courtiers
+        ai_recipients = liege
         ai_recipients = councillors
+        ai_recipients = family
+        ai_recipients = dynasty
+        ai_recipients = courtiers
     }
     ai_will_do = {
         base = 0
         ai_willingness_to_do_postitive_magic = yes
+
+        # Prioritisation hierarchy: spouse > children > liege > councillors
+        modifier = {
+            scope:recipient = { is_spouse_of = scope:actor }
+            add = 100
+        }
+        modifier = {
+            scope:recipient = { is_child_of = scope:actor }
+            add = 75
+        }
+        modifier = {
+            scope:recipient = { scope:actor.liege ?= this }
+            add = 50
+        }
+        modifier = {
+            scope:recipient = { is_councillor_of = scope:actor }
+            add = 25
+        }
+
         bm_blood_mage_prevalence_ai_acquisition_modifier = yes
     }
 }

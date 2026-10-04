@@ -16,9 +16,8 @@ bm_review_unmarked_blood_mage_prevalence = {
         NOT = { has_character_flag = bm_blood_mage_prevalence_reviewed }
         OR = {
             has_game_rule = bm_prevalence_player_only
-            has_game_rule = bm_prevalence_extremely_rare
-            has_game_rule = bm_prevalence_rare
-            has_game_rule = bm_prevalence_uncommon
+            has_game_rule = bm_prevalence_one_in_10000
+            has_game_rule = bm_prevalence_one_in_1000
         }
     }
     effect = {

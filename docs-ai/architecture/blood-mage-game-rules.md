@@ -10,9 +10,10 @@ Game rules allow players to configure how Blood Mages mechanics integrate into t
 
 - **Prevalence Rule (`bm_blood_mage_prevalence`).** Determines how widespread blood magic is across the world.
   - *Player Only:* Restricts blood magic solely to player-controlled characters.
-  - *Extremely Rare:* Drastically penalizes AI decision weights and purges most spontaneous or inherited AI mages.
-  - *Rare / Uncommon / Default:* Progressively increases the retention rate and AI willingness to adopt blood magic.
-  - *More Frequent:* Actively encourages AI adoption and increases birth inheritance chances.
+  - *One in 10,000 / One in 1,000:* Heavily suppresses AI adoption and purges spontaneous or inherited AI mages.
+  - *Default:* Baseline spontaneous generation and standard inheritance chances.
+  - *One in 100 / One in 10:* Progressively boosts AI adoption willingness and grants additional spontaneous birth and inheritance chances.
+  - *Everyone:* Automatically grants the Blood Mage trait to every newborn child.
 - **Physical Alteration Rule (`bm_physical_alteration`).** Controls cosmetic physical transformations for blood mages:
   - *None:* Retains natural portrait appearance.
   - *Eyes:* Alchemically shifts eye color to supernatural crimson.

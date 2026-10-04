@@ -3,6 +3,12 @@
 	icon = "core_tenet_sacred_shadows"
 	visible = no
 
+	character_modifier = {
+		different_faith_opinion = 15
+		different_faith_liege_opinion = 10
+		different_faith_county_opinion_mult = -0.25
+	}
+
 	parameters = {
 		# Other religions may opt in without becoming static dependencies.
 		blood_magic_cult_faith

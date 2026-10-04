@@ -26,23 +26,16 @@ bm_apply_blood_mage_prevalence_retention_effect = {
 		remove_trait = lifestyle_blood_mage
 	}
 	else_if = {
-		limit = { has_game_rule = bm_prevalence_extremely_rare }
+		limit = { has_game_rule = bm_prevalence_one_in_10000 }
 		random = {
-			chance = 90
+			chance = 95
 			remove_trait = lifestyle_blood_mage
 		}
 	}
 	else_if = {
-		limit = { has_game_rule = bm_prevalence_rare }
+		limit = { has_game_rule = bm_prevalence_one_in_1000 }
 		random = {
-			chance = 60
-			remove_trait = lifestyle_blood_mage
-		}
-	}
-	else_if = {
-		limit = { has_game_rule = bm_prevalence_uncommon }
-		random = {
-			chance = 30
+			chance = 50
 			remove_trait = lifestyle_blood_mage
 		}
 	}
