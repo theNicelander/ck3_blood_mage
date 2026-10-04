@@ -8,8 +8,9 @@ The mod uses dynasties and houses in two separate ways:
 
 1. **Bloodline.** A blood mage can channel Lifeforce into their own house, giving the whole house a lasting enhancement. This is the fantasy behind the `bloodline` track of `lifestyle_blood_mage`: the mage's power is passed to their lineage.
 2. **The Golem house.** Blood golems are created characters that all belong to one dedicated house, so the mod can recognise them.
+3. **Dynasty Mages Roster.** The Blood Magic panel tracks all living members of the mage's dynasty who possess the blood mage trait.
 
-The two do not depend on each other. They share only the dynasty and house scopes.
+The features do not depend on each other. They share only the dynasty and house scopes.
 
 ## Concepts
 
@@ -53,6 +54,7 @@ The two do not depend on each other. They share only the dynasty and house scope
 | Yearly bloodline XP | `blood_mage_yearly_events.002` in `events/bm_yearly_events.txt` |
 | Golem template | `blood_golem_template` in `common/scripted_character_templates/bm_character_templates.txt` |
 | Golem roster | `bm_refresh_blood_magic_rosters_effect` in `common/scripted_effects/bm_blood_mage_story_list_effects.txt` |
+| Dynasty blood mages roster | `bm_refresh_blood_magic_rosters_effect` in `common/scripted_effects/bm_blood_mage_story_list_effects.txt` |
 | Panel entry for the decision | `common/story_cycles/bm_blood_mage_story.txt` |
 | Names, mottos, modifier text | `localization/english/bm_channel_lifeforce_l_english.yml`, `bm_modifiers_l_english.yml`, `bm_blood_golem_l_english.yml` |
 

@@ -44,6 +44,7 @@ bm_refresh_blood_magic_rosters_effect = {
 		type = bm_blood_mage_story
 		clear_variable_list = bm_owned_blood_golems
 		clear_variable_list = bm_crimson_retinue
+		clear_variable_list = bm_dynasty_blood_mages
 		save_scope_as = bm_blood_mage_story_scope
 	}
 
@@ -70,6 +71,26 @@ bm_refresh_blood_magic_rosters_effect = {
 			add_to_variable_list = {
 				name = bm_crimson_retinue
 				target = prev
+			}
+		}
+	}
+
+	if = {
+		limit = { exists = dynasty }
+		dynasty = {
+			every_dynasty_member = {
+				limit = {
+					is_alive = yes
+					has_trait = lifestyle_blood_mage
+				}
+
+				save_scope_as = bm_dynasty_member
+				scope:bm_blood_mage_story_scope = {
+					add_to_variable_list = {
+						name = bm_dynasty_blood_mages
+						target = scope:bm_dynasty_member
+					}
+				}
 			}
 		}
 	}

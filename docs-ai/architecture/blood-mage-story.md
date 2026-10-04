@@ -8,8 +8,8 @@ A per-character story cycle that backs the "Blood Magic" panel. It gives a blood
 
 ## Concepts
 
-- **The panel.** It shows the mage's blood golems and their crimson retinue, along with a shortcut list of blood magic decisions.
-- **Rosters.** The golem list is made of the courtiers in the golem house. The retinue is made of courtiers who have been empowered as crimson warriors or champions.
+- **The panel.** It shows the mage's blood golems, their crimson retinue, and living dynasty members who are blood mages, along with a shortcut list of blood magic decisions.
+- **Rosters.** The golem list is made of the courtiers in the golem house. The retinue is made of courtiers who have been empowered as crimson warriors or champions. The dynasty roster contains all living members of the mage's dynasty who possess the blood mage trait.
 - **Lifeforce counters.** The refresh also recounts Lifeforce modifier stacks, because script can't read a modifier's stack count.
 - **Lifetime.** The story is created once per blood mage, rebuilt on setup and ended when the owner dies.
 
