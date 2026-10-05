@@ -2,6 +2,8 @@
     picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
     decision_group_type = bm_decision_group
 
+    is_invisible = yes
+
     is_shown = { has_trait = lifestyle_blood_mage }
 
     is_valid = {
@@ -35,7 +37,7 @@
             }
         }
     }
-    
+
     cost = { piety = 500 }
     cooldown = { years = 1 }
 
@@ -44,7 +46,7 @@
         duel = {
             skill = learning
             value = 0
-            
+
             # Success - major lifeforce
             15 = {
                 desc = manifest_lifeforce_major_success_tt
@@ -58,7 +60,7 @@
                     add_character_modifier = { modifier = lifeforce_modifier_major }
                 }
             }
-            
+
             # Partial success - minor lifeforce
             40 = {
                 desc = manifest_lifeforce_minor_success_tt
@@ -72,7 +74,7 @@
                     add_character_modifier = { modifier = lifeforce_modifier_minor }
                 }
             }
-            
+
             # Failure - nothing happens
             40 = {
                 desc = manifest_lifeforce_minor_failure_tt
@@ -85,7 +87,7 @@
                     multiplier = -0.5
                 }
             }
-            
+
             # Critical failure
             15 = {
                 desc = manifest_lifeforce_major_failure_tt

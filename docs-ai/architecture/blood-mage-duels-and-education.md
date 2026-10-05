@@ -14,7 +14,7 @@ Blood magic can be used to violently extract knowledge, congenital traits, and v
   - The duel is made easier as the caster accumulates XP across all blood mage tracks (`trait_drain_easier_with_xp`).
   - High-tier genetic traits provide greater resistance against extraction (`trait_drain_harder_per_trait_modifier`).
   - Failure applies temporary negative modifiers or physical backlash.
-- **Education Enhancement.** A blood mage can use major self-cast interactions to either upgrade their existing education trait tier (`bm_cast_blood_magic_self_major_improve_education` / `bm_education_enhance.txt`) or acquire an entirely new secondary education branch (`bm_cast_blood_magic_self_major_new_education` / `bm_education_new.txt`).
+- **Education Enhancement.** A blood mage can use blood magic to either upgrade their existing education trait tier via decision (`bm_enhance_education_decision` / `bm_education_enhance.txt`) or acquire an entirely new secondary education branch via interaction (`bm_cast_blood_magic_self_major_new_education` / `bm_education_new.txt`).
 - **Mass Lifedrain Executions.** The decision `mass_lifedrain_prisoners_decision` and event `bm_mass_lifedrain.txt` allow a ruler to execute multiple prisoners simultaneously. The scripted effect `lifedrain_execution_effect` manages the executions, applies proper tyranny/kinslaying rules, and converts the victims into Lifeforce.
 
 ## Where the details live
