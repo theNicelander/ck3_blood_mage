@@ -9,7 +9,7 @@ Blood magic can be used to violently extract knowledge, congenital traits, and v
 ## Concepts
 
 - **Duel Mechanics.** As outlined in `events/_duels.md`, blood magic duels calculate victory odds by comparing the caster's relevant attribute against the opponent's attribute. A `compare_modifier` multiplies this stat delta and adds it to the outcome weights, producing probabilistic success or failure.
-- **Reykjavik Initiation Duel.** Through `bm_reykjavik_blood_mage_duel_decision`, an aspiring outsider challenges a temporary hermit blood mage NPC at the holy site of Reykjavik (`c_vestisland`). The challenge is resolved through a Learning duel with a Prowess bonus, cleanly removing the opponent afterwards and awarding blood magic on victory.
+- **Internal Initiation Duel (Ritual of Blood).** Through `bm_enhance_blood_ritual_decision`, an aspiring outsider attempts a dangerous internal duel against the raw power of blood. The ritual must be performed at the sacred grounds of either Reykjavik (`c_vestisland`) or Tsushima (`c_tsushima`), pitting the caster's Learning against supernatural forces to awaken blood magic on victory or suffer severe mental or physical backlash on defeat.
 - **Trait Theft (Genetic Drain).** Through `trait_drain_prisoner_event_interaction`, a blood mage challenges a captive to forcibly siphon their positive congenital traits (e.g. intellect, beauty, physique).
   - The duel is made easier as the caster accumulates XP across all blood mage tracks (`trait_drain_easier_with_xp`).
   - High-tier genetic traits provide greater resistance against extraction (`trait_drain_harder_per_trait_modifier`).
@@ -22,9 +22,7 @@ Blood magic can be used to violently extract knowledge, congenital traits, and v
 | Piece | File |
 | --- | --- |
 | Duel mechanics guide | `events/_duels.md` |
-| Reykjavik initiation duel decision | `common/decisions/bm_reykjavik_blood_mage_duel_decision.txt` |
-| Reykjavik initiation duel events | `events/bm_reykjavik_events.txt` (`bm_reykjavik.0001`) |
-| Reykjavik duel script values | `common/script_values/bm_reykjavik_duel_values.txt` |
+| Ritual of Blood initiation decision | `common/decisions/bm_become_blood_mage_decision.txt` |
 | Trait drain interaction | `common/character_interactions/bm_drain_trait.txt` |
 | Trait drain events | `events/bm_trait_drain_events.txt` (`bm_trait_drain.001`) |
 | Trait drain script values & modifiers | `common/script_values/bm_drain_duel_values.txt` |

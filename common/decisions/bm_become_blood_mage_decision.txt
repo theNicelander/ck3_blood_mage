@@ -14,7 +14,7 @@
         piety_level >= 3
     }
 
-    effect = { 
+    effect = {
         debug_log = debug_log.blood_mage_log
         bm_become_blood_mage_effect = yes
     }
@@ -37,7 +37,6 @@ bm_enhance_blood_ritual_decision = {
 
     is_shown = {
         is_adult = yes
-        is_imprisoned = no
         NOT = { has_trait = lifestyle_blood_mage }
     }
 
@@ -48,14 +47,27 @@ bm_enhance_blood_ritual_decision = {
             has_trait = education_learning_4
             has_trait = education_learning_5
             has_trait = intellect_good_3
-			has_trait_xp = {
-				trait = lifestyle_mystic
-				value >= 100
-			}
+            has_trait_xp = {
+                trait = lifestyle_mystic
+                value >= 100
+            }
             stress_level >= 3
-            AND = {
-                has_trait = lifestyle_scholar
-                has_trait = theologian
+            has_trait = theologian
+            has_trait_xp = {
+                trait = lifestyle_scholar
+                value >= 100
+            }
+        }
+    }
+
+    is_valid_showing_failures_only = {
+        is_imprisoned = no
+        is_incapable = no
+        custom_tooltip = {
+            text = bm_enhance_blood_ritual_location_requirement_tt
+            OR = {
+                location.county ?= title:c_vestisland
+                location.county ?= title:c_tsushima
             }
         }
     }
@@ -80,11 +92,11 @@ bm_enhance_blood_ritual_decision = {
         duel = {
             skill = learning
             target = root
-            
-            # SUCCESS 
+
+            # SUCCESS
             0 = {
                 desc = bm_enhance_blood_ritual_decision.success_tt
-        
+
                 # Higher learning significantly increases the weight of this successful outcome.
                 compare_modifier = {
                     value = root.learning
@@ -109,28 +121,28 @@ bm_enhance_blood_ritual_decision = {
                 modifier = { stress_level >= 3 add = 20 }
                 modifier = { has_trait = scarred add = 5 }
                 modifier = { health >= excellent_health add = 10 }
-                
+
                 # XP modifiers
-                modifier = { 
+                modifier = {
                     has_trait_xp = {
                         trait = lifestyle_mystic
                         value >= 100
                     }
-                    add = 10 
+                    add = 10
                 }
-                modifier = { 
+                modifier = {
                     has_trait_xp = {
                         trait = scarred
                         value >= 50
                     }
-                    add = 5 
+                    add = 5
                 }
-                modifier = { 
+                modifier = {
                     has_trait_xp = {
                         trait = scarred
                         value >= 100
                     }
-                    add = 5 
+                    add = 5
                 }
 
 
@@ -141,7 +153,7 @@ bm_enhance_blood_ritual_decision = {
                 }
             }
 
-            # FAILURE - MENTAL COLLAPSE 
+            # FAILURE - MENTAL COLLAPSE
             75 = {
                 desc = bm_enhance_blood_ritual_decision.mental_failure_tt
                 send_interface_toast = {
@@ -166,7 +178,7 @@ bm_enhance_blood_ritual_decision = {
 
             }
 
-            # FAILURE - PHYSICAL TRAUMA 
+            # FAILURE - PHYSICAL TRAUMA
             75 = {
                 desc = bm_enhance_blood_ritual_decision.physical_failure_tt
                 send_interface_toast = {
@@ -177,7 +189,7 @@ bm_enhance_blood_ritual_decision = {
                         limit = {has_trait = blind}
                         add_piety_level = -1
                     }
-                    
+
                     if = {
                         limit = {has_trait = one_eyed}
                         add_trait = blind
