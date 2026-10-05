@@ -1,7 +1,7 @@
 ---
 name: add-faith
 description: >-
-  Use this skill when adding a Quintessence faith, rite or holy site to the
+  Use this skill when adding a Blóðtrú faith, rite or holy site to the
   Blood Mages mod.
 ---
 

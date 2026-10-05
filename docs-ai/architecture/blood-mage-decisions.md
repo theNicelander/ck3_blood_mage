@@ -14,7 +14,7 @@ There are several ways in, and all end in the shared `bm_become_blood_mage_effec
 
 - **Enhance Blood Ritual** is the risky route for an outsider who is capable and desperate enough. It is a struggle against the raw power of blood. Success makes them a blood mage and failure leaves lasting mental, physical or injury scars.
 - **Challenge the Blood Mage of Reykjavik** is an initiation duel located at the holy site in Reykjavik. An outsider challenges a hermit blood mage in an arcane contest of Learning backed by Prowess, awakening blood magic on victory or suffering severe backlash on defeat.
-- **Blood Cultist to Blood Mage** is the route for followers of the Quintessence faith. It is a deliberate, low-risk initiation.
+- **Blood Cultist to Blood Mage** is the route for followers of the Blóðtrú faith. It is a deliberate, low-risk initiation.
 - **Convert from Witch** is a conversion that swaps witchcraft for blood magic. It is player-only.
 
 ### Using blood magic
@@ -37,7 +37,7 @@ These actions are hidden from the standard decisions list and appear exclusively
 
 ### Faith
 
-- **Become Blood Cultist** is a major decision that moves a blood mage into the Cult of Quintessence. It respects the game rules for religion and is hidden for overhaul mods.
+- **Become Blood Cultist** is a major decision that moves a blood mage into Blóðtrú. It respects the game rules for religion and is hidden for overhaul mods.
 
 ### Debug
 

@@ -47,7 +47,7 @@ The idea: a blood mage is not a class chosen at a menu, it is a path. Blood magi
 
 All routes call `bm_become_blood_mage_effect`. They differ in fantasy:
 
-- **Self-initiation.** Decisions for a character who follows the Quintessence faith, or who survives the internal ritual (a Learning duel that can scar the character).
+- **Self-initiation.** Decisions for a character who follows the Blóðtrú faith, or who survives the internal ritual (a Learning duel that can scar the character).
 - **Taught by a mage.** A blood mage grants blood magic to someone, who gains opinion of them. Non-mages can also ask a mage who is their friend, lover or soulmate.
 - **Taken from a prisoner.** A non-mage can try to take blood magic from an imprisoned mage, at a terrible cost to the prisoner.
 - **Conversion.** A witch can trade witchcraft for blood magic.
@@ -88,7 +88,7 @@ Per-level values, milestones, inheritance chances and XP thresholds are in those
 - Decisions, interactions and yearly pulses add track XP, and XP-gated actions read it back (see `blood-mage-decisions.md`). That loop is the progression.
 - Prevalence game rules and the acquisition effect control who can become a blood mage.
 - Dynasty bloodline modifiers feed `bloodline` XP (see `blood-mage-dynasty.md`).
-- The trait's presence drives the Blood Magic story, buildings, character templates and the Quintessence religion's virtues.
+- The trait's presence drives the Blood Magic story, buildings, character templates and the Blóðtrú religion's virtues.
 
 ## Gotchas
 

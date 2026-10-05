@@ -4,7 +4,7 @@
 
 ## Purpose
 
-Game rules allow players to configure how Blood Mages mechanics integrate into their campaign. Players can tune the overall rarity and AI presence of blood mages, enable or disable the Cult of Quintessence religion family, and choose whether physical alterations (eye and hair colors) manifest on practitioners.
+Game rules allow players to configure how Blood Mages mechanics integrate into their campaign. Players can tune the overall rarity and AI presence of blood mages, enable or disable the Blóðtrú religion family, and choose whether physical alterations (eye and hair colors) manifest on practitioners.
 
 ## Concepts
 
@@ -18,7 +18,7 @@ Game rules allow players to configure how Blood Mages mechanics integrate into t
   - *None:* Retains natural portrait appearance.
   - *Eyes:* Alchemically shifts eye color to supernatural crimson.
   - *Eyes & Hair:* Transforms both eye and hair colors upon embracing blood magic.
-- **Quintessence Religion Rule (`quintessence_religion`).** Dictates the presence and viability of the Cult of Quintessence religion family:
+- **Blóðtrú Religion Rule (`blodtru_religion`).** Dictates the presence and viability of the Blóðtrú religion family:
   - *Enabled:* Fully active for players and AI.
   - *Player Only:* Accessible only to human players; AI rulers will not convert or found holy sites.
   - *Disabled:* Completely suppresses the religion family.
