@@ -1,0 +1,60 @@
+﻿xuedao_faith = {
+	main_rite = xuedao_faith
+	faith_details = {
+		religion = blodtru_religion
+		color = { 0.75 0.12 0.12 }
+		icon = ketsudo_faith
+		reformed_icon = ketsudo_faith_reformed
+		graphical_faith = "pagan_gfx"
+	}
+
+	# 8 Eminent Sites: 5 Sacred Peaks, 2 Ancient Capitals, 1 Shared Duel Sanctuary
+	eminent_holy_sites = {
+		tsushima          # Initiation Duel (Far East Blood Master)
+		taishan           # Taishan / Eastern Peak (Diplomacy & Mandate)
+		huashan           # Huashan / Western Peak (Prowess & Vitality)
+		songshan          # Songshan / Central Peak (Martial & Knights)
+		mount_wutai       # Mount Wutai (Learning & Esoteric Arcana)
+		huangshan         # Huangshan / Yellow Mountain (Intrigue & Mist)
+		changan           # Chang'an (Stewardship & Silk Road)
+		luoyang           # Luoyang (Prestige & Ancient Imperial Seat)
+	}
+
+	# Dispersed Regional Hubs, Secondary Sacred Peaks & Frontiers
+	holy_sites = {
+		# Other Sacred Peaks
+		hengshan_north
+		hengshan_south
+		mount_emei
+		mount_jiuhua
+		putuoshan
+
+		# Northern & Southern Capitals
+		kaifeng
+		beijing
+		nanjing
+
+		# Economic Centers & Maritime Ports
+		hangzhou
+		chengdu
+		guangzhou
+		quanzhou
+		fuzhou
+		kunming
+
+		# Western & Maritime Frontiers
+		dunhuang
+		taipei
+	}
+
+	tenets = {
+		tenet_adaptive
+		tenet_ancestor_worship
+		tenet_ritual_celebrations
+	}
+
+	doctrines = {
+		unreformed_faith_doctrine
+		bm_blodtru_identity_doctrine
+	}
+}
