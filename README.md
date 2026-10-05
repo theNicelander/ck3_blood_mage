@@ -60,12 +60,12 @@ Blood Mages drain **Lifeforce** from others to extend their own lifespan and cas
 The Blood Mage trait features five distinct tracks:
 
 - **Ancient**: Survive
-- **Enlightenment**: Strengthen yourself  
+- **Enlightenment**: Strengthen yourself
 - **Bloodline**: Strengthen your dynasty
 - **Benediction**: Healing and strengthen others
 - **Hematurgy**: Absorb traits and harvest lifeforce
 
-Each track gains experience as you use related abilities, with ten progressive tiers of power. Maxing them all out might take you 100 years, costing tens of thousands of piety, and the benefits reflect that. 
+Each track gains experience as you use related abilities, with ten progressive tiers of power. Maxing them all out might take you 100 years, costing tens of thousands of piety, and the benefits reflect that.
 
 Blood Mages owns a Blood Magic story panel that tracks all five disciplines in
 a compact two-row icon grid, the exact Major and Minor Lifeforce stack counts,
@@ -94,9 +94,9 @@ Two types exist:
 - **Minor Lifeforce**: Smaller bonuses, used for less potent magic
 - **Major Lifeforce**: Significant bonuses, required for powerful rituals
 
-Both provide increased lifespan, fertility, disease resistance, health and prowess. 
+Both provide increased lifespan, fertility, disease resistance, health and prowess.
 
-Using magic uses up Lifeforce, and grants a temporary negative Lifeforce modifier. This means **Blood Mages are NOT immortal** - they can still be assassinated, killed in combat or by illness if their lifeforce becomes depleted. 
+Using magic uses up Lifeforce, and grants a temporary negative Lifeforce modifier. This means **Blood Mages are NOT immortal** - they can still be assassinated, killed in combat or by illness if their lifeforce becomes depleted.
 
 Managing Lifeforce requires careful balance between health and longevity versus short-term power gains.
 
@@ -115,30 +115,24 @@ Blood Mages can use this Lifeforce to perform various actions:
 - Create Blood Golems, and enhance their traits at the cost of piety
 - Drain congenital traits from prisoners (beauty, intelligence, physique, giant, fecund)
 
-## The Cult of Quintessence
+## Blóðtrú
 
-Blood Mages can follow their own unique religion, the Cult of Quintessence:
+Blood Mages can follow their own unique religion, Blóðtrú:
 
 - **Holy Sites**: Almost 50 locations across Europe
 - **Special Bonuses**: Each site grants +1 to skills, to balance the number of sites
 - **Blood Magic University**: Build special duchy buildings to enhance magical study
 
-### Automatic syncretism faith selection
+### Unified Faith with Pluralistic Integration
 
-There is no manual religion-type selector when a character converts. The conversion automatically
-examines the character's previous faith and chooses the matching Cult of Quintessence variant:
-Christian, Islamic, Jewish, Eastern, or Sinitic Syncretism; an Ásatrú-specific traditional faith;
-or a faith for other unreformed traditions. These are standalone faiths within the Cult of
-Quintessence religion, so the main mod does not modify any vanilla religion definitions. If the
-previous faith does not match a supported religious family, the Christian Syncretism variant is
-used as the backwards-compatible fallback.
+The religion features the unified faith `blodtru_faith`, utilizing pluralistic and adaptive doctrines alongside the hidden `bm_blodtru_identity_doctrine` to ensure high compatibility and minimal opinion penalties across diverse realms without overwriting vanilla religions.
 
 ### Optional Vanilla Religions submod
 
 **Blood Mages - Vanilla Religions** moves native integration into a separate compatibility submod.
 It adds one lore-specific Blood Mage cult to every vanilla religion, automatically converts each
 character to the cult belonging to their previous religion, and combines that religion's complete
-holy-site set with the Quintessence network.
+holy-site set with the Blóðtrú network.
 
 The Cult of the Crimson Ka is its Egyptian–Kushite branch. Because CK3 requires complete religion
 overlays to add faiths to existing religions, the submod is intentionally optional while this main

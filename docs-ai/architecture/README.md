@@ -41,5 +41,5 @@ Rules (`.agents/rules/`) say how to write CK3 script in general. These docs say 
 | `blood-mage-dynasty.md` | Bloodline house modifiers and the Golem house |
 | `blood-mage-duels-and-education.md` | Duels, trait draining, education, mass lifedrain |
 | `blood-mage-events-overview.md` | Event files mapped to their triggers |
-| `blood-mage-religions.md` | The Cult of Quintessence, faiths, rites, holy sites |
+| `blood-mage-religions.md` | Blóðtrú, faiths, rites, holy sites |
 | `blood-mage-shared-scripting.md` | Shared triggers, opinions, nicknames, icons, compat |

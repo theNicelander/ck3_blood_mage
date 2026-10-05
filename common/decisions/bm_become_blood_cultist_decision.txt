@@ -14,9 +14,9 @@
         NOT = { is_playing_overhaul_mod = yes }
 
         OR = {
-            has_game_rule = quintessence_religion_enabled
+            has_game_rule = blodtru_religion_enabled
             AND = {
-                has_game_rule = quintessence_religion_enabled_player_only
+                has_game_rule = blodtru_religion_enabled_player_only
                 is_ai = no
             }
         }

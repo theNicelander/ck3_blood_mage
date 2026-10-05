@@ -5,7 +5,7 @@ CK3 script fails silently. Follow patterns already in this repo and in vanilla 1
 ## What this is
 
 - CK3 mod for **1.20.\***. Pure script, localization, gfx. No build step.
-- Adds the `lifestyle_blood_mage` trait (tracks: ancient, enlightenment, bloodline, benediction, hematurgy), Lifeforce, decisions/interactions, blood golems, Crimson Empowerment, the Cult of Quintessence religion family, game rules.
+- Adds the `lifestyle_blood_mage` trait (tracks: ancient, enlightenment, bloodline, benediction, hematurgy), Lifeforce, decisions/interactions, blood golems, Crimson Empowerment, the Blóðtrú religion family, game rules.
 - `scripts/` holds a Steam Workshop helper. Never touch `.env`, credentials or `*.vdf`.
 
 ## Context layers
