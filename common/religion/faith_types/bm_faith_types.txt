@@ -88,42 +88,42 @@ ketsudo_faith = {
 	main_rite = ketsudo_faith
 	faith_details = {
 		religion = blodtru_religion
-		color = { 0.65 0.12 0.15 }
-		icon = blodtru_faith
-		reformed_icon = blodtru_faith_reformed
+		color = { 0.6 0.0 0.0 }
+		icon = ketsudo_faith
+		reformed_icon = ketsudo_faith_reformed
 		graphical_faith = "pagan_gfx"
 	}
 
 	eminent_holy_sites = {
-		tsushima
-		kyoto
-		edo
-		mount_fuji
-		kaesong
+		tsushima       # Initiation duel hub (Reykjavik equivalent)
+		mount_fuji     # Prowess & Knights (Suruga)
+		mount_hiei     # Learning (Omi)
+		mount_osore    # Intrigue & Dread (Mutsu)
+		mount_aso      # Martial & Advantage (Higo)
+		mount_yotei    # Knight Limit & Combat (Shiribeshi)
+		kyoto          # Diplomacy & Opinion (Yamashiro)
+		edo            # Stewardship & Development (Musashi)
 	}
 
 	holy_sites = {
-		mount_yotei
-		mount_osore
-		mount_hiei
-		mount_koya
-		mount_tate
-		mount_haku
-		kamakura
-		fukuoka
-		sendai
+		# Hokkaido / Ezo
+		hakodate
+
+		# Shikoku
+		matsuyama
+		kotohira
+
+		# Kyushu & Southern Frontier
+		dazaifu
 		kagoshima
-		okinawa
-		mount_paektu
-		mount_halla
-		mount_geumgang
-		mount_jiri
-		pyongyang
-		gyeongju
-		busan
-		jeju
-		hanoi
-		karakorum
+		naha
+
+		# Honshu Regional Centers
+		kamakura
+		hiraizumi
+		izumo
+		nagoya
+		niigata
 	}
 
 	tenets = {

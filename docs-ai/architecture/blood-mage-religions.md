@@ -11,21 +11,21 @@ The Blóðtrú religion family provides an in-game spiritual and theological fou
 - **Blóðtrú (`blodtru_religion`).** The primary religion in the `rf_blodtru` religious family. It venerates the vital current and sacred flow of life, treating blood magic and mysticism as divine virtues. It utilizes pluralistic doctrines to avoid extreme hostility with surrounding global faiths.
 - **Faith Structure.** The religion encompasses three core cultural branches:
   - `blodtru_faith`: Blóðtrú. Centered in Europe and Iceland, equipped with adaptive tolerance, ancestor worship, and ritual celebration tenets.
-  - `ketsudo_faith`: Ketsudō. The Japanese and Korean branch anchored in sacred volcanic peaks, Shinto/Buddhist shrines, and regional seats.
+  - `ketsudo_faith`: Ketsudō. The Japanese faith anchored across an eight-seat mountain and capital sanctuary network, merging ancestor veneration with sacred volcanic calderas.
   - `xuedao_faith`: Xuédào. The Chinese branch centered on the Central Plains, venerating ancestral dynastic currents, sacred mountain peaks, imperial capitals, and maritime hubs.
 - **Mainline Rite.** Each faith links 1:1 to a scripted mainline rite (`blodtru_faith`, `ketsudo_faith`, `xuedao_faith`). These rites anchor each faith's ritual traditions, colors, and doctrines, preventing the engine from generating untracked dynamic rites.
-- **Holy Site Network.** A two-tier holy site network spanning Europe, the Atlantic isles, Japan, Korea, and China:
-  - Eminent Holy Sites: Primary spiritual centers and power capitals granting global faith-wide modifiers (Iceland centers `talknafjordur` and `reykjavik`, European capitals, Far East duel sanctuary `tsushima`, Japanese peaks and seats `kyoto`, `edo`, `mount_fuji`, `kaesong`, and Chinese sacred peaks and ancient imperial capitals `taishan`, `huashan`, `songshan`, `mount_wutai`, `huangshan`, `changan`, `luoyang`).
-  - Regular Holy Sites: Regional sanctuaries across Europe, Atlantic isles, Japan peaks and cities, Korea peaks and cities, Chinese sacred peaks (`hengshan_north`, `hengshan_south`, `mount_emei`, `mount_jiuhua`, `putuoshan`), economic capitals and ports (`kaifeng`, `beijing`, `nanjing`, `hangzhou`, `chengdu`, `guangzhou`, `quanzhou`, `fuzhou`, `kunming`), and frontiers (`dunhuang`, `taipei`, `hanoi`, `karakorum`) granting local health, vitality, or defensive modifiers to county holders.
+- **Holy Site Network.** A two-tier holy site network spanning Europe, the Atlantic isles, Japan, and China:
+  - Eminent Holy Sites: Primary spiritual centers and power capitals granting global faith-wide modifiers scaled per piety level (Iceland centers `talknafjordur` and `reykjavik`, European capitals, Far East duel sanctuary `tsushima`, Japanese volcanic peaks and seats `mount_fuji`, `mount_hiei`, `mount_osore`, `mount_aso`, `mount_yotei`, `kyoto`, `edo`, and Chinese sacred peaks and ancient imperial capitals `taishan`, `huashan`, `songshan`, `mount_wutai`, `huangshan`, `changan`, `luoyang`).
+  - Regular Holy Sites: Regional sanctuaries across Europe, Atlantic isles, Japanese regional hubs and island gates (`hakodate`, `matsuyama`, `kotohira`, `dazaifu`, `kagoshima`, `naha`, `kamakura`, `hiraizumi`, `izumo`, `nagoya`, `niigata`), and Chinese sacred peaks, economic capitals, and frontiers granting local health, longevity, and epidemic resistance modifiers to county holders.
 - **Cult Conversion Decision.** Taking the decision to embrace the faith requires high devotion and major lifeforce, routing characters to `xuedao_faith` if their culture holds Chinese-sphere heritage pillars (Chinese, Qiangic, Tai, Viet, Tibetan), `ketsudo_faith` for Japonic, Korean, Mongolic, or Tungusic heritages, or `blodtru_faith` otherwise.
 - **Hidden Identity Doctrine (`bm_blodtru_identity_doctrine`).** A non-visible doctrine that exposes the `blood_magic_cult_faith` parameter and applies global different-faith opinion buffering. Triggers check this parameter (`bm_is_blood_cult_faith_trigger`), allowing external faiths and companion mods to access blood cult mechanics without hardcoded dependencies.
-- **Initiation Duel Hub.** Rulers of both `ketsudo_faith` and `xuedao_faith` share `tsushima` as an Eminent holy site and initiation sanctuary, serving as the Eastern counterpart to Reykjavik.
+- **Initiation Duel Hub.** Rulers of both `ketsudo_faith` and `xuedao_faith` share `tsushima` as an Eminent holy site and initiation sanctuary, serving as the Eastern counterpart to Reykjavik. Outsiders may travel to Tsushima to challenge the hermit blood master in a Learning and Prowess contest to awaken blood magic.
 - **Faith-Gated Blood Initiation.** Initiation into blood magic through the cult decision is governed by campaign game rules (`bm_initiation_faith_requirement`). Depending on the rule, initiation may require following a recognized cult faith or accept faiths where witchcraft is tolerated or celebrated.
 - **Reformation Repair.** Unreformed Blóðtrú faiths are designed without a temporal head of faith. To prevent game engine edge cases or legacy headship states from blocking faith reformation, human rulers can use a repair decision to safely clear temporal titles and reset headship to no head (`bm_repair_blodtru_reformation_decision`).
 
 ## Mod conventions
 
-- **Tripartite cultural branches.** Faith features are organized under `blodtru_faith` (Western/Atlantic), `ketsudo_faith` (Japanese/Korean), and `xuedao_faith` (Chinese/Central Plains), preserving a unified religious family without fragmenting into dozens of micro-sects.
+- **Tripartite cultural branches.** Faith features are organized under `blodtru_faith` (Western/Atlantic), `ketsudo_faith` (Japanese), and `xuedao_faith` (Chinese/Central Plains), preserving a unified religious family without fragmenting into dozens of micro-sects.
 - **The hidden identity doctrine needs UI metadata.** It carries `icon`, a name key and `visible = no`, and links to its group through `doctrine_group_type`.
 
 ## Where the details live
@@ -45,9 +45,10 @@ The Blóðtrú religion family provides an in-game spiritual and theological fou
 | Reformation Repair Effects & Triggers | `common/scripted_effects/bm_reformation_repair_effects.txt`, `common/scripted_triggers/bm_reformation_repair_triggers.txt` |
 | Reformation Repair Events | `events/bm_reformation_repair_events.txt` |
 | Cult Decision | `common/decisions/bm_become_blood_cultist_decision.txt` |
-| Cult Initiation Decision | `common/decisions/bm_become_blood_mage_decision.txt` |
+| Cult Initiation Decision | `common/decisions/bm_become_blood_mage_decision.txt`, `common/decisions/bm_tsushima_blood_mage_duel_decision.txt` |
 | Religion & Initiation Game Rules | `common/game_rules/bm_game_rules.txt` (`blodtru_religion`, `bm_initiation_faith_requirement`) |
-| Localization | `localization/english/bm_religion_l_english.yml`, `localization/english/bm_ketsudo_l_english.yml`, `localization/english/bm_xuedao_l_english.yml` |
+| Localization | `localization/english/bm_religion_l_english.yml`, `localization/english/bm_ketsudo_l_english.yml`, `localization/english/bm_xuedao_l_english.yml`, `localization/english/bm_tsushima_duel_l_english.yml` |
+
 
 ## How the parts connect
 

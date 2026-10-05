@@ -355,198 +355,179 @@ san_marino = {
     faith_character_modifier = { life_expectancy = 1 }
 }
 
-# East Asian Eminent Holy Sites (Ketsudō / Xuedao)
+# Japanese Eminent Holy Sites (Ketsudō)
 tsushima = {
     county = c_tsushima
     barony = b_yora
-    county_holder_character_modifier = {
-        learning_per_piety_level = 1
-        prowess_per_piety_level = 1
-    }
     faith_character_modifier = {
-        learning_per_piety_level = 1
         prowess_per_piety_level = 1
+        same_faith_opinion = 5
     }
 }
-kyoto = {
-    county = c_yamashiro
-    barony = b_kyo
-    county_holder_character_modifier = { diplomacy_per_piety_level = 1 }
-    faith_character_modifier = { diplomacy_per_piety_level = 1 }
-}
-edo = {
-    county = c_musashi
-    barony = b_toshima
-    county_holder_character_modifier = { martial_per_piety_level = 1 }
-    faith_character_modifier = { martial_per_piety_level = 1 }
-}
+
 mount_fuji = {
     county = c_suruga
     barony = b_fuji
-    county_holder_character_modifier = { learning_per_piety_level = 1 }
-    faith_character_modifier = { learning_per_piety_level = 1 }
-}
-kaesong = {
-    county = c_gaeseong
-    barony = b_Goryeo_Gaeseong_Gaeseong
-    county_holder_character_modifier = { stewardship_per_piety_level = 1 }
-    faith_character_modifier = { stewardship_per_piety_level = 1 }
-}
-hanseong = {
-    county = c_yangju
-    barony = b_Goryeo_Yanggwan_Yangju
-    county_holder_character_modifier = { diplomacy_per_piety_level = 1 }
-    faith_character_modifier = { diplomacy_per_piety_level = 1 }
+    faith_character_modifier = {
+        prowess_per_piety_level = 1
+        knight_effectiveness_mult = 0.15
+    }
 }
 
-# East Asian Regular Holy Sites - Japan Peaks
-mount_yotei = {
-    county = c_ioci
-    barony = b_ioci
-    county_holder_character_modifier = { life_expectancy = 1 }
-    faith_character_modifier = { life_expectancy = 1 }
-}
-mount_osore = {
-    county = c_tsugaru
-    barony = b_usori
-    county_holder_character_modifier = { health = 0.25 }
-    faith_character_modifier = { health = 0.25 }
-}
 mount_hiei = {
     county = c_omi
     barony = b_enryaku_ji
-    county_holder_character_modifier = { epidemic_resistance = 1 }
-    faith_character_modifier = { epidemic_resistance = 1 }
-}
-mount_koya = {
-    county = c_kii
-    barony = b_kongobu_ji
-    county_holder_character_modifier = { life_expectancy = 1 }
-    faith_character_modifier = { life_expectancy = 1 }
-}
-mount_tate = {
-    county = c_etchu
-    barony = b_tateyama
-    county_holder_character_modifier = { health = 0.25 }
-    faith_character_modifier = { health = 0.25 }
-}
-mount_haku = {
-    county = c_kaga
-    barony = b_haku
-    county_holder_character_modifier = { epidemic_resistance = 1 }
-    faith_character_modifier = { epidemic_resistance = 1 }
+    faith_character_modifier = {
+        learning_per_piety_level = 1
+        monthly_piety_gain_mult = 0.1
+    }
 }
 
-# East Asian Regular Holy Sites - Japan Cities
-osaka = {
-    county = c_settsu
-    barony = b_watanabe
-    county_holder_character_modifier = { epidemic_resistance = 1 }
-    faith_character_modifier = { epidemic_resistance = 1 }
+mount_osore = {
+    county = c_tsugaru
+    barony = b_usori
+    faith_character_modifier = {
+        intrigue_per_piety_level = 1
+        dread_gain_mult = 0.15
+    }
 }
-kamakura = {
-    county = c_sagami
-    barony = b_kamakura
-    county_holder_character_modifier = { life_expectancy = 1 }
-    faith_character_modifier = { life_expectancy = 1 }
+
+mount_aso = {
+    county = c_higo
+    barony = b_aso_higo
+    faith_character_modifier = {
+        martial_per_piety_level = 1
+        advantage = 3
+    }
 }
-nara = {
-    county = c_yamato
-    barony = b_kofuku_ji
-    county_holder_character_modifier = { health = 0.25 }
-    faith_character_modifier = { health = 0.25 }
+
+mount_yotei = {
+    county = c_ioci
+    barony = b_ioci
+    faith_character_modifier = {
+        knight_limit = 2
+        prowess_per_piety_level = 1
+    }
 }
-fukuoka = {
+
+kyoto = {
+    county = c_yamashiro
+    barony = b_kyo
+    faith_character_modifier = {
+        diplomacy_per_piety_level = 1
+        same_faith_opinion = 5
+    }
+}
+
+edo = {
+    county = c_musashi
+    barony = b_toshima
+    faith_character_modifier = {
+        stewardship_per_piety_level = 1
+        development_growth_factor = 0.1
+    }
+}
+
+# Japanese Regular Holy Sites (Ketsudō)
+# Hokkaido / Ezo
+hakodate = {
+    county = c_uskes
+    barony = b_uskes
+    county_holder_character_modifier = {
+        health = 0.5
+        life_expectancy = 3
+    }
+}
+
+# Shikoku
+matsuyama = {
+    county = c_iyo
+    barony = b_iyo
+    county_holder_character_modifier = {
+        health = 0.25
+        life_expectancy = 5
+    }
+}
+
+kotohira = {
+    county = c_sanuki
+    barony = b_kotohira
+    county_holder_character_modifier = {
+        epidemic_resistance = 15
+        life_expectancy = 3
+    }
+}
+
+# Kyushu & Southern Frontier
+dazaifu = {
     county = c_chikuzen
-    barony = b_hakata
-    county_holder_character_modifier = { epidemic_resistance = 1 }
-    faith_character_modifier = { epidemic_resistance = 1 }
+    barony = b_dazaifu
+    county_holder_character_modifier = {
+        health = 0.5
+        epidemic_resistance = 10
+    }
 }
-sendai = {
-    county = c_korehari
-    barony = b_taga
-    county_holder_character_modifier = { life_expectancy = 1 }
-    faith_character_modifier = { life_expectancy = 1 }
-}
+
 kagoshima = {
     county = c_satsuma
     barony = b_kagoshima
-    county_holder_character_modifier = { health = 0.25 }
-    faith_character_modifier = { health = 0.25 }
+    county_holder_character_modifier = {
+        health = 0.25
+        fertility = 0.1
+    }
 }
-okinawa = {
+
+naha = {
     county = c_ucinaa
     barony = b_kunjan_ucinaa
-    county_holder_character_modifier = { epidemic_resistance = 1 }
-    faith_character_modifier = { epidemic_resistance = 1 }
+    county_holder_character_modifier = {
+        life_expectancy = 5
+        epidemic_resistance = 10
+    }
 }
 
-# East Asian Regular Holy Sites - Korea Peaks & Cities
-mount_paektu = {
-    county = c_LIAO_changbai
-    barony = b_FIC_Liao_Changbaishan
-    county_holder_character_modifier = { health = 0.25 }
-    faith_character_modifier = { health = 0.25 }
-}
-mount_halla = {
-    county = c_tamna
-    barony = b_Goryeo_Tamna_Tamna
-    county_holder_character_modifier = { life_expectancy = 1 }
-    faith_character_modifier = { life_expectancy = 1 }
-}
-mount_geumgang = {
-    county = c_goseong
-    barony = b_Goryeo_Donggye_Goseong
-    county_holder_character_modifier = { epidemic_resistance = 1 }
-    faith_character_modifier = { epidemic_resistance = 1 }
-}
-mount_jiri = {
-    county = c_hamyang
-    barony = b_Goryeo_Gyeongsang_Hadong
-    county_holder_character_modifier = { health = 0.25 }
-    faith_character_modifier = { health = 0.25 }
-}
-pyongyang = {
-    county = c_seogyeong
-    barony = b_Goryeo_Bukgye_Seogyeong
-    county_holder_character_modifier = { life_expectancy = 1 }
-    faith_character_modifier = { life_expectancy = 1 }
-}
-gyeongju = {
-    county = c_gyeongju
-    barony = b_Goryeo_Gyeongsang_Gyeongju
-    county_holder_character_modifier = { epidemic_resistance = 1 }
-    faith_character_modifier = { epidemic_resistance = 1 }
-}
-busan = {
-    county = c_ulju
-    barony = b_Goryeo_Gyeongsang_Gijang
-    county_holder_character_modifier = { health = 0.25 }
-    faith_character_modifier = { health = 0.25 }
-}
-jeju = {
-    county = c_tamna
-    barony = b_Goryeo_Tamna_WestTamna
-    county_holder_character_modifier = { life_expectancy = 1 }
-    faith_character_modifier = { life_expectancy = 1 }
+# Honshu Regional Centers
+kamakura = {
+    county = c_sagami
+    barony = b_kamakura
+    county_holder_character_modifier = {
+        health = 0.25
+        life_expectancy = 5
+    }
 }
 
-# East Asian Regular Holy Sites - Frontier Hubs
-hanoi = {
-    county = c_thang_long
-    barony = b_thang_long
-    county_holder_character_modifier = { epidemic_resistance = 1 }
-    faith_character_modifier = { epidemic_resistance = 1 }
+hiraizumi = {
+    county = c_isawa
+    barony = b_isawa
+    county_holder_character_modifier = {
+        health = 0.5
+        fertility = 0.1
+    }
 }
-karakorum = {
-    county = c_karakorum
-    barony = b_karakorum
-    county_holder_character_modifier = { life_expectancy = 1 }
-    faith_character_modifier = { life_expectancy = 1 }
+
+izumo = {
+    county = c_izumo
+    barony = b_kizuki_taisha
+    county_holder_character_modifier = {
+        health = 0.5
+        life_expectancy = 3
+    }
 }
-lhasa = {
-    county = c_lhasa
-    barony = b_lhasa
-    county_holder_character_modifier = { health = 0.25 }
-    faith_character_modifier = { health = 0.25 }
+
+nagoya = {
+    county = c_owari
+    barony = b_atsuta
+    county_holder_character_modifier = {
+        epidemic_resistance = 15
+        health = 0.25
+    }
+}
+
+niigata = {
+    county = c_echigo
+    barony = b_kambara
+    county_holder_character_modifier = {
+        life_expectancy = 5
+        epidemic_resistance = 10
+    }
 }
