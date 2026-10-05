@@ -1,4 +1,23 @@
 ﻿bm_convert_to_blood_cult_by_heritage_effect = {
-	# Unconditional conversion to the unified Blóðtrú faith.
-	set_character_faith = faith:blodtru_faith
+	if = {
+		limit = {
+			culture = {
+				OR = {
+					has_cultural_pillar = heritage_japonic
+					has_cultural_pillar = heritage_chinese
+					has_cultural_pillar = heritage_korean
+					has_cultural_pillar = heritage_mongolic
+					has_cultural_pillar = heritage_tibetan
+					has_cultural_pillar = heritage_tungusic
+					has_cultural_pillar = heritage_viet
+					has_cultural_pillar = heritage_qiangic
+					has_cultural_pillar = heritage_tai
+				}
+			}
+		}
+		set_character_faith = faith:ketsudo_faith
+	}
+	else = {
+		set_character_faith = faith:blodtru_faith
+	}
 }
