@@ -19,7 +19,7 @@ Blood runes and blood architecture represent the physical anchoring of blood mag
 
 | Piece | File |
 | --- | --- |
-| Inscription interaction | `common/character_interactions/bm_cast_blood_magic_self_major.txt` (`bm_cast_blood_magic_self_major_blood_rune`) |
+| Inscription decision | `common/decisions/bm_inscribe_blood_runes_decision.txt` (`bm_inscribe_blood_runes_decision`) |
 | Rune inscription events | `events/bm_blood_rune_events.txt` (`bm_crimson_rune.001`) |
 | Rune modifiers | `common/modifiers/bm_blood_runes_modifiers.txt` |
 | Rune piety cost values | `common/script_values/bm_blood_rune_cost.txt` |
@@ -28,8 +28,8 @@ Blood runes and blood architecture represent the physical anchoring of blood mag
 
 ## How the parts connect
 
-- A blood mage initiates the rune inscription ritual through `bm_cast_blood_magic_self_major_blood_rune`.
-- The interaction verifies that the character meets the XP requirement in `bm_blood_rune_minimum_xp` and can afford `bm_blood_rune_piety_cost`.
+- A blood mage initiates the rune inscription ritual through `bm_inscribe_blood_runes_decision`.
+- The decision verifies that the character meets the XP requirement in `bm_blood_rune_minimum_xp` and can afford `bm_blood_rune_piety_cost`.
 - Event `bm_crimson_rune.001` fires, presenting the valid upgrade tier based on existing rune modifiers, and replaces the old rune modifier with the new one.
 - Blood universities require the holding holder to possess `lifestyle_blood_mage` to be constructed or upgraded.
 

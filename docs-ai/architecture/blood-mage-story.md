@@ -8,7 +8,7 @@ A per-character story cycle that backs the "Blood Magic" panel. It gives a blood
 
 ## Concepts
 
-- **The panel.** It shows the mage's blood golems, their crimson retinue, and living dynasty members who are blood mages, along with a shortcut list of blood magic decisions.
+- **The panel.** It shows the mage's blood golems, their crimson retinue, and living dynasty members who are blood mages, along with compact situation-exclusive actions (hidden from the main decisions view with `is_invisible = yes`).
 - **Rosters.** The golem list is made of the courtiers in the golem house. The retinue is made of courtiers who have been empowered as crimson warriors or champions. The dynasty roster contains all living members of the mage's dynasty who possess the blood mage trait.
 - **Lifeforce counters.** The refresh also recounts Lifeforce modifier stacks, because script can't read a modifier's stack count.
 - **Lifetime.** The story is created once per blood mage, rebuilt on setup and ended when the owner dies.
@@ -16,7 +16,7 @@ A per-character story cycle that backs the "Blood Magic" panel. It gives a blood
 ## Mod conventions
 
 - **Adding a story field.** Update in order: story effects, scripted GUI, localization, then `window_situation_list.gui` (Blood Mage sections only).
-- **New blood magic decisions** must be added to the story's decision list to show in the panel.
+- **Situation decisions.** Only situation-exclusive hidden decisions are kept in the story's decision list to keep the panel compact. Non-hidden decisions belong in the main decisions view.
 
 ## Where the details live
 

@@ -19,17 +19,25 @@ There are several ways in, and all end in the shared `bm_become_blood_mage_effec
 
 ### Using blood magic
 
-These appear in the Blood Magic panel (see `blood-mage-story.md`).
-
 - **Seek Power** is an event chain in the wilderness. The mage hunts beasts, meets a lost traveller or finds something stranger, and can gain extra Lifeforce. Landless adventurers get their own variant of the same decision, because they have fewer prisoners and so need a different source.
-- **Manifest Lifeforce** converts spiritual power directly into Lifeforce. The outcome is a gamble on Learning, from a major gain through to a backfire.
 - **Channel Lifeforce into the Bloodline** is a ritual that extends blood magic across the whole dynasty. It feeds the Bloodline track.
 - **Blood Golem Creation** is a major ritual that builds a golem servant. It leads to the blood golem events, where the golem can be enhanced.
+- **Enhance Education** spends major lifeforce to attempt to advance an existing education tier through ritual dueling.
+- **Inscribe Blood Runes** etches permanent protective and empowering runes into flesh.
+
+### Situation actions
+
+These actions are hidden from the standard decisions list and appear exclusively inside the Blood Magic panel in the Situation window (see `blood-mage-story.md`):
+
+- **Manifest Lifeforce** converts spiritual power directly into Lifeforce. The outcome is a gamble on Learning, from a major gain through to a backfire.
 - **Mass Lifedrain of Prisoners** harvests Lifeforce from the dungeon. The mage chooses between draining everyone and sparing those with valuable traits.
+- **Lifeforce Attunement** aligns personal magical growth with a selected blood mage track. Accessed without a cooldown.
+- **Channel Minor Lifeforce** channels minor vitality for a temporary attribute enhancement. Accessed without a cooldown.
+- **Channel Crimson Empowerment** channels major vitality to awaken or deepen Crimson Empowerment traits. Accessed without a cooldown.
 
 ### Faith
 
-- **Become Blood Cultist** moves a blood mage into the Cult of Quintessence. It respects the game rules for religion and is hidden for overhaul mods.
+- **Become Blood Cultist** is a major decision that moves a blood mage into the Cult of Quintessence. It respects the game rules for religion and is hidden for overhaul mods.
 
 ### Debug
 
@@ -47,7 +55,12 @@ Debug decisions exist to add or remove Lifeforce and XP while testing. They aren
 | Channel Lifeforce into the Bloodline | `bm_channel_lifeforce.txt` |
 | Blood Golem Creation | `bm_create_blood_golem.txt` |
 | Mass Lifedrain of Prisoners | `bm_mass_lifedrain_prisoners.txt` |
-| Become Blood Cultist | `bm_become_blood_cultist_decision.txt` |
+| Lifeforce Attunement | `bm_attune_lifeforce_decision.txt` |
+| Channel Minor Lifeforce | `bm_channel_minor_lifeforce_decision.txt` |
+| Channel Crimson Empowerment | `bm_crimson_empowerment_decision.txt` |
+| Enhance Education | `bm_enhance_education_decision.txt` |
+| Inscribe Blood Runes | `bm_inscribe_blood_runes_decision.txt` |
+| Become Blood Cultist (Major) | `bm_become_blood_cultist_decision.txt` |
 | Debug | `bm_debug_decisions.txt` |
 
 Costs, gating, cooldowns and AI weights are in those files. Descriptions and tooltips are in `localization/english/`.

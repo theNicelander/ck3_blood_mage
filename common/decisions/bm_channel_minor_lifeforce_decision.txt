@@ -1,0 +1,35 @@
+﻿bm_channel_minor_lifeforce_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
+    desc = bm_channel_minor_lifeforce_decision_desc
+    selection_tooltip = bm_channel_minor_lifeforce_decision_tooltip
+    decision_group_type = bm_decision_group
+
+    is_invisible = yes
+
+    cost = { piety = 75 }
+
+    is_shown = {
+        has_trait = lifestyle_blood_mage
+    }
+
+    is_valid = {
+        has_character_modifier = lifeforce_modifier_minor
+    }
+
+    effect = {
+        debug_log = debug_log.blood_mage_log
+        remove_character_modifier = lifeforce_modifier_minor
+        add_xp_enlightenment = yes
+        custom_tooltip = channel_lifeforce_enlightenment_minor.effects_list
+        trigger_event = { id = bm_channel_lifeforce_enlightenment_minor.001 }
+    }
+
+    ai_check_interval = 12
+    ai_will_do = {
+        base = 10
+        modifier = {
+            add = -100
+            health <= fine_health
+        }
+    }
+}
