@@ -5,12 +5,10 @@ gyeongju = {
     county = c_gyeongju
     barony = b_Goryeo_Gyeongsang_Gyeongju
     county_holder_character_modifier = {
-        health = 0.25
-        development_growth_factor = 0.05
+        learning_per_piety_level = 1
     }
     faith_character_modifier = {
         learning_per_piety_level = 1
-        controlled_province_advantage = 5
     }
 }
 
@@ -18,11 +16,10 @@ mount_baekdu = {
     county = c_BAL_east_amnok
     barony = b_FIC_Liao_Changbaishan
     county_holder_character_modifier = {
-        health = 0.5
-        prowess = 2
+        health = 0.25
     }
     faith_character_modifier = {
-        prowess = 2
+        health = 0.25
     }
 }
 
@@ -30,11 +27,10 @@ gaegyeong = {
     county = c_gaeseong
     barony = b_Goryeo_Gaeseong_Gaeseong
     county_holder_character_modifier = {
-        health = 0.25
-        domain_tax_mult = 0.05
+        life_expectancy = 1
     }
     faith_character_modifier = {
-        domain_tax_mult = 0.05
+        life_expectancy = 1
     }
 }
 
@@ -42,10 +38,9 @@ hanyang = {
     county = c_yangju
     barony = b_Goryeo_Yanggwan_Yangju
     county_holder_character_modifier = {
-        epidemic_resistance = 10
-        development_growth_factor = 0.05
+        epidemic_resistance = 1
     }
     faith_character_modifier = {
-        development_growth_factor = 0.05
+        epidemic_resistance = 1
     }
 }
