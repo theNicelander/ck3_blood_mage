@@ -4,9 +4,9 @@
 	color = { 0.0 0.0 0.0 }
 
 	tenets = {
-		tenet_adaptive
 		tenet_ancestor_worship
 		tenet_ritual_celebrations
+		tenet_literalism
 	}
 
 	doctrines = {
@@ -17,16 +17,28 @@
 ketsudo_faith = {
 	faith = ketsudo_faith
 
-	color = { 0.6 0.0 0.0 }
+	color = { 0.0 0.0 0.0 }
 
 	tenets = {
-		tenet_adaptive
 		tenet_ancestor_worship
 		tenet_ritual_celebrations
+		tenet_literalism
 	}
 
 	doctrines = {
 		unreformed_faith_doctrine
-		bm_blodtru_identity_doctrine
+	}
+}
+
+xuedao_faith = {
+	faith = xuedao_faith
+	color = { 0.0 0.0 0.0 }
+	tenets = {
+		tenet_ancestor_worship
+		tenet_ritual_celebrations
+		tenet_literalism
+	}
+	doctrines = {
+		unreformed_faith_doctrine
 	}
 }

@@ -284,3 +284,43 @@ taipei = {
 		epidemic_resistance = 1
 	}
 }
+
+# Middle China & Inland Confluences
+jingzhou = {
+	county = c_jiangling
+	barony = b_jiangling
+	county_holder_character_modifier = {
+		health = 0.25
+		supply_limit_mult = 0.1
+	}
+	faith_character_modifier = {
+		health = 0.25
+		supply_limit_mult = 0.1
+	}
+}
+
+wuchang = {
+	county = c_ezhou
+	barony = b_wuchang
+	county_holder_character_modifier = {
+		domain_tax_mult = 0.05
+		development_growth_factor = 0.05
+	}
+	faith_character_modifier = {
+		domain_tax_mult = 0.05
+		development_growth_factor = 0.05
+	}
+}
+
+nanchang = {
+	county = c_hongzhou
+	barony = b_nanchang
+	county_holder_character_modifier = {
+		epidemic_resistance = 1
+		life_expectancy = 1
+	}
+	faith_character_modifier = {
+		epidemic_resistance = 1
+		life_expectancy = 1
+	}
+}
