@@ -14,6 +14,7 @@ Character interactions provide targeted, interpersonal expressions of blood magi
 - **Healing & Restoration.** Benediction interactions (`heal_disease_minor`, `heal_disease_major`, `heal_disease_benediction`) allow a blood mage to burn Lifeforce to purge diseases, wounds, and severe ailments from targets.
 - **Empowerment of Others.** Mages can impart vitality to allies (`grant_lifeforce_interaction`) or empower martial servants into Crimson Warriors and Crimson Champions (`grant_crimson_warrior_interaction`, `grant_crimson_champion_interaction`).
 - **Self-Targeted Rituals.** A major interaction targeting oneself (`bm_cast_blood_magic_self_major_new_education`) allows a master blood mage to pursue entirely new secondary education branches. (Attunement, minor channeling, crimson empowerment, education enhancement, and blood rune inscriptions are now decisions).
+- **Debug Testing Interactions.** Debug mode interactions (`debug_convert_to_blood_mage_interaction`, `debug_convert_to_blodtru_interaction`) allow developers to instantly grant the Blood Mage trait or convert characters to the European, Chinese, or Japanese Blóðtrú faith variants.
 
 ## Where the details live
 
@@ -27,6 +28,7 @@ Character interactions provide targeted, interpersonal expressions of blood magi
 | Grant Blood Magic Trait to Others | `common/character_interactions/bm_grant_blood_magic.txt` |
 | Grant Lifeforce Stacks to Others | `common/character_interactions/bm_grant_lifeforce.txt` |
 | Self Magic (Secondary education branch) | `common/character_interactions/bm_cast_blood_magic_self_major.txt` |
+| Debug Testing Interactions | `common/character_interactions/bm_debug_interactions.txt` |
 
 ## How the parts connect
 

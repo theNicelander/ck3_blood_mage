@@ -1,0 +1,60 @@
+﻿debug_convert_to_blood_mage_interaction = {
+	category = interaction_debug_main
+	use_diplomatic_range = no
+	ignores_pending_interaction_block = yes
+	auto_accept = yes
+
+	is_shown = {
+		debug_only = yes
+		scope:recipient = {
+			NOT = { has_trait = lifestyle_blood_mage }
+		}
+	}
+
+	on_accept = {
+		scope:recipient = {
+			bm_become_blood_mage_effect = yes
+		}
+	}
+}
+
+debug_convert_to_blodtru_interaction = {
+	category = interaction_debug_main
+	use_diplomatic_range = no
+	ignores_pending_interaction_block = yes
+	auto_accept = yes
+
+	is_shown = {
+		debug_only = yes
+	}
+
+	send_option = {
+		flag = europe
+		localization = debug_convert_to_blodtru_option_europe
+	}
+	send_option = {
+		flag = china
+		localization = debug_convert_to_blodtru_option_china
+	}
+	send_option = {
+		flag = japan
+		localization = debug_convert_to_blodtru_option_japan
+	}
+
+	on_accept = {
+		scope:recipient = {
+			switch = {
+				trigger = yes
+				scope:europe = {
+					set_character_faith = faith:blodtru_faith
+				}
+				scope:china = {
+					set_character_faith = faith:xuedao_faith
+				}
+				scope:japan = {
+					set_character_faith = faith:ketsudo_faith
+				}
+			}
+		}
+	}
+}

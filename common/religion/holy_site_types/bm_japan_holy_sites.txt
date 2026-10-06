@@ -4,53 +4,65 @@
 tsushima = {
     county = c_tsushima
     barony = b_yora
+    county_holder_character_modifier = {
+        prowess_per_piety_level = 1
+    }
     faith_character_modifier = {
         prowess_per_piety_level = 1
-        same_faith_opinion = 5
     }
 }
 
 mount_fuji = {
     county = c_suruga
     barony = b_fuji
+    county_holder_character_modifier = {
+        prowess_per_piety_level = 1
+    }
     faith_character_modifier = {
         prowess_per_piety_level = 1
-        knight_effectiveness_mult = 0.15
     }
 }
 
 mount_hiei = {
     county = c_omi
     barony = b_enryaku_ji
+    county_holder_character_modifier = {
+        learning_per_piety_level = 1
+    }
     faith_character_modifier = {
         learning_per_piety_level = 1
-        monthly_piety_gain_mult = 0.1
     }
 }
 
 mount_osore = {
     county = c_tsugaru
     barony = b_usori
+    county_holder_character_modifier = {
+        intrigue_per_piety_level = 1
+    }
     faith_character_modifier = {
         intrigue_per_piety_level = 1
-        dread_gain_mult = 0.15
     }
 }
 
 mount_aso = {
     county = c_higo
     barony = b_aso_higo
+    county_holder_character_modifier = {
+        martial_per_piety_level = 1
+    }
     faith_character_modifier = {
         martial_per_piety_level = 1
-        advantage = 3
     }
 }
 
 mount_yotei = {
     county = c_ioci
     barony = b_ioci
+    county_holder_character_modifier = {
+        prowess_per_piety_level = 1
+    }
     faith_character_modifier = {
-        knight_limit = 2
         prowess_per_piety_level = 1
     }
 }
@@ -59,21 +71,21 @@ yamashiro = {
     county = c_yamashiro
     barony = b_kyo
     county_holder_character_modifier = {
-        diplomacy = 2
-        same_faith_opinion = 5
+        diplomacy_per_piety_level = 1
     }
     faith_character_modifier = {
         diplomacy_per_piety_level = 1
-        same_faith_opinion = 5
     }
 }
 
 edo = {
     county = c_musashi
     barony = b_toshima
+    county_holder_character_modifier = {
+        stewardship_per_piety_level = 1
+    }
     faith_character_modifier = {
         stewardship_per_piety_level = 1
-        development_growth_factor = 0.1
     }
 }
 
@@ -83,8 +95,10 @@ hakodate = {
     county = c_uskes
     barony = b_uskes
     county_holder_character_modifier = {
-        health = 0.5
-        life_expectancy = 3
+        health = 0.25
+    }
+    faith_character_modifier = {
+        health = 0.25
     }
 }
 
@@ -93,8 +107,10 @@ matsuyama = {
     county = c_iyo
     barony = b_iyo
     county_holder_character_modifier = {
-        health = 0.25
-        life_expectancy = 5
+        life_expectancy = 1
+    }
+    faith_character_modifier = {
+        life_expectancy = 1
     }
 }
 
@@ -102,8 +118,10 @@ kotohira = {
     county = c_sanuki
     barony = b_kotohira
     county_holder_character_modifier = {
-        epidemic_resistance = 15
-        life_expectancy = 3
+        epidemic_resistance = 1
+    }
+    faith_character_modifier = {
+        epidemic_resistance = 1
     }
 }
 
@@ -112,8 +130,10 @@ dazaifu = {
     county = c_chikuzen
     barony = b_dazaifu
     county_holder_character_modifier = {
-        health = 0.5
-        epidemic_resistance = 10
+        health = 0.25
+    }
+    faith_character_modifier = {
+        health = 0.25
     }
 }
 
@@ -121,8 +141,10 @@ kagoshima = {
     county = c_satsuma
     barony = b_kagoshima
     county_holder_character_modifier = {
-        health = 0.25
-        fertility = 0.1
+        life_expectancy = 1
+    }
+    faith_character_modifier = {
+        life_expectancy = 1
     }
 }
 
@@ -130,8 +152,10 @@ naha = {
     county = c_ucinaa
     barony = b_kunjan_ucinaa
     county_holder_character_modifier = {
-        life_expectancy = 5
-        epidemic_resistance = 10
+        epidemic_resistance = 1
+    }
+    faith_character_modifier = {
+        epidemic_resistance = 1
     }
 }
 
@@ -140,12 +164,10 @@ kamakura = {
     county = c_sagami
     barony = b_kamakura
     county_holder_character_modifier = {
-        health = 0.25
-        life_expectancy = 5
+        prowess_per_piety_level = 1
     }
     faith_character_modifier = {
         prowess_per_piety_level = 1
-        heavy_infantry_toughness_mult = 0.1
     }
 }
 
@@ -153,8 +175,10 @@ hiraizumi = {
     county = c_isawa
     barony = b_isawa
     county_holder_character_modifier = {
-        health = 0.5
-        fertility = 0.1
+        life_expectancy = 1
+    }
+    faith_character_modifier = {
+        life_expectancy = 1
     }
 }
 
@@ -162,8 +186,10 @@ izumo = {
     county = c_izumo
     barony = b_kizuki_taisha
     county_holder_character_modifier = {
-        health = 0.5
-        life_expectancy = 3
+        epidemic_resistance = 1
+    }
+    faith_character_modifier = {
+        epidemic_resistance = 1
     }
 }
 
@@ -171,7 +197,9 @@ nagoya = {
     county = c_owari
     barony = b_atsuta
     county_holder_character_modifier = {
-        epidemic_resistance = 15
+        health = 0.25
+    }
+    faith_character_modifier = {
         health = 0.25
     }
 }
@@ -180,8 +208,10 @@ niigata = {
     county = c_echigo
     barony = b_kambara
     county_holder_character_modifier = {
-        life_expectancy = 5
-        epidemic_resistance = 10
+        life_expectancy = 1
+    }
+    faith_character_modifier = {
+        life_expectancy = 1
     }
 }
 
@@ -189,8 +219,10 @@ mount_koya = {
     county = c_kii
     barony = b_kongobu_ji
     county_holder_character_modifier = {
-        health = 0.5
-        life_expectancy = 3
+        health = 0.25
+    }
+    faith_character_modifier = {
+        health = 0.25
     }
 }
 
@@ -198,8 +230,10 @@ ise = {
     county = c_ise
     barony = b_ise_jingu
     county_holder_character_modifier = {
-        health = 0.25
-        epidemic_resistance = 15
+        epidemic_resistance = 1
+    }
+    faith_character_modifier = {
+        epidemic_resistance = 1
     }
 }
 
@@ -207,8 +241,10 @@ naniwa = {
     county = c_settsu
     barony = b_watanabe
     county_holder_character_modifier = {
-        health = 0.25
-        life_expectancy = 5
+        life_expectancy = 1
+    }
+    faith_character_modifier = {
+        life_expectancy = 1
     }
 }
 
@@ -216,7 +252,9 @@ shinano = {
     county = c_shinano
     barony = b_tsukama
     county_holder_character_modifier = {
-        health = 0.5
-        epidemic_resistance = 10
+        epidemic_resistance = 1
+    }
+    faith_character_modifier = {
+        epidemic_resistance = 1
     }
 }
