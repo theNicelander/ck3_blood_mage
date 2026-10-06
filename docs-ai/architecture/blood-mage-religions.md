@@ -39,20 +39,20 @@ The Blóðtrú religion family provides an in-game spiritual and theological fou
 | Holy Sites | `common/religion/holy_site_types/bm_europe_holy_sites.txt`, `common/religion/holy_site_types/bm_china_holy_sites.txt`, `common/religion/holy_site_types/bm_japan_holy_sites.txt`, `common/religion/holy_site_types/bm_korea_holy_sites.txt` |
 | Identity Doctrine Group | `common/religion/doctrine_group_types/bm_doctrine_group_types.txt` |
 | Identity Doctrine Type | `common/religion/doctrine_types/bm_doctrine_types.txt` |
-| Conversion Scripted Effect | `common/scripted_effects/bm_religion_conversion_effects.txt` |
+| Conversion Event | `events/bm_faith_conversion_events.txt` |
 | Religion Compatibility Triggers | `common/scripted_triggers/bm_religion_compatibility_triggers.txt` |
 | Reformation Repair Decision | `common/decisions/bm_reformation_repair_decision.txt` |
 | Reformation Repair Effects & Triggers | `common/scripted_effects/bm_reformation_repair_effects.txt`, `common/scripted_triggers/bm_reformation_repair_triggers.txt` |
 | Reformation Repair Events | `events/bm_reformation_repair_events.txt` |
 | Cult Decision | `common/decisions/bm_become_blood_cultist_decision.txt` |
-| Cult Initiation Decision | `common/decisions/bm_become_blood_mage_decision.txt`, `common/decisions/bm_tsushima_blood_mage_duel_decision.txt` |
+| Cult Initiation Decision | `common/decisions/bm_become_blood_mage_decision.txt` |
 | Religion & Initiation Game Rules | `common/game_rules/bm_game_rules.txt` (`blodtru_religion`, `bm_initiation_faith_requirement`) |
-| Localization | `localization/english/bm_religion_l_english.yml`, `localization/english/bm_ketsudo_l_english.yml`, `localization/english/bm_xuedao_l_english.yml`, `localization/english/bm_tsushima_duel_l_english.yml` |
+| Localization | `localization/english/bm_religion_l_english.yml`, `localization/english/bm_ketsudo_l_english.yml`, `localization/english/bm_xuedao_l_english.yml`, `localization/english/event_localization/bm_faith_conversion_events_l_english.yml` |
 
 
 ## How the parts connect
 
-- When a blood mage decides to convert via `become_blood_cultist_decision`, the decision consumes one major lifeforce and routes conversion via `bm_convert_to_blood_cult_by_heritage_effect`.
+- When a blood mage decides to convert via `become_blood_cultist_decision`, it triggers `bm_faith_conversion.0001`, presenting an interactive choice between `blodtru_faith`, `ketsudo_faith`, and `xuedao_faith`, consuming major lifeforce upon selection, or allowing the character to back out without penalty.
 - Non-mages seeking blood magic via `bm_blood_cultist_become_blood_mage_decision` check `bm_meets_blood_mage_initiation_faith_requirement_trigger`, which evaluates the character's faith against the active initiation rule.
 - Both decisions rely on `bm_is_blood_cult_faith_trigger`, which returns true if the character's faith belongs to `rf_blodtru` or possesses the `blood_magic_cult_faith` doctrine parameter.
 - Faiths define their core tenets and link to their corresponding mainline rite via `main_rite`.

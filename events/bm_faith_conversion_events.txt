@@ -1,0 +1,96 @@
+﻿namespace = bm_faith_conversion
+
+# Event fired from become_blood_cultist_decision to choose which blood faith branch to adopt
+bm_faith_conversion.0001 = {
+	type = character_event
+	title = bm_faith_conversion.0001.t
+	desc = bm_faith_conversion.0001.desc
+	theme = faith
+
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+
+	# Option 1: Blóðtrú
+	option = {
+		name = bm_faith_conversion.0001.a
+		blood_magic_used_major = yes
+		set_character_faith = faith:blodtru_faith
+
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				culture = {
+					OR = {
+						has_cultural_pillar = heritage_chinese
+						has_cultural_pillar = heritage_qiangic
+						has_cultural_pillar = heritage_tai
+						has_cultural_pillar = heritage_viet
+						has_cultural_pillar = heritage_tibetan
+						has_cultural_pillar = heritage_japonic
+						has_cultural_pillar = heritage_korean
+						has_cultural_pillar = heritage_mongolic
+						has_cultural_pillar = heritage_tungusic
+					}
+				}
+			}
+		}
+	}
+
+	# Option 2: Ketsudō
+	option = {
+		name = bm_faith_conversion.0001.b
+		blood_magic_used_major = yes
+		set_character_faith = faith:ketsudo_faith
+
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 100
+				culture = {
+					OR = {
+						has_cultural_pillar = heritage_japonic
+						has_cultural_pillar = heritage_korean
+						has_cultural_pillar = heritage_mongolic
+						has_cultural_pillar = heritage_tungusic
+					}
+				}
+			}
+		}
+	}
+
+	# Option 3: Xuédào
+	option = {
+		name = bm_faith_conversion.0001.c
+		blood_magic_used_major = yes
+		set_character_faith = faith:xuedao_faith
+
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 100
+				culture = {
+					OR = {
+						has_cultural_pillar = heritage_chinese
+						has_cultural_pillar = heritage_qiangic
+						has_cultural_pillar = heritage_tai
+						has_cultural_pillar = heritage_viet
+						has_cultural_pillar = heritage_tibetan
+					}
+				}
+			}
+		}
+	}
+
+	# Option 4: Back out
+	option = {
+		name = bm_faith_conversion.0001.d
+		remove_decision_cooldown = become_blood_cultist_decision
+
+		ai_chance = {
+			base = 0
+		}
+	}
+}
