@@ -31,9 +31,9 @@
 
   # Become blood mage, from blood cultist
   bm_blood_cultist_become_blood_mage_decision: "Blood Cultist: Become Blood Mage"
-  bm_blood_cultist_become_blood_mage_decision_confirm: "My flesh shall channel the crimson power"
-  bm_blood_cultist_become_blood_mage_decision_tooltip: "Complete the sacred rite to transform from a mere follower into a true wielder of blood magic"
-  bm_blood_cultist_become_blood_mage_decision_desc: "As a devoted follower of the Cult of Blood, I've witnessed the raw power wielded by our most exalted members. While faith alone has granted me glimpses of blood's true potential, to become a Blood Mage is to transcend mortal limitations. The ritual requires sacrifice—both literal and symbolic—as my body becomes a vessel for ancient power. The transition will be agonizing, but those who emerge from the crimson baptism gain mastery over life itself. The time has come to evolve from worshipper to wielder."
+  bm_blood_cultist_become_blood_mage_decision_confirm: "Challenge the Ancient Master"
+  bm_blood_cultist_become_blood_mage_decision_tooltip: "Travel to the sacred geysers of Reykjavik or Tsushima to challenge the ancient wise one and prove your readiness to wield blood magic"
+  bm_blood_cultist_become_blood_mage_decision_desc: "As a devoted follower of the blood faith, faith alone is not enough to command the crimson arts. Ancient lore tells of the wise one—an immortal hermit of one hundred and eleven years who dwells by the boiling geothermal geysers of Reykjavik and the volcanic springs of Tsushima. By traveling to these sacred waters and testing your arcane resolve against the hermit in a duel of learning, you can prove yourself worthy to transcend from worshipper to true wielder of blood magic."
 
   # Manifest new lifeforce
   manifest_lifeforce_decision: "Manifest Lifeforce"
@@ -48,15 +48,15 @@
 
   # Become blood mage Decision
   bm_enhance_blood_ritual_decision: "Ritual of Blood"
-  bm_enhance_blood_ritual_decision_confirm: "Unleash the Power Within"
-  bm_enhance_blood_ritual_decision_tooltip: "Travel to either Reykjavik or Tsushima to attempt the dangerous Ritual of Blood."
+  bm_enhance_blood_ritual_decision_confirm: "Challenge the Ancient Master"
+  bm_enhance_blood_ritual_decision_tooltip: "Travel to the sacred geysers of Reykjavik or Tsushima to challenge the ancient wise one to a duel of learning."
   bm_enhance_blood_ritual_location_requirement_tt: "You must be present in either Reykjavik (Vestisland) or Tsushima"
-  bm_enhance_blood_ritual_decision.success_tt: "Success! The power is mine!"
-  bm_enhance_blood_ritual_decision.mental_failure_tt: "My mind is shattered!"
-  bm_enhance_blood_ritual_decision.physical_failure_tt: "My body is broken!"
-  bm_enhance_blood_ritual_decision.injury_failure_tt: "I am scarred, but I survived."
+  bm_enhance_blood_ritual_decision.success_tt: "$bm_geyser_duel.success_tt$"
+  bm_enhance_blood_ritual_decision.mental_failure_tt: "$bm_geyser_duel.mental_failure_tt$"
+  bm_enhance_blood_ritual_decision.physical_failure_tt: "$bm_geyser_duel.physical_failure_tt$"
+  bm_enhance_blood_ritual_decision.injury_failure_tt: "$bm_geyser_duel.injury_failure_tt$"
 
-  bm_enhance_blood_ritual_decision_desc: "My extensive research into the crimson arts has brought me to this precipice. Here at the sacred grounds of Reykjavik or Tsushima, I must become my own crucible, using my own vitality as the catalyst. The same scholarly mind that deciphered these rites must now guide them with absolute precision. \n\nSuccess awakens the latent power in my blood; failure guarantees a broken mind or a ruined body.\n\n#help Having traits that make the decision available increase success. Traits gained from failing the decision increase success. Old age and health also factor in.#!"
+  bm_enhance_blood_ritual_decision_desc: "My extensive research into the crimson arts has brought me to this precipice. Ancient lore speaks of the wise one—a solitary hermit of one hundred and eleven years guarding the geothermal geysers of Reykjavik and the sacred springs of Tsushima. By confronting this ancient master in a contest of Learning, I can wrest the deepest mysteries of blood magic into the light.\n\nVictory will awaken the crimson arts within your blood; defeat guarantees a shattered mind or broken flesh."
 
   # Lifeforce Attunement Decision
   bm_attune_lifeforce_decision: "Lifeforce Attunement"
