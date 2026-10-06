@@ -12,8 +12,7 @@ Decisions are the player-facing actions of a blood mage, plus the routes into bl
 
 There are several ways in, and all end in the shared `bm_become_blood_mage_effect`.
 
-- **Enhance Blood Ritual** is the risky route for an outsider who is capable and desperate enough. It is a struggle against the raw power of blood. Success makes them a blood mage and failure leaves lasting mental, physical or injury scars.
-- **Challenge the Blood Mage of Reykjavik** is an initiation duel located at the holy site in Reykjavik. An outsider challenges a hermit blood mage in an arcane contest of Learning backed by Prowess, awakening blood magic on victory or suffering severe backlash on defeat.
+- **Ritual of Blood** (`bm_enhance_blood_ritual_decision`) is the risky initiation route for an outsider who is capable and desperate enough. The character must travel to the sacred grounds of either Reykjavik or Tsushima to attempt the internal struggle against the raw power of blood. Success makes them a blood mage and failure leaves lasting mental, physical or injury scars.
 - **Blood Cultist to Blood Mage** is the route for followers of the Blóðtrú faith. It is a deliberate, low-risk initiation.
 - **Convert from Witch** is a conversion that swaps witchcraft for blood magic. It is player-only.
 
@@ -47,8 +46,7 @@ Debug decisions exist to add or remove Lifeforce and XP while testing. They aren
 
 | Concept | File in `common/decisions/` |
 | --- | --- |
-| Enhance Blood Ritual, Blood Cultist to Blood Mage | `bm_become_blood_mage_decision.txt` |
-| Challenge the Blood Mage of Reykjavik | `bm_reykjavik_blood_mage_duel_decision.txt` |
+| Ritual of Blood, Blood Cultist to Blood Mage | `bm_become_blood_mage_decision.txt` |
 | Convert from Witch | `bm_convert_from_witch.txt` |
 | Seek Power (normal and wanderer) | `bm_seek_power_decision.txt` |
 | Manifest Lifeforce | `bm_manifest_lifeforce.txt` |
@@ -68,7 +66,7 @@ Costs, gating, cooldowns and AI weights are in those files. Descriptions and too
 ## How the parts connect
 
 - Gating is progression-driven. Stronger actions need more standing and more experience in the blood mage tracks (see `blood-mage-traits.md`). Using blood magic in turn grants track XP.
-- Decisions mostly trigger events (`seek_power.*`, `blood_golem.*`, `bm_channel_lifeforce_bloodline.*`, `bm_mass_lifedrain.*`, `bm_reykjavik.*`). The decision is the entry point and the event holds the story and the outcome.
+- Decisions mostly trigger events (`seek_power.*`, `blood_golem.*`, `bm_channel_lifeforce_bloodline.*`, `bm_mass_lifedrain.*`). The decision is the entry point and the event holds the story and the outcome.
 - Acquisition routes share `bm_become_blood_mage_effect`, which also creates the story cycle.
 - AI uses a few shared modifiers: one for self-preservation (health) and one for acquisition through the prevalence rule. Player-only actions switch the AI off.
 

@@ -1,0 +1,326 @@
+﻿# Chinese Holy Sites for Xuédào Faith (xuedao_faith)
+
+# Eminent Peaks & Ancient Capitals
+taishan = {
+	county = c_yanzhou
+	barony = b_qianfeng
+	county_holder_character_modifier = {
+		diplomacy = 2
+		same_faith_opinion = 5
+	}
+	faith_character_modifier = {
+		diplomacy = 2
+		same_faith_opinion = 5
+	}
+}
+
+huashan = {
+	county = c_huayin
+	barony = b_huayin
+	county_holder_character_modifier = {
+		prowess = 3
+		no_prowess_loss_from_age = yes
+	}
+	faith_character_modifier = {
+		prowess = 3
+		no_prowess_loss_from_age = yes
+	}
+}
+
+songshan = {
+	county = c_henan
+	barony = b_dengfeng
+	county_holder_character_modifier = {
+		martial = 2
+		knight_effectiveness_mult = 0.15
+	}
+	faith_character_modifier = {
+		martial = 2
+		knight_effectiveness_mult = 0.15
+	}
+}
+
+mount_wutai = {
+	county = c_daizhou
+	barony = b_wutai
+	county_holder_character_modifier = {
+		learning = 2
+		monthly_piety_gain_mult = 0.1
+	}
+	faith_character_modifier = {
+		learning = 2
+		monthly_piety_gain_mult = 0.1
+	}
+}
+
+huangshan = {
+	county = c_shezhou
+	barony = b_xiuning
+	county_holder_character_modifier = {
+		intrigue = 2
+		dread_gain_mult = 0.15
+	}
+	faith_character_modifier = {
+		intrigue = 2
+		dread_gain_mult = 0.15
+	}
+}
+
+changan = {
+	county = c_jingzhao
+	barony = b_changan
+	county_holder_character_modifier = {
+		stewardship = 2
+		domain_tax_mult = 0.05
+	}
+	faith_character_modifier = {
+		stewardship = 2
+		domain_tax_mult = 0.05
+	}
+}
+
+luoyang = {
+	county = c_henan
+	barony = b_luoyang
+	county_holder_character_modifier = {
+		monthly_prestige_gain_mult = 0.1
+		development_growth_factor = 0.1
+	}
+	faith_character_modifier = {
+		monthly_prestige_gain_mult = 0.1
+		development_growth_factor = 0.1
+	}
+}
+
+# Secondary Sacred Peaks
+hengshan_north = {
+	county = c_yingzhou_5
+	barony = b_hengshan_2
+	county_holder_character_modifier = {
+		health = 0.25
+	}
+	faith_character_modifier = {
+		health = 0.25
+	}
+}
+
+hengshan_south = {
+	county = c_tanzhou
+	barony = b_hengshan
+	county_holder_character_modifier = {
+		epidemic_resistance = 1
+	}
+	faith_character_modifier = {
+		epidemic_resistance = 1
+	}
+}
+
+mount_emei = {
+	county = c_jiazhou
+	barony = b_longyou
+	county_holder_character_modifier = {
+		health = 0.25
+	}
+	faith_character_modifier = {
+		health = 0.25
+	}
+}
+
+mount_jiuhua = {
+	county = c_chizhou
+	barony = b_qingyang
+	county_holder_character_modifier = {
+		life_expectancy = 1
+	}
+	faith_character_modifier = {
+		life_expectancy = 1
+	}
+}
+
+putuoshan = {
+	county = c_mingzhou_1
+	barony = b_wengshan
+	county_holder_character_modifier = {
+		epidemic_resistance = 1
+	}
+	faith_character_modifier = {
+		epidemic_resistance = 1
+	}
+}
+
+# Capitals, Economic Centers & Maritime Ports
+kaifeng = {
+	county = c_bianzhou
+	barony = b_kaifeng
+	county_holder_character_modifier = {
+		stewardship = 1
+		domain_tax_mult = 0.05
+	}
+	faith_character_modifier = {
+		stewardship = 1
+		domain_tax_mult = 0.05
+	}
+}
+
+beijing = {
+	county = c_youzhou
+	barony = b_ji
+	county_holder_character_modifier = {
+		martial = 1
+		garrison_size = 0.15
+	}
+	faith_character_modifier = {
+		martial = 1
+		garrison_size = 0.15
+	}
+}
+
+nanjing = {
+	county = c_jiangning
+	barony = b_jiangning
+	county_holder_character_modifier = {
+		diplomacy = 1
+		development_growth_factor = 0.05
+	}
+	faith_character_modifier = {
+		diplomacy = 1
+		development_growth_factor = 0.05
+	}
+}
+
+hangzhou = {
+	county = c_hangzhou
+	barony = b_qiantang
+	county_holder_character_modifier = {
+		health = 0.25
+		development_growth_factor = 0.05
+	}
+	faith_character_modifier = {
+		health = 0.25
+		development_growth_factor = 0.05
+	}
+}
+
+chengdu = {
+	county = c_chengdu
+	barony = b_chengdu
+	county_holder_character_modifier = {
+		epidemic_resistance = 1
+		supply_limit_mult = 0.1
+	}
+	faith_character_modifier = {
+		epidemic_resistance = 1
+		supply_limit_mult = 0.1
+	}
+}
+
+guangzhou = {
+	county = c_guangzhou_1
+	barony = b_nanhai
+	county_holder_character_modifier = {
+		life_expectancy = 1
+		domain_tax_mult = 0.05
+	}
+	faith_character_modifier = {
+		life_expectancy = 1
+		domain_tax_mult = 0.05
+	}
+}
+
+quanzhou = {
+	county = c_quanzhou
+	barony = b_jinjiang
+	county_holder_character_modifier = {
+		domain_tax_mult = 0.05
+		development_growth_factor = 0.05
+	}
+	faith_character_modifier = {
+		domain_tax_mult = 0.05
+		development_growth_factor = 0.05
+	}
+}
+
+fuzhou = {
+	county = c_fuzhou_1
+	barony = b_min
+	county_holder_character_modifier = {
+		life_expectancy = 1
+	}
+	faith_character_modifier = {
+		life_expectancy = 1
+	}
+}
+
+kunming = {
+	county = c_shanchan
+	barony = b_tuodong
+	county_holder_character_modifier = {
+		health = 0.25
+	}
+	faith_character_modifier = {
+		health = 0.25
+	}
+}
+
+# Western & Maritime Frontiers
+dunhuang = {
+	county = c_shazhou
+	barony = b_dunhuang_2
+	county_holder_character_modifier = {
+		epidemic_resistance = 1
+	}
+	faith_character_modifier = {
+		epidemic_resistance = 1
+	}
+}
+
+taipei = {
+	county = c_hoanya
+	barony = b_taiwan_taipei
+	county_holder_character_modifier = {
+		epidemic_resistance = 1
+	}
+	faith_character_modifier = {
+		epidemic_resistance = 1
+	}
+}
+
+# Middle China & Inland Confluences
+jingzhou = {
+	county = c_jiangling
+	barony = b_jiangling
+	county_holder_character_modifier = {
+		health = 0.25
+		supply_limit_mult = 0.1
+	}
+	faith_character_modifier = {
+		health = 0.25
+		supply_limit_mult = 0.1
+	}
+}
+
+wuchang = {
+	county = c_ezhou
+	barony = b_wuchang
+	county_holder_character_modifier = {
+		domain_tax_mult = 0.05
+		development_growth_factor = 0.05
+	}
+	faith_character_modifier = {
+		domain_tax_mult = 0.05
+		development_growth_factor = 0.05
+	}
+}
+
+nanchang = {
+	county = c_hongzhou
+	barony = b_nanchang
+	county_holder_character_modifier = {
+		epidemic_resistance = 1
+		life_expectancy = 1
+	}
+	faith_character_modifier = {
+		epidemic_resistance = 1
+		life_expectancy = 1
+	}
+}

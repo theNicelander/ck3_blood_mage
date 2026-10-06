@@ -1,11 +1,10 @@
-﻿# Blood Mage of Reykjavik Duel Events
+﻿namespace = bm_geyser_duel
 
-namespace = bm_reykjavik
-
-bm_reykjavik.0001 = {
+# Duel of Learning against the 111-year-old Wise One by the Geyser
+bm_geyser_duel.0001 = {
 	type = character_event
-	title = bm_reykjavik.0001.title
-	desc = bm_reykjavik.0001.desc
+	title = bm_geyser_duel.0001.t
+	desc = bm_geyser_duel.0001.desc
 	theme = learning
 
 	left_portrait = {
@@ -13,37 +12,46 @@ bm_reykjavik.0001 = {
 		animation = personality_bold
 	}
 	right_portrait = {
-		character = scope:bm_reykjavik_rival
+		character = scope:bm_geyser_wise_one
 		animation = personality_rational
 	}
 
 	immediate = {
 		hidden_effect = {
 			create_character = {
-				age = { 35 45 }
+				age = 111
 				gender_female_chance = 50
 				location = root.location
 				culture = root.culture
 				faith = faith:blodtru_faith
 				trait = lifestyle_blood_mage
 				trait = education_learning_4
-				learning = 22
-				prowess = 18
-				save_scope_as = bm_reykjavik_rival
+				trait = whole_of_body
+				learning = 24
+				prowess = 15
+				save_scope_as = bm_geyser_wise_one
+			}
+			if = {
+				limit = {
+					root.location.county ?= title:c_tsushima
+				}
+				scope:bm_geyser_wise_one = {
+					set_character_faith = faith:ketsudo_faith
+				}
 			}
 		}
 	}
 
 	option = {
-		name = bm_reykjavik.0001.a
+		name = bm_geyser_duel.0001.a
 
 		duel = {
 			skill = learning
-			target = scope:bm_reykjavik_rival
+			target = scope:bm_geyser_wise_one
 
 			# SUCCESS
 			50 = {
-				desc = bm_reykjavik_blood_mage_duel_decision.success_tt
+				desc = bm_geyser_duel.success_tt
 
 				compare_modifier = {
 					value = scope:duel_value
@@ -51,11 +59,12 @@ bm_reykjavik.0001 = {
 					min = -45
 				}
 				modifier = {
-					add = bm_reykjavik_duel_prowess_bonus_value
+					bm_is_blood_cult_faith_trigger = yes
+					add = 15
 				}
 
 				send_interface_toast = {
-					title = bm_reykjavik_blood_mage_duel_decision.success_tt
+					title = bm_geyser_duel.success_tt
 					left_icon = root
 					bm_become_blood_mage_effect = yes
 				}
@@ -63,9 +72,9 @@ bm_reykjavik.0001 = {
 
 			# FAILURE - MENTAL COLLAPSE
 			25 = {
-				desc = bm_reykjavik_blood_mage_duel_decision.mental_failure_tt
+				desc = bm_geyser_duel.mental_failure_tt
 				send_interface_toast = {
-					title = bm_reykjavik_blood_mage_duel_decision.mental_failure_tt
+					title = bm_geyser_duel.mental_failure_tt
 					left_icon = root
 					add_stress = 30
 
@@ -87,9 +96,9 @@ bm_reykjavik.0001 = {
 
 			# FAILURE - PHYSICAL TRAUMA
 			25 = {
-				desc = bm_reykjavik_blood_mage_duel_decision.physical_failure_tt
+				desc = bm_geyser_duel.physical_failure_tt
 				send_interface_toast = {
-					title = bm_reykjavik_blood_mage_duel_decision.physical_failure_tt
+					title = bm_geyser_duel.physical_failure_tt
 					left_icon = root
 					add_stress = 20
 					if = {
@@ -110,9 +119,9 @@ bm_reykjavik.0001 = {
 
 			# FAILURE - INJURY
 			50 = {
-				desc = bm_reykjavik_blood_mage_duel_decision.injury_failure_tt
+				desc = bm_geyser_duel.injury_failure_tt
 				send_interface_toast = {
-					title = bm_reykjavik_blood_mage_duel_decision.injury_failure_tt
+					title = bm_geyser_duel.injury_failure_tt
 					left_icon = root
 					add_stress = 10
 
@@ -144,8 +153,8 @@ bm_reykjavik.0001 = {
 	after = {
 		hidden_effect = {
 			if = {
-				limit = { exists = scope:bm_reykjavik_rival }
-				scope:bm_reykjavik_rival = {
+				limit = { exists = scope:bm_geyser_wise_one }
+				scope:bm_geyser_wise_one = {
 					death = { death_reason = death_vanished }
 				}
 			}
