@@ -47,7 +47,7 @@ lifedrain_courtier_event_interaction = {
             }
          }
     }
-    is_valid_showing_failures_only = { scope:recipient = { NOT = { has_character_modifier = lifedrained_modifier } } }
+    is_valid_showing_failures_only = { scope:recipient = { NOT = { has_character_modifier = recently_lifedrained_modifier } } }
 
     cost = { piety = lifedrain_piety_cost_minor }
     cooldown = { months = 3 }
@@ -55,7 +55,10 @@ lifedrain_courtier_event_interaction = {
     on_accept = {
 
         scope:actor = {debug_log = debug_log.blood_mage_log}
-        scope:recipient = { add_character_modifier =  { modifier = lifedrained_modifier } }
+        scope:recipient = {
+            add_character_modifier =  { modifier = lifedrained_modifier }
+            temporary_negative_recently_lifedrained = yes
+        }
         scope:actor = { hematurgy_magic_cast_effect_minor = yes }
         scope:actor ={
             duel = {

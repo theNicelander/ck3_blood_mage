@@ -11,7 +11,7 @@ Lifeforce is the core supernatural resource fueling blood magic. Rather than an 
 - **Positive Stacks.** Harvested vitality resides on the blood mage as positive modifiers (`lifeforce_modifier_major` and `lifeforce_modifier_minor`). They represent accumulated vitality, extending lifespan, enhancing health, and providing resistance to disease.
 - **Backlash and Exhaustion.** Expending Lifeforce inflicts temporary negative modifiers (`lifeforce_modifier_negative_major`, `lifeforce_modifier_negative_minor`), leaving the mage physically depleted until their body recovers.
 - **Harvesting.** Hematurgy spells draw Lifeforce out of living victims (prisoners, courtiers, or self-manifestation through dangerous spiritual conversion).
-- **Victim Toll.** Victims who survive having their vitality stolen suffer debilitating modifiers (`lifedrained_modifier`), reducing health and life expectancy.
+- **Victim Toll.** Victims who survive having their vitality stolen suffer debilitating stacking modifiers (`lifedrained_modifier`) alongside temporary cooldown modifiers (`recently_lifedrained_modifier`), reducing health and life expectancy while temporarily preventing immediate repeated drains.
 - **Sustained Imbuement.** Lifeforce can be bound into other beings to maintain them, such as Crimson Warriors and Crimson Champions, whose supernatural prowess is sustained at the cost of physical strain.
 - **Story Tracking.** Because CK3 script cannot inspect modifier stack counts directly, the Blood Mage story cycle periodically tallies active stacks for UI display.
 

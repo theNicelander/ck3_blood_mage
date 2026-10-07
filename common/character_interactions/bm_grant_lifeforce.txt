@@ -11,7 +11,7 @@
         scope:actor = { has_trait = lifestyle_blood_mage }
         scope:recipient = { has_character_modifier = lifedrained_modifier }
     }
-    is_valid_showing_failures_only = { 
+    is_valid_showing_failures_only = {
         scope:actor = { has_character_modifier = lifeforce_modifier_major }
     }
 
@@ -19,6 +19,7 @@
         scope:actor =  {debug_log = debug_log.blood_mage_log}
         scope:recipient = {
             remove_character_modifier = lifedrained_modifier
+            remove_character_modifier = recently_lifedrained_modifier
             add_character_modifier = lifeforce_modifier_minor
             add_opinion = {
                 target = scope:actor
@@ -29,7 +30,7 @@
         scope:actor = { benediction_magic_cast_effect_major = yes }
     }
     # AI
-    ai_targets = { 
+    ai_targets = {
         ai_recipients = self
         ai_recipients = dynasty
         ai_recipients = spouses
@@ -82,8 +83,8 @@ grant_lifeforce_interaction = {
         localization = grant_lifeforce_interaction.grant_minor
         flag = grant_minor
         is_valid = {
-            scope:actor = { 
-                has_character_modifier = lifeforce_modifier_minor 
+            scope:actor = {
+                has_character_modifier = lifeforce_modifier_minor
                 piety >= lifedrain_piety_cost_minor
             }
         }
@@ -92,11 +93,11 @@ grant_lifeforce_interaction = {
         localization = grant_lifeforce_interaction.grant_major
         flag = grant_major
         is_valid = {
-            scope:actor = { 
-                has_character_modifier = lifeforce_modifier_major 
+            scope:actor = {
+                has_character_modifier = lifeforce_modifier_major
                 piety >= lifedrain_piety_cost_major
             }
-            
+
         }
     }
 
@@ -104,7 +105,7 @@ grant_lifeforce_interaction = {
         debug_log = debug_log.blood_mage_log
 
         # Grant minor lifeforce
-        if = { 
+        if = {
             limit = {scope:grant_minor = yes}
             scope:actor = {
                 send_interface_toast = {
@@ -116,7 +117,7 @@ grant_lifeforce_interaction = {
                     remove_character_modifier = lifeforce_modifier_minor
                     add_piety = lifedrain_piety_cost_minor_neg
                     add_xp_enlightenment = yes
-                    scope:recipient = { 
+                    scope:recipient = {
                         add_character_modifier = lifeforce_modifier_minor
                         add_opinion = {
                             target = scope:actor
@@ -128,7 +129,7 @@ grant_lifeforce_interaction = {
             }
         }
         # Grant major lifeforce
-        if = { 
+        if = {
             limit = {scope:grant_major = yes}
             scope:actor = {
                 send_interface_toast = {
@@ -140,7 +141,7 @@ grant_lifeforce_interaction = {
                     remove_character_modifier = lifeforce_modifier_major
                     add_piety = lifedrain_piety_cost_major_neg
                     add_xp_bm_dynamic = {TRACK = enlightenment XP = 2 }
-                    scope:recipient = { 
+                    scope:recipient = {
                         add_character_modifier = lifeforce_modifier_major
                         add_opinion = {
                             target = scope:actor
