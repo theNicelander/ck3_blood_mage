@@ -8,15 +8,21 @@ CK3 script fails silently. Follow patterns already in this repo and in vanilla 1
 - Adds the `lifestyle_blood_mage` trait (tracks: ancient, enlightenment, bloodline, benediction, hematurgy), Lifeforce, decisions/interactions, blood golems, Crimson Empowerment, the Blóðtrú religion family, game rules.
 - `scripts/` holds a Steam Workshop helper. Never touch `.env`, credentials or `*.vdf`.
 
+##  Guiding principles for the mod
+
+Rule of cool
+
+This Blood Mage mod strives to incorporate low-fantasy magic into CK3 in a balanced way. The mod doesn't overwrite any base game files, so it should be compatible with all mods.
+
+Ever wanted to have a way for your character to live forever, without being completely immortal? Ever wanted for your playable character to be able to gain positive physical traits (intelligent, beautiful) in a way that feels part of the game?
+
 ## Context layers
 
-| Layer | Answers | Scope |
-| --- | --- | --- |
-| Rules `.agents/rules/*.md` | How do I write this kind of CK3 thing without breaking it? | Generic CK3 plus hard repo constraints. No `bm_` identifiers |
-| Skills `.agents/skills/<name>/SKILL.md` | What are the steps for task X here? | Repeatable multi-file procedures |
-| Architecture `docs-ai/architecture/*.md` | How does this mod implement it? | Mod only. Start at its `README.md` |
-
-Rules: `ck3-scripting.md` (always on), `ck3-localization.md` (always on), `ck3-decisions.md`, `ck3-ai.md`, `ck3-events.md`, `ck3-traits.md`, `ck3-religions.md`, `pr-context.md`.
+| Layer                                    | Answers                                                    | Scope                                                        |
+| ---------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------ |
+| Rules `.agents/rules/*.md`               | How do I write this kind of CK3 thing without breaking it? | Generic CK3 plus hard repo constraints. No `bm_` identifiers |
+| Skills `.agents/skills/<name>/SKILL.md`  | What are the steps for task X here?                        | Repeatable multi-file procedures                             |
+| Architecture `docs-ai/architecture/*.md` | How does this mod implement it?                            | Mod only. Start at its `README.md`                           |
 
 ## Layout
 
