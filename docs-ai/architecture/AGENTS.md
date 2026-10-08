@@ -4,37 +4,34 @@ This folder holds one doc per subsystem of the Blood Mages mod. They explain **w
 
 They describe the **current state of the mod and nothing else**. No history, no changelog, no decision log, no "previously" or "now". When something changes, rewrite the text so it is true today. Branch and PR history belongs in `docs-ai/branch-context/`.
 
-## The rule
+## The rule: Caveman-Style Technical Reference
 
-Document the concepts and benefits. Link to the code for tunable costs and thresholds.
+Write high-density, concise technical documentation. Zero fluff, zero roleplay prose. Both humans and LLMs need direct facts: what it is, how to get it, exact costs, requirements, cooldowns, XP gains, and benefits.
 
-- **Do write:** the purpose of a part, the player or AI fantasy behind it, how it relates to other parts, and what it feeds into.
-- **Do write trait, track & modifier benefits:** document what benefits a trait, track, or modifier gives, and how much experience an action awards (e.g. "doing this gives X experience in that track").
-- **Track & step summaries:** when describing tracks (such as Blood Mage or Crimson Empowerment), provide a simple table towards the beginning showing what the benefits are of each track and step. Since most tracks feature 10 tiers that grant identical bonuses until a milestone is reached, summarize them compactly (e.g. "Levels 10–100 give X; milestones at 50 and 100 add Y") instead of repeating every identical tier.
-- **Don't write:** tunable costs (piety, gold, lifeforce amounts), resource requirements, cooldowns, durations, gating thresholds, chances, weights, AI `base` values or check intervals. Those live in the decisions, script values and events, and go stale the moment someone rebalances.
+- **Do write direct specs:** State `Cost`, `Cooldown`, `Req`, `XP Gain`, and `Benefits` explicitly.
+- **Do write dense summaries:** Use bullet points and compact markdown tables. Strip storytelling, creative lore metaphors, and conversational filler.
+- **Track & step summaries:** For multi-tier tracks (e.g. 10 levels of 10 XP), state the repeating base step bonus once and highlight milestones (e.g. levels 50 and 100) instead of copy-pasting identical rows.
 
-| Too specific | Right level |
+| Verbose / Fluffy (Banned) | Caveman Style (Required) |
 | --- | --- |
-| "Costs 500 piety, 1 year cooldown, needs piety level 2" | "Manifest Lifeforce converts spiritual power into Lifeforce, with a risky outcome." |
-| "Draining Lifeforce costs 250 piety, requires 50 prowess, 5 year cooldown" | "Draining Lifeforce grants 1 hematurgy XP and harvests vitality from the target." |
-| "Copy-pasting 10 identical blocks of +0.1 health" | "Levels 10–40 and 60–90 give +0.1 health and +2 life expectancy; level 50 adds a skill milestone." |
+| "A blood mage is not a class chosen at a menu, it is a path where vitality bends to the caster's desires..." | "Core identity trait `lifestyle_blood_mage`. Unlocks spell decisions, story panel, and 5 XP tracks." |
+| "Manifest Lifeforce converts spiritual devotion into vital essence with great personal peril." | "`bm_manifest_lifeforce`: Decision. Cost: 250 piety. Cooldown: none. Gain: Lifeforce. Risk: Wounded/Death." |
+| "Draining Lifeforce takes the life fluid from captive mortals to grow in hematurgy." | "`drain_lifeforce`: Interaction. Cost: 25 piety. XP: +1 hematurgy. Gain: `lifeforce_modifier_minor`." |
+| "Copy-pasting 10 identical blocks of +0.1 health" | "Levels 10–40, 60–90: +0.1 health, +2 life expectancy. Milestones: lvl 50 (+1 school stat/prowess per piety), lvl 100 (prowess age lock)." |
 
-## What belongs in a doc
+## Subsystem Document Structure
 
-Keep each doc accessible for humans and LLMs. Start with a short **Executive Summary** at the top of trait and progression docs, followed by simplified details:
+Every architecture document must begin with a concise **Executive Summary**:
 
-1. **Executive Summary** (especially for traits, bloodlines, and major subsystems):
-   - **How to get it:** Quick route/trigger into the trait or feature.
-   - **What it does:** Core benefits and mechanical role.
-   - **How to level it up:** Active casting, passive pulses, and XP rewards.
-   - **Simplified Benefits Table:** A compact table showing tracks, step benefits, and milestones.
-2. **Purpose.** What the subsystem is and why the mod has it.
-3. **Concepts.** Simplified narrative and structural explanations. Feel free to shorten or streamline text so key concepts are immediately clear.
-4. **Mod conventions** (optional, between Concepts and Where the details live).
-5. **Where the details live.** A table of concept to file. This is the one place to be precise about location.
-6. **How the parts connect.** Which effects, events, on-actions, stories or GUI tie it together, and the direction of dependency.
-7. **Gotchas.** Cross-cutting traps that stay true after rebalancing.
-8. **Not verified.** What can't be confirmed from files, such as in-game behaviour, AI and UI.
+1. **Executive Summary:**
+   - **What it is:** 1–2 lines defining the core feature/trait and base stats.
+   - **How to get it:** Exact effect, decision, interaction, or trigger.
+   - **How to level / advance:** Triggering actions, Lifeforce costs, and XP gains.
+   - **Data Table:** Compact table of tracks/modifiers, step benefits, and milestones.
+2. **Key Mechanics:** Direct bullet points for decisions, interactions, rosters, or spell gates.
+3. **Where the details live:** Concept-to-file path mapping table.
+4. **Gotchas:** Hard technical traps, edge cases, and script interactions.
+5. **Not verified:** Unverified in-game behavior or AI edge cases.
 
 ## Keeping them current
 

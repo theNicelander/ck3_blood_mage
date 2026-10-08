@@ -24,28 +24,30 @@ Each track has 10 progression levels (10 to 100 XP). Every standard level (10–
 
 ## Purpose
 
-Two lifestyle traits carry the mod's progression: `lifestyle_blood_mage` (the core identity and spellcasting trait) and `lifestyle_crimson_empowerment` (secondary physical/mental refinement, detailed in [blood-mage-crimson-empowerment.md](blood-mage-crimson-empowerment.md)). Blood magic is not a fixed menu class—it is an evolving path advanced by spending Lifeforce within chosen schools.
+Identity and progression trait `lifestyle_blood_mage`. Gates spellcasting, story panel, and 5 school tracks. Secondary trait `lifestyle_crimson_empowerment` covered in [blood-mage-crimson-empowerment.md](blood-mage-crimson-empowerment.md).
 
 ## Concepts
 
 ### Blood Mage (`lifestyle_blood_mage`)
-- Core identity trait. Inheritable, counts as a good trait, and subject to prevalence game rules.
-- Always added via `bm_become_blood_mage_effect`, which also initializes the Blood Magic story panel.
-- Five schools of mastery (`ancient`, `enlightenment`, `bloodline`, `benediction`, `hematurgy`).
-- Milestones at 50 and 100 XP tie attributes directly to the ruler's Piety level.
+- **Type:** Lifestyle trait. Inheritable (25% single parent, 100% both parents; 0.2% birth / random creation). Subject to prevalence game rule.
+- **Base Stats:** `+2` Learning per Piety level, `+10` Blood Mage opinion.
+- **Entry Effect:** Always added via `bm_become_blood_mage_effect` (sets story cycle, initializes rosters, flags prevalence review).
+- **Tracks:** 5 schools (`ancient`, `enlightenment`, `bloodline`, `benediction`, `hematurgy`). Max 100 XP each.
 
-### Acquisition Routes
-All routes run through `bm_become_blood_mage_effect`:
-- **Self-initiation:** Decisions for Blóðtrú faithful or characters surviving a dangerous Learning duel.
-- **Taught by a mage:** Mages can grant the trait to courtiers, or friends/lovers can ask a mage to teach them.
-- **Taken from a prisoner:** A non-mage can forcefully harvest the magic from a captive blood mage.
-- **Conversion:** Witches can convert their witchcraft into blood magic.
-- **Birth & Inheritance:** Children inherit the trait based on parental traits and prevalence game rules.
+### Acquisition Triggers
+All routes call `bm_become_blood_mage_effect`:
+- `bm_become_blood_mage_decision`: Decision for Blóðtrú faithful.
+- `bm_become_blood_mage_ritual_decision`: Decision for non-faithful; Learning duel with risk of injury.
+- `grant_blood_magic_interaction`: Mage grants trait to unlanded courtier (costs lifeforce).
+- `ask_for_blood_magic_interaction`: Non-mage asks friend/lover/soulmate mage to teach them.
+- `bm_drain_blood_magic_interaction`: Character harvests trait from imprisoned blood mage.
+- `bm_convert_from_witch_decision`: Witch swaps witch trait/secret for blood magic.
+- Birth inheritance: Rolled on newborn children of blood mages via `on_birth_child`.
 
-### How Mastery Grows
-- **Active Casting:** Casting spells consumes Lifeforce and awards XP in that spell's school.
-- **Passive Background:** Yearly pulses award `ancient` XP; dynasty crimson modifiers award `bloodline` XP.
-- **Progression Gates:** Higher-level blood magic decisions check track XP to unlock advanced rituals.
+### How Tracks Level Up
+- **Active Spells:** Consuming Lifeforce adds 1–2 XP to the spell's school via `add_xp_bm_dynamic`.
+- **Passive Yearly:** `ancient` gains +1 XP on yearly pulse; `bloodline` rolls yearly XP based on count of house crimson modifiers.
+- **Progression Gates:** Advanced decisions/rituals require minimum XP thresholds in specific tracks.
 
 ## Where the details live
 
