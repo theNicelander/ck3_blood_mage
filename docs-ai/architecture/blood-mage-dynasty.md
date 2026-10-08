@@ -2,37 +2,43 @@
 
 > Living document. Follow `AGENTS.md` in this folder: concepts only, no numbers. Update it when a house, dynasty or bloodline modifier is added, removed or changes meaning.
 
+## Executive Summary
+
+- **How to get it:** Blood mages take the `channel_lifeforce_bloodline` decision, triggering event `bm_channel_lifeforce_bloodline.001` to select a permanent house modifier.
+- **What it does:** Applies powerful supernatural house modifiers that permanently benefit all living and future members of the ruler's noble house.
+- **How it levels up the mage:** The decision grants **1 `bloodline` XP** directly. In addition, each crimson modifier on the house increases the yearly chance for blood mages in that house to gain bonus `bloodline` XP via `blood_mage_yearly_events.002`.
+
+### Simplified House Modifiers Table
+
+Each modifier can be chosen once per house, except `Legacy`, which stacks infinitely:
+
+| Modifier | Theme | House Member Benefits |
+| --- | --- | --- |
+| `dynasty_crimson_charisma_modifier` | Diplomacy & Majesty | `+2` Diplomacy, `+5` General Opinion, `+0.1` Monthly Prestige |
+| `dynasty_crimson_fury_modifier` | Martial & Lethality | `+2` Martial, `+3` Prowess, `+15%` Knight Effectiveness, `+1` Knight Limit |
+| `dynasty_crimson_prosperity_modifier` | Stewardship & Realm Wealth | `+2` Stewardship, `+0.1` County Control Growth, `+5%` Domain Tax, `+5%` Development Growth |
+| `dynasty_crimson_shadows_modifier` | Intrigue & Schemes | `+2` Intrigue, `+5%` Hostile Scheme Success, faster friendly schemes, disrupted enemy schemes |
+| `dynasty_crimson_insight_modifier` | Learning & Devotion | `+2` Learning, `+0.15` Monthly Piety, `+0.05` Capital Development Growth, `+2` Epidemic Resistance |
+| `dynasty_crimson_legacy_modifier` *(stacks)* | Eugenics & Longevity | `+0.3` Health, `+10%` Fertility, `+10%` Positive Genetic Chance/Strengthen, `-10%` Negative/Inbreeding Chance |
+| `dynasty_crimson_expertise_modifier` | Mastery & Mental Fortitude | `+5%` Lifestyle XP Mult, `+5%` Learning Lifestyle XP, `+5%` Stress Loss, `-5%` Stress Gain |
+| *Fallback (`temporary_buff_bloodline`)* | All Modifiers Taken | House buff giving `+1` all skills, `+2` Prowess |
+
 ## Purpose
 
 The mod uses dynasties and houses in two separate ways:
 
 1. **Bloodline.** A blood mage can channel Lifeforce into their own house, giving the whole house a lasting enhancement. This is the fantasy behind the `bloodline` track of `lifestyle_blood_mage`: the mage's power is passed to their lineage.
-2. **The Golem house.** Blood golems are created characters that all belong to one dedicated house, so the mod can recognise them.
+2. **The Golem house.** Blood golems are created characters that all belong to one dedicated house (`bm_house_golem`), allowing the mod to recognise and roster them.
 3. **Dynasty Mages Roster.** The Blood Magic panel tracks all living members of the mage's dynasty who possess the blood mage trait.
-
-The features do not depend on each other. They share only the dynasty and house scopes.
 
 ## Concepts
 
-### Bloodline enhancement
-
-- Channel Lifeforce into your bloodline is a decision for blood mages. It opens an event where the player picks which enhancement the house receives.
-- Each enhancement is a **house modifier** with a theme. Their names follow `dynasty_crimson_<theme>_modifier`:
-
-| Modifier | Theme |
-| --- | --- |
-| `dynasty_crimson_charisma_modifier` | Diplomacy, opinion, prestige |
-| `dynasty_crimson_fury_modifier` | Martial strength, prowess, knights |
-| `dynasty_crimson_prosperity_modifier` | Stewardship, control, taxes, development |
-| `dynasty_crimson_shadows_modifier` | Intrigue, stronger own schemes, weaker enemy schemes |
-| `dynasty_crimson_insight_modifier` | Learning, piety, development, epidemic resistance |
-| `dynasty_crimson_legacy_modifier` | Health, fertility and better inheritance of traits |
-| `dynasty_crimson_expertise_modifier` | Faster lifestyle XP and less stress |
-
-- Each modifier can only be taken once per house, except Legacy, which stacks. A house that already has every other modifier falls back to a temporary house-wide buff and a chance of permanent skill gains for the caster (`temporary_buff_bloodline`).
-- The AI chooses between the available options with equal preference.
-- The house modifiers also **feed back** into the mage. A yearly hidden event gives the `bloodline` track XP, with a better chance for each bloodline modifier the house holds. The more the house has been enhanced, the faster the mage's bloodline mastery grows.
-- Levels in the blood mage trait also grant monthly dynasty prestige. See [blood-mage-traits.md](blood-mage-traits.md).
+### Bloodline Enhancement
+- Channeled via `channel_lifeforce_bloodline`, opening `bm_channel_lifeforce_bloodline.001` where the mage selects an enhancement.
+- Each modifier permanently applies to the caster's noble house.
+- All non-legacy modifiers are unique per house; `Legacy` can be chosen repeatedly to stack congenital trait chances.
+- Feeding back into progression: each modifier on the house accelerates the yearly chance of receiving passive `bloodline` XP.
+- Levels in the Blood Mage trait itself also grant monthly dynasty prestige to support dynastic renown.
 
 ### The Golem house
 

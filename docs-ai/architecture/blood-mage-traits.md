@@ -2,69 +2,50 @@
 
 > Living document. Follow `AGENTS.md` in this folder: concepts only, no numbers. Update it when a trait or track is added, removed or changes meaning.
 
+## Executive Summary
+
+- **How to get it:** Acquired through `bm_become_blood_mage_effect` via self-initiation (faith decision or Learning ritual duel), teaching from a friend/lover/liege, siphoning an imprisoned mage, witch conversion, or hereditary birth.
+- **What it does:** Marks the character as a blood mage. Grants base benefits (`+2` Learning per Piety level, `+10` Blood Mage opinion), unlocks the Blood Magic story panel, enables Lifeforce spellcasting, and progresses across 5 school tracks.
+- **How to level it up:** Spending Lifeforce on blood magic grants XP in the spell's corresponding school (using `add_xp_bm_dynamic`). Slow passive growth comes from the yearly pulse (`ancient`), active house crimson modifiers (`bloodline`), and yearly attunements.
+
+### Simplified Track Benefits Table
+
+Each track has 10 progression levels (10 to 100 XP). Every standard level (10–40 and 60–90) grants the same **Vitality Baseline** (`+0.1` Health, `+2` Life Expectancy, `+1` Year Fertility, `+1` Epidemic Resistance) alongside school bonuses. Milestones reward mastery at level 50 and 100:
+
+| Track | School Theme | Standard Step Bonus (10–40, 60–90) | Level 50 Milestone | Level 100 Milestone | Grown By |
+| --- | --- | --- | --- | --- | --- |
+| `ancient` | Time & Piety | Vitality + `+0.2` Monthly Piety, `+5%` Piety Gain Mult | `+1` Learning & Prowess per Piety level | `+1` Learning per Piety level, Prowess age lock | Yearly pulse, Ancient attunement |
+| `enlightenment` | Self-Mastery | Vitality + `+5%` Lifestyle XP Gain Mult | `+1` Martial & Prowess per Piety level | `+1` Martial per Piety level, Prowess age lock | Self-cast spells, channeling lifeforce |
+| `bloodline` | Dynastic Lineage | Vitality + `+0.1` Monthly Dynasty Prestige | `+1` Stewardship & Prowess per Piety level | `+1` Stewardship per Piety level, Prowess age lock | Bloodline enhancement decision, house modifiers |
+| `benediction` | Healing & Bestowal | Vitality + `+2.5` General Opinion, `+0.2` Prestige, `+5%` Prestige Mult | `+1` Diplomacy & Prowess per Piety level | `+1` Diplomacy per Piety level, Prowess age lock | Curing ailments, granting powers to others |
+| `hematurgy` | Siphoning Vitality | Vitality + `-5` Enemy Hostile Scheme Success Chance | `+1` Intrigue & Prowess per Piety level | `+1` Intrigue per Piety level, Prowess age lock | Draining lifeforce, harvesting traits |
+
+*Prowess age lock = `no_prowess_loss_from_age = yes` (full immunity to prowess deterioration from aging).*
+
 ## Purpose
 
-Two lifestyle traits carry the mod's progression. `lifestyle_blood_mage` marks a character as a blood mage and deepens through use. `lifestyle_crimson_empowerment` is a separate trait that grows from empowerment gained through blood magic. Both are lifestyle traits with XP tracks, so the character's mastery is visible and earned over time.
-
-The idea: a blood mage is not a class chosen at a menu, it is a path. Blood magic is learned, taken or inherited, and then the character grows by spending lifeforce in a way that fits a theme (themselves, their family, others, victims, time). Using the magic is what advances it.
+Two lifestyle traits carry the mod's progression: `lifestyle_blood_mage` (the core identity and spellcasting trait) and `lifestyle_crimson_empowerment` (secondary physical/mental refinement, detailed in [blood-mage-crimson-empowerment.md](blood-mage-crimson-empowerment.md)). Blood magic is not a fixed menu class—it is an evolving path advanced by spending Lifeforce within chosen schools.
 
 ## Concepts
 
 ### Blood Mage (`lifestyle_blood_mage`)
+- Core identity trait. Inheritable, counts as a good trait, and subject to prevalence game rules.
+- Always added via `bm_become_blood_mage_effect`, which also initializes the Blood Magic story panel.
+- Five schools of mastery (`ancient`, `enlightenment`, `bloodline`, `benediction`, `hematurgy`).
+- Milestones at 50 and 100 XP tie attributes directly to the ruler's Piety level.
 
-- It is the identity trait. Acquisition always goes through the shared `bm_become_blood_mage_effect`, which adds the trait, makes sure the character has the Blood Magic story (see `blood-mage-story.md`) and marks the character as reviewed for the prevalence rule.
-- It is hereditary and counts as a good trait. The game rules can limit AI characters from having it (the prevalence rule).
-- It has five tracks. Each is a **school of mastery** with its own theme and its own way of gaining XP:
+### Acquisition Routes
+All routes run through `bm_become_blood_mage_effect`:
+- **Self-initiation:** Decisions for Blóðtrú faithful or characters surviving a dangerous Learning duel.
+- **Taught by a mage:** Mages can grant the trait to courtiers, or friends/lovers can ask a mage to teach them.
+- **Taken from a prisoner:** A non-mage can forcefully harvest the magic from a captive blood mage.
+- **Conversion:** Witches can convert their witchcraft into blood magic.
+- **Birth & Inheritance:** Children inherit the trait based on parental traits and prevalence game rules.
 
-| Track | Theme | Grown by |
-| --- | --- | --- |
-| `ancient` | Defying time and piety | Passing time (yearly pulse, and the Ancient attunement) |
-| `enlightenment` | Mastery of the self | Casting blood magic on yourself, and channelling lifeforce |
-| `bloodline` | The dynasty | Enhancing your lineage, and house crimson modifiers each year |
-| `benediction` | Giving life to others | Healing and empowering others |
-| `hematurgy` | Taking from others | Draining lifeforce and harvesting traits |
-
-- Every level gives a steady bonus that fits the school. Every track also adds a little vitality.
-- **Milestones** reward the mage at the halfway point and at full mastery. Each is tied to the school's skill, and full mastery stops age from eroding prowess.
-
-### Crimson Empowerment (`lifestyle_crimson_empowerment`)
-
-- It is not inherited and hidden from the ruler designer. It represents power the mage has built up, and some self-cast blood magic requires experience in it.
-- It is added by `bm_crimson_empowerment_event.001`, which is fired by the major self-cast blood magic. The player picks which track to advance. Tracks that are already full are not offered.
-- It has seven tracks, each a theme of empowerment:
-
-| Track | Theme |
-| --- | --- |
-| `charisma` | Presence and opinion |
-| `fury` | Martial strength and control |
-| `prosperity` | Wealth and development |
-| `shadows` | Dread and secrecy |
-| `insight` | Learning and development |
-| `legacy` | Passing on strong traits |
-| `expertise` | Faster growth in lifestyles |
-
-## How one becomes a blood mage
-
-All routes call `bm_become_blood_mage_effect`. They differ in fantasy:
-
-- **Self-initiation.** Decisions for a character who follows the Blóðtrú faith, or who survives the internal ritual (a Learning duel that can scar the character).
-- **Taught by a mage.** A blood mage grants blood magic to someone, who gains opinion of them. Non-mages can also ask a mage who is their friend, lover or soulmate.
-- **Taken from a prisoner.** A non-mage can try to take blood magic from an imprisoned mage, at a terrible cost to the prisoner.
-- **Conversion.** A witch can trade witchcraft for blood magic.
-- **Birth and inheritance.** The trait is hereditary (see `blood-mage-trait-inheritance.md`). The prevalence game rules decide how often AI children get it, and whether AI characters keep it.
-- **Scripted starts.** Character templates can give the trait.
-- **AI.** The AI uses the ask and grant interactions. Their willingness is scaled by the prevalence rule.
-
-## How the trait grows
-
-Growth is **use-driven**, with a slow passive background:
-
-1. **Passive (yearly).** A yearly pulse gives every blood mage a little XP in `ancient`. The Ancient attunement can add more, and house crimson modifiers can add `bloodline` XP. Crimson runes can also grant lifeforce each year.
-2. **Active (spending lifeforce).** Casting blood magic needs Lifeforce (see `blood-mage-decisions.md`). Each cast removes the lifeforce modifier and adds XP to the track that matches the spell's school. Bigger casts give more XP. `add_xp_bm_dynamic` and the small `add_xp_*` helpers are the shared way to do this.
-3. **Levels and milestones.** Track XP crosses level thresholds, which apply bonuses. Milestones add bonuses at the halfway point and full mastery.
-4. **Gates.** Some actions read XP back, so deeper mastery unlocks stronger actions. That closes the loop between using magic and getting better at it.
-
-Crimson Empowerment grows only through the major self-cast event: every cast lets the mage pick one empowerment track to advance.
+### How Mastery Grows
+- **Active Casting:** Casting spells consumes Lifeforce and awards XP in that spell's school.
+- **Passive Background:** Yearly pulses award `ancient` XP; dynasty crimson modifiers award `bloodline` XP.
+- **Progression Gates:** Higher-level blood magic decisions check track XP to unlock advanced rituals.
 
 ## Where the details live
 

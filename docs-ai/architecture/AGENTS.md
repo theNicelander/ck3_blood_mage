@@ -6,30 +6,35 @@ They describe the **current state of the mod and nothing else**. No history, no 
 
 ## The rule
 
-Document the concept. Link to the code for the numbers.
+Document the concepts and benefits. Link to the code for tunable costs and thresholds.
 
 - **Do write:** the purpose of a part, the player or AI fantasy behind it, how it relates to other parts, and what it feeds into.
-- **Don't write:** costs, cooldowns, durations, thresholds, XP values, piety levels, chances, weights, modifier magnitudes, AI `base` values or check intervals. Those live in the decisions, traits, script values and events, and go stale the moment someone rebalances.
-
-Test: if a balance pass would make the sentence wrong, remove the number and point at the file instead.
+- **Do write trait, track & modifier benefits:** document what benefits a trait, track, or modifier gives, and how much experience an action awards (e.g. "doing this gives X experience in that track").
+- **Track & step summaries:** when describing tracks (such as Blood Mage or Crimson Empowerment), provide a simple table towards the beginning showing what the benefits are of each track and step. Since most tracks feature 10 tiers that grant identical bonuses until a milestone is reached, summarize them compactly (e.g. "Levels 10–100 give X; milestones at 50 and 100 add Y") instead of repeating every identical tier.
+- **Don't write:** tunable costs (piety, gold, lifeforce amounts), resource requirements, cooldowns, durations, gating thresholds, chances, weights, AI `base` values or check intervals. Those live in the decisions, script values and events, and go stale the moment someone rebalances.
 
 | Too specific | Right level |
 | --- | --- |
 | "Costs 500 piety, 1 year cooldown, needs piety level 2" | "Manifest Lifeforce converts spiritual power into Lifeforce, with a risky outcome." |
-| "Gives +0.1 health every 10 XP" | "Each track grants a steady bonus that fits its theme, plus milestones." |
-| "Seek Power: base 100, interval 3" | "Seek Power is an event chain that can yield extra Lifeforce. Landless adventurers get their own variant." |
+| "Draining Lifeforce costs 250 piety, requires 50 prowess, 5 year cooldown" | "Draining Lifeforce grants 1 hematurgy XP and harvests vitality from the target." |
+| "Copy-pasting 10 identical blocks of +0.1 health" | "Levels 10–40 and 60–90 give +0.1 health and +2 life expectancy; level 50 adds a skill milestone." |
 
 ## What belongs in a doc
 
-Keep each doc light. Use these headings, in this order:
+Keep each doc accessible for humans and LLMs. Start with a short **Executive Summary** at the top of trait and progression docs, followed by simplified details:
 
-1. **Purpose.** What the subsystem is and why the mod has it.
-2. **Concepts.** The parts, each in a sentence or two. Name the idea and how it differs from its neighbours. For example, say that landless adventurers use a variant of the same action.
-3. **Mod conventions** (optional, between Concepts and Where the details live). Rules a contributor must follow in this mod, such as which shared effect to call. Concepts only.
-4. **Where the details live.** A table of concept to file. This is the one place to be precise about location.
-5. **How the parts connect.** Which effects, events, on-actions, stories or GUI tie it together, and the direction of dependency.
-6. **Gotchas.** Cross-cutting traps that stay true after rebalancing, such as "add new decisions to the story list too". Skip numeric oddities. Fix those in the script or put them in the PR notes.
-7. **Not verified.** What can't be confirmed from files, such as in-game behaviour, AI and UI.
+1. **Executive Summary** (especially for traits, bloodlines, and major subsystems):
+   - **How to get it:** Quick route/trigger into the trait or feature.
+   - **What it does:** Core benefits and mechanical role.
+   - **How to level it up:** Active casting, passive pulses, and XP rewards.
+   - **Simplified Benefits Table:** A compact table showing tracks, step benefits, and milestones.
+2. **Purpose.** What the subsystem is and why the mod has it.
+3. **Concepts.** Simplified narrative and structural explanations. Feel free to shorten or streamline text so key concepts are immediately clear.
+4. **Mod conventions** (optional, between Concepts and Where the details live).
+5. **Where the details live.** A table of concept to file. This is the one place to be precise about location.
+6. **How the parts connect.** Which effects, events, on-actions, stories or GUI tie it together, and the direction of dependency.
+7. **Gotchas.** Cross-cutting traps that stay true after rebalancing.
+8. **Not verified.** What can't be confirmed from files, such as in-game behaviour, AI and UI.
 
 ## Keeping them current
 

@@ -23,7 +23,7 @@ Rules: `ck3-scripting.md` (always on), `ck3-localization.md` (always on), `ck3-d
 - `common/`, `events/`, `gui/`, `gfx/`, `localization/<language>/` mirror vanilla.
 - `.agents/rules`: generic CK3 notes. `.agents/skills`: task procedures.
 - `docs/`: images only. `docs-ai/`: written docs for humans and agents.
-- `docs-ai/architecture/`: one doc per subsystem (e.g. `blood-mage-story.md`), always describing the **current state of the mod** and nothing else: no history, changelog or decision log. **Read the matching doc before changing that part of the codebase, and update it in the same change so it stays true.** Add a doc when you introduce a subsystem, and delete or rewrite text that is no longer true. Keep them conceptual (no costs, thresholds or other tunable numbers). See `docs-ai/architecture/AGENTS.md`.
+- `docs-ai/architecture/`: one doc per subsystem (e.g. `blood-mage-story.md`), always describing the **current state of the mod** and nothing else: no history, changelog or decision log. **Read the matching doc before changing that part of the codebase, and update it in the same change so it stays true.** Add a doc when you introduce a subsystem, and delete or rewrite text that is no longer true. Include an executive summary and benefit tables; omit tunable costs, requirements, and cooldowns. See `docs-ai/architecture/AGENTS.md`.
 - Religion uses the 1.20 layout `common/religion/{religion_family_types,religion_types,faith_types,rite_types,holy_site_types,doctrine_group_types,doctrine_types}`. Branches based on older `main` may still have `religions/`, `religion_families/`, `holy_sites/` and a bare `add_trait = lifestyle_blood_mage`. **Check which layout the branch has. Never mix them.**
 
 ## Naming
