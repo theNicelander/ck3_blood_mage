@@ -23,3 +23,10 @@ temporary_negative_recently_trait_drained = {
         days = 365
     }
 }
+
+temporary_negative_recently_lifedrained = {
+    add_character_modifier = {
+        modifier = recently_lifedrained_modifier
+        years = 1
+    }
+}
