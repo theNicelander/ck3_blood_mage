@@ -4,7 +4,7 @@
     bm_cast_blood_magic_self_attune_lifeforce: "Lifeforce Attunement"
     bm_cast_blood_magic_self_attune_lifeforce_desc: "Spend [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] to attune your Blood Magic towards a particular [GetTrait('lifestyle_blood_mage').GetName( GetNullCharacter )] trait path for increased experience gain."
     bm_attune_lifeforce.effects_list: "Choose one of the following attunements (you can only have one at a time):\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('ancient_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('enlightenment_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('bloodline_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('benediction_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('hematurgy_attuned').GetNameWithTooltip]"
-    
+
     bm_attune_lifeforce.001.title: "Attune Blood Magic"
     bm_attune_lifeforce.001.desc: "The crimson essence within my veins pulses with potential, waiting to be directed. By attuning my magic to a specific aspect, I can strengthen my connection to that particular facet of blood magic, potentially hastening my mastery of it."
     bm_attune_lifeforce.001.b: "Ancient - Extend my years and wisdom of ages"
@@ -17,7 +17,7 @@
     bm_cast_blood_magic_self_channel_minor_lifeforce: "Channel Minor Lifeforce"
     bm_cast_blood_magic_self_channel_minor_lifeforce_desc: "Spend [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] for a small temporary boost."
     channel_lifeforce_enlightenment_minor.effects_list: "Channel minor blood magic to temporarily enhance one attribute:\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('diplomacy_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('martial_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('stewardship_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('intrigue_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('learning_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('prowess_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('exp_lifeforce_modifier').GetNameWithTooltip]"
-    
+
     bm_channel_lifeforce_enlightenment_minor.001.title: "Subtle Blood Awakening"
     bm_channel_lifeforce_enlightenment_minor.001.desc: "A whisper of power stirs within my veins, not the roar of a full ritual but enough to grant me some advantage. With careful focus, I can direct this modest crimson current to temporarily enhance a single facet of my being."
     bm_channel_lifeforce_enlightenment_minor.001.a: "Diplomacy - A drop of blood on my tongue loosens secrets"
@@ -61,11 +61,11 @@
     bm_education_new.001.intrigue: "Gain new intrigue education"
     bm_education_new.001.learning: "Gain new learning education"
 
-    # Blood Rrune
+    # Blood Rune
     bm_cast_blood_magic_self_major_blood_rune: "Inscribe with Blood Runes"
-    bm_cast_blood_magic_self_major_blood_rune_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to attempt to improve one of your Education traits"
-    bm_cast_blood_magic_self_major_blood_rune_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('bm_blood_rune_minimum_xp')|0] Experience in [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]"
-    NOT_bm_cast_blood_magic_self_major_blood_rune_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('bm_blood_rune_minimum_xp')|0] Experience in [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]"
+    bm_cast_blood_magic_self_major_blood_rune_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] to etch powerful protective and empowering runes directly into your flesh."
+    bm_cast_blood_magic_self_major_blood_rune_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('bm_blood_rune_minimum_xp')|0] Experience in Blood Magic"
+    NOT_bm_cast_blood_magic_self_major_blood_rune_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('bm_blood_rune_minimum_xp')|0] Experience in Blood Magic"
 
 
     # Crimson Empowerment
@@ -75,7 +75,7 @@
     bm_crimson_empowerment_event.001.title: "Crimson Empowerment"
     bm_crimson_empowerment_event.001.desc: "The blood magic roars within me like a caged beast, desperate for expression. I can feel it straining against my flesh, eager to reshape my very essence according to my desires. Which aspect shall I allow it to transform today?"
     bm_crimson_empowerment_event.001.toast: "Crimson Empowerment"
-    
+
     bm_crimson_empowerment_event.001.charisma: "Charisma - My words shall drip with persuasive venom"
     bm_crimson_empowerment_event.001.fury: "Fury - The battlefield will run red with my triumph"
     bm_crimson_empowerment_event.001.prosperity: "Prosperity - Wealth shall flow like blood into my waiting hands"
@@ -85,3 +85,26 @@
     bm_crimson_empowerment_event.001.expertise: "Expertise - Blood remembers all it has witnessed through the ages"
     bm_crimson_empowerment_event.001.versatility: "Versatility - My power shall transcend all boundaries"
 
+    # Cooldown Tooltip
+    bm_cooldown_active_tt: "This ritual is currently on cooldown"
+    NOT_bm_cooldown_active_tt: "This ritual is currently on cooldown"
+
+    # Manifest Lifeforce
+    bm_cast_blood_magic_self_manifest_lifeforce: "Manifest Lifeforce"
+    bm_cast_blood_magic_self_manifest_lifeforce_desc: "Through deep meditation and spiritual connection, attempt to convert spiritual power directly into tangible lifeforce."
+
+    # Seek Power
+    bm_cast_blood_magic_self_seek_power: "Seek Power in Wilderness"
+    bm_cast_blood_magic_self_seek_power_desc: "Venture into the wilderness to hunt for beasts or solitary travelers to harvest their lifeforce."
+
+    # Convert from Witch
+    bm_cast_blood_magic_self_convert_from_witch: "Renounce Witchcraft for Blood Magic"
+    bm_cast_blood_magic_self_convert_from_witch_desc: "Renounce the inferior ways of witches and awaken the ancient art of blood magic within your veins."
+
+    # Channel Bloodline
+    bm_cast_blood_magic_self_channel_bloodline: "Empower Dynasty with Blood Magic"
+    bm_cast_blood_magic_self_channel_bloodline_desc: "Perform a powerful ritual that permanently enhances your entire dynasty with the essence of your blood magic."
+
+    # Create Blood Golem
+    bm_cast_blood_magic_self_create_blood_golem: "Create Blood Golem"
+    bm_cast_blood_magic_self_create_blood_golem_desc: "Shape raw lifeforce into an artificial, immortal servant of unmatched martial prowess."

@@ -1,19 +1,35 @@
 # Blood Mage Lifeforce
 
-> Living document. Follow `AGENTS.md` in this folder: concepts only, no numbers. Update it when Lifeforce modifiers, sources, sinks or mechanics change.
+## Executive Summary
 
-## Purpose
+- **What:** Core spellcasting resource. Stored as physical character modifiers (`lifeforce_modifier_minor`, `lifeforce_modifier_major`).
+- **Sources:** Harvesting prisoners/courtiers, slaying duel opponents, or spiritual self-manifestation.
+- **Sinks:** Spent to power decisions, interactions, golem forging, bloodline enhancements, and retinue. Casting applies temporary negative exhaustion backlash.
 
-Lifeforce is the core supernatural resource fueling blood magic. Rather than an abstract numeric currency like gold or piety, Lifeforce in this mod is represented as physical essence carried directly on characters through stacking modifiers. It must be harvested from mortal lives, stored in the body, and burned to fuel spells, bloodline enhancements, and servants.
+### Lifeforce Modifiers Table
 
-## Concepts
+| Modifier | Type | Stacking | Duration | Mechanical Effects |
+| --- | --- | --- | --- | --- |
+| `lifeforce_modifier_minor` | Positive | Yes | Permanent until spent | `+0.1` Health, `+1` Life Exp, `+1` Fertility Yr, `+1` Epidemic Res, `+1` Prowess |
+| `lifeforce_modifier_major` | Positive | Yes | Permanent until spent | `+0.5` Health, `+10` Life Exp, `+5` Fertility Yrs, `+5` Epidemic Res, `+5` Prowess |
+| `lifeforce_modifier_negative_minor` | Backlash | Yes | Temporary (expires) | `-0.1` Health, `-1` Life Exp, `-1` Fertility Yr, `-1` Epidemic Res, `-1` Prowess |
+| `lifeforce_modifier_negative_major` | Backlash | Yes | Temporary (expires) | `-0.5` Health, `-5` Life Exp, `-5` Fertility Yrs, `-5` Epidemic Res, `-5` Prowess |
+| `lifedrained_modifier` | Victim Toll | Yes | Permanent | `-0.5` Health, `-10` Life Exp, `-5` Fertility Yrs, `-5` Epidemic Res, `-5` Prowess |
+| `recently_lifedrained_modifier` | Victim CD | No | Temporary | Cooldown debuff preventing immediate re-harvesting of same courtier |
 
-- **Positive Stacks.** Harvested vitality resides on the blood mage as positive modifiers (`lifeforce_modifier_major` and `lifeforce_modifier_minor`). They represent accumulated vitality, extending lifespan, enhancing health, and providing resistance to disease.
-- **Backlash and Exhaustion.** Expending Lifeforce inflicts temporary negative modifiers (`lifeforce_modifier_negative_major`, `lifeforce_modifier_negative_minor`), leaving the mage physically depleted until their body recovers.
-- **Harvesting.** Hematurgy spells draw Lifeforce out of living victims (prisoners, courtiers, lethal single combat duel victories, or self-manifestation through dangerous spiritual conversion).
-- **Victim Toll.** Victims who survive having their vitality stolen suffer debilitating stacking modifiers (`lifedrained_modifier`) alongside temporary cooldown modifiers (`recently_lifedrained_modifier`), reducing health and life expectancy while temporarily preventing immediate repeated drains.
-- **Sustained Imbuement.** Lifeforce can be bound into other beings to maintain them, such as Crimson Warriors and Crimson Champions, whose supernatural prowess is sustained at the cost of physical strain.
-- **Story Tracking.** Because CK3 script cannot inspect modifier stack counts directly, the Blood Mage story cycle periodically tallies active stacks for UI display.
+## Sources & Sinks Matrix
+
+| Action | Cost / Requirements | Lifeforce Delta | XP Gain |
+| --- | --- | --- | --- |
+| `lifedrain_prisoner_interaction` | Piety. Dungeon prisoner. | Grants `lifeforce_modifier_minor` | +1 hematurgy |
+| `lifedrain_courtier_event_interaction` | Piety. Unlanded courtier. | Grants `lifeforce_modifier_minor` | +1 hematurgy |
+| Lethal duel kill (combat on-action) | Win lethal single combat duel. | Grants `lifeforce_modifier_major` | +2 hematurgy |
+| `bm_manifest_lifeforce` (decision) | 250 piety. Learning check. | Grants minor or major Lifeforce | +1 enlightenment |
+| `bm_crimson_empowerment_decision` | 150 piety + Major Lifeforce. | Consumes `lifeforce_modifier_major` | +3 enlg, +10 CE |
+| `channel_lifeforce_bloodline` | 350 piety + Major Lifeforce. | Consumes `lifeforce_modifier_major` | +5 bloodline |
+| `bm_create_blood_golem` | 350 piety + Major Lifeforce. | Consumes `lifeforce_modifier_major` | +3 enlightenment |
+| `grant_crimson_warrior_interaction` | Piety + Minor Lifeforce. | Consumes `lifeforce_modifier_minor` | +1 benediction |
+| `grant_crimson_champion_interaction` | Piety + Major Lifeforce. | Consumes `lifeforce_modifier_major` | +2 benediction |
 
 ## Where the details live
 
@@ -21,30 +37,14 @@ Lifeforce is the core supernatural resource fueling blood magic. Rather than an 
 | --- | --- |
 | Lifeforce modifiers | `common/modifiers/bm_lifeforce.txt` |
 | Temporary backlash effects | `common/scripted_effects/bm_blood_magic_temporary_effects.txt` |
-| Magic cast consumption effects | `common/scripted_effects/bm_blood_magic_used_effects.txt` |
+| Cast consumption effects | `common/scripted_effects/bm_blood_magic_used_effects.txt` |
 | Harvesting interactions | `common/character_interactions/bm_drain_lifeforce.txt` |
-| Combat duel kill harvesting | `common/on_action/bm_duel_on_actions.txt` |
-| Granting interactions | `common/character_interactions/bm_grant_lifeforce.txt` |
-| Self-manifestation decision | `common/decisions/bm_manifest_lifeforce.txt` |
+| Duel fatality harvesting | `common/on_action/bm_duel_on_actions.txt` |
+| Manifestation decision | `common/decisions/bm_manifest_lifeforce.txt` |
 | Mass harvesting decision | `common/decisions/bm_mass_lifedrain_prisoners.txt` |
-| Attunement events | `events/bm_attune_lifeforce_events.txt` |
-| Enlightenment spending events | `events/bm_channel_lifeforce_enlightenment_minor_events.txt` |
-| Story roster & stack tally | `common/scripted_effects/bm_blood_mage_story_list_effects.txt` |
-
-## How the parts connect
-
-- Gaining Lifeforce applies `lifeforce_modifier_major` or `lifeforce_modifier_minor` and awards Hematurgy track experience.
-- Slaying an opponent in a lethal single combat duel harvests their vitality, granting Major Lifeforce and Hematurgy track experience.
-- Casting spells invokes consumption effects in `bm_blood_magic_used_effects.txt`, which remove positive stacks and apply temporary negative backlash.
-- Decisions such as `manifest_lifeforce_decision` offer a gamble to convert piety and spiritual power into fresh Lifeforce stacks.
-- `bm_refresh_blood_magic_rosters_effect` counts positive stacks to keep the Blood Magic panel in `blood-mage-story.md` accurate.
+| Story panel stack tally | `common/scripted_effects/bm_blood_mage_story_list_effects.txt` |
 
 ## Gotchas
 
-- Positive Lifeforce stacks do not decay automatically by default; they remain until spent or removed by negative events.
-- Negative backlash modifiers are temporary and wear off over time.
-- Modifying Lifeforce via custom script should always respect the paired removal and backlash application in `bm_blood_magic_used_effects.txt` to keep track experience and story tallies consistent.
-
-## Not verified
-
-In-game tooltip formatting for multiple stacked instances of identical modifiers and portrait visual effects when holding maximum stacks.
+- Positive stacks never expire on their own; only removed by script consumption effects.
+- Scripted cast consumption in `bm_blood_magic_used_effects.txt` removes the positive modifier and applies the corresponding temporary negative exhaustion modifier.

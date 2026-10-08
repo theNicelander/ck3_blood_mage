@@ -1,6 +1,6 @@
 ﻿channel_lifeforce_bloodline = {
     picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
-    
+
     decision_group_type = bm_decision_group
 
     cooldown = { years = 3 }
@@ -8,11 +8,16 @@
 
     is_shown = { has_trait = lifestyle_blood_mage }
     is_valid = {
+        custom_description = {
+            text = bm_cooldown_active_tt
+            NOT = { has_character_flag = bm_channel_bloodline_cooldown }
+        }
         has_character_modifier = lifeforce_modifier_major
         piety_level >= 1
     }
     effect = {
         debug_log = debug_log.blood_mage_log
+        add_character_flag = { flag = bm_channel_bloodline_cooldown years = 3 }
         trigger_event = { id = bm_channel_lifeforce_bloodline.001 }
         add_xp_bm_dynamic = {
             TRACK = bloodline
@@ -22,7 +27,7 @@
         custom_tooltip = channel_lifeforce_bloodline.effects_list
     }
     ai_check_interval = 6
-    ai_will_do = { 
+    ai_will_do = {
         base = 50
         ai_modifier_based_on_health = yes
     }

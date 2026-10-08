@@ -1,8 +1,8 @@
-# Architecture docs index
+# Architecture Docs Index
 
-Rules (`.agents/rules/`) say how to write CK3 script in general. These docs say how this mod implements things. Read the doc matching the code you are changing, and update it in the same change (see `AGENTS.md` in this folder).
+Rules (`.agents/rules/`) say how to write CK3 script in general. These docs say how this mod implements things. Read the doc matching the code you are changing, and update it in the same change (see `AGENTS.md` in this folder). All architecture docs follow high-density caveman style: executive summaries, master tables, costs, requirements, XP gains, benefits; zero roleplay fluff.
 
-## Path to doc
+## Path to Doc
 
 | Path | Doc |
 | --- | --- |
@@ -22,24 +22,24 @@ Rules (`.agents/rules/`) say how to write CK3 script in general. These docs say 
 | `common/religion/**`, `bm_religion_conversion_effects.txt`, `bm_reformation_repair_*` | `blood-mage-religions.md` |
 | `common/scripted_triggers/bm_triggers.txt`, `common/opinion_modifiers/`, `common/nicknames/`, `common/deathreasons/`, `gui/*texticons*` | `blood-mage-shared-scripting.md` |
 
-## Docs
+## Docs Reference
 
-| Doc | One line |
+| Doc | Coverage |
 | --- | --- |
-| `blood-mage-story.md` | The Blood Magic panel (story cycle) and its rosters |
-| `blood-mage-decisions.md` | Actions a blood mage can take and the routes into blood magic |
-| `blood-mage-interactions.md` | Draining, granting, curing and self-casting interactions |
-| `blood-mage-traits.md` | The lifestyle traits and their progression tracks |
-| `blood-mage-trait-inheritance.md` | How the trait propagates by inheritance and birth |
-| `blood-mage-crimson-empowerment.md` | Crimson Empowerment trait and warrior retinue |
-| `blood-mage-progression.md` | XP gains, requirement gates, cost scaling, AI weighting |
-| `blood-mage-prevalence-and-lifecycle.md` | Trait acquisition, retention and yearly pulse |
-| `blood-mage-game-rules.md` | Campaign game rules |
-| `blood-mage-lifeforce.md` | The Lifeforce resource |
-| `blood-mage-blood-runes.md` | Crimson Runes and university buildings |
-| `blood-mage-golems.md` | Blood golem lifecycle |
-| `blood-mage-dynasty.md` | Bloodline house modifiers and the Golem house |
-| `blood-mage-duels-and-education.md` | Duels, trait draining, education, mass lifedrain |
-| `blood-mage-events-overview.md` | Event files mapped to their triggers |
-| `blood-mage-religions.md` | Blóðtrú, faiths, rites, holy sites |
-| `blood-mage-shared-scripting.md` | Shared triggers, opinions, nicknames, icons, compat |
+| `blood-mage-traits.md` | Core `lifestyle_blood_mage` trait, 5 schools master table, milestones, acquisition triggers |
+| `blood-mage-crimson-empowerment.md` | `lifestyle_crimson_empowerment` trait, 7 tracks master table, costs, spell unlocks, retinue |
+| `blood-mage-dynasty.md` | 7 house modifiers, costs, cooldowns, yearly XP loop, Golem cadet house |
+| `blood-mage-blood-runes.md` | Blood Runes tiers 1-3, costs, requirements, passive rolls, Blood Universities 0-3 |
+| `blood-mage-decisions.md` | Master decisions table: panels, costs, cooldowns, requirements, XP gains, effects |
+| `blood-mage-duels-and-education.md` | Duels, trait drain, education upgrades/re-spec, mass lifedrain, exact XP gates |
+| `blood-mage-events-overview.md` | Complete event namespace, trigger, and outcome matrix across all event files |
+| `blood-mage-game-rules.md` | Master game rules table: all 5 campaign rules, settings, and behavioral impacts |
+| `blood-mage-golems.md` | Golem lifecycle matrix: creation costs, stat template, shaping duels, roster management |
+| `blood-mage-interactions.md` | Master character interactions table: target filters, costs, cooldowns, XP gains, effects |
+| `blood-mage-lifeforce.md` | Lifeforce modifiers table: Minor/Medium/Major bonuses, sources and sinks matrix |
+| `blood-mage-prevalence-and-lifecycle.md` | Prevalence game rules matrix, birth pipeline diagram, lifecycle scripted effects |
+| `blood-mage-progression.md` | XP sources by track, AI evaluation formulas, ritual XP gates |
+| `blood-mage-religions.md` | Blóðtrú religious family, 3 faiths, rites, holy site hierarchy, identity doctrine, cult decisions |
+| `blood-mage-shared-scripting.md` | Shared triggers, opinion modifiers, death reasons, text icons, overhaul compat guards |
+| `blood-mage-story.md` | `bm_blood_mage_story` cycle, Situation panel, rosters (dynasty mages, golems, retinue) |
+| `blood-mage-trait-inheritance.md` | Direct inheritance odds (25%/100%), birth prevalence pipeline, non-genetic rules |

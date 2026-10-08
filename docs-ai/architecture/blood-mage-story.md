@@ -1,46 +1,36 @@
 # Blood Mage Story (`bm_blood_mage_story`)
 
-> Living document. Follow `AGENTS.md` in this folder: concepts only, no numbers. Update it when the story, its rosters or its creation points change.
+## Executive Summary
 
-## Purpose
+Character-bound story cycle powering the "Blood Magic" Situation panel (`window_situation_list.gui`). Provides dedicated management interface for living dynasty blood mages, blood golems, and crimson retinue warriors, alongside situation-exclusive decisions.
 
-A per-character story cycle that backs the "Blood Magic" panel. It gives a blood mage one place to see their servants and reach their key actions.
+## Story Architecture & Rosters
 
-## Concepts
+| Component | Scope / Target | Content / Members | Update Trigger |
+| --- | --- | --- | --- |
+| **Living Dynasty Roster** | Story variable list | All living dynasty members with `lifestyle_blood_mage` | `bm_refresh_blood_magic_rosters_effect` |
+| **Blood Golem Roster** | Story variable list | Courtiers possessing `lifestyle_blood_mage` trait belonging to the Golem house (`house_blood_golem`) | Creation, shaping, death, or roster refresh effect |
+| **Crimson Retinue Roster** | Story variable list | Courtiers granted Crimson Warrior (`bm_crimson_warrior`) or Champion (`bm_crimson_champion`) modifiers | Empowerment interactions or roster refresh effect |
+| **Lifeforce Counters** | Story variables | Cached counts of Minor, Medium, and Major Lifeforce modifiers | Roster refresh (strips and recount stacks) |
+| **Situation Decisions** | Hidden decisions (`is_invisible = yes`) | Compact blood magic actions accessible only inside panel | Story cycle decision list |
 
-- **The panel.** It shows the mage's blood golems, their crimson retinue, and living dynasty members who are blood mages, along with compact situation-exclusive actions (hidden from the main decisions view with `is_invisible = yes`).
-- **Rosters.** The golem list is made of the courtiers in the golem house. The retinue is made of courtiers who have been empowered as crimson warriors or champions. The dynasty roster contains all living members of the mage's dynasty who possess the blood mage trait.
-- **Lifeforce counters.** The refresh also recounts Lifeforce modifier stacks, because script can't read a modifier's stack count.
-- **Lifetime.** The story is created once per blood mage, rebuilt on setup and ended when the owner dies.
+## Lifecycle & Synchronization
 
-## Mod conventions
+- **Creation:** Initiated once per character via `bm_ensure_blood_mage_story_effect` upon acquiring `lifestyle_blood_mage`.
+- **Hooks:** Hooked on game start (`bm_blood_mage_story_on_actions.txt`), birth on-actions (`bm_blood_mage_prevalence_on_actions.txt`), and yearly pulse (`bm_yearly_pulse.txt`).
+- **Destruction:** Ends on character death; reinitialized on successor if they are a blood mage.
+- **Roster Snapshot Rule:** Golem and retinue lists are static snapshots. Must invoke `bm_refresh_blood_magic_rosters_effect` whenever golems/retinue are created, recruited, or killed.
+- **Lifeforce Recount Rule:** Because CK3 script cannot query dynamic modifier stack counts, the refresh effect temporarily removes and re-adds Lifeforce modifiers to recount exact totals. Refresh effects must have zero side effects triggered by modifier changes.
 
-- **Adding a story field.** Update in order: story effects, scripted GUI, localization, then `window_situation_list.gui` (Blood Mage sections only).
-- **Situation decisions.** Only situation-exclusive hidden decisions are kept in the story's decision list to keep the panel compact. Non-hidden decisions belong in the main decisions view.
-
-## Where the details live
+## File Map
 
 | Piece | File |
 | --- | --- |
 | Story definition | `common/story_cycles/bm_blood_mage_story.txt` |
-| Create-if-missing effect (`bm_ensure_blood_mage_story_effect`) | `common/scripted_effects/bm_blood_mage_lifecycle_effects.txt` |
-| Roster and stack refresh | `common/scripted_effects/bm_blood_mage_story_list_effects.txt` |
-| Script values | `bm_blood_mage_story_values.txt` |
+| Story initialization (`bm_ensure_blood_mage_story_effect`) | `common/scripted_effects/bm_blood_mage_lifecycle_effects.txt` |
+| Roster & Lifeforce refresh (`bm_refresh_blood_magic_rosters_effect`) | `common/scripted_effects/bm_blood_mage_story_list_effects.txt` |
+| Story script values | `common/script_values/bm_blood_mage_story_values.txt` |
+| Story creation on-actions | `common/on_action/bm_blood_mage_story_on_actions.txt` |
+| Prevalence story hooks | `common/on_action/bm_blood_mage_prevalence_on_actions.txt` |
+| GUI Panel definition | `gui/window_situation_list.gui` |
 | Localization | `localization/english/bm_blood_mage_story_l_english.yml` |
-| Creation on-actions | `bm_blood_mage_story_on_actions.txt`, `bm_yearly_pulse.txt`, `bm_blood_mage_prevalence_on_actions.txt` |
-
-## How the parts connect
-
-- On-actions (game start, birth, yearly pulse and trait acquisition) make sure each blood mage owns the story.
-- The refresh effect rebuilds the rosters from the owner's court and writes them to the story.
-- The panel's decision list points at decisions described in `blood-mage-decisions.md`.
-
-## Gotchas
-
-- The rosters are snapshots. Call `bm_refresh_blood_magic_rosters_effect` after anything that adds or removes golems or retinue members.
-- The refresh temporarily removes Lifeforce modifiers, so keep it free of side effects that react to them.
-- A new blood magic decision must be added to the story's decision list to show in the panel.
-
-## Not verified
-
-In-game rendering of the panel hasn't been confirmed from files alone. The on-action file names come from earlier docs and grep hits. I didn't open them.

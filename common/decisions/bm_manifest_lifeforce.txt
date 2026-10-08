@@ -7,6 +7,10 @@
     is_shown = { has_trait = lifestyle_blood_mage }
 
     is_valid = {
+        custom_description = {
+            text = bm_cooldown_active_tt
+            NOT = { has_character_flag = bm_manifest_lifeforce_cooldown }
+        }
         piety_level >= 2
     }
 
@@ -14,6 +18,7 @@
     cooldown = { years = 1 }
 
     effect = {
+        add_character_flag = { flag = bm_manifest_lifeforce_cooldown years = 1 }
         add_xp_bm_dynamic = {
                 TRACK = enlightenment
                 XP = 5

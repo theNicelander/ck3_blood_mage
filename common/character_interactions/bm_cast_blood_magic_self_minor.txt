@@ -1,0 +1,275 @@
+﻿bm_cast_blood_magic_self_channel_minor_lifeforce = {
+	category = interaction_category_friendly
+	auto_accept = yes
+	common_interaction = yes
+	interface_priority = 888
+	send_name = bm_cast_blood_magic_self_channel_minor_lifeforce
+	desc = bm_cast_blood_magic_self_channel_minor_lifeforce_desc
+
+	cost = { piety = 75 }
+
+	is_shown = {
+		scope:actor = { has_trait = lifestyle_blood_mage }
+		scope:actor = scope:recipient
+	}
+	is_valid_showing_failures_only = {
+		scope:actor = { has_character_modifier = lifeforce_modifier_minor }
+	}
+
+	on_accept = {
+		debug_log = debug_log.blood_mage_log
+		scope:actor = {
+			trigger_event = { id = bm_channel_lifeforce_enlightenment_minor.001 }
+			remove_character_modifier = lifeforce_modifier_minor
+			add_xp_enlightenment = yes
+			custom_tooltip = channel_lifeforce_enlightenment_minor.effects_list
+		}
+	}
+
+	ai_targets = { ai_recipients = self }
+	ai_potential = { always = yes }
+	ai_frequency = 6
+	ai_will_do = {
+		base = 10
+		modifier = {
+			add = -100
+			scope:actor = { health <= fine_health }
+		}
+	}
+}
+
+bm_cast_blood_magic_self_attune_lifeforce = {
+	category = interaction_category_friendly
+	auto_accept = yes
+	common_interaction = yes
+	interface_priority = 888
+	send_name = bm_cast_blood_magic_self_attune_lifeforce
+	desc = bm_cast_blood_magic_self_attune_lifeforce_desc
+
+	cost = { piety = 25 }
+
+	is_shown = {
+		scope:actor = { has_trait = lifestyle_blood_mage }
+		scope:actor = scope:recipient
+	}
+	is_valid_showing_failures_only = {
+		scope:actor = { has_character_modifier = lifeforce_modifier_minor }
+	}
+
+	on_accept = {
+		scope:actor = { debug_log = debug_log.blood_mage_log }
+		scope:actor = {
+			trigger_event = { id = bm_attune_lifeforce.001 }
+			remove_character_modifier = lifeforce_modifier_minor
+			custom_tooltip = bm_attune_lifeforce.effects_list
+		}
+	}
+
+	ai_targets = { ai_recipients = self }
+	ai_potential = { always = yes }
+	ai_frequency = 6
+	ai_will_do = {
+		base = 10
+		modifier = {
+			add = -100
+			scope:actor = { health <= fine_health }
+		}
+		modifier = {
+			add = 100
+			scope:actor = {
+				NOT = {
+					has_character_modifier = ancient_attuned
+					has_character_modifier = enlightenment_attuned
+					has_character_modifier = bloodline_attuned
+					has_character_modifier = benediction_attuned
+					has_character_modifier = hematurgy_attuned
+				}
+			}
+		}
+	}
+}
+
+bm_cast_blood_magic_self_manifest_lifeforce = {
+	category = interaction_category_friendly
+	auto_accept = yes
+	common_interaction = yes
+	interface_priority = 888
+	send_name = bm_cast_blood_magic_self_manifest_lifeforce
+	desc = bm_cast_blood_magic_self_manifest_lifeforce_desc
+
+	cost = { piety = 100 }
+	cooldown = { years = 1 }
+
+	is_shown = {
+		scope:actor = { has_trait = lifestyle_blood_mage }
+		scope:actor = scope:recipient
+	}
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			custom_description = {
+				text = bm_cooldown_active_tt
+				NOT = { has_character_flag = bm_manifest_lifeforce_cooldown }
+			}
+			piety_level >= 2
+		}
+	}
+
+	on_accept = {
+		debug_log = debug_log.blood_mage_log
+		scope:actor = {
+			add_character_flag = { flag = bm_manifest_lifeforce_cooldown years = 1 }
+			add_xp_bm_dynamic = {
+				TRACK = enlightenment
+				XP = 5
+			}
+			duel = {
+				skill = learning
+				value = 0
+
+				# Success - major lifeforce
+				15 = {
+					desc = manifest_lifeforce_major_success_tt
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = 1
+					}
+					send_interface_toast = {
+						title = manifest_lifeforce_major_success_tt
+						left_icon = root
+						add_character_modifier = { modifier = lifeforce_modifier_major }
+					}
+				}
+
+				# Partial success - minor lifeforce
+				40 = {
+					desc = manifest_lifeforce_minor_success_tt
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = 2
+					}
+					send_interface_toast = {
+						title = manifest_lifeforce_minor_success_tt
+						left_icon = root
+						add_character_modifier = { modifier = lifeforce_modifier_minor }
+					}
+				}
+
+				# Failure - nothing happens
+				40 = {
+					desc = manifest_lifeforce_minor_failure_tt
+					send_interface_toast = {
+						title = manifest_lifeforce_minor_failure_tt
+						left_icon = root
+					}
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = -0.5
+					}
+				}
+
+				# Critical failure
+				15 = {
+					desc = manifest_lifeforce_major_failure_tt
+					send_interface_toast = {
+						title = manifest_lifeforce_major_failure_tt
+						left_icon = root
+						temporary_negative_lifeforce_effect_minor = yes
+					}
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = -0.25
+					}
+				}
+			}
+		}
+	}
+
+	ai_targets = { ai_recipients = self }
+	ai_potential = { always = yes }
+	ai_frequency = 12
+	ai_will_do = {
+		base = 10
+		modifier = {
+			scope:actor = { piety > 2000 }
+			add = 1000
+		}
+		modifier = {
+			scope:actor = { NOT = { has_character_modifier = lifeforce_modifier_major } }
+			add = 50
+		}
+	}
+}
+
+bm_cast_blood_magic_self_seek_power = {
+	category = interaction_category_friendly
+	auto_accept = yes
+	common_interaction = yes
+	interface_priority = 888
+	send_name = bm_cast_blood_magic_self_seek_power
+	desc = bm_cast_blood_magic_self_seek_power_desc
+
+	is_shown = {
+		scope:actor = { has_trait = lifestyle_blood_mage }
+		scope:actor = scope:recipient
+	}
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			custom_description = {
+				text = bm_cooldown_active_tt
+				NOT = { has_character_flag = bm_seek_power_cooldown }
+			}
+		}
+	}
+
+	on_accept = {
+		debug_log = debug_log.blood_mage_log
+		scope:actor = {
+			if = {
+				limit = { is_landless_adventurer = yes }
+				add_character_flag = { flag = bm_seek_power_cooldown years = 1 }
+			}
+			else = {
+				add_character_flag = { flag = bm_seek_power_cooldown years = 2 }
+			}
+			trigger_event = { id = seek_power.001 }
+		}
+	}
+
+	ai_targets = { ai_recipients = self }
+	ai_potential = { always = yes }
+	ai_frequency = 12
+	ai_will_do = {
+		base = 100
+	}
+}
+
+bm_cast_blood_magic_self_convert_from_witch = {
+	category = interaction_category_friendly
+	auto_accept = yes
+	common_interaction = yes
+	interface_priority = 888
+	send_name = bm_cast_blood_magic_self_convert_from_witch
+	desc = bm_cast_blood_magic_self_convert_from_witch_desc
+
+	is_shown = {
+		scope:actor = {
+			has_trait = witch
+			NOT = { has_trait = lifestyle_blood_mage }
+		}
+		scope:actor = scope:recipient
+	}
+
+	on_accept = {
+		debug_log = debug_log.blood_mage_log
+		scope:actor = {
+			remove_trait = witch
+			bm_become_blood_mage_effect = yes
+			custom_tooltip = convert_to_blood_magic_from_witch.tooltip
+		}
+	}
+
+	ai_targets = { ai_recipients = self }
+	ai_potential = { always = no }
+	ai_frequency = 0
+	ai_will_do = { base = 0 }
+}

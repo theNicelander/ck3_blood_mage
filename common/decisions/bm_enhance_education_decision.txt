@@ -34,6 +34,10 @@
     }
 
     is_valid = {
+        custom_description = {
+            text = bm_cooldown_active_tt
+            NOT = { has_character_flag = bm_enhance_education_cooldown }
+        }
         has_character_modifier = lifeforce_modifier_major
         piety_level >= 3
         custom_description = {
@@ -80,6 +84,7 @@
 
     effect = {
         debug_log = debug_log.blood_mage_log
+        add_character_flag = { flag = bm_enhance_education_cooldown years = 2 }
         blood_magic_used_major = yes
         add_xp_bm_dynamic = {
             TRACK = enlightenment
