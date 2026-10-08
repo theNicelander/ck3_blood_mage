@@ -10,7 +10,7 @@ Lifeforce is the core supernatural resource fueling blood magic. Rather than an 
 
 - **Positive Stacks.** Harvested vitality resides on the blood mage as positive modifiers (`lifeforce_modifier_major` and `lifeforce_modifier_minor`). They represent accumulated vitality, extending lifespan, enhancing health, and providing resistance to disease.
 - **Backlash and Exhaustion.** Expending Lifeforce inflicts temporary negative modifiers (`lifeforce_modifier_negative_major`, `lifeforce_modifier_negative_minor`), leaving the mage physically depleted until their body recovers.
-- **Harvesting.** Hematurgy spells draw Lifeforce out of living victims (prisoners, courtiers, or self-manifestation through dangerous spiritual conversion).
+- **Harvesting.** Hematurgy spells draw Lifeforce out of living victims (prisoners, courtiers, lethal single combat duel victories, or self-manifestation through dangerous spiritual conversion).
 - **Victim Toll.** Victims who survive having their vitality stolen suffer debilitating stacking modifiers (`lifedrained_modifier`) alongside temporary cooldown modifiers (`recently_lifedrained_modifier`), reducing health and life expectancy while temporarily preventing immediate repeated drains.
 - **Sustained Imbuement.** Lifeforce can be bound into other beings to maintain them, such as Crimson Warriors and Crimson Champions, whose supernatural prowess is sustained at the cost of physical strain.
 - **Story Tracking.** Because CK3 script cannot inspect modifier stack counts directly, the Blood Mage story cycle periodically tallies active stacks for UI display.
@@ -23,6 +23,7 @@ Lifeforce is the core supernatural resource fueling blood magic. Rather than an 
 | Temporary backlash effects | `common/scripted_effects/bm_blood_magic_temporary_effects.txt` |
 | Magic cast consumption effects | `common/scripted_effects/bm_blood_magic_used_effects.txt` |
 | Harvesting interactions | `common/character_interactions/bm_drain_lifeforce.txt` |
+| Combat duel kill harvesting | `common/on_action/bm_duel_on_actions.txt` |
 | Granting interactions | `common/character_interactions/bm_grant_lifeforce.txt` |
 | Self-manifestation decision | `common/decisions/bm_manifest_lifeforce.txt` |
 | Mass harvesting decision | `common/decisions/bm_mass_lifedrain_prisoners.txt` |
@@ -33,6 +34,7 @@ Lifeforce is the core supernatural resource fueling blood magic. Rather than an 
 ## How the parts connect
 
 - Gaining Lifeforce applies `lifeforce_modifier_major` or `lifeforce_modifier_minor` and awards Hematurgy track experience.
+- Slaying an opponent in a lethal single combat duel harvests their vitality, granting Major Lifeforce and Hematurgy track experience.
 - Casting spells invokes consumption effects in `bm_blood_magic_used_effects.txt`, which remove positive stacks and apply temporary negative backlash.
 - Decisions such as `manifest_lifeforce_decision` offer a gamble to convert piety and spiritual power into fresh Lifeforce stacks.
 - `bm_refresh_blood_magic_rosters_effect` counts positive stacks to keep the Blood Magic panel in `blood-mage-story.md` accurate.
