@@ -35,11 +35,7 @@
   bm_blood_cultist_become_blood_mage_decision_tooltip: "Travel to the sacred geysers of Reykjavik or Tsushima to challenge the ancient wise one and prove your readiness to wield blood magic"
   bm_blood_cultist_become_blood_mage_decision_desc: "As a devoted follower of the blood faith, faith alone is not enough to command the crimson arts. Ancient lore tells of the wise one—an immortal hermit of one hundred and eleven years who dwells by the boiling geothermal geysers of Reykjavik and the volcanic springs of Tsushima. By traveling to these sacred waters and testing your arcane resolve against the hermit in a duel of learning, you can prove yourself worthy to transcend from worshipper to true wielder of blood magic."
 
-  # Manifest new lifeforce
-  manifest_lifeforce_decision: "Manifest Lifeforce"
-  manifest_lifeforce_decision_desc: "Through deep meditation and profound spiritual connection, a Blood Mage can manifest raw lifeforce directly by channelling vast amounts of piety."
-  manifest_lifeforce_decision_confirm: "Channel the divine into blood"
-  manifest_lifeforce_decision_tooltip: "Attempt to convert spiritual power directly into tangible lifeforce."
+
 
   manifest_lifeforce_major_success_tt: "You Sucessfully manifested Lifeforce"
   manifest_lifeforce_minor_success_tt: "You Sucessfully manifested Lifeforce"
@@ -57,33 +53,3 @@
   bm_enhance_blood_ritual_decision.injury_failure_tt: "$bm_geyser_duel.injury_failure_tt$"
 
   bm_enhance_blood_ritual_decision_desc: "My extensive research into the crimson arts has brought me to this precipice. Ancient lore speaks of the wise one—a solitary hermit of one hundred and eleven years guarding the geothermal geysers of Reykjavik and the sacred springs of Tsushima. By confronting this ancient master in a contest of Learning, I can wrest the deepest mysteries of blood magic into the light.\n\nVictory will awaken the crimson arts within your blood; defeat guarantees a shattered mind or broken flesh."
-
-  # Lifeforce Attunement Decision
-  bm_attune_lifeforce_decision: "Lifeforce Attunement"
-  bm_attune_lifeforce_decision_confirm: "Begin Attunement"
-  bm_attune_lifeforce_decision_tooltip: "Attune your blood magic towards a chosen path to increase experience gain"
-  bm_attune_lifeforce_decision_desc: "Spend [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] to attune your Blood Magic towards a particular [GetTrait('lifestyle_blood_mage').GetName( GetNullCharacter )] trait path for increased experience gain."
-
-  # Channel Minor Lifeforce Decision
-  bm_channel_minor_lifeforce_decision: "Channel Minor Lifeforce"
-  bm_channel_minor_lifeforce_decision_confirm: "Channel Essence"
-  bm_channel_minor_lifeforce_decision_tooltip: "Channel minor blood magic to temporarily enhance an attribute"
-  bm_channel_minor_lifeforce_decision_desc: "Spend [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] for a small temporary boost to an attribute."
-
-  # Channel Crimson Empowerment Decision
-  bm_crimson_empowerment_decision: "Channel Crimson Empowerment"
-  bm_crimson_empowerment_decision_confirm: "Channel Empowerment"
-  bm_crimson_empowerment_decision_tooltip: "Awaken or deepen your Crimson Empowerment"
-  bm_crimson_empowerment_decision_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to permanently enhance your physical and mental attributes."
-
-  # Enhance Education Decision
-  bm_enhance_education_decision: "Enhance Education"
-  bm_enhance_education_decision_confirm: "Begin Ritual"
-  bm_enhance_education_decision_tooltip: "Attempt to improve one of your education traits through blood magic"
-  bm_enhance_education_decision_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to attempt to improve one of your Education traits."
-
-  # Inscribe with Blood Runes Decision
-  bm_inscribe_blood_runes_decision: "Inscribe with Blood Runes"
-  bm_inscribe_blood_runes_decision_confirm: "Inscribe Runes"
-  bm_inscribe_blood_runes_decision_tooltip: "Inscribe permanent blood runes onto your flesh"
-  bm_inscribe_blood_runes_decision_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] to etch powerful protective and empowering runes directly into your flesh."

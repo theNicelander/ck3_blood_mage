@@ -24,21 +24,17 @@
 | `bm_cast_blood_magic_self_channel_minor_lifeforce` | Self | Piety + Minor Lifeforce. | +1 enlightenment | Triggers temporary attribute enhancement (`bm_channel_lifeforce_enlightenment_minor.001`). |
 | `bm_cast_blood_magic_self_attune_lifeforce` | Self | Piety + Minor Lifeforce. | None | Opens attunement selection (`bm_attune_lifeforce.001`). |
 | `bm_cast_blood_magic_self_manifest_lifeforce` | Self | Piety. CD: 1 yr. | +5 enlightenment | Learning duel to generate Lifeforce. |
-| `bm_cast_blood_magic_self_seek_power` | Self | CD: 1-2 yrs. | +hematurgy | Wilderness hunt for beasts or travelers (`seek_power.001`). |
-| `bm_cast_blood_magic_self_convert_from_witch` | Self | Has witch trait. | None | Renounces witch trait to become a blood mage. |
 | `bm_cast_blood_magic_self_major_crimson_empowerment` | Self | Piety + Major Lifeforce. | +3 enlightenment | Triggers Crimson Empowerment track advancement (`bm_crimson_empowerment_event.001`). |
 | `bm_cast_blood_magic_self_major_improve_education` | Self | Piety + Major Lifeforce. CD: 2 yrs. | +5 enlightenment | Upgrades existing education trait tier (`bm_education_enhancement.001`). |
 | `bm_cast_blood_magic_self_major_new_education` | Self | Piety + Major Lifeforce. CD: 2 yrs. | +5 enlightenment | Unlocks a second education trait branch at tier 1 (`bm_education_new.001`). |
 | `bm_cast_blood_magic_self_major_blood_rune` | Self | Piety + Major & Minor Lifeforce. CD: 5 yrs. | +5 benediction | Inscribes or upgrades body runes (`bm_crimson_rune.001`). |
-| `bm_cast_blood_magic_self_channel_bloodline` | Self | Piety + Major Lifeforce. CD: 3 yrs. | +5 bloodline | Bestows permanent dynasty bloodline modifier (`bm_channel_lifeforce_bloodline.001`). |
-| `bm_cast_blood_magic_self_create_blood_golem` | Self | Piety + Major Lifeforce. CD: 3 yrs. | +5 bloodline | Crafts a blood golem courtier (`blood_golem.001`). |
 
 ## Key Mechanics & AI Logic
 
 - **AI Harvesting Vetoes:** `factor = 0` blocks AI mages from draining close family, children, spouses, friends, lovers, knights, councillors, and high-opinion courtiers.
 - **AI Teaching Priority:** AI rulers grant blood magic in strict order: spouse first, then children, then liege, then councillors.
 - **Story Panel Sync:** Granting warrior/champion status automatically updates the Crimson Retinue in the Blood Magic panel.
-- **Self-Interaction & Decision Parity:** All personal blood magic rituals targeting the character can be initiated either from the Decisions/Situations menu or by right-clicking oneself as a self-character interaction. Cooldowns are synchronized using shared character flags.
+- **Self-Interactions Only:** All personal blood magic rituals targeting the character themselves are invoked exclusively by right-clicking the character via self-character interactions. No duplicate decisions are used.
 
 ## Where the details live
 
