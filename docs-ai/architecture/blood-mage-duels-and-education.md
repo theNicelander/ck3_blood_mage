@@ -1,53 +1,48 @@
 # Blood Duels and Education Enhancement
 
-> Living document. Follow `AGENTS.md` in this folder: concepts only, no numbers. Update it when duel formulas, trait-draining, education improvement or mass execution mechanics change.
+## Executive Summary
 
-## Purpose
+- **What:** Contested skill duels for initiation, trait theft from prisoners, education upgrades, and mass dungeon execution.
+- **Duel Formula:** Uses CK3 skill duel system. Caster attribute compared against defender attribute. Delta scales victory weight.
 
-Blood magic can be used to violently extract knowledge, congenital traits, and vitality from prisoners, or channel immense power inward to rewrite the caster's intellect and education. These high-stakes interactions rely on CK3's duel mechanics, pitting the caster's supernatural force against the target's mental and physical resistance.
+### Duels & Education Master Table
 
-## Concepts
+| Ritual / Action | Type | Trigger / File | Cost & Req | Opponent / Skill | Outcome |
+| --- | --- | --- | --- | --- | --- |
+| **Geyser Initiation** | Decision | `bm_become_blood_mage_ritual_decision` -> `bm_geyser_duel.0001` | 250 piety. In Reykjavik or Tsushima. CD: 5 yrs. | 111-yr hermit (Learning) | Win: `lifestyle_blood_mage`. Lose: wound, stress, or scarred. |
+| **Trait Theft** | Interaction | `trait_drain_prisoner_event_interaction` -> `bm_trait_drain.001` | Piety. Prisoner has positive congenital trait caster lacks. | Prisoner (Prowess/Learning) | Win: Steals trait from captive. Captive drained. Lose: Backlash modifier. |
+| **Upgrade Education** | Decision | `bm_enhance_education_decision` -> `bm_education_enhance.txt` | 500 piety + Major Lifeforce. Req: CE XP (10-50). CD: 5 yrs. | Mental duel (Learning) | Win: Upgrades education star tier (up to tier 5). Lose: Stress / failure. |
+| **New Education** | Interaction | `bm_cast_blood_magic_self_major` -> `bm_education_new.txt` | Major Lifeforce. Req: 75 CE XP. | Self-ritual (Learning) | Grants an additional, secondary education trait at tier 1. |
+| **Mass Lifedrain** | Decision | `bm_mass_lifedrain_prisoners` -> `bm_mass_lifedrain.txt` | Piety per prisoner. Dungeon has prisoners. | Uncontested execution | Kills prisoners (`death_lifedrain_reason`). Awards Lifeforce + hematurgy XP. Standard tyranny/kinslaying rules apply. |
 
-- **Duel Mechanics.** As outlined in `events/_duels.md`, blood magic duels calculate victory odds by comparing the caster's relevant attribute against the opponent's attribute. A `compare_modifier` multiplies this stat delta and adds it to the outcome weights, producing probabilistic success or failure.
-- **Geyser Initiation Duel (The Wise One by the Geyser).** Through initiation decisions in `common/decisions/bm_become_blood_mage_decision.txt` (`bm_blood_cultist_become_blood_mage_decision` and `bm_enhance_blood_ritual_decision`), aspiring practitioners must travel to the geothermal springs of Reykjavik (`c_vestisland`) or Tsushima (`c_tsushima`) to challenge a solitary, 111-year-old hermit by the geyser in a duel of Learning (`bm_geyser_duel.0001`). Victory awakens blood magic, while defeat inflicts severe psychic or physical trauma.
-- **Trait Theft (Genetic Drain).** Through `trait_drain_prisoner_event_interaction`, a blood mage challenges a captive to forcibly siphon their positive congenital traits (e.g. intellect, beauty, physique).
-  - The duel is made easier as the caster accumulates XP across all blood mage tracks (`trait_drain_easier_with_xp`).
-  - High-tier genetic traits provide greater resistance against extraction (`trait_drain_harder_per_trait_modifier`).
-  - Failure applies temporary negative modifiers or physical backlash.
-- **Education Enhancement.** A blood mage can use blood magic to either upgrade their existing education trait tier via decision (`bm_enhance_education_decision` / `bm_education_enhance.txt`) or acquire an entirely new secondary education branch via interaction (`bm_cast_blood_magic_self_major_new_education` / `bm_education_new.txt`).
-- **Mass Lifedrain Executions.** The decision `mass_lifedrain_prisoners_decision` and event `bm_mass_lifedrain.txt` allow a ruler to execute multiple prisoners simultaneously. The scripted effect `lifedrain_execution_effect` manages the executions, applies proper tyranny/kinslaying rules, and converts the victims into Lifeforce.
+## Key Mechanics
+
+- **Trait Theft Scaling:** Easier as caster gains total blood mage XP (`trait_drain_easier_with_xp`). Harder against higher-tier traits (`trait_drain_harder_per_trait_modifier`).
+- **Education Gating:**
+  - Upgrade 2->3: Req 10 CE XP (`education_level_2_cost_xp`).
+  - Upgrade 3->4: Req 30 CE XP (`education_level_3_cost_xp`).
+  - Upgrade 4->5: Req 50 CE XP (`education_level_4_cost_xp`).
+  - Second Education: Req 75 CE XP (`required_xp_new_education`).
+- **Mass Execution:** Options to drain all prisoners or preserve prisoners with positive congenital traits.
 
 ## Where the details live
 
 | Piece | File |
 | --- | --- |
 | Duel mechanics guide | `events/_duels.md` |
-| Geyser duel events | `events/bm_geyser_duel_events.txt` |
+| Geyser duel events | `events/bm_geyser_duel_events.txt` (`bm_geyser_duel.0001`) |
 | Initiation decisions | `common/decisions/bm_become_blood_mage_decision.txt` |
 | Trait drain interaction | `common/character_interactions/bm_drain_trait.txt` |
 | Trait drain events | `events/bm_trait_drain_events.txt` (`bm_trait_drain.001`) |
-| Trait drain script values & modifiers | `common/script_values/bm_drain_duel_values.txt` |
-| Trait drain scripted effects | `common/scripted_effects/bm_drain_trait_effects.txt` |
-| Education improvement events | `events/bm_education_enhance.txt` |
-| New education events | `events/bm_education_new.txt` |
+| Trait drain duel values | `common/script_values/bm_drain_duel_values.txt` |
+| Education events | `events/bm_education_enhance.txt`, `bm_education_new.txt` |
 | Education duel effect | `common/scripted_effects/bm_education_duel_effect.txt` |
-| Education piety & XP costs | `common/script_values/bm_education_enhancement_piety_cost.txt`, `common/script_values/bm_xp_requirement_values.txt` |
+| Education costs & XP | `common/script_values/bm_education_enhancement_piety_cost.txt`, `bm_xp_requirement_values.txt` |
 | Mass lifedrain decision | `common/decisions/bm_mass_lifedrain_prisoners.txt` |
 | Mass lifedrain event | `events/bm_mass_lifedrain.txt` |
-| Execution scripted effects | `common/scripted_effects/bm_drain_all_prisoners_effects.txt` |
-
-## How the parts connect
-
-- Taking `trait_drain_prisoner_event_interaction` initiates a contested duel using values in `bm_drain_duel_values.txt`. Winning strips the trait from the prisoner and awards it to the caster via `bm_drain_trait_effects.txt`.
-- Education rituals check learning skills and total blood mage XP. Successful education duels advance education tiers up to tier 5 or grant multi-disciplinary knowledge.
-- Mass lifedrain loops through imprisoned characters, applying `death_lifedrain_reason` and granting major Lifeforce stacks to the executioner.
+| Execution effects | `common/scripted_effects/bm_drain_all_prisoners_effects.txt` |
 
 ## Gotchas
 
-- Trait draining requires the prisoner to actually possess transferable traits that the caster does not already have.
-- Executing prisoners via mass lifedrain still triggers vanilla tyranny and kinslayer flags unless the executioner possesses rightful imprisonment reasons or exempting cultural doctrines.
-- Education enhancement costs scale based on the target level being pursued.
-
-## Not verified
-
-AI rulers using mass lifedrain to instantly clear sprawling dungeon populations during sudden realm succession crises.
+- Trait drain requires prisoner to hold congenital traits the caster does NOT already possess.
+- Mass lifedrain triggers vanilla tyranny and kinslayer flags if prisoners lack rightful execution reasons.

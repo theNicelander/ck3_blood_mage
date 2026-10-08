@@ -4,32 +4,34 @@ This folder holds one doc per subsystem of the Blood Mages mod. They explain **w
 
 They describe the **current state of the mod and nothing else**. No history, no changelog, no decision log, no "previously" or "now". When something changes, rewrite the text so it is true today. Branch and PR history belongs in `docs-ai/branch-context/`.
 
-## The rule
+## The rule: Caveman-Style Technical Reference
 
-Document the concept. Link to the code for the numbers.
+Write high-density, concise technical documentation. Zero fluff, zero roleplay prose. Both humans and LLMs need direct facts: what it is, how to get it, exact costs, requirements, cooldowns, XP gains, and benefits.
 
-- **Do write:** the purpose of a part, the player or AI fantasy behind it, how it relates to other parts, and what it feeds into.
-- **Don't write:** costs, cooldowns, durations, thresholds, XP values, piety levels, chances, weights, modifier magnitudes, AI `base` values or check intervals. Those live in the decisions, traits, script values and events, and go stale the moment someone rebalances.
+- **Do write direct specs:** State `Cost`, `Cooldown`, `Req`, `XP Gain`, and `Benefits` explicitly.
+- **Do write dense summaries:** Use bullet points and compact markdown tables. Strip storytelling, creative lore metaphors, and conversational filler.
+- **Track & step summaries:** For multi-tier tracks (e.g. 10 levels of 10 XP), state the repeating base step bonus once and highlight milestones (e.g. levels 50 and 100) instead of copy-pasting identical rows.
 
-Test: if a balance pass would make the sentence wrong, remove the number and point at the file instead.
-
-| Too specific | Right level |
+| Verbose / Fluffy (Banned) | Caveman Style (Required) |
 | --- | --- |
-| "Costs 500 piety, 1 year cooldown, needs piety level 2" | "Manifest Lifeforce converts spiritual power into Lifeforce, with a risky outcome." |
-| "Gives +0.1 health every 10 XP" | "Each track grants a steady bonus that fits its theme, plus milestones." |
-| "Seek Power: base 100, interval 3" | "Seek Power is an event chain that can yield extra Lifeforce. Landless adventurers get their own variant." |
+| "A blood mage is not a class chosen at a menu, it is a path where vitality bends to the caster's desires..." | "Core identity trait `lifestyle_blood_mage`. Unlocks spell decisions, story panel, and 5 XP tracks." |
+| "Manifest Lifeforce converts spiritual devotion into vital essence with great personal peril." | "`bm_manifest_lifeforce`: Decision. Cost: 250 piety. Cooldown: none. Gain: Lifeforce. Risk: Wounded/Death." |
+| "Draining Lifeforce takes the life fluid from captive mortals to grow in hematurgy." | "`drain_lifeforce`: Interaction. Cost: 25 piety. XP: +1 hematurgy. Gain: `lifeforce_modifier_minor`." |
+| "Copy-pasting 10 identical blocks of +0.1 health" | "Levels 10–40, 60–90: +0.1 health, +2 life expectancy. Milestones: lvl 50 (+1 school stat/prowess per piety), lvl 100 (prowess age lock)." |
 
-## What belongs in a doc
+## Subsystem Document Structure
 
-Keep each doc light. Use these headings, in this order:
+Every architecture document must begin with a concise **Executive Summary**:
 
-1. **Purpose.** What the subsystem is and why the mod has it.
-2. **Concepts.** The parts, each in a sentence or two. Name the idea and how it differs from its neighbours. For example, say that landless adventurers use a variant of the same action.
-3. **Mod conventions** (optional, between Concepts and Where the details live). Rules a contributor must follow in this mod, such as which shared effect to call. Concepts only.
-4. **Where the details live.** A table of concept to file. This is the one place to be precise about location.
-5. **How the parts connect.** Which effects, events, on-actions, stories or GUI tie it together, and the direction of dependency.
-6. **Gotchas.** Cross-cutting traps that stay true after rebalancing, such as "add new decisions to the story list too". Skip numeric oddities. Fix those in the script or put them in the PR notes.
-7. **Not verified.** What can't be confirmed from files, such as in-game behaviour, AI and UI.
+1. **Executive Summary:**
+   - **What it is:** 1–2 lines defining the core feature/trait and base stats.
+   - **How to get it:** Exact effect, decision, interaction, or trigger.
+   - **How to level / advance:** Triggering actions, Lifeforce costs, and XP gains.
+   - **Data Table:** Compact table of tracks/modifiers, step benefits, and milestones.
+2. **Key Mechanics:** Direct bullet points for decisions, interactions, rosters, or spell gates.
+3. **Where the details live:** Concept-to-file path mapping table.
+4. **Gotchas:** Hard technical traps, edge cases, and script interactions.
+5. **Not verified:** Unverified in-game behavior or AI edge cases.
 
 ## Keeping them current
 

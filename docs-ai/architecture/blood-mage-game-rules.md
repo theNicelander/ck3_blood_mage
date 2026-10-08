@@ -1,51 +1,32 @@
 # Blood Mage Game Rules
 
-> Living document. Follow `AGENTS.md` in this folder: concepts only, no numbers. Update it when game rules, rule options or gated systems change.
+## Executive Summary
 
-## Purpose
+- **What:** Campaign startup rules configuring AI prevalence, physical appearance, faith requirements, and religion integration.
+- **Rule Check Syntax:** `has_game_rule = <setting_id>`.
 
-Game rules allow players to configure how Blood Mages mechanics integrate into their campaign. Players can tune the overall rarity and AI presence of blood mages, enable or disable the Blóðtrú religion family, and choose whether physical alterations (eye and hair colors) manifest on practitioners.
+### Game Rules Master Table
 
-## Concepts
-
-- **Prevalence Rule (`bm_blood_mage_prevalence`).** Determines how widespread blood magic is across the world.
-  - *Player Only:* Restricts blood magic solely to player-controlled characters.
-  - *One in 10,000 / One in 1,000:* Heavily suppresses AI adoption and purges spontaneous or inherited AI mages.
-  - *Default:* Baseline spontaneous generation and standard inheritance chances.
-  - *One in 100 / One in 10:* Progressively boosts AI adoption willingness and grants additional spontaneous birth and inheritance chances.
-  - *Everyone:* Automatically grants the Blood Mage trait to every newborn child.
-- **Physical Alteration Rule (`bm_physical_alteration`).** Controls cosmetic physical transformations for blood mages:
-  - *None:* Retains natural portrait appearance.
-  - *Eyes:* Alchemically shifts eye color to supernatural crimson.
-  - *Eyes & Hair:* Transforms both eye and hair colors upon embracing blood magic.
-- **Blóðtrú Religion Rule (`blodtru_religion`).** Dictates the presence and viability of the Blóðtrú religion family:
-  - *Enabled:* Fully active for players and AI.
-  - *Player Only:* Accessible only to human players; AI rulers will not convert or found holy sites.
-  - *Disabled:* Completely suppresses the religion family.
+| Rule ID | Settings (`has_game_rule = ...`) | Default Setting | Mechanical Effects |
+| --- | --- | --- | --- |
+| `bm_blood_mage_prevalence` | `bm_prevalence_player_only`<br>`bm_prevalence_one_in_10000`<br>`bm_prevalence_one_in_1000`<br>`bm_prevalence_default`<br>`bm_prevalence_one_in_100`<br>`bm_prevalence_one_in_10`<br>`bm_prevalence_everyone` | `bm_prevalence_default` | Scales AI adoption weights, birth chances, and yearly retention audits. `player_only` blocks all AI mages. `everyone` gives trait to all newborns. |
+| `bm_physical_alteration` | `bm_physical_alteration_none`<br>`bm_physical_alteration_eyes`<br>`bm_physical_alteration_eyes_hair` | `bm_physical_alteration_eyes_hair` | Controls portrait appearance changes: none, crimson eyes only, or crimson eyes and white hair. |
+| `blodtru_religion` | `blodtru_religion_enabled`<br>`blodtru_religion_player_only`<br>`blodtru_religion_disabled` | `blodtru_religion_enabled` | Controls Blóðtrú religion family: fully active, restricted to players only, or completely disabled. |
+| `bm_initiation_faith_requirement` | `bm_initiation_dedicated_cult`<br>`bm_initiation_cult_or_witchcraft_accepted` | `bm_initiation_dedicated_cult` | Gates self-initiation decision: requires dedicated Blóðtrú faith vs allows any faith accepting witchcraft. |
+| `bm_lore` | `bm_lore_historical`<br>`bm_lore_agot` | `bm_lore_historical` | Historical campaign vs AGOT lore integration flavor. |
 
 ## Where the details live
 
 | Piece | File |
 | --- | --- |
 | Game rule definitions | `common/game_rules/bm_game_rules.txt` |
-| Game rule text icons | `gui/bm_game_rule_texticons.gui` |
+| Text icons | `gui/bm_game_rule_texticons.gui` |
 | Localization | `localization/english/bm_game_rules_l_english.yml` |
-| Prevalence AI modifiers | `common/scripted_modifiers/bm_blood_mage_prevalence_modifiers.txt` |
-| Prevalence retention logic | `common/scripted_effects/bm_blood_mage_lifecycle_effects.txt` |
-| Birth inheritance handling | `common/on_action/bm_blood_mage_prevalence_on_actions.txt` |
+| AI prevalence modifiers | `common/scripted_modifiers/bm_blood_mage_prevalence_modifiers.txt` |
+| Yearly retention audits | `common/scripted_effects/bm_blood_mage_lifecycle_effects.txt` |
+| Birth on-actions | `common/on_action/bm_blood_mage_prevalence_on_actions.txt` |
 
-## How the parts connect
+## Key Mechanics & Gotchas
 
-- Game start checks evaluate the selected rules and set up appropriate modifier multipliers.
-- AI decision and interaction weights test `has_game_rule = bm_<rule>_<setting>` via `bm_blood_mage_prevalence_modifiers.txt`.
-- Birth and yearly pulse on-actions query the prevalence rule to determine whether new AI mages keep or forfeit the trait.
-- Portrait modifier application checks `bm_physical_alteration` settings when styling characters.
-
-## Gotchas
-
-- Game rule naming convention strictly follows `bm_<rule>_<setting>`. Always prefix rule checks accordingly.
-- Changing game rules mid-campaign via console or save-editing may leave already-generated AI blood mages in place until the next yearly retention audit.
-
-## Not verified
-
-Compatibility with third-party total overhaul mods that overwrite or bypass standard `game_modes` or `on_birth_child` on-action blocks.
+- **AI Auditing:** In `player_only` or low-prevalence modes, yearly pulse strips traits from non-player AI characters who spontaneously acquire it.
+- **Rule Syntax:** Always use the setting ID directly in `has_game_rule = <setting_id>` (e.g. `has_game_rule = bm_prevalence_player_only`).

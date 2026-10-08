@@ -1,16 +1,23 @@
 ﻿seek_power_decision = {
     picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
-    
+
     decision_group_type = bm_decision_group
 
-    is_shown = { 
+    is_shown = {
         has_trait = lifestyle_blood_mage
-        is_landless_adventurer = no 
+        is_landless_adventurer = no
+    }
+    is_valid = {
+        custom_description = {
+            text = bm_cooldown_active_tt
+            NOT = { has_character_flag = bm_seek_power_cooldown }
+        }
     }
     cooldown = { years = 2 }
-    effect = { 
+    effect = {
         debug_log = debug_log.blood_mage_log
-        trigger_event = { id = seek_power.001 } 
+        add_character_flag = { flag = bm_seek_power_cooldown years = 2 }
+        trigger_event = { id = seek_power.001 }
     }
 
     ai_check_interval = 3
@@ -19,18 +26,25 @@
 
 seek_power_decision_wanderer = {
     picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
-    
+
     decision_group_type = bm_decision_group
 
-    is_shown = { 
+    is_shown = {
         has_trait = lifestyle_blood_mage
         is_landless_adventurer = yes
     }
+    is_valid = {
+        custom_description = {
+            text = bm_cooldown_active_tt
+            NOT = { has_character_flag = bm_seek_power_cooldown }
+        }
+    }
     # Can do it more often if landless, as it's harder to find prisoners
     cooldown = { years = 1 }
-    effect = { 
+    effect = {
         debug_log = debug_log.blood_mage_log
-        trigger_event = { id = seek_power.001 } 
+        add_character_flag = { flag = bm_seek_power_cooldown years = 1 }
+        trigger_event = { id = seek_power.001 }
     }
 
     ai_check_interval = 3

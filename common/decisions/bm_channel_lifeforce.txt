@@ -1,6 +1,6 @@
 ﻿channel_lifeforce_bloodline = {
     picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
-    
+
     decision_group_type = bm_decision_group
 
     cooldown = { years = 3 }
@@ -22,7 +22,7 @@
         custom_tooltip = channel_lifeforce_bloodline.effects_list
     }
     ai_check_interval = 6
-    ai_will_do = { 
+    ai_will_do = {
         base = 50
         ai_modifier_based_on_health = yes
     }

@@ -1,73 +1,63 @@
 # Blóðtrú and Blood Faiths
 
-> Living document. Follow `AGENTS.md` in this folder: concepts only, no numbers. Update it when religions, faiths, rites, holy sites, doctrines, or conversion effects change.
+## Executive Summary
 
-## Purpose
+Spiritual framework for blood magic. Religious family `rf_blodtru` with religion `blodtru_religion`. 3 cultural faiths (`blodtru_faith`, `ketsudo_faith`, `xuedao_faith`), each bound 1:1 to scripted mainline rites. Uses hidden identity doctrine (`bm_blodtru_identity_doctrine`) exposing `blood_magic_cult_faith` parameter for soft compatibility without hard dependencies.
 
-The Blóðtrú religion family provides an in-game spiritual and theological foundation for blood magic. It anchors practitioners with a unified blood faith, a mainline rite establishing stable ritual traditions, an extensive holy site network across Europe centered around the volcanic cradle of Iceland, broad coexistence mechanics that prevent universal hostility from neighboring realms, and compatibility hooks that allow foreign faiths and companion mods to participate in cult mechanics.
+## Faith Structure & Mainline Rites
 
-## Concepts
+| Faith | Rite Key | Cultural Sphere | Eminent Holy Sites | Primary Modifier Focus |
+| --- | --- | --- | --- | --- |
+| `blodtru_faith` | `blodtru_faith` | European / Atlantic | Iceland (`talknafjordur`, `reykjavik`), European capitals | Learning / Prowess per piety level |
+| `ketsudo_faith` | `ketsudo_faith` | Japonic, Korean, Mongolic, Tungusic | Japan & Korea (`yamashiro`, `kamakura`, `mount_fuji`, `mount_aso`, `mount_osore`, `gyeongju`) | Prowess / Dread / Health per piety level |
+| `xuedao_faith` | `xuedao_faith` | Chinese, Qiangic, Tai, Viet, Tibetan | Central Plains & Sacred Peaks (`changan`, `luoyang`, `beijing`, `hangzhou`, `chengdu`, `guangzhou`, `taishan`, `gyeongju`) | Stewardship / Learning / Health per piety level |
 
-- **Blóðtrú (`blodtru_religion`).** The primary religion in the `rf_blodtru` religious family. It venerates the vital current and sacred flow of life, treating blood magic and mysticism as divine virtues. It utilizes pluralistic doctrines to avoid extreme hostility with surrounding global faiths.
-- **Faith Structure.** The religion encompasses three core cultural branches:
-  - `blodtru_faith`: Blóðtrú. Centered in Europe and Iceland, equipped with adaptive tolerance, ancestor worship, and ritual celebration tenets.
-  - `ketsudo_faith`: Ketsudō. The Japanese faith anchored across an eight-seat mountain and capital sanctuary network, merging ancestor veneration with sacred volcanic calderas.
-  - `xuedao_faith`: Xuédào. The Chinese branch centered on the Central Plains, venerating ancestral dynastic currents, sacred mountain peaks, imperial capitals, and maritime hubs.
-- **Mainline Rite.** Each faith links 1:1 to a scripted mainline rite (`blodtru_faith`, `ketsudo_faith`, `xuedao_faith`). These rites anchor each faith's ritual traditions, colors, and doctrines, preventing the engine from generating untracked dynamic rites.
-- **Holy Site Network.** A two-tier holy site network spanning Europe, the Atlantic isles, Japan, Korea, and China:
-  - Eminent Holy Sites: Primary spiritual centers and power capitals granting global faith-wide modifiers scaled per piety level (Iceland centers `talknafjordur` and `reykjavik`, European capitals, Japanese imperial and shogunate seats and volcanic peaks `yamashiro`, `kamakura`, `mount_fuji`, `mount_aso`, `mount_osore`, Chinese macro-regional capitals and sacred peaks `changan`, `luoyang`, `beijing`, `hangzhou`, `chengdu`, `guangzhou`, `taishan`, and the shared Korean millennial capital `gyeongju`).
-  - Regular Holy Sites: Regional sanctuaries across Europe, Atlantic isles, Japanese regional centers, inland Alps, and island gates (`tsushima`, `edo`, `hakodate`, `mount_yotei`, `mount_hiei`, `mount_koya`, `ise`, `naniwa`, `shinano`, `matsuyama`, `dazaifu`, `kagoshima`, `naha`, `kotohira`, `hiraizumi`, `izumo`, `nagoya`, `niigata`), Middle China crossroads and sacred peaks (`kaifeng`, `huashan`, `songshan`, `hengshan_north`, `hengshan_south`, `mount_wutai`, `mount_emei`, `mount_jiuhua`, `mount_wudang`, `huangshan`, `putuoshan`, `nanjing`, `jingzhou`, `wuchang`, `nanchang`, `quanzhou`, `fuzhou`, `kunming`, `dunhuang`, `taipei`, `lhasa`), and shared Korean regional centers (`mount_baekdu`, `gaegyeong`, `hanyang`) granting local health, longevity, and epidemic resistance modifiers to county holders.
-- **Cult Conversion Decision.** Taking the decision to embrace the faith requires high devotion and major lifeforce, routing characters to `xuedao_faith` if their culture holds Chinese-sphere heritage pillars (Chinese, Qiangic, Tai, Viet, Tibetan), `ketsudo_faith` for Japonic, Korean, Mongolic, or Tungusic heritages, or `blodtru_faith` otherwise.
-- **Hidden Identity Doctrine (`bm_blodtru_identity_doctrine`).** A non-visible doctrine that exposes the `blood_magic_cult_faith` parameter and applies global different-faith opinion buffering. Triggers check this parameter (`bm_is_blood_cult_faith_trigger`), allowing external faiths and companion mods to access blood cult mechanics without hardcoded dependencies.
-- **Initiation Duel Hub.** Rulers can travel to Tsushima to challenge the hermit blood master in a Learning and Prowess contest to awaken blood magic, serving as an Eastern counterpart to Reykjavik.
-- **Faith-Gated Blood Initiation.** Initiation into blood magic through the cult decision is governed by campaign game rules (`bm_initiation_faith_requirement`). Depending on the rule, initiation may require following a recognized cult faith or accept faiths where witchcraft is tolerated or celebrated.
-- **Reformation Repair.** Unreformed Blóðtrú faiths are designed without a temporal head of faith. To prevent game engine edge cases or legacy headship states from blocking faith reformation, human rulers can use a repair decision to safely clear temporal titles and reset headship to no head (`bm_repair_blodtru_reformation_decision`).
+- **Holy Site Hierarchy:**
+  - **Eminent Sites:** Defined in `eminent_holy_sites = { ... }`. Grant realm/faith-wide `faith_character_modifier` scaled per piety level plus `county_holder_character_modifier`.
+  - **Regular Sites:** Defined in `holy_sites = { ... }`. Grant local `county_holder_character_modifier` (health, life expectancy, epidemic resistance) to county owner.
 
-## Mod conventions
+## Identity Doctrine
 
-- **Tripartite cultural branches.** Faith features are organized under `blodtru_faith` (Western/Atlantic), `ketsudo_faith` (Japanese), and `xuedao_faith` (Chinese/Central Plains), preserving a unified religious family without fragmenting into dozens of micro-sects.
-- **The hidden identity doctrine needs UI metadata.** It carries `icon`, a name key and `visible = no`, and links to its group through `doctrine_group_type`.
+- **Type:** `bm_blodtru_identity_doctrine` (Group: `bm_blodtru_identity_group`).
+- **Visibility:** Hidden (`visible = no`, uses icon `core_tenet_sacred_shadows`).
+- **Modifiers:**
+  - `different_faith_opinion = 15`
+  - `different_faith_liege_opinion = 10`
+  - `different_faith_county_opinion_mult = -0.25`
+- **Parameter:** Exposes `blood_magic_cult_faith`. Evaluated globally via `bm_is_blood_cult_faith_trigger` (`has_doctrine_parameter = blood_magic_cult_faith` or religion family `rf_blodtru`). Allows third-party mods to adopt cult mechanics without hardcoded dependencies.
 
-## Where the details live
+## Decisions
 
-| Concept | File |
+| Decision | Panel | Cost | Cooldown | Requirements | XP Gain | Effect |
+| --- | --- | --- | --- | --- | --- | --- |
+| `bm_become_blood_cultist_decision` | Decisions | 250 Piety | 10 years | Blood Mage, Devotion >= 2, Major Lifeforce | None | Fires `bm_faith_conversion.0001`: converts character to cultural faith (`xuedao_faith`, `ketsudo_faith`, or `blodtru_faith`), consumes 1 Major Lifeforce. |
+| `bm_repair_blodtru_reformation_decision` | Decisions | None | None | Blóðtrú faith, unformed/bugged temporal head title | None | Executes `bm_repair_blodtru_reformation_effect`: clears temporal head title, resets headship to no head. |
+| `bm_blood_cultist_become_blood_mage_decision` | Decisions | 500 Piety | None | Non-mage, adult, meets faith initiation rule | +10 ancient | Awards `lifestyle_blood_mage` trait via cult rite. |
+
+## Initiation Duel Hub (Tsushima)
+
+- Eastern counterpart to Reykjavik for blood magic awakening.
+- Rulers travel to Tsushima (`c_tsushima`) to challenge hermit blood master in Learning & Prowess contest to unlock blood magic without conversion.
+
+## Game Rules
+
+- `blodtru_religion`: Controls AI conversion/spawning of Blóðtrú religion (`vanilla_start`, `historical_flavor`, `cult_spread`).
+- `bm_initiation_faith_requirement`: Determines faith gates for `bm_blood_cultist_become_blood_mage_decision`:
+  - `cult_only`: Must follow a blood cult faith (`bm_is_blood_cult_faith_trigger`).
+  - `witchcraft_accepted`: Accepts cult faiths or faiths where witchcraft is accepted/virtuous.
+  - `unrestricted`: Any faith permitted.
+
+## File Map
+
+| Piece | File |
 | --- | --- |
 | Religion Family | `common/religion/religion_family_types/bm_religion_family.txt` |
 | Religion Definition | `common/religion/religion_types/bm_religion.txt` |
 | Faith Definitions | `common/religion/faith_types/bm_blodtru.txt`, `common/religion/faith_types/bm_ketsudo.txt`, `common/religion/faith_types/bm_xuedao_faith.txt` |
 | Mainline Rites | `common/religion/rite_types/bm_rite_types.txt`, `common/religion/rite_types/bm_xuedao_rite.txt` |
 | Holy Sites | `common/religion/holy_site_types/bm_europe_holy_sites.txt`, `common/religion/holy_site_types/bm_china_holy_sites.txt`, `common/religion/holy_site_types/bm_japan_holy_sites.txt`, `common/religion/holy_site_types/bm_korea_holy_sites.txt` |
-| Identity Doctrine Group | `common/religion/doctrine_group_types/bm_doctrine_group_types.txt` |
-| Identity Doctrine Type | `common/religion/doctrine_types/bm_doctrine_types.txt` |
+| Identity Doctrine | `common/religion/doctrine_group_types/bm_doctrine_group_types.txt`, `common/religion/doctrine_types/bm_doctrine_types.txt` |
 | Conversion Event | `events/bm_faith_conversion_events.txt` |
-| Religion Compatibility Triggers | `common/scripted_triggers/bm_religion_compatibility_triggers.txt` |
-| Reformation Repair Decision | `common/decisions/bm_reformation_repair_decision.txt` |
-| Reformation Repair Effects & Triggers | `common/scripted_effects/bm_reformation_repair_effects.txt`, `common/scripted_triggers/bm_reformation_repair_triggers.txt` |
-| Reformation Repair Events | `events/bm_reformation_repair_events.txt` |
-| Cult Decision | `common/decisions/bm_become_blood_cultist_decision.txt` |
-| Cult Initiation Decision | `common/decisions/bm_become_blood_mage_decision.txt` |
-| Religion & Initiation Game Rules | `common/game_rules/bm_game_rules.txt` (`blodtru_religion`, `bm_initiation_faith_requirement`) |
-| Localization | `localization/english/bm_religion_l_english.yml`, `localization/english/bm_ketsudo_l_english.yml`, `localization/english/bm_xuedao_l_english.yml`, `localization/english/event_localization/bm_faith_conversion_events_l_english.yml` |
-
-
-## How the parts connect
-
-- When a blood mage decides to convert via `become_blood_cultist_decision`, it triggers `bm_faith_conversion.0001`, presenting an interactive choice between `blodtru_faith`, `ketsudo_faith`, and `xuedao_faith`, consuming major lifeforce upon selection, or allowing the character to back out without penalty.
-- Non-mages seeking blood magic via `bm_blood_cultist_become_blood_mage_decision` check `bm_meets_blood_mage_initiation_faith_requirement_trigger`, which evaluates the character's faith against the active initiation rule.
-- Both decisions rely on `bm_is_blood_cult_faith_trigger`, which returns true if the character's faith belongs to `rf_blodtru` or possesses the `blood_magic_cult_faith` doctrine parameter.
-- Faiths define their core tenets and link to their corresponding mainline rite via `main_rite`.
-- Characters reforming an unreformed Blóðtrú faith can invoke `bm_repair_blodtru_reformation_decision` if headship titles block normal progression, resetting headship via `bm_repair_blodtru_reformation_effect`.
-- Campaign game rules dictate whether AI rulers adopt the religion (`blodtru_religion`) and whether initiation requires pure cult adherence or accepts witchcraft traditions (`bm_initiation_faith_requirement`).
-
-## Gotchas
-
-- Faiths must be defined as root objects in `faith_types/`; placing `faiths = { ... }` blocks inside `religion_types/` is invalid in 1.20.
-- Every faith must have an explicit 1:1 mainline rite in `rite_types/` linked via `main_rite = <key>`; omitting this causes the engine to generate unlocalized dynamic rites.
-- Holy sites must use `county_holder_character_modifier` for county holders and `faith_character_modifier` for Eminent sites; generic `character_modifier` is invalid.
-- The `blood_magic_cult_faith` parameter must be declared as a bare symbol in `parameters = { ... }` within `bm_doctrine_types.txt`, checked via `has_doctrine_parameter`.
-- Never reference external mod faiths or titles directly; use `blood_magic_cult_faith` or route conversions through extensible scripted effects.
-
-## Not verified
-
-- AI reformation pacing and holy site selection for custom reformed Blóðtrú branches.
-- UI scaling and list scrolling for holy sites when dynamic rites generate additional holy sites.
+| Compatibility Triggers | `common/scripted_triggers/bm_religion_compatibility_triggers.txt` |
+| Reformation Repair | `common/decisions/bm_reformation_repair_decision.txt`, `common/scripted_effects/bm_reformation_repair_effects.txt` |
+| Cult Decisions | `common/decisions/bm_become_blood_cultist_decision.txt`, `common/decisions/bm_become_blood_mage_decision.txt` |

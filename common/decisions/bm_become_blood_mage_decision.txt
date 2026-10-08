@@ -77,6 +77,13 @@ bm_enhance_blood_ritual_decision = {
                 value >= 100
             }
         }
+        custom_tooltip = {
+            text = bm_enhance_blood_ritual_location_requirement_tt
+            OR = {
+                location.county ?= title:c_vestisland
+                location.county ?= title:c_tsushima
+            }
+        }
     }
 
     is_valid_showing_failures_only = {

@@ -1,46 +1,25 @@
 # Blood Mage Decisions
 
-> Living document. Follow `AGENTS.md` in this folder: concepts only, no numbers. Update it when a decision is added, removed or changes meaning.
+## Executive Summary
 
-## Purpose
+- **What:** Player-facing actions for blood mages. Grouped under `bm_decision_group`.
+- **Types:**
+  - **Standard Decisions:** Visible in main realm decisions list.
+  - **Situation Actions:** `is_invisible = yes`. Visible exclusively in the Blood Magic story panel (`bm_blood_mage_story`).
 
-Decisions are the player-facing actions of a blood mage, plus the routes into blood magic. Most are grouped together under the mod's own decision group. Heavier actions hand off to an event or a character interaction for the real consequences.
+### Decisions Master Table
 
-## Concepts
-
-### Becoming a blood mage
-
-There are several ways in, and all end in the shared `bm_become_blood_mage_effect`.
-
-- **Ritual of Blood** (`bm_enhance_blood_ritual_decision`) is the risky initiation route for an outsider who is capable and desperate enough. The character must travel to the sacred grounds of either Reykjavik or Tsushima to attempt the internal struggle against the raw power of blood. Success makes them a blood mage and failure leaves lasting mental, physical or injury scars.
-- **Blood Cultist to Blood Mage** is the route for followers of the Blóðtrú faith. It is a deliberate, low-risk initiation.
-- **Convert from Witch** is a conversion that swaps witchcraft for blood magic. It is player-only.
-
-### Using blood magic
-
-- **Seek Power** is an event chain in the wilderness. The mage hunts beasts, meets a lost traveller or finds something stranger, and can gain extra Lifeforce. Landless adventurers get their own variant of the same decision, because they have fewer prisoners and so need a different source.
-- **Channel Lifeforce into the Bloodline** is a ritual that extends blood magic across the whole dynasty. It feeds the Bloodline track.
-- **Blood Golem Creation** is a major ritual that builds a golem servant. It leads to the blood golem events, where the golem can be enhanced.
-- **Enhance Education** spends major lifeforce to attempt to advance an existing education tier through ritual dueling.
-- **Inscribe Blood Runes** etches permanent protective and empowering runes into flesh.
-
-### Situation actions
-
-These actions are hidden from the standard decisions list and appear exclusively inside the Blood Magic panel in the Situation window (see `blood-mage-story.md`):
-
-- **Manifest Lifeforce** converts spiritual power directly into Lifeforce. The outcome is a gamble on Learning, from a major gain through to a backfire.
-- **Mass Lifedrain of Prisoners** harvests Lifeforce from the dungeon. The mage chooses between draining everyone and sparing those with valuable traits.
-- **Lifeforce Attunement** aligns personal magical growth with a selected blood mage track. Accessed without a cooldown.
-- **Channel Minor Lifeforce** channels minor vitality for a temporary attribute enhancement. Accessed without a cooldown.
-- **Channel Crimson Empowerment** channels major vitality to awaken or deepen Crimson Empowerment traits. Accessed without a cooldown.
-
-### Faith
-
-- **Become Blood Cultist** is a major decision that moves a blood mage into Blóðtrú. It respects the game rules for religion and is hidden for overhaul mods.
-
-### Debug
-
-Debug decisions exist to add or remove Lifeforce and XP while testing. They aren't gameplay.
+| Decision ID | Panel Type | Cost & Cooldown | Requirements | XP Gain | Primary Effect |
+| --- | --- | --- | --- | --- | --- |
+| `bm_blood_cultist_become_blood_mage_decision` | Standard | 100 piety. No cooldown. | Follows Blóðtrú faith. | None | Grants `lifestyle_blood_mage` via `bm_become_blood_mage_effect`. |
+| `bm_enhance_blood_ritual_decision` | Standard | 250 piety. CD: 5 yrs. | Non-Blóðtrú. Location: Reykjavik or Tsushima. | None | Learning duel. Success: blood mage. Failure: wounds/stress/scarring. |
+| `convert_to_blood_magic_from_witch` | Standard | Free. No cooldown. | Player only. Has witch trait. | None | Removes witch trait, grants blood mage. |
+| `seek_power_decision` | Standard | Free. CD: 2 yrs. | Feudal/landed blood mage. | +1-2 school | Wilderness hunt event chain (`seek_power.001`). Harvests lifeforce. |
+| `seek_power_decision_wanderer` | Standard | Free. CD: 1 yr. | Landless adventurer blood mage. | +1-2 school | Landless wilderness event chain. |
+| `channel_lifeforce_bloodline` | Standard | 350p + Major Lifeforce. CD: 3 yrs. | Has noble house. | +5 bloodline | Event `bm_channel_lifeforce_bloodline.001`. Adds permanent house modifier. |
+| `blood_golem_creation_decision` | Standard | 750p + Major Lifeforce. CD: 3 yrs. | High learning/track XP. | +5 bloodline | Spawns courtier in `bm_house_golem`, triggers shaping duel (`blood_golem.001`). |
+| `mass_lifedrain_prisoners_decision` | Situation | None. No CD. | Dungeon prisoners available. | +hematurgy | Mass harvests lifeforce from dungeon prisoners (`bm_mass_lifedrain.001`). |
+| `become_blood_cultist_decision` | Major | None. Rank 3 Devotion + 1 Major Lifeforce. | Blood mage. | None | Converts character and realm to Blóðtrú faith. |
 
 ## Where the details live
 
@@ -48,18 +27,14 @@ Debug decisions exist to add or remove Lifeforce and XP while testing. They aren
 | --- | --- |
 | Ritual of Blood, Blood Cultist to Blood Mage | `bm_become_blood_mage_decision.txt` |
 | Convert from Witch | `bm_convert_from_witch.txt` |
-| Seek Power (normal and wanderer) | `bm_seek_power_decision.txt` |
-| Manifest Lifeforce | `bm_manifest_lifeforce.txt` |
-| Channel Lifeforce into the Bloodline | `bm_channel_lifeforce.txt` |
+| Seek Power (landed & adventurer) | `bm_seek_power_decision.txt` |
+| Channel Lifeforce into Bloodline | `bm_channel_lifeforce.txt` |
 | Blood Golem Creation | `bm_create_blood_golem.txt` |
 | Mass Lifedrain of Prisoners | `bm_mass_lifedrain_prisoners.txt` |
-| Lifeforce Attunement | `bm_attune_lifeforce_decision.txt` |
-| Channel Minor Lifeforce | `bm_channel_minor_lifeforce_decision.txt` |
-| Channel Crimson Empowerment | `bm_crimson_empowerment_decision.txt` |
-| Enhance Education | `bm_enhance_education_decision.txt` |
-| Inscribe Blood Runes | `bm_inscribe_blood_runes_decision.txt` |
 | Become Blood Cultist (Major) | `bm_become_blood_cultist_decision.txt` |
-| Debug | `bm_debug_decisions.txt` |
+| Debug decisions | `bm_debug_decisions.txt` |
+
+*(Note: All rituals targeting the character themselves—such as Channel Minor Lifeforce, Attunement, Manifest Lifeforce, Crimson Empowerment, Enhance Education, Embrace New Education, and Blood Runes—are exclusively character interactions in `common/character_interactions/bm_cast_blood_magic_self_*.txt`.)*
 
 Costs, gating, cooldowns and AI weights are in those files. Descriptions and tooltips are in `localization/english/`.
 
