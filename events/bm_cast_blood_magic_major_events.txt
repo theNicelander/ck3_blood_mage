@@ -239,9 +239,9 @@ bm_cast_blood_magic_major.001 = {
 			piety >= 200
 			NOT = {
 				AND = {
-					has_trait = intellect_good_3
-					has_trait = physique_good_3
-					has_trait = beauty_good_3
+					has_trait_rank = { trait = intellect_good rank >= 5 }
+					has_trait_rank = { trait = physique_good rank >= 5 }
+					has_trait_rank = { trait = beauty_good rank >= 5 }
 				}
 			}
 		}

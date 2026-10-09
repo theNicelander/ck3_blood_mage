@@ -2,32 +2,27 @@
 
 bm_manifest_upgrade_trait_step_effect = {
 	if = {
-		limit = { has_trait = $BRANCH$_bad_3 }
-		remove_trait = $BRANCH$_bad_3
-		add_trait = $BRANCH$_bad_2
-	}
-	else_if = {
-		limit = { has_trait = $BRANCH$_bad_2 }
-		remove_trait = $BRANCH$_bad_2
-		add_trait = $BRANCH$_bad_1
-	}
-	else_if = {
 		limit = { has_trait = $BRANCH$_bad_1 }
 		remove_trait = $BRANCH$_bad_1
+	}
+	else_if = {
+		limit = { has_trait = $BRANCH$_bad }
+		change_trait_rank = {
+			trait = $BRANCH$_bad
+			rank = -1
+			max = 5
+		}
 	}
 	else_if = {
 		limit = { NOT = { has_trait = $BRANCH$_good } }
 		add_trait = $BRANCH$_good_1
 	}
-	else_if = {
-		limit = { has_trait = $BRANCH$_good_1 }
-		remove_trait = $BRANCH$_good_1
-		add_trait = $BRANCH$_good_2
-	}
-	else_if = {
-		limit = { has_trait = $BRANCH$_good_2 }
-		remove_trait = $BRANCH$_good_2
-		add_trait = $BRANCH$_good_3
+	else = {
+		change_trait_rank = {
+			trait = $BRANCH$_good
+			rank = 1
+			max = 5
+		}
 	}
 }
 

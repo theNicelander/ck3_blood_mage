@@ -16,7 +16,7 @@ bm_channel_manifest_traits.001 = {
 	option = {
 		name = bm_channel_manifest_traits.001.intellect
 		trigger = {
-			NOT = { has_trait = intellect_good_3 }
+			NOT = { has_trait_rank = { trait = intellect_good rank >= 5 } }
 			piety >= bm_manifest_traits_intellect_piety_cost
 		}
 		add_piety = {
@@ -41,7 +41,7 @@ bm_channel_manifest_traits.001 = {
 	option = {
 		name = bm_channel_manifest_traits.001.physique
 		trigger = {
-			NOT = { has_trait = physique_good_3 }
+			NOT = { has_trait_rank = { trait = physique_good rank >= 5 } }
 			piety >= bm_manifest_traits_physique_piety_cost
 		}
 		add_piety = {
@@ -66,7 +66,7 @@ bm_channel_manifest_traits.001 = {
 	option = {
 		name = bm_channel_manifest_traits.001.beauty
 		trigger = {
-			NOT = { has_trait = beauty_good_3 }
+			NOT = { has_trait_rank = { trait = beauty_good rank >= 5 } }
 			piety >= bm_manifest_traits_beauty_piety_cost
 		}
 		add_piety = {

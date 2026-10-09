@@ -22,6 +22,18 @@ bm_manifest_traits_intellect_piety_cost = {
 		limit = { has_trait = intellect_good_1 }
 		value = 600
 	}
+	else_if = {
+		limit = { has_trait = intellect_good_2 }
+		value = 750
+	}
+	else_if = {
+		limit = { has_trait_rank = { trait = intellect_good rank = 3 } }
+		value = 900
+	}
+	else_if = {
+		limit = { has_trait_rank = { trait = intellect_good rank >= 4 } }
+		value = 1050
+	}
 	else = {
 		value = 750
 	}
@@ -48,6 +60,18 @@ bm_manifest_traits_physique_piety_cost = {
 		limit = { has_trait = physique_good_1 }
 		value = 600
 	}
+	else_if = {
+		limit = { has_trait = physique_good_2 }
+		value = 750
+	}
+	else_if = {
+		limit = { has_trait_rank = { trait = physique_good rank = 3 } }
+		value = 900
+	}
+	else_if = {
+		limit = { has_trait_rank = { trait = physique_good rank >= 4 } }
+		value = 1050
+	}
 	else = {
 		value = 750
 	}
@@ -73,6 +97,18 @@ bm_manifest_traits_beauty_piety_cost = {
 	else_if = {
 		limit = { has_trait = beauty_good_1 }
 		value = 600
+	}
+	else_if = {
+		limit = { has_trait = beauty_good_2 }
+		value = 750
+	}
+	else_if = {
+		limit = { has_trait_rank = { trait = beauty_good rank = 3 } }
+		value = 900
+	}
+	else_if = {
+		limit = { has_trait_rank = { trait = beauty_good rank >= 4 } }
+		value = 1050
 	}
 	else = {
 		value = 750
@@ -146,6 +182,14 @@ bm_manifest_traits_existing_traits_penalty = {
 		limit = { has_trait = intellect_good_3 }
 		add = 50
 	}
+	if = {
+		limit = { has_trait_rank = { trait = intellect_good rank = 4 } }
+		add = 65
+	}
+	if = {
+		limit = { has_trait_rank = { trait = intellect_good rank >= 5 } }
+		add = 80
+	}
 	# Physique
 	if = {
 		limit = { has_trait = physique_good_1 }
@@ -159,6 +203,14 @@ bm_manifest_traits_existing_traits_penalty = {
 		limit = { has_trait = physique_good_3 }
 		add = 50
 	}
+	if = {
+		limit = { has_trait_rank = { trait = physique_good rank = 4 } }
+		add = 65
+	}
+	if = {
+		limit = { has_trait_rank = { trait = physique_good rank >= 5 } }
+		add = 80
+	}
 	# Beauty
 	if = {
 		limit = { has_trait = beauty_good_1 }
@@ -171,6 +223,14 @@ bm_manifest_traits_existing_traits_penalty = {
 	if = {
 		limit = { has_trait = beauty_good_3 }
 		add = 50
+	}
+	if = {
+		limit = { has_trait_rank = { trait = beauty_good rank = 4 } }
+		add = 65
+	}
+	if = {
+		limit = { has_trait_rank = { trait = beauty_good rank >= 5 } }
+		add = 80
 	}
 	# Other positive genetic traits
 	if = {
@@ -252,6 +312,14 @@ bm_manifest_traits_beauty_tier_success_bonus = {
 bm_manifest_traits_intellect_tier_failure_addition = {
 	value = 0
 	if = {
+		limit = { has_trait_rank = { trait = intellect_good rank >= 4 } }
+		add = 200
+	}
+	else_if = {
+		limit = { has_trait_rank = { trait = intellect_good rank = 3 } }
+		add = 150
+	}
+	else_if = {
 		limit = { has_trait = intellect_good_2 }
 		add = 110
 	}
@@ -271,6 +339,14 @@ bm_manifest_traits_intellect_tier_failure_addition = {
 bm_manifest_traits_physique_tier_failure_addition = {
 	value = 0
 	if = {
+		limit = { has_trait_rank = { trait = physique_good rank >= 4 } }
+		add = 200
+	}
+	else_if = {
+		limit = { has_trait_rank = { trait = physique_good rank = 3 } }
+		add = 150
+	}
+	else_if = {
 		limit = { has_trait = physique_good_2 }
 		add = 110
 	}
@@ -290,6 +366,14 @@ bm_manifest_traits_physique_tier_failure_addition = {
 bm_manifest_traits_beauty_tier_failure_addition = {
 	value = 0
 	if = {
+		limit = { has_trait_rank = { trait = beauty_good rank >= 4 } }
+		add = 200
+	}
+	else_if = {
+		limit = { has_trait_rank = { trait = beauty_good rank = 3 } }
+		add = 150
+	}
+	else_if = {
 		limit = { has_trait = beauty_good_2 }
 		add = 110
 	}
