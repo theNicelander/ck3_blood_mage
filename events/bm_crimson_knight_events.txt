@@ -1,9 +1,9 @@
-﻿namespace = bm_crimson_warrior_event
+﻿namespace = bm_crimson_knight_event
 
-bm_crimson_warrior_event.0001 = {
+bm_crimson_knight_event.0001 = {
 	type = character_event
-	title = bm_crimson_warrior_event.0001.t
-	desc = bm_crimson_warrior_event.0001.desc
+	title = bm_crimson_knight_event.0001.t
+	desc = bm_crimson_knight_event.0001.desc
 	theme = martial
 
 	left_portrait = {
@@ -17,11 +17,11 @@ bm_crimson_warrior_event.0001 = {
 
 	# Option 1: Vanguard (+3 XP)
 	option = {
-		name = bm_crimson_warrior_event.vanguard
+		name = bm_crimson_knight_event.vanguard
 		trigger = {
 			scope:recipient = {
 				has_trait_xp = {
-					trait = lifestyle_crimson_warrior
+					trait = lifestyle_crimson_knight
 					track = vanguard
 					value < 100
 				}
@@ -35,17 +35,17 @@ bm_crimson_warrior_event.0001 = {
 			}
 		}
 		scope:recipient = {
-			add_crimson_warrior_xp = { TRACK = vanguard XP = 3 }
+			add_crimson_knight_xp = { TRACK = vanguard XP = 3 }
 		}
 	}
 
 	# Option 2: Slaughter (+3 XP)
 	option = {
-		name = bm_crimson_warrior_event.slaughter
+		name = bm_crimson_knight_event.slaughter
 		trigger = {
 			scope:recipient = {
 				has_trait_xp = {
-					trait = lifestyle_crimson_warrior
+					trait = lifestyle_crimson_knight
 					track = slaughter
 					value < 100
 				}
@@ -59,17 +59,17 @@ bm_crimson_warrior_event.0001 = {
 			}
 		}
 		scope:recipient = {
-			add_crimson_warrior_xp = { TRACK = slaughter XP = 3 }
+			add_crimson_knight_xp = { TRACK = slaughter XP = 3 }
 		}
 	}
 
 	# Option 3: Resilience (+3 XP)
 	option = {
-		name = bm_crimson_warrior_event.resilience
+		name = bm_crimson_knight_event.resilience
 		trigger = {
 			scope:recipient = {
 				has_trait_xp = {
-					trait = lifestyle_crimson_warrior
+					trait = lifestyle_crimson_knight
 					track = resilience
 					value < 100
 				}
@@ -83,18 +83,18 @@ bm_crimson_warrior_event.0001 = {
 			}
 		}
 		scope:recipient = {
-			add_crimson_warrior_xp = { TRACK = resilience XP = 3 }
+			add_crimson_knight_xp = { TRACK = resilience XP = 3 }
 		}
 	}
 
 	# Fallback if all maxed
 	option = {
-		name = bm_crimson_warrior_event.all_maxed
+		name = bm_crimson_knight_event.all_maxed
 		trigger = {
 			scope:recipient = {
-				has_trait_xp = { trait = lifestyle_crimson_warrior track = vanguard value >= 100 }
-				has_trait_xp = { trait = lifestyle_crimson_warrior track = slaughter value >= 100 }
-				has_trait_xp = { trait = lifestyle_crimson_warrior track = resilience value >= 100 }
+				has_trait_xp = { trait = lifestyle_crimson_knight track = vanguard value >= 100 }
+				has_trait_xp = { trait = lifestyle_crimson_knight track = slaughter value >= 100 }
+				has_trait_xp = { trait = lifestyle_crimson_knight track = resilience value >= 100 }
 			}
 		}
 		scope:recipient = {
@@ -103,10 +103,10 @@ bm_crimson_warrior_event.0001 = {
 	}
 }
 
-bm_crimson_warrior_event.0002 = {
+bm_crimson_knight_event.0002 = {
 	type = character_event
-	title = bm_crimson_warrior_event.0002.t
-	desc = bm_crimson_warrior_event.0002.desc
+	title = bm_crimson_knight_event.0002.t
+	desc = bm_crimson_knight_event.0002.desc
 	theme = martial
 
 	left_portrait = {
@@ -120,11 +120,11 @@ bm_crimson_warrior_event.0002 = {
 
 	# Option 1: Vanguard (+10 XP)
 	option = {
-		name = bm_crimson_warrior_event.vanguard
+		name = bm_crimson_knight_event.vanguard
 		trigger = {
 			scope:recipient = {
 				has_trait_xp = {
-					trait = lifestyle_crimson_warrior
+					trait = lifestyle_crimson_knight
 					track = vanguard
 					value < 100
 				}
@@ -138,17 +138,17 @@ bm_crimson_warrior_event.0002 = {
 			}
 		}
 		scope:recipient = {
-			add_crimson_warrior_xp = { TRACK = vanguard XP = 10 }
+			add_crimson_knight_xp = { TRACK = vanguard XP = 10 }
 		}
 	}
 
 	# Option 2: Slaughter (+10 XP)
 	option = {
-		name = bm_crimson_warrior_event.slaughter
+		name = bm_crimson_knight_event.slaughter
 		trigger = {
 			scope:recipient = {
 				has_trait_xp = {
-					trait = lifestyle_crimson_warrior
+					trait = lifestyle_crimson_knight
 					track = slaughter
 					value < 100
 				}
@@ -162,17 +162,17 @@ bm_crimson_warrior_event.0002 = {
 			}
 		}
 		scope:recipient = {
-			add_crimson_warrior_xp = { TRACK = slaughter XP = 10 }
+			add_crimson_knight_xp = { TRACK = slaughter XP = 10 }
 		}
 	}
 
 	# Option 3: Resilience (+10 XP)
 	option = {
-		name = bm_crimson_warrior_event.resilience
+		name = bm_crimson_knight_event.resilience
 		trigger = {
 			scope:recipient = {
 				has_trait_xp = {
-					trait = lifestyle_crimson_warrior
+					trait = lifestyle_crimson_knight
 					track = resilience
 					value < 100
 				}
@@ -186,18 +186,18 @@ bm_crimson_warrior_event.0002 = {
 			}
 		}
 		scope:recipient = {
-			add_crimson_warrior_xp = { TRACK = resilience XP = 10 }
+			add_crimson_knight_xp = { TRACK = resilience XP = 10 }
 		}
 	}
 
 	# Fallback if all maxed
 	option = {
-		name = bm_crimson_warrior_event.all_maxed
+		name = bm_crimson_knight_event.all_maxed
 		trigger = {
 			scope:recipient = {
-				has_trait_xp = { trait = lifestyle_crimson_warrior track = vanguard value >= 100 }
-				has_trait_xp = { trait = lifestyle_crimson_warrior track = slaughter value >= 100 }
-				has_trait_xp = { trait = lifestyle_crimson_warrior track = resilience value >= 100 }
+				has_trait_xp = { trait = lifestyle_crimson_knight track = vanguard value >= 100 }
+				has_trait_xp = { trait = lifestyle_crimson_knight track = slaughter value >= 100 }
+				has_trait_xp = { trait = lifestyle_crimson_knight track = resilience value >= 100 }
 			}
 		}
 		scope:recipient = {

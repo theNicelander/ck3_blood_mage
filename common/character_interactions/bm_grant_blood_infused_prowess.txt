@@ -1,8 +1,8 @@
-﻿grant_crimson_warrior_interaction = {
+﻿grant_crimson_knight_interaction = {
     category = interaction_category_friendly
     auto_accept = yes
     common_interaction = yes
-    desc = grant_crimson_warrior_interaction
+    desc = grant_crimson_knight_interaction
     interface_priority = 190
 
     cost = { piety = lifedrain_piety_cost_minor }
@@ -14,7 +14,7 @@
                 is_courtier_of = scope:actor
                 this = scope:actor
             }
-            NOT = { has_trait = lifestyle_crimson_warrior }
+            NOT = { has_trait = lifestyle_crimson_knight }
         }
     }
     is_valid_showing_failures_only = {
@@ -26,10 +26,10 @@
     }
 
     on_accept = {
-        debug_log = "BloodMageInteraction: grant_crimson_warrior | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
+        debug_log = "BloodMageInteraction: grant_crimson_knight | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
         scope:actor = { benediction_magic_cast_effect_minor = yes }
         scope:recipient = {
-            add_trait = lifestyle_crimson_warrior
+            add_trait = lifestyle_crimson_knight
             if = {
                 limit = { this != scope:actor }
                 add_opinion = {
@@ -61,11 +61,11 @@
     }
 }
 
-empower_crimson_warrior_minor_interaction = {
+empower_crimson_knight_minor_interaction = {
     category = interaction_category_friendly
     auto_accept = yes
     common_interaction = yes
-    desc = empower_crimson_warrior_minor_interaction
+    desc = empower_crimson_knight_minor_interaction
     interface_priority = 189
 
     cost = { piety = lifedrain_piety_cost_minor }
@@ -77,7 +77,7 @@ empower_crimson_warrior_minor_interaction = {
                 is_courtier_of = scope:actor
                 this = scope:actor
             }
-            has_trait = lifestyle_crimson_warrior
+            has_trait = lifestyle_crimson_knight
         }
     }
     is_valid_showing_failures_only = {
@@ -85,10 +85,10 @@ empower_crimson_warrior_minor_interaction = {
     }
 
     on_accept = {
-        debug_log = "BloodMageInteraction: empower_crimson_warrior_minor | Actor: [actor.GetShortUINameNoTooltip] -> Recipient: [recipient.GetShortUINameNoTooltip]"
+        debug_log = "BloodMageInteraction: empower_crimson_knight_minor | Actor: [actor.GetShortUINameNoTooltip] -> Recipient: [recipient.GetShortUINameNoTooltip]"
         scope:actor = { benediction_magic_cast_effect_minor = yes }
         scope:recipient = { save_scope_as = recipient }
-        scope:actor = { trigger_event = { id = bm_crimson_warrior_event.0001 } }
+        scope:actor = { trigger_event = { id = bm_crimson_knight_event.0001 } }
         if = {
             limit = { scope:recipient != scope:actor }
             scope:recipient = {
@@ -121,11 +121,11 @@ empower_crimson_warrior_minor_interaction = {
     }
 }
 
-empower_crimson_warrior_major_interaction = {
+empower_crimson_knight_major_interaction = {
     category = interaction_category_friendly
     auto_accept = yes
     common_interaction = yes
-    desc = empower_crimson_warrior_major_interaction
+    desc = empower_crimson_knight_major_interaction
     interface_priority = 188
 
     cost = { piety = lifedrain_piety_cost_minor }
@@ -137,7 +137,7 @@ empower_crimson_warrior_major_interaction = {
                 is_courtier_of = scope:actor
                 this = scope:actor
             }
-            has_trait = lifestyle_crimson_warrior
+            has_trait = lifestyle_crimson_knight
         }
     }
     is_valid_showing_failures_only = {
@@ -145,10 +145,10 @@ empower_crimson_warrior_major_interaction = {
     }
 
     on_accept = {
-        debug_log = "BloodMageInteraction: empower_crimson_warrior_major | Actor: [actor.GetShortUINameNoTooltip] -> Recipient: [recipient.GetShortUINameNoTooltip]"
+        debug_log = "BloodMageInteraction: empower_crimson_knight_major | Actor: [actor.GetShortUINameNoTooltip] -> Recipient: [recipient.GetShortUINameNoTooltip]"
         scope:actor = { benediction_magic_cast_effect_major = yes }
         scope:recipient = { save_scope_as = recipient }
-        scope:actor = { trigger_event = { id = bm_crimson_warrior_event.0002 } }
+        scope:actor = { trigger_event = { id = bm_crimson_knight_event.0002 } }
         if = {
             limit = { scope:recipient != scope:actor }
             scope:recipient = {
