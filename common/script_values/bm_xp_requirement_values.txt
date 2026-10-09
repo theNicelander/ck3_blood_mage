@@ -9,11 +9,11 @@ education_level_4_cost_xp = 50 # From 4->5
 bm_blood_rune_minimum_xp = {
     value = 25
     if = {
-        limit = { has_character_modifier = minor_crimson_rune_modifier } 
+        limit = { has_character_modifier = minor_crimson_rune_modifier }
         add = 25
     }
     if = {
-        limit = { has_character_modifier = major_crimson_rune_modifier } 
+        limit = { has_character_modifier = major_crimson_rune_modifier }
         add = 50
     }
 }
@@ -21,7 +21,7 @@ bm_blood_rune_minimum_xp = {
 
 required_xp_improve_education = {
     value = 0
-    
+
     # Level 2 traits
     if = {
         limit = { has_trait = education_diplomacy_2 }
@@ -43,7 +43,7 @@ required_xp_improve_education = {
         limit = { has_trait = education_learning_2 }
         add = education_level_2_cost_xp
     }
-    
+
     # Level 3 traits
     if = {
         limit = { has_trait = education_diplomacy_3 }
@@ -65,7 +65,7 @@ required_xp_improve_education = {
         limit = { has_trait = education_learning_3 }
         add = education_level_3_cost_xp
     }
-    
+
     # Level 4 traits
     if = {
         limit = { has_trait = education_diplomacy_4 }

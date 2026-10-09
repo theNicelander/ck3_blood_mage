@@ -229,6 +229,17 @@ if ! $CHECK_CMD --staged; then
     exit 1
 fi
 
+# 3. Calculate agent rules and skills token costs (.agents/cost.md)
+if git diff --cached --name-only | grep -E '^(\.agents/(rules|skills)/|AGENTS\.md)' > /dev/null 2>&1; then
+    if command -v uvx > /dev/null 2>&1; then
+        uvx --with tiktoken python scripts/calculate_agent_cost.py
+    elif command -v uv > /dev/null 2>&1; then
+        uv run scripts/calculate_agent_cost.py
+    else
+        python3 scripts/calculate_agent_cost.py
+    fi
+fi
+
 exit 0
 """
     try:

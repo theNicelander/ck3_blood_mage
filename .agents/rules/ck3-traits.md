@@ -1,15 +1,18 @@
 ---
 trigger: model_decision
-description: Writing CK3 traits with tracks, XP, inheritance and level modifiers. Read before touching common/traits.
+description: Lifestyle traits, tracks, XP progression, and inheritance mechanics.
 ---
 
 # Traits
 
-Read the existing lifestyle trait file in `common/traits/` for working syntax.
+Reference: `common/traits/bm_blood_mage_trait.txt`, `bm_crimson_empowerment_trait.txt`.
 
-- Lifestyle traits have `tracks = { <track> = { <xp> = { modifiers } } }`. Per-level blocks are written out by hand, so changing a bonus means editing every level.
-- XP is added with `add_trait_xp = { trait = X track = Y value = N }`.
-- Inheritance: `inherit_chance` and `both_parent_has_trait_inherit_chance` are explicit percentages. `genetic = yes` routes through CK3's recessive system. Don't mix without a reason. `birth` and `random_creation` are percentages.
-- `potential` gates who may have the trait.
-- Each track needs localization for name and description (`ck3-localization.md`).
-- This mod's trait, tracks and inheritance are described in `docs-ai/architecture/`. Start at its `README.md`.
+- **Tracks**: Defined via `tracks = { <track> = { <xp> = { <modifiers> } } }`. Level blocks are explicitly declared; modifying a tier requires updating all affected thresholds.
+- **XP gain**: Add progression via `add_trait_xp = { trait = <trait> track = <track> value = <int> }`.
+- **Inheritance**:
+  - `inherit_chance` and `both_parent_has_trait_inherit_chance`: explicit percentage values (`50` = 50%).
+  - `genetic = yes`: activates vanilla recessive genetics. Do not mix with custom script inheritance without explicit purpose.
+  - `birth` and `random_creation`: baseline percentages.
+- **Eligibility**: Restrict acquisition via `potential = { ... }`.
+- **Localization**: Every track requires `<trait>_<track>` and `<trait>_<track>_desc` ([ck3-localization.md](ck3-localization.md)).
+- Architecture: see `docs-ai/architecture/blood-mage-traits.md`, `blood-mage-trait-inheritance.md`.

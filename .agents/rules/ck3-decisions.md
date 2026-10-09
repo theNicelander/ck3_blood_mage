@@ -1,34 +1,33 @@
 ---
 trigger: model_decision
-description: Writing or changing CK3 decisions and character interactions (cost, is_shown, is_valid, cooldown, effects, tooltips). Read before touching common/decisions or common/character_interactions.
+description: Decisions and character interactions (cost, is_shown, is_valid, cooldown, effects, tooltips).
 ---
 
 # Decisions and interactions
 
-Copy a nearby decision in `common/decisions/` for structure.
+Structure: copy neighboring file in `common/decisions/` or `common/character_interactions/`.
 
-## Traps
+## Script traps
 
-- **Never deduct a `cost` in `effect`.** The engine charges it (a double piety charge was a real bug here).
-- `is_shown` is evaluated constantly (and per candidate in interactions). Cheap, excluding checks first.
-- Costs reused anywhere go in a script value.
-- Prefer `cooldown = { ... }` over hand-rolled flags.
-- Effects must be safe when run twice, with a missing target, and for the AI.
-- Tooltips: `custom_tooltip = { text = key }` for non-obvious lines. Missing keys show raw in UI, not at load.
+- **Never deduct `cost` inside `effect`**. Engine charges declared `cost` automatically.
+- `is_shown` evaluates constantly. Put cheap exclusionary triggers first.
+- Reused costs: declare in `common/script_values/`.
+- Prefer native `cooldown = { ... }` over custom character flags.
+- Re-entrancy: effects must be safe if fired twice, targeting missing scopes, or run by AI.
+- Tooltips: `custom_tooltip = { text = key }` for non-obvious outcomes. Missing loc keys render raw in UI.
 
-## AI
+## AI constraints
 
-- Player-only: disable AI the way vanilla does for that type (`ai_check_interval = 0` for decisions). Check vanilla for interactions.
-- Balance is hand-tuned (see `CHANGELOG.md`). Don't raise `base` or shorten intervals without a stated reason.
-- Cost and affordability checks go in `is_valid`, not only `ai_will_do`. The AI obeys validity and cost.
-- Interactions: bound the AI with `ai_targets`; narrow targets are the biggest performance win.
-- Can't verify AI behaviour from files. Say so in the summary.
-- Details: `ck3-ai.md`.
+- Player-only: set `ai_check_interval = 0` (decisions) or restrict `ai_potential` (interactions).
+- Tuning: do not raise `base` or shorten check interval without stated reason.
+- Put cost and affordability triggers in `is_valid`, not just `ai_will_do`.
+- Bound interactions with `ai_targets`.
+- See [ck3-ai.md](ck3-ai.md).
 
 ## Checklist
 
-1. Hidden from everyone it shouldn't show to?
-2. Every grey-out reason explained?
-3. Cost declared once?
-4. `ai_*` set deliberately?
-5. English loc keys added for every sibling key (`ck3-localization.md`), `CHANGELOG.md` line added?
+1. Hidden from non-qualifying scopes (`is_shown`)?
+2. Grey-out conditions explained in `is_valid`?
+3. Cost declared once in cost block?
+4. `ai_*` explicitly defined?
+5. English loc defined for all sibling keys ([ck3-localization.md](ck3-localization.md))?

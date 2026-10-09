@@ -11,7 +11,7 @@ bm_trait_drain.001 = {
         name = bm_trait_drain.001.b
         trigger = {
             AND = {
-                scope:recipient = { has_trait = intellect_good } 
+                scope:recipient = { has_trait = intellect_good }
                 NOT = { has_trait = intellect_good_3 }
             }
         }
@@ -34,10 +34,10 @@ bm_trait_drain.001 = {
                     min = -40
                 }
                 modifier = { add = trait_drain_modifier }
-                
+
                 # Success! Level up trait!
                 intellect_drain_trait_effects = yes
-            
+
                 # Prisoner dies
                 sacrifice_prisoner_effect = {
                     VICTIM = scope:recipient
@@ -89,7 +89,7 @@ bm_trait_drain.001 = {
 
                 # Success! Level up trait!
                 physique_drain_trait_effects = yes
-                
+
                 # Prisoner dies
                 sacrifice_prisoner_effect = {
                     VICTIM = scope:recipient
@@ -130,7 +130,7 @@ bm_trait_drain.001 = {
             target = scope:recipient
             50 = {
                 desc = bm_trait_drain.001.success
-                
+
                 # Difficulty
                 compare_modifier = {
                     value = scope:duel_value
@@ -141,7 +141,7 @@ bm_trait_drain.001 = {
 
                 # Success! Level up trait!
                 beauty_drain_trait_effects = yes
-                
+
                 # Prisoner dies
                 sacrifice_prisoner_effect = {
                     VICTIM = scope:recipient
@@ -255,7 +255,7 @@ bm_trait_drain.001 = {
                     TRACK = hematurgy
                     XP = 2
                 }
-                
+
                 # Prisoner dies
                 sacrifice_prisoner_effect = {
                     VICTIM = scope:recipient

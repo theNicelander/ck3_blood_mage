@@ -1,13 +1,13 @@
 ---
 trigger: model_decision
-description: Writing CK3 events and on_actions (namespaces, sources, options, scopes). Read before touching events/ or common/on_action/.
+description: Events and on_actions (namespaces, triggers, scopes, options).
 ---
 
 # Events and on_actions
 
-- One namespace per file. Match neighbouring files.
-- Every event needs a source (`trigger_event`, an `on_action`, a decision, an interaction). Dead events are not errors, so check by grep.
-- Use `hidden_effect` for silent state changes. Save scopes you need later (`save_scope_as`).
-- Event options need localization (`ck3-localization.md`), and options that matter need tooltips.
-- On-actions: add to the named vanilla on-action via `on_actions = { <your_on_action> }` and don't copy vanilla bodies.
-- Mod-specific events are mapped in `docs-ai/architecture/`. Start at its `README.md`.
+- One namespace per file (`namespace = bm_<feature>`).
+- Every event requires a trigger source: `trigger_event`, `on_action`, decision, or interaction. Uncalled events fail silently; audit with `grep`.
+- Silent state changes: wrap in `hidden_effect`. Scope persistence: use `save_scope_as`.
+- Event options require loc ([ck3-localization.md](ck3-localization.md)) and tooltips for mechanical outcomes.
+- On-actions: hook into vanilla via `on_actions = { bm_<on_action> }`. Never duplicate vanilla on-action definitions.
+- Event map: see `docs-ai/architecture/blood-mage-events-overview.md`.
