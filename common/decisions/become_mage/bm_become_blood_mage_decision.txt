@@ -21,10 +21,7 @@
         is_incapable = no
         custom_tooltip = {
             text = bm_enhance_blood_ritual_location_requirement_tt
-            OR = {
-                location.county ?= title:c_vestisland
-                location.county ?= title:c_tsushima
-            }
+            bm_is_at_blood_magic_initiation_site_trigger = yes
         }
     }
 
@@ -77,13 +74,6 @@ bm_enhance_blood_ritual_decision = {
                 value >= 100
             }
         }
-        custom_tooltip = {
-            text = bm_enhance_blood_ritual_location_requirement_tt
-            OR = {
-                location.county ?= title:c_vestisland
-                location.county ?= title:c_tsushima
-            }
-        }
     }
 
     is_valid_showing_failures_only = {
@@ -91,10 +81,7 @@ bm_enhance_blood_ritual_decision = {
         is_incapable = no
         custom_tooltip = {
             text = bm_enhance_blood_ritual_location_requirement_tt
-            OR = {
-                location.county ?= title:c_vestisland
-                location.county ?= title:c_tsushima
-            }
+            bm_is_at_blood_magic_initiation_site_trigger = yes
         }
     }
 
@@ -103,6 +90,7 @@ bm_enhance_blood_ritual_decision = {
     }
 
     effect = {
+        debug_log = "BloodMageDecision: enhance_blood_ritual | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
         trigger_event = { id = bm_geyser_duel.0001 }
     }
 

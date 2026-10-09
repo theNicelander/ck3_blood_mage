@@ -1,6 +1,6 @@
-# Ideas: Crimson Empowerment Overhaul & Adventurer Support
+# Ideas: Crimson Empowerment Overhaul & Trait Architecture
 
-Living brainstorm / proposal document for redesigning and strengthening the `lifestyle_crimson_empowerment` trait, especially addressing landless adventurer utility and low return on investment.
+Living proposal and brainstorm document for redesigning and strengthening the `lifestyle_crimson_empowerment` system, balancing landed utility with landless adventurer viability (vanilla 1.20 Roads to Power mechanics) and fixing low return on investment.
 
 ---
 
@@ -12,65 +12,150 @@ Living brainstorm / proposal document for redesigning and strengthening the `lif
   - `prosperity`: Capital county development and domain tax are completely wasted on unlanded adventurers / wandering mercenaries.
   - `insight`: County development growth only affects landed holdings.
   - `expertise`: Cultural fascination mult is 100% useless unless you are the Cultural Head.
-- **Missing Travel/Adventurer Integration**: Since vanilla 1.20 and Roads to Power introduced landless play, camp logistics, and travel hazards, the empowerment trait does not leverage these systems.
+- **Missing Travel/Adventurer Integration**: Since vanilla 1.20 introduced landless play, camp logistics, and travel hazards, empowerment does not leverage these systems.
 
 ---
 
-## 2. 5 Options Per Track (Concise Overview)
+## 2. Universal Baseline Buffs
 
-All candidate modifiers use verified vanilla 1.20 script keys. Values are listed **per rank** (10 ranks / up to 100 XP per track).
-
-| Track | Option 1 | Option 2 | Option 3 | Option 4 | Option 5 |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **`charisma`** *(Diplomacy)* | `adventurer_contract_reward_mult = 0.05`<br>*(+5% Contract Rewards)* | `sway_scheme_power_mult = 0.05`<br>*(+5% Sway Scheme Power)* | `courtier_and_guest_opinion = 3`<br>*(+3 Follower / Guest Opinion)* | `diplomatic_range_mult = 0.05`<br>*(+5% Interaction Range)* | `mercenary_hire_cost_mult = -0.03`<br>*(-3% Mercenary Recruitment Cost)* |
-| **`fury`** *(Martial)* | `character_travel_speed = 2`<br>*(+2 Flat Travel Speed)* | `prowess = 1`<br>*(+1 Prowess every 2 ranks)* | `advantage = 1`<br>*(+1 Commander Advantage)* | `knight_limit = 1`<br>*(+1 Knight cap at ranks 3, 6, 9)* | `maa_damage_mult = 0.03`<br>*(+3% Men-at-Arms Damage)* |
-| **`prosperity`** *(Stewardship)* | `provisions_gain_mult = 0.05`<br>*(+5% Provisions Gained)* | `provisions_capacity_add = 30`<br>*(+30 Max Provisions)* | `men_at_arms_maintenance = -0.03`<br>*(-3% MaA / Retinue Cost)* | `provisions_loss_mult = -0.03`<br>*(-3% Provision Consumption)* | `domicile_building_cost_mult = -0.03`<br>*(-3% Camp / Estate Cost)* |
-| **`shadows`** *(Intrigue)* | `character_travel_safety = 2`<br>*(+2 Travel Safety)* | `hostile_scheme_resistance_add = 3`<br>*(+3 Scheme Resistance)* | `hostile_scheme_phase_duration_mult = -0.03`<br>*(-3% Scheme Speed / Delay)* | `stress_gain_mult = -0.03`<br>*(-3% Stress Gain)* | `character_travel_speed_mult = 0.03`<br>*(+3% Travel Speed)* |
-| **`insight`** *(Learning)* | `character_travel_safety = 2`<br>*(+2 Travel Safety)* | `stress_loss_mult = 0.05`<br>*(+5% Stress Relief)* | `health = 0.08`<br>*(+0.08 Health, +0.8 at cap)* | `learn_language_scheme_power_mult = 0.10`<br>*(+10% Language Scheme Power)* | `personal_scheme_power_mult = 0.05`<br>*(+5% Personal Scheme Power)* |
-| **`legacy`** *(Bloodline)* | `fertility = 0.03`<br>*(+3% Fertility)* | `dynasty_opinion = 3`<br>*(+3 Dynasty / Kin Opinion)* | `monthly_dynasty_prestige_mult = 0.03`<br>*(+3% Dynasty Renown Mult)* | `child_education_aptitude = 2`<br>*(+2 Ward / Child Education)* | `natural_prowess = 1`<br>*(+1 Base Prowess for bloodline)* |
-| **`expertise`** *(Versatility)* | `character_travel_speed_mult = 0.04`<br>*(+4% Travel Speed Mult)* | `monthly_lifestyle_xp_gain_mult = 0.03`<br>*(Boost to +5.5% Total Lifestyle XP)* | `different_culture_opinion = 2`<br>*(+2 Foreign Culture Opinion)* | `all_skills = 0.5`<br>*(+1 All Stats every 2 ranks)* | `character_travel_safety = 1.5`<br>*(+1.5 Travel Safety)* |
-
----
-
-## 3. High-Level Architectural Paths
-
-### Path 1: Dual-Benefit Integration (Keep 7 Tracks)
-- Retain the existing 7 tracks (`charisma`, `fury`, `prosperity`, `shadows`, `insight`, `legacy`, `expertise`).
-- Add one universal or adventurer modifier to each track alongside the existing landed modifiers.
-- **Pros**: Zero UI changes to events/decisions; zero script trigger reworks; works immediately for landed and unlanded alike.
-- **Cons**: Still retains some dead stats for adventurers viewing the tooltip.
-
-### Path 2: Replace Dead Landed Modifiers Outright (Keep 7 Tracks)
-- Strip out `character_capital_county_monthly_development_growth_add`, `monthly_county_control_growth_add`, and `cultural_head_fascination_mult`.
-- Replace them with body/caravan mechanics:
-  - `fury`: Knight effectiveness + Travel/Army Speed or Direct Prowess.
-  - `prosperity`: Domain tax + Provisions efficiency / MaA maintenance reduction.
-  - `expertise`: Lifestyle XP mult + Travel speed / Language learning.
-- **Pros**: Every single modifier on the trait benefits any character archetype.
-
-### Path 3: Add Dedicated New Tracks (Expand to 8 or 9 Tracks)
-Instead of forcing travel/survival stats into the standard 5 attribute tracks, introduce dedicated new tracks:
-
-1. **New Track: `wayfarer` (The Roaming Blood)**:
-   - Dedicated wanderer/adventurer track.
-   - Modifiers: `character_travel_speed_mult = 0.04`, `character_travel_safety = 2.5`, `provisions_capacity_add = 40`, `movement_speed = 0.02`.
-2. **New Track: `transmutation` (Somatic / Bodily Fortification)**:
-   - Dedicated physical body refinement.
-   - Modifiers: `prowess = 1`, `health = 0.1`, `stress_loss_mult = 0.05`, `fertility = 0.02`.
-3. **New Track: `dominion` (The Overlord / Landed Track)**:
-   - Move all development, county control, and domain tax here so only landed rulers choose it.
-
-- **Pros**: Maximum roleplay flavor; clear player choices.
-- **Cons**: Requires adding new options to `bm_crimson_empowerment_event.001`, updating trait loc, and adjusting decision total XP thresholds (`bm_enhance_education_decision`, `bm_blood_rune_minimum_xp`) which sum total trait XP.
-
----
-
-## 4. Universal Baseline Buff Suggestions
-
-Currently, every rank of every track gives:
+Currently, every rank of every empowerment track gives:
 - `+1 Life Expectancy`
 - `+0.1 Monthly Piety`
 
-To make the early ranks feel punchier, consider adding one of the following to the **universal baseline** per tier:
-- `character_travel_safety = 0.5` (Empowered blood resists disease, exhaustion, and accidents on the road).
-- `prowess = 0.5` (+5 Prowess per completed track).
+To make every rank feel immediately rewarding regardless of chosen path or landless status, consider adding to the **universal baseline** per rank:
+- `character_travel_safety = 0.5` (Empowered blood resists hazards, fatigue, and road accidents; +5 at cap per track).
+- *Alternative*: `prowess = 0.5` (+5 Prowess per completed track).
+
+---
+
+## 3. High-Level Architectural Options
+
+There are two primary architectural directions for solving the landed/unlanded divergence:
+
+```
+                                  [ Architectural Directions ]
+                                               │
+             ┌─────────────────────────────────┴─────────────────────────────────┐
+             ▼                                                                   ▼
+    [ Option 1: Single Trait ]                                         [ Option 2: Two-Trait Split ]
+   One unified trait with 7-8 tracks                                  Mutually exclusive Inner vs Outer
+   - Strategy A: Dual-benefit (landed + wanderer)                     - Trait A: lifestyle_crimson_transcendence
+   - Strategy B: Universal body/mastery stats                         - Trait B: lifestyle_crimson_sovereignty
+```
+
+---
+
+## 4. Option 1: Single-Trait Refactor (`lifestyle_crimson_empowerment`)
+
+Maintain a single trait while adjusting tracks and modifiers so both landed rulers and wanderers benefit.
+
+### Strategies
+- **Strategy 1 (Dual-Benefit Integration)**: Keep 7 tracks; add an adventurer/travel modifier alongside existing landed bonuses so neither playstyle is penalized.
+- **Strategy 2 (Replace Dead Landed Stats Outright)**: Strip holding-specific stats (`county_control_growth`, `development_growth`) and replace with body, army, and camp mechanics that apply everywhere.
+- **Strategy 3 (Dedicated Extra Tracks)**: Expand to 8 or 9 tracks (e.g. adding dedicated `wayfarer` or `transmutation` tracks).
+
+### Candidate Modifiers (Per Rank, 10 Ranks / 100 XP Max)
+All keys verified against vanilla 1.20 script:
+
+| Track | Option 1 | Option 2 | Option 3 | Option 4 | Option 5 |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **`charisma`** *(Diplomacy)* | `adventurer_contract_reward_mult = 0.05`<br>*(+5% Contract Rewards)* | `sway_scheme_power_mult = 0.05`<br>*(+5% Sway Power)* | `courtier_and_guest_opinion = 3`<br>*(+3 Follower/Guest Opinion)* | `diplomatic_range_mult = 0.05`<br>*(+5% Interaction Range)* | `mercenary_hire_cost_mult = -0.03`<br>*(-3% Merc Hire Cost)* |
+| **`fury`** *(Martial)* | `character_travel_speed = 2`<br>*(+2 Flat Travel Speed)* | `prowess = 1`<br>*(+1 Prowess per 2 ranks)* | `advantage = 1`<br>*(+1 Commander Advantage)* | `knight_limit = 1`<br>*(+1 Knight cap at ranks 3, 6, 9)* | `maa_damage_mult = 0.03`<br>*(+3% MaA Damage)* |
+| **`prosperity`** *(Stewardship)* | `provisions_gain_mult = 0.05`<br>*(+5% Provisions Gained)* | `provisions_capacity_add = 30`<br>*(+30 Max Provisions)* | `men_at_arms_maintenance = -0.03`<br>*(-3% MaA/Retinue Cost)* | `provisions_loss_mult = -0.03`<br>*(-3% Provision Loss Rate)* | `domicile_building_cost_mult = -0.03`<br>*(-3% Camp/Estate Cost)* |
+| **`shadows`** *(Intrigue)* | `character_travel_safety = 2`<br>*(+2 Travel Safety)* | `hostile_scheme_resistance_add = 3`<br>*(+3 Scheme Resistance)* | `hostile_scheme_phase_duration_mult = -0.03`<br>*(-3% Scheme Speed/Delay)* | `stress_gain_mult = -0.03`<br>*(-3% Stress Gain)* | `character_travel_speed_mult = 0.03`<br>*(+3% Travel Speed Mult)* |
+| **`insight`** *(Learning)* | `character_travel_safety = 2`<br>*(+2 Travel Safety)* | `stress_loss_mult = 0.05`<br>*(+5% Stress Relief)* | `health = 0.08`<br>*(+0.08 Base Health)* | `learn_language_scheme_power_mult = 0.10`<br>*(+10% Language Scheme)* | `personal_scheme_power_mult = 0.05`<br>*(+5% Personal Scheme)* |
+| **`legacy`** *(Bloodline)* | `fertility = 0.03`<br>*(+3% Fertility)* | `dynasty_opinion = 3`<br>*(+3 Kin Opinion)* | `monthly_dynasty_prestige_mult = 0.03`<br>*(+3% Dynasty Renown)* | `child_education_aptitude = 2`<br>*(+2 Ward Education)* | `natural_prowess = 1`<br>*(+1 Bloodline Base Prowess)* |
+| **`expertise`** *(Versatility)* | `character_travel_speed_mult = 0.04`<br>*(+4% Travel Speed Mult)* | `monthly_lifestyle_xp_gain_mult = 0.03`<br>*(+3% All Lifestyle XP)* | `different_culture_opinion = 2`<br>*(+2 Foreign Opinion)* | `all_skills = 0.5`<br>*(+1 All Stats per 2 ranks)* | `character_travel_safety = 1.5`<br>*(+1.5 Travel Safety)* |
+
+---
+
+## 5. Option 2: Two-Trait Split (Internal vs. External)
+
+Split empowerment into two mutually exclusive sister traits (`opposites = { ... }`), chosen upon first casting the major empowerment ritual:
+1. **`lifestyle_crimson_transcendence`** (The Inner Vessel — Self / Adventurer / Personal Mastery)
+2. **`lifestyle_crimson_sovereignty`** (The Outer Dominion — Exterior / Landed Overlord / Realm Projection)
+
+### Flow Diagram
+
+```
+                     [ Cast Major Blood Magic: Self-Empowerment ]
+                                          │
+                         Has Either Empowerment Trait?
+                                ├── NO  ──> Event: Fork in the Road
+                                │               ├── "Focus inward"   ──> Gains lifestyle_crimson_transcendence
+                                │               └── "Focus outward"  ──> Gains lifestyle_crimson_sovereignty
+                                │
+                                └── YES ──> Open Track Choice (Matching Trait Only)
+                                                └── Add +10 XP to Chosen Track
+```
+
+---
+
+### Trait A: `lifestyle_crimson_transcendence` (The Inner Vessel)
+
+> *"The blood mage turns their power inward, purifying their mortal biology into an enduring, terrifying vessel that thrives in the wilderness, single combat, and foreign lands."*
+
+#### 8 Proposed Tracks (5 Benefit Ideas per Track)
+
+| # | Track Name & Theme | Option 1 | Option 2 | Option 3 | Option 4 | Option 5 |
+| :-: | :--- | :--- | :--- | :--- | :--- | :--- |
+| **1** | **`vitality`**<br>*(Physical Perfection & Duels)* | `prowess = 1`<br>*(+1 Prowess per 2 ranks)* | `health = 0.08`<br>*(+0.08 Base Health)* | `wound_recovery_mult = 0.05`<br>*(+5% Wound Recovery)* | `disease_resistance = 0.1`<br>*(+10% Illness Resistance)* | `prowess_per_prestige_level = 0.2`<br>*(Fame converts to Prowess)* |
+| **2** | **`wayfarer`**<br>*(Wilderness & Movement)* | `character_travel_speed_mult = 0.04`<br>*(+4% Travel Speed Mult)* | `character_travel_safety = 2.5`<br>*(+2.5 Travel Safety)* | `travel_attrition_reduction_mult = 0.05`<br>*(-5% Danger Attrition)* | `character_travel_speed = 2`<br>*(+2 Flat Travel Speed)* | `movement_speed = 0.02`<br>*(+2% Army Movement Speed)* |
+| **3** | **`sustenance`**<br>*(Logistics & Survival)* | `provisions_gain_mult = 0.05`<br>*(+5% Provisions Gained)* | `provisions_capacity_add = 40`<br>*(+40 Max Provisions)* | `provisions_loss_mult = -0.03`<br>*(-3% Provision Loss Rate)* | `domicile_building_cost_mult = -0.03`<br>*(-3% Camp Upgrade Cost)* | `men_at_arms_maintenance = -0.03`<br>*(-3% MaA Upkeep Cost)* |
+| **4** | **`occult_veil`**<br>*(Survival & Subterfuge)* | `hostile_scheme_resistance_add = 3`<br>*(+3 Scheme Resist)* | `character_travel_safety = 2`<br>*(+2 Travel Safety)* | `owned_scheme_secrecy_add = 5`<br>*(+5 Scheme Secrecy)* | `hostile_scheme_phase_duration_mult = -0.03`<br>*(-3% Scheme Phase Time)* | `enemy_hostile_scheme_success_chance_add = -3`<br>*(-3% Enemy Success Chance)* |
+| **5** | **`mesmerism`**<br>*(Personal Magnetism)* | `adventurer_contract_reward_mult = 0.05`<br>*(+5% Contract Rewards)* | `sway_scheme_power_mult = 0.05`<br>*(+5% Sway Scheme Power)* | `courtier_and_guest_opinion = 3`<br>*(+3 Follower/Guest Opinion)* | `general_opinion = 2.5`<br>*(+2.5 General Opinion)* | `mercenary_hire_cost_mult = -0.03`<br>*(-3% Sellsword Cost)* |
+| **6** | **`transmutation`**<br>*(Bodily Alchemy & Mind)* | `stress_loss_mult = 0.05`<br>*(+5% Stress Relief)* | `stress_gain_mult = -0.03`<br>*(-3% Stress Incurred)* | `monthly_lifestyle_xp_gain_mult = 0.03`<br>*(+3% All Lifestyle XP)* | `all_skills = 0.5`<br>*(+1 All Stats per 2 ranks)* | `fertility = 0.02`<br>*(+2% Fertility)* |
+| **7** | **`blood_instinct`**<br>*(Combat Ferocity)* | `maa_damage_mult = 0.03`<br>*(+3% MaA Damage)* | `knight_effectiveness_mult = 0.05`<br>*(+5% Knight Effectiveness)* | `knight_limit = 1`<br>*(+1 Knight Cap at ranks 3, 6, 9)* | `advantage = 1`<br>*(+1 Commander Advantage)* | `maa_pursuit_mult = 0.05`<br>*(+5% Fatal Casualties/Pursuit)* |
+| **8** | **`lineage`**<br>*(Genetics & Kin Resonance)* | `positive_random_genetic_chance = 0.05`<br>*(+5% Positive Congenital)* | `positive_inactive_inheritance_chance = 0.05`<br>*(+5% Inactive Inheritance)* | `dynasty_opinion = 3`<br>*(+3 Kin Opinion)* | `fertility = 0.03`<br>*(+3% Fertility)* | `child_education_aptitude = 2`<br>*(+2 Ward Education Success)* |
+
+---
+
+### Trait B: `lifestyle_crimson_sovereignty` (The Outer Dominion)
+
+> *"The blood mage projects their will upon the world around them, saturating their realm, subjects, institutions, and armies in imperial occult authority."*
+
+#### 8 Proposed Tracks (5 Benefit Ideas per Track)
+
+| # | Track Name & Theme | Option 1 | Option 2 | Option 3 | Option 4 | Option 5 |
+| :-: | :--- | :--- | :--- | :--- | :--- | :--- |
+| **1** | **`dominion`**<br>*(Territorial Iron Grip)* | `monthly_county_control_growth_add = 0.08`<br>*(+0.08 Control Growth)* | `dread_baseline_add = 4`<br>*(+4 Dread Baseline)* | `monthly_tyranny = -0.015`<br>*(-0.015 Tyranny Decay)* | `garrison_size = 0.05`<br>*(+5% Holding Garrison)* | `county_opinion_add = 2`<br>*(+2 Popular Opinion)* |
+| **2** | **`prosperity`**<br>*(Domain & Fiscal Extravagance)* | `domain_tax_mult = 0.03`<br>*(+3% Domain Tax)* | `gold_construction_cost = -0.03`<br>*(-3% Building Cost)* | `holding_build_speed = 0.05`<br>*(+5% Build Speed)* | `development_growth = 0.05`<br>*(+5% Domain Development)* | `character_capital_county_monthly_development_growth_add = 0.06`<br>*(+0.06 Capital Dev Growth)* |
+| **3** | **`majesty`**<br>*(Imperial Court & Aura)* | `vassal_opinion = 2.5`<br>*(+2.5 Vassal Opinion)* | `monthly_prestige_gain_mult = 0.05`<br>*(+5% Monthly Prestige)* | `general_opinion = 2.5`<br>*(+2.5 General Opinion)* | `short_reign_duration_mult = -0.05`<br>*(-5% Short Reign Penalty)* | `courtier_and_guest_opinion = 3`<br>*(+3 Courtier Opinion)* |
+| **4** | **`hegemony`**<br>*(Armies & Battlefield Command)* | `knight_effectiveness_mult = 0.06`<br>*(+6% Knight Effectiveness)* | `levy_size = 0.04`<br>*(+4% Realm Levy Size)* | `advantage = 1`<br>*(+1 Commander Advantage)* | `siege_phase_time = -0.03`<br>*(-3% Siege Phase Duration)* | `offensive_war_opinion_mult = -0.05`<br>*(-5% War Malus)* |
+| **5** | **`shadow_throne`**<br>*(Court Intrigue & Terror)* | `dread_gain_mult = 0.06`<br>*(+6% Dread Gain)* | `owned_scheme_secrecy_add = 6`<br>*(+6 Scheme Secrecy)* | `hostile_scheme_power_mult = 0.04`<br>*(+4% Hostile Scheme Power)* | `dread_baseline_add = 4`<br>*(+4 Dread Baseline)* | `agent_join_chance = 3`<br>*(+3 Agent Invitation)* |
+| **6** | **`sacred_rule`**<br>*(Religious Hierarchy & Zeal)* | `monthly_piety_gain_mult = 0.06`<br>*(+6% Monthly Piety Mult)* | `same_faith_opinion = 3`<br>*(+3 Faithful Opinion)* | `holy_order_hire_cost_mult = -0.04`<br>*(-4% Holy Order Cost)* | `clergy_opinion = 3`<br>*(+3 Clergy Opinion)* | `county_faith_conversion_speed_mult = 0.05`<br>*(+5% County Conversion)* |
+| **7** | **`renaissance`**<br>*(Cultural Golden Age)* | `cultural_head_fascination_mult = 0.06`<br>*(+6% Cultural Fascination)* | `development_growth = 0.05`<br>*(+5% Realm Development)* | `monthly_lifestyle_xp_gain_mult = 0.03`<br>*(+3% Lifestyle XP Mult)* | `different_culture_opinion = 2.5`<br>*(+2.5 Foreign Culture Opinion)* | `cultural_acceptance_gain_mult = 0.05`<br>*(+5% Acceptance Gain)* |
+| **8** | **`dynasty`**<br>*(Noble Bloodline & Renown)* | `monthly_dynasty_prestige_mult = 0.04`<br>*(+4% Renown Gain)* | `dynasty_opinion = 3`<br>*(+3 Kin Opinion)* | `positive_random_genetic_chance = 0.05`<br>*(+5% Positive Congenital)* | `positive_inactive_inheritance_chance = 0.05`<br>*(+5% Inactive Inheritance)* | `child_education_aptitude = 2`<br>*(+2 Ward Education Success)* |
+
+---
+
+## 6. Shared Engine & Spell Integration
+
+Regardless of whether Option 1 or Option 2 is implemented:
+
+### Spell Gate Unlocks
+High-tier rituals checking empowerment XP (such as `bm_enhance_education_decision` or `bm_blood_rune_minimum_xp`) evaluate combined XP via a centralized script value:
+```pdx
+bm_crimson_empowerment_total_xp = {
+    value = 0
+    # Option 1: checks existing lifestyle_crimson_empowerment
+    # Option 2: sums both lifestyle_crimson_transcendence and lifestyle_crimson_sovereignty
+    if = {
+        limit = { has_trait = lifestyle_crimson_empowerment }
+        add = "lifestyle_crimson_empowerment_xp_sum"
+    }
+    if = {
+        limit = { has_trait = lifestyle_crimson_transcendence }
+        add = "lifestyle_crimson_transcendence_xp_sum"
+    }
+    if = {
+        limit = { has_trait = lifestyle_crimson_sovereignty }
+        add = "lifestyle_crimson_sovereignty_xp_sum"
+    }
+}
+```
+
+### Max-Cap Fallback Buff
+When all tracks of the character's empowerment trait reach 100 XP, casting the major empowerment ritual offers a repeatable fallback:
+- `temporary_buff_self` (+2 all stats, +4 prowess for 10 years).
+- Roll chance for permanent attribute gains (+1 to a random attribute).

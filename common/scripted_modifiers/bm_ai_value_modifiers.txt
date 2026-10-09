@@ -156,7 +156,7 @@ ai_willingness_to_lifedrain = {
     }
 }
 
-ai_willingness_to_do_postitive_magic = {
+ai_willingness_to_do_positive_magic = {
     modifier = { # Prioritise myself
         scope:actor = scope:recipient
         add = 100
@@ -229,6 +229,10 @@ ai_willingness_to_do_postitive_magic = {
         scope:recipient = { is_courtier_of = scope:actor }
         add = 20
     }
+}
+
+ai_willingness_to_do_postitive_magic = {
+    ai_willingness_to_do_positive_magic = yes
 }
 
 

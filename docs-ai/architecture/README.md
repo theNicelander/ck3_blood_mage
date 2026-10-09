@@ -14,7 +14,7 @@ Rules (`.agents/rules/`) say how to write CK3 script in general. These docs say 
 | `common/on_action/bm_blood_mage_prevalence_on_actions.txt`, `bm_yearly_pulse.txt`, `common/scripted_effects/bm_blood_mage_lifecycle_effects.txt` | `blood-mage-prevalence-and-lifecycle.md`, `blood-mage-trait-inheritance.md` |
 | `common/game_rules/bm_game_rules.txt` | `blood-mage-game-rules.md` |
 | `common/modifiers/bm_lifeforce.txt`, `bm_blood_magic_*_effects.txt` | `blood-mage-lifeforce.md` |
-| `common/buildings/bm_dutchy_buildings.txt`, `common/modifiers/bm_blood_runes_modifiers.txt` | `blood-mage-blood-runes.md` |
+| `common/buildings/bm_duchy_buildings.txt`, `common/modifiers/bm_blood_runes_modifiers.txt` | `blood-mage-blood-runes.md` |
 | `common/domiciles/buildings/bm_domicile_buildings.txt`, `common/modifiers/bm_domicile_modifiers.txt` | `blood-mage-domicile-buildings.md` |
 | `bm_golem_duel_effect.txt`, `bm_create_blood_golem.txt`, `events/bm_blood_golem_events.txt` | `blood-mage-golems.md` |
 | `common/dynasty_houses/`, `common/dynasties/`, `bm_channel_dynasty_modifiers.txt` | `blood-mage-dynasty.md` |

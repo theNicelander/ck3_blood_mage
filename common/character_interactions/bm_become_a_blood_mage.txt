@@ -79,26 +79,26 @@ bm_get_blood_magic_from_prisoner_interaction = {
         debug_log = "BloodMageInteraction: get_blood_magic_from_prisoner | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
 
         if = {
-            limit = {scope:recipient = {has_trait = maimed }}
-            scope:actor = {add_trait = cannibal}
+            limit = { scope:recipient = { has_trait = maimed } }
+            scope:actor = { add_trait = cannibal }
             lifedrain_execution_effect = {
                 VICTIM = scope:recipient
                 EXECUTIONER = scope:actor
             }
         }
-        scope:recipient = {
-            send_interface_toast = {
-                left_icon = scope:actor
-                custom_tooltip = bm_get_blood_magic_from_prisoner_interaction.desc
-                if = {
-                    limit = {has_trait = maimed}
-                    add_trait = maimed
+        else = {
+            scope:recipient = {
+                send_interface_toast = {
+                    left_icon = scope:actor
+                    custom_tooltip = bm_get_blood_magic_from_prisoner_interaction.desc
+                    if = {
+                        limit = { has_trait = one_legged }
+                        add_trait = maimed
+                    }
+                    else = {
+                        add_trait = one_legged
+                    }
                 }
-                if = {
-                    limit = {has_trait = one_legged}
-                    add_trait = maimed
-                }
-                add_trait = one_legged
             }
         }
         scope:actor = {
@@ -127,18 +127,20 @@ bm_get_blood_magic_from_prisoner_interaction = {
                         left_icon = scope:actor
                         right_icon = scope:recipient
                         if = {
-                            limit = {has_trait = blind}
+                            limit = { has_trait = blind }
                             add_trait = ergotism
                         }
-                        if = {
-                            limit = {has_trait = one_eyed}
+                        else_if = {
+                            limit = { has_trait = one_eyed }
                             add_trait = blind
                         }
-                        if = {
-                            limit = {has_trait = wounded_1}
+                        else_if = {
+                            limit = { has_trait = wounded_1 }
                             add_trait = one_eyed
                         }
-                        add_trait = wounded_1
+                        else = {
+                            add_trait = wounded_1
+                        }
                         add_trait = scarred
                     }
                 }

@@ -30,9 +30,8 @@
 
 | Piece | File |
 | --- | --- |
-| Duel mechanics guide | `events/_duels.md` |
 | Geyser duel events | `events/bm_geyser_duel_events.txt` (`bm_geyser_duel.0001`) |
-| Initiation decisions | `common/decisions/bm_become_blood_mage_decision.txt` |
+| Initiation decisions | `common/decisions/become_mage/bm_become_blood_mage_decision.txt` |
 | Trait drain interaction | `common/character_interactions/bm_drain_trait.txt` |
 | Trait drain events | `events/bm_trait_drain_events.txt` (`bm_trait_drain.001`) |
 | Trait drain duel values | `common/script_values/bm_drain_duel_values.txt` |
