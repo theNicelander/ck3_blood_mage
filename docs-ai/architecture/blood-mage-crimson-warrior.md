@@ -20,10 +20,11 @@ Each track has 10 tiers (10, 20, 30, ..., 100 XP). Per-level benefits repeat lin
 
 | Track | Theme | Per-Tier Bonus (x10 at 100 XP) | Cap Total (Rank 10) |
 | --- | --- | --- | --- |
-| **`slaughter`** | Single combat & dueling | `prowess = 1.5`<br>`wound_recovery_mult = 0.05` | +15 Prowess<br>+50% Wound Recovery |
-| **`vanguard`** | Army command & knight shock | `knight_effectiveness_mult = 0.08`<br>`enemy_fatal_casualties_mult = 0.05` | +80% Knight Effectiveness<br>+50% Fatal Casualties |
-| **`blood_frenzy`** | Dread & troop lethality | `dread_baseline_add = 4`<br>`maa_damage_mult = 0.03` | +40 Dread Baseline<br>+30% Men-at-Arms Damage |
-| **`resilience`** | Somatic decay mitigation | `health = 0.08`<br>`life_expectancy = 1` | +0.8 Health<br>+10 Life Expectancy |
+| **`slaughter`** | Single combat & dueling | `prowess = 0.8`<br>`negate_health_penalty_add = 0.05` | +8 Prowess (+13 total with base)<br>+0.5 Negate Wound Penalties |
+| **`vanguard`** | Army command & frontline shock | `advantage = 0.5`<br>`enemy_fatal_casualties_mult = 0.03` | +5 Commander Advantage<br>+30% Fatal Casualties |
+| **`blood_frenzy`** | Dread & troop shock | `dread_baseline_add = 2`<br>`prowess = 0.4` | +20 Dread Baseline<br>+4 Prowess |
+| **`resilience`** | Somatic decay mitigation | `health = 0.04`<br>`life_expectancy = 0.5` | +0.4 Health (Net +0.2 after base -0.2)<br>+5 Life Expectancy (Net +3 after base -2) |
+
 
 ## Key Mechanics
 
