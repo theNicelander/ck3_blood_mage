@@ -46,15 +46,15 @@ can_construct = {
 
 ### Tier Summary Table
 
-| Level | Key | Cost | Build Time | Owner Modifiers (`character_modifier`) | Camp / Court Aura Modifiers (`bm_sanguine_font_aura`) | Domicile Parameter |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **I** | `bm_domicile_sanguine_font_01` | 75 Gold | 180 Days | `domicile_monthly_piety_add = 0.2`<br>`health = 0.1`<br>`life_expectancy = 2` | `monthly_piety = 0.1`<br>`health = 0.1`<br>`life_expectancy = 2` | `bm_sanguine_font_tier_1 = yes` |
-| **II** | `bm_domicile_sanguine_font_02` | 150 Gold | 240 Days | `domicile_monthly_piety_add = 0.4`<br>`health = 0.25`<br>`life_expectancy = 4` | `monthly_piety = 0.2`<br>`health = 0.2`<br>`life_expectancy = 4` | `bm_sanguine_font_tier_2 = yes` |
-| **III** | `bm_domicile_sanguine_font_03` | 300 Gold | 360 Days | `domicile_monthly_piety_add = 0.6`<br>`health = 0.4`<br>`life_expectancy = 6` | `monthly_piety = 0.3`<br>`health = 0.3`<br>`life_expectancy = 6` | `bm_sanguine_font_tier_3 = yes` |
-| **IV** | `bm_domicile_sanguine_font_04` | 500 Gold | 480 Days | `domicile_monthly_piety_add = 0.8`<br>`health = 0.6`<br>`life_expectancy = 8` | `monthly_piety = 0.4`<br>`health = 0.4`<br>`life_expectancy = 8` | `bm_sanguine_font_tier_4 = yes` |
-| **V** | `bm_domicile_sanguine_font_05` | 800 Gold | 600 Days | `domicile_monthly_piety_add = 1.0`<br>`health = 0.8`<br>`life_expectancy = 10` | `monthly_piety = 0.5`<br>`health = 0.5`<br>`life_expectancy = 10` | `bm_sanguine_font_tier_5 = yes` |
+| Level   | Key                            | Cost     | Build Time | Owner Modifiers (`character_modifier`)                                         | Camp / Court Aura Modifiers (`bm_sanguine_font_aura`)             | Domicile Parameter              |
+| :------ | :----------------------------- | :------- | :--------- | :----------------------------------------------------------------------------- | :---------------------------------------------------------------- | :------------------------------ |
+| **I**   | `bm_domicile_sanguine_font_01` | 75 Gold  | 180 Days   | `domicile_monthly_piety_add = 0.2`<br>`health = 0.1`<br>`life_expectancy = 2`  | `monthly_piety = 0.1`<br>`health = 0.1`<br>`life_expectancy = 2`  | `bm_sanguine_font_tier_1 = yes` |
+| **II**  | `bm_domicile_sanguine_font_02` | 150 Gold | 240 Days   | `domicile_monthly_piety_add = 0.4`<br>`health = 0.25`<br>`life_expectancy = 4` | `monthly_piety = 0.2`<br>`health = 0.2`<br>`life_expectancy = 4`  | `bm_sanguine_font_tier_2 = yes` |
+| **III** | `bm_domicile_sanguine_font_03` | 300 Gold | 360 Days   | `domicile_monthly_piety_add = 0.6`<br>`health = 0.4`<br>`life_expectancy = 6`  | `monthly_piety = 0.3`<br>`health = 0.3`<br>`life_expectancy = 6`  | `bm_sanguine_font_tier_3 = yes` |
+| **IV**  | `bm_domicile_sanguine_font_04` | 500 Gold | 480 Days   | `domicile_monthly_piety_add = 0.8`<br>`health = 0.6`<br>`life_expectancy = 8`  | `monthly_piety = 0.4`<br>`health = 0.4`<br>`life_expectancy = 8`  | `bm_sanguine_font_tier_4 = yes` |
+| **V**   | `bm_domicile_sanguine_font_05` | 800 Gold | 600 Days   | `domicile_monthly_piety_add = 1.0`<br>`health = 0.8`<br>`life_expectancy = 10` | `monthly_piety = 0.5`<br>`health = 0.5`<br>`life_expectancy = 10` | `bm_sanguine_font_tier_5 = yes` |
 
-*Note: In CK3 domicile buildings, `character_modifier` applies directly to the domicile owner. For monthly piety from domiciles, vanilla uses `domicile_monthly_piety_add` on owners, whereas courtiers use standard `monthly_piety`.*
+_Note: In CK3 domicile buildings, `character_modifier` applies directly to the domicile owner. For monthly piety from domiciles, vanilla uses `domicile_monthly_piety_add` on owners, whereas courtiers use standard `monthly_piety`._
 
 ---
 
@@ -63,6 +63,7 @@ can_construct = {
 ### The Engine Constraint
 
 Domicile buildings only support:
+
 - `character_modifier = { ... }`: applies strictly to `scope:owner` (the domicile owner).
 - `province_modifier = { ... }`: applies to the domicile's physical barony/province location.
 
@@ -71,7 +72,9 @@ Vanilla domicile buildings have no native `courtier_modifier` block. To extend h
 ### Implementation Blueprint
 
 #### 1. Domicile Parameters
+
 Each building tier exposes a unique domicile parameter:
+
 ```pdx
 # Example for Tier 3:
 parameters = {
@@ -80,45 +83,48 @@ parameters = {
 ```
 
 #### 2. Companion Character Modifiers
+
 Define 5 character modifiers in `common/modifiers/bm_domicile_modifiers.txt`:
+
 ```pdx
 bm_sanguine_font_aura_tier_1 = {
     icon = blood_positive
-    monthly_piety = 0.1
-    health = 0.1
+    monthly_piety = 0.2
+    health = 0.2
     life_expectancy = 2
 }
 
 bm_sanguine_font_aura_tier_2 = {
     icon = blood_positive
-    monthly_piety = 0.2
-    health = 0.2
+    monthly_piety = 0.4
+    health = 0.4
     life_expectancy = 4
 }
 
 bm_sanguine_font_aura_tier_3 = {
     icon = blood_positive
-    monthly_piety = 0.3
-    health = 0.3
+    monthly_piety = 0.6
+    health = 0.6
     life_expectancy = 6
 }
 
 bm_sanguine_font_aura_tier_4 = {
     icon = blood_positive
-    monthly_piety = 0.4
-    health = 0.4
+    monthly_piety = 0.8
+    health = 0.8
     life_expectancy = 8
 }
 
 bm_sanguine_font_aura_tier_5 = {
     icon = blood_positive
-    monthly_piety = 0.5
-    health = 0.5
+    monthly_piety = 1
+    health = 1
     life_expectancy = 10
 }
 ```
 
 #### 3. Scripted Effect: `bm_update_sanguine_font_aura_effect`
+
 A scoped effect on a ruler/camp leader that sweeps `every_courtier` (in CK3 adventurer camps, all camp followers are in `every_courtier`):
 
 ```pdx
@@ -183,6 +189,7 @@ bm_update_sanguine_font_aura_effect = {
 ```
 
 #### 4. Event & Pulse Hooks
+
 - **On Construction Complete**: In the building definition's `on_complete = { ... }`, call `scope:owner = { bm_update_sanguine_font_aura_effect = yes }`.
 - **On Joining Court / Camp**: Hook `on_join_court` to check if `scope:new_employer.domicile` has `bm_sanguine_font_tier_*` and grant the modifier.
 - **Maintenance Pulse**: The 2-year modifier expiration combined with `random_yearly_everyone_pulse` or a yearly court maintenance check ensures dead/departed courtiers shed the modifier cleanly without bloat.

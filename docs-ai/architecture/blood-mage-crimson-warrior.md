@@ -47,7 +47,8 @@ Each track has 10 tiers (10, 20, 30, ..., 100 XP):
 | Duel victory XP hook | `common/on_action/bm_duel_on_actions.txt` |
 | Yearly survival XP pulse | `common/on_action/bm_yearly_pulse.txt`<br>`events/bm_yearly_events.txt` |
 | Story retinue list population | `common/scripted_effects/bm_blood_mage_story_list_effects.txt` |
-| English localization | `localization/english/bm_traits_l_english.yml`<br>`localization/english/bm_interactions_l_english.yml`<br>`localization/english/bm_crimson_warrior_events_l_english.yml` |
+| English localization | `localization/english/bm_traits_l_english.yml`<br>`localization/english/bm_interactions_l_english.yml`<br>`localization/english/bm_crimson_warrior_events_l_english.yml`<br>`localization/english/bm_debug_l_english.yml` |
+| Debug XP decision | `common/decisions/bm_debug_decisions.txt` |
 
 ## Gotchas
 
