@@ -1,26 +1,25 @@
 ---
 name: add-blood-magic-decision
 description: >-
-  Use this skill when adding a new blood magic decision or self-cast
-  interaction to the Blood Mages mod.
+  Add blood magic decision or self-cast interaction.
 ---
 
-# Add a blood magic decision
+# Add blood magic decision
 
-Read first: `docs-ai/architecture/` docs `blood-mage-decisions.md`, `blood-mage-interactions.md`, `blood-mage-progression.md`, `blood-mage-story.md`, `blood-mage-lifeforce.md`, and rules [ck3-decisions](../../rules/ck3-decisions.md), [ck3-ai](../../rules/ck3-ai.md).
+Context: `docs-ai/architecture/blood-mage-decisions.md`, `blood-mage-interactions.md`, `blood-mage-progression.md`, `blood-mage-story.md`, `blood-mage-lifeforce.md`, [ck3-decisions](../../rules/ck3-decisions.md), [ck3-ai](../../rules/ck3-ai.md).
 
 ## Steps
 
-1. Copy the nearest decision in `common/decisions/` (or interaction in `common/character_interactions/`) for structure.
-2. Declare cost once, in a script value file if reused.
-3. Use the shared effects and XP helpers named in the docs, never a raw `add_trait`.
-4. Add it to the story's decision list in `common/story_cycles/bm_blood_mage_story.txt` so it shows in the panel.
-5. Add `ai_*` blocks deliberately.
-6. English loc: title, `_desc`, `_tooltip`, `_confirm`.
-7. XP gate and requirement values follow `blood-mage-progression.md`.
-8. Run `update-docs`, then `validate-change`.
+1. Copy neighboring decision in `common/decisions/` or interaction in `common/character_interactions/`.
+2. Declare cost once in script value (`common/script_values/`). Never deduct cost in `effect`.
+3. Use shared XP/trait effects (`common/scripted_effects/`), never bare `add_trait`.
+4. Register in `common/story_cycles/bm_blood_mage_story.txt` for panel display.
+5. Set `ai_*` blocks deliberately (`ai_check_interval = 0` if player-only).
+6. Add English loc keys: title, `_desc`, `_tooltip`, `_confirm`.
+7. Set XP gate and requirements per `blood-mage-progression.md`.
+8. Update docs and validate.
 
 ## Verify
 
-- `grep` each new loc key and the new decision id in the story list.
-- `validate-change` passes.
+- Grep new loc keys and decision ID in story cycle list.
+- Run `python3 scripts/check_repo.py`.

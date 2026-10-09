@@ -9,8 +9,8 @@ trait_drain_prisoner_event_interaction = {
     cooldown = { days = 60 }
     cooldown_against_recipient = { days = 180 }
 
-    is_valid_showing_failures_only = { 
-        scope:actor = { 
+    is_valid_showing_failures_only = {
+        scope:actor = {
             has_character_modifier = lifeforce_modifier_major
         }
     }
@@ -48,12 +48,12 @@ trait_drain_prisoner_event_interaction = {
 
     on_accept = {
         scope:actor = {debug_log = debug_log.blood_mage_log}
-        scope:actor = { 
+        scope:actor = {
             trigger_event = bm_trait_drain.001
             remove_character_modifier = lifeforce_modifier_major
             custom_tooltip = generic_drain_prisoner_trait_interaction_desc
         }
-        
+
     }
 
     # AI

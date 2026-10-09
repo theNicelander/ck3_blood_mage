@@ -28,7 +28,7 @@ blood_mage_yearly_events.001 = {
                 }
             }
         }
-        
+
         # Enlightenment attunement check
         if = {
             limit = { has_character_modifier = enlightenment_attuned }
@@ -45,7 +45,7 @@ blood_mage_yearly_events.001 = {
                 }
             }
         }
-        
+
         # Bloodline attunement check
         if = {
             limit = { has_character_modifier = bloodline_attuned }
@@ -62,7 +62,7 @@ blood_mage_yearly_events.001 = {
                 }
             }
         }
-        
+
         # Benediction attunement check
         if = {
             limit = { has_character_modifier = benediction_attuned }
@@ -79,7 +79,7 @@ blood_mage_yearly_events.001 = {
                 }
             }
         }
-        
+
         # Hematurgy attunement check
         if = {
             limit = { has_character_modifier = hematurgy_attuned }
@@ -101,9 +101,9 @@ blood_mage_yearly_events.001 = {
 
 blood_mage_yearly_events.002 = {
     hidden = yes
-    trigger = { 
+    trigger = {
         has_trait = lifestyle_blood_mage
-        exists = house 
+        exists = house
     }
     immediate = {
         # Dynasty bloodline, get XP based on number of dynasty modifiers
@@ -160,9 +160,9 @@ blood_mage_yearly_events.003 = {
         if = {
             limit = { has_character_modifier = minor_crimson_rune_modifier }
             duel = {
-                skill = learning 
+                skill = learning
                 value = 0
-                80 = {  } # chance of nothing happening 
+                80 = {  } # chance of nothing happening
                 20 = { # minor lifeforce only
                     send_interface_toast = {
                         title = bm_crimson_rune_yearly_event_popup.title
@@ -177,7 +177,7 @@ blood_mage_yearly_events.003 = {
             duel = {
                 skill = learning
                 value = 0
-                65 = {  } # chance of nothing happening 
+                65 = {  } # chance of nothing happening
                 20 = { # minor lifeforce only
                     send_interface_toast = {
                         title = bm_crimson_rune_yearly_event_popup.title
@@ -207,7 +207,7 @@ blood_mage_yearly_events.003 = {
             duel = {
                 skill = learning
                 value = 0
-                50 = { } # chance of nothing happening 
+                50 = { } # chance of nothing happening
                 30 = { # minor lifeforce only
                     send_interface_toast = {
                         title = bm_crimson_rune_yearly_event_popup.title

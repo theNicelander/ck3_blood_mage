@@ -3,7 +3,7 @@
     category = interaction_category_friendly
     desc = heal_disease_minor_desc
     common_interaction = yes
-    
+
 
     cost = { piety = heal_disease_minor_cost }
     is_shown = {
@@ -22,9 +22,9 @@
     }
 
 
-    is_valid_showing_failures_only = { 
+    is_valid_showing_failures_only = {
         scope:actor = { has_character_modifier = lifeforce_modifier_minor }
-        custom_tooltip = { 
+        custom_tooltip = {
             text = IN_COURT_OR_IMPRISONED
             OR = { # self or courtiers
                 scope:actor = scope:recipient
@@ -34,7 +34,7 @@
     }
 
     on_accept = {
-        
+
         debug_log = debug_log.blood_mage_log
         scope:actor = { benediction_magic_cast_effect_minor = yes }
         scope:recipient = {
@@ -43,7 +43,7 @@
             remove_trait = lovers_pox
             remove_trait = gout_ridden
             if = {
-                limit = { 
+                limit = {
                     has_trait_xp = {
                         trait = scarred
                         value > 0
@@ -53,7 +53,7 @@
                     trait = scarred
                     value = -50
                 }
-                
+
             } else = {
                 remove_trait = scarred
             }
@@ -69,7 +69,7 @@
     auto_accept = yes
     ai_accept = { base = 100 }
     ai_potential = { always = yes }
-    ai_targets = { 
+    ai_targets = {
         ai_recipients = self
         ai_recipients = dynasty
         ai_recipients = spouses
@@ -99,7 +99,7 @@ heal_disease_major = {
     cost = { piety = heal_disease_major_cost }
     is_valid_showing_failures_only = {
         scope:actor = { has_character_modifier = lifeforce_modifier_major }
-        custom_tooltip = { 
+        custom_tooltip = {
             text = IN_COURT_OR_IMPRISONED
             OR = { # self or courtiers
                 scope:actor = scope:recipient
@@ -136,7 +136,7 @@ heal_disease_major = {
     }
 
     on_accept = {
-        
+
         debug_log = debug_log.blood_mage_log
         scope:actor = { benediction_magic_cast_effect_major = yes }
         scope:recipient = {
@@ -181,7 +181,7 @@ heal_disease_major = {
     }
     ai_potential = { always = yes }
     ai_frequency = 6
-    ai_targets = { 
+    ai_targets = {
         ai_recipients = self
         ai_recipients = dynasty
         ai_recipients = spouses
@@ -212,9 +212,9 @@ heal_disease_benediction = {
     is_valid_showing_failures_only = {
         scope:actor = {
             has_character_modifier = lifeforce_modifier_minor
-            has_character_modifier = lifeforce_modifier_major 
+            has_character_modifier = lifeforce_modifier_major
         }
-        custom_tooltip = { 
+        custom_tooltip = {
             text = IN_COURT_OR_IMPRISONED
             OR = { # self or courtiers
                 scope:actor = scope:recipient
@@ -223,7 +223,7 @@ heal_disease_benediction = {
         }
     }
     is_shown = {
-        
+
         scope:actor = { has_trait = lifestyle_blood_mage }
         scope:recipient = {
             OR = {
@@ -282,7 +282,7 @@ heal_disease_benediction = {
     }
     ai_potential = { always = yes }
     ai_frequency = 6
-    ai_targets = { 
+    ai_targets = {
         ai_recipients = self
         ai_recipients = dynasty
         ai_recipients = spouses
