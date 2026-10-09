@@ -16,7 +16,7 @@
     }
 
     on_accept = {
-        scope:actor =  {debug_log = debug_log.blood_mage_log}
+        debug_log = "BloodMageInteraction: grant_lifeforce_reversed | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
         scope:recipient = {
             remove_character_modifier = lifedrained_modifier
             remove_character_modifier = recently_lifedrained_modifier
@@ -102,7 +102,7 @@ grant_lifeforce_interaction = {
     }
 
     on_accept = {
-        debug_log = debug_log.blood_mage_log
+        debug_log = "BloodMageInteraction: grant_lifeforce | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
 
         # Grant minor lifeforce
         if = {

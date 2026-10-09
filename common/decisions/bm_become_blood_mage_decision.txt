@@ -29,7 +29,7 @@
     }
 
     effect = {
-        debug_log = debug_log.blood_mage_log
+        debug_log = "BloodMageDecision: become_blood_mage | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
         trigger_event = { id = bm_geyser_duel.0001 }
     }
 

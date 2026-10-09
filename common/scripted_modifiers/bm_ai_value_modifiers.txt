@@ -91,6 +91,20 @@ ai_willingness_to_lifedrain = {
         }
     }
 
+    # Absolute veto: Never drain your dynasty members (unless rival/nemesis)
+    modifier = {
+        factor = 0
+        scope:actor = {
+            exists = dynasty
+            exists = scope:recipient.dynasty
+            dynasty = scope:recipient.dynasty
+        }
+        NOR = {
+            scope:recipient = { has_relation_rival = scope:actor }
+            scope:recipient = { has_relation_nemesis = scope:actor }
+        }
+    }
+
     # Absolute veto: Never drain people you actually like (opinion > 20)
     modifier = {
         factor = 0
@@ -185,6 +199,14 @@ ai_willingness_to_do_postitive_magic = {
     }
     modifier = {
         scope:actor = {
+            exists = dynasty
+            exists = scope:recipient.dynasty
+            dynasty = scope:recipient.dynasty
+        }
+        add = 25
+    }
+    modifier = {
+        scope:actor = {
             exists = house
             exists = scope:recipient.house
             house = scope:recipient.house
@@ -192,12 +214,18 @@ ai_willingness_to_do_postitive_magic = {
         add = 30
     }
     modifier = {
-        scope:actor = { has_relation_best_friend = scope:recipient }
         scope:recipient = { is_knight_of = scope:actor }
         add = 40
     }
     modifier = {
+        scope:actor = { has_relation_best_friend = scope:recipient }
+        add = 40
+    }
+    modifier = {
         scope:recipient = { is_powerful_vassal_of = scope:actor }
+        add = 20
+    }
+    modifier = {
         scope:recipient = { is_courtier_of = scope:actor }
         add = 20
     }

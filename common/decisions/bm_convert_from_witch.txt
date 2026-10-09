@@ -10,7 +10,7 @@
     }
 
     effect = {
-        debug_log = debug_log.blood_mage_log
+        debug_log = "BloodMageDecision: convert_from_witch | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
         remove_trait = witch
         bm_become_blood_mage_effect = yes
         custom_tooltip = convert_to_blood_magic_from_witch.tooltip
