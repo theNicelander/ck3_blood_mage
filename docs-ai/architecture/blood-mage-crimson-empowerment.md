@@ -31,15 +31,14 @@ Each track spans 10 levels (10 to 100 XP, +10 XP per channel). All 10 levels in 
   - Improve Education tier: Req 50 total XP (`required_xp_improve_education`).
   - Add Second Education: Req 70 total XP (`required_xp_new_education`).
   - Inscribe Blood Runes: Req 50 total XP (`bm_blood_rune_minimum_xp`).
-- **Empowered Retinue:** Friendly character interactions on knights/courtiers:
-  - `grant_crimson_warrior_interaction`: Cost: piety + consumes `lifeforce_modifier_minor`. Gives `lifeforce_modifier_crimson_warrior` (`+5` prowess, `-0.2` health, `-2` life expectancy, `+20` opinion). XP: minor benediction.
-  - `grant_crimson_champion_interaction`: Cost: piety + consumes `lifeforce_modifier_major`. Gives `lifeforce_modifier_crimson_champion` (`+10` prowess, `-1.0` health, `-7` life expectancy, `+30` opinion). XP: major benediction.
+- **Empowered Retinue:** Blood Knights are martial vessels empowered via blood magic:
+  - `grant_blood_knight_interaction`: Cost: 100 piety + major Lifeforce. Gives `lifestyle_blood_knight` trait with 3 evolutive tracks (Vanguard, Slaughter, Resilience).
+  - See `blood-mage-blood-knight.md` for full specification.
 - **Roster:** Retinue automatically tracked in Blood Magic story panel via `bm_refresh_blood_magic_rosters_effect`.
 
 ## Gotchas
 
 - `lifestyle_crimson_empowerment` does not grant passive XP over time; it only advances when the player or AI explicitly invests major Lifeforce into the empowerment decision.
-- Crimson Champions suffer significant health and life expectancy penalties; they are terrifying combatants but have shorter lifespans.
 - All seven empowerment tracks share baseline increases to life expectancy and monthly piety, so advancing multiple tracks compounds longevity and spiritual power.
 
 ## Not verified

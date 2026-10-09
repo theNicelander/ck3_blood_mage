@@ -5,7 +5,7 @@ CK3 script fails silently. Follow patterns already in this repo and in vanilla 1
 ## What this is
 
 - CK3 mod for **1.20.***. Pure script, localization, gfx. No build step.
-- Adds traits: `lifestyle_blood_mage` (tracks: ancient, enlightenment, bloodline, benediction, hematurgy), `lifestyle_crimson_empowerment` (7 tracks), and `lifestyle_crimson_knight` (tracks: slaughter, vanguard, resilience).
+- Adds traits: `lifestyle_blood_mage` (tracks: ancient, enlightenment, bloodline, benediction, hematurgy), `lifestyle_crimson_empowerment` (7 tracks), and `lifestyle_blood_knight` (tracks: slaughter, vanguard, resilience).
 - Features: Lifeforce resource, spell decisions/interactions, blood golems, Crimson Retinue, Blóðtrú religion family, Crimson Runes & blood universities, and game rules.
 - `scripts/` holds repo validation and Steam Workshop helpers. Never touch `.env`, credentials or `*.vdf`.
 

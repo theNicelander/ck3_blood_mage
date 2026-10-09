@@ -18,9 +18,8 @@
 | `heal_disease_minor` | Courtier, family, self | Minor Lifeforce. Target has minor ailment. | +1 benediction | Cures minor disease, wound, or illness. |
 | `heal_disease_major` | Courtier, family, self | Major Lifeforce. Target has severe illness. | +2 benediction | Cures major illnesses, cancers, severe wounds. |
 | `heal_disease_benediction` | Courtier, family, self | Major Lifeforce. Req: 50 Benediction XP. | +3 benediction | Cures permanent ailments (blind, maimed, infirm, lunatic_1, etc.). |
-| `grant_lifeforce_interaction` | Other blood mage | Minor/Major Lifeforce. | +1-2 benediction | Transmutates Lifeforce stack to recipient blood mage. |
-| `grant_crimson_warrior_interaction` | Knight or courtier | Piety + Minor Lifeforce. | +1 benediction | Gives `lifeforce_modifier_crimson_warrior` (+5 prowess, -0.2 health, -2 life exp). |
-| `grant_crimson_champion_interaction` | Knight or courtier | Piety + Major Lifeforce. | +2 benediction | Gives `lifeforce_modifier_crimson_champion` (+10 prowess, -1.0 health, -7 life exp). |
+| `make_blood_knight_interaction` | Knight, courtier, or self | 100 Piety + Major Lifeforce. | +2 benediction | Bestows `lifestyle_blood_knight` trait. |
+| `empower_blood_knight_interaction` | Sworn blood knight or self | Major Lifeforce (+10 XP) or Minor Lifeforce (+5 XP). | +2 / +1 benediction | Direct popup modal advancing all 3 combat tracks. |
 | `bm_cast_blood_magic_self_channel_minor_lifeforce` | Self | Piety + Minor Lifeforce. | +1 enlightenment | Triggers temporary attribute enhancement (`bm_channel_lifeforce_enlightenment_minor.001`). |
 | `bm_cast_blood_magic_self_attune_lifeforce` | Self | Piety + Minor Lifeforce. | None | Opens attunement selection (`bm_attune_lifeforce.001`). |
 | `bm_cast_blood_magic_self_manifest_lifeforce` | Self | Piety. CD: 1 yr. | +5 enlightenment | Learning duel to generate Lifeforce. |
@@ -48,7 +47,7 @@
 | Harvest Lifeforce (prisoner & courtier) | `common/character_interactions/bm_drain_lifeforce.txt` |
 | Drain Traits from Prisoners | `common/character_interactions/bm_drain_trait.txt` |
 | Cure Illness (minor, major, benediction) | `common/character_interactions/bm_cure_illness_interactions.txt` |
-| Grant Crimson Retinue (warrior, champion) | `common/character_interactions/bm_grant_blood_infused_prowess.txt` |
+| Blood Knight (Make & Empower) | `common/character_interactions/bm_blood_knight_interactions.txt` |
 | Grant Blood Magic Trait | `common/character_interactions/bm_grant_blood_magic.txt` |
 | Grant Lifeforce Stacks | `common/character_interactions/bm_grant_lifeforce.txt` |
 | Self Magic (Minor rituals & harvesting) | `common/character_interactions/bm_cast_blood_magic_self_minor.txt` |

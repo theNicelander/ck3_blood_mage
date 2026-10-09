@@ -235,13 +235,13 @@ blood_mage_yearly_events.003 = {
     }
 }
 
-# Yearly event - Add resilience XP to Crimson Knights
+# Yearly event - Add resilience XP to Blood Knights
 blood_mage_yearly_events.004 = {
     hidden = yes
-    trigger = { has_trait = lifestyle_crimson_knight }
+    trigger = { has_trait = lifestyle_blood_knight }
     immediate = {
         add_trait_xp = {
-            trait = lifestyle_crimson_knight
+            trait = lifestyle_blood_knight
             track = resilience
             value = 1
         }
