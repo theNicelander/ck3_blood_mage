@@ -234,3 +234,16 @@ blood_mage_yearly_events.003 = {
         }
     }
 }
+
+# Yearly event - Add resilience XP to Crimson Warriors
+blood_mage_yearly_events.004 = {
+    hidden = yes
+    trigger = { has_trait = lifestyle_crimson_warrior }
+    immediate = {
+        add_trait_xp = {
+            trait = lifestyle_crimson_warrior
+            track = resilience
+            value = 1
+        }
+    }
+}

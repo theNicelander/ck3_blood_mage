@@ -2,184 +2,181 @@
 	category = lifestyle
 	flag = reweaving_lifestyle_trait
 	icon = blood_mage_3.dds
-	shown_in_ruler_designer = no
+	shown_in_ruler_designer = yes
+	ruler_designer_cost = 50
 
 	genetic = no
 
-	health = -0.2
-	life_expectancy = -2
-	prowess = 5
+	health = -2
+	life_expectancy = -5
+	prowess = -5
 
 	tracks = {
-		slaughter = {
-			10 = {
-				prowess = 0.8
-				negate_health_penalty_add = 0.05
-			}
-			20 = {
-				prowess = 0.8
-				negate_health_penalty_add = 0.05
-			}
-			30 = {
-				prowess = 0.8
-				negate_health_penalty_add = 0.05
-			}
-			40 = {
-				prowess = 0.8
-				negate_health_penalty_add = 0.05
-			}
-			50 = {
-				prowess = 0.8
-				negate_health_penalty_add = 0.05
-			}
-			60 = {
-				prowess = 0.8
-				negate_health_penalty_add = 0.05
-			}
-			70 = {
-				prowess = 0.8
-				negate_health_penalty_add = 0.05
-			}
-			80 = {
-				prowess = 0.8
-				negate_health_penalty_add = 0.05
-			}
-			90 = {
-				prowess = 0.8
-				negate_health_penalty_add = 0.05
-			}
-			100 = {
-				prowess = 0.8
-				negate_health_penalty_add = 0.05
-			}
-		}
-
 		vanguard = {
 			10 = {
-				advantage = 0.5
-				enemy_fatal_casualties_mult = 0.03
+				advantage = 1
+				monthly_prestige = 0.1
 			}
 			20 = {
-				advantage = 0.5
-				enemy_fatal_casualties_mult = 0.03
+				advantage = 1
+				martial = 1
+				monthly_prestige = 0.1
 			}
 			30 = {
-				advantage = 0.5
-				enemy_fatal_casualties_mult = 0.03
+				advantage = 1
+				monthly_prestige = 0.1
 			}
 			40 = {
-				advantage = 0.5
-				enemy_fatal_casualties_mult = 0.03
+				advantage = 1
+				martial = 1
+				monthly_prestige = 0.1
 			}
 			50 = {
-				advantage = 0.5
-				enemy_fatal_casualties_mult = 0.03
+				advantage = 1
+				martial_per_prestige_level = 1
+				monthly_prestige = 0.1
 			}
 			60 = {
-				advantage = 0.5
-				enemy_fatal_casualties_mult = 0.03
+				advantage = 1
+				martial = 1
+				monthly_prestige = 0.1
 			}
 			70 = {
-				advantage = 0.5
-				enemy_fatal_casualties_mult = 0.03
+				advantage = 1
+				monthly_prestige = 0.1
 			}
 			80 = {
-				advantage = 0.5
-				enemy_fatal_casualties_mult = 0.03
+				advantage = 1
+				martial = 1
+				monthly_prestige = 0.1
 			}
 			90 = {
-				advantage = 0.5
-				enemy_fatal_casualties_mult = 0.03
+				advantage = 1
+				monthly_prestige = 0.1
 			}
 			100 = {
-				advantage = 0.5
-				enemy_fatal_casualties_mult = 0.03
+				advantage = 1
+				martial = 1
+				martial_per_prestige_level = 1
+				monthly_prestige = 0.1
 			}
 		}
 
-		blood_frenzy = {
+		slaughter = {
 			10 = {
-				dread_baseline_add = 2
-				prowess = 0.4
+				prowess = 2
+				monthly_prestige = 0.1
 			}
 			20 = {
-				dread_baseline_add = 2
-				prowess = 0.4
+				prowess = 2
+				monthly_prestige = 0.1
 			}
 			30 = {
-				dread_baseline_add = 2
-				prowess = 0.4
+				prowess = 2
+				monthly_prestige = 0.1
 			}
 			40 = {
-				dread_baseline_add = 2
-				prowess = 0.4
+				prowess = 2
+				monthly_prestige = 0.1
 			}
 			50 = {
-				dread_baseline_add = 2
-				prowess = 0.4
+				prowess = 2
+				prowess_per_prestige_level = 1
+				monthly_prestige = 0.1
 			}
 			60 = {
-				dread_baseline_add = 2
-				prowess = 0.4
+				prowess = 2
+				monthly_prestige = 0.1
 			}
 			70 = {
-				dread_baseline_add = 2
-				prowess = 0.4
+				prowess = 2
+				monthly_prestige = 0.1
 			}
 			80 = {
-				dread_baseline_add = 2
-				prowess = 0.4
+				prowess = 2
+				monthly_prestige = 0.1
 			}
 			90 = {
-				dread_baseline_add = 2
-				prowess = 0.4
+				prowess = 2
+				monthly_prestige = 0.1
 			}
 			100 = {
-				dread_baseline_add = 2
-				prowess = 0.4
+				prowess = 2
+				prowess_per_prestige_level = 1
+				monthly_prestige = 0.1
 			}
 		}
 
 		resilience = {
 			10 = {
-				health = 0.04
-				life_expectancy = 0.5
+				life_expectancy = 2
+				health = 0.5
+				years_of_fertility = 1
+				epidemic_resistance = 1
+				monthly_prestige = 0.1
 			}
 			20 = {
-				health = 0.04
-				life_expectancy = 0.5
+				life_expectancy = 2
+				health = 0.5
+				years_of_fertility = 1
+				epidemic_resistance = 1
+				monthly_prestige = 0.1
 			}
 			30 = {
-				health = 0.04
-				life_expectancy = 0.5
+				life_expectancy = 2
+				health = 0.5
+				years_of_fertility = 1
+				epidemic_resistance = 1
+				monthly_prestige = 0.1
 			}
 			40 = {
-				health = 0.04
-				life_expectancy = 0.5
+				life_expectancy = 2
+				health = 0.5
+				years_of_fertility = 1
+				epidemic_resistance = 1
+				monthly_prestige = 0.1
 			}
 			50 = {
-				health = 0.04
-				life_expectancy = 0.5
+				life_expectancy = 2
+				health = 0.5
+				years_of_fertility = 1
+				epidemic_resistance = 1
+				monthly_prestige = 0.1
 			}
 			60 = {
-				health = 0.04
-				life_expectancy = 0.5
+				life_expectancy = 2
+				health = 0.5
+				years_of_fertility = 1
+				epidemic_resistance = 1
+				monthly_prestige = 0.1
 			}
 			70 = {
-				health = 0.04
-				life_expectancy = 0.5
+				life_expectancy = 2
+				health = 0.5
+				years_of_fertility = 1
+				epidemic_resistance = 1
+				monthly_prestige = 0.1
 			}
 			80 = {
-				health = 0.04
-				life_expectancy = 0.5
+				life_expectancy = 2
+				health = 0.5
+				years_of_fertility = 1
+				epidemic_resistance = 1
+				monthly_prestige = 0.1
 			}
 			90 = {
-				health = 0.04
-				life_expectancy = 0.5
+				life_expectancy = 2
+				health = 0.5
+				years_of_fertility = 1
+				epidemic_resistance = 1
+				monthly_prestige = 0.1
 			}
 			100 = {
-				health = 0.04
-				life_expectancy = 0.5
+				life_expectancy = 2
+				health = 0.5
+				years_of_fertility = 1
+				epidemic_resistance = 1
+				monthly_prestige = 0.1
 			}
 		}
 	}

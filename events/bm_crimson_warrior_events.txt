@@ -15,31 +15,7 @@ bm_crimson_warrior_event.0001 = {
 		animation = rage
 	}
 
-	# Option 1: Slaughter (+3 XP)
-	option = {
-		name = bm_crimson_warrior_event.slaughter
-		trigger = {
-			scope:recipient = {
-				has_trait_xp = {
-					trait = lifestyle_crimson_warrior
-					track = slaughter
-					value < 100
-				}
-			}
-		}
-		ai_chance = {
-			base = 50
-			modifier = {
-				add = 50
-				scope:recipient = { prowess >= 15 }
-			}
-		}
-		scope:recipient = {
-			add_crimson_warrior_xp = { TRACK = slaughter XP = 3 }
-		}
-	}
-
-	# Option 2: Vanguard (+3 XP)
+	# Option 1: Vanguard (+3 XP)
 	option = {
 		name = bm_crimson_warrior_event.vanguard
 		trigger = {
@@ -55,7 +31,7 @@ bm_crimson_warrior_event.0001 = {
 			base = 50
 			modifier = {
 				add = 50
-				scope:recipient = { martial >= 15 }
+				scope:recipient = { martial >= 14 }
 			}
 		}
 		scope:recipient = {
@@ -63,31 +39,31 @@ bm_crimson_warrior_event.0001 = {
 		}
 	}
 
-	# Option 3: Blood Frenzy (+3 XP)
+	# Option 2: Slaughter (+3 XP)
 	option = {
-		name = bm_crimson_warrior_event.blood_frenzy
+		name = bm_crimson_warrior_event.slaughter
 		trigger = {
 			scope:recipient = {
 				has_trait_xp = {
 					trait = lifestyle_crimson_warrior
-					track = blood_frenzy
+					track = slaughter
 					value < 100
 				}
 			}
 		}
 		ai_chance = {
-			base = 30
+			base = 50
 			modifier = {
-				add = 40
-				scope:recipient = { has_trait = wrathful }
+				add = 50
+				scope:recipient = { prowess >= 14 }
 			}
 		}
 		scope:recipient = {
-			add_crimson_warrior_xp = { TRACK = blood_frenzy XP = 3 }
+			add_crimson_warrior_xp = { TRACK = slaughter XP = 3 }
 		}
 	}
 
-	# Option 4: Resilience (+3 XP)
+	# Option 3: Resilience (+3 XP)
 	option = {
 		name = bm_crimson_warrior_event.resilience
 		trigger = {
@@ -100,7 +76,7 @@ bm_crimson_warrior_event.0001 = {
 			}
 		}
 		ai_chance = {
-			base = 30
+			base = 40
 			modifier = {
 				add = 50
 				scope:recipient = { health <= fine_health }
@@ -116,9 +92,8 @@ bm_crimson_warrior_event.0001 = {
 		name = bm_crimson_warrior_event.all_maxed
 		trigger = {
 			scope:recipient = {
-				has_trait_xp = { trait = lifestyle_crimson_warrior track = slaughter value >= 100 }
 				has_trait_xp = { trait = lifestyle_crimson_warrior track = vanguard value >= 100 }
-				has_trait_xp = { trait = lifestyle_crimson_warrior track = blood_frenzy value >= 100 }
+				has_trait_xp = { trait = lifestyle_crimson_warrior track = slaughter value >= 100 }
 				has_trait_xp = { trait = lifestyle_crimson_warrior track = resilience value >= 100 }
 			}
 		}
@@ -143,31 +118,7 @@ bm_crimson_warrior_event.0002 = {
 		animation = rage
 	}
 
-	# Option 1: Slaughter (+10 XP)
-	option = {
-		name = bm_crimson_warrior_event.slaughter
-		trigger = {
-			scope:recipient = {
-				has_trait_xp = {
-					trait = lifestyle_crimson_warrior
-					track = slaughter
-					value < 100
-				}
-			}
-		}
-		ai_chance = {
-			base = 50
-			modifier = {
-				add = 50
-				scope:recipient = { prowess >= 15 }
-			}
-		}
-		scope:recipient = {
-			add_crimson_warrior_xp = { TRACK = slaughter XP = 10 }
-		}
-	}
-
-	# Option 2: Vanguard (+10 XP)
+	# Option 1: Vanguard (+10 XP)
 	option = {
 		name = bm_crimson_warrior_event.vanguard
 		trigger = {
@@ -183,7 +134,7 @@ bm_crimson_warrior_event.0002 = {
 			base = 50
 			modifier = {
 				add = 50
-				scope:recipient = { martial >= 15 }
+				scope:recipient = { martial >= 14 }
 			}
 		}
 		scope:recipient = {
@@ -191,31 +142,31 @@ bm_crimson_warrior_event.0002 = {
 		}
 	}
 
-	# Option 3: Blood Frenzy (+10 XP)
+	# Option 2: Slaughter (+10 XP)
 	option = {
-		name = bm_crimson_warrior_event.blood_frenzy
+		name = bm_crimson_warrior_event.slaughter
 		trigger = {
 			scope:recipient = {
 				has_trait_xp = {
 					trait = lifestyle_crimson_warrior
-					track = blood_frenzy
+					track = slaughter
 					value < 100
 				}
 			}
 		}
 		ai_chance = {
-			base = 30
+			base = 50
 			modifier = {
-				add = 40
-				scope:recipient = { has_trait = wrathful }
+				add = 50
+				scope:recipient = { prowess >= 14 }
 			}
 		}
 		scope:recipient = {
-			add_crimson_warrior_xp = { TRACK = blood_frenzy XP = 10 }
+			add_crimson_warrior_xp = { TRACK = slaughter XP = 10 }
 		}
 	}
 
-	# Option 4: Resilience (+10 XP)
+	# Option 3: Resilience (+10 XP)
 	option = {
 		name = bm_crimson_warrior_event.resilience
 		trigger = {
@@ -228,7 +179,7 @@ bm_crimson_warrior_event.0002 = {
 			}
 		}
 		ai_chance = {
-			base = 30
+			base = 40
 			modifier = {
 				add = 50
 				scope:recipient = { health <= fine_health }
@@ -244,9 +195,8 @@ bm_crimson_warrior_event.0002 = {
 		name = bm_crimson_warrior_event.all_maxed
 		trigger = {
 			scope:recipient = {
-				has_trait_xp = { trait = lifestyle_crimson_warrior track = slaughter value >= 100 }
 				has_trait_xp = { trait = lifestyle_crimson_warrior track = vanguard value >= 100 }
-				has_trait_xp = { trait = lifestyle_crimson_warrior track = blood_frenzy value >= 100 }
+				has_trait_xp = { trait = lifestyle_crimson_warrior track = slaughter value >= 100 }
 				has_trait_xp = { trait = lifestyle_crimson_warrior track = resilience value >= 100 }
 			}
 		}

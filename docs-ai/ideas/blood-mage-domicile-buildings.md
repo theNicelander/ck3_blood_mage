@@ -1,15 +1,27 @@
-# Ideas: Blood Mage & Blóðtrú Domicile Buildings
+# Ideas: Blood Mage Domicile Building (The Sanguine Font)
 
-Living proposal for adding custom domicile buildings tailored specifically for **Adventurer Camps** (`camp`) and **Noble Estates** (`estate`) belonging to Blood Mages or followers of the Blóðtrú religion.
+Proposal for a single, 5-level upgradeable domicile building line tailored for **Adventurer Camps** (`camp`) and **Noble Estates** (`estate`) belonging to Blood Mages or followers of the Blóðtrú religion.
 
 Introduced in CK3 1.20 (Roads to Power), the domicile system allows unlanded adventurers and administrative noble families to upgrade their permanent base of operations.
 
 ---
 
-## 1. Engine & Implementation Foundation
+## 1. Design Overview
 
-### Gating Logic
-Domicile buildings support the `can_construct_potential` trigger, ensuring these structures **only appear in the UI** for qualifying characters:
+- **Single Building Line**: Replaces fragmented multi-slot modules with a unified 5-tier upgrade chain (`bm_domicile_sanguine_font_01` through `05`).
+- **Target Domiciles**: Adventurer Camps (`camp`) and Noble Estates (`estate`).
+- **Core Benefits**: Grants scaling **Piety**, **Lifespan** (`life_expectancy`), and **Health** (`health`).
+- **Beneficiaries**:
+  - Domicile Owner (direct building `character_modifier`).
+  - **Everyone in the Camp / Court** (followers for adventurers; courtiers for landed/estate rulers) via a companion aura modifier refreshed dynamically.
+
+---
+
+## 2. Gating & Requirements
+
+### Domicile Visibility & Construction Trigger
+
+The building line appears and can be constructed only by Blood Mages or Blóðtrú adherents:
 
 ```pdx
 can_construct_potential = {
@@ -18,99 +30,169 @@ can_construct_potential = {
         faith = { religion = religion:bm_blodtru_religion }
     }
 }
+
+can_construct = {
+    # Standard gold and tier prerequisites
+}
 ```
 
-### File Layout
-- `common/domiciles/buildings/bm_domicile_buildings.txt` (defines the buildings, tiers, costs, modifiers)
-- `localization/english/bm_domicile_buildings_l_english.yml` (names and lore descriptions)
-- Graphical assets can reuse existing vanilla tent/estate DDS icons and intersection masks.
+---
+
+## 3. The 5-Tier Building Line: `bm_domicile_sanguine_font`
+
+- **Slot Type**: `external`
+- **Allowed Domicile Types**: `{ camp estate }`
+- **Previous Building**: Linear progression (`01` -> `02` -> `03` -> `04` -> `05`).
+
+### Tier Summary Table
+
+| Level | Key | Cost | Build Time | Owner Modifiers (`character_modifier`) | Camp / Court Aura Modifiers (`bm_sanguine_font_aura`) | Domicile Parameter |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **I** | `bm_domicile_sanguine_font_01` | 75 Gold | 180 Days | `domicile_monthly_piety_add = 0.2`<br>`health = 0.1`<br>`life_expectancy = 2` | `monthly_piety = 0.1`<br>`health = 0.1`<br>`life_expectancy = 2` | `bm_sanguine_font_tier_1 = yes` |
+| **II** | `bm_domicile_sanguine_font_02` | 150 Gold | 240 Days | `domicile_monthly_piety_add = 0.4`<br>`health = 0.25`<br>`life_expectancy = 4` | `monthly_piety = 0.2`<br>`health = 0.2`<br>`life_expectancy = 4` | `bm_sanguine_font_tier_2 = yes` |
+| **III** | `bm_domicile_sanguine_font_03` | 300 Gold | 360 Days | `domicile_monthly_piety_add = 0.6`<br>`health = 0.4`<br>`life_expectancy = 6` | `monthly_piety = 0.3`<br>`health = 0.3`<br>`life_expectancy = 6` | `bm_sanguine_font_tier_3 = yes` |
+| **IV** | `bm_domicile_sanguine_font_04` | 500 Gold | 480 Days | `domicile_monthly_piety_add = 0.8`<br>`health = 0.6`<br>`life_expectancy = 8` | `monthly_piety = 0.4`<br>`health = 0.4`<br>`life_expectancy = 8` | `bm_sanguine_font_tier_4 = yes` |
+| **V** | `bm_domicile_sanguine_font_05` | 800 Gold | 600 Days | `domicile_monthly_piety_add = 1.0`<br>`health = 0.8`<br>`life_expectancy = 10` | `monthly_piety = 0.5`<br>`health = 0.5`<br>`life_expectancy = 10` | `bm_sanguine_font_tier_5 = yes` |
+
+*Note: In CK3 domicile buildings, `character_modifier` applies directly to the domicile owner. For monthly piety from domiciles, vanilla uses `domicile_monthly_piety_add` on owners, whereas courtiers use standard `monthly_piety`.*
 
 ---
 
-## 2. Adventurer Camp: Primary Building Line
+## 4. Camp & Court-Wide Propagation Architecture
 
-### `bm_camp_sanguine_crucible` (The Sanguine Crucible / Field Altar)
-A dedicated 4-tier external building line constructed in camp external slots.
+### The Engine Constraint
 
-| Tier | Building Key | Cost & Construction | Modifiers & Effects | Special Flavor / Parameters |
-| :--- | :--- | :--- | :--- | :--- |
-| **I** | `bm_camp_crucible_01`<br>*(Hemomantic Brazier)* | 75 Gold<br>180 Days | `monthly_piety = 0.2`<br>`provisions_gain_mult = 0.05` | Grants 1 internal slot.<br>Camp glows with low crimson embers. |
-| **II** | `bm_camp_crucible_02`<br>*(Alchemical Distillation Vat)* | 150 Gold<br>240 Days | `health = 0.2`<br>`character_travel_safety = 5`<br>`stress_loss_mult = 0.1` | Infuses camp rations and remedies with lifeforce extracts. |
-| **III** | `bm_camp_crucible_03`<br>*(The Sanguine Well)* | 300 Gold<br>360 Days | `provisions_capacity_add = 150`<br>`knight_effectiveness_mult = 0.10`<br>`monthly_lifestyle_xp_gain_mult = 0.05` | Grants 2 additional internal slots.<br>Empowers Crimson Warriors in camp. |
-| **IV** | `bm_camp_crucible_04`<br>*(Monolith of the Crimson God)* | 500 Gold<br>480 Days | `dread_baseline_add = 15`<br>`character_travel_speed_mult = 0.10`<br>`monthly_dynasty_prestige_mult = 0.05` | Custom parameter: unlocks special camp decisions/interactions or buffs harvest yields. |
+Domicile buildings only support:
+- `character_modifier = { ... }`: applies strictly to `scope:owner` (the domicile owner).
+- `province_modifier = { ... }`: applies to the domicile's physical barony/province location.
+
+Vanilla domicile buildings have no native `courtier_modifier` block. To extend health, lifespan, and piety to **everyone in the camp** (followers) and **everyone in the court** (for landed/estate rulers), a companion script architecture is required.
+
+### Implementation Blueprint
+
+#### 1. Domicile Parameters
+Each building tier exposes a unique domicile parameter:
+```pdx
+# Example for Tier 3:
+parameters = {
+    bm_sanguine_font_tier_3 = yes
+}
+```
+
+#### 2. Companion Character Modifiers
+Define 5 character modifiers in `common/modifiers/bm_domicile_modifiers.txt`:
+```pdx
+bm_sanguine_font_aura_tier_1 = {
+    icon = blood_positive
+    monthly_piety = 0.1
+    health = 0.1
+    life_expectancy = 2
+}
+
+bm_sanguine_font_aura_tier_2 = {
+    icon = blood_positive
+    monthly_piety = 0.2
+    health = 0.2
+    life_expectancy = 4
+}
+
+bm_sanguine_font_aura_tier_3 = {
+    icon = blood_positive
+    monthly_piety = 0.3
+    health = 0.3
+    life_expectancy = 6
+}
+
+bm_sanguine_font_aura_tier_4 = {
+    icon = blood_positive
+    monthly_piety = 0.4
+    health = 0.4
+    life_expectancy = 8
+}
+
+bm_sanguine_font_aura_tier_5 = {
+    icon = blood_positive
+    monthly_piety = 0.5
+    health = 0.5
+    life_expectancy = 10
+}
+```
+
+#### 3. Scripted Effect: `bm_update_sanguine_font_aura_effect`
+A scoped effect on a ruler/camp leader that sweeps `every_courtier` (in CK3 adventurer camps, all camp followers are in `every_courtier`):
+
+```pdx
+bm_update_sanguine_font_aura_effect = {
+    # Determine active tier from domicile parameters
+    save_scope_as = aura_source
+    every_courtier = {
+        # Clear obsolete aura tiers
+        remove_character_modifier = bm_sanguine_font_aura_tier_1
+        remove_character_modifier = bm_sanguine_font_aura_tier_2
+        remove_character_modifier = bm_sanguine_font_aura_tier_3
+        remove_character_modifier = bm_sanguine_font_aura_tier_4
+        remove_character_modifier = bm_sanguine_font_aura_tier_5
+
+        if = {
+            limit = {
+                scope:aura_source.domicile ?= { has_domicile_parameter = bm_sanguine_font_tier_5 }
+            }
+            add_character_modifier = {
+                modifier = bm_sanguine_font_aura_tier_5
+                years = 2
+            }
+        }
+        else_if = {
+            limit = {
+                scope:aura_source.domicile ?= { has_domicile_parameter = bm_sanguine_font_tier_4 }
+            }
+            add_character_modifier = {
+                modifier = bm_sanguine_font_aura_tier_4
+                years = 2
+            }
+        }
+        else_if = {
+            limit = {
+                scope:aura_source.domicile ?= { has_domicile_parameter = bm_sanguine_font_tier_3 }
+            }
+            add_character_modifier = {
+                modifier = bm_sanguine_font_aura_tier_3
+                years = 2
+            }
+        }
+        else_if = {
+            limit = {
+                scope:aura_source.domicile ?= { has_domicile_parameter = bm_sanguine_font_tier_2 }
+            }
+            add_character_modifier = {
+                modifier = bm_sanguine_font_aura_tier_2
+                years = 2
+            }
+        }
+        else_if = {
+            limit = {
+                scope:aura_source.domicile ?= { has_domicile_parameter = bm_sanguine_font_tier_1 }
+            }
+            add_character_modifier = {
+                modifier = bm_sanguine_font_aura_tier_1
+                years = 2
+            }
+        }
+    }
+}
+```
+
+#### 4. Event & Pulse Hooks
+- **On Construction Complete**: In the building definition's `on_complete = { ... }`, call `scope:owner = { bm_update_sanguine_font_aura_effect = yes }`.
+- **On Joining Court / Camp**: Hook `on_join_court` to check if `scope:new_employer.domicile` has `bm_sanguine_font_tier_*` and grant the modifier.
+- **Maintenance Pulse**: The 2-year modifier expiration combined with `random_yearly_everyone_pulse` or a yearly court maintenance check ensures dead/departed courtiers shed the modifier cleanly without bloat.
 
 ---
 
-## 3. Adventurer Camp: Internal Specialist Modules
+## 5. File Layout for Eventual Implementation
 
-Specialist modules installed into internal slots inside standard camp tents (e.g. Barber Tent, Supply Tent, Baggage Train).
-
-### 1. `bm_camp_embalming_slab` (Vessel Embalming Station)
-- **Slot Type**: Internal slot of `barber_tent`
-- **Requires**: Blood Mage trait or Blóðtrú faith
-- **Modifiers**:
-  - `wound_recovery_mult = 0.20` (+20% wound healing speed)
-  - `character_travel_safety = 4`
-  - `disease_resistance = 0.15`
-- **Lore**: A morbid surgical setup where wounded followers and knights are stabilized using coagulating blood sorcery.
-
-### 2. `bm_camp_blood_rations` (Sanguine Rations & Preserves)
-- **Slot Type**: Internal slot of `supply_tent`
-- **Requires**: Blood Mage trait or Blóðtrú faith
-- **Modifiers**:
-  - `provisions_loss_mult = -0.10` (-10% provision consumption rate)
-  - `supply_capacity_mult = 0.25`
-  - `travel_attrition_reduction_mult = 0.05`
-- **Lore**: Rations cured and enchanted with dark vitae, sustaining travelers far longer than standard grain and salted meat.
-
-### 3. `bm_camp_runed_armory` (Blood-Etched Forge)
-- **Slot Type**: Internal slot of `baggage_train` or `camp_training_grounds`
-- **Requires**: Blood Mage trait or Blóðtrú faith
-- **Modifiers**:
-  - `maa_damage_mult = 0.06`
-  - `maa_toughness_mult = 0.06`
-  - `knight_effectiveness_mult = 0.08`
-- **Lore**: Weapons and armor inscribed with sanguine runes, granting supernatural cutting power to camp warriors.
-
-### 4. `bm_camp_shrine_ancestors` (Shrine of the First Progenitor)
-- **Slot Type**: Internal slot of `camp_main` or `bm_camp_sanguine_crucible`
-- **Requires**: Blóðtrú faith
-- **Modifiers**:
-  - `monthly_piety = 0.5`
-  - `same_faith_opinion = 5`
-  - `clergy_opinion = 5`
-- **Lore**: A traveling reliquary containing the sacred blood of Blóðtrú saints and ancient mages.
-
----
-
-## 4. Noble Family Estate Buildings (Administrative / Landed Domiciles)
-
-For blood mages ruling within an Administrative Empire (or holding a Family Estate domicile):
-
-### 1. `bm_estate_sanguis_scriptorium` (The Sanguis Scriptorium)
-- **Allowed Types**: `estate`
-- **Slot Type**: External slot
-- **Modifiers**:
-  - `development_growth = 0.05`
-  - `owned_scheme_secrecy_add = 10`
-  - `hostile_scheme_resistance_add = 6`
-  - `monthly_lifestyle_xp_gain_mult = 0.05`
-- **Lore**: A secluded occult library beneath the estate where grimoires of blood magic and ancestral genealogical records are studied.
-
-### 2. `bm_estate_crypt_dynasty` (Crypt of the Crimson Dynasty)
-- **Allowed Types**: `estate`
-- **Slot Type**: External slot
-- **Modifiers**:
-  - `positive_random_genetic_chance = 0.06`
-  - `positive_inactive_inheritance_chance = 0.06`
-  - `dynasty_opinion = 5`
-  - `monthly_dynasty_prestige_mult = 0.05`
-- **Lore**: The mummified remains of ancient bloodline forebears rest in chambers lined with runic inscriptions, reinforcing the potency of their heirs' blood.
-
----
-
-## 5. Summary of Benefits & Gameplay Impact
-
-1. **True Adventurer Viability**: Gives unlanded blood mages a tangible way to invest their gold into occult power without needing to hold baronies or counties.
-2. **Camp Self-Sufficiency**: Provides travel safety, provision endurance, and high-tier medical care on the road.
-3. **Thematic Identity**: Visually and mechanically distinguishes a blood mage mercenary company or wandering occultist band from ordinary adventurers.
+- `common/domiciles/buildings/bm_domicile_buildings.txt` (the 5 building tiers, upgrade chains, costs, triggers)
+- `common/modifiers/bm_domicile_modifiers.txt` (the 5 aura character modifiers)
+- `common/scripted_effects/bm_domicile_effects.txt` (`bm_update_sanguine_font_aura_effect`)
+- `common/on_action/bm_domicile_on_actions.txt` (`on_join_court` hook and yearly maintenance pulse)
+- `localization/english/bm_domicile_buildings_l_english.yml` (building names, descriptions, and aura loc)

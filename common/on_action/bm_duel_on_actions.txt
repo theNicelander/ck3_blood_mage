@@ -36,7 +36,7 @@ bm_on_character_death_duel = {
 				has_variable = engaged_in_single_combat
 			}
 			scope:killer = {
-				add_crimson_warrior_xp = { TRACK = slaughter XP = 12 }
+				add_crimson_warrior_xp = { TRACK = slaughter XP = 6 }
 				send_interface_toast = {
 					type = event_toast_effect_good
 					title = bm_duel_kill_crimson_warrior_toast
