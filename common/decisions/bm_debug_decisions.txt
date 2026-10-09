@@ -87,12 +87,17 @@ debug_add_blood_empowerment_exp = {
 
         add_trait_xp = {
             trait = lifestyle_blood_empowerment
-            track = charisma
+            track = dynasty
             value = 20
         }
         add_trait_xp = {
             trait = lifestyle_blood_empowerment
-            track = fury
+            track = mastery
+            value = 20
+        }
+        add_trait_xp = {
+            trait = lifestyle_blood_empowerment
+            track = presence
             value = 20
         }
         add_trait_xp = {
@@ -103,21 +108,6 @@ debug_add_blood_empowerment_exp = {
         add_trait_xp = {
             trait = lifestyle_blood_empowerment
             track = shadows
-            value = 20
-        }
-        add_trait_xp = {
-            trait = lifestyle_blood_empowerment
-            track = insight
-            value = 20
-        }
-        add_trait_xp = {
-            trait = lifestyle_blood_empowerment
-            track = legacy
-            value = 20
-        }
-        add_trait_xp = {
-            trait = lifestyle_blood_empowerment
-            track = expertise
             value = 20
         }
     }

@@ -45,12 +45,17 @@ bm_has_blood_empowerment_xp_trigger = {
 	OR = {
 		has_trait_xp = {
 			trait = lifestyle_blood_empowerment
-			track = charisma
+			track = dynasty
 			value >= $VALUE$
 		}
 		has_trait_xp = {
 			trait = lifestyle_blood_empowerment
-			track = fury
+			track = mastery
+			value >= $VALUE$
+		}
+		has_trait_xp = {
+			trait = lifestyle_blood_empowerment
+			track = presence
 			value >= $VALUE$
 		}
 		has_trait_xp = {
@@ -61,21 +66,6 @@ bm_has_blood_empowerment_xp_trigger = {
 		has_trait_xp = {
 			trait = lifestyle_blood_empowerment
 			track = shadows
-			value >= $VALUE$
-		}
-		has_trait_xp = {
-			trait = lifestyle_blood_empowerment
-			track = insight
-			value >= $VALUE$
-		}
-		has_trait_xp = {
-			trait = lifestyle_blood_empowerment
-			track = legacy
-			value >= $VALUE$
-		}
-		has_trait_xp = {
-			trait = lifestyle_blood_empowerment
-			track = expertise
 			value >= $VALUE$
 		}
 	}

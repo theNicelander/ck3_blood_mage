@@ -41,12 +41,6 @@ bm_cast_blood_magic_major.001 = {
 			NOT = { has_character_flag = bm_improve_education_cooldown }
 			piety_level >= 3
 			piety >= scaled_education_enhancement_cost
-			custom_description = {
-				text = "bm_improve_education_decision_xp_requirement"
-				bm_has_blood_empowerment_xp_trigger = {
-					VALUE = required_xp_improve_education
-				}
-			}
 			OR = {
 				AND = {
 					has_trait = education_diplomacy
@@ -101,12 +95,6 @@ bm_cast_blood_magic_major.001 = {
 			NOT = { has_character_flag = bm_new_education_cooldown }
 			piety_level >= 4
 			piety >= 1000
-			custom_description = {
-				text = "bm_new_education_decision_xp_requirement"
-				bm_has_blood_empowerment_xp_trigger = {
-					VALUE = required_xp_new_education
-				}
-			}
 			# Has level 5 traits
 			OR = {
 				has_trait = education_diplomacy_5
@@ -171,12 +159,6 @@ bm_cast_blood_magic_major.001 = {
 			has_character_modifier = lifeforce_modifier_minor
 			piety_level >= 2
 			piety >= bm_blood_rune_piety_cost
-			custom_description = {
-				text = "bm_blood_rune_decision_xp_requirement"
-				bm_has_blood_mage_xp_trigger = {
-					VALUE = bm_blood_rune_minimum_xp
-				}
-			}
 		}
 		add_piety = {
 			value = bm_blood_rune_piety_cost

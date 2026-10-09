@@ -14,39 +14,57 @@ bm_blood_empowerment_event.001 = {
         }
     }
 
-    # Blood Charisma
+    # Blood Dynasty
     option = {
-        name = bm_blood_empowerment_event.001.charisma
+        name = bm_blood_empowerment_event.001.dynasty
         trigger = {
             has_trait_xp = {
-            trait = lifestyle_blood_empowerment
-            track = charisma
-            value < 100
-        }
+                trait = lifestyle_blood_empowerment
+                track = dynasty
+                value < 100
+            }
         }
         ai_chance = { base = 100 }
         send_interface_toast = {
             title = bm_blood_empowerment_event.001.toast
             left_icon = this
-            add_blood_empowerment_xp = { TRACK = charisma }
+            add_blood_empowerment_xp = { TRACK = dynasty }
         }
     }
 
-    # Blood Fury
+    # Blood Mastery
     option = {
-        name = bm_blood_empowerment_event.001.fury
+        name = bm_blood_empowerment_event.001.mastery
         trigger = {
             has_trait_xp = {
                 trait = lifestyle_blood_empowerment
-                track = fury
+                track = mastery
                 value < 100
             }
         }
         ai_chance = { base = 100 }
-         send_interface_toast = {
+        send_interface_toast = {
             title = bm_blood_empowerment_event.001.toast
             left_icon = this
-            add_blood_empowerment_xp = { TRACK = fury }
+            add_blood_empowerment_xp = { TRACK = mastery }
+        }
+    }
+
+    # Blood Presence
+    option = {
+        name = bm_blood_empowerment_event.001.presence
+        trigger = {
+            has_trait_xp = {
+                trait = lifestyle_blood_empowerment
+                track = presence
+                value < 100
+            }
+        }
+        ai_chance = { base = 100 }
+        send_interface_toast = {
+            title = bm_blood_empowerment_event.001.toast
+            left_icon = this
+            add_blood_empowerment_xp = { TRACK = presence }
         }
     }
 
@@ -61,7 +79,7 @@ bm_blood_empowerment_event.001 = {
             }
         }
         ai_chance = { base = 100 }
-         send_interface_toast = {
+        send_interface_toast = {
             title = bm_blood_empowerment_event.001.toast
             left_icon = this
             add_blood_empowerment_xp = { TRACK = prosperity }
@@ -79,66 +97,13 @@ bm_blood_empowerment_event.001 = {
             }
         }
         ai_chance = { base = 100 }
-         send_interface_toast = {
+        send_interface_toast = {
             title = bm_blood_empowerment_event.001.toast
             left_icon = this
             add_blood_empowerment_xp = { TRACK = shadows }
         }
     }
 
-    # Blood Insight
-    option = {
-        name = bm_blood_empowerment_event.001.insight
-        trigger = {
-            has_trait_xp = {
-                trait = lifestyle_blood_empowerment
-                track = insight
-                value < 100
-            }
-        }
-        ai_chance = { base = 100 }
-         send_interface_toast = {
-            title = bm_blood_empowerment_event.001.toast
-            left_icon = this
-            add_blood_empowerment_xp = { TRACK = insight }
-        }
-    }
-
-    # Blood Legacy
-    option = {
-        name = bm_blood_empowerment_event.001.legacy
-        trigger = {
-            has_trait_xp = {
-                trait = lifestyle_blood_empowerment
-                track = legacy
-                value < 100
-            }
-        }
-        ai_chance = { base = 100 }
-         send_interface_toast = {
-            title = bm_blood_empowerment_event.001.toast
-            left_icon = this
-            add_blood_empowerment_xp = { TRACK = legacy }
-        }
-    }
-
-    # Blood Expertise
-    option = {
-        name = bm_blood_empowerment_event.001.expertise
-        trigger = {
-            has_trait_xp = {
-                trait = lifestyle_blood_empowerment
-                track = expertise
-                value < 100
-            }
-        }
-        ai_chance = { base = 100 }
-         send_interface_toast = {
-            title = bm_blood_empowerment_event.001.toast
-            left_icon = this
-            add_blood_empowerment_xp = { TRACK = expertise }
-        }
-    }
     # Fallback
     option = {
         name = bm_blood_empowerment_event.001.versatility
@@ -177,7 +142,6 @@ bm_blood_empowerment_event.001 = {
         }
         ai_chance = { base = 10 }
     }
-
 
     # Portraits
     left_portrait = {

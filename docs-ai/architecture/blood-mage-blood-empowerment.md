@@ -1,36 +1,39 @@
 # Blood Empowerment
 
-> Living document. Follow `AGENTS.md` in this folder: concepts only, no numbers. Update it when the trait, tracks, empowerment events or retinue modifiers change.
+> Living document describing current state. Follow `AGENTS.md`: high-density technical specs, zero roleplay fluff.
 
 ## Executive Summary
 
-- **What:** Secondary lifestyle trait `lifestyle_blood_empowerment`. 7 progression tracks (max 100 XP each). Gates education upgrades and blood runes.
+- **What:** Secondary lifestyle trait `lifestyle_blood_empowerment`. 5 progression tracks (`dynasty`, `mastery`, `presence`, `prosperity`, `shadows`), max 100 XP each.
 - **Get / Level:** `bm_cast_blood_magic_major_decision` (Blood Empowerment option) -> Event `bm_blood_empowerment_event.001`.
   - Cost: 150 piety + consumes `lifeforce_modifier_major`. Req: `piety_level >= 1`. Cooldown: none.
   - XP Gain: +3 `enlightenment` XP + 10 XP in chosen empowerment track (via `add_blood_empowerment_xp`).
 
-### Track Benefits Table
+## Universal Baseline Modifiers
 
-Each track spans 10 levels (10 to 100 XP, +10 XP per channel). All 10 levels in each track share the same active modifiers, including a **Universal Baseline** (`+1` Life Expectancy, `+0.1` Monthly Piety) per active tier:
+Every level (10 to 100 XP) across all 5 tracks incorporates the universal baseline defined once via Clausewitz script preprocessor variables (`@` syntax) in `common/traits/bm_blood_empowerment_trait.txt`:
+- `@bm_common_health = 0.1` (+1.0 Health at track cap)
+- `@bm_common_life_expectancy = 2` (+20 years Life Expectancy at track cap)
+- `@bm_common_years_of_fertility = 1` (+10 years Fertility at track cap)
+- `@bm_common_epidemic_resistance = 1` (+10 Epidemic Resistance at track cap)
 
-| Track | Specialization | Benefits per Level (All Levels 10–100) |
-| --- | --- | --- |
-| `charisma` | Diplomacy | Baseline + `+2.5` General Opinion, `+5%` Monthly Prestige Gain Mult |
-| `fury` | Martial | Baseline + `+5%` Knight Effectiveness, `+0.05` Monthly County Control Growth |
-| `prosperity` | Stewardship | Baseline + `+2.5%` Domain Tax, `+0.05` Capital County Monthly Development Growth |
-| `shadows` | Intrigue | Baseline + `+3` Dread Baseline, `-0.01` Monthly Tyranny (decay), `+5` Scheme Secrecy |
-| `insight` | Learning | Baseline + `+5%` Development Growth (all holdings), `+5%` Monthly Piety Gain Mult |
-| `legacy` | Bloodline | Baseline + `+5%` Positive Congenital Chance, `+5%` Inactive Positive Inheritance |
-| `expertise` | Versatility | Baseline + `+2.5%` Lifestyle XP Gain Mult, `+5%` Cultural Fascination Mult |
-| *Versatility* | Capped Fallback | 10-year buff `temporary_buff_self` (`+2` all stats, `+4` Prowess) + rolls for perm stats (`+1` skill, `+2` Prowess) |
+## Track Benefits Table
+
+Each track spans 10 levels (10 to 100 XP, +10 XP per channel). Modifiers stack additively:
+
+| Track | Specialization | Benefits per Level (Levels 10–100) | Full Track Cap (100 XP) |
+| --- | --- | --- | --- |
+| `dynasty` | Genetics & Fertility | Baseline + `+5%` Positive Congenital Chance, `+5%` Inactive Trait Inheritance, `+4%` Fertility | Baseline ×10, `+50%` Congenital, `+50%` Inactive Inheritance, `+40%` Fertility |
+| `mastery` | Lifestyle & Tongues | Baseline + `+4%` Lifestyle XP Gain Mult, `-10` Days Language Scheme Phase, `+3%` Personal Scheme Power; `+1` Max Language Schemes at levels 30, 60, 90, 100 | Baseline ×10, `+40%` Lifestyle XP, `-100` Days Phase Duration, `+30%` Personal Scheme Power, `+4` Max Language Schemes |
+| `presence` | Diplomacy & Magnetism | Baseline + `+5%` Stress Loss Mult, `+2.5` General Opinion, `+5%` Sway Scheme Power | Baseline ×10, `+50%` Stress Loss, `+25` General Opinion, `+50%` Sway Power |
+| `prosperity` | Domain & Treasury | Baseline + `+3%` Monthly Income Mult, `-3%` Men-at-Arms Maintenance, `+2%` Domain Tax Mult, `-2%` Holding Construction Gold Cost, `-3%` Domicile/Camp Building Cost Mult | Baseline ×10, `+30%` Monthly Income, `-30%` MaA Upkeep, `+20%` Domain Taxes, `-20%` Holding Build Cost, `-30%` Domicile Build Cost |
+| `shadows` | Subterfuge & Warding | Baseline + `+3` Hostile Scheme Resistance, `+5` Owned Scheme Secrecy, `-3%` Enemy Scheme Success Chance | Baseline ×10, `+30` Scheme Resistance, `+50` Scheme Secrecy, `-30%` Enemy Plot Success Chance |
+| *Versatility* | Capped Fallback | 10-year buff `temporary_buff_self` (`+2` all stats, `+4` Prowess) + rolls for perm stats (`+1` skill, `+2` Prowess) | Granted when all 5 tracks are at 100 XP |
 
 ## Key Mechanics
 
 - **Advancement:** `bm_cast_blood_magic_major_decision` fires `bm_cast_blood_magic_major.001` which triggers `bm_blood_empowerment_event.001`. Adds trait if missing. Capped tracks (100 XP) hidden from selection.
-- **High-Tier Spell Gates:** Total XP across `lifestyle_blood_empowerment` tracks gates rituals:
-  - Improve Education tier: Req 50 total XP (`required_xp_improve_education`).
-  - Add Second Education: Req 70 total XP (`required_xp_new_education`).
-  - Inscribe Blood Runes: Req 50 total XP (`bm_blood_rune_minimum_xp`).
+- **Spell Integration:** High-tier spells (Improve Education, Add Second Education, Inscribe Blood Runes) do not require Blood Empowerment XP; they evaluate independent piety and lifeforce costs.
 - **Empowered Retinue:** Blood Knights are martial vessels empowered via blood magic:
   - `grant_blood_knight_interaction`: Cost: 100 piety + major Lifeforce. Gives `lifestyle_blood_knight` trait with 3 evolutive tracks (Vanguard, Slaughter, Resilience).
   - See `blood-mage-blood-knight.md` for full specification.
@@ -38,9 +41,5 @@ Each track spans 10 levels (10 to 100 XP, +10 XP per channel). All 10 levels in 
 
 ## Gotchas
 
-- `lifestyle_blood_empowerment` does not grant passive XP over time; it only advances when the player or AI explicitly invests major Lifeforce into the empowerment decision.
-- All seven empowerment tracks share baseline increases to life expectancy and monthly piety, so advancing multiple tracks compounds longevity and spiritual power.
-
-## Not verified
-
-AI rulers balancing the heavy physical drain of sustaining multiple Blood Champions against the military advantage provided in ongoing wars.
+- `lifestyle_blood_empowerment` does not grant passive XP over time; it only advances when the character explicitly invests major Lifeforce into the empowerment decision.
+- All five empowerment tracks share baseline increases to health, life expectancy, years of fertility, and epidemic resistance, compounding longevity across specializations.

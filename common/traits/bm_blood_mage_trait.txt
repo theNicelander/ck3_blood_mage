@@ -1,4 +1,9 @@
-﻿lifestyle_blood_mage = {
+﻿@bm_common_health = 0.1
+@bm_common_life_expectancy = 2
+@bm_common_years_of_fertility = 1
+@bm_common_epidemic_resistance = 1
+
+lifestyle_blood_mage = {
     category = lifestyle
     flag = reweaving_lifestyle_trait
     icon = blood_mage.dds
@@ -31,78 +36,102 @@
     tracks = {
         ancient = {
             10 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 monthly_piety = 0.2
                 monthly_piety_gain_mult = 0.05
             }
             20 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 monthly_piety = 0.2
                 monthly_piety_gain_mult = 0.05
             }
             30 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 monthly_piety = 0.2
                 monthly_piety_gain_mult = 0.05
             }
             40 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 monthly_piety = 0.2
                 monthly_piety_gain_mult = 0.05
             }
             50 = {
-                # Milestone bonus
+                # specific
                 prowess_per_piety_level = 1
                 learning_per_piety_level = 1
                 monthly_piety = 0.2
                 monthly_piety_gain_mult = 0.05
             }
             60 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 monthly_piety = 0.2
                 monthly_piety_gain_mult = 0.05
             }
             70 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 monthly_piety = 0.2
                 monthly_piety_gain_mult = 0.05
             }
             80 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 monthly_piety = 0.2
                 monthly_piety_gain_mult = 0.05
             }
             90 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 monthly_piety = 0.2
                 monthly_piety_gain_mult = 0.05
             }
             100 = {
-                # Milestone bonus
+                # specific
                 no_prowess_loss_from_age = yes
                 learning_per_piety_level = 1
                 monthly_piety = 0.2
@@ -112,69 +141,93 @@
 
         enlightenment = {
             10 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 monthly_lifestyle_xp_gain_mult = 0.05
             }
             20 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 monthly_lifestyle_xp_gain_mult = 0.05
             }
             30 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 monthly_lifestyle_xp_gain_mult = 0.05
             }
             40 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 monthly_lifestyle_xp_gain_mult = 0.05
             }
             50 = {
-                # Milestone Bonus
+                # specific
                 martial_per_piety_level = 1
                 prowess_per_piety_level = 1
                 monthly_lifestyle_xp_gain_mult = 0.05
             }
             60 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 monthly_lifestyle_xp_gain_mult = 0.05
             }
             70 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 monthly_lifestyle_xp_gain_mult = 0.05
             }
             80 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 monthly_lifestyle_xp_gain_mult = 0.05
             }
             90 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 monthly_lifestyle_xp_gain_mult = 0.05
             }
             100 = {
-                # Milestone bonus
+                # specific
                 martial_per_piety_level = 1
                 no_prowess_loss_from_age = yes
                 monthly_lifestyle_xp_gain_mult = 0.05
@@ -183,69 +236,93 @@
 
         bloodline = {
             10 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 monthly_dynasty_prestige = 0.1
             }
             20 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 monthly_dynasty_prestige = 0.1
             }
             30 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 monthly_dynasty_prestige = 0.1
             }
             40 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 monthly_dynasty_prestige = 0.1
             }
             50 = {
-                # Milestone bonus
+                # specific
                 stewardship_per_piety_level = 1
                 prowess_per_piety_level = 1
                 monthly_dynasty_prestige = 0.1
             }
             60 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 monthly_dynasty_prestige = 0.1
             }
             70 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 monthly_dynasty_prestige = 0.1
             }
             80 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 monthly_dynasty_prestige = 0.1
             }
             90 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 monthly_dynasty_prestige = 0.1
             }
             100 = {
-                # Milestone bonus
+                # specific
                 stewardship_per_piety_level = 1
                 no_prowess_loss_from_age = yes
                 monthly_dynasty_prestige = 0.1
@@ -254,43 +331,55 @@
 
         benediction = {
             10 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 general_opinion = 2.5
                 monthly_prestige = 0.2
                 monthly_prestige_gain_mult = 0.05
             }
             20 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 general_opinion = 2.5
                 monthly_prestige = 0.2
                 monthly_prestige_gain_mult = 0.05
             }
             30 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 general_opinion = 2.5
                 monthly_prestige = 0.2
                 monthly_prestige_gain_mult = 0.05
             }
             40 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 general_opinion = 2.5
                 monthly_prestige = 0.2
                 monthly_prestige_gain_mult = 0.05
             }
             50 = {
-                # Milestone bonus
+                # specific
                 diplomacy_per_piety_level = 1
                 prowess_per_piety_level = 1
                 general_opinion = 2.5
@@ -298,43 +387,55 @@
                 monthly_prestige_gain_mult = 0.05
             }
             60 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 general_opinion = 2.5
                 monthly_prestige = 0.2
                 monthly_prestige_gain_mult = 0.05
             }
             70 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 general_opinion = 2.5
                 monthly_prestige = 0.2
                 monthly_prestige_gain_mult = 0.05
             }
             80 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 general_opinion = 2.5
                 monthly_prestige = 0.2
                 monthly_prestige_gain_mult = 0.05
             }
             90 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 general_opinion = 2.5
                 monthly_prestige = 0.2
                 monthly_prestige_gain_mult = 0.05
             }
             100 = {
-                # Milestone bonus
+                # specific
                 diplomacy_per_piety_level = 1
                 no_prowess_loss_from_age = yes
                 general_opinion = 2.5
@@ -345,69 +446,93 @@
 
         hematurgy = {
             10 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 enemy_hostile_scheme_success_chance_add = -5
             }
             20 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 enemy_hostile_scheme_success_chance_add = -5
             }
             30 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 enemy_hostile_scheme_success_chance_add = -5
             }
             40 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 enemy_hostile_scheme_success_chance_add = -5
             }
             50 = {
-                # Milestone bonus
+                # specific
                 intrigue_per_piety_level = 1
                 prowess_per_piety_level = 1
                 enemy_hostile_scheme_success_chance_add = -5
             }
             60 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 enemy_hostile_scheme_success_chance_add = -5
             }
             70 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 enemy_hostile_scheme_success_chance_add = -5
             }
             80 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 enemy_hostile_scheme_success_chance_add = -5
             }
             90 = {
-                health = 0.1
-                life_expectancy = 2
-                years_of_fertility = 1
-                epidemic_resistance = 1
+                # common
+                health = @bm_common_health
+                life_expectancy = @bm_common_life_expectancy
+                years_of_fertility = @bm_common_years_of_fertility
+                epidemic_resistance = @bm_common_epidemic_resistance
+
+                # specific
                 enemy_hostile_scheme_success_chance_add = -5
             }
             100 = {
-                # Milestone bonus
+                # specific
                 intrigue_per_piety_level = 1
                 no_prowess_loss_from_age = yes
                 enemy_hostile_scheme_success_chance_add = -5
