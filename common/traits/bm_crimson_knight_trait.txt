@@ -1,4 +1,8 @@
-﻿lifestyle_crimson_knight = {
+﻿@bm_common_health = 0.1
+@bm_common_life_expectancy = 0.5
+@bm_common_monthly_prestige = 0.1
+
+lifestyle_crimson_knight = {
 	category = lifestyle
 	flag = reweaving_lifestyle_trait
 	icon = blood_mage_3.dds
@@ -14,209 +18,299 @@
 	tracks = {
 		vanguard = {
 			10 = {
+				# common
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
 				advantage = 1
-				health = 0.1
-				life_expectancy = 0.5
-				monthly_prestige = 0.1
 			}
 			20 = {
+				# common
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
 				advantage = 1
 				martial = 1
-				health = 0.1
-				life_expectancy = 0.5
-				monthly_prestige = 0.1
 			}
 			30 = {
+				# common
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
 				advantage = 1
-				health = 0.1
-				life_expectancy = 0.5
-				monthly_prestige = 0.1
 			}
 			40 = {
+				# common
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
 				advantage = 1
 				martial = 1
-				health = 0.1
-				life_expectancy = 0.5
-				monthly_prestige = 0.1
 			}
 			50 = {
+				# common
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
 				advantage = 1
 				martial_per_prestige_level = 1
-				health = 0.1
-				life_expectancy = 0.5
-				monthly_prestige = 0.1
 			}
 			60 = {
+				# common
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
 				advantage = 1
 				martial = 1
-				health = 0.1
-				life_expectancy = 0.5
-				monthly_prestige = 0.1
 			}
 			70 = {
+				# common
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
 				advantage = 1
-				health = 0.1
-				life_expectancy = 0.5
-				monthly_prestige = 0.1
 			}
 			80 = {
+				# common
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
 				advantage = 1
 				martial = 1
-				health = 0.1
-				life_expectancy = 0.5
-				monthly_prestige = 0.1
 			}
 			90 = {
+				# common
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
 				advantage = 1
-				health = 0.1
-				life_expectancy = 0.5
-				monthly_prestige = 0.1
 			}
 			100 = {
+				# common
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
 				advantage = 1
 				martial = 1
 				martial_per_prestige_level = 1
-				health = 0.1
-				life_expectancy = 0.5
-				monthly_prestige = 0.1
 			}
 		}
 
 		slaughter = {
 			10 = {
+				# common
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
 				prowess = 2
-				health = 0.1
-				life_expectancy = 0.5
-				monthly_prestige = 0.1
 			}
 			20 = {
+				# common
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
 				prowess = 2
-				health = 0.1
-				life_expectancy = 0.5
-				monthly_prestige = 0.1
 			}
 			30 = {
+				# common
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
 				prowess = 2
-				health = 0.1
-				life_expectancy = 0.5
-				monthly_prestige = 0.1
 			}
 			40 = {
+				# common
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
 				prowess = 2
-				health = 0.1
-				life_expectancy = 0.5
-				monthly_prestige = 0.1
 			}
 			50 = {
+				# common
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
 				prowess = 2
 				prowess_per_prestige_level = 1
-				health = 0.1
-				life_expectancy = 0.5
-				monthly_prestige = 0.1
 			}
 			60 = {
+				# common
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
 				prowess = 2
-				health = 0.1
-				life_expectancy = 0.5
-				monthly_prestige = 0.1
 			}
 			70 = {
+				# common
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
 				prowess = 2
-				health = 0.1
-				life_expectancy = 0.5
-				monthly_prestige = 0.1
 			}
 			80 = {
+				# common
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
 				prowess = 2
-				health = 0.1
-				life_expectancy = 0.5
-				monthly_prestige = 0.1
 			}
 			90 = {
+				# common
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
 				prowess = 2
-				health = 0.1
-				life_expectancy = 0.5
-				monthly_prestige = 0.1
 			}
 			100 = {
+				# common
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
 				prowess = 2
 				prowess_per_prestige_level = 1
-				health = 0.1
-				life_expectancy = 0.5
-				monthly_prestige = 0.1
 			}
 		}
 
 		resilience = {
 			10 = {
-				life_expectancy = 0.5
-				health = 0.1
+				# common
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
 				years_of_fertility = 1
 				epidemic_resistance = 1
-				monthly_prestige = 0.1
 			}
 			20 = {
-				life_expectancy = 0.5
-				health = 0.1
+				# common
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
 				years_of_fertility = 1
 				epidemic_resistance = 1
-				monthly_prestige = 0.1
 			}
 			30 = {
-				life_expectancy = 0.5
-				health = 0.1
+				# common
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
 				years_of_fertility = 1
 				epidemic_resistance = 1
-				monthly_prestige = 0.1
 			}
 			40 = {
-				life_expectancy = 0.5
-				health = 0.1
+				# common
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
 				years_of_fertility = 1
 				epidemic_resistance = 1
-				monthly_prestige = 0.1
 			}
 			50 = {
-				life_expectancy = 0.5
-				health = 0.1
+				# common
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
 				years_of_fertility = 1
 				epidemic_resistance = 1
-				monthly_prestige = 0.1
 			}
 			60 = {
-				life_expectancy = 0.5
-				health = 0.1
+				# common
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
 				years_of_fertility = 1
 				epidemic_resistance = 1
-				monthly_prestige = 0.1
 			}
 			70 = {
-				life_expectancy = 0.5
-				health = 0.1
+				# common
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
 				years_of_fertility = 1
 				epidemic_resistance = 1
-				monthly_prestige = 0.1
 			}
 			80 = {
-				life_expectancy = 0.5
-				health = 0.1
+				# common
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
 				years_of_fertility = 1
 				epidemic_resistance = 1
-				monthly_prestige = 0.1
 			}
 			90 = {
-				life_expectancy = 0.5
-				health = 0.1
+				# common
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
 				years_of_fertility = 1
 				epidemic_resistance = 1
-				monthly_prestige = 0.1
 			}
 			100 = {
-				life_expectancy = 0.5
-				health = 0.1
+				# common
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
 				years_of_fertility = 1
 				epidemic_resistance = 1
-				monthly_prestige = 0.1
 			}
 		}
 	}
