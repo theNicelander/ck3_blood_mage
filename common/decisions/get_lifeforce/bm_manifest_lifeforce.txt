@@ -83,8 +83,12 @@
 	ai_will_do = {
 		base = 10
 		modifier = {
-			piety > 2000
-			add = 1000
+			piety > 500
+			add = 50
+		}
+		modifier = {
+			piety > 1000
+			add = 100
 		}
 		modifier = {
 			NOT = { has_character_modifier = lifeforce_modifier_major }
