@@ -1,5 +1,5 @@
-﻿@bm_common_health = 0.1
-@bm_common_life_expectancy = 0.5
+﻿@bm_common_health = 0.2
+@bm_common_life_expectancy = 1
 @bm_common_monthly_prestige = 0.1
 
 lifestyle_crimson_knight = {
@@ -11,7 +11,7 @@ lifestyle_crimson_knight = {
 
 	genetic = no
 
-	health = -2
+	health = -1
 	life_expectancy = -5
 	prowess = -5
 
@@ -231,6 +231,8 @@ lifestyle_crimson_knight = {
 				# specific
 				years_of_fertility = 1
 				epidemic_resistance = 1
+				positive_random_genetic_chance = 0.05
+				positive_inactive_inheritance_chance = 0.05
 			}
 			30 = {
 				# common
@@ -251,6 +253,8 @@ lifestyle_crimson_knight = {
 				# specific
 				years_of_fertility = 1
 				epidemic_resistance = 1
+				positive_random_genetic_chance = 0.05
+				positive_inactive_inheritance_chance = 0.05
 			}
 			50 = {
 				# common
@@ -271,6 +275,8 @@ lifestyle_crimson_knight = {
 				# specific
 				years_of_fertility = 1
 				epidemic_resistance = 1
+				positive_random_genetic_chance = 0.05
+				positive_inactive_inheritance_chance = 0.05
 			}
 			70 = {
 				# common
@@ -291,6 +297,8 @@ lifestyle_crimson_knight = {
 				# specific
 				years_of_fertility = 1
 				epidemic_resistance = 1
+				positive_random_genetic_chance = 0.05
+				positive_inactive_inheritance_chance = 0.05
 			}
 			90 = {
 				# common
@@ -311,6 +319,8 @@ lifestyle_crimson_knight = {
 				# specific
 				years_of_fertility = 1
 				epidemic_resistance = 1
+				positive_random_genetic_chance = 0.05
+				positive_inactive_inheritance_chance = 0.05
 			}
 		}
 	}
