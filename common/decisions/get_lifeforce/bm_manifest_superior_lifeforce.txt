@@ -1,0 +1,122 @@
+﻿bm_manifest_superior_lifeforce_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
+	decision_group_type = bm_decision_group
+
+	cost = { piety = 250 }
+	cooldown = { years = 2 }
+
+	is_shown = {
+		has_trait = lifestyle_blood_mage
+	}
+	is_valid = {
+		piety_level >= 2
+		has_character_modifier = lifeforce_modifier_minor
+		has_character_modifier = lifeforce_modifier_major
+	}
+
+	effect = {
+		debug_log = "BloodMageDecision: manifest_superior_lifeforce | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+		duel = {
+			skill = learning
+			value = 0
+
+			# Success - Superior lifeforce, pure condensation
+			20 = {
+				desc = manifest_superior_lifeforce_major_success_tt
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 1
+				}
+				send_interface_toast = {
+					title = manifest_superior_lifeforce_major_success_tt
+					left_icon = root
+					remove_character_modifier = lifeforce_modifier_minor
+					remove_character_modifier = lifeforce_modifier_major
+					add_character_modifier = { modifier = lifeforce_modifier_superior }
+					add_xp_bm_dynamic = {
+						TRACK = enlightenment
+						XP = 10
+					}
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+
+			# Partial success - Superior lifeforce with minor exhaustion
+			45 = {
+				desc = manifest_superior_lifeforce_minor_success_tt
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 2
+				}
+				send_interface_toast = {
+					title = manifest_superior_lifeforce_minor_success_tt
+					left_icon = root
+					remove_character_modifier = lifeforce_modifier_minor
+					remove_character_modifier = lifeforce_modifier_major
+					add_character_modifier = { modifier = lifeforce_modifier_superior }
+					temporary_negative_lifeforce_effect_minor = yes
+					add_xp_bm_dynamic = {
+						TRACK = enlightenment
+						XP = 5
+					}
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+
+			# Failure - Minor lost, Major retained
+			25 = {
+				desc = manifest_superior_lifeforce_minor_failure_tt
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -0.5
+				}
+				send_interface_toast = {
+					title = manifest_superior_lifeforce_minor_failure_tt
+					left_icon = root
+					remove_character_modifier = lifeforce_modifier_minor
+					add_xp_bm_dynamic = {
+						TRACK = enlightenment
+						XP = 2
+					}
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+
+			# Critical failure - Both lost, major exhaustion
+			10 = {
+				desc = manifest_superior_lifeforce_major_failure_tt
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -0.25
+				}
+				send_interface_toast = {
+					title = manifest_superior_lifeforce_major_failure_tt
+					left_icon = root
+					remove_character_modifier = lifeforce_modifier_minor
+					remove_character_modifier = lifeforce_modifier_major
+					temporary_negative_lifeforce_effect_major = yes
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+		}
+	}
+
+	ai_check_interval = 12
+	ai_will_do = {
+		base = 0
+		modifier = {
+			has_character_modifier = lifeforce_modifier_minor
+			has_character_modifier = lifeforce_modifier_major
+			piety > 500
+			add = 25
+		}
+		modifier = {
+			piety > 1000
+			add = 50
+		}
+		modifier = {
+			NOT = { has_character_modifier = lifeforce_modifier_superior }
+			add = 50
+		}
+	}
+}

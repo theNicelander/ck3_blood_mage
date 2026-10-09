@@ -16,10 +16,11 @@
 | `convert_to_blood_magic_from_witch` | Standard | Free. No cooldown. | Player only. Has witch trait. | None | Removes witch trait, grants blood mage. |
 | `seek_power_decision` | Standard | Free. CD: 2 yrs. | Feudal/landed blood mage. | +1-2 school | Wilderness hunt event chain (`seek_power.001`). Harvests lifeforce. |
 | `seek_power_decision_wanderer` | Standard | Free. CD: 1 yr. | Landless adventurer blood mage. | +1-2 school | Landless wilderness event chain. |
-| `blood_golem_creation_decision` | Standard | 750p + Major Lifeforce. CD: 3 yrs. | High learning/track XP. | +5 bloodline | Spawns courtier in `bm_house_golem`, triggers shaping duel (`blood_golem.001`). |
+| `blood_golem_creation_decision` | Standard | 500p + Superior Lifeforce. CD: 3 yrs. | High learning/track XP. | +5 bloodline | Spawns courtier in `bm_house_golem`, triggers shaping duel (`blood_golem.001`). |
 | `mass_lifedrain_prisoners_decision` | Situation | None. No CD. | Dungeon prisoners available. | +hematurgy | Mass harvests lifeforce from dungeon prisoners (`bm_mass_lifedrain.001`). |
 | `become_blood_cultist_decision` | Major | None. Rank 3 Devotion + 1 Major Lifeforce. | Blood mage. | None | Converts character and realm to Blóðtrú faith. |
 | `bm_manifest_lifeforce_decision` | Standard | 100 piety. CD: 1 yr. | Piety rank >= 2. | +5 enlightenment | Learning duel to generate Lifeforce. |
+| `bm_manifest_superior_lifeforce_decision` | Standard | 250 piety + Minor + Major Lifeforce. CD: 2 yrs. | Piety rank >= 2. | +2-10 enlightenment | Learning duel to distill Minor and Major into Superior Lifeforce. |
 | `bm_cast_blood_magic_minor_decision` | Standard | Decision free; rites cost 25-75p + Minor Lifeforce. | Has minor lifeforce. | Dependent on rite (+1 enlightenment on channel) | Opens minor ritual selection (`bm_cast_blood_magic_minor.001`): Channel Minor Lifeforce, Attune Lifeforce. |
 | `bm_cast_blood_magic_major_decision` | Standard | Decision free; rites cost 150-1000p + Major Lifeforce. Per-rite CD flags (2-5 yrs). | Has major lifeforce, rank >= 1 Devotion. | +3 to +5 track XP per rite | Opens major ritual selection (`bm_cast_blood_magic_major.001`): Blood Empowerment, Enhance Education, New Education, Inscribe Blood Rune, Empower Bloodline. |
 
@@ -30,6 +31,8 @@
 | Ritual of Blood, Blood Cultist to Blood Mage | `bm_become_blood_mage_decision.txt` |
 | Convert from Witch | `bm_convert_from_witch.txt` |
 | Seek Power (landed & adventurer) | `bm_seek_power_decision.txt` |
+| Manifest Lifeforce | `get_lifeforce/bm_manifest_lifeforce.txt` |
+| Manifest Superior Lifeforce | `get_lifeforce/bm_manifest_superior_lifeforce.txt` |
 | Major Rituals (Empowerment, Education, Runes, Bloodline) | `cast_magic/bm_cast_blood_magic_major.txt` |
 | Minor Rituals (Channel Minor, Attunement) | `cast_magic/bm_cast_blood_magic_minor.txt` |
 | Blood Golem Creation | `cast_magic/bm_create_blood_golem.txt` |

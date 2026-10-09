@@ -4,9 +4,9 @@
 
     is_shown = { has_trait = lifestyle_blood_mage }
     is_valid = {
-        has_character_modifier = lifeforce_modifier_major
+        has_character_modifier = lifeforce_modifier_superior
         piety_level >= 3
-        piety >= 1000
+        piety >= 500
 
         OR = {
             has_trait_xp = {
@@ -36,14 +36,15 @@
             }
         }
     }
-    cost = { piety = 750 }
+    cost = { piety = 500 }
     cooldown = { years = 3 }
 
     effect = {
         debug_log = "BloodMageDecision: create_blood_golem | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
 
         trigger_event = { id = blood_golem.001 }
-        blood_magic_used_major = yes
+        blood_magic_used_superior = yes
+        bm_recount_lifeforce_stacks_effect = yes
         add_trait_xp = {
             trait = lifestyle_blood_mage
             track = bloodline

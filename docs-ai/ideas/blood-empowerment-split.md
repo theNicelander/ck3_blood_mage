@@ -19,15 +19,56 @@ Characters may only possess **one** of these two traits (`opposites = { ... }`),
 
 ---
 
-## 2. Universal Baseline Buffs
+## 2. Universal Baseline Buffs & Single Source of Truth
 
-Currently, every rank of every empowerment track grants:
-- `+1 Life Expectancy`
-- `+0.1 Monthly Piety`
+Every rank (tick) of every empowerment track provides the exact same core physiological baseline benefits as the `lifestyle_blood_mage` trait:
+- `health = 0.1` (+0.1 Health per rank / +1.0 per full track of 10 ranks)
+- `life_expectancy = 2` (+2 Life Expectancy per rank / +20 years per full track)
+- `years_of_fertility = 1` (+1 Year of Fertility per rank / +10 years per full track)
+- `epidemic_resistance = 1` (+1 Epidemic Resistance per rank / +10 per full track)
 
-To ensure every rank feels immediately impactful regardless of playstyle, consider adding one of the following to the **universal baseline** per rank:
-- `character_travel_safety = 0.5` (+5 Travel Safety at track cap; empowered blood resists road hazards, exhaustion, and illness).
-- *Alternative*: `prowess = 0.5` (+5 Prowess at track cap).
+### Design Rationale
+- **Immediate Return on Investment**: Consuming Piety and Major Lifeforce guarantees meaningful bodily empowerment (vitality, longevity, fertility, plague resistance) on *every single purchase*, regardless of which thematic track is selected.
+- **Thematic Consistency**: Directly mirrors the ancient/enlightenment baseline from `lifestyle_blood_mage` (`ancient` track ranks grant these exact four parameters), reinforcing that deep blood mastery continually preserves and refines mortal biology.
+- **Compounding Immortality Arc**: Completing multiple tracks rewards the player with substantial longevity and resilience (+20 to +160 years life expectancy across a full specialization), perfectly aligning with the mod's philosophy of *earned power over godmode*.
+
+### Defining Once (Single Source of Truth)
+To eliminate duplicate numbers across dozens of track rank blocks and keep balance adjustments centralized in a single location, we define these once using Clausewitz script preprocessor variables (`@` syntax), following the proven pattern in `common/traits/bm_blood_knight_trait.txt`:
+
+#### 1. Central Definition
+Defined once at the head of the trait file(s) or in a shared trait definitions header:
+```pdx
+# Universal Blood Empowerment baseline modifiers per rank (matches lifestyle_blood_mage)
+@bm_empowerment_base_health = 0.1
+@bm_empowerment_base_life_expectancy = 2
+@bm_empowerment_base_years_of_fertility = 1
+@bm_empowerment_base_epidemic_resistance = 1
+```
+
+#### 2. Track Rank Reference
+Each rank milestone (10, 20, 30... 100) across all tracks references the variables directly alongside its track-specific modifiers:
+```pdx
+tracks = {
+    wayfarer = {
+        10 = {
+            # Universal baseline (defined once)
+            health = @bm_empowerment_base_health
+            life_expectancy = @bm_empowerment_base_life_expectancy
+            years_of_fertility = @bm_empowerment_base_years_of_fertility
+            epidemic_resistance = @bm_empowerment_base_epidemic_resistance
+
+            # Track-specific benefit
+            character_travel_safety = 2.5
+        }
+        ...
+    }
+}
+```
+
+#### Why Script Variables (`@`) Instead of a Detached Modifier?
+- **CK3 Trait Track UI**: The game engine's character window and lifestyle progress bar exclusively inspect modifiers defined inside `tracks = { <track> = { <rank> = { ... } } }`. Modifiers applied via external character modifiers are invisible in the lifestyle track tooltip progression.
+- **DRY & Maintainable**: Changing `@bm_empowerment_base_health` in one place immediately updates all 80+ rank milestones across both sister traits without error-prone bulk edits.
+- **Engine Verified**: Proven in `bm_blood_knight_trait.txt` (which uses `@bm_common_health`, `@bm_common_life_expectancy`, `@bm_common_monthly_prestige`) and vanilla CK3 (`common/traits/00_traits.txt`).
 
 ---
 
@@ -62,7 +103,7 @@ All candidate modifiers use verified vanilla 1.20 script keys. Values are listed
 
 | # | Track Name & Theme | Option 1 | Option 2 | Option 3 | Option 4 | Option 5 |
 | :-: | :--- | :--- | :--- | :--- | :--- | :--- |
-| **1** | **`vitality`**<br>*(Physical Perfection & Duels)* | `prowess = 1`<br>*(+1 Prowess per 2 ranks)* | `health = 0.08`<br>*(+0.08 Base Health)* | `wound_recovery_mult = 0.05`<br>*(+5% Wound Recovery)* | `disease_resistance = 0.1`<br>*(+10% Illness Resistance)* | `prowess_per_prestige_level = 0.2`<br>*(Fame converts to Prowess)* |
+| **1** | **`vitality`**<br>*(Physical Perfection & Duels)* | `prowess = 1`<br>*(+1 Prowess per 2 ranks)* | `health = 0.08`<br>*(+0.08 Extra Health; stacks with base)* | `wound_recovery_mult = 0.05`<br>*(+5% Wound Recovery)* | `disease_resistance = 0.1`<br>*(+10% Extra Illness Resist)* | `prowess_per_prestige_level = 0.2`<br>*(Fame converts to Prowess)* |
 | **2** | **`wayfarer`**<br>*(Wilderness & Movement)* | `character_travel_speed_mult = 0.04`<br>*(+4% Travel Speed Mult)* | `character_travel_safety = 2.5`<br>*(+2.5 Travel Safety)* | `travel_attrition_reduction_mult = 0.05`<br>*(-5% Danger Attrition)* | `character_travel_speed = 2`<br>*(+2 Flat Travel Speed)* | `movement_speed = 0.02`<br>*(+2% Army Movement Speed)* |
 | **3** | **`sustenance`**<br>*(Logistics & Survival)* | `provisions_gain_mult = 0.05`<br>*(+5% Provisions Gained)* | `provisions_capacity_add = 40`<br>*(+40 Max Provisions)* | `provisions_loss_mult = -0.03`<br>*(-3% Provision Loss Rate)* | `domicile_building_cost_mult = -0.03`<br>*(-3% Camp Upgrade Cost)* | `men_at_arms_maintenance = -0.03`<br>*(-3% MaA Upkeep Cost)* |
 | **4** | **`occult_veil`**<br>*(Survival & Subterfuge)* | `hostile_scheme_resistance_add = 3`<br>*(+3 Scheme Resist)* | `character_travel_safety = 2`<br>*(+2 Travel Safety)* | `owned_scheme_secrecy_add = 5`<br>*(+5 Scheme Secrecy)* | `hostile_scheme_phase_duration_mult = -0.03`<br>*(-3% Scheme Phase Time)* | `enemy_hostile_scheme_success_chance_add = -3`<br>*(-3% Enemy Success Chance)* |
