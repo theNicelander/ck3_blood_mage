@@ -1,0 +1,29 @@
+﻿l_russian:
+  # Lifedrain courtier (minor)
+lifedrain_courtier_event_interaction: "Малое вытягивание жизненной силы"
+lifedrain_courtier_event_interaction.recipient.notification.tt: "Вы начинаете ритуал магии крови, чтобы частично вытянуть жизненную силу персонажа [recipient.GetShortUINameNoTooltip]; неосторожность может привести к ранению"
+bm_lifedrain_courtier.001.title: "Малое вытягивание жизненной силы"
+bm_lifedrain_courtier.001.desc: "Ваш придворный стоит перед вами, не подозревая о ваших намерениях. Его жизненная сила маняще пульсирует, ожидая, когда её присвоят."
+bm_lifedrain_courtier.001.a: "Вытянуть часть жизненной силы"
+bm_lifedrain_courtier.001.a.success_desc: "Вам удалось собрать часть жизненной силы персонажа [recipient.GetShortUINameNoTooltip]"
+bm_lifedrain_courtier.001.a.fail_desc: "Вы собираете часть жизненной силы персонажа [recipient.GetShortUINameNoTooltip], но наносите ему ранение"
+bm_lifedrain_courtier.001.a.critical_fail_desc: "Ритуал выходит из-под контроля; вы и [recipient.GetShortUINameNoTooltip] получаете ранения"
+
+  # lifedrain prisoner (major)
+lifedrain_prisoner_event_interaction: "Большое вытягивание жизненной силы"
+lifedrain_prisoner_event_interaction.recipient.notification.tt: "Вы используете магию крови, чтобы полностью вытянуть жизненную силу персонажа [recipient.GetShortUINameNoTooltip], убив его"
+lifedrain_prisoner_interaction: "Большое вытягивание жизненной силы"
+lifedrain_prisoner_interaction_desc: "Полностью вытянуть жизненную силу персонажа [recipient.GetShortUINameNoTooltip]"
+lifedrain_prisoner_interaction.recipient.notification.tt: "Жизненная сила персонажа [recipient.GetShortUINameNoTooltip] будет вытянута и добавлена к вашей"
+
+  # Trait drain
+trait_drain_prisoner_event_interaction: "Поглотить положительные свойства"
+generic_drain_prisoner_trait_interaction_desc: "Вы попытаетесь поглотить необычайные свойства персонажа [recipient.GetShortUINameNoTooltip] и присвоить их, убив его"
+generic_drain_prisoner_trait_interaction.recipient.notification.tt: "Необычайное свойство персонажа [recipient.GetShortUINameNoTooltip] будет поглощено"
+
+intellect_drain_prisoner_interaction: "Поглощение интеллекта"
+physique_drain_prisoner_interaction: "Поглощение телосложения"
+beauty_drain_prisoner_interaction: "Поглощение красоты"
+fertility_drain_prisoner_interaction: "Поглощение плодовитости"
+giant_drain_prisoner_interaction: "Поглощение гигантизма"
+pure_blooded_drain_prisoner_interaction: "Поглощение чистоты крови"
