@@ -22,7 +22,7 @@
 | `bm_manifest_lifeforce_decision` | Standard | 100 piety. CD: 1 yr. | Piety rank >= 2. | +5 enlightenment | Learning duel to generate Lifeforce. |
 | `bm_manifest_superior_lifeforce_decision` | Standard | 250 piety + Minor + Major Lifeforce. CD: 2 yrs. | Piety rank >= 2. | +2-10 enlightenment | Learning duel to distill Minor and Major into Superior Lifeforce. |
 | `bm_cast_blood_magic_minor_decision` | Standard | Decision free; rites cost 25-75p + Minor Lifeforce. | Has minor lifeforce. | Dependent on rite (+1 enlightenment on channel) | Opens minor ritual selection (`bm_cast_blood_magic_minor.001`): Channel Minor Lifeforce, Attune Lifeforce. |
-| `bm_cast_blood_magic_major_decision` | Standard | Decision free; rites cost 150-1000p + Major Lifeforce. Per-rite CD flags (2-5 yrs). | Has major lifeforce, rank >= 1 Devotion. | +3 to +5 track XP per rite | Opens major ritual selection (`bm_cast_blood_magic_major.001`): Blood Empowerment, Enhance Education, New Education, Inscribe Blood Rune, Empower Bloodline. |
+| `bm_cast_blood_magic_major_decision` | Standard | Decision free; rites cost 150-1000p + Major Lifeforce. Per-rite CD flags (2-5 yrs). | Has major lifeforce, rank >= 1 Devotion. | +3 to +5 track XP per rite | Opens major ritual selection (`bm_cast_blood_magic_major.001`): Blood Empowerment, Enhance Education, New Education, Inscribe Blood Rune, Empower Bloodline, Manifest Perfection. |
 
 ## Where the details live
 
@@ -33,7 +33,7 @@
 | Seek Power (landed & adventurer) | `bm_seek_power_decision.txt` |
 | Manifest Lifeforce | `get_lifeforce/bm_manifest_lifeforce.txt` |
 | Manifest Superior Lifeforce | `get_lifeforce/bm_manifest_superior_lifeforce.txt` |
-| Major Rituals (Empowerment, Education, Runes, Bloodline) | `cast_magic/bm_cast_blood_magic_major.txt` |
+| Major Rituals (Empowerment, Education, Runes, Bloodline, Manifest Perfection) | `cast_magic/bm_cast_blood_magic_major.txt` |
 | Minor Rituals (Channel Minor, Attunement) | `cast_magic/bm_cast_blood_magic_minor.txt` |
 | Blood Golem Creation | `cast_magic/bm_create_blood_golem.txt` |
 | Mass Lifedrain of Prisoners | `bm_mass_lifedrain_prisoners.txt` |

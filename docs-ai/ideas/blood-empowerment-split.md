@@ -2,9 +2,9 @@
 
 Living proposal for overhauling Blood Empowerment by splitting it into two mutually exclusive sister traits:
 1. **`lifestyle_blood_transcendence`** (The Inner Vessel — Self / Adventurer / Personal Mastery)
-2. **`lifestyle_blood_sovereignty`** (The Outer Dominion — Exterior / Landed Overlord / Realm Projection)
+2. **`lifestyle_blood_sovereignty`** (The Outer Dominion — Landed Overlord / Realm Projection)
 
-Characters may only possess **one** of these two traits (`opposites = { ... }`), chosen upon first casting the major empowerment ritual. Both traits share the baseline progression and contribute seamlessly toward high-tier spell unlocks (Education Enhancement, Blood Runes).
+Characters may only possess **one** of these two traits (`opposites = { ... }`), chosen upon first casting the major empowerment ritual. Both traits share the baseline progression, 5 universal core tracks, and contribute seamlessly toward high-tier spell unlocks (Education Enhancement, Blood Runes).
 
 ---
 
@@ -15,7 +15,10 @@ Characters may only possess **one** of these two traits (`opposites = { ... }`),
   - County control growth and capital development growth are useless for landless wanderers, mercenary bands, and traveling scholars.
   - Cultural fascination mult is 100% useless unless the character is the Cultural Head.
 - **Missing Travel & Adventurer Integration**: Vanilla 1.20 (Roads to Power) introduced camp logistics, travel hazards, and adventurer contracts. Blood Empowerment currently ignores these systems entirely.
-- **The Solution**: Rather than compromising every track with hybrid compromises, cleanly fork the fantasy into **Internal Bodily Mastery** (Transcendence) and **External Realm Domination** (Sovereignty).
+- **Overlap with Blood Knight**: Dedicated military command (knights, combat advantage, MaA lethality) belongs properly in `lifestyle_blood_knight`, not Blood Empowerment.
+- **The Solution: 5 Shared Core Tracks + 3 Route-Specific Tracks (8 Tracks Total per Trait)**:
+  - Consolidate universal disciplines (Dynasty, Experience, Charisma, Stewardship, Occult Veil) into 5 shared tracks present on both traits.
+  - Specialize the remaining 3 tracks around distinct playstyles: Bodily Mastery & Wilderness (Transcendence) vs. Realm & Dynastic Rule (Sovereignty).
 
 ---
 
@@ -28,9 +31,9 @@ Every rank (tick) of every empowerment track provides the exact same core physio
 - `epidemic_resistance = 1` (+1 Epidemic Resistance per rank / +10 per full track)
 
 ### Design Rationale
-- **Immediate Return on Investment**: Consuming Piety and Major Lifeforce guarantees meaningful bodily empowerment (vitality, longevity, fertility, plague resistance) on *every single purchase*, regardless of which thematic track is selected.
+- **Immediate Return on Investment**: Consuming Piety and Major Lifeforce guarantees meaningful bodily empowerment (vitality, longevity, fertility, plague resistance) on *every single purchase*, regardless of which track is chosen.
 - **Thematic Consistency**: Directly mirrors the ancient/enlightenment baseline from `lifestyle_blood_mage` (`ancient` track ranks grant these exact four parameters), reinforcing that deep blood mastery continually preserves and refines mortal biology.
-- **Compounding Immortality Arc**: Completing multiple tracks rewards the player with substantial longevity and resilience (+20 to +160 years life expectancy across a full specialization), perfectly aligning with the mod's philosophy of *earned power over godmode*.
+- **Compounding Immortality Arc**: Completing tracks rewards the player with substantial longevity and resilience (+20 to +160 years life expectancy across all 8 tracks), perfectly aligning with the mod's philosophy of *earned power over godmode*.
 
 ### Defining Once (Single Source of Truth)
 To eliminate duplicate numbers across dozens of track rank blocks and keep balance adjustments centralized in a single location, we define these once using Clausewitz script preprocessor variables (`@` syntax), following the proven pattern in `common/traits/bm_blood_knight_trait.txt`:
@@ -67,23 +70,98 @@ tracks = {
 
 #### Why Script Variables (`@`) Instead of a Detached Modifier?
 - **CK3 Trait Track UI**: The game engine's character window and lifestyle progress bar exclusively inspect modifiers defined inside `tracks = { <track> = { <rank> = { ... } } }`. Modifiers applied via external character modifiers are invisible in the lifestyle track tooltip progression.
-- **DRY & Maintainable**: Changing `@bm_empowerment_base_health` in one place immediately updates all 80+ rank milestones across both sister traits without error-prone bulk edits.
+- **DRY & Maintainable**: Changing `@bm_empowerment_base_health` in one place immediately updates all 80 rank milestones across both sister traits without error-prone bulk edits.
 - **Engine Verified**: Proven in `bm_blood_knight_trait.txt` (which uses `@bm_common_health`, `@bm_common_life_expectancy`, `@bm_common_monthly_prestige`) and vanilla CK3 (`common/traits/00_traits.txt`).
 
 ---
 
-## 3. Ritual Architecture & Selection Flow
+## 3. Structural Overview: The 5 + 3 Architecture
+
+Each trait contains **8 tracks total** (10 ranks / up to 100 XP per track):
+- **5 Shared Core Tracks**: Universal blood magic applications beneficial to both landless and landed characters.
+- **3 Route-Specific Tracks**: Tailored explicitly to the chosen specialization.
+
+```
+                            [ Blood Empowerment ]
+                                      │
+            ┌─────────────────────────┴─────────────────────────┐
+    [ 5 Shared Core Tracks ]                            [ 5 Shared Core Tracks ]
+    • Dynasty (Genetics & Fertility)                    • Dynasty (Genetics & Fertility)
+    • Experience (XP & Languages)                       • Experience (XP & Languages)
+    • Charisma (Opinion, Stress & Sways)                • Charisma (Opinion, Stress & Sways)
+    • Stewardship (Gold Gain & Cost Reduction)          • Stewardship (Gold Gain & Cost Reduction)
+    • Occult Veil (Plot Defense & Secrecy)              • Occult Veil (Plot Defense & Secrecy)
+            │                                                   │
+    [ 3 Transcendence Tracks ]                          [ 3 Sovereignty Tracks ]
+    • Wayfarer (Travel & Movement)                      • Dominion (Control & Dread)
+    • Sustenance (Camp & Provisions)                    • Prosperity (Development & Infrastructure)
+    • Vitality (Prowess & Bodily Mastery)               • Majesty (Vassals & Imperial Aura)
+            │                                                   │
+    lifestyle_blood_transcendence                       lifestyle_blood_sovereignty
+       (Self / Adventurer / Wanderer)                      (Landed Overlord / Empire)
+```
+
+---
+
+## 4. The 5 Shared Core Tracks (Both Traits)
+
+These 5 tracks are identically available to both `lifestyle_blood_transcendence` and `lifestyle_blood_sovereignty`. Modifiers are listed **per rank** (10 ranks / up to 100 XP per track) and stack with the universal baseline.
+
+| # | Track | Theme | Target Modifiers per Rank (10 Ranks Total) | Full Track Cap (100 XP) |
+| :-: | :--- | :--- | :--- | :--- |
+| **1** | **`dynasty`** | Genetics & Reproductive Vitality | • `positive_random_genetic_chance = 0.05`<br>• `positive_inactive_inheritance_chance = 0.05`<br>• `fertility = 0.04` | +50% Positive Congenital<br>+50% Inactive Trait Inheritance<br>+40% Fertility |
+| **2** | **`experience`** | Omniscience, Lifestyle Mastery & Tongues | • `monthly_lifestyle_xp_gain_mult = 0.04`<br>• `learn_language_scheme_phase_duration_add = -5`<br>• `max_learn_language_schemes_add = 1` *(at rank 5)* | +40% Lifestyle XP Gain<br>-50 Days Language Scheme Phase<br>+1 Max Language Schemes |
+| **3** | **`charisma`** | Personal Aura, Seduction & Stress Control | • `stress_loss_mult = 0.05`<br>• `general_opinion = 2.5`<br>• `sway_scheme_power_mult = 0.05` | +50% Stress Loss Rate<br>+25 General Opinion<br>+50% Sway Scheme Power |
+| **4** | **`stewardship`** | Gold Generation & Expense Reduction<br>*(Adaptive across Landed & Landless)* | • `monthly_income_mult = 0.03`<br>• `men_at_arms_maintenance = -0.03`<br>• `domain_tax_mult = 0.02`<br>• `domicile_building_cost_mult = -0.03` | +30% Monthly Income (All Sources)<br>-30% Men-at-Arms Maintenance<br>+20% Domain Taxes *(if Landed)*<br>-30% Camp Upgrade Cost *(if Landless)* |
+| **5** | **`occult_veil`** | Plot Defense, Camouflage & Occult Secrecy | • `hostile_scheme_resistance_add = 3`<br>• `owned_scheme_secrecy_add = 5`<br>• `enemy_hostile_scheme_success_chance_add = -3` | +30 Hostile Scheme Resistance<br>+50 Owned Scheme Secrecy<br>-30% Enemy Plot Success Chance |
+
+> **Adaptive Stewardship Design**:
+> - `monthly_income_mult` and `men_at_arms_maintenance` apply to **all** character types (landed rulers, mercenary captains, traveling scholars).
+> - `domain_tax_mult` seamlessly empowers landed rulers holding castles and cities.
+> - `domicile_building_cost_mult` discounts camp upgrades for landless adventurers and family estates for administrative rulers.
+
+---
+
+## 5. Trait A: `lifestyle_blood_transcendence` (3 Specific Tracks)
+
+> *"The blood mage turns their power inward, purifying their mortal biology into an enduring, terrifying vessel that thrives in the wilderness, single combat, and foreign lands."*
+
+Tailored for **landless adventurers, traveling scholars, duelists, and rulers prioritizing personal invulnerability**.
+
+| # | Track | Theme | Target Modifiers per Rank (10 Ranks Total) | Full Track Cap (100 XP) |
+| :-: | :--- | :--- | :--- | :--- |
+| **1** | **`wayfarer`** | Wilderness, Travel & Mobility | • `character_travel_speed_mult = 0.04`<br>• `character_travel_safety = 2.5`<br>• `travel_attrition_reduction_mult = 0.05` | +40% Travel Speed Mult<br>+25 Flat Travel Safety<br>-50% Danger Attrition |
+| **2** | **`sustenance`** | Camp Logistics, Provisions & Independence | • `provisions_gain_mult = 0.05`<br>• `provisions_capacity_add = 40`<br>• `provisions_loss_mult = -0.03` | +50% Provisions Gain Rate<br>+400 Max Provisions Capacity<br>-30% Provision Loss / Spoilage |
+| **3** | **`vitality`** | Bodily Alchemy, Prowess & Duels | • `prowess = 1`<br>• `wound_recovery_mult = 0.05`<br>• `prowess_per_prestige_level = 0.2`<br>• `no_prowess_loss_from_age = yes` *(at rank 10)* | +10 Prowess<br>+50% Wound Recovery<br>Fame scales Prowess<br>No Prowess Loss from Age |
+
+---
+
+## 6. Trait B: `lifestyle_blood_sovereignty` (3 Specific Tracks)
+
+> *"The blood mage projects their will upon the world around them, saturating their realm, subjects, institutions, and armies in imperial occult authority."*
+
+Tailored for **landed kings, emperors, administrative governors, feudal overlords, and realm builders**.
+
+| # | Track | Theme | Target Modifiers per Rank (10 Ranks Total) | Full Track Cap (100 XP) |
+| :-: | :--- | :--- | :--- | :--- |
+| **1** | **`dominion`** | Territorial Iron Grip & Authority | • `monthly_county_control_growth_add = 0.08`<br>• `dread_baseline_add = 4`<br>• `monthly_tyranny = -0.015` | +0.80 Monthly Control Growth<br>+40 Dread Baseline<br>-0.15 Tyranny Decay Rate |
+| **2** | **`prosperity`** | Realm Development & Infrastructure | • `development_growth = 0.05`<br>• `character_capital_county_monthly_development_growth_add = 0.06`<br>• `holding_build_speed = 0.05`<br>• `county_opinion_add = 2` | +50% Realm Development Growth<br>+0.60 Capital Dev Growth<br>+50% Holding Build Speed<br>+20 Popular Opinion |
+| **3** | **`majesty`** | Imperial Court & Vassal Hierarchy | • `vassal_opinion = 2.5`<br>• `short_reign_duration_mult = -0.05`<br>• `monthly_prestige_gain_mult = 0.05`<br>• `siege_phase_time = -0.03` | +25 Vassal Opinion<br>-50% Short Reign Duration<br>+50% Monthly Prestige<br>-30% Siege Phase Duration |
+
+---
+
+## 7. Ritual Architecture & Selection Flow
 
 ```
                      [ Cast Major Blood Magic: Blood Empowerment ]
                                           │
                          Has Either Empowerment Trait?
-                                ├── NO  ──> Event: Fork in the Road
-                                │               ├── "Focus inward"   ──> Gains lifestyle_blood_transcendence
-                                │               └── "Focus outward"  ──> Gains lifestyle_blood_sovereignty
-                                │
-                                └── YES ──> Open Track Choice (Matching Trait Only)
-                                                └── Add +10 XP to Chosen Track
+                                 ├── NO  ──> Event: Fork in the Road
+                                 │               ├── "Focus inward"   ──> Gains lifestyle_blood_transcendence
+                                 │               └── "Focus outward"  ──> Gains lifestyle_blood_sovereignty
+                                 │
+                                 └── YES ──> Open Track Choice (Matching Trait Only)
+                                                 └── Add +10 XP to Chosen Track
 ```
 
 ### Mutually Exclusive Logic
@@ -92,56 +170,12 @@ tracks = {
 
 ---
 
-## 4. Trait A: `lifestyle_blood_transcendence` (The Inner Vessel)
-
-> *"The blood mage turns their power inward, purifying their mortal biology into an enduring, terrifying vessel that thrives in the wilderness, single combat, and foreign lands."*
-
-Tailored for **landless adventurers, traveling scholars, duelists, martial commanders, and sovereign rulers who prioritize personal invulnerability**.
-
-### 8 Proposed Tracks (5 Benefit Options per Track)
-All candidate modifiers use verified vanilla 1.20 script keys. Values are listed **per rank** (10 ranks / up to 100 XP per track).
-
-| # | Track Name & Theme | Option 1 | Option 2 | Option 3 | Option 4 | Option 5 |
-| :-: | :--- | :--- | :--- | :--- | :--- | :--- |
-| **1** | **`vitality`**<br>*(Physical Perfection & Duels)* | `prowess = 1`<br>*(+1 Prowess per 2 ranks)* | `health = 0.08`<br>*(+0.08 Extra Health; stacks with base)* | `wound_recovery_mult = 0.05`<br>*(+5% Wound Recovery)* | `disease_resistance = 0.1`<br>*(+10% Extra Illness Resist)* | `prowess_per_prestige_level = 0.2`<br>*(Fame converts to Prowess)* |
-| **2** | **`wayfarer`**<br>*(Wilderness & Movement)* | `character_travel_speed_mult = 0.04`<br>*(+4% Travel Speed Mult)* | `character_travel_safety = 2.5`<br>*(+2.5 Travel Safety)* | `travel_attrition_reduction_mult = 0.05`<br>*(-5% Danger Attrition)* | `character_travel_speed = 2`<br>*(+2 Flat Travel Speed)* | `movement_speed = 0.02`<br>*(+2% Army Movement Speed)* |
-| **3** | **`sustenance`**<br>*(Logistics & Survival)* | `provisions_gain_mult = 0.05`<br>*(+5% Provisions Gained)* | `provisions_capacity_add = 40`<br>*(+40 Max Provisions)* | `provisions_loss_mult = -0.03`<br>*(-3% Provision Loss Rate)* | `domicile_building_cost_mult = -0.03`<br>*(-3% Camp Upgrade Cost)* | `men_at_arms_maintenance = -0.03`<br>*(-3% MaA Upkeep Cost)* |
-| **4** | **`occult_veil`**<br>*(Survival & Subterfuge)* | `hostile_scheme_resistance_add = 3`<br>*(+3 Scheme Resist)* | `character_travel_safety = 2`<br>*(+2 Travel Safety)* | `owned_scheme_secrecy_add = 5`<br>*(+5 Scheme Secrecy)* | `hostile_scheme_phase_duration_mult = -0.03`<br>*(-3% Scheme Phase Time)* | `enemy_hostile_scheme_success_chance_add = -3`<br>*(-3% Enemy Success Chance)* |
-| **5** | **`mesmerism`**<br>*(Personal Magnetism)* | `adventurer_contract_reward_mult = 0.05`<br>*(+5% Contract Rewards)* | `sway_scheme_power_mult = 0.05`<br>*(+5% Sway Scheme Power)* | `courtier_and_guest_opinion = 3`<br>*(+3 Follower/Guest Opinion)* | `general_opinion = 2.5`<br>*(+2.5 General Opinion)* | `mercenary_hire_cost_mult = -0.03`<br>*(-3% Sellsword Cost)* |
-| **6** | **`transmutation`**<br>*(Bodily Alchemy & Mind)* | `stress_loss_mult = 0.05`<br>*(+5% Stress Relief)* | `stress_gain_mult = -0.03`<br>*(-3% Stress Incurred)* | `monthly_lifestyle_xp_gain_mult = 0.03`<br>*(+3% All Lifestyle XP)* | `all_skills = 0.5`<br>*(+1 All Stats per 2 ranks)* | `fertility = 0.02`<br>*(+2% Fertility)* |
-| **7** | **`blood_instinct`**<br>*(Combat Ferocity)* | `maa_damage_mult = 0.03`<br>*(+3% MaA Damage)* | `knight_effectiveness_mult = 0.05`<br>*(+5% Knight Effectiveness)* | `knight_limit = 1`<br>*(+1 Knight Cap at ranks 3, 6, 9)* | `advantage = 1`<br>*(+1 Commander Advantage)* | `maa_pursuit_mult = 0.05`<br>*(+5% Fatal Casualties/Pursuit)* |
-| **8** | **`lineage`**<br>*(Genetics & Kin Resonance)* | `positive_random_genetic_chance = 0.05`<br>*(+5% Positive Congenital)* | `positive_inactive_inheritance_chance = 0.05`<br>*(+5% Inactive Inheritance)* | `dynasty_opinion = 3`<br>*(+3 Kin Opinion)* | `fertility = 0.03`<br>*(+3% Fertility)* | `child_education_aptitude = 2`<br>*(+2 Ward Education Success)* |
-
----
-
-## 5. Trait B: `lifestyle_blood_sovereignty` (The Outer Dominion)
-
-> *"The blood mage projects their will upon the world around them, saturating their realm, subjects, institutions, and armies in imperial occult authority."*
-
-Tailored for **landed kings, emperors, administrative governors, feudal overlords, and dynastic heads**.
-
-### 8 Proposed Tracks (5 Benefit Options per Track)
-All candidate modifiers use verified vanilla 1.20 script keys. Values are listed **per rank** (10 ranks / up to 100 XP per track).
-
-| # | Track Name & Theme | Option 1 | Option 2 | Option 3 | Option 4 | Option 5 |
-| :-: | :--- | :--- | :--- | :--- | :--- | :--- |
-| **1** | **`dominion`**<br>*(Territorial Iron Grip)* | `monthly_county_control_growth_add = 0.08`<br>*(+0.08 Control Growth)* | `dread_baseline_add = 4`<br>*(+4 Dread Baseline)* | `monthly_tyranny = -0.015`<br>*(-0.015 Tyranny Decay)* | `garrison_size = 0.05`<br>*(+5% Holding Garrison)* | `county_opinion_add = 2`<br>*(+2 Popular Opinion)* |
-| **2** | **`prosperity`**<br>*(Domain & Fiscal Extravagance)* | `domain_tax_mult = 0.03`<br>*(+3% Domain Tax)* | `gold_construction_cost = -0.03`<br>*(-3% Building Cost)* | `holding_build_speed = 0.05`<br>*(+5% Build Speed)* | `development_growth = 0.05`<br>*(+5% Domain Development)* | `character_capital_county_monthly_development_growth_add = 0.06`<br>*(+0.06 Capital Dev Growth)* |
-| **3** | **`majesty`**<br>*(Imperial Court & Aura)* | `vassal_opinion = 2.5`<br>*(+2.5 Vassal Opinion)* | `monthly_prestige_gain_mult = 0.05`<br>*(+5% Monthly Prestige)* | `general_opinion = 2.5`<br>*(+2.5 General Opinion)* | `short_reign_duration_mult = -0.05`<br>*(-5% Short Reign Penalty)* | `courtier_and_guest_opinion = 3`<br>*(+3 Courtier Opinion)* |
-| **4** | **`hegemony`**<br>*(Armies & Battlefield Command)* | `knight_effectiveness_mult = 0.06`<br>*(+6% Knight Effectiveness)* | `levy_size = 0.04`<br>*(+4% Realm Levy Size)* | `advantage = 1`<br>*(+1 Commander Advantage)* | `siege_phase_time = -0.03`<br>*(-3% Siege Phase Duration)* | `offensive_war_opinion_mult = -0.05`<br>*(-5% War Malus)* |
-| **5** | **`shadow_throne`**<br>*(Court Intrigue & Terror)* | `dread_gain_mult = 0.06`<br>*(+6% Dread Gain)* | `owned_scheme_secrecy_add = 6`<br>*(+6 Scheme Secrecy)* | `hostile_scheme_power_mult = 0.04`<br>*(+4% Hostile Scheme Power)* | `dread_baseline_add = 4`<br>*(+4 Dread Baseline)* | `agent_join_chance = 3`<br>*(+3 Agent Invitation)* |
-| **6** | **`sacred_rule`**<br>*(Religious Hierarchy & Zeal)* | `monthly_piety_gain_mult = 0.06`<br>*(+6% Monthly Piety Mult)* | `same_faith_opinion = 3`<br>*(+3 Faithful Opinion)* | `holy_order_hire_cost_mult = -0.04`<br>*(-4% Holy Order Cost)* | `clergy_opinion = 3`<br>*(+3 Clergy Opinion)* | `county_faith_conversion_speed_mult = 0.05`<br>*(+5% County Conversion)* |
-| **7** | **`renaissance`**<br>*(Cultural Golden Age)* | `cultural_head_fascination_mult = 0.06`<br>*(+6% Cultural Fascination)* | `development_growth = 0.05`<br>*(+5% Realm Development)* | `monthly_lifestyle_xp_gain_mult = 0.03`<br>*(+3% Lifestyle XP Mult)* | `different_culture_opinion = 2.5`<br>*(+2.5 Foreign Culture Opinion)* | `cultural_acceptance_gain_mult = 0.05`<br>*(+5% Acceptance Gain)* |
-| **8** | **`dynasty`**<br>*(Noble Bloodline & Renown)* | `monthly_dynasty_prestige_mult = 0.04`<br>*(+4% Renown Gain)* | `dynasty_opinion = 3`<br>*(+3 Kin Opinion)* | `positive_random_genetic_chance = 0.05`<br>*(+5% Positive Congenital)* | `positive_inactive_inheritance_chance = 0.05`<br>*(+5% Inactive Inheritance)* | `child_education_aptitude = 2`<br>*(+2 Ward Education Success)* |
-
----
-
-## 6. Shared Engine & Spell Integration
+## 8. Shared Engine & Spell Integration
 
 Both traits plug into the mod's existing ritual gates without duplicate logic or orphaned checks.
 
 ### Centralized XP Gate Script Value
-Any ritual checking empowerment XP (e.g. `bm_enhance_education_decision` or `bm_blood_rune_minimum_xp`) evaluates total earned empowerment XP via a single script value:
+Any ritual checking empowerment XP (e.g. `bm_enhance_education_decision` or `bm_blood_rune_minimum_xp`) evaluates total earned empowerment XP across all 8 tracks via a single script value:
 ```pdx
 bm_blood_empowerment_total_xp = {
     value = 0
@@ -157,6 +191,6 @@ bm_blood_empowerment_total_xp = {
 ```
 
 ### Max-Cap Fallback Buff
-When all 8 tracks of the chosen trait reach the 100 XP cap, casting the Major Blood Empowerment ritual grants:
+When all 8 tracks of the chosen trait reach the 100 XP cap (800 XP total), casting the Major Blood Empowerment ritual grants:
 - `temporary_buff_self` (+2 all stats, +4 prowess for 10 years).
 - Roll chance for permanent attribute gains (+1 to a random attribute).

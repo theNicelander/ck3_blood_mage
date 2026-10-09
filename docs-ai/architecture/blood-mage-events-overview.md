@@ -15,6 +15,7 @@
 | `events/bm_blood_golem_events.txt` | `blood_golem` | Decision `blood_golem_creation_decision` | Golem crafting outcome, stat shaping duels. |
 | `events/bm_blood_rune_events.txt` | `bm_blood_rune` | Event `bm_cast_blood_magic_major.001` | Inscription of minor, major, or superior body runes. |
 | `events/bm_channel_lifeforce_bloodline_events.txt` | `bm_channel_lifeforce_bloodline` | Event `bm_cast_blood_magic_major.001` | Bestows permanent house modifiers. |
+| `events/bm_channel_manifest_traits_events.txt` | `bm_channel_manifest_traits` | Event `bm_cast_blood_magic_major.001` | Learning self-duel to manifest, upgrade, or cleanse congenital traits. |
 | `events/bm_channel_lifeforce_enlightenment_minor_events.txt` | `bm_channel_lifeforce_enlightenment_minor` | Event `bm_cast_blood_magic_minor.001` | Converts minor lifeforce into temporary attribute boost. |
 | `events/bm_blood_empowerment_event.txt` | `bm_blood_empowerment_event` | Event `bm_cast_blood_magic_major.001` | Advances chosen CE track (+10 XP) or fallback Versatility. |
 | `events/bm_education_enhance.txt` | `bm_education_enhancement` | Event `bm_cast_blood_magic_major.001` | Learning duel to advance education star level (up to 5-star). |
