@@ -2,16 +2,7 @@
 
 ## Local fork
 
-This repository is a CK3 1.20 fork of [Blood Mages by Nicelander](https://steamcommunity.com/sharedfiles/filedetails/?id=3470491478), maintained at [im-mortal/ck3_blood_mage](https://github.com/im-mortal/ck3_blood_mage). It includes the current upstream gameplay and a complete Russian localization. `descriptor.mod` declares CK3 `1.20.*` support; in-game compatibility and translated UI layout still require testing.
-
-## Русская локализация
-
-Все тексты мода переведены на русский: свойства, решения, взаимодействия, события, панель магии крови, модификаторы, здания, конфессии, священные места и отладочные действия. Перевод выбирается автоматически при русском языке игры; отдельный русификатор не нужен. Личные ритуалы доступны через щелчок правой кнопкой по своему персонажу.
-
-Для ручной установки поместите файлы мода в папку `Documents/Paradox Interactive/Crusader Kings III/mod/ck3_blood_mage`. Создайте рядом файл `ck3_blood_mage.mod`, скопировав в него содержимое `descriptor.mod` и добавив строку `path="mod/ck3_blood_mage"`. Включите локальную копию в наборе модов лаунчера. Одновременно должна быть активна только одна копия Blood Mages.
-
-После первого запуска проверьте русские подсказки и `Documents/Paradox Interactive/Crusader Kings III/logs/error.log`. Полнота перевода проверяется командой `python3 scripts/bm_validate_localization.py`.
-
+This repository is an independent CK3 1.19 compatibility fork of [Blood Mages by Nicelander](https://steamcommunity.com/sharedfiles/filedetails/?id=3470491478). Relative to the original mod, it rebases religion, duel, decision-AI, trait, and character-template definitions for CK3 1.19; scopes duplicate localization keys; and adds portrait effects that evolve with Blood Mage mastery. The detailed gameplay history and local compatibility summary are in `CHANGELOG.md`.
 
 This mod is for you if:
 
@@ -33,23 +24,27 @@ characters:
 | Setting | AI acquisition weight | Naturally generated/inherited AI traits retained |
 | --- | --- | --- |
 | Player Only | 0× | 0% |
-| One in 10,000 | 0.05× Default | 5% |
-| One in 1,000 | 0.50× Default | 50% |
-| Default (One in 500) | 1.00× | 100% |
-| One in 100 | 2.00× Default | 100%, plus increased newborn acquisition |
-| One in 10 | 5.00× Default | 100%, plus increased newborn acquisition |
-| Everyone | 10.00× Default | 100%, and all AI newborns receive the trait |
+| Extremely Rare | 0.01× Default | 10% |
+| Rare | 0.10× Default | 40% |
+| Uncommon | 0.50× Default | 70% |
+| Default | 1.00× | 100% |
+| More Frequent | 2.00× Default | 100%, plus increased newborn prevalence |
 
-These names describe approximate spontaneous prevalence, not the chance of every AI
-interaction succeeding. Acquisition weights scale each action's existing AI weight;
-targets, relationships, eligibility and check cadence still matter. Retention is a
-separate review of naturally generated or inherited AI traits. Increased-prevalence
-settings add birth rolls for AI children who have not already received the trait.
-The default keeps standard inheritance and spontaneous appearance. The rule does
-not reduce player access to Blood Mage decisions or interactions.
+The acquisition multiplier scales each AI decision or interaction's existing weight; it is not an
+absolute chance that every AI character becomes a Blood Mage. For example, the two annually checked
+initiation decisions have a 10% Default AI chance when eligible, so Rare changes each to 1% and
+Extremely Rare changes each to 0.1%. Character interactions also depend on valid targets, check
+cadence, relationships, and their own willingness modifiers, so they do not have one universal
+absolute probability.
 
-Select the prevalence rule when creating a campaign. Existing saves keep their stored
-game rules; this localization update does not remove traits or change gameplay balance.
+The retention percentage is a separate one-time roll for AI traits assigned through natural
+generation or inheritance. The rule does not reduce player access to Blood Mage decisions or
+interactions. **Default**
+preserves the mod's original balance, **Uncommon** provides a moderate reduction, and **Rare** and **Extremely Rare** are intended
+for long campaigns where unrestricted AI propagation would otherwise saturate major dynasties.
+
+The update is compatible with existing saves, which continue with **Default** behavior and do not
+retroactively remove Blood Mages. Select a different prevalence setting when starting a new campaign.
 
 Choose **Blood Mage Lore: Historical** for vanilla CK3. For AGOT, load the small optional
 [**Blood Mages - AGOT Religions**](https://steamcommunity.com/sharedfiles/filedetails/?id=3775630683) companion after A Game of Thrones and Blood Mages, then choose
@@ -74,8 +69,8 @@ Each track gains experience as you use related abilities, with ten progressive t
 
 Blood Mages owns a Blood Magic story panel that tracks all five disciplines in
 a compact two-row icon grid, the exact Major and Minor Lifeforce stack counts,
-attunement, and the available story decisions. Personal rituals are self-interactions accessible by
-right-clicking your character. After those decisions it shows independently
+attunement, and the core
+progression decisions. After those decisions it shows independently
 collapsible, scrollable rosters for the Blood Golems and the Crimson
 Warriors/Champions currently serving at the Blood Mage's court; an empty
 roster collapses to a compact `None` row. Opening the Situations window repairs
@@ -86,7 +81,7 @@ and Attunement labels explain their resource and advancement rules on hover.
 Compatibility submods can shadow the story definition at its exact virtual path
 to add integration-only features without taking ownership of its lifecycle,
 progression display, or roster implementation. The interactive roster control
-uses a complete overlay of `gui/window_situation_list.gui`
+requires a complete CK3 1.19.0.6 overlay of `gui/window_situation_list.gui`
 because the vanilla story-cycle row exposes no additive widget hook. Generic
 scripted-GUI contracts gate and refresh the custom renderer, allowing a later
 compatibility submod to extend it without optional links in Blood Mages.

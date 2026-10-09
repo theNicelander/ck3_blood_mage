@@ -43,7 +43,6 @@ Costs, gating, cooldowns and AI weights are in those files. Descriptions and too
 - Gating is progression-driven. Stronger actions need more standing and more experience in the blood mage tracks (see `blood-mage-traits.md`). Using blood magic in turn grants track XP.
 - Decisions mostly trigger events (`seek_power.*`, `blood_golem.*`, `bm_channel_lifeforce_bloodline.*`, `bm_mass_lifedrain.*`). The decision is the entry point and the event holds the story and the outcome.
 - Acquisition routes share `bm_become_blood_mage_effect`, which also creates the story cycle.
-- Wilderness decisions display `bm_cooldown_active_tt` while their shared cooldown flag blocks another search; both English and Russian provide the requirement text.
 - AI uses a few shared modifiers: one for self-preservation (health) and one for acquisition through the prevalence rule. Player-only actions switch the AI off.
 
 ## Gotchas

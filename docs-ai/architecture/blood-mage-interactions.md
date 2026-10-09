@@ -35,7 +35,6 @@
 - **AI Teaching Priority:** AI rulers grant blood magic in strict order: spouse first, then children, then liege, then councillors.
 - **Story Panel Sync:** Granting warrior/champion status automatically updates the Crimson Retinue in the Blood Magic panel.
 - **Self-Interactions Only:** All personal blood magic rituals targeting the character themselves are invoked exclusively by right-clicking the character via self-character interactions. No duplicate decisions are used.
-- **Request Description:** `ask_for_blood_magic_interaction` uses `ask_for_blood_magic_interaction_desc`: the actor receives magic from the recipient. Granting magic uses a separate description for the opposite direction.
 
 ## Where the details live
 

@@ -4,13 +4,6 @@ Rules (`.agents/rules/`) say how to write CK3 script in general. These docs say 
 
 ## Path to Doc
 
-Player-facing text has an English source and a complete Russian translation in matching
-`localization/english/` and `localization/russian/` files. The
-`scripts/bm_validate_localization.py` checker enforces matching keys, CK3 format, protected
-tokens, local aliases, and explicit `bm_` UI references. GitHub Actions runs it together
-with the repository format checker. Shared terminology: Lifeforce = Жизненная сила;
-Crimson Empowerment = Багровое усиление; Hematurgy = Гематургия.
-
 | Path | Doc |
 | --- | --- |
 | `common/story_cycles/bm_blood_mage_story.txt`, `bm_blood_mage_story_list_effects.txt`, `bm_blood_mage_story_values.txt` | `blood-mage-story.md` |
