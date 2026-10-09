@@ -16,17 +16,12 @@
 | `convert_to_blood_magic_from_witch` | Standard | Free. No cooldown. | Player only. Has witch trait. | None | Removes witch trait, grants blood mage. |
 | `seek_power_decision` | Standard | Free. CD: 2 yrs. | Feudal/landed blood mage. | +1-2 school | Wilderness hunt event chain (`seek_power.001`). Harvests lifeforce. |
 | `seek_power_decision_wanderer` | Standard | Free. CD: 1 yr. | Landless adventurer blood mage. | +1-2 school | Landless wilderness event chain. |
-| `channel_lifeforce_bloodline` | Standard | 350p + Major Lifeforce. CD: 3 yrs. | Has noble house. | +5 bloodline | Event `bm_channel_lifeforce_bloodline.001`. Adds permanent house modifier. |
 | `blood_golem_creation_decision` | Standard | 750p + Major Lifeforce. CD: 3 yrs. | High learning/track XP. | +5 bloodline | Spawns courtier in `bm_house_golem`, triggers shaping duel (`blood_golem.001`). |
 | `mass_lifedrain_prisoners_decision` | Situation | None. No CD. | Dungeon prisoners available. | +hematurgy | Mass harvests lifeforce from dungeon prisoners (`bm_mass_lifedrain.001`). |
 | `become_blood_cultist_decision` | Major | None. Rank 3 Devotion + 1 Major Lifeforce. | Blood mage. | None | Converts character and realm to Blóðtrú faith. |
-| `bm_channel_minor_lifeforce_decision` | Standard | 75 piety + Minor Lifeforce. | Has minor lifeforce. | +1 enlightenment | Triggers temporary attribute enhancement (`bm_channel_lifeforce_enlightenment_minor.001`). |
-| `bm_attune_lifeforce_decision` | Standard | 25 piety + Minor Lifeforce. | Has minor lifeforce. | None | Opens attunement selection (`bm_attune_lifeforce.001`). |
 | `bm_manifest_lifeforce_decision` | Standard | 100 piety. CD: 1 yr. | Piety rank >= 2. | +5 enlightenment | Learning duel to generate Lifeforce. |
-| `bm_blood_empowerment_decision` | Standard | 150 piety + Major Lifeforce. | Devotion rank >= 1. | +3 enlightenment | Advances Blood Empowerment (`bm_blood_empowerment_event.001`). |
-| `bm_improve_education_decision` | Standard | Scaled piety + Major Lifeforce. CD: 2 yrs. | Devotion rank >= 3, CE track XP. | +5 enlightenment | Upgrades education tier (`bm_education_enhancement.001`). |
-| `bm_new_education_decision` | Standard | 1000 piety + Major Lifeforce. CD: 2 yrs. | Devotion rank >= 4, tier 5 education, CE XP. | +5 enlightenment | Grants second education trait (`bm_education_new.001`). |
-| `bm_blood_rune_decision` | Standard | Piety + Major & Minor Lifeforce. CD: 5 yrs. | Devotion rank >= 2, Blood Mage XP. | +5 benediction | Inscribes or upgrades body runes (`bm_blood_rune.001`). |
+| `bm_cast_blood_magic_minor_decision` | Standard | Decision free; rites cost 25-75p + Minor Lifeforce. | Has minor lifeforce. | Dependent on rite (+1 enlightenment on channel) | Opens minor ritual selection (`bm_cast_blood_magic_minor.001`): Channel Minor Lifeforce, Attune Lifeforce. |
+| `bm_cast_blood_magic_major_decision` | Standard | Decision free; rites cost 150-1000p + Major Lifeforce. Per-rite CD flags (2-5 yrs). | Has major lifeforce, rank >= 1 Devotion. | +3 to +5 track XP per rite | Opens major ritual selection (`bm_cast_blood_magic_major.001`): Blood Empowerment, Enhance Education, New Education, Inscribe Blood Rune, Empower Bloodline. |
 
 ## Where the details live
 

@@ -25,8 +25,8 @@
 | `lifedrain_courtier_event_interaction` | Piety. Unlanded courtier. | Grants `lifeforce_modifier_minor` | +1 hematurgy |
 | Lethal duel kill (combat on-action) | Win lethal single combat duel. | Grants `lifeforce_modifier_major` | +2 hematurgy |
 | `bm_manifest_lifeforce` (decision) | 250 piety. Learning check. | Grants minor or major Lifeforce | +1 enlightenment |
-| `bm_blood_empowerment_decision` | 150 piety + Major Lifeforce. | Consumes `lifeforce_modifier_major` | +3 enlg, +10 CE |
-| `channel_lifeforce_bloodline` | 350 piety + Major Lifeforce. | Consumes `lifeforce_modifier_major` | +5 bloodline |
+| `bm_cast_blood_magic_minor_decision` | 25-75 piety + Minor Lifeforce. | Consumes `lifeforce_modifier_minor` | +0-1 enlg |
+| `bm_cast_blood_magic_major_decision` (Empowerment/Bloodline/etc) | 150-1000 piety + Major Lifeforce. | Consumes `lifeforce_modifier_major` (plus minor for runes) | +3-5 track XP |
 | `make_blood_knight_interaction` | 100 piety + Major Lifeforce. | Consumes `lifeforce_modifier_major` | +2 benediction |
 | `empower_blood_knight_interaction` (Minor option) | Minor Lifeforce. | Consumes `lifeforce_modifier_minor` | +1 benediction |
 | `empower_blood_knight_interaction` (Major option) | Major Lifeforce. | Consumes `lifeforce_modifier_major` | +2 benediction |
