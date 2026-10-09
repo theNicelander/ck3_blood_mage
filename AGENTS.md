@@ -46,7 +46,8 @@ Rules: `ck3-scripting.md` (always on), `ck3-localization.md` (always on), `ck3-d
 
 ## Localization
 
-See `.agents/rules/ck3-localization.md` (english only, sibling keys, loc documents the script).
+See `.agents/rules/ck3-localization.md` (English source and Russian translation, sibling keys, loc documents the script).
+Run `python3 scripts/bm_validate_localization.py` when editing localization.
 
 ## Never
 

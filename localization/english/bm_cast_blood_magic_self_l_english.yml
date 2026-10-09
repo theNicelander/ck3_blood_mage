@@ -48,7 +48,7 @@
 
     # New Education
     bm_cast_blood_magic_self_major_new_education: "Embrace New Education"
-    bm_cast_blood_magic_self_major_new_education_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to attempt to improve one of your Education traits"
+    bm_cast_blood_magic_self_major_new_education_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to gain an additional Education trait in a new discipline"
     bm_cast_blood_magic_self_major_new_education_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_new_education')|0] Experience in [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]"
     NOT_bm_cast_blood_magic_self_major_new_education_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_new_education')|0] Experience in [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]"
 

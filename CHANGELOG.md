@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+### Russian localization update
+
+* Added all 946 localization keys in 23 Russian files, preserving substitutions, icons and formatting.
+* Added missing wilderness cooldown and Tenerife labels to English and Russian.
+* Fixed the request-for-magic interaction to use its own description; corrected the new-education description in both languages.
+* Added a localization validator and GitHub Actions checks for file format, coverage and token integrity.
+* Updated README compatibility and prevalence documentation to match the current CK3 1.20 definitions. No gameplay balance changes or descriptor changes.
+
+### Earlier development notes
+
 * Consolidated the Cult of Quintessence into a single unified faith (Cult of the Quintessence), replaced syncretic variants with universal tolerance mechanics (Adaptive tenet, Pluralistic doctrine, and cult identity opinion buffering), and tuned the "Embrace the Blood Cultist Faith" decision to require 1 Major Lifeforce and rank 3 Devotion with no piety cost.
 
 * Added the "Challenge the Blood Mage of Reykjavik" decision, allowing non-blood-mage characters in Vestisland (Reykjavik) to challenge an occult hermit in a Learning and Prowess duel to awaken blood magic, risking the mental and physical backlash of Crimson Initiation upon defeat.

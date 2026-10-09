@@ -1,0 +1,18 @@
+name: Localization integrity
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  localization:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check game file integrity
+        run: python3 scripts/check_repo.py
+      - name: Check Russian localization
+        run: python3 scripts/bm_validate_localization.py

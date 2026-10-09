@@ -1,0 +1,55 @@
+﻿l_russian:
+  # Decision group type
+  decision_group_type_bm_decision_group: "Решения мага крови"
+  convert_to_blood_magic_from_witch.tooltip: "Стать магом крови"
+  mass_lifedrain_prisoners_decision.text: "Есть хотя бы один пленник"
+
+  # Convert to blood magic from witch
+  convert_to_blood_magic_from_witch: "Стать магом крови"
+  convert_to_blood_magic_from_witch_desc: "Отриньте примитивные пути колдунов и станьте магом крови!"
+  convert_to_blood_magic_from_witch_confirm: "Стать магом крови"
+  convert_to_blood_magic_from_witch_tooltip: "Стать магом крови"
+
+  # Convert to the blood cultist faith
+  become_blood_cultist_decision: "Принять веру культа крови"
+  become_blood_cultist_decision_confirm: "Кровь будет поддерживать мою жизнь"
+  become_blood_cultist_decision_tooltip: "Отречься от нынешней веры и принять запретную силу магии крови"
+  become_blood_cultist_decision_desc: "Шёпот стал слишком настойчивым, чтобы его игнорировать. Рассказы о бессмертии, о силе, черпаемой из самой сущности жизни. Старые верования — лишь пустые оболочки в сравнении с осязаемым могуществом культа крови. Его священные тексты говорят о возвышении через жертву, о подчинении законов природы через управление багровой валютой жизни. Возможно, пора оставить пустые обещания древних богов и принять живую истину, текущую в каждом существе."
+  become_blood_cultist_decision_effect_tooltip: "Выберите Блодтру, Кэцудо или Сюэдао."
+
+  # Repair pre-reformation head of faith
+  bm_repair_blodtru_reformation_decision: "Восстановить возможность реформации Блодтру"
+  bm_repair_blodtru_reformation_decision_confirm: "Упразднить преждевременное главенство"
+  bm_repair_blodtru_reformation_decision_tooltip: "Отделить преждевременно созданную должность светского главы веры от Блодтру, чтобы конфессию можно было реформировать; титул и держава его обладателя сохранятся"
+  bm_repair_blodtru_reformation_decision_desc: "У Блодтру появился светский глава веры ещё до формального упорядочения обрядов. Эта преждевременная должность теперь препятствует реформации. Отделение должности от конфессии восстановит традицию без главы до выбора должного религиозного устройства при реформации, сохранив титул и державу его обладателя."
+
+  # Become a blood mage
+  bm_self_initiation_decision: "Попытаться посвятить себя"
+  bm_self_initiation_decision_confirm: "Я — собственный тигель."
+  bm_self_initiation_decision_desc: "Книги и свитки дают лишь обрывочные подсказки, но у меня нет ни наставника, ни подопытного. Единственный путь вперёд — самый опасный: провести ритуал посвящения на себе. Я стану и хирургом, и пациентом, и чародеем, и жертвой.\n\nМоя кровь станет средством, а разум — полем битвы, где мне предстоит покорить необузданную силу. Здесь нет догм, лишь опасное знание и сила моей воли. Успех даст мне власть над самой сущностью жизни. Неудача потребует платы разумом и телом."
+  bm_self_initiation_decision_tooltip: "Использовать запретные знания, чтобы провести ритуал посвящения на себе. Без наставника риск огромен. Неудача может разрушить ваш разум или изувечить тело."
+
+  # Become blood mage, from blood cultist
+  bm_blood_cultist_become_blood_mage_decision: "Культист крови: стать магом крови"
+  bm_blood_cultist_become_blood_mage_decision_confirm: "Бросить вызов древнему мастеру"
+  bm_blood_cultist_become_blood_mage_decision_tooltip: "Отправиться к священным гейзерам Рейкьявика или Цусимы, чтобы бросить вызов древнему мудрецу и доказать готовность владеть магией крови"
+  bm_blood_cultist_become_blood_mage_decision_desc: "Даже преданному последователю кровавой веры одной веры недостаточно для владения багровыми искусствами. Древние предания рассказывают о мудреце — бессмертном отшельнике ста одиннадцати лет, живущем у кипящих геотермальных гейзеров Рейкьявика и вулканических источников Цусимы. Путешествие к этим священным водам и поединок учёности с отшельником позволят доказать, что вы достойны стать не просто почитателем, а истинным владыкой магии крови."
+
+
+
+  manifest_lifeforce_major_success_tt: "Вам удалось проявить жизненную силу"
+  manifest_lifeforce_minor_success_tt: "Вам удалось проявить жизненную силу"
+  manifest_lifeforce_major_failure_tt: "Вам не удалось проявить жизненную силу"
+  manifest_lifeforce_minor_failure_tt: "Вам не удалось проявить жизненную силу"
+
+  # Become blood mage Decision
+  bm_enhance_blood_ritual_decision: "Ритуал крови"
+  bm_enhance_blood_ritual_decision_confirm: "Бросить вызов древнему мастеру"
+  bm_enhance_blood_ritual_decision_tooltip: "Отправиться к священным гейзерам Рейкьявика или Цусимы, чтобы вызвать древнего мудреца на поединок учёности."
+  bm_enhance_blood_ritual_location_requirement_tt: "Вы должны находиться в Рейкьявике (Вестисланд) или на Цусиме"
+  bm_enhance_blood_ritual_decision.success_tt: "$bm_geyser_duel.success_tt$"
+  bm_enhance_blood_ritual_decision.mental_failure_tt: "$bm_geyser_duel.mental_failure_tt$"
+  bm_enhance_blood_ritual_decision.physical_failure_tt: "$bm_geyser_duel.physical_failure_tt$"
+  bm_enhance_blood_ritual_decision.injury_failure_tt: "$bm_geyser_duel.injury_failure_tt$"
+
+  bm_enhance_blood_ritual_decision_desc: "Долгие исследования багровых искусств привели меня к этому рубежу. Древние предания рассказывают о мудреце — одиноком отшельнике ста одиннадцати лет, охраняющем геотермальные гейзеры Рейкьявика и священные источники Цусимы. Сразившись с древним мастером в состязании учёности, я смогу раскрыть глубочайшие тайны магии крови.\n\nПобеда пробудит багровые искусства в вашей крови; поражение неизбежно обернётся сломанным разумом или искалеченной плотью."

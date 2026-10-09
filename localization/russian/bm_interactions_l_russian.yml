@@ -1,0 +1,53 @@
+﻿l_russian:
+  # Give blood magic
+  grant_blood_magic_interaction: "Сделать магом крови"
+  grant_blood_magic_interaction_desc: "[recipient.GetShortUINameNoTooltip] получит силу магии крови"
+
+  # Ask for blood magic
+  ask_for_blood_magic_interaction: "Попросить дар магии крови"
+  ask_for_blood_magic_interaction_desc: "Попросить персонажа [recipient.GetShortUINameNoTooltip] даровать вам силу магии крови"
+  ask_for_blood_magic_interaction_requirement: "Персонаж должен быть вашим другом, лучшим другом, любовником или родственной душой"
+  NOT_ask_for_blood_magic_interaction_requirement: "Персонаж должен быть вашим другом, лучшим другом, любовником или родственной душой"
+
+  # Get blood magic from prisoner
+  bm_get_blood_magic_from_prisoner_interaction: "Получить магию крови от пленника"
+  bm_get_blood_magic_from_prisoner_interaction.success: "Я становлюсь магом крови"
+  bm_get_blood_magic_from_prisoner_interaction.fail: "Мне не удалось стать магом крови"
+  bm_get_blood_magic_from_prisoner_interaction.desc: "Я поедаю плоть пленника, пытаясь обрести его магию крови"
+
+  # Grant Lifeforce
+  grant_lifeforce_interaction: "Даровать жизненную силу"
+  grant_lifeforce_interaction_desc: "Передать вашу жизненную силу персонажу [recipient.GetShortUINameNoTooltip]."
+  grant_lifeforce_interaction.grant_minor: "Даровать малую жизненную силу"
+  grant_lifeforce_interaction.grant_major: "Даровать большую жизненную силу"
+  grant_lifeforce_interaction.toast: "Я передаю жизненную силу персонажу [recipient.GetShortUINameNoTooltip]"
+  grant_lifeforce_interaction_requirement: "Чтобы даровать жизненную силу, необходим один из запасов: [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] или [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]."
+  NOT_grant_lifeforce_interaction_requirement: "Чтобы даровать жизненную силу, необходим один из запасов: [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] или [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]."
+
+
+  # Reverse lifedrained
+  grant_lifeforce_interaction_reversed: "Обратить вытягивание жизненной силы"
+  grant_lifeforce_interaction_reversed_desc: "На персонаже [recipient.GetShortUINameNoTooltip] действует [GetModifier('lifedrained_modifier').GetNameWithTooltip], но я могу вернуть отнятую жизненную силу"
+
+  # Cure illness
+  heal_disease_minor: "Исцелить лёгкий недуг"
+  heal_disease_major: "Исцелить недуг"
+  heal_disease_benediction: "Исцелить смертельный недуг"
+
+  heal_disease_minor_desc: "Исцелить лёгкий недуг"
+  heal_disease_major_desc: "Исцелить недуг"
+  heal_disease_benediction_desc: "Исцелить смертельный недуг"
+
+  # Give blood prowess
+  grant_crimson_warrior_interaction: "Сделать багровым воином"
+  grant_crimson_warrior_interaction_desc: "Передать вашу жизненную силу персонажу [recipient.GetShortUINameNoTooltip], навсегда усилив его боевые способности с помощью магии крови."
+  lifeforce_modifier_crimson_warrior: "Багровый воин"
+  lifeforce_modifier_crimson_warrior_desc: "Кровь этого воина наполнена тайной силой, дарующей сверхъестественные боевые способности."
+
+  grant_crimson_champion_interaction: "Сделать багровым чемпионом"
+  grant_crimson_champion_interaction_desc: "Передать вашу жизненную силу персонажу [recipient.GetShortUINameNoTooltip], навсегда усилив его боевые способности с помощью магии крови."
+  lifeforce_modifier_crimson_champion: "Багровый чемпион"
+  lifeforce_modifier_crimson_champion_desc: "Кровь этого воина наполнена тайной силой, дарующей сверхъестественные боевые способности."
+
+  # Tooltips
+  IN_COURT_OR_IMPRISONED: "Можно исцелять только себя или своих придворных"
