@@ -1,0 +1,70 @@
+﻿bm_channel_minor_lifeforce_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
+	decision_group_type = bm_decision_group
+
+	cost = { piety = 75 }
+
+	is_shown = {
+		has_trait = lifestyle_blood_mage
+	}
+	is_valid = {
+		has_character_modifier = lifeforce_modifier_minor
+	}
+
+	effect = {
+		debug_log = "BloodMageDecision: channel_minor_lifeforce | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+		trigger_event = { id = bm_channel_lifeforce_enlightenment_minor.001 }
+		remove_character_modifier = lifeforce_modifier_minor
+		add_xp_enlightenment = yes
+		custom_tooltip = channel_lifeforce_enlightenment_minor.effects_list
+	}
+
+	ai_check_interval = 6
+	ai_will_do = {
+		base = 10
+		modifier = {
+			add = -100
+			health <= fine_health
+		}
+	}
+}
+
+bm_attune_lifeforce_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
+	decision_group_type = bm_decision_group
+
+	cost = { piety = 25 }
+
+	is_shown = {
+		has_trait = lifestyle_blood_mage
+	}
+	is_valid = {
+		has_character_modifier = lifeforce_modifier_minor
+	}
+
+	effect = {
+		debug_log = "BloodMageDecision: attune_lifeforce | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+		trigger_event = { id = bm_attune_lifeforce.001 }
+		remove_character_modifier = lifeforce_modifier_minor
+		custom_tooltip = bm_attune_lifeforce.effects_list
+	}
+
+	ai_check_interval = 6
+	ai_will_do = {
+		base = 10
+		modifier = {
+			add = -100
+			health <= fine_health
+		}
+		modifier = {
+			add = 100
+			NOT = {
+				has_character_modifier = ancient_attuned
+				has_character_modifier = enlightenment_attuned
+				has_character_modifier = bloodline_attuned
+				has_character_modifier = benediction_attuned
+				has_character_modifier = hematurgy_attuned
+			}
+		}
+	}
+}
