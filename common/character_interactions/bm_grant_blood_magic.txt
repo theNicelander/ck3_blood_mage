@@ -18,8 +18,7 @@
     }
 
     on_accept = {
-
-        scope:actor = {debug_log = debug_log.blood_mage_log}
+        debug_log = "BloodMageInteraction: grant_blood_magic | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
         scope:recipient = {
             bm_become_blood_mage_effect = yes
             add_opinion = {
@@ -29,7 +28,6 @@
             }
         }
         scope:actor = { benediction_magic_cast_effect_major = yes }
-        debug_log = "BloodMageDebug: [recipient.GetShortUINameNoTooltip] Granted blood magic by [actor.GetShortUINameNoTooltip]"
     }
 
     # AI
@@ -48,7 +46,7 @@
         base = 0
         ai_willingness_to_do_postitive_magic = yes
 
-        # Prioritisation hierarchy: spouse > children > liege > councillors
+        # Prioritisation hierarchy: spouse > children > liege > councillors > knights > dynasty
         modifier = {
             scope:recipient = { is_spouse_of = scope:actor }
             add = 100
@@ -62,7 +60,19 @@
             add = 50
         }
         modifier = {
+            scope:recipient = { is_knight_of = scope:actor }
+            add = 35
+        }
+        modifier = {
             scope:recipient = { is_councillor_of = scope:actor }
+            add = 25
+        }
+        modifier = {
+            scope:recipient = {
+                exists = dynasty
+                exists = scope:actor.dynasty
+                dynasty = scope:actor.dynasty
+            }
             add = 25
         }
 

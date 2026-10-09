@@ -1,0 +1,99 @@
+﻿bm_debug_relation_tags = {
+	type = character
+
+	text = {
+		trigger = {
+			scope:second = { is_knight_of = root }
+		}
+		localization_key = bm_debug_rel_knight
+	}
+	text = {
+		trigger = {
+			scope:second = {
+				exists = dynasty
+				exists = root.dynasty
+				dynasty = root.dynasty
+			}
+		}
+		localization_key = bm_debug_rel_dynasty
+	}
+	text = {
+		trigger = {
+			scope:second = { is_close_family_of = root }
+		}
+		localization_key = bm_debug_rel_close_family
+	}
+	text = {
+		trigger = {
+			scope:second = {
+				OR = {
+					is_spouse_of = root
+					is_consort_of = root
+				}
+			}
+		}
+		localization_key = bm_debug_rel_spouse
+	}
+	text = {
+		trigger = {
+			scope:second = {
+				OR = {
+					has_relation_lover = root
+					has_relation_soulmate = root
+					has_secret_relation_lover = root
+				}
+			}
+		}
+		localization_key = bm_debug_rel_lover
+	}
+	text = {
+		trigger = {
+			scope:second = {
+				OR = {
+					has_relation_friend = root
+					has_relation_best_friend = root
+				}
+			}
+		}
+		localization_key = bm_debug_rel_friend
+	}
+	text = {
+		trigger = {
+			scope:second = {
+				OR = {
+					has_relation_rival = root
+					has_relation_nemesis = root
+				}
+			}
+		}
+		localization_key = bm_debug_rel_rival
+	}
+	text = {
+		trigger = {
+			scope:second = { is_councillor_of = root }
+		}
+		localization_key = bm_debug_rel_councillor
+	}
+	text = {
+		trigger = {
+			scope:second = { is_vassal_of = root }
+		}
+		localization_key = bm_debug_rel_vassal
+	}
+	text = {
+		trigger = {
+			scope:second = { is_courtier_of = root }
+		}
+		localization_key = bm_debug_rel_courtier
+	}
+	text = {
+		trigger = {
+			scope:second = { is_imprisoned_by = root }
+		}
+		localization_key = bm_debug_rel_prisoner
+	}
+	text = {
+		fallback = yes
+		localization_key = bm_debug_rel_none
+	}
+}

@@ -30,7 +30,7 @@
     }
 
     effect = {
-        debug_log = debug_log.blood_mage_log
+        debug_log = "BloodMageDecision: become_blood_cultist | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
 
         custom_tooltip = become_blood_cultist_decision_effect_tooltip
         trigger_event = bm_faith_conversion.0001

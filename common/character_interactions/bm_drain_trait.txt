@@ -47,7 +47,7 @@ trait_drain_prisoner_event_interaction = {
     }
 
     on_accept = {
-        scope:actor = {debug_log = debug_log.blood_mage_log}
+        debug_log = "BloodMageInteraction: trait_drain_prisoner | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
         scope:actor = {
             trigger_event = bm_trait_drain.001
             remove_character_modifier = lifeforce_modifier_major
@@ -61,5 +61,8 @@ trait_drain_prisoner_event_interaction = {
     ai_potential = { always = yes }
     ai_targets = { ai_recipients = prisoners }
     ai_frequency = 3
-    ai_will_do = { base = 20 }
+    ai_will_do = {
+        base = 20
+        ai_willingness_to_lifedrain = yes
+    }
 }

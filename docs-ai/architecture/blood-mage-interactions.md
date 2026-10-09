@@ -31,10 +31,14 @@
 
 ## Key Mechanics & AI Logic
 
-- **AI Harvesting Vetoes:** `factor = 0` blocks AI mages from draining close family, children, spouses, friends, lovers, knights, councillors, and high-opinion courtiers.
-- **AI Teaching Priority:** AI rulers grant blood magic in strict order: spouse first, then children, then liege, then councillors.
+- **AI Harvesting Vetoes:** `factor = 0` blocks AI mages from draining close family, children, spouses, friends, lovers, knights, councillors, dynasty members, and high-opinion courtiers (opinion > 20) unless rival or nemesis. Enforced across both lifedrain interactions and prisoner trait-draining.
+- **AI Teaching Priority:** AI rulers grant blood magic in order: spouse first (+100), children (+75), liege (+50), knights (+35), councillors (+25), dynasty (+25).
 - **Story Panel Sync:** Granting warrior/champion status automatically updates the Crimson Retinue in the Blood Magic panel.
 - **Self-Interactions Only:** All personal blood magic rituals targeting the character themselves are invoked exclusively by right-clicking the character via self-character interactions. No duplicate decisions are used.
+- **Debug Logging Standard:** Character interactions log to `logs/debug.log` using standardized prefixes:
+  - `BloodMageInteraction: <name> | Actor: <name> (ID:<id>, <Player|AI>) -> Recipient: <name> (ID:<id>, <Player|AI>) | Rel: <relation> | Tag: <role_tag> | Opinion: <opinion>`
+  - `BloodMageSelfCast: <name> | Actor: <name> (ID:<id>, <Player|AI>)`
+  - `BloodMageExecution: lifedrain | Executioner: <name> ... -> Victim: <name> ...`
 
 ## Where the details live
 
