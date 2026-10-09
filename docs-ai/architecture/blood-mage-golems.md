@@ -3,7 +3,7 @@
 ## Executive Summary
 
 - **What:** Artificial construct courtiers forged from Lifeforce. Absolute loyalty, specialized knights and champions.
-- **Creation Decision:** `bm_create_blood_golem`. Cost: 350 piety + Major Lifeforce. Req: 50 Learning XP. Cooldown: 5 years.
+- **Creation Decision:** `blood_golem_creation_decision` (`bm_create_blood_golem.txt`). Cost: 500 piety + Superior Lifeforce. Req: 50 track XP (`required_xp_blood_golem`). Cooldown: 3 years.
 - **Template & House:** Spawned via `blood_golem_template` into dedicated house `bm_house_golem` (dynasty `dynn_bm_golem`). Cannot inherit or marry.
 - **Shaping Ritual:** Event `blood_golem.002` allows molding traits (Berserker, Blademaster, Athletic, Physique, Education) via skill duels (`golem_duel_effect`). Costs piety. Risk of injury or fatal backlash (`death_blood_golem_failed`).
 
@@ -11,7 +11,7 @@
 
 | Phase | Script Entity | Function |
 | --- | --- | --- |
-| **Creation** | `bm_create_blood_golem` | Decision: consumes 350p + Major Lifeforce. Fires `blood_golem.001`. |
+| **Creation** | `blood_golem_creation_decision` | Decision: consumes 500p + Superior Lifeforce. Fires `blood_golem.001`. |
 | **Spawn** | `blood_golem_template` | Spawns adult construct courtier in `bm_house_golem`. |
 | **Shaping** | `blood_golem.002` | Event loop: spends piety to add martial traits via Learning duel checks (`golem_duel_effect`). |
 | **Roster** | `bm_refresh_blood_magic_rosters_effect` | Adds golem to Blood Magic story panel roster. |
@@ -21,7 +21,7 @@
 
 | Piece | File |
 | --- | --- |
-| Creation decision | `common/decisions/bm_create_blood_golem.txt` (`bm_create_blood_golem`) |
+| Creation decision | `common/decisions/cast_magic/bm_create_blood_golem.txt` (`blood_golem_creation_decision`) |
 | Creation & shaping events | `events/bm_blood_golem_events.txt` (`blood_golem.001`, `blood_golem.002`) |
 | Shaping duel effect | `common/scripted_effects/bm_golem_duel_effect.txt` (`golem_duel_effect`) |
 | Trait piety values | `common/script_values/bm_golem_piety_values.txt` |
