@@ -1,0 +1,11 @@
+﻿bm_has_sanguine_font_trigger = {
+	domicile ?= {
+		OR = {
+			has_domicile_parameter = bm_sanguine_font_tier_1
+			has_domicile_parameter = bm_sanguine_font_tier_2
+			has_domicile_parameter = bm_sanguine_font_tier_3
+			has_domicile_parameter = bm_sanguine_font_tier_4
+			has_domicile_parameter = bm_sanguine_font_tier_5
+		}
+	}
+}
