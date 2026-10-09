@@ -1,0 +1,372 @@
+﻿bm_domicile_sanguine_font_01 = {
+	construction_time = 180
+	allowed_domicile_types = { camp estate yurt ecclesiastical_domicile japanese_manor }
+	slot_type = external
+
+	can_construct_potential = {
+		OR = {
+			has_trait = lifestyle_blood_mage
+			faith = { religion = religion:bm_blodtru_religion }
+		}
+	}
+
+	cost = {
+		gold = 75
+	}
+	refund = {
+		gold = {
+			value = 75
+			multiply = 0.5
+			floor = yes
+		}
+	}
+
+	character_modifier = {
+		domicile_monthly_piety_add = 0.2
+		health = 0.2
+		life_expectancy = 2
+		positive_random_genetic_chance = 0.05
+		positive_inactive_inheritance_chance = 0.05
+	}
+
+	parameters = {
+		bm_sanguine_font_tier_1 = yes
+	}
+
+	on_complete = {
+		scope:owner = {
+			bm_update_sanguine_font_aura_effect = yes
+		}
+	}
+
+	ai_value = {
+		value = 50
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						has_trait = lifestyle_blood_mage
+						faith = { religion = religion:bm_blodtru_religion }
+					}
+				}
+			}
+			add = 100
+		}
+	}
+
+	asset = {
+		trigger = {
+			is_domicile_type = camp
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_camp_shrine.dds"
+		texture = "gfx/interface/window_domiciles/laamp_building_roaring_campfire.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/laamp_building_roaring_campfire_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/camp_buildings/ep3_ui_domicile_buildings_main_building"
+	}
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_camp_shrine.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_ancestral_shrine_chinese.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_ancestral_shrine_chinese_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/camp_buildings/ep3_ui_domicile_buildings_main_building"
+	}
+}
+
+bm_domicile_sanguine_font_02 = {
+	construction_time = 240
+	allowed_domicile_types = { camp estate yurt ecclesiastical_domicile japanese_manor }
+	slot_type = external
+	previous_building = bm_domicile_sanguine_font_01
+
+	can_construct_potential = {
+		OR = {
+			has_trait = lifestyle_blood_mage
+			faith = { religion = religion:bm_blodtru_religion }
+		}
+	}
+
+	cost = {
+		gold = 150
+	}
+	refund = {
+		gold = {
+			value = 150
+			multiply = 0.5
+			floor = yes
+		}
+	}
+
+	# Inherits Level 1 modifiers (+0.2 piety, +0.2 health, +2 lifespan, +0.05 genetics)
+	character_modifier = {
+		domicile_monthly_piety_add = 0.2
+		health = 0.2
+		life_expectancy = 2
+		positive_random_genetic_chance = 0.05
+		positive_inactive_inheritance_chance = 0.05
+	}
+
+	parameters = {
+		bm_sanguine_font_tier_2 = yes
+	}
+
+	on_complete = {
+		scope:owner = {
+			bm_update_sanguine_font_aura_effect = yes
+		}
+	}
+
+	ai_value = {
+		value = 50
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						has_trait = lifestyle_blood_mage
+						faith = { religion = religion:bm_blodtru_religion }
+					}
+				}
+			}
+			add = 100
+		}
+	}
+
+	asset = {
+		trigger = {
+			is_domicile_type = camp
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_camp_shrine.dds"
+		texture = "gfx/interface/window_domiciles/laamp_building_roaring_campfire.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/laamp_building_roaring_campfire_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/camp_buildings/ep3_ui_domicile_buildings_main_building"
+	}
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_camp_shrine.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_ancestral_shrine_chinese.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_ancestral_shrine_chinese_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/camp_buildings/ep3_ui_domicile_buildings_main_building"
+	}
+}
+
+bm_domicile_sanguine_font_03 = {
+	construction_time = 360
+	allowed_domicile_types = { camp estate yurt ecclesiastical_domicile japanese_manor }
+	slot_type = external
+	previous_building = bm_domicile_sanguine_font_02
+
+	can_construct_potential = {
+		OR = {
+			has_trait = lifestyle_blood_mage
+			faith = { religion = religion:bm_blodtru_religion }
+		}
+	}
+
+	cost = {
+		gold = 300
+	}
+	refund = {
+		gold = {
+			value = 300
+			multiply = 0.5
+			floor = yes
+		}
+	}
+
+	# Inherits Level 1 & 2 modifiers (Cumulative: +0.6 piety, +0.6 health, +6 lifespan, +0.15 genetics)
+	character_modifier = {
+		domicile_monthly_piety_add = 0.2
+		health = 0.2
+		life_expectancy = 2
+		positive_random_genetic_chance = 0.05
+		positive_inactive_inheritance_chance = 0.05
+	}
+
+	parameters = {
+		bm_sanguine_font_tier_3 = yes
+	}
+
+	on_complete = {
+		scope:owner = {
+			bm_update_sanguine_font_aura_effect = yes
+		}
+	}
+
+	ai_value = {
+		value = 50
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						has_trait = lifestyle_blood_mage
+						faith = { religion = religion:bm_blodtru_religion }
+					}
+				}
+			}
+			add = 100
+		}
+	}
+
+	asset = {
+		trigger = {
+			is_domicile_type = camp
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_camp_shrine.dds"
+		texture = "gfx/interface/window_domiciles/laamp_building_roaring_campfire.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/laamp_building_roaring_campfire_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/camp_buildings/ep3_ui_domicile_buildings_main_building"
+	}
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_camp_shrine.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_ancestral_shrine_chinese.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_ancestral_shrine_chinese_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/camp_buildings/ep3_ui_domicile_buildings_main_building"
+	}
+}
+
+bm_domicile_sanguine_font_04 = {
+	construction_time = 480
+	allowed_domicile_types = { camp estate yurt ecclesiastical_domicile japanese_manor }
+	slot_type = external
+	previous_building = bm_domicile_sanguine_font_03
+
+	can_construct_potential = {
+		OR = {
+			has_trait = lifestyle_blood_mage
+			faith = { religion = religion:bm_blodtru_religion }
+		}
+	}
+
+	cost = {
+		gold = 500
+	}
+	refund = {
+		gold = {
+			value = 500
+			multiply = 0.5
+			floor = yes
+		}
+	}
+
+	# Inherits Level 1, 2, 3 modifiers (Cumulative: +0.8 piety, +0.8 health, +8 lifespan, +0.20 genetics)
+	character_modifier = {
+		domicile_monthly_piety_add = 0.2
+		health = 0.2
+		life_expectancy = 2
+		positive_random_genetic_chance = 0.05
+		positive_inactive_inheritance_chance = 0.05
+	}
+
+	parameters = {
+		bm_sanguine_font_tier_4 = yes
+	}
+
+	on_complete = {
+		scope:owner = {
+			bm_update_sanguine_font_aura_effect = yes
+		}
+	}
+
+	ai_value = {
+		value = 50
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						has_trait = lifestyle_blood_mage
+						faith = { religion = religion:bm_blodtru_religion }
+					}
+				}
+			}
+			add = 100
+		}
+	}
+
+	asset = {
+		trigger = {
+			is_domicile_type = camp
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_camp_shrine.dds"
+		texture = "gfx/interface/window_domiciles/laamp_building_roaring_campfire.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/laamp_building_roaring_campfire_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/camp_buildings/ep3_ui_domicile_buildings_main_building"
+	}
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_camp_shrine.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_ancestral_shrine_chinese.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_ancestral_shrine_chinese_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/camp_buildings/ep3_ui_domicile_buildings_main_building"
+	}
+}
+
+bm_domicile_sanguine_font_05 = {
+	construction_time = 600
+	allowed_domicile_types = { camp estate yurt ecclesiastical_domicile japanese_manor }
+	slot_type = external
+	previous_building = bm_domicile_sanguine_font_04
+
+	can_construct_potential = {
+		OR = {
+			has_trait = lifestyle_blood_mage
+			faith = { religion = religion:bm_blodtru_religion }
+		}
+	}
+
+	cost = {
+		gold = 800
+	}
+	refund = {
+		gold = {
+			value = 800
+			multiply = 0.5
+			floor = yes
+		}
+	}
+
+	# Inherits Level 1, 2, 3, 4 modifiers (Cumulative: +1.0 piety, +1.0 health, +10 lifespan, +0.25 genetics)
+	character_modifier = {
+		domicile_monthly_piety_add = 0.2
+		health = 0.2
+		life_expectancy = 2
+		positive_random_genetic_chance = 0.05
+		positive_inactive_inheritance_chance = 0.05
+	}
+
+	parameters = {
+		bm_sanguine_font_tier_5 = yes
+	}
+
+	on_complete = {
+		scope:owner = {
+			bm_update_sanguine_font_aura_effect = yes
+		}
+	}
+
+	ai_value = {
+		value = 50
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						has_trait = lifestyle_blood_mage
+						faith = { religion = religion:bm_blodtru_religion }
+					}
+				}
+			}
+			add = 100
+		}
+	}
+
+	asset = {
+		trigger = {
+			is_domicile_type = camp
+		}
+		icon = "gfx/interface/icons/domicile_building/domicile_building_camp_shrine.dds"
+		texture = "gfx/interface/window_domiciles/laamp_building_roaring_campfire.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/laamp_building_roaring_campfire_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/camp_buildings/ep3_ui_domicile_buildings_main_building"
+	}
+	asset = {
+		icon = "gfx/interface/icons/domicile_building/domicile_building_camp_shrine.dds"
+		texture = "gfx/interface/window_domiciles/estate_building_ancestral_shrine_chinese.dds"
+		intersectionmask_texture = "gfx/interface/window_domiciles/estate_building_ancestral_shrine_chinese_mask.png"
+		soundeffect = "event:/DLC/EP3/SFX/UI/camp_buildings/ep3_ui_domicile_buildings_main_building"
+	}
+}

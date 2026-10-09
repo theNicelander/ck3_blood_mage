@@ -39,15 +39,25 @@
   heal_disease_benediction_desc: "Heal Deadly Ailment"
 
   # Give blood prowess
-  grant_crimson_warrior_interaction: "Create Crimson Warrior"
-  grant_crimson_warrior_interaction_desc: "Infuse [recipient.GetShortUINameNoTooltip] with minor lifeforce, awakening the supernatural Crimson Warrior lifestyle trait."
-  empower_crimson_warrior_minor_interaction: "Empower Crimson Warrior (Minor)"
-  empower_crimson_warrior_minor_interaction_desc: "Channel minor lifeforce into [recipient.GetShortUINameNoTooltip] to grant +3 experience in a combat track of your choice."
-  empower_crimson_warrior_major_interaction: "Empower Crimson Warrior (Major)"
-  empower_crimson_warrior_major_interaction_desc: "Channel major lifeforce into [recipient.GetShortUINameNoTooltip] to grant +10 experience in a combat track of your choice."
+  grant_crimson_knight_interaction: "Create Crimson Knight"
+  grant_crimson_knight_interaction_desc: "Infuse [recipient.GetShortUINameNoTooltip] with minor lifeforce, awakening the supernatural Crimson Knight lifestyle trait."
+  empower_crimson_knight_minor_interaction: "Empower Crimson Knight (Minor)"
+  empower_crimson_knight_minor_interaction_desc: "Channel minor lifeforce into [recipient.GetShortUINameNoTooltip] to grant +3 experience in a combat track of your choice."
+  empower_crimson_knight_major_interaction: "Empower Crimson Knight (Major)"
+  empower_crimson_knight_major_interaction_desc: "Channel major lifeforce into [recipient.GetShortUINameNoTooltip] to grant +10 experience in a combat track of your choice."
 
-  bm_duel_kill_crimson_warrior_toast: "Crimson Warrior Bloodbath"
-  bm_duel_kill_crimson_warrior_tt: "Gained #P +12#! Experience in the #V Slaughter#! track for slaying an opponent in single combat"
+  bm_duel_kill_crimson_knight_toast: "Crimson Knight Bloodbath"
+  bm_duel_kill_crimson_knight_tt: "Gained #P +6#! Experience in the #V Slaughter#! track for victory in single combat"
+
+  # Backward compatibility aliases
+  grant_crimson_warrior_interaction: "Create Crimson Knight"
+  grant_crimson_warrior_interaction_desc: "Infuse [recipient.GetShortUINameNoTooltip] with minor lifeforce, awakening the supernatural Crimson Knight lifestyle trait."
+  empower_crimson_warrior_minor_interaction: "Empower Crimson Knight (Minor)"
+  empower_crimson_warrior_minor_interaction_desc: "Channel minor lifeforce into [recipient.GetShortUINameNoTooltip] to grant +3 experience in a combat track of your choice."
+  empower_crimson_warrior_major_interaction: "Empower Crimson Knight (Major)"
+  empower_crimson_warrior_major_interaction_desc: "Channel major lifeforce into [recipient.GetShortUINameNoTooltip] to grant +10 experience in a combat track of your choice."
+  bm_duel_kill_crimson_warrior_toast: "Crimson Knight Bloodbath"
+  bm_duel_kill_crimson_warrior_tt: "Gained #P +6#! Experience in the #V Slaughter#! track for victory in single combat"
 
 
   # Tooltips

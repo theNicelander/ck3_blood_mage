@@ -53,10 +53,17 @@ add_xp_hematurgy_minor = {
     }
 }
 
-add_crimson_warrior_xp = {
+add_crimson_knight_xp = {
     add_trait_xp = {
-        trait = lifestyle_crimson_warrior
+        trait = lifestyle_crimson_knight
         track = $TRACK$
         value = $XP$
+    }
+}
+
+add_crimson_warrior_xp = {
+    add_crimson_knight_xp = {
+        TRACK = $TRACK$
+        XP = $XP$
     }
 }

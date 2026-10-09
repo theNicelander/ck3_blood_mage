@@ -8,15 +8,15 @@ bm_on_combat_end_winner = {
 	effect = {
 		every_side_knight = {
 			limit = {
-				has_trait = lifestyle_crimson_warrior
+				has_trait = lifestyle_crimson_knight
 			}
-			add_crimson_warrior_xp = { TRACK = slaughter XP = 5 }
+			add_crimson_knight_xp = { TRACK = vanguard XP = 5 }
 		}
 		every_side_commander = {
 			limit = {
-				has_trait = lifestyle_crimson_warrior
+				has_trait = lifestyle_crimson_knight
 			}
-			add_crimson_warrior_xp = { TRACK = vanguard XP = 6 }
+			add_crimson_knight_xp = { TRACK = vanguard XP = 6 }
 		}
 	}
 }
@@ -32,16 +32,36 @@ bm_on_combat_end_loser = {
 		every_side_knight = {
 			limit = {
 				is_alive = yes
-				has_trait = lifestyle_crimson_warrior
+				has_trait = lifestyle_crimson_knight
 			}
-			add_crimson_warrior_xp = { TRACK = resilience XP = 2 }
+			add_crimson_knight_xp = { TRACK = vanguard XP = 1 }
+			add_crimson_knight_xp = { TRACK = resilience XP = 1 }
 		}
 		every_side_commander = {
 			limit = {
 				is_alive = yes
-				has_trait = lifestyle_crimson_warrior
+				has_trait = lifestyle_crimson_knight
 			}
-			add_crimson_warrior_xp = { TRACK = resilience XP = 2 }
+			add_crimson_knight_xp = { TRACK = vanguard XP = 1 }
+			add_crimson_knight_xp = { TRACK = resilience XP = 1 }
+		}
+	}
+}
+
+on_travel_activity_complete = {
+	on_actions = {
+		bm_on_travel_activity_complete_tournament
+	}
+}
+
+bm_on_travel_activity_complete_tournament = {
+	effect = {
+		if = {
+			limit = {
+				has_trait = lifestyle_crimson_knight
+				involved_activity ?= { has_activity_type = activity_tournament }
+			}
+			add_crimson_knight_xp = { TRACK = slaughter XP = 3 }
 		}
 	}
 }
