@@ -1,0 +1,97 @@
+﻿# Manifest Congenital Traits Ritual Event
+namespace = bm_channel_manifest_traits
+
+bm_channel_manifest_traits.001 = {
+	type = character_event
+	title = bm_channel_manifest_traits.001.title
+	desc = bm_channel_manifest_traits.001.desc
+	theme = witchcraft
+
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+
+	# Manifest Intellect
+	option = {
+		name = bm_channel_manifest_traits.001.intellect
+		trigger = {
+			NOT = { has_trait = intellect_good_3 }
+			piety >= bm_manifest_traits_intellect_piety_cost
+		}
+		add_piety = {
+			value = bm_manifest_traits_intellect_piety_cost
+			multiply = -1
+		}
+		add_character_flag = {
+			flag = bm_manifest_traits_cooldown
+			years = 3
+		}
+		bm_manifest_intellect_duel_effect = yes
+		ai_chance = {
+			base = 100
+			modifier = {
+				health <= fine_health
+				add = -100
+			}
+		}
+	}
+
+	# Manifest Physique
+	option = {
+		name = bm_channel_manifest_traits.001.physique
+		trigger = {
+			NOT = { has_trait = physique_good_3 }
+			piety >= bm_manifest_traits_physique_piety_cost
+		}
+		add_piety = {
+			value = bm_manifest_traits_physique_piety_cost
+			multiply = -1
+		}
+		add_character_flag = {
+			flag = bm_manifest_traits_cooldown
+			years = 3
+		}
+		bm_manifest_physique_duel_effect = yes
+		ai_chance = {
+			base = 100
+			modifier = {
+				health <= fine_health
+				add = -100
+			}
+		}
+	}
+
+	# Manifest Beauty
+	option = {
+		name = bm_channel_manifest_traits.001.beauty
+		trigger = {
+			NOT = { has_trait = beauty_good_3 }
+			piety >= bm_manifest_traits_beauty_piety_cost
+		}
+		add_piety = {
+			value = bm_manifest_traits_beauty_piety_cost
+			multiply = -1
+		}
+		add_character_flag = {
+			flag = bm_manifest_traits_cooldown
+			years = 3
+		}
+		bm_manifest_beauty_duel_effect = yes
+		ai_chance = {
+			base = 100
+			modifier = {
+				health <= fine_health
+				add = -100
+			}
+		}
+	}
+
+	# Reconsider / Cancel
+	option = {
+		name = bm_channel_manifest_traits.001.cancel
+		trigger = {
+			is_ai = no
+		}
+	}
+}

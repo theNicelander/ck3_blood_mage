@@ -58,6 +58,7 @@ All routes call `bm_become_blood_mage_effect`:
 | XP helpers (`add_xp_bm_dynamic`, `add_blood_empowerment_xp`) | `common/scripted_effects/bm_trait_track_xp_gain_effects.txt` |
 | Acquisition effect | `common/scripted_effects/bm_blood_mage_lifecycle_effects.txt` |
 | Per-school cast effects (XP per spell) | `common/scripted_effects/bm_blood_magic_used_effects.txt`, `bm_drain_trait_effects.txt` |
+| Congenital trait manifestation (effects & events) | `common/scripted_effects/bm_manifest_traits_effects.txt`, `events/bm_channel_manifest_traits_events.txt` |
 | Yearly passive XP and rune lifeforce | `events/bm_yearly_events.txt`, `common/on_action/bm_yearly_pulse.txt` |
 | Blood Empowerment choice event | `events/bm_blood_empowerment_event.txt` |
 | Birth and prevalence on-actions | `common/on_action/bm_blood_mage_prevalence_on_actions.txt` |

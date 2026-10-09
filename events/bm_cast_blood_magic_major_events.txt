@@ -230,6 +230,29 @@ bm_cast_blood_magic_major.001 = {
 		}
 	}
 
+	# Manifest Perfection (Congenital Traits)
+	option = {
+		name = bm_cast_blood_magic_major.001.manifest_traits
+		trigger = {
+			NOT = { has_character_flag = bm_manifest_traits_cooldown }
+			piety_level >= 2
+			piety >= 200
+			NOT = {
+				AND = {
+					has_trait = intellect_good_3
+					has_trait = physique_good_3
+					has_trait = beauty_good_3
+				}
+			}
+		}
+		custom_tooltip = bm_cast_blood_magic_major.001.manifest_traits_tt
+		trigger_event = { id = bm_channel_manifest_traits.001 }
+		ai_chance = {
+			base = 50
+			ai_modifier_based_on_health = yes
+		}
+	}
+
 	# Cancel
 	option = {
 		name = bm_cast_blood_magic_major.001.cancel
