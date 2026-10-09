@@ -30,19 +30,19 @@ bm_on_character_death_duel = {
 			limit = {
 				exists = scope:killer
 				scope:killer = {
-					has_trait = lifestyle_crimson_knight
+					has_trait = lifestyle_blood_knight
 					has_variable = engaged_in_single_combat
 				}
 				has_variable = engaged_in_single_combat
 			}
 			scope:killer = {
-				add_crimson_knight_xp = { TRACK = slaughter XP = 6 }
+				add_blood_knight_xp = { TRACK = slaughter XP = 6 }
 				send_interface_toast = {
 					type = event_toast_effect_good
-					title = bm_duel_kill_crimson_knight_toast
+					title = bm_duel_kill_blood_knight_toast
 					left_icon = scope:killer
 					right_icon = root
-					custom_tooltip = bm_duel_kill_crimson_knight_tt
+					custom_tooltip = bm_duel_kill_blood_knight_tt
 				}
 			}
 		}

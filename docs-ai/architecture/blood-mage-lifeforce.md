@@ -27,9 +27,9 @@
 | `bm_manifest_lifeforce` (decision) | 250 piety. Learning check. | Grants minor or major Lifeforce | +1 enlightenment |
 | `bm_crimson_empowerment_decision` | 150 piety + Major Lifeforce. | Consumes `lifeforce_modifier_major` | +3 enlg, +10 CE |
 | `channel_lifeforce_bloodline` | 350 piety + Major Lifeforce. | Consumes `lifeforce_modifier_major` | +5 bloodline |
-| `bm_create_blood_golem` | 350 piety + Major Lifeforce. | Consumes `lifeforce_modifier_major` | +3 enlightenment |
-| `grant_crimson_warrior_interaction` | Piety + Minor Lifeforce. | Consumes `lifeforce_modifier_minor` | +1 benediction |
-| `grant_crimson_champion_interaction` | Piety + Major Lifeforce. | Consumes `lifeforce_modifier_major` | +2 benediction |
+| `make_blood_knight_interaction` | 100 piety + Major Lifeforce. | Consumes `lifeforce_modifier_major` | +2 benediction |
+| `empower_blood_knight_interaction` (Minor option) | Minor Lifeforce. | Consumes `lifeforce_modifier_minor` | +1 benediction |
+| `empower_blood_knight_interaction` (Major option) | Major Lifeforce. | Consumes `lifeforce_modifier_major` | +2 benediction |
 
 ## Where the details live
 

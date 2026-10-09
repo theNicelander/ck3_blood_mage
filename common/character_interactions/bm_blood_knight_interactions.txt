@@ -1,0 +1,184 @@
+﻿make_blood_knight_interaction = {
+    category = interaction_category_friendly
+    auto_accept = yes
+    common_interaction = yes
+    desc = make_blood_knight_interaction_desc
+    interface_priority = 190
+
+    cost = { piety = blood_knight_creation_piety_cost }
+
+    is_shown = {
+        scope:actor = { has_trait = lifestyle_blood_mage }
+        scope:recipient = {
+            OR = {
+                is_courtier_of = scope:actor
+                this = scope:actor
+            }
+            NOT = { has_trait = lifestyle_blood_knight }
+        }
+    }
+    is_valid_showing_failures_only = {
+        scope:actor = { has_character_modifier = lifeforce_modifier_major }
+        trigger_if = {
+            limit = { scope:recipient != scope:actor }
+            scope:recipient = { is_knight_of = scope:actor }
+        }
+    }
+
+    on_accept = {
+        debug_log = "BloodMageInteraction: make_blood_knight | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
+        scope:actor = { benediction_magic_cast_effect_major = yes }
+        scope:recipient = {
+            add_trait = lifestyle_blood_knight
+            if = {
+                limit = { this != scope:actor }
+                add_opinion = {
+                    target = scope:actor
+                    modifier = magic_opinion_positive
+                    opinion = 20
+                }
+            }
+        }
+    }
+    ai_potential = { always = yes }
+    ai_targets = {
+        ai_recipients = self
+        ai_recipients = dynasty
+        ai_recipients = spouses
+        ai_recipients = family
+        ai_recipients = children
+        ai_recipients = courtiers
+        ai_recipients = councillors
+    }
+    ai_frequency = 6
+    ai_will_do = {
+        base = 33
+        ai_willingness_to_do_postitive_magic = yes
+        modifier = {
+            scope:recipient = { prowess >= 12 }
+            add = 30
+        }
+    }
+}
+
+empower_blood_knight_interaction = {
+    category = interaction_category_friendly
+    auto_accept = yes
+    desc = empower_blood_knight_interaction_desc
+    interface_priority = 189
+
+    is_shown = {
+        scope:actor = { has_trait = lifestyle_blood_mage }
+        scope:recipient = {
+            OR = {
+                is_courtier_of = scope:actor
+                this = scope:actor
+            }
+            has_trait = lifestyle_blood_knight
+        }
+    }
+    is_valid_showing_failures_only = {
+        custom_description = {
+            text = "empower_blood_knight_interaction_requirement"
+            scope:actor = {
+                OR = {
+                    has_character_modifier = lifeforce_modifier_major
+                    has_character_modifier = lifeforce_modifier_minor
+                }
+            }
+        }
+    }
+
+    send_option = {
+        flag = empower_major
+        localization = empower_blood_knight_interaction.major
+        is_valid = {
+            scope:actor = {
+                has_character_modifier = lifeforce_modifier_major
+            }
+        }
+        starts_enabled = {
+            scope:actor = {
+                has_character_modifier = lifeforce_modifier_major
+            }
+        }
+    }
+
+    send_option = {
+        flag = empower_minor
+        localization = empower_blood_knight_interaction.minor
+        is_valid = {
+            scope:actor = {
+                has_character_modifier = lifeforce_modifier_minor
+            }
+        }
+        starts_enabled = {
+            scope:actor = {
+                NOT = { has_character_modifier = lifeforce_modifier_major }
+                has_character_modifier = lifeforce_modifier_minor
+            }
+        }
+    }
+
+    send_option = {
+        flag = empower_cancel
+        localization = empower_blood_knight_interaction.cancel
+    }
+
+    on_accept = {
+        debug_log = "BloodMageInteraction: empower_blood_knight | Actor: [actor.GetShortUINameNoTooltip] -> Recipient: [recipient.GetShortUINameNoTooltip]"
+        if = {
+            limit = { scope:empower_major = yes }
+            scope:actor = { benediction_magic_cast_effect_major = yes }
+            scope:recipient = {
+                add_blood_knight_xp = { TRACK = vanguard XP = 10 }
+                add_blood_knight_xp = { TRACK = slaughter XP = 10 }
+                add_blood_knight_xp = { TRACK = resilience XP = 10 }
+                if = {
+                    limit = { this != scope:actor }
+                    add_opinion = {
+                        target = scope:actor
+                        modifier = magic_opinion_positive
+                        opinion = 30
+                    }
+                }
+            }
+        }
+        else_if = {
+            limit = { scope:empower_minor = yes }
+            scope:actor = { benediction_magic_cast_effect_minor = yes }
+            scope:recipient = {
+                add_blood_knight_xp = { TRACK = vanguard XP = 5 }
+                add_blood_knight_xp = { TRACK = slaughter XP = 5 }
+                add_blood_knight_xp = { TRACK = resilience XP = 5 }
+                if = {
+                    limit = { this != scope:actor }
+                    add_opinion = {
+                        target = scope:actor
+                        modifier = magic_opinion_positive
+                        opinion = 15
+                    }
+                }
+            }
+        }
+    }
+    ai_potential = { always = yes }
+    ai_frequency = 6
+    ai_targets = {
+        ai_recipients = self
+        ai_recipients = dynasty
+        ai_recipients = spouses
+        ai_recipients = family
+        ai_recipients = children
+        ai_recipients = courtiers
+        ai_recipients = councillors
+    }
+    ai_will_do = {
+        base = 15
+        ai_willingness_to_do_postitive_magic = yes
+        modifier = {
+            scope:recipient = { prowess >= 14 }
+            add = 25
+        }
+    }
+}

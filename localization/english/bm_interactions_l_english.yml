@@ -38,26 +38,19 @@
   heal_disease_major_desc: "Heal Ailment"
   heal_disease_benediction_desc: "Heal Deadly Ailment"
 
-  # Give blood prowess
-  grant_crimson_knight_interaction: "Create Crimson Knight"
-  grant_crimson_knight_interaction_desc: "Infuse [recipient.GetShortUINameNoTooltip] with minor lifeforce, awakening the supernatural Crimson Knight lifestyle trait."
-  empower_crimson_knight_minor_interaction: "Empower Crimson Knight (Minor)"
-  empower_crimson_knight_minor_interaction_desc: "Channel minor lifeforce into [recipient.GetShortUINameNoTooltip] to grant +3 experience in a combat track of your choice."
-  empower_crimson_knight_major_interaction: "Empower Crimson Knight (Major)"
-  empower_crimson_knight_major_interaction_desc: "Channel major lifeforce into [recipient.GetShortUINameNoTooltip] to grant +10 experience in a combat track of your choice."
+  # Blood Knight
+  make_blood_knight_interaction: "Make Blood Knight"
+  make_blood_knight_interaction_desc: "Infuse [recipient.GetShortUINameNoTooltip] with major lifeforce, awakening the supernatural Blood Knight lifestyle trait."
+  empower_blood_knight_interaction: "Empower Blood Knight"
+  empower_blood_knight_interaction_desc: "Channel supernatural lifeforce into [recipient.GetShortUINameNoTooltip] to strengthen their martial tracks."
+  empower_blood_knight_interaction.major: "Major Lifeforce (+10 XP to all tracks)"
+  empower_blood_knight_interaction.minor: "Minor Lifeforce (+5 XP to all tracks)"
+  empower_blood_knight_interaction.cancel: "Back out, no cost"
+  empower_blood_knight_interaction_requirement: "You need either [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] or [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to empower a Blood Knight."
+  NOT_empower_blood_knight_interaction_requirement: "You need either [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] or [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to empower a Blood Knight."
 
-  bm_duel_kill_crimson_knight_toast: "Crimson Knight Bloodbath"
-  bm_duel_kill_crimson_knight_tt: "Gained #P +6#! Experience in the #V Slaughter#! track for victory in single combat"
-
-  # Backward compatibility aliases
-  grant_crimson_warrior_interaction: "Create Crimson Knight"
-  grant_crimson_warrior_interaction_desc: "Infuse [recipient.GetShortUINameNoTooltip] with minor lifeforce, awakening the supernatural Crimson Knight lifestyle trait."
-  empower_crimson_warrior_minor_interaction: "Empower Crimson Knight (Minor)"
-  empower_crimson_warrior_minor_interaction_desc: "Channel minor lifeforce into [recipient.GetShortUINameNoTooltip] to grant +3 experience in a combat track of your choice."
-  empower_crimson_warrior_major_interaction: "Empower Crimson Knight (Major)"
-  empower_crimson_warrior_major_interaction_desc: "Channel major lifeforce into [recipient.GetShortUINameNoTooltip] to grant +10 experience in a combat track of your choice."
-  bm_duel_kill_crimson_warrior_toast: "Crimson Knight Bloodbath"
-  bm_duel_kill_crimson_warrior_tt: "Gained #P +6#! Experience in the #V Slaughter#! track for victory in single combat"
+  bm_duel_kill_blood_knight_toast: "Blood Knight Bloodbath"
+  bm_duel_kill_blood_knight_tt: "Gained #P +6#! Experience in the #V Slaughter#! track for victory in single combat"
 
 
   # Tooltips

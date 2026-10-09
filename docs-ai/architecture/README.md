@@ -29,7 +29,7 @@ Rules (`.agents/rules/`) say how to write CK3 script in general. These docs say 
 | --- | --- |
 | `blood-mage-traits.md` | Core `lifestyle_blood_mage` trait, 5 schools master table, milestones, acquisition triggers |
 | `blood-mage-crimson-empowerment.md` | `lifestyle_crimson_empowerment` trait, 7 tracks master table, costs, spell unlocks, retinue |
-| `blood-mage-crimson-knight.md` | `lifestyle_crimson_knight` trait, 3 tracks master table, Lifeforce empowerments, combat & duel hooks |
+| `blood-mage-blood-knight.md` | `lifestyle_blood_knight` trait, 3 tracks master table, Lifeforce empowerments, combat & duel hooks |
 | `blood-mage-dynasty.md` | 7 house modifiers, costs, cooldowns, yearly XP loop, Golem cadet house |
 | `blood-mage-domicile-buildings.md` | Single 5-tier Blood Shrine line, scaling piety/health/lifespan/genetics, camp & court aura |
 | `blood-mage-blood-runes.md` | Blood Runes tiers 1-3, costs, requirements, passive rolls, Blood Universities 0-3 |
