@@ -1,4 +1,4 @@
-﻿add_xp_bm_dynamic = {
+﻿bm_add_blood_mage_xp_effect = {
     add_trait_xp = {
         trait = lifestyle_blood_mage
         track = $TRACK$
@@ -6,57 +6,47 @@
     }
 }
 
-add_crimson_empowerment_xp = {
+bm_add_crimson_empowerment_xp_effect = {
     add_trait_xp = {
         trait = lifestyle_crimson_empowerment
         track = $TRACK$
-        value = 10
+        value = $XP$
     }
 }
 
-add_xp_enlightenment = {
-    add_trait_xp = {
-        trait = lifestyle_blood_mage
-        track = enlightenment
-        value = 1
-    }
-}
-
-add_xp_bloodline = {
-    add_trait_xp = {
-        trait = lifestyle_blood_mage
-        track = bloodline
-        value = 1
-    }
-}
-
-add_xp_benediction = {
-    add_trait_xp = {
-        trait = lifestyle_blood_mage
-        track = benediction
-        value = 1
-    }
-}
-
-add_xp_hematurgy_major = {
-    add_trait_xp = {
-        trait = lifestyle_blood_mage
-        track = hematurgy
-        value = 2
-    }
-}
-add_xp_hematurgy_minor = {
-    add_trait_xp = {
-        trait = lifestyle_blood_mage
-        track = hematurgy
-        value = 1
-    }
-}
-
-add_blood_knight_xp = {
+bm_add_blood_knight_xp_effect = {
     add_trait_xp = {
         trait = lifestyle_blood_knight
         track = $TRACK$
         value = $XP$
+    }
+}
+
+# Compatibility aliases
+add_xp_bm_dynamic = {
+    bm_add_blood_mage_xp_effect = {
+        TRACK = $TRACK$
+        XP = $XP$
+    }
+}
+
+add_crimson_empowerment_xp = {
+    bm_add_crimson_empowerment_xp_effect = {
+        TRACK = $TRACK$
+        XP = 10
+    }
+}
+
+add_blood_knight_xp = {
+    bm_add_blood_knight_xp_effect = {
+        TRACK = $TRACK$
+        XP = $XP$
+    }
+}
+
+add_xp_enlightenment = {
+    bm_add_blood_mage_xp_effect = {
+        TRACK = enlightenment
+        XP = 1
     }
 }

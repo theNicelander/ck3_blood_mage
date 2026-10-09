@@ -53,7 +53,7 @@
     ai_frequency = 6
     ai_will_do = {
         base = 33
-        ai_willingness_to_do_postitive_magic = yes
+        ai_willingness_to_do_positive_magic = yes
         modifier = {
             scope:recipient = { prowess >= 12 }
             add = 30
@@ -175,7 +175,7 @@ empower_blood_knight_interaction = {
     }
     ai_will_do = {
         base = 15
-        ai_willingness_to_do_postitive_magic = yes
+        ai_willingness_to_do_positive_magic = yes
         modifier = {
             scope:recipient = { prowess >= 14 }
             add = 25

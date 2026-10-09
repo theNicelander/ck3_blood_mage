@@ -39,7 +39,7 @@ Duchy capital buildings constructible only if holder has `lifestyle_blood_mage`:
 | Rune modifiers | `common/modifiers/bm_blood_runes_modifiers.txt` |
 | Rune piety cost values | `common/script_values/bm_blood_rune_cost.txt` (`bm_blood_rune_piety_cost`) |
 | Rune XP requirement values | `common/script_values/bm_xp_requirement_values.txt` (`bm_blood_rune_minimum_xp`) |
-| Duchy capital buildings | `common/buildings/bm_dutchy_buildings.txt` |
+| Duchy capital buildings | `common/buildings/bm_duchy_buildings.txt` |
 
 ## Key Mechanics & Gotchas
 

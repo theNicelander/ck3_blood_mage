@@ -15,7 +15,7 @@ heal_disease_minor_cost = {
     }
     if = {
         limit = { scope:recipient = { has_trait = ill } }
-        add = cure_illness_cost_major
+        add = cure_illness_cost_minor
     }
     if = {
         limit = { scope:recipient = { has_trait = lovers_pox } }
@@ -26,7 +26,7 @@ heal_disease_minor_cost = {
         add = cure_illness_cost_minor
     }
     if = {
-        limit = { scope:recipient = { has_trait = disfigured } }
+        limit = { scope:recipient = { has_trait = scarred } }
         add = cure_illness_cost_minor
     }
 }
@@ -35,6 +35,10 @@ heal_disease_major_cost = {
     value = 0
     if = {
         limit = { scope:recipient = { has_trait = wounded_2 } }
+        add = cure_illness_cost_major
+    }
+    if = {
+        limit = { scope:recipient = { has_trait = incapable } }
         add = cure_illness_cost_major
     }
     if = {
@@ -77,6 +81,34 @@ heal_disease_major_cost = {
         limit = { scope:recipient = { has_trait = one_eyed } }
         add = cure_illness_cost_major
     }
+    if = {
+        limit = { scope:recipient = { has_trait = withering_mind } }
+        add = cure_illness_cost_major
+    }
+    if = {
+        limit = { scope:recipient = { has_trait = clouded_eyes } }
+        add = cure_illness_cost_major
+    }
+    if = {
+        limit = { scope:recipient = { has_trait = fragile_bones } }
+        add = cure_illness_cost_major
+    }
+    if = {
+        limit = { scope:recipient = { has_trait = lunatic_1 } }
+        add = cure_illness_cost_major
+    }
+    if = {
+        limit = { scope:recipient = { has_trait = possessed_1 } }
+        add = cure_illness_cost_major
+    }
+    if = {
+        limit = { scope:recipient = { has_trait = dull } }
+        add = cure_illness_cost_major
+    }
+    if = {
+        limit = { scope:recipient = { has_trait = depressed_1 } }
+        add = cure_illness_cost_major
+    }
 }
 
 heal_disease_benediction_cost = {
@@ -90,7 +122,11 @@ heal_disease_benediction_cost = {
         add = cure_illness_cost_benediction
     }
     if = {
-        limit = { scope:recipient = { has_trait = incapable } }
+        limit = { scope:recipient = { has_trait = disfigured } }
+        add = cure_illness_cost_benediction
+    }
+    if = {
+        limit = { scope:recipient = { has_trait = faltering_heart } }
         add = cure_illness_cost_benediction
     }
     if = {

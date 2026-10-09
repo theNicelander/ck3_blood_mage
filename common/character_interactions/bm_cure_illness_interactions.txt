@@ -84,7 +84,7 @@
             scope:actor = scope:recipient
             add = 100
         }
-        ai_willingness_to_do_postitive_magic = yes
+        ai_willingness_to_do_positive_magic = yes
     }
 }
 
@@ -123,10 +123,9 @@ heal_disease_major = {
                 has_trait = typhus
                 has_trait = measles
                 has_trait = blind
-                has_trait = maimed
                 has_trait = one_eyed
                 has_trait = weak
-                has_trait = lunatic
+                has_trait = lunatic_1
                 has_trait = possessed_1
                 has_trait = dull
                 has_trait = depressed_1
@@ -167,7 +166,7 @@ heal_disease_major = {
                     opinion = 30
                 }
 
-                # perpmanent positive opinion
+                # permanent positive opinion
                 add_opinion = {
                     target = scope:actor
                     modifier = cured_my_illness
@@ -194,7 +193,7 @@ heal_disease_major = {
             scope:actor = scope:recipient
             add = 100
         }
-        ai_willingness_to_do_postitive_magic = yes
+        ai_willingness_to_do_positive_magic = yes
     }
 }
 
@@ -205,7 +204,7 @@ heal_disease_benediction = {
     common_interaction = yes
     auto_accept = yes
 
-    cost = { piety = cure_illness_cost_benediction }
+    cost = { piety = heal_disease_benediction_cost }
     # TODO: This should only be allowed if over certain XP or with finisher effect
     is_valid_showing_failures_only = {
         scope:actor = {
@@ -295,6 +294,6 @@ heal_disease_benediction = {
             scope:actor = scope:recipient
             add = 100
         }
-        ai_willingness_to_do_postitive_magic = yes
+        ai_willingness_to_do_positive_magic = yes
     }
 }
