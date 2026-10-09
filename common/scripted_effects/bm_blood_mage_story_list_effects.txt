@@ -61,10 +61,7 @@ bm_refresh_blood_magic_rosters_effect = {
 
 	every_courtier = {
 		limit = {
-			OR = {
-				has_character_modifier = lifeforce_modifier_crimson_warrior
-				has_character_modifier = lifeforce_modifier_crimson_champion
-			}
+			has_trait = lifestyle_crimson_warrior
 		}
 
 		scope:bm_blood_mage_story_scope = {
