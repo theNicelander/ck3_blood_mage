@@ -19,3 +19,9 @@ repos:
         language: system
         files: '^(common|events|gui|localization)/.*\.(txt|gui|yml)$'
         pass_filenames: true
+      - id: calculate-tokens
+        name: Calculate token cost for agent rules and skills (.agents/cost.md)
+        entry: uvx --with tiktoken python scripts/calculate_tokens.py
+        language: system
+        files: '^(AGENTS\.md|\.agents/(rules/.*|skills/.*))$'
+        pass_filenames: false

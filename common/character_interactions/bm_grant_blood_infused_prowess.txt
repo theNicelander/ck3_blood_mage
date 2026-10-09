@@ -16,13 +16,13 @@
             NOT = { has_character_modifier = lifeforce_modifier_crimson_champion }
         }
     }
-    is_valid_showing_failures_only = { 
-        scope:actor = { has_character_modifier = lifeforce_modifier_minor 
+    is_valid_showing_failures_only = {
+        scope:actor = { has_character_modifier = lifeforce_modifier_minor
         scope:recipient = { is_knight_of = scope:actor }}
     }
 
     on_accept = {
-        
+
         scope:actor = {debug_log = debug_log.blood_mage_log}
         scope:actor = { benediction_magic_cast_effect_minor = yes }
         scope:recipient = {
@@ -36,7 +36,7 @@
         debug_log = "BloodMageDebug: [recipient.GetShortUINameNoTooltip] Granted blood prowes by [actor.GetShortUINameNoTooltip]"
     }
     ai_potential = { always = yes }
-    ai_targets = { 
+    ai_targets = {
             ai_recipients = dynasty
             ai_recipients = spouses
             ai_recipients = family
@@ -65,7 +65,7 @@ grant_crimson_champion_interaction = {
             has_character_modifier = lifeforce_modifier_crimson_warrior
         }
     }
-    is_valid_showing_failures_only = { 
+    is_valid_showing_failures_only = {
         scope:actor = { has_character_modifier = lifeforce_modifier_major }
     }
 
@@ -85,7 +85,7 @@ grant_crimson_champion_interaction = {
     # AI
     ai_potential = { always = yes }
     ai_frequency = 6
-    ai_targets = { 
+    ai_targets = {
             ai_recipients = dynasty
             ai_recipients = spouses
             ai_recipients = family

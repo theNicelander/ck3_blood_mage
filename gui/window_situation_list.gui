@@ -73,7 +73,7 @@ window = {
 					layoutpolicy_vertical = expanding
 
 					hbox_tab_buttons = {
-	
+
 						blockoverride "tab_name"
 						{
 							text = "[PdxGuiTabItem.LocalizeTab( 'situation_tab' )]"
@@ -104,7 +104,7 @@ window = {
 									visible = "[And( Not( SituationListWindow.HasAnyInvolvedSituationGroups ), PdxGuiTabs.IsTabSet( 'your' ) )]"
 									layoutpolicy_horizontal = expanding
 									layoutpolicy_vertical = expanding
-									
+
 									text = "SITUATION_LIST_NO_SITUATIONS"
 									default_format = "#weak"
 									align = center
@@ -168,7 +168,7 @@ types SituationList
 			down = "[GetVariableSystem.HasValue( 'situations_tab', 'legends' )]"
 			onclick = "[GetVariableSystem.Set( 'situations_tab', 'legends' )]"
 			onclick = "[OpenGameView( 'legends' )]"
-			
+
 			shortcut = "tab_2"
 
 			blockoverride "tab_label"
@@ -213,7 +213,7 @@ types SituationList
 
 	type vbox_situation_group_foldout = vbox {
 		layoutpolicy_horizontal = expanding
-		
+
 		datacontext = "[SituationGroupItem.GetGroupType]"
 		visible = "[And( Not( IsDataModelEmpty( SituationGroupItem.GetItems ) ), GreaterThan_int32( SituationGroupItem.GetNumInvolvedItems( PdxGuiTabs.IsTabSet( 'your' ) ), '(int32)0' ) )]"
 
@@ -234,7 +234,7 @@ types SituationList
 			vbox = {
 				layoutpolicy_horizontal = expanding
 				spacing = 30
-				
+
 				datamodel = "[SituationGroupItem.GetItems]"
 				item = {
 					vbox_story_cycle_entry = {
@@ -245,7 +245,7 @@ types SituationList
 			}
 		}
 
-		
+
 		vbox = {
 			visible = "[PdxGuiFoldOut.IsUnfolded]"
 			layoutpolicy_horizontal = expanding
@@ -253,7 +253,7 @@ types SituationList
 			dynamicgridbox = {
 				name = "situations_in_group"
 				layoutpolicy_horizontal = expanding
-				
+
 				datamodel = "[SituationGroupItem.GetItems]"
 
 				item = {
@@ -1105,12 +1105,12 @@ types SituationList
 				hbox = {
 					datacontext = "[Story.MakeScope.Var( StoryCycleVariableVisualization.GetVariableName ).Title]"
 					visible = "[Story.MakeScope.HasFlag( StoryCycleVariableVisualization.GetVariableName )]"
-					
+
 					layoutpolicy_horizontal = expanding
 					layoutpolicy_vertical = expanding
-					
+
 					min_width = 500
-					margin_bottom = 10					
+					margin_bottom = 10
 
 					coa_title_medium_crown = {}
 
@@ -1492,7 +1492,7 @@ types SituationList
 						align = nobaseline
 						fontsize_min = 14
 						margin_right = 10
-						
+
 					}
 
 					#hbox_skills_grid = {}
@@ -1558,7 +1558,7 @@ types SituationList
 								alpha = 0.5
 							}
 						}
-						
+
 
 						text_single = {
 							name = "has_guardian"
