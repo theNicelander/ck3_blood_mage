@@ -5,7 +5,7 @@
 ## Executive Summary
 
 - **What:** Secondary lifestyle trait `lifestyle_blood_empowerment`. 7 progression tracks (max 100 XP each). Gates education upgrades and blood runes.
-- **Get / Level:** Decision `bm_blood_empowerment_decision` -> Event `bm_blood_empowerment_event.001`.
+- **Get / Level:** `bm_cast_blood_magic_major_decision` (Blood Empowerment option) -> Event `bm_blood_empowerment_event.001`.
   - Cost: 150 piety + consumes `lifeforce_modifier_major`. Req: `piety_level >= 1`. Cooldown: none.
   - XP Gain: +3 `enlightenment` XP + 10 XP in chosen empowerment track (via `add_blood_empowerment_xp`).
 
@@ -26,7 +26,7 @@ Each track spans 10 levels (10 to 100 XP, +10 XP per channel). All 10 levels in 
 
 ## Key Mechanics
 
-- **Advancement:** `bm_blood_empowerment_decision` in Situation panel fires `bm_blood_empowerment_event.001`. Adds trait if missing. Capped tracks (100 XP) hidden from selection.
+- **Advancement:** `bm_cast_blood_magic_major_decision` fires `bm_cast_blood_magic_major.001` which triggers `bm_blood_empowerment_event.001`. Adds trait if missing. Capped tracks (100 XP) hidden from selection.
 - **High-Tier Spell Gates:** Total XP across `lifestyle_blood_empowerment` tracks gates rituals:
   - Improve Education tier: Req 50 total XP (`required_xp_improve_education`).
   - Add Second Education: Req 70 total XP (`required_xp_new_education`).

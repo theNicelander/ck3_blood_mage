@@ -4,9 +4,9 @@
 
 ## Executive Summary
 
-- **What:** Permanent supernatural house modifiers applied via decision `channel_lifeforce_bloodline`.
-- **Cost / Requirements:** 350 piety + consumes `lifeforce_modifier_major`. Req: `piety_level >= 1`. Cooldown: 3 years.
-- **XP Gain:** Decision awards +5 `bloodline` XP (`add_xp_bm_dynamic`).
+- **What:** Permanent supernatural house modifiers applied via `bm_cast_blood_magic_major_decision` (Empower Dynasty Bloodline option).
+- **Cost / Requirements:** 350 piety + consumes `lifeforce_modifier_major`. Req: `piety_level >= 1`. Cooldown: 3 years (flag `bm_channel_bloodline_cooldown`).
+- **XP Gain:** Awards +5 `bloodline` XP (`add_xp_bm_dynamic`).
 - **Feedback Loop:** Each active blood modifier on the house adds +5% yearly chance for blood mages in that house to gain +1 `bloodline` XP (`blood_mage_yearly_events.002`).
 
 ### House Modifiers Table
@@ -26,7 +26,7 @@ Modifiers apply to all living and future members of the caster's house. Non-lega
 
 ## Key Mechanics
 
-- **Decision Flow:** `channel_lifeforce_bloodline` fires `bm_channel_lifeforce_bloodline.001`. Applies chosen modifier to `scope:actor.house`.
+- **Decision Flow:** `bm_cast_blood_magic_major_decision` fires `bm_cast_blood_magic_major.001`, which routes to `bm_channel_lifeforce_bloodline.001`. Applies chosen modifier to `scope:actor.house`.
 - **Golem House:** Dedicated house `bm_house_golem` in dynasty `dynn_bm_golem`. `blood_golem_template` places all golems here. Story panel roster identifies owned golems via house membership (`bm_refresh_blood_magic_rosters_effect`).
 - **Dynasty Mages Roster:** Story panel tracks living blood mages in ruler's dynasty.
 
@@ -39,7 +39,7 @@ Modifiers apply to all living and future members of the caster's house. Non-lega
 | Golem house coat of arms | `common/coat_of_arms/coat_of_arms/bm_coat_of_arms.txt` |
 | Bloodline house modifiers | `common/modifiers/bm_channel_dynasty_modifiers.txt` |
 | Fallback buff | `temporary_buff_bloodline` in `common/modifiers/bm_modifiers.txt` |
-| Channel decision | `channel_lifeforce_bloodline` in `common/decisions/bm_channel_lifeforce.txt` |
+| Channel decision | `bm_cast_blood_magic_major_decision` in `common/decisions/cast_magic/bm_cast_blood_magic_major.txt` |
 | Choice event | `bm_channel_lifeforce_bloodline.001` in `events/bm_channel_lifeforce_bloodline_events.txt` |
 | Yearly bloodline XP | `blood_mage_yearly_events.002` in `events/bm_yearly_events.txt` |
 | Golem template | `blood_golem_template` in `common/scripted_character_templates/bm_character_templates.txt` |

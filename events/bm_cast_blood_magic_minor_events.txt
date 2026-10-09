@@ -1,0 +1,65 @@
+﻿namespace = bm_cast_blood_magic_minor
+
+bm_cast_blood_magic_minor.001 = {
+	type = character_event
+	title = bm_cast_blood_magic_minor.001.title
+	desc = bm_cast_blood_magic_minor.001.desc
+	theme = witchcraft
+
+	# Channel Minor Lifeforce
+	option = {
+		name = bm_cast_blood_magic_minor.001.channel
+		trigger = {
+			piety >= 75
+		}
+		add_piety = -75
+		remove_character_modifier = lifeforce_modifier_minor
+		add_xp_enlightenment = yes
+		custom_tooltip = channel_lifeforce_enlightenment_minor.effects_list
+		trigger_event = { id = bm_channel_lifeforce_enlightenment_minor.001 }
+		ai_chance = {
+			base = 10
+			modifier = {
+				add = -100
+				health <= fine_health
+			}
+		}
+	}
+
+	# Attune Lifeforce
+	option = {
+		name = bm_cast_blood_magic_minor.001.attune
+		trigger = {
+			piety >= 25
+		}
+		add_piety = -25
+		remove_character_modifier = lifeforce_modifier_minor
+		custom_tooltip = bm_attune_lifeforce.effects_list
+		trigger_event = { id = bm_attune_lifeforce.001 }
+		ai_chance = {
+			base = 10
+			modifier = {
+				add = -100
+				health <= fine_health
+			}
+			modifier = {
+				add = 100
+				NOT = {
+					has_character_modifier = ancient_attuned
+					has_character_modifier = enlightenment_attuned
+					has_character_modifier = bloodline_attuned
+					has_character_modifier = benediction_attuned
+					has_character_modifier = hematurgy_attuned
+				}
+			}
+		}
+	}
+
+	# Cancel
+	option = {
+		name = bm_cast_blood_magic_minor.001.cancel
+		trigger = {
+			is_ai = no
+		}
+	}
+}

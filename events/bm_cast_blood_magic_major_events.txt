@@ -1,0 +1,240 @@
+﻿namespace = bm_cast_blood_magic_major
+
+bm_cast_blood_magic_major.001 = {
+	type = character_event
+	title = bm_cast_blood_magic_major.001.title
+	desc = bm_cast_blood_magic_major.001.desc
+	theme = witchcraft
+
+	# Blood Empowerment
+	option = {
+		name = bm_cast_blood_magic_major.001.empowerment
+		trigger = {
+			piety_level >= 1
+			piety >= 150
+		}
+		add_piety = -150
+		if = {
+			limit = { NOT = { has_trait = lifestyle_blood_empowerment } }
+			add_trait = lifestyle_blood_empowerment
+		}
+		blood_magic_used_major = yes
+		add_xp_bm_dynamic = {
+			TRACK = enlightenment
+			XP = 3
+		}
+		custom_tooltip = bm_blood_empowerment_decision_tooltip
+		trigger_event = { id = bm_blood_empowerment_event.001 }
+		ai_chance = {
+			base = 100
+			modifier = {
+				health <= fine_health
+				add = -100
+			}
+		}
+	}
+
+	# Improve Education
+	option = {
+		name = bm_cast_blood_magic_major.001.improve_education
+		trigger = {
+			NOT = { has_character_flag = bm_improve_education_cooldown }
+			piety_level >= 3
+			piety >= scaled_education_enhancement_cost
+			custom_description = {
+				text = "bm_improve_education_decision_xp_requirement"
+				bm_has_blood_empowerment_xp_trigger = {
+					VALUE = required_xp_improve_education
+				}
+			}
+			OR = {
+				AND = {
+					has_trait = education_diplomacy
+					NOT = { has_trait = education_diplomacy_5 }
+				}
+				AND = {
+					has_trait = education_martial
+					NOT = { has_trait = education_martial_5 }
+				}
+				AND = {
+					has_trait = education_learning
+					NOT = { has_trait = education_learning_5 }
+				}
+				AND = {
+					has_trait = education_stewardship
+					NOT = { has_trait = education_stewardship_5 }
+				}
+				AND = {
+					has_trait = education_intrigue
+					NOT = { has_trait = education_intrigue_5 }
+				}
+			}
+		}
+		add_piety = {
+			value = scaled_education_enhancement_cost
+			multiply = -1
+		}
+		add_character_flag = {
+			flag = bm_improve_education_cooldown
+			years = 2
+		}
+		blood_magic_used_major = yes
+		add_xp_bm_dynamic = {
+			TRACK = enlightenment
+			XP = 5
+		}
+		custom_tooltip = bm_improve_education_decision_desc
+		trigger_event = { id = bm_education_enhancement.001 }
+		ai_chance = {
+			base = 100
+			modifier = {
+				health <= fine_health
+				add = -100
+			}
+		}
+	}
+
+	# New Education
+	option = {
+		name = bm_cast_blood_magic_major.001.new_education
+		trigger = {
+			NOT = { has_character_flag = bm_new_education_cooldown }
+			piety_level >= 4
+			piety >= 1000
+			custom_description = {
+				text = "bm_new_education_decision_xp_requirement"
+				bm_has_blood_empowerment_xp_trigger = {
+					VALUE = required_xp_new_education
+				}
+			}
+			# Has level 5 traits
+			OR = {
+				has_trait = education_diplomacy_5
+				has_trait = education_martial_5
+				has_trait = education_learning_5
+				has_trait = education_stewardship_5
+				has_trait = education_intrigue_5
+			}
+			# Does not have any level 1-4 traits
+			NOT = {
+				OR = {
+					has_trait = education_diplomacy_1
+					has_trait = education_diplomacy_2
+					has_trait = education_diplomacy_3
+					has_trait = education_diplomacy_4
+					has_trait = education_martial_1
+					has_trait = education_martial_2
+					has_trait = education_martial_3
+					has_trait = education_martial_4
+					has_trait = education_learning_1
+					has_trait = education_learning_2
+					has_trait = education_learning_3
+					has_trait = education_learning_4
+					has_trait = education_stewardship_1
+					has_trait = education_stewardship_2
+					has_trait = education_stewardship_3
+					has_trait = education_stewardship_4
+					has_trait = education_intrigue_1
+					has_trait = education_intrigue_2
+					has_trait = education_intrigue_3
+					has_trait = education_intrigue_4
+				}
+			}
+		}
+		add_piety = -1000
+		add_character_flag = {
+			flag = bm_new_education_cooldown
+			years = 2
+		}
+		blood_magic_used_major = yes
+		add_xp_bm_dynamic = {
+			TRACK = enlightenment
+			XP = 5
+		}
+		custom_tooltip = bm_new_education_decision_desc
+		trigger_event = { id = bm_education_new.001 }
+		ai_chance = {
+			base = 100
+			modifier = {
+				health <= fine_health
+				add = -100
+			}
+		}
+	}
+
+	# Inscribe Blood Rune
+	option = {
+		name = bm_cast_blood_magic_major.001.blood_rune
+		trigger = {
+			NOT = { has_character_flag = bm_blood_rune_cooldown }
+			NOT = { has_character_modifier = superior_blood_rune_modifier }
+			has_character_modifier = lifeforce_modifier_minor
+			piety_level >= 2
+			piety >= bm_blood_rune_piety_cost
+			custom_description = {
+				text = "bm_blood_rune_decision_xp_requirement"
+				bm_has_blood_mage_xp_trigger = {
+					VALUE = bm_blood_rune_minimum_xp
+				}
+			}
+		}
+		add_piety = {
+			value = bm_blood_rune_piety_cost
+			multiply = -1
+		}
+		add_character_flag = {
+			flag = bm_blood_rune_cooldown
+			years = 5
+		}
+		blood_magic_used_major_minor = yes
+		add_piety_level = -1
+		add_xp_bm_dynamic = {
+			TRACK = benediction
+			XP = 5
+		}
+		custom_tooltip = blood_runes_effects_list.effects_list
+		trigger_event = { id = bm_blood_rune.001 }
+		ai_chance = {
+			base = 100
+			modifier = {
+				health <= fine_health
+				add = -100
+			}
+		}
+	}
+
+	# Empower Bloodline
+	option = {
+		name = bm_cast_blood_magic_major.001.bloodline
+		trigger = {
+			NOT = { has_character_flag = bm_channel_bloodline_cooldown }
+			exists = house
+			piety_level >= 1
+			piety >= 350
+		}
+		add_piety = -350
+		add_character_flag = {
+			flag = bm_channel_bloodline_cooldown
+			years = 3
+		}
+		trigger_event = { id = bm_channel_lifeforce_bloodline.001 }
+		add_xp_bm_dynamic = {
+			TRACK = bloodline
+			XP = 5
+		}
+		blood_magic_used_major = yes
+		custom_tooltip = channel_lifeforce_bloodline.effects_list
+		ai_chance = {
+			base = 50
+			ai_modifier_based_on_health = yes
+		}
+	}
+
+	# Cancel
+	option = {
+		name = bm_cast_blood_magic_major.001.cancel
+		trigger = {
+			is_ai = no
+		}
+	}
+}
