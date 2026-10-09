@@ -11,8 +11,9 @@
 | --- | --- | --- | --- | --- | --- |
 | **Geyser Initiation** | Decision | `bm_become_blood_mage_ritual_decision` -> `bm_geyser_duel.0001` | 250 piety. In Reykjavik or Tsushima. CD: 5 yrs. | 111-yr hermit (Learning) | Win: `lifestyle_blood_mage`. Lose: wound, stress, or scarred. |
 | **Trait Theft** | Interaction | `trait_drain_prisoner_event_interaction` -> `bm_trait_drain.001` | Piety. Prisoner has positive congenital trait caster lacks. | Prisoner (Prowess/Learning) | Win: Steals trait from captive. Captive drained. Lose: Backlash modifier. |
-| **Upgrade Education** | Decision | `bm_enhance_education_decision` -> `bm_education_enhance.txt` | 500 piety + Major Lifeforce. Req: CE XP (10-50). CD: 5 yrs. | Mental duel (Learning) | Win: Upgrades education star tier (up to tier 5). Lose: Stress / failure. |
-| **New Education** | Interaction | `bm_cast_blood_magic_self_major` -> `bm_education_new.txt` | Major Lifeforce. Req: 75 CE XP. | Self-ritual (Learning) | Grants an additional, secondary education trait at tier 1. |
+| **Upgrade Education** | Decision | `bm_improve_education_decision` -> `bm_education_enhance.txt` | Scaled piety + Major Lifeforce. Req: CE XP (10-50). CD: 2 yrs. | Mental duel (Learning) | Win: Upgrades education star tier (up to tier 5). Lose: Stress / failure. |
+| **New Education** | Decision | `bm_new_education_decision` -> `bm_education_new.txt` | 1000 piety + Major Lifeforce. Req: 75 CE XP. CD: 2 yrs. | Self-ritual (Learning) | Grants an additional, secondary education trait at tier 1. |
+
 | **Mass Lifedrain** | Decision | `bm_mass_lifedrain_prisoners` -> `bm_mass_lifedrain.txt` | Piety per prisoner. Dungeon has prisoners. | Uncontested execution | Kills prisoners (`death_lifedrain_reason`). Awards Lifeforce + hematurgy XP. Standard tyranny/kinslaying rules apply. |
 
 ## Key Mechanics

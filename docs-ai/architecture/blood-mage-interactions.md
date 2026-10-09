@@ -20,20 +20,13 @@
 | `heal_disease_benediction` | Courtier, family, self | Major Lifeforce. Req: 50 Benediction XP. | +3 benediction | Cures permanent ailments (blind, maimed, infirm, lunatic_1, etc.). |
 | `make_blood_knight_interaction` | Knight, courtier, or self | 100 Piety + Major Lifeforce. | +2 benediction | Bestows `lifestyle_blood_knight` trait. |
 | `empower_blood_knight_interaction` | Sworn blood knight or self | Major Lifeforce (+10 XP) or Minor Lifeforce (+5 XP). | +2 / +1 benediction | Direct popup modal advancing all 3 combat tracks. |
-| `bm_cast_blood_magic_self_channel_minor_lifeforce` | Self | Piety + Minor Lifeforce. | +1 enlightenment | Triggers temporary attribute enhancement (`bm_channel_lifeforce_enlightenment_minor.001`). |
-| `bm_cast_blood_magic_self_attune_lifeforce` | Self | Piety + Minor Lifeforce. | None | Opens attunement selection (`bm_attune_lifeforce.001`). |
-| `bm_cast_blood_magic_self_manifest_lifeforce` | Self | Piety. CD: 1 yr. | +5 enlightenment | Learning duel to generate Lifeforce. |
-| `bm_cast_blood_magic_self_major_crimson_empowerment` | Self | Piety + Major Lifeforce. | +3 enlightenment | Triggers Crimson Empowerment track advancement (`bm_crimson_empowerment_event.001`). |
-| `bm_cast_blood_magic_self_major_improve_education` | Self | Piety + Major Lifeforce. CD: 2 yrs. | +5 enlightenment | Upgrades existing education trait tier (`bm_education_enhancement.001`). |
-| `bm_cast_blood_magic_self_major_new_education` | Self | Piety + Major Lifeforce. CD: 2 yrs. | +5 enlightenment | Unlocks a second education trait branch at tier 1 (`bm_education_new.001`). |
-| `bm_cast_blood_magic_self_major_blood_rune` | Self | Piety + Major & Minor Lifeforce. CD: 5 yrs. | +5 benediction | Inscribes or upgrades body runes (`bm_crimson_rune.001`). |
 
 ## Key Mechanics & AI Logic
 
 - **AI Harvesting Vetoes:** `factor = 0` blocks AI mages from draining close family, children, spouses, friends, lovers, knights, councillors, dynasty members, and high-opinion courtiers (opinion > 20) unless rival or nemesis. Enforced across both lifedrain interactions and prisoner trait-draining.
 - **AI Teaching Priority:** AI rulers grant blood magic in order: spouse first (+100), children (+75), liege (+50), knights (+35), councillors (+25), dynasty (+25).
 - **Story Panel Sync:** Granting warrior/champion status automatically updates the Crimson Retinue in the Blood Magic panel.
-- **Self-Interactions Only:** All personal blood magic rituals targeting the character themselves are invoked exclusively by right-clicking the character via self-character interactions. No duplicate decisions are used.
+- **Personal Rituals as Decisions:** Personal blood magic rituals targeting the character themselves (Channel Minor Lifeforce, Attunement, Manifest Lifeforce, Crimson Empowerment, Education enhancement, and Blood Runes) are decisions under `bm_decision_group` in `common/decisions/bm_cast_blood_magic_self.txt`.
 - **Debug Logging Standard:** Character interactions log to `logs/debug.log` using standardized prefixes:
   - `BloodMageInteraction: <name> | Actor: <name> (ID:<id>, <Player|AI>) -> Recipient: <name> (ID:<id>, <Player|AI>) | Rel: <relation> | Tag: <role_tag> | Opinion: <opinion>`
   - `BloodMageSelfCast: <name> | Actor: <name> (ID:<id>, <Player|AI>)`
@@ -50,8 +43,6 @@
 | Blood Knight (Make & Empower) | `common/character_interactions/bm_blood_knight_interactions.txt` |
 | Grant Blood Magic Trait | `common/character_interactions/bm_grant_blood_magic.txt` |
 | Grant Lifeforce Stacks | `common/character_interactions/bm_grant_lifeforce.txt` |
-| Self Magic (Minor rituals & harvesting) | `common/character_interactions/bm_cast_blood_magic_self_minor.txt` |
-| Self Magic (Major rituals & empowerments) | `common/character_interactions/bm_cast_blood_magic_self_major.txt` |
 | Debug interactions | `common/character_interactions/bm_debug_interactions.txt` |
 
 ## Gotchas
