@@ -1,149 +1,149 @@
-﻿namespace = bm_crimson_empowerment_event
+﻿namespace = bm_blood_empowerment_event
 
 
-bm_crimson_empowerment_event.001 = {
+bm_blood_empowerment_event.001 = {
     type = character_event
-    title = bm_crimson_empowerment_event.001.title
-    desc = bm_crimson_empowerment_event.001.desc
+    title = bm_blood_empowerment_event.001.title
+    desc = bm_blood_empowerment_event.001.desc
     theme = witchcraft
 
     immediate = {
         if = {
-            limit = { NOT = { has_trait = lifestyle_crimson_empowerment } }
-            add_trait = lifestyle_crimson_empowerment
+            limit = { NOT = { has_trait = lifestyle_blood_empowerment } }
+            add_trait = lifestyle_blood_empowerment
         }
     }
 
-    # Crimson Charisma
+    # Blood Charisma
     option = {
-        name = bm_crimson_empowerment_event.001.charisma
+        name = bm_blood_empowerment_event.001.charisma
         trigger = {
             has_trait_xp = {
-            trait = lifestyle_crimson_empowerment
+            trait = lifestyle_blood_empowerment
             track = charisma
             value < 100
         }
         }
         ai_chance = { base = 100 }
         send_interface_toast = {
-            title = bm_crimson_empowerment_event.001.toast
+            title = bm_blood_empowerment_event.001.toast
             left_icon = this
-            add_crimson_empowerment_xp = { TRACK = charisma }
+            add_blood_empowerment_xp = { TRACK = charisma }
         }
     }
 
-    # Crimson Fury
+    # Blood Fury
     option = {
-        name = bm_crimson_empowerment_event.001.fury
+        name = bm_blood_empowerment_event.001.fury
         trigger = {
             has_trait_xp = {
-                trait = lifestyle_crimson_empowerment
+                trait = lifestyle_blood_empowerment
                 track = fury
                 value < 100
             }
         }
         ai_chance = { base = 100 }
          send_interface_toast = {
-            title = bm_crimson_empowerment_event.001.toast
+            title = bm_blood_empowerment_event.001.toast
             left_icon = this
-            add_crimson_empowerment_xp = { TRACK = fury }
+            add_blood_empowerment_xp = { TRACK = fury }
         }
     }
 
-    # Crimson Prosperity
+    # Blood Prosperity
     option = {
-        name = bm_crimson_empowerment_event.001.prosperity
+        name = bm_blood_empowerment_event.001.prosperity
         trigger = {
             has_trait_xp = {
-                trait = lifestyle_crimson_empowerment
+                trait = lifestyle_blood_empowerment
                 track = prosperity
                 value < 100
             }
         }
         ai_chance = { base = 100 }
          send_interface_toast = {
-            title = bm_crimson_empowerment_event.001.toast
+            title = bm_blood_empowerment_event.001.toast
             left_icon = this
-            add_crimson_empowerment_xp = { TRACK = prosperity }
+            add_blood_empowerment_xp = { TRACK = prosperity }
         }
     }
 
-    # Crimson Shadows
+    # Blood Shadows
     option = {
-        name = bm_crimson_empowerment_event.001.shadows
+        name = bm_blood_empowerment_event.001.shadows
         trigger = {
             has_trait_xp = {
-                trait = lifestyle_crimson_empowerment
+                trait = lifestyle_blood_empowerment
                 track = shadows
                 value < 100
             }
         }
         ai_chance = { base = 100 }
          send_interface_toast = {
-            title = bm_crimson_empowerment_event.001.toast
+            title = bm_blood_empowerment_event.001.toast
             left_icon = this
-            add_crimson_empowerment_xp = { TRACK = shadows }
+            add_blood_empowerment_xp = { TRACK = shadows }
         }
     }
 
-    # Crimson Insight
+    # Blood Insight
     option = {
-        name = bm_crimson_empowerment_event.001.insight
+        name = bm_blood_empowerment_event.001.insight
         trigger = {
             has_trait_xp = {
-                trait = lifestyle_crimson_empowerment
+                trait = lifestyle_blood_empowerment
                 track = insight
                 value < 100
             }
         }
         ai_chance = { base = 100 }
          send_interface_toast = {
-            title = bm_crimson_empowerment_event.001.toast
+            title = bm_blood_empowerment_event.001.toast
             left_icon = this
-            add_crimson_empowerment_xp = { TRACK = insight }
+            add_blood_empowerment_xp = { TRACK = insight }
         }
     }
 
-    # Crimson Legacy
+    # Blood Legacy
     option = {
-        name = bm_crimson_empowerment_event.001.legacy
+        name = bm_blood_empowerment_event.001.legacy
         trigger = {
             has_trait_xp = {
-                trait = lifestyle_crimson_empowerment
+                trait = lifestyle_blood_empowerment
                 track = legacy
                 value < 100
             }
         }
         ai_chance = { base = 100 }
          send_interface_toast = {
-            title = bm_crimson_empowerment_event.001.toast
+            title = bm_blood_empowerment_event.001.toast
             left_icon = this
-            add_crimson_empowerment_xp = { TRACK = legacy }
+            add_blood_empowerment_xp = { TRACK = legacy }
         }
     }
 
-    # Crimson Expertise
+    # Blood Expertise
     option = {
-        name = bm_crimson_empowerment_event.001.expertise
+        name = bm_blood_empowerment_event.001.expertise
         trigger = {
             has_trait_xp = {
-                trait = lifestyle_crimson_empowerment
+                trait = lifestyle_blood_empowerment
                 track = expertise
                 value < 100
             }
         }
         ai_chance = { base = 100 }
          send_interface_toast = {
-            title = bm_crimson_empowerment_event.001.toast
+            title = bm_blood_empowerment_event.001.toast
             left_icon = this
-            add_crimson_empowerment_xp = { TRACK = expertise }
+            add_blood_empowerment_xp = { TRACK = expertise }
         }
     }
     # Fallback
     option = {
-        name = bm_crimson_empowerment_event.001.versatility
+        name = bm_blood_empowerment_event.001.versatility
         send_interface_toast = {
-            title = bm_crimson_empowerment_event.001.toast
+            title = bm_blood_empowerment_event.001.toast
             left_icon = this
         }
         add_character_modifier = {

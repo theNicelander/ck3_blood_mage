@@ -41,40 +41,40 @@ bm_has_valuable_genetic_trait_trigger = {
 	}
 }
 
-bm_has_crimson_empowerment_xp_trigger = {
+bm_has_blood_empowerment_xp_trigger = {
 	OR = {
 		has_trait_xp = {
-			trait = lifestyle_crimson_empowerment
+			trait = lifestyle_blood_empowerment
 			track = charisma
 			value >= $VALUE$
 		}
 		has_trait_xp = {
-			trait = lifestyle_crimson_empowerment
+			trait = lifestyle_blood_empowerment
 			track = fury
 			value >= $VALUE$
 		}
 		has_trait_xp = {
-			trait = lifestyle_crimson_empowerment
+			trait = lifestyle_blood_empowerment
 			track = prosperity
 			value >= $VALUE$
 		}
 		has_trait_xp = {
-			trait = lifestyle_crimson_empowerment
+			trait = lifestyle_blood_empowerment
 			track = shadows
 			value >= $VALUE$
 		}
 		has_trait_xp = {
-			trait = lifestyle_crimson_empowerment
+			trait = lifestyle_blood_empowerment
 			track = insight
 			value >= $VALUE$
 		}
 		has_trait_xp = {
-			trait = lifestyle_crimson_empowerment
+			trait = lifestyle_blood_empowerment
 			track = legacy
 			value >= $VALUE$
 		}
 		has_trait_xp = {
-			trait = lifestyle_crimson_empowerment
+			trait = lifestyle_blood_empowerment
 			track = expertise
 			value >= $VALUE$
 		}

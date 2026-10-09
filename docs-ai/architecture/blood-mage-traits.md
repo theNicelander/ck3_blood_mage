@@ -6,7 +6,7 @@
 
 - **How to get it:** Acquired through `bm_become_blood_mage_effect` via self-initiation (faith decision or Learning ritual duel), teaching from a friend/lover/liege, siphoning an imprisoned mage, witch conversion, or hereditary birth.
 - **What it does:** Marks the character as a blood mage. Grants base benefits (`+2` Learning per Piety level, `+10` Blood Mage opinion), unlocks the Blood Magic story panel, enables Lifeforce spellcasting, and progresses across 5 school tracks.
-- **How to level it up:** Spending Lifeforce on blood magic grants XP in the spell's corresponding school (using `add_xp_bm_dynamic`). Slow passive growth comes from the yearly pulse (`ancient`), active house crimson modifiers (`bloodline`), and yearly attunements.
+- **How to level it up:** Spending Lifeforce on blood magic grants XP in the spell's corresponding school (using `add_xp_bm_dynamic`). Slow passive growth comes from the yearly pulse (`ancient`), active house blood modifiers (`bloodline`), and yearly attunements.
 
 ### Simplified Track Benefits Table
 
@@ -24,7 +24,7 @@ Each track has 10 progression levels (10 to 100 XP). Every standard level (10–
 
 ## Purpose
 
-Identity and progression trait `lifestyle_blood_mage`. Gates spellcasting, story panel, and 5 school tracks. Secondary trait `lifestyle_crimson_empowerment` covered in [blood-mage-crimson-empowerment.md](blood-mage-crimson-empowerment.md).
+Identity and progression trait `lifestyle_blood_mage`. Gates spellcasting, story panel, and 5 school tracks. Secondary trait `lifestyle_blood_empowerment` covered in [blood-mage-blood-empowerment.md](blood-mage-blood-empowerment.md).
 
 ## Concepts
 
@@ -46,7 +46,7 @@ All routes call `bm_become_blood_mage_effect`:
 
 ### How Tracks Level Up
 - **Active Spells:** Consuming Lifeforce adds 1–2 XP to the spell's school via `add_xp_bm_dynamic`.
-- **Passive Yearly:** `ancient` gains +1 XP on yearly pulse; `bloodline` rolls yearly XP based on count of house crimson modifiers.
+- **Passive Yearly:** `ancient` gains +1 XP on yearly pulse; `bloodline` rolls yearly XP based on count of house blood modifiers.
 - **Progression Gates:** Advanced decisions/rituals require minimum XP thresholds in specific tracks.
 
 ## Where the details live
@@ -54,12 +54,12 @@ All routes call `bm_become_blood_mage_effect`:
 | Piece | File |
 | --- | --- |
 | Blood Mage trait | `common/traits/bm_blood_mage_trait.txt` |
-| Crimson Empowerment trait | `common/traits/bm_crimson_empowerment_trait.txt` |
-| XP helpers (`add_xp_bm_dynamic`, `add_crimson_empowerment_xp`) | `common/scripted_effects/bm_trait_track_xp_gain_effects.txt` |
+| Blood Empowerment trait | `common/traits/bm_blood_empowerment_trait.txt` |
+| XP helpers (`add_xp_bm_dynamic`, `add_blood_empowerment_xp`) | `common/scripted_effects/bm_trait_track_xp_gain_effects.txt` |
 | Acquisition effect | `common/scripted_effects/bm_blood_mage_lifecycle_effects.txt` |
 | Per-school cast effects (XP per spell) | `common/scripted_effects/bm_blood_magic_used_effects.txt`, `bm_drain_trait_effects.txt` |
 | Yearly passive XP and rune lifeforce | `events/bm_yearly_events.txt`, `common/on_action/bm_yearly_pulse.txt` |
-| Crimson Empowerment choice event | `events/bm_crimson_empowerment_event.txt` |
+| Blood Empowerment choice event | `events/bm_blood_empowerment_event.txt` |
 | Birth and prevalence on-actions | `common/on_action/bm_blood_mage_prevalence_on_actions.txt` |
 | Acquisition interactions and decisions | `common/character_interactions/bm_become_a_blood_mage.txt`, `bm_grant_blood_magic.txt`, `common/decisions/bm_become_blood_mage_decision.txt`, `bm_convert_from_witch.txt` |
 | Names and track descriptions | `localization/english/bm_traits_l_english.yml` |

@@ -1,4 +1,4 @@
-﻿bm_crimson_empowerment_decision = {
+﻿bm_blood_empowerment_decision = {
 	picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
 	decision_group_type = bm_decision_group
 
@@ -13,12 +13,12 @@
 	}
 
 	effect = {
-		debug_log = "BloodMageDecision: crimson_empowerment | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+		debug_log = "BloodMageDecision: blood_empowerment | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
 		if = {
-			limit = { NOT = { has_trait = lifestyle_crimson_empowerment } }
-			add_trait = lifestyle_crimson_empowerment
+			limit = { NOT = { has_trait = lifestyle_blood_empowerment } }
+			add_trait = lifestyle_blood_empowerment
 		}
-		trigger_event = { id = bm_crimson_empowerment_event.001 }
+		trigger_event = { id = bm_blood_empowerment_event.001 }
 		blood_magic_used_major = yes
 		add_xp_bm_dynamic = {
 			TRACK = enlightenment
@@ -73,7 +73,7 @@ bm_improve_education_decision = {
 		piety_level >= 3
 		custom_description = {
 			text = "bm_improve_education_decision_xp_requirement"
-			bm_has_crimson_empowerment_xp_trigger = {
+			bm_has_blood_empowerment_xp_trigger = {
 				VALUE = required_xp_improve_education
 			}
 		}
@@ -148,7 +148,7 @@ bm_new_education_decision = {
 		piety_level >= 4
 		custom_description = {
 			text = "bm_new_education_decision_xp_requirement"
-			bm_has_crimson_empowerment_xp_trigger = {
+			bm_has_blood_empowerment_xp_trigger = {
 				VALUE = required_xp_new_education
 			}
 		}
@@ -184,7 +184,7 @@ bm_blood_rune_decision = {
 
 	is_shown = {
 		has_trait = lifestyle_blood_mage
-		NOT = { has_character_modifier = superior_crimson_rune_modifier }
+		NOT = { has_character_modifier = superior_blood_rune_modifier }
 	}
 	is_valid = {
 		has_character_modifier = lifeforce_modifier_major
@@ -200,14 +200,14 @@ bm_blood_rune_decision = {
 
 	effect = {
 		debug_log = "BloodMageDecision: blood_rune | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
-		trigger_event = { id = bm_crimson_rune.001 }
+		trigger_event = { id = bm_blood_rune.001 }
 		blood_magic_used_major_minor = yes
 		add_piety_level = -1
 		add_xp_bm_dynamic = {
 			TRACK = benediction
 			XP = 5
 		}
-		custom_tooltip = crimson_runes_effects_list.effects_list
+		custom_tooltip = blood_runes_effects_list.effects_list
 	}
 
 	ai_check_interval = 6
@@ -218,4 +218,34 @@ bm_blood_rune_decision = {
 			add = -100
 		}
 	}
+}
+
+channel_lifeforce_bloodline = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
+
+    decision_group_type = bm_decision_group
+
+    cooldown = { years = 3 }
+    cost = { piety = 350 }
+
+    is_shown = { has_trait = lifestyle_blood_mage }
+    is_valid = {
+        has_character_modifier = lifeforce_modifier_major
+        piety_level >= 1
+    }
+    effect = {
+        debug_log = "BloodMageDecision: channel_lifeforce_bloodline | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+        trigger_event = { id = bm_channel_lifeforce_bloodline.001 }
+        add_xp_bm_dynamic = {
+            TRACK = bloodline
+            XP = 5
+        }
+        blood_magic_used_major = yes
+        custom_tooltip = channel_lifeforce_bloodline.effects_list
+    }
+    ai_check_interval = 6
+    ai_will_do = {
+        base = 50
+        ai_modifier_based_on_health = yes
+    }
 }

@@ -51,9 +51,9 @@ Every architecture document must begin with a concise **Executive Summary**:
 | `blood-mage-lifeforce.md` | The Lifeforce resource, positive/negative modifiers, and harvesting |
 | `blood-mage-progression.md` | Dynamic XP gains, requirement gates, cost scaling, and AI weighting |
 | `blood-mage-interactions.md` | Character interactions (draining, granting, curing, and self-casting) |
-| `blood-mage-blood-runes.md` | Crimson Runes and blood university duchy buildings |
+| `blood-mage-blood-runes.md` | Blood Runes and blood university duchy buildings |
 | `blood-mage-golems.md` | Blood golem lifecycle, creation decision, shaping duels, and template |
-| `blood-mage-crimson-empowerment.md` | The Crimson Empowerment trait, self-advancement, and warrior retinue |
+| `blood-mage-blood-empowerment.md` | The Blood Empowerment trait, self-advancement, and warrior retinue |
 | `blood-mage-duels-and-education.md` | Duel calculations, trait draining, education enhancement, and mass lifedrain |
 | `blood-mage-prevalence-and-lifecycle.md` | Trait acquisition, birth inheritance, yearly pulses, and retention audits |
 | `blood-mage-game-rules.md` | Campaign game rules (prevalence, alterations, and religion availability) |

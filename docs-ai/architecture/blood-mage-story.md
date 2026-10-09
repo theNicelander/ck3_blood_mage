@@ -10,7 +10,7 @@ Character-bound story cycle powering the "Blood Magic" Situation panel (`window_
 | --- | --- | --- | --- |
 | **Living Dynasty Roster** | Story variable list | All living dynasty members with `lifestyle_blood_mage` | `bm_refresh_blood_magic_rosters_effect` |
 | **Blood Golem Roster** | Story variable list | Courtiers possessing `lifestyle_blood_mage` trait belonging to the Golem house (`house_blood_golem`) | Creation, shaping, death, or roster refresh effect |
-| **Crimson Retinue Roster** | Story variable list | Courtiers possessing `lifestyle_blood_knight` trait | Roster refresh effect (`bm_refresh_blood_magic_rosters_effect`) |
+| **Blood Retinue Roster** | Story variable list | Courtiers possessing `lifestyle_blood_knight` trait | Roster refresh effect (`bm_refresh_blood_magic_rosters_effect`) |
 | **Lifeforce Counters** | Story variables | Cached counts of Minor, Medium, and Major Lifeforce modifiers | Roster refresh (strips and recount stacks) |
 | **Situation Decisions** | Hidden decisions (`is_invisible = yes`) | Compact blood magic actions accessible only inside panel | Story cycle decision list |
 

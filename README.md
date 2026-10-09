@@ -104,7 +104,7 @@ Managing Lifeforce requires careful balance between health and longevity versus 
 
 Blood Mages can use this Lifeforce to perform various actions:
 
-- Level up a unique Crimson Empowerment trait, for permanent buffs.
+- Level up a unique Blood Empowerment trait, for permanent buffs.
 - Get temporary buffs, or buff their dynasty permantly
 - Improve education trait, or gain new ones
 - Inscribe their body with runes that passively generate lifeforce

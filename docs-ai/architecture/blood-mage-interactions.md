@@ -25,8 +25,8 @@
 
 - **AI Harvesting Vetoes:** `factor = 0` blocks AI mages from draining close family, children, spouses, friends, lovers, knights, councillors, dynasty members, and high-opinion courtiers (opinion > 20) unless rival or nemesis. Enforced across both lifedrain interactions and prisoner trait-draining.
 - **AI Teaching Priority:** AI rulers grant blood magic in order: spouse first (+100), children (+75), liege (+50), knights (+35), councillors (+25), dynasty (+25).
-- **Story Panel Sync:** Granting warrior/champion status automatically updates the Crimson Retinue in the Blood Magic panel.
-- **Personal Rituals as Decisions:** Personal blood magic rituals targeting the character themselves (Channel Minor Lifeforce, Attunement, Manifest Lifeforce, Crimson Empowerment, Education enhancement, and Blood Runes) are decisions under `bm_decision_group` in `common/decisions/bm_cast_blood_magic_self.txt`.
+- **Story Panel Sync:** Granting warrior/champion status automatically updates the Blood Retinue in the Blood Magic panel.
+- **Personal Rituals as Decisions:** Personal blood magic rituals targeting the character themselves (Channel Minor Lifeforce, Attunement, Manifest Lifeforce, Blood Empowerment, Education enhancement, and Blood Runes) are decisions under `bm_decision_group` in `common/decisions/cast_magic/bm_cast_blood_magic_*.txt`.
 - **Debug Logging Standard:** Character interactions log to `logs/debug.log` using standardized prefixes:
   - `BloodMageInteraction: <name> | Actor: <name> (ID:<id>, <Player|AI>) -> Recipient: <name> (ID:<id>, <Player|AI>) | Rel: <relation> | Tag: <role_tag> | Opinion: <opinion>`
   - `BloodMageSelfCast: <name> | Actor: <name> (ID:<id>, <Player|AI>)`

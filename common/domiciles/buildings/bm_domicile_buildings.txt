@@ -1,4 +1,4 @@
-﻿bm_domicile_sanguine_font_01 = {
+﻿bm_domicile_blood_shrine_01 = {
 	construction_time = 180
 	allowed_domicile_types = { camp estate yurt ecclesiastical_domicile japanese_manor }
 	slot_type = external
@@ -30,12 +30,12 @@
 	}
 
 	parameters = {
-		bm_sanguine_font_tier_1 = yes
+		bm_blood_shrine_tier_1 = yes
 	}
 
 	on_complete = {
 		scope:owner = {
-			bm_update_sanguine_font_aura_effect = yes
+			bm_update_blood_shrine_aura_effect = yes
 		}
 	}
 
@@ -71,11 +71,11 @@
 	}
 }
 
-bm_domicile_sanguine_font_02 = {
+bm_domicile_blood_shrine_02 = {
 	construction_time = 240
 	allowed_domicile_types = { camp estate yurt ecclesiastical_domicile japanese_manor }
 	slot_type = external
-	previous_building = bm_domicile_sanguine_font_01
+	previous_building = bm_domicile_blood_shrine_01
 
 	can_construct_potential = {
 		OR = {
@@ -105,12 +105,12 @@ bm_domicile_sanguine_font_02 = {
 	}
 
 	parameters = {
-		bm_sanguine_font_tier_2 = yes
+		bm_blood_shrine_tier_2 = yes
 	}
 
 	on_complete = {
 		scope:owner = {
-			bm_update_sanguine_font_aura_effect = yes
+			bm_update_blood_shrine_aura_effect = yes
 		}
 	}
 
@@ -146,11 +146,11 @@ bm_domicile_sanguine_font_02 = {
 	}
 }
 
-bm_domicile_sanguine_font_03 = {
+bm_domicile_blood_shrine_03 = {
 	construction_time = 360
 	allowed_domicile_types = { camp estate yurt ecclesiastical_domicile japanese_manor }
 	slot_type = external
-	previous_building = bm_domicile_sanguine_font_02
+	previous_building = bm_domicile_blood_shrine_02
 
 	can_construct_potential = {
 		OR = {
@@ -180,12 +180,12 @@ bm_domicile_sanguine_font_03 = {
 	}
 
 	parameters = {
-		bm_sanguine_font_tier_3 = yes
+		bm_blood_shrine_tier_3 = yes
 	}
 
 	on_complete = {
 		scope:owner = {
-			bm_update_sanguine_font_aura_effect = yes
+			bm_update_blood_shrine_aura_effect = yes
 		}
 	}
 
@@ -221,11 +221,11 @@ bm_domicile_sanguine_font_03 = {
 	}
 }
 
-bm_domicile_sanguine_font_04 = {
+bm_domicile_blood_shrine_04 = {
 	construction_time = 480
 	allowed_domicile_types = { camp estate yurt ecclesiastical_domicile japanese_manor }
 	slot_type = external
-	previous_building = bm_domicile_sanguine_font_03
+	previous_building = bm_domicile_blood_shrine_03
 
 	can_construct_potential = {
 		OR = {
@@ -255,12 +255,12 @@ bm_domicile_sanguine_font_04 = {
 	}
 
 	parameters = {
-		bm_sanguine_font_tier_4 = yes
+		bm_blood_shrine_tier_4 = yes
 	}
 
 	on_complete = {
 		scope:owner = {
-			bm_update_sanguine_font_aura_effect = yes
+			bm_update_blood_shrine_aura_effect = yes
 		}
 	}
 
@@ -296,11 +296,11 @@ bm_domicile_sanguine_font_04 = {
 	}
 }
 
-bm_domicile_sanguine_font_05 = {
+bm_domicile_blood_shrine_05 = {
 	construction_time = 600
 	allowed_domicile_types = { camp estate yurt ecclesiastical_domicile japanese_manor }
 	slot_type = external
-	previous_building = bm_domicile_sanguine_font_04
+	previous_building = bm_domicile_blood_shrine_04
 
 	can_construct_potential = {
 		OR = {
@@ -330,12 +330,12 @@ bm_domicile_sanguine_font_05 = {
 	}
 
 	parameters = {
-		bm_sanguine_font_tier_5 = yes
+		bm_blood_shrine_tier_5 = yes
 	}
 
 	on_complete = {
 		scope:owner = {
-			bm_update_sanguine_font_aura_effect = yes
+			bm_update_blood_shrine_aura_effect = yes
 		}
 	}
 

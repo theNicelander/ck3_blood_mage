@@ -74,49 +74,49 @@ debug_add_exp_blood_mage_exp = {
 }
 
 
-debug_add_crimson_empowerment_exp = {
+debug_add_blood_empowerment_exp = {
     decision_group_type = debug
     ai_check_interval = 0
     picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
     is_shown = { debug_only = yes }
     effect = {
         if = {
-            limit = { NOT = { has_trait = lifestyle_crimson_empowerment } }
-            add_trait = lifestyle_crimson_empowerment
+            limit = { NOT = { has_trait = lifestyle_blood_empowerment } }
+            add_trait = lifestyle_blood_empowerment
         }
 
         add_trait_xp = {
-            trait = lifestyle_crimson_empowerment
+            trait = lifestyle_blood_empowerment
             track = charisma
             value = 20
         }
         add_trait_xp = {
-            trait = lifestyle_crimson_empowerment
+            trait = lifestyle_blood_empowerment
             track = fury
             value = 20
         }
         add_trait_xp = {
-            trait = lifestyle_crimson_empowerment
+            trait = lifestyle_blood_empowerment
             track = prosperity
             value = 20
         }
         add_trait_xp = {
-            trait = lifestyle_crimson_empowerment
+            trait = lifestyle_blood_empowerment
             track = shadows
             value = 20
         }
         add_trait_xp = {
-            trait = lifestyle_crimson_empowerment
+            trait = lifestyle_blood_empowerment
             track = insight
             value = 20
         }
         add_trait_xp = {
-            trait = lifestyle_crimson_empowerment
+            trait = lifestyle_blood_empowerment
             track = legacy
             value = 20
         }
         add_trait_xp = {
-            trait = lifestyle_crimson_empowerment
+            trait = lifestyle_blood_empowerment
             track = expertise
             value = 20
         }

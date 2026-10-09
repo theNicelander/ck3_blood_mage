@@ -5,7 +5,7 @@ description: Lifestyle traits, tracks, XP progression, and inheritance mechanics
 
 # Traits
 
-Reference: `common/traits/bm_blood_mage_trait.txt`, `bm_crimson_empowerment_trait.txt`.
+Reference: `common/traits/bm_blood_mage_trait.txt`, `bm_blood_empowerment_trait.txt`.
 
 - **Tracks**: Defined via `tracks = { <track> = { <xp> = { <modifiers> } } }`. Level blocks are explicitly declared; modifying a tier requires updating all affected thresholds.
 - **XP gain**: Add progression via `add_trait_xp = { trait = <trait> track = <track> value = <int> }`.

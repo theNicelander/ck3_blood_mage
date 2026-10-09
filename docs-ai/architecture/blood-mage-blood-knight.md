@@ -39,7 +39,7 @@ Combined cap across all 3 tracks (30 tiers total):
 - **Interactions (`bm_blood_knight_interactions.txt`):**
   - `make_blood_knight_interaction`: Bestows base trait at 0 XP. Actor must hold `lifestyle_blood_mage` and Major Lifeforce. Costs 100 Piety.
   - `empower_blood_knight_interaction`: Direct popup modal allowing choice between Major Lifeforce (+10 XP to all tracks), Minor Lifeforce (+5 XP to all tracks), or backing out.
-- **Story Panel Integration:** Roster list effect `bm_refresh_blood_magic_rosters_effect` populates `bm_crimson_retinue` using `has_trait = lifestyle_blood_knight`.
+- **Story Panel Integration:** Roster list effect `bm_refresh_blood_magic_rosters_effect` populates `bm_blood_retinue` using `has_trait = lifestyle_blood_knight`.
 - **Zero Legacy Modifiers:** Pure trait implementation; `lifeforce_modifier_crimson_warrior` and `lifeforce_modifier_crimson_champion` are completely removed.
 
 ## Where the details live

@@ -23,10 +23,10 @@
 | `bm_channel_minor_lifeforce_decision` | Standard | 75 piety + Minor Lifeforce. | Has minor lifeforce. | +1 enlightenment | Triggers temporary attribute enhancement (`bm_channel_lifeforce_enlightenment_minor.001`). |
 | `bm_attune_lifeforce_decision` | Standard | 25 piety + Minor Lifeforce. | Has minor lifeforce. | None | Opens attunement selection (`bm_attune_lifeforce.001`). |
 | `bm_manifest_lifeforce_decision` | Standard | 100 piety. CD: 1 yr. | Piety rank >= 2. | +5 enlightenment | Learning duel to generate Lifeforce. |
-| `bm_crimson_empowerment_decision` | Standard | 150 piety + Major Lifeforce. | Devotion rank >= 1. | +3 enlightenment | Advances Crimson Empowerment (`bm_crimson_empowerment_event.001`). |
+| `bm_blood_empowerment_decision` | Standard | 150 piety + Major Lifeforce. | Devotion rank >= 1. | +3 enlightenment | Advances Blood Empowerment (`bm_blood_empowerment_event.001`). |
 | `bm_improve_education_decision` | Standard | Scaled piety + Major Lifeforce. CD: 2 yrs. | Devotion rank >= 3, CE track XP. | +5 enlightenment | Upgrades education tier (`bm_education_enhancement.001`). |
 | `bm_new_education_decision` | Standard | 1000 piety + Major Lifeforce. CD: 2 yrs. | Devotion rank >= 4, tier 5 education, CE XP. | +5 enlightenment | Grants second education trait (`bm_education_new.001`). |
-| `bm_blood_rune_decision` | Standard | Piety + Major & Minor Lifeforce. CD: 5 yrs. | Devotion rank >= 2, Blood Mage XP. | +5 benediction | Inscribes or upgrades body runes (`bm_crimson_rune.001`). |
+| `bm_blood_rune_decision` | Standard | Piety + Major & Minor Lifeforce. CD: 5 yrs. | Devotion rank >= 2, Blood Mage XP. | +5 benediction | Inscribes or upgrades body runes (`bm_blood_rune.001`). |
 
 ## Where the details live
 
@@ -35,11 +35,11 @@
 | Ritual of Blood, Blood Cultist to Blood Mage | `bm_become_blood_mage_decision.txt` |
 | Convert from Witch | `bm_convert_from_witch.txt` |
 | Seek Power (landed & adventurer) | `bm_seek_power_decision.txt` |
-| Channel Lifeforce into Bloodline | `bm_channel_lifeforce.txt` |
-| Blood Golem Creation | `bm_create_blood_golem.txt` |
+| Major Rituals (Empowerment, Education, Runes, Bloodline) | `cast_magic/bm_cast_blood_magic_major.txt` |
+| Minor Rituals (Channel Minor, Attunement) | `cast_magic/bm_cast_blood_magic_minor.txt` |
+| Blood Golem Creation | `cast_magic/bm_create_blood_golem.txt` |
 | Mass Lifedrain of Prisoners | `bm_mass_lifedrain_prisoners.txt` |
 | Become Blood Cultist (Major) | `bm_become_blood_cultist_decision.txt` |
-| Self Magic & Personal Rituals | `bm_cast_blood_magic_self.txt` |
 | Debug decisions | `bm_debug_decisions.txt` |
 
 

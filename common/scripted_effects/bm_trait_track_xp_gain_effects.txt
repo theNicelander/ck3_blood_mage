@@ -6,11 +6,18 @@
     }
 }
 
-bm_add_crimson_empowerment_xp_effect = {
+bm_add_blood_empowerment_xp_effect = {
     add_trait_xp = {
-        trait = lifestyle_crimson_empowerment
+        trait = lifestyle_blood_empowerment
         track = $TRACK$
         value = $XP$
+    }
+}
+
+bm_add_crimson_empowerment_xp_effect = {
+    bm_add_blood_empowerment_xp_effect = {
+        TRACK = $TRACK$
+        XP = $XP$
     }
 }
 
@@ -30,10 +37,16 @@ add_xp_bm_dynamic = {
     }
 }
 
-add_crimson_empowerment_xp = {
-    bm_add_crimson_empowerment_xp_effect = {
+add_blood_empowerment_xp = {
+    bm_add_blood_empowerment_xp_effect = {
         TRACK = $TRACK$
         XP = 10
+    }
+}
+
+add_crimson_empowerment_xp = {
+    add_blood_empowerment_xp = {
+        TRACK = $TRACK$
     }
 }
 

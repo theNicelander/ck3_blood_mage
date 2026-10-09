@@ -1,72 +1,72 @@
-﻿bm_apply_individual_sanguine_font_aura_effect = {
+﻿bm_apply_individual_blood_shrine_aura_effect = {
 	# Scoped to courtier or camp follower
 	# Parameter: $SOURCE$ (the court owner or camp leader)
-	remove_character_modifier = bm_sanguine_font_aura_tier_1
-	remove_character_modifier = bm_sanguine_font_aura_tier_2
-	remove_character_modifier = bm_sanguine_font_aura_tier_3
-	remove_character_modifier = bm_sanguine_font_aura_tier_4
-	remove_character_modifier = bm_sanguine_font_aura_tier_5
+	remove_character_modifier = bm_blood_shrine_aura_tier_1
+	remove_character_modifier = bm_blood_shrine_aura_tier_2
+	remove_character_modifier = bm_blood_shrine_aura_tier_3
+	remove_character_modifier = bm_blood_shrine_aura_tier_4
+	remove_character_modifier = bm_blood_shrine_aura_tier_5
 
 	if = {
 		limit = {
-			$SOURCE$.domicile ?= { has_domicile_parameter = bm_sanguine_font_tier_5 }
+			$SOURCE$.domicile ?= { has_domicile_parameter = bm_blood_shrine_tier_5 }
 		}
 		add_character_modifier = {
-			modifier = bm_sanguine_font_aura_tier_5
+			modifier = bm_blood_shrine_aura_tier_5
 			years = 2
 		}
 	}
 	else_if = {
 		limit = {
-			$SOURCE$.domicile ?= { has_domicile_parameter = bm_sanguine_font_tier_4 }
+			$SOURCE$.domicile ?= { has_domicile_parameter = bm_blood_shrine_tier_4 }
 		}
 		add_character_modifier = {
-			modifier = bm_sanguine_font_aura_tier_4
+			modifier = bm_blood_shrine_aura_tier_4
 			years = 2
 		}
 	}
 	else_if = {
 		limit = {
-			$SOURCE$.domicile ?= { has_domicile_parameter = bm_sanguine_font_tier_3 }
+			$SOURCE$.domicile ?= { has_domicile_parameter = bm_blood_shrine_tier_3 }
 		}
 		add_character_modifier = {
-			modifier = bm_sanguine_font_aura_tier_3
+			modifier = bm_blood_shrine_aura_tier_3
 			years = 2
 		}
 	}
 	else_if = {
 		limit = {
-			$SOURCE$.domicile ?= { has_domicile_parameter = bm_sanguine_font_tier_2 }
+			$SOURCE$.domicile ?= { has_domicile_parameter = bm_blood_shrine_tier_2 }
 		}
 		add_character_modifier = {
-			modifier = bm_sanguine_font_aura_tier_2
+			modifier = bm_blood_shrine_aura_tier_2
 			years = 2
 		}
 	}
 	else_if = {
 		limit = {
-			$SOURCE$.domicile ?= { has_domicile_parameter = bm_sanguine_font_tier_1 }
+			$SOURCE$.domicile ?= { has_domicile_parameter = bm_blood_shrine_tier_1 }
 		}
 		add_character_modifier = {
-			modifier = bm_sanguine_font_aura_tier_1
+			modifier = bm_blood_shrine_aura_tier_1
 			years = 2
 		}
 	}
 }
 
-bm_update_sanguine_font_aura_effect = {
+bm_update_blood_shrine_aura_effect = {
 	# Scoped to ruler or camp leader
 	save_scope_as = bm_aura_leader
 	every_courtier = {
-		bm_apply_individual_sanguine_font_aura_effect = { SOURCE = scope:bm_aura_leader }
+		bm_apply_individual_blood_shrine_aura_effect = { SOURCE = scope:bm_aura_leader }
 	}
 }
 
-bm_clear_sanguine_font_aura_effect = {
+bm_clear_blood_shrine_aura_effect = {
 	# Scoped to courtier
-	remove_character_modifier = bm_sanguine_font_aura_tier_1
-	remove_character_modifier = bm_sanguine_font_aura_tier_2
-	remove_character_modifier = bm_sanguine_font_aura_tier_3
-	remove_character_modifier = bm_sanguine_font_aura_tier_4
-	remove_character_modifier = bm_sanguine_font_aura_tier_5
+	remove_character_modifier = bm_blood_shrine_aura_tier_1
+	remove_character_modifier = bm_blood_shrine_aura_tier_2
+	remove_character_modifier = bm_blood_shrine_aura_tier_3
+	remove_character_modifier = bm_blood_shrine_aura_tier_4
+	remove_character_modifier = bm_blood_shrine_aura_tier_5
 }
