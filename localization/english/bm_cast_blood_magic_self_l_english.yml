@@ -1,6 +1,11 @@
 ﻿l_english:
 ############### MINOR ###############
     # Attune lifeforce
+    bm_attune_lifeforce_decision: "Lifeforce Attunement"
+    bm_attune_lifeforce_decision_desc: "Spend [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] to attune your Blood Magic towards a particular [GetTrait('lifestyle_blood_mage').GetName( GetNullCharacter )] trait path for increased experience gain."
+    bm_attune_lifeforce_decision_tooltip: "Attune to a blood magic discipline to increase experience gain"
+    bm_attune_lifeforce_decision_confirm: "Attune Powers"
+
     bm_cast_blood_magic_self_attune_lifeforce: "Lifeforce Attunement"
     bm_cast_blood_magic_self_attune_lifeforce_desc: "Spend [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] to attune your Blood Magic towards a particular [GetTrait('lifestyle_blood_mage').GetName( GetNullCharacter )] trait path for increased experience gain."
     bm_attune_lifeforce.effects_list: "Choose one of the following attunements (you can only have one at a time):\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('ancient_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('enlightenment_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('bloodline_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('benediction_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('hematurgy_attuned').GetNameWithTooltip]"
@@ -14,6 +19,11 @@
     bm_attune_lifeforce.001.f: "Hematurgy - Sharpen my skills in harvesting lifeforce"
 
     # Channel lifeforce minor
+    bm_channel_minor_lifeforce_decision: "Channel Minor Lifeforce"
+    bm_channel_minor_lifeforce_decision_desc: "Spend [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] for a small temporary boost."
+    bm_channel_minor_lifeforce_decision_tooltip: "Spend minor lifeforce to temporarily enhance one attribute"
+    bm_channel_minor_lifeforce_decision_confirm: "Channel the Blood"
+
     bm_cast_blood_magic_self_channel_minor_lifeforce: "Channel Minor Lifeforce"
     bm_cast_blood_magic_self_channel_minor_lifeforce_desc: "Spend [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] for a small temporary boost."
     channel_lifeforce_enlightenment_minor.effects_list: "Channel minor blood magic to temporarily enhance one attribute:\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('diplomacy_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('martial_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('stewardship_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('intrigue_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('learning_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('prowess_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('exp_lifeforce_modifier').GetNameWithTooltip]"
@@ -31,6 +41,13 @@
 
 ############### MAJOR ###############
     # Education improvement
+    bm_improve_education_decision: "Enhance Education"
+    bm_improve_education_decision_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to attempt to improve one of your Education traits."
+    bm_improve_education_decision_tooltip: "Attempt to elevate your primary education trait to a higher tier"
+    bm_improve_education_decision_confirm: "Infuse Mind"
+    bm_improve_education_decision_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_improve_education')|0] Experience in [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]"
+    NOT_bm_improve_education_decision_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_improve_education')|0] Experience in [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]"
+
     bm_cast_blood_magic_self_major_improve_education: "Enhance Education"
     bm_cast_blood_magic_self_major_improve_education_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to attempt to improve one of your Education traits"
     bm_cast_blood_magic_self_major_improve_education_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_improve_education')|0] Experience in [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]"
@@ -47,6 +64,13 @@
     bm_education_enhancement.failure: "Blood Infusion Failed"
 
     # New Education
+    bm_new_education_decision: "Embrace New Education"
+    bm_new_education_decision_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to attempt to improve one of your Education traits"
+    bm_new_education_decision_tooltip: "Unlock a second education discipline using blood magic"
+    bm_new_education_decision_confirm: "Forge New Pathways"
+    bm_new_education_decision_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_new_education')|0] Experience in [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]"
+    NOT_bm_new_education_decision_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_new_education')|0] Experience in [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]"
+
     bm_cast_blood_magic_self_major_new_education: "Embrace New Education"
     bm_cast_blood_magic_self_major_new_education_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to attempt to improve one of your Education traits"
     bm_cast_blood_magic_self_major_new_education_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_new_education')|0] Experience in [GetTrait('lifestyle_crimson_empowerment').GetName( GetNullCharacter )]"
@@ -67,8 +91,12 @@
     bm_cast_blood_magic_self_major_blood_rune_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('bm_blood_rune_minimum_xp')|0] Experience in Blood Magic"
     NOT_bm_cast_blood_magic_self_major_blood_rune_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('bm_blood_rune_minimum_xp')|0] Experience in Blood Magic"
 
-
     # Crimson Empowerment
+    bm_crimson_empowerment_decision: "Channel Crimson Empowerment"
+    bm_crimson_empowerment_decision_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to permanently enhance your physical and mental attributes"
+    bm_crimson_empowerment_decision_tooltip: "Spend major lifeforce to permanently advance Crimson Empowerment"
+    bm_crimson_empowerment_decision_confirm: "Awaken Power"
+
     bm_cast_blood_magic_self_major_crimson_empowerment: "Channel Crimson Empowerment"
     bm_cast_blood_magic_self_major_crimson_empowerment_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to permanently enhance your physical and mental attributes"
 
@@ -86,5 +114,10 @@
     bm_crimson_empowerment_event.001.versatility: "Versatility - My power shall transcend all boundaries"
 
     # Manifest Lifeforce
+    bm_manifest_lifeforce_decision: "Manifest Lifeforce"
+    bm_manifest_lifeforce_decision_desc: "Through deep meditation and spiritual connection, attempt to convert spiritual power directly into tangible lifeforce."
+    bm_manifest_lifeforce_decision_tooltip: "Attempt a Learning contest to conjure lifeforce from spiritual resolve"
+    bm_manifest_lifeforce_decision_confirm: "Begin Meditation"
+
     bm_cast_blood_magic_self_manifest_lifeforce: "Manifest Lifeforce"
     bm_cast_blood_magic_self_manifest_lifeforce_desc: "Through deep meditation and spiritual connection, attempt to convert spiritual power directly into tangible lifeforce."
