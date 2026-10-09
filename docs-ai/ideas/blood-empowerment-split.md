@@ -1,5 +1,7 @@
 # Ideas: Blood Empowerment Two-Trait Split (Transcendence vs. Sovereignty)
 
+> **Status:** Speculative / Future Roadmap. The core 5 disciplines (`dynasty`, `mastery`, `presence`, `prosperity`, `shadows`) and universal baseline (`@bm_common_*`) have been implemented directly onto `lifestyle_blood_empowerment` in the active codebase. This document preserves the architectural proposal and track specifications for a future expansion into specialized branch traits (`lifestyle_blood_transcendence` vs. `lifestyle_blood_sovereignty`).
+
 Living proposal for overhauling Blood Empowerment by splitting it into two mutually exclusive sister traits:
 1. **`lifestyle_blood_transcendence`** (The Inner Vessel — Self / Adventurer / Personal Mastery)
 2. **`lifestyle_blood_sovereignty`** (The Outer Dominion — Landed Overlord / Realm Projection)
@@ -17,7 +19,7 @@ Characters may only possess **one** of these two traits (`opposites = { ... }`),
 - **Missing Travel & Adventurer Integration**: Vanilla 1.20 (Roads to Power) introduced camp logistics, travel hazards, and adventurer contracts. Blood Empowerment currently ignores these systems entirely.
 - **Overlap with Blood Knight**: Dedicated military command (knights, combat advantage, MaA lethality) belongs properly in `lifestyle_blood_knight`, not Blood Empowerment.
 - **The Solution: 5 Shared Core Tracks + 3 Route-Specific Tracks (8 Tracks Total per Trait)**:
-  - Consolidate universal disciplines (Dynasty, Experience, Charisma, Stewardship, Occult Veil) into 5 shared tracks present on both traits.
+  - Consolidate universal disciplines (Dynasty, Mastery, Presence, Prosperity/Stewardship, Shadows/Occult Veil) into 5 shared tracks present on both traits.
   - Specialize the remaining 3 tracks around distinct playstyles: Bodily Mastery & Wilderness (Transcendence) vs. Realm & Dynastic Rule (Sovereignty).
 
 ---
@@ -42,10 +44,10 @@ To eliminate duplicate numbers across dozens of track rank blocks and keep balan
 Defined once at the head of the trait file(s) or in a shared trait definitions header:
 ```pdx
 # Universal Blood Empowerment baseline modifiers per rank (matches lifestyle_blood_mage)
-@bm_empowerment_base_health = 0.1
-@bm_empowerment_base_life_expectancy = 2
-@bm_empowerment_base_years_of_fertility = 1
-@bm_empowerment_base_epidemic_resistance = 1
+@bm_common_health = 0.1
+@bm_common_life_expectancy = 2
+@bm_common_years_of_fertility = 1
+@bm_common_epidemic_resistance = 1
 ```
 
 #### 2. Track Rank Reference
@@ -54,24 +56,19 @@ Each rank milestone (10, 20, 30... 100) across all tracks references the variabl
 tracks = {
     wayfarer = {
         10 = {
-            # Universal baseline (defined once)
-            health = @bm_empowerment_base_health
-            life_expectancy = @bm_empowerment_base_life_expectancy
-            years_of_fertility = @bm_empowerment_base_years_of_fertility
-            epidemic_resistance = @bm_empowerment_base_epidemic_resistance
+            # common
+            health = @bm_common_health
+            life_expectancy = @bm_common_life_expectancy
+            years_of_fertility = @bm_common_years_of_fertility
+            epidemic_resistance = @bm_common_epidemic_resistance
 
-            # Track-specific benefit
+            # specific
             character_travel_safety = 2.5
         }
         ...
     }
 }
 ```
-
-#### Why Script Variables (`@`) Instead of a Detached Modifier?
-- **CK3 Trait Track UI**: The game engine's character window and lifestyle progress bar exclusively inspect modifiers defined inside `tracks = { <track> = { <rank> = { ... } } }`. Modifiers applied via external character modifiers are invisible in the lifestyle track tooltip progression.
-- **DRY & Maintainable**: Changing `@bm_empowerment_base_health` in one place immediately updates all 80 rank milestones across both sister traits without error-prone bulk edits.
-- **Engine Verified**: Proven in `bm_blood_knight_trait.txt` (which uses `@bm_common_health`, `@bm_common_life_expectancy`, `@bm_common_monthly_prestige`) and vanilla CK3 (`common/traits/00_traits.txt`).
 
 ---
 
@@ -87,10 +84,10 @@ Each trait contains **8 tracks total** (10 ranks / up to 100 XP per track):
             ┌─────────────────────────┴─────────────────────────┐
     [ 5 Shared Core Tracks ]                            [ 5 Shared Core Tracks ]
     • Dynasty (Genetics & Fertility)                    • Dynasty (Genetics & Fertility)
-    • Experience (XP & Languages)                       • Experience (XP & Languages)
-    • Charisma (Opinion, Stress & Sways)                • Charisma (Opinion, Stress & Sways)
-    • Stewardship (Gold Gain & Cost Reduction)          • Stewardship (Gold Gain & Cost Reduction)
-    • Occult Veil (Plot Defense & Secrecy)              • Occult Veil (Plot Defense & Secrecy)
+    • Mastery (XP & Languages)                          • Mastery (XP & Languages)
+    • Presence (Opinion, Stress & Sways)                • Presence (Opinion, Stress & Sways)
+    • Prosperity (Gold Gain & Cost Reduction)           • Prosperity (Gold Gain & Cost Reduction)
+    • Shadows (Plot Defense & Secrecy)                  • Shadows (Plot Defense & Secrecy)
             │                                                   │
     [ 3 Transcendence Tracks ]                          [ 3 Sovereignty Tracks ]
     • Wayfarer (Travel & Movement)                      • Dominion (Control & Dread)
@@ -110,10 +107,10 @@ These 5 tracks are identically available to both `lifestyle_blood_transcendence`
 | # | Track | Theme | Target Modifiers per Rank (10 Ranks Total) | Full Track Cap (100 XP) |
 | :-: | :--- | :--- | :--- | :--- |
 | **1** | **`dynasty`** | Genetics & Reproductive Vitality | • `positive_random_genetic_chance = 0.05`<br>• `positive_inactive_inheritance_chance = 0.05`<br>• `fertility = 0.04` | +50% Positive Congenital<br>+50% Inactive Trait Inheritance<br>+40% Fertility |
-| **2** | **`experience`** | Omniscience, Lifestyle Mastery & Tongues | • `monthly_lifestyle_xp_gain_mult = 0.04`<br>• `learn_language_scheme_phase_duration_add = -5`<br>• `max_learn_language_schemes_add = 1` *(at rank 5)* | +40% Lifestyle XP Gain<br>-50 Days Language Scheme Phase<br>+1 Max Language Schemes |
-| **3** | **`charisma`** | Personal Aura, Seduction & Stress Control | • `stress_loss_mult = 0.05`<br>• `general_opinion = 2.5`<br>• `sway_scheme_power_mult = 0.05` | +50% Stress Loss Rate<br>+25 General Opinion<br>+50% Sway Scheme Power |
-| **4** | **`stewardship`** | Gold Generation & Expense Reduction<br>*(Adaptive across Landed & Landless)* | • `monthly_income_mult = 0.03`<br>• `men_at_arms_maintenance = -0.03`<br>• `domain_tax_mult = 0.02`<br>• `domicile_building_cost_mult = -0.03` | +30% Monthly Income (All Sources)<br>-30% Men-at-Arms Maintenance<br>+20% Domain Taxes *(if Landed)*<br>-30% Camp Upgrade Cost *(if Landless)* |
-| **5** | **`occult_veil`** | Plot Defense, Camouflage & Occult Secrecy | • `hostile_scheme_resistance_add = 3`<br>• `owned_scheme_secrecy_add = 5`<br>• `enemy_hostile_scheme_success_chance_add = -3` | +30 Hostile Scheme Resistance<br>+50 Owned Scheme Secrecy<br>-30% Enemy Plot Success Chance |
+| **2** | **`mastery`** | Omniscience, Lifestyle Mastery & Tongues | • `monthly_lifestyle_xp_gain_mult = 0.04`<br>• `learn_language_scheme_phase_duration_add = -10`<br>• `personal_scheme_power_mult = 0.03`<br>• `max_learn_language_schemes_add = 1` *(ranks 30, 60, 90, 100)* | +40% Lifestyle XP Gain<br>-100 Days Language Scheme Phase<br>+30% Personal Scheme Power<br>+4 Max Language Schemes |
+| **3** | **`presence`** | Personal Aura, Seduction & Stress Control | • `stress_loss_mult = 0.05`<br>• `general_opinion = 2.5`<br>• `sway_scheme_power_mult = 0.05` | +50% Stress Loss Rate<br>+25 General Opinion<br>+50% Sway Scheme Power |
+| **4** | **`prosperity`** | Gold Generation & Expense Reduction<br>*(Adaptive across Landed & Landless)* | • `monthly_income_mult = 0.03`<br>• `men_at_arms_maintenance = -0.03`<br>• `domain_tax_mult = 0.02`<br>• `holding_build_gold_cost = -0.02`<br>• `domicile_building_cost_mult = -0.03` | +30% Monthly Income (All Sources)<br>-30% Men-at-Arms Maintenance<br>+20% Domain Taxes *(if Landed)*<br>-20% Holding Build Cost<br>-30% Camp Upgrade Cost *(if Landless)* |
+| **5** | **`shadows`** | Plot Defense, Camouflage & Occult Secrecy | • `hostile_scheme_resistance_add = 3`<br>• `owned_scheme_secrecy_add = 5`<br>• `enemy_hostile_scheme_success_chance_add = -3` | +30 Hostile Scheme Resistance<br>+50 Owned Scheme Secrecy<br>-30% Enemy Plot Success Chance |
 
 > **Adaptive Stewardship Design**:
 > - `monthly_income_mult` and `men_at_arms_maintenance` apply to **all** character types (landed rulers, mercenary captains, traveling scholars).
@@ -194,3 +191,25 @@ bm_blood_empowerment_total_xp = {
 When all 8 tracks of the chosen trait reach the 100 XP cap (800 XP total), casting the Major Blood Empowerment ritual grants:
 - `temporary_buff_self` (+2 all stats, +4 prowess for 10 years).
 - Roll chance for permanent attribute gains (+1 to a random attribute).
+
+---
+
+## 9. Historical Reference: The Original 7 Empowerment Tracks
+
+For future balance comparisons and reference if elements need to be revived or cross-referenced, the original pre-overhaul `lifestyle_blood_empowerment` trait used a 7-track architecture. Each rank (10 XP) provided flat `life_expectancy = 1` and `monthly_piety = 0.1` plus fixed track perks across 10 ranks (100 XP total).
+
+### Legacy Baseline (Per Rank, Pre-Overhaul)
+- `life_expectancy = 1` (+10 years cap per track)
+- `monthly_piety = 0.1` (+1.0 monthly piety cap per track)
+
+### Legacy Tracks Summary
+
+| Track Name | Legacy Theme | Target Modifiers Per Rank (10 XP) | Full Track Cap (100 XP) | Current Status / Successor |
+| :--- | :--- | :--- | :--- | :--- |
+| **`charisma`** | Diplomacy & Prestige | • `general_opinion = 2.5`<br>• `monthly_prestige_gain_mult = 0.05` | +25 General Opinion<br>+50% Monthly Prestige | Evolved into **`presence`** (+ stress loss & sway power). Prestige gain moved to Sovereignty candidate **`majesty`**. |
+| **`fury`** | Military & County Control | • `knight_effectiveness_mult = 0.05`<br>• `monthly_county_control_growth_add = 0.05` | +50% Knight Effectiveness<br>+0.50 Monthly County Control | **Removed from core** to prevent overlap with `lifestyle_blood_knight`. Control growth moved to Sovereignty candidate **`dominion`**. |
+| **`prosperity`** | Domain Tax & Capital Dev | • `domain_tax_mult = 0.025`<br>• `character_capital_county_monthly_development_growth_add = 0.05` | +25% Domain Taxes<br>+0.50 Capital Development Growth | Generalized in core **`prosperity`** (added MaA upkeep reduction, holding discount, adventurer camp discount). |
+| **`shadows`** | Dread, Tyranny & Secrecy | • `dread_baseline_add = 3`<br>• `monthly_tyranny = -0.01`<br>• `owned_scheme_secrecy_add = 5` | +30 Dread Baseline<br>-0.10 Tyranny Decay<br>+50 Owned Scheme Secrecy | Refocused core **`shadows`** into defensive subterfuge (hostile scheme resistance, enemy success reduction). Dread & tyranny moved to Sovereignty candidate **`dominion`**. |
+| **`insight`** | Realm Dev & Piety Multiplier | • `development_growth = 0.05`<br>• `monthly_piety_gain_mult = 0.05` | +50% Realm Development Growth<br>+50% Monthly Piety Gain | Piety gain folded into baseline piety loops. Dev growth moved to Sovereignty candidate **`prosperity`**. |
+| **`legacy`** | Congenital Genetics | • `positive_random_genetic_chance = 0.05`<br>• `positive_inactive_inheritance_chance = 0.05` | +50% Positive Congenital Chance<br>+50% Positive Inactive Inheritance | Retained & expanded as core **`dynasty`** (+ fertility). |
+| **`expertise`** | Lifestyle XP & Cultural Speed | • `monthly_lifestyle_xp_gain_mult = 0.025`<br>• `cultural_head_fascination_mult = 0.05` | +25% Lifestyle XP Gain<br>+50% Cultural Fascination Progress | Excised cultural fascination (useless when not cultural head). Expanded as core **`mastery`** (+ Learn Language schemes & capacity). |
