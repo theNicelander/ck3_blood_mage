@@ -1,54 +1,54 @@
 ﻿on_join_court = {
 	on_actions = {
-		bm_on_join_court_sanguine_font
+		bm_on_join_court_blood_shrine
 	}
 }
 
-bm_on_join_court_sanguine_font = {
+bm_on_join_court_blood_shrine = {
 	effect = {
 		if = {
 			limit = {
 				exists = liege_or_court_owner
 				liege_or_court_owner = {
-					bm_has_sanguine_font_trigger = yes
+					bm_has_blood_shrine_trigger = yes
 				}
 			}
-			bm_apply_individual_sanguine_font_aura_effect = { SOURCE = liege_or_court_owner }
+			bm_apply_individual_blood_shrine_aura_effect = { SOURCE = liege_or_court_owner }
 		}
 	}
 }
 
 random_yearly_everyone_pulse = {
 	on_actions = {
-		bm_yearly_sanguine_font_pulse
+		bm_yearly_blood_shrine_pulse
 	}
 }
 
-bm_yearly_sanguine_font_pulse = {
+bm_yearly_blood_shrine_pulse = {
 	effect = {
 		if = {
 			limit = {
-				bm_has_sanguine_font_trigger = yes
+				bm_has_blood_shrine_trigger = yes
 			}
-			bm_update_sanguine_font_aura_effect = yes
+			bm_update_blood_shrine_aura_effect = yes
 		}
 		else_if = {
 			limit = {
 				OR = {
-					has_character_modifier = bm_sanguine_font_aura_tier_1
-					has_character_modifier = bm_sanguine_font_aura_tier_2
-					has_character_modifier = bm_sanguine_font_aura_tier_3
-					has_character_modifier = bm_sanguine_font_aura_tier_4
-					has_character_modifier = bm_sanguine_font_aura_tier_5
+					has_character_modifier = bm_blood_shrine_aura_tier_1
+					has_character_modifier = bm_blood_shrine_aura_tier_2
+					has_character_modifier = bm_blood_shrine_aura_tier_3
+					has_character_modifier = bm_blood_shrine_aura_tier_4
+					has_character_modifier = bm_blood_shrine_aura_tier_5
 				}
 				OR = {
 					NOT = { exists = liege_or_court_owner }
 					liege_or_court_owner = {
-						NOT = { bm_has_sanguine_font_trigger = yes }
+						NOT = { bm_has_blood_shrine_trigger = yes }
 					}
 				}
 			}
-			bm_clear_sanguine_font_aura_effect = yes
+			bm_clear_blood_shrine_aura_effect = yes
 		}
 	}
 }

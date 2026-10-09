@@ -11,10 +11,10 @@
 | --- | --- | --- | --- |
 | `events/bm_attune_lifeforce_events.txt` | `bm_attune_lifeforce` | Decision `bm_attune_lifeforce_decision` | Selects 1 of 5 school attunements (+50% yearly XP roll). |
 | `events/bm_blood_golem_events.txt` | `blood_golem` | Decision `bm_create_blood_golem` | Golem crafting outcome, stat shaping duels. |
-| `events/bm_blood_rune_events.txt` | `bm_crimson_rune` | Decision `bm_inscribe_blood_runes_decision` | Inscription of minor, major, or superior body runes. |
+| `events/bm_blood_rune_events.txt` | `bm_blood_rune` | Decision `bm_inscribe_blood_runes_decision` | Inscription of minor, major, or superior body runes. |
 | `events/bm_channel_lifeforce_bloodline_events.txt` | `bm_channel_lifeforce_bloodline` | Decision `channel_lifeforce_bloodline` | Bestows permanent house modifiers. |
 | `events/bm_channel_lifeforce_enlightenment_minor_events.txt` | `bm_channel_lifeforce_enlightenment_minor` | Decision `bm_channel_minor_lifeforce_decision` | Converts minor lifeforce into temporary attribute boost. |
-| `events/bm_crimson_empowerment_event.txt` | `bm_crimson_empowerment_event` | Decision `bm_crimson_empowerment_decision` | Advances chosen CE track (+10 XP) or fallback Versatility. |
+| `events/bm_blood_empowerment_event.txt` | `bm_blood_empowerment_event` | Decision `bm_blood_empowerment_decision` | Advances chosen CE track (+10 XP) or fallback Versatility. |
 | `events/bm_education_enhance.txt` | `bm_education_enhance` | Decision `bm_improve_education_decision` | Learning duel to advance education star level (up to 5-star). |
 | `events/bm_education_new.txt` | `bm_education_new` | Decision `bm_new_education_decision` | Grants an additional secondary education trait. |
 

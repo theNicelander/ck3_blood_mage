@@ -7,7 +7,7 @@
 - **What:** Permanent supernatural house modifiers applied via decision `channel_lifeforce_bloodline`.
 - **Cost / Requirements:** 350 piety + consumes `lifeforce_modifier_major`. Req: `piety_level >= 1`. Cooldown: 3 years.
 - **XP Gain:** Decision awards +5 `bloodline` XP (`add_xp_bm_dynamic`).
-- **Feedback Loop:** Each active crimson modifier on the house adds +5% yearly chance for blood mages in that house to gain +1 `bloodline` XP (`blood_mage_yearly_events.002`).
+- **Feedback Loop:** Each active blood modifier on the house adds +5% yearly chance for blood mages in that house to gain +1 `bloodline` XP (`blood_mage_yearly_events.002`).
 
 ### House Modifiers Table
 
@@ -15,13 +15,13 @@ Modifiers apply to all living and future members of the caster's house. Non-lega
 
 | Modifier | Focus | House Member Benefits |
 | --- | --- | --- |
-| `dynasty_crimson_charisma_modifier` | Diplomacy | `+2` Diplomacy, `+5` General Opinion, `+0.1` Monthly Prestige |
-| `dynasty_crimson_fury_modifier` | Martial | `+2` Martial, `+3` Prowess, `+15%` Knight Effectiveness, `+1` Knight Limit |
-| `dynasty_crimson_prosperity_modifier` | Stewardship | `+2` Stewardship, `+0.1` County Control Growth, `+5%` Domain Tax, `+5%` Development Growth |
-| `dynasty_crimson_shadows_modifier` | Intrigue | `+2` Intrigue, `+5%` Hostile Scheme Success, `-5` Scheme Phase Days; `-5%` Enemy Scheme Success, `+5` Enemy Scheme Phase Days |
-| `dynasty_crimson_insight_modifier` | Learning | `+2` Learning, `+0.15` Monthly Piety, `+0.05` Capital Dev Growth, `+2` Epidemic Resistance |
-| `dynasty_crimson_legacy_modifier` *(stacks)* | Bloodline | `+0.3` Health, `+10%` Fertility, `+10%` Positive Genetic Chance/Strengthen, `-10%` Inbreeding & Negative Congenital Chance |
-| `dynasty_crimson_expertise_modifier` | Mastery | `+5%` Lifestyle XP Mult, `+5%` Learning Lifestyle XP, `+5%` Stress Loss, `-5%` Stress Gain, `-15` Learn Language Phase Days |
+| `dynasty_blood_charisma_modifier` | Diplomacy | `+2` Diplomacy, `+5` General Opinion, `+0.1` Monthly Prestige |
+| `dynasty_blood_fury_modifier` | Martial | `+2` Martial, `+3` Prowess, `+15%` Knight Effectiveness, `+1` Knight Limit |
+| `dynasty_blood_prosperity_modifier` | Stewardship | `+2` Stewardship, `+0.1` County Control Growth, `+5%` Domain Tax, `+5%` Development Growth |
+| `dynasty_blood_shadows_modifier` | Intrigue | `+2` Intrigue, `+5%` Hostile Scheme Success, `-5` Scheme Phase Days; `-5%` Enemy Scheme Success, `+5` Enemy Scheme Phase Days |
+| `dynasty_blood_insight_modifier` | Learning | `+2` Learning, `+0.15` Monthly Piety, `+0.05` Capital Dev Growth, `+2` Epidemic Resistance |
+| `dynasty_blood_legacy_modifier` *(stacks)* | Bloodline | `+0.3` Health, `+10%` Fertility, `+10%` Positive Genetic Chance/Strengthen, `-10%` Inbreeding & Negative Congenital Chance |
+| `dynasty_blood_expertise_modifier` | Mastery | `+5%` Lifestyle XP Mult, `+5%` Learning Lifestyle XP, `+5%` Stress Loss, `-5%` Stress Gain, `-15` Learn Language Phase Days |
 | *Fallback (`temporary_buff_bloodline`)* | All Taken | `+1` all skills, `+2` Prowess |
 
 ## Key Mechanics
