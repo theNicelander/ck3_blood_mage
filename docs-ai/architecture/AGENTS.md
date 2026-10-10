@@ -46,14 +46,16 @@ Every architecture document must begin with a concise **Executive Summary**:
 | --- | --- |
 | `blood-mage-story.md` | The Blood Magic panel (story cycle) and its rosters |
 | `blood-mage-decisions.md` | The actions a blood mage can take and the routes into blood magic |
-| `blood-mage-traits.md` | The two lifestyle traits and their progression tracks |
+| `blood-mage-traits.md` | Core `lifestyle_blood_mage` trait and 5 school progression tracks |
+| `blood-mage-blood-empowerment.md` | The Blood Empowerment trait, self-advancement, and warrior retinue |
+| `blood-mage-blood-knight.md` | The Blood Knight trait, martial tracks, and combat hooks |
+| `blood-mage-track-xp.md` | Master XP catalog: all 13 tracks, piety costs, lifeforce sinks, and XP gains |
 | `blood-mage-dynasty.md` | Bloodline house modifiers and the Golem house |
 | `blood-mage-lifeforce.md` | The Lifeforce resource, positive/negative modifiers, and harvesting |
 | `blood-mage-progression.md` | Dynamic XP gains, requirement gates, cost scaling, and AI weighting |
 | `blood-mage-interactions.md` | Character interactions (draining, granting, curing, and self-casting) |
 | `blood-mage-blood-runes.md` | Blood Runes and blood university duchy buildings |
 | `blood-mage-golems.md` | Blood golem lifecycle, creation decision, shaping duels, and template |
-| `blood-mage-blood-empowerment.md` | The Blood Empowerment trait, self-advancement, and warrior retinue |
 | `blood-mage-duels-and-education.md` | Duel calculations, trait draining, education enhancement, and mass lifedrain |
 | `blood-mage-prevalence-and-lifecycle.md` | Trait acquisition, birth inheritance, yearly pulses, and retention audits |
 | `blood-mage-game-rules.md` | Campaign game rules (prevalence, alterations, and religion availability) |
