@@ -1,0 +1,65 @@
+﻿bm_elevate_to_blood_mage_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
+	desc = bm_elevate_to_blood_mage_decision_desc
+	selection_tooltip = bm_elevate_to_blood_mage_decision_tooltip
+	confirm_text = bm_elevate_to_blood_mage_decision_confirm
+	decision_group_type = bm_decision_group
+
+	is_shown = {
+		is_adult = yes
+		has_trait = lifestyle_blood_knight
+		NOT = { has_trait = lifestyle_blood_mage }
+	}
+
+	is_valid = {
+		piety_level >= 2
+		OR = {
+			has_character_modifier = lifeforce_modifier_minor
+			has_character_modifier = lifeforce_modifier_major
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_incapable = no
+		custom_tooltip = {
+			text = bm_elevation_attempt_cooldown_tt
+			NOT = { has_character_flag = bm_elevation_attempt_cooldown }
+		}
+	}
+
+	cost = {
+		piety = 100
+	}
+
+	effect = {
+		debug_log = "BloodKnightDecision: elevate_to_blood_mage"
+		debug_log_scopes = yes
+		trigger_event = { id = bm_blood_knight_elevation.0001 }
+	}
+
+	ai_check_interval = 12
+	ai_will_do = {
+		base = 25
+		modifier = {
+			learning >= 15
+			add = 25
+		}
+		modifier = {
+			has_trait_xp = {
+				trait = lifestyle_blood_knight
+				track = ancient
+				value >= 30
+			}
+			add = 25
+		}
+		modifier = {
+			has_trait_xp = {
+				trait = lifestyle_blood_knight
+				track = benediction
+				value >= 30
+			}
+			add = 25
+		}
+	}
+}

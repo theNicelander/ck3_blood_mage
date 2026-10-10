@@ -244,6 +244,42 @@ blood_mage_yearly_events.004 = {
             TRACK = resilience
             XP = 1
         }
+        add_blood_knight_xp = {
+            TRACK = ancient
+            XP = 1
+        }
+
+        # Ancient attunement check
+        if = {
+            limit = { has_character_modifier = ancient_attuned }
+            random = {
+                chance = 50
+                send_interface_toast = {
+                    title = bm_yearly_attunement_ancient_toast
+                    left_icon = root
+                    add_blood_knight_xp = {
+                        TRACK = ancient
+                        XP = 1
+                    }
+                }
+            }
+        }
+
+        # Benediction attunement check
+        if = {
+            limit = { has_character_modifier = benediction_attuned }
+            random = {
+                chance = 50
+                send_interface_toast = {
+                    title = bm_yearly_attunement_benediction_toast
+                    left_icon = root
+                    add_blood_knight_xp = {
+                        TRACK = benediction
+                        XP = 1
+                    }
+                }
+            }
+        }
 
         # Vanguard attunement check
         if = {

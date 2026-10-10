@@ -167,13 +167,30 @@ bm_geyser_duel.0001 = {
 			trigger = {
 				has_character_flag = bm_geyser_retried
 			}
-			text = bm_geyser_duel.0001.a_retry
+			text = bm_geyser_duel.0001.a_learning_retry
 		}
 		name = {
 			trigger = {
 				NOT = { has_character_flag = bm_geyser_retried }
 			}
-			text = bm_geyser_duel.0001.a
+			text = bm_geyser_duel.0001.a_learning
+		}
+
+		trigger = {
+			NOT = { has_trait = lifestyle_blood_mage }
+			OR = {
+				has_character_flag = bm_geyser_paid_piety
+				piety_level >= 2
+			}
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+
+		if = {
+			limit = { NOT = { has_character_flag = bm_geyser_paid_piety } }
+			add_piety_level = -1
+			add_character_flag = bm_geyser_paid_piety
 		}
 
 		duel = {
@@ -197,7 +214,13 @@ bm_geyser_duel.0001 = {
 				send_interface_toast = {
 					title = bm_geyser_duel.success_tt
 					left_icon = root
-					bm_become_blood_mage_effect = yes
+					if = {
+						limit = { has_trait = lifestyle_blood_knight }
+						bm_elevate_blood_knight_to_blood_mage_effect = yes
+					}
+					else = {
+						bm_become_blood_mage_effect = yes
+					}
 				}
 			}
 
@@ -301,7 +324,187 @@ bm_geyser_duel.0001 = {
 		}
 
 		ai_chance = {
-			base = 100
+			base = 50
+			modifier = {
+				learning >= 15
+				add = 50
+			}
+			modifier = {
+				learning < 10
+				factor = 0.2
+			}
+		}
+	}
+
+	option = {
+		name = {
+			trigger = {
+				has_character_flag = bm_geyser_retried
+			}
+			text = bm_geyser_duel.0001.a_prowess_retry
+		}
+		name = {
+			trigger = {
+				NOT = { has_character_flag = bm_geyser_retried }
+			}
+			text = bm_geyser_duel.0001.a_prowess
+		}
+
+		trigger = {
+			NOT = { has_trait = lifestyle_blood_mage }
+			NOT = { has_trait = lifestyle_blood_knight }
+			OR = {
+				has_character_flag = bm_geyser_paid_prestige
+				prestige_level >= 2
+			}
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+
+		if = {
+			limit = { NOT = { has_character_flag = bm_geyser_paid_prestige } }
+			add_prestige_level = -1
+			add_character_flag = bm_geyser_paid_prestige
+		}
+
+		duel = {
+			skill = prowess
+			target = scope:bm_geyser_wise_one
+
+			# SUCCESS
+			150 = {
+				desc = bm_geyser_duel.blood_knight_success_tt
+
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -45
+				}
+				modifier = {
+					bm_is_blood_cult_faith_trigger = yes
+					add = 15
+				}
+
+				send_interface_toast = {
+					title = bm_geyser_duel.blood_knight_success_tt
+					left_icon = root
+					if = {
+						limit = { NOT = { has_trait = lifestyle_blood_knight } }
+						add_trait = lifestyle_blood_knight
+					}
+				}
+			}
+
+			# FAILURE - MENTAL COLLAPSE
+			10 = {
+				desc = bm_geyser_duel.mental_failure_tt
+				send_interface_toast = {
+					title = bm_geyser_duel.mental_failure_tt
+					left_icon = root
+					add_stress = 30
+
+					if = {
+						limit = { has_trait = lunatic_1 }
+						add_trait = dull
+					}
+					if = {
+						limit = { has_trait = depressed_1 }
+						add_trait = lunatic_1
+					}
+					if = {
+						limit = { has_trait = possessed_1 }
+						add_trait = depressed_1
+					}
+					add_trait = possessed_1
+				}
+				if = {
+					limit = { is_alive = yes }
+					hidden_effect = {
+						add_character_flag = bm_geyser_retrying
+						add_character_flag = bm_geyser_retried
+						trigger_event = { id = bm_geyser_duel.0001 }
+					}
+				}
+			}
+
+			# FAILURE - PHYSICAL TRAUMA
+			25 = {
+				desc = bm_geyser_duel.physical_failure_tt
+				send_interface_toast = {
+					title = bm_geyser_duel.physical_failure_tt
+					left_icon = root
+					add_stress = 20
+					if = {
+						limit = { has_trait = blind }
+						add_piety_level = -1
+					}
+					if = {
+						limit = { has_trait = one_eyed }
+						add_trait = blind
+					}
+					if = {
+						limit = { has_trait = weak }
+						add_trait = one_eyed
+					}
+					add_trait = weak
+				}
+				if = {
+					limit = { is_alive = yes }
+					hidden_effect = {
+						add_character_flag = bm_geyser_retrying
+						add_character_flag = bm_geyser_retried
+						trigger_event = { id = bm_geyser_duel.0001 }
+					}
+				}
+			}
+
+			# FAILURE - INJURY
+			50 = {
+				desc = bm_geyser_duel.injury_failure_tt
+				send_interface_toast = {
+					title = bm_geyser_duel.injury_failure_tt
+					left_icon = root
+					add_stress = 10
+
+					if = {
+						limit = { has_trait = wounded_2 }
+						add_trait = maimed
+					}
+
+					if = {
+						limit = { NOT = { has_trait = wounded_1 } }
+						add_trait = wounded_1
+					}
+					else = {
+						change_trait_rank = {
+							trait = wounded
+							rank = 1
+							max = 2
+						}
+					}
+				}
+				if = {
+					limit = { is_alive = yes }
+					hidden_effect = {
+						add_character_flag = bm_geyser_retrying
+						add_character_flag = bm_geyser_retried
+						trigger_event = { id = bm_geyser_duel.0001 }
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			base = 50
+			modifier = {
+				prowess >= 15
+				add = 50
+			}
+			modifier = {
+				prowess < 10
+				factor = 0.2
+			}
 		}
 	}
 
@@ -328,6 +531,8 @@ bm_geyser_duel.0001 = {
 			}
 			else = {
 				remove_character_flag = bm_geyser_retried
+				remove_character_flag = bm_geyser_paid_piety
+				remove_character_flag = bm_geyser_paid_prestige
 				if = {
 					limit = { exists = scope:bm_geyser_wise_one }
 					scope:bm_geyser_wise_one = {

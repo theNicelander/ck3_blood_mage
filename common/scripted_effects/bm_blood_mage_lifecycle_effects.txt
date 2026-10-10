@@ -45,3 +45,28 @@ bm_apply_blood_mage_prevalence_retention_effect = {
 		bm_ensure_blood_mage_story_effect = yes
 	}
 }
+
+bm_elevate_blood_knight_to_blood_mage_effect = {
+	set_variable = { name = bm_transferred_ancient_xp value = bm_blood_knight_ancient_xp_value }
+	set_variable = { name = bm_transferred_benediction_xp value = bm_blood_knight_benediction_xp_value }
+	remove_trait = lifestyle_blood_knight
+	bm_become_blood_mage_effect = yes
+	if = {
+		limit = { var:bm_transferred_ancient_xp > 0 }
+		add_trait_xp = {
+			trait = lifestyle_blood_mage
+			track = ancient
+			value = var:bm_transferred_ancient_xp
+		}
+	}
+	if = {
+		limit = { var:bm_transferred_benediction_xp > 0 }
+		add_trait_xp = {
+			trait = lifestyle_blood_mage
+			track = benediction
+			value = var:bm_transferred_benediction_xp
+		}
+	}
+	remove_variable = bm_transferred_ancient_xp
+	remove_variable = bm_transferred_benediction_xp
+}
