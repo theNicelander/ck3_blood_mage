@@ -19,7 +19,7 @@ Living technical specification for the Blood Knight subsystem.
   - **Tournament Participation/Victory:** Completing a tournament awards +3 XP (`slaughter`).
   - **Manifest Lifeforce (`bm_manifest_lifeforce_decision`):** Blood Knights undergo a Prowess duel to stoke their blood, granting +3 XP (`resilience`) and Minor Lifeforce.
   - **Yearly Pulse (`blood_mage_yearly_events.004`):** Passive +1 XP in `resilience` and +1 XP in `ancient`. Attunement checks for `vanguard`, `slaughter`, `resilience`, `ancient`, and `benediction`.
-  - **Minor Restorative Magic (`heal_disease_minor`):** Healing self grants +2 XP (`resilience`); healing comrades, fellow knights, or liege grants +1 XP (`vanguard`) and +1 XP (`benediction`).
+  - **Minor Restorative Magic (`bm_heal_ailment`):** Healing self grants +2 XP (`resilience`); healing comrades, fellow knights, or liege grants +1 XP (`vanguard`) and +1 XP (`benediction`).
   - **Minor Blood Magic Channeling (`bm_cast_blood_magic_minor_decision`):** Blood Knights can channel minor lifeforce or purge bodily frailty (+2 `resilience` XP).
 
 ### Tracks Master Table
@@ -39,7 +39,7 @@ Each track has 10 tiers (10, 20, 30, ..., 100 XP).
   - Blood Knights can elevate themselves to Blood Mage via `bm_elevate_to_blood_mage_decision`.
 - **Minor Blood Magic & Healing:**
   - Blood Knights are restricted to Minor blood magic and Minor healing.
-  - `heal_disease_minor`: Can target self, courtiers, liege, close family, spouse, and knights. Removes minor wounds/illnesses AND purges negative bad traits (ugly / `beauty_bad`, opposites of genius / `intellect_bad` & `dull`, opposites of herculean / `physique_bad` & `weak`).
+  - `bm_heal_ailment`: Can target self, courtiers, liege, close family, spouse, and knights. Blood Knights can selectively mend minor wounds/illnesses (`wounded_1`, `ill`, `lovers_pox`, `gout_ridden`, `scarred`).
   - `bm_cast_blood_magic_minor_decision`: Allows self-channeling and self-purging of negative traits and minor ailments.
 
 ## Where the details live

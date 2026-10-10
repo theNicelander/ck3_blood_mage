@@ -30,13 +30,10 @@
   grant_lifeforce_interaction_reversed_desc: "[recipient.GetShortUINameNoTooltip] was [GetModifier('lifedrained_modifier').GetNameWithTooltip], but I can give it back to them"
 
   # Cure illness
-  heal_disease_minor: "Heal Minor Ailment"
-  heal_disease_major: "Heal Ailment"
-  heal_disease_benediction: "Heal Deadly Ailment"
-
-  heal_disease_minor_desc: "Heal Minor Ailment"
-  heal_disease_major_desc: "Heal Ailment"
-  heal_disease_benediction_desc: "Heal Deadly Ailment"
+  bm_heal_ailment: "Heal Affliction"
+  bm_heal_ailment_desc: "Perform a blood ritual to mend a specific wound, disease, or affliction suffered by [recipient.GetShortUINameNoTooltip]."
+  bm_heal_ailment_tooltip: "Perform a blood magic healing ritual."
+  bm_heal_ailment_resource_requirement_tt: "You must possess sufficient Lifeforce and Piety to heal at least one of [recipient.GetShortUINamePossessive] afflictions."
 
   # Blood Knight
   make_blood_knight_interaction: "Make Blood Knight"

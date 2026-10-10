@@ -16,9 +16,7 @@
 | `lifedrain_prisoner_interaction` | Dungeon prisoner | Piety (`lifedrain_piety_cost_minor`). | +1 hematurgy | Kills prisoner (`death_lifedrain_reason`). Gives `lifeforce_modifier_minor`. |
 | `lifedrain_courtier_event_interaction` | Courtier | Piety (`lifedrain_piety_cost_minor`). | +1 hematurgy | Drains courtier. Gives `lifeforce_modifier_minor`. Target gets `lifedrained_modifier` (health/stat hit). |
 | `trait_drain_prisoner_event_interaction` | Dungeon prisoner | Piety. Target has congenital trait actor lacks. | +2 hematurgy | Duel (Prowess/Learning). Win: steals congenital trait. Target drained. |
-| `heal_disease_minor` | Courtier, family, self | Minor Lifeforce. Target has minor ailment. | +2 benediction (Mage) / +2 resilience (Knight self) / +1 vanguard & +1 benediction (Knight ally) | Cures minor disease, wound, or illness. |
-| `heal_disease_major` | Courtier, family, self | Major Lifeforce. Target has severe illness. | +2 benediction | Cures major illnesses, cancers, severe wounds. |
-| `heal_disease_benediction` | Courtier, family, self | Major Lifeforce. Req: 50 Benediction XP. | +3 benediction | Cures permanent ailments (blind, maimed, infirm, lunatic_1, etc.). |
+| `bm_heal_ailment` | Courtier, liege, family, spouse, knight, self | Lifeforce (tier-dependent) + Piety (15 / 35 / 100). Target has ailment. | Minor: +2 benediction (Mage) / +2 resilience (Knight self) / +1 vanguard & +1 benediction (Knight ally); Major: +4 benediction; Deadly: +8 benediction | Opens event `bm_heal_ailment.0001` to choose and cure an individual ailment. |
 | `make_blood_knight_interaction` | Knight, courtier, or self | 100 Piety + Major Lifeforce. | +2 benediction | Bestows `lifestyle_blood_knight` trait. |
 | `empower_blood_knight_interaction` | Sworn blood knight or self | Major Lifeforce (+10 XP) or Minor Lifeforce (+5 XP). | +2 / +1 benediction | Direct popup modal advancing all 3 combat tracks. |
 | `bm_debug_make_blood_mage_interaction` | Any character | Debug mode only. Target non-mage. | None | Instantly grants `lifestyle_blood_mage` trait directly, creates story cycle, and sets prevalence review flag. |

@@ -31,7 +31,7 @@ Defined in `common/script_values/bm_xp_requirement_values.txt`:
 | Inscribe Minor Blood Rune | CE Track XP | 25 XP (`bm_blood_rune_minimum_xp`) | Inscribes `minor_blood_rune_modifier` |
 | Inscribe Major Blood Rune | CE Track XP | 50 XP (`bm_blood_rune_minimum_xp`) | Upgrades to `major_blood_rune_modifier` |
 | Inscribe Superior Blood Rune | CE Track XP | 100 XP (`bm_blood_rune_minimum_xp`) | Upgrades to `superior_blood_rune_modifier` |
-| `heal_disease_benediction` | Benediction XP | 50 XP | Cures permanent ailments (blind, infirm, etc.) |
+| `bm_heal_ailment` (Deadly) | Benediction Tier | Minor + Major Lifeforce, 100 Piety | Cures deadly and permanent ailments (blind, cancer, plague, infirm, etc.) |
 
 ## Where the details live
 

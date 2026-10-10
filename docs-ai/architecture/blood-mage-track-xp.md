@@ -75,9 +75,9 @@
 
 | XP Gain | Cost | Action | Type | Requirements | Cooldown |
 | --- | --- | --- | --- | --- | --- |
-| **+2 XP** | **15 Piety per trait cured** (`cure_illness_cost_minor`) + Minor Lifeforce (`lifeforce_modifier_minor`) | **Heal Disease: Minor** (`heal_disease_minor`) | Interaction | Self or courtier with `wounded_1`, `ill`, `lovers_pox`, `gout_ridden`, `scarred` | None |
-| **+4 XP** | **35 Piety per trait cured** (`cure_illness_cost_major`) + Major Lifeforce (`lifeforce_modifier_major`) | **Heal Disease: Major** (`heal_disease_major`) | Interaction | Self or courtier with `wounded_2`, `incapable`, `pneumonic`, `infirm`, `maimed`, etc. | None |
-| **+6 XP** | **100 Piety per trait cured** (`cure_illness_cost_benediction`) + **both** Minor & Major Lifeforce | **Heal Disease: Benediction** (`heal_disease_benediction`) | Interaction | Self or courtier with `wounded_3`, `cancer`, `plague`, `leper`, `disfigured`, etc. | None |
+| **+2 XP** | 15 Piety (`cure_illness_cost_minor_neg`) + Minor Lifeforce (`lifeforce_modifier_minor`) | **Heal Affliction: Minor** (`bm_heal_ailment`) | Interaction & Event | Target with `wounded_1`, `ill`, `lovers_pox`, `gout_ridden`, `scarred` | None |
+| **+4 XP** | 35 Piety (`cure_illness_cost_major_neg`) + Major Lifeforce (`lifeforce_modifier_major`) | **Heal Affliction: Major** (`bm_heal_ailment`) | Interaction & Event | Target with `wounded_2`, `incapable`, `pneumonic`, `infirm`, `maimed`, etc. | None |
+| **+8 XP** | 100 Piety (`cure_illness_cost_benediction_neg`) + **both** Minor & Major Lifeforce | **Heal Affliction: Deadly** (`bm_heal_ailment`) | Interaction & Event | Target with `wounded_3`, `cancer`, `plague`, `leper`, `disfigured`, etc. | None |
 | **+4 XP** | 100 Piety + Major Lifeforce (`lifeforce_modifier_major`) | Make Blood Knight | Interaction (`make_blood_knight_interaction`) | Target without blood knight | None |
 | **+3 XP** (caster) | 0 Piety + Major Lifeforce (`lifeforce_modifier_major`) | Empower Blood Knight (Major) | Interaction (`empower_blood_knight_interaction`) | Target is blood knight | None |
 | **+1 XP** (caster) | 0 Piety + Minor Lifeforce (`lifeforce_modifier_minor`) | Empower Blood Knight (Minor) | Interaction (`empower_blood_knight_interaction`) | Target is blood knight | None |
@@ -119,12 +119,12 @@ Tracks: `vanguard`, `slaughter`, `resilience` (and shared `ancient`, `benedictio
 | **+5 XP to martial tracks** | 0 Piety (knight); Caster consumes Minor Lifeforce | Empower Blood Knight: Minor | Interaction (`empower_blood_knight_interaction`) | Blood Mage empowers knight | None |
 | **+5 XP** (`vanguard`) | None (33% roll for Minor Lifeforce) | Battle Victory (Commander) | On-action (`bm_on_combat_end_winner`) | Army commander | Per battle |
 | **+4 XP** (`vanguard`) | None (33% roll for Minor Lifeforce) | Battle Victory (Knight) | On-action (`bm_on_combat_end_winner`) | Army knight | Per battle |
-| **+1 XP** (`vanguard`) + **+1 XP** (`benediction`) | 15 Piety + Minor Lifeforce | Heal Disease Minor (Comrade / Knight / Liege) | Interaction (`heal_disease_minor`) | Target ally with minor ailment | None |
+| **+1 XP** (`vanguard`) + **+1 XP** (`benediction`) | 15 Piety + Minor Lifeforce | Heal Minor Affliction (Comrade / Knight / Liege) | Interaction & Event (`bm_heal_ailment`) | Target ally with minor ailment | None |
 | **+1 XP** (`vanguard`) + **+2 XP** (`resilience`) | None | Battle Defeat (Surviving Commander / Knight) | On-action (`bm_on_combat_end_loser`) | Surviving side commander or knight | Per battle |
 | **+5 XP** (`slaughter`) | None; **Grants** Minor Lifeforce | Single Combat Fatal Slaying | On-action (`bm_on_character_death_duel`) | Slaying opponent in single combat | None |
 | **+3 XP** (`slaughter`) | None | Tournament Completion | On-action (`bm_on_travel_activity_complete_tournament`) | Completing `activity_tournament` | Per tourney |
 | **+3 XP** (`resilience`) | 100 Piety; **Grants** Minor Lifeforce on Prowess duel success | Manifest Lifeforce | Decision (`bm_manifest_lifeforce_decision`) | `piety_level >= 2` | 1 year |
-| **+2 XP** (`resilience`) | 15 Piety + Minor Lifeforce | Heal Disease Minor (Self-Healing Wounds) | Interaction (`heal_disease_minor`) | Self has minor wound/illness | None |
+| **+2 XP** (`resilience`) | 15 Piety + Minor Lifeforce | Heal Minor Affliction (Self-Healing Wounds) | Interaction & Event (`bm_heal_ailment`) | Self has minor wound/illness | None |
 | **+2 XP** (`resilience`) | 50 Piety + Minor Lifeforce | Purge Bodily Impurities (Self-Tending Weakness) | Event option (`bm_cast_blood_magic_minor.001`) | Self has physical frailty | None |
 | **+1 XP** (`resilience`) + **+1 XP** (`ancient`) | None | Yearly Survival Pulse | On-action (`blood_mage_yearly_events.004`) | Has `lifestyle_blood_knight` | 1 year |
 

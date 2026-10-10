@@ -1,0 +1,833 @@
+﻿namespace = bm_heal_ailment
+
+bm_heal_ailment.0001 = {
+	type = character_event
+	title = bm_heal_ailment.0001.title
+	desc = bm_heal_ailment.0001.desc
+	theme = witchcraft
+
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = scope:recipient
+		animation = pain
+		trigger = {
+			NOT = { scope:recipient = root }
+		}
+	}
+
+	# --- MINOR AILMENTS ---
+
+	# Wounded 1
+	option = {
+		name = bm_heal_ailment.0001.wounded_1
+		trigger = {
+			scope:recipient = { has_trait = wounded_1 }
+			has_character_modifier = lifeforce_modifier_minor
+			piety >= 15
+		}
+		scope:recipient = { remove_trait = wounded_1 }
+		bm_heal_minor_cost_and_xp_effect = yes
+		bm_heal_minor_opinion_effect = yes
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Ill
+	option = {
+		name = bm_heal_ailment.0001.ill
+		trigger = {
+			scope:recipient = { has_trait = ill }
+			has_character_modifier = lifeforce_modifier_minor
+			piety >= 15
+		}
+		scope:recipient = { remove_trait = ill }
+		bm_heal_minor_cost_and_xp_effect = yes
+		bm_heal_minor_opinion_effect = yes
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Lover's Pox
+	option = {
+		name = bm_heal_ailment.0001.lovers_pox
+		trigger = {
+			scope:recipient = { has_trait = lovers_pox }
+			has_character_modifier = lifeforce_modifier_minor
+			piety >= 15
+		}
+		scope:recipient = { remove_trait = lovers_pox }
+		bm_heal_minor_cost_and_xp_effect = yes
+		bm_heal_minor_opinion_effect = yes
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Gout Ridden
+	option = {
+		name = bm_heal_ailment.0001.gout_ridden
+		trigger = {
+			scope:recipient = { has_trait = gout_ridden }
+			has_character_modifier = lifeforce_modifier_minor
+			piety >= 15
+		}
+		scope:recipient = { remove_trait = gout_ridden }
+		bm_heal_minor_cost_and_xp_effect = yes
+		bm_heal_minor_opinion_effect = yes
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Scarred
+	option = {
+		name = bm_heal_ailment.0001.scarred
+		trigger = {
+			scope:recipient = { has_trait = scarred }
+			has_character_modifier = lifeforce_modifier_minor
+			piety >= 15
+		}
+		scope:recipient = {
+			if = {
+				limit = {
+					has_trait_xp = {
+						trait = scarred
+						value > 0
+					}
+				}
+				add_trait_xp = {
+					trait = scarred
+					value = -50
+				}
+			}
+			else = {
+				remove_trait = scarred
+			}
+		}
+		bm_heal_minor_cost_and_xp_effect = yes
+		bm_heal_minor_opinion_effect = yes
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# --- MAJOR AILMENTS ---
+
+	# Wounded 2
+	option = {
+		name = bm_heal_ailment.0001.wounded_2
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = wounded_2 }
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 35
+		}
+		scope:recipient = { remove_trait = wounded_2 }
+		bm_heal_major_cost_and_xp_effect = yes
+		bm_heal_major_opinion_effect = yes
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Incapable
+	option = {
+		name = bm_heal_ailment.0001.incapable
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = incapable }
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 35
+		}
+		scope:recipient = { remove_trait = incapable }
+		bm_heal_major_cost_and_xp_effect = yes
+		bm_heal_major_opinion_effect = yes
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Pneumonic
+	option = {
+		name = bm_heal_ailment.0001.pneumonic
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = pneumonic }
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 35
+		}
+		scope:recipient = { remove_trait = pneumonic }
+		bm_heal_major_cost_and_xp_effect = yes
+		bm_heal_major_opinion_effect = yes
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Early Great Pox
+	option = {
+		name = bm_heal_ailment.0001.early_great_pox
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = early_great_pox }
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 35
+		}
+		scope:recipient = { remove_trait = early_great_pox }
+		bm_heal_major_cost_and_xp_effect = yes
+		bm_heal_major_opinion_effect = yes
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Infirm
+	option = {
+		name = bm_heal_ailment.0001.infirm
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = infirm }
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 35
+		}
+		scope:recipient = { remove_trait = infirm }
+		bm_heal_major_cost_and_xp_effect = yes
+		bm_heal_major_opinion_effect = yes
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Withering Mind
+	option = {
+		name = bm_heal_ailment.0001.withering_mind
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = withering_mind }
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 35
+		}
+		scope:recipient = { remove_trait = withering_mind }
+		bm_heal_major_cost_and_xp_effect = yes
+		bm_heal_major_opinion_effect = yes
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Clouded Eyes
+	option = {
+		name = bm_heal_ailment.0001.clouded_eyes
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = clouded_eyes }
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 35
+		}
+		scope:recipient = { remove_trait = clouded_eyes }
+		bm_heal_major_cost_and_xp_effect = yes
+		bm_heal_major_opinion_effect = yes
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Fragile Bones
+	option = {
+		name = bm_heal_ailment.0001.fragile_bones
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = fragile_bones }
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 35
+		}
+		scope:recipient = { remove_trait = fragile_bones }
+		bm_heal_major_cost_and_xp_effect = yes
+		bm_heal_major_opinion_effect = yes
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Maimed
+	option = {
+		name = bm_heal_ailment.0001.maimed
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = maimed }
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 35
+		}
+		scope:recipient = { remove_trait = maimed }
+		bm_heal_major_cost_and_xp_effect = yes
+		bm_heal_major_opinion_effect = yes
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Consumption
+	option = {
+		name = bm_heal_ailment.0001.consumption
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = consumption }
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 35
+		}
+		scope:recipient = { remove_trait = consumption }
+		bm_heal_major_cost_and_xp_effect = yes
+		bm_heal_major_opinion_effect = yes
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Typhus
+	option = {
+		name = bm_heal_ailment.0001.typhus
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = typhus }
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 35
+		}
+		scope:recipient = { remove_trait = typhus }
+		bm_heal_major_cost_and_xp_effect = yes
+		bm_heal_major_opinion_effect = yes
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Measles
+	option = {
+		name = bm_heal_ailment.0001.measles
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = measles }
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 35
+		}
+		scope:recipient = { remove_trait = measles }
+		bm_heal_major_cost_and_xp_effect = yes
+		bm_heal_major_opinion_effect = yes
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Blind
+	option = {
+		name = bm_heal_ailment.0001.blind
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = blind }
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 35
+		}
+		scope:recipient = { remove_trait = blind }
+		bm_heal_major_cost_and_xp_effect = yes
+		bm_heal_major_opinion_effect = yes
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# One Eyed
+	option = {
+		name = bm_heal_ailment.0001.one_eyed
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = one_eyed }
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 35
+		}
+		scope:recipient = { remove_trait = one_eyed }
+		bm_heal_major_cost_and_xp_effect = yes
+		bm_heal_major_opinion_effect = yes
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Weak
+	option = {
+		name = bm_heal_ailment.0001.weak
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = weak }
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 35
+		}
+		scope:recipient = { remove_trait = weak }
+		bm_heal_major_cost_and_xp_effect = yes
+		bm_heal_major_opinion_effect = yes
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Lunatic 1
+	option = {
+		name = bm_heal_ailment.0001.lunatic_1
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = lunatic_1 }
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 35
+		}
+		scope:recipient = { remove_trait = lunatic_1 }
+		bm_heal_major_cost_and_xp_effect = yes
+		bm_heal_major_opinion_effect = yes
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Possessed 1
+	option = {
+		name = bm_heal_ailment.0001.possessed_1
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = possessed_1 }
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 35
+		}
+		scope:recipient = { remove_trait = possessed_1 }
+		bm_heal_major_cost_and_xp_effect = yes
+		bm_heal_major_opinion_effect = yes
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Dull
+	option = {
+		name = bm_heal_ailment.0001.dull
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = dull }
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 35
+		}
+		scope:recipient = { remove_trait = dull }
+		bm_heal_major_cost_and_xp_effect = yes
+		bm_heal_major_opinion_effect = yes
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Depressed 1
+	option = {
+		name = bm_heal_ailment.0001.depressed_1
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = depressed_1 }
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 35
+		}
+		scope:recipient = { remove_trait = depressed_1 }
+		bm_heal_major_cost_and_xp_effect = yes
+		bm_heal_major_opinion_effect = yes
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# --- DEADLY / BENEDICTION AILMENTS ---
+
+	# Wounded 3
+	option = {
+		name = bm_heal_ailment.0001.wounded_3
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = wounded_3 }
+			has_character_modifier = lifeforce_modifier_minor
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 100
+		}
+		scope:recipient = { remove_trait = wounded_3 }
+		bm_heal_deadly_cost_and_xp_effect = yes
+		bm_heal_deadly_opinion_effect = yes
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Sickly
+	option = {
+		name = bm_heal_ailment.0001.sickly
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = sickly }
+			has_character_modifier = lifeforce_modifier_minor
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 100
+		}
+		scope:recipient = { remove_trait = sickly }
+		bm_heal_deadly_cost_and_xp_effect = yes
+		bm_heal_deadly_opinion_effect = yes
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Great Pox
+	option = {
+		name = bm_heal_ailment.0001.great_pox
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = great_pox }
+			has_character_modifier = lifeforce_modifier_minor
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 100
+		}
+		scope:recipient = { remove_trait = great_pox }
+		bm_heal_deadly_cost_and_xp_effect = yes
+		bm_heal_deadly_opinion_effect = yes
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Cancer
+	option = {
+		name = bm_heal_ailment.0001.cancer
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = cancer }
+			has_character_modifier = lifeforce_modifier_minor
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 100
+		}
+		scope:recipient = { remove_trait = cancer }
+		bm_heal_deadly_cost_and_xp_effect = yes
+		bm_heal_deadly_opinion_effect = yes
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Bubonic Plague
+	option = {
+		name = bm_heal_ailment.0001.bubonic_plague
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = bubonic_plague }
+			has_character_modifier = lifeforce_modifier_minor
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 100
+		}
+		scope:recipient = { remove_trait = bubonic_plague }
+		bm_heal_deadly_cost_and_xp_effect = yes
+		bm_heal_deadly_opinion_effect = yes
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Smallpox
+	option = {
+		name = bm_heal_ailment.0001.smallpox
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = smallpox }
+			has_character_modifier = lifeforce_modifier_minor
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 100
+		}
+		scope:recipient = { remove_trait = smallpox }
+		bm_heal_deadly_cost_and_xp_effect = yes
+		bm_heal_deadly_opinion_effect = yes
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Leper
+	option = {
+		name = bm_heal_ailment.0001.leper
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = leper }
+			has_character_modifier = lifeforce_modifier_minor
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 100
+		}
+		scope:recipient = { remove_trait = leper }
+		bm_heal_deadly_cost_and_xp_effect = yes
+		bm_heal_deadly_opinion_effect = yes
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Impotent
+	option = {
+		name = bm_heal_ailment.0001.impotent
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = impotent }
+			has_character_modifier = lifeforce_modifier_minor
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 100
+		}
+		scope:recipient = { remove_trait = impotent }
+		bm_heal_deadly_cost_and_xp_effect = yes
+		bm_heal_deadly_opinion_effect = yes
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Dysentery
+	option = {
+		name = bm_heal_ailment.0001.dysentery
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = dysentery }
+			has_character_modifier = lifeforce_modifier_minor
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 100
+		}
+		scope:recipient = { remove_trait = dysentery }
+		bm_heal_deadly_cost_and_xp_effect = yes
+		bm_heal_deadly_opinion_effect = yes
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Ergotism
+	option = {
+		name = bm_heal_ailment.0001.ergotism
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = ergotism }
+			has_character_modifier = lifeforce_modifier_minor
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 100
+		}
+		scope:recipient = { remove_trait = ergotism }
+		bm_heal_deadly_cost_and_xp_effect = yes
+		bm_heal_deadly_opinion_effect = yes
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Disfigured
+	option = {
+		name = bm_heal_ailment.0001.disfigured
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = disfigured }
+			has_character_modifier = lifeforce_modifier_minor
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 100
+		}
+		scope:recipient = { remove_trait = disfigured }
+		bm_heal_deadly_cost_and_xp_effect = yes
+		bm_heal_deadly_opinion_effect = yes
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# One Legged
+	option = {
+		name = bm_heal_ailment.0001.one_legged
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = one_legged }
+			has_character_modifier = lifeforce_modifier_minor
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 100
+		}
+		scope:recipient = { remove_trait = one_legged }
+		bm_heal_deadly_cost_and_xp_effect = yes
+		bm_heal_deadly_opinion_effect = yes
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Faltering Heart
+	option = {
+		name = bm_heal_ailment.0001.faltering_heart
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			scope:recipient = { has_trait = faltering_heart }
+			has_character_modifier = lifeforce_modifier_minor
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 100
+		}
+		scope:recipient = { remove_trait = faltering_heart }
+		bm_heal_deadly_cost_and_xp_effect = yes
+		bm_heal_deadly_opinion_effect = yes
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# --- CANCEL / DO NOTHING ---
+	option = {
+		name = bm_heal_ailment.0001.cancel
+		ai_chance = { base = 0 }
+	}
+}
