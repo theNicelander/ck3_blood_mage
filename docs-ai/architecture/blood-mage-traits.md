@@ -17,7 +17,7 @@ Each track has 10 progression levels (10 to 100 XP). Every standard level (10–
 | `ancient` | Time & Piety | Vitality + `+0.2` Monthly Piety, `+5%` Piety Gain Mult | `+1` Learning & Prowess per Piety level | `+1` Learning per Piety level, Prowess age lock | Yearly pulse, Ancient attunement |
 | `enlightenment` | Self-Mastery | Vitality + `+5%` Lifestyle XP Gain Mult | `+1` Martial & Prowess per Piety level | `+1` Martial per Piety level, Prowess age lock | Self-cast spells, channeling lifeforce |
 | `bloodline` | Dynastic Lineage | Vitality + `+0.1` Monthly Dynasty Prestige | `+1` Stewardship & Prowess per Piety level | `+1` Stewardship per Piety level, Prowess age lock | Bloodline enhancement decision, house modifiers |
-| `benediction` | Healing & Bestowal | Vitality + `+2.5` General Opinion, `+0.2` Prestige, `+5%` Prestige Mult | `+1` Diplomacy & Prowess per Piety level | `+1` Diplomacy per Piety level, Prowess age lock | Curing ailments, granting powers to others |
+| `benediction` | Healing & Bestowal | Vitality + `+1.5` General Opinion, `+1.0` Vassal Opinion, `+0.2` Prestige, `+5%` Prestige Mult | `+1` Diplomacy & Prowess per Piety level | `+1` Diplomacy per Piety level, Prowess age lock | Curing ailments, granting powers to others |
 | `hematurgy` | Siphoning Vitality | Vitality + `-5` Enemy Hostile Scheme Success Chance | `+1` Intrigue & Prowess per Piety level | `+1` Intrigue per Piety level, Prowess age lock | Draining lifeforce, harvesting traits |
 
 *Prowess age lock = `no_prowess_loss_from_age = yes` (full immunity to prowess deterioration from aging).*
