@@ -33,3 +33,23 @@ BM_BLOOD_MAGE_ATTUNEMENT_DISPLAY = {
 		localization_key = bm_blood_mage_attunement_none
 	}
 }
+
+BM_BLOOD_MAGE_BLOOD_RUNE_DISPLAY = {
+	type = character
+	text = {
+		trigger = { has_character_modifier = superior_blood_rune_modifier }
+		localization_key = bm_blood_mage_blood_rune_superior
+	}
+	text = {
+		trigger = { has_character_modifier = major_blood_rune_modifier }
+		localization_key = bm_blood_mage_blood_rune_major
+	}
+	text = {
+		trigger = { has_character_modifier = minor_blood_rune_modifier }
+		localization_key = bm_blood_mage_blood_rune_minor
+	}
+	text = {
+		fallback = yes
+		localization_key = bm_blood_mage_blood_rune_none
+	}
+}

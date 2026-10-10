@@ -12,6 +12,7 @@ Character-bound story cycle powering the "Blood Magic" Situation panel (`window_
 | **Blood Golem Roster** | Story variable list | Courtiers possessing `lifestyle_blood_mage` trait belonging to the Golem house (`house_blood_golem`) | Creation, shaping, death, or roster refresh effect |
 | **Blood Retinue Roster** | Story variable list | Courtiers possessing `lifestyle_blood_knight` trait | Roster refresh effect (`bm_refresh_blood_magic_rosters_effect`) |
 | **Lifeforce Counters** | Story variables | Cached counts of Minor, Medium, and Major Lifeforce modifiers | Roster refresh (strips and recount stacks) |
+| **Custom Status Display** | Customizable localization | Real-time readout of disciplines, Lifeforce stacks, active Attunement, and inscribed Blood Rune | `BM_BLOOD_MAGE_INFORMATION_STRING` evaluated on view |
 | **Situation Decisions** | Hidden decisions (`is_invisible = yes`) | Compact blood magic actions accessible only inside panel | Story cycle decision list |
 
 ## Lifecycle & Synchronization
@@ -32,5 +33,6 @@ Character-bound story cycle powering the "Blood Magic" Situation panel (`window_
 | Story script values | `common/script_values/bm_blood_mage_story_values.txt` |
 | Story creation on-actions | `common/on_action/bm_blood_mage_story_on_actions.txt` |
 | Prevalence story hooks | `common/on_action/bm_blood_mage_prevalence_on_actions.txt` |
+| Custom localization | `common/customizable_localization/bm_blood_mage_story_custom_loc.txt` |
 | GUI Panel definition | `gui/window_situation_list.gui` |
 | Localization | `localization/english/bm_blood_mage_story_l_english.yml` |
