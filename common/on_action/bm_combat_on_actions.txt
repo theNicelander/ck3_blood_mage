@@ -11,12 +11,30 @@ bm_on_combat_end_winner = {
 				has_trait = lifestyle_blood_knight
 			}
 			add_blood_knight_xp = { TRACK = vanguard XP = 5 }
+			random = {
+				chance = 33
+				add_character_modifier = { modifier = lifeforce_modifier_minor }
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = bm_battle_victory_lifeforce_toast
+					custom_tooltip = bm_battle_victory_lifeforce_tt
+				}
+			}
 		}
 		every_side_commander = {
 			limit = {
 				has_trait = lifestyle_blood_knight
 			}
 			add_blood_knight_xp = { TRACK = vanguard XP = 6 }
+			random = {
+				chance = 33
+				add_character_modifier = { modifier = lifeforce_modifier_minor }
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = bm_battle_victory_lifeforce_toast
+					custom_tooltip = bm_battle_victory_lifeforce_tt
+				}
+			}
 		}
 	}
 }

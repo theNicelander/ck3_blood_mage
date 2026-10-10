@@ -8,7 +8,7 @@
 
     bm_cast_blood_magic_self_attune_lifeforce: "Lifeforce Attunement"
     bm_cast_blood_magic_self_attune_lifeforce_desc: "Spend [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] to attune your Blood Magic towards a particular [GetTrait('lifestyle_blood_mage').GetName( GetNullCharacter )] trait path for increased experience gain."
-    bm_attune_lifeforce.effects_list: "Choose one of the following attunements (you can only have one at a time):\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('ancient_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('enlightenment_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('bloodline_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('benediction_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('hematurgy_attuned').GetNameWithTooltip]"
+    bm_attune_lifeforce.effects_list: "Choose one of the following attunements (you can only have one at a time):\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('ancient_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('enlightenment_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('bloodline_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('benediction_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('hematurgy_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('vanguard_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('slaughter_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('resilience_attuned').GetNameWithTooltip]"
 
     bm_attune_lifeforce.001.title: "Attune Blood Magic"
     bm_attune_lifeforce.001.desc: "The blood essence within my veins pulses with potential, waiting to be directed. By attuning my magic to a specific aspect, I can strengthen my connection to that particular facet of blood magic, potentially hastening my mastery of it."
@@ -17,6 +17,9 @@
     bm_attune_lifeforce.001.d: "Bloodline - Strengthen my dynasty's magical heritage"
     bm_attune_lifeforce.001.e: "Benediction - Improve my healing and enhancement capabilities"
     bm_attune_lifeforce.001.f: "Hematurgy - Sharpen my skills in harvesting lifeforce"
+    bm_attune_lifeforce.001.vanguard: "Vanguard - Sharpen battlefield command and knight prowess"
+    bm_attune_lifeforce.001.slaughter: "Slaughter - Infuse blade and sinew with lethal bloodlust"
+    bm_attune_lifeforce.001.resilience: "Resilience - Bolster the body against wounds and pestilence"
 
     # Channel lifeforce minor
     bm_channel_minor_lifeforce_decision: "Channel Minor Lifeforce"

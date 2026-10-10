@@ -240,10 +240,57 @@ blood_mage_yearly_events.004 = {
     hidden = yes
     trigger = { has_trait = lifestyle_blood_knight }
     immediate = {
-        add_trait_xp = {
-            trait = lifestyle_blood_knight
-            track = resilience
-            value = 1
+        add_blood_knight_xp = {
+            TRACK = resilience
+            XP = 1
+        }
+
+        # Vanguard attunement check
+        if = {
+            limit = { has_character_modifier = vanguard_attuned }
+            random = {
+                chance = 50
+                send_interface_toast = {
+                    title = bm_yearly_attunement_vanguard_toast
+                    left_icon = root
+                    add_blood_knight_xp = {
+                        TRACK = vanguard
+                        XP = 1
+                    }
+                }
+            }
+        }
+
+        # Slaughter attunement check
+        if = {
+            limit = { has_character_modifier = slaughter_attuned }
+            random = {
+                chance = 50
+                send_interface_toast = {
+                    title = bm_yearly_attunement_slaughter_toast
+                    left_icon = root
+                    add_blood_knight_xp = {
+                        TRACK = slaughter
+                        XP = 1
+                    }
+                }
+            }
+        }
+
+        # Resilience attunement check
+        if = {
+            limit = { has_character_modifier = resilience_attuned }
+            random = {
+                chance = 50
+                send_interface_toast = {
+                    title = bm_yearly_attunement_resilience_toast
+                    left_icon = root
+                    add_blood_knight_xp = {
+                        TRACK = resilience
+                        XP = 1
+                    }
+                }
+            }
         }
     }
 }

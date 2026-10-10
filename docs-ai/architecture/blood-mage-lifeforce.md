@@ -25,8 +25,10 @@
 | --- | --- | --- | --- |
 | `lifedrain_prisoner_interaction` | Piety. Dungeon prisoner. | Grants `lifeforce_modifier_minor` | +1 hematurgy |
 | `lifedrain_courtier_event_interaction` | Piety. Unlanded courtier. | Grants `lifeforce_modifier_minor` | +1 hematurgy |
-| Lethal duel kill (combat on-action) | Win lethal single combat duel. | Grants `lifeforce_modifier_major` | +2 hematurgy |
-| `bm_manifest_lifeforce` (decision) | 100 piety. Learning check. | Grants minor or major Lifeforce | +5 enlightenment |
+| Lethal duel kill (combat on-action) | Win lethal single combat duel. | Grants `lifeforce_modifier_major` (Blood Mage) or `lifeforce_modifier_minor` (Blood Knight) | +2 hematurgy (Mage) / +6 slaughter (Knight) |
+| Battle victory (combat on-action) | Win army battle as knight/commander. | 33% chance grants `lifeforce_modifier_minor` (Blood Knight) | +5-6 vanguard (Knight) |
+| `bm_manifest_lifeforce` (decision) | 100 piety. Learning check. | Grants minor or major Lifeforce (Mage) or Minor Lifeforce (Knight) | +5 enlightenment (Mage) / +3 resilience (Knight) |
+| `seek_power` (decision) | Free. CD: 1-2 yrs. | Grants Minor Lifeforce (beast/source/knight contest) or Major (Mage ancient/harvest) | +1-2 school (Mage) / +1-2 slaughter/vanguard/resilience (Knight) |
 | `bm_manifest_superior_lifeforce_decision` (decision) | 250 piety + Minor + Major Lifeforce. Learning check. | Consumes Minor + Major upfront. Crit success: Superior. Success: Superior + 1 yr Major exhaustion. Fail: 3 yr Major exhaustion + refund Major. Crit fail: 3 yr Major + 1 yr Minor exhaustion. | +2-10 enlightenment |
 | `blood_golem_creation_decision` (decision) | 500 piety + Superior Lifeforce. | Consumes `lifeforce_modifier_superior` | +5 bloodline |
 | `bm_cast_blood_magic_minor_decision` | 25-75 piety + Minor Lifeforce. | Consumes `lifeforce_modifier_minor` | +0-1 enlg |
