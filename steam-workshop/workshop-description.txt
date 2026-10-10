@@ -1,73 +1,200 @@
-[h1]Blood Mages — CK3 1.19 Fork[/h1]
+[h1]Blood Mages (by Nicelander)[/h1]
 
-This is an independent compatibility fork of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3470491478]Blood Mages by Nicelander[/url].
+Low-fantasy blood magic integrated seamlessly into Crusader Kings III (1.20.*).
 
-[h2]Blood Magic[/h2]
+Blood Mages drain [b]Lifeforce[/b] from others to extend their lifespan, fuel supernatural rituals, absorb congenital traits, shape artificial constructs, and empower sworn knights into lethal combatants.
 
-Become a Blood Mage and drain [b]Lifeforce[/b] from other characters to extend your lifespan and fuel powerful magic.
+The mod is built with a strictly modular architecture: [b]zero vanilla file overwrites[/b], full save-game compatibility, and seamless interoperability with total overhauls such as [i]A Game of Thrones (AGOT)[/i], [i]Realms in Exile (LotR)[/i], [i]Elder Kings 2 (EK2)[/i], and [i]Princes of Darkness (PoD)[/i].
 
-Develop five distinct mastery tracks:
+[hr][/hr]
 
+[h2]This Mod Is For You If:[/h2]
 [list]
-[*] [b]Ancient[/b] — grow stronger as you survive through the centuries
-[*] [b]Enlightenment[/b] — enhance yourself through blood magic
-[*] [b]Bloodline[/b] — strengthen your dynasty
-[*] [b]Benediction[/b] — heal and empower others
-[*] [b]Hematurgy[/b] — harvest Lifeforce and absorb valuable traits
+    [*] You love playing a [b]single, long-lived character[/b] without being completely immortal.
+    [*] You want to acquire and enhance [b]positive physical and mental traits[/b] (Genius, Beautiful, Herculean) through earned gameplay, rituals, and sacrifice.
+    [*] You enjoy [b]deep progression[/b]: 3 distinct lifestyle traits across 13 specialized mastery tracks.
+    [*] You want [b]AI characters[/b] to have access to the same mechanics and decisions as players, balanced via comprehensive campaign game rules.
+    [*] You want [b]maximum mod compatibility[/b] with zero core game file conflicts.
 [/list]
 
-Blood Mages can heal ailments, improve congenital and education traits, create Blood Golems, empower knights, inscribe magical runes, establish Blóðtrú, and perform many other rituals.
+[hr][/hr]
 
-Blood Mages are exceptionally long-lived, but they are [b]not immortal[/b]. They can still die from combat, murder, disease, and depleted Lifeforce.
-
-[h2]What This Fork Adds[/h2]
-
-[h3]Crusader Kings III 1.19 Compatibility[/h3]
-
-The original mod has been updated for CK3 1.19 so its Blood Magic systems continue to work with the current game.
-
-[h3]Evolving Blood Mage Appearance[/h3]
-
-A Blood Mage's mastery now visibly transforms them, from subtly reddened eyes to an increasingly supernatural gaze and whitening hair.
-
-[h3]Blood Magic Story Situation[/h3]
-
-A dedicated panel brings together all five mastery tracks, exact Major and Minor Lifeforce counts, attunement, core decisions, and collapsible rosters for Blood Golems and Blood Knights and Champions.
-
-[h3]Lore, Religion Rules, and Localization[/h3]
-
-The dedicated [b]Blood Mages[/b] game-rule category includes [b]Blood Mage Lore[/b] for choosing the historical or AGOT religion set, [b]Blood Mage Initiation Faith[/b] for requiring a dedicated Blood Magic cult or additionally allowing faiths that accept Witchcraft, and [b]Blood Mage Religion[/b] for enabling the conversion decision for everyone, restricting it to players, or disabling it entirely. Blóðtrú religion text has also been expanded and refreshed across English, French, German, Korean, Polish, Russian, Simplified Chinese, and Spanish.
-
-English is the original text. Simplified Chinese is predominantly community-translated and Russian is community-translated. French contains both reviewed and machine-translated text; German, Korean, Polish, and Spanish are machine translated. Clear errors have been corrected, but machine-translated text may still contain mistakes or awkward phrasing.
-
-[h3]Unified Faith with Broad Tolerance[/h3]
-
-Blóðtrú features the unified faith `blodtru_faith`, built with pluralistic and adaptive doctrines alongside opinion buffering to ensure stable coexistence across the map without overwriting vanilla religions.
-
-[h2]Optional Submods[/h2]
-
-[h3]Blood Mages — Vanilla Religions[/h3]
-
-The separate [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3774392244][b]Blood Mages — Vanilla Religions[/b][/url] compatibility submod adds one lore-specific Blood Mage cult to every vanilla religion, including the Egyptian–Kushite Cult of the Crimson Ka. Each native cult inherits its parent religion and combines that religion's holy sites with the complete Blóðtrú network.
-
-[h3]Blood Mages — AGOT Religions[/h3]
-
-The separate [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3775630683][b]Blood Mages — AGOT Religions[/b][/url] companion replaces the vanilla-world cult database with six lore-specific traditions for the Faith of the Seven, Old Gods, Drowned God, R'hllor, Mother Rhoyne, and Valyrian gods. Load it after A Game of Thrones and Blood Mages, then select [b]Blood Mage Lore: A Game of Thrones[/b].
-
-[h3]Dracul — Vampires & Blood Mages[/h3]
-
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3765753769][b]Dracul — Vampires & Blood Mages[/b][/url] makes both supernatural systems recognize and prey on one another, adds Dracula-themed military gameplay, and opens a path from secret vampire rule to an openly vampiric faith.
-
-[h2]Compatibility[/h2]
-
-The main mod does not overwrite vanilla religion definitions and should therefore remain compatible with most other mods, including major total conversions. Use Vanilla Religions for vanilla-world campaigns or the dedicated AGOT Religions companion for A Game of Thrones; do not load both religion companions together.
-
-[h2]Credits[/h2]
-
+[h2]The Lifeforce Resource[/h2]
+Lifeforce is the lifeblood of blood magic. It is stored as physical character modifiers and exists in three progressive tiers:
 [list]
-[*] Original mod, concept, and implementation: [b]Nicelander[/b]
-[*] Original Workshop page: https://steamcommunity.com/sharedfiles/filedetails/?id=3470491478
-[*] Fork source code: https://github.com/CamilleHbp/ck3_blood_mage
+    [*] [b]Minor Lifeforce[/b]: Used for minor restorative magic, attribute channeling, and knight empowerments.
+    [*] [b]Major Lifeforce[/b]: Fuel for major rituals, education enhancements, bloodline empowerment, and trait manifestation.
+    [*] [b]Superior Lifeforce[/b]: Distilled, high-potency essence required for legendary rites, 5-star education mastery, superior body runes, and blood golem forging.
 [/list]
 
-This fork is distributed under the Apache License 2.0 included with the mod.
+[h3]Sources of Lifeforce[/h3]
+[list]
+    [*] [b]Harvesting Captives & Courtiers[/b]: Violently siphon prisoners in your dungeons or willing/unwilling courtiers.
+    [*] [b]Mass Prisoner Lifedrain[/b]: Drain multiple dungeon captives at once through a dedicated management action.
+    [*] [b]Combat & Fatal Duels[/b]: Slay rivals in lethal single combat or harvest essence from victorious battlefield clashes.
+    [*] [b]Spiritual Manifestation[/b]: Meditate through Learning duels to manifest Minor, Major, or distill Superior Lifeforce from your existing reserves.
+    [*] [b]Wilderness Encounters[/b]: Venture forth via Seek Power (landed rulers and landless adventurers) to hunt beasts and tap ancient fonts.
+    [*] [b]Inscribed Body Runes[/b]: Passively regenerate Lifeforce each year through magical runes carved into your flesh.
+[/list]
+
+[h3]Magic Toll & Mortality[/h3]
+[b]Blood Mages are NOT immortal.[/b] Casting spells drains Lifeforce reserves and inflicts temporary exhaustion backlash. If your Lifeforce runs out or you overexert yourself, your health deteriorates, leaving you vulnerable to disease, assassination, or fatal wounds in battle.
+
+[hr][/hr]
+
+[h2]Three Lifestyle Traits & 13 Mastery Tracks[/h2]
+Progression is divided across three dedicated lifestyle traits featuring 13 progressive tracks (each scaling from 10 to 100 XP, with milestones at level 50 and 100):
+
+[h3]1. Blood Mage (lifestyle_blood_mage)[/h3]
+The foundational identity for all blood mages. Grants +2 Learning per Piety level and unlocks the Blood Magic Situation panel.
+[list]
+    [*] [b]Ancient[/b]: Passive survival over centuries. Yields monthly piety, piety multipliers, and locks Prowess against deterioration from old age.
+    [*] [b]Enlightenment[/b]: Self-mastery through channeling spells. Boosts lifestyle experience gain, Martial, and Prowess.
+    [*] [b]Bloodline[/b]: Dynastic preservation. Enhances monthly dynasty prestige, Stewardship, and house blood modifiers.
+    [*] [b]Benediction[/b]: Healing and bestowing power upon others. Boosts general opinion, vassal opinion, Diplomacy, and prestige.
+    [*] [b]Hematurgy[/b]: Siphoning lifeforce and harvesting traits. Grants hostile scheme resistance, Intrigue, and trait-theft proficiency.
+[/list]
+
+[h3]2. Blood Empowerment (lifestyle_blood_empowerment)[/h3]
+Secondary advancement trait unlocked through Major Blood Magic. Every level across all tracks includes universal vitality bonuses (+0.1 Health, +2 Life Expectancy, +1 Year Fertility, +1 Epidemic Resistance):
+[list]
+    [*] [b]Dynasty[/b]: Positive congenital trait inheritance chance, inactive trait inheritance, and fertility.
+    [*] [b]Mastery[/b]: Lifestyle experience gain multiplier, language scheme speed, and additional concurrent language schemes.
+    [*] [b]Presence[/b]: Stress loss multiplier, vassal and general opinion, and sway scheme effectiveness.
+    [*] [b]Prosperity[/b]: Monthly domain income, holding construction costs, camp/domicile build discounts, and Men-at-Arms maintenance reductions.
+    [*] [b]Shadows[/b]: Hostile scheme resistance, owned scheme secrecy, and reducing enemy plot success chances.
+[/list]
+
+[h3]3. Blood Knight (lifestyle_blood_knight)[/h3]
+A martial combat lifestyle trait for empowered champions, commanders, and knights. Leveled through battlefield victories, single combat duels, tournaments, and minor magic:
+[list]
+    [*] [b]Vanguard[/b]: Army command advantage, martial stats, and knight effectiveness.
+    [*] [b]Slaughter[/b]: Combat prowess, dread gain, and dueling lethality.
+    [*] [b]Resilience[/b]: Natural health recovery, wound healing, fertility, and epidemic resistance.
+[/list]
+[i]Blood Knights can wield Minor Blood Magic, seek power in the wilderness, and heal minor ailments without needing full Blood Mage initiation.[/i]
+
+[hr][/hr]
+
+[h2]Spellcraft & Ritual Hubs[/h2]
+
+[h3]Minor Blood Magic[/h3]
+[list]
+    [*] [b]Channel Minor Lifeforce[/b]: Grant 5-year attribute enhancements to Martial, Prowess, Stewardship, Diplomacy, Intrigue, or Learning.
+    [*] [b]Lifeforce Attunement[/b]: Specialize your aura for passive yearly bonuses (Ancient, Vanguard, Slaughter, Resilience).
+    [*] [b]Minor Restorative Magic[/b]: Cure minor wounds, scars, gout, and early illnesses on yourself or courtiers.
+[/list]
+
+[h3]Major Blood Magic[/h3]
+[list]
+    [*] [b]Blood Empowerment[/b]: Channel Major Lifeforce to progress along the 5 empowerment tracks.
+    [*] [b]Enhance Education (1★ → 4★)[/b]: Undertake mental trials to elevate education traits up to rank 4.
+    [*] [b]Inscribe Minor & Major Blood Runes[/b]: Carve mystical runes onto your body for passive yearly Lifeforce rolls.
+    [*] [b]Empower Bloodline[/b]: Bestow lasting house-wide bloodline modifiers to strengthen your dynasty.
+    [*] [b]Manifest Perfection (Ranks 1–3)[/b]: Spiritually awaken positive congenital traits (Quick, Comely, Hale) without needing donor prisoners.
+[/list]
+
+[h3]Superior Blood Magic[/h3]
+[list]
+    [*] [b]Master Education (5★)[/b]: Push mental discipline to its absolute pinnacle, achieving legendary 5-star education traits.
+    [*] [b]Embrace Secondary Education[/b]: Gain a complete second education trait to become a true polymath.
+    [*] [b]Inscribe Superior Blood Rune[/b]: Carve the highest tier body rune for substantial passive Lifeforce generation.
+    [*] [b]Manifest Transcendent Perfection (Ranks 4–5)[/b]: Awaken the ultimate genetic gifts (Genius, Beautiful, Herculean).
+    [*] [b]Forge Blood Golem[/b]: Construct immortal artificial construct champions.
+[/list]
+
+[h3]Trait Harvesting & Reversal[/h3]
+[list]
+    [*] [b]Drain Congenital Traits[/b]: Steal positive congenital traits (Genius, Beautiful, Herculean, Giant, Fecund) from captive prisoners.
+    [*] [b]Purge Genetic Flaws[/b]: Cleanse your own negative congenital traits (Dull, Ugly, Delicate) by draining afflicted captives.
+[/list]
+
+[hr][/hr]
+
+[h2]Blood Golems & Retinue[/h2]
+[list]
+    [*] [b]Blood Golems[/b]: Artificial constructs forged from Superior Lifeforce and piety. Bound to your court in the unique construct house bm_house_golem. Completely loyal, sterile, and barred from title inheritance.
+    [*] [b]Shaping Duels[/b]: Undertake ritual shaping duels to mold your golems, granting them martial traits such as Berserker, Blademaster, Athletic, and specialized education.
+    [*] [b]Blood Knights Retinue[/b]: Swear courtiers or knights into the Blood Knight order to serve as deadly commanders and champions on the battlefield.
+[/list]
+
+[hr][/hr]
+
+[h2]Domicile Shrines & Blood Universities[/h2]
+[list]
+    [*] [b]Domicile Blood Shrines (Tiers I–V)[/b]: Construct 5-tier Blood Shrines in Adventurer Camps and Noble Estates. Shrines provide scaling piety, health, lifespan, and positive genetic inheritance chances to the ruler, while radiating a protective aura to all courtiers and camp followers.
+    [*] [b]Blood Universities (Tiers 0–3)[/b]: Construct specialized magical universities in Duchy Capital holdings, driving cultural fascination and county development.
+[/list]
+
+[hr][/hr]
+
+[h2]Blóðtrú Religion Family & Faiths[/h2]
+Blood Mages can embrace their own dedicated religious family, [b]Blóðtrú[/b], featuring three cultural faiths:
+[list]
+    [*] [b]Blóðtrú Faith[/b]: European and Atlantic focus, centered on Iceland (Reykjavik, Tálknafjörður) and major European power centers.
+    [*] [b]Ketsudō Faith[/b]: East Asian focus for Japonic, Korean, and Mongolic cultures (Mount Fuji, Yamashiro, Gyeongju).
+    [*] [b]Xuédào Faith[/b]: Central Plains and Himalayan focus for Chinese, Qiangic, and Tibetan cultures (Chang'an, Luoyang, Taishan).
+[/list]
+
+[h3]Features[/h3]
+[list]
+    [*] [b]Nearly 50 Holy Sites[/b]: Spanning Europe and Asia, balanced with individual county holder bonuses to prevent overwhelming stat inflation.
+    [*] [b]Identity Doctrine[/b]: Features the hidden identity doctrine with pluralistic integration, high foreign tolerance, and opinion buffering, allowing peaceful coexistence with outside faiths without overwriting vanilla religions.
+[/list]
+
+[hr][/hr]
+
+[h2]Blood Magic Situation Panel[/h2]
+The custom [b]Blood Magic Situation Panel[/b] provides a unified in-game management interface:
+[list]
+    [*] Live tracking of all 5 core disciplines, current attunement, and inscribed runes.
+    [*] Exact counts of Minor, Major, and Superior Lifeforce modifier stacks.
+    [*] Interactive, collapsible rosters displaying your living [b]Dynasty Blood Mages[/b], active [b]Blood Golems[/b], and sworn [b]Blood Retinue[/b].
+    [*] Quick access to situation decisions and mass management actions.
+[/list]
+
+[hr][/hr]
+
+[h2]Campaign Game Rules[/h2]
+Fully customize your campaign through dedicated game rules:
+[list]
+    [*] [b]Blood Mage Prevalence[/b]: Choose between Player Only, 1 in 10,000, 1 in 1,000, Default, 1 in 100, 1 in 10, or Everyone. Controls AI adoption rates, birth inheritance, and yearly retention audits.
+    [*] [b]Physical Appearance[/b]: Choose between None, Blood-Red Eyes, or Eyes & White Hair. Evolving visual portrait effects as blood magic mastery increases.
+    [*] [b]Blóðtrú Religion[/b]: Choose between Fully Enabled, Player Only, or Completely Disabled. Controls whether AI characters can adopt Blóðtrú faiths.
+    [*] [b]Initiation Faith Requirement[/b]: Choose between Dedicated Cult Only, Cult or Witchcraft Accepted, or Unrestricted.
+    [*] [b]Blood Mage Lore[/b]: Choose between Historical Campaign or A Game of Thrones.
+[/list]
+
+[hr][/hr]
+
+[h2]Getting Started[/h2]
+You can become a Blood Mage through multiple paths:
+[list]
+    [*] [b]Character Creator[/b]: Select the Blood Mage trait directly in the Ruler Designer.
+    [*] [b]Ritual Initiation[/b]: Travel to Reykjavik or Tsushima to undertake the ancient geyser duel against the legendary Egill Skallagrímsson.
+    [*] [b]Blood Cultist Decision[/b]: Adopt a Blóðtrú faith and perform the transformation rite.
+    [*] [b]Learn from Another[/b]: Ask a friend, lover, or soulmate who is a Blood Mage to grant you the power.
+    [*] [b]Witch Conversion[/b]: Renounce your witch coven and convert your witchcraft into blood magic.
+    [*] [b]Siphon a Prisoner[/b]: Drain the essence of an imprisoned Blood Mage to take their power for yourself.
+    [*] [b]Hereditary Birth[/b]: Children of blood mages have a chance to inherit the trait naturally.
+[/list]
+
+[hr][/hr]
+
+[h2]Optional Companion Submods[/h2]
+[list]
+    [*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3774392244][b]Blood Mages — Vanilla Religions[/b][/url]: Adds native blood cults to all 49 vanilla religions (including the Cult of the Crimson Ka), blending parent religion holy sites with the Blóðtrú network.
+    [*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3775630683][b]Blood Mages — AGOT Religions[/b][/url]: Adapts the cult database for Westerosi faiths (Faith of the Seven, Old Gods, Drowned God, R'hllor, Mother Rhoyne, Valyrian).
+    [*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3765753769][b]Dracul — Vampires & Blood Mages[/b][/url]: Crossover mod allowing vampires and blood mages to interact, prey on each other, and recruit vampire blood knights.
+[/list]
+
+[hr][/hr]
+
+[h2]Credits & Links[/h2]
+[list]
+    [*] [b]Creator & Lead Developer[/b]: Nicelander ([url=https://github.com/theNicelander]TheNicelander[/url])
+    [*] [b]Steam Workshop[/b]: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3470491478]Blood Mages on Steam Workshop[/url]
+    [*] [b]GitHub Repository[/b]: [url=https://github.com/theNicelander/ck3_blood_mage]theNicelander/ck3_blood_mage[/url]
+    [*] [b]Development Roadmap & Trello[/b]: [url=https://trello.com/b/1qS7Y4n0/ck3-blood-mage-mod]Blood Mages Trello Board[/url]
+    [*] [b]Support the Mod[/b]: [url=https://www.buymeacoffee.com/TheNicelander]Buy Me a Coffee[/url]
+[/list]

@@ -29,11 +29,11 @@
   bm_self_initiation_decision_desc: "The tomes and scrolls offer fragmented clues, but I have no mentor to guide me, no subject to practice upon. The only path forward is the most perilous: to perform the initiation ritual upon myself. I must become both surgeon and patient, sorcerer and sacrifice.\n\nMy own blood will be the medium, my mind the battlefield where I wrestle raw power into submission. There is no dogma here, only dangerous knowledge and the strength of my own will. If I succeed, I will command the very essence of life. If I fail, my mind and body will be the price."
   bm_self_initiation_decision_tooltip: "Use forbidden knowledge to perform an initiation ritual upon yourself. Without a guide, the risks are immense. Failure could shatter your mind or break your body."
 
-  # Become blood mage, from blood cultist
-  bm_blood_cultist_become_blood_mage_decision: "Blood Cultist: Become Blood Mage"
+  # Become blood mage / blood knight, from blood cultist
+  bm_blood_cultist_become_blood_mage_decision: "Blood Cultist: Trial of Blood"
   bm_blood_cultist_become_blood_mage_decision_confirm: "Challenge the Ancient Master"
-  bm_blood_cultist_become_blood_mage_decision_tooltip: "Travel to the sacred geysers of Reykjavik or Tsushima to challenge the ancient wise one and prove your readiness to wield blood magic"
-  bm_blood_cultist_become_blood_mage_decision_desc: "As a devoted follower of the blood faith, faith alone is not enough to command the blood arts. Ancient lore tells of the wise one—an immortal hermit of one hundred and eleven years who dwells by the boiling geothermal geysers of Reykjavik and the volcanic springs of Tsushima. By traveling to these sacred waters and testing your arcane resolve against the hermit in a duel of learning, you can prove yourself worthy to transcend from worshipper to true wielder of blood magic."
+  bm_blood_cultist_become_blood_mage_decision_tooltip: "Travel to the sacred geysers of Reykjavik or Tsushima to challenge Egill and prove your readiness to become a Blood Mage or Blood Knight"
+  bm_blood_cultist_become_blood_mage_decision_desc: "As a devoted follower of the blood faith, faith alone is not enough to command the blood arts or walk the path of the blood knight. Ancient lore tells of Egill Skallagrímsson—berserker, poet, and master of blood-runes who dwells by the boiling geothermal geysers of Reykjavik and the volcanic springs of Tsushima. By traveling to these sacred waters, you can challenge him in a duel of learning to awaken blood magic, or a duel of prowess to become a blood knight."
 
 
 
@@ -42,14 +42,15 @@
   manifest_lifeforce_major_failure_tt: "You failed to manifest Lifeforce"
   manifest_lifeforce_minor_failure_tt: "You failed to manifest Lifeforce"
 
-  # Become blood mage Decision
-  bm_enhance_blood_ritual_decision: "Ritual of Blood"
+  # Become blood mage / blood knight Decision
+  bm_enhance_blood_ritual_decision: "Trial of Blood"
   bm_enhance_blood_ritual_decision_confirm: "Challenge the Ancient Master"
-  bm_enhance_blood_ritual_decision_tooltip: "Travel to the sacred geysers of Reykjavik or Tsushima to challenge the ancient wise one to a duel of learning."
+  bm_enhance_blood_ritual_decision_tooltip: "Travel to the sacred geysers of Reykjavik or Tsushima to challenge Egill to a duel of learning or prowess."
   bm_enhance_blood_ritual_location_requirement_tt: "You must be present in either Reykjavik (Vestisland) or Tsushima"
   bm_enhance_blood_ritual_decision.success_tt: "$bm_geyser_duel.success_tt$"
+  bm_enhance_blood_ritual_decision.blood_knight_success_tt: "$bm_geyser_duel.blood_knight_success_tt$"
   bm_enhance_blood_ritual_decision.mental_failure_tt: "$bm_geyser_duel.mental_failure_tt$"
   bm_enhance_blood_ritual_decision.physical_failure_tt: "$bm_geyser_duel.physical_failure_tt$"
   bm_enhance_blood_ritual_decision.injury_failure_tt: "$bm_geyser_duel.injury_failure_tt$"
 
-  bm_enhance_blood_ritual_decision_desc: "My extensive research into the blood arts has brought me to this precipice. Ancient lore speaks of the wise one—a solitary hermit of one hundred and eleven years guarding the geothermal geysers of Reykjavik and the sacred springs of Tsushima. By confronting this ancient master in a contest of Learning, I can wrest the deepest mysteries of blood magic into the light.\n\nVictory will awaken the blood arts within your blood; defeat guarantees a shattered mind or broken flesh."
+  bm_enhance_blood_ritual_decision_desc: "My extensive research into the blood arts has brought me to this precipice. Ancient lore speaks of Egill Skallagrímsson—berserker, poet, and master of blood-runes guarding the geothermal geysers of Reykjavik and the sacred springs of Tsushima. By confronting this ancient master, you can test your Learning to awaken blood magic, or your Prowess to become a fearsome Blood Knight.\n\nVictory will awaken your blood; defeat guarantees a shattered mind or broken flesh."

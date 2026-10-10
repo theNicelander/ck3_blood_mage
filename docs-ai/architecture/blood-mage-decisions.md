@@ -11,8 +11,8 @@
 
 | Decision ID | Panel Type | Cost & Cooldown | Requirements | XP Gain | Primary Effect |
 | --- | --- | --- | --- | --- | --- |
-| `bm_blood_cultist_become_blood_mage_decision` | Standard | 100 piety. No cooldown. | Follows Blóðtrú faith. | None | Grants `lifestyle_blood_mage` via `bm_become_blood_mage_effect`. |
-| `bm_enhance_blood_ritual_decision` | Standard | 250 piety. CD: 5 yrs. | Non-Blóðtrú. Location: Reykjavik or Tsushima. | None | Learning duel. Success: blood mage. Failure: wounds/stress/scarring. |
+| `bm_blood_cultist_become_blood_mage_decision` | Standard | Decision free (costs 1 Devotion level for Learning duel, 1 Fame level for Prowess duel). No cooldown. | Follows Blóðtrú faith, missing Blood Mage or Blood Knight, Piety or Prestige level >= 2. Location: Reykjavik or Tsushima. | None | Initiates `bm_geyser_duel.0001` against Egill (Learning for `lifestyle_blood_mage`, Prowess for `lifestyle_blood_knight`). |
+| `bm_enhance_blood_ritual_decision` | Standard | Decision free (costs 1 Devotion level for Learning duel, 1 Fame level for Prowess duel). No cooldown. | Non-Blóðtrú, missing Blood Mage or Blood Knight, Piety or Prestige level >= 2, qualifying stats/traits. Location: Reykjavik or Tsushima. | None | Initiates `bm_geyser_duel.0001` against Egill (Learning for `lifestyle_blood_mage`, Prowess for `lifestyle_blood_knight`). |
 | `convert_to_blood_magic_from_witch` | Standard | Free. No cooldown. | Player only. Has witch trait. | None | Removes witch trait, grants blood mage. |
 | `seek_power_decision` | Standard | Free. CD: 2 yrs. | Feudal/landed blood mage. | +1-2 school | Wilderness hunt event chain (`seek_power.001`). Harvests lifeforce. |
 | `seek_power_decision_wanderer` | Standard | Free. CD: 1 yr. | Landless adventurer blood mage. | +1-2 school | Landless wilderness event chain. |

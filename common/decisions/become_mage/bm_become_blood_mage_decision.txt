@@ -7,13 +7,17 @@
 
     is_shown = {
         bm_meets_blood_mage_initiation_faith_requirement_trigger = yes
-        not = { has_trait = lifestyle_blood_mage }
+        OR = {
+            NOT = { has_trait = lifestyle_blood_mage }
+            NOT = { has_trait = lifestyle_blood_knight }
+        }
     }
 
-    cost = { piety = 100 }
-
     is_valid = {
-        piety_level >= 2
+        OR = {
+            piety_level >= 2
+            prestige_level >= 2
+        }
     }
 
     is_valid_showing_failures_only = {
@@ -51,21 +55,34 @@ bm_enhance_blood_ritual_decision = {
 
     is_shown = {
         is_adult = yes
-        NOT = { has_trait = lifestyle_blood_mage }
+        OR = {
+            NOT = { has_trait = lifestyle_blood_mage }
+            NOT = { has_trait = lifestyle_blood_knight }
+        }
         NOR = {
             bm_meets_blood_mage_initiation_faith_requirement_trigger = yes
         }
     }
 
     is_valid = {
-        piety_level >= 2
+        OR = {
+            piety_level >= 2
+            prestige_level >= 2
+        }
         OR = {
             learning >= 20
+            prowess >= 20
+            martial >= 20
             has_trait = education_learning_4
             has_trait = education_learning_5
+            has_trait = education_martial_4
+            has_trait = education_martial_5
             has_trait = intellect_good_3
+            has_trait = physique_good_3
             has_trait = lifestyle_mystic
             has_trait = lifestyle_scholar
+            has_trait = lifestyle_blademaster_3
+            has_trait = berserker
             has_trait = theologian
             stress_level >= 2
         }
@@ -78,10 +95,6 @@ bm_enhance_blood_ritual_decision = {
             text = bm_enhance_blood_ritual_location_requirement_tt
             bm_is_at_blood_magic_initiation_site_trigger = yes
         }
-    }
-
-    cost = {
-        piety = 100
     }
 
     effect = {

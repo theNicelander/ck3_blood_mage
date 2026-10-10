@@ -6,7 +6,9 @@ Living technical specification for the Blood Knight subsystem.
 
 - **What:** Evolving martial combat lifestyle trait `lifestyle_blood_knight` with 3 tracks (max 100 XP each).
 - **Base stats:** `health = -1`, `life_expectancy = -5`, `prowess = -5`. Ruler designer cost: 50. Non-inheritable (`genetic = no`).
-- **How to acquire:** `make_blood_knight_interaction` cast by a Blood Mage on a sworn knight/courtier or self. Cost: `blood_knight_creation_piety_cost` (100 Piety) + `lifeforce_modifier_major`.
+- **How to acquire:**
+  - `make_blood_knight_interaction`: Cast by a Blood Mage on a sworn knight/courtier or self. Cost: `blood_knight_creation_piety_cost` (100 Piety) + `lifeforce_modifier_major`.
+  - **Geyser Duel Initiation (`bm_geyser_duel.0001`):** Travel to Reykjavik or Tsushima and confront Egill Skallagrímsson via `bm_blood_cultist_become_blood_mage_decision` or `bm_enhance_blood_ritual_decision` (requires Piety or Prestige level >= 2 to open decision). Choosing the Prowess duel requires Prestige level >= 2, costs 1 Fame level (`add_prestige_level = -1`), and bestows `lifestyle_blood_knight` upon victory.
 - **Universal rank progression:** Every trait rank across all 3 tracks awards `health = 0.2`, `life_expectancy = 1`, and `monthly_prestige = 0.1`, ensuring characters can offset the base trait negatives no matter which track they advance.
 - **How to level:**
   - **Empower Blood Knight Interaction (`empower_blood_knight_interaction`):** Direct interaction popup (modal with options, no event):
