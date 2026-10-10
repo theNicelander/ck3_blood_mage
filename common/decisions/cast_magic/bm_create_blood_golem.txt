@@ -7,34 +7,6 @@
         has_character_modifier = lifeforce_modifier_superior
         piety_level >= 3
         piety >= 500
-
-        OR = {
-            has_trait_xp = {
-                trait = lifestyle_blood_mage
-                track = ancient
-                value >= required_xp_blood_golem
-            }
-            has_trait_xp = {
-                trait = lifestyle_blood_mage
-                track = enlightenment
-                value >= required_xp_blood_golem
-            }
-            has_trait_xp = {
-                trait = lifestyle_blood_mage
-                track = bloodline
-                value >= required_xp_blood_golem
-            }
-            has_trait_xp = {
-                trait = lifestyle_blood_mage
-                track = benediction
-                value >= required_xp_blood_golem
-            }
-            has_trait_xp = {
-                trait = lifestyle_blood_mage
-                track = hematurgy
-                value >= required_xp_blood_golem
-            }
-        }
     }
     cost = { piety = 500 }
     cooldown = { years = 3 }
