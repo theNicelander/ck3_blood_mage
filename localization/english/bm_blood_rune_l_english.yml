@@ -10,6 +10,9 @@
   superior_blood_rune_modifier_desc: "These masterful blood inscriptions often draw [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] to you unbidden. They frequently capture [GetModifier('lifeforce_modifier_major').GetNameWithTooltip], and sometimes manifest both types of power at once. \n\nMasterful blood inscriptions cover your vital areas, sometimes shifting beneath your skin with a life of their own. Your body has become a constant conduit for lifeforce, drawing power from the very air you breathe."
 
   blood_runes_effects_list.effects_list: "Gain increasingly powerful Blood Runes (each tier replaces the previous):\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('minor_blood_rune_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('major_blood_rune_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('superior_blood_rune_modifier').GetNameWithTooltip]"
+  blood_runes_effects_list.minor: "Inscribe the [GetModifier('minor_blood_rune_modifier').GetNameWithTooltip] onto your flesh, granting a chance to passively harvest lifeforce each year."
+  blood_runes_effects_list.major: "Upgrade to the [GetModifier('major_blood_rune_modifier').GetNameWithTooltip], enhancing your yearly passive lifeforce harvests."
+  blood_runes_effects_list.superior: "Upgrade to the [GetModifier('superior_blood_rune_modifier').GetNameWithTooltip], transforming your body into a living grimoire and master conduit for ambient lifeforce."
 
 
   # Blood Rune Event

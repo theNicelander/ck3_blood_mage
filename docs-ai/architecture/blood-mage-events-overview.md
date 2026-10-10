@@ -10,10 +10,9 @@
 | Event File | Namespace | Triggered By | Subsystem & Function |
 | --- | --- | --- | --- |
 | `events/bm_cast_blood_magic_minor_events.txt` | `bm_cast_blood_magic_minor` | Decision `bm_cast_blood_magic_minor_decision` | Hub event (.001) offering Minor Lifeforce rites (Channel vs Attune). |
-| `events/bm_cast_blood_magic_major_events.txt` | `bm_cast_blood_magic_major` | Decision `bm_cast_blood_magic_major_decision` | Hub event (.001) offering Major Lifeforce rites (Empowerment, Education, Runes, Bloodline). |
+| `events/bm_cast_blood_magic_major_events.txt` | `bm_cast_blood_magic_major` | Decision `bm_cast_blood_magic_major_decision` | Hub event (.001) offering Major Lifeforce rites (Empowerment, Education, Runes, Bloodline, Congenital Traits). |
 | `events/bm_attune_lifeforce_events.txt` | `bm_attune_lifeforce` | Event `bm_cast_blood_magic_minor.001` | Selects 1 of 5 school attunements (+50% yearly XP roll). |
 | `events/bm_blood_golem_events.txt` | `blood_golem` | Decision `blood_golem_creation_decision` | Golem crafting outcome, stat shaping duels. |
-| `events/bm_blood_rune_events.txt` | `bm_blood_rune` | Event `bm_cast_blood_magic_major.001` | Inscription of minor, major, or superior body runes. |
 | `events/bm_channel_lifeforce_bloodline_events.txt` | `bm_channel_lifeforce_bloodline` | Event `bm_cast_blood_magic_major.001` | Bestows permanent house modifiers. |
 | `events/bm_channel_manifest_traits_events.txt` | `bm_channel_manifest_traits` | Event `bm_cast_blood_magic_major.001` | Learning self-duel to manifest, upgrade, or cleanse congenital traits. |
 | `events/bm_channel_lifeforce_enlightenment_minor_events.txt` | `bm_channel_lifeforce_enlightenment_minor` | Event `bm_cast_blood_magic_minor.001` | Converts minor lifeforce into temporary attribute boost. |

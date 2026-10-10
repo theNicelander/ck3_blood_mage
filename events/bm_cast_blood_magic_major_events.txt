@@ -164,35 +164,115 @@ bm_cast_blood_magic_major.001 = {
 		}
 	}
 
-	# Inscribe Blood Rune
+	# Inscribe Minor Blood Rune
 	option = {
-		name = bm_cast_blood_magic_major.001.blood_rune
+		name = bm_cast_blood_magic_major.001.blood_rune_minor
 		trigger = {
 			NOT = { has_character_flag = bm_blood_rune_cooldown }
+			NOT = { has_character_modifier = minor_blood_rune_modifier }
+			NOT = { has_character_modifier = major_blood_rune_modifier }
 			NOT = { has_character_modifier = superior_blood_rune_modifier }
 			has_character_modifier = lifeforce_modifier_minor
 			piety_level >= 2
-			piety >= bm_blood_rune_piety_cost
 		}
 		show_as_unavailable = {
-			always = yes
+			NOT = { has_character_modifier = minor_blood_rune_modifier }
+			NOT = { has_character_modifier = major_blood_rune_modifier }
+			NOT = { has_character_modifier = superior_blood_rune_modifier }
 		}
-		add_piety = {
-			value = bm_blood_rune_piety_cost
-			multiply = -1
+		add_character_modifier = {
+			modifier = minor_blood_rune_modifier
 		}
 		add_character_flag = {
 			flag = bm_blood_rune_cooldown
 			years = 5
 		}
 		blood_magic_used_major_minor = yes
-		add_piety_level = -1
 		add_xp_bm_dynamic = {
 			TRACK = benediction
 			XP = 5
 		}
-		custom_tooltip = blood_runes_effects_list.effects_list
-		trigger_event = { id = bm_blood_rune.001 }
+		custom_tooltip = blood_runes_effects_list.minor
+		ai_chance = {
+			base = 100
+			modifier = {
+				health <= fine_health
+				add = -100
+			}
+		}
+	}
+
+	# Inscribe Major Blood Rune
+	option = {
+		name = bm_cast_blood_magic_major.001.blood_rune_major
+		trigger = {
+			NOT = { has_character_flag = bm_blood_rune_cooldown }
+			has_character_modifier = minor_blood_rune_modifier
+			NOT = { has_character_modifier = major_blood_rune_modifier }
+			NOT = { has_character_modifier = superior_blood_rune_modifier }
+			has_character_modifier = lifeforce_modifier_minor
+			piety_level >= 3
+			piety >= 200
+		}
+		show_as_unavailable = {
+			has_character_modifier = minor_blood_rune_modifier
+			NOT = { has_character_modifier = major_blood_rune_modifier }
+			NOT = { has_character_modifier = superior_blood_rune_modifier }
+		}
+		add_piety = -200
+		remove_character_modifier = minor_blood_rune_modifier
+		add_character_modifier = {
+			modifier = major_blood_rune_modifier
+		}
+		add_character_flag = {
+			flag = bm_blood_rune_cooldown
+			years = 5
+		}
+		blood_magic_used_major_minor = yes
+		add_xp_bm_dynamic = {
+			TRACK = benediction
+			XP = 5
+		}
+		custom_tooltip = blood_runes_effects_list.major
+		ai_chance = {
+			base = 100
+			modifier = {
+				health <= fine_health
+				add = -100
+			}
+		}
+	}
+
+	# Inscribe Superior Blood Rune
+	option = {
+		name = bm_cast_blood_magic_major.001.blood_rune_superior
+		trigger = {
+			NOT = { has_character_flag = bm_blood_rune_cooldown }
+			has_character_modifier = major_blood_rune_modifier
+			NOT = { has_character_modifier = superior_blood_rune_modifier }
+			has_character_modifier = lifeforce_modifier_minor
+			piety_level >= 4
+			piety >= 400
+		}
+		show_as_unavailable = {
+			has_character_modifier = major_blood_rune_modifier
+			NOT = { has_character_modifier = superior_blood_rune_modifier }
+		}
+		add_piety = -400
+		remove_character_modifier = major_blood_rune_modifier
+		add_character_modifier = {
+			modifier = superior_blood_rune_modifier
+		}
+		add_character_flag = {
+			flag = bm_blood_rune_cooldown
+			years = 5
+		}
+		blood_magic_used_major_minor = yes
+		add_xp_bm_dynamic = {
+			TRACK = benediction
+			XP = 5
+		}
+		custom_tooltip = blood_runes_effects_list.superior
 		ai_chance = {
 			base = 100
 			modifier = {
