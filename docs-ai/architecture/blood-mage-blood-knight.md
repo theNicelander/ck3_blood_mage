@@ -41,7 +41,7 @@ Each track has 10 tiers (10, 20, 30, ..., 100 XP).
 - **Major Blood Magic & Secondary Empowerment:**
   - Blood Knights have full access to Major Blood Magic (`bm_cast_blood_magic_major_decision`) and the secondary trait `lifestyle_blood_empowerment` upon possessing Major Lifeforce. Superior Blood Magic remains strictly exclusive to Blood Mages.
 - **Minor Blood Magic & Healing:**
-  - `bm_heal_ailment`: Can target self, courtiers, liege, close family, spouse, and knights. Blood Knights can selectively mend minor wounds/illnesses (`wounded_1`, `ill`, `lovers_pox`, `gout_ridden`, `scarred`).
+  - `bm_heal_ailment`: Can target self, courtiers, liege, close family, spouse, and knights. Cures any supported ailment (minor, major, or deadly) across 37 afflictions given required Lifeforce and Piety. Awards +2 `resilience` XP (self-healing) or +1 `vanguard` and +1 `benediction` XP (healing allies).
   - `bm_cast_blood_magic_minor_decision`: Allows self-channeling, self-purging of negative traits, and condensing Minor Lifeforce into Major Lifeforce.
 
 ## Where the details live

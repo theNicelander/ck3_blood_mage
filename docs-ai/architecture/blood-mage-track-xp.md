@@ -17,11 +17,11 @@
 | +1 to +10 XP | 0 (pulse) / 25–400 Piety + Minor/Major/Superior Lifeforce | Yearly pulse, attunement, manifest lifeforce, inscribe blood runes | `lifestyle_blood_mage` | `ancient` |
 | +1 to +8 XP | 75 – 1000 Piety + Minor/Major/Superior Lifeforce | Education enhancements, lifeforce channeling, empowerment | `lifestyle_blood_mage` | `enlightenment` |
 | +2 to +6 XP | 0 – 500 Piety + Minor/Major/Superior Lifeforce | Grant blood magic, childbirth, bless kin, commune rite, congenital traits, empower bloodline, golems | `lifestyle_blood_mage` | `bloodline` |
-| +1 to +6 XP | 0 – 100 Piety (scaled) + Minor/Major Lifeforce | Curing illnesses, making/empowering blood knights, restoring drained courtiers | `lifestyle_blood_mage` | `benediction` |
+| +2 to +8 XP | 0 – 100 Piety (scaled) + Minor/Major Lifeforce | Curing illnesses, making/empowering blood knights, restoring drained courtiers | `lifestyle_blood_mage` | `benediction` |
 | +1 to +2 XP | 25 – 250 Piety (Grants Minor/Major lifeforce) | Prisoner/courtier draining, congenital trait theft, wilderness harvest | `lifestyle_blood_mage` | `hematurgy` |
 | +10 XP (chosen track) | 150 Piety + Major Lifeforce | Channel Blood Empowerment decision | `lifestyle_blood_empowerment` | `dynasty`, `mastery`, `presence`, `prosperity`, `shadows` |
 | +1 to +10 XP | None / Minor/Major Lifeforce (caster) | Commander/knight battle victories, healing comrades, mage empowerment | `lifestyle_blood_knight` | `vanguard` |
-| +2 to +10 XP | None / Minor/Major Lifeforce (caster) | Single combat fatal kills (yields Minor Lifeforce), tournaments, mage empowerment | `lifestyle_blood_knight` | `slaughter` |
+| +3 to +10 XP | None / Minor/Major Lifeforce (caster) | Single combat fatal kills (yields Minor Lifeforce), tournaments, mage empowerment | `lifestyle_blood_knight` | `slaughter` |
 | +1 to +10 XP | 100 Piety (manifest) / None | Yearly survival pulse, defeat survival, Prowess manifest lifeforce, self-tending | `lifestyle_blood_knight` | `resilience` |
 
 ---
@@ -79,9 +79,9 @@
 | **+4 XP** | 35 Piety (`cure_illness_cost_major_neg`) + Major Lifeforce (`lifeforce_modifier_major`) | **Heal Affliction: Major** (`bm_heal_ailment`) | Interaction & Event | Target with `wounded_2`, `incapable`, `pneumonic`, `infirm`, `maimed`, etc. | None |
 | **+8 XP** | 100 Piety (`cure_illness_cost_benediction_neg`) + **both** Minor & Major Lifeforce | **Heal Affliction: Deadly** (`bm_heal_ailment`) | Interaction & Event | Target with `wounded_3`, `cancer`, `plague`, `leper`, `disfigured`, etc. | None |
 | **+4 XP** | 100 Piety + Major Lifeforce (`lifeforce_modifier_major`) | Make Blood Knight | Interaction (`make_blood_knight_interaction`) | Target without blood knight | None |
-| **+3 XP** (caster) | 0 Piety + Major Lifeforce (`lifeforce_modifier_major`) | Empower Blood Knight (Major) | Interaction (`empower_blood_knight_interaction`) | Target is blood knight | None |
-| **+1 XP** (caster) | 0 Piety + Minor Lifeforce (`lifeforce_modifier_minor`) | Empower Blood Knight (Minor) | Interaction (`empower_blood_knight_interaction`) | Target is blood knight | None |
-| **+3 XP** | 25 Piety + Major Lifeforce (`lifeforce_modifier_major`) | Restore Lifedrained Courtier | Interaction (`grant_lifeforce_interaction_reversed`) | Target has `lifedrained_modifier` | None |
+| **+4 XP** (caster) | 0 Piety + Major Lifeforce (`lifeforce_modifier_major`) | Empower Blood Knight (Major) | Interaction (`empower_blood_knight_interaction`) | Target is blood knight | None |
+| **+2 XP** (caster) | 0 Piety + Minor Lifeforce (`lifeforce_modifier_minor`) | Empower Blood Knight (Minor) | Interaction (`empower_blood_knight_interaction`) | Target is blood knight | None |
+| **+4 XP** | 25 Piety + Major Lifeforce (`lifeforce_modifier_major`) | Restore Lifedrained Courtier | Interaction (`grant_lifeforce_interaction_reversed`) | Target has `lifedrained_modifier` | None |
 | **+1 XP** | None (50% roll) | Benediction Attunement Roll | Yearly event roll (`blood_mage_yearly_events.001`) | Has `benediction_attuned` | 1 year |
 
 ### 1.5 Hematurgy Track (`hematurgy`)

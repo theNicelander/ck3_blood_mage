@@ -38,19 +38,19 @@ Identity and progression trait `lifestyle_blood_mage`. Gates spellcasting, story
 ### Acquisition Triggers
 All routes call `bm_become_blood_mage_effect` or `bm_elevate_blood_knight_to_blood_mage_effect`:
 - `bm_elevate_to_blood_mage_decision`: Blood Knights can take a dedicated ritual decision to elevate themselves and become a Blood Mage, carrying over their `ancient` and `benediction` track progress 1:1 and converting 50% of martial XP into Blood Mage schools.
-- `bm_become_blood_mage_decision`: Decision for Blóðtrú faithful.
-- `bm_become_blood_mage_ritual_decision`: Decision for non-faithful; Learning duel with risk of injury.
+- `bm_blood_cultist_become_blood_mage_decision`: Decision for Blóðtrú faithful; initiation duel against Egill Skallagrímsson (`bm_geyser_duel.0001`) in Reykjavik or Tsushima.
+- `bm_enhance_blood_ritual_decision`: Decision for non-faithful; initiation duel against Egill Skallagrímsson (`bm_geyser_duel.0001`) in Reykjavik or Tsushima.
 - `grant_blood_magic_interaction`: Mage grants trait to unlanded courtier (costs lifeforce; awards Bloodline XP).
 - `ask_for_blood_magic_interaction`: Non-mage asks friend/lover/soulmate mage to teach them.
-- `bm_drain_blood_magic_interaction`: Character harvests trait from imprisoned blood mage.
-- `bm_convert_from_witch_decision`: Witch swaps witch trait/secret for blood magic.
+- `bm_get_blood_magic_from_prisoner_interaction`: Character harvests trait from imprisoned blood mage.
+- `convert_to_blood_magic_from_witch`: Witch swaps witch trait/secret for blood magic.
 - Birth inheritance: Rolled on newborn children of blood mages via `on_birth_child`.
 
 ### How Tracks Level Up
 - **Active Spells & Interactions:** Consuming Lifeforce adds XP to the spell's corresponding school via `add_xp_bm_dynamic`.
-- **Ancient:** Yearly pulse, Ancient attunement, Inscribing blood runes (Major/Superior), and Manifesting Lifeforce decisions.
-- **Bloodline:** Bestowing blood magic, welcoming newborn children, blessing kin, communing with the bloodline, manifesting congenital traits, and active house modifiers.
-- **Benediction:** Curing diseases and wounds, empowering and creating blood knights, and restoring drained victims.
+- **Ancient:** Yearly pulse, Ancient attunement, Inscribing blood runes (Major/Superior), Condense lifeforce, and Manifesting Lifeforce decisions.
+- **Bloodline:** Bestowing blood magic, welcoming newborn children (`bm_on_birth_bloodline_xp`), blessing kin, communing with the bloodline, manifesting congenital traits, and active house modifiers.
+- **Benediction:** Curing ailments across 37 afflictions (`bm_heal_ailment`), empowering and creating blood knights, and restoring drained victims.
 - **Hematurgy:** Draining prisoners and courtiers, and harvesting congenital traits. (Battlefield kills do not grant lifeforce to blood mages).
 - **Enlightenment:** Educational enhancement duels, lifeforce channeling, and blood empowerment.
 
@@ -67,7 +67,7 @@ All routes call `bm_become_blood_mage_effect` or `bm_elevate_blood_knight_to_blo
 | Yearly passive XP and rune lifeforce | `events/bm_yearly_events.txt`, `common/on_action/bm_yearly_pulse.txt` |
 | Blood Empowerment choice event | `events/bm_blood_empowerment_event.txt` |
 | Birth and prevalence on-actions | `common/on_action/bm_blood_mage_prevalence_on_actions.txt` |
-| Acquisition interactions and decisions | `common/character_interactions/bm_become_a_blood_mage.txt`, `bm_grant_blood_magic.txt`, `common/decisions/bm_become_blood_mage_decision.txt`, `bm_convert_from_witch.txt` |
+| Acquisition interactions and decisions | `common/character_interactions/bm_become_a_blood_mage.txt`<br>`common/character_interactions/bm_grant_blood_magic.txt`<br>`common/decisions/become_mage/bm_become_blood_mage_decision.txt`<br>`common/decisions/become_mage/bm_convert_from_witch.txt`<br>`common/decisions/become_mage/bm_elevate_blood_knight_decision.txt` |
 | Names and track descriptions | `localization/english/bm_traits_l_english.yml` |
 
 Per-level values, milestones, inheritance chances and XP thresholds are in those files.
