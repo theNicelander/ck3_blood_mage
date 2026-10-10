@@ -219,6 +219,46 @@ bm_cast_blood_magic_minor.001 = {
 		}
 	}
 
+	# Condense Lifeforce (1 Minor Lifeforce + 100 Piety -> 1 Major Lifeforce)
+	option = {
+		name = bm_cast_blood_magic_minor.001.condense
+		trigger = {
+			has_character_modifier = lifeforce_modifier_minor
+			piety >= 100
+		}
+		show_as_unavailable = {
+			has_character_modifier = lifeforce_modifier_minor
+		}
+		add_piety = -100
+		remove_character_modifier = lifeforce_modifier_minor
+		add_character_modifier = { modifier = lifeforce_modifier_major }
+		if = {
+			limit = { has_trait = lifestyle_blood_mage }
+			add_xp_bm_dynamic = {
+				TRACK = ancient
+				XP = 2
+			}
+		}
+		else = {
+			add_blood_knight_xp = {
+				TRACK = resilience
+				XP = 2
+			}
+		}
+		hidden_effect = {
+			bm_recount_lifeforce_stacks_effect = yes
+		}
+		custom_tooltip = bm_cast_blood_magic_minor.001.condense.tt
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 50
+				has_character_modifier = lifeforce_modifier_minor
+				NOT = { has_character_modifier = lifeforce_modifier_major }
+			}
+		}
+	}
+
 	# Cancel
 	option = {
 		name = bm_cast_blood_magic_minor.001.cancel

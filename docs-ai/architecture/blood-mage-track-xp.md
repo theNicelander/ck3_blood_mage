@@ -123,10 +123,13 @@ Tracks: `vanguard`, `slaughter`, `resilience` (and shared `ancient`, `benedictio
 | **+1 XP** (`vanguard`) + **+2 XP** (`resilience`) | None | Battle Defeat (Surviving Commander / Knight) | On-action (`bm_on_combat_end_loser`) | Surviving side commander or knight | Per battle |
 | **+5 XP** (`slaughter`) | None; **Grants** Minor Lifeforce | Single Combat Fatal Slaying | On-action (`bm_on_character_death_duel`) | Slaying opponent in single combat | None |
 | **+3 XP** (`slaughter`) | None | Tournament Completion | On-action (`bm_on_travel_activity_complete_tournament`) | Completing `activity_tournament` | Per tourney |
-| **+3 XP** (`resilience`) | 100 Piety; **Grants** Minor Lifeforce on Prowess duel success | Manifest Lifeforce | Decision (`bm_manifest_lifeforce_decision`) | `piety_level >= 2` | 1 year |
+| **+3 XP** (`resilience`) | 100 Piety; **Grants** Major (crit) or Minor (success) Lifeforce on Prowess duel | Manifest Lifeforce | Decision (`bm_manifest_lifeforce_decision`) | `piety_level >= 2` | 1 year |
+| **+2 XP** (`resilience`) | 100 Piety + Minor Lifeforce; **Grants** Major Lifeforce | Condense Lifeforce | Event option (`bm_cast_blood_magic_minor.001`) | Minor lifeforce held | None |
+| **+3 XP** (`resilience`) (+10 Empowerment XP) | 150 Piety + Major Lifeforce | Channel Blood Empowerment | Decision -> Event (`bm_cast_blood_magic_major.001`) | `piety_level >= 1`, Major lifeforce held | None |
 | **+2 XP** (`resilience`) | 15 Piety + Minor Lifeforce | Heal Minor Affliction (Self-Healing Wounds) | Interaction & Event (`bm_heal_ailment`) | Self has minor wound/illness | None |
 | **+2 XP** (`resilience`) | 50 Piety + Minor Lifeforce | Purge Bodily Impurities (Self-Tending Weakness) | Event option (`bm_cast_blood_magic_minor.001`) | Self has physical frailty | None |
-| **+1 XP** (`resilience`) + **+1 XP** (`ancient`) | None | Yearly Survival Pulse | On-action (`blood_mage_yearly_events.004`) | Has `lifestyle_blood_knight` | 1 year |
+| **+1 XP** (`resilience`) + **+1 XP** (`ancient`) | None (33% ambient roll for Minor Lifeforce) | Yearly Survival Pulse | On-action (`blood_mage_yearly_events.004`) | Has `lifestyle_blood_knight` | 1 year |
+| **50% Conversion** (Slaughter->Hematurgy, Vanguard->Bloodline, Resilience->Enlightenment) | 100 Piety + Minor/Major Lifeforce | Elevate to Blood Mage | Decision (`bm_elevate_to_blood_mage_decision`) | `piety_level >= 2` | 2 years (on fail) |
 
 ---
 

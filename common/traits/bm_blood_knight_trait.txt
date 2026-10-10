@@ -38,6 +38,8 @@ lifestyle_blood_knight = {
 
 				# specific
 				advantage = 1
+				movement_speed = 0.02
+				army_pursuit_mult = 0.03
 			}
 			20 = {
 				# common
@@ -50,6 +52,8 @@ lifestyle_blood_knight = {
 				# specific
 				advantage = 1
 				martial = 1
+				movement_speed = 0.02
+				army_pursuit_mult = 0.03
 			}
 			30 = {
 				# common
@@ -61,6 +65,8 @@ lifestyle_blood_knight = {
 
 				# specific
 				advantage = 1
+				movement_speed = 0.02
+				army_pursuit_mult = 0.03
 			}
 			40 = {
 				# common
@@ -73,6 +79,8 @@ lifestyle_blood_knight = {
 				# specific
 				advantage = 1
 				martial = 1
+				movement_speed = 0.02
+				army_pursuit_mult = 0.03
 			}
 			50 = {
 				# common
@@ -84,6 +92,8 @@ lifestyle_blood_knight = {
 
 				# specific
 				advantage = 1
+				movement_speed = 0.02
+				army_pursuit_mult = 0.03
 				martial_per_prestige_level = 1
 			}
 			60 = {
@@ -97,6 +107,8 @@ lifestyle_blood_knight = {
 				# specific
 				advantage = 1
 				martial = 1
+				movement_speed = 0.02
+				army_pursuit_mult = 0.03
 			}
 			70 = {
 				# common
@@ -108,6 +120,8 @@ lifestyle_blood_knight = {
 
 				# specific
 				advantage = 1
+				movement_speed = 0.02
+				army_pursuit_mult = 0.03
 			}
 			80 = {
 				# common
@@ -120,6 +134,8 @@ lifestyle_blood_knight = {
 				# specific
 				advantage = 1
 				martial = 1
+				movement_speed = 0.02
+				army_pursuit_mult = 0.03
 			}
 			90 = {
 				# common
@@ -131,6 +147,8 @@ lifestyle_blood_knight = {
 
 				# specific
 				advantage = 1
+				movement_speed = 0.02
+				army_pursuit_mult = 0.03
 			}
 			100 = {
 				# common
@@ -143,6 +161,8 @@ lifestyle_blood_knight = {
 				# specific
 				advantage = 1
 				martial = 1
+				movement_speed = 0.02
+				army_pursuit_mult = 0.03
 				martial_per_prestige_level = 1
 			}
 		}
@@ -158,6 +178,8 @@ lifestyle_blood_knight = {
 
 				# specific
 				prowess = 2
+				knight_effectiveness_mult = 0.1
+				dread_gain_mult = 0.05
 			}
 			20 = {
 				# common
@@ -169,6 +191,8 @@ lifestyle_blood_knight = {
 
 				# specific
 				prowess = 2
+				knight_effectiveness_mult = 0.1
+				dread_gain_mult = 0.05
 			}
 			30 = {
 				# common
@@ -180,6 +204,8 @@ lifestyle_blood_knight = {
 
 				# specific
 				prowess = 2
+				knight_effectiveness_mult = 0.1
+				dread_gain_mult = 0.05
 			}
 			40 = {
 				# common
@@ -191,6 +217,8 @@ lifestyle_blood_knight = {
 
 				# specific
 				prowess = 2
+				knight_effectiveness_mult = 0.1
+				dread_gain_mult = 0.05
 			}
 			50 = {
 				# common
@@ -202,6 +230,8 @@ lifestyle_blood_knight = {
 
 				# specific
 				prowess = 2
+				knight_effectiveness_mult = 0.1
+				dread_gain_mult = 0.05
 				prowess_per_prestige_level = 1
 			}
 			60 = {
@@ -214,6 +244,8 @@ lifestyle_blood_knight = {
 
 				# specific
 				prowess = 2
+				knight_effectiveness_mult = 0.1
+				dread_gain_mult = 0.05
 			}
 			70 = {
 				# common
@@ -225,6 +257,8 @@ lifestyle_blood_knight = {
 
 				# specific
 				prowess = 2
+				knight_effectiveness_mult = 0.1
+				dread_gain_mult = 0.05
 			}
 			80 = {
 				# common
@@ -236,6 +270,8 @@ lifestyle_blood_knight = {
 
 				# specific
 				prowess = 2
+				knight_effectiveness_mult = 0.1
+				dread_gain_mult = 0.05
 			}
 			90 = {
 				# common
@@ -247,6 +283,8 @@ lifestyle_blood_knight = {
 
 				# specific
 				prowess = 2
+				knight_effectiveness_mult = 0.1
+				dread_gain_mult = 0.05
 			}
 			100 = {
 				# common
@@ -258,6 +296,8 @@ lifestyle_blood_knight = {
 
 				# specific
 				prowess = 2
+				knight_effectiveness_mult = 0.1
+				dread_gain_mult = 0.05
 				prowess_per_prestige_level = 1
 			}
 		}
@@ -270,6 +310,11 @@ lifestyle_blood_knight = {
 				years_of_fertility = @bm_common_years_of_fertility
 				epidemic_resistance = @bm_common_epidemic_resistance
 				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
+				health = 0.05
+				stress_loss_mult = 0.03
+				epidemic_resistance = 1
 			}
 			20 = {
 				# common
@@ -280,8 +325,9 @@ lifestyle_blood_knight = {
 				monthly_prestige = @bm_common_monthly_prestige
 
 				# specific
-				positive_random_genetic_chance = 0.05
-				positive_inactive_inheritance_chance = 0.05
+				health = 0.05
+				stress_loss_mult = 0.03
+				epidemic_resistance = 1
 			}
 			30 = {
 				# common
@@ -290,6 +336,11 @@ lifestyle_blood_knight = {
 				years_of_fertility = @bm_common_years_of_fertility
 				epidemic_resistance = @bm_common_epidemic_resistance
 				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
+				health = 0.05
+				stress_loss_mult = 0.03
+				epidemic_resistance = 1
 			}
 			40 = {
 				# common
@@ -300,8 +351,9 @@ lifestyle_blood_knight = {
 				monthly_prestige = @bm_common_monthly_prestige
 
 				# specific
-				positive_random_genetic_chance = 0.05
-				positive_inactive_inheritance_chance = 0.05
+				health = 0.05
+				stress_loss_mult = 0.03
+				epidemic_resistance = 1
 			}
 			50 = {
 				# common
@@ -310,6 +362,12 @@ lifestyle_blood_knight = {
 				years_of_fertility = @bm_common_years_of_fertility
 				epidemic_resistance = @bm_common_epidemic_resistance
 				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
+				health = 0.05
+				stress_loss_mult = 0.03
+				epidemic_resistance = 1
+				negate_health_penalty_add = 0.25
 			}
 			60 = {
 				# common
@@ -320,8 +378,9 @@ lifestyle_blood_knight = {
 				monthly_prestige = @bm_common_monthly_prestige
 
 				# specific
-				positive_random_genetic_chance = 0.05
-				positive_inactive_inheritance_chance = 0.05
+				health = 0.05
+				stress_loss_mult = 0.03
+				epidemic_resistance = 1
 			}
 			70 = {
 				# common
@@ -330,6 +389,11 @@ lifestyle_blood_knight = {
 				years_of_fertility = @bm_common_years_of_fertility
 				epidemic_resistance = @bm_common_epidemic_resistance
 				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
+				health = 0.05
+				stress_loss_mult = 0.03
+				epidemic_resistance = 1
 			}
 			80 = {
 				# common
@@ -340,8 +404,9 @@ lifestyle_blood_knight = {
 				monthly_prestige = @bm_common_monthly_prestige
 
 				# specific
-				positive_random_genetic_chance = 0.05
-				positive_inactive_inheritance_chance = 0.05
+				health = 0.05
+				stress_loss_mult = 0.03
+				epidemic_resistance = 1
 			}
 			90 = {
 				# common
@@ -350,6 +415,11 @@ lifestyle_blood_knight = {
 				years_of_fertility = @bm_common_years_of_fertility
 				epidemic_resistance = @bm_common_epidemic_resistance
 				monthly_prestige = @bm_common_monthly_prestige
+
+				# specific
+				health = 0.05
+				stress_loss_mult = 0.03
+				epidemic_resistance = 1
 			}
 			100 = {
 				# common
@@ -360,8 +430,11 @@ lifestyle_blood_knight = {
 				monthly_prestige = @bm_common_monthly_prestige
 
 				# specific
-				positive_random_genetic_chance = 0.05
-				positive_inactive_inheritance_chance = 0.05
+				health = 0.05
+				stress_loss_mult = 0.03
+				epidemic_resistance = 1
+				negate_health_penalty_add = 0.5
+				no_prowess_loss_from_age = yes
 			}
 		}
 

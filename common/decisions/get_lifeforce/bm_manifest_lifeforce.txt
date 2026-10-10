@@ -93,7 +93,7 @@
 				skill = prowess
 				value = 0
 
-				# Success - minor lifeforce for knight
+				# Success - major lifeforce for knight
 				15 = {
 					desc = manifest_lifeforce_major_success_tt
 					compare_modifier = {
@@ -103,7 +103,7 @@
 					send_interface_toast = {
 						title = manifest_lifeforce_major_success_tt
 						left_icon = root
-						add_character_modifier = { modifier = lifeforce_modifier_minor }
+						add_character_modifier = { modifier = lifeforce_modifier_major }
 					}
 				}
 
