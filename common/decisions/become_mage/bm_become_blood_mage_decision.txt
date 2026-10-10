@@ -7,10 +7,7 @@
 
     is_shown = {
         bm_meets_blood_mage_initiation_faith_requirement_trigger = yes
-        OR = {
-            NOT = { has_trait = lifestyle_blood_mage }
-            NOT = { has_trait = lifestyle_blood_knight }
-        }
+        NOT = { has_trait = lifestyle_blood_mage }
     }
 
     is_valid = {
@@ -55,10 +52,7 @@ bm_enhance_blood_ritual_decision = {
 
     is_shown = {
         is_adult = yes
-        OR = {
-            NOT = { has_trait = lifestyle_blood_mage }
-            NOT = { has_trait = lifestyle_blood_knight }
-        }
+        NOT = { has_trait = lifestyle_blood_mage }
         NOR = {
             bm_meets_blood_mage_initiation_faith_requirement_trigger = yes
         }

@@ -15,6 +15,9 @@ lifestyle_blood_mage = {
 			NOT = { has_game_rule = bm_prevalence_player_only }
 		}
 	}
+    opposites = {
+        lifestyle_blood_knight
+    }
     good = yes
     # Use CK3's manual inheritance chances rather than its recessive genetic system.
     inherit_chance = 25

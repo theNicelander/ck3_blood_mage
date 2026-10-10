@@ -29,13 +29,14 @@ Identity and progression trait `lifestyle_blood_mage`. Gates spellcasting, story
 ## Concepts
 
 ### Blood Mage (`lifestyle_blood_mage`)
-- **Type:** Lifestyle trait. Inheritable (25% single parent, 100% both parents; 0.2% birth / random creation). Subject to prevalence game rule.
+- **Type:** Lifestyle trait. Mutually exclusive with `lifestyle_blood_knight` (`opposites = { lifestyle_blood_knight }`). A blood mage cannot become a blood knight. Inheritable (25% single parent, 100% both parents; 0.2% birth / random creation). Subject to prevalence game rule.
 - **Base Stats:** `+2` Learning per Piety level, `+10` Blood Mage opinion.
-- **Entry Effect:** Always added via `bm_become_blood_mage_effect` (sets story cycle, initializes rosters, flags prevalence review).
-- **Tracks:** 5 schools (`ancient`, `enlightenment`, `bloodline`, `benediction`, `hematurgy`). Max 100 XP each.
+- **Entry Effect:** Added via `bm_become_blood_mage_effect` or `bm_elevate_blood_knight_to_blood_mage_effect` (which transfers all accrued `ancient` and `benediction` track XP from knighthood).
+- **Tracks:** 5 schools (`ancient`, `enlightenment`, `bloodline`, `benediction`, `hematurgy`). Max 100 XP each. `ancient` and `benediction` tracks are identical to the tracks on `lifestyle_blood_knight`.
 
 ### Acquisition Triggers
-All routes call `bm_become_blood_mage_effect`:
+All routes call `bm_become_blood_mage_effect` or `bm_elevate_blood_knight_to_blood_mage_effect`:
+- `bm_elevate_to_blood_mage_decision`: Blood Knights can take a dedicated ritual decision to elevate themselves and become a Blood Mage, carrying over their `ancient` and `benediction` track progress.
 - `bm_become_blood_mage_decision`: Decision for Blóðtrú faithful.
 - `bm_become_blood_mage_ritual_decision`: Decision for non-faithful; Learning duel with risk of injury.
 - `grant_blood_magic_interaction`: Mage grants trait to unlanded courtier (costs lifeforce).

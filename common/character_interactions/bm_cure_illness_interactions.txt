@@ -20,6 +20,11 @@
                 has_trait = lovers_pox
                 has_trait = gout_ridden
                 has_trait = scarred
+                has_trait = beauty_bad
+                has_trait = intellect_bad
+                has_trait = physique_bad
+                has_trait = dull
+                has_trait = weak
             }
         }
     }
@@ -29,9 +34,17 @@
         scope:actor = { has_character_modifier = lifeforce_modifier_minor }
         custom_tooltip = {
             text = IN_COURT_OR_IMPRISONED
-            OR = { # self or courtiers
+            OR = { # self, courtiers, liege, family, spouse, knights
                 scope:actor = scope:recipient
                 scope:recipient = { is_courtier_of = scope:actor }
+                trigger_if = {
+                    limit = { exists = scope:actor.liege }
+                    scope:recipient = scope:actor.liege
+                    scope:recipient = { is_courtier_of = scope:actor.liege }
+                }
+                scope:recipient = { is_close_family_of = scope:actor }
+                scope:recipient = { is_spouse_of = scope:actor }
+                scope:recipient = { is_knight_of = scope:actor }
             }
         }
     }
@@ -47,7 +60,8 @@
         else = {
             scope:actor = {
                 remove_character_modifier = lifeforce_modifier_minor
-                add_blood_knight_xp = { TRACK = resilience XP = 2 }
+                add_blood_knight_xp = { TRACK = benediction XP = 2 }
+                add_blood_knight_xp = { TRACK = resilience XP = 1 }
             }
         }
         scope:recipient = {
@@ -71,11 +85,32 @@
                 remove_trait = scarred
             }
 
-            # temporary positive opinion
-            add_opinion = {
-                target = scope:actor
-                modifier = magic_opinion_positive
-                opinion = 20
+            # Cleanse negative bad traits
+            remove_trait = beauty_bad_1
+            remove_trait = beauty_bad_2
+            remove_trait = beauty_bad_3
+            remove_trait = beauty_bad
+
+            remove_trait = intellect_bad_1
+            remove_trait = intellect_bad_2
+            remove_trait = intellect_bad_3
+            remove_trait = intellect_bad
+            remove_trait = dull
+
+            remove_trait = physique_bad_1
+            remove_trait = physique_bad_2
+            remove_trait = physique_bad_3
+            remove_trait = physique_bad
+            remove_trait = weak
+
+            if = {
+                limit = { NOT = { scope:actor = scope:recipient } }
+                # temporary positive opinion
+                add_opinion = {
+                    target = scope:actor
+                    modifier = magic_opinion_positive
+                    opinion = 20
+                }
             }
         }
     }
@@ -97,6 +132,18 @@
         modifier = { # want to cure myself
             scope:actor = scope:recipient
             add = 100
+        }
+        modifier = {
+            scope:recipient = {
+                OR = {
+                    has_trait = beauty_bad
+                    has_trait = intellect_bad
+                    has_trait = physique_bad
+                    has_trait = dull
+                    has_trait = weak
+                }
+            }
+            add = 50
         }
         ai_willingness_to_do_positive_magic = yes
     }

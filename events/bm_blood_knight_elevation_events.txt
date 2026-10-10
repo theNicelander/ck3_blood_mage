@@ -1,0 +1,149 @@
+﻿namespace = bm_blood_knight_elevation
+
+bm_blood_knight_elevation.0001 = {
+	type = character_event
+	title = bm_blood_knight_elevation.0001.t
+	desc = bm_blood_knight_elevation.0001.desc
+	theme = witchcraft
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+
+	# Learning ritual: Transcend through sacred understanding
+	option = {
+		name = bm_blood_knight_elevation.0001.a_learning
+
+		duel = {
+			skill = learning
+			value = 14
+
+			# Success - transcend into blood mage
+			100 = {
+				desc = bm_blood_knight_elevation.success_tt
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3
+					min = -40
+				}
+				modifier = {
+					has_trait_xp = {
+						trait = lifestyle_blood_knight
+						track = ancient
+						value >= 30
+					}
+					add = 25
+				}
+				send_interface_toast = {
+					title = bm_blood_knight_elevation.success_toast
+					left_icon = root
+					if = {
+						limit = { has_character_modifier = lifeforce_modifier_major }
+						remove_character_modifier = lifeforce_modifier_major
+					}
+					else = {
+						remove_character_modifier = lifeforce_modifier_minor
+					}
+					bm_elevate_blood_knight_to_blood_mage_effect = yes
+					add_piety = 100
+				}
+			}
+
+			# Failure - mental and spiritual trauma
+			50 = {
+				desc = bm_blood_knight_elevation.failure_tt
+				send_interface_toast = {
+					title = bm_blood_knight_elevation.failure_toast
+					left_icon = root
+					add_stress = 35
+					increase_wounds_effect = { REASON = magic }
+					add_character_flag = {
+						flag = bm_elevation_attempt_cooldown
+						years = 2
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			base = 50
+			modifier = {
+				learning >= 15
+				add = 50
+			}
+		}
+	}
+
+	# Prowess trial: Force essence transmutation through martial will
+	option = {
+		name = bm_blood_knight_elevation.0001.b_prowess
+
+		duel = {
+			skill = prowess
+			value = 16
+
+			# Success - transcend into blood mage
+			100 = {
+				desc = bm_blood_knight_elevation.success_tt
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3
+					min = -40
+				}
+				modifier = {
+					has_trait_xp = {
+						trait = lifestyle_blood_knight
+						track = benediction
+						value >= 30
+					}
+					add = 25
+				}
+				send_interface_toast = {
+					title = bm_blood_knight_elevation.success_toast
+					left_icon = root
+					if = {
+						limit = { has_character_modifier = lifeforce_modifier_major }
+						remove_character_modifier = lifeforce_modifier_major
+					}
+					else = {
+						remove_character_modifier = lifeforce_modifier_minor
+					}
+					bm_elevate_blood_knight_to_blood_mage_effect = yes
+					add_piety = 100
+				}
+			}
+
+			# Failure - somatic collapse
+			50 = {
+				desc = bm_blood_knight_elevation.failure_tt
+				send_interface_toast = {
+					title = bm_blood_knight_elevation.failure_toast
+					left_icon = root
+					add_stress = 35
+					increase_wounds_effect = { REASON = magic }
+					add_character_flag = {
+						flag = bm_elevation_attempt_cooldown
+						years = 2
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			base = 50
+			modifier = {
+				prowess >= 16
+				add = 50
+			}
+		}
+	}
+
+	# Cancel / Step back
+	option = {
+		name = bm_blood_knight_elevation.0001.c_cancel
+		trigger = {
+			is_ai = no
+		}
+	}
+}

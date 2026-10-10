@@ -10,19 +10,15 @@
     is_shown = {
         scope:actor = { has_trait = lifestyle_blood_mage }
         scope:recipient = {
-            OR = {
-                is_courtier_of = scope:actor
-                this = scope:actor
-            }
+            is_courtier_of = scope:actor
+            NOT = { this = scope:actor }
+            NOT = { has_trait = lifestyle_blood_mage }
             NOT = { has_trait = lifestyle_blood_knight }
         }
     }
     is_valid_showing_failures_only = {
         scope:actor = { has_character_modifier = lifeforce_modifier_major }
-        trigger_if = {
-            limit = { scope:recipient != scope:actor }
-            scope:recipient = { is_knight_of = scope:actor }
-        }
+        scope:recipient = { is_knight_of = scope:actor }
     }
 
     on_accept = {
@@ -30,19 +26,15 @@
         scope:actor = { benediction_magic_cast_effect_major = yes }
         scope:recipient = {
             add_trait = lifestyle_blood_knight
-            if = {
-                limit = { this != scope:actor }
-                add_opinion = {
-                    target = scope:actor
-                    modifier = magic_opinion_positive
-                    opinion = 20
-                }
+            add_opinion = {
+                target = scope:actor
+                modifier = magic_opinion_positive
+                opinion = 20
             }
         }
     }
     ai_potential = { always = yes }
     ai_targets = {
-        ai_recipients = self
         ai_recipients = dynasty
         ai_recipients = spouses
         ai_recipients = family
@@ -70,10 +62,8 @@ empower_blood_knight_interaction = {
     is_shown = {
         scope:actor = { has_trait = lifestyle_blood_mage }
         scope:recipient = {
-            OR = {
-                is_courtier_of = scope:actor
-                this = scope:actor
-            }
+            is_courtier_of = scope:actor
+            NOT = { this = scope:actor }
             has_trait = lifestyle_blood_knight
         }
     }
@@ -134,13 +124,10 @@ empower_blood_knight_interaction = {
                 add_blood_knight_xp = { TRACK = vanguard XP = 10 }
                 add_blood_knight_xp = { TRACK = slaughter XP = 10 }
                 add_blood_knight_xp = { TRACK = resilience XP = 10 }
-                if = {
-                    limit = { this != scope:actor }
-                    add_opinion = {
-                        target = scope:actor
-                        modifier = magic_opinion_positive
-                        opinion = 30
-                    }
+                add_opinion = {
+                    target = scope:actor
+                    modifier = magic_opinion_positive
+                    opinion = 30
                 }
             }
         }
@@ -151,13 +138,10 @@ empower_blood_knight_interaction = {
                 add_blood_knight_xp = { TRACK = vanguard XP = 5 }
                 add_blood_knight_xp = { TRACK = slaughter XP = 5 }
                 add_blood_knight_xp = { TRACK = resilience XP = 5 }
-                if = {
-                    limit = { this != scope:actor }
-                    add_opinion = {
-                        target = scope:actor
-                        modifier = magic_opinion_positive
-                        opinion = 15
-                    }
+                add_opinion = {
+                    target = scope:actor
+                    modifier = magic_opinion_positive
+                    opinion = 15
                 }
             }
         }
@@ -165,7 +149,6 @@ empower_blood_knight_interaction = {
     ai_potential = { always = yes }
     ai_frequency = 6
     ai_targets = {
-        ai_recipients = self
         ai_recipients = dynasty
         ai_recipients = spouses
         ai_recipients = family
