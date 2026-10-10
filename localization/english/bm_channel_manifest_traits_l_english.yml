@@ -1,15 +1,22 @@
 ﻿l_english:
   # Cast Blood Magic Major Option
   bm_cast_blood_magic_major.001.manifest_traits: "Channel Lifeforce: Manifest Perfection"
-  bm_cast_blood_magic_major.001.manifest_traits_tt: "Focus Major Lifeforce into transmuting congenital traits (Intellect, Physique, Beauty) or purging flaws."
+  bm_cast_blood_magic_major.001.manifest_traits_tt: "Focus Major Lifeforce into transmuting congenital traits (Intellect, Physique, Beauty) up to rank 3 or purging flaws."
 
-  # Ritual Event
+  # Ritual Event (Major - Ranks 1 to 3)
   bm_channel_manifest_traits.001.title: "Ritual of Manifestation"
   bm_channel_manifest_traits.001.desc: "A torrential current of major lifeforce answers your call. The vital essence waits, pliable yet tempestuous, ready to rewrite your mortal mold. Which aspect of your being shall you forge anew in blood?"
   bm_channel_manifest_traits.001.intellect: "Manifest Intellect"
   bm_channel_manifest_traits.001.physique: "Manifest Physique"
   bm_channel_manifest_traits.001.beauty: "Manifest Beauty"
   bm_channel_manifest_traits.001.cancel: "Step away from the ritual circle"
+
+  # Ritual Event (Superior - Ranks 4 to 5)
+  bm_channel_manifest_traits.002.title: "Ritual of Transcendent Perfection"
+  bm_channel_manifest_traits.002.desc: "Mortal minds and bodies crumble under the passage of time, yet superior lifeforce bends mortal biology to your absolute will. Having already attained genius, beauty, or herculean might, you stand ready to push beyond mortal thresholds into apex superhuman perfection."
+  bm_channel_manifest_traits.002.intellect: "Manifest Transcendent Intellect (Rank 4/5)"
+  bm_channel_manifest_traits.002.physique: "Manifest Transcendent Physique (Rank 4/5)"
+  bm_channel_manifest_traits.002.beauty: "Manifest Transcendent Beauty (Rank 4/5)"
 
   # Duel Outcomes
   bm_manifest_traits.duel_success_tt: "The blood yields to your will, permanently elevating your traits"
@@ -20,5 +27,8 @@
   bm_manifest_traits.intellect_success_title: "Intellect Manifested: The Mind Expands"
   bm_manifest_traits.physique_success_title: "Physique Manifested: The Flesh Hardens"
   bm_manifest_traits.beauty_success_title: "Beauty Manifested: Form Transmuted"
+  bm_manifest_traits.intellect_superior_success_title: "Transcendent Intellect: Mortal Limits Broken"
+  bm_manifest_traits.physique_superior_success_title: "Transcendent Physique: Flesh Transcends"
+  bm_manifest_traits.beauty_superior_success_title: "Transcendent Beauty: Divine Radiance"
   bm_manifest_traits.failure_title: "Manifestation Failed: Essence Lost"
   bm_manifest_traits.crit_failure_title: "Manifestation Backlash: Flesh Torn"

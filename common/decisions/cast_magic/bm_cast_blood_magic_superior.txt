@@ -1,0 +1,27 @@
+﻿bm_cast_blood_magic_superior_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
+	decision_group_type = bm_decision_group
+
+	is_shown = {
+		has_trait = lifestyle_blood_mage
+	}
+	is_valid = {
+		has_character_modifier = lifeforce_modifier_superior
+		piety_level >= 2
+	}
+
+	effect = {
+		debug_log = "BloodMageDecision: cast_blood_magic_superior | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+		trigger_event = { id = bm_cast_blood_magic_superior.001 }
+		custom_tooltip = bm_cast_blood_magic_superior_decision_tooltip
+	}
+
+	ai_check_interval = 6
+	ai_will_do = {
+		base = 100
+		modifier = {
+			health <= fine_health
+			add = -100
+		}
+	}
+}

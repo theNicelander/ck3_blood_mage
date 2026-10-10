@@ -26,9 +26,8 @@ bm_geyser_duel.0001 = {
 				faith = faith:blodtru_faith
 				trait = lifestyle_blood_mage
 				trait = education_learning_4
-				trait = whole_of_body
-				learning = {10 15}
-				prowess = 15
+				learning = 14
+				prowess = 25
 				save_scope_as = bm_geyser_wise_one
 			}
 			if = {
@@ -50,7 +49,7 @@ bm_geyser_duel.0001 = {
 			target = scope:bm_geyser_wise_one
 
 			# SUCCESS
-			50 = {
+			150 = {
 				desc = bm_geyser_duel.success_tt
 
 				compare_modifier = {
@@ -71,7 +70,7 @@ bm_geyser_duel.0001 = {
 			}
 
 			# FAILURE - MENTAL COLLAPSE
-			25 = {
+			10 = {
 				desc = bm_geyser_duel.mental_failure_tt
 				send_interface_toast = {
 					title = bm_geyser_duel.mental_failure_tt

@@ -1,8 +1,12 @@
-﻿debug_convert_to_blood_mage_interaction = {
+﻿bm_debug_make_blood_mage_interaction = {
 	category = interaction_debug_main
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
+	common_interaction = yes
 	auto_accept = yes
+	icon = grant_blood_magic_interaction
+
+	desc = bm_debug_make_blood_mage_interaction_desc
 
 	is_shown = {
 		debug_only = yes
@@ -13,6 +17,7 @@
 
 	on_accept = {
 		scope:recipient = {
+			add_trait = lifestyle_blood_mage
 			bm_become_blood_mage_effect = yes
 		}
 	}

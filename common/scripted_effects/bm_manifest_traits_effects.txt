@@ -190,3 +190,174 @@ bm_manifest_beauty_duel_effect = {
 		}
 	}
 }
+
+bm_manifest_superior_intellect_duel_effect = {
+	blood_magic_used_superior = yes
+	duel = {
+		skill = learning
+		value = 0
+
+		# Success
+		10 = {
+			desc = bm_manifest_traits.duel_success_tt
+			compare_modifier = {
+				value = scope:duel_value
+				multiplier = 2
+			}
+			modifier = { add = bm_manifest_traits_learning_traits_bonus }
+			modifier = { add = bm_manifest_traits_xp_bonus }
+			modifier = { add = bm_manifest_traits_intellect_tier_success_bonus }
+
+			send_interface_toast = {
+				title = bm_manifest_traits.intellect_superior_success_title
+				left_icon = root
+				bm_manifest_upgrade_trait_step_effect = { BRANCH = intellect }
+				add_xp_bm_dynamic = {
+					TRACK = enlightenment
+					XP = 10
+				}
+			}
+		}
+
+		# Standard Failure
+		50 = {
+			desc = bm_manifest_traits.duel_failure_tt
+			modifier = { add = bm_manifest_traits_existing_traits_penalty }
+			modifier = { add = bm_manifest_traits_intellect_tier_failure_addition }
+
+			send_interface_toast = {
+				title = bm_manifest_traits.failure_title
+				left_icon = root
+				temporary_negative_lifeforce_effect_superior = yes
+			}
+		}
+
+		# Critical Failure
+		15 = {
+			desc = bm_manifest_traits.duel_crit_failure_tt
+			modifier = { add = bm_manifest_traits_existing_traits_penalty }
+
+			send_interface_toast = {
+				title = bm_manifest_traits.crit_failure_title
+				left_icon = root
+				increase_wounds_effect = { REASON = magic }
+				add_stress = 40
+				temporary_negative_lifeforce_effect_superior = yes
+			}
+		}
+	}
+}
+
+bm_manifest_superior_physique_duel_effect = {
+	blood_magic_used_superior = yes
+	duel = {
+		skill = learning
+		value = 0
+
+		# Success
+		10 = {
+			desc = bm_manifest_traits.duel_success_tt
+			compare_modifier = {
+				value = scope:duel_value
+				multiplier = 2
+			}
+			modifier = { add = bm_manifest_traits_learning_traits_bonus }
+			modifier = { add = bm_manifest_traits_xp_bonus }
+			modifier = { add = bm_manifest_traits_physique_tier_success_bonus }
+
+			send_interface_toast = {
+				title = bm_manifest_traits.physique_superior_success_title
+				left_icon = root
+				bm_manifest_upgrade_trait_step_effect = { BRANCH = physique }
+				add_xp_bm_dynamic = {
+					TRACK = enlightenment
+					XP = 10
+				}
+			}
+		}
+
+		# Standard Failure
+		50 = {
+			desc = bm_manifest_traits.duel_failure_tt
+			modifier = { add = bm_manifest_traits_existing_traits_penalty }
+			modifier = { add = bm_manifest_traits_physique_tier_failure_addition }
+
+			send_interface_toast = {
+				title = bm_manifest_traits.failure_title
+				left_icon = root
+				temporary_negative_lifeforce_effect_superior = yes
+			}
+		}
+
+		# Critical Failure
+		15 = {
+			desc = bm_manifest_traits.duel_crit_failure_tt
+			modifier = { add = bm_manifest_traits_existing_traits_penalty }
+
+			send_interface_toast = {
+				title = bm_manifest_traits.crit_failure_title
+				left_icon = root
+				increase_wounds_effect = { REASON = magic }
+				add_stress = 40
+				temporary_negative_lifeforce_effect_superior = yes
+			}
+		}
+	}
+}
+
+bm_manifest_superior_beauty_duel_effect = {
+	blood_magic_used_superior = yes
+	duel = {
+		skill = learning
+		value = 0
+
+		# Success
+		10 = {
+			desc = bm_manifest_traits.duel_success_tt
+			compare_modifier = {
+				value = scope:duel_value
+				multiplier = 2
+			}
+			modifier = { add = bm_manifest_traits_learning_traits_bonus }
+			modifier = { add = bm_manifest_traits_xp_bonus }
+			modifier = { add = bm_manifest_traits_beauty_tier_success_bonus }
+
+			send_interface_toast = {
+				title = bm_manifest_traits.beauty_superior_success_title
+				left_icon = root
+				bm_manifest_upgrade_trait_step_effect = { BRANCH = beauty }
+				add_xp_bm_dynamic = {
+					TRACK = enlightenment
+					XP = 10
+				}
+			}
+		}
+
+		# Standard Failure
+		50 = {
+			desc = bm_manifest_traits.duel_failure_tt
+			modifier = { add = bm_manifest_traits_existing_traits_penalty }
+			modifier = { add = bm_manifest_traits_beauty_tier_failure_addition }
+
+			send_interface_toast = {
+				title = bm_manifest_traits.failure_title
+				left_icon = root
+				temporary_negative_lifeforce_effect_superior = yes
+			}
+		}
+
+		# Critical Failure
+		15 = {
+			desc = bm_manifest_traits.duel_crit_failure_tt
+			modifier = { add = bm_manifest_traits_existing_traits_penalty }
+
+			send_interface_toast = {
+				title = bm_manifest_traits.crit_failure_title
+				left_icon = root
+				increase_wounds_effect = { REASON = magic }
+				add_stress = 40
+				temporary_negative_lifeforce_effect_superior = yes
+			}
+		}
+	}
+}

@@ -3,7 +3,7 @@
 ## Executive Summary
 
 - **What:** Personal body rune modifiers granting passive yearly Lifeforce, plus Duchy Capital blood university buildings.
-- **Rune Inscription:** Options in Major Blood Magic grimoire event `bm_cast_blood_magic_major.001` (from decision `bm_cast_blood_magic_major_decision`). Consumes `lifeforce_modifier_major` and `lifeforce_modifier_minor`. Gated on Devotion Ranks 2/3/4. 5-year cooldown (`bm_blood_rune_cooldown`). Option is completely hidden once maxed (`superior_blood_rune_modifier`).
+- **Rune Inscription:** Minor and Major runes inscribed via `bm_cast_blood_magic_major_decision` (event `bm_cast_blood_magic_major.001`), consuming `lifeforce_modifier_major` and `lifeforce_modifier_minor`. Superior Blood Rune inscribed via `bm_cast_blood_magic_superior_decision` (event `bm_cast_blood_magic_superior.001`), consuming `lifeforce_modifier_superior`. Gated on Devotion Ranks 2/3/4. 5-year cooldown (`bm_blood_rune_cooldown`). Option is completely hidden once maxed (`superior_blood_rune_modifier`).
 - **University Buildings:** `bm_university_0` through `bm_university_3`. Duchy capital holdings. Built by rulers with `lifestyle_blood_mage`.
 
 ### Blood Runes Table

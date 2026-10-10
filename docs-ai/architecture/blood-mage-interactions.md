@@ -20,6 +20,7 @@
 | `heal_disease_benediction` | Courtier, family, self | Major Lifeforce. Req: 50 Benediction XP. | +3 benediction | Cures permanent ailments (blind, maimed, infirm, lunatic_1, etc.). |
 | `make_blood_knight_interaction` | Knight, courtier, or self | 100 Piety + Major Lifeforce. | +2 benediction | Bestows `lifestyle_blood_knight` trait. |
 | `empower_blood_knight_interaction` | Sworn blood knight or self | Major Lifeforce (+10 XP) or Minor Lifeforce (+5 XP). | +2 / +1 benediction | Direct popup modal advancing all 3 combat tracks. |
+| `bm_debug_make_blood_mage_interaction` | Any character | Debug mode only. Target non-mage. | None | Instantly grants `lifestyle_blood_mage` trait directly, creates story cycle, and sets prevalence review flag. |
 
 ## Key Mechanics & AI Logic
 
