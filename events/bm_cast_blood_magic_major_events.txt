@@ -27,9 +27,18 @@ bm_cast_blood_magic_major.001 = {
 			add_trait = lifestyle_blood_empowerment
 		}
 		blood_magic_used_major = yes
-		add_xp_bm_dynamic = {
-			TRACK = enlightenment
-			XP = 3
+		if = {
+			limit = { has_trait = lifestyle_blood_mage }
+			add_xp_bm_dynamic = {
+				TRACK = enlightenment
+				XP = 3
+			}
+		}
+		else = {
+			add_blood_knight_xp = {
+				TRACK = resilience
+				XP = 3
+			}
 		}
 		custom_tooltip = bm_blood_empowerment_decision_tooltip
 		trigger_event = { id = bm_blood_empowerment_event.001 }
@@ -129,8 +138,8 @@ bm_cast_blood_magic_major.001 = {
 		}
 		blood_magic_used_major_minor = yes
 		add_xp_bm_dynamic = {
-			TRACK = benediction
-			XP = 5
+			TRACK = ancient
+			XP = 4
 		}
 		custom_tooltip = blood_runes_effects_list.minor
 		ai_chance = {
@@ -169,9 +178,18 @@ bm_cast_blood_magic_major.001 = {
 			years = 5
 		}
 		blood_magic_used_major_minor = yes
-		add_xp_bm_dynamic = {
-			TRACK = benediction
-			XP = 5
+		if = {
+			limit = { has_trait = lifestyle_blood_mage }
+			add_xp_bm_dynamic = {
+				TRACK = ancient
+				XP = 5
+			}
+		}
+		else = {
+			add_blood_knight_xp = {
+				TRACK = ancient
+				XP = 5
+			}
 		}
 		custom_tooltip = blood_runes_effects_list.major
 		ai_chance = {
@@ -201,9 +219,18 @@ bm_cast_blood_magic_major.001 = {
 			years = 3
 		}
 		trigger_event = { id = bm_channel_lifeforce_bloodline.001 }
-		add_xp_bm_dynamic = {
-			TRACK = bloodline
-			XP = 5
+		if = {
+			limit = { has_trait = lifestyle_blood_mage }
+			add_xp_bm_dynamic = {
+				TRACK = bloodline
+				XP = 5
+			}
+		}
+		else = {
+			add_blood_knight_xp = {
+				TRACK = vanguard
+				XP = 5
+			}
 		}
 		blood_magic_used_major = yes
 		custom_tooltip = channel_lifeforce_bloodline.effects_list

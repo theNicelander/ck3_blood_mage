@@ -48,8 +48,8 @@ bm_manifest_intellect_duel_effect = {
 				left_icon = root
 				bm_manifest_upgrade_trait_step_effect = { BRANCH = intellect }
 				add_xp_bm_dynamic = {
-					TRACK = enlightenment
-					XP = 5
+					TRACK = bloodline
+					XP = 4
 				}
 			}
 		}
@@ -103,8 +103,8 @@ bm_manifest_physique_duel_effect = {
 				left_icon = root
 				bm_manifest_upgrade_trait_step_effect = { BRANCH = physique }
 				add_xp_bm_dynamic = {
-					TRACK = enlightenment
-					XP = 5
+					TRACK = bloodline
+					XP = 4
 				}
 			}
 		}
@@ -158,8 +158,8 @@ bm_manifest_beauty_duel_effect = {
 				left_icon = root
 				bm_manifest_upgrade_trait_step_effect = { BRANCH = beauty }
 				add_xp_bm_dynamic = {
-					TRACK = enlightenment
-					XP = 5
+					TRACK = bloodline
+					XP = 4
 				}
 			}
 		}
@@ -213,8 +213,12 @@ bm_manifest_superior_intellect_duel_effect = {
 				left_icon = root
 				bm_manifest_upgrade_trait_step_effect = { BRANCH = intellect }
 				add_xp_bm_dynamic = {
+					TRACK = bloodline
+					XP = 6
+				}
+				add_xp_bm_dynamic = {
 					TRACK = enlightenment
-					XP = 10
+					XP = 2
 				}
 			}
 		}
@@ -270,8 +274,12 @@ bm_manifest_superior_physique_duel_effect = {
 				left_icon = root
 				bm_manifest_upgrade_trait_step_effect = { BRANCH = physique }
 				add_xp_bm_dynamic = {
+					TRACK = bloodline
+					XP = 6
+				}
+				add_xp_bm_dynamic = {
 					TRACK = enlightenment
-					XP = 10
+					XP = 2
 				}
 			}
 		}
@@ -327,8 +335,12 @@ bm_manifest_superior_beauty_duel_effect = {
 				left_icon = root
 				bm_manifest_upgrade_trait_step_effect = { BRANCH = beauty }
 				add_xp_bm_dynamic = {
+					TRACK = bloodline
+					XP = 6
+				}
+				add_xp_bm_dynamic = {
 					TRACK = enlightenment
-					XP = 10
+					XP = 2
 				}
 			}
 		}

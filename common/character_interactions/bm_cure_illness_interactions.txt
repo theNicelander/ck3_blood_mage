@@ -1,360 +1,108 @@
-﻿heal_disease_minor = {
-    interface_priority = 210
-    category = interaction_category_friendly
-    desc = heal_disease_minor_desc
-    common_interaction = yes
+﻿bm_heal_ailment = {
+	interface_priority = 210
+	category = interaction_category_friendly
+	desc = bm_heal_ailment_desc
+	common_interaction = yes
 
+	is_shown = {
+		scope:actor = {
+			OR = {
+				has_trait = lifestyle_blood_mage
+				has_trait = lifestyle_blood_knight
+			}
+		}
+		OR = {
+			AND = {
+				scope:actor = { has_trait = lifestyle_blood_mage }
+				scope:recipient = { bm_has_any_ailment_trigger = yes }
+			}
+			AND = {
+				scope:actor = {
+					has_trait = lifestyle_blood_knight
+					NOT = { has_trait = lifestyle_blood_mage }
+				}
+				scope:recipient = { bm_has_minor_ailment_trigger = yes }
+			}
+		}
+	}
 
-    cost = { piety = heal_disease_minor_cost }
-    is_shown = {
-        scope:actor = {
-            OR = {
-                has_trait = lifestyle_blood_mage
-                has_trait = lifestyle_blood_knight
-            }
-        }
-        scope:recipient = {
-            OR = {
-                has_trait = wounded_1
-                has_trait = ill
-                has_trait = lovers_pox
-                has_trait = gout_ridden
-                has_trait = scarred
-                has_trait = beauty_bad
-                has_trait = intellect_bad
-                has_trait = physique_bad
-                has_trait = dull
-                has_trait = weak
-            }
-        }
-    }
+	is_valid_showing_failures_only = {
+		custom_tooltip = {
+			text = IN_COURT_OR_IMPRISONED
+			OR = { # self, courtiers, liege, family, spouse, knights
+				scope:actor = scope:recipient
+				scope:recipient = { is_courtier_of = scope:actor }
+				trigger_if = {
+					limit = { exists = scope:actor.liege }
+					scope:recipient = scope:actor.liege
+					scope:recipient = { is_courtier_of = scope:actor.liege }
+				}
+				scope:recipient = { is_close_family_of = scope:actor }
+				scope:recipient = { is_spouse_of = scope:actor }
+				scope:recipient = { is_knight_of = scope:actor }
+			}
+		}
+		custom_tooltip = {
+			text = bm_heal_ailment_resource_requirement_tt
+			OR = {
+				AND = {
+					scope:recipient = { bm_has_minor_ailment_trigger = yes }
+					scope:actor = {
+						has_character_modifier = lifeforce_modifier_minor
+						piety >= 15
+					}
+				}
+				AND = {
+					scope:actor = { has_trait = lifestyle_blood_mage }
+					scope:recipient = { bm_has_major_ailment_trigger = yes }
+					scope:actor = {
+						has_character_modifier = lifeforce_modifier_major
+						piety >= 35
+					}
+				}
+				AND = {
+					scope:actor = { has_trait = lifestyle_blood_mage }
+					scope:recipient = { bm_has_deadly_ailment_trigger = yes }
+					scope:actor = {
+						has_character_modifier = lifeforce_modifier_minor
+						has_character_modifier = lifeforce_modifier_major
+						piety >= 100
+					}
+				}
+			}
+		}
+	}
 
+	on_accept = {
+		debug_log = "BloodMageInteraction: bm_heal_ailment | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
+		scope:actor = {
+			trigger_event = bm_heal_ailment.0001
+		}
+	}
 
-    is_valid_showing_failures_only = {
-        scope:actor = { has_character_modifier = lifeforce_modifier_minor }
-        custom_tooltip = {
-            text = IN_COURT_OR_IMPRISONED
-            OR = { # self, courtiers, liege, family, spouse, knights
-                scope:actor = scope:recipient
-                scope:recipient = { is_courtier_of = scope:actor }
-                trigger_if = {
-                    limit = { exists = scope:actor.liege }
-                    scope:recipient = scope:actor.liege
-                    scope:recipient = { is_courtier_of = scope:actor.liege }
-                }
-                scope:recipient = { is_close_family_of = scope:actor }
-                scope:recipient = { is_spouse_of = scope:actor }
-                scope:recipient = { is_knight_of = scope:actor }
-            }
-        }
-    }
-
-    on_accept = {
-        debug_log = "BloodMageInteraction: heal_disease_minor | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
-        if = {
-            limit = {
-                scope:actor = { has_trait = lifestyle_blood_mage }
-            }
-            scope:actor = { benediction_magic_cast_effect_minor = yes }
-        }
-        else = {
-            scope:actor = {
-                remove_character_modifier = lifeforce_modifier_minor
-                add_blood_knight_xp = { TRACK = benediction XP = 2 }
-                add_blood_knight_xp = { TRACK = resilience XP = 1 }
-            }
-        }
-        scope:recipient = {
-            remove_trait = wounded_1
-            remove_trait = ill
-            remove_trait = lovers_pox
-            remove_trait = gout_ridden
-            if = {
-                limit = {
-                    has_trait_xp = {
-                        trait = scarred
-                        value > 0
-                    }
-                 }
-                add_trait_xp = {
-                    trait = scarred
-                    value = -50
-                }
-
-            } else = {
-                remove_trait = scarred
-            }
-
-            # Cleanse negative bad traits
-            remove_trait = beauty_bad_1
-            remove_trait = beauty_bad_2
-            remove_trait = beauty_bad_3
-            remove_trait = beauty_bad
-
-            remove_trait = intellect_bad_1
-            remove_trait = intellect_bad_2
-            remove_trait = intellect_bad_3
-            remove_trait = intellect_bad
-            remove_trait = dull
-
-            remove_trait = physique_bad_1
-            remove_trait = physique_bad_2
-            remove_trait = physique_bad_3
-            remove_trait = physique_bad
-            remove_trait = weak
-
-            if = {
-                limit = { NOT = { scope:actor = scope:recipient } }
-                # temporary positive opinion
-                add_opinion = {
-                    target = scope:actor
-                    modifier = magic_opinion_positive
-                    opinion = 20
-                }
-            }
-        }
-    }
-    auto_accept = yes
-    ai_accept = { base = 100 }
-    ai_potential = { always = yes }
-    ai_targets = {
-        ai_recipients = self
-        ai_recipients = dynasty
-        ai_recipients = spouses
-        ai_recipients = family
-        ai_recipients = children
-        ai_recipients = courtiers
-        ai_recipients = councillors
-    }
-    ai_frequency = 6
-    ai_will_do = {
-        base = -20
-        modifier = { # want to cure myself
-            scope:actor = scope:recipient
-            add = 100
-        }
-        modifier = {
-            scope:recipient = {
-                OR = {
-                    has_trait = beauty_bad
-                    has_trait = intellect_bad
-                    has_trait = physique_bad
-                    has_trait = dull
-                    has_trait = weak
-                }
-            }
-            add = 50
-        }
-        ai_willingness_to_do_positive_magic = yes
-    }
-}
-
-heal_disease_major = {
-    interface_priority = 211
-    category = interaction_category_friendly
-    desc = heal_disease_major_desc
-    common_interaction = yes
-    auto_accept = yes
-
-    cost = { piety = heal_disease_major_cost }
-    is_valid_showing_failures_only = {
-        scope:actor = { has_character_modifier = lifeforce_modifier_major }
-        custom_tooltip = {
-            text = IN_COURT_OR_IMPRISONED
-            OR = { # self or courtiers
-                scope:actor = scope:recipient
-                scope:recipient = { is_courtier_of = scope:actor }
-            }
-        }
-    }
-    is_shown = {
-        scope:actor = { has_trait = lifestyle_blood_mage }
-        scope:recipient = {
-            OR = {
-                has_trait = wounded_2
-                has_trait = incapable
-                has_trait = pneumonic
-                has_trait = early_great_pox
-                has_trait = infirm
-                has_trait = withering_mind
-                has_trait = clouded_eyes
-                has_trait = fragile_bones
-                has_trait = maimed
-                has_trait = consumption
-                has_trait = typhus
-                has_trait = measles
-                has_trait = blind
-                has_trait = one_eyed
-                has_trait = weak
-                has_trait = lunatic_1
-                has_trait = possessed_1
-                has_trait = dull
-                has_trait = depressed_1
-            }
-        }
-    }
-
-    on_accept = {
-        debug_log = "BloodMageInteraction: heal_disease_major | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
-        scope:actor = { benediction_magic_cast_effect_major = yes }
-        scope:recipient = {
-            remove_trait = wounded_2
-            remove_trait = incapable
-            remove_trait = pneumonic
-            remove_trait = early_great_pox
-            remove_trait = infirm
-            remove_trait = withering_mind
-            remove_trait = clouded_eyes
-            remove_trait = fragile_bones
-            remove_trait = maimed
-            remove_trait = consumption
-            remove_trait = typhus
-            remove_trait = measles
-            remove_trait = blind
-            remove_trait = one_eyed
-            remove_trait = weak
-            remove_trait = lunatic_1
-            remove_trait = possessed_1
-            remove_trait = dull
-            remove_trait = depressed_1
-
-            if = {
-                limit = {NOT = { scope:actor = scope:recipient }}
-                # temporary positive opinion
-                add_opinion = {
-                    target = scope:actor
-                    modifier = magic_opinion_positive
-                    opinion = 30
-                }
-
-                # permanent positive opinion
-                add_opinion = {
-                    target = scope:actor
-                    modifier = cured_my_illness
-                    opinion = 20
-                }
-            }
-
-        }
-    }
-    ai_potential = { always = yes }
-    ai_frequency = 6
-    ai_targets = {
-        ai_recipients = self
-        ai_recipients = dynasty
-        ai_recipients = spouses
-        ai_recipients = family
-        ai_recipients = children
-        ai_recipients = courtiers
-        ai_recipients = councillors
-    }
-    ai_will_do = {
-        base = -50
-        modifier = { # want to cure myself
-            scope:actor = scope:recipient
-            add = 100
-        }
-        ai_willingness_to_do_positive_magic = yes
-    }
-}
-
-heal_disease_benediction = {
-    interface_priority = 212
-    category = interaction_category_friendly
-    desc = heal_disease_benediction_desc
-    common_interaction = yes
-    auto_accept = yes
-
-    cost = { piety = heal_disease_benediction_cost }
-    # TODO: This should only be allowed if over certain XP or with finisher effect
-    is_valid_showing_failures_only = {
-        scope:actor = {
-            has_character_modifier = lifeforce_modifier_minor
-            has_character_modifier = lifeforce_modifier_major
-        }
-        custom_tooltip = {
-            text = IN_COURT_OR_IMPRISONED
-            OR = { # self or courtiers
-                scope:actor = scope:recipient
-                scope:recipient = { is_courtier_of = scope:actor }
-            }
-        }
-    }
-    is_shown = {
-
-        scope:actor = { has_trait = lifestyle_blood_mage }
-        scope:recipient = {
-            OR = {
-                has_trait = wounded_3
-                has_trait = sickly
-                has_trait = great_pox
-                has_trait = cancer
-                has_trait = bubonic_plague
-                has_trait = smallpox
-                has_trait = leper
-                has_trait = impotent
-                has_trait = dysentery
-                has_trait = ergotism
-                has_trait = disfigured
-                has_trait = one_legged
-                has_trait = faltering_heart
-            }
-        }
-    }
-
-    on_accept = {
-        debug_log = "BloodMageInteraction: heal_disease_benediction | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
-        scope:actor = { benediction_magic_cast_effect_major_minor = yes }
-        scope:recipient = {
-            remove_trait = wounded_3
-            remove_trait = sickly
-            remove_trait = great_pox
-            remove_trait = cancer
-            remove_trait = bubonic_plague
-            remove_trait = smallpox
-            remove_trait = leper
-            remove_trait = impotent
-            remove_trait = dysentery
-            remove_trait = ergotism
-            remove_trait = disfigured
-            remove_trait = one_legged
-            remove_trait = faltering_heart
-
-            if = {
-                limit = {NOT = { scope:actor = scope:recipient }}
-                # temporary positive opinion
-                add_opinion = {
-                    target = scope:actor
-                    modifier = magic_opinion_positive
-                    opinion = 50
-                }
-
-                # permanent positive opinion
-                add_opinion = {
-                    target = scope:actor
-                    modifier = cured_my_illness
-                    opinion = 30
-                }
-            }
-        }
-    }
-    ai_potential = { always = yes }
-    ai_frequency = 6
-    ai_targets = {
-        ai_recipients = self
-        ai_recipients = dynasty
-        ai_recipients = spouses
-        ai_recipients = family
-        ai_recipients = children
-        ai_recipients = courtiers
-        ai_recipients = councillors
-    }
-    ai_will_do = {
-        base = -75
-        modifier = { # want to cure myself
-            scope:actor = scope:recipient
-            add = 100
-        }
-        ai_willingness_to_do_positive_magic = yes
-    }
+	auto_accept = yes
+	ai_accept = { base = 100 }
+	ai_potential = { always = yes }
+	ai_targets = {
+		ai_recipients = self
+		ai_recipients = dynasty
+		ai_recipients = spouses
+		ai_recipients = family
+		ai_recipients = children
+		ai_recipients = courtiers
+		ai_recipients = councillors
+	}
+	ai_frequency = 6
+	ai_will_do = {
+		base = -20
+		modifier = { # want to cure myself
+			scope:actor = scope:recipient
+			add = 100
+		}
+		modifier = {
+			scope:recipient = { is_close_family_of = scope:actor }
+			add = 50
+		}
+		ai_willingness_to_do_positive_magic = yes
+	}
 }

@@ -30,13 +30,10 @@
   grant_lifeforce_interaction_reversed_desc: "[recipient.GetShortUINameNoTooltip] was [GetModifier('lifedrained_modifier').GetNameWithTooltip], but I can give it back to them"
 
   # Cure illness
-  heal_disease_minor: "Heal Minor Ailment"
-  heal_disease_major: "Heal Ailment"
-  heal_disease_benediction: "Heal Deadly Ailment"
-
-  heal_disease_minor_desc: "Heal Minor Ailment"
-  heal_disease_major_desc: "Heal Ailment"
-  heal_disease_benediction_desc: "Heal Deadly Ailment"
+  bm_heal_ailment: "Heal Affliction"
+  bm_heal_ailment_desc: "Perform a blood ritual to mend a specific wound, disease, or affliction suffered by [recipient.GetShortUINameNoTooltip]."
+  bm_heal_ailment_tooltip: "Perform a blood magic healing ritual."
+  bm_heal_ailment_resource_requirement_tt: "You must possess sufficient Lifeforce and Piety to heal at least one of [recipient.GetShortUINamePossessive] afflictions."
 
   # Blood Knight
   make_blood_knight_interaction: "Make Blood Knight"
@@ -50,10 +47,23 @@
   NOT_empower_blood_knight_interaction_requirement: "You need either [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] or [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to empower a Blood Knight."
 
   bm_duel_kill_blood_knight_toast: "Blood Knight Bloodbath"
-  bm_duel_kill_blood_knight_tt: "Gained #P +6#! Experience in the #V Slaughter#! track and harvested [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] for victory in single combat"
+  bm_duel_kill_blood_knight_tt: "Gained #P +5#! Experience in the #V Slaughter#! track and harvested [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] for victory in single combat"
 
   bm_battle_victory_lifeforce_toast: "Battlefield Blood Harvest"
   bm_battle_victory_lifeforce_tt: "Harvested [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] from fallen foes on the victorious battlefield"
+
+  # Bless Kin
+  bm_bless_bloodline_interaction: "Bless Kin's Blood"
+  bm_bless_bloodline_interaction_desc: "Infuse a child or kin of your house with vital blood magic, blessing their body and mind while refining your mastery of the bloodline."
+  bm_recipient_already_blessed: "Target's blood is already blessed"
+  bm_bless_bloodline_toast: "Kin's Blood Blessed"
+  bm_bless_bloodline_toast_tt: "You infused [recipient.GetShortUINamePossessive] blood with lifeforce, granting vitality and expanding your bloodline mastery."
+
+  # Childbirth Milestones
+  bm_birth_blood_mage_child_toast: "Blood Mage Heir Born"
+  bm_birth_blood_mage_child_tt: "A child awakens with the blood magic trait! Your bloodline mastery surges forward."
+  bm_birth_child_bloodline_toast: "Child of the Line Born"
+  bm_birth_child_bloodline_tt: "A new child is born to your house, expanding your dynastic lineage and granting Bloodline Experience."
 
   # Tooltips
   IN_COURT_OR_IMPRISONED: "Can only heal yourself, your family, your liege, your courtiers, or your knights"
