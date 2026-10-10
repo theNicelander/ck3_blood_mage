@@ -9,7 +9,8 @@
     }
     cooldown = { years = 2 }
     effect = {
-        debug_log = "BloodMageDecision: seek_power | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+        debug_log = "BloodMageDecision: seek_power"
+        debug_log_scopes = yes
         trigger_event = { id = seek_power.001 }
     }
 
@@ -29,7 +30,8 @@ seek_power_decision_wanderer = {
     # Can do it more often if landless, as it's harder to find prisoners
     cooldown = { years = 1 }
     effect = {
-        debug_log = "BloodMageDecision: seek_power_wanderer | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+        debug_log = "BloodMageDecision: seek_power_wanderer"
+        debug_log_scopes = yes
         trigger_event = { id = seek_power.001 }
     }
 

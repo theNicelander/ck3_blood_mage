@@ -26,7 +26,8 @@
     }
 
     effect = {
-        debug_log = "BloodMageDecision: become_blood_mage | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+        debug_log = "BloodMageDecision: become_blood_mage"
+        debug_log_scopes = yes
         trigger_event = { id = bm_geyser_duel.0001 }
     }
 
@@ -84,7 +85,8 @@ bm_enhance_blood_ritual_decision = {
     }
 
     effect = {
-        debug_log = "BloodMageDecision: enhance_blood_ritual | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+        debug_log = "BloodMageDecision: enhance_blood_ritual"
+        debug_log_scopes = yes
         trigger_event = { id = bm_geyser_duel.0001 }
     }
 

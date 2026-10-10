@@ -13,7 +13,8 @@
 	}
 
 	effect = {
-		debug_log = "BloodMageDecision: manifest_lifeforce | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+		debug_log = "BloodMageDecision: manifest_lifeforce"
+		debug_log_scopes = yes
 		add_xp_bm_dynamic = {
 			TRACK = enlightenment
 			XP = 5

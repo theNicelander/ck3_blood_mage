@@ -226,8 +226,8 @@ bm_geyser_duel.0001 = {
 				if = {
 					limit = { is_alive = yes }
 					hidden_effect = {
-						set_character_flag = bm_geyser_retrying
-						set_character_flag = bm_geyser_retried
+						add_character_flag = bm_geyser_retrying
+						add_character_flag = bm_geyser_retried
 						trigger_event = { id = bm_geyser_duel.0001 }
 					}
 				}
@@ -257,8 +257,8 @@ bm_geyser_duel.0001 = {
 				if = {
 					limit = { is_alive = yes }
 					hidden_effect = {
-						set_character_flag = bm_geyser_retrying
-						set_character_flag = bm_geyser_retried
+						add_character_flag = bm_geyser_retrying
+						add_character_flag = bm_geyser_retried
 						trigger_event = { id = bm_geyser_duel.0001 }
 					}
 				}
@@ -292,8 +292,8 @@ bm_geyser_duel.0001 = {
 				if = {
 					limit = { is_alive = yes }
 					hidden_effect = {
-						set_character_flag = bm_geyser_retrying
-						set_character_flag = bm_geyser_retried
+						add_character_flag = bm_geyser_retrying
+						add_character_flag = bm_geyser_retried
 						trigger_event = { id = bm_geyser_duel.0001 }
 					}
 				}

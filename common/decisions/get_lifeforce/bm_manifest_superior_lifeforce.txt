@@ -15,7 +15,8 @@
 	}
 
 	effect = {
-		debug_log = "BloodMageDecision: manifest_superior_lifeforce | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+		debug_log = "BloodMageDecision: manifest_superior_lifeforce"
+		debug_log_scopes = yes
 		remove_character_modifier = lifeforce_modifier_major
 		remove_character_modifier = lifeforce_modifier_minor
 		duel = {

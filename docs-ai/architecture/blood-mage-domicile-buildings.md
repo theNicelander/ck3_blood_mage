@@ -7,7 +7,7 @@ Technical architecture for blood magic domicile structures in Adventurer Camps (
 ## 1. Executive Summary
 
 - **What it is:** A single 5-tier external domicile building line named **Blood Shrine** (`bm_domicile_blood_shrine_01` through `05`) that empowers blood mage adventurers and noble families, radiating piety, health, lifespan, and positive genetic inheritance bonuses to both the owner and everyone in their camp or court.
-- **How to get it:** Visible and constructible by characters with `lifestyle_blood_mage` or whose faith belongs to `bm_blodtru_religion`. Built in any external domicile slot.
+- **How to get it:** Visible and constructible by characters with `lifestyle_blood_mage` or whose faith belongs to `blodtru_religion`. Built in any external domicile slot.
 - **How to level / advance:** Linear upgrade path (`01` -> `02` -> `03` -> `04` -> `05`) with gold costs and construction durations.
 - **Data Table:**
 

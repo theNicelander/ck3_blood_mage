@@ -10,7 +10,8 @@
 	}
 
 	effect = {
-		debug_log = "BloodMageDecision: cast_blood_magic_minor | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+		debug_log = "BloodMageDecision: cast_blood_magic_minor"
+		debug_log_scopes = yes
 		trigger_event = { id = bm_cast_blood_magic_minor.001 }
 		custom_tooltip = bm_cast_blood_magic_minor_decision_tooltip
 	}

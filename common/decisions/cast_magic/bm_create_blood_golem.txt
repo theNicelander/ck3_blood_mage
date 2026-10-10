@@ -13,7 +13,8 @@
     cooldown = { years = 3 }
 
     effect = {
-        debug_log = "BloodMageDecision: create_blood_golem | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+        debug_log = "BloodMageDecision: create_blood_golem"
+        debug_log_scopes = yes
 
         add_character_flag = {
             flag = bm_blood_golem_cooldown
