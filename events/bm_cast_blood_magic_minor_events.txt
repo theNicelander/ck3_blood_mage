@@ -31,7 +31,7 @@ bm_cast_blood_magic_minor.001 = {
 				has_trait = lifestyle_blood_knight
 				NOT = { has_trait = lifestyle_blood_mage }
 			}
-			add_blood_knight_xp = { TRACK = resilience XP = 1 }
+			add_blood_knight_xp = { TRACK = enlightenment XP = 1 }
 		}
 		custom_tooltip = channel_lifeforce_enlightenment_minor.effects_list
 		trigger_event = { id = bm_channel_lifeforce_enlightenment_minor.001 }
@@ -73,7 +73,6 @@ bm_cast_blood_magic_minor.001 = {
 					has_character_modifier = hematurgy_attuned
 					has_character_modifier = vanguard_attuned
 					has_character_modifier = slaughter_attuned
-					has_character_modifier = resilience_attuned
 				}
 			}
 		}
@@ -166,7 +165,7 @@ bm_cast_blood_magic_minor.001 = {
 					}
 				}
 				add_blood_knight_xp = {
-					TRACK = resilience
+					TRACK = enlightenment
 					XP = 2
 				}
 			}
@@ -176,7 +175,7 @@ bm_cast_blood_magic_minor.001 = {
 					XP = 1
 				}
 				add_blood_knight_xp = {
-					TRACK = resilience
+					TRACK = enlightenment
 					XP = 1
 				}
 			}
@@ -241,7 +240,7 @@ bm_cast_blood_magic_minor.001 = {
 		}
 		else = {
 			add_blood_knight_xp = {
-				TRACK = resilience
+				TRACK = ancient
 				XP = 2
 			}
 		}

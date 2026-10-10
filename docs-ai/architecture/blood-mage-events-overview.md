@@ -29,7 +29,7 @@
 | `events/bm_reformation_repair_events.txt` | `bm_reformation_repair` | Decision `bm_repair_blodtru_reformation_decision` | Clears bugged/corrupted temporal head title. |
 | `events/bm_seek_power_events.txt` | `bm_seek_power` | Decision `seek_power_decision` | Wilderness exploration event chain (beasts, encounters, lifeforce). |
 | `events/bm_trait_drain_events.txt` | `bm_trait_drain` | Interaction `trait_drain_prisoner_event_interaction` | Siphons positive congenital traits from prisoners via duel. |
-| `events/bm_yearly_events.txt` | `blood_mage_yearly_events` | Yearly pulse on-action | .001: +1 ancient & attunement rolls. .002: bloodline dynasty rolls. .003: rune lifeforce rolls. .004: blood knight +1 resilience/ancient & ambient lifeforce roll. |
+| `events/bm_yearly_events.txt` | `blood_mage_yearly_events` | Yearly pulse on-action | .001: +1 ancient & attunement rolls. .002: bloodline dynasty rolls. .003: rune lifeforce rolls. .004: blood knight +1 enlightenment/ancient & ambient lifeforce roll. |
 
 ## Key Mechanics
 

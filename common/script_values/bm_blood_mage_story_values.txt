@@ -34,8 +34,8 @@ bm_blood_knight_vanguard_xp_value = {
 	value = "has_trait_xp(lifestyle_blood_knight|vanguard)"
 }
 
-bm_blood_knight_resilience_xp_value = {
-	value = "has_trait_xp(lifestyle_blood_knight|resilience)"
+bm_blood_knight_enlightenment_xp_value = {
+	value = "has_trait_xp(lifestyle_blood_knight|enlightenment)"
 }
 
 bm_converted_hematurgy_xp_value = {
@@ -46,12 +46,6 @@ bm_converted_hematurgy_xp_value = {
 
 bm_converted_bloodline_xp_value = {
 	value = bm_blood_knight_vanguard_xp_value
-	multiply = 0.5
-	round = yes
-}
-
-bm_converted_enlightenment_xp_value = {
-	value = bm_blood_knight_resilience_xp_value
 	multiply = 0.5
 	round = yes
 }

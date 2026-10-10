@@ -105,3 +105,4 @@ Always reflects current branch state. Simple line per PR merge. Superseded chang
 - PR #127: Allow Blood Knights to cast minor blood magic and seek power.
 - PR #128: Add historical Egill Skallagrímsson character bookmark.
 - PR #129: Redesign Blood Knight as standalone lifestyle trait (Slaughter, Vanguard, Resilience) with elevation bridge; rework healing to unified event flow; redistribute track XP.
+- PR #130: Restructure Blood Mage and Blood Knight trait tracks: 3 shared (Ancient, Benediction, Enlightenment), 2 Mage exclusive (Bloodline, Hematurgy), 2 Knight exclusive (Vanguard, Slaughter); align elevation conversion and XP sources.

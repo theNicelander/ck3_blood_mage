@@ -7,7 +7,7 @@
 - **What:** Secondary lifestyle trait `lifestyle_blood_empowerment`. 5 progression tracks (`dynasty`, `mastery`, `presence`, `prosperity`, `shadows`), max 100 XP each.
 - **Get / Level:** `bm_cast_blood_magic_major_decision` (Blood Empowerment option) -> Event `bm_blood_empowerment_event.001`.
   - Cost: 150 piety + consumes `lifeforce_modifier_major`. Req: `piety_level >= 1`. Cooldown: none.
-  - XP Gain: +3 `enlightenment` XP (Blood Mage) or +3 `resilience` XP (Blood Knight) + 10 XP in chosen empowerment track (via `add_blood_empowerment_xp`).
+  - XP Gain: +3 `enlightenment` XP (Blood Mage & Blood Knight) + 10 XP in chosen empowerment track (via `add_blood_empowerment_xp`).
 
 ## Universal Baseline Modifiers
 

@@ -85,7 +85,7 @@ lifestyle_blood_mage = {
             50 = {
                 # specific
                 prowess_per_piety_level = 1
-                learning_per_piety_level = 1
+                negate_health_penalty = 0.25
                 monthly_piety = 0.2
                 monthly_piety_gain_mult = 0.05
             }
@@ -136,7 +136,7 @@ lifestyle_blood_mage = {
             100 = {
                 # specific
                 no_prowess_loss_from_age = yes
-                learning_per_piety_level = 1
+                negate_health_penalty = 0.5
                 monthly_piety = 0.2
                 monthly_piety_gain_mult = 0.05
             }
@@ -185,7 +185,7 @@ lifestyle_blood_mage = {
             }
             50 = {
                 # specific
-                martial_per_piety_level = 1
+                learning_per_piety_level = 1
                 prowess_per_piety_level = 1
                 monthly_lifestyle_xp_gain_mult = 0.05
             }
@@ -231,7 +231,7 @@ lifestyle_blood_mage = {
             }
             100 = {
                 # specific
-                martial_per_piety_level = 1
+                learning_per_piety_level = 1
                 no_prowess_loss_from_age = yes
                 monthly_lifestyle_xp_gain_mult = 0.05
             }

@@ -31,8 +31,8 @@ Acquisition (Decision / Event / Birth / Elevation)
   │
   └─► Elevation Entry: bm_elevate_blood_knight_to_blood_mage_effect
         ├─► Removes lifestyle_blood_knight, adds lifestyle_blood_mage
-        ├─► Converts 50% martial XP (slaughter->hematurgy, vanguard->bloodline, resilience->enlightenment)
-        ├─► Carries over ancient and benediction XP 1:1
+        ├─► Converts 50% martial XP (slaughter->hematurgy, vanguard->bloodline)
+        ├─► Carries over ancient, benediction, and enlightenment XP 1:1
         └─► Ensures story panel and prevalence review flag
 ```
 
