@@ -27,10 +27,11 @@
 | `lifedrain_courtier_event_interaction` | Piety. Unlanded courtier. | Grants `lifeforce_modifier_minor` | +1 hematurgy |
 | Lethal duel kill (combat on-action) | Win lethal single combat duel. | Grants `lifeforce_modifier_major` | +2 hematurgy |
 | `bm_manifest_lifeforce` (decision) | 100 piety. Learning check. | Grants minor or major Lifeforce | +5 enlightenment |
-| `bm_manifest_superior_lifeforce_decision` (decision) | 250 piety + Minor + Major Lifeforce. Learning check. | Grants `lifeforce_modifier_superior` (failure keeps major; crit failure loses both) | +2-10 enlightenment |
+| `bm_manifest_superior_lifeforce_decision` (decision) | 250 piety + Minor + Major Lifeforce. Learning check. | Consumes Minor + Major upfront. Crit success: Superior. Success: Superior + 1 yr Major exhaustion. Fail: 3 yr Major exhaustion + refund Major. Crit fail: 3 yr Major + 1 yr Minor exhaustion. | +2-10 enlightenment |
 | `blood_golem_creation_decision` (decision) | 500 piety + Superior Lifeforce. | Consumes `lifeforce_modifier_superior` | +5 bloodline |
 | `bm_cast_blood_magic_minor_decision` | 25-75 piety + Minor Lifeforce. | Consumes `lifeforce_modifier_minor` | +0-1 enlg |
-| `bm_cast_blood_magic_major_decision` (Empowerment/Bloodline/etc) | 150-1000 piety + Major Lifeforce. | Consumes `lifeforce_modifier_major` (plus minor for runes) | +3-5 track XP |
+| `bm_cast_blood_magic_major_decision` (Empowerment/Bloodline/Education/Runes/Traits) | 150-350 piety + Major Lifeforce. | Consumes `lifeforce_modifier_major` (plus minor for runes) | +3-5 track XP |
+| `bm_cast_blood_magic_superior_decision` (Mastery/New Edu/Superior Rune/Ascended Traits/Golem) | 200-1000 piety + Superior Lifeforce. | Consumes `lifeforce_modifier_superior` | +5-10 track XP |
 | `make_blood_knight_interaction` | 100 piety + Major Lifeforce. | Consumes `lifeforce_modifier_major` | +2 benediction |
 | `empower_blood_knight_interaction` (Minor option) | Minor Lifeforce. | Consumes `lifeforce_modifier_minor` | +1 benediction |
 | `empower_blood_knight_interaction` (Major option) | Major Lifeforce. | Consumes `lifeforce_modifier_major` | +2 benediction |

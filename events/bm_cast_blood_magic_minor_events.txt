@@ -6,11 +6,19 @@ bm_cast_blood_magic_minor.001 = {
 	desc = bm_cast_blood_magic_minor.001.desc
 	theme = witchcraft
 
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+
 	# Channel Minor Lifeforce
 	option = {
 		name = bm_cast_blood_magic_minor.001.channel
 		trigger = {
 			piety >= 75
+		}
+		show_as_unavailable = {
+			always = yes
 		}
 		add_piety = -75
 		remove_character_modifier = lifeforce_modifier_minor
@@ -31,6 +39,9 @@ bm_cast_blood_magic_minor.001 = {
 		name = bm_cast_blood_magic_minor.001.attune
 		trigger = {
 			piety >= 25
+		}
+		show_as_unavailable = {
+			always = yes
 		}
 		add_piety = -25
 		remove_character_modifier = lifeforce_modifier_minor

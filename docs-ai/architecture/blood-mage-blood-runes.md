@@ -3,18 +3,18 @@
 ## Executive Summary
 
 - **What:** Personal body rune modifiers granting passive yearly Lifeforce, plus Duchy Capital blood university buildings.
-- **Rune Decision:** `bm_inscribe_blood_runes_decision` in Situation panel -> Event `bm_blood_rune.001`. Consumes `lifeforce_modifier_major`. Costs piety, checks total `lifestyle_blood_empowerment` XP.
+- **Rune Inscription:** Minor and Major runes inscribed via `bm_cast_blood_magic_major_decision` (event `bm_cast_blood_magic_major.001`), consuming `lifeforce_modifier_major` and `lifeforce_modifier_minor`. Superior Blood Rune inscribed via `bm_cast_blood_magic_superior_decision` (event `bm_cast_blood_magic_superior.001`), consuming `lifeforce_modifier_superior`. Gated on Devotion Ranks 2/3/4. 5-year cooldown (`bm_blood_rune_cooldown`). Option is completely hidden once maxed (`superior_blood_rune_modifier`).
 - **University Buildings:** `bm_university_0` through `bm_university_3`. Duchy capital holdings. Built by rulers with `lifestyle_blood_mage`.
 
 ### Blood Runes Table
 
 Runes are sequential. Higher tiers replace lower tiers:
 
-| Rune Tier | Modifier | Req CE XP | Piety Cost | Yearly Passive Lifeforce Roll |
+| Rune Tier | Modifier | Req Devotion Rank | Piety Cost | Yearly Passive Lifeforce Roll |
 | --- | --- | --- | --- | --- |
-| **Minor** | `minor_blood_rune_modifier` | 25 | Base (0) | 20% chance minor lifeforce |
-| **Major** | `major_blood_rune_modifier` | 50 | Base + 200 | 20% minor, 10% major, 5% both |
-| **Superior** | `superior_blood_rune_modifier` | 100 | Base + 400 | 10% minor, 20% major, 10% both |
+| **Minor** | `minor_blood_rune_modifier` | Rank 2 (Devoted) | 0 | 20% chance minor lifeforce |
+| **Major** | `major_blood_rune_modifier` | Rank 3 (Paragon of Virtue) | 200 | 20% minor, 10% major, 5% both |
+| **Superior** | `superior_blood_rune_modifier` | Rank 4 (Religious Icon) | 400 | 10% minor, 20% major, 10% both |
 
 *Yearly rolls handled by hidden pulse `blood_mage_yearly_events.003`.*
 
@@ -33,12 +33,11 @@ Duchy capital buildings constructible only if holder has `lifestyle_blood_mage`:
 
 | Piece | File |
 | --- | --- |
-| Inscription decision | `common/decisions/bm_inscribe_blood_runes_decision.txt` (`bm_inscribe_blood_runes_decision`) |
-| Rune inscription events | `events/bm_blood_rune_events.txt` (`bm_blood_rune.001`) |
+| Major magic decision | `common/decisions/cast_magic/bm_cast_blood_magic_major.txt` (`bm_cast_blood_magic_major_decision`) |
+| Rune inscription options | `events/bm_cast_blood_magic_major_events.txt` (`bm_cast_blood_magic_major.001`) |
 | Yearly rune pulse | `events/bm_yearly_events.txt` (`blood_mage_yearly_events.003`) |
 | Rune modifiers | `common/modifiers/bm_blood_runes_modifiers.txt` |
 | Rune piety cost values | `common/script_values/bm_blood_rune_cost.txt` (`bm_blood_rune_piety_cost`) |
-| Rune XP requirement values | `common/script_values/bm_xp_requirement_values.txt` (`bm_blood_rune_minimum_xp`) |
 | Duchy capital buildings | `common/buildings/bm_duchy_buildings.txt` |
 
 ## Key Mechanics & Gotchas

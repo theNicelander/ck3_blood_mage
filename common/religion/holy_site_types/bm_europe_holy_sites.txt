@@ -5,10 +5,10 @@ talknafjordur = {
     county = c_vestisland
     barony = b_vestfirdir
     county_holder_character_modifier = {
-        learning_per_piety_level = 1
+        prowess_per_piety_level = 1
     }
     faith_character_modifier = {
-        learning_per_piety_level = 1
+        prowess_per_piety_level = 1
     }
 }
 reykjavik = {
@@ -66,8 +66,8 @@ paris = {
 berlin = {
     county = c_berlin
     barony = b_berlin
-    county_holder_character_modifier = { prowess_per_piety_level = 1 }
-    faith_character_modifier = { prowess_per_piety_level = 1 }
+    county_holder_character_modifier = { learning_per_piety_level = 1 }
+    faith_character_modifier = { learning_per_piety_level = 1 }
 }
 
 # Health-based holy sites (all others)

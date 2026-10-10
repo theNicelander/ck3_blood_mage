@@ -18,11 +18,12 @@
 | `seek_power_decision_wanderer` | Standard | Free. CD: 1 yr. | Landless adventurer blood mage. | +1-2 school | Landless wilderness event chain. |
 | `blood_golem_creation_decision` | Standard | 500p + Superior Lifeforce. CD: 3 yrs. | High learning/track XP. | +5 bloodline | Spawns courtier in `bm_house_golem`, triggers shaping duel (`blood_golem.001`). |
 | `mass_lifedrain_prisoners_decision` | Situation | None. No CD. | Dungeon prisoners available. | +hematurgy | Mass harvests lifeforce from dungeon prisoners (`bm_mass_lifedrain.001`). |
-| `become_blood_cultist_decision` | Major | None. Rank 3 Devotion + 1 Major Lifeforce. | Blood mage. | None | Converts character and realm to Blóðtrú faith. |
+| `become_blood_cultist_decision` | Religious | None. Rank 3 Devotion + 1 Major Lifeforce. | Blood mage. | None | Converts character and realm to Blóðtrú faith. |
 | `bm_manifest_lifeforce_decision` | Standard | 100 piety. CD: 1 yr. | Piety rank >= 2. | +5 enlightenment | Learning duel to generate Lifeforce. |
 | `bm_manifest_superior_lifeforce_decision` | Standard | 250 piety + Minor + Major Lifeforce. CD: 2 yrs. | Piety rank >= 2. | +2-10 enlightenment | Learning duel to distill Minor and Major into Superior Lifeforce. |
 | `bm_cast_blood_magic_minor_decision` | Standard | Decision free; rites cost 25-75p + Minor Lifeforce. | Has minor lifeforce. | Dependent on rite (+1 enlightenment on channel) | Opens minor ritual selection (`bm_cast_blood_magic_minor.001`): Channel Minor Lifeforce, Attune Lifeforce. |
-| `bm_cast_blood_magic_major_decision` | Standard | Decision free; rites cost 150-1000p + Major Lifeforce. Per-rite CD flags (2-5 yrs). | Has major lifeforce, rank >= 1 Devotion. | +3 to +5 track XP per rite | Opens major ritual selection (`bm_cast_blood_magic_major.001`): Blood Empowerment, Enhance Education, New Education, Inscribe Blood Rune, Empower Bloodline, Manifest Perfection. |
+| `bm_cast_blood_magic_major_decision` | Standard | Decision free; rites cost 150-350p + Major Lifeforce. Per-rite CD flags (2-5 yrs). | Has major lifeforce, rank >= 1 Devotion. | +3 to +5 track XP per rite | Opens major ritual selection (`bm_cast_blood_magic_major.001`): Blood Empowerment, Enhance Education (tiers 1-4), Inscribe Minor/Major Blood Rune, Empower Bloodline, Manifest Perfection (ranks 1-3). |
+| `bm_cast_blood_magic_superior_decision` | Standard | Decision free; rites cost 200-1000p + Superior Lifeforce. Per-rite CD flags (2-5 yrs). | Has superior lifeforce, rank >= 2 Devotion. | +5 to +10 track XP per rite | Opens superior ritual selection (`bm_cast_blood_magic_superior.001`): Master Education (5★), Embrace New Education, Inscribe Superior Blood Rune, Manifest Transcendent Perfection (ranks 4-5), Forge Blood Golem. |
 
 ## Where the details live
 
@@ -33,11 +34,12 @@
 | Seek Power (landed & adventurer) | `bm_seek_power_decision.txt` |
 | Manifest Lifeforce | `get_lifeforce/bm_manifest_lifeforce.txt` |
 | Manifest Superior Lifeforce | `get_lifeforce/bm_manifest_superior_lifeforce.txt` |
-| Major Rituals (Empowerment, Education, Runes, Bloodline, Manifest Perfection) | `cast_magic/bm_cast_blood_magic_major.txt` |
+| Major Rituals (Empowerment, Education 1-4, Runes 1-2, Bloodline, Manifest 1-3) | `cast_magic/bm_cast_blood_magic_major.txt` |
+| Superior Rituals (Master Education 5★, New Education, Superior Rune, Transcendent Perfection 4-5, Blood Golem) | `cast_magic/bm_cast_blood_magic_superior.txt` |
 | Minor Rituals (Channel Minor, Attunement) | `cast_magic/bm_cast_blood_magic_minor.txt` |
-| Blood Golem Creation | `cast_magic/bm_create_blood_golem.txt` |
+| Blood Golem Creation (Standalone) | `cast_magic/bm_create_blood_golem.txt` |
 | Mass Lifedrain of Prisoners | `bm_mass_lifedrain_prisoners.txt` |
-| Become Blood Cultist (Major) | `bm_become_blood_cultist_decision.txt` |
+| Become Blood Cultist (Religious) | `bm_become_blood_cultist_decision.txt` |
 | Debug decisions | `bm_debug_decisions.txt` |
 
 

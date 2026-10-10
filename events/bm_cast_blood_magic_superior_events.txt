@@ -1,0 +1,232 @@
+﻿namespace = bm_cast_blood_magic_superior
+
+bm_cast_blood_magic_superior.001 = {
+	type = character_event
+	title = bm_cast_blood_magic_superior.001.title
+	desc = bm_cast_blood_magic_superior.001.desc
+	theme = witchcraft
+
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+
+	# Master Education (Ascend to 5★)
+	option = {
+		name = bm_cast_blood_magic_superior.001.master_education
+		trigger = {
+			NOT = { has_character_flag = bm_improve_education_cooldown }
+			piety_level >= 3
+			piety >= scaled_education_enhancement_cost
+			OR = {
+				has_trait = education_diplomacy_4
+				has_trait = education_martial_4
+				has_trait = education_learning_4
+				has_trait = education_stewardship_4
+				has_trait = education_intrigue_4
+			}
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		add_piety = {
+			value = scaled_education_enhancement_cost
+			multiply = -1
+		}
+		add_character_flag = {
+			flag = bm_improve_education_cooldown
+			years = 2
+		}
+		blood_magic_used_superior = yes
+		bm_recount_lifeforce_stacks_effect = yes
+		add_xp_bm_dynamic = {
+			TRACK = enlightenment
+			XP = 10
+		}
+		custom_tooltip = bm_master_education_decision_desc
+		trigger_event = { id = bm_education_master.001 }
+		ai_chance = {
+			base = 100
+			modifier = {
+				health <= fine_health
+				add = -100
+			}
+		}
+	}
+
+	# New Education
+	option = {
+		name = bm_cast_blood_magic_superior.001.new_education
+		trigger = {
+			NOT = { has_character_flag = bm_new_education_cooldown }
+			piety_level >= 4
+			piety >= 1000
+			# Has level 5 traits
+			OR = {
+				has_trait = education_diplomacy_5
+				has_trait = education_martial_5
+				has_trait = education_learning_5
+				has_trait = education_stewardship_5
+				has_trait = education_intrigue_5
+			}
+			# Does not have any level 1-4 traits
+			NOT = {
+				OR = {
+					has_trait = education_diplomacy_1
+					has_trait = education_diplomacy_2
+					has_trait = education_diplomacy_3
+					has_trait = education_diplomacy_4
+					has_trait = education_martial_1
+					has_trait = education_martial_2
+					has_trait = education_martial_3
+					has_trait = education_martial_4
+					has_trait = education_learning_1
+					has_trait = education_learning_2
+					has_trait = education_learning_3
+					has_trait = education_learning_4
+					has_trait = education_stewardship_1
+					has_trait = education_stewardship_2
+					has_trait = education_stewardship_3
+					has_trait = education_stewardship_4
+					has_trait = education_intrigue_1
+					has_trait = education_intrigue_2
+					has_trait = education_intrigue_3
+					has_trait = education_intrigue_4
+				}
+			}
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		add_piety = -1000
+		add_character_flag = {
+			flag = bm_new_education_cooldown
+			years = 2
+		}
+		blood_magic_used_superior = yes
+		bm_recount_lifeforce_stacks_effect = yes
+		add_xp_bm_dynamic = {
+			TRACK = enlightenment
+			XP = 10
+		}
+		custom_tooltip = bm_new_education_decision_desc
+		trigger_event = { id = bm_education_new.001 }
+		ai_chance = {
+			base = 100
+			modifier = {
+				health <= fine_health
+				add = -100
+			}
+		}
+	}
+
+	# Inscribe Superior Blood Rune
+	option = {
+		name = bm_cast_blood_magic_superior.001.blood_rune_superior
+		trigger = {
+			NOT = { has_character_flag = bm_blood_rune_cooldown }
+			has_character_modifier = major_blood_rune_modifier
+			NOT = { has_character_modifier = superior_blood_rune_modifier }
+			piety_level >= 4
+			piety >= 400
+		}
+		show_as_unavailable = {
+			has_character_modifier = major_blood_rune_modifier
+			NOT = { has_character_modifier = superior_blood_rune_modifier }
+		}
+		add_piety = -400
+		remove_character_modifier = major_blood_rune_modifier
+		add_character_modifier = {
+			modifier = superior_blood_rune_modifier
+		}
+		add_character_flag = {
+			flag = bm_blood_rune_cooldown
+			years = 5
+		}
+		blood_magic_used_superior = yes
+		bm_recount_lifeforce_stacks_effect = yes
+		add_xp_bm_dynamic = {
+			TRACK = benediction
+			XP = 10
+		}
+		custom_tooltip = blood_runes_effects_list.superior
+		ai_chance = {
+			base = 100
+			modifier = {
+				health <= fine_health
+				add = -100
+			}
+		}
+	}
+
+	# Manifest Transcendent Perfection (Congenital Traits Ranks 4-5)
+	option = {
+		name = bm_cast_blood_magic_superior.001.manifest_traits
+		trigger = {
+			NOT = { has_character_flag = bm_manifest_traits_cooldown }
+			piety_level >= 3
+			piety >= 200
+			OR = {
+				AND = {
+					has_trait_rank = { trait = intellect_good rank >= 3 }
+					NOT = { has_trait_rank = { trait = intellect_good rank >= 5 } }
+				}
+				AND = {
+					has_trait_rank = { trait = physique_good rank >= 3 }
+					NOT = { has_trait_rank = { trait = physique_good rank >= 5 } }
+				}
+				AND = {
+					has_trait_rank = { trait = beauty_good rank >= 3 }
+					NOT = { has_trait_rank = { trait = beauty_good rank >= 5 } }
+				}
+			}
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		custom_tooltip = bm_cast_blood_magic_superior.001.manifest_traits_tt
+		trigger_event = { id = bm_channel_manifest_traits.002 }
+		ai_chance = {
+			base = 50
+			ai_modifier_based_on_health = yes
+		}
+	}
+
+	# Forge Blood Golem
+	option = {
+		name = bm_cast_blood_magic_superior.001.create_blood_golem
+		trigger = {
+			NOT = { has_character_flag = bm_blood_golem_cooldown }
+			piety_level >= 3
+			piety >= 500
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		add_piety = -500
+		add_character_flag = {
+			flag = bm_blood_golem_cooldown
+			years = 3
+		}
+		blood_magic_used_superior = yes
+		bm_recount_lifeforce_stacks_effect = yes
+		add_xp_bm_dynamic = {
+			TRACK = bloodline
+			XP = 5
+		}
+		custom_tooltip = blood_golem_creation_decision_tt
+		trigger_event = { id = blood_golem.001 }
+		ai_chance = {
+			base = 0
+			ai_modifier_based_on_health = yes
+		}
+	}
+
+	# Cancel
+	option = {
+		name = bm_cast_blood_magic_superior.001.cancel
+		trigger = {
+			is_ai = no
+		}
+	}
+}

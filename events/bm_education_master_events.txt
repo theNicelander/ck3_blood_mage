@@ -1,0 +1,63 @@
+﻿namespace = bm_education_master
+
+bm_education_master.001 = {
+	type = character_event
+	title = bm_education_master.001.title
+	desc = bm_education_master.001.desc
+	theme = witchcraft
+
+	# Diplomacy education mastery
+	option = {
+		name = bm_education_master.001.diplomacy
+		trigger = {
+			has_trait = education_diplomacy_4
+		}
+		education_master_duel_effect = { trait = diplomacy }
+		ai_chance = { base = 100 }
+	}
+
+	# Martial education mastery
+	option = {
+		name = bm_education_master.001.martial
+		trigger = {
+			has_trait = education_martial_4
+		}
+		education_master_duel_effect = { trait = martial }
+		ai_chance = { base = 100 }
+	}
+
+	# Stewardship education mastery
+	option = {
+		name = bm_education_master.001.stewardship
+		trigger = {
+			has_trait = education_stewardship_4
+		}
+		education_master_duel_effect = { trait = stewardship }
+		ai_chance = { base = 100 }
+	}
+
+	# Intrigue education mastery
+	option = {
+		name = bm_education_master.001.intrigue
+		trigger = {
+			has_trait = education_intrigue_4
+		}
+		education_master_duel_effect = { trait = intrigue }
+		ai_chance = { base = 100 }
+	}
+
+	# Learning education mastery
+	option = {
+		name = bm_education_master.001.learning
+		trigger = {
+			has_trait = education_learning_4
+		}
+		education_master_duel_effect = { trait = learning }
+		ai_chance = { base = 100 }
+	}
+
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+}

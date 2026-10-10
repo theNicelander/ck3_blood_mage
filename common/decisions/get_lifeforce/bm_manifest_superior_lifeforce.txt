@@ -9,18 +9,21 @@
 		has_trait = lifestyle_blood_mage
 	}
 	is_valid = {
-		piety_level >= 2
-		has_character_modifier = lifeforce_modifier_minor
+		piety_level >= 3
 		has_character_modifier = lifeforce_modifier_major
+		has_character_modifier = lifeforce_modifier_minor
 	}
 
 	effect = {
-		debug_log = "BloodMageDecision: manifest_superior_lifeforce | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+		debug_log = "BloodMageDecision: manifest_superior_lifeforce"
+		debug_log_scopes = yes
+		remove_character_modifier = lifeforce_modifier_major
+		remove_character_modifier = lifeforce_modifier_minor
 		duel = {
 			skill = learning
 			value = 0
 
-			# Success - Superior lifeforce, pure condensation
+			# Critical Success - Gains superior (nothing bad happens)
 			20 = {
 				desc = manifest_superior_lifeforce_major_success_tt
 				compare_modifier = {
@@ -30,18 +33,18 @@
 				send_interface_toast = {
 					title = manifest_superior_lifeforce_major_success_tt
 					left_icon = root
-					remove_character_modifier = lifeforce_modifier_minor
-					remove_character_modifier = lifeforce_modifier_major
 					add_character_modifier = { modifier = lifeforce_modifier_superior }
 					add_xp_bm_dynamic = {
 						TRACK = enlightenment
 						XP = 10
 					}
+				}
+				hidden_effect = {
 					bm_recount_lifeforce_stacks_effect = yes
 				}
 			}
 
-			# Partial success - Superior lifeforce with minor exhaustion
+			# Success - Gains superior + Cast major blood magic 1 year
 			45 = {
 				desc = manifest_superior_lifeforce_minor_success_tt
 				compare_modifier = {
@@ -51,19 +54,19 @@
 				send_interface_toast = {
 					title = manifest_superior_lifeforce_minor_success_tt
 					left_icon = root
-					remove_character_modifier = lifeforce_modifier_minor
-					remove_character_modifier = lifeforce_modifier_major
 					add_character_modifier = { modifier = lifeforce_modifier_superior }
-					temporary_negative_lifeforce_effect_minor = yes
+					temporary_negative_lifeforce_effect_major_1_year = yes
 					add_xp_bm_dynamic = {
 						TRACK = enlightenment
 						XP = 5
 					}
+				}
+				hidden_effect = {
 					bm_recount_lifeforce_stacks_effect = yes
 				}
 			}
 
-			# Failure - Minor lost, Major retained
+			# Fail - Cast major blood magic 3 years + refund Major
 			25 = {
 				desc = manifest_superior_lifeforce_minor_failure_tt
 				compare_modifier = {
@@ -73,16 +76,19 @@
 				send_interface_toast = {
 					title = manifest_superior_lifeforce_minor_failure_tt
 					left_icon = root
-					remove_character_modifier = lifeforce_modifier_minor
+					temporary_negative_lifeforce_effect_major = yes
+					add_character_modifier = { modifier = lifeforce_modifier_major }
 					add_xp_bm_dynamic = {
 						TRACK = enlightenment
 						XP = 2
 					}
+				}
+				hidden_effect = {
 					bm_recount_lifeforce_stacks_effect = yes
 				}
 			}
 
-			# Critical failure - Both lost, major exhaustion
+			# Critical Fail - Cast major blood magic 3 years + Cast minor magic 1 year
 			10 = {
 				desc = manifest_superior_lifeforce_major_failure_tt
 				compare_modifier = {
@@ -92,9 +98,10 @@
 				send_interface_toast = {
 					title = manifest_superior_lifeforce_major_failure_tt
 					left_icon = root
-					remove_character_modifier = lifeforce_modifier_minor
-					remove_character_modifier = lifeforce_modifier_major
 					temporary_negative_lifeforce_effect_major = yes
+					temporary_negative_lifeforce_effect_minor = yes
+				}
+				hidden_effect = {
 					bm_recount_lifeforce_stacks_effect = yes
 				}
 			}

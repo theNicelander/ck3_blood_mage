@@ -7,16 +7,10 @@
         has_trait = lifestyle_blood_mage
         is_landless_adventurer = no
     }
-    is_valid = {
-        custom_description = {
-            text = bm_cooldown_active_tt
-            NOT = { has_character_flag = bm_seek_power_cooldown }
-        }
-    }
     cooldown = { years = 2 }
     effect = {
-        debug_log = "BloodMageDecision: seek_power | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
-        add_character_flag = { flag = bm_seek_power_cooldown years = 2 }
+        debug_log = "BloodMageDecision: seek_power"
+        debug_log_scopes = yes
         trigger_event = { id = seek_power.001 }
     }
 
@@ -33,17 +27,11 @@ seek_power_decision_wanderer = {
         has_trait = lifestyle_blood_mage
         is_landless_adventurer = yes
     }
-    is_valid = {
-        custom_description = {
-            text = bm_cooldown_active_tt
-            NOT = { has_character_flag = bm_seek_power_cooldown }
-        }
-    }
     # Can do it more often if landless, as it's harder to find prisoners
     cooldown = { years = 1 }
     effect = {
-        debug_log = "BloodMageDecision: seek_power_wanderer | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
-        add_character_flag = { flag = bm_seek_power_cooldown years = 1 }
+        debug_log = "BloodMageDecision: seek_power_wanderer"
+        debug_log_scopes = yes
         trigger_event = { id = seek_power.001 }
     }
 

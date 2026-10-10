@@ -107,3 +107,27 @@ bm_is_at_blood_magic_initiation_site_trigger = {
 		location.county ?= title:c_tsushima
 	}
 }
+
+bm_geyser_duel_has_bad_traits_trigger = {
+	OR = {
+		# Injuries & Physical trauma
+		has_trait = wounded
+		has_trait = maimed
+		has_trait = blind
+		has_trait = one_eyed
+		has_trait = one_legged
+		has_trait = disfigured
+		has_trait = weak
+		has_trait = infirm
+		has_trait = incapable
+		# Mental & psychological trauma
+		has_trait = possessed
+		has_trait = depressed
+		has_trait = lunatic
+		has_trait = dull
+		# Personality & health vulnerabilities
+		has_trait = craven
+		has_trait = intellect_bad
+		has_trait = physique_bad
+	}
+}

@@ -13,7 +13,7 @@
     cost = { piety = 100 }
 
     is_valid = {
-        piety_level >= 3
+        piety_level >= 2
     }
 
     is_valid_showing_failures_only = {
@@ -26,7 +26,8 @@
     }
 
     effect = {
-        debug_log = "BloodMageDecision: become_blood_mage | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+        debug_log = "BloodMageDecision: become_blood_mage"
+        debug_log_scopes = yes
         trigger_event = { id = bm_geyser_duel.0001 }
     }
 
@@ -63,16 +64,10 @@ bm_enhance_blood_ritual_decision = {
             has_trait = education_learning_4
             has_trait = education_learning_5
             has_trait = intellect_good_3
-            has_trait_xp = {
-                trait = lifestyle_mystic
-                value >= 100
-            }
-            stress_level >= 3
+            has_trait = lifestyle_mystic
+            has_trait = lifestyle_scholar
             has_trait = theologian
-            has_trait_xp = {
-                trait = lifestyle_scholar
-                value >= 100
-            }
+            stress_level >= 2
         }
     }
 
@@ -86,11 +81,12 @@ bm_enhance_blood_ritual_decision = {
     }
 
     cost = {
-        piety = 250
+        piety = 100
     }
 
     effect = {
-        debug_log = "BloodMageDecision: enhance_blood_ritual | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+        debug_log = "BloodMageDecision: enhance_blood_ritual"
+        debug_log_scopes = yes
         trigger_event = { id = bm_geyser_duel.0001 }
     }
 

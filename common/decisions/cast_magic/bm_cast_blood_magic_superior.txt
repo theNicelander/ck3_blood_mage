@@ -1,4 +1,4 @@
-﻿bm_cast_blood_magic_minor_decision = {
+﻿bm_cast_blood_magic_superior_decision = {
 	picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
 	decision_group_type = bm_decision_group
 
@@ -6,22 +6,23 @@
 		has_trait = lifestyle_blood_mage
 	}
 	is_valid = {
-		has_character_modifier = lifeforce_modifier_minor
+		has_character_modifier = lifeforce_modifier_superior
+		piety_level >= 2
 	}
 
 	effect = {
-		debug_log = "BloodMageDecision: cast_blood_magic_minor"
+		debug_log = "BloodMageDecision: cast_blood_magic_superior"
 		debug_log_scopes = yes
-		trigger_event = { id = bm_cast_blood_magic_minor.001 }
-		custom_tooltip = bm_cast_blood_magic_minor_decision_tooltip
+		trigger_event = { id = bm_cast_blood_magic_superior.001 }
+		custom_tooltip = bm_cast_blood_magic_superior_decision_tooltip
 	}
 
 	ai_check_interval = 6
 	ai_will_do = {
-		base = 10
+		base = 100
 		modifier = {
-			add = -100
 			health <= fine_health
+			add = -100
 		}
 	}
 }

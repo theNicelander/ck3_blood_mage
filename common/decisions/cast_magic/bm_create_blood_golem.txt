@@ -7,41 +7,19 @@
         has_character_modifier = lifeforce_modifier_superior
         piety_level >= 3
         piety >= 500
-
-        OR = {
-            has_trait_xp = {
-                trait = lifestyle_blood_mage
-                track = ancient
-                value >= required_xp_blood_golem
-            }
-            has_trait_xp = {
-                trait = lifestyle_blood_mage
-                track = enlightenment
-                value >= required_xp_blood_golem
-            }
-            has_trait_xp = {
-                trait = lifestyle_blood_mage
-                track = bloodline
-                value >= required_xp_blood_golem
-            }
-            has_trait_xp = {
-                trait = lifestyle_blood_mage
-                track = benediction
-                value >= required_xp_blood_golem
-            }
-            has_trait_xp = {
-                trait = lifestyle_blood_mage
-                track = hematurgy
-                value >= required_xp_blood_golem
-            }
-        }
+        NOT = { has_character_flag = bm_blood_golem_cooldown }
     }
     cost = { piety = 500 }
     cooldown = { years = 3 }
 
     effect = {
-        debug_log = "BloodMageDecision: create_blood_golem | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+        debug_log = "BloodMageDecision: create_blood_golem"
+        debug_log_scopes = yes
 
+        add_character_flag = {
+            flag = bm_blood_golem_cooldown
+            years = 3
+        }
         trigger_event = { id = blood_golem.001 }
         blood_magic_used_superior = yes
         bm_recount_lifeforce_stacks_effect = yes

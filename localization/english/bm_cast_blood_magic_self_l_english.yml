@@ -103,21 +103,21 @@
 
     # Cast Blood Magic Minor
     bm_cast_blood_magic_minor_decision: "Cast Minor Blood Magic"
-    bm_cast_blood_magic_minor_decision_desc: "Spend [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] to weave minor blood magic arts."
-    bm_cast_blood_magic_minor_decision_tooltip: "Open the grimoire of minor blood magic rituals"
-    bm_cast_blood_magic_minor_decision_confirm: "Weave Minor Magic"
+    bm_cast_blood_magic_minor_decision_desc: "Spend [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] to cast minor blood magic arts."
+    bm_cast_blood_magic_minor_decision_tooltip: "Open the Grimoire of minor blood magic rituals"
+    bm_cast_blood_magic_minor_decision_confirm: "Open the Grimoire"
 
     bm_cast_blood_magic_minor.001.title: "Minor Blood Magic"
     bm_cast_blood_magic_minor.001.desc: "A modest reserve of lifeforce stirs within your veins. With careful focus, you may channel this energy for an immediate temporary enhancement or attune your spirit to deepen your affinity for a specific discipline."
     bm_cast_blood_magic_minor.001.channel: "Channel Minor Lifeforce"
     bm_cast_blood_magic_minor.001.attune: "Attune Lifeforce"
-    bm_cast_blood_magic_minor.001.cancel: "Refrain from casting for now"
+    bm_cast_blood_magic_minor.001.cancel: "Back"
 
     # Cast Blood Magic Major
     bm_cast_blood_magic_major_decision: "Cast Major Blood Magic"
     bm_cast_blood_magic_major_decision_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to execute powerful blood magic rites."
-    bm_cast_blood_magic_major_decision_tooltip: "Open the grimoire of major blood magic rituals"
-    bm_cast_blood_magic_major_decision_confirm: "Weave Major Magic"
+    bm_cast_blood_magic_major_decision_tooltip: "Open the Grimoire of major blood magic rituals"
+    bm_cast_blood_magic_major_decision_confirm: "Open the Grimoire"
 
     bm_cast_blood_magic_major.001.title: "Major Blood Magic"
     bm_cast_blood_magic_major.001.desc: "A potent surge of major lifeforce pulses through your veins, ready to reshape mind, body, or bloodline. Choose which grand blood rite to execute."
@@ -125,5 +125,36 @@
     bm_cast_blood_magic_major.001.improve_education: "Enhance Education"
     bm_cast_blood_magic_major.001.new_education: "Embrace New Education"
     bm_cast_blood_magic_major.001.blood_rune: "Inscribe Blood Runes"
+    bm_cast_blood_magic_major.001.blood_rune_minor: "Inscribe Minor Blood Rune"
+    bm_cast_blood_magic_major.001.blood_rune_major: "Inscribe Major Blood Rune"
+    bm_cast_blood_magic_major.001.blood_rune_superior: "Inscribe Superior Blood Rune"
     bm_cast_blood_magic_major.001.bloodline: "Empower Dynasty Bloodline"
-    bm_cast_blood_magic_major.001.cancel: "Refrain from casting for now"
+    bm_cast_blood_magic_major.001.cancel: "Back"
+
+############### SUPERIOR ###############
+    # Cast Blood Magic Superior
+    bm_cast_blood_magic_superior_decision: "Cast Superior Blood Magic"
+    bm_cast_blood_magic_superior_decision_desc: "Spend [GetModifier('lifeforce_modifier_superior').GetNameWithTooltip] to execute apex blood magic rites that transcend mortal boundaries."
+    bm_cast_blood_magic_superior_decision_tooltip: "Open the Grimoire of superior blood magic rituals"
+    bm_cast_blood_magic_superior_decision_confirm: "Open the Grimoire"
+
+    bm_cast_blood_magic_superior.001.title: "Superior Blood Magic"
+    bm_cast_blood_magic_superior.001.desc: "The peerless, distilled essence of superior lifeforce courses through your veins. With this sublime power, you can break the fundamental laws of mortal capability—achieving legendary education mastery, unlocking new disciplines, engraving the superior rune of blood, forging blood golems, or ascending to superhuman perfection."
+    bm_cast_blood_magic_superior.001.master_education: "Master Education: 5-Star Ascension"
+    bm_cast_blood_magic_superior.001.new_education: "Embrace New Education"
+    bm_cast_blood_magic_superior.001.blood_rune_superior: "Inscribe Superior Blood Rune"
+    bm_cast_blood_magic_superior.001.manifest_traits: "Channel Lifeforce: Transcendent Perfection"
+    bm_cast_blood_magic_superior.001.manifest_traits_tt: "Focus Superior Lifeforce into transmuting congenital traits (Intellect, Physique, Beauty) to apex ranks 4 and 5."
+    bm_cast_blood_magic_superior.001.create_blood_golem: "Forge Blood Golem"
+    bm_cast_blood_magic_superior.001.cancel: "Back"
+
+    # Education Mastery
+    bm_master_education_decision_desc: "Attempt to elevate your 4-star education into legendary 5-star mastery."
+    bm_education_master.001.title: "Pinnacle of Intellectual Mastery"
+    bm_education_master.001.desc: "You have pushed your discipline to the very brink of human understanding. By flooding your mind with superior lifeforce, you can crystallize your knowledge into legendary 5-star mastery."
+    bm_education_master.001.diplomacy: "Attain legendary diplomatic mastery"
+    bm_education_master.001.martial: "Attain legendary martial mastery"
+    bm_education_master.001.stewardship: "Attain legendary stewardship mastery"
+    bm_education_master.001.intrigue: "Attain legendary intrigue mastery"
+    bm_education_master.001.learning: "Attain legendary learning mastery"
+    bm_education_master.success: "Legendary Mastery Achieved"

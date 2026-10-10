@@ -2,55 +2,57 @@
 	# CK3 exposes whether a static modifier exists, but not its stack count.
 	# Rebuild these permanent, identical stacks in one effect so the panel can
 	# retain exact counters, including saves created before the panel existed.
-	set_variable = {
-		name = bm_lifeforce_superior_stacks
-		value = 0
-	}
-	while = {
-		limit = { has_character_modifier = lifeforce_modifier_superior }
-		remove_character_modifier = lifeforce_modifier_superior
-		change_variable = {
+	hidden_effect = {
+		set_variable = {
 			name = bm_lifeforce_superior_stacks
-			add = 1
+			value = 0
 		}
-	}
-	while = {
-		count = var:bm_lifeforce_superior_stacks
-		add_character_modifier = lifeforce_modifier_superior
-	}
+		while = {
+			limit = { has_character_modifier = lifeforce_modifier_superior }
+			remove_character_modifier = lifeforce_modifier_superior
+			change_variable = {
+				name = bm_lifeforce_superior_stacks
+				add = 1
+			}
+		}
+		while = {
+			count = var:bm_lifeforce_superior_stacks
+			add_character_modifier = lifeforce_modifier_superior
+		}
 
-	set_variable = {
-		name = bm_lifeforce_major_stacks
-		value = 0
-	}
-	while = {
-		limit = { has_character_modifier = lifeforce_modifier_major }
-		remove_character_modifier = lifeforce_modifier_major
-		change_variable = {
+		set_variable = {
 			name = bm_lifeforce_major_stacks
-			add = 1
+			value = 0
 		}
-	}
-	while = {
-		count = var:bm_lifeforce_major_stacks
-		add_character_modifier = lifeforce_modifier_major
-	}
+		while = {
+			limit = { has_character_modifier = lifeforce_modifier_major }
+			remove_character_modifier = lifeforce_modifier_major
+			change_variable = {
+				name = bm_lifeforce_major_stacks
+				add = 1
+			}
+		}
+		while = {
+			count = var:bm_lifeforce_major_stacks
+			add_character_modifier = lifeforce_modifier_major
+		}
 
-	set_variable = {
-		name = bm_lifeforce_minor_stacks
-		value = 0
-	}
-	while = {
-		limit = { has_character_modifier = lifeforce_modifier_minor }
-		remove_character_modifier = lifeforce_modifier_minor
-		change_variable = {
+		set_variable = {
 			name = bm_lifeforce_minor_stacks
-			add = 1
+			value = 0
 		}
-	}
-	while = {
-		count = var:bm_lifeforce_minor_stacks
-		add_character_modifier = lifeforce_modifier_minor
+		while = {
+			limit = { has_character_modifier = lifeforce_modifier_minor }
+			remove_character_modifier = lifeforce_modifier_minor
+			change_variable = {
+				name = bm_lifeforce_minor_stacks
+				add = 1
+			}
+		}
+		while = {
+			count = var:bm_lifeforce_minor_stacks
+			add_character_modifier = lifeforce_modifier_minor
+		}
 	}
 }
 

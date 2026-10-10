@@ -10,7 +10,7 @@ Rules (`.agents/rules/`) say how to write CK3 script in general. These docs say 
 | `common/decisions/bm_*` | `blood-mage-decisions.md` |
 | `common/character_interactions/bm_*` | `blood-mage-interactions.md` |
 | `common/traits/bm_*_trait.txt` | `blood-mage-traits.md`, `blood-mage-blood-empowerment.md`, `blood-mage-blood-knight.md`, `blood-mage-trait-inheritance.md` |
-| `common/scripted_effects/bm_trait_track_xp_gain_effects.txt`, `common/script_values/bm_xp_requirement_values.txt`, `common/scripted_modifiers/bm_ai_value_modifiers.txt`, `bm_cost_modifiers.txt` | `blood-mage-progression.md` |
+| `common/scripted_effects/bm_trait_track_xp_gain_effects.txt`, `common/script_values/bm_xp_requirement_values.txt`, `bm_cure_illness_values.txt`, `bm_drain_piety_cost.txt` | `blood-mage-track-xp.md`, `blood-mage-progression.md` |
 | `common/on_action/bm_blood_mage_prevalence_on_actions.txt`, `bm_yearly_pulse.txt`, `common/scripted_effects/bm_blood_mage_lifecycle_effects.txt` | `blood-mage-prevalence-and-lifecycle.md`, `blood-mage-trait-inheritance.md` |
 | `common/game_rules/bm_game_rules.txt` | `blood-mage-game-rules.md` |
 | `common/modifiers/bm_lifeforce.txt`, `bm_blood_magic_*_effects.txt` | `blood-mage-lifeforce.md` |
@@ -28,8 +28,9 @@ Rules (`.agents/rules/`) say how to write CK3 script in general. These docs say 
 | Doc | Coverage |
 | --- | --- |
 | `blood-mage-traits.md` | Core `lifestyle_blood_mage` trait, 5 schools master table, milestones, acquisition triggers |
-| `blood-mage-blood-empowerment.md` | `lifestyle_blood_empowerment` trait, 7 tracks master table, costs, spell unlocks, retinue |
+| `blood-mage-blood-empowerment.md` | `lifestyle_blood_empowerment` trait, 5 tracks master table, costs, spell unlocks, retinue |
 | `blood-mage-blood-knight.md` | `lifestyle_blood_knight` trait, 3 tracks master table, Lifeforce empowerments, combat & duel hooks |
+| `blood-mage-track-xp.md` | Master XP catalog across all 13 tracks: piety costs, lifeforce requirements, and XP yields |
 | `blood-mage-dynasty.md` | 7 house modifiers, costs, cooldowns, yearly XP loop, Golem cadet house |
 | `blood-mage-domicile-buildings.md` | Single 5-tier Blood Shrine line, scaling piety/health/lifespan/genetics, camp & court aura |
 | `blood-mage-blood-runes.md` | Blood Runes tiers 1-3, costs, requirements, passive rolls, Blood Universities 0-3 |
