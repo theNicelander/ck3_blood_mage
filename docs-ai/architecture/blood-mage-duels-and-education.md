@@ -8,8 +8,7 @@
 ### Duels & Education Master Table
 
 | Ritual / Action | Type | Trigger / File | Cost & Req | Opponent / Skill | Outcome |
-| --- | --- | --- | --- | --- | --- |
-| **Geyser Initiation** | Decision | `bm_become_blood_mage_ritual_decision` -> `bm_geyser_duel.0001` | 250 piety. In Reykjavik or Tsushima. CD: 5 yrs. | 111-yr hermit (Learning) | Win: `lifestyle_blood_mage`. Lose: wound, stress, or scarred. |
+| **Geyser Initiation** | Decision | `bm_blood_cultist_become_blood_mage_decision` / `bm_enhance_blood_ritual_decision` -> `bm_geyser_duel.0001` | 100 piety. In Reykjavik or Tsushima. No cooldown; back out or retry freely. | Egill Skallagrímsson (Learning 20, Martial 18, Prowess 25) | Win: `lifestyle_blood_mage`. Lose: wound, stress, or mental/physical trauma. Retries on failure or allows backing out (AI backs out 50/50 if bad traits, 0% if none). |
 | **Trait Theft** | Interaction | `trait_drain_prisoner_event_interaction` -> `bm_trait_drain.001` | Piety. Prisoner has positive congenital trait caster lacks. | Prisoner (Prowess/Learning) | Win: Steals trait from captive. Captive drained. Lose: Backlash modifier. |
 | **Upgrade Education (1★–4★)** | Decision | `bm_cast_blood_magic_major_decision` -> `bm_education_enhance.txt` | Scaled piety + Major Lifeforce. CD: 2 yrs. | Mental duel (Learning) | Win: Upgrades education star tier up to tier 4. Lose: Backlash modifier. |
 | **Master Education (5★)** | Decision | `bm_cast_blood_magic_superior_decision` -> `bm_education_master_events.txt` | Scaled piety + Superior Lifeforce. CD: 2 yrs. | Mental duel (Discipline skill) | Win: Upgrades 4-star to legendary 5-star tier. Lose: Superior backlash. |
