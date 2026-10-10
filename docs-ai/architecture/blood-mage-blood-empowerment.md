@@ -7,7 +7,7 @@
 - **What:** Secondary lifestyle trait `lifestyle_blood_empowerment`. 5 progression tracks (`dynasty`, `mastery`, `presence`, `prosperity`, `shadows`), max 100 XP each.
 - **Get / Level:** `bm_cast_blood_magic_major_decision` (Blood Empowerment option) -> Event `bm_blood_empowerment_event.001`.
   - Cost: 150 piety + consumes `lifeforce_modifier_major`. Req: `piety_level >= 1`. Cooldown: none.
-  - XP Gain: +3 `enlightenment` XP + 10 XP in chosen empowerment track (via `add_blood_empowerment_xp`).
+  - XP Gain: +3 `enlightenment` XP (Blood Mage & Blood Knight) + 10 XP in chosen empowerment track (via `add_blood_empowerment_xp`).
 
 ## Universal Baseline Modifiers
 
@@ -35,7 +35,7 @@ Each track spans 10 levels (10 to 100 XP, +10 XP per channel). Modifiers stack a
 - **Advancement:** `bm_cast_blood_magic_major_decision` fires `bm_cast_blood_magic_major.001` which triggers `bm_blood_empowerment_event.001`. Adds trait if missing. Capped tracks (100 XP) hidden from selection.
 - **Spell Integration:** High-tier spells (Improve Education, Add Second Education, Inscribe Blood Runes) do not require Blood Empowerment XP; they evaluate independent piety and lifeforce costs.
 - **Empowered Retinue:** Blood Knights are martial vessels empowered via blood magic:
-  - `grant_blood_knight_interaction`: Cost: 100 piety + major Lifeforce. Gives `lifestyle_blood_knight` trait with 3 evolutive tracks (Vanguard, Slaughter, Resilience).
+  - `make_blood_knight_interaction`: Cost: 100 piety + major Lifeforce. Gives `lifestyle_blood_knight` trait with 3 evolutive tracks (Vanguard, Slaughter, Resilience).
   - See `blood-mage-blood-knight.md` for full specification.
 - **Roster:** Retinue automatically tracked in Blood Magic story panel via `bm_refresh_blood_magic_rosters_effect`.
 

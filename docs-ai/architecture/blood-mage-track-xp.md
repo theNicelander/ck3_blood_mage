@@ -4,8 +4,8 @@
 
 ## Executive Summary
 
-- **What:** Master technical catalog of XP acquisition methods, Piety costs, Lifeforce sinks/sources, cooldowns, and XP values across all lifestyle traits and 13 progression tracks.
-- **Traits Covered:** `lifestyle_blood_mage` (5 tracks: `ancient`, `enlightenment`, `bloodline`, `benediction`, `hematurgy`), `lifestyle_blood_empowerment` (5 tracks: `dynasty`, `mastery`, `presence`, `prosperity`, `shadows`), `lifestyle_blood_knight` (5 tracks: `vanguard`, `slaughter`, `resilience`, and shared `ancient`, `benediction`).
+- **What:** Master technical catalog of XP acquisition methods, Piety costs, Lifeforce sinks/sources, cooldowns, and XP values across all lifestyle traits and 12 progression tracks.
+- **Traits Covered:** `lifestyle_blood_mage` (5 tracks: `ancient`, `enlightenment`, `bloodline`, `benediction`, `hematurgy`), `lifestyle_blood_empowerment` (5 tracks: `dynasty`, `mastery`, `presence`, `prosperity`, `shadows`), `lifestyle_blood_knight` (5 tracks: `vanguard`, `slaughter`, and shared `ancient`, `benediction`, `enlightenment`).
 - **Engine Cap:** Strictly 100 XP max per track (10 tiers at 10 XP steps). Overflow discarded.
 - **Stat Parity:** Every 10 XP tier in both `lifestyle_blood_mage` and `lifestyle_blood_knight` scales the exact same baseline vitality bonuses: `+0.1` Health, `+2` Life Expectancy, `+1` Year Fertility, `+1` Epidemic Resistance.
 - **Cost Types:** Piety, Lifeforce (`minor`, `major`, `superior`), Piety Levels, and cooldowns.
@@ -14,15 +14,14 @@
 
 | XP Gain | Cost | Action / Primary Sources | Trait | Track |
 | --- | --- | --- | --- | --- |
-| +1 to +10 XP | 0 (pulse) / 25–400 Piety + Minor/Major/Superior Lifeforce | Yearly pulse, attunement, manifest lifeforce, inscribe blood runes | `lifestyle_blood_mage` | `ancient` |
-| +1 to +8 XP | 75 – 1000 Piety + Minor/Major/Superior Lifeforce | Education enhancements, lifeforce channeling, empowerment | `lifestyle_blood_mage` | `enlightenment` |
+| +1 to +10 XP | 0 (pulse) / 25–400 Piety + Minor/Major/Superior Lifeforce | Yearly pulse, attunement, condense lifeforce, inscribe blood runes | `lifestyle_blood_mage` & `lifestyle_blood_knight` | `ancient` |
+| +1 to +8 XP | 75 – 1000 Piety + Minor/Major/Superior Lifeforce | Manifest lifeforce (Learning duel), education enhancements, lifeforce channeling, empowerment | `lifestyle_blood_mage` & `lifestyle_blood_knight` | `enlightenment` |
 | +2 to +6 XP | 0 – 500 Piety + Minor/Major/Superior Lifeforce | Grant blood magic, childbirth, bless kin, commune rite, congenital traits, empower bloodline, golems | `lifestyle_blood_mage` | `bloodline` |
-| +1 to +6 XP | 0 – 100 Piety (scaled) + Minor/Major Lifeforce | Curing illnesses, making/empowering blood knights, restoring drained courtiers | `lifestyle_blood_mage` | `benediction` |
+| +2 to +8 XP | 0 – 100 Piety (scaled) + Minor/Major Lifeforce | Curing illnesses, making/empowering blood knights, restoring drained courtiers | `lifestyle_blood_mage` & `lifestyle_blood_knight` | `benediction` |
 | +1 to +2 XP | 25 – 250 Piety (Grants Minor/Major lifeforce) | Prisoner/courtier draining, congenital trait theft, wilderness harvest | `lifestyle_blood_mage` | `hematurgy` |
 | +10 XP (chosen track) | 150 Piety + Major Lifeforce | Channel Blood Empowerment decision | `lifestyle_blood_empowerment` | `dynasty`, `mastery`, `presence`, `prosperity`, `shadows` |
 | +1 to +10 XP | None / Minor/Major Lifeforce (caster) | Commander/knight battle victories, healing comrades, mage empowerment | `lifestyle_blood_knight` | `vanguard` |
-| +2 to +10 XP | None / Minor/Major Lifeforce (caster) | Single combat fatal kills (yields Minor Lifeforce), tournaments, mage empowerment | `lifestyle_blood_knight` | `slaughter` |
-| +1 to +10 XP | 100 Piety (manifest) / None | Yearly survival pulse, defeat survival, Prowess manifest lifeforce, self-tending | `lifestyle_blood_knight` | `resilience` |
+| +3 to +10 XP | None / Minor/Major Lifeforce (caster) | Single combat fatal kills (yields Minor Lifeforce), tournaments, mage empowerment | `lifestyle_blood_knight` | `slaughter` |
 
 ---
 
@@ -32,10 +31,10 @@
 
 | XP Gain | Cost | Action | Type | Requirements | Cooldown |
 | --- | --- | --- | --- | --- | --- |
-| **+1 XP** | None | Yearly Pulse | On-action (`blood_mage_yearly_events.001`) | Has `lifestyle_blood_mage` | 1 year |
-| **+1 XP** | None (50% roll) | Ancient Attunement Roll | Yearly event roll (`blood_mage_yearly_events.001`) | Has `ancient_attuned` | 1 year |
+| **+1 XP** | None | Yearly Pulse | On-action (`blood_mage_yearly_events.001` / `.004`) | Has `lifestyle_blood_mage` or `lifestyle_blood_knight` | 1 year |
+| **+1 XP** | None (50% roll) | Ancient Attunement Roll | Yearly event roll (`blood_mage_yearly_events.001` / `.004`) | Has `ancient_attuned` | 1 year |
 | Grants `ancient_attuned` | 25 Piety + Minor Lifeforce (`lifeforce_modifier_minor`) | Attune Lifeforce (Ancient) | Event option (`bm_cast_blood_magic_minor.001`) | Has minor lifeforce | None |
-| **+3 XP** | 100 Piety (Generates Major/Minor on Learning duel) | Manifest Lifeforce | Decision (`bm_manifest_lifeforce_decision`) | `piety_level >= 2` | 1 year |
+| **+2 XP** | 100 Piety + Minor Lifeforce (Forges Major Lifeforce) | Condense Lifeforce | Event option (`bm_cast_blood_magic_minor.001`) | Has minor lifeforce | None |
 | **+8 XP** (crit), **+5 XP** (success), **+2 XP** (fail) | 250 Piety + Minor & Major Lifeforce (Generates Superior) | Manifest Superior Lifeforce | Decision (`bm_manifest_superior_lifeforce_decision`) | `piety_level >= 3`, Minor + Major | 2 years |
 | **+4 XP** | 0 Piety + Minor & Major Lifeforce | Inscribe Minor Blood Rune | Event option (`bm_cast_blood_magic_major.001`) | `piety_level >= 2` | 5 years |
 | **+5 XP** | 200 Piety + Minor & Major Lifeforce | Inscribe Major Blood Rune | Event option (`bm_cast_blood_magic_major.001`) | `piety_level >= 3`, Minor rune | 5 years |
@@ -45,6 +44,7 @@
 
 | XP Gain | Cost | Action | Type | Requirements | Cooldown |
 | --- | --- | --- | --- | --- | --- |
+| **+3 XP** | 100 Piety (Generates Major/Minor on Learning duel) | Manifest Lifeforce | Decision (`bm_manifest_lifeforce_decision`) | `piety_level >= 2` | 1 year |
 | **+1 XP** | 75 Piety + Minor Lifeforce (`lifeforce_modifier_minor`) | Channel Minor Lifeforce | Event option (`bm_cast_blood_magic_minor.001`) | Minor lifeforce | None |
 | **+1 XP** | 25 Piety + Minor Lifeforce (`lifeforce_modifier_minor`) | Grant Lifeforce (Minor) | Interaction (`grant_lifeforce_interaction`) | Minor lifeforce, courtier/prisoner | None |
 | **+2 XP** | 50 Piety + Major Lifeforce (`lifeforce_modifier_major`) | Grant Lifeforce (Major) | Interaction (`grant_lifeforce_interaction`) | Major lifeforce, courtier/prisoner | None |
@@ -53,7 +53,7 @@
 | **+8 XP** upfront (+8 XP on duel win) | 350 Piety + Superior Lifeforce (`lifeforce_modifier_superior`) | Master Education (5★) | Event option (`bm_cast_blood_magic_superior.001`) | `piety_level >= 3`, 4★ education | 2 years |
 | **+8 XP** | 1000 Piety + Superior Lifeforce (`lifeforce_modifier_superior`) | New Education (2nd Trait) | Event option (`bm_cast_blood_magic_superior.001`) | `piety_level >= 4`, 5★ education | 2 years |
 | **+2 XP** | 200 Piety + Superior Lifeforce (`lifeforce_modifier_superior`) | Manifest Transcendent Perfection (Congenital 4-5) | Event option (`bm_cast_blood_magic_superior.001`) | `piety_level >= 3` | None |
-| **+1 XP** | None (50% roll) | Enlightenment Attunement Roll | Yearly event roll (`blood_mage_yearly_events.001`) | Has `enlightenment_attuned` | 1 year |
+| **+1 XP** | None (50% roll) | Enlightenment Attunement Roll | Yearly event roll (`blood_mage_yearly_events.001` / `.004`) | Has `enlightenment_attuned` | 1 year |
 
 ### 1.3 Bloodline Track (`bloodline`)
 
@@ -79,9 +79,9 @@
 | **+4 XP** | 35 Piety (`cure_illness_cost_major_neg`) + Major Lifeforce (`lifeforce_modifier_major`) | **Heal Affliction: Major** (`bm_heal_ailment`) | Interaction & Event | Target with `wounded_2`, `incapable`, `pneumonic`, `infirm`, `maimed`, etc. | None |
 | **+8 XP** | 100 Piety (`cure_illness_cost_benediction_neg`) + **both** Minor & Major Lifeforce | **Heal Affliction: Deadly** (`bm_heal_ailment`) | Interaction & Event | Target with `wounded_3`, `cancer`, `plague`, `leper`, `disfigured`, etc. | None |
 | **+4 XP** | 100 Piety + Major Lifeforce (`lifeforce_modifier_major`) | Make Blood Knight | Interaction (`make_blood_knight_interaction`) | Target without blood knight | None |
-| **+3 XP** (caster) | 0 Piety + Major Lifeforce (`lifeforce_modifier_major`) | Empower Blood Knight (Major) | Interaction (`empower_blood_knight_interaction`) | Target is blood knight | None |
-| **+1 XP** (caster) | 0 Piety + Minor Lifeforce (`lifeforce_modifier_minor`) | Empower Blood Knight (Minor) | Interaction (`empower_blood_knight_interaction`) | Target is blood knight | None |
-| **+3 XP** | 25 Piety + Major Lifeforce (`lifeforce_modifier_major`) | Restore Lifedrained Courtier | Interaction (`grant_lifeforce_interaction_reversed`) | Target has `lifedrained_modifier` | None |
+| **+4 XP** (caster) | 0 Piety + Major Lifeforce (`lifeforce_modifier_major`) | Empower Blood Knight (Major) | Interaction (`empower_blood_knight_interaction`) | Target is blood knight | None |
+| **+2 XP** (caster) | 0 Piety + Minor Lifeforce (`lifeforce_modifier_minor`) | Empower Blood Knight (Minor) | Interaction (`empower_blood_knight_interaction`) | Target is blood knight | None |
+| **+4 XP** | 25 Piety + Major Lifeforce (`lifeforce_modifier_major`) | Restore Lifedrained Courtier | Interaction (`grant_lifeforce_interaction_reversed`) | Target has `lifedrained_modifier` | None |
 | **+1 XP** | None (50% roll) | Benediction Attunement Roll | Yearly event roll (`blood_mage_yearly_events.001`) | Has `benediction_attuned` | 1 year |
 
 ### 1.5 Hematurgy Track (`hematurgy`)
@@ -111,25 +111,25 @@ Tracks: `dynasty`, `mastery`, `presence`, `prosperity`, `shadows` (5 tracks tota
 
 ## 3. Lifestyle Blood Knight (`lifestyle_blood_knight`)
 
-Tracks: `vanguard`, `slaughter`, `resilience` (and shared `ancient`, `benediction`).
+Tracks: `vanguard`, `slaughter` (and shared `ancient`, `benediction`, `enlightenment`).
 
 | XP Gain | Cost | Action | Type | Requirements | Cooldown |
 | --- | --- | --- | --- | --- | --- |
-| **+10 XP to martial tracks** | 0 Piety (knight); Caster consumes Major Lifeforce | Empower Blood Knight: Major | Interaction (`empower_blood_knight_interaction`) | Blood Mage empowers knight | None |
-| **+5 XP to martial tracks** | 0 Piety (knight); Caster consumes Minor Lifeforce | Empower Blood Knight: Minor | Interaction (`empower_blood_knight_interaction`) | Blood Mage empowers knight | None |
+| **+10 XP to martial tracks** (`vanguard` & `slaughter`) | 0 Piety (knight); Caster consumes Major Lifeforce | Empower Blood Knight: Major | Interaction (`empower_blood_knight_interaction`) | Blood Mage empowers knight | None |
+| **+5 XP to martial tracks** (`vanguard` & `slaughter`) | 0 Piety (knight); Caster consumes Minor Lifeforce | Empower Blood Knight: Minor | Interaction (`empower_blood_knight_interaction`) | Blood Mage empowers knight | None |
 | **+5 XP** (`vanguard`) | None (33% roll for Minor Lifeforce) | Battle Victory (Commander) | On-action (`bm_on_combat_end_winner`) | Army commander | Per battle |
 | **+4 XP** (`vanguard`) | None (33% roll for Minor Lifeforce) | Battle Victory (Knight) | On-action (`bm_on_combat_end_winner`) | Army knight | Per battle |
 | **+1 XP** (`vanguard`) + **+1 XP** (`benediction`) | 15 Piety + Minor Lifeforce | Heal Minor Affliction (Comrade / Knight / Liege) | Interaction & Event (`bm_heal_ailment`) | Target ally with minor ailment | None |
-| **+1 XP** (`vanguard`) + **+2 XP** (`resilience`) | None | Battle Defeat (Surviving Commander / Knight) | On-action (`bm_on_combat_end_loser`) | Surviving side commander or knight | Per battle |
+| **+1 XP** (`vanguard`) + **+1 XP** (`enlightenment`) | None | Battle Defeat (Surviving Commander / Knight) | On-action (`bm_on_combat_end_loser`) | Surviving side commander or knight | Per battle |
 | **+5 XP** (`slaughter`) | None; **Grants** Minor Lifeforce | Single Combat Fatal Slaying | On-action (`bm_on_character_death_duel`) | Slaying opponent in single combat | None |
 | **+3 XP** (`slaughter`) | None | Tournament Completion | On-action (`bm_on_travel_activity_complete_tournament`) | Completing `activity_tournament` | Per tourney |
-| **+3 XP** (`resilience`) | 100 Piety; **Grants** Major (crit) or Minor (success) Lifeforce on Prowess duel | Manifest Lifeforce | Decision (`bm_manifest_lifeforce_decision`) | `piety_level >= 2` | 1 year |
-| **+2 XP** (`resilience`) | 100 Piety + Minor Lifeforce; **Grants** Major Lifeforce | Condense Lifeforce | Event option (`bm_cast_blood_magic_minor.001`) | Minor lifeforce held | None |
-| **+3 XP** (`resilience`) (+10 Empowerment XP) | 150 Piety + Major Lifeforce | Channel Blood Empowerment | Decision -> Event (`bm_cast_blood_magic_major.001`) | `piety_level >= 1`, Major lifeforce held | None |
-| **+2 XP** (`resilience`) | 15 Piety + Minor Lifeforce | Heal Minor Affliction (Self-Healing Wounds) | Interaction & Event (`bm_heal_ailment`) | Self has minor wound/illness | None |
-| **+2 XP** (`resilience`) | 50 Piety + Minor Lifeforce | Purge Bodily Impurities (Self-Tending Weakness) | Event option (`bm_cast_blood_magic_minor.001`) | Self has physical frailty | None |
-| **+1 XP** (`resilience`) + **+1 XP** (`ancient`) | None (33% ambient roll for Minor Lifeforce) | Yearly Survival Pulse | On-action (`blood_mage_yearly_events.004`) | Has `lifestyle_blood_knight` | 1 year |
-| **50% Conversion** (Slaughter->Hematurgy, Vanguard->Bloodline, Resilience->Enlightenment) | 100 Piety + Minor/Major Lifeforce | Elevate to Blood Mage | Decision (`bm_elevate_to_blood_mage_decision`) | `piety_level >= 2` | 2 years (on fail) |
+| **+3 XP** (`enlightenment`) | 100 Piety; **Grants** Major (crit) or Minor (success) Lifeforce on Learning duel | Manifest Lifeforce | Decision (`bm_manifest_lifeforce_decision`) | `piety_level >= 2` | 1 year |
+| **+2 XP** (`ancient`) | 100 Piety + Minor Lifeforce; **Grants** Major Lifeforce | Condense Lifeforce | Event option (`bm_cast_blood_magic_minor.001`) | Minor lifeforce held | None |
+| **+3 XP** (`enlightenment`) (+10 Empowerment XP) | 150 Piety + Major Lifeforce | Channel Blood Empowerment | Decision -> Event (`bm_cast_blood_magic_major.001`) | `piety_level >= 1`, Major lifeforce held | None |
+| **+2 XP** (`enlightenment`) | 15 Piety + Minor Lifeforce | Heal Minor Affliction (Self-Healing Wounds) | Interaction & Event (`bm_heal_ailment`) | Self has minor wound/illness | None |
+| **+1 to +2 XP** (`enlightenment`) | 50 Piety + Minor Lifeforce | Purge Bodily Impurities (Self-Tending Weakness) | Event option (`bm_cast_blood_magic_minor.001`) | Self has physical frailty | None |
+| **+1 XP** (`enlightenment`) + **+1 XP** (`ancient`) | None (33% ambient roll for Minor Lifeforce) | Yearly Survival Pulse | On-action (`blood_mage_yearly_events.004`) | Has `lifestyle_blood_knight` | 1 year |
+| **1:1 Shared, 50% Exclusive** (Slaughter->Hematurgy, Vanguard->Bloodline; Ancient, Benediction, Enlightenment 1:1) | 100 Piety + Minor/Major Lifeforce | Elevate to Blood Mage | Decision (`bm_elevate_to_blood_mage_decision`) | `piety_level >= 2` | 2 years (on fail) |
 
 ---
 

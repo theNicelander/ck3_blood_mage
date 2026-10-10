@@ -321,3 +321,8 @@ ai_chance_scale_based_on_xp_in_blood_knight_track = {
         add = 5
     }
 }
+
+ai_chance_scale_based_on_xp_in_shared_track = {
+    ai_chance_scale_based_on_xp_in_track = { TRACK = $TRACK$ }
+    ai_chance_scale_based_on_xp_in_blood_knight_track = { TRACK = $TRACK$ }
+}

@@ -16,9 +16,11 @@
 | `lifedrain_prisoner_interaction` | Dungeon prisoner | Piety (`lifedrain_piety_cost_minor`). | +1 hematurgy | Kills prisoner (`death_lifedrain_reason`). Gives `lifeforce_modifier_minor`. |
 | `lifedrain_courtier_event_interaction` | Courtier | Piety (`lifedrain_piety_cost_minor`). | +1 hematurgy | Drains courtier. Gives `lifeforce_modifier_minor`. Target gets `lifedrained_modifier` (health/stat hit). |
 | `trait_drain_prisoner_event_interaction` | Dungeon prisoner | Piety. Target has congenital trait actor lacks. | +2 hematurgy | Duel (Prowess/Learning). Win: steals congenital trait. Target drained. |
-| `bm_heal_ailment` | Courtier, liege, family, spouse, knight, self | Lifeforce (tier-dependent) + Piety (15 / 35 / 100). Target has ailment. | Minor: +2 benediction (Mage) / +2 resilience (Knight self) / +1 vanguard & +1 benediction (Knight ally); Major: +4 benediction; Deadly: +8 benediction | Opens event `bm_heal_ailment.0001` to choose and cure an individual ailment. |
-| `make_blood_knight_interaction` | Knight, courtier, or self | 100 Piety + Major Lifeforce. | +2 benediction | Bestows `lifestyle_blood_knight` trait. |
-| `empower_blood_knight_interaction` | Sworn blood knight or self | Major Lifeforce (+10 XP) or Minor Lifeforce (+5 XP). | +2 / +1 benediction | Direct popup modal advancing all 3 combat tracks. |
+| `bm_heal_ailment` | Courtier, liege, family, spouse, knight, self | Lifeforce (tier-dependent) + Piety (15 / 35 / 100). Target has ailment. | Minor: +2 benediction (Mage) / +2 enlightenment (Knight self) / +1 vanguard & +1 benediction (Knight ally); Major: +4 benediction; Deadly: +8 benediction | Opens event `bm_heal_ailment.0001` to choose and cure an individual ailment across 37 conditions. |
+| `make_blood_knight_interaction` | Knight or courtier (cannot target self) | 100 Piety + Major Lifeforce. | +4 benediction | Bestows `lifestyle_blood_knight` trait onto recipient. |
+| `empower_blood_knight_interaction` | Sworn blood knight | Major Lifeforce (+10 XP to vanguard & slaughter) or Minor Lifeforce (+5 XP). | Major: +4 benediction; Minor: +2 benediction | Direct popup modal advancing martial tracks on recipient. |
+| `grant_lifeforce_interaction` | Courtier or prisoner | Minor Lifeforce + 25 Piety, or Major Lifeforce + 50 Piety. | Minor: +1 enlightenment; Major: +2 enlightenment | Bestows Lifeforce modifier onto recipient. |
+| `grant_lifeforce_interaction_reversed` | Courtier with `lifedrained_modifier` | 25 Piety + Major Lifeforce. | +4 benediction | Restores drained courtier: cleanses debuff, gives minor lifeforce and opinion. |
 | `bm_debug_make_blood_mage_interaction` | Any character | Debug mode only. Target non-mage. | None | Instantly grants `lifestyle_blood_mage` trait directly, creates story cycle, and sets prevalence review flag. |
 
 ## Key Mechanics & AI Logic
@@ -39,7 +41,7 @@
 | Become a Blood Mage (request or prisoner) | `common/character_interactions/bm_become_a_blood_mage.txt` |
 | Harvest Lifeforce (prisoner & courtier) | `common/character_interactions/bm_drain_lifeforce.txt` |
 | Drain Traits from Prisoners | `common/character_interactions/bm_drain_trait.txt` |
-| Cure Illness (minor, major, benediction) | `common/character_interactions/bm_cure_illness_interactions.txt` |
+| Cure Ailment (`bm_heal_ailment`) | `common/character_interactions/bm_cure_illness_interactions.txt` |
 | Blood Knight (Make & Empower) | `common/character_interactions/bm_blood_knight_interactions.txt` |
 | Grant Blood Magic Trait | `common/character_interactions/bm_grant_blood_magic.txt` |
 | Bless Kin's Blood | `common/character_interactions/bm_bless_bloodline.txt` |

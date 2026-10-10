@@ -16,7 +16,7 @@ Cross-cutting infrastructure supporting Blood Mages. Houses shared scripted trig
 | **Death Reason** | `death_lifedrain_reason` | `common/deathreasons/bm_event_deaths.txt` | Assigned when character dies from lifedrain or fatal siphoning duels. |
 | **Death Reason** | `death_blood_golem_failed` | `common/deathreasons/bm_event_deaths.txt` | Assigned when golem creation collapses lethally. |
 | **Nicknames** | `nick_the_wanderer`, etc. | `common/nicknames/bm_nicknames.txt` | Occult titles granted via milestones and duels. |
-| **Decision Group** | `bm_blood_magic_decision_group` | `common/decision_group_types/bm_decision_group_types.txt` | Groups blood magic decisions into unified decision UI tab. |
+| **Decision Group** | `bm_decision_group` | `common/decision_group_types/bm_decision_group_types.txt` | Groups blood magic decisions into unified decision UI tab. |
 | **Text Icons** | `@bm_game_rule_icon!`, `@bm_blood_drop!` | `gui/bm_blood_magic_texticons.gui`, `gui/bm_game_rule_texticons.gui` | Registered inline font icons for decisions, game rules, and tooltips. |
 | **Religion Icons** | `@bm_blodtru_icon!`, `@bm_ketsudo_icon!` | `gui/shared/bm_texticons_religion.gui` | Inline icons for Blóðtrú family faiths. |
 

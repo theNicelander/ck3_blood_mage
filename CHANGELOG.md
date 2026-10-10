@@ -1,28 +1,41 @@
-# Changelog - Highlights
+# Changelog
 
-## Unreleased
+## Living changelog (branch net state since 1.20)
 
-* Consolidated the Cult of Quintessence into a single unified faith (Cult of the Quintessence), replaced syncretic variants with universal tolerance mechanics (Adaptive tenet, Pluralistic doctrine, and cult identity opinion buffering), and tuned the "Embrace the Blood Cultist Faith" decision to require 1 Major Lifeforce and rank 3 Devotion with no piety cost.
+Always reflects current branch state. Simple line per PR merge. Superseded changes folded, reverts dropped. Caveman style.
 
-* Added the "Challenge the Blood Mage of Reykjavik" decision, allowing non-blood-mage characters in Vestisland (Reykjavik) to challenge an occult hermit in a Learning and Prowess duel to awaken blood magic, risking the mental and physical backlash of Crimson Initiation upon defeat.
-* Fixed Cult of Quintessence reformation being blocked after the player became its pre-reformation temporal Head of Faith. Unreformed Cult faiths now begin without a Head of Faith, and affected existing saves receive a repair decision that detaches the premature headship without destroying its holder's title or disrupting the realm.
-* Added a Blood Mage Prevalence game rule with Player Only, Extremely Rare, Rare, Uncommon, Default, and More Frequent settings. It scales AI initiation decisions and interactions, controls naturally generated and inherited Blood Mage retention, adjusts newborn prevalence, and keeps the existing behavior as the default.
-* Added a Blood Mage Appearance game rule with No Alteration, Eyes Only, and Eyes and Hair settings. Eyes and Hair preserves the existing transformation as the default, and all supported languages include the new rule text.
-* Updated Blood Mage healing for every CK3 1.19 age-related ailment: Heal Ailment now cures Withering Mind, Clouded Eyes, and Fragile Bones alongside Infirm, while Heal Deadly Ailment cures Faltering Heart.
-* Added a game rule that makes the Blood Cultist initiation ritual require a dedicated Blood Magic cult faith or additionally allow faiths with Witchcraft Accepted, with the strict dedicated-cult mode as the default, and completed the hidden cult identity doctrine's UI metadata.
-* Added a dedicated, icon-backed Blood Mages game-rule category and a Blood Mage Lore rule with Historical and A Game of Thrones settings for the optional AGOT religion companion.
-* Corrected mistranslated religious terminology, dynamic substitutions, and duplicated legacy text across the supported non-English localizations.
-* Renamed the religion game rule to remain accurate with optional native faith integrations, expanded the Cult of the Quintessence religion-family description, and refreshed religion localization across all supported languages.
-* Added a hidden Blood Magic identity doctrine and taught cult eligibility to recognize the shared `blood_magic_cult_faith` parameter, allowing optional religion integrations without static dependencies.
-* Retained all seven standalone Cult of Quintessence heritage faiths and added automatic conversion routing for Christian, Islamic, Jewish, Eastern, Sinitic, Ásatrú, and other unreformed origins, with a documented Christian Syncretism fallback.
-* Moved native-religion integration, including the Cult of the Crimson Ka, into the optional Blood Mages - Vanilla Religions submod so the main mod no longer overlays vanilla religions.
-* Moved the Blood Magic story panel, progression display, and lifecycle initialization into Blood Mages so compatibility submods only extend the base-owned panel.
-* Added exact Major/Minor Lifeforce stack counts and independently collapsible, scrollable Blood Golem and Crimson retinue rosters after the Blood Magic decisions, with compact empty states, atomic story creation across every Blood Mage acquisition path, missing-story reconciliation when Situations opens, automatic refresh, and a compact standard refresh control on each roster.
-* Added inline mechanic tooltips to the Lifeforce and Attunement status lines.
-* Condensed the five discipline counters into a two-row grid with their dedicated trait-track icons.
-* Fixed folded and empty character rosters retaining the expanded scroll-area height while preserving expandable content, and completed the refresh control's fade-out/fade-in cycle.
+- PR #95: CK3 1.20 baseline compat, layout modernization, AI agent rules.
+- PR #97: English-only localization source. Drop non-English stubs for auto-generation.
+- PR #98: Reorganize decision and AI agent rules.
+- PR #99: Trait definition syntax fixes, descriptor update.
+- PR #100: Pre-commit repository format checks, religion script fixes.
+- PR #101: Streamline agent rules documentation.
+- PR #102: Reykjavik duel decision to challenge occult hermit.
+- PR #103: Consolidate Blóðtrú faith with Ancestor Worship tenet.
+- PR #105: Rename religion family and core faith to Blóðtrú.
+- PR #106: Split East Asian branch into Xuédào (Chinese) and Ketsudō (Japanese) faiths.
+- PR #107: Standardize holy site modifiers. Add debug interactions.
+- PR #108: Repeatable minor lifedrain. Unrestricted manifest lifeforce.
+- PR #109: Lifeforce harvest from single combat duels.
+- PR #110: Agent token cost pre-commit check. Add caveman skill.
+- PR #113: Debug logging for blood magic operations.
+- PR #114: Blood Shrine building chain for holdings and domiciles.
+- PR #118: Keep self-cast blood magic in decisions tab.
+- PR #119: DRY triggers, illness/drain bugfixes, fix duchy building typo.
+- PR #120: Rename Crimson and Sanguine entities to Blood across mod.
+- PR #121: Consolidate self-magic decisions into Minor and Major hub events.
+- PR #122: Add Superior Lifeforce tier; require for Blood Golem creation.
+- PR #123: Major channel ritual to manifest congenital traits.
+- PR #124: Rebalance blood empowerment tracks. Standardize trait baselines.
+- PR #125: Rebalance blood mage tracks, cap opinion bonuses, normalize economic scaling.
+- PR #126: Superior blood magic rites, Egill duel integration, runtime error fixes.
+- PR #127: Allow Blood Knights to cast minor blood magic and seek power.
+- PR #128: Add historical Egill Skallagrímsson character bookmark.
+- PR #129: Redesign Blood Knight as standalone lifestyle trait (Slaughter, Vanguard, Resilience) with elevation bridge; rework healing to unified event flow; redistribute track XP.
+- PR #130: Restructure Blood Mage and Blood Knight trait tracks: 3 shared (Ancient, Benediction, Enlightenment), 2 Mage exclusive (Bloodline, Hematurgy), 2 Knight exclusive (Vanguard, Slaughter); align elevation conversion and XP sources.
 
-## 1.19 compatibility
+## Historical (pre-1.20)
+
 * Migrated religion definitions to the CK3 1.19 folder structure.
 * Updated duel, decision AI, trait, and character-template definitions for the 1.19 parser.
 * Replaced duplicate and inline localization keys with mod-scoped localization.

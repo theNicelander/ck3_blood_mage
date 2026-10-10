@@ -77,4 +77,19 @@ add_xp_enlightenment = {
         TRACK = enlightenment
         XP = 1
     }
+    bm_add_blood_knight_xp_effect = {
+        TRACK = enlightenment
+        XP = 1
+    }
+}
+
+add_shared_bm_bk_xp = {
+    bm_add_blood_mage_xp_effect = {
+        TRACK = $TRACK$
+        XP = $XP$
+    }
+    bm_add_blood_knight_xp_effect = {
+        TRACK = $TRACK$
+        XP = $XP$
+    }
 }

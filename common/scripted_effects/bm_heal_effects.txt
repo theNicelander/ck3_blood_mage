@@ -10,7 +10,7 @@ bm_heal_minor_cost_and_xp_effect = {
 		remove_character_modifier = lifeforce_modifier_minor
 		if = {
 			limit = { root = scope:recipient }
-			add_blood_knight_xp = { TRACK = resilience XP = 2 }
+			add_blood_knight_xp = { TRACK = enlightenment XP = 2 }
 		}
 		else = {
 			add_blood_knight_xp = { TRACK = vanguard XP = 1 }

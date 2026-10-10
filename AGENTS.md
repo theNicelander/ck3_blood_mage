@@ -33,6 +33,7 @@ Active rules: `ck3-scripting.md` (always on), `ck3-localization.md` (always on),
 - `docs-ai/architecture/`: one doc per subsystem (e.g. `blood-mage-story.md`), always describing the **current state of the mod** and nothing else: no history, changelog or decision log. **Read the matching doc before changing that part of the codebase, and update it in the same change so it stays true.** Add a doc when you introduce a subsystem, and delete or rewrite text that is no longer true. High-density technical specs (costs, requirements, XP, benefits, tables; zero roleplay fluff). See `docs-ai/architecture/AGENTS.md`.
 - `docs-ai/ideas/`: brainstorms, proposals, and roadmaps. Speculative; do not treat as current game state.
 - `docs-ai/branch-context/`: branch and PR working state, trade-offs, and decision records.
+- `CHANGELOG.md`: living changelog representing current branch net state since 1.20 (one line per PR merge, caveman style).
 - Religion uses the 1.20 layout `common/religion/{religion_family_types,religion_types,faith_types,rite_types,holy_site_types,doctrine_group_types,doctrine_types}`. Branches based on older `main` may still have `religions/`, `religion_families/`, `holy_sites/` and a bare `add_trait = lifestyle_blood_mage`. **Check which layout the branch has. Never mix them.**
 
 ## Naming
@@ -69,4 +70,39 @@ See `.agents/rules/ck3-localization.md` (english only, sibling keys, loc documen
 2. Smallest change that works. Check existing identifiers with `grep -rn`.
 3. Use the matching skill for the task (`add-blood-magic-decision`, `add-faith`, `add-trait-track`, `add-game-rule`).
 4. Update matching architecture doc in `docs-ai/architecture/` in the same change so it stays true to current state.
-5. Run `python3 scripts/check_repo.py`. State in the final summary what you could not verify.
+5. Update `CHANGELOG.md` and `AGENTS.md` changelog: living document, one line per PR merge, caveman style, net branch status only (fold superseded changes, drop reverts).
+6. Run `python3 scripts/check_repo.py`. State in the final summary what you could not verify.
+
+## Living changelog (branch net state since 1.20)
+
+Always reflects current branch state. Simple line per PR merge. Superseded changes folded, reverts dropped. Caveman style.
+
+- PR #95: CK3 1.20 baseline compat, layout modernization, AI agent rules.
+- PR #97: English-only localization source. Drop non-English stubs for auto-generation.
+- PR #98: Reorganize decision and AI agent rules.
+- PR #99: Trait definition syntax fixes, descriptor update.
+- PR #100: Pre-commit repository format checks, religion script fixes.
+- PR #101: Streamline agent rules documentation.
+- PR #102: Reykjavik duel decision to challenge occult hermit.
+- PR #103: Consolidate Blóðtrú faith with Ancestor Worship tenet.
+- PR #105: Rename religion family and core faith to Blóðtrú.
+- PR #106: Split East Asian branch into Xuédào (Chinese) and Ketsudō (Japanese) faiths.
+- PR #107: Standardize holy site modifiers. Add debug interactions.
+- PR #108: Repeatable minor lifedrain. Unrestricted manifest lifeforce.
+- PR #109: Lifeforce harvest from single combat duels.
+- PR #110: Agent token cost pre-commit check. Add caveman skill.
+- PR #113: Debug logging for blood magic operations.
+- PR #114: Blood Shrine building chain for holdings and domiciles.
+- PR #118: Keep self-cast blood magic in decisions tab.
+- PR #119: DRY triggers, illness/drain bugfixes, fix duchy building typo.
+- PR #120: Rename Crimson and Sanguine entities to Blood across mod.
+- PR #121: Consolidate self-magic decisions into Minor and Major hub events.
+- PR #122: Add Superior Lifeforce tier; require for Blood Golem creation.
+- PR #123: Major channel ritual to manifest congenital traits.
+- PR #124: Rebalance blood empowerment tracks. Standardize trait baselines.
+- PR #125: Rebalance blood mage tracks, cap opinion bonuses, normalize economic scaling.
+- PR #126: Superior blood magic rites, Egill duel integration, runtime error fixes.
+- PR #127: Allow Blood Knights to cast minor blood magic and seek power.
+- PR #128: Add historical Egill Skallagrímsson character bookmark.
+- PR #129: Redesign Blood Knight as standalone lifestyle trait (Slaughter, Vanguard, Resilience) with elevation bridge; rework healing to unified event flow; redistribute track XP.
+- PR #130: Restructure Blood Mage and Blood Knight trait tracks: 3 shared (Ancient, Benediction, Enlightenment), 2 Mage exclusive (Bloodline, Hematurgy), 2 Knight exclusive (Vanguard, Slaughter); align elevation conversion and XP sources.
