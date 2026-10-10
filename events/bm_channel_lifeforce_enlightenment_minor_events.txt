@@ -14,6 +14,10 @@ bm_channel_lifeforce_enlightenment_minor.001 = {
             modifier = diplomacy_lifeforce_modifier
             years = 5
         }
+        if = {
+            limit = { has_trait = lifestyle_blood_knight }
+            add_blood_knight_xp = { TRACK = resilience XP = 1 }
+        }
         trigger = { NOT = { has_character_modifier = diplomacy_lifeforce_modifier } }
         ai_chance = { base = 10 }
     }
@@ -24,6 +28,10 @@ bm_channel_lifeforce_enlightenment_minor.001 = {
         add_character_modifier = {
             modifier = martial_lifeforce_modifier
             years = 5
+        }
+        if = {
+            limit = { has_trait = lifestyle_blood_knight }
+            add_blood_knight_xp = { TRACK = vanguard XP = 1 }
         }
         trigger = { NOT = { has_character_modifier = martial_lifeforce_modifier } }
         ai_chance = { base = 10 }
@@ -36,6 +44,10 @@ bm_channel_lifeforce_enlightenment_minor.001 = {
             modifier = stewardship_lifeforce_modifier
             years = 5
         }
+        if = {
+            limit = { has_trait = lifestyle_blood_knight }
+            add_blood_knight_xp = { TRACK = resilience XP = 1 }
+        }
         trigger = { NOT = { has_character_modifier = stewardship_lifeforce_modifier } }
         ai_chance = { base = 10 }
     }
@@ -46,6 +58,10 @@ bm_channel_lifeforce_enlightenment_minor.001 = {
         add_character_modifier = {
             modifier = intrigue_lifeforce_modifier
             years = 5
+        }
+        if = {
+            limit = { has_trait = lifestyle_blood_knight }
+            add_blood_knight_xp = { TRACK = resilience XP = 1 }
         }
         trigger = { NOT = { has_character_modifier = intrigue_lifeforce_modifier } }
         ai_chance = { base = 10 }
@@ -58,6 +74,10 @@ bm_channel_lifeforce_enlightenment_minor.001 = {
             modifier = learning_lifeforce_modifier
             years = 5
         }
+        if = {
+            limit = { has_trait = lifestyle_blood_knight }
+            add_blood_knight_xp = { TRACK = resilience XP = 1 }
+        }
         trigger = { NOT = { has_character_modifier = learning_lifeforce_modifier } }
         ai_chance = { base = 10 }
     }
@@ -69,6 +89,10 @@ bm_channel_lifeforce_enlightenment_minor.001 = {
             modifier = exp_lifeforce_modifier
             years = 5
         }
+        if = {
+            limit = { has_trait = lifestyle_blood_knight }
+            add_blood_knight_xp = { TRACK = resilience XP = 1 }
+        }
         trigger = { NOT = { has_character_modifier = exp_lifeforce_modifier } }
         ai_chance = { base = 10 }
     }
@@ -79,6 +103,10 @@ bm_channel_lifeforce_enlightenment_minor.001 = {
         add_character_modifier = {
             modifier = prowess_lifeforce_modifier
             years = 5
+        }
+        if = {
+            limit = { has_trait = lifestyle_blood_knight }
+            add_blood_knight_xp = { TRACK = slaughter XP = 1 }
         }
         trigger = { NOT = { has_character_modifier = prowess_lifeforce_modifier } }
         ai_chance = { base = 10 }

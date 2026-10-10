@@ -8,7 +8,10 @@
     cost = { piety = heal_disease_minor_cost }
     is_shown = {
         scope:actor = {
-            has_trait = lifestyle_blood_mage
+            OR = {
+                has_trait = lifestyle_blood_mage
+                has_trait = lifestyle_blood_knight
+            }
         }
         scope:recipient = {
             OR = {
@@ -35,7 +38,18 @@
 
     on_accept = {
         debug_log = "BloodMageInteraction: heal_disease_minor | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
-        scope:actor = { benediction_magic_cast_effect_minor = yes }
+        if = {
+            limit = {
+                scope:actor = { has_trait = lifestyle_blood_mage }
+            }
+            scope:actor = { benediction_magic_cast_effect_minor = yes }
+        }
+        else = {
+            scope:actor = {
+                remove_character_modifier = lifeforce_modifier_minor
+                add_blood_knight_xp = { TRACK = resilience XP = 2 }
+            }
+        }
         scope:recipient = {
             remove_trait = wounded_1
             remove_trait = ill

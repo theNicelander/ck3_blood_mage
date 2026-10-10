@@ -38,3 +38,23 @@ seek_power_decision_wanderer = {
     ai_check_interval = 3
     ai_potential = { always = yes }
 }
+
+seek_power_decision_blood_knight = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+
+    decision_group_type = bm_decision_group
+
+    is_shown = {
+        has_trait = lifestyle_blood_knight
+        NOT = { has_trait = lifestyle_blood_mage }
+    }
+    cooldown = { years = 1 }
+    effect = {
+        debug_log = "BloodKnightDecision: seek_power"
+        debug_log_scopes = yes
+        trigger_event = { id = seek_power.001 }
+    }
+
+    ai_check_interval = 3
+    ai_will_do = { base = 100 }
+}

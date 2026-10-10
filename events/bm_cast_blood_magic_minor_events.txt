@@ -22,7 +22,17 @@ bm_cast_blood_magic_minor.001 = {
 		}
 		add_piety = -75
 		remove_character_modifier = lifeforce_modifier_minor
-		add_xp_enlightenment = yes
+		if = {
+			limit = { has_trait = lifestyle_blood_mage }
+			add_xp_enlightenment = yes
+		}
+		if = {
+			limit = {
+				has_trait = lifestyle_blood_knight
+				NOT = { has_trait = lifestyle_blood_mage }
+			}
+			add_blood_knight_xp = { TRACK = resilience XP = 1 }
+		}
 		custom_tooltip = channel_lifeforce_enlightenment_minor.effects_list
 		trigger_event = { id = bm_channel_lifeforce_enlightenment_minor.001 }
 		ai_chance = {
@@ -61,6 +71,9 @@ bm_cast_blood_magic_minor.001 = {
 					has_character_modifier = bloodline_attuned
 					has_character_modifier = benediction_attuned
 					has_character_modifier = hematurgy_attuned
+					has_character_modifier = vanguard_attuned
+					has_character_modifier = slaughter_attuned
+					has_character_modifier = resilience_attuned
 				}
 			}
 		}

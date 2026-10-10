@@ -16,7 +16,10 @@ bm_attune_lifeforce.001 = {
         add_character_modifier = {
             modifier = ancient_attuned
         }
-        trigger = { NOT = { has_character_modifier = ancient_attuned } }
+        trigger = {
+            has_trait = lifestyle_blood_mage
+            NOT = { has_character_modifier = ancient_attuned }
+        }
         ai_chance = {
             base = 20
             ai_chance_scale_based_on_xp_in_track = { TRACK = ancient}
@@ -29,7 +32,10 @@ bm_attune_lifeforce.001 = {
         add_character_modifier = {
             modifier = enlightenment_attuned
         }
-        trigger = { NOT = { has_character_modifier = enlightenment_attuned } }
+        trigger = {
+            has_trait = lifestyle_blood_mage
+            NOT = { has_character_modifier = enlightenment_attuned }
+        }
         ai_chance = {
             base = 20
             ai_chance_scale_based_on_xp_in_track = { TRACK = enlightenment}
@@ -42,7 +48,10 @@ bm_attune_lifeforce.001 = {
         add_character_modifier = {
             modifier = bloodline_attuned
         }
-        trigger = { NOT = { has_character_modifier = bloodline_attuned } }
+        trigger = {
+            has_trait = lifestyle_blood_mage
+            NOT = { has_character_modifier = bloodline_attuned }
+        }
         ai_chance = {
             base = 50
             ai_chance_scale_based_on_xp_in_track = { TRACK = bloodline}
@@ -55,7 +64,10 @@ bm_attune_lifeforce.001 = {
         add_character_modifier = {
             modifier = benediction_attuned
         }
-        trigger = { NOT = { has_character_modifier = benediction_attuned } }
+        trigger = {
+            has_trait = lifestyle_blood_mage
+            NOT = { has_character_modifier = benediction_attuned }
+        }
         ai_chance = {
             base = 50
             ai_chance_scale_based_on_xp_in_track = { TRACK = benediction}
@@ -68,10 +80,61 @@ bm_attune_lifeforce.001 = {
         add_character_modifier = {
             modifier = hematurgy_attuned
         }
-        trigger = { NOT = { has_character_modifier = hematurgy_attuned } }
+        trigger = {
+            has_trait = lifestyle_blood_mage
+            NOT = { has_character_modifier = hematurgy_attuned }
+        }
         ai_chance = {
             base = 10
             ai_chance_scale_based_on_xp_in_track = { TRACK = hematurgy}
+        }
+    }
+
+    # Chance to get Vanguard trait xp per year
+    option = {
+        name = bm_attune_lifeforce.001.vanguard
+        add_character_modifier = {
+            modifier = vanguard_attuned
+        }
+        trigger = {
+            has_trait = lifestyle_blood_knight
+            NOT = { has_character_modifier = vanguard_attuned }
+        }
+        ai_chance = {
+            base = 30
+            ai_chance_scale_based_on_xp_in_blood_knight_track = { TRACK = vanguard }
+        }
+    }
+
+    # Chance to get Slaughter trait xp per year
+    option = {
+        name = bm_attune_lifeforce.001.slaughter
+        add_character_modifier = {
+            modifier = slaughter_attuned
+        }
+        trigger = {
+            has_trait = lifestyle_blood_knight
+            NOT = { has_character_modifier = slaughter_attuned }
+        }
+        ai_chance = {
+            base = 30
+            ai_chance_scale_based_on_xp_in_blood_knight_track = { TRACK = slaughter }
+        }
+    }
+
+    # Chance to get Resilience trait xp per year
+    option = {
+        name = bm_attune_lifeforce.001.resilience
+        add_character_modifier = {
+            modifier = resilience_attuned
+        }
+        trigger = {
+            has_trait = lifestyle_blood_knight
+            NOT = { has_character_modifier = resilience_attuned }
+        }
+        ai_chance = {
+            base = 30
+            ai_chance_scale_based_on_xp_in_blood_knight_track = { TRACK = resilience }
         }
     }
 

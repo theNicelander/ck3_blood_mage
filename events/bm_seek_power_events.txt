@@ -58,6 +58,10 @@ seek_power.002 = {
             title = seek_power.toast.stag
             left_icon = this
             add_character_modifier = { modifier = lifeforce_modifier_minor }
+            if = {
+                limit = { has_trait = lifestyle_blood_knight }
+                add_blood_knight_xp = { TRACK = slaughter XP = 1 }
+            }
         }
         ai_chance = { base = 50 }
     }
@@ -92,6 +96,9 @@ seek_power.003 = {
     # Lifedrain
     option = {
         name = seek_power.003.a
+        trigger = {
+            has_trait = lifestyle_blood_mage
+        }
         ai_chance = { base = 50 }
         duel = {
             skills = { intrigue prowess }
@@ -148,8 +155,55 @@ seek_power.003 = {
         trigger_event = bm_trait_drain.001
         remove_character_modifier = lifeforce_modifier_major
         trigger = {
+            has_trait = lifestyle_blood_mage
             has_character_modifier = lifeforce_modifier_major
             bm_can_drain_traits_from_target_trigger = yes
+        }
+    }
+
+    # Blood Knight option: Martial contest
+    option = {
+        name = seek_power.003.knight
+        trigger = {
+            has_trait = lifestyle_blood_knight
+            NOT = { has_trait = lifestyle_blood_mage }
+        }
+        ai_chance = { base = 50 }
+        duel = {
+            skill = prowess
+            target = scope:recipient
+            25 = {
+                desc = seek_power.duel.knight_win
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 2
+                }
+                send_interface_toast = {
+                    title = seek_power.toast.knight_win
+                    left_icon = this
+                    right_icon = scope:recipient
+                    add_character_modifier = { modifier = lifeforce_modifier_minor }
+                    add_blood_knight_xp = { TRACK = slaughter XP = 2 }
+                }
+            }
+            15 = {
+                desc = seek_power.duel.knight_spar
+                send_interface_toast = {
+                    title = seek_power.toast.knight_spar
+                    left_icon = this
+                    right_icon = scope:recipient
+                    add_blood_knight_xp = { TRACK = vanguard XP = 1 }
+                }
+            }
+            10 = {
+                desc = seek_power.duel.escape
+                send_interface_toast = {
+                    title = seek_power.toast.escape
+                    left_icon = this
+                    right_icon = scope:recipient
+                    add_stress = 5
+                }
+            }
         }
     }
 
@@ -214,8 +268,15 @@ seek_power.004 = {
         send_interface_toast = {
             title = seek_power.toast.ancient_lifeforce
             left_icon = this
-            add_character_modifier = { modifier = lifeforce_modifier_major }
-            hematurgy_magic_cast_effect_minor = yes
+            if = {
+                limit = { has_trait = lifestyle_blood_mage }
+                add_character_modifier = { modifier = lifeforce_modifier_major }
+                hematurgy_magic_cast_effect_minor = yes
+            }
+            else = {
+                add_character_modifier = { modifier = lifeforce_modifier_minor }
+                add_blood_knight_xp = { TRACK = resilience XP = 2 }
+            }
         }
         ai_chance = { base = 50 }
     }

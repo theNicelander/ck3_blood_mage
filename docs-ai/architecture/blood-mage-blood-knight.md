@@ -13,11 +13,13 @@ Living technical specification for the Blood Knight subsystem.
     - **Major Lifeforce:** Consumes `lifeforce_modifier_major`, awards **+10 XP** to all 3 tracks (`vanguard`, `slaughter`, `resilience`).
     - **Minor Lifeforce:** Consumes `lifeforce_modifier_minor`, awards **+5 XP** to all 3 tracks (`vanguard`, `slaughter`, `resilience`).
     - **Back out:** Zero cost, cancels action.
-  - **Battle Victory (`on_combat_end_winner`):** Side knights gain +5 XP (`vanguard`); side commanders gain +6 XP (`vanguard`).
+  - **Battle Victory (`on_combat_end_winner`):** Side knights gain +5 XP (`vanguard`); side commanders gain +6 XP (`vanguard`). Both have a 33% chance to harvest 1 Minor Lifeforce from the battlefield.
   - **Battle Defeat (`on_combat_end_loser`):** Surviving side knights and commanders gain +1 XP (`vanguard`) and +1 XP (`resilience`).
-  - **Duel Victory (`on_death` / single combat):** Slaying opponent in single combat grants victor +6 XP (`slaughter`).
+  - **Duel Victory (`on_death` / single combat):** Slaying opponent in single combat grants victor +6 XP (`slaughter`) and awards 1 Minor Lifeforce (if not already holding `lifestyle_blood_mage`).
   - **Tournament Participation/Victory (`on_travel_activity_complete`):** Completing a tournament activity grants +3 XP (`slaughter`).
-  - **Yearly Survival Pulse (`blood_mage_yearly_events.004`):** Passive +1 XP per year in `resilience`.
+  - **Yearly Survival Pulse (`blood_mage_yearly_events.004`):** Passive +1 XP per year in `resilience`. Active knight attunement (`vanguard_attuned`, `slaughter_attuned`, `resilience_attuned`) grants a 50% roll for +1 additional XP in that track.
+  - **Minor Blood Magic Channeling (`bm_channel_lifeforce_enlightenment_minor`):** Spending Minor Lifeforce to boost Martial grants +1 `vanguard` XP, Prowess grants +1 `slaughter` XP, and all other boosts grant +1 `resilience` XP.
+  - **Minor Restorative Magic (`heal_disease_minor`):** Blood Knights can expend Minor Lifeforce to heal minor wounds and illnesses on self or courtiers, gaining +2 `resilience` XP.
 
 ### Tracks Master Table
 
@@ -25,9 +27,9 @@ Each track has 10 tiers (10, 20, 30, ..., 100 XP). Every tier across all tracks 
 
 | Track | Theme & XP Sources | Tier Progression | Cap Total (Rank 10) |
 | --- | --- | --- | --- |
-| **`vanguard`** | Army battle command & participation | `advantage = 1` per tier<br>`martial = 1` every 2 tiers (20, 40, 60, 80, 100)<br>`martial_per_prestige_level = 1` at tier 50 & 100<br>`health = 0.2`<br>`life_expectancy = 1`<br>`monthly_prestige = 0.1` | +10 Advantage<br>+5 Martial<br>+2 Martial per Prestige level<br>+2.0 Health<br>+10 Life Expectancy<br>+1.0 Monthly Prestige |
-| **`slaughter`** | Duels & tournament contests | `prowess = 2` per tier<br>`prowess_per_prestige_level = 1` at tier 50 & 100<br>`health = 0.2`<br>`life_expectancy = 1`<br>`monthly_prestige = 0.1` | +20 Prowess (Net +15 with base)<br>+2 Prowess per Prestige level<br>+2.0 Health<br>+10 Life Expectancy<br>+1.0 Monthly Prestige |
-| **`resilience`** | Yearly survival & battle recovery | `years_of_fertility = 1`<br>`epidemic_resistance = 1`<br>`health = 0.2`<br>`life_expectancy = 1`<br>`monthly_prestige = 0.1` | +10 Years of Fertility<br>+10 Epidemic Resistance<br>+2.0 Health<br>+10 Life Expectancy<br>+1.0 Monthly Prestige |
+| **`vanguard`** | Army battle command, participation & martial channeling | `advantage = 1` per tier<br>`martial = 1` every 2 tiers (20, 40, 60, 80, 100)<br>`martial_per_prestige_level = 1` at tier 50 & 100<br>`health = 0.2`<br>`life_expectancy = 1`<br>`monthly_prestige = 0.1` | +10 Advantage<br>+5 Martial<br>+2 Martial per Prestige level<br>+2.0 Health<br>+10 Life Expectancy<br>+1.0 Monthly Prestige |
+| **`slaughter`** | Duels, tournament contests & prowess channeling | `prowess = 2` per tier<br>`prowess_per_prestige_level = 1` at tier 50 & 100<br>`health = 0.2`<br>`life_expectancy = 1`<br>`monthly_prestige = 0.1` | +20 Prowess (Net +15 with base)<br>+2 Prowess per Prestige level<br>+2.0 Health<br>+10 Life Expectancy<br>+1.0 Monthly Prestige |
+| **`resilience`** | Yearly survival, battle recovery, minor healing & channeling | `years_of_fertility = 1`<br>`epidemic_resistance = 1`<br>`health = 0.2`<br>`life_expectancy = 1`<br>`monthly_prestige = 0.1` | +10 Years of Fertility<br>+10 Epidemic Resistance<br>+2.0 Health<br>+10 Life Expectancy<br>+1.0 Monthly Prestige |
 
 Combined cap across all 3 tracks (30 tiers total):
 - **Health:** +6.0 total (Net **+5.0** after -1 base penalty)
@@ -36,6 +38,17 @@ Combined cap across all 3 tracks (30 tiers total):
 
 ## Key Mechanics
 
+- **Minor Blood Magic & Lifeforce Decisions:**
+  - `bm_cast_blood_magic_minor_decision`: Shown to characters holding `lifestyle_blood_mage` OR `lifestyle_blood_knight`. Requires Minor Lifeforce.
+  - `bm_manifest_lifeforce_decision`: Available to Blood Knights (Piety rank >= 2, 100 Piety). Learning duel awards Minor Lifeforce on success and +3 `resilience` XP.
+  - `seek_power_decision_blood_knight`: Pure Blood Knights (`NOT = { has_trait = lifestyle_blood_mage }`) can seek power in the wilderness once per year (1-year cooldown). In the encounter chain, Blood Knights can harvest Minor Lifeforce from beasts and ancient sources, or test martial prowess against wanderers (+slaughter/+vanguard XP). Blood Knights are strictly blocked from lifedraining and trait-draining travelers.
+  - Channel Minor Lifeforce grants 5-year attribute enhancements and awards Blood Knight track XP without granting the Blood Mage trait.
+  - Lifeforce Attunement offers parallel martial attunements: `vanguard_attuned` (+2 Advantage, +5% Knight Effectiveness), `slaughter_attuned` (+2 Prowess, +10% Dread Gain), and `resilience_attuned` (+0.25 Health, +2 Epidemic Resistance).
+  - `heal_disease_minor`: Available to Blood Knights, expending Minor Lifeforce to cure `wounded_1`, `ill`, `scarred`, `lovers_pox`, and `gout_ridden` on self or courtiers (+2 `resilience` XP).
+- **Trait Hierarchy & Safeguards:**
+  - `lifestyle_blood_mage` is the superior trait and takes strict precedence. Characters holding both traits see Blood Mage decision variants and full ritual options.
+  - Foundational scripted effects (`bm_add_blood_mage_xp_effect`, `bm_add_blood_empowerment_xp_effect`, `bm_add_blood_knight_xp_effect`) are strictly guarded with `has_trait` checks, preventing non-mages from acquiring the Blood Mage trait via track XP calls.
+  - Blood Knights are strictly barred from high-tier rites: cannot lifedrain prisoners/courtiers, cannot trait-drain, cannot cast Major/Superior Blood Magic, and cannot forge blood golems.
 - **Interactions (`bm_blood_knight_interactions.txt`):**
   - `make_blood_knight_interaction`: Bestows base trait at 0 XP. Actor must hold `lifestyle_blood_mage` and Major Lifeforce. Costs 100 Piety.
   - `empower_blood_knight_interaction`: Direct popup modal allowing choice between Major Lifeforce (+10 XP to all tracks), Minor Lifeforce (+5 XP to all tracks), or backing out.

@@ -37,6 +37,10 @@ bm_on_character_death_duel = {
 			}
 			scope:killer = {
 				add_blood_knight_xp = { TRACK = slaughter XP = 6 }
+				if = {
+					limit = { NOT = { has_trait = lifestyle_blood_mage } }
+					add_character_modifier = { modifier = lifeforce_modifier_minor }
+				}
 				send_interface_toast = {
 					type = event_toast_effect_good
 					title = bm_duel_kill_blood_knight_toast

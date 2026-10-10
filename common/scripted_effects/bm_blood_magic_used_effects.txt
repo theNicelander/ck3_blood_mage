@@ -83,4 +83,16 @@ remove_all_attunement = {
         limit = { has_character_modifier = hematurgy_attuned }
         remove_character_modifier = hematurgy_attuned
     }
+    if = {
+        limit = { has_character_modifier = vanguard_attuned }
+        remove_character_modifier = vanguard_attuned
+    }
+    if = {
+        limit = { has_character_modifier = slaughter_attuned }
+        remove_character_modifier = slaughter_attuned
+    }
+    if = {
+        limit = { has_character_modifier = resilience_attuned }
+        remove_character_modifier = resilience_attuned
+    }
 }

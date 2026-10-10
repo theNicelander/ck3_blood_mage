@@ -6,7 +6,10 @@
 	cooldown = { years = 1 }
 
 	is_shown = {
-		has_trait = lifestyle_blood_mage
+		OR = {
+			has_trait = lifestyle_blood_mage
+			has_trait = lifestyle_blood_knight
+		}
 	}
 	is_valid = {
 		piety_level >= 2
@@ -15,15 +18,28 @@
 	effect = {
 		debug_log = "BloodMageDecision: manifest_lifeforce"
 		debug_log_scopes = yes
-		add_xp_bm_dynamic = {
-			TRACK = enlightenment
-			XP = 5
+		if = {
+			limit = { has_trait = lifestyle_blood_mage }
+			add_xp_bm_dynamic = {
+				TRACK = enlightenment
+				XP = 5
+			}
+		}
+		if = {
+			limit = {
+				has_trait = lifestyle_blood_knight
+				NOT = { has_trait = lifestyle_blood_mage }
+			}
+			add_blood_knight_xp = {
+				TRACK = resilience
+				XP = 3
+			}
 		}
 		duel = {
 			skill = learning
 			value = 0
 
-			# Success - major lifeforce
+			# Success - major lifeforce for mage, minor for knight
 			15 = {
 				desc = manifest_lifeforce_major_success_tt
 				compare_modifier = {
@@ -33,7 +49,13 @@
 				send_interface_toast = {
 					title = manifest_lifeforce_major_success_tt
 					left_icon = root
-					add_character_modifier = { modifier = lifeforce_modifier_major }
+					if = {
+						limit = { has_trait = lifestyle_blood_mage }
+						add_character_modifier = { modifier = lifeforce_modifier_major }
+					}
+					else = {
+						add_character_modifier = { modifier = lifeforce_modifier_minor }
+					}
 				}
 			}
 

@@ -50,8 +50,10 @@
   NOT_empower_blood_knight_interaction_requirement: "You need either [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] or [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to empower a Blood Knight."
 
   bm_duel_kill_blood_knight_toast: "Blood Knight Bloodbath"
-  bm_duel_kill_blood_knight_tt: "Gained #P +6#! Experience in the #V Slaughter#! track for victory in single combat"
+  bm_duel_kill_blood_knight_tt: "Gained #P +6#! Experience in the #V Slaughter#! track and harvested [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] for victory in single combat"
 
+  bm_battle_victory_lifeforce_toast: "Battlefield Blood Harvest"
+  bm_battle_victory_lifeforce_tt: "Harvested [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] from fallen foes on the victorious battlefield"
 
   # Tooltips
   IN_COURT_OR_IMPRISONED: "Can only heal yourself or your courtiers"

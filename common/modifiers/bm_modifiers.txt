@@ -58,6 +58,21 @@ hematurgy_attuned = {
     icon = blood_magic
     enemy_hostile_scheme_success_chance_add = -10
 }
+vanguard_attuned = {
+    icon = blood_magic
+    advantage = 2
+    knight_effectiveness_mult = 0.05
+}
+slaughter_attuned = {
+    icon = blood_magic
+    prowess = 2
+    dread_gain_mult = 0.1
+}
+resilience_attuned = {
+    icon = blood_magic
+    health = 0.25
+    epidemic_resistance = 2
+}
 
 # Attempted lifedrain
 trait_drain_attempted = {
