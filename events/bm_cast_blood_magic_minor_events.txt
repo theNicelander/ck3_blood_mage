@@ -79,6 +79,39 @@ bm_cast_blood_magic_minor.001 = {
 		}
 	}
 
+	# Commune with Bloodline
+	option = {
+		name = bm_cast_blood_magic_minor.001.commune_bloodline
+		trigger = {
+			has_trait = lifestyle_blood_mage
+			exists = house
+			piety >= 50
+			NOT = { has_character_flag = bm_commune_bloodline_cooldown }
+		}
+		show_as_unavailable = {
+			has_trait = lifestyle_blood_mage
+			exists = house
+		}
+		add_piety = -50
+		add_character_flag = {
+			flag = bm_commune_bloodline_cooldown
+			years = 3
+		}
+		bloodline_magic_cast_effect_minor = yes
+		add_character_modifier = {
+			modifier = bm_bloodline_communion
+			years = 5
+		}
+		custom_tooltip = bm_commune_bloodline.effects_list
+		ai_chance = {
+			base = 25
+			modifier = {
+				add = -100
+				health <= fine_health
+			}
+		}
+	}
+
 	# Purge Bodily Impurities
 	option = {
 		name = bm_cast_blood_magic_minor.001.purge
@@ -102,19 +135,50 @@ bm_cast_blood_magic_minor.001 = {
 
 		if = {
 			limit = { has_trait = lifestyle_blood_mage }
-			add_xp_bm_dynamic = {
-				TRACK = benediction
-				XP = 2
+			if = {
+				limit = {
+					OR = {
+						has_trait = beauty_bad
+						has_trait = intellect_bad
+						has_trait = physique_bad
+						has_trait = dull
+						has_trait = weak
+					}
+				}
+				add_xp_bm_dynamic = {
+					TRACK = bloodline
+					XP = 2
+				}
+			}
+			else = {
+				add_xp_bm_dynamic = {
+					TRACK = benediction
+					XP = 2
+				}
 			}
 		}
 		else = {
-			add_blood_knight_xp = {
-				TRACK = benediction
-				XP = 2
+			if = {
+				limit = {
+					OR = {
+						has_trait = physique_bad
+						has_trait = weak
+					}
+				}
+				add_blood_knight_xp = {
+					TRACK = resilience
+					XP = 2
+				}
 			}
-			add_blood_knight_xp = {
-				TRACK = resilience
-				XP = 1
+			else = {
+				add_blood_knight_xp = {
+					TRACK = benediction
+					XP = 1
+				}
+				add_blood_knight_xp = {
+					TRACK = resilience
+					XP = 1
+				}
 			}
 		}
 

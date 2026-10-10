@@ -27,7 +27,29 @@
                 opinion = 50
             }
         }
-        scope:actor = { benediction_magic_cast_effect_major = yes }
+        scope:actor = {
+            remove_character_modifier = lifeforce_modifier_major
+            if = {
+                limit = {
+                    scope:recipient = {
+                        OR = {
+                            is_child_of = scope:actor
+                            dynasty ?= scope:actor.dynasty
+                        }
+                    }
+                }
+                add_xp_bm_dynamic = {
+                    TRACK = bloodline
+                    XP = 5
+                }
+            }
+            else = {
+                add_xp_bm_dynamic = {
+                    TRACK = bloodline
+                    XP = 4
+                }
+            }
+        }
     }
 
     # AI

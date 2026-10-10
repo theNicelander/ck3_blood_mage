@@ -10,12 +10,13 @@
 | Interaction ID | Target | Cost & Requirements | XP Gain | Mechanical Effect |
 | --- | --- | --- | --- | --- |
 | `ask_for_blood_magic_interaction` | Friend, lover, soulmate, liege mage | Piety. Actor lacks trait, recipient has it. | None | Requests blood magic. Recipient grants via `bm_become_blood_mage_effect`. |
-| `grant_blood_magic_interaction` | Courtier, family, spouse | Piety + Major Lifeforce. Recipient non-mage. | +2 benediction | Bestows `lifestyle_blood_mage` onto target via `bm_become_blood_mage_effect`. |
+| `grant_blood_magic_interaction` | Courtier, family, spouse | Piety + Major Lifeforce. Recipient non-mage. | +4 bloodline (+5 if child/kin) | Bestows `lifestyle_blood_mage` onto target via `bm_become_blood_mage_effect`. |
+| `bm_bless_bloodline_interaction` | Child, dynasty kin | 35 Piety + Minor Lifeforce. Recipient not blessed. | +2 bloodline | Grants `bm_blessed_blood_modifier` (+1 all stats, +10% fertility, +0.25 health) for 10 years. |
 | `bm_get_blood_magic_from_prisoner_interaction` | Imprisoned blood mage | Piety. Actor non-mage, target captive mage. | None | Forcibly steals blood magic. Prisoner drained/maimed. |
 | `lifedrain_prisoner_interaction` | Dungeon prisoner | Piety (`lifedrain_piety_cost_minor`). | +1 hematurgy | Kills prisoner (`death_lifedrain_reason`). Gives `lifeforce_modifier_minor`. |
 | `lifedrain_courtier_event_interaction` | Courtier | Piety (`lifedrain_piety_cost_minor`). | +1 hematurgy | Drains courtier. Gives `lifeforce_modifier_minor`. Target gets `lifedrained_modifier` (health/stat hit). |
 | `trait_drain_prisoner_event_interaction` | Dungeon prisoner | Piety. Target has congenital trait actor lacks. | +2 hematurgy | Duel (Prowess/Learning). Win: steals congenital trait. Target drained. |
-| `heal_disease_minor` | Courtier, family, self | Minor Lifeforce. Target has minor ailment. | +1 benediction | Cures minor disease, wound, or illness. |
+| `heal_disease_minor` | Courtier, family, self | Minor Lifeforce. Target has minor ailment. | +2 benediction (Mage) / +2 resilience (Knight self) / +1 vanguard & +1 benediction (Knight ally) | Cures minor disease, wound, or illness. |
 | `heal_disease_major` | Courtier, family, self | Major Lifeforce. Target has severe illness. | +2 benediction | Cures major illnesses, cancers, severe wounds. |
 | `heal_disease_benediction` | Courtier, family, self | Major Lifeforce. Req: 50 Benediction XP. | +3 benediction | Cures permanent ailments (blind, maimed, infirm, lunatic_1, etc.). |
 | `make_blood_knight_interaction` | Knight, courtier, or self | 100 Piety + Major Lifeforce. | +2 benediction | Bestows `lifestyle_blood_knight` trait. |
@@ -43,6 +44,7 @@
 | Cure Illness (minor, major, benediction) | `common/character_interactions/bm_cure_illness_interactions.txt` |
 | Blood Knight (Make & Empower) | `common/character_interactions/bm_blood_knight_interactions.txt` |
 | Grant Blood Magic Trait | `common/character_interactions/bm_grant_blood_magic.txt` |
+| Bless Kin's Blood | `common/character_interactions/bm_bless_bloodline.txt` |
 | Grant Lifeforce Stacks | `common/character_interactions/bm_grant_lifeforce.txt` |
 | Debug interactions | `common/character_interactions/bm_debug_interactions.txt` |
 

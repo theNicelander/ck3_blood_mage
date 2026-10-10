@@ -10,33 +10,13 @@ bm_on_character_death_duel = {
 			limit = {
 				exists = scope:killer
 				scope:killer = {
-					has_trait = lifestyle_blood_mage
-					has_variable = engaged_in_single_combat
-				}
-				has_variable = engaged_in_single_combat
-			}
-			scope:killer = {
-				hematurgy_magic_cast_effect_major = yes
-				send_interface_toast = {
-					type = event_toast_effect_good
-					title = bm_duel_kill_lifeforce_toast
-					left_icon = scope:killer
-					right_icon = root
-					custom_tooltip = bm_duel_kill_lifeforce_tt
-				}
-			}
-		}
-		if = {
-			limit = {
-				exists = scope:killer
-				scope:killer = {
 					has_trait = lifestyle_blood_knight
 					has_variable = engaged_in_single_combat
 				}
 				has_variable = engaged_in_single_combat
 			}
 			scope:killer = {
-				add_blood_knight_xp = { TRACK = slaughter XP = 6 }
+				add_blood_knight_xp = { TRACK = slaughter XP = 5 }
 				if = {
 					limit = { NOT = { has_trait = lifestyle_blood_mage } }
 					add_character_modifier = { modifier = lifeforce_modifier_minor }

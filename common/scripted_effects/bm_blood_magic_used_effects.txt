@@ -54,6 +54,13 @@ benediction_magic_cast_effect_minor = {
         XP = 2
     }
 }
+bloodline_magic_cast_effect_minor = {
+    remove_character_modifier = lifeforce_modifier_minor
+    add_xp_bm_dynamic = {
+        TRACK = bloodline
+        XP = 2
+    }
+}
 bloodline_magic_cast_effect_major = {
     remove_character_modifier = lifeforce_modifier_major
     add_xp_bm_dynamic = {

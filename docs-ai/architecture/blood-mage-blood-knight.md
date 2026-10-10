@@ -11,15 +11,16 @@ Living technical specification for the Blood Knight subsystem.
   - **Geyser Duel Initiation (`bm_geyser_duel.0001`):** Travel to Reykjavik or Tsushima and confront Egill Skallagrímsson via `bm_blood_cultist_become_blood_mage_decision` or `bm_enhance_blood_ritual_decision` (requires Piety or Prestige level >= 2 to open decision). Choosing the Prowess duel requires Prestige level >= 2, costs 1 Fame level (`add_prestige_level = -1`), requires not being a Blood Mage, and bestows `lifestyle_blood_knight` upon victory.
 - **Elevation to Blood Mage:**
   - Blood Knights can take the decision `bm_elevate_to_blood_mage_decision` to attempt a ritual elevation into a full Blood Mage. During the trial, the character undergoes a Learning or Prowess test. Upon success, `lifestyle_blood_knight` is removed, `lifestyle_blood_mage` is gained, and all accumulated `ancient` and `benediction` track XP carries over loss-free.
-- **Universal rank progression:** Every trait rank across martial tracks awards `health = 0.2`, `life_expectancy = 1`, and `monthly_prestige = 0.1`. The shared `ancient` and `benediction` tracks award their standard Blood Mage benefits.
+- **Universal rank progression:** Every trait rank across all tracks awards exact stat parity with Blood Mage: `health = 0.1`, `life_expectancy = 2`, `years_of_fertility = 1`, and `epidemic_resistance = 1`, alongside `monthly_prestige = 0.1` and track-specific martial modifiers.
 - **How to level:**
   - **Empower Blood Knight Interaction (`empower_blood_knight_interaction`):** Direct interaction popup from a Blood Mage (Major Lifeforce: +10 XP to martial tracks; Minor: +5 XP).
-  - **Battle Victory / Defeat:** Gains `vanguard` and `resilience` XP.
-  - **Duel Victory:** Victor gains +6 XP (`slaughter`) and awards 1 Minor Lifeforce.
+  - **Battle Victory / Defeat:** Gains `vanguard` (+5 commander / +4 knight; 33% chance Minor Lifeforce) and `resilience` (+2 on surviving defeat).
+  - **Duel Victory:** Victor gains +5 XP (`slaughter`) and awards 1 Minor Lifeforce (strictly exclusive to Blood Knights).
   - **Tournament Participation/Victory:** Completing a tournament awards +3 XP (`slaughter`).
+  - **Manifest Lifeforce (`bm_manifest_lifeforce_decision`):** Blood Knights undergo a Prowess duel to stoke their blood, granting +3 XP (`resilience`) and Minor Lifeforce.
   - **Yearly Pulse (`blood_mage_yearly_events.004`):** Passive +1 XP in `resilience` and +1 XP in `ancient`. Attunement checks for `vanguard`, `slaughter`, `resilience`, `ancient`, and `benediction`.
-  - **Minor Restorative Magic (`heal_disease_minor`):** Blood Knights can heal themselves and others (courtiers, liege, family, spouse, knights) and cleanse negative congenital flaws (`beauty_bad`, `intellect_bad`, `physique_bad`, `dull`, `weak`), gaining +2 `benediction` XP and +1 `resilience` XP.
-  - **Minor Blood Magic Channeling (`bm_cast_blood_magic_minor_decision`):** Blood Knights can channel minor lifeforce or purge bodily impurities.
+  - **Minor Restorative Magic (`heal_disease_minor`):** Healing self grants +2 XP (`resilience`); healing comrades, fellow knights, or liege grants +1 XP (`vanguard`) and +1 XP (`benediction`).
+  - **Minor Blood Magic Channeling (`bm_cast_blood_magic_minor_decision`):** Blood Knights can channel minor lifeforce or purge bodily frailty (+2 `resilience` XP).
 
 ### Tracks Master Table
 

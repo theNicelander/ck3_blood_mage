@@ -21,82 +21,131 @@
 		if = {
 			limit = { has_trait = lifestyle_blood_mage }
 			add_xp_bm_dynamic = {
-				TRACK = enlightenment
-				XP = 5
+				TRACK = ancient
+				XP = 3
+			}
+			duel = {
+				skill = learning
+				value = 0
+
+				# Success - major lifeforce for mage
+				15 = {
+					desc = manifest_lifeforce_major_success_tt
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = 1
+					}
+					send_interface_toast = {
+						title = manifest_lifeforce_major_success_tt
+						left_icon = root
+						add_character_modifier = { modifier = lifeforce_modifier_major }
+					}
+				}
+
+				# Partial success - minor lifeforce
+				40 = {
+					desc = manifest_lifeforce_minor_success_tt
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = 2
+					}
+					send_interface_toast = {
+						title = manifest_lifeforce_minor_success_tt
+						left_icon = root
+						add_character_modifier = { modifier = lifeforce_modifier_minor }
+					}
+				}
+
+				# Failure - nothing happens
+				40 = {
+					desc = manifest_lifeforce_minor_failure_tt
+					send_interface_toast = {
+						title = manifest_lifeforce_minor_failure_tt
+						left_icon = root
+					}
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = -0.5
+					}
+				}
+
+				# Critical failure
+				15 = {
+					desc = manifest_lifeforce_major_failure_tt
+					send_interface_toast = {
+						title = manifest_lifeforce_major_failure_tt
+						left_icon = root
+						temporary_negative_lifeforce_effect_minor = yes
+					}
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = -0.25
+					}
+				}
 			}
 		}
-		if = {
-			limit = {
-				has_trait = lifestyle_blood_knight
-				NOT = { has_trait = lifestyle_blood_mage }
-			}
+		else = {
 			add_blood_knight_xp = {
 				TRACK = resilience
 				XP = 3
 			}
-		}
-		duel = {
-			skill = learning
-			value = 0
+			duel = {
+				skill = prowess
+				value = 0
 
-			# Success - major lifeforce for mage, minor for knight
-			15 = {
-				desc = manifest_lifeforce_major_success_tt
-				compare_modifier = {
-					value = scope:duel_value
-					multiplier = 1
-				}
-				send_interface_toast = {
-					title = manifest_lifeforce_major_success_tt
-					left_icon = root
-					if = {
-						limit = { has_trait = lifestyle_blood_mage }
-						add_character_modifier = { modifier = lifeforce_modifier_major }
+				# Success - minor lifeforce for knight
+				15 = {
+					desc = manifest_lifeforce_major_success_tt
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = 1
 					}
-					else = {
+					send_interface_toast = {
+						title = manifest_lifeforce_major_success_tt
+						left_icon = root
 						add_character_modifier = { modifier = lifeforce_modifier_minor }
 					}
 				}
-			}
 
-			# Partial success - minor lifeforce
-			40 = {
-				desc = manifest_lifeforce_minor_success_tt
-				compare_modifier = {
-					value = scope:duel_value
-					multiplier = 2
+				# Partial success - minor lifeforce
+				40 = {
+					desc = manifest_lifeforce_minor_success_tt
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = 2
+					}
+					send_interface_toast = {
+						title = manifest_lifeforce_minor_success_tt
+						left_icon = root
+						add_character_modifier = { modifier = lifeforce_modifier_minor }
+					}
 				}
-				send_interface_toast = {
-					title = manifest_lifeforce_minor_success_tt
-					left_icon = root
-					add_character_modifier = { modifier = lifeforce_modifier_minor }
-				}
-			}
 
-			# Failure - nothing happens
-			40 = {
-				desc = manifest_lifeforce_minor_failure_tt
-				send_interface_toast = {
-					title = manifest_lifeforce_minor_failure_tt
-					left_icon = root
+				# Failure - nothing happens
+				40 = {
+					desc = manifest_lifeforce_minor_failure_tt
+					send_interface_toast = {
+						title = manifest_lifeforce_minor_failure_tt
+						left_icon = root
+					}
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = -0.5
+					}
 				}
-				compare_modifier = {
-					value = scope:duel_value
-					multiplier = -0.5
-				}
-			}
 
-			# Critical failure
-			15 = {
-				desc = manifest_lifeforce_major_failure_tt
-				send_interface_toast = {
-					title = manifest_lifeforce_major_failure_tt
-					left_icon = root
-					temporary_negative_lifeforce_effect_minor = yes
-				}
-				compare_modifier = {
-					value = scope:duel_value
-					multiplier = -0.25
+				# Critical failure
+				15 = {
+					desc = manifest_lifeforce_major_failure_tt
+					send_interface_toast = {
+						title = manifest_lifeforce_major_failure_tt
+						left_icon = root
+						temporary_negative_lifeforce_effect_minor = yes
+					}
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = -0.25
+					}
 				}
 			}
 		}
