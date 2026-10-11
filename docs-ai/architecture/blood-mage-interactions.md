@@ -21,7 +21,8 @@
 | `empower_blood_knight_interaction` | Sworn blood knight | Major Lifeforce (+10 XP to vanguard & slaughter) or Minor Lifeforce (+5 XP). | Major: +4 benediction; Minor: +2 benediction | Direct popup modal advancing martial tracks on recipient. |
 | `grant_lifeforce_interaction` | Courtier or prisoner | Minor Lifeforce + 25 Piety, or Major Lifeforce + 50 Piety. | Minor: +1 enlightenment; Major: +2 enlightenment | Bestows Lifeforce modifier onto recipient. |
 | `grant_lifeforce_interaction_reversed` | Courtier with `lifedrained_modifier` | 25 Piety + Major Lifeforce. | +4 benediction | Restores drained courtier: cleanses debuff, gives minor lifeforce and opinion. |
-| `bm_debug_make_blood_mage_interaction` | Any character | Debug mode only. Target non-mage. | None | Instantly grants `lifestyle_blood_mage` trait directly, creates story cycle, and sets prevalence review flag. |
+| `bm_curse_blood_interaction` | Alive character (non-self) | 50 Piety + Minor Lifeforce. Requires >= 10 Hematurgy XP. | Success: +2 hematurgy; Crit: +4 hematurgy; Fail: +1 hematurgy | Skill duel (Intrigue/Learning). Success: inflicts `bm_blood_curse_modifier` (-2 all stats, -1.5 health, -30% fertility, -3 prowess) for 5 yrs; Crit: curses, inflicts ill, and siphons Minor Lifeforce back; Fail: discovered, opinion malus. |
+| `bm_debug_character_interaction` | Any character | Debug mode only. | None | Popup modal with 3 options: Make Blood Mage, Make Blood Knight, or Convert to Blóðtrú. |
 
 ## Key Mechanics & AI Logic
 
@@ -46,6 +47,7 @@
 | Grant Blood Magic Trait | `common/character_interactions/bm_grant_blood_magic.txt` |
 | Bless Kin's Blood | `common/character_interactions/bm_bless_bloodline.txt` |
 | Grant Lifeforce Stacks | `common/character_interactions/bm_grant_lifeforce.txt` |
+| Cast Blood Curse | `common/character_interactions/bm_curse_blood.txt` |
 | Debug interactions | `common/character_interactions/bm_debug_interactions.txt` |
 
 ## Gotchas

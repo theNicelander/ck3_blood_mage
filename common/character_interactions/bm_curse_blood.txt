@@ -1,0 +1,161 @@
+﻿bm_curse_blood_interaction = {
+	common_interaction = yes
+	interface_priority = 310
+	category = interaction_category_hostile
+	desc = bm_curse_blood_interaction_desc
+
+	is_shown = {
+		scope:actor = {
+			has_trait = lifestyle_blood_mage
+			has_trait_xp = {
+				trait = lifestyle_blood_mage
+				track = hematurgy
+				value >= 10
+			}
+		}
+		scope:recipient = {
+			is_alive = yes
+			NOT = { this = scope:actor }
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			has_character_modifier = lifeforce_modifier_minor
+		}
+		scope:recipient = {
+			NOT = { has_character_modifier = bm_blood_curse_modifier }
+		}
+	}
+
+	cost = {
+		piety = 50
+	}
+
+	cooldown = {
+		years = 1
+	}
+
+	on_accept = {
+		debug_log = "BloodMageInteraction: bm_curse_blood_interaction | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
+		scope:actor = {
+			blood_magic_used_minor = yes
+		}
+		scope:actor = {
+			duel = {
+				skills = { intrigue learning }
+				target = scope:recipient
+				# Critical Success: Curse & Remote Vitality Drain
+				25 = {
+					desc = bm_curse_blood.critical_success_desc
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = 3
+					}
+					send_interface_toast = {
+						title = bm_curse_blood.critical_success_title
+						left_icon = scope:actor
+						right_icon = scope:recipient
+					}
+					scope:actor = {
+						add_character_modifier = { modifier = lifeforce_modifier_minor }
+						add_xp_bm_dynamic = {
+							TRACK = hematurgy
+							XP = 4
+						}
+					}
+					scope:recipient = {
+						add_character_modifier = {
+							modifier = bm_blood_curse_modifier
+							years = 5
+						}
+						add_trait = ill
+					}
+				}
+				# Standard Success: Blood Curse Inflicted in Shadows
+				50 = {
+					desc = bm_curse_blood.success_desc
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = 1.5
+					}
+					send_interface_toast = {
+						title = bm_curse_blood.success_title
+						left_icon = scope:actor
+						right_icon = scope:recipient
+					}
+					scope:actor = {
+						add_xp_bm_dynamic = {
+							TRACK = hematurgy
+							XP = 2
+						}
+					}
+					scope:recipient = {
+						add_character_modifier = {
+							modifier = bm_blood_curse_modifier
+							years = 5
+						}
+					}
+				}
+				# Failure: Resisted & Discovered
+				25 = {
+					desc = bm_curse_blood.fail_desc
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = -2
+					}
+					send_interface_toast = {
+						title = bm_curse_blood.fail_title
+						left_icon = scope:actor
+						right_icon = scope:recipient
+					}
+					scope:actor = {
+						add_xp_bm_dynamic = {
+							TRACK = hematurgy
+							XP = 1
+						}
+						add_stress = 15
+					}
+					scope:recipient = {
+						add_opinion = {
+							target = scope:actor
+							modifier = lifedrained_me
+							opinion = -40
+						}
+					}
+				}
+			}
+		}
+	}
+
+	# AI
+	auto_accept = yes
+	ai_frequency = 6
+	ai_potential = {
+		always = yes
+	}
+	ai_targets = {
+		ai_recipients = rivals
+		ai_recipients = enemies
+	}
+	ai_will_do = {
+		base = 20
+		modifier = {
+			add = 30
+			scope:recipient = { has_relation_rival = scope:actor }
+		}
+		modifier = {
+			add = 50
+			scope:recipient = { has_relation_nemesis = scope:actor }
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				scope:recipient = { is_close_family_of = scope:actor }
+				scope:recipient = { has_relation_friend = scope:actor }
+				scope:recipient = { has_relation_lover = scope:actor }
+				scope:recipient = { has_trait = lifestyle_blood_mage }
+			}
+		}
+	}
+}

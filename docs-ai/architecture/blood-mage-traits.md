@@ -16,9 +16,9 @@ Each track has 10 progression levels (10 to 100 XP). Every standard level (10–
 | --- | --- | --- | --- | --- | --- |
 | `ancient` | Time & Piety | Vitality + `+0.1` Monthly Dynasty Prestige, `+5%` Lifestyle XP Gain Mult | `+0.25` Negate Health Penalty, `+1` Prowess per Piety level | `+0.5` Negate Health Penalty, Prowess age lock | Yearly pulse, Ancient attunement, Blood runes, Condense lifeforce |
 | `enlightenment` | Self-Mastery & Learning | Vitality + `+0.2` Monthly Piety, `+5%` Piety Gain Mult | `+1` Learning & Prowess per Piety level | `+1` Learning per Piety level, Prowess age lock | Manifesting lifeforce, Education duels, Channeling lifeforce, Blood empowerment |
-| `bloodline` | Dynastic Lineage | Vitality + `+0.1` Monthly Dynasty Prestige | `+1` Stewardship & Prowess per Piety level | `+1` Stewardship per Piety level, Prowess age lock | Granting blood magic, Childbirth, Bless kin, Commune rite, Congenital manifestation, House modifiers, Golems |
+| `bloodline` | Kingdom & Dynasty Building | Vitality + `+0.2` Monthly Dynasty Prestige, `-2%` Build Gold Cost, `+2%` Domain Tax, `+5%` Development Growth (20, 40, 60, 80, 100), `-5%` Build Speed (30, 70, 90), `+1` Domain Limit & `+10%` Gold Gain (30, 60, 90) | `+1` Stewardship per Piety level, `+1` Prowess per Piety level, `+5` Vassal Limit | `+1` Stewardship per Piety level, `+10` Vassal Limit, Prowess age lock | Granting blood magic, Childbirth, Bless kin, Commune rite, Congenital manifestation, House modifiers, Golems |
 | `benediction` | Healing & Bestowal | Vitality + `+1.5` General Opinion, `+1.0` Vassal Opinion, `+0.2` Prestige, `+5%` Prestige Mult | `+1` Diplomacy & Prowess per Piety level | `+1` Diplomacy per Piety level, Prowess age lock | Curing ailments, Making & empowering blood knights, Restoring courtiers |
-| `hematurgy` | Siphoning Vitality | Vitality + `+2` Owned Hostile Scheme Success, `+2` Owned Scheme Secrecy | `+1` Intrigue & Prowess per Piety level | `+1` Intrigue per Piety level, Prowess age lock, `+1` Max Hostile Schemes | Draining lifeforce from prisoners/courtiers, Congenital trait theft |
+| `hematurgy` | Hostile Spells & Intrigue | Vitality + `+3` Hostile Scheme Success, `+3` Scheme Secrecy, `-2%` Tyranny Gain, Natural Dread, Dread Gain Mult, `-2` Days Scheme Phase Duration (20, 40, 60, 70, 90) | `+1` Intrigue per Piety level, `+1` Prowess per Piety level, `+1` Max Hostile Schemes | `+1` Intrigue per Piety level, Prowess age lock, `+1` Max Hostile Schemes, `-10` Days Scheme Phase Duration | Draining lifeforce from prisoners/courtiers, Blood curses (`bm_curse_blood_interaction`), Congenital trait theft |
 
 *Prowess age lock = `no_prowess_loss_from_age = yes` (full immunity to prowess deterioration from aging).*
 
@@ -59,7 +59,7 @@ All routes call `bm_become_blood_mage_effect` or `bm_elevate_blood_knight_to_blo
 - **Ancient:** Yearly pulse, Ancient attunement, Inscribing blood runes (Major/Superior), and Condense lifeforce.
 - **Bloodline:** Bestowing blood magic, welcoming newborn children (`bm_on_birth_bloodline_xp`), blessing kin, communing with the bloodline, manifesting congenital traits, and active house modifiers.
 - **Benediction:** Curing ailments across 37 afflictions (`bm_heal_ailment`), empowering and creating blood knights, and restoring drained victims.
-- **Hematurgy:** Draining prisoners and courtiers, and harvesting congenital traits. (Battlefield kills do not grant lifeforce to blood mages).
+- **Hematurgy:** Draining prisoners and courtiers, casting remote blood curses (`bm_curse_blood_interaction`), and harvesting congenital traits. (Battlefield kills do not grant lifeforce to blood mages).
 - **Enlightenment:** Manifesting lifeforce decisions (Learning duel), educational enhancement duels, lifeforce channeling, and blood empowerment.
 
 ## Where the details live
