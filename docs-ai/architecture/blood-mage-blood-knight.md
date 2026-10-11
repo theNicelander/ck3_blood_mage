@@ -5,7 +5,7 @@ Living technical specification for the Blood Knight subsystem.
 ## Executive Summary
 
 - **What:** Evolving martial combat lifestyle trait `lifestyle_blood_knight` functioning as a stepping stone toward Blood Mage. Features 5 tracks: 2 martial/prowess tracks specific to Blood Knight (`vanguard`, `slaughter`) and 3 tracks shared with Blood Mage (`ancient`, `benediction`, `enlightenment`), max 100 XP each.
-- **Base stats:** `health = -1`, `life_expectancy = -5`, `prowess = -5`. Ruler designer cost: 50. Non-inheritable (`genetic = no`). Mutually exclusive with `lifestyle_blood_mage` (`opposites = { lifestyle_blood_mage }`).
+- **Base stats:** `health = -1`, `life_expectancy = -5`, `prowess = -5`. Ruler designer cost: 50. Non-inheritable (`genetic = no`). Mutually exclusive with `lifestyle_blood_mage` via decision/interaction gates (permitting scripted dual-wielding on legendary figures like Egill).
 - **How to acquire:**
   - `make_blood_knight_interaction`: Cast by a Blood Mage on a sworn knight/courtier (cannot target self; a Blood Mage cannot become a Blood Knight). Cost: `blood_knight_creation_piety_cost` (100 Piety) + `lifeforce_modifier_major`.
   - **Geyser Duel Initiation (`bm_geyser_duel.0001`):** Travel to Reykjavik or Tsushima and confront Egill Skallagrímsson via `bm_blood_cultist_become_blood_mage_decision` or `bm_enhance_blood_ritual_decision` (requires Piety or Prestige level >= 2 to open decision). Choosing the Prowess duel requires Prestige level >= 2, costs 1 Fame level (`add_prestige_level = -1`), requires not being a Blood Mage, and bestows `lifestyle_blood_knight` upon victory.
