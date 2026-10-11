@@ -28,8 +28,8 @@ Living technical specification for the Blood Knight subsystem.
 Each track has 10 tiers (10, 20, 30, ..., 100 XP).
 - **`vanguard`**: Army command and operational mobility (+1 Advantage/tier, +1 Martial at even tiers, +2% Movement Speed/tier, +3% Pursuit/tier, +1 Martial/prestige tier at 50 & 100 XP).
 - **`slaughter`**: Single combat and champion devastation (+2 Prowess/tier, +10% Knight Effectiveness/tier, +5% Dread Gain/tier, +1 Prowess/prestige tier at 50 & 100 XP).
-- **`enlightenment`**: Shared with Blood Mage: Self-mastery, learning, and lifestyle XP (+5% Lifestyle XP/tier, +1 Learning per Piety level at 50 & 100 XP, age prowess lock at 100 XP).
-- **`ancient`**: Shared with Blood Mage: Piety, longevity, and age resilience (+0.25/+0.5 Negate Health Penalty at 50/100 XP, age prowess lock at 100 XP).
+- **`enlightenment`**: Shared with Blood Mage: Piety, learning, and self-mastery (+0.2 Monthly Piety/tier, +5% Piety Gain/tier, +1 Learning per Piety level at 50 & 100 XP, age prowess lock at 100 XP).
+- **`ancient`**: Shared with Blood Mage: Dynasty prestige, lifestyle XP, longevity, and age resilience (+0.1 Monthly Dynasty Prestige/tier, +5% Lifestyle XP/tier, +0.25/+0.5 Negate Health Penalty at 50/100 XP, age prowess lock at 100 XP).
 - **`benediction`**: Shared with Blood Mage: Healing, opinion, and prestige.
 
 ## Key Mechanics

@@ -14,11 +14,11 @@ Each track has 10 progression levels (10 to 100 XP). Every standard level (10–
 
 | Track | School Theme | Standard Step Bonus (10–40, 60–90) | Level 50 Milestone | Level 100 Milestone | Grown By |
 | --- | --- | --- | --- | --- | --- |
-| `ancient` | Time & Piety | Vitality + `+0.2` Monthly Piety, `+5%` Piety Gain Mult | `+0.25` Negate Health Penalty, `+1` Prowess per Piety level | `+0.5` Negate Health Penalty, Prowess age lock | Yearly pulse, Ancient attunement, Blood runes, Condense lifeforce |
-| `enlightenment` | Self-Mastery & Learning | Vitality + `+5%` Lifestyle XP Gain Mult | `+1` Learning & Prowess per Piety level | `+1` Learning per Piety level, Prowess age lock | Manifesting lifeforce, Education duels, Channeling lifeforce, Blood empowerment |
+| `ancient` | Time & Piety | Vitality + `+0.1` Monthly Dynasty Prestige, `+5%` Lifestyle XP Gain Mult | `+0.25` Negate Health Penalty, `+1` Prowess per Piety level | `+0.5` Negate Health Penalty, Prowess age lock | Yearly pulse, Ancient attunement, Blood runes, Condense lifeforce |
+| `enlightenment` | Self-Mastery & Learning | Vitality + `+0.2` Monthly Piety, `+5%` Piety Gain Mult | `+1` Learning & Prowess per Piety level | `+1` Learning per Piety level, Prowess age lock | Manifesting lifeforce, Education duels, Channeling lifeforce, Blood empowerment |
 | `bloodline` | Dynastic Lineage | Vitality + `+0.1` Monthly Dynasty Prestige | `+1` Stewardship & Prowess per Piety level | `+1` Stewardship per Piety level, Prowess age lock | Granting blood magic, Childbirth, Bless kin, Commune rite, Congenital manifestation, House modifiers, Golems |
 | `benediction` | Healing & Bestowal | Vitality + `+1.5` General Opinion, `+1.0` Vassal Opinion, `+0.2` Prestige, `+5%` Prestige Mult | `+1` Diplomacy & Prowess per Piety level | `+1` Diplomacy per Piety level, Prowess age lock | Curing ailments, Making & empowering blood knights, Restoring courtiers |
-| `hematurgy` | Siphoning Vitality | Vitality + `-5` Enemy Hostile Scheme Success Chance | `+1` Intrigue & Prowess per Piety level | `+1` Intrigue per Piety level, Prowess age lock | Draining lifeforce from prisoners/courtiers, Congenital trait theft |
+| `hematurgy` | Siphoning Vitality | Vitality + `+2` Owned Hostile Scheme Success, `+2` Owned Scheme Secrecy | `+1` Intrigue & Prowess per Piety level | `+1` Intrigue per Piety level, Prowess age lock, `+1` Max Hostile Schemes | Draining lifeforce from prisoners/courtiers, Congenital trait theft |
 
 *Prowess age lock = `no_prowess_loss_from_age = yes` (full immunity to prowess deterioration from aging).*
 
