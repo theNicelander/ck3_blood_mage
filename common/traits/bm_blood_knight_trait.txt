@@ -16,9 +16,12 @@ lifestyle_blood_knight = {
 	shown_in_ruler_designer = yes
 	ruler_designer_cost = 50
 	potential = {
-		OR = {
-			is_ai = no
-			NOT = { has_game_rule = bm_blood_knight_prevalence_player_only }
+		trigger_if = {
+			limit = { exists = this }
+			OR = {
+				is_ai = no
+				NOT = { has_game_rule = bm_blood_knight_prevalence_player_only }
+			}
 		}
 	}
 	good = yes

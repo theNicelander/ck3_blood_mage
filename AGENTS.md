@@ -125,3 +125,4 @@ Always reflects current branch state. Simple line per PR merge. Superseded chang
 - PR #138: Relocate Inscribe Minor Blood Rune to Cast Minor Blood Magic; align Inscribe Major Blood Rune resource cost to Major Lifeforce in Cast Major Blood Magic.
 - PR #139: Consolidate Situation tab Blood Knight roster to include dynasty and court members; enable Situation tab panel and dynamic discipline grid for Blood Knight rulers.
 - PR #140: Add Blood Knight Prevalence game rule matching Blood Mage options; add lifecycle entry/retention effects, birth scaling, AI modifiers, and trait potential/inheritance.
+- PR #141: Fix error.log runtime issues: guard trait potential scope, replace natural_dread with dread_baseline_add, correct curse ai_recipients, guard lifeforce recount variable access, and add missing knight trigger failure loc.

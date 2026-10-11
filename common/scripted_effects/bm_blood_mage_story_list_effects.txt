@@ -16,7 +16,13 @@
 			}
 		}
 		while = {
-			count = var:bm_lifeforce_superior_stacks
+			count = {
+				value = 0
+				if = {
+					limit = { exists = var:bm_lifeforce_superior_stacks }
+					add = var:bm_lifeforce_superior_stacks
+				}
+			}
 			add_character_modifier = lifeforce_modifier_superior
 		}
 
@@ -33,7 +39,13 @@
 			}
 		}
 		while = {
-			count = var:bm_lifeforce_major_stacks
+			count = {
+				value = 0
+				if = {
+					limit = { exists = var:bm_lifeforce_major_stacks }
+					add = var:bm_lifeforce_major_stacks
+				}
+			}
 			add_character_modifier = lifeforce_modifier_major
 		}
 
@@ -50,7 +62,13 @@
 			}
 		}
 		while = {
-			count = var:bm_lifeforce_minor_stacks
+			count = {
+				value = 0
+				if = {
+					limit = { exists = var:bm_lifeforce_minor_stacks }
+					add = var:bm_lifeforce_minor_stacks
+				}
+			}
 			add_character_modifier = lifeforce_modifier_minor
 		}
 	}

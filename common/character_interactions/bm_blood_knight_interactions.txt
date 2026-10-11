@@ -35,7 +35,10 @@
         }
     }
     is_valid_showing_failures_only = {
-        scope:recipient = { is_knight_of = scope:actor }
+        custom_description = {
+            text = recipient_must_be_knight_tt
+            scope:recipient = { is_knight_of = scope:actor }
+        }
         trigger_if = {
             limit = {
                 scope:actor = {
