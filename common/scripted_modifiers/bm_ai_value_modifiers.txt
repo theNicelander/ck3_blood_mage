@@ -168,6 +168,9 @@ ai_willingness_to_do_positive_magic = {
 
     # Opinion counts
     opinion_modifier = {
+        trigger = {
+            NOT = { scope:actor = scope:recipient }
+        }
         who = scope:actor
         opinion_target = scope:recipient
         multiplier = 0.2

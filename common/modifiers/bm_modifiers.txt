@@ -113,7 +113,12 @@ temporary_buff_self = {
 
 bm_blessed_blood_modifier = {
     icon = blood_magic
-    all_attributes = 1
+    diplomacy = 1
+    martial = 1
+    stewardship = 1
+    intrigue = 1
+    learning = 1
+    prowess = 1
     fertility = 0.1
     health = 0.25
 }
@@ -127,8 +132,12 @@ bm_bloodline_communion = {
 
 bm_blood_curse_modifier = {
     icon = magic_negative
-    all_attributes = -2
+    diplomacy = -2
+    martial = -2
+    stewardship = -2
+    intrigue = -2
+    learning = -2
+    prowess = -3
     health = -1.5
     fertility = -0.3
-    prowess = -3
 }

@@ -39,6 +39,7 @@ Always reflects current branch state. Simple line per PR merge. Superseded chang
 - PR #134: Expand Blood Knight healing to minor on others and minor/major on self; cap Egill geyser duel injuries strictly at rank 2.
 - PR #135: Consolidate debug character interactions into single popup interaction with Make Blood Mage, Make Blood Knight, and Convert to Blóðtrú options.
 - PR #136: Overhaul Bloodline (kingdom/dynasty building, stewardship, +1 domain limit & +10% gold at 30/60/90, scaling construction, tax, dev) and Hematurgy (hostile scheme speed, dread, tyranny reduction, +1 hostile scheme at 50/100); add remote Cast Blood Curse interaction.
+- PR #137: Fix runtime script and asset errors: remove invalid scheme_resistance modifier, expand all_attributes, fix leveled trait references, prune remove_trait groups, guard self-cast opinion, fix data loc scope promotion, and add missing track icons.
 
 ## Historical (pre-1.20)
 

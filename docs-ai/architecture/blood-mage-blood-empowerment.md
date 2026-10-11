@@ -27,7 +27,7 @@ Each track spans 10 levels (10 to 100 XP, +10 XP per channel). Modifiers stack a
 | `mastery` | Lifestyle & Tongues | Baseline + `+4%` Lifestyle XP Gain Mult, `-10` Days Language Scheme Phase, `+3%` Personal Scheme Power; `+1` Max Language Schemes at levels 30, 60, 90, 100 | Baseline ×10, `+40%` Lifestyle XP, `-100` Days Phase Duration, `+30%` Personal Scheme Power, `+4` Max Language Schemes |
 | `presence` | Diplomacy & Magnetism | Baseline + `+5%` Stress Loss Mult, `+1.5` General Opinion, `+1.0` Vassal Opinion | Baseline ×10, `+50%` Stress Loss, `+15` General Opinion, `+10` Vassal Opinion |
 | `prosperity` | Domain & Treasury | Baseline + `+0.1` Monthly Income, `+2.5%` Monthly Income Mult | Baseline ×10, `+1.0` Monthly Income, `+25%` Monthly Income Mult |
-| `shadows` | Subterfuge & Warding | Baseline + `+3` Hostile Scheme Resistance, `+5` Owned Scheme Secrecy, `-3%` Enemy Scheme Success Chance | Baseline ×10, `+30` Scheme Resistance, `+50` Scheme Secrecy, `-30%` Enemy Plot Success Chance |
+| `shadows` | Subterfuge & Warding | Baseline + `+5` Owned Scheme Secrecy, `-3%` Enemy Scheme Success Chance | Baseline ×10, `+50` Scheme Secrecy, `-30%` Enemy Plot Success Chance |
 | *Versatility* | Capped Fallback | 10-year buff `temporary_buff_self` (`+2` all stats, `+4` Prowess) + rolls for perm stats (`+1` skill, `+2` Prowess) | Granted when all 5 tracks are at 100 XP |
 
 ## Key Mechanics
