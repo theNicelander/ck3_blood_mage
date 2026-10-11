@@ -305,15 +305,11 @@ bm_geyser_duel.0001 = {
 							add_stress = 10
 
 							if = {
-								limit = { has_trait = wounded_2 }
-								add_trait = maimed
-							}
-
-							if = {
-								limit = { NOT = { has_trait = wounded_1 } }
+								limit = { NOT = { has_trait = wounded } }
 								add_trait = wounded_1
 							}
-							else = {
+							else_if = {
+								limit = { has_trait = wounded_1 }
 								change_trait_rank = {
 									trait = wounded
 									rank = 1
@@ -474,15 +470,11 @@ bm_geyser_duel.0001 = {
 							add_stress = 10
 
 							if = {
-								limit = { has_trait = wounded_2 }
-								add_trait = maimed
-							}
-
-							if = {
-								limit = { NOT = { has_trait = wounded_1 } }
+								limit = { NOT = { has_trait = wounded } }
 								add_trait = wounded_1
 							}
-							else = {
+							else_if = {
+								limit = { has_trait = wounded_1 }
 								change_trait_rank = {
 									trait = wounded
 									rank = 1

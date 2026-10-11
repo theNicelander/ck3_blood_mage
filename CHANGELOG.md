@@ -36,6 +36,7 @@ Always reflects current branch state. Simple line per PR merge. Superseded chang
 - PR #131: Exclude Blood Knights from Trial of Blood; gate Ascend to Blood Mage behind piety rank 3, >30 learning, and 500 piety.
 - PR #132: Rebalance Geyser initiation duel: scale Learning (target 20, 10->25%, 20->50%, 30->75%, 40->90% cap) and Prowess (target 30, 15->25%, 30->50%, 45->75%, 60->90% cap).
 - PR #133: Require Superior Lifeforce (0 Piety) for Blood Mage creation; Blood Knights create Blood Knights for 200 Prestige + Minor Lifeforce or 0 Prestige + Major Lifeforce; Blood Mages create Blood Knights for 100 Piety + Major Lifeforce.
+- PR #134: Expand Blood Knight healing to minor on others and minor/major on self; cap Egill geyser duel injuries strictly at rank 2.
 
 ## Historical (pre-1.20)
 

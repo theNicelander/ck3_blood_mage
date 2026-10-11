@@ -21,6 +21,20 @@
 					has_trait = lifestyle_blood_knight
 					NOT = { has_trait = lifestyle_blood_mage }
 				}
+				scope:recipient = scope:actor
+				scope:recipient = {
+					OR = {
+						bm_has_minor_ailment_trigger = yes
+						bm_has_major_ailment_trigger = yes
+					}
+				}
+			}
+			AND = {
+				scope:actor = {
+					has_trait = lifestyle_blood_knight
+					NOT = { has_trait = lifestyle_blood_mage }
+				}
+				NOT = { scope:recipient = scope:actor }
 				scope:recipient = { bm_has_minor_ailment_trigger = yes }
 			}
 		}
@@ -53,9 +67,15 @@
 					}
 				}
 				AND = {
-					scope:actor = { has_trait = lifestyle_blood_mage }
 					scope:recipient = { bm_has_major_ailment_trigger = yes }
 					scope:actor = {
+						OR = {
+							has_trait = lifestyle_blood_mage
+							AND = {
+								has_trait = lifestyle_blood_knight
+								scope:recipient = scope:actor
+							}
+						}
 						has_character_modifier = lifeforce_modifier_major
 						piety >= 35
 					}
