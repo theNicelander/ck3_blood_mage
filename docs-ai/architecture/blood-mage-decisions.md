@@ -24,8 +24,8 @@
 | `bm_repair_blodtru_reformation_decision` | Religious | None. No CD. | Blóðtrú faith, broken/unformed temporal head title. | None | Clears corrupted head of faith title and resets temporal headship. |
 | `bm_manifest_lifeforce_decision` | Standard | 100 piety. CD: 1 yr. | Blood mage or Blood Knight, piety rank >= 2. | +3 enlightenment (Mage & Knight) | Learning duel to generate Lifeforce. Crit gives Major Lifeforce. |
 | `bm_manifest_superior_lifeforce_decision` | Standard | 250 piety + Minor + Major Lifeforce. CD: 2 yrs. | Piety rank >= 2. | +2 to +8 ancient | Learning duel to distill Minor and Major into Superior Lifeforce. |
-| `bm_cast_blood_magic_minor_decision` | Standard | Decision free; rites cost 25-100p + Minor Lifeforce. | Blood mage or Blood Knight with Minor Lifeforce. | Dependent on rite (+1-2 enlightenment, +2 bloodline for communion, +2 bloodline/ancient for purge, +2 ancient for condense) | Opens minor ritual selection (`bm_cast_blood_magic_minor.001`): Channel Minor Lifeforce, Attune Lifeforce, Condense Lifeforce (forge Major), Commune with Bloodline, Purge Impurities. |
-| `bm_cast_blood_magic_major_decision` | Standard | Decision free; rites cost 150-350p + Major Lifeforce. Per-rite CD flags (2-5 yrs). | Blood mage or Blood Knight with Major Lifeforce, rank >= 1 Devotion. | +3 to +5 track XP per rite | Opens major ritual selection (`bm_cast_blood_magic_major.001`): Blood Empowerment, Enhance Education (tiers 1-4), Inscribe Minor/Major Blood Rune (+4/+5 ancient), Empower Bloodline (+5 bloodline), Manifest Perfection (+4 bloodline). |
+| `bm_cast_blood_magic_minor_decision` | Standard | Decision free; rites cost 0-100p + Minor Lifeforce. Per-rite CD flags. | Blood mage or Blood Knight with Minor Lifeforce. | Dependent on rite (+1-2 enlightenment, +2 bloodline/ancient for purge, +2 ancient for condense, +4 ancient for minor rune) | Opens minor ritual selection (`bm_cast_blood_magic_minor.001`): Channel Minor Lifeforce, Attune Lifeforce, Condense Lifeforce (forge Major), Purge Impurities, Inscribe Minor Blood Rune (+4 ancient). |
+| `bm_cast_blood_magic_major_decision` | Standard | Decision free; rites cost 150-350p + Major Lifeforce. Per-rite CD flags (2-5 yrs). | Blood mage or Blood Knight with Major Lifeforce, rank >= 1 Devotion. | +3 to +5 track XP per rite | Opens major ritual selection (`bm_cast_blood_magic_major.001`): Blood Empowerment, Enhance Education (tiers 1-4), Inscribe Major Blood Rune (+5 ancient), Empower Bloodline (+5 bloodline), Manifest Perfection (+4 bloodline). |
 | `bm_cast_blood_magic_superior_decision` | Standard | Decision free; rites cost 200-1000p + Superior Lifeforce. Per-rite CD flags (2-5 yrs). | Has superior lifeforce, rank >= 2 Devotion. | +5 to +10 track XP per rite | Opens superior ritual selection (`bm_cast_blood_magic_superior.001`): Master Education (5★), Embrace New Education, Inscribe Superior Blood Rune (+10 ancient), Manifest Transcendent Perfection (+6 bloodline, +2 enlightenment), Forge Blood Golem (+5 bloodline). |
 
 ## Where the details live
@@ -38,9 +38,9 @@
 | Seek Power (landed, adventurer, blood knight) | `get_lifeforce/bm_seek_power_decision.txt` |
 | Manifest Lifeforce | `get_lifeforce/bm_manifest_lifeforce.txt` |
 | Manifest Superior Lifeforce | `get_lifeforce/bm_manifest_superior_lifeforce.txt` |
-| Major Rituals (Empowerment, Education 1-4, Runes 1-2, Bloodline, Manifest 1-3) | `cast_magic/bm_cast_blood_magic_major.txt` |
+| Major Rituals (Empowerment, Education 1-4, Major Rune, Bloodline, Manifest 1-3) | `cast_magic/bm_cast_blood_magic_major.txt` |
 | Superior Rituals (Master Education 5★, New Education, Superior Rune, Transcendent Perfection 4-5, Blood Golem) | `cast_magic/bm_cast_blood_magic_superior.txt` |
-| Minor Rituals (Channel Minor, Attunement, Condense, Commune, Purge) | `cast_magic/bm_cast_blood_magic_minor.txt` |
+| Minor Rituals (Channel Minor, Attunement, Condense, Purge, Minor Rune) | `cast_magic/bm_cast_blood_magic_minor.txt` |
 | Blood Golem Creation (Standalone) | `cast_magic/bm_create_blood_golem.txt` |
 | Mass Lifedrain of Prisoners | `bm_mass_lifedrain_prisoners.txt` |
 | Become Blood Cultist (Religious) | `religion/bm_become_blood_cultist_decision.txt` |

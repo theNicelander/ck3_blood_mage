@@ -57,6 +57,7 @@
 }
 
 bm_refresh_blood_magic_rosters_effect = {
+	save_scope_as = bm_story_owner_character
 	bm_recount_lifeforce_stacks_effect = yes
 
 	random_owned_story = {
@@ -87,6 +88,27 @@ bm_refresh_blood_magic_rosters_effect = {
 			add_to_variable_list = {
 				name = bm_blood_retinue
 				target = prev
+			}
+		}
+	}
+
+	if = {
+		limit = { exists = dynasty }
+		dynasty = {
+			every_dynasty_member = {
+				limit = {
+					is_alive = yes
+					has_trait = lifestyle_blood_knight
+					NOT = { is_courtier_of = scope:bm_story_owner_character }
+				}
+
+				save_scope_as = bm_dynasty_knight
+				scope:bm_blood_mage_story_scope = {
+					add_to_variable_list = {
+						name = bm_blood_retinue
+						target = scope:bm_dynasty_knight
+					}
+				}
 			}
 		}
 	}

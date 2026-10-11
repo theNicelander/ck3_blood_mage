@@ -78,39 +78,6 @@ bm_cast_blood_magic_minor.001 = {
 		}
 	}
 
-	# Commune with Bloodline
-	option = {
-		name = bm_cast_blood_magic_minor.001.commune_bloodline
-		trigger = {
-			has_trait = lifestyle_blood_mage
-			exists = house
-			piety >= 50
-			NOT = { has_character_flag = bm_commune_bloodline_cooldown }
-		}
-		show_as_unavailable = {
-			has_trait = lifestyle_blood_mage
-			exists = house
-		}
-		add_piety = -50
-		add_character_flag = {
-			flag = bm_commune_bloodline_cooldown
-			years = 3
-		}
-		bloodline_magic_cast_effect_minor = yes
-		add_character_modifier = {
-			modifier = bm_bloodline_communion
-			years = 5
-		}
-		custom_tooltip = bm_commune_bloodline.effects_list
-		ai_chance = {
-			base = 25
-			modifier = {
-				add = -100
-				health <= fine_health
-			}
-		}
-	}
-
 	# Purge Bodily Impurities
 	option = {
 		name = bm_cast_blood_magic_minor.001.purge
@@ -131,6 +98,7 @@ bm_cast_blood_magic_minor.001 = {
 		}
 		add_piety = -50
 		remove_character_modifier = lifeforce_modifier_minor
+		custom_tooltip = bm_cast_blood_magic_minor.001.purge.tt
 
 		if = {
 			limit = { has_trait = lifestyle_blood_mage }
@@ -251,6 +219,53 @@ bm_cast_blood_magic_minor.001 = {
 				add = 50
 				has_character_modifier = lifeforce_modifier_minor
 				NOT = { has_character_modifier = lifeforce_modifier_major }
+			}
+		}
+	}
+
+	# Inscribe Minor Blood Rune
+	option = {
+		name = bm_cast_blood_magic_minor.001.blood_rune_minor
+		trigger = {
+			NOT = { has_character_flag = bm_blood_rune_cooldown }
+			NOT = { has_character_modifier = minor_blood_rune_modifier }
+			NOT = { has_character_modifier = major_blood_rune_modifier }
+			NOT = { has_character_modifier = superior_blood_rune_modifier }
+			has_character_modifier = lifeforce_modifier_minor
+			piety_level >= 2
+		}
+		show_as_unavailable = {
+			NOT = { has_character_modifier = minor_blood_rune_modifier }
+			NOT = { has_character_modifier = major_blood_rune_modifier }
+			NOT = { has_character_modifier = superior_blood_rune_modifier }
+		}
+		add_character_modifier = {
+			modifier = minor_blood_rune_modifier
+		}
+		add_character_flag = {
+			flag = bm_blood_rune_cooldown
+			years = 5
+		}
+		blood_magic_used_minor = yes
+		if = {
+			limit = { has_trait = lifestyle_blood_mage }
+			add_xp_bm_dynamic = {
+				TRACK = ancient
+				XP = 4
+			}
+		}
+		else = {
+			add_blood_knight_xp = {
+				TRACK = ancient
+				XP = 4
+			}
+		}
+		custom_tooltip = blood_runes_effects_list.minor
+		ai_chance = {
+			base = 100
+			modifier = {
+				health <= fine_health
+				add = -100
 			}
 		}
 	}

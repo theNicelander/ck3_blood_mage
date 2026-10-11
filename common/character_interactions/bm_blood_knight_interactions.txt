@@ -163,7 +163,7 @@
             scope:actor = { benediction_magic_cast_effect_major = yes }
         }
         scope:recipient = {
-            add_trait = lifestyle_blood_knight
+            bm_become_blood_knight_effect = yes
             add_opinion = {
                 target = scope:actor
                 modifier = magic_opinion_positive
@@ -184,6 +184,7 @@
     ai_will_do = {
         base = 33
         ai_willingness_to_do_positive_magic = yes
+        bm_blood_knight_prevalence_ai_acquisition_modifier = yes
         modifier = {
             scope:recipient = { prowess >= 12 }
             add = 30

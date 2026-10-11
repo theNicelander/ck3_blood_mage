@@ -17,6 +17,13 @@ bm_drain_leveled_trait_effect = {
         TRACK = hematurgy
         XP = 2
     }
+    if = {
+        limit = { has_trait = lifestyle_blood_knight }
+        add_blood_knight_xp = {
+            TRACK = slaughter
+            XP = 2
+        }
+    }
     if = { limit = { has_trait = $TRAIT$_good_2 } add_piety_level = -1 }
     if = {
         limit = { has_trait = $TRAIT$_bad_1 }

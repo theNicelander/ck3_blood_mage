@@ -5,7 +5,12 @@
 		bm_ensure_blood_mage_story_effect = yes
 
 		if = {
-			limit = { has_trait = lifestyle_blood_mage }
+			limit = {
+				OR = {
+					has_trait = lifestyle_blood_mage
+					has_trait = lifestyle_blood_knight
+				}
+			}
 			bm_refresh_blood_magic_rosters_effect = yes
 		}
 	}
@@ -20,14 +25,20 @@ bm_refresh_blood_magic_rosters_gui = {
 	}
 
 	is_valid = {
-		has_trait = lifestyle_blood_mage
+		OR = {
+			has_trait = lifestyle_blood_mage
+			has_trait = lifestyle_blood_knight
+		}
 		scope:story = { story_type = bm_blood_mage_story }
 	}
 
 	effect = {
 		if = {
 			limit = {
-				has_trait = lifestyle_blood_mage
+				OR = {
+					has_trait = lifestyle_blood_mage
+					has_trait = lifestyle_blood_knight
+				}
 				scope:story = { story_type = bm_blood_mage_story }
 			}
 			bm_refresh_blood_magic_rosters_effect = yes
@@ -47,7 +58,10 @@ bm_story_uses_refreshable_character_lists_gui = {
 	}
 
 	is_valid = {
-		has_trait = lifestyle_blood_mage
+		OR = {
+			has_trait = lifestyle_blood_mage
+			has_trait = lifestyle_blood_knight
+		}
 		scope:story = { story_type = bm_blood_mage_story }
 	}
 }
@@ -61,14 +75,20 @@ bm_refresh_story_character_lists_gui = {
 	}
 
 	is_valid = {
-		has_trait = lifestyle_blood_mage
+		OR = {
+			has_trait = lifestyle_blood_mage
+			has_trait = lifestyle_blood_knight
+		}
 		scope:story = { story_type = bm_blood_mage_story }
 	}
 
 	effect = {
 		if = {
 			limit = {
-				has_trait = lifestyle_blood_mage
+				OR = {
+					has_trait = lifestyle_blood_mage
+					has_trait = lifestyle_blood_knight
+				}
 				scope:story = { story_type = bm_blood_mage_story }
 			}
 			bm_refresh_blood_magic_rosters_effect = yes

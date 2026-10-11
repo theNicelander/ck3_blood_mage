@@ -1,6 +1,7 @@
 ﻿random_yearly_everyone_pulse = {
     on_actions = {
         bm_review_unmarked_blood_mage_prevalence
+        bm_review_unmarked_blood_knight_prevalence
     }
     events = {
         blood_mage_yearly_events.001
@@ -23,5 +24,21 @@ bm_review_unmarked_blood_mage_prevalence = {
     }
     effect = {
         bm_apply_blood_mage_prevalence_retention_effect = yes
+    }
+}
+
+bm_review_unmarked_blood_knight_prevalence = {
+    trigger = {
+        is_ai = yes
+        has_trait = lifestyle_blood_knight
+        NOT = { has_character_flag = bm_blood_knight_prevalence_reviewed }
+        OR = {
+            has_game_rule = bm_blood_knight_prevalence_player_only
+            has_game_rule = bm_blood_knight_prevalence_one_in_10000
+            has_game_rule = bm_blood_knight_prevalence_one_in_1000
+        }
+    }
+    effect = {
+        bm_apply_blood_knight_prevalence_retention_effect = yes
     }
 }

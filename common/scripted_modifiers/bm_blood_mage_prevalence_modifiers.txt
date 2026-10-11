@@ -24,3 +24,30 @@
 		has_game_rule = bm_prevalence_everyone
 	}
 }
+
+bm_blood_knight_prevalence_ai_acquisition_modifier = {
+	modifier = {
+		factor = 0
+		has_game_rule = bm_blood_knight_prevalence_player_only
+	}
+	modifier = {
+		factor = 0.05
+		has_game_rule = bm_blood_knight_prevalence_one_in_10000
+	}
+	modifier = {
+		factor = 0.5
+		has_game_rule = bm_blood_knight_prevalence_one_in_1000
+	}
+	modifier = {
+		factor = 2
+		has_game_rule = bm_blood_knight_prevalence_one_in_100
+	}
+	modifier = {
+		factor = 5
+		has_game_rule = bm_blood_knight_prevalence_one_in_10
+	}
+	modifier = {
+		factor = 10
+		has_game_rule = bm_blood_knight_prevalence_everyone
+	}
+}

@@ -5,7 +5,7 @@ Living technical specification for the Blood Knight subsystem.
 ## Executive Summary
 
 - **What:** Evolving martial combat lifestyle trait `lifestyle_blood_knight` functioning as a stepping stone toward Blood Mage. Features 5 tracks: 2 martial/prowess tracks specific to Blood Knight (`vanguard`, `slaughter`) and 3 tracks shared with Blood Mage (`ancient`, `benediction`, `enlightenment`), max 100 XP each.
-- **Base stats:** `health = -1`, `life_expectancy = -5`, `prowess = -5`. Ruler designer cost: 50. Non-inheritable (`genetic = no`). Mutually exclusive with `lifestyle_blood_mage` via decision/interaction gates (permitting scripted dual-wielding on legendary figures like Egill).
+- **Base stats:** `prowess = 5`, `prowess_per_piety_level = 2`, `martial_per_piety_level = 1`. Ruler designer cost: 50. Inheritable (25% single parent, 100% both; 0.20% birth) scaled by campaign game rule `bm_blood_knight_prevalence`. Mutually exclusive with `lifestyle_blood_mage` via entry effect, birth priority, and decision/interaction gates (permitting scripted dual-wielding on legendary figures like Egill).
 - **How to acquire:**
   - `make_blood_knight_interaction`: Cast by a Blood Mage (100 Piety + Major Lifeforce) or fellow Blood Knight (200 Prestige + Minor Lifeforce, OR 0 Prestige + Major Lifeforce) on a sworn knight/courtier (cannot target self; a Blood Mage cannot become a Blood Knight).
   - **Geyser Duel Initiation (`bm_geyser_duel.0001`):** Travel to Reykjavik or Tsushima and confront Egill Skallagrímsson via `bm_blood_cultist_become_blood_mage_decision` or `bm_enhance_blood_ritual_decision` (requires Piety or Prestige level >= 2 to open decision; unavailable to existing Blood Mages and Blood Knights). Choosing the Prowess duel requires Prestige level >= 2, costs 1 Fame level (`add_prestige_level = -1`), and bestows `lifestyle_blood_knight` upon victory.
@@ -14,12 +14,15 @@ Living technical specification for the Blood Knight subsystem.
 - **Universal rank progression:** Every trait rank across all tracks awards exact stat parity with Blood Mage: `health = 0.1`, `life_expectancy = 2`, `years_of_fertility = 1`, and `epidemic_resistance = 1`, alongside `monthly_prestige = 0.1` and track-specific martial modifiers.
 - **How to level & sustain lifeforce:**
   - **Empower Blood Knight Interaction (`empower_blood_knight_interaction`):** Direct interaction popup from a Blood Mage (Major Lifeforce: +10 XP to `vanguard` and `slaughter`; Minor: +5 XP).
-  - **Battle Victory / Defeat:** Gains `vanguard` (+5 commander / +4 knight; 33% chance Minor Lifeforce) and defeat survival (+1 `vanguard`, +1 `enlightenment`).
+  - **Battle Victory / Defeat:** Gains `vanguard` (+4 commander / +3 knight; 33% chance Minor Lifeforce) and defeat survival (+1 `vanguard`, +1 `enlightenment`).
   - **Duel Victory:** Victor gains +5 XP (`slaughter`) and awards 1 Minor Lifeforce (strictly exclusive to Blood Knights).
   - **Tournament Participation/Victory:** Completing a tournament awards +3 XP (`slaughter`).
   - **Manifest Lifeforce (`bm_manifest_lifeforce_decision`):** Blood Knights undergo a Learning duel to stoke their blood, granting +3 XP (`enlightenment`) and either Major Lifeforce (critical success) or Minor Lifeforce (success).
-  - **Ambient Lifeforce Roll (`blood_mage_yearly_events.004`):** Passive ~33% chance per year to condense Minor Lifeforce ambiently in addition to passive +1 XP in `enlightenment` and `ancient`.
+  - **Ambient Lifeforce Roll (`blood_mage_yearly_events.004`):** Passive ~33% chance per year to condense Minor Lifeforce ambiently in addition to passive +1 XP in `enlightenment` and `ancient`. Strictly exclusive to Blood Knights (`lifestyle_blood_knight`); Blood Mages do not receive ambient Lifeforce.
   - **Lifeforce Condensation:** Spend 1 Minor Lifeforce + 100 Piety via `bm_cast_blood_magic_minor` to forge 1 Major Lifeforce (+2 `ancient` XP).
+  - **Minor Lifedrain on Prisoners (`lifedrain_courtier_event_interaction`):** Blood Knights can siphon prisoners using a Prowess duel (costs 25 Piety), granting Minor Lifeforce and +1 `slaughter` XP.
+  - **Trait Drain on Prisoners (`trait_drain_prisoner_event_interaction`):** Blood Knights holding Major Lifeforce can steal congenital traits from prisoners up to rank 2 (`quick`/`intelligent`, `hale`/`robust`, `comely`/`pretty`, plus `fecund`/`giant`/`pure_blooded`), granting +2 `slaughter` XP.
+  - **Education Elevation (`bm_cast_blood_magic_major_decision`):** Blood Knights can elevate any education trait they hold up to rank 4 via Major Blood Magic (costs Major Lifeforce + Piety), granting +5 `enlightenment` XP (level 5 remains exclusive to Blood Mages via Superior Magic).
   - **Restorative Magic (`bm_heal_ailment`):** Blood Knights can heal minor ailments on others using Minor Lifeforce (+1 XP `vanguard` and +1 XP `benediction`), and both minor and major ailments on self using Minor or Major Lifeforce (+2 XP `enlightenment` for minor, +4 XP `enlightenment` for major, e.g. curing `weak` or `wounded_2` on self).
   - **Minor Blood Magic Channeling (`bm_cast_blood_magic_minor_decision`):** Blood Knights can channel minor lifeforce or purge bodily frailty (+1/+2 `enlightenment` XP).
 
@@ -43,12 +46,16 @@ Each track has 10 tiers (10, 20, 30, ..., 100 XP).
 - **Restorative Blood Magic & Healing:**
   - `bm_heal_ailment`: Can target self, courtiers, liege, close family, spouse, and knights. Blood Knights can use Minor Lifeforce to heal others (minor ailments only), and both Minor and Major Lifeforce to heal self (minor and major ailments, e.g. `weak`, `wounded_2`, `incapable`, etc.; deadly ailments remain Blood Mage only). Awards +2 `enlightenment` XP (minor self-healing), +4 `enlightenment` XP (major self-healing), or +1 `vanguard` and +1 `benediction` XP (healing allies).
   - `bm_cast_blood_magic_minor_decision`: Allows self-channeling, self-purging of negative traits, and condensing Minor Lifeforce into Major Lifeforce.
+- **Situation Panel Access:**
+  - Blood Knight rulers have access to the Blood Magic Situation panel (`bm_blood_mage_story`), displaying their knight disciplines (`vanguard`, `slaughter`, `ancient`, `benediction`, `enlightenment`), Lifeforce reserves, active attunement, and the unified Blood Knights (Dynasty & Court) roster.
 
 ## Where the details live
 
 | Concept | File |
 | --- | --- |
 | Trait definition & tracks | `common/traits/bm_blood_knight_trait.txt` |
+| Lifecycle & prevalence effects | `common/scripted_effects/bm_blood_mage_lifecycle_effects.txt` |
+| Prevalence game rule | `common/game_rules/bm_game_rules.txt` (`bm_blood_knight_prevalence`) |
 | Elevation decision | `common/decisions/become_mage/bm_elevate_blood_knight_decision.txt` |
 | Elevation event & trial | `events/bm_blood_knight_elevation_events.txt` |
 | Trait XP transfer macro | `common/scripted_effects/bm_blood_mage_lifecycle_effects.txt` |
