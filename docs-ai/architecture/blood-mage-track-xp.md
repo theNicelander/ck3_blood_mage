@@ -129,7 +129,7 @@ Tracks: `vanguard`, `slaughter` (and shared `ancient`, `benediction`, `enlighten
 | **+2 XP** (`enlightenment`) | 15 Piety + Minor Lifeforce | Heal Minor Affliction (Self-Healing Wounds) | Interaction & Event (`bm_heal_ailment`) | Self has minor wound/illness | None |
 | **+1 to +2 XP** (`enlightenment`) | 50 Piety + Minor Lifeforce | Purge Bodily Impurities (Self-Tending Weakness) | Event option (`bm_cast_blood_magic_minor.001`) | Self has physical frailty | None |
 | **+1 XP** (`enlightenment`) + **+1 XP** (`ancient`) | None (33% ambient roll for Minor Lifeforce) | Yearly Survival Pulse | On-action (`blood_mage_yearly_events.004`) | Has `lifestyle_blood_knight` | 1 year |
-| **1:1 Shared, 50% Exclusive** (Slaughter->Hematurgy, Vanguard->Bloodline; Ancient, Benediction, Enlightenment 1:1) | 100 Piety + Minor/Major Lifeforce | Elevate to Blood Mage | Decision (`bm_elevate_to_blood_mage_decision`) | `piety_level >= 2` | 2 years (on fail) |
+| **1:1 Shared, 50% Exclusive** (Slaughter->Hematurgy, Vanguard->Bloodline; Ancient, Benediction, Enlightenment 1:1) | 500 Piety + Minor/Major Lifeforce | Elevate to Blood Mage | Decision (`bm_elevate_to_blood_mage_decision`) | `piety_level >= 3`, `learning > 30` | 2 years (on fail) |
 
 ---
 
