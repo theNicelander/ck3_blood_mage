@@ -33,6 +33,8 @@ Always reflects current branch state. Simple line per PR merge. Superseded chang
 - PR #128: Add historical Egill Skallagrímsson character bookmark.
 - PR #129: Redesign Blood Knight as standalone lifestyle trait (Slaughter, Vanguard, Resilience) with elevation bridge; rework healing to unified event flow; redistribute track XP.
 - PR #130: Restructure Blood Mage and Blood Knight trait tracks: 3 shared (Ancient, Benediction, Enlightenment), 2 Mage exclusive (Bloodline, Hematurgy), 2 Knight exclusive (Vanguard, Slaughter); align elevation conversion and XP sources.
+- PR #131: Exclude Blood Knights from Trial of Blood; gate Ascend to Blood Mage behind piety rank 3, >30 learning, and 500 piety.
+- PR #132: Rebalance Geyser initiation duel: scale Learning (target 20, 10->25%, 20->50%, 30->75%, 40->90% cap) and Prowess (target 30, 15->25%, 30->50%, 45->75%, 60->90% cap).
 
 ## Historical (pre-1.20)
 

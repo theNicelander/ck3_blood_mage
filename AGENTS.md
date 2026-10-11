@@ -58,6 +58,14 @@ Active rules: `ck3-scripting.md` (always on), `ck3-localization.md` (always on),
 
 See `.agents/rules/ck3-localization.md` (english only, sibling keys, loc documents the script).
 
+## DDS Icons & Assets
+
+- DDS files within a category are copy-paste identical:
+  - **Interactions** (`gfx/interface/icons/character_interactions/`): All use the identical 120×120 fiery blood drop DDS (copied from `grant_blood_magic_interaction.dds`).
+  - **Faiths** (`gfx/interface/icons/faith/`): Shared identical DDS icons across the religion family (copied from `blodtru_faith.dds`).
+- When adding a new interaction, copy the category's standard DDS to `<interaction_key>.dds`.
+- When removing or renaming interactions, always remove or rename the corresponding `.dds` file to prevent missing textures or orphan assets.
+
 ## Never
 
 - Change `descriptor.mod` (`name`, `remote_file_id`, `version`) or add `replace_path`.
@@ -106,3 +114,5 @@ Always reflects current branch state. Simple line per PR merge. Superseded chang
 - PR #128: Add historical Egill Skallagrímsson character bookmark.
 - PR #129: Redesign Blood Knight as standalone lifestyle trait (Slaughter, Vanguard, Resilience) with elevation bridge; rework healing to unified event flow; redistribute track XP.
 - PR #130: Restructure Blood Mage and Blood Knight trait tracks: 3 shared (Ancient, Benediction, Enlightenment), 2 Mage exclusive (Bloodline, Hematurgy), 2 Knight exclusive (Vanguard, Slaughter); align elevation conversion and XP sources.
+- PR #131: Exclude Blood Knights from Trial of Blood; gate Ascend to Blood Mage behind piety rank 3, >30 learning, and 500 piety.
+- PR #132: Rebalance Geyser initiation duel: scale Learning (target 20, 10->25%, 20->50%, 30->75%, 40->90% cap) and Prowess (target 30, 15->25%, 30->50%, 45->75%, 60->90% cap).
