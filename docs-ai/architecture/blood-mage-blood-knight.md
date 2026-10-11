@@ -20,7 +20,7 @@ Living technical specification for the Blood Knight subsystem.
   - **Manifest Lifeforce (`bm_manifest_lifeforce_decision`):** Blood Knights undergo a Learning duel to stoke their blood, granting +3 XP (`enlightenment`) and either Major Lifeforce (critical success) or Minor Lifeforce (success).
   - **Ambient Lifeforce Roll (`blood_mage_yearly_events.004`):** Passive ~33% chance per year to condense Minor Lifeforce ambiently in addition to passive +1 XP in `enlightenment` and `ancient`.
   - **Lifeforce Condensation:** Spend 1 Minor Lifeforce + 100 Piety via `bm_cast_blood_magic_minor` to forge 1 Major Lifeforce (+2 `ancient` XP).
-  - **Minor Restorative Magic (`bm_heal_ailment`):** Healing self grants +2 XP (`enlightenment`); healing comrades, fellow knights, or liege grants +1 XP (`vanguard`) and +1 XP (`benediction`).
+  - **Restorative Magic (`bm_heal_ailment`):** Blood Knights can heal minor ailments on others using Minor Lifeforce (+1 XP `vanguard` and +1 XP `benediction`), and both minor and major ailments on self using Minor or Major Lifeforce (+2 XP `enlightenment` for minor, +4 XP `enlightenment` for major, e.g. curing `weak` or `wounded_2` on self).
   - **Minor Blood Magic Channeling (`bm_cast_blood_magic_minor_decision`):** Blood Knights can channel minor lifeforce or purge bodily frailty (+1/+2 `enlightenment` XP).
 
 ### Tracks Master Table
@@ -40,8 +40,8 @@ Each track has 10 tiers (10, 20, 30, ..., 100 XP).
   - Blood Knights can elevate themselves to Blood Mage via `bm_elevate_to_blood_mage_decision`.
 - **Major Blood Magic & Secondary Empowerment:**
   - Blood Knights have full access to Major Blood Magic (`bm_cast_blood_magic_major_decision`) and the secondary trait `lifestyle_blood_empowerment` upon possessing Major Lifeforce. Superior Blood Magic remains strictly exclusive to Blood Mages.
-- **Minor Blood Magic & Healing:**
-  - `bm_heal_ailment`: Can target self, courtiers, liege, close family, spouse, and knights. Cures any supported ailment (minor, major, or deadly) across 37 afflictions given required Lifeforce and Piety. Awards +2 `enlightenment` XP (self-healing) or +1 `vanguard` and +1 `benediction` XP (healing allies).
+- **Restorative Blood Magic & Healing:**
+  - `bm_heal_ailment`: Can target self, courtiers, liege, close family, spouse, and knights. Blood Knights can use Minor Lifeforce to heal others (minor ailments only), and both Minor and Major Lifeforce to heal self (minor and major ailments, e.g. `weak`, `wounded_2`, `incapable`, etc.; deadly ailments remain Blood Mage only). Awards +2 `enlightenment` XP (minor self-healing), +4 `enlightenment` XP (major self-healing), or +1 `vanguard` and +1 `benediction` XP (healing allies).
   - `bm_cast_blood_magic_minor_decision`: Allows self-channeling, self-purging of negative traits, and condensing Minor Lifeforce into Major Lifeforce.
 
 ## Where the details live

@@ -10,6 +10,7 @@
 
     is_valid_showing_failures_only = {
         scope:actor = { piety_level >= 2 }
+        scope:recipient = { has_character_modifier = lifeforce_modifier_superior }
         custom_description = {
             text = "ask_for_blood_magic_interaction_requirement"
             scope:recipient = {
@@ -32,8 +33,17 @@
 
     on_accept = {
         debug_log = "BloodMageInteraction: ask_for_blood_magic | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
+        scope:recipient = {
+            remove_character_modifier = lifeforce_modifier_superior
+        }
         scope:actor = {
-            bm_become_blood_mage_effect = yes
+            if = {
+                limit = { has_trait = lifestyle_blood_knight }
+                bm_elevate_blood_knight_to_blood_mage_effect = yes
+            }
+            else = {
+                bm_become_blood_mage_effect = yes
+            }
         }
     }
 
