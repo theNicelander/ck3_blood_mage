@@ -63,6 +63,7 @@ See `.agents/rules/ck3-localization.md` (english only, sibling keys, loc documen
 - DDS files within a category are copy-paste identical:
   - **Interactions** (`gfx/interface/icons/character_interactions/`): All use the identical 120×120 fiery blood drop DDS (copied from `grant_blood_magic_interaction.dds`).
   - **Faiths** (`gfx/interface/icons/faith/`): Shared identical DDS icons across the religion family (copied from `blodtru_faith.dds`).
+  - **Trait Level Tracks** (`gfx/interface/icons/trait_level_tracks/`): Distinctive icons per track (`ancient` fiery blood drop, `benediction` physician, `enlightenment` saint/ancestor, `bloodline` augustus, `hematurgy` murderer, `vanguard` faith warrior, `slaughter` raider/reaver).
 - When adding a new interaction, copy the category's standard DDS to `<interaction_key>.dds`.
 - When removing or renaming interactions, always remove or rename the corresponding `.dds` file to prevent missing textures or orphan assets.
 

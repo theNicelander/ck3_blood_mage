@@ -34,6 +34,14 @@ Identity and progression trait `lifestyle_blood_mage`. Gates spellcasting, story
 - **Entry Effect:** Added via `bm_become_blood_mage_effect` or `bm_elevate_blood_knight_to_blood_mage_effect` (which transfers all accrued `ancient`, `benediction`, and `enlightenment` track XP 1:1, and converts 50% of `vanguard` and `slaughter` into `bloodline` and `hematurgy`).
 - **Tracks:** 5 schools (`ancient`, `enlightenment`, `bloodline`, `benediction`, `hematurgy`). Max 100 XP each. `ancient`, `benediction`, and `enlightenment` tracks are shared identically with `lifestyle_blood_knight`.
 - **Stat Parity:** Every 10 XP tier in any track scales identical baseline vitality stats (`+0.1` Health, `+2` Life Expectancy, `+1` Year Fertility, `+1` Epidemic Resistance).
+- **Track Icons (`gfx/interface/icons/trait_level_tracks/`):**
+  - `ancient.dds`: Fiery Blood Drop (shared).
+  - `benediction.dds`: Lifestyle Physician (caduceus healing staff; shared).
+  - `enlightenment.dds`: Venerated Ancestor / Saint (shared).
+  - `bloodline.dds`: Augustus (laurel-crowned dynastic triumph; Mage exclusive).
+  - `hematurgy.dds`: Murderer (Mage exclusive).
+  - `vanguard.dds`: Warrior of the Faith (Knight exclusive).
+  - `slaughter.dds`: Raider / Reaver (blood-dripping axe; Knight exclusive).
 
 ### Acquisition Triggers
 All routes call `bm_become_blood_mage_effect` or `bm_elevate_blood_knight_to_blood_mage_effect`:
