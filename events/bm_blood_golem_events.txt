@@ -47,7 +47,7 @@ blood_golem.002 = {
     # Athletic trait option
     option = {
         name = blood_golem.002.athletic
-        trigger = { 
+        trigger = {
             scope:blood_golem = { NOT = { has_trait = athletic } }
             piety >= 0
         }
@@ -58,7 +58,7 @@ blood_golem.002 = {
     # Blademaster trait option
     option = {
         name = blood_golem.002.blademaster
-        trigger = { 
+        trigger = {
             scope:blood_golem = { NOT = { has_trait = lifestyle_blademaster } }
             piety >= 0
         }
@@ -69,7 +69,7 @@ blood_golem.002 = {
     # Berserker trait option
     option = {
         name = blood_golem.002.berserker
-        trigger = { 
+        trigger = {
             scope:blood_golem = { NOT = { has_trait = berserker } }
             piety >= 0
         }
@@ -80,7 +80,7 @@ blood_golem.002 = {
     # Viking trait option
     option = {
         name = blood_golem.002.viking
-        trigger = { 
+        trigger = {
             scope:blood_golem = { NOT = { has_trait = viking } }
             piety >= 0
         }
@@ -91,7 +91,7 @@ blood_golem.002 = {
     # Hunter trait option
     option = {
         name = blood_golem.002.hunter
-        trigger = { 
+        trigger = {
             scope:blood_golem = { NOT = { has_trait = lifestyle_hunter } }
             piety >= 0
         }
@@ -102,7 +102,7 @@ blood_golem.002 = {
     # Physique good trait option
     option = {
         name = blood_golem.002.physique
-        trigger = { 
+        trigger = {
             scope:blood_golem = { NOT = { has_trait = physique_good_3 } }
             piety >= 0
         }
@@ -113,7 +113,7 @@ blood_golem.002 = {
     # Martial education
     option = {
         name = blood_golem.002.prowess
-        trigger = { 
+        trigger = {
             scope:blood_golem = { NOT = { has_trait = education_martial_prowess_4 } }
             piety >= 0
         }

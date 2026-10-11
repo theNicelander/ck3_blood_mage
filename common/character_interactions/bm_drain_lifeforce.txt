@@ -13,8 +13,7 @@
     is_valid_showing_failures_only = { scope:recipient = { NOT = { has_character_modifier = lifedrained_modifier } } }
 
     on_accept = {
-
-        scope:actor = {debug_log = debug_log.blood_mage_log}
+        debug_log = "BloodMageInteraction: lifedrain_prisoner | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
         scope:actor = { hematurgy_magic_cast_effect_major = yes }
         lifedrain_execution_effect = {
             VICTIM = scope:recipient
@@ -53,8 +52,7 @@ lifedrain_courtier_event_interaction = {
     cooldown = { months = 3 }
 
     on_accept = {
-
-        scope:actor = {debug_log = debug_log.blood_mage_log}
+        debug_log = "BloodMageInteraction: lifedrain_courtier | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
         scope:recipient = {
             add_character_modifier =  { modifier = lifedrained_modifier }
             temporary_negative_recently_lifedrained = yes

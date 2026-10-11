@@ -1,0 +1,133 @@
+﻿# Scripted triggers for Blood Mage trait and location requirements
+
+bm_can_drain_traits_from_target_trigger = {
+	OR = {
+		AND = {
+			NOT = { has_trait_rank = { trait = intellect_good rank >= 5 } }
+			scope:recipient = { has_trait = intellect_good }
+		}
+		AND = {
+			NOT = { has_trait_rank = { trait = physique_good rank >= 5 } }
+			scope:recipient = { has_trait = physique_good }
+		}
+		AND = {
+			NOT = { has_trait_rank = { trait = beauty_good rank >= 5 } }
+			scope:recipient = { has_trait = beauty_good }
+		}
+		AND = {
+			NOT = { has_trait = fecund }
+			scope:recipient = { has_trait = fecund }
+		}
+		AND = {
+			NOT = { has_trait = giant }
+			scope:recipient = { has_trait = giant }
+		}
+		AND = {
+			NOT = { has_trait = pure_blooded }
+			scope:recipient = { has_trait = pure_blooded }
+		}
+	}
+}
+
+bm_has_valuable_genetic_trait_trigger = {
+	OR = {
+		has_trait = intellect_good
+		has_trait = physique_good
+		has_trait = beauty_good
+		has_trait = giant
+		has_trait = fecund
+		has_trait = pure_blooded
+		has_trait = lifestyle_blood_mage
+	}
+}
+
+bm_has_blood_empowerment_xp_trigger = {
+	OR = {
+		has_trait_xp = {
+			trait = lifestyle_blood_empowerment
+			track = dynasty
+			value >= $VALUE$
+		}
+		has_trait_xp = {
+			trait = lifestyle_blood_empowerment
+			track = mastery
+			value >= $VALUE$
+		}
+		has_trait_xp = {
+			trait = lifestyle_blood_empowerment
+			track = presence
+			value >= $VALUE$
+		}
+		has_trait_xp = {
+			trait = lifestyle_blood_empowerment
+			track = prosperity
+			value >= $VALUE$
+		}
+		has_trait_xp = {
+			trait = lifestyle_blood_empowerment
+			track = shadows
+			value >= $VALUE$
+		}
+	}
+}
+
+bm_has_blood_mage_xp_trigger = {
+	OR = {
+		has_trait_xp = {
+			trait = lifestyle_blood_mage
+			track = ancient
+			value >= $VALUE$
+		}
+		has_trait_xp = {
+			trait = lifestyle_blood_mage
+			track = enlightenment
+			value >= $VALUE$
+		}
+		has_trait_xp = {
+			trait = lifestyle_blood_mage
+			track = bloodline
+			value >= $VALUE$
+		}
+		has_trait_xp = {
+			trait = lifestyle_blood_mage
+			track = benediction
+			value >= $VALUE$
+		}
+		has_trait_xp = {
+			trait = lifestyle_blood_mage
+			track = hematurgy
+			value >= $VALUE$
+		}
+	}
+}
+
+bm_is_at_blood_magic_initiation_site_trigger = {
+	OR = {
+		location.county ?= title:c_vestisland
+		location.county ?= title:c_tsushima
+	}
+}
+
+bm_geyser_duel_has_bad_traits_trigger = {
+	OR = {
+		# Injuries & Physical trauma
+		has_trait = wounded
+		has_trait = maimed
+		has_trait = blind
+		has_trait = one_eyed
+		has_trait = one_legged
+		has_trait = disfigured
+		has_trait = weak
+		has_trait = infirm
+		has_trait = incapable
+		# Mental & psychological trauma
+		has_trait = possessed
+		has_trait = depressed
+		has_trait = lunatic
+		has_trait = dull
+		# Personality & health vulnerabilities
+		has_trait = craven
+		has_trait = intellect_bad
+		has_trait = physique_bad
+	}
+}

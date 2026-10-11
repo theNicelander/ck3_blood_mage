@@ -2,14 +2,15 @@
 
 ## Executive Summary
 
-Governs genetic transmission and birth manifestation of blood magic. `lifestyle_blood_mage` uses direct engine inheritance chances rather than CK3 tiered/recessive mechanics. AI newborns audited against campaign prevalence rules at birth. `lifestyle_crimson_empowerment` is strictly non-hereditary personal mastery.
+Governs genetic transmission and birth manifestation of blood magic. `lifestyle_blood_mage` uses direct engine inheritance chances rather than CK3 tiered/recessive mechanics. AI newborns audited against campaign prevalence rules at birth. `lifestyle_blood_empowerment` is strictly non-hereditary personal mastery.
 
 ## Inheritance Rules & Chances
 
 | Trait | Hereditary Type | Single Parent Chance | Both Parents Chance | Baseline Birth Roll | Notes |
 | --- | --- | --- | --- | --- | --- |
 | `lifestyle_blood_mage` | Explicit Hereditary (`inheritable = yes`, non-genetic) | 25% | 100% | 0.20% | Audited by prevalence engine on birth. |
-| `lifestyle_crimson_empowerment` | Non-Hereditary (`inheritable = no`) | 0% | 0% | 0% | Personal occult mastery. Cannot be inherited. |
+| `lifestyle_blood_knight` | Non-Hereditary (`inheritable = no`, `genetic = no`) | 0% | 0% | 0% | Acquired via martial empowerment or initiation duel. |
+| `lifestyle_blood_empowerment` | Non-Hereditary (`inheritable = no`, `genetic = no`) | 0% | 0% | 0% | Personal occult mastery. Cannot be inherited. |
 
 ## Birth Prevalence Auditing Pipeline
 
@@ -31,10 +32,12 @@ flowchart TD
     InitStory --> End
 ```
 
+- **Childbirth Milestone:** When a child is born to a blood mage parent (`on_birth_child` -> `bm_on_birth_bloodline_xp`), the parent gains +2 `bloodline` XP (+4 `bloodline` XP if the child inherits `lifestyle_blood_mage`).
+
 ## Lineage Enhancement & Trait Theft
 
-- **Positive Trait Transmission:** Blood mages progressing in the Legacy track of Crimson Empowerment and enacting Crimson Legacy house modifiers increase the odds of descendants inheriting positive inactive traits while suppressing negative genetic traits.
-- **Trait Siphoning Bypass:** Direct genetic inheritance can be bypassed via trait draining duels (`bm_drain_trait` interaction). Siphons congenital traits (intellect, beauty, physique) directly into the caster's personal bloodline.
+- **Positive Trait Transmission:** Blood mages progressing in the `dynasty` track of Blood Empowerment and enacting Blood Legacy house modifiers (`dynasty_blood_legacy_modifier`) increase the odds of descendants inheriting positive inactive traits while suppressing negative genetic traits.
+- **Trait Siphoning Bypass:** Direct genetic inheritance can be bypassed via trait draining duels (`trait_drain_prisoner_event_interaction`). Siphons congenital traits (intellect, beauty, physique) directly into the caster's personal bloodline.
 
 ## Mod Conventions & Gotchas
 
@@ -47,10 +50,10 @@ flowchart TD
 | Piece | File |
 | --- | --- |
 | Blood Mage trait definition | `common/traits/bm_blood_mage_trait.txt` |
-| Crimson Empowerment definition | `common/traits/bm_crimson_empowerment_trait.txt` |
+| Blood Empowerment definition | `common/traits/bm_blood_empowerment_trait.txt` |
 | Birth on-actions | `common/on_action/bm_blood_mage_prevalence_on_actions.txt` |
 | Prevalence retention effect | `common/scripted_effects/bm_blood_mage_lifecycle_effects.txt` |
-| Legacy track modifiers | `common/traits/bm_crimson_empowerment_trait.txt` |
-| Crimson Legacy house modifier | `common/modifiers/bm_channel_dynasty_modifiers.txt` |
+| Legacy track modifiers | `common/traits/bm_blood_empowerment_trait.txt` |
+| Blood Legacy house modifier | `common/modifiers/bm_channel_dynasty_modifiers.txt` |
 | Trait drain duel & interactions | `common/character_interactions/bm_drain_trait.txt`, `common/scripted_effects/bm_drain_trait_effects.txt` |
 | Prevalence game rules | `common/game_rules/bm_game_rules.txt` (`bm_blood_mage_prevalence`) |

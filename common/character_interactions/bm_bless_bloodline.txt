@@ -1,0 +1,83 @@
+﻿bm_bless_bloodline_interaction = {
+    category = interaction_category_friendly
+    auto_accept = yes
+    common_interaction = yes
+    desc = bm_bless_bloodline_interaction_desc
+    interface_priority = 195
+
+    is_highlighted = {
+        scope:recipient = { is_child_of = scope:actor }
+    }
+
+    is_shown = {
+        scope:actor = { has_trait = lifestyle_blood_mage }
+        NOT = { scope:actor = scope:recipient }
+        scope:recipient = {
+            OR = {
+                is_child_of = scope:actor
+                dynasty ?= scope:actor.dynasty
+            }
+        }
+    }
+
+    cost = { piety = 35 }
+
+    is_valid_showing_failures_only = {
+        scope:actor = { has_character_modifier = lifeforce_modifier_minor }
+        custom_description = {
+            text = "bm_recipient_already_blessed"
+            NOT = { scope:recipient = { has_character_modifier = bm_blessed_blood_modifier } }
+        }
+    }
+
+    on_accept = {
+        debug_log = "BloodMageInteraction: bless_bloodline | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
+        scope:actor = {
+            bloodline_magic_cast_effect_minor = yes
+            send_interface_toast = {
+                type = event_toast_effect_good
+                title = bm_bless_bloodline_toast
+                left_icon = scope:actor
+                right_icon = scope:recipient
+                custom_tooltip = bm_bless_bloodline_toast_tt
+            }
+        }
+        scope:recipient = {
+            add_character_modifier = {
+                modifier = bm_blessed_blood_modifier
+                years = 10
+            }
+            add_opinion = {
+                target = scope:actor
+                modifier = magic_opinion_positive
+                opinion = 25
+            }
+        }
+    }
+
+    ai_targets = {
+        ai_recipients = children
+        ai_recipients = dynasty
+    }
+    ai_potential = { always = yes }
+    ai_frequency = 12
+    ai_will_do = {
+        base = 10
+        ai_willingness_to_do_positive_magic = yes
+
+        modifier = {
+            scope:recipient = { is_child_of = scope:actor }
+            add = 50
+        }
+        modifier = {
+            scope:recipient = { is_primary_heir_of = scope:actor }
+            add = 50
+        }
+        modifier = {
+            scope:actor = {
+                NOT = { has_character_modifier = lifeforce_modifier_minor }
+            }
+            factor = 0
+        }
+    }
+}

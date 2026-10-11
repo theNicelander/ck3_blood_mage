@@ -10,10 +10,11 @@ bm_education_enhancement.001 = {
     # Diplomacy education enhancement
     option = {
         name = bm_education_enhancement.001.diplomacy
-        trigger = { 
+        trigger = {
             AND = {
                 has_trait = education_diplomacy
-                NOT = {has_trait = education_diplomacy_5 }
+                NOT = { has_trait = education_diplomacy_4 }
+                NOT = { has_trait = education_diplomacy_5 }
             }
         }
         education_duel_effect = {trait = diplomacy}
@@ -23,10 +24,11 @@ bm_education_enhancement.001 = {
     # Martial education enhancement
     option = {
         name = bm_education_enhancement.001.martial
-        trigger = { 
+        trigger = {
             AND = {
                 has_trait = education_martial
-                NOT = {has_trait = education_martial_5 }
+                NOT = { has_trait = education_martial_4 }
+                NOT = { has_trait = education_martial_5 }
             }
         }
         education_duel_effect = {trait = martial}
@@ -36,10 +38,11 @@ bm_education_enhancement.001 = {
     # Stewardship education enhancement
     option = {
         name = bm_education_enhancement.001.stewardship
-        trigger = { 
+        trigger = {
             AND = {
                 has_trait = education_stewardship
-                NOT = {has_trait = education_stewardship_5 }
+                NOT = { has_trait = education_stewardship_4 }
+                NOT = { has_trait = education_stewardship_5 }
             }
         }
         education_duel_effect = {trait = stewardship}
@@ -49,10 +52,11 @@ bm_education_enhancement.001 = {
     # Intrigue education enhancement
     option = {
         name = bm_education_enhancement.001.intrigue
-        trigger = { 
+        trigger = {
             AND = {
                 has_trait = education_intrigue
-                NOT = {has_trait = education_intrigue_5 }
+                NOT = { has_trait = education_intrigue_4 }
+                NOT = { has_trait = education_intrigue_5 }
             }
         }
         education_duel_effect = {trait = intrigue}
@@ -62,10 +66,11 @@ bm_education_enhancement.001 = {
     # Learning education enhancement
     option = {
         name = bm_education_enhancement.001.learning
-        trigger = { 
+        trigger = {
             AND = {
                 has_trait = education_learning
-                NOT = {has_trait = education_learning_5 }
+                NOT = { has_trait = education_learning_4 }
+                NOT = { has_trait = education_learning_5 }
             }
         }
         education_duel_effect = {trait = learning}

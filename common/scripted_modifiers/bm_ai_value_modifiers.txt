@@ -91,6 +91,20 @@ ai_willingness_to_lifedrain = {
         }
     }
 
+    # Absolute veto: Never drain your dynasty members (unless rival/nemesis)
+    modifier = {
+        factor = 0
+        scope:actor = {
+            exists = dynasty
+            exists = scope:recipient.dynasty
+            dynasty = scope:recipient.dynasty
+        }
+        NOR = {
+            scope:recipient = { has_relation_rival = scope:actor }
+            scope:recipient = { has_relation_nemesis = scope:actor }
+        }
+    }
+
     # Absolute veto: Never drain people you actually like (opinion > 20)
     modifier = {
         factor = 0
@@ -142,7 +156,7 @@ ai_willingness_to_lifedrain = {
     }
 }
 
-ai_willingness_to_do_postitive_magic = {
+ai_willingness_to_do_positive_magic = {
     modifier = { # Prioritise myself
         scope:actor = scope:recipient
         add = 100
@@ -154,6 +168,9 @@ ai_willingness_to_do_postitive_magic = {
 
     # Opinion counts
     opinion_modifier = {
+        trigger = {
+            NOT = { scope:actor = scope:recipient }
+        }
         who = scope:actor
         opinion_target = scope:recipient
         multiplier = 0.2
@@ -185,6 +202,14 @@ ai_willingness_to_do_postitive_magic = {
     }
     modifier = {
         scope:actor = {
+            exists = dynasty
+            exists = scope:recipient.dynasty
+            dynasty = scope:recipient.dynasty
+        }
+        add = 25
+    }
+    modifier = {
+        scope:actor = {
             exists = house
             exists = scope:recipient.house
             house = scope:recipient.house
@@ -192,15 +217,25 @@ ai_willingness_to_do_postitive_magic = {
         add = 30
     }
     modifier = {
-        scope:actor = { has_relation_best_friend = scope:recipient }
         scope:recipient = { is_knight_of = scope:actor }
         add = 40
     }
     modifier = {
+        scope:actor = { has_relation_best_friend = scope:recipient }
+        add = 40
+    }
+    modifier = {
         scope:recipient = { is_powerful_vassal_of = scope:actor }
+        add = 20
+    }
+    modifier = {
         scope:recipient = { is_courtier_of = scope:actor }
         add = 20
     }
+}
+
+ai_willingness_to_do_postitive_magic = {
+    ai_willingness_to_do_positive_magic = yes
 }
 
 
@@ -245,4 +280,52 @@ ai_chance_scale_based_on_xp_in_track = {
         }
         add = 5
     }
+}
+
+ai_chance_scale_based_on_xp_in_blood_knight_track = {
+    modifier = {
+        has_trait_xp = {
+            trait = lifestyle_blood_knight
+            track = $TRACK$
+            value >= 100
+        }
+        add = -100
+    }
+    modifier = {
+        has_trait_xp = {
+            trait = lifestyle_blood_knight
+            track = $TRACK$
+            value >= 80
+        }
+        add = -5
+    }
+    modifier = {
+        has_trait_xp = {
+            trait = lifestyle_blood_knight
+            track = $TRACK$
+            value >= 60
+        }
+        add = -5
+    }
+    modifier = {
+        has_trait_xp = {
+            trait = lifestyle_blood_knight
+            track = $TRACK$
+            value >= 30
+        }
+        add = -5
+    }
+    modifier = {
+        has_trait_xp = {
+            trait = lifestyle_blood_knight
+            track = $TRACK$
+            value <= 10
+        }
+        add = 5
+    }
+}
+
+ai_chance_scale_based_on_xp_in_shared_track = {
+    ai_chance_scale_based_on_xp_in_track = { TRACK = $TRACK$ }
+    ai_chance_scale_based_on_xp_in_blood_knight_track = { TRACK = $TRACK$ }
 }

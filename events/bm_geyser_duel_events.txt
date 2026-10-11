@@ -4,7 +4,17 @@
 bm_geyser_duel.0001 = {
 	type = character_event
 	title = bm_geyser_duel.0001.t
-	desc = bm_geyser_duel.0001.desc
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					has_character_flag = bm_geyser_retried
+				}
+				desc = bm_geyser_duel.0001.desc_retry
+			}
+			desc = bm_geyser_duel.0001.desc
+		}
+	}
 	theme = learning
 
 	left_portrait = {
@@ -13,40 +23,256 @@ bm_geyser_duel.0001 = {
 	}
 	right_portrait = {
 		character = scope:bm_geyser_wise_one
-		animation = personality_rational
+		animation = personality_bold
 	}
 
 	immediate = {
 		hidden_effect = {
-			create_character = {
-				age = 111
-				gender_female_chance = 50
-				location = root.location
-				culture = root.culture
-				faith = faith:blodtru_faith
-				trait = lifestyle_blood_mage
-				trait = education_learning_4
-				trait = whole_of_body
-				learning = {10 15}
-				prowess = 15
-				save_scope_as = bm_geyser_wise_one
-			}
 			if = {
 				limit = {
-					root.location.county ?= title:c_tsushima
+					OR = {
+						NOT = { exists = scope:bm_geyser_wise_one }
+						scope:bm_geyser_wise_one = { is_alive = no }
+					}
 				}
+				if = {
+					limit = { exists = title:b_olafsvik }
+					title:b_olafsvik = { save_scope_as = birth_location }
+				}
+				else = {
+					root.location.county = { save_scope_as = birth_location }
+				}
+				if = {
+					limit = {
+						exists = house:house_skallagrimsson
+					}
+					create_character = {
+						age = 100
+						name = "Egill"
+						dynasty_house = house:house_skallagrimsson
+						gender_female_chance = 0
+						random_traits = no
+						location = scope:birth_location.title_province
+						faith = scope:birth_location.title_province.faith
+						rite = scope:birth_location.title_province.rite
+						culture = scope:birth_location.title_province.culture
+
+						# Education & Lifestyles
+						trait = education_martial_4
+						trait = lifestyle_blood_mage
+						trait = lifestyle_blood_knight
+						trait = lifestyle_poet
+						trait = lifestyle_blademaster
+						trait = lifestyle_hunter
+
+						# Personality & Physical Traits
+						trait = berserker
+						trait = wrathful
+						trait = greedy
+						trait = brave
+						trait = physique_good_3       # Herculean / Amazonian
+						trait = beauty_bad_2          # Ugly (famously grotesque in the sagas)
+
+						# Low Diplomacy, High Intrigue, Learning 20
+						diplomacy = 4
+						intrigue = 18
+						learning = 20
+						martial = 18
+						prowess = 30
+
+						save_scope_as = bm_geyser_wise_one
+					}
+				}
+				else_if = {
+					limit = {
+						exists = dynasty:dynasty_myramenn
+					}
+					create_character = {
+						age = 100
+						name = "Egill"
+						dynasty = dynasty_myramenn
+						gender_female_chance = 0
+						random_traits = no
+						location = scope:birth_location.title_province
+						faith = scope:birth_location.title_province.faith
+						rite = scope:birth_location.title_province.rite
+						culture = scope:birth_location.title_province.culture
+
+						# Education & Lifestyles
+						trait = education_martial_4
+						trait = lifestyle_blood_mage
+						trait = lifestyle_blood_knight
+						trait = lifestyle_poet
+						trait = lifestyle_blademaster
+						trait = lifestyle_hunter
+
+						# Personality & Physical Traits
+						trait = berserker
+						trait = wrathful
+						trait = greedy
+						trait = brave
+						trait = physique_good_3       # Herculean / Amazonian
+						trait = beauty_bad_2          # Ugly (famously grotesque in the sagas)
+
+						# Low Diplomacy, High Intrigue, Learning 20
+						diplomacy = 4
+						intrigue = 18
+						learning = 20
+						martial = 18
+						prowess = 30
+
+						save_scope_as = bm_geyser_wise_one
+					}
+				}
+				else = {
+					create_character = {
+						age = 100
+						name = "Egill Skallagrimsson"
+						gender_female_chance = 0
+						random_traits = no
+						location = scope:birth_location.title_province
+						faith = scope:birth_location.title_province.faith
+						rite = scope:birth_location.title_province.rite
+						culture = scope:birth_location.title_province.culture
+
+						# Education & Lifestyles
+						trait = education_martial_4
+						trait = lifestyle_blood_mage
+						trait = lifestyle_blood_knight
+						trait = lifestyle_poet
+						trait = lifestyle_blademaster
+						trait = lifestyle_hunter
+
+						# Personality & Physical Traits
+						trait = berserker
+						trait = wrathful
+						trait = greedy
+						trait = brave
+						trait = physique_good_3       # Herculean / Amazonian
+						trait = beauty_bad_2          # Ugly (famously grotesque in the sagas)
+
+						# Low Diplomacy, High Intrigue, Learning 20
+						diplomacy = 4
+						intrigue = 18
+						learning = 20
+						martial = 18
+						prowess = 30
+
+						save_scope_as = bm_geyser_wise_one
+					}
+				}
+
 				scope:bm_geyser_wise_one = {
-					set_character_faith = faith:ketsudo_faith
+					add_trait_xp = {
+						trait = lifestyle_blood_mage
+						track = ancient
+						value = 50
+					}
+					add_trait_xp = {
+						trait = lifestyle_blood_mage
+						track = enlightenment
+						value = 50
+					}
+					add_trait_xp = {
+						trait = lifestyle_blood_mage
+						track = benediction
+						value = 50
+					}
+					add_trait_xp = {
+						trait = lifestyle_blood_mage
+						track = bloodline
+						value = 50
+					}
+					add_trait_xp = {
+						trait = lifestyle_blood_mage
+						track = hematurgy
+						value = 50
+					}
+					add_trait_xp = {
+						trait = lifestyle_blood_knight
+						track = ancient
+						value = 50
+					}
+					add_trait_xp = {
+						trait = lifestyle_blood_knight
+						track = enlightenment
+						value = 50
+					}
+					add_trait_xp = {
+						trait = lifestyle_blood_knight
+						track = benediction
+						value = 50
+					}
+					add_trait_xp = {
+						trait = lifestyle_blood_knight
+						track = vanguard
+						value = 50
+					}
+					add_trait_xp = {
+						trait = lifestyle_blood_knight
+						track = slaughter
+						value = 50
+					}
+					add_trait_xp = {
+						trait = lifestyle_blademaster
+						value = 100
+					}
+					add_trait_xp = {
+						trait = lifestyle_hunter
+						track = hunter
+						value = 100
+					}
+
+					add_character_modifier = { modifier = lifeforce_modifier_minor }
+					add_character_modifier = { modifier = lifeforce_modifier_minor }
+					add_character_modifier = { modifier = lifeforce_modifier_minor }
+					add_character_modifier = { modifier = lifeforce_modifier_minor }
+					add_character_modifier = { modifier = lifeforce_modifier_minor }
+					add_character_modifier = { modifier = lifeforce_modifier_minor }
+					add_character_modifier = { modifier = lifeforce_modifier_minor }
+					add_character_modifier = { modifier = lifeforce_modifier_minor }
+					add_character_modifier = { modifier = lifeforce_modifier_minor }
+					add_character_modifier = { modifier = lifeforce_modifier_minor }
 				}
 			}
 		}
 	}
 
 	option = {
-		name = bm_geyser_duel.0001.a
+		name = {
+			trigger = {
+				has_character_flag = bm_geyser_retried
+			}
+			text = bm_geyser_duel.0001.a_learning_retry
+		}
+		name = {
+			trigger = {
+				NOT = { has_character_flag = bm_geyser_retried }
+			}
+			text = bm_geyser_duel.0001.a_learning
+		}
+
+		trigger = {
+			NOT = { has_trait = lifestyle_blood_mage }
+			NOT = { has_trait = lifestyle_blood_knight }
+			OR = {
+				has_character_flag = bm_geyser_paid_piety
+				piety_level >= 2
+			}
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+
+		if = {
+			limit = { NOT = { has_character_flag = bm_geyser_paid_piety } }
+			add_piety_level = -1
+			add_character_flag = bm_geyser_paid_piety
+		}
 
 		duel = {
 			skill = learning
+			value = 20
 			target = scope:bm_geyser_wise_one
 
 			# SUCCESS
@@ -55,12 +281,9 @@ bm_geyser_duel.0001 = {
 
 				compare_modifier = {
 					value = scope:duel_value
-					multiplier = 3.5
-					min = -45
-				}
-				modifier = {
-					bm_is_blood_cult_faith_trigger = yes
-					add = 15
+					multiplier = 2.5
+					min = -40
+					max = 40
 				}
 
 				send_interface_toast = {
@@ -70,92 +293,308 @@ bm_geyser_duel.0001 = {
 				}
 			}
 
-			# FAILURE - MENTAL COLLAPSE
-			25 = {
-				desc = bm_geyser_duel.mental_failure_tt
-				send_interface_toast = {
-					title = bm_geyser_duel.mental_failure_tt
-					left_icon = root
-					add_stress = 30
-
-					if = {
-						limit = { has_trait = lunatic_1 }
-						add_trait = dull
-					}
-					if = {
-						limit = { has_trait = depressed_1 }
-						add_trait = lunatic_1
-					}
-					if = {
-						limit = { has_trait = possessed_1 }
-						add_trait = depressed_1
-					}
-					add_trait = possessed_1
-				}
-			}
-
-			# FAILURE - PHYSICAL TRAUMA
-			25 = {
-				desc = bm_geyser_duel.physical_failure_tt
-				send_interface_toast = {
-					title = bm_geyser_duel.physical_failure_tt
-					left_icon = root
-					add_stress = 20
-					if = {
-						limit = { has_trait = blind }
-						add_piety_level = -1
-					}
-					if = {
-						limit = { has_trait = one_eyed }
-						add_trait = blind
-					}
-					if = {
-						limit = { has_trait = weak }
-						add_trait = one_eyed
-					}
-					add_trait = weak
-				}
-			}
-
-			# FAILURE - INJURY
+			# FAILURE
 			50 = {
-				desc = bm_geyser_duel.injury_failure_tt
-				send_interface_toast = {
-					title = bm_geyser_duel.injury_failure_tt
-					left_icon = root
-					add_stress = 10
+				desc = bm_geyser_duel.failure_tt
 
-					if = {
-						limit = { has_trait = wounded_2 }
-						add_trait = maimed
-					}
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -2.5
+					min = -40
+					max = 40
+				}
 
-					if = {
-						limit = { NOT = { has_trait = wounded_1 } }
-						add_trait = wounded_1
-					}
-					else = {
-						change_trait_rank = {
-							trait = wounded
-							rank = 1
-							max = 2
+				random_list = {
+					# INJURY
+					50 = {
+						desc = bm_geyser_duel.injury_failure_tt
+						send_interface_toast = {
+							title = bm_geyser_duel.injury_failure_tt
+							left_icon = root
+							add_stress = 10
+
+							if = {
+								limit = { NOT = { has_trait = wounded } }
+								add_trait = wounded_1
+							}
+							else_if = {
+								limit = { has_trait = wounded_1 }
+								change_trait_rank = {
+									trait = wounded
+									rank = 1
+									max = 2
+								}
+							}
 						}
+					}
+
+					# PHYSICAL TRAUMA
+					25 = {
+						desc = bm_geyser_duel.physical_failure_tt
+						send_interface_toast = {
+							title = bm_geyser_duel.physical_failure_tt
+							left_icon = root
+							add_stress = 20
+							if = {
+								limit = { has_trait = blind }
+								add_piety_level = -1
+							}
+							if = {
+								limit = { has_trait = one_eyed }
+								add_trait = blind
+							}
+							if = {
+								limit = { has_trait = weak }
+								add_trait = one_eyed
+							}
+							add_trait = weak
+						}
+					}
+
+					# MENTAL COLLAPSE
+					10 = {
+						desc = bm_geyser_duel.mental_failure_tt
+						send_interface_toast = {
+							title = bm_geyser_duel.mental_failure_tt
+							left_icon = root
+							add_stress = 30
+
+							if = {
+								limit = { has_trait = lunatic_1 }
+								add_trait = dull
+							}
+							if = {
+								limit = { has_trait = depressed_1 }
+								add_trait = lunatic_1
+							}
+							if = {
+								limit = { has_trait = possessed_1 }
+								add_trait = depressed_1
+							}
+							add_trait = possessed_1
+						}
+					}
+				}
+
+				if = {
+					limit = { is_alive = yes }
+					hidden_effect = {
+						add_character_flag = bm_geyser_retrying
+						add_character_flag = bm_geyser_retried
+						trigger_event = { id = bm_geyser_duel.0001 }
 					}
 				}
 			}
 		}
 
 		ai_chance = {
+			base = 50
+			modifier = {
+				learning >= 20
+				add = 50
+			}
+			modifier = {
+				learning < 10
+				factor = 0.2
+			}
+		}
+	}
+
+	option = {
+		name = {
+			trigger = {
+				has_character_flag = bm_geyser_retried
+			}
+			text = bm_geyser_duel.0001.a_prowess_retry
+		}
+		name = {
+			trigger = {
+				NOT = { has_character_flag = bm_geyser_retried }
+			}
+			text = bm_geyser_duel.0001.a_prowess
+		}
+
+		trigger = {
+			NOT = { has_trait = lifestyle_blood_mage }
+			NOT = { has_trait = lifestyle_blood_knight }
+			OR = {
+				has_character_flag = bm_geyser_paid_prestige
+				prestige_level >= 2
+			}
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+
+		if = {
+			limit = { NOT = { has_character_flag = bm_geyser_paid_prestige } }
+			add_prestige_level = -1
+			add_character_flag = bm_geyser_paid_prestige
+		}
+
+		duel = {
+			skill = prowess
+			value = 30
+			target = scope:bm_geyser_wise_one
+
+			# SUCCESS
+			50 = {
+				desc = bm_geyser_duel.blood_knight_success_tt
+
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 1.67
+					min = -40
+					max = 40
+				}
+
+				send_interface_toast = {
+					title = bm_geyser_duel.blood_knight_success_tt
+					left_icon = root
+					if = {
+						limit = { NOT = { has_trait = lifestyle_blood_knight } }
+						add_trait = lifestyle_blood_knight
+					}
+				}
+			}
+
+			# FAILURE
+			50 = {
+				desc = bm_geyser_duel.failure_tt
+
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -1.67
+					min = -40
+					max = 40
+				}
+
+				random_list = {
+					# INJURY
+					50 = {
+						desc = bm_geyser_duel.injury_failure_tt
+						send_interface_toast = {
+							title = bm_geyser_duel.injury_failure_tt
+							left_icon = root
+							add_stress = 10
+
+							if = {
+								limit = { NOT = { has_trait = wounded } }
+								add_trait = wounded_1
+							}
+							else_if = {
+								limit = { has_trait = wounded_1 }
+								change_trait_rank = {
+									trait = wounded
+									rank = 1
+									max = 2
+								}
+							}
+						}
+					}
+
+					# PHYSICAL TRAUMA
+					25 = {
+						desc = bm_geyser_duel.physical_failure_tt
+						send_interface_toast = {
+							title = bm_geyser_duel.physical_failure_tt
+							left_icon = root
+							add_stress = 20
+							if = {
+								limit = { has_trait = blind }
+								add_piety_level = -1
+							}
+							if = {
+								limit = { has_trait = one_eyed }
+								add_trait = blind
+							}
+							if = {
+								limit = { has_trait = weak }
+								add_trait = one_eyed
+							}
+							add_trait = weak
+						}
+					}
+
+					# MENTAL COLLAPSE
+					10 = {
+						desc = bm_geyser_duel.mental_failure_tt
+						send_interface_toast = {
+							title = bm_geyser_duel.mental_failure_tt
+							left_icon = root
+							add_stress = 30
+
+							if = {
+								limit = { has_trait = lunatic_1 }
+								add_trait = dull
+							}
+							if = {
+								limit = { has_trait = depressed_1 }
+								add_trait = lunatic_1
+							}
+							if = {
+								limit = { has_trait = possessed_1 }
+								add_trait = depressed_1
+							}
+							add_trait = possessed_1
+						}
+					}
+				}
+
+				if = {
+					limit = { is_alive = yes }
+					hidden_effect = {
+						add_character_flag = bm_geyser_retrying
+						add_character_flag = bm_geyser_retried
+						trigger_event = { id = bm_geyser_duel.0001 }
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			base = 50
+			modifier = {
+				prowess >= 30
+				add = 50
+			}
+			modifier = {
+				prowess < 15
+				factor = 0.2
+			}
+		}
+	}
+
+	option = {
+		name = bm_geyser_duel.0001.b
+		custom_tooltip = bm_geyser_duel.0001.b.tt
+
+		ai_chance = {
 			base = 100
+			modifier = {
+				NOT = { bm_geyser_duel_has_bad_traits_trigger = yes }
+				factor = 0
+			}
 		}
 	}
 
 	after = {
 		hidden_effect = {
 			if = {
-				limit = { exists = scope:bm_geyser_wise_one }
-				scope:bm_geyser_wise_one = {
-					death = { death_reason = death_vanished }
+				limit = {
+					has_character_flag = bm_geyser_retrying
+				}
+				remove_character_flag = bm_geyser_retrying
+			}
+			else = {
+				remove_character_flag = bm_geyser_retried
+				remove_character_flag = bm_geyser_paid_piety
+				remove_character_flag = bm_geyser_paid_prestige
+				if = {
+					limit = { exists = scope:bm_geyser_wise_one }
+					scope:bm_geyser_wise_one = {
+						death = { death_reason = death_vanished }
+					}
 				}
 			}
 		}

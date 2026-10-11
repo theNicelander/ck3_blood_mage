@@ -12,24 +12,49 @@
         scope:actor = { has_trait = lifestyle_blood_mage }
         scope:recipient = { NOT = { has_trait = lifestyle_blood_mage } }
     }
-    cost = { piety = 75 }
     is_valid_showing_failures_only = {
-        scope:actor = { has_character_modifier = lifeforce_modifier_major }
+        scope:actor = { has_character_modifier = lifeforce_modifier_superior }
     }
 
     on_accept = {
-
-        scope:actor = {debug_log = debug_log.blood_mage_log}
+        debug_log = "BloodMageInteraction: grant_blood_magic | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
         scope:recipient = {
-            bm_become_blood_mage_effect = yes
+            if = {
+                limit = { has_trait = lifestyle_blood_knight }
+                bm_elevate_blood_knight_to_blood_mage_effect = yes
+            }
+            else = {
+                bm_become_blood_mage_effect = yes
+            }
             add_opinion = {
                 target = scope:actor
                 modifier = magic_opinion_positive
                 opinion = 50
             }
         }
-        scope:actor = { benediction_magic_cast_effect_major = yes }
-        debug_log = "BloodMageDebug: [recipient.GetShortUINameNoTooltip] Granted blood magic by [actor.GetShortUINameNoTooltip]"
+        scope:actor = {
+            remove_character_modifier = lifeforce_modifier_superior
+            if = {
+                limit = {
+                    scope:recipient = {
+                        OR = {
+                            is_child_of = scope:actor
+                            dynasty ?= scope:actor.dynasty
+                        }
+                    }
+                }
+                add_xp_bm_dynamic = {
+                    TRACK = bloodline
+                    XP = 5
+                }
+            }
+            else = {
+                add_xp_bm_dynamic = {
+                    TRACK = bloodline
+                    XP = 4
+                }
+            }
+        }
     }
 
     # AI
@@ -46,9 +71,9 @@
     }
     ai_will_do = {
         base = 0
-        ai_willingness_to_do_postitive_magic = yes
+        ai_willingness_to_do_positive_magic = yes
 
-        # Prioritisation hierarchy: spouse > children > liege > councillors
+        # Prioritisation hierarchy: spouse > children > liege > councillors > knights > dynasty
         modifier = {
             scope:recipient = { is_spouse_of = scope:actor }
             add = 100
@@ -62,7 +87,19 @@
             add = 50
         }
         modifier = {
+            scope:recipient = { is_knight_of = scope:actor }
+            add = 35
+        }
+        modifier = {
             scope:recipient = { is_councillor_of = scope:actor }
+            add = 25
+        }
+        modifier = {
+            scope:recipient = {
+                exists = dynasty
+                exists = scope:actor.dynasty
+                dynasty = scope:actor.dynasty
+            }
             add = 25
         }
 

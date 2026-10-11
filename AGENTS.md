@@ -1,12 +1,19 @@
 # AGENTS.md — Blood Mages (CK3 mod)
 
-CK3 script fails silently. Follow patterns already in this repo and in vanilla 1.19 rather than inventing syntax.
+CK3 script fails silently. Follow patterns already in this repo and in vanilla 1.20 rather than inventing syntax.
 
 ## What this is
 
-- CK3 mod for **1.20.\***. Pure script, localization, gfx. No build step.
-- Adds the `lifestyle_blood_mage` trait (tracks: ancient, enlightenment, bloodline, benediction, hematurgy), Lifeforce, decisions/interactions, blood golems, Crimson Empowerment, the Blóðtrú religion family, game rules.
-- `scripts/` holds a Steam Workshop helper. Never touch `.env`, credentials or `*.vdf`.
+- CK3 mod for **1.20.***. Pure script, localization, gfx. No build step.
+- Adds traits: `lifestyle_blood_mage` (tracks: ancient, enlightenment, bloodline, benediction, hematurgy), `lifestyle_blood_empowerment` (tracks: dynasty, mastery, presence, prosperity, shadows), and `lifestyle_blood_knight` (tracks: slaughter, vanguard, resilience). Track XP sources, costs, and gains catalog: `docs-ai/architecture/blood-mage-track-xp.md`.
+- Features: Lifeforce resource, spell decisions/interactions, blood golems, Blood Retinue, Blóðtrú religion family, Blood Runes & blood universities, and game rules.
+- `scripts/` holds repo validation and Steam Workshop helpers. Never touch `.env`, credentials or `*.vdf`.
+
+## Guiding principles
+
+- **Rule of cool**: Low-fantasy blood magic integrated seamlessly into CK3 systems.
+- **Zero vanilla overwrites**: Pure modular additions; strictly compatible with total conversions and other mods.
+- **Earned power over godmode**: Lifespan extension and physical/mental trait improvements (intellect, beauty, physique) require earned Lifeforce, piety, and ritual sacrifice, with tangible risks.
 
 ## Context layers
 
@@ -16,14 +23,17 @@ CK3 script fails silently. Follow patterns already in this repo and in vanilla 1
 | Skills `.agents/skills/<name>/SKILL.md` | What are the steps for task X here? | Repeatable multi-file procedures |
 | Architecture `docs-ai/architecture/*.md` | How does this mod implement it? | Mod only. Start at its `README.md` |
 
-Rules: `ck3-scripting.md` (always on), `ck3-localization.md` (always on), `ck3-decisions.md`, `ck3-ai.md`, `ck3-events.md`, `ck3-traits.md`, `ck3-religions.md`, `pr-context.md`.
+Active rules: `ck3-scripting.md` (always on), `ck3-localization.md` (always on), `ck3-decisions.md`, `ck3-ai.md`, `ck3-events.md`, `ck3-traits.md`, `ck3-religions.md`, `single-combat.md`, `pr-context.md`.
 
 ## Layout
 
 - `common/`, `events/`, `gui/`, `gfx/`, `localization/<language>/` mirror vanilla.
 - `.agents/rules`: generic CK3 notes. `.agents/skills`: task procedures.
-- `docs/`: images only. `docs-ai/`: written docs for humans and agents.
-- `docs-ai/architecture/`: one doc per subsystem (e.g. `blood-mage-story.md`), always describing the **current state of the mod** and nothing else: no history, changelog or decision log. **Read the matching doc before changing that part of the codebase, and update it in the same change so it stays true.** Add a doc when you introduce a subsystem, and delete or rewrite text that is no longer true. High-density "caveman style" technical specs (costs, requirements, XP, benefits, tables; zero roleplay fluff). See `docs-ai/architecture/AGENTS.md`.
+- `docs/`: images only. `docs-ai/`: written documentation for humans and agents.
+- `docs-ai/architecture/`: one doc per subsystem (e.g. `blood-mage-story.md`), always describing the **current state of the mod** and nothing else: no history, changelog or decision log. **Read the matching doc before changing that part of the codebase, and update it in the same change so it stays true.** Add a doc when you introduce a subsystem, and delete or rewrite text that is no longer true. High-density technical specs (costs, requirements, XP, benefits, tables; zero roleplay fluff). See `docs-ai/architecture/AGENTS.md`.
+- `docs-ai/ideas/`: brainstorms, proposals, and roadmaps. Speculative; do not treat as current game state.
+- `docs-ai/branch-context/`: branch and PR working state, trade-offs, and decision records.
+- `CHANGELOG.md`: living changelog representing current branch net state since 1.20 (one line per PR merge, caveman style).
 - Religion uses the 1.20 layout `common/religion/{religion_family_types,religion_types,faith_types,rite_types,holy_site_types,doctrine_group_types,doctrine_types}`. Branches based on older `main` may still have `religions/`, `religion_families/`, `holy_sites/` and a bare `add_trait = lifestyle_blood_mage`. **Check which layout the branch has. Never mix them.**
 
 ## Naming
@@ -48,6 +58,15 @@ Rules: `ck3-scripting.md` (always on), `ck3-localization.md` (always on), `ck3-d
 
 See `.agents/rules/ck3-localization.md` (english only, sibling keys, loc documents the script).
 
+## DDS Icons & Assets
+
+- DDS files within a category are copy-paste identical:
+  - **Interactions** (`gfx/interface/icons/character_interactions/`): All use the identical 120×120 fiery blood drop DDS (copied from `grant_blood_magic_interaction.dds`).
+  - **Faiths** (`gfx/interface/icons/faith/`): Shared identical DDS icons across the religion family (copied from `blodtru_faith.dds`).
+  - **Trait Level Tracks** (`gfx/interface/icons/trait_level_tracks/`): Distinctive icons per track (`ancient` fiery blood drop, `benediction` physician, `enlightenment` saint/ancestor, `bloodline` augustus, `hematurgy` murderer, `vanguard` faith warrior, `slaughter` raider/reaver).
+- When adding a new interaction, copy the category's standard DDS to `<interaction_key>.dds`.
+- When removing or renaming interactions, always remove or rename the corresponding `.dds` file to prevent missing textures or orphan assets.
+
 ## Never
 
 - Change `descriptor.mod` (`name`, `remote_file_id`, `version`) or add `replace_path`.
@@ -56,7 +75,50 @@ See `.agents/rules/ck3-localization.md` (english only, sibling keys, loc documen
 
 ## Workflow
 
-1. Read `docs-ai/branch-context/<branch>.md` if it exists, the matching rule(s), and the matching `docs-ai/architecture/*.md` (start at its `README.md`).
-2. Smallest change that works. `grep -rn` to confirm names aren't already defined.
+1. Read `docs-ai/branch-context/<branch>.md` if it exists, matching rule(s), and matching `docs-ai/architecture/*.md` (start at its `README.md`).
+2. Smallest change that works. Check existing identifiers with `grep -rn`.
 3. Use the matching skill for the task (`add-blood-magic-decision`, `add-faith`, `add-trait-track`, `add-game-rule`).
-4. Run `update-docs`, then `validate-change`. State in the final summary what you could not verify.
+4. Update matching architecture doc in `docs-ai/architecture/` in the same change so it stays true to current state.
+5. Update `CHANGELOG.md` and `AGENTS.md` changelog: living document, one line per PR merge, caveman style, net branch status only (fold superseded changes, drop reverts).
+6. Run `python3 scripts/check_repo.py`. State in the final summary what you could not verify.
+
+## Living changelog (branch net state since 1.20)
+
+Always reflects current branch state. Simple line per PR merge. Superseded changes folded, reverts dropped. Caveman style.
+
+- PR #95: CK3 1.20 baseline compat, layout modernization, AI agent rules.
+- PR #97: English-only localization source. Drop non-English stubs for auto-generation.
+- PR #98: Reorganize decision and AI agent rules.
+- PR #99: Trait definition syntax fixes, descriptor update.
+- PR #100: Pre-commit repository format checks, religion script fixes.
+- PR #101: Streamline agent rules documentation.
+- PR #102: Reykjavik duel decision to challenge occult hermit.
+- PR #103: Consolidate Blóðtrú faith with Ancestor Worship tenet.
+- PR #105: Rename religion family and core faith to Blóðtrú.
+- PR #106: Split East Asian branch into Xuédào (Chinese) and Ketsudō (Japanese) faiths.
+- PR #107: Standardize holy site modifiers. Add debug interactions.
+- PR #108: Repeatable minor lifedrain. Unrestricted manifest lifeforce.
+- PR #109: Lifeforce harvest from single combat duels.
+- PR #110: Agent token cost pre-commit check. Add caveman skill.
+- PR #113: Debug logging for blood magic operations.
+- PR #114: Blood Shrine building chain for holdings and domiciles.
+- PR #118: Keep self-cast blood magic in decisions tab.
+- PR #119: DRY triggers, illness/drain bugfixes, fix duchy building typo.
+- PR #120: Rename Crimson and Sanguine entities to Blood across mod.
+- PR #121: Consolidate self-magic decisions into Minor and Major hub events.
+- PR #122: Add Superior Lifeforce tier; require for Blood Golem creation.
+- PR #123: Major channel ritual to manifest congenital traits.
+- PR #124: Rebalance blood empowerment tracks. Standardize trait baselines.
+- PR #125: Rebalance blood mage tracks, cap opinion bonuses, normalize economic scaling.
+- PR #126: Superior blood magic rites, Egill duel integration, runtime error fixes.
+- PR #127: Allow Blood Knights to cast minor blood magic and seek power.
+- PR #128: Add historical Egill Skallagrímsson character bookmark.
+- PR #129: Redesign Blood Knight as standalone lifestyle trait (Slaughter, Vanguard, Resilience) with elevation bridge; rework healing to unified event flow; redistribute track XP.
+- PR #130: Restructure Blood Mage and Blood Knight trait tracks: 3 shared (Ancient, Benediction, Enlightenment), 2 Mage exclusive (Bloodline, Hematurgy), 2 Knight exclusive (Vanguard, Slaughter); align elevation conversion and XP sources.
+- PR #131: Exclude Blood Knights from Trial of Blood; gate Ascend to Blood Mage behind piety rank 3, >30 learning, and 500 piety.
+- PR #132: Rebalance Geyser initiation duel: scale Learning (target 20, 10->25%, 20->50%, 30->75%, 40->90% cap) and Prowess (target 30, 15->25%, 30->50%, 45->75%, 60->90% cap).
+- PR #133: Require Superior Lifeforce (0 Piety) for Blood Mage creation; Blood Knights create Blood Knights for 200 Prestige + Minor Lifeforce or 0 Prestige + Major Lifeforce; Blood Mages create Blood Knights for 100 Piety + Major Lifeforce.
+- PR #134: Expand Blood Knight healing to minor on others and minor/major on self; cap Egill geyser duel injuries strictly at rank 2.
+- PR #135: Consolidate debug character interactions into single popup interaction with Make Blood Mage, Make Blood Knight, and Convert to Blóðtrú options.
+- PR #136: Overhaul Bloodline (kingdom/dynasty building, stewardship, +1 domain limit & +10% gold at 30/60/90, scaling construction, tax, dev) and Hematurgy (hostile scheme speed, dread, tyranny reduction, +1 hostile scheme at 50/100); add remote Cast Blood Curse interaction.
+- PR #137: Fix runtime script and asset errors: remove invalid scheme_resistance modifier, expand all_attributes, fix leveled trait references, prune remove_trait groups, guard self-cast opinion, fix data loc scope promotion, and add missing track icons.

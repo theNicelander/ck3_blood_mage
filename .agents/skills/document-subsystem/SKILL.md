@@ -1,22 +1,26 @@
 ---
 name: document-subsystem
 description: >-
-  Use this skill when a new mod subsystem needs an architecture doc, or an
-  existing doc must be rewritten.
+  Create or rewrite an architecture doc in docs-ai/architecture/.
 ---
 
 # Document a subsystem
 
+Format: [architecture AGENTS.md](../../../docs-ai/architecture/AGENTS.md). High-density technical spec. No roleplay, no fluff.
+
 ## Steps
 
-1. Read [architecture AGENTS.md](../../../docs-ai/architecture/AGENTS.md).
-2. Name the file `docs-ai/architecture/blood-mage-<subsystem>.md`.
-3. Headings in order: Purpose, Concepts, Mod conventions (optional), Where the details live, How the parts connect, Gotchas, Not verified.
-4. Concepts only: no costs, thresholds or chances.
-5. Read the english loc entries for each identifier (see [localization rule](../../rules/ck3-localization.md)).
-6. Register the doc in `docs-ai/architecture/AGENTS.md` and `README.md`.
+1. Target file: `docs-ai/architecture/blood-mage-<subsystem>.md`.
+2. Required sections in order:
+   - **Executive Summary**: 1–2 line core definition, acquisition method, advancement rules, compact data table (tracks/levels, costs, base step, milestones).
+   - **Key Mechanics**: Decisions, interactions, rosters, gates. Include explicit costs, cooldowns, requirements, XP gains, benefits.
+   - **Where the details live**: Concept-to-file path table.
+   - **Gotchas**: Script edge cases, engine traps, ordering bugs.
+   - **Not verified**: Unverified runtime/AI behaviors.
+3. Check `localization/english/` for identifiers before writing.
+4. Register doc in `docs-ai/architecture/AGENTS.md` and `README.md`.
 
 ## Verify
 
-- Every identifier and path in the doc exists (`grep` / `ls`).
-- The doc appears in both the AGENTS.md table and the README index.
+- Identifiers and paths exist: `grep -rn "<id>" common/ events/ gui/ localization/english/`.
+- Doc listed in `AGENTS.md` table and `README.md` index.

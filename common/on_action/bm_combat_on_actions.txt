@@ -1,0 +1,85 @@
+﻿on_combat_end_winner = {
+	on_actions = {
+		bm_on_combat_end_winner
+	}
+}
+
+bm_on_combat_end_winner = {
+	effect = {
+		every_side_knight = {
+			limit = {
+				has_trait = lifestyle_blood_knight
+			}
+			add_blood_knight_xp = { TRACK = vanguard XP = 5 }
+			random = {
+				chance = 33
+				add_character_modifier = { modifier = lifeforce_modifier_minor }
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = bm_battle_victory_lifeforce_toast
+					custom_tooltip = bm_battle_victory_lifeforce_tt
+				}
+			}
+		}
+		every_side_commander = {
+			limit = {
+				has_trait = lifestyle_blood_knight
+			}
+			add_blood_knight_xp = { TRACK = vanguard XP = 6 }
+			random = {
+				chance = 33
+				add_character_modifier = { modifier = lifeforce_modifier_minor }
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = bm_battle_victory_lifeforce_toast
+					custom_tooltip = bm_battle_victory_lifeforce_tt
+				}
+			}
+		}
+	}
+}
+
+on_combat_end_loser = {
+	on_actions = {
+		bm_on_combat_end_loser
+	}
+}
+
+bm_on_combat_end_loser = {
+	effect = {
+		every_side_knight = {
+			limit = {
+				is_alive = yes
+				has_trait = lifestyle_blood_knight
+			}
+			add_blood_knight_xp = { TRACK = vanguard XP = 1 }
+			add_blood_knight_xp = { TRACK = enlightenment XP = 1 }
+		}
+		every_side_commander = {
+			limit = {
+				is_alive = yes
+				has_trait = lifestyle_blood_knight
+			}
+			add_blood_knight_xp = { TRACK = vanguard XP = 1 }
+			add_blood_knight_xp = { TRACK = enlightenment XP = 1 }
+		}
+	}
+}
+
+on_travel_activity_complete = {
+	on_actions = {
+		bm_on_travel_activity_complete_tournament
+	}
+}
+
+bm_on_travel_activity_complete_tournament = {
+	effect = {
+		if = {
+			limit = {
+				has_trait = lifestyle_blood_knight
+				involved_activity ?= { has_activity_type = activity_tournament }
+			}
+			add_blood_knight_xp = { TRACK = slaughter XP = 3 }
+		}
+	}
+}

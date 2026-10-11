@@ -1,0 +1,129 @@
+﻿bm_manifest_superior_lifeforce_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
+	decision_group_type = bm_decision_group
+
+	cost = { piety = 250 }
+	cooldown = { years = 2 }
+
+	is_shown = {
+		has_trait = lifestyle_blood_mage
+	}
+	is_valid = {
+		piety_level >= 3
+		has_character_modifier = lifeforce_modifier_major
+		has_character_modifier = lifeforce_modifier_minor
+	}
+
+	effect = {
+		debug_log = "BloodMageDecision: manifest_superior_lifeforce"
+		debug_log_scopes = yes
+		remove_character_modifier = lifeforce_modifier_major
+		remove_character_modifier = lifeforce_modifier_minor
+		duel = {
+			skill = learning
+			value = 0
+
+			# Critical Success - Gains superior (nothing bad happens)
+			20 = {
+				desc = manifest_superior_lifeforce_major_success_tt
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 1
+				}
+				send_interface_toast = {
+					title = manifest_superior_lifeforce_major_success_tt
+					left_icon = root
+					add_character_modifier = { modifier = lifeforce_modifier_superior }
+					add_xp_bm_dynamic = {
+						TRACK = ancient
+						XP = 8
+					}
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+
+			# Success - Gains superior + Cast major blood magic 1 year
+			45 = {
+				desc = manifest_superior_lifeforce_minor_success_tt
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 2
+				}
+				send_interface_toast = {
+					title = manifest_superior_lifeforce_minor_success_tt
+					left_icon = root
+					add_character_modifier = { modifier = lifeforce_modifier_superior }
+					temporary_negative_lifeforce_effect_major_1_year = yes
+					add_xp_bm_dynamic = {
+						TRACK = ancient
+						XP = 5
+					}
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+
+			# Fail - Cast major blood magic 3 years + refund Major
+			25 = {
+				desc = manifest_superior_lifeforce_minor_failure_tt
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -0.5
+				}
+				send_interface_toast = {
+					title = manifest_superior_lifeforce_minor_failure_tt
+					left_icon = root
+					temporary_negative_lifeforce_effect_major = yes
+					add_character_modifier = { modifier = lifeforce_modifier_major }
+					add_xp_bm_dynamic = {
+						TRACK = ancient
+						XP = 2
+					}
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+
+			# Critical Fail - Cast major blood magic 3 years + Cast minor magic 1 year
+			10 = {
+				desc = manifest_superior_lifeforce_major_failure_tt
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -0.25
+				}
+				send_interface_toast = {
+					title = manifest_superior_lifeforce_major_failure_tt
+					left_icon = root
+					temporary_negative_lifeforce_effect_major = yes
+					temporary_negative_lifeforce_effect_minor = yes
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+		}
+	}
+
+	ai_check_interval = 12
+	ai_will_do = {
+		base = 0
+		modifier = {
+			has_character_modifier = lifeforce_modifier_minor
+			has_character_modifier = lifeforce_modifier_major
+			piety > 500
+			add = 25
+		}
+		modifier = {
+			piety > 1000
+			add = 50
+		}
+		modifier = {
+			NOT = { has_character_modifier = lifeforce_modifier_superior }
+			add = 50
+		}
+	}
+}

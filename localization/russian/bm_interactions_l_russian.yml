@@ -1,53 +1,87 @@
 ﻿l_russian:
   # Give blood magic
-  grant_blood_magic_interaction: "Сделать магом крови"
-  grant_blood_magic_interaction_desc: "[recipient.GetShortUINameNoTooltip] получит силу магии крови"
+  grant_blood_magic_interaction:0 "Сделать магом крови"
+  grant_blood_magic_interaction_desc:0 "[recipient.GetShortUINameNoTooltip] получит [GetModifier('lifeforce_modifier_superior').GetNameWithTooltip] и свойство образа жизни «Маг крови»."
 
   # Ask for blood magic
-  ask_for_blood_magic_interaction: "Попросить дар магии крови"
-  ask_for_blood_magic_interaction_desc: "Попросить персонажа [recipient.GetShortUINameNoTooltip] даровать вам силу магии крови"
-  ask_for_blood_magic_interaction_requirement: "Персонаж должен быть вашим другом, лучшим другом, любовником или родственной душой"
-  NOT_ask_for_blood_magic_interaction_requirement: "Персонаж должен быть вашим другом, лучшим другом, любовником или родственной душой"
+  ask_for_blood_magic_interaction:0 "Попросить дар магии крови"
+  ask_for_blood_magic_interaction_desc:0 "Попросить персонажа [recipient.GetShortUINameNoTooltip] даровать вам силу магии крови"
+  ask_for_blood_magic_interaction_requirement:0 "Персонаж должен быть вашим другом, лучшим другом, любовником или родственной душой"
+  NOT_ask_for_blood_magic_interaction_requirement:0 "Персонаж должен быть вашим другом, лучшим другом, любовником или родственной душой"
 
   # Get blood magic from prisoner
-  bm_get_blood_magic_from_prisoner_interaction: "Получить магию крови от пленника"
-  bm_get_blood_magic_from_prisoner_interaction.success: "Я становлюсь магом крови"
-  bm_get_blood_magic_from_prisoner_interaction.fail: "Мне не удалось стать магом крови"
-  bm_get_blood_magic_from_prisoner_interaction.desc: "Я поедаю плоть пленника, пытаясь обрести его магию крови"
+  bm_get_blood_magic_from_prisoner_interaction:0 "Получить магию крови от пленника"
+  bm_get_blood_magic_from_prisoner_interaction.success:0 "Я становлюсь магом крови"
+  bm_get_blood_magic_from_prisoner_interaction.fail:0 "Мне не удалось стать магом крови"
+  bm_get_blood_magic_from_prisoner_interaction.desc:0 "Я поедаю плоть пленника, пытаясь обрести его магию крови"
 
   # Grant Lifeforce
-  grant_lifeforce_interaction: "Даровать жизненную силу"
-  grant_lifeforce_interaction_desc: "Передать вашу жизненную силу персонажу [recipient.GetShortUINameNoTooltip]."
-  grant_lifeforce_interaction.grant_minor: "Даровать малую жизненную силу"
-  grant_lifeforce_interaction.grant_major: "Даровать большую жизненную силу"
-  grant_lifeforce_interaction.toast: "Я передаю жизненную силу персонажу [recipient.GetShortUINameNoTooltip]"
-  grant_lifeforce_interaction_requirement: "Чтобы даровать жизненную силу, необходим один из запасов: [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] или [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]."
-  NOT_grant_lifeforce_interaction_requirement: "Чтобы даровать жизненную силу, необходим один из запасов: [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] или [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]."
+  grant_lifeforce_interaction:0 "Даровать жизненную силу"
+  grant_lifeforce_interaction_desc:0 "Передать вашу жизненную силу персонажу [recipient.GetShortUINameNoTooltip]."
+  grant_lifeforce_interaction.grant_minor:0 "Даровать малую жизненную силу"
+  grant_lifeforce_interaction.grant_major:0 "Даровать большую жизненную силу"
+  grant_lifeforce_interaction.toast:0 "Я передаю жизненную силу персонажу [recipient.GetShortUINameNoTooltip]"
+  grant_lifeforce_interaction_requirement:0 "Чтобы даровать жизненную силу, необходим один из запасов: [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] или [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]."
+  NOT_grant_lifeforce_interaction_requirement:0 "Чтобы даровать жизненную силу, необходим один из запасов: [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] или [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]."
 
 
   # Reverse lifedrained
-  grant_lifeforce_interaction_reversed: "Обратить вытягивание жизненной силы"
-  grant_lifeforce_interaction_reversed_desc: "На персонаже [recipient.GetShortUINameNoTooltip] действует [GetModifier('lifedrained_modifier').GetNameWithTooltip], но я могу вернуть отнятую жизненную силу"
+  grant_lifeforce_interaction_reversed:0 "Обратить вытягивание жизненной силы"
+  grant_lifeforce_interaction_reversed_desc:0 "На персонаже [recipient.GetShortUINameNoTooltip] действует [GetModifier('lifedrained_modifier').GetNameWithTooltip], но я могу вернуть отнятую жизненную силу"
 
   # Cure illness
-  heal_disease_minor: "Исцелить лёгкий недуг"
-  heal_disease_major: "Исцелить недуг"
-  heal_disease_benediction: "Исцелить смертельный недуг"
+  bm_heal_ailment:0 "Исцелить недуг"
+  bm_heal_ailment_desc:0 "Провести ритуал крови: [recipient.GetShortUINameNoTooltip] избавится от выбранной раны, болезни или недуга."
+  bm_heal_ailment_tooltip:0 "Провести исцеляющий ритуал магии крови."
+  bm_heal_ailment_resource_requirement_tt:0 "У вас должно быть достаточно жизненной силы и благочестия, чтобы исцелить хотя бы один недуг персонажа [recipient.GetShortUINamePossessive]."
 
-  heal_disease_minor_desc: "Исцелить лёгкий недуг"
-  heal_disease_major_desc: "Исцелить недуг"
-  heal_disease_benediction_desc: "Исцелить смертельный недуг"
+  # Blood Knight
+  make_blood_knight_interaction:0 "Сделать рыцарем крови"
+  make_blood_knight_interaction_desc:0 "[recipient.GetShortUINameNoTooltip] обретёт сверхъестественное свойство образа жизни «Рыцарь крови»."
+  make_blood_knight_interaction.mage:0 "Магическое вливание крови"
+  make_blood_knight_interaction.mage_desc:0 "Провести магическое преобразование, используя [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] и 100 [piety|E]."
+  make_blood_knight_interaction.knight_minor:0 "Воинская клятва крови (малая жизненная сила)"
+  make_blood_knight_interaction.knight_minor_desc:0 "Связать вашего присягнувшего рыцаря воинской славой (200 [prestige|E]) и силой крови: [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip]."
+  make_blood_knight_interaction.knight_major:0 "Обряд кровного братства (большая жизненная сила)"
+  make_blood_knight_interaction.knight_major_desc:0 "Ваш присягнувший рыцарь получит сгущённую силу крови — [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] — без затрат престижа."
+  make_blood_knight_interaction_knight_requirement:0 "Вам нужны либо [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] и 200 [prestige|E], либо [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]"
+  NOT_make_blood_knight_interaction_knight_requirement:0 "Вам нужны либо [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] и 200 [prestige|E], либо [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]"
+  empower_blood_knight_interaction:0 "Усилить рыцаря крови"
+  empower_blood_knight_interaction_desc:0 "[recipient.GetShortUINameNoTooltip] получит сверхъестественную жизненную силу, развивающую воинские направления."
+  empower_blood_knight_interaction.major:0 "Большая жизненная сила (+10 опыта во всех направлениях)"
+  empower_blood_knight_interaction.minor:0 "Малая жизненная сила (+5 опыта во всех направлениях)"
+  empower_blood_knight_interaction.cancel:0 "Отказаться без затрат"
+  empower_blood_knight_interaction_requirement:0 "Для усиления рыцаря крови вам нужна либо [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip], либо [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]."
+  NOT_empower_blood_knight_interaction_requirement:0 "Для усиления рыцаря крови вам нужна либо [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip], либо [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]."
 
-  # Give blood prowess
-  grant_crimson_warrior_interaction: "Сделать багровым воином"
-  grant_crimson_warrior_interaction_desc: "Передать вашу жизненную силу персонажу [recipient.GetShortUINameNoTooltip], навсегда усилив его боевые способности с помощью магии крови."
-  lifeforce_modifier_crimson_warrior: "Багровый воин"
-  lifeforce_modifier_crimson_warrior_desc: "Кровь этого воина наполнена тайной силой, дарующей сверхъестественные боевые способности."
+  bm_duel_kill_blood_knight_toast:0 "Кровавая расправа рыцаря крови"
+  bm_duel_kill_blood_knight_tt:0 "За победу в единоборстве получено #P +5#! опыта в направлении #V «Бойня»#! и добыта [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip]"
 
-  grant_crimson_champion_interaction: "Сделать багровым чемпионом"
-  grant_crimson_champion_interaction_desc: "Передать вашу жизненную силу персонажу [recipient.GetShortUINameNoTooltip], навсегда усилив его боевые способности с помощью магии крови."
-  lifeforce_modifier_crimson_champion: "Багровый чемпион"
-  lifeforce_modifier_crimson_champion_desc: "Кровь этого воина наполнена тайной силой, дарующей сверхъестественные боевые способности."
+  bm_battle_victory_lifeforce_toast:0 "Жатва крови на поле боя"
+  bm_battle_victory_lifeforce_tt:0 "Из павших врагов на победном поле боя добыта [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip]"
+
+  # Bless Kin
+  bm_bless_bloodline_interaction:0 "Благословить кровь родича"
+  bm_bless_bloodline_interaction_desc:0 "Наполнить ребёнка или родича вашего дома живительной магией крови, благословляя его тело и разум и совершенствуя ваше владение родословной."
+  bm_recipient_already_blessed:0 "Кровь цели уже благословлена"
+  bm_bless_bloodline_toast:0 "Кровь родича благословлена"
+  bm_bless_bloodline_toast_tt:0 "Кровь персонажа [recipient.GetShortUINamePossessive] наполнена жизненной силой: дарована бодрость, а ваше владение родословной улучшено."
+
+  # Childbirth Milestones
+  bm_birth_blood_mage_child_toast:0 "Родился наследник — маг крови"
+  bm_birth_blood_mage_child_tt:0 "В ребёнке пробуждается свойство магии крови! Ваше владение родословной стремительно развивается."
+  bm_birth_child_bloodline_toast:0 "Родился ребёнок вашего рода"
+  bm_birth_child_bloodline_tt:0 "В вашем доме родился новый ребёнок, продолживший династическую линию и принёсший опыт Родословной."
 
   # Tooltips
-  IN_COURT_OR_IMPRISONED: "Можно исцелять только себя или своих придворных"
+  IN_COURT_OR_IMPRISONED:0 "Можно исцелять только себя, свою семью, сюзерена, придворных или рыцарей"
+
+  # Blood Curse
+  bm_curse_blood_interaction:0 "Наложить проклятие крови"
+  bm_curse_blood_interaction_desc:0 "[recipient.GetShortUINameNoTooltip] станет жертвой запретного проклятия магии крови, подтачивающего здоровье и вытягивающего жизненную сущность на расстоянии."
+  bm_curse_blood.critical_success_title:0 "Жизненная сила похищена"
+  bm_curse_blood.critical_success_desc:0 "Проклятие проникло глубоко в вены персонажа [recipient.GetShortUINamePossessive], вызвав тяжёлую болезнь и передав его жизненную силу вам."
+  bm_curse_blood.success_title:0 "Проклятие крови наложено"
+  bm_curse_blood.success_desc:0 "Кровь персонажа [recipient.GetShortUINamePossessive] связана злым проклятием магии крови. Здоровье и способности жертвы незаметно увядают."
+  bm_curse_blood.fail_title:0 "Проклятие отражено"
+  bm_curse_blood.fail_desc:0 "[recipient.GetShortUIName] противостоит вашему проклятию крови и узнаёт, кто пытался осквернить кровь."

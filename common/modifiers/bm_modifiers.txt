@@ -58,6 +58,21 @@ hematurgy_attuned = {
     icon = blood_magic
     enemy_hostile_scheme_success_chance_add = -10
 }
+vanguard_attuned = {
+    icon = blood_magic
+    advantage = 2
+    knight_effectiveness_mult = 0.05
+}
+slaughter_attuned = {
+    icon = blood_magic
+    prowess = 2
+    dread_gain_mult = 0.1
+}
+resilience_attuned = {
+    icon = blood_magic
+    health = 0.25
+    epidemic_resistance = 2
+}
 
 # Attempted lifedrain
 trait_drain_attempted = {
@@ -87,11 +102,42 @@ temporary_buff_bloodline = {
 temporary_buff_self = {
     icon = blood_magic
     stacking = yes
-    
+
     diplomacy = 2
     martial = 2
     intrigue = 2
     stewardship = 2
     learning = 2
     prowess = 4
+}
+
+bm_blessed_blood_modifier = {
+    icon = blood_magic
+    diplomacy = 1
+    martial = 1
+    stewardship = 1
+    intrigue = 1
+    learning = 1
+    prowess = 1
+    fertility = 0.1
+    health = 0.25
+}
+
+bm_bloodline_communion = {
+    icon = blood_magic
+    fertility = 0.1
+    health = 0.25
+    monthly_dynasty_prestige = 0.2
+}
+
+bm_blood_curse_modifier = {
+    icon = magic_negative
+    diplomacy = -2
+    martial = -2
+    stewardship = -2
+    intrigue = -2
+    learning = -2
+    prowess = -3
+    health = -1.5
+    fertility = -0.3
 }

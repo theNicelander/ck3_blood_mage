@@ -15,27 +15,37 @@
 
   trait_track_ancient_desc: "#help You gain experience in this track yearly.#!\n\nTime bows before those who command the essence of life itself."
   trait_track_enlightenment_desc: "#help You gain experience in this track by casting blood magic on yourself.#!\n\nThe path to mastery begins with the transformation of self."
-  trait_track_bloodline_desc: "#help You gain experience in this track by enhancing your dynasty. Yearly chance to gain experience, based on the number of Blood Mage modifiers the dynasty has.#!\n\nBlood calls to blood across generations."
-  trait_track_benediction_desc: "#help You gain experience in this track by healing ailments and granting powers to others.#!\n\nA blood mage's greatest gift is life itself, bestowed through crimson sacrifice."
-  trait_track_hematurgy_desc: "#help You gain experience in this track by draining lifeforce and harvesting traits from others.#!\n\nWhat others possess can be yours through the crimson arts."
+  trait_track_bloodline_desc: "#help You gain experience in this track by enhancing your dynasty. Yearly chance to gain experience, based on the number of Blood Mage modifiers the dynasty has.#!\n\nBlood calls to blood across generations. Masters of the bloodline fortify their dynasty, expand their domain, and construct realms of enduring wealth and grandeur."
+  trait_track_benediction_desc: "#help You gain experience in this track by healing ailments and granting powers to others.#!\n\nA blood mage's greatest gift is life itself, bestowed through blood sacrifice."
+  trait_track_hematurgy_desc: "#help You gain experience in this track by draining lifeforce, casting blood curses, and harvesting traits from others.#!\n\nMasters of forbidden hemomancy manipulate the vital humors of others, speeding hostile schemes, ruling through terrifying dread, and striking down rivals from afar."
 
 
-  # Crimson Empowerment
-  trait_lifestyle_crimson_empowerment: "Crimson Empowerment"
-  trait_lifestyle_crimson_empowerment_desc: "This character has reshaped their essence through blood magic, granting extraordinary abilities that evolve with further use of their powers."
+  # Blood Empowerment
+  trait_lifestyle_blood_empowerment: "Blood Empowerment"
+  trait_lifestyle_blood_empowerment_desc: "This character has reshaped their essence through blood magic, granting extraordinary abilities that evolve with further use of their powers."
 
-  trait_track_charisma: "Charisma"
-  trait_track_fury: "Fury"
+  trait_track_dynasty: "Dynasty"
+  trait_track_mastery: "Mastery"
+  trait_track_presence: "Presence"
   trait_track_prosperity: "Prosperity"
   trait_track_shadows: "Shadows"
+
+  trait_track_dynasty_desc: "This character channels blood magic into genetic refinement and reproductive potency."
+  trait_track_mastery_desc: "Blood magic accelerates lifestyle mastery and the acquisition of tongues."
+  trait_track_presence_desc: "Blood magic enhances diplomatic allure and stress resilience."
+  trait_track_prosperity_desc: "Blood magic draws direct wealth into your treasury and multiplies monthly income."
+  trait_track_shadows_desc: "A veil of blood shields this character from hostile plots and conceals their secrets."
+
+  # Legacy track localization preserved for backwards compatibility
+  trait_track_experience: "Experience"
+  trait_track_charisma: "Charisma"
+  trait_track_fury: "Fury"
   trait_track_insight: "Insight"
   trait_track_legacy: "Legacy"
   trait_track_expertise: "Expertise"
-
-  trait_track_charisma_desc: "Blood magic enhances this character's diplomatic presence and persuasive abilities."
+  trait_track_experience_desc: "Blood magic accelerates lifestyle mastery and the acquisition of tongues."
+  trait_track_charisma_desc: "Blood magic enhances diplomatic allure, stress resilience, and sway prowess."
   trait_track_fury_desc: "This character channels blood magic into martial prowess and battlefield dominance."
-  trait_track_prosperity_desc: "Blood magic enhances this character's administrative talents and domain management."
-  trait_track_shadows_desc: "This character uses blood magic to enhance stealth, deception, and scheming."
   trait_track_insight_desc: "Blood magic grants this character supernatural knowledge and learning abilities."
   trait_track_legacy_desc: "This character has enhanced their bloodline with magical potency, improving genetic traits and fertility."
   trait_track_expertise_desc: "Blood magic accelerates this character's mastery of all skills and abilities."
@@ -45,3 +55,34 @@
   bm_yearly_attunement_bloodline_toast: "Your Bloodline attunement granted you experience"
   bm_yearly_attunement_benediction_toast: "Your Benediction attunement granted you experience"
   bm_yearly_attunement_hematurgy_toast: "Your Hematurgy attunement granted you experience"
+  bm_yearly_attunement_vanguard_toast: "Your Vanguard attunement granted you experience"
+  bm_yearly_attunement_slaughter_toast: "Your Slaughter attunement granted you experience"
+  bm_yearly_attunement_resilience_toast: "Your Resilience attunement granted you experience"
+  bm_blood_knight_ambient_lifeforce_toast: "Ambient vitality condenses within your veins, granting Minor Lifeforce"
+
+  # Blood Knight
+  trait_lifestyle_blood_knight: "Blood Knight"
+  trait_lifestyle_blood_knight_desc: "This warrior's veins surge with arcane blood magic, transforming them into an evolving instrument of slaughter and martial power on the battlefield."
+  trait_lifestyle_blood_knight_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] has been infused with supernatural lifeforce, binding their body to martial sorcery as a Blood Knight."
+
+  lifestyle_blood_knight_vanguard: "Vanguard"
+  lifestyle_blood_knight_slaughter: "Slaughter"
+  lifestyle_blood_knight_enlightenment: "Enlightenment"
+  lifestyle_blood_knight_ancient: "Ancient"
+  lifestyle_blood_knight_benediction: "Benediction"
+  lifestyle_blood_knight_resilience: "Resilience"
+
+  lifestyle_blood_knight_vanguard_desc: "#help You gain experience in this track by fighting and winning battles in an army.#!\n\nMastery of warfare and front-line leadership, developing strategic brilliance and advantage."
+  lifestyle_blood_knight_slaughter_desc: "#help You gain experience in this track by winning single combat duels and tournament contests.#!\n\nDeadly martial instinct in single combat, honing personal prowess and renown."
+  lifestyle_blood_knight_enlightenment_desc: "#help You gain experience in this track by casting blood magic on yourself and manifesting lifeforce.#!\n\nThe path to mastery begins with the transformation of self."
+  lifestyle_blood_knight_ancient_desc: "#help You gain experience in this track yearly.#!\n\nTime bows before those who command the essence of life itself."
+  lifestyle_blood_knight_benediction_desc: "#help You gain experience in this track by healing ailments and purging physical impurities.#!\n\nA warrior's gift of vitality, purging flaws and ailments through blood."
+  lifestyle_blood_knight_resilience_desc: "#help You gain experience in this track passively each year and by surviving lost battles.#!\n\nSomatic adaptation overcoming mortal fragility, extending longevity, health, and disease resistance."
+
+  trait_track_vanguard: "Vanguard"
+  trait_track_slaughter: "Slaughter"
+  trait_track_resilience: "Resilience"
+
+  trait_track_vanguard_desc: "#help You gain experience in this track by fighting and winning battles in an army.#!\n\nMastery of warfare and front-line leadership, developing strategic brilliance and advantage."
+  trait_track_slaughter_desc: "#help You gain experience in this track by winning single combat duels and tournament contests.#!\n\nDeadly martial instinct in single combat, honing personal prowess and renown."
+  trait_track_resilience_desc: "#help You gain experience in this track passively each year and by surviving lost battles.#!\n\nSomatic adaptation overcoming mortal fragility, extending longevity, health, and disease resistance."

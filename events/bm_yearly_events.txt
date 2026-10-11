@@ -28,7 +28,7 @@ blood_mage_yearly_events.001 = {
                 }
             }
         }
-        
+
         # Enlightenment attunement check
         if = {
             limit = { has_character_modifier = enlightenment_attuned }
@@ -45,7 +45,7 @@ blood_mage_yearly_events.001 = {
                 }
             }
         }
-        
+
         # Bloodline attunement check
         if = {
             limit = { has_character_modifier = bloodline_attuned }
@@ -62,7 +62,7 @@ blood_mage_yearly_events.001 = {
                 }
             }
         }
-        
+
         # Benediction attunement check
         if = {
             limit = { has_character_modifier = benediction_attuned }
@@ -79,7 +79,7 @@ blood_mage_yearly_events.001 = {
                 }
             }
         }
-        
+
         # Hematurgy attunement check
         if = {
             limit = { has_character_modifier = hematurgy_attuned }
@@ -101,9 +101,9 @@ blood_mage_yearly_events.001 = {
 
 blood_mage_yearly_events.002 = {
     hidden = yes
-    trigger = { 
+    trigger = {
         has_trait = lifestyle_blood_mage
-        exists = house 
+        exists = house
     }
     immediate = {
         # Dynasty bloodline, get XP based on number of dynasty modifiers
@@ -111,32 +111,32 @@ blood_mage_yearly_events.002 = {
             chance =  {
                 value = 0
                 if = {
-                    limit = {house = { has_house_modifier = dynasty_crimson_charisma_modifier }}
-                    add = 5
+                    limit = {house = { has_house_modifier = dynasty_blood_charisma_modifier }}
+                    add = 10
                 }
                 if = {
-                    limit = {house = { has_house_modifier = dynasty_crimson_fury_modifier }}
-                    add = 5
+                    limit = {house = { has_house_modifier = dynasty_blood_fury_modifier }}
+                    add = 10
                 }
                 if = {
-                    limit = {house = { has_house_modifier = dynasty_crimson_prosperity_modifier }}
-                    add = 5
+                    limit = {house = { has_house_modifier = dynasty_blood_prosperity_modifier }}
+                    add = 10
                 }
                 if = {
-                    limit = {house = { has_house_modifier = dynasty_crimson_shadows_modifier }}
-                    add = 5
+                    limit = {house = { has_house_modifier = dynasty_blood_shadows_modifier }}
+                    add = 10
                 }
                 if = {
-                    limit = {house = { has_house_modifier = dynasty_crimson_insight_modifier }}
-                    add = 5
+                    limit = {house = { has_house_modifier = dynasty_blood_insight_modifier }}
+                    add = 10
                 }
                 if = {
-                    limit = {house = { has_house_modifier = dynasty_crimson_legacy_modifier }}
-                    add = 5
+                    limit = {house = { has_house_modifier = dynasty_blood_legacy_modifier }}
+                    add = 10
                 }
                 if = {
-                    limit = {house = { has_house_modifier = dynasty_crimson_expertise_modifier }}
-                    add = 5
+                    limit = {house = { has_house_modifier = dynasty_blood_expertise_modifier }}
+                    add = 10
                 }
             }
             # Give XP
@@ -158,14 +158,14 @@ blood_mage_yearly_events.003 = {
     trigger = { has_trait = lifestyle_blood_mage }
     immediate = {
         if = {
-            limit = { has_character_modifier = minor_crimson_rune_modifier }
+            limit = { has_character_modifier = minor_blood_rune_modifier }
             duel = {
-                skill = learning 
+                skill = learning
                 value = 0
-                80 = {  } # chance of nothing happening 
+                80 = {  } # chance of nothing happening
                 20 = { # minor lifeforce only
                     send_interface_toast = {
-                        title = bm_crimson_rune_yearly_event_popup.title
+                        title = bm_blood_rune_yearly_event_popup.title
                         left_icon = root
                         add_character_modifier = { modifier = lifeforce_modifier_minor }
                     }
@@ -173,28 +173,28 @@ blood_mage_yearly_events.003 = {
             }
         }
         if = {
-            limit = { has_character_modifier = major_crimson_rune_modifier }
+            limit = { has_character_modifier = major_blood_rune_modifier }
             duel = {
                 skill = learning
                 value = 0
-                65 = {  } # chance of nothing happening 
+                65 = {  } # chance of nothing happening
                 20 = { # minor lifeforce only
                     send_interface_toast = {
-                        title = bm_crimson_rune_yearly_event_popup.title
+                        title = bm_blood_rune_yearly_event_popup.title
                         left_icon = root
                         add_character_modifier = { modifier = lifeforce_modifier_minor }
                     }
                 }
                 10 = { # major lifeforce only
                     send_interface_toast = {
-                        title = bm_crimson_rune_yearly_event_popup.title
+                        title = bm_blood_rune_yearly_event_popup.title
                         left_icon = root
                         add_character_modifier = { modifier = lifeforce_modifier_major }
                     }
                 }
                 5 = { # both minor and major lifeforce
                     send_interface_toast = {
-                        title = bm_crimson_rune_yearly_event_popup.title
+                        title = bm_blood_rune_yearly_event_popup.title
                         left_icon = root
                         add_character_modifier = { modifier = lifeforce_modifier_major }
                         add_character_modifier = { modifier = lifeforce_modifier_minor }
@@ -203,31 +203,137 @@ blood_mage_yearly_events.003 = {
             }
         }
         if = {
-            limit = { has_character_modifier = superior_crimson_rune_modifier }
+            limit = { has_character_modifier = superior_blood_rune_modifier }
             duel = {
                 skill = learning
                 value = 0
-                50 = { } # chance of nothing happening 
+                50 = { } # chance of nothing happening
                 30 = { # minor lifeforce only
                     send_interface_toast = {
-                        title = bm_crimson_rune_yearly_event_popup.title
+                        title = bm_blood_rune_yearly_event_popup.title
                         left_icon = root
                         add_character_modifier = { modifier = lifeforce_modifier_minor }
                     }
                 }
                 20 = { # major lifeforce only
                     send_interface_toast = {
-                        title = bm_crimson_rune_yearly_event_popup.title
+                        title = bm_blood_rune_yearly_event_popup.title
                         left_icon = root
                         add_character_modifier = { modifier = lifeforce_modifier_major }
                     }
                 }
                 10 = { # both minor and major lifeforce
                     send_interface_toast = {
-                        title = bm_crimson_rune_yearly_event_popup.title
+                        title = bm_blood_rune_yearly_event_popup.title
                         left_icon = root
                         add_character_modifier = { modifier = lifeforce_modifier_major }
                         add_character_modifier = { modifier = lifeforce_modifier_minor }
+                    }
+                }
+            }
+        }
+    }
+}
+
+# Yearly event - Add enlightenment & ancient XP to Blood Knights
+blood_mage_yearly_events.004 = {
+    hidden = yes
+    trigger = { has_trait = lifestyle_blood_knight }
+    immediate = {
+        add_blood_knight_xp = {
+            TRACK = enlightenment
+            XP = 1
+        }
+        add_blood_knight_xp = {
+            TRACK = ancient
+            XP = 1
+        }
+
+        # Ambient lifeforce generation (approx 1 in 3 chance per year)
+        random = {
+            chance = 33
+            send_interface_toast = {
+                title = bm_blood_knight_ambient_lifeforce_toast
+                left_icon = root
+                add_character_modifier = { modifier = lifeforce_modifier_minor }
+            }
+        }
+
+        # Ancient attunement check
+        if = {
+            limit = { has_character_modifier = ancient_attuned }
+            random = {
+                chance = 50
+                send_interface_toast = {
+                    title = bm_yearly_attunement_ancient_toast
+                    left_icon = root
+                    add_blood_knight_xp = {
+                        TRACK = ancient
+                        XP = 1
+                    }
+                }
+            }
+        }
+
+        # Benediction attunement check
+        if = {
+            limit = { has_character_modifier = benediction_attuned }
+            random = {
+                chance = 50
+                send_interface_toast = {
+                    title = bm_yearly_attunement_benediction_toast
+                    left_icon = root
+                    add_blood_knight_xp = {
+                        TRACK = benediction
+                        XP = 1
+                    }
+                }
+            }
+        }
+
+        # Vanguard attunement check
+        if = {
+            limit = { has_character_modifier = vanguard_attuned }
+            random = {
+                chance = 50
+                send_interface_toast = {
+                    title = bm_yearly_attunement_vanguard_toast
+                    left_icon = root
+                    add_blood_knight_xp = {
+                        TRACK = vanguard
+                        XP = 1
+                    }
+                }
+            }
+        }
+
+        # Slaughter attunement check
+        if = {
+            limit = { has_character_modifier = slaughter_attuned }
+            random = {
+                chance = 50
+                send_interface_toast = {
+                    title = bm_yearly_attunement_slaughter_toast
+                    left_icon = root
+                    add_blood_knight_xp = {
+                        TRACK = slaughter
+                        XP = 1
+                    }
+                }
+            }
+        }
+
+        # Enlightenment attunement check
+        if = {
+            limit = { has_character_modifier = enlightenment_attuned }
+            random = {
+                chance = 50
+                send_interface_toast = {
+                    title = bm_yearly_attunement_enlightenment_toast
+                    left_icon = root
+                    add_blood_knight_xp = {
+                        TRACK = enlightenment
+                        XP = 1
                     }
                 }
             }

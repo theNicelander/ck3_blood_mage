@@ -1,20 +1,21 @@
 ---
 name: update-docs
 description: >-
-  Use this skill after changing script, localization or behaviour, to keep the
-  architecture docs and the branch context file true to the current state.
+  Keep architecture docs and branch context current after code or balance changes.
 ---
 
 # Update docs
 
+Keep docs true to current state. No history or changelogs in architecture docs.
+
 ## Steps
 
-1. Map changed paths to docs with [the index](../../../docs-ai/architecture/README.md).
-2. Rewrite the affected text to describe the current state: no history, no tunable numbers. Format rules are in [architecture AGENTS.md](../../../docs-ai/architecture/AGENTS.md).
-3. If a doc was added or removed, update the doc table in that `AGENTS.md` and the `README.md` index.
-4. Update `docs-ai/branch-context/<branch>.md` (Summary & Motivation, Core Concepts, Key Decisions) per [pr-context](../../rules/pr-context.md). Skip renames and minor fixes.
+1. Find affected doc via [index](../../../docs-ai/architecture/README.md).
+2. Update specs: costs, requirements, cooldowns, XP gains, benefits. Format per [architecture AGENTS.md](../../../docs-ai/architecture/AGENTS.md).
+3. If adding or removing doc, update `AGENTS.md` table and `README.md` index.
+4. Update `docs-ai/branch-context/<branch>.md` (Summary, Concepts, Decisions) per [pr-context](../../rules/pr-context.md). Ignore minor edits.
 
 ## Verify
 
-- Every identifier named in the edited docs exists: `grep -rn "<identifier>" common events gui localization/english`.
-- No numbers for costs, chances or thresholds were added.
+- Identifiers exist: `grep -rn "<id>" common/ events/ gui/ localization/english/`.
+- Docs reflect current script values and triggers exactly.

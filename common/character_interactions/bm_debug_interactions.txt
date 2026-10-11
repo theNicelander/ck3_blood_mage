@@ -1,58 +1,43 @@
-﻿debug_convert_to_blood_mage_interaction = {
+﻿bm_debug_character_interaction = {
 	category = interaction_debug_main
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 	auto_accept = yes
+	icon = grant_blood_magic_interaction
 
-	is_shown = {
-		debug_only = yes
-		scope:recipient = {
-			NOT = { has_trait = lifestyle_blood_mage }
-		}
-	}
-
-	on_accept = {
-		scope:recipient = {
-			bm_become_blood_mage_effect = yes
-		}
-	}
-}
-
-debug_convert_to_blodtru_interaction = {
-	category = interaction_debug_main
-	use_diplomatic_range = no
-	ignores_pending_interaction_block = yes
-	auto_accept = yes
+	desc = bm_debug_character_interaction_desc
 
 	is_shown = {
 		debug_only = yes
 	}
 
 	send_option = {
-		flag = europe
-		localization = debug_convert_to_blodtru_option_europe
+		flag = make_blood_mage
+		localization = bm_debug_option_make_blood_mage
 	}
 	send_option = {
-		flag = china
-		localization = debug_convert_to_blodtru_option_china
+		flag = make_blood_knight
+		localization = bm_debug_option_make_blood_knight
 	}
 	send_option = {
-		flag = japan
-		localization = debug_convert_to_blodtru_option_japan
+		flag = convert_to_blodtru
+		localization = bm_debug_option_convert_to_blodtru
 	}
 
 	on_accept = {
 		scope:recipient = {
 			switch = {
 				trigger = yes
-				scope:europe = {
+				scope:make_blood_mage = {
+					remove_trait = lifestyle_blood_knight
+					bm_become_blood_mage_effect = yes
+				}
+				scope:make_blood_knight = {
+					remove_trait = lifestyle_blood_mage
+					add_trait = lifestyle_blood_knight
+				}
+				scope:convert_to_blodtru = {
 					set_character_faith = faith:blodtru_faith
-				}
-				scope:china = {
-					set_character_faith = faith:xuedao_faith
-				}
-				scope:japan = {
-					set_character_faith = faith:ketsudo_faith
 				}
 			}
 		}

@@ -1,20 +1,20 @@
 ---
 name: validate-change
 description: >-
-  Use this skill after any change to this mod to run the repo checks (format
-  script, whitespace) and to write a final summary that states what could not
-  be verified.
+  Run repository format checks and state unverified runtime behaviors.
 ---
 
 # Validate a change
 
+Run checks on every change.
+
 ## Steps
 
-1. `python3 scripts/check_repo.py`. Add `--fix` only for missing BOM or trailing newline.
-2. `git diff --check`.
-3. Final summary lists what could not be verified (in-game UI, AI behaviour, portraits) and asks the user to check `error.log` after a test run.
+1. Run format check: `python3 scripts/check_repo.py`. Pass `--fix` only for missing BOM or trailing newline.
+2. Check whitespace and git status: `git diff --check`.
+3. In final summary, list what was not verified (runtime UI, AI behavior, portraits) and check `~/Documents/Paradox\ Interactive/Crusader\ Kings\ III/logs/error.log`.
 
 ## Verify
 
-- `check_repo.py` exits 0 and `git diff --check` prints nothing.
-- `descriptor.mod` is not in `git status` because of you.
+- `python3 scripts/check_repo.py` passes with exit code 0.
+- `descriptor.mod` untouched.

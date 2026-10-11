@@ -6,7 +6,7 @@
 
 - **How to get it:** Acquired through `bm_become_blood_mage_effect` via self-initiation (faith decision or Learning ritual duel), teaching from a friend/lover/liege, siphoning an imprisoned mage, witch conversion, or hereditary birth.
 - **What it does:** Marks the character as a blood mage. Grants base benefits (`+2` Learning per Piety level, `+10` Blood Mage opinion), unlocks the Blood Magic story panel, enables Lifeforce spellcasting, and progresses across 5 school tracks.
-- **How to level it up:** Spending Lifeforce on blood magic grants XP in the spell's corresponding school (using `add_xp_bm_dynamic`). Slow passive growth comes from the yearly pulse (`ancient`), active house crimson modifiers (`bloodline`), and yearly attunements.
+- **How to level it up:** Spending Lifeforce on blood magic grants XP in the spell's corresponding school (using `add_xp_bm_dynamic`). Slow passive growth comes from the yearly pulse (`ancient`), active house blood modifiers (`bloodline`), and yearly attunements.
 
 ### Simplified Track Benefits Table
 
@@ -14,54 +14,68 @@ Each track has 10 progression levels (10 to 100 XP). Every standard level (10–
 
 | Track | School Theme | Standard Step Bonus (10–40, 60–90) | Level 50 Milestone | Level 100 Milestone | Grown By |
 | --- | --- | --- | --- | --- | --- |
-| `ancient` | Time & Piety | Vitality + `+0.2` Monthly Piety, `+5%` Piety Gain Mult | `+1` Learning & Prowess per Piety level | `+1` Learning per Piety level, Prowess age lock | Yearly pulse, Ancient attunement |
-| `enlightenment` | Self-Mastery | Vitality + `+5%` Lifestyle XP Gain Mult | `+1` Martial & Prowess per Piety level | `+1` Martial per Piety level, Prowess age lock | Self-cast spells, channeling lifeforce |
-| `bloodline` | Dynastic Lineage | Vitality + `+0.1` Monthly Dynasty Prestige | `+1` Stewardship & Prowess per Piety level | `+1` Stewardship per Piety level, Prowess age lock | Bloodline enhancement decision, house modifiers |
-| `benediction` | Healing & Bestowal | Vitality + `+2.5` General Opinion, `+0.2` Prestige, `+5%` Prestige Mult | `+1` Diplomacy & Prowess per Piety level | `+1` Diplomacy per Piety level, Prowess age lock | Curing ailments, granting powers to others |
-| `hematurgy` | Siphoning Vitality | Vitality + `-5` Enemy Hostile Scheme Success Chance | `+1` Intrigue & Prowess per Piety level | `+1` Intrigue per Piety level, Prowess age lock | Draining lifeforce, harvesting traits |
+| `ancient` | Time & Piety | Vitality + `+0.1` Monthly Dynasty Prestige, `+5%` Lifestyle XP Gain Mult | `+0.25` Negate Health Penalty, `+1` Prowess per Piety level | `+0.5` Negate Health Penalty, Prowess age lock | Yearly pulse, Ancient attunement, Blood runes, Condense lifeforce |
+| `enlightenment` | Self-Mastery & Learning | Vitality + `+0.2` Monthly Piety, `+5%` Piety Gain Mult | `+1` Learning & Prowess per Piety level | `+1` Learning per Piety level, Prowess age lock | Manifesting lifeforce, Education duels, Channeling lifeforce, Blood empowerment |
+| `bloodline` | Kingdom & Dynasty Building | Vitality + `+0.2` Monthly Dynasty Prestige, `-2%` Build Gold Cost, `+2%` Domain Tax, `+5%` Development Growth (20, 40, 60, 80, 100), `-5%` Build Speed (30, 70, 90), `+1` Domain Limit & `+10%` Gold Gain (30, 60, 90) | `+1` Stewardship per Piety level, `+1` Prowess per Piety level, `+5` Vassal Limit | `+1` Stewardship per Piety level, `+10` Vassal Limit, Prowess age lock | Granting blood magic, Childbirth, Bless kin, Commune rite, Congenital manifestation, House modifiers, Golems |
+| `benediction` | Healing & Bestowal | Vitality + `+1.5` General Opinion, `+1.0` Vassal Opinion, `+0.2` Prestige, `+5%` Prestige Mult | `+1` Diplomacy & Prowess per Piety level | `+1` Diplomacy per Piety level, Prowess age lock | Curing ailments, Making & empowering blood knights, Restoring courtiers |
+| `hematurgy` | Hostile Spells & Intrigue | Vitality + `+3` Hostile Scheme Success, `+3` Scheme Secrecy, `-2%` Tyranny Gain, Natural Dread, Dread Gain Mult, `-2` Days Scheme Phase Duration (20, 40, 60, 70, 90) | `+1` Intrigue per Piety level, `+1` Prowess per Piety level, `+1` Max Hostile Schemes | `+1` Intrigue per Piety level, Prowess age lock, `+1` Max Hostile Schemes, `-10` Days Scheme Phase Duration | Draining lifeforce from prisoners/courtiers, Blood curses (`bm_curse_blood_interaction`), Congenital trait theft |
 
 *Prowess age lock = `no_prowess_loss_from_age = yes` (full immunity to prowess deterioration from aging).*
 
 ## Purpose
 
-Identity and progression trait `lifestyle_blood_mage`. Gates spellcasting, story panel, and 5 school tracks. Secondary trait `lifestyle_crimson_empowerment` covered in [blood-mage-crimson-empowerment.md](blood-mage-crimson-empowerment.md).
+Identity and progression trait `lifestyle_blood_mage`. Gates spellcasting, story panel, and 5 school tracks. Secondary trait `lifestyle_blood_empowerment` covered in [blood-mage-blood-empowerment.md](blood-mage-blood-empowerment.md).
 
 ## Concepts
 
 ### Blood Mage (`lifestyle_blood_mage`)
-- **Type:** Lifestyle trait. Inheritable (25% single parent, 100% both parents; 0.2% birth / random creation). Subject to prevalence game rule.
+- **Type:** Lifestyle trait. Mutually exclusive with `lifestyle_blood_knight` via decisions and interactions (script-gated; opposites block omitted to permit dual-wielding on legendary figures like Egill). A blood mage cannot become a blood knight. Inheritable (25% single parent, 100% both parents; 0.2% birth / random creation). Subject to prevalence game rule.
 - **Base Stats:** `+2` Learning per Piety level, `+10` Blood Mage opinion.
-- **Entry Effect:** Always added via `bm_become_blood_mage_effect` (sets story cycle, initializes rosters, flags prevalence review).
-- **Tracks:** 5 schools (`ancient`, `enlightenment`, `bloodline`, `benediction`, `hematurgy`). Max 100 XP each.
+- **Entry Effect:** Added via `bm_become_blood_mage_effect` or `bm_elevate_blood_knight_to_blood_mage_effect` (which transfers all accrued `ancient`, `benediction`, and `enlightenment` track XP 1:1, and converts 50% of `vanguard` and `slaughter` into `bloodline` and `hematurgy`).
+- **Tracks:** 5 schools (`ancient`, `enlightenment`, `bloodline`, `benediction`, `hematurgy`). Max 100 XP each. `ancient`, `benediction`, and `enlightenment` tracks are shared identically with `lifestyle_blood_knight`.
+- **Stat Parity:** Every 10 XP tier in any track scales identical baseline vitality stats (`+0.1` Health, `+2` Life Expectancy, `+1` Year Fertility, `+1` Epidemic Resistance).
+- **Track Icons (`gfx/interface/icons/trait_level_tracks/`):**
+  - `ancient.dds`: Fiery Blood Drop (shared).
+  - `benediction.dds`: Lifestyle Physician (caduceus healing staff; shared).
+  - `enlightenment.dds`: Venerated Ancestor / Saint (shared).
+  - `bloodline.dds`: Augustus (laurel-crowned dynastic triumph; Mage exclusive).
+  - `hematurgy.dds`: Murderer (Mage exclusive).
+  - `vanguard.dds`: Warrior of the Faith (Knight exclusive).
+  - `slaughter.dds`: Raider / Reaver (blood-dripping axe; Knight exclusive).
 
 ### Acquisition Triggers
-All routes call `bm_become_blood_mage_effect`:
-- `bm_become_blood_mage_decision`: Decision for Blóðtrú faithful.
-- `bm_become_blood_mage_ritual_decision`: Decision for non-faithful; Learning duel with risk of injury.
-- `grant_blood_magic_interaction`: Mage grants trait to unlanded courtier (costs lifeforce).
+All routes call `bm_become_blood_mage_effect` or `bm_elevate_blood_knight_to_blood_mage_effect`:
+- `bm_elevate_to_blood_mage_decision`: Blood Knights can take a dedicated ritual decision to elevate themselves and become a Blood Mage, carrying over their `ancient`, `benediction`, and `enlightenment` track progress 1:1 and converting 50% of martial XP (`vanguard` -> `bloodline`, `slaughter` -> `hematurgy`) into Blood Mage schools.
+- `bm_blood_cultist_become_blood_mage_decision`: Decision for Blóðtrú faithful; initiation duel against Egill Skallagrímsson (`bm_geyser_duel.0001`) in Reykjavik or Tsushima.
+- `bm_enhance_blood_ritual_decision`: Decision for non-faithful; initiation duel against Egill Skallagrímsson (`bm_geyser_duel.0001`) in Reykjavik or Tsushima.
+- `grant_blood_magic_interaction`: Mage grants trait to unlanded courtier (costs lifeforce; awards Bloodline XP).
 - `ask_for_blood_magic_interaction`: Non-mage asks friend/lover/soulmate mage to teach them.
-- `bm_drain_blood_magic_interaction`: Character harvests trait from imprisoned blood mage.
-- `bm_convert_from_witch_decision`: Witch swaps witch trait/secret for blood magic.
+- `bm_get_blood_magic_from_prisoner_interaction`: Character harvests trait from imprisoned blood mage.
+- `convert_to_blood_magic_from_witch`: Witch swaps witch trait/secret for blood magic.
 - Birth inheritance: Rolled on newborn children of blood mages via `on_birth_child`.
 
 ### How Tracks Level Up
-- **Active Spells:** Consuming Lifeforce adds 1–2 XP to the spell's school via `add_xp_bm_dynamic`.
-- **Passive Yearly:** `ancient` gains +1 XP on yearly pulse; `bloodline` rolls yearly XP based on count of house crimson modifiers.
-- **Progression Gates:** Advanced decisions/rituals require minimum XP thresholds in specific tracks.
+- **Active Spells & Interactions:** Consuming Lifeforce adds XP to the spell's corresponding school via `add_xp_bm_dynamic`.
+- **Ancient:** Yearly pulse, Ancient attunement, Inscribing blood runes (Major/Superior), and Condense lifeforce.
+- **Bloodline:** Bestowing blood magic, welcoming newborn children (`bm_on_birth_bloodline_xp`), blessing kin, communing with the bloodline, manifesting congenital traits, and active house modifiers.
+- **Benediction:** Curing ailments across 37 afflictions (`bm_heal_ailment`), empowering and creating blood knights, and restoring drained victims.
+- **Hematurgy:** Draining prisoners and courtiers, casting remote blood curses (`bm_curse_blood_interaction`), and harvesting congenital traits. (Battlefield kills do not grant lifeforce to blood mages).
+- **Enlightenment:** Manifesting lifeforce decisions (Learning duel), educational enhancement duels, lifeforce channeling, and blood empowerment.
 
 ## Where the details live
 
 | Piece | File |
 | --- | --- |
 | Blood Mage trait | `common/traits/bm_blood_mage_trait.txt` |
-| Crimson Empowerment trait | `common/traits/bm_crimson_empowerment_trait.txt` |
-| XP helpers (`add_xp_bm_dynamic`, `add_crimson_empowerment_xp`) | `common/scripted_effects/bm_trait_track_xp_gain_effects.txt` |
+| Blood Empowerment trait | `common/traits/bm_blood_empowerment_trait.txt` |
+| XP helpers (`add_xp_bm_dynamic`, `add_blood_empowerment_xp`) | `common/scripted_effects/bm_trait_track_xp_gain_effects.txt` |
 | Acquisition effect | `common/scripted_effects/bm_blood_mage_lifecycle_effects.txt` |
 | Per-school cast effects (XP per spell) | `common/scripted_effects/bm_blood_magic_used_effects.txt`, `bm_drain_trait_effects.txt` |
+| Congenital trait manifestation (effects & events) | `common/scripted_effects/bm_manifest_traits_effects.txt`, `events/bm_channel_manifest_traits_events.txt` |
 | Yearly passive XP and rune lifeforce | `events/bm_yearly_events.txt`, `common/on_action/bm_yearly_pulse.txt` |
-| Crimson Empowerment choice event | `events/bm_crimson_empowerment_event.txt` |
+| Blood Empowerment choice event | `events/bm_blood_empowerment_event.txt` |
 | Birth and prevalence on-actions | `common/on_action/bm_blood_mage_prevalence_on_actions.txt` |
-| Acquisition interactions and decisions | `common/character_interactions/bm_become_a_blood_mage.txt`, `bm_grant_blood_magic.txt`, `common/decisions/bm_become_blood_mage_decision.txt`, `bm_convert_from_witch.txt` |
+| Acquisition interactions and decisions | `common/character_interactions/bm_become_a_blood_mage.txt`<br>`common/character_interactions/bm_grant_blood_magic.txt`<br>`common/decisions/become_mage/bm_become_blood_mage_decision.txt`<br>`common/decisions/become_mage/bm_convert_from_witch.txt`<br>`common/decisions/become_mage/bm_elevate_blood_knight_decision.txt` |
 | Names and track descriptions | `localization/english/bm_traits_l_english.yml` |
 
 Per-level values, milestones, inheritance chances and XP thresholds are in those files.

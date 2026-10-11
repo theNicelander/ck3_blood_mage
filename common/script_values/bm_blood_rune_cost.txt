@@ -1,11 +1,11 @@
 ﻿bm_blood_rune_piety_cost = {
     value = 0
     if = {
-        limit = { has_character_modifier = minor_crimson_rune_modifier }
+        limit = { has_character_modifier = minor_blood_rune_modifier }
         add = 200
     }
     if = {
-        limit = { has_character_modifier = major_crimson_rune_modifier }
+        limit = { has_character_modifier = major_blood_rune_modifier }
         add = 400
     }
 }

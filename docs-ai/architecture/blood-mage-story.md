@@ -2,16 +2,17 @@
 
 ## Executive Summary
 
-Character-bound story cycle powering the "Blood Magic" Situation panel (`window_situation_list.gui`). Provides dedicated management interface for living dynasty blood mages, blood golems, and crimson retinue warriors, alongside situation-exclusive decisions.
+Character-bound story cycle powering the "Blood Magic" Situation panel (`window_situation_list.gui`). Provides dedicated management interface for living dynasty blood mages, blood golems, and blood knight retinue, alongside situation-exclusive decisions.
 
 ## Story Architecture & Rosters
 
 | Component | Scope / Target | Content / Members | Update Trigger |
 | --- | --- | --- | --- |
 | **Living Dynasty Roster** | Story variable list | All living dynasty members with `lifestyle_blood_mage` | `bm_refresh_blood_magic_rosters_effect` |
-| **Blood Golem Roster** | Story variable list | Courtiers possessing `lifestyle_blood_mage` trait belonging to the Golem house (`house_blood_golem`) | Creation, shaping, death, or roster refresh effect |
-| **Crimson Retinue Roster** | Story variable list | Courtiers granted Crimson Warrior (`bm_crimson_warrior`) or Champion (`bm_crimson_champion`) modifiers | Empowerment interactions or roster refresh effect |
-| **Lifeforce Counters** | Story variables | Cached counts of Minor, Medium, and Major Lifeforce modifiers | Roster refresh (strips and recount stacks) |
+| **Blood Golem Roster** | Story variable list | Courtiers possessing `lifestyle_blood_mage` trait belonging to the Golem house (`bm_house_golem`) | Creation, shaping, death, or roster refresh effect |
+| **Blood Retinue Roster** | Story variable list | Courtiers possessing `lifestyle_blood_knight` trait | Roster refresh effect (`bm_refresh_blood_magic_rosters_effect`) |
+| **Lifeforce Counters** | Story variables | Cached counts of Minor, Major, and Superior Lifeforce modifiers (`bm_lifeforce_minor_stacks`, `bm_lifeforce_major_stacks`, `bm_lifeforce_superior_stacks`) | Roster refresh (strips and recount stacks) |
+| **Custom Status Display** | Customizable localization | Real-time readout of disciplines, Lifeforce stacks, active Attunement, and inscribed Blood Rune | `BM_BLOOD_MAGE_INFORMATION_STRING` evaluated on view |
 | **Situation Decisions** | Hidden decisions (`is_invisible = yes`) | Compact blood magic actions accessible only inside panel | Story cycle decision list |
 
 ## Lifecycle & Synchronization
@@ -32,5 +33,6 @@ Character-bound story cycle powering the "Blood Magic" Situation panel (`window_
 | Story script values | `common/script_values/bm_blood_mage_story_values.txt` |
 | Story creation on-actions | `common/on_action/bm_blood_mage_story_on_actions.txt` |
 | Prevalence story hooks | `common/on_action/bm_blood_mage_prevalence_on_actions.txt` |
+| Custom localization | `common/customizable_localization/bm_blood_mage_story_custom_loc.txt` |
 | GUI Panel definition | `gui/window_situation_list.gui` |
 | Localization | `localization/english/bm_blood_mage_story_l_english.yml` |

@@ -4,14 +4,17 @@ lifedrain_piety_cost_major_neg = -50
 lifedrain_piety_cost_minor = 25
 lifedrain_piety_cost_minor_neg = -25
 
+# Blood Knight
+blood_knight_creation_piety_cost = 100
+blood_knight_creation_prestige_cost = 200
+
 # Trait draining
 trait_drain_base_piety_cost = -100
 trait_drain_level_2_piety_cost = -75
 trait_drain_level_3_piety_cost = -150
-trait_drain_level_4_piety_cost = -200
 
 trait_drain_intellect_cost = {
-    add = trait_drain_base_piety_cost
+    value = trait_drain_base_piety_cost
     if = {
         limit = { has_trait = intellect_good_2 }
         add = trait_drain_level_2_piety_cost
@@ -23,7 +26,7 @@ trait_drain_intellect_cost = {
 }
 
 trait_drain_physique_cost = {
-    add = trait_drain_base_piety_cost
+    value = trait_drain_base_piety_cost
     if = {
         limit = { has_trait = physique_good_2 }
         add = trait_drain_level_2_piety_cost

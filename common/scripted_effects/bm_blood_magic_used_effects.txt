@@ -1,4 +1,8 @@
-﻿blood_magic_used_major = {
+﻿blood_magic_used_superior = {
+    remove_character_modifier = lifeforce_modifier_superior
+    temporary_negative_lifeforce_effect_superior = yes
+}
+blood_magic_used_major = {
     remove_character_modifier = lifeforce_modifier_major
     temporary_negative_lifeforce_effect_major = yes
 }
@@ -50,6 +54,13 @@ benediction_magic_cast_effect_minor = {
         XP = 2
     }
 }
+bloodline_magic_cast_effect_minor = {
+    remove_character_modifier = lifeforce_modifier_minor
+    add_xp_bm_dynamic = {
+        TRACK = bloodline
+        XP = 2
+    }
+}
 bloodline_magic_cast_effect_major = {
     remove_character_modifier = lifeforce_modifier_major
     add_xp_bm_dynamic = {
@@ -78,5 +89,17 @@ remove_all_attunement = {
     if = {
         limit = { has_character_modifier = hematurgy_attuned }
         remove_character_modifier = hematurgy_attuned
+    }
+    if = {
+        limit = { has_character_modifier = vanguard_attuned }
+        remove_character_modifier = vanguard_attuned
+    }
+    if = {
+        limit = { has_character_modifier = slaughter_attuned }
+        remove_character_modifier = slaughter_attuned
+    }
+    if = {
+        limit = { has_character_modifier = resilience_attuned }
+        remove_character_modifier = resilience_attuned
     }
 }

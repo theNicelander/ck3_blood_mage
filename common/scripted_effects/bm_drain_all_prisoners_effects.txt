@@ -10,6 +10,8 @@ lifedrain_execution_effect = {
         save_scope_as = imprisoner #Save this scope to show correct tyranny tooltip
     }
 
+    debug_log = "BloodMageExecution: lifedrain | Executioner: [scope:executioner.GetShortUINameNoTooltip] (ID:[scope:executioner.GetID], [Select_CString(scope:executioner.IsPlayer, 'Player', 'AI')]) -> Victim: [scope:victim.GetShortUINameNoTooltip] (ID:[scope:victim.GetID], [Select_CString(scope:victim.IsPlayer, 'Player', 'AI')]) | Rel: [SCOPE.sC('executioner').Custom2('RelationToMeShort', SCOPE.sC('victim'))] | Tag: [SCOPE.sC('executioner').Custom2('bm_debug_relation_tags', SCOPE.sC('victim'))] | Opinion: [SCOPE.sC('executioner').GetOpinionOf( SCOPE.sC('victim') )]"
+
     show_as_tooltip = {
         $VICTIM$ = {
             death = {

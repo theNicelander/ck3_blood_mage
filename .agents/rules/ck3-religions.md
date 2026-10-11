@@ -1,39 +1,38 @@
 ---
 trigger: model_decision
-description: Religions, faiths, rites, doctrines, holy sites and cross-mod compatibility. Read before touching common/religion or faith-related script/localization.
+description: Religion, faith, rite, doctrine, and holy site architecture (CK3 1.20).
 ---
 
 # Religions, Faiths and Rites (CK3 1.20)
 
-> The ground truth is `common/religion/` in vanilla 1.20 (`/Users/clarabotet/Petur/ck3-full/common/religion`).
-> In 1.20, religion layout was overhauled. Faiths and rites are distinct top-level database types. Never nest faiths inside religion definitions.
+Vanilla reference: `/Users/clarabotet/Petur/ck3-full/common/religion`.
+1.20 uses split top-level database types. Never nest faiths in religion blocks.
 
-## Folder Layout
+## Directory structure (`common/religion/`)
 
-The 1.20 religion system is split into specialized subdirectories under `common/religion/`:
-- `religion_family_types/`: Defines religious families (`rf_blodtru`). Requires the 4 tenet background banner properties (`tenet_background_icon`, `tenet_heretical_background_icon`, `tenet_neutral_background_icon`, `tenet_unknown_background_icon`).
-- `religion_types/`: Defines religions (`blodtru_religion`). Requires `religion_details = { family = ... graphical_faith = ... piety_icon_group = ... }`, holy site constraints (`main_holy_site`, `eminent_holy_sites_max`, `holy_sites_max`), doctrines, traits, and holy orders. **Never put `faiths = { ... }` here.**
-- `faith_types/`: Defines individual faiths (`blodtru_faith`). Root-level objects with `faith_details = { religion = ... color = ... icon = ... }`, `main_rite = <rite_key>`, `eminent_holy_sites = { ... }`, `holy_sites = { ... }`, `tenets = { ... }`, and `doctrines = { ... }`.
-- `rite_types/`: Defines rites (`common/religion/rite_types/`). Every scripted faith defines a matching mainline rite (`faith = <faith_key>`, `color`, `tenets`, `doctrines`) to prevent the engine from generating unlocalized dynamic rites (`dynamic_rite_%i`).
-- `holy_site_types/`: Defines holy sites. Must use `county_holder_character_modifier = { ... }` (county holder if same faith) and `faith_character_modifier = { ... }` (global faith bonus when Eminent). Do NOT use legacy `character_modifier = { ... }`.
-- `doctrine_group_types/`: Defines doctrine groups (`category = special`, `doctrine_lock = religion|faith|rite|none`). Never put a `doctrine_types = { ... }` list inside a group.
-- `doctrine_types/`: Defines individual doctrines. Must declare mandatory `doctrine_group_type = <group_key>`. Doctrine flags live in `parameters = { <flag> }` (bare name, checked via `has_doctrine_parameter`).
-- `tenet_types/`: Vanilla tenets live here (syncretism, sacred shadows, etc.). Mod uses vanilla tenets unless adding unique mechanics.
+- `religion_family_types/`: Top-level families (`rf_blodtru`). Requires 4 tenet background icon properties (`tenet_background_icon`, `tenet_heretical_background_icon`, `tenet_neutral_background_icon`, `tenet_unknown_background_icon`).
+- `religion_types/`: Religions (`blodtru_religion`). Requires `religion_details` (`family`, `graphical_faith`, `piety_icon_group`), holy site limits (`main_holy_site`, `eminent_holy_sites_max`, `holy_sites_max`), doctrines, traits. **No `faiths = { ... }` blocks.**
+- `faith_types/`: Faiths (`blodtru_faith`). Defines `faith_details` (`religion`, `color`, `icon`), `main_rite`, `eminent_holy_sites`, `holy_sites`, `tenets`, `doctrines`.
+- `rite_types/`: Rites. Every scripted faith requires 1:1 mainline rite (`faith = <key>`, `color`, `tenets`, `doctrines`) to prevent unlocalized `dynamic_rite_%i` generation.
+- `holy_site_types/`: Sites. Must use `county_holder_character_modifier` (holder) and `faith_character_modifier` (eminent). Legacy `character_modifier` invalid in 1.20.
+- `doctrine_group_types/`: Groups (`category = special`, `doctrine_lock = religion|faith|rite|none`). No nested doctrine lists.
+- `doctrine_types/`: Doctrines. Mandatory `doctrine_group_type = <group_key>`. Flags go in `parameters = { <flag> }` (checked via `has_doctrine_parameter`).
+- `tenet_types/`: Tenets. Use vanilla tenets unless adding custom mechanics.
 
-## Structure & Script Rules
+## Rules
 
-- Hierarchy: family → religion → faith → rite; lower levels override higher.
-- Faith Holy Sites: Split into `eminent_holy_sites = { ... }` (up to `eminent_holy_sites_max`, default 3; gives global `faith_character_modifier`) and `holy_sites = { ... }` (regular sites; gives local `county_holder_character_modifier`).
-- Mainline Rites: Always script a 1:1 mainline rite in `rite_types` for any new faith, and link it via `main_rite = <rite_key>` in the faith definition.
-- Hidden doctrines used as flags still need complete UI metadata (`icon`, name key, `visible = no`) and a `doctrine_group_type`.
-- Mutating Faiths: `add_doctrine` mutates the faith for all followers globally: always guard with `NOT = { has_doctrine = x }` and `hidden_effect`.
+- **Hierarchy**: family → religion → faith → rite. Lower level overrides higher.
+- **Holy sites**: `eminent_holy_sites` gives global `faith_character_modifier`. Regular `holy_sites` gives local `county_holder_character_modifier`.
+- **Mainline rites**: Always link via `main_rite = <rite_key>`.
+- **Faith mutation**: `add_doctrine` affects all followers globally. Always guard: `NOT = { has_doctrine = x }`.
+- **Hidden doctrines**: Flag doctrines require complete metadata (`icon`, loc key, `visible = no`, `doctrine_group_type`).
 
-## Compatibility (non-negotiable)
+## Compatibility
 
-- Don't redefine a vanilla religion or faith: a same-key definition replaces it and every other mod's changes.
-- No `replace_path` for religion folders.
-- No `faith:<other_mods_faith>` in this repo. Detect optional mods via global variables or doctrine parameters, and route faith conversion through a scripted effect other mods can override.
+- Never redefine vanilla faith or religion keys (overwrites entire entity).
+- Never use `replace_path` for religion folders.
+- No direct references to third-party faiths (`faith:<other>`). Guard with global variables or route via scripted effects.
 
 ## Localization
 
-Per faith: `<faith>`, `_adj`, `_adherent`, `_adherent_plural`, `_desc`, plus god/afterlife keys. Mainline rites share the parent faith name by default.
+Per faith: `<faith>`, `_adj`, `_adherent`, `_adherent_plural`, `_desc`, god and afterlife keys. Mainline rites inherit faith name.

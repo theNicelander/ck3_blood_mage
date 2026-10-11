@@ -2,38 +2,57 @@
 	# CK3 exposes whether a static modifier exists, but not its stack count.
 	# Rebuild these permanent, identical stacks in one effect so the panel can
 	# retain exact counters, including saves created before the panel existed.
-	set_variable = {
-		name = bm_lifeforce_major_stacks
-		value = 0
-	}
-	while = {
-		limit = { has_character_modifier = lifeforce_modifier_major }
-		remove_character_modifier = lifeforce_modifier_major
-		change_variable = {
-			name = bm_lifeforce_major_stacks
-			add = 1
+	hidden_effect = {
+		set_variable = {
+			name = bm_lifeforce_superior_stacks
+			value = 0
 		}
-	}
-	while = {
-		count = var:bm_lifeforce_major_stacks
-		add_character_modifier = lifeforce_modifier_major
-	}
+		while = {
+			limit = { has_character_modifier = lifeforce_modifier_superior }
+			remove_character_modifier = lifeforce_modifier_superior
+			change_variable = {
+				name = bm_lifeforce_superior_stacks
+				add = 1
+			}
+		}
+		while = {
+			count = var:bm_lifeforce_superior_stacks
+			add_character_modifier = lifeforce_modifier_superior
+		}
 
-	set_variable = {
-		name = bm_lifeforce_minor_stacks
-		value = 0
-	}
-	while = {
-		limit = { has_character_modifier = lifeforce_modifier_minor }
-		remove_character_modifier = lifeforce_modifier_minor
-		change_variable = {
-			name = bm_lifeforce_minor_stacks
-			add = 1
+		set_variable = {
+			name = bm_lifeforce_major_stacks
+			value = 0
 		}
-	}
-	while = {
-		count = var:bm_lifeforce_minor_stacks
-		add_character_modifier = lifeforce_modifier_minor
+		while = {
+			limit = { has_character_modifier = lifeforce_modifier_major }
+			remove_character_modifier = lifeforce_modifier_major
+			change_variable = {
+				name = bm_lifeforce_major_stacks
+				add = 1
+			}
+		}
+		while = {
+			count = var:bm_lifeforce_major_stacks
+			add_character_modifier = lifeforce_modifier_major
+		}
+
+		set_variable = {
+			name = bm_lifeforce_minor_stacks
+			value = 0
+		}
+		while = {
+			limit = { has_character_modifier = lifeforce_modifier_minor }
+			remove_character_modifier = lifeforce_modifier_minor
+			change_variable = {
+				name = bm_lifeforce_minor_stacks
+				add = 1
+			}
+		}
+		while = {
+			count = var:bm_lifeforce_minor_stacks
+			add_character_modifier = lifeforce_modifier_minor
+		}
 	}
 }
 
@@ -43,7 +62,7 @@ bm_refresh_blood_magic_rosters_effect = {
 	random_owned_story = {
 		type = bm_blood_mage_story
 		clear_variable_list = bm_owned_blood_golems
-		clear_variable_list = bm_crimson_retinue
+		clear_variable_list = bm_blood_retinue
 		clear_variable_list = bm_dynasty_blood_mages
 		save_scope_as = bm_blood_mage_story_scope
 	}
@@ -61,15 +80,12 @@ bm_refresh_blood_magic_rosters_effect = {
 
 	every_courtier = {
 		limit = {
-			OR = {
-				has_character_modifier = lifeforce_modifier_crimson_warrior
-				has_character_modifier = lifeforce_modifier_crimson_champion
-			}
+			has_trait = lifestyle_blood_knight
 		}
 
 		scope:bm_blood_mage_story_scope = {
 			add_to_variable_list = {
-				name = bm_crimson_retinue
+				name = bm_blood_retinue
 				target = prev
 			}
 		}

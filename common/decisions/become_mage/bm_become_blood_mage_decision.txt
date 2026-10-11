@@ -1,0 +1,106 @@
+﻿bm_blood_cultist_become_blood_mage_decision = {
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
+    desc = bm_blood_cultist_become_blood_mage_decision_desc
+    selection_tooltip = bm_blood_cultist_become_blood_mage_decision_tooltip
+    confirm_text = bm_blood_cultist_become_blood_mage_decision_confirm
+    decision_group_type = bm_decision_group
+
+    is_shown = {
+        bm_meets_blood_mage_initiation_faith_requirement_trigger = yes
+        NOT = { has_trait = lifestyle_blood_mage }
+        NOT = { has_trait = lifestyle_blood_knight }
+    }
+
+    is_valid = {
+        OR = {
+            piety_level >= 2
+            prestige_level >= 2
+        }
+    }
+
+    is_valid_showing_failures_only = {
+        is_imprisoned = no
+        is_incapable = no
+        custom_tooltip = {
+            text = bm_enhance_blood_ritual_location_requirement_tt
+            bm_is_at_blood_magic_initiation_site_trigger = yes
+        }
+    }
+
+    effect = {
+        debug_log = "BloodMageDecision: become_blood_mage"
+        debug_log_scopes = yes
+        trigger_event = { id = bm_geyser_duel.0001 }
+    }
+
+    # Yearly chance that AI become blood mage, if they are blood cultist
+    ai_will_do = {
+        base = 10
+        bm_blood_mage_prevalence_ai_acquisition_modifier = yes
+    }
+    ai_check_interval = 12
+}
+
+
+bm_enhance_blood_ritual_decision = {
+    decision_group_type = major
+    ai_check_interval = 12
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
+
+    desc = bm_enhance_blood_ritual_decision_desc
+    selection_tooltip = bm_enhance_blood_ritual_decision_tooltip
+    confirm_text = bm_enhance_blood_ritual_decision_confirm
+
+    is_shown = {
+        is_adult = yes
+        NOT = { has_trait = lifestyle_blood_mage }
+        NOT = { has_trait = lifestyle_blood_knight }
+        NOR = {
+            bm_meets_blood_mage_initiation_faith_requirement_trigger = yes
+        }
+    }
+
+    is_valid = {
+        OR = {
+            piety_level >= 2
+            prestige_level >= 2
+        }
+        OR = {
+            learning >= 20
+            prowess >= 20
+            martial >= 20
+            has_trait = education_learning_4
+            has_trait = education_learning_5
+            has_trait = education_martial_4
+            has_trait = education_martial_5
+            has_trait = intellect_good_3
+            has_trait = physique_good_3
+            has_trait = lifestyle_mystic
+            has_trait = lifestyle_scholar
+            has_trait = lifestyle_blademaster
+            has_trait = berserker
+            has_trait = theologian
+            stress_level >= 2
+        }
+    }
+
+    is_valid_showing_failures_only = {
+        is_imprisoned = no
+        is_incapable = no
+        custom_tooltip = {
+            text = bm_enhance_blood_ritual_location_requirement_tt
+            bm_is_at_blood_magic_initiation_site_trigger = yes
+        }
+    }
+
+    effect = {
+        debug_log = "BloodMageDecision: enhance_blood_ritual"
+        debug_log_scopes = yes
+        trigger_event = { id = bm_geyser_duel.0001 }
+    }
+
+    ai_will_do = {
+        base = 10
+        bm_blood_mage_prevalence_ai_acquisition_modifier = yes
+    }
+}

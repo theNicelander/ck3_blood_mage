@@ -1,13 +1,4 @@
 ﻿
-bm_cast_blood_magic_self_major_improve_education_xp_requirement = {
-	first = bm_cast_blood_magic_self_major_improve_education_xp_requirement
-	first_not = NOT_bm_cast_blood_magic_self_major_improve_education_xp_requirement
-	third = bm_cast_blood_magic_self_major_improve_education_xp_requirement
-	third_not = NOT_bm_cast_blood_magic_self_major_improve_education_xp_requirement
-	global = bm_cast_blood_magic_self_major_improve_education_xp_requirement
-	global_not = NOT_bm_cast_blood_magic_self_major_improve_education_xp_requirement
-}
-
 ask_for_blood_magic_interaction_requirement = {
 	first = ask_for_blood_magic_interaction_requirement
 	first_not = NOT_ask_for_blood_magic_interaction_requirement
@@ -17,24 +8,6 @@ ask_for_blood_magic_interaction_requirement = {
 	global_not = NOT_ask_for_blood_magic_interaction_requirement
 }
 
-bm_cast_blood_magic_self_major_new_education_xp_requirement = {
-	first = bm_cast_blood_magic_self_major_new_education_xp_requirement
-	first_not = NOT_bm_cast_blood_magic_self_major_new_education_xp_requirement
-	third = bm_cast_blood_magic_self_major_new_education_xp_requirement
-	third_not = NOT_bm_cast_blood_magic_self_major_new_education_xp_requirement
-	global = bm_cast_blood_magic_self_major_new_education_xp_requirement
-	global_not = NOT_bm_cast_blood_magic_self_major_new_education_xp_requirement
-}
-
-bm_cast_blood_magic_self_major_blood_rune_xp_requirement = {
-	first = bm_cast_blood_magic_self_major_blood_rune_xp_requirement
-	first_not = NOT_bm_cast_blood_magic_self_major_blood_rune_xp_requirement
-	third = bm_cast_blood_magic_self_major_blood_rune_xp_requirement
-	third_not = NOT_bm_cast_blood_magic_self_major_blood_rune_xp_requirement
-	global = bm_cast_blood_magic_self_major_blood_rune_xp_requirement
-	global_not = NOT_bm_cast_blood_magic_self_major_blood_rune_xp_requirement
-}
-
 grant_lifeforce_interaction_requirement = {
 	first = grant_lifeforce_interaction_requirement
 	first_not = NOT_grant_lifeforce_interaction_requirement
@@ -42,4 +15,31 @@ grant_lifeforce_interaction_requirement = {
 	third_not = NOT_grant_lifeforce_interaction_requirement
 	global = grant_lifeforce_interaction_requirement
 	global_not = NOT_grant_lifeforce_interaction_requirement
+}
+
+bm_improve_education_decision_xp_requirement = {
+	first = bm_improve_education_decision_xp_requirement
+	first_not = NOT_bm_improve_education_decision_xp_requirement
+	third = bm_improve_education_decision_xp_requirement
+	third_not = NOT_bm_improve_education_decision_xp_requirement
+	global = bm_improve_education_decision_xp_requirement
+	global_not = NOT_bm_improve_education_decision_xp_requirement
+}
+
+bm_new_education_decision_xp_requirement = {
+	first = bm_new_education_decision_xp_requirement
+	first_not = NOT_bm_new_education_decision_xp_requirement
+	third = bm_new_education_decision_xp_requirement
+	third_not = NOT_bm_new_education_decision_xp_requirement
+	global = bm_new_education_decision_xp_requirement
+	global_not = NOT_bm_new_education_decision_xp_requirement
+}
+
+bm_blood_rune_decision_xp_requirement = {
+	first = bm_blood_rune_decision_xp_requirement
+	first_not = NOT_bm_blood_rune_decision_xp_requirement
+	third = bm_blood_rune_decision_xp_requirement
+	third_not = NOT_bm_blood_rune_decision_xp_requirement
+	global = bm_blood_rune_decision_xp_requirement
+	global_not = NOT_bm_blood_rune_decision_xp_requirement
 }
