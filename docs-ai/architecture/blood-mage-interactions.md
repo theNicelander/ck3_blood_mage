@@ -9,15 +9,15 @@
 
 | Interaction ID | Target | Cost & Requirements | XP Gain | Mechanical Effect |
 | --- | --- | --- | --- | --- |
-| `ask_for_blood_magic_interaction` | Friend, lover, soulmate, liege mage | Piety. Actor lacks trait, recipient has it. | None | Requests blood magic. Recipient grants via `bm_become_blood_mage_effect`. |
-| `grant_blood_magic_interaction` | Courtier, family, spouse | Piety + Major Lifeforce. Recipient non-mage. | +4 bloodline (+5 if child/kin) | Bestows `lifestyle_blood_mage` onto target via `bm_become_blood_mage_effect`. |
+| `ask_for_blood_magic_interaction` | Friend, lover, soulmate, liege mage | 250 Piety. Recipient requires Superior Lifeforce (consumed). | None | Requests blood magic. Recipient grants via `bm_become_blood_mage_effect` (or elevation). |
+| `grant_blood_magic_interaction` | Courtier, family, spouse | 0 Piety + Superior Lifeforce. Recipient non-mage. | +4 bloodline (+5 if child/kin) | Bestows `lifestyle_blood_mage` onto target (or elevates Blood Knight). Consumes Superior Lifeforce. |
 | `bm_bless_bloodline_interaction` | Child, dynasty kin | 35 Piety + Minor Lifeforce. Recipient not blessed. | +2 bloodline | Grants `bm_blessed_blood_modifier` (+1 all stats, +10% fertility, +0.25 health) for 10 years. |
 | `bm_get_blood_magic_from_prisoner_interaction` | Imprisoned blood mage | Piety. Actor non-mage, target captive mage. | None | Forcibly steals blood magic. Prisoner drained/maimed. |
 | `lifedrain_prisoner_interaction` | Dungeon prisoner | Piety (`lifedrain_piety_cost_minor`). | +1 hematurgy | Kills prisoner (`death_lifedrain_reason`). Gives `lifeforce_modifier_minor`. |
 | `lifedrain_courtier_event_interaction` | Courtier | Piety (`lifedrain_piety_cost_minor`). | +1 hematurgy | Drains courtier. Gives `lifeforce_modifier_minor`. Target gets `lifedrained_modifier` (health/stat hit). |
 | `trait_drain_prisoner_event_interaction` | Dungeon prisoner | Piety. Target has congenital trait actor lacks. | +2 hematurgy | Duel (Prowess/Learning). Win: steals congenital trait. Target drained. |
 | `bm_heal_ailment` | Courtier, liege, family, spouse, knight, self | Lifeforce (tier-dependent) + Piety (15 / 35 / 100). Target has ailment. | Minor: +2 benediction (Mage) / +2 enlightenment (Knight self) / +1 vanguard & +1 benediction (Knight ally); Major: +4 benediction; Deadly: +8 benediction | Opens event `bm_heal_ailment.0001` to choose and cure an individual ailment across 37 conditions. |
-| `make_blood_knight_interaction` | Knight or courtier (cannot target self) | 100 Piety + Major Lifeforce. | +4 benediction | Bestows `lifestyle_blood_knight` trait onto recipient. |
+| `make_blood_knight_interaction` | Knight or courtier (cannot target self) | Blood Mage: 100 Piety + Major Lifeforce; Blood Knight: 200 Prestige + Minor Lifeforce OR 0 Prestige + Major Lifeforce. | Mage: +4 benediction; Knight: +2 vanguard (minor) / +4 vanguard (major) | Bestows `lifestyle_blood_knight` trait onto recipient. |
 | `empower_blood_knight_interaction` | Sworn blood knight | Major Lifeforce (+10 XP to vanguard & slaughter) or Minor Lifeforce (+5 XP). | Major: +4 benediction; Minor: +2 benediction | Direct popup modal advancing martial tracks on recipient. |
 | `grant_lifeforce_interaction` | Courtier or prisoner | Minor Lifeforce + 25 Piety, or Major Lifeforce + 50 Piety. | Minor: +1 enlightenment; Major: +2 enlightenment | Bestows Lifeforce modifier onto recipient. |
 | `grant_lifeforce_interaction_reversed` | Courtier with `lifedrained_modifier` | 25 Piety + Major Lifeforce. | +4 benediction | Restores drained courtier: cleanses debuff, gives minor lifeforce and opinion. |
@@ -52,3 +52,4 @@
 
 - **Kinslayer:** Draining family prisoners triggers vanilla kinslayer flags unless execution reasons exist.
 - **Hiding Logic:** Interactions hide if the caster lacks the required Lifeforce modifier or minimum track XP.
+- **Icons:** Each interaction looks up `gfx/interface/icons/character_interactions/<interaction_key>.dds`. All interactions use identical copies of the fiery blood drop icon (120×120 ARGB8888). Adding, renaming, or removing an interaction requires adding, renaming, or removing its corresponding `.dds` file.

@@ -3,10 +3,10 @@
 
 | Scope | Tokens |
 | --- | ---: |
-| **Total** | **8,971** |
+| **Total** | **9,025** |
 | Core | 2,416 |
 | Rules | 3,829 |
-| Skills | 2,726 |
+| Skills | 2,780 |
 
 ## Details per file
 
@@ -18,8 +18,8 @@
 | `.agents/rules/ck3-religions.md` | Rules | 705 |
 | `.agents/rules/ck3-ai.md` | Rules | 672 |
 | `.agents/rules/ck3-scripting.md` | Rules | 412 |
+| `.agents/skills/add-blood-magic-decision/SKILL.md` | Skills | 344 |
 | `.agents/rules/ck3-decisions.md` | Rules | 341 |
-| `.agents/skills/add-blood-magic-decision/SKILL.md` | Skills | 290 |
 | `.agents/skills/document-subsystem/SKILL.md` | Skills | 283 |
 | `.agents/rules/ck3-traits.md` | Rules | 279 |
 | `.agents/skills/add-faith/SKILL.md` | Skills | 240 |
