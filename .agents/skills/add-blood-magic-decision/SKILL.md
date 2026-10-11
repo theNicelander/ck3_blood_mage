@@ -16,8 +16,9 @@ Context: `docs-ai/architecture/blood-mage-decisions.md`, `blood-mage-interaction
 4. Register in `common/story_cycles/bm_blood_mage_story.txt` for panel display.
 5. Set `ai_*` blocks deliberately (`ai_check_interval = 0` if player-only).
 6. Add English loc keys: title, `_desc`, `_tooltip`, `_confirm`.
-7. Set XP gate and requirements per `blood-mage-progression.md`.
-8. Update docs and validate.
+7. For interactions, copy the category's standard fiery blood drop DDS (`grant_blood_magic_interaction.dds`) to `gfx/interface/icons/character_interactions/<name>.dds`. If removing or renaming an interaction, remove/rename the matching `.dds`.
+8. Set XP gate and requirements per `blood-mage-progression.md`.
+9. Update docs and validate.
 
 ## Verify
 

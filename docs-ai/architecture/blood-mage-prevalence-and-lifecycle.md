@@ -21,15 +21,22 @@
 ## Lifecycle Pipeline
 
 ```
-Acquisition (Decision / Event / Birth)
+Acquisition (Decision / Event / Birth / Elevation)
   │
-  ▼
-bm_become_blood_mage_effect
-  ├─► add_trait = lifestyle_blood_mage
-  ├─► bm_ensure_blood_mage_story_effect (creates situation story panel)
-  ├─► add_character_flag = bm_blood_mage_prevalence_reviewed
-  └─► bm_apply_blood_mage_prevalence_retention_effect (strips if AI under restricted rules)
+  ├─► Standard Entry: bm_become_blood_mage_effect
+  │     ├─► add_trait = lifestyle_blood_mage
+  │     ├─► bm_ensure_blood_mage_story_effect (creates situation story panel)
+  │     ├─► add_character_flag = bm_blood_mage_prevalence_reviewed
+  │     └─► bm_apply_blood_mage_prevalence_retention_effect (strips if AI under restricted rules)
+  │
+  └─► Elevation Entry: bm_elevate_blood_knight_to_blood_mage_effect
+        ├─► Removes lifestyle_blood_knight, adds lifestyle_blood_mage
+        ├─► Converts 50% martial XP (slaughter->hematurgy, vanguard->bloodline)
+        ├─► Carries over ancient, benediction, and enlightenment XP 1:1
+        └─► Ensures story panel and prevalence review flag
 ```
+
+- **Childbirth Milestone:** When a child is born (`on_birth_child` -> `bm_on_birth_bloodline_xp`), any blood mage parent receives +2 `bloodline` XP (+4 `bloodline` XP if the newborn inherits the trait).
 
 ## Where the details live
 

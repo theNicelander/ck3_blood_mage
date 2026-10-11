@@ -8,12 +8,12 @@
 ### Duels & Education Master Table
 
 | Ritual / Action | Type | Trigger / File | Cost & Req | Opponent / Skill | Outcome |
-| **Geyser Initiation** | Decision | `bm_blood_cultist_become_blood_mage_decision` / `bm_enhance_blood_ritual_decision` -> `bm_geyser_duel.0001` | Piety or Prestige level >= 2. In Reykjavik or Tsushima. No cooldown; back out freely (0 cost). Both duel options always visible: Learning duel requires Piety level >= 2 and costs 1 Devotion level; Prowess duel requires Prestige level >= 2 and costs 1 Fame level. | Egill Skallagrímsson (Blood Mage & Blood Knight; Learning 20, Martial 18, Prowess 25) | Win Learning: `lifestyle_blood_mage`. Win Prowess: `lifestyle_blood_knight`. Lose: wound, stress, or mental/physical trauma. Retries on failure without paying level again, or allows backing out. |
+| **Geyser Initiation** | Decision | `bm_blood_cultist_become_blood_mage_decision` / `bm_enhance_blood_ritual_decision` -> `bm_geyser_duel.0001` | Piety or Prestige level >= 2. In Reykjavik or Tsushima. Candidate must lack Blood Mage and Blood Knight. No cooldown; back out freely (0 cost). Both duel options visible: Learning duel requires Piety level >= 2 and costs 1 Devotion level; Prowess duel requires Prestige level >= 2 and costs 1 Fame level. | Egill Skallagrímsson (Blood Mage & Blood Knight; 100 years old, 50 XP in all tracks, 10 Lifeforce; Learning 20, Martial 18, Prowess 30). Scaled duels: Learning target 20 (10->25%, 20->50%, 30->75%, 40->90% cap); Prowess target 30 (15->25%, 30->50%, 45->75%, 60->90% cap). | Win Learning: `lifestyle_blood_mage`. Win Prowess: `lifestyle_blood_knight`. Lose: wound (capped at wounded_2 / rank 2; never rank 3 or maimed), stress, or mental/physical trauma. Retries on failure without paying level again, or allows backing out. |
 | **Trait Theft** | Interaction | `trait_drain_prisoner_event_interaction` -> `bm_trait_drain.001` | Piety. Prisoner has positive congenital trait caster lacks. | Prisoner (Prowess/Learning) | Win: Steals trait from captive. Captive drained. Lose: Backlash modifier. |
 | **Upgrade Education (1★–4★)** | Decision | `bm_cast_blood_magic_major_decision` -> `bm_education_enhance.txt` | Scaled piety + Major Lifeforce. CD: 2 yrs. | Mental duel (Learning) | Win: Upgrades education star tier up to tier 4. Lose: Backlash modifier. |
 | **Master Education (5★)** | Decision | `bm_cast_blood_magic_superior_decision` -> `bm_education_master_events.txt` | Scaled piety + Superior Lifeforce. CD: 2 yrs. | Mental duel (Discipline skill) | Win: Upgrades 4-star to legendary 5-star tier. Lose: Superior backlash. |
 | **New Education** | Decision | `bm_cast_blood_magic_superior_decision` -> `bm_education_new.txt` | 1000 piety + Superior Lifeforce. CD: 2 yrs. | Self-ritual | Grants an additional, secondary education trait at tier 1. |
-
+| **Single Combat Duel** | Combat On-Action | `bm_on_character_death_duel` in `common/on_action/bm_duel_on_actions.txt` | Lethal single combat kill. Killer is Blood Knight. | Battlefield / Duel Opponent | Win: +5 `slaughter` XP and grants 1 Minor Lifeforce (strictly exclusive to Blood Knights). |
 | **Mass Lifedrain** | Decision | `bm_mass_lifedrain_prisoners` -> `bm_mass_lifedrain.txt` | Piety per prisoner. Dungeon has prisoners. | Uncontested execution | Kills prisoners (`death_lifedrain_reason`). Awards Lifeforce + hematurgy XP. Standard tyranny/kinslaying rules apply. |
 
 ## Key Mechanics
@@ -34,6 +34,7 @@
 | Trait drain interaction | `common/character_interactions/bm_drain_trait.txt` |
 | Trait drain events | `events/bm_trait_drain_events.txt` (`bm_trait_drain.001`) |
 | Trait drain duel values | `common/script_values/bm_drain_duel_values.txt` |
+| Duel fatality harvesting | `common/on_action/bm_duel_on_actions.txt` |
 | Education events | `events/bm_education_enhance.txt`, `bm_education_master_events.txt`, `bm_education_new.txt` |
 | Education duel effect | `common/scripted_effects/bm_education_duel_effect.txt` |
 | Education costs & XP | `common/script_values/bm_education_enhancement_piety_cost.txt`, `bm_xp_requirement_values.txt` |

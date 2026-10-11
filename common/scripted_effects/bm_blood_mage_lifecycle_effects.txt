@@ -51,7 +51,7 @@ bm_elevate_blood_knight_to_blood_mage_effect = {
 	set_variable = { name = bm_transferred_benediction_xp value = bm_blood_knight_benediction_xp_value }
 	set_variable = { name = bm_transferred_hematurgy_xp value = bm_converted_hematurgy_xp_value }
 	set_variable = { name = bm_transferred_bloodline_xp value = bm_converted_bloodline_xp_value }
-	set_variable = { name = bm_transferred_enlightenment_xp value = bm_converted_enlightenment_xp_value }
+	set_variable = { name = bm_transferred_enlightenment_xp value = bm_blood_knight_enlightenment_xp_value }
 	remove_trait = lifestyle_blood_knight
 	bm_become_blood_mage_effect = yes
 	if = {

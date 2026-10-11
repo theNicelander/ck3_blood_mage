@@ -142,7 +142,13 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.wounded_2
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				has_trait = lifestyle_blood_mage
+				AND = {
+					has_trait = lifestyle_blood_knight
+					scope:recipient = root
+				}
+			}
 			scope:recipient = { has_trait = wounded_2 }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= 35
@@ -163,7 +169,13 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.incapable
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				has_trait = lifestyle_blood_mage
+				AND = {
+					has_trait = lifestyle_blood_knight
+					scope:recipient = root
+				}
+			}
 			scope:recipient = { has_trait = incapable }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= 35
@@ -184,7 +196,13 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.pneumonic
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				has_trait = lifestyle_blood_mage
+				AND = {
+					has_trait = lifestyle_blood_knight
+					scope:recipient = root
+				}
+			}
 			scope:recipient = { has_trait = pneumonic }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= 35
@@ -205,7 +223,13 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.early_great_pox
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				has_trait = lifestyle_blood_mage
+				AND = {
+					has_trait = lifestyle_blood_knight
+					scope:recipient = root
+				}
+			}
 			scope:recipient = { has_trait = early_great_pox }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= 35
@@ -226,7 +250,13 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.infirm
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				has_trait = lifestyle_blood_mage
+				AND = {
+					has_trait = lifestyle_blood_knight
+					scope:recipient = root
+				}
+			}
 			scope:recipient = { has_trait = infirm }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= 35
@@ -247,7 +277,13 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.withering_mind
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				has_trait = lifestyle_blood_mage
+				AND = {
+					has_trait = lifestyle_blood_knight
+					scope:recipient = root
+				}
+			}
 			scope:recipient = { has_trait = withering_mind }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= 35
@@ -268,7 +304,13 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.clouded_eyes
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				has_trait = lifestyle_blood_mage
+				AND = {
+					has_trait = lifestyle_blood_knight
+					scope:recipient = root
+				}
+			}
 			scope:recipient = { has_trait = clouded_eyes }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= 35
@@ -289,7 +331,13 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.fragile_bones
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				has_trait = lifestyle_blood_mage
+				AND = {
+					has_trait = lifestyle_blood_knight
+					scope:recipient = root
+				}
+			}
 			scope:recipient = { has_trait = fragile_bones }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= 35
@@ -310,7 +358,13 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.maimed
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				has_trait = lifestyle_blood_mage
+				AND = {
+					has_trait = lifestyle_blood_knight
+					scope:recipient = root
+				}
+			}
 			scope:recipient = { has_trait = maimed }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= 35
@@ -331,7 +385,13 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.consumption
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				has_trait = lifestyle_blood_mage
+				AND = {
+					has_trait = lifestyle_blood_knight
+					scope:recipient = root
+				}
+			}
 			scope:recipient = { has_trait = consumption }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= 35
@@ -352,7 +412,13 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.typhus
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				has_trait = lifestyle_blood_mage
+				AND = {
+					has_trait = lifestyle_blood_knight
+					scope:recipient = root
+				}
+			}
 			scope:recipient = { has_trait = typhus }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= 35
@@ -373,7 +439,13 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.measles
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				has_trait = lifestyle_blood_mage
+				AND = {
+					has_trait = lifestyle_blood_knight
+					scope:recipient = root
+				}
+			}
 			scope:recipient = { has_trait = measles }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= 35
@@ -394,7 +466,13 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.blind
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				has_trait = lifestyle_blood_mage
+				AND = {
+					has_trait = lifestyle_blood_knight
+					scope:recipient = root
+				}
+			}
 			scope:recipient = { has_trait = blind }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= 35
@@ -415,7 +493,13 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.one_eyed
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				has_trait = lifestyle_blood_mage
+				AND = {
+					has_trait = lifestyle_blood_knight
+					scope:recipient = root
+				}
+			}
 			scope:recipient = { has_trait = one_eyed }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= 35
@@ -436,7 +520,13 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.weak
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				has_trait = lifestyle_blood_mage
+				AND = {
+					has_trait = lifestyle_blood_knight
+					scope:recipient = root
+				}
+			}
 			scope:recipient = { has_trait = weak }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= 35
@@ -457,7 +547,13 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.lunatic_1
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				has_trait = lifestyle_blood_mage
+				AND = {
+					has_trait = lifestyle_blood_knight
+					scope:recipient = root
+				}
+			}
 			scope:recipient = { has_trait = lunatic_1 }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= 35
@@ -478,7 +574,13 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.possessed_1
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				has_trait = lifestyle_blood_mage
+				AND = {
+					has_trait = lifestyle_blood_knight
+					scope:recipient = root
+				}
+			}
 			scope:recipient = { has_trait = possessed_1 }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= 35
@@ -499,7 +601,13 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.dull
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				has_trait = lifestyle_blood_mage
+				AND = {
+					has_trait = lifestyle_blood_knight
+					scope:recipient = root
+				}
+			}
 			scope:recipient = { has_trait = dull }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= 35
@@ -520,7 +628,13 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.depressed_1
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				has_trait = lifestyle_blood_mage
+				AND = {
+					has_trait = lifestyle_blood_knight
+					scope:recipient = root
+				}
+			}
 			scope:recipient = { has_trait = depressed_1 }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= 35

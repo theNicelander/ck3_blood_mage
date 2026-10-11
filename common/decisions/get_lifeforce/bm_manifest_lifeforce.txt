@@ -21,7 +21,7 @@
 		if = {
 			limit = { has_trait = lifestyle_blood_mage }
 			add_xp_bm_dynamic = {
-				TRACK = ancient
+				TRACK = enlightenment
 				XP = 3
 			}
 			duel = {
@@ -86,11 +86,11 @@
 		}
 		else = {
 			add_blood_knight_xp = {
-				TRACK = resilience
+				TRACK = enlightenment
 				XP = 3
 			}
 			duel = {
-				skill = prowess
+				skill = learning
 				value = 0
 
 				# Success - major lifeforce for knight

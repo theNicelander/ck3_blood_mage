@@ -47,6 +47,8 @@ Every architecture document must begin with a concise **Executive Summary**:
 | `blood-mage-story.md` | The Blood Magic panel (story cycle) and its rosters |
 | `blood-mage-decisions.md` | The actions a blood mage can take and the routes into blood magic |
 | `blood-mage-traits.md` | Core `lifestyle_blood_mage` trait and 5 school progression tracks |
+| `blood-mage-trait-benefits.md` | Master cumulative benefits across all tracks at 10, 50, and 100 XP |
+| `blood-mage-domicile-buildings.md` | Single 5-tier Blood Shrine line, scaling piety/health/lifespan/genetics, camp & court aura |
 | `blood-mage-blood-empowerment.md` | The Blood Empowerment trait, self-advancement, and warrior retinue |
 | `blood-mage-blood-knight.md` | The Blood Knight trait, martial tracks, and combat hooks |
 | `blood-mage-track-xp.md` | Master XP catalog: all 13 tracks, piety costs, lifeforce sinks, and XP gains |

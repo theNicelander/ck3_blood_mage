@@ -30,22 +30,24 @@ Spiritual framework for blood magic. Religious family `rf_blodtru` with religion
 
 | Decision | Panel | Cost | Cooldown | Requirements | XP Gain | Effect |
 | --- | --- | --- | --- | --- | --- | --- |
-| `bm_become_blood_cultist_decision` | Decisions | 250 Piety | 10 years | Blood Mage, Devotion >= 2, Major Lifeforce | None | Fires `bm_faith_conversion.0001`: converts character to cultural faith (`xuedao_faith`, `ketsudo_faith`, or `blodtru_faith`), consumes 1 Major Lifeforce. |
+| `become_blood_cultist_decision` | Decisions | 250 Piety | 10 years | Blood Mage, Devotion >= 2, Major Lifeforce | None | Fires `bm_faith_conversion.0001`: converts character to cultural faith (`xuedao_faith`, `ketsudo_faith`, or `blodtru_faith`), consumes 1 Major Lifeforce. |
 | `bm_repair_blodtru_reformation_decision` | Decisions | None | None | Blóðtrú faith, unformed/bugged temporal head title | None | Executes `bm_repair_blodtru_reformation_effect`: clears temporal head title, resets headship to no head. |
-| `bm_blood_cultist_become_blood_mage_decision` | Decisions | 500 Piety | None | Non-mage, adult, meets faith initiation rule | +10 ancient | Awards `lifestyle_blood_mage` trait via cult rite. |
+| `bm_blood_cultist_become_blood_mage_decision` | Decisions | Free (1 Devotion level for Learning, 1 Fame level for Prowess) | None | Non-mage, adult, meets faith initiation rule, located in Reykjavik or Tsushima | None | Fires `bm_geyser_duel.0001` against Egill Skallagrímsson to win `lifestyle_blood_mage` (Learning) or `lifestyle_blood_knight` (Prowess). |
 
 ## Initiation Duel Hub (Tsushima)
 
 - Eastern counterpart to Reykjavik for blood magic awakening.
-- Rulers travel to Tsushima (`c_tsushima`) to challenge hermit blood master in Learning & Prowess contest to unlock blood magic without conversion.
+- Rulers travel to Tsushima (`c_tsushima`) to challenge hermit blood master Egill in Learning & Prowess contest to unlock blood magic without conversion.
 
 ## Game Rules
 
-- `blodtru_religion`: Controls AI conversion/spawning of Blóðtrú religion (`vanilla_start`, `historical_flavor`, `cult_spread`).
+- `blodtru_religion`: Controls campaign availability of Blóðtrú religion family:
+  - `blodtru_religion_enabled`: Fully active.
+  - `blodtru_religion_player_only`: Available to player only; AI conversion blocked.
+  - `blodtru_religion_disabled`: Entire religion family disabled.
 - `bm_initiation_faith_requirement`: Determines faith gates for `bm_blood_cultist_become_blood_mage_decision`:
-  - `cult_only`: Must follow a blood cult faith (`bm_is_blood_cult_faith_trigger`).
-  - `witchcraft_accepted`: Accepts cult faiths or faiths where witchcraft is accepted/virtuous.
-  - `unrestricted`: Any faith permitted.
+  - `bm_initiation_dedicated_cult`: Must follow a blood cult faith (`bm_is_blood_cult_faith_trigger`).
+  - `bm_initiation_cult_or_witchcraft_accepted`: Accepts cult faiths or faiths where witchcraft is accepted/virtuous.
 
 ## File Map
 
@@ -59,5 +61,5 @@ Spiritual framework for blood magic. Religious family `rf_blodtru` with religion
 | Identity Doctrine | `common/religion/doctrine_group_types/bm_doctrine_group_types.txt`, `common/religion/doctrine_types/bm_doctrine_types.txt` |
 | Conversion Event | `events/bm_faith_conversion_events.txt` |
 | Compatibility Triggers | `common/scripted_triggers/bm_religion_compatibility_triggers.txt` |
-| Reformation Repair | `common/decisions/bm_reformation_repair_decision.txt`, `common/scripted_effects/bm_reformation_repair_effects.txt` |
-| Cult Decisions | `common/decisions/bm_become_blood_cultist_decision.txt`, `common/decisions/bm_become_blood_mage_decision.txt` |
+| Reformation Repair | `common/decisions/religion/bm_reformation_repair_decision.txt`, `common/scripted_effects/bm_reformation_repair_effects.txt` |
+| Cult Decisions | `common/decisions/religion/bm_become_blood_cultist_decision.txt`, `common/decisions/become_mage/bm_become_blood_mage_decision.txt` |

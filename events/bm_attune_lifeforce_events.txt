@@ -17,12 +17,15 @@ bm_attune_lifeforce.001 = {
             modifier = ancient_attuned
         }
         trigger = {
-            has_trait = lifestyle_blood_mage
+            OR = {
+                has_trait = lifestyle_blood_mage
+                has_trait = lifestyle_blood_knight
+            }
             NOT = { has_character_modifier = ancient_attuned }
         }
         ai_chance = {
             base = 20
-            ai_chance_scale_based_on_xp_in_track = { TRACK = ancient}
+            ai_chance_scale_based_on_xp_in_shared_track = { TRACK = ancient }
         }
     }
 
@@ -33,12 +36,15 @@ bm_attune_lifeforce.001 = {
             modifier = enlightenment_attuned
         }
         trigger = {
-            has_trait = lifestyle_blood_mage
+            OR = {
+                has_trait = lifestyle_blood_mage
+                has_trait = lifestyle_blood_knight
+            }
             NOT = { has_character_modifier = enlightenment_attuned }
         }
         ai_chance = {
             base = 20
-            ai_chance_scale_based_on_xp_in_track = { TRACK = enlightenment}
+            ai_chance_scale_based_on_xp_in_shared_track = { TRACK = enlightenment }
         }
     }
 
@@ -65,12 +71,15 @@ bm_attune_lifeforce.001 = {
             modifier = benediction_attuned
         }
         trigger = {
-            has_trait = lifestyle_blood_mage
+            OR = {
+                has_trait = lifestyle_blood_mage
+                has_trait = lifestyle_blood_knight
+            }
             NOT = { has_character_modifier = benediction_attuned }
         }
         ai_chance = {
             base = 50
-            ai_chance_scale_based_on_xp_in_track = { TRACK = benediction}
+            ai_chance_scale_based_on_xp_in_shared_track = { TRACK = benediction }
         }
     }
 
@@ -119,22 +128,6 @@ bm_attune_lifeforce.001 = {
         ai_chance = {
             base = 30
             ai_chance_scale_based_on_xp_in_blood_knight_track = { TRACK = slaughter }
-        }
-    }
-
-    # Chance to get Resilience trait xp per year
-    option = {
-        name = bm_attune_lifeforce.001.resilience
-        add_character_modifier = {
-            modifier = resilience_attuned
-        }
-        trigger = {
-            has_trait = lifestyle_blood_knight
-            NOT = { has_character_modifier = resilience_attuned }
-        }
-        ai_chance = {
-            base = 30
-            ai_chance_scale_based_on_xp_in_blood_knight_track = { TRACK = resilience }
         }
     }
 

@@ -10,13 +10,13 @@
 
 Runes are sequential. Higher tiers replace lower tiers:
 
-| Rune Tier | Modifier | Req Devotion Rank | Piety Cost | Yearly Passive Lifeforce Roll |
-| --- | --- | --- | --- | --- |
-| **Minor** | `minor_blood_rune_modifier` | Rank 2 (Devoted) | 0 | 20% chance minor lifeforce |
-| **Major** | `major_blood_rune_modifier` | Rank 3 (Paragon of Virtue) | 200 | 20% minor, 10% major, 5% both |
-| **Superior** | `superior_blood_rune_modifier` | Rank 4 (Religious Icon) | 400 | 10% minor, 20% major, 10% both |
+| Rune Tier | Modifier | Req Devotion Rank | Piety Cost | XP Gain | Yearly Passive Lifeforce Roll |
+| --- | --- | --- | --- | --- | --- |
+| **Minor** | `minor_blood_rune_modifier` | Rank 2 (Devoted) | 0 | +4 ancient | 20% chance minor lifeforce |
+| **Major** | `major_blood_rune_modifier` | Rank 3 (Paragon of Virtue) | 200 | +5 ancient | 20% minor, 10% major, 5% both |
+| **Superior** | `superior_blood_rune_modifier` | Rank 4 (Religious Icon) | 400 | +10 ancient | 10% minor, 20% major, 10% both |
 
-*Yearly rolls handled by hidden pulse `blood_mage_yearly_events.003`.*
+*Yearly rolls handled by hidden pulse `blood_mage_yearly_events.003`. Blood Knights can inscribe Minor and Major runes via `bm_cast_blood_magic_major_decision` (awards shared `ancient` XP).*
 
 ### Blood Universities Table
 

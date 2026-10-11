@@ -7,7 +7,7 @@
 - **What:** Permanent supernatural house modifiers applied via `bm_cast_blood_magic_major_decision` (Empower Dynasty Bloodline option).
 - **Cost / Requirements:** 350 piety + consumes `lifeforce_modifier_major`. Req: `piety_level >= 1`. Cooldown: 3 years (flag `bm_channel_bloodline_cooldown`).
 - **XP Gain:** Awards +5 `bloodline` XP (`add_xp_bm_dynamic`).
-- **Feedback Loop:** Each active blood modifier on the house adds +5% yearly chance for blood mages in that house to gain +1 `bloodline` XP (`blood_mage_yearly_events.002`).
+- **Feedback Loop:** Each active blood modifier on the house adds +10% yearly chance (up to 70% cap with all 7 modifiers) for blood mages in that house to gain +1 `bloodline` XP (`blood_mage_yearly_events.002`).
 
 ### House Modifiers Table
 
