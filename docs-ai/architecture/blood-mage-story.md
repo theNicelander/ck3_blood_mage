@@ -22,6 +22,7 @@ Character-bound story cycle powering the "Blood Magic" Situation panel (`window_
 - **Destruction:** Ends on character death; reinitialized on successor if they are a blood mage or blood knight.
 - **Roster Snapshot Rule:** Golem and knight lists are static snapshots. Must invoke `bm_refresh_blood_magic_rosters_effect` whenever golems/knights are created, recruited, or killed.
 - **Lifeforce Recount Rule:** Because CK3 script cannot query dynamic modifier stack counts, the refresh effect temporarily removes and re-adds Lifeforce modifiers to recount exact totals. Refresh effects must have zero side effects triggered by modifier changes.
+- **Icon Branching Rule:** Story cycle `icon.trigger` blocks evaluate in the `story` scope; any character trait checks (`has_trait`) must explicitly scope into `story_owner = { ... }`.
 
 ## File Map
 

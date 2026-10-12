@@ -8,9 +8,9 @@ Spiritual framework for blood magic. Religious family `rf_blodtru` with religion
 
 | Faith | Rite Key | Cultural Sphere | Eminent Holy Sites | Primary Modifier Focus |
 | --- | --- | --- | --- | --- |
-| `blodtru_faith` | `blodtru_faith` | European / Atlantic | Iceland (`talknafjordur`, `reykjavik`), European capitals | Learning / Prowess per piety level |
+| `blodtru_faith` | `blodtru_faith` | European / Atlantic | Iceland (`talknafjordur`, `reykjavik`), European capitals, `tenerife` | Learning / Prowess per piety level |
 | `ketsudo_faith` | `ketsudo_faith` | Japonic, Korean, Mongolic, Tungusic | Japan & Korea (`yamashiro`, `kamakura`, `mount_fuji`, `mount_aso`, `mount_osore`, `gyeongju`) | Prowess / Dread / Health per piety level |
-| `xuedao_faith` | `xuedao_faith` | Chinese, Qiangic, Tai, Viet, Tibetan | Central Plains & Sacred Peaks (`changan`, `luoyang`, `beijing`, `hangzhou`, `chengdu`, `guangzhou`, `taishan`, `gyeongju`) | Stewardship / Learning / Health per piety level |
+| `xuedao_faith` | `xuedao_faith` | Chinese, Qiangic, Tai, Viet, Tibetan | Central Plains, Sacred Peaks & Dunhuang (`changan`, `luoyang`, `beijing`, `hangzhou`, `chengdu`, `guangzhou`, `taishan`, `gyeongju`, `dunhuang`) | Stewardship / Learning / Health per piety level |
 
 - **Holy Site Hierarchy:**
   - **Eminent Sites:** Defined in `eminent_holy_sites = { ... }`. Grant realm/faith-wide `faith_character_modifier` scaled per piety level plus `county_holder_character_modifier`.

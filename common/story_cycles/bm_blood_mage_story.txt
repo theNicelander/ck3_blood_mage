@@ -2,7 +2,11 @@
 	visible = yes
 
 	icon = {
-		trigger = { has_trait = lifestyle_blood_knight }
+		trigger = {
+			story_owner = {
+				has_trait = lifestyle_blood_knight
+			}
+		}
 		reference = "gfx/interface/icons/traits/bm_blood_knight.dds"
 	}
 	icon = {
