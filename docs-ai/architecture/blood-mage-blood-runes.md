@@ -16,7 +16,7 @@ Runes are sequential. Higher tiers replace lower tiers:
 | **Major** | `major_blood_rune_modifier` | Rank 3 (Paragon of Virtue) | 200 | +5 ancient | 20% minor, 10% major, 5% both |
 | **Superior** | `superior_blood_rune_modifier` | Rank 4 (Religious Icon) | 400 | +10 ancient | 10% minor, 20% major, 10% both |
 
-*Yearly rolls handled by hidden pulse `blood_mage_yearly_events.003`. Blood Knights can inscribe Minor runes via `bm_cast_blood_magic_minor_decision` and Major runes via `bm_cast_blood_magic_major_decision` (awards shared `ancient` XP).*
+*Yearly rolls handled by hidden pulse `blood_mage_yearly_events.003` (triggers on rune modifiers, no trait restriction). Minor and Major runes are available to both Blood Mages and Blood Knights without trait requirements on the options (gated purely by `bm_cast_blood_magic_minor_decision` and `bm_cast_blood_magic_major_decision`), awarding shared `ancient` XP.*
 
 ### Blood Universities Table
 

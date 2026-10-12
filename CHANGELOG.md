@@ -4,6 +4,7 @@
 
 Always reflects current branch state. Simple line per PR merge. Superseded changes folded, reverts dropped. Caveman style. Reverse chronological: latest changes at top.
 
+- Minor and Major Blood Runes available to Blood Mages and Blood Knights in Cast Minor/Major Magic with no trait requirements, triggering yearly passive rolls for all rune bearers.
 - Enable Blood Shrine domicile buildings for Blood Knights alongside Blood Mages and Blóðtrú rulers.
 - Winning single combat duel as Blood Knight grants Major Lifeforce instead of Minor Lifeforce.
 - PR #149: Align Blood Mage, Blood Knight, Blóðtrú faith, interaction, and Situation icons with new master assets.
