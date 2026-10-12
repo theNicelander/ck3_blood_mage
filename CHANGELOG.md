@@ -4,6 +4,7 @@
 
 Always reflects current branch state. Simple line per PR merge. Superseded changes folded, reverts dropped. Caveman style. Reverse chronological: latest changes at top.
 
+- Winning single combat duel as Blood Knight grants Major Lifeforce instead of Minor Lifeforce.
 - PR #149: Align Blood Mage, Blood Knight, Blóðtrú faith, interaction, and Situation icons with new master assets.
 - PR #148: Rename hub references to grimoire across documentation and architecture.
 - PR #147: Rebalance trait acquisition: move Rank 3 manifestation to Superior Blood Magic, increase ex-nihilo duel DC and failure exhaustion, and smooth prisoner trait draining modifiers.
