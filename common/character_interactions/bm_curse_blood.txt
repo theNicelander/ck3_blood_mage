@@ -139,21 +139,14 @@
 	}
 	ai_will_do = {
 		base = 20
-		modifier = {
-			add = 30
-			scope:recipient = { has_relation_rival = scope:actor }
-		}
-		modifier = {
-			add = 50
-			scope:recipient = { has_relation_nemesis = scope:actor }
-		}
+		ai_willingness_to_use_hostile_magic = yes
+		# Absolute veto: Don't curse fellow Blood Mages (unless rival/nemesis)
 		modifier = {
 			factor = 0
-			OR = {
-				scope:recipient = { is_close_family_of = scope:actor }
-				scope:recipient = { has_relation_friend = scope:actor }
-				scope:recipient = { has_relation_lover = scope:actor }
-				scope:recipient = { has_trait = lifestyle_blood_mage }
+			scope:recipient = { has_trait = lifestyle_blood_mage }
+			NOR = {
+				scope:recipient = { has_relation_rival = scope:actor }
+				scope:recipient = { has_relation_nemesis = scope:actor }
 			}
 		}
 	}

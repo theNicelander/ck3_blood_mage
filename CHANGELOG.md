@@ -4,6 +4,8 @@
 
 Always reflects current branch state. Simple line per PR merge. Superseded changes folded, reverts dropped. Caveman style. Reverse chronological: latest changes at top.
 
+- AI targeting: hostile blood magic vetoes councillors/liege/lovers/wives/dynasty unless rivals; positive magic strictly vetoes rivals and prioritises councillors/liege/lovers/wives/dynasty/heirs.
+- Replicate Blood Magic situation decisions to realm Decisions tab under Blood Mage Decisions group.
 - Remove base trait piety scaling from Blood Mage and Blood Knight; grant +1 knight limit per Vanguard track tier.
 - Inscribing Minor, Major, and Superior Blood Runes triggers top interface toast showing rune effects and track XP.
 - Reorder Situation panel character rosters: Dynasty Blood Mages, Blood Knights, Blood Golems.
