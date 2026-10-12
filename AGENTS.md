@@ -61,10 +61,11 @@ See `.agents/rules/ck3-localization.md` (english only, sibling keys, loc documen
 ## DDS Icons & Assets
 
 - DDS files within a category are copy-paste identical:
-  - **Interactions** (`gfx/interface/icons/character_interactions/`): All use the identical 120×120 fiery blood drop DDS (copied from `grant_blood_magic_interaction.dds`).
-  - **Faiths** (`gfx/interface/icons/faith/`): Shared identical DDS icons across the religion family (copied from `blodtru_faith.dds`).
-  - **Trait Level Tracks** (`gfx/interface/icons/trait_level_tracks/`): Distinctive icons per track (`ancient` fiery blood drop, `benediction` physician, `enlightenment` saint/ancestor, `bloodline` augustus, `hematurgy` murderer, `vanguard` faith warrior, `slaughter` raider/reaver).
-- When adding a new interaction, copy the category's standard DDS to `<interaction_key>.dds`.
+  - **Traits** (`gfx/interface/icons/traits/`): Distinctive icons: `bm_blood_mage.dds` (Blood Mage), `bm_blood_knight.dds` (Blood Knight), `bm_interactions.dds` (Blood Empowerment).
+  - **Interactions** (`gfx/interface/icons/character_interactions/`): All use identical copies of `bm_interactions.dds` (120×120 fiery blood drop).
+  - **Faiths** (`gfx/interface/icons/faith/`): Shared identical DDS icons across the religion family (copied from `bm_blodtru.dds`).
+  - **Trait Level Tracks** (`gfx/interface/icons/trait_level_tracks/`): Distinctive icons per track (`ancient` fiery blood drop from `bm_interactions.dds`, `benediction` physician, `enlightenment` saint/ancestor, `bloodline` augustus, `hematurgy` murderer, `vanguard` faith warrior, `slaughter` raider/reaver).
+- When adding a new interaction, copy `gfx/interface/icons/traits/bm_interactions.dds` to `<interaction_key>.dds`.
 - When removing or renaming interactions, always remove or rename the corresponding `.dds` file to prevent missing textures or orphan assets.
 
 ## Never

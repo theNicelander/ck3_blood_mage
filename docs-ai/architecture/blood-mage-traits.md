@@ -53,12 +53,13 @@ Identity and progression trait `lifestyle_blood_mage`. Gates spellcasting, story
 
 ### Blood Mage (`lifestyle_blood_mage`)
 - **Type:** Lifestyle trait. Mutually exclusive with `lifestyle_blood_knight` via decisions and interactions (script-gated; opposites block omitted to permit dual-wielding on legendary figures like Egill). A blood mage cannot become a blood knight. Inheritable (25% single parent, 100% both parents; 0.2% birth / random creation). Subject to prevalence game rule.
+- **Icon:** `bm_blood_mage.dds` (`gfx/interface/icons/traits/bm_blood_mage.dds`).
 - **Base Stats:** `+2` Learning per Piety level, `+10` Blood Mage opinion.
 - **Entry Effect:** Added via `bm_become_blood_mage_effect` or `bm_elevate_blood_knight_to_blood_mage_effect` (which transfers all accrued `ancient`, `benediction`, and `enlightenment` track XP 1:1, and converts 50% of `vanguard` and `slaughter` into `bloodline` and `hematurgy`).
 - **Tracks:** 5 schools (`ancient`, `enlightenment`, `bloodline`, `benediction`, `hematurgy`). Max 100 XP each. `ancient`, `benediction`, and `enlightenment` tracks are shared identically with `lifestyle_blood_knight`.
 - **Stat Parity:** Every 10 XP tier in any track scales identical baseline vitality stats (`+0.1` Health, `+2` Life Expectancy, `+1` Year Fertility, `+1` Epidemic Resistance).
 - **Track Icons (`gfx/interface/icons/trait_level_tracks/`):**
-  - `ancient.dds`: Fiery Blood Drop (shared).
+  - `ancient.dds`: Fiery Blood Drop (shared; copied from `bm_interactions.dds`).
   - `benediction.dds`: Lifestyle Physician (caduceus healing staff; shared).
   - `enlightenment.dds`: Venerated Ancestor / Saint (shared).
   - `bloodline.dds`: Augustus (laurel-crowned dynastic triumph; Mage exclusive).
