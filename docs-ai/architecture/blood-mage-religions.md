@@ -34,7 +34,7 @@ Spiritual framework for blood magic. Religious family `rf_blodtru` with religion
 | `bm_repair_blodtru_reformation_decision` | Decisions | None | None | Blóðtrú faith, unformed/bugged temporal head title | None | Executes `bm_repair_blodtru_reformation_effect`: clears temporal head title, resets headship to no head. |
 | `bm_blood_cultist_become_blood_mage_decision` | Decisions | Free (1 Devotion level for Learning, 1 Fame level for Prowess) | None | Non-mage, adult, meets faith initiation rule, located in Reykjavik or Tsushima | None | Fires `bm_geyser_duel.0001` against Egill Skallagrímsson to win `lifestyle_blood_mage` (Learning) or `lifestyle_blood_knight` (Prowess). |
 
-## Initiation Duel Hub (Tsushima)
+## Initiation Duel Grimoire (Tsushima)
 
 - Eastern counterpart to Reykjavik for blood magic awakening.
 - Rulers travel to Tsushima (`c_tsushima`) to challenge hermit blood master Egill in Learning & Prowess contest to unlock blood magic without conversion.

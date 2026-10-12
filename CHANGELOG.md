@@ -4,6 +4,7 @@
 
 Always reflects current branch state. Simple line per PR merge. Superseded changes folded, reverts dropped. Caveman style. Reverse chronological: latest changes at top.
 
+- PR #148: Rename hub references to grimoire across documentation and architecture.
 - PR #147: Rebalance trait acquisition: move Rank 3 manifestation to Superior Blood Magic, increase ex-nihilo duel DC and failure exhaustion, and smooth prisoner trait draining modifiers.
 - PR #146: Simplify magic tiers: Knights cast Minor/Major, Mages cast Minor/Major/Superior; consolidate comparison docs into blood-mage-magic-tiers.md; allow Knights to heal major ailments on allies.
 - PR #145: Scale Blood Knight battle XP (1-5 XP) and Lifeforce harvest (Minor/Major) by troop brackets; add victory and defeat battle toasts.
@@ -30,7 +31,7 @@ Always reflects current branch state. Simple line per PR merge. Superseded chang
 - PR #124: Rebalance blood empowerment tracks. Standardize trait baselines.
 - PR #123: Major channel ritual to manifest congenital traits.
 - PR #122: Add Superior Lifeforce tier; require for Blood Golem creation.
-- PR #121: Consolidate self-magic decisions into Minor and Major hub events.
+- PR #121: Consolidate self-magic decisions into Minor and Major grimoire events.
 - PR #120: Rename Crimson and Sanguine entities to Blood across mod.
 - PR #119: DRY triggers, illness/drain bugfixes, fix duchy building typo.
 - PR #118: Keep self-cast blood magic in decisions tab.
