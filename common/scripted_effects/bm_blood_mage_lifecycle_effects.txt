@@ -57,6 +57,7 @@ bm_become_blood_knight_effect = {
 		}
 		add_trait = lifestyle_blood_knight
 	}
+	bm_ensure_blood_mage_story_effect = yes
 	if = {
 		limit = { has_trait = lifestyle_blood_knight }
 		add_character_flag = bm_blood_knight_prevalence_reviewed

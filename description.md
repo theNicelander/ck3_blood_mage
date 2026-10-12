@@ -66,7 +66,7 @@ Martial identity for champions and commanders. Leveled via battles, duels, tourn
 
 ---
 
-## Spells & Ritual Hubs
+## Spells & Ritual Grimoires
 
 ### Minor Blood Magic
 - **Channel Lifeforce**: 5-year buff to any primary attribute or Prowess.
@@ -123,7 +123,7 @@ Three regional faiths:
 
 ## Situation Panel
 
-Dedicated in-game UI hub:
+Dedicated in-game UI grimoire:
 - Real-time tracker for disciplines, attunement, and body runes.
 - Stack counters for Minor, Major, and Superior Lifeforce.
 - Collapsible rosters: Dynasty Blood Mages, active Golems, sworn Blood Retinue.

@@ -6,7 +6,7 @@ description: >-
 
 # Add or change a trait track
 
-Context: `docs-ai/architecture/blood-mage-traits.md`, `blood-mage-blood-empowerment.md`, `blood-mage-progression.md`, [ck3-traits](../../rules/ck3-traits.md).
+Context: `docs-ai/architecture/blood-mage-traits.md`, `blood-mage-blood-empowerment.md`, `blood-mage-track-xp.md`, [ck3-traits](../../rules/ck3-traits.md).
 
 ## Steps
 

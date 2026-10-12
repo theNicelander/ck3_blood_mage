@@ -8,7 +8,10 @@
     cooldown = { years = 10 }
 
     is_shown = {
-        has_trait = lifestyle_blood_mage
+        OR = {
+            has_trait = lifestyle_blood_mage
+            has_trait = lifestyle_blood_knight
+        }
         NOR = {
             bm_is_blood_cult_faith_trigger = yes
         }
@@ -24,7 +27,10 @@
         }
     }
     is_valid = {
-        has_trait = lifestyle_blood_mage
+        OR = {
+            has_trait = lifestyle_blood_mage
+            has_trait = lifestyle_blood_knight
+        }
         has_character_modifier = lifeforce_modifier_major
         piety_level >= 3
     }

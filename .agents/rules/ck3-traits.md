@@ -15,4 +15,4 @@ Reference: `common/traits/bm_blood_mage_trait.txt`, `bm_blood_empowerment_trait.
   - `birth` and `random_creation`: baseline percentages.
 - **Eligibility**: Restrict acquisition via `potential = { ... }`.
 - **Localization**: Every track requires `<trait>_<track>` and `<trait>_<track>_desc` ([ck3-localization.md](ck3-localization.md)).
-- Architecture: see `docs-ai/architecture/blood-mage-traits.md`, `blood-mage-trait-inheritance.md`.
+- Architecture: see `docs-ai/architecture/blood-mage-traits.md`, `blood-mage-prevalence-and-lifecycle.md`.

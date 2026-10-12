@@ -159,7 +159,7 @@ bm_cast_blood_magic_superior.001 = {
 		}
 	}
 
-	# Manifest Transcendent Perfection (Congenital Traits Ranks 4-5)
+	# Manifest Apex Perfection (Congenital Traits Ranks 3-5)
 	option = {
 		name = bm_cast_blood_magic_superior.001.manifest_traits
 		trigger = {
@@ -168,15 +168,15 @@ bm_cast_blood_magic_superior.001 = {
 			piety >= 200
 			OR = {
 				AND = {
-					has_trait_rank = { trait = intellect_good rank >= 3 }
+					has_trait_rank = { trait = intellect_good rank >= 2 }
 					NOT = { has_trait_rank = { trait = intellect_good rank >= 5 } }
 				}
 				AND = {
-					has_trait_rank = { trait = physique_good rank >= 3 }
+					has_trait_rank = { trait = physique_good rank >= 2 }
 					NOT = { has_trait_rank = { trait = physique_good rank >= 5 } }
 				}
 				AND = {
-					has_trait_rank = { trait = beauty_good rank >= 3 }
+					has_trait_rank = { trait = beauty_good rank >= 2 }
 					NOT = { has_trait_rank = { trait = beauty_good rank >= 5 } }
 				}
 			}

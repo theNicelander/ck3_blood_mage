@@ -16,7 +16,7 @@ bm_channel_manifest_traits.001 = {
 	option = {
 		name = bm_channel_manifest_traits.001.intellect
 		trigger = {
-			NOT = { has_trait_rank = { trait = intellect_good rank >= 3 } }
+			NOT = { has_trait_rank = { trait = intellect_good rank >= 2 } }
 			piety >= bm_manifest_traits_intellect_piety_cost
 		}
 		add_piety = {
@@ -25,7 +25,7 @@ bm_channel_manifest_traits.001 = {
 		}
 		add_character_flag = {
 			flag = bm_manifest_traits_cooldown
-			years = 3
+			years = 5
 		}
 		bm_manifest_intellect_duel_effect = yes
 		ai_chance = {
@@ -41,7 +41,7 @@ bm_channel_manifest_traits.001 = {
 	option = {
 		name = bm_channel_manifest_traits.001.physique
 		trigger = {
-			NOT = { has_trait_rank = { trait = physique_good rank >= 3 } }
+			NOT = { has_trait_rank = { trait = physique_good rank >= 2 } }
 			piety >= bm_manifest_traits_physique_piety_cost
 		}
 		add_piety = {
@@ -50,7 +50,7 @@ bm_channel_manifest_traits.001 = {
 		}
 		add_character_flag = {
 			flag = bm_manifest_traits_cooldown
-			years = 3
+			years = 5
 		}
 		bm_manifest_physique_duel_effect = yes
 		ai_chance = {
@@ -66,7 +66,7 @@ bm_channel_manifest_traits.001 = {
 	option = {
 		name = bm_channel_manifest_traits.001.beauty
 		trigger = {
-			NOT = { has_trait_rank = { trait = beauty_good rank >= 3 } }
+			NOT = { has_trait_rank = { trait = beauty_good rank >= 2 } }
 			piety >= bm_manifest_traits_beauty_piety_cost
 		}
 		add_piety = {
@@ -75,7 +75,7 @@ bm_channel_manifest_traits.001 = {
 		}
 		add_character_flag = {
 			flag = bm_manifest_traits_cooldown
-			years = 3
+			years = 5
 		}
 		bm_manifest_beauty_duel_effect = yes
 		ai_chance = {
@@ -107,11 +107,11 @@ bm_channel_manifest_traits.002 = {
 		animation = personality_rational
 	}
 
-	# Manifest Transcendent Intellect
+	# Manifest Apex Intellect
 	option = {
 		name = bm_channel_manifest_traits.002.intellect
 		trigger = {
-			has_trait_rank = { trait = intellect_good rank >= 3 }
+			has_trait_rank = { trait = intellect_good rank >= 2 }
 			NOT = { has_trait_rank = { trait = intellect_good rank >= 5 } }
 			piety >= bm_manifest_traits_intellect_piety_cost
 		}
@@ -121,7 +121,7 @@ bm_channel_manifest_traits.002 = {
 		}
 		add_character_flag = {
 			flag = bm_manifest_traits_cooldown
-			years = 3
+			years = 5
 		}
 		bm_manifest_superior_intellect_duel_effect = yes
 		ai_chance = {
@@ -133,11 +133,11 @@ bm_channel_manifest_traits.002 = {
 		}
 	}
 
-	# Manifest Transcendent Physique
+	# Manifest Apex Physique
 	option = {
 		name = bm_channel_manifest_traits.002.physique
 		trigger = {
-			has_trait_rank = { trait = physique_good rank >= 3 }
+			has_trait_rank = { trait = physique_good rank >= 2 }
 			NOT = { has_trait_rank = { trait = physique_good rank >= 5 } }
 			piety >= bm_manifest_traits_physique_piety_cost
 		}
@@ -147,7 +147,7 @@ bm_channel_manifest_traits.002 = {
 		}
 		add_character_flag = {
 			flag = bm_manifest_traits_cooldown
-			years = 3
+			years = 5
 		}
 		bm_manifest_superior_physique_duel_effect = yes
 		ai_chance = {
@@ -159,11 +159,11 @@ bm_channel_manifest_traits.002 = {
 		}
 	}
 
-	# Manifest Transcendent Beauty
+	# Manifest Apex Beauty
 	option = {
 		name = bm_channel_manifest_traits.002.beauty
 		trigger = {
-			has_trait_rank = { trait = beauty_good rank >= 3 }
+			has_trait_rank = { trait = beauty_good rank >= 2 }
 			NOT = { has_trait_rank = { trait = beauty_good rank >= 5 } }
 			piety >= bm_manifest_traits_beauty_piety_cost
 		}
@@ -173,7 +173,7 @@ bm_channel_manifest_traits.002 = {
 		}
 		add_character_flag = {
 			flag = bm_manifest_traits_cooldown
-			years = 3
+			years = 5
 		}
 		bm_manifest_superior_beauty_duel_effect = yes
 		ai_chance = {

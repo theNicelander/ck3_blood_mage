@@ -155,7 +155,10 @@ seek_power.003 = {
         trigger_event = bm_trait_drain.001
         remove_character_modifier = lifeforce_modifier_major
         trigger = {
-            has_trait = lifestyle_blood_mage
+            OR = {
+                has_trait = lifestyle_blood_mage
+                has_trait = lifestyle_blood_knight
+            }
             has_character_modifier = lifeforce_modifier_major
             bm_can_drain_traits_from_target_trigger = yes
         }
@@ -166,7 +169,6 @@ seek_power.003 = {
         name = seek_power.003.knight
         trigger = {
             has_trait = lifestyle_blood_knight
-            NOT = { has_trait = lifestyle_blood_mage }
         }
         ai_chance = { base = 50 }
         duel = {

@@ -6,7 +6,7 @@ description: >-
 
 # Add blood magic decision
 
-Context: `docs-ai/architecture/blood-mage-decisions.md`, `blood-mage-interactions.md`, `blood-mage-progression.md`, `blood-mage-story.md`, `blood-mage-lifeforce.md`, [ck3-decisions](../../rules/ck3-decisions.md), [ck3-ai](../../rules/ck3-ai.md).
+Context: `docs-ai/architecture/blood-mage-decisions.md`, `blood-mage-interactions.md`, `blood-mage-track-xp.md`, `blood-mage-story.md`, `blood-mage-lifeforce.md`, [ck3-decisions](../../rules/ck3-decisions.md), [ck3-ai](../../rules/ck3-ai.md).
 
 ## Steps
 
@@ -17,7 +17,7 @@ Context: `docs-ai/architecture/blood-mage-decisions.md`, `blood-mage-interaction
 5. Set `ai_*` blocks deliberately (`ai_check_interval = 0` if player-only).
 6. Add English loc keys: title, `_desc`, `_tooltip`, `_confirm`.
 7. For interactions, copy the category's standard fiery blood drop DDS (`grant_blood_magic_interaction.dds`) to `gfx/interface/icons/character_interactions/<name>.dds`. If removing or renaming an interaction, remove/rename the matching `.dds`.
-8. Set XP gate and requirements per `blood-mage-progression.md`.
+8. Set XP gate and requirements per `blood-mage-track-xp.md`.
 9. Update docs and validate.
 
 ## Verify

@@ -30,7 +30,7 @@ bm_manifest_intellect_duel_effect = {
 	blood_magic_used_major = yes
 	duel = {
 		skill = learning
-		value = 0
+		value = 15
 
 		# Success
 		10 = {
@@ -63,6 +63,7 @@ bm_manifest_intellect_duel_effect = {
 			send_interface_toast = {
 				title = bm_manifest_traits.failure_title
 				left_icon = root
+				temporary_negative_lifeforce_effect_major = yes
 			}
 		}
 
@@ -75,7 +76,8 @@ bm_manifest_intellect_duel_effect = {
 				title = bm_manifest_traits.crit_failure_title
 				left_icon = root
 				increase_wounds_effect = { REASON = magic }
-				add_stress = 30
+				add_stress = 50
+				temporary_negative_lifeforce_effect_major = yes
 			}
 		}
 	}
@@ -85,7 +87,7 @@ bm_manifest_physique_duel_effect = {
 	blood_magic_used_major = yes
 	duel = {
 		skill = learning
-		value = 0
+		value = 15
 
 		# Success
 		10 = {
@@ -118,6 +120,7 @@ bm_manifest_physique_duel_effect = {
 			send_interface_toast = {
 				title = bm_manifest_traits.failure_title
 				left_icon = root
+				temporary_negative_lifeforce_effect_major = yes
 			}
 		}
 
@@ -130,7 +133,8 @@ bm_manifest_physique_duel_effect = {
 				title = bm_manifest_traits.crit_failure_title
 				left_icon = root
 				increase_wounds_effect = { REASON = magic }
-				add_stress = 30
+				add_stress = 50
+				temporary_negative_lifeforce_effect_major = yes
 			}
 		}
 	}
@@ -140,7 +144,7 @@ bm_manifest_beauty_duel_effect = {
 	blood_magic_used_major = yes
 	duel = {
 		skill = learning
-		value = 0
+		value = 15
 
 		# Success
 		10 = {
@@ -173,6 +177,7 @@ bm_manifest_beauty_duel_effect = {
 			send_interface_toast = {
 				title = bm_manifest_traits.failure_title
 				left_icon = root
+				temporary_negative_lifeforce_effect_major = yes
 			}
 		}
 
@@ -185,7 +190,8 @@ bm_manifest_beauty_duel_effect = {
 				title = bm_manifest_traits.crit_failure_title
 				left_icon = root
 				increase_wounds_effect = { REASON = magic }
-				add_stress = 30
+				add_stress = 50
+				temporary_negative_lifeforce_effect_major = yes
 			}
 		}
 	}
@@ -195,7 +201,7 @@ bm_manifest_superior_intellect_duel_effect = {
 	blood_magic_used_superior = yes
 	duel = {
 		skill = learning
-		value = 0
+		value = 25
 
 		# Success
 		10 = {
@@ -245,7 +251,7 @@ bm_manifest_superior_intellect_duel_effect = {
 				title = bm_manifest_traits.crit_failure_title
 				left_icon = root
 				increase_wounds_effect = { REASON = magic }
-				add_stress = 40
+				add_stress = 50
 				temporary_negative_lifeforce_effect_superior = yes
 			}
 		}
@@ -256,7 +262,7 @@ bm_manifest_superior_physique_duel_effect = {
 	blood_magic_used_superior = yes
 	duel = {
 		skill = learning
-		value = 0
+		value = 25
 
 		# Success
 		10 = {
@@ -306,7 +312,7 @@ bm_manifest_superior_physique_duel_effect = {
 				title = bm_manifest_traits.crit_failure_title
 				left_icon = root
 				increase_wounds_effect = { REASON = magic }
-				add_stress = 40
+				add_stress = 50
 				temporary_negative_lifeforce_effect_superior = yes
 			}
 		}
@@ -317,7 +323,7 @@ bm_manifest_superior_beauty_duel_effect = {
 	blood_magic_used_superior = yes
 	duel = {
 		skill = learning
-		value = 0
+		value = 25
 
 		# Success
 		10 = {
@@ -367,7 +373,7 @@ bm_manifest_superior_beauty_duel_effect = {
 				title = bm_manifest_traits.crit_failure_title
 				left_icon = root
 				increase_wounds_effect = { REASON = magic }
-				add_stress = 40
+				add_stress = 50
 				temporary_negative_lifeforce_effect_superior = yes
 			}
 		}

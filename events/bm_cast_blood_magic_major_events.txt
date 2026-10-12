@@ -98,12 +98,14 @@ bm_cast_blood_magic_major.001 = {
 			years = 2
 		}
 		blood_magic_used_major = yes
-		add_xp_bm_dynamic = {
-			TRACK = enlightenment
-			XP = 5
-		}
 		if = {
-			limit = { has_trait = lifestyle_blood_knight }
+			limit = { has_trait = lifestyle_blood_mage }
+			add_xp_bm_dynamic = {
+				TRACK = enlightenment
+				XP = 5
+			}
+		}
+		else = {
 			add_blood_knight_xp = {
 				TRACK = enlightenment
 				XP = 5
@@ -209,18 +211,18 @@ bm_cast_blood_magic_major.001 = {
 		}
 	}
 
-	# Manifest Perfection (Congenital Traits up to Rank 3)
+	# Manifest Perfection (Congenital Traits up to Rank 2)
 	option = {
 		name = bm_cast_blood_magic_major.001.manifest_traits
 		trigger = {
 			NOT = { has_character_flag = bm_manifest_traits_cooldown }
-			piety_level >= 2
+			piety_level >= 3
 			piety >= 200
 			NOT = {
 				AND = {
-					has_trait_rank = { trait = intellect_good rank >= 3 }
-					has_trait_rank = { trait = physique_good rank >= 3 }
-					has_trait_rank = { trait = beauty_good rank >= 3 }
+					has_trait_rank = { trait = intellect_good rank >= 2 }
+					has_trait_rank = { trait = physique_good rank >= 2 }
+					has_trait_rank = { trait = beauty_good rank >= 2 }
 				}
 			}
 		}

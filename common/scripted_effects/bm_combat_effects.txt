@@ -1,0 +1,551 @@
+﻿bm_combat_winner_commander_reward_effect = {
+	if = {
+		limit = {
+			scope:winning_side = {
+				OR = {
+					combat = { num_total_troops >= 8000 }
+					num_enemies_killed >= 4000
+				}
+			}
+		}
+		add_blood_knight_xp = { TRACK = vanguard XP = 5 }
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_battle_victory_commander_toast
+			left_icon = this
+			custom_tooltip = bm_battle_victory_commander_t5_tt
+		}
+	}
+	else_if = {
+		limit = {
+			scope:winning_side = {
+				OR = {
+					combat = { num_total_troops >= 4000 }
+					num_enemies_killed >= 2000
+				}
+			}
+		}
+		add_blood_knight_xp = { TRACK = vanguard XP = 5 }
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_battle_victory_commander_toast
+			left_icon = this
+			custom_tooltip = bm_battle_victory_commander_t4_tt
+		}
+	}
+	else_if = {
+		limit = {
+			scope:winning_side = {
+				OR = {
+					combat = { num_total_troops >= 1000 }
+					num_enemies_killed >= 500
+				}
+			}
+		}
+		add_blood_knight_xp = { TRACK = vanguard XP = 4 }
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_battle_victory_commander_toast
+			left_icon = this
+			custom_tooltip = bm_battle_victory_commander_t3_tt
+		}
+	}
+	else_if = {
+		limit = {
+			scope:winning_side = {
+				OR = {
+					combat = { num_total_troops >= 500 }
+					num_enemies_killed >= 200
+				}
+			}
+		}
+		add_blood_knight_xp = { TRACK = vanguard XP = 3 }
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_battle_victory_commander_toast
+			left_icon = this
+			custom_tooltip = bm_battle_victory_commander_t2_tt
+		}
+	}
+	else = {
+		add_blood_knight_xp = { TRACK = vanguard XP = 2 }
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_battle_victory_commander_toast
+			left_icon = this
+			custom_tooltip = bm_battle_victory_commander_t1_tt
+		}
+	}
+}
+
+bm_combat_winner_knight_reward_effect = {
+	if = {
+		limit = {
+			scope:winning_side = {
+				OR = {
+					combat = { num_total_troops >= 8000 }
+					num_enemies_killed >= 4000
+				}
+			}
+		}
+		add_blood_knight_xp = { TRACK = vanguard XP = 5 }
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_battle_victory_knight_toast
+			left_icon = this
+			custom_tooltip = bm_battle_victory_knight_t5_tt
+		}
+	}
+	else_if = {
+		limit = {
+			scope:winning_side = {
+				OR = {
+					combat = { num_total_troops >= 4000 }
+					num_enemies_killed >= 2000
+				}
+			}
+		}
+		add_blood_knight_xp = { TRACK = vanguard XP = 4 }
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_battle_victory_knight_toast
+			left_icon = this
+			custom_tooltip = bm_battle_victory_knight_t4_tt
+		}
+	}
+	else_if = {
+		limit = {
+			scope:winning_side = {
+				OR = {
+					combat = { num_total_troops >= 1000 }
+					num_enemies_killed >= 500
+				}
+			}
+		}
+		add_blood_knight_xp = { TRACK = vanguard XP = 3 }
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_battle_victory_knight_toast
+			left_icon = this
+			custom_tooltip = bm_battle_victory_knight_t3_tt
+		}
+	}
+	else_if = {
+		limit = {
+			scope:winning_side = {
+				OR = {
+					combat = { num_total_troops >= 500 }
+					num_enemies_killed >= 200
+				}
+			}
+		}
+		add_blood_knight_xp = { TRACK = vanguard XP = 2 }
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_battle_victory_knight_toast
+			left_icon = this
+			custom_tooltip = bm_battle_victory_knight_t2_tt
+		}
+	}
+	else = {
+		add_blood_knight_xp = { TRACK = vanguard XP = 1 }
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_battle_victory_knight_toast
+			left_icon = this
+			custom_tooltip = bm_battle_victory_knight_t1_tt
+		}
+	}
+}
+
+bm_combat_loser_commander_reward_effect = {
+	if = {
+		limit = {
+			scope:losing_side = {
+				OR = {
+					combat = { num_total_troops >= 8000 }
+					num_enemies_killed >= 4000
+				}
+			}
+		}
+		add_blood_knight_xp = { TRACK = vanguard XP = 3 }
+		add_blood_knight_xp = { TRACK = enlightenment XP = 2 }
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_battle_defeat_commander_toast
+			left_icon = this
+			custom_tooltip = bm_battle_defeat_commander_t5_tt
+		}
+	}
+	else_if = {
+		limit = {
+			scope:losing_side = {
+				OR = {
+					combat = { num_total_troops >= 4000 }
+					num_enemies_killed >= 2000
+				}
+			}
+		}
+		add_blood_knight_xp = { TRACK = vanguard XP = 3 }
+		add_blood_knight_xp = { TRACK = enlightenment XP = 2 }
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_battle_defeat_commander_toast
+			left_icon = this
+			custom_tooltip = bm_battle_defeat_commander_t4_tt
+		}
+	}
+	else_if = {
+		limit = {
+			scope:losing_side = {
+				OR = {
+					combat = { num_total_troops >= 1000 }
+					num_enemies_killed >= 500
+				}
+			}
+		}
+		add_blood_knight_xp = { TRACK = vanguard XP = 2 }
+		add_blood_knight_xp = { TRACK = enlightenment XP = 2 }
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_battle_defeat_commander_toast
+			left_icon = this
+			custom_tooltip = bm_battle_defeat_commander_t3_tt
+		}
+	}
+	else_if = {
+		limit = {
+			scope:losing_side = {
+				OR = {
+					combat = { num_total_troops >= 500 }
+					num_enemies_killed >= 200
+				}
+			}
+		}
+		add_blood_knight_xp = { TRACK = vanguard XP = 2 }
+		add_blood_knight_xp = { TRACK = enlightenment XP = 1 }
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_battle_defeat_commander_toast
+			left_icon = this
+			custom_tooltip = bm_battle_defeat_commander_t2_tt
+		}
+	}
+	else = {
+		add_blood_knight_xp = { TRACK = vanguard XP = 1 }
+		add_blood_knight_xp = { TRACK = enlightenment XP = 1 }
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_battle_defeat_commander_toast
+			left_icon = this
+			custom_tooltip = bm_battle_defeat_commander_t1_tt
+		}
+	}
+}
+
+bm_combat_loser_knight_reward_effect = {
+	if = {
+		limit = {
+			scope:losing_side = {
+				OR = {
+					combat = { num_total_troops >= 8000 }
+					num_enemies_killed >= 4000
+				}
+			}
+		}
+		add_blood_knight_xp = { TRACK = vanguard XP = 3 }
+		add_blood_knight_xp = { TRACK = enlightenment XP = 2 }
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_battle_defeat_knight_toast
+			left_icon = this
+			custom_tooltip = bm_battle_defeat_knight_t5_tt
+		}
+	}
+	else_if = {
+		limit = {
+			scope:losing_side = {
+				OR = {
+					combat = { num_total_troops >= 4000 }
+					num_enemies_killed >= 2000
+				}
+			}
+		}
+		add_blood_knight_xp = { TRACK = vanguard XP = 2 }
+		add_blood_knight_xp = { TRACK = enlightenment XP = 2 }
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_battle_defeat_knight_toast
+			left_icon = this
+			custom_tooltip = bm_battle_defeat_knight_t4_tt
+		}
+	}
+	else_if = {
+		limit = {
+			scope:losing_side = {
+				OR = {
+					combat = { num_total_troops >= 1000 }
+					num_enemies_killed >= 500
+				}
+			}
+		}
+		add_blood_knight_xp = { TRACK = vanguard XP = 2 }
+		add_blood_knight_xp = { TRACK = enlightenment XP = 1 }
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_battle_defeat_knight_toast
+			left_icon = this
+			custom_tooltip = bm_battle_defeat_knight_t3_tt
+		}
+	}
+	else_if = {
+		limit = {
+			scope:losing_side = {
+				OR = {
+					combat = { num_total_troops >= 500 }
+					num_enemies_killed >= 200
+				}
+			}
+		}
+		add_blood_knight_xp = { TRACK = vanguard XP = 1 }
+		add_blood_knight_xp = { TRACK = enlightenment XP = 1 }
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_battle_defeat_knight_toast
+			left_icon = this
+			custom_tooltip = bm_battle_defeat_knight_t2_tt
+		}
+	}
+	else = {
+		add_blood_knight_xp = { TRACK = vanguard XP = 1 }
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_battle_defeat_knight_toast
+			left_icon = this
+			custom_tooltip = bm_battle_defeat_knight_t1_tt
+		}
+	}
+}
+
+bm_battle_victory_lifeforce_harvest_effect = {
+	# 10,000+ troops (or 5,000+ killed) -> 100% Minor, 100% Major
+	if = {
+		limit = {
+			scope:winning_side = {
+				OR = {
+					combat = { num_total_troops >= 10000 }
+					num_enemies_killed >= 5000
+				}
+			}
+		}
+		add_character_modifier = { modifier = lifeforce_modifier_minor }
+		add_character_modifier = { modifier = lifeforce_modifier_major }
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_battle_victory_both_lifeforce_toast
+			left_icon = this
+			custom_tooltip = bm_battle_victory_both_lifeforce_tt
+		}
+	}
+	# 8,000 – 9,999 troops (or 4,000+ killed) -> 100% Minor, 90% Major
+	else_if = {
+		limit = {
+			scope:winning_side = {
+				OR = {
+					combat = { num_total_troops >= 8000 }
+					num_enemies_killed >= 4000
+				}
+			}
+		}
+		add_character_modifier = { modifier = lifeforce_modifier_minor }
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_battle_victory_lifeforce_toast
+			left_icon = this
+			custom_tooltip = bm_battle_victory_lifeforce_tt
+		}
+		random = {
+			chance = 90
+			add_character_modifier = { modifier = lifeforce_modifier_major }
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_battle_victory_major_lifeforce_toast
+				left_icon = this
+				custom_tooltip = bm_battle_victory_major_lifeforce_tt
+			}
+		}
+	}
+	# 6,000 – 7,999 troops (or 3,000+ killed) -> 100% Minor, 75% Major
+	else_if = {
+		limit = {
+			scope:winning_side = {
+				OR = {
+					combat = { num_total_troops >= 6000 }
+					num_enemies_killed >= 3000
+				}
+			}
+		}
+		add_character_modifier = { modifier = lifeforce_modifier_minor }
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_battle_victory_lifeforce_toast
+			left_icon = this
+			custom_tooltip = bm_battle_victory_lifeforce_tt
+		}
+		random = {
+			chance = 75
+			add_character_modifier = { modifier = lifeforce_modifier_major }
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_battle_victory_major_lifeforce_toast
+				left_icon = this
+				custom_tooltip = bm_battle_victory_major_lifeforce_tt
+			}
+		}
+	}
+	# 4,000 – 5,999 troops (or 2,000+ killed) -> 100% Minor, 50% Major
+	else_if = {
+		limit = {
+			scope:winning_side = {
+				OR = {
+					combat = { num_total_troops >= 4000 }
+					num_enemies_killed >= 2000
+				}
+			}
+		}
+		add_character_modifier = { modifier = lifeforce_modifier_minor }
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_battle_victory_lifeforce_toast
+			left_icon = this
+			custom_tooltip = bm_battle_victory_lifeforce_tt
+		}
+		random = {
+			chance = 50
+			add_character_modifier = { modifier = lifeforce_modifier_major }
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_battle_victory_major_lifeforce_toast
+				left_icon = this
+				custom_tooltip = bm_battle_victory_major_lifeforce_tt
+			}
+		}
+	}
+	# 2,000 – 3,999 troops (or 1,000+ killed) -> 85% Minor, 25% Major
+	else_if = {
+		limit = {
+			scope:winning_side = {
+				OR = {
+					combat = { num_total_troops >= 2000 }
+					num_enemies_killed >= 1000
+				}
+			}
+		}
+		random = {
+			chance = 85
+			add_character_modifier = { modifier = lifeforce_modifier_minor }
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_battle_victory_lifeforce_toast
+				left_icon = this
+				custom_tooltip = bm_battle_victory_lifeforce_tt
+			}
+		}
+		random = {
+			chance = 25
+			add_character_modifier = { modifier = lifeforce_modifier_major }
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_battle_victory_major_lifeforce_toast
+				left_icon = this
+				custom_tooltip = bm_battle_victory_major_lifeforce_tt
+			}
+		}
+	}
+	# 1,000 – 1,999 troops (or 500+ killed) -> 75% Minor, 10% Major
+	else_if = {
+		limit = {
+			scope:winning_side = {
+				OR = {
+					combat = { num_total_troops >= 1000 }
+					num_enemies_killed >= 500
+				}
+			}
+		}
+		random = {
+			chance = 75
+			add_character_modifier = { modifier = lifeforce_modifier_minor }
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_battle_victory_lifeforce_toast
+				left_icon = this
+				custom_tooltip = bm_battle_victory_lifeforce_tt
+			}
+		}
+		random = {
+			chance = 10
+			add_character_modifier = { modifier = lifeforce_modifier_major }
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_battle_victory_major_lifeforce_toast
+				left_icon = this
+				custom_tooltip = bm_battle_victory_major_lifeforce_tt
+			}
+		}
+	}
+	# 500 – 999 troops (or 200+ killed) -> 50% Minor
+	else_if = {
+		limit = {
+			scope:winning_side = {
+				OR = {
+					combat = { num_total_troops >= 500 }
+					num_enemies_killed >= 200
+				}
+			}
+		}
+		random = {
+			chance = 50
+			add_character_modifier = { modifier = lifeforce_modifier_minor }
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_battle_victory_lifeforce_toast
+				left_icon = this
+				custom_tooltip = bm_battle_victory_lifeforce_tt
+			}
+		}
+	}
+	# 100 – 499 troops (or 50+ killed) -> 25% Minor
+	else_if = {
+		limit = {
+			scope:winning_side = {
+				OR = {
+					combat = { num_total_troops >= 100 }
+					num_enemies_killed >= 50
+				}
+			}
+		}
+		random = {
+			chance = 25
+			add_character_modifier = { modifier = lifeforce_modifier_minor }
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_battle_victory_lifeforce_toast
+				left_icon = this
+				custom_tooltip = bm_battle_victory_lifeforce_tt
+			}
+		}
+	}
+	# < 100 troops -> 10% Minor
+	else = {
+		random = {
+			chance = 10
+			add_character_modifier = { modifier = lifeforce_modifier_minor }
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_battle_victory_lifeforce_toast
+				left_icon = this
+				custom_tooltip = bm_battle_victory_lifeforce_tt
+			}
+		}
+	}
+}
