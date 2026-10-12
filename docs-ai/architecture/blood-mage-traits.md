@@ -8,17 +8,40 @@
 - **What it does:** Marks the character as a blood mage. Grants base benefits (`+2` Learning per Piety level, `+10` Blood Mage opinion), unlocks the Blood Magic story panel, enables Lifeforce spellcasting, and progresses across 5 school tracks.
 - **How to level it up:** Spending Lifeforce on blood magic grants XP in the spell's corresponding school (using `add_xp_bm_dynamic`). Slow passive growth comes from the yearly pulse (`ancient`), active house blood modifiers (`bloodline`), and yearly attunements.
 
-### Simplified Track Benefits Table
+### Master Cumulative Track Benefits (10 XP / 50 XP / 100 XP)
 
-Each track has 10 progression levels (10 to 100 XP). Every standard level (10–40 and 60–90) grants the same **Vitality Baseline** (`+0.1` Health, `+2` Life Expectancy, `+1` Year Fertility, `+1` Epidemic Resistance) alongside school bonuses. Milestones reward mastery at level 50 and 100:
+Each track has 10 progression levels (10 to 100 XP). In CK3, each tier unlocked applies additively.
+*Note: In `lifestyle_blood_mage` and shared tracks, tiers 10–40 and 60–90 grant the standard Vitality Baseline (`+0.1` Health, `+2` Life Expectancy, `+1` Year Fertility, `+1` Epidemic Resistance). Tiers 50 and 100 grant capstones instead of the vitality step (4 vitality steps at 50 XP, 8 at 100 XP).*
 
-| Track | School Theme | Standard Step Bonus (10–40, 60–90) | Level 50 Milestone | Level 100 Milestone | Grown By |
-| --- | --- | --- | --- | --- | --- |
-| `ancient` | Time & Piety | Vitality + `+0.1` Monthly Dynasty Prestige, `+5%` Lifestyle XP Gain Mult | `+0.25` Negate Health Penalty, `+1` Prowess per Piety level | `+0.5` Negate Health Penalty, Prowess age lock | Yearly pulse, Ancient attunement, Blood runes, Condense lifeforce |
-| `enlightenment` | Self-Mastery & Learning | Vitality + `+0.2` Monthly Piety, `+5%` Piety Gain Mult | `+1` Learning & Prowess per Piety level | `+1` Learning per Piety level, Prowess age lock | Manifesting lifeforce, Education duels, Channeling lifeforce, Blood empowerment |
-| `bloodline` | Kingdom & Dynasty Building | Vitality + `+0.2` Monthly Dynasty Prestige, `-2%` Build Gold Cost, `+2%` Domain Tax, `+5%` Development Growth (20, 40, 60, 80, 100), `-5%` Build Speed (30, 70, 90), `+1` Domain Limit & `+10%` Gold Gain (30, 60, 90) | `+1` Stewardship per Piety level, `+1` Prowess per Piety level, `+5` Vassal Limit | `+1` Stewardship per Piety level, `+10` Vassal Limit, Prowess age lock | Granting blood magic, Childbirth, Bless kin, Commune rite, Congenital manifestation, House modifiers, Golems |
-| `benediction` | Healing & Bestowal | Vitality + `+1.5` General Opinion, `+1.0` Vassal Opinion, `+0.2` Prestige, `+5%` Prestige Mult | `+1` Diplomacy & Prowess per Piety level | `+1` Diplomacy per Piety level, Prowess age lock | Curing ailments, Making & empowering blood knights, Restoring courtiers |
-| `hematurgy` | Hostile Spells & Intrigue | Vitality + `+3` Hostile Scheme Success, `+3` Scheme Secrecy, `-2%` Tyranny Gain, Dread Baseline (`dread_baseline_add`), Dread Gain Mult, `-2` Days Scheme Phase Duration (20, 40, 60, 70, 90) | `+1` Intrigue per Piety level, `+1` Prowess per Piety level, `+1` Max Hostile Schemes | `+1` Intrigue per Piety level, Prowess age lock, `+1` Max Hostile Schemes, `-10` Days Scheme Phase Duration | Draining lifeforce from prisoners/courtiers, Blood curses (`bm_curse_blood_interaction`), Congenital trait theft |
+#### 1. Blood Mage (`lifestyle_blood_mage`)
+Base: `+2` Learning per Piety level, `+10` Same Trait Opinion.
+
+| Track | 10 XP | 50 XP | 100 XP |
+| --- | --- | --- | --- |
+| `ancient` | • `+0.1` Health<br>• `+2` Life Expectancy<br>• `+1` Year Fertility<br>• `+1` Epidemic Resistance<br>• `+0.1` Monthly Dynasty Prestige<br>• `+5%` Lifestyle XP Gain Mult | • `+0.4` Health<br>• `+8` Life Expectancy<br>• `+4` Years Fertility<br>• `+4` Epidemic Resistance<br>• `+0.5` Monthly Dynasty Prestige<br>• `+25%` Lifestyle XP Gain Mult<br>• `+0.25` Negate Health Penalty<br>• `+1` Prowess per Piety level | • `+0.8` Health<br>• `+16` Life Expectancy<br>• `+8` Years Fertility<br>• `+8` Epidemic Resistance<br>• `+1.0` Monthly Dynasty Prestige<br>• `+50%` Lifestyle XP Gain Mult<br>• `+0.5` Negate Health Penalty<br>• `+1` Prowess per Piety level<br>• Full age prowess lock (`no_prowess_loss_from_age = yes`) |
+| `enlightenment` | • `+0.1` Health<br>• `+2` Life Expectancy<br>• `+1` Year Fertility<br>• `+1` Epidemic Resistance<br>• `+0.2` Monthly Piety<br>• `+5%` Monthly Piety Gain Mult | • `+0.4` Health<br>• `+8` Life Expectancy<br>• `+4` Years Fertility<br>• `+4` Epidemic Resistance<br>• `+0.8` Monthly Piety<br>• `+20%` Monthly Piety Gain Mult<br>• `+1` Max Personal Schemes<br>• `+1` Learning per Piety level<br>• `+1` Prowess per Piety level | • `+0.8` Health<br>• `+16` Life Expectancy<br>• `+8` Years Fertility<br>• `+8` Epidemic Resistance<br>• `+1.8` Monthly Piety<br>• `+45%` Monthly Piety Gain Mult<br>• `+1` Max Personal Schemes<br>• `+2` Learning per Piety level<br>• `+1` Prowess per Piety level<br>• Full age prowess lock (`no_prowess_loss_from_age = yes`) |
+| `bloodline` | • `+0.1` Health<br>• `+2` Life Expectancy<br>• `+1` Year Fertility<br>• `+1` Epidemic Resistance<br>• `+0.2` Monthly Dynasty Prestige<br>• `-2%` Build Gold Cost<br>• `+2%` Domain Tax | • `+0.4` Health<br>• `+8` Life Expectancy<br>• `+4` Years Fertility<br>• `+4` Epidemic Resistance<br>• `+1.0` Monthly Dynasty Prestige<br>• `+1` Domain Limit<br>• `+10%` Gold Gain Mult<br>• `+1` Stewardship per Piety level<br>• `+1` Prowess per Piety level<br>• `+5` Vassal Limit<br>• `-8%` Build Gold Cost<br>• `+8%` Domain Tax<br>• `+10%` Development Growth Factor<br>• `-5%` Holding Build Speed | • `+0.8` Health<br>• `+16` Life Expectancy<br>• `+8` Years Fertility<br>• `+8` Epidemic Resistance<br>• `+2.0` Monthly Dynasty Prestige<br>• `+3` Domain Limit<br>• `+30%` Gold Gain Mult<br>• `+2` Stewardship per Piety level<br>• `+1` Prowess per Piety level<br>• `+15` Vassal Limit<br>• `-20%` Build Gold Cost<br>• `+20%` Domain Tax<br>• `+25%` Development Growth Factor<br>• `-15%` Holding Build Speed<br>• Full age prowess lock (`no_prowess_loss_from_age = yes`) |
+| `benediction` | • `+0.1` Health<br>• `+2` Life Expectancy<br>• `+1` Year Fertility<br>• `+1` Epidemic Resistance<br>• `+1.5` General Opinion<br>• `+1.0` Vassal Opinion<br>• `+0.2` Monthly Prestige<br>• `+5%` Monthly Prestige Gain Mult | • `+0.4` Health<br>• `+8` Life Expectancy<br>• `+4` Years Fertility<br>• `+4` Epidemic Resistance<br>• `+7.5` General Opinion<br>• `+5.0` Vassal Opinion<br>• `+1.0` Monthly Prestige<br>• `+25%` Monthly Prestige Gain Mult<br>• `+1` Diplomacy per Piety level<br>• `+1` Prowess per Piety level | • `+0.8` Health<br>• `+16` Life Expectancy<br>• `+8` Years Fertility<br>• `+8` Epidemic Resistance<br>• `+15.0` General Opinion<br>• `+10.0` Vassal Opinion<br>• `+2.0` Monthly Prestige<br>• `+50%` Monthly Prestige Gain Mult<br>• `+2` Diplomacy per Piety level<br>• `+1` Prowess per Piety level<br>• Full age prowess lock (`no_prowess_loss_from_age = yes`) |
+| `hematurgy` | • `+0.1` Health<br>• `+2` Life Expectancy<br>• `+1` Year Fertility<br>• `+1` Epidemic Resistance<br>• `+3` Hostile Scheme Success<br>• `+3` Scheme Secrecy<br>• `+2` Dread Baseline (`dread_baseline_add`)<br>• `-2%` Tyranny Gain Mult | • `+0.4` Health<br>• `+8` Life Expectancy<br>• `+4` Years Fertility<br>• `+4` Epidemic Resistance<br>• `+15` Hostile Scheme Success<br>• `+15` Scheme Secrecy<br>• `+1` Max Hostile Schemes<br>• `-10` Days Scheme Phase Duration<br>• `+10` Dread Baseline (`dread_baseline_add`)<br>• `+15%` Dread Gain Mult<br>• `-10%` Tyranny Gain Mult<br>• `+1` Intrigue per Piety level<br>• `+1` Prowess per Piety level | • `+0.8` Health<br>• `+16` Life Expectancy<br>• `+8` Years Fertility<br>• `+8` Epidemic Resistance<br>• `+30` Hostile Scheme Success<br>• `+30` Scheme Secrecy<br>• `+2` Max Hostile Schemes<br>• `-20` Days Scheme Phase Duration<br>• `+20` Dread Baseline (`dread_baseline_add`)<br>• `+25%` Dread Gain Mult<br>• `-20%` Tyranny Gain Mult<br>• `+2` Intrigue per Piety level<br>• `+1` Prowess per Piety level<br>• Full age prowess lock (`no_prowess_loss_from_age = yes`) |
+
+#### 2. Blood Knight (`lifestyle_blood_knight`)
+Base: `-1.0` Health, `-5` Life Expectancy, `-5` Prowess. `vanguard` and `slaughter` gain vitality at all 10 tiers; `ancient`, `benediction`, `enlightenment` share Mage vitality profile (skip 50 & 100 for capstones).
+
+| Track | 10 XP | 50 XP | 100 XP |
+| --- | --- | --- | --- |
+| `vanguard` | • `+0.1` Health, `+2` Life Exp, `+1` Fert, `+1` Epidemic<br>• `+0.1` Prestige, `+1` Advantage<br>• `+2%` Army Speed, `+3%` Pursuit Mult | • `+0.5` Health, `+10` Life Exp, `+5` Fert, `+5` Epidemic<br>• `+0.5` Prestige, `+5` Advantage, `+2` Martial<br>• `+10%` Army Speed, `+15%` Pursuit Mult<br>• `+1` Martial per Prestige level | • `+1.0` Health, `+20` Life Exp, `+10` Fert, `+10` Epidemic<br>• `+1.0` Prestige, `+10` Advantage, `+5` Martial<br>• `+20%` Army Speed, `+30%` Pursuit Mult<br>• `+2` Martial per Prestige level |
+| `slaughter` | • `+0.1` Health, `+2` Life Exp, `+1` Fert, `+1` Epidemic<br>• `+0.1` Prestige, `+2` Prowess<br>• `+10%` Knight Effectiveness, `+5%` Dread Mult | • `+0.5` Health, `+10` Life Exp, `+5` Fert, `+5` Epidemic<br>• `+0.5` Prestige, `+10` Prowess<br>• `+50%` Knight Effectiveness, `+25%` Dread Mult<br>• `+1` Prowess per Prestige level | • `+1.0` Health, `+20` Life Exp, `+10` Fert, `+10` Epidemic<br>• `+1.0` Prestige, `+20` Prowess<br>• `+100%` Knight Effectiveness, `+50%` Dread Mult<br>• `+2` Prowess per Prestige level |
+
+#### 3. Blood Empowerment (`lifestyle_blood_empowerment`)
+Base: None. All 5 tracks gain full Vitality Baseline across all 10 tiers (`+0.5` at 50 XP, `+1.0` at 100 XP).
+
+| Track | 10 XP | 50 XP | 100 XP |
+| --- | --- | --- | --- |
+| `dynasty` | Vitality + `+4%` Fertility, `+2.5%` Congenital/Genetic Chance, `+2.5%` Inactive Trait Inheritance | Vitality + `+20%` Fertility, `+12.5%` Congenital/Genetic Chance, `+12.5%` Inactive Trait Inheritance | Vitality + `+40%` Fertility, `+25%` Congenital/Genetic Chance, `+25%` Inactive Trait Inheritance |
+| `mastery` | Vitality + `+4%` Lifestyle XP Mult, `-10`d Learn Language Phase, `+3%` Personal Scheme Success | Vitality + `+20%` Lifestyle XP Mult, `-50`d Learn Language Phase, `+15%` Personal Scheme Success, `+1` Learn Language Slot (30 XP) | Vitality + `+40%` Lifestyle XP Mult, `-100`d Learn Language Phase, `+30%` Personal Scheme Success, `+4` Learn Language Slots (30, 60, 90, 100 XP) |
+| `presence` | Vitality + `+1.5` General Opinion, `+1.0` Vassal Opinion, `+5%` Stress Loss Mult | Vitality + `+7.5` General Opinion, `+5.0` Vassal Opinion, `+25%` Stress Loss Mult | Vitality + `+15.0` General Opinion, `+10.0` Vassal Opinion, `+50%` Stress Loss Mult |
+| `prosperity` | Vitality + `+0.1` Income, `+2.5%` Income Mult | Vitality + `+0.5` Income, `+12.5%` Income Mult | Vitality + `+1.0` Income, `+25%` Income Mult |
+| `shadows` | Vitality + `+5` Scheme Secrecy, `-3%` Enemy Hostile Scheme Success | Vitality + `+25` Scheme Secrecy, `-15%` Enemy Hostile Scheme Success | Vitality + `+50` Scheme Secrecy, `-30%` Enemy Hostile Scheme Success |
 
 *Prowess age lock = `no_prowess_loss_from_age = yes` (full immunity to prowess deterioration from aging).*
 
@@ -89,10 +112,14 @@ Per-level values, milestones, inheritance chances and XP thresholds are in those
 
 ## Gotchas
 
-- Each track needs localization for its name and description.
-- Per-level bonuses are written out by hand per level, so changing a bonus means editing every level.
-- Never add `lifestyle_blood_mage` with a bare `add_trait`. Use `bm_become_blood_mage_effect` so the story and prevalence flag are set.
-- Several XP-gated actions check all five blood mage tracks. A new track must be added to those checks.
+- **Vitality Step Discrepancy:** Blood Mage and Blood Knight shared tracks (`ancient`, `benediction`, `enlightenment`) omit the vitality baseline at tiers 50 and 100 to budget for scaling capstones (`+1` stat per piety level, age prowess lock, negate health penalty). Blood Empowerment and martial BK tracks retain vitality at every tier.
+- **Ancient Somatic Resilience:** `ancient` grants `negate_health_penalty = 0.25` at 50 XP and `0.5` at 100 XP, alongside prowess age lock (`no_prowess_loss_from_age = yes`) at 100 XP and `prowess_per_piety_level = 1`.
+- **Mastery Scheme Slots:** `max_learn_language_schemes_add` triggers strictly at 30, 60, 90, and 100 XP (`+1` slot at 50 XP, `+4` slots at 100 XP).
+- **Additive Compounding Across Traits:** Holding both `lifestyle_blood_mage` (or `lifestyle_blood_knight`) and `lifestyle_blood_empowerment` stacks all unlocked track benefits additively across both traits.
+- **Each track needs localization** for its name and description.
+- **Per-level bonuses are written out by hand per level**, so changing a bonus means editing every level.
+- **Never add `lifestyle_blood_mage` with a bare `add_trait`.** Use `bm_become_blood_mage_effect` so the story and prevalence flag are set.
+- **Several XP-gated actions check all five blood mage tracks.** A new track must be added to those checks.
 
 ## Not verified
 

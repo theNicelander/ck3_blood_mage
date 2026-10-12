@@ -202,7 +202,7 @@ empower_blood_knight_interaction = {
     interface_priority = 189
 
     is_shown = {
-        scope:actor = { has_trait = lifestyle_blood_mage }
+        scope:actor = { has_trait = lifestyle_blood_knight }
         scope:recipient = {
             is_courtier_of = scope:actor
             NOT = { this = scope:actor }
@@ -258,10 +258,13 @@ empower_blood_knight_interaction = {
     }
 
     on_accept = {
-        debug_log = "BloodMageInteraction: empower_blood_knight | Actor: [actor.GetShortUINameNoTooltip] -> Recipient: [recipient.GetShortUINameNoTooltip]"
+        debug_log = "BloodKnightInteraction: empower_blood_knight | Actor: [actor.GetShortUINameNoTooltip] -> Recipient: [recipient.GetShortUINameNoTooltip]"
         if = {
             limit = { scope:empower_major = yes }
-            scope:actor = { benediction_magic_cast_effect_major = yes }
+            scope:actor = {
+                remove_character_modifier = lifeforce_modifier_major
+                add_blood_knight_xp = { TRACK = benediction XP = 4 }
+            }
             scope:recipient = {
                 add_blood_knight_xp = { TRACK = vanguard XP = 10 }
                 add_blood_knight_xp = { TRACK = slaughter XP = 10 }
@@ -274,7 +277,10 @@ empower_blood_knight_interaction = {
         }
         else_if = {
             limit = { scope:empower_minor = yes }
-            scope:actor = { benediction_magic_cast_effect_minor = yes }
+            scope:actor = {
+                remove_character_modifier = lifeforce_modifier_minor
+                add_blood_knight_xp = { TRACK = benediction XP = 2 }
+            }
             scope:recipient = {
                 add_blood_knight_xp = { TRACK = vanguard XP = 5 }
                 add_blood_knight_xp = { TRACK = slaughter XP = 5 }

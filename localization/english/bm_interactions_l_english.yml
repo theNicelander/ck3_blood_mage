@@ -62,6 +62,39 @@
 
   bm_battle_victory_lifeforce_toast: "Battlefield Blood Harvest"
   bm_battle_victory_lifeforce_tt: "Harvested [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] from fallen foes on the victorious battlefield"
+  bm_battle_victory_major_lifeforce_toast: "Major Battlefield Blood Harvest"
+  bm_battle_victory_major_lifeforce_tt: "Harvested [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] from the slaughter on the victorious battlefield"
+  bm_battle_victory_both_lifeforce_toast: "Epic Battlefield Blood Harvest"
+  bm_battle_victory_both_lifeforce_tt: "Harvested both [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] and [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] from the cataclysmic slaughter on the victorious battlefield!"
+
+  # Battle XP Toasts
+  bm_battle_victory_commander_toast: "Blood Knight: Victorious Command"
+  bm_battle_victory_commander_t1_tt: "A minor skirmish won on the field.\nGained #P +2#! [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)] #V Vanguard#! Experience"
+  bm_battle_victory_commander_t2_tt: "A sharp engagement won through tactical command.\nGained #P +3#! [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)] #V Vanguard#! Experience"
+  bm_battle_victory_commander_t3_tt: "A major battle won across contested battle lines.\nGained #P +4#! [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)] #V Vanguard#! Experience"
+  bm_battle_victory_commander_t4_tt: "A grand battle won through masterful command.\nGained #P +5#! [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)] #V Vanguard#! Experience"
+  bm_battle_victory_commander_t5_tt: "An epic clash of nations decided by your command!\nGained #P +5#! [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)] #V Vanguard#! Experience"
+
+  bm_battle_victory_knight_toast: "Blood Knight: Victorious Prowess"
+  bm_battle_victory_knight_t1_tt: "A minor skirmish won on the field.\nGained #P +1#! [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)] #V Vanguard#! Experience"
+  bm_battle_victory_knight_t2_tt: "A sharp engagement won through prowess.\nGained #P +2#! [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)] #V Vanguard#! Experience"
+  bm_battle_victory_knight_t3_tt: "A major battle won through blood and steel.\nGained #P +3#! [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)] #V Vanguard#! Experience"
+  bm_battle_victory_knight_t4_tt: "A grand battle won across bloodsoaked lines.\nGained #P +4#! [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)] #V Vanguard#! Experience"
+  bm_battle_victory_knight_t5_tt: "An epic slaughter where legends are forged in blood!\nGained #P +5#! [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)] #V Vanguard#! Experience"
+
+  bm_battle_defeat_commander_toast: "Blood Knight: Tempered in Defeat"
+  bm_battle_defeat_commander_t1_tt: "A skirmish was lost, but valuable lessons were drawn from the field.\nGained #P +1#! [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)] #V Vanguard#! Experience\nGained #P +1#! [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)] #V Enlightenment#! Experience"
+  bm_battle_defeat_commander_t2_tt: "A bitter engagement was lost, but command under pressure steels your resolve.\nGained #P +2#! [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)] #V Vanguard#! Experience\nGained #P +1#! [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)] #V Enlightenment#! Experience"
+  bm_battle_defeat_commander_t3_tt: "A major battle was lost. Surviving the carnage imparts deep tactical wisdom.\nGained #P +2#! [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)] #V Vanguard#! Experience\nGained #P +2#! [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)] #V Enlightenment#! Experience"
+  bm_battle_defeat_commander_t4_tt: "A grand army broke upon the field. Your blood and mind are tempered in the fire of defeat.\nGained #P +3#! [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)] #V Vanguard#! Experience\nGained #P +2#! [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)] #V Enlightenment#! Experience"
+  bm_battle_defeat_commander_t5_tt: "An epic catastrophe survived! From the ashes of devastation, your spirit rises unbroken.\nGained #P +3#! [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)] #V Vanguard#! Experience\nGained #P +2#! [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)] #V Enlightenment#! Experience"
+
+  bm_battle_defeat_knight_toast: "Blood Knight: Tempered in Defeat"
+  bm_battle_defeat_knight_t1_tt: "A minor skirmish was lost, but your martial instincts sharpen.\nGained #P +1#! [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)] #V Vanguard#! Experience"
+  bm_battle_defeat_knight_t2_tt: "A bitter clash was lost. Enduring pain hardens your body and opens your inner eye.\nGained #P +1#! [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)] #V Vanguard#! Experience\nGained #P +1#! [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)] #V Enlightenment#! Experience"
+  bm_battle_defeat_knight_t3_tt: "A major battle turned against you, but standing firm in the slaughter imparts true resilience.\nGained #P +2#! [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)] #V Vanguard#! Experience\nGained #P +1#! [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)] #V Enlightenment#! Experience"
+  bm_battle_defeat_knight_t4_tt: "A crushing defeat. Bleeding upon a field of carnage tempers body and spirit alike.\nGained #P +2#! [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)] #V Vanguard#! Experience\nGained #P +2#! [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)] #V Enlightenment#! Experience"
+  bm_battle_defeat_knight_t5_tt: "An apocalyptic defeat survived! Only true Blood Knights walk away from such carnage, forever transformed.\nGained #P +3#! [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)] #V Vanguard#! Experience\nGained #P +2#! [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)] #V Enlightenment#! Experience"
 
   # Bless Kin
   bm_bless_bloodline_interaction: "Bless Kin's Blood"

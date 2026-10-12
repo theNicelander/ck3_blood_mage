@@ -3,6 +3,7 @@
 		bm_initialize_blood_mage_prevalence
 		bm_initialize_blood_knight_prevalence
 		bm_initialize_blood_mage_stories
+		bm_initialize_starting_counties_and_holders
 	}
 }
 
@@ -41,5 +42,11 @@ bm_initialize_blood_mage_stories = {
 			}
 			bm_ensure_blood_mage_story_effect = yes
 		}
+	}
+}
+
+bm_initialize_starting_counties_and_holders = {
+	effect = {
+		bm_initialize_starting_counties_and_holders_effect = yes
 	}
 }
