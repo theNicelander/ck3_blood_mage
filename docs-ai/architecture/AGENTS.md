@@ -62,7 +62,7 @@ Every architecture document must begin with a concise **Executive Summary**:
 | `blood-mage-events-overview.md` | Mapping of all event files to their triggering mechanisms and sibling docs |
 | `blood-mage-shared-scripting.md` | Shared triggers, opinion modifiers, nicknames, death reasons, icons, and compat |
 | `blood-mage-religions.md` | The Blóðtrú religion family, unified faith, mainline rites, and holy sites |
-| `blood-mage-comparison.md` | Comparative capability breakdown tables: Blood Mage, Blood Knight, and Shared |
+| `blood-mage-magic-tiers.md` | Breakdown of Minor, Major, and Superior Blood Magic tiers, requirements, and class access |
 
 Keep this table and `README.md` in step with the folder.
 

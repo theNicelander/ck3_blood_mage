@@ -20,7 +20,7 @@ Rules (`.agents/rules/`) say how to write CK3 script in general. These docs say 
 | `common/dynasty_houses/`, `common/dynasties/`, `bm_channel_dynasty_modifiers.txt` | `blood-mage-dynasty.md` |
 | `bm_drain_trait_effects.txt`, `bm_education_duel_effect.txt`, `common/script_values/bm_drain_duel_values.txt` | `blood-mage-duels-and-education.md` |
 | `events/bm_*` | `blood-mage-events-overview.md` |
-| `common/decisions/bm_*`, `common/character_interactions/bm_*` | `blood-mage-comparison.md` |
+| `common/decisions/bm_*`, `common/character_interactions/bm_*` | `blood-mage-magic-tiers.md` |
 | `common/religion/**`, `bm_religion_conversion_effects.txt`, `bm_reformation_repair_*` | `blood-mage-religions.md` |
 | `common/scripted_triggers/bm_triggers.txt`, `common/opinion_modifiers/`, `common/nicknames/`, `common/deathreasons/`, `gui/*texticons*` | `blood-mage-shared-scripting.md` |
 
@@ -28,7 +28,7 @@ Rules (`.agents/rules/`) say how to write CK3 script in general. These docs say 
 
 | Doc | Coverage |
 | --- | --- |
-| `blood-mage-comparison.md` | Comparative capability breakdown tables: Blood Mage, Blood Knight, and Shared |
+| `blood-mage-magic-tiers.md` | Complete breakdown of Minor, Major, and Superior Blood Magic: requirements, costs, XP gains, effects, and class access (Knights = Minor/Major; Mages = Minor/Major/Superior) |
 | `blood-mage-traits.md` | Core lifestyle traits, 12 tracks cumulative benefits (10/50/100 XP), milestones, acquisition triggers |
 | `blood-mage-blood-empowerment.md` | `lifestyle_blood_empowerment` trait, 5 tracks master table, costs, spell unlocks, retinue |
 | `blood-mage-blood-knight.md` | `lifestyle_blood_knight` trait, 3 tracks master table, Lifeforce empowerments, combat & duel hooks |
