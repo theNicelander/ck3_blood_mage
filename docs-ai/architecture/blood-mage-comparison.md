@@ -26,13 +26,9 @@ Living technical specification comparing actions and capabilities between Blood 
 | Action | Description |
 | --- | --- |
 | Grant Blood Magic (`grant_blood_magic_interaction`) | Bestows `lifestyle_blood_mage` on uninitiated mortal or elevates Blood Knight (costs Superior Lifeforce; +4–5 Bloodline XP). |
-| Empower Blood Knight (`empower_blood_knight_interaction`) | Modal interaction granting +10 martial XP (Major Lifeforce) or +5 martial XP (Minor Lifeforce) to sworn knight. |
 | Lethal Major Lifedrain (`lifedrain_prisoner_event_interaction`) | Executes dungeon captive for Major Lifeforce and +1 Hematurgy XP (`death_lifedrain_reason`). |
-| Drain Courtier (`lifedrain_courtier_event_interaction`) | Siphons Minor Lifeforce from free courtier, inflicting `lifedrained_modifier` debuff and +1 Hematurgy XP. |
-| High-Tier Trait Theft (`trait_drain_prisoner_event_interaction`) | Steals rank 3+ congenital traits (Genius, Beautiful, Herculean) from captive mortals via skill duel. |
 | Grant Lifeforce (`grant_lifeforce_interaction`) | Bestows Minor or Major Lifeforce modifier onto courtier or prisoner. |
 | Restore Drained Courtier (`grant_lifeforce_interaction_reversed`) | Cleanses `lifedrained_modifier` debuff, grants Minor Lifeforce and +4 Benediction XP (costs 25 Piety + Major Lifeforce). |
-| Bless Bloodline (`bm_bless_bloodline_interaction`) | Grants `bm_blessed_blood_modifier` (+1 all stats, +10% fertility, +0.25 health) to kin for 10 yrs (costs 35 Piety + Minor Lifeforce; +2 Bloodline XP). |
 | Cast Blood Curse (`bm_curse_blood_interaction`) | Remote curse via Intrigue/Learning duel inflicting `bm_blood_curse_modifier` (-2 all stats, -1.5 health, -30% fertility, -3 prowess) for 5 yrs (costs 50 Piety + Minor Lifeforce; >= 10 Hematurgy XP). |
 | Heal Deadly Ailments (`bm_heal_ailment`) | Cures fatal ailments (bubonic plague, cancer, consumption) on self and allies (costs 100 Piety + Superior Lifeforce; +8 Benediction XP). |
 | Heal Major Ailments on Others (`bm_heal_ailment`) | Cures major ailments (blind, incapable, infirm, gout) on allies (costs 35 Piety + Major Lifeforce; +4 Benediction XP). |
@@ -47,7 +43,6 @@ Living technical specification comparing actions and capabilities between Blood 
 
 | Action | Description |
 | --- | --- |
-| Seek Power as Blood Knight (`seek_power_decision_blood_knight`) | Dedicated 1-year cooldown wilderness expedition awarding martial XP (`slaughter`, `vanguard`, `enlightenment`) and harvesting Lifeforce. |
 | Elevate to Blood Mage (`bm_elevate_to_blood_mage_decision`) | Ritual ascension trial to convert into `lifestyle_blood_mage` (requires Learning > 30, piety rank 3, Minor or Major Lifeforce; costs 500 Piety; transfers XP 1:1, converts 50% martial). |
 | Single Combat Fatality Harvest | Killing an opponent in lethal single combat awards +5 Slaughter XP and grants 1 Minor Lifeforce. |
 | Battlefield Victory Harvest | Winning army battles awards +4 Vanguard XP (commander) or +3 Vanguard XP (knight), and grants a 33% chance to gain 1 Minor Lifeforce. |
@@ -59,6 +54,7 @@ Living technical specification comparing actions and capabilities between Blood 
 
 | Action | Description |
 | --- | --- |
+| Empower Blood Knight (`empower_blood_knight_interaction`) | Modal interaction granting +10 martial XP (Major Lifeforce) or +5 martial XP (Minor Lifeforce) to sworn knight (+4 or +2 Benediction XP to caster). |
 | Ask for Blood Magic (`ask_for_blood_magic_interaction`) | Requests elevation from a friendly, lover, or liege Blood Mage holding Superior Lifeforce (costs 250 Piety). |
 | Steal Blood Magic from Prisoner (`bm_get_blood_magic_from_prisoner_interaction`) | Forcibly siphons blood magic from an imprisoned Blood Mage via duel to elevate oneself. |
 | Vanguard Track (`vanguard`) | Exclusive track: army advantage (+1/tier), martial stat (+1 at even tiers), army speed (+2%/tier), pursuit (+3%/tier), martial per prestige rank at 50/100 XP. |
@@ -72,6 +68,8 @@ Living technical specification comparing actions and capabilities between Blood 
 
 | Action | Description |
 | --- | --- |
+| Seek Power in Nature's Domain (`seek_power_decision`) | Wilderness expedition harvesting Lifeforce and school XP (2-yr cooldown landed, 1-yr unlanded/wanderer). |
+| Become Blood Cultist (`become_blood_cultist_decision`) | Religious decision converting ruler and realm to Blóðtrú faith (costs 250 Piety + 1 Major Lifeforce; 10-yr cooldown). |
 | Manifest Lifeforce (`bm_manifest_lifeforce_decision`) | Learning duel to manifest Lifeforce (+3 Enlightenment XP; yields Minor or Major Lifeforce; costs 100 Piety; 1-yr cooldown). |
 | Cast Minor Blood Magic Hub (`bm_cast_blood_magic_minor_decision`) | Opens minor rites modal (requires Minor Lifeforce). |
 | Cast Major Blood Magic Hub (`bm_cast_blood_magic_major_decision`) | Opens major rites modal (requires Major Lifeforce, Devotion level >= 1). |
@@ -92,11 +90,12 @@ Living technical specification comparing actions and capabilities between Blood 
 | Action | Description |
 | --- | --- |
 | Make Blood Knight (`make_blood_knight_interaction`) | Bestows `lifestyle_blood_knight` on sworn knight/courtier (Mage: 100 Piety + Major Lifeforce; Knight: 200 Prestige + Minor Lifeforce OR 0 Prestige + Major Lifeforce). |
+| Bless Bloodline (`bm_bless_bloodline_interaction`) | Grants `bm_blessed_blood_modifier` (+1 all stats, +10% fertility, +0.25 health) to kin for 10 yrs (costs 35 Piety + Minor Lifeforce; +2 Bloodline XP for Mage, +2 Vanguard XP for Knight). |
+| Drain Courtier or Prisoner (`lifedrain_courtier_event_interaction`) | Siphons Minor Lifeforce from free courtier or prisoner, inflicting `lifedrained_modifier` debuff (Mages test Intrigue/Learning for +1 Hematurgy XP; Knights test Prowess for +1 Slaughter XP; 3-month cooldown). |
+| High-Tier Trait Theft (`trait_drain_prisoner_event_interaction`) | Steals congenital traits up to rank 5 (Genius, Beautiful, Herculean) from captive mortals via skill duel (Mages test Learning for +2 Hematurgy XP; Knights test Learning for +2 Slaughter XP; 60-day cooldown). |
 | Heal Minor Ailments on Self (`bm_heal_ailment`) | Cleanses minor wounds or illnesses on oneself using Minor Lifeforce + 15 Piety (+2 Enlightenment XP). |
 | Heal Major Ailments on Self (`bm_heal_ailment`) | Cleanses major ailments (weak, wounded_2, incapable) on oneself using Major Lifeforce + 35 Piety (+4 Enlightenment XP). |
 | Heal Minor Ailments on Others (`bm_heal_ailment`) | Cleanses minor conditions on allies using Minor Lifeforce + 15 Piety (+2 Benediction XP for Mage; +1 Vanguard & +1 Benediction XP for Knight). |
-| Non-Lethal Minor Prisoner Lifedrain (`lifedrain_courtier_event_interaction` on captives) | Siphons Minor Lifeforce from dungeon captives without execution (Mages test Intrigue/Learning; Knights test Prowess). |
-| Captive Trait Theft (`trait_drain_prisoner_event_interaction` ranks 1–2) | Steals tier 1 or tier 2 congenital traits (Quick, Comely, Hale) from dungeon captives via skill duel. |
 | Ancient Track (`ancient`) | Longevity, health penalty negations at 50/100 XP, lifestyle XP bonus (+5%/tier), dynasty prestige, age prowess lock at 100 XP. |
 | Benediction Track (`benediction`) | Healing bonuses, positive opinion scaling, and monthly prestige. |
 | Enlightenment Track (`enlightenment`) | Monthly piety (+0.2/tier), piety percentage gain (+5%/tier), learning scaling per devotion level at 50/100 XP, age prowess lock at 100 XP. |
