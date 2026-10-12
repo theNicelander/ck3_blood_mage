@@ -3,7 +3,7 @@
 ## Executive Summary
 
 - **What:** Personal body rune modifiers granting passive yearly Lifeforce, plus Duchy Capital blood university buildings.
-- **Rune Inscription:** Minor and Major runes inscribed via `bm_cast_blood_magic_major_decision` (event `bm_cast_blood_magic_major.001`), consuming `lifeforce_modifier_major` and `lifeforce_modifier_minor`. Superior Blood Rune inscribed via `bm_cast_blood_magic_superior_decision` (event `bm_cast_blood_magic_superior.001`), consuming `lifeforce_modifier_superior`. Gated on Devotion Ranks 2/3/4. 5-year cooldown (`bm_blood_rune_cooldown`). Option is completely hidden once maxed (`superior_blood_rune_modifier`).
+- **Rune Inscription:** Minor Blood Rune inscribed via `bm_cast_blood_magic_minor_decision` (event `bm_cast_blood_magic_minor.001`), consuming `lifeforce_modifier_minor`. Major Blood Rune inscribed via `bm_cast_blood_magic_major_decision` (event `bm_cast_blood_magic_major.001`), consuming `lifeforce_modifier_major`. Superior Blood Rune inscribed via `bm_cast_blood_magic_superior_decision` (event `bm_cast_blood_magic_superior.001`), consuming `lifeforce_modifier_superior`. Gated on Devotion Ranks 2/3/4. 5-year cooldown (`bm_blood_rune_cooldown`). Option is completely hidden once maxed (`superior_blood_rune_modifier`).
 - **University Buildings:** `bm_university_0` through `bm_university_3`. Duchy capital holdings. Built by rulers with `lifestyle_blood_mage`.
 
 ### Blood Runes Table
@@ -16,7 +16,7 @@ Runes are sequential. Higher tiers replace lower tiers:
 | **Major** | `major_blood_rune_modifier` | Rank 3 (Paragon of Virtue) | 200 | +5 ancient | 20% minor, 10% major, 5% both |
 | **Superior** | `superior_blood_rune_modifier` | Rank 4 (Religious Icon) | 400 | +10 ancient | 10% minor, 20% major, 10% both |
 
-*Yearly rolls handled by hidden pulse `blood_mage_yearly_events.003`. Blood Knights can inscribe Minor and Major runes via `bm_cast_blood_magic_major_decision` (awards shared `ancient` XP).*
+*Yearly rolls handled by hidden pulse `blood_mage_yearly_events.003`. Blood Knights can inscribe Minor runes via `bm_cast_blood_magic_minor_decision` and Major runes via `bm_cast_blood_magic_major_decision` (awards shared `ancient` XP).*
 
 ### Blood Universities Table
 
@@ -33,8 +33,9 @@ Duchy capital buildings constructible only if holder has `lifestyle_blood_mage`:
 
 | Piece | File |
 | --- | --- |
-| Major magic decision | `common/decisions/cast_magic/bm_cast_blood_magic_major.txt` (`bm_cast_blood_magic_major_decision`) |
-| Rune inscription options | `events/bm_cast_blood_magic_major_events.txt` (`bm_cast_blood_magic_major.001`) |
+| Minor magic decision & event | `common/decisions/cast_magic/bm_cast_blood_magic_minor.txt`, `events/bm_cast_blood_magic_minor_events.txt` |
+| Major magic decision & event | `common/decisions/cast_magic/bm_cast_blood_magic_major.txt`, `events/bm_cast_blood_magic_major_events.txt` |
+| Superior magic decision & event | `common/decisions/cast_magic/bm_cast_blood_magic_superior.txt`, `events/bm_cast_blood_magic_superior_events.txt` |
 | Yearly rune pulse | `events/bm_yearly_events.txt` (`blood_mage_yearly_events.003`) |
 | Rune modifiers | `common/modifiers/bm_blood_runes_modifiers.txt` |
 | Rune piety cost values | `common/script_values/bm_blood_rune_cost.txt` (`bm_blood_rune_piety_cost`) |

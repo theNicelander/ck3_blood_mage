@@ -122,3 +122,7 @@ Always reflects current branch state. Simple line per PR merge. Superseded chang
 - PR #135: Consolidate debug character interactions into single popup interaction with Make Blood Mage, Make Blood Knight, and Convert to Blóðtrú options.
 - PR #136: Overhaul Bloodline (kingdom/dynasty building, stewardship, +1 domain limit & +10% gold at 30/60/90, scaling construction, tax, dev) and Hematurgy (hostile scheme speed, dread, tyranny reduction, +1 hostile scheme at 50/100); add remote Cast Blood Curse interaction.
 - PR #137: Fix runtime script and asset errors: remove invalid scheme_resistance modifier, expand all_attributes, fix leveled trait references, prune remove_trait groups, guard self-cast opinion, fix data loc scope promotion, and add missing track icons.
+- PR #138: Relocate Inscribe Minor Blood Rune to Cast Minor Blood Magic; align Inscribe Major Blood Rune resource cost to Major Lifeforce in Cast Major Blood Magic.
+- PR #139: Consolidate Situation tab Blood Knight roster to include dynasty and court members; enable Situation tab panel and dynamic discipline grid for Blood Knight rulers.
+- PR #140: Add Blood Knight Prevalence game rule matching Blood Mage options; add lifecycle entry/retention effects, birth scaling, AI modifiers, and trait potential/inheritance.
+- PR #141: Fix error.log runtime issues: guard trait potential scope, replace natural_dread with dread_baseline_add, correct curse ai_recipients, guard lifeforce recount variable access, and add missing knight trigger failure loc.

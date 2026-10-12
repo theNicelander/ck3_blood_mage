@@ -1,4 +1,16 @@
-﻿BM_BLOOD_MAGE_LIFEFORCE_DISPLAY = {
+﻿BM_BLOOD_MAGIC_DISCIPLINE_GRID = {
+	type = character
+	text = {
+		trigger = { has_trait = lifestyle_blood_knight }
+		localization_key = BM_BLOOD_KNIGHT_DISCIPLINE_GRID
+	}
+	text = {
+		fallback = yes
+		localization_key = BM_BLOOD_MAGE_DISCIPLINE_GRID
+	}
+}
+
+BM_BLOOD_MAGE_LIFEFORCE_DISPLAY = {
 	type = character
 	text = {
 		fallback = yes
@@ -35,6 +47,10 @@ BM_BLOOD_MAGE_ATTUNEMENT_DISPLAY = {
 	text = {
 		trigger = { has_character_modifier = slaughter_attuned }
 		localization_key = bm_blood_mage_attunement_slaughter
+	}
+	text = {
+		trigger = { has_character_modifier = resilience_attuned }
+		localization_key = bm_blood_mage_attunement_resilience
 	}
 	text = {
 		fallback = yes

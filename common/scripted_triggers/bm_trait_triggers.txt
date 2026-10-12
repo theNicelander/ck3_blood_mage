@@ -3,15 +3,60 @@
 bm_can_drain_traits_from_target_trigger = {
 	OR = {
 		AND = {
-			NOT = { has_trait_rank = { trait = intellect_good rank >= 5 } }
+			OR = {
+				AND = {
+					has_trait = lifestyle_blood_knight
+					NOT = { has_trait = lifestyle_blood_mage }
+					NOT = { has_trait_rank = { trait = intellect_good rank >= 2 } }
+				}
+				AND = {
+					NOT = {
+						AND = {
+							has_trait = lifestyle_blood_knight
+							NOT = { has_trait = lifestyle_blood_mage }
+						}
+					}
+					NOT = { has_trait_rank = { trait = intellect_good rank >= 5 } }
+				}
+			}
 			scope:recipient = { has_trait = intellect_good }
 		}
 		AND = {
-			NOT = { has_trait_rank = { trait = physique_good rank >= 5 } }
+			OR = {
+				AND = {
+					has_trait = lifestyle_blood_knight
+					NOT = { has_trait = lifestyle_blood_mage }
+					NOT = { has_trait_rank = { trait = physique_good rank >= 2 } }
+				}
+				AND = {
+					NOT = {
+						AND = {
+							has_trait = lifestyle_blood_knight
+							NOT = { has_trait = lifestyle_blood_mage }
+						}
+					}
+					NOT = { has_trait_rank = { trait = physique_good rank >= 5 } }
+				}
+			}
 			scope:recipient = { has_trait = physique_good }
 		}
 		AND = {
-			NOT = { has_trait_rank = { trait = beauty_good rank >= 5 } }
+			OR = {
+				AND = {
+					has_trait = lifestyle_blood_knight
+					NOT = { has_trait = lifestyle_blood_mage }
+					NOT = { has_trait_rank = { trait = beauty_good rank >= 2 } }
+				}
+				AND = {
+					NOT = {
+						AND = {
+							has_trait = lifestyle_blood_knight
+							NOT = { has_trait = lifestyle_blood_mage }
+						}
+					}
+					NOT = { has_trait_rank = { trait = beauty_good rank >= 5 } }
+				}
+			}
 			scope:recipient = { has_trait = beauty_good }
 		}
 		AND = {

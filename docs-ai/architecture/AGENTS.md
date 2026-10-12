@@ -65,6 +65,7 @@ Every architecture document must begin with a concise **Executive Summary**:
 | `blood-mage-shared-scripting.md` | Shared triggers, opinion modifiers, nicknames, death reasons, icons, and compat |
 | `blood-mage-trait-inheritance.md` | Direct trait inheritance, birth prevalence auditing, and lineage modifiers |
 | `blood-mage-religions.md` | The Blóðtrú religion family, unified faith, mainline rites, and holy sites |
+| `blood-mage-action-availability.md` | Action availability matrix comparing Blood Mages vs Blood Knights |
 
 Keep this table and `README.md` in step with the folder.
 

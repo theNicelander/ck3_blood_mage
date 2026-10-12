@@ -38,6 +38,9 @@
   # Blood Knight
   make_blood_knight_interaction: "Make Blood Knight"
   make_blood_knight_interaction_desc: "Awaken the supernatural Blood Knight lifestyle trait within [recipient.GetShortUINameNoTooltip]."
+  recipient_must_be_knight_tt: "[recipient.GetShortUIName] is serving as your [knight|E]"
+  NOT_recipient_must_be_knight_tt: "[recipient.GetShortUIName] is not serving as your [knight|E]"
+  NOT_IS_A_KNIGHT_OF_CHARACTER_TRIGGER: "Does not serve as a [knight|E] for [CHARACTER.GetShortUIName|U]"
   make_blood_knight_interaction.mage: "Arcane Blood Infusion"
   make_blood_knight_interaction.mage_desc: "Perform an arcane transmutation using [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and 100 [piety|E]."
   make_blood_knight_interaction.knight_minor: "Martial Blood Oath (Minor Lifeforce)"

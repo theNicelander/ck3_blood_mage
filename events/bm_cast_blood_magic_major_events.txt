@@ -102,46 +102,15 @@ bm_cast_blood_magic_major.001 = {
 			TRACK = enlightenment
 			XP = 5
 		}
-		custom_tooltip = bm_improve_education_decision_desc
-		trigger_event = { id = bm_education_enhancement.001 }
-		ai_chance = {
-			base = 100
-			modifier = {
-				health <= fine_health
-				add = -100
+		if = {
+			limit = { has_trait = lifestyle_blood_knight }
+			add_blood_knight_xp = {
+				TRACK = enlightenment
+				XP = 5
 			}
 		}
-	}
-
-	# Inscribe Minor Blood Rune
-	option = {
-		name = bm_cast_blood_magic_major.001.blood_rune_minor
-		trigger = {
-			NOT = { has_character_flag = bm_blood_rune_cooldown }
-			NOT = { has_character_modifier = minor_blood_rune_modifier }
-			NOT = { has_character_modifier = major_blood_rune_modifier }
-			NOT = { has_character_modifier = superior_blood_rune_modifier }
-			has_character_modifier = lifeforce_modifier_minor
-			piety_level >= 2
-		}
-		show_as_unavailable = {
-			NOT = { has_character_modifier = minor_blood_rune_modifier }
-			NOT = { has_character_modifier = major_blood_rune_modifier }
-			NOT = { has_character_modifier = superior_blood_rune_modifier }
-		}
-		add_character_modifier = {
-			modifier = minor_blood_rune_modifier
-		}
-		add_character_flag = {
-			flag = bm_blood_rune_cooldown
-			years = 5
-		}
-		blood_magic_used_major_minor = yes
-		add_xp_bm_dynamic = {
-			TRACK = ancient
-			XP = 4
-		}
-		custom_tooltip = blood_runes_effects_list.minor
+		custom_tooltip = bm_improve_education_decision_desc
+		trigger_event = { id = bm_education_enhancement.001 }
 		ai_chance = {
 			base = 100
 			modifier = {
@@ -159,7 +128,7 @@ bm_cast_blood_magic_major.001 = {
 			has_character_modifier = minor_blood_rune_modifier
 			NOT = { has_character_modifier = major_blood_rune_modifier }
 			NOT = { has_character_modifier = superior_blood_rune_modifier }
-			has_character_modifier = lifeforce_modifier_minor
+			has_character_modifier = lifeforce_modifier_major
 			piety_level >= 3
 			piety >= 200
 		}
@@ -177,7 +146,7 @@ bm_cast_blood_magic_major.001 = {
 			flag = bm_blood_rune_cooldown
 			years = 5
 		}
-		blood_magic_used_major_minor = yes
+		blood_magic_used_major = yes
 		if = {
 			limit = { has_trait = lifestyle_blood_mage }
 			add_xp_bm_dynamic = {

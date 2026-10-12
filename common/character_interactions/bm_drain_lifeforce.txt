@@ -38,13 +38,23 @@ lifedrain_courtier_event_interaction = {
     category = interaction_category_hostile
     desc = lifedrain_prisoner_interaction_desc
     is_shown = {
-        scope:actor = { has_trait = lifestyle_blood_mage }
-        scope:recipient = {
-            OR = {
-                is_imprisoned_by = scope:actor
-                is_courtier_of = scope:actor
+        OR = {
+            AND = {
+                scope:actor = { has_trait = lifestyle_blood_mage }
+                scope:recipient = {
+                    OR = {
+                        is_imprisoned_by = scope:actor
+                        is_courtier_of = scope:actor
+                    }
+                }
             }
-         }
+            AND = {
+                scope:actor = { has_trait = lifestyle_blood_knight }
+                scope:recipient = {
+                    is_imprisoned_by = scope:actor
+                }
+            }
+        }
     }
     is_valid_showing_failures_only = { scope:recipient = { NOT = { has_character_modifier = recently_lifedrained_modifier } } }
 
@@ -59,65 +69,131 @@ lifedrain_courtier_event_interaction = {
         }
         scope:actor = { hematurgy_magic_cast_effect_minor = yes }
         scope:actor ={
-            duel = {
-                skills = { intrigue learning }
-                target = scope:recipient
-                50 = {
-                    desc = bm_lifedrain_courtier.001.a.success_desc
-                    compare_modifier = {
-                        value = scope:duel_value
-                        multiplier = 3
-                    }
-                    send_interface_toast  = {
-                        title = bm_lifedrain_courtier.001.a.success_desc
-                        left_icon = scope:actor
-                        right_icon = scope:recipient
-                    }
+            if = {
+                limit = {
+                    has_trait = lifestyle_blood_knight
+                    NOT = { has_trait = lifestyle_blood_mage }
                 }
-                50 = {
-                    desc = bm_lifedrain_courtier.001.a.fail_desc
-                    compare_modifier = {
-                        value = scope:duel_value
-                        multiplier = -2
+                duel = {
+                    skill = prowess
+                    target = scope:recipient
+                    50 = {
+                        desc = bm_lifedrain_courtier.001.a.success_desc
+                        compare_modifier = {
+                            value = scope:duel_value
+                            multiplier = 3
+                        }
+                        send_interface_toast  = {
+                            title = bm_lifedrain_courtier.001.a.success_desc
+                            left_icon = scope:actor
+                            right_icon = scope:recipient
+                        }
                     }
-                    send_interface_toast  = {
-                        title = bm_lifedrain_courtier.001.a.fail_desc
-                        left_icon = scope:actor
-                        right_icon = scope:recipient
-                        scope:recipient = {
+                    50 = {
+                        desc = bm_lifedrain_courtier.001.a.fail_desc
+                        compare_modifier = {
+                            value = scope:duel_value
+                            multiplier = -2
+                        }
+                        send_interface_toast  = {
+                            title = bm_lifedrain_courtier.001.a.fail_desc
+                            left_icon = scope:actor
+                            right_icon = scope:recipient
+                            scope:recipient = {
+                                add_trait = wounded_1
+                                add_opinion = {
+                                    target = scope:actor
+                                    modifier = lifedrained_me
+                                    opinion = -50
+                                }
+                            }
+                            temporary_negative_lifeforce_effect_minor = yes
+                        }
+                    }
+                    10 = {
+                        desc = bm_lifedrain_courtier.001.a.critical_fail_desc
+                        compare_modifier = {
+                            value = scope:duel_value
+                            multiplier = -0.5
+                        }
+                        send_interface_toast  = {
+                            title = bm_lifedrain_courtier.001.a.critical_fail_desc
+                            left_icon = scope:actor
+                            right_icon = scope:recipient
+                            temporary_negative_lifeforce_effect_minor = yes
                             add_trait = wounded_1
-                            add_opinion = {
-                                target = scope:actor
-                                modifier = lifedrained_me
-                                opinion = -50
+                            scope:recipient = {
+                                add_trait = wounded_2
+                                add_opinion = {
+                                    target = scope:actor
+                                    modifier = lifedrained_me
+                                    opinion = -50
+                                }
                             }
                         }
-                        temporary_negative_lifeforce_effect_minor = yes
                     }
                 }
-                10 = {
-                    desc = bm_lifedrain_courtier.001.a.critical_fail_desc
-
-                    compare_modifier = {
-                        value = scope:duel_value
-                        multiplier = -0.5
+            }
+            else = {
+                duel = {
+                    skills = { intrigue learning }
+                    target = scope:recipient
+                    50 = {
+                        desc = bm_lifedrain_courtier.001.a.success_desc
+                        compare_modifier = {
+                            value = scope:duel_value
+                            multiplier = 3
+                        }
+                        send_interface_toast  = {
+                            title = bm_lifedrain_courtier.001.a.success_desc
+                            left_icon = scope:actor
+                            right_icon = scope:recipient
+                        }
                     }
-                    send_interface_toast  = {
-                        title = bm_lifedrain_courtier.001.a.critical_fail_desc
-                        left_icon = scope:actor
-                        right_icon = scope:recipient
-                        temporary_negative_lifeforce_effect_minor = yes
-                        add_trait = wounded_1
-                        scope:recipient = {
-                            add_trait = wounded_2
-                            add_opinion = {
-                                target = scope:actor
-                                modifier = lifedrained_me
-                                opinion = -50
+                    50 = {
+                        desc = bm_lifedrain_courtier.001.a.fail_desc
+                        compare_modifier = {
+                            value = scope:duel_value
+                            multiplier = -2
+                        }
+                        send_interface_toast  = {
+                            title = bm_lifedrain_courtier.001.a.fail_desc
+                            left_icon = scope:actor
+                            right_icon = scope:recipient
+                            scope:recipient = {
+                                add_trait = wounded_1
+                                add_opinion = {
+                                    target = scope:actor
+                                    modifier = lifedrained_me
+                                    opinion = -50
+                                }
+                            }
+                            temporary_negative_lifeforce_effect_minor = yes
+                        }
+                    }
+                    10 = {
+                        desc = bm_lifedrain_courtier.001.a.critical_fail_desc
+
+                        compare_modifier = {
+                            value = scope:duel_value
+                            multiplier = -0.5
+                        }
+                        send_interface_toast  = {
+                            title = bm_lifedrain_courtier.001.a.critical_fail_desc
+                            left_icon = scope:actor
+                            right_icon = scope:recipient
+                            temporary_negative_lifeforce_effect_minor = yes
+                            add_trait = wounded_1
+                            scope:recipient = {
+                                add_trait = wounded_2
+                                add_opinion = {
+                                    target = scope:actor
+                                    modifier = lifedrained_me
+                                    opinion = -50
+                                }
                             }
                         }
                     }
-
                 }
             }
         }
