@@ -128,3 +128,4 @@ Always reflects current branch state. Simple line per PR merge. Superseded chang
 - PR #141: Fix error.log runtime issues: guard trait potential scope, replace natural_dread with dread_baseline_add, correct curse ai_recipients, guard lifeforce recount variable access, and add missing knight trigger failure loc.
 - PR #142: Relocate Blood Mage and Blood Knight decisions to Situation panel with is_invisible and story cycle integration.
 - PR #143: Add Blood Faith Starting Counties and Blood Mage Starting County Holders game rules for Iceland and Tsushima; consolidate trait and progression architecture docs.
+- PR #144: Empower Blood Knight exclusive to Blood Knights; share trait theft (ranks 1-5), become blood cultist, bless bloodline, and courtier lifedrain; unify Seek Power into single decision with dynamic cooldown.
