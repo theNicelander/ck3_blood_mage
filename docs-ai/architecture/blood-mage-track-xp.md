@@ -137,11 +137,30 @@ Tracks: `vanguard`, `slaughter` (and shared `ancient`, `benediction`, `enlighten
 
 ---
 
+## 4. Ritual XP Gates
+
+Defined in `common/script_values/bm_xp_requirement_values.txt`:
+
+| Ritual / Action | Gated By | Required XP Value | Target Effect |
+| --- | --- | --- | --- |
+| `bm_create_blood_golem` | Learning XP | 50 XP (`required_xp_blood_golem`) | Crafting blood golem construct |
+| `bm_improve_education_decision` (Lvl 2->3) | CE Track XP | 10 XP (`education_level_2_cost_xp`) | Upgrades education to 3-star |
+| `bm_improve_education_decision` (Lvl 3->4) | CE Track XP | 30 XP (`education_level_3_cost_xp`) | Upgrades education to 4-star |
+| `bm_improve_education_decision` (Lvl 4->5) | CE Track XP | 50 XP (`education_level_4_cost_xp`) | Upgrades education to 5-star |
+| `bm_new_education_decision` | CE Track XP | 75 XP (`required_xp_new_education`) | Adds secondary education trait |
+| Inscribe Minor Blood Rune | CE Track XP | 25 XP (`bm_blood_rune_minimum_xp`) | Inscribes `minor_blood_rune_modifier` |
+| Inscribe Major Blood Rune | CE Track XP | 50 XP (`bm_blood_rune_minimum_xp`) | Upgrades to `major_blood_rune_modifier` |
+| Inscribe Superior Blood Rune | CE Track XP | 100 XP (`bm_blood_rune_minimum_xp`) | Upgrades to `superior_blood_rune_modifier` |
+| `bm_heal_ailment` (Deadly) | Benediction Tier | Minor + Major Lifeforce, 100 Piety | Cures deadly and permanent ailments (blind, cancer, plague, infirm, etc.) |
+
+---
+
 ## Where the details live
 
 | Subsystem | Key Files |
 | --- | --- |
 | XP Helper Macros | `common/scripted_effects/bm_trait_track_xp_gain_effects.txt` |
+| XP Requirement Values | `common/script_values/bm_xp_requirement_values.txt` |
 | Blood Magic Scripted Effects | `common/scripted_effects/bm_blood_magic_used_effects.txt` |
 | Cure Illness Interactions & Costs | `common/character_interactions/bm_cure_illness_interactions.txt`<br>`common/script_values/bm_cure_illness_values.txt` |
 | Drain & Grant Interactions & Costs | `common/character_interactions/bm_drain_lifeforce.txt`<br>`common/character_interactions/bm_grant_lifeforce.txt`<br>`common/character_interactions/bm_grant_blood_magic.txt`<br>`common/character_interactions/bm_bless_bloodline.txt` |

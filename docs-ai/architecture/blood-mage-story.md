@@ -13,7 +13,7 @@ Character-bound story cycle powering the "Blood Magic" Situation panel (`window_
 | **Blood Knight Roster** | Story variable list (`bm_blood_retinue`) | Courtiers and living dynasty members possessing `lifestyle_blood_knight` trait (de-duplicated) | Roster refresh effect (`bm_refresh_blood_magic_rosters_effect`) |
 | **Lifeforce Counters** | Story variables | Cached counts of Minor, Major, and Superior Lifeforce modifiers (`bm_lifeforce_minor_stacks`, `bm_lifeforce_major_stacks`, `bm_lifeforce_superior_stacks`) | Roster refresh (strips and recount stacks) |
 | **Custom Status Display** | Customizable localization | Real-time readout of disciplines (mage or knight disciplines), Lifeforce stacks, active Attunement, and inscribed Blood Rune | `BM_BLOOD_MAGE_INFORMATION_STRING` evaluated on view |
-| **Situation Decisions** | Hidden decisions (`is_invisible = yes`) | Compact blood magic actions accessible only inside panel | Story cycle decision list |
+| **Situation Decisions** | Hidden decisions (`is_invisible = yes`) | All Blood Mage and Blood Knight rituals, manifestations, harvesting, seeking power, and elevation actions | Story cycle decision list (`bm_cast_blood_magic_minor_decision`, `bm_cast_blood_magic_major_decision`, `bm_cast_blood_magic_superior_decision`, `bm_manifest_lifeforce_decision`, `bm_manifest_superior_lifeforce_decision`, `mass_lifedrain_prisoners_decision`, `blood_golem_creation_decision`, `seek_power_decision`, `seek_power_decision_wanderer`, `seek_power_decision_blood_knight`, `bm_elevate_to_blood_mage_decision`) |
 
 ## Lifecycle & Synchronization
 
