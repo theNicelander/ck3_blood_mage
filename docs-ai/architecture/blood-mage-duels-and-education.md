@@ -13,7 +13,7 @@
 | **Upgrade Education (1★–4★)** | Decision | `bm_cast_blood_magic_major_decision` -> `bm_education_enhance.txt` | Scaled piety + Major Lifeforce. CD: 2 yrs. | Mental duel (Learning) | Win: Upgrades education star tier up to tier 4. Lose: Backlash modifier. |
 | **Master Education (5★)** | Decision | `bm_cast_blood_magic_superior_decision` -> `bm_education_master_events.txt` | Scaled piety + Superior Lifeforce. CD: 2 yrs. | Mental duel (Discipline skill) | Win: Upgrades 4-star to legendary 5-star tier. Lose: Superior backlash. |
 | **New Education** | Decision | `bm_cast_blood_magic_superior_decision` -> `bm_education_new.txt` | 1000 piety + Superior Lifeforce. CD: 2 yrs. | Self-ritual | Grants an additional, secondary education trait at tier 1. |
-| **Single Combat Duel** | Combat On-Action | `bm_on_character_death_duel` in `common/on_action/bm_duel_on_actions.txt` | Lethal single combat kill. Killer is Blood Knight. | Battlefield / Duel Opponent | Win: +5 `slaughter` XP and grants 1 Minor Lifeforce (strictly exclusive to Blood Knights). |
+| **Single Combat Duel** | Combat On-Action | `bm_on_character_death_duel` in `common/on_action/bm_duel_on_actions.txt` | Lethal single combat kill. Killer is Blood Knight. | Battlefield / Duel Opponent | Win: +5 `slaughter` XP and grants 1 Major Lifeforce (strictly exclusive to Blood Knights). |
 | **Mass Lifedrain** | Decision | `bm_mass_lifedrain_prisoners` -> `bm_mass_lifedrain.txt` | Piety per prisoner. Dungeon has prisoners. | Uncontested execution | Kills prisoners (`death_lifedrain_reason`). Awards Lifeforce + hematurgy XP. Standard tyranny/kinslaying rules apply. |
 
 ## Key Mechanics

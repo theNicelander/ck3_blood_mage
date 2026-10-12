@@ -155,7 +155,13 @@ blood_mage_yearly_events.002 = {
 
 blood_mage_yearly_events.003 = {
     hidden = yes
-    trigger = { has_trait = lifestyle_blood_mage }
+    trigger = {
+        OR = {
+            has_character_modifier = minor_blood_rune_modifier
+            has_character_modifier = major_blood_rune_modifier
+            has_character_modifier = superior_blood_rune_modifier
+        }
+    }
     immediate = {
         if = {
             limit = { has_character_modifier = minor_blood_rune_modifier }

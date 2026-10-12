@@ -125,7 +125,7 @@ Tracks: `vanguard`, `slaughter` (and shared `ancient`, `benediction`, `enlighten
 | **+1 XP** (`vanguard`) + **+1 XP** (`benediction`) | 15 Piety + Minor Lifeforce | Heal Minor Affliction (Comrade / Knight / Liege) | Interaction & Event (`bm_heal_ailment`) | Target ally with minor ailment | None |
 | **+2 XP** (`vanguard`) + **+2 XP** (`benediction`) | 35 Piety + Major Lifeforce | Heal Major Affliction (Comrade / Knight / Liege) | Interaction & Event (`bm_heal_ailment`) | Target ally with major ailment | None |
 | **+1 to +3 XP** (`vanguard`) + **0 to +2 XP** (`enlightenment`) | None | Battle Defeat (Surviving Commander / Knight) | On-action (`bm_on_combat_end_loser`) | Surviving side commander (2–5 total XP) or knight (1–5 total XP) | Per battle |
-| **+5 XP** (`slaughter`) | None; **Grants** Minor Lifeforce | Single Combat Fatal Slaying | On-action (`bm_on_character_death_duel`) | Slaying opponent in single combat | None |
+| **+5 XP** (`slaughter`) | None; **Grants** Major Lifeforce | Single Combat Fatal Slaying | On-action (`bm_on_character_death_duel`) | Slaying opponent in single combat | None |
 | **+3 XP** (`slaughter`) | None | Tournament Completion | On-action (`bm_on_travel_activity_complete_tournament`) | Completing `activity_tournament` | Per tourney |
 | **+1 to +2 XP** (`slaughter` / `enlightenment`) | None | Seek Power Wilderness Harvest | Decision & Event (`seek_power.001`) | Blood knight | 1–2 years |
 | **+3 XP** (`enlightenment`) | 100 Piety; **Grants** Major (crit) or Minor (success) Lifeforce on Learning duel | Manifest Lifeforce | Decision (`bm_manifest_lifeforce_decision`) | `piety_level >= 2` | 1 year |

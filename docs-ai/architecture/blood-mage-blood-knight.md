@@ -5,6 +5,7 @@ Living technical specification for the Blood Knight subsystem.
 ## Executive Summary
 
 - **What:** Evolving martial combat lifestyle trait `lifestyle_blood_knight` functioning as a stepping stone toward Blood Mage. Features 5 tracks: 2 martial/prowess tracks specific to Blood Knight (`vanguard`, `slaughter`) and 3 tracks shared with Blood Mage (`ancient`, `benediction`, `enlightenment`), max 100 XP each.
+- **Icon:** `bm_blood_knight.dds` (`gfx/interface/icons/traits/bm_blood_knight.dds`).
 - **Base stats:** `prowess = 5`, `prowess_per_piety_level = 2`, `martial_per_piety_level = 1`. Ruler designer cost: 50. Inheritable (25% single parent, 100% both; 0.20% birth) scaled by campaign game rule `bm_blood_knight_prevalence`. Mutually exclusive with `lifestyle_blood_mage` via entry effect, birth priority, and decision/interaction gates (permitting scripted dual-wielding on legendary figures like Egill).
 - **How to acquire:**
   - `make_blood_knight_interaction`: Cast by a Blood Mage (100 Piety + Major Lifeforce) or fellow Blood Knight (200 Prestige + Minor Lifeforce, OR 0 Prestige + Major Lifeforce) on a sworn knight/courtier (cannot target self; a Blood Mage cannot become a Blood Knight).

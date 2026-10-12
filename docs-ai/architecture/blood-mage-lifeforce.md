@@ -25,7 +25,7 @@
 | --- | --- | --- | --- |
 | `lifedrain_prisoner_interaction` | Piety. Dungeon prisoner. | Grants `lifeforce_modifier_minor` | +1 hematurgy |
 | `lifedrain_courtier_event_interaction` (Minor Lifedrain) | 25 Piety. Unlanded courtier/prisoner (Mage) or prisoner (Knight). | Grants `lifeforce_modifier_minor` | +1 hematurgy (Mage) / +1 slaughter (Knight) |
-| Lethal duel kill (combat on-action) | Win lethal single combat duel (`bm_on_character_death_duel`). | Grants `lifeforce_modifier_minor` (strictly exclusive to Blood Knight) | +5 slaughter (Knight) |
+| Lethal duel kill (combat on-action) | Win lethal single combat duel (`bm_on_character_death_duel`). | Grants `lifeforce_modifier_major` (strictly exclusive to Blood Knight) | +5 slaughter (Knight) |
 | Battle victory (combat on-action) | Win army battle as knight/commander. | 33% chance grants `lifeforce_modifier_minor` (Blood Knight) | +3-4 vanguard (Knight) |
 | Ambient yearly pulse (`blood_mage_yearly_events.004`) | Has `lifestyle_blood_knight`, no cost. | 33% chance grants `lifeforce_modifier_minor` (strictly exclusive to Blood Knight; Mages do not receive ambient lifeforce) | None |
 | `bm_manifest_lifeforce_decision` | 100 piety. Learning check. | Grants Minor or Major Lifeforce | +3 enlightenment (Mage & Knight) |
