@@ -10,16 +10,13 @@ Living technical specification comparing actions and capabilities between Blood 
 | --- | --- |
 | Cast Superior Blood Magic Hub (`bm_cast_blood_magic_superior_decision`) | Opens superior rites modal; requires `lifestyle_blood_mage`, Superior Lifeforce, Devotion level >= 2. |
 | Manifest Superior Lifeforce (`bm_manifest_superior_lifeforce_decision`) | Distills 1 Minor + 1 Major Lifeforce into Superior Lifeforce via Learning duel (costs 250 Piety; Devotion level >= 3). |
-| Seek Power (`seek_power_decision` / `seek_power_decision_wanderer`) | Wilderness hunt event chain harvesting Lifeforce and school XP (2-yr cooldown landed, 1-yr wanderer). |
 | Create Blood Golem (`blood_golem_creation_decision`) | Spawns and shapes synthetic courtier in `bm_house_golem` (costs 500 Piety + Superior Lifeforce; 3-yr cooldown). |
 | Mass Lifedrain Prisoners (`mass_lifedrain_prisoners_decision`) | Executes all dungeon captives to harvest Lifeforce and Hematurgy XP (`death_lifedrain_reason`). |
-| Become Blood Cultist (`become_blood_cultist_decision`) | Religious decision converting ruler and realm to Blóðtrú faith (costs 250 Piety + 1 Major Lifeforce; 10-yr cooldown). |
 | Master Education (5★) | Upgrades 4★ education to legendary 5★ tier via mental duel (costs scaled Piety + Superior Lifeforce; 2-yr cooldown). |
 | Embrace New Education | Grants secondary 1-star education trait (costs 1000 Piety + Superior Lifeforce; 2-yr cooldown). |
 | Inscribe Superior Blood Rune | Inscribes tier 3 blood rune (+10 Ancient XP; costs Superior Lifeforce; 5-yr cooldown). |
 | Manifest Transcendent Perfection | Manifests congenital traits at ranks 4 and 5 (+6 Bloodline XP, +2 Enlightenment XP; costs Superior Lifeforce; 3-yr cooldown). |
 | Forge Blood Golem (Rite) | In-hub superior rite crafting a blood golem (+5 Bloodline XP; costs Superior Lifeforce). |
-| Commune with Bloodline | Calls on ancestral blood for realm-wide `bm_bloodline_communion` modifier (+2 Bloodline XP; costs 50 Piety + Minor Lifeforce; 3-yr cooldown). |
 
 ### Interactions & Tracks
 
@@ -31,7 +28,6 @@ Living technical specification comparing actions and capabilities between Blood 
 | Restore Drained Courtier (`grant_lifeforce_interaction_reversed`) | Cleanses `lifedrained_modifier` debuff, grants Minor Lifeforce and +4 Benediction XP (costs 25 Piety + Major Lifeforce). |
 | Cast Blood Curse (`bm_curse_blood_interaction`) | Remote curse via Intrigue/Learning duel inflicting `bm_blood_curse_modifier` (-2 all stats, -1.5 health, -30% fertility, -3 prowess) for 5 yrs (costs 50 Piety + Minor Lifeforce; >= 10 Hematurgy XP). |
 | Heal Deadly Ailments (`bm_heal_ailment`) | Cures fatal ailments (bubonic plague, cancer, consumption) on self and allies (costs 100 Piety + Superior Lifeforce; +8 Benediction XP). |
-| Heal Major Ailments on Others (`bm_heal_ailment`) | Cures major ailments (blind, incapable, infirm, gout) on allies (costs 35 Piety + Major Lifeforce; +4 Benediction XP). |
 | Bloodline Track (`bloodline`) | Exclusive track: +1 domain limit & +10% gold at 30/60/90 XP, construction speed/cost, development, stewardship per prestige rank. |
 | Hematurgy Track (`hematurgy`) | Exclusive track: +1 hostile scheme at 50/100 XP, hostile scheme speed/success, natural dread baseline, tyranny decay. |
 
@@ -96,6 +92,7 @@ Living technical specification comparing actions and capabilities between Blood 
 | Heal Minor Ailments on Self (`bm_heal_ailment`) | Cleanses minor wounds or illnesses on oneself using Minor Lifeforce + 15 Piety (+2 Enlightenment XP). |
 | Heal Major Ailments on Self (`bm_heal_ailment`) | Cleanses major ailments (weak, wounded_2, incapable) on oneself using Major Lifeforce + 35 Piety (+4 Enlightenment XP). |
 | Heal Minor Ailments on Others (`bm_heal_ailment`) | Cleanses minor conditions on allies using Minor Lifeforce + 15 Piety (+2 Benediction XP for Mage; +1 Vanguard & +1 Benediction XP for Knight). |
+| Heal Major Ailments on Others (`bm_heal_ailment`) | Cleanses major conditions (blind, incapable, infirm, wounded_2) on allies using Major Lifeforce + 35 Piety (+4 Benediction XP for Mage; +2 Vanguard & +2 Benediction XP for Knight). |
 | Ancient Track (`ancient`) | Longevity, health penalty negations at 50/100 XP, lifestyle XP bonus (+5%/tier), dynasty prestige, age prowess lock at 100 XP. |
 | Benediction Track (`benediction`) | Healing bonuses, positive opinion scaling, and monthly prestige. |
 | Enlightenment Track (`enlightenment`) | Monthly piety (+0.2/tier), piety percentage gain (+5%/tier), learning scaling per devotion level at 50/100 XP, age prowess lock at 100 XP. |

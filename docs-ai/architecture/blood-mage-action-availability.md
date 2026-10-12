@@ -6,8 +6,8 @@ Living technical specification comparing actions available to Blood Mages (`life
 
 - **What:** Comparative availability matrix across decisions, rituals, targeted interactions, combat mechanics, and trait tracks.
 - **Rule of Thumb:**
-  - **Blood Mage:** Full mastery over Lifeforce distillation (Superior tier), creation of Blood Golems, lethal/mass prisoner draining, courtier draining, high-tier trait theft (ranks 3–5), remote blood curses, kin blood blessings, and deadly healing.
-  - **Blood Knight:** Battlefield martial specialists who harvest Lifeforce through direct single-combat kills, military victories, and annual ambient condensing (~33% roll). Access to Minor and Major Blood Magic rituals (including `lifestyle_blood_empowerment`), self-healing (minor & major), ally healing (minor only), non-lethal prisoner lifedrain (via prowess duel), captive trait theft (up to rank 2), and education elevation up to 4★. Can create fellow Blood Knights or elevate to Blood Mage.
+  - **Blood Mage:** Masters of Minor, Major, and Superior Blood Magic. Can distill Superior Lifeforce, forge Blood Golems, master 5★ education, heal deadly ailments, and execute lethal/mass prisoner lifedrain.
+  - **Blood Knight:** Masters of Minor and Major Blood Magic. Battlefield martial specialists who harvest Lifeforce through direct single-combat kills, military victories, and annual ambient condensing (~33% roll). Access to all Minor and Major rituals (including `lifestyle_blood_empowerment`, education up to 4★, and minor/major runes), healing minor and major ailments on self and others, non-lethal captive/courtier draining, and creating fellow Blood Knights or elevating to Blood Mage.
 
 ---
 
@@ -32,10 +32,10 @@ Living technical specification comparing actions available to Blood Mages (`life
 | Attune Lifeforce (Affinity Selection) | ✅ | ✅ |
 | Condense Lifeforce (Minor + Piety -> Major) | ✅ | ✅ |
 | Purge Bodily Impurities (Cure Wounds/Scars/Bad Traits) | ✅ | ✅ |
+| Inscribe Minor Blood Rune | ✅ | ✅ |
 | **Major Rituals (within Major Hub)** | | |
 | Blood Empowerment (Unlock `lifestyle_blood_empowerment`) | ✅ | ✅ |
 | Improve Education (Tiers 1★ to 4★) | ✅ | ✅ |
-| Inscribe Minor Blood Rune | ✅ | ✅ |
 | Inscribe Major Blood Rune | ✅ | ✅ |
 | Empower Bloodline (House Prowess / Stats) | ✅ | ✅ |
 | Manifest Perfection (Congenital Traits to Rank 3) | ✅ | ✅ |
@@ -55,7 +55,8 @@ Living technical specification comparing actions available to Blood Mages (`life
 | Heal Ailment: Major on Self (`bm_heal_ailment`) | ✅ | ✅ |
 | Heal Ailment: Deadly on Self (`bm_heal_ailment`) | ✅ | ❌ |
 | Heal Ailment: Minor on Others (`bm_heal_ailment`) | ✅ | ✅ |
-| Heal Ailment: Major & Deadly on Others (`bm_heal_ailment`) | ✅ | ❌ |
+| Heal Ailment: Major on Others (`bm_heal_ailment`) | ✅ | ✅ |
+| Heal Ailment: Deadly on Others (`bm_heal_ailment`) | ✅ | ❌ |
 | Lifedrain Prisoner (`lifedrain_prisoner_event_interaction`) | ✅ (Lethal Major) | ❌ |
 | Minor Lifedrain (`lifedrain_courtier_event_interaction`) | ✅ (Courtiers & Prisoners) | ✅ (Courtiers & Prisoners) |
 | Drain Trait from Prisoner (`trait_drain_prisoner_event_interaction`) | ✅ (Up to rank 5) | ✅ (Up to rank 5) |
@@ -84,26 +85,24 @@ Living technical specification comparing actions available to Blood Mages (`life
 ## Key Differences
 
 ### Mage-Exclusive Actions
-1. **Superior Blood Magic:** Superior Lifeforce distillation, 5★ master education, secondary education, superior runes, and blood golem creation.
-2. **Lethal & Mass Harvesting:** Lethal major prisoner draining (`lifedrain_prisoner_event_interaction`), mass prisoner draining, draining unlanded courtiers, high-tier trait draining (ranks 3–5), and remote blood curses.
-3. **Advanced Restoration & Dynasty:** Curing deadly ailments on self/others, curing major ailments on others, restoring drained courtiers, granting Lifeforce to allies, and blessing kin's blood.
-4. **Blood Mage Bestowal:** Bestowing `lifestyle_blood_mage` via interaction, empowering sworn blood knights with martial track XP.
+1. **Superior Blood Magic:** Superior Lifeforce distillation, 5★ master education, secondary education, superior runes, deadly ailment healing, and blood golem creation.
+2. **Lethal & Mass Harvesting:** Lethal major prisoner draining (`lifedrain_prisoner_event_interaction`), mass prisoner draining, and remote blood curses.
+3. **Advanced Restoration & Bestowal:** Curing deadly ailments on self/others, restoring drained courtiers, granting Lifeforce to allies, and initiating new Blood Mages (`grant_blood_magic_interaction`).
 
 ### Knight-Exclusive Actions
 1. **Martial Lifeforce Harvesting:** Gaining Minor Lifeforce on single-combat duel fatalities and winning army battles (commander +4 / knight +3 Vanguard XP, 33% Minor Lifeforce).
 2. **Passive Ambient Vitality:** ~33% annual ambient roll (`blood_mage_yearly_events.004`) to condense Minor Lifeforce (strictly exclusive to Blood Knights; Mages do not receive ambient Lifeforce).
 3. **Martial Progression:** Gaining XP through tournaments, army leadership, and duel victories in `vanguard` and `slaughter` tracks.
-4. **Blood Knight Seek Power:** Dedicated 1-year cooldown wilderness hunt targeting martial XP and lifeforce.
+4. **Empowering Sworn Knights:** Modal interaction to grant martial track XP to fellow sworn Blood Knights.
 5. **Ascension Path:** Elevating to full Blood Mage via `bm_elevate_to_blood_mage_decision` (requiring Learning > 30, piety rank 3, and 500 Piety), asking an allied Blood Mage for elevation, or stealing blood magic from an imprisoned mage.
 
 ### Shared Actions
-1. **Active Lifeforce Generation:** Generating Lifeforce through `bm_manifest_lifeforce_decision` (Learning check for both).
-2. **Minor Rituals:** Attunement, channeling minor lifeforce, condensing Minor into Major Lifeforce, and purging bodily impurities/wounds.
-3. **Major Rituals:** Unlocking and advancing `lifestyle_blood_empowerment`, education upgrades up to 4★, minor/major blood runes, empowering bloodline, and manifesting congenital traits to rank 3.
-4. **Prisoner Siphoning & Trait Theft:** Non-lethal minor lifedrain on imprisoned captives (Mages test Intrigue/Learning; Knights test Prowess) and stealing congenital traits from prisoners up to rank 2.
+1. **Minor & Major Blood Magic:** Both can cast all Minor rituals (channeling, attunement, condensing, purging impurities, minor runes) and all Major rituals (blood empowerment, education 1★-4★, major runes, empower bloodline, manifest congenital perfection ranks 1-3).
+2. **Restorative Healing:** Curing minor and major ailments on self and allies (courtiers, family, spouse, liege, knights).
+3. **Active Lifeforce Generation:** Generating Lifeforce through `bm_manifest_lifeforce_decision` (Learning check for both).
+4. **Prisoner Siphoning & Trait Theft:** Non-lethal minor lifedrain on captives/courtiers and stealing congenital traits from prisoners up to rank 5.
 5. **Knight Creation:** Bestowing `lifestyle_blood_knight` upon sworn knights/courtiers.
-6. **Restorative Self-Healing:** Curing minor and major ailments on self; curing minor ailments on allies.
-7. **Shared Trait Tracks:** Advancing `ancient`, `benediction`, and `enlightenment` tracks.
+6. **Shared Trait Tracks:** Advancing `ancient`, `benediction`, and `enlightenment` tracks, plus all 5 `lifestyle_blood_empowerment` tracks.
 
 ---
 

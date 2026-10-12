@@ -98,12 +98,14 @@ bm_cast_blood_magic_major.001 = {
 			years = 2
 		}
 		blood_magic_used_major = yes
-		add_xp_bm_dynamic = {
-			TRACK = enlightenment
-			XP = 5
-		}
 		if = {
-			limit = { has_trait = lifestyle_blood_knight }
+			limit = { has_trait = lifestyle_blood_mage }
+			add_xp_bm_dynamic = {
+				TRACK = enlightenment
+				XP = 5
+			}
+		}
+		else = {
 			add_blood_knight_xp = {
 				TRACK = enlightenment
 				XP = 5

@@ -26,7 +26,7 @@ Living technical specification for the Blood Knight subsystem.
   - **Bless Bloodline (`bm_bless_bloodline_interaction`):** Blood Knights can bless their kin's blood (costs 35 Piety + Minor Lifeforce), granting +2 `vanguard` XP to the caster.
   - **Become Blood Cultist (`become_blood_cultist_decision`):** Blood Knights can convert realm faith to Blóðtrú, Ketsudō, or Xuédào (costs 250 Piety + Major Lifeforce; 10-year cooldown).
   - **Education Elevation (`bm_cast_blood_magic_major_decision`):** Blood Knights can elevate any education trait they hold up to rank 4 via Major Blood Magic (costs Major Lifeforce + Piety), granting +5 `enlightenment` XP (level 5 remains exclusive to Blood Mages via Superior Magic).
-  - **Restorative Magic (`bm_heal_ailment`):** Blood Knights can heal minor ailments on others using Minor Lifeforce (+1 XP `vanguard` and +1 XP `benediction`), and both minor and major ailments on self using Minor or Major Lifeforce (+2 XP `enlightenment` for minor, +4 XP `enlightenment` for major, e.g. curing `weak` or `wounded_2` on self).
+  - **Restorative Magic (`bm_heal_ailment`):** Blood Knights can heal minor and major ailments on self and others using Minor or Major Lifeforce (healing allies awards +1 Vanguard & +1 Benediction XP for minor, +2 Vanguard & +2 Benediction XP for major; self-healing awards +2 or +4 Enlightenment XP; deadly ailments remain exclusive to Blood Mages via Superior Magic).
   - **Minor Blood Magic Channeling (`bm_cast_blood_magic_minor_decision`):** Blood Knights can channel minor lifeforce or purge bodily frailty (+1/+2 `enlightenment` XP).
 
 ### Tracks Master Table
@@ -47,7 +47,7 @@ Each track has 10 tiers (10, 20, 30, ..., 100 XP).
 - **Major Blood Magic & Secondary Empowerment:**
   - Blood Knights have full access to Major Blood Magic (`bm_cast_blood_magic_major_decision`) and the secondary trait `lifestyle_blood_empowerment` upon possessing Major Lifeforce. Superior Blood Magic remains strictly exclusive to Blood Mages.
 - **Restorative Blood Magic & Healing:**
-  - `bm_heal_ailment`: Can target self, courtiers, liege, close family, spouse, and knights. Blood Knights can use Minor Lifeforce to heal others (minor ailments only), and both Minor and Major Lifeforce to heal self (minor and major ailments, e.g. `weak`, `wounded_2`, `incapable`, etc.; deadly ailments remain Blood Mage only). Awards +2 `enlightenment` XP (minor self-healing), +4 `enlightenment` XP (major self-healing), or +1 `vanguard` and +1 `benediction` XP (healing allies).
+  - `bm_heal_ailment`: Can target self, courtiers, liege, close family, spouse, and knights. Blood Knights can use Minor Lifeforce to heal minor ailments, and Major Lifeforce to heal major ailments on both self and others (e.g. `weak`, `wounded_2`, `incapable`, `infirm`, `blind`, etc.; deadly ailments remain Blood Mage only). Awards +2 `enlightenment` XP (minor self-healing), +4 `enlightenment` XP (major self-healing), +1 `vanguard` and +1 `benediction` XP (minor ally healing), or +2 `vanguard` and +2 `benediction` XP (major ally healing).
   - `bm_cast_blood_magic_minor_decision`: Allows self-channeling, self-purging of negative traits, and condensing Minor Lifeforce into Major Lifeforce.
 - **Situation Panel Access:**
   - Blood Knight rulers have access to the Blood Magic Situation panel (`bm_blood_mage_story`), displaying their knight disciplines (`vanguard`, `slaughter`, `ancient`, `benediction`, `enlightenment`), Lifeforce reserves, active attunement, and the unified Blood Knights (Dynasty & Court) roster.
