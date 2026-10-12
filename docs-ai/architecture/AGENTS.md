@@ -46,15 +46,13 @@ Every architecture document must begin with a concise **Executive Summary**:
 | --- | --- |
 | `blood-mage-story.md` | The Blood Magic panel (story cycle) and its rosters |
 | `blood-mage-decisions.md` | The actions a blood mage can take and the routes into blood magic |
-| `blood-mage-traits.md` | Core `lifestyle_blood_mage` trait and 5 school progression tracks |
-| `blood-mage-trait-benefits.md` | Master cumulative benefits across all tracks at 10, 50, and 100 XP |
+| `blood-mage-traits.md` | Core lifestyle traits, 12 tracks cumulative benefits (10/50/100 XP), and acquisition triggers |
 | `blood-mage-domicile-buildings.md` | Single 5-tier Blood Shrine line, scaling piety/health/lifespan/genetics, camp & court aura |
 | `blood-mage-blood-empowerment.md` | The Blood Empowerment trait, self-advancement, and warrior retinue |
 | `blood-mage-blood-knight.md` | The Blood Knight trait, martial tracks, and combat hooks |
-| `blood-mage-track-xp.md` | Master XP catalog: all 13 tracks, piety costs, lifeforce sinks, and XP gains |
+| `blood-mage-track-xp.md` | Master XP catalog: all tracks, piety costs, lifeforce sinks, and ritual XP gates |
 | `blood-mage-dynasty.md` | Bloodline house modifiers and the Golem house |
 | `blood-mage-lifeforce.md` | The Lifeforce resource, positive/negative modifiers, and harvesting |
-| `blood-mage-progression.md` | Dynamic XP gains, requirement gates, cost scaling, and AI weighting |
 | `blood-mage-interactions.md` | Character interactions (draining, granting, curing, and self-casting) |
 | `blood-mage-blood-runes.md` | Blood Runes and blood university duchy buildings |
 | `blood-mage-golems.md` | Blood golem lifecycle, creation decision, shaping duels, and template |
@@ -63,7 +61,6 @@ Every architecture document must begin with a concise **Executive Summary**:
 | `blood-mage-game-rules.md` | Campaign game rules (prevalence, alterations, and religion availability) |
 | `blood-mage-events-overview.md` | Mapping of all event files to their triggering mechanisms and sibling docs |
 | `blood-mage-shared-scripting.md` | Shared triggers, opinion modifiers, nicknames, death reasons, icons, and compat |
-| `blood-mage-trait-inheritance.md` | Direct trait inheritance, birth prevalence auditing, and lineage modifiers |
 | `blood-mage-religions.md` | The Blóðtrú religion family, unified faith, mainline rites, and holy sites |
 | `blood-mage-comparison.md` | Comparative capability breakdown tables: Blood Mage, Blood Knight, and Shared |
 

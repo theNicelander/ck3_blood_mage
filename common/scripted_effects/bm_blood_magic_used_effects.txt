@@ -67,6 +67,13 @@ bloodline_magic_cast_effect_minor = {
         TRACK = bloodline
         XP = 2
     }
+    if = {
+        limit = { has_trait = lifestyle_blood_knight }
+        add_blood_knight_xp = {
+            TRACK = vanguard
+            XP = 2
+        }
+    }
 }
 bloodline_magic_cast_effect_major = {
     remove_character_modifier = lifeforce_modifier_major

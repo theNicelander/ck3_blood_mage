@@ -18,14 +18,13 @@ Living technical specification comparing actions available to Blood Mages (`life
 | **Decisions & Hubs** | | |
 | Manifest Lifeforce (`bm_manifest_lifeforce_decision`) | ✅ | ✅ |
 | Manifest Superior Lifeforce (`bm_manifest_superior_lifeforce_decision`) | ✅ | ❌ |
-| Seek Power (`seek_power_decision` / `seek_power_decision_wanderer`) | ✅ | ❌ |
-| Seek Power as Blood Knight (`seek_power_decision_blood_knight`) | ❌ | ✅ |
+| Seek Power in Nature's Domain (`seek_power_decision`) | ✅ (2 yrs landed, 1 yr wanderer) | ✅ (2 yrs landed, 1 yr wanderer) |
 | Cast Minor Blood Magic Hub (`bm_cast_blood_magic_minor_decision`) | ✅ | ✅ |
 | Cast Major Blood Magic Hub (`bm_cast_blood_magic_major_decision`) | ✅ | ✅ |
 | Cast Superior Blood Magic Hub (`bm_cast_blood_magic_superior_decision`) | ✅ | ❌ |
 | Create Blood Golem (`blood_golem_creation_decision`) | ✅ | ❌ |
 | Mass Lifedrain Prisoners (`mass_lifedrain_prisoners_decision`) | ✅ | ❌ |
-| Become Blood Cultist (`become_blood_cultist_decision`) | ✅ | ❌ |
+| Become Blood Cultist (`become_blood_cultist_decision`) | ✅ | ✅ |
 | Repair Blóðtrú Reformation (`bm_repair_blodtru_reformation_decision`) | ✅ | ✅ |
 | Elevate to Blood Mage (`bm_elevate_to_blood_mage_decision`) | ❌ | ✅ |
 | **Minor Rituals (within Minor Hub)** | | |
@@ -48,7 +47,7 @@ Living technical specification comparing actions available to Blood Mages (`life
 | Forge Blood Golem | ✅ | ❌ |
 | **Targeted Character Interactions** | | |
 | Make Blood Knight (`make_blood_knight_interaction`) | ✅ | ✅ |
-| Empower Blood Knight (`empower_blood_knight_interaction`) | ✅ | ❌ |
+| Empower Blood Knight (`empower_blood_knight_interaction`) | ❌ | ✅ |
 | Grant Blood Magic (`grant_blood_magic_interaction`) | ✅ | ❌ |
 | Ask for Blood Magic (`ask_for_blood_magic_interaction`) | ❌ | ✅ |
 | Steal Blood Magic from Prisoner (`bm_get_blood_magic_from_prisoner_interaction`) | ❌ | ✅ |
@@ -58,11 +57,11 @@ Living technical specification comparing actions available to Blood Mages (`life
 | Heal Ailment: Minor on Others (`bm_heal_ailment`) | ✅ | ✅ |
 | Heal Ailment: Major & Deadly on Others (`bm_heal_ailment`) | ✅ | ❌ |
 | Lifedrain Prisoner (`lifedrain_prisoner_event_interaction`) | ✅ (Lethal Major) | ❌ |
-| Minor Lifedrain (`lifedrain_courtier_event_interaction`) | ✅ (Courtiers & Prisoners) | ✅ (Prisoners only) |
-| Drain Trait from Prisoner (`trait_drain_prisoner_event_interaction`) | ✅ (Up to rank 5) | ✅ (Up to rank 2) |
+| Minor Lifedrain (`lifedrain_courtier_event_interaction`) | ✅ (Courtiers & Prisoners) | ✅ (Courtiers & Prisoners) |
+| Drain Trait from Prisoner (`trait_drain_prisoner_event_interaction`) | ✅ (Up to rank 5) | ✅ (Up to rank 5) |
 | Grant Lifeforce Stacks (`grant_lifeforce_interaction`) | ✅ | ❌ |
 | Restore Drained Courtier (`grant_lifeforce_interaction_reversed`) | ✅ | ❌ |
-| Bless Bloodline (`bm_bless_bloodline_interaction`) | ✅ | ❌ |
+| Bless Bloodline (`bm_bless_bloodline_interaction`) | ✅ | ✅ |
 | Cast Blood Curse (`bm_curse_blood_interaction`) | ✅ | ❌ |
 | **Combat & Passive Harvesting** | | |
 | Single Combat Kill Lifeforce Harvest (+5 Slaughter XP, +1 Minor Lifeforce) | ❌ | ✅ |

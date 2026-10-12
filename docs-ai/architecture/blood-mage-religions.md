@@ -45,6 +45,16 @@ Spiritual framework for blood magic. Religious family `rf_blodtru` with religion
   - `blodtru_religion_enabled`: Fully active.
   - `blodtru_religion_player_only`: Available to player only; AI conversion blocked.
   - `blodtru_religion_disabled`: Entire religion family disabled.
+- `bm_starting_counties_faith`: Controls whether counties start converted to blood faiths:
+  - `bm_starting_counties_faith_vanilla`: Historical vanilla faiths (default).
+  - `bm_starting_counties_faith_iceland`: Iceland (`d_iceland`) starts with `blodtru_faith` and holder faith converts.
+  - `bm_starting_counties_faith_tsushima`: Tsushima (`c_tsushima`) starts with `ketsudo_faith` and holder faith converts.
+  - `bm_starting_counties_faith_both`: Both Iceland and Tsushima start with regional blood faiths.
+- `bm_starting_holders_blood_mage`: Controls whether county holders start with `lifestyle_blood_mage`:
+  - `bm_starting_holders_blood_mage_vanilla`: Mortal holders without the trait (default).
+  - `bm_starting_holders_blood_mage_iceland`: Landed holders in Iceland receive `lifestyle_blood_mage`.
+  - `bm_starting_holders_blood_mage_tsushima`: Landed holder of Tsushima receives `lifestyle_blood_mage`.
+  - `bm_starting_holders_blood_mage_both`: Both Iceland and Tsushima holders start with `lifestyle_blood_mage`.
 - `bm_initiation_faith_requirement`: Determines faith gates for `bm_blood_cultist_become_blood_mage_decision`:
   - `bm_initiation_dedicated_cult`: Must follow a blood cult faith (`bm_is_blood_cult_faith_trigger`).
   - `bm_initiation_cult_or_witchcraft_accepted`: Accepts cult faiths or faiths where witchcraft is accepted/virtuous.
