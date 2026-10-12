@@ -129,3 +129,4 @@ Always reflects current branch state. Simple line per PR merge. Superseded chang
 - PR #142: Relocate Blood Mage and Blood Knight decisions to Situation panel with is_invisible and story cycle integration.
 - PR #143: Add Blood Faith Starting Counties and Blood Mage Starting County Holders game rules for Iceland and Tsushima; consolidate trait and progression architecture docs.
 - PR #144: Empower Blood Knight exclusive to Blood Knights; share trait theft (ranks 1-5), become blood cultist, bless bloodline, and courtier lifedrain; unify Seek Power into single decision with dynamic cooldown.
+- PR #145: Scale Blood Knight battle XP (1-5 XP) and Lifeforce harvest (Minor/Major) by troop brackets; add victory and defeat battle toasts.

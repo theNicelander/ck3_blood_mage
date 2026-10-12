@@ -120,10 +120,10 @@ Tracks: `vanguard`, `slaughter` (and shared `ancient`, `benediction`, `enlighten
 | **+2 XP** (caster) (`benediction`) | 0 Piety + Minor Lifeforce | Empower Blood Knight: Minor (Caster) | Interaction (`empower_blood_knight_interaction`) | Blood Knight empowers sworn knight | None |
 | **+2 XP** (minor) / **+4 XP** (major) (`vanguard`) | 200 Prestige + Minor Lifeforce OR 0 Prestige + Major Lifeforce | Make Blood Knight | Interaction (`make_blood_knight_interaction`) | Blood Knight initiates knight | None |
 | **+2 XP** (`vanguard`) | 35 Piety + Minor Lifeforce | Bless Kin's Blood | Interaction (`bm_bless_bloodline_interaction`) | Target child/dynasty kin | 10 years (target buff) |
-| **+4 XP** (`vanguard`) | None (33% roll for Minor Lifeforce) | Battle Victory (Commander) | On-action (`bm_on_combat_end_winner`) | Army commander | Per battle |
-| **+3 XP** (`vanguard`) | None (33% roll for Minor Lifeforce) | Battle Victory (Knight) | On-action (`bm_on_combat_end_winner`) | Army knight | Per battle |
+| **+2 to +5 XP** (`vanguard`) | None; Scaled Lifeforce Harvest (10%–100% Minor, 0%–100% Major) | Battle Victory (Commander) | On-action (`bm_on_combat_end_winner`) | Army commander; scales by battle size (<100 to 10k+) | Per battle |
+| **+1 to +5 XP** (`vanguard`) | None; Scaled Lifeforce Harvest (10%–100% Minor, 0%–100% Major) | Battle Victory (Knight) | On-action (`bm_on_combat_end_winner`) | Army knight; scales by battle size (<100 to 10k+) | Per battle |
 | **+1 XP** (`vanguard`) + **+1 XP** (`benediction`) | 15 Piety + Minor Lifeforce | Heal Minor Affliction (Comrade / Knight / Liege) | Interaction & Event (`bm_heal_ailment`) | Target ally with minor ailment | None |
-| **+1 XP** (`vanguard`) + **+1 XP** (`enlightenment`) | None | Battle Defeat (Surviving Commander / Knight) | On-action (`bm_on_combat_end_loser`) | Surviving side commander or knight | Per battle |
+| **+1 to +3 XP** (`vanguard`) + **0 to +2 XP** (`enlightenment`) | None | Battle Defeat (Surviving Commander / Knight) | On-action (`bm_on_combat_end_loser`) | Surviving side commander (2–5 total XP) or knight (1–5 total XP) | Per battle |
 | **+5 XP** (`slaughter`) | None; **Grants** Minor Lifeforce | Single Combat Fatal Slaying | On-action (`bm_on_character_death_duel`) | Slaying opponent in single combat | None |
 | **+3 XP** (`slaughter`) | None | Tournament Completion | On-action (`bm_on_travel_activity_complete_tournament`) | Completing `activity_tournament` | Per tourney |
 | **+1 to +2 XP** (`slaughter` / `enlightenment`) | None | Seek Power Wilderness Harvest | Decision & Event (`seek_power.001`) | Blood knight | 1–2 years |
