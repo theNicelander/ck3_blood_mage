@@ -2,52 +2,53 @@
 
 ## Living changelog (branch net state since 1.20)
 
-Always reflects current branch state. Simple line per PR merge. Superseded changes folded, reverts dropped. Caveman style.
+Always reflects current branch state. Simple line per PR merge. Superseded changes folded, reverts dropped. Caveman style. Reverse chronological: latest changes at top.
 
-- PR #95: CK3 1.20 baseline compat, layout modernization, AI agent rules.
-- PR #97: English-only localization source. Drop non-English stubs for auto-generation.
-- PR #98: Reorganize decision and AI agent rules.
-- PR #99: Trait definition syntax fixes, descriptor update.
-- PR #100: Pre-commit repository format checks, religion script fixes.
-- PR #101: Streamline agent rules documentation.
-- PR #102: Reykjavik duel decision to challenge occult hermit.
-- PR #103: Consolidate Blóðtrú faith with Ancestor Worship tenet.
-- PR #105: Rename religion family and core faith to Blóðtrú.
-- PR #106: Split East Asian branch into Xuédào (Chinese) and Ketsudō (Japanese) faiths.
-- PR #107: Standardize holy site modifiers. Add debug interactions.
-- PR #108: Repeatable minor lifedrain. Unrestricted manifest lifeforce.
-- PR #109: Lifeforce harvest from single combat duels.
-- PR #110: Agent token cost pre-commit check. Add caveman skill.
-- PR #113: Debug logging for blood magic operations.
-- PR #114: Blood Shrine building chain for holdings and domiciles.
-- PR #118: Keep self-cast blood magic in decisions tab.
-- PR #119: DRY triggers, illness/drain bugfixes, fix duchy building typo.
-- PR #120: Rename Crimson and Sanguine entities to Blood across mod.
-- PR #121: Consolidate self-magic decisions into Minor and Major hub events.
-- PR #122: Add Superior Lifeforce tier; require for Blood Golem creation.
-- PR #123: Major channel ritual to manifest congenital traits.
-- PR #124: Rebalance blood empowerment tracks. Standardize trait baselines.
-- PR #125: Rebalance blood mage tracks, cap opinion bonuses, normalize economic scaling.
-- PR #126: Superior blood magic rites, Egill duel integration, runtime error fixes.
-- PR #127: Allow Blood Knights to cast minor blood magic and seek power.
-- PR #128: Add historical Egill Skallagrímsson character bookmark.
-- PR #129: Redesign Blood Knight as standalone lifestyle trait (Slaughter, Vanguard, Resilience) with elevation bridge; rework healing to unified event flow; redistribute track XP.
-- PR #130: Restructure Blood Mage and Blood Knight trait tracks: 3 shared (Ancient, Benediction, Enlightenment), 2 Mage exclusive (Bloodline, Hematurgy), 2 Knight exclusive (Vanguard, Slaughter); align elevation conversion and XP sources.
-- PR #131: Exclude Blood Knights from Trial of Blood; gate Ascend to Blood Mage behind piety rank 3, >30 learning, and 500 piety.
-- PR #132: Rebalance Geyser initiation duel: scale Learning (target 20, 10->25%, 20->50%, 30->75%, 40->90% cap) and Prowess (target 30, 15->25%, 30->50%, 45->75%, 60->90% cap).
-- PR #133: Require Superior Lifeforce (0 Piety) for Blood Mage creation; Blood Knights create Blood Knights for 200 Prestige + Minor Lifeforce or 0 Prestige + Major Lifeforce; Blood Mages create Blood Knights for 100 Piety + Major Lifeforce.
-- PR #134: Expand Blood Knight healing to minor on others and minor/major on self; cap Egill geyser duel injuries strictly at rank 2.
-- PR #135: Consolidate debug character interactions into single popup interaction with Make Blood Mage, Make Blood Knight, and Convert to Blóðtrú options.
-- PR #136: Overhaul Bloodline (kingdom/dynasty building, stewardship, +1 domain limit & +10% gold at 30/60/90, scaling construction, tax, dev) and Hematurgy (hostile scheme speed, dread, tyranny reduction, +1 hostile scheme at 50/100); add remote Cast Blood Curse interaction.
-- PR #137: Fix runtime script and asset errors: remove invalid scheme_resistance modifier, expand all_attributes, fix leveled trait references, prune remove_trait groups, guard self-cast opinion, fix data loc scope promotion, and add missing track icons.
-- PR #138: Relocate Inscribe Minor Blood Rune to Cast Minor Blood Magic; align Inscribe Major Blood Rune resource cost to Major Lifeforce in Cast Major Blood Magic.
-- PR #139: Consolidate Situation tab Blood Knight roster to include dynasty and court members; enable Situation tab panel and dynamic discipline grid for Blood Knight rulers.
-- PR #140: Add Blood Knight Prevalence game rule matching Blood Mage options; add lifecycle entry/retention effects, birth scaling, AI modifiers, and trait potential/inheritance.
-- PR #141: Fix error.log runtime issues: guard trait potential scope, replace natural_dread with dread_baseline_add, correct curse ai_recipients, guard lifeforce recount variable access, and add missing knight trigger failure loc.
-- PR #142: Relocate Blood Mage and Blood Knight decisions to Situation panel with is_invisible and story cycle integration.
-- PR #143: Add Blood Faith Starting Counties and Blood Mage Starting County Holders game rules for Iceland and Tsushima; consolidate trait and progression architecture docs.
-- PR #144: Empower Blood Knight exclusive to Blood Knights; share trait theft (ranks 1-5), become blood cultist, bless bloodline, and courtier lifedrain; unify Seek Power into single decision with dynamic cooldown.
+- PR #146: Simplify magic tier gating: Knights cast Minor and Major magic (including major ailment healing on allies); Mages cast Minor, Major, and Superior magic; fork Improve Education Enlightenment XP cleanly.
 - PR #145: Scale Blood Knight battle XP (1-5 XP) and Lifeforce harvest (Minor/Major) by troop brackets; add victory and defeat battle toasts.
+- PR #144: Empower Blood Knight exclusive to Blood Knights; share trait theft (ranks 1-5), become blood cultist, bless bloodline, and courtier lifedrain; unify Seek Power into single decision with dynamic cooldown.
+- PR #143: Add Blood Faith Starting Counties and Blood Mage Starting County Holders game rules for Iceland and Tsushima; consolidate trait and progression architecture docs.
+- PR #142: Relocate Blood Mage and Blood Knight decisions to Situation panel with is_invisible and story cycle integration.
+- PR #141: Fix error.log runtime issues: guard trait potential scope, replace natural_dread with dread_baseline_add, correct curse ai_recipients, guard lifeforce recount variable access, and add missing knight trigger failure loc.
+- PR #140: Add Blood Knight Prevalence game rule matching Blood Mage options; add lifecycle entry/retention effects, birth scaling, AI modifiers, and trait potential/inheritance.
+- PR #139: Consolidate Situation tab Blood Knight roster to include dynasty and court members; enable Situation tab panel and dynamic discipline grid for Blood Knight rulers.
+- PR #138: Relocate Inscribe Minor Blood Rune to Cast Minor Blood Magic; align Inscribe Major Blood Rune resource cost to Major Lifeforce in Cast Major Blood Magic.
+- PR #137: Fix runtime script and asset errors: remove invalid scheme_resistance modifier, expand all_attributes, fix leveled trait references, prune remove_trait groups, guard self-cast opinion, fix data loc scope promotion, and add missing track icons.
+- PR #136: Overhaul Bloodline (kingdom/dynasty building, stewardship, +1 domain limit & +10% gold at 30/60/90, scaling construction, tax, dev) and Hematurgy (hostile scheme speed, dread, tyranny reduction, +1 hostile scheme at 50/100); add remote Cast Blood Curse interaction.
+- PR #135: Consolidate debug character interactions into single popup interaction with Make Blood Mage, Make Blood Knight, and Convert to Blóðtrú options.
+- PR #134: Expand Blood Knight healing to minor on others and minor/major on self; cap Egill geyser duel injuries strictly at rank 2.
+- PR #133: Require Superior Lifeforce (0 Piety) for Blood Mage creation; Blood Knights create Blood Knights for 200 Prestige + Minor Lifeforce or 0 Prestige + Major Lifeforce; Blood Mages create Blood Knights for 100 Piety + Major Lifeforce.
+- PR #132: Rebalance Geyser initiation duel: scale Learning (target 20, 10->25%, 20->50%, 30->75%, 40->90% cap) and Prowess (target 30, 15->25%, 30->50%, 45->75%, 60->90% cap).
+- PR #131: Exclude Blood Knights from Trial of Blood; gate Ascend to Blood Mage behind piety rank 3, >30 learning, and 500 piety.
+- PR #130: Restructure Blood Mage and Blood Knight trait tracks: 3 shared (Ancient, Benediction, Enlightenment), 2 Mage exclusive (Bloodline, Hematurgy), 2 Knight exclusive (Vanguard, Slaughter); align elevation conversion and XP sources.
+- PR #129: Redesign Blood Knight as standalone lifestyle trait (Slaughter, Vanguard, Resilience) with elevation bridge; rework healing to unified event flow; redistribute track XP.
+- PR #128: Add historical Egill Skallagrímsson character bookmark.
+- PR #127: Allow Blood Knights to cast minor blood magic and seek power.
+- PR #126: Superior blood magic rites, Egill duel integration, runtime error fixes.
+- PR #125: Rebalance blood mage tracks, cap opinion bonuses, normalize economic scaling.
+- PR #124: Rebalance blood empowerment tracks. Standardize trait baselines.
+- PR #123: Major channel ritual to manifest congenital traits.
+- PR #122: Add Superior Lifeforce tier; require for Blood Golem creation.
+- PR #121: Consolidate self-magic decisions into Minor and Major hub events.
+- PR #120: Rename Crimson and Sanguine entities to Blood across mod.
+- PR #119: DRY triggers, illness/drain bugfixes, fix duchy building typo.
+- PR #118: Keep self-cast blood magic in decisions tab.
+- PR #114: Blood Shrine building chain for holdings and domiciles.
+- PR #113: Debug logging for blood magic operations.
+- PR #110: Agent token cost pre-commit check. Add caveman skill.
+- PR #109: Lifeforce harvest from single combat duels.
+- PR #108: Repeatable minor lifedrain. Unrestricted manifest lifeforce.
+- PR #107: Standardize holy site modifiers. Add debug interactions.
+- PR #106: Split East Asian branch into Xuédào (Chinese) and Ketsudō (Japanese) faiths.
+- PR #105: Rename religion family and core faith to Blóðtrú.
+- PR #103: Consolidate Blóðtrú faith with Ancestor Worship tenet.
+- PR #102: Reykjavik duel decision to challenge occult hermit.
+- PR #101: Streamline agent rules documentation.
+- PR #100: Pre-commit repository format checks, religion script fixes.
+- PR #99: Trait definition syntax fixes, descriptor update.
+- PR #98: Reorganize decision and AI agent rules.
+- PR #97: English-only localization source. Drop non-English stubs for auto-generation.
+- PR #95: CK3 1.20 baseline compat, layout modernization, AI agent rules.
 
 ## Historical (pre-1.20)
 
