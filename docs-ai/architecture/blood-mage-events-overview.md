@@ -9,7 +9,7 @@
 
 | Event File | Namespace | Triggered By | Subsystem & Function |
 | --- | --- | --- | --- |
-| `events/bm_cast_blood_magic_minor_events.txt` | `bm_cast_blood_magic_minor` | Decision `bm_cast_blood_magic_minor_decision` | Hub event (.001) offering Minor Lifeforce rites (Channel Minor, Attune, Condense into Major, Commune with Bloodline, Purge Impurities). |
+| `events/bm_cast_blood_magic_minor_events.txt` | `bm_cast_blood_magic_minor` | Decision `bm_cast_blood_magic_minor_decision` | Hub event (.001) offering Minor Lifeforce rites (Channel Minor, Attune, Condense into Major, Purge Impurities). |
 | `events/bm_cast_blood_magic_major_events.txt` | `bm_cast_blood_magic_major` | Decision `bm_cast_blood_magic_major_decision` | Hub event (.001) offering Major Lifeforce rites (Empowerment, Education 1-4, Minor/Major Runes, Bloodline, Congenital Traits 1-3). Accessible to Blood Knights holding Major Lifeforce. |
 | `events/bm_cast_blood_magic_superior_events.txt` | `bm_cast_blood_magic_superior` | Decision `bm_cast_blood_magic_superior_decision` | Hub event (.001) offering Superior Lifeforce rites (Master Education 5★, New Education, Superior Rune, Transcendent Perfection 4-5, Blood Golem). |
 | `events/bm_attune_lifeforce_events.txt` | `bm_attune_lifeforce` | Event `bm_cast_blood_magic_minor.001` | Selects 1 of 5 school attunements (+50% yearly XP roll). |

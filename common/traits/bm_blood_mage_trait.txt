@@ -10,9 +10,12 @@ lifestyle_blood_mage = {
     desc = trait_blood_mage_desc
     ruler_designer_cost = 100
 	potential = {
-		OR = {
-			is_ai = no
-			NOT = { has_game_rule = bm_prevalence_player_only }
+		trigger_if = {
+			limit = { exists = this }
+			OR = {
+				is_ai = no
+				NOT = { has_game_rule = bm_prevalence_player_only }
+			}
 		}
 	}
     good = yes
@@ -174,7 +177,7 @@ lifestyle_blood_mage = {
                 # specific
                 owned_hostile_scheme_success_chance_add = 3
                 owned_scheme_secrecy_add = 3
-                natural_dread = 2
+                dread_baseline_add = 2
                 tyranny_gain_mult = -0.02
             }
             20 = {
@@ -188,7 +191,7 @@ lifestyle_blood_mage = {
                 owned_hostile_scheme_success_chance_add = 3
                 owned_scheme_secrecy_add = 3
                 hostile_scheme_phase_duration_add = -2
-                natural_dread = 2
+                dread_baseline_add = 2
                 tyranny_gain_mult = -0.02
             }
             30 = {
@@ -202,7 +205,7 @@ lifestyle_blood_mage = {
                 owned_hostile_scheme_success_chance_add = 3
                 owned_scheme_secrecy_add = 3
                 dread_gain_mult = 0.05
-                natural_dread = 2
+                dread_baseline_add = 2
                 tyranny_gain_mult = -0.02
             }
             40 = {
@@ -216,7 +219,7 @@ lifestyle_blood_mage = {
                 owned_hostile_scheme_success_chance_add = 3
                 owned_scheme_secrecy_add = 3
                 hostile_scheme_phase_duration_add = -2
-                natural_dread = 2
+                dread_baseline_add = 2
                 tyranny_gain_mult = -0.02
             }
             50 = {
@@ -226,7 +229,7 @@ lifestyle_blood_mage = {
                 max_hostile_schemes_add = 1
                 owned_hostile_scheme_success_chance_add = 3
                 owned_scheme_secrecy_add = 3
-                natural_dread = 2
+                dread_baseline_add = 2
                 tyranny_gain_mult = -0.02
             }
             60 = {
@@ -254,7 +257,7 @@ lifestyle_blood_mage = {
                 owned_hostile_scheme_success_chance_add = 3
                 owned_scheme_secrecy_add = 3
                 hostile_scheme_phase_duration_add = -2
-                natural_dread = 2
+                dread_baseline_add = 2
                 tyranny_gain_mult = -0.02
             }
             80 = {
@@ -268,7 +271,7 @@ lifestyle_blood_mage = {
                 owned_hostile_scheme_success_chance_add = 3
                 owned_scheme_secrecy_add = 3
                 dread_gain_mult = 0.05
-                natural_dread = 2
+                dread_baseline_add = 2
                 tyranny_gain_mult = -0.02
             }
             90 = {
@@ -282,7 +285,7 @@ lifestyle_blood_mage = {
                 owned_hostile_scheme_success_chance_add = 3
                 owned_scheme_secrecy_add = 3
                 hostile_scheme_phase_duration_add = -2
-                natural_dread = 2
+                dread_baseline_add = 2
                 tyranny_gain_mult = -0.02
             }
             100 = {
@@ -293,7 +296,7 @@ lifestyle_blood_mage = {
                 owned_hostile_scheme_success_chance_add = 3
                 owned_scheme_secrecy_add = 3
                 hostile_scheme_phase_duration_add = -10
-                natural_dread = 4
+                dread_baseline_add = 4
                 dread_gain_mult = 0.1
                 tyranny_gain_mult = -0.02
             }

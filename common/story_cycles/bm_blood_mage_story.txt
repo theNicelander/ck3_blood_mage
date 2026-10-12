@@ -2,6 +2,10 @@
 	visible = yes
 
 	icon = {
+		trigger = { has_trait = lifestyle_blood_knight }
+		reference = "gfx/interface/icons/traits/blood_mage_3.dds"
+	}
+	icon = {
 		trigger = { always = yes }
 		reference = "gfx/interface/icons/traits/blood_mage.dds"
 	}

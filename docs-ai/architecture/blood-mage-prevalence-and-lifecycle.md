@@ -2,32 +2,39 @@
 
 ## Executive Summary
 
-- **What:** Lifecycle, birth inheritance, world-wide population scaling, and yearly cleanup audits.
-- **Mandatory Entry Effect:** `bm_become_blood_mage_effect`. Adds `lifestyle_blood_mage`, initializes story cycle `bm_blood_mage_story`, sets flag `bm_blood_mage_prevalence_reviewed`.
-- **Prevalence Audits:** Evaluated at birth (`on_birth_child`) and yearly pulse (`yearly_blood_mage_pulse`). Strips trait from AI characters if rules restrict prevalence (`player_only`, `one_in_10000`, `one_in_1000`).
+- **What:** Lifecycle, birth inheritance, world-wide population scaling, and yearly cleanup audits for Blood Mages and Blood Knights.
+- **Mandatory Entry Effects:**
+  - Blood Mage: `bm_become_blood_mage_effect`. Adds `lifestyle_blood_mage`, initializes story cycle `bm_blood_mage_story`, sets flag `bm_blood_mage_prevalence_reviewed`.
+  - Blood Knight: `bm_become_blood_knight_effect`. Adds `lifestyle_blood_knight`, sets flag `bm_blood_knight_prevalence_reviewed`.
+- **Prevalence Audits:** Evaluated at birth (`on_birth_child`), game start (`on_game_start_after_lobby`), and yearly pulse (`random_yearly_everyone_pulse`). Strips traits from AI characters if rules restrict prevalence (`player_only`, `one_in_10000`, `one_in_1000`).
 
 ### Prevalence Behavior Matrix
 
-| Rule Setting | Birth Manifestation | AI Retention | AI Decision Weight |
+| Rule Setting (Mage / Knight) | Birth Manifestation | AI Retention | AI Decision Weight |
 | --- | --- | --- | --- |
-| `bm_prevalence_player_only` | Player children only | 0% for AI (instantly stripped) | 0 (AI disabled) |
-| `bm_prevalence_one_in_10000` | Heavily suppressed | 0.01% retention | Heavily reduced |
-| `bm_prevalence_one_in_1000` | Suppressed | 0.1% retention | Reduced |
-| `bm_prevalence_default` | 25% single parent, 100% both; 0.2% birth | Standard retention | 1.0 (Standard) |
-| `bm_prevalence_one_in_100` | Elevated | 100% retention + extra spontaneous | Boosted |
-| `bm_prevalence_one_in_10` | Highly elevated | 100% retention + frequent spontaneous | High |
-| `bm_prevalence_everyone` | 100% all newborns globally | 100% retention | Maximum |
+| `player_only` | Player children only | 0% for AI (instantly stripped) | 0 (AI disabled) |
+| `one_in_10000` | Heavily suppressed | 0.01% retention | Heavily reduced |
+| `one_in_1000` | Suppressed | 0.1% retention | Reduced |
+| `default` | 25% single parent, 100% both; 0.2% birth | Standard retention | 1.0 (Standard) |
+| `one_in_100` | Elevated | 100% retention + extra spontaneous | Boosted |
+| `one_in_10` | Highly elevated | 100% retention + frequent spontaneous | High |
+| `everyone` | 100% all newborns globally | 100% retention | Maximum |
 
 ## Lifecycle Pipeline
 
 ```
 Acquisition (Decision / Event / Birth / Elevation)
   │
-  ├─► Standard Entry: bm_become_blood_mage_effect
+  ├─► Standard Blood Mage Entry: bm_become_blood_mage_effect
   │     ├─► add_trait = lifestyle_blood_mage
   │     ├─► bm_ensure_blood_mage_story_effect (creates situation story panel)
   │     ├─► add_character_flag = bm_blood_mage_prevalence_reviewed
   │     └─► bm_apply_blood_mage_prevalence_retention_effect (strips if AI under restricted rules)
+  │
+  ├─► Standard Blood Knight Entry: bm_become_blood_knight_effect
+  │     ├─► add_trait = lifestyle_blood_knight (blocked if already blood mage)
+  │     ├─► add_character_flag = bm_blood_knight_prevalence_reviewed
+  │     └─► bm_apply_blood_knight_prevalence_retention_effect (strips if AI under restricted rules)
   │
   └─► Elevation Entry: bm_elevate_blood_knight_to_blood_mage_effect
         ├─► Removes lifestyle_blood_knight, adds lifestyle_blood_mage

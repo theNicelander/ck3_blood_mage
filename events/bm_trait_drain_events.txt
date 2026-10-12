@@ -10,9 +10,22 @@ bm_trait_drain.001 = {
     option = {
         name = bm_trait_drain.001.b
         trigger = {
-            AND = {
-                scope:recipient = { has_trait = intellect_good }
-                NOT = { has_trait_rank = { trait = intellect_good rank >= 5 } }
+            scope:recipient = { has_trait = intellect_good }
+            OR = {
+                AND = {
+                    has_trait = lifestyle_blood_knight
+                    NOT = { has_trait = lifestyle_blood_mage }
+                    NOT = { has_trait_rank = { trait = intellect_good rank >= 2 } }
+                }
+                AND = {
+                    NOT = {
+                        AND = {
+                            has_trait = lifestyle_blood_knight
+                            NOT = { has_trait = lifestyle_blood_mage }
+                        }
+                    }
+                    NOT = { has_trait_rank = { trait = intellect_good rank >= 5 } }
+                }
             }
         }
 
@@ -63,7 +76,22 @@ bm_trait_drain.001 = {
         name = bm_trait_drain.001.c
         trigger = {
             scope:recipient = { has_trait = physique_good }
-            NOT = { has_trait_rank = { trait = physique_good rank >= 5 } }
+            OR = {
+                AND = {
+                    has_trait = lifestyle_blood_knight
+                    NOT = { has_trait = lifestyle_blood_mage }
+                    NOT = { has_trait_rank = { trait = physique_good rank >= 2 } }
+                }
+                AND = {
+                    NOT = {
+                        AND = {
+                            has_trait = lifestyle_blood_knight
+                            NOT = { has_trait = lifestyle_blood_mage }
+                        }
+                    }
+                    NOT = { has_trait_rank = { trait = physique_good rank >= 5 } }
+                }
+            }
         }
 
         # Cost
@@ -113,7 +141,22 @@ bm_trait_drain.001 = {
         name = bm_trait_drain.001.d
         trigger = {
             scope:recipient = { has_trait = beauty_good }
-            NOT = { has_trait_rank = { trait = beauty_good rank >= 5 } }
+            OR = {
+                AND = {
+                    has_trait = lifestyle_blood_knight
+                    NOT = { has_trait = lifestyle_blood_mage }
+                    NOT = { has_trait_rank = { trait = beauty_good rank >= 2 } }
+                }
+                AND = {
+                    NOT = {
+                        AND = {
+                            has_trait = lifestyle_blood_knight
+                            NOT = { has_trait = lifestyle_blood_mage }
+                        }
+                    }
+                    NOT = { has_trait_rank = { trait = beauty_good rank >= 5 } }
+                }
+            }
         }
 
         # Cost
@@ -194,6 +237,13 @@ bm_trait_drain.001 = {
                     TRACK = hematurgy
                     XP = 2
                 }
+                if = {
+                    limit = { has_trait = lifestyle_blood_knight }
+                    add_blood_knight_xp = {
+                        TRACK = slaughter
+                        XP = 2
+                    }
+                }
 
                 # Prisoner dies
                 sacrifice_prisoner_effect = {
@@ -250,6 +300,13 @@ bm_trait_drain.001 = {
                 add_xp_bm_dynamic = {
                     TRACK = hematurgy
                     XP = 2
+                }
+                if = {
+                    limit = { has_trait = lifestyle_blood_knight }
+                    add_blood_knight_xp = {
+                        TRACK = slaughter
+                        XP = 2
+                    }
                 }
 
                 # Prisoner dies
@@ -308,6 +365,13 @@ bm_trait_drain.001 = {
                 add_xp_bm_dynamic = {
                     TRACK = hematurgy
                     XP = 2
+                }
+                if = {
+                    limit = { has_trait = lifestyle_blood_knight }
+                    add_blood_knight_xp = {
+                        TRACK = slaughter
+                        XP = 2
+                    }
                 }
 
                 # Prisoner dies

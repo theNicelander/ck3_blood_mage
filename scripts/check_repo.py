@@ -14,6 +14,7 @@ Enforces the format rules documented in AGENTS.md:
 
 import argparse
 import os
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -141,6 +142,23 @@ def check_tiger_ignores(text: str) -> list[tuple[int, str]]:
     return issues
 
 
+def check_yaml_indentation(text: str) -> list[tuple[int, str]]:
+    """Check that all keys under a language header (e.g. l_english:) have leading whitespace."""
+    issues = []
+    lines = text.splitlines()
+    in_lang_block = False
+    for line_num, line in enumerate(lines, 1):
+        s = line.strip()
+        if not s or s.startswith("#"):
+            continue
+        if re.match(r"^l_[a-z_]+:\s*$", s):
+            in_lang_block = True
+            continue
+        if in_lang_block and not (line.startswith(" ") or line.startswith("\t")):
+            issues.append((line_num, s[:40]))
+    return issues
+
+
 def check_file(path: Path, auto_fix: bool = False) -> list[str]:
     """Validate a single file and optionally fix BOM and trailing newline."""
     errors = []
@@ -194,6 +212,14 @@ def check_file(path: Path, auto_fix: bool = False) -> list[str]:
         errors.append(
             f"Line {line_num}: #tiger-ignore requires a justification comment ('{line_text}')"
         )
+
+    # Check YAML indentation under language header
+    if path.suffix.lower() == ".yml":
+        yaml_issues = check_yaml_indentation(text)
+        for line_num, line_text in yaml_issues:
+            errors.append(
+                f"Line {line_num}: Localization key requires leading whitespace under language header ('{line_text}')"
+            )
 
     return errors
 

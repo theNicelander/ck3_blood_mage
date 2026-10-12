@@ -29,6 +29,13 @@ hematurgy_magic_cast_effect_minor = {
         TRACK = hematurgy
         XP = 1
     }
+    if = {
+        limit = { has_trait = lifestyle_blood_knight }
+        add_blood_knight_xp = {
+            TRACK = slaughter
+            XP = 1
+        }
+    }
 }
 
 benediction_magic_cast_effect_major_minor = {

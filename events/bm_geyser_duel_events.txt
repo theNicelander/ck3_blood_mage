@@ -451,10 +451,7 @@ bm_geyser_duel.0001 = {
 				send_interface_toast = {
 					title = bm_geyser_duel.blood_knight_success_tt
 					left_icon = root
-					if = {
-						limit = { NOT = { has_trait = lifestyle_blood_knight } }
-						add_trait = lifestyle_blood_knight
-					}
+					bm_become_blood_knight_effect = yes
 				}
 			}
 

@@ -16,7 +16,13 @@
 			}
 		}
 		while = {
-			count = var:bm_lifeforce_superior_stacks
+			count = {
+				value = 0
+				if = {
+					limit = { exists = var:bm_lifeforce_superior_stacks }
+					add = var:bm_lifeforce_superior_stacks
+				}
+			}
 			add_character_modifier = lifeforce_modifier_superior
 		}
 
@@ -33,7 +39,13 @@
 			}
 		}
 		while = {
-			count = var:bm_lifeforce_major_stacks
+			count = {
+				value = 0
+				if = {
+					limit = { exists = var:bm_lifeforce_major_stacks }
+					add = var:bm_lifeforce_major_stacks
+				}
+			}
 			add_character_modifier = lifeforce_modifier_major
 		}
 
@@ -50,13 +62,20 @@
 			}
 		}
 		while = {
-			count = var:bm_lifeforce_minor_stacks
+			count = {
+				value = 0
+				if = {
+					limit = { exists = var:bm_lifeforce_minor_stacks }
+					add = var:bm_lifeforce_minor_stacks
+				}
+			}
 			add_character_modifier = lifeforce_modifier_minor
 		}
 	}
 }
 
 bm_refresh_blood_magic_rosters_effect = {
+	save_scope_as = bm_story_owner_character
 	bm_recount_lifeforce_stacks_effect = yes
 
 	random_owned_story = {
@@ -87,6 +106,27 @@ bm_refresh_blood_magic_rosters_effect = {
 			add_to_variable_list = {
 				name = bm_blood_retinue
 				target = prev
+			}
+		}
+	}
+
+	if = {
+		limit = { exists = dynasty }
+		dynasty = {
+			every_dynasty_member = {
+				limit = {
+					is_alive = yes
+					has_trait = lifestyle_blood_knight
+					NOT = { is_courtier_of = scope:bm_story_owner_character }
+				}
+
+				save_scope_as = bm_dynasty_knight
+				scope:bm_blood_mage_story_scope = {
+					add_to_variable_list = {
+						name = bm_blood_retinue
+						target = scope:bm_dynasty_knight
+					}
+				}
 			}
 		}
 	}
