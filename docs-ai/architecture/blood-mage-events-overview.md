@@ -16,7 +16,7 @@
 | `events/bm_blood_golem_events.txt` | `blood_golem` | Decision `blood_golem_creation_decision` or `bm_cast_blood_magic_superior.001` | Golem crafting outcome, stat shaping duels. |
 | `events/bm_blood_knight_elevation_events.txt` | `bm_blood_knight_elevation` | Decision `bm_elevate_to_blood_mage_decision` | Elevation trial (.0001) testing Learning or Prowess to convert Blood Knight into Blood Mage. |
 | `events/bm_channel_lifeforce_bloodline_events.txt` | `bm_channel_lifeforce_bloodline` | Event `bm_cast_blood_magic_major.001` | Bestows permanent house modifiers. |
-| `events/bm_channel_manifest_traits_events.txt` | `bm_channel_manifest_traits` | Event `bm_cast_blood_magic_major.001` (.001) / `bm_cast_blood_magic_superior.001` (.002) | Learning self-duel to manifest/upgrade congenital traits (ranks 1-3 vs transcendent ranks 4-5). |
+| `events/bm_channel_manifest_traits_events.txt` | `bm_channel_manifest_traits` | Event `bm_cast_blood_magic_major.001` (.001) / `bm_cast_blood_magic_superior.001` (.002) | Learning self-duel to manifest/upgrade congenital traits (ranks 1-2 vs apex ranks 3-5). |
 | `events/bm_channel_lifeforce_enlightenment_minor_events.txt` | `bm_channel_lifeforce_enlightenment_minor` | Event `bm_cast_blood_magic_minor.001` | Converts minor lifeforce into temporary attribute boost. |
 | `events/bm_blood_empowerment_event.txt` | `bm_blood_empowerment_event` | Event `bm_cast_blood_magic_major.001` | Advances chosen CE track (+10 XP) or fallback Versatility. |
 | `events/bm_education_enhance.txt` | `bm_education_enhancement` | Event `bm_cast_blood_magic_major.001` | Learning duel to advance education star level (up to 4-star). |

@@ -24,18 +24,18 @@ bm_manifest_traits_intellect_piety_cost = {
 	}
 	else_if = {
 		limit = { has_trait = intellect_good_2 }
-		value = 750
+		value = 1000
 	}
 	else_if = {
 		limit = { has_trait_rank = { trait = intellect_good rank = 3 } }
-		value = 900
+		value = 1250
 	}
 	else_if = {
 		limit = { has_trait_rank = { trait = intellect_good rank >= 4 } }
-		value = 1050
+		value = 1500
 	}
 	else = {
-		value = 750
+		value = 1000
 	}
 }
 
@@ -62,18 +62,18 @@ bm_manifest_traits_physique_piety_cost = {
 	}
 	else_if = {
 		limit = { has_trait = physique_good_2 }
-		value = 750
+		value = 1000
 	}
 	else_if = {
 		limit = { has_trait_rank = { trait = physique_good rank = 3 } }
-		value = 900
+		value = 1250
 	}
 	else_if = {
 		limit = { has_trait_rank = { trait = physique_good rank >= 4 } }
-		value = 1050
+		value = 1500
 	}
 	else = {
-		value = 750
+		value = 1000
 	}
 }
 
@@ -100,18 +100,18 @@ bm_manifest_traits_beauty_piety_cost = {
 	}
 	else_if = {
 		limit = { has_trait = beauty_good_2 }
-		value = 750
+		value = 1000
 	}
 	else_if = {
 		limit = { has_trait_rank = { trait = beauty_good rank = 3 } }
-		value = 900
+		value = 1250
 	}
 	else_if = {
 		limit = { has_trait_rank = { trait = beauty_good rank >= 4 } }
-		value = 1050
+		value = 1500
 	}
 	else = {
-		value = 750
+		value = 1000
 	}
 }
 

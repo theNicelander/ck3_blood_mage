@@ -4,7 +4,8 @@
 
 Always reflects current branch state. Simple line per PR merge. Superseded changes folded, reverts dropped. Caveman style. Reverse chronological: latest changes at top.
 
-- PR #146: Simplify magic tier gating: Knights cast Minor and Major magic (including major ailment healing on allies); Mages cast Minor, Major, and Superior magic; fork Improve Education Enlightenment XP cleanly.
+- PR #147: Rebalance trait acquisition: move Rank 3 manifestation to Superior Blood Magic, increase ex-nihilo duel DC and failure exhaustion, and smooth prisoner trait draining modifiers.
+- PR #146: Simplify magic tiers: Knights cast Minor/Major, Mages cast Minor/Major/Superior; consolidate comparison docs into blood-mage-magic-tiers.md; allow Knights to heal major ailments on allies.
 - PR #145: Scale Blood Knight battle XP (1-5 XP) and Lifeforce harvest (Minor/Major) by troop brackets; add victory and defeat battle toasts.
 - PR #144: Empower Blood Knight exclusive to Blood Knights; share trait theft (ranks 1-5), become blood cultist, bless bloodline, and courtier lifedrain; unify Seek Power into single decision with dynamic cooldown.
 - PR #143: Add Blood Faith Starting Counties and Blood Mage Starting County Holders game rules for Iceland and Tsushima; consolidate trait and progression architecture docs.
