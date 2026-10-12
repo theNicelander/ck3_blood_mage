@@ -6,7 +6,7 @@ Living technical specification for the Blood Knight subsystem.
 
 - **What:** Evolving martial combat lifestyle trait `lifestyle_blood_knight` functioning as a stepping stone toward Blood Mage. Features 5 tracks: 2 martial/prowess tracks specific to Blood Knight (`vanguard`, `slaughter`) and 3 tracks shared with Blood Mage (`ancient`, `benediction`, `enlightenment`), max 100 XP each.
 - **Icon:** `bm_blood_knight.dds` (`gfx/interface/icons/traits/bm_blood_knight.dds`).
-- **Base stats:** `prowess = 5`, `prowess_per_piety_level = 2`, `martial_per_piety_level = 1`. Ruler designer cost: 50. Inheritable (25% single parent, 100% both; 0.20% birth) scaled by campaign game rule `bm_blood_knight_prevalence`. Mutually exclusive with `lifestyle_blood_mage` via entry effect, birth priority, and decision/interaction gates (permitting scripted dual-wielding on legendary figures like Egill).
+- **Base stats:** `prowess = 5`. Ruler designer cost: 50. Inheritable (25% single parent, 100% both; 0.20% birth) scaled by campaign game rule `bm_blood_knight_prevalence`. Mutually exclusive with `lifestyle_blood_mage` via entry effect, birth priority, and decision/interaction gates (permitting scripted dual-wielding on legendary figures like Egill).
 - **How to acquire:**
   - `make_blood_knight_interaction`: Cast by a Blood Mage (100 Piety + Major Lifeforce) or fellow Blood Knight (200 Prestige + Minor Lifeforce, OR 0 Prestige + Major Lifeforce) on a sworn knight/courtier (cannot target self; a Blood Mage cannot become a Blood Knight).
   - **Geyser Duel Initiation (`bm_geyser_duel.0001`):** Travel to Reykjavik or Tsushima and confront Egill Skallagrímsson via `bm_blood_cultist_become_blood_mage_decision` or `bm_enhance_blood_ritual_decision` (requires Piety or Prestige level >= 2 to open decision; unavailable to existing Blood Mages and Blood Knights). Choosing the Prowess duel requires Prestige level >= 2, costs 1 Fame level (`add_prestige_level = -1`), and bestows `lifestyle_blood_knight` upon victory.
@@ -33,7 +33,7 @@ Living technical specification for the Blood Knight subsystem.
 ### Tracks Master Table
 
 Each track has 10 tiers (10, 20, 30, ..., 100 XP).
-- **`vanguard`**: Army command and operational mobility (+1 Advantage/tier, +1 Martial at even tiers, +2% Movement Speed/tier, +3% Pursuit/tier, +1 Martial/prestige tier at 50 & 100 XP).
+- **`vanguard`**: Army command and operational mobility (+1 Advantage/tier, +1 Martial at even tiers, +2% Movement Speed/tier, +3% Pursuit/tier, +1 Knight Limit/tier, +1 Martial/prestige tier at 50 & 100 XP).
 - **`slaughter`**: Single combat and champion devastation (+2 Prowess/tier, +10% Knight Effectiveness/tier, +5% Dread Gain/tier, +1 Prowess/prestige tier at 50 & 100 XP).
 - **`enlightenment`**: Shared with Blood Mage: Piety, learning, and self-mastery (+0.2 Monthly Piety/tier, +5% Piety Gain/tier, +1 Learning per Piety level at 50 & 100 XP, age prowess lock at 100 XP).
 - **`ancient`**: Shared with Blood Mage: Dynasty prestige, lifestyle XP, longevity, and age resilience (+0.1 Monthly Dynasty Prestige/tier, +5% Lifestyle XP/tier, +0.25/+0.5 Negate Health Penalty at 50/100 XP, age prowess lock at 100 XP).

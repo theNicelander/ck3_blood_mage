@@ -139,30 +139,35 @@ bm_cast_blood_magic_major.001 = {
 			NOT = { has_character_modifier = major_blood_rune_modifier }
 			NOT = { has_character_modifier = superior_blood_rune_modifier }
 		}
-		add_piety = -200
-		remove_character_modifier = minor_blood_rune_modifier
-		add_character_modifier = {
-			modifier = major_blood_rune_modifier
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_blood_rune_major_toast
+			left_icon = root
+			remove_character_modifier = minor_blood_rune_modifier
+			add_character_modifier = {
+				modifier = major_blood_rune_modifier
+			}
+			custom_tooltip = blood_runes_effects_list.major
+			if = {
+				limit = { has_trait = lifestyle_blood_mage }
+				add_xp_bm_dynamic = {
+					TRACK = ancient
+					XP = 5
+				}
+			}
+			else = {
+				add_blood_knight_xp = {
+					TRACK = ancient
+					XP = 5
+				}
+			}
 		}
+		add_piety = -200
 		add_character_flag = {
 			flag = bm_blood_rune_cooldown
 			years = 5
 		}
 		blood_magic_used_major = yes
-		if = {
-			limit = { has_trait = lifestyle_blood_mage }
-			add_xp_bm_dynamic = {
-				TRACK = ancient
-				XP = 5
-			}
-		}
-		else = {
-			add_blood_knight_xp = {
-				TRACK = ancient
-				XP = 5
-			}
-		}
-		custom_tooltip = blood_runes_effects_list.major
 		ai_chance = {
 			base = 100
 			modifier = {
