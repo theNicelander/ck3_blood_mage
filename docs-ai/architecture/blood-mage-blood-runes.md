@@ -3,7 +3,7 @@
 ## Executive Summary
 
 - **What:** Personal body rune modifiers granting passive yearly Lifeforce, plus Duchy Capital blood university buildings.
-- **Rune Inscription:** Minor Blood Rune inscribed via `bm_cast_blood_magic_minor_decision` (event `bm_cast_blood_magic_minor.001`), consuming `lifeforce_modifier_minor`. Major Blood Rune inscribed via `bm_cast_blood_magic_major_decision` (event `bm_cast_blood_magic_major.001`), consuming `lifeforce_modifier_major`. Superior Blood Rune inscribed via `bm_cast_blood_magic_superior_decision` (event `bm_cast_blood_magic_superior.001`), consuming `lifeforce_modifier_superior`. Gated on Devotion Ranks 2/3/4. 5-year cooldown (`bm_blood_rune_cooldown`). Option is completely hidden once maxed (`superior_blood_rune_modifier`).
+- **Rune Inscription:** Minor Blood Rune inscribed via `bm_cast_blood_magic_minor_decision` (event `bm_cast_blood_magic_minor.001`), consuming `lifeforce_modifier_minor`. Major Blood Rune inscribed via `bm_cast_blood_magic_major_decision` (event `bm_cast_blood_magic_major.001`), consuming `lifeforce_modifier_major`. Superior Blood Rune inscribed via `bm_cast_blood_magic_superior_decision` (event `bm_cast_blood_magic_superior.001`), consuming `lifeforce_modifier_superior`. Gated on Devotion Ranks 2/3/4. 5-year cooldown (`bm_blood_rune_cooldown`). Option is completely hidden once maxed (`superior_blood_rune_modifier`). Each inscription triggers a top interface toast popup displaying the rune effects and ancient track XP.
 - **University Buildings:** `bm_university_0` through `bm_university_3`. Duchy capital holdings. Built by rulers with `lifestyle_blood_mage`.
 
 ### Blood Runes Table

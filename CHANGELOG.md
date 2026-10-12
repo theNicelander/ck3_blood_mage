@@ -4,6 +4,11 @@
 
 Always reflects current branch state. Simple line per PR merge. Superseded changes folded, reverts dropped. Caveman style. Reverse chronological: latest changes at top.
 
+- AI targeting: hostile blood magic vetoes councillors/liege/lovers/wives/dynasty unless rivals; positive magic strictly vetoes rivals and prioritises councillors/liege/lovers/wives/dynasty/heirs.
+- Replicate Blood Magic situation decisions to realm Decisions tab under Blood Mage Decisions group.
+- Remove base trait piety scaling from Blood Mage and Blood Knight; grant +1 knight limit per Vanguard track tier.
+- Inscribing Minor, Major, and Superior Blood Runes triggers top interface toast showing rune effects and track XP.
+- Reorder Situation panel character rosters: Dynasty Blood Mages, Blood Knights, Blood Golems.
 - Fix story cycle icon scope error for Blood Knights, remove duplicate holy site definitions overriding vanilla entries (Luoyang, Hangzhou, Quanzhou, Dunhuang, Tenerife), and promote vanilla-eminent sites (Dunhuang, Tenerife) to eminent holy sites in Blóðtrú and Xuédào.
 - Minor and Major Blood Runes available to Blood Mages and Blood Knights in Cast Minor/Major Magic with no trait requirements, triggering yearly passive rolls for all rune bearers.
 - Enable Blood Shrine domicile buildings for Blood Knights alongside Blood Mages and Blóðtrú rulers.
