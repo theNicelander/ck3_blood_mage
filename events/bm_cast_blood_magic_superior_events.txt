@@ -29,20 +29,6 @@ bm_cast_blood_magic_superior.001 = {
 		show_as_unavailable = {
 			always = yes
 		}
-		add_piety = {
-			value = scaled_education_enhancement_cost
-			multiply = -1
-		}
-		add_character_flag = {
-			flag = bm_improve_education_cooldown
-			years = 2
-		}
-		blood_magic_used_superior = yes
-		bm_recount_lifeforce_stacks_effect = yes
-		add_xp_bm_dynamic = {
-			TRACK = enlightenment
-			XP = 10
-		}
 		custom_tooltip = bm_master_education_decision_desc
 		trigger_event = { id = bm_education_master.001 }
 		ai_chance = {
@@ -97,17 +83,6 @@ bm_cast_blood_magic_superior.001 = {
 		}
 		show_as_unavailable = {
 			always = yes
-		}
-		add_piety = -1000
-		add_character_flag = {
-			flag = bm_new_education_cooldown
-			years = 2
-		}
-		blood_magic_used_superior = yes
-		bm_recount_lifeforce_stacks_effect = yes
-		add_xp_bm_dynamic = {
-			TRACK = enlightenment
-			XP = 10
 		}
 		custom_tooltip = bm_new_education_decision_desc
 		trigger_event = { id = bm_education_new.001 }

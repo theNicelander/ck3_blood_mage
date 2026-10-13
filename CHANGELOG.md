@@ -4,6 +4,14 @@
 
 Always reflects current branch state. Simple line per PR merge. Superseded changes folded, reverts dropped. Caveman style. Reverse chronological: latest changes at top.
 
+- Fix error log issues: resolve trigger localization missing perspective on Blood Knight elevation decision, restore UTF-8 BOM on scripted triggers, and standardize education event portrait order.
+- Demote faltering_heart healing to major magic so Blood Knights can heal all old age ailments.
+- Add 'You can heal someone' Current Situation warning for Blood Mages and Blood Knights targeting self, family, lovers, friends, liege, councillors, and knights.
+- Add Embrace the Blood Cultist Faith decision to Situation panel decisions list.
+- Rewrite mod description, workshop description, and README in natural human style highlighting Lifeforce resource.
+- Add interface toast popups with outcome details when condensing Lifeforce via Minor Blood Magic or Condense Lifeforce decision.
+- Enhance and Master Education: move piety and cooldown costs to execution duel effects, and add Back button to return to Grimoire.
+- Ascend to Blood Mage: promote to major decision, require rank 4 piety, 1000 piety cost, and at least 50 XP in one Blood Knight track.
 - AI targeting: hostile blood magic vetoes councillors/liege/lovers/wives/dynasty unless rivals; positive magic strictly vetoes rivals and prioritises councillors/liege/lovers/wives/dynasty/heirs.
 - Replicate Blood Magic situation decisions to realm Decisions tab under Blood Mage Decisions group.
 - Remove base trait piety scaling from Blood Mage and Blood Knight; grant +1 knight limit per Vanguard track tier.

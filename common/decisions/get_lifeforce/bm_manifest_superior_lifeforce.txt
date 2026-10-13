@@ -31,8 +31,10 @@
 					multiplier = 1
 				}
 				send_interface_toast = {
-					title = manifest_superior_lifeforce_major_success_tt
+					type = event_toast_effect_good
+					title = bm_manifest_superior_lifeforce_major_success_toast
 					left_icon = root
+					custom_tooltip = bm_manifest_superior_lifeforce_major_success_toast_desc
 					add_character_modifier = { modifier = lifeforce_modifier_superior }
 					add_xp_bm_dynamic = {
 						TRACK = ancient
@@ -52,8 +54,10 @@
 					multiplier = 2
 				}
 				send_interface_toast = {
-					title = manifest_superior_lifeforce_minor_success_tt
+					type = event_toast_effect_good
+					title = bm_manifest_superior_lifeforce_minor_success_toast
 					left_icon = root
+					custom_tooltip = bm_manifest_superior_lifeforce_minor_success_toast_desc
 					add_character_modifier = { modifier = lifeforce_modifier_superior }
 					temporary_negative_lifeforce_effect_major_1_year = yes
 					add_xp_bm_dynamic = {
@@ -74,8 +78,10 @@
 					multiplier = -0.5
 				}
 				send_interface_toast = {
-					title = manifest_superior_lifeforce_minor_failure_tt
+					type = event_toast_effect_bad
+					title = bm_manifest_superior_lifeforce_minor_failure_toast
 					left_icon = root
+					custom_tooltip = bm_manifest_superior_lifeforce_minor_failure_toast_desc
 					temporary_negative_lifeforce_effect_major = yes
 					add_character_modifier = { modifier = lifeforce_modifier_major }
 					add_xp_bm_dynamic = {
@@ -96,8 +102,10 @@
 					multiplier = -0.25
 				}
 				send_interface_toast = {
-					title = manifest_superior_lifeforce_major_failure_tt
+					type = event_toast_effect_bad
+					title = bm_manifest_superior_lifeforce_major_failure_toast
 					left_icon = root
+					custom_tooltip = bm_manifest_superior_lifeforce_major_failure_toast_desc
 					temporary_negative_lifeforce_effect_major = yes
 					temporary_negative_lifeforce_effect_minor = yes
 				}

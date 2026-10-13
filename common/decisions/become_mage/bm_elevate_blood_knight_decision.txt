@@ -3,7 +3,7 @@
 	desc = bm_elevate_to_blood_mage_decision_desc
 	selection_tooltip = bm_elevate_to_blood_mage_decision_tooltip
 	confirm_text = bm_elevate_to_blood_mage_decision_confirm
-	decision_group_type = bm_decision_group
+	decision_group_type = major
 
 	is_shown = {
 		is_adult = yes
@@ -12,11 +12,15 @@
 	}
 
 	is_valid = {
-		piety_level >= 3
-		learning > 30
+		piety_level >= 4
+		learning >= 30
 		OR = {
 			has_character_modifier = lifeforce_modifier_minor
 			has_character_modifier = lifeforce_modifier_major
+		}
+		custom_description = {
+			text = bm_elevate_to_blood_mage_xp_requirement_tt
+			bm_has_blood_knight_xp_trigger = { VALUE = 50 }
 		}
 	}
 
@@ -30,7 +34,7 @@
 	}
 
 	cost = {
-		piety = 500
+		piety = 1000
 	}
 
 	effect = {
@@ -50,7 +54,7 @@
 			has_trait_xp = {
 				trait = lifestyle_blood_knight
 				track = ancient
-				value >= 30
+				value >= 50
 			}
 			add = 25
 		}
@@ -58,7 +62,31 @@
 			has_trait_xp = {
 				trait = lifestyle_blood_knight
 				track = benediction
-				value >= 30
+				value >= 50
+			}
+			add = 25
+		}
+		modifier = {
+			has_trait_xp = {
+				trait = lifestyle_blood_knight
+				track = enlightenment
+				value >= 50
+			}
+			add = 25
+		}
+		modifier = {
+			has_trait_xp = {
+				trait = lifestyle_blood_knight
+				track = vanguard
+				value >= 50
+			}
+			add = 25
+		}
+		modifier = {
+			has_trait_xp = {
+				trait = lifestyle_blood_knight
+				track = slaughter
+				value >= 50
 			}
 			add = 25
 		}

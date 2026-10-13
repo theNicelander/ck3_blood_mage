@@ -194,19 +194,25 @@ bm_cast_blood_magic_minor.001 = {
 			has_character_modifier = lifeforce_modifier_minor
 		}
 		add_piety = -100
-		remove_character_modifier = lifeforce_modifier_minor
-		add_character_modifier = { modifier = lifeforce_modifier_major }
-		if = {
-			limit = { has_trait = lifestyle_blood_mage }
-			add_xp_bm_dynamic = {
-				TRACK = ancient
-				XP = 2
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_condense_lifeforce_toast
+			left_icon = root
+			custom_tooltip = bm_condense_lifeforce_toast_desc
+			remove_character_modifier = lifeforce_modifier_minor
+			add_character_modifier = { modifier = lifeforce_modifier_major }
+			if = {
+				limit = { has_trait = lifestyle_blood_mage }
+				add_xp_bm_dynamic = {
+					TRACK = ancient
+					XP = 2
+				}
 			}
-		}
-		else = {
-			add_blood_knight_xp = {
-				TRACK = ancient
-				XP = 2
+			else = {
+				add_blood_knight_xp = {
+					TRACK = ancient
+					XP = 2
+				}
 			}
 		}
 		hidden_effect = {

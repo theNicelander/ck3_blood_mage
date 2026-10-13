@@ -6,6 +6,11 @@ bm_education_master.001 = {
 	desc = bm_education_master.001.desc
 	theme = witchcraft
 
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+
 	# Diplomacy education mastery
 	option = {
 		name = bm_education_master.001.diplomacy
@@ -56,8 +61,13 @@ bm_education_master.001 = {
 		ai_chance = { base = 100 }
 	}
 
-	left_portrait = {
-		character = root
-		animation = personality_rational
+	# Back
+	option = {
+		name = bm_education_master.001.back
+		trigger = {
+			is_ai = no
+		}
+		trigger_event = { id = bm_cast_blood_magic_superior.001 }
+		ai_chance = { base = 0 }
 	}
 }
