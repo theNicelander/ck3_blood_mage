@@ -6,7 +6,7 @@
 lifestyle_blood_mage = {
     category = lifestyle
     flag = reweaving_lifestyle_trait
-    icon = blood_mage.dds
+    icon = bm_blood_mage.dds
     desc = trait_blood_mage_desc
     ruler_designer_cost = 100
 	potential = {
@@ -33,7 +33,6 @@ lifestyle_blood_mage = {
     random_creation = 0.20
 
     # Base trait benefit
-    learning_per_piety_level = 2
     same_opinion = 10
 
     tracks = {
@@ -476,8 +475,7 @@ lifestyle_blood_mage = {
                 # specific
                 learning_per_piety_level = 1
                 prowess_per_piety_level = 1
-                monthly_piety = 0.2
-                monthly_piety_gain_mult = 0.05
+                max_personal_schemes_add = 1
             }
             60 = {
                 # common

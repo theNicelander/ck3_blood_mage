@@ -49,3 +49,13 @@ bm_converted_bloodline_xp_value = {
 	multiply = 0.5
 	round = yes
 }
+
+bm_seek_power_cooldown_years = {
+	value = 2
+	if = {
+		limit = {
+			is_landed = no
+		}
+		value = 1
+	}
+}

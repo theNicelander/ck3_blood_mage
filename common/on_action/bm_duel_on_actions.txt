@@ -19,7 +19,7 @@ bm_on_character_death_duel = {
 				add_blood_knight_xp = { TRACK = slaughter XP = 5 }
 				if = {
 					limit = { NOT = { has_trait = lifestyle_blood_mage } }
-					add_character_modifier = { modifier = lifeforce_modifier_minor }
+					add_character_modifier = { modifier = lifeforce_modifier_major }
 				}
 				send_interface_toast = {
 					type = event_toast_effect_good

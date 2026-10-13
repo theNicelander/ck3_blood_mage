@@ -134,22 +134,27 @@ bm_cast_blood_magic_superior.001 = {
 			has_character_modifier = major_blood_rune_modifier
 			NOT = { has_character_modifier = superior_blood_rune_modifier }
 		}
-		add_piety = -400
-		remove_character_modifier = major_blood_rune_modifier
-		add_character_modifier = {
-			modifier = superior_blood_rune_modifier
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_blood_rune_superior_toast
+			left_icon = root
+			remove_character_modifier = major_blood_rune_modifier
+			add_character_modifier = {
+				modifier = superior_blood_rune_modifier
+			}
+			custom_tooltip = blood_runes_effects_list.superior
+			add_xp_bm_dynamic = {
+				TRACK = ancient
+				XP = 10
+			}
 		}
+		add_piety = -400
 		add_character_flag = {
 			flag = bm_blood_rune_cooldown
 			years = 5
 		}
 		blood_magic_used_superior = yes
 		bm_recount_lifeforce_stacks_effect = yes
-		add_xp_bm_dynamic = {
-			TRACK = ancient
-			XP = 10
-		}
-		custom_tooltip = blood_runes_effects_list.superior
 		ai_chance = {
 			base = 100
 			modifier = {
@@ -159,7 +164,7 @@ bm_cast_blood_magic_superior.001 = {
 		}
 	}
 
-	# Manifest Transcendent Perfection (Congenital Traits Ranks 4-5)
+	# Manifest Apex Perfection (Congenital Traits Ranks 3-5)
 	option = {
 		name = bm_cast_blood_magic_superior.001.manifest_traits
 		trigger = {
@@ -168,15 +173,15 @@ bm_cast_blood_magic_superior.001 = {
 			piety >= 200
 			OR = {
 				AND = {
-					has_trait_rank = { trait = intellect_good rank >= 3 }
+					has_trait_rank = { trait = intellect_good rank >= 2 }
 					NOT = { has_trait_rank = { trait = intellect_good rank >= 5 } }
 				}
 				AND = {
-					has_trait_rank = { trait = physique_good rank >= 3 }
+					has_trait_rank = { trait = physique_good rank >= 2 }
 					NOT = { has_trait_rank = { trait = physique_good rank >= 5 } }
 				}
 				AND = {
-					has_trait_rank = { trait = beauty_good rank >= 3 }
+					has_trait_rank = { trait = beauty_good rank >= 2 }
 					NOT = { has_trait_rank = { trait = beauty_good rank >= 5 } }
 				}
 			}

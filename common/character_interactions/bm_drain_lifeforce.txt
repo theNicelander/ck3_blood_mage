@@ -38,21 +38,16 @@ lifedrain_courtier_event_interaction = {
     category = interaction_category_hostile
     desc = lifedrain_prisoner_interaction_desc
     is_shown = {
-        OR = {
-            AND = {
-                scope:actor = { has_trait = lifestyle_blood_mage }
-                scope:recipient = {
-                    OR = {
-                        is_imprisoned_by = scope:actor
-                        is_courtier_of = scope:actor
-                    }
-                }
+        scope:actor = {
+            OR = {
+                has_trait = lifestyle_blood_mage
+                has_trait = lifestyle_blood_knight
             }
-            AND = {
-                scope:actor = { has_trait = lifestyle_blood_knight }
-                scope:recipient = {
-                    is_imprisoned_by = scope:actor
-                }
+        }
+        scope:recipient = {
+            OR = {
+                is_imprisoned_by = scope:actor
+                is_courtier_of = scope:actor
             }
         }
     }

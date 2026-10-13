@@ -8,9 +8,9 @@ Spiritual framework for blood magic. Religious family `rf_blodtru` with religion
 
 | Faith | Rite Key | Cultural Sphere | Eminent Holy Sites | Primary Modifier Focus |
 | --- | --- | --- | --- | --- |
-| `blodtru_faith` | `blodtru_faith` | European / Atlantic | Iceland (`talknafjordur`, `reykjavik`), European capitals | Learning / Prowess per piety level |
+| `blodtru_faith` | `blodtru_faith` | European / Atlantic | Iceland (`talknafjordur`, `reykjavik`), European capitals, `tenerife` | Learning / Prowess per piety level |
 | `ketsudo_faith` | `ketsudo_faith` | Japonic, Korean, Mongolic, Tungusic | Japan & Korea (`yamashiro`, `kamakura`, `mount_fuji`, `mount_aso`, `mount_osore`, `gyeongju`) | Prowess / Dread / Health per piety level |
-| `xuedao_faith` | `xuedao_faith` | Chinese, Qiangic, Tai, Viet, Tibetan | Central Plains & Sacred Peaks (`changan`, `luoyang`, `beijing`, `hangzhou`, `chengdu`, `guangzhou`, `taishan`, `gyeongju`) | Stewardship / Learning / Health per piety level |
+| `xuedao_faith` | `xuedao_faith` | Chinese, Qiangic, Tai, Viet, Tibetan | Central Plains, Sacred Peaks & Dunhuang (`changan`, `luoyang`, `beijing`, `hangzhou`, `chengdu`, `guangzhou`, `taishan`, `gyeongju`, `dunhuang`) | Stewardship / Learning / Health per piety level |
 
 - **Holy Site Hierarchy:**
   - **Eminent Sites:** Defined in `eminent_holy_sites = { ... }`. Grant realm/faith-wide `faith_character_modifier` scaled per piety level plus `county_holder_character_modifier`.
@@ -34,7 +34,7 @@ Spiritual framework for blood magic. Religious family `rf_blodtru` with religion
 | `bm_repair_blodtru_reformation_decision` | Decisions | None | None | Blóðtrú faith, unformed/bugged temporal head title | None | Executes `bm_repair_blodtru_reformation_effect`: clears temporal head title, resets headship to no head. |
 | `bm_blood_cultist_become_blood_mage_decision` | Decisions | Free (1 Devotion level for Learning, 1 Fame level for Prowess) | None | Non-mage, adult, meets faith initiation rule, located in Reykjavik or Tsushima | None | Fires `bm_geyser_duel.0001` against Egill Skallagrímsson to win `lifestyle_blood_mage` (Learning) or `lifestyle_blood_knight` (Prowess). |
 
-## Initiation Duel Hub (Tsushima)
+## Initiation Duel Grimoire (Tsushima)
 
 - Eastern counterpart to Reykjavik for blood magic awakening.
 - Rulers travel to Tsushima (`c_tsushima`) to challenge hermit blood master Egill in Learning & Prowess contest to unlock blood magic without conversion.
@@ -45,6 +45,16 @@ Spiritual framework for blood magic. Religious family `rf_blodtru` with religion
   - `blodtru_religion_enabled`: Fully active.
   - `blodtru_religion_player_only`: Available to player only; AI conversion blocked.
   - `blodtru_religion_disabled`: Entire religion family disabled.
+- `bm_starting_counties_faith`: Controls whether counties start converted to blood faiths:
+  - `bm_starting_counties_faith_vanilla`: Historical vanilla faiths (default).
+  - `bm_starting_counties_faith_iceland`: Iceland (`d_iceland`) starts with `blodtru_faith` and holder faith converts.
+  - `bm_starting_counties_faith_tsushima`: Tsushima (`c_tsushima`) starts with `ketsudo_faith` and holder faith converts.
+  - `bm_starting_counties_faith_both`: Both Iceland and Tsushima start with regional blood faiths.
+- `bm_starting_holders_blood_mage`: Controls whether county holders start with `lifestyle_blood_mage`:
+  - `bm_starting_holders_blood_mage_vanilla`: Mortal holders without the trait (default).
+  - `bm_starting_holders_blood_mage_iceland`: Landed holders in Iceland receive `lifestyle_blood_mage`.
+  - `bm_starting_holders_blood_mage_tsushima`: Landed holder of Tsushima receives `lifestyle_blood_mage`.
+  - `bm_starting_holders_blood_mage_both`: Both Iceland and Tsushima holders start with `lifestyle_blood_mage`.
 - `bm_initiation_faith_requirement`: Determines faith gates for `bm_blood_cultist_become_blood_mage_decision`:
   - `bm_initiation_dedicated_cult`: Must follow a blood cult faith (`bm_is_blood_cult_faith_trigger`).
   - `bm_initiation_cult_or_witchcraft_accepted`: Accepts cult faiths or faiths where witchcraft is accepted/virtuous.

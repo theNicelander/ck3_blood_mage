@@ -59,14 +59,14 @@ Unlocked via Major Blood Magic. Every track level grants `+0.1` Health, `+2` Lif
 - **Shadows**: Scheme secrecy, hostile scheme resistance, enemy plot disruption.
 
 ### 3. Blood Knight (`lifestyle_blood_knight`)
-Martial identity for champions and commanders. Leveled via battles, duels, tournaments, and minor magic. Can cast minor magic, seek power, and heal minor ailments without full Blood Mage initiation.
+Martial identity for champions and commanders. Leveled via battles, duels, tournaments, and battlefield harvesting. Can cast Minor and Major Blood Magic, seek power, and heal ailments without full Blood Mage initiation.
 - **Vanguard**: Advantage, Martial, knight effectiveness.
 - **Slaughter**: Prowess, dread gain, duel lethality.
 - **Resilience**: Health recovery, wound healing, fertility, epidemic resistance.
 
 ---
 
-## Spells & Ritual Hubs
+## Spells & Ritual Grimoires
 
 ### Minor Blood Magic
 - **Channel Lifeforce**: 5-year buff to any primary attribute or Prowess.
@@ -78,13 +78,13 @@ Martial identity for champions and commanders. Leveled via battles, duels, tourn
 - **Enhance Education (1★ → 4★)**: Upgrade education rank via mental trials.
 - **Inscribe Minor/Major Runes**: Carve body runes for annual Lifeforce rolls.
 - **Empower Bloodline**: Lasting house-wide dynasty modifiers.
-- **Manifest Perfection (Ranks 1–3)**: Awaken Quick, Comely, or Hale without donors.
+- **Manifest Perfection (Ranks 1–2)**: Awaken Quick, Comely, or Hale without donors.
 
 ### Superior Blood Magic
 - **Master Education (5★)**: Attain 5-star education traits.
 - **Secondary Education**: Acquire a complete second education trait.
 - **Inscribe Superior Rune**: Top-tier body rune for annual Lifeforce rolls.
-- **Manifest Transcendent Perfection (Ranks 4–5)**: Awaken Genius, Beautiful, or Herculean.
+- **Manifest Apex Perfection (Ranks 3–5)**: Awaken Genius, Beautiful, Herculean, or Transcendent tiers.
 - **Forge Blood Golem**: Construct loyal golem champions.
 
 ### Trait Harvesting & Cleansing
@@ -123,11 +123,11 @@ Three regional faiths:
 
 ## Situation Panel
 
-Dedicated in-game UI hub:
+Dedicated in-game UI panel:
 - Real-time tracker for disciplines, attunement, and body runes.
 - Stack counters for Minor, Major, and Superior Lifeforce.
 - Collapsible rosters: Dynasty Blood Mages, active Golems, sworn Blood Retinue.
-- Direct buttons for mass drain and situation decisions.
+- Houses all blood magic and blood knight operational decisions, keeping the realm decisions menu decluttered.
 
 ---
 
@@ -135,7 +135,10 @@ Dedicated in-game UI hub:
 
 | Game Rule | Settings | Default | Description |
 | --- | --- | --- | --- |
-| **Blood Mage Prevalence** | Player Only, 1 in 10,000, 1 in 1,000, Default, 1 in 100, 1 in 10, Everyone | Default | Controls AI adoption rates, birth inheritance, and yearly retention audits. |
+| **Blood Mage Prevalence** | Player Only, 1 in 10,000, 1 in 1,000, Default, 1 in 100, 1 in 10, Everyone | Default | Controls AI adoption rates, birth inheritance, and yearly retention audits for Blood Mages. |
+| **Blood Knight Prevalence** | Player Only, 1 in 10,000, 1 in 1,000, Default, 1 in 100, 1 in 10, Everyone | Default | Controls AI adoption rates, birth inheritance, and yearly retention audits for Blood Knights. |
+| **Blood Faith Starting Counties** | Vanilla History, Iceland (Blóðtrú), Tsushima (Ketsudō), Both | Vanilla History | Converts historical counties to Blóðtrú or Ketsudō faith on game start. |
+| **Blood Mage Starting County Holders** | Vanilla History, Iceland (Blóðtrú), Tsushima (Ketsudō), Both | Vanilla History | Grants Blood Mage lifestyle trait to starting county holders on game start. |
 | **Physical Appearance** | None, Blood-Red Eyes, Eyes & White Hair | Eyes & White Hair | Evolving visual portrait effects as blood magic mastery increases. |
 | **Blóðtrú Religion** | Fully Enabled, Player Only, Completely Disabled | Fully Enabled | Controls whether AI characters can adopt Blóðtrú faiths. |
 | **Initiation Faith Requirement** | Dedicated Cult Only, Cult or Witchcraft Accepted, Unrestricted | Dedicated Cult | Requirements for the blood cultist conversion decision. |

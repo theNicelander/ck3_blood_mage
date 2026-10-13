@@ -4,53 +4,14 @@
     decision_group_type = bm_decision_group
 
     is_shown = {
-        has_trait = lifestyle_blood_mage
-        is_landless_adventurer = no
+        OR = {
+            has_trait = lifestyle_blood_mage
+            has_trait = lifestyle_blood_knight
+        }
     }
-    cooldown = { years = 2 }
+    cooldown = { years = bm_seek_power_cooldown_years }
     effect = {
-        debug_log = "BloodMageDecision: seek_power"
-        debug_log_scopes = yes
-        trigger_event = { id = seek_power.001 }
-    }
-
-    ai_check_interval = 3
-    ai_will_do = { base = 100 }
-}
-
-seek_power_decision_wanderer = {
-    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
-
-    decision_group_type = bm_decision_group
-
-    is_shown = {
-        has_trait = lifestyle_blood_mage
-        is_landless_adventurer = yes
-    }
-    # Can do it more often if landless, as it's harder to find prisoners
-    cooldown = { years = 1 }
-    effect = {
-        debug_log = "BloodMageDecision: seek_power_wanderer"
-        debug_log_scopes = yes
-        trigger_event = { id = seek_power.001 }
-    }
-
-    ai_check_interval = 3
-    ai_potential = { always = yes }
-}
-
-seek_power_decision_blood_knight = {
-    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
-
-    decision_group_type = bm_decision_group
-
-    is_shown = {
-        has_trait = lifestyle_blood_knight
-        NOT = { has_trait = lifestyle_blood_mage }
-    }
-    cooldown = { years = 1 }
-    effect = {
-        debug_log = "BloodKnightDecision: seek_power"
+        debug_log = "BloodMagicDecision: seek_power"
         debug_log_scopes = yes
         trigger_event = { id = seek_power.001 }
     }

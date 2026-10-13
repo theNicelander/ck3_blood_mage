@@ -21,21 +21,12 @@
 					has_trait = lifestyle_blood_knight
 					NOT = { has_trait = lifestyle_blood_mage }
 				}
-				scope:recipient = scope:actor
 				scope:recipient = {
 					OR = {
 						bm_has_minor_ailment_trigger = yes
 						bm_has_major_ailment_trigger = yes
 					}
 				}
-			}
-			AND = {
-				scope:actor = {
-					has_trait = lifestyle_blood_knight
-					NOT = { has_trait = lifestyle_blood_mage }
-				}
-				NOT = { scope:recipient = scope:actor }
-				scope:recipient = { bm_has_minor_ailment_trigger = yes }
 			}
 		}
 	}
@@ -48,12 +39,20 @@
 				scope:recipient = { is_courtier_of = scope:actor }
 				trigger_if = {
 					limit = { exists = scope:actor.liege }
-					scope:recipient = scope:actor.liege
-					scope:recipient = { is_courtier_of = scope:actor.liege }
+					OR = {
+						scope:recipient = scope:actor.liege
+						scope:recipient = { is_courtier_of = scope:actor.liege }
+					}
 				}
 				scope:recipient = { is_close_family_of = scope:actor }
 				scope:recipient = { is_spouse_of = scope:actor }
 				scope:recipient = { is_knight_of = scope:actor }
+				scope:actor = {
+					OR = {
+						has_relation_lover = scope:recipient
+						has_relation_soulmate = scope:recipient
+					}
+				}
 			}
 		}
 		custom_tooltip = {
@@ -69,13 +68,6 @@
 				AND = {
 					scope:recipient = { bm_has_major_ailment_trigger = yes }
 					scope:actor = {
-						OR = {
-							has_trait = lifestyle_blood_mage
-							AND = {
-								has_trait = lifestyle_blood_knight
-								scope:recipient = scope:actor
-							}
-						}
 						has_character_modifier = lifeforce_modifier_major
 						piety >= 35
 					}
@@ -111,6 +103,7 @@
 		ai_recipients = children
 		ai_recipients = courtiers
 		ai_recipients = councillors
+		ai_recipients = liege
 	}
 	ai_frequency = 6
 	ai_will_do = {

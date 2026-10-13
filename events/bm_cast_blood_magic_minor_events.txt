@@ -239,28 +239,33 @@ bm_cast_blood_magic_minor.001 = {
 			NOT = { has_character_modifier = major_blood_rune_modifier }
 			NOT = { has_character_modifier = superior_blood_rune_modifier }
 		}
-		add_character_modifier = {
-			modifier = minor_blood_rune_modifier
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_blood_rune_minor_toast
+			left_icon = root
+			add_character_modifier = {
+				modifier = minor_blood_rune_modifier
+			}
+			custom_tooltip = blood_runes_effects_list.minor
+			if = {
+				limit = { has_trait = lifestyle_blood_mage }
+				add_xp_bm_dynamic = {
+					TRACK = ancient
+					XP = 4
+				}
+			}
+			else = {
+				add_blood_knight_xp = {
+					TRACK = ancient
+					XP = 4
+				}
+			}
 		}
 		add_character_flag = {
 			flag = bm_blood_rune_cooldown
 			years = 5
 		}
 		blood_magic_used_minor = yes
-		if = {
-			limit = { has_trait = lifestyle_blood_mage }
-			add_xp_bm_dynamic = {
-				TRACK = ancient
-				XP = 4
-			}
-		}
-		else = {
-			add_blood_knight_xp = {
-				TRACK = ancient
-				XP = 4
-			}
-		}
-		custom_tooltip = blood_runes_effects_list.minor
 		ai_chance = {
 			base = 100
 			modifier = {

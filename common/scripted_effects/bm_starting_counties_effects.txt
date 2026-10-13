@@ -1,0 +1,78 @@
+﻿bm_initialize_starting_counties_and_holders_effect = {
+	# Rule 1: Blood Faith Starting Counties
+	if = {
+		limit = {
+			NOT = { has_game_rule = blodtru_religion_disabled }
+		}
+		if = {
+			limit = {
+				OR = {
+					has_game_rule = bm_starting_counties_faith_iceland
+					has_game_rule = bm_starting_counties_faith_both
+				}
+				exists = title:d_iceland
+			}
+			title:d_iceland = {
+				every_de_jure_county = {
+					set_county_faith = faith:blodtru_faith
+					holder ?= {
+						set_character_faith = faith:blodtru_faith
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_game_rule = bm_starting_counties_faith_tsushima
+					has_game_rule = bm_starting_counties_faith_both
+				}
+				exists = title:c_tsushima
+			}
+			title:c_tsushima = {
+				set_county_faith = faith:ketsudo_faith
+				holder ?= {
+					set_character_faith = faith:ketsudo_faith
+				}
+			}
+		}
+	}
+
+	# Rule 2: Blood Mage Starting County Holders
+	if = {
+		limit = {
+			OR = {
+				has_game_rule = bm_starting_holders_blood_mage_iceland
+				has_game_rule = bm_starting_holders_blood_mage_both
+			}
+			exists = title:d_iceland
+		}
+		title:d_iceland = {
+			every_de_jure_county = {
+				holder ?= {
+					if = {
+						limit = { NOT = { has_trait = lifestyle_blood_mage } }
+						bm_become_blood_mage_effect = yes
+					}
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				has_game_rule = bm_starting_holders_blood_mage_tsushima
+				has_game_rule = bm_starting_holders_blood_mage_both
+			}
+			exists = title:c_tsushima
+		}
+		title:c_tsushima = {
+			holder ?= {
+				if = {
+					limit = { NOT = { has_trait = lifestyle_blood_mage } }
+					bm_become_blood_mage_effect = yes
+				}
+			}
+		}
+	}
+}
