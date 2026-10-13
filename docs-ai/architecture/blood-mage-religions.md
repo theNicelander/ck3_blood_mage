@@ -30,7 +30,7 @@ Spiritual framework for blood magic. Religious family `rf_blodtru` with religion
 
 | Decision | Panel | Cost | Cooldown | Requirements | XP Gain | Effect |
 | --- | --- | --- | --- | --- | --- | --- |
-| `become_blood_cultist_decision` | Decisions | 250 Piety | 10 years | Blood Mage, Devotion >= 2, Major Lifeforce | None | Fires `bm_faith_conversion.0001`: converts character to cultural faith (`xuedao_faith`, `ketsudo_faith`, or `blodtru_faith`), consumes 1 Major Lifeforce. |
+| `become_blood_cultist_decision` | Decisions & Situation | 250 Piety | 10 years | Blood Mage or Blood Knight, Devotion >= 3, Major Lifeforce | None | Fires `bm_faith_conversion.0001`: converts character to cultural faith (`xuedao_faith`, `ketsudo_faith`, or `blodtru_faith`), consumes 1 Major Lifeforce. |
 | `bm_repair_blodtru_reformation_decision` | Decisions | None | None | Blóðtrú faith, unformed/bugged temporal head title | None | Executes `bm_repair_blodtru_reformation_effect`: clears temporal head title, resets headship to no head. |
 | `bm_blood_cultist_become_blood_mage_decision` | Decisions | Free (1 Devotion level for Learning, 1 Fame level for Prowess) | None | Non-mage, adult, meets faith initiation rule, located in Reykjavik or Tsushima | None | Fires `bm_geyser_duel.0001` against Egill Skallagrímsson to win `lifestyle_blood_mage` (Learning) or `lifestyle_blood_knight` (Prowess). |
 

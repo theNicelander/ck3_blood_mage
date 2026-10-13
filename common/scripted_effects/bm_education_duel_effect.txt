@@ -1,4 +1,26 @@
 ﻿education_duel_effect = {
+    add_piety = {
+        value = scaled_education_enhancement_cost
+        multiply = -1
+    }
+    add_character_flag = {
+        flag = bm_improve_education_cooldown
+        years = 2
+    }
+    blood_magic_used_major = yes
+    if = {
+        limit = { has_trait = lifestyle_blood_mage }
+        add_xp_bm_dynamic = {
+            TRACK = enlightenment
+            XP = 5
+        }
+    }
+    else = {
+        add_blood_knight_xp = {
+            TRACK = enlightenment
+            XP = 5
+        }
+    }
     duel = {
         skill = $trait$
         value = 0
@@ -48,6 +70,20 @@
 }
 
 education_master_duel_effect = {
+    add_piety = {
+        value = scaled_education_enhancement_cost
+        multiply = -1
+    }
+    add_character_flag = {
+        flag = bm_improve_education_cooldown
+        years = 2
+    }
+    blood_magic_used_superior = yes
+    bm_recount_lifeforce_stacks_effect = yes
+    add_xp_bm_dynamic = {
+        TRACK = enlightenment
+        XP = 10
+    }
     duel = {
         skill = $trait$
         value = 0
@@ -93,5 +129,19 @@ education_master_duel_effect = {
                 temporary_negative_lifeforce_effect_superior = yes
             }
         }
+    }
+}
+
+bm_education_new_cost_effect = {
+    add_piety = -1000
+    add_character_flag = {
+        flag = bm_new_education_cooldown
+        years = 2
+    }
+    blood_magic_used_superior = yes
+    bm_recount_lifeforce_stacks_effect = yes
+    add_xp_bm_dynamic = {
+        TRACK = enlightenment
+        XP = 10
     }
 }

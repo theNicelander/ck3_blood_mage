@@ -7,6 +7,11 @@ bm_education_enhancement.001 = {
     desc = bm_education_enhancement.001.desc
     theme = witchcraft
 
+    left_portrait = {
+        character = root
+        animation = personality_rational
+    }
+
     # Diplomacy education enhancement
     option = {
         name = bm_education_enhancement.001.diplomacy
@@ -77,9 +82,13 @@ bm_education_enhancement.001 = {
         ai_chance = { base = 100 }
     }
 
-    # Portraits
-    left_portrait = {
-        character = root
-        animation = personality_rational
+    # Back
+    option = {
+        name = bm_education_enhancement.001.back
+        trigger = {
+            is_ai = no
+        }
+        trigger_event = { id = bm_cast_blood_magic_major.001 }
+        ai_chance = { base = 0 }
     }
 }

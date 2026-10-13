@@ -18,6 +18,7 @@ bm_has_major_ailment_trigger = {
 		has_trait = withering_mind
 		has_trait = clouded_eyes
 		has_trait = fragile_bones
+		has_trait = faltering_heart
 		has_trait = maimed
 		has_trait = consumption
 		has_trait = typhus
@@ -46,7 +47,6 @@ bm_has_deadly_ailment_trigger = {
 		has_trait = ergotism
 		has_trait = disfigured
 		has_trait = one_legged
-		has_trait = faltering_heart
 	}
 }
 
@@ -55,5 +55,34 @@ bm_has_any_ailment_trigger = {
 		bm_has_minor_ailment_trigger = yes
 		bm_has_major_ailment_trigger = yes
 		bm_has_deadly_ailment_trigger = yes
+	}
+}
+
+bm_can_heal_character_trigger = {
+	is_alive = yes
+	OR = {
+		AND = {
+			OR = {
+				scope:actor = { has_trait = lifestyle_blood_mage }
+				root = { has_trait = lifestyle_blood_mage }
+			}
+			bm_has_any_ailment_trigger = yes
+		}
+		AND = {
+			OR = {
+				scope:actor = {
+					has_trait = lifestyle_blood_knight
+					NOT = { has_trait = lifestyle_blood_mage }
+				}
+				root = {
+					has_trait = lifestyle_blood_knight
+					NOT = { has_trait = lifestyle_blood_mage }
+				}
+			}
+			OR = {
+				bm_has_minor_ailment_trigger = yes
+				bm_has_major_ailment_trigger = yes
+			}
+		}
 	}
 }

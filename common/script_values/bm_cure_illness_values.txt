@@ -94,6 +94,10 @@ heal_disease_major_cost = {
         add = cure_illness_cost_major
     }
     if = {
+        limit = { scope:recipient = { has_trait = faltering_heart } }
+        add = cure_illness_cost_major
+    }
+    if = {
         limit = { scope:recipient = { has_trait = lunatic_1 } }
         add = cure_illness_cost_major
     }
@@ -123,10 +127,6 @@ heal_disease_benediction_cost = {
     }
     if = {
         limit = { scope:recipient = { has_trait = disfigured } }
-        add = cure_illness_cost_benediction
-    }
-    if = {
-        limit = { scope:recipient = { has_trait = faltering_heart } }
         add = cure_illness_cost_benediction
     }
     if = {

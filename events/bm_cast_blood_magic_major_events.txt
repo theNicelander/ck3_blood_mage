@@ -89,28 +89,6 @@ bm_cast_blood_magic_major.001 = {
 		show_as_unavailable = {
 			always = yes
 		}
-		add_piety = {
-			value = scaled_education_enhancement_cost
-			multiply = -1
-		}
-		add_character_flag = {
-			flag = bm_improve_education_cooldown
-			years = 2
-		}
-		blood_magic_used_major = yes
-		if = {
-			limit = { has_trait = lifestyle_blood_mage }
-			add_xp_bm_dynamic = {
-				TRACK = enlightenment
-				XP = 5
-			}
-		}
-		else = {
-			add_blood_knight_xp = {
-				TRACK = enlightenment
-				XP = 5
-			}
-		}
 		custom_tooltip = bm_improve_education_decision_desc
 		trigger_event = { id = bm_education_enhancement.001 }
 		ai_chance = {
