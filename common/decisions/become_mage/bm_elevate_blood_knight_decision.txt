@@ -13,7 +13,7 @@
 
 	is_valid = {
 		piety_level >= 4
-		learning > 30
+		learning >= 30
 		OR = {
 			has_character_modifier = lifeforce_modifier_minor
 			has_character_modifier = lifeforce_modifier_major
