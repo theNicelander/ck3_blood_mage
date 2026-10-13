@@ -56,6 +56,16 @@ bm_education_master.001 = {
 		ai_chance = { base = 100 }
 	}
 
+	# Back
+	option = {
+		name = bm_education_master.001.back
+		trigger = {
+			is_ai = no
+		}
+		trigger_event = { id = bm_cast_blood_magic_superior.001 }
+		ai_chance = { base = 0 }
+	}
+
 	left_portrait = {
 		character = root
 		animation = personality_rational
