@@ -20,9 +20,9 @@
 
 - **Trait Theft Scaling:** Easier as caster gains total blood mage XP (`trait_drain_easier_with_xp`). Harder against higher-tier traits (`trait_drain_harder_per_trait_modifier`).
 - **Education Gating:**
-  - Upgrade 1->2, 2->3, 3->4: Managed in Major Blood Magic (`bm_cast_blood_magic_major_decision`).
-  - Upgrade 4->5 (Mastery): Gated behind Superior Blood Magic (`bm_cast_blood_magic_superior_decision`) requiring Superior Lifeforce.
-  - Second Education: Requires at least one 5-star education and Superior Lifeforce.
+  - Upgrade 1->2, 2->3, 3->4: Managed in Major Blood Magic (`bm_cast_blood_magic_major_decision` -> `bm_education_enhance.txt`). Scaled Piety, 2-year cooldown flag (`bm_improve_education_cooldown`), Major Lifeforce consumption, and +5 Enlightenment XP are deducted upon selecting an education to enhance. Characters can back out freely to the Grimoire (`bm_cast_blood_magic_major.001`) with zero cost or cooldown.
+  - Upgrade 4->5 (Mastery): Gated behind Superior Blood Magic (`bm_cast_blood_magic_superior_decision` -> `bm_education_master_events.txt`) requiring Superior Lifeforce and a 4★ trait. Deductions applied upon selecting a mastery discipline; characters can back out freely to the Superior Grimoire (`bm_cast_blood_magic_superior.001`).
+  - Second Education: Requires at least one 5-star education and Superior Lifeforce (`bm_education_new.txt`). Costs (1,000 piety, cooldown, Lifeforce) charged upon discipline selection; characters can back out freely to the Superior Grimoire.
 - **Mass Execution:** Options to drain all prisoners or preserve prisoners with positive congenital traits.
 
 ## Where the details live
