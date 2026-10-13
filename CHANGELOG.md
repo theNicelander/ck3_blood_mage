@@ -4,6 +4,8 @@
 
 Always reflects current branch state. Simple line per PR merge. Superseded changes folded, reverts dropped. Caveman style. Reverse chronological: latest changes at top.
 
+- Add 'You can heal someone' Current Situation warning for Blood Mages and Blood Knights targeting self, family, lovers, friends, liege, councillors, and knights.
+- Add Embrace the Blood Cultist Faith decision to Situation panel decisions list.
 - Rewrite mod description, workshop description, and README in natural human style highlighting Lifeforce resource.
 - Add interface toast popups with outcome details when condensing Lifeforce via Minor Blood Magic or Condense Lifeforce decision.
 - Enhance and Master Education: move piety and cooldown costs to execution duel effects, and add Back button to return to Grimoire.
