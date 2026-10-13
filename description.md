@@ -129,7 +129,7 @@ There are various ways to gain the Blood Mage or Blood Knight trait:
 - Ask a Blood Mage friend, lover, or soulmate to teach you
 - Convert from being a witch into a Blood Mage
 - Drain an imprisoned Blood Mage to take their power
-- Small chance characters are randomly born with it
+- Small chance characters are randomly born with it (configurable gamerule)
 
 ---
 
