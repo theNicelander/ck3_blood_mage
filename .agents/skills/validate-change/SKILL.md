@@ -10,7 +10,7 @@ Run checks on every change.
 
 ## Steps
 
-1. Run format check: `python3 scripts/check_repo.py`. Pass `--fix` only for missing BOM or trailing newline.
+1. Run format check: `python3 scripts/check_repo.py`. Pass `--fix` only for missing BOM or trailing newline. Branch-context failure: write the file per [pr-context](../../rules/pr-context.md).
 2. Check whitespace and git status: `git diff --check`.
 3. In final summary, list what was not verified (runtime UI, AI behavior, portraits) and check `~/Documents/Paradox\ Interactive/Crusader\ Kings\ III/logs/error.log`.
 

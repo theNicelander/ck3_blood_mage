@@ -18,7 +18,7 @@ Context: `docs-ai/architecture/blood-mage-decisions.md`, `blood-mage-interaction
 6. Add English loc keys: title, `_desc`, `_tooltip`, `_confirm`.
 7. For interactions, copy the category's standard fiery blood drop DDS (`grant_blood_magic_interaction.dds`) to `gfx/interface/icons/character_interactions/<name>.dds`. If removing or renaming an interaction, remove/rename the matching `.dds`.
 8. Set XP gate and requirements per `blood-mage-track-xp.md`.
-9. Update docs and validate.
+9. Update docs, `CHANGELOG.md`, branch context; validate.
 
 ## Verify
 

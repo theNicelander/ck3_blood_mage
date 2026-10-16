@@ -4,7 +4,7 @@ CK3 script fails silently. Follow patterns already in this repo and in vanilla 1
 
 ## What this is
 
-- CK3 mod for **1.20.***. Pure script, localization, gfx. No build step.
+- CK3 mod for **1.20.\***. Pure script, localization, gfx. No build step.
 - Adds traits: `lifestyle_blood_mage` (tracks: ancient, enlightenment, bloodline, benediction, hematurgy), `lifestyle_blood_empowerment` (tracks: dynasty, mastery, presence, prosperity, shadows), and `lifestyle_blood_knight` (tracks: slaughter, vanguard, resilience). Track XP sources, costs, and gains catalog: `docs-ai/architecture/blood-mage-track-xp.md`.
 - Features: Lifeforce resource, spell decisions/interactions, blood golems, Blood Retinue, Blóðtrú religion family, Blood Runes & blood universities, and game rules.
 - `scripts/` holds repo validation and Steam Workshop helpers. Never touch `.env`, credentials or `*.vdf`.
@@ -17,13 +17,13 @@ CK3 script fails silently. Follow patterns already in this repo and in vanilla 1
 
 ## Context layers
 
-| Layer | Answers | Scope |
-| --- | --- | --- |
-| Rules `.agents/rules/*.md` | How do I write this kind of CK3 thing without breaking it? | Generic CK3 plus hard repo constraints. No `bm_` identifiers |
-| Skills `.agents/skills/<name>/SKILL.md` | What are the steps for task X here? | Repeatable multi-file procedures |
-| Architecture `docs-ai/architecture/*.md` | How does this mod implement it? | Mod only. Start at its `README.md` |
+| Layer                                    | Answers                                                    | Scope                                                        |
+| ---------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------ |
+| Rules `.agents/rules/*.md`               | How do I write this kind of CK3 thing without breaking it? | Generic CK3 plus hard repo constraints. No `bm_` identifiers |
+| Skills `.agents/skills/<name>/SKILL.md`  | What are the steps for task X here?                        | Repeatable multi-file procedures                             |
+| Architecture `docs-ai/architecture/*.md` | How does this mod implement it?                            | Mod only. Start at its `README.md`                           |
 
-Active rules: `ck3-scripting.md` (always on), `ck3-localization.md` (always on), `ck3-decisions.md`, `ck3-ai.md`, `ck3-events.md`, `ck3-traits.md`, `ck3-religions.md`, `single-combat.md`, `pr-context.md`.
+Active rules: `ck3-scripting.md` (always on), `ck3-localization.md` (always on), `pr-context.md` (always on), `ck3-decisions.md`, `ck3-ai.md`, `ck3-events.md`, `ck3-traits.md`, `ck3-religions.md`, `single-combat.md`.
 
 ## Layout
 
@@ -32,7 +32,7 @@ Active rules: `ck3-scripting.md` (always on), `ck3-localization.md` (always on),
 - `docs/`: images only. `docs-ai/`: written documentation for humans and agents.
 - `docs-ai/architecture/`: one doc per subsystem (e.g. `blood-mage-story.md`), always describing the **current state of the mod** and nothing else: no history, changelog or decision log. **Read the matching doc before changing that part of the codebase, and update it in the same change so it stays true.** Add a doc when you introduce a subsystem, and delete or rewrite text that is no longer true. High-density technical specs (costs, requirements, XP, benefits, tables; zero roleplay fluff). See `docs-ai/architecture/AGENTS.md`.
 - `docs-ai/ideas/`: brainstorms, proposals, and roadmaps. Speculative; do not treat as current game state.
-- `docs-ai/branch-context/`: branch and PR working state, trade-offs, and decision records.
+- `docs-ai/branch-context/`: branch and PR working state, trade-offs, and decision records. One mandatory `<branch>.md` per branch.
 - `CHANGELOG.md`: living changelog with one line per branch version matching the branch name (e.g. `* v1.20.40: <short description>`), caveman style, reverse chronological: latest changes at top.
 - Religion uses the 1.20 layout `common/religion/{religion_family_types,religion_types,faith_types,rite_types,holy_site_types,doctrine_group_types,doctrine_types}`. Branches based on older `main` may still have `religions/`, `religion_families/`, `holy_sites/` and a bare `add_trait = lifestyle_blood_mage`. **Check which layout the branch has. Never mix them.**
 
@@ -76,9 +76,10 @@ See `.agents/rules/ck3-localization.md` (english only, sibling keys, loc documen
 
 ## Workflow
 
-1. Read `docs-ai/branch-context/<branch>.md` if it exists, matching rule(s), and matching `docs-ai/architecture/*.md` (start at its `README.md`).
+1. `git branch --show-current`; read `docs-ai/branch-context/<branch>.md` (**create if missing**, see `pr-context.md`), matching rule(s), and matching `docs-ai/architecture/*.md` (start at its `README.md`).
 2. Smallest change that works. Check existing identifiers with `grep -rn`.
 3. Use the matching skill for the task (`add-blood-magic-decision`, `add-faith`, `add-trait-track`, `add-game-rule`).
 4. Update matching architecture doc in `docs-ai/architecture/` in the same change so it stays true to current state.
 5. Update `CHANGELOG.md`: living document, prepend single-line short high-level description matching current branch name (e.g. `* v1.20.40: <short description>`), caveman style, net branch status only (fold superseded changes, drop reverts). Reverse chronological: latest changes at top.
-6. Run `python3 scripts/check_repo.py`. State in the final summary what you could not verify.
+6. **Always** update `docs-ai/branch-context/<branch>.md` to net branch state, however small the task.
+7. Run `python3 scripts/check_repo.py` (enforces 1 and 6). State in the final summary what you could not verify.
