@@ -2,7 +2,12 @@
     picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
     decision_group_type = bm_decision_group
 
-    is_shown = { has_trait = lifestyle_blood_mage }
+    is_shown = {
+        OR = {
+            has_trait = lifestyle_blood_mage
+            has_trait = lifestyle_blood_knight
+        }
+    }
     is_valid = {
         has_character_modifier = lifeforce_modifier_superior
         piety_level >= 3
@@ -23,10 +28,19 @@
         trigger_event = { id = blood_golem.001 }
         blood_magic_used_superior = yes
         bm_recount_lifeforce_stacks_effect = yes
-        add_trait_xp = {
-            trait = lifestyle_blood_mage
-            track = bloodline
-            value = 5
+        if = {
+            limit = { has_trait = lifestyle_blood_knight }
+            add_blood_knight_xp = {
+                TRACK = vanguard
+                XP = 5
+            }
+        }
+        else = {
+            add_trait_xp = {
+                trait = lifestyle_blood_mage
+                track = bloodline
+                value = 5
+            }
         }
         custom_tooltip = blood_golem_creation_decision_tt
     }

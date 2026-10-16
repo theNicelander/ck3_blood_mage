@@ -11,24 +11,7 @@
 				has_trait = lifestyle_blood_knight
 			}
 		}
-		OR = {
-			AND = {
-				scope:actor = { has_trait = lifestyle_blood_mage }
-				scope:recipient = { bm_has_any_ailment_trigger = yes }
-			}
-			AND = {
-				scope:actor = {
-					has_trait = lifestyle_blood_knight
-					NOT = { has_trait = lifestyle_blood_mage }
-				}
-				scope:recipient = {
-					OR = {
-						bm_has_minor_ailment_trigger = yes
-						bm_has_major_ailment_trigger = yes
-					}
-				}
-			}
-		}
+		scope:recipient = { bm_has_any_ailment_trigger = yes }
 	}
 
 	is_valid_showing_failures_only = {
@@ -76,7 +59,6 @@
 					}
 				}
 				AND = {
-					scope:actor = { has_trait = lifestyle_blood_mage }
 					scope:recipient = { bm_has_deadly_ailment_trigger = yes }
 					scope:actor = {
 						has_character_modifier = lifeforce_modifier_minor

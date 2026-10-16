@@ -14,7 +14,6 @@
 | `events/bm_cast_blood_magic_superior_events.txt` | `bm_cast_blood_magic_superior` | Decision `bm_cast_blood_magic_superior_decision` | Grimoire event (.001) offering Superior Lifeforce rites (Master Education 5★, New Education, Superior Rune, Transcendent Perfection 4-5, Blood Golem). |
 | `events/bm_attune_lifeforce_events.txt` | `bm_attune_lifeforce` | Event `bm_cast_blood_magic_minor.001` | Selects 1 of 5 school attunements (+50% yearly XP roll). |
 | `events/bm_blood_golem_events.txt` | `blood_golem` | Decision `blood_golem_creation_decision` or `bm_cast_blood_magic_superior.001` | Golem crafting outcome, stat shaping duels. |
-| `events/bm_blood_knight_elevation_events.txt` | `bm_blood_knight_elevation` | Decision `bm_elevate_to_blood_mage_decision` | Elevation trial (.0001) testing Learning or Prowess to convert Blood Knight into Blood Mage. |
 | `events/bm_channel_lifeforce_bloodline_events.txt` | `bm_channel_lifeforce_bloodline` | Event `bm_cast_blood_magic_major.001` | Bestows permanent house modifiers. |
 | `events/bm_channel_manifest_traits_events.txt` | `bm_channel_manifest_traits` | Event `bm_cast_blood_magic_major.001` (.001) / `bm_cast_blood_magic_superior.001` (.002) | Learning self-duel to manifest/upgrade congenital traits (ranks 1-2 vs apex ranks 3-5). |
 | `events/bm_channel_lifeforce_enlightenment_minor_events.txt` | `bm_channel_lifeforce_enlightenment_minor` | Event `bm_cast_blood_magic_minor.001` | Converts minor lifeforce into temporary attribute boost. |

@@ -8,18 +8,9 @@
         years = 2
     }
     blood_magic_used_major = yes
-    if = {
-        limit = { has_trait = lifestyle_blood_mage }
-        add_xp_bm_dynamic = {
-            TRACK = enlightenment
-            XP = 5
-        }
-    }
-    else = {
-        add_blood_knight_xp = {
-            TRACK = enlightenment
-            XP = 5
-        }
+    add_shared_bm_bk_xp = {
+        TRACK = enlightenment
+        XP = 5
     }
     duel = {
         skill = $trait$
@@ -80,7 +71,7 @@ education_master_duel_effect = {
     }
     blood_magic_used_superior = yes
     bm_recount_lifeforce_stacks_effect = yes
-    add_xp_bm_dynamic = {
+    add_shared_bm_bk_xp = {
         TRACK = enlightenment
         XP = 10
     }
@@ -99,7 +90,7 @@ education_master_duel_effect = {
                 left_icon = root
                 level_up_trait_effect = { trait = education_$trait$ }
                 add_piety_level = -1
-                add_xp_bm_dynamic = {
+                add_shared_bm_bk_xp = {
                     TRACK = enlightenment
                     XP = 10
                 }
@@ -140,7 +131,7 @@ bm_education_new_cost_effect = {
     }
     blood_magic_used_superior = yes
     bm_recount_lifeforce_stacks_effect = yes
-    add_xp_bm_dynamic = {
+    add_shared_bm_bk_xp = {
         TRACK = enlightenment
         XP = 10
     }

@@ -12,10 +12,7 @@
     }
 
     is_valid = {
-        OR = {
-            piety_level >= 2
-            prestige_level >= 2
-        }
+        piety_level >= 2
     }
 
     is_valid_showing_failures_only = {
@@ -61,10 +58,7 @@ bm_enhance_blood_ritual_decision = {
     }
 
     is_valid = {
-        OR = {
-            piety_level >= 2
-            prestige_level >= 2
-        }
+        piety_level >= 2
         OR = {
             learning >= 20
             prowess >= 20
