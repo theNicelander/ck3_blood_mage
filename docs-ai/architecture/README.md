@@ -28,10 +28,10 @@ Rules (`.agents/rules/`) say how to write CK3 script in general. These docs say 
 
 | Doc | Coverage |
 | --- | --- |
-| `blood-mage-magic-tiers.md` | Complete breakdown of Minor, Major, and Superior Blood Magic: requirements, costs, XP gains, effects, and class access (Knights = Minor/Major; Mages = Minor/Major/Superior) |
+| `blood-mage-magic-tiers.md` | Complete breakdown of Minor, Major, and Superior Blood Magic: requirements, costs, XP gains, effects, and shared class access |
 | `blood-mage-traits.md` | Core lifestyle traits, 12 tracks cumulative benefits (10/50/100 XP), milestones, acquisition triggers |
 | `blood-mage-blood-empowerment.md` | `lifestyle_blood_empowerment` trait, 5 tracks master table, costs, spell unlocks, retinue |
-| `blood-mage-blood-knight.md` | `lifestyle_blood_knight` trait, 3 tracks master table, Lifeforce empowerments, combat & duel hooks |
+| `blood-mage-blood-knight.md` | `lifestyle_blood_knight` trait, 5 tracks master table, Lifeforce empowerments, combat & duel hooks |
 | `blood-mage-track-xp.md` | Master XP catalog across all tracks: piety costs, lifeforce requirements, ritual gates, XP yields |
 | `blood-mage-dynasty.md` | 7 house modifiers, costs, cooldowns, yearly XP loop, Golem cadet house |
 | `blood-mage-domicile-buildings.md` | Single 5-tier Blood Shrine line, scaling piety/health/lifespan/genetics, camp & court aura |

@@ -1,8 +1,10 @@
 # Blood Runes and Blood Architecture
 
+Living technical specification for body runes and blood architecture in the Blood Mage mod.
+
 ## Executive Summary
 
-- **What:** Personal body rune modifiers granting passive yearly Lifeforce, plus Duchy Capital blood university buildings.
+- **What:** Personal body rune modifiers granting Devotion impact multipliers and passive yearly Lifeforce rolls, plus Duchy Capital blood university buildings.
 - **Rune Inscription:** Minor Blood Rune inscribed via `bm_cast_blood_magic_minor_decision` (event `bm_cast_blood_magic_minor.001`), consuming `lifeforce_modifier_minor`. Major Blood Rune inscribed via `bm_cast_blood_magic_major_decision` (event `bm_cast_blood_magic_major.001`), consuming `lifeforce_modifier_major`. Superior Blood Rune inscribed via `bm_cast_blood_magic_superior_decision` (event `bm_cast_blood_magic_superior.001`), consuming `lifeforce_modifier_superior`. Gated on Devotion Ranks 2/3/4. 5-year cooldown (`bm_blood_rune_cooldown`). Option is completely hidden once maxed (`superior_blood_rune_modifier`). Each inscription triggers a top interface toast popup displaying the rune effects and ancient track XP.
 - **University Buildings:** `bm_university_0` through `bm_university_3`. Duchy capital holdings. Built by rulers with `lifestyle_blood_mage`.
 
@@ -10,13 +12,13 @@
 
 Runes are sequential. Higher tiers replace lower tiers:
 
-| Rune Tier | Modifier | Req Devotion Rank | Piety Cost | XP Gain | Yearly Passive Lifeforce Roll |
-| --- | --- | --- | --- | --- | --- |
-| **Minor** | `minor_blood_rune_modifier` | Rank 2 (Devoted) | 0 | +4 ancient | 20% chance minor lifeforce |
-| **Major** | `major_blood_rune_modifier` | Rank 3 (Paragon of Virtue) | 200 | +5 ancient | 20% minor, 10% major, 5% both |
-| **Superior** | `superior_blood_rune_modifier` | Rank 4 (Religious Icon) | 400 | +10 ancient | 10% minor, 20% major, 10% both |
+| Rune Tier | Modifier | Req Devotion Rank | Piety Cost | XP Gain | Devotion Impact (`piety_level_impact_mult`) | Yearly Passive Lifeforce Roll |
+| --- | --- | --- | --- | --- | --- | --- |
+| **Minor** | `minor_blood_rune_modifier` | Rank 2 (Devoted) | 0 | +4 ancient | +10% (`0.10`) | 20% chance minor lifeforce |
+| **Major** | `major_blood_rune_modifier` | Rank 3 (Paragon of Virtue) | 200 | +5 ancient | +20% (`0.20`) | 20% minor, 10% major, 5% both |
+| **Superior** | `superior_blood_rune_modifier` | Rank 4 (Religious Icon) | 400 | +10 ancient | +30% (`0.30`) | 10% minor, 20% major, 10% both |
 
-*Yearly rolls handled by hidden pulse `blood_mage_yearly_events.003` (triggers on rune modifiers, no trait restriction). Minor and Major runes are available to both Blood Mages and Blood Knights without trait requirements on the options (gated purely by `bm_cast_blood_magic_minor_decision` and `bm_cast_blood_magic_major_decision`), awarding shared `ancient` XP.*
+*Yearly rolls handled by hidden pulse `blood_mage_yearly_events.003` (triggers on rune modifiers, no trait restriction). Minor, Major, and Superior runes are available to both Blood Mages and Blood Knights, awarding shared `ancient` XP.*
 
 ### Blood Universities Table
 

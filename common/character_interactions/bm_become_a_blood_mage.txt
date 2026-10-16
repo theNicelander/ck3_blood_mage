@@ -28,7 +28,10 @@
         scope:recipient = {
             has_trait = lifestyle_blood_mage
         }
-        scope:actor = { NOT = { has_trait = lifestyle_blood_mage } }
+        scope:actor = {
+            NOT = { has_trait = lifestyle_blood_mage }
+            NOT = { has_trait = lifestyle_blood_knight }
+        }
     }
 
     on_accept = {
@@ -37,13 +40,7 @@
             remove_character_modifier = lifeforce_modifier_superior
         }
         scope:actor = {
-            if = {
-                limit = { has_trait = lifestyle_blood_knight }
-                bm_elevate_blood_knight_to_blood_mage_effect = yes
-            }
-            else = {
-                bm_become_blood_mage_effect = yes
-            }
+            bm_become_blood_mage_effect = yes
         }
     }
 
@@ -78,7 +75,10 @@ bm_get_blood_magic_from_prisoner_interaction = {
     cost = { piety = 100 }
 
     is_shown = {
-        scope:actor = { NOT = { has_trait = lifestyle_blood_mage } }
+        scope:actor = {
+            NOT = { has_trait = lifestyle_blood_mage }
+            NOT = { has_trait = lifestyle_blood_knight }
+        }
         scope:recipient = {
             is_imprisoned_by = scope:actor
             has_trait = lifestyle_blood_mage

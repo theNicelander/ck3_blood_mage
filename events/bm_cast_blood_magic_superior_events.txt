@@ -118,7 +118,7 @@ bm_cast_blood_magic_superior.001 = {
 				modifier = superior_blood_rune_modifier
 			}
 			custom_tooltip = blood_runes_effects_list.superior
-			add_xp_bm_dynamic = {
+			add_shared_bm_bk_xp = {
 				TRACK = ancient
 				XP = 10
 			}
@@ -190,9 +190,18 @@ bm_cast_blood_magic_superior.001 = {
 		}
 		blood_magic_used_superior = yes
 		bm_recount_lifeforce_stacks_effect = yes
-		add_xp_bm_dynamic = {
-			TRACK = bloodline
-			XP = 5
+		if = {
+			limit = { has_trait = lifestyle_blood_knight }
+			add_blood_knight_xp = {
+				TRACK = vanguard
+				XP = 5
+			}
+		}
+		else = {
+			add_xp_bm_dynamic = {
+				TRACK = bloodline
+				XP = 5
+			}
 		}
 		custom_tooltip = blood_golem_creation_decision_tt
 		trigger_event = { id = blood_golem.001 }

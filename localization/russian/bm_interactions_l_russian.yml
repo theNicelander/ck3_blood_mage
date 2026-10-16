@@ -1,7 +1,7 @@
 ﻿l_russian:
   # Give blood magic
   grant_blood_magic_interaction:0 "Сделать магом крови"
-  grant_blood_magic_interaction_desc:0 "[recipient.GetShortUINameNoTooltip] получит [GetModifier('lifeforce_modifier_superior').GetNameWithTooltip] и свойство образа жизни «Маг крови»."
+  grant_blood_magic_interaction_desc:0 "[recipient.GetShortUINameNoTooltip] обретёт сверхъестественное свойство образа жизни «Маг крови»."
 
   # Ask for blood magic
   ask_for_blood_magic_interaction:0 "Попросить дар магии крови"
@@ -38,14 +38,12 @@
   # Blood Knight
   make_blood_knight_interaction:0 "Сделать рыцарем крови"
   make_blood_knight_interaction_desc:0 "[recipient.GetShortUINameNoTooltip] обретёт сверхъестественное свойство образа жизни «Рыцарь крови»."
-  make_blood_knight_interaction.mage:0 "Магическое вливание крови"
-  make_blood_knight_interaction.mage_desc:0 "Провести магическое преобразование, используя [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] и 100 [piety|E]."
   make_blood_knight_interaction.knight_minor:0 "Воинская клятва крови (малая жизненная сила)"
-  make_blood_knight_interaction.knight_minor_desc:0 "Связать вашего присягнувшего рыцаря воинской славой (200 [prestige|E]) и силой крови: [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip]."
+  make_blood_knight_interaction.knight_minor_desc:0 "Связать вашего присягнувшего рыцаря силой крови: потребуются [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] и 250 [piety|E]."
   make_blood_knight_interaction.knight_major:0 "Обряд кровного братства (большая жизненная сила)"
-  make_blood_knight_interaction.knight_major_desc:0 "Ваш присягнувший рыцарь получит сгущённую силу крови — [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] — без затрат престижа."
-  make_blood_knight_interaction_knight_requirement:0 "Вам нужны либо [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] и 200 [prestige|E], либо [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]"
-  NOT_make_blood_knight_interaction_knight_requirement:0 "Вам нужны либо [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] и 200 [prestige|E], либо [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]"
+  make_blood_knight_interaction.knight_major_desc:0 "Ваш присягнувший рыцарь получит силу крови; потребуются [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] и 100 [piety|E]."
+  make_blood_knight_interaction_knight_requirement:0 "Вам нужны либо [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] и 100 [piety|E], либо [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] и 250 [piety|E]"
+  NOT_make_blood_knight_interaction_knight_requirement:0 "Вам нужны либо [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] и 100 [piety|E], либо [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] и 250 [piety|E]"
   empower_blood_knight_interaction:0 "Усилить рыцаря крови"
   empower_blood_knight_interaction_desc:0 "[recipient.GetShortUINameNoTooltip] получит сверхъестественную жизненную силу, развивающую воинские направления."
   empower_blood_knight_interaction.major:0 "Большая жизненная сила (+10 опыта во всех направлениях)"
@@ -116,3 +114,9 @@
   bm_battle_defeat_knight_t3_tt:0 "Крупная битва обернулась против вас, но стойкость в бойне дарует истинную выносливость.\nПолучено #P +2#! опыта направления #V «Авангард»#! свойства [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)]\nПолучено #P +1#! опыта направления #V «Просветление»#! свойства [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)]"
   bm_battle_defeat_knight_t4_tt:0 "Сокрушительное поражение. Кровь, пролитая на поле бойни, закаляет тело и дух.\nПолучено #P +2#! опыта направления #V «Авангард»#! свойства [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)]\nПолучено #P +2#! опыта направления #V «Просветление»#! свойства [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)]"
   bm_battle_defeat_knight_t5_tt:0 "Вы пережили гибельное поражение! Только истинные рыцари крови уходят живыми из такой бойни, навсегда изменившись.\nПолучено #P +3#! опыта направления #V «Авангард»#! свойства [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)]\nПолучено #P +2#! опыта направления #V «Просветление»#! свойства [GetTrait('lifestyle_blood_knight').GetName(GetNullCharacter)]"
+  grant_blood_magic_interaction.minor:0 "Магическая клятва крови (малая жизненная сила)"
+  grant_blood_magic_interaction.minor_desc:0 "[recipient.GetShortUINameNoTooltip] пройдёт посвящение; потребуются [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] и 250 [piety|E]."
+  grant_blood_magic_interaction.major:0 "Обряд кровного братства (большая жизненная сила)"
+  grant_blood_magic_interaction.major_desc:0 "[recipient.GetShortUINameNoTooltip] пройдёт посвящение; потребуются [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] и 100 [piety|E]."
+  grant_blood_magic_interaction_requirement:0 "Вам нужны либо [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] и 100 [piety|E], либо [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] и 250 [piety|E]"
+  NOT_grant_blood_magic_interaction_requirement:0 "Вам нужны либо [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] и 100 [piety|E], либо [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] и 250 [piety|E]"

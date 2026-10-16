@@ -17,9 +17,24 @@ bm_on_character_death_duel = {
 			}
 			scope:killer = {
 				add_blood_knight_xp = { TRACK = slaughter XP = 5 }
+				add_character_modifier = { modifier = lifeforce_modifier_major }
 				if = {
-					limit = { NOT = { has_trait = lifestyle_blood_mage } }
-					add_character_modifier = { modifier = lifeforce_modifier_major }
+					limit = {
+						root = {
+							OR = {
+								prowess >= 35
+								has_trait = lifestyle_blood_mage
+								has_trait = lifestyle_blood_knight
+							}
+						}
+					}
+					random = {
+						chance = 25
+						add_character_modifier = { modifier = lifeforce_modifier_superior }
+					}
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
 				}
 				send_interface_toast = {
 					type = event_toast_effect_good
