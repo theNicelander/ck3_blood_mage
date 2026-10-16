@@ -38,6 +38,20 @@ bm_blood_knight_enlightenment_xp_value = {
 	value = "has_trait_xp(lifestyle_blood_knight|enlightenment)"
 }
 
+bm_seek_power_cooldown_days = {
+	value = 730
+	if = {
+		limit = {
+			is_landed = no
+		}
+		value = 365
+	}
+	if = {
+		limit = { has_character_modifier = bm_rune_vegvisir_superior }
+		multiply = 0.5
+	}
+}
+
 bm_seek_power_cooldown_years = {
 	value = 2
 	if = {
@@ -45,5 +59,9 @@ bm_seek_power_cooldown_years = {
 			is_landed = no
 		}
 		value = 1
+	}
+	if = {
+		limit = { has_character_modifier = bm_rune_vegvisir_superior }
+		multiply = 0.5
 	}
 }

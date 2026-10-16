@@ -120,6 +120,10 @@ seek_power.003 = {
             }
             20 = {
                 desc = seek_power.duel.escape
+                modifier = {
+                    factor = 0
+                    has_character_modifier = bm_rune_vegvisir_superior
+                }
                 send_interface_toast  = {
                     title = seek_power.toast.escape
                     left_icon = this
@@ -129,6 +133,10 @@ seek_power.003 = {
             }
             20 = {
                 desc = seek_power.duel.witnessed
+                modifier = {
+                    factor = 0
+                    has_character_modifier = bm_rune_vegvisir_superior
+                }
                 scope:recipient  = { death = { death_reason = death_sacrificed_to_gods } }
                 send_interface_toast  = {
                     title = seek_power.toast.witnessed
@@ -199,6 +207,10 @@ seek_power.003 = {
             }
             10 = {
                 desc = seek_power.duel.escape
+                modifier = {
+                    factor = 0
+                    has_character_modifier = bm_rune_vegvisir_superior
+                }
                 send_interface_toast = {
                     title = seek_power.toast.escape
                     left_icon = this

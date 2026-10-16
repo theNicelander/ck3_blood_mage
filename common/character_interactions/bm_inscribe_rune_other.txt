@@ -1,0 +1,246 @@
+﻿bm_inscribe_rune_other_interaction = {
+	category = interaction_category_friendly
+	icon = bm_inscribe_rune_other_interaction
+	desc = bm_inscribe_rune_other_interaction_desc
+	common_interaction = yes
+
+	is_shown = {
+		scope:actor = {
+			OR = {
+				has_trait = lifestyle_blood_mage
+				has_trait = lifestyle_blood_knight
+			}
+		}
+		scope:recipient = {
+			is_alive = yes
+			NOT = { this = scope:actor }
+			NOT = { has_character_modifier = superior_blood_rune_modifier }
+			trigger_if = {
+				limit = {
+					scope:actor = {
+						NOT = { has_trait = lifestyle_blood_mage }
+						has_trait = lifestyle_blood_knight
+					}
+				}
+				NOT = { has_character_modifier = major_blood_rune_modifier }
+			}
+			OR = {
+				is_courtier_of = scope:actor
+				is_child_of = scope:actor
+				dynasty ?= scope:actor.dynasty
+				is_consort_of = scope:actor
+				is_knight_of = scope:actor
+				has_trait = blood_golem
+				scope:actor.liege ?= this
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:recipient = {
+			is_adult = yes
+			is_imprisoned = no
+		}
+		scope:actor = {
+			NOT = { has_character_flag = bm_blood_rune_other_cooldown }
+			custom_tooltip = {
+				text = bm_inscribe_rune_other_requirement_tt
+				OR = {
+					# Tier 1: Target has no rune -> Minor
+					AND = {
+						scope:recipient = {
+							NOT = { has_character_modifier = minor_blood_rune_modifier }
+							NOT = { has_character_modifier = major_blood_rune_modifier }
+							NOT = { has_character_modifier = superior_blood_rune_modifier }
+						}
+						piety_level >= 2
+						OR = {
+							bm_total_blood_mage_xp >= xp_req_tier_2
+							bm_total_blood_knight_xp >= xp_req_tier_2
+						}
+						has_character_modifier = lifeforce_modifier_minor
+					}
+					# Tier 2: Target has Minor rune -> Major
+					AND = {
+						scope:recipient = {
+							has_character_modifier = minor_blood_rune_modifier
+							NOT = { has_character_modifier = major_blood_rune_modifier }
+							NOT = { has_character_modifier = superior_blood_rune_modifier }
+						}
+						piety_level >= 3
+						OR = {
+							bm_total_blood_mage_xp >= xp_req_tier_3
+							bm_total_blood_knight_xp >= xp_req_tier_3
+						}
+						piety >= 200
+						has_character_modifier = lifeforce_modifier_major
+					}
+					# Tier 3: Target has Major rune -> Superior (Blood Mage only)
+					AND = {
+						scope:recipient = {
+							has_character_modifier = major_blood_rune_modifier
+							NOT = { has_character_modifier = superior_blood_rune_modifier }
+						}
+						has_trait = lifestyle_blood_mage
+						piety_level >= 4
+						bm_total_blood_mage_xp >= xp_req_tier_4
+						piety >= 400
+						has_character_modifier = lifeforce_modifier_superior
+					}
+				}
+			}
+		}
+	}
+
+	on_accept = {
+		scope:actor = {
+			add_character_flag = {
+				flag = bm_blood_rune_other_cooldown
+				years = 5
+			}
+		}
+		scope:recipient = {
+			add_opinion = {
+				target = scope:actor
+				modifier = magic_opinion_positive
+				opinion = 20
+			}
+		}
+		if = {
+			limit = {
+				scope:recipient = {
+					NOT = { has_character_modifier = minor_blood_rune_modifier }
+					NOT = { has_character_modifier = major_blood_rune_modifier }
+					NOT = { has_character_modifier = superior_blood_rune_modifier }
+				}
+			}
+			scope:actor = {
+				blood_magic_used_minor = yes
+				if = {
+					limit = { has_trait = lifestyle_blood_mage }
+					add_trait_xp = {
+						trait = lifestyle_blood_mage
+						track = benediction
+						value = 4
+					}
+				}
+				if = {
+					limit = {
+						has_trait = lifestyle_blood_knight
+						NOT = { has_trait = lifestyle_blood_mage }
+					}
+					add_blood_knight_xp = {
+						TRACK = benediction
+						XP = 4
+					}
+				}
+			}
+			scope:recipient = {
+				add_character_modifier = {
+					modifier = minor_blood_rune_modifier
+				}
+			}
+			scope:recipient = {
+				save_scope_as = rune_target
+			}
+			scope:actor = {
+				trigger_event = { id = bm_blood_runes.001 }
+			}
+		}
+		else_if = {
+			limit = {
+				scope:recipient = {
+					has_character_modifier = minor_blood_rune_modifier
+					NOT = { has_character_modifier = major_blood_rune_modifier }
+					NOT = { has_character_modifier = superior_blood_rune_modifier }
+				}
+			}
+			scope:actor = {
+				add_piety = -200
+				blood_magic_used_major = yes
+				if = {
+					limit = { has_trait = lifestyle_blood_mage }
+					add_trait_xp = {
+						trait = lifestyle_blood_mage
+						track = benediction
+						value = 5
+					}
+				}
+				if = {
+					limit = {
+						has_trait = lifestyle_blood_knight
+						NOT = { has_trait = lifestyle_blood_mage }
+					}
+					add_blood_knight_xp = {
+						TRACK = benediction
+						XP = 5
+					}
+				}
+			}
+			scope:recipient = {
+				bm_upgrade_blood_rune_to_major_effect = yes
+			}
+		}
+		else_if = {
+			limit = {
+				scope:recipient = {
+					has_character_modifier = major_blood_rune_modifier
+					NOT = { has_character_modifier = superior_blood_rune_modifier }
+				}
+			}
+			scope:actor = {
+				add_piety = -400
+				blood_magic_used_superior = yes
+				add_trait_xp = {
+					trait = lifestyle_blood_mage
+					track = benediction
+					value = 10
+				}
+			}
+			scope:recipient = {
+				bm_upgrade_blood_rune_to_superior_effect = yes
+			}
+		}
+	}
+
+	auto_accept = yes
+	ai_accept = { base = 100 }
+	ai_potential = { always = yes }
+	ai_targets = {
+		ai_recipients = family
+		ai_recipients = spouses
+		ai_recipients = children
+		ai_recipients = courtiers
+		ai_recipients = liege
+	}
+	ai_frequency = 60
+	ai_will_do = {
+		base = 0
+		modifier = {
+			scope:actor = { piety < 500 }
+			factor = 0
+		}
+		modifier = {
+			scope:recipient = { is_spouse_of = scope:actor }
+			add = 60
+		}
+		modifier = {
+			scope:recipient = {
+				OR = {
+					this = scope:actor.primary_heir
+					is_child_of = scope:actor
+				}
+			}
+			add = 50
+		}
+		modifier = {
+			scope:recipient = { has_trait = lifestyle_blood_knight }
+			add = 40
+		}
+		modifier = {
+			scope:recipient = { has_trait = blood_golem }
+			add = 40
+		}
+		ai_willingness_to_do_positive_magic = yes
+	}
+}

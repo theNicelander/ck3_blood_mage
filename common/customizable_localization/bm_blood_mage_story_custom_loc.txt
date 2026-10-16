@@ -77,3 +77,111 @@ BM_BLOOD_MAGE_BLOOD_RUNE_DISPLAY = {
 		localization_key = bm_blood_mage_blood_rune_none
 	}
 }
+
+BM_BLOOD_MAGE_STAVE_DISPLAY = {
+	type = character
+	text = {
+		trigger = {
+			OR = {
+				has_character_modifier = bm_rune_vegvisir_minor
+				has_character_modifier = bm_rune_vegvisir_major
+				has_character_modifier = bm_rune_vegvisir_superior
+			}
+		}
+		localization_key = bm_stave_display_vegvisir
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_character_modifier = bm_rune_holastafur_minor
+				has_character_modifier = bm_rune_holastafur_major
+				has_character_modifier = bm_rune_holastafur_superior
+			}
+		}
+		localization_key = bm_stave_display_holastafur
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_character_modifier = bm_rune_feingur_minor
+				has_character_modifier = bm_rune_feingur_major
+				has_character_modifier = bm_rune_feingur_superior
+			}
+		}
+		localization_key = bm_stave_display_feingur
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_character_modifier = bm_rune_aegishjalmur_minor
+				has_character_modifier = bm_rune_aegishjalmur_major
+				has_character_modifier = bm_rune_aegishjalmur_superior
+			}
+		}
+		localization_key = bm_stave_display_aegishjalmur
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_character_modifier = bm_rune_gapaldur_minor
+				has_character_modifier = bm_rune_gapaldur_major
+				has_character_modifier = bm_rune_gapaldur_superior
+			}
+		}
+		localization_key = bm_stave_display_gapaldur
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_character_modifier = bm_rune_nabrokarstafur_minor
+				has_character_modifier = bm_rune_nabrokarstafur_major
+				has_character_modifier = bm_rune_nabrokarstafur_superior
+			}
+		}
+		localization_key = bm_stave_display_nabrokarstafur
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_character_modifier = bm_rune_hulinhjalmur_minor
+				has_character_modifier = bm_rune_hulinhjalmur_major
+				has_character_modifier = bm_rune_hulinhjalmur_superior
+			}
+		}
+		localization_key = bm_stave_display_hulinhjalmur
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_character_modifier = bm_rune_brynslustafur_minor
+				has_character_modifier = bm_rune_brynslustafur_major
+				has_character_modifier = bm_rune_brynslustafur_superior
+			}
+		}
+		localization_key = bm_stave_display_brynslustafur
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_character_modifier = bm_rune_draumstafir_minor
+				has_character_modifier = bm_rune_draumstafir_major
+				has_character_modifier = bm_rune_draumstafir_superior
+			}
+		}
+		localization_key = bm_stave_display_draumstafir
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_character_modifier = bm_rune_drepsottarstafur_minor
+				has_character_modifier = bm_rune_drepsottarstafur_major
+				has_character_modifier = bm_rune_drepsottarstafur_superior
+			}
+		}
+		localization_key = bm_stave_display_drepsottarstafur
+	}
+	text = {
+		fallback = yes
+		localization_key = bm_stave_display_none
+	}
+}

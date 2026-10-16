@@ -10,13 +10,19 @@ bm_on_character_death_duel = {
 			limit = {
 				exists = scope:killer
 				scope:killer = {
-					has_trait = lifestyle_blood_knight
+					OR = {
+						has_trait = lifestyle_blood_knight
+						has_character_modifier = bm_rune_aegishjalmur_superior
+					}
 					has_variable = engaged_in_single_combat
 				}
 				has_variable = engaged_in_single_combat
 			}
 			scope:killer = {
-				add_blood_knight_xp = { TRACK = slaughter XP = 5 }
+				if = {
+					limit = { has_trait = lifestyle_blood_knight }
+					add_blood_knight_xp = { TRACK = slaughter XP = 5 }
+				}
 				add_character_modifier = { modifier = lifeforce_modifier_major }
 				if = {
 					limit = {

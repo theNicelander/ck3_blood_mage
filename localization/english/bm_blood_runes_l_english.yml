@@ -1,0 +1,59 @@
+﻿l_english:
+  # Minor/Major/Superior Magic Grimoire Decisions - Flay Options
+  bm_cast_blood_magic_minor.001.flay_rune: "Flay Minor Blood Rune"
+  bm_cast_blood_magic_major.001.flay_rune: "Flay Major Blood Rune"
+  bm_cast_blood_magic_superior.001.flay_rune: "Flay Superior Blood Rune"
+
+  # Galdrastafir 10-Stave Selector
+  bm_blood_runes.001.t: "Carve Galdrastafir Stave"
+  bm_blood_runes.001.desc: "Through blood and iron, an arcane stave must be etched into living flesh. Choose which stave of power to bind upon [Select_CString(EqualTo_CHAR(scope:rune_target, root), 'your own', Concatenate(scope:rune_target.GetShortUINamePossessive, ''))] skin."
+
+  bm_blood_runes.001.vegvisir: "Vegvísir — The Wayfinder"
+  bm_blood_runes.001.vegvisir.tt: "#tooltip_heading Vegvísir (Wayfinder)#!\nInscribes the Vegvísir stave. Grants scaling travel speed, travel safety, and army movement speed.\n\n#bold Superior Capstone — Storm-Walker#!:\nHalves the cooldown of Seek Power (1 year landed, 6 months wanderer) and guarantees completely safe harvest outcomes without negative hazards."
+
+  bm_blood_runes.001.holastafur: "Hólastafur — The Earth-Opener"
+  bm_blood_runes.001.holastafur.tt: "#tooltip_heading Hólastafur (Earth-Opener)#!\nInscribes the Hólastafur stave. Reduces embarkation and provisions costs while increasing Stewardship.\n\n#bold Superior Capstone — Earth-Opener#!:\nUnlocks hidden troves of treasure: visiting any Point of Interest awards #P +10 Gold#!."
+
+  bm_blood_runes.001.feingur: "Feingur — The Awakened Seed"
+  bm_blood_runes.001.feingur.tt: "#tooltip_heading Feingur (Awakened Seed)#!\nInscribes the Feingur stave. Vastly improves fertility, congenital trait inheritance chance, fertile years, attraction opinion, and health.\n\n#bold Superior Capstone — Awakened Seed#!:\nIncreases single-parent inheritance of Blood Magic from 25% to 50% and doubles Bloodline track XP on childbirth (+8 XP)."
+
+  bm_blood_runes.001.aegishjalmur: "Ægishjálmur — The Helm of Awe"
+  bm_blood_runes.001.aegishjalmur.tt: "#tooltip_heading Ægishjálmur (Helm of Awe)#!\nInscribes the Ægishjálmur stave. Imbues martial dominance: prowess, dread baseline, and knight effectiveness.\n\n#bold Superior Capstone — Terror of the Slain#!:\nUnlocks battlefield and single-combat Lifeforce harvesting even for Blood Mages who do not possess the Blood Knight trait."
+
+  bm_blood_runes.001.gapaldur: "Gapaldur & Ginfaxi — The Unbroken Heel"
+  bm_blood_runes.001.gapaldur.tt: "#tooltip_heading Gapaldur & Ginfaxi (Unbroken Heel)#!\nInscribes the twin victory staves under heel and toe. Grants extra knights, combat advantage, and health penalty negation.\n\n#bold Superior Capstone — Unbroken Heel#!:\nGrants #P +15#! victory weight in all blood magic skill duels, and wards against death by consuming 1 Minor Lifeforce to downgrade fatal blows into severe wounds."
+
+  bm_blood_runes.001.nabrokarstafur: "Nábrókarstafur — The Flayed Tithe"
+  bm_blood_runes.001.nabrokarstafur.tt: "#tooltip_heading Nábrókarstafur (Flayed Tithe)#!\nInscribes the skin-purse stave. Increases domain taxes and reduces Men-at-Arms maintenance at the cost of general opinion.\n\n#bold Superior Capstone — Flayed Tithe#!:\nExecuting prisoners via single or mass Lifedrain yields #P +25 Gold#! per victim."
+
+  bm_blood_runes.001.hulinhjalmur: "Hulinhjálmur & Lásabrjótur — The Unseen Siphon"
+  bm_blood_runes.001.hulinhjalmur.tt: "#tooltip_heading Hulinhjálmur & Lásabrjótur (Unseen Siphon)#!\nInscribes the shadow cloak and lock-breaker staves. Boosts hostile scheme success, scheme secrecy, and hostile scheme defense.\n\n#bold Superior Capstone — Unseen Siphon#!:\nEliminates discovery and opinion penalties on failed blood curses and courtier siphons, and slashes Trait Drain cooldown from 60 days to 15 days."
+
+  bm_blood_runes.001.brynslustafur: "Brýnslustafur — The Honed Mind"
+  bm_blood_runes.001.brynslustafur.tt: "#tooltip_heading Brýnslustafur (Honed Mind)#!\nInscribes the whetstone stave. Increases lifestyle experience gain and reduces language learning duration.\n\n#bold Superior Capstone — Honed Mind#!:\nRaises yearly Lifeforce Attunement discipline bonus XP rolls from 50% to a guaranteed #P 100%#! (+1 XP every year)."
+
+  bm_blood_runes.001.draumstafir: "Draumstafir — The Lucid Pulse"
+  bm_blood_runes.001.draumstafir.tt: "#tooltip_heading Draumstafir (Lucid Pulse)#!\nInscribes the dream stave. Reduces stress gain, accelerates stress loss, and boosts monthly piety and devotion impact.\n\n#bold Superior Capstone — Lucid Pulse#!:\nWhenever your blood runes harvest Lifeforce passively each year, you also shed #P -25 Stress#!."
+
+  bm_blood_runes.001.drepsottarstafur: "Drepsóttarstafur — The Plague-Ward"
+  bm_blood_runes.001.drepsottarstafur.tt: "#tooltip_heading Drepsóttarstafur (Plague-Ward)#!\nInscribes the epidemic-warding stave. Vastly enhances epidemic resistance and character health.\n\n#bold Superior Capstone — Plague-Ward#!:\nHalves the Piety cost (-50%) of all Heal Ailment rites."
+
+  # Flay Blood Rune (Swap Rite)
+  bm_blood_runes.002.t: "Flay Blood Rune"
+  bm_blood_runes.002.desc: "The arcane ink and scarred flesh can be flayed from your body in a harrowing agony rite. Stripping your existing stave allows you to bind a new Galdrastafir stave at your current rune tier, but demands immense devotion, lifeforce, ancient mastery, and bodily suffering."
+  bm_blood_runes.002.flay_minor: "Flay Minor Rune (250 Piety, -5 Ancient XP, 1 Minor Lifeforce, Wounds)"
+  bm_blood_runes.002.flay_major: "Flay Major Rune (500 Piety, -10 Ancient XP, 1 Major Lifeforce, Wounds, Exhaustion)"
+  bm_blood_runes.002.flay_superior: "Flay Superior Rune (1000 Piety, -15 Ancient XP, 1 Superior Lifeforce, Severe Wounds, Long Exhaustion)"
+  bm_blood_runes.002.cancel: "Endure with my current stave"
+
+  # Interaction: Inscribe Rune on Other
+  bm_inscribe_rune_other_interaction: "Inscribe Blood Rune"
+  bm_inscribe_rune_other_interaction_desc: "Carve or upgrade a permanent Galdrastafir Blood Rune upon this character's flesh. They will passively generate Lifeforce over time and gain scaling physical, mystical, and martial boons.\n\n#italic Grants Benediction experience to the caster.#!"
+  bm_inscribe_rune_other_requirement_tt: "Requires Piety, Lifeforce, Devotion Rank, and Track Experience matching the next rune tier."
+  bm_trait_drain_cooldown_tt: "Must wait 60 days between trait drains (reduced to 15 days with Superior Hulinhjálmur stave)."
+
+  # Toasts
+  bm_holastafur_poi_toast: "Hólastafur: Earth-Opener"
+  bm_holastafur_poi_toast_desc: "Your Superior Hólastafur stave uncovered hidden wealth at this landmark: #P +10 Gold#!"
+  bm_rune_gapaldur_ward_toast: "Gapaldur & Ginfaxi: Unbroken Heel"
+  bm_rune_gapaldur_ward_toast_desc: "Your Superior Gapaldur stave absorbed the fatal blow, consuming 1 Minor Lifeforce to keep you alive!"

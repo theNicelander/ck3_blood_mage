@@ -1,0 +1,199 @@
+﻿# Blood Runes & Galdrastafir Scripted Effects
+
+bm_strip_all_stave_modifiers_effect = {
+	remove_character_modifier = bm_rune_vegvisir_minor
+	remove_character_modifier = bm_rune_vegvisir_major
+	remove_character_modifier = bm_rune_vegvisir_superior
+
+	remove_character_modifier = bm_rune_holastafur_minor
+	remove_character_modifier = bm_rune_holastafur_major
+	remove_character_modifier = bm_rune_holastafur_superior
+
+	remove_character_modifier = bm_rune_feingur_minor
+	remove_character_modifier = bm_rune_feingur_major
+	remove_character_modifier = bm_rune_feingur_superior
+
+	remove_character_modifier = bm_rune_aegishjalmur_minor
+	remove_character_modifier = bm_rune_aegishjalmur_major
+	remove_character_modifier = bm_rune_aegishjalmur_superior
+
+	remove_character_modifier = bm_rune_gapaldur_minor
+	remove_character_modifier = bm_rune_gapaldur_major
+	remove_character_modifier = bm_rune_gapaldur_superior
+
+	remove_character_modifier = bm_rune_nabrokarstafur_minor
+	remove_character_modifier = bm_rune_nabrokarstafur_major
+	remove_character_modifier = bm_rune_nabrokarstafur_superior
+
+	remove_character_modifier = bm_rune_hulinhjalmur_minor
+	remove_character_modifier = bm_rune_hulinhjalmur_major
+	remove_character_modifier = bm_rune_hulinhjalmur_superior
+
+	remove_character_modifier = bm_rune_brynslustafur_minor
+	remove_character_modifier = bm_rune_brynslustafur_major
+	remove_character_modifier = bm_rune_brynslustafur_superior
+
+	remove_character_modifier = bm_rune_draumstafir_minor
+	remove_character_modifier = bm_rune_draumstafir_major
+	remove_character_modifier = bm_rune_draumstafir_superior
+
+	remove_character_modifier = bm_rune_drepsottarstafur_minor
+	remove_character_modifier = bm_rune_drepsottarstafur_major
+	remove_character_modifier = bm_rune_drepsottarstafur_superior
+}
+
+bm_apply_selected_stave_at_current_tier_effect = {
+	bm_strip_all_stave_modifiers_effect = yes
+	if = {
+		limit = { has_character_modifier = superior_blood_rune_modifier }
+		add_character_modifier = { modifier = bm_rune_$STAVE$_superior }
+	}
+	else_if = {
+		limit = { has_character_modifier = major_blood_rune_modifier }
+		add_character_modifier = { modifier = bm_rune_$STAVE$_major }
+	}
+	else = {
+		if = {
+			limit = { NOT = { has_character_modifier = minor_blood_rune_modifier } }
+			add_character_modifier = { modifier = minor_blood_rune_modifier }
+		}
+		add_character_modifier = { modifier = bm_rune_$STAVE$_minor }
+	}
+}
+
+bm_upgrade_blood_rune_to_major_effect = {
+	remove_character_modifier = minor_blood_rune_modifier
+	add_character_modifier = { modifier = major_blood_rune_modifier }
+	if = {
+		limit = { has_character_modifier = bm_rune_vegvisir_minor }
+		remove_character_modifier = bm_rune_vegvisir_minor
+		add_character_modifier = { modifier = bm_rune_vegvisir_major }
+	}
+	else_if = {
+		limit = { has_character_modifier = bm_rune_holastafur_minor }
+		remove_character_modifier = bm_rune_holastafur_minor
+		add_character_modifier = { modifier = bm_rune_holastafur_major }
+	}
+	else_if = {
+		limit = { has_character_modifier = bm_rune_feingur_minor }
+		remove_character_modifier = bm_rune_feingur_minor
+		add_character_modifier = { modifier = bm_rune_feingur_major }
+	}
+	else_if = {
+		limit = { has_character_modifier = bm_rune_aegishjalmur_minor }
+		remove_character_modifier = bm_rune_aegishjalmur_minor
+		add_character_modifier = { modifier = bm_rune_aegishjalmur_major }
+	}
+	else_if = {
+		limit = { has_character_modifier = bm_rune_gapaldur_minor }
+		remove_character_modifier = bm_rune_gapaldur_minor
+		add_character_modifier = { modifier = bm_rune_gapaldur_major }
+	}
+	else_if = {
+		limit = { has_character_modifier = bm_rune_nabrokarstafur_minor }
+		remove_character_modifier = bm_rune_nabrokarstafur_minor
+		add_character_modifier = { modifier = bm_rune_nabrokarstafur_major }
+	}
+	else_if = {
+		limit = { has_character_modifier = bm_rune_hulinhjalmur_minor }
+		remove_character_modifier = bm_rune_hulinhjalmur_minor
+		add_character_modifier = { modifier = bm_rune_hulinhjalmur_major }
+	}
+	else_if = {
+		limit = { has_character_modifier = bm_rune_brynslustafur_minor }
+		remove_character_modifier = bm_rune_brynslustafur_minor
+		add_character_modifier = { modifier = bm_rune_brynslustafur_major }
+	}
+	else_if = {
+		limit = { has_character_modifier = bm_rune_draumstafir_minor }
+		remove_character_modifier = bm_rune_draumstafir_minor
+		add_character_modifier = { modifier = bm_rune_draumstafir_major }
+	}
+	else_if = {
+		limit = { has_character_modifier = bm_rune_drepsottarstafur_minor }
+		remove_character_modifier = bm_rune_drepsottarstafur_minor
+		add_character_modifier = { modifier = bm_rune_drepsottarstafur_major }
+	}
+	else = {
+		save_scope_as = rune_target
+		trigger_event = { id = bm_blood_runes.001 }
+	}
+}
+
+bm_upgrade_blood_rune_to_superior_effect = {
+	remove_character_modifier = major_blood_rune_modifier
+	add_character_modifier = { modifier = superior_blood_rune_modifier }
+	if = {
+		limit = { has_character_modifier = bm_rune_vegvisir_major }
+		remove_character_modifier = bm_rune_vegvisir_major
+		add_character_modifier = { modifier = bm_rune_vegvisir_superior }
+	}
+	else_if = {
+		limit = { has_character_modifier = bm_rune_holastafur_major }
+		remove_character_modifier = bm_rune_holastafur_major
+		add_character_modifier = { modifier = bm_rune_holastafur_superior }
+	}
+	else_if = {
+		limit = { has_character_modifier = bm_rune_feingur_major }
+		remove_character_modifier = bm_rune_feingur_major
+		add_character_modifier = { modifier = bm_rune_feingur_superior }
+	}
+	else_if = {
+		limit = { has_character_modifier = bm_rune_aegishjalmur_major }
+		remove_character_modifier = bm_rune_aegishjalmur_major
+		add_character_modifier = { modifier = bm_rune_aegishjalmur_superior }
+	}
+	else_if = {
+		limit = { has_character_modifier = bm_rune_gapaldur_major }
+		remove_character_modifier = bm_rune_gapaldur_major
+		add_character_modifier = { modifier = bm_rune_gapaldur_superior }
+	}
+	else_if = {
+		limit = { has_character_modifier = bm_rune_nabrokarstafur_major }
+		remove_character_modifier = bm_rune_nabrokarstafur_major
+		add_character_modifier = { modifier = bm_rune_nabrokarstafur_superior }
+	}
+	else_if = {
+		limit = { has_character_modifier = bm_rune_hulinhjalmur_major }
+		remove_character_modifier = bm_rune_hulinhjalmur_major
+		add_character_modifier = { modifier = bm_rune_hulinhjalmur_superior }
+	}
+	else_if = {
+		limit = { has_character_modifier = bm_rune_brynslustafur_major }
+		remove_character_modifier = bm_rune_brynslustafur_major
+		add_character_modifier = { modifier = bm_rune_brynslustafur_superior }
+	}
+	else_if = {
+		limit = { has_character_modifier = bm_rune_draumstafir_major }
+		remove_character_modifier = bm_rune_draumstafir_major
+		add_character_modifier = { modifier = bm_rune_draumstafir_superior }
+	}
+	else_if = {
+		limit = { has_character_modifier = bm_rune_drepsottarstafur_major }
+		remove_character_modifier = bm_rune_drepsottarstafur_major
+		add_character_modifier = { modifier = bm_rune_drepsottarstafur_superior }
+	}
+	else = {
+		save_scope_as = rune_target
+		trigger_event = { id = bm_blood_runes.001 }
+	}
+}
+
+bm_gapaldur_prevent_fatal_blow_effect = {
+	if = {
+		limit = {
+			has_character_modifier = bm_rune_gapaldur_superior
+			has_character_modifier = lifeforce_modifier_minor
+			has_trait = wounded_3
+		}
+		remove_character_modifier = lifeforce_modifier_minor
+		remove_trait = wounded_3
+		add_trait = wounded_2
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_rune_gapaldur_ward_toast
+			left_icon = root
+			custom_tooltip = bm_rune_gapaldur_ward_toast_desc
+		}
+	}
+}

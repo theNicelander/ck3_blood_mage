@@ -9,6 +9,10 @@
                 value = scope:duel_value
                 multiplier = 5
             }
+            modifier = {
+                add = 15
+                has_character_modifier = bm_rune_gapaldur_superior
+            }
             send_interface_toast = {
                 title = blood_golem.002.success
                 left_icon = root
@@ -56,6 +60,10 @@ golem_duel_effect_level = {
             compare_modifier = {
                 value = scope:duel_value
                 multiplier = 3
+            }
+            modifier = {
+                add = 15
+                has_character_modifier = bm_rune_gapaldur_superior
             }
             send_interface_toast = {
                 title = blood_golem.002.success

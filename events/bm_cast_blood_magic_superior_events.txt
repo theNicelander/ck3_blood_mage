@@ -113,10 +113,7 @@ bm_cast_blood_magic_superior.001 = {
 			type = event_toast_effect_good
 			title = bm_blood_rune_superior_toast
 			left_icon = root
-			remove_character_modifier = major_blood_rune_modifier
-			add_character_modifier = {
-				modifier = superior_blood_rune_modifier
-			}
+			bm_upgrade_blood_rune_to_superior_effect = yes
 			custom_tooltip = blood_runes_effects_list.superior
 			add_shared_bm_bk_xp = {
 				TRACK = ancient
@@ -136,6 +133,23 @@ bm_cast_blood_magic_superior.001 = {
 				health <= fine_health
 				add = -100
 			}
+		}
+	}
+
+	# Flay Superior Blood Rune (Swap Rite)
+	option = {
+		name = bm_cast_blood_magic_superior.001.flay_rune
+		trigger = {
+			has_character_modifier = superior_blood_rune_modifier
+			piety >= 1000
+			has_character_modifier = lifeforce_modifier_superior
+		}
+		show_as_unavailable = {
+			has_character_modifier = superior_blood_rune_modifier
+		}
+		trigger_event = { id = bm_blood_runes.002 }
+		ai_chance = {
+			base = 0
 		}
 	}
 

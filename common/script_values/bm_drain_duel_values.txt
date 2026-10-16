@@ -92,6 +92,10 @@ trait_drain_harder_per_trait_modifier = {
 trait_drain_modifier = {
     add = trait_drain_harder_per_trait_modifier
     add = trait_drain_easier_with_xp
+    if = {
+        limit = { has_character_modifier = bm_rune_gapaldur_superior }
+        add = 15
+    }
 }
 
 recipient_trait_drain_modifier_per_trait = {

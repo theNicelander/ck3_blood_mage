@@ -1,17 +1,267 @@
 ﻿minor_blood_rune_modifier = {
-    icon = blood_magic
-    stacking = no
-    piety_level_impact_mult = 0.10
+	icon = blood_magic
+	stacking = no
 }
 
 major_blood_rune_modifier = {
-    icon = blood_magic
-    stacking = no
-    piety_level_impact_mult = 0.20
+	icon = blood_magic
+	stacking = no
 }
 
 superior_blood_rune_modifier = {
-    icon = blood_magic
-    stacking = no
-    piety_level_impact_mult = 0.30
+	icon = blood_magic
+	stacking = no
+}
+
+# 1. Vegvisir (Wayfinder)
+bm_rune_vegvisir_minor = {
+	icon = blood_magic
+	stacking = no
+	character_travel_speed_mult = 0.15
+	character_travel_safety = 10
+	movement_speed = 0.05
+}
+
+bm_rune_vegvisir_major = {
+	icon = blood_magic
+	stacking = no
+	character_travel_speed_mult = 0.25
+	character_travel_safety = 20
+	movement_speed = 0.10
+}
+
+bm_rune_vegvisir_superior = {
+	icon = blood_magic
+	stacking = no
+	character_travel_speed_mult = 0.40
+	character_travel_safety = 30
+	movement_speed = 0.15
+}
+
+# 2. Holastafur (Earth-Opener)
+bm_rune_holastafur_minor = {
+	icon = blood_magic
+	stacking = no
+	embarkation_cost_mult = -0.10
+	provisions_use_mult = -0.10
+	stewardship = 1
+}
+
+bm_rune_holastafur_major = {
+	icon = blood_magic
+	stacking = no
+	embarkation_cost_mult = -0.20
+	provisions_use_mult = -0.20
+	stewardship = 2
+}
+
+bm_rune_holastafur_superior = {
+	icon = blood_magic
+	stacking = no
+	embarkation_cost_mult = -0.30
+	provisions_use_mult = -0.30
+	stewardship = 3
+}
+
+# 3. Feingur (Awakened Seed)
+bm_rune_feingur_minor = {
+	icon = blood_magic
+	stacking = no
+	fertility = 0.10
+	positive_random_genetic_chance = 0.10
+	years_of_fertility = 5
+	attraction_opinion = 10
+	health = 0.2
+}
+
+bm_rune_feingur_major = {
+	icon = blood_magic
+	stacking = no
+	fertility = 0.20
+	positive_random_genetic_chance = 0.20
+	years_of_fertility = 10
+	attraction_opinion = 20
+	health = 0.4
+}
+
+bm_rune_feingur_superior = {
+	icon = blood_magic
+	stacking = no
+	fertility = 0.30
+	positive_random_genetic_chance = 0.30
+	years_of_fertility = 15
+	attraction_opinion = 30
+	health = 0.6
+}
+
+# 4. Aegishjalmur (Helm of Awe)
+bm_rune_aegishjalmur_minor = {
+	icon = blood_magic
+	stacking = no
+	prowess = 3
+	dread_baseline_add = 10
+	knight_effectiveness_mult = 0.10
+}
+
+bm_rune_aegishjalmur_major = {
+	icon = blood_magic
+	stacking = no
+	prowess = 6
+	dread_baseline_add = 20
+	knight_effectiveness_mult = 0.20
+}
+
+bm_rune_aegishjalmur_superior = {
+	icon = blood_magic
+	stacking = no
+	prowess = 9
+	dread_baseline_add = 30
+	knight_effectiveness_mult = 0.30
+}
+
+# 5. Gapaldur & Ginfaxi (Unbroken Heel)
+bm_rune_gapaldur_minor = {
+	icon = blood_magic
+	stacking = no
+	knight_limit = 1
+	advantage = 2
+	negate_health_penalty_add = 0.25
+}
+
+bm_rune_gapaldur_major = {
+	icon = blood_magic
+	stacking = no
+	knight_limit = 2
+	advantage = 4
+	negate_health_penalty_add = 0.50
+}
+
+bm_rune_gapaldur_superior = {
+	icon = blood_magic
+	stacking = no
+	knight_limit = 4
+	advantage = 6
+	negate_health_penalty_add = 0.75
+}
+
+# 6. Nabrokarstafur (Flayed Tithe)
+bm_rune_nabrokarstafur_minor = {
+	icon = blood_magic
+	stacking = no
+	domain_tax_mult = 0.05
+	men_at_arms_maintenance = -0.05
+	general_opinion = -5
+}
+
+bm_rune_nabrokarstafur_major = {
+	icon = blood_magic
+	stacking = no
+	domain_tax_mult = 0.15
+	men_at_arms_maintenance = -0.10
+	general_opinion = -10
+}
+
+bm_rune_nabrokarstafur_superior = {
+	icon = blood_magic
+	stacking = no
+	domain_tax_mult = 0.25
+	men_at_arms_maintenance = -0.15
+	general_opinion = -15
+}
+
+# 7. Hulinhjalmur & Lasabrjotur (Unseen Siphon)
+bm_rune_hulinhjalmur_minor = {
+	icon = blood_magic
+	stacking = no
+	owned_hostile_scheme_success_chance_add = 15
+	owned_scheme_secrecy_add = 15
+	enemy_hostile_scheme_success_chance_add = -15
+}
+
+bm_rune_hulinhjalmur_major = {
+	icon = blood_magic
+	stacking = no
+	owned_hostile_scheme_success_chance_add = 25
+	owned_scheme_secrecy_add = 30
+	enemy_hostile_scheme_success_chance_add = -30
+}
+
+bm_rune_hulinhjalmur_superior = {
+	icon = blood_magic
+	stacking = no
+	owned_hostile_scheme_success_chance_add = 40
+	owned_scheme_secrecy_add = 50
+	enemy_hostile_scheme_success_chance_add = -50
+}
+
+# 8. Brynslustafur (Honed Mind)
+bm_rune_brynslustafur_minor = {
+	icon = blood_magic
+	stacking = no
+	monthly_lifestyle_xp_gain_mult = 0.10
+	learn_language_scheme_phase_duration_add = -15
+}
+
+bm_rune_brynslustafur_major = {
+	icon = blood_magic
+	stacking = no
+	monthly_lifestyle_xp_gain_mult = 0.20
+	learn_language_scheme_phase_duration_add = -30
+}
+
+bm_rune_brynslustafur_superior = {
+	icon = blood_magic
+	stacking = no
+	monthly_lifestyle_xp_gain_mult = 0.35
+	learn_language_scheme_phase_duration_add = -50
+}
+
+# 9. Draumstafir (Lucid Pulse)
+bm_rune_draumstafir_minor = {
+	icon = blood_magic
+	stacking = no
+	stress_gain_mult = -0.20
+	stress_loss_mult = 0.20
+	monthly_piety = 0.3
+	piety_level_impact_mult = 0.05
+}
+
+bm_rune_draumstafir_major = {
+	icon = blood_magic
+	stacking = no
+	stress_gain_mult = -0.35
+	stress_loss_mult = 0.35
+	monthly_piety = 0.6
+	piety_level_impact_mult = 0.10
+}
+
+bm_rune_draumstafir_superior = {
+	icon = blood_magic
+	stacking = no
+	stress_gain_mult = -0.50
+	stress_loss_mult = 0.50
+	monthly_piety = 1.0
+	piety_level_impact_mult = 0.15
+}
+
+# 10. Drepsottarstafur (Plague-Ward)
+bm_rune_drepsottarstafur_minor = {
+	icon = blood_magic
+	stacking = no
+	epidemic_resistance = 10
+	health = 0.25
+}
+
+bm_rune_drepsottarstafur_major = {
+	icon = blood_magic
+	stacking = no
+	epidemic_resistance = 20
+	health = 0.50
+}
+
+bm_rune_drepsottarstafur_superior = {
+	icon = blood_magic
+	stacking = no
+	epidemic_resistance = 35
+	health = 1.0
 }

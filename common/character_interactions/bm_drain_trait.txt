@@ -6,12 +6,19 @@ trait_drain_prisoner_event_interaction = {
     desc = generic_drain_prisoner_trait_interaction_desc
 
     is_highlighted = { always = yes }
-    cooldown = { days = 60 }
+    cooldown = { days = 15 }
     cooldown_against_recipient = { days = 180 }
 
     is_valid_showing_failures_only = {
         scope:actor = {
             has_character_modifier = lifeforce_modifier_major
+            custom_tooltip = {
+                text = bm_trait_drain_cooldown_tt
+                trigger_if = {
+                    limit = { NOT = { has_character_modifier = bm_rune_hulinhjalmur_superior } }
+                    NOT = { has_character_flag = bm_trait_drain_cooldown }
+                }
+            }
         }
     }
 
@@ -32,6 +39,13 @@ trait_drain_prisoner_event_interaction = {
             trigger_event = bm_trait_drain.001
             remove_character_modifier = lifeforce_modifier_major
             custom_tooltip = generic_drain_prisoner_trait_interaction_desc
+            if = {
+                limit = { NOT = { has_character_modifier = bm_rune_hulinhjalmur_superior } }
+                add_character_flag = {
+                    flag = bm_trait_drain_cooldown
+                    days = 60
+                }
+            }
         }
 
     }

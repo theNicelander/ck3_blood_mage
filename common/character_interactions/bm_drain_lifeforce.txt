@@ -96,10 +96,15 @@ lifedrain_courtier_event_interaction = {
                             right_icon = scope:recipient
                             scope:recipient = {
                                 add_trait = wounded_1
-                                add_opinion = {
-                                    target = scope:actor
-                                    modifier = lifedrained_me
-                                    opinion = -50
+                                if = {
+                                    limit = {
+                                        NOT = { scope:actor = { has_character_modifier = bm_rune_hulinhjalmur_superior } }
+                                    }
+                                    add_opinion = {
+                                        target = scope:actor
+                                        modifier = lifedrained_me
+                                        opinion = -50
+                                    }
                                 }
                             }
                             temporary_negative_lifeforce_effect_minor = yes
@@ -119,10 +124,15 @@ lifedrain_courtier_event_interaction = {
                             add_trait = wounded_1
                             scope:recipient = {
                                 add_trait = wounded_2
-                                add_opinion = {
-                                    target = scope:actor
-                                    modifier = lifedrained_me
-                                    opinion = -50
+                                if = {
+                                    limit = {
+                                        NOT = { scope:actor = { has_character_modifier = bm_rune_hulinhjalmur_superior } }
+                                    }
+                                    add_opinion = {
+                                        target = scope:actor
+                                        modifier = lifedrained_me
+                                        opinion = -50
+                                    }
                                 }
                             }
                         }
@@ -157,10 +167,15 @@ lifedrain_courtier_event_interaction = {
                             right_icon = scope:recipient
                             scope:recipient = {
                                 add_trait = wounded_1
-                                add_opinion = {
-                                    target = scope:actor
-                                    modifier = lifedrained_me
-                                    opinion = -50
+                                if = {
+                                    limit = {
+                                        NOT = { scope:actor = { has_character_modifier = bm_rune_hulinhjalmur_superior } }
+                                    }
+                                    add_opinion = {
+                                        target = scope:actor
+                                        modifier = lifedrained_me
+                                        opinion = -50
+                                    }
                                 }
                             }
                             temporary_negative_lifeforce_effect_minor = yes
@@ -181,10 +196,15 @@ lifedrain_courtier_event_interaction = {
                             add_trait = wounded_1
                             scope:recipient = {
                                 add_trait = wounded_2
-                                add_opinion = {
-                                    target = scope:actor
-                                    modifier = lifedrained_me
-                                    opinion = -50
+                                if = {
+                                    limit = {
+                                        NOT = { scope:actor = { has_character_modifier = bm_rune_hulinhjalmur_superior } }
+                                    }
+                                    add_opinion = {
+                                        target = scope:actor
+                                        modifier = lifedrained_me
+                                        opinion = -50
+                                    }
                                 }
                             }
                         }

@@ -3,7 +3,7 @@
 ## Living changelog (branch net state since 1.20)
 
 Always reflects current branch state. Simple line per PR merge. Superseded changes folded, reverts dropped. Caveman style. Reverse chronological: latest changes at top.
-
+- Blood Runes & Galdrastafir: 10 historical staves across 3 sequential tiers with scaling flat modifiers, 10 Superior capstones, Grimoire self-inscription (+4/+5/+10 ancient XP), inscribe-on-others interaction (+4/+5/+10 benediction XP), and flaying swap rite burning ancient XP, piety, and lifeforce.
 - Blood Knight parallel Devotion peer: mutually exclusive permanent choice, Devotion scaling on vanguard/slaughter, Level 8 Devotion capstone unlocks (+1 max piety level), piety impact multipliers on runes and empowerment, symmetric initiation costs, and shared Superior Blood Magic access.
 - Fix error log issues: resolve trigger localization missing perspective on Blood Knight elevation decision, restore UTF-8 BOM on scripted triggers, and standardize education event portrait order.
 - Demote faltering_heart healing to major magic so Blood Knights can heal all old age ailments.

@@ -152,34 +152,93 @@ bm_apply_blood_knight_prevalence_at_birth = {
 
 bm_on_birth_bloodline_xp = {
 	effect = {
+		# Feingur Superior: Awakened Seed single-parent inheritance boost (25% -> 50%)
+		if = {
+			limit = {
+				NOT = { has_trait = lifestyle_blood_mage }
+				OR = {
+					AND = {
+						scope:mother ?= {
+							has_trait = lifestyle_blood_mage
+						}
+						NOT = { scope:real_father ?= { has_trait = lifestyle_blood_mage } }
+					}
+					AND = {
+						scope:real_father ?= {
+							has_trait = lifestyle_blood_mage
+						}
+						NOT = { scope:mother ?= { has_trait = lifestyle_blood_mage } }
+					}
+				}
+				OR = {
+					scope:mother ?= { has_character_modifier = bm_rune_feingur_superior }
+					scope:real_father ?= { has_character_modifier = bm_rune_feingur_superior }
+				}
+			}
+			random = {
+				chance = 33
+				bm_become_blood_mage_effect = yes
+			}
+		}
+
 		if = {
 			limit = {
 				scope:mother ?= { has_trait = lifestyle_blood_mage }
 			}
 			scope:mother = {
-				add_xp_bm_dynamic = {
-					TRACK = bloodline
-					XP = 2
-				}
 				if = {
-					limit = { root = { has_trait = lifestyle_blood_mage } }
+					limit = { has_character_modifier = bm_rune_feingur_superior }
+					add_xp_bm_dynamic = {
+						TRACK = bloodline
+						XP = 4
+					}
+					if = {
+						limit = { root = { has_trait = lifestyle_blood_mage } }
+						add_xp_bm_dynamic = {
+							TRACK = bloodline
+							XP = 4
+						}
+						send_interface_toast = {
+							type = event_toast_effect_good
+							title = bm_birth_blood_mage_child_toast
+							left_icon = root
+							custom_tooltip = bm_birth_blood_mage_child_tt
+						}
+					}
+					else = {
+						send_interface_toast = {
+							type = event_toast_effect_good
+							title = bm_birth_child_bloodline_toast
+							left_icon = root
+							custom_tooltip = bm_birth_child_bloodline_tt
+						}
+					}
+				}
+				else = {
 					add_xp_bm_dynamic = {
 						TRACK = bloodline
 						XP = 2
 					}
-					send_interface_toast = {
-						type = event_toast_effect_good
-						title = bm_birth_blood_mage_child_toast
-						left_icon = root
-						custom_tooltip = bm_birth_blood_mage_child_tt
+					if = {
+						limit = { root = { has_trait = lifestyle_blood_mage } }
+						add_xp_bm_dynamic = {
+							TRACK = bloodline
+							XP = 2
+						}
+						send_interface_toast = {
+							type = event_toast_effect_good
+							title = bm_birth_blood_mage_child_toast
+							left_icon = root
+							custom_tooltip = bm_birth_blood_mage_child_tt
+						}
 					}
-				}
-				else = {
-					send_interface_toast = {
-						type = event_toast_effect_good
-						title = bm_birth_child_bloodline_toast
-						left_icon = root
-						custom_tooltip = bm_birth_child_bloodline_tt
+					else = {
+						send_interface_toast = {
+							type = event_toast_effect_good
+							title = bm_birth_child_bloodline_toast
+							left_icon = root
+							custom_tooltip = bm_birth_child_bloodline_tt
+						}
 					}
 				}
 			}
@@ -189,29 +248,59 @@ bm_on_birth_bloodline_xp = {
 				scope:real_father ?= { has_trait = lifestyle_blood_mage }
 			}
 			scope:real_father = {
-				add_xp_bm_dynamic = {
-					TRACK = bloodline
-					XP = 2
-				}
 				if = {
-					limit = { root = { has_trait = lifestyle_blood_mage } }
+					limit = { has_character_modifier = bm_rune_feingur_superior }
+					add_xp_bm_dynamic = {
+						TRACK = bloodline
+						XP = 4
+					}
+					if = {
+						limit = { root = { has_trait = lifestyle_blood_mage } }
+						add_xp_bm_dynamic = {
+							TRACK = bloodline
+							XP = 4
+						}
+						send_interface_toast = {
+							type = event_toast_effect_good
+							title = bm_birth_blood_mage_child_toast
+							left_icon = root
+							custom_tooltip = bm_birth_blood_mage_child_tt
+						}
+					}
+					else = {
+						send_interface_toast = {
+							type = event_toast_effect_good
+							title = bm_birth_child_bloodline_toast
+							left_icon = root
+							custom_tooltip = bm_birth_child_bloodline_tt
+						}
+					}
+				}
+				else = {
 					add_xp_bm_dynamic = {
 						TRACK = bloodline
 						XP = 2
 					}
-					send_interface_toast = {
-						type = event_toast_effect_good
-						title = bm_birth_blood_mage_child_toast
-						left_icon = root
-						custom_tooltip = bm_birth_blood_mage_child_tt
+					if = {
+						limit = { root = { has_trait = lifestyle_blood_mage } }
+						add_xp_bm_dynamic = {
+							TRACK = bloodline
+							XP = 2
+						}
+						send_interface_toast = {
+							type = event_toast_effect_good
+							title = bm_birth_blood_mage_child_toast
+							left_icon = root
+							custom_tooltip = bm_birth_blood_mage_child_tt
+						}
 					}
-				}
-				else = {
-					send_interface_toast = {
-						type = event_toast_effect_good
-						title = bm_birth_child_bloodline_toast
-						left_icon = root
-						custom_tooltip = bm_birth_child_bloodline_tt
+					else = {
+						send_interface_toast = {
+							type = event_toast_effect_good
+							title = bm_birth_child_bloodline_toast
+							left_icon = root
+							custom_tooltip = bm_birth_child_bloodline_tt
+						}
 					}
 				}
 			}
