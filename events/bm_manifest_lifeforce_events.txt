@@ -1,0 +1,324 @@
+﻿namespace = bm_manifest_lifeforce
+
+# Manifest Lifeforce Event Popup
+bm_manifest_lifeforce.0001 = {
+	type = character_event
+	title = bm_manifest_lifeforce.0001.t
+	desc = bm_manifest_lifeforce.0001.desc
+	theme = mysticism
+	left_portrait = {
+		character = root
+		animation = meditation
+	}
+
+	# Tier 1: 100 Piety (Modest Meditation)
+	option = {
+		name = bm_manifest_lifeforce.0001.tier1
+		trigger = {
+			piety >= 100
+		}
+		add_piety = -100
+		add_shared_bm_bk_xp = {
+			TRACK = enlightenment
+			XP = 3
+		}
+		duel = {
+			skill = learning
+			value = 0
+
+			# Major Lifeforce
+			15 = {
+				desc = manifest_lifeforce_major_success_tt
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 1.0
+				}
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = manifest_lifeforce_major_success_tt
+					left_icon = root
+					add_character_modifier = { modifier = lifeforce_modifier_major }
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+
+			# Minor Lifeforce
+			45 = {
+				desc = manifest_lifeforce_minor_success_tt
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 1.5
+				}
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = manifest_lifeforce_minor_success_tt
+					left_icon = root
+					add_character_modifier = { modifier = lifeforce_modifier_minor }
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+
+			# Minor Failure
+			35 = {
+				desc = manifest_lifeforce_minor_failure_tt
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -0.6
+				}
+				send_interface_toast = {
+					type = event_toast_effect_neutral
+					title = manifest_lifeforce_minor_failure_tt
+					left_icon = root
+				}
+			}
+
+			# Critical Failure Recoil
+			15 = {
+				desc = manifest_lifeforce_major_failure_tt
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -0.3
+				}
+				send_interface_toast = {
+					type = event_toast_effect_bad
+					title = manifest_lifeforce_major_failure_tt
+					left_icon = root
+					temporary_negative_lifeforce_effect_minor = yes
+				}
+			}
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				piety < 250
+				add = 100
+			}
+		}
+	}
+
+	# Tier 2: 250 Piety (Focused Communion)
+	option = {
+		name = bm_manifest_lifeforce.0001.tier2
+		trigger = {
+			piety >= 250
+		}
+		add_piety = -250
+		add_shared_bm_bk_xp = {
+			TRACK = enlightenment
+			XP = 5
+		}
+		duel = {
+			skill = learning
+			value = 0
+
+			# Major Lifeforce
+			30 = {
+				desc = manifest_lifeforce_major_success_tt
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 1.8
+				}
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = manifest_lifeforce_major_success_tt
+					left_icon = root
+					add_character_modifier = { modifier = lifeforce_modifier_major }
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+
+			# Minor Lifeforce
+			60 = {
+				desc = manifest_lifeforce_minor_success_tt
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 0.8
+				}
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = manifest_lifeforce_minor_success_tt
+					left_icon = root
+					add_character_modifier = { modifier = lifeforce_modifier_minor }
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+
+			# Minor Failure
+			15 = {
+				desc = manifest_lifeforce_minor_failure_tt
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -0.4
+				}
+				send_interface_toast = {
+					type = event_toast_effect_neutral
+					title = manifest_lifeforce_minor_failure_tt
+					left_icon = root
+				}
+			}
+		}
+		ai_chance = {
+			base = 30
+			modifier = {
+				piety >= 250
+				piety < 500
+				add = 100
+			}
+		}
+	}
+
+	# Tier 3: 500 Piety (Profound Crucible)
+	option = {
+		name = bm_manifest_lifeforce.0001.tier3
+		trigger = {
+			piety >= 500
+		}
+		add_piety = -500
+		add_shared_bm_bk_xp = {
+			TRACK = enlightenment
+			XP = 8
+		}
+		duel = {
+			skill = learning
+			value = 0
+
+			# Tiny chance of Superior Lifeforce
+			2 = {
+				desc = manifest_lifeforce_superior_success_tt
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 0.4
+				}
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = manifest_lifeforce_superior_success_tt
+					left_icon = root
+					add_character_modifier = { modifier = lifeforce_modifier_superior }
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+
+			# Dominant Major Lifeforce
+			60 = {
+				desc = manifest_lifeforce_major_success_tt
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 1.5
+				}
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = manifest_lifeforce_major_success_tt
+					left_icon = root
+					add_character_modifier = { modifier = lifeforce_modifier_major }
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+
+			# Guaranteed Minor Lifeforce Baseline Floor (0% failure)
+			35 = {
+				desc = manifest_lifeforce_minor_success_tt
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 0.0
+				}
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = manifest_lifeforce_minor_success_tt
+					left_icon = root
+					add_character_modifier = { modifier = lifeforce_modifier_minor }
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+		}
+		ai_chance = {
+			base = 20
+			modifier = {
+				piety >= 500
+				piety < 1000
+				add = 100
+			}
+		}
+	}
+
+	# Tier 4: 1000 Piety (Transcendent Epiphany)
+	option = {
+		name = bm_manifest_lifeforce.0001.tier4
+		trigger = {
+			piety >= 1000
+		}
+		add_piety = -1000
+		add_shared_bm_bk_xp = {
+			TRACK = enlightenment
+			XP = 12
+		}
+		duel = {
+			skill = learning
+			value = 0
+
+			# Superior Lifeforce Peak
+			20 = {
+				desc = manifest_lifeforce_superior_success_tt
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 1.5
+				}
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = manifest_lifeforce_superior_success_tt
+					left_icon = root
+					add_character_modifier = { modifier = lifeforce_modifier_superior }
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+
+			# Guaranteed Major Lifeforce Floor (0% minor, 0% failure)
+			80 = {
+				desc = manifest_lifeforce_major_success_tt
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 0.5
+				}
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = manifest_lifeforce_major_success_tt
+					left_icon = root
+					add_character_modifier = { modifier = lifeforce_modifier_major }
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				piety >= 1200
+				add = 150
+			}
+		}
+	}
+
+	# Step back / cancel
+	option = {
+		name = bm_manifest_lifeforce.0001.cancel
+		trigger = {
+			is_ai = no
+		}
+	}
+}
