@@ -1,7 +1,13 @@
 ﻿l_english:
   # Give blood magic
   grant_blood_magic_interaction: "Make Them a Blood Mage"
-  grant_blood_magic_interaction_desc: "Infuse [recipient.GetShortUINameNoTooltip] with [GetModifier('lifeforce_modifier_superior').GetNameWithTooltip], bestowing the Blood Mage lifestyle trait."
+  grant_blood_magic_interaction_desc: "Awaken the supernatural Blood Mage lifestyle trait within [recipient.GetShortUINameNoTooltip]."
+  grant_blood_magic_interaction.minor: "Arcane Blood Oath (Minor Lifeforce)"
+  grant_blood_magic_interaction.minor_desc: "Initiate [recipient.GetShortUINameNoTooltip] with [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] and 250 [piety|E]."
+  grant_blood_magic_interaction.major: "Blood Brotherhood Rite (Major Lifeforce)"
+  grant_blood_magic_interaction.major_desc: "Initiate [recipient.GetShortUINameNoTooltip] with [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and 100 [piety|E]."
+  grant_blood_magic_interaction_requirement: "You must possess either [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and 100 [piety|E], or [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] and 250 [piety|E]"
+  NOT_grant_blood_magic_interaction_requirement: "You must possess either [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and 100 [piety|E], or [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] and 250 [piety|E]"
 
   # Ask for blood magic
   ask_for_blood_magic_interaction: "Ask for Blood Magic"
@@ -41,14 +47,12 @@
   recipient_must_be_knight_tt: "[recipient.GetShortUIName] is serving as your [knight|E]"
   NOT_recipient_must_be_knight_tt: "[recipient.GetShortUIName] is not serving as your [knight|E]"
   NOT_IS_A_KNIGHT_OF_CHARACTER_TRIGGER: "Does not serve as a [knight|E] for [CHARACTER.GetShortUIName|U]"
-  make_blood_knight_interaction.mage: "Arcane Blood Infusion"
-  make_blood_knight_interaction.mage_desc: "Perform an arcane transmutation using [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and 100 [piety|E]."
   make_blood_knight_interaction.knight_minor: "Martial Blood Oath (Minor Lifeforce)"
-  make_blood_knight_interaction.knight_minor_desc: "Bind your sworn knight with martial renown (200 [prestige|E]) and [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip]."
+  make_blood_knight_interaction.knight_minor_desc: "Bind your sworn knight with [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] and 250 [piety|E]."
   make_blood_knight_interaction.knight_major: "Blood Brotherhood Rite (Major Lifeforce)"
-  make_blood_knight_interaction.knight_major_desc: "Infuse your sworn knight with condensed [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] without expending prestige."
-  make_blood_knight_interaction_knight_requirement: "You must possess either [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] and 200 [prestige|E], or [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]"
-  NOT_make_blood_knight_interaction_knight_requirement: "You must possess either [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] and 200 [prestige|E], or [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]"
+  make_blood_knight_interaction.knight_major_desc: "Infuse your sworn knight with [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and 100 [piety|E]."
+  make_blood_knight_interaction_knight_requirement: "You must possess either [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and 100 [piety|E], or [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] and 250 [piety|E]"
+  NOT_make_blood_knight_interaction_knight_requirement: "You must possess either [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and 100 [piety|E], or [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] and 250 [piety|E]"
   empower_blood_knight_interaction: "Empower Blood Knight"
   empower_blood_knight_interaction_desc: "Channel supernatural lifeforce into [recipient.GetShortUINameNoTooltip] to strengthen their martial tracks."
   empower_blood_knight_interaction.major: "Major Lifeforce (+10 XP to all tracks)"

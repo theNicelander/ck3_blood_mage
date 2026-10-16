@@ -7,25 +7,97 @@
 
     is_highlighted = { always = yes }
 
+    cost = {
+        piety = {
+            if = {
+                limit = { scope:mage_major_initiation = yes }
+                value = bm_initiation_major_piety_cost
+            }
+            if = {
+                limit = { scope:mage_minor_initiation = yes }
+                value = bm_initiation_minor_piety_cost
+            }
+        }
+    }
+
     is_shown = {
         NOT = { scope:actor = scope:recipient }
         scope:actor = { has_trait = lifestyle_blood_mage }
-        scope:recipient = { NOT = { has_trait = lifestyle_blood_mage } }
+        scope:recipient = {
+            NOT = { has_trait = lifestyle_blood_mage }
+            NOT = { has_trait = lifestyle_blood_knight }
+        }
     }
     is_valid_showing_failures_only = {
-        scope:actor = { has_character_modifier = lifeforce_modifier_superior }
+        custom_description = {
+            text = grant_blood_magic_interaction_requirement
+            scope:actor = {
+                OR = {
+                    AND = {
+                        has_character_modifier = lifeforce_modifier_minor
+                        piety >= bm_initiation_minor_piety_cost
+                    }
+                    AND = {
+                        has_character_modifier = lifeforce_modifier_major
+                        piety >= bm_initiation_major_piety_cost
+                    }
+                }
+            }
+        }
+    }
+
+    send_options_exclusive = yes
+
+    send_option = {
+        flag = mage_minor_initiation
+        localization = grant_blood_magic_interaction.minor
+        current_description = grant_blood_magic_interaction.minor_desc
+        is_shown = {
+            always = yes
+        }
+        is_valid = {
+            scope:actor = {
+                has_character_modifier = lifeforce_modifier_minor
+                piety >= bm_initiation_minor_piety_cost
+            }
+        }
+        starts_enabled = {
+            scope:actor = {
+                has_character_modifier = lifeforce_modifier_minor
+                piety >= bm_initiation_minor_piety_cost
+                OR = {
+                    NOT = { has_character_modifier = lifeforce_modifier_major }
+                    piety < bm_initiation_major_piety_cost
+                }
+            }
+        }
+    }
+
+    send_option = {
+        flag = mage_major_initiation
+        localization = grant_blood_magic_interaction.major
+        current_description = grant_blood_magic_interaction.major_desc
+        is_shown = {
+            always = yes
+        }
+        is_valid = {
+            scope:actor = {
+                has_character_modifier = lifeforce_modifier_major
+                piety >= bm_initiation_major_piety_cost
+            }
+        }
+        starts_enabled = {
+            scope:actor = {
+                has_character_modifier = lifeforce_modifier_major
+                piety >= bm_initiation_major_piety_cost
+            }
+        }
     }
 
     on_accept = {
         debug_log = "BloodMageInteraction: grant_blood_magic | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
         scope:recipient = {
-            if = {
-                limit = { has_trait = lifestyle_blood_knight }
-                bm_elevate_blood_knight_to_blood_mage_effect = yes
-            }
-            else = {
-                bm_become_blood_mage_effect = yes
-            }
+            bm_become_blood_mage_effect = yes
             add_opinion = {
                 target = scope:actor
                 modifier = magic_opinion_positive
@@ -33,25 +105,36 @@
             }
         }
         scope:actor = {
-            remove_character_modifier = lifeforce_modifier_superior
             if = {
-                limit = {
-                    scope:recipient = {
-                        OR = {
-                            is_child_of = scope:actor
-                            dynasty ?= scope:actor.dynasty
-                        }
-                    }
-                }
+                limit = { scope:mage_minor_initiation = yes }
+                remove_character_modifier = lifeforce_modifier_minor
                 add_xp_bm_dynamic = {
                     TRACK = bloodline
-                    XP = 5
+                    XP = 2
                 }
             }
-            else = {
-                add_xp_bm_dynamic = {
-                    TRACK = bloodline
-                    XP = 4
+            else_if = {
+                limit = { scope:mage_major_initiation = yes }
+                remove_character_modifier = lifeforce_modifier_major
+                if = {
+                    limit = {
+                        scope:recipient = {
+                            OR = {
+                                is_child_of = scope:actor
+                                dynasty ?= scope:actor.dynasty
+                            }
+                        }
+                    }
+                    add_xp_bm_dynamic = {
+                        TRACK = bloodline
+                        XP = 5
+                    }
+                }
+                else = {
+                    add_xp_bm_dynamic = {
+                        TRACK = bloodline
+                        XP = 4
+                    }
                 }
             }
         }

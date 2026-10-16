@@ -418,8 +418,8 @@ bm_geyser_duel.0001 = {
 			NOT = { has_trait = lifestyle_blood_mage }
 			NOT = { has_trait = lifestyle_blood_knight }
 			OR = {
-				has_character_flag = bm_geyser_paid_prestige
-				prestige_level >= 2
+				has_character_flag = bm_geyser_paid_piety
+				piety_level >= 2
 			}
 		}
 		show_as_unavailable = {
@@ -427,9 +427,9 @@ bm_geyser_duel.0001 = {
 		}
 
 		if = {
-			limit = { NOT = { has_character_flag = bm_geyser_paid_prestige } }
-			add_prestige_level = -1
-			add_character_flag = bm_geyser_paid_prestige
+			limit = { NOT = { has_character_flag = bm_geyser_paid_piety } }
+			add_piety_level = -1
+			add_character_flag = bm_geyser_paid_piety
 		}
 
 		duel = {

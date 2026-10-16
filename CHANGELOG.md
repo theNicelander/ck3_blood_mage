@@ -4,6 +4,7 @@
 
 Always reflects current branch state. Simple line per PR merge. Superseded changes folded, reverts dropped. Caveman style. Reverse chronological: latest changes at top.
 
+- Blood Knight parallel Devotion peer: mutually exclusive permanent choice, Devotion scaling on vanguard/slaughter, Level 8 Devotion capstone unlocks (+1 max piety level), piety impact multipliers on runes and empowerment, symmetric initiation costs, and shared Superior Blood Magic access.
 - Fix error log issues: resolve trigger localization missing perspective on Blood Knight elevation decision, restore UTF-8 BOM on scripted triggers, and standardize education event portrait order.
 - Demote faltering_heart healing to major magic so Blood Knights can heal all old age ailments.
 - Add 'You can heal someone' Current Situation warning for Blood Mages and Blood Knights targeting self, family, lovers, friends, liege, councillors, and knights.

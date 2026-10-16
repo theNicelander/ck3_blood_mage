@@ -624,7 +624,10 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.wounded_3
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				has_trait = lifestyle_blood_mage
+				has_trait = lifestyle_blood_knight
+			}
 			scope:recipient = { has_trait = wounded_3 }
 			has_character_modifier = lifeforce_modifier_minor
 			has_character_modifier = lifeforce_modifier_major
@@ -646,7 +649,10 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.sickly
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				has_trait = lifestyle_blood_mage
+				has_trait = lifestyle_blood_knight
+			}
 			scope:recipient = { has_trait = sickly }
 			has_character_modifier = lifeforce_modifier_minor
 			has_character_modifier = lifeforce_modifier_major
@@ -668,7 +674,10 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.great_pox
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				has_trait = lifestyle_blood_mage
+				has_trait = lifestyle_blood_knight
+			}
 			scope:recipient = { has_trait = great_pox }
 			has_character_modifier = lifeforce_modifier_minor
 			has_character_modifier = lifeforce_modifier_major
@@ -690,7 +699,10 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.cancer
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				has_trait = lifestyle_blood_mage
+				has_trait = lifestyle_blood_knight
+			}
 			scope:recipient = { has_trait = cancer }
 			has_character_modifier = lifeforce_modifier_minor
 			has_character_modifier = lifeforce_modifier_major
@@ -712,7 +724,10 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.bubonic_plague
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				has_trait = lifestyle_blood_mage
+				has_trait = lifestyle_blood_knight
+			}
 			scope:recipient = { has_trait = bubonic_plague }
 			has_character_modifier = lifeforce_modifier_minor
 			has_character_modifier = lifeforce_modifier_major
@@ -734,7 +749,10 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.smallpox
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				has_trait = lifestyle_blood_mage
+				has_trait = lifestyle_blood_knight
+			}
 			scope:recipient = { has_trait = smallpox }
 			has_character_modifier = lifeforce_modifier_minor
 			has_character_modifier = lifeforce_modifier_major
@@ -756,7 +774,10 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.leper
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				has_trait = lifestyle_blood_mage
+				has_trait = lifestyle_blood_knight
+			}
 			scope:recipient = { has_trait = leper }
 			has_character_modifier = lifeforce_modifier_minor
 			has_character_modifier = lifeforce_modifier_major
@@ -778,7 +799,10 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.impotent
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				has_trait = lifestyle_blood_mage
+				has_trait = lifestyle_blood_knight
+			}
 			scope:recipient = { has_trait = impotent }
 			has_character_modifier = lifeforce_modifier_minor
 			has_character_modifier = lifeforce_modifier_major
@@ -800,7 +824,10 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.dysentery
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				has_trait = lifestyle_blood_mage
+				has_trait = lifestyle_blood_knight
+			}
 			scope:recipient = { has_trait = dysentery }
 			has_character_modifier = lifeforce_modifier_minor
 			has_character_modifier = lifeforce_modifier_major
@@ -822,7 +849,10 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.ergotism
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				has_trait = lifestyle_blood_mage
+				has_trait = lifestyle_blood_knight
+			}
 			scope:recipient = { has_trait = ergotism }
 			has_character_modifier = lifeforce_modifier_minor
 			has_character_modifier = lifeforce_modifier_major
@@ -844,7 +874,10 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.disfigured
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				has_trait = lifestyle_blood_mage
+				has_trait = lifestyle_blood_knight
+			}
 			scope:recipient = { has_trait = disfigured }
 			has_character_modifier = lifeforce_modifier_minor
 			has_character_modifier = lifeforce_modifier_major
@@ -866,7 +899,10 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.one_legged
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				has_trait = lifestyle_blood_mage
+				has_trait = lifestyle_blood_knight
+			}
 			scope:recipient = { has_trait = one_legged }
 			has_character_modifier = lifeforce_modifier_minor
 			has_character_modifier = lifeforce_modifier_major
