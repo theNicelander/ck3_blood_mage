@@ -33,7 +33,7 @@ Active rules: `ck3-scripting.md` (always on), `ck3-localization.md` (always on),
 - `docs-ai/architecture/`: one doc per subsystem (e.g. `blood-mage-story.md`), always describing the **current state of the mod** and nothing else: no history, changelog or decision log. **Read the matching doc before changing that part of the codebase, and update it in the same change so it stays true.** Add a doc when you introduce a subsystem, and delete or rewrite text that is no longer true. High-density technical specs (costs, requirements, XP, benefits, tables; zero roleplay fluff). See `docs-ai/architecture/AGENTS.md`.
 - `docs-ai/ideas/`: brainstorms, proposals, and roadmaps. Speculative; do not treat as current game state.
 - `docs-ai/branch-context/`: branch and PR working state, trade-offs, and decision records.
-- `CHANGELOG.md`: living changelog representing current branch net state since 1.20 (one line per PR merge, caveman style, reverse chronological: latest changes at top).
+- `CHANGELOG.md`: living changelog with one line per branch version matching the branch name (e.g. `* v1.20.40: <short description>`), caveman style, reverse chronological: latest changes at top.
 - Religion uses the 1.20 layout `common/religion/{religion_family_types,religion_types,faith_types,rite_types,holy_site_types,doctrine_group_types,doctrine_types}`. Branches based on older `main` may still have `religions/`, `religion_families/`, `holy_sites/` and a bare `add_trait = lifestyle_blood_mage`. **Check which layout the branch has. Never mix them.**
 
 ## Naming
@@ -80,5 +80,5 @@ See `.agents/rules/ck3-localization.md` (english only, sibling keys, loc documen
 2. Smallest change that works. Check existing identifiers with `grep -rn`.
 3. Use the matching skill for the task (`add-blood-magic-decision`, `add-faith`, `add-trait-track`, `add-game-rule`).
 4. Update matching architecture doc in `docs-ai/architecture/` in the same change so it stays true to current state.
-5. Update `CHANGELOG.md`: living document, one line per PR merge, caveman style, net branch status only (fold superseded changes, drop reverts). Always prepend latest changes at the top, not bottom (reverse chronological: latest PR at the top).
+5. Update `CHANGELOG.md`: living document, prepend single-line short high-level description matching current branch name (e.g. `* v1.20.40: <short description>`), caveman style, net branch status only (fold superseded changes, drop reverts). Reverse chronological: latest changes at top.
 6. Run `python3 scripts/check_repo.py`. State in the final summary what you could not verify.

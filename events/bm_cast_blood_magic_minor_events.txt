@@ -272,12 +272,31 @@ bm_cast_blood_magic_minor.001 = {
 			years = 5
 		}
 		blood_magic_used_minor = yes
+		save_scope_as = rune_target
+		trigger_event = { id = bm_blood_runes.001 }
 		ai_chance = {
 			base = 100
 			modifier = {
 				health <= fine_health
 				add = -100
 			}
+		}
+	}
+
+	# Flay Minor Blood Rune (Swap Rite)
+	option = {
+		name = bm_cast_blood_magic_minor.001.flay_rune
+		trigger = {
+			has_character_modifier = minor_blood_rune_modifier
+			piety >= 250
+			has_character_modifier = lifeforce_modifier_minor
+		}
+		show_as_unavailable = {
+			has_character_modifier = minor_blood_rune_modifier
+		}
+		trigger_event = { id = bm_blood_runes.002 }
+		ai_chance = {
+			base = 0
 		}
 	}
 

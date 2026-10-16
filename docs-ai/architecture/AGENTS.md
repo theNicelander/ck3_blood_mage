@@ -4,13 +4,16 @@ This folder holds one doc per subsystem of the Blood Mages mod. They explain **w
 
 They describe the **current state of the mod and nothing else**. No history, no changelog, no decision log, no "previously" or "now". When something changes, rewrite the text so it is true today. Branch and PR history belongs in `docs-ai/branch-context/`.
 
-## The rule: Caveman-Style Technical Reference
+## The rule: High-Density Technical Reference (Human & AI Brainstorming Ready)
 
-Write high-density, concise technical documentation. Zero fluff, zero roleplay prose. Both humans and LLMs need direct facts: what it is, how to get it, exact costs, requirements, cooldowns, XP gains, and benefits.
+Write concise, scannable technical documentation with zero roleplay prose. These documents serve two audiences simultaneously:
+1. **Humans & Coding Agents:** Need scannable executive summaries, compact tables, exact identifiers, and zero fluff.
+2. **AI Brainstorming (e.g. Gemini NotebookLM):** Needs to understand *what each subsystem is for*, *how subsystems interlock*, and *complete mechanical numbers* (costs, cooldowns, duel math, scaling brackets, XP yields, and synergies) to reason about balance and design new features.
 
 - **Do write direct specs:** State `Cost`, `Cooldown`, `Req`, `XP Gain`, and `Benefits` explicitly.
-- **Do write dense summaries:** Use bullet points and compact markdown tables. Strip storytelling, creative lore metaphors, and conversational filler.
-- **Track & step summaries:** For multi-tier tracks (e.g. 10 levels of 10 XP), state the repeating base step bonus once and highlight milestones (e.g. levels 50 and 100) instead of copy-pasting identical rows.
+- **Do include complete mechanical tables:** Never leave a subsystem vague ("shapes traits via duels"); include the compact table of traits, costs, brackets, and outcomes so an AI or human has the full picture without reading raw script.
+- **Do explain system synergies:** Briefly state how the subsystem connects to Lifeforce, Devotion levels, Track XP, Blood Runes, or Class differences (Blood Mage vs. Blood Knight).
+- **Track & step summaries:** For multi-tier tracks (e.g. 10 levels of 10 XP), state the repeating base step bonus once and highlight cumulative milestones (10 / 50 / 100 XP) instead of copy-pasting 10 identical rows.
 
 | Verbose / Fluffy (Banned) | Caveman Style (Required) |
 | --- | --- |

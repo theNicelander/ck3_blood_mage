@@ -1,48 +1,80 @@
-# Blood Duels and Education Enhancement
+# Blood Duels, Trait Acquisition, and Education Enhancement
+
+Living technical specification for contested skill duels, initiation trials, ex-nihilo congenital trait manifestation, prisoner trait theft, education mastery, and mass dungeon execution.
 
 ## Executive Summary
 
-- **What:** Contested skill duels for initiation, trait theft from prisoners, education upgrades, and mass dungeon execution.
-- **Duel Formula:** Uses CK3 skill duel system. Caster attribute compared against defender attribute. Delta scales victory weight.
+- **What:** Contested skill duel subsystems governing how characters awaken to blood magic, forge or steal congenital traits (up to Rank 5), ascend education traits (1★ to 5★ + secondary education), and harvest Lifeforce in single combat or mass executions.
+- **Shared Access:** All rites and duels below are accessible to both **Blood Mages** (`lifestyle_blood_mage`) and **Blood Knights** (`lifestyle_blood_knight`).
 
-### Duels & Education Master Table
+### Duels & Self-Advancement Master Table
 
-| Ritual / Action | Type | Trigger / File | Cost & Req | Opponent / Skill | Outcome |
-| **Geyser Initiation** | Decision | `bm_blood_cultist_become_blood_mage_decision` / `bm_enhance_blood_ritual_decision` -> `bm_geyser_duel.0001` | Piety or Prestige level >= 2. In Reykjavik or Tsushima. Candidate must lack Blood Mage and Blood Knight. No cooldown; back out freely (0 cost). Both duel options visible: Learning duel requires Piety level >= 2 and costs 1 Devotion level; Prowess duel requires Prestige level >= 2 and costs 1 Fame level. | Egill Skallagrímsson (Blood Mage & Blood Knight; 100 years old, 50 XP in all tracks, 10 Lifeforce; Learning 20, Martial 18, Prowess 30). Scaled duels: Learning target 20 (10->25%, 20->50%, 30->75%, 40->90% cap); Prowess target 30 (15->25%, 30->50%, 45->75%, 60->90% cap). | Win Learning: `lifestyle_blood_mage`. Win Prowess: `lifestyle_blood_knight`. Lose: wound (capped at wounded_2 / rank 2; never rank 3 or maimed), stress, or mental/physical trauma. Retries on failure without paying level again, or allows backing out. |
-| **Trait Theft** | Interaction | `trait_drain_prisoner_event_interaction` -> `bm_trait_drain.001` | Piety. Prisoner has positive congenital trait caster lacks. | Prisoner (Prowess/Learning) | Win: Steals trait from captive. Captive drained. Lose: Backlash modifier. |
-| **Upgrade Education (1★–4★)** | Decision | `bm_cast_blood_magic_major_decision` -> `bm_education_enhance.txt` | Scaled piety + Major Lifeforce. CD: 2 yrs. | Mental duel (Learning) | Win: Upgrades education star tier up to tier 4. Lose: Backlash modifier. |
-| **Master Education (5★)** | Decision | `bm_cast_blood_magic_superior_decision` -> `bm_education_master_events.txt` | Scaled piety + Superior Lifeforce. CD: 2 yrs. | Mental duel (Discipline skill) | Win: Upgrades 4-star to legendary 5-star tier. Lose: Superior backlash. |
-| **New Education** | Decision | `bm_cast_blood_magic_superior_decision` -> `bm_education_new.txt` | 1000 piety + Superior Lifeforce. CD: 2 yrs. | Self-ritual | Grants an additional, secondary education trait at tier 1. |
-| **Single Combat Duel** | Combat On-Action | `bm_on_character_death_duel` in `common/on_action/bm_duel_on_actions.txt` | Lethal single combat kill. Killer is Blood Knight. | Battlefield / Duel Opponent | Win: +5 `slaughter` XP and grants 1 Major Lifeforce (strictly exclusive to Blood Knights). |
-| **Mass Lifedrain** | Decision | `bm_mass_lifedrain_prisoners` -> `bm_mass_lifedrain.txt` | Piety per prisoner. Dungeon has prisoners. | Uncontested execution | Kills prisoners (`death_lifedrain_reason`). Awards Lifeforce + hematurgy XP. Standard tyranny/kinslaying rules apply. |
+| Ritual / Action | Interface / File | Cost & Cooldown | Requirements | Duel Skill & DC | Win Outcome | Failure Outcome |
+| --- | --- | --- | --- | --- | --- | --- |
+| **Geyser Initiation Duel** | `bm_blood_cultist_become_blood_mage_decision` / `bm_enhance_blood_ritual_decision` -> `bm_geyser_duel.0001` | **1 Devotion Level** (`add_piety_level = -1`) paid on duel choice. Free back-out; no CD. | Non-mage, non-knight, `piety_level >= 2`, located in Reykjavik (`b_reykjavik`) or Tsushima (`c_tsushima`). | vs. **Egill Skallagrímsson** (Learning 20 for Blood Mage; Prowess 30 for Blood Knight). | Bestows `lifestyle_blood_mage` (Learning) or `lifestyle_blood_knight` (Prowess). | Injury (strictly capped at `wounded_2`), stress, or trauma. Can retry without paying level again or back out. |
+| **Manifest Perfection (Ranks 1–2)** | Major Grimoire (`bm_cast_blood_magic_major.001` -> `bm_channel_manifest_traits.001`) | `200–600` Piety + Major Lifeforce. CD: 5 yrs (`bm_manifest_traits_cooldown`). | `piety_level >= 2`, target branch below Rank 2. | Learning duel (`value = 15`) + Learning traits + XP bonus. | Steps target congenital branch (`intellect`, `physique`, `beauty`) up by 1 tier (cleanses bad or adds Rank 1/2). `+4` `bloodline` / `vanguard` XP. | Standard fail: 3-yr Major exhaustion. Crit fail: wound increase + 50 Stress + 3-yr Major exhaustion. |
+| **Manifest Apex Perfection (Ranks 3–5)** | Superior Grimoire (`bm_cast_blood_magic_superior.001` -> `bm_channel_manifest_traits.002`) | `1000–1500` Piety + Superior Lifeforce. CD: 5 yrs (`bm_manifest_traits_cooldown`). | `piety_level >= 3`, holds Rank 2–4 in target branch. | Learning duel (`value = 25`) + Learning traits + XP bonus. | Steps congenital branch up to Rank 3 (`genius`/`herculean`/`beautiful`) or Ranks 4–5 (overhaul compat). `+6` `bloodline`/`vanguard` + `+2` `enlightenment` XP. | Standard fail: 3-yr Superior exhaustion + 35 Stress. Crit fail: wound increase + 75 Stress + 3-yr Superior exhaustion. |
+| **Prisoner Trait Theft (Ranks 1–5)** | Interaction `trait_drain_prisoner_event_interaction` -> `bm_trait_drain.001` | `100–325` Piety + Major Lifeforce. CD: 60d (15d with Superior Hulinhjálmur). | Prisoner has congenital trait caster lacks (`intellect`/`physique`/`beauty` 1–5, `fecund`, `giant`, `pure_blooded`). | Learning duel vs. Prisoner, scaled by trait rank penalty & total XP. | Steals congenital trait; executes prisoner (`death_lifedrain_reason`). `+2` `hematurgy` (Mage) / `+2` `slaughter` (Knight) XP. | Target survives with `trait_drain_attempted`; caster suffers Major exhaustion backlash. |
+| **Improve Education (1★ -> 4★)** | Major Grimoire (`bm_cast_blood_magic_major.001` -> `bm_education_enhancement.001`) | `75–200` Piety + Major Lifeforce. CD: 2 yrs (`bm_improve_education_cooldown`). | `piety_level >= 3`, holds any 1★–3★ education trait. | Mental Learning duel (`bm_education_duel_effect`). | Upgrades selected education by `+1★` (up to 4★). `+5` `enlightenment` XP. | 3-yr Major exhaustion backlash (`+5` `enlightenment` XP still awarded on attempt). |
+| **Master Education (4★ -> 5★)** | Superior Grimoire (`bm_cast_blood_magic_superior.001` -> `bm_education_master.001`) | `350` Piety + Superior Lifeforce. CD: 2 yrs (`bm_improve_education_cooldown`). | `piety_level >= 3`, holds a 4★ education trait. | Mental duel in matching discipline skill. | Upgrades 4★ education to legendary 5★ tier. `+20` total `enlightenment` XP (`+10` cast + `+10` win). | 3-yr Superior exhaustion backlash (`+10` `enlightenment` XP on attempt). |
+| **Embrace New Education (2nd Trait)** | Superior Grimoire (`bm_cast_blood_magic_superior.001` -> `bm_education_new.001`) | `1000` Piety + Superior Lifeforce. CD: 2 yrs (`bm_new_education_cooldown`). | `piety_level >= 4`, holds a 5★ education and no 1★–4★ secondary education. | Uncontested self-ritual. | Grants a secondary 1★ education trait in a chosen discipline (can then be leveled to 5★). `+10` `enlightenment` XP. | None (uncontested). |
+| **Single Combat Fatality** | On-action `bm_on_character_death_duel` | Passive combat hook. | Killer has `lifestyle_blood_knight` or Superior **Ægishjálmur** (`bm_rune_aegishjalmur_superior`). | Vanilla Single Combat Engine (SCE) lethal kill. | `+5` `slaughter` XP (Knight) + **1 Major Lifeforce**. **25% chance of 1 Superior Lifeforce** if victim had `prowess >= 35` or blood mage/knight trait. | — |
+| **Mass Lifedrain Prisoners** | Decision `mass_lifedrain_prisoners_decision` -> `bm_mass_lifedrain.001` | Piety per prisoner. No CD. | Has dungeon prisoners. | Uncontested batch execution. | Executes all prisoners (or spares those with good congenital traits), harvesting Lifeforce & `hematurgy` XP (+25g/victim with Superior Nábrókarstafur). | Applies standard vanilla tyranny & kinslaying penalties if prisoners lack execution reasons. |
 
-## Key Mechanics
+---
 
-- **Trait Theft Scaling:** Easier as caster gains total blood mage XP (`trait_drain_easier_with_xp`). Harder against higher-tier traits (`trait_drain_harder_per_trait_modifier`).
-- **Education Gating:**
-  - Upgrade 1->2, 2->3, 3->4: Managed in Major Blood Magic (`bm_cast_blood_magic_major_decision` -> `bm_education_enhance.txt`). Scaled Piety, 2-year cooldown flag (`bm_improve_education_cooldown`), Major Lifeforce consumption, and +5 Enlightenment XP are deducted upon selecting an education to enhance. Characters can back out freely to the Grimoire (`bm_cast_blood_magic_major.001`) with zero cost or cooldown.
-  - Upgrade 4->5 (Mastery): Gated behind Superior Blood Magic (`bm_cast_blood_magic_superior_decision` -> `bm_education_master_events.txt`) requiring Superior Lifeforce and a 4★ trait. Deductions applied upon selecting a mastery discipline; characters can back out freely to the Superior Grimoire (`bm_cast_blood_magic_superior.001`).
-  - Second Education: Requires at least one 5-star education and Superior Lifeforce (`bm_education_new.txt`). Costs (1,000 piety, cooldown, Lifeforce) charged upon discipline selection; characters can back out freely to the Superior Grimoire.
-- **Mass Execution:** Options to drain all prisoners or preserve prisoners with positive congenital traits.
+## Detailed Subsystem Mechanics
+
+### 1. Geyser Initiation Duel vs. Egill Skallagrímsson (`bm_geyser_duel.0001`)
+- **Opponent Profile:** Historical/occult master Egill Skallagrímsson (100 years old, holds both `lifestyle_blood_mage` and `lifestyle_blood_knight`, 50 XP across all tracks, Learning 20, Martial 18, Prowess 30).
+- **Win Probability Brackets:**
+  - **Learning Duel (Blood Mage, Target 20):** Learning 10 -> 25% win; Learning 20 -> 50% win; Learning 30 -> 75% win; Learning 40+ -> 90% cap.
+  - **Prowess Duel (Blood Knight, Target 30):** Prowess 15 -> 25% win; Prowess 30 -> 50% win; Prowess 45 -> 75% win; Prowess 60+ -> 90% cap.
+- **Safety Cap:** Injuries on defeat are strictly capped at `wounded_2` (never inflicts `wounded_3` or `maimed`).
+
+### 2. Ex-Nihilo Congenital Trait Manifestation (`bm_manifest_traits_values.txt`)
+Allows characters to cleanse congenital flaws and ascend `intellect`, `physique`, and `beauty` lines without relying on prisoner RNG:
+
+| Current Trait State | Target Step | Grimoire Tier | Piety Cost | Lifeforce Cost | Duel Base Success / Fail / Crit Fail Weights |
+| --- | --- | --- | --- | --- | --- |
+| `*_bad_3` -> `*_bad_2` | Cleanse Bad 3 | Major | `200` Piety | 1 Major | Success `10 + 2×(Learning - 15)` + bonuses; Fail `50`; Crit Fail `10` |
+| `*_bad_2` -> `*_bad_1` | Cleanse Bad 2 | Major | `250` Piety | 1 Major | Same as above |
+| `*_bad_1` -> None | Cleanse Bad 1 | Major | `300` Piety | 1 Major | Same as above |
+| None -> `*_good_1` | Rank 1 (Quick / Hale / Comely) | Major | `450` Piety | 1 Major | Same as above (`+15` tier bonus) |
+| `*_good_1` -> `*_good_2` | Rank 2 (Intelligent / Robust / Handsome) | Major | `600` Piety | 1 Major | Same as above (`+15` failure weight) |
+| `*_good_2` -> `*_good_3` | Rank 3 (Genius / Herculean / Beautiful) | Superior | `1000` Piety | 1 Superior | DC 25 (`value = 25`), Fail `65 + 30`, Crit Fail `15` |
+| `*_good_3` -> Rank 4 | Rank 4 (Overhaul 5-tier compat) | Superior | `1250` Piety | 1 Superior | DC 25 (`value = 25`), Fail `65 + 45`, Crit Fail `15` |
+| Rank 4 -> Rank 5 | Rank 5 (Overhaul 5-tier compat) | Superior | `1500` Piety | 1 Superior | DC 25 (`value = 25`), Fail `65 + 60`, Crit Fail `15` |
+
+- **Duel Modifiers:**
+  - **Learning Traits Bonus (`bm_manifest_traits_learning_traits_bonus`):** `+5` to `+25` from Learning education (`1★` to `5★`), `+15` Scholar, `+10` Theologian, `+10` Mystic.
+  - **Track XP Bonus (`bm_manifest_traits_xp_bonus`):** Scales with caster's total Blood Mage / Blood Knight XP.
+  - **Existing Congenital Traits Penalty (`bm_manifest_traits_existing_traits_penalty`):** Increases failure and critical failure weights for each positive congenital tier already held across all branches, preventing effortless omnipotent stacking.
+
+### 3. Prisoner Trait Theft Duel Math (`bm_drain_duel_values.txt`)
+- **Net Caster Modifier (`trait_drain_modifier`):**
+  $$\text{Modifier} = \text{Total Blood Mage/Knight XP} - \text{Prisoner Trait Penalty}$$
+- **Prisoner Trait Penalty (`trait_drain_harder_per_trait_modifier`):**
+  - Rank 1 (`intellect_good_1`, `physique_good_1`, `beauty_good_1`, `fecund`, `giant`, `pure_blooded`): `-30` per trait.
+  - Rank 2 (`intellect_good_2`, `physique_good_2`, `beauty_good_2`): `-60` per trait.
+  - Ranks 3–5 (`intellect_good_3..5`, `physique_good_3..5`, `beauty_good_3..5`): `-100` per trait.
+
+### 4. Education Enhancement & Mastery Costs (`bm_education_enhancement_piety_cost.txt`)
+- **Formula (`scaled_education_enhancement_cost`):** Base `50` Piety + sum of surcharges across all education traits currently held by the character:
+  - Holds 1★ trait: `+25` Piety (`75` Piety total for single education).
+  - Holds 2★ trait: `+75` Piety (`125` Piety total for single education).
+  - Holds 3★ trait: `+150` Piety (`200` Piety total for single education).
+  - Holds 4★ trait (Mastery 4★ -> 5★): `+300` Piety (`350` Piety total for single education).
+  - Holds existing 5★ trait (when leveling a 2nd education): `+500` Piety surcharge per 5★ trait held.
+- **Zero-Cost Backout:** Piety, Lifeforce, and the 2-year cooldown flag (`bm_improve_education_cooldown` / `bm_new_education_cooldown`) are only deducted when selecting a specific discipline option, allowing players to return to the Major/Superior Grimoire freely.
 
 ## Where the details live
 
 | Piece | File |
 | --- | --- |
-| Geyser duel events | `events/bm_geyser_duel_events.txt` (`bm_geyser_duel.0001`) |
-| Initiation decisions | `common/decisions/become_mage/bm_become_blood_mage_decision.txt` |
-| Trait drain interaction | `common/character_interactions/bm_drain_trait.txt` |
-| Trait drain events | `events/bm_trait_drain_events.txt` (`bm_trait_drain.001`) |
-| Trait drain duel values | `common/script_values/bm_drain_duel_values.txt` |
-| Duel fatality harvesting | `common/on_action/bm_duel_on_actions.txt` |
-| Education events | `events/bm_education_enhance.txt`, `bm_education_master_events.txt`, `bm_education_new.txt` |
-| Education duel effect | `common/scripted_effects/bm_education_duel_effect.txt` |
-| Education costs & XP | `common/script_values/bm_education_enhancement_piety_cost.txt`, `bm_xp_requirement_values.txt` |
-| Mass lifedrain decision | `common/decisions/bm_mass_lifedrain_prisoners.txt` |
-| Mass lifedrain event | `events/bm_mass_lifedrain.txt` |
-| Execution effects | `common/scripted_effects/bm_drain_all_prisoners_effects.txt` |
-
-## Gotchas
-
-- Trait drain requires prisoner to hold congenital traits the caster does NOT already possess.
-- Mass lifedrain triggers vanilla tyranny and kinslayer flags if prisoners lack rightful execution reasons.
+| Geyser initiation decisions & events | `common/decisions/become_mage/bm_become_blood_mage_decision.txt`, `events/bm_geyser_duel_events.txt` |
+| Ex-nihilo trait manifestation events, effects & values | `events/bm_channel_manifest_traits_events.txt`, `common/scripted_effects/bm_manifest_traits_effects.txt`, `common/script_values/bm_manifest_traits_values.txt` |
+| Prisoner trait theft interaction, events & values | `common/character_interactions/bm_drain_trait.txt`, `events/bm_trait_drain_events.txt`, `common/scripted_effects/bm_drain_trait_effects.txt`, `common/script_values/bm_drain_duel_values.txt` |
+| Education enhancement, mastery & 2nd education | `events/bm_education_enhance.txt`, `events/bm_education_master_events.txt`, `events/bm_education_new.txt`, `common/scripted_effects/bm_education_duel_effect.txt`, `common/script_values/bm_education_enhancement_piety_cost.txt` |
+| Single combat fatality Lifeforce harvest | `common/on_action/bm_duel_on_actions.txt` |
+| Mass lifedrain decision, event & effects | `common/decisions/bm_mass_lifedrain_prisoners.txt`, `events/bm_mass_lifedrain.txt`, `common/scripted_effects/bm_drain_all_prisoners_effects.txt` |

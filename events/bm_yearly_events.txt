@@ -16,7 +16,13 @@ blood_mage_yearly_events.001 = {
         if = {
             limit = { has_character_modifier = ancient_attuned }
             random = {
-                chance = 50
+                chance = {
+                    value = 50
+                    if = {
+                        limit = { has_character_modifier = bm_rune_hulinhjalmur_superior }
+                        add = 50
+                    }
+                }
                 send_interface_toast = {
                     title = bm_yearly_attunement_ancient_toast
                     left_icon = root
@@ -33,7 +39,13 @@ blood_mage_yearly_events.001 = {
         if = {
             limit = { has_character_modifier = enlightenment_attuned }
             random = {
-                chance = 50
+                chance = {
+                    value = 50
+                    if = {
+                        limit = { has_character_modifier = bm_rune_hulinhjalmur_superior }
+                        add = 50
+                    }
+                }
                 send_interface_toast = {
                     title = bm_yearly_attunement_enlightenment_toast
                     left_icon = root
@@ -50,7 +62,13 @@ blood_mage_yearly_events.001 = {
         if = {
             limit = { has_character_modifier = bloodline_attuned }
             random = {
-                chance = 50
+                chance = {
+                    value = 50
+                    if = {
+                        limit = { has_character_modifier = bm_rune_hulinhjalmur_superior }
+                        add = 50
+                    }
+                }
                 send_interface_toast = {
                     title = bm_yearly_attunement_bloodline_toast
                     left_icon = root
@@ -67,7 +85,13 @@ blood_mage_yearly_events.001 = {
         if = {
             limit = { has_character_modifier = benediction_attuned }
             random = {
-                chance = 50
+                chance = {
+                    value = 50
+                    if = {
+                        limit = { has_character_modifier = bm_rune_hulinhjalmur_superior }
+                        add = 50
+                    }
+                }
                 send_interface_toast = {
                     title = bm_yearly_attunement_benediction_toast
                     left_icon = root
@@ -84,7 +108,13 @@ blood_mage_yearly_events.001 = {
         if = {
             limit = { has_character_modifier = hematurgy_attuned }
             random = {
-                chance = 50
+                chance = {
+                    value = 50
+                    if = {
+                        limit = { has_character_modifier = bm_rune_hulinhjalmur_superior }
+                        add = 50
+                    }
+                }
                 send_interface_toast = {
                     title = bm_yearly_attunement_hematurgy_toast
                     left_icon = root
@@ -213,8 +243,8 @@ blood_mage_yearly_events.003 = {
             duel = {
                 skill = learning
                 value = 0
-                50 = { } # chance of nothing happening
-                30 = { # minor lifeforce only
+                60 = { } # chance of nothing happening
+                10 = { # minor lifeforce only
                     send_interface_toast = {
                         title = bm_blood_rune_yearly_event_popup.title
                         left_icon = root
@@ -272,7 +302,13 @@ blood_mage_yearly_events.004 = {
         if = {
             limit = { has_character_modifier = ancient_attuned }
             random = {
-                chance = 50
+                chance = {
+                    value = 50
+                    if = {
+                        limit = { has_character_modifier = bm_rune_hulinhjalmur_superior }
+                        add = 50
+                    }
+                }
                 send_interface_toast = {
                     title = bm_yearly_attunement_ancient_toast
                     left_icon = root
@@ -288,7 +324,13 @@ blood_mage_yearly_events.004 = {
         if = {
             limit = { has_character_modifier = benediction_attuned }
             random = {
-                chance = 50
+                chance = {
+                    value = 50
+                    if = {
+                        limit = { has_character_modifier = bm_rune_hulinhjalmur_superior }
+                        add = 50
+                    }
+                }
                 send_interface_toast = {
                     title = bm_yearly_attunement_benediction_toast
                     left_icon = root
@@ -304,7 +346,13 @@ blood_mage_yearly_events.004 = {
         if = {
             limit = { has_character_modifier = vanguard_attuned }
             random = {
-                chance = 50
+                chance = {
+                    value = 50
+                    if = {
+                        limit = { has_character_modifier = bm_rune_hulinhjalmur_superior }
+                        add = 50
+                    }
+                }
                 send_interface_toast = {
                     title = bm_yearly_attunement_vanguard_toast
                     left_icon = root
@@ -320,7 +368,13 @@ blood_mage_yearly_events.004 = {
         if = {
             limit = { has_character_modifier = slaughter_attuned }
             random = {
-                chance = 50
+                chance = {
+                    value = 50
+                    if = {
+                        limit = { has_character_modifier = bm_rune_hulinhjalmur_superior }
+                        add = 50
+                    }
+                }
                 send_interface_toast = {
                     title = bm_yearly_attunement_slaughter_toast
                     left_icon = root
@@ -336,7 +390,13 @@ blood_mage_yearly_events.004 = {
         if = {
             limit = { has_character_modifier = enlightenment_attuned }
             random = {
-                chance = 50
+                chance = {
+                    value = 50
+                    if = {
+                        limit = { has_character_modifier = bm_rune_hulinhjalmur_superior }
+                        add = 50
+                    }
+                }
                 send_interface_toast = {
                     title = bm_yearly_attunement_enlightenment_toast
                     left_icon = root

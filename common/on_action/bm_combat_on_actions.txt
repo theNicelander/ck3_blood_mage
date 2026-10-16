@@ -10,19 +10,51 @@ bm_on_combat_end_winner = {
 		every_side_commander = {
 			limit = {
 				is_alive = yes
-				has_trait = lifestyle_blood_knight
+				OR = {
+					has_trait = lifestyle_blood_knight
+					has_character_modifier = bm_rune_nabrokarstafur_superior
+				}
 			}
-			bm_combat_winner_commander_reward_effect = yes
-			bm_battle_victory_lifeforce_harvest_effect = yes
+			if = {
+				limit = { has_trait = lifestyle_blood_knight }
+				bm_combat_winner_commander_reward_effect = yes
+				bm_battle_victory_lifeforce_harvest_effect = yes
+			}
+			if = {
+				limit = { has_character_modifier = bm_rune_nabrokarstafur_superior }
+				add_gold = bm_nabrokarstafur_battle_gold_value
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = bm_nabrokarstafur_battle_gold_toast
+					left_icon = this
+					custom_tooltip = bm_nabrokarstafur_battle_gold_tt
+				}
+			}
 		}
 		every_side_knight = {
 			limit = {
 				is_alive = yes
-				has_trait = lifestyle_blood_knight
+				OR = {
+					has_trait = lifestyle_blood_knight
+					has_character_modifier = bm_rune_nabrokarstafur_superior
+				}
 				NOT = { this = scope:winning_side.side_commander }
 			}
-			bm_combat_winner_knight_reward_effect = yes
-			bm_battle_victory_lifeforce_harvest_effect = yes
+			if = {
+				limit = { has_trait = lifestyle_blood_knight }
+				bm_combat_winner_knight_reward_effect = yes
+				bm_battle_victory_lifeforce_harvest_effect = yes
+			}
+			if = {
+				limit = { has_character_modifier = bm_rune_nabrokarstafur_superior }
+				add_gold = bm_nabrokarstafur_battle_gold_value
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = bm_nabrokarstafur_battle_gold_toast
+					left_icon = this
+					custom_tooltip = bm_nabrokarstafur_battle_gold_tt
+				}
+			}
 		}
 	}
 }

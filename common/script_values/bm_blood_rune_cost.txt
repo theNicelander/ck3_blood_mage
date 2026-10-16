@@ -1,11 +1,23 @@
 ﻿bm_blood_rune_piety_cost = {
-    value = 0
-    if = {
-        limit = { has_character_modifier = minor_blood_rune_modifier }
-        add = 200
-    }
-    if = {
-        limit = { has_character_modifier = major_blood_rune_modifier }
-        add = 400
-    }
+	value = 0
+	if = {
+		limit = { has_character_modifier = minor_blood_rune_modifier }
+		add = 200
+	}
+	if = {
+		limit = { has_character_modifier = major_blood_rune_modifier }
+		add = 400
+	}
 }
+
+flay_minor_blood_rune_piety_cost = 250
+flay_minor_blood_rune_piety_cost_neg = -250
+flay_minor_blood_rune_xp_cost_neg = -5
+
+flay_major_blood_rune_piety_cost = 500
+flay_major_blood_rune_piety_cost_neg = -500
+flay_major_blood_rune_xp_cost_neg = -10
+
+flay_superior_blood_rune_piety_cost = 1000
+flay_superior_blood_rune_piety_cost_neg = -1000
+flay_superior_blood_rune_xp_cost_neg = -15

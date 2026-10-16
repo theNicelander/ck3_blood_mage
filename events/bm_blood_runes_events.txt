@@ -1,0 +1,266 @@
+﻿namespace = bm_blood_runes
+
+# 5-Stave Galdrastafir Selector
+bm_blood_runes.001 = {
+	type = character_event
+	title = bm_blood_runes.001.t
+	desc = bm_blood_runes.001.desc
+	theme = witchcraft
+
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = scope:rune_target
+		animation = fear
+		trigger = {
+			exists = scope:rune_target
+			NOT = { scope:rune_target = root }
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = { NOT = { exists = scope:rune_target } }
+			save_scope_as = rune_target
+		}
+	}
+
+	# 1. Vegvisir (The Wayfinder)
+	option = {
+		name = bm_blood_runes.001.vegvisir
+		custom_tooltip = bm_blood_runes.001.vegvisir.tt
+		scope:rune_target = {
+			bm_apply_selected_stave_at_current_tier_effect = { STAVE = vegvisir }
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				add = 20
+				has_trait = traveler
+			}
+		}
+	}
+
+	# 2. Aegishjalmur (Helm of Awe)
+	option = {
+		name = bm_blood_runes.001.aegishjalmur
+		custom_tooltip = bm_blood_runes.001.aegishjalmur.tt
+		scope:rune_target = {
+			bm_apply_selected_stave_at_current_tier_effect = { STAVE = aegishjalmur }
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				add = 25
+				has_trait = lifestyle_blood_knight
+			}
+		}
+	}
+
+	# 3. Feingur (Awakened Seed)
+	option = {
+		name = bm_blood_runes.001.feingur
+		custom_tooltip = bm_blood_runes.001.feingur.tt
+		scope:rune_target = {
+			bm_apply_selected_stave_at_current_tier_effect = { STAVE = feingur }
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				add = 25
+				num_of_children < 2
+			}
+		}
+	}
+
+	# 4. Nabrokarstafur (Flayed Tithe)
+	option = {
+		name = bm_blood_runes.001.nabrokarstafur
+		custom_tooltip = bm_blood_runes.001.nabrokarstafur.tt
+		scope:rune_target = {
+			bm_apply_selected_stave_at_current_tier_effect = { STAVE = nabrokarstafur }
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				add = 20
+				gold < 100
+			}
+		}
+	}
+
+	# 5. Hulinhjalmur (Unseen Shroud)
+	option = {
+		name = bm_blood_runes.001.hulinhjalmur
+		custom_tooltip = bm_blood_runes.001.hulinhjalmur.tt
+		scope:rune_target = {
+			bm_apply_selected_stave_at_current_tier_effect = { STAVE = hulinhjalmur }
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				add = 20
+				has_lifestyle = intrigue_lifestyle
+			}
+		}
+	}
+}
+
+# Flay Blood Rune (Swap Rite)
+bm_blood_runes.002 = {
+	type = character_event
+	title = bm_blood_runes.002.t
+	desc = bm_blood_runes.002.desc
+	theme = witchcraft
+
+	left_portrait = {
+		character = root
+		animation = pain
+	}
+
+	# Option A: Strip and re-carve at Minor tier
+	option = {
+		name = bm_blood_runes.002.flay_minor
+		trigger = {
+			has_character_modifier = minor_blood_rune_modifier
+			piety >= 250
+			has_character_modifier = lifeforce_modifier_minor
+		}
+		add_piety = -250
+		remove_character_modifier = lifeforce_modifier_minor
+		temporary_negative_lifeforce_effect_minor = yes
+		if = {
+			limit = { has_trait = lifestyle_blood_mage }
+			add_trait_xp = {
+				trait = lifestyle_blood_mage
+				track = ancient
+				value = -5
+			}
+		}
+		if = {
+			limit = {
+				has_trait = lifestyle_blood_knight
+				NOT = { has_trait = lifestyle_blood_mage }
+			}
+			add_blood_knight_xp = {
+				TRACK = ancient
+				XP = -5
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_trait = wounded_1
+					has_trait = wounded_2
+					has_trait = wounded_3
+				}
+			}
+			add_trait = wounded_1
+		}
+		else = {
+			increase_wounds_no_death_effect = { REASON = wounds }
+		}
+		bm_strip_all_stave_modifiers_effect = yes
+		save_scope_as = rune_target
+		trigger_event = { id = bm_blood_runes.001 }
+	}
+
+	# Option B: Strip and re-carve at Major tier
+	option = {
+		name = bm_blood_runes.002.flay_major
+		trigger = {
+			has_character_modifier = major_blood_rune_modifier
+			piety >= 500
+			has_character_modifier = lifeforce_modifier_major
+		}
+		add_piety = -500
+		remove_character_modifier = lifeforce_modifier_major
+		temporary_negative_lifeforce_effect_major = yes
+		if = {
+			limit = { has_trait = lifestyle_blood_mage }
+			add_trait_xp = {
+				trait = lifestyle_blood_mage
+				track = ancient
+				value = -10
+			}
+		}
+		if = {
+			limit = {
+				has_trait = lifestyle_blood_knight
+				NOT = { has_trait = lifestyle_blood_mage }
+			}
+			add_blood_knight_xp = {
+				TRACK = ancient
+				XP = -10
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_trait = wounded_1
+					has_trait = wounded_2
+					has_trait = wounded_3
+				}
+			}
+			add_trait = wounded_1
+		}
+		else = {
+			increase_wounds_no_death_effect = { REASON = wounds }
+		}
+		add_character_modifier = {
+			modifier = blood_magic_major_casting_exhaustion
+			years = 1
+		}
+		bm_strip_all_stave_modifiers_effect = yes
+		save_scope_as = rune_target
+		trigger_event = { id = bm_blood_runes.001 }
+	}
+
+	# Option C: Strip and re-carve at Superior tier
+	option = {
+		name = bm_blood_runes.002.flay_superior
+		trigger = {
+			has_character_modifier = superior_blood_rune_modifier
+			piety >= 1000
+			has_character_modifier = lifeforce_modifier_superior
+		}
+		add_piety = -1000
+		remove_character_modifier = lifeforce_modifier_superior
+		temporary_negative_lifeforce_effect_superior = yes
+		add_trait_xp = {
+			trait = lifestyle_blood_mage
+			track = ancient
+			value = -15
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_trait = wounded_2
+					has_trait = wounded_3
+				}
+			}
+			remove_trait = wounded_1
+			add_trait = wounded_2
+		}
+		else = {
+			increase_wounds_no_death_effect = { REASON = wounds }
+		}
+		add_character_modifier = {
+			modifier = blood_magic_superior_casting_exhaustion
+			years = 5
+		}
+		bm_strip_all_stave_modifiers_effect = yes
+		save_scope_as = rune_target
+		trigger_event = { id = bm_blood_runes.001 }
+	}
+
+	# Option D: Cancel
+	option = {
+		name = bm_blood_runes.002.cancel
+		trigger = {
+			is_ai = no
+		}
+	}
+}

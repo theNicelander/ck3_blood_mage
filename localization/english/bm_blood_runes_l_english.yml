@@ -1,0 +1,52 @@
+﻿l_english:
+  # Minor/Major/Superior Magic Grimoire Decisions - Flay Options
+  bm_cast_blood_magic_minor.001.flay_rune: "Flay Minor Blood Rune"
+  bm_cast_blood_magic_major.001.flay_rune: "Flay Major Blood Rune"
+  bm_cast_blood_magic_superior.001.flay_rune: "Flay Superior Blood Rune"
+
+  # Galdrastafir 5-Stave Selector
+  bm_blood_runes.001.t: "Carve Galdrastafir Stave"
+  bm_blood_runes.001.desc: "Through blood and iron, an arcane stave must be etched into living flesh. Choose which stave of power to bind upon [Select_CString(EqualTo_CHAR(scope:rune_target, root), 'your own', Concatenate(scope:rune_target.GetShortUINamePossessive, ''))] skin."
+
+  bm_blood_runes.001.vegvisir: "Vegvísir — The Wayfinder"
+  bm_blood_runes.001.vegvisir.tt: "#tooltip_heading Vegvísir (The Wayfinder)#!\nInscribes the Vegvísir stave. Grants scaling travel speed, travel safety, and army movement speed.\n\n#bold Superior Capstone — Storm-Walker#!:\nHalves the cooldown of Seek Power (1 year landed, 6 months wanderer or knight) and ensures completely safe harvest outcomes without negative hazards."
+
+  bm_blood_runes.001.aegishjalmur: "Ægishjálmur — The Helm of Awe"
+  bm_blood_runes.001.aegishjalmur.tt: "#tooltip_heading Ægishjálmur (The Helm of Awe)#!\nInscribes the Ægishjálmur stave. Imbues prowess, combat advantage, and knight effectiveness.\n\n#bold Superior Capstone — Terror of the Slain#!:\nWhen entering battle or combat clash, strikes terror into the opposing army, inflicting #N -5 Prowess#! and #N -0.5 Health#! for 1 year upon enemy commanders and knights."
+
+  bm_blood_runes.001.feingur: "Feingur — The Awakened Seed"
+  bm_blood_runes.001.feingur.tt: "#tooltip_heading Feingur (The Awakened Seed)#!\nInscribes the Feingur stave. Vastly improves fertility, fertile years, positive genetic chance, health, and epidemic resistance.\n\n#bold Superior Capstone — Awakened Seed#!:\nDoubles experience gained on childbirth (+4 base, +8 if inherited; Bloodline for Mages, Vanguard for Knights). Unlocks an interaction to permanently bless dynasty kin."
+
+  bm_blood_runes.001.nabrokarstafur: "Nábrókarstafur — The Flayed Tithe"
+  bm_blood_runes.001.nabrokarstafur.tt: "#tooltip_heading Nábrókarstafur (The Flayed Tithe)#!\nInscribes the skin-purse stave. Increases domain taxes and reduces Men-at-Arms maintenance at the cost of general opinion.\n\n#bold Superior Capstone — Flayed Tithe#!:\nVisiting Points of Interest during travel yields #P +20 Gold#!. Winning battles plunders #P 10% of enemy fatal casualties#! as Gold (25–250 Gold)."
+
+  bm_blood_runes.001.hulinhjalmur: "Hulinhjálmur — The Unseen Shroud"
+  bm_blood_runes.001.hulinhjalmur.tt: "#tooltip_heading Hulinhjálmur (The Unseen Shroud)#!\nInscribes the shadow-shroud stave. Boosts owned hostile scheme success, suppresses enemy hostile schemes, and enhances lifestyle experience gain.\n\n#bold Superior Capstone — Unseen Shroud#!:\nGuarantees 100% success on yearly attunement experience rolls. Executing a successful Murder scheme reaps #P 1 Major Lifeforce#!."
+
+  # Flay Blood Rune (Swap Rite)
+  bm_blood_runes.002.t: "Flay Blood Rune"
+  bm_blood_runes.002.desc: "The arcane ink and scarred flesh can be flayed from your body in a harrowing agony rite. Stripping your existing stave allows you to bind a new Galdrastafir stave at your current rune tier, but demands immense devotion, lifeforce, ancient mastery, and bodily suffering."
+  bm_blood_runes.002.flay_minor: "Flay Minor Rune (250 Piety, -5 Ancient XP, 1 Minor Lifeforce, Wounds)"
+  bm_blood_runes.002.flay_major: "Flay Major Rune (500 Piety, -10 Ancient XP, 1 Major Lifeforce, Wounds, Exhaustion)"
+  bm_blood_runes.002.flay_superior: "Flay Superior Rune (1000 Piety, -15 Ancient XP, 1 Superior Lifeforce, Severe Wounds, Long Exhaustion)"
+  bm_blood_runes.002.cancel: "Endure with my current stave"
+
+  # Interaction: Inscribe Rune on Other
+  bm_inscribe_rune_other_interaction: "Inscribe Blood Rune"
+  bm_inscribe_rune_other_interaction_desc: "Carve or upgrade a permanent Galdrastafir Blood Rune upon this character's flesh. They will passively generate Lifeforce over time and gain scaling physical, mystical, and martial boons.\n\n#italic Grants Benediction experience to the caster.#!"
+  bm_inscribe_rune_other_requirement_tt: "Requires Piety, Lifeforce, Devotion Rank, and Track Experience matching the next rune tier."
+
+  # Interaction: Feingur Bless Dynasty
+  bm_feingur_bless_dynasty_interaction: "Bless Dynasty Bloodline"
+  bm_feingur_bless_dynasty_interaction_desc: "Invoke the apex potency of your Superior Feingur stave to carve a permanent blessing of vitality, fertility, and longevity into the blood of your child or dynasty kin."
+  bm_recipient_already_feingur_blessed: "Target already bears the permanent Blessing of Feingur."
+  bm_feingur_bless_dynasty_toast: "Blessed Dynasty Bloodline"
+  bm_feingur_bless_dynasty_toast_tt: "[recipient.GetShortUIName] has received the permanent Blessing of Feingur!"
+
+  # Toasts & Tooltips
+  bm_nabrokarstafur_poi_toast: "Nábrókarstafur: POI Plundered"
+  bm_nabrokarstafur_poi_toast_desc: "Your Superior Nábrókarstafur stave plundered ancient riches from this landmark: #P +20 Gold#!"
+  bm_nabrokarstafur_battle_gold_toast: "Nábrókarstafur: Flayed Spoils"
+  bm_nabrokarstafur_battle_gold_tt: "Your Superior Nábrókarstafur stave plundered the enemy dead, turning slaughter into #P Gold#!."
+  bm_hulinhjalmur_murder_lifeforce_toast: "Hulinhjálmur: Murder Harvest"
+  bm_hulinhjalmur_murder_lifeforce_tt: "Your Superior Hulinhjálmur stave siphoned your murder victim's dying essence into #P 1 Major Lifeforce#!."
