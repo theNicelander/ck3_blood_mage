@@ -2,12 +2,12 @@
     picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
 
     decision_group_type = bm_decision_group
+    desc = seek_power_decision_blood_knight_desc
+    selection_tooltip = seek_power_decision_blood_knight_tooltip
 
     is_shown = {
-        OR = {
-            has_trait = lifestyle_blood_mage
-            has_trait = lifestyle_blood_knight
-        }
+        has_trait = lifestyle_blood_knight
+        NOT = { has_trait = lifestyle_blood_mage }
     }
     cooldown = { days = bm_seek_power_cooldown_days }
     effect = {

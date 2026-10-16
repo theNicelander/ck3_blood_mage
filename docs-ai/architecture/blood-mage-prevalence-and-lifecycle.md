@@ -49,7 +49,7 @@ Acquisition (Decision / Event / Birth)
         └─► bm_apply_blood_knight_prevalence_retention_effect (strips if AI under restricted rules)
 ```
 
-- **Childbirth Milestone:** When a child is born (`on_birth_child` -> `bm_on_birth_bloodline_xp`), any blood mage parent receives +2 `bloodline` XP (+4 `bloodline` XP if the newborn inherits the trait).
+- **Childbirth Milestone:** When a child is born (`on_birth_child` -> `bm_on_birth_bloodline_xp`), any blood mage parent receives **+1 Major Lifeforce** (`lifeforce_modifier_major`) and +2 `bloodline` XP (+4 `bloodline` XP if the newborn inherits the trait; doubled by Superior Feingur). Blood knight parents receive martial `vanguard` XP without Lifeforce gain.
 
 ## Where the details live
 

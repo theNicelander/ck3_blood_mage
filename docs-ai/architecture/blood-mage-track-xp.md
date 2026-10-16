@@ -48,8 +48,7 @@ Living technical specification for XP acquisition, Piety costs, Lifeforce sinks/
 ### 1.2 Enlightenment Track (`enlightenment`)
 
 | XP Gain | Cost | Action | Type | Requirements | Cooldown |
-| --- | --- | --- | --- | --- | --- |
-| **+3 XP** | 100 Piety (Generates Major/Minor on Learning duel) | Manifest Lifeforce | Decision (`bm_manifest_lifeforce_decision`) | `piety_level >= 2` | 1 year |
+| **+3 / +5 / +8 / +12 XP** | 100 / 250 / 500 / 1000 Piety (Learning duel for Minor, Major, or Superior Lifeforce) | Manifest Lifeforce | Decision (`bm_manifest_lifeforce_decision`) | `piety_level >= 2`, `piety >= 100` | 1 year |
 | **+1 XP** | 75 Piety + Minor Lifeforce (`lifeforce_modifier_minor`) | Channel Minor Lifeforce | Event option (`bm_cast_blood_magic_minor.001`) | Minor lifeforce | None |
 | **+1 XP** | 25 Piety + Minor Lifeforce (`lifeforce_modifier_minor`) | Grant Lifeforce (Minor) | Interaction (`grant_lifeforce_interaction`) | Minor lifeforce, courtier/prisoner | None |
 | **+2 XP** | 50 Piety + Major Lifeforce (`lifeforce_modifier_major`) | Grant Lifeforce (Major) | Interaction (`grant_lifeforce_interaction`) | Major lifeforce, courtier/prisoner | None |
@@ -66,7 +65,7 @@ Living technical specification for XP acquisition, Piety costs, Lifeforce sinks/
 | --- | --- | --- | --- | --- | --- |
 | **+4 XP** (+5 XP if child/kin) | 100 Piety + Major Lifeforce | Grant Blood Magic (Major) | Interaction (`grant_blood_magic_interaction`) | Target non-mage, non-knight | None |
 | **+2 XP** | 250 Piety + Minor Lifeforce | Grant Blood Magic (Minor) | Interaction (`grant_blood_magic_interaction`) | Target non-mage, non-knight | None |
-| **+2 XP** (+4 XP if child inherits; doubled to +4/+8 by Superior Feingur) | None | Childbirth Milestone | On-action (`on_birth_child` -> `bm_on_birth_bloodline_xp`) | Parent is blood mage | Per birth |
+| **+2 XP** (+4 XP if child inherits; doubled to +4/+8 by Superior Feingur) | None; **Grants** +1 Major Lifeforce | Childbirth Milestone | On-action (`on_birth_child` -> `bm_on_birth_bloodline_xp`) | Parent is blood mage | Per birth |
 | **+2 XP** | 35 Piety + Minor Lifeforce (`lifeforce_modifier_minor`) | Bless Kin's Blood | Interaction (`bm_bless_bloodline_interaction`) | Target child/dynasty kin | 10 years (target buff) |
 | **+2 XP** | 50 Piety + Minor Lifeforce (`lifeforce_modifier_minor`) | Bless Dynasty Bloodline (Feingur) | Interaction (`bm_feingur_bless_dynasty_interaction`) | Superior Feingur stave; child or dynasty kin | Permanent |
 | **+2 XP** | 50 Piety + Minor Lifeforce (`lifeforce_modifier_minor`) | Purge Bodily Impurities (Congenital Flaw Cleansed) | Event option (`bm_cast_blood_magic_minor.001`) | Has ugly/dull/weak | None |
@@ -100,7 +99,6 @@ Living technical specification for XP acquisition, Piety costs, Lifeforce sinks/
 | **+1 XP** | 25 Piety (`lifedrain_piety_cost_minor`); **Grants** Minor Lifeforce | Lifedrain Courtier | Interaction (`lifedrain_courtier_event_interaction`) | Courtier/prisoner not recently drained | 3 months |
 | **+2 XP** (win), **+4 XP** (crit), **+1 XP** (fail) | 50 Piety + Minor Lifeforce (Crit siphons Minor Lifeforce back) | Cast Blood Curse | Interaction (`bm_curse_blood_interaction`) | >= 10 Hematurgy XP | 1 year |
 | **+2 XP** (on duel win) | 100–325 Piety + Major Lifeforce (Executes victim) | Drain Prisoner Trait (Lvl 1–5) | Interaction + Event (`bm_trait_drain.001`) | Prisoner with congenital trait | 60 days |
-| **+1 to +2 XP** | None | Seek Power Wilderness Harvest | Decision & Event (`seek_power.001`) | Blood mage or Blood knight | 1–2 years |
 | **+1 XP** | None (50% roll; 100% with Superior Hulinhjálmur) | Hematurgy Attunement Roll | Yearly event roll (`blood_mage_yearly_events.001`) | Has `hematurgy_attuned` | 1 year |
 
 ---
@@ -139,10 +137,11 @@ Tracks: `vanguard`, `slaughter` (and shared `ancient`, `benediction`, `enlighten
 | **+5 XP** (`vanguard`) | 350 Piety + Major Lifeforce | Empower Bloodline | Event option (`bm_cast_blood_magic_major.001`) | `exists = house`, `piety_level >= 1` | 3 years |
 | **+5 XP** (`vanguard`) | 500 Piety + Superior Lifeforce | Forge Blood Golem | Decision (`blood_golem_creation_decision`) | `piety_level >= 3`, Superior lifeforce | 3 years |
 | **+1 to +3 XP** (`vanguard`) + **0 to +2 XP** (`enlightenment`) | None | Battle Defeat (Surviving Commander / Knight) | On-action (`bm_on_combat_end_loser`) | Surviving side commander or knight | Per battle |
+| **+2 XP** (`vanguard`) (+4 XP if child inherits; doubled to +4/+8 by Superior Feingur) | None | Childbirth Milestone | On-action (`on_birth_child` -> `bm_on_birth_bloodline_xp`) | Parent is blood knight | Per birth |
 | **+5 XP** (`slaughter`) | None; **Grants** Major Lifeforce (25% chance Superior if victim prowess >= 35 or blood trait) | Single Combat Fatal Slaying | On-action (`bm_on_character_death_duel`) | Slaying opponent in single combat | None |
 | **+3 XP** (`slaughter`) | None | Tournament Completion | On-action (`bm_on_travel_activity_complete_tournament`) | Completing `activity_tournament` | Per tourney |
 | **+1 to +2 XP** (`slaughter` / `enlightenment`) | None | Seek Power Wilderness Harvest | Decision & Event (`seek_power.001`) | Blood knight | 1–2 years |
-| **+3 XP** (`enlightenment`) | 100 Piety; **Grants** Major (crit) or Minor (success) Lifeforce on Learning duel | Manifest Lifeforce | Decision (`bm_manifest_lifeforce_decision`) | `piety_level >= 2` | 1 year |
+| **+3 / +5 / +8 / +12 XP** (`enlightenment`) | 100 / 250 / 500 / 1000 Piety; **Grants** Minor, Major, or Superior Lifeforce on Learning duel | Manifest Lifeforce | Decision (`bm_manifest_lifeforce_decision`) | `piety_level >= 2`, `piety >= 100` | 1 year |
 | **+8/+5/+2 XP** (`ancient`) | 250 Piety + Minor & Major Lifeforce; **Grants** Superior Lifeforce | Manifest Superior Lifeforce | Decision (`bm_manifest_superior_lifeforce_decision`) | `piety_level >= 3`, Minor + Major | 2 years |
 | **+2 XP** (`ancient`) | 100 Piety + Minor Lifeforce; **Grants** Major Lifeforce | Condense Lifeforce | Event option (`bm_cast_blood_magic_minor.001`) | Minor lifeforce held | None |
 | **+3 XP** (`enlightenment`) (+10 Empowerment XP) | 150 Piety + Major Lifeforce | Channel Blood Empowerment | Decision -> Event (`bm_cast_blood_magic_major.001`) | `piety_level >= 1`, Major lifeforce held | None |

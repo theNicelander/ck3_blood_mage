@@ -2,6 +2,7 @@
 
 ## Game version 1.20
 
+- v1.20.41: Manifest Lifeforce scaling piety popup, childbirth Major Lifeforce for Blood Mages, and restrict seek power to Blood Knights.
 - v1.20.40: Blood Runes & Galdrastafir with 5 staves, sequential progression, superior capstones, and retinue inscription.
 - v1.20.39: Blood Knight refactor into a viable lifestyle peer to Blood Mage with parallel Devotion.
 - v1.20.38: Current Situation healing alerts, faith decision integration, and Blood Knight elevation polish.

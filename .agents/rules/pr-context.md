@@ -1,31 +1,25 @@
 ---
-trigger: model_decision
-description: Track branch and PR state, core concepts, and key decisions in docs-ai/branch-context/<branch>.md.
+trigger: always_on
+description: MANDATORY docs-ai/branch-context/<branch>.md on every non-main branch. Create if missing, update every task.
 ---
 
-# Branch and PR context tracking
+# Branch context (MANDATORY)
 
-High-level context and decision log across context resets.
+File: `docs-ai/branch-context/<branch>.md` (`<branch>` = `git branch --show-current`). Survives context resets. `scripts/check_repo.py` fails if missing, or unchanged while the branch changes mod files.
 
-## Guidelines
-
-1. **Read first**: Check `docs-ai/branch-context/<branch>.md` before modifying code.
-2. **Track major state only**: Record mechanics, features, trade-offs, and decisions. Ignore renames, formatting, and trivial bug fixes.
-3. **Keep current**: Update file when adding features or making design choices.
-
-## Structure
+1. **Task start**: read it. Missing? Create from template before coding.
+2. **Task end**: update it with `CHANGELOG.md`. One branch = one changelog line = one file.
+3. **Content**: mechanics, numbers, trade-offs, decisions. Net branch state only: fold superseded, drop reverted.
+4. **Never skip**: not for small changes, not if unasked. Fix stale parts.
 
 ```markdown
-# [Branch Name / PR Name]
+# <branch>: <title>
 
 ## Summary & Motivation
-Core purpose and goals.
 
 ## Core Concepts & Changes
-- **Feature/Concept**: Functional behavior and integration points.
-- **System Change**: Rebalanced systems or rewritten flows.
+- **Feature**: behavior, integration points.
 
 ## Key Decisions
-- **Decision 1**: Chose X over Y because Z.
-- **Decision 2**: Restricted A to B because C.
+- **Decision**: chose X over Y because Z.
 ```

@@ -21,7 +21,7 @@ Living technical specification for the Blood Knight subsystem (`lifestyle_blood_
 - **Empower Blood Knight (`empower_blood_knight_interaction`):** Fellow Blood Knight empowers a sworn Blood Knight comrade:
   - Major Lifeforce: `+10` XP to both `vanguard` and `slaughter` on target; `+4` `benediction` XP to caster.
   - Minor Lifeforce: `+5` XP to both `vanguard` and `slaughter` on target; `+2` `benediction` XP to caster.
-- **Seek Power in Nature's Domain (`seek_power_decision`):** Wilderness expedition harvesting Lifeforce and martial/enlightenment XP (`730`d cooldown landed, `365`d unlanded/wanderer; halved by Superior **Vegvísir**).
+- **Seek Power in Nature's Domain (`seek_power_decision`):** Wilderness expedition harvesting Lifeforce and martial/enlightenment XP (`730`d cooldown landed, `365`d unlanded/wanderer; halved by Superior **Vegvísir**). Strictly exclusive to Blood Knights (Blood Mages cannot use this decision).
 - **Manifest & Condense Lifeforce:**
   - `bm_manifest_lifeforce_decision`: `100` Piety Learning duel -> `+3` `enlightenment` XP and Minor/Major Lifeforce.
   - Condense Lifeforce (`bm_cast_blood_magic_minor.001`): `100` Piety + 1 Minor Lifeforce -> 1 Major Lifeforce (`+2` `ancient` XP).

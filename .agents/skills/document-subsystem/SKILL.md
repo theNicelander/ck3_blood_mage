@@ -19,6 +19,7 @@ Format: [architecture AGENTS.md](../../../docs-ai/architecture/AGENTS.md). High-
    - **Not verified**: Unverified runtime/AI behaviors.
 3. Check `localization/english/` for identifiers before writing.
 4. Register doc in `docs-ai/architecture/AGENTS.md` and `README.md`.
+5. Update branch context.
 
 ## Verify
 

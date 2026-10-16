@@ -13,7 +13,7 @@ Context: `docs-ai/architecture/blood-mage-game-rules.md`, [ck3-scripting](../../
 1. Declare rule and settings in `common/game_rules/bm_game_rules.txt`. Existing behavior is default setting.
 2. Check in scripted trigger via `has_game_rule = bm_<rule>_<setting>`.
 3. English loc: rule title/desc and setting titles/descs (`setting_..._desc`) in `bm_game_rules_l_english.yml`.
-4. Update `blood-mage-game-rules.md` and validate.
+4. Update `blood-mage-game-rules.md`, `CHANGELOG.md`, branch context; validate.
 
 ## Verify
 
