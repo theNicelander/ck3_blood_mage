@@ -3,22 +3,23 @@
 
 | Scope | Tokens |
 | --- | ---: |
-| **Total** | **8,654** |
-| Core | 1,971 |
+| **Total** | **9,571** |
+| Core | 1,978 |
 | Rules | 3,849 |
-| Skills | 2,834 |
+| Skills | 3,744 |
 
 ## Details per file
 
 | File | Category | Tokens |
 | --- | --- | ---: |
-| `AGENTS.md` | Core | 1,971 |
+| `AGENTS.md` | Core | 1,978 |
 | `.agents/skills/caveman/SKILL.md` | Skills | 1,158 |
+| `.agents/skills/add-decision-option-widget/SKILL.md` | Skills | 863 |
 | `.agents/rules/single-combat.md` | Rules | 813 |
 | `.agents/rules/ck3-religions.md` | Rules | 705 |
 | `.agents/rules/ck3-ai.md` | Rules | 672 |
 | `.agents/rules/ck3-scripting.md` | Rules | 412 |
-| `.agents/skills/add-blood-magic-decision/SKILL.md` | Skills | 354 |
+| `.agents/skills/add-blood-magic-decision/SKILL.md` | Skills | 401 |
 | `.agents/rules/ck3-decisions.md` | Rules | 341 |
 | `.agents/skills/document-subsystem/SKILL.md` | Skills | 289 |
 | `.agents/rules/ck3-traits.md` | Rules | 281 |

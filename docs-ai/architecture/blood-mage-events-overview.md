@@ -9,11 +9,10 @@
 
 | Event File | Namespace | Triggered By | Subsystem & Function |
 | --- | --- | --- | --- |
-| `events/bm_cast_blood_magic_minor_events.txt` | `bm_cast_blood_magic_minor` | Decision `bm_cast_blood_magic_minor_decision` | Grimoire event (`.001`) offering Minor Lifeforce rites: Channel Minor, Attune, Condense into Major, Purge Impurities, Inscribe Minor Blood Rune, and Flay Minor Rune. |
+| `events/bm_cast_blood_magic_minor_events.txt` | `bm_cast_blood_magic_minor` | Decision `bm_cast_blood_magic_minor_decision` | Grimoire event (`.001`) offering Minor Lifeforce rites: Channel Minor, Condense into Major, Purge Impurities, Inscribe Minor Blood Rune, and Flay Minor Rune. |
 | `events/bm_cast_blood_magic_major_events.txt` | `bm_cast_blood_magic_major` | Decision `bm_cast_blood_magic_major_decision` | Grimoire event (`.001`) offering Major Lifeforce rites: Blood Empowerment, Improve Education (1★–4★), Inscribe Major Blood Rune, Flay Major Rune, Empower Bloodline, and Manifest Perfection (Congenital Ranks 1–2). |
 | `events/bm_cast_blood_magic_superior_events.txt` | `bm_cast_blood_magic_superior` | Decision `bm_cast_blood_magic_superior_decision` | Grimoire event (`.001`) offering Superior Lifeforce rites: Master Education (5★), Embrace New Education (2nd trait), Inscribe Superior Blood Rune, Flay Superior Rune, Manifest Apex Perfection (Congenital Ranks 3–5), and Forge Blood Golem. |
-| `events/bm_blood_runes_events.txt` | `bm_blood_runes` | Grimoire rune options & `bm_inscribe_rune_other_interaction` | `.001`: 10-stave Icelandic Galdrastafir selector for self (`scope:rune_target = root`) or other (`scope:rune_target = recipient`). `.002`: Agony Flay & Swap rite burning `ancient` XP, Piety, and Lifeforce to replace active stave at current tier. |
-| `events/bm_attune_lifeforce_events.txt` | `bm_attune_lifeforce` | Event `bm_cast_blood_magic_minor.001` | Selects 1 of 5 school attunements (+50% yearly XP roll; 100% with Superior **Brýnslustafur**). |
+| `events/bm_blood_runes_events.txt` | `bm_blood_runes` | Grimoire rune options & `bm_inscribe_rune_other_interaction` | `.001`: 5-stave Icelandic Galdrastafir selector for self (`scope:rune_target = root`) or other (`scope:rune_target = recipient`). `.002`: Agony Flay & Swap rite burning `ancient` XP, Piety, and Lifeforce to replace active stave at current tier. |
 | `events/bm_blood_golem_events.txt` | `blood_golem` | Decision `blood_golem_creation_decision` or `bm_cast_blood_magic_superior.001` | Golem crafting outcome (`.001`) and repeatable trait-shaping Learning duels (`.002`). |
 | `events/bm_channel_lifeforce_bloodline_events.txt` | `bm_channel_lifeforce_bloodline` | Event `bm_cast_blood_magic_major.001` | Bestows permanent supernatural house modifiers. |
 | `events/bm_channel_manifest_traits_events.txt` | `bm_channel_manifest_traits` | Event `bm_cast_blood_magic_major.001` (`.001`) / `bm_cast_blood_magic_superior.001` (`.002`) | Learning self-duel to cleanse flaws and manifest/upgrade congenital traits (Ranks 1–2 in `.001` vs. Apex Ranks 3–5 in `.002`). |
@@ -29,7 +28,7 @@
 | `events/bm_reformation_repair_events.txt` | `bm_reformation_repair` | Decision `bm_repair_blodtru_reformation_decision` | Clears bugged/corrupted temporal head title. |
 | `events/bm_seek_power_events.txt` | `bm_seek_power` | Decision `seek_power_decision` | Wilderness exploration event chain (beasts, encounters, lifeforce). |
 | `events/bm_trait_drain_events.txt` | `bm_trait_drain` | Interaction `trait_drain_prisoner_event_interaction` | Siphons positive congenital traits from prisoners via duel. |
-| `events/bm_yearly_events.txt` | `blood_mage_yearly_events` | Yearly pulse on-action | .001: +1 ancient & attunement rolls. .002: bloodline dynasty rolls. .003: rune lifeforce rolls. .004: blood knight +1 enlightenment/ancient & ambient lifeforce roll. |
+| `events/bm_yearly_events.txt` | `blood_mage_yearly_events` | Yearly pulse on-action | .001: +1 ancient & guaranteed attunement XP (+2 with Superior **Hulinhjálmur**). .002: bloodline dynasty rolls. .003: rune lifeforce rolls. .004: blood knight +1 enlightenment/ancient, ambient lifeforce roll, & guaranteed attunement XP (+2 with Superior **Hulinhjálmur**). |
 
 ## Key Mechanics
 

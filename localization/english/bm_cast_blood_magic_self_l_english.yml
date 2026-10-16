@@ -2,23 +2,30 @@
 ############### MINOR ###############
     # Attune lifeforce
     bm_attune_lifeforce_decision: "Lifeforce Attunement"
-    bm_attune_lifeforce_decision_desc: "Spend [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] to attune your Blood Magic towards a particular [GetTrait('lifestyle_blood_mage').GetName( GetNullCharacter )] trait path for increased experience gain."
-    bm_attune_lifeforce_decision_tooltip: "Attune to a blood magic discipline to increase experience gain"
+    bm_attune_lifeforce_decision_desc: "Spend [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] and #V 25#! Piety to attune your Blood Magic toward a chosen discipline, guaranteeing experience gain each year and unlocking passive blessings."
+    bm_attune_lifeforce_decision_tooltip: "Attune to a discipline to guarantee annual experience gain and unlock passive benefits"
     bm_attune_lifeforce_decision_confirm: "Attune Powers"
 
-    bm_cast_blood_magic_self_attune_lifeforce: "Lifeforce Attunement"
-    bm_attune_lifeforce.effects_list: "Choose one of the following attunements (you can only have one at a time):\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('ancient_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('enlightenment_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('bloodline_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('benediction_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('hematurgy_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('vanguard_attuned').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('slaughter_attuned').GetNameWithTooltip]"
+    bm_attune_ancient_name: "Ancient"
+    bm_attune_ancient_desc: "Attune to the Ancient discipline. Grants #P +1#! discipline experience each year (#P +2#! with Superior Hulinhjálmur), and applies [GetModifier('ancient_attuned').GetNameWithTooltip]."
 
-    bm_attune_lifeforce.001.title: "Attune Blood Magic"
-    bm_attune_lifeforce.001.desc: "The blood essence within my veins pulses with potential, waiting to be directed. By attuning my magic to a specific aspect, I can strengthen my connection to that particular facet of blood magic, potentially hastening my mastery of it."
-    bm_attune_lifeforce.001.b: "Ancient - Extend my years and wisdom of ages"
-    bm_attune_lifeforce.001.c: "Enlightenment - Quicken my personal magical development"
-    bm_attune_lifeforce.001.d: "Bloodline - Strengthen my dynasty's magical heritage"
-    bm_attune_lifeforce.001.e: "Benediction - Improve my healing and enhancement capabilities"
-    bm_attune_lifeforce.001.f: "Hematurgy - Sharpen my skills in harvesting lifeforce"
-    bm_attune_lifeforce.001.vanguard: "Vanguard - Sharpen battlefield command and knight prowess"
-    bm_attune_lifeforce.001.slaughter: "Slaughter - Infuse blade and sinew with lethal bloodlust"
-    bm_attune_lifeforce.001.resilience: "Resilience - Bolster the body against wounds and pestilence"
+    bm_attune_enlightenment_name: "Enlightenment"
+    bm_attune_enlightenment_desc: "Attune to the Enlightenment discipline. Grants #P +1#! discipline experience each year (#P +2#! with Superior Hulinhjálmur), and applies [GetModifier('enlightenment_attuned').GetNameWithTooltip]."
+
+    bm_attune_bloodline_name: "Bloodline"
+    bm_attune_bloodline_desc: "Attune to the Bloodline discipline. Grants #P +1#! Bloodline experience each year (#P +2#! with Superior Hulinhjálmur), and applies [GetModifier('bloodline_attuned').GetNameWithTooltip]."
+
+    bm_attune_benediction_name: "Benediction"
+    bm_attune_benediction_desc: "Attune to the Benediction discipline. Grants #P +1#! discipline experience each year (#P +2#! with Superior Hulinhjálmur), and applies [GetModifier('benediction_attuned').GetNameWithTooltip]."
+
+    bm_attune_hematurgy_name: "Hematurgy"
+    bm_attune_hematurgy_desc: "Attune to the Hematurgy discipline. Grants #P +1#! Hematurgy experience each year (#P +2#! with Superior Hulinhjálmur), and applies [GetModifier('hematurgy_attuned').GetNameWithTooltip]."
+
+    bm_attune_vanguard_name: "Vanguard"
+    bm_attune_vanguard_desc: "Attune to the Vanguard discipline. Grants #P +1#! Vanguard experience each year (#P +2#! with Superior Hulinhjálmur), and applies [GetModifier('vanguard_attuned').GetNameWithTooltip]."
+
+    bm_attune_slaughter_name: "Slaughter"
+    bm_attune_slaughter_desc: "Attune to the Slaughter discipline. Grants #P +1#! Slaughter experience each year (#P +2#! with Superior Hulinhjálmur), and applies [GetModifier('slaughter_attuned').GetNameWithTooltip]."
 
     # Channel lifeforce minor
     bm_channel_minor_lifeforce_decision: "Channel Minor Lifeforce"
@@ -112,9 +119,8 @@
     bm_cast_blood_magic_minor_decision_confirm: "Open the Grimoire"
 
     bm_cast_blood_magic_minor.001.title: "Minor Blood Magic"
-    bm_cast_blood_magic_minor.001.desc: "A modest reserve of lifeforce stirs within your veins. With careful focus, you may channel this energy for an immediate temporary enhancement or attune your spirit to deepen your affinity for a specific discipline."
+    bm_cast_blood_magic_minor.001.desc: "A modest reserve of lifeforce stirs within your veins. With careful focus, you may channel this energy for an immediate temporary enhancement or purge physical ailments from your body."
     bm_cast_blood_magic_minor.001.channel: "Channel Minor Lifeforce"
-    bm_cast_blood_magic_minor.001.attune: "Attune Lifeforce"
     bm_cast_blood_magic_minor.001.purge: "Purge Impurities and Infirmities"
     bm_cast_blood_magic_minor.001.purge.tt: "Purge physical wounds, illnesses, and negative physical traits using minor lifeforce."
     bm_cast_blood_magic_minor.001.condense: "Condense Lifeforce"
