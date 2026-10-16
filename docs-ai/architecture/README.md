@@ -37,7 +37,7 @@ flowchart LR
     end
 
     subgraph Sinks ["3. Spellcasting & Ritual Sinks"]
-        G1["Minor Grimoire (Attune, Purge, Condense, Minor Rune)"]
+        G1["Minor Blood Magic (Attunement Decision, Purge, Condense, Minor Rune)"]
         G2["Major Grimoire (Empowerment, Edu 1-4★, Major Rune, Bloodline, Traits 1-2)"]
         G3["Superior Grimoire (Master 5★ / 2nd Edu, Superior Rune, Traits 3-5, Golem)"]
         I1["Interactions (Heal 37 Ailments, Trait Theft, Bless Kin, Curse, Inscribe Rune, Initiate)"]
@@ -45,7 +45,7 @@ flowchart LR
 
     subgraph Progression ["4. Long-Term Progression & World Systems"]
         P1["12 Lifestyle Tracks (10–100 XP)\n• Vitality Baseline (Tiers 10–40, 60–90)\n• 50 XP Devotion Scaling Milestones\n• 100 XP Capstones: Level 6–8 Devotion & Age Prowess Lock"]
-        P2["10 Galdrastafir Blood Runes (Minor -> Major -> Superior Capstones)"]
+        P2["5 Galdrastafir Blood Runes (Minor -> Major -> Superior Capstones)"]
         P3["7 Dynasty House Modifiers + Immortal Blood Golems (bm_house_golem)"]
         P4["5-Tier Blood Shrine Domicile + Blóðtrú / Ketsudō / Xuédào Faiths"]
     end
@@ -91,7 +91,7 @@ flowchart LR
 | [`blood-mage-blood-empowerment.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-blood-empowerment.md) | Secondary `lifestyle_blood_empowerment` trait: 5 tracks (`dynasty`, `mastery`, `presence`, `prosperity`, `shadows`), Devotion impact capstones, and Versatility fallback |
 | [`blood-mage-track-xp.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-track-xp.md) | Master XP catalog across all 12 tracks: Piety costs, Lifeforce sinks/sources, ritual gates, and XP yields |
 | [`blood-mage-lifeforce.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-lifeforce.md) | Lifeforce resource economy: Minor/Major/Superior modifiers, exhaustion durations, battlefield troop-scaling brackets, and sources/sinks matrix |
-| [`blood-mage-blood-runes.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-blood-runes.md) | 10 Icelandic Galdrastafir staves across Minor/Major/Superior tiers, 10 Superior Capstones, other-inscription interaction, flay swap rite, and Blood Universities 0–3 |
+| [`blood-mage-blood-runes.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-blood-runes.md) | 5 Icelandic Galdrastafir staves across Minor/Major/Superior tiers, 5 Superior Capstones, other-inscription interaction, flay swap rite, and Blood Universities 0–3 |
 | [`blood-mage-decisions.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-decisions.md) | Master decisions table: Situation & Decisions tab integration, costs, cooldowns, requirements, XP gains, and effects |
 | [`blood-mage-interactions.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-interactions.md) | Master character interactions table: draining, trait theft, 37-condition healing & Situation alert, rune carving on others, blood curses, and AI targeting vetoes |
 | [`blood-mage-duels-and-education.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-duels-and-education.md) | Geyser initiation duels, Ex-Nihilo Congenital Trait Manifestation (Ranks 1–5), Prisoner Trait Theft math, Education Enhancement (1★–5★ & 2nd Education), and Mass Lifedrain |
@@ -102,5 +102,5 @@ flowchart LR
 | [`blood-mage-story.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-story.md) | `bm_blood_mage_story` Situation panel, real-time discipline/Lifeforce/Rune status display, and character rosters (Dynasty Mages, Blood Knights, Blood Golems) |
 | [`blood-mage-prevalence-and-lifecycle.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-prevalence-and-lifecycle.md) | Mandatory entry effects, 25%/100% non-genetic inheritance rules, birth pipeline, and AI prevalence retention audits |
 | [`blood-mage-game-rules.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-game-rules.md) | All 8 campaign game rules: Mage/Knight prevalence, portrait alterations, Blóðtrú availability, starting counties/holders (Iceland & Tsushima), initiation gates, and AGOT lore |
-| [`blood-mage-events-overview.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-events-overview.md) | Complete event file, namespace, trigger, and outcome matrix across all 21 event files |
+| [`blood-mage-events-overview.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-events-overview.md) | Complete event file, namespace, trigger, and outcome matrix across all 20 event files |
 | [`blood-mage-shared-scripting.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-shared-scripting.md) | Cross-cutting triggers, opinion modifiers, death reasons, nicknames, UI text icons, and overhaul compatibility guards |

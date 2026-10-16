@@ -78,7 +78,7 @@ See `.agents/rules/ck3-localization.md` (english only, sibling keys, loc documen
 
 1. `git branch --show-current`; read `docs-ai/branch-context/<branch>.md` (**create if missing**, see `pr-context.md`), matching rule(s), and matching `docs-ai/architecture/*.md` (start at its `README.md`).
 2. Smallest change that works. Check existing identifiers with `grep -rn`.
-3. Use the matching skill for the task (`add-blood-magic-decision`, `add-faith`, `add-trait-track`, `add-game-rule`).
+3. Use the matching skill for the task (`add-blood-magic-decision`, `add-decision-option-widget`, `add-faith`, `add-trait-track`, `add-game-rule`).
 4. Update matching architecture doc in `docs-ai/architecture/` in the same change so it stays true to current state.
 5. Update `CHANGELOG.md`: living document, prepend single-line short high-level description matching current branch name (e.g. `* v1.20.40: <short description>`), caveman style, net branch status only (fold superseded changes, drop reverts). Reverse chronological: latest changes at top.
 6. **Always** update `docs-ai/branch-context/<branch>.md` to net branch state, however small the task.

@@ -34,8 +34,8 @@ Living technical specification for XP acquisition, Piety costs, Lifeforce sinks/
 | XP Gain | Cost | Action | Type | Requirements | Cooldown |
 | --- | --- | --- | --- | --- | --- |
 | **+1 XP** | None | Yearly Pulse | On-action (`blood_mage_yearly_events.001` / `.004`) | Has `lifestyle_blood_mage` or `lifestyle_blood_knight` | 1 year |
-| **+1 XP** | None (50% roll) | Ancient Attunement Roll | Yearly event roll (`blood_mage_yearly_events.001` / `.004`) | Has `ancient_attuned` | 1 year |
-| Grants `ancient_attuned` | 25 Piety + Minor Lifeforce (`lifeforce_modifier_minor`) | Attune Lifeforce (Ancient) | Event option (`bm_cast_blood_magic_minor.001`) | Has minor lifeforce | None |
+| **+1 XP** (**+2 XP** with Superior **Hulinhjálmur**) | None (guaranteed) | Ancient Attunement Pulse | Yearly event (`blood_mage_yearly_events.001` / `.004`) | Has `ancient_attuned` | 1 year |
+| Grants `ancient_attuned` | 25 Piety + Minor Lifeforce (`lifeforce_modifier_minor`) | Attune Lifeforce (Ancient) | Decision (`bm_attune_lifeforce_decision`) | Has minor lifeforce, piety >= 25 | None |
 | **+2 XP** | 100 Piety + Minor Lifeforce (Forges Major Lifeforce) | Condense Lifeforce | Event option (`bm_cast_blood_magic_minor.001`) | Has minor lifeforce | None |
 | **+8 XP** (crit), **+5 XP** (success), **+2 XP** (fail) | 250 Piety + Minor & Major Lifeforce (Generates Superior) | Manifest Superior Lifeforce | Decision (`bm_manifest_superior_lifeforce_decision`) | `piety_level >= 3`, Minor + Major | 2 years |
 | **+4 XP** | 0 Piety + Minor Lifeforce (`lifeforce_modifier_minor`) | Inscribe Minor Blood Rune (Self) | Event option (`bm_cast_blood_magic_minor.001`) | `piety_level >= 2` | 5 years |
@@ -57,7 +57,7 @@ Living technical specification for XP acquisition, Piety costs, Lifeforce sinks/
 | **+10 XP** (+10 on duel win) | 350 Piety + Superior Lifeforce (`lifeforce_modifier_superior`) | Master Education (5★) | Event option (`bm_cast_blood_magic_superior.001`) | `piety_level >= 3`, 4★ education | 2 years |
 | **+10 XP** | 1000 Piety + Superior Lifeforce (`lifeforce_modifier_superior`) | New Education (2nd Trait) | Event option (`bm_cast_blood_magic_superior.001`) | `piety_level >= 4`, 5★ education | 2 years |
 | **+2 XP** (on duel win) | 1000–1500 Piety + Superior Lifeforce (`lifeforce_modifier_superior`) | Manifest Apex Perfection (Congenital 3-5) | Event option (`bm_cast_blood_magic_superior.001`) | `piety_level >= 3` | 5 years |
-| **+1 XP** | None (50% roll; 100% with Superior Hulinhjálmur) | Enlightenment Attunement Roll | Yearly event roll (`blood_mage_yearly_events.001` / `.004`) | Has `enlightenment_attuned` | 1 year |
+| **+1 XP** (**+2 XP** with Superior **Hulinhjálmur**) | None (guaranteed) | Enlightenment Attunement Pulse | Yearly event (`blood_mage_yearly_events.001` / `.004`) | Has `enlightenment_attuned` | 1 year |
 
 ### 1.3 Bloodline Track (`bloodline`)
 
@@ -74,7 +74,7 @@ Living technical specification for XP acquisition, Piety costs, Lifeforce sinks/
 | **+5 XP** | 350 Piety + Major Lifeforce (`lifeforce_modifier_major`) | Empower Bloodline | Event option (`bm_cast_blood_magic_major.001`) | `exists = house`, `piety_level >= 1` | 3 years |
 | **+5 XP** | 500 Piety + Superior Lifeforce (`lifeforce_modifier_superior`) | Forge Blood Golem | Decision (`blood_golem_creation_decision`) | `piety_level >= 3`, Superior lifeforce | 3 years |
 | **+1 XP** (+10% chance per active house modifier, up to 70%) | None | Yearly Dynasty Modifiers Pulse | On-action (`blood_mage_yearly_events.002`) | Has house, house modifiers | 1 year |
-| **+1 XP** | None (50% roll; 100% with Superior Hulinhjálmur) | Bloodline Attunement Roll | Yearly event roll (`blood_mage_yearly_events.001`) | Has `bloodline_attuned` | 1 year |
+| **+1 XP** (**+2 XP** with Superior **Hulinhjálmur**) | None (guaranteed) | Bloodline Attunement Pulse | Yearly event (`blood_mage_yearly_events.001`) | Has `bloodline_attuned` | 1 year |
 
 ### 1.4 Benediction Track (`benediction`)
 
@@ -89,7 +89,7 @@ Living technical specification for XP acquisition, Piety costs, Lifeforce sinks/
 | **+4 XP** (caster) | 0 Piety + Minor Lifeforce (`lifeforce_modifier_minor`) | Inscribe Minor Rune on Other | Interaction (`bm_inscribe_rune_other_interaction`) | `piety_level >= 2`, 25 Track XP | 5 years |
 | **+5 XP** (caster) | 200 Piety + Major Lifeforce (`lifeforce_modifier_major`) | Upgrade Major Rune on Other | Interaction (`bm_inscribe_rune_other_interaction`) | `piety_level >= 3`, 50 Track XP, Minor rune | 5 years |
 | **+10 XP** (caster) | 400 Piety + Superior Lifeforce (`lifeforce_modifier_superior`) | Upgrade Superior Rune on Other | Interaction (`bm_inscribe_rune_other_interaction`) | Blood Mage, `piety_level >= 4`, 100 Track XP, Major rune | 5 years |
-| **+1 XP** | None (50% roll; 100% with Superior Hulinhjálmur) | Benediction Attunement Roll | Yearly event roll (`blood_mage_yearly_events.001`) | Has `benediction_attuned` | 1 year |
+| **+1 XP** (**+2 XP** with Superior **Hulinhjálmur**) | None (guaranteed) | Benediction Attunement Pulse | Yearly event (`blood_mage_yearly_events.001`) | Has `benediction_attuned` | 1 year |
 
 ### 1.5 Hematurgy Track (`hematurgy`)
 
@@ -99,7 +99,7 @@ Living technical specification for XP acquisition, Piety costs, Lifeforce sinks/
 | **+1 XP** | 25 Piety (`lifedrain_piety_cost_minor`); **Grants** Minor Lifeforce | Lifedrain Courtier | Interaction (`lifedrain_courtier_event_interaction`) | Courtier/prisoner not recently drained | 3 months |
 | **+2 XP** (win), **+4 XP** (crit), **+1 XP** (fail) | 50 Piety + Minor Lifeforce (Crit siphons Minor Lifeforce back) | Cast Blood Curse | Interaction (`bm_curse_blood_interaction`) | >= 10 Hematurgy XP | 1 year |
 | **+2 XP** (on duel win) | 100–325 Piety + Major Lifeforce (Executes victim) | Drain Prisoner Trait (Lvl 1–5) | Interaction + Event (`bm_trait_drain.001`) | Prisoner with congenital trait | 60 days |
-| **+1 XP** | None (50% roll; 100% with Superior Hulinhjálmur) | Hematurgy Attunement Roll | Yearly event roll (`blood_mage_yearly_events.001`) | Has `hematurgy_attuned` | 1 year |
+| **+1 XP** (**+2 XP** with Superior **Hulinhjálmur**) | None (guaranteed) | Hematurgy Attunement Pulse | Yearly event (`blood_mage_yearly_events.001`) | Has `hematurgy_attuned` | 1 year |
 
 ---
 
@@ -159,6 +159,7 @@ Tracks: `vanguard`, `slaughter` (and shared `ancient`, `benediction`, `enlighten
 | **+5 XP** (`benediction`) | 200 Piety + Major Lifeforce | Upgrade Major Rune on Other | Interaction (`bm_inscribe_rune_other_interaction`) | `piety_level >= 3`, 50 Track XP, Minor rune | 5 years |
 | **-5 / -10 / -15 XP** (`ancient`) | 250 / 500 / 1000 Piety + Lifeforce + Wound | Flay & Swap Minor / Major / Superior Rune | Event option (`bm_blood_runes.002`) | Has active Minor / Major / Superior rune | None |
 | **+1 XP** (`enlightenment`) + **+1 XP** (`ancient`) | None (33% ambient roll for Minor Lifeforce) | Yearly Survival Pulse | On-action (`blood_mage_yearly_events.004`) | Has `lifestyle_blood_knight` | 1 year |
+| **+1 XP** (**+2 XP** with Superior **Hulinhjálmur**) (`vanguard` / `slaughter` / `ancient` / `benediction` / `enlightenment`) | None (guaranteed) | Discipline Attunement Pulse | Yearly event (`blood_mage_yearly_events.004`) | Has matching `<track>_attuned` | 1 year |
 
 ## Where the details live
 
@@ -174,4 +175,4 @@ Tracks: `vanguard`, `slaughter` (and shared `ancient`, `benediction`, `enlighten
 | Congenital Trait Manifestation | `common/scripted_effects/bm_manifest_traits_effects.txt`<br>`events/bm_channel_manifest_traits_events.txt` |
 | Blood Empowerment Events | `events/bm_blood_empowerment_event.txt` |
 | Blood Knight Interactions & Hooks | `common/character_interactions/bm_blood_knight_interactions.txt`<br>`common/on_action/bm_combat_on_actions.txt`<br>`common/on_action/bm_duel_on_actions.txt` |
-| Yearly Pulse, Attunements & Birth | `events/bm_yearly_events.txt`<br>`events/bm_attune_lifeforce_events.txt`<br>`common/on_action/bm_blood_mage_prevalence_on_actions.txt` |
+| Yearly Pulse, Attunements & Birth | `events/bm_yearly_events.txt`<br>`common/decisions/cast_magic/bm_attune_lifeforce_decision.txt`<br>`common/on_action/bm_blood_mage_prevalence_on_actions.txt` |
