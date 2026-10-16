@@ -19,7 +19,7 @@ blood_mage_yearly_events.001 = {
                 chance = {
                     value = 50
                     if = {
-                        limit = { has_character_modifier = bm_rune_brynslustafur_superior }
+                        limit = { has_character_modifier = bm_rune_hulinhjalmur_superior }
                         add = 50
                     }
                 }
@@ -42,7 +42,7 @@ blood_mage_yearly_events.001 = {
                 chance = {
                     value = 50
                     if = {
-                        limit = { has_character_modifier = bm_rune_brynslustafur_superior }
+                        limit = { has_character_modifier = bm_rune_hulinhjalmur_superior }
                         add = 50
                     }
                 }
@@ -65,7 +65,7 @@ blood_mage_yearly_events.001 = {
                 chance = {
                     value = 50
                     if = {
-                        limit = { has_character_modifier = bm_rune_brynslustafur_superior }
+                        limit = { has_character_modifier = bm_rune_hulinhjalmur_superior }
                         add = 50
                     }
                 }
@@ -88,7 +88,7 @@ blood_mage_yearly_events.001 = {
                 chance = {
                     value = 50
                     if = {
-                        limit = { has_character_modifier = bm_rune_brynslustafur_superior }
+                        limit = { has_character_modifier = bm_rune_hulinhjalmur_superior }
                         add = 50
                     }
                 }
@@ -111,7 +111,7 @@ blood_mage_yearly_events.001 = {
                 chance = {
                     value = 50
                     if = {
-                        limit = { has_character_modifier = bm_rune_brynslustafur_superior }
+                        limit = { has_character_modifier = bm_rune_hulinhjalmur_superior }
                         add = 50
                     }
                 }
@@ -204,10 +204,6 @@ blood_mage_yearly_events.003 = {
                         title = bm_blood_rune_yearly_event_popup.title
                         left_icon = root
                         add_character_modifier = { modifier = lifeforce_modifier_minor }
-                        if = {
-                            limit = { has_character_modifier = bm_rune_draumstafir_superior }
-                            add_stress = -25
-                        }
                     }
                 }
             }
@@ -223,10 +219,6 @@ blood_mage_yearly_events.003 = {
                         title = bm_blood_rune_yearly_event_popup.title
                         left_icon = root
                         add_character_modifier = { modifier = lifeforce_modifier_minor }
-                        if = {
-                            limit = { has_character_modifier = bm_rune_draumstafir_superior }
-                            add_stress = -25
-                        }
                     }
                 }
                 10 = { # major lifeforce only
@@ -234,10 +226,6 @@ blood_mage_yearly_events.003 = {
                         title = bm_blood_rune_yearly_event_popup.title
                         left_icon = root
                         add_character_modifier = { modifier = lifeforce_modifier_major }
-                        if = {
-                            limit = { has_character_modifier = bm_rune_draumstafir_superior }
-                            add_stress = -25
-                        }
                     }
                 }
                 5 = { # both minor and major lifeforce
@@ -246,10 +234,6 @@ blood_mage_yearly_events.003 = {
                         left_icon = root
                         add_character_modifier = { modifier = lifeforce_modifier_major }
                         add_character_modifier = { modifier = lifeforce_modifier_minor }
-                        if = {
-                            limit = { has_character_modifier = bm_rune_draumstafir_superior }
-                            add_stress = -25
-                        }
                     }
                 }
             }
@@ -265,10 +249,6 @@ blood_mage_yearly_events.003 = {
                         title = bm_blood_rune_yearly_event_popup.title
                         left_icon = root
                         add_character_modifier = { modifier = lifeforce_modifier_minor }
-                        if = {
-                            limit = { has_character_modifier = bm_rune_draumstafir_superior }
-                            add_stress = -25
-                        }
                     }
                 }
                 20 = { # major lifeforce only
@@ -276,10 +256,6 @@ blood_mage_yearly_events.003 = {
                         title = bm_blood_rune_yearly_event_popup.title
                         left_icon = root
                         add_character_modifier = { modifier = lifeforce_modifier_major }
-                        if = {
-                            limit = { has_character_modifier = bm_rune_draumstafir_superior }
-                            add_stress = -25
-                        }
                     }
                 }
                 10 = { # both minor and major lifeforce
@@ -288,10 +264,6 @@ blood_mage_yearly_events.003 = {
                         left_icon = root
                         add_character_modifier = { modifier = lifeforce_modifier_major }
                         add_character_modifier = { modifier = lifeforce_modifier_minor }
-                        if = {
-                            limit = { has_character_modifier = bm_rune_draumstafir_superior }
-                            add_stress = -25
-                        }
                     }
                 }
             }
@@ -333,7 +305,7 @@ blood_mage_yearly_events.004 = {
                 chance = {
                     value = 50
                     if = {
-                        limit = { has_character_modifier = bm_rune_brynslustafur_superior }
+                        limit = { has_character_modifier = bm_rune_hulinhjalmur_superior }
                         add = 50
                     }
                 }
@@ -355,7 +327,7 @@ blood_mage_yearly_events.004 = {
                 chance = {
                     value = 50
                     if = {
-                        limit = { has_character_modifier = bm_rune_brynslustafur_superior }
+                        limit = { has_character_modifier = bm_rune_hulinhjalmur_superior }
                         add = 50
                     }
                 }
@@ -377,7 +349,7 @@ blood_mage_yearly_events.004 = {
                 chance = {
                     value = 50
                     if = {
-                        limit = { has_character_modifier = bm_rune_brynslustafur_superior }
+                        limit = { has_character_modifier = bm_rune_hulinhjalmur_superior }
                         add = 50
                     }
                 }
@@ -399,7 +371,7 @@ blood_mage_yearly_events.004 = {
                 chance = {
                     value = 50
                     if = {
-                        limit = { has_character_modifier = bm_rune_brynslustafur_superior }
+                        limit = { has_character_modifier = bm_rune_hulinhjalmur_superior }
                         add = 50
                     }
                 }
@@ -421,7 +393,7 @@ blood_mage_yearly_events.004 = {
                 chance = {
                     value = 50
                     if = {
-                        limit = { has_character_modifier = bm_rune_brynslustafur_superior }
+                        limit = { has_character_modifier = bm_rune_hulinhjalmur_superior }
                         add = 50
                     }
                 }

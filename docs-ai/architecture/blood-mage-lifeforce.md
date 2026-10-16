@@ -7,7 +7,7 @@ Living technical specification for the Lifeforce resource economy, character mod
 - **What:** Core spellcasting resource of the mod. Stored as stacking character modifiers (`lifeforce_modifier_minor`, `lifeforce_modifier_major`, `lifeforce_modifier_superior`).
 - **Dual Function (Passive Vitality vs. Active Fuel):** Unspent Lifeforce stacks act as permanent vitality buffs (granting Health, Life Expectancy, Fertility Years, Epidemic Resistance, and Prowess). Spending Lifeforce on spells consumes 1 positive stack and applies a corresponding **temporary negative exhaustion modifier** (`lifeforce_modifier_negative_minor/major/superior`), creating a tactical trade-off between hoarding Lifeforce for immortality vs. burning it to advance tracks and cast rites.
 - **Class Harvesting Asymmetry:**
-  - **Blood Mages** primarily generate Lifeforce via prisoner execution (`lifedrain_prisoner_event_interaction`, `mass_lifedrain_prisoners_decision`), courtier siphoning, and spiritual distillation (`bm_manifest_lifeforce_decision`, `bm_manifest_superior_lifeforce_decision`), unless they inscribe Superior **Ægishjálmur** (`bm_rune_aegishjalmur_superior`) to unlock combat harvesting.
+  - **Blood Mages** primarily generate Lifeforce via prisoner execution (`lifedrain_prisoner_event_interaction`, `mass_lifedrain_prisoners_decision`), courtier siphoning, murder schemes with Superior **Hulinhjálmur** (`bm_rune_hulinhjalmur_superior`), and spiritual distillation (`bm_manifest_lifeforce_decision`, `bm_manifest_superior_lifeforce_decision`).
   - **Blood Knights** additionally harvest Lifeforce passively on the battlefield (scaled by troop size), from lethal single-combat kills (Major Lifeforce + 25% Superior chance against worthy foes), and via a ~33% ambient yearly pulse (`blood_mage_yearly_events.004`).
 
 ### Lifeforce & Exhaustion Modifiers Table (`common/modifiers/bm_lifeforce.txt`)
@@ -27,7 +27,7 @@ Living technical specification for the Lifeforce resource economy, character mod
 
 ## Battlefield Lifeforce & XP Scaling (`common/scripted_effects/bm_combat_effects.txt`)
 
-Triggered on `on_combat_end_winner` (`bm_on_combat_end_winner`) for surviving side commanders and knights who have `lifestyle_blood_knight` (or `bm_rune_aegishjalmur_superior` for Lifeforce harvesting):
+Triggered on `on_combat_end_winner` (`bm_on_combat_end_winner`) for surviving side commanders and knights who have `lifestyle_blood_knight`:
 
 | Battle Size (`num_total_troops` OR `num_enemies_killed`) | Minor Lifeforce Chance | Major Lifeforce Chance | Commander `vanguard` XP | Knight `vanguard` XP |
 | --- | --- | --- | --- | --- |
@@ -49,12 +49,13 @@ Triggered on `on_combat_end_winner` (`bm_on_combat_end_winner`) for surviving si
 
 | Action / Hook | Class Access | Cost / Requirements | Lifeforce Delta | Track XP Gain |
 | --- | --- | --- | --- | --- |
-| **Execute Prisoner (`lifedrain_prisoner_event_interaction`)** | Mage | 50 Piety (`lifedrain_piety_cost_major`), un-drained prisoner | **+1 Major** (executes victim; +25g with Superior Nábrókarstafur) | `+2` `hematurgy` |
-| **Mass Lifedrain (`mass_lifedrain_prisoners_decision`)** | Mage & Knight | Piety per prisoner, dungeon prisoners | **+Minor / +Major** per prisoner executed (+25g/victim with Superior Nábrókarstafur) | Scaled `hematurgy` |
+| **Execute Prisoner (`lifedrain_prisoner_event_interaction`)** | Mage | 50 Piety (`lifedrain_piety_cost_major`), un-drained prisoner | **+1 Major** (executes victim) | `+2` `hematurgy` |
+| **Mass Lifedrain (`mass_lifedrain_prisoners_decision`)** | Mage & Knight | Piety per prisoner, dungeon prisoners | **+Minor / +Major** per prisoner executed | Scaled `hematurgy` |
 | **Siphon Courtier/Prisoner (`lifedrain_courtier_event_interaction`)** | Mage & Knight | 25 Piety (`lifedrain_piety_cost_minor`), 3-mo CD | **+1 Minor** (victim gets `lifedrained_modifier`) | `+1` `hematurgy` (Mage) / `+1` `slaughter` (Knight) |
-| **Single Combat Lethal Kill (`bm_on_character_death_duel`)** | Knight (or Superior Ægishjálmur) | Slay opponent in single combat | **+1 Major** (+ **25% chance +1 Superior** if victim `prowess >= 35` or blood mage/knight) | `+5` `slaughter` (Knight) |
-| **Battlefield Victory (`bm_on_combat_end_winner`)** | Knight (or Superior Ægishjálmur) | Win battle as commander or knight | **10%–100% Minor** & **0%–100% Major** (scales by troop bracket) | `+1` to `+5` `vanguard` (Knight) |
-| **Blood Rune Yearly Pulse (`blood_mage_yearly_events.003`)** | Any Rune Bearer | Holds Minor / Major / Superior Blood Rune | Minor: 20% Minor; Major: 20% Minor, 10% Major, 5% Both; Superior: 10% Minor, 20% Major, 10% Both (-25 Stress with Superior Draumstafir) | None |
+| **Single Combat Lethal Kill (`bm_on_character_death_duel`)** | Knight only | Slay opponent in single combat | **+1 Major** (+ **25% chance +1 Superior** if victim `prowess >= 35` or blood mage/knight) | `+5` `slaughter` (Knight) |
+| **Battlefield Victory (`bm_on_combat_end_winner`)** | Knight only | Win battle as commander or knight | **10%–100% Minor** & **0%–100% Major** (scales by troop bracket) | `+1` to `+5` `vanguard` (Knight) |
+| **Murder Scheme Execution (`bm_on_murder_success_hulinhjalmur`)** | Superior Hulinhjálmur | Execute successful Murder scheme | **+1 Major** | None |
+| **Blood Rune Yearly Pulse (`blood_mage_yearly_events.003`)** | Any Rune Bearer | Holds Minor / Major / Superior Blood Rune | Minor: 20% Minor; Major: 20% Minor, 10% Major, 5% Both; Superior: 10% Minor, 20% Major, 10% Both | None |
 | **Knight Ambient Pulse (`blood_mage_yearly_events.004`)** | Knight only | Yearly pulse | **~33% chance +1 Minor** | `+1` `ancient`, `+1` `enlightenment` |
 | **Manifest Lifeforce (`bm_manifest_lifeforce_decision`)** | Mage & Knight | 100 Piety, `piety_level >= 2`, 1-yr CD | Learning duel: Crit -> **+1 Major**; Success -> **+1 Minor** | `+3` `enlightenment` |
 | **Condense Lifeforce (`bm_cast_blood_magic_minor.001`)** | Mage & Knight | 100 Piety + 1 Minor Lifeforce | **-1 Minor -> +1 Major** (no exhaustion debuff) | `+2` `ancient` |

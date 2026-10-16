@@ -58,7 +58,7 @@ Living technical specification for XP acquisition, Piety costs, Lifeforce sinks/
 | **+10 XP** (+10 on duel win) | 350 Piety + Superior Lifeforce (`lifeforce_modifier_superior`) | Master Education (5★) | Event option (`bm_cast_blood_magic_superior.001`) | `piety_level >= 3`, 4★ education | 2 years |
 | **+10 XP** | 1000 Piety + Superior Lifeforce (`lifeforce_modifier_superior`) | New Education (2nd Trait) | Event option (`bm_cast_blood_magic_superior.001`) | `piety_level >= 4`, 5★ education | 2 years |
 | **+2 XP** (on duel win) | 1000–1500 Piety + Superior Lifeforce (`lifeforce_modifier_superior`) | Manifest Apex Perfection (Congenital 3-5) | Event option (`bm_cast_blood_magic_superior.001`) | `piety_level >= 3` | 5 years |
-| **+1 XP** | None (50% roll; 100% with Superior Brýnslustafur) | Enlightenment Attunement Roll | Yearly event roll (`blood_mage_yearly_events.001` / `.004`) | Has `enlightenment_attuned` | 1 year |
+| **+1 XP** | None (50% roll; 100% with Superior Hulinhjálmur) | Enlightenment Attunement Roll | Yearly event roll (`blood_mage_yearly_events.001` / `.004`) | Has `enlightenment_attuned` | 1 year |
 
 ### 1.3 Bloodline Track (`bloodline`)
 
@@ -68,13 +68,14 @@ Living technical specification for XP acquisition, Piety costs, Lifeforce sinks/
 | **+2 XP** | 250 Piety + Minor Lifeforce | Grant Blood Magic (Minor) | Interaction (`grant_blood_magic_interaction`) | Target non-mage, non-knight | None |
 | **+2 XP** (+4 XP if child inherits; doubled to +4/+8 by Superior Feingur) | None | Childbirth Milestone | On-action (`on_birth_child` -> `bm_on_birth_bloodline_xp`) | Parent is blood mage | Per birth |
 | **+2 XP** | 35 Piety + Minor Lifeforce (`lifeforce_modifier_minor`) | Bless Kin's Blood | Interaction (`bm_bless_bloodline_interaction`) | Target child/dynasty kin | 10 years (target buff) |
+| **+2 XP** | 50 Piety + Minor Lifeforce (`lifeforce_modifier_minor`) | Bless Dynasty Bloodline (Feingur) | Interaction (`bm_feingur_bless_dynasty_interaction`) | Superior Feingur stave; child or dynasty kin | Permanent |
 | **+2 XP** | 50 Piety + Minor Lifeforce (`lifeforce_modifier_minor`) | Purge Bodily Impurities (Congenital Flaw Cleansed) | Event option (`bm_cast_blood_magic_minor.001`) | Has ugly/dull/weak | None |
 | **+4 XP** (on duel win) | 200–600 Piety + Major Lifeforce (`lifeforce_modifier_major`) | Manifest Perfection (Congenital 1-2) | Event option (`bm_cast_blood_magic_major.001`) | `piety_level >= 2` | 5 years |
 | **+6 XP** (on duel win) | 1000–1500 Piety + Superior Lifeforce (`lifeforce_modifier_superior`) | Manifest Apex Perfection (Congenital 3-5) | Event option (`bm_cast_blood_magic_superior.001`) | `piety_level >= 3` | 5 years |
 | **+5 XP** | 350 Piety + Major Lifeforce (`lifeforce_modifier_major`) | Empower Bloodline | Event option (`bm_cast_blood_magic_major.001`) | `exists = house`, `piety_level >= 1` | 3 years |
 | **+5 XP** | 500 Piety + Superior Lifeforce (`lifeforce_modifier_superior`) | Forge Blood Golem | Decision (`blood_golem_creation_decision`) | `piety_level >= 3`, Superior lifeforce | 3 years |
 | **+1 XP** (+10% chance per active house modifier, up to 70%) | None | Yearly Dynasty Modifiers Pulse | On-action (`blood_mage_yearly_events.002`) | Has house, house modifiers | 1 year |
-| **+1 XP** | None (50% roll; 100% with Superior Brýnslustafur) | Bloodline Attunement Roll | Yearly event roll (`blood_mage_yearly_events.001`) | Has `bloodline_attuned` | 1 year |
+| **+1 XP** | None (50% roll; 100% with Superior Hulinhjálmur) | Bloodline Attunement Roll | Yearly event roll (`blood_mage_yearly_events.001`) | Has `bloodline_attuned` | 1 year |
 
 ### 1.4 Benediction Track (`benediction`)
 
@@ -89,7 +90,7 @@ Living technical specification for XP acquisition, Piety costs, Lifeforce sinks/
 | **+4 XP** (caster) | 0 Piety + Minor Lifeforce (`lifeforce_modifier_minor`) | Inscribe Minor Rune on Other | Interaction (`bm_inscribe_rune_other_interaction`) | `piety_level >= 2`, 25 Track XP | 5 years |
 | **+5 XP** (caster) | 200 Piety + Major Lifeforce (`lifeforce_modifier_major`) | Upgrade Major Rune on Other | Interaction (`bm_inscribe_rune_other_interaction`) | `piety_level >= 3`, 50 Track XP, Minor rune | 5 years |
 | **+10 XP** (caster) | 400 Piety + Superior Lifeforce (`lifeforce_modifier_superior`) | Upgrade Superior Rune on Other | Interaction (`bm_inscribe_rune_other_interaction`) | Blood Mage, `piety_level >= 4`, 100 Track XP, Major rune | 5 years |
-| **+1 XP** | None (50% roll; 100% with Superior Brýnslustafur) | Benediction Attunement Roll | Yearly event roll (`blood_mage_yearly_events.001`) | Has `benediction_attuned` | 1 year |
+| **+1 XP** | None (50% roll; 100% with Superior Hulinhjálmur) | Benediction Attunement Roll | Yearly event roll (`blood_mage_yearly_events.001`) | Has `benediction_attuned` | 1 year |
 
 ### 1.5 Hematurgy Track (`hematurgy`)
 
@@ -98,9 +99,9 @@ Living technical specification for XP acquisition, Piety costs, Lifeforce sinks/
 | **+2 XP** | 50 Piety (`lifedrain_piety_cost_major`); **Grants** Major Lifeforce (Executes victim) | Lifedrain Prisoner | Interaction (`lifedrain_prisoner_event_interaction`) | Imprisoned target | None |
 | **+1 XP** | 25 Piety (`lifedrain_piety_cost_minor`); **Grants** Minor Lifeforce | Lifedrain Courtier | Interaction (`lifedrain_courtier_event_interaction`) | Courtier/prisoner not recently drained | 3 months |
 | **+2 XP** (win), **+4 XP** (crit), **+1 XP** (fail) | 50 Piety + Minor Lifeforce (Crit siphons Minor Lifeforce back) | Cast Blood Curse | Interaction (`bm_curse_blood_interaction`) | >= 10 Hematurgy XP | 1 year |
-| **+2 XP** (on duel win) | 100–325 Piety + Major Lifeforce (Executes victim) | Drain Prisoner Trait (Lvl 1–5) | Interaction + Event (`bm_trait_drain.001`) | Prisoner with congenital trait | 60 days (15d w/ Superior Hulinhjálmur) |
+| **+2 XP** (on duel win) | 100–325 Piety + Major Lifeforce (Executes victim) | Drain Prisoner Trait (Lvl 1–5) | Interaction + Event (`bm_trait_drain.001`) | Prisoner with congenital trait | 60 days |
 | **+1 to +2 XP** | None | Seek Power Wilderness Harvest | Decision & Event (`seek_power.001`) | Blood mage or Blood knight | 1–2 years |
-| **+1 XP** | None (50% roll; 100% with Superior Brýnslustafur) | Hematurgy Attunement Roll | Yearly event roll (`blood_mage_yearly_events.001`) | Has `hematurgy_attuned` | 1 year |
+| **+1 XP** | None (50% roll; 100% with Superior Hulinhjálmur) | Hematurgy Attunement Roll | Yearly event roll (`blood_mage_yearly_events.001`) | Has `hematurgy_attuned` | 1 year |
 
 ---
 

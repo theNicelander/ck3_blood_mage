@@ -6,7 +6,6 @@ Living technical specification for contested skill duels, initiation trials, ex-
 
 - **What:** Contested skill duel subsystems governing how characters awaken to blood magic, forge or steal congenital traits (up to Rank 5), ascend education traits (1★ to 5★ + secondary education), and harvest Lifeforce in single combat or mass executions.
 - **Shared Access:** All rites and duels below are accessible to both **Blood Mages** (`lifestyle_blood_mage`) and **Blood Knights** (`lifestyle_blood_knight`).
-- **Rune Synergy:** Holding Superior **Gapaldur & Ginfaxi** (`bm_rune_gapaldur_superior`) adds `+15` victory weight to mod skill duels and consumes 1 Minor Lifeforce to downgrade fatal duel injuries (`wounded_3`) to `wounded_2`. Holding Superior **Hulinhjálmur** (`bm_rune_hulinhjalmur_superior`) slashes prisoner trait theft cooldown from 60 days to 15 days.
 
 ### Duels & Self-Advancement Master Table
 
@@ -54,7 +53,7 @@ Allows characters to cleanse congenital flaws and ascend `intellect`, `physique`
 
 ### 3. Prisoner Trait Theft Duel Math (`bm_drain_duel_values.txt`)
 - **Net Caster Modifier (`trait_drain_modifier`):**
-  $$\text{Modifier} = \text{Total Blood Mage/Knight XP} - \text{Prisoner Trait Penalty} + (\text{+15 if Superior Gapaldur})$$
+  $$\text{Modifier} = \text{Total Blood Mage/Knight XP} - \text{Prisoner Trait Penalty}$$
 - **Prisoner Trait Penalty (`trait_drain_harder_per_trait_modifier`):**
   - Rank 1 (`intellect_good_1`, `physique_good_1`, `beauty_good_1`, `fecund`, `giant`, `pure_blooded`): `-30` per trait.
   - Rank 2 (`intellect_good_2`, `physique_good_2`, `beauty_good_2`): `-60` per trait.

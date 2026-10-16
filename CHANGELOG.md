@@ -2,7 +2,7 @@
 
 ## Game version 1.20
 
-- v1.20.40: Blood Runes & Galdrastafir system with 10 staves, superior capstones, and inscription on others.
+- v1.20.40: Blood Runes & Galdrastafir with 5 staves, sequential progression, superior capstones, and retinue inscription.
 - v1.20.39: Blood Knight refactor into a viable lifestyle peer to Blood Mage with parallel Devotion.
 - v1.20.38: Current Situation healing alerts, faith decision integration, and Blood Knight elevation polish.
 - v1.20.37: Replicate Situation decisions in Decisions tab, AI targeting polish, and Blood Rune toasts.

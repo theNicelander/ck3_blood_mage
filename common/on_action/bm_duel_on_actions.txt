@@ -1,4 +1,67 @@
-﻿on_death = {
+﻿# Duel & Combat Clash On-Actions for Blood Mages & Blood Knights
+
+on_combat_start = {
+	on_actions = {
+		bm_on_combat_start_aegishjalmur_terror
+	}
+}
+
+bm_on_combat_start_aegishjalmur_terror = {
+	effect = {
+		# Attacker has Aegishjalmur -> Defender terrified
+		if = {
+			limit = {
+				combat_attacker = {
+					OR = {
+						side_commander ?= { has_character_modifier = bm_rune_aegishjalmur_superior }
+						any_side_knight = { has_character_modifier = bm_rune_aegishjalmur_superior }
+					}
+				}
+			}
+			combat_defender = {
+				side_commander ?= {
+					add_character_modifier = {
+						modifier = bm_aegishjalmur_terror_modifier
+						years = 1
+					}
+				}
+				every_side_knight = {
+					add_character_modifier = {
+						modifier = bm_aegishjalmur_terror_modifier
+						years = 1
+					}
+				}
+			}
+		}
+		# Defender has Aegishjalmur -> Attacker terrified
+		if = {
+			limit = {
+				combat_defender = {
+					OR = {
+						side_commander ?= { has_character_modifier = bm_rune_aegishjalmur_superior }
+						any_side_knight = { has_character_modifier = bm_rune_aegishjalmur_superior }
+					}
+				}
+			}
+			combat_attacker = {
+				side_commander ?= {
+					add_character_modifier = {
+						modifier = bm_aegishjalmur_terror_modifier
+						years = 1
+					}
+				}
+				every_side_knight = {
+					add_character_modifier = {
+						modifier = bm_aegishjalmur_terror_modifier
+						years = 1
+					}
+				}
+			}
+		}
+	}
+}
+
+on_death = {
 	on_actions = {
 		bm_on_character_death_duel
 	}
@@ -10,10 +73,7 @@ bm_on_character_death_duel = {
 			limit = {
 				exists = scope:killer
 				scope:killer = {
-					OR = {
-						has_trait = lifestyle_blood_knight
-						has_character_modifier = bm_rune_aegishjalmur_superior
-					}
+					has_trait = lifestyle_blood_knight
 					has_variable = engaged_in_single_combat
 				}
 				has_variable = engaged_in_single_combat

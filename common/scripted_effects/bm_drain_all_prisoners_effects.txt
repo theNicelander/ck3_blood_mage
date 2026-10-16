@@ -22,11 +22,6 @@ lifedrain_execution_effect = {
     }
 
     scope:executioner = {
-        if = {
-            limit = { has_character_modifier = bm_rune_nabrokarstafur_superior }
-            add_gold = 25
-        }
-
         #Kinslaying
         add_kinslayer_trait_or_nothing_effect = { VICTIM = scope:victim }
 

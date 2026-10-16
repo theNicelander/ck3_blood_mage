@@ -117,15 +117,10 @@
 						add_stress = 15
 					}
 					scope:recipient = {
-						if = {
-							limit = {
-								NOT = { scope:actor = { has_character_modifier = bm_rune_hulinhjalmur_superior } }
-							}
-							add_opinion = {
-								target = scope:actor
-								modifier = lifedrained_me
-								opinion = -40
-							}
+						add_opinion = {
+							target = scope:actor
+							modifier = lifedrained_me
+							opinion = -40
 						}
 					}
 				}

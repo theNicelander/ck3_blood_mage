@@ -1,4 +1,4 @@
-﻿# Travel On Actions for Blood Mages
+﻿# Travel On Actions for Blood Mages & Blood Knights
 
 on_travel_plan_movement = {
 	on_actions = {
@@ -8,7 +8,7 @@ on_travel_plan_movement = {
 
 bm_on_visited_point_of_interest = {
 	trigger = {
-		has_character_modifier = bm_rune_holastafur_superior
+		has_character_modifier = bm_rune_nabrokarstafur_superior
 		exists = location
 		location = {
 			OR = {
@@ -18,22 +18,22 @@ bm_on_visited_point_of_interest = {
 		}
 		NOT = {
 			is_target_in_variable_list = {
-				name = bm_holastafur_visited_poi
+				name = bm_nabrokarstafur_visited_poi
 				target = location
 			}
 		}
 	}
 	effect = {
 		add_to_variable_list = {
-			name = bm_holastafur_visited_poi
+			name = bm_nabrokarstafur_visited_poi
 			target = location
 		}
-		add_gold = 10
+		add_gold = 20
 		send_interface_toast = {
 			type = event_toast_effect_good
-			title = bm_holastafur_poi_toast
+			title = bm_nabrokarstafur_poi_toast
 			left_icon = root
-			custom_tooltip = bm_holastafur_poi_toast_desc
+			custom_tooltip = bm_nabrokarstafur_poi_toast_desc
 		}
 	}
 }

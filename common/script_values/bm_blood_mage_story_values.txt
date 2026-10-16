@@ -65,3 +65,10 @@ bm_seek_power_cooldown_years = {
 		multiply = 0.5
 	}
 }
+
+bm_nabrokarstafur_battle_gold_value = {
+	value = scope:winning_side.num_enemies_killed
+	multiply = 0.10
+	min = 25
+	max = 250
+}

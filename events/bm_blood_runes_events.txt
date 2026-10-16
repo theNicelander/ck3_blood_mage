@@ -1,6 +1,6 @@
 ﻿namespace = bm_blood_runes
 
-# 10-Stave Galdrastafir Selector
+# 5-Stave Galdrastafir Selector
 bm_blood_runes.001 = {
 	type = character_event
 	title = bm_blood_runes.001.t
@@ -27,7 +27,7 @@ bm_blood_runes.001 = {
 		}
 	}
 
-	# 1. Vegvisir (Wayfinder)
+	# 1. Vegvisir (The Wayfinder)
 	option = {
 		name = bm_blood_runes.001.vegvisir
 		custom_tooltip = bm_blood_runes.001.vegvisir.tt
@@ -43,18 +43,18 @@ bm_blood_runes.001 = {
 		}
 	}
 
-	# 2. Holastafur (Earth-Opener)
+	# 2. Aegishjalmur (Helm of Awe)
 	option = {
-		name = bm_blood_runes.001.holastafur
-		custom_tooltip = bm_blood_runes.001.holastafur.tt
+		name = bm_blood_runes.001.aegishjalmur
+		custom_tooltip = bm_blood_runes.001.aegishjalmur.tt
 		scope:rune_target = {
-			bm_apply_selected_stave_at_current_tier_effect = { STAVE = holastafur }
+			bm_apply_selected_stave_at_current_tier_effect = { STAVE = aegishjalmur }
 		}
 		ai_chance = {
 			base = 10
 			modifier = {
-				add = 20
-				has_lifestyle = stewardship_lifestyle
+				add = 25
+				has_trait = lifestyle_blood_knight
 			}
 		}
 	}
@@ -75,39 +75,7 @@ bm_blood_runes.001 = {
 		}
 	}
 
-	# 4. Aegishjalmur (Helm of Awe)
-	option = {
-		name = bm_blood_runes.001.aegishjalmur
-		custom_tooltip = bm_blood_runes.001.aegishjalmur.tt
-		scope:rune_target = {
-			bm_apply_selected_stave_at_current_tier_effect = { STAVE = aegishjalmur }
-		}
-		ai_chance = {
-			base = 10
-			modifier = {
-				add = 25
-				has_trait = lifestyle_blood_knight
-			}
-		}
-	}
-
-	# 5. Gapaldur & Ginfaxi (Unbroken Heel)
-	option = {
-		name = bm_blood_runes.001.gapaldur
-		custom_tooltip = bm_blood_runes.001.gapaldur.tt
-		scope:rune_target = {
-			bm_apply_selected_stave_at_current_tier_effect = { STAVE = gapaldur }
-		}
-		ai_chance = {
-			base = 10
-			modifier = {
-				add = 20
-				prowess >= 15
-			}
-		}
-	}
-
-	# 6. Nabrokarstafur (Flayed Tithe)
+	# 4. Nabrokarstafur (Flayed Tithe)
 	option = {
 		name = bm_blood_runes.001.nabrokarstafur
 		custom_tooltip = bm_blood_runes.001.nabrokarstafur.tt
@@ -123,7 +91,7 @@ bm_blood_runes.001 = {
 		}
 	}
 
-	# 7. Hulinhjalmur & Lasabrjotur (Unseen Siphon)
+	# 5. Hulinhjalmur (Unseen Shroud)
 	option = {
 		name = bm_blood_runes.001.hulinhjalmur
 		custom_tooltip = bm_blood_runes.001.hulinhjalmur.tt
@@ -133,56 +101,8 @@ bm_blood_runes.001 = {
 		ai_chance = {
 			base = 10
 			modifier = {
-				add = 25
+				add = 20
 				has_lifestyle = intrigue_lifestyle
-			}
-		}
-	}
-
-	# 8. Brynslustafur (Honed Mind)
-	option = {
-		name = bm_blood_runes.001.brynslustafur
-		custom_tooltip = bm_blood_runes.001.brynslustafur.tt
-		scope:rune_target = {
-			bm_apply_selected_stave_at_current_tier_effect = { STAVE = brynslustafur }
-		}
-		ai_chance = {
-			base = 10
-			modifier = {
-				add = 25
-				has_lifestyle = learning_lifestyle
-			}
-		}
-	}
-
-	# 9. Draumstafir (Lucid Pulse)
-	option = {
-		name = bm_blood_runes.001.draumstafir
-		custom_tooltip = bm_blood_runes.001.draumstafir.tt
-		scope:rune_target = {
-			bm_apply_selected_stave_at_current_tier_effect = { STAVE = draumstafir }
-		}
-		ai_chance = {
-			base = 10
-			modifier = {
-				add = 20
-				stress >= 100
-			}
-		}
-	}
-
-	# 10. Drepsottarstafur (Plague-Ward)
-	option = {
-		name = bm_blood_runes.001.drepsottarstafur
-		custom_tooltip = bm_blood_runes.001.drepsottarstafur.tt
-		scope:rune_target = {
-			bm_apply_selected_stave_at_current_tier_effect = { STAVE = drepsottarstafur }
-		}
-		ai_chance = {
-			base = 10
-			modifier = {
-				add = 20
-				health <= fine_health
 			}
 		}
 	}

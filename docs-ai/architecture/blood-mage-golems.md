@@ -20,7 +20,7 @@ Living technical specification for the Blood Golem construct subsystem.
 | **Base Skills** | **15 Prowess**, 1 Diplomacy, 1 Martial, 1 Stewardship, 1 Intrigue, 1 Learning |
 | **Innate Personality** | `content`, `brave`, `trusting`, `loyal` (+100 loyalty/opinion synergy, never schemes against creator) |
 | **Innate Physical / Status** | `beardless_eunuch` (blocks marriage, reproduction, and succession), `giant`, `albino`, `education_martial_1` |
-| **Rune Synergy** | Eligible target for `bm_inscribe_rune_other_interaction` (e.g. carving **Ægishjálmur** or **Gapaldur** onto a golem) |
+| **Rune Synergy** | Eligible target for `bm_inscribe_rune_other_interaction` (e.g. carving **Ægishjálmur** onto a golem) |
 
 ### Golem Shaping Options & Dynamic Piety Cost (`blood_golem.002`)
 
@@ -39,11 +39,11 @@ Every shaping attempt in `blood_golem.002` charges a dynamic Piety cost (`golem_
 ### Shaping Duel Resolution & Backlash (`bm_golem_duel_effect.txt`)
 
 - **Single-Tier Traits (`golem_duel_effect`):** Learning duel (`value = 0`).
-  - **Success** (base 100, `+5` per Learning above 0, `+15` with Superior **Gapaldur**): Adds `$TRAIT$` to golem.
+  - **Success** (base 100, `+5` per Learning above 0): Adds `$TRAIT$` to golem.
   - **Failure** (base 100): Pays double Piety cost (`golem_piety_cost_scaled_by_traits`) and rolls trait-count health backlash (`scale_cost_by_number_of_traits_golem_has`, risking wounds or `death_blood_golem_failed` if the golem already holds many traits).
   - **Critical Failure** (base 100, `-2` per Learning): Pays extra Piety, applies 1-year `lifeforce_modifier_negative_minor`, `+10` Stress, and health backlash.
 - **Leveled Traits (`golem_duel_effect_level`):** Learning duel (`value = 0`).
-  - **Success** (base 40, `+3` per Learning, `+15` with Superior **Gapaldur**): Adds rank 1 or increments rank by `+1`.
+  - **Success** (base 40, `+3` per Learning): Adds rank 1 or increments rank by `+1`.
   - **Failure** (base 60): Applies 1-year `lifeforce_modifier_negative_minor`, `+10` Stress, and trait-count health backlash.
 
 ## Where the details live

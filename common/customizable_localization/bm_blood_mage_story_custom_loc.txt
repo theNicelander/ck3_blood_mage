@@ -93,26 +93,6 @@ BM_BLOOD_MAGE_STAVE_DISPLAY = {
 	text = {
 		trigger = {
 			OR = {
-				has_character_modifier = bm_rune_holastafur_minor
-				has_character_modifier = bm_rune_holastafur_major
-				has_character_modifier = bm_rune_holastafur_superior
-			}
-		}
-		localization_key = bm_stave_display_holastafur
-	}
-	text = {
-		trigger = {
-			OR = {
-				has_character_modifier = bm_rune_feingur_minor
-				has_character_modifier = bm_rune_feingur_major
-				has_character_modifier = bm_rune_feingur_superior
-			}
-		}
-		localization_key = bm_stave_display_feingur
-	}
-	text = {
-		trigger = {
-			OR = {
 				has_character_modifier = bm_rune_aegishjalmur_minor
 				has_character_modifier = bm_rune_aegishjalmur_major
 				has_character_modifier = bm_rune_aegishjalmur_superior
@@ -123,12 +103,12 @@ BM_BLOOD_MAGE_STAVE_DISPLAY = {
 	text = {
 		trigger = {
 			OR = {
-				has_character_modifier = bm_rune_gapaldur_minor
-				has_character_modifier = bm_rune_gapaldur_major
-				has_character_modifier = bm_rune_gapaldur_superior
+				has_character_modifier = bm_rune_feingur_minor
+				has_character_modifier = bm_rune_feingur_major
+				has_character_modifier = bm_rune_feingur_superior
 			}
 		}
-		localization_key = bm_stave_display_gapaldur
+		localization_key = bm_stave_display_feingur
 	}
 	text = {
 		trigger = {
@@ -149,36 +129,6 @@ BM_BLOOD_MAGE_STAVE_DISPLAY = {
 			}
 		}
 		localization_key = bm_stave_display_hulinhjalmur
-	}
-	text = {
-		trigger = {
-			OR = {
-				has_character_modifier = bm_rune_brynslustafur_minor
-				has_character_modifier = bm_rune_brynslustafur_major
-				has_character_modifier = bm_rune_brynslustafur_superior
-			}
-		}
-		localization_key = bm_stave_display_brynslustafur
-	}
-	text = {
-		trigger = {
-			OR = {
-				has_character_modifier = bm_rune_draumstafir_minor
-				has_character_modifier = bm_rune_draumstafir_major
-				has_character_modifier = bm_rune_draumstafir_superior
-			}
-		}
-		localization_key = bm_stave_display_draumstafir
-	}
-	text = {
-		trigger = {
-			OR = {
-				has_character_modifier = bm_rune_drepsottarstafur_minor
-				has_character_modifier = bm_rune_drepsottarstafur_major
-				has_character_modifier = bm_rune_drepsottarstafur_superior
-			}
-		}
-		localization_key = bm_stave_display_drepsottarstafur
 	}
 	text = {
 		fallback = yes
