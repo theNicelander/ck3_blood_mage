@@ -73,6 +73,8 @@ See `.agents/rules/ck3-localization.md` (english only, sibling keys, loc documen
 - Change `descriptor.mod` (`name`, `remote_file_id`, `version`) or add `replace_path`.
 - Delete third-party compat code (Blood of Numenor, AGOT checks) without asking. Never reference another mod's traits, faiths or titles directly; guard with `has_global_variable = AGOT_is_loaded` or doctrine parameters.
 - Invent effect, trigger or scope names. Find them in vanilla or `script_docs` output and cite where.
+- Switch branches or create new branches unless explicitly instructed by the user. Stay in the current branch. Never create separate branches to isolate work.
+- Blanket stage (`git add .`, `git add -A`, `git commit -a`) when uncommitted changes exist from other agents or tasks. Multiple AIs work in parallel on this repo: only stage and commit files modified in your current conversation. "Commit ignoring other changes" means leave other modified files untouched and uncommitted, never create a separate branch.
 
 ## Workflow
 
