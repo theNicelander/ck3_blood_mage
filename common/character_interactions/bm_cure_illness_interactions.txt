@@ -48,14 +48,14 @@
 					scope:recipient = { bm_has_minor_ailment_trigger = yes }
 					scope:actor = {
 						has_character_modifier = lifeforce_modifier_minor
-						piety >= 15
+						piety >= cure_illness_cost_minor
 					}
 				}
 				AND = {
 					scope:recipient = { bm_has_major_ailment_trigger = yes }
 					scope:actor = {
 						has_character_modifier = lifeforce_modifier_major
-						piety >= 35
+						piety >= cure_illness_cost_major
 					}
 				}
 				AND = {
@@ -63,7 +63,7 @@
 					scope:actor = {
 						has_character_modifier = lifeforce_modifier_minor
 						has_character_modifier = lifeforce_modifier_major
-						piety >= 100
+						piety >= cure_illness_cost_benediction
 					}
 				}
 			}

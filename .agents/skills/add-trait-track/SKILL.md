@@ -14,7 +14,7 @@ Context: `docs-ai/architecture/blood-mage-traits.md`, `blood-mage-blood-empowerm
 2. Update all XP-gated checks testing all tracks (`grep` existing track names).
 3. Update XP helper effects in `common/scripted_effects/bm_trait_track_xp_gain_effects.txt`.
 4. English loc: track name and description in `bm_traits_l_english.yml`.
-5. Update docs and validate.
+5. Update docs, `CHANGELOG.md`, branch context; validate.
 
 ## Verify
 

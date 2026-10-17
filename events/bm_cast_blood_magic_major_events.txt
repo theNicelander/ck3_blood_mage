@@ -55,7 +55,10 @@ bm_cast_blood_magic_major.001 = {
 	option = {
 		name = bm_cast_blood_magic_major.001.improve_education
 		trigger = {
-			NOT = { has_character_flag = bm_improve_education_cooldown }
+			custom_description = {
+				text = bm_improve_education_cooldown_tt
+				NOT = { has_character_flag = bm_improve_education_cooldown }
+			}
 			piety_level >= 3
 			piety >= scaled_education_enhancement_cost
 			OR = {
@@ -104,7 +107,10 @@ bm_cast_blood_magic_major.001 = {
 	option = {
 		name = bm_cast_blood_magic_major.001.blood_rune_major
 		trigger = {
-			NOT = { has_character_flag = bm_blood_rune_cooldown }
+			custom_description = {
+				text = bm_blood_rune_cooldown_tt
+				NOT = { has_character_flag = bm_blood_rune_cooldown }
+			}
 			has_character_modifier = minor_blood_rune_modifier
 			NOT = { has_character_modifier = major_blood_rune_modifier }
 			NOT = { has_character_modifier = superior_blood_rune_modifier }
@@ -113,18 +119,13 @@ bm_cast_blood_magic_major.001 = {
 			piety >= 200
 		}
 		show_as_unavailable = {
-			has_character_modifier = minor_blood_rune_modifier
-			NOT = { has_character_modifier = major_blood_rune_modifier }
-			NOT = { has_character_modifier = superior_blood_rune_modifier }
+			always = yes
 		}
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_blood_rune_major_toast
 			left_icon = root
-			remove_character_modifier = minor_blood_rune_modifier
-			add_character_modifier = {
-				modifier = major_blood_rune_modifier
-			}
+			bm_upgrade_blood_rune_to_major_effect = yes
 			custom_tooltip = blood_runes_effects_list.major
 			if = {
 				limit = { has_trait = lifestyle_blood_mage }
@@ -159,7 +160,10 @@ bm_cast_blood_magic_major.001 = {
 	option = {
 		name = bm_cast_blood_magic_major.001.bloodline
 		trigger = {
-			NOT = { has_character_flag = bm_channel_bloodline_cooldown }
+			custom_description = {
+				text = bm_channel_bloodline_cooldown_tt
+				NOT = { has_character_flag = bm_channel_bloodline_cooldown }
+			}
 			exists = house
 			piety_level >= 1
 			piety >= 350
@@ -198,7 +202,10 @@ bm_cast_blood_magic_major.001 = {
 	option = {
 		name = bm_cast_blood_magic_major.001.manifest_traits
 		trigger = {
-			NOT = { has_character_flag = bm_manifest_traits_cooldown }
+			custom_description = {
+				text = bm_manifest_traits_cooldown_tt
+				NOT = { has_character_flag = bm_manifest_traits_cooldown }
+			}
 			piety_level >= 3
 			piety >= 200
 			NOT = {

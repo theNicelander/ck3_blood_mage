@@ -1,0 +1,39 @@
+﻿# Travel On Actions for Blood Mages & Blood Knights
+
+on_travel_plan_movement = {
+	on_actions = {
+		bm_on_visited_point_of_interest
+	}
+}
+
+bm_on_visited_point_of_interest = {
+	trigger = {
+		bm_has_superior_stave_trigger = { STAVE = nabrokarstafur }
+		exists = location
+		location = {
+			OR = {
+				has_any_travel_poi_trigger = yes
+				has_travel_point_of_interest = poi_standalone_holy_site
+			}
+		}
+		NOT = {
+			is_target_in_variable_list = {
+				name = bm_nabrokarstafur_visited_poi
+				target = location
+			}
+		}
+	}
+	effect = {
+		add_to_variable_list = {
+			name = bm_nabrokarstafur_visited_poi
+			target = location
+		}
+		add_gold = 20
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_nabrokarstafur_poi_toast
+			left_icon = root
+			custom_tooltip = bm_nabrokarstafur_poi_toast_desc
+		}
+	}
+}

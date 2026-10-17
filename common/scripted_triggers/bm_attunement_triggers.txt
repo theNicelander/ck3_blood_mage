@@ -1,0 +1,14 @@
+﻿# Scripted triggers for Blood Magic track attunement
+
+bm_has_any_attunement_trigger = {
+	OR = {
+		has_character_modifier = ancient_attuned
+		has_character_modifier = enlightenment_attuned
+		has_character_modifier = bloodline_attuned
+		has_character_modifier = benediction_attuned
+		has_character_modifier = hematurgy_attuned
+		has_character_modifier = vanguard_attuned
+		has_character_modifier = slaughter_attuned
+		has_character_modifier = resilience_attuned
+	}
+}

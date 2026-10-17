@@ -1,0 +1,75 @@
+﻿l_english:
+  # Standalone Decision: Carve Galdrastafir Stave
+  bm_carve_galdrastafir_decision: "Carve Galdrastafir Stave"
+  bm_carve_galdrastafir_decision_desc: "Having etched a Superior Blood Rune into your flesh, you can bind an ancient Galdrastafir stave to channel its capstone powers. You may choose your initial stave freely, or swap an existing stave once every 5 years for [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and #V 500#! Piety."
+  bm_carve_galdrastafir_decision_tooltip: "Select a Galdrastafir stave to gain flat enhancements and unique occult capstone mechanics"
+  BM_CARVE_GALDRASTAFIR_DECISION_NEXT_STEP_BUTTON: "Bind Stave"
+  bm_carve_galdrastafir_decision_confirm: "$"
+  bm_carve_galdrastafir_decision_effect: "You carve the selected Galdrastafir stave onto your Superior Blood Rune."
+  bm_carve_galdrastafir_cooldown_tt: "Has not carved or swapped a Galdrastafir stave in the last 5 years"
+  NOT_bm_carve_galdrastafir_cooldown_tt: "Has not carved or swapped a Galdrastafir stave in the last 5 years"
+  bm_stave_already_carved_req: "You do not already bear this Galdrastafir stave"
+  NOT_bm_stave_already_carved_req: "You do not already bear this Galdrastafir stave"
+  bm_swap_stave_cost_req: "Requires [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and #V 500#! Piety to swap staves"
+  NOT_bm_swap_stave_cost_req: "Requires [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and #V 500#! Piety to swap staves"
+
+  # 5 Stave Options
+  bm_carve_vegvisir: "Vegvísir — The Wayfinder"
+  bm_carve_vegvisir_tooltip: "Grants travel speed, travel safety, and army movement speed.
+
+#weak Superior Capstone:#! Halves #V Seek Power#! cooldowns and eliminates negative hazard rolls in the wild."
+
+  bm_carve_aegishjalmur: "Ægishjálmur — The Helm of Awe"
+  bm_carve_aegishjalmur_tooltip: "Grants prowess, combat advantage, and knight effectiveness.
+
+#weak Superior Capstone:#! Terrifies enemy commanders and knights at battle start, inflicting #N -5 Prowess#! and #N -0.5 Health#! for 1 year."
+
+  bm_carve_feingur: "Feingur — The Awakened Seed"
+  bm_carve_feingur_tooltip: "Grants fertility, fertile years, positive genetic chance, health, and epidemic resistance.
+
+#weak Superior Capstone:#! Doubles childbirth discipline XP and unlocks the #V Bless Dynasty Bloodline#! interaction."
+
+  bm_carve_nabrokarstafur: "Nábrókarstafur — The Flayed Tithe"
+  bm_carve_nabrokarstafur_tooltip: "Grants domain tax and reduced Men-at-Arms maintenance, at the cost of general opinion.
+
+#weak Superior Capstone:#! Siphons #P +20 Gold#! per landmark POI visited and plunders #P 10%#! of battle casualties as gold (25–250)."
+
+  bm_carve_hulinhjalmur: "Hulinhjálmur — The Unseen Shroud"
+  bm_carve_hulinhjalmur_tooltip: "Grants hostile scheme success chance, hostile scheme defense, and monthly lifestyle experience.
+
+#weak Superior Capstone:#! Doubles yearly discipline Attunement XP to #P +2 XP#! per year and reaps #P 1 Major Lifeforce#! upon successful Murder schemes."
+
+  # Interaction: Inscribe Rune on Other
+  bm_inscribe_rune_other_interaction: "Inscribe Blood Rune"
+  bm_inscribe_rune_other_interaction_desc: "Carve or upgrade a permanent Blood Rune upon this character's flesh. They will passively generate Lifeforce over time and may carve their own Galdrastafir stave upon reaching Superior depth.
+
+#italic Grants Benediction experience to the caster.#!"
+  bm_inscribe_rune_other_requirement_tt: "Requires Piety, Lifeforce, Devotion Rank, and Track Experience matching the next rune tier."
+  NOT_bm_inscribe_rune_other_requirement_tt: "Requires Piety, Lifeforce, Devotion Rank, and Track Experience matching the next rune tier."
+
+  # Cooldowns
+  bm_blood_rune_cooldown: "Recently Inscribed Blood Rune"
+  bm_blood_rune_cooldown_desc: "You have recently inscribed or upgraded an occult blood rune upon your flesh and must allow the arcane scars to heal."
+  bm_blood_rune_cooldown_tt: "Has not inscribed or upgraded a blood rune in the last 5 years"
+  NOT_bm_blood_rune_cooldown_tt: "Has not inscribed or upgraded a blood rune in the last 5 years"
+
+  bm_blood_rune_other_cooldown: "Recently Inscribed Blood Rune on Another"
+  bm_blood_rune_other_cooldown_desc: "You have recently carved a blood rune upon another character and must recover your focus before performing the rite again."
+  bm_blood_rune_other_cooldown_tt: "Has not inscribed a blood rune upon another character recently"
+  NOT_bm_blood_rune_other_cooldown_tt: "Has not inscribed a blood rune upon another character recently"
+
+  # Interaction: Feingur Bless Dynasty
+  bm_feingur_bless_dynasty_interaction: "Bless Dynasty Bloodline"
+  bm_feingur_bless_dynasty_interaction_desc: "Invoke the apex potency of your Superior Feingur stave to carve a permanent blessing of vitality, fertility, and longevity into the blood of your child or dynasty kin."
+  bm_recipient_already_feingur_blessed: "Target already bears the permanent Blessing of Feingur."
+  NOT_bm_recipient_already_feingur_blessed: "Target already bears the permanent Blessing of Feingur."
+  bm_feingur_bless_dynasty_toast: "Blessed Dynasty Bloodline"
+  bm_feingur_bless_dynasty_toast_tt: "[recipient.GetShortUIName] has received the permanent Blessing of Feingur!"
+
+  # Toasts & Tooltips
+  bm_nabrokarstafur_poi_toast: "Nábrókarstafur: POI Plundered"
+  bm_nabrokarstafur_poi_toast_desc: "Your Superior Nábrókarstafur stave plundered ancient riches from this landmark: #P +20 Gold#!"
+  bm_nabrokarstafur_battle_gold_toast: "Nábrókarstafur: Flayed Spoils"
+  bm_nabrokarstafur_battle_gold_tt: "Your Superior Nábrókarstafur stave plundered the enemy dead, turning slaughter into #P Gold#!."
+  bm_hulinhjalmur_murder_lifeforce_toast: "Hulinhjálmur: Murder Harvest"
+  bm_hulinhjalmur_murder_lifeforce_tt: "Your Superior Hulinhjálmur stave siphoned your murder victim's dying essence into #P 1 Major Lifeforce#!."

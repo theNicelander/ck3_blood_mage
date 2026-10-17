@@ -1,0 +1,35 @@
+﻿# Blood Runes & Galdrastafir Scripted Effects
+
+bm_strip_all_stave_modifiers_effect = {
+	if = { limit = { has_character_modifier = bm_stave_vegvisir } remove_character_modifier = bm_stave_vegvisir }
+	if = { limit = { has_character_modifier = bm_stave_aegishjalmur } remove_character_modifier = bm_stave_aegishjalmur }
+	if = { limit = { has_character_modifier = bm_stave_feingur } remove_character_modifier = bm_stave_feingur }
+	if = { limit = { has_character_modifier = bm_stave_nabrokarstafur } remove_character_modifier = bm_stave_nabrokarstafur }
+	if = { limit = { has_character_modifier = bm_stave_hulinhjalmur } remove_character_modifier = bm_stave_hulinhjalmur }
+}
+
+bm_set_capstone_stave_effect = {
+	hidden_effect = {
+		bm_strip_all_stave_modifiers_effect = yes
+	}
+	add_character_modifier = { modifier = bm_stave_$STAVE$ }
+	add_character_flag = {
+		flag = bm_capstone_rune_cooldown
+		years = 5
+	}
+}
+
+bm_swap_capstone_cost_effect = {
+	add_piety = -500
+	blood_magic_used_major = yes
+}
+
+bm_upgrade_blood_rune_to_major_effect = {
+	remove_character_modifier = minor_blood_rune_modifier
+	add_character_modifier = { modifier = major_blood_rune_modifier }
+}
+
+bm_upgrade_blood_rune_to_superior_effect = {
+	remove_character_modifier = major_blood_rune_modifier
+	add_character_modifier = { modifier = superior_blood_rune_modifier }
+}

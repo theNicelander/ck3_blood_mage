@@ -17,6 +17,13 @@ bm_apply_blood_mage_prevalence_at_birth = {
 		}
 		else_if = {
 			limit = {
+				is_ai = no
+				has_trait = lifestyle_blood_mage
+			}
+			bm_ensure_blood_mage_story_effect = yes
+		}
+		else_if = {
+			limit = {
 				is_ai = yes
 				has_game_rule = bm_prevalence_everyone
 			}
@@ -91,6 +98,13 @@ bm_apply_blood_knight_prevalence_at_birth = {
 		}
 		else_if = {
 			limit = {
+				is_ai = no
+				has_trait = lifestyle_blood_knight
+			}
+			bm_ensure_blood_mage_story_effect = yes
+		}
+		else_if = {
+			limit = {
 				is_ai = yes
 				NOT = { has_trait = lifestyle_blood_mage }
 				has_game_rule = bm_blood_knight_prevalence_everyone
@@ -152,66 +166,280 @@ bm_apply_blood_knight_prevalence_at_birth = {
 
 bm_on_birth_bloodline_xp = {
 	effect = {
+		# Feingur Superior: Awakened Seed single-parent inheritance boost (25% -> 50%)
 		if = {
 			limit = {
-				scope:mother ?= { has_trait = lifestyle_blood_mage }
+				NOT = { has_trait = lifestyle_blood_mage }
+				OR = {
+					AND = {
+						scope:mother ?= {
+							has_trait = lifestyle_blood_mage
+						}
+						NOT = { scope:real_father ?= { has_trait = lifestyle_blood_mage } }
+					}
+					AND = {
+						scope:real_father ?= {
+							has_trait = lifestyle_blood_mage
+						}
+						NOT = { scope:mother ?= { has_trait = lifestyle_blood_mage } }
+					}
+				}
+				OR = {
+					scope:mother ?= { bm_has_superior_stave_trigger = { STAVE = feingur } }
+					scope:real_father ?= { bm_has_superior_stave_trigger = { STAVE = feingur } }
+				}
+			}
+			random = {
+				chance = 33
+				bm_become_blood_mage_effect = yes
+			}
+		}
+
+		# Mother XP award
+		if = {
+			limit = {
+				scope:mother ?= {
+					OR = {
+						has_trait = lifestyle_blood_mage
+						has_trait = lifestyle_blood_knight
+					}
+				}
 			}
 			scope:mother = {
-				add_xp_bm_dynamic = {
-					TRACK = bloodline
-					XP = 2
+				if = {
+					limit = { has_trait = lifestyle_blood_mage }
+					add_character_modifier = { modifier = lifeforce_modifier_major }
 				}
 				if = {
-					limit = { root = { has_trait = lifestyle_blood_mage } }
-					add_xp_bm_dynamic = {
-						TRACK = bloodline
-						XP = 2
+					limit = { bm_has_superior_stave_trigger = { STAVE = feingur } }
+					if = {
+						limit = { has_trait = lifestyle_blood_mage }
+						add_xp_bm_dynamic = { TRACK = bloodline XP = 4 }
+						if = {
+							limit = { root = { has_trait = lifestyle_blood_mage } }
+							add_xp_bm_dynamic = { TRACK = bloodline XP = 4 }
+							send_interface_toast = {
+								type = event_toast_effect_good
+								title = bm_birth_blood_mage_child_toast
+								left_icon = root
+								custom_tooltip = bm_birth_blood_mage_child_tt
+							}
+						}
+						else = {
+							send_interface_toast = {
+								type = event_toast_effect_good
+								title = bm_birth_child_bloodline_toast
+								left_icon = root
+								custom_tooltip = bm_birth_child_bloodline_tt
+							}
+						}
 					}
-					send_interface_toast = {
-						type = event_toast_effect_good
-						title = bm_birth_blood_mage_child_toast
-						left_icon = root
-						custom_tooltip = bm_birth_blood_mage_child_tt
+					else_if = {
+						limit = { has_trait = lifestyle_blood_knight }
+						add_blood_knight_xp = { TRACK = vanguard XP = 4 }
+						if = {
+							limit = {
+								root = {
+									OR = {
+										has_trait = lifestyle_blood_knight
+										has_trait = lifestyle_blood_mage
+									}
+								}
+							}
+							add_blood_knight_xp = { TRACK = vanguard XP = 4 }
+							send_interface_toast = {
+								type = event_toast_effect_good
+								title = bm_birth_blood_knight_child_toast
+								left_icon = root
+								custom_tooltip = bm_birth_blood_knight_child_tt
+							}
+						}
+						else = {
+							send_interface_toast = {
+								type = event_toast_effect_good
+								title = bm_birth_child_vanguard_toast
+								left_icon = root
+								custom_tooltip = bm_birth_child_vanguard_tt
+							}
+						}
 					}
 				}
 				else = {
-					send_interface_toast = {
-						type = event_toast_effect_good
-						title = bm_birth_child_bloodline_toast
-						left_icon = root
-						custom_tooltip = bm_birth_child_bloodline_tt
+					if = {
+						limit = { has_trait = lifestyle_blood_mage }
+						add_xp_bm_dynamic = { TRACK = bloodline XP = 2 }
+						if = {
+							limit = { root = { has_trait = lifestyle_blood_mage } }
+							add_xp_bm_dynamic = { TRACK = bloodline XP = 2 }
+							send_interface_toast = {
+								type = event_toast_effect_good
+								title = bm_birth_blood_mage_child_toast
+								left_icon = root
+								custom_tooltip = bm_birth_blood_mage_child_tt
+							}
+						}
+						else = {
+							send_interface_toast = {
+								type = event_toast_effect_good
+								title = bm_birth_child_bloodline_toast
+								left_icon = root
+								custom_tooltip = bm_birth_child_bloodline_tt
+							}
+						}
+					}
+					else_if = {
+						limit = { has_trait = lifestyle_blood_knight }
+						add_blood_knight_xp = { TRACK = vanguard XP = 2 }
+						if = {
+							limit = {
+								root = {
+									OR = {
+										has_trait = lifestyle_blood_knight
+										has_trait = lifestyle_blood_mage
+									}
+								}
+							}
+							add_blood_knight_xp = { TRACK = vanguard XP = 2 }
+							send_interface_toast = {
+								type = event_toast_effect_good
+								title = bm_birth_blood_knight_child_toast
+								left_icon = root
+								custom_tooltip = bm_birth_blood_knight_child_tt
+							}
+						}
+						else = {
+							send_interface_toast = {
+								type = event_toast_effect_good
+								title = bm_birth_child_vanguard_toast
+								left_icon = root
+								custom_tooltip = bm_birth_child_vanguard_tt
+							}
+						}
 					}
 				}
 			}
 		}
+
+		# Father XP award
 		if = {
 			limit = {
-				scope:real_father ?= { has_trait = lifestyle_blood_mage }
+				scope:real_father ?= {
+					OR = {
+						has_trait = lifestyle_blood_mage
+						has_trait = lifestyle_blood_knight
+					}
+				}
 			}
 			scope:real_father = {
-				add_xp_bm_dynamic = {
-					TRACK = bloodline
-					XP = 2
+				if = {
+					limit = { has_trait = lifestyle_blood_mage }
+					add_character_modifier = { modifier = lifeforce_modifier_major }
 				}
 				if = {
-					limit = { root = { has_trait = lifestyle_blood_mage } }
-					add_xp_bm_dynamic = {
-						TRACK = bloodline
-						XP = 2
+					limit = { bm_has_superior_stave_trigger = { STAVE = feingur } }
+					if = {
+						limit = { has_trait = lifestyle_blood_mage }
+						add_xp_bm_dynamic = { TRACK = bloodline XP = 4 }
+						if = {
+							limit = { root = { has_trait = lifestyle_blood_mage } }
+							add_xp_bm_dynamic = { TRACK = bloodline XP = 4 }
+							send_interface_toast = {
+								type = event_toast_effect_good
+								title = bm_birth_blood_mage_child_toast
+								left_icon = root
+								custom_tooltip = bm_birth_blood_mage_child_tt
+							}
+						}
+						else = {
+							send_interface_toast = {
+								type = event_toast_effect_good
+								title = bm_birth_child_bloodline_toast
+								left_icon = root
+								custom_tooltip = bm_birth_child_bloodline_tt
+							}
+						}
 					}
-					send_interface_toast = {
-						type = event_toast_effect_good
-						title = bm_birth_blood_mage_child_toast
-						left_icon = root
-						custom_tooltip = bm_birth_blood_mage_child_tt
+					else_if = {
+						limit = { has_trait = lifestyle_blood_knight }
+						add_blood_knight_xp = { TRACK = vanguard XP = 4 }
+						if = {
+							limit = {
+								root = {
+									OR = {
+										has_trait = lifestyle_blood_knight
+										has_trait = lifestyle_blood_mage
+									}
+								}
+							}
+							add_blood_knight_xp = { TRACK = vanguard XP = 4 }
+							send_interface_toast = {
+								type = event_toast_effect_good
+								title = bm_birth_blood_knight_child_toast
+								left_icon = root
+								custom_tooltip = bm_birth_blood_knight_child_tt
+							}
+						}
+						else = {
+							send_interface_toast = {
+								type = event_toast_effect_good
+								title = bm_birth_child_vanguard_toast
+								left_icon = root
+								custom_tooltip = bm_birth_child_vanguard_tt
+							}
+						}
 					}
 				}
 				else = {
-					send_interface_toast = {
-						type = event_toast_effect_good
-						title = bm_birth_child_bloodline_toast
-						left_icon = root
-						custom_tooltip = bm_birth_child_bloodline_tt
+					if = {
+						limit = { has_trait = lifestyle_blood_mage }
+						add_xp_bm_dynamic = { TRACK = bloodline XP = 2 }
+						if = {
+							limit = { root = { has_trait = lifestyle_blood_mage } }
+							add_xp_bm_dynamic = { TRACK = bloodline XP = 2 }
+							send_interface_toast = {
+								type = event_toast_effect_good
+								title = bm_birth_blood_mage_child_toast
+								left_icon = root
+								custom_tooltip = bm_birth_blood_mage_child_tt
+							}
+						}
+						else = {
+							send_interface_toast = {
+								type = event_toast_effect_good
+								title = bm_birth_child_bloodline_toast
+								left_icon = root
+								custom_tooltip = bm_birth_child_bloodline_tt
+							}
+						}
+					}
+					else_if = {
+						limit = { has_trait = lifestyle_blood_knight }
+						add_blood_knight_xp = { TRACK = vanguard XP = 2 }
+						if = {
+							limit = {
+								root = {
+									OR = {
+										has_trait = lifestyle_blood_knight
+										has_trait = lifestyle_blood_mage
+									}
+								}
+							}
+							add_blood_knight_xp = { TRACK = vanguard XP = 2 }
+							send_interface_toast = {
+								type = event_toast_effect_good
+								title = bm_birth_blood_knight_child_toast
+								left_icon = root
+								custom_tooltip = bm_birth_blood_knight_child_tt
+							}
+						}
+						else = {
+							send_interface_toast = {
+								type = event_toast_effect_good
+								title = bm_birth_child_vanguard_toast
+								left_icon = root
+								custom_tooltip = bm_birth_child_vanguard_tt
+							}
+						}
 					}
 				}
 			}

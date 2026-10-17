@@ -44,40 +44,6 @@ bm_cast_blood_magic_minor.001 = {
 		}
 	}
 
-	# Attune Lifeforce
-	option = {
-		name = bm_cast_blood_magic_minor.001.attune
-		trigger = {
-			piety >= 25
-		}
-		show_as_unavailable = {
-			always = yes
-		}
-		add_piety = -25
-		remove_character_modifier = lifeforce_modifier_minor
-		custom_tooltip = bm_attune_lifeforce.effects_list
-		trigger_event = { id = bm_attune_lifeforce.001 }
-		ai_chance = {
-			base = 10
-			modifier = {
-				add = -100
-				health <= fine_health
-			}
-			modifier = {
-				add = 100
-				NOT = {
-					has_character_modifier = ancient_attuned
-					has_character_modifier = enlightenment_attuned
-					has_character_modifier = bloodline_attuned
-					has_character_modifier = benediction_attuned
-					has_character_modifier = hematurgy_attuned
-					has_character_modifier = vanguard_attuned
-					has_character_modifier = slaughter_attuned
-				}
-			}
-		}
-	}
-
 	# Purge Bodily Impurities
 	option = {
 		name = bm_cast_blood_magic_minor.001.purge
@@ -233,7 +199,10 @@ bm_cast_blood_magic_minor.001 = {
 	option = {
 		name = bm_cast_blood_magic_minor.001.blood_rune_minor
 		trigger = {
-			NOT = { has_character_flag = bm_blood_rune_cooldown }
+			custom_description = {
+				text = bm_blood_rune_cooldown_tt
+				NOT = { has_character_flag = bm_blood_rune_cooldown }
+			}
 			NOT = { has_character_modifier = minor_blood_rune_modifier }
 			NOT = { has_character_modifier = major_blood_rune_modifier }
 			NOT = { has_character_modifier = superior_blood_rune_modifier }
@@ -241,9 +210,7 @@ bm_cast_blood_magic_minor.001 = {
 			piety_level >= 2
 		}
 		show_as_unavailable = {
-			NOT = { has_character_modifier = minor_blood_rune_modifier }
-			NOT = { has_character_modifier = major_blood_rune_modifier }
-			NOT = { has_character_modifier = superior_blood_rune_modifier }
+			always = yes
 		}
 		send_interface_toast = {
 			type = event_toast_effect_good

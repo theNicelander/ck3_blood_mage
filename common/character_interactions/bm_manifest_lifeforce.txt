@@ -1,0 +1,497 @@
+﻿bm_manifest_lifeforce_interaction = {
+	category = interaction_category_friendly
+	icon = bm_manifest_lifeforce_interaction
+	auto_accept = yes
+	common_interaction = yes
+	desc = bm_manifest_lifeforce_interaction_desc
+	interface_priority = 200
+
+	cooldown = {
+		years = 1
+	}
+
+	is_shown = {
+		scope:actor = scope:recipient
+		scope:actor = {
+			OR = {
+				has_trait = lifestyle_blood_mage
+				has_trait = lifestyle_blood_knight
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		custom_description = {
+			text = bm_manifest_lifeforce_requirement_tt
+			scope:actor = {
+				piety_level >= 2
+				piety >= 100
+			}
+		}
+	}
+
+	cost = {
+		piety = {
+			if = {
+				limit = { scope:manifest_lifeforce_tier1 = yes }
+				value = 100
+			}
+			if = {
+				limit = { scope:manifest_lifeforce_tier2 = yes }
+				value = 250
+			}
+			if = {
+				limit = { scope:manifest_lifeforce_tier3 = yes }
+				value = 500
+			}
+			if = {
+				limit = { scope:manifest_lifeforce_tier4 = yes }
+				value = 1000
+			}
+		}
+	}
+
+	send_options_exclusive = yes
+
+	send_option = {
+		flag = manifest_lifeforce_tier1
+		localization = bm_manifest_lifeforce_interaction.tier1
+		current_description = bm_manifest_lifeforce_interaction.tier1_desc
+		is_shown = {
+			always = yes
+		}
+		is_valid = {
+			scope:actor = {
+				piety >= 100
+			}
+		}
+		starts_enabled = {
+			scope:actor = {
+				piety >= 100
+				piety < 250
+			}
+		}
+	}
+
+	send_option = {
+		flag = manifest_lifeforce_tier2
+		localization = bm_manifest_lifeforce_interaction.tier2
+		current_description = bm_manifest_lifeforce_interaction.tier2_desc
+		is_shown = {
+			always = yes
+		}
+		is_valid = {
+			scope:actor = {
+				piety >= 250
+			}
+		}
+		starts_enabled = {
+			scope:actor = {
+				piety >= 250
+				piety < 500
+			}
+		}
+	}
+
+	send_option = {
+		flag = manifest_lifeforce_tier3
+		localization = bm_manifest_lifeforce_interaction.tier3
+		current_description = bm_manifest_lifeforce_interaction.tier3_desc
+		is_shown = {
+			always = yes
+		}
+		is_valid = {
+			scope:actor = {
+				piety >= 500
+			}
+		}
+		starts_enabled = {
+			scope:actor = {
+				piety >= 500
+				piety < 1000
+			}
+		}
+	}
+
+	send_option = {
+		flag = manifest_lifeforce_tier4
+		localization = bm_manifest_lifeforce_interaction.tier4
+		current_description = bm_manifest_lifeforce_interaction.tier4_desc
+		is_shown = {
+			always = yes
+		}
+		is_valid = {
+			scope:actor = {
+				piety >= 1000
+			}
+		}
+		starts_enabled = {
+			scope:actor = {
+				piety >= 1000
+			}
+		}
+	}
+
+	on_accept = {
+		debug_log = "BloodMageInteraction: bm_manifest_lifeforce_interaction"
+		scope:actor = {
+			add_character_flag = {
+				flag = bm_manifest_lifeforce_cooldown
+				years = 1
+			}
+			if = {
+				limit = { scope:manifest_lifeforce_tier1 = yes }
+				add_shared_bm_bk_xp = {
+					TRACK = enlightenment
+					XP = 1
+				}
+				duel = {
+					skill = learning
+					value = 0
+
+					# Critical Success (1x Major) - ~1/6 = 17% at L0, scales up to 33% at L50+
+					17 = {
+						desc = manifest_lifeforce_major_success_tt
+						compare_modifier = {
+							value = scope:duel_value
+							multiplier = 0.32
+							max = 16
+						}
+						scope:actor = {
+							add_character_modifier = { modifier = lifeforce_modifier_major }
+							send_interface_toast = {
+								type = event_toast_effect_good
+								title = manifest_lifeforce_major_success_tt
+								left_icon = root
+							}
+							hidden_effect = {
+								bm_recount_lifeforce_stacks_effect = yes
+							}
+						}
+					}
+
+					# Success (1x Minor) - ~1/3 = 33% at L0, scales up to 63% at L50+
+					33 = {
+						desc = manifest_lifeforce_minor_success_tt
+						compare_modifier = {
+							value = scope:duel_value
+							multiplier = 0.68
+							max = 30
+						}
+						scope:actor = {
+							add_character_modifier = { modifier = lifeforce_modifier_minor }
+							send_interface_toast = {
+								type = event_toast_effect_good
+								title = manifest_lifeforce_minor_success_tt
+								left_icon = root
+							}
+							hidden_effect = {
+								bm_recount_lifeforce_stacks_effect = yes
+							}
+						}
+					}
+
+					# Failure (Nothing) - ~1/3 = 33% at L0, drops to 3% at L50+
+					33 = {
+						desc = manifest_lifeforce_minor_failure_tt
+						compare_modifier = {
+							value = scope:duel_value
+							multiplier = -0.68
+							min = -30
+						}
+						scope:actor = {
+							send_interface_toast = {
+								type = event_toast_effect_neutral
+								title = manifest_lifeforce_minor_failure_tt
+								left_icon = root
+							}
+						}
+					}
+
+					# Critical Failure (Major Recoil) - ~1/6 = 17% at L0, drops to 1% at L50+
+					17 = {
+						desc = manifest_lifeforce_major_failure_tt
+						compare_modifier = {
+							value = scope:duel_value
+							multiplier = -0.32
+							min = -16
+						}
+						scope:actor = {
+							temporary_negative_lifeforce_effect_major = yes
+							send_interface_toast = {
+								type = event_toast_effect_bad
+								title = manifest_lifeforce_major_failure_tt
+								left_icon = root
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = { scope:manifest_lifeforce_tier2 = yes }
+				add_shared_bm_bk_xp = {
+					TRACK = enlightenment
+					XP = 3
+				}
+				duel = {
+					skill = learning
+					value = 0
+
+					# Critical Success (2x Major) - 25% at L0, scales up to 35% at L50+
+					25 = {
+						desc = manifest_lifeforce_double_major_success_tt
+						compare_modifier = {
+							value = scope:duel_value
+							multiplier = 0.20
+							max = 10
+						}
+						scope:actor = {
+							add_character_modifier = { modifier = lifeforce_modifier_major }
+							add_character_modifier = { modifier = lifeforce_modifier_major }
+							send_interface_toast = {
+								type = event_toast_effect_good
+								title = manifest_lifeforce_double_major_success_tt
+								left_icon = root
+							}
+							hidden_effect = {
+								bm_recount_lifeforce_stacks_effect = yes
+							}
+						}
+					}
+
+					# Success (1x Major) - 50% at L0, scales up to 62% at L50+
+					50 = {
+						desc = manifest_lifeforce_major_success_tt
+						compare_modifier = {
+							value = scope:duel_value
+							multiplier = 0.24
+							max = 12
+						}
+						scope:actor = {
+							add_character_modifier = { modifier = lifeforce_modifier_major }
+							send_interface_toast = {
+								type = event_toast_effect_good
+								title = manifest_lifeforce_major_success_tt
+								left_icon = root
+							}
+							hidden_effect = {
+								bm_recount_lifeforce_stacks_effect = yes
+							}
+						}
+					}
+
+					# Failure (Nothing) - 17% at L0, drops to 2% at L50+
+					17 = {
+						desc = manifest_lifeforce_minor_failure_tt
+						compare_modifier = {
+							value = scope:duel_value
+							multiplier = -0.30
+							min = -15
+						}
+						scope:actor = {
+							send_interface_toast = {
+								type = event_toast_effect_neutral
+								title = manifest_lifeforce_minor_failure_tt
+								left_icon = root
+							}
+						}
+					}
+
+					# Critical Failure (Minor Recoil) - 8% at L0, drops to 1% at L50+
+					8 = {
+						desc = manifest_lifeforce_minor_failure_penalty_tt
+						compare_modifier = {
+							value = scope:duel_value
+							multiplier = -0.14
+							min = -7
+						}
+						scope:actor = {
+							temporary_negative_lifeforce_effect_minor = yes
+							send_interface_toast = {
+								type = event_toast_effect_bad
+								title = manifest_lifeforce_minor_failure_penalty_tt
+								left_icon = root
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = { scope:manifest_lifeforce_tier3 = yes }
+				add_shared_bm_bk_xp = {
+					TRACK = enlightenment
+					XP = 5
+				}
+				add_character_modifier = { modifier = lifeforce_modifier_minor }
+				duel = {
+					skill = learning
+					value = 0
+
+					# Critical Success (2x Major) - 15% at L0, scales up to 35% at L50+
+					15 = {
+						desc = manifest_lifeforce_double_major_success_tt
+						compare_modifier = {
+							value = scope:duel_value
+							multiplier = 0.40
+							max = 20
+						}
+						scope:actor = {
+							add_character_modifier = { modifier = lifeforce_modifier_major }
+							add_character_modifier = { modifier = lifeforce_modifier_major }
+							send_interface_toast = {
+								type = event_toast_effect_good
+								title = manifest_lifeforce_double_major_success_tt
+								left_icon = root
+							}
+							hidden_effect = {
+								bm_recount_lifeforce_stacks_effect = yes
+							}
+						}
+					}
+
+					# Success (1x Major) - 50% at L0, scales up to 60% at L50+
+					50 = {
+						desc = manifest_lifeforce_major_success_tt
+						compare_modifier = {
+							value = scope:duel_value
+							multiplier = 0.20
+							max = 10
+						}
+						scope:actor = {
+							add_character_modifier = { modifier = lifeforce_modifier_major }
+							send_interface_toast = {
+								type = event_toast_effect_good
+								title = manifest_lifeforce_major_success_tt
+								left_icon = root
+							}
+							hidden_effect = {
+								bm_recount_lifeforce_stacks_effect = yes
+							}
+						}
+					}
+
+					# Consolation (1x Minor) - 35% at L0, drops to 5% at L50+
+					35 = {
+						desc = manifest_lifeforce_minor_success_tt
+						compare_modifier = {
+							value = scope:duel_value
+							multiplier = -0.60
+							min = -30
+						}
+						scope:actor = {
+							add_character_modifier = { modifier = lifeforce_modifier_minor }
+							send_interface_toast = {
+								type = event_toast_effect_good
+								title = manifest_lifeforce_minor_success_tt
+								left_icon = root
+							}
+							hidden_effect = {
+								bm_recount_lifeforce_stacks_effect = yes
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = { scope:manifest_lifeforce_tier4 = yes }
+				add_shared_bm_bk_xp = {
+					TRACK = enlightenment
+					XP = 7
+				}
+				add_character_modifier = { modifier = lifeforce_modifier_minor }
+				add_character_modifier = { modifier = lifeforce_modifier_major }
+				duel = {
+					skill = learning
+					value = 0
+
+					# Critical Success (1x Superior) - 15% at L0, scales up to 40% at L50+
+					15 = {
+						desc = manifest_lifeforce_superior_success_tt
+						compare_modifier = {
+							value = scope:duel_value
+							multiplier = 0.50
+							max = 25
+						}
+						scope:actor = {
+							add_character_modifier = { modifier = lifeforce_modifier_superior }
+							send_interface_toast = {
+								type = event_toast_effect_good
+								title = manifest_lifeforce_superior_success_tt
+								left_icon = root
+							}
+							hidden_effect = {
+								bm_recount_lifeforce_stacks_effect = yes
+							}
+						}
+					}
+
+					# Great Success (2x Major) - 35% at L0, scales up to 50% at L50+
+					35 = {
+						desc = manifest_lifeforce_double_major_success_tt
+						compare_modifier = {
+							value = scope:duel_value
+							multiplier = 0.30
+							max = 15
+						}
+						scope:actor = {
+							add_character_modifier = { modifier = lifeforce_modifier_major }
+							add_character_modifier = { modifier = lifeforce_modifier_major }
+							send_interface_toast = {
+								type = event_toast_effect_good
+								title = manifest_lifeforce_double_major_success_tt
+								left_icon = root
+							}
+							hidden_effect = {
+								bm_recount_lifeforce_stacks_effect = yes
+							}
+						}
+					}
+
+					# Success (1x Major) - 50% at L0, drops to 10% at L50+
+					50 = {
+						desc = manifest_lifeforce_major_success_tt
+						compare_modifier = {
+							value = scope:duel_value
+							multiplier = -0.80
+							min = -40
+						}
+						scope:actor = {
+							add_character_modifier = { modifier = lifeforce_modifier_major }
+							send_interface_toast = {
+								type = event_toast_effect_good
+								title = manifest_lifeforce_major_success_tt
+								left_icon = root
+							}
+							hidden_effect = {
+								bm_recount_lifeforce_stacks_effect = yes
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	auto_accept = yes
+	ai_accept = { base = 100 }
+	ai_potential = { always = yes }
+	ai_targets = {
+		ai_recipients = self
+	}
+	ai_frequency = 12
+	ai_will_do = {
+		base = 10
+		modifier = {
+			piety > 500
+			add = 50
+		}
+		modifier = {
+			piety > 1000
+			add = 100
+		}
+		modifier = {
+			NOT = { has_character_modifier = lifeforce_modifier_major }
+			add = 50
+		}
+	}
+}

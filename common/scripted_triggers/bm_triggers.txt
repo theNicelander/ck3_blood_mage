@@ -12,3 +12,26 @@
         has_global_variable = AGOT_is_loaded
     }
 }
+
+bm_has_superior_stave_trigger = {
+	has_character_modifier = superior_blood_rune_modifier
+	has_character_modifier = bm_stave_$STAVE$
+}
+
+bm_has_any_stave_trigger = {
+	OR = {
+		has_character_modifier = bm_stave_vegvisir
+		has_character_modifier = bm_stave_aegishjalmur
+		has_character_modifier = bm_stave_feingur
+		has_character_modifier = bm_stave_nabrokarstafur
+		has_character_modifier = bm_stave_hulinhjalmur
+	}
+}
+
+bm_has_blood_rune_trigger = {
+	OR = {
+		has_character_modifier = minor_blood_rune_modifier
+		has_character_modifier = major_blood_rune_modifier
+		has_character_modifier = superior_blood_rune_modifier
+	}
+}

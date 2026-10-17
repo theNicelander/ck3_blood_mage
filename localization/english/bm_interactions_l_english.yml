@@ -40,6 +40,7 @@
   bm_heal_ailment_desc: "Perform a blood ritual to mend a specific wound, disease, or affliction suffered by [recipient.GetShortUINameNoTooltip]."
   bm_heal_ailment_tooltip: "Perform a blood magic healing ritual."
   bm_heal_ailment_resource_requirement_tt: "You must possess sufficient Lifeforce and Piety to heal at least one of [recipient.GetShortUINamePossessive] afflictions."
+  NOT_bm_heal_ailment_resource_requirement_tt: "You must possess sufficient Lifeforce and Piety to heal at least one of [recipient.GetShortUINamePossessive] afflictions."
 
   # Blood Knight
   make_blood_knight_interaction: "Make Blood Knight"
@@ -104,14 +105,19 @@
   bm_bless_bloodline_interaction: "Bless Kin's Blood"
   bm_bless_bloodline_interaction_desc: "Infuse a child or kin of your house with vital blood magic, blessing their body and mind while refining your mastery of the bloodline."
   bm_recipient_already_blessed: "Target's blood is already blessed"
+  NOT_bm_recipient_already_blessed: "Target's blood is already blessed"
   bm_bless_bloodline_toast: "Kin's Blood Blessed"
   bm_bless_bloodline_toast_tt: "You infused [recipient.GetShortUINamePossessive] blood with lifeforce, granting vitality and expanding your bloodline mastery."
 
   # Childbirth Milestones
   bm_birth_blood_mage_child_toast: "Blood Mage Heir Born"
-  bm_birth_blood_mage_child_tt: "A child awakens with the blood magic trait! Your bloodline mastery surges forward."
+  bm_birth_blood_mage_child_tt: "A child awakens with the blood magic trait! You harvest Major Lifeforce and your bloodline mastery surges forward."
   bm_birth_child_bloodline_toast: "Child of the Line Born"
-  bm_birth_child_bloodline_tt: "A new child is born to your house, expanding your dynastic lineage and granting Bloodline Experience."
+  bm_birth_child_bloodline_tt: "A new child is born to your house, granting Major Lifeforce and Bloodline Experience."
+  bm_birth_blood_knight_child_toast: "Blood Knight Heir Born"
+  bm_birth_blood_knight_child_tt: "A child awakens with blood in their veins! Your martial vanguard mastery advances."
+  bm_birth_child_vanguard_toast: "Child of the Line Born"
+  bm_birth_child_vanguard_tt: "A new child is born to your house, advancing your martial Vanguard Experience."
 
   # Tooltips
   IN_COURT_OR_IMPRISONED: "Can only heal yourself, your family, your liege, your courtiers, or your knights"
@@ -125,3 +131,19 @@
   bm_curse_blood.success_desc: "You bound a malefic hemomantic curse to [recipient.GetShortUINamePossessive] blood. Their health and abilities wither in secret."
   bm_curse_blood.fail_title: "Curse Repelled"
   bm_curse_blood.fail_desc: "[recipient.GetShortUIName] resisted your blood curse and realized who sought to taint their veins."
+
+  # Manifest Lifeforce Interaction
+  bm_manifest_lifeforce_interaction: "Manifest Lifeforce"
+  bm_manifest_lifeforce_interaction_desc: "Enter a deep meditative trance, converting spiritual power directly into tangible Lifeforce through a contest of Learning."
+  bm_manifest_lifeforce_requirement_tt: "Requires Devotion Level 2 (Devoted Servant) and at least 100 Piety"
+  NOT_bm_manifest_lifeforce_requirement_tt: "Requires Devotion Level 2 (Devoted Servant) and at least 100 Piety"
+  bm_manifest_lifeforce_cooldown_tt: "Can only manifest Lifeforce once per year"
+  NOT_bm_manifest_lifeforce_cooldown_tt: "Can only manifest Lifeforce once per year"
+  bm_manifest_lifeforce_interaction.tier1: "Modest Meditation (100 Piety)"
+  bm_manifest_lifeforce_interaction.tier1_desc: "Offer 100 Piety for +1 Enlightenment XP.\nBaseline: Minor Lifeforce (~33.0%), Major Lifeforce (~17.0%), failure produces nothing (~33.0%), and critical failure causes severe recoil (Major penalty, ~17.0%). High Learning reduces failure down to 4.0% (3% fail / 1% critical recoil) and boosts success."
+  bm_manifest_lifeforce_interaction.tier2: "Focused Communion (250 Piety)"
+  bm_manifest_lifeforce_interaction.tier2_desc: "Offer 250 Piety for +3 Enlightenment XP.\nBaseline: 1 Major Lifeforce (50.0%), 2x Major Lifeforce (25.0%), failure produces nothing (17.0%), and critical failure causes minor recoil (Minor penalty, 8.0%). High Learning reduces failure down to 3.0% (2% fail / 1% minor recoil) and boosts 2x Major Lifeforce."
+  bm_manifest_lifeforce_interaction.tier3: "Profound Crucible (500 Piety)"
+  bm_manifest_lifeforce_interaction.tier3_desc: "Offer 500 Piety for +5 Enlightenment XP.\nGuaranteed Minor Lifeforce upfront with zero risk of failure. Learning contest yields 1 Major Lifeforce (50.0%), 2x Major Lifeforce (15.0%), or an additional Minor Lifeforce (35.0%). High Learning boosts 2x Major Lifeforce up to 35.0%."
+  bm_manifest_lifeforce_interaction.tier4: "Transcendent Epiphany (1000 Piety)"
+  bm_manifest_lifeforce_interaction.tier4_desc: "Offer 1000 Piety for +7 Enlightenment XP.\nGuaranteed Minor Lifeforce and 1 Major Lifeforce upfront with zero risk of failure. Learning contest yields 1 Major Lifeforce (50.0%), 2x Major Lifeforce (35.0%), or Superior Lifeforce (15.0%). High Learning boosts Superior Lifeforce up to 40.0%."

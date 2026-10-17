@@ -77,3 +77,31 @@ BM_BLOOD_MAGE_BLOOD_RUNE_DISPLAY = {
 		localization_key = bm_blood_mage_blood_rune_none
 	}
 }
+
+BM_BLOOD_MAGE_STAVE_DISPLAY = {
+	type = character
+	text = {
+		trigger = { has_character_modifier = bm_stave_vegvisir }
+		localization_key = bm_stave_display_vegvisir
+	}
+	text = {
+		trigger = { has_character_modifier = bm_stave_aegishjalmur }
+		localization_key = bm_stave_display_aegishjalmur
+	}
+	text = {
+		trigger = { has_character_modifier = bm_stave_feingur }
+		localization_key = bm_stave_display_feingur
+	}
+	text = {
+		trigger = { has_character_modifier = bm_stave_nabrokarstafur }
+		localization_key = bm_stave_display_nabrokarstafur
+	}
+	text = {
+		trigger = { has_character_modifier = bm_stave_hulinhjalmur }
+		localization_key = bm_stave_display_hulinhjalmur
+	}
+	text = {
+		fallback = yes
+		localization_key = bm_stave_display_none
+	}
+}

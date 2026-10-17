@@ -6,11 +6,11 @@ description: >-
 
 # Add blood magic decision
 
-Context: `docs-ai/architecture/blood-mage-decisions.md`, `blood-mage-interactions.md`, `blood-mage-track-xp.md`, `blood-mage-story.md`, `blood-mage-lifeforce.md`, [ck3-decisions](../../rules/ck3-decisions.md), [ck3-ai](../../rules/ck3-ai.md).
+Context: `docs-ai/architecture/blood-mage-decisions.md`, `blood-mage-interactions.md`, `blood-mage-track-xp.md`, `blood-mage-story.md`, `blood-mage-lifeforce.md`, [ck3-decisions](../../rules/ck3-decisions.md), [ck3-ai](../../rules/ck3-ai.md), [add-decision-option-widget](../add-decision-option-widget/SKILL.md).
 
 ## Steps
 
-1. Copy neighboring decision in `common/decisions/` or interaction in `common/character_interactions/`.
+1. Copy neighboring decision in `common/decisions/` or interaction in `common/character_interactions/` (for multi-choice inline option-list UI widgets, follow [add-decision-option-widget](../add-decision-option-widget/SKILL.md)).
 2. Declare cost once in script value (`common/script_values/`). Never deduct cost in `effect`.
 3. Use shared XP/trait effects (`common/scripted_effects/`), never bare `add_trait`.
 4. Register in `common/story_cycles/bm_blood_mage_story.txt` for panel display.
@@ -18,7 +18,7 @@ Context: `docs-ai/architecture/blood-mage-decisions.md`, `blood-mage-interaction
 6. Add English loc keys: title, `_desc`, `_tooltip`, `_confirm`.
 7. For interactions, copy the category's standard fiery blood drop DDS (`grant_blood_magic_interaction.dds`) to `gfx/interface/icons/character_interactions/<name>.dds`. If removing or renaming an interaction, remove/rename the matching `.dds`.
 8. Set XP gate and requirements per `blood-mage-track-xp.md`.
-9. Update docs and validate.
+9. Update docs, `CHANGELOG.md`, branch context; validate.
 
 ## Verify
 

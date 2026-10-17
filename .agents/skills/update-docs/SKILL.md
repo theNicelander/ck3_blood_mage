@@ -13,7 +13,7 @@ Keep docs true to current state. No history or changelogs in architecture docs.
 1. Find affected doc via [index](../../../docs-ai/architecture/README.md).
 2. Update specs: costs, requirements, cooldowns, XP gains, benefits. Format per [architecture AGENTS.md](../../../docs-ai/architecture/AGENTS.md).
 3. If adding or removing doc, update `AGENTS.md` table and `README.md` index.
-4. Update `docs-ai/branch-context/<branch>.md` (Summary, Concepts, Decisions) per [pr-context](../../rules/pr-context.md). Ignore minor edits.
+4. Always update `docs-ai/branch-context/<branch>.md` and `CHANGELOG.md` per [pr-context](../../rules/pr-context.md).
 
 ## Verify
 

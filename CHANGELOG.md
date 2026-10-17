@@ -1,179 +1,163 @@
 # Changelog
 
-## Living changelog (branch net state since 1.20)
+## Game version 1.20
 
-Always reflects current branch state. Simple line per PR merge. Superseded changes folded, reverts dropped. Caveman style. Reverse chronological: latest changes at top.
-
-- Blood Knight parallel Devotion peer: mutually exclusive permanent choice, Devotion scaling on vanguard/slaughter, Level 8 Devotion capstone unlocks (+1 max piety level), piety impact multipliers on runes and empowerment, symmetric initiation costs, and shared Superior Blood Magic access.
-- Fix error log issues: resolve trigger localization missing perspective on Blood Knight elevation decision, restore UTF-8 BOM on scripted triggers, and standardize education event portrait order.
-- Demote faltering_heart healing to major magic so Blood Knights can heal all old age ailments.
-- Add 'You can heal someone' Current Situation warning for Blood Mages and Blood Knights targeting self, family, lovers, friends, liege, councillors, and knights.
-- Add Embrace the Blood Cultist Faith decision to Situation panel decisions list.
-- Rewrite mod description, workshop description, and README in natural human style highlighting Lifeforce resource.
-- Add interface toast popups with outcome details when condensing Lifeforce via Minor Blood Magic or Condense Lifeforce decision.
-- Enhance and Master Education: move piety and cooldown costs to execution duel effects, and add Back button to return to Grimoire.
-- Ascend to Blood Mage: promote to major decision, require rank 4 piety, 1000 piety cost, and at least 50 XP in one Blood Knight track.
-- AI targeting: hostile blood magic vetoes councillors/liege/lovers/wives/dynasty unless rivals; positive magic strictly vetoes rivals and prioritises councillors/liege/lovers/wives/dynasty/heirs.
-- Replicate Blood Magic situation decisions to realm Decisions tab under Blood Mage Decisions group.
-- Remove base trait piety scaling from Blood Mage and Blood Knight; grant +1 knight limit per Vanguard track tier.
-- Inscribing Minor, Major, and Superior Blood Runes triggers top interface toast showing rune effects and track XP.
-- Reorder Situation panel character rosters: Dynasty Blood Mages, Blood Knights, Blood Golems.
-- Fix story cycle icon scope error for Blood Knights, remove duplicate holy site definitions overriding vanilla entries (Luoyang, Hangzhou, Quanzhou, Dunhuang, Tenerife), and promote vanilla-eminent sites (Dunhuang, Tenerife) to eminent holy sites in Blóðtrú and Xuédào.
-- Minor and Major Blood Runes available to Blood Mages and Blood Knights in Cast Minor/Major Magic with no trait requirements, triggering yearly passive rolls for all rune bearers.
-- Enable Blood Shrine domicile buildings for Blood Knights alongside Blood Mages and Blóðtrú rulers.
-- Winning single combat duel as Blood Knight grants Major Lifeforce instead of Minor Lifeforce.
-- PR #149: Align Blood Mage, Blood Knight, Blóðtrú faith, interaction, and Situation icons with new master assets.
-- PR #148: Rename hub references to grimoire across documentation and architecture.
-- PR #147: Rebalance trait acquisition: move Rank 3 manifestation to Superior Blood Magic, increase ex-nihilo duel DC and failure exhaustion, and smooth prisoner trait draining modifiers.
-- PR #146: Simplify magic tiers: Knights cast Minor/Major, Mages cast Minor/Major/Superior; consolidate comparison docs into blood-mage-magic-tiers.md; allow Knights to heal major ailments on allies.
-- PR #145: Scale Blood Knight battle XP (1-5 XP) and Lifeforce harvest (Minor/Major) by troop brackets; add victory and defeat battle toasts.
-- PR #144: Empower Blood Knight exclusive to Blood Knights; share trait theft (ranks 1-5), become blood cultist, bless bloodline, and courtier lifedrain; unify Seek Power into single decision with dynamic cooldown.
-- PR #143: Add Blood Faith Starting Counties and Blood Mage Starting County Holders game rules for Iceland and Tsushima; consolidate trait and progression architecture docs.
-- PR #142: Relocate Blood Mage and Blood Knight decisions to Situation panel with is_invisible and story cycle integration.
-- PR #141: Fix error.log runtime issues: guard trait potential scope, replace natural_dread with dread_baseline_add, correct curse ai_recipients, guard lifeforce recount variable access, and add missing knight trigger failure loc.
-- PR #140: Add Blood Knight Prevalence game rule matching Blood Mage options; add lifecycle entry/retention effects, birth scaling, AI modifiers, and trait potential/inheritance.
-- PR #139: Consolidate Situation tab Blood Knight roster to include dynasty and court members; enable Situation tab panel and dynamic discipline grid for Blood Knight rulers.
-- PR #138: Relocate Inscribe Minor Blood Rune to Cast Minor Blood Magic; align Inscribe Major Blood Rune resource cost to Major Lifeforce in Cast Major Blood Magic.
-- PR #137: Fix runtime script and asset errors: remove invalid scheme_resistance modifier, expand all_attributes, fix leveled trait references, prune remove_trait groups, guard self-cast opinion, fix data loc scope promotion, and add missing track icons.
-- PR #136: Overhaul Bloodline (kingdom/dynasty building, stewardship, +1 domain limit & +10% gold at 30/60/90, scaling construction, tax, dev) and Hematurgy (hostile scheme speed, dread, tyranny reduction, +1 hostile scheme at 50/100); add remote Cast Blood Curse interaction.
-- PR #135: Consolidate debug character interactions into single popup interaction with Make Blood Mage, Make Blood Knight, and Convert to Blóðtrú options.
-- PR #134: Expand Blood Knight healing to minor on others and minor/major on self; cap Egill geyser duel injuries strictly at rank 2.
-- PR #133: Require Superior Lifeforce (0 Piety) for Blood Mage creation; Blood Knights create Blood Knights for 200 Prestige + Minor Lifeforce or 0 Prestige + Major Lifeforce; Blood Mages create Blood Knights for 100 Piety + Major Lifeforce.
-- PR #132: Rebalance Geyser initiation duel: scale Learning (target 20, 10->25%, 20->50%, 30->75%, 40->90% cap) and Prowess (target 30, 15->25%, 30->50%, 45->75%, 60->90% cap).
-- PR #131: Exclude Blood Knights from Trial of Blood; gate Ascend to Blood Mage behind piety rank 3, >30 learning, and 500 piety.
-- PR #130: Restructure Blood Mage and Blood Knight trait tracks: 3 shared (Ancient, Benediction, Enlightenment), 2 Mage exclusive (Bloodline, Hematurgy), 2 Knight exclusive (Vanguard, Slaughter); align elevation conversion and XP sources.
-- PR #129: Redesign Blood Knight as standalone lifestyle trait (Slaughter, Vanguard, Resilience) with elevation bridge; rework healing to unified event flow; redistribute track XP.
-- PR #128: Add historical Egill Skallagrímsson character bookmark.
-- PR #127: Allow Blood Knights to cast minor blood magic and seek power.
-- PR #126: Superior blood magic rites, Egill duel integration, runtime error fixes.
-- PR #125: Rebalance blood mage tracks, cap opinion bonuses, normalize economic scaling.
-- PR #124: Rebalance blood empowerment tracks. Standardize trait baselines.
-- PR #123: Major channel ritual to manifest congenital traits.
-- PR #122: Add Superior Lifeforce tier; require for Blood Golem creation.
-- PR #121: Consolidate self-magic decisions into Minor and Major grimoire events.
-- PR #120: Rename Crimson and Sanguine entities to Blood across mod.
-- PR #119: DRY triggers, illness/drain bugfixes, fix duchy building typo.
-- PR #118: Keep self-cast blood magic in decisions tab.
-- PR #114: Blood Shrine building chain for holdings and domiciles.
-- PR #113: Debug logging for blood magic operations.
-- PR #110: Agent token cost pre-commit check. Add caveman skill.
-- PR #109: Lifeforce harvest from single combat duels.
-- PR #108: Repeatable minor lifedrain. Unrestricted manifest lifeforce.
-- PR #107: Standardize holy site modifiers. Add debug interactions.
-- PR #106: Split East Asian branch into Xuédào (Chinese) and Ketsudō (Japanese) faiths.
-- PR #105: Rename religion family and core faith to Blóðtrú.
-- PR #103: Consolidate Blóðtrú faith with Ancestor Worship tenet.
-- PR #102: Reykjavik duel decision to challenge occult hermit.
-- PR #101: Streamline agent rules documentation.
-- PR #100: Pre-commit repository format checks, religion script fixes.
-- PR #99: Trait definition syntax fixes, descriptor update.
-- PR #98: Reorganize decision and AI agent rules.
-- PR #97: English-only localization source. Drop non-English stubs for auto-generation.
-- PR #95: CK3 1.20 baseline compat, layout modernization, AI agent rules.
+- v1.20.43: Decouple Rune Depth (ambient Lifeforce tick) from flat Superior Capstone Galdrastafir staves using inline widget decision (bm_carve_galdrastafir_decision); remove 15 tiered stave modifiers, flay rites, and blood runes event chain; free initial stave choice with 5-year swap for 500 piety and Major Lifeforce; Reshape Personality interaction to purge and imprint personality traits; free initial lifeforce attunement with 3-year cooldown and 100 piety change cost; fix Seek Power event portraits, 3D staging triggers, and character names; grant base Blood Empowerment alongside Blood Mage/Blood Knight for UI pairing; replace Slaughter 50 devotion knights pseudo-modifier with native martial per piety level; rebalance Blood Knight and Blood Mage tracks (~30% stat reduction at max level, +100 Life Expectancy / +50 Years of Fertility target); add missing cooldown localizations for education enhancement, golems, runes, and rites; remove standalone blood golem creation decision in favor of Cast Superior Blood Magic grimoire; fix runtime script errors across Manifest Lifeforce scopes, Inscribe Rune on Others XP triggers and golem house checks, Seek Power toast effects and add_blood_mage_xp alias, and Geyser Duel unset variable.
+- v1.20.42: Attune to trait track option-list widget, Seek Power Blood Knight escort duel, piety rank 4 & cooldown loc for blood golems, rebalance Manifest and Condense Lifeforce duel curves, clean 50/100 milestones with dynamic devotion knights & devotion impact, guaranteed yearly attunement XP, and Galdrastafir UI polish.
+- v1.20.41: Manifest Lifeforce scaling piety popup, childbirth Major Lifeforce for Blood Mages, and restrict seek power to Blood Knights.
+- v1.20.40: Blood Runes & Galdrastafir with 5 staves, sequential progression, superior capstones, and retinue inscription.
+- v1.20.39: Blood Knight refactor into a viable lifestyle peer to Blood Mage with parallel Devotion.
+- v1.20.38: Current Situation healing alerts, faith decision integration, and Blood Knight elevation polish.
+- v1.20.37: Replicate Situation decisions in Decisions tab, AI targeting polish, and Blood Rune toasts.
+- v1.20.36: Blood Knight trait icon, domicile buildings, major blood runes, and duel lifeforce rewards.
+- v1.20.35: Magic tier simplification and battle XP and lifeforce scaling.
+- v1.20.34: Blood Knight situation tab, prevalence game rules, and runtime error fixes.
+- v1.20.32: Overhaul Bloodline and Hematurgy tracks, and consolidate debug character interactions.
+- v1.20.31: Standalone Blood Knight lifestyle trait with elevation bridge and unified healing events.
+- v1.20.30: Historical Egill Skallagrímsson character bookmark and geyser initiation rebalance.
+- v1.20.29: Blood Knights cast minor blood magic and seek power.
+- v1.20.28: Superior blood magic rites, Egill duel integration, and runtime fixes.
+- v1.20.27: Rebalance blood mage tracks, cap opinion bonuses, and normalize economic scaling.
+- v1.20.26: Rebalance blood empowerment tracks and standardize trait baselines.
+- v1.20.25: Major channel ritual to manifest congenital traits.
+- v1.20.24: Add Superior Lifeforce tier; require for Blood Golem creation.
+- v1.20.23: Consolidate cast magic decisions into Minor and Major grimoire events.
+- v1.20.22: Rename Crimson and Sanguine entities to Blood across mod.
+- v1.20.21: DRY triggers, illness and lifedrain bugfixes, and duchy building fix.
+- v1.20.20: Return self-cast blood magic to decisions tab and reorganize.
+- v1.20.19: Blood Knight popup interaction refinement.
+- v1.20.18: Blood Shrine building chain for holdings and domiciles.
+- v1.20.17: Debug logging for blood magic operations.
+- v1.20.16: Standalone Crimson Warrior trait.
+- v1.20.15: Agent token cost pre-commit check and caveman style rules.
+- v1.20.14: Lifeforce harvest from single combat duels.
+- v1.20.13: Repeatable minor lifedrain and unrestricted manifest lifeforce.
+- v1.20.12: Standardize holy site modifiers and add debug interactions.
+- v1.20.11: Split East Asian branch into Xuédào (Chinese) and Ketsudō (Japanese) faiths.
+- v1.20.10: Rename religion family and core faith to Blóðtrú.
+- v1.20.9: Consolidate Blóðtrú faith with Ancestor Worship tenet.
+- v1.20.7: Reykjavik duel decision to challenge occult hermit.
+- v1.20.6: Streamline documentation and agent rules.
+- v1.20.5: Pre-commit repository format checks and religion script fixes.
+- v1.20.4: Trait definition syntax fixes and descriptor update.
+- v1.20.3: Reorganize decision and AI agent rules.
+- v1.20.2: English-only localization source and drop non-English stubs for auto-generation.
+- v1.20.1: CK3 1.20 baseline compatibility, layout modernization, and AI agent rules.
 
 ## Historical (pre-1.20)
 
-* Migrated religion definitions to the CK3 1.19 folder structure.
-* Updated duel, decision AI, trait, and character-template definitions for the 1.19 parser.
-* Replaced duplicate and inline localization keys with mod-scoped localization.
+- Migrated religion definitions to the CK3 1.19 folder structure.
+- Updated duel, decision AI, trait, and character-template definitions for the 1.19 parser.
+- Replaced duplicate and inline localization keys with mod-scoped localization.
 
 ## 15.37
-* Changed decisions targetting player, into character interactions instead: Blood Rune / Education / Crimson Empowerment / Attune Lifeforce / Channel lifeforce
-* Lots of testing, to make sure AI uses the interactions, some they weren't doing before
-* Convert from witch to blood mage, no longer used by AI, to allow for witches and compatibility with Witchcraft mod
-* Lowered chance of AI taking up blood cultist faith to 5% yearly, felt it was happening too frequently
-* Minor lifedrain now has a 6 month cooldown for balance/AI reasons
-* Mass lifedrain (that AI sometimes uses) skips dynasty members by default, to avoid them getting kinslayer trait
-* Attunement grants small bonuses, around 2x what 10xp in the track would give
-* Lowered cost of blood runes to 0/200/400 instead of 100/500/1000
-* Blood golem slightly less OP, with 5 in all stats and 15 in prowess
-* New thumbnail
+
+- Changed decisions targetting player, into character interactions instead: Blood Rune / Education / Crimson Empowerment / Attune Lifeforce / Channel lifeforce
+- Lots of testing, to make sure AI uses the interactions, some they weren't doing before
+- Convert from witch to blood mage, no longer used by AI, to allow for witches and compatibility with Witchcraft mod
+- Lowered chance of AI taking up blood cultist faith to 5% yearly, felt it was happening too frequently
+- Minor lifedrain now has a 6 month cooldown for balance/AI reasons
+- Mass lifedrain (that AI sometimes uses) skips dynasty members by default, to avoid them getting kinslayer trait
+- Attunement grants small bonuses, around 2x what 10xp in the track would give
+- Lowered cost of blood runes to 0/200/400 instead of 100/500/1000
+- Blood golem slightly less OP, with 5 in all stats and 15 in prowess
+- New thumbnail
 
 ## 15.36
-* Can become blood mage, if you have a prisoner that's a blood mage, by consuming their flesh.
-* Can heal weak and one legged as well
-* AI Prioritise self, for casting positive magic
-* Golems are beardless albinos
+
+- Can become blood mage, if you have a prisoner that's a blood mage, by consuming their flesh.
+- Can heal weak and one legged as well
+- AI Prioritise self, for casting positive magic
+- Golems are beardless albinos
 
 ## 15.35
-* Can convert friend/soulmate/consort/family to cult
-* Various decisions have XP requirements now: Enhance and new Education / manifest lifeforce / create blood golem / blood rune
-* Removed channel major, and replaced with new Trait: Crimson Empowerment
-    * Cast Lifeforce, to gain 10xp in one of 7 tracks, each 10xp gives a differnt bonus
-    * Tracks are based around diplomacy/martial/stewardship/intrigue/learning/genetics/lifestyle xp gain
-* Blood cost (piety / xp level) scales with which rune you have
-* Levelling up education, cost and xp scales with eduation level
+
+- Can convert friend/soulmate/consort/family to cult
+- Various decisions have XP requirements now: Enhance and new Education / manifest lifeforce / create blood golem / blood rune
+- Removed channel major, and replaced with new Trait: Crimson Empowerment
+  - Cast Lifeforce, to gain 10xp in one of 7 tracks, each 10xp gives a differnt bonus
+  - Tracks are based around diplomacy/martial/stewardship/intrigue/learning/genetics/lifestyle xp gain
+- Blood cost (piety / xp level) scales with which rune you have
+- Levelling up education, cost and xp scales with eduation level
 
 ## 15.34
-* Converting others to blood mages, now can be done with a hook
-* Tweaked piety level requirements for all decisions
-    * blood runes: lvl 2
-    * channel: lvl 1
-    * education: lvl 2 to improve, lvl 3 for new one
-    * manifesting: lvl 2
-* Piety level only reduced for runes and chance to happen with education
-* Piety now generally more expensive
-* Enhance lifeforce removed (not fun)
 
-* Can now get new education trait, if we have level 5
-* Golem attributes cost scaling amounts of piety, no longer grant bloodline XP for each attribute added, and cannot continue without piety
-* Lots of AI balances, so AI considers relationship with target and it's own health before doing actions
+- Converting others to blood mages, now can be done with a hook
+- Tweaked piety level requirements for all decisions
+  - blood runes: lvl 2
+  - channel: lvl 1
+  - education: lvl 2 to improve, lvl 3 for new one
+  - manifesting: lvl 2
+- Piety level only reduced for runes and chance to happen with education
+- Piety now generally more expensive
+- Enhance lifeforce removed (not fun)
+
+- Can now get new education trait, if we have level 5
+- Golem attributes cost scaling amounts of piety, no longer grant bloodline XP for each attribute added, and cannot continue without piety
+- Lots of AI balances, so AI considers relationship with target and it's own health before doing actions
 
 ## 15.33
-* Character interactions dont trigger events, if there's only one outcome (blood cult + drain lifeforce), instead show up in the character interaction
-* Creating golem traits cost piety each time
-* New decision: Manifest lifeforce, at great cost of piety
-* Balance dynasty/major modifiers, generally stronger
-* Balance blood mage trait, generally stronger
-* Golems belong to same dynasty/house
+
+- Character interactions dont trigger events, if there's only one outcome (blood cult + drain lifeforce), instead show up in the character interaction
+- Creating golem traits cost piety each time
+- New decision: Manifest lifeforce, at great cost of piety
+- Balance dynasty/major modifiers, generally stronger
+- Balance blood mage trait, generally stronger
+- Golems belong to same dynasty/house
 
 ## 15.32
-* New decisions: Enhance lifeforce, to convert minor to major (later removed)
-* New Blood Mage icons for modifiers (white)
-* Can level up education with decision, at high cost of piety
-* Can create blood golem, high prowess courtiers, at high cost to piety
+
+- New decisions: Enhance lifeforce, to convert minor to major (later removed)
+- New Blood Mage icons for modifiers (white)
+- Can level up education with decision, at high cost of piety
+- Can create blood golem, high prowess courtiers, at high cost to piety
 
 ## 15.30
-* Healing pox more costly (piety + major & minor lifeforce)
-* Channelling decisions, show potential modifiers before casting decision
-* New decision: blood runes for chance to get yearly lifeforce (minor or major, depends on rune level)
-* Wandering characters, can seek power every 1 year, instead of 2 to balance (easier to get lifeforce for landed)
-* Bloodline xp yearly, scales with number of dynasty modifiers
+
+- Healing pox more costly (piety + major & minor lifeforce)
+- Channelling decisions, show potential modifiers before casting decision
+- New decision: blood runes for chance to get yearly lifeforce (minor or major, depends on rune level)
+- Wandering characters, can seek power every 1 year, instead of 2 to balance (easier to get lifeforce for landed)
+- Bloodline xp yearly, scales with number of dynasty modifiers
 
 ## 15.29
-* Balance blood mage trait, all tracks negate prowess loss at 100xp
-* Balance dynasty/major modifiers, more x_per_piety_level now
-* AI chooses attunement, based on XP levels
-* Seek power wanderer, can have traits, some drainable. Can also join the player's court
-* Major channelling can only be done if piety level is positive
-* Drain trait harder, the more traits you have + 6 month cooldown
-* LLM context updated: more modifiers
+
+- Balance blood mage trait, all tracks negate prowess loss at 100xp
+- Balance dynasty/major modifiers, more x_per_piety_level now
+- AI chooses attunement, based on XP levels
+- Seek power wanderer, can have traits, some drainable. Can also join the player's court
+- Major channelling can only be done if piety level is positive
+- Drain trait harder, the more traits you have + 6 month cooldown
+- LLM context updated: more modifiers
 
 # 15.25
-* Cultists can become blood mages, with decision and wise versa
-* Trait, modifier and holy site balancing
-* Attune lifeforce, chance to get extra XP per year
-* New ANCIENT track in trat, 1xp per year, for rewarding long living characters
-* Channel minor lifeforce, for temporary bonuses
-* More interface toasts, to get feedback on what happened
-* Can only convert courtiers/prisoners to cult
-* Create crimson warriors/champions, granting knights extra prowess
+
+- Cultists can become blood mages, with decision and wise versa
+- Trait, modifier and holy site balancing
+- Attune lifeforce, chance to get extra XP per year
+- New ANCIENT track in trat, 1xp per year, for rewarding long living characters
+- Channel minor lifeforce, for temporary bonuses
+- More interface toasts, to get feedback on what happened
+- Can only convert courtiers/prisoners to cult
+- Create crimson warriors/champions, granting knights extra prowess
 
 # 15.20
-* Update trait to new format, with tracks
-* Seek power event/decision, rather than stroll through town (better theme with wandering)
-* Split lifeforce into major/minor. Minor draining doesn't kill
-* Granting lifeforce, reverts minor lifedraining
-* Update icon graphics
-* Add LLM RAG documents for context
-* Create channel (major) lifeforce decision, strong permanent buffs for self or dynasty
-* Create .pre-commit-config.yaml
+
+- Update trait to new format, with tracks
+- Seek power event/decision, rather than stroll through town (better theme with wandering)
+- Split lifeforce into major/minor. Minor draining doesn't kill
+- Granting lifeforce, reverts minor lifedraining
+- Update icon graphics
+- Add LLM RAG documents for context
+- Create channel (major) lifeforce decision, strong permanent buffs for self or dynasty
+- Create .pre-commit-config.yaml
 
 # 15.15
-* Religion unreformed, and syncs with christians (less hate)
-* Add more holy Sites, and each grant +1 skill
-* Mass drain needs prisoners
-* Can spend minor lifeforce to convert to cult
-* Blood mages can convert to cult
-* Blood mages have white eyes
-* Decisions show up in own group (#30)
+
+- Religion unreformed, and syncs with christians (less hate)
+- Add more holy Sites, and each grant +1 skill
+- Mass drain needs prisoners
+- Can spend minor lifeforce to convert to cult
+- Blood mages can convert to cult
+- Blood mages have white eyes
+- Decisions show up in own group (#30)

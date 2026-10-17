@@ -152,28 +152,28 @@
 
   # Attunement modifiers
   ancient_attuned: "Attuned to Ancient"
-  ancient_attuned_desc: "Yearly chance to gain experience in the Ancient discipline, while passively channeling ancient piety and devotion."
+  ancient_attuned_desc: "Grants +1 yearly exp in Ancient."
 
   enlightenment_attuned: "Attuned to Enlightenment"
-  enlightenment_attuned_desc: "Yearly chance to gain experience in the Enlightenment discipline, while passively boosting lifestyle experience gain."
+  enlightenment_attuned_desc: "Grants +1 yearly exp in Enlightenment."
 
   bloodline_attuned: "Attuned to Bloodline"
-  bloodline_attuned_desc: "Yearly chance to gain experience in the Bloodline discipline, while passively bolstering dynasty prestige."
+  bloodline_attuned_desc: "Grants +1 yearly exp in Bloodline."
 
   benediction_attuned: "Attuned to Benediction"
-  benediction_attuned_desc: "Yearly chance to gain experience in the Benediction discipline, while passively enhancing general opinion and prestige."
+  benediction_attuned_desc: "Grants +1 yearly exp in Benediction."
 
   hematurgy_attuned: "Attuned to Hematurgy"
-  hematurgy_attuned_desc: "Yearly chance to gain experience in the Hematurgy discipline, while passively disrupting enemy hostile schemes."
+  hematurgy_attuned_desc: "Grants +1 yearly exp in Hematurgy."
 
   vanguard_attuned: "Attuned to Vanguard"
-  vanguard_attuned_desc: "Yearly chance to gain experience in the Vanguard discipline, while passively granting combat advantage and knight effectiveness."
+  vanguard_attuned_desc: "Grants +1 yearly exp in Vanguard."
 
   slaughter_attuned: "Attuned to Slaughter"
-  slaughter_attuned_desc: "Yearly chance to gain experience in the Slaughter discipline, while passively granting prowess and dread gain."
+  slaughter_attuned_desc: "Grants +1 yearly exp in Slaughter."
 
   resilience_attuned: "Attuned to Resilience"
-  resilience_attuned_desc: "Yearly chance to bolster resilience, while passively reinforcing physical health and epidemic resistance."
+  resilience_attuned_desc: "Grants +1 yearly exp in Resilience."
 
   # Bloodline buffs
   bm_blessed_blood_modifier: "Blessed Blood"
@@ -182,3 +182,29 @@
   # Hematurgy Blood Curse
   bm_blood_curse_modifier: "Blood Curse"
   bm_blood_curse_modifier_desc: "This character has been afflicted by a malefic hemomantic curse, sapping their vitality, prowess, and cognitive faculties."
+
+  # 1. Vegvisir (The Wayfinder)
+  bm_stave_vegvisir: "Vegvísir"
+  bm_stave_vegvisir_desc: "The wayfinder stave etched into flesh. Increases travel speed, travel safety, and movement speed.\n\n#bold Superior Capstone — Storm-Walker#!: Halves the cooldown of Seek Power (1 year landed, 6 months wanderer or knight) and guarantees completely safe harvest outcomes without negative hazards."
+
+  # 2. Aegishjalmur (Helm of Awe)
+  bm_stave_aegishjalmur: "Ægishjálmur"
+  bm_stave_aegishjalmur_desc: "The helm of awe stave etched across the brow and chest. Increases prowess, advantage, and knight effectiveness.\n\n#bold Superior Capstone — Terror of the Slain#!: In battles and single combat duels, strikes fear into the hearts of enemy commanders and champions, inflicting severe terror and reducing their prowess and health."
+
+  bm_aegishjalmur_terror_modifier: "Struck by Terror"
+  bm_aegishjalmur_terror_modifier_desc: "This warrior has faced the bearer of the perfected Helm of Awe, breaking their spirit and severely degrading their combat prowess and constitution."
+
+  # 3. Feingur (Awakened Seed)
+  bm_stave_feingur: "Feingur"
+  bm_stave_feingur_desc: "The fertility and lineage stave etched into flesh. Increases fertility, fertile years, congenital trait inheritance, character health, and epidemic resistance.\n\n#bold Superior Capstone — Awakened Seed#!: Doubles discipline XP gained on childbirth (+4 base, +8 if inherited; Bloodline for Mages, Vanguard for Knights). Unlocks an interaction to bestow a permanent runic blessing upon dynasty kin."
+
+  bm_feingur_blessed_blood_modifier: "Awakened Runic Bloodline"
+  bm_feingur_blessed_blood_modifier_desc: "The vital currents of Feingur have been permanently woven into this character's flesh, granting permanent physical perfection, cognitive sharpness, and high fertility."
+
+  # 4. Nabrokarstafur (Flayed Tithe)
+  bm_stave_nabrokarstafur: "Nábrókarstafur"
+  bm_stave_nabrokarstafur_desc: "The flayed tithe stave etched into flesh. Increases domain tax and lowers Men-at-Arms maintenance at the expense of general opinion.\n\n#bold Superior Capstone — Flayed Tithe#!: Yields #P +20 Gold#! per Point of Interest visited during travel, and claims #P 10%#! of enemy fatal casualties as gold (25–250 Gold) upon winning any battle."
+
+  # 5. Hulinhjalmur (Unseen Shroud)
+  bm_stave_hulinhjalmur: "Hulinhjálmur"
+  bm_stave_hulinhjalmur_desc: "The unseen shroud stave etched into flesh. Increases hostile scheme success chance, reduces enemy scheme success, and boosts monthly lifestyle experience.\n\n#bold Superior Capstone — Unseen Shroud#!: Doubles yearly discipline Attunement experience gain to #P +2 XP#! per year, and successfully executing a Murder scheme harvests #P 1 Major Lifeforce#!."\n

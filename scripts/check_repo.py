@@ -9,6 +9,7 @@ Enforces the format rules documented in AGENTS.md:
 - .txt, .gui, .yml: UTF-8 with BOM, trailing newline, balanced braces.
 - Preserves line endings and indentation.
 - Checks #tiger-ignore justification comments.
+- Requires docs-ai/branch-context/<branch>.md on non-main branches, updated when mod files change.
 - Supports --staged (for git pre-commit hooks) and --fix (auto-fix BOM/newlines).
 """
 
@@ -224,6 +225,60 @@ def check_file(path: Path, auto_fix: bool = False) -> list[str]:
     return errors
 
 
+BRANCH_CONTEXT_DIR = Path("docs-ai") / "branch-context"
+BASE_BRANCHES = ("main", "origin/main", "master", "origin/master")
+
+
+def _git(repo_root: Path, *args: str) -> "str | None":
+    """Run a git command and return stdout, or None on failure."""
+    try:
+        res = subprocess.run(
+            ["git", *args], cwd=repo_root, capture_output=True, text=True, check=True
+        )
+        return res.stdout
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return None
+
+
+def check_branch_context(repo_root: Path) -> list[str]:
+    """
+    Enforce the mandatory branch context file (AGENTS.md, .agents/rules/pr-context.md):
+    - Every branch except main/master needs docs-ai/branch-context/<branch>.md.
+    - If the branch changes mod files or CHANGELOG.md versus main, that file must change too.
+    """
+    branch = (_git(repo_root, "branch", "--show-current") or "").strip()
+    if not branch or branch in {"main", "master"}:
+        return []
+
+    rel_ctx = (BRANCH_CONTEXT_DIR / f"{branch}.md").as_posix()
+    hint = "See .agents/rules/pr-context.md for the template."
+    if not (repo_root / rel_ctx).is_file():
+        return [f"Missing mandatory branch context file '{rel_ctx}'. Create it. {hint}"]
+
+    base = None
+    for candidate in BASE_BRANCHES:
+        out = _git(repo_root, "merge-base", "HEAD", candidate)
+        if out and out.strip():
+            base = out.strip()
+            break
+    if base is None:
+        return []
+
+    changed = set((_git(repo_root, "diff", "--name-only", base) or "").splitlines())
+    changed |= set(
+        (_git(repo_root, "ls-files", "--others", "--exclude-standard") or "").splitlines()
+    )
+    touches_mod = any(
+        p == "CHANGELOG.md" or p.split("/", 1)[0] in GAME_DIRS for p in changed
+    )
+    if touches_mod and rel_ctx not in changed:
+        return [
+            f"Branch '{branch}' changes mod files but '{rel_ctx}' is unchanged versus main. "
+            f"Update it to the branch's current state. {hint}"
+        ]
+    return []
+
+
 def install_pre_commit_hook(repo_root: Path) -> bool:
     """Install the pre-commit git hook into .git/hooks/pre-commit."""
     hook_dir = repo_root / ".git" / "hooks"
@@ -343,6 +398,14 @@ def main():
             print(f"\033[1;31m[ERROR]\033[0m {rel_path}:")
             for err in errors:
                 print(f"  - {err}")
+
+    # Mandatory branch context (also in pre-commit, which passes filenames)
+    ctx_errors = check_branch_context(repo_root)
+    if ctx_errors:
+        total_errors += len(ctx_errors)
+        print("\033[1;31m[ERROR]\033[0m branch context:")
+        for err in ctx_errors:
+            print(f"  - {err}")
 
     if total_errors > 0:
         print(
