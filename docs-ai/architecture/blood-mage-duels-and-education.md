@@ -67,6 +67,7 @@ Allows characters to cleanse congenital flaws and ascend `intellect`, `physique`
   - Holds 4★ trait (Mastery 4★ -> 5★): `+300` Piety (`350` Piety total for single education).
   - Holds existing 5★ trait (when leveling a 2nd education): `+500` Piety surcharge per 5★ trait held.
 - **Zero-Cost Backout:** Piety, Lifeforce, and the 2-year cooldown flag (`bm_improve_education_cooldown` / `bm_new_education_cooldown`) are only deducted when selecting a specific discipline option, allowing players to return to the Major/Superior Grimoire freely.
+- **Cooldown Tooltip Localization:** The 2-year cooldown flag (`bm_improve_education_cooldown`) is localized with player-facing sibling keys and wrapped in `custom_description` (`bm_improve_education_cooldown_tt`) in both Major and Superior Grimoires to cleanly display remaining cooldown requirements when options are shown as unavailable.
 
 ## Where the details live
 

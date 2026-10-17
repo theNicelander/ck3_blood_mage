@@ -42,7 +42,10 @@
 			is_imprisoned = no
 		}
 		scope:actor = {
-			NOT = { has_character_flag = bm_blood_rune_other_cooldown }
+			custom_description = {
+				text = bm_blood_rune_other_cooldown_tt
+				NOT = { has_character_flag = bm_blood_rune_other_cooldown }
+			}
 			custom_tooltip = {
 				text = bm_inscribe_rune_other_requirement_tt
 				OR = {

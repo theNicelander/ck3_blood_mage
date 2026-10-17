@@ -199,7 +199,10 @@ bm_cast_blood_magic_minor.001 = {
 	option = {
 		name = bm_cast_blood_magic_minor.001.blood_rune_minor
 		trigger = {
-			NOT = { has_character_flag = bm_blood_rune_cooldown }
+			custom_description = {
+				text = bm_blood_rune_cooldown_tt
+				NOT = { has_character_flag = bm_blood_rune_cooldown }
+			}
 			NOT = { has_character_modifier = minor_blood_rune_modifier }
 			NOT = { has_character_modifier = major_blood_rune_modifier }
 			NOT = { has_character_modifier = superior_blood_rune_modifier }

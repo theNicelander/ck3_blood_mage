@@ -15,7 +15,10 @@ bm_cast_blood_magic_superior.001 = {
 	option = {
 		name = bm_cast_blood_magic_superior.001.master_education
 		trigger = {
-			NOT = { has_character_flag = bm_improve_education_cooldown }
+			custom_description = {
+				text = bm_improve_education_cooldown_tt
+				NOT = { has_character_flag = bm_improve_education_cooldown }
+			}
 			piety_level >= 3
 			piety >= scaled_education_enhancement_cost
 			OR = {
@@ -44,7 +47,10 @@ bm_cast_blood_magic_superior.001 = {
 	option = {
 		name = bm_cast_blood_magic_superior.001.new_education
 		trigger = {
-			NOT = { has_character_flag = bm_new_education_cooldown }
+			custom_description = {
+				text = bm_new_education_cooldown_tt
+				NOT = { has_character_flag = bm_new_education_cooldown }
+			}
 			piety_level >= 4
 			piety >= 1000
 			# Has level 5 traits
@@ -99,7 +105,10 @@ bm_cast_blood_magic_superior.001 = {
 	option = {
 		name = bm_cast_blood_magic_superior.001.blood_rune_superior
 		trigger = {
-			NOT = { has_character_flag = bm_blood_rune_cooldown }
+			custom_description = {
+				text = bm_blood_rune_cooldown_tt
+				NOT = { has_character_flag = bm_blood_rune_cooldown }
+			}
 			has_character_modifier = major_blood_rune_modifier
 			NOT = { has_character_modifier = superior_blood_rune_modifier }
 			piety_level >= 4
@@ -156,7 +165,10 @@ bm_cast_blood_magic_superior.001 = {
 	option = {
 		name = bm_cast_blood_magic_superior.001.manifest_traits
 		trigger = {
-			NOT = { has_character_flag = bm_manifest_traits_cooldown }
+			custom_description = {
+				text = bm_manifest_traits_cooldown_tt
+				NOT = { has_character_flag = bm_manifest_traits_cooldown }
+			}
 			piety_level >= 3
 			piety >= 200
 			OR = {
@@ -189,7 +201,10 @@ bm_cast_blood_magic_superior.001 = {
 	option = {
 		name = bm_cast_blood_magic_superior.001.create_blood_golem
 		trigger = {
-			NOT = { has_character_flag = bm_blood_golem_cooldown }
+			custom_description = {
+				text = bm_blood_golem_cooldown_tt
+				NOT = { has_character_flag = bm_blood_golem_cooldown }
+			}
 			piety_level >= 3
 			piety >= 500
 		}
