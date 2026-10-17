@@ -14,6 +14,8 @@ CK3 script fails silently. Follow patterns already in this repo and in vanilla 1
 - **Rule of cool**: Low-fantasy blood magic integrated seamlessly into CK3 systems.
 - **Zero vanilla overwrites**: Pure modular additions; strictly compatible with total conversions and other mods.
 - **Earned power over godmode**: Lifespan extension and physical/mental trait improvements (intellect, beauty, physique) require earned Lifeforce, piety, and ritual sacrifice, with tangible risks.
+- **Clarify before building**: When making plans, always ask multiple follow-up questions. User ideas are often rough, exploratory, or ungrounded; never run on unverified assumptions—clarify ambiguities and explicitly state assumptions before implementing.
+- **Commit planned work**: Plans must always conclude with committing the changes at the end. Since plans are well thought out, commit the finished implementation; any subsequent adjustments, user feedback, or follow-up iterations belong in a separate commit. Commits must strictly include only relevant files modified in your conversation.
 
 ## Context layers
 
@@ -77,15 +79,18 @@ See `.agents/rules/ck3-localization.md` (english only, sibling keys, loc documen
 - Invent effect, trigger or scope names. Find them in vanilla or `script_docs` output and cite where.
 - Switch branches or create new branches unless explicitly instructed by the user. Stay in the current branch. Never create separate branches to isolate work.
 - Blanket stage (`git add .`, `git add -A`, `git commit -a`) when uncommitted changes exist from other agents or tasks. Multiple AIs work in parallel on this repo: only stage and commit files modified in your current conversation. "Commit ignoring other changes" means leave other modified files untouched and uncommitted, never create a separate branch.
+- Execute plans on unverified assumptions without asking clarifying follow-up questions first.
+- Create plans without a final commit step, or leave planned changes uncommitted upon completion.
 
 ## Workflow
 
 Multiple AIs work in parallel on this repo, so keep in mind that there maybe other changes in the branch. If that's the case, ingore them unless relevant to you. Don't commit files you didn't touch, unless asked to.
 
 1. `git branch --show-current`; read `docs-ai/branch-context/<branch>.md` (**create if missing**, see `pr-context.md`), matching rule(s), and matching `docs-ai/architecture/*.md` (start at its `README.md`).
-2. Smallest change that works. Check existing identifiers with `grep -rn`.
+2. Plan & clarify: when making plans, always ask multiple follow-up questions. Probe ungrounded ideas, confirm assumptions, and clarify ambiguities before coding. Plans must always conclude with committing at the end. Smallest change that works. Check existing identifiers with `grep -rn`.
 3. Use the matching skill for the task (`add-blood-magic-decision`, `add-decision-option-widget`, `add-faith`, `add-trait-track`, `add-game-rule`).
 4. Update matching architecture doc in `docs-ai/architecture/` in the same change so it stays true to current state.
 5. Update `CHANGELOG.md`: living document, prepend single-line short high-level description matching current branch name (e.g. `* v1.20.40: <short description>`), caveman style, net branch status only (fold superseded changes, drop reverts). Reverse chronological: latest changes at top.
 6. **Always** update `docs-ai/branch-context/<branch>.md` to net branch state, however small the task.
 7. Run `python3 scripts/check_repo.py` (enforces 1 and 6). State in the final summary what you could not verify.
+8. **Commit**: Stage and commit ONLY files modified in your active conversation (`git add <file1> <file2> && git commit -m "..."`). Because plans are well thought out, commit the finished plan implementation at the end; subsequent feedback or modifications must be committed in separate commits. Never blanket stage (`git add .`), as multiple agents operate concurrently.

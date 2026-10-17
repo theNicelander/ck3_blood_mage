@@ -107,8 +107,8 @@ Tracks: `dynasty`, `mastery`, `presence`, `prosperity`, `shadows` (5 tracks tota
 
 | XP Gain                                            | Cost                                                     | Action                                                                                               | Type              | Requirements                             | Cooldown |
 | -------------------------------------------------- | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ----------------- | ---------------------------------------- | -------- |
-| **+10 XP** in chosen track (+3 `enlightenment` XP) | 150 Piety + Major Lifeforce (`lifeforce_modifier_major`) | Channel Blood Empowerment (`bm_cast_blood_magic_major_decision` -> `bm_blood_empowerment_event.001`) | Decision -> Event | `piety_level >= 1`, Major lifeforce held | None     |
-| **0 XP** (strictly manual advancement)             | None                                                     | Passive Growth                                                                                       | None              | None                                     | None     |
+| **+10 XP** in chosen track (+3 `enlightenment` XP) | 150 Piety + Major Lifeforce (`lifeforce_modifier_major`) | Channel Blood Empowerment (`bm_channel_blood_empowerment_decision`) | Option-List Widget Decision | `piety_level >= 1`, Major lifeforce held | None |
+| **0 XP** (strictly manual advancement) | None | Passive Growth | None | None | None |
 
 ---
 

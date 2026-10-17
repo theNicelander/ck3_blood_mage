@@ -89,6 +89,7 @@ lifestyle_blood_knight = {
 			50 = {
 				# specific
 				martial_per_piety_level = 1
+				prowess_per_piety_level = 1
 			}
 			60 = {
 				# common
@@ -362,9 +363,8 @@ lifestyle_blood_knight = {
 			}
 			100 = {
 				# specific
-				diplomacy_per_piety_level = 0.5
+				diplomacy_per_piety_level = 1.0
 				no_prowess_loss_from_age = yes
-				character_max_piety_level_add = 1
 			}
 		}
 
@@ -463,9 +463,8 @@ lifestyle_blood_knight = {
 			}
 			100 = {
 				# specific
-				learning_per_piety_level = 0.5
+				learning_per_piety_level = 1.0
 				no_prowess_loss_from_age = yes
-				character_max_piety_level_add = 1
 			}
 		}
 
@@ -517,8 +516,6 @@ lifestyle_blood_knight = {
 			50 = {
 				# specific
 				piety_level_impact_mult = 0.175
-				prowess_per_piety_level = 1
-				negate_health_penalty_add = 0.25
 			}
 			60 = {
 				# common
@@ -566,9 +563,8 @@ lifestyle_blood_knight = {
 			}
 			100 = {
 				# specific
-				character_max_piety_level_add = 1
+				piety_level_impact_mult = 0.325
 				no_prowess_loss_from_age = yes
-				negate_health_penalty_add = 0.5
 			}
 		}
 	}
