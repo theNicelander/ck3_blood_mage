@@ -143,12 +143,12 @@
 				limit = { scope:manifest_lifeforce_tier1 = yes }
 				add_shared_bm_bk_xp = {
 					TRACK = enlightenment
-					XP = 3
+					XP = 1
 				}
 				duel = {
 					skill = learning
 					value = 0
-					15 = {
+					10 = {
 						desc = manifest_lifeforce_major_success_tt
 						compare_modifier = {
 							value = scope:duel_value
@@ -164,79 +164,11 @@
 							bm_recount_lifeforce_stacks_effect = yes
 						}
 					}
-					45 = {
+					20 = {
 						desc = manifest_lifeforce_minor_success_tt
 						compare_modifier = {
 							value = scope:duel_value
-							multiplier = 1.5
-						}
-						send_interface_toast = {
-							type = event_toast_effect_good
-							title = manifest_lifeforce_minor_success_tt
-							left_icon = root
-							add_character_modifier = { modifier = lifeforce_modifier_minor }
-						}
-						hidden_effect = {
-							bm_recount_lifeforce_stacks_effect = yes
-						}
-					}
-					35 = {
-						desc = manifest_lifeforce_minor_failure_tt
-						compare_modifier = {
-							value = scope:duel_value
-							multiplier = -0.6
-						}
-						send_interface_toast = {
-							type = event_toast_effect_neutral
-							title = manifest_lifeforce_minor_failure_tt
-							left_icon = root
-						}
-					}
-					15 = {
-						desc = manifest_lifeforce_major_failure_tt
-						compare_modifier = {
-							value = scope:duel_value
-							multiplier = -0.3
-						}
-						send_interface_toast = {
-							type = event_toast_effect_bad
-							title = manifest_lifeforce_major_failure_tt
-							left_icon = root
-							temporary_negative_lifeforce_effect_major = yes
-						}
-					}
-				}
-			}
-			else_if = {
-				limit = { scope:manifest_lifeforce_tier2 = yes }
-				add_shared_bm_bk_xp = {
-					TRACK = enlightenment
-					XP = 5
-				}
-				duel = {
-					skill = learning
-					value = 0
-					30 = {
-						desc = manifest_lifeforce_major_success_tt
-						compare_modifier = {
-							value = scope:duel_value
-							multiplier = 1.8
-						}
-						send_interface_toast = {
-							type = event_toast_effect_good
-							title = manifest_lifeforce_major_success_tt
-							left_icon = root
-							add_character_modifier = { modifier = lifeforce_modifier_major }
-						}
-						hidden_effect = {
-							bm_recount_lifeforce_stacks_effect = yes
-						}
-					}
-					50 = {
-						desc = manifest_lifeforce_minor_success_tt
-						compare_modifier = {
-							value = scope:duel_value
-							multiplier = 0.8
+							multiplier = 0.5
 						}
 						send_interface_toast = {
 							type = event_toast_effect_good
@@ -261,10 +193,78 @@
 						}
 					}
 					10 = {
-						desc = manifest_lifeforce_minor_failure_penalty_tt
+						desc = manifest_lifeforce_major_failure_tt
 						compare_modifier = {
 							value = scope:duel_value
 							multiplier = -0.3
+						}
+						send_interface_toast = {
+							type = event_toast_effect_bad
+							title = manifest_lifeforce_major_failure_tt
+							left_icon = root
+							temporary_negative_lifeforce_effect_major = yes
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = { scope:manifest_lifeforce_tier2 = yes }
+				add_shared_bm_bk_xp = {
+					TRACK = enlightenment
+					XP = 3
+				}
+				duel = {
+					skill = learning
+					value = 0
+					20 = {
+						desc = manifest_lifeforce_major_success_tt
+						compare_modifier = {
+							value = scope:duel_value
+							multiplier = 1.5
+						}
+						send_interface_toast = {
+							type = event_toast_effect_good
+							title = manifest_lifeforce_major_success_tt
+							left_icon = root
+							add_character_modifier = { modifier = lifeforce_modifier_major }
+						}
+						hidden_effect = {
+							bm_recount_lifeforce_stacks_effect = yes
+						}
+					}
+					10 = {
+						desc = manifest_lifeforce_minor_success_tt
+						compare_modifier = {
+							value = scope:duel_value
+							multiplier = 0.5
+						}
+						send_interface_toast = {
+							type = event_toast_effect_good
+							title = manifest_lifeforce_minor_success_tt
+							left_icon = root
+							add_character_modifier = { modifier = lifeforce_modifier_minor }
+						}
+						hidden_effect = {
+							bm_recount_lifeforce_stacks_effect = yes
+						}
+					}
+					7 = {
+						desc = manifest_lifeforce_minor_failure_tt
+						compare_modifier = {
+							value = scope:duel_value
+							multiplier = -0.2
+						}
+						send_interface_toast = {
+							type = event_toast_effect_neutral
+							title = manifest_lifeforce_minor_failure_tt
+							left_icon = root
+						}
+					}
+					3 = {
+						desc = manifest_lifeforce_minor_failure_penalty_tt
+						compare_modifier = {
+							value = scope:duel_value
+							multiplier = -0.1
 						}
 						send_interface_toast = {
 							type = event_toast_effect_bad
@@ -279,13 +279,29 @@
 				limit = { scope:manifest_lifeforce_tier3 = yes }
 				add_shared_bm_bk_xp = {
 					TRACK = enlightenment
-					XP = 8
+					XP = 5
 				}
 				add_character_modifier = { modifier = lifeforce_modifier_minor }
 				duel = {
 					skill = learning
 					value = 0
-					15 = {
+					20 = {
+						desc = manifest_lifeforce_major_success_tt
+						compare_modifier = {
+							value = scope:duel_value
+							multiplier = 1.0
+						}
+						send_interface_toast = {
+							type = event_toast_effect_good
+							title = manifest_lifeforce_major_success_tt
+							left_icon = root
+							add_character_modifier = { modifier = lifeforce_modifier_major }
+						}
+						hidden_effect = {
+							bm_recount_lifeforce_stacks_effect = yes
+						}
+					}
+					10 = {
 						desc = manifest_lifeforce_double_major_success_tt
 						compare_modifier = {
 							value = scope:duel_value
@@ -302,32 +318,17 @@
 							bm_recount_lifeforce_stacks_effect = yes
 						}
 					}
-					70 = {
-						desc = manifest_lifeforce_major_success_tt
+					10 = {
+						desc = manifest_lifeforce_minor_success_tt
 						compare_modifier = {
 							value = scope:duel_value
-							multiplier = 1.5
+							multiplier = -0.15
 						}
 						send_interface_toast = {
 							type = event_toast_effect_good
-							title = manifest_lifeforce_major_success_tt
+							title = manifest_lifeforce_minor_success_tt
 							left_icon = root
-							add_character_modifier = { modifier = lifeforce_modifier_major }
-						}
-						hidden_effect = {
-							bm_recount_lifeforce_stacks_effect = yes
-						}
-					}
-					15 = {
-						desc = manifest_lifeforce_nothing_extra_tt
-						compare_modifier = {
-							value = scope:duel_value
-							multiplier = -0.8
-						}
-						send_interface_toast = {
-							type = event_toast_effect_neutral
-							title = manifest_lifeforce_nothing_extra_tt
-							left_icon = root
+							add_character_modifier = { modifier = lifeforce_modifier_minor }
 						}
 						hidden_effect = {
 							bm_recount_lifeforce_stacks_effect = yes
@@ -339,18 +340,18 @@
 				limit = { scope:manifest_lifeforce_tier4 = yes }
 				add_shared_bm_bk_xp = {
 					TRACK = enlightenment
-					XP = 12
+					XP = 7
 				}
 				add_character_modifier = { modifier = lifeforce_modifier_minor }
 				add_character_modifier = { modifier = lifeforce_modifier_major }
 				duel = {
 					skill = learning
 					value = 0
-					20 = {
+					10 = {
 						desc = manifest_lifeforce_superior_success_tt
 						compare_modifier = {
 							value = scope:duel_value
-							multiplier = 1.5
+							multiplier = 1.2
 						}
 						send_interface_toast = {
 							type = event_toast_effect_good
@@ -362,17 +363,33 @@
 							bm_recount_lifeforce_stacks_effect = yes
 						}
 					}
-					80 = {
+					10 = {
 						desc = manifest_lifeforce_double_major_success_tt
 						compare_modifier = {
 							value = scope:duel_value
-							multiplier = 0.5
+							multiplier = 0.8
 						}
 						send_interface_toast = {
 							type = event_toast_effect_good
 							title = manifest_lifeforce_double_major_success_tt
 							left_icon = root
 							add_character_modifier = { modifier = lifeforce_modifier_major }
+							add_character_modifier = { modifier = lifeforce_modifier_major }
+						}
+						hidden_effect = {
+							bm_recount_lifeforce_stacks_effect = yes
+						}
+					}
+					60 = {
+						desc = manifest_lifeforce_major_success_tt
+						compare_modifier = {
+							value = scope:duel_value
+							multiplier = 0.0
+						}
+						send_interface_toast = {
+							type = event_toast_effect_good
+							title = manifest_lifeforce_major_success_tt
+							left_icon = root
 							add_character_modifier = { modifier = lifeforce_modifier_major }
 						}
 						hidden_effect = {

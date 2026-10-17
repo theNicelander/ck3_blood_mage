@@ -26,12 +26,13 @@
 			skill = learning
 			value = 0
 
-			# Critical Success - Gains superior (nothing bad happens)
-			20 = {
+			# Critical Success (~1/6 = 17% at L0, scales up to 33% at L50+)
+			17 = {
 				desc = manifest_superior_lifeforce_major_success_tt
 				compare_modifier = {
 					value = scope:duel_value
-					multiplier = 1
+					multiplier = 0.32
+					max = 16
 				}
 				send_interface_toast = {
 					type = event_toast_effect_good
@@ -48,12 +49,13 @@
 				}
 			}
 
-			# Success - Gains superior + Cast major blood magic 1 year
-			45 = {
+			# Success (~1/3 = 33% at L0, scales up to 63% at L50+)
+			33 = {
 				desc = manifest_superior_lifeforce_minor_success_tt
 				compare_modifier = {
 					value = scope:duel_value
-					multiplier = 2
+					multiplier = 0.68
+					max = 30
 				}
 				send_interface_toast = {
 					type = event_toast_effect_good
@@ -71,12 +73,13 @@
 				}
 			}
 
-			# Fail - Cast major blood magic 3 years + refund Major
-			25 = {
+			# Fail (~1/3 = 33% at L0, down to 3% at L50+)
+			33 = {
 				desc = manifest_superior_lifeforce_minor_failure_tt
 				compare_modifier = {
 					value = scope:duel_value
-					multiplier = -0.5
+					multiplier = -0.68
+					min = -30
 				}
 				send_interface_toast = {
 					type = event_toast_effect_bad
@@ -94,12 +97,13 @@
 				}
 			}
 
-			# Critical Fail - Cast major blood magic 3 years + Cast minor magic 1 year
-			10 = {
+			# Critical Fail (~1/6 = 17% at L0, down to 1% at L50+)
+			17 = {
 				desc = manifest_superior_lifeforce_major_failure_tt
 				compare_modifier = {
 					value = scope:duel_value
-					multiplier = -0.25
+					multiplier = -0.32
+					min = -16
 				}
 				send_interface_toast = {
 					type = event_toast_effect_bad
