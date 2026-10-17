@@ -31,34 +31,6 @@ bm_add_crimson_empowerment_xp_effect = {
     }
 }
 
-bm_update_slaughter_devotion_knights_effect = {
-    while = {
-        limit = {
-            has_character_modifier = bm_slaughter_devotion_knights_modifier
-        }
-        remove_character_modifier = bm_slaughter_devotion_knights_modifier
-    }
-    if = {
-        limit = {
-            has_trait = lifestyle_blood_knight
-            has_trait_xp = {
-                trait = lifestyle_blood_knight
-                track = slaughter
-                value >= 50
-            }
-            piety_level >= 1
-        }
-        save_scope_value_as = {
-            name = slaughter_knights_count
-            value = piety_level
-        }
-        while = {
-            count = scope:slaughter_knights_count
-            add_character_modifier = bm_slaughter_devotion_knights_modifier
-        }
-    }
-}
-
 bm_add_blood_knight_xp_effect = {
     if = {
         limit = {
@@ -69,7 +41,6 @@ bm_add_blood_knight_xp_effect = {
             track = $TRACK$
             value = $XP$
         }
-        bm_update_slaughter_devotion_knights_effect = yes
     }
 }
 
