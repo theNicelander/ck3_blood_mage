@@ -207,9 +207,7 @@ bm_cast_blood_magic_minor.001 = {
 			piety_level >= 2
 		}
 		show_as_unavailable = {
-			NOT = { has_character_modifier = minor_blood_rune_modifier }
-			NOT = { has_character_modifier = major_blood_rune_modifier }
-			NOT = { has_character_modifier = superior_blood_rune_modifier }
+			always = yes
 		}
 		send_interface_toast = {
 			type = event_toast_effect_good

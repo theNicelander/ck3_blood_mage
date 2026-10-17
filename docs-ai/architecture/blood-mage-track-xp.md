@@ -48,7 +48,7 @@ Living technical specification for XP acquisition, Piety costs, Lifeforce sinks/
 ### 1.2 Enlightenment Track (`enlightenment`)
 
 | XP Gain | Cost | Action | Type | Requirements | Cooldown |
-| **+3 / +5 / +8 / +12 XP** | 100 / 250 / 500 / 1000 Piety (Learning duel for Minor, Major, or Superior Lifeforce) | Manifest Lifeforce | Decision (`bm_manifest_lifeforce_decision`) | `piety_level >= 2`, `piety >= 100` | 1 year |
+| **+1 / +3 / +5 / +7 XP** | 100 / 250 / 500 / 1000 Piety (Learning duel for Minor, Major, or Superior Lifeforce) | Manifest Lifeforce | Decision (`bm_manifest_lifeforce_decision`) | `piety_level >= 2`, `piety >= 100` | 1 year |
 | **+1 XP** | 75 Piety + Minor Lifeforce (`lifeforce_modifier_minor`) | Channel Minor Lifeforce | Event option (`bm_cast_blood_magic_minor.001`) | Minor lifeforce | None |
 | **+1 XP** | 25 Piety + Minor Lifeforce (`lifeforce_modifier_minor`) | Grant Lifeforce (Minor) | Interaction (`grant_lifeforce_interaction`) | Minor lifeforce, courtier/prisoner | None |
 | **+2 XP** | 50 Piety + Major Lifeforce (`lifeforce_modifier_major`) | Grant Lifeforce (Major) | Interaction (`grant_lifeforce_interaction`) | Major lifeforce, courtier/prisoner | None |
@@ -141,7 +141,7 @@ Tracks: `vanguard`, `slaughter` (and shared `ancient`, `benediction`, `enlighten
 | **+5 XP** (`slaughter`) | None; **Grants** Major Lifeforce (25% chance Superior if victim prowess >= 35 or blood trait) | Single Combat Fatal Slaying | On-action (`bm_on_character_death_duel`) | Slaying opponent in single combat | None |
 | **+3 XP** (`slaughter`) | None | Tournament Completion | On-action (`bm_on_travel_activity_complete_tournament`) | Completing `activity_tournament` | Per tourney |
 | **+1 to +2 XP** (`slaughter` / `enlightenment`) | None | Seek Power Wilderness Harvest | Decision & Event (`seek_power.001`) | Blood knight | 1–2 years |
-| **+3 / +5 / +8 / +12 XP** (`enlightenment`) | 100 / 250 / 500 / 1000 Piety; **Grants** Minor, Major, or Superior Lifeforce on Learning duel | Manifest Lifeforce | Decision (`bm_manifest_lifeforce_decision`) | `piety_level >= 2`, `piety >= 100` | 1 year |
+| **+1 / +3 / +5 / +7 XP** (`enlightenment`) | 100 / 250 / 500 / 1000 Piety; **Grants** Minor, Major, or Superior Lifeforce on Learning duel | Manifest Lifeforce | Decision (`bm_manifest_lifeforce_decision`) | `piety_level >= 2`, `piety >= 100` | 1 year |
 | **+8/+5/+2 XP** (`ancient`) | 250 Piety + Minor & Major Lifeforce; **Grants** Superior Lifeforce | Manifest Superior Lifeforce | Decision (`bm_manifest_superior_lifeforce_decision`) | `piety_level >= 3`, Minor + Major | 2 years |
 | **+2 XP** (`ancient`) | 100 Piety + Minor Lifeforce; **Grants** Major Lifeforce | Condense Lifeforce | Event option (`bm_cast_blood_magic_minor.001`) | Minor lifeforce held | None |
 | **+3 XP** (`enlightenment`) (+10 Empowerment XP) | 150 Piety + Major Lifeforce | Channel Blood Empowerment | Decision -> Event (`bm_cast_blood_magic_major.001`) | `piety_level >= 1`, Major lifeforce held | None |
