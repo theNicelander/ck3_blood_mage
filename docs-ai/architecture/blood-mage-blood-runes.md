@@ -33,7 +33,7 @@ Living technical specification for body runes, Galdrastafir staves, and blood ar
 ## Inscribing Runes on Others (`bm_inscribe_rune_other_interaction`)
 
 - **Initiation:** Available to both `lifestyle_blood_mage` and `lifestyle_blood_knight`.
-- **Target Eligibility:** Living, non-imprisoned adults (`is_adult = yes`, `is_imprisoned = no`) who are courtiers, children, dynasty kin, spouses/consorts, sworn knights, Blood Golems (`blood_golem`), or the caster's liege.
+- **Target Eligibility:** Living, non-imprisoned adults (`is_adult = yes`, `is_imprisoned = no`) who are courtiers, children, dynasty kin, spouses/consorts, sworn knights, Blood Golems (`house = house:bm_house_golem`), or the caster's liege.
 - **Sequential Progression:**
   - Target has no rune -> Inscribes `minor_blood_rune_modifier` and opens 5-stave selector (`bm_blood_runes.001` with `scope:recipient` saved as `scope:rune_target`).
   - Target has Minor rune -> Upgrades active stave in-place to Major (`bm_upgrade_blood_rune_to_major_effect`).

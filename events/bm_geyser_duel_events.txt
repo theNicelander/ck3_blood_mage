@@ -589,7 +589,6 @@ bm_geyser_duel.0001 = {
 			else = {
 				remove_character_flag = bm_geyser_retried
 				remove_character_flag = bm_geyser_paid_piety
-				remove_character_flag = bm_geyser_paid_prestige
 				if = {
 					limit = { exists = scope:bm_geyser_wise_one }
 					scope:bm_geyser_wise_one = {
