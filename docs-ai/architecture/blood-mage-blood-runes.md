@@ -59,6 +59,7 @@ Duchy capital buildings constructible only if holder has `lifestyle_blood_mage`:
 | Piece | File |
 | --- | --- |
 | Stave, terror & Feingur bloodline modifiers | `common/modifiers/bm_blood_runes_modifiers.txt` |
+| Stave modifier DDS icons (120x120) | `gfx/interface/icons/modifiers/bm_stave_<key>.dds` |
 | Stave application & upgrade effects | `common/scripted_effects/bm_blood_runes_effects.txt` |
 | Capstone stave decision (Option List Widget) | `common/decisions/cast_magic/bm_carve_galdrastafir_decision.txt` |
 | Cast Blood Magic decisions | `common/decisions/cast_magic/bm_cast_blood_magic.txt` |
