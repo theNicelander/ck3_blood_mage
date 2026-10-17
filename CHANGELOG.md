@@ -2,7 +2,7 @@
 
 ## Game version 1.20
 
-- v1.20.42: Attune to trait track option-list widget, rebalance Manifest Lifeforce tiers with calibrated Learning duel curves and floored odds, rebalance Condense Lifeforce duel odds, and guaranteed yearly attunement XP.
+- v1.20.42: Attune to trait track option-list widget, rebalance Manifest Lifeforce tiers with calibrated Learning duel curves and floored odds, rebalance Condense Lifeforce duel odds, clean 50/100 trait track milestones with non-milestone tier rebalancing, and guaranteed yearly attunement XP.
 - v1.20.41: Manifest Lifeforce scaling piety popup, childbirth Major Lifeforce for Blood Mages, and restrict seek power to Blood Knights.
 - v1.20.40: Blood Runes & Galdrastafir with 5 staves, sequential progression, superior capstones, and retinue inscription.
 - v1.20.39: Blood Knight refactor into a viable lifestyle peer to Blood Mage with parallel Devotion.
