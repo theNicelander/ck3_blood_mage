@@ -1,4 +1,6 @@
-﻿namespace = bm_cast_blood_magic_major
+﻿# Major Blood Magic Events
+
+namespace = bm_cast_blood_magic_major
 
 bm_cast_blood_magic_major.001 = {
 	type = character_event
@@ -24,6 +26,10 @@ bm_cast_blood_magic_major.001 = {
 			always = yes
 		}
 		custom_tooltip = bm_cast_blood_magic_major.001.empowerment_tt
+		if = {
+			limit = { NOT = { has_trait = lifestyle_blood_empowerment } }
+			add_trait = lifestyle_blood_empowerment
+		}
 		trigger_event = { id = bm_blood_empowerment_event.001 }
 		ai_chance = {
 			base = 100

@@ -1,4 +1,6 @@
-﻿namespace = bm_blood_empowerment_event
+﻿# Blood Empowerment Events
+
+namespace = bm_blood_empowerment_event
 
 bm_blood_empowerment_event.001 = {
 	type = character_event
@@ -22,10 +24,13 @@ bm_blood_empowerment_event.001 = {
 	option = {
 		name = bm_empower_dynasty
 		trigger = {
-			has_trait_xp = {
-				trait = lifestyle_blood_empowerment
-				track = dynasty
-				value < 100
+			OR = {
+				NOT = { has_trait = lifestyle_blood_empowerment }
+				has_trait_xp = {
+					trait = lifestyle_blood_empowerment
+					track = dynasty
+					value < 100
+				}
 			}
 		}
 		add_piety = -150
@@ -47,10 +52,13 @@ bm_blood_empowerment_event.001 = {
 	option = {
 		name = bm_empower_mastery
 		trigger = {
-			has_trait_xp = {
-				trait = lifestyle_blood_empowerment
-				track = mastery
-				value < 100
+			OR = {
+				NOT = { has_trait = lifestyle_blood_empowerment }
+				has_trait_xp = {
+					trait = lifestyle_blood_empowerment
+					track = mastery
+					value < 100
+				}
 			}
 		}
 		add_piety = -150
@@ -72,10 +80,13 @@ bm_blood_empowerment_event.001 = {
 	option = {
 		name = bm_empower_presence
 		trigger = {
-			has_trait_xp = {
-				trait = lifestyle_blood_empowerment
-				track = presence
-				value < 100
+			OR = {
+				NOT = { has_trait = lifestyle_blood_empowerment }
+				has_trait_xp = {
+					trait = lifestyle_blood_empowerment
+					track = presence
+					value < 100
+				}
 			}
 		}
 		add_piety = -150
@@ -97,10 +108,13 @@ bm_blood_empowerment_event.001 = {
 	option = {
 		name = bm_empower_prosperity
 		trigger = {
-			has_trait_xp = {
-				trait = lifestyle_blood_empowerment
-				track = prosperity
-				value < 100
+			OR = {
+				NOT = { has_trait = lifestyle_blood_empowerment }
+				has_trait_xp = {
+					trait = lifestyle_blood_empowerment
+					track = prosperity
+					value < 100
+				}
 			}
 		}
 		add_piety = -150
@@ -122,10 +136,13 @@ bm_blood_empowerment_event.001 = {
 	option = {
 		name = bm_empower_shadows
 		trigger = {
-			has_trait_xp = {
-				trait = lifestyle_blood_empowerment
-				track = shadows
-				value < 100
+			OR = {
+				NOT = { has_trait = lifestyle_blood_empowerment }
+				has_trait_xp = {
+					trait = lifestyle_blood_empowerment
+					track = shadows
+					value < 100
+				}
 			}
 		}
 		add_piety = -150
@@ -147,6 +164,7 @@ bm_blood_empowerment_event.001 = {
 	option = {
 		name = bm_empower_versatility
 		trigger = {
+			has_trait = lifestyle_blood_empowerment
 			has_trait_xp = {
 				trait = lifestyle_blood_empowerment
 				track = dynasty
@@ -219,7 +237,7 @@ bm_blood_empowerment_event.001 = {
 	option = {
 		name = bm_cast_blood_magic_major.001.cancel
 		trigger = {
-			is_ai = no
+			always = yes
 		}
 		trigger_event = { id = bm_cast_blood_magic_major.001 }
 		ai_chance = { base = 0 }
