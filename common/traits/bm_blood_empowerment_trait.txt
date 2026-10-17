@@ -1,6 +1,6 @@
 ﻿@bm_common_health = 0.1
-@bm_common_life_expectancy = 2
-@bm_common_years_of_fertility = 1
+@bm_common_life_expectancy = 2.5
+@bm_common_years_of_fertility = 1.25
 @bm_common_epidemic_resistance = 1
 
 lifestyle_blood_empowerment = {
@@ -23,7 +23,10 @@ lifestyle_blood_empowerment = {
                 # specific
                 positive_random_genetic_chance = 0.03
                 positive_inactive_inheritance_chance = 0.03
+                genetic_trait_strengthen_chance = 0.025
                 fertility = 0.05
+                close_relative_opinion = 2.5
+                dynasty_opinion = 1.25
             }
             20 = {
                 # common
@@ -35,7 +38,10 @@ lifestyle_blood_empowerment = {
                 # specific
                 positive_random_genetic_chance = 0.03
                 positive_inactive_inheritance_chance = 0.03
+                genetic_trait_strengthen_chance = 0.025
                 fertility = 0.05
+                close_relative_opinion = 2.5
+                dynasty_opinion = 1.25
             }
             30 = {
                 # common
@@ -47,7 +53,10 @@ lifestyle_blood_empowerment = {
                 # specific
                 positive_random_genetic_chance = 0.03
                 positive_inactive_inheritance_chance = 0.03
+                genetic_trait_strengthen_chance = 0.025
                 fertility = 0.05
+                close_relative_opinion = 2.5
+                dynasty_opinion = 1.25
             }
             40 = {
                 # common
@@ -59,11 +68,16 @@ lifestyle_blood_empowerment = {
                 # specific
                 positive_random_genetic_chance = 0.03
                 positive_inactive_inheritance_chance = 0.03
+                genetic_trait_strengthen_chance = 0.025
                 fertility = 0.05
+                close_relative_opinion = 2.5
+                dynasty_opinion = 1.25
             }
             50 = {
                 # specific
-                piety_level_impact_mult = 0.05
+                inbreeding_chance = -0.5
+                negate_fertility_penalty_add = 0.25
+                monthly_dynasty_prestige_mult = 0.05
             }
             60 = {
                 # common
@@ -75,7 +89,10 @@ lifestyle_blood_empowerment = {
                 # specific
                 positive_random_genetic_chance = 0.035
                 positive_inactive_inheritance_chance = 0.035
+                genetic_trait_strengthen_chance = 0.025
                 fertility = 0.05
+                close_relative_opinion = 2.5
+                dynasty_opinion = 1.25
             }
             70 = {
                 # common
@@ -87,7 +104,10 @@ lifestyle_blood_empowerment = {
                 # specific
                 positive_random_genetic_chance = 0.035
                 positive_inactive_inheritance_chance = 0.035
+                genetic_trait_strengthen_chance = 0.025
                 fertility = 0.05
+                close_relative_opinion = 2.5
+                dynasty_opinion = 1.25
             }
             80 = {
                 # common
@@ -99,7 +119,10 @@ lifestyle_blood_empowerment = {
                 # specific
                 positive_random_genetic_chance = 0.03
                 positive_inactive_inheritance_chance = 0.03
+                genetic_trait_strengthen_chance = 0.025
                 fertility = 0.05
+                close_relative_opinion = 2.5
+                dynasty_opinion = 1.25
             }
             90 = {
                 # common
@@ -111,11 +134,16 @@ lifestyle_blood_empowerment = {
                 # specific
                 positive_random_genetic_chance = 0.03
                 positive_inactive_inheritance_chance = 0.03
+                genetic_trait_strengthen_chance = 0.025
                 fertility = 0.05
+                close_relative_opinion = 2.5
+                dynasty_opinion = 1.25
             }
             100 = {
                 # specific
-                piety_level_impact_mult = 0.05
+                inbreeding_chance = -0.5
+                negate_fertility_penalty_add = 0.25
+                monthly_dynasty_prestige_mult = 0.1
                 no_prowess_loss_from_age = yes
             }
         }
@@ -129,9 +157,11 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_lifestyle_xp_gain_mult = 0.05
-                learn_language_scheme_phase_duration_add = -12
+                monthly_lifestyle_xp_gain_mult = 0.03
+                character_travel_speed_mult = 0.025
+                character_travel_safety = 2.5
                 owned_personal_scheme_success_chance_add = 4
+                personal_scheme_phase_duration_add = -3
             }
             20 = {
                 # common
@@ -141,9 +171,11 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_lifestyle_xp_gain_mult = 0.05
-                learn_language_scheme_phase_duration_add = -12
+                monthly_lifestyle_xp_gain_mult = 0.03
+                character_travel_speed_mult = 0.025
+                character_travel_safety = 2.5
                 owned_personal_scheme_success_chance_add = 4
+                personal_scheme_phase_duration_add = -3
                 max_learn_language_schemes_add = 1
             }
             30 = {
@@ -154,9 +186,11 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_lifestyle_xp_gain_mult = 0.05
-                learn_language_scheme_phase_duration_add = -12
+                monthly_lifestyle_xp_gain_mult = 0.03
+                character_travel_speed_mult = 0.025
+                character_travel_safety = 2.5
                 owned_personal_scheme_success_chance_add = 4
+                personal_scheme_phase_duration_add = -3
             }
             40 = {
                 # common
@@ -166,14 +200,18 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_lifestyle_xp_gain_mult = 0.05
-                learn_language_scheme_phase_duration_add = -12
+                monthly_lifestyle_xp_gain_mult = 0.03
+                character_travel_speed_mult = 0.025
+                character_travel_safety = 2.5
                 owned_personal_scheme_success_chance_add = 4
+                personal_scheme_phase_duration_add = -3
                 max_learn_language_schemes_add = 1
             }
             50 = {
                 # specific
-                piety_level_impact_mult = 0.05
+                max_personal_schemes_add = 1
+                learning_per_prestige_level = 1
+                cultural_acceptance_gain_mult = 0.15
             }
             60 = {
                 # common
@@ -183,9 +221,11 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_lifestyle_xp_gain_mult = 0.05
-                learn_language_scheme_phase_duration_add = -12
+                monthly_lifestyle_xp_gain_mult = 0.03
+                character_travel_speed_mult = 0.025
+                character_travel_safety = 2.5
                 owned_personal_scheme_success_chance_add = 4
+                personal_scheme_phase_duration_add = -3
                 max_learn_language_schemes_add = 1
             }
             70 = {
@@ -196,9 +236,11 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_lifestyle_xp_gain_mult = 0.05
-                learn_language_scheme_phase_duration_add = -13
+                monthly_lifestyle_xp_gain_mult = 0.03
+                character_travel_speed_mult = 0.025
+                character_travel_safety = 2.5
                 owned_personal_scheme_success_chance_add = 4
+                personal_scheme_phase_duration_add = -3
             }
             80 = {
                 # common
@@ -208,9 +250,11 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_lifestyle_xp_gain_mult = 0.05
-                learn_language_scheme_phase_duration_add = -13
+                monthly_lifestyle_xp_gain_mult = 0.03
+                character_travel_speed_mult = 0.025
+                character_travel_safety = 2.5
                 owned_personal_scheme_success_chance_add = 4
+                personal_scheme_phase_duration_add = -3
                 max_learn_language_schemes_add = 1
             }
             90 = {
@@ -221,13 +265,17 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_lifestyle_xp_gain_mult = 0.05
-                learn_language_scheme_phase_duration_add = -14
+                monthly_lifestyle_xp_gain_mult = 0.03
+                character_travel_speed_mult = 0.025
+                character_travel_safety = 2.5
                 owned_personal_scheme_success_chance_add = 4
+                personal_scheme_phase_duration_add = -3
             }
             100 = {
                 # specific
-                piety_level_impact_mult = 0.05
+                max_personal_schemes_add = 1
+                learning_per_prestige_level = 1
+                ignore_negative_culture_opinion = yes
                 no_prowess_loss_from_age = yes
             }
         }
@@ -241,9 +289,12 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                stress_loss_mult = 0.0625
-                general_opinion = 2
-                vassal_opinion = 1.25
+                attraction_opinion = 3.75
+                courtier_and_guest_opinion = 2.5
+                stress_loss_mult = 0.05
+                stress_gain_mult = -0.03
+                short_reign_duration_mult = -0.05
+                long_reign_bonus_mult = 0.05
             }
             20 = {
                 # common
@@ -253,9 +304,12 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                stress_loss_mult = 0.0625
-                general_opinion = 2
-                vassal_opinion = 1.25
+                attraction_opinion = 3.75
+                courtier_and_guest_opinion = 2.5
+                stress_loss_mult = 0.05
+                stress_gain_mult = -0.03
+                short_reign_duration_mult = -0.05
+                long_reign_bonus_mult = 0.05
             }
             30 = {
                 # common
@@ -265,9 +319,12 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                stress_loss_mult = 0.0625
-                general_opinion = 2
-                vassal_opinion = 1.25
+                attraction_opinion = 3.75
+                courtier_and_guest_opinion = 2.5
+                stress_loss_mult = 0.05
+                stress_gain_mult = -0.03
+                short_reign_duration_mult = -0.05
+                long_reign_bonus_mult = 0.05
             }
             40 = {
                 # common
@@ -277,13 +334,18 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                stress_loss_mult = 0.0625
-                general_opinion = 2
-                vassal_opinion = 1.25
+                attraction_opinion = 3.75
+                courtier_and_guest_opinion = 2.5
+                stress_loss_mult = 0.05
+                stress_gain_mult = -0.03
+                short_reign_duration_mult = -0.05
+                long_reign_bonus_mult = 0.05
             }
             50 = {
                 # specific
-                piety_level_impact_mult = 0.05
+                diplomacy_per_prestige_level = 1
+                martial_per_prestige_level = 1
+                prestige_level_impact_mult = 0.15
             }
             60 = {
                 # common
@@ -293,9 +355,12 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                stress_loss_mult = 0.0625
-                general_opinion = 2
-                vassal_opinion = 1.25
+                attraction_opinion = 3.75
+                courtier_and_guest_opinion = 2.5
+                stress_loss_mult = 0.05
+                stress_gain_mult = -0.03
+                short_reign_duration_mult = -0.05
+                long_reign_bonus_mult = 0.05
             }
             70 = {
                 # common
@@ -305,9 +370,12 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                stress_loss_mult = 0.0625
-                general_opinion = 2
-                vassal_opinion = 1.25
+                attraction_opinion = 3.75
+                courtier_and_guest_opinion = 2.5
+                stress_loss_mult = 0.05
+                stress_gain_mult = -0.03
+                short_reign_duration_mult = -0.05
+                long_reign_bonus_mult = 0.05
             }
             80 = {
                 # common
@@ -317,9 +385,12 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                stress_loss_mult = 0.0625
-                general_opinion = 2
-                vassal_opinion = 1.25
+                attraction_opinion = 3.75
+                courtier_and_guest_opinion = 2.5
+                stress_loss_mult = 0.05
+                stress_gain_mult = -0.03
+                short_reign_duration_mult = -0.05
+                long_reign_bonus_mult = 0.05
             }
             90 = {
                 # common
@@ -329,13 +400,19 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                stress_loss_mult = 0.0625
-                general_opinion = 2
-                vassal_opinion = 1.25
+                attraction_opinion = 3.75
+                courtier_and_guest_opinion = 2.5
+                stress_loss_mult = 0.05
+                stress_gain_mult = -0.03
+                short_reign_duration_mult = -0.05
+                long_reign_bonus_mult = 0.05
             }
             100 = {
                 # specific
-                piety_level_impact_mult = 0.05
+                character_max_prestige_level_add = 1
+                ignore_different_faith_opinion = yes
+                diplomacy_per_prestige_level = 0.5
+                martial_per_prestige_level = 0.5
                 no_prowess_loss_from_age = yes
             }
         }
@@ -349,8 +426,11 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_income = 0.125
-                monthly_income_mult = 0.032
+                monthly_income = 0.20
+                monthly_income_mult = 0.03
+                men_at_arms_maintenance = -0.025
+                men_at_arms_recruitment_cost = -0.025
+                domicile_build_gold_cost = -0.025
             }
             20 = {
                 # common
@@ -360,8 +440,11 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_income = 0.125
-                monthly_income_mult = 0.032
+                monthly_income = 0.20
+                monthly_income_mult = 0.03
+                men_at_arms_maintenance = -0.025
+                men_at_arms_recruitment_cost = -0.025
+                domicile_build_gold_cost = -0.025
             }
             30 = {
                 # common
@@ -371,8 +454,11 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_income = 0.125
-                monthly_income_mult = 0.032
+                monthly_income = 0.20
+                monthly_income_mult = 0.03
+                men_at_arms_maintenance = -0.025
+                men_at_arms_recruitment_cost = -0.025
+                domicile_build_gold_cost = -0.025
             }
             40 = {
                 # common
@@ -382,12 +468,17 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_income = 0.125
-                monthly_income_mult = 0.032
+                monthly_income = 0.20
+                monthly_income_mult = 0.03
+                men_at_arms_maintenance = -0.025
+                men_at_arms_recruitment_cost = -0.025
+                domicile_build_gold_cost = -0.025
             }
             50 = {
                 # specific
-                piety_level_impact_mult = 0.05
+                men_at_arms_cap = 1
+                stewardship_per_prestige_level = 1
+                monthly_income_per_piety_level = 0.25
             }
             60 = {
                 # common
@@ -397,8 +488,11 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_income = 0.125
-                monthly_income_mult = 0.032
+                monthly_income = 0.20
+                monthly_income_mult = 0.03
+                men_at_arms_maintenance = -0.025
+                men_at_arms_recruitment_cost = -0.025
+                domicile_build_gold_cost = -0.025
             }
             70 = {
                 # common
@@ -408,8 +502,11 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_income = 0.125
-                monthly_income_mult = 0.032
+                monthly_income = 0.20
+                monthly_income_mult = 0.03
+                men_at_arms_maintenance = -0.025
+                men_at_arms_recruitment_cost = -0.025
+                domicile_build_gold_cost = -0.025
             }
             80 = {
                 # common
@@ -419,8 +516,11 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_income = 0.125
-                monthly_income_mult = 0.032
+                monthly_income = 0.20
+                monthly_income_mult = 0.03
+                men_at_arms_maintenance = -0.025
+                men_at_arms_recruitment_cost = -0.025
+                domicile_build_gold_cost = -0.025
             }
             90 = {
                 # common
@@ -430,12 +530,18 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_income = 0.125
-                monthly_income_mult = 0.032
+                monthly_income = 0.20
+                monthly_income_mult = 0.03
+                men_at_arms_maintenance = -0.025
+                men_at_arms_recruitment_cost = -0.025
+                domicile_build_gold_cost = -0.025
             }
             100 = {
                 # specific
-                piety_level_impact_mult = 0.05
+                men_at_arms_cap = 1
+                men_at_arms_limit = 1
+                domain_limit = 1
+                stewardship_per_prestige_level = 0.5
                 no_prowess_loss_from_age = yes
             }
         }
@@ -449,8 +555,10 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                owned_scheme_secrecy_add = 6
                 enemy_hostile_scheme_success_chance_add = -4
+                enemy_hostile_scheme_phase_duration_add = 5
+                owned_scheme_secrecy_add = 5
+                negate_health_penalty_add = 0.05
             }
             20 = {
                 # common
@@ -460,8 +568,10 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                owned_scheme_secrecy_add = 6
                 enemy_hostile_scheme_success_chance_add = -4
+                enemy_hostile_scheme_phase_duration_add = 5
+                owned_scheme_secrecy_add = 5
+                negate_health_penalty_add = 0.05
             }
             30 = {
                 # common
@@ -471,8 +581,10 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                owned_scheme_secrecy_add = 6
                 enemy_hostile_scheme_success_chance_add = -4
+                enemy_hostile_scheme_phase_duration_add = 5
+                owned_scheme_secrecy_add = 5
+                negate_health_penalty_add = 0.05
             }
             40 = {
                 # common
@@ -482,12 +594,16 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                owned_scheme_secrecy_add = 6
                 enemy_hostile_scheme_success_chance_add = -4
+                enemy_hostile_scheme_phase_duration_add = 5
+                owned_scheme_secrecy_add = 5
+                negate_health_penalty_add = 0.05
             }
             50 = {
                 # specific
-                piety_level_impact_mult = 0.05
+                enemy_hostile_scheme_success_chance_max_add = -15
+                intrigue_per_prestige_level = 1
+                prowess_per_prestige_level = 1
             }
             60 = {
                 # common
@@ -497,8 +613,10 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                owned_scheme_secrecy_add = 6
                 enemy_hostile_scheme_success_chance_add = -4
+                enemy_hostile_scheme_phase_duration_add = 5
+                owned_scheme_secrecy_add = 5
+                negate_health_penalty_add = 0.05
             }
             70 = {
                 # common
@@ -508,8 +626,10 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                owned_scheme_secrecy_add = 6
                 enemy_hostile_scheme_success_chance_add = -4
+                enemy_hostile_scheme_phase_duration_add = 5
+                owned_scheme_secrecy_add = 5
+                negate_health_penalty_add = 0.05
             }
             80 = {
                 # common
@@ -519,8 +639,10 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                owned_scheme_secrecy_add = 7
                 enemy_hostile_scheme_success_chance_add = -4
+                enemy_hostile_scheme_phase_duration_add = 5
+                owned_scheme_secrecy_add = 5
+                negate_health_penalty_add = 0.05
             }
             90 = {
                 # common
@@ -530,14 +652,20 @@ lifestyle_blood_empowerment = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                owned_scheme_secrecy_add = 7
                 enemy_hostile_scheme_success_chance_add = -4
+                enemy_hostile_scheme_phase_duration_add = 5
+                owned_scheme_secrecy_add = 5
+                negate_health_penalty_add = 0.05
             }
             100 = {
                 # specific
-                piety_level_impact_mult = 0.05
+                enemy_hostile_scheme_success_chance_max_add = -15
+                max_hostile_schemes_add = 1
+                intrigue_per_prestige_level = 0.5
+                prowess_per_prestige_level = 0.5
                 no_prowess_loss_from_age = yes
             }
         }
+
     }
 }

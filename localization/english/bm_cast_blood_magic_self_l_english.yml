@@ -117,21 +117,53 @@
     bm_education_new.001.back: "Back"
 
     # Blood Empowerment
-    bm_blood_empowerment_decision: "Channel Blood Empowerment"
-    bm_blood_empowerment_decision_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to permanently enhance your physical and mental attributes"
-    bm_blood_empowerment_decision_tooltip: "Spend major lifeforce to permanently advance Blood Empowerment"
-    bm_blood_empowerment_decision_confirm: "Awaken Power"
+    bm_channel_blood_empowerment_decision: "Channel Blood Empowerment"
+    bm_channel_blood_empowerment_decision_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and #V 150#! Piety to permanently advance a chosen discipline of your Blood Empowerment, refining mortal flesh, unlocking powerful milestones at 50 XP, and attaining transformative capstones at 100 XP."
+    bm_channel_blood_empowerment_decision_tooltip: "Spend Major Lifeforce to permanently advance a chosen Blood Empowerment track"
+    BM_CHANNEL_BLOOD_EMPOWERMENT_DECISION_NEXT_STEP_BUTTON: "Awaken Power"
+    bm_channel_blood_empowerment_decision_confirm: "$BM_CHANNEL_BLOOD_EMPOWERMENT_DECISION_NEXT_STEP_BUTTON$"
+    bm_channel_blood_empowerment_decision_effect: "You channel Major Lifeforce, permanently advancing your chosen Blood Empowerment discipline."
+    bm_channel_blood_empowerment_major_lifeforce_req: "Requires [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]"
+    NOT_bm_channel_blood_empowerment_major_lifeforce_req: "Requires [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]"
+    bm_empower_track_already_mastered_req: "This discipline has already reached its maximum rank (100 XP)"
+    NOT_bm_empower_track_already_mastered_req: "This discipline has already reached its maximum rank (100 XP)"
 
-    bm_blood_empowerment_event.001.title: "Blood Empowerment"
-    bm_blood_empowerment_event.001.desc: "The blood magic roars within me like a caged beast, desperate for expression. I can feel it straining against my flesh, eager to reshape my very essence according to my desires. Which aspect shall I allow it to transform today?"
+    bm_empower_dynasty: "Dynasty — Eugenics & Kinship"
+    bm_empower_dynasty_name: "$bm_empower_dynasty$"
+    bm_empower_dynasty_desc: "Channels vital essence into reproductive potency, positive congenital traits, and kinship loyalty.\n\n#P Step:#! Vitality, +5% Fertility, +3% Congenital Chance, +2.5% Strengthen Congenital Traits, Close Relative & Dynasty Opinion.\n#V 50 XP Milestone:#! #P -50%#! Inbreeding Chance, #P +25%#! Negate Fertility Penalty, #P +5%#! Monthly Renown.\n#Y 100 XP Capstone:#! #P -100%#! Inbreeding Chance (Immunity), #P +50%#! Negate Fertility Penalty, #P +15%#! Monthly Renown."
+    bm_empower_dynasty_tooltip: "$bm_empower_dynasty_desc$"
+
+    bm_empower_mastery: "Mastery — World-Walker & Polyglot"
+    bm_empower_mastery_name: "$bm_empower_mastery$"
+    bm_empower_mastery_desc: "Expands the horizons of your mind and step, accelerating lifestyle mastery, worldly travel, and personal intrigue.\n\n#P Step:#! Vitality, +3% Lifestyle XP, +2.5% Travel Speed, +2.5 Travel Safety, +4 Personal Scheme Success, -3d Scheme Phase, +1 Language Slot (tiers 20/40/60/80).\n#V 50 XP Milestone:#! #P +1#! Max Personal Schemes, #P +1#! Learning per Fame level, +15% Cultural Acceptance.\n#Y 100 XP Capstone:#! #P +2#! Max Personal Schemes, #P +2#! Learning per Fame level, #P Ignore Negative Culture Opinion#!."
+    bm_empower_mastery_tooltip: "$bm_empower_mastery_desc$"
+
+    bm_empower_presence: "Presence — Mesmeric Majesty"
+    bm_empower_presence_name: "$bm_empower_presence$"
+    bm_empower_presence_desc: "Projects supernatural magnetism, unshakeable mental composure, and legendary imperial authority.\n\n#P Step:#! Vitality, +3.75 Attraction Opinion, +2.5 Courtier & Guest Opinion, +5% Stress Loss, -3% Stress Gain, -5% Short Reign, +5% Long Reign Bonus.\n#V 50 XP Milestone:#! #P +1#! Diplomacy & Martial per Fame level, +15% Fame Impact.\n#Y 100 XP Capstone:#! #P +1#! Max Fame Level, #P +1.5#! Diplomacy & Martial per Fame level, #P Ignore Different Faith Opinion#!."
+    bm_empower_presence_tooltip: "$bm_empower_presence_desc$"
+
+    bm_empower_prosperity: "Prosperity — War Chest & Logistics"
+    bm_empower_prosperity_name: "$bm_empower_prosperity$"
+    bm_empower_prosperity_desc: "Draws enduring wealth into your treasury while fortifying army logistics, camp infrastructure, and regiment capacity.\n\n#P Step:#! Vitality, +0.20 Monthly Gold, +3% Income Mult, -2.5% Men-at-Arms Upkeep, -2.5% Men-at-Arms Recruitment, -2.5% Camp/Domicile Build Cost.\n#V 50 XP Milestone:#! #P +1#! Men-at-Arms Regiment Size, #P +1#! Stewardship per Fame level, +0.25 Monthly Gold per Devotion level.\n#Y 100 XP Capstone:#! #P +2#! Men-at-Arms Regiment Size, #P +1#! Men-at-Arms Regiment Slot, #P +1#! Domain Limit, #P +1.5#! Stewardship per Fame level."
+    bm_empower_prosperity_tooltip: "$bm_empower_prosperity_desc$"
+
+    bm_empower_shadows: "Shadows — Occult Warding & Premonition"
+    bm_empower_shadows_name: "$bm_empower_shadows$"
+    bm_empower_shadows_desc: "Weaves an impenetrable shroud of blood around your life and court, slowing and capping enemy plots while bolstering counter-intrigue.\n\n#P Step:#! Vitality, -4 Enemy Hostile Scheme Success, +5d Enemy Scheme Phase Duration, +5 Scheme Secrecy, +0.05 Negate Health Penalty.\n#V 50 XP Milestone:#! #P -15%#! Enemy Hostile Scheme Max Success Cap, #P +1#! Intrigue & Prowess per Fame level.\n#Y 100 XP Capstone:#! #P -30%#! Enemy Hostile Scheme Max Success Cap, #P +1#! Max Hostile Schemes, #P +1.5#! Intrigue & Prowess per Fame level."
+    bm_empower_shadows_tooltip: "$bm_empower_shadows_desc$"
+
+    bm_empower_versatility: "Versatility — Transcendent Perfection"
+    bm_empower_versatility_name: "$bm_empower_versatility$"
+    bm_empower_versatility_desc: "Available once all 5 disciplines have reached mastery (100 XP). Channels concentrated Major Lifeforce into a 10-year universal surge of all attributes, with a chance to permanently raise your skills and prowess."
+    bm_empower_versatility_tooltip: "$bm_empower_versatility_desc$"
+
+    # Legacy Blood Empowerment keys preserved
+    bm_blood_empowerment_decision: "$bm_channel_blood_empowerment_decision$"
+    bm_blood_empowerment_decision_desc: "$bm_channel_blood_empowerment_decision_desc$"
+    bm_blood_empowerment_decision_tooltip: "$bm_channel_blood_empowerment_decision_tooltip$"
+    bm_blood_empowerment_decision_confirm: "$bm_channel_blood_empowerment_decision_confirm$"
     bm_blood_empowerment_event.001.toast: "Blood Empowerment"
-
-    bm_blood_empowerment_event.001.dynasty: "Dynasty - My bloodline shall thrive with potent vitality"
-    bm_blood_empowerment_event.001.mastery: "Mastery - Ancient blood-wisdom shall accelerate my learning"
-    bm_blood_empowerment_event.001.presence: "Presence - My words shall drip with persuasive venom"
-    bm_blood_empowerment_event.001.prosperity: "Prosperity - Wealth and resources shall flow like blood into my waiting hands"
-    bm_blood_empowerment_event.001.shadows: "Shadows - A shroud of blood shall confound my enemies and cloak my secrets"
-    bm_blood_empowerment_event.001.versatility: "Versatility - My power shall transcend all boundaries"
 
     # Manifest Lifeforce
     bm_manifest_lifeforce_decision: "Manifest Lifeforce"
