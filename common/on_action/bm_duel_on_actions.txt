@@ -88,7 +88,8 @@ bm_on_character_death_duel = {
 					limit = {
 						root = {
 							OR = {
-								prowess >= 35
+								prowess >= 20
+								has_variable = bm_is_seek_power_duel_target
 								has_trait = lifestyle_blood_mage
 								has_trait = lifestyle_blood_knight
 							}

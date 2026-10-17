@@ -5,8 +5,8 @@ traveller_character_template = {
 	age = { 18 50 }
 
 	# Base stats
-	learning = { 1 10 }
-	prowess = { 0 15 }
+	learning = { 1 12 }
+	prowess = { 0 22 }
 	intrigue = { 1 10 }
 	martial = { 0 15 }
 	stewardship = { 0 15 }
@@ -17,8 +17,9 @@ traveller_character_template = {
 	trait = lifestyle_traveler
 	random_traits_list = {
 		count = { 0 5 }
-		# Blood mage, 2x as likely
+		# Blood mage / knight
 		lifestyle_blood_mage = { weight = { base = 60 } }
+		lifestyle_blood_knight = { weight = { base = 30 } }
 
 		# Can be drained
 		intellect_good_1 = { weight = { base = 20 } }
@@ -28,8 +29,9 @@ traveller_character_template = {
 		fecund = { weight = { base = 20 } }
 		pure_blooded = { weight = { base = 10 } }
 		intellect_good_2 = { weight = { base = 10 } }
-		physique_good_2 = { weight = { base = 10 } }
+		physique_good_2 = { weight = { base = 15 } }
 		beauty_good_2 = { weight = { base = 10 } }
+		physique_good_3 = { weight = { base = 15 } }
 
 		# Bad, not drainable
 		intellect_bad_1 = { weight = { base = 30 } }
@@ -54,13 +56,15 @@ traveller_character_template = {
 		dwarf = { weight = { base = 30 } }
 		dull = { weight = { base = 30 } }
 
-		# Flavour
+		# Flavour & Martial
 		shrewd = { weight = { base = 30 } }
 		theologian = { weight = { base = 30 } }
 		lifestyle_scholar = { weight = { base = 30 } }
 		athletic = { weight = { base = 30 } }
+		strong = { weight = { base = 25 } }
+		brave = { weight = { base = 30 } }
 
-		lifestyle_blademaster = { weight = { base = 30 } }
+		lifestyle_blademaster = { weight = { base = 45 } }
 		lifestyle_reveler = { weight = { base = 30 } }
 		lifestyle_hunter = { weight = { base = 30 } }
 		lifestyle_mystic = { weight = { base = 30 } }
@@ -81,6 +85,68 @@ traveller_character_template = {
 		if = {
 			limit = { has_trait = immortal }
 			give_nickname = nick_the_immortal
+		}
+		if = {
+			limit = { has_trait = lifestyle_blademaster }
+			add_trait_xp = {
+				trait = lifestyle_blademaster
+				value = {
+					integer_range = {
+						min = 50
+						max = 100
+					}
+				}
+			}
+		}
+	}
+}
+
+# Escort Knight for Seek Power wilderness encounter
+bm_escort_knight_character_template = {
+	dynasty = none
+	gender_female_chance = 50
+	age = { 20 45 }
+
+	# Base stats — guaranteed formidable combatant (prowess >= 20)
+	learning = { 4 14 }
+	prowess = { 20 32 }
+	intrigue = { 4 14 }
+	martial = { 12 22 }
+	stewardship = { 4 12 }
+	diplomacy = { 4 14 }
+
+	random_traits = yes
+	trait = education_martial_3
+	random_traits_list = {
+		count = { 2 4 }
+		lifestyle_blademaster = { weight = { base = 80 } }
+		physique_good_1 = { weight = { base = 30 } }
+		physique_good_2 = { weight = { base = 40 } }
+		physique_good_3 = { weight = { base = 35 } }
+		strong = { weight = { base = 40 } }
+		giant = { weight = { base = 30 } }
+		athletic = { weight = { base = 40 } }
+		brave = { weight = { base = 50 } }
+		berserker = { weight = { base = 25 } }
+		varangian = { weight = { base = 20 } }
+		lifestyle_hunter = { weight = { base = 30 } }
+		scarred = { weight = { base = 40 } }
+		loyal = { weight = { base = 30 } }
+		lifestyle_blood_knight = { weight = { base = 40 } }
+		lifestyle_blood_mage = { weight = { base = 30 } }
+	}
+	after_creation = {
+		if = {
+			limit = { has_trait = lifestyle_blademaster }
+			add_trait_xp = {
+				trait = lifestyle_blademaster
+				value = {
+					integer_range = {
+						min = 50
+						max = 100
+					}
+				}
+			}
 		}
 	}
 }
