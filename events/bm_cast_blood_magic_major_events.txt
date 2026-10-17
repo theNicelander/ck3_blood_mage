@@ -278,48 +278,6 @@ bm_cast_blood_magic_major.001 = {
 		}
 	}
 
-	# Empower Bloodline
-	option = {
-		name = bm_cast_blood_magic_major.001.bloodline
-		trigger = {
-			custom_description = {
-				text = bm_channel_bloodline_cooldown_tt
-				NOT = { has_character_flag = bm_channel_bloodline_cooldown }
-			}
-			exists = house
-			piety_level >= 1
-			piety >= 350
-		}
-		show_as_unavailable = {
-			always = yes
-		}
-		add_piety = -350
-		add_character_flag = {
-			flag = bm_channel_bloodline_cooldown
-			years = 3
-		}
-		trigger_event = { id = bm_channel_lifeforce_bloodline.001 }
-		if = {
-			limit = { has_trait = lifestyle_blood_mage }
-			add_xp_bm_dynamic = {
-				TRACK = bloodline
-				XP = 5
-			}
-		}
-		else = {
-			add_blood_knight_xp = {
-				TRACK = vanguard
-				XP = 5
-			}
-		}
-		blood_magic_used_major = yes
-		custom_tooltip = channel_lifeforce_bloodline.effects_list
-		ai_chance = {
-			base = 50
-			ai_modifier_based_on_health = yes
-		}
-	}
-
 	# Manifest Perfection (Congenital Traits up to Rank 2)
 	option = {
 		name = bm_cast_blood_magic_major.001.manifest_traits

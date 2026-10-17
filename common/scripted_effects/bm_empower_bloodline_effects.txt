@@ -1,0 +1,265 @@
+﻿# Scripted effects for Empower Dynasty Bloodline covenants and surges
+
+# Upgrade House Covenant to next tier
+# Parameter: COVENANT (charisma, fury, prosperity, shadows, insight, legacy, expertise)
+bm_upgrade_house_covenant_effect = {
+	# Tier I -> Tier II
+	if = {
+		limit = {
+			house = { has_house_modifier = dynasty_blood_$COVENANT$_modifier_1 }
+		}
+		add_piety = -350
+		blood_magic_used_major = yes
+		house = {
+			remove_house_modifier = dynasty_blood_$COVENANT$_modifier_1
+			add_house_modifier = { modifier = dynasty_blood_$COVENANT$_modifier_2 }
+		}
+		if = {
+			limit = { has_trait = lifestyle_blood_mage }
+			add_xp_bm_dynamic = {
+				TRACK = bloodline
+				XP = 5
+			}
+		}
+		else = {
+			add_blood_knight_xp = {
+				TRACK = vanguard
+				XP = 5
+			}
+		}
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_empower_bloodline_tier_2_toast
+			left_icon = root
+			custom_tooltip = bm_covenant_$COVENANT$_tier_2_tt
+		}
+	}
+	# Tier II -> Tier III
+	else_if = {
+		limit = {
+			house = { has_house_modifier = dynasty_blood_$COVENANT$_modifier_2 }
+		}
+		add_piety = -750
+		blood_magic_used_superior = yes
+		house = {
+			remove_house_modifier = dynasty_blood_$COVENANT$_modifier_2
+			add_house_modifier = { modifier = dynasty_blood_$COVENANT$_modifier_3 }
+		}
+		if = {
+			limit = { has_trait = lifestyle_blood_mage }
+			add_xp_bm_dynamic = {
+				TRACK = bloodline
+				XP = 10
+			}
+		}
+		else = {
+			add_blood_knight_xp = {
+				TRACK = vanguard
+				XP = 10
+			}
+		}
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_empower_bloodline_tier_3_toast
+			left_icon = root
+			custom_tooltip = bm_covenant_$COVENANT$_tier_3_tt
+		}
+	}
+	# Base -> Tier I (including migrating legacy un-suffixed modifier if present)
+	else = {
+		add_piety = -150
+		blood_magic_used_minor = yes
+		house = {
+			remove_house_modifier = dynasty_blood_$COVENANT$_modifier
+			add_house_modifier = { modifier = dynasty_blood_$COVENANT$_modifier_1 }
+		}
+		if = {
+			limit = { has_trait = lifestyle_blood_mage }
+			add_xp_bm_dynamic = {
+				TRACK = bloodline
+				XP = 3
+			}
+		}
+		else = {
+			add_blood_knight_xp = {
+				TRACK = vanguard
+				XP = 3
+			}
+		}
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_empower_bloodline_tier_1_toast
+			left_icon = root
+			custom_tooltip = bm_covenant_$COVENANT$_tier_1_tt
+		}
+	}
+}
+
+# Repeatable Bloodline Surges
+# Minor Surge
+bm_cast_bloodline_surge_minor_effect = {
+	add_piety = -150
+	blood_magic_used_minor = yes
+	house = {
+		add_house_modifier = {
+			modifier = temporary_buff_bloodline_minor
+			years = 10
+		}
+	}
+	if = {
+		limit = { has_trait = lifestyle_blood_mage }
+		add_xp_bm_dynamic = {
+			TRACK = bloodline
+			XP = 2
+		}
+	}
+	else = {
+		add_blood_knight_xp = {
+			TRACK = vanguard
+			XP = 2
+		}
+	}
+	send_interface_toast = {
+		type = event_toast_effect_good
+		title = bm_bloodline_surge_minor_toast
+		left_icon = root
+		custom_tooltip = bm_bloodline_surge_minor_tt
+		# Chance for permanent skill increases on caster
+		random = {
+			chance = { value = 10 add = root.diplomacy }
+			add_diplomacy_skill = 1
+		}
+		random = {
+			chance = { value = 10 add = root.learning }
+			add_learning_skill = 1
+		}
+		random = {
+			chance = { value = 10 add = root.martial }
+			add_martial_skill = 1
+		}
+		random = {
+			chance = { value = 10 add = root.intrigue }
+			add_intrigue_skill = 1
+		}
+		random = {
+			chance = { value = 10 add = root.stewardship }
+			add_stewardship_skill = 1
+		}
+		random = {
+			chance = { value = 10 add = root.prowess }
+			add_prowess_skill = 2
+		}
+	}
+}
+
+# Major Surge
+bm_cast_bloodline_surge_major_effect = {
+	add_piety = -350
+	blood_magic_used_major = yes
+	house = {
+		add_house_modifier = {
+			modifier = temporary_buff_bloodline
+			years = 10
+		}
+	}
+	if = {
+		limit = { has_trait = lifestyle_blood_mage }
+		add_xp_bm_dynamic = {
+			TRACK = bloodline
+			XP = 5
+		}
+	}
+	else = {
+		add_blood_knight_xp = {
+			TRACK = vanguard
+			XP = 5
+		}
+	}
+	send_interface_toast = {
+		type = event_toast_effect_good
+		title = bm_bloodline_surge_major_toast
+		left_icon = root
+		custom_tooltip = bm_bloodline_surge_major_tt
+		# Higher chance for permanent skill increases on caster
+		random = {
+			chance = { value = 25 add = root.diplomacy }
+			add_diplomacy_skill = 1
+		}
+		random = {
+			chance = { value = 25 add = root.learning }
+			add_learning_skill = 1
+		}
+		random = {
+			chance = { value = 25 add = root.martial }
+			add_martial_skill = 1
+		}
+		random = {
+			chance = { value = 25 add = root.intrigue }
+			add_intrigue_skill = 1
+		}
+		random = {
+			chance = { value = 25 add = root.stewardship }
+			add_stewardship_skill = 1
+		}
+		random = {
+			chance = { value = 25 add = root.prowess }
+			add_prowess_skill = 2
+		}
+	}
+}
+
+# Superior Surge
+bm_cast_bloodline_surge_superior_effect = {
+	add_piety = -750
+	blood_magic_used_superior = yes
+	house = {
+		add_house_modifier = {
+			modifier = temporary_buff_bloodline_superior
+			years = 10
+		}
+	}
+	if = {
+		limit = { has_trait = lifestyle_blood_mage }
+		add_xp_bm_dynamic = {
+			TRACK = bloodline
+			XP = 10
+		}
+	}
+	else = {
+		add_blood_knight_xp = {
+			TRACK = vanguard
+			XP = 10
+		}
+	}
+	send_interface_toast = {
+		type = event_toast_effect_good
+		title = bm_bloodline_surge_superior_toast
+		left_icon = root
+		custom_tooltip = bm_bloodline_surge_superior_tt
+		# High chance for permanent skill increases on caster
+		random = {
+			chance = { value = 50 add = root.diplomacy }
+			add_diplomacy_skill = 1
+		}
+		random = {
+			chance = { value = 50 add = root.learning }
+			add_learning_skill = 1
+		}
+		random = {
+			chance = { value = 50 add = root.martial }
+			add_martial_skill = 1
+		}
+		random = {
+			chance = { value = 50 add = root.intrigue }
+			add_intrigue_skill = 1
+		}
+		random = {
+			chance = { value = 50 add = root.stewardship }
+			add_stewardship_skill = 1
+		}
+		random = {
+			chance = { value = 50 add = root.prowess }
+			add_prowess_skill = 2
+		}
+	}
+}
