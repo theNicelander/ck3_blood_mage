@@ -64,41 +64,36 @@ At conclusion, `finalise_combat_results_effect` runs:
   - Attacker/defender duel scores still present.
 - **Engine trap**: In `on_death`, `root.is_alive` is `yes` ("about to die"). Calling `death_reason = death_duel` logs script error (`death_reason` populates only post-mortem). Check `has_variable = engaged_in_single_combat` in `on_death`, or dispatch `delayed = yes` event to inspect `death_reason`.
 
-## Skill Duel Probability & Scaling Architecture (`duel = { ... }`)
+## Skill duels (`duel = { ... }`)
 
-Skill duels resolve instantly via weighted random selection modified by stat comparisons.
-
-### Syntax & Mechanics
+Single-tick stat checks (`scope:duel_value = actor_skill - target_value`). Use `compare_modifier`:
 
 ```ck3
 duel = {
-    skill = <learning|prowess|martial|stewardship|intrigue|diplomacy>
-    value = <target_value|0>   # Target skill value to compare against; scope:duel_value = actor_skill - target_value
-    [target = <character>]    # Optional opponent; if omitted, self-test against static 'value'
-
-    <base_weight> = {
-        desc = <outcome_loc_tt>
-        compare_modifier = {
-            value = scope:duel_value
-            multiplier = <float>  # Weight delta per point of skill above/below target
-            [min = <float>]       # Hard floor on the modifier delta (weight cannot drop below base + min)
-            [max = <float>]       # Hard cap on the modifier delta (weight cannot exceed base + max)
-        }
-        # Outcome effects, toasts, XP awards...
+    skill = learning
+    value = 0
+    # Outcomes: base weights sum to 100 at skill 0
+    17 = { # Crit Success (scales up)
+        desc = outcome_crit_succ_tt
+        compare_modifier = { value = scope:duel_value multiplier = 0.32 max = 16 }
+    }
+    33 = { # Success (scales up)
+        desc = outcome_succ_tt
+        compare_modifier = { value = scope:duel_value multiplier = 0.68 max = 30 }
+    }
+    33 = { # Failure (scales down)
+        desc = outcome_fail_tt
+        compare_modifier = { value = scope:duel_value multiplier = -0.68 min = -30 } # floor weight: 3
+    }
+    17 = { # Crit Failure (scales down)
+        desc = outcome_crit_fail_tt
+        compare_modifier = { value = scope:duel_value multiplier = -0.32 min = -16 } # floor weight: 1
     }
 }
 ```
 
-### Exact Probability Design Pattern (Summing to 100)
-
-To achieve precise, non-distorting percentages that scale smoothly and respect minimum/maximum floors:
-1. **Base weights sum to 100** at baseline skill ($L = 0$). For example, 1/6 critical success (17), 1/3 success (33), 1/3 failure (33), 1/6 critical failure (17).
-2. **Symmetric slope pairs**: When success scales up by `+M`, failure scales down by `-M`. This keeps total weight constant at 100 across the entire active scaling range.
-3. **Hard Floors via `min`**:
-   - In CK3, `min` in `compare_modifier` is the **minimum adjustment added to the base weight**, not the absolute weight itself.
-   - To floor an outcome of base weight `B` at minimum weight `W_min`, set:
-     $$\text{min} = -(B - W_{\text{min}})$$
-     *(Example: base 33 floored at 3% $\implies$ `min = -30`; base 17 floored at 1% $\implies$ `min = -16`)*.
-4. **Capping Complementary Outcomes via `max`**:
-   - When negative outcomes hit their floors at a target skill milestone (e.g. $L = 50$), positive weights must also cap at `max` so the total pool remains exactly 100.
-   - If total floored failure weight is $3 + 1 = 4$, cap successes at $63 + 33 = 96$ (`max = 30` and `max = 16`). Beyond $L = 50$, probabilities remain permanently locked at exactly 3% and 1%.
+### Preferred weighting convention
+- **Baseline (skill 0)**: Base weights sum to 100 (e.g. 1/3 success, 1/3 failure, 1/6 crit success, 1/6 crit failure).
+- **Skill ~50 target**: Most negative outcomes are negated by skill ~50, with failure floored at **~5–10%** (e.g. 3–8% failure, 1–2% crit failure).
+- **Hard floors via `min`**: `min` in `compare_modifier` is the delta added to base (`min = -(base - desired_floor)`).
+- **Constant 100 total weight**: Pair positive/negative slopes (`+M` / `-M`) and cap positive outcomes with `max` when negative outcomes hit their floors.
