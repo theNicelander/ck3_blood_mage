@@ -160,6 +160,24 @@ def check_yaml_indentation(text: str) -> list[tuple[int, str]]:
     return issues
 
 
+def check_yaml_syntax(text: str) -> list[str]:
+    """Check that YAML files have balanced double-quotes and no stray characters after quotes."""
+    issues = []
+    qc = text.count('"')
+    if qc % 2 != 0:
+        issues.append(f"Odd number of double-quote characters ({qc}) - likely unclosed string")
+    for line_num, line in enumerate(text.splitlines(), 1):
+        s = line.strip()
+        if not s or s.startswith("#") or s.startswith("l_english:"):
+            continue
+        m = re.match(r'^[a-zA-Z0-9_.:]+:\d*\s*".*"(\S+.*)$', s)
+        if m:
+            extra = m.group(1).strip()
+            if not extra.startswith("#"):
+                issues.append(f"Line {line_num}: Stray characters after closing quote: '{extra}'")
+    return issues
+
+
 def check_file(path: Path, auto_fix: bool = False) -> list[str]:
     """Validate a single file and optionally fix BOM and trailing newline."""
     errors = []
@@ -170,13 +188,16 @@ def check_file(path: Path, auto_fix: bool = False) -> list[str]:
         return [f"Could not read file: {e}"]
 
     has_bom = raw.startswith(b"\xef\xbb\xbf")
+    has_multiple_boms = raw.startswith(b"\xef\xbb\xbf\xef\xbb\xbf")
+    has_embedded_bom = b"\xef\xbb\xbf" in raw[3:]
     has_trailing_nl = raw.endswith(b"\n")
 
-    if auto_fix and (not has_bom or not has_trailing_nl):
+    if auto_fix and (not has_bom or has_multiple_boms or not has_trailing_nl):
         fixed_raw = raw
-        if not has_bom:
-            fixed_raw = b"\xef\xbb\xbf" + fixed_raw
-        if not has_trailing_nl:
+        while fixed_raw.startswith(b"\xef\xbb\xbf"):
+            fixed_raw = fixed_raw[3:]
+        fixed_raw = b"\xef\xbb\xbf" + fixed_raw
+        if not fixed_raw.endswith(b"\n"):
             fixed_raw = fixed_raw + b"\n"
         try:
             with open(path, "wb") as f:
@@ -184,12 +205,17 @@ def check_file(path: Path, auto_fix: bool = False) -> list[str]:
             print(f"Fixed formatting for: {path}")
             raw = fixed_raw
             has_bom = True
+            has_multiple_boms = False
             has_trailing_nl = True
         except OSError as e:
             errors.append(f"Failed to auto-fix {path}: {e}")
 
     if not has_bom:
         errors.append("Missing UTF-8 BOM (required for CK3 .txt, .gui, .yml)")
+    elif has_multiple_boms:
+        errors.append("Multiple UTF-8 BOM headers at start of file (causes corrupted tokens in CK3)")
+    if has_embedded_bom:
+        errors.append("Embedded UTF-8 BOM byte sequence found inside file body")
     if not has_trailing_nl:
         errors.append("Missing trailing newline at end of file")
 
@@ -214,13 +240,16 @@ def check_file(path: Path, auto_fix: bool = False) -> list[str]:
             f"Line {line_num}: #tiger-ignore requires a justification comment ('{line_text}')"
         )
 
-    # Check YAML indentation under language header
+    # Check YAML indentation and syntax
     if path.suffix.lower() == ".yml":
         yaml_issues = check_yaml_indentation(text)
         for line_num, line_text in yaml_issues:
             errors.append(
                 f"Line {line_num}: Localization key requires leading whitespace under language header ('{line_text}')"
             )
+        yaml_syntax_issues = check_yaml_syntax(text)
+        for issue in yaml_syntax_issues:
+            errors.append(issue)
 
     return errors
 

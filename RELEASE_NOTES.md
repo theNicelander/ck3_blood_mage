@@ -141,3 +141,12 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
   - _Initiation Faith Requirements_ (Strict blood cult requirement vs. Witchcraft tolerance).
   - _Lore Integration_ (Vanilla historical vs. AGOT overhaul lore compatibility).
 - **Strict Zero-Vanilla Overwrite Architecture**: 100% modular scripting (`bm_` prefix on all files) ensures complete plug-and-play compatibility with total conversion overhauls (AGOT, Elder Kings, Realms in Exile, More Bookmarks+).
+
+---
+
+## 🛠️ Bugfixes & Engine Modernization
+
+- **Decision Event Dialog Fix**: Resolved an issue where multiple UTF-8 BOM headers at file start caused the game engine to drop event namespaces, preventing dialogs from opening when clicking "Seek Power" and "Cast Major Blood Magic -> Channel Blood Empowerment".
+- **Interaction Registration**: Corrected encoding on character interactions ensuring "Inscribe Blood Rune" registers cleanly in character menus.
+- **Localization Syntax**: Fixed a formatting typo in modifier descriptions that caused localization parser errors.
+- **Repository Integrity**: Updated repo validation tools with strict multi-BOM and embedded BOM detection to prevent file encoding regressions.
