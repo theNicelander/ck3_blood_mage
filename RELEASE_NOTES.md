@@ -7,8 +7,8 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 ## ⚔️ The Twin Devotion Paths: Blood Mage & Blood Knight
 
 - **Twin Endgame Lifestyle Classes**: Blood magic is now split into two permanent, mutually exclusive lifestyle archetypes, each with distinct playstyles and 5 progression tracks (2 unique specialization tracks and 3 shared Devotion tracks):
-  - **Blood Mage** (*Shepherd of the Faithful*): The occult scholar and dynasty architect. Focuses on realm stability, domain development, dread manipulation, and dynasty expansion.
-  - **Blood Knight** (*Fire and Sword*): A dedicated martial warlord and battlefield champion. Focuses on personal prowess, combat advantage, army movement speed, and knight empowerment.
+  - **Blood Mage** (_Shepherd of the Faithful_): The occult scholar and dynasty architect. Focuses on realm stability, domain development, dread manipulation, and dynasty expansion.
+  - **Blood Knight** (_Fire and Sword_): A dedicated martial warlord and battlefield champion. Focuses on personal prowess, combat advantage, army movement speed, and knight empowerment.
 - **Mutual Exclusivity & Awakening**: Characters choose their path upon awakening to blood magic—via hereditary bloodlines, occult mentorship, witch conversion, or by venturing north to duel the 100-year-old hermit **Egill Skallagrímsson** in Iceland or Tsushima.
 - **Shared Devotion Progression (Ancient, Enlightenment, Benediction)**:
   - Both classes advance through 3 shared spiritual tracks scaling up to 100 XP.
@@ -55,9 +55,9 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
   - **Minor Blood Magic**: Fast utility rituals including Lifeforce Attunement, Minor Blood Runes, Vitality Cleansing, and Lifeforce Condensation.
   - **Major Blood Magic**: Powerful rituals including Blood Empowerment, Condense Lifeforce (distilling Minor and Major into Superior Lifeforce), Education Enhancement (Tiers 1★–4★), Major Blood Runes, Congenital Trait Manifestation, and House Blessings.
   - **Superior Blood Magic**: Legendary rites including Blood Golem Creation, 5★ Master Educations, Secondary Educations, and Superior Capstone Runes.
-- **Inline Option-List Widgets**: Integrated CK3's modern option-list interface for key rituals—letting you preview bonuses, track icons, costs, and requirements in a clean window without multi-step event spam:
-  - *Attune Lifeforce*: Select your yearly lifestyle XP bonus.
-  - *Carve Galdrastafir*: Choose and preview your flesh-carved magical stave.
+  - _Attune Lifeforce_: Select your yearly lifestyle XP bonus.
+  - _Carve Galdrastafir_: Choose and preview your flesh-carved magical stave.
+  - _Empower Dynasty Bloodline_: Weave 7 Three-Tier House Covenants (Majesty, Warband, Prosperity, Shadows, Insight, Legacy, Expertise) across Awakened, Ascendant, and Sovereign tiers, or cast repeatable 10-year stacking Bloodline Surges.
 - **37-Condition Healing & Situation Alerts**:
   - Cure up to 37 physical and mental ailments on yourself, your courtiers, family, or prisoners—ranging from illnesses and wounds to blindness, severed limbs, and melancholy.
   - A persistent **"You Can Heal Someone"** notification appears in the Current Situation dropdown whenever an eligible courtier or family member falls sick or injured.
@@ -70,11 +70,11 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 ## ᚱ Icelandic Galdrastafir Flesh-Carved Blood Runes
 
 - **Five Historical Galdrastafir Staves**: Carve authentic Icelandic magical staves directly into your character's flesh, each granting a passive ambient Lifeforce pulse and unique thematic bonuses:
-  - **Vegvísir** (*The Wayfinder*): Travel safety, movement speed, supply capacity, and battlefield retreat defense.
-  - **Ægishjálmur** (*Helm of Awe*): Terror, dread, knight effectiveness, and bonus Lifeforce from battlefield kills.
-  - **Feingur** (*The Fertility Stave*): Fertility, pregnancy chance, health, and dynasty-wide blessing rites.
-  - **Nábrókarstafur** (*Necropants / Wealth Stave*): Direct domain tax bonuses, building gold cost reductions, and monthly gold income.
-  - **Hulinhjálmur** (*Helm of Disguise*): Hostile scheme success, scheme secrecy, and personal plot defense.
+  - **Vegvísir** (_The Wayfinder_): Travel safety, movement speed, supply capacity, and battlefield retreat defense.
+  - **Ægishjálmur** (_Helm of Awe_): Terror, dread, knight effectiveness, and bonus Lifeforce from battlefield kills.
+  - **Feingur** (_The Fertility Stave_): Fertility, pregnancy chance, health, and dynasty-wide blessing rites.
+  - **Nábrókarstafur** (_Necropants / Wealth Stave_): Direct domain tax bonuses, building gold cost reductions, and monthly gold income.
+  - **Hulinhjálmur** (_Helm of Disguise_): Hostile scheme success, scheme secrecy, and personal plot defense.
 - **Superior Stave Capstones**: Reach the pinnacle of rune carving to unlock game-changing capstone powers (such as guaranteed double lifeforce pulses or complete scheme invisibility).
 - **Rune Inscription on Followers**: Inscribe blood runes onto your sworn knights, champions, and family members to bolster their combat prowess and loyalty.
 - **Custom DDS Icons**: Every Galdrastafir stave features authentic, hand-crafted 120×120 visual iconography across modifiers, decisions, and menus.
@@ -130,28 +130,14 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
   - **Glowing Eyes**: Progresses dynamically from subtle red to supernatural crimson, pale arcane, and pure white eyes at maximum mastery.
   - **Blood Knight Golden Blonde Hair**: Blood Knights develop radiant golden-yellow blonde hair alongside crimson eyes.
 - **Unified Appearance Game Rule**: Configure physical transformations at game start:
-  - *Off*: Retain normal human appearance.
-  - *Gradual*: Eyes and hair transform dynamically as lifestyle track XP is earned.
-  - *On (Default)*: Immediately display full supernatural eyes and hair upon awakening to blood magic.
+  - _Off_: Retain normal human appearance.
+  - _Gradual_: Eyes and hair transform dynamically as lifestyle track XP is earned.
+  - _On (Default)_: Immediately display full supernatural eyes and hair upon awakening to blood magic.
 - **Comprehensive Campaign Game Rules**:
-  - *Blood Mage Prevalence* (Player Only to Frequent AI spawn).
-  - *Blood Knight Prevalence* (Player Only to Frequent).
-  - *Blóðtrú Religion Availability* (Player Only, Unreformed Only, or World Distribution).
-  - *Historical Starting Counties* (Toggle historical occult centers in Iceland and Tsushima).
-  - *Initiation Faith Requirements* (Strict blood cult requirement vs. Witchcraft tolerance).
-  - *Lore Integration* (Vanilla historical vs. AGOT overhaul lore compatibility).
+  - _Blood Mage Prevalence_ (Player Only to Frequent AI spawn).
+  - _Blood Knight Prevalence_ (Player Only to Frequent).
+  - _Blóðtrú Religion Availability_ (Player Only, Unreformed Only, or World Distribution).
+  - _Historical Starting Counties_ (Toggle historical occult centers in Iceland and Tsushima).
+  - _Initiation Faith Requirements_ (Strict blood cult requirement vs. Witchcraft tolerance).
+  - _Lore Integration_ (Vanilla historical vs. AGOT overhaul lore compatibility).
 - **Strict Zero-Vanilla Overwrite Architecture**: 100% modular scripting (`bm_` prefix on all files) ensures complete plug-and-play compatibility with total conversion overhauls (AGOT, Elder Kings, Realms in Exile, More Bookmarks+).
-
----
-
-## 🛠️ Bugfixes & Technical Improvements
-
-- **Fixed Devotion Capstone Scaling**: Replaced non-functional vanilla max piety level cap increases (which are hard-clamped to level 5 in vanilla CK3 governments) with clean, universally functioning **+50% Devotion Impact** and **+2.0 stat-per-devotion** scaling.
-- **Fixed Event Portrait Staging**: Resolved CK3 1.20 rendering errors in Seek Power events by placing 3D portraits prior to event option evaluations, ensuring wandering mages and mentors render properly.
-- **Fixed Character Naming & Wanderer Scopes**: Corrected portrait triggers and localized names for wilderness encounter characters.
-- **Fixed Geyser Duel Scopes**: Corrected unhandled variables and scope evaluation errors during lethal initiation duels.
-- **Eliminated Double Piety Charges**: Fixed character interactions that inadvertently deducted piety twice upon execution.
-- **Restored Missing Cooldown Tooltips**: Added clear in-game cooldown timers and requirements across Education Enhancement, Blood Golems, Stave Carving, and Major Rites.
-- **Vanilla 1.20 Ailment Support**: Expanded healing effects to support all ailments introduced in recent base-game updates (withering mind, clouded eyes, fragile bones, faltering heart, and lunatic stages).
-- **Modernized Trait Inheritance**: Overhauled hereditary transmission to use CK3's modern non-genetic inheritance pipeline, preventing trait degradation and engine warnings.
-- **Scope & Null-Safety Hardening**: Added existence guards across all duel triggers, courtier lists, and AI targeting logic to prevent silent script errors.
