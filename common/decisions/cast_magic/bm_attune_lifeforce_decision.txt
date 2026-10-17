@@ -5,6 +5,8 @@
 	desc = bm_attune_lifeforce_decision_desc
 	selection_tooltip = bm_attune_lifeforce_decision_tooltip
 
+	cooldown = { years = 3 }
+
 	is_shown = {
 		OR = {
 			has_trait = lifestyle_blood_mage
@@ -12,15 +14,29 @@
 		}
 	}
 
+	is_valid = {
+		trigger_if = {
+			limit = {
+				bm_has_any_attunement_trigger = yes
+			}
+			piety >= 100
+		}
+	}
+
 	is_valid_showing_failures_only = {
-		custom_tooltip = {
-			text = bm_attune_lifeforce_decision_req
-			has_character_modifier = lifeforce_modifier_minor
+		trigger_if = {
+			limit = {
+				bm_has_any_attunement_trigger = yes
+			}
+			custom_tooltip = {
+				text = bm_attune_lifeforce_change_req
+				has_character_modifier = lifeforce_modifier_minor
+			}
 		}
 	}
 
 	cost = {
-		piety = 25
+		piety = bm_attune_lifeforce_piety_cost
 	}
 
 	widget = {
@@ -224,7 +240,13 @@
 	}
 
 	effect = {
-		remove_character_modifier = lifeforce_modifier_minor
+		if = {
+			limit = {
+				bm_has_any_attunement_trigger = yes
+			}
+			remove_character_modifier = lifeforce_modifier_minor
+			bm_recount_lifeforce_stacks_effect = yes
+		}
 		hidden_effect = {
 			remove_all_attunement = yes
 		}
@@ -259,7 +281,6 @@
 		else = {
 			custom_tooltip = bm_attune_lifeforce_decision_effect
 		}
-		bm_recount_lifeforce_stacks_effect = yes
 		close_view = {
 			view = decisions
 			player = root
@@ -275,14 +296,14 @@
 		}
 		modifier = {
 			add = 100
-			NOT = {
-				has_character_modifier = ancient_attuned
-				has_character_modifier = enlightenment_attuned
-				has_character_modifier = bloodline_attuned
-				has_character_modifier = benediction_attuned
-				has_character_modifier = hematurgy_attuned
-				has_character_modifier = vanguard_attuned
-				has_character_modifier = slaughter_attuned
+			bm_has_any_attunement_trigger = no
+		}
+		modifier = {
+			add = -100
+			bm_has_any_attunement_trigger = yes
+			OR = {
+				NOT = { has_character_modifier = lifeforce_modifier_minor }
+				piety < 100
 			}
 		}
 	}

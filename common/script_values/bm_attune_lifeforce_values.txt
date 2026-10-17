@@ -1,0 +1,11 @@
+﻿# Piety cost for Lifeforce Attunement decision
+# Initial attunement is free (0 Piety); changing an existing attunement costs 100 Piety.
+bm_attune_lifeforce_piety_cost = {
+	value = 0
+	if = {
+		limit = {
+			bm_has_any_attunement_trigger = yes
+		}
+		add = 100
+	}
+}

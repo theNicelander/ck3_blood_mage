@@ -2,13 +2,15 @@
 ############### MINOR ###############
     # Attune lifeforce
     bm_attune_lifeforce_decision: "Lifeforce Attunement"
-    bm_attune_lifeforce_decision_desc: "Spend [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] and #V 25#! Piety to attune your Blood Magic toward a chosen discipline, guaranteeing experience gain each year and unlocking passive blessings."
+    bm_attune_lifeforce_decision_desc: "Attune your Blood Magic toward a chosen discipline to guarantee experience gain each year and unlock passive blessings.\n\nYour first attunement is #P free#!. Changing an active attunement requires a #V 3-year cooldown#!, [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip], and #V 100#! Piety."
     bm_attune_lifeforce_decision_tooltip: "Attune to a discipline to guarantee annual experience gain and unlock passive benefits"
     BM_ATTUNE_LIFEFORCE_DECISION_NEXT_STEP_BUTTON: "Attune Powers"
     bm_attune_lifeforce_decision_confirm: "$BM_ATTUNE_LIFEFORCE_DECISION_NEXT_STEP_BUTTON$"
     bm_attune_lifeforce_decision_effect: "You attune your Blood Magic to the chosen discipline, gaining #P +1#! experience per year (#P +2#! with Superior Hulinhjálmur) and its passive modifier."
     bm_attune_lifeforce_decision_req: "Requires [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip]"
     NOT_bm_attune_lifeforce_decision_req: "Requires [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip]"
+    bm_attune_lifeforce_change_req: "Requires [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] to change attunement"
+    NOT_bm_attune_lifeforce_change_req: "Requires [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] to change attunement"
     bm_attune_already_attuned_req: "You are already attuned to this discipline"
     NOT_bm_attune_already_attuned_req: "You are already attuned to this discipline"
 
@@ -76,6 +78,10 @@
     bm_improve_education_decision_confirm: "Infuse Mind"
     bm_improve_education_decision_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_improve_education')|0] Experience in [GetTrait('lifestyle_blood_empowerment').GetName( GetNullCharacter )]"
     NOT_bm_improve_education_decision_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_improve_education')|0] Experience in [GetTrait('lifestyle_blood_empowerment').GetName( GetNullCharacter )]"
+    bm_improve_education_cooldown: "Recently Enhanced Education"
+    bm_improve_education_cooldown_desc: "You have recently enhanced or mastered an education trait through blood magic and must allow your neural pathways to stabilize."
+    bm_improve_education_cooldown_tt: "Has not attempted to enhance or master education in the last 2 years"
+    NOT_bm_improve_education_cooldown_tt: "Has not attempted to enhance or master education in the last 2 years"
 
     bm_education_enhancement.001.title: "Blood Infusion of Knowledge"
     bm_education_enhancement.001.desc: "The blood essence flows through special channels you've prepared, each inscribed with runes of knowledge and power. As you begin the ritual, you must decide which aspect of your education to enhance through blood magic. The ritual will be challenging - as your education level increases, the difficulty of further enhancement grows significantly."
@@ -95,6 +101,10 @@
     bm_new_education_decision_confirm: "Forge New Pathways"
     bm_new_education_decision_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_new_education')|0] Experience in [GetTrait('lifestyle_blood_empowerment').GetName( GetNullCharacter )]"
     NOT_bm_new_education_decision_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_new_education')|0] Experience in [GetTrait('lifestyle_blood_empowerment').GetName( GetNullCharacter )]"
+    bm_new_education_cooldown: "Recently Embraced New Education"
+    bm_new_education_cooldown_desc: "You have recently forged new neural pathways for an additional education discipline and must allow your mind to stabilize."
+    bm_new_education_cooldown_tt: "Has not unlocked a new education discipline in the last 2 years"
+    NOT_bm_new_education_cooldown_tt: "Has not unlocked a new education discipline in the last 2 years"
 
     new_education_decision: "Embrace New Knowledge"
     bm_education_new.001.title: "Forging New Neural Pathways"
@@ -166,6 +176,10 @@
     bm_cast_blood_magic_major.001.blood_rune_major: "Inscribe Major Blood Rune"
     bm_cast_blood_magic_major.001.blood_rune_superior: "Inscribe Superior Blood Rune"
     bm_cast_blood_magic_major.001.bloodline: "Empower Dynasty Bloodline"
+    bm_channel_bloodline_cooldown: "Recently Empowered Bloodline"
+    bm_channel_bloodline_cooldown_desc: "You have recently channeled lifeforce into your dynasty bloodline and must allow the generational currents to settle."
+    bm_channel_bloodline_cooldown_tt: "Has not empowered dynasty bloodline in the last 5 years"
+    NOT_bm_channel_bloodline_cooldown_tt: "Has not empowered dynasty bloodline in the last 5 years"
     bm_cast_blood_magic_major.001.cancel: "Back"
 
 ############### SUPERIOR ###############

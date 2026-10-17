@@ -64,7 +64,7 @@ Requires Minor Lifeforce (`lifeforce_modifier_minor`). Accessible to both **Bloo
 | --- | --- | --- | --- | --- |
 | **Cast Minor Magic Grimoire** | Decision (`bm_cast_blood_magic_minor_decision`) | Minor Lifeforce | Opens minor rituals event grimoire (`bm_cast_blood_magic_minor.001`). | None |
 | **Channel Minor Lifeforce** | Grimoire Option | 75 Piety + Minor Lifeforce | Grants stat buff event chain (`bm_channel_lifeforce_enlightenment_minor.001`). | +1 Enlightenment |
-| **Attune Lifeforce** | Decision (`bm_attune_lifeforce_decision`) | 25 Piety + Minor Lifeforce | Opens inline option-list widget to attune to 1 of 5 disciplines; guarantees +1 XP/yr (+2 with Superior **Hulinhjálmur**) and passive blessings. | None (passive +1/yr XP) |
+| **Attune Lifeforce** | Decision (`bm_attune_lifeforce_decision`) | First free; changing: 100 Piety + Minor Lifeforce (3-yr CD) | Opens inline option-list widget to attune to 1 discipline; guarantees +1 XP/yr (+2 with Superior **Hulinhjálmur**) and passive blessings. | None (passive +1/yr XP) |
 | **Purge Bodily Impurities** | Grimoire Option | 50 Piety + Minor Lifeforce | Cleanses minor wounds, scars, illness, lovers pox, gout, and bad traits (`beauty_bad`, `intellect_bad`, `physique_bad`, `dull`, `weak`). | +2 Benediction/Bloodline (Mage)<br>+2 Enlightenment (Knight) |
 | **Condense Lifeforce** | Grimoire Option | 100 Piety + Minor Lifeforce | Converts 1 Minor Lifeforce into 1 Major Lifeforce (`lifeforce_modifier_major`). | +2 Ancient |
 | **Inscribe Minor Blood Rune (Self)** | Grimoire Option | Minor Lifeforce, Piety level >= 2, 5-yr CD | Inscribes `minor_blood_rune_modifier` and opens 5-stave Galdrastafir selector (`bm_blood_runes.001`). | +4 Ancient |
