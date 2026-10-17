@@ -49,7 +49,7 @@ bm_blood_runes.001 = {
 			base = 10
 			modifier = {
 				add = 20
-				has_trait = traveler
+				has_trait = lifestyle_traveler
 			}
 		}
 	}
@@ -81,7 +81,7 @@ bm_blood_runes.001 = {
 			base = 10
 			modifier = {
 				add = 25
-				num_of_children < 2
+				NOT = { any_child = { count >= 2 } }
 			}
 		}
 	}
@@ -220,10 +220,7 @@ bm_blood_runes.002 = {
 		else = {
 			increase_wounds_no_death_effect = { REASON = wounds }
 		}
-		add_character_modifier = {
-			modifier = blood_magic_major_casting_exhaustion
-			years = 1
-		}
+		temporary_negative_lifeforce_effect_major_1_year = yes
 		bm_strip_all_stave_modifiers_effect = yes
 		save_scope_as = rune_target
 		trigger_event = { id = bm_blood_runes.001 }
@@ -257,10 +254,6 @@ bm_blood_runes.002 = {
 		}
 		else = {
 			increase_wounds_no_death_effect = { REASON = wounds }
-		}
-		add_character_modifier = {
-			modifier = blood_magic_superior_casting_exhaustion
-			years = 5
 		}
 		bm_strip_all_stave_modifiers_effect = yes
 		save_scope_as = rune_target
