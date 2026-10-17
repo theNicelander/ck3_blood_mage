@@ -78,6 +78,8 @@ See `.agents/rules/ck3-localization.md` (english only, sibling keys, loc documen
 
 ## Workflow
 
+Multiple AIs work in parallel on this repo, so keep in mind that there maybe other changes in the branch. If that's the case, ingore them unless relevant to you. Don't commit files you didn't touch, unless asked to.
+
 1. `git branch --show-current`; read `docs-ai/branch-context/<branch>.md` (**create if missing**, see `pr-context.md`), matching rule(s), and matching `docs-ai/architecture/*.md` (start at its `README.md`).
 2. Smallest change that works. Check existing identifiers with `grep -rn`.
 3. Use the matching skill for the task (`add-blood-magic-decision`, `add-decision-option-widget`, `add-faith`, `add-trait-track`, `add-game-rule`).

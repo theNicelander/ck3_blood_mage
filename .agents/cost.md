@@ -3,8 +3,8 @@
 
 | Scope | Tokens |
 | --- | ---: |
-| **Total** | **10,773** |
-| Core | 2,082 |
+| **Total** | **10,820** |
+| Core | 2,129 |
 | Rules | 4,349 |
 | Skills | 4,342 |
 
@@ -12,7 +12,7 @@
 
 | File | Category | Tokens |
 | --- | --- | ---: |
-| `AGENTS.md` | Core | 2,082 |
+| `AGENTS.md` | Core | 2,129 |
 | `.agents/skills/add-decision-option-widget/SKILL.md` | Skills | 1,461 |
 | `.agents/rules/single-combat.md` | Rules | 1,257 |
 | `.agents/skills/caveman/SKILL.md` | Skills | 1,158 |
