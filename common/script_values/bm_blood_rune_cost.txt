@@ -10,14 +10,28 @@
 	}
 }
 
-flay_minor_blood_rune_piety_cost = 250
-flay_minor_blood_rune_piety_cost_neg = -250
-flay_minor_blood_rune_xp_cost_neg = -5
+bm_capstone_swap_piety_cost = 500
 
-flay_major_blood_rune_piety_cost = 500
-flay_major_blood_rune_piety_cost_neg = -500
-flay_major_blood_rune_xp_cost_neg = -10
+bm_total_blood_mage_xp = {
+	value = 0
+	if = {
+		limit = { has_trait = lifestyle_blood_mage }
+		add = "has_trait_xp(lifestyle_blood_mage|ancient)"
+		add = "has_trait_xp(lifestyle_blood_mage|enlightenment)"
+		add = "has_trait_xp(lifestyle_blood_mage|bloodline)"
+		add = "has_trait_xp(lifestyle_blood_mage|benediction)"
+		add = "has_trait_xp(lifestyle_blood_mage|hematurgy)"
+	}
+}
 
-flay_superior_blood_rune_piety_cost = 1000
-flay_superior_blood_rune_piety_cost_neg = -1000
-flay_superior_blood_rune_xp_cost_neg = -15
+bm_total_blood_knight_xp = {
+	value = 0
+	if = {
+		limit = { has_trait = lifestyle_blood_knight }
+		add = "has_trait_xp(lifestyle_blood_knight|ancient)"
+		add = "has_trait_xp(lifestyle_blood_knight|enlightenment)"
+		add = "has_trait_xp(lifestyle_blood_knight|vanguard)"
+		add = "has_trait_xp(lifestyle_blood_knight|benediction)"
+		add = "has_trait_xp(lifestyle_blood_knight|slaughter)"
+	}
+}

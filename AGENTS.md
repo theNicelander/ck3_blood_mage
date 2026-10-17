@@ -60,6 +60,8 @@ See `.agents/rules/ck3-localization.md` (english only, sibling keys, loc documen
 
 ## DDS Icons & Assets
 
+- Basegame `.dds` source (copy vanilla icons from here): `/Users/clarabotet/Library/Application Support/Steam/steamapps/common/Crusader Kings III/game/gfx` (e.g. `interface/icons/traits/`, `interface/icons/modifiers/`). `/Users/clarabotet/Petur/ck3-full` has no DDS files. Put candidate shortlists for user review in the gitignored `local-assets/<topic>/`.
+- Vanilla DDS styles (by filename prefix): `modifiers/*` = flat one-colour shield glyph (green good, red bad), plain. `traits/*` = detailed illustrated art on a round or square background frame. `icon_*.dds` (e.g. `interface/icons/icon_gold.dds`) = clean, simple, standalone illustrations without a frame (like the bag of gold). Prefer `icon_*` for new rune/spell icons unless a framed look is wanted.
 - DDS files within a category are copy-paste identical:
   - **Traits** (`gfx/interface/icons/traits/`): Distinctive icons: `bm_blood_mage.dds` (Blood Mage), `bm_blood_knight.dds` (Blood Knight), `bm_interactions.dds` (Blood Empowerment).
   - **Interactions** (`gfx/interface/icons/character_interactions/`): All use identical copies of `bm_interactions.dds` (120×120 fiery blood drop).

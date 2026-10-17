@@ -41,10 +41,6 @@ bm_initialize_blood_mage_stories = {
 				}
 			}
 			bm_ensure_blood_mage_story_effect = yes
-			if = {
-				limit = { has_trait = lifestyle_blood_knight }
-				bm_update_slaughter_devotion_knights_effect = yes
-			}
 		}
 	}
 }

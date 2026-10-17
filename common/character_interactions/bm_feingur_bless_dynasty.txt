@@ -15,7 +15,7 @@
 				has_trait = lifestyle_blood_mage
 				has_trait = lifestyle_blood_knight
 			}
-			has_character_modifier = bm_rune_feingur_superior
+			bm_has_superior_stave_trigger = { STAVE = feingur }
 		}
 		NOT = { scope:actor = scope:recipient }
 		scope:recipient = {

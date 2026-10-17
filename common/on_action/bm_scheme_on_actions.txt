@@ -11,7 +11,7 @@ bm_on_murder_success_hulinhjalmur = {
 		if = {
 			limit = {
 				scope:owner ?= {
-					has_character_modifier = bm_rune_hulinhjalmur_superior
+					bm_has_superior_stave_trigger = { STAVE = hulinhjalmur }
 				}
 			}
 			scope:owner = {

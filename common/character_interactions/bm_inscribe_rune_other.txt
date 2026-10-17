@@ -1,4 +1,4 @@
-﻿bm_inscribe_rune_other_interaction = {
+﻿﻿bm_inscribe_rune_other_interaction = {
 	category = interaction_category_friendly
 	icon = bm_inscribe_rune_other_interaction
 	desc = bm_inscribe_rune_other_interaction_desc
@@ -30,7 +30,7 @@
 				dynasty ?= scope:actor.dynasty
 				is_consort_of = scope:actor
 				is_knight_of = scope:actor
-				has_trait = blood_golem
+				house ?= house:bm_house_golem
 				scope:actor.liege ?= this
 			}
 		}
@@ -42,7 +42,10 @@
 			is_imprisoned = no
 		}
 		scope:actor = {
-			NOT = { has_character_flag = bm_blood_rune_other_cooldown }
+			custom_description = {
+				text = bm_blood_rune_other_cooldown_tt
+				NOT = { has_character_flag = bm_blood_rune_other_cooldown }
+			}
 			custom_tooltip = {
 				text = bm_inscribe_rune_other_requirement_tt
 				OR = {
@@ -55,8 +58,8 @@
 						}
 						piety_level >= 2
 						OR = {
-							bm_total_blood_mage_xp >= xp_req_tier_2
-							bm_total_blood_knight_xp >= xp_req_tier_2
+							scope:actor.bm_total_blood_mage_xp >= 25
+							scope:actor.bm_total_blood_knight_xp >= 25
 						}
 						has_character_modifier = lifeforce_modifier_minor
 					}
@@ -69,8 +72,8 @@
 						}
 						piety_level >= 3
 						OR = {
-							bm_total_blood_mage_xp >= xp_req_tier_3
-							bm_total_blood_knight_xp >= xp_req_tier_3
+							scope:actor.bm_total_blood_mage_xp >= 50
+							scope:actor.bm_total_blood_knight_xp >= 50
 						}
 						piety >= 200
 						has_character_modifier = lifeforce_modifier_major
@@ -83,7 +86,7 @@
 						}
 						has_trait = lifestyle_blood_mage
 						piety_level >= 4
-						bm_total_blood_mage_xp >= xp_req_tier_4
+						scope:actor.bm_total_blood_mage_xp >= 100
 						piety >= 400
 						has_character_modifier = lifeforce_modifier_superior
 					}
@@ -140,12 +143,7 @@
 					modifier = minor_blood_rune_modifier
 				}
 			}
-			scope:recipient = {
-				save_scope_as = rune_target
-			}
-			scope:actor = {
-				trigger_event = { id = bm_blood_runes.001 }
-			}
+
 		}
 		else_if = {
 			limit = {
@@ -238,7 +236,7 @@
 			add = 40
 		}
 		modifier = {
-			scope:recipient = { has_trait = blood_golem }
+			scope:recipient = { house ?= house:bm_house_golem }
 			add = 40
 		}
 		ai_willingness_to_do_positive_magic = yes

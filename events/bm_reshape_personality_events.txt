@@ -1,0 +1,292 @@
+﻿namespace = bm_reshape_personality
+
+bm_reshape_personality.0001 = {
+	type = character_event
+	title = bm_reshape_personality.0001.title
+	desc = bm_reshape_personality.0001.desc
+	theme = witchcraft
+
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = scope:recipient
+		animation = personality_fearful
+	}
+
+	immediate = {
+		scope:recipient = {
+			every_character_trait = {
+				limit = { has_trait_category = personality }
+				add_to_list = recipient_personality_traits
+			}
+		}
+		if = {
+			limit = { list_size:recipient_personality_traits > 0 }
+			ordered_in_list = {
+				list = recipient_personality_traits
+				save_scope_as = recipient_ptrait_1
+				remove_from_list = recipient_personality_traits
+			}
+		}
+		if = {
+			limit = { list_size:recipient_personality_traits > 0 }
+			ordered_in_list = {
+				list = recipient_personality_traits
+				save_scope_as = recipient_ptrait_2
+				remove_from_list = recipient_personality_traits
+			}
+		}
+		if = {
+			limit = { list_size:recipient_personality_traits > 0 }
+			ordered_in_list = {
+				list = recipient_personality_traits
+				save_scope_as = recipient_ptrait_3
+				remove_from_list = recipient_personality_traits
+			}
+		}
+		if = {
+			limit = { list_size:recipient_personality_traits > 0 }
+			ordered_in_list = {
+				list = recipient_personality_traits
+				save_scope_as = recipient_ptrait_4
+				remove_from_list = recipient_personality_traits
+			}
+		}
+	}
+
+	option = {
+		name = bm_reshape_personality.0001.option_1
+		trigger = { exists = scope:recipient_ptrait_1 }
+		scope:recipient_ptrait_1 = { save_scope_as = trait_to_remove }
+		trigger_event = bm_reshape_personality.0002
+		ai_chance = { base = 10 }
+	}
+
+	option = {
+		name = bm_reshape_personality.0001.option_2
+		trigger = { exists = scope:recipient_ptrait_2 }
+		scope:recipient_ptrait_2 = { save_scope_as = trait_to_remove }
+		trigger_event = bm_reshape_personality.0002
+		ai_chance = { base = 10 }
+	}
+
+	option = {
+		name = bm_reshape_personality.0001.option_3
+		trigger = { exists = scope:recipient_ptrait_3 }
+		scope:recipient_ptrait_3 = { save_scope_as = trait_to_remove }
+		trigger_event = bm_reshape_personality.0002
+		ai_chance = { base = 10 }
+	}
+
+	option = {
+		name = bm_reshape_personality.0001.option_4
+		trigger = { exists = scope:recipient_ptrait_4 }
+		scope:recipient_ptrait_4 = { save_scope_as = trait_to_remove }
+		trigger_event = bm_reshape_personality.0002
+		ai_chance = { base = 10 }
+	}
+
+	option = {
+		name = bm_reshape_personality.0001.cancel
+		add_piety = 250
+		ai_chance = { base = 0 }
+	}
+}
+
+bm_reshape_personality.0002 = {
+	type = character_event
+	title = bm_reshape_personality.0002.title
+	desc = bm_reshape_personality.0002.desc
+	theme = witchcraft
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:recipient
+		animation = ecstasy
+	}
+
+	immediate = {
+		every_character_trait = {
+			limit = {
+				has_trait_category = personality
+				NOT = { scope:recipient = { has_trait = prev } }
+			}
+			add_to_list = actor_eligible_traits
+		}
+		if = {
+			limit = { list_size:actor_eligible_traits > 0 }
+			ordered_in_list = {
+				list = actor_eligible_traits
+				save_scope_as = actor_ptrait_1
+				remove_from_list = actor_eligible_traits
+			}
+		}
+		if = {
+			limit = { list_size:actor_eligible_traits > 0 }
+			ordered_in_list = {
+				list = actor_eligible_traits
+				save_scope_as = actor_ptrait_2
+				remove_from_list = actor_eligible_traits
+			}
+		}
+		if = {
+			limit = { list_size:actor_eligible_traits > 0 }
+			ordered_in_list = {
+				list = actor_eligible_traits
+				save_scope_as = actor_ptrait_3
+				remove_from_list = actor_eligible_traits
+			}
+		}
+		if = {
+			limit = { list_size:actor_eligible_traits > 0 }
+			ordered_in_list = {
+				list = actor_eligible_traits
+				save_scope_as = actor_ptrait_4
+				remove_from_list = actor_eligible_traits
+			}
+		}
+	}
+
+	option = {
+		name = bm_reshape_personality.0002.option_1
+		trigger = { exists = scope:actor_ptrait_1 }
+		scope:actor_ptrait_1 = { save_scope_as = trait_to_add }
+		scope:recipient = {
+			remove_trait = scope:trait_to_remove
+			scope:trait_to_add = {
+				every_opposite_trait = {
+					limit = { scope:recipient = { has_trait = prev } }
+					scope:recipient = { remove_trait = prev }
+				}
+			}
+			add_trait = scope:trait_to_add
+			add_opinion = {
+				target = root
+				modifier = bm_harmonized_mind_opinion
+				opinion = 25
+			}
+		}
+		blood_magic_used_major = yes
+		add_shared_bm_bk_xp = {
+			TRACK = enlightenment
+			XP = 4
+		}
+		send_interface_toast = {
+			title = bm_reshape_personality.toast.title
+			desc = bm_reshape_personality.toast.desc
+			left_icon = root
+			right_icon = scope:recipient
+		}
+		ai_chance = { base = 10 }
+	}
+
+	option = {
+		name = bm_reshape_personality.0002.option_2
+		trigger = { exists = scope:actor_ptrait_2 }
+		scope:actor_ptrait_2 = { save_scope_as = trait_to_add }
+		scope:recipient = {
+			remove_trait = scope:trait_to_remove
+			scope:trait_to_add = {
+				every_opposite_trait = {
+					limit = { scope:recipient = { has_trait = prev } }
+					scope:recipient = { remove_trait = prev }
+				}
+			}
+			add_trait = scope:trait_to_add
+			add_opinion = {
+				target = root
+				modifier = bm_harmonized_mind_opinion
+				opinion = 25
+			}
+		}
+		blood_magic_used_major = yes
+		add_shared_bm_bk_xp = {
+			TRACK = enlightenment
+			XP = 4
+		}
+		send_interface_toast = {
+			title = bm_reshape_personality.toast.title
+			desc = bm_reshape_personality.toast.desc
+			left_icon = root
+			right_icon = scope:recipient
+		}
+		ai_chance = { base = 10 }
+	}
+
+	option = {
+		name = bm_reshape_personality.0002.option_3
+		trigger = { exists = scope:actor_ptrait_3 }
+		scope:actor_ptrait_3 = { save_scope_as = trait_to_add }
+		scope:recipient = {
+			remove_trait = scope:trait_to_remove
+			scope:trait_to_add = {
+				every_opposite_trait = {
+					limit = { scope:recipient = { has_trait = prev } }
+					scope:recipient = { remove_trait = prev }
+				}
+			}
+			add_trait = scope:trait_to_add
+			add_opinion = {
+				target = root
+				modifier = bm_harmonized_mind_opinion
+				opinion = 25
+			}
+		}
+		blood_magic_used_major = yes
+		add_shared_bm_bk_xp = {
+			TRACK = enlightenment
+			XP = 4
+		}
+		send_interface_toast = {
+			title = bm_reshape_personality.toast.title
+			desc = bm_reshape_personality.toast.desc
+			left_icon = root
+			right_icon = scope:recipient
+		}
+		ai_chance = { base = 10 }
+	}
+
+	option = {
+		name = bm_reshape_personality.0002.option_4
+		trigger = { exists = scope:actor_ptrait_4 }
+		scope:actor_ptrait_4 = { save_scope_as = trait_to_add }
+		scope:recipient = {
+			remove_trait = scope:trait_to_remove
+			scope:trait_to_add = {
+				every_opposite_trait = {
+					limit = { scope:recipient = { has_trait = prev } }
+					scope:recipient = { remove_trait = prev }
+				}
+			}
+			add_trait = scope:trait_to_add
+			add_opinion = {
+				target = root
+				modifier = bm_harmonized_mind_opinion
+				opinion = 25
+			}
+		}
+		blood_magic_used_major = yes
+		add_shared_bm_bk_xp = {
+			TRACK = enlightenment
+			XP = 4
+		}
+		send_interface_toast = {
+			title = bm_reshape_personality.toast.title
+			desc = bm_reshape_personality.toast.desc
+			left_icon = root
+			right_icon = scope:recipient
+		}
+		ai_chance = { base = 10 }
+	}
+
+	option = {
+		name = bm_reshape_personality.0002.cancel
+		add_piety = 250
+		ai_chance = { base = 0 }
+	}
+}

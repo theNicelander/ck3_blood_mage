@@ -1,6 +1,6 @@
 ﻿@bm_common_health = 0.1
-@bm_common_life_expectancy = 2
-@bm_common_years_of_fertility = 1
+@bm_common_life_expectancy = 2.5
+@bm_common_years_of_fertility = 1.25
 @bm_common_epidemic_resistance = 1
 
 lifestyle_blood_mage = {
@@ -93,7 +93,6 @@ lifestyle_blood_mage = {
             50 = {
                 # specific
                 stewardship_per_piety_level = 1
-                prowess_per_piety_level = 1
                 vassal_limit = 5
             }
             60 = {
@@ -155,7 +154,7 @@ lifestyle_blood_mage = {
             }
             100 = {
                 # specific
-                stewardship_per_piety_level = 1
+                stewardship_per_piety_level = 0.5
                 vassal_limit = 10
                 no_prowess_loss_from_age = yes
             }
@@ -220,7 +219,6 @@ lifestyle_blood_mage = {
             50 = {
                 # specific
                 intrigue_per_piety_level = 1
-                prowess_per_piety_level = 1
                 max_hostile_schemes_add = 1
             }
             60 = {
@@ -285,7 +283,7 @@ lifestyle_blood_mage = {
             }
             100 = {
                 # specific
-                intrigue_per_piety_level = 1
+                intrigue_per_piety_level = 0.5
                 no_prowess_loss_from_age = yes
                 max_hostile_schemes_add = 1
             }
@@ -300,10 +298,10 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                general_opinion = 2
-                vassal_opinion = 1.5
-                monthly_prestige = 0.25
-                monthly_prestige_gain_mult = 0.06
+                general_opinion = 1.5
+                vassal_opinion = 1.0
+                monthly_prestige = 0.175
+                monthly_prestige_gain_mult = 0.04
             }
             20 = {
                 # common
@@ -313,10 +311,10 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                general_opinion = 2
-                vassal_opinion = 1.5
-                monthly_prestige = 0.25
-                monthly_prestige_gain_mult = 0.06
+                general_opinion = 1.5
+                vassal_opinion = 1.0
+                monthly_prestige = 0.175
+                monthly_prestige_gain_mult = 0.04
             }
             30 = {
                 # common
@@ -326,10 +324,10 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                general_opinion = 2
-                vassal_opinion = 1.5
-                monthly_prestige = 0.25
-                monthly_prestige_gain_mult = 0.06
+                general_opinion = 1.5
+                vassal_opinion = 1.0
+                monthly_prestige = 0.175
+                monthly_prestige_gain_mult = 0.04
             }
             40 = {
                 # common
@@ -339,15 +337,14 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                general_opinion = 2
-                vassal_opinion = 1.5
-                monthly_prestige = 0.25
-                monthly_prestige_gain_mult = 0.06
+                general_opinion = 1.5
+                vassal_opinion = 1.0
+                monthly_prestige = 0.175
+                monthly_prestige_gain_mult = 0.04
             }
             50 = {
                 # specific
                 diplomacy_per_piety_level = 1
-                prowess_per_piety_level = 1
             }
             60 = {
                 # common
@@ -357,10 +354,10 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                general_opinion = 2
-                vassal_opinion = 1.5
-                monthly_prestige = 0.25
-                monthly_prestige_gain_mult = 0.06
+                general_opinion = 1.5
+                vassal_opinion = 1.0
+                monthly_prestige = 0.175
+                monthly_prestige_gain_mult = 0.04
             }
             70 = {
                 # common
@@ -370,10 +367,10 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                general_opinion = 2
-                vassal_opinion = 1.5
-                monthly_prestige = 0.25
-                monthly_prestige_gain_mult = 0.06
+                general_opinion = 1.5
+                vassal_opinion = 1.0
+                monthly_prestige = 0.175
+                monthly_prestige_gain_mult = 0.04
             }
             80 = {
                 # common
@@ -383,10 +380,10 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                general_opinion = 2
-                vassal_opinion = 1.5
-                monthly_prestige = 0.25
-                monthly_prestige_gain_mult = 0.06
+                general_opinion = 1.5
+                vassal_opinion = 1.0
+                monthly_prestige = 0.175
+                monthly_prestige_gain_mult = 0.04
             }
             90 = {
                 # common
@@ -396,14 +393,14 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                general_opinion = 2
-                vassal_opinion = 1.5
-                monthly_prestige = 0.25
-                monthly_prestige_gain_mult = 0.06
+                general_opinion = 1.5
+                vassal_opinion = 1.0
+                monthly_prestige = 0.175
+                monthly_prestige_gain_mult = 0.04
             }
             100 = {
                 # specific
-                diplomacy_per_piety_level = 1
+                diplomacy_per_piety_level = 0.5
                 no_prowess_loss_from_age = yes
                 character_max_piety_level_add = 1
             }
@@ -418,8 +415,8 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_piety = 0.25
-                monthly_piety_gain_mult = 0.06
+                monthly_piety = 0.175
+                monthly_piety_gain_mult = 0.04
             }
             20 = {
                 # common
@@ -429,8 +426,8 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_piety = 0.25
-                monthly_piety_gain_mult = 0.06
+                monthly_piety = 0.175
+                monthly_piety_gain_mult = 0.04
             }
             30 = {
                 # common
@@ -440,8 +437,8 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_piety = 0.25
-                monthly_piety_gain_mult = 0.06
+                monthly_piety = 0.175
+                monthly_piety_gain_mult = 0.04
             }
             40 = {
                 # common
@@ -451,13 +448,12 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_piety = 0.25
-                monthly_piety_gain_mult = 0.06
+                monthly_piety = 0.175
+                monthly_piety_gain_mult = 0.04
             }
             50 = {
                 # specific
                 learning_per_piety_level = 1
-                prowess_per_piety_level = 1
             }
             60 = {
                 # common
@@ -467,8 +463,8 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_piety = 0.25
-                monthly_piety_gain_mult = 0.06
+                monthly_piety = 0.175
+                monthly_piety_gain_mult = 0.04
             }
             70 = {
                 # common
@@ -478,8 +474,8 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_piety = 0.25
-                monthly_piety_gain_mult = 0.06
+                monthly_piety = 0.175
+                monthly_piety_gain_mult = 0.04
             }
             80 = {
                 # common
@@ -489,8 +485,8 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_piety = 0.25
-                monthly_piety_gain_mult = 0.06
+                monthly_piety = 0.175
+                monthly_piety_gain_mult = 0.04
             }
             90 = {
                 # common
@@ -500,12 +496,12 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_piety = 0.25
-                monthly_piety_gain_mult = 0.06
+                monthly_piety = 0.175
+                monthly_piety_gain_mult = 0.04
             }
             100 = {
                 # specific
-                learning_per_piety_level = 1
+                learning_per_piety_level = 0.5
                 no_prowess_loss_from_age = yes
                 character_max_piety_level_add = 1
             }
@@ -520,8 +516,8 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_dynasty_prestige = 0.15
-                monthly_lifestyle_xp_gain_mult = 0.06
+                monthly_dynasty_prestige = 0.10
+                monthly_lifestyle_xp_gain_mult = 0.04
             }
             20 = {
                 # common
@@ -531,8 +527,8 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_dynasty_prestige = 0.15
-                monthly_lifestyle_xp_gain_mult = 0.06
+                monthly_dynasty_prestige = 0.10
+                monthly_lifestyle_xp_gain_mult = 0.04
             }
             30 = {
                 # common
@@ -542,8 +538,8 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_dynasty_prestige = 0.15
-                monthly_lifestyle_xp_gain_mult = 0.06
+                monthly_dynasty_prestige = 0.10
+                monthly_lifestyle_xp_gain_mult = 0.04
             }
             40 = {
                 # common
@@ -553,12 +549,12 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_dynasty_prestige = 0.15
-                monthly_lifestyle_xp_gain_mult = 0.06
+                monthly_dynasty_prestige = 0.10
+                monthly_lifestyle_xp_gain_mult = 0.04
             }
             50 = {
                 # specific
-                piety_level_impact_mult = 0.25
+                piety_level_impact_mult = 0.175
                 prowess_per_piety_level = 1
                 negate_health_penalty_add = 0.25
             }
@@ -570,8 +566,8 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_dynasty_prestige = 0.15
-                monthly_lifestyle_xp_gain_mult = 0.06
+                monthly_dynasty_prestige = 0.10
+                monthly_lifestyle_xp_gain_mult = 0.04
             }
             70 = {
                 # common
@@ -581,8 +577,8 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_dynasty_prestige = 0.15
-                monthly_lifestyle_xp_gain_mult = 0.06
+                monthly_dynasty_prestige = 0.10
+                monthly_lifestyle_xp_gain_mult = 0.04
             }
             80 = {
                 # common
@@ -592,8 +588,8 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_dynasty_prestige = 0.15
-                monthly_lifestyle_xp_gain_mult = 0.06
+                monthly_dynasty_prestige = 0.10
+                monthly_lifestyle_xp_gain_mult = 0.04
             }
             90 = {
                 # common
@@ -603,8 +599,8 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                monthly_dynasty_prestige = 0.15
-                monthly_lifestyle_xp_gain_mult = 0.06
+                monthly_dynasty_prestige = 0.10
+                monthly_lifestyle_xp_gain_mult = 0.04
             }
             100 = {
                 # specific

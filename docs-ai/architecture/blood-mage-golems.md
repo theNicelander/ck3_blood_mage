@@ -5,7 +5,7 @@ Living technical specification for the Blood Golem construct subsystem.
 ## Executive Summary
 
 - **What:** Artificial construct champions forged from Superior Lifeforce (`blood_golem_template`). Serve as hyper-loyal knights and bodyguards in a dedicated non-inheriting house (`bm_house_golem`).
-- **How to create:** Standalone decision `blood_golem_creation_decision` (`bm_create_blood_golem.txt`) or Superior Grimoire option (`bm_cast_blood_magic_superior.001`).
+- **How to create:** Superior Grimoire option (`bm_cast_blood_magic_superior.001`) accessed via `bm_cast_blood_magic_superior_decision`.
   - **Requirements:** `lifestyle_blood_mage` or `lifestyle_blood_knight`, Devotion Rank 3 (`piety_level >= 3`), `lifeforce_modifier_superior`.
   - **Cost & Cooldown:** 500 Piety + 1 Superior Lifeforce (inflicts 3-year Superior exhaustion). Cooldown: 3 years (`bm_blood_golem_cooldown`).
   - **XP Gain:** `+5` `bloodline` XP (Blood Mage) or `+5` `vanguard` XP (Blood Knight).
@@ -50,7 +50,6 @@ Every shaping attempt in `blood_golem.002` charges a dynamic Piety cost (`golem_
 
 | Piece | File |
 | --- | --- |
-| Creation decision | `common/decisions/cast_magic/bm_create_blood_golem.txt` (`blood_golem_creation_decision`) |
 | Superior Grimoire option | `events/bm_cast_blood_magic_superior_events.txt` (`bm_cast_blood_magic_superior.001`) |
 | Creation & shaping events | `events/bm_blood_golem_events.txt` (`blood_golem.001`, `blood_golem.002`) |
 | Shaping duel & backlash effects | `common/scripted_effects/bm_golem_duel_effect.txt` (`golem_duel_effect`, `golem_duel_effect_level`) |
