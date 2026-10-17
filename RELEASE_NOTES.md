@@ -53,7 +53,7 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 
 - **Consolidated Grimoires**: Replaced scattered individual spell decisions with organized Grimoire menus:
   - **Minor Blood Magic**: Fast utility rituals including Lifeforce Attunement, Minor Blood Runes, Vitality Cleansing, and Lifeforce Condensation.
-  - **Major Blood Magic**: Powerful rituals including Blood Empowerment, Education Enhancement (Tiers 1★–4★), Major Blood Runes, Congenital Trait Manifestation, and House Blessings.
+  - **Major Blood Magic**: Powerful rituals including Blood Empowerment, Condense Lifeforce (distilling Minor and Major into Superior Lifeforce), Education Enhancement (Tiers 1★–4★), Major Blood Runes, Congenital Trait Manifestation, and House Blessings.
   - **Superior Blood Magic**: Legendary rites including Blood Golem Creation, 5★ Master Educations, Secondary Educations, and Superior Capstone Runes.
 - **Inline Option-List Widgets**: Integrated CK3's modern option-list interface for key rituals—letting you preview bonuses, track icons, costs, and requirements in a clean window without multi-step event spam:
   - *Attune Lifeforce*: Select your yearly lifestyle XP bonus.

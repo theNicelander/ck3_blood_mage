@@ -150,6 +150,7 @@ bm_cast_blood_magic_minor.001 = {
 	}
 
 	# Condense Lifeforce (1 Minor Lifeforce + 100 Piety -> 1 Major Lifeforce)
+	# NOTE: Do NOT move Condense Lifeforce out into a standalone decision. It belongs strictly inside this Cast Minor Blood Magic Grimoire event.
 	option = {
 		name = bm_cast_blood_magic_minor.001.condense
 		trigger = {
