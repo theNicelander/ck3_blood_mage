@@ -8,6 +8,11 @@ seek_power.001 = {
     desc = seek_power.001.desc
     theme = hunt_activity
 
+    left_portrait = {
+        character = root
+        animation = idle
+    }
+
     option = {
         name = seek_power.001.a
 
@@ -37,12 +42,6 @@ seek_power.001 = {
         }
         ai_chance = { base = 50 }
     }
-
-    # Portraits
-    left_portrait = {
-        character = root
-        animation = idle
-    }
 }
 
 # New event for animal sacrifice
@@ -51,6 +50,11 @@ seek_power.002 = {
     title = seek_power.002.title
     desc = seek_power.002.desc
     theme = hunt_activity
+
+    left_portrait = {
+        character = root
+        animation = idle
+    }
 
     option = {
         name = seek_power.002.a
@@ -64,12 +68,6 @@ seek_power.002 = {
             }
         }
         ai_chance = { base = 50 }
-    }
-
-    # Portraits
-    left_portrait = {
-        character = root
-        animation = idle
     }
 }
 
@@ -86,6 +84,21 @@ seek_power.003 = {
         }
     }
     theme = hunt_activity
+
+    left_portrait = {
+        character = root
+        animation = idle
+    }
+    right_portrait = {
+        character = scope:recipient
+        animation = beg
+    }
+    lower_right_portrait = {
+        trigger = {
+            exists = scope:escort_knight
+        }
+        character = scope:escort_knight
+    }
 
     # Create the traveler/minor noble, and 50% chance to also spawn a martial escort knight
     immediate = {
@@ -437,20 +450,6 @@ seek_power.003 = {
         add_stress = -10
         ai_chance = { base = 5 }
     }
-
-    # Portraits
-    left_portrait = {
-        character = root
-        animation = idle
-    }
-    right_portrait = {
-        character = scope:recipient
-        animation = beg
-    }
-    lower_right_portrait = {
-        character = scope:escort_knight
-        outfit_tags = { military_outfit }
-    }
 }
 
 
@@ -459,6 +458,11 @@ seek_power.004 = {
     title = seek_power.004.title
     desc = seek_power.004.desc
     theme = hunt_activity
+
+    left_portrait = {
+        character = root
+        animation = idle
+    }
 
     option = {
         name = seek_power.004.a
@@ -476,12 +480,6 @@ seek_power.004 = {
             }
         }
         ai_chance = { base = 50 }
-    }
-
-    # Portraits
-    left_portrait = {
-        character = root
-        animation = idle
     }
 }
 
@@ -511,6 +509,18 @@ seek_power.006 = {
         }
     }
     theme = battle
+
+    left_portrait = {
+        character = root
+        animation = marshal
+    }
+    right_portrait = {
+        trigger = {
+            exists = scope:duel_opponent
+        }
+        character = scope:duel_opponent
+        animation = pain
+    }
 
     immediate = {
         if = {
@@ -601,15 +611,6 @@ seek_power.006 = {
         ai_chance = { base = 100 }
         add_stress = 15
         add_blood_knight_xp = { TRACK = vanguard XP = 1 }
-    }
-
-    left_portrait = {
-        character = root
-        animation = marshal
-    }
-    right_portrait = {
-        character = scope:duel_opponent
-        animation = pain
     }
 }
 
