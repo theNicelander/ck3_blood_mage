@@ -6,8 +6,8 @@ Living technical specification for the Blood Empowerment subsystem.
 
 - **What:** Secondary lifestyle trait `lifestyle_blood_empowerment`. 5 progression tracks (`dynasty`, `mastery`, `presence`, `prosperity`, `shadows`), max 100 XP each.
 - **Acquisition:** Automatically granted at base rank (0 XP) simultaneously when acquiring `lifestyle_blood_mage` or `lifestyle_blood_knight`, ensuring both traits sit adjacent in the character interface.
-- **Advancement:** Dedicated inline option-list decision `bm_channel_blood_empowerment_decision` in the Blood Magic Situation panel (`bm_blood_mage_story`) and Decisions tab.
-  - Cost: 150 Piety + consumes `lifeforce_modifier_major`. Req: `piety_level >= 1`. Cooldown: none.
+- **Advancement:** Cast Major Blood Magic Grimoire (`bm_cast_blood_magic_major_decision` -> `bm_cast_blood_magic_major.001` -> `bm_blood_empowerment_event.001`).
+  - Cost: 150 Piety + consumes `lifeforce_modifier_major`. Req: `piety_level >= 1`. Cooldown: none. Zero-cost backout allows returning to Grimoire freely.
   - XP Gain: +3 `enlightenment` XP (Blood Mage & Blood Knight) + 10 XP in chosen empowerment track (via `add_blood_empowerment_xp`).
   - Fallback: Once all 5 tracks reach 100 XP, unlocks `Versatility` option granting 10-year `temporary_buff_self` and rolls for permanent skill/prowess increases.
 
@@ -36,5 +36,5 @@ Each track spans 10 levels (10 to 100 XP, +10 XP per channel). Modifiers stack a
 
 ## Key Mechanics
 
-- **Advancement Decision:** Handled by `bm_channel_blood_empowerment_decision` using CK3 1.20's `decision_view_widget_option_list_generic`. Displays each track's dedicated `.dds` icon and milestone breakdown. Consumes 150 Piety + Major Lifeforce, granting `+3` `enlightenment` XP and `+10` track XP.
+- **Advancement Ritual:** Housed inside the Cast Major Blood Magic Grimoire (`bm_cast_blood_magic_major.001` -> `bm_blood_empowerment_event.001`). Displays active bonuses, milestones, and capstone breakdowns. Consumes 150 Piety + Major Lifeforce only when a discipline is chosen, granting `+3` `enlightenment` XP and `+10` track XP, with a zero-cost return to the Grimoire.
 - **Roster:** Retinue automatically tracked in Blood Magic story panel via `bm_refresh_blood_magic_rosters_effect`.

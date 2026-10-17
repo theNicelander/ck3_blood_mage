@@ -86,7 +86,7 @@ Requires Major Lifeforce (`lifeforce_modifier_major`) and Devotion level >= 1. A
 | Action / Ritual | Interface | Cost / Prerequisite | Effect | XP Gain |
 | --- | --- | --- | --- | --- |
 | **Cast Major Magic Grimoire** | Decision (`bm_cast_blood_magic_major_decision`) | Major Lifeforce, Piety level >= 1 | Opens major rituals event grimoire (`bm_cast_blood_magic_major.001`). | None |
-| **Blood Empowerment** | Decision (`bm_channel_blood_empowerment_decision`) | 150 Piety + Major Lifeforce, Piety level >= 1 | Unlocks/advances secondary lifestyle trait `lifestyle_blood_empowerment` (+10 XP in chosen track) via option-list widget decision. | +3 Enlightenment (+10 Empowerment) |
+| **Blood Empowerment** | Grimoire Option (`bm_blood_empowerment_event.001`) | 150 Piety + Major Lifeforce, Piety level >= 1 | Unlocks/advances secondary lifestyle trait `lifestyle_blood_empowerment` (+10 XP in chosen track) via Grimoire event modal. | +3 Enlightenment (+10 Empowerment) |
 | **Improve Education (1★–4★)** | Grimoire Option | 75–200 Piety + Major Lifeforce, Piety level >= 3, 2-yr CD | Upgrades education trait star tier (up to tier 4) via mental duel. | +5 Enlightenment |
 | **Inscribe Major Blood Rune (Self)** | Grimoire Option | 200 Piety + Major Lifeforce, Minor Rune active, Piety level >= 3, 5-yr CD | Upgrades `minor_blood_rune_modifier` to `major_blood_rune_modifier` (improves yearly Lifeforce pulse). | +5 Ancient |
 | **Upgrade Major Rune on Other** | Interaction (`bm_inscribe_rune_other_interaction`) | 200 Piety + Major Lifeforce, Minor Rune on target, Piety level >= 3, >= 50 Track XP, 5-yr CD | Upgrades target's Blood Rune from Minor to Major depth. | +5 Benediction |

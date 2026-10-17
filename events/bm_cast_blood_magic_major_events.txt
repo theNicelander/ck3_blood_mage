@@ -11,6 +11,28 @@ bm_cast_blood_magic_major.001 = {
 		animation = personality_rational
 	}
 
+	# Channel Blood Empowerment
+	option = {
+		name = bm_cast_blood_magic_major.001.empowerment
+		trigger = {
+			piety_level >= 1
+			piety >= 150
+			has_character_modifier = lifeforce_modifier_major
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		custom_tooltip = bm_cast_blood_magic_major.001.empowerment_tt
+		trigger_event = { id = bm_blood_empowerment_event.001 }
+		ai_chance = {
+			base = 100
+			modifier = {
+				health <= fine_health
+				add = -100
+			}
+		}
+	}
+
 	# Improve Education
 	option = {
 		name = bm_cast_blood_magic_major.001.improve_education

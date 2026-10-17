@@ -32,8 +32,7 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
   - **Presence (Mesmeric Allure)**: Boosts general opinion, stress loss, and prestige gain. Grants extra Diplomacy and Martial per Fame level, raises your maximum Fame level cap, and completely eliminates different-faith opinion penalties at 100 XP.
   - **Prosperity (War Chest & Logistics)**: Expands domain limit, boosts monthly gold per Devotion level, and increases Men-at-Arms regiment size (+1 at 50 XP, +2 at 100 XP) and regiment slots (+1 slot at 100 XP).
   - **Shadows (Occult Defense & Intrigue)**: Drastically reduces enemy hostile scheme success chance (-15% at 50 XP, -30% at 100 XP), unlocks an extra hostile scheme slot at 100 XP, and grants scaling Intrigue and Prowess.
-- **Full Devotion Synergy**: Mastering all 5 empowerment tracks provides an additional cumulative **+25% Devotion Impact** (+5% per track capstone).
-- **Inline Option-List Widget**: Channeling Blood Empowerment now features a dedicated in-game widget displaying each track's emblem, active bonuses, and next milestone.
+- **Major Grimoire Integration**: Channeling Blood Empowerment is housed directly within the Cast Major Blood Magic Grimoire, presenting detailed breakdowns of milestones and capstones with zero-cost backout navigation.
 
 ---
 
@@ -59,7 +58,6 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 - **Inline Option-List Widgets**: Integrated CK3's modern option-list interface for key rituals—letting you preview bonuses, track icons, costs, and requirements in a clean window without multi-step event spam:
   - *Attune Lifeforce*: Select your yearly lifestyle XP bonus.
   - *Carve Galdrastafir*: Choose and preview your flesh-carved magical stave.
-  - *Channel Blood Empowerment*: Choose and invest in your somatic tracks.
 - **37-Condition Healing & Situation Alerts**:
   - Cure up to 37 physical and mental ailments on yourself, your courtiers, family, or prisoners—ranging from illnesses and wounds to blindness, severed limbs, and melancholy.
   - A persistent **"You Can Heal Someone"** notification appears in the Current Situation dropdown whenever an eligible courtier or family member falls sick or injured.
