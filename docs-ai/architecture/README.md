@@ -44,7 +44,7 @@ flowchart LR
     end
 
     subgraph Progression ["4. Long-Term Progression & World Systems"]
-        P1["12 Lifestyle Tracks (10–100 XP)\n• Vitality Baseline (Tiers 10–40, 60–90)\n• 50 XP Devotion Scaling Milestones\n• 100 XP Capstones: Level 6–8 Devotion & Age Prowess Lock"]
+        P1["12 Lifestyle Tracks (10–100 XP)\n• Vitality Baseline (Tiers 10–40, 60–90)\n• 50 XP Devotion Scaling Milestones\n• 100 XP Capstones: Apex Devotion Scaling & Age Prowess Lock"]
         P2["5 Galdrastafir Blood Runes (Minor -> Major -> Superior Capstones)"]
         P3["7 Dynasty House Modifiers + Immortal Blood Golems (bm_house_golem)"]
         P4["5-Tier Blood Shrine Domicile + Blóðtrú / Ketsudō / Xuédào Faiths"]
