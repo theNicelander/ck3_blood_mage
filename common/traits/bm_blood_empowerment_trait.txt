@@ -1,9 +1,4 @@
-﻿@bm_common_health = 0.1
-@bm_common_life_expectancy = 2.5
-@bm_common_years_of_fertility = 1.25
-@bm_common_epidemic_resistance = 1
-
-lifestyle_blood_empowerment = {
+﻿lifestyle_blood_empowerment = {
     category = lifestyle
     flag = reweaving_lifestyle_trait
     icon = bm_interactions.dds
@@ -14,533 +9,179 @@ lifestyle_blood_empowerment = {
     tracks = {
         dynasty = {
             10 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
+                fertility = 0.05
                 positive_random_genetic_chance = 0.03
                 positive_inactive_inheritance_chance = 0.03
-                genetic_trait_strengthen_chance = 0.025
-                fertility = 0.05
-                close_relative_opinion = 2.5
-                dynasty_opinion = 1.25
             }
             20 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
+                fertility = 0.05
                 positive_random_genetic_chance = 0.03
                 positive_inactive_inheritance_chance = 0.03
-                genetic_trait_strengthen_chance = 0.025
-                fertility = 0.05
-                close_relative_opinion = 2.5
-                dynasty_opinion = 1.25
             }
             30 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
+                fertility = 0.05
                 positive_random_genetic_chance = 0.03
                 positive_inactive_inheritance_chance = 0.03
-                genetic_trait_strengthen_chance = 0.025
-                fertility = 0.05
-                close_relative_opinion = 2.5
-                dynasty_opinion = 1.25
             }
             40 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
+                fertility = 0.05
                 positive_random_genetic_chance = 0.03
                 positive_inactive_inheritance_chance = 0.03
-                genetic_trait_strengthen_chance = 0.025
-                fertility = 0.05
-                close_relative_opinion = 2.5
-                dynasty_opinion = 1.25
             }
             50 = {
-                # specific
-                inbreeding_chance = -0.5
-                negate_fertility_penalty_add = 0.25
-                monthly_dynasty_prestige_mult = 0.05
+                years_of_fertility = 10
             }
             60 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
+                fertility = 0.05
                 positive_random_genetic_chance = 0.035
                 positive_inactive_inheritance_chance = 0.035
-                genetic_trait_strengthen_chance = 0.025
-                fertility = 0.05
-                close_relative_opinion = 2.5
-                dynasty_opinion = 1.25
             }
             70 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
+                fertility = 0.05
                 positive_random_genetic_chance = 0.035
                 positive_inactive_inheritance_chance = 0.035
-                genetic_trait_strengthen_chance = 0.025
-                fertility = 0.05
-                close_relative_opinion = 2.5
-                dynasty_opinion = 1.25
             }
             80 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
+                fertility = 0.05
                 positive_random_genetic_chance = 0.03
                 positive_inactive_inheritance_chance = 0.03
-                genetic_trait_strengthen_chance = 0.025
-                fertility = 0.05
-                close_relative_opinion = 2.5
-                dynasty_opinion = 1.25
             }
             90 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
+                fertility = 0.05
                 positive_random_genetic_chance = 0.03
                 positive_inactive_inheritance_chance = 0.03
-                genetic_trait_strengthen_chance = 0.025
-                fertility = 0.05
-                close_relative_opinion = 2.5
-                dynasty_opinion = 1.25
             }
             100 = {
-                # specific
-                inbreeding_chance = -0.5
-                negate_fertility_penalty_add = 0.25
-                monthly_dynasty_prestige_mult = 0.1
+                years_of_fertility = 15
                 no_prowess_loss_from_age = yes
             }
         }
 
         mastery = {
             10 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                monthly_lifestyle_xp_gain_mult = 0.03
-                character_travel_speed_mult = 0.025
-                character_travel_safety = 2.5
-                owned_personal_scheme_success_chance_add = 4
-                personal_scheme_phase_duration_add = -3
+                monthly_lifestyle_xp_gain_mult = 0.04
             }
             20 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                monthly_lifestyle_xp_gain_mult = 0.03
-                character_travel_speed_mult = 0.025
-                character_travel_safety = 2.5
-                owned_personal_scheme_success_chance_add = 4
-                personal_scheme_phase_duration_add = -3
-                max_learn_language_schemes_add = 1
+                monthly_lifestyle_xp_gain_mult = 0.04
             }
             30 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                monthly_lifestyle_xp_gain_mult = 0.03
-                character_travel_speed_mult = 0.025
-                character_travel_safety = 2.5
-                owned_personal_scheme_success_chance_add = 4
-                personal_scheme_phase_duration_add = -3
+                monthly_lifestyle_xp_gain_mult = 0.04
             }
             40 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                monthly_lifestyle_xp_gain_mult = 0.03
-                character_travel_speed_mult = 0.025
-                character_travel_safety = 2.5
-                owned_personal_scheme_success_chance_add = 4
-                personal_scheme_phase_duration_add = -3
-                max_learn_language_schemes_add = 1
+                monthly_lifestyle_xp_gain_mult = 0.04
             }
             50 = {
-                # specific
                 max_personal_schemes_add = 1
-                learning_per_prestige_level = 1
-                cultural_acceptance_gain_mult = 0.15
             }
             60 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                monthly_lifestyle_xp_gain_mult = 0.03
-                character_travel_speed_mult = 0.025
-                character_travel_safety = 2.5
-                owned_personal_scheme_success_chance_add = 4
-                personal_scheme_phase_duration_add = -3
-                max_learn_language_schemes_add = 1
+                monthly_lifestyle_xp_gain_mult = 0.04
             }
             70 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                monthly_lifestyle_xp_gain_mult = 0.03
-                character_travel_speed_mult = 0.025
-                character_travel_safety = 2.5
-                owned_personal_scheme_success_chance_add = 4
-                personal_scheme_phase_duration_add = -3
+                monthly_lifestyle_xp_gain_mult = 0.04
             }
             80 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                monthly_lifestyle_xp_gain_mult = 0.03
-                character_travel_speed_mult = 0.025
-                character_travel_safety = 2.5
-                owned_personal_scheme_success_chance_add = 4
-                personal_scheme_phase_duration_add = -3
-                max_learn_language_schemes_add = 1
+                monthly_lifestyle_xp_gain_mult = 0.04
             }
             90 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                monthly_lifestyle_xp_gain_mult = 0.03
-                character_travel_speed_mult = 0.025
-                character_travel_safety = 2.5
-                owned_personal_scheme_success_chance_add = 4
-                personal_scheme_phase_duration_add = -3
+                monthly_lifestyle_xp_gain_mult = 0.04
             }
             100 = {
-                # specific
                 max_personal_schemes_add = 1
-                learning_per_prestige_level = 1
-                ignore_negative_culture_opinion = yes
                 no_prowess_loss_from_age = yes
             }
         }
 
         presence = {
             10 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                attraction_opinion = 3.75
                 courtier_and_guest_opinion = 2.5
                 stress_loss_mult = 0.05
-                stress_gain_mult = -0.03
                 short_reign_duration_mult = -0.05
                 long_reign_bonus_mult = 0.05
             }
             20 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                attraction_opinion = 3.75
                 courtier_and_guest_opinion = 2.5
                 stress_loss_mult = 0.05
-                stress_gain_mult = -0.03
                 short_reign_duration_mult = -0.05
                 long_reign_bonus_mult = 0.05
             }
             30 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                attraction_opinion = 3.75
                 courtier_and_guest_opinion = 2.5
                 stress_loss_mult = 0.05
-                stress_gain_mult = -0.03
                 short_reign_duration_mult = -0.05
                 long_reign_bonus_mult = 0.05
             }
             40 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                attraction_opinion = 3.75
                 courtier_and_guest_opinion = 2.5
                 stress_loss_mult = 0.05
-                stress_gain_mult = -0.03
                 short_reign_duration_mult = -0.05
                 long_reign_bonus_mult = 0.05
             }
             50 = {
-                # specific
-                diplomacy_per_prestige_level = 1
-                martial_per_prestige_level = 1
                 prestige_level_impact_mult = 0.15
             }
             60 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                attraction_opinion = 3.75
                 courtier_and_guest_opinion = 2.5
                 stress_loss_mult = 0.05
-                stress_gain_mult = -0.03
                 short_reign_duration_mult = -0.05
                 long_reign_bonus_mult = 0.05
             }
             70 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                attraction_opinion = 3.75
                 courtier_and_guest_opinion = 2.5
                 stress_loss_mult = 0.05
-                stress_gain_mult = -0.03
                 short_reign_duration_mult = -0.05
                 long_reign_bonus_mult = 0.05
             }
             80 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                attraction_opinion = 3.75
                 courtier_and_guest_opinion = 2.5
                 stress_loss_mult = 0.05
-                stress_gain_mult = -0.03
                 short_reign_duration_mult = -0.05
                 long_reign_bonus_mult = 0.05
             }
             90 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                attraction_opinion = 3.75
                 courtier_and_guest_opinion = 2.5
                 stress_loss_mult = 0.05
-                stress_gain_mult = -0.03
                 short_reign_duration_mult = -0.05
                 long_reign_bonus_mult = 0.05
             }
             100 = {
-                # specific
-                character_max_prestige_level_add = 1
+                prestige_level_impact_mult = 0.15
                 ignore_different_faith_opinion = yes
-                diplomacy_per_prestige_level = 0.5
-                martial_per_prestige_level = 0.5
                 no_prowess_loss_from_age = yes
             }
         }
 
         prosperity = {
             10 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                monthly_income = 0.20
-                monthly_income_mult = 0.03
-                men_at_arms_maintenance = -0.025
-                men_at_arms_recruitment_cost = -0.025
-                domicile_build_gold_cost = -0.025
+                monthly_income_mult = 0.04
             }
             20 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                monthly_income = 0.20
-                monthly_income_mult = 0.03
-                men_at_arms_maintenance = -0.025
-                men_at_arms_recruitment_cost = -0.025
-                domicile_build_gold_cost = -0.025
+                monthly_income_mult = 0.04
             }
             30 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                monthly_income = 0.20
-                monthly_income_mult = 0.03
-                men_at_arms_maintenance = -0.025
-                men_at_arms_recruitment_cost = -0.025
-                domicile_build_gold_cost = -0.025
+                monthly_income_mult = 0.04
+                domain_limit = 1
             }
             40 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                monthly_income = 0.20
-                monthly_income_mult = 0.03
-                men_at_arms_maintenance = -0.025
-                men_at_arms_recruitment_cost = -0.025
-                domicile_build_gold_cost = -0.025
+                monthly_income_mult = 0.04
             }
             50 = {
-                # specific
-                men_at_arms_cap = 1
                 stewardship_per_prestige_level = 1
-                monthly_income_per_piety_level = 0.25
             }
             60 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                monthly_income = 0.20
-                monthly_income_mult = 0.03
-                men_at_arms_maintenance = -0.025
-                men_at_arms_recruitment_cost = -0.025
-                domicile_build_gold_cost = -0.025
+                monthly_income_mult = 0.04
+                domain_limit = 1
             }
             70 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                monthly_income = 0.20
-                monthly_income_mult = 0.03
-                men_at_arms_maintenance = -0.025
-                men_at_arms_recruitment_cost = -0.025
-                domicile_build_gold_cost = -0.025
+                monthly_income_mult = 0.04
             }
             80 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                monthly_income = 0.20
-                monthly_income_mult = 0.03
-                men_at_arms_maintenance = -0.025
-                men_at_arms_recruitment_cost = -0.025
-                domicile_build_gold_cost = -0.025
+                monthly_income_mult = 0.04
             }
             90 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                monthly_income = 0.20
-                monthly_income_mult = 0.03
-                men_at_arms_maintenance = -0.025
-                men_at_arms_recruitment_cost = -0.025
-                domicile_build_gold_cost = -0.025
+                monthly_income_mult = 0.04
+                domain_limit = 1
             }
             100 = {
-                # specific
-                men_at_arms_cap = 1
-                men_at_arms_limit = 1
-                domain_limit = 1
                 stewardship_per_prestige_level = 0.5
                 no_prowess_loss_from_age = yes
             }
@@ -548,121 +189,35 @@ lifestyle_blood_empowerment = {
 
         shadows = {
             10 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                enemy_hostile_scheme_success_chance_add = -4
-                enemy_hostile_scheme_phase_duration_add = 5
-                owned_scheme_secrecy_add = 5
-                negate_health_penalty_add = 0.05
+                owned_personal_scheme_success_chance_add = 4
             }
             20 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                enemy_hostile_scheme_success_chance_add = -4
-                enemy_hostile_scheme_phase_duration_add = 5
-                owned_scheme_secrecy_add = 5
-                negate_health_penalty_add = 0.05
+                owned_personal_scheme_success_chance_add = 4
             }
             30 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                enemy_hostile_scheme_success_chance_add = -4
-                enemy_hostile_scheme_phase_duration_add = 5
-                owned_scheme_secrecy_add = 5
-                negate_health_penalty_add = 0.05
+                owned_personal_scheme_success_chance_add = 4
             }
             40 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                enemy_hostile_scheme_success_chance_add = -4
-                enemy_hostile_scheme_phase_duration_add = 5
-                owned_scheme_secrecy_add = 5
-                negate_health_penalty_add = 0.05
+                owned_personal_scheme_success_chance_add = 4
             }
             50 = {
-                # specific
                 enemy_hostile_scheme_success_chance_max_add = -15
-                intrigue_per_prestige_level = 1
-                prowess_per_prestige_level = 1
             }
             60 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                enemy_hostile_scheme_success_chance_add = -4
-                enemy_hostile_scheme_phase_duration_add = 5
-                owned_scheme_secrecy_add = 5
-                negate_health_penalty_add = 0.05
+                owned_personal_scheme_success_chance_add = 4
             }
             70 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                enemy_hostile_scheme_success_chance_add = -4
-                enemy_hostile_scheme_phase_duration_add = 5
-                owned_scheme_secrecy_add = 5
-                negate_health_penalty_add = 0.05
+                owned_personal_scheme_success_chance_add = 4
             }
             80 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                enemy_hostile_scheme_success_chance_add = -4
-                enemy_hostile_scheme_phase_duration_add = 5
-                owned_scheme_secrecy_add = 5
-                negate_health_penalty_add = 0.05
+                owned_personal_scheme_success_chance_add = 4
             }
             90 = {
-                # common
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                years_of_fertility = @bm_common_years_of_fertility
-                epidemic_resistance = @bm_common_epidemic_resistance
-
-                # specific
-                enemy_hostile_scheme_success_chance_add = -4
-                enemy_hostile_scheme_phase_duration_add = 5
-                owned_scheme_secrecy_add = 5
-                negate_health_penalty_add = 0.05
+                owned_personal_scheme_success_chance_add = 4
             }
             100 = {
-                # specific
                 enemy_hostile_scheme_success_chance_max_add = -15
                 max_hostile_schemes_add = 1
-                intrigue_per_prestige_level = 0.5
-                prowess_per_prestige_level = 0.5
                 no_prowess_loss_from_age = yes
             }
         }
