@@ -3,18 +3,18 @@
 
 | Scope | Tokens |
 | --- | ---: |
-| **Total** | **9,571** |
+| **Total** | **10,169** |
 | Core | 1,978 |
 | Rules | 3,849 |
-| Skills | 3,744 |
+| Skills | 4,342 |
 
 ## Details per file
 
 | File | Category | Tokens |
 | --- | --- | ---: |
 | `AGENTS.md` | Core | 1,978 |
+| `.agents/skills/add-decision-option-widget/SKILL.md` | Skills | 1,461 |
 | `.agents/skills/caveman/SKILL.md` | Skills | 1,158 |
-| `.agents/skills/add-decision-option-widget/SKILL.md` | Skills | 863 |
 | `.agents/rules/single-combat.md` | Rules | 813 |
 | `.agents/rules/ck3-religions.md` | Rules | 705 |
 | `.agents/rules/ck3-ai.md` | Rules | 672 |
