@@ -8,7 +8,7 @@ on_travel_plan_movement = {
 
 bm_on_visited_point_of_interest = {
 	trigger = {
-		has_character_modifier = bm_rune_nabrokarstafur_superior
+		bm_has_superior_stave_trigger = { STAVE = nabrokarstafur }
 		exists = location
 		location = {
 			OR = {

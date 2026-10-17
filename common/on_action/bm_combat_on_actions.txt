@@ -12,7 +12,7 @@ bm_on_combat_end_winner = {
 				is_alive = yes
 				OR = {
 					has_trait = lifestyle_blood_knight
-					has_character_modifier = bm_rune_nabrokarstafur_superior
+					bm_has_superior_stave_trigger = { STAVE = nabrokarstafur }
 				}
 			}
 			if = {
@@ -21,7 +21,7 @@ bm_on_combat_end_winner = {
 				bm_battle_victory_lifeforce_harvest_effect = yes
 			}
 			if = {
-				limit = { has_character_modifier = bm_rune_nabrokarstafur_superior }
+				limit = { bm_has_superior_stave_trigger = { STAVE = nabrokarstafur } }
 				add_gold = bm_nabrokarstafur_battle_gold_value
 				send_interface_toast = {
 					type = event_toast_effect_good
@@ -36,7 +36,7 @@ bm_on_combat_end_winner = {
 				is_alive = yes
 				OR = {
 					has_trait = lifestyle_blood_knight
-					has_character_modifier = bm_rune_nabrokarstafur_superior
+					bm_has_superior_stave_trigger = { STAVE = nabrokarstafur }
 				}
 				NOT = { this = scope:winning_side.side_commander }
 			}
@@ -46,7 +46,7 @@ bm_on_combat_end_winner = {
 				bm_battle_victory_lifeforce_harvest_effect = yes
 			}
 			if = {
-				limit = { has_character_modifier = bm_rune_nabrokarstafur_superior }
+				limit = { bm_has_superior_stave_trigger = { STAVE = nabrokarstafur } }
 				add_gold = bm_nabrokarstafur_battle_gold_value
 				send_interface_toast = {
 					type = event_toast_effect_good

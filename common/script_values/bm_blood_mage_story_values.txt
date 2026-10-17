@@ -47,7 +47,7 @@ bm_seek_power_cooldown_days = {
 		value = 365
 	}
 	if = {
-		limit = { has_character_modifier = bm_rune_vegvisir_superior }
+		limit = { bm_has_superior_stave_trigger = { STAVE = vegvisir } }
 		multiply = 0.5
 	}
 }
@@ -61,7 +61,7 @@ bm_seek_power_cooldown_years = {
 		value = 1
 	}
 	if = {
-		limit = { has_character_modifier = bm_rune_vegvisir_superior }
+		limit = { bm_has_superior_stave_trigger = { STAVE = vegvisir } }
 		multiply = 0.5
 	}
 }

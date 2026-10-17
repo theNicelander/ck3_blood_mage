@@ -13,8 +13,8 @@ bm_on_combat_start_aegishjalmur_terror = {
 			limit = {
 				combat_attacker = {
 					OR = {
-						side_commander ?= { has_character_modifier = bm_rune_aegishjalmur_superior }
-						any_side_knight = { has_character_modifier = bm_rune_aegishjalmur_superior }
+						side_commander ?= { bm_has_superior_stave_trigger = { STAVE = aegishjalmur } }
+						any_side_knight = { bm_has_superior_stave_trigger = { STAVE = aegishjalmur } }
 					}
 				}
 			}
@@ -38,8 +38,8 @@ bm_on_combat_start_aegishjalmur_terror = {
 			limit = {
 				combat_defender = {
 					OR = {
-						side_commander ?= { has_character_modifier = bm_rune_aegishjalmur_superior }
-						any_side_knight = { has_character_modifier = bm_rune_aegishjalmur_superior }
+						side_commander ?= { bm_has_superior_stave_trigger = { STAVE = aegishjalmur } }
+						any_side_knight = { bm_has_superior_stave_trigger = { STAVE = aegishjalmur } }
 					}
 				}
 			}
