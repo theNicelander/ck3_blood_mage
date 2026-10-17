@@ -26,7 +26,7 @@
 | `events/bm_heal_ailment_events.txt` | `bm_heal_ailment` | Interaction `bm_heal_ailment` | Individual ailment curing grimoire (.0001) with options across 37 afflictions. |
 | `events/bm_mass_lifedrain.txt` | `bm_mass_lifedrain` | Decision `mass_lifedrain_prisoners_decision` | Mass execution of dungeon prisoners for Lifeforce. |
 | `events/bm_reformation_repair_events.txt` | `bm_reformation_repair` | Decision `bm_repair_blodtru_reformation_decision` | Clears bugged/corrupted temporal head title. |
-| `events/bm_seek_power_events.txt` | `bm_seek_power` | Decision `seek_power_decision` | Wilderness exploration event chain (beasts, encounters, lifeforce). |
+| `events/bm_seek_power_events.txt` | `seek_power` | Decision `seek_power_decision` | Wilderness exploration event chain (`.001`–`.004`, Single Combat output `.006`, invalidation `.007`): beast harvest, traveler + 50% escort knight encounter (friendly brawl, battlefield Single Combat duel, Learning recruitment), and ancient bleeding tree. |
 | `events/bm_trait_drain_events.txt` | `bm_trait_drain` | Interaction `trait_drain_prisoner_event_interaction` | Siphons positive congenital traits from prisoners via duel. |
 | `events/bm_yearly_events.txt` | `blood_mage_yearly_events` | Yearly pulse on-action | .001: +1 ancient & guaranteed attunement XP (+2 with Superior **Hulinhjálmur**). .002: bloodline dynasty rolls. .003: rune lifeforce rolls. .004: blood knight +1 enlightenment/ancient, ambient lifeforce roll, & guaranteed attunement XP (+2 with Superior **Hulinhjálmur**). |
 

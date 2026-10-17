@@ -4,7 +4,18 @@
 bm_blood_runes.001 = {
 	type = character_event
 	title = bm_blood_runes.001.t
-	desc = bm_blood_runes.001.desc
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					exists = scope:rune_target
+					NOT = { scope:rune_target = root }
+				}
+				desc = bm_blood_runes.001.desc_other
+			}
+			desc = bm_blood_runes.001.desc_self
+		}
+	}
 	theme = witchcraft
 
 	left_portrait = {
@@ -30,15 +41,15 @@ bm_blood_runes.001 = {
 	# 1. Vegvisir (The Wayfinder)
 	option = {
 		name = bm_blood_runes.001.vegvisir
-		custom_tooltip = bm_blood_runes.001.vegvisir.tt
 		scope:rune_target = {
 			bm_apply_selected_stave_at_current_tier_effect = { STAVE = vegvisir }
 		}
+		custom_tooltip = bm_blood_runes.001.vegvisir.tt
 		ai_chance = {
 			base = 10
 			modifier = {
 				add = 20
-				has_trait = traveler
+				has_trait = lifestyle_traveler
 			}
 		}
 	}
@@ -46,10 +57,10 @@ bm_blood_runes.001 = {
 	# 2. Aegishjalmur (Helm of Awe)
 	option = {
 		name = bm_blood_runes.001.aegishjalmur
-		custom_tooltip = bm_blood_runes.001.aegishjalmur.tt
 		scope:rune_target = {
 			bm_apply_selected_stave_at_current_tier_effect = { STAVE = aegishjalmur }
 		}
+		custom_tooltip = bm_blood_runes.001.aegishjalmur.tt
 		ai_chance = {
 			base = 10
 			modifier = {
@@ -62,15 +73,15 @@ bm_blood_runes.001 = {
 	# 3. Feingur (Awakened Seed)
 	option = {
 		name = bm_blood_runes.001.feingur
-		custom_tooltip = bm_blood_runes.001.feingur.tt
 		scope:rune_target = {
 			bm_apply_selected_stave_at_current_tier_effect = { STAVE = feingur }
 		}
+		custom_tooltip = bm_blood_runes.001.feingur.tt
 		ai_chance = {
 			base = 10
 			modifier = {
 				add = 25
-				num_of_children < 2
+				NOT = { any_child = { count >= 2 } }
 			}
 		}
 	}
@@ -78,10 +89,10 @@ bm_blood_runes.001 = {
 	# 4. Nabrokarstafur (Flayed Tithe)
 	option = {
 		name = bm_blood_runes.001.nabrokarstafur
-		custom_tooltip = bm_blood_runes.001.nabrokarstafur.tt
 		scope:rune_target = {
 			bm_apply_selected_stave_at_current_tier_effect = { STAVE = nabrokarstafur }
 		}
+		custom_tooltip = bm_blood_runes.001.nabrokarstafur.tt
 		ai_chance = {
 			base = 10
 			modifier = {
@@ -94,10 +105,10 @@ bm_blood_runes.001 = {
 	# 5. Hulinhjalmur (Unseen Shroud)
 	option = {
 		name = bm_blood_runes.001.hulinhjalmur
-		custom_tooltip = bm_blood_runes.001.hulinhjalmur.tt
 		scope:rune_target = {
 			bm_apply_selected_stave_at_current_tier_effect = { STAVE = hulinhjalmur }
 		}
+		custom_tooltip = bm_blood_runes.001.hulinhjalmur.tt
 		ai_chance = {
 			base = 10
 			modifier = {
@@ -209,10 +220,7 @@ bm_blood_runes.002 = {
 		else = {
 			increase_wounds_no_death_effect = { REASON = wounds }
 		}
-		add_character_modifier = {
-			modifier = blood_magic_major_casting_exhaustion
-			years = 1
-		}
+		temporary_negative_lifeforce_effect_major_1_year = yes
 		bm_strip_all_stave_modifiers_effect = yes
 		save_scope_as = rune_target
 		trigger_event = { id = bm_blood_runes.001 }
@@ -246,10 +254,6 @@ bm_blood_runes.002 = {
 		}
 		else = {
 			increase_wounds_no_death_effect = { REASON = wounds }
-		}
-		add_character_modifier = {
-			modifier = blood_magic_superior_casting_exhaustion
-			years = 5
 		}
 		bm_strip_all_stave_modifiers_effect = yes
 		save_scope_as = rune_target

@@ -143,16 +143,19 @@
 				limit = { scope:manifest_lifeforce_tier1 = yes }
 				add_shared_bm_bk_xp = {
 					TRACK = enlightenment
-					XP = 3
+					XP = 1
 				}
 				duel = {
 					skill = learning
 					value = 0
-					15 = {
+
+					# Critical Success (1x Major) - ~1/6 = 17% at L0, scales up to 33% at L50+
+					17 = {
 						desc = manifest_lifeforce_major_success_tt
 						compare_modifier = {
 							value = scope:duel_value
-							multiplier = 1.0
+							multiplier = 0.32
+							max = 16
 						}
 						send_interface_toast = {
 							type = event_toast_effect_good
@@ -164,11 +167,14 @@
 							bm_recount_lifeforce_stacks_effect = yes
 						}
 					}
-					45 = {
+
+					# Success (1x Minor) - ~1/3 = 33% at L0, scales up to 63% at L50+
+					33 = {
 						desc = manifest_lifeforce_minor_success_tt
 						compare_modifier = {
 							value = scope:duel_value
-							multiplier = 1.5
+							multiplier = 0.68
+							max = 30
 						}
 						send_interface_toast = {
 							type = event_toast_effect_good
@@ -180,11 +186,14 @@
 							bm_recount_lifeforce_stacks_effect = yes
 						}
 					}
-					35 = {
+
+					# Failure (Nothing) - ~1/3 = 33% at L0, drops to 3% at L50+
+					33 = {
 						desc = manifest_lifeforce_minor_failure_tt
 						compare_modifier = {
 							value = scope:duel_value
-							multiplier = -0.6
+							multiplier = -0.68
+							min = -30
 						}
 						send_interface_toast = {
 							type = event_toast_effect_neutral
@@ -192,17 +201,20 @@
 							left_icon = root
 						}
 					}
-					15 = {
+
+					# Critical Failure (Major Recoil) - ~1/6 = 17% at L0, drops to 1% at L50+
+					17 = {
 						desc = manifest_lifeforce_major_failure_tt
 						compare_modifier = {
 							value = scope:duel_value
-							multiplier = -0.3
+							multiplier = -0.32
+							min = -16
 						}
 						send_interface_toast = {
 							type = event_toast_effect_bad
 							title = manifest_lifeforce_major_failure_tt
 							left_icon = root
-							temporary_negative_lifeforce_effect_minor = yes
+							temporary_negative_lifeforce_effect_major = yes
 						}
 					}
 				}
@@ -211,16 +223,39 @@
 				limit = { scope:manifest_lifeforce_tier2 = yes }
 				add_shared_bm_bk_xp = {
 					TRACK = enlightenment
-					XP = 5
+					XP = 3
 				}
 				duel = {
 					skill = learning
 					value = 0
-					30 = {
+
+					# Critical Success (2x Major) - 25% at L0, scales up to 35% at L50+
+					25 = {
+						desc = manifest_lifeforce_double_major_success_tt
+						compare_modifier = {
+							value = scope:duel_value
+							multiplier = 0.20
+							max = 10
+						}
+						send_interface_toast = {
+							type = event_toast_effect_good
+							title = manifest_lifeforce_double_major_success_tt
+							left_icon = root
+							add_character_modifier = { modifier = lifeforce_modifier_major }
+							add_character_modifier = { modifier = lifeforce_modifier_major }
+						}
+						hidden_effect = {
+							bm_recount_lifeforce_stacks_effect = yes
+						}
+					}
+
+					# Success (1x Major) - 50% at L0, scales up to 62% at L50+
+					50 = {
 						desc = manifest_lifeforce_major_success_tt
 						compare_modifier = {
 							value = scope:duel_value
-							multiplier = 1.8
+							multiplier = 0.24
+							max = 12
 						}
 						send_interface_toast = {
 							type = event_toast_effect_good
@@ -232,32 +267,35 @@
 							bm_recount_lifeforce_stacks_effect = yes
 						}
 					}
-					60 = {
-						desc = manifest_lifeforce_minor_success_tt
-						compare_modifier = {
-							value = scope:duel_value
-							multiplier = 0.8
-						}
-						send_interface_toast = {
-							type = event_toast_effect_good
-							title = manifest_lifeforce_minor_success_tt
-							left_icon = root
-							add_character_modifier = { modifier = lifeforce_modifier_minor }
-						}
-						hidden_effect = {
-							bm_recount_lifeforce_stacks_effect = yes
-						}
-					}
-					15 = {
+
+					# Failure (Nothing) - 17% at L0, drops to 2% at L50+
+					17 = {
 						desc = manifest_lifeforce_minor_failure_tt
 						compare_modifier = {
 							value = scope:duel_value
-							multiplier = -0.4
+							multiplier = -0.30
+							min = -15
 						}
 						send_interface_toast = {
 							type = event_toast_effect_neutral
 							title = manifest_lifeforce_minor_failure_tt
 							left_icon = root
+						}
+					}
+
+					# Critical Failure (Minor Recoil) - 8% at L0, drops to 1% at L50+
+					8 = {
+						desc = manifest_lifeforce_minor_failure_penalty_tt
+						compare_modifier = {
+							value = scope:duel_value
+							multiplier = -0.14
+							min = -7
+						}
+						send_interface_toast = {
+							type = event_toast_effect_bad
+							title = manifest_lifeforce_minor_failure_penalty_tt
+							left_icon = root
+							temporary_negative_lifeforce_effect_minor = yes
 						}
 					}
 				}
@@ -266,32 +304,40 @@
 				limit = { scope:manifest_lifeforce_tier3 = yes }
 				add_shared_bm_bk_xp = {
 					TRACK = enlightenment
-					XP = 8
+					XP = 5
 				}
+				add_character_modifier = { modifier = lifeforce_modifier_minor }
 				duel = {
 					skill = learning
 					value = 0
-					2 = {
-						desc = manifest_lifeforce_superior_success_tt
+
+					# Critical Success (2x Major) - 15% at L0, scales up to 35% at L50+
+					15 = {
+						desc = manifest_lifeforce_double_major_success_tt
 						compare_modifier = {
 							value = scope:duel_value
-							multiplier = 0.4
+							multiplier = 0.40
+							max = 20
 						}
 						send_interface_toast = {
 							type = event_toast_effect_good
-							title = manifest_lifeforce_superior_success_tt
+							title = manifest_lifeforce_double_major_success_tt
 							left_icon = root
-							add_character_modifier = { modifier = lifeforce_modifier_superior }
+							add_character_modifier = { modifier = lifeforce_modifier_major }
+							add_character_modifier = { modifier = lifeforce_modifier_major }
 						}
 						hidden_effect = {
 							bm_recount_lifeforce_stacks_effect = yes
 						}
 					}
-					60 = {
+
+					# Success (1x Major) - 50% at L0, scales up to 60% at L50+
+					50 = {
 						desc = manifest_lifeforce_major_success_tt
 						compare_modifier = {
 							value = scope:duel_value
-							multiplier = 1.5
+							multiplier = 0.20
+							max = 10
 						}
 						send_interface_toast = {
 							type = event_toast_effect_good
@@ -303,11 +349,14 @@
 							bm_recount_lifeforce_stacks_effect = yes
 						}
 					}
+
+					# Consolation (1x Minor) - 35% at L0, drops to 5% at L50+
 					35 = {
 						desc = manifest_lifeforce_minor_success_tt
 						compare_modifier = {
 							value = scope:duel_value
-							multiplier = 0.0
+							multiplier = -0.60
+							min = -30
 						}
 						send_interface_toast = {
 							type = event_toast_effect_good
@@ -325,16 +374,21 @@
 				limit = { scope:manifest_lifeforce_tier4 = yes }
 				add_shared_bm_bk_xp = {
 					TRACK = enlightenment
-					XP = 12
+					XP = 7
 				}
+				add_character_modifier = { modifier = lifeforce_modifier_minor }
+				add_character_modifier = { modifier = lifeforce_modifier_major }
 				duel = {
 					skill = learning
 					value = 0
-					20 = {
+
+					# Critical Success (1x Superior) - 15% at L0, scales up to 40% at L50+
+					15 = {
 						desc = manifest_lifeforce_superior_success_tt
 						compare_modifier = {
 							value = scope:duel_value
-							multiplier = 1.5
+							multiplier = 0.50
+							max = 25
 						}
 						send_interface_toast = {
 							type = event_toast_effect_good
@@ -346,11 +400,34 @@
 							bm_recount_lifeforce_stacks_effect = yes
 						}
 					}
-					80 = {
+
+					# Great Success (2x Major) - 35% at L0, scales up to 50% at L50+
+					35 = {
+						desc = manifest_lifeforce_double_major_success_tt
+						compare_modifier = {
+							value = scope:duel_value
+							multiplier = 0.30
+							max = 15
+						}
+						send_interface_toast = {
+							type = event_toast_effect_good
+							title = manifest_lifeforce_double_major_success_tt
+							left_icon = root
+							add_character_modifier = { modifier = lifeforce_modifier_major }
+							add_character_modifier = { modifier = lifeforce_modifier_major }
+						}
+						hidden_effect = {
+							bm_recount_lifeforce_stacks_effect = yes
+						}
+					}
+
+					# Success (1x Major) - 50% at L0, drops to 10% at L50+
+					50 = {
 						desc = manifest_lifeforce_major_success_tt
 						compare_modifier = {
 							value = scope:duel_value
-							multiplier = 0.5
+							multiplier = -0.80
+							min = -40
 						}
 						send_interface_toast = {
 							type = event_toast_effect_good

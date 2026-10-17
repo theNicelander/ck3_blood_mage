@@ -63,3 +63,37 @@ At conclusion, `finalise_combat_results_effect` runs:
   - `root` (victim) and `scope:killer` (victor) still hold `has_variable = engaged_in_single_combat`.
   - Attacker/defender duel scores still present.
 - **Engine trap**: In `on_death`, `root.is_alive` is `yes` ("about to die"). Calling `death_reason = death_duel` logs script error (`death_reason` populates only post-mortem). Check `has_variable = engaged_in_single_combat` in `on_death`, or dispatch `delayed = yes` event to inspect `death_reason`.
+
+## Skill duels (`duel = { ... }`)
+
+Single-tick stat checks (`scope:duel_value = actor_skill - target_value`). Use `compare_modifier`:
+
+```ck3
+duel = {
+    skill = learning
+    value = 0
+    # Outcomes: base weights sum to 100 at skill 0
+    17 = { # Crit Success (scales up)
+        desc = outcome_crit_succ_tt
+        compare_modifier = { value = scope:duel_value multiplier = 0.32 max = 16 }
+    }
+    33 = { # Success (scales up)
+        desc = outcome_succ_tt
+        compare_modifier = { value = scope:duel_value multiplier = 0.68 max = 30 }
+    }
+    33 = { # Failure (scales down)
+        desc = outcome_fail_tt
+        compare_modifier = { value = scope:duel_value multiplier = -0.68 min = -30 } # floor weight: 3
+    }
+    17 = { # Crit Failure (scales down)
+        desc = outcome_crit_fail_tt
+        compare_modifier = { value = scope:duel_value multiplier = -0.32 min = -16 } # floor weight: 1
+    }
+}
+```
+
+### Preferred weighting convention
+- **Baseline (skill 0)**: Base weights sum to 100 (e.g. 1/3 success, 1/3 failure, 1/6 crit success, 1/6 crit failure).
+- **Skill ~50 target**: Most negative outcomes are negated by skill ~50, with failure floored at **~5–10%** (e.g. 3–8% failure, 1–2% crit failure).
+- **Hard floors via `min`**: `min` in `compare_modifier` is the delta added to base (`min = -(base - desired_floor)`).
+- **Constant 100 total weight**: Pair positive/negative slopes (`+M` / `-M`) and cap positive outcomes with `max` when negative outcomes hit their floors.
