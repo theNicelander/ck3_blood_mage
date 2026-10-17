@@ -1,29 +1,31 @@
 ﻿# Blood Runes & Galdrastafir Scripted Effects
 
 bm_strip_all_stave_modifiers_effect = {
-	remove_character_modifier = bm_rune_vegvisir_minor
-	remove_character_modifier = bm_rune_vegvisir_major
-	remove_character_modifier = bm_rune_vegvisir_superior
+	if = { limit = { has_character_modifier = bm_rune_vegvisir_minor } remove_character_modifier = bm_rune_vegvisir_minor }
+	if = { limit = { has_character_modifier = bm_rune_vegvisir_major } remove_character_modifier = bm_rune_vegvisir_major }
+	if = { limit = { has_character_modifier = bm_rune_vegvisir_superior } remove_character_modifier = bm_rune_vegvisir_superior }
 
-	remove_character_modifier = bm_rune_aegishjalmur_minor
-	remove_character_modifier = bm_rune_aegishjalmur_major
-	remove_character_modifier = bm_rune_aegishjalmur_superior
+	if = { limit = { has_character_modifier = bm_rune_aegishjalmur_minor } remove_character_modifier = bm_rune_aegishjalmur_minor }
+	if = { limit = { has_character_modifier = bm_rune_aegishjalmur_major } remove_character_modifier = bm_rune_aegishjalmur_major }
+	if = { limit = { has_character_modifier = bm_rune_aegishjalmur_superior } remove_character_modifier = bm_rune_aegishjalmur_superior }
 
-	remove_character_modifier = bm_rune_feingur_minor
-	remove_character_modifier = bm_rune_feingur_major
-	remove_character_modifier = bm_rune_feingur_superior
+	if = { limit = { has_character_modifier = bm_rune_feingur_minor } remove_character_modifier = bm_rune_feingur_minor }
+	if = { limit = { has_character_modifier = bm_rune_feingur_major } remove_character_modifier = bm_rune_feingur_major }
+	if = { limit = { has_character_modifier = bm_rune_feingur_superior } remove_character_modifier = bm_rune_feingur_superior }
 
-	remove_character_modifier = bm_rune_nabrokarstafur_minor
-	remove_character_modifier = bm_rune_nabrokarstafur_major
-	remove_character_modifier = bm_rune_nabrokarstafur_superior
+	if = { limit = { has_character_modifier = bm_rune_nabrokarstafur_minor } remove_character_modifier = bm_rune_nabrokarstafur_minor }
+	if = { limit = { has_character_modifier = bm_rune_nabrokarstafur_major } remove_character_modifier = bm_rune_nabrokarstafur_major }
+	if = { limit = { has_character_modifier = bm_rune_nabrokarstafur_superior } remove_character_modifier = bm_rune_nabrokarstafur_superior }
 
-	remove_character_modifier = bm_rune_hulinhjalmur_minor
-	remove_character_modifier = bm_rune_hulinhjalmur_major
-	remove_character_modifier = bm_rune_hulinhjalmur_superior
+	if = { limit = { has_character_modifier = bm_rune_hulinhjalmur_minor } remove_character_modifier = bm_rune_hulinhjalmur_minor }
+	if = { limit = { has_character_modifier = bm_rune_hulinhjalmur_major } remove_character_modifier = bm_rune_hulinhjalmur_major }
+	if = { limit = { has_character_modifier = bm_rune_hulinhjalmur_superior } remove_character_modifier = bm_rune_hulinhjalmur_superior }
 }
 
 bm_apply_selected_stave_at_current_tier_effect = {
-	bm_strip_all_stave_modifiers_effect = yes
+	hidden_effect = {
+		bm_strip_all_stave_modifiers_effect = yes
+	}
 	if = {
 		limit = { has_character_modifier = superior_blood_rune_modifier }
 		add_character_modifier = { modifier = bm_rune_$STAVE$_superior }
@@ -33,9 +35,11 @@ bm_apply_selected_stave_at_current_tier_effect = {
 		add_character_modifier = { modifier = bm_rune_$STAVE$_major }
 	}
 	else = {
-		if = {
-			limit = { NOT = { has_character_modifier = minor_blood_rune_modifier } }
-			add_character_modifier = { modifier = minor_blood_rune_modifier }
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_character_modifier = minor_blood_rune_modifier } }
+				add_character_modifier = { modifier = minor_blood_rune_modifier }
+			}
 		}
 		add_character_modifier = { modifier = bm_rune_$STAVE$_minor }
 	}
