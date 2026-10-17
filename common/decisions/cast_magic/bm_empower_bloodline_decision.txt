@@ -393,120 +393,6 @@
 				}
 			}
 		}
-
-		# 8. Minor Bloodline Surge (Repeatable)
-		item = {
-			value = bm_bloodline_surge_minor
-			current_description = bm_bloodline_surge_minor
-			localization = bm_bloodline_surge_minor
-			icon = "gfx/interface/icons/traits/bm_interactions.dds"
-			is_shown = {
-				always = yes
-			}
-			is_valid = {
-				custom_tooltip = {
-					text = bm_bloodline_surge_minor_req
-					piety_level >= 1
-					piety >= 150
-					has_character_modifier = lifeforce_modifier_minor
-				}
-			}
-			ai_chance = {
-				value = 5
-				if = {
-					limit = {
-						NOT = {
-							AND = {
-								house = { has_house_modifier = dynasty_blood_charisma_modifier_1 }
-								house = { has_house_modifier = dynasty_blood_fury_modifier_1 }
-								house = { has_house_modifier = dynasty_blood_prosperity_modifier_1 }
-								house = { has_house_modifier = dynasty_blood_shadows_modifier_1 }
-								house = { has_house_modifier = dynasty_blood_insight_modifier_1 }
-								house = { has_house_modifier = dynasty_blood_legacy_modifier_1 }
-								house = { has_house_modifier = dynasty_blood_expertise_modifier_1 }
-							}
-						}
-					}
-					multiply = 0
-				}
-			}
-		}
-
-		# 9. Major Bloodline Surge (Repeatable)
-		item = {
-			value = bm_bloodline_surge_major
-			current_description = bm_bloodline_surge_major
-			localization = bm_bloodline_surge_major
-			icon = "gfx/interface/icons/traits/bm_interactions.dds"
-			is_shown = {
-				always = yes
-			}
-			is_valid = {
-				custom_tooltip = {
-					text = bm_bloodline_surge_major_req
-					piety_level >= 2
-					piety >= 350
-					has_character_modifier = lifeforce_modifier_major
-				}
-			}
-			ai_chance = {
-				value = 10
-				if = {
-					limit = {
-						NOT = {
-							AND = {
-								house = { has_house_modifier = dynasty_blood_charisma_modifier_2 }
-								house = { has_house_modifier = dynasty_blood_fury_modifier_2 }
-								house = { has_house_modifier = dynasty_blood_prosperity_modifier_2 }
-								house = { has_house_modifier = dynasty_blood_shadows_modifier_2 }
-								house = { has_house_modifier = dynasty_blood_insight_modifier_2 }
-								house = { has_house_modifier = dynasty_blood_legacy_modifier_2 }
-								house = { has_house_modifier = dynasty_blood_expertise_modifier_2 }
-							}
-						}
-					}
-					multiply = 0
-				}
-			}
-		}
-
-		# 10. Superior Bloodline Surge (Repeatable)
-		item = {
-			value = bm_bloodline_surge_superior
-			current_description = bm_bloodline_surge_superior
-			localization = bm_bloodline_surge_superior
-			icon = "gfx/interface/icons/traits/bm_interactions.dds"
-			is_shown = {
-				always = yes
-			}
-			is_valid = {
-				custom_tooltip = {
-					text = bm_bloodline_surge_superior_req
-					piety_level >= 3
-					piety >= 750
-					has_character_modifier = lifeforce_modifier_superior
-				}
-			}
-			ai_chance = {
-				value = 15
-				if = {
-					limit = {
-						NOT = {
-							AND = {
-								house = { has_house_modifier = dynasty_blood_charisma_modifier_3 }
-								house = { has_house_modifier = dynasty_blood_fury_modifier_3 }
-								house = { has_house_modifier = dynasty_blood_prosperity_modifier_3 }
-								house = { has_house_modifier = dynasty_blood_shadows_modifier_3 }
-								house = { has_house_modifier = dynasty_blood_insight_modifier_3 }
-								house = { has_house_modifier = dynasty_blood_legacy_modifier_3 }
-								house = { has_house_modifier = dynasty_blood_expertise_modifier_3 }
-							}
-						}
-					}
-					multiply = 0
-				}
-			}
-		}
 	}
 
 	effect = {
@@ -537,18 +423,6 @@
 		else_if = {
 			limit = { scope:bm_covenant_expertise = yes }
 			bm_upgrade_house_covenant_effect = { COVENANT = expertise }
-		}
-		else_if = {
-			limit = { scope:bm_bloodline_surge_minor = yes }
-			bm_cast_bloodline_surge_minor_effect = yes
-		}
-		else_if = {
-			limit = { scope:bm_bloodline_surge_major = yes }
-			bm_cast_bloodline_surge_major_effect = yes
-		}
-		else_if = {
-			limit = { scope:bm_bloodline_surge_superior = yes }
-			bm_cast_bloodline_surge_superior_effect = yes
 		}
 		else = {
 			custom_tooltip = bm_empower_bloodline_decision_effect

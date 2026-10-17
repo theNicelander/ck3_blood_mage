@@ -1,8 +1,8 @@
 ﻿l_english:
   # Standalone Decision: Empower Dynasty Bloodline
   bm_empower_bloodline_decision: "Empower Dynasty Bloodline"
-  bm_empower_bloodline_decision_desc: "Perform ancient hemomantic covenants to permanently weave blood magic into the veins of your house. Each covenant progresses through three tiers—#italic Awakened#! (Tier I), #italic Ascendant#! (Tier II), and #italic Sovereign#! (Tier III)—granting escalating supernatural enhancements to every living and future member of your house, regardless of whether they are landed rulers, estate administrators, wanderers, or court knights.\n\nAlternatively, you may channel spare Lifeforce into a repeatable, 10-year #bold Bloodline Surge#! that empowers your house and awakens permanent capabilities within yourself."
-  bm_empower_bloodline_decision_tooltip: "Select a House Covenant to upgrade or cast a temporary Bloodline Surge"
+  bm_empower_bloodline_decision_desc: "Perform ancient hemomantic covenants to permanently weave blood magic into the veins of your house. Each covenant progresses through three tiers—#italic Awakened#! (Tier I), #italic Ascendant#! (Tier II), and #italic Sovereign#! (Tier III)—granting escalating supernatural enhancements to every living and future member of your house, regardless of whether they are landed rulers, estate administrators, wanderers, or court knights."
+  bm_empower_bloodline_decision_tooltip: "Select a House Covenant to upgrade"
   BM_EMPOWER_BLOODLINE_DECISION_NEXT_STEP_BUTTON: "Weave Bloodline"
   bm_empower_bloodline_decision_confirm: "$BM_EMPOWER_BLOODLINE_DECISION_NEXT_STEP_BUTTON$"
   bm_empower_bloodline_decision_effect: "You weave vital blood magic into your house's lineage."
@@ -16,13 +16,6 @@
   NOT_bm_covenant_tier_2_req: "Tier II (Ascendant): Requires [GetModifier('lifeforce_modifier_major').GetNameWithTooltip], #V 350#! Piety, and Devotion Rank #V 2#!."
   bm_covenant_tier_3_req: "Tier III (Sovereign): Requires [GetModifier('lifeforce_modifier_superior').GetNameWithTooltip], #V 750#! Piety, and Devotion Rank #V 3#!."
   NOT_bm_covenant_tier_3_req: "Tier III (Sovereign): Requires [GetModifier('lifeforce_modifier_superior').GetNameWithTooltip], #V 750#! Piety, and Devotion Rank #V 3#!."
-
-  bm_bloodline_surge_minor_req: "Minor Surge: Requires [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip], #V 150#! Piety, and Devotion Rank #V 1#!."
-  NOT_bm_bloodline_surge_minor_req: "Minor Surge: Requires [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip], #V 150#! Piety, and Devotion Rank #V 1#!."
-  bm_bloodline_surge_major_req: "Major Surge: Requires [GetModifier('lifeforce_modifier_major').GetNameWithTooltip], #V 350#! Piety, and Devotion Rank #V 2#!."
-  NOT_bm_bloodline_surge_major_req: "Major Surge: Requires [GetModifier('lifeforce_modifier_major').GetNameWithTooltip], #V 350#! Piety, and Devotion Rank #V 2#!."
-  bm_bloodline_surge_superior_req: "Superior Surge: Requires [GetModifier('lifeforce_modifier_superior').GetNameWithTooltip], #V 750#! Piety, and Devotion Rank #V 3#!."
-  NOT_bm_bloodline_surge_superior_req: "Superior Surge: Requires [GetModifier('lifeforce_modifier_superior').GetNameWithTooltip], #V 750#! Piety, and Devotion Rank #V 3#!."
 
   # Covenant Options
   bm_covenant_charisma: "Covenant of Majesty"
@@ -46,23 +39,10 @@
   bm_covenant_expertise: "Covenant of Polyglot Mastery"
   bm_covenant_expertise_tooltip: "Accelerates lifestyle experience, language learning, and imperial fame scaling across your house.\n\n#P Tier I (Awakened):#! +10% Lifestyle XP, -10d Learn Language Phase, +1 Language Slot.\n#V Tier II (Ascendant):#! +20% Lifestyle XP, -20d Learn Language Phase, +2 Language Slots, +10% Fame Impact.\n#Y Tier III (Sovereign):#! +30% Lifestyle XP, -30d Learn Language Phase, +3 Language Slots, +20% Fame Impact, #bold Ignore Negative Culture Opinion#!."
 
-  # Surge Options
-  bm_bloodline_surge_minor: "Minor Bloodline Surge (10 Years)"
-  bm_bloodline_surge_minor_tooltip: "Channels Minor Lifeforce into a 10-year stacking house enhancement:\n#P +1 all Attributes#!, #P +2 Prowess#!, #P +5% Lifestyle XP#!, #P +5% Fertility#!.\n\n#italic Grants +2 Bloodline / Vanguard XP and rolls a 10% + Skill chance to permanently increase each of your skills and prowess.#!"
-
-  bm_bloodline_surge_major: "Major Bloodline Surge (10 Years)"
-  bm_bloodline_surge_major_tooltip: "Channels Major Lifeforce into a 10-year stacking house enhancement:\n#P +2 all Attributes#!, #P +4 Prowess#!, #P +10% Lifestyle XP#!, #P +10% Fertility#!, #P +0.25 Health#!.\n\n#italic Grants +5 Bloodline / Vanguard XP and rolls a 25% + Skill chance to permanently increase each of your skills and prowess.#!"
-
-  bm_bloodline_surge_superior: "Superior Bloodline Surge (10 Years)"
-  bm_bloodline_surge_superior_tooltip: "Channels Superior Lifeforce into a 10-year stacking house enhancement:\n#P +3 all Attributes#!, #P +6 Prowess#!, #P +20% Lifestyle XP#!, #P +20% Fertility#!, #P +0.50 Health#!, #P +10% Monthly Renown#!.\n\n#italic Grants +10 Bloodline / Vanguard XP and rolls a 50% + Skill chance to permanently increase each of your skills and prowess.#!"
-
   # Toasts
   bm_empower_bloodline_tier_1_toast: "Covenant Awakened (Tier I)"
   bm_empower_bloodline_tier_2_toast: "Covenant Ascended (Tier II)"
   bm_empower_bloodline_tier_3_toast: "Covenant Sovereign (Tier III)"
-  bm_bloodline_surge_minor_toast: "Minor Bloodline Surge"
-  bm_bloodline_surge_major_toast: "Major Bloodline Surge"
-  bm_bloodline_surge_superior_toast: "Superior Bloodline Surge"
 
   # Tooltips on completion
   bm_covenant_charisma_tier_1_tt: "Your house has awakened the Covenant of Majesty (Tier I)."
@@ -92,10 +72,6 @@
   bm_covenant_expertise_tier_1_tt: "Your house has awakened the Covenant of Polyglot Mastery (Tier I)."
   bm_covenant_expertise_tier_2_tt: "Your house has ascended the Covenant of Polyglot Mastery (Tier II)."
   bm_covenant_expertise_tier_3_tt: "Your house has perfected the Sovereign Covenant of Polyglot Mastery (Tier III)!"
-
-  bm_bloodline_surge_minor_tt: "Your house is infused with a Minor Bloodline Surge for 10 years."
-  bm_bloodline_surge_major_tt: "Your house is infused with a Major Bloodline Surge for 10 years."
-  bm_bloodline_surge_superior_tt: "Your house is infused with a Superior Bloodline Surge for 10 years."
 
   # Yearly bloodline XP
   blood_mage_yearly_events.002.success: "Your house covenants granted you experience"

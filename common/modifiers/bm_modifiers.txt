@@ -87,51 +87,6 @@ trait_drain_attempted = {
     prowess = -1
 }
 
-# Bloodline Surges (Repeatable 10-year stacking modifiers)
-temporary_buff_bloodline_minor = {
-	icon = blood_magic
-	stacking = yes
-
-	diplomacy = 1
-	martial = 1
-	intrigue = 1
-	stewardship = 1
-	learning = 1
-	prowess = 2
-	monthly_lifestyle_xp_gain_mult = 0.05
-	fertility = 0.05
-}
-
-temporary_buff_bloodline = {
-	icon = blood_magic
-	stacking = yes
-
-	diplomacy = 2
-	martial = 2
-	intrigue = 2
-	stewardship = 2
-	learning = 2
-	prowess = 4
-	monthly_lifestyle_xp_gain_mult = 0.10
-	fertility = 0.10
-	health = 0.25
-}
-
-temporary_buff_bloodline_superior = {
-	icon = blood_magic
-	stacking = yes
-
-	diplomacy = 3
-	martial = 3
-	intrigue = 3
-	stewardship = 3
-	learning = 3
-	prowess = 6
-	monthly_lifestyle_xp_gain_mult = 0.20
-	fertility = 0.20
-	health = 0.50
-	monthly_dynasty_prestige_mult = 0.10
-}
 temporary_buff_self = {
     icon = blood_magic
     stacking = yes

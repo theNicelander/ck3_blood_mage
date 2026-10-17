@@ -58,7 +58,7 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
   - **Superior Blood Magic**: Legendary rites including Blood Golem Creation, 5★ Master Educations, Secondary Educations, and Superior Capstone Runes.
   - _Attune Lifeforce_: Select your yearly lifestyle XP bonus.
   - _Carve Galdrastafir_: Choose and preview your flesh-carved magical stave.
-  - _Empower Dynasty Bloodline_: Weave 7 Three-Tier House Covenants (Majesty, Warband, Prosperity, Shadows, Insight, Legacy, Expertise) across Awakened, Ascendant, and Sovereign tiers, or cast repeatable 10-year stacking Bloodline Surges.
+  - _Empower Dynasty Bloodline_: Weave 7 Three-Tier House Covenants (Majesty, Warband, Prosperity, Shadows, Insight, Legacy, Expertise) across Awakened, Ascendant, and Sovereign tiers to permanently fortify your house.
 - **37-Condition Healing & Situation Alerts**:
   - Cure up to 37 physical and mental ailments on yourself, your courtiers, family, or prisoners—ranging from illnesses and wounds to blindness, severed limbs, and melancholy.
   - A persistent **"You Can Heal Someone"** notification appears in the Current Situation dropdown whenever an eligible courtier or family member falls sick or injured.

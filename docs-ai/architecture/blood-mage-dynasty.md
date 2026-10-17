@@ -9,7 +9,6 @@ Living technical specification for supernatural dynasty/house modifiers, covenan
   - **Tier I:** 150 Piety + 1 Minor Lifeforce (`blood_magic_used_minor`), Devotion $\ge 1$. Grants `+3` `bloodline` / `vanguard` XP.
   - **Tier II:** 350 Piety + 1 Major Lifeforce (`blood_magic_used_major`), Devotion $\ge 2$. Grants `+5` `bloodline` / `vanguard` XP.
   - **Tier III:** 750 Piety + 1 Superior Lifeforce (`blood_magic_used_superior`), Devotion $\ge 3$. Grants `+10` `bloodline` / `vanguard` XP.
-- **Repeatable Bloodline Surges (3 Tiers):** Allows channeling spare Lifeforce at any time into a 10-year stacking House modifier (`temporary_buff_bloodline_minor / _bloodline / _superior`) alongside a skill-scaled roll to permanently raise the caster's skills and prowess.
 - **Cooldown:** No decision cooldown (gated purely by Lifeforce, Piety, and Devotion rank).
 - **Feedback Loop:** Yearly pulse event `blood_mage_yearly_events.002` grants `+1` `bloodline` XP (Blood Mages) or `+1` `vanguard` XP (Blood Knights) based on active House Covenants:
   - Each Tier I Covenant adds `+3%` chance.
@@ -34,16 +33,6 @@ Modifiers apply to all living and future members of the caster's house (landless
 
 ---
 
-## Repeatable Bloodline Surges (10-Year Duration, Stacking)
-
-| Surge Tier | Modifier Key | Cost | House Member Benefits | Caster Permanent Skill Roll |
-| :--- | :--- | :--- | :--- | :--- |
-| **Minor Surge** | `temporary_buff_bloodline_minor` | 150 Piety + Minor Lifeforce | `+1` all skills, `+2` Prowess, `+5%` Lifestyle XP, `+5%` Fertility | `10% + <skill>` chance per stat for `+1` skill (`+2` Prowess) |
-| **Major Surge** | `temporary_buff_bloodline` | 350 Piety + Major Lifeforce | `+2` all skills, `+4` Prowess, `+10%` Lifestyle XP, `+10%` Fertility, `+0.25` Health | `25% + <skill>` chance per stat for `+1` skill (`+2` Prowess) |
-| **Superior Surge** | `temporary_buff_bloodline_superior` | 750 Piety + Superior Lifeforce | `+3` all skills, `+6` Prowess, `+20%` Lifestyle XP, `+20%` Fertility, `+0.50` Health, `+10%` Monthly Renown | `50% + <skill>` chance per stat for `+1` skill (`+2` Prowess) |
-
----
-
 ## Where the details live
 
 | Concept | File |
@@ -52,9 +41,8 @@ Modifiers apply to all living and future members of the caster's house (landless
 | Golem dynasty | `common/dynasties/bm_dynasties.txt` |
 | Golem house coat of arms | `common/coat_of_arms/coat_of_arms/bm_coat_of_arms.txt` |
 | Bloodline house modifiers (Tiers 1–3) | `common/modifiers/bm_channel_dynasty_modifiers.txt` |
-| Bloodline surge modifiers | `common/modifiers/bm_modifiers.txt` |
 | Standalone widget decision | `common/decisions/cast_magic/bm_empower_bloodline_decision.txt` |
-| Upgrade & surge scripted effects | `common/scripted_effects/bm_empower_bloodline_effects.txt` |
+| Covenant upgrade scripted effects | `common/scripted_effects/bm_empower_bloodline_effects.txt` |
 | Yearly bloodline XP event | `blood_mage_yearly_events.002` in `events/bm_yearly_events.txt` |
 | Golem template | `blood_golem_template` in `common/scripted_character_templates/bm_character_templates.txt` |
 | Golem & dynasty rosters | `bm_refresh_blood_magic_rosters_effect` in `common/scripted_effects/bm_blood_mage_story_list_effects.txt` |

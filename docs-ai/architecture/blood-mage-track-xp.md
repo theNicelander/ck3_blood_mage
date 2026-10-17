@@ -71,7 +71,6 @@ Living technical specification for XP acquisition, Piety costs, Lifeforce sinks/
 | **+3 XP** | 150 Piety + Minor Lifeforce (`lifeforce_modifier_minor`) | Empower Bloodline (Tier I Covenant) | Decision (`bm_empower_bloodline_decision`) | `exists = house`, `piety_level >= 1` | None |
 | **+5 XP** | 350 Piety + Major Lifeforce (`lifeforce_modifier_major`) | Empower Bloodline (Tier II Covenant) | Decision (`bm_empower_bloodline_decision`) | `exists = house`, `piety_level >= 2` | None |
 | **+10 XP** | 750 Piety + Superior Lifeforce (`lifeforce_modifier_superior`) | Empower Bloodline (Tier III Covenant) | Decision (`bm_empower_bloodline_decision`) | `exists = house`, `piety_level >= 3` | None |
-| **+2 / +5 / +10 XP** | 150 / 350 / 750 Piety + Minor / Major / Superior Lifeforce | Bloodline Surges (Repeatable 10-Yr) | Decision (`bm_empower_bloodline_decision`) | `exists = house`, `piety_level >= 1/2/3` | None |
 | **+5 XP** | 500 Piety + Superior Lifeforce (`lifeforce_modifier_superior`) | Forge Blood Golem | Event option (`bm_cast_blood_magic_superior.001`) | `piety_level >= 3`, Superior lifeforce | 3 years |
 | **+1 XP** (+3% / +6% / +10% chance per Tier I/II/III Covenant, up to 70%) | None | Yearly Dynasty Modifiers Pulse | On-action (`blood_mage_yearly_events.002`) | Has house, house covenants | 1 year |
 | **+1 XP** (**+2 XP** with Superior **Hulinhjálmur**) | None (guaranteed) | Bloodline Attunement Pulse | Yearly event (`blood_mage_yearly_events.001`) | Has `bloodline_attuned` | 1 year |
