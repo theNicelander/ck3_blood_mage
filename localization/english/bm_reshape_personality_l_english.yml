@@ -1,0 +1,32 @@
+﻿l_english:
+  bm_reshape_personality_interaction: "Harmonize Nature"
+  bm_reshape_personality_interaction_desc: "Spend Major Lifeforce and Piety to commune with [recipient.GetFirstName]'s blood, dissolving one of [recipient.GetHerHis] personality traits and imprinting one of your own."
+  bm_reshape_personality_interaction_tooltip: "Perform the Blood Harmonization ritual upon [recipient.GetShortUINameNoTooltip]"
+  bm_reshape_personality_interaction_confirm: "Begin Ritual"
+
+  bm_reshape_personality_piety_level_tt: "Requires Level of Devotion 3 (Servant of Holy or higher)"
+  bm_reshape_personality_lifeforce_tt: "Requires [lifeforce_major|E]"
+  bm_reshape_personality_recipient_no_traits_tt: "[recipient.GetShortUINameNoTooltip] must possess at least one personality trait"
+  bm_reshape_personality_no_new_traits_tt: "You must possess at least one personality trait that [recipient.GetShortUINameNoTooltip] does not already have"
+
+  bm_harmonized_mind_opinion: "Harmonized Nature"
+  bm_harmonized_mind_opinion_desc: "Our blood and souls have resonated together in occult communion."
+
+  bm_reshape_personality.0001.title: "Blood Harmonization: Purge Nature"
+  bm_reshape_personality.0001.desc: "Through sacred mastery of the sanguine arts and the surrender of our vital Lifeforce, we reach deep into the pulsing spirit of [recipient.GetUIName].\n\nTheir heart rate quickens and their veins burn with cold fire as our consciousness mingles with theirs. To carve a new path into their character, an existing facet of their nature must first be shattered and washed away.\n\nWhich inclination of [recipient.GetFirstName] shall we dissolve?"
+  bm_reshape_personality.0001.option_1: "Cleanse away [recipient.GetHerHis] [recipient_ptrait_1.GetNameNoTooltip(recipient.Self)] nature"
+  bm_reshape_personality.0001.option_2: "Cleanse away [recipient.GetHerHis] [recipient_ptrait_2.GetNameNoTooltip(recipient.Self)] nature"
+  bm_reshape_personality.0001.option_3: "Cleanse away [recipient.GetHerHis] [recipient_ptrait_3.GetNameNoTooltip(recipient.Self)] nature"
+  bm_reshape_personality.0001.option_4: "Cleanse away [recipient.GetHerHis] [recipient_ptrait_4.GetNameNoTooltip(recipient.Self)] nature"
+  bm_reshape_personality.0001.cancel: "Step back and abandon the communion"
+
+  bm_reshape_personality.0002.title: "Blood Harmonization: Imprint Essence"
+  bm_reshape_personality.0002.desc: "The purged essence dissolves from [recipient.GetFirstName]'s veins like ash in a rushing stream. Their spirit now lies open, primed to receive a reflection of our own inner core.\n\nWe focus our vital blood into their soul, binding a piece of our personal nature irrevocably into their being.\n\nWhich virtue of our spirit shall take root within [recipient.GetHerHis] blood?"
+  bm_reshape_personality.0002.option_1: "Imprint our [actor_ptrait_1.GetNameNoTooltip(root.Self)] nature"
+  bm_reshape_personality.0002.option_2: "Imprint our [actor_ptrait_2.GetNameNoTooltip(root.Self)] nature"
+  bm_reshape_personality.0002.option_3: "Imprint our [actor_ptrait_3.GetNameNoTooltip(root.Self)] nature"
+  bm_reshape_personality.0002.option_4: "Imprint our [actor_ptrait_4.GetNameNoTooltip(root.Self)] nature"
+  bm_reshape_personality.0002.cancel: "Abort the ritual"
+
+  bm_reshape_personality.toast.title: "Nature Harmonized"
+  bm_reshape_personality.toast.desc: "[recipient.GetFirstName] has abandoned [recipient.GetHerHis] [trait_to_remove.GetNameNoTooltip(recipient.Self)] nature and embraced [trait_to_add.GetNameNoTooltip(root.Self)]."

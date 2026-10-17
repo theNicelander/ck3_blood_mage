@@ -25,6 +25,7 @@ Living technical specification for character interactions in the Blood Mage mod.
 | `grant_lifeforce_interaction` | Courtier or prisoner | Minor Lifeforce + 25 Piety, or Major Lifeforce + 50 Piety. | Minor: +1 enlightenment; Major: +2 enlightenment | Bestows Lifeforce modifier onto recipient. |
 | `grant_lifeforce_interaction_reversed` | Courtier with `lifedrained_modifier` | 25 Piety + Major Lifeforce. | +4 benediction | Restores drained courtier: cleanses debuff, gives minor lifeforce and opinion. |
 | `bm_curse_blood_interaction` | Alive character (non-self) | 50 Piety + Minor Lifeforce. Requires Blood Mage with >= 10 Hematurgy XP. CD: 1 yr. | Success: +2 hematurgy; Crit: +4 hematurgy; Fail: +1 hematurgy | Skill duel (Intrigue/Learning). Success: inflicts `bm_blood_curse_modifier` (-2 all stats, -1.5 health, -30% fertility, -3 prowess) for 5 yrs; Crit: curses, inflicts `ill`, and siphons Minor Lifeforce back; Fail: discovered, opinion malus (negated by Superior **Hulinhjálmur**). |
+| `bm_reshape_personality_interaction` | Relationship target (courtier, spouse, friend, lover, soulmate, dynasty, ward, knight) | 250 Piety + Major Lifeforce. Requires Devotion level >= 3. CD against recipient: 5 yrs. | +4 enlightenment | Guided two-step blood ritual (`bm_reshape_personality.0001` & `.0002`): purges one chosen personality trait from recipient and imprints one of caster's traits (cleanses opposites, grants `+25` `bm_harmonized_mind_opinion`). |
 | `bm_debug_character_interaction` | Any character | Debug mode only. | None | Popup modal with 3 options: Make Blood Mage, Make Blood Knight, or Convert to Blóðtrú. |
 
 ## Key Mechanics & AI Logic
@@ -54,4 +55,5 @@ Living technical specification for character interactions in the Blood Mage mod.
 | Bless Kin's Blood | `common/character_interactions/bm_bless_bloodline.txt` |
 | Grant Lifeforce Stacks | `common/character_interactions/bm_grant_lifeforce.txt` |
 | Cast Blood Curse | `common/character_interactions/bm_curse_blood.txt` |
+| Reshape Personality | `common/character_interactions/bm_reshape_personality.txt` |
 | Debug interactions | `common/character_interactions/bm_debug_interactions.txt` |
