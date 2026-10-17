@@ -2,7 +2,7 @@
 
 ## Game version 1.20
 
-- v1.20.43: Fix Seek Power event portraits, 3D staging triggers, and character names in narrative and option tooltips.
+- v1.20.43: Free initial lifeforce attunement with 3-year cooldown and 100 piety change cost, fix Seek Power event portraits, 3D staging triggers, and character names; grant base Blood Empowerment trait alongside Blood Mage/Blood Knight for UI pairing; replace Slaughter 50 devotion knights pseudo-modifier with native martial per piety level.
 - v1.20.42: Attune to trait track option-list widget, Seek Power Blood Knight escort duel, piety rank 4 & cooldown loc for blood golems, rebalance Manifest and Condense Lifeforce duel curves, clean 50/100 milestones with dynamic devotion knights & devotion impact, guaranteed yearly attunement XP, and Galdrastafir UI polish.
 - v1.20.41: Manifest Lifeforce scaling piety popup, childbirth Major Lifeforce for Blood Mages, and restrict seek power to Blood Knights.
 - v1.20.40: Blood Runes & Galdrastafir with 5 staves, sequential progression, superior capstones, and retinue inscription.

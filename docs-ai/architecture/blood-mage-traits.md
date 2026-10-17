@@ -37,7 +37,7 @@ Base: `same_opinion = 10`, `ruler_designer_cost = 50`. Vitality baseline applied
 | `benediction` *(shared)* | Identical to Blood Mage `benediction` | Identical to Blood Mage `benediction` | Identical to Blood Mage `benediction` (`character_max_piety_level_add = 1`, `no_prowess_loss_from_age = yes`) |
 
 #### 3. Blood Empowerment (`lifestyle_blood_empowerment`)
-Base: None. Vitality baseline applied across tiers 10–40 and 60–90 (8× Vitality total); milestones at 50 and 100 XP grant Devotion Impact (`piety_level_impact_mult = 0.05`) and `no_prowess_loss_from_age = yes` at 100 XP.
+Base: None. Automatically acquired alongside `lifestyle_blood_mage` or `lifestyle_blood_knight` with 0 XP across all tracks so both traits appear adjacent in the UI character sheet. Vitality baseline applied across tiers 10–40 and 60–90 (8× Vitality total); milestones at 50 and 100 XP grant Devotion Impact (`piety_level_impact_mult = 0.05`) and `no_prowess_loss_from_age = yes` at 100 XP.
 
 | Track | 10 XP (1st Step) | 50 XP (Cumulative Milestone) | 100 XP (Cumulative Capstone) |
 | --- | --- | --- | --- |
@@ -50,7 +50,7 @@ Base: None. Vitality baseline applied across tiers 10–40 and 60–90 (8× Vita
 ## Core Concepts
 
 ### Mutual Exclusivity & Devotion Apex
-- **Permanent Class Choice:** `lifestyle_blood_mage` and `lifestyle_blood_knight` are mutually exclusive lifestyle paths (`bm_become_blood_mage_effect` and `bm_become_blood_knight_effect` block acquisition if the character already holds the counterpart trait; only historical Egill Skallagrímsson holds both).
+- **Permanent Class Choice:** `lifestyle_blood_mage` and `lifestyle_blood_knight` are mutually exclusive lifestyle paths (`bm_become_blood_mage_effect` and `bm_become_blood_knight_effect` block acquisition if the character already holds the counterpart trait; only historical Egill Skallagrímsson holds both). Both paths automatically grant base `lifestyle_blood_empowerment` concurrently to position the icons adjacent in the character UI.
 - **Inheritable Non-Genetic Traits:** Both `lifestyle_blood_mage` and `lifestyle_blood_knight` use `inheritable = yes` (without `genetic = yes`) for deterministic `25%` single-parent (`50%` with Superior **Feingur**) and `100%` dual-parent inheritance, plus `0.20%` spontaneous birth/creation rolls audited by campaign prevalence rules.
 - **Devotion Apex (Levels 6–8):** Capstones at 100 XP in the 3 shared tracks (`ancient`, `enlightenment`, `benediction`) each grant `character_max_piety_level_add = 1` on both Blood Mage and Blood Knight, unlocking Devotion Levels 6–8 (*Divine*, *Demigod*, *Godlike*).
 - **Prowess Age Lock:** Every track capstone at 100 XP across all 12 tracks grants `no_prowess_loss_from_age = yes`.

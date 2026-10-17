@@ -17,6 +17,13 @@ bm_apply_blood_mage_prevalence_at_birth = {
 		}
 		else_if = {
 			limit = {
+				is_ai = no
+				has_trait = lifestyle_blood_mage
+			}
+			bm_ensure_blood_mage_story_effect = yes
+		}
+		else_if = {
+			limit = {
 				is_ai = yes
 				has_game_rule = bm_prevalence_everyone
 			}
@@ -88,6 +95,13 @@ bm_apply_blood_knight_prevalence_at_birth = {
 				has_trait = lifestyle_blood_knight
 			}
 			bm_apply_blood_knight_prevalence_retention_effect = yes
+		}
+		else_if = {
+			limit = {
+				is_ai = no
+				has_trait = lifestyle_blood_knight
+			}
+			bm_ensure_blood_mage_story_effect = yes
 		}
 		else_if = {
 			limit = {
