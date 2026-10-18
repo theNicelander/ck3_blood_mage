@@ -1,0 +1,149 @@
+﻿bm_anointed_transfer_ancient_xp_value = {
+	value = 0
+	scope:dying_ruler = {
+		if = {
+			limit = { has_trait = lifestyle_blood_mage }
+			add = "has_trait_xp(lifestyle_blood_mage|ancient)"
+		}
+		else_if = {
+			limit = { has_trait = lifestyle_blood_knight }
+			add = "has_trait_xp(lifestyle_blood_knight|ancient)"
+		}
+	}
+	multiply = 0.25
+	round = yes
+	min = 0
+}
+
+bm_anointed_transfer_enlightenment_xp_value = {
+	value = 0
+	scope:dying_ruler = {
+		if = {
+			limit = { has_trait = lifestyle_blood_mage }
+			add = "has_trait_xp(lifestyle_blood_mage|enlightenment)"
+		}
+		else_if = {
+			limit = { has_trait = lifestyle_blood_knight }
+			add = "has_trait_xp(lifestyle_blood_knight|enlightenment)"
+		}
+	}
+	multiply = 0.25
+	round = yes
+	min = 0
+}
+
+bm_anointed_transfer_benediction_xp_value = {
+	value = 0
+	scope:dying_ruler = {
+		if = {
+			limit = { has_trait = lifestyle_blood_mage }
+			add = "has_trait_xp(lifestyle_blood_mage|benediction)"
+		}
+		else_if = {
+			limit = { has_trait = lifestyle_blood_knight }
+			add = "has_trait_xp(lifestyle_blood_knight|benediction)"
+		}
+	}
+	multiply = 0.25
+	round = yes
+	min = 0
+}
+
+bm_anointed_transfer_bloodline_vanguard_xp_value = {
+	value = 0
+	scope:dying_ruler = {
+		if = {
+			limit = { has_trait = lifestyle_blood_mage }
+			add = "has_trait_xp(lifestyle_blood_mage|bloodline)"
+		}
+		else_if = {
+			limit = { has_trait = lifestyle_blood_knight }
+			add = "has_trait_xp(lifestyle_blood_knight|vanguard)"
+		}
+	}
+	multiply = 0.25
+	round = yes
+	min = 0
+}
+
+bm_anointed_transfer_hematurgy_slaughter_xp_value = {
+	value = 0
+	scope:dying_ruler = {
+		if = {
+			limit = { has_trait = lifestyle_blood_mage }
+			add = "has_trait_xp(lifestyle_blood_mage|hematurgy)"
+		}
+		else_if = {
+			limit = { has_trait = lifestyle_blood_knight }
+			add = "has_trait_xp(lifestyle_blood_knight|slaughter)"
+		}
+	}
+	multiply = 0.25
+	round = yes
+	min = 0
+}
+
+bm_anointed_transfer_dynasty_xp_value = {
+	value = 0
+	scope:dying_ruler = {
+		if = {
+			limit = { has_trait = lifestyle_blood_power }
+			add = "has_trait_xp(lifestyle_blood_power|dynasty)"
+		}
+	}
+	multiply = 0.25
+	round = yes
+	min = 0
+}
+
+bm_anointed_transfer_mastery_xp_value = {
+	value = 0
+	scope:dying_ruler = {
+		if = {
+			limit = { has_trait = lifestyle_blood_power }
+			add = "has_trait_xp(lifestyle_blood_power|mastery)"
+		}
+	}
+	multiply = 0.25
+	round = yes
+	min = 0
+}
+
+bm_anointed_transfer_presence_xp_value = {
+	value = 0
+	scope:dying_ruler = {
+		if = {
+			limit = { has_trait = lifestyle_blood_power }
+			add = "has_trait_xp(lifestyle_blood_power|presence)"
+		}
+	}
+	multiply = 0.25
+	round = yes
+	min = 0
+}
+
+bm_anointed_transfer_prosperity_xp_value = {
+	value = 0
+	scope:dying_ruler = {
+		if = {
+			limit = { has_trait = lifestyle_blood_power }
+			add = "has_trait_xp(lifestyle_blood_power|prosperity)"
+		}
+	}
+	multiply = 0.25
+	round = yes
+	min = 0
+}
+
+bm_anointed_transfer_shadows_xp_value = {
+	value = 0
+	scope:dying_ruler = {
+		if = {
+			limit = { has_trait = lifestyle_blood_power }
+			add = "has_trait_xp(lifestyle_blood_power|shadows)"
+		}
+	}
+	multiply = 0.25
+	round = yes
+	min = 0
+}
