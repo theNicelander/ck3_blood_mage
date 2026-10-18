@@ -21,6 +21,13 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
   - **Bloodline**: Increases domain limit, county tax, development growth, and building construction speed.
   - **Hematurgy**: Unlocks hostile scheme power, scheme defense, dread gain, and natural tyranny decay.
 
+- **Overhauled 'Seek Power' Wilderness Encounters**:
+  - The wilderness encounter ("A Lost Soul") now features a wandering **warrior-poet** with high Learning and Poet traits, accompanied by a sworn escort knight.
+  - Spawned encounter characters dynamically adopt the **local county faith** of the player's current location and the player's culture.
+  - **Friendly Brawl** is placed as the first option, always available for Blood Knights to spar for Lifeforce and Slaughter/Vanguard XP.
+  - **Battlefield Duels** now require at least **25 Prowess** to challenge the escort or traveler in Single Combat.
+  - **Court Recruitment** is gated behind skill superiority: out-debate the warrior-poet with higher Learning, or intimidate the knight into service with higher Prowess in a martial duel.
+
 ---
 
 ## 🧬 Blood Empowerment & Somatic Ascendancy
