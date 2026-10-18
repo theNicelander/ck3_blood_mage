@@ -356,14 +356,17 @@ seek_power.003 = {
         }
     }
 
-    # Learning challenge: Convince the traveler / minor noble to join my court
+    # Learning challenge: Convince the traveler / minor noble to join me
     option = {
         name = seek_power.003.c
         trigger = {
-            learning > scope:recipient.learning
+            custom_description = {
+                text = seek_power.003.c.learning_trigger_tt
+                learning > scope:recipient.learning
+            }
         }
         show_as_unavailable = {
-            learning <= scope:recipient.learning
+            always = yes
         }
         ai_chance = { base = 50 }
         duel = {
@@ -408,11 +411,13 @@ seek_power.003 = {
         name = seek_power.003.recruit_knight
         trigger = {
             exists = scope:escort_knight
-            prowess > scope:escort_knight.prowess
+            custom_description = {
+                text = seek_power.003.recruit_knight.prowess_trigger_tt
+                prowess > scope:escort_knight.prowess
+            }
         }
         show_as_unavailable = {
             exists = scope:escort_knight
-            prowess <= scope:escort_knight.prowess
         }
         ai_chance = { base = 40 }
         duel = {
