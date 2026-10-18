@@ -22,6 +22,12 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
   - **Bloodline**: Increases domain limit, county tax, development growth, and building construction speed.
   - **Hematurgy**: Unlocks hostile scheme power, scheme defense, dread gain, and natural tyranny decay.
 
+- **Crimson Sworn-Guard & Knight Rites**:
+  - **Crimson Sworn-Guard Court Position**: Employ up to 2 dedicated blood-bound bodyguards (Blood Knights or immortal Blood Golems) who dramatically cut enemy hostile scheme success chances against you (-2 to -15) and bolster baseline dread (+5 to +15) based on their prowess, martial, and vanguard/slaughter track experience.
+  - **Anoint Vanguard Champion**: Consecrate knights or Blood Knight courtiers with Minor Lifeforce to bestow +4 Prowess, +0.5 Health, and health penalty negation for 5 years (`bm_anointed_champion_modifier`).
+  - **Ritual Sparring**: Test martial prowess against sworn knights, Blood Knight courtiers, or martial friends in non-lethal duels (2-year cooldown), sharpening combat acumen and condensing a drop of Minor Lifeforce on critical victory.
+  - **Cull Fallen Champion**: Offer critically broken followers or formidable captured warriors (Prowess 12+ or Blood Knights) upon the sacrificial altar for 1 Major Lifeforce and Slaughter/Hematurgy XP, rolling a prowess-scaled chance (up to 50%) to condense 1 Superior Lifeforce.
+
 - **Go on a Blood Hunt Overhaul & Wilderness Expansion**:
   - Re-themed from the meditative "Seek Power in Nature's Domain" into **Go on a Blood Hunt**, open to both **Blood Mages** and **Blood Knights**.
   - **Direct Encounter Resolution**: Clicking **Begin the hunt** resolves a 7-way Prowess + Learning encounter duel directly on execution, displaying exact encounter odds in the decision preview and bypassing filler clicks.

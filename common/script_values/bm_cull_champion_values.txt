@@ -1,0 +1,6 @@
+﻿# Evaluates recipient's prowess capped at 50 for chance of condensing superior lifeforce
+bm_cull_champion_superior_chance_value = {
+	value = scope:recipient.prowess
+	min = 0
+	max = 50
+}

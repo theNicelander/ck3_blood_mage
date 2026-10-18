@@ -40,8 +40,17 @@ Living technical specification for the Blood Knight subsystem (`lifestyle_blood_
   - `lifedrain_courtier_event_interaction`: Prowess duel siphon (`25` Piety, 3-mo CD) -> 1 Minor Lifeforce + `+1` `slaughter` XP.
   - `trait_drain_prisoner_event_interaction`: Steal congenital traits up to Rank 5 from prisoners (`100–325` Piety + Major Lifeforce) -> `+2` `slaughter` XP.
   - `bm_bless_bloodline_interaction`: Bless child/kin (`35` Piety + Minor Lifeforce, 10-yr buff) -> `+2` `vanguard` XP.
+  - `bm_anoint_knight_interaction`: Anoint sworn knight or Blood Knight courtier (`50` Piety + Minor Lifeforce) -> `bm_anointed_champion_modifier` (`+4` Prowess, `+0.5` Health, `+0.5` Negate Health Penalty for 5 yrs) and `+2` `vanguard` (Knight) / `+2` `benediction` (Mage) XP.
+  - `bm_ritual_spar_interaction`: Non-lethal ritual prowess duel against knight, Blood Knight courtier, or martial friend (`50` Piety, 2-yr CD) -> Crit: 1 Minor Lifeforce condensed + `+3` XP / `bm_spar_honed_modifier`; Win: `+3` XP / modifier; Loss: `+1` XP to actor, `+3` XP to recipient.
+  - `bm_cull_champion_interaction`: Blood sacrifice of prowess >= 12 prisoner / Blood Knight prisoner or critically broken follower (`50` Piety) -> Executes target (`death_lifedrain_reason`), yields **1 Major Lifeforce**, `+3` `slaughter` (Knight) / `+3` `hematurgy` (Mage) XP, and rolls `1 × prowess` chance (capped at 50%) for **1 Superior Lifeforce**.
   - `bm_inscribe_rune_other_interaction`: Carve Minor (`+4` `benediction` XP) or Major (`+5` `benediction` XP) Galdrastafir runes onto courtiers, kin, knights, or golems.
   - `bm_heal_ailment`: Full healing access across Minor, Major, and Deadly ailments (`37` conditions) on self (`+2`/`+4` `enlightenment`, `+8` `benediction`) and comrades (`+1`/`+2` `vanguard` + `benediction`, `+8` `benediction`).
+- **Crimson Sworn-Guard Court Position (`bm_blood_bodyguard_court_position`):**
+  - Specialized bodyguard court position (up to 2 positions) available to Blood Mages and Blood Knights.
+  - Eligibility: Follower/courtier with `lifestyle_blood_knight` or belonging to `house:bm_house_golem`, combatant-eligible, not imprisoned.
+  - Aptitude: Scales with Prowess ($\times 2$), Martial, `vanguard` and `slaughter` track XP ($\times 0.25$), `loyal` (`+20`), and `giant` (`+15`).
+  - Employer Buffs: Scaling hostile scheme protection (`-2` to `-15` success chance, `-2` to `-10` max chance) and Dread baseline (`+5` to `+15`).
+  - Guard Buff: `+4` Prowess, `+0.5` Health, `+0.5` Monthly Prestige. Salary: `0.5` Gold.
 - **Full Minor, Major & Superior Grimoire Access:**
   - Self-inscribe Minor (`+4` `ancient`), Major (`+5` `ancient`), and Superior (`+10` `ancient`) Galdrastafir Blood Runes.
   - Unlock and level all 5 `lifestyle_blood_power` tracks (`+3` `enlightenment` + `+10` Power XP).
@@ -72,6 +81,8 @@ Each track has 10 tiers (`10, 20, ..., 100` XP). Vitality step = `+0.1` Health, 
 | Lifecycle & prevalence effects | `common/scripted_effects/bm_blood_mage_lifecycle_effects.txt` |
 | Prevalence game rule | `common/game_rules/bm_game_rules.txt` (`bm_blood_knight_prevalence`) |
 | Make & empower interactions | `common/character_interactions/bm_blood_knight_interactions.txt` |
+| Knight rites & sparring | `common/character_interactions/bm_knight_rites.txt` |
+| Crimson Sworn-Guard court position | `common/court_positions/types/bm_court_positions.txt` |
 | Healing & ailment removal | `common/character_interactions/bm_cure_illness_interactions.txt`, `events/bm_heal_ailment_events.txt` |
 | Superior magic decision & events | `common/decisions/cast_magic/bm_cast_blood_magic_superior.txt`, `events/bm_cast_blood_magic_superior_events.txt` |
 | Battlefield victory/defeat & tournament hooks | `common/on_action/bm_combat_on_actions.txt`, `common/scripted_effects/bm_combat_effects.txt` |
