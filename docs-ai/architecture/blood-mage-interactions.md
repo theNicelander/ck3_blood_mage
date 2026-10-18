@@ -5,7 +5,7 @@ Living technical specification for character interactions in the Blood Mage mod.
 ## Executive Summary
 
 - **What:** Targeted character interactions for Lifeforce harvesting, trait theft, healing, retinue empowerment, and teaching blood magic.
-- **Category:** All 19 mod gameplay character interactions are grouped into the dedicated category `interaction_category_bm_blood_magic` ("Blood Magic", `index = 16`, crimson `{ 0.75 0.12 0.12 1 }`) defined in `common/character_interaction_categories/bm_character_interaction_categories.txt`.
+- **Category:** All 20 mod gameplay character interactions are grouped into the dedicated category `interaction_category_bm_blood_magic` ("Blood Magic", `index = 16`, crimson `{ 0.75 0.12 0.12 1 }`) defined in `common/character_interaction_categories/bm_character_interaction_categories.txt`.
 - **Rule:** Uses `ai_targets` to avoid global scans. AI vetoes prevent draining close family, spouses, friends, and council.
 
 ### Interactions Master Table
@@ -15,6 +15,7 @@ Living technical specification for character interactions in the Blood Mage mod.
 | `ask_for_blood_magic_interaction` | Friend, lover, soulmate, liege mage/knight | 250 Piety. Recipient requires Superior Lifeforce (consumed). Actor lacks Blood Mage and Blood Knight. | None | Requests blood magic. Recipient grants matching class (`bm_become_blood_mage_effect` or `bm_become_blood_knight_effect`). |
 | `grant_blood_magic_interaction` | Courtier, family, spouse | Major Lifeforce + 100 Piety OR Minor Lifeforce + 250 Piety. Actor is Blood Mage; recipient lacks Blood Mage and Blood Knight. | Major: +4 bloodline (+5 if child/kin); Minor: +2 bloodline | Bestows `lifestyle_blood_mage` onto target. |
 | `make_blood_knight_interaction` | Sworn knight or courtier | Major Lifeforce + 100 Piety OR Minor Lifeforce + 250 Piety. Actor is Blood Knight; recipient lacks Blood Mage and Blood Knight. | Major: +4 vanguard; Minor: +2 vanguard | Bestows `lifestyle_blood_knight` onto target. |
+| `bm_consecrate_union_interaction` | Self, spouse, consort, lover, soulmate | 100 Piety + Minor or Major Lifeforce. Recipient lacks `bm_consecrated_union_modifier`. Actor is Blood Mage or Blood Knight. | Minor: Mage +2 bloodline / Knight +2 vanguard; Major: Mage +4 bloodline / Knight +4 vanguard | Applies `bm_consecrated_union_modifier` (+50% fertility, +10 yrs fertility, +30% positive genetic chance, +30% genetic reinforce chance) for 3 yrs (Minor) or 10 yrs (Major). Adds +20/+35 opinion if cast on partner. |
 | `bm_bless_bloodline_interaction` | Child, dynasty kin | 35 Piety + Minor Lifeforce. Recipient not blessed. | Mage: +2 bloodline; Knight: +2 vanguard | Grants `bm_blessed_blood_modifier` (+1 all stats, +10% fertility, +0.25 health) for 10 years. |
 | `bm_get_blood_magic_from_prisoner_interaction` | Imprisoned blood mage or blood knight | 100 Piety. Actor lacks Blood Mage and Blood Knight. | None | Forcibly steals blood magic via Learning/Prowess/Intrigue duel. Bestows prisoner's class on win. Prisoner drained/maimed. |
 | `lifedrain_prisoner_event_interaction` | Dungeon prisoner | 50 Piety (`lifedrain_piety_cost_major`). Actor is Blood Mage; prisoner not already drained. | +2 hematurgy | Executes prisoner (`death_lifedrain_reason`). Grants `lifeforce_modifier_major` (+25 Gold with Superior **Nábrókarstafur**). |
@@ -57,6 +58,7 @@ Living technical specification for character interactions in the Blood Mage mod.
 | Inscribe Blood Rune on Other | `common/character_interactions/bm_inscribe_rune_other.txt` |
 | Blood Knight (Make & Empower) | `common/character_interactions/bm_blood_knight_interactions.txt` |
 | Grant Blood Magic Trait | `common/character_interactions/bm_grant_blood_magic.txt` |
+| Consecrate Union (Spouses & Lovers) | `common/character_interactions/bm_union_interactions.txt` |
 | Bless Kin's Blood | `common/character_interactions/bm_bless_bloodline.txt` |
 | Grant Lifeforce Stacks | `common/character_interactions/bm_grant_lifeforce.txt` |
 | Cast Blood Curse | `common/character_interactions/bm_curse_blood.txt` |
