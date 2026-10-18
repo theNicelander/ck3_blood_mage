@@ -157,4 +157,5 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 - **Decision Event Dialog Fix**: Resolved an issue where multiple UTF-8 BOM headers at file start caused the game engine to drop event namespaces, preventing dialogs from opening when clicking "Seek Power" and "Cast Major Blood Magic -> Channel Blood Empowerment".
 - **Interaction Registration**: Corrected encoding on character interactions ensuring "Inscribe Blood Rune" registers cleanly in character menus.
 - **Localization Syntax**: Fixed a formatting typo in modifier descriptions that caused localization parser errors.
+- **Current Situation Healing Alerts**: Fixed a display issue where "(NUM)" appeared literally in the grouped healing alert header, and streamlined descriptions to concisely instruct spending Lifeforce.
 - **Repository Integrity**: Updated repo validation tools with strict multi-BOM and embedded BOM detection to prevent file encoding regressions.

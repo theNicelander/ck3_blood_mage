@@ -14,6 +14,7 @@ CK3 script fails silently. Follow patterns already in this repo and in vanilla 1
 - **Rule of cool**: Low-fantasy blood magic integrated seamlessly into CK3 systems.
 - **Zero vanilla overwrites**: Pure modular additions; strictly compatible with total conversions and other mods.
 - **Earned power over godmode**: Lifespan extension and physical/mental trait improvements (intellect, beauty, physique) require earned Lifeforce, piety, and ritual sacrifice, with tangible risks.
+- **Concise and direct over fluffy flavour**: UI text, tooltips, alerts, action descriptions, and mechanics must be concise and to the point. Always use concrete terms like "Lifeforce" rather than vague synonyms like "vitality" or "vital arts". Keep flavour text strictly confined to narrative descriptions in decisions and events.
 - **Clarify before building**: When making plans, always ask multiple follow-up questions. User ideas are often rough, exploratory, or ungrounded; never run on unverified assumptions—clarify ambiguities and explicitly state assumptions before implementing.
 - **Commit planned work**: Plans must always conclude with committing the changes at the end. Since plans are well thought out, commit the finished implementation; any subsequent adjustments, user feedback, or follow-up iterations belong in a separate commit. Commits must strictly include only relevant files modified in your conversation.
 
@@ -59,7 +60,7 @@ Active rules: `ck3-scripting.md` (always on), `ck3-localization.md` (always on),
 
 ## Localization
 
-See `.agents/rules/ck3-localization.md` (english only, sibling keys, loc documents the script).
+See `.agents/rules/ck3-localization.md` (english only, sibling keys, loc documents the script, concise & direct wording, concrete "Lifeforce" term over fluffy "vitality", never include ($NUM$) in group labels).
 
 ## DDS Icons & Assets
 

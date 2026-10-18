@@ -14,7 +14,7 @@ Structure: copy neighboring file in `common/decisions/` or `common/character_int
 - Reused costs: declare in `common/script_values/`.
 - Prefer native `cooldown = { ... }` over custom character flags.
 - Re-entrancy: effects must be safe if fired twice, targeting missing scopes, or run by AI.
-- Tooltips: `custom_tooltip = { text = key }` for non-obvious outcomes. Missing loc keys render raw in UI.
+- Tooltips: `custom_tooltip = { text = key }` for non-obvious outcomes. Missing loc keys render raw in UI. Keep tooltips and confirm labels concise and direct; use concrete mechanics ("Lifeforce") rather than fluffy synonyms ("vitality"). Flavour belongs strictly in descriptions (`<id>_desc`).
 
 ## AI constraints
 
