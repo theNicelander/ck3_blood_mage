@@ -117,15 +117,12 @@ seek_power.003 = {
                 culture = root.culture
                 faith = scope:local_faith
             }
-            random = {
-                chance = 50
-                create_character = {
-                    template = bm_escort_knight_character_template
-                    save_scope_as = escort_knight
-                    location = root.location
-                    culture = root.culture
-                    faith = scope:local_faith
-                }
+            create_character = {
+                template = bm_escort_knight_character_template
+                save_scope_as = escort_knight
+                location = root.location
+                culture = root.culture
+                faith = scope:local_faith
             }
         }
     }
@@ -310,6 +307,10 @@ seek_power.003 = {
             has_trait = lifestyle_blood_knight
             prowess >= 25
         }
+        show_as_unavailable = {
+            has_trait = lifestyle_blood_knight
+            prowess < 25
+        }
         ai_chance = {
             base = 60
             modifier = {
@@ -361,6 +362,9 @@ seek_power.003 = {
         trigger = {
             learning > scope:recipient.learning
         }
+        show_as_unavailable = {
+            learning <= scope:recipient.learning
+        }
         ai_chance = { base = 50 }
         duel = {
             skill = learning
@@ -405,6 +409,10 @@ seek_power.003 = {
         trigger = {
             exists = scope:escort_knight
             prowess > scope:escort_knight.prowess
+        }
+        show_as_unavailable = {
+            exists = scope:escort_knight
+            prowess <= scope:escort_knight.prowess
         }
         ai_chance = { base = 40 }
         duel = {
