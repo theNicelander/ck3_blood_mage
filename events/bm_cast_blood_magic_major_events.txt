@@ -321,7 +321,7 @@ bm_cast_blood_magic_major.001 = {
 		}
 	}
 
-	# Manifest Perfection (Congenital Traits up to Rank 2)
+	# Manifest Trait (Congenital Traits up to Rank 2)
 	option = {
 		name = bm_cast_blood_magic_major.001.manifest_traits
 		trigger = {
@@ -331,11 +331,14 @@ bm_cast_blood_magic_major.001 = {
 			}
 			piety_level >= 3
 			piety >= 200
-			NOT = {
-				AND = {
-					has_trait_rank = { trait = intellect_good rank >= 2 }
-					has_trait_rank = { trait = physique_good rank >= 2 }
-					has_trait_rank = { trait = beauty_good rank >= 2 }
+			custom_description = {
+				text = bm_manifest_traits_max_rank_2_tt
+				NOT = {
+					AND = {
+						has_trait_rank = { trait = intellect_good rank >= 2 }
+						has_trait_rank = { trait = physique_good rank >= 2 }
+						has_trait_rank = { trait = beauty_good rank >= 2 }
+					}
 				}
 			}
 		}

@@ -29,7 +29,7 @@ flowchart TD
         J3["Improve Education (1★ to 4★)"]
         J4["Inscribe Major Blood Rune"]
         J5["Empower Bloodline"]
-        J6["Manifest Perfection (Ranks 1-2)"]
+        J6["Manifest Trait (Ranks 1-2)"]
         J7["Heal Major Ailments"]
         J8["Make Blood Knight / Blood Mage (Major)"]
         J9["Trait Theft (Ranks 1-5)"]
