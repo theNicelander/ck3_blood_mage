@@ -2,7 +2,8 @@
 
 ## Game version 1.20
 
-* v1.20.50.a: Core positive target triggers, Blood Knight mentor/grant expansion, stave stealth drain fix, self-bleeding & stress vice purging rites.
+- v1.20.50.b: Consecrate Union interaction for spouses, lovers, and consorts boosting fertility and genetic trait inheritance.
+- v1.20.50.a: Core positive target triggers, Blood Knight mentor/grant expansion, stave stealth drain fix, self-bleeding & stress vice purging rites.
 
 - v1.20.49: Re-theme Seek Power into Go on a Blood Hunt (seek_power_decision) with activity decision art, open to both Blood Mages and Blood Knights; streamline encounter roll into direct 7-way Prowess + Learning duel on decision execution; restrict sworn escort knight in lonely road encounter (seek_power.003) to Blood Knights while Blood Mages face lone traveler; add 4 new Blood Hunt encounters (seek_power.008 The Beast's Lair, seek_power.009 The Edge of the Woods homestead, seek_power.010 Blood in the Embers outlaw camp, seek_power.011 The Crimson Rite); harmonize stag hunt (.002) and sacrificial cairn (.004) rewards with clean Lifeforce and XP gains without exhaustion debuffs; update character portrait animations to active hunting and martial poses; update Vegvisir capstone and all architecture docs to reflect Blood Hunt.
 
