@@ -22,7 +22,7 @@ Living technical specification for the Blóðtrú religious family, cultural blo
 ### Holy Site Modifier Architecture (CK3 1.20)
 - **Eminent Holy Sites (`eminent_holy_sites`):** Grant **both** a `faith_character_modifier` (applies to all followers of the faith when controlled) **and** a `county_holder_character_modifier` (applies directly to the county holder, stacking with the faith-wide bonus). Primarily grant `+1 [Skill/Prowess] per Piety Level`, synergizing with Blood Mage / Blood Knight Level 8 Devotion capstones.
 - **Regular Holy Sites (`holy_sites`):** Grant local `county_holder_character_modifier` bonuses (`+0.25` Health, `+1` Life Expectancy, or `+1` Epidemic Resistance) to the holder of the county.
-- **Zero Vanilla Holy Site Overwrites:** Vanilla holy site keys (`luoyang`, `hangzhou`, `quanzhou`, `dunhuang`, `tenerife`, `rome`, `constantinople`, `kiev`, `athens`, `madrid`, `paris`) are referenced directly in the faith definitions without re-declaring their keys in `common/religion/holy_site_types/`.
+- **Zero Vanilla Holy Site Overwrites:** Vanilla holy site keys (`luoyang`, `dunhuang`, `tenerife`, `rome`, `constantinople`, `kiev`, `athens`, `madrid`, `paris`) are referenced directly in the faith definitions without re-declaring their keys in `common/religion/holy_site_types/`. Custom regional holy sites lacking vanilla definitions (such as `hangzhou` and `quanzhou`) are declared directly in `common/religion/holy_site_types/bm_china_holy_sites.txt`.
 
 ## Identity Doctrine (`bm_blodtru_identity_doctrine`)
 

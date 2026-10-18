@@ -8,12 +8,11 @@
 				}
 			}
 		}
-		add_blood_knight_xp = { TRACK = vanguard XP = 5 }
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_battle_victory_commander_toast
 			left_icon = this
-			custom_tooltip = bm_battle_victory_commander_t5_tt
+			add_blood_knight_xp = { TRACK = vanguard XP = 5 }
 		}
 	}
 	else_if = {
@@ -25,12 +24,11 @@
 				}
 			}
 		}
-		add_blood_knight_xp = { TRACK = vanguard XP = 5 }
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_battle_victory_commander_toast
 			left_icon = this
-			custom_tooltip = bm_battle_victory_commander_t4_tt
+			add_blood_knight_xp = { TRACK = vanguard XP = 5 }
 		}
 	}
 	else_if = {
@@ -42,12 +40,11 @@
 				}
 			}
 		}
-		add_blood_knight_xp = { TRACK = vanguard XP = 4 }
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_battle_victory_commander_toast
 			left_icon = this
-			custom_tooltip = bm_battle_victory_commander_t3_tt
+			add_blood_knight_xp = { TRACK = vanguard XP = 4 }
 		}
 	}
 	else_if = {
@@ -59,21 +56,19 @@
 				}
 			}
 		}
-		add_blood_knight_xp = { TRACK = vanguard XP = 3 }
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_battle_victory_commander_toast
 			left_icon = this
-			custom_tooltip = bm_battle_victory_commander_t2_tt
+			add_blood_knight_xp = { TRACK = vanguard XP = 3 }
 		}
 	}
 	else = {
-		add_blood_knight_xp = { TRACK = vanguard XP = 2 }
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_battle_victory_commander_toast
 			left_icon = this
-			custom_tooltip = bm_battle_victory_commander_t1_tt
+			add_blood_knight_xp = { TRACK = vanguard XP = 2 }
 		}
 	}
 }
@@ -88,12 +83,11 @@ bm_combat_winner_knight_reward_effect = {
 				}
 			}
 		}
-		add_blood_knight_xp = { TRACK = vanguard XP = 5 }
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_battle_victory_knight_toast
 			left_icon = this
-			custom_tooltip = bm_battle_victory_knight_t5_tt
+			add_blood_knight_xp = { TRACK = vanguard XP = 5 }
 		}
 	}
 	else_if = {
@@ -105,12 +99,11 @@ bm_combat_winner_knight_reward_effect = {
 				}
 			}
 		}
-		add_blood_knight_xp = { TRACK = vanguard XP = 4 }
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_battle_victory_knight_toast
 			left_icon = this
-			custom_tooltip = bm_battle_victory_knight_t4_tt
+			add_blood_knight_xp = { TRACK = vanguard XP = 4 }
 		}
 	}
 	else_if = {
@@ -122,12 +115,11 @@ bm_combat_winner_knight_reward_effect = {
 				}
 			}
 		}
-		add_blood_knight_xp = { TRACK = vanguard XP = 3 }
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_battle_victory_knight_toast
 			left_icon = this
-			custom_tooltip = bm_battle_victory_knight_t3_tt
+			add_blood_knight_xp = { TRACK = vanguard XP = 3 }
 		}
 	}
 	else_if = {
@@ -139,21 +131,19 @@ bm_combat_winner_knight_reward_effect = {
 				}
 			}
 		}
-		add_blood_knight_xp = { TRACK = vanguard XP = 2 }
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_battle_victory_knight_toast
 			left_icon = this
-			custom_tooltip = bm_battle_victory_knight_t2_tt
+			add_blood_knight_xp = { TRACK = vanguard XP = 2 }
 		}
 	}
 	else = {
-		add_blood_knight_xp = { TRACK = vanguard XP = 1 }
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_battle_victory_knight_toast
 			left_icon = this
-			custom_tooltip = bm_battle_victory_knight_t1_tt
+			add_blood_knight_xp = { TRACK = vanguard XP = 1 }
 		}
 	}
 }
@@ -168,13 +158,12 @@ bm_combat_loser_commander_reward_effect = {
 				}
 			}
 		}
-		add_blood_knight_xp = { TRACK = vanguard XP = 3 }
-		add_blood_knight_xp = { TRACK = enlightenment XP = 2 }
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_battle_defeat_commander_toast
 			left_icon = this
-			custom_tooltip = bm_battle_defeat_commander_t5_tt
+			add_blood_knight_xp = { TRACK = vanguard XP = 3 }
+			add_blood_knight_xp = { TRACK = enlightenment XP = 2 }
 		}
 	}
 	else_if = {
@@ -186,13 +175,12 @@ bm_combat_loser_commander_reward_effect = {
 				}
 			}
 		}
-		add_blood_knight_xp = { TRACK = vanguard XP = 3 }
-		add_blood_knight_xp = { TRACK = enlightenment XP = 2 }
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_battle_defeat_commander_toast
 			left_icon = this
-			custom_tooltip = bm_battle_defeat_commander_t4_tt
+			add_blood_knight_xp = { TRACK = vanguard XP = 3 }
+			add_blood_knight_xp = { TRACK = enlightenment XP = 2 }
 		}
 	}
 	else_if = {
@@ -204,13 +192,12 @@ bm_combat_loser_commander_reward_effect = {
 				}
 			}
 		}
-		add_blood_knight_xp = { TRACK = vanguard XP = 2 }
-		add_blood_knight_xp = { TRACK = enlightenment XP = 2 }
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_battle_defeat_commander_toast
 			left_icon = this
-			custom_tooltip = bm_battle_defeat_commander_t3_tt
+			add_blood_knight_xp = { TRACK = vanguard XP = 2 }
+			add_blood_knight_xp = { TRACK = enlightenment XP = 2 }
 		}
 	}
 	else_if = {
@@ -222,23 +209,21 @@ bm_combat_loser_commander_reward_effect = {
 				}
 			}
 		}
-		add_blood_knight_xp = { TRACK = vanguard XP = 2 }
-		add_blood_knight_xp = { TRACK = enlightenment XP = 1 }
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_battle_defeat_commander_toast
 			left_icon = this
-			custom_tooltip = bm_battle_defeat_commander_t2_tt
+			add_blood_knight_xp = { TRACK = vanguard XP = 2 }
+			add_blood_knight_xp = { TRACK = enlightenment XP = 1 }
 		}
 	}
 	else = {
-		add_blood_knight_xp = { TRACK = vanguard XP = 1 }
-		add_blood_knight_xp = { TRACK = enlightenment XP = 1 }
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_battle_defeat_commander_toast
 			left_icon = this
-			custom_tooltip = bm_battle_defeat_commander_t1_tt
+			add_blood_knight_xp = { TRACK = vanguard XP = 1 }
+			add_blood_knight_xp = { TRACK = enlightenment XP = 1 }
 		}
 	}
 }
@@ -253,13 +238,12 @@ bm_combat_loser_knight_reward_effect = {
 				}
 			}
 		}
-		add_blood_knight_xp = { TRACK = vanguard XP = 3 }
-		add_blood_knight_xp = { TRACK = enlightenment XP = 2 }
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_battle_defeat_knight_toast
 			left_icon = this
-			custom_tooltip = bm_battle_defeat_knight_t5_tt
+			add_blood_knight_xp = { TRACK = vanguard XP = 3 }
+			add_blood_knight_xp = { TRACK = enlightenment XP = 2 }
 		}
 	}
 	else_if = {
@@ -271,13 +255,12 @@ bm_combat_loser_knight_reward_effect = {
 				}
 			}
 		}
-		add_blood_knight_xp = { TRACK = vanguard XP = 2 }
-		add_blood_knight_xp = { TRACK = enlightenment XP = 2 }
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_battle_defeat_knight_toast
 			left_icon = this
-			custom_tooltip = bm_battle_defeat_knight_t4_tt
+			add_blood_knight_xp = { TRACK = vanguard XP = 2 }
+			add_blood_knight_xp = { TRACK = enlightenment XP = 2 }
 		}
 	}
 	else_if = {
@@ -289,13 +272,12 @@ bm_combat_loser_knight_reward_effect = {
 				}
 			}
 		}
-		add_blood_knight_xp = { TRACK = vanguard XP = 2 }
-		add_blood_knight_xp = { TRACK = enlightenment XP = 1 }
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_battle_defeat_knight_toast
 			left_icon = this
-			custom_tooltip = bm_battle_defeat_knight_t3_tt
+			add_blood_knight_xp = { TRACK = vanguard XP = 2 }
+			add_blood_knight_xp = { TRACK = enlightenment XP = 1 }
 		}
 	}
 	else_if = {
@@ -307,22 +289,20 @@ bm_combat_loser_knight_reward_effect = {
 				}
 			}
 		}
-		add_blood_knight_xp = { TRACK = vanguard XP = 1 }
-		add_blood_knight_xp = { TRACK = enlightenment XP = 1 }
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_battle_defeat_knight_toast
 			left_icon = this
-			custom_tooltip = bm_battle_defeat_knight_t2_tt
+			add_blood_knight_xp = { TRACK = vanguard XP = 1 }
+			add_blood_knight_xp = { TRACK = enlightenment XP = 1 }
 		}
 	}
 	else = {
-		add_blood_knight_xp = { TRACK = vanguard XP = 1 }
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_battle_defeat_knight_toast
 			left_icon = this
-			custom_tooltip = bm_battle_defeat_knight_t1_tt
+			add_blood_knight_xp = { TRACK = vanguard XP = 1 }
 		}
 	}
 }
@@ -338,13 +318,12 @@ bm_battle_victory_lifeforce_harvest_effect = {
 				}
 			}
 		}
-		add_character_modifier = { modifier = lifeforce_modifier_minor }
-		add_character_modifier = { modifier = lifeforce_modifier_major }
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_battle_victory_both_lifeforce_toast
 			left_icon = this
-			custom_tooltip = bm_battle_victory_both_lifeforce_tt
+			add_character_modifier = { modifier = lifeforce_modifier_minor }
+			add_character_modifier = { modifier = lifeforce_modifier_major }
 		}
 	}
 	# 8,000 – 9,999 troops (or 4,000+ killed) -> 100% Minor, 90% Major
@@ -357,21 +336,19 @@ bm_battle_victory_lifeforce_harvest_effect = {
 				}
 			}
 		}
-		add_character_modifier = { modifier = lifeforce_modifier_minor }
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_battle_victory_lifeforce_toast
 			left_icon = this
-			custom_tooltip = bm_battle_victory_lifeforce_tt
+			add_character_modifier = { modifier = lifeforce_modifier_minor }
 		}
 		random = {
 			chance = 90
-			add_character_modifier = { modifier = lifeforce_modifier_major }
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_battle_victory_major_lifeforce_toast
 				left_icon = this
-				custom_tooltip = bm_battle_victory_major_lifeforce_tt
+				add_character_modifier = { modifier = lifeforce_modifier_major }
 			}
 		}
 	}
@@ -385,21 +362,19 @@ bm_battle_victory_lifeforce_harvest_effect = {
 				}
 			}
 		}
-		add_character_modifier = { modifier = lifeforce_modifier_minor }
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_battle_victory_lifeforce_toast
 			left_icon = this
-			custom_tooltip = bm_battle_victory_lifeforce_tt
+			add_character_modifier = { modifier = lifeforce_modifier_minor }
 		}
 		random = {
 			chance = 75
-			add_character_modifier = { modifier = lifeforce_modifier_major }
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_battle_victory_major_lifeforce_toast
 				left_icon = this
-				custom_tooltip = bm_battle_victory_major_lifeforce_tt
+				add_character_modifier = { modifier = lifeforce_modifier_major }
 			}
 		}
 	}
@@ -413,21 +388,19 @@ bm_battle_victory_lifeforce_harvest_effect = {
 				}
 			}
 		}
-		add_character_modifier = { modifier = lifeforce_modifier_minor }
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_battle_victory_lifeforce_toast
 			left_icon = this
-			custom_tooltip = bm_battle_victory_lifeforce_tt
+			add_character_modifier = { modifier = lifeforce_modifier_minor }
 		}
 		random = {
 			chance = 50
-			add_character_modifier = { modifier = lifeforce_modifier_major }
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_battle_victory_major_lifeforce_toast
 				left_icon = this
-				custom_tooltip = bm_battle_victory_major_lifeforce_tt
+				add_character_modifier = { modifier = lifeforce_modifier_major }
 			}
 		}
 	}
@@ -443,22 +416,20 @@ bm_battle_victory_lifeforce_harvest_effect = {
 		}
 		random = {
 			chance = 85
-			add_character_modifier = { modifier = lifeforce_modifier_minor }
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_battle_victory_lifeforce_toast
 				left_icon = this
-				custom_tooltip = bm_battle_victory_lifeforce_tt
+				add_character_modifier = { modifier = lifeforce_modifier_minor }
 			}
 		}
 		random = {
 			chance = 25
-			add_character_modifier = { modifier = lifeforce_modifier_major }
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_battle_victory_major_lifeforce_toast
 				left_icon = this
-				custom_tooltip = bm_battle_victory_major_lifeforce_tt
+				add_character_modifier = { modifier = lifeforce_modifier_major }
 			}
 		}
 	}
@@ -474,22 +445,20 @@ bm_battle_victory_lifeforce_harvest_effect = {
 		}
 		random = {
 			chance = 75
-			add_character_modifier = { modifier = lifeforce_modifier_minor }
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_battle_victory_lifeforce_toast
 				left_icon = this
-				custom_tooltip = bm_battle_victory_lifeforce_tt
+				add_character_modifier = { modifier = lifeforce_modifier_minor }
 			}
 		}
 		random = {
 			chance = 10
-			add_character_modifier = { modifier = lifeforce_modifier_major }
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_battle_victory_major_lifeforce_toast
 				left_icon = this
-				custom_tooltip = bm_battle_victory_major_lifeforce_tt
+				add_character_modifier = { modifier = lifeforce_modifier_major }
 			}
 		}
 	}
@@ -505,12 +474,11 @@ bm_battle_victory_lifeforce_harvest_effect = {
 		}
 		random = {
 			chance = 50
-			add_character_modifier = { modifier = lifeforce_modifier_minor }
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_battle_victory_lifeforce_toast
 				left_icon = this
-				custom_tooltip = bm_battle_victory_lifeforce_tt
+				add_character_modifier = { modifier = lifeforce_modifier_minor }
 			}
 		}
 	}
@@ -526,12 +494,11 @@ bm_battle_victory_lifeforce_harvest_effect = {
 		}
 		random = {
 			chance = 25
-			add_character_modifier = { modifier = lifeforce_modifier_minor }
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_battle_victory_lifeforce_toast
 				left_icon = this
-				custom_tooltip = bm_battle_victory_lifeforce_tt
+				add_character_modifier = { modifier = lifeforce_modifier_minor }
 			}
 		}
 	}
@@ -539,12 +506,11 @@ bm_battle_victory_lifeforce_harvest_effect = {
 	else = {
 		random = {
 			chance = 10
-			add_character_modifier = { modifier = lifeforce_modifier_minor }
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_battle_victory_lifeforce_toast
 				left_icon = this
-				custom_tooltip = bm_battle_victory_lifeforce_tt
+				add_character_modifier = { modifier = lifeforce_modifier_minor }
 			}
 		}
 	}

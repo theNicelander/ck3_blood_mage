@@ -14,6 +14,8 @@ CK3 script fails silently. Follow patterns already in this repo and in vanilla 1
 - **Rule of cool**: Low-fantasy blood magic integrated seamlessly into CK3 systems.
 - **Zero vanilla overwrites**: Pure modular additions; strictly compatible with total conversions and other mods.
 - **Earned power over godmode**: Lifespan extension and physical/mental trait improvements (intellect, beauty, physique) require earned Lifeforce, piety, and ritual sacrifice, with tangible risks.
+- **Concise and direct over fluffy flavour**: UI text, tooltips, alerts, action descriptions, and mechanics must be concise and to the point. Always use concrete terms like "Lifeforce" rather than vague synonyms like "vitality" or "vital arts". Keep flavour text strictly confined to narrative descriptions in decisions and events.
+- **Nothing hidden, but often unavailable (Always show grayed out)**: Spells, rites, and character options should remain visible and grayed out (`show_as_unavailable = { ... }`) whenever possible so players can always see what capabilities exist and what requirements (Lifeforce, Piety, Devotion, Cooldown) are needed to reach them. Only hide an option when its prerequisite stage has not been reached or when it has been permanently completed or superseded.
 - **Clarify before building**: When making plans, always ask multiple follow-up questions. User ideas are often rough, exploratory, or ungrounded; never run on unverified assumptions—clarify ambiguities and explicitly state assumptions before implementing.
 - **Commit planned work**: Plans must always conclude with committing the changes at the end. Since plans are well thought out, commit the finished implementation; any subsequent adjustments, user feedback, or follow-up iterations belong in a separate commit. Commits must strictly include only relevant files modified in your conversation.
 
@@ -36,6 +38,7 @@ Active rules: `ck3-scripting.md` (always on), `ck3-localization.md` (always on),
 - `docs-ai/ideas/`: brainstorms, proposals, and roadmaps. Speculative; do not treat as current game state.
 - `docs-ai/branch-context/`: branch and PR working state, trade-offs, and decision records. One mandatory `<branch>.md` per branch.
 - `CHANGELOG.md`: living changelog with one line per branch version matching the branch name (e.g. `* v1.20.40: <short description>`), caveman style, reverse chronological: latest changes at top.
+- `RELEASE_NOTES.md`: public-facing living release notes for players and Steam Workshop, summarizing net features and bugfixes since v1.15. Keep updated using skill `update-release-notes`.
 - Religion uses the 1.20 layout `common/religion/{religion_family_types,religion_types,faith_types,rite_types,holy_site_types,doctrine_group_types,doctrine_types}`. Branches based on older `main` may still have `religions/`, `religion_families/`, `holy_sites/` and a bare `add_trait = lifestyle_blood_mage`. **Check which layout the branch has. Never mix them.**
 
 ## Naming
@@ -58,7 +61,7 @@ Active rules: `ck3-scripting.md` (always on), `ck3-localization.md` (always on),
 
 ## Localization
 
-See `.agents/rules/ck3-localization.md` (english only, sibling keys, loc documents the script).
+See `.agents/rules/ck3-localization.md` (english only, sibling keys, loc documents the script, concise & direct wording, concrete "Lifeforce" term over fluffy "vitality", never include ($NUM$) in group labels).
 
 ## DDS Icons & Assets
 
@@ -88,9 +91,10 @@ Multiple AIs work in parallel on this repo, so keep in mind that there maybe oth
 
 1. `git branch --show-current`; read `docs-ai/branch-context/<branch>.md` (**create if missing**, see `pr-context.md`), matching rule(s), and matching `docs-ai/architecture/*.md` (start at its `README.md`).
 2. Plan & clarify: when making plans, always ask multiple follow-up questions. Probe ungrounded ideas, confirm assumptions, and clarify ambiguities before coding. Plans must always conclude with committing at the end. Smallest change that works. Check existing identifiers with `grep -rn`.
-3. Use the matching skill for the task (`add-blood-magic-decision`, `add-decision-option-widget`, `add-faith`, `add-trait-track`, `add-game-rule`).
+3. Use the matching skill for the task (`add-blood-magic-decision`, `add-decision-option-widget`, `add-faith`, `add-trait-track`, `add-game-rule`, `update-release-notes`).
 4. Update matching architecture doc in `docs-ai/architecture/` in the same change so it stays true to current state.
 5. Update `CHANGELOG.md`: living document, prepend single-line short high-level description matching current branch name (e.g. `* v1.20.40: <short description>`), caveman style, net branch status only (fold superseded changes, drop reverts). Reverse chronological: latest changes at top.
-6. **Always** update `docs-ai/branch-context/<branch>.md` to net branch state, however small the task.
-7. Run `python3 scripts/check_repo.py` (enforces 1 and 6). State in the final summary what you could not verify.
-8. **Commit**: Stage and commit ONLY files modified in your active conversation (`git add <file1> <file2> && git commit -m "..."`). Because plans are well thought out, commit the finished plan implementation at the end; subsequent feedback or modifications must be committed in separate commits. Never blanket stage (`git add .`), as multiple agents operate concurrently.
+6. For player-facing additions or bugfixes, update `RELEASE_NOTES.md` per skill `update-release-notes`.
+7. **Always** update `docs-ai/branch-context/<branch>.md` to net branch state, however small the task.
+8. Run `python3 scripts/check_repo.py` (enforces 1 and 7). State in the final summary what you could not verify.
+9. **Commit**: Stage and commit ONLY files modified in your active conversation (`git add <file1> <file2> && git commit -m "..."`). Because plans are well thought out, commit the finished plan implementation at the end; subsequent feedback or modifications must be committed in separate commits. Never blanket stage (`git add .`), as multiple agents operate concurrently.

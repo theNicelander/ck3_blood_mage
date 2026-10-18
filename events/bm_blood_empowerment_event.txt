@@ -1,0 +1,263 @@
+﻿# Blood Empowerment Events
+
+namespace = bm_blood_empowerment_event
+
+bm_blood_empowerment_event.001 = {
+	type = character_event
+	title = bm_blood_empowerment_event.001.title
+	desc = bm_blood_empowerment_event.001.desc
+	theme = witchcraft
+
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+
+	immediate = {
+		if = {
+			limit = { NOT = { has_trait = lifestyle_blood_empowerment } }
+			add_trait = lifestyle_blood_empowerment
+		}
+	}
+
+	# Blood Dynasty
+	option = {
+		name = bm_empower_dynasty
+		trigger = {
+			OR = {
+				NOT = { has_trait = lifestyle_blood_empowerment }
+				has_trait_xp = {
+					trait = lifestyle_blood_empowerment
+					track = dynasty
+					value < 100
+				}
+			}
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		add_piety = -150
+		blood_magic_used_major = yes
+		send_interface_toast = {
+			title = bm_blood_empowerment_event.001.toast
+			left_icon = this
+			add_shared_bm_bk_xp = {
+				TRACK = enlightenment
+				XP = 3
+			}
+			add_blood_empowerment_xp = { TRACK = dynasty }
+		}
+		custom_tooltip = bm_empower_dynasty_desc
+		ai_chance = { base = 100 }
+	}
+
+	# Blood Mastery
+	option = {
+		name = bm_empower_mastery
+		trigger = {
+			OR = {
+				NOT = { has_trait = lifestyle_blood_empowerment }
+				has_trait_xp = {
+					trait = lifestyle_blood_empowerment
+					track = mastery
+					value < 100
+				}
+			}
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		add_piety = -150
+		blood_magic_used_major = yes
+		send_interface_toast = {
+			title = bm_blood_empowerment_event.001.toast
+			left_icon = this
+			add_shared_bm_bk_xp = {
+				TRACK = enlightenment
+				XP = 3
+			}
+			add_blood_empowerment_xp = { TRACK = mastery }
+		}
+		custom_tooltip = bm_empower_mastery_desc
+		ai_chance = { base = 100 }
+	}
+
+	# Blood Presence
+	option = {
+		name = bm_empower_presence
+		trigger = {
+			OR = {
+				NOT = { has_trait = lifestyle_blood_empowerment }
+				has_trait_xp = {
+					trait = lifestyle_blood_empowerment
+					track = presence
+					value < 100
+				}
+			}
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		add_piety = -150
+		blood_magic_used_major = yes
+		send_interface_toast = {
+			title = bm_blood_empowerment_event.001.toast
+			left_icon = this
+			add_shared_bm_bk_xp = {
+				TRACK = enlightenment
+				XP = 3
+			}
+			add_blood_empowerment_xp = { TRACK = presence }
+		}
+		custom_tooltip = bm_empower_presence_desc
+		ai_chance = { base = 100 }
+	}
+
+	# Blood Prosperity
+	option = {
+		name = bm_empower_prosperity
+		trigger = {
+			OR = {
+				NOT = { has_trait = lifestyle_blood_empowerment }
+				has_trait_xp = {
+					trait = lifestyle_blood_empowerment
+					track = prosperity
+					value < 100
+				}
+			}
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		add_piety = -150
+		blood_magic_used_major = yes
+		send_interface_toast = {
+			title = bm_blood_empowerment_event.001.toast
+			left_icon = this
+			add_shared_bm_bk_xp = {
+				TRACK = enlightenment
+				XP = 3
+			}
+			add_blood_empowerment_xp = { TRACK = prosperity }
+		}
+		custom_tooltip = bm_empower_prosperity_desc
+		ai_chance = { base = 100 }
+	}
+
+	# Blood Shadows
+	option = {
+		name = bm_empower_shadows
+		trigger = {
+			OR = {
+				NOT = { has_trait = lifestyle_blood_empowerment }
+				has_trait_xp = {
+					trait = lifestyle_blood_empowerment
+					track = shadows
+					value < 100
+				}
+			}
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		add_piety = -150
+		blood_magic_used_major = yes
+		send_interface_toast = {
+			title = bm_blood_empowerment_event.001.toast
+			left_icon = this
+			add_shared_bm_bk_xp = {
+				TRACK = enlightenment
+				XP = 3
+			}
+			add_blood_empowerment_xp = { TRACK = shadows }
+		}
+		custom_tooltip = bm_empower_shadows_desc
+		ai_chance = { base = 100 }
+	}
+
+	# Versatility (Fallback when all 5 tracks are maxed)
+	option = {
+		name = bm_empower_versatility
+		trigger = {
+			has_trait = lifestyle_blood_empowerment
+			has_trait_xp = {
+				trait = lifestyle_blood_empowerment
+				track = dynasty
+				value >= 100
+			}
+			has_trait_xp = {
+				trait = lifestyle_blood_empowerment
+				track = mastery
+				value >= 100
+			}
+			has_trait_xp = {
+				trait = lifestyle_blood_empowerment
+				track = presence
+				value >= 100
+			}
+			has_trait_xp = {
+				trait = lifestyle_blood_empowerment
+				track = prosperity
+				value >= 100
+			}
+			has_trait_xp = {
+				trait = lifestyle_blood_empowerment
+				track = shadows
+				value >= 100
+			}
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		add_piety = -150
+		blood_magic_used_major = yes
+		send_interface_toast = {
+			title = bm_blood_empowerment_event.001.toast
+			left_icon = this
+			add_shared_bm_bk_xp = {
+				TRACK = enlightenment
+				XP = 3
+			}
+			add_character_modifier = {
+				modifier = temporary_buff_self
+				days = 3650
+			}
+			random = {
+				chance = { value = 10 add = this.diplomacy }
+				add_diplomacy_skill = 1
+			}
+			random = {
+				chance = { value = 10 add = this.learning }
+				add_learning_skill = 1
+			}
+			random = {
+				chance = { value = 10 add = this.martial }
+				add_martial_skill = 1
+			}
+			random = {
+				chance = { value = 10 add = this.intrigue }
+				add_intrigue_skill = 1
+			}
+			random = {
+				chance = { value = 10 add = this.stewardship }
+				add_stewardship_skill = 1
+			}
+			random = {
+				chance = { value = 10 add = this.prowess }
+				add_prowess_skill = 2
+			}
+		}
+		custom_tooltip = bm_empower_versatility_desc
+		ai_chance = { base = 10 }
+	}
+
+	# Return to Major Grimoire
+	option = {
+		name = bm_cast_blood_magic_major.001.cancel
+		trigger = {
+			always = yes
+		}
+		trigger_event = { id = bm_cast_blood_magic_major.001 }
+		ai_chance = { base = 0 }
+	}
+}

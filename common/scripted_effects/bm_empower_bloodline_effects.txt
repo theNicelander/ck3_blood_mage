@@ -1,0 +1,92 @@
+﻿# Scripted effects for Empower Dynasty Bloodline covenants and surges
+
+# Upgrade House Covenant to next tier
+# Parameter: COVENANT (charisma, fury, prosperity, shadows, insight, legacy, expertise)
+bm_upgrade_house_covenant_effect = {
+	# Tier I -> Tier II
+	if = {
+		limit = {
+			house = { has_house_modifier = dynasty_blood_$COVENANT$_modifier_1 }
+		}
+		add_piety = -350
+		blood_magic_used_major = yes
+		house = {
+			remove_house_modifier = dynasty_blood_$COVENANT$_modifier_1
+			add_house_modifier = { modifier = dynasty_blood_$COVENANT$_modifier_2 }
+		}
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_empower_bloodline_tier_2_toast
+			left_icon = root
+			if = {
+				limit = { has_trait = lifestyle_blood_mage }
+				add_xp_bm_dynamic = {
+					TRACK = bloodline
+					XP = 5
+				}
+			}
+			else = {
+				add_blood_knight_xp = {
+					TRACK = vanguard
+					XP = 5
+				}
+			}
+		}
+	}
+	# Tier II -> Tier III
+	else_if = {
+		limit = {
+			house = { has_house_modifier = dynasty_blood_$COVENANT$_modifier_2 }
+		}
+		add_piety = -750
+		blood_magic_used_superior = yes
+		house = {
+			remove_house_modifier = dynasty_blood_$COVENANT$_modifier_2
+			add_house_modifier = { modifier = dynasty_blood_$COVENANT$_modifier_3 }
+		}
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_empower_bloodline_tier_3_toast
+			left_icon = root
+			if = {
+				limit = { has_trait = lifestyle_blood_mage }
+				add_xp_bm_dynamic = {
+					TRACK = bloodline
+					XP = 10
+				}
+			}
+			else = {
+				add_blood_knight_xp = {
+					TRACK = vanguard
+					XP = 10
+				}
+			}
+		}
+	}
+	# Base -> Tier I
+	else = {
+		add_piety = -150
+		blood_magic_used_minor = yes
+		house = {
+			add_house_modifier = { modifier = dynasty_blood_$COVENANT$_modifier_1 }
+		}
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_empower_bloodline_tier_1_toast
+			left_icon = root
+			if = {
+				limit = { has_trait = lifestyle_blood_mage }
+				add_xp_bm_dynamic = {
+					TRACK = bloodline
+					XP = 3
+				}
+			}
+			else = {
+				add_blood_knight_xp = {
+					TRACK = vanguard
+					XP = 3
+				}
+			}
+		}
+	}
+}

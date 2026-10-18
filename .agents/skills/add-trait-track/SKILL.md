@@ -13,7 +13,7 @@ Context: `docs-ai/architecture/blood-mage-traits.md`, `blood-mage-blood-empowerm
 1. Trait definition: update track and every level block in `common/traits/bm_blood_mage_trait.txt` (or `bm_blood_empowerment_trait.txt`).
 2. Update all XP-gated checks testing all tracks (`grep` existing track names).
 3. Update XP helper effects in `common/scripted_effects/bm_trait_track_xp_gain_effects.txt`.
-4. English loc: track name and description in `bm_traits_l_english.yml`.
+4. English loc: track name and description in `bm_traits_l_english.yml`. Keep help text and tooltips concise and direct; use concrete mechanics ("Lifeforce") rather than vague flavour ("vitality").
 5. Update docs, `CHANGELOG.md`, branch context; validate.
 
 ## Verify

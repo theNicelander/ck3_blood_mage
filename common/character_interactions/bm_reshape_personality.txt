@@ -1,5 +1,5 @@
 ﻿bm_reshape_personality_interaction = {
-	category = interaction_category_friendly
+	category = interaction_category_bm_blood_magic
 	icon = bm_reshape_personality_interaction
 	desc = bm_reshape_personality_interaction_desc
 	common_interaction = yes
@@ -28,7 +28,7 @@
 				dynasty ?= scope:actor.dynasty
 				is_close_family_of = scope:actor
 				is_extended_family_of = scope:actor
-				is_ward_of = scope:actor
+				has_relation_guardian = scope:actor
 				is_knight_of = scope:actor
 				is_councillor_of = scope:actor
 				scope:actor.liege ?= this

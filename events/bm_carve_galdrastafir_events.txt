@@ -1,0 +1,174 @@
+﻿# events/bm_carve_galdrastafir_events.txt
+namespace = bm_galdrastafir
+
+bm_galdrastafir.001 = {
+	type = character_event
+	title = bm_galdrastafir.001.title
+	desc = bm_galdrastafir.001.desc
+	theme = witchcraft
+
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+
+	# 1. Vegvísir — The Wayfinder
+	option = {
+		name = bm_carve_vegvisir
+		trigger = {
+			NOT = { has_character_modifier = bm_stave_vegvisir }
+		}
+		if = {
+			limit = { bm_has_any_stave_trigger = yes }
+			bm_swap_capstone_cost_effect = yes
+		}
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_galdrastafir.001.toast
+			left_icon = root
+			bm_set_capstone_stave_effect = { STAVE = vegvisir }
+		}
+		custom_tooltip = bm_carve_vegvisir_tooltip
+		ai_chance = {
+			value = 10
+			if = {
+				limit = { has_trait = lifestyle_traveler }
+				add = 20
+			}
+			if = {
+				limit = { bm_has_any_stave_trigger = yes }
+				multiply = 0
+			}
+		}
+	}
+
+	# 2. Ægishjálmur — The Helm of Awe
+	option = {
+		name = bm_carve_aegishjalmur
+		trigger = {
+			NOT = { has_character_modifier = bm_stave_aegishjalmur }
+		}
+		if = {
+			limit = { bm_has_any_stave_trigger = yes }
+			bm_swap_capstone_cost_effect = yes
+		}
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_galdrastafir.001.toast
+			left_icon = root
+			bm_set_capstone_stave_effect = { STAVE = aegishjalmur }
+		}
+		custom_tooltip = bm_carve_aegishjalmur_tooltip
+		ai_chance = {
+			value = 10
+			if = {
+				limit = { has_trait = lifestyle_blood_knight }
+				add = 25
+			}
+			if = {
+				limit = { bm_has_any_stave_trigger = yes }
+				multiply = 0
+			}
+		}
+	}
+
+	# 3. Feingur — The Awakened Seed
+	option = {
+		name = bm_carve_feingur
+		trigger = {
+			NOT = { has_character_modifier = bm_stave_feingur }
+		}
+		if = {
+			limit = { bm_has_any_stave_trigger = yes }
+			bm_swap_capstone_cost_effect = yes
+		}
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_galdrastafir.001.toast
+			left_icon = root
+			bm_set_capstone_stave_effect = { STAVE = feingur }
+		}
+		custom_tooltip = bm_carve_feingur_tooltip
+		ai_chance = {
+			value = 10
+			if = {
+				limit = { NOT = { any_child = { count >= 2 } } }
+				add = 25
+			}
+			if = {
+				limit = { bm_has_any_stave_trigger = yes }
+				multiply = 0
+			}
+		}
+	}
+
+	# 4. Nábrókarstafur — The Flayed Tithe
+	option = {
+		name = bm_carve_nabrokarstafur
+		trigger = {
+			NOT = { has_character_modifier = bm_stave_nabrokarstafur }
+		}
+		if = {
+			limit = { bm_has_any_stave_trigger = yes }
+			bm_swap_capstone_cost_effect = yes
+		}
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_galdrastafir.001.toast
+			left_icon = root
+			bm_set_capstone_stave_effect = { STAVE = nabrokarstafur }
+		}
+		custom_tooltip = bm_carve_nabrokarstafur_tooltip
+		ai_chance = {
+			value = 10
+			if = {
+				limit = { gold < 100 }
+				add = 20
+			}
+			if = {
+				limit = { bm_has_any_stave_trigger = yes }
+				multiply = 0
+			}
+		}
+	}
+
+	# 5. Hulinhjálmur — The Unseen Shroud
+	option = {
+		name = bm_carve_hulinhjalmur
+		trigger = {
+			NOT = { has_character_modifier = bm_stave_hulinhjalmur }
+		}
+		if = {
+			limit = { bm_has_any_stave_trigger = yes }
+			bm_swap_capstone_cost_effect = yes
+		}
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_galdrastafir.001.toast
+			left_icon = root
+			bm_set_capstone_stave_effect = { STAVE = hulinhjalmur }
+		}
+		custom_tooltip = bm_carve_hulinhjalmur_tooltip
+		ai_chance = {
+			value = 10
+			if = {
+				limit = { has_lifestyle = intrigue_lifestyle }
+				add = 20
+			}
+			if = {
+				limit = { bm_has_any_stave_trigger = yes }
+				multiply = 0
+			}
+		}
+	}
+
+	# Return to Major Grimoire
+	option = {
+		name = bm_cast_blood_magic_major.001.cancel
+		trigger = {
+			always = yes
+		}
+		trigger_event = { id = bm_cast_blood_magic_major.001 }
+		ai_chance = { base = 0 }
+	}
+}

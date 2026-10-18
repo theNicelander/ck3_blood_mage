@@ -6,19 +6,19 @@ Living technical specification for body runes, Galdrastafir staves, and blood ar
 
 - **What:** Decoupled rune architecture separating **Rune Depth** (`minor/major/superior_blood_rune_modifier`) from **Galdrastafir Stave Identity** (`bm_stave_<key>`).
   - **Rune Depth (3 modifiers):** Sequential body runes (Minor -> Major -> Superior) that provide **no flat stat bonuses** themselves, solely governing the passive yearly Lifeforce pulse (`blood_mage_yearly_events.003`) and acting as the unlock gate for the capstone stave.
-  - **Capstone Staves (5 modifiers):** Granted exclusively at **Superior** rune depth via the standalone widget decision `bm_carve_galdrastafir_decision`. Each stave grants flat static attributes and an active occult capstone mechanic.
+  - **Capstone Staves (5 modifiers):** Granted exclusively at **Superior** rune depth via the Cast Major Blood Magic Grimoire (`bm_cast_blood_magic_major.001` -> `bm_galdrastafir.001`). Each stave grants flat static attributes and an active occult capstone mechanic.
 - **Self-Inscription (Ancient XP):** Inscribed sequentially via Grimoire events (`bm_cast_blood_magic_minor.001`, `major.001`, `superior.001`). Requires Devotion Rank 2 / 3 / 4 (`piety_level >= 2 / 3 / 4`), sets a 5-year character cooldown flag (`bm_blood_rune_cooldown`), and awards `+4 / +5 / +10` `ancient` XP. Both **Blood Mages** and **Blood Knights** can self-inscribe up to Superior.
 - **Inscribe on Others (Benediction XP):** Character interaction `bm_inscribe_rune_other_interaction` available to both classes. Upgrades target depth in-place (does not inscribe staves; target must use the decision once reaching Superior). Sets a 5-year cooldown (`bm_blood_rune_other_cooldown`) and awards `+4 / +5 / +10` `benediction` XP to caster. Inscribing **Superior** runes on others is exclusive to `lifestyle_blood_mage`.
-- **Capstone Stave Selection & Swapping:** Handled by `bm_carve_galdrastafir_decision` using `decision_view_widget_option_list_generic` in the situation/decision panel. Initial stave selection is **free** (0 Piety). Once chosen, the stave may be swapped after a 5-year cooldown (`bm_capstone_rune_cooldown`) at a cost of **500 Piety** and **1 Major Lifeforce** (`blood_magic_used_major`).
+- **Capstone Stave Selection & Swapping:** Handled inside the Cast Major Blood Magic Grimoire (`bm_cast_blood_magic_major.001` -> `bm_galdrastafir.001`). Initial stave selection is **free** (0 Piety, 0 Lifeforce) once Superior Blood Rune is etched. Once chosen, the stave may be swapped after a 5-year cooldown (`bm_capstone_rune_cooldown`) at a cost of **500 Piety** and **1 Major Lifeforce** (`blood_magic_used_major`).
 - **University Buildings:** `bm_university_0` through `bm_university_3`. Duchy capital holdings built by rulers with `lifestyle_blood_mage`.
 
 ## Tier Progression, Costs & XP Table
 
-| Rune Tier | Base Tracker | Self-Cast Gates (`minor/major/superior.001`) | Cast-on-Other Gates (`bm_inscribe_rune_other_interaction`) | Cost (Self & Other) | Self-Cast XP | Cast on Other XP | Yearly Lifeforce Pulse (`blood_mage_yearly_events.003`) | Capstone Stave Access (`bm_carve_galdrastafir_decision`) |
+| Rune Tier | Base Tracker | Self-Cast Gates (`minor/major/superior.001`) | Cast-on-Other Gates (`bm_inscribe_rune_other_interaction`) | Cost (Self & Other) | Self-Cast XP | Cast on Other XP | Yearly Lifeforce Pulse (`blood_mage_yearly_events.003`) | Capstone Stave Access (`bm_galdrastafir.001`) |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | **Minor** | `minor_blood_rune_modifier` | Mage or Knight, Rank 2 (`piety_level >= 2`), 5-yr CD (`bm_blood_rune_cooldown`) | Mage or Knight, Rank 2 (`piety_level >= 2`), `>= 25` total XP, 5-yr CD (`bm_blood_rune_other_cooldown`) | 0 Piety + 1 Minor Lifeforce | `+4` `ancient` | `+4` `benediction` | 20% Minor | Locked |
 | **Major** | `major_blood_rune_modifier` | Mage or Knight, Rank 3 (`piety_level >= 3`), Minor Rune, 5-yr CD (`bm_blood_rune_cooldown`) | Mage or Knight, Rank 3 (`piety_level >= 3`), `>= 50` total XP, Minor Rune, 5-yr CD (`bm_blood_rune_other_cooldown`) | 200 Piety + 1 Major Lifeforce | `+5` `ancient` | `+5` `benediction` | 20% Minor, 10% Major, 5% Both | Locked |
-| **Superior** | `superior_blood_rune_modifier` | Mage or Knight, Rank 4 (`piety_level >= 4`), Major Rune, 5-yr CD (`bm_blood_rune_cooldown`) | **Mage only**, Rank 4 (`piety_level >= 4`), `>= 100` total XP, Major Rune, 5-yr CD (`bm_blood_rune_other_cooldown`) | 400 Piety + 1 Superior Lifeforce | `+10` `ancient` | `+10` `benediction` | 10% Minor, 20% Major, 10% Both | **Unlocked**: First pick free; 5-yr swap for 500 Piety + 1 Major Lifeforce |
+| **Superior** | `superior_blood_rune_modifier` | Mage or Knight, Rank 4 (`piety_level >= 4`), Major Rune, 5-yr CD (`bm_blood_rune_cooldown`) | **Mage only**, Rank 4 (`piety_level >= 4`), `>= 100` total XP, Major Rune, 5-yr CD (`bm_blood_rune_other_cooldown`) | 400 Piety + 1 Superior Lifeforce | `+10` `ancient` | `+10` `benediction` | 10% Minor, 20% Major, 10% Both | **Unlocked**: First pick free; 5-yr swap for 500 Piety + 1 Major Lifeforce in Major Grimoire |
 
 *Yearly rolls handled by hidden pulse `blood_mage_yearly_events.003` (triggers on rune modifiers, no trait restriction).*
 
@@ -61,7 +61,7 @@ Duchy capital buildings constructible only if holder has `lifestyle_blood_mage`:
 | Stave, terror & Feingur bloodline modifiers | `common/modifiers/bm_blood_runes_modifiers.txt` |
 | Stave modifier DDS icons (120x120) | `gfx/interface/icons/modifiers/bm_stave_<key>.dds` |
 | Stave application & upgrade effects | `common/scripted_effects/bm_blood_runes_effects.txt` |
-| Capstone stave decision (Option List Widget) | `common/decisions/cast_magic/bm_carve_galdrastafir_decision.txt` |
+| Capstone stave event (Major Grimoire) | `events/bm_carve_galdrastafir_events.txt` |
 | Cast Blood Magic decisions | `common/decisions/cast_magic/bm_cast_blood_magic.txt` |
 | Self-cast rune events | `events/bm_cast_blood_magic_minor_events.txt`, `major_events.txt`, `superior_events.txt` |
 | Inscribe rune on other interaction | `common/character_interactions/bm_inscribe_rune_other.txt` |

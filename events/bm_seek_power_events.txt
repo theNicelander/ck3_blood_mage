@@ -1,4 +1,4 @@
-﻿﻿# lifedrain event
+﻿# lifedrain event
 
 namespace = seek_power
 
@@ -58,14 +58,14 @@ seek_power.002 = {
 
     option = {
         name = seek_power.002.a
-        add_character_modifier = { modifier = lifeforce_modifier_minor }
-        if = {
-            limit = { has_trait = lifestyle_blood_knight }
-            add_blood_knight_xp = { TRACK = slaughter XP = 1 }
-        }
         send_interface_toast = {
             title = seek_power.toast.stag
             left_icon = this
+            add_character_modifier = { modifier = lifeforce_modifier_minor }
+            if = {
+                limit = { has_trait = lifestyle_blood_knight }
+                add_blood_knight_xp = { TRACK = slaughter XP = 1 }
+            }
         }
         ai_chance = { base = 50 }
     }
@@ -103,21 +103,106 @@ seek_power.003 = {
     # Create the traveler/minor noble, and 50% chance to also spawn a martial escort knight
     immediate = {
         hidden_effect = {
+            if = {
+                limit = { exists = root.location.county.faith }
+                root.location.county.faith = { save_scope_as = local_faith }
+            }
+            else = {
+                root.faith = { save_scope_as = local_faith }
+            }
             create_character = {
                 template = traveller_character_template
                 save_scope_as = recipient
                 location = root.location
                 culture = root.culture
-                faith = root.faith
+                faith = scope:local_faith
             }
-            random = {
-                chance = 50
-                create_character = {
-                    template = bm_escort_knight_character_template
-                    save_scope_as = escort_knight
-                    location = root.location
-                    culture = root.culture
-                    faith = root.faith
+            create_character = {
+                template = bm_escort_knight_character_template
+                save_scope_as = escort_knight
+                location = root.location
+                culture = root.culture
+                faith = scope:local_faith
+            }
+        }
+    }
+
+    # Option 1: Friendly Brawl (Prowess skill duel against traveler/noble: chance of Minor, low chance of Major)
+    option = {
+        name = seek_power.003.knight
+        trigger = {
+            has_trait = lifestyle_blood_knight
+        }
+        ai_chance = { base = 50 }
+        duel = {
+            skill = prowess
+            target = scope:recipient
+            17 = {
+                desc = seek_power.duel.knight_crit_win
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 0.32
+                    max = 16
+                }
+                send_interface_toast = {
+                    title = seek_power.toast.knight_crit_win
+                    left_icon = this
+                    right_icon = scope:recipient
+                    add_character_modifier = { modifier = lifeforce_modifier_major }
+                    add_blood_knight_xp = { TRACK = slaughter XP = 3 }
+                    hidden_effect = {
+                        bm_recount_lifeforce_stacks_effect = yes
+                    }
+                }
+            }
+            33 = {
+                desc = seek_power.duel.knight_win
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 0.68
+                    max = 30
+                }
+                send_interface_toast = {
+                    title = seek_power.toast.knight_win
+                    left_icon = this
+                    right_icon = scope:recipient
+                    add_character_modifier = { modifier = lifeforce_modifier_minor }
+                    add_blood_knight_xp = { TRACK = slaughter XP = 2 }
+                    hidden_effect = {
+                        bm_recount_lifeforce_stacks_effect = yes
+                    }
+                }
+            }
+            33 = {
+                desc = seek_power.duel.knight_spar
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = -0.68
+                    min = -30
+                }
+                send_interface_toast = {
+                    title = seek_power.toast.knight_spar
+                    left_icon = this
+                    right_icon = scope:recipient
+                    add_blood_knight_xp = { TRACK = vanguard XP = 1 }
+                }
+            }
+            17 = {
+                desc = seek_power.duel.escape
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = -0.32
+                    min = -16
+                }
+                modifier = {
+                    factor = 0
+                    bm_has_superior_stave_trigger = { STAVE = vegvisir }
+                }
+                send_interface_toast = {
+                    title = seek_power.toast.escape
+                    left_icon = this
+                    right_icon = scope:recipient
+                    add_stress = 5
                 }
             }
         }
@@ -140,12 +225,12 @@ seek_power.003 = {
                     value = scope:duel_value
                     multiplier = 2
                 }
-                scope:recipient = { death = { death_reason = death_sacrificed_to_gods } }
-                hematurgy_magic_cast_effect_major = yes
                 send_interface_toast = {
                     title = seek_power.toast.silent_drain
                     left_icon = this
                     right_icon = scope:recipient
+                    scope:recipient = { death = { death_reason = death_sacrificed_to_gods } }
+                    hematurgy_magic_cast_effect_major = yes
                 }
             }
             20 = {
@@ -154,11 +239,11 @@ seek_power.003 = {
                     factor = 0
                     bm_has_superior_stave_trigger = { STAVE = vegvisir }
                 }
-                add_stress = 5
                 send_interface_toast = {
                     title = seek_power.toast.escape
                     left_icon = this
                     right_icon = scope:recipient
+                    add_stress = 5
                 }
             }
             20 = {
@@ -167,23 +252,23 @@ seek_power.003 = {
                     factor = 0
                     bm_has_superior_stave_trigger = { STAVE = vegvisir }
                 }
-                scope:recipient = { death = { death_reason = death_sacrificed_to_gods } }
-                hematurgy_magic_cast_effect_major = yes
-                add_stress = 10
-                add_dread = 5
-                if = {
-                    limit = { exists = root.capital_county }
-                    root.capital_county = {
-                        add_county_modifier = {
-                            modifier = drained_beggar_holding
-                            years = 5
-                        }
-                    }
-                }
                 send_interface_toast = {
                     title = seek_power.toast.witnessed
                     left_icon = this
                     right_icon = scope:recipient
+                    scope:recipient = { death = { death_reason = death_sacrificed_to_gods } }
+                    hematurgy_magic_cast_effect_major = yes
+                    add_stress = 10
+                    add_dread = 5
+                    if = {
+                        limit = { exists = root.capital_county }
+                        root.capital_county = {
+                            add_county_modifier = {
+                                modifier = drained_beggar_holding
+                                years = 5
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -203,90 +288,12 @@ seek_power.003 = {
             has_character_modifier = lifeforce_modifier_major
             bm_can_drain_traits_from_target_trigger = yes
         }
-    }
-
-    # Blood Knight option 1: Friendly Brawl (Prowess skill duel against traveler/noble: chance of Minor, low chance of Major)
-    option = {
-        name = seek_power.003.knight
-        trigger = {
-            has_trait = lifestyle_blood_knight
-        }
-        ai_chance = { base = 50 }
-        duel = {
-            skill = prowess
-            target = scope:recipient
-            17 = {
-                desc = seek_power.duel.knight_crit_win
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 0.32
-                    max = 16
-                }
-                add_character_modifier = { modifier = lifeforce_modifier_major }
-                add_blood_knight_xp = { TRACK = slaughter XP = 3 }
-                hidden_effect = {
-                    bm_recount_lifeforce_stacks_effect = yes
-                }
-                send_interface_toast = {
-                    title = seek_power.toast.knight_crit_win
-                    left_icon = this
-                    right_icon = scope:recipient
-                }
-            }
-            33 = {
-                desc = seek_power.duel.knight_win
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 0.68
-                    max = 30
-                }
-                add_character_modifier = { modifier = lifeforce_modifier_minor }
-                add_blood_knight_xp = { TRACK = slaughter XP = 2 }
-                hidden_effect = {
-                    bm_recount_lifeforce_stacks_effect = yes
-                }
-                send_interface_toast = {
-                    title = seek_power.toast.knight_win
-                    left_icon = this
-                    right_icon = scope:recipient
-                }
-            }
-            33 = {
-                desc = seek_power.duel.knight_spar
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = -0.68
-                    min = -30
-                }
-                add_blood_knight_xp = { TRACK = vanguard XP = 1 }
-                send_interface_toast = {
-                    title = seek_power.toast.knight_spar
-                    left_icon = this
-                    right_icon = scope:recipient
-                }
-            }
-            17 = {
-                desc = seek_power.duel.escape
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = -0.32
-                    min = -16
-                }
-                modifier = {
-                    factor = 0
-                    bm_has_superior_stave_trigger = { STAVE = vegvisir }
-                }
-                add_stress = 5
-                send_interface_toast = {
-                    title = seek_power.toast.escape
-                    left_icon = this
-                    right_icon = scope:recipient
-                }
-            }
+        show_as_unavailable = {
+            always = yes
         }
     }
 
-    # Blood Knight option 2: Full Battlefield Duel (Single Combat Engine, FATALITY = possible) against escort knight or 20+ prowess traveler
+    # Blood Knight option 2: Full Battlefield Duel (Single Combat Engine, FATALITY = possible)
     option = {
         name = {
             text = {
@@ -301,10 +308,11 @@ seek_power.003 = {
         }
         trigger = {
             has_trait = lifestyle_blood_knight
-            OR = {
-                exists = scope:escort_knight
-                scope:recipient = { prowess >= 20 }
-            }
+            prowess >= 25
+        }
+        show_as_unavailable = {
+            has_trait = lifestyle_blood_knight
+            prowess < 25
         }
         ai_chance = {
             base = 60
@@ -351,9 +359,18 @@ seek_power.003 = {
         }
     }
 
-    # Learning challenge: Convince the traveler / minor noble to join my court
+    # Learning challenge: Convince the traveler / minor noble to join me
     option = {
         name = seek_power.003.c
+        trigger = {
+            custom_description = {
+                text = seek_power.003.c.learning_trigger_tt
+                learning > scope:recipient.learning
+            }
+        }
+        show_as_unavailable = {
+            always = yes
+        }
         ai_chance = { base = 50 }
         duel = {
             skill = learning
@@ -365,15 +382,15 @@ seek_power.003 = {
                     multiplier = 0.90
                     max = 45
                 }
-                add_courtier = scope:recipient
-                add_shared_bm_bk_xp = {
-                    TRACK = enlightenment
-                    XP = 1
-                }
                 send_interface_toast = {
                     title = seek_power.toast.join
                     left_icon = this
                     right_icon = scope:recipient
+                    add_courtier = scope:recipient
+                    add_shared_bm_bk_xp = {
+                        TRACK = enlightenment
+                        XP = 1
+                    }
                 }
             }
             50 = {
@@ -392,15 +409,22 @@ seek_power.003 = {
         }
     }
 
-    # Learning challenge: Convince the escort knight to join my court
+    # Prowess challenge: Convince the escort knight to enter my service by martial superiority
     option = {
         name = seek_power.003.recruit_knight
         trigger = {
             exists = scope:escort_knight
+            custom_description = {
+                text = seek_power.003.recruit_knight.prowess_trigger_tt
+                prowess > scope:escort_knight.prowess
+            }
+        }
+        show_as_unavailable = {
+            exists = scope:escort_knight
         }
         ai_chance = { base = 40 }
         duel = {
-            skill = learning
+            skill = prowess
             target = scope:escort_knight
             33 = {
                 desc = seek_power.duel.join_knight
@@ -409,15 +433,15 @@ seek_power.003 = {
                     multiplier = 1.0
                     max = 57
                 }
-                add_courtier = scope:escort_knight
-                add_shared_bm_bk_xp = {
-                    TRACK = enlightenment
-                    XP = 2
-                }
                 send_interface_toast = {
                     title = seek_power.toast.join_knight
                     left_icon = this
                     right_icon = scope:escort_knight
+                    add_courtier = scope:escort_knight
+                    add_blood_knight_xp = {
+                        TRACK = vanguard
+                        XP = 2
+                    }
                 }
             }
             67 = {
@@ -458,18 +482,18 @@ seek_power.004 = {
 
     option = {
         name = seek_power.004.a
-        if = {
-            limit = { has_trait = lifestyle_blood_mage }
-            add_character_modifier = { modifier = lifeforce_modifier_major }
-            hematurgy_magic_cast_effect_minor = yes
-        }
-        else = {
-            add_character_modifier = { modifier = lifeforce_modifier_minor }
-            add_blood_knight_xp = { TRACK = enlightenment XP = 2 }
-        }
         send_interface_toast = {
             title = seek_power.toast.ancient_lifeforce
             left_icon = this
+            if = {
+                limit = { has_trait = lifestyle_blood_mage }
+                add_character_modifier = { modifier = lifeforce_modifier_major }
+                hematurgy_magic_cast_effect_minor = yes
+            }
+            else = {
+                add_character_modifier = { modifier = lifeforce_modifier_minor }
+                add_blood_knight_xp = { TRACK = enlightenment XP = 2 }
+            }
         }
         ai_chance = { base = 50 }
     }
@@ -540,21 +564,20 @@ seek_power.006 = {
             scope:duel_opponent = { is_alive = yes }
         }
         ai_chance = { base = 80 }
-        add_blood_knight_xp = { TRACK = slaughter XP = 5 }
-        add_character_modifier = { modifier = lifeforce_modifier_major }
-        random = {
-            chance = 25
-            add_character_modifier = { modifier = lifeforce_modifier_superior }
-        }
-        hidden_effect = {
-            bm_recount_lifeforce_stacks_effect = yes
-        }
         send_interface_toast = {
             type = event_toast_effect_good
             title = bm_duel_kill_blood_knight_toast
             left_icon = root
             right_icon = scope:duel_opponent
-            custom_tooltip = bm_duel_kill_blood_knight_tt
+            add_blood_knight_xp = { TRACK = slaughter XP = 5 }
+            add_character_modifier = { modifier = lifeforce_modifier_major }
+            random = {
+                chance = 25
+                add_character_modifier = { modifier = lifeforce_modifier_superior }
+            }
+            hidden_effect = {
+                bm_recount_lifeforce_stacks_effect = yes
+            }
         }
     }
 
@@ -568,11 +591,16 @@ seek_power.006 = {
             scope:duel_opponent = { is_alive = yes }
         }
         ai_chance = { base = 20 }
-        add_courtier = scope:duel_opponent
-        add_blood_knight_xp = { TRACK = vanguard XP = 2 }
-        add_character_modifier = { modifier = lifeforce_modifier_minor }
-        hidden_effect = {
-            bm_recount_lifeforce_stacks_effect = yes
+        send_interface_toast = {
+            title = seek_power.006.spare
+            left_icon = root
+            right_icon = scope:duel_opponent
+            add_courtier = scope:duel_opponent
+            add_blood_knight_xp = { TRACK = vanguard XP = 2 }
+            add_character_modifier = { modifier = lifeforce_modifier_minor }
+            hidden_effect = {
+                bm_recount_lifeforce_stacks_effect = yes
+            }
         }
     }
 

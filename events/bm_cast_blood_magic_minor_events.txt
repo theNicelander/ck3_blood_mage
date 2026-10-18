@@ -62,6 +62,9 @@ bm_cast_blood_magic_minor.001 = {
 				has_trait = weak
 			}
 		}
+		show_as_unavailable = {
+			always = yes
+		}
 		add_piety = -50
 		remove_character_modifier = lifeforce_modifier_minor
 		custom_tooltip = bm_cast_blood_magic_minor.001.purge.tt
@@ -150,6 +153,7 @@ bm_cast_blood_magic_minor.001 = {
 	}
 
 	# Condense Lifeforce (1 Minor Lifeforce + 100 Piety -> 1 Major Lifeforce)
+	# NOTE: Do NOT move Condense Lifeforce out into a standalone decision. It belongs strictly inside this Cast Minor Blood Magic Grimoire event.
 	option = {
 		name = bm_cast_blood_magic_minor.001.condense
 		trigger = {
@@ -157,14 +161,13 @@ bm_cast_blood_magic_minor.001 = {
 			piety >= 100
 		}
 		show_as_unavailable = {
-			has_character_modifier = lifeforce_modifier_minor
+			always = yes
 		}
 		add_piety = -100
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_condense_lifeforce_toast
 			left_icon = root
-			custom_tooltip = bm_condense_lifeforce_toast_desc
 			remove_character_modifier = lifeforce_modifier_minor
 			add_character_modifier = { modifier = lifeforce_modifier_major }
 			if = {
@@ -180,9 +183,9 @@ bm_cast_blood_magic_minor.001 = {
 					XP = 2
 				}
 			}
-		}
-		hidden_effect = {
-			bm_recount_lifeforce_stacks_effect = yes
+			hidden_effect = {
+				bm_recount_lifeforce_stacks_effect = yes
+			}
 		}
 		custom_tooltip = bm_cast_blood_magic_minor.001.condense.tt
 		ai_chance = {
@@ -203,14 +206,12 @@ bm_cast_blood_magic_minor.001 = {
 				text = bm_blood_rune_cooldown_tt
 				NOT = { has_character_flag = bm_blood_rune_cooldown }
 			}
-			NOT = { has_character_modifier = minor_blood_rune_modifier }
-			NOT = { has_character_modifier = major_blood_rune_modifier }
-			NOT = { has_character_modifier = superior_blood_rune_modifier }
+			NOT = { bm_has_blood_rune_trigger = yes }
 			has_character_modifier = lifeforce_modifier_minor
 			piety_level >= 2
 		}
 		show_as_unavailable = {
-			always = yes
+			NOT = { bm_has_blood_rune_trigger = yes }
 		}
 		send_interface_toast = {
 			type = event_toast_effect_good

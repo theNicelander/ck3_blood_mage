@@ -5,7 +5,7 @@
   bm_reshape_personality_interaction_confirm: "Begin Ritual"
 
   bm_reshape_personality_piety_level_tt: "Requires Level of Devotion 3 (Servant of Holy or higher)"
-  bm_reshape_personality_lifeforce_tt: "Requires [lifeforce_major|E]"
+  bm_reshape_personality_lifeforce_tt: "Requires [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]"
   bm_reshape_personality_recipient_no_traits_tt: "[recipient.GetShortUINameNoTooltip] must possess at least one personality trait"
   bm_reshape_personality_no_new_traits_tt: "You must possess at least one personality trait that [recipient.GetShortUINameNoTooltip] does not already have"
 

@@ -118,7 +118,7 @@
 
     # Blood Empowerment
     bm_channel_blood_empowerment_decision: "Channel Blood Empowerment"
-    bm_channel_blood_empowerment_decision_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and #V 150#! Piety to permanently advance a chosen discipline of your Blood Empowerment, refining mortal flesh, unlocking powerful milestones at 50 XP, and attaining transformative capstones at 100 XP."
+    bm_channel_blood_empowerment_decision_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and #V 150#! [piety|E] to improve [GetTrait('lifestyle_blood_empowerment').GetName( GetPlayer )].\n\nMilestones at #V 50#! and #V 100#! XP."
     bm_channel_blood_empowerment_decision_tooltip: "Spend Major Lifeforce to permanently advance a chosen Blood Empowerment track"
     BM_CHANNEL_BLOOD_EMPOWERMENT_DECISION_NEXT_STEP_BUTTON: "Awaken Power"
     bm_channel_blood_empowerment_decision_confirm: "$BM_CHANNEL_BLOOD_EMPOWERMENT_DECISION_NEXT_STEP_BUTTON$"
@@ -130,27 +130,27 @@
 
     bm_empower_dynasty: "Dynasty — Eugenics & Kinship"
     bm_empower_dynasty_name: "$bm_empower_dynasty$"
-    bm_empower_dynasty_desc: "Channels vital essence into reproductive potency, positive congenital traits, and kinship loyalty.\n\n#P Step:#! Vitality, +5% Fertility, +3% Congenital Chance, +2.5% Strengthen Congenital Traits, Close Relative & Dynasty Opinion.\n#V 50 XP Milestone:#! #P -50%#! Inbreeding Chance, #P +25%#! Negate Fertility Penalty, #P +5%#! Monthly Renown.\n#Y 100 XP Capstone:#! #P -100%#! Inbreeding Chance (Immunity), #P +50%#! Negate Fertility Penalty, #P +15%#! Monthly Renown."
+    bm_empower_dynasty_desc: "Channels vital essence into generational perfection, congenital inheritance, and complete inbreeding immunity.\n\n#P Step:#! +5% Positive Inactive Inheritance, +5% Congenital Trait Strengthen Chance.\n#V 50 XP Milestone:#! #P -50%#! Inbreeding Chance, #P +10%#! Monthly Renown.\n#Y 100 XP Capstone:#! #P -50%#! Inbreeding Chance (-100% total immunity), #P +15%#! Monthly Renown (+25% total), Age Prowess Lock."
     bm_empower_dynasty_tooltip: "$bm_empower_dynasty_desc$"
 
-    bm_empower_mastery: "Mastery — World-Walker & Polyglot"
+    bm_empower_mastery: "Mastery — World-Walker & Schemes"
     bm_empower_mastery_name: "$bm_empower_mastery$"
-    bm_empower_mastery_desc: "Expands the horizons of your mind and step, accelerating lifestyle mastery, worldly travel, and personal intrigue.\n\n#P Step:#! Vitality, +3% Lifestyle XP, +2.5% Travel Speed, +2.5 Travel Safety, +4 Personal Scheme Success, -3d Scheme Phase, +1 Language Slot (tiers 20/40/60/80).\n#V 50 XP Milestone:#! #P +1#! Max Personal Schemes, #P +1#! Learning per Fame level, +15% Cultural Acceptance.\n#Y 100 XP Capstone:#! #P +2#! Max Personal Schemes, #P +2#! Learning per Fame level, #P Ignore Negative Culture Opinion#!."
+    bm_empower_mastery_desc: "Expands the horizons of your mind and step, accelerating lifestyle mastery, language learning, and personal scheming.\n\n#P Step:#! +5% Monthly Lifestyle Experience (+1 Max Language Scheme at 30, 60, 90 XP).\n#V 50 XP Milestone:#! #P +1#! Max Personal Schemes.\n#Y 100 XP Capstone:#! #P +1#! Max Personal Schemes (+2 total), #P Ignore Negative Culture Opinion#!, Age Prowess Lock."
     bm_empower_mastery_tooltip: "$bm_empower_mastery_desc$"
 
     bm_empower_presence: "Presence — Mesmeric Majesty"
     bm_empower_presence_name: "$bm_empower_presence$"
-    bm_empower_presence_desc: "Projects supernatural magnetism, unshakeable mental composure, and legendary imperial authority.\n\n#P Step:#! Vitality, +3.75 Attraction Opinion, +2.5 Courtier & Guest Opinion, +5% Stress Loss, -3% Stress Gain, -5% Short Reign, +5% Long Reign Bonus.\n#V 50 XP Milestone:#! #P +1#! Diplomacy & Martial per Fame level, +15% Fame Impact.\n#Y 100 XP Capstone:#! #P +1#! Max Fame Level, #P +1.5#! Diplomacy & Martial per Fame level, #P Ignore Different Faith Opinion#!."
+    bm_empower_presence_desc: "Projects supernatural magnetism, unshakeable mental composure, and enduring imperial authority.\n\n#P Step:#! +3 General Opinion, -5% Stress Gain.\n#V 50 XP Milestone:#! #P +25%#! Fame Impact.\n#Y 100 XP Capstone:#! #P -25%#! Short Reign Duration, #P +25%#! Long Reign Bonus, Age Prowess Lock."
     bm_empower_presence_tooltip: "$bm_empower_presence_desc$"
 
     bm_empower_prosperity: "Prosperity — War Chest & Logistics"
     bm_empower_prosperity_name: "$bm_empower_prosperity$"
-    bm_empower_prosperity_desc: "Draws enduring wealth into your treasury while fortifying army logistics, camp infrastructure, and regiment capacity.\n\n#P Step:#! Vitality, +0.20 Monthly Gold, +3% Income Mult, -2.5% Men-at-Arms Upkeep, -2.5% Men-at-Arms Recruitment, -2.5% Camp/Domicile Build Cost.\n#V 50 XP Milestone:#! #P +1#! Men-at-Arms Regiment Size, #P +1#! Stewardship per Fame level, +0.25 Monthly Gold per Devotion level.\n#Y 100 XP Capstone:#! #P +2#! Men-at-Arms Regiment Size, #P +1#! Men-at-Arms Regiment Slot, #P +1#! Domain Limit, #P +1.5#! Stewardship per Fame level."
+    bm_empower_prosperity_desc: "Draws enduring wealth into your treasury while fortifying domain authority and Men-at-Arms regiments.\n\n#P Step:#! +5% Monthly Income, -4% Men-at-Arms Maintenance.\n#V 50 XP Milestone:#! #P +2#! Domain Limit, #P +1#! Men-at-Arms Regiment Size.\n#Y 100 XP Capstone:#! #P +2#! Domain Limit (+4 total), #P +2#! Men-at-Arms Regiment Size (+3 total), Age Prowess Lock."
     bm_empower_prosperity_tooltip: "$bm_empower_prosperity_desc$"
 
     bm_empower_shadows: "Shadows — Occult Warding & Premonition"
     bm_empower_shadows_name: "$bm_empower_shadows$"
-    bm_empower_shadows_desc: "Weaves an impenetrable shroud of blood around your life and court, slowing and capping enemy plots while bolstering counter-intrigue.\n\n#P Step:#! Vitality, -4 Enemy Hostile Scheme Success, +5d Enemy Scheme Phase Duration, +5 Scheme Secrecy, +0.05 Negate Health Penalty.\n#V 50 XP Milestone:#! #P -15%#! Enemy Hostile Scheme Max Success Cap, #P +1#! Intrigue & Prowess per Fame level.\n#Y 100 XP Capstone:#! #P -30%#! Enemy Hostile Scheme Max Success Cap, #P +1#! Max Hostile Schemes, #P +1.5#! Intrigue & Prowess per Fame level."
+    bm_empower_shadows_desc: "Weaves an impenetrable shroud of blood around your plots, capping enemy schemes while enabling deadly hostile scheming.\n\n#P Step:#! +5 Hostile Scheme Success, -5 Enemy Hostile Scheme Success.\n#V 50 XP Milestone:#! #P -25%#! Enemy Hostile Scheme Max Success Cap, #P +1#! Max Hostile Schemes.\n#Y 100 XP Capstone:#! #P -25%#! Enemy Hostile Scheme Max Success Cap (-50% total), #P +15%#! Own Hostile Scheme Max Success Cap, #P +1#! Max Hostile Schemes (+2 total), Age Prowess Lock."
     bm_empower_shadows_tooltip: "$bm_empower_shadows_desc$"
 
     bm_empower_versatility: "Versatility — Transcendent Perfection"
@@ -163,6 +163,8 @@
     bm_blood_empowerment_decision_desc: "$bm_channel_blood_empowerment_decision_desc$"
     bm_blood_empowerment_decision_tooltip: "$bm_channel_blood_empowerment_decision_tooltip$"
     bm_blood_empowerment_decision_confirm: "$bm_channel_blood_empowerment_decision_confirm$"
+    bm_blood_empowerment_event.001.title: "Blood Empowerment"
+    bm_blood_empowerment_event.001.desc: "The blood magic roars within me like a caged beast, desperate for expression. I can feel it straining against my flesh, eager to reshape my very essence according to my desires. Which aspect shall I allow it to transform today?"
     bm_blood_empowerment_event.001.toast: "Blood Empowerment"
 
     # Manifest Lifeforce
@@ -201,6 +203,9 @@
     bm_cast_blood_magic_major.001.title: "Major Blood Magic"
     bm_cast_blood_magic_major.001.desc: "A potent surge of major lifeforce pulses through your veins, ready to reshape mind, body, or bloodline. Choose which grand blood rite to execute."
     bm_cast_blood_magic_major.001.empowerment: "Blood Empowerment"
+    bm_cast_blood_magic_major.001.empowerment_tt: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and #V 150#! [piety|E] to improve [GetTrait('lifestyle_blood_empowerment').GetName( GetPlayer )].\n\nMilestones at #V 50#! and #V 100#! XP."
+    bm_cast_blood_magic_major.001.condense: "Condense Lifeforce"
+    bm_cast_blood_magic_major.001.condense.tt: "Through a rigorous distillation ritual, attempt a Learning contest to weave together [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] into [GetModifier('lifeforce_modifier_superior').GetNameWithTooltip]."
     bm_cast_blood_magic_major.001.improve_education: "Enhance Education"
     bm_cast_blood_magic_major.001.new_education: "Embrace New Education"
     bm_cast_blood_magic_major.001.blood_rune: "Inscribe Blood Runes"
@@ -208,6 +213,11 @@
     bm_cast_blood_magic_major.001.blood_rune_major: "Inscribe Major Blood Rune"
     bm_cast_blood_magic_major.001.blood_rune_superior: "Inscribe Superior Blood Rune"
     bm_cast_blood_magic_major.001.bloodline: "Empower Dynasty Bloodline"
+    bm_cast_blood_magic_major.001.galdrastafir: "Carve Galdrastafir Stave"
+    bm_cast_blood_magic_major.001.galdrastafir_tt: "Bind an ancient Galdrastafir stave to your Superior Blood Rune. Initial carving is free; swapping staves costs [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and #V 500#! [piety|E]."
+    bm_galdrastafir.001.title: "Galdrastafir Staves"
+    bm_galdrastafir.001.desc: "Having etched a Superior Blood Rune into your flesh, you can bind an ancient Galdrastafir stave to channel its occult powers. If you already bear a stave, attuning to a new one requires spending [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and #V 500#! [piety|E]."
+    bm_galdrastafir.001.toast: "Carved Galdrastafir Stave"
     bm_channel_bloodline_cooldown: "Recently Empowered Bloodline"
     bm_channel_bloodline_cooldown_desc: "You have recently channeled lifeforce into your dynasty bloodline and must allow the generational currents to settle."
     bm_channel_bloodline_cooldown_tt: "Has not empowered dynasty bloodline in the last 5 years"

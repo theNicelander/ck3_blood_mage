@@ -13,6 +13,9 @@ bm_trait_drain.001 = {
             scope:recipient = { has_trait = intellect_good }
             NOT = { has_trait_rank = { trait = intellect_good rank >= 5 } }
         }
+        show_as_unavailable = {
+            scope:recipient = { has_trait = intellect_good }
+        }
 
         # Cost
         add_piety = trait_drain_intellect_cost
@@ -63,6 +66,9 @@ bm_trait_drain.001 = {
             scope:recipient = { has_trait = physique_good }
             NOT = { has_trait_rank = { trait = physique_good rank >= 5 } }
         }
+        show_as_unavailable = {
+            scope:recipient = { has_trait = physique_good }
+        }
 
         # Cost
         add_piety = trait_drain_physique_cost
@@ -112,6 +118,9 @@ bm_trait_drain.001 = {
         trigger = {
             scope:recipient = { has_trait = beauty_good }
             NOT = { has_trait_rank = { trait = beauty_good rank >= 5 } }
+        }
+        show_as_unavailable = {
+            scope:recipient = { has_trait = beauty_good }
         }
 
         # Cost
@@ -164,6 +173,9 @@ bm_trait_drain.001 = {
                 scope:recipient = { has_trait = fecund }
                 NOT = { has_trait = fecund }
             }
+        }
+        show_as_unavailable = {
+            scope:recipient = { has_trait = fecund }
         }
 
         # Cost
@@ -230,6 +242,9 @@ bm_trait_drain.001 = {
                 NOT = { has_trait = giant }
             }
         }
+        show_as_unavailable = {
+            scope:recipient = { has_trait = giant }
+        }
 
         # Cost
         add_piety = trait_drain_base_piety_cost
@@ -293,6 +308,9 @@ bm_trait_drain.001 = {
                 scope:recipient = { has_trait = pure_blooded }
                 NOT = { has_trait = pure_blooded }
             }
+        }
+        show_as_unavailable = {
+            scope:recipient = { has_trait = pure_blooded }
         }
 
         # Cost
