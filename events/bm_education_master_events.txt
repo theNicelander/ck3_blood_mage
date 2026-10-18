@@ -17,6 +17,9 @@ bm_education_master.001 = {
 		trigger = {
 			has_trait = education_diplomacy_4
 		}
+		show_as_unavailable = {
+			always = yes
+		}
 		education_master_duel_effect = { trait = diplomacy }
 		ai_chance = { base = 100 }
 	}
@@ -26,6 +29,9 @@ bm_education_master.001 = {
 		name = bm_education_master.001.martial
 		trigger = {
 			has_trait = education_martial_4
+		}
+		show_as_unavailable = {
+			always = yes
 		}
 		education_master_duel_effect = { trait = martial }
 		ai_chance = { base = 100 }
@@ -37,6 +43,9 @@ bm_education_master.001 = {
 		trigger = {
 			has_trait = education_stewardship_4
 		}
+		show_as_unavailable = {
+			always = yes
+		}
 		education_master_duel_effect = { trait = stewardship }
 		ai_chance = { base = 100 }
 	}
@@ -47,6 +56,9 @@ bm_education_master.001 = {
 		trigger = {
 			has_trait = education_intrigue_4
 		}
+		show_as_unavailable = {
+			always = yes
+		}
 		education_master_duel_effect = { trait = intrigue }
 		ai_chance = { base = 100 }
 	}
@@ -56,6 +68,9 @@ bm_education_master.001 = {
 		name = bm_education_master.001.learning
 		trigger = {
 			has_trait = education_learning_4
+		}
+		show_as_unavailable = {
+			always = yes
 		}
 		education_master_duel_effect = { trait = learning }
 		ai_chance = { base = 100 }
