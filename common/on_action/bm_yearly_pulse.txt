@@ -2,6 +2,7 @@
     on_actions = {
         bm_review_unmarked_blood_mage_prevalence
         bm_review_unmarked_blood_knight_prevalence
+        bm_yearly_interpersonal_pulse
     }
     events = {
         blood_mage_yearly_events.001
@@ -40,5 +41,70 @@ bm_review_unmarked_blood_knight_prevalence = {
     }
     effect = {
         bm_apply_blood_knight_prevalence_retention_effect = yes
+    }
+}
+
+bm_yearly_interpersonal_pulse = {
+    trigger = {
+        is_ai = no
+        OR = {
+            has_trait = lifestyle_blood_mage
+            has_trait = lifestyle_blood_knight
+        }
+        NOT = { has_character_flag = bm_interpersonal_event_cooldown }
+    }
+    effect = {
+        random_list = {
+            100 = {
+                trigger = {
+                    OR = {
+                        any_relation = { type = soulmate is_alive = yes }
+                        any_relation = { type = lover is_alive = yes }
+                        any_spouse = { is_alive = yes }
+                        any_consort = { is_alive = yes }
+                    }
+                }
+                trigger_event = bm_interpersonal_events.0001
+            }
+            100 = {
+                trigger = {
+                    OR = {
+                        any_child = {
+                            is_alive = yes
+                            age >= 6
+                            age <= 15
+                        }
+                        any_relation = {
+                            type = ward
+                            is_alive = yes
+                            age >= 6
+                            age <= 15
+                        }
+                    }
+                }
+                trigger_event = bm_interpersonal_events.0002
+            }
+            100 = {
+                trigger = {
+                    any_courtier = {
+                        is_alive = yes
+                        house ?= house:bm_house_golem
+                    }
+                }
+                trigger_event = bm_interpersonal_events.0004
+            }
+            100 = {
+                trigger = {
+                    any_courtier = {
+                        is_alive = yes
+                        is_adult = yes
+                        NOT = { has_trait = lifestyle_blood_mage }
+                        NOT = { has_trait = lifestyle_blood_knight }
+                        NOT = { house ?= house:bm_house_golem }
+                    }
+                }
+                trigger_event = bm_interpersonal_events.0005
+            }
+        }
     }
 }

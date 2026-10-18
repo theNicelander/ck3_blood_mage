@@ -56,6 +56,45 @@ bm_on_combat_end_winner = {
 				}
 			}
 		}
+		every_side_commander = {
+			limit = {
+				is_ai = no
+				is_alive = yes
+				OR = {
+					has_trait = lifestyle_blood_mage
+					has_trait = lifestyle_blood_knight
+				}
+				NOT = { has_character_flag = bm_interpersonal_event_cooldown }
+				any_knight = {
+					is_alive = yes
+					NOT = { this = prev }
+				}
+			}
+			random = {
+				chance = 15
+				trigger_event = bm_interpersonal_events.0003
+			}
+		}
+		every_side_participant = {
+			limit = {
+				is_ai = no
+				is_alive = yes
+				NOT = { this = scope:winning_side.side_commander }
+				OR = {
+					has_trait = lifestyle_blood_mage
+					has_trait = lifestyle_blood_knight
+				}
+				NOT = { has_character_flag = bm_interpersonal_event_cooldown }
+				any_knight = {
+					is_alive = yes
+					NOT = { this = prev }
+				}
+			}
+			random = {
+				chance = 15
+				trigger_event = bm_interpersonal_events.0003
+			}
+		}
 	}
 }
 

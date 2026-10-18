@@ -1,0 +1,803 @@
+﻿namespace = bm_interpersonal_events
+
+# Event 1: A Drop on the Lips (Lover / Soulmate / Spouse)
+bm_interpersonal_events.0001 = {
+	type = character_event
+	title = bm_interpersonal_events.0001.t
+	desc = bm_interpersonal_events.0001.desc
+	theme = romance
+	left_portrait = {
+		character = root
+		animation = flirtation
+	}
+	right_portrait = {
+		character = scope:partner
+		animation = love
+	}
+
+	trigger = {
+		OR = {
+			has_trait = lifestyle_blood_mage
+			has_trait = lifestyle_blood_knight
+		}
+		OR = {
+			any_relation = { type = soulmate is_alive = yes }
+			any_relation = { type = lover is_alive = yes }
+			any_spouse = { is_alive = yes }
+			any_consort = { is_alive = yes }
+		}
+	}
+
+	immediate = {
+		add_character_flag = { flag = bm_interpersonal_event_cooldown years = 3 }
+		if = {
+			limit = { any_relation = { type = soulmate is_alive = yes } }
+			random_relation = { type = soulmate limit = { is_alive = yes } save_scope_as = partner }
+		}
+		else_if = {
+			limit = { any_relation = { type = lover is_alive = yes } }
+			random_relation = { type = lover limit = { is_alive = yes } save_scope_as = partner }
+		}
+		else_if = {
+			limit = { any_spouse = { is_alive = yes } }
+			random_spouse = { limit = { is_alive = yes } save_scope_as = partner }
+		}
+		else = {
+			random_consort = { limit = { is_alive = yes } save_scope_as = partner }
+		}
+	}
+
+	# Option A: Share drop of Lifeforce
+	option = {
+		name = bm_interpersonal_events.0001.a
+		trigger = {
+			has_character_modifier = lifeforce_modifier_minor
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		send_interface_toast = {
+			title = bm_interpersonal_events.0001.a.toast
+			left_icon = root
+			right_icon = scope:partner
+			blood_magic_used_minor = yes
+			scope:partner = {
+				add_character_modifier = {
+					modifier = bm_blessed_blood_modifier
+					years = 10
+				}
+				add_opinion = {
+					target = root
+					modifier = magic_opinion_positive
+					opinion = 30
+				}
+				add_stress = -30
+			}
+			add_stress = -30
+			if = {
+				limit = { has_trait = lifestyle_blood_mage }
+				add_blood_mage_xp = {
+					TRACK = benediction
+					XP = 3
+				}
+			}
+			else_if = {
+				limit = { has_trait = lifestyle_blood_knight }
+				add_blood_knight_xp = {
+					TRACK = vanguard
+					XP = 3
+				}
+			}
+			hidden_effect = {
+				bm_recount_lifeforce_stacks_effect = yes
+			}
+		}
+	}
+
+	# Option B: Drink from offered vein
+	option = {
+		name = bm_interpersonal_events.0001.b
+		send_interface_toast = {
+			title = bm_interpersonal_events.0001.b.toast
+			left_icon = root
+			right_icon = scope:partner
+			scope:partner = {
+				add_character_modifier = {
+					modifier = lifeforce_modifier_negative_minor
+					years = 1
+				}
+			}
+			if = {
+				limit = { has_relation_soulmate = scope:partner }
+				add_character_modifier = { modifier = lifeforce_modifier_major }
+			}
+			else = {
+				add_character_modifier = { modifier = lifeforce_modifier_minor }
+			}
+			if = {
+				limit = { has_trait = lifestyle_blood_mage }
+				add_blood_mage_xp = {
+					TRACK = hematurgy
+					XP = 2
+				}
+			}
+			else_if = {
+				limit = { has_trait = lifestyle_blood_knight }
+				add_blood_knight_xp = {
+					TRACK = slaughter
+					XP = 2
+				}
+			}
+			hidden_effect = {
+				bm_recount_lifeforce_stacks_effect = yes
+			}
+		}
+	}
+
+	# Option C: Initiate into Crimson Mysteries
+	option = {
+		name = bm_interpersonal_events.0001.c
+		trigger = {
+			scope:partner = {
+				NOT = { has_trait = lifestyle_blood_mage }
+				NOT = { has_trait = lifestyle_blood_knight }
+			}
+			has_character_modifier = lifeforce_modifier_major
+		}
+		show_as_unavailable = {
+			scope:partner = {
+				NOT = { has_trait = lifestyle_blood_mage }
+				NOT = { has_trait = lifestyle_blood_knight }
+			}
+		}
+		send_interface_toast = {
+			title = bm_interpersonal_events.0001.c.toast
+			left_icon = root
+			right_icon = scope:partner
+			blood_magic_used_major = yes
+			if = {
+				limit = { root = { has_trait = lifestyle_blood_mage } }
+				scope:partner = { bm_become_blood_mage_effect = yes }
+			}
+			else = {
+				scope:partner = { bm_become_blood_knight_effect = yes }
+			}
+			set_relation_soulmate = scope:partner
+			if = {
+				limit = { has_trait = lifestyle_blood_mage }
+				add_blood_mage_xp = {
+					TRACK = bloodline
+					XP = 5
+				}
+			}
+			else_if = {
+				limit = { has_trait = lifestyle_blood_knight }
+				add_blood_knight_xp = {
+					TRACK = vanguard
+					XP = 5
+				}
+			}
+			hidden_effect = {
+				bm_recount_lifeforce_stacks_effect = yes
+			}
+		}
+	}
+}
+
+# Event 2: The Fever of Awakening (Child / Ward Age 6–15)
+bm_interpersonal_events.0002 = {
+	type = character_event
+	title = bm_interpersonal_events.0002.t
+	desc = bm_interpersonal_events.0002.desc
+	theme = family
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+	right_portrait = {
+		character = scope:child
+		animation = sick
+	}
+
+	trigger = {
+		OR = {
+			has_trait = lifestyle_blood_mage
+			has_trait = lifestyle_blood_knight
+		}
+		OR = {
+			any_child = {
+				is_alive = yes
+				age >= 6
+				age <= 15
+			}
+			any_relation = {
+				type = ward
+				is_alive = yes
+				age >= 6
+				age <= 15
+			}
+		}
+	}
+
+	immediate = {
+		add_character_flag = { flag = bm_interpersonal_event_cooldown years = 3 }
+		if = {
+			limit = {
+				any_child = {
+					is_alive = yes
+					age >= 6
+					age <= 15
+				}
+			}
+			random_child = {
+				limit = {
+					is_alive = yes
+					age >= 6
+					age <= 15
+				}
+				save_scope_as = child
+			}
+		}
+		else = {
+			random_relation = {
+				type = ward
+				limit = {
+					is_alive = yes
+					age >= 6
+					age <= 15
+				}
+				save_scope_as = child
+			}
+		}
+	}
+
+	# Option A: Guide pulse with Minor Lifeforce
+	option = {
+		name = bm_interpersonal_events.0002.a
+		trigger = {
+			has_character_modifier = lifeforce_modifier_minor
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		send_interface_toast = {
+			title = bm_interpersonal_events.0002.a.toast
+			left_icon = root
+			right_icon = scope:child
+			blood_magic_used_minor = yes
+			scope:child = {
+				add_character_modifier = {
+					modifier = bm_guided_pulse_child_modifier
+				}
+				add_opinion = {
+					target = root
+					modifier = magic_opinion_positive
+					opinion = 20
+				}
+			}
+			if = {
+				limit = { has_trait = lifestyle_blood_mage }
+				add_blood_mage_xp = {
+					TRACK = bloodline
+					XP = 3
+				}
+			}
+			else_if = {
+				limit = { has_trait = lifestyle_blood_knight }
+				add_blood_knight_xp = {
+					TRACK = vanguard
+					XP = 3
+				}
+			}
+			hidden_effect = {
+				bm_recount_lifeforce_stacks_effect = yes
+			}
+		}
+	}
+
+	# Option B: Force awakening early
+	option = {
+		name = bm_interpersonal_events.0002.b
+		trigger = {
+			has_character_modifier = lifeforce_modifier_major
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		send_interface_toast = {
+			title = bm_interpersonal_events.0002.b.toast
+			left_icon = root
+			right_icon = scope:child
+			blood_magic_used_major = yes
+			scope:child = {
+				if = {
+					limit = { root = { has_trait = lifestyle_blood_mage } }
+					bm_become_blood_mage_effect = yes
+					add_trait_xp = {
+						trait = lifestyle_blood_mage
+						track = ancient
+						value = 10
+					}
+				}
+				else = {
+					bm_become_blood_knight_effect = yes
+					add_trait_xp = {
+						trait = lifestyle_blood_knight
+						track = ancient
+						value = 10
+					}
+				}
+			}
+			if = {
+				limit = { has_trait = lifestyle_blood_mage }
+				add_blood_mage_xp = {
+					TRACK = bloodline
+					XP = 5
+				}
+			}
+			else_if = {
+				limit = { has_trait = lifestyle_blood_knight }
+				add_blood_knight_xp = {
+					TRACK = vanguard
+					XP = 5
+				}
+			}
+			hidden_effect = {
+				bm_recount_lifeforce_stacks_effect = yes
+			}
+		}
+	}
+
+	# Option C: Soothe fever with prayer
+	option = {
+		name = bm_interpersonal_events.0002.c
+		send_interface_toast = {
+			title = bm_interpersonal_events.0002.c.toast
+			left_icon = root
+			right_icon = scope:child
+			add_piety = 75
+			add_shared_bm_bk_xp = {
+				TRACK = enlightenment
+				XP = 2
+			}
+		}
+	}
+}
+
+# Event 3: The Red Banquet After Battle (Sworn Knight)
+bm_interpersonal_events.0003 = {
+	type = character_event
+	title = bm_interpersonal_events.0003.t
+	desc = bm_interpersonal_events.0003.desc
+	theme = war
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:knight
+		animation = war_over_win
+	}
+
+	trigger = {
+		OR = {
+			has_trait = lifestyle_blood_mage
+			has_trait = lifestyle_blood_knight
+		}
+		any_knight = {
+			is_alive = yes
+			NOT = { this = root }
+		}
+	}
+
+	immediate = {
+		add_character_flag = { flag = bm_interpersonal_event_cooldown years = 3 }
+		random_knight = {
+			limit = {
+				is_alive = yes
+				NOT = { this = root }
+			}
+			save_scope_as = knight
+		}
+	}
+
+	# Option A: Drink together as comrades
+	option = {
+		name = bm_interpersonal_events.0003.a
+		send_interface_toast = {
+			title = bm_interpersonal_events.0003.a.toast
+			left_icon = root
+			right_icon = scope:knight
+			add_character_modifier = { modifier = lifeforce_modifier_minor }
+			scope:knight = {
+				add_character_modifier = { modifier = lifeforce_modifier_minor }
+				add_opinion = {
+					target = root
+					modifier = magic_opinion_positive
+					opinion = 25
+				}
+			}
+			if = {
+				limit = { has_trait = lifestyle_blood_mage }
+				add_blood_mage_xp = {
+					TRACK = bloodline
+					XP = 3
+				}
+			}
+			else_if = {
+				limit = { has_trait = lifestyle_blood_knight }
+				add_blood_knight_xp = {
+					TRACK = vanguard
+					XP = 3
+				}
+			}
+			hidden_effect = {
+				bm_recount_lifeforce_stacks_effect = yes
+			}
+		}
+	}
+
+	# Option B: Claim harvest as Warlord
+	option = {
+		name = bm_interpersonal_events.0003.b
+		send_interface_toast = {
+			title = bm_interpersonal_events.0003.b.toast
+			left_icon = root
+			right_icon = scope:knight
+			add_character_modifier = { modifier = lifeforce_modifier_major }
+			if = {
+				limit = { has_trait = lifestyle_blood_mage }
+				add_blood_mage_xp = {
+					TRACK = hematurgy
+					XP = 4
+				}
+			}
+			else_if = {
+				limit = { has_trait = lifestyle_blood_knight }
+				add_blood_knight_xp = {
+					TRACK = slaughter
+					XP = 4
+				}
+			}
+			scope:knight = {
+				add_opinion = {
+					target = root
+					modifier = magic_opinion_negative
+					opinion = -15
+				}
+			}
+			hidden_effect = {
+				bm_recount_lifeforce_stacks_effect = yes
+			}
+		}
+	}
+
+	# Option C: Consecrate slain
+	option = {
+		name = bm_interpersonal_events.0003.c
+		send_interface_toast = {
+			title = bm_interpersonal_events.0003.c.toast
+			left_icon = root
+			right_icon = scope:knight
+			add_piety = 150
+			add_shared_bm_bk_xp = {
+				TRACK = enlightenment
+				XP = 3
+			}
+		}
+	}
+}
+
+# Event 4: Echoes in the Clay (Blood Golem)
+bm_interpersonal_events.0004 = {
+	type = character_event
+	title = bm_interpersonal_events.0004.t
+	desc = bm_interpersonal_events.0004.desc
+	theme = witchcraft
+	left_portrait = {
+		character = root
+		animation = personality_mystical
+	}
+	right_portrait = {
+		character = scope:golem
+		animation = idle
+	}
+
+	trigger = {
+		OR = {
+			has_trait = lifestyle_blood_mage
+			has_trait = lifestyle_blood_knight
+		}
+		any_courtier = {
+			is_alive = yes
+			house ?= house:bm_house_golem
+		}
+	}
+
+	immediate = {
+		add_character_flag = { flag = bm_interpersonal_event_cooldown years = 3 }
+		random_courtier = {
+			limit = {
+				is_alive = yes
+				house ?= house:bm_house_golem
+			}
+			save_scope_as = golem
+		}
+		if = {
+			limit = {
+				exists = primary_heir
+				primary_heir = { is_alive = yes }
+			}
+			primary_heir = { save_scope_as = ward_target }
+		}
+		else_if = {
+			limit = {
+				any_spouse = { is_alive = yes }
+			}
+			random_spouse = {
+				limit = { is_alive = yes }
+				save_scope_as = ward_target
+			}
+		}
+	}
+
+	# Option A: Bind as Eternal Guardian of Heir/Spouse
+	option = {
+		name = bm_interpersonal_events.0004.a
+		trigger = {
+			exists = scope:ward_target
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		send_interface_toast = {
+			title = bm_interpersonal_events.0004.a.toast
+			left_icon = root
+			right_icon = scope:ward_target
+			scope:ward_target = {
+				add_character_modifier = {
+					modifier = bm_golem_aegis_modifier
+					years = 10
+				}
+			}
+			if = {
+				limit = { has_trait = lifestyle_blood_mage }
+				add_blood_mage_xp = {
+					TRACK = bloodline
+					XP = 3
+				}
+			}
+			else_if = {
+				limit = { has_trait = lifestyle_blood_knight }
+				add_blood_knight_xp = {
+					TRACK = vanguard
+					XP = 3
+				}
+			}
+		}
+	}
+
+	# Option B: Awaken ancient martial memory
+	option = {
+		name = bm_interpersonal_events.0004.b
+		send_interface_toast = {
+			title = bm_interpersonal_events.0004.b.toast
+			left_icon = root
+			right_icon = scope:golem
+			scope:golem = {
+				if = {
+					limit = { NOT = { has_trait = lifestyle_blademaster } }
+					add_trait = lifestyle_blademaster
+				}
+				else = {
+					add_prowess = 4
+				}
+			}
+			add_shared_bm_bk_xp = {
+				TRACK = enlightenment
+				XP = 3
+			}
+		}
+	}
+
+	# Option C: Siphon excess ichor from core
+	option = {
+		name = bm_interpersonal_events.0004.c
+		send_interface_toast = {
+			title = bm_interpersonal_events.0004.c.toast
+			left_icon = root
+			right_icon = scope:golem
+			add_character_modifier = { modifier = lifeforce_modifier_major }
+			if = {
+				limit = { has_trait = lifestyle_blood_mage }
+				add_blood_mage_xp = {
+					TRACK = hematurgy
+					XP = 3
+				}
+			}
+			else_if = {
+				limit = { has_trait = lifestyle_blood_knight }
+				add_blood_knight_xp = {
+					TRACK = slaughter
+					XP = 3
+				}
+			}
+			scope:golem = {
+				add_character_modifier = {
+					modifier = bm_siphoned_golem_modifier
+					years = 5
+				}
+			}
+			hidden_effect = {
+				bm_recount_lifeforce_stacks_effect = yes
+			}
+		}
+	}
+}
+
+# Event 5: The Whispering Sanctum (Snooping Courtier)
+bm_interpersonal_events.0005 = {
+	type = character_event
+	title = bm_interpersonal_events.0005.t
+	desc = bm_interpersonal_events.0005.desc
+	theme = intrigue
+	left_portrait = {
+		character = root
+		animation = anger
+	}
+	right_portrait = {
+		character = scope:courtier
+		animation = fear
+	}
+
+	trigger = {
+		OR = {
+			has_trait = lifestyle_blood_mage
+			has_trait = lifestyle_blood_knight
+		}
+		any_courtier = {
+			is_alive = yes
+			is_adult = yes
+			NOT = { has_trait = lifestyle_blood_mage }
+			NOT = { has_trait = lifestyle_blood_knight }
+			NOT = { house ?= house:bm_house_golem }
+		}
+	}
+
+	immediate = {
+		add_character_flag = { flag = bm_interpersonal_event_cooldown years = 3 }
+		random_courtier = {
+			limit = {
+				is_alive = yes
+				is_adult = yes
+				NOT = { has_trait = lifestyle_blood_mage }
+				NOT = { has_trait = lifestyle_blood_knight }
+				NOT = { house ?= house:bm_house_golem }
+			}
+			save_scope_as = courtier
+		}
+	}
+
+	# Option A: Drain in the dark (Prowess / Intrigue duel)
+	option = {
+		name = bm_interpersonal_events.0005.a
+		duel = {
+			skills = { intrigue prowess }
+			target = scope:courtier
+			50 = {
+				desc = bm_interpersonal_events.0005.a.win
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 1.0
+				}
+				send_interface_toast = {
+					title = bm_interpersonal_events.0005.a.win.toast
+					left_icon = root
+					right_icon = scope:courtier
+					add_character_modifier = { modifier = lifeforce_modifier_minor }
+					add_dread = 15
+					if = {
+						limit = { has_trait = lifestyle_blood_mage }
+						add_blood_mage_xp = {
+							TRACK = hematurgy
+							XP = 3
+						}
+					}
+					else_if = {
+						limit = { has_trait = lifestyle_blood_knight }
+						add_blood_knight_xp = {
+							TRACK = slaughter
+							XP = 3
+						}
+					}
+					scope:courtier = {
+						add_character_modifier = { modifier = lifedrained_modifier }
+					}
+					hidden_effect = {
+						bm_recount_lifeforce_stacks_effect = yes
+					}
+				}
+			}
+			50 = {
+				desc = bm_interpersonal_events.0005.a.lose
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -1.0
+				}
+				send_interface_toast = {
+					title = bm_interpersonal_events.0005.a.lose.toast
+					left_icon = root
+					right_icon = scope:courtier
+					add_stress = 20
+					scope:courtier = {
+						add_opinion = {
+							target = root
+							modifier = magic_opinion_negative
+							opinion = -20
+						}
+					}
+				}
+			}
+		}
+	}
+
+	# Option B: Buy silence with Minor Lifeforce
+	option = {
+		name = bm_interpersonal_events.0005.b
+		trigger = {
+			has_character_modifier = lifeforce_modifier_minor
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		send_interface_toast = {
+			title = bm_interpersonal_events.0005.b.toast
+			left_icon = root
+			right_icon = scope:courtier
+			blood_magic_used_minor = yes
+			scope:courtier = {
+				add_character_modifier = { modifier = lifeforce_modifier_minor }
+				add_opinion = {
+					target = root
+					modifier = magic_opinion_positive
+					opinion = 40
+				}
+			}
+			add_hook = {
+				type = loyalty_hook
+				target = scope:courtier
+			}
+			if = {
+				limit = { has_trait = lifestyle_blood_mage }
+				add_blood_mage_xp = {
+					TRACK = benediction
+					XP = 3
+				}
+			}
+			else_if = {
+				limit = { has_trait = lifestyle_blood_knight }
+				add_blood_knight_xp = {
+					TRACK = vanguard
+					XP = 3
+				}
+			}
+			hidden_effect = {
+				bm_recount_lifeforce_stacks_effect = yes
+			}
+		}
+	}
+
+	# Option C: Disperse ritual mist
+	option = {
+		name = bm_interpersonal_events.0005.c
+		send_interface_toast = {
+			title = bm_interpersonal_events.0005.c.toast
+			left_icon = root
+			add_shared_bm_bk_xp = {
+				TRACK = enlightenment
+				XP = 3
+			}
+			add_stress = -20
+		}
+	}
+}
