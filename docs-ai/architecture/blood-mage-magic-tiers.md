@@ -20,7 +20,7 @@ flowchart TD
         M8["Bless Bloodline"]
         M9["Make Blood Knight / Blood Mage (Minor)"]
         M10["Minor Courtier Drain"]
-        M11["Seek Power in Nature"]
+        M11["Go on a Blood Hunt"]
     end
 
     subgraph T2 ["Major Blood Magic (Major Lifeforce)"]
@@ -75,7 +75,7 @@ Requires Minor Lifeforce (`lifeforce_modifier_minor`). Accessible to both **Bloo
 | **Make Blood Knight (Minor)** | Interaction (`make_blood_knight_interaction`) | 250 Piety + Minor Lifeforce (Knight actor) | Bestows `lifestyle_blood_knight` on sworn knight/courtier. | +2 Vanguard |
 | **Grant Blood Magic (Minor)** | Interaction (`grant_blood_magic_interaction`) | 250 Piety + Minor Lifeforce (Mage actor) | Bestows `lifestyle_blood_mage` on uninitiated courtier/kin. | +2 Bloodline |
 | **Minor Lifedrain** | Interaction (`lifedrain_courtier_event_interaction`) | 25 Piety, 3-mo CD | Siphons Minor Lifeforce from courtier/prisoner. Victim gets `lifedrained_modifier`. (Mage: Intrigue/Learning; Knight: Prowess duel). | Mage: +1 Hematurgy<br>Knight: +1 Slaughter |
-| **Seek Power** | Decision (`seek_power_decision`) | Cooldown (730d landed, 365d wanderer; halved by Superior Vegvísir) | Wilderness expedition harvesting Lifeforce and martial XP. Exclusive to Blood Knights. | Scaled Martial XP |
+| **Go on a Blood Hunt** | Decision (`seek_power_decision`) | Cooldown (730d landed, 365d wanderer; halved by Superior Vegvísir) | Wilderness expedition harvesting Lifeforce and discipline XP. Available to Blood Mages and Blood Knights. | Scaled Martial/Discipline XP |
 
 ---
 
@@ -121,7 +121,7 @@ Requires Superior Lifeforce (`lifeforce_modifier_superior`) and Devotion level >
 | Dimension | Blood Mage (`lifestyle_blood_mage`) | Blood Knight (`lifestyle_blood_knight`) |
 | --- | --- | --- |
 | **Magic Casting** | Minor, Major, Superior | Minor, Major, Superior |
-| **Lifeforce Generation** | Active distillation, childbirth (+1 Major), lethal prisoner execution (`lifedrain_prisoner_event_interaction`, `mass_lifedrain_prisoners_decision`), courtier siphoning, Murder schemes with Superior **Hulinhjálmur** (+1 Major), Blood Rune pulse | Single-combat duel kills (Major Lifeforce + 25% Superior chance on `prowess >= 20` or blood traits), `seek_power_decision` wilderness harvest, battle victories (`10%–100%` Minor, `0%–100%` Major scaled by troops), Murder schemes with Superior **Hulinhjálmur** (+1 Major), ambient yearly condensation (~33% Minor), Blood Rune pulse |
+| **Lifeforce Generation** | Active distillation, `seek_power_decision` blood hunts, childbirth (+1 Major), lethal prisoner execution (`lifedrain_prisoner_event_interaction`, `mass_lifedrain_prisoners_decision`), courtier siphoning, Murder schemes with Superior **Hulinhjálmur** (+1 Major), Blood Rune pulse | Single-combat duel kills (Major Lifeforce + 25% Superior chance on `prowess >= 20` or blood traits), `seek_power_decision` blood hunts, battle victories (`10%–100%` Minor, `0%–100%` Major scaled by troops), Murder schemes with Superior **Hulinhjálmur** (+1 Major), ambient yearly condensation (~33% Minor), Blood Rune pulse |
 | **Exclusive Tracks** | `bloodline` (Domain limit, dynasty gold, construction, dev)<br>`hematurgy` (Schemes, dread, tyranny reduction) | `vanguard` (Army advantage, martial, speed, martial/piety)<br>`slaughter` (Prowess, knight effectiveness, knight limit, prowess/piety) |
 | **Shared Tracks** | `ancient`, `benediction`, `enlightenment` (Level 8 Devotion capstones) | `ancient`, `benediction`, `enlightenment` (Level 8 Devotion capstones) |
 | **Secondary Lifestyle** | `lifestyle_blood_power` (all 5 tracks) | `lifestyle_blood_power` (all 5 tracks) |

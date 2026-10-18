@@ -22,12 +22,19 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
   - **Bloodline**: Increases domain limit, county tax, development growth, and building construction speed.
   - **Hematurgy**: Unlocks hostile scheme power, scheme defense, dread gain, and natural tyranny decay.
 
-- **Overhauled 'Seek Power' Wilderness Encounters**:
-  - The wilderness encounter ("A Lost Soul") now features a wandering **warrior-poet** with high Learning and Poet traits, accompanied by a sworn escort knight.
-  - Spawned encounter characters dynamically adopt the **local county faith** of the player's current location and the player's culture.
-  - **Friendly Brawl** is placed as the first option, always available for Blood Knights to spar for Lifeforce and Slaughter/Vanguard XP.
-  - **Battlefield Duels** now require at least **25 Prowess** to challenge the escort or traveler in Single Combat.
-  - **Court Recruitment** is gated behind skill superiority: out-debate the warrior-poet with higher Learning, or intimidate the knight into service with higher Prowess in a martial duel.
+- **Go on a Blood Hunt Overhaul & Wilderness Expansion**:
+  - Re-themed from the meditative "Seek Power in Nature's Domain" into **Go on a Blood Hunt**, open to both **Blood Mages** and **Blood Knights**.
+  - **Direct Encounter Resolution**: Clicking **Begin the hunt** resolves a 7-way Prowess + Learning encounter duel directly on execution, displaying exact encounter odds in the decision preview and bypassing filler clicks.
+  - **Class-Tailored Lonely Road Encounter**: Blood Knights confront a wandering warrior accompanied by a formidable sworn escort knight (opening Single Combat battlefield duels and martial recruitment), while Blood Mages confront the lone traveler (emphasizing covert lifedrain, trait theft, or learning persuasion).
+  - **Expanded 7-Encounter Pool**:
+    - *The Stag's Last Stand*: Run down a royal stag for Minor Lifeforce and Slaughter (Knight) / Hematurgy (Mage) XP.
+    - *The Beast's Lair*: Slay an apex predator in its den for Major Lifeforce, Prestige, and Slaughter/Hematurgy XP, or safely harvest carcasses outside.
+    - *The Edge of the Woods*: Stalk an isolated homestead for Major Lifeforce via Intrigue/Prowess, or demand an orderly blood tithe.
+    - *Blades on the Lonely Road*: Test wanderers in a brutal bout for blood, engage in Single Combat, drain traits, or recruit.
+    - *Blood in the Embers*: Ambush an outlaw camp for Major Lifeforce, Gold loot, and martial/scheme XP, or extort tribute.
+    - *The Crimson Rite*: Cut down a rival occultist to seize their ritual Major Lifeforce, or share the chalice for Piety and Enlightenment XP.
+    - *The Cairn of Forgotten Carnage*: Rare ancient sacrificial cairn yielding clean Major Lifeforce, Enlightenment XP, and Ancient XP without exhaustion penalties.
+  - **Dynamic Visuals**: Replaced passive portraits with active hunting and weapon stances across all encounters.
 
 ---
 
