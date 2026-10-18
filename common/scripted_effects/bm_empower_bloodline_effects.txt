@@ -14,24 +14,23 @@ bm_upgrade_house_covenant_effect = {
 			remove_house_modifier = dynasty_blood_$COVENANT$_modifier_1
 			add_house_modifier = { modifier = dynasty_blood_$COVENANT$_modifier_2 }
 		}
-		if = {
-			limit = { has_trait = lifestyle_blood_mage }
-			add_xp_bm_dynamic = {
-				TRACK = bloodline
-				XP = 5
-			}
-		}
-		else = {
-			add_blood_knight_xp = {
-				TRACK = vanguard
-				XP = 5
-			}
-		}
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_empower_bloodline_tier_2_toast
 			left_icon = root
-			custom_tooltip = bm_covenant_$COVENANT$_tier_2_tt
+			if = {
+				limit = { has_trait = lifestyle_blood_mage }
+				add_xp_bm_dynamic = {
+					TRACK = bloodline
+					XP = 5
+				}
+			}
+			else = {
+				add_blood_knight_xp = {
+					TRACK = vanguard
+					XP = 5
+				}
+			}
 		}
 	}
 	# Tier II -> Tier III
@@ -45,24 +44,23 @@ bm_upgrade_house_covenant_effect = {
 			remove_house_modifier = dynasty_blood_$COVENANT$_modifier_2
 			add_house_modifier = { modifier = dynasty_blood_$COVENANT$_modifier_3 }
 		}
-		if = {
-			limit = { has_trait = lifestyle_blood_mage }
-			add_xp_bm_dynamic = {
-				TRACK = bloodline
-				XP = 10
-			}
-		}
-		else = {
-			add_blood_knight_xp = {
-				TRACK = vanguard
-				XP = 10
-			}
-		}
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_empower_bloodline_tier_3_toast
 			left_icon = root
-			custom_tooltip = bm_covenant_$COVENANT$_tier_3_tt
+			if = {
+				limit = { has_trait = lifestyle_blood_mage }
+				add_xp_bm_dynamic = {
+					TRACK = bloodline
+					XP = 10
+				}
+			}
+			else = {
+				add_blood_knight_xp = {
+					TRACK = vanguard
+					XP = 10
+				}
+			}
 		}
 	}
 	# Base -> Tier I (including migrating legacy un-suffixed modifier if present)
@@ -73,24 +71,23 @@ bm_upgrade_house_covenant_effect = {
 			remove_house_modifier = dynasty_blood_$COVENANT$_modifier
 			add_house_modifier = { modifier = dynasty_blood_$COVENANT$_modifier_1 }
 		}
-		if = {
-			limit = { has_trait = lifestyle_blood_mage }
-			add_xp_bm_dynamic = {
-				TRACK = bloodline
-				XP = 3
-			}
-		}
-		else = {
-			add_blood_knight_xp = {
-				TRACK = vanguard
-				XP = 3
-			}
-		}
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_empower_bloodline_tier_1_toast
 			left_icon = root
-			custom_tooltip = bm_covenant_$COVENANT$_tier_1_tt
+			if = {
+				limit = { has_trait = lifestyle_blood_mage }
+				add_xp_bm_dynamic = {
+					TRACK = bloodline
+					XP = 3
+				}
+			}
+			else = {
+				add_blood_knight_xp = {
+					TRACK = vanguard
+					XP = 3
+				}
+			}
 		}
 	}
 }

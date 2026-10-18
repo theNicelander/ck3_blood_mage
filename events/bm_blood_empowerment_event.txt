@@ -35,13 +35,13 @@ bm_blood_empowerment_event.001 = {
 		}
 		add_piety = -150
 		blood_magic_used_major = yes
-		add_shared_bm_bk_xp = {
-			TRACK = enlightenment
-			XP = 3
-		}
 		send_interface_toast = {
 			title = bm_blood_empowerment_event.001.toast
 			left_icon = this
+			add_shared_bm_bk_xp = {
+				TRACK = enlightenment
+				XP = 3
+			}
 			add_blood_empowerment_xp = { TRACK = dynasty }
 		}
 		custom_tooltip = bm_empower_dynasty_desc
@@ -63,13 +63,13 @@ bm_blood_empowerment_event.001 = {
 		}
 		add_piety = -150
 		blood_magic_used_major = yes
-		add_shared_bm_bk_xp = {
-			TRACK = enlightenment
-			XP = 3
-		}
 		send_interface_toast = {
 			title = bm_blood_empowerment_event.001.toast
 			left_icon = this
+			add_shared_bm_bk_xp = {
+				TRACK = enlightenment
+				XP = 3
+			}
 			add_blood_empowerment_xp = { TRACK = mastery }
 		}
 		custom_tooltip = bm_empower_mastery_desc
@@ -91,13 +91,13 @@ bm_blood_empowerment_event.001 = {
 		}
 		add_piety = -150
 		blood_magic_used_major = yes
-		add_shared_bm_bk_xp = {
-			TRACK = enlightenment
-			XP = 3
-		}
 		send_interface_toast = {
 			title = bm_blood_empowerment_event.001.toast
 			left_icon = this
+			add_shared_bm_bk_xp = {
+				TRACK = enlightenment
+				XP = 3
+			}
 			add_blood_empowerment_xp = { TRACK = presence }
 		}
 		custom_tooltip = bm_empower_presence_desc
@@ -119,13 +119,13 @@ bm_blood_empowerment_event.001 = {
 		}
 		add_piety = -150
 		blood_magic_used_major = yes
-		add_shared_bm_bk_xp = {
-			TRACK = enlightenment
-			XP = 3
-		}
 		send_interface_toast = {
 			title = bm_blood_empowerment_event.001.toast
 			left_icon = this
+			add_shared_bm_bk_xp = {
+				TRACK = enlightenment
+				XP = 3
+			}
 			add_blood_empowerment_xp = { TRACK = prosperity }
 		}
 		custom_tooltip = bm_empower_prosperity_desc
@@ -147,13 +147,13 @@ bm_blood_empowerment_event.001 = {
 		}
 		add_piety = -150
 		blood_magic_used_major = yes
-		add_shared_bm_bk_xp = {
-			TRACK = enlightenment
-			XP = 3
-		}
 		send_interface_toast = {
 			title = bm_blood_empowerment_event.001.toast
 			left_icon = this
+			add_shared_bm_bk_xp = {
+				TRACK = enlightenment
+				XP = 3
+			}
 			add_blood_empowerment_xp = { TRACK = shadows }
 		}
 		custom_tooltip = bm_empower_shadows_desc
@@ -193,41 +193,41 @@ bm_blood_empowerment_event.001 = {
 		}
 		add_piety = -150
 		blood_magic_used_major = yes
-		add_shared_bm_bk_xp = {
-			TRACK = enlightenment
-			XP = 3
-		}
 		send_interface_toast = {
 			title = bm_blood_empowerment_event.001.toast
 			left_icon = this
-		}
-		add_character_modifier = {
-			modifier = temporary_buff_self
-			days = 3650
-		}
-		random = {
-			chance = { value = 10 add = this.diplomacy }
-			add_diplomacy_skill = 1
-		}
-		random = {
-			chance = { value = 10 add = this.learning }
-			add_learning_skill = 1
-		}
-		random = {
-			chance = { value = 10 add = this.martial }
-			add_martial_skill = 1
-		}
-		random = {
-			chance = { value = 10 add = this.intrigue }
-			add_intrigue_skill = 1
-		}
-		random = {
-			chance = { value = 10 add = this.stewardship }
-			add_stewardship_skill = 1
-		}
-		random = {
-			chance = { value = 10 add = this.prowess }
-			add_prowess_skill = 2
+			add_shared_bm_bk_xp = {
+				TRACK = enlightenment
+				XP = 3
+			}
+			add_character_modifier = {
+				modifier = temporary_buff_self
+				days = 3650
+			}
+			random = {
+				chance = { value = 10 add = this.diplomacy }
+				add_diplomacy_skill = 1
+			}
+			random = {
+				chance = { value = 10 add = this.learning }
+				add_learning_skill = 1
+			}
+			random = {
+				chance = { value = 10 add = this.martial }
+				add_martial_skill = 1
+			}
+			random = {
+				chance = { value = 10 add = this.intrigue }
+				add_intrigue_skill = 1
+			}
+			random = {
+				chance = { value = 10 add = this.stewardship }
+				add_stewardship_skill = 1
+			}
+			random = {
+				chance = { value = 10 add = this.prowess }
+				add_prowess_skill = 2
+			}
 		}
 		custom_tooltip = bm_empower_versatility_desc
 		ai_chance = { base = 10 }

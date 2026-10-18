@@ -165,7 +165,6 @@ bm_cast_blood_magic_minor.001 = {
 			type = event_toast_effect_good
 			title = bm_condense_lifeforce_toast
 			left_icon = root
-			custom_tooltip = bm_condense_lifeforce_toast_desc
 			remove_character_modifier = lifeforce_modifier_minor
 			add_character_modifier = { modifier = lifeforce_modifier_major }
 			if = {
@@ -181,9 +180,9 @@ bm_cast_blood_magic_minor.001 = {
 					XP = 2
 				}
 			}
-		}
-		hidden_effect = {
-			bm_recount_lifeforce_stacks_effect = yes
+			hidden_effect = {
+				bm_recount_lifeforce_stacks_effect = yes
+			}
 		}
 		custom_tooltip = bm_cast_blood_magic_minor.001.condense.tt
 		ai_chance = {

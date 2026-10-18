@@ -117,8 +117,6 @@ bm_get_blood_magic_from_prisoner_interaction = {
                 target = scope:recipient
                 35 = {
                     desc = bm_get_blood_magic_from_prisoner_interaction.success
-                    scope:actor = { bm_become_blood_mage_effect = yes }
-
                     compare_modifier = {
                         value = scope:duel_value
                         multiplier = 3
@@ -128,6 +126,7 @@ bm_get_blood_magic_from_prisoner_interaction = {
                         title = bm_get_blood_magic_from_prisoner_interaction.success
                         left_icon = scope:actor
                         right_icon = scope:recipient
+                        bm_become_blood_mage_effect = yes
                     }
                 }
                 65 = {

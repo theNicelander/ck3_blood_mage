@@ -38,13 +38,12 @@
     on_accept = {
         debug_log = "BloodMageInteraction: bless_bloodline | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
         scope:actor = {
-            bloodline_magic_cast_effect_minor = yes
             send_interface_toast = {
                 type = event_toast_effect_good
                 title = bm_bless_bloodline_toast
                 left_icon = scope:actor
                 right_icon = scope:recipient
-                custom_tooltip = bm_bless_bloodline_toast_tt
+                bloodline_magic_cast_effect_minor = yes
             }
         }
         scope:recipient = {
