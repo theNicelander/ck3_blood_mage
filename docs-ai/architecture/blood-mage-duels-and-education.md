@@ -68,6 +68,7 @@ Allows characters to cleanse congenital flaws and ascend `intellect`, `physique`
   - Holds existing 5★ trait (when leveling a 2nd education): `+500` Piety surcharge per 5★ trait held.
 - **Zero-Cost Backout:** Piety, Lifeforce, and the 2-year cooldown flag (`bm_improve_education_cooldown` / `bm_new_education_cooldown`) are only deducted when selecting a specific discipline option, allowing players to return to the Major/Superior Grimoire freely.
 - **Cooldown Tooltip Localization:** The 2-year cooldown flag (`bm_improve_education_cooldown`) is localized with player-facing sibling keys and wrapped in `custom_description` (`bm_improve_education_cooldown_tt`) in both Major and Superior Grimoires to cleanly display remaining cooldown requirements when options are shown as unavailable.
+- **Option Visibility Exception:** Unlike general blood magic decisions/events governed by "nothing hidden, but often unavailable", education enhancement (`bm_education_enhancement.001`), mastery (`bm_education_master.001`), and secondary education unlock (`bm_education_new.001`) omit `show_as_unavailable`. Options only display for education disciplines the character currently possesses (or does not yet possess for secondary education). This prevents inappropriate grayed-out disciplines and avoids CK3 character event window option slot cutoff (maximum 4 options before clipping).
 
 ## Where the details live
 

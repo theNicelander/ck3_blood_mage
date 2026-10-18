@@ -26,7 +26,7 @@ Living technical specification for character interactions in the Blood Mage mod.
 | `grant_lifeforce_interaction` | Courtier or prisoner | Minor Lifeforce + 25 Piety, or Major Lifeforce + 50 Piety. | Minor: +1 enlightenment; Major: +2 enlightenment | Bestows Lifeforce modifier onto recipient. |
 | `grant_lifeforce_interaction_reversed` | Courtier with `lifedrained_modifier` | 25 Piety + Major Lifeforce. | +4 benediction | Restores drained courtier: cleanses debuff, gives minor lifeforce and opinion. |
 | `bm_curse_blood_interaction` | Alive character (non-self) | 50 Piety + Minor Lifeforce. Requires Blood Mage with >= 10 Hematurgy XP. CD: 1 yr. | Success: +2 hematurgy; Crit: +4 hematurgy; Fail: +1 hematurgy | Skill duel (Intrigue/Learning). Success: inflicts `bm_blood_curse_modifier` (-2 all stats, -1.5 health, -30% fertility, -3 prowess) for 5 yrs; Crit: curses, inflicts `ill`, and siphons Minor Lifeforce back; Fail: discovered, opinion malus (negated by Superior **Hulinhjálmur**). |
-| `bm_reshape_personality_interaction` | Relationship target (courtier, spouse, friend, lover, soulmate, dynasty, ward, knight) | 250 Piety + Major Lifeforce. Requires Devotion level >= 3. CD against recipient: 5 yrs. | +4 enlightenment | Guided two-step blood ritual (`bm_reshape_personality.0001` & `.0002`): purges one chosen personality trait from recipient and imprints one of caster's traits (cleanses opposites, grants `+25` `bm_harmonized_mind_opinion`). |
+| `bm_reshape_personality_interaction` | Relationship target (courtier, spouse, friend, lover, soulmate, dynasty, ward, knight) | 250 Piety + Major Lifeforce (no Cast Major Blood Magic debuff). Requires Devotion level >= 3. CD: 5 yrs on success, 1 yr on failure. | Success: +4 enlightenment; Fail: +1 enlightenment | **Influence Personality**: Guided two-step ritual (`bm_reshape_personality.0001` & `.0002`) resolved via a Learning duel challenge (50% base at equal Learning, capped at 95% for >= 20 difference, floored at 5% at -20 difference). Success removes target trait, purges opposite traits, and imprints caster trait (no opinion bonus); failure leaves traits unchanged. |
 | `bm_manifest_lifeforce_interaction` | Self (actor = recipient) | 100/250/500/1000 Piety across 4 tiers. Blood Mage or Blood Knight, Devotion level >= 2. CD: 1 yr. | +1 / +3 / +5 / +7 enlightenment | Meditative trance converting Piety directly into Lifeforce via Learning contest. |
 | `bm_debug_character_interaction` | Any character | Debug mode only. | None | Popup modal with 3 options: Make Blood Mage, Make Blood Knight, or Convert to Blóðtrú. (Retained under `interaction_debug_main`). |
 
@@ -58,6 +58,6 @@ Living technical specification for character interactions in the Blood Mage mod.
 | Bless Kin's Blood | `common/character_interactions/bm_bless_bloodline.txt` |
 | Grant Lifeforce Stacks | `common/character_interactions/bm_grant_lifeforce.txt` |
 | Cast Blood Curse | `common/character_interactions/bm_curse_blood.txt` |
-| Reshape Personality | `common/character_interactions/bm_reshape_personality.txt` |
+| Influence Personality | `common/character_interactions/bm_reshape_personality.txt` |
 | Manifest Lifeforce (Self) | `common/character_interactions/bm_manifest_lifeforce.txt` |
 | Debug interactions | `common/character_interactions/bm_debug_interactions.txt` |

@@ -33,14 +33,14 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 ## 🧬 Blood Power & Somatic Ascendancy
 
 - **Secondary Mastery Trait**: Blood Power is granted alongside Blood Mage or Blood Knight, representing the physical and metaphysical refinement of the caster's body and mind.
-- **Five Focused Specialization Tracks**:
-  - **Dynasty (Sanguine Eugenics)**: Substantially boosts positive inactive congenital inheritance (+40%) and genetic trait upgrade chances (+40%), provides massive dynasty renown (+25%), and grants complete inbreeding immunity (-100% inbreeding chance: -50% at 50 XP, -100% at 100 XP).
-  - **Mastery (World-Walker & Schemes)**: Accelerates lifestyle XP gain (+40%), expands language learning capacity (+1 at 30, 60, and 90 XP = +3 total), unlocks additional concurrent personal schemes (+1 at 50 XP, +2 at 100 XP), and ignores negative culture opinion at 100 XP.
-  - **Presence (Mesmeric Allure & Sovereign Majesty)**: Calms stress (-40% stress gain), commands broad loyalty across the realm (+24 general opinion with everyone), boosts Fame Impact (+25%), and stabilizes realms across successions (-25% short reign duration, +25% long reign bonus).
-  - **Prosperity (War Chest & Logistics)**: Multiplies monthly realm income (+40%), cuts Men-at-Arms maintenance (-32%), adds +4 domain limit (+2 at 50 XP, +4 at 100 XP), and expands Men-at-Arms regiment maximum sizes (+1 at 50 XP, +3 total at 100 XP).
-  - **Shadows (Occult Defense & Intrigue)**: Sharpens hostile scheme success (+40%), blunts enemy plot success against you (-40%), drastically suppresses enemy hostile scheme success caps (-25% at 50 XP, -50% at 100 XP), expands your own plot cap (+15% max cap), and unlocks two additional hostile scheme slots (+1 at 50 XP, +2 at 100 XP).
-- **De-cluttered Interface**: Removed redundant universal vitality modifiers from Blood Power (already granted by Blood Mage and Blood Knight), cutting tooltip lines by up to 67% and keeping track progression comfortably visible on screen.
-- **Major Grimoire Integration**: Channeling Blood Power is housed directly within the Cast Major Blood Magic Grimoire, presenting detailed breakdowns of milestones and capstones with zero-cost backout navigation.
+- **Five Focused Specialization Tracks (10 / 20 / 50 / 100 Cadence)**:
+  - **Dynasty (Sanguine Eugenics & Kinship)**: Small steps grant positive inactive congenital inheritance (+40%) and trait upgrade chances (+40%); medium stepping stones at 20, 40, 60, and 80 XP add +5 Years of Fertility (+20 years total); milestones at 50 and 100 XP grant complete inbreeding immunity (-100%) and massive dynasty renown (+25%).
+  - **Mastery (World-Walker & Schemes)**: Small steps accelerate lifestyle XP gain (+40%); medium stepping stones grant personal scheme success (+20) and phase acceleration (-20 days); 50 and 100 XP milestones grant +1 Learning per Devotion level (+2 total, granting +2 Language Limit natively), +2 concurrent personal schemes, and immunity to negative culture opinion.
+  - **Presence (Mesmeric Majesty)**: Small steps command realm-wide loyalty (+24 general opinion) and calm stress (-40%); medium stepping stones boost Fame Impact (+20%); 50 and 100 XP milestones grant +1 Diplomacy per Devotion level (+2 total), stabilize succession with -20% short reign duration, and grant +20% long reign bonus.
+  - **Prosperity (Wealth & Architecture)**: Small steps multiply monthly realm income (+40%) and cut holding and domicile construction costs (-24% for both landed holdings and adventurer camps/noble estates); medium stepping stones reduce Men-at-Arms maintenance (-20%); 50 and 100 XP milestones grant +1 Stewardship per Devotion level (+2 total) and +2 domain limit (+1 at 50 XP, +2 total at 100 XP).
+  - **Shadows (Occult Warding & Intrigue)**: Small steps increase hostile scheme success (+40) and blunt enemy plot success against you (-40); medium stepping stones suppress enemy scheme maximum success caps (-20%); 50 and 100 XP milestones grant +1 Intrigue per Devotion level (+2 total), +2 concurrent hostile scheme slots, and +15% own hostile scheme maximum success cap.
+- **De-cluttered Interface**: Streamlined track step tooltips and removed redundant universal vitality modifiers from Blood Power (already granted by Blood Mage and Blood Knight), keeping track progression comfortably visible on screen.
+- **Major Grimoire Integration**: Channeling Blood Power is housed directly within the Cast Major Blood Magic Grimoire, presenting detailed breakdowns of 10 XP steps, 20 XP stepping stones, 50 XP milestones, and 100 XP capstones with zero-cost backout navigation.
 
 ---
 
@@ -126,7 +126,8 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
   - Monitor your current discipline, track XP progression, active Lifeforce potencies, and carved Galdrastafir stave.
   - Real-time live character rosters tracking **Dynasty Blood Mages**, **Sworn Blood Knights**, and **Blood Golems**.
   - Direct one-click access to Grimoires, Attunement, and Carving decisions.
-- **Dedicated "Blood Magic" Context Menu Section**: All 17 mod character interactions (healing, Lifeforce harvesting, trait theft, blood knight creation, curses, runes, and personality reshaping) now appear neatly grouped under a dedicated **Blood Magic** header section with a crimson accent bar in the right-click character menu, removing clutter from vanilla Personal and Hostile tabs.
+- **Dedicated "Blood Magic" Context Menu Section**: All 17 mod character interactions (healing, Lifeforce harvesting, trait theft, blood knight creation, curses, runes, and personality influence) now appear neatly grouped under a dedicated **Blood Magic** header section with a crimson accent bar in the right-click character menu, removing clutter from vanilla Personal and Hostile tabs.
+- **Influence Personality Interaction**: Commune with a relationship target's mind to dissolve an unwanted personality trait and imprint one of your own via a Learning contest (50% base, scaling to 95% at +20 Learning difference; 5-year cooldown on success, 1-year cooldown on failure, no Cast Major Blood Magic debuff).
 - **Distinctive Visual Assets**: Custom 120×120 DDS icons across traits, level tracks, character interactions, staves, and religious faiths.
 - **Situation Alerts**: Prominent warnings in CK3's Current Situation dropdown notify you whenever a kinsperson or courtier needs healing.
 
@@ -159,4 +160,5 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 - **Localization Syntax**: Fixed a formatting typo in modifier descriptions that caused localization parser errors.
 - **Current Situation Healing Alerts**: Fixed a display issue where "(NUM)" appeared literally in the grouped healing alert header, and streamlined descriptions to concisely instruct spending Lifeforce.
 - **Empower Dynasty Bloodline Tooltip**: Removed obsolete legacy un-suffixed modifier removal effects that caused Tier I covenant previews to falsely claim the house would lose an old modifier.
+- **Education Enhancement & Mastery Option Filtering**: Fixed an issue in education improvement rituals where unowned education disciplines appeared grayed out and pushed valid options or other disciplines off-screen due to the fixed height of the character event window. Unowned education disciplines are now cleanly hidden so characters only see enhancement rites relevant to their education.
 - **Repository Integrity**: Updated repo validation tools with strict multi-BOM and embedded BOM detection to prevent file encoding regressions.
