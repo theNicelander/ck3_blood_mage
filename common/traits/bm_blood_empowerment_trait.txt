@@ -9,214 +9,213 @@
     tracks = {
         dynasty = {
             10 = {
-                fertility = 0.05
-                positive_random_genetic_chance = 0.03
-                positive_inactive_inheritance_chance = 0.03
+                positive_inactive_inheritance_chance = 0.05
+                genetic_trait_strengthen_chance = 0.05
             }
             20 = {
-                fertility = 0.05
-                positive_random_genetic_chance = 0.03
-                positive_inactive_inheritance_chance = 0.03
+                positive_inactive_inheritance_chance = 0.05
+                genetic_trait_strengthen_chance = 0.05
             }
             30 = {
-                fertility = 0.05
-                positive_random_genetic_chance = 0.03
-                positive_inactive_inheritance_chance = 0.03
+                positive_inactive_inheritance_chance = 0.05
+                genetic_trait_strengthen_chance = 0.05
             }
             40 = {
-                fertility = 0.05
-                positive_random_genetic_chance = 0.03
-                positive_inactive_inheritance_chance = 0.03
+                positive_inactive_inheritance_chance = 0.05
+                genetic_trait_strengthen_chance = 0.05
             }
             50 = {
-                years_of_fertility = 10
+                inbreeding_chance = -0.50
+                monthly_dynasty_prestige_mult = 0.10
             }
             60 = {
-                fertility = 0.05
-                positive_random_genetic_chance = 0.035
-                positive_inactive_inheritance_chance = 0.035
+                positive_inactive_inheritance_chance = 0.05
+                genetic_trait_strengthen_chance = 0.05
             }
             70 = {
-                fertility = 0.05
-                positive_random_genetic_chance = 0.035
-                positive_inactive_inheritance_chance = 0.035
+                positive_inactive_inheritance_chance = 0.05
+                genetic_trait_strengthen_chance = 0.05
             }
             80 = {
-                fertility = 0.05
-                positive_random_genetic_chance = 0.03
-                positive_inactive_inheritance_chance = 0.03
+                positive_inactive_inheritance_chance = 0.05
+                genetic_trait_strengthen_chance = 0.05
             }
             90 = {
-                fertility = 0.05
-                positive_random_genetic_chance = 0.03
-                positive_inactive_inheritance_chance = 0.03
+                positive_inactive_inheritance_chance = 0.05
+                genetic_trait_strengthen_chance = 0.05
             }
             100 = {
-                years_of_fertility = 15
+                inbreeding_chance = -0.50
+                monthly_dynasty_prestige_mult = 0.15
                 no_prowess_loss_from_age = yes
             }
         }
 
         mastery = {
             10 = {
-                monthly_lifestyle_xp_gain_mult = 0.04
+                monthly_lifestyle_xp_gain_mult = 0.05
             }
             20 = {
-                monthly_lifestyle_xp_gain_mult = 0.04
+                monthly_lifestyle_xp_gain_mult = 0.05
             }
             30 = {
-                monthly_lifestyle_xp_gain_mult = 0.04
+                monthly_lifestyle_xp_gain_mult = 0.05
+                max_learn_language_schemes_add = 1
             }
             40 = {
-                monthly_lifestyle_xp_gain_mult = 0.04
+                monthly_lifestyle_xp_gain_mult = 0.05
             }
             50 = {
                 max_personal_schemes_add = 1
             }
             60 = {
-                monthly_lifestyle_xp_gain_mult = 0.04
+                monthly_lifestyle_xp_gain_mult = 0.05
+                max_learn_language_schemes_add = 1
             }
             70 = {
-                monthly_lifestyle_xp_gain_mult = 0.04
+                monthly_lifestyle_xp_gain_mult = 0.05
             }
             80 = {
-                monthly_lifestyle_xp_gain_mult = 0.04
+                monthly_lifestyle_xp_gain_mult = 0.05
             }
             90 = {
-                monthly_lifestyle_xp_gain_mult = 0.04
+                monthly_lifestyle_xp_gain_mult = 0.05
+                max_learn_language_schemes_add = 1
             }
             100 = {
                 max_personal_schemes_add = 1
+                ignore_negative_culture_opinion = yes
                 no_prowess_loss_from_age = yes
             }
         }
 
         presence = {
             10 = {
-                courtier_and_guest_opinion = 2.5
-                stress_loss_mult = 0.05
-                short_reign_duration_mult = -0.05
-                long_reign_bonus_mult = 0.05
+                general_opinion = 3
+                stress_gain_mult = -0.05
             }
             20 = {
-                courtier_and_guest_opinion = 2.5
-                stress_loss_mult = 0.05
-                short_reign_duration_mult = -0.05
-                long_reign_bonus_mult = 0.05
+                general_opinion = 3
+                stress_gain_mult = -0.05
             }
             30 = {
-                courtier_and_guest_opinion = 2.5
-                stress_loss_mult = 0.05
-                short_reign_duration_mult = -0.05
-                long_reign_bonus_mult = 0.05
+                general_opinion = 3
+                stress_gain_mult = -0.05
             }
             40 = {
-                courtier_and_guest_opinion = 2.5
-                stress_loss_mult = 0.05
-                short_reign_duration_mult = -0.05
-                long_reign_bonus_mult = 0.05
+                general_opinion = 3
+                stress_gain_mult = -0.05
             }
             50 = {
-                prestige_level_impact_mult = 0.15
+                prestige_level_impact_mult = 0.25
             }
             60 = {
-                courtier_and_guest_opinion = 2.5
-                stress_loss_mult = 0.05
-                short_reign_duration_mult = -0.05
-                long_reign_bonus_mult = 0.05
+                general_opinion = 3
+                stress_gain_mult = -0.05
             }
             70 = {
-                courtier_and_guest_opinion = 2.5
-                stress_loss_mult = 0.05
-                short_reign_duration_mult = -0.05
-                long_reign_bonus_mult = 0.05
+                general_opinion = 3
+                stress_gain_mult = -0.05
             }
             80 = {
-                courtier_and_guest_opinion = 2.5
-                stress_loss_mult = 0.05
-                short_reign_duration_mult = -0.05
-                long_reign_bonus_mult = 0.05
+                general_opinion = 3
+                stress_gain_mult = -0.05
             }
             90 = {
-                courtier_and_guest_opinion = 2.5
-                stress_loss_mult = 0.05
-                short_reign_duration_mult = -0.05
-                long_reign_bonus_mult = 0.05
+                general_opinion = 3
+                stress_gain_mult = -0.05
             }
             100 = {
-                prestige_level_impact_mult = 0.15
-                ignore_different_faith_opinion = yes
+                short_reign_duration_mult = -0.25
+                long_reign_bonus_mult = 0.25
                 no_prowess_loss_from_age = yes
             }
         }
 
         prosperity = {
             10 = {
-                monthly_income_mult = 0.04
+                monthly_income_mult = 0.05
+                men_at_arms_maintenance = -0.04
             }
             20 = {
-                monthly_income_mult = 0.04
+                monthly_income_mult = 0.05
+                men_at_arms_maintenance = -0.04
             }
             30 = {
-                monthly_income_mult = 0.04
-                domain_limit = 1
+                monthly_income_mult = 0.05
+                men_at_arms_maintenance = -0.04
             }
             40 = {
-                monthly_income_mult = 0.04
+                monthly_income_mult = 0.05
+                men_at_arms_maintenance = -0.04
             }
             50 = {
-                stewardship_per_prestige_level = 1
+                domain_limit = 2
+                men_at_arms_cap = 1
             }
             60 = {
-                monthly_income_mult = 0.04
-                domain_limit = 1
+                monthly_income_mult = 0.05
+                men_at_arms_maintenance = -0.04
             }
             70 = {
-                monthly_income_mult = 0.04
+                monthly_income_mult = 0.05
+                men_at_arms_maintenance = -0.04
             }
             80 = {
-                monthly_income_mult = 0.04
+                monthly_income_mult = 0.05
+                men_at_arms_maintenance = -0.04
             }
             90 = {
-                monthly_income_mult = 0.04
-                domain_limit = 1
+                monthly_income_mult = 0.05
+                men_at_arms_maintenance = -0.04
             }
             100 = {
-                stewardship_per_prestige_level = 0.5
+                domain_limit = 2
+                men_at_arms_cap = 2
                 no_prowess_loss_from_age = yes
             }
         }
 
         shadows = {
             10 = {
-                owned_personal_scheme_success_chance_add = 4
+                owned_hostile_scheme_success_chance_add = 5
+                enemy_hostile_scheme_success_chance_add = -5
             }
             20 = {
-                owned_personal_scheme_success_chance_add = 4
+                owned_hostile_scheme_success_chance_add = 5
+                enemy_hostile_scheme_success_chance_add = -5
             }
             30 = {
-                owned_personal_scheme_success_chance_add = 4
+                owned_hostile_scheme_success_chance_add = 5
+                enemy_hostile_scheme_success_chance_add = -5
             }
             40 = {
-                owned_personal_scheme_success_chance_add = 4
+                owned_hostile_scheme_success_chance_add = 5
+                enemy_hostile_scheme_success_chance_add = -5
             }
             50 = {
-                enemy_hostile_scheme_success_chance_max_add = -15
+                enemy_hostile_scheme_success_chance_max_add = -25
+                max_hostile_schemes_add = 1
             }
             60 = {
-                owned_personal_scheme_success_chance_add = 4
+                owned_hostile_scheme_success_chance_add = 5
+                enemy_hostile_scheme_success_chance_add = -5
             }
             70 = {
-                owned_personal_scheme_success_chance_add = 4
+                owned_hostile_scheme_success_chance_add = 5
+                enemy_hostile_scheme_success_chance_add = -5
             }
             80 = {
-                owned_personal_scheme_success_chance_add = 4
+                owned_hostile_scheme_success_chance_add = 5
+                enemy_hostile_scheme_success_chance_add = -5
             }
             90 = {
-                owned_personal_scheme_success_chance_add = 4
+                owned_hostile_scheme_success_chance_add = 5
+                enemy_hostile_scheme_success_chance_add = -5
             }
             100 = {
-                enemy_hostile_scheme_success_chance_max_add = -15
+                enemy_hostile_scheme_success_chance_max_add = -25
+                owned_hostile_scheme_success_chance_max_add = 15
                 max_hostile_schemes_add = 1
                 no_prowess_loss_from_age = yes
             }

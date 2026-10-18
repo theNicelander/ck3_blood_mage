@@ -33,12 +33,12 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 ## 🧬 Blood Empowerment & Somatic Ascendancy
 
 - **Secondary Mastery Trait**: Blood Empowerment is granted alongside Blood Mage or Blood Knight, representing the physical and metaphysical refinement of the caster's body and mind.
-- **Five Streamlined Specialization Tracks**:
-  - **Dynasty (Sanguine Eugenics)**: Enhances fertility (+40%) and congenital inheritance (+25% chance of new and inherited good congenital traits), culminating in +25 extended years of fertility (+10 at 50 XP, +15 at 100 XP).
-  - **Mastery (World-Walker & Schemes)**: Accelerates lifestyle XP gain (+32%) and unlocks additional concurrent personal scheme slots (+1 at 50 XP, +2 at 100 XP).
-  - **Presence (Mesmeric Allure)**: Calms stress (+40% stress loss), bolsters courtier opinion (+20), cuts short reign duration (-40%) and enhances long reign (+40%), amplifies Fame Impact (+30%), and completely eliminates different-faith opinion penalties at 100 XP.
-  - **Prosperity (War Chest & Logistics)**: Multiplies monthly realm income (+32%), expands domain limit (+1 at 30, 60, and 90 XP = +3 total), and grants scaling Stewardship per Fame level (+1.5 at 100 XP).
-  - **Shadows (Occult Defense & Intrigue)**: Sharpens personal scheme success (+32%), drastically caps enemy hostile scheme success (-15% at 50 XP, -30% at 100 XP), and unlocks an additional hostile scheme slot at 100 XP.
+- **Five Focused Specialization Tracks**:
+  - **Dynasty (Sanguine Eugenics)**: Substantially boosts positive inactive congenital inheritance (+40%) and genetic trait upgrade chances (+40%), provides massive dynasty renown (+25%), and grants complete inbreeding immunity (-100% inbreeding chance: -50% at 50 XP, -100% at 100 XP).
+  - **Mastery (World-Walker & Schemes)**: Accelerates lifestyle XP gain (+40%), expands language learning capacity (+1 at 30, 60, and 90 XP = +3 total), unlocks additional concurrent personal schemes (+1 at 50 XP, +2 at 100 XP), and ignores negative culture opinion at 100 XP.
+  - **Presence (Mesmeric Allure & Sovereign Majesty)**: Calms stress (-40% stress gain), commands broad loyalty across the realm (+24 general opinion with everyone), boosts Fame Impact (+25%), and stabilizes realms across successions (-25% short reign duration, +25% long reign bonus).
+  - **Prosperity (War Chest & Logistics)**: Multiplies monthly realm income (+40%), cuts Men-at-Arms maintenance (-32%), adds +4 domain limit (+2 at 50 XP, +4 at 100 XP), and expands Men-at-Arms regiment maximum sizes (+1 at 50 XP, +3 total at 100 XP).
+  - **Shadows (Occult Defense & Intrigue)**: Sharpens hostile scheme success (+40%), blunts enemy plot success against you (-40%), drastically suppresses enemy hostile scheme success caps (-25% at 50 XP, -50% at 100 XP), expands your own plot cap (+15% max cap), and unlocks two additional hostile scheme slots (+1 at 50 XP, +2 at 100 XP).
 - **De-cluttered Interface**: Removed redundant universal vitality modifiers from Blood Empowerment (already granted by Blood Mage and Blood Knight), cutting tooltip lines by up to 67% and keeping track progression comfortably visible on screen.
 - **Major Grimoire Integration**: Channeling Blood Empowerment is housed directly within the Cast Major Blood Magic Grimoire, presenting detailed breakdowns of milestones and capstones with zero-cost backout navigation.
 
