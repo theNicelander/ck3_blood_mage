@@ -7,7 +7,7 @@ Living technical specification for the Blood Knight subsystem (`lifestyle_blood_
 - **What:** Permanent, Devotion-anchored martial endgame peer (`lifestyle_blood_knight`) to `lifestyle_blood_mage`, modeled after CK3 1.20's *Proclaim the Living Word* split (*Fire and Sword* vs. *Shepherd of the Faithful*). Features 5 tracks: 2 exclusive martial tracks (`vanguard`, `slaughter`) and 3 shared Devotion tracks (`ancient`, `benediction`, `enlightenment`), max 100 XP each.
 - **Icon & Base Stats:** `bm_blood_knight.dds` (`gfx/interface/icons/traits/bm_blood_knight.dds`). Base: `same_opinion = 10`, `ruler_designer_cost = 50`. Inheritable (`25%` single parent, `100%` both; `0.20%` birth) scaled by campaign game rule `bm_blood_knight_prevalence`. Mutually exclusive with `lifestyle_blood_mage` (dual-wielding preserved only for historical Egill Skallagrímsson).
 - **How to acquire:**
-  - `make_blood_knight_interaction`: Initiated by a fellow Blood Knight (`100` Piety + Major Lifeforce OR `250` Piety + Minor Lifeforce) on a sworn knight or courtier.
+  - `make_blood_knight_interaction`: Initiated by a fellow Blood Knight (`100` Piety + Major Lifeforce OR `250` Piety + Minor Lifeforce) on a spouse, child, family member, sworn knight, or courtier. Awards `+4` Vanguard XP (`+5` if child or dynasty kin).
   - **Geyser Duel Initiation (`bm_geyser_duel.0001`):** Travel to Reykjavik or Tsushima via `bm_blood_cultist_become_blood_mage_decision` or `bm_enhance_blood_ritual_decision` (requires `piety_level >= 2`). Choosing the Prowess duel costs **1 Devotion level** (`add_piety_level = -1`) and bestows `lifestyle_blood_knight` upon victory.
 - **Apex Devotion Capstones:** The 100 XP capstones of all 3 shared tracks (`ancient`, `enlightenment`, `benediction`) grant massive Devotion-scaling powers (`+50%` Devotion Impact on `ancient`, `+2` Learning per Devotion level on `enlightenment`, and `+2` Diplomacy per Devotion level on `benediction`).
 - **Track Milestones & Cleanliness:** Vitality baselines (`+0.1` Health, `+2.5` Life Expectancy, `+1.25` Year Fertility, `+1` Epidemic Resistance) apply at standard tiers (10–40, 60–90) and are skipped at 50 XP and 100 XP milestones. Every track capstone at 100 XP grants `no_prowess_loss_from_age = yes`.
@@ -18,19 +18,39 @@ Living technical specification for the Blood Knight subsystem (`lifestyle_blood_
 - **Fatal Single Combat Duels (`bm_on_character_death_duel`):** Slaying a foe in single combat grants `+5` `slaughter` XP and **1 Major Lifeforce**. Slaying a foe with `prowess >= 20` or holding `lifestyle_blood_mage`/`lifestyle_blood_knight` has a **25% chance to yield 1 Superior Lifeforce** directly.
 - **Tournament Completion (`bm_on_travel_activity_complete_tournament`):** Completing a tournament (`activity_tournament`) awards `+3` `slaughter` XP.
 - **Ambient Yearly Pulse (`blood_mage_yearly_events.004`):** Passive **~33% chance per year** to condense 1 Minor Lifeforce ambiently, alongside passive `+1` `ancient` XP and `+1` `enlightenment` XP (plus attunement rolls). Strictly exclusive to `lifestyle_blood_knight`.
-- **Empower Blood Knight (`empower_blood_knight_interaction`):** Fellow Blood Knight empowers a sworn Blood Knight comrade:
+- **Empower Blood Knight (`empower_blood_knight_interaction`):** Fellow Blood Knight empowers a Blood Knight spouse, child, family member, sworn knight, or courtier:
   - Major Lifeforce: `+10` XP to both `vanguard` and `slaughter` on target; `+4` `benediction` XP to caster.
   - Minor Lifeforce: `+5` XP to both `vanguard` and `slaughter` on target; `+2` `benediction` XP to caster.
 - **Go on a Blood Hunt (`seek_power_decision`):** Martial and occult wilderness expedition harvesting Lifeforce, martial, and discipline XP (`730`d cooldown landed, `365`d unlanded/wanderer; halved by Superior **Vegvísir**). Available to both Blood Knights and Blood Mages, featuring a direct 7-way Prowess + Learning encounter roll:
   - **The Stag's Last Stand (`seek_power.002`):** Run down and slaughter a royal stag for **1 Minor Lifeforce** + `+1` `slaughter` XP (Knight) / `+1` `hematurgy` XP (Mage).
-  - **The Beast's Lair (`seek_power.008`):** Slay a monstrous apex predator in its den via Prowess duel for **1 Major Lifeforce**, `+25` Prestige & `+2` `slaughter`/`hematurgy` XP (or safe carcass harvest for **1 Minor Lifeforce** + `+1` `ancient` XP).
-  - **The Edge of the Woods (`seek_power.009`):** Stalk an isolated homestead via Intrigue+Prowess duel for **1 Major Lifeforce** + `+2` `hematurgy`/`slaughter` XP, or extract an orderly blood tithe (**1 Minor Lifeforce** + `+1` `benediction` XP).
+  - **The Beast's Lair (`seek_power.008`):** Slay a monstrous apex predator in its den via Prowess duel vs `30` prowess:
+    - *Success:* **1 Major Lifeforce**, `+25` Prestige, `+2` `slaughter`/`hematurgy` XP.
+    - *Mixed:* **1 Minor Lifeforce**, Wounded (`increase_wounds_no_death_effect`), `+10` Stress, `+1` `vanguard`/`ancient` XP.
+    - *Fail:* Beast breaks away, `0` Lifeforce, `+5` Stress.
+    - *Critical Fail:* Savagely mauled, Wounded, `0` Lifeforce, `+20` Stress, `-25` Prestige.
+    - *Option B:* Safe carcass harvest for **1 Minor Lifeforce** + `+1` `ancient` XP.
+  - **The Edge of the Woods (`seek_power.009`):** Stalk an isolated homestead via Intrigue+Prowess duel vs `16`:
+    - *Success:* **1 Major Lifeforce**, `+2` `slaughter`/`hematurgy` XP.
+    - *Mixed:* **1 Minor Lifeforce**, Wounded, `+10` Stress, `+5` Dread.
+    - *Fail:* Barred doors, `0` Lifeforce, `+5` Stress.
+    - *Critical Fail:* Cornered by defenders, Wounded, `0` Lifeforce, `+20` Stress, `-15` Prestige.
+    - *Option B:* Orderly blood tithe for **1 Minor Lifeforce** + `+1` `benediction` XP.
   - **Blades on the Lonely Road (`seek_power.003`):** Spawns a wandering warrior (`traveller_character_template`, Learning `10–18`, Prowess `8–18`, Martial `8–16`) accompanied by a sworn escort knight (`bm_escort_knight_character_template`, prowess `20–30`) for **Blood Knights only** (Blood Mages encounter the traveler alone). Both spawn with player culture and county/player faith.
-    - *Bout for Blood (`seek_power.003.knight`):* Prowess skill duel against the traveler: Crit Win awards **1 Major Lifeforce** + `+3` `slaughter` XP; Win awards **1 Minor Lifeforce** + `+2` `slaughter` XP; Spar awards `+1` `vanguard` XP.
+    - *Bout for Blood (`seek_power.003.knight`):* Prowess skill duel against the traveler: Crit Win awards **1 Major Lifeforce** + `+3` `slaughter` XP; Win awards **1 Minor Lifeforce** + `+2` `slaughter` XP; Spar awards `+1` `vanguard` XP; Escape awards `0` Lifeforce.
     - *Battlefield Single Combat Duel (`seek_power.003.battlefield_duel` -> `seek_power.006`):* Blood Knight only (`prowess >= 25`, Single Combat Engine, `FATALITY = possible`, `LOCALE = battlefield`). Victory allows harvesting **1 Major Lifeforce**, `+5` `slaughter` XP, and a **25% chance of 1 Superior Lifeforce**—or sparing and recruiting the warrior (`+2` `vanguard` XP + **1 Minor Lifeforce**).
     - *Recruitment:* Persuade traveler via Learning duel (`+1` `enlightenment` XP) or recruit escort knight via Prowess duel (`+2` `vanguard` XP).
-  - **Blood in the Embers (`seek_power.010`):** Ambush an outlaw camp via Prowess+Martial duel for **1 Major Lifeforce**, `+25` Gold & `+2` `slaughter`/`hematurgy` XP, or extort tribute (**1 Minor Lifeforce**, `+15` Gold, `+5` Dread, `+1` `vanguard`/`bloodline` XP).
-  - **The Crimson Rite (`seek_power.011`):** Usurp a rival occultist's ritual via Prowess+Learning duel for **1 Major Lifeforce** + `+2` `slaughter`/`hematurgy` XP, or share the chalice for **1 Minor Lifeforce**, `+50` Piety & `+2` `enlightenment` XP.
+  - **Blood in the Embers (`seek_power.010`):** Ambush an outlaw camp via Prowess+Martial duel vs `24`:
+    - *Success:* **1 Major Lifeforce**, `+25` Gold, `+2` `slaughter`/`hematurgy` XP.
+    - *Mixed:* **1 Minor Lifeforce**, Wounded, `+10` Gold, `+10` Stress, `+1` `vanguard`/`hematurgy` XP.
+    - *Fail:* Brigands scatter, `0` Lifeforce, `0` Gold, `+5` Stress.
+    - *Critical Fail:* Overpowered and robbed, Wounded, `0` Lifeforce, `-25` Gold, `+20` Stress, `-25` Prestige.
+    - *Option B:* Extort tribute for **1 Minor Lifeforce**, `+15` Gold, `+5` Dread, `+1` `vanguard`/`bloodline` XP.
+  - **The Crimson Rite (`seek_power.011`):** Usurp a rival occultist's ritual via Prowess+Learning duel vs `18`:
+    - *Success:* **1 Major Lifeforce**, `+2` `slaughter`/`hematurgy` XP.
+    - *Mixed:* **1 Minor Lifeforce**, Wounded, `+15` Stress, `+1` `vanguard`/`hematurgy` XP.
+    - *Fail:* Occultist escapes, `0` Lifeforce, `+5` Stress.
+    - *Critical Fail:* Catastrophic hex, Wounded, `0` Lifeforce, `-50` Piety, `+20` Stress.
+    - *Option B:* Share the chalice for **1 Minor Lifeforce**, `+50` Piety, `+2` `enlightenment` XP.
   - **The Cairn of Forgotten Carnage (`seek_power.004`):** Ancient sacrificial cairn yielding **1 Major Lifeforce** + `+2` `enlightenment` XP + `+1` `ancient` XP cleanly for both classes.
 - **Manifest & Condense Lifeforce:**
   - `bm_manifest_lifeforce_decision`: `100` Piety Learning duel -> `+3` `enlightenment` XP and Minor/Major Lifeforce.
