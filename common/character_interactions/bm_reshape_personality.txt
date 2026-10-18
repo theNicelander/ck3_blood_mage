@@ -49,6 +49,10 @@
 		}
 		scope:recipient = {
 			custom_tooltip = {
+				text = bm_influence_personality_failure_cooldown_tt
+				NOT = { var:bm_influence_personality_failed_actor ?= scope:actor }
+			}
+			custom_tooltip = {
 				text = bm_reshape_personality_recipient_no_traits_tt
 				any_character_trait = {
 					has_trait_category = personality
@@ -107,6 +111,10 @@
 		modifier = {
 			factor = 0
 			piety < 500
+		}
+		modifier = {
+			factor = 0.2
+			scope:actor.learning < scope:recipient.learning
 		}
 		modifier = {
 			add = 10

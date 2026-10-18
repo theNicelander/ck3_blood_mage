@@ -126,7 +126,8 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
   - Monitor your current discipline, track XP progression, active Lifeforce potencies, and carved Galdrastafir stave.
   - Real-time live character rosters tracking **Dynasty Blood Mages**, **Sworn Blood Knights**, and **Blood Golems**.
   - Direct one-click access to Grimoires, Attunement, and Carving decisions.
-- **Dedicated "Blood Magic" Context Menu Section**: All 17 mod character interactions (healing, Lifeforce harvesting, trait theft, blood knight creation, curses, runes, and personality reshaping) now appear neatly grouped under a dedicated **Blood Magic** header section with a crimson accent bar in the right-click character menu, removing clutter from vanilla Personal and Hostile tabs.
+- **Dedicated "Blood Magic" Context Menu Section**: All 17 mod character interactions (healing, Lifeforce harvesting, trait theft, blood knight creation, curses, runes, and personality influence) now appear neatly grouped under a dedicated **Blood Magic** header section with a crimson accent bar in the right-click character menu, removing clutter from vanilla Personal and Hostile tabs.
+- **Influence Personality Interaction**: Commune with a relationship target's mind to dissolve an unwanted personality trait and imprint one of your own via a Learning contest (50% base, scaling to 95% at +20 Learning difference; 5-year cooldown on success, 1-year cooldown on failure, no Cast Major Blood Magic debuff).
 - **Distinctive Visual Assets**: Custom 120×120 DDS icons across traits, level tracks, character interactions, staves, and religious faiths.
 - **Situation Alerts**: Prominent warnings in CK3's Current Situation dropdown notify you whenever a kinsperson or courtier needs healing.
 
