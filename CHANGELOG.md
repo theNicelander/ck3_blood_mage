@@ -2,7 +2,7 @@
 
 ## Game version 1.20
 
-- v1.20.51: Rename Major Grimoire ritual to Manifest Trait, enforce persistent grayed-out option visibility, and add max-rank requirement tooltip.
+- v1.20.51: Manifest Trait ritual rename & persistent visibility, and Condense Superior Lifeforce ancient XP rebalance (+3 XP).
 - v1.20.50.f: 5 interactive narrative and battle events for lovers, child awakenings, victory banquets, blood golems, and court sanctum breaches.
 - v1.20.50.e: 3-way Bless Bloodline blessings, Anoint Heir succession legacy awakening & Lifeforce transfer, and House Head Blood Tithe.
 - v1.20.50.d: Empower Blood Mage interaction, Siphon Stored Lifeforce duel, and Contest of the Red Art occult duel.

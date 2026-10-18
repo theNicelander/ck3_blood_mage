@@ -35,7 +35,7 @@ Living technical specification for the Blood Knight subsystem (`lifestyle_blood_
 - **Manifest & Condense Lifeforce:**
   - `bm_manifest_lifeforce_decision`: `100` Piety Learning duel -> `+3` `enlightenment` XP and Minor/Major Lifeforce.
   - Condense Lifeforce (`bm_cast_blood_magic_minor.001`): `100` Piety + 1 Minor Lifeforce -> 1 Major Lifeforce (`+2` `ancient` XP).
-  - `bm_manifest_superior_lifeforce_decision`: `250` Piety + 1 Minor + 1 Major Lifeforce (`piety_level >= 3`) -> 1 Superior Lifeforce (`+2` to `+8` `ancient` XP).
+  - Condense Superior Lifeforce (`bm_cast_blood_magic_major.001`): `250` Piety + 1 Minor + 1 Major Lifeforce (`piety_level >= 3`) -> 1 Superior Lifeforce (`+1` to `+3` `ancient` XP).
 - **Hostile & Support Interactions:**
   - `lifedrain_courtier_event_interaction`: Prowess duel siphon (`25` Piety, 3-mo CD) -> 1 Minor Lifeforce + `+1` `slaughter` XP.
   - `trait_drain_prisoner_event_interaction`: Steal congenital traits up to Rank 5 from prisoners (`100–325` Piety + Major Lifeforce) -> `+2` `slaughter` XP.
