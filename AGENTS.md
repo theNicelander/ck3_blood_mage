@@ -98,3 +98,4 @@ Multiple AIs work in parallel on this repo, so keep in mind that there maybe oth
 7. **Always** update `docs-ai/branch-context/<branch>.md` to net branch state, however small the task.
 8. Run `python3 scripts/check_repo.py` (enforces 1 and 7). State in the final summary what you could not verify.
 9. **Commit**: Stage and commit ONLY files modified in your active conversation (`git add <file1> <file2> && git commit -m "..."`). Because plans are well thought out, commit the finished plan implementation at the end; subsequent feedback or modifications must be committed in separate commits. Never blanket stage (`git add .`), as multiple agents operate concurrently.
+10. **Updating PRs**: When asked to "update PR", always use the `caveman` skill (`.agents/skills/caveman/SKILL.md`). The PR title and summary must focus strictly on the most impactful gameplay changes (traits, events, rites, core mechanics), ignoring localization, minor bugfixes, tooltips, or popups.
