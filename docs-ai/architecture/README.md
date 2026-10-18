@@ -29,7 +29,7 @@ flowchart LR
         H2["Manifest / Condense / Distill Rites"]
         H3["Battlefield & Duel Kills (Knight / Ægishjálmur)"]
         H4["Yearly Pulse: Blood Runes & Knight Ambient"]
-        H5["Seek Power Wilderness Expeditions"]
+        H5["Go on a Blood Hunt (Wilderness Expeditions)"]
     end
 
     subgraph Resource ["2. Lifeforce Reserves"]

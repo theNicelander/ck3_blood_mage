@@ -3,48 +3,69 @@
 namespace = seek_power
 
 seek_power.001 = {
-    type = character_event
-    title = seek_power.001.title
-    desc = seek_power.001.desc
-    theme = hunt_activity
+    hidden = yes
 
-    left_portrait = {
-        character = root
-        animation = idle
-    }
-
-    option = {
-        name = seek_power.001.a
-
+    immediate = {
         duel = {
-            skill = prowess
+            skills = { prowess learning }
             value = 0
-            50 = {
+            35 = {
                 desc = seek_power.duel.animal
                 trigger_event = { id = seek_power.002 }
             }
-            30 = {
-                desc = seek_power.duel.traveler
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 2
-                }
-                trigger_event = { id = seek_power.003 }
-            }
-            5 = {
-                desc = seek_power.duel.legendary
-                trigger_event = { id = seek_power.004 }
+            20 = {
+                desc = seek_power.duel.beast_lair
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = 0.5
                 }
+                trigger_event = { id = seek_power.008 }
+            }
+            20 = {
+                desc = seek_power.duel.homestead
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 0.5
+                }
+                trigger_event = { id = seek_power.009 }
+            }
+            25 = {
+                desc = seek_power.duel.traveler
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 1.5
+                }
+                trigger_event = { id = seek_power.003 }
+            }
+            15 = {
+                desc = seek_power.duel.outlaw_camp
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 1.0
+                }
+                trigger_event = { id = seek_power.010 }
+            }
+            10 = {
+                desc = seek_power.duel.crimson_rite
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 1.0
+                }
+                trigger_event = { id = seek_power.011 }
+            }
+            5 = {
+                desc = seek_power.duel.legendary
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 0.5
+                }
+                trigger_event = { id = seek_power.004 }
             }
         }
-        ai_chance = { base = 50 }
     }
 }
 
-# New event for animal sacrifice
+# The Stag's Last Stand
 seek_power.002 = {
     type = character_event
     title = seek_power.002.title
@@ -53,7 +74,7 @@ seek_power.002 = {
 
     left_portrait = {
         character = root
-        animation = idle
+        animation = hunting_knife_start
     }
 
     option = {
@@ -65,6 +86,12 @@ seek_power.002 = {
             if = {
                 limit = { has_trait = lifestyle_blood_knight }
                 add_blood_knight_xp = { TRACK = slaughter XP = 1 }
+            }
+            else = {
+                add_blood_mage_xp = { TRACK = hematurgy XP = 1 }
+            }
+            hidden_effect = {
+                bm_recount_lifeforce_stacks_effect = yes
             }
         }
         ai_chance = { base = 50 }
@@ -87,20 +114,21 @@ seek_power.003 = {
 
     left_portrait = {
         character = root
-        animation = idle
+        animation = aggressive_sword
     }
     right_portrait = {
         character = scope:recipient
-        animation = beg
+        animation = marshal
     }
     lower_right_portrait = {
         trigger = {
             exists = scope:escort_knight
         }
         character = scope:escort_knight
+        animation = aggressive_sword
     }
 
-    # Create the traveler/minor noble, and 50% chance to also spawn a martial escort knight
+    # Create the traveler, and only spawn escort knight for Blood Knights
     immediate = {
         hidden_effect = {
             if = {
@@ -117,12 +145,15 @@ seek_power.003 = {
                 culture = root.culture
                 faith = scope:local_faith
             }
-            create_character = {
-                template = bm_escort_knight_character_template
-                save_scope_as = escort_knight
-                location = root.location
-                culture = root.culture
-                faith = scope:local_faith
+            if = {
+                limit = { has_trait = lifestyle_blood_knight }
+                create_character = {
+                    template = bm_escort_knight_character_template
+                    save_scope_as = escort_knight
+                    location = root.location
+                    culture = root.culture
+                    faith = scope:local_faith
+                }
             }
         }
     }
@@ -477,7 +508,7 @@ seek_power.004 = {
 
     left_portrait = {
         character = root
-        animation = idle
+        animation = hunting_knife_start
     }
 
     option = {
@@ -485,17 +516,369 @@ seek_power.004 = {
         send_interface_toast = {
             title = seek_power.toast.ancient_lifeforce
             left_icon = this
-            if = {
-                limit = { has_trait = lifestyle_blood_mage }
-                add_character_modifier = { modifier = lifeforce_modifier_major }
-                hematurgy_magic_cast_effect_minor = yes
-            }
-            else = {
-                add_character_modifier = { modifier = lifeforce_modifier_minor }
-                add_blood_knight_xp = { TRACK = enlightenment XP = 2 }
+            add_character_modifier = { modifier = lifeforce_modifier_major }
+            add_shared_bm_bk_xp = { TRACK = enlightenment XP = 2 }
+            add_shared_bm_bk_xp = { TRACK = ancient XP = 1 }
+            hidden_effect = {
+                bm_recount_lifeforce_stacks_effect = yes
             }
         }
         ai_chance = { base = 50 }
+    }
+}
+
+# The Beast's Lair
+seek_power.008 = {
+    type = character_event
+    title = seek_power.008.title
+    desc = seek_power.008.desc
+    theme = hunt_activity
+
+    left_portrait = {
+        character = root
+        animation = hunting_knife_start
+    }
+
+    # Option A: Slay the apex beast
+    option = {
+        name = seek_power.008.a
+        ai_chance = { base = 60 }
+        duel = {
+            skill = prowess
+            value = 12
+            60 = {
+                desc = seek_power.duel.beast_slain
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 1.5
+                    max = 35
+                }
+                send_interface_toast = {
+                    title = seek_power.toast.beast_slain
+                    left_icon = this
+                    add_character_modifier = { modifier = lifeforce_modifier_major }
+                    add_prestige = 25
+                    if = {
+                        limit = { has_trait = lifestyle_blood_knight }
+                        add_blood_knight_xp = { TRACK = slaughter XP = 2 }
+                    }
+                    else = {
+                        add_blood_mage_xp = { TRACK = hematurgy XP = 2 }
+                    }
+                    hidden_effect = {
+                        bm_recount_lifeforce_stacks_effect = yes
+                    }
+                }
+            }
+            40 = {
+                desc = seek_power.duel.beast_battered
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = -1.5
+                    min = -35
+                }
+                modifier = {
+                    factor = 0
+                    bm_has_superior_stave_trigger = { STAVE = vegvisir }
+                }
+                send_interface_toast = {
+                    title = seek_power.toast.beast_battered
+                    left_icon = this
+                    add_character_modifier = { modifier = lifeforce_modifier_minor }
+                    add_stress = 10
+                    if = {
+                        limit = { has_trait = lifestyle_blood_knight }
+                        add_blood_knight_xp = { TRACK = vanguard XP = 1 }
+                    }
+                    else = {
+                        add_shared_bm_bk_xp = { TRACK = ancient XP = 1 }
+                    }
+                    hidden_effect = {
+                        bm_recount_lifeforce_stacks_effect = yes
+                    }
+                }
+            }
+        }
+    }
+
+    # Option B: Siphon the fresh kills outside
+    option = {
+        name = seek_power.008.b
+        ai_chance = { base = 40 }
+        send_interface_toast = {
+            title = seek_power.toast.beast_carcass
+            left_icon = this
+            add_character_modifier = { modifier = lifeforce_modifier_minor }
+            add_shared_bm_bk_xp = { TRACK = ancient XP = 1 }
+            hidden_effect = {
+                bm_recount_lifeforce_stacks_effect = yes
+            }
+        }
+    }
+}
+
+# The Edge of the Woods
+seek_power.009 = {
+    type = character_event
+    title = seek_power.009.title
+    desc = seek_power.009.desc
+    theme = hunt_activity
+
+    left_portrait = {
+        character = root
+        animation = spymaster
+    }
+
+    # Option A: Strike from the shadows
+    option = {
+        name = seek_power.009.a
+        ai_chance = { base = 60 }
+        duel = {
+            skills = { intrigue prowess }
+            value = 12
+            60 = {
+                desc = seek_power.duel.homestead_silent
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 1.5
+                    max = 35
+                }
+                send_interface_toast = {
+                    title = seek_power.toast.homestead_silent
+                    left_icon = this
+                    add_character_modifier = { modifier = lifeforce_modifier_major }
+                    if = {
+                        limit = { has_trait = lifestyle_blood_knight }
+                        add_blood_knight_xp = { TRACK = slaughter XP = 2 }
+                    }
+                    else = {
+                        add_blood_mage_xp = { TRACK = hematurgy XP = 2 }
+                    }
+                    hidden_effect = {
+                        bm_recount_lifeforce_stacks_effect = yes
+                    }
+                }
+            }
+            40 = {
+                desc = seek_power.duel.homestead_spotted
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = -1.5
+                    min = -35
+                }
+                modifier = {
+                    factor = 0
+                    bm_has_superior_stave_trigger = { STAVE = vegvisir }
+                }
+                send_interface_toast = {
+                    title = seek_power.toast.homestead_spotted
+                    left_icon = this
+                    add_character_modifier = { modifier = lifeforce_modifier_minor }
+                    add_stress = 10
+                    add_dread = 5
+                    hidden_effect = {
+                        bm_recount_lifeforce_stacks_effect = yes
+                    }
+                }
+            }
+        }
+    }
+
+    # Option B: Demand a blood tithe
+    option = {
+        name = seek_power.009.b
+        ai_chance = { base = 40 }
+        send_interface_toast = {
+            title = seek_power.toast.homestead_tithe
+            left_icon = this
+            add_character_modifier = { modifier = lifeforce_modifier_minor }
+            add_shared_bm_bk_xp = { TRACK = benediction XP = 1 }
+            hidden_effect = {
+                bm_recount_lifeforce_stacks_effect = yes
+            }
+        }
+    }
+}
+
+# Blood in the Embers
+seek_power.010 = {
+    type = character_event
+    title = seek_power.010.title
+    desc = seek_power.010.desc
+    theme = hunt_activity
+
+    left_portrait = {
+        character = root
+        animation = aggressive_sword
+    }
+
+    # Option A: Ambush and butcher the camp
+    option = {
+        name = seek_power.010.a
+        ai_chance = { base = 60 }
+        duel = {
+            skills = { prowess martial }
+            value = 12
+            60 = {
+                desc = seek_power.duel.outlaw_slaughter
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 1.5
+                    max = 35
+                }
+                send_interface_toast = {
+                    title = seek_power.toast.outlaw_slaughter
+                    left_icon = this
+                    add_character_modifier = { modifier = lifeforce_modifier_major }
+                    add_gold = 25
+                    if = {
+                        limit = { has_trait = lifestyle_blood_knight }
+                        add_blood_knight_xp = { TRACK = slaughter XP = 2 }
+                    }
+                    else = {
+                        add_blood_mage_xp = { TRACK = hematurgy XP = 2 }
+                    }
+                    hidden_effect = {
+                        bm_recount_lifeforce_stacks_effect = yes
+                    }
+                }
+            }
+            40 = {
+                desc = seek_power.duel.outlaw_skirmish
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = -1.5
+                    min = -35
+                }
+                modifier = {
+                    factor = 0
+                    bm_has_superior_stave_trigger = { STAVE = vegvisir }
+                }
+                send_interface_toast = {
+                    title = seek_power.toast.outlaw_skirmish
+                    left_icon = this
+                    add_character_modifier = { modifier = lifeforce_modifier_minor }
+                    add_gold = 10
+                    add_stress = 10
+                    if = {
+                        limit = { has_trait = lifestyle_blood_knight }
+                        add_blood_knight_xp = { TRACK = vanguard XP = 1 }
+                    }
+                    else = {
+                        add_blood_mage_xp = { TRACK = hematurgy XP = 1 }
+                    }
+                    hidden_effect = {
+                        bm_recount_lifeforce_stacks_effect = yes
+                    }
+                }
+            }
+        }
+    }
+
+    # Option B: Extort tribute and blood
+    option = {
+        name = seek_power.010.b
+        ai_chance = { base = 40 }
+        send_interface_toast = {
+            title = seek_power.toast.outlaw_extort
+            left_icon = this
+            add_character_modifier = { modifier = lifeforce_modifier_minor }
+            add_gold = 15
+            add_dread = 5
+            if = {
+                limit = { has_trait = lifestyle_blood_knight }
+                add_blood_knight_xp = { TRACK = vanguard XP = 1 }
+            }
+            else = {
+                add_blood_mage_xp = { TRACK = bloodline XP = 1 }
+            }
+            hidden_effect = {
+                bm_recount_lifeforce_stacks_effect = yes
+            }
+        }
+    }
+}
+
+# The Crimson Rite
+seek_power.011 = {
+    type = character_event
+    title = seek_power.011.title
+    desc = seek_power.011.desc
+    theme = hunt_activity
+
+    left_portrait = {
+        character = root
+        animation = marshal
+    }
+
+    # Option A: Seize the rite by force
+    option = {
+        name = seek_power.011.a
+        ai_chance = { base = 60 }
+        duel = {
+            skills = { prowess learning }
+            value = 12
+            60 = {
+                desc = seek_power.duel.crimson_seize
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 1.5
+                    max = 35
+                }
+                send_interface_toast = {
+                    title = seek_power.toast.crimson_seize
+                    left_icon = this
+                    add_character_modifier = { modifier = lifeforce_modifier_major }
+                    if = {
+                        limit = { has_trait = lifestyle_blood_knight }
+                        add_blood_knight_xp = { TRACK = slaughter XP = 2 }
+                    }
+                    else = {
+                        add_blood_mage_xp = { TRACK = hematurgy XP = 2 }
+                    }
+                    hidden_effect = {
+                        bm_recount_lifeforce_stacks_effect = yes
+                    }
+                }
+            }
+            40 = {
+                desc = seek_power.duel.crimson_backlash
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = -1.5
+                    min = -35
+                }
+                modifier = {
+                    factor = 0
+                    bm_has_superior_stave_trigger = { STAVE = vegvisir }
+                }
+                send_interface_toast = {
+                    title = seek_power.toast.crimson_backlash
+                    left_icon = this
+                    add_character_modifier = { modifier = lifeforce_modifier_minor }
+                    add_stress = 15
+                    hidden_effect = {
+                        bm_recount_lifeforce_stacks_effect = yes
+                    }
+                }
+            }
+        }
+    }
+
+    # Option B: Share the chalice
+    option = {
+        name = seek_power.011.b
+        ai_chance = { base = 40 }
+        send_interface_toast = {
+            title = seek_power.toast.crimson_communion
+            left_icon = this
+            add_character_modifier = { modifier = lifeforce_modifier_minor }
+            add_piety = 50
+            add_shared_bm_bk_xp = { TRACK = enlightenment XP = 2 }
+            hidden_effect = {
+                bm_recount_lifeforce_stacks_effect = yes
+            }
+        }
     }
 }
 
