@@ -18,7 +18,7 @@ Character-bound story cycle powering the "Blood Magic" Situation panel (`window_
 ## Lifecycle & Synchronization
 
 - **Creation:** Initiated once per character via `bm_ensure_blood_mage_story_effect` upon acquiring `lifestyle_blood_mage` or `lifestyle_blood_knight`.
-- **Hooks:** Hooked on game start (`bm_blood_mage_story_on_actions.txt`), birth on-actions (`bm_blood_mage_prevalence_on_actions.txt`), and yearly pulse (`bm_yearly_pulse.txt`).
+- **Hooks:** Hooked on game start (`bm_blood_mage_story_on_actions.txt`), birth on-actions (`bm_blood_mage_prevalence_on_actions.txt`), and yearly pulse (`bm_yearly_pulse.txt`), which also drives the interpersonal narrative event pulse (`bm_interpersonal_events`).
 - **Destruction:** Ends on character death; reinitialized on successor if they are a blood mage or blood knight.
 - **Roster Snapshot Rule:** Golem and knight lists are static snapshots. Must invoke `bm_refresh_blood_magic_rosters_effect` whenever golems/knights are created, recruited, or killed.
 - **Lifeforce Recount Rule:** Because CK3 script cannot query dynamic modifier stack counts, the refresh effect temporarily removes and re-adds Lifeforce modifiers to recount exact totals. Refresh effects must have zero side effects triggered by modifier changes.

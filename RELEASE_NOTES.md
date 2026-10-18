@@ -180,6 +180,17 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 
 ---
 
+## 🩸 Interactive Narrative & Interpersonal Events
+
+- **Dynamic Interpersonal Pulse**: Narrative events fire through an annual pulse for player Blood Mages and Blood Knights (governed by a 3-year cooldown):
+  - **A Drop on the Lips (Lovers, Soulmates & Spouses)**: Share a drop of Minor Lifeforce to bless your partner\x27s health and fertility for 10 years and relieve mutual stress; willingly drink from their offered vein to harvest Minor or Major Lifeforce; or initiate an unawakened partner into the Crimson Mysteries using Major Lifeforce to awaken them as a Blood Mage or Blood Knight and forge an eternal Soulmate bond.
+  - **The Fever of Awakening (Children & Wards Age 6–15)**: Detect the dangerous occult churning of blood in young scions. Guide their pulse with Minor Lifeforce to permanently boost Learning, Martial, and Prowess; spend Major Lifeforce to force their awakening early with bonus Ancient XP; or soothe their fever with pious prayer.
+  - **The Red Banquet After Battle (Sworn Knights)**: Following combat victories with knights on the field (15% chance), partake in the gory aftermath together to restore Minor Lifeforce and forge lasting camaraderie; claim the entire battlefield harvest as an undisputed Warlord for Major Lifeforce and Slaughter XP; or consecrate the fallen earth for massive Piety and Enlightenment XP.
+  - **Echoes in the Clay (Blood Golems)**: Commune with your court\x27s Blood Golem as ambient magic settles into its frame. Bind it as an immortal shield to grant your primary heir or spouse the Golem\x27s Aegis (+4 Prowess, +0.25 Health, -20% Enemy Hostile Scheme Success for 10 years); awaken its ancient martial memory to grant Blademaster or +4 Prowess; or siphon excess ichor from its core for Major Lifeforce.
+  - **The Whispering Sanctum (Snooping Courtiers)**: Catch an uninitiated courtier intruding upon your private sanctum rites. Subdue and drain them in the dark via an Intrigue/Prowess duel for Minor Lifeforce, Dread, and Hematurgy/Slaughter XP; bribe their eternal silence with a drop of Minor Lifeforce to gain a permanent Strong Loyalty Hook and +40 Opinion; or disperse the ritual mist to regain composure.
+
+---
+
 ## 🛠️ Bugfixes & Engine Modernization
 
 - **Decision Event Dialog Fix**: Resolved an issue where multiple UTF-8 BOM headers at file start caused the game engine to drop event namespaces, preventing dialogs from opening when clicking "Seek Power" and "Cast Major Blood Magic -> Channel Blood Power".
