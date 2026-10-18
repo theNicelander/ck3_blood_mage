@@ -1,5 +1,6 @@
 ﻿bm_anoint_heir_interaction = {
 	category = interaction_category_bm_blood_magic
+	icon = bm_anoint_heir_interaction
 	auto_accept = yes
 	common_interaction = yes
 	desc = bm_anoint_heir_interaction_desc
@@ -39,6 +40,19 @@
 	on_accept = {
 		debug_log = "BloodMageInteraction: anoint_heir | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
 		scope:actor = {
+			if = {
+				limit = {
+					exists = var:bm_anointed_heir
+					var:bm_anointed_heir = {
+						is_alive = yes
+						has_character_modifier = bm_anointed_heir_modifier
+						NOT = { this = scope:recipient }
+					}
+				}
+				var:bm_anointed_heir = {
+					remove_character_modifier = bm_anointed_heir_modifier
+				}
+			}
 			every_child = {
 				limit = {
 					has_character_modifier = bm_anointed_heir_modifier
@@ -57,6 +71,10 @@
 				primary_heir = {
 					remove_character_modifier = bm_anointed_heir_modifier
 				}
+			}
+			set_variable = {
+				name = bm_anointed_heir
+				value = scope:recipient
 			}
 			send_interface_toast = {
 				type = event_toast_effect_good
@@ -82,26 +100,26 @@
 						XP = 5
 					}
 				}
+				scope:recipient = {
+					add_character_modifier = {
+						modifier = bm_anointed_heir_modifier
+					}
+					add_opinion = {
+						target = scope:actor
+						modifier = magic_opinion_positive
+						opinion = 30
+					}
+				}
 				hidden_effect = {
 					bm_recount_lifeforce_stacks_effect = yes
 				}
-			}
-		}
-		scope:recipient = {
-			add_character_modifier = {
-				modifier = bm_anointed_heir_modifier
-			}
-			add_opinion = {
-				target = scope:actor
-				modifier = magic_opinion_positive
-				opinion = 30
 			}
 		}
 	}
 
 	ai_targets = {
 		ai_recipients = children
-		ai_recipients = primary_heir
+		ai_recipients = family
 	}
 	ai_potential = { always = yes }
 	ai_frequency = 24
@@ -124,6 +142,7 @@
 
 bm_demand_blood_tithe_interaction = {
 	category = interaction_category_bm_blood_magic
+	icon = bm_demand_blood_tithe_interaction
 	auto_accept = yes
 	common_interaction = yes
 	desc = bm_demand_blood_tithe_interaction_desc
@@ -200,29 +219,29 @@ bm_demand_blood_tithe_interaction = {
 						XP = 2
 					}
 				}
+				scope:recipient = {
+					add_character_modifier = {
+						modifier = recently_lifedrained_modifier
+						years = 1
+					}
+					add_character_modifier = {
+						modifier = lifeforce_modifier_negative_minor
+						years = 1
+					}
+					if = {
+						limit = {
+							NOT = { bm_is_blood_cult_faith_trigger = yes }
+							NOT = { has_trait = loyal }
+						}
+						add_opinion = {
+							target = scope:actor
+							modifier = magic_opinion_negative
+							opinion = -25
+						}
+					}
+				}
 				hidden_effect = {
 					bm_recount_lifeforce_stacks_effect = yes
-				}
-			}
-		}
-		scope:recipient = {
-			add_character_modifier = {
-				modifier = recently_lifedrained_modifier
-				years = 1
-			}
-			add_character_modifier = {
-				modifier = lifeforce_modifier_negative_minor
-				years = 1
-			}
-			if = {
-				limit = {
-					NOT = { bm_is_blood_cult_faith_trigger = yes }
-					NOT = { has_trait = loyal }
-				}
-				add_opinion = {
-					target = scope:actor
-					modifier = magic_opinion_negative
-					opinion = -25
 				}
 			}
 		}
@@ -237,6 +256,7 @@ bm_demand_blood_tithe_interaction = {
 	ai_frequency = 12
 	ai_will_do = {
 		base = 15
+		ai_willingness_to_use_hostile_magic = yes
 		modifier = {
 			scope:actor = {
 				NOT = { has_character_modifier = lifeforce_modifier_minor }
@@ -252,6 +272,19 @@ bm_demand_blood_tithe_interaction = {
 				}
 			}
 			factor = 0.5
+		}
+		modifier = {
+			factor = 0
+			scope:recipient = {
+				OR = {
+					is_primary_heir_of = scope:actor
+					is_spouse_of = scope:actor
+					has_relation_lover = scope:actor
+					has_relation_soulmate = scope:actor
+					has_relation_friend = scope:actor
+					has_relation_best_friend = scope:actor
+				}
+			}
 		}
 	}
 }
