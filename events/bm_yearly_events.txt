@@ -6,10 +6,14 @@ blood_mage_yearly_events.001 = {
     trigger = { has_trait = lifestyle_blood_mage }
     immediate = {
         # Base XP gain for all Blood Mages
-        add_trait_xp = {
-            trait = lifestyle_blood_mage
-            track = ancient
-            value = 1
+        send_interface_toast = {
+            title = bm_yearly_ancient_toast
+            left_icon = root
+            add_trait_xp = {
+                trait = lifestyle_blood_mage
+                track = ancient
+                value = 1
+            }
         }
 
         # Ancient attunement check
@@ -362,16 +366,29 @@ blood_mage_yearly_events.004 = {
     hidden = yes
     trigger = {
         has_trait = lifestyle_blood_knight
-        NOT = { has_trait = lifestyle_blood_mage }
     }
     immediate = {
-        add_blood_knight_xp = {
-            TRACK = enlightenment
-            XP = 1
+        # Base Enlightenment XP gain for Blood Knights
+        send_interface_toast = {
+            title = bm_yearly_enlightenment_toast
+            left_icon = root
+            add_blood_knight_xp = {
+                TRACK = enlightenment
+                XP = 1
+            }
         }
-        add_blood_knight_xp = {
-            TRACK = ancient
-            XP = 1
+
+        # Base Ancient XP gain for Blood Knights
+        if = {
+            limit = { NOT = { has_trait = lifestyle_blood_mage } }
+            send_interface_toast = {
+                title = bm_yearly_ancient_toast
+                left_icon = root
+                add_blood_knight_xp = {
+                    TRACK = ancient
+                    XP = 1
+                }
+            }
         }
 
         # Ambient lifeforce generation (approx 1 in 3 chance per year)
@@ -386,7 +403,10 @@ blood_mage_yearly_events.004 = {
 
         # Ancient attunement check
         if = {
-            limit = { has_character_modifier = ancient_attuned }
+            limit = {
+                has_character_modifier = ancient_attuned
+                NOT = { has_trait = lifestyle_blood_mage }
+            }
             send_interface_toast = {
                 title = bm_yearly_attunement_ancient_toast
                 left_icon = root
@@ -408,7 +428,10 @@ blood_mage_yearly_events.004 = {
 
         # Benediction attunement check
         if = {
-            limit = { has_character_modifier = benediction_attuned }
+            limit = {
+                has_character_modifier = benediction_attuned
+                NOT = { has_trait = lifestyle_blood_mage }
+            }
             send_interface_toast = {
                 title = bm_yearly_attunement_benediction_toast
                 left_icon = root
@@ -474,7 +497,10 @@ blood_mage_yearly_events.004 = {
 
         # Enlightenment attunement check
         if = {
-            limit = { has_character_modifier = enlightenment_attuned }
+            limit = {
+                has_character_modifier = enlightenment_attuned
+                NOT = { has_trait = lifestyle_blood_mage }
+            }
             send_interface_toast = {
                 title = bm_yearly_attunement_enlightenment_toast
                 left_icon = root

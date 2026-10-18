@@ -2,7 +2,7 @@
 
 ## Game version 1.20
 
-- v1.20.51: Remove Crimson Sworn-Guard court position, hide Go on a Blood Hunt encounter outcomes behind surprise preview tooltip, and promote Tsushima to an eminent holy site for Ketsudō.
+- v1.20.51: Overhaul Blood Hunt violent encounters into 4-tier duels (Apex Beast, Outlaw Camp, Homestead, Crimson Rite) with wounds and clean rewards, fix yearly Ancient track XP and attunement toast pings on Jan 1st, and promote Tsushima to an eminent holy site for Ketsudō.
 - v1.20.50.f: 5 interactive narrative and battle events for lovers, child awakenings, victory banquets, blood golems, and court sanctum breaches.
 - v1.20.50.e: 3-way Bless Bloodline blessings, Anoint Heir succession legacy awakening & Lifeforce transfer, and House Head Blood Tithe.
 - v1.20.50.d: Empower Blood Mage interaction, Siphon Stored Lifeforce duel, and Contest of the Red Art occult duel.
