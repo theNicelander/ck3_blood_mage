@@ -102,7 +102,11 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 - **Immortal Golem Champions**: Forge terrifying, albino, hairless flesh-constructs using Superior Lifeforce and high-stakes shaping duels.
 - **Cadet Branch Integration (`bm_house_golem`)**: Golems are formally integrated into your dynasty as loyal immortal defenders under their own dedicated cadet branch.
 - **Seven Supernatural House Modifiers**: Channel major blood rituals to permanently bless your dynasty's bloodline, unlocking stacking realm-wide bonuses to fertility, health, prowess, and domain administration.
+- **3-Way Bloodline Blessings (`bm_bless_bloodline_interaction`)**: Bless kin with specialized 10-year enhancements tailored to their role in the realm: **Blood of the Sovereign** (+2 Dip/Stew, +10 Vassal Opinion, -20% Short Reign), **Blood of Iron** (+2 Martial, +4 Prowess, +15% Knight Effectiveness), or **Sanguine Crucible** (+25% Fertility, +15% Positive Congenital Chance, -20% Stress Gain).
+- **Anoint Heir in Blood & Succession Legacy Transfer (`bm_anoint_heir_interaction`)**: Consecrate a chosen successor with Major Lifeforce for permanent stat, opinion, and short-reign bonuses. Upon the ruler's death, the anointed heir awakens the predecessor's blood class trait, inherits 1 stack of each held Lifeforce tier, and absorbs 25% of all active trait track XP across all tracks.
+- **House Head Blood Tithe (`bm_demand_blood_tithe_interaction`)**: House Heads can levy lifeforce from adult kin, yielding Major Lifeforce (from fellow practitioners) or Minor Lifeforce (from mundane relatives).
 - **Situation Roster Tracking**: Keep track of all active blood golems and sworn mages across your realm directly within the Blood Magic Situation panel.
+
 
 ---
 
