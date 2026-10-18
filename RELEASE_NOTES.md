@@ -160,4 +160,5 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 - **Localization Syntax**: Fixed a formatting typo in modifier descriptions that caused localization parser errors.
 - **Current Situation Healing Alerts**: Fixed a display issue where "(NUM)" appeared literally in the grouped healing alert header, and streamlined descriptions to concisely instruct spending Lifeforce.
 - **Empower Dynasty Bloodline Tooltip**: Removed obsolete legacy un-suffixed modifier removal effects that caused Tier I covenant previews to falsely claim the house would lose an old modifier.
+- **Education Enhancement & Mastery Option Filtering**: Fixed an issue in education improvement rituals where unowned education disciplines appeared grayed out and pushed valid options or other disciplines off-screen due to the fixed height of the character event window. Unowned education disciplines are now cleanly hidden so characters only see enhancement rites relevant to their education.
 - **Repository Integrity**: Updated repo validation tools with strict multi-BOM and embedded BOM detection to prevent file encoding regressions.
