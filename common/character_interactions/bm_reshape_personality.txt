@@ -28,7 +28,7 @@
 				dynasty ?= scope:actor.dynasty
 				is_close_family_of = scope:actor
 				is_extended_family_of = scope:actor
-				is_ward_of = scope:actor
+				has_relation_guardian = scope:actor
 				is_knight_of = scope:actor
 				is_councillor_of = scope:actor
 				scope:actor.liege ?= this

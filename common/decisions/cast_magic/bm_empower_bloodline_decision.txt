@@ -30,16 +30,16 @@
 			localization = bm_covenant_charisma
 			icon = "gfx/interface/icons/trait_level_tracks/presence.dds"
 			is_shown = {
-				NOT = { house = { has_house_modifier = dynasty_blood_charisma_modifier_3 } }
+				NOT = { house ?= { has_house_modifier = dynasty_blood_charisma_modifier_3 } }
 			}
 			is_valid = {
 				custom_tooltip = {
 					text = bm_covenant_already_maxed_req
-					NOT = { house = { has_house_modifier = dynasty_blood_charisma_modifier_3 } }
+					NOT = { house ?= { has_house_modifier = dynasty_blood_charisma_modifier_3 } }
 				}
 				# Tier I -> Tier II
 				trigger_if = {
-					limit = { house = { has_house_modifier = dynasty_blood_charisma_modifier_1 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_charisma_modifier_1 } }
 					custom_tooltip = {
 						text = bm_covenant_tier_2_req
 						piety_level >= 2
@@ -49,7 +49,7 @@
 				}
 				# Tier II -> Tier III
 				trigger_else_if = {
-					limit = { house = { has_house_modifier = dynasty_blood_charisma_modifier_2 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_charisma_modifier_2 } }
 					custom_tooltip = {
 						text = bm_covenant_tier_3_req
 						piety_level >= 3
@@ -70,7 +70,7 @@
 			ai_chance = {
 				value = 20
 				if = {
-					limit = { house = { has_house_modifier = dynasty_blood_charisma_modifier_3 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_charisma_modifier_3 } }
 					multiply = 0
 				}
 			}
@@ -83,16 +83,16 @@
 			localization = bm_covenant_fury
 			icon = "gfx/interface/icons/trait_level_tracks/vanguard.dds"
 			is_shown = {
-				NOT = { house = { has_house_modifier = dynasty_blood_fury_modifier_3 } }
+				NOT = { house ?= { has_house_modifier = dynasty_blood_fury_modifier_3 } }
 			}
 			is_valid = {
 				custom_tooltip = {
 					text = bm_covenant_already_maxed_req
-					NOT = { house = { has_house_modifier = dynasty_blood_fury_modifier_3 } }
+					NOT = { house ?= { has_house_modifier = dynasty_blood_fury_modifier_3 } }
 				}
 				# Tier I -> Tier II
 				trigger_if = {
-					limit = { house = { has_house_modifier = dynasty_blood_fury_modifier_1 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_fury_modifier_1 } }
 					custom_tooltip = {
 						text = bm_covenant_tier_2_req
 						piety_level >= 2
@@ -102,7 +102,7 @@
 				}
 				# Tier II -> Tier III
 				trigger_else_if = {
-					limit = { house = { has_house_modifier = dynasty_blood_fury_modifier_2 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_fury_modifier_2 } }
 					custom_tooltip = {
 						text = bm_covenant_tier_3_req
 						piety_level >= 3
@@ -123,7 +123,7 @@
 			ai_chance = {
 				value = 20
 				if = {
-					limit = { house = { has_house_modifier = dynasty_blood_fury_modifier_3 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_fury_modifier_3 } }
 					multiply = 0
 				}
 			}
@@ -136,16 +136,16 @@
 			localization = bm_covenant_prosperity
 			icon = "gfx/interface/icons/trait_level_tracks/prosperity.dds"
 			is_shown = {
-				NOT = { house = { has_house_modifier = dynasty_blood_prosperity_modifier_3 } }
+				NOT = { house ?= { has_house_modifier = dynasty_blood_prosperity_modifier_3 } }
 			}
 			is_valid = {
 				custom_tooltip = {
 					text = bm_covenant_already_maxed_req
-					NOT = { house = { has_house_modifier = dynasty_blood_prosperity_modifier_3 } }
+					NOT = { house ?= { has_house_modifier = dynasty_blood_prosperity_modifier_3 } }
 				}
 				# Tier I -> Tier II
 				trigger_if = {
-					limit = { house = { has_house_modifier = dynasty_blood_prosperity_modifier_1 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_prosperity_modifier_1 } }
 					custom_tooltip = {
 						text = bm_covenant_tier_2_req
 						piety_level >= 2
@@ -155,7 +155,7 @@
 				}
 				# Tier II -> Tier III
 				trigger_else_if = {
-					limit = { house = { has_house_modifier = dynasty_blood_prosperity_modifier_2 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_prosperity_modifier_2 } }
 					custom_tooltip = {
 						text = bm_covenant_tier_3_req
 						piety_level >= 3
@@ -176,7 +176,7 @@
 			ai_chance = {
 				value = 20
 				if = {
-					limit = { house = { has_house_modifier = dynasty_blood_prosperity_modifier_3 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_prosperity_modifier_3 } }
 					multiply = 0
 				}
 			}
@@ -189,16 +189,16 @@
 			localization = bm_covenant_shadows
 			icon = "gfx/interface/icons/trait_level_tracks/shadows.dds"
 			is_shown = {
-				NOT = { house = { has_house_modifier = dynasty_blood_shadows_modifier_3 } }
+				NOT = { house ?= { has_house_modifier = dynasty_blood_shadows_modifier_3 } }
 			}
 			is_valid = {
 				custom_tooltip = {
 					text = bm_covenant_already_maxed_req
-					NOT = { house = { has_house_modifier = dynasty_blood_shadows_modifier_3 } }
+					NOT = { house ?= { has_house_modifier = dynasty_blood_shadows_modifier_3 } }
 				}
 				# Tier I -> Tier II
 				trigger_if = {
-					limit = { house = { has_house_modifier = dynasty_blood_shadows_modifier_1 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_shadows_modifier_1 } }
 					custom_tooltip = {
 						text = bm_covenant_tier_2_req
 						piety_level >= 2
@@ -208,7 +208,7 @@
 				}
 				# Tier II -> Tier III
 				trigger_else_if = {
-					limit = { house = { has_house_modifier = dynasty_blood_shadows_modifier_2 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_shadows_modifier_2 } }
 					custom_tooltip = {
 						text = bm_covenant_tier_3_req
 						piety_level >= 3
@@ -229,7 +229,7 @@
 			ai_chance = {
 				value = 20
 				if = {
-					limit = { house = { has_house_modifier = dynasty_blood_shadows_modifier_3 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_shadows_modifier_3 } }
 					multiply = 0
 				}
 			}
@@ -242,16 +242,16 @@
 			localization = bm_covenant_insight
 			icon = "gfx/interface/icons/trait_level_tracks/enlightenment.dds"
 			is_shown = {
-				NOT = { house = { has_house_modifier = dynasty_blood_insight_modifier_3 } }
+				NOT = { house ?= { has_house_modifier = dynasty_blood_insight_modifier_3 } }
 			}
 			is_valid = {
 				custom_tooltip = {
 					text = bm_covenant_already_maxed_req
-					NOT = { house = { has_house_modifier = dynasty_blood_insight_modifier_3 } }
+					NOT = { house ?= { has_house_modifier = dynasty_blood_insight_modifier_3 } }
 				}
 				# Tier I -> Tier II
 				trigger_if = {
-					limit = { house = { has_house_modifier = dynasty_blood_insight_modifier_1 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_insight_modifier_1 } }
 					custom_tooltip = {
 						text = bm_covenant_tier_2_req
 						piety_level >= 2
@@ -261,7 +261,7 @@
 				}
 				# Tier II -> Tier III
 				trigger_else_if = {
-					limit = { house = { has_house_modifier = dynasty_blood_insight_modifier_2 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_insight_modifier_2 } }
 					custom_tooltip = {
 						text = bm_covenant_tier_3_req
 						piety_level >= 3
@@ -282,7 +282,7 @@
 			ai_chance = {
 				value = 20
 				if = {
-					limit = { house = { has_house_modifier = dynasty_blood_insight_modifier_3 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_insight_modifier_3 } }
 					multiply = 0
 				}
 			}
@@ -295,16 +295,16 @@
 			localization = bm_covenant_legacy
 			icon = "gfx/interface/icons/trait_level_tracks/dynasty.dds"
 			is_shown = {
-				NOT = { house = { has_house_modifier = dynasty_blood_legacy_modifier_3 } }
+				NOT = { house ?= { has_house_modifier = dynasty_blood_legacy_modifier_3 } }
 			}
 			is_valid = {
 				custom_tooltip = {
 					text = bm_covenant_already_maxed_req
-					NOT = { house = { has_house_modifier = dynasty_blood_legacy_modifier_3 } }
+					NOT = { house ?= { has_house_modifier = dynasty_blood_legacy_modifier_3 } }
 				}
 				# Tier I -> Tier II
 				trigger_if = {
-					limit = { house = { has_house_modifier = dynasty_blood_legacy_modifier_1 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_legacy_modifier_1 } }
 					custom_tooltip = {
 						text = bm_covenant_tier_2_req
 						piety_level >= 2
@@ -314,7 +314,7 @@
 				}
 				# Tier II -> Tier III
 				trigger_else_if = {
-					limit = { house = { has_house_modifier = dynasty_blood_legacy_modifier_2 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_legacy_modifier_2 } }
 					custom_tooltip = {
 						text = bm_covenant_tier_3_req
 						piety_level >= 3
@@ -335,7 +335,7 @@
 			ai_chance = {
 				value = 25
 				if = {
-					limit = { house = { has_house_modifier = dynasty_blood_legacy_modifier_3 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_legacy_modifier_3 } }
 					multiply = 0
 				}
 			}
@@ -348,16 +348,16 @@
 			localization = bm_covenant_expertise
 			icon = "gfx/interface/icons/trait_level_tracks/mastery.dds"
 			is_shown = {
-				NOT = { house = { has_house_modifier = dynasty_blood_expertise_modifier_3 } }
+				NOT = { house ?= { has_house_modifier = dynasty_blood_expertise_modifier_3 } }
 			}
 			is_valid = {
 				custom_tooltip = {
 					text = bm_covenant_already_maxed_req
-					NOT = { house = { has_house_modifier = dynasty_blood_expertise_modifier_3 } }
+					NOT = { house ?= { has_house_modifier = dynasty_blood_expertise_modifier_3 } }
 				}
 				# Tier I -> Tier II
 				trigger_if = {
-					limit = { house = { has_house_modifier = dynasty_blood_expertise_modifier_1 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_expertise_modifier_1 } }
 					custom_tooltip = {
 						text = bm_covenant_tier_2_req
 						piety_level >= 2
@@ -367,7 +367,7 @@
 				}
 				# Tier II -> Tier III
 				trigger_else_if = {
-					limit = { house = { has_house_modifier = dynasty_blood_expertise_modifier_2 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_expertise_modifier_2 } }
 					custom_tooltip = {
 						text = bm_covenant_tier_3_req
 						piety_level >= 3
@@ -388,7 +388,7 @@
 			ai_chance = {
 				value = 20
 				if = {
-					limit = { house = { has_house_modifier = dynasty_blood_expertise_modifier_3 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_expertise_modifier_3 } }
 					multiply = 0
 				}
 			}
