@@ -15,9 +15,9 @@
 				has_trait = lifestyle_blood_mage
 				has_trait = lifestyle_blood_knight
 			}
-			NOT = { has_trait = lifestyle_blood_empowerment }
+			NOT = { has_trait = lifestyle_blood_power }
 		}
-		add_trait = lifestyle_blood_empowerment
+		add_trait = lifestyle_blood_power
 	}
 }
 
@@ -29,8 +29,8 @@ bm_become_blood_mage_effect = {
 		}
 		add_trait = lifestyle_blood_mage
 		if = {
-			limit = { NOT = { has_trait = lifestyle_blood_empowerment } }
-			add_trait = lifestyle_blood_empowerment
+			limit = { NOT = { has_trait = lifestyle_blood_power } }
+			add_trait = lifestyle_blood_power
 		}
 	}
 	bm_ensure_blood_mage_story_effect = yes
@@ -68,9 +68,9 @@ bm_apply_blood_mage_prevalence_retention_effect = {
 		if = {
 			limit = {
 				NOT = { has_trait = lifestyle_blood_knight }
-				has_trait = lifestyle_blood_empowerment
+				has_trait = lifestyle_blood_power
 			}
-			remove_trait = lifestyle_blood_empowerment
+			remove_trait = lifestyle_blood_power
 		}
 	}
 }
@@ -83,8 +83,8 @@ bm_become_blood_knight_effect = {
 		}
 		add_trait = lifestyle_blood_knight
 		if = {
-			limit = { NOT = { has_trait = lifestyle_blood_empowerment } }
-			add_trait = lifestyle_blood_empowerment
+			limit = { NOT = { has_trait = lifestyle_blood_power } }
+			add_trait = lifestyle_blood_power
 		}
 	}
 	bm_ensure_blood_mage_story_effect = yes
@@ -122,9 +122,9 @@ bm_apply_blood_knight_prevalence_retention_effect = {
 		if = {
 			limit = {
 				NOT = { has_trait = lifestyle_blood_mage }
-				has_trait = lifestyle_blood_empowerment
+				has_trait = lifestyle_blood_power
 			}
-			remove_trait = lifestyle_blood_empowerment
+			remove_trait = lifestyle_blood_power
 		}
 	}
 }

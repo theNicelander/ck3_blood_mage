@@ -41,33 +41,39 @@ bm_has_valuable_genetic_trait_trigger = {
 	}
 }
 
-bm_has_blood_empowerment_xp_trigger = {
+bm_has_blood_power_xp_trigger = {
 	OR = {
 		has_trait_xp = {
-			trait = lifestyle_blood_empowerment
+			trait = lifestyle_blood_power
 			track = dynasty
 			value >= $VALUE$
 		}
 		has_trait_xp = {
-			trait = lifestyle_blood_empowerment
+			trait = lifestyle_blood_power
 			track = mastery
 			value >= $VALUE$
 		}
 		has_trait_xp = {
-			trait = lifestyle_blood_empowerment
+			trait = lifestyle_blood_power
 			track = presence
 			value >= $VALUE$
 		}
 		has_trait_xp = {
-			trait = lifestyle_blood_empowerment
+			trait = lifestyle_blood_power
 			track = prosperity
 			value >= $VALUE$
 		}
 		has_trait_xp = {
-			trait = lifestyle_blood_empowerment
+			trait = lifestyle_blood_power
 			track = shadows
 			value >= $VALUE$
 		}
+	}
+}
+
+bm_has_blood_empowerment_xp_trigger = {
+	bm_has_blood_power_xp_trigger = {
+		VALUE = $VALUE$
 	}
 }
 

@@ -30,17 +30,17 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 
 ---
 
-## 🧬 Blood Empowerment & Somatic Ascendancy
+## 🧬 Blood Power & Somatic Ascendancy
 
-- **Secondary Mastery Trait**: Blood Empowerment is granted alongside Blood Mage or Blood Knight, representing the physical and metaphysical refinement of the caster's body and mind.
+- **Secondary Mastery Trait**: Blood Power is granted alongside Blood Mage or Blood Knight, representing the physical and metaphysical refinement of the caster's body and mind.
 - **Five Focused Specialization Tracks**:
   - **Dynasty (Sanguine Eugenics)**: Substantially boosts positive inactive congenital inheritance (+40%) and genetic trait upgrade chances (+40%), provides massive dynasty renown (+25%), and grants complete inbreeding immunity (-100% inbreeding chance: -50% at 50 XP, -100% at 100 XP).
   - **Mastery (World-Walker & Schemes)**: Accelerates lifestyle XP gain (+40%), expands language learning capacity (+1 at 30, 60, and 90 XP = +3 total), unlocks additional concurrent personal schemes (+1 at 50 XP, +2 at 100 XP), and ignores negative culture opinion at 100 XP.
   - **Presence (Mesmeric Allure & Sovereign Majesty)**: Calms stress (-40% stress gain), commands broad loyalty across the realm (+24 general opinion with everyone), boosts Fame Impact (+25%), and stabilizes realms across successions (-25% short reign duration, +25% long reign bonus).
   - **Prosperity (War Chest & Logistics)**: Multiplies monthly realm income (+40%), cuts Men-at-Arms maintenance (-32%), adds +4 domain limit (+2 at 50 XP, +4 at 100 XP), and expands Men-at-Arms regiment maximum sizes (+1 at 50 XP, +3 total at 100 XP).
   - **Shadows (Occult Defense & Intrigue)**: Sharpens hostile scheme success (+40%), blunts enemy plot success against you (-40%), drastically suppresses enemy hostile scheme success caps (-25% at 50 XP, -50% at 100 XP), expands your own plot cap (+15% max cap), and unlocks two additional hostile scheme slots (+1 at 50 XP, +2 at 100 XP).
-- **De-cluttered Interface**: Removed redundant universal vitality modifiers from Blood Empowerment (already granted by Blood Mage and Blood Knight), cutting tooltip lines by up to 67% and keeping track progression comfortably visible on screen.
-- **Major Grimoire Integration**: Channeling Blood Empowerment is housed directly within the Cast Major Blood Magic Grimoire, presenting detailed breakdowns of milestones and capstones with zero-cost backout navigation.
+- **De-cluttered Interface**: Removed redundant universal vitality modifiers from Blood Power (already granted by Blood Mage and Blood Knight), cutting tooltip lines by up to 67% and keeping track progression comfortably visible on screen.
+- **Major Grimoire Integration**: Channeling Blood Power is housed directly within the Cast Major Blood Magic Grimoire, presenting detailed breakdowns of milestones and capstones with zero-cost backout navigation.
 
 ---
 
@@ -61,7 +61,7 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 
 - **Consolidated Grimoires**: Replaced scattered individual spell decisions with organized Grimoire menus:
   - **Minor Blood Magic**: Fast utility rituals including Lifeforce Attunement, Minor Blood Runes, Vitality Cleansing, and Lifeforce Condensation.
-  - **Major Blood Magic**: Powerful rituals including Blood Empowerment, Condense Lifeforce (distilling Minor and Major into Superior Lifeforce), Education Enhancement (Tiers 1★–4★), Major Blood Runes, Galdrastafir Stave Carving & Swapping (free initial carve upon etching Superior Blood Rune; swapping costs Major Lifeforce + 500 Piety), Congenital Trait Manifestation, and House Blessings.
+  - **Major Blood Magic**: Powerful rituals including Channel Blood Power, Condense Lifeforce (distilling Minor and Major into Superior Lifeforce), Education Enhancement (Tiers 1★–4★), Major Blood Runes, Galdrastafir Stave Carving & Swapping (free initial carve upon etching Superior Blood Rune; swapping costs Major Lifeforce + 500 Piety), Congenital Trait Manifestation, and House Blessings.
   - **Superior Blood Magic**: Legendary rites including Blood Golem Creation, 5★ Master Educations, Secondary Educations, and Superior Capstone Runes.
   - _Attune Lifeforce_: Select your yearly lifestyle XP bonus.
   - _Empower Dynasty Bloodline_: Weave 7 Three-Tier House Covenants (Majesty, Warband, Prosperity, Shadows, Insight, Legacy, Expertise) across Awakened, Ascendant, and Sovereign tiers to permanently fortify your house.
@@ -154,7 +154,7 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 
 ## 🛠️ Bugfixes & Engine Modernization
 
-- **Decision Event Dialog Fix**: Resolved an issue where multiple UTF-8 BOM headers at file start caused the game engine to drop event namespaces, preventing dialogs from opening when clicking "Seek Power" and "Cast Major Blood Magic -> Channel Blood Empowerment".
+- **Decision Event Dialog Fix**: Resolved an issue where multiple UTF-8 BOM headers at file start caused the game engine to drop event namespaces, preventing dialogs from opening when clicking "Seek Power" and "Cast Major Blood Magic -> Channel Blood Power".
 - **Interaction Registration**: Corrected encoding on character interactions ensuring "Inscribe Blood Rune" registers cleanly in character menus.
 - **Localization Syntax**: Fixed a formatting typo in modifier descriptions that caused localization parser errors.
 - **Current Situation Healing Alerts**: Fixed a display issue where "(NUM)" appeared literally in the grouped healing alert header, and streamlined descriptions to concisely instruct spending Lifeforce.

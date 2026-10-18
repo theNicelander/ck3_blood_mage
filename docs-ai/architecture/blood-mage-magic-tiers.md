@@ -25,7 +25,7 @@ flowchart TD
 
     subgraph T2 ["Major Blood Magic (Major Lifeforce)"]
         J1["Cast Major Blood Magic Grimoire"]
-        J2["Blood Empowerment Trait"]
+        J2["Blood Power Trait"]
         J3["Improve Education (1★ to 4★)"]
         J4["Inscribe Major Blood Rune"]
         J5["Empower Bloodline"]
@@ -86,7 +86,7 @@ Requires Major Lifeforce (`lifeforce_modifier_major`) and Devotion level >= 1. A
 | Action / Ritual | Interface | Cost / Prerequisite | Effect | XP Gain |
 | --- | --- | --- | --- | --- |
 | **Cast Major Magic Grimoire** | Decision (`bm_cast_blood_magic_major_decision`) | Major Lifeforce, Piety level >= 1, Piety >= 150 | Opens major rituals event grimoire (`bm_cast_blood_magic_major.001`). | None |
-| **Blood Empowerment** | Grimoire Option (`bm_blood_empowerment_event.001`) | 150 Piety + Major Lifeforce, Piety level >= 1 | Unlocks/advances secondary lifestyle trait `lifestyle_blood_empowerment` (+10 XP in chosen track) via Grimoire event modal. | +3 Enlightenment (+10 Empowerment) |
+| **Channel Blood Power** | Grimoire Option (`bm_blood_power_event.001`) | 150 Piety + Major Lifeforce, Piety level >= 1 | Unlocks/advances secondary lifestyle trait `lifestyle_blood_power` (+10 XP in chosen track) via Grimoire event modal. | +3 Enlightenment (+10 Power) |
 | **Condense Lifeforce (Superior)** | Grimoire Option (`bm_cast_blood_magic_major.001.condense`) | 250 Piety + 1 Minor & 1 Major Lifeforce, Piety level >= 3, 2-yr CD | Distills Minor and Major lifeforce into Superior Lifeforce via Learning duel. | +2 to +8 Ancient |
 | **Improve Education (1★–4★)** | Grimoire Option | 75–200 Piety + Major Lifeforce, Piety level >= 3, 2-yr CD | Upgrades education trait star tier (up to tier 4) via mental duel. | +5 Enlightenment |
 | **Inscribe Major Blood Rune (Self)** | Grimoire Option | 200 Piety + Major Lifeforce, Minor Rune active, Piety level >= 3, 5-yr CD | Upgrades `minor_blood_rune_modifier` to `major_blood_rune_modifier` (improves yearly Lifeforce pulse). | +5 Ancient |
@@ -124,6 +124,6 @@ Requires Superior Lifeforce (`lifeforce_modifier_superior`) and Devotion level >
 | **Lifeforce Generation** | Active distillation, childbirth (+1 Major), lethal prisoner execution (`lifedrain_prisoner_event_interaction`, `mass_lifedrain_prisoners_decision`), courtier siphoning, Murder schemes with Superior **Hulinhjálmur** (+1 Major), Blood Rune pulse | Single-combat duel kills (Major Lifeforce + 25% Superior chance on `prowess >= 20` or blood traits), `seek_power_decision` wilderness harvest, battle victories (`10%–100%` Minor, `0%–100%` Major scaled by troops), Murder schemes with Superior **Hulinhjálmur** (+1 Major), ambient yearly condensation (~33% Minor), Blood Rune pulse |
 | **Exclusive Tracks** | `bloodline` (Domain limit, dynasty gold, construction, dev)<br>`hematurgy` (Schemes, dread, tyranny reduction) | `vanguard` (Army advantage, martial, speed, martial/piety)<br>`slaughter` (Prowess, knight effectiveness, knight limit, prowess/piety) |
 | **Shared Tracks** | `ancient`, `benediction`, `enlightenment` (Level 8 Devotion capstones) | `ancient`, `benediction`, `enlightenment` (Level 8 Devotion capstones) |
-| **Secondary Lifestyle** | `lifestyle_blood_empowerment` (all 5 tracks) | `lifestyle_blood_empowerment` (all 5 tracks) |
+| **Secondary Lifestyle** | `lifestyle_blood_power` (all 5 tracks) | `lifestyle_blood_power` (all 5 tracks) |
 | **Exclusive Features** | Duchy **Blood Universities** (`bm_university_0..3`), `lifedrain_prisoner_event_interaction`, `bm_curse_blood_interaction`, inscribing **Superior** runes on others | `empower_blood_knight_interaction`, passive battlefield & duel Lifeforce harvesting, ~33% ambient yearly Minor Lifeforce roll |
 | **Initiation** | Initiates apprentices as Blood Mages (`100`p + Major OR `250`p + Minor) | Initiates squires/knights as Blood Knights (`100`p + Major OR `250`p + Minor) |

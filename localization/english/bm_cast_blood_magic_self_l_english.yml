@@ -76,8 +76,8 @@
     bm_improve_education_decision_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to attempt to improve one of your Education traits."
     bm_improve_education_decision_tooltip: "Attempt to elevate your primary education trait to a higher tier"
     bm_improve_education_decision_confirm: "Infuse Mind"
-    bm_improve_education_decision_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_improve_education')|0] Experience in [GetTrait('lifestyle_blood_empowerment').GetName( GetNullCharacter )]"
-    NOT_bm_improve_education_decision_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_improve_education')|0] Experience in [GetTrait('lifestyle_blood_empowerment').GetName( GetNullCharacter )]"
+    bm_improve_education_decision_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_improve_education')|0] Experience in [GetTrait('lifestyle_blood_power').GetName( GetNullCharacter )]"
+    NOT_bm_improve_education_decision_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_improve_education')|0] Experience in [GetTrait('lifestyle_blood_power').GetName( GetNullCharacter )]"
     bm_improve_education_cooldown: "Recently Enhanced Education"
     bm_improve_education_cooldown_desc: "You have recently enhanced or mastered an education trait through blood magic and must allow your neural pathways to stabilize."
     bm_improve_education_cooldown_tt: "Has not attempted to enhance or master education in the last 2 years"
@@ -99,8 +99,8 @@
     bm_new_education_decision_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to attempt to improve one of your Education traits"
     bm_new_education_decision_tooltip: "Unlock a second education discipline using blood magic"
     bm_new_education_decision_confirm: "Forge New Pathways"
-    bm_new_education_decision_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_new_education')|0] Experience in [GetTrait('lifestyle_blood_empowerment').GetName( GetNullCharacter )]"
-    NOT_bm_new_education_decision_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_new_education')|0] Experience in [GetTrait('lifestyle_blood_empowerment').GetName( GetNullCharacter )]"
+    bm_new_education_decision_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_new_education')|0] Experience in [GetTrait('lifestyle_blood_power').GetName( GetNullCharacter )]"
+    NOT_bm_new_education_decision_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_new_education')|0] Experience in [GetTrait('lifestyle_blood_power').GetName( GetNullCharacter )]"
     bm_new_education_cooldown: "Recently Embraced New Education"
     bm_new_education_cooldown_desc: "You have recently forged new neural pathways for an additional education discipline and must allow your mind to stabilize."
     bm_new_education_cooldown_tt: "Has not unlocked a new education discipline in the last 2 years"
@@ -116,13 +116,13 @@
     bm_education_new.001.learning: "Gain new learning education"
     bm_education_new.001.back: "Back"
 
-    # Blood Empowerment
-    bm_channel_blood_empowerment_decision: "Channel Blood Empowerment"
-    bm_channel_blood_empowerment_decision_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and #V 150#! [piety|E] to improve [GetTrait('lifestyle_blood_empowerment').GetName( GetPlayer )].\n\nMilestones at #V 50#! and #V 100#! XP."
-    bm_channel_blood_empowerment_decision_tooltip: "Spend Major Lifeforce to permanently advance a chosen Blood Empowerment track"
+    # Channel Blood Power
+    bm_channel_blood_empowerment_decision: "Channel Blood Power"
+    bm_channel_blood_empowerment_decision_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and #V 150#! [piety|E] to improve [GetTrait('lifestyle_blood_power').GetName( GetPlayer )].\n\nMilestones at #V 50#! and #V 100#! XP."
+    bm_channel_blood_empowerment_decision_tooltip: "Spend Major Lifeforce to permanently advance a chosen Blood Power track"
     BM_CHANNEL_BLOOD_EMPOWERMENT_DECISION_NEXT_STEP_BUTTON: "Awaken Power"
     bm_channel_blood_empowerment_decision_confirm: "$BM_CHANNEL_BLOOD_EMPOWERMENT_DECISION_NEXT_STEP_BUTTON$"
-    bm_channel_blood_empowerment_decision_effect: "You channel Major Lifeforce, permanently advancing your chosen Blood Empowerment discipline."
+    bm_channel_blood_empowerment_decision_effect: "You channel Major Lifeforce, permanently advancing your chosen Blood Power discipline."
     bm_channel_blood_empowerment_major_lifeforce_req: "Requires [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]"
     NOT_bm_channel_blood_empowerment_major_lifeforce_req: "Requires [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]"
     bm_empower_track_already_mastered_req: "This discipline has already reached its maximum rank (100 XP)"
@@ -158,14 +158,19 @@
     bm_empower_versatility_desc: "Available once all 5 disciplines have reached mastery (100 XP). Channels concentrated Major Lifeforce into a 10-year universal surge of all attributes, with a chance to permanently raise your skills and prowess."
     bm_empower_versatility_tooltip: "$bm_empower_versatility_desc$"
 
+    # Blood Power events
+    bm_blood_power_event.001.title: "Channel Blood Power"
+    bm_blood_power_event.001.desc: "The blood magic roars within me like a caged beast, desperate for expression. I can feel it straining against my flesh, eager to reshape my very essence according to my desires. Which aspect shall I allow it to transform today?"
+    bm_blood_power_event.001.toast: "Blood Power"
+
     # Legacy Blood Empowerment keys preserved
     bm_blood_empowerment_decision: "$bm_channel_blood_empowerment_decision$"
     bm_blood_empowerment_decision_desc: "$bm_channel_blood_empowerment_decision_desc$"
     bm_blood_empowerment_decision_tooltip: "$bm_channel_blood_empowerment_decision_tooltip$"
     bm_blood_empowerment_decision_confirm: "$bm_channel_blood_empowerment_decision_confirm$"
-    bm_blood_empowerment_event.001.title: "Blood Empowerment"
-    bm_blood_empowerment_event.001.desc: "The blood magic roars within me like a caged beast, desperate for expression. I can feel it straining against my flesh, eager to reshape my very essence according to my desires. Which aspect shall I allow it to transform today?"
-    bm_blood_empowerment_event.001.toast: "Blood Empowerment"
+    bm_blood_empowerment_event.001.title: "$bm_blood_power_event.001.title$"
+    bm_blood_empowerment_event.001.desc: "$bm_blood_power_event.001.desc$"
+    bm_blood_empowerment_event.001.toast: "$bm_blood_power_event.001.toast$"
 
     # Manifest Lifeforce
     bm_manifest_lifeforce_decision: "Manifest Lifeforce"
@@ -201,9 +206,10 @@
     bm_cast_blood_magic_major_decision_confirm: "Open the Grimoire"
 
     bm_cast_blood_magic_major.001.title: "Major Blood Magic"
-    bm_cast_blood_magic_major.001.desc: "A potent surge of major lifeforce pulses through your veins, ready to reshape mind, body, or bloodline. Choose which grand blood rite to execute."
-    bm_cast_blood_magic_major.001.empowerment: "Blood Empowerment"
-    bm_cast_blood_magic_major.001.empowerment_tt: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and #V 150#! [piety|E] to improve [GetTrait('lifestyle_blood_empowerment').GetName( GetPlayer )].\n\nMilestones at #V 50#! and #V 100#! XP."
+    bm_cast_blood_magic_major.001.power: "Channel Blood Power"
+    bm_cast_blood_magic_major.001.power_tt: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and #V 150#! [piety|E] to improve [GetTrait('lifestyle_blood_power').GetName( GetPlayer )].\n\nMilestones at #V 50#! and #V 100#! XP."
+    bm_cast_blood_magic_major.001.empowerment: "$bm_cast_blood_magic_major.001.power$"
+    bm_cast_blood_magic_major.001.empowerment_tt: "$bm_cast_blood_magic_major.001.power_tt$"
     bm_cast_blood_magic_major.001.condense: "Condense Lifeforce"
     bm_cast_blood_magic_major.001.condense.tt: "Through a rigorous distillation ritual, attempt a Learning contest to weave together [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] into [GetModifier('lifeforce_modifier_superior').GetNameWithTooltip]."
     bm_cast_blood_magic_major.001.improve_education: "Enhance Education"

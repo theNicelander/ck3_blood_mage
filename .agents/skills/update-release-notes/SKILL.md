@@ -20,7 +20,7 @@ description: >-
 1. Read `RELEASE_NOTES.md` at repo root.
 2. Identify the matching feature section:
    - *The Twin Devotion Paths: Blood Mage & Blood Knight*
-   - *Blood Empowerment & Somatic Ascendancy*
+   - *Blood Power & Somatic Ascendancy*
    - *The Three-Tier Lifeforce Economy*
    - *Grimoires, Spellcasting & Decision Widgets*
    - *Icelandic Galdrastafir Flesh-Carved Blood Runes*
