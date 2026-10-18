@@ -206,14 +206,12 @@ bm_cast_blood_magic_minor.001 = {
 				text = bm_blood_rune_cooldown_tt
 				NOT = { has_character_flag = bm_blood_rune_cooldown }
 			}
-			NOT = { has_character_modifier = minor_blood_rune_modifier }
-			NOT = { has_character_modifier = major_blood_rune_modifier }
-			NOT = { has_character_modifier = superior_blood_rune_modifier }
+			NOT = { bm_has_blood_rune_trigger = yes }
 			has_character_modifier = lifeforce_modifier_minor
 			piety_level >= 2
 		}
 		show_as_unavailable = {
-			always = yes
+			NOT = { bm_has_blood_rune_trigger = yes }
 		}
 		send_interface_toast = {
 			type = event_toast_effect_good

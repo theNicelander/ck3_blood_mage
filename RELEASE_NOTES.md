@@ -61,10 +61,9 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 
 - **Consolidated Grimoires**: Replaced scattered individual spell decisions with organized Grimoire menus:
   - **Minor Blood Magic**: Fast utility rituals including Lifeforce Attunement, Minor Blood Runes, Vitality Cleansing, and Lifeforce Condensation.
-  - **Major Blood Magic**: Powerful rituals including Blood Empowerment, Condense Lifeforce (distilling Minor and Major into Superior Lifeforce), Education Enhancement (Tiers 1★–4★), Major Blood Runes, Congenital Trait Manifestation, and House Blessings.
+  - **Major Blood Magic**: Powerful rituals including Blood Empowerment, Condense Lifeforce (distilling Minor and Major into Superior Lifeforce), Education Enhancement (Tiers 1★–4★), Major Blood Runes, Galdrastafir Stave Carving & Swapping (free initial carve upon etching Superior Blood Rune; swapping costs Major Lifeforce + 500 Piety), Congenital Trait Manifestation, and House Blessings.
   - **Superior Blood Magic**: Legendary rites including Blood Golem Creation, 5★ Master Educations, Secondary Educations, and Superior Capstone Runes.
   - _Attune Lifeforce_: Select your yearly lifestyle XP bonus.
-  - _Carve Galdrastafir_: Choose and preview your flesh-carved magical stave.
   - _Empower Dynasty Bloodline_: Weave 7 Three-Tier House Covenants (Majesty, Warband, Prosperity, Shadows, Insight, Legacy, Expertise) across Awakened, Ascendant, and Sovereign tiers to permanently fortify your house.
 - **37-Condition Healing & Situation Alerts**:
   - Cure up to 37 physical and mental ailments on yourself, your courtiers, family, or prisoners—ranging from illnesses and wounds to blindness, severed limbs, and melancholy.
@@ -83,7 +82,7 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
   - **Feingur** (_The Fertility Stave_): Fertility, pregnancy chance, health, and dynasty-wide blessing rites.
   - **Nábrókarstafur** (_Necropants / Wealth Stave_): Direct domain tax bonuses, building gold cost reductions, and monthly gold income.
   - **Hulinhjálmur** (_Helm of Disguise_): Hostile scheme success, scheme secrecy, and personal plot defense.
-- **Superior Stave Capstones**: Reach the pinnacle of rune carving to unlock game-changing capstone powers (such as guaranteed double lifeforce pulses or complete scheme invisibility).
+- **Superior Stave Capstones**: Reach Superior rune depth to unlock Galdrastafir stave carving directly inside your Major Blood Magic Grimoire, unlocking game-changing capstone powers (such as guaranteed double attunement XP, +20 gold per travel landmark POI, or terrifying battlefield debuffs).
 - **Rune Inscription on Followers**: Inscribe blood runes onto your sworn knights, champions, and family members to bolster their combat prowess and loyalty.
 - **Custom DDS Icons**: Every Galdrastafir stave features authentic, hand-crafted 120×120 visual iconography across modifiers, decisions, and menus.
 - **Blood Universities**: Construct Blood University holding improvements (Tiers 0–3) in your realm's duchy capital to train apprentices and accelerate rune research.

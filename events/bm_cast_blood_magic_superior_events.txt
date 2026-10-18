@@ -115,7 +115,8 @@ bm_cast_blood_magic_superior.001 = {
 			piety >= 400
 		}
 		show_as_unavailable = {
-			always = yes
+			has_character_modifier = major_blood_rune_modifier
+			NOT = { has_character_modifier = superior_blood_rune_modifier }
 		}
 		send_interface_toast = {
 			type = event_toast_effect_good

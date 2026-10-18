@@ -247,7 +247,9 @@ bm_cast_blood_magic_major.001 = {
 			piety >= 200
 		}
 		show_as_unavailable = {
-			always = yes
+			has_character_modifier = minor_blood_rune_modifier
+			NOT = { has_character_modifier = major_blood_rune_modifier }
+			NOT = { has_character_modifier = superior_blood_rune_modifier }
 		}
 		send_interface_toast = {
 			type = event_toast_effect_good
@@ -280,6 +282,41 @@ bm_cast_blood_magic_major.001 = {
 			modifier = {
 				health <= fine_health
 				add = -100
+			}
+		}
+	}
+
+	# Carve / Attune Galdrastafir Stave
+	option = {
+		name = bm_cast_blood_magic_major.001.galdrastafir
+		trigger = {
+			custom_description = {
+				text = bm_requires_superior_blood_rune_tt
+				has_character_modifier = superior_blood_rune_modifier
+			}
+			trigger_if = {
+				limit = { bm_has_any_stave_trigger = yes }
+				custom_description = {
+					text = bm_carve_galdrastafir_cooldown_tt
+					NOT = { has_character_flag = bm_capstone_rune_cooldown }
+				}
+				custom_tooltip = {
+					text = bm_swap_stave_cost_req
+					piety >= 500
+					has_character_modifier = lifeforce_modifier_major
+				}
+			}
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		custom_tooltip = bm_cast_blood_magic_major.001.galdrastafir_tt
+		trigger_event = { id = bm_galdrastafir.001 }
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				bm_has_any_stave_trigger = yes
 			}
 		}
 	}

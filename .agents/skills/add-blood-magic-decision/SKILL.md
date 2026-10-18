@@ -17,7 +17,7 @@ Context: `docs-ai/architecture/blood-mage-decisions.md`, `blood-mage-interaction
 5. Set `ai_*` blocks deliberately (`ai_check_interval = 0` if player-only).
 6. Add English loc keys: title, `_desc`, `_tooltip`, `_confirm`. Keep text concise and direct: use concrete terms like "Lifeforce" instead of vague flavour ("vitality", "life essence"). Confine flavour text strictly to narrative descriptions.
 7. For interactions, copy the category's standard fiery blood drop DDS (`grant_blood_magic_interaction.dds`) to `gfx/interface/icons/character_interactions/<name>.dds`. If removing or renaming an interaction, remove/rename the matching `.dds`.
-8. Set XP gate and requirements per `blood-mage-track-xp.md`.
+8. Set XP gate and requirements per `blood-mage-track-xp.md`. For options in events and decisions, follow the 'Nothing hidden, but often unavailable' philosophy: use `show_as_unavailable` so players can see options and unmet requirements grayed out, rather than hiding them silently (hide only if a prerequisite tier is unreached or an option has been permanently completed).
 9. Update docs, `CHANGELOG.md`, branch context; validate.
 
 ## Verify
