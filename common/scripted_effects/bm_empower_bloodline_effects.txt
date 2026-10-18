@@ -63,12 +63,11 @@ bm_upgrade_house_covenant_effect = {
 			}
 		}
 	}
-	# Base -> Tier I (including migrating legacy un-suffixed modifier if present)
+	# Base -> Tier I
 	else = {
 		add_piety = -150
 		blood_magic_used_minor = yes
 		house = {
-			remove_house_modifier = dynasty_blood_$COVENANT$_modifier
 			add_house_modifier = { modifier = dynasty_blood_$COVENANT$_modifier_1 }
 		}
 		send_interface_toast = {
