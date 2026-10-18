@@ -26,6 +26,7 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
   - **Anoint Vanguard Champion**: Consecrate knights or Blood Knight courtiers with Minor Lifeforce to bestow +4 Prowess, +0.5 Health, and health penalty negation for 5 years (`bm_anointed_champion_modifier`).
   - **Ritual Sparring**: Test martial prowess against sworn knights, Blood Knight courtiers, or martial friends in non-lethal duels (2-year cooldown), sharpening combat acumen and condensing a drop of Minor Lifeforce on critical victory.
   - **Cull Fallen Champion**: Offer critically broken followers or formidable captured warriors (Prowess 12+ or Blood Knights) upon the sacrificial altar for 1 Major Lifeforce and Slaughter/Hematurgy XP, rolling a prowess-scaled chance (up to 50%) to condense 1 Superior Lifeforce.
+  - **Family & Kin Initiation**: Blood Knights can now initiate their spouse, children (any age), close family, extended family, and dynasty kin into `lifestyle_blood_knight` via `make_blood_knight_interaction` without requiring prior appointment as a combat knight. Major initiation awards **+5 Vanguard XP** (up from +4) when initiated into the dynasty, matching Blood Mage parity. Blood Knights can also empower family members and spouses via `empower_blood_knight_interaction` even if landed or outside their court.
 
 - **Go on a Blood Hunt Overhaul & Wilderness Expansion**:
   - Re-themed from the meditative "Seek Power in Nature's Domain" into **Go on a Blood Hunt**, open to both **Blood Mages** and **Blood Knights**.
@@ -77,7 +78,7 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
   - **Major Blood Magic**: Powerful rituals including Channel Blood Power, Condense Lifeforce (distilling Minor and Major into Superior Lifeforce), Education Enhancement (Tiers 1★–4★), Major Blood Runes, Galdrastafir Stave Carving & Swapping (free initial carve upon etching Superior Blood Rune; swapping costs Major Lifeforce + 500 Piety), Congenital Trait Manifestation, and House Blessings.
   - **Superior Blood Magic**: Legendary rites including Blood Golem Creation, 5★ Master Educations, Secondary Educations, and Superior Capstone Runes.
   - _Attune Lifeforce_: Select your yearly lifestyle XP bonus with synchronized January 1st progression and clear interface toasts for both base Ancient progression and attunement gains.
-  - _Empower Dynasty Bloodline_: Weave 7 Three-Tier House Covenants (Majesty, Warband, Prosperity, Shadows, Insight, Legacy, Expertise) across Awakened, Ascendant, and Sovereign tiers to permanently fortify your house.
+  - _Empower Dynasty Bloodline_: Weave 7 Three-Tier House Covenants (Majesty, Warband, Prosperity, Shadow, Insight, Legacy, Mastery) across Minor, Major, and Superior tiers with live UI level tags and distinct House Modifier icons to permanently fortify your house.
 - **37-Condition Healing & Situation Alerts**:
   - Cure up to 37 physical and mental ailments on yourself, your courtiers, family, or prisoners—ranging from illnesses and wounds to blindness, severed limbs, and melancholy.
   - A persistent **"You Can Heal Someone"** notification appears in the Current Situation dropdown whenever an eligible courtier or family member falls sick or injured.
