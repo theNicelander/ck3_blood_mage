@@ -129,7 +129,7 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 
 - **Supernatural Portrait Evolution**:
   - **Glowing Eyes**: Progresses dynamically from subtle red to supernatural crimson, pale arcane, and pure white eyes at maximum mastery.
-  - **Blood Knight Golden Blonde Hair**: Blood Knights develop radiant golden-yellow blonde hair alongside crimson eyes.
+  - **Supernatural White Hair Evolution**: Blood Mages and Blood Knights gradually bleach from subtle silver to pure white hair alongside crimson and white eyes.
 - **Unified Appearance Game Rule**: Configure physical transformations at game start:
   - _Off_: Retain normal human appearance.
   - _Gradual_: Eyes and hair transform dynamically as lifestyle track XP is earned.
