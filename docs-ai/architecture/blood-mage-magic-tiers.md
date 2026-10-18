@@ -85,7 +85,7 @@ Requires Major Lifeforce (`lifeforce_modifier_major`) and Devotion level >= 1. A
 
 | Action / Ritual | Interface | Cost / Prerequisite | Effect | XP Gain |
 | --- | --- | --- | --- | --- |
-| **Cast Major Magic Grimoire** | Decision (`bm_cast_blood_magic_major_decision`) | Major Lifeforce, Piety level >= 1 | Opens major rituals event grimoire (`bm_cast_blood_magic_major.001`). | None |
+| **Cast Major Magic Grimoire** | Decision (`bm_cast_blood_magic_major_decision`) | Major Lifeforce, Piety level >= 1, Piety >= 150 | Opens major rituals event grimoire (`bm_cast_blood_magic_major.001`). | None |
 | **Blood Empowerment** | Grimoire Option (`bm_blood_empowerment_event.001`) | 150 Piety + Major Lifeforce, Piety level >= 1 | Unlocks/advances secondary lifestyle trait `lifestyle_blood_empowerment` (+10 XP in chosen track) via Grimoire event modal. | +3 Enlightenment (+10 Empowerment) |
 | **Condense Lifeforce (Superior)** | Grimoire Option (`bm_cast_blood_magic_major.001.condense`) | 250 Piety + 1 Minor & 1 Major Lifeforce, Piety level >= 3, 2-yr CD | Distills Minor and Major lifeforce into Superior Lifeforce via Learning duel. | +2 to +8 Ancient |
 | **Improve Education (1★–4★)** | Grimoire Option | 75–200 Piety + Major Lifeforce, Piety level >= 3, 2-yr CD | Upgrades education trait star tier (up to tier 4) via mental duel. | +5 Enlightenment |
