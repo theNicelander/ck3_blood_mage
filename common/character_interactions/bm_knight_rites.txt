@@ -1,0 +1,463 @@
+﻿bm_anoint_knight_interaction = {
+	category = interaction_category_bm_blood_magic
+	auto_accept = yes
+	common_interaction = yes
+	desc = bm_anoint_knight_interaction_desc
+	interface_priority = 180
+
+	is_shown = {
+		scope:actor = {
+			OR = {
+				has_trait = lifestyle_blood_mage
+				has_trait = lifestyle_blood_knight
+			}
+		}
+		NOT = { scope:actor = scope:recipient }
+		scope:recipient = {
+			is_alive = yes
+			OR = {
+				is_knight_of = scope:actor
+				AND = {
+					is_courtier_of = scope:actor
+					has_trait = lifestyle_blood_knight
+				}
+			}
+		}
+	}
+
+	cost = {
+		piety = 50
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			has_character_modifier = lifeforce_modifier_minor
+		}
+		custom_description = {
+			text = bm_recipient_already_anointed
+			NOT = { scope:recipient = { has_character_modifier = bm_anointed_champion_modifier } }
+		}
+	}
+
+	on_accept = {
+		debug_log = "BloodMageInteraction: anoint_knight | Actor: [actor.GetShortUINameNoTooltip] -> Recipient: [recipient.GetShortUINameNoTooltip]"
+		scope:actor = {
+			blood_magic_used_minor = yes
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_anoint_knight_toast
+				left_icon = scope:actor
+				right_icon = scope:recipient
+				scope:recipient = {
+					add_character_modifier = {
+						modifier = bm_anointed_champion_modifier
+						years = 5
+					}
+					add_opinion = {
+						target = scope:actor
+						modifier = magic_opinion_positive
+						opinion = 20
+					}
+				}
+				if = {
+					limit = { has_trait = lifestyle_blood_knight }
+					add_blood_knight_xp = {
+						TRACK = vanguard
+						XP = 2
+					}
+				}
+				if = {
+					limit = {
+						has_trait = lifestyle_blood_mage
+						NOT = { has_trait = lifestyle_blood_knight }
+					}
+					add_blood_mage_xp = {
+						TRACK = benediction
+						XP = 2
+					}
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+		}
+	}
+
+	ai_frequency = 12
+	ai_potential = {
+		OR = {
+			has_trait = lifestyle_blood_mage
+			has_trait = lifestyle_blood_knight
+		}
+	}
+	ai_targets = {
+		ai_recipients = knights
+		ai_recipients = courtiers
+	}
+	ai_will_do = {
+		base = 25
+		modifier = {
+			factor = 0
+			NOT = { has_character_modifier = lifeforce_modifier_minor }
+		}
+	}
+}
+
+bm_ritual_spar_interaction = {
+	category = interaction_category_bm_blood_magic
+	auto_accept = yes
+	common_interaction = yes
+	desc = bm_ritual_spar_interaction_desc
+	interface_priority = 175
+
+	is_shown = {
+		scope:actor = {
+			OR = {
+				has_trait = lifestyle_blood_mage
+				has_trait = lifestyle_blood_knight
+			}
+		}
+		NOT = { scope:actor = scope:recipient }
+		scope:recipient = {
+			is_alive = yes
+			is_imprisoned = no
+			OR = {
+				is_knight_of = scope:actor
+				AND = {
+					is_courtier_of = scope:actor
+					has_trait = lifestyle_blood_knight
+				}
+				AND = {
+					has_relation_friend = scope:actor
+					prowess >= 8
+				}
+			}
+		}
+	}
+
+	cost = {
+		piety = 50
+	}
+
+	cooldown = { years = 2 }
+
+	is_valid_showing_failures_only = {
+		scope:recipient = {
+			is_adult = yes
+			NOT = { has_trait = incapable }
+		}
+	}
+
+	on_accept = {
+		debug_log = "BloodMageInteraction: ritual_spar | Actor: [actor.GetShortUINameNoTooltip] -> Recipient: [recipient.GetShortUINameNoTooltip]"
+		scope:actor = {
+			duel = {
+				skill = prowess
+				target = scope:recipient
+				# Critical Success
+				25 = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = 2
+						min = -24
+					}
+					desc = bm_ritual_spar_critical_success_desc
+					send_interface_toast = {
+						type = event_toast_effect_good
+						title = bm_ritual_spar_critical_success_title
+						left_icon = scope:actor
+						right_icon = scope:recipient
+						add_character_modifier = {
+							modifier = lifeforce_modifier_minor
+						}
+						if = {
+							limit = { has_trait = lifestyle_blood_knight }
+							add_blood_knight_xp = {
+								TRACK = slaughter
+								XP = 3
+							}
+						}
+						else = {
+							add_blood_mage_xp = {
+								TRACK = hematurgy
+								XP = 3
+							}
+						}
+						scope:recipient = {
+							if = {
+								limit = { has_trait = lifestyle_blood_knight }
+								add_blood_knight_xp = {
+									TRACK = slaughter
+									XP = 3
+								}
+							}
+							else = {
+								add_character_modifier = {
+									modifier = bm_spar_honed_modifier
+									years = 5
+								}
+							}
+							add_opinion = {
+								target = scope:actor
+								modifier = magic_opinion_positive
+								opinion = 15
+							}
+						}
+						hidden_effect = {
+							bm_recount_lifeforce_stacks_effect = yes
+						}
+					}
+				}
+				# Success
+				50 = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = 1
+						min = -49
+					}
+					desc = bm_ritual_spar_success_desc
+					send_interface_toast = {
+						type = event_toast_effect_good
+						title = bm_ritual_spar_success_title
+						left_icon = scope:actor
+						right_icon = scope:recipient
+						if = {
+							limit = { has_trait = lifestyle_blood_knight }
+							add_blood_knight_xp = {
+								TRACK = vanguard
+								XP = 3
+							}
+						}
+						else = {
+							add_blood_mage_xp = {
+								TRACK = ancient
+								XP = 3
+							}
+						}
+						scope:recipient = {
+							if = {
+								limit = { has_trait = lifestyle_blood_knight }
+								add_blood_knight_xp = {
+									TRACK = vanguard
+									XP = 3
+								}
+							}
+							else = {
+								add_character_modifier = {
+									modifier = bm_spar_honed_modifier
+									years = 5
+								}
+							}
+							add_opinion = {
+								target = scope:actor
+								modifier = magic_opinion_positive
+								opinion = 15
+							}
+						}
+						hidden_effect = {
+							bm_recount_lifeforce_stacks_effect = yes
+						}
+					}
+				}
+				# Defeat
+				25 = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = -2
+						min = -24
+					}
+					desc = bm_ritual_spar_failure_desc
+					send_interface_toast = {
+						type = event_toast_effect_bad
+						title = bm_ritual_spar_failure_title
+						left_icon = scope:actor
+						right_icon = scope:recipient
+						if = {
+							limit = { has_trait = lifestyle_blood_knight }
+							add_blood_knight_xp = {
+								TRACK = vanguard
+								XP = 1
+							}
+						}
+						else = {
+							add_blood_mage_xp = {
+								TRACK = enlightenment
+								XP = 1
+							}
+						}
+						scope:recipient = {
+							if = {
+								limit = { has_trait = lifestyle_blood_knight }
+								add_blood_knight_xp = {
+									TRACK = slaughter
+									XP = 3
+								}
+							}
+							else = {
+								add_character_modifier = {
+									modifier = bm_spar_honed_modifier
+									years = 5
+								}
+							}
+							add_opinion = {
+								target = scope:actor
+								modifier = magic_opinion_positive
+								opinion = 15
+							}
+						}
+						hidden_effect = {
+							bm_recount_lifeforce_stacks_effect = yes
+						}
+					}
+				}
+			}
+		}
+	}
+
+	ai_frequency = 24
+	ai_potential = {
+		OR = {
+			has_trait = lifestyle_blood_mage
+			has_trait = lifestyle_blood_knight
+		}
+	}
+	ai_targets = {
+		ai_recipients = knights
+		ai_recipients = courtiers
+		ai_recipients = friends
+	}
+	ai_will_do = {
+		base = 30
+		modifier = {
+			factor = 1.5
+			has_trait = brave
+		}
+		modifier = {
+			factor = 0.5
+			has_trait = craven
+		}
+	}
+}
+
+bm_cull_champion_interaction = {
+	category = interaction_category_bm_blood_magic
+	auto_accept = yes
+	common_interaction = yes
+	desc = bm_cull_champion_interaction_desc
+	interface_priority = 170
+
+	is_shown = {
+		scope:actor = {
+			OR = {
+				has_trait = lifestyle_blood_mage
+				has_trait = lifestyle_blood_knight
+			}
+		}
+		NOT = { scope:actor = scope:recipient }
+		scope:recipient = {
+			is_alive = yes
+			OR = {
+				# Eligible prisoner
+				AND = {
+					is_imprisoned_by = scope:actor
+					OR = {
+						prowess >= 12
+						has_trait = lifestyle_blood_knight
+					}
+				}
+				# Fallen or critically broken own follower
+				AND = {
+					OR = {
+						is_courtier_of = scope:actor
+						is_knight_of = scope:actor
+					}
+					OR = {
+						has_trait = maimed
+						has_trait = incapable
+						has_trait = infirm
+						has_trait = wounded_3
+					}
+				}
+			}
+		}
+	}
+
+	cost = {
+		piety = 50
+	}
+
+	on_accept = {
+		debug_log = "BloodMageInteraction: cull_champion | Actor: [actor.GetShortUINameNoTooltip] -> Recipient: [recipient.GetShortUINameNoTooltip]"
+		scope:actor = {
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_cull_champion_toast
+				left_icon = scope:actor
+				right_icon = scope:recipient
+				add_character_modifier = {
+					modifier = lifeforce_modifier_major
+				}
+				if = {
+					limit = { has_trait = lifestyle_blood_knight }
+					add_blood_knight_xp = {
+						TRACK = slaughter
+						XP = 3
+					}
+				}
+				else = {
+					add_blood_mage_xp = {
+						TRACK = hematurgy
+						XP = 3
+					}
+				}
+				random = {
+					chance = bm_cull_champion_superior_chance_value
+					add_character_modifier = {
+						modifier = lifeforce_modifier_superior
+					}
+				}
+				scope:recipient = {
+					death = {
+						death_reason = death_lifedrain_reason
+						killer = scope:actor
+					}
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+		}
+	}
+
+	ai_frequency = 12
+	ai_potential = {
+		OR = {
+			has_trait = lifestyle_blood_mage
+			has_trait = lifestyle_blood_knight
+		}
+	}
+	ai_targets = {
+		ai_recipients = prisoners
+		ai_recipients = courtiers
+		ai_recipients = knights
+	}
+	ai_will_do = {
+		base = 10
+		modifier = {
+			factor = 2
+			ai_compassion < 0
+		}
+		modifier = {
+			factor = 0
+			scope:recipient = {
+				is_child_of = scope:actor
+			}
+		}
+		modifier = {
+			factor = 0
+			scope:recipient = {
+				is_spouse_of = scope:actor
+			}
+		}
+	}
+}

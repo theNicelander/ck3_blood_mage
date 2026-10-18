@@ -1,0 +1,148 @@
+﻿bm_blood_bodyguard_court_position = {
+	max_available_positions = 2
+
+	skill = prowess
+
+	court_position_asset = {
+		animation = menacing
+		background = "gfx/interface/illustrations/event_scenes/corridor.dds"
+	}
+
+	opinion = {
+		value = regular_court_position_opinion
+	}
+
+	aptitude_level_breakpoints = { 20 40 60 80 }
+
+	aptitude = {
+		value = 1
+		add = {
+			value = prowess
+			multiply = 2
+			desc = court_position_skill_prowess
+		}
+		add = {
+			value = martial
+			desc = court_position_skill_martial
+		}
+		if = {
+			limit = {
+				has_trait = lifestyle_blood_knight
+			}
+			add = {
+				value = "has_trait_xp(lifestyle_blood_knight|vanguard)"
+				multiply = 0.25
+				desc = bm_court_position_vanguard_xp
+			}
+			add = {
+				value = "has_trait_xp(lifestyle_blood_knight|slaughter)"
+				multiply = 0.25
+				desc = bm_court_position_slaughter_xp
+			}
+		}
+		if = {
+			limit = {
+				has_trait = loyal
+			}
+			add = {
+				value = 20
+				desc = court_position_loyal_trait
+			}
+		}
+		if = {
+			limit = {
+				has_trait = giant
+			}
+			add = {
+				value = 15
+				desc = bm_court_position_giant_trait
+			}
+		}
+	}
+
+	is_shown = {
+		OR = {
+			has_trait = lifestyle_blood_mage
+			has_trait = lifestyle_blood_knight
+			liege ?= {
+				OR = {
+					has_trait = lifestyle_blood_mage
+					has_trait = lifestyle_blood_knight
+				}
+			}
+		}
+	}
+
+	is_shown_character = {
+		scope:employee = {
+			is_imprisoned = no
+			is_alive = yes
+		}
+	}
+
+	valid_character = {
+		scope:employee = {
+			is_imprisoned = no
+			is_alive = yes
+			can_be_combatant_based_on_gender_trigger = { ARMY_OWNER = scope:liege }
+			OR = {
+				has_trait = lifestyle_blood_knight
+				house ?= house:bm_house_golem
+			}
+		}
+	}
+
+	revoke_cost = {
+		prestige = {
+			value = minor_court_position_prestige_revoke_cost
+		}
+	}
+
+	salary = {
+		gold = {
+			value = 0.5
+		}
+	}
+
+	is_powerful_agent = yes
+
+	scaling_employer_modifiers = {
+		terrible = {
+			enemy_hostile_scheme_success_chance_add = -2
+			enemy_hostile_scheme_success_chance_max_add = -2
+			dread_baseline_add = 5
+		}
+		poor = {
+			enemy_hostile_scheme_success_chance_add = -5
+			enemy_hostile_scheme_success_chance_max_add = -4
+			dread_baseline_add = 7
+		}
+		average = {
+			enemy_hostile_scheme_success_chance_add = -8
+			enemy_hostile_scheme_success_chance_max_add = -6
+			dread_baseline_add = 10
+		}
+		good = {
+			enemy_hostile_scheme_success_chance_add = -12
+			enemy_hostile_scheme_success_chance_max_add = -8
+			dread_baseline_add = 12
+		}
+		excellent = {
+			enemy_hostile_scheme_success_chance_add = -15
+			enemy_hostile_scheme_success_chance_max_add = -10
+			dread_baseline_add = 15
+		}
+	}
+
+	custom_employer_modifier_description = bm_blood_bodyguard_court_position_employer_custom_effect_description
+
+	modifier = {
+		prowess = 4
+		health = 0.5
+		monthly_prestige = 0.5
+	}
+
+	ai_position_score = {
+		value = 50
+	}
+}

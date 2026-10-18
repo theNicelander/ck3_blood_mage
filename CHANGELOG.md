@@ -2,6 +2,7 @@
 
 ## Game version 1.20
 
+- v1.20.50.c: Crimson Sworn-Guard court position, Vanguard Anointment, ritual prowess sparring, and Cull Fallen Champion interaction.
 - v1.20.50.b: Consecrate Union interaction for spouses, lovers, and consorts boosting fertility and genetic trait inheritance.
 - v1.20.50.a: Core positive target triggers, Blood Knight mentor/grant expansion, stave stealth drain fix, self-bleeding & stress vice purging rites.
 
