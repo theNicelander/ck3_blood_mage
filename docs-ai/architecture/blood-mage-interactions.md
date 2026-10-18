@@ -4,7 +4,7 @@ Living technical specification for character interactions in the Blood Mage mod.
 
 ## Executive Summary
 
-- **Category:** All 23 mod gameplay character interactions are grouped into the dedicated category `interaction_category_bm_blood_magic` ("Blood Magic", `index = 16`, crimson `{ 0.75 0.12 0.12 1 }`) defined in `common/character_interaction_categories/bm_character_interaction_categories.txt`.
+- **Category:** All 26 mod gameplay character interactions are grouped into the dedicated category `interaction_category_bm_blood_magic` ("Blood Magic", `index = 16`, crimson `{ 0.75 0.12 0.12 1 }`) defined in `common/character_interaction_categories/bm_character_interaction_categories.txt`.
 - **Rule:** Uses `ai_targets` to avoid global scans. AI vetoes prevent draining close family, spouses, friends, and council.
 
 ### Interactions Master Table
@@ -25,6 +25,9 @@ Living technical specification for character interactions in the Blood Mage mod.
 | `empower_blood_knight_interaction` | Sworn blood knight | Major Lifeforce (+10 XP to vanguard & slaughter) or Minor Lifeforce (+5 XP). Blood Knight caster only. | Major: +4 benediction; Minor: +2 benediction | Direct popup modal advancing martial tracks on recipient. |
 | `grant_lifeforce_interaction` | Positive relation target or prisoner | Minor Lifeforce + 25 Piety, or Major Lifeforce + 50 Piety. Blood Mage or Blood Knight. | Minor: +1 enlightenment; Major: +2 enlightenment | Bestows Lifeforce modifier onto recipient. |
 | `grant_lifeforce_interaction_reversed` | Positive relation target or prisoner with `lifedrained_modifier` | 25 Piety + Major Lifeforce. Blood Mage or Blood Knight. | +4 benediction | Restores drained target: cleanses debuff, gives minor lifeforce and opinion. |
+| `empower_blood_mage_interaction` | Courtier, family, spouse, lover, friend Blood Mage | Major Lifeforce (+10 XP to enlightenment & bloodline) or Minor Lifeforce (+5 XP). Blood Mage caster only. | Major: +4 benediction; Minor: +2 benediction | Direct popup modal advancing enlightenment and bloodline tracks on recipient. |
+| `bm_siphon_lifeforce_reserves_interaction` | Any character holding Lifeforce reserves | 75 Piety. CD: 1 yr. Blood Mage or Blood Knight. | +3 hematurgy (Mage) / +3 slaughter (Knight) | Contested duel (Mage: learning/intrigue, Knight: prowess; auto-win if imprisoned). Success: transfers 1 stack of each tier present from recipient to actor. Recipient loses 50 opinion (negated by Superior **Hulinhjálmur**). Failure: 1-yr negative minor lifeforce + 20 stress. |
+| `bm_occult_mage_duel_interaction` | Living Blood Mage or Blood Knight | 150 Piety + Minor Lifeforce. CD: 3 yrs. Both actor & recipient are Blood Mage or Blood Knight. | Crit: +5 hematurgy/slaughter; Win: +3 hematurgy/slaughter; Defeat: +1 enlightenment | Contested occult duel (Learning + Prowess). Crit: actor reaps Major Lifeforce, recipient suffers `bm_blood_curse_modifier` (5 yrs) + `wounded_1`. Win: recipient gets 3-yr `lifeforce_modifier_negative_major` + 35 stress. Defeat: actor suffers 1-yr `lifeforce_modifier_negative_minor` + 25 stress. |
 | `bm_anoint_knight_interaction` | Sworn knight or Blood Knight courtier | 50 Piety + Minor Lifeforce. Recipient not anointed. | Mage: +2 benediction; Knight: +2 vanguard | Consecrates champion with `bm_anointed_champion_modifier` (+4 prowess, +0.5 health, +0.5 negate health penalty) for 5 yrs and +20 opinion. |
 | `bm_ritual_spar_interaction` | Sworn knight, Blood Knight courtier, or martial friend (prowess >= 8) | 50 Piety (2-yr CD). Non-lethal duel. | Crit/Win: +3 slaughter/vanguard XP; Loss: +1 vanguard/enlightenment XP | Prowess duel: Crit draws first blood and condenses Minor Lifeforce (+3 XP, +15 opinion); Win awards +3 XP (+15 opinion); Loss awards +1 XP to actor, +3 XP to recipient. (Non-blood knights receive `bm_spar_honed_modifier` for 5 yrs). |
 | `bm_cull_champion_interaction` | Prisoner (prowess >= 12 or Blood Knight) or broken follower (maimed, incapable, infirm, wounded_3) | 50 Piety. Blood Mage or Blood Knight. | Knight: +3 slaughter; Mage: +3 hematurgy | Executes target (`death_lifedrain_reason`), grants actor 1 Major Lifeforce, and rolls recipient prowess % (capped at 50%) to condense 1 Superior Lifeforce. |
@@ -68,4 +71,5 @@ Living technical specification for character interactions in the Blood Mage mod.
 | Influence Personality | `common/character_interactions/bm_reshape_personality.txt` |
 | Manifest Lifeforce (Self) | `common/character_interactions/bm_manifest_lifeforce.txt` |
 | Self & Coping Rites (`bm_bleed_own_vein_interaction`, `bm_purge_coping_traits_interaction`) | `common/character_interactions/bm_self_rites.txt` |
+| Siphon & Occult Duel (`bm_mage_interactions`) | `common/character_interactions/bm_mage_interactions.txt` |
 | Debug interactions | `common/character_interactions/bm_debug_interactions.txt` |
