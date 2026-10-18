@@ -12,6 +12,7 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 - **Mutual Exclusivity & Awakening**: Characters choose their path upon awakening to blood magic—via hereditary bloodlines, occult mentorship, witch conversion, or by venturing north to duel the 100-year-old hermit **Egill Skallagrímsson** in Iceland or Tsushima.
 - **Shared Devotion Progression (Ancient, Enlightenment, Benediction)**:
   - Both classes advance through 3 shared spiritual tracks scaling up to 100 XP.
+  - **Ancient**: Stepping stones grant +1 personal tenet slot every 20 XP (+5 slots total at 100 XP), alongside monthly dynasty prestige, lifestyle XP gain, Devotion Impact, and age-lock prowess.
   - **50 XP Milestones**: Dynamic scaling bonuses based on your Level of Devotion, including bonus knights, cultural acceptance, and diplomacy.
   - **100 XP Apex Capstones**: Unlock a massive **+50% Devotion Impact** multiplier (amplifying all Level of Devotion effects across your realm), universal immunity to aging prowess loss (**Age Prowess Lock**), and +2.0 skill points per Devotion level.
 - **Dedicated Blood Knight Tracks**:
