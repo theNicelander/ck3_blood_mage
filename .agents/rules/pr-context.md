@@ -13,6 +13,10 @@ File: `docs-ai/branch-context/<branch>.md` (`<branch>` = `git branch --show-curr
 4. **Never skip**: not for small changes, not if unasked. Fix stale parts.
 5. **Stay in branch**: never create or switch branches unless explicitly ordered. Other AIs edit other files concurrently in the workspace: stage and commit ONLY files modified in your active conversation. Leave other files untouched and uncommitted; never create separate branches to isolate work.
 6. **Plans and commits**: Plans must always include committing as the final step. Since plans are well thought out, commit the completed implementation upon finishing the plan. Any subsequent modifications or user feedback iterations must be in a separate commit. Stage and commit ONLY files modified in your active conversation (`git add <file1> <file2>`), never blanket staging, because multiple agents operate in parallel.
+7. **Updating PRs**: When asked to "update PR":
+   - Always activate and use the `caveman` skill (`.agents/skills/caveman/SKILL.md`).
+   - Title must focus strictly on the most impactful gameplay changes (changes to traits, events, rites, major mechanics).
+   - Ignore localization, minor bugfixes, tooltips, popups, and formatting in the title; keep title and body focused on substantive trait/event/mechanic gameplay overhauls.
 
 ```markdown
 # <branch>: <title>
