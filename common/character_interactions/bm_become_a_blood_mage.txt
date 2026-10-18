@@ -1,5 +1,5 @@
 ﻿ask_for_blood_magic_interaction = {
-    category = interaction_category_friendly
+    category = interaction_category_bm_blood_magic
     auto_accept = yes
     common_interaction = yes
     desc = grant_blood_magic_interaction_desc
@@ -68,7 +68,7 @@ bm_get_blood_magic_from_prisoner_interaction = {
     common_interaction = yes
     auto_accept = yes
     interface_priority = 999
-    category = interaction_category_hostile
+    category = interaction_category_bm_blood_magic
     desc = bm_get_blood_magic_from_prisoner_interaction.desc
 
     is_highlighted = { always = yes }

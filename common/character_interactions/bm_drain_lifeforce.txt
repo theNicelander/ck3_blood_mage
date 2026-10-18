@@ -1,7 +1,7 @@
 ﻿lifedrain_prisoner_event_interaction = {
     common_interaction = yes
     interface_priority = 300
-    category = interaction_category_hostile
+    category = interaction_category_bm_blood_magic
     desc = lifedrain_prisoner_interaction_desc
     is_highlighted = { always = yes }
     is_shown = {
@@ -35,7 +35,7 @@
 lifedrain_courtier_event_interaction = {
     common_interaction = yes
     interface_priority = 300
-    category = interaction_category_hostile
+    category = interaction_category_bm_blood_magic
     desc = lifedrain_prisoner_interaction_desc
     is_shown = {
         scope:actor = {
