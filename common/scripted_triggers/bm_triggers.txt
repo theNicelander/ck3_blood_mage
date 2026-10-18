@@ -35,3 +35,42 @@ bm_has_blood_rune_trigger = {
 		has_character_modifier = superior_blood_rune_modifier
 	}
 }
+
+bm_is_valid_positive_magic_target_trigger = {
+	OR = {
+		is_courtier_of = $ACTOR$
+		is_child_of = $ACTOR$
+		is_close_family_of = $ACTOR$
+		is_extended_family_of = $ACTOR$
+		dynasty ?= $ACTOR$.dynasty
+		is_spouse_of = $ACTOR$
+		is_consort_of = $ACTOR$
+		has_relation_lover = $ACTOR$
+		has_relation_soulmate = $ACTOR$
+		has_relation_friend = $ACTOR$
+		has_relation_best_friend = $ACTOR$
+		is_knight_of = $ACTOR$
+		is_councillor_of = $ACTOR$
+		has_relation_guardian = $ACTOR$
+		has_relation_ward = $ACTOR$
+		house ?= house:bm_house_golem
+		$ACTOR$.liege ?= this
+	}
+}
+
+bm_has_stress_coping_trait_trigger = {
+	OR = {
+		has_trait = drunkard
+		has_trait = hashishiyah
+		has_trait = rakish
+		has_trait = reclusive
+		has_trait = irritable
+		has_trait = flagellant
+		has_trait = profligate
+		has_trait = improvident
+		has_trait = contrite
+		has_trait = comfort_eater
+		has_trait = inappetetic
+	}
+}
+

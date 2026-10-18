@@ -26,7 +26,10 @@
 
     is_shown = {
         scope:recipient = {
-            has_trait = lifestyle_blood_mage
+            OR = {
+                has_trait = lifestyle_blood_mage
+                has_trait = lifestyle_blood_knight
+            }
         }
         scope:actor = {
             NOT = { has_trait = lifestyle_blood_mage }
@@ -40,7 +43,13 @@
             remove_character_modifier = lifeforce_modifier_superior
         }
         scope:actor = {
-            bm_become_blood_mage_effect = yes
+            if = {
+                limit = { scope:recipient = { has_trait = lifestyle_blood_knight } }
+                bm_become_blood_knight_effect = yes
+            }
+            else = {
+                bm_become_blood_mage_effect = yes
+            }
         }
     }
 
@@ -81,7 +90,10 @@ bm_get_blood_magic_from_prisoner_interaction = {
         }
         scope:recipient = {
             is_imprisoned_by = scope:actor
-            has_trait = lifestyle_blood_mage
+            OR = {
+                has_trait = lifestyle_blood_mage
+                has_trait = lifestyle_blood_knight
+            }
         }
     }
 
@@ -126,7 +138,13 @@ bm_get_blood_magic_from_prisoner_interaction = {
                         title = bm_get_blood_magic_from_prisoner_interaction.success
                         left_icon = scope:actor
                         right_icon = scope:recipient
-                        bm_become_blood_mage_effect = yes
+                        if = {
+                            limit = { scope:recipient = { has_trait = lifestyle_blood_knight } }
+                            bm_become_blood_knight_effect = yes
+                        }
+                        else = {
+                            bm_become_blood_mage_effect = yes
+                        }
                     }
                 }
                 65 = {

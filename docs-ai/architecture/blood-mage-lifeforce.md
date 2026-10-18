@@ -71,6 +71,8 @@ Triggered on `on_combat_end_winner` (`bm_on_combat_end_winner`) for surviving si
 | **Bless Bloodline (`bm_bless_bloodline_interaction`)** | Mage & Knight | 35 Piety + 1 Minor Lifeforce | **-1 Minor** | `+2` `bloodline` (Mage) / `+2` `vanguard` (Knight) |
 | **Cast Blood Curse (`bm_curse_blood_interaction`)** | Mage (>=10 Hematurgy) | 50 Piety + 1 Minor Lifeforce | **-1 Minor** (Crit success siphons **+1 Minor** back from victim) | `+2` (win) / `+4` (crit) / `+1` (fail) `hematurgy` |
 | **Grant / Restore Lifeforce (`grant_lifeforce_interaction*`)** | Mage & Knight | `25–50` Piety + Minor/Major Lifeforce | Transfers stack to target or clears `lifedrained_modifier` | `+1`/`+2` `enlightenment` or `+4` `benediction` |
+| **Bleed Own Vein (`bm_bleed_own_vein_interaction`)** | Mage & Knight | Health/Stress toll, 1-yr CD | Minor: **+1 Minor** (wounded); Major: **+1 Major** (wounded_2, lifedrained_modifier, 25 stress) | Minor: `+2` `hematurgy` (Mage) / `+2` `slaughter` (Knight); Major: `+4` `hematurgy` (Mage) / `+4` `slaughter` (Knight) |
+| **Purge Stress Vices (`bm_purge_coping_traits_interaction`)** | Mage & Knight | 250 Piety + 1 Major Lifeforce | **-1 Major** | `+4` `enlightenment` (self) or `+4` `benediction` (other) |
 
 ## Where the details live
 
@@ -80,6 +82,7 @@ Triggered on `on_combat_end_winner` (`bm_on_combat_end_winner`) for surviving si
 | Temporary exhaustion effects | `common/scripted_effects/bm_blood_magic_temporary_effects.txt` |
 | Cast consumption effects (`blood_magic_used_*`) | `common/scripted_effects/bm_blood_magic_used_effects.txt` |
 | Prisoner & courtier harvesting interactions | `common/character_interactions/bm_drain_lifeforce.txt` |
+| Self & coping rites (`bm_bleed_own_vein_interaction`, `bm_purge_coping_traits_interaction`) | `common/character_interactions/bm_self_rites.txt` |
 | Battlefield victory/defeat XP & Lifeforce effects | `common/on_action/bm_combat_on_actions.txt`, `common/scripted_effects/bm_combat_effects.txt` |
 | Single combat fatality Lifeforce hook | `common/on_action/bm_duel_on_actions.txt` |
 | Manifestation & distillation decisions | `common/decisions/get_lifeforce/bm_manifest_lifeforce.txt`, `events/bm_cast_blood_magic_major_events.txt` |
