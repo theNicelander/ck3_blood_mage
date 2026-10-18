@@ -39,6 +39,7 @@ bm_has_blood_rune_trigger = {
 bm_is_valid_positive_magic_target_trigger = {
 	OR = {
 		is_courtier_of = $ACTOR$
+		is_vassal_of = $ACTOR$
 		is_child_of = $ACTOR$
 		is_close_family_of = $ACTOR$
 		is_extended_family_of = $ACTOR$
@@ -54,7 +55,13 @@ bm_is_valid_positive_magic_target_trigger = {
 		has_relation_guardian = $ACTOR$
 		has_relation_ward = $ACTOR$
 		house ?= house:bm_house_golem
-		$ACTOR$.liege ?= this
+		trigger_if = {
+			limit = { exists = $ACTOR$.liege }
+			OR = {
+				this = $ACTOR$.liege
+				is_courtier_of = $ACTOR$.liege
+			}
+		}
 	}
 }
 

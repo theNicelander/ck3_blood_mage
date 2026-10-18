@@ -26,6 +26,7 @@
         scope:recipient = {
             NOT = { has_trait = lifestyle_blood_mage }
             NOT = { has_trait = lifestyle_blood_knight }
+            bm_is_valid_positive_magic_target_trigger = { ACTOR = scope:actor }
         }
     }
     is_valid_showing_failures_only = {
@@ -220,6 +221,7 @@
 
 empower_blood_mage_interaction = {
     category = interaction_category_bm_blood_magic
+    icon = empower_blood_mage_interaction
     auto_accept = yes
     desc = empower_blood_mage_interaction_desc
     interface_priority = 195
@@ -229,16 +231,7 @@ empower_blood_mage_interaction = {
         scope:recipient = {
             NOT = { this = scope:actor }
             has_trait = lifestyle_blood_mage
-            OR = {
-                is_courtier_of = scope:actor
-                is_child_of = scope:actor
-                is_spouse_of = scope:actor
-                has_relation_lover = scope:actor
-                has_relation_soulmate = scope:actor
-                has_relation_friend = scope:actor
-                has_relation_best_friend = scope:actor
-                dynasty ?= scope:actor.dynasty
-            }
+            bm_is_valid_positive_magic_target_trigger = { ACTOR = scope:actor }
         }
     }
     is_valid_showing_failures_only = {

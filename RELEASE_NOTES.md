@@ -22,23 +22,23 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
   - **Bloodline**: Increases domain limit, county tax, development growth, and building construction speed.
   - **Hematurgy**: Unlocks hostile scheme power, scheme defense, dread gain, and natural tyranny decay.
 
-- **Crimson Sworn-Guard & Knight Rites**:
-  - **Crimson Sworn-Guard Court Position**: Employ up to 2 dedicated blood-bound bodyguards (Blood Knights or immortal Blood Golems) who dramatically cut enemy hostile scheme success chances against you (-2 to -15) and bolster baseline dread (+5 to +15) based on their prowess, martial, and vanguard/slaughter track experience.
+- **Blood Knight Rites & Champion Sacrifices**:
   - **Anoint Vanguard Champion**: Consecrate knights or Blood Knight courtiers with Minor Lifeforce to bestow +4 Prowess, +0.5 Health, and health penalty negation for 5 years (`bm_anointed_champion_modifier`).
   - **Ritual Sparring**: Test martial prowess against sworn knights, Blood Knight courtiers, or martial friends in non-lethal duels (2-year cooldown), sharpening combat acumen and condensing a drop of Minor Lifeforce on critical victory.
   - **Cull Fallen Champion**: Offer critically broken followers or formidable captured warriors (Prowess 12+ or Blood Knights) upon the sacrificial altar for 1 Major Lifeforce and Slaughter/Hematurgy XP, rolling a prowess-scaled chance (up to 50%) to condense 1 Superior Lifeforce.
+  - **Family & Kin Initiation**: Blood Knights can now initiate their spouse, children (any age), close family, extended family, and dynasty kin into `lifestyle_blood_knight` via `make_blood_knight_interaction` without requiring prior appointment as a combat knight. Major initiation awards **+5 Vanguard XP** (up from +4) when initiated into the dynasty, matching Blood Mage parity. Blood Knights can also empower family members and spouses via `empower_blood_knight_interaction` even if landed or outside their court.
 
 - **Go on a Blood Hunt Overhaul & Wilderness Expansion**:
   - Re-themed from the meditative "Seek Power in Nature's Domain" into **Go on a Blood Hunt**, open to both **Blood Mages** and **Blood Knights**.
-  - **Direct Encounter Resolution**: Clicking **Begin the hunt** resolves a 7-way Prowess + Learning encounter duel directly on execution, displaying exact encounter odds in the decision preview and bypassing filler clicks.
+  - **Surprise Encounter Resolution**: Embarking on a Blood Hunt preserves narrative suspense by hiding encounter odds in the decision preview behind an immersive wilderness tooltip, resolving encounters via a hidden dispatcher while maintaining full skill duel odds within the events.
   - **Class-Tailored Lonely Road Encounter**: Blood Knights confront a wandering warrior accompanied by a formidable sworn escort knight (opening Single Combat battlefield duels and martial recruitment), while Blood Mages confront the lone traveler (emphasizing covert lifedrain, trait theft, or learning persuasion).
-  - **Expanded 7-Encounter Pool**:
+  - **Calibrated 4-Tier Violent Encounters**: Overhauled violent confrontation options from binary Major/Minor rolls into high-stakes 4-tier duel resolutions (Clean Kill, Mixed Wounded, Adversary Escapes, and Defeat/Mauled with escalating injuries):
+    - *The Beast's Lair*: Face a 30-prowess apex beast in its den for Major Lifeforce on a clean kill, Minor Lifeforce with wounds on a mixed kill, 0 Lifeforce if the beast escapes, or a savage mauling on critical failure (or safely harvest carcasses outside).
+    - *Blood in the Embers*: Ambush an armed outlaw camp (Prowess + Martial vs 24) to butcher them for Major Lifeforce and 25 Gold, fight through a wounded brawl for Minor Lifeforce and 10 Gold, watch them scatter into the night, or get overpowered and robbed (or extort tribute peacefully).
+    - *The Edge of the Woods*: Stalk an isolated homestead (Intrigue + Prowess vs 16) for a silent Major Lifeforce harvest, take minor wounds fighting off hounds, face barred doors, or get cornered by defenders (or demand an orderly blood tithe).
+    - *The Crimson Rite*: Raid a rival occultist (Prowess + Learning vs 18) for Major Lifeforce, take a dying hex with Minor Lifeforce, watch them dissolve into mist, or suffer a catastrophic occult curse (or share the chalice peacefully).
     - *The Stag's Last Stand*: Run down a royal stag for Minor Lifeforce and Slaughter (Knight) / Hematurgy (Mage) XP.
-    - *The Beast's Lair*: Slay an apex predator in its den for Major Lifeforce, Prestige, and Slaughter/Hematurgy XP, or safely harvest carcasses outside.
-    - *The Edge of the Woods*: Stalk an isolated homestead for Major Lifeforce via Intrigue/Prowess, or demand an orderly blood tithe.
-    - *Blades on the Lonely Road*: Test wanderers in a brutal bout for blood, engage in Single Combat, drain traits, or recruit.
-    - *Blood in the Embers*: Ambush an outlaw camp for Major Lifeforce, Gold loot, and martial/scheme XP, or extort tribute.
-    - *The Crimson Rite*: Cut down a rival occultist to seize their ritual Major Lifeforce, or share the chalice for Piety and Enlightenment XP.
+    - *Blades on the Lonely Road*: Test wanderers in a 4-tier bout for blood, engage in Single Combat, drain traits, or recruit.
     - *The Cairn of Forgotten Carnage*: Rare ancient sacrificial cairn yielding clean Major Lifeforce, Enlightenment XP, and Ancient XP without exhaustion penalties.
   - **Dynamic Visuals**: Replaced passive portraits with active hunting and weapon stances across all encounters.
 
@@ -77,8 +77,8 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
   - **Minor Blood Magic**: Fast utility rituals including Lifeforce Attunement, Minor Blood Runes, Vitality Cleansing, and Lifeforce Condensation.
   - **Major Blood Magic**: Powerful rituals including Channel Blood Power, Condense Lifeforce (distilling Minor and Major into Superior Lifeforce), Education Enhancement (Tiers 1★–4★), Major Blood Runes, Galdrastafir Stave Carving & Swapping (free initial carve upon etching Superior Blood Rune; swapping costs Major Lifeforce + 500 Piety), Congenital Trait Manifestation, and House Blessings.
   - **Superior Blood Magic**: Legendary rites including Blood Golem Creation, 5★ Master Educations, Secondary Educations, and Superior Capstone Runes.
-  - _Attune Lifeforce_: Select your yearly lifestyle XP bonus.
-  - _Empower Dynasty Bloodline_: Weave 7 Three-Tier House Covenants (Majesty, Warband, Prosperity, Shadows, Insight, Legacy, Expertise) across Awakened, Ascendant, and Sovereign tiers to permanently fortify your house.
+  - _Attune Lifeforce_: Select your yearly lifestyle XP bonus with synchronized January 1st progression and clear interface toasts for both base Ancient progression and attunement gains.
+  - _Empower Dynasty Bloodline_: Weave 7 Three-Tier House Covenants (Majesty, Warband, Prosperity, Shadow, Insight, Legacy, Mastery) across Minor, Major, and Superior tiers with live UI level tags and distinct House Modifier icons to permanently fortify your house.
 - **37-Condition Healing & Situation Alerts**:
   - Cure up to 37 physical and mental ailments on yourself, your courtiers, family, or prisoners—ranging from illnesses and wounds to blindness, severed limbs, and melancholy.
   - A persistent **"You Can Heal Someone"** notification appears in the Current Situation dropdown whenever an eligible courtier or family member falls sick or injured.
@@ -123,7 +123,7 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
   - **Ketsudō** (Japanese & Shinto-Syncretic): Eastern warrior-mystic tradition centered on honor, discipline, and ritual dueling.
   - **Xuédào** (Chinese & Sinitic): Daoist-inspired internal alchemy focusing on vital energy cultivation and immortality.
 - **Ancestor Worship Tenet**: Commemorate departed dynastic forebears to earn piety, renown, and spiritual defense.
-- **Eminent Holy Sites**: Standardized holy sites across Iceland, Scandinavia, Ireland, Central Europe, China, and Japan, offering unique realm-wide spiritual bonuses.
+- **Eminent Holy Sites**: Standardized holy sites across Iceland, Scandinavia, Ireland, Central Europe, China, and Japan, offering unique realm-wide spiritual bonuses (including Tsushima as the Eastern initiation eminent holy site for Ketsudō).
 - **Challenge the Hermit of Reykjavík & Tsushima**: Landed rulers and wanderers can travel to remote geothermal springs to challenge the legendary 100-year-old warrior-mage **Egill Skallagrímsson** in a lethal duel to unlock blood magic secrets.
 - **Reformation Repair System**: A built-in decision to cleanly resolve holy site and reformation locks when creating customized occult faiths.
 

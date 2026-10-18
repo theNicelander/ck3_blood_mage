@@ -10,7 +10,7 @@
 | Event File | Namespace | Triggered By | Subsystem & Function |
 | --- | --- | --- | --- |
 | `events/bm_cast_blood_magic_minor_events.txt` | `bm_cast_blood_magic_minor` | Decision `bm_cast_blood_magic_minor_decision` | Grimoire event (`.001`) offering Minor Lifeforce rites: Channel Minor, Condense into Major, Purge Impurities, Inscribe Minor Blood Rune. |
-| `events/bm_cast_blood_magic_major_events.txt` | `bm_cast_blood_magic_major` | Decision `bm_cast_blood_magic_major_decision` | Grimoire event (`.001`) offering Major Lifeforce rites: Channel Blood Power, Improve Education (1★–4★), Inscribe Major Blood Rune, Empower Bloodline, and Manifest Perfection (Congenital Ranks 1–2). |
+| `events/bm_cast_blood_magic_major_events.txt` | `bm_cast_blood_magic_major` | Decision `bm_cast_blood_magic_major_decision` | Grimoire event (`.001`) offering Major Lifeforce rites: Channel Blood Power, Improve Education (1★–4★), Inscribe Major Blood Rune, Empower Bloodline, and Manifest Trait (Congenital Ranks 1–2). |
 | `events/bm_cast_blood_magic_superior_events.txt` | `bm_cast_blood_magic_superior` | Decision `bm_cast_blood_magic_superior_decision` | Grimoire event (`.001`) offering Superior Lifeforce rites: Master Education (5★), Embrace New Education (2nd trait), Inscribe Superior Blood Rune, Manifest Apex Perfection (Congenital Ranks 3–5), and Forge Blood Golem. |
 | `events/bm_blood_golem_events.txt` | `blood_golem` | Event option `bm_cast_blood_magic_superior.001.create_blood_golem` | Golem crafting outcome (`.001`) and repeatable trait-shaping Learning duels (`.002`). |
 | `events/bm_channel_lifeforce_bloodline_events.txt` | `bm_channel_lifeforce_bloodline` | Event `bm_cast_blood_magic_major.001` | Bestows permanent supernatural house modifiers. |

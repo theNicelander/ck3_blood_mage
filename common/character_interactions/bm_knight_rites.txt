@@ -1,5 +1,6 @@
 ﻿bm_anoint_knight_interaction = {
 	category = interaction_category_bm_blood_magic
+	icon = bm_anoint_knight_interaction
 	auto_accept = yes
 	common_interaction = yes
 	desc = bm_anoint_knight_interaction_desc
@@ -42,12 +43,12 @@
 	on_accept = {
 		debug_log = "BloodMageInteraction: anoint_knight | Actor: [actor.GetShortUINameNoTooltip] -> Recipient: [recipient.GetShortUINameNoTooltip]"
 		scope:actor = {
-			blood_magic_used_minor = yes
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_anoint_knight_toast
 				left_icon = scope:actor
 				right_icon = scope:recipient
+				blood_magic_used_minor = yes
 				scope:recipient = {
 					add_character_modifier = {
 						modifier = bm_anointed_champion_modifier
@@ -91,8 +92,8 @@
 		}
 	}
 	ai_targets = {
-		ai_recipients = knights
 		ai_recipients = courtiers
+		ai_recipients = vassals
 	}
 	ai_will_do = {
 		base = 25
@@ -105,6 +106,7 @@
 
 bm_ritual_spar_interaction = {
 	category = interaction_category_bm_blood_magic
+	icon = bm_ritual_spar_interaction
 	auto_accept = yes
 	common_interaction = yes
 	desc = bm_ritual_spar_interaction_desc
@@ -322,9 +324,9 @@ bm_ritual_spar_interaction = {
 		}
 	}
 	ai_targets = {
-		ai_recipients = knights
 		ai_recipients = courtiers
-		ai_recipients = friends
+		ai_recipients = vassals
+		ai_recipients = scripted_relations
 	}
 	ai_will_do = {
 		base = 30
@@ -341,6 +343,7 @@ bm_ritual_spar_interaction = {
 
 bm_cull_champion_interaction = {
 	category = interaction_category_bm_blood_magic
+	icon = bm_cull_champion_interaction
 	auto_accept = yes
 	common_interaction = yes
 	desc = bm_cull_champion_interaction_desc
@@ -439,10 +442,11 @@ bm_cull_champion_interaction = {
 	ai_targets = {
 		ai_recipients = prisoners
 		ai_recipients = courtiers
-		ai_recipients = knights
+		ai_recipients = vassals
 	}
 	ai_will_do = {
 		base = 10
+		ai_willingness_to_use_hostile_magic = yes
 		modifier = {
 			factor = 2
 			ai_compassion < 0
@@ -450,13 +454,16 @@ bm_cull_champion_interaction = {
 		modifier = {
 			factor = 0
 			scope:recipient = {
-				is_child_of = scope:actor
-			}
-		}
-		modifier = {
-			factor = 0
-			scope:recipient = {
-				is_spouse_of = scope:actor
+				OR = {
+					is_child_of = scope:actor
+					is_spouse_of = scope:actor
+					is_close_family_of = scope:actor
+					is_primary_heir_of = scope:actor
+					has_relation_friend = scope:actor
+					has_relation_best_friend = scope:actor
+					has_relation_lover = scope:actor
+					has_relation_soulmate = scope:actor
+				}
 			}
 		}
 	}

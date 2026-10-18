@@ -433,6 +433,9 @@ bm_interpersonal_events.0003 = {
 			}
 			hidden_effect = {
 				bm_recount_lifeforce_stacks_effect = yes
+				scope:knight = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
 			}
 		}
 	}
@@ -590,7 +593,7 @@ bm_interpersonal_events.0004 = {
 					add_trait = lifestyle_blademaster
 				}
 				else = {
-					add_prowess = 4
+					add_prowess_skill = 4
 				}
 			}
 			add_shared_bm_bk_xp = {
@@ -783,6 +786,9 @@ bm_interpersonal_events.0005 = {
 			}
 			hidden_effect = {
 				bm_recount_lifeforce_stacks_effect = yes
+				scope:courtier = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
 			}
 		}
 	}

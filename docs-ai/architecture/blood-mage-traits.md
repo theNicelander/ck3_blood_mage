@@ -59,7 +59,7 @@ All routes invoke `bm_become_blood_mage_effect` or `bm_become_blood_knight_effec
 - `bm_blood_cultist_become_blood_mage_decision`: Decision for Blóðtrú faithful; initiation duel against Egill Skallagrímsson (`bm_geyser_duel.0001`) in Reykjavik or Tsushima (`piety_level >= 2`, costs 1 Devotion level; Learning duel -> Blood Mage, Prowess duel -> Blood Knight).
 - `bm_enhance_blood_ritual_decision`: Decision for non-faithful with qualifying occult traits/stats; identical Geyser duel in Reykjavik or Tsushima (`piety_level >= 2`, costs 1 Devotion level).
 - `grant_blood_magic_interaction`: Blood Mage initiates courtier/kin (`100` Piety + Major Lifeforce OR `250` Piety + Minor Lifeforce; awards `+4`/`+5` or `+2` `bloodline` XP).
-- `make_blood_knight_interaction`: Blood Knight initiates sworn knight/courtier (`100` Piety + Major Lifeforce OR `250` Piety + Minor Lifeforce; awards `+4` or `+2` `vanguard` XP).
+- `make_blood_knight_interaction`: Blood Knight initiates kin/spouse/knight/courtier (`100` Piety + Major Lifeforce OR `250` Piety + Minor Lifeforce; awards `+4`/`+5` or `+2` `vanguard` XP).
 - `ask_for_blood_magic_interaction`: Non-mage asks friend/lover/soulmate/liege Blood Mage to teach them (actor pays `250` Piety; teacher consumes 1 Superior Lifeforce).
 - `bm_get_blood_magic_from_prisoner_interaction`: Non-mage forcibly steals `lifestyle_blood_mage` from an imprisoned Blood Mage (`100` Piety, skill duel).
 - `convert_to_blood_magic_from_witch`: Player witch swaps witch trait/secret for `lifestyle_blood_mage`.

@@ -83,7 +83,7 @@ bm_cast_blood_magic_major.001 = {
 					add_character_modifier = { modifier = lifeforce_modifier_superior }
 					add_shared_bm_bk_xp = {
 						TRACK = ancient
-						XP = 8
+						XP = 3
 					}
 					hidden_effect = {
 						bm_recount_lifeforce_stacks_effect = yes
@@ -107,7 +107,7 @@ bm_cast_blood_magic_major.001 = {
 					temporary_negative_lifeforce_effect_major_1_year = yes
 					add_shared_bm_bk_xp = {
 						TRACK = ancient
-						XP = 5
+						XP = 3
 					}
 					hidden_effect = {
 						bm_recount_lifeforce_stacks_effect = yes
@@ -131,7 +131,7 @@ bm_cast_blood_magic_major.001 = {
 					add_character_modifier = { modifier = lifeforce_modifier_major }
 					add_shared_bm_bk_xp = {
 						TRACK = ancient
-						XP = 2
+						XP = 1
 					}
 					hidden_effect = {
 						bm_recount_lifeforce_stacks_effect = yes
@@ -321,7 +321,7 @@ bm_cast_blood_magic_major.001 = {
 		}
 	}
 
-	# Manifest Perfection (Congenital Traits up to Rank 2)
+	# Manifest Trait (Congenital Traits up to Rank 2)
 	option = {
 		name = bm_cast_blood_magic_major.001.manifest_traits
 		trigger = {
@@ -331,11 +331,14 @@ bm_cast_blood_magic_major.001 = {
 			}
 			piety_level >= 3
 			piety >= 200
-			NOT = {
-				AND = {
-					has_trait_rank = { trait = intellect_good rank >= 2 }
-					has_trait_rank = { trait = physique_good rank >= 2 }
-					has_trait_rank = { trait = beauty_good rank >= 2 }
+			custom_description = {
+				text = bm_manifest_traits_max_rank_2_tt
+				NOT = {
+					AND = {
+						has_trait_rank = { trait = intellect_good rank >= 2 }
+						has_trait_rank = { trait = physique_good rank >= 2 }
+						has_trait_rank = { trait = beauty_good rank >= 2 }
+					}
 				}
 			}
 		}

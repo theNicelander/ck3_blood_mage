@@ -9,6 +9,18 @@
 		save_scope_as = dying_ruler
 		if = {
 			limit = {
+				exists = var:bm_anointed_heir
+				var:bm_anointed_heir = {
+					is_alive = yes
+					has_character_modifier = bm_anointed_heir_modifier
+				}
+			}
+			var:bm_anointed_heir = {
+				save_scope_as = anointed_heir
+			}
+		}
+		else_if = {
+			limit = {
 				exists = primary_heir
 				primary_heir = {
 					is_alive = yes
@@ -29,20 +41,10 @@
 			}
 		}
 		if = {
-			limit = {
-				NOT = { exists = scope:anointed_heir }
-				exists = dynasty
-			}
-			random_dynasty_member = {
-				limit = {
-					is_alive = yes
-					has_character_modifier = bm_anointed_heir_modifier
-				}
-				save_scope_as = anointed_heir
-			}
-		}
-		if = {
 			limit = { exists = scope:anointed_heir }
+			scope:anointed_heir = {
+				remove_character_modifier = bm_anointed_heir_modifier
+			}
 			# 1. Awaken class trait if heir lacks both
 			if = {
 				limit = {

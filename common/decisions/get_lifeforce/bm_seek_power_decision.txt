@@ -16,61 +16,9 @@
     effect = {
         debug_log = "BloodMagicDecision: seek_power"
         debug_log_scopes = yes
-        duel = {
-            skills = { prowess learning }
-            value = 0
-            35 = {
-                desc = seek_power.duel.animal
-                trigger_event = { id = seek_power.002 }
-            }
-            20 = {
-                desc = seek_power.duel.beast_lair
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 0.5
-                }
-                trigger_event = { id = seek_power.008 }
-            }
-            20 = {
-                desc = seek_power.duel.homestead
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 0.5
-                }
-                trigger_event = { id = seek_power.009 }
-            }
-            25 = {
-                desc = seek_power.duel.traveler
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 1.5
-                }
-                trigger_event = { id = seek_power.003 }
-            }
-            15 = {
-                desc = seek_power.duel.outlaw_camp
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 1.0
-                }
-                trigger_event = { id = seek_power.010 }
-            }
-            10 = {
-                desc = seek_power.duel.crimson_rite
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 1.0
-                }
-                trigger_event = { id = seek_power.011 }
-            }
-            5 = {
-                desc = seek_power.duel.legendary
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 0.5
-                }
-                trigger_event = { id = seek_power.004 }
-            }
+        custom_tooltip = seek_power_decision_effect_tooltip
+        hidden_effect = {
+            trigger_event = { id = seek_power.001 }
         }
     }
 

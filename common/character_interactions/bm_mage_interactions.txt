@@ -1,5 +1,6 @@
 ﻿bm_siphon_lifeforce_reserves_interaction = {
     category = interaction_category_bm_blood_magic
+    icon = bm_siphon_lifeforce_reserves_interaction
     auto_accept = yes
     desc = bm_siphon_lifeforce_reserves_interaction_desc
     interface_priority = 186
@@ -340,7 +341,7 @@
     ai_frequency = 6
     ai_targets = {
         ai_recipients = prisoners
-        ai_recipients = rivals
+        ai_recipients = scripted_relations
         ai_recipients = courtiers
     }
     ai_will_do = {
@@ -376,6 +377,7 @@
 
 bm_occult_mage_duel_interaction = {
     category = interaction_category_bm_blood_magic
+    icon = bm_occult_mage_duel_interaction
     auto_accept = yes
     desc = bm_occult_mage_duel_interaction_desc
     interface_priority = 185
@@ -421,7 +423,6 @@ bm_occult_mage_duel_interaction = {
     on_accept = {
         debug_log = "BloodMageInteraction: bm_occult_mage_duel | Actor: [actor.GetShortUINameNoTooltip] -> Recipient: [recipient.GetShortUINameNoTooltip]"
         scope:actor = {
-            blood_magic_used_minor = yes
             duel = {
                 skills = { learning prowess }
                 target = scope:recipient
@@ -433,12 +434,20 @@ bm_occult_mage_duel_interaction = {
                         value = scope:duel_value
                         multiplier = 3
                     }
+                    modifier = {
+                        add = {
+                            value = bm_blood_mage_total_trait_xp_value
+                            subtract = scope:recipient.bm_blood_mage_total_trait_xp_value
+                            multiply = 0.1
+                        }
+                    }
                     send_interface_toast = {
                         type = event_toast_effect_good
                         title = bm_occult_mage_duel.critical_success_title
                         left_icon = scope:actor
                         right_icon = scope:recipient
 
+                        blood_magic_used_minor = yes
                         add_character_modifier = { modifier = lifeforce_modifier_major }
                         if = {
                             limit = { has_trait = lifestyle_blood_mage }
@@ -454,6 +463,21 @@ bm_occult_mage_duel_interaction = {
                                 years = 5
                             }
                             add_trait = wounded_1
+                            add_opinion = {
+                                target = scope:actor
+                                modifier = lifedrained_me
+                                opinion = -50
+                            }
+                            if = {
+                                limit = {
+                                    NOT = { has_relation_rival = scope:actor }
+                                    NOT = { has_relation_nemesis = scope:actor }
+                                }
+                                set_relation_rival = {
+                                    target = scope:actor
+                                    reason = rival_at_ceremony
+                                }
+                            }
                         }
                         hidden_effect = {
                             bm_recount_lifeforce_stacks_effect = yes
@@ -468,12 +492,20 @@ bm_occult_mage_duel_interaction = {
                         value = scope:duel_value
                         multiplier = 1.5
                     }
+                    modifier = {
+                        add = {
+                            value = bm_blood_mage_total_trait_xp_value
+                            subtract = scope:recipient.bm_blood_mage_total_trait_xp_value
+                            multiply = 0.1
+                        }
+                    }
                     send_interface_toast = {
                         type = event_toast_effect_good
                         title = bm_occult_mage_duel.success_title
                         left_icon = scope:actor
                         right_icon = scope:recipient
 
+                        blood_magic_used_minor = yes
                         if = {
                             limit = { has_trait = lifestyle_blood_mage }
                             add_xp_bm_dynamic = { TRACK = hematurgy XP = 3 }
@@ -488,6 +520,11 @@ bm_occult_mage_duel_interaction = {
                                 years = 3
                             }
                             add_stress = 35
+                            add_opinion = {
+                                target = scope:actor
+                                modifier = lifedrained_me
+                                opinion = -35
+                            }
                         }
                         hidden_effect = {
                             bm_recount_lifeforce_stacks_effect = yes
@@ -502,12 +539,20 @@ bm_occult_mage_duel_interaction = {
                         value = scope:duel_value
                         multiplier = -2
                     }
+                    modifier = {
+                        add = {
+                            value = scope:recipient.bm_blood_mage_total_trait_xp_value
+                            subtract = bm_blood_mage_total_trait_xp_value
+                            multiply = 0.1
+                        }
+                    }
                     send_interface_toast = {
                         type = event_toast_effect_bad
                         title = bm_occult_mage_duel.defeat_title
                         left_icon = scope:actor
                         right_icon = scope:recipient
 
+                        blood_magic_used_minor = yes
                         add_character_modifier = {
                             modifier = lifeforce_modifier_negative_minor
                             years = 1
@@ -516,6 +561,13 @@ bm_occult_mage_duel_interaction = {
                         add_shared_bm_bk_xp = {
                             TRACK = enlightenment
                             XP = 1
+                        }
+                        scope:recipient = {
+                            add_opinion = {
+                                target = scope:actor
+                                modifier = lifedrained_me
+                                opinion = -25
+                            }
                         }
                         hidden_effect = {
                             bm_recount_lifeforce_stacks_effect = yes
@@ -530,7 +582,7 @@ bm_occult_mage_duel_interaction = {
     ai_frequency = 12
     ai_targets = {
         ai_recipients = scripted_relations
-        ai_recipients = rivals
+        ai_recipients = neighboring_rulers
         ai_recipients = courtiers
     }
     ai_will_do = {
