@@ -22,15 +22,14 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
   - **Bloodline**: Increases domain limit, county tax, development growth, and building construction speed.
   - **Hematurgy**: Unlocks hostile scheme power, scheme defense, dread gain, and natural tyranny decay.
 
-- **Crimson Sworn-Guard & Knight Rites**:
-  - **Crimson Sworn-Guard Court Position**: Employ up to 2 dedicated blood-bound bodyguards (Blood Knights or immortal Blood Golems) who dramatically cut enemy hostile scheme success chances against you (-2 to -15) and bolster baseline dread (+5 to +15) based on their prowess, martial, and vanguard/slaughter track experience.
+- **Blood Knight Rites & Champion Sacrifices**:
   - **Anoint Vanguard Champion**: Consecrate knights or Blood Knight courtiers with Minor Lifeforce to bestow +4 Prowess, +0.5 Health, and health penalty negation for 5 years (`bm_anointed_champion_modifier`).
   - **Ritual Sparring**: Test martial prowess against sworn knights, Blood Knight courtiers, or martial friends in non-lethal duels (2-year cooldown), sharpening combat acumen and condensing a drop of Minor Lifeforce on critical victory.
   - **Cull Fallen Champion**: Offer critically broken followers or formidable captured warriors (Prowess 12+ or Blood Knights) upon the sacrificial altar for 1 Major Lifeforce and Slaughter/Hematurgy XP, rolling a prowess-scaled chance (up to 50%) to condense 1 Superior Lifeforce.
 
 - **Go on a Blood Hunt Overhaul & Wilderness Expansion**:
   - Re-themed from the meditative "Seek Power in Nature's Domain" into **Go on a Blood Hunt**, open to both **Blood Mages** and **Blood Knights**.
-  - **Direct Encounter Resolution**: Clicking **Begin the hunt** resolves a 7-way Prowess + Learning encounter duel directly on execution, displaying exact encounter odds in the decision preview and bypassing filler clicks.
+  - **Surprise Encounter Resolution**: Embarking on a Blood Hunt preserves narrative suspense by hiding encounter odds in the decision preview behind an immersive wilderness tooltip, resolving encounters via a hidden dispatcher while maintaining full skill duel odds within the events.
   - **Class-Tailored Lonely Road Encounter**: Blood Knights confront a wandering warrior accompanied by a formidable sworn escort knight (opening Single Combat battlefield duels and martial recruitment), while Blood Mages confront the lone traveler (emphasizing covert lifedrain, trait theft, or learning persuasion).
   - **Expanded 7-Encounter Pool**:
     - *The Stag's Last Stand*: Run down a royal stag for Minor Lifeforce and Slaughter (Knight) / Hematurgy (Mage) XP.
@@ -123,7 +122,7 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
   - **Ketsudō** (Japanese & Shinto-Syncretic): Eastern warrior-mystic tradition centered on honor, discipline, and ritual dueling.
   - **Xuédào** (Chinese & Sinitic): Daoist-inspired internal alchemy focusing on vital energy cultivation and immortality.
 - **Ancestor Worship Tenet**: Commemorate departed dynastic forebears to earn piety, renown, and spiritual defense.
-- **Eminent Holy Sites**: Standardized holy sites across Iceland, Scandinavia, Ireland, Central Europe, China, and Japan, offering unique realm-wide spiritual bonuses.
+- **Eminent Holy Sites**: Standardized holy sites across Iceland, Scandinavia, Ireland, Central Europe, China, and Japan, offering unique realm-wide spiritual bonuses (including Tsushima as the Eastern initiation eminent holy site for Ketsudō).
 - **Challenge the Hermit of Reykjavík & Tsushima**: Landed rulers and wanderers can travel to remote geothermal springs to challenge the legendary 100-year-old warrior-mage **Egill Skallagrímsson** in a lethal duel to unlock blood magic secrets.
 - **Reformation Repair System**: A built-in decision to cleanly resolve holy site and reformation locks when creating customized occult faiths.
 
