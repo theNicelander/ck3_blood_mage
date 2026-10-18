@@ -45,12 +45,6 @@ Living technical specification for the Blood Knight subsystem (`lifestyle_blood_
   - `bm_cull_champion_interaction`: Blood sacrifice of prowess >= 12 prisoner / Blood Knight prisoner or critically broken follower (`50` Piety) -> Executes target (`death_lifedrain_reason`), yields **1 Major Lifeforce**, `+3` `slaughter` (Knight) / `+3` `hematurgy` (Mage) XP, and rolls `1 × prowess` chance (capped at 50%) for **1 Superior Lifeforce**.
   - `bm_inscribe_rune_other_interaction`: Carve Minor (`+4` `benediction` XP) or Major (`+5` `benediction` XP) Galdrastafir runes onto courtiers, kin, knights, or golems.
   - `bm_heal_ailment`: Full healing access across Minor, Major, and Deadly ailments (`37` conditions) on self (`+2`/`+4` `enlightenment`, `+8` `benediction`) and comrades (`+1`/`+2` `vanguard` + `benediction`, `+8` `benediction`).
-- **Crimson Sworn-Guard Court Position (`bm_blood_bodyguard_court_position`):**
-  - Specialized bodyguard court position (up to 2 positions) available to Blood Mages and Blood Knights.
-  - Eligibility: Follower/courtier with `lifestyle_blood_knight` or belonging to `house:bm_house_golem`, combatant-eligible, not imprisoned.
-  - Aptitude: Scales with Prowess ($\times 2$), Martial, `vanguard` and `slaughter` track XP ($\times 0.25$), `loyal` (`+20`), and `giant` (`+15`).
-  - Employer Buffs: Scaling hostile scheme protection (`-2` to `-15` success chance, `-2` to `-10` max chance) and Dread baseline (`+5` to `+15`).
-  - Guard Buff: `+4` Prowess, `+0.5` Health, `+0.5` Monthly Prestige. Salary: `0.5` Gold.
 - **Full Minor, Major & Superior Grimoire Access:**
   - Self-inscribe Minor (`+4` `ancient`), Major (`+5` `ancient`), and Superior (`+10` `ancient`) Galdrastafir Blood Runes.
   - Unlock and level all 5 `lifestyle_blood_power` tracks (`+3` `enlightenment` + `+10` Power XP).
@@ -82,7 +76,6 @@ Each track has 10 tiers (`10, 20, ..., 100` XP). Vitality step = `+0.1` Health, 
 | Prevalence game rule | `common/game_rules/bm_game_rules.txt` (`bm_blood_knight_prevalence`) |
 | Make & empower interactions | `common/character_interactions/bm_blood_knight_interactions.txt` |
 | Knight rites & sparring | `common/character_interactions/bm_knight_rites.txt` |
-| Crimson Sworn-Guard court position | `common/court_positions/types/bm_court_positions.txt` |
 | Healing & ailment removal | `common/character_interactions/bm_cure_illness_interactions.txt`, `events/bm_heal_ailment_events.txt` |
 | Superior magic decision & events | `common/decisions/cast_magic/bm_cast_blood_magic_superior.txt`, `events/bm_cast_blood_magic_superior_events.txt` |
 | Battlefield victory/defeat & tournament hooks | `common/on_action/bm_combat_on_actions.txt`, `common/scripted_effects/bm_combat_effects.txt` |
