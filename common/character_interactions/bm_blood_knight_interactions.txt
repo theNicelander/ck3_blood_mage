@@ -23,17 +23,13 @@
             has_trait = lifestyle_blood_knight
         }
         scope:recipient = {
-            is_courtier_of = scope:actor
             NOT = { this = scope:actor }
             NOT = { has_trait = lifestyle_blood_mage }
             NOT = { has_trait = lifestyle_blood_knight }
+            bm_is_valid_positive_magic_target_trigger = { ACTOR = scope:actor }
         }
     }
     is_valid_showing_failures_only = {
-        custom_description = {
-            text = recipient_must_be_knight_tt
-            scope:recipient = { is_knight_of = scope:actor }
-        }
         custom_description = {
             text = make_blood_knight_interaction_knight_requirement
             scope:actor = {
@@ -137,9 +133,25 @@
                     left_icon = scope:actor
                     right_icon = scope:recipient
                     remove_character_modifier = lifeforce_modifier_major
-                    add_blood_knight_xp = {
-                        TRACK = vanguard
-                        XP = 4
+                    if = {
+                        limit = {
+                            scope:recipient = {
+                                OR = {
+                                    is_child_of = scope:actor
+                                    dynasty ?= scope:actor.dynasty
+                                }
+                            }
+                        }
+                        add_blood_knight_xp = {
+                            TRACK = vanguard
+                            XP = 5
+                        }
+                    }
+                    else = {
+                        add_blood_knight_xp = {
+                            TRACK = vanguard
+                            XP = 4
+                        }
                     }
                     scope:recipient = {
                         bm_become_blood_knight_effect = yes
@@ -167,18 +179,45 @@
     }
     ai_frequency = 6
     ai_will_do = {
-        base = 33
+        base = 0
         ai_willingness_to_do_positive_magic = yes
         bm_blood_knight_prevalence_ai_acquisition_modifier = yes
+
+        # Prioritisation hierarchy: spouse > children > knights > councillors > prowess > dynasty
+        modifier = {
+            scope:recipient = { is_spouse_of = scope:actor }
+            add = 100
+        }
+        modifier = {
+            scope:recipient = { is_child_of = scope:actor }
+            add = 75
+        }
+        modifier = {
+            scope:recipient = { is_knight_of = scope:actor }
+            add = 50
+        }
         modifier = {
             scope:recipient = { prowess >= 12 }
             add = 30
+        }
+        modifier = {
+            scope:recipient = { is_councillor_of = scope:actor }
+            add = 25
+        }
+        modifier = {
+            scope:recipient = {
+                exists = dynasty
+                exists = scope:actor.dynasty
+                dynasty = scope:actor.dynasty
+            }
+            add = 25
         }
     }
 }
 
 empower_blood_knight_interaction = {
     category = interaction_category_bm_blood_magic
+    icon = empower_blood_knight_interaction
     auto_accept = yes
     desc = empower_blood_knight_interaction_desc
     interface_priority = 189
@@ -186,9 +225,9 @@ empower_blood_knight_interaction = {
     is_shown = {
         scope:actor = { has_trait = lifestyle_blood_knight }
         scope:recipient = {
-            is_courtier_of = scope:actor
             NOT = { this = scope:actor }
             has_trait = lifestyle_blood_knight
+            bm_is_valid_positive_magic_target_trigger = { ACTOR = scope:actor }
         }
     }
     is_valid_showing_failures_only = {
@@ -249,7 +288,7 @@ empower_blood_knight_interaction = {
                     title = empower_blood_knight_interaction
                     left_icon = scope:actor
                     right_icon = scope:recipient
-                    remove_character_modifier = lifeforce_modifier_major
+                    blood_magic_used_major = yes
                     add_blood_knight_xp = { TRACK = benediction XP = 4 }
                     scope:recipient = {
                         add_blood_knight_xp = { TRACK = vanguard XP = 10 }
@@ -274,7 +313,7 @@ empower_blood_knight_interaction = {
                     title = empower_blood_knight_interaction
                     left_icon = scope:actor
                     right_icon = scope:recipient
-                    remove_character_modifier = lifeforce_modifier_minor
+                    blood_magic_used_minor = yes
                     add_blood_knight_xp = { TRACK = benediction XP = 2 }
                     scope:recipient = {
                         add_blood_knight_xp = { TRACK = vanguard XP = 5 }
