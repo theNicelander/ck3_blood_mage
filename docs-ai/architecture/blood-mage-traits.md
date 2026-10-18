@@ -1,17 +1,17 @@
 # Blood Mage Traits
 
-Living technical specification for the Blood Mage, Blood Knight, and Blood Empowerment lifestyle traits subsystem.
+Living technical specification for the Blood Mage, Blood Knight, and Blood Power lifestyle traits subsystem.
 
 ## Executive Summary
 
 - **How to get it:** Acquired through `bm_become_blood_mage_effect` (or `bm_become_blood_knight_effect`) via self-initiation against Egill Skallagrímsson in Reykjavik or Tsushima (`bm_geyser_duel.0001`), mentoring from a friend/lover/liege (`ask_for_blood_magic_interaction`), initiation by an existing Blood Mage (`grant_blood_magic_interaction`) or Blood Knight (`make_blood_knight_interaction`), siphoning an imprisoned mage (`bm_get_blood_magic_from_prisoner_interaction`), witch conversion (`convert_to_blood_magic_from_witch`), or hereditary birth (`25%` single parent, `100%` both parents, `0.20%` spontaneous birth).
 - **What it does:** Marks the character as an occult **Blood Mage** (`lifestyle_blood_mage`) or martial **Blood Knight** (`lifestyle_blood_knight`), granting base `+10` Same Trait Opinion (`same_opinion = 10`), unlocking the Blood Magic Situation panel (`bm_blood_mage_story`), enabling Minor/Major/Superior Lifeforce spellcasting, and progressing across 5 lifestyle tracks (max 100 XP each).
-- **How to level it up:** Spending Lifeforce on spells, interactions, or combat hooks awards XP in the corresponding track (`add_xp_bm_dynamic`, `add_shared_bm_bk_xp`, `add_blood_knight_xp`, `add_blood_empowerment_xp`). Passive yearly growth comes from the yearly pulse (`ancient`, plus `enlightenment` for Knights), active house blood modifiers (`bloodline`), and yearly attunements (guaranteed `+1` XP, doubled to `+2` XP by Superior **Hulinhjálmur**).
+- **How to level it up:** Spending Lifeforce on spells, interactions, or combat hooks awards XP in the corresponding track (`add_xp_bm_dynamic`, `add_shared_bm_bk_xp`, `add_blood_knight_xp`, `add_blood_power_xp`). Passive yearly growth comes from the yearly pulse (`ancient`, plus `enlightenment` for Knights), active house blood modifiers (`bloodline`), and yearly attunements (guaranteed `+1` XP, doubled to `+2` XP by Superior **Hulinhjálmur**).
 
 ### Master Cumulative Track Benefits (10 XP / 50 XP / 100 XP)
 
 Each track has 10 progression levels (10 to 100 XP). In CK3, each unlocked tier applies additively.
-*Vitality Baseline & Milestones:* In `lifestyle_blood_mage` and `lifestyle_blood_knight`, tiers 10–40 and 60–90 grant the standard **Vitality Step** (`+0.1` Health, `+2.5` Life Expectancy, `+1.25` Year Fertility, `+1` Epidemic Resistance; total 8 steps = `+0.8` Health, `+20` Life Exp, `+10` Fertility Yrs, `+8` Epidemic Res per track; across 5 tracks: `+4.0` Health, `+100` Life Exp, `+50` Fertility Yrs, `+40` Epidemic Res) alongside track-specific incremental benefits. (For `lifestyle_blood_empowerment`, vitality step remains `+2` Life Exp / `+1` Fertility Yr).
+*Vitality Baseline & Milestones:* In `lifestyle_blood_mage` and `lifestyle_blood_knight`, tiers 10–40 and 60–90 grant the standard **Vitality Step** (`+0.1` Health, `+2.5` Life Expectancy, `+1.25` Year Fertility, `+1` Epidemic Resistance; total 8 steps = `+0.8` Health, `+20` Life Exp, `+10` Fertility Yrs, `+8` Epidemic Res per track; across 5 tracks: `+4.0` Health, `+100` Life Exp, `+50` Fertility Yrs, `+40` Epidemic Res) alongside track-specific incremental benefits. (For `lifestyle_blood_power`, vitality step remains `+2` Life Exp / `+1` Fertility Yr).
 Tiers 50 and 100 contain **no incremental per-track bonuses**, functioning purely as milestones and capstones: Tier 50 focuses on Devotion-scaling powers (`<stat>_per_piety_level = 1`) or milestone abilities; Tier 100 provides the Devotion Apex (`character_max_piety_level_add = 1` for shared tracks) and universal age-lock (`no_prowess_loss_from_age = yes`).
 
 #### 1. Blood Mage (`lifestyle_blood_mage`)
@@ -36,7 +36,7 @@ Base: `same_opinion = 10`, `ruler_designer_cost = 50`. Vitality baseline applied
 | `enlightenment` *(shared)* | Identical to Blood Mage `enlightenment` | Identical to Blood Mage `enlightenment` | Identical to Blood Mage `enlightenment` (`+2` Learning per Piety Level, `no_prowess_loss_from_age = yes`) |
 | `benediction` *(shared)* | Identical to Blood Mage `benediction` | Identical to Blood Mage `benediction` | Identical to Blood Mage `benediction` (`+2` Diplomacy per Piety Level, `no_prowess_loss_from_age = yes`) |
 
-#### 3. Blood Empowerment (`lifestyle_blood_empowerment`)
+#### 3. Blood Power (`lifestyle_blood_power`)
 Base: None. Automatically acquired alongside `lifestyle_blood_mage` or `lifestyle_blood_knight` with 0 XP across all tracks so both traits appear adjacent in the UI character sheet. Omits universal Vitality to keep tooltips concise (vitality is granted by primary traits). 50 and 100 XP milestones provide signature power capstones.
 
 | Track | 10 XP (1st Step) | 50 XP (Cumulative Milestone) | 100 XP (Cumulative Capstone) |
@@ -50,7 +50,7 @@ Base: None. Automatically acquired alongside `lifestyle_blood_mage` or `lifestyl
 ## Core Concepts
 
 ### Mutual Exclusivity & Devotion Apex
-- **Permanent Class Choice:** `lifestyle_blood_mage` and `lifestyle_blood_knight` are mutually exclusive lifestyle paths (`bm_become_blood_mage_effect` and `bm_become_blood_knight_effect` block acquisition if the character already holds the counterpart trait; only historical Egill Skallagrímsson holds both). Both paths automatically grant base `lifestyle_blood_empowerment` concurrently to position the icons adjacent in the character UI.
+- **Permanent Class Choice:** `lifestyle_blood_mage` and `lifestyle_blood_knight` are mutually exclusive lifestyle paths (`bm_become_blood_mage_effect` and `bm_become_blood_knight_effect` block acquisition if the character already holds the counterpart trait; only historical Egill Skallagrímsson holds both). Both paths automatically grant base `lifestyle_blood_power` concurrently to position the icons adjacent in the character UI.
 - **Inheritable Non-Genetic Traits:** Both `lifestyle_blood_mage` and `lifestyle_blood_knight` use `inheritable = yes` (without `genetic = yes`) for deterministic `25%` single-parent (`50%` with Superior **Feingur**) and `100%` dual-parent inheritance, plus `0.20%` spontaneous birth/creation rolls audited by campaign prevalence rules.
 - **Devotion Apex Capstones:** Capstones at 100 XP in the 3 shared tracks (`ancient`, `enlightenment`, `benediction`) grant massive Devotion-scaling powers (`+50%` Devotion Impact on `ancient`, `+2` Learning per Devotion level on `enlightenment`, and `+2` Diplomacy per Devotion level on `benediction`) on both Blood Mage and Blood Knight.
 - **Prowess Age Lock:** Every track capstone at 100 XP across all 12 tracks grants `no_prowess_loss_from_age = yes`.
@@ -72,9 +72,9 @@ All routes invoke `bm_become_blood_mage_effect` or `bm_become_blood_knight_effec
 | --- | --- |
 | Blood Mage trait | `common/traits/bm_blood_mage_trait.txt` |
 | Blood Knight trait | `common/traits/bm_blood_knight_trait.txt` |
-| Blood Empowerment trait | `common/traits/bm_blood_empowerment_trait.txt` |
-| XP helpers (`add_xp_bm_dynamic`, `add_shared_bm_bk_xp`, `add_blood_knight_xp`, `add_blood_empowerment_xp`) | `common/scripted_effects/bm_trait_track_xp_gain_effects.txt` |
+| Blood Power trait | `common/traits/bm_blood_power_trait.txt` |
+| XP helpers (`add_xp_bm_dynamic`, `add_shared_bm_bk_xp`, `add_blood_knight_xp`, `add_blood_power_xp`) | `common/scripted_effects/bm_trait_track_xp_gain_effects.txt` |
 | Lifecycle & acquisition effects | `common/scripted_effects/bm_blood_mage_lifecycle_effects.txt` |
 | Total trait progression value | `common/script_values/bm_blood_mage_portrait_values.txt` |
 | Geyser initiation duels | `events/bm_geyser_duel_events.txt` |
-| Blood Empowerment event | `events/bm_blood_empowerment_event.txt` |
+| Blood Power event | `events/bm_blood_power_event.txt` |

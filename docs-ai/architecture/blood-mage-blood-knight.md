@@ -40,7 +40,7 @@ Living technical specification for the Blood Knight subsystem (`lifestyle_blood_
   - `bm_heal_ailment`: Full healing access across Minor, Major, and Deadly ailments (`37` conditions) on self (`+2`/`+4` `enlightenment`, `+8` `benediction`) and comrades (`+1`/`+2` `vanguard` + `benediction`, `+8` `benediction`).
 - **Full Minor, Major & Superior Grimoire Access:**
   - Self-inscribe Minor (`+4` `ancient`), Major (`+5` `ancient`), and Superior (`+10` `ancient`) Galdrastafir Blood Runes.
-  - Unlock and level all 5 `lifestyle_blood_empowerment` tracks (`+3` `enlightenment` + `+10` Empowerment XP).
+  - Unlock and level all 5 `lifestyle_blood_power` tracks (`+3` `enlightenment` + `+10` Power XP).
   - Upgrade Education (1★–4★, `+5` `enlightenment`), Master Education to 5★ (`+20` `enlightenment`), and Embrace 2nd Education (`+10` `enlightenment`).
   - Manifest Congenital Perfection Ranks 1–2 (`+4` `vanguard`) and Apex Ranks 3–5 (`+6` `vanguard`, `+2` `enlightenment`).
   - Empower Dynasty Bloodline (`+5` `vanguard` XP) and Forge Blood Golem (`+5` `vanguard` XP).
