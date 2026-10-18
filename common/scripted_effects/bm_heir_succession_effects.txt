@@ -1,0 +1,223 @@
+﻿bm_transfer_anointed_heir_legacy_effect = {
+	if = {
+		limit = {
+			OR = {
+				has_trait = lifestyle_blood_mage
+				has_trait = lifestyle_blood_knight
+			}
+		}
+		save_scope_as = dying_ruler
+		if = {
+			limit = {
+				exists = primary_heir
+				primary_heir = {
+					is_alive = yes
+					has_character_modifier = bm_anointed_heir_modifier
+				}
+			}
+			primary_heir = {
+				save_scope_as = anointed_heir
+			}
+		}
+		else = {
+			random_child = {
+				limit = {
+					is_alive = yes
+					has_character_modifier = bm_anointed_heir_modifier
+				}
+				save_scope_as = anointed_heir
+			}
+		}
+		if = {
+			limit = {
+				NOT = { exists = scope:anointed_heir }
+				exists = dynasty
+			}
+			random_dynasty_member = {
+				limit = {
+					is_alive = yes
+					has_character_modifier = bm_anointed_heir_modifier
+				}
+				save_scope_as = anointed_heir
+			}
+		}
+		if = {
+			limit = { exists = scope:anointed_heir }
+			# 1. Awaken class trait if heir lacks both
+			if = {
+				limit = {
+					scope:anointed_heir = {
+						NOT = { has_trait = lifestyle_blood_mage }
+						NOT = { has_trait = lifestyle_blood_knight }
+					}
+				}
+				if = {
+					limit = { has_trait = lifestyle_blood_mage }
+					scope:anointed_heir = {
+						bm_become_blood_mage_effect = yes
+					}
+				}
+				else_if = {
+					limit = { has_trait = lifestyle_blood_knight }
+					scope:anointed_heir = {
+						bm_become_blood_knight_effect = yes
+					}
+				}
+			}
+			# 2. Transfer 1 stack of each Lifeforce tier held by dying ruler
+			if = {
+				limit = { has_character_modifier = lifeforce_modifier_minor }
+				scope:anointed_heir = {
+					add_character_modifier = { modifier = lifeforce_modifier_minor }
+				}
+			}
+			if = {
+				limit = { has_character_modifier = lifeforce_modifier_major }
+				scope:anointed_heir = {
+					add_character_modifier = { modifier = lifeforce_modifier_major }
+				}
+			}
+			if = {
+				limit = { has_character_modifier = lifeforce_modifier_superior }
+				scope:anointed_heir = {
+					add_character_modifier = { modifier = lifeforce_modifier_superior }
+				}
+			}
+			scope:anointed_heir = {
+				bm_recount_lifeforce_stacks_effect = yes
+			}
+			# 3. Transfer 25% of trait track XP across active tracks
+			scope:anointed_heir = {
+				if = {
+					limit = { has_trait = lifestyle_blood_mage }
+					if = {
+						limit = { bm_anointed_transfer_ancient_xp_value > 0 }
+						add_trait_xp = {
+							trait = lifestyle_blood_mage
+							track = ancient
+							value = bm_anointed_transfer_ancient_xp_value
+						}
+					}
+					if = {
+						limit = { bm_anointed_transfer_enlightenment_xp_value > 0 }
+						add_trait_xp = {
+							trait = lifestyle_blood_mage
+							track = enlightenment
+							value = bm_anointed_transfer_enlightenment_xp_value
+						}
+					}
+					if = {
+						limit = { bm_anointed_transfer_benediction_xp_value > 0 }
+						add_trait_xp = {
+							trait = lifestyle_blood_mage
+							track = benediction
+							value = bm_anointed_transfer_benediction_xp_value
+						}
+					}
+					if = {
+						limit = { bm_anointed_transfer_bloodline_vanguard_xp_value > 0 }
+						add_trait_xp = {
+							trait = lifestyle_blood_mage
+							track = bloodline
+							value = bm_anointed_transfer_bloodline_vanguard_xp_value
+						}
+					}
+					if = {
+						limit = { bm_anointed_transfer_hematurgy_slaughter_xp_value > 0 }
+						add_trait_xp = {
+							trait = lifestyle_blood_mage
+							track = hematurgy
+							value = bm_anointed_transfer_hematurgy_slaughter_xp_value
+						}
+					}
+				}
+				if = {
+					limit = { has_trait = lifestyle_blood_knight }
+					if = {
+						limit = { bm_anointed_transfer_ancient_xp_value > 0 }
+						add_trait_xp = {
+							trait = lifestyle_blood_knight
+							track = ancient
+							value = bm_anointed_transfer_ancient_xp_value
+						}
+					}
+					if = {
+						limit = { bm_anointed_transfer_enlightenment_xp_value > 0 }
+						add_trait_xp = {
+							trait = lifestyle_blood_knight
+							track = enlightenment
+							value = bm_anointed_transfer_enlightenment_xp_value
+						}
+					}
+					if = {
+						limit = { bm_anointed_transfer_benediction_xp_value > 0 }
+						add_trait_xp = {
+							trait = lifestyle_blood_knight
+							track = benediction
+							value = bm_anointed_transfer_benediction_xp_value
+						}
+					}
+					if = {
+						limit = { bm_anointed_transfer_bloodline_vanguard_xp_value > 0 }
+						add_trait_xp = {
+							trait = lifestyle_blood_knight
+							track = vanguard
+							value = bm_anointed_transfer_bloodline_vanguard_xp_value
+						}
+					}
+					if = {
+						limit = { bm_anointed_transfer_hematurgy_slaughter_xp_value > 0 }
+						add_trait_xp = {
+							trait = lifestyle_blood_knight
+							track = slaughter
+							value = bm_anointed_transfer_hematurgy_slaughter_xp_value
+						}
+					}
+				}
+				if = {
+					limit = { has_trait = lifestyle_blood_power }
+					if = {
+						limit = { bm_anointed_transfer_dynasty_xp_value > 0 }
+						add_trait_xp = {
+							trait = lifestyle_blood_power
+							track = dynasty
+							value = bm_anointed_transfer_dynasty_xp_value
+						}
+					}
+					if = {
+						limit = { bm_anointed_transfer_mastery_xp_value > 0 }
+						add_trait_xp = {
+							trait = lifestyle_blood_power
+							track = mastery
+							value = bm_anointed_transfer_mastery_xp_value
+						}
+					}
+					if = {
+						limit = { bm_anointed_transfer_presence_xp_value > 0 }
+						add_trait_xp = {
+							trait = lifestyle_blood_power
+							track = presence
+							value = bm_anointed_transfer_presence_xp_value
+						}
+					}
+					if = {
+						limit = { bm_anointed_transfer_prosperity_xp_value > 0 }
+						add_trait_xp = {
+							trait = lifestyle_blood_power
+							track = prosperity
+							value = bm_anointed_transfer_prosperity_xp_value
+						}
+					}
+					if = {
+						limit = { bm_anointed_transfer_shadows_xp_value > 0 }
+						add_trait_xp = {
+							trait = lifestyle_blood_power
+							track = shadows
+							value = bm_anointed_transfer_shadows_xp_value
+						}
+					}
+				}
+			}
+		}
+	}
+}

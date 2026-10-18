@@ -33,6 +33,32 @@ Modifiers apply to all living and future members of the caster's house (landless
 
 ---
 
+## Heir Anointment & Succession Legacy
+
+- **Anoint Heir (`bm_anoint_heir_interaction`):**
+  - **Prerequisites:** Actor has `lifestyle_blood_mage` or `lifestyle_blood_knight`. Target is living `primary_heir` or `child`.
+  - **Cost:** 250 Piety + 1 Major Lifeforce (`blood_magic_used_major`).
+  - **Effect:** Strips `bm_anointed_heir_modifier` from any other child or previous heir. Applies permanent `bm_anointed_heir_modifier` (`+0.50` Health, `+15` Dynasty Opinion, `+15%` Monthly Lifestyle XP, `-25%` Short Reign Duration) to recipient, `+30` Opinion, and `+5` `bloodline` XP (Mage) / `+5` `vanguard` XP (Knight).
+- **Succession Legacy Awakening (`bm_transfer_anointed_heir_legacy_effect`):**
+  - Triggered via `on_death` / `on_character_death` when a Blood Mage or Blood Knight ruler dies with an anointed heir:
+    1. **Class Awakening:** If the heir lacks both `lifestyle_blood_mage` and `lifestyle_blood_knight`, awakens the parent's class trait via `bm_become_blood_mage_effect` or `bm_become_blood_knight_effect`.
+    2. **Lifeforce Inheritance:** Inherits 1 stack of each Lifeforce tier held by the dying ruler at death (Minor $\rightarrow$ Minor, Major $\rightarrow$ Major, Superior $\rightarrow$ Superior), followed by recalculation.
+    3. **25% Track XP Transfer:** Heir inherits 25% of the dying ruler's XP across all active tracks: `ancient`, `enlightenment`, `benediction`, `bloodline` / `vanguard`, `hematurgy` / `slaughter`, and all five `lifestyle_blood_power` tracks (`dynasty`, `mastery`, `presence`, `prosperity`, `shadows`).
+
+---
+
+## House Head Blood Tithe
+
+- **Interaction (`bm_demand_blood_tithe_interaction`):**
+  - **Prerequisites:** Actor is House Head with `lifestyle_blood_mage` or `lifestyle_blood_knight`. Target is an adult living house member (`house ?= scope:actor.house`, not actor, without `recently_lifedrained_modifier`).
+  - **Cost & Cooldown:** 50 Piety, 2-year interaction cooldown.
+  - **Effect:**
+    - Caster gains **1 Major Lifeforce** (if target is a Blood Mage or Blood Knight) or **1 Minor Lifeforce** (if target is mundane kin), along with `+2` `bloodline` (Mage) / `+2` `vanguard` (Knight) XP.
+    - Recipient receives `recently_lifedrained_modifier` and 1-year `lifeforce_modifier_negative_minor`.
+    - Recipient suffers `-25` Opinion (`magic_opinion_negative`), which is waived if the recipient follows a Blood Cult faith (`bm_is_blood_cult_faith_trigger = yes`) or has the `loyal` trait.
+
+---
+
 ## Where the details live
 
 | Concept | File |
@@ -41,10 +67,17 @@ Modifiers apply to all living and future members of the caster's house (landless
 | Golem dynasty | `common/dynasties/bm_dynasties.txt` |
 | Golem house coat of arms | `common/coat_of_arms/coat_of_arms/bm_coat_of_arms.txt` |
 | Bloodline house modifiers (Tiers 1–3) | `common/modifiers/bm_channel_dynasty_modifiers.txt` |
+| Dynasty rites & heir modifiers | `common/modifiers/bm_dynasty_rites_modifiers.txt` |
 | Standalone widget decision | `common/decisions/cast_magic/bm_empower_bloodline_decision.txt` |
 | Covenant upgrade scripted effects | `common/scripted_effects/bm_empower_bloodline_effects.txt` |
+| Heir succession transfer effect | `common/scripted_effects/bm_heir_succession_effects.txt` |
+| Heir succession transfer values | `common/script_values/bm_heir_succession_values.txt` |
+| Dynasty death on_actions | `common/on_action/bm_dynasty_on_actions.txt` |
+| Dynasty interactions (Anoint Heir, Tithe) | `common/character_interactions/bm_dynasty_interactions.txt` |
+| 3-Way Bless Bloodline interaction | `common/character_interactions/bm_bless_bloodline.txt` |
 | Yearly bloodline XP event | `blood_mage_yearly_events.002` in `events/bm_yearly_events.txt` |
 | Golem template | `blood_golem_template` in `common/scripted_character_templates/bm_character_templates.txt` |
 | Golem & dynasty rosters | `bm_refresh_blood_magic_rosters_effect` in `common/scripted_effects/bm_blood_mage_story_list_effects.txt` |
 | Panel entry for the decision | `common/story_cycles/bm_blood_mage_story.txt` |
-| Names, mottos, modifier text | `localization/english/bm_channel_lifeforce_l_english.yml`, `bm_modifiers_l_english.yml`, `bm_blood_golem_l_english.yml` |
+| Names, mottos, modifier text | `localization/english/bm_channel_lifeforce_l_english.yml`, `bm_dynasty_rites_l_english.yml`, `bm_modifiers_l_english.yml`, `bm_blood_golem_l_english.yml` |
+
