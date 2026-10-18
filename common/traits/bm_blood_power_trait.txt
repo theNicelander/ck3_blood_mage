@@ -11,22 +11,20 @@
             10 = {
                 positive_inactive_inheritance_chance = 0.05
                 genetic_trait_strengthen_chance = 0.05
-                years_of_fertility = 3
             }
             20 = {
                 positive_inactive_inheritance_chance = 0.05
                 genetic_trait_strengthen_chance = 0.05
-                years_of_fertility = 3
+                years_of_fertility = 5
             }
             30 = {
                 positive_inactive_inheritance_chance = 0.05
                 genetic_trait_strengthen_chance = 0.05
-                years_of_fertility = 3
             }
             40 = {
                 positive_inactive_inheritance_chance = 0.05
                 genetic_trait_strengthen_chance = 0.05
-                years_of_fertility = 3
+                years_of_fertility = 5
             }
             50 = {
                 inbreeding_chance = -0.50
@@ -35,22 +33,20 @@
             60 = {
                 positive_inactive_inheritance_chance = 0.05
                 genetic_trait_strengthen_chance = 0.05
-                years_of_fertility = 3
             }
             70 = {
                 positive_inactive_inheritance_chance = 0.05
                 genetic_trait_strengthen_chance = 0.05
-                years_of_fertility = 3
+                years_of_fertility = 5
             }
             80 = {
                 positive_inactive_inheritance_chance = 0.05
                 genetic_trait_strengthen_chance = 0.05
-                years_of_fertility = 3
+                years_of_fertility = 5
             }
             90 = {
                 positive_inactive_inheritance_chance = 0.05
                 genetic_trait_strengthen_chance = 0.05
-                years_of_fertility = 3
             }
             100 = {
                 inbreeding_chance = -0.50
@@ -65,32 +61,39 @@
             }
             20 = {
                 monthly_lifestyle_xp_gain_mult = 0.05
+                owned_personal_scheme_success_chance_add = 5
+                personal_scheme_phase_duration_add = -5
             }
             30 = {
                 monthly_lifestyle_xp_gain_mult = 0.05
-                max_learn_language_schemes_add = 1
             }
             40 = {
                 monthly_lifestyle_xp_gain_mult = 0.05
+                owned_personal_scheme_success_chance_add = 5
+                personal_scheme_phase_duration_add = -5
             }
             50 = {
+                learning_per_piety_level = 1
                 max_personal_schemes_add = 1
             }
             60 = {
                 monthly_lifestyle_xp_gain_mult = 0.05
-                max_learn_language_schemes_add = 1
             }
             70 = {
                 monthly_lifestyle_xp_gain_mult = 0.05
+                owned_personal_scheme_success_chance_add = 5
+                personal_scheme_phase_duration_add = -5
             }
             80 = {
                 monthly_lifestyle_xp_gain_mult = 0.05
+                owned_personal_scheme_success_chance_add = 5
+                personal_scheme_phase_duration_add = -5
             }
             90 = {
                 monthly_lifestyle_xp_gain_mult = 0.05
-                max_learn_language_schemes_add = 1
             }
             100 = {
+                learning_per_piety_level = 1
                 max_personal_schemes_add = 1
                 ignore_negative_culture_opinion = yes
                 no_prowess_loss_from_age = yes
@@ -105,6 +108,7 @@
             20 = {
                 general_opinion = 3
                 stress_gain_mult = -0.05
+                prestige_level_impact_mult = 0.05
             }
             30 = {
                 general_opinion = 3
@@ -113,9 +117,12 @@
             40 = {
                 general_opinion = 3
                 stress_gain_mult = -0.05
+                prestige_level_impact_mult = 0.05
             }
             50 = {
-                prestige_level_impact_mult = 0.25
+                diplomacy_per_piety_level = 1
+                short_reign_duration_mult = -0.10
+                long_reign_bonus_mult = 0.10
             }
             60 = {
                 general_opinion = 3
@@ -124,18 +131,21 @@
             70 = {
                 general_opinion = 3
                 stress_gain_mult = -0.05
+                prestige_level_impact_mult = 0.05
             }
             80 = {
                 general_opinion = 3
                 stress_gain_mult = -0.05
+                prestige_level_impact_mult = 0.05
             }
             90 = {
                 general_opinion = 3
                 stress_gain_mult = -0.05
             }
             100 = {
-                short_reign_duration_mult = -0.25
-                long_reign_bonus_mult = 0.25
+                diplomacy_per_piety_level = 1
+                short_reign_duration_mult = -0.10
+                long_reign_bonus_mult = 0.10
                 no_prowess_loss_from_age = yes
             }
         }
@@ -143,43 +153,55 @@
         prosperity = {
             10 = {
                 monthly_income_mult = 0.05
-                men_at_arms_maintenance = -0.04
+                build_gold_cost = -0.03
+                domicile_build_gold_cost = -0.03
             }
             20 = {
                 monthly_income_mult = 0.05
-                men_at_arms_maintenance = -0.04
+                build_gold_cost = -0.03
+                domicile_build_gold_cost = -0.03
+                men_at_arms_maintenance = -0.05
             }
             30 = {
                 monthly_income_mult = 0.05
-                men_at_arms_maintenance = -0.04
+                build_gold_cost = -0.03
+                domicile_build_gold_cost = -0.03
             }
             40 = {
                 monthly_income_mult = 0.05
-                men_at_arms_maintenance = -0.04
+                build_gold_cost = -0.03
+                domicile_build_gold_cost = -0.03
+                men_at_arms_maintenance = -0.05
             }
             50 = {
-                domain_limit = 2
-                men_at_arms_cap = 1
+                stewardship_per_piety_level = 1
+                domain_limit = 1
             }
             60 = {
                 monthly_income_mult = 0.05
-                men_at_arms_maintenance = -0.04
+                build_gold_cost = -0.03
+                domicile_build_gold_cost = -0.03
             }
             70 = {
                 monthly_income_mult = 0.05
-                men_at_arms_maintenance = -0.04
+                build_gold_cost = -0.03
+                domicile_build_gold_cost = -0.03
+                men_at_arms_maintenance = -0.05
             }
             80 = {
                 monthly_income_mult = 0.05
-                men_at_arms_maintenance = -0.04
+                build_gold_cost = -0.03
+                domicile_build_gold_cost = -0.03
+                men_at_arms_maintenance = -0.05
             }
             90 = {
                 monthly_income_mult = 0.05
-                men_at_arms_maintenance = -0.04
+                build_gold_cost = -0.03
+                domicile_build_gold_cost = -0.03
             }
             100 = {
-                domain_limit = 2
-                men_at_arms_cap = 2
+                stewardship_per_piety_level = 1
+                domain_limit = 1
                 no_prowess_loss_from_age = yes
             }
         }
@@ -192,6 +214,7 @@
             20 = {
                 owned_hostile_scheme_success_chance_add = 5
                 enemy_hostile_scheme_success_chance_add = -5
+                enemy_hostile_scheme_success_chance_max_add = -5
             }
             30 = {
                 owned_hostile_scheme_success_chance_add = 5
@@ -200,9 +223,10 @@
             40 = {
                 owned_hostile_scheme_success_chance_add = 5
                 enemy_hostile_scheme_success_chance_add = -5
+                enemy_hostile_scheme_success_chance_max_add = -5
             }
             50 = {
-                enemy_hostile_scheme_success_chance_max_add = -25
+                intrigue_per_piety_level = 1
                 max_hostile_schemes_add = 1
             }
             60 = {
@@ -212,19 +236,21 @@
             70 = {
                 owned_hostile_scheme_success_chance_add = 5
                 enemy_hostile_scheme_success_chance_add = -5
+                enemy_hostile_scheme_success_chance_max_add = -5
             }
             80 = {
                 owned_hostile_scheme_success_chance_add = 5
                 enemy_hostile_scheme_success_chance_add = -5
+                enemy_hostile_scheme_success_chance_max_add = -5
             }
             90 = {
                 owned_hostile_scheme_success_chance_add = 5
                 enemy_hostile_scheme_success_chance_add = -5
             }
             100 = {
-                enemy_hostile_scheme_success_chance_max_add = -25
-                owned_hostile_scheme_success_chance_max_add = 15
+                intrigue_per_piety_level = 1
                 max_hostile_schemes_add = 1
+                owned_hostile_scheme_success_chance_max_add = 15
                 no_prowess_loss_from_age = yes
             }
         }
