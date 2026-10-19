@@ -73,7 +73,7 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 
 ## 📜 Grimoires, Spellcasting & Decision Widgets
 
-- **Consolidated Grimoires**: Replaced scattered individual spell decisions with organized Grimoire menus:
+- **Inline Option-List Decision Widgets**: Replaced event popup Grimoires with native CK3 1.20 scrollable decision option drawers for Minor, Major, and Superior Blood Magic, keeping every spell permanently visible with 45×45 icons, direct selection, and red failure tooltips:
   - **Minor Blood Magic**: Fast utility rituals including Lifeforce Attunement, Minor Blood Runes, Vitality Cleansing, and Lifeforce Condensation.
   - **Major Blood Magic**: Powerful rituals including Channel Blood Power, Condense Lifeforce (distilling Minor and Major into Superior Lifeforce), Education Enhancement (Tiers 1★–4★), Major Blood Runes, Galdrastafir Stave Carving & Swapping (free initial carve upon etching Superior Blood Rune; swapping costs Major Lifeforce + 500 Piety), Congenital Trait Manifestation, and House Blessings.
   - **Superior Blood Magic**: Legendary rites including Blood Golem Creation, 5★ Master Educations, Secondary Educations, and Superior Capstone Runes.

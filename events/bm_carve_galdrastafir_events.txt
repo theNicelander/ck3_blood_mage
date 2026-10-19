@@ -162,13 +162,12 @@ bm_galdrastafir.001 = {
 		}
 	}
 
-	# Return to Major Grimoire
+	# Cancel
 	option = {
-		name = bm_cast_blood_magic_major.001.cancel
+		name = bm_cast_blood_magic.cancel
 		trigger = {
 			always = yes
 		}
-		trigger_event = { id = bm_cast_blood_magic_major.001 }
 		ai_chance = { base = 0 }
 	}
 }
