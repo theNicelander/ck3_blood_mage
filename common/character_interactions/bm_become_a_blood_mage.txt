@@ -1,5 +1,5 @@
 ﻿ask_for_blood_magic_interaction = {
-    category = interaction_category_friendly
+    category = interaction_category_bm_blood_magic
     auto_accept = yes
     common_interaction = yes
     desc = grant_blood_magic_interaction_desc
@@ -26,7 +26,10 @@
 
     is_shown = {
         scope:recipient = {
-            has_trait = lifestyle_blood_mage
+            OR = {
+                has_trait = lifestyle_blood_mage
+                has_trait = lifestyle_blood_knight
+            }
         }
         scope:actor = {
             NOT = { has_trait = lifestyle_blood_mage }
@@ -36,11 +39,26 @@
 
     on_accept = {
         debug_log = "BloodMageInteraction: ask_for_blood_magic | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
-        scope:recipient = {
-            remove_character_modifier = lifeforce_modifier_superior
-        }
         scope:actor = {
-            bm_become_blood_mage_effect = yes
+            send_interface_toast = {
+                type = event_toast_effect_good
+                title = ask_for_blood_magic_interaction
+                left_icon = scope:actor
+                right_icon = scope:recipient
+                scope:recipient = {
+                    remove_character_modifier = lifeforce_modifier_superior
+                    hidden_effect = {
+                        bm_recount_lifeforce_stacks_effect = yes
+                    }
+                }
+                if = {
+                    limit = { scope:recipient = { has_trait = lifestyle_blood_knight } }
+                    bm_become_blood_knight_effect = yes
+                }
+                else = {
+                    bm_become_blood_mage_effect = yes
+                }
+            }
         }
     }
 
@@ -68,7 +86,7 @@ bm_get_blood_magic_from_prisoner_interaction = {
     common_interaction = yes
     auto_accept = yes
     interface_priority = 999
-    category = interaction_category_hostile
+    category = interaction_category_bm_blood_magic
     desc = bm_get_blood_magic_from_prisoner_interaction.desc
 
     is_highlighted = { always = yes }
@@ -81,7 +99,10 @@ bm_get_blood_magic_from_prisoner_interaction = {
         }
         scope:recipient = {
             is_imprisoned_by = scope:actor
-            has_trait = lifestyle_blood_mage
+            OR = {
+                has_trait = lifestyle_blood_mage
+                has_trait = lifestyle_blood_knight
+            }
         }
     }
 
@@ -117,8 +138,6 @@ bm_get_blood_magic_from_prisoner_interaction = {
                 target = scope:recipient
                 35 = {
                     desc = bm_get_blood_magic_from_prisoner_interaction.success
-                    scope:actor = { bm_become_blood_mage_effect = yes }
-
                     compare_modifier = {
                         value = scope:duel_value
                         multiplier = 3
@@ -128,6 +147,13 @@ bm_get_blood_magic_from_prisoner_interaction = {
                         title = bm_get_blood_magic_from_prisoner_interaction.success
                         left_icon = scope:actor
                         right_icon = scope:recipient
+                        if = {
+                            limit = { scope:recipient = { has_trait = lifestyle_blood_knight } }
+                            bm_become_blood_knight_effect = yes
+                        }
+                        else = {
+                            bm_become_blood_mage_effect = yes
+                        }
                     }
                 }
                 65 = {

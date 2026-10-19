@@ -3,16 +3,16 @@
 
 | Scope | Tokens |
 | --- | ---: |
-| **Total** | **10,820** |
-| Core | 2,129 |
-| Rules | 4,349 |
-| Skills | 4,342 |
+| **Total** | **11,408** |
+| Core | 2,586 |
+| Rules | 4,430 |
+| Skills | 4,392 |
 
 ## Details per file
 
 | File | Category | Tokens |
 | --- | --- | ---: |
-| `AGENTS.md` | Core | 2,129 |
+| `AGENTS.md` | Core | 2,586 |
 | `.agents/skills/add-decision-option-widget/SKILL.md` | Skills | 1,461 |
 | `.agents/rules/single-combat.md` | Rules | 1,257 |
 | `.agents/skills/caveman/SKILL.md` | Skills | 1,158 |
@@ -20,14 +20,14 @@
 | `.agents/rules/ck3-ai.md` | Rules | 672 |
 | `.agents/rules/ck3-scripting.md` | Rules | 412 |
 | `.agents/skills/add-blood-magic-decision/SKILL.md` | Skills | 401 |
+| `.agents/rules/pr-context.md` | Rules | 370 |
 | `.agents/rules/ck3-decisions.md` | Rules | 341 |
-| `.agents/rules/pr-context.md` | Rules | 289 |
 | `.agents/skills/document-subsystem/SKILL.md` | Skills | 289 |
 | `.agents/rules/ck3-traits.md` | Rules | 281 |
 | `.agents/skills/add-faith/SKILL.md` | Skills | 248 |
 | `.agents/skills/add-trait-track/SKILL.md` | Skills | 240 |
 | `.agents/rules/ck3-localization.md` | Rules | 226 |
+| `.agents/skills/validate-change/SKILL.md` | Skills | 215 |
 | `.agents/skills/update-docs/SKILL.md` | Skills | 193 |
 | `.agents/skills/add-game-rule/SKILL.md` | Skills | 187 |
 | `.agents/rules/ck3-events.md` | Rules | 166 |
-| `.agents/skills/validate-change/SKILL.md` | Skills | 165 |

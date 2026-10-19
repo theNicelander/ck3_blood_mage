@@ -89,8 +89,90 @@ bm_reshape_personality.0001 = {
 	}
 
 	option = {
+		name = bm_reshape_personality.0001.culture
+		trigger = {
+			custom_tooltip = {
+				text = bm_reshape_personality.0001.culture.already_culture_tt
+				NOT = { scope:recipient.culture = root.culture }
+			}
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		remove_character_modifier = lifeforce_modifier_major
+		hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+		duel = {
+			skill = learning
+			target = scope:recipient
+			50 = {
+				desc = bm_reshape_personality.duel.culture_success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 2.25
+					min = -45
+					max = 45
+				}
+				scope:recipient = {
+					set_culture_same_as = root
+				}
+				send_interface_toast = {
+					title = bm_reshape_personality.toast.culture_title
+					desc = bm_reshape_personality.toast.culture_desc
+					left_icon = root
+					right_icon = scope:recipient
+					add_shared_bm_bk_xp = {
+						TRACK = enlightenment
+						XP = 4
+					}
+				}
+			}
+			50 = {
+				desc = bm_reshape_personality.duel.culture_failure
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -2.25
+					min = -45
+					max = 45
+				}
+				remove_interaction_cooldown_against = {
+					interaction = bm_reshape_personality_interaction
+					target = scope:recipient
+				}
+				scope:recipient = {
+					set_variable = {
+						name = bm_influence_personality_failed_actor
+						value = root
+						years = 1
+					}
+				}
+				send_interface_toast = {
+					title = bm_reshape_personality.toast.culture_failure.title
+					desc = bm_reshape_personality.toast.culture_failure.desc
+					left_icon = root
+					right_icon = scope:recipient
+					add_shared_bm_bk_xp = {
+						TRACK = enlightenment
+						XP = 1
+					}
+				}
+			}
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				scope:recipient.culture = root.culture
+			}
+		}
+	}
+
+	option = {
 		name = bm_reshape_personality.0001.cancel
 		add_piety = 250
+		remove_interaction_cooldown_against = {
+			interaction = bm_reshape_personality_interaction
+			target = scope:recipient
+		}
 		ai_chance = { base = 0 }
 	}
 }
@@ -156,31 +238,70 @@ bm_reshape_personality.0002 = {
 		name = bm_reshape_personality.0002.option_1
 		trigger = { exists = scope:actor_ptrait_1 }
 		scope:actor_ptrait_1 = { save_scope_as = trait_to_add }
-		scope:recipient = {
-			remove_trait = scope:trait_to_remove
-			scope:trait_to_add = {
-				every_opposite_trait = {
-					limit = { scope:recipient = { has_trait = prev } }
-					scope:recipient = { remove_trait = prev }
+		remove_character_modifier = lifeforce_modifier_major
+		hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+		duel = {
+			skill = learning
+			target = scope:recipient
+			50 = {
+				desc = bm_reshape_personality.duel.success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 2.25
+					min = -45
+					max = 45
+				}
+				scope:recipient = {
+					remove_trait = scope:trait_to_remove
+					scope:trait_to_add = {
+						every_opposite_trait = {
+							limit = { scope:recipient = { has_trait = prev } }
+							scope:recipient = { remove_trait = prev }
+						}
+					}
+					add_trait = scope:trait_to_add
+				}
+				send_interface_toast = {
+					title = bm_reshape_personality.toast.title
+					desc = bm_reshape_personality.toast.desc
+					left_icon = root
+					right_icon = scope:recipient
+					add_shared_bm_bk_xp = {
+						TRACK = enlightenment
+						XP = 4
+					}
 				}
 			}
-			add_trait = scope:trait_to_add
-			add_opinion = {
-				target = root
-				modifier = bm_harmonized_mind_opinion
-				opinion = 25
+			50 = {
+				desc = bm_reshape_personality.duel.failure
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -2.25
+					min = -45
+					max = 45
+				}
+				remove_interaction_cooldown_against = {
+					interaction = bm_reshape_personality_interaction
+					target = scope:recipient
+				}
+				scope:recipient = {
+					set_variable = {
+						name = bm_influence_personality_failed_actor
+						value = root
+						years = 1
+					}
+				}
+				send_interface_toast = {
+					title = bm_reshape_personality.toast.failure.title
+					desc = bm_reshape_personality.toast.failure.desc
+					left_icon = root
+					right_icon = scope:recipient
+					add_shared_bm_bk_xp = {
+						TRACK = enlightenment
+						XP = 1
+					}
+				}
 			}
-		}
-		blood_magic_used_major = yes
-		add_shared_bm_bk_xp = {
-			TRACK = enlightenment
-			XP = 4
-		}
-		send_interface_toast = {
-			title = bm_reshape_personality.toast.title
-			desc = bm_reshape_personality.toast.desc
-			left_icon = root
-			right_icon = scope:recipient
 		}
 		ai_chance = { base = 10 }
 	}
@@ -189,31 +310,70 @@ bm_reshape_personality.0002 = {
 		name = bm_reshape_personality.0002.option_2
 		trigger = { exists = scope:actor_ptrait_2 }
 		scope:actor_ptrait_2 = { save_scope_as = trait_to_add }
-		scope:recipient = {
-			remove_trait = scope:trait_to_remove
-			scope:trait_to_add = {
-				every_opposite_trait = {
-					limit = { scope:recipient = { has_trait = prev } }
-					scope:recipient = { remove_trait = prev }
+		remove_character_modifier = lifeforce_modifier_major
+		hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+		duel = {
+			skill = learning
+			target = scope:recipient
+			50 = {
+				desc = bm_reshape_personality.duel.success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 2.25
+					min = -45
+					max = 45
+				}
+				scope:recipient = {
+					remove_trait = scope:trait_to_remove
+					scope:trait_to_add = {
+						every_opposite_trait = {
+							limit = { scope:recipient = { has_trait = prev } }
+							scope:recipient = { remove_trait = prev }
+						}
+					}
+					add_trait = scope:trait_to_add
+				}
+				send_interface_toast = {
+					title = bm_reshape_personality.toast.title
+					desc = bm_reshape_personality.toast.desc
+					left_icon = root
+					right_icon = scope:recipient
+					add_shared_bm_bk_xp = {
+						TRACK = enlightenment
+						XP = 4
+					}
 				}
 			}
-			add_trait = scope:trait_to_add
-			add_opinion = {
-				target = root
-				modifier = bm_harmonized_mind_opinion
-				opinion = 25
+			50 = {
+				desc = bm_reshape_personality.duel.failure
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -2.25
+					min = -45
+					max = 45
+				}
+				remove_interaction_cooldown_against = {
+					interaction = bm_reshape_personality_interaction
+					target = scope:recipient
+				}
+				scope:recipient = {
+					set_variable = {
+						name = bm_influence_personality_failed_actor
+						value = root
+						years = 1
+					}
+				}
+				send_interface_toast = {
+					title = bm_reshape_personality.toast.failure.title
+					desc = bm_reshape_personality.toast.failure.desc
+					left_icon = root
+					right_icon = scope:recipient
+					add_shared_bm_bk_xp = {
+						TRACK = enlightenment
+						XP = 1
+					}
+				}
 			}
-		}
-		blood_magic_used_major = yes
-		add_shared_bm_bk_xp = {
-			TRACK = enlightenment
-			XP = 4
-		}
-		send_interface_toast = {
-			title = bm_reshape_personality.toast.title
-			desc = bm_reshape_personality.toast.desc
-			left_icon = root
-			right_icon = scope:recipient
 		}
 		ai_chance = { base = 10 }
 	}
@@ -222,31 +382,70 @@ bm_reshape_personality.0002 = {
 		name = bm_reshape_personality.0002.option_3
 		trigger = { exists = scope:actor_ptrait_3 }
 		scope:actor_ptrait_3 = { save_scope_as = trait_to_add }
-		scope:recipient = {
-			remove_trait = scope:trait_to_remove
-			scope:trait_to_add = {
-				every_opposite_trait = {
-					limit = { scope:recipient = { has_trait = prev } }
-					scope:recipient = { remove_trait = prev }
+		remove_character_modifier = lifeforce_modifier_major
+		hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+		duel = {
+			skill = learning
+			target = scope:recipient
+			50 = {
+				desc = bm_reshape_personality.duel.success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 2.25
+					min = -45
+					max = 45
+				}
+				scope:recipient = {
+					remove_trait = scope:trait_to_remove
+					scope:trait_to_add = {
+						every_opposite_trait = {
+							limit = { scope:recipient = { has_trait = prev } }
+							scope:recipient = { remove_trait = prev }
+						}
+					}
+					add_trait = scope:trait_to_add
+				}
+				send_interface_toast = {
+					title = bm_reshape_personality.toast.title
+					desc = bm_reshape_personality.toast.desc
+					left_icon = root
+					right_icon = scope:recipient
+					add_shared_bm_bk_xp = {
+						TRACK = enlightenment
+						XP = 4
+					}
 				}
 			}
-			add_trait = scope:trait_to_add
-			add_opinion = {
-				target = root
-				modifier = bm_harmonized_mind_opinion
-				opinion = 25
+			50 = {
+				desc = bm_reshape_personality.duel.failure
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -2.25
+					min = -45
+					max = 45
+				}
+				remove_interaction_cooldown_against = {
+					interaction = bm_reshape_personality_interaction
+					target = scope:recipient
+				}
+				scope:recipient = {
+					set_variable = {
+						name = bm_influence_personality_failed_actor
+						value = root
+						years = 1
+					}
+				}
+				send_interface_toast = {
+					title = bm_reshape_personality.toast.failure.title
+					desc = bm_reshape_personality.toast.failure.desc
+					left_icon = root
+					right_icon = scope:recipient
+					add_shared_bm_bk_xp = {
+						TRACK = enlightenment
+						XP = 1
+					}
+				}
 			}
-		}
-		blood_magic_used_major = yes
-		add_shared_bm_bk_xp = {
-			TRACK = enlightenment
-			XP = 4
-		}
-		send_interface_toast = {
-			title = bm_reshape_personality.toast.title
-			desc = bm_reshape_personality.toast.desc
-			left_icon = root
-			right_icon = scope:recipient
 		}
 		ai_chance = { base = 10 }
 	}
@@ -255,31 +454,70 @@ bm_reshape_personality.0002 = {
 		name = bm_reshape_personality.0002.option_4
 		trigger = { exists = scope:actor_ptrait_4 }
 		scope:actor_ptrait_4 = { save_scope_as = trait_to_add }
-		scope:recipient = {
-			remove_trait = scope:trait_to_remove
-			scope:trait_to_add = {
-				every_opposite_trait = {
-					limit = { scope:recipient = { has_trait = prev } }
-					scope:recipient = { remove_trait = prev }
+		remove_character_modifier = lifeforce_modifier_major
+		hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+		duel = {
+			skill = learning
+			target = scope:recipient
+			50 = {
+				desc = bm_reshape_personality.duel.success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 2.25
+					min = -45
+					max = 45
+				}
+				scope:recipient = {
+					remove_trait = scope:trait_to_remove
+					scope:trait_to_add = {
+						every_opposite_trait = {
+							limit = { scope:recipient = { has_trait = prev } }
+							scope:recipient = { remove_trait = prev }
+						}
+					}
+					add_trait = scope:trait_to_add
+				}
+				send_interface_toast = {
+					title = bm_reshape_personality.toast.title
+					desc = bm_reshape_personality.toast.desc
+					left_icon = root
+					right_icon = scope:recipient
+					add_shared_bm_bk_xp = {
+						TRACK = enlightenment
+						XP = 4
+					}
 				}
 			}
-			add_trait = scope:trait_to_add
-			add_opinion = {
-				target = root
-				modifier = bm_harmonized_mind_opinion
-				opinion = 25
+			50 = {
+				desc = bm_reshape_personality.duel.failure
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -2.25
+					min = -45
+					max = 45
+				}
+				remove_interaction_cooldown_against = {
+					interaction = bm_reshape_personality_interaction
+					target = scope:recipient
+				}
+				scope:recipient = {
+					set_variable = {
+						name = bm_influence_personality_failed_actor
+						value = root
+						years = 1
+					}
+				}
+				send_interface_toast = {
+					title = bm_reshape_personality.toast.failure.title
+					desc = bm_reshape_personality.toast.failure.desc
+					left_icon = root
+					right_icon = scope:recipient
+					add_shared_bm_bk_xp = {
+						TRACK = enlightenment
+						XP = 1
+					}
+				}
 			}
-		}
-		blood_magic_used_major = yes
-		add_shared_bm_bk_xp = {
-			TRACK = enlightenment
-			XP = 4
-		}
-		send_interface_toast = {
-			title = bm_reshape_personality.toast.title
-			desc = bm_reshape_personality.toast.desc
-			left_icon = root
-			right_icon = scope:recipient
 		}
 		ai_chance = { base = 10 }
 	}
@@ -287,6 +525,10 @@ bm_reshape_personality.0002 = {
 	option = {
 		name = bm_reshape_personality.0002.cancel
 		add_piety = 250
+		remove_interaction_cooldown_against = {
+			interaction = bm_reshape_personality_interaction
+			target = scope:recipient
+		}
 		ai_chance = { base = 0 }
 	}
 }

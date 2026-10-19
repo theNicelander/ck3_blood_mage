@@ -120,6 +120,7 @@ In CK3's `window_decisions_detail.gui`:
      - `localization = <option_key>`: The button title text.
      - `current_description = <option_key>`: Used by `[Entry.GetTooltip]`.
      - In localization `.yml`, provide both `<option_key>` (name) and `<option_key>_tooltip` (full hover tooltip description), matching vanilla's `invite_all_exiles` / `invite_all_exiles_tooltip`.
+     - Keep option text and tooltips concise and direct: specify concrete mechanics ("Lifeforce") rather than fluffy flavour ("vitality").
 3. **Item Failure Tooltips (`custom_tooltip`)**:
    - Always wrap `is_valid` conditions in `item` with `custom_tooltip = { text = <req_key> ... }`.
    - Disabled options will display this failure message in red, identical to vanilla's `"! There are no exiles of this type within range that you can invite"`.

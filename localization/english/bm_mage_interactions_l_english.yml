@@ -1,0 +1,31 @@
+﻿l_english:
+  # Empower Blood Mage
+  empower_blood_mage_interaction: "Empower Blood Mage"
+  empower_blood_mage_interaction_desc: "Channel supernatural Lifeforce into [recipient.GetShortUINameNoTooltip] to advance their enlightenment and bloodline tracks."
+  empower_blood_mage_interaction.major: "Major Lifeforce (+10 Enlightenment & Bloodline XP)"
+  empower_blood_mage_interaction.minor: "Minor Lifeforce (+5 Enlightenment & Bloodline XP)"
+  empower_blood_mage_interaction.cancel: "Cancel Rite"
+  empower_blood_mage_interaction_requirement: "You must possess either [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] or [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip]."
+  NOT_empower_blood_mage_interaction_requirement: "You must possess either [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] or [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip]."
+
+  # Siphon Stored Lifeforce
+  bm_siphon_lifeforce_reserves_interaction: "Siphon Stored Lifeforce"
+  bm_siphon_lifeforce_reserves_interaction_desc: "Subjugate and extract condensed Lifeforce reserves directly from [recipient.GetShortUINameNoTooltip]'s blood."
+  bm_recipient_has_lifeforce_reserves: "[recipient.GetShortUINameNoTooltip] possesses stored Lifeforce"
+  NOT_bm_recipient_has_lifeforce_reserves: "[recipient.GetShortUINameNoTooltip] possesses stored Lifeforce"
+  bm_siphon_lifeforce_reserves.toast_success: "Lifeforce Reserves Siphoned"
+  bm_siphon_lifeforce_reserves.toast_failure: "Siphon Ritual Failed"
+  bm_siphon_lifeforce_reserves.success_desc: "Overpower their spirit and rip away their stored Lifeforce"
+  bm_siphon_lifeforce_reserves.failure_desc: "The siphon violently backfires, draining your own vitality"
+
+  # Contest of the Red Art
+  bm_occult_mage_duel_interaction: "Contest of the Red Art"
+  bm_occult_mage_duel_interaction_desc: "Engage [recipient.GetShortUINameNoTooltip] in an occult duel of blood arts to test occult prowess and tear away vital essence."
+  bm_requires_minor_lifeforce: "You must possess [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip]"
+  NOT_bm_requires_minor_lifeforce: "You must possess [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip]"
+  bm_occult_mage_duel.critical_success_title: "Overwhelming Occult Triumph"
+  bm_occult_mage_duel.critical_success_desc: "Completely crush [recipient.GetShortUINameNoTooltip], reaping Major Lifeforce and cursing their blood"
+  bm_occult_mage_duel.success_title: "Contest Won"
+  bm_occult_mage_duel.success_desc: "Overcome [recipient.GetShortUINameNoTooltip] with occult mastery, inflicting severe blood drain"
+  bm_occult_mage_duel.defeat_title: "Occult Duel Defeat"
+  bm_occult_mage_duel.defeat_desc: "Overwhelmed by [recipient.GetShortUINameNoTooltip]'s blood arts, suffering a vital backlash"

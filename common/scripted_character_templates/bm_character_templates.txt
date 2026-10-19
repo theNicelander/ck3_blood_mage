@@ -4,13 +4,13 @@ traveller_character_template = {
 	gender_female_chance = 50
 	age = { 18 50 }
 
-	# Base stats
-	learning = { 1 12 }
-	prowess = { 0 22 }
+	# Base stats — warrior-poet wanderer
+	learning = { 10 18 }
+	prowess = { 8 18 }
 	intrigue = { 1 10 }
-	martial = { 0 15 }
-	stewardship = { 0 15 }
-	diplomacy = { 1 10 }
+	martial = { 8 16 }
+	stewardship = { 1 12 }
+	diplomacy = { 6 16 }
 
 	# Traits
 	random_traits = yes
@@ -22,13 +22,13 @@ traveller_character_template = {
 		lifestyle_blood_knight = { weight = { base = 30 } }
 
 		# Can be drained
-		intellect_good_1 = { weight = { base = 20 } }
+		intellect_good_1 = { weight = { base = 25 } }
 		physique_good_1 = { weight = { base = 20 } }
 		beauty_good_1 = { weight = { base = 20 } }
 		giant = { weight = { base = 20 } }
 		fecund = { weight = { base = 20 } }
 		pure_blooded = { weight = { base = 10 } }
-		intellect_good_2 = { weight = { base = 10 } }
+		intellect_good_2 = { weight = { base = 15 } }
 		physique_good_2 = { weight = { base = 15 } }
 		beauty_good_2 = { weight = { base = 10 } }
 		physique_good_3 = { weight = { base = 15 } }
@@ -59,19 +59,19 @@ traveller_character_template = {
 		# Flavour & Martial
 		shrewd = { weight = { base = 30 } }
 		theologian = { weight = { base = 30 } }
-		lifestyle_scholar = { weight = { base = 30 } }
+		lifestyle_scholar = { weight = { base = 40 } }
 		athletic = { weight = { base = 30 } }
 		strong = { weight = { base = 25 } }
-		brave = { weight = { base = 30 } }
+		brave = { weight = { base = 40 } }
 
-		lifestyle_blademaster = { weight = { base = 45 } }
+		lifestyle_blademaster = { weight = { base = 60 } }
 		lifestyle_reveler = { weight = { base = 30 } }
 		lifestyle_hunter = { weight = { base = 30 } }
-		lifestyle_mystic = { weight = { base = 30 } }
+		lifestyle_mystic = { weight = { base = 40 } }
 		pilgrim = { weight = { base = 30 } }
 		berserker = { weight = { base = 30 } }
 		varangian = { weight = { base = 30 } }
-		lifestyle_poet = { weight = { base = 30 } }
+		lifestyle_poet = { weight = { base = 100 } }
 		cannibal = { weight = { base = 30 } }
 		viking = { weight = { base = 30 } }
 		witch = { weight = { base = 30 } }
@@ -109,7 +109,7 @@ bm_escort_knight_character_template = {
 
 	# Base stats — guaranteed formidable combatant (prowess >= 20)
 	learning = { 4 14 }
-	prowess = { 20 32 }
+	prowess = { 20 30 }
 	intrigue = { 4 14 }
 	martial = { 12 22 }
 	stewardship = { 4 12 }

@@ -49,9 +49,9 @@
   NOT_recipient_must_be_knight_tt: "[recipient.GetShortUIName] is not serving as your [knight|E]"
   NOT_IS_A_KNIGHT_OF_CHARACTER_TRIGGER: "Does not serve as a [knight|E] for [CHARACTER.GetShortUIName|U]"
   make_blood_knight_interaction.knight_minor: "Martial Blood Oath (Minor Lifeforce)"
-  make_blood_knight_interaction.knight_minor_desc: "Bind your sworn knight with [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] and 250 [piety|E]."
+  make_blood_knight_interaction.knight_minor_desc: "Initiate [recipient.GetShortUINameNoTooltip] with [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] and 250 [piety|E]."
   make_blood_knight_interaction.knight_major: "Blood Brotherhood Rite (Major Lifeforce)"
-  make_blood_knight_interaction.knight_major_desc: "Infuse your sworn knight with [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and 100 [piety|E]."
+  make_blood_knight_interaction.knight_major_desc: "Initiate [recipient.GetShortUINameNoTooltip] with [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and 100 [piety|E]."
   make_blood_knight_interaction_knight_requirement: "You must possess either [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and 100 [piety|E], or [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] and 250 [piety|E]"
   NOT_make_blood_knight_interaction_knight_requirement: "You must possess either [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and 100 [piety|E], or [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] and 250 [piety|E]"
   empower_blood_knight_interaction: "Empower Blood Knight"
@@ -147,3 +147,8 @@
   bm_manifest_lifeforce_interaction.tier3_desc: "Offer 500 Piety for +5 Enlightenment XP.\nGuaranteed Minor Lifeforce upfront with zero risk of failure. Learning contest yields 1 Major Lifeforce (50.0%), 2x Major Lifeforce (15.0%), or an additional Minor Lifeforce (35.0%). High Learning boosts 2x Major Lifeforce up to 35.0%."
   bm_manifest_lifeforce_interaction.tier4: "Transcendent Epiphany (1000 Piety)"
   bm_manifest_lifeforce_interaction.tier4_desc: "Offer 1000 Piety for +7 Enlightenment XP.\nGuaranteed Minor Lifeforce and 1 Major Lifeforce upfront with zero risk of failure. Learning contest yields 1 Major Lifeforce (50.0%), 2x Major Lifeforce (35.0%), or Superior Lifeforce (15.0%). High Learning boosts Superior Lifeforce up to 40.0%."
+
+  # Character Interaction Category
+  interaction_category_bm_blood_magic: "Blood Magic"
+  BM_BLOOD_MAGIC_ACTIONS: "Blood Magic"
+  interaction_category_bm_blood_magic_filter_tag_desc: "Blood Magic Interactions"

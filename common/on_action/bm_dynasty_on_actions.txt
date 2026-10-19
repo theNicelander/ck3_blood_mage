@@ -1,0 +1,11 @@
+﻿on_death = {
+	on_actions = {
+		bm_on_character_death_dynasty
+	}
+}
+
+bm_on_character_death_dynasty = {
+	effect = {
+		bm_transfer_anointed_heir_legacy_effect = yes
+	}
+}

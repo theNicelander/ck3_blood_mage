@@ -1,23 +1,124 @@
 ﻿l_english:
-  # Dynasty Decisions
-  channel_lifeforce_bloodline: "Empower Dynasty with Blood Magic"
-  channel_lifeforce_bloodline_confirm: "Bind Our Bloodline"
-  channel_lifeforce_bloodline_tooltip: "Perform a powerful ritual that permanently enhances your entire dynasty with the essence of your blood magic."
-  channel_lifeforce_bloodline_desc: "Each Blood Dynasty modifier grants the dynasty a chance to get XP in the Bloodline Track. \n\nThrough sacred ritual and significant sacrifice, your blood magic can reach beyond your own person to infuse your entire lineage with supernatural power."
-  channel_lifeforce_bloodline.effects_list: "Infuse your entire dynasty with powerful blood magic effects:\n#indent_newline: $EFFECT_LIST_BULLET$ Diplomacy: [GetModifier('dynasty_blood_charisma_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ Martial: [GetModifier('dynasty_blood_fury_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ Stewardship: [GetModifier('dynasty_blood_prosperity_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ Intrigue: [GetModifier('dynasty_blood_shadows_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ Learning: [GetModifier('dynasty_blood_insight_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ Genetics: [GetModifier('dynasty_blood_legacy_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ Experience: [GetModifier('dynasty_blood_expertise_modifier').GetNameWithTooltip]"
+  # Standalone Decision: Empower Dynasty Bloodline
+  bm_empower_bloodline_decision: "Empower Dynasty Bloodline"
+  bm_empower_bloodline_decision_desc: "Perform ancient hemomantic covenants to permanently weave blood magic into the veins of your house. Each covenant progresses through three tiers—#italic Minor#! (Tier I), #italic Major#! (Tier II), and #italic Superior#! (Tier III)—granting escalating supernatural enhancements to every living and future member of your house, regardless of whether they are landed rulers, estate administrators, wanderers, or court knights."
+  bm_empower_bloodline_decision_tooltip: "Select a House Covenant to upgrade"
+  BM_EMPOWER_BLOODLINE_DECISION_NEXT_STEP_BUTTON: "Weave Bloodline"
+  bm_empower_bloodline_decision_confirm: "$BM_EMPOWER_BLOODLINE_DECISION_NEXT_STEP_BUTTON$"
+  bm_empower_bloodline_decision_effect: "You weave vital blood magic into your house's lineage."
 
-  bm_channel_lifeforce_bloodline.001.title: "Blood Covenant of Lineage"
-  bm_channel_lifeforce_bloodline.001.desc: "The ritual circle is drawn in my own blood, sacred symbols connecting me to every member of my house. As I speak the ancient words, I feel the tendrils of power reaching through time and space, seeking out those who share my blood. What gift shall I bestow upon my dynasty for generations to come?"
+  # Requirement Tooltips
+  bm_covenant_already_maxed_req: "This covenant has already reached its Superior rank (Tier III)"
+  NOT_bm_covenant_already_maxed_req: "This covenant has already reached its Superior rank (Tier III)"
+  bm_covenant_tier_1_req: "Tier I (Minor): Requires [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip], #V 150#! Piety, and Devotion Rank #V 1#!."
+  NOT_bm_covenant_tier_1_req: "Tier I (Minor): Requires [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip], #V 150#! Piety, and Devotion Rank #V 1#!."
+  bm_covenant_tier_2_req: "Tier II (Major): Requires [GetModifier('lifeforce_modifier_major').GetNameWithTooltip], #V 350#! Piety, and Devotion Rank #V 2#!."
+  NOT_bm_covenant_tier_2_req: "Tier II (Major): Requires [GetModifier('lifeforce_modifier_major').GetNameWithTooltip], #V 350#! Piety, and Devotion Rank #V 2#!."
+  bm_covenant_tier_3_req: "Tier III (Superior): Requires [GetModifier('lifeforce_modifier_superior').GetNameWithTooltip], #V 750#! Piety, and Devotion Rank #V 3#!."
+  NOT_bm_covenant_tier_3_req: "Tier III (Superior): Requires [GetModifier('lifeforce_modifier_superior').GetNameWithTooltip], #V 750#! Piety, and Devotion Rank #V 3#!."
 
-  bm_channel_lifeforce_bloodline.001.a: "Diplomacy - Our words shall command with blood-sworn authority"
-  bm_channel_lifeforce_bloodline.001.b: "Martial - The blood of conquerors shall never thin in our veins"
-  bm_channel_lifeforce_bloodline.001.c: "Stewardship - Wealth and prosperity shall be drawn to our bloodline"
-  bm_channel_lifeforce_bloodline.001.d: "Intrigue - Our blood shall grant us eyes in the darkest shadows"
-  bm_channel_lifeforce_bloodline.001.e: "Learning - Ancestral whispers shall guide our lineage forever"
-  bm_channel_lifeforce_bloodline.001.f: "Health - Our blood shall resist corruption and decay"
-  bm_channel_lifeforce_bloodline.001.g: "Traits - Each generation shall be born stronger than the last"
-  bm_channel_lifeforce_bloodline.001.h: "Experience - Ancient secrets shall unfold before our line's gaze"
-  bm_channel_lifeforce_bloodline.001.x: "Blood Empowered"
+  # Status Headers for Tooltips
+  bm_covenant_status_none_to_minor: "#bold Current House Rank:#! #V None#!  |  #bold Next Upgrade:#! #P Minor (Tier I)#!"
+  bm_covenant_status_minor_to_major: "#bold Current House Rank:#! #P Minor (Tier I)#!  |  #bold Next Upgrade:#! #V Major (Tier II)#!"
+  bm_covenant_status_major_to_superior: "#bold Current House Rank:#! #V Major (Tier II)#!  |  #bold Next Upgrade:#! #Y Superior (Tier III)#!"
+
+  # Dynamic Button Labels
+  bm_covenant_charisma_button: "[GetPlayer.Custom('BM_COVENANT_CHARISMA_BUTTON_LABEL')]"
+  bm_covenant_charisma_label_none: "Covenant of Majesty [None]"
+  bm_covenant_charisma_label_minor: "Covenant of Majesty [Minor]"
+  bm_covenant_charisma_label_major: "Covenant of Majesty [Major]"
+
+  bm_covenant_fury_button: "[GetPlayer.Custom('BM_COVENANT_FURY_BUTTON_LABEL')]"
+  bm_covenant_fury_label_none: "Covenant of Warband [None]"
+  bm_covenant_fury_label_minor: "Covenant of Warband [Minor]"
+  bm_covenant_fury_label_major: "Covenant of Warband [Major]"
+
+  bm_covenant_prosperity_button: "[GetPlayer.Custom('BM_COVENANT_PROSPERITY_BUTTON_LABEL')]"
+  bm_covenant_prosperity_label_none: "Covenant of Prosperity [None]"
+  bm_covenant_prosperity_label_minor: "Covenant of Prosperity [Minor]"
+  bm_covenant_prosperity_label_major: "Covenant of Prosperity [Major]"
+
+  bm_covenant_shadows_button: "[GetPlayer.Custom('BM_COVENANT_SHADOWS_BUTTON_LABEL')]"
+  bm_covenant_shadows_label_none: "Covenant of Shadow [None]"
+  bm_covenant_shadows_label_minor: "Covenant of Shadow [Minor]"
+  bm_covenant_shadows_label_major: "Covenant of Shadow [Major]"
+
+  bm_covenant_insight_button: "[GetPlayer.Custom('BM_COVENANT_INSIGHT_BUTTON_LABEL')]"
+  bm_covenant_insight_label_none: "Covenant of Insight [None]"
+  bm_covenant_insight_label_minor: "Covenant of Insight [Minor]"
+  bm_covenant_insight_label_major: "Covenant of Insight [Major]"
+
+  bm_covenant_legacy_button: "[GetPlayer.Custom('BM_COVENANT_LEGACY_BUTTON_LABEL')]"
+  bm_covenant_legacy_label_none: "Covenant of Legacy [None]"
+  bm_covenant_legacy_label_minor: "Covenant of Legacy [Minor]"
+  bm_covenant_legacy_label_major: "Covenant of Legacy [Major]"
+
+  bm_covenant_expertise_button: "[GetPlayer.Custom('BM_COVENANT_EXPERTISE_BUTTON_LABEL')]"
+  bm_covenant_expertise_label_none: "Covenant of Mastery [None]"
+  bm_covenant_expertise_label_minor: "Covenant of Mastery [Minor]"
+  bm_covenant_expertise_label_major: "Covenant of Mastery [Major]"
+
+  # Covenant Options & Tooltips
+  bm_covenant_charisma: "Covenant of Majesty"
+  bm_covenant_charisma_tooltip: "[GetPlayer.Custom('BM_COVENANT_CHARISMA_STATUS_HEADER')]\n\nEnhances diplomacy, prestige, renown, attraction, and personal schemes across your entire house.\n\n#P Tier I (Minor):#! +1 Diplomacy, +5 General, Attraction & Dynasty Opinion, +0.25 Prestige/mo, +5% Renown, +5 Personal Scheme Success.\n#V Tier II (Major):#! +2 Diplomacy, +10 General, Attraction & Dynasty Opinion, +0.50 Prestige/mo, +10% Renown, +10 Personal Scheme Success, -5d Scheme Phase.\n#Y Tier III (Superior):#! +4 Diplomacy, +15 General & Dynasty Opinion, +20 Attraction Opinion, +1.0 Prestige/mo, +15% Renown, +15 Personal Scheme Success, -10d Scheme Phase, #bold +1 Max Personal Schemes#!."
+
+  bm_covenant_fury: "Covenant of Warband"
+  bm_covenant_fury_tooltip: "[GetPlayer.Custom('BM_COVENANT_FURY_STATUS_HEADER')]\n\nEmpowers warriors, knights, travel safety, speed, and army movement across your entire house.\n\n#P Tier I (Minor):#! +1 Martial, +2 Prowess, +10% Knight Effectiveness, +1 Knight Limit, +10% Travel Speed, +5 Travel Safety.\n#V Tier II (Major):#! +2 Martial, +4 Prowess, +20% Knight Effectiveness, +1 Knight Limit, +15% Travel Speed, +10 Travel Safety, +5% Movement Speed, +2 Advantage.\n#Y Tier III (Superior):#! +4 Martial, +6 Prowess, +30% Knight Effectiveness, +2 Knight Limit, +20% Travel Speed, +15 Travel Safety, +10% Movement Speed, +4 Advantage, #bold +1 Men-at-Arms Regiment Size#!."
+
+  bm_covenant_prosperity: "Covenant of Prosperity"
+  bm_covenant_prosperity_tooltip: "[GetPlayer.Custom('BM_COVENANT_PROSPERITY_STATUS_HEADER')]\n\nDraws wealth, cheaper troop upkeep, reduced camp/estate/holding construction costs, and development across your house.\n\n#P Tier I (Minor):#! +1 Stewardship, +0.3 Gold/mo, +5% Income Mult, -5% MaA Upkeep, -5% Domicile & Holding Build Cost.\n#V Tier II (Major):#! +2 Stewardship, +0.6 Gold/mo, +10% Income Mult, -10% MaA Upkeep, -10% Domicile & Holding Build Cost & Speed, +10% Development Growth.\n#Y Tier III (Superior):#! +4 Stewardship, +1.2 Gold/mo, +15% Income Mult, -15% MaA Upkeep, -15% Domicile & Holding Build Cost & Speed, +20% Development Growth, #bold +1 Domain Limit#!."
+
+  bm_covenant_shadows: "Covenant of Shadow"
+  bm_covenant_shadows_tooltip: "[GetPlayer.Custom('BM_COVENANT_SHADOWS_STATUS_HEADER')]\n\nWeaves occult secrecy, dread, hostile scheme speed, and impenetrable plot warding across your house.\n\n#P Tier I (Minor):#! +1 Intrigue, +5 Hostile Scheme Success, -5d Scheme Phase, +5 Secrecy, -5 Enemy Scheme Success, +5d Enemy Scheme Phase, +5 Dread.\n#V Tier II (Major):#! +2 Intrigue, +10 Hostile Scheme Success, -10d Scheme Phase, +10 Secrecy, -10 Enemy Scheme Success, +10d Enemy Scheme Phase, -10% Enemy Max Scheme Success Cap, +10 Dread.\n#Y Tier III (Superior):#! +4 Intrigue, +15 Hostile Scheme Success, -15d Scheme Phase, +15 Secrecy, -15 Enemy Scheme Success, +15d Enemy Scheme Phase, -20% Enemy Max Scheme Success Cap, +15 Dread, #bold +1 Max Hostile Schemes#!."
+
+  bm_covenant_insight: "Covenant of Insight"
+  bm_covenant_insight_tooltip: "[GetPlayer.Custom('BM_COVENANT_INSIGHT_STATUS_HEADER')]\n\nAccelerates learning, monthly piety, stress resilience, cultural acceptance, and devotion scaling across your house.\n\n#P Tier I (Minor):#! +1 Learning, +0.25 Piety/mo, +5% Piety Mult, -5% Stress Gain, +5% Stress Loss, +5% Cultural Acceptance.\n#V Tier II (Major):#! +2 Learning, +0.50 Piety/mo, +10% Piety Mult, -10% Stress Gain, +10% Stress Loss, +10% Cultural Acceptance, +10% Devotion Impact.\n#Y Tier III (Superior):#! +4 Learning, +1.0 Piety/mo, +20% Piety Mult, -15% Stress Gain, +15% Stress Loss, +15% Cultural Acceptance, +20% Devotion Impact, #bold +1 Learning per Devotion Level#!."
+
+  bm_covenant_legacy: "Covenant of Legacy"
+  bm_covenant_legacy_tooltip: "[GetPlayer.Custom('BM_COVENANT_LEGACY_STATUS_HEADER')]\n\nFortifies genetics, fertility, longevity, health, and disease resistance across all living and future generations of your house.\n\n#P Tier I (Minor):#! +0.25 Health, +3 Life Expectancy, +3 Fertile Years, +10% Fertility, +10% Positive Congenital Chance, +10% Inactive Inheritance, +10% Strengthen Congenital, -15% Inbreeding & Negative Traits, +3 Epidemic Resistance.\n#V Tier II (Major):#! +0.50 Health, +6 Life Expectancy, +6 Fertile Years, +20% Fertility, +20% Positive Congenital Chance, +20% Inactive Inheritance, +20% Strengthen Congenital, -30% Inbreeding & Negative Traits, +6 Epidemic Resistance.\n#Y Tier III (Superior):#! +1.0 Health, +12 Life Expectancy, +12 Fertile Years, +30% Fertility, +35% Positive Congenital Chance, +35% Inactive Inheritance, +35% Strengthen Congenital, #bold -50% Inbreeding & Negative Traits#!, +10 Epidemic Resistance."
+
+  bm_covenant_expertise: "Covenant of Mastery"
+  bm_covenant_expertise_tooltip: "[GetPlayer.Custom('BM_COVENANT_EXPERTISE_STATUS_HEADER')]\n\nAccelerates lifestyle experience, language learning, and imperial fame scaling across your house.\n\n#P Tier I (Minor):#! +10% Lifestyle XP, -10d Learn Language Phase, +1 Language Slot.\n#V Tier II (Major):#! +20% Lifestyle XP, -20d Learn Language Phase, +2 Language Slots, +10% Fame Impact.\n#Y Tier III (Superior):#! +30% Lifestyle XP, -30d Learn Language Phase, +3 Language Slots, +20% Fame Impact, #bold Ignore Negative Culture Opinion#!."
+
+  # Toasts
+  bm_empower_bloodline_tier_1_toast: "Covenant Minor (Tier I)"
+  bm_empower_bloodline_tier_2_toast: "Covenant Major (Tier II)"
+  bm_empower_bloodline_tier_3_toast: "Covenant Superior (Tier III)"
+
+  # Tooltips on completion
+  bm_covenant_charisma_tier_1_tt: "Your house has woven the Minor Covenant of Majesty (Tier I)."
+  bm_covenant_charisma_tier_2_tt: "Your house has elevated the Major Covenant of Majesty (Tier II)."
+  bm_covenant_charisma_tier_3_tt: "Your house has perfected the Superior Covenant of Majesty (Tier III)!"
+
+  bm_covenant_fury_tier_1_tt: "Your house has woven the Minor Covenant of Warband (Tier I)."
+  bm_covenant_fury_tier_2_tt: "Your house has elevated the Major Covenant of Warband (Tier II)."
+  bm_covenant_fury_tier_3_tt: "Your house has perfected the Superior Covenant of Warband (Tier III)!"
+
+  bm_covenant_prosperity_tier_1_tt: "Your house has woven the Minor Covenant of Prosperity (Tier I)."
+  bm_covenant_prosperity_tier_2_tt: "Your house has elevated the Major Covenant of Prosperity (Tier II)."
+  bm_covenant_prosperity_tier_3_tt: "Your house has perfected the Superior Covenant of Prosperity (Tier III)!"
+
+  bm_covenant_shadows_tier_1_tt: "Your house has woven the Minor Covenant of Shadow (Tier I)."
+  bm_covenant_shadows_tier_2_tt: "Your house has elevated the Major Covenant of Shadow (Tier II)."
+  bm_covenant_shadows_tier_3_tt: "Your house has perfected the Superior Covenant of Shadow (Tier III)!"
+
+  bm_covenant_insight_tier_1_tt: "Your house has woven the Minor Covenant of Insight (Tier I)."
+  bm_covenant_insight_tier_2_tt: "Your house has elevated the Major Covenant of Insight (Tier II)."
+  bm_covenant_insight_tier_3_tt: "Your house has perfected the Superior Covenant of Insight (Tier III)!"
+
+  bm_covenant_legacy_tier_1_tt: "Your house has woven the Minor Covenant of Legacy (Tier I)."
+  bm_covenant_legacy_tier_2_tt: "Your house has elevated the Major Covenant of Legacy (Tier II)."
+  bm_covenant_legacy_tier_3_tt: "Your house has perfected the Superior Covenant of Legacy (Tier III)!"
+
+  bm_covenant_expertise_tier_1_tt: "Your house has woven the Minor Covenant of Mastery (Tier I)."
+  bm_covenant_expertise_tier_2_tt: "Your house has elevated the Major Covenant of Mastery (Tier II)."
+  bm_covenant_expertise_tier_3_tt: "Your house has perfected the Superior Covenant of Mastery (Tier III)!"
 
   # Yearly bloodline XP
-  blood_mage_yearly_events.002.success: "Your Dynasty's legacy modifiers granted you experience"
+  blood_mage_yearly_events.002.success: "Your house covenants granted you experience"
+
+  # Legacy Keys preserved
+  channel_lifeforce_bloodline: "$bm_empower_bloodline_decision$"
+  channel_lifeforce_bloodline_confirm: "$BM_EMPOWER_BLOODLINE_DECISION_NEXT_STEP_BUTTON$"
+  channel_lifeforce_bloodline_tooltip: "$bm_empower_bloodline_decision_tooltip$"
+  channel_lifeforce_bloodline_desc: "$bm_empower_bloodline_decision_desc$"

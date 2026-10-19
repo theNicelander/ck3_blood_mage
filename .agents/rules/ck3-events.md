@@ -9,5 +9,7 @@ description: Events and on_actions (namespaces, triggers, scopes, options).
 - Every event requires a trigger source: `trigger_event`, `on_action`, decision, or interaction. Uncalled events fail silently; audit with `grep`.
 - Silent state changes: wrap in `hidden_effect`. Scope persistence: use `save_scope_as`.
 - Event options require loc ([ck3-localization.md](ck3-localization.md)) and tooltips for mechanical outcomes.
+- Event option visibility (`show_as_unavailable`): Keep options visible and grayed out (`show_as_unavailable = { ... }`) whenever possible so players can inspect available rites and their requirements. Only hide an option when its prerequisite stage is unreached or when it is permanently completed/superseded.
+- Interface toasts (`send_interface_toast`): outcome effects (XP, lifeforce modifiers, stat gains, `hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }`) must be placed directly inside `send_interface_toast = { ... }` so they render in the toast popup. Omit `custom_tooltip` so the engine formats effect lines natively.
 - On-actions: hook into vanilla via `on_actions = { bm_<on_action> }`. Never duplicate vanilla on-action definitions.
 - Event map: see `docs-ai/architecture/blood-mage-events-overview.md`.

@@ -6,10 +6,14 @@ blood_mage_yearly_events.001 = {
     trigger = { has_trait = lifestyle_blood_mage }
     immediate = {
         # Base XP gain for all Blood Mages
-        add_trait_xp = {
-            trait = lifestyle_blood_mage
-            track = ancient
-            value = 1
+        send_interface_toast = {
+            title = bm_yearly_ancient_toast
+            left_icon = root
+            add_trait_xp = {
+                trait = lifestyle_blood_mage
+                track = ancient
+                value = 1
+            }
         }
 
         # Ancient attunement check
@@ -137,51 +141,132 @@ blood_mage_yearly_events.001 = {
 blood_mage_yearly_events.002 = {
     hidden = yes
     trigger = {
-        has_trait = lifestyle_blood_mage
+        OR = {
+            has_trait = lifestyle_blood_mage
+            has_trait = lifestyle_blood_knight
+        }
         exists = house
     }
     immediate = {
-        # Dynasty bloodline, get XP based on number of dynasty modifiers
+        # Dynasty bloodline covenants: chance scales with tier (+3% / +6% / +10% per covenant)
         random = {
-            chance =  {
+            chance = {
                 value = 0
+                # Charisma
                 if = {
-                    limit = {house = { has_house_modifier = dynasty_blood_charisma_modifier }}
+                    limit = { house = { has_house_modifier = dynasty_blood_charisma_modifier_3 } }
                     add = 10
                 }
+                else_if = {
+                    limit = { house = { has_house_modifier = dynasty_blood_charisma_modifier_2 } }
+                    add = 6
+                }
+                else_if = {
+                    limit = { house = { has_house_modifier = dynasty_blood_charisma_modifier_1 } }
+                    add = 3
+                }
+
+                # Fury
                 if = {
-                    limit = {house = { has_house_modifier = dynasty_blood_fury_modifier }}
+                    limit = { house = { has_house_modifier = dynasty_blood_fury_modifier_3 } }
                     add = 10
                 }
+                else_if = {
+                    limit = { house = { has_house_modifier = dynasty_blood_fury_modifier_2 } }
+                    add = 6
+                }
+                else_if = {
+                    limit = { house = { has_house_modifier = dynasty_blood_fury_modifier_1 } }
+                    add = 3
+                }
+
+                # Prosperity
                 if = {
-                    limit = {house = { has_house_modifier = dynasty_blood_prosperity_modifier }}
+                    limit = { house = { has_house_modifier = dynasty_blood_prosperity_modifier_3 } }
                     add = 10
                 }
+                else_if = {
+                    limit = { house = { has_house_modifier = dynasty_blood_prosperity_modifier_2 } }
+                    add = 6
+                }
+                else_if = {
+                    limit = { house = { has_house_modifier = dynasty_blood_prosperity_modifier_1 } }
+                    add = 3
+                }
+
+                # Shadows
                 if = {
-                    limit = {house = { has_house_modifier = dynasty_blood_shadows_modifier }}
+                    limit = { house = { has_house_modifier = dynasty_blood_shadows_modifier_3 } }
                     add = 10
                 }
+                else_if = {
+                    limit = { house = { has_house_modifier = dynasty_blood_shadows_modifier_2 } }
+                    add = 6
+                }
+                else_if = {
+                    limit = { house = { has_house_modifier = dynasty_blood_shadows_modifier_1 } }
+                    add = 3
+                }
+
+                # Insight
                 if = {
-                    limit = {house = { has_house_modifier = dynasty_blood_insight_modifier }}
+                    limit = { house = { has_house_modifier = dynasty_blood_insight_modifier_3 } }
                     add = 10
                 }
+                else_if = {
+                    limit = { house = { has_house_modifier = dynasty_blood_insight_modifier_2 } }
+                    add = 6
+                }
+                else_if = {
+                    limit = { house = { has_house_modifier = dynasty_blood_insight_modifier_1 } }
+                    add = 3
+                }
+
+                # Legacy
                 if = {
-                    limit = {house = { has_house_modifier = dynasty_blood_legacy_modifier }}
+                    limit = { house = { has_house_modifier = dynasty_blood_legacy_modifier_3 } }
                     add = 10
                 }
+                else_if = {
+                    limit = { house = { has_house_modifier = dynasty_blood_legacy_modifier_2 } }
+                    add = 6
+                }
+                else_if = {
+                    limit = { house = { has_house_modifier = dynasty_blood_legacy_modifier_1 } }
+                    add = 3
+                }
+
+                # Expertise
                 if = {
-                    limit = {house = { has_house_modifier = dynasty_blood_expertise_modifier }}
+                    limit = { house = { has_house_modifier = dynasty_blood_expertise_modifier_3 } }
                     add = 10
+                }
+                else_if = {
+                    limit = { house = { has_house_modifier = dynasty_blood_expertise_modifier_2 } }
+                    add = 6
+                }
+                else_if = {
+                    limit = { house = { has_house_modifier = dynasty_blood_expertise_modifier_1 } }
+                    add = 3
                 }
             }
             # Give XP
             send_interface_toast = {
                 title = blood_mage_yearly_events.002.success
                 left_icon = root
-                add_trait_xp = {
-                    trait = lifestyle_blood_mage
-                    track = bloodline
-                    value = 1
+                if = {
+                    limit = { has_trait = lifestyle_blood_mage }
+                    add_trait_xp = {
+                        trait = lifestyle_blood_mage
+                        track = bloodline
+                        value = 1
+                    }
+                }
+                else = {
+                    add_blood_knight_xp = {
+                        TRACK = vanguard
+                        XP = 1
+                    }
                 }
             }
         }
@@ -276,21 +361,25 @@ blood_mage_yearly_events.003 = {
     }
 }
 
-# Yearly event - Add enlightenment & ancient XP to Blood Knights
+# Yearly event - Add ancient XP & attunement to Blood Knights
 blood_mage_yearly_events.004 = {
     hidden = yes
     trigger = {
         has_trait = lifestyle_blood_knight
-        NOT = { has_trait = lifestyle_blood_mage }
     }
     immediate = {
-        add_blood_knight_xp = {
-            TRACK = enlightenment
-            XP = 1
-        }
-        add_blood_knight_xp = {
-            TRACK = ancient
-            XP = 1
+
+        # Base Ancient XP gain for Blood Knights
+        if = {
+            limit = { NOT = { has_trait = lifestyle_blood_mage } }
+            send_interface_toast = {
+                title = bm_yearly_ancient_toast
+                left_icon = root
+                add_blood_knight_xp = {
+                    TRACK = ancient
+                    XP = 1
+                }
+            }
         }
 
         # Ambient lifeforce generation (approx 1 in 3 chance per year)
@@ -305,7 +394,10 @@ blood_mage_yearly_events.004 = {
 
         # Ancient attunement check
         if = {
-            limit = { has_character_modifier = ancient_attuned }
+            limit = {
+                has_character_modifier = ancient_attuned
+                NOT = { has_trait = lifestyle_blood_mage }
+            }
             send_interface_toast = {
                 title = bm_yearly_attunement_ancient_toast
                 left_icon = root
@@ -327,7 +419,10 @@ blood_mage_yearly_events.004 = {
 
         # Benediction attunement check
         if = {
-            limit = { has_character_modifier = benediction_attuned }
+            limit = {
+                has_character_modifier = benediction_attuned
+                NOT = { has_trait = lifestyle_blood_mage }
+            }
             send_interface_toast = {
                 title = bm_yearly_attunement_benediction_toast
                 left_icon = root
@@ -393,7 +488,10 @@ blood_mage_yearly_events.004 = {
 
         # Enlightenment attunement check
         if = {
-            limit = { has_character_modifier = enlightenment_attuned }
+            limit = {
+                has_character_modifier = enlightenment_attuned
+                NOT = { has_trait = lifestyle_blood_mage }
+            }
             send_interface_toast = {
                 title = bm_yearly_attunement_enlightenment_toast
                 left_icon = root

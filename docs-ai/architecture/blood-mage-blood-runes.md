@@ -6,19 +6,19 @@ Living technical specification for body runes, Galdrastafir staves, and blood ar
 
 - **What:** Decoupled rune architecture separating **Rune Depth** (`minor/major/superior_blood_rune_modifier`) from **Galdrastafir Stave Identity** (`bm_stave_<key>`).
   - **Rune Depth (3 modifiers):** Sequential body runes (Minor -> Major -> Superior) that provide **no flat stat bonuses** themselves, solely governing the passive yearly Lifeforce pulse (`blood_mage_yearly_events.003`) and acting as the unlock gate for the capstone stave.
-  - **Capstone Staves (5 modifiers):** Granted exclusively at **Superior** rune depth via the standalone widget decision `bm_carve_galdrastafir_decision`. Each stave grants flat static attributes and an active occult capstone mechanic.
+  - **Capstone Staves (5 modifiers):** Granted exclusively at **Superior** rune depth via the Cast Major Blood Magic Grimoire (`bm_cast_blood_magic_major.001` -> `bm_galdrastafir.001`). Each stave grants flat static attributes and an active occult capstone mechanic.
 - **Self-Inscription (Ancient XP):** Inscribed sequentially via Grimoire events (`bm_cast_blood_magic_minor.001`, `major.001`, `superior.001`). Requires Devotion Rank 2 / 3 / 4 (`piety_level >= 2 / 3 / 4`), sets a 5-year character cooldown flag (`bm_blood_rune_cooldown`), and awards `+4 / +5 / +10` `ancient` XP. Both **Blood Mages** and **Blood Knights** can self-inscribe up to Superior.
 - **Inscribe on Others (Benediction XP):** Character interaction `bm_inscribe_rune_other_interaction` available to both classes. Upgrades target depth in-place (does not inscribe staves; target must use the decision once reaching Superior). Sets a 5-year cooldown (`bm_blood_rune_other_cooldown`) and awards `+4 / +5 / +10` `benediction` XP to caster. Inscribing **Superior** runes on others is exclusive to `lifestyle_blood_mage`.
-- **Capstone Stave Selection & Swapping:** Handled by `bm_carve_galdrastafir_decision` using `decision_view_widget_option_list_generic` in the situation/decision panel. Initial stave selection is **free** (0 Piety). Once chosen, the stave may be swapped after a 5-year cooldown (`bm_capstone_rune_cooldown`) at a cost of **500 Piety** and **1 Major Lifeforce** (`blood_magic_used_major`).
+- **Capstone Stave Selection & Swapping:** Handled inside the Cast Major Blood Magic Grimoire (`bm_cast_blood_magic_major.001` -> `bm_galdrastafir.001`). Initial stave selection is **free** (0 Piety, 0 Lifeforce) once Superior Blood Rune is etched. Once chosen, the stave may be swapped after a 5-year cooldown (`bm_capstone_rune_cooldown`) at a cost of **500 Piety** and **1 Major Lifeforce** (`blood_magic_used_major`).
 - **University Buildings:** `bm_university_0` through `bm_university_3`. Duchy capital holdings built by rulers with `lifestyle_blood_mage`.
 
 ## Tier Progression, Costs & XP Table
 
-| Rune Tier | Base Tracker | Self-Cast Gates (`minor/major/superior.001`) | Cast-on-Other Gates (`bm_inscribe_rune_other_interaction`) | Cost (Self & Other) | Self-Cast XP | Cast on Other XP | Yearly Lifeforce Pulse (`blood_mage_yearly_events.003`) | Capstone Stave Access (`bm_carve_galdrastafir_decision`) |
+| Rune Tier | Base Tracker | Self-Cast Gates (`minor/major/superior.001`) | Cast-on-Other Gates (`bm_inscribe_rune_other_interaction`) | Cost (Self & Other) | Self-Cast XP | Cast on Other XP | Yearly Lifeforce Pulse (`blood_mage_yearly_events.003`) | Capstone Stave Access (`bm_galdrastafir.001`) |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | **Minor** | `minor_blood_rune_modifier` | Mage or Knight, Rank 2 (`piety_level >= 2`), 5-yr CD (`bm_blood_rune_cooldown`) | Mage or Knight, Rank 2 (`piety_level >= 2`), `>= 25` total XP, 5-yr CD (`bm_blood_rune_other_cooldown`) | 0 Piety + 1 Minor Lifeforce | `+4` `ancient` | `+4` `benediction` | 20% Minor | Locked |
 | **Major** | `major_blood_rune_modifier` | Mage or Knight, Rank 3 (`piety_level >= 3`), Minor Rune, 5-yr CD (`bm_blood_rune_cooldown`) | Mage or Knight, Rank 3 (`piety_level >= 3`), `>= 50` total XP, Minor Rune, 5-yr CD (`bm_blood_rune_other_cooldown`) | 200 Piety + 1 Major Lifeforce | `+5` `ancient` | `+5` `benediction` | 20% Minor, 10% Major, 5% Both | Locked |
-| **Superior** | `superior_blood_rune_modifier` | Mage or Knight, Rank 4 (`piety_level >= 4`), Major Rune, 5-yr CD (`bm_blood_rune_cooldown`) | **Mage only**, Rank 4 (`piety_level >= 4`), `>= 100` total XP, Major Rune, 5-yr CD (`bm_blood_rune_other_cooldown`) | 400 Piety + 1 Superior Lifeforce | `+10` `ancient` | `+10` `benediction` | 10% Minor, 20% Major, 10% Both | **Unlocked**: First pick free; 5-yr swap for 500 Piety + 1 Major Lifeforce |
+| **Superior** | `superior_blood_rune_modifier` | Mage or Knight, Rank 4 (`piety_level >= 4`), Major Rune, 5-yr CD (`bm_blood_rune_cooldown`) | **Mage only**, Rank 4 (`piety_level >= 4`), `>= 100` total XP, Major Rune, 5-yr CD (`bm_blood_rune_other_cooldown`) | 400 Piety + 1 Superior Lifeforce | `+10` `ancient` | `+10` `benediction` | 10% Minor, 20% Major, 10% Both | **Unlocked**: First pick free; 5-yr swap for 500 Piety + 1 Major Lifeforce in Major Grimoire |
 
 *Yearly rolls handled by hidden pulse `blood_mage_yearly_events.003` (triggers on rune modifiers, no trait restriction).*
 
@@ -26,7 +26,7 @@ Living technical specification for body runes, Galdrastafir staves, and blood ar
 
 | # | Stave (`bm_stave_<key>`) | Flat Modifiers | Superior Capstone Effect (Active on `bm_stave_<key>` with Superior depth) |
 | --- | --- | --- | --- |
-| 1 | **Vegvísir** (`vegvisir`)<br/>*(The Wayfinder)* | • `character_travel_speed_mult = 0.25`<br/>• `character_travel_safety = 20`<br/>• `movement_speed = 0.10` | **Storm-Walker**: Halves `seek_power_decision` cooldown (`bm_seek_power_cooldown_days`: landed `730 -> 365` days; landless/adventurer `365 -> 182.5` days) and eliminates negative hazard/escape rolls in `events/bm_seek_power_events.txt` (`seek_power.002`, `.003`, `.004`, `.005`). |
+| 1 | **Vegvísir** (`vegvisir`)<br/>*(The Wayfinder)* | • `character_travel_speed_mult = 0.25`<br/>• `character_travel_safety = 20`<br/>• `movement_speed = 0.10` | **Storm-Walker**: Halves `seek_power_decision` (Blood Hunt) cooldown (`bm_seek_power_cooldown_days`: landed `730 -> 365` days; landless/adventurer `365 -> 182.5` days) and eliminates escape/witness hazard rolls when pursuing travelers in `events/bm_seek_power_events.txt` (`seek_power.003`). |
 | 2 | **Ægishjálmur** (`aegishjalmur`)<br/>*(Helm of Awe)* | • `prowess = 6`<br/>• `advantage = 4`<br/>• `knight_effectiveness_mult = 0.20` | **Terror of the Slain**: On battle start (`on_combat_start` -> `bm_on_combat_start_aegishjalmur_terror` in `common/on_action/bm_duel_on_actions.txt`), if any commander or knight holds Ægishjálmur at Superior depth, inflicts `bm_aegishjalmur_terror_modifier` (`prowess = -5`, `health = -0.5`, 1 year) on the opposing commander and all opposing knights. |
 | 3 | **Feingur** (`feingur`)<br/>*(Awakened Seed)* | • `fertility = 0.20`<br/>• `years_of_fertility = 10`<br/>• `positive_random_genetic_chance = 0.20`<br/>• `health = 0.40`<br/>• `epidemic_resistance = 10` | **Awakened Seed**: Doubles XP gained on childbirth (`bm_on_birth_bloodline_xp` in `common/on_action/bm_blood_mage_prevalence_on_actions.txt`: `+4` base, `+8` if child inherits `lifestyle_blood_mage`; grants `bloodline` XP for Mages or `vanguard` XP for Knights). Unlocks character interaction `bm_feingur_bless_dynasty_interaction` (cost: 50 Piety + 1 Minor Lifeforce) applying permanent modifier `bm_feingur_blessed_blood_modifier` (`diplomacy = 1`, `martial = 1`, `stewardship = 1`, `intrigue = 1`, `learning = 1`, `prowess = 2`, `fertility = 0.15`, `health = 0.35`, `positive_random_genetic_chance = 0.15`) to any child or dynasty kin. |
 | 4 | **Nábrókarstafur** (`nabrokarstafur`)<br/>*(Flayed Tithe)* | • `domain_tax_mult = 0.10`<br/>• `men_at_arms_maintenance = -0.10`<br/>• `general_opinion = -10` | **Flayed Tithe**: Visiting Points of Interest during travel (`on_travel_plan_movement` -> `bm_on_visited_point_of_interest` in `common/on_action/bm_travel_on_actions.txt`) awards **+20 Gold** once per POI province (`bm_nabrokarstafur_visited_poi`). Winning battles (`on_combat_end_winner` -> `bm_on_combat_end_winner` in `common/on_action/bm_combat_on_actions.txt`) as commander or knight plunders **10% of enemy fatal casualties** as Gold (`bm_nabrokarstafur_battle_gold_value`), clamped between **25** and **250 Gold**. |
@@ -59,15 +59,16 @@ Duchy capital buildings constructible only if holder has `lifestyle_blood_mage`:
 | Piece | File |
 | --- | --- |
 | Stave, terror & Feingur bloodline modifiers | `common/modifiers/bm_blood_runes_modifiers.txt` |
+| Stave modifier DDS icons (120x120) | `gfx/interface/icons/modifiers/bm_stave_<key>.dds` |
 | Stave application & upgrade effects | `common/scripted_effects/bm_blood_runes_effects.txt` |
-| Capstone stave decision (Option List Widget) | `common/decisions/cast_magic/bm_carve_galdrastafir_decision.txt` |
+| Capstone stave event (Major Grimoire) | `events/bm_carve_galdrastafir_events.txt` |
 | Cast Blood Magic decisions | `common/decisions/cast_magic/bm_cast_blood_magic.txt` |
 | Self-cast rune events | `events/bm_cast_blood_magic_minor_events.txt`, `major_events.txt`, `superior_events.txt` |
 | Inscribe rune on other interaction | `common/character_interactions/bm_inscribe_rune_other.txt` |
 | Feingur bless dynasty interaction | `common/character_interactions/bm_feingur_bless_dynasty.txt` |
 | Interaction icons | `gfx/interface/icons/character_interactions/bm_inscribe_rune_other_interaction.dds`, `bm_feingur_bless_dynasty_interaction.dds` |
 | Yearly rune pulse & Hulinhjálmur Attunement hook | `events/bm_yearly_events.txt` (`.001`, `.003`, `.004`) |
-| Vegvísir Seek Power cooldown & hazard hooks | `common/decisions/get_lifeforce/bm_seek_power_decision.txt`, `events/bm_seek_power_events.txt` |
+| Vegvísir Blood Hunt cooldown & hazard hooks | `common/decisions/get_lifeforce/bm_seek_power_decision.txt`, `events/bm_seek_power_events.txt` |
 | Feingur childbirth XP hook | `common/on_action/bm_blood_mage_prevalence_on_actions.txt` (`bm_on_birth_bloodline_xp`) |
 | Travel POI hook (Nábrókarstafur) | `common/on_action/bm_travel_on_actions.txt` |
 | Combat & duel Capstone hooks | `common/on_action/bm_combat_on_actions.txt`, `common/on_action/bm_duel_on_actions.txt` |

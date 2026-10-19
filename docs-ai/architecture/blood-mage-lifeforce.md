@@ -7,8 +7,8 @@ Living technical specification for the Lifeforce resource economy, character mod
 - **What:** Core spellcasting resource of the mod. Stored as stacking character modifiers (`lifeforce_modifier_minor`, `lifeforce_modifier_major`, `lifeforce_modifier_superior`).
 - **Dual Function (Passive Vitality vs. Active Fuel):** Unspent Lifeforce stacks act as permanent vitality buffs (granting Health, Life Expectancy, Fertility Years, Epidemic Resistance, and Prowess). Spending Lifeforce on spells consumes 1 positive stack and applies a corresponding **temporary negative exhaustion modifier** (`lifeforce_modifier_negative_minor/major/superior`), creating a tactical trade-off between hoarding Lifeforce for immortality vs. burning it to advance tracks and cast rites.
 - **Class Harvesting Asymmetry:**
-  - **Blood Mages** primarily generate Lifeforce via childbirth (+1 Major per child born), prisoner execution (`lifedrain_prisoner_event_interaction`, `mass_lifedrain_prisoners_decision`), courtier siphoning, murder schemes with Superior **Hulinhjálmur** (Superior **Hulinhjálmur** (`bm_stave_hulinhjalmur`)), and spiritual distillation (`bm_manifest_lifeforce_decision`, `bm_manifest_superior_lifeforce_decision`).
-  - **Blood Knights** generate Lifeforce primarily via martial wilderness hunts (`seek_power_decision`), battlefield harvesting (scaled by troop size), lethal single-combat kills (Major Lifeforce + 25% Superior chance against worthy foes), and a ~33% ambient yearly pulse (`blood_mage_yearly_events.004`).
+  - **Blood Mages** primarily generate Lifeforce via childbirth (+1 Major per child born), wilderness blood hunts (`seek_power_decision`), prisoner execution (`lifedrain_prisoner_event_interaction`, `mass_lifedrain_prisoners_decision`), courtier siphoning, murder schemes with Superior **Hulinhjálmur**, and spiritual distillation (`bm_manifest_lifeforce_decision`, `bm_manifest_superior_lifeforce_decision`).
+  - **Blood Knights** generate Lifeforce primarily via wilderness blood hunts (`seek_power_decision`), battlefield harvesting (scaled by troop size), lethal single-combat kills (Major Lifeforce + 25% Superior chance against worthy foes), and a ~33% ambient yearly pulse (`blood_mage_yearly_events.004`).
 
 ### Lifeforce & Exhaustion Modifiers Table (`common/modifiers/bm_lifeforce.txt`)
 
@@ -57,11 +57,11 @@ Triggered on `on_combat_end_winner` (`bm_on_combat_end_winner`) for surviving si
 | **Murder Scheme Execution (`bm_on_murder_success_hulinhjalmur`)** | Superior Hulinhjálmur | Execute successful Murder scheme | **+1 Major** | None |
 | **Manifest Lifeforce (`bm_manifest_lifeforce_decision`)** | Mage & Knight | 100–1000 Piety, `piety_level >= 2`, 1-yr CD | Interaction modal popup (`bm_manifest_lifeforce_interaction`): 100p (+1 XP, 50% fail -> 4% floor, Minor/Major success), 250p (+3 XP, 25% fail -> 3% floor, 1x/2x Major success), 500p (+5 XP, guaranteed Minor upfront, 1x/2x Major or Minor consolation, zero fail), 1000p (+7 XP, guaranteed Minor & 1 Major upfront, 1x/2x Major or Superior, zero fail) | `+1` / `+3` / `+5` / `+7` `enlightenment` |
 | **Condense Lifeforce (`bm_cast_blood_magic_minor.001`)** | Mage & Knight | 100 Piety + 1 Minor Lifeforce | **-1 Minor -> +1 Major** (no exhaustion debuff) | `+2` `ancient` |
-| **Manifest Superior Lifeforce (`bm_manifest_superior_lifeforce_decision`)** | Mage & Knight | 250 Piety + 1 Minor + 1 Major, `piety_level >= 3`, 2-yr CD | **-1 Minor, -1 Major -> +1 Superior** on Learning duel (L0: 50% fail split into 33% fail / 17% crit fail, 33% succ / 17% crit succ; L10: 40% fail; L20: 30% fail; L50+: floored at 3% fail / 1% crit fail; fail refunds Major with 3-yr exhaustion) | `+8` (crit) / `+5` (win) / `+2` (fail) `ancient` |
+| **Condense Superior Lifeforce (`bm_cast_blood_magic_major.001`)** | Mage & Knight | 250 Piety + 1 Minor + 1 Major, `piety_level >= 3`, 2-yr CD | **-1 Minor, -1 Major -> +1 Superior** on Learning duel (L0: 50% fail split into 33% fail / 17% crit fail, 33% succ / 17% crit succ; L10: 40% fail; L20: 30% fail; L50+: floored at 3% fail / 1% crit fail; fail refunds Major with 3-yr exhaustion) | `+3` (crit/win) / `+1` (fail) `ancient` |
 | **Childbirth Milestone (`bm_on_birth_bloodline_xp`)** | Mage only | Child born to blood mage parent | **+1 Major** per child born | `+2` (`+4` inheriting; doubled by Superior Feingur) `bloodline` |
-| **Seek Power (`seek_power_decision`)** | Knight only | Free, 2-yr CD landed / 1-yr wanderer (halved by Superior Vegvísir) | **+1 Minor**, **+1 Major**, or **+1 Major + 25% +1 Superior** (Single Combat battlefield duel against escort knight or 20+ prowess traveler) | `+1` to `+5` `slaughter` / `vanguard` / `enlightenment` |
+| **Go on a Blood Hunt (`seek_power_decision`)** | Mage & Knight | Free, 2-yr CD landed / 1-yr wanderer (halved by Superior Vegvísir) | **+1 Minor**, **+1 Major**, or **+1 Major + 25% +1 Superior** (Single Combat battlefield duel against escort knight or 20+ prowess traveler) | `+1` to `+5` `slaughter` / `vanguard` (Knight) or `+1` to `+2` `hematurgy` / `+1` `bloodline` (Mage) / `+1`–`+2` `enlightenment` / `+1` `ancient` / `+1` `benediction` |
 | **Cast Minor Grimoire Rites (`bm_cast_blood_magic_minor.001`)** | Mage & Knight | `0–75` Piety + 1 Minor Lifeforce | **-1 Minor** (+ 1-yr Minor exhaustion) | `+1` `enlightenment` / `+2` `bloodline` / `+4` `ancient` |
-| **Cast Major Grimoire Rites (`bm_cast_blood_magic_major.001`)** | Mage & Knight | `75–600` Piety + 1 Major Lifeforce | **-1 Major** (+ 3-yr Major exhaustion) | `+3` to `+5` track XP (`+10` Empowerment XP) |
+| **Cast Major Grimoire Rites (`bm_cast_blood_magic_major.001`)** | Mage & Knight | `75–600` Piety + 1 Major Lifeforce | **-1 Major** (+ 3-yr Major exhaustion) | `+3` to `+5` track XP (`+10` Power XP) |
 | **Cast Superior Grimoire Rites (`bm_cast_blood_magic_superior.001`)** | Mage & Knight | `350–1500` Piety + 1 Superior Lifeforce | **-1 Superior** (+ 3-yr Superior exhaustion) | `+5` to `+20` track XP |
 | **Heal Ailments (`bm_heal_ailment`)** | Mage & Knight | `15 / 35 / 100` Piety (halved by Superior Drepsóttarstafur) | Minor: **-1 Minor**; Major: **-1 Major**; Deadly: **-1 Minor & -1 Major** | `+2` / `+4` / `+8` `benediction` (or `enlightenment`/`vanguard` on Knight) |
 | **Inscribe Rune on Other (`bm_inscribe_rune_other_interaction`)** | Mage & Knight (Superior: Mage only) | `0 / 200 / 400` Piety + Minor/Major/Superior Lifeforce, 5-yr CD | **-1 Minor / Major / Superior** | `+4` / `+5` / `+10` `benediction` |
@@ -71,6 +71,8 @@ Triggered on `on_combat_end_winner` (`bm_on_combat_end_winner`) for surviving si
 | **Bless Bloodline (`bm_bless_bloodline_interaction`)** | Mage & Knight | 35 Piety + 1 Minor Lifeforce | **-1 Minor** | `+2` `bloodline` (Mage) / `+2` `vanguard` (Knight) |
 | **Cast Blood Curse (`bm_curse_blood_interaction`)** | Mage (>=10 Hematurgy) | 50 Piety + 1 Minor Lifeforce | **-1 Minor** (Crit success siphons **+1 Minor** back from victim) | `+2` (win) / `+4` (crit) / `+1` (fail) `hematurgy` |
 | **Grant / Restore Lifeforce (`grant_lifeforce_interaction*`)** | Mage & Knight | `25–50` Piety + Minor/Major Lifeforce | Transfers stack to target or clears `lifedrained_modifier` | `+1`/`+2` `enlightenment` or `+4` `benediction` |
+| **Bleed Own Vein (`bm_bleed_own_vein_interaction`)** | Mage & Knight | Health/Stress toll, 1-yr CD | Minor: **+1 Minor** (wounded); Major: **+1 Major** (wounded_2, lifedrained_modifier, 25 stress) | Minor: `+2` `hematurgy` (Mage) / `+2` `slaughter` (Knight); Major: `+4` `hematurgy` (Mage) / `+4` `slaughter` (Knight) |
+| **Purge Stress Vices (`bm_purge_coping_traits_interaction`)** | Mage & Knight | 250 Piety + 1 Major Lifeforce | **-1 Major** | `+4` `enlightenment` (self) or `+4` `benediction` (other) |
 
 ## Where the details live
 
@@ -80,9 +82,10 @@ Triggered on `on_combat_end_winner` (`bm_on_combat_end_winner`) for surviving si
 | Temporary exhaustion effects | `common/scripted_effects/bm_blood_magic_temporary_effects.txt` |
 | Cast consumption effects (`blood_magic_used_*`) | `common/scripted_effects/bm_blood_magic_used_effects.txt` |
 | Prisoner & courtier harvesting interactions | `common/character_interactions/bm_drain_lifeforce.txt` |
+| Self & coping rites (`bm_bleed_own_vein_interaction`, `bm_purge_coping_traits_interaction`) | `common/character_interactions/bm_self_rites.txt` |
 | Battlefield victory/defeat XP & Lifeforce effects | `common/on_action/bm_combat_on_actions.txt`, `common/scripted_effects/bm_combat_effects.txt` |
 | Single combat fatality Lifeforce hook | `common/on_action/bm_duel_on_actions.txt` |
-| Manifestation & distillation decisions | `common/decisions/get_lifeforce/bm_manifest_lifeforce.txt`, `bm_manifest_superior_lifeforce.txt` |
+| Manifestation & distillation decisions | `common/decisions/get_lifeforce/bm_manifest_lifeforce.txt`, `events/bm_cast_blood_magic_major_events.txt` |
 | Mass dungeon harvesting decision | `common/decisions/bm_mass_lifedrain_prisoners.txt` |
 | Story panel Lifeforce stack recount | `common/scripted_effects/bm_blood_mage_story_list_effects.txt` (`bm_recount_lifeforce_stacks_effect`) |
 

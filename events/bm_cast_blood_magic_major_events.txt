@@ -1,4 +1,6 @@
-﻿namespace = bm_cast_blood_magic_major
+﻿# Major Blood Magic Events
+
+namespace = bm_cast_blood_magic_major
 
 bm_cast_blood_magic_major.001 = {
 	type = character_event
@@ -11,42 +13,168 @@ bm_cast_blood_magic_major.001 = {
 		animation = personality_rational
 	}
 
-	# Blood Empowerment
+	# Channel Blood Power
+	# NOTE: Do NOT move Channel Blood Power or Condense Lifeforce out into standalone decisions. They belong strictly inside this Cast Major Blood Magic Grimoire event.
 	option = {
-		name = bm_cast_blood_magic_major.001.empowerment
+		name = bm_cast_blood_magic_major.001.power
 		trigger = {
 			piety_level >= 1
 			piety >= 150
+			has_character_modifier = lifeforce_modifier_major
 		}
 		show_as_unavailable = {
 			always = yes
 		}
-		add_piety = -150
+		custom_tooltip = bm_cast_blood_magic_major.001.power_tt
 		if = {
-			limit = { NOT = { has_trait = lifestyle_blood_empowerment } }
-			add_trait = lifestyle_blood_empowerment
+			limit = { NOT = { has_trait = lifestyle_blood_power } }
+			add_trait = lifestyle_blood_power
 		}
-		blood_magic_used_major = yes
-		if = {
-			limit = { has_trait = lifestyle_blood_mage }
-			add_xp_bm_dynamic = {
-				TRACK = enlightenment
-				XP = 3
-			}
-		}
-		else = {
-			add_blood_knight_xp = {
-				TRACK = enlightenment
-				XP = 3
-			}
-		}
-		custom_tooltip = bm_blood_empowerment_decision_tooltip
-		trigger_event = { id = bm_blood_empowerment_event.001 }
+		trigger_event = { id = bm_blood_power_event.001 }
 		ai_chance = {
 			base = 100
 			modifier = {
 				health <= fine_health
 				add = -100
+			}
+		}
+	}
+
+	# Condense Lifeforce (1 Major Lifeforce + 1 Minor Lifeforce + 250 Piety -> 1 Superior Lifeforce via Learning duel)
+	# NOTE: Do NOT move Condense Lifeforce out into a standalone decision. It belongs strictly inside this Cast Major Blood Magic Grimoire event.
+	option = {
+		name = bm_cast_blood_magic_major.001.condense
+		trigger = {
+			custom_description = {
+				text = bm_manifest_superior_lifeforce_cooldown_tt
+				NOT = { has_character_flag = bm_manifest_superior_lifeforce_cooldown }
+			}
+			piety_level >= 3
+			piety >= 250
+			has_character_modifier = lifeforce_modifier_minor
+			has_character_modifier = lifeforce_modifier_major
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		add_piety = -250
+		add_character_flag = {
+			flag = bm_manifest_superior_lifeforce_cooldown
+			years = 2
+		}
+		remove_character_modifier = lifeforce_modifier_major
+		remove_character_modifier = lifeforce_modifier_minor
+		duel = {
+			skill = learning
+			value = 0
+
+			# Critical Success (~1/6 = 17% at L0, scales up to 33% at L50+)
+			17 = {
+				desc = manifest_superior_lifeforce_major_success_tt
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 0.32
+					max = 16
+				}
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = bm_manifest_superior_lifeforce_major_success_toast
+					left_icon = root
+					add_character_modifier = { modifier = lifeforce_modifier_superior }
+					add_shared_bm_bk_xp = {
+						TRACK = ancient
+						XP = 3
+					}
+					hidden_effect = {
+						bm_recount_lifeforce_stacks_effect = yes
+					}
+				}
+			}
+
+			# Success (~1/3 = 33% at L0, scales up to 63% at L50+)
+			33 = {
+				desc = manifest_superior_lifeforce_minor_success_tt
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 0.68
+					max = 30
+				}
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = bm_manifest_superior_lifeforce_minor_success_toast
+					left_icon = root
+					add_character_modifier = { modifier = lifeforce_modifier_superior }
+					temporary_negative_lifeforce_effect_major_1_year = yes
+					add_shared_bm_bk_xp = {
+						TRACK = ancient
+						XP = 3
+					}
+					hidden_effect = {
+						bm_recount_lifeforce_stacks_effect = yes
+					}
+				}
+			}
+
+			# Fail (~1/3 = 33% at L0, down to 3% at L50+)
+			33 = {
+				desc = manifest_superior_lifeforce_minor_failure_tt
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -0.68
+					min = -30
+				}
+				send_interface_toast = {
+					type = event_toast_effect_bad
+					title = bm_manifest_superior_lifeforce_minor_failure_toast
+					left_icon = root
+					temporary_negative_lifeforce_effect_major = yes
+					add_character_modifier = { modifier = lifeforce_modifier_major }
+					add_shared_bm_bk_xp = {
+						TRACK = ancient
+						XP = 1
+					}
+					hidden_effect = {
+						bm_recount_lifeforce_stacks_effect = yes
+					}
+				}
+			}
+
+			# Critical Fail (~1/6 = 17% at L0, down to 1% at L50+)
+			17 = {
+				desc = manifest_superior_lifeforce_major_failure_tt
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -0.32
+					min = -16
+				}
+				send_interface_toast = {
+					type = event_toast_effect_bad
+					title = bm_manifest_superior_lifeforce_major_failure_toast
+					left_icon = root
+					temporary_negative_lifeforce_effect_major = yes
+					temporary_negative_lifeforce_effect_minor = yes
+					hidden_effect = {
+						bm_recount_lifeforce_stacks_effect = yes
+					}
+				}
+			}
+		}
+		custom_tooltip = bm_cast_blood_magic_major.001.condense.tt
+		ai_chance = {
+			base = 0
+			modifier = {
+				has_character_modifier = lifeforce_modifier_minor
+				has_character_modifier = lifeforce_modifier_major
+				piety > 500
+				add = 25
+			}
+			modifier = {
+				piety > 1000
+				add = 50
+			}
+			modifier = {
+				NOT = { has_character_modifier = lifeforce_modifier_superior }
+				add = 50
 			}
 		}
 	}
@@ -119,7 +247,9 @@ bm_cast_blood_magic_major.001 = {
 			piety >= 200
 		}
 		show_as_unavailable = {
-			always = yes
+			has_character_modifier = minor_blood_rune_modifier
+			NOT = { has_character_modifier = major_blood_rune_modifier }
+			NOT = { has_character_modifier = superior_blood_rune_modifier }
 		}
 		send_interface_toast = {
 			type = event_toast_effect_good
@@ -156,49 +286,42 @@ bm_cast_blood_magic_major.001 = {
 		}
 	}
 
-	# Empower Bloodline
+	# Carve / Attune Galdrastafir Stave
 	option = {
-		name = bm_cast_blood_magic_major.001.bloodline
+		name = bm_cast_blood_magic_major.001.galdrastafir
 		trigger = {
 			custom_description = {
-				text = bm_channel_bloodline_cooldown_tt
-				NOT = { has_character_flag = bm_channel_bloodline_cooldown }
+				text = bm_requires_superior_blood_rune_tt
+				has_character_modifier = superior_blood_rune_modifier
 			}
-			exists = house
-			piety_level >= 1
-			piety >= 350
+			trigger_if = {
+				limit = { bm_has_any_stave_trigger = yes }
+				custom_description = {
+					text = bm_carve_galdrastafir_cooldown_tt
+					NOT = { has_character_flag = bm_capstone_rune_cooldown }
+				}
+				custom_tooltip = {
+					text = bm_swap_stave_cost_req
+					piety >= 500
+					has_character_modifier = lifeforce_modifier_major
+				}
+			}
 		}
 		show_as_unavailable = {
 			always = yes
 		}
-		add_piety = -350
-		add_character_flag = {
-			flag = bm_channel_bloodline_cooldown
-			years = 3
-		}
-		trigger_event = { id = bm_channel_lifeforce_bloodline.001 }
-		if = {
-			limit = { has_trait = lifestyle_blood_mage }
-			add_xp_bm_dynamic = {
-				TRACK = bloodline
-				XP = 5
-			}
-		}
-		else = {
-			add_blood_knight_xp = {
-				TRACK = vanguard
-				XP = 5
-			}
-		}
-		blood_magic_used_major = yes
-		custom_tooltip = channel_lifeforce_bloodline.effects_list
+		custom_tooltip = bm_cast_blood_magic_major.001.galdrastafir_tt
+		trigger_event = { id = bm_galdrastafir.001 }
 		ai_chance = {
-			base = 50
-			ai_modifier_based_on_health = yes
+			base = 10
+			modifier = {
+				factor = 0
+				bm_has_any_stave_trigger = yes
+			}
 		}
 	}
 
-	# Manifest Perfection (Congenital Traits up to Rank 2)
+	# Manifest Trait (Congenital Traits up to Rank 2)
 	option = {
 		name = bm_cast_blood_magic_major.001.manifest_traits
 		trigger = {
@@ -208,11 +331,14 @@ bm_cast_blood_magic_major.001 = {
 			}
 			piety_level >= 3
 			piety >= 200
-			NOT = {
-				AND = {
-					has_trait_rank = { trait = intellect_good rank >= 2 }
-					has_trait_rank = { trait = physique_good rank >= 2 }
-					has_trait_rank = { trait = beauty_good rank >= 2 }
+			custom_description = {
+				text = bm_manifest_traits_max_rank_2_tt
+				NOT = {
+					AND = {
+						has_trait_rank = { trait = intellect_good rank >= 2 }
+						has_trait_rank = { trait = physique_good rank >= 2 }
+						has_trait_rank = { trait = beauty_good rank >= 2 }
+					}
 				}
 			}
 		}

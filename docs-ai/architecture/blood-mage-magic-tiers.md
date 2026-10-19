@@ -20,16 +20,16 @@ flowchart TD
         M8["Bless Bloodline"]
         M9["Make Blood Knight / Blood Mage (Minor)"]
         M10["Minor Courtier Drain"]
-        M11["Seek Power in Nature"]
+        M11["Go on a Blood Hunt"]
     end
 
     subgraph T2 ["Major Blood Magic (Major Lifeforce)"]
         J1["Cast Major Blood Magic Grimoire"]
-        J2["Blood Empowerment Trait"]
+        J2["Blood Power Trait"]
         J3["Improve Education (1★ to 4★)"]
         J4["Inscribe Major Blood Rune"]
         J5["Empower Bloodline"]
-        J6["Manifest Perfection (Ranks 1-2)"]
+        J6["Manifest Trait (Ranks 1-2)"]
         J7["Heal Major Ailments"]
         J8["Make Blood Knight / Blood Mage (Major)"]
         J9["Trait Theft (Ranks 1-5)"]
@@ -72,10 +72,10 @@ Requires Minor Lifeforce (`lifeforce_modifier_minor`). Accessible to both **Bloo
 | **Heal Minor Ailments** | Interaction (`bm_heal_ailment`) | 15 Piety + Minor Lifeforce | Cures minor affliction (`wounded_1`, `ill`, `lovers_pox`, `gout_ridden`, `scarred`) on self or ally. | Self: +2 Enlightenment<br>Ally (Mage): +2 Benediction<br>Ally (Knight): +1 Vanguard, +1 Benediction |
 | **Bless Bloodline** | Interaction (`bm_bless_bloodline_interaction`) | 35 Piety + Minor Lifeforce, 10-yr buff | Bestows `bm_blessed_blood_modifier` (+1 all stats, +10% fertility, +0.25 health) on child or dynasty kin. (Superior Feingur unlocks permanent `bm_feingur_bless_dynasty_interaction`). | Mage: +2 Bloodline<br>Knight: +2 Vanguard |
 | **Cast Blood Curse** | Interaction (`bm_curse_blood_interaction`) | 50 Piety + Minor Lifeforce, Mage >= 10 Hematurgy XP | Skill duel (Intrigue/Learning) to inflict `bm_blood_curse_modifier` (-2 all stats, -1.5 health, -30% fertility, -3 prowess) for 5 yrs; crit also inflicts `ill` and siphons Minor Lifeforce back. | +2 (win) / +4 (crit) / +1 (fail) Hematurgy |
-| **Make Blood Knight (Minor)** | Interaction (`make_blood_knight_interaction`) | 250 Piety + Minor Lifeforce (Knight actor) | Bestows `lifestyle_blood_knight` on sworn knight/courtier. | +2 Vanguard |
+| **Make Blood Knight (Minor)** | Interaction (`make_blood_knight_interaction`) | 250 Piety + Minor Lifeforce (Knight actor) | Bestows `lifestyle_blood_knight` on spouse, kin, knight, or courtier. | +2 Vanguard |
 | **Grant Blood Magic (Minor)** | Interaction (`grant_blood_magic_interaction`) | 250 Piety + Minor Lifeforce (Mage actor) | Bestows `lifestyle_blood_mage` on uninitiated courtier/kin. | +2 Bloodline |
 | **Minor Lifedrain** | Interaction (`lifedrain_courtier_event_interaction`) | 25 Piety, 3-mo CD | Siphons Minor Lifeforce from courtier/prisoner. Victim gets `lifedrained_modifier`. (Mage: Intrigue/Learning; Knight: Prowess duel). | Mage: +1 Hematurgy<br>Knight: +1 Slaughter |
-| **Seek Power** | Decision (`seek_power_decision`) | Cooldown (730d landed, 365d wanderer; halved by Superior Vegvísir) | Wilderness expedition harvesting Lifeforce and martial XP. Exclusive to Blood Knights. | Scaled Martial XP |
+| **Go on a Blood Hunt** | Decision (`seek_power_decision`) | Cooldown (730d landed, 365d wanderer; halved by Superior Vegvísir) | Wilderness expedition harvesting Lifeforce and discipline XP. Available to Blood Mages and Blood Knights. | Scaled Martial/Discipline XP |
 
 ---
 
@@ -85,15 +85,16 @@ Requires Major Lifeforce (`lifeforce_modifier_major`) and Devotion level >= 1. A
 
 | Action / Ritual | Interface | Cost / Prerequisite | Effect | XP Gain |
 | --- | --- | --- | --- | --- |
-| **Cast Major Magic Grimoire** | Decision (`bm_cast_blood_magic_major_decision`) | Major Lifeforce, Piety level >= 1 | Opens major rituals event grimoire (`bm_cast_blood_magic_major.001`). | None |
-| **Blood Empowerment** | Grimoire Option | 150 Piety + Major Lifeforce | Unlocks/advances secondary lifestyle trait `lifestyle_blood_empowerment` (+10 XP in chosen track). | +3 Enlightenment (+10 Empowerment) |
+| **Cast Major Magic Grimoire** | Decision (`bm_cast_blood_magic_major_decision`) | Major Lifeforce, Piety level >= 1, Piety >= 150 | Opens major rituals event grimoire (`bm_cast_blood_magic_major.001`). | None |
+| **Channel Blood Power** | Grimoire Option (`bm_blood_power_event.001`) | 150 Piety + Major Lifeforce, Piety level >= 1 | Unlocks/advances secondary lifestyle trait `lifestyle_blood_power` (+10 XP in chosen track) via Grimoire event modal. | +3 Enlightenment (+10 Power) |
+| **Condense Lifeforce (Superior)** | Grimoire Option (`bm_cast_blood_magic_major.001.condense`) | 250 Piety + 1 Minor & 1 Major Lifeforce, Piety level >= 3, 2-yr CD | Distills Minor and Major lifeforce into Superior Lifeforce via Learning duel. | +1 to +3 Ancient |
 | **Improve Education (1★–4★)** | Grimoire Option | 75–200 Piety + Major Lifeforce, Piety level >= 3, 2-yr CD | Upgrades education trait star tier (up to tier 4) via mental duel. | +5 Enlightenment |
 | **Inscribe Major Blood Rune (Self)** | Grimoire Option | 200 Piety + Major Lifeforce, Minor Rune active, Piety level >= 3, 5-yr CD | Upgrades `minor_blood_rune_modifier` to `major_blood_rune_modifier` (improves yearly Lifeforce pulse). | +5 Ancient |
-| **Upgrade Major Rune on Other** | Interaction (`bm_inscribe_rune_other_interaction`) | 200 Piety + Major Lifeforce, Minor Rune on target, Piety level >= 3, >= 50 Track XP, 5-yr CD | Upgrades target's Blood Rune from Minor to Major depth. | +5 Benediction |
-| **Empower Bloodline** | Grimoire Option | 350 Piety + Major Lifeforce, has house, 3-yr CD | Bestows permanent supernatural house modifier (`bm_channel_lifeforce_bloodline.001`). | Mage: +5 Bloodline<br>Knight: +5 Vanguard |
-| **Manifest Perfection (Ranks 1–2)** | Grimoire Option | 200–600 Piety + Major Lifeforce, Piety level >= 2, 5-yr CD | Cleanses congenital flaws or manifests positive congenital traits (Beauty, Physique, Intellect) up to rank 2. | Mage: +4 Bloodline<br>Knight: +4 Vanguard |
+| **Manifest Congenital Traits (Ranks 1–2)** | Grimoire Option (`bm_cast_blood_magic_major.001.manifest_traits`) | 200 Piety + Major Lifeforce, Piety level >= 3, 3-yr CD | Manifests congenital physical/mental traits up to rank 2 via ritual channel (`bm_channel_manifest_traits.001`). | Mage: +3 Bloodline<br>Knight: +3 Vanguard |
+| **Carve Galdrastafir Stave** | Grimoire Option (`bm_cast_blood_magic_major.001.galdrastafir`) | Superior Blood Rune active (First pick: free; Swap: 500 Piety + Major Lifeforce, 5-yr CD) | Opens Galdrastafir rites modal (`bm_galdrastafir.001`) to bind 1 of 5 Galdrastafir staves (`bm_stave_<key>`), granting flat stats and active capstone effect. | None |
+| **Empower Dynasty Bloodline** | Decision (`bm_empower_bloodline_decision`) | Tier I: 150p + Minor; Tier II: 350p + Major; Tier III: 750p + Superior. No CD. | Upgrades 1 of 7 House Covenants across 3 tiers (Minor, Major, Superior) with dynamic UI level tags. | Tier I: +3, Tier II: +5, Tier III: +10 Bloodline/Vanguard |
 | **Heal Major Ailments** | Interaction (`bm_heal_ailment`) | 35 Piety + Major Lifeforce | Cures severe condition or old age ailment (`blind`, `incapable`, `infirm`, `withering_mind`, `clouded_eyes`, `fragile_bones`, `faltering_heart`, `wounded_2`, `weak`, etc.) on self or ally. | Self: +4 Enlightenment<br>Ally (Mage): +4 Benediction<br>Ally (Knight): +2 Vanguard, +2 Benediction |
-| **Make Blood Knight (Major)** | Interaction (`make_blood_knight_interaction`) | 100 Piety + Major Lifeforce (Knight actor) | Bestows `lifestyle_blood_knight` on sworn knight/courtier. | +4 Vanguard |
+| **Make Blood Knight (Major)** | Interaction (`make_blood_knight_interaction`) | 100 Piety + Major Lifeforce (Knight actor) | Bestows `lifestyle_blood_knight` on spouse, kin, knight, or courtier. | +4 (+5 if kin) Vanguard |
 | **Grant Blood Magic (Major)** | Interaction (`grant_blood_magic_interaction`) | 100 Piety + Major Lifeforce (Mage actor) | Bestows `lifestyle_blood_mage` on uninitiated courtier/kin. | +4 (+5 if kin) Bloodline |
 | **Trait Theft (Ranks 1–5)** | Interaction (`trait_drain_prisoner_event_interaction`) | 100–325 Piety + Major Lifeforce, 60-day CD | Steals congenital trait (ranks 1–5: Quick to Genius, Comely to Beautiful, Hale to Herculean, plus Fecund/Giant/Pure-blooded) from prisoner via duel. | Mage: +2 Hematurgy<br>Knight: +2 Slaughter |
 
@@ -106,11 +107,9 @@ Requires Superior Lifeforce (`lifeforce_modifier_superior`) and Devotion level >
 | Action / Ritual | Interface | Cost / Prerequisite | Effect | XP Gain |
 | --- | --- | --- | --- | --- |
 | **Cast Superior Magic Grimoire** | Decision (`bm_cast_blood_magic_superior_decision`) | Superior Lifeforce, Piety level >= 2 | Opens superior rites modal (`bm_cast_blood_magic_superior.001`). | None |
-| **Manifest Superior Lifeforce** | Decision (`bm_manifest_superior_lifeforce_decision`) | 250 Piety + 1 Minor & 1 Major Lifeforce, Piety level >= 3, 2-yr CD | Distills Minor and Major lifeforce into Superior Lifeforce via Learning duel. | +2 to +8 Ancient |
 | **Master Education (5★)** | Grimoire Option | 350 Piety + Superior Lifeforce, Piety level >= 3, 4★ education, 2-yr CD | Ascends 4★ education to legendary 5★ tier via mental duel. | +10 Enlightenment (+10 on win) |
 | **Embrace New Education** | Grimoire Option | 1000 Piety + Superior Lifeforce, Piety level >= 4, 5★ education, 2-yr CD | Grants a secondary 1-star education trait in a new discipline. | +10 Enlightenment |
-| **Inscribe Superior Blood Rune (Self)** | Grimoire Option | 400 Piety + Superior Lifeforce, Major Rune active, Piety level >= 4, 5-yr CD | Upgrades Major Blood Rune to Superior tier, unlocking the Carve Galdrastafir Stave decision (`bm_carve_galdrastafir_decision`). | +10 Ancient |
-| **Carve Galdrastafir Stave** | Decision (`bm_carve_galdrastafir_decision`) | Superior Blood Rune active (First pick: free; Swap: 500 Piety + Major Lifeforce, 5-yr CD) | Binds 1 of 5 Galdrastafir staves (`bm_stave_<key>`) to Superior Blood Rune, granting flat stats and active capstone effect. | None |
+| **Inscribe Superior Blood Rune (Self)** | Grimoire Option | 400 Piety + Superior Lifeforce, Major Rune active, Piety level >= 4, 5-yr CD | Upgrades Major Blood Rune to Superior tier, unlocking Galdrastafir Stave carving in the Major Grimoire. | +10 Ancient |
 | **Upgrade Superior Rune on Other** | Interaction (`bm_inscribe_rune_other_interaction`) | 400 Piety + Superior Lifeforce, Major Rune on target, **Blood Mage only**, Piety level >= 4, >= 100 Track XP, 5-yr CD | Upgrades target's Blood Rune from Major to Superior depth. | +10 Benediction |
 | **Manifest Apex Perfection (Ranks 3–5)** | Grimoire Option | 1000–1500 Piety + Superior Lifeforce, Piety level >= 3, 5-yr CD | Manifests congenital traits at apex ranks 3 to 5 (Genius, Herculean, Beautiful, and 5-tier overhaul compat ranks). | Mage: +6 Bloodline, +2 Enlightenment<br>Knight: +6 Vanguard, +2 Enlightenment |
 | **Forge Blood Golem** | Grimoire Option (`bm_cast_blood_magic_superior.001.create_blood_golem`) | 500 Piety + Superior Lifeforce, Piety level >= 3, 3-yr CD | Synthesizes and shapes an artificial champion in house `bm_house_golem`. | Mage: +5 Bloodline<br>Knight: +5 Vanguard |
@@ -123,9 +122,9 @@ Requires Superior Lifeforce (`lifeforce_modifier_superior`) and Devotion level >
 | Dimension | Blood Mage (`lifestyle_blood_mage`) | Blood Knight (`lifestyle_blood_knight`) |
 | --- | --- | --- |
 | **Magic Casting** | Minor, Major, Superior | Minor, Major, Superior |
-| **Lifeforce Generation** | Active distillation, childbirth (+1 Major), lethal prisoner execution (`lifedrain_prisoner_event_interaction`, `mass_lifedrain_prisoners_decision`), courtier siphoning, Murder schemes with Superior **Hulinhjálmur** (+1 Major), Blood Rune pulse | Single-combat duel kills (Major Lifeforce + 25% Superior chance on `prowess >= 20` or blood traits), `seek_power_decision` wilderness harvest, battle victories (`10%–100%` Minor, `0%–100%` Major scaled by troops), Murder schemes with Superior **Hulinhjálmur** (+1 Major), ambient yearly condensation (~33% Minor), Blood Rune pulse |
+| **Lifeforce Generation** | Active distillation, `seek_power_decision` blood hunts, childbirth (+1 Major), lethal prisoner execution (`lifedrain_prisoner_event_interaction`, `mass_lifedrain_prisoners_decision`), courtier siphoning, Murder schemes with Superior **Hulinhjálmur** (+1 Major), Blood Rune pulse | Single-combat duel kills (Major Lifeforce + 25% Superior chance on `prowess >= 20` or blood traits), `seek_power_decision` blood hunts, battle victories (`10%–100%` Minor, `0%–100%` Major scaled by troops), Murder schemes with Superior **Hulinhjálmur** (+1 Major), ambient yearly condensation (~33% Minor), Blood Rune pulse |
 | **Exclusive Tracks** | `bloodline` (Domain limit, dynasty gold, construction, dev)<br>`hematurgy` (Schemes, dread, tyranny reduction) | `vanguard` (Army advantage, martial, speed, martial/piety)<br>`slaughter` (Prowess, knight effectiveness, knight limit, prowess/piety) |
 | **Shared Tracks** | `ancient`, `benediction`, `enlightenment` (Level 8 Devotion capstones) | `ancient`, `benediction`, `enlightenment` (Level 8 Devotion capstones) |
-| **Secondary Lifestyle** | `lifestyle_blood_empowerment` (all 5 tracks) | `lifestyle_blood_empowerment` (all 5 tracks) |
+| **Secondary Lifestyle** | `lifestyle_blood_power` (all 5 tracks) | `lifestyle_blood_power` (all 5 tracks) |
 | **Exclusive Features** | Duchy **Blood Universities** (`bm_university_0..3`), `lifedrain_prisoner_event_interaction`, `bm_curse_blood_interaction`, inscribing **Superior** runes on others | `empower_blood_knight_interaction`, passive battlefield & duel Lifeforce harvesting, ~33% ambient yearly Minor Lifeforce roll |
 | **Initiation** | Initiates apprentices as Blood Mages (`100`p + Major OR `250`p + Minor) | Initiates squires/knights as Blood Knights (`100`p + Major OR `250`p + Minor) |

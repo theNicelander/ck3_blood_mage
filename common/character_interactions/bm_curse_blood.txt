@@ -1,7 +1,7 @@
 ﻿bm_curse_blood_interaction = {
 	common_interaction = yes
 	interface_priority = 310
-	category = interaction_category_hostile
+	category = interaction_category_bm_blood_magic
 	desc = bm_curse_blood_interaction_desc
 
 	is_shown = {
@@ -52,16 +52,16 @@
 						value = scope:duel_value
 						multiplier = 3
 					}
-					send_interface_toast = {
-						title = bm_curse_blood.critical_success_title
-						left_icon = scope:actor
-						right_icon = scope:recipient
-					}
 					scope:actor = {
-						add_character_modifier = { modifier = lifeforce_modifier_minor }
-						add_xp_bm_dynamic = {
-							TRACK = hematurgy
-							XP = 4
+						send_interface_toast = {
+							title = bm_curse_blood.critical_success_title
+							left_icon = scope:actor
+							right_icon = scope:recipient
+							add_character_modifier = { modifier = lifeforce_modifier_minor }
+							add_xp_bm_dynamic = {
+								TRACK = hematurgy
+								XP = 4
+							}
 						}
 					}
 					scope:recipient = {
@@ -79,15 +79,15 @@
 						value = scope:duel_value
 						multiplier = 1.5
 					}
-					send_interface_toast = {
-						title = bm_curse_blood.success_title
-						left_icon = scope:actor
-						right_icon = scope:recipient
-					}
 					scope:actor = {
-						add_xp_bm_dynamic = {
-							TRACK = hematurgy
-							XP = 2
+						send_interface_toast = {
+							title = bm_curse_blood.success_title
+							left_icon = scope:actor
+							right_icon = scope:recipient
+							add_xp_bm_dynamic = {
+								TRACK = hematurgy
+								XP = 2
+							}
 						}
 					}
 					scope:recipient = {
@@ -104,23 +104,28 @@
 						value = scope:duel_value
 						multiplier = -2
 					}
-					send_interface_toast = {
-						title = bm_curse_blood.fail_title
-						left_icon = scope:actor
-						right_icon = scope:recipient
-					}
 					scope:actor = {
-						add_xp_bm_dynamic = {
-							TRACK = hematurgy
-							XP = 1
+						send_interface_toast = {
+							title = bm_curse_blood.fail_title
+							left_icon = scope:actor
+							right_icon = scope:recipient
+							add_xp_bm_dynamic = {
+								TRACK = hematurgy
+								XP = 1
+							}
+							add_stress = 15
 						}
-						add_stress = 15
 					}
-					scope:recipient = {
-						add_opinion = {
-							target = scope:actor
-							modifier = lifedrained_me
-							opinion = -40
+					if = {
+						limit = {
+							NOT = { scope:actor = { bm_has_superior_stave_trigger = { STAVE = hulinhjalmur } } }
+						}
+						scope:recipient = {
+							add_opinion = {
+								target = scope:actor
+								modifier = lifedrained_me
+								opinion = -40
+							}
 						}
 					}
 				}

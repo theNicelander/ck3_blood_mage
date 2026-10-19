@@ -1,5 +1,5 @@
 ﻿bm_feingur_bless_dynasty_interaction = {
-	category = interaction_category_friendly
+	category = interaction_category_bm_blood_magic
 	auto_accept = yes
 	common_interaction = yes
 	desc = bm_feingur_bless_dynasty_interaction_desc
@@ -38,13 +38,12 @@
 
 	on_accept = {
 		scope:actor = {
-			bloodline_magic_cast_effect_minor = yes
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_feingur_bless_dynasty_toast
 				left_icon = scope:actor
 				right_icon = scope:recipient
-				custom_tooltip = bm_feingur_bless_dynasty_toast_tt
+				bloodline_magic_cast_effect_minor = yes
 			}
 		}
 		scope:recipient = {

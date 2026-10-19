@@ -1,5 +1,5 @@
 ﻿bm_manifest_lifeforce_interaction = {
-	category = interaction_category_friendly
+	category = interaction_category_bm_blood_magic
 	icon = bm_manifest_lifeforce_interaction
 	auto_accept = yes
 	common_interaction = yes
@@ -158,14 +158,14 @@
 							max = 16
 						}
 						scope:actor = {
-							add_character_modifier = { modifier = lifeforce_modifier_major }
 							send_interface_toast = {
 								type = event_toast_effect_good
 								title = manifest_lifeforce_major_success_tt
-								left_icon = root
-							}
-							hidden_effect = {
-								bm_recount_lifeforce_stacks_effect = yes
+								left_icon = scope:actor
+								add_character_modifier = { modifier = lifeforce_modifier_major }
+								hidden_effect = {
+									bm_recount_lifeforce_stacks_effect = yes
+								}
 							}
 						}
 					}
@@ -179,14 +179,14 @@
 							max = 30
 						}
 						scope:actor = {
-							add_character_modifier = { modifier = lifeforce_modifier_minor }
 							send_interface_toast = {
 								type = event_toast_effect_good
 								title = manifest_lifeforce_minor_success_tt
-								left_icon = root
-							}
-							hidden_effect = {
-								bm_recount_lifeforce_stacks_effect = yes
+								left_icon = scope:actor
+								add_character_modifier = { modifier = lifeforce_modifier_minor }
+								hidden_effect = {
+									bm_recount_lifeforce_stacks_effect = yes
+								}
 							}
 						}
 					}
@@ -203,7 +203,7 @@
 							send_interface_toast = {
 								type = event_toast_effect_neutral
 								title = manifest_lifeforce_minor_failure_tt
-								left_icon = root
+								left_icon = scope:actor
 							}
 						}
 					}
@@ -217,11 +217,11 @@
 							min = -16
 						}
 						scope:actor = {
-							temporary_negative_lifeforce_effect_major = yes
 							send_interface_toast = {
 								type = event_toast_effect_bad
 								title = manifest_lifeforce_major_failure_tt
-								left_icon = root
+								left_icon = scope:actor
+								temporary_negative_lifeforce_effect_major = yes
 							}
 						}
 					}
@@ -246,15 +246,15 @@
 							max = 10
 						}
 						scope:actor = {
-							add_character_modifier = { modifier = lifeforce_modifier_major }
-							add_character_modifier = { modifier = lifeforce_modifier_major }
 							send_interface_toast = {
 								type = event_toast_effect_good
 								title = manifest_lifeforce_double_major_success_tt
-								left_icon = root
-							}
-							hidden_effect = {
-								bm_recount_lifeforce_stacks_effect = yes
+								left_icon = scope:actor
+								add_character_modifier = { modifier = lifeforce_modifier_major }
+								add_character_modifier = { modifier = lifeforce_modifier_major }
+								hidden_effect = {
+									bm_recount_lifeforce_stacks_effect = yes
+								}
 							}
 						}
 					}
@@ -268,14 +268,14 @@
 							max = 12
 						}
 						scope:actor = {
-							add_character_modifier = { modifier = lifeforce_modifier_major }
 							send_interface_toast = {
 								type = event_toast_effect_good
 								title = manifest_lifeforce_major_success_tt
-								left_icon = root
-							}
-							hidden_effect = {
-								bm_recount_lifeforce_stacks_effect = yes
+								left_icon = scope:actor
+								add_character_modifier = { modifier = lifeforce_modifier_major }
+								hidden_effect = {
+									bm_recount_lifeforce_stacks_effect = yes
+								}
 							}
 						}
 					}
@@ -292,7 +292,7 @@
 							send_interface_toast = {
 								type = event_toast_effect_neutral
 								title = manifest_lifeforce_minor_failure_tt
-								left_icon = root
+								left_icon = scope:actor
 							}
 						}
 					}
@@ -306,11 +306,11 @@
 							min = -7
 						}
 						scope:actor = {
-							temporary_negative_lifeforce_effect_minor = yes
 							send_interface_toast = {
 								type = event_toast_effect_bad
 								title = manifest_lifeforce_minor_failure_penalty_tt
-								left_icon = root
+								left_icon = scope:actor
+								temporary_negative_lifeforce_effect_minor = yes
 							}
 						}
 					}
@@ -336,15 +336,15 @@
 							max = 20
 						}
 						scope:actor = {
-							add_character_modifier = { modifier = lifeforce_modifier_major }
-							add_character_modifier = { modifier = lifeforce_modifier_major }
 							send_interface_toast = {
 								type = event_toast_effect_good
 								title = manifest_lifeforce_double_major_success_tt
-								left_icon = root
-							}
-							hidden_effect = {
-								bm_recount_lifeforce_stacks_effect = yes
+								left_icon = scope:actor
+								add_character_modifier = { modifier = lifeforce_modifier_major }
+								add_character_modifier = { modifier = lifeforce_modifier_major }
+								hidden_effect = {
+									bm_recount_lifeforce_stacks_effect = yes
+								}
 							}
 						}
 					}
@@ -358,14 +358,14 @@
 							max = 10
 						}
 						scope:actor = {
-							add_character_modifier = { modifier = lifeforce_modifier_major }
 							send_interface_toast = {
 								type = event_toast_effect_good
 								title = manifest_lifeforce_major_success_tt
-								left_icon = root
-							}
-							hidden_effect = {
-								bm_recount_lifeforce_stacks_effect = yes
+								left_icon = scope:actor
+								add_character_modifier = { modifier = lifeforce_modifier_major }
+								hidden_effect = {
+									bm_recount_lifeforce_stacks_effect = yes
+								}
 							}
 						}
 					}
@@ -379,14 +379,14 @@
 							min = -30
 						}
 						scope:actor = {
-							add_character_modifier = { modifier = lifeforce_modifier_minor }
 							send_interface_toast = {
 								type = event_toast_effect_good
 								title = manifest_lifeforce_minor_success_tt
-								left_icon = root
-							}
-							hidden_effect = {
-								bm_recount_lifeforce_stacks_effect = yes
+								left_icon = scope:actor
+								add_character_modifier = { modifier = lifeforce_modifier_minor }
+								hidden_effect = {
+									bm_recount_lifeforce_stacks_effect = yes
+								}
 							}
 						}
 					}
@@ -413,14 +413,14 @@
 							max = 25
 						}
 						scope:actor = {
-							add_character_modifier = { modifier = lifeforce_modifier_superior }
 							send_interface_toast = {
 								type = event_toast_effect_good
 								title = manifest_lifeforce_superior_success_tt
-								left_icon = root
-							}
-							hidden_effect = {
-								bm_recount_lifeforce_stacks_effect = yes
+								left_icon = scope:actor
+								add_character_modifier = { modifier = lifeforce_modifier_superior }
+								hidden_effect = {
+									bm_recount_lifeforce_stacks_effect = yes
+								}
 							}
 						}
 					}
@@ -434,15 +434,15 @@
 							max = 15
 						}
 						scope:actor = {
-							add_character_modifier = { modifier = lifeforce_modifier_major }
-							add_character_modifier = { modifier = lifeforce_modifier_major }
 							send_interface_toast = {
 								type = event_toast_effect_good
 								title = manifest_lifeforce_double_major_success_tt
-								left_icon = root
-							}
-							hidden_effect = {
-								bm_recount_lifeforce_stacks_effect = yes
+								left_icon = scope:actor
+								add_character_modifier = { modifier = lifeforce_modifier_major }
+								add_character_modifier = { modifier = lifeforce_modifier_major }
+								hidden_effect = {
+									bm_recount_lifeforce_stacks_effect = yes
+								}
 							}
 						}
 					}
@@ -456,14 +456,14 @@
 							min = -40
 						}
 						scope:actor = {
-							add_character_modifier = { modifier = lifeforce_modifier_major }
 							send_interface_toast = {
 								type = event_toast_effect_good
 								title = manifest_lifeforce_major_success_tt
-								left_icon = root
-							}
-							hidden_effect = {
-								bm_recount_lifeforce_stacks_effect = yes
+								left_icon = scope:actor
+								add_character_modifier = { modifier = lifeforce_modifier_major }
+								hidden_effect = {
+									bm_recount_lifeforce_stacks_effect = yes
+								}
 							}
 						}
 					}

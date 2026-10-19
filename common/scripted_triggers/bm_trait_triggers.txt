@@ -1,30 +1,33 @@
 ﻿# Scripted triggers for Blood Mage trait and location requirements
 
 bm_can_drain_traits_from_target_trigger = {
-	OR = {
-		AND = {
-			NOT = { has_trait_rank = { trait = intellect_good rank >= 5 } }
-			scope:recipient = { has_trait = intellect_good }
-		}
-		AND = {
-			NOT = { has_trait_rank = { trait = physique_good rank >= 5 } }
-			scope:recipient = { has_trait = physique_good }
-		}
-		AND = {
-			NOT = { has_trait_rank = { trait = beauty_good rank >= 5 } }
-			scope:recipient = { has_trait = beauty_good }
-		}
-		AND = {
-			NOT = { has_trait = fecund }
-			scope:recipient = { has_trait = fecund }
-		}
-		AND = {
-			NOT = { has_trait = giant }
-			scope:recipient = { has_trait = giant }
-		}
-		AND = {
-			NOT = { has_trait = pure_blooded }
-			scope:recipient = { has_trait = pure_blooded }
+	custom_description = {
+		text = bm_can_drain_traits_from_target_trigger_tt
+		OR = {
+			AND = {
+				NOT = { has_trait_rank = { trait = intellect_good rank >= 5 } }
+				scope:recipient = { has_trait = intellect_good }
+			}
+			AND = {
+				NOT = { has_trait_rank = { trait = physique_good rank >= 5 } }
+				scope:recipient = { has_trait = physique_good }
+			}
+			AND = {
+				NOT = { has_trait_rank = { trait = beauty_good rank >= 5 } }
+				scope:recipient = { has_trait = beauty_good }
+			}
+			AND = {
+				NOT = { has_trait = fecund }
+				scope:recipient = { has_trait = fecund }
+			}
+			AND = {
+				NOT = { has_trait = giant }
+				scope:recipient = { has_trait = giant }
+			}
+			AND = {
+				NOT = { has_trait = pure_blooded }
+				scope:recipient = { has_trait = pure_blooded }
+			}
 		}
 	}
 }
@@ -41,33 +44,39 @@ bm_has_valuable_genetic_trait_trigger = {
 	}
 }
 
-bm_has_blood_empowerment_xp_trigger = {
+bm_has_blood_power_xp_trigger = {
 	OR = {
 		has_trait_xp = {
-			trait = lifestyle_blood_empowerment
+			trait = lifestyle_blood_power
 			track = dynasty
 			value >= $VALUE$
 		}
 		has_trait_xp = {
-			trait = lifestyle_blood_empowerment
+			trait = lifestyle_blood_power
 			track = mastery
 			value >= $VALUE$
 		}
 		has_trait_xp = {
-			trait = lifestyle_blood_empowerment
+			trait = lifestyle_blood_power
 			track = presence
 			value >= $VALUE$
 		}
 		has_trait_xp = {
-			trait = lifestyle_blood_empowerment
+			trait = lifestyle_blood_power
 			track = prosperity
 			value >= $VALUE$
 		}
 		has_trait_xp = {
-			trait = lifestyle_blood_empowerment
+			trait = lifestyle_blood_power
 			track = shadows
 			value >= $VALUE$
 		}
+	}
+}
+
+bm_has_blood_empowerment_xp_trigger = {
+	bm_has_blood_power_xp_trigger = {
+		VALUE = $VALUE$
 	}
 }
 

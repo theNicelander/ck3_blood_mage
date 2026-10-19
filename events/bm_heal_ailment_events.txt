@@ -28,6 +28,9 @@ bm_heal_ailment.0001 = {
 			has_character_modifier = lifeforce_modifier_minor
 			piety >= cure_illness_cost_minor
 		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = wounded_1 }
+		}
 		scope:recipient = { remove_trait = wounded_1 }
 		bm_heal_minor_cost_and_xp_effect = yes
 		bm_heal_minor_opinion_effect = yes
@@ -47,6 +50,9 @@ bm_heal_ailment.0001 = {
 			scope:recipient = { has_trait = ill }
 			has_character_modifier = lifeforce_modifier_minor
 			piety >= cure_illness_cost_minor
+		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = ill }
 		}
 		scope:recipient = { remove_trait = ill }
 		bm_heal_minor_cost_and_xp_effect = yes
@@ -68,6 +74,9 @@ bm_heal_ailment.0001 = {
 			has_character_modifier = lifeforce_modifier_minor
 			piety >= cure_illness_cost_minor
 		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = lovers_pox }
+		}
 		scope:recipient = { remove_trait = lovers_pox }
 		bm_heal_minor_cost_and_xp_effect = yes
 		bm_heal_minor_opinion_effect = yes
@@ -88,6 +97,9 @@ bm_heal_ailment.0001 = {
 			has_character_modifier = lifeforce_modifier_minor
 			piety >= cure_illness_cost_minor
 		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = gout_ridden }
+		}
 		scope:recipient = { remove_trait = gout_ridden }
 		bm_heal_minor_cost_and_xp_effect = yes
 		bm_heal_minor_opinion_effect = yes
@@ -107,6 +119,9 @@ bm_heal_ailment.0001 = {
 			scope:recipient = { has_trait = scarred }
 			has_character_modifier = lifeforce_modifier_minor
 			piety >= cure_illness_cost_minor
+		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = scarred }
 		}
 		scope:recipient = {
 			if = {
@@ -150,6 +165,9 @@ bm_heal_ailment.0001 = {
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
 		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = wounded_2 }
+		}
 		scope:recipient = { remove_trait = wounded_2 }
 		bm_heal_major_cost_and_xp_effect = yes
 		bm_heal_major_opinion_effect = yes
@@ -173,6 +191,9 @@ bm_heal_ailment.0001 = {
 			scope:recipient = { has_trait = incapable }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
+		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = incapable }
 		}
 		scope:recipient = { remove_trait = incapable }
 		bm_heal_major_cost_and_xp_effect = yes
@@ -198,6 +219,9 @@ bm_heal_ailment.0001 = {
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
 		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = pneumonic }
+		}
 		scope:recipient = { remove_trait = pneumonic }
 		bm_heal_major_cost_and_xp_effect = yes
 		bm_heal_major_opinion_effect = yes
@@ -221,6 +245,9 @@ bm_heal_ailment.0001 = {
 			scope:recipient = { has_trait = early_great_pox }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
+		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = early_great_pox }
 		}
 		scope:recipient = { remove_trait = early_great_pox }
 		bm_heal_major_cost_and_xp_effect = yes
@@ -246,6 +273,9 @@ bm_heal_ailment.0001 = {
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
 		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = infirm }
+		}
 		scope:recipient = { remove_trait = infirm }
 		bm_heal_major_cost_and_xp_effect = yes
 		bm_heal_major_opinion_effect = yes
@@ -269,6 +299,9 @@ bm_heal_ailment.0001 = {
 			scope:recipient = { has_trait = withering_mind }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
+		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = withering_mind }
 		}
 		scope:recipient = { remove_trait = withering_mind }
 		bm_heal_major_cost_and_xp_effect = yes
@@ -294,6 +327,9 @@ bm_heal_ailment.0001 = {
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
 		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = clouded_eyes }
+		}
 		scope:recipient = { remove_trait = clouded_eyes }
 		bm_heal_major_cost_and_xp_effect = yes
 		bm_heal_major_opinion_effect = yes
@@ -317,6 +353,9 @@ bm_heal_ailment.0001 = {
 			scope:recipient = { has_trait = fragile_bones }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
+		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = fragile_bones }
 		}
 		scope:recipient = { remove_trait = fragile_bones }
 		bm_heal_major_cost_and_xp_effect = yes
@@ -342,6 +381,9 @@ bm_heal_ailment.0001 = {
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
 		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = faltering_heart }
+		}
 		scope:recipient = { remove_trait = faltering_heart }
 		bm_heal_major_cost_and_xp_effect = yes
 		bm_heal_major_opinion_effect = yes
@@ -365,6 +407,9 @@ bm_heal_ailment.0001 = {
 			scope:recipient = { has_trait = maimed }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
+		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = maimed }
 		}
 		scope:recipient = { remove_trait = maimed }
 		bm_heal_major_cost_and_xp_effect = yes
@@ -390,6 +435,9 @@ bm_heal_ailment.0001 = {
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
 		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = consumption }
+		}
 		scope:recipient = { remove_trait = consumption }
 		bm_heal_major_cost_and_xp_effect = yes
 		bm_heal_major_opinion_effect = yes
@@ -413,6 +461,9 @@ bm_heal_ailment.0001 = {
 			scope:recipient = { has_trait = typhus }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
+		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = typhus }
 		}
 		scope:recipient = { remove_trait = typhus }
 		bm_heal_major_cost_and_xp_effect = yes
@@ -438,6 +489,9 @@ bm_heal_ailment.0001 = {
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
 		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = measles }
+		}
 		scope:recipient = { remove_trait = measles }
 		bm_heal_major_cost_and_xp_effect = yes
 		bm_heal_major_opinion_effect = yes
@@ -461,6 +515,9 @@ bm_heal_ailment.0001 = {
 			scope:recipient = { has_trait = blind }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
+		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = blind }
 		}
 		scope:recipient = { remove_trait = blind }
 		bm_heal_major_cost_and_xp_effect = yes
@@ -486,6 +543,9 @@ bm_heal_ailment.0001 = {
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
 		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = one_eyed }
+		}
 		scope:recipient = { remove_trait = one_eyed }
 		bm_heal_major_cost_and_xp_effect = yes
 		bm_heal_major_opinion_effect = yes
@@ -509,6 +569,9 @@ bm_heal_ailment.0001 = {
 			scope:recipient = { has_trait = weak }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
+		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = weak }
 		}
 		scope:recipient = { remove_trait = weak }
 		bm_heal_major_cost_and_xp_effect = yes
@@ -534,6 +597,9 @@ bm_heal_ailment.0001 = {
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
 		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = lunatic_1 }
+		}
 		scope:recipient = { remove_trait = lunatic_1 }
 		bm_heal_major_cost_and_xp_effect = yes
 		bm_heal_major_opinion_effect = yes
@@ -557,6 +623,9 @@ bm_heal_ailment.0001 = {
 			scope:recipient = { has_trait = possessed_1 }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
+		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = possessed_1 }
 		}
 		scope:recipient = { remove_trait = possessed_1 }
 		bm_heal_major_cost_and_xp_effect = yes
@@ -582,6 +651,9 @@ bm_heal_ailment.0001 = {
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
 		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = dull }
+		}
 		scope:recipient = { remove_trait = dull }
 		bm_heal_major_cost_and_xp_effect = yes
 		bm_heal_major_opinion_effect = yes
@@ -605,6 +677,9 @@ bm_heal_ailment.0001 = {
 			scope:recipient = { has_trait = depressed_1 }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
+		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = depressed_1 }
 		}
 		scope:recipient = { remove_trait = depressed_1 }
 		bm_heal_major_cost_and_xp_effect = yes
@@ -633,6 +708,9 @@ bm_heal_ailment.0001 = {
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_benediction
 		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = wounded_3 }
+		}
 		scope:recipient = { remove_trait = wounded_3 }
 		bm_heal_deadly_cost_and_xp_effect = yes
 		bm_heal_deadly_opinion_effect = yes
@@ -657,6 +735,9 @@ bm_heal_ailment.0001 = {
 			has_character_modifier = lifeforce_modifier_minor
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_benediction
+		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = sickly }
 		}
 		scope:recipient = { remove_trait = sickly }
 		bm_heal_deadly_cost_and_xp_effect = yes
@@ -683,6 +764,9 @@ bm_heal_ailment.0001 = {
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_benediction
 		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = great_pox }
+		}
 		scope:recipient = { remove_trait = great_pox }
 		bm_heal_deadly_cost_and_xp_effect = yes
 		bm_heal_deadly_opinion_effect = yes
@@ -707,6 +791,9 @@ bm_heal_ailment.0001 = {
 			has_character_modifier = lifeforce_modifier_minor
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_benediction
+		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = cancer }
 		}
 		scope:recipient = { remove_trait = cancer }
 		bm_heal_deadly_cost_and_xp_effect = yes
@@ -733,6 +820,9 @@ bm_heal_ailment.0001 = {
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_benediction
 		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = bubonic_plague }
+		}
 		scope:recipient = { remove_trait = bubonic_plague }
 		bm_heal_deadly_cost_and_xp_effect = yes
 		bm_heal_deadly_opinion_effect = yes
@@ -757,6 +847,9 @@ bm_heal_ailment.0001 = {
 			has_character_modifier = lifeforce_modifier_minor
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_benediction
+		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = smallpox }
 		}
 		scope:recipient = { remove_trait = smallpox }
 		bm_heal_deadly_cost_and_xp_effect = yes
@@ -783,6 +876,9 @@ bm_heal_ailment.0001 = {
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_benediction
 		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = leper }
+		}
 		scope:recipient = { remove_trait = leper }
 		bm_heal_deadly_cost_and_xp_effect = yes
 		bm_heal_deadly_opinion_effect = yes
@@ -807,6 +903,9 @@ bm_heal_ailment.0001 = {
 			has_character_modifier = lifeforce_modifier_minor
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_benediction
+		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = impotent }
 		}
 		scope:recipient = { remove_trait = impotent }
 		bm_heal_deadly_cost_and_xp_effect = yes
@@ -833,6 +932,9 @@ bm_heal_ailment.0001 = {
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_benediction
 		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = dysentery }
+		}
 		scope:recipient = { remove_trait = dysentery }
 		bm_heal_deadly_cost_and_xp_effect = yes
 		bm_heal_deadly_opinion_effect = yes
@@ -857,6 +959,9 @@ bm_heal_ailment.0001 = {
 			has_character_modifier = lifeforce_modifier_minor
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_benediction
+		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = ergotism }
 		}
 		scope:recipient = { remove_trait = ergotism }
 		bm_heal_deadly_cost_and_xp_effect = yes
@@ -883,6 +988,9 @@ bm_heal_ailment.0001 = {
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_benediction
 		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = disfigured }
+		}
 		scope:recipient = { remove_trait = disfigured }
 		bm_heal_deadly_cost_and_xp_effect = yes
 		bm_heal_deadly_opinion_effect = yes
@@ -907,6 +1015,9 @@ bm_heal_ailment.0001 = {
 			has_character_modifier = lifeforce_modifier_minor
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_benediction
+		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = one_legged }
 		}
 		scope:recipient = { remove_trait = one_legged }
 		bm_heal_deadly_cost_and_xp_effect = yes

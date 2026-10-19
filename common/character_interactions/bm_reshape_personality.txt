@@ -1,5 +1,5 @@
 ﻿bm_reshape_personality_interaction = {
-	category = interaction_category_friendly
+	category = interaction_category_bm_blood_magic
 	icon = bm_reshape_personality_interaction
 	desc = bm_reshape_personality_interaction_desc
 	common_interaction = yes
@@ -17,22 +17,7 @@
 		scope:recipient = {
 			is_alive = yes
 			NOT = { this = scope:actor }
-			OR = {
-				is_courtier_of = scope:actor
-				is_spouse_of = scope:actor
-				is_consort_of = scope:actor
-				has_relation_friend = scope:actor
-				has_relation_best_friend = scope:actor
-				has_relation_lover = scope:actor
-				has_relation_soulmate = scope:actor
-				dynasty ?= scope:actor.dynasty
-				is_close_family_of = scope:actor
-				is_extended_family_of = scope:actor
-				is_ward_of = scope:actor
-				is_knight_of = scope:actor
-				is_councillor_of = scope:actor
-				scope:actor.liege ?= this
-			}
+			bm_is_valid_positive_magic_target_trigger = { ACTOR = scope:actor }
 		}
 	}
 
@@ -49,18 +34,26 @@
 		}
 		scope:recipient = {
 			custom_tooltip = {
-				text = bm_reshape_personality_recipient_no_traits_tt
-				any_character_trait = {
-					has_trait_category = personality
-				}
+				text = bm_influence_personality_failure_cooldown_tt
+				NOT = { var:bm_influence_personality_failed_actor ?= scope:actor }
 			}
 		}
-		scope:actor = {
-			custom_tooltip = {
-				text = bm_reshape_personality_no_new_traits_tt
-				any_character_trait = {
-					has_trait_category = personality
-					NOT = { scope:recipient = { has_trait = prev } }
+		custom_tooltip = {
+			text = bm_reshape_personality_can_influence_tt
+			OR = {
+				NOT = { scope:recipient.culture = scope:actor.culture }
+				AND = {
+					scope:recipient = {
+						any_character_trait = {
+							has_trait_category = personality
+						}
+					}
+					scope:actor = {
+						any_character_trait = {
+							has_trait_category = personality
+							NOT = { scope:recipient = { has_trait = prev } }
+						}
+					}
 				}
 			}
 		}
@@ -107,6 +100,10 @@
 		modifier = {
 			factor = 0
 			piety < 500
+		}
+		modifier = {
+			factor = 0.2
+			scope:actor.learning < scope:recipient.learning
 		}
 		modifier = {
 			add = 10

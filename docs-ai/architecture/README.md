@@ -18,7 +18,7 @@ Characters awaken to blood magic via hereditary birth, mentoring interactions, w
 | --- | --- | --- | --- | --- |
 | **Blood Mage** (`lifestyle_blood_mage`) | *Shepherd of the Faithful* — Occult scholar, dynasty architect, scheme master | `bloodline` (Domain limit, tax, build speed/cost, dev)<br>`hematurgy` (Hostile schemes, dread, tyranny reduction) | `ancient` (Longevity, lifestyle XP, health penalty negation)<br>`enlightenment` (Piety, learning per piety level)<br>`benediction` (Opinion, prestige, diplomacy per piety level) | Casts **Minor**, **Major**, and **Superior** Blood Magic; builds **Blood Universities** (`bm_university_0..3`); inscribes Superior Blood Runes on others. |
 | **Blood Knight** (`lifestyle_blood_knight`) | *Fire and Sword* — Martial warlord, battlefield harvester, champion | `vanguard` (Advantage, army speed, martial & martial/piety)<br>`slaughter` (Prowess, knight limit & effectiveness, prowess/piety) | `ancient`, `enlightenment`, `benediction` *(identical to Blood Mage)* | Casts **Minor**, **Major**, and **Superior** Blood Magic; harvests Lifeforce from **battle victories**, **single-combat kills**, and **ambient yearly pulses**; empowers sworn Blood Knights. |
-| **Blood Empowerment** (`lifestyle_blood_empowerment`) | *Secondary Personal Mastery* — Granted alongside Mage and Knight traits (base 0 XP); advanced via Major Magic | 5 independent tracks: `dynasty` (fertility/genetics), `mastery` (XP/languages), `presence` (opinion/stress), `prosperity` (income), `shadows` (secrecy/plot defense) | — | Each track capped at 100 XP grants `+5%` Devotion Impact (`piety_level_impact_mult`, stacking up to `+25%`) and `no_prowess_loss_from_age = yes`. |
+| **Blood Power** (`lifestyle_blood_power`) | *Secondary Personal Mastery* — Granted alongside Mage and Knight traits (base 0 XP); advanced via Major Magic | 5 independent tracks: `dynasty` (fertility/genetics), `mastery` (XP/schemes), `presence` (opinion/stress/fame), `prosperity` (income/domain), `shadows` (personal schemes/defense) | — | Streamlined, focused bonuses per track with 50 XP milestones and 100 XP capstones including `no_prowess_loss_from_age = yes`. |
 
 ### Core Gameplay Loop & Subsystem Interconnections
 
@@ -29,7 +29,7 @@ flowchart LR
         H2["Manifest / Condense / Distill Rites"]
         H3["Battlefield & Duel Kills (Knight / Ægishjálmur)"]
         H4["Yearly Pulse: Blood Runes & Knight Ambient"]
-        H5["Seek Power Wilderness Expeditions"]
+        H5["Go on a Blood Hunt (Wilderness Expeditions)"]
     end
 
     subgraph Resource ["2. Lifeforce Reserves"]
@@ -38,13 +38,13 @@ flowchart LR
 
     subgraph Sinks ["3. Spellcasting & Ritual Sinks"]
         G1["Minor Blood Magic (Attunement Decision, Purge, Condense, Minor Rune)"]
-        G2["Major Grimoire (Empowerment, Edu 1-4★, Major Rune, Bloodline, Traits 1-2)"]
+        G2["Major Grimoire (Blood Power, Edu 1-4★, Major Rune, Bloodline, Traits 1-2)"]
         G3["Superior Grimoire (Master 5★ / 2nd Edu, Superior Rune, Traits 3-5, Golem)"]
         I1["Interactions (Heal 37 Ailments, Trait Theft, Bless Kin, Curse, Inscribe Rune, Initiate)"]
     end
 
     subgraph Progression ["4. Long-Term Progression & World Systems"]
-        P1["12 Lifestyle Tracks (10–100 XP)\n• Vitality Baseline (Tiers 10–40, 60–90)\n• 50 XP Devotion Scaling Milestones\n• 100 XP Capstones: Level 6–8 Devotion & Age Prowess Lock"]
+        P1["12 Lifestyle Tracks (10–100 XP)\n• Vitality Baseline (Tiers 10–40, 60–90)\n• 50 XP Devotion Scaling Milestones\n• 100 XP Capstones: Apex Devotion Scaling & Age Prowess Lock"]
         P2["5 Galdrastafir Blood Runes (Minor -> Major -> Superior Capstones)"]
         P3["7 Dynasty House Modifiers + Immortal Blood Golems (bm_house_golem)"]
         P4["5-Tier Blood Shrine Domicile + Blóðtrú / Ketsudō / Xuédào Faiths"]
@@ -62,10 +62,10 @@ flowchart LR
 | Source Path | Architecture Document |
 | --- | --- |
 | `common/decisions/bm_*`, `common/character_interactions/bm_*` | [`blood-mage-magic-tiers.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-magic-tiers.md) |
-| `common/traits/bm_*_trait.txt` | [`blood-mage-traits.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-traits.md), [`blood-mage-blood-empowerment.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-blood-empowerment.md), [`blood-mage-blood-knight.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-blood-knight.md) |
+| `common/traits/bm_*_trait.txt` | [`blood-mage-traits.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-traits.md), [`blood-mage-blood-power.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-blood-power.md), [`blood-mage-blood-knight.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-blood-knight.md) |
 | `common/scripted_effects/bm_trait_track_xp_gain_effects.txt`, `common/script_values/bm_xp_requirement_values.txt`, `bm_cure_illness_values.txt`, `bm_drain_piety_cost.txt` | [`blood-mage-track-xp.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-track-xp.md) |
 | `common/modifiers/bm_lifeforce.txt`, `bm_blood_magic_*_effects.txt`, `common/on_action/bm_combat_on_actions.txt`, `bm_combat_effects.txt` | [`blood-mage-lifeforce.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-lifeforce.md) |
-| `common/modifiers/bm_blood_runes_modifiers.txt`, `bm_blood_runes_effects.txt`, `bm_inscribe_rune_other.txt`, `bm_carve_galdrastafir_decision.txt`, `common/buildings/bm_duchy_buildings.txt` | [`blood-mage-blood-runes.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-blood-runes.md) |
+| `common/modifiers/bm_blood_runes_modifiers.txt`, `bm_blood_runes_effects.txt`, `bm_inscribe_rune_other.txt`, `events/bm_carve_galdrastafir_events.txt`, `common/buildings/bm_duchy_buildings.txt` | [`blood-mage-blood-runes.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-blood-runes.md) |
 | `common/decisions/bm_*` | [`blood-mage-decisions.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-decisions.md) |
 | `common/character_interactions/bm_*`, `common/important_actions/bm_important_actions.txt` | [`blood-mage-interactions.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-interactions.md) |
 | `bm_drain_trait_effects.txt`, `bm_education_duel_effect.txt`, `bm_manifest_traits_effects.txt`, `common/script_values/bm_drain_duel_values.txt`, `bm_education_enhancement_piety_cost.txt` | [`blood-mage-duels-and-education.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-duels-and-education.md) |
@@ -86,9 +86,9 @@ flowchart LR
 | Document | Subsystem Coverage |
 | --- | --- |
 | [`blood-mage-magic-tiers.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-magic-tiers.md) | Complete breakdown of Minor, Major, and Superior Blood Magic: requirements, costs, XP gains, effects, and class access |
-| [`blood-mage-traits.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-traits.md) | Core lifestyle traits (`lifestyle_blood_mage`, `lifestyle_blood_knight`, `lifestyle_blood_empowerment`), all 12 tracks cumulative benefits (10/50/100 XP), and initiation routes |
+| [`blood-mage-traits.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-traits.md) | Core lifestyle traits (`lifestyle_blood_mage`, `lifestyle_blood_knight`, `lifestyle_blood_power`), all 12 tracks cumulative benefits (10/50/100 XP), and initiation routes |
 | [`blood-mage-blood-knight.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-blood-knight.md) | `lifestyle_blood_knight` martial Devotion peer: 5 tracks, battlefield & duel Lifeforce harvesting, retinue empowerment, and full Superior Magic parity |
-| [`blood-mage-blood-empowerment.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-blood-empowerment.md) | Secondary `lifestyle_blood_empowerment` trait: 5 tracks (`dynasty`, `mastery`, `presence`, `prosperity`, `shadows`), Devotion impact capstones, and Versatility fallback |
+| [`blood-mage-blood-power.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-blood-power.md) | Secondary `lifestyle_blood_power` trait: 5 tracks (`dynasty`, `mastery`, `presence`, `prosperity`, `shadows`), Devotion impact capstones, and Versatility fallback |
 | [`blood-mage-track-xp.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-track-xp.md) | Master XP catalog across all 12 tracks: Piety costs, Lifeforce sinks/sources, ritual gates, and XP yields |
 | [`blood-mage-lifeforce.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-lifeforce.md) | Lifeforce resource economy: Minor/Major/Superior modifiers, exhaustion durations, battlefield troop-scaling brackets, and sources/sinks matrix |
 | [`blood-mage-blood-runes.md`](file:///Users/clarabotet/Documents/Paradox%20Interactive/Crusader%20Kings%20III/mod/ck3_blood_mage/docs-ai/architecture/blood-mage-blood-runes.md) | 5 Icelandic Galdrastafir staves across Minor/Major/Superior tiers, 5 Superior Capstones, other-inscription interaction, flay swap rite, and Blood Universities 0–3 |
