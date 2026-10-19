@@ -1,11 +1,12 @@
 ﻿l_english:
   bm_reshape_personality_interaction: "Influence Personality"
-  bm_reshape_personality_interaction_desc: "Spend Major Lifeforce and Piety to commune with [recipient.GetFirstName]'s mind, challenging their intellect to dissolve one of [recipient.GetHerHis] personality traits and imprint one of your own."
-  bm_reshape_personality_interaction_tooltip: "Attempt to influence the personality of [recipient.GetShortUINameNoTooltip]"
+  bm_reshape_personality_interaction_desc: "Spend Major Lifeforce and Piety to commune with [recipient.GetFirstName]'s mind, challenging their intellect to reshape [recipient.GetHerHis] cultural heritage or dissolve a personality trait and imprint one of your own."
+  bm_reshape_personality_interaction_tooltip: "Attempt to influence the personality or culture of [recipient.GetShortUINameNoTooltip]"
   bm_reshape_personality_interaction_confirm: "Begin Ritual"
 
   bm_reshape_personality_piety_level_tt: "Requires Level of Devotion 3 (Servant of Holy or higher)"
   bm_reshape_personality_lifeforce_tt: "Requires [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]"
+  bm_reshape_personality_can_influence_tt: "[recipient.GetShortUINameNoTooltip] must have a different culture, or personality traits that can be reshaped"
   bm_reshape_personality_recipient_no_traits_tt: "[recipient.GetShortUINameNoTooltip] must possess at least one personality trait"
   bm_reshape_personality_no_new_traits_tt: "You must possess at least one personality trait that [recipient.GetShortUINameNoTooltip] does not already have"
   bm_influence_personality_failure_cooldown_tt: "You recently failed to influence [recipient.GetShortUINamePossessive] personality (1-year cooldown active)"
@@ -15,6 +16,8 @@
 
   bm_reshape_personality.duel.success: "Reshape [recipient.GetShortUINamePossessive] personality"
   bm_reshape_personality.duel.failure: "[recipient.GetShortUIName] resists your mental communion"
+  bm_reshape_personality.duel.culture_success: "Reshape [recipient.GetShortUINamePossessive] cultural heritage"
+  bm_reshape_personality.duel.culture_failure: "[recipient.GetShortUIName] resists your mental communion"
 
   bm_reshape_personality.0001.title: "Influence Personality: Dissolve Nature"
   bm_reshape_personality.0001.desc: "Through sacred mastery of the sanguine arts and the surrender of our vital Lifeforce, we reach deep into the pulsing spirit of [recipient.GetUIName].\n\nTheir heart rate quickens and their veins burn with cold fire as our consciousness mingles with theirs. To carve a new path into their character, an existing facet of their nature must first be challenged and washed away.\n\nWhich inclination of [recipient.GetFirstName] shall we attempt to replace?"
@@ -22,6 +25,8 @@
   bm_reshape_personality.0001.option_2: "Dissolve [recipient.GetHerHis] [recipient_ptrait_2.GetNameNoTooltip( recipient )] nature"
   bm_reshape_personality.0001.option_3: "Dissolve [recipient.GetHerHis] [recipient_ptrait_3.GetNameNoTooltip( recipient )] nature"
   bm_reshape_personality.0001.option_4: "Dissolve [recipient.GetHerHis] [recipient_ptrait_4.GetNameNoTooltip( recipient )] nature"
+  bm_reshape_personality.0001.culture: "Reshape [recipient.GetHerHis] mind to embrace [ROOT.Char.GetCulture.GetName] culture"
+  bm_reshape_personality.0001.culture.already_culture_tt: "[recipient.GetShortUINameNoTooltip] does not already share your [ROOT.Char.GetCulture.GetName] culture"
   bm_reshape_personality.0001.cancel: "Step back and abandon the ritual"
 
   bm_reshape_personality.0002.title: "Influence Personality: Imprint Essence"
@@ -35,5 +40,12 @@
   bm_reshape_personality.toast.title: "Personality Influenced"
   bm_reshape_personality.toast.desc: "[recipient.GetFirstName] has abandoned [recipient.GetHerHis] [trait_to_remove.GetNameNoTooltip( recipient )] nature and embraced [trait_to_add.GetNameNoTooltip( ROOT.Char )]."
 
+  bm_reshape_personality.toast.culture_title: "Culture Reshaped"
+  bm_reshape_personality.toast.culture_desc: "[recipient.GetFirstName] has abandoned [recipient.GetHerHis] heritage and embraced [ROOT.Char.GetCulture.GetName] culture."
+
   bm_reshape_personality.toast.failure.title: "Communion Resisted"
   bm_reshape_personality.toast.failure.desc: "[recipient.GetFirstName]'s intellect resisted your will. [recipient.GetHerHis|U] personality remains unchanged."
+
+  bm_reshape_personality.toast.culture_failure.title: "Communion Resisted"
+  bm_reshape_personality.toast.culture_failure.desc: "[recipient.GetFirstName]'s cultural identity resisted your will. [recipient.GetHerHis|U] culture remains unchanged."
+

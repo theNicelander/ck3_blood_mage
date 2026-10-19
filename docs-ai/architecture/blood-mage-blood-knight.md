@@ -17,7 +17,7 @@ Living technical specification for the Blood Knight subsystem (`lifestyle_blood_
 - **Battlefield Defeat Survival (`bm_on_combat_end_loser`):** Surviving a defeat as commander or knight awards `+1` to `+3` `vanguard` XP and `0` to `+2` `enlightenment` XP.
 - **Fatal Single Combat Duels (`bm_on_character_death_duel`):** Slaying a foe in single combat grants `+5` `slaughter` XP and **1 Major Lifeforce**. Slaying a foe with `prowess >= 20` or holding `lifestyle_blood_mage`/`lifestyle_blood_knight` has a **25% chance to yield 1 Superior Lifeforce** directly.
 - **Tournament Completion (`bm_on_travel_activity_complete_tournament`):** Completing a tournament (`activity_tournament`) awards `+3` `slaughter` XP.
-- **Ambient Yearly Pulse (`blood_mage_yearly_events.004`):** Passive **~33% chance per year** to condense 1 Minor Lifeforce ambiently, alongside passive `+1` `ancient` XP and `+1` `enlightenment` XP (plus attunement rolls). Strictly exclusive to `lifestyle_blood_knight`.
+- **Ambient Yearly Pulse (`blood_mage_yearly_events.004`):** Passive **~33% chance per year** to condense 1 Minor Lifeforce ambiently, alongside passive `+1` `ancient` XP (plus attunement rolls). Strictly exclusive to `lifestyle_blood_knight`.
 - **Empower Blood Knight (`empower_blood_knight_interaction`):** Fellow Blood Knight empowers a Blood Knight spouse, child, family member, sworn knight, or courtier:
   - Major Lifeforce: `+10` XP to both `vanguard` and `slaughter` on target; `+4` `benediction` XP to caster.
   - Minor Lifeforce: `+5` XP to both `vanguard` and `slaughter` on target; `+2` `benediction` XP to caster.
