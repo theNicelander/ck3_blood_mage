@@ -37,19 +37,23 @@
 				text = bm_influence_personality_failure_cooldown_tt
 				NOT = { var:bm_influence_personality_failed_actor ?= scope:actor }
 			}
-			custom_tooltip = {
-				text = bm_reshape_personality_recipient_no_traits_tt
-				any_character_trait = {
-					has_trait_category = personality
-				}
-			}
 		}
-		scope:actor = {
-			custom_tooltip = {
-				text = bm_reshape_personality_no_new_traits_tt
-				any_character_trait = {
-					has_trait_category = personality
-					NOT = { scope:recipient = { has_trait = prev } }
+		custom_tooltip = {
+			text = bm_reshape_personality_can_influence_tt
+			OR = {
+				NOT = { scope:recipient.culture = scope:actor.culture }
+				AND = {
+					scope:recipient = {
+						any_character_trait = {
+							has_trait_category = personality
+						}
+					}
+					scope:actor = {
+						any_character_trait = {
+							has_trait_category = personality
+							NOT = { scope:recipient = { has_trait = prev } }
+						}
+					}
 				}
 			}
 		}

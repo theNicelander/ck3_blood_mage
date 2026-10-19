@@ -154,7 +154,7 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 - **Siphon Stored Lifeforce**: Contested extraction rite allowing Blood Mages (Learning/Intrigue) and Blood Knights (Prowess) to rip away held Lifeforce reserves (Minor, Major, Superior) from other characters, with guaranteed automatic success when draining imprisoned captives.
 - **Contest of the Red Art**: High-stakes occult duel between Blood Mages and Blood Knights testing combined Learning and Prowess, rewarding critical victors with Major Lifeforce while cursing their defeated rivals.
 - **Interface Toast Wrappers**: Initiations and empowerments now wrap outcomes directly in native interface toasts with automatic Lifeforce stack recounting.
-- **Influence Personality Interaction**: Commune with a relationship target's mind to dissolve an unwanted personality trait and imprint one of your own via a Learning contest (50% base, scaling to 95% at +20 Learning difference; 5-year cooldown on success, 1-year cooldown on failure, no Cast Major Blood Magic debuff).
+- **Influence Personality Interaction**: Commune with a relationship target's mind to dissolve an unwanted personality trait and imprint one of your own, or rewrite their cultural heritage to embrace your own culture, via a Learning contest (50% base, scaling to 95% at +20 Learning difference; 5-year cooldown on success, 1-year cooldown on failure, no Cast Major Blood Magic debuff).
 - **Distinctive Visual Assets**: Custom 120×120 DDS icons across traits, level tracks, character interactions, staves, and religious faiths.
 - **Situation Alerts**: Prominent warnings in CK3's Current Situation dropdown notify you whenever a kinsperson or courtier needs healing.
 
