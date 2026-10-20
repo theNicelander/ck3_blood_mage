@@ -21,7 +21,7 @@ Living technical specification for the Blood Knight subsystem (`lifestyle_blood_
 - **Empower Blood Knight (`empower_blood_knight_interaction`):** Fellow Blood Knight empowers a Blood Knight spouse, child, family member, sworn knight, or courtier:
   - Major Lifeforce: `+10` XP to both `vanguard` and `slaughter` on target; `+4` `benediction` XP to caster.
   - Minor Lifeforce: `+5` XP to both `vanguard` and `slaughter` on target; `+2` `benediction` XP to caster.
-- **Go on a Blood Hunt (`seek_power_decision`):** Martial and occult wilderness expedition harvesting Lifeforce, martial, and discipline XP (`730`d cooldown landed, `365`d unlanded/wanderer; halved by Superior **Vegvísir**). Available to both Blood Knights and Blood Mages, featuring a direct 7-way Prowess + Learning encounter roll:
+- **Go on a Blood Hunt (`seek_power_decision`):** Martial and occult wilderness expedition harvesting Lifeforce, martial, and discipline XP (`730`d cooldown landed, `365`d unlanded/wanderer; halved by Superior **Vegvísir**). Available to both Blood Knights and Blood Mages, featuring a 20%–50% prowess-scaled chance (`bm_seek_power_traveler_chance_value`, equal to Prowess score clamped to min 20% max 50%) for the traveler encounter (`.003`), falling back to a 6-way Prowess + Learning encounter duel:
   - **The Stag's Last Stand (`seek_power.002`):** Run down and slaughter a royal stag for **1 Minor Lifeforce** + `+1` `slaughter` XP (Knight) / `+1` `hematurgy` XP (Mage).
   - **The Beast's Lair (`seek_power.008`):** Slay a monstrous apex predator in its den via Prowess duel vs `30` prowess:
     - *Success:* **1 Major Lifeforce**, `+25` Prestige, `+2` `slaughter`/`hematurgy` XP.
