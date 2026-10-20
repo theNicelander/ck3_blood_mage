@@ -13,15 +13,6 @@ bm_set_capstone_stave_effect = {
 		bm_strip_all_stave_modifiers_effect = yes
 	}
 	add_character_modifier = { modifier = bm_stave_$STAVE$ }
-	add_character_flag = {
-		flag = bm_capstone_rune_cooldown
-		years = 5
-	}
-}
-
-bm_swap_capstone_cost_effect = {
-	add_piety = -500
-	blood_magic_used_major = yes
 }
 
 bm_upgrade_blood_rune_to_major_effect = {

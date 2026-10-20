@@ -560,44 +560,6 @@ bm_cast_blood_magic_major_decision = {
 			}
 		}
 
-		# Carve / Attune Galdrastafir Stave
-		item = {
-			value = bm_major_galdrastafir
-			current_description = bm_major_galdrastafir
-			localization = bm_major_galdrastafir
-			icon = "gfx/interface/icons/trait_level_tracks/slaughter.dds"
-			is_shown = {
-				OR = {
-					has_trait = lifestyle_blood_mage
-					has_trait = lifestyle_blood_knight
-				}
-			}
-			is_valid = {
-				custom_tooltip = {
-					text = bm_requires_superior_blood_rune_tt
-					has_character_modifier = superior_blood_rune_modifier
-				}
-				trigger_if = {
-					limit = { bm_has_any_stave_trigger = yes }
-					custom_tooltip = {
-						text = bm_carve_galdrastafir_cooldown_tt
-						NOT = { has_character_flag = bm_capstone_rune_cooldown }
-					}
-					custom_tooltip = {
-						text = bm_swap_stave_piety_req
-						piety >= 500
-					}
-				}
-			}
-			ai_chance = {
-				value = 10
-				if = {
-					limit = { bm_has_any_stave_trigger = yes }
-					multiply = 0
-				}
-			}
-		}
-
 		# Manifest Trait (Congenital Traits up to Rank 2)
 		item = {
 			value = bm_major_manifest_traits
@@ -790,10 +752,6 @@ bm_cast_blood_magic_major_decision = {
 				years = 5
 			}
 			blood_magic_used_major = yes
-		}
-		else_if = {
-			limit = { scope:bm_major_galdrastafir = yes }
-			trigger_event = { id = bm_galdrastafir.001 }
 		}
 		else_if = {
 			limit = { scope:bm_major_manifest_traits = yes }

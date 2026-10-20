@@ -75,7 +75,7 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 
 - **Inline Option-List Decision Widgets**: Replaced event popup Grimoires with native CK3 1.20 scrollable decision option drawers for Minor, Major, and Superior Blood Magic, keeping every spell permanently visible with 45×45 icons, direct selection, and red failure tooltips:
   - **Minor Blood Magic**: Fast utility rituals including Lifeforce Attunement, Minor Blood Runes, Vitality Cleansing, and Lifeforce Condensation.
-  - **Major Blood Magic**: Powerful rituals including Channel Blood Power, Condense Lifeforce (distilling Minor and Major into Superior Lifeforce), Education Enhancement (Tiers 1★–4★), Major Blood Runes, Galdrastafir Stave Carving & Swapping (free initial carve upon etching Superior Blood Rune; swapping costs Major Lifeforce + 500 Piety), Congenital Trait Manifestation, and House Blessings.
+  - **Major Blood Magic**: Powerful rituals including Channel Blood Power, Condense Lifeforce (distilling Minor and Major into Superior Lifeforce), Education Enhancement (Tiers 1★–4★), Major Blood Runes, Congenital Trait Manifestation, and House Blessings.
   - **Superior Blood Magic**: Legendary rites including Blood Golem Creation, 5★ Master Educations, Secondary Educations, and Superior Capstone Runes.
   - _Attune Lifeforce_: Select your yearly lifestyle XP bonus with synchronized January 1st progression and clear interface toasts for both base Ancient progression and attunement gains.
   - _Empower Dynasty Bloodline_: Weave 7 Three-Tier House Covenants (Majesty, Warband, Prosperity, Shadow, Insight, Legacy, Mastery) across Minor, Major, and Superior tiers with live UI level tags and distinct House Modifier icons to permanently fortify your house, granting Bloodline XP to Blood Mages and Benediction XP to Blood Knights.
@@ -96,7 +96,7 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
   - **Feingur** (_The Fertility Stave_): Fertility, pregnancy chance, health, and dynasty-wide blessing rites.
   - **Nábrókarstafur** (_Necropants / Wealth Stave_): Direct domain tax bonuses, building gold cost reductions, and monthly gold income.
   - **Hulinhjálmur** (_Helm of Disguise_): Hostile scheme success, scheme secrecy, and personal plot defense.
-- **Superior Stave Capstones**: Reach Superior rune depth to unlock Galdrastafir stave carving directly inside your Major Blood Magic Grimoire, unlocking game-changing capstone powers (such as guaranteed double attunement XP, +20 gold per travel landmark POI, or terrifying battlefield debuffs).
+- **Superior Stave Capstones & Standalone Decision**: Reach Superior rune depth to unlock the standalone **Carve Galdrastafir Stave** decision (`bm_carve_galdrastafir_decision`), an inline option-list drawer displaying all 5 staves with dedicated icons and graying out your active stave, unlocking game-changing capstone powers (such as guaranteed double attunement XP, +20 gold per travel landmark POI, or terrifying battlefield debuffs).
 - **Rune Inscription on Followers**: Inscribe blood runes onto your sworn knights, champions, and family members to bolster their combat prowess and loyalty.
 - **Custom DDS Icons**: Every Galdrastafir stave features authentic, hand-crafted 120×120 visual iconography across modifiers, decisions, and menus.
 - **Blood Universities**: Construct Blood University holding improvements (Tiers 0–3) in your realm's duchy capital to train apprentices and accelerate rune research.
