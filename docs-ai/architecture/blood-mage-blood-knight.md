@@ -70,7 +70,7 @@ Living technical specification for the Blood Knight subsystem (`lifestyle_blood_
   - Unlock and level all 5 `lifestyle_blood_power` tracks (`+3` `enlightenment` + `+10` Power XP).
   - Upgrade Education (1★–4★, `+5` `enlightenment`), Master Education to 5★ (`+20` `enlightenment`), and Embrace 2nd Education (`+10` `enlightenment`).
   - Manifest Congenital Perfection Ranks 1–2 (`+4` `vanguard`) and Apex Ranks 3–5 (`+6` `vanguard`, `+2` `enlightenment`).
-  - Empower Dynasty Bloodline (`+5` `vanguard` XP) and Forge Blood Golem (`+5` `vanguard` XP).
+  - Empower Dynasty Bloodline (`+3`/`+5`/`+10` `benediction` XP) and Forge Blood Golem (`+5` `vanguard` XP).
   - Convert realm faith via `become_blood_cultist_decision` (`250` Piety + Major Lifeforce).
 
 ---
