@@ -236,7 +236,7 @@ bm_on_birth_bloodline_xp = {
 					}
 					else_if = {
 						limit = { has_trait = lifestyle_blood_knight }
-						add_blood_knight_xp = { TRACK = vanguard XP = 4 }
+						add_blood_knight_xp = { TRACK = ancient XP = 2 }
 						if = {
 							limit = {
 								root = {
@@ -246,7 +246,7 @@ bm_on_birth_bloodline_xp = {
 									}
 								}
 							}
-							add_blood_knight_xp = { TRACK = vanguard XP = 4 }
+							add_blood_knight_xp = { TRACK = ancient XP = 1 }
 							send_interface_toast = {
 								type = event_toast_effect_good
 								title = bm_birth_blood_knight_child_toast
@@ -289,7 +289,7 @@ bm_on_birth_bloodline_xp = {
 					}
 					else_if = {
 						limit = { has_trait = lifestyle_blood_knight }
-						add_blood_knight_xp = { TRACK = vanguard XP = 2 }
+						add_blood_knight_xp = { TRACK = ancient XP = 1 }
 						if = {
 							limit = {
 								root = {
@@ -299,7 +299,7 @@ bm_on_birth_bloodline_xp = {
 									}
 								}
 							}
-							add_blood_knight_xp = { TRACK = vanguard XP = 2 }
+							add_blood_knight_xp = { TRACK = ancient XP = 1 }
 							send_interface_toast = {
 								type = event_toast_effect_good
 								title = bm_birth_blood_knight_child_toast
@@ -361,7 +361,7 @@ bm_on_birth_bloodline_xp = {
 					}
 					else_if = {
 						limit = { has_trait = lifestyle_blood_knight }
-						add_blood_knight_xp = { TRACK = vanguard XP = 4 }
+						add_blood_knight_xp = { TRACK = ancient XP = 2 }
 						if = {
 							limit = {
 								root = {
@@ -371,7 +371,7 @@ bm_on_birth_bloodline_xp = {
 									}
 								}
 							}
-							add_blood_knight_xp = { TRACK = vanguard XP = 4 }
+							add_blood_knight_xp = { TRACK = ancient XP = 1 }
 							send_interface_toast = {
 								type = event_toast_effect_good
 								title = bm_birth_blood_knight_child_toast
@@ -414,7 +414,7 @@ bm_on_birth_bloodline_xp = {
 					}
 					else_if = {
 						limit = { has_trait = lifestyle_blood_knight }
-						add_blood_knight_xp = { TRACK = vanguard XP = 2 }
+						add_blood_knight_xp = { TRACK = ancient XP = 1 }
 						if = {
 							limit = {
 								root = {
@@ -424,7 +424,7 @@ bm_on_birth_bloodline_xp = {
 									}
 								}
 							}
-							add_blood_knight_xp = { TRACK = vanguard XP = 2 }
+							add_blood_knight_xp = { TRACK = ancient XP = 1 }
 							send_interface_toast = {
 								type = event_toast_effect_good
 								title = bm_birth_blood_knight_child_toast

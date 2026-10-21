@@ -37,7 +37,13 @@ bm_trait_drain.001 = {
                 modifier = { add = trait_drain_modifier }
 
                 # Success! Level up trait!
-                intellect_drain_trait_effects = yes
+                send_interface_toast = {
+                    type = event_toast_effect_good
+                    title = bm_trait_drain.001.success
+                    left_icon = root
+                    right_icon = scope:recipient
+                    intellect_drain_trait_effects = yes
+                }
 
                 # Prisoner dies
                 sacrifice_prisoner_effect = {
@@ -90,7 +96,13 @@ bm_trait_drain.001 = {
                 modifier = { add = trait_drain_modifier }
 
                 # Success! Level up trait!
-                physique_drain_trait_effects = yes
+                send_interface_toast = {
+                    type = event_toast_effect_good
+                    title = bm_trait_drain.001.success
+                    left_icon = root
+                    right_icon = scope:recipient
+                    physique_drain_trait_effects = yes
+                }
 
                 # Prisoner dies
                 sacrifice_prisoner_effect = {
@@ -143,7 +155,13 @@ bm_trait_drain.001 = {
                 modifier = { add = trait_drain_modifier }
 
                 # Success! Level up trait!
-                beauty_drain_trait_effects = yes
+                send_interface_toast = {
+                    type = event_toast_effect_good
+                    title = bm_trait_drain.001.success
+                    left_icon = root
+                    right_icon = scope:recipient
+                    beauty_drain_trait_effects = yes
+                }
 
                 # Prisoner dies
                 sacrifice_prisoner_effect = {
@@ -199,16 +217,22 @@ bm_trait_drain.001 = {
                 modifier = { add = trait_drain_modifier }
 
                 # Success!
-                add_trait = fecund
-                add_xp_bm_dynamic = {
-                    TRACK = hematurgy
-                    XP = 2
-                }
-                if = {
-                    limit = { has_trait = lifestyle_blood_knight }
-                    add_blood_knight_xp = {
-                        TRACK = slaughter
+                send_interface_toast = {
+                    type = event_toast_effect_good
+                    title = bm_trait_drain.001.success
+                    left_icon = root
+                    right_icon = scope:recipient
+                    add_trait = fecund
+                    add_xp_bm_dynamic = {
+                        TRACK = hematurgy
                         XP = 2
+                    }
+                    if = {
+                        limit = { has_trait = lifestyle_blood_knight }
+                        add_blood_knight_xp = {
+                            TRACK = slaughter
+                            XP = 2
+                        }
                     }
                 }
 
@@ -266,16 +290,22 @@ bm_trait_drain.001 = {
                 modifier = { add = trait_drain_modifier }
 
                 # Success!
-                add_trait = giant
-                add_xp_bm_dynamic = {
-                    TRACK = hematurgy
-                    XP = 2
-                }
-                if = {
-                    limit = { has_trait = lifestyle_blood_knight }
-                    add_blood_knight_xp = {
-                        TRACK = slaughter
+                send_interface_toast = {
+                    type = event_toast_effect_good
+                    title = bm_trait_drain.001.success
+                    left_icon = root
+                    right_icon = scope:recipient
+                    add_trait = giant
+                    add_xp_bm_dynamic = {
+                        TRACK = hematurgy
                         XP = 2
+                    }
+                    if = {
+                        limit = { has_trait = lifestyle_blood_knight }
+                        add_blood_knight_xp = {
+                            TRACK = slaughter
+                            XP = 2
+                        }
                     }
                 }
 
@@ -334,16 +364,22 @@ bm_trait_drain.001 = {
                 modifier = { add = trait_drain_modifier }
 
                 # Success!
-                add_trait = pure_blooded
-                add_xp_bm_dynamic = {
-                    TRACK = hematurgy
-                    XP = 2
-                }
-                if = {
-                    limit = { has_trait = lifestyle_blood_knight }
-                    add_blood_knight_xp = {
-                        TRACK = slaughter
+                send_interface_toast = {
+                    type = event_toast_effect_good
+                    title = bm_trait_drain.001.success
+                    left_icon = root
+                    right_icon = scope:recipient
+                    add_trait = pure_blooded
+                    add_xp_bm_dynamic = {
+                        TRACK = hematurgy
                         XP = 2
+                    }
+                    if = {
+                        limit = { has_trait = lifestyle_blood_knight }
+                        add_blood_knight_xp = {
+                            TRACK = slaughter
+                            XP = 2
+                        }
                     }
                 }
 
@@ -372,7 +408,15 @@ bm_trait_drain.001 = {
     option = {
         name = bm_trait_drain.001.z
         ai_chance = { base = 5 }
-        add_character_modifier = lifeforce_modifier_major
+        send_interface_toast = {
+            type = event_toast_effect_neutral
+            title = bm_trait_drain.001.z
+            left_icon = root
+            add_character_modifier = { modifier = lifeforce_modifier_major }
+            hidden_effect = {
+                bm_recount_lifeforce_stacks_effect = yes
+            }
+        }
     }
 
     # Portraits

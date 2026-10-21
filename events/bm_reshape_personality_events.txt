@@ -251,21 +251,21 @@ bm_reshape_personality.0002 = {
 					min = -45
 					max = 45
 				}
-				scope:recipient = {
-					remove_trait = scope:trait_to_remove
-					scope:trait_to_add = {
-						every_opposite_trait = {
-							limit = { scope:recipient = { has_trait = prev } }
-							scope:recipient = { remove_trait = prev }
-						}
-					}
-					add_trait = scope:trait_to_add
-				}
 				send_interface_toast = {
 					title = bm_reshape_personality.toast.title
 					desc = bm_reshape_personality.toast.desc
 					left_icon = root
 					right_icon = scope:recipient
+					scope:recipient = {
+						remove_trait = scope:trait_to_remove
+						scope:trait_to_add = {
+							every_opposite_trait = {
+								limit = { scope:recipient = { has_trait = prev } }
+								scope:recipient = { remove_trait = prev }
+							}
+						}
+						add_trait = scope:trait_to_add
+					}
 					add_shared_bm_bk_xp = {
 						TRACK = enlightenment
 						XP = 4
@@ -323,21 +323,21 @@ bm_reshape_personality.0002 = {
 					min = -45
 					max = 45
 				}
-				scope:recipient = {
-					remove_trait = scope:trait_to_remove
-					scope:trait_to_add = {
-						every_opposite_trait = {
-							limit = { scope:recipient = { has_trait = prev } }
-							scope:recipient = { remove_trait = prev }
-						}
-					}
-					add_trait = scope:trait_to_add
-				}
 				send_interface_toast = {
 					title = bm_reshape_personality.toast.title
 					desc = bm_reshape_personality.toast.desc
 					left_icon = root
 					right_icon = scope:recipient
+					scope:recipient = {
+						remove_trait = scope:trait_to_remove
+						scope:trait_to_add = {
+							every_opposite_trait = {
+								limit = { scope:recipient = { has_trait = prev } }
+								scope:recipient = { remove_trait = prev }
+							}
+						}
+						add_trait = scope:trait_to_add
+					}
 					add_shared_bm_bk_xp = {
 						TRACK = enlightenment
 						XP = 4
@@ -395,21 +395,21 @@ bm_reshape_personality.0002 = {
 					min = -45
 					max = 45
 				}
-				scope:recipient = {
-					remove_trait = scope:trait_to_remove
-					scope:trait_to_add = {
-						every_opposite_trait = {
-							limit = { scope:recipient = { has_trait = prev } }
-							scope:recipient = { remove_trait = prev }
-						}
-					}
-					add_trait = scope:trait_to_add
-				}
 				send_interface_toast = {
 					title = bm_reshape_personality.toast.title
 					desc = bm_reshape_personality.toast.desc
 					left_icon = root
 					right_icon = scope:recipient
+					scope:recipient = {
+						remove_trait = scope:trait_to_remove
+						scope:trait_to_add = {
+							every_opposite_trait = {
+								limit = { scope:recipient = { has_trait = prev } }
+								scope:recipient = { remove_trait = prev }
+							}
+						}
+						add_trait = scope:trait_to_add
+					}
 					add_shared_bm_bk_xp = {
 						TRACK = enlightenment
 						XP = 4
@@ -467,21 +467,21 @@ bm_reshape_personality.0002 = {
 					min = -45
 					max = 45
 				}
-				scope:recipient = {
-					remove_trait = scope:trait_to_remove
-					scope:trait_to_add = {
-						every_opposite_trait = {
-							limit = { scope:recipient = { has_trait = prev } }
-							scope:recipient = { remove_trait = prev }
-						}
-					}
-					add_trait = scope:trait_to_add
-				}
 				send_interface_toast = {
 					title = bm_reshape_personality.toast.title
 					desc = bm_reshape_personality.toast.desc
 					left_icon = root
 					right_icon = scope:recipient
+					scope:recipient = {
+						remove_trait = scope:trait_to_remove
+						scope:trait_to_add = {
+							every_opposite_trait = {
+								limit = { scope:recipient = { has_trait = prev } }
+								scope:recipient = { remove_trait = prev }
+							}
+						}
+						add_trait = scope:trait_to_add
+					}
 					add_shared_bm_bk_xp = {
 						TRACK = enlightenment
 						XP = 4

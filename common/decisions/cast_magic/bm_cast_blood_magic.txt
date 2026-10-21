@@ -278,6 +278,11 @@
 		}
 		else_if = {
 			limit = { scope:bm_superior_blood_rune = yes }
+			add_piety = -400
+			add_character_flag = {
+				flag = bm_blood_rune_cooldown
+				years = 5
+			}
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_blood_rune_superior_toast
@@ -288,14 +293,11 @@
 					TRACK = ancient
 					XP = 10
 				}
+				blood_magic_used_superior = yes
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
 			}
-			add_piety = -400
-			add_character_flag = {
-				flag = bm_blood_rune_cooldown
-				years = 5
-			}
-			blood_magic_used_superior = yes
-			bm_recount_lifeforce_stacks_effect = yes
 		}
 		else_if = {
 			limit = { scope:bm_superior_manifest_traits = yes }
@@ -726,6 +728,11 @@ bm_cast_blood_magic_major_decision = {
 		}
 		else_if = {
 			limit = { scope:bm_major_blood_rune = yes }
+			add_piety = -200
+			add_character_flag = {
+				flag = bm_blood_rune_cooldown
+				years = 5
+			}
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_blood_rune_major_toast
@@ -745,13 +752,11 @@ bm_cast_blood_magic_major_decision = {
 						XP = 5
 					}
 				}
+				blood_magic_used_major = yes
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
 			}
-			add_piety = -200
-			add_character_flag = {
-				flag = bm_blood_rune_cooldown
-				years = 5
-			}
-			blood_magic_used_major = yes
 		}
 		else_if = {
 			limit = { scope:bm_major_manifest_traits = yes }
@@ -940,92 +945,66 @@ bm_cast_blood_magic_minor_decision = {
 			limit = { scope:bm_minor_channel = yes }
 			add_piety = -75
 			remove_character_modifier = lifeforce_modifier_minor
-			if = {
-				limit = { has_trait = lifestyle_blood_mage }
-				add_xp_enlightenment = yes
-			}
-			if = {
-				limit = {
-					has_trait = lifestyle_blood_knight
-					NOT = { has_trait = lifestyle_blood_mage }
-				}
-				add_blood_knight_xp = { TRACK = enlightenment XP = 1 }
-			}
+			add_xp_enlightenment = yes
 			trigger_event = { id = bm_channel_lifeforce_enlightenment_minor.001 }
 		}
 		else_if = {
 			limit = { scope:bm_minor_purge = yes }
 			add_piety = -50
-			remove_character_modifier = lifeforce_modifier_minor
-			if = {
-				limit = { has_trait = lifestyle_blood_mage }
-				if = {
-					limit = {
-						OR = {
-							has_trait = beauty_bad
-							has_trait = intellect_bad
-							has_trait = physique_bad
-							has_trait = dull
-							has_trait = weak
-						}
-					}
-					add_xp_bm_dynamic = {
-						TRACK = bloodline
-						XP = 2
-					}
-				}
-				else = {
-					add_xp_bm_dynamic = {
-						TRACK = benediction
-						XP = 2
-					}
-				}
-			}
-			else = {
-				if = {
-					limit = {
-						OR = {
-							has_trait = physique_bad
-							has_trait = weak
-						}
-					}
-					add_blood_knight_xp = {
-						TRACK = enlightenment
-						XP = 2
-					}
-				}
-				else = {
-					add_blood_knight_xp = {
-						TRACK = benediction
-						XP = 1
-					}
-					add_blood_knight_xp = {
-						TRACK = enlightenment
-						XP = 1
-					}
-				}
-			}
-			remove_trait = wounded_1
-			remove_trait = ill
-			remove_trait = lovers_pox
-			remove_trait = gout_ridden
-			remove_trait = scarred
-			remove_trait = beauty_bad_1
-			remove_trait = beauty_bad_2
-			remove_trait = beauty_bad_3
-			remove_trait = intellect_bad_1
-			remove_trait = intellect_bad_2
-			remove_trait = intellect_bad_3
-			remove_trait = dull
-			remove_trait = physique_bad_1
-			remove_trait = physique_bad_2
-			remove_trait = physique_bad_3
-			remove_trait = weak
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_purge_impurities_toast
 				left_icon = root
-				custom_tooltip = bm_cast_blood_magic_minor.001.purge.tt
+				remove_character_modifier = lifeforce_modifier_minor
+				if = {
+					limit = { has_trait = lifestyle_blood_mage }
+					if = {
+						limit = {
+							OR = {
+								has_trait = beauty_bad
+								has_trait = intellect_bad
+								has_trait = physique_bad
+								has_trait = dull
+								has_trait = weak
+							}
+						}
+						add_xp_bm_dynamic = {
+							TRACK = bloodline
+							XP = 1
+						}
+					}
+					else = {
+						add_xp_bm_dynamic = {
+							TRACK = benediction
+							XP = 1
+						}
+					}
+				}
+				else = {
+					add_blood_knight_xp = {
+						TRACK = benediction
+						XP = 1
+					}
+				}
+				remove_trait = wounded_1
+				remove_trait = ill
+				remove_trait = lovers_pox
+				remove_trait = gout_ridden
+				remove_trait = scarred
+				remove_trait = beauty_bad_1
+				remove_trait = beauty_bad_2
+				remove_trait = beauty_bad_3
+				remove_trait = intellect_bad_1
+				remove_trait = intellect_bad_2
+				remove_trait = intellect_bad_3
+				remove_trait = dull
+				remove_trait = physique_bad_1
+				remove_trait = physique_bad_2
+				remove_trait = physique_bad_3
+				remove_trait = weak
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
 			}
 		}
 		else_if = {
@@ -1057,6 +1036,10 @@ bm_cast_blood_magic_minor_decision = {
 		}
 		else_if = {
 			limit = { scope:bm_minor_blood_rune = yes }
+			add_character_flag = {
+				flag = bm_blood_rune_cooldown
+				years = 5
+			}
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_blood_rune_minor_toast
@@ -1078,12 +1061,11 @@ bm_cast_blood_magic_minor_decision = {
 						XP = 4
 					}
 				}
+				blood_magic_used_minor = yes
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
 			}
-			add_character_flag = {
-				flag = bm_blood_rune_cooldown
-				years = 5
-			}
-			blood_magic_used_minor = yes
 		}
 		else = {
 			custom_tooltip = bm_cast_blood_magic_minor_decision_tooltip

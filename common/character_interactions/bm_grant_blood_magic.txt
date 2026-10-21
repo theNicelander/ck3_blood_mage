@@ -108,7 +108,7 @@
                     remove_character_modifier = lifeforce_modifier_minor
                     add_xp_bm_dynamic = {
                         TRACK = bloodline
-                        XP = 2
+                        XP = 1
                     }
                     scope:recipient = {
                         bm_become_blood_mage_effect = yes
@@ -144,13 +144,13 @@
                         }
                         add_xp_bm_dynamic = {
                             TRACK = bloodline
-                            XP = 5
+                            XP = 2
                         }
                     }
                     else = {
                         add_xp_bm_dynamic = {
                             TRACK = bloodline
-                            XP = 4
+                            XP = 1
                         }
                     }
                     scope:recipient = {
@@ -293,10 +293,10 @@ empower_blood_mage_interaction = {
                     left_icon = scope:actor
                     right_icon = scope:recipient
                     blood_magic_used_major = yes
-                    add_xp_bm_dynamic = { TRACK = benediction XP = 4 }
+                    add_xp_bm_dynamic = { TRACK = benediction XP = 2 }
                     scope:recipient = {
-                        add_xp_bm_dynamic = { TRACK = enlightenment XP = 10 }
-                        add_xp_bm_dynamic = { TRACK = bloodline XP = 10 }
+                        add_xp_bm_dynamic = { TRACK = enlightenment XP = 3 }
+                        add_xp_bm_dynamic = { TRACK = bloodline XP = 3 }
                         add_opinion = {
                             target = scope:actor
                             modifier = magic_opinion_positive
@@ -318,10 +318,10 @@ empower_blood_mage_interaction = {
                     left_icon = scope:actor
                     right_icon = scope:recipient
                     blood_magic_used_minor = yes
-                    add_xp_bm_dynamic = { TRACK = benediction XP = 2 }
+                    add_xp_bm_dynamic = { TRACK = benediction XP = 1 }
                     scope:recipient = {
-                        add_xp_bm_dynamic = { TRACK = enlightenment XP = 5 }
-                        add_xp_bm_dynamic = { TRACK = bloodline XP = 5 }
+                        add_xp_bm_dynamic = { TRACK = enlightenment XP = 1 }
+                        add_xp_bm_dynamic = { TRACK = bloodline XP = 1 }
                         add_opinion = {
                             target = scope:actor
                             modifier = magic_opinion_positive

@@ -111,7 +111,15 @@ bm_get_blood_magic_from_prisoner_interaction = {
 
         if = {
             limit = { scope:recipient = { has_trait = maimed } }
-            scope:actor = { add_trait = cannibal }
+            scope:actor = {
+                send_interface_toast = {
+                    type = event_toast_effect_bad
+                    title = bm_get_blood_magic_from_prisoner_interaction
+                    left_icon = scope:actor
+                    right_icon = scope:recipient
+                    add_trait = cannibal
+                }
+            }
             lifedrain_execution_effect = {
                 VICTIM = scope:recipient
                 EXECUTIONER = scope:actor

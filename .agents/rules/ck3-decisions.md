@@ -15,6 +15,7 @@ Structure: copy neighboring file in `common/decisions/` or `common/character_int
 - Prefer native `cooldown = { ... }` over custom character flags.
 - Re-entrancy: effects must be safe if fired twice, targeting missing scopes, or run by AI.
 - Tooltips: `custom_tooltip = { text = key }` for non-obvious outcomes. Missing loc keys render raw in UI. Keep tooltips and confirm labels concise and direct; use concrete mechanics ("Lifeforce") rather than fluffy synonyms ("vitality"). Flavour belongs strictly in descriptions (`<id>_desc`).
+- **Interface Toasts (`send_interface_toast`)**: any decision outcome granting or modifying character/house modifiers (attunements, covenants, lifeforce stacks), traits, XP, or stats MUST be enclosed inside `send_interface_toast = { ... }`. Effects outside the toast do not appear in the completion popup. Avoid `custom_tooltip` inside toasts when native effects exist.
 
 ## AI constraints
 
