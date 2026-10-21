@@ -945,17 +945,7 @@ bm_cast_blood_magic_minor_decision = {
 			limit = { scope:bm_minor_channel = yes }
 			add_piety = -75
 			remove_character_modifier = lifeforce_modifier_minor
-			if = {
-				limit = { has_trait = lifestyle_blood_mage }
-				add_xp_enlightenment = yes
-			}
-			if = {
-				limit = {
-					has_trait = lifestyle_blood_knight
-					NOT = { has_trait = lifestyle_blood_mage }
-				}
-				add_blood_knight_xp = { TRACK = enlightenment XP = 1 }
-			}
+			add_xp_enlightenment = yes
 			trigger_event = { id = bm_channel_lifeforce_enlightenment_minor.001 }
 		}
 		else_if = {

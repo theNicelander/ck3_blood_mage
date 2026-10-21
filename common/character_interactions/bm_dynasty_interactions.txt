@@ -87,7 +87,7 @@
 					add_trait_xp = {
 						trait = lifestyle_blood_mage
 						track = bloodline
-						value = 5
+						value = 2
 					}
 				}
 				if = {
@@ -96,8 +96,8 @@
 						NOT = { has_trait = lifestyle_blood_mage }
 					}
 					add_blood_knight_xp = {
-						TRACK = vanguard
-						XP = 5
+						TRACK = benediction
+						XP = 2
 					}
 				}
 				scope:recipient = {
@@ -206,7 +206,7 @@ bm_demand_blood_tithe_interaction = {
 					add_trait_xp = {
 						trait = lifestyle_blood_mage
 						track = bloodline
-						value = 2
+						value = 1
 					}
 				}
 				if = {
@@ -215,8 +215,8 @@ bm_demand_blood_tithe_interaction = {
 						NOT = { has_trait = lifestyle_blood_mage }
 					}
 					add_blood_knight_xp = {
-						TRACK = vanguard
-						XP = 2
+						TRACK = benediction
+						XP = 1
 					}
 				}
 				scope:recipient = {

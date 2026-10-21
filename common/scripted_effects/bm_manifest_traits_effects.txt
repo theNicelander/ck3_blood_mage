@@ -50,14 +50,14 @@ bm_manifest_intellect_duel_effect = {
 				if = {
 					limit = { has_trait = lifestyle_blood_knight }
 					add_blood_knight_xp = {
-						TRACK = vanguard
-						XP = 4
+						TRACK = enlightenment
+						XP = 1
 					}
 				}
 				else = {
 					add_xp_bm_dynamic = {
 						TRACK = bloodline
-						XP = 4
+						XP = 1
 					}
 				}
 			}
@@ -117,13 +117,13 @@ bm_manifest_physique_duel_effect = {
 					limit = { has_trait = lifestyle_blood_knight }
 					add_blood_knight_xp = {
 						TRACK = vanguard
-						XP = 4
+						XP = 1
 					}
 				}
 				else = {
 					add_xp_bm_dynamic = {
 						TRACK = bloodline
-						XP = 4
+						XP = 1
 					}
 				}
 			}
@@ -182,14 +182,14 @@ bm_manifest_beauty_duel_effect = {
 				if = {
 					limit = { has_trait = lifestyle_blood_knight }
 					add_blood_knight_xp = {
-						TRACK = vanguard
-						XP = 4
+						TRACK = ancient
+						XP = 1
 					}
 				}
 				else = {
 					add_xp_bm_dynamic = {
 						TRACK = bloodline
-						XP = 4
+						XP = 1
 					}
 				}
 			}
@@ -248,19 +248,15 @@ bm_manifest_superior_intellect_duel_effect = {
 				if = {
 					limit = { has_trait = lifestyle_blood_knight }
 					add_blood_knight_xp = {
-						TRACK = vanguard
-						XP = 6
+						TRACK = enlightenment
+						XP = 2
 					}
 				}
 				else = {
 					add_xp_bm_dynamic = {
 						TRACK = bloodline
-						XP = 6
+						XP = 2
 					}
-				}
-				add_shared_bm_bk_xp = {
-					TRACK = enlightenment
-					XP = 2
 				}
 			}
 		}
@@ -319,18 +315,14 @@ bm_manifest_superior_physique_duel_effect = {
 					limit = { has_trait = lifestyle_blood_knight }
 					add_blood_knight_xp = {
 						TRACK = vanguard
-						XP = 6
+						XP = 2
 					}
 				}
 				else = {
 					add_xp_bm_dynamic = {
 						TRACK = bloodline
-						XP = 6
+						XP = 2
 					}
-				}
-				add_shared_bm_bk_xp = {
-					TRACK = enlightenment
-					XP = 2
 				}
 			}
 		}
@@ -388,19 +380,15 @@ bm_manifest_superior_beauty_duel_effect = {
 				if = {
 					limit = { has_trait = lifestyle_blood_knight }
 					add_blood_knight_xp = {
-						TRACK = vanguard
-						XP = 6
+						TRACK = ancient
+						XP = 2
 					}
 				}
 				else = {
 					add_xp_bm_dynamic = {
 						TRACK = bloodline
-						XP = 6
+						XP = 2
 					}
-				}
-				add_shared_bm_bk_xp = {
-					TRACK = enlightenment
-					XP = 2
 				}
 			}
 		}

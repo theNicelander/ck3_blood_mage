@@ -108,7 +108,7 @@
                     remove_character_modifier = lifeforce_modifier_minor
                     add_blood_knight_xp = {
                         TRACK = vanguard
-                        XP = 2
+                        XP = 1
                     }
                     scope:recipient = {
                         bm_become_blood_knight_effect = yes
@@ -144,13 +144,13 @@
                         }
                         add_blood_knight_xp = {
                             TRACK = vanguard
-                            XP = 5
+                            XP = 2
                         }
                     }
                     else = {
                         add_blood_knight_xp = {
                             TRACK = vanguard
-                            XP = 4
+                            XP = 1
                         }
                     }
                     scope:recipient = {
@@ -289,10 +289,10 @@ empower_blood_knight_interaction = {
                     left_icon = scope:actor
                     right_icon = scope:recipient
                     blood_magic_used_major = yes
-                    add_blood_knight_xp = { TRACK = benediction XP = 4 }
+                    add_blood_knight_xp = { TRACK = benediction XP = 2 }
                     scope:recipient = {
-                        add_blood_knight_xp = { TRACK = vanguard XP = 10 }
-                        add_blood_knight_xp = { TRACK = slaughter XP = 10 }
+                        add_blood_knight_xp = { TRACK = vanguard XP = 3 }
+                        add_blood_knight_xp = { TRACK = slaughter XP = 3 }
                         add_opinion = {
                             target = scope:actor
                             modifier = magic_opinion_positive
@@ -314,10 +314,10 @@ empower_blood_knight_interaction = {
                     left_icon = scope:actor
                     right_icon = scope:recipient
                     blood_magic_used_minor = yes
-                    add_blood_knight_xp = { TRACK = benediction XP = 2 }
+                    add_blood_knight_xp = { TRACK = benediction XP = 1 }
                     scope:recipient = {
-                        add_blood_knight_xp = { TRACK = vanguard XP = 5 }
-                        add_blood_knight_xp = { TRACK = slaughter XP = 5 }
+                        add_blood_knight_xp = { TRACK = vanguard XP = 1 }
+                        add_blood_knight_xp = { TRACK = slaughter XP = 1 }
                         add_opinion = {
                             target = scope:actor
                             modifier = magic_opinion_positive
