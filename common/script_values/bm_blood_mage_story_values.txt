@@ -72,3 +72,11 @@ bm_nabrokarstafur_battle_gold_value = {
 	min = 25
 	max = 250
 }
+
+# Traveler encounter chance for Blood Hunt (seek_power.001)
+# Direct prowess scaling clamped between 20% and 50% (equal to prowess score)
+bm_seek_power_traveler_chance_value = {
+	value = prowess
+	min = 20
+	max = 50
+}

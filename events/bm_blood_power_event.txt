@@ -42,7 +42,7 @@ bm_blood_power_event.001 = {
 			title = bm_blood_power_event.001.toast
 			left_icon = this
 			add_shared_bm_bk_xp = {
-				TRACK = enlightenment
+				TRACK = benediction
 				XP = 3
 			}
 			add_blood_power_xp = { TRACK = dynasty }
@@ -251,13 +251,12 @@ bm_blood_power_event.001 = {
 		ai_chance = { base = 10 }
 	}
 
-	# Return to Major Grimoire
+	# Cancel
 	option = {
-		name = bm_cast_blood_magic_major.001.cancel
+		name = bm_cast_blood_magic.cancel
 		trigger = {
 			always = yes
 		}
-		trigger_event = { id = bm_cast_blood_magic_major.001 }
 		ai_chance = { base = 0 }
 	}
 }
