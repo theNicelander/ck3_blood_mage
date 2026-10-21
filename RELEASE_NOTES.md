@@ -193,6 +193,7 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 
 ## 🛠️ Bugfixes & Engine Modernization
 
+- **Comprehensive Interface Toast Enclosure**: Enclosed all modifier, trait, Lifeforce, stat, and duel/roll reward outcomes directly inside native interface toasts across events (new education, trait drain duels, minor enlightenment channeling, personality reshaping) and decisions (attunements, witch conversion, purge impurities, house covenants), ensuring all rewards visually display in completion popups.
 - **Interaction Data-Binding & Scoping Fix**: Bound recipient scopes (`subject = scope:recipient`) in `Consecrate Union` and `Siphon Stored Lifeforce` failure conditions, resolving `Failed to find type 'recipient'` data-binding errors in interaction tooltips.
 - **Blood Golem Trait Option Visibility**: Corrected event option syntax in golem shaping rites (`blood_golem.002`) by placing `show_as_unavailable` at the option level rather than inside trigger blocks, resolving `Unknown trigger: show_as_unavailable` errors.
 - **Null-Safe Heir Comparison**: Replaced direct primary heir comparison with native `is_primary_heir_of` in other-rune inscription interactions, preventing crashes on unlanded or heirless characters.

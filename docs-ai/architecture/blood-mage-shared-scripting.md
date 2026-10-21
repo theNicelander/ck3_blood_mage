@@ -28,7 +28,7 @@ Cross-cutting infrastructure supporting Blood Mages. Houses shared scripted trig
   has_global_variable = AGOT_is_loaded
   ```
 - **Modifier Cleanup:** Custom character modifiers must have explicit durations or decaying parameters to prevent infinite stacking upon death or succession.
-- **Interface Toasts & Outcome Encapsulation:** In CK3 1.20, `send_interface_toast` acts as an effect block that natively compiles and visualizes enclosed effects (XP gains, modifier grants/removals, stress, courtier additions). Any effects placed outside `send_interface_toast` execute silently without appearing in the toast popup. Outcome effects (including hidden stack recount effects) must be placed directly inside the `send_interface_toast` block, and static `custom_tooltip` overrides must not be used inside `send_interface_toast` so the engine can natively format icons, track progression, and modifier tooltips.
+- **Interface Toasts & Outcome Encapsulation:** In CK3 1.20, `send_interface_toast` acts as an effect block that natively compiles and visualizes enclosed effects (XP gains, modifier grants/removals, traits, Lifeforce stacks, stats, courtier additions). Any effects placed outside `send_interface_toast` execute silently without appearing in the toast popup. In all events and decisions, any outcome that grants or modifies traits, modifiers, Lifeforce, stats, or roll rewards MUST be placed directly inside the `send_interface_toast` block, and static `custom_tooltip` overrides must not be used inside `send_interface_toast` so the engine can natively format icons, track progression, and modifier tooltips.
 - **File Integrity:** UTF-8 with BOM (`utf-8-sig`), balanced braces, and trailing newlines enforced across all script files.
 
 ## File Map

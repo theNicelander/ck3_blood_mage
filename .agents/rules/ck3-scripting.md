@@ -22,8 +22,10 @@ description: Core CK3 script rules, script values, and safe engine patterns (1.2
    - Files require UTF-8 with BOM (`utf-8-sig`).
    - Use `python3 scripts/read_ck3.py {read|block|search}` to inspect vanilla 1.20 and mod files safely.
 10. **Interface Toasts (`send_interface_toast`)**:
-   - Always enclose outcome effects (XP additions, lifeforce modifiers, stat gains, `hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }`) directly inside `send_interface_toast = { ... }`.
-   - Effects placed outside the toast block are invisible in the popup toast.
+   - In events and decisions, anything that grants or alters modifiers (character, house, county, lifeforce stacks), traits (lifestyles, education, congenital, injury/illness), XP, or stats MUST be enclosed inside `send_interface_toast = { ... }`.
+   - When rolling outcomes (duels, `random_list`, random chance) that grant lifeforce, traits, or modifiers, the rewards must be granted inside the interface toast so the player sees what was rolled and awarded.
+   - Never grant lifeforce modifiers, traits, or stat gains nakedly in event `option` blocks or decision `effect` blocks without `send_interface_toast`.
+   - Effects placed outside the toast block are invisible in the popup toast. Always include `hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }` inside the toast when lifeforce changes.
    - Avoid `custom_tooltip` inside toasts when native effects are present, as `custom_tooltip` overrides and hides the game's automatic effect formatting.
 11. **Option Visibility (`show_as_unavailable`)**:
    - Keep options visible and grayed out (`show_as_unavailable = { ... }`) whenever possible so players see what exists and what requirements (Lifeforce, Piety, Devotion, Cooldown) are needed to unlock them.
