@@ -50,6 +50,7 @@
 		}
 		custom_description = {
 			text = bm_consecrated_union_already_consecrated
+			subject = scope:recipient
 			NOT = {
 				scope:recipient = {
 					has_character_modifier = bm_consecrated_union_modifier

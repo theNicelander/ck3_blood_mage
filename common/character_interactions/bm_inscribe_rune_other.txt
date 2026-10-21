@@ -220,7 +220,7 @@
 		modifier = {
 			scope:recipient = {
 				OR = {
-					this = scope:actor.primary_heir
+					is_primary_heir_of = scope:actor
 					is_child_of = scope:actor
 				}
 			}

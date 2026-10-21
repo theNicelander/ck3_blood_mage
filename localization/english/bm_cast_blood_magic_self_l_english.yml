@@ -286,6 +286,7 @@
     bm_cast_blood_magic_minor.001.channel: "$bm_minor_channel$"
     bm_cast_blood_magic_minor.001.purge: "$bm_minor_purge$"
     bm_cast_blood_magic_minor.001.purge.tt: "$bm_minor_purge_tooltip$"
+    bm_purge_impurities_toast: "Purged Blood Impurities"
     bm_cast_blood_magic_minor.001.condense: "$bm_minor_condense$"
     bm_cast_blood_magic_minor.001.condense.tt: "$bm_minor_condense_tooltip$"
     bm_condense_lifeforce_toast: "Lifeforce Condensed"
@@ -312,9 +313,6 @@
     bm_major_blood_rune: "Inscribe Major Blood Rune"
     bm_major_blood_rune_desc: "Upgrade your Minor Blood Rune to a Major Blood Rune."
     bm_major_blood_rune_tooltip: "Upgrade your Minor Blood Rune to a Major Blood Rune, unlocking greater passive occult bonuses.\n\nCosts [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and #V 200#! [piety|E]."
-    bm_major_manifest_traits: "Manifest Traits"
-    bm_major_manifest_traits_desc: "Focus Major Lifeforce into transmuting congenital traits up to rank 2."
-    bm_major_manifest_traits_tooltip: "Focus Major Lifeforce into transmuting congenital traits (Intellect, Physique, Beauty) up to rank 2.\n\nCosts [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and #V 200#! [piety|E]."
 
     # Major Aliases
     bm_cast_blood_magic_major.001.power: "$bm_major_channel_power$"
@@ -332,8 +330,6 @@
     bm_cast_blood_magic_major.001.blood_rune_major_tt: "$bm_major_blood_rune_tooltip$"
     bm_cast_blood_magic_major.001.blood_rune_superior: "Inscribe Superior Blood Rune"
     bm_cast_blood_magic_major.001.bloodline: "Empower Dynasty Bloodline"
-    bm_cast_blood_magic_major.001.manifest_traits: "$bm_major_manifest_traits$"
-    bm_cast_blood_magic_major.001.manifest_traits_tt: "$bm_major_manifest_traits_tooltip$"
 
     bm_channel_bloodline_cooldown: "Recently Empowered Bloodline"
     bm_channel_bloodline_cooldown_desc: "You have recently channeled lifeforce into your dynasty bloodline and must allow the generational currents to settle."
