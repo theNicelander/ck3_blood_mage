@@ -1,7 +1,10 @@
 ﻿l_english:
   # Cast Blood Magic Major Option
-  bm_cast_blood_magic_major.001.manifest_traits: "Manifest Trait"
-  bm_cast_blood_magic_major.001.manifest_traits_tt: "Focus Major Lifeforce into transmuting congenital traits (Intellect, Physique, Beauty) up to rank 2 or purging flaws."
+  bm_major_manifest_traits: "Manifest Traits"
+  bm_major_manifest_traits_desc: "Focus Major Lifeforce into transmuting congenital traits up to rank 2."
+  bm_major_manifest_traits_tooltip: "Focus Major Lifeforce into transmuting congenital traits (Intellect, Physique, Beauty) up to rank 2.\n\nCosts [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and #V 200#! [piety|E]."
+  bm_cast_blood_magic_major.001.manifest_traits: "$bm_major_manifest_traits$"
+  bm_cast_blood_magic_major.001.manifest_traits_tt: "$bm_major_manifest_traits_tooltip$"
   bm_manifest_traits_max_rank_2_tt: "Has not already manifested rank 2 in all congenital traits (Intellect, Physique, Beauty)"
   NOT_bm_manifest_traits_max_rank_2_tt: "Has not already manifested rank 2 in all congenital traits (Intellect, Physique, Beauty)"
 

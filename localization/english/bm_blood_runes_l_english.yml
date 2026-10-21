@@ -1,13 +1,16 @@
 ﻿l_english:
   # Standalone Decision: Carve Galdrastafir Stave
   bm_carve_galdrastafir_decision: "Carve Galdrastafir Stave"
-  bm_carve_galdrastafir_decision_desc: "Having etched a Superior Blood Rune into your flesh, you can bind an ancient Galdrastafir stave to channel its capstone powers. You may choose your initial stave freely, or swap an existing stave once every 5 years for [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and #V 500#! Piety."
+  bm_carve_galdrastafir_decision_desc: "Having etched a Superior Blood Rune into your flesh, bind an ancient Galdrastafir stave to channel its capstone powers."
   bm_carve_galdrastafir_decision_tooltip: "Select a Galdrastafir stave to gain flat enhancements and unique occult capstone mechanics"
   BM_CARVE_GALDRASTAFIR_DECISION_NEXT_STEP_BUTTON: "Bind Stave"
   bm_carve_galdrastafir_decision_confirm: "$BM_CARVE_GALDRASTAFIR_DECISION_NEXT_STEP_BUTTON$"
   bm_carve_galdrastafir_decision_effect: "You carve the selected Galdrastafir stave onto your Superior Blood Rune."
+  bm_carve_galdrastafir_toast: "Carved Galdrastafir Stave"
   bm_carve_galdrastafir_cooldown_tt: "Has not carved or swapped a Galdrastafir stave in the last 5 years"
   NOT_bm_carve_galdrastafir_cooldown_tt: "Has not carved or swapped a Galdrastafir stave in the last 5 years"
+  bm_carve_galdrastafir_lifeforce_req: "Requires [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]"
+  NOT_bm_carve_galdrastafir_lifeforce_req: "Requires [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]"
   bm_stave_already_carved_req: "You do not already bear this Galdrastafir stave"
   NOT_bm_stave_already_carved_req: "You do not already bear this Galdrastafir stave"
   bm_swap_stave_cost_req: "Requires [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and #V 500#! Piety to swap staves"

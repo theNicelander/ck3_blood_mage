@@ -24,7 +24,8 @@ Ensure pull requests, updates, and merge commit messages comprehensively reflect
 - If the branch document is missing any changes, update `docs-ai/branch-context/<branch>.md` to reflect the complete net state before touching the PR.
 
 ### 2. Formulate Comprehensive PR Title and Body
-- **Title**: High-level, high-impact summary covering all core themes of the branch (e.g., `v1.20.51: Empower Dynasty Bloodline Overhaul, Blood Knight Parity, 4-Tier Blood Hunts & Audit Fixes`). Do not focus on only a single commit if multiple areas were modified.
+- **Title**: High-level, high-impact summary covering all core gameplay themes of the branch (e.g., `v1.20.51: Empower Dynasty Bloodline Overhaul, Blood Knight Parity, 4-Tier Blood Hunts & Audit Fixes`). Do not focus on only a single commit if multiple areas were modified.
+  - **Gameplay Content Only (No Meta Fluff)**: Unless the branch is **EXCLUSIVELY** about documentation, AI rules, or dev tooling, PR titles and merge commit headers must focus strictly on **player-facing gameplay changes**. Never include PR workflow, branch verification, AI rule updates, or documentation meta in the title/heading (e.g. exclude "PR Workflow & Branch Verification" from headers). What matters in PR titles is gameplay content; meta changes belong strictly in bullet points within the body.
 - **Description / Body**:
   - Pull directly from `docs-ai/branch-context/<branch>.md`.
   - Group into clear structural sections (e.g., Summary & Motivation, Core Concepts & Changes by subsystem/theme, Key Decisions, Audit & Bug Fixes).

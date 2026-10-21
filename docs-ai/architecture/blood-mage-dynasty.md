@@ -6,11 +6,11 @@ Living technical specification for supernatural dynasty/house modifiers, covenan
 
 - **What:** Decoupled, multi-tiered House Covenant system accessed via the standalone inline widget decision `bm_empower_bloodline_decision` ("Empower Dynasty Bloodline").
 - **7 House Covenants (3 Tiers Each):** Progresses across Tier I (Minor), Tier II (Major), and Tier III (Superior). Upgrading replaces the lower tier modifier on `house` to keep the character and house interface clean.
-  - **Tier I:** 150 Piety + 1 Minor Lifeforce (`blood_magic_used_minor`), Devotion $\ge 1$. Grants `+3` `bloodline` / `vanguard` XP.
-  - **Tier II:** 350 Piety + 1 Major Lifeforce (`blood_magic_used_major`), Devotion $\ge 2$. Grants `+5` `bloodline` / `vanguard` XP.
-  - **Tier III:** 750 Piety + 1 Superior Lifeforce (`blood_magic_used_superior`), Devotion $\ge 3$. Grants `+10` `bloodline` / `vanguard` XP.
+  - **Tier I:** 150 Piety + 1 Minor Lifeforce (`blood_magic_used_minor`), Devotion $\ge 1$. Grants `+3` `bloodline` (Mages) / `benediction` (Knights) XP.
+  - **Tier II:** 350 Piety + 1 Major Lifeforce (`blood_magic_used_major`), Devotion $\ge 2$. Grants `+5` `bloodline` (Mages) / `benediction` (Knights) XP.
+  - **Tier III:** 750 Piety + 1 Superior Lifeforce (`blood_magic_used_superior`), Devotion $\ge 3$. Grants `+10` `bloodline` (Mages) / `benediction` (Knights) XP.
 - **Cooldown:** No decision cooldown (gated purely by Lifeforce, Piety, and Devotion rank).
-- **Feedback Loop:** Yearly pulse event `blood_mage_yearly_events.002` grants `+1` `bloodline` XP (Blood Mages) or `+1` `vanguard` XP (Blood Knights) based on active House Covenants:
+- **Feedback Loop:** Yearly pulse event `blood_mage_yearly_events.002` grants `+1` `bloodline` XP (Blood Mages) or `+1` `benediction` XP (Blood Knights) based on active House Covenants:
   - Each Tier I Covenant adds `+3%` chance.
   - Each Tier II Covenant adds `+6%` chance.
   - Each Tier III Covenant adds `+10%` chance (up to a `70%` annual cap with all 7 Covenants perfected).

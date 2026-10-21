@@ -31,7 +31,7 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 - **Go on a Blood Hunt Overhaul & Wilderness Expansion**:
   - Re-themed from the meditative "Seek Power in Nature's Domain" into **Go on a Blood Hunt**, open to both **Blood Mages** and **Blood Knights**.
   - **Surprise Encounter Resolution**: Embarking on a Blood Hunt preserves narrative suspense by hiding encounter odds in the decision preview behind an immersive wilderness tooltip, resolving encounters via a hidden dispatcher while maintaining full skill duel odds within the events.
-  - **Class-Tailored Lonely Road Encounter**: Blood Knights confront a wandering warrior accompanied by a formidable sworn escort knight (opening Single Combat battlefield duels and martial recruitment), while Blood Mages confront the lone traveler (emphasizing covert lifedrain, trait theft, or learning persuasion).
+  - **Class-Tailored Lonely Road Encounter**: The wandering warrior road encounter now dynamically scales with character Prowess (clamped between 20% and 50% chance, directly matching your Prowess score). Blood Knights confront the traveler accompanied by a formidable sworn escort knight (opening Single Combat battlefield duels and martial recruitment), while Blood Mages confront the lone traveler (emphasizing covert lifedrain, trait theft, or learning persuasion).
   - **Calibrated 4-Tier Violent Encounters**: Overhauled violent confrontation options from binary Major/Minor rolls into high-stakes 4-tier duel resolutions (Clean Kill, Mixed Wounded, Adversary Escapes, and Defeat/Mauled with escalating injuries):
     - *The Beast's Lair*: Face a 30-prowess apex beast in its den for Major Lifeforce on a clean kill, Minor Lifeforce with wounds on a mixed kill, 0 Lifeforce if the beast escapes, or a savage mauling on critical failure (or safely harvest carcasses outside).
     - *Blood in the Embers*: Ambush an armed outlaw camp (Prowess + Martial vs 24) to butcher them for Major Lifeforce and 25 Gold, fight through a wounded brawl for Minor Lifeforce and 10 Gold, watch them scatter into the night, or get overpowered and robbed (or extort tribute peacefully).
@@ -73,12 +73,12 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 
 ## 📜 Grimoires, Spellcasting & Decision Widgets
 
-- **Consolidated Grimoires**: Replaced scattered individual spell decisions with organized Grimoire menus:
+- **Inline Option-List Decision Widgets**: Replaced event popup Grimoires with native CK3 1.20 scrollable decision option drawers for Minor, Major, and Superior Blood Magic, keeping every spell permanently visible with 45×45 icons, direct selection, and red failure tooltips:
   - **Minor Blood Magic**: Fast utility rituals including Lifeforce Attunement, Minor Blood Runes, Vitality Cleansing, and Lifeforce Condensation.
-  - **Major Blood Magic**: Powerful rituals including Channel Blood Power, Condense Lifeforce (distilling Minor and Major into Superior Lifeforce), Education Enhancement (Tiers 1★–4★), Major Blood Runes, Galdrastafir Stave Carving & Swapping (free initial carve upon etching Superior Blood Rune; swapping costs Major Lifeforce + 500 Piety), Congenital Trait Manifestation, and House Blessings.
+  - **Major Blood Magic**: Powerful rituals including Channel Blood Power, Condense Lifeforce (distilling Minor and Major into Superior Lifeforce), Education Enhancement (Tiers 1★–4★), Major Blood Runes, Congenital Trait Manifestation, and House Blessings.
   - **Superior Blood Magic**: Legendary rites including Blood Golem Creation, 5★ Master Educations, Secondary Educations, and Superior Capstone Runes.
   - _Attune Lifeforce_: Select your yearly lifestyle XP bonus with synchronized January 1st progression and clear interface toasts for both base Ancient progression and attunement gains.
-  - _Empower Dynasty Bloodline_: Weave 7 Three-Tier House Covenants (Majesty, Warband, Prosperity, Shadow, Insight, Legacy, Mastery) across Minor, Major, and Superior tiers with live UI level tags and distinct House Modifier icons to permanently fortify your house.
+  - _Empower Dynasty Bloodline_: Weave 7 Three-Tier House Covenants (Majesty, Warband, Prosperity, Shadow, Insight, Legacy, Mastery) across Minor, Major, and Superior tiers with live UI level tags and distinct House Modifier icons to permanently fortify your house, granting Bloodline XP to Blood Mages and Benediction XP to Blood Knights.
 - **37-Condition Healing & Situation Alerts**:
   - Cure up to 37 physical and mental ailments on yourself, your courtiers, family, or prisoners—ranging from illnesses and wounds to blindness, severed limbs, and melancholy.
   - A persistent **"You Can Heal Someone"** notification appears in the Current Situation dropdown whenever an eligible courtier or family member falls sick or injured.
@@ -96,7 +96,7 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
   - **Feingur** (_The Fertility Stave_): Fertility, pregnancy chance, health, and dynasty-wide blessing rites.
   - **Nábrókarstafur** (_Necropants / Wealth Stave_): Direct domain tax bonuses, building gold cost reductions, and monthly gold income.
   - **Hulinhjálmur** (_Helm of Disguise_): Hostile scheme success, scheme secrecy, and personal plot defense.
-- **Superior Stave Capstones**: Reach Superior rune depth to unlock Galdrastafir stave carving directly inside your Major Blood Magic Grimoire, unlocking game-changing capstone powers (such as guaranteed double attunement XP, +20 gold per travel landmark POI, or terrifying battlefield debuffs).
+- **Superior Stave Capstones & Standalone Decision**: Reach Superior rune depth to unlock the standalone **Carve Galdrastafir Stave** decision (`bm_carve_galdrastafir_decision`), an inline option-list drawer displaying all 5 staves with dedicated icons and graying out your active stave, unlocking game-changing capstone powers (such as guaranteed double attunement XP, +20 gold per travel landmark POI, or terrifying battlefield debuffs).
 - **Rune Inscription on Followers**: Inscribe blood runes onto your sworn knights, champions, and family members to bolster their combat prowess and loyalty.
 - **Custom DDS Icons**: Every Galdrastafir stave features authentic, hand-crafted 120×120 visual iconography across modifiers, decisions, and menus.
 - **Blood Universities**: Construct Blood University holding improvements (Tiers 0–3) in your realm's duchy capital to train apprentices and accelerate rune research.
@@ -198,5 +198,7 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 - **Localization Syntax**: Fixed a formatting typo in modifier descriptions that caused localization parser errors.
 - **Current Situation Healing Alerts**: Fixed a display issue where "(NUM)" appeared literally in the grouped healing alert header, and streamlined descriptions to concisely instruct spending Lifeforce.
 - **Empower Dynasty Bloodline Tooltip**: Removed obsolete legacy un-suffixed modifier removal effects that caused Tier I covenant previews to falsely claim the house would lose an old modifier.
+- **Covenant Button Syntax Fix**: Corrected unescaped square brackets in dynamic covenant button labels that triggered the engine's data-binding parser and displayed `ERROR:[Minor]` or `ERROR:[Major]` in the Empower Dynasty Bloodline decision widget.
+- **Empower Dynasty Benediction XP**: Updated the Blood Power "Empower Dynasty" ritual option to grant +3 Benediction XP instead of Enlightenment XP, and harmonized Blood Knight house covenant gains to award Benediction XP.
 - **Education Enhancement & Mastery Option Filtering**: Fixed an issue in education improvement rituals where unowned education disciplines appeared grayed out and pushed valid options or other disciplines off-screen due to the fixed height of the character event window. Unowned education disciplines are now cleanly hidden so characters only see enhancement rites relevant to their education.
 - **Repository Integrity**: Updated repo validation tools with strict multi-BOM and embedded BOM detection to prevent file encoding regressions.

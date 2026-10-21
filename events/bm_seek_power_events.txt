@@ -6,60 +6,78 @@ seek_power.001 = {
     hidden = yes
 
     immediate = {
-        duel = {
-            skills = { prowess learning }
-            value = 0
-            35 = {
-                desc = seek_power.duel.animal
-                trigger_event = { id = seek_power.002 }
+        debug_log = "BloodHunt: dispatcher starting"
+        debug_log_scopes = yes
+        set_variable = {
+            name = bm_seek_power_chose_traveler
+            value = no
+        }
+        random = {
+            chance = bm_seek_power_traveler_chance_value
+            set_variable = {
+                name = bm_seek_power_chose_traveler
+                value = yes
             }
-            20 = {
-                desc = seek_power.duel.beast_lair
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 0.5
-                }
-                trigger_event = { id = seek_power.008 }
+        }
+        if = {
+            limit = {
+                has_variable = bm_seek_power_chose_traveler
+                var:bm_seek_power_chose_traveler = yes
             }
-            20 = {
-                desc = seek_power.duel.homestead
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 0.5
+            remove_variable = bm_seek_power_chose_traveler
+            debug_log = "BloodHunt: traveler encounter selected"
+            trigger_event = { id = seek_power.003 }
+        }
+        else = {
+            remove_variable = bm_seek_power_chose_traveler
+            debug_log = "BloodHunt: rolling non-traveler wilderness encounters"
+            duel = {
+                skills = { prowess learning }
+                value = 0
+                35 = {
+                    desc = seek_power.duel.animal
+                    trigger_event = { id = seek_power.002 }
                 }
-                trigger_event = { id = seek_power.009 }
-            }
-            25 = {
-                desc = seek_power.duel.traveler
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 1.5
+                20 = {
+                    desc = seek_power.duel.beast_lair
+                    compare_modifier = {
+                        value = scope:duel_value
+                        multiplier = 0.5
+                    }
+                    trigger_event = { id = seek_power.008 }
                 }
-                trigger_event = { id = seek_power.003 }
-            }
-            15 = {
-                desc = seek_power.duel.outlaw_camp
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 1.0
+                20 = {
+                    desc = seek_power.duel.homestead
+                    compare_modifier = {
+                        value = scope:duel_value
+                        multiplier = 0.5
+                    }
+                    trigger_event = { id = seek_power.009 }
                 }
-                trigger_event = { id = seek_power.010 }
-            }
-            10 = {
-                desc = seek_power.duel.crimson_rite
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 1.0
+                15 = {
+                    desc = seek_power.duel.outlaw_camp
+                    compare_modifier = {
+                        value = scope:duel_value
+                        multiplier = 1.0
+                    }
+                    trigger_event = { id = seek_power.010 }
                 }
-                trigger_event = { id = seek_power.011 }
-            }
-            5 = {
-                desc = seek_power.duel.legendary
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 0.5
+                10 = {
+                    desc = seek_power.duel.crimson_rite
+                    compare_modifier = {
+                        value = scope:duel_value
+                        multiplier = 1.0
+                    }
+                    trigger_event = { id = seek_power.011 }
                 }
-                trigger_event = { id = seek_power.004 }
+                5 = {
+                    desc = seek_power.duel.legendary
+                    compare_modifier = {
+                        value = scope:duel_value
+                        multiplier = 0.5
+                    }
+                    trigger_event = { id = seek_power.004 }
+                }
             }
         }
     }
@@ -130,6 +148,7 @@ seek_power.003 = {
 
     # Create the traveler, and only spawn escort knight for Blood Knights
     immediate = {
+        debug_log = "BloodHunt: seek_power.003 reached"
         hidden_effect = {
             if = {
                 limit = { exists = root.location.county.faith }
@@ -154,6 +173,7 @@ seek_power.003 = {
                     culture = root.culture
                     faith = scope:local_faith
                 }
+                debug_log = "BloodHunt: escort knight spawned for Blood Knight"
             }
         }
     }
