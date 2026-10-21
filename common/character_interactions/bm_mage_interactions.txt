@@ -28,6 +28,7 @@
             is_alive = yes
             custom_description = {
                 text = "bm_recipient_has_lifeforce_reserves"
+                subject = scope:recipient
                 OR = {
                     has_character_modifier = lifeforce_modifier_minor
                     has_character_modifier = lifeforce_modifier_major

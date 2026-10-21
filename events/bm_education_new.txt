@@ -17,7 +17,19 @@ bm_education_new.001 = {
         name = bm_education_new.001.diplomacy
         trigger = { NOT = {has_trait = education_diplomacy} }
         bm_education_new_cost_effect = yes
-        add_trait = education_diplomacy_1
+        send_interface_toast = {
+            type = event_toast_effect_good
+            title = bm_education_new.001.title
+            left_icon = root
+            add_trait = education_diplomacy_1
+            add_shared_bm_bk_xp = {
+                TRACK = enlightenment
+                XP = 3
+            }
+            hidden_effect = {
+                bm_recount_lifeforce_stacks_effect = yes
+            }
+        }
         ai_chance = { base = 100 }
     }
 
@@ -26,7 +38,19 @@ bm_education_new.001 = {
         name = bm_education_new.001.martial
         trigger = { NOT = {has_trait = education_martial} }
         bm_education_new_cost_effect = yes
-        add_trait = education_martial_1
+        send_interface_toast = {
+            type = event_toast_effect_good
+            title = bm_education_new.001.title
+            left_icon = root
+            add_trait = education_martial_1
+            add_shared_bm_bk_xp = {
+                TRACK = enlightenment
+                XP = 3
+            }
+            hidden_effect = {
+                bm_recount_lifeforce_stacks_effect = yes
+            }
+        }
         ai_chance = { base = 100 }
     }
 
@@ -35,7 +59,19 @@ bm_education_new.001 = {
         name = bm_education_new.001.stewardship
         trigger = { NOT = {has_trait = education_stewardship} }
         bm_education_new_cost_effect = yes
-        add_trait = education_stewardship_1
+        send_interface_toast = {
+            type = event_toast_effect_good
+            title = bm_education_new.001.title
+            left_icon = root
+            add_trait = education_stewardship_1
+            add_shared_bm_bk_xp = {
+                TRACK = enlightenment
+                XP = 3
+            }
+            hidden_effect = {
+                bm_recount_lifeforce_stacks_effect = yes
+            }
+        }
         ai_chance = { base = 100 }
     }
 
@@ -44,7 +80,19 @@ bm_education_new.001 = {
         name = bm_education_new.001.intrigue
         trigger = { NOT = {has_trait = education_intrigue} }
         bm_education_new_cost_effect = yes
-        add_trait = education_intrigue_1
+        send_interface_toast = {
+            type = event_toast_effect_good
+            title = bm_education_new.001.title
+            left_icon = root
+            add_trait = education_intrigue_1
+            add_shared_bm_bk_xp = {
+                TRACK = enlightenment
+                XP = 3
+            }
+            hidden_effect = {
+                bm_recount_lifeforce_stacks_effect = yes
+            }
+        }
         ai_chance = { base = 100 }
     }
 
@@ -53,7 +101,19 @@ bm_education_new.001 = {
         name = bm_education_new.001.learning
         trigger = { NOT = {has_trait = education_learning} }
         bm_education_new_cost_effect = yes
-        add_trait = education_learning_1
+        send_interface_toast = {
+            type = event_toast_effect_good
+            title = bm_education_new.001.title
+            left_icon = root
+            add_trait = education_learning_1
+            add_shared_bm_bk_xp = {
+                TRACK = enlightenment
+                XP = 3
+            }
+            hidden_effect = {
+                bm_recount_lifeforce_stacks_effect = yes
+            }
+        }
         ai_chance = { base = 100 }
     }
 

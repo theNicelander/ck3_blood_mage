@@ -62,14 +62,17 @@
 								TRACK = hematurgy
 								XP = 4
 							}
+							scope:recipient = {
+								add_character_modifier = {
+									modifier = bm_blood_curse_modifier
+									years = 5
+								}
+								add_trait = ill
+							}
+							hidden_effect = {
+								bm_recount_lifeforce_stacks_effect = yes
+							}
 						}
-					}
-					scope:recipient = {
-						add_character_modifier = {
-							modifier = bm_blood_curse_modifier
-							years = 5
-						}
-						add_trait = ill
 					}
 				}
 				# Standard Success: Blood Curse Inflicted in Shadows
@@ -88,12 +91,12 @@
 								TRACK = hematurgy
 								XP = 2
 							}
-						}
-					}
-					scope:recipient = {
-						add_character_modifier = {
-							modifier = bm_blood_curse_modifier
-							years = 5
+							scope:recipient = {
+								add_character_modifier = {
+									modifier = bm_blood_curse_modifier
+									years = 5
+								}
+							}
 						}
 					}
 				}

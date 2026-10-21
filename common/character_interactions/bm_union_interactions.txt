@@ -50,6 +50,7 @@
 		}
 		custom_description = {
 			text = bm_consecrated_union_already_consecrated
+			subject = scope:recipient
 			NOT = {
 				scope:recipient = {
 					has_character_modifier = bm_consecrated_union_modifier
@@ -115,13 +116,13 @@
 						limit = { has_trait = lifestyle_blood_mage }
 						add_xp_bm_dynamic = {
 							TRACK = bloodline
-							XP = 2
+							XP = 1
 						}
 					}
 					else = {
 						add_blood_knight_xp = {
-							TRACK = vanguard
-							XP = 2
+							TRACK = benediction
+							XP = 1
 						}
 					}
 					scope:recipient = {
@@ -156,13 +157,13 @@
 						limit = { has_trait = lifestyle_blood_mage }
 						add_xp_bm_dynamic = {
 							TRACK = bloodline
-							XP = 4
+							XP = 2
 						}
 					}
 					else = {
 						add_blood_knight_xp = {
-							TRACK = vanguard
-							XP = 4
+							TRACK = benediction
+							XP = 2
 						}
 					}
 					scope:recipient = {

@@ -252,31 +252,66 @@
 		}
 		if = {
 			limit = { scope:bm_attune_ancient = yes }
-			add_character_modifier = { modifier = ancient_attuned }
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_attune_lifeforce_decision
+				left_icon = root
+				add_character_modifier = { modifier = ancient_attuned }
+			}
 		}
 		else_if = {
 			limit = { scope:bm_attune_enlightenment = yes }
-			add_character_modifier = { modifier = enlightenment_attuned }
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_attune_lifeforce_decision
+				left_icon = root
+				add_character_modifier = { modifier = enlightenment_attuned }
+			}
 		}
 		else_if = {
 			limit = { scope:bm_attune_bloodline = yes }
-			add_character_modifier = { modifier = bloodline_attuned }
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_attune_lifeforce_decision
+				left_icon = root
+				add_character_modifier = { modifier = bloodline_attuned }
+			}
 		}
 		else_if = {
 			limit = { scope:bm_attune_benediction = yes }
-			add_character_modifier = { modifier = benediction_attuned }
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_attune_lifeforce_decision
+				left_icon = root
+				add_character_modifier = { modifier = benediction_attuned }
+			}
 		}
 		else_if = {
 			limit = { scope:bm_attune_hematurgy = yes }
-			add_character_modifier = { modifier = hematurgy_attuned }
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_attune_lifeforce_decision
+				left_icon = root
+				add_character_modifier = { modifier = hematurgy_attuned }
+			}
 		}
 		else_if = {
 			limit = { scope:bm_attune_vanguard = yes }
-			add_character_modifier = { modifier = vanguard_attuned }
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_attune_lifeforce_decision
+				left_icon = root
+				add_character_modifier = { modifier = vanguard_attuned }
+			}
 		}
 		else_if = {
 			limit = { scope:bm_attune_slaughter = yes }
-			add_character_modifier = { modifier = slaughter_attuned }
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_attune_lifeforce_decision
+				left_icon = root
+				add_character_modifier = { modifier = slaughter_attuned }
+			}
 		}
 		else = {
 			custom_tooltip = bm_attune_lifeforce_decision_effect

@@ -5,7 +5,7 @@ bm_interpersonal_events.0001 = {
 	type = character_event
 	title = bm_interpersonal_events.0001.t
 	desc = bm_interpersonal_events.0001.desc
-	theme = romance
+	theme = love
 	left_portrait = {
 		character = root
 		animation = flirtation
@@ -78,14 +78,14 @@ bm_interpersonal_events.0001 = {
 				limit = { has_trait = lifestyle_blood_mage }
 				add_blood_mage_xp = {
 					TRACK = benediction
-					XP = 3
+					XP = 1
 				}
 			}
 			else_if = {
 				limit = { has_trait = lifestyle_blood_knight }
 				add_blood_knight_xp = {
-					TRACK = vanguard
-					XP = 3
+					TRACK = benediction
+					XP = 1
 				}
 			}
 			hidden_effect = {
@@ -118,14 +118,14 @@ bm_interpersonal_events.0001 = {
 				limit = { has_trait = lifestyle_blood_mage }
 				add_blood_mage_xp = {
 					TRACK = hematurgy
-					XP = 2
+					XP = 1
 				}
 			}
 			else_if = {
 				limit = { has_trait = lifestyle_blood_knight }
 				add_blood_knight_xp = {
 					TRACK = slaughter
-					XP = 2
+					XP = 1
 				}
 			}
 			hidden_effect = {
@@ -167,14 +167,14 @@ bm_interpersonal_events.0001 = {
 				limit = { has_trait = lifestyle_blood_mage }
 				add_blood_mage_xp = {
 					TRACK = bloodline
-					XP = 5
+					XP = 1
 				}
 			}
 			else_if = {
 				limit = { has_trait = lifestyle_blood_knight }
 				add_blood_knight_xp = {
-					TRACK = vanguard
-					XP = 5
+					TRACK = benediction
+					XP = 1
 				}
 			}
 			hidden_effect = {
@@ -279,14 +279,14 @@ bm_interpersonal_events.0002 = {
 				limit = { has_trait = lifestyle_blood_mage }
 				add_blood_mage_xp = {
 					TRACK = bloodline
-					XP = 3
+					XP = 1
 				}
 			}
 			else_if = {
 				limit = { has_trait = lifestyle_blood_knight }
 				add_blood_knight_xp = {
-					TRACK = vanguard
-					XP = 3
+					TRACK = ancient
+					XP = 1
 				}
 			}
 			hidden_effect = {
@@ -332,14 +332,14 @@ bm_interpersonal_events.0002 = {
 				limit = { has_trait = lifestyle_blood_mage }
 				add_blood_mage_xp = {
 					TRACK = bloodline
-					XP = 5
+					XP = 1
 				}
 			}
 			else_if = {
 				limit = { has_trait = lifestyle_blood_knight }
 				add_blood_knight_xp = {
-					TRACK = vanguard
-					XP = 5
+					TRACK = ancient
+					XP = 1
 				}
 			}
 			hidden_effect = {
@@ -358,7 +358,7 @@ bm_interpersonal_events.0002 = {
 			add_piety = 75
 			add_shared_bm_bk_xp = {
 				TRACK = enlightenment
-				XP = 2
+				XP = 1
 			}
 		}
 	}
@@ -421,14 +421,14 @@ bm_interpersonal_events.0003 = {
 				limit = { has_trait = lifestyle_blood_mage }
 				add_blood_mage_xp = {
 					TRACK = bloodline
-					XP = 3
+					XP = 1
 				}
 			}
 			else_if = {
 				limit = { has_trait = lifestyle_blood_knight }
 				add_blood_knight_xp = {
 					TRACK = vanguard
-					XP = 3
+					XP = 1
 				}
 			}
 			hidden_effect = {
@@ -452,14 +452,14 @@ bm_interpersonal_events.0003 = {
 				limit = { has_trait = lifestyle_blood_mage }
 				add_blood_mage_xp = {
 					TRACK = hematurgy
-					XP = 4
+					XP = 1
 				}
 			}
 			else_if = {
 				limit = { has_trait = lifestyle_blood_knight }
 				add_blood_knight_xp = {
 					TRACK = slaughter
-					XP = 4
+					XP = 1
 				}
 			}
 			scope:knight = {
@@ -485,7 +485,7 @@ bm_interpersonal_events.0003 = {
 			add_piety = 150
 			add_shared_bm_bk_xp = {
 				TRACK = enlightenment
-				XP = 3
+				XP = 1
 			}
 		}
 	}
@@ -567,14 +567,14 @@ bm_interpersonal_events.0004 = {
 				limit = { has_trait = lifestyle_blood_mage }
 				add_blood_mage_xp = {
 					TRACK = bloodline
-					XP = 3
+					XP = 1
 				}
 			}
 			else_if = {
 				limit = { has_trait = lifestyle_blood_knight }
 				add_blood_knight_xp = {
-					TRACK = vanguard
-					XP = 3
+					TRACK = ancient
+					XP = 1
 				}
 			}
 		}
@@ -598,7 +598,7 @@ bm_interpersonal_events.0004 = {
 			}
 			add_shared_bm_bk_xp = {
 				TRACK = enlightenment
-				XP = 3
+				XP = 1
 			}
 		}
 	}
@@ -615,14 +615,14 @@ bm_interpersonal_events.0004 = {
 				limit = { has_trait = lifestyle_blood_mage }
 				add_blood_mage_xp = {
 					TRACK = hematurgy
-					XP = 3
+					XP = 1
 				}
 			}
 			else_if = {
 				limit = { has_trait = lifestyle_blood_knight }
 				add_blood_knight_xp = {
 					TRACK = slaughter
-					XP = 3
+					XP = 1
 				}
 			}
 			scope:golem = {
@@ -703,14 +703,14 @@ bm_interpersonal_events.0005 = {
 						limit = { has_trait = lifestyle_blood_mage }
 						add_blood_mage_xp = {
 							TRACK = hematurgy
-							XP = 3
+							XP = 1
 						}
 					}
 					else_if = {
 						limit = { has_trait = lifestyle_blood_knight }
 						add_blood_knight_xp = {
 							TRACK = slaughter
-							XP = 3
+							XP = 1
 						}
 					}
 					scope:courtier = {
@@ -774,14 +774,14 @@ bm_interpersonal_events.0005 = {
 				limit = { has_trait = lifestyle_blood_mage }
 				add_blood_mage_xp = {
 					TRACK = benediction
-					XP = 3
+					XP = 1
 				}
 			}
 			else_if = {
 				limit = { has_trait = lifestyle_blood_knight }
 				add_blood_knight_xp = {
-					TRACK = vanguard
-					XP = 3
+					TRACK = benediction
+					XP = 1
 				}
 			}
 			hidden_effect = {
@@ -801,7 +801,7 @@ bm_interpersonal_events.0005 = {
 			left_icon = root
 			add_shared_bm_bk_xp = {
 				TRACK = enlightenment
-				XP = 3
+				XP = 1
 			}
 			add_stress = -20
 		}
