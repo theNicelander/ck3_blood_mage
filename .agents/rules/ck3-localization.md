@@ -13,6 +13,9 @@ description: Localization rules: English only, sibling keys, UTF-8 BOM format.
   - Faith: `<faith>`, `_adj`, `_adherent`, `_adherent_plural`, `_desc`.
   Never add a key without its siblings.
 - **Format**: `.yml` must be UTF-8 **with BOM** and trailing newline. Missing keys display raw in UI with no load-time warning.
+- **No Hexadecimal Escapes**: Never use `\x27` or raw hex escape sequences in `.yml` files. The CK3 localization parser does not decode hex escapes and throws illegal break character errors. Use literal apostrophes `'`.
+- **Trigger Localization Scoping**: Strings referenced by `custom_description` in character interactions/decisions cannot resolve bare `[recipient.GetShortUIName]`. Always specify `subject = scope:recipient` in script and use `[CHARACTER.GetShortUIName]` (or `[TARGET_CHARACTER.GetShortUIName]` with `object = ...`).
+- **Living Catalog**: When identifying new localization pitfalls or syntax errors, record them under `## Common Engine Errors & Pitfalls` in `.agents/rules/ck3-scripting.md`.
 - **Concise & direct style (Lifeforce over fluffy flavour)**:
   - Stop using fluffy flavour words like "vitality", "vital arts", "life essence", or vague synonyms when describing actions, alerts, tooltips, or costs. Always be concise, direct, and specify the concrete game term **Lifeforce** (e.g. "spend Lifeforce to heal them", not "channel your vitality").
   - Flavour text belongs strictly in narrative descriptions (e.g. `<decision>_desc` or `<event>.desc` story paragraphs). Outside those narrative bodies, all UI text, tooltips, action descriptions, and toasts must be to the point.
