@@ -9,7 +9,7 @@ Living technical specification for supernatural dynasty/house modifiers, covenan
   - **Tier I:** 150 Piety + 1 Minor Lifeforce (`blood_magic_used_minor`), Devotion $\ge 1$. Grants `+3` `bloodline` (Mages) / `benediction` (Knights) XP.
   - **Tier II:** 350 Piety + 1 Major Lifeforce (`blood_magic_used_major`), Devotion $\ge 2$. Grants `+5` `bloodline` (Mages) / `benediction` (Knights) XP.
   - **Tier III:** 750 Piety + 1 Superior Lifeforce (`blood_magic_used_superior`), Devotion $\ge 3$. Grants `+10` `bloodline` (Mages) / `benediction` (Knights) XP.
-- **Cooldown:** No decision cooldown (gated purely by Lifeforce, Piety, and Devotion rank).
+- **Cooldown:** 1 year decision cooldown.
 - **Feedback Loop:** Yearly pulse event `blood_mage_yearly_events.002` grants `+1` `bloodline` XP (Blood Mages) or `+1` `benediction` XP (Blood Knights) based on active House Covenants:
   - Each Tier I Covenant adds `+3%` chance.
   - Each Tier II Covenant adds `+6%` chance.
