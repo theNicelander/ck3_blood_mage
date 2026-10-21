@@ -65,4 +65,9 @@ description: Core CK3 script rules, script values, and safe engine patterns (1.2
    - *Cause*: Deleting a modifier from `common/modifiers/` while leaving lingering checks in scripted triggers (`bm_attunement_triggers.txt`), effects (`remove_character_modifier`), or customizable localization.
    - *Fix*: When deprecating or removing any database object (modifier, trait, flag, variable), grep the entire repository and cleanly purge all references across triggers, effects, custom loc, and localization in the same commit.
 
+8. **Saved Scopes in Data Expressions (`Failed to find type 'scope:executioner'`)**:
+   - *Error*: `Failed to find type 'scope:executioner'` or `Failed to find type 'scope:victim'` while formatting a debug log; nested `Select_CString` expressions fail too.
+   - *Cause*: Using script target syntax such as `[scope:executioner.GetID]` inside a data expression. Script targets are not data-system root types.
+   - *Fix*: Resolve saved character scopes through `SCOPE.sC('executioner')` or `SCOPE.sC('victim')` before calling character functions, including inside `Select_CString`. Retain `exists = scope:...` guards and normal `scope:...` syntax in script blocks.
+
 Mod architecture: see `docs-ai/architecture/README.md`.

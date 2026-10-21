@@ -47,10 +47,12 @@ Living technical specification for character interactions in the Blood Mage mod.
 - **AI Positive Magic Prioritisation & Rival Veto:** `factor = 0` strictly vetoes performing positive magic (`bm_heal_ailment`, `bless_bloodline`, `bm_anoint_heir_interaction`, `make_blood_knight`, `empower_blood_knight`, `grant_blood_magic`, `grant_lifeforce_reversed`, `bm_inscribe_rune_other_interaction`, `bm_purge_coping_traits_interaction`, `bm_anoint_knight_interaction`) on rivals and nemeses.
 - **Class Parity in Initiation:** Knights create Knights via `make_blood_knight_interaction`; Mages create Mages via `grant_blood_magic_interaction`. Costs are symmetric: Major Lifeforce + 100 Piety OR Minor Lifeforce + 250 Piety.
 - **Story Panel Sync:** Granting warrior/champion status automatically updates the Blood Retinue in the Blood Magic panel.
+- **Stored Lifeforce Requirement Tooltip:** `bm_siphon_lifeforce_reserves_interaction` binds `subject = scope:recipient` in `custom_description`; both requirement strings resolve the recipient through `CHARACTER`. The `NOT_` sibling states that the character has no stored Lifeforce.
 - **Debug Logging Standard:** Character interactions log to `logs/debug.log` using standardized prefixes:
   - `BloodMageInteraction: <name> | Actor: <name> (ID:<id>, <Player|AI>) -> Recipient: <name> (ID:<id>, <Player|AI>) | Rel: <relation> | Tag: <role_tag> | Opinion: <opinion>`
   - `BloodMageSelfCast: <name> | Actor: <name> (ID:<id>, <Player|AI>)`
   - `BloodMageExecution: lifedrain | Executioner: <name> ... -> Victim: <name> ...`
+  - `lifedrain_execution_effect` logs only when both saved character scopes exist. Executioner/victim names, IDs, player status, relationships and opinion use `SCOPE.sC('executioner')` / `SCOPE.sC('victim')` in data expressions.
 
 ## Where the details live
 
