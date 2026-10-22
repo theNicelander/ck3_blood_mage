@@ -79,9 +79,13 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
   - **Superior Blood Magic**: Legendary rites including Blood Golem Creation, 5★ Master Educations, Secondary Educations, and Superior Capstone Runes.
   - _Attune Lifeforce_: Select your yearly lifestyle XP bonus with synchronized January 1st progression and clear interface toasts for both base Ancient progression and attunement gains.
   - _Empower Dynasty Bloodline_: Weave 7 Three-Tier House Covenants (Majesty, Warband, Prosperity, Shadow, Insight, Legacy, Mastery) across Minor, Major, and Superior tiers with live UI level tags and distinct House Modifier icons to permanently fortify your house (1-year cooldown), granting Bloodline XP to Blood Mages and Benediction XP to Blood Knights.
-- **37-Condition Healing & Situation Alerts**:
-  - Cure up to 37 physical and mental ailments on yourself, your courtiers, family, or prisoners—ranging from illnesses and wounds to blindness, severed limbs, and melancholy.
+- **32-Condition Ailment Healing & Situation Alerts**:
+  - Cure up to 32 physical, mental, and fatal ailments on yourself, your courtiers, family, or prisoners—ranging from illnesses and wounds to blindness, severed limbs, and melancholy.
   - A persistent **"You Can Heal Someone"** notification appears in the Current Situation dropdown whenever an eligible courtier or family member falls sick or injured.
+- **Progressive Old Age Affliction Management (`bm_heal_old_age_trait`)**:
+  - Degenerative old age traits (`infirm`, `clouded_eyes`, `fragile_bones`, `withering_mind`, `faltering_heart`) are now decoupled from instant removal into a dedicated progressive rejuvenation interaction.
+  - Blood Mages and Blood Knights can manage elderly afflictions through tiered track XP reductions: **Minor Treatment** (-20 track XP for 1 Minor Lifeforce + 50 Piety) and **Major Treatment** (-50 track XP for 1 Major Lifeforce + 150 Piety).
+  - Complete trait purging (**Purge Affliction**) requires bringing track XP under 20 (1 Major Lifeforce + 150 Piety), visible and grayed out with detailed requirement tooltips until the affliction is sufficiently reversed.
 - **Ex-Nihilo Congenital Manifestation**: Manifest or improve genetic beauty, intellect, and physique traits through ritual blood channeling, supporting progression up to Rank 5.
 - **Personality Reshaping**: Purge negative or conflicting personality traits from courtiers and imprint occult virtues through ritual blood manipulation.
 - **Master & Secondary Educations**: Elevate education traits to mythical 5★ rank, or study under an ancient blood mentor to acquire an entirely new secondary education trait.
