@@ -18,9 +18,9 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 - **Dedicated Blood Knight Tracks**:
   - **Vanguard**: Boosts army movement speed, combat advantage, supply duration, and direct martial prowess.
   - **Slaughter**: Drastically increases personal prowess, knight limit, knight effectiveness, and bonus prowess scaling with Devotion.
-- **Dedicated Blood Mage Tracks**:
-  - **Bloodline**: Increases domain limit, county tax, development growth, and building construction speed.
-  - **Hematurgy**: Unlocks hostile scheme power, scheme defense, dread gain, and natural tyranny decay.
+- **Dedicated Blood Mage Tracks (Restructured 10-Step Cadence)**:
+  - **Bloodline**: Standardized onto a clean 10-step cadence granting up to +24% Domain Taxes (8 standard steps of +3%), +40% Inactive Trait Inheritance Chance (4 medium steps of +10%), +50% Dynasty Prestige Multiplier (+25% at 50 & 100 XP), +2 Stewardship per Piety Level (+1 at 50 & 100 XP), and Age Prowess Lock.
+  - **Hematurgy**: Streamlined onto a clean 10-step cadence granting up to +32 Hostile Scheme Success (8 standard steps of +4), -32 Enemy Hostile Scheme Success (4 medium steps of -8), +2 Intrigue per Piety Level (+1 at 50 & 100 XP), +2 Max Hostile Schemes (+1 at 50 & 100 XP), and Age Prowess Lock.
 
 - **Blood Knight Rites & Champion Sacrifices**:
   - **Anoint Vanguard Champion**: Consecrate knights or Blood Knight courtiers with Minor Lifeforce to bestow +4 Prowess, +0.5 Health, and health penalty negation for 5 years (`bm_anointed_champion_modifier`).

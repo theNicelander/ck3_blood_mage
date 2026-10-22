@@ -5,30 +5,15 @@
 @bm_common_epidemic_resistance = 1
 
 # bloodline
-@bm_bloodline_build_gold_cost = -0.025
-@bm_bloodline_domain_tax_mult = 0.025
-@bm_bloodline_development_growth_factor = 0.05
-@bm_bloodline_domain_limit = 1
-@bm_bloodline_monthly_income_mult = 0.1
-@bm_bloodline_build_speed = -0.05
-@bm_bloodline_stewardship_per_piety_tier_50 = 1
-@bm_bloodline_stewardship_per_piety_tier_100 = 0.5
-@bm_bloodline_vassal_limit_tier_50 = 5
-@bm_bloodline_vassal_limit_tier_100 = 10
-@bm_bloodline_monthly_dynasty_prestige_mult = 0.10
-@bm_bloodline_dynasty_opinion = 10
+@bm_bloodline_domain_tax_mult = 0.03
+@bm_bloodline_inactive_inheritance = 0.10
+@bm_bloodline_stewardship_per_piety = 1
+@bm_bloodline_dynasty_prestige_mult = 0.25
 
 # hematurgy
 @bm_hematurgy_scheme_success_chance = 4
-@bm_hematurgy_scheme_secrecy = 4
-@bm_hematurgy_dread_baseline_low = 2
-@bm_hematurgy_dread_baseline_high = 3
-@bm_hematurgy_tyranny_gain_mult = -0.025
-@bm_hematurgy_phase_duration_short = -3
-@bm_hematurgy_phase_duration_long = -4
-@bm_hematurgy_dread_gain_mult = 0.05
-@bm_hematurgy_intrigue_per_piety_tier_50 = 1
-@bm_hematurgy_intrigue_per_piety_tier_100 = 0.5
+@bm_hematurgy_enemy_scheme_success = -8
+@bm_hematurgy_intrigue_per_piety = 1
 @bm_hematurgy_max_hostile_schemes = 1
 
 # benediction
@@ -80,7 +65,6 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                build_gold_cost = @bm_bloodline_build_gold_cost
                 domain_tax_mult = @bm_bloodline_domain_tax_mult
             }
             20 = {
@@ -91,9 +75,8 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                build_gold_cost = @bm_bloodline_build_gold_cost
                 domain_tax_mult = @bm_bloodline_domain_tax_mult
-                development_growth_factor = @bm_bloodline_development_growth_factor
+                positive_inactive_inheritance_chance = @bm_bloodline_inactive_inheritance
             }
             30 = {
                 # common
@@ -103,11 +86,7 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                domain_limit = @bm_bloodline_domain_limit
-                monthly_income_mult = @bm_bloodline_monthly_income_mult
-                build_gold_cost = @bm_bloodline_build_gold_cost
                 domain_tax_mult = @bm_bloodline_domain_tax_mult
-                build_speed = @bm_bloodline_build_speed
             }
             40 = {
                 # common
@@ -117,16 +96,13 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                build_gold_cost = @bm_bloodline_build_gold_cost
                 domain_tax_mult = @bm_bloodline_domain_tax_mult
-                development_growth_factor = @bm_bloodline_development_growth_factor
+                positive_inactive_inheritance_chance = @bm_bloodline_inactive_inheritance
             }
             50 = {
                 # specific
-                stewardship_per_piety_level = @bm_bloodline_stewardship_per_piety_tier_50
-                vassal_limit = @bm_bloodline_vassal_limit_tier_50
-                monthly_dynasty_prestige_mult = @bm_bloodline_monthly_dynasty_prestige_mult
-                dynasty_opinion = @bm_bloodline_dynasty_opinion
+                stewardship_per_piety_level = @bm_bloodline_stewardship_per_piety
+                monthly_dynasty_prestige_mult = @bm_bloodline_dynasty_prestige_mult
             }
             60 = {
                 # common
@@ -136,11 +112,8 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                domain_limit = @bm_bloodline_domain_limit
-                monthly_income_mult = @bm_bloodline_monthly_income_mult
-                build_gold_cost = @bm_bloodline_build_gold_cost
                 domain_tax_mult = @bm_bloodline_domain_tax_mult
-                development_growth_factor = @bm_bloodline_development_growth_factor
+                positive_inactive_inheritance_chance = @bm_bloodline_inactive_inheritance
             }
             70 = {
                 # common
@@ -150,9 +123,7 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                build_gold_cost = @bm_bloodline_build_gold_cost
                 domain_tax_mult = @bm_bloodline_domain_tax_mult
-                build_speed = @bm_bloodline_build_speed
             }
             80 = {
                 # common
@@ -162,9 +133,8 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                build_gold_cost = @bm_bloodline_build_gold_cost
                 domain_tax_mult = @bm_bloodline_domain_tax_mult
-                development_growth_factor = @bm_bloodline_development_growth_factor
+                positive_inactive_inheritance_chance = @bm_bloodline_inactive_inheritance
             }
             90 = {
                 # common
@@ -174,17 +144,12 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                domain_limit = @bm_bloodline_domain_limit
-                monthly_income_mult = @bm_bloodline_monthly_income_mult
-                build_gold_cost = @bm_bloodline_build_gold_cost
                 domain_tax_mult = @bm_bloodline_domain_tax_mult
-                development_growth_factor = @bm_bloodline_development_growth_factor
-                build_speed = @bm_bloodline_build_speed
             }
             100 = {
                 # specific
-                stewardship_per_piety_level = @bm_bloodline_stewardship_per_piety_tier_100
-                vassal_limit = @bm_bloodline_vassal_limit_tier_100
+                stewardship_per_piety_level = @bm_bloodline_stewardship_per_piety
+                monthly_dynasty_prestige_mult = @bm_bloodline_dynasty_prestige_mult
                 no_prowess_loss_from_age = yes
             }
         }
@@ -199,9 +164,6 @@ lifestyle_blood_mage = {
 
                 # specific
                 owned_hostile_scheme_success_chance_add = @bm_hematurgy_scheme_success_chance
-                owned_scheme_secrecy_add = @bm_hematurgy_scheme_secrecy
-                dread_baseline_add = @bm_hematurgy_dread_baseline_low
-                tyranny_gain_mult = @bm_hematurgy_tyranny_gain_mult
             }
             20 = {
                 # common
@@ -212,10 +174,7 @@ lifestyle_blood_mage = {
 
                 # specific
                 owned_hostile_scheme_success_chance_add = @bm_hematurgy_scheme_success_chance
-                owned_scheme_secrecy_add = @bm_hematurgy_scheme_secrecy
-                hostile_scheme_phase_duration_add = @bm_hematurgy_phase_duration_short
-                dread_baseline_add = @bm_hematurgy_dread_baseline_high
-                tyranny_gain_mult = @bm_hematurgy_tyranny_gain_mult
+                enemy_hostile_scheme_success_chance_add = @bm_hematurgy_enemy_scheme_success
             }
             30 = {
                 # common
@@ -226,10 +185,6 @@ lifestyle_blood_mage = {
 
                 # specific
                 owned_hostile_scheme_success_chance_add = @bm_hematurgy_scheme_success_chance
-                owned_scheme_secrecy_add = @bm_hematurgy_scheme_secrecy
-                dread_gain_mult = @bm_hematurgy_dread_gain_mult
-                dread_baseline_add = @bm_hematurgy_dread_baseline_low
-                tyranny_gain_mult = @bm_hematurgy_tyranny_gain_mult
             }
             40 = {
                 # common
@@ -240,14 +195,11 @@ lifestyle_blood_mage = {
 
                 # specific
                 owned_hostile_scheme_success_chance_add = @bm_hematurgy_scheme_success_chance
-                owned_scheme_secrecy_add = @bm_hematurgy_scheme_secrecy
-                hostile_scheme_phase_duration_add = @bm_hematurgy_phase_duration_short
-                dread_baseline_add = @bm_hematurgy_dread_baseline_high
-                tyranny_gain_mult = @bm_hematurgy_tyranny_gain_mult
+                enemy_hostile_scheme_success_chance_add = @bm_hematurgy_enemy_scheme_success
             }
             50 = {
                 # specific
-                intrigue_per_piety_level = @bm_hematurgy_intrigue_per_piety_tier_50
+                intrigue_per_piety_level = @bm_hematurgy_intrigue_per_piety
                 max_hostile_schemes_add = @bm_hematurgy_max_hostile_schemes
             }
             60 = {
@@ -259,11 +211,7 @@ lifestyle_blood_mage = {
 
                 # specific
                 owned_hostile_scheme_success_chance_add = @bm_hematurgy_scheme_success_chance
-                owned_scheme_secrecy_add = @bm_hematurgy_scheme_secrecy
-                hostile_scheme_phase_duration_add = @bm_hematurgy_phase_duration_short
-                dread_gain_mult = @bm_hematurgy_dread_gain_mult
-                dread_baseline_add = @bm_hematurgy_dread_baseline_low
-                tyranny_gain_mult = @bm_hematurgy_tyranny_gain_mult
+                enemy_hostile_scheme_success_chance_add = @bm_hematurgy_enemy_scheme_success
             }
             70 = {
                 # common
@@ -274,11 +222,6 @@ lifestyle_blood_mage = {
 
                 # specific
                 owned_hostile_scheme_success_chance_add = @bm_hematurgy_scheme_success_chance
-                owned_scheme_secrecy_add = @bm_hematurgy_scheme_secrecy
-                hostile_scheme_phase_duration_add = @bm_hematurgy_phase_duration_short
-                dread_gain_mult = @bm_hematurgy_dread_gain_mult
-                dread_baseline_add = @bm_hematurgy_dread_baseline_high
-                tyranny_gain_mult = @bm_hematurgy_tyranny_gain_mult
             }
             80 = {
                 # common
@@ -289,11 +232,7 @@ lifestyle_blood_mage = {
 
                 # specific
                 owned_hostile_scheme_success_chance_add = @bm_hematurgy_scheme_success_chance
-                owned_scheme_secrecy_add = @bm_hematurgy_scheme_secrecy
-                hostile_scheme_phase_duration_add = @bm_hematurgy_phase_duration_long
-                dread_gain_mult = @bm_hematurgy_dread_gain_mult
-                dread_baseline_add = @bm_hematurgy_dread_baseline_low
-                tyranny_gain_mult = @bm_hematurgy_tyranny_gain_mult
+                enemy_hostile_scheme_success_chance_add = @bm_hematurgy_enemy_scheme_success
             }
             90 = {
                 # common
@@ -304,17 +243,12 @@ lifestyle_blood_mage = {
 
                 # specific
                 owned_hostile_scheme_success_chance_add = @bm_hematurgy_scheme_success_chance
-                owned_scheme_secrecy_add = @bm_hematurgy_scheme_secrecy
-                hostile_scheme_phase_duration_add = @bm_hematurgy_phase_duration_long
-                dread_gain_mult = @bm_hematurgy_dread_gain_mult
-                dread_baseline_add = @bm_hematurgy_dread_baseline_high
-                tyranny_gain_mult = @bm_hematurgy_tyranny_gain_mult
             }
             100 = {
                 # specific
-                intrigue_per_piety_level = @bm_hematurgy_intrigue_per_piety_tier_100
-                no_prowess_loss_from_age = yes
+                intrigue_per_piety_level = @bm_hematurgy_intrigue_per_piety
                 max_hostile_schemes_add = @bm_hematurgy_max_hostile_schemes
+                no_prowess_loss_from_age = yes
             }
         }
 
