@@ -13,6 +13,18 @@ trait_drain_prisoner_event_interaction = {
         scope:actor = {
             has_character_modifier = lifeforce_modifier_major
         }
+        trigger_if = {
+            limit = { scope:actor = { is_ai = yes } }
+            NOT = {
+                scope:actor = {
+                    OR = {
+                        is_spouse_of = scope:recipient
+                        is_consort_of = scope:recipient
+                    }
+                }
+            }
+            NOT = { scope:recipient = { is_child_of = scope:actor } }
+        }
     }
 
     is_shown = {

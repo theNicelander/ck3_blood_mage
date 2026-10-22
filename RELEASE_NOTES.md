@@ -193,6 +193,8 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 
 ## 🛠️ Bugfixes & Engine Modernization
 
+- **AI Lifedrain Court Protections & Modifier Ordering Fix**: Fixed Clausewitz AI modifier evaluation ordering and inverted title-tier calculations in `ai_willingness_to_lifedrain` that previously caused additive scores to override `factor = 0` vetoes. AI blood mages and knights are now strictly forbidden from lifedraining spouses, children, close family, knights, councillors, employed court positions (physicians, bodyguards, seneschals, caravan masters), and Blood Golems under any circumstances. Human players retain complete roleplay agency.
+- **Engine Trait Flags & Debug Log Cleanup**: Removed `good = yes` and `random_creation = 0.20` declarations from non-genetic lifestyle traits (`lifestyle_blood_mage` and `lifestyle_blood_knight`), resolving four engine startup errors in `error.log`. Streamlined internal execution logging to eliminate loc data-system parsing errors during tooltip evaluations in mass execution events.
 - **Trait Track XP Rebalance & Vanguard Depuration**: Rebalanced XP progression for Blood Knights and Blood Mages so that track gains remain low, earned, and paced across a character's lifetime:
   - Purged non-combat family rites (consecrate union, anoint heir, blood tithe) and childbirth from advancing the martial `vanguard` track, rerouting family rites to `benediction` (+1 to +2 XP) and childbirth milestones to `ancient` (+1 to +2 XP).
   - Consolidated all healing magic (self-healing and healing others) to grant strictly `benediction` XP (+1 for minor ailments, +2 for major/deadly), fixing erroneous `enlightenment` and `vanguard` gains.
