@@ -18,13 +18,13 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 - **Dedicated Blood Knight Tracks**:
   - **Vanguard**: Boosts army movement speed, combat advantage, supply duration, and direct martial prowess.
   - **Slaughter**: Drastically increases personal prowess, knight limit, knight effectiveness, and bonus prowess scaling with Devotion.
-- **Dedicated Blood Mage Tracks**:
-  - **Bloodline**: Increases domain limit, county tax, development growth, and building construction speed.
-  - **Hematurgy**: Unlocks hostile scheme power, scheme defense, dread gain, and natural tyranny decay.
+- **Dedicated Blood Mage Tracks (Restructured 10-Step Cadence)**:
+  - **Bloodline**: Standardized onto a clean 10-step cadence granting up to +24% Domain Taxes (8 standard steps of +3%), +40% Inactive Trait Inheritance Chance (4 medium steps of +10%), +50% Dynasty Prestige Multiplier (+25% at 50 & 100 XP), +2 Stewardship per Piety Level (+1 at 50 & 100 XP), and Age Prowess Lock.
+  - **Hematurgy**: Streamlined onto a clean 10-step cadence granting up to +32 Hostile Scheme Success (8 standard steps of +4), -32 Enemy Hostile Scheme Success (4 medium steps of -8), +2 Intrigue per Piety Level (+1 at 50 & 100 XP), +2 Max Hostile Schemes (+1 at 50 & 100 XP), and Age Prowess Lock.
 
 - **Blood Knight Rites & Champion Sacrifices**:
   - **Anoint Vanguard Champion**: Consecrate knights or Blood Knight courtiers with Minor Lifeforce to bestow +4 Prowess, +0.5 Health, and health penalty negation for 5 years (`bm_anointed_champion_modifier`).
-  - **Ritual Sparring**: Test martial prowess against sworn knights, Blood Knight courtiers, or martial friends in non-lethal duels (2-year cooldown), sharpening combat acumen and condensing a drop of Minor Lifeforce on critical victory.
+  - **Crimson Sparring Ring (Yearly Decision)**: Convene sworn Blood Knights into the courtyard ring once per year (1 Minor Lifeforce, 1-year cooldown). Samples up to 3 candidates proportionally weighted by prowess ($w_i = \text{prowess}_i$) and initiates interactive practice duels via the Single Combat Engine (SCE). Victor condenses **1 Major Lifeforce** (+3 Vanguard/Hematurgy XP), loser earns +1 XP, and both combatants gain **+20 Blademaster trait XP** and +15 opinion.
   - **Cull Fallen Champion**: Offer critically broken followers or formidable captured warriors (Prowess 12+ or Blood Knights) upon the sacrificial altar for 1 Major Lifeforce and Slaughter/Hematurgy XP, rolling a prowess-scaled chance (up to 50%) to condense 1 Superior Lifeforce.
   - **Family & Kin Initiation**: Blood Knights can now initiate their spouse, children (any age), close family, extended family, and dynasty kin into `lifestyle_blood_knight` via `make_blood_knight_interaction` without requiring prior appointment as a combat knight. Major initiation awards **+5 Vanguard XP** (up from +4) when initiated into the dynasty, matching Blood Mage parity. Blood Knights can also empower family members and spouses via `empower_blood_knight_interaction` even if landed or outside their court.
 
@@ -78,10 +78,14 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
   - **Major Blood Magic**: Powerful rituals including Channel Blood Power, Condense Lifeforce (distilling Minor and Major into Superior Lifeforce), Education Enhancement (Tiers 1★–4★), Major Blood Runes, Congenital Trait Manifestation, and House Blessings.
   - **Superior Blood Magic**: Legendary rites including Blood Golem Creation, 5★ Master Educations, Secondary Educations, and Superior Capstone Runes.
   - _Attune Lifeforce_: Select your yearly lifestyle XP bonus with synchronized January 1st progression and clear interface toasts for both base Ancient progression and attunement gains.
-  - _Empower Dynasty Bloodline_: Weave 7 Three-Tier House Covenants (Majesty, Warband, Prosperity, Shadow, Insight, Legacy, Mastery) across Minor, Major, and Superior tiers with live UI level tags and distinct House Modifier icons to permanently fortify your house, granting Bloodline XP to Blood Mages and Benediction XP to Blood Knights.
-- **37-Condition Healing & Situation Alerts**:
-  - Cure up to 37 physical and mental ailments on yourself, your courtiers, family, or prisoners—ranging from illnesses and wounds to blindness, severed limbs, and melancholy.
+  - _Empower Dynasty Bloodline_: Weave 7 Three-Tier House Covenants (Majesty, Warband, Prosperity, Shadow, Insight, Legacy, Mastery) across Minor, Major, and Superior tiers with live UI level tags and distinct House Modifier icons to permanently fortify your house (1-year cooldown), granting Bloodline XP to Blood Mages and Benediction XP to Blood Knights.
+- **32-Condition Ailment Healing & Situation Alerts**:
+  - Cure up to 32 physical, mental, and fatal ailments on yourself, your courtiers, family, or prisoners—ranging from illnesses and wounds to blindness, severed limbs, and melancholy.
   - A persistent **"You Can Heal Someone"** notification appears in the Current Situation dropdown whenever an eligible courtier or family member falls sick or injured.
+- **Progressive Old Age Affliction Management (`bm_heal_old_age_trait`)**:
+  - Degenerative old age traits (`infirm`, `clouded_eyes`, `fragile_bones`, `withering_mind`, `faltering_heart`) are now decoupled from instant removal into a dedicated progressive rejuvenation interaction.
+  - Blood Mages and Blood Knights can manage elderly afflictions through tiered track XP reductions: **Minor Treatment** (-20 track XP for 1 Minor Lifeforce + 50 Piety) and **Major Treatment** (-50 track XP for 1 Major Lifeforce + 150 Piety).
+  - Complete trait purging (**Purge Affliction**) requires bringing track XP under 20 (1 Major Lifeforce + 150 Piety), visible and grayed out with detailed requirement tooltips until the affliction is sufficiently reversed.
 - **Ex-Nihilo Congenital Manifestation**: Manifest or improve genetic beauty, intellect, and physique traits through ritual blood channeling, supporting progression up to Rank 5.
 - **Personality Reshaping**: Purge negative or conflicting personality traits from courtiers and imprint occult virtues through ritual blood manipulation.
 - **Master & Secondary Educations**: Elevate education traits to mythical 5★ rank, or study under an ancient blood mentor to acquire an entirely new secondary education trait.
@@ -193,6 +197,8 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 
 ## 🛠️ Bugfixes & Engine Modernization
 
+- **AI Lifedrain Court Protections & Modifier Ordering Fix**: Fixed Clausewitz AI modifier evaluation ordering and inverted title-tier calculations in `ai_willingness_to_lifedrain` that previously caused additive scores to override `factor = 0` vetoes. AI blood mages and knights are now strictly forbidden from lifedraining spouses, children, close family, knights, councillors, employed court positions (physicians, bodyguards, seneschals, caravan masters), and Blood Golems under any circumstances. Human players retain complete roleplay agency.
+- **Engine Trait Flags & Debug Log Cleanup**: Removed `good = yes` and `random_creation = 0.20` declarations from non-genetic lifestyle traits (`lifestyle_blood_mage` and `lifestyle_blood_knight`), resolving four engine startup errors in `error.log`. Streamlined internal execution logging to eliminate loc data-system parsing errors during tooltip evaluations in mass execution events.
 - **Trait Track XP Rebalance & Vanguard Depuration**: Rebalanced XP progression for Blood Knights and Blood Mages so that track gains remain low, earned, and paced across a character's lifetime:
   - Purged non-combat family rites (consecrate union, anoint heir, blood tithe) and childbirth from advancing the martial `vanguard` track, rerouting family rites to `benediction` (+1 to +2 XP) and childbirth milestones to `ancient` (+1 to +2 XP).
   - Consolidated all healing magic (self-healing and healing others) to grant strictly `benediction` XP (+1 for minor ailments, +2 for major/deadly), fixing erroneous `enlightenment` and `vanguard` gains.
@@ -210,5 +216,10 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 - **Empower Dynasty Bloodline Tooltip**: Removed obsolete legacy un-suffixed modifier removal effects that caused Tier I covenant previews to falsely claim the house would lose an old modifier.
 - **Covenant Button Syntax Fix**: Corrected unescaped square brackets in dynamic covenant button labels that triggered the engine's data-binding parser and displayed `ERROR:[Minor]` or `ERROR:[Major]` in the Empower Dynasty Bloodline decision widget.
 - **Empower Dynasty Benediction XP**: Updated the Blood Power "Empower Dynasty" ritual option to grant +3 Benediction XP instead of Enlightenment XP, and harmonized Blood Knight house covenant gains to award Benediction XP.
-- **Education Enhancement & Mastery Option Filtering**: Fixed an issue in education improvement rituals where unowned education disciplines appeared grayed out and pushed valid options or other disciplines off-screen due to the fixed height of the character event window. Unowned education disciplines are now cleanly hidden so characters only see enhancement rites relevant to their education.
+- **Tiered Education Devotion Requirements & Selective Piety Level Costs**: Overhauled education advancement rites (`bm_major_improve_education` / `bm_education_enhancement.001` and `bm_superior_master_education` / `bm_education_master.001`) so Devotion Level requirements scale with trait rank:
+  - **1★ -> 2★**: Requires Devotion Level 1+ (Dutiful). No Devotion Level cost.
+  - **2★ -> 3★**: Requires Devotion Level 2+ (Faithful). No Devotion Level cost.
+  - **3★ -> 4★**: Requires Devotion Level 3+ (Servant of God). Advancing costs 1 Devotion Level on success or critical failure.
+  - **4★ -> 5★ (Mastery)**: Requires Devotion Level 4+ (Holy Person). Advancing costs 1 Devotion Level on success or critical failure.
+  - Possessed disciplines that lack the required Devotion Level are displayed grayed out with the exact unmet requirement, while unowned education disciplines remain hidden to prevent event window clipping.
 - **Repository Integrity**: Updated repo validation tools with strict multi-BOM and embedded BOM detection to prevent file encoding regressions.

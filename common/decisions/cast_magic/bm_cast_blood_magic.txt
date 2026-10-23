@@ -48,7 +48,7 @@
 				}
 				custom_tooltip = {
 					text = bm_master_education_devotion_req
-					piety_level >= 3
+					piety_level >= 4
 				}
 				custom_tooltip = {
 					text = bm_master_education_piety_req
@@ -344,6 +344,21 @@
 			health <= fine_health
 			add = -100
 		}
+		modifier = {
+			add = -80
+			OR = {
+				any_spouse = {
+					is_alive = yes
+					NOT = { has_trait = lifestyle_blood_mage }
+					NOT = { has_trait = lifestyle_blood_knight }
+				}
+				primary_heir ?= {
+					is_alive = yes
+					NOT = { has_trait = lifestyle_blood_mage }
+					NOT = { has_trait = lifestyle_blood_knight }
+				}
+			}
+		}
 	}
 }
 
@@ -482,7 +497,7 @@ bm_cast_blood_magic_major_decision = {
 				}
 				custom_tooltip = {
 					text = bm_improve_education_devotion_req
-					piety_level >= 3
+					bm_can_enhance_education_devotion_trigger = yes
 				}
 				custom_tooltip = {
 					text = bm_improve_education_piety_req
@@ -778,6 +793,21 @@ bm_cast_blood_magic_major_decision = {
 		modifier = {
 			health <= fine_health
 			add = -100
+		}
+		modifier = {
+			add = -80
+			OR = {
+				any_spouse = {
+					is_alive = yes
+					NOT = { has_trait = lifestyle_blood_mage }
+					NOT = { has_trait = lifestyle_blood_knight }
+				}
+				primary_heir ?= {
+					is_alive = yes
+					NOT = { has_trait = lifestyle_blood_mage }
+					NOT = { has_trait = lifestyle_blood_knight }
+				}
+			}
 		}
 	}
 }
@@ -1083,6 +1113,21 @@ bm_cast_blood_magic_minor_decision = {
 		modifier = {
 			add = -100
 			health <= fine_health
+		}
+		modifier = {
+			add = -80
+			OR = {
+				any_spouse = {
+					is_alive = yes
+					NOT = { has_trait = lifestyle_blood_mage }
+					NOT = { has_trait = lifestyle_blood_knight }
+				}
+				primary_heir ?= {
+					is_alive = yes
+					NOT = { has_trait = lifestyle_blood_mage }
+					NOT = { has_trait = lifestyle_blood_knight }
+				}
+			}
 		}
 	}
 }

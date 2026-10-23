@@ -170,3 +170,61 @@ bm_geyser_duel_has_bad_traits_trigger = {
 		has_trait = physique_bad
 	}
 }
+
+bm_has_rank_1_education_trigger = {
+	OR = {
+		has_trait = education_diplomacy_1
+		has_trait = education_martial_1
+		has_trait = education_stewardship_1
+		has_trait = education_intrigue_1
+		has_trait = education_learning_1
+	}
+}
+
+bm_has_rank_2_education_trigger = {
+	OR = {
+		has_trait = education_diplomacy_2
+		has_trait = education_martial_2
+		has_trait = education_stewardship_2
+		has_trait = education_intrigue_2
+		has_trait = education_learning_2
+	}
+}
+
+bm_has_rank_3_education_trigger = {
+	OR = {
+		has_trait = education_diplomacy_3
+		has_trait = education_martial_3
+		has_trait = education_stewardship_3
+		has_trait = education_intrigue_3
+		has_trait = education_learning_3
+	}
+}
+
+bm_has_rank_4_education_trigger = {
+	OR = {
+		has_trait = education_diplomacy_4
+		has_trait = education_martial_4
+		has_trait = education_stewardship_4
+		has_trait = education_intrigue_4
+		has_trait = education_learning_4
+	}
+}
+
+bm_can_enhance_education_devotion_trigger = {
+	OR = {
+		AND = {
+			bm_has_rank_1_education_trigger = yes
+			piety_level >= 1
+		}
+		AND = {
+			bm_has_rank_2_education_trigger = yes
+			piety_level >= 2
+		}
+		AND = {
+			bm_has_rank_3_education_trigger = yes
+			piety_level >= 3
+		}
+	}
+}
+

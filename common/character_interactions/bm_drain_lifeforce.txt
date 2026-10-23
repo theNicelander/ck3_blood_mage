@@ -10,7 +10,21 @@
     }
 
     cost = { piety = lifedrain_piety_cost_major }
-    is_valid_showing_failures_only = { scope:recipient = { NOT = { has_character_modifier = lifedrained_modifier } } }
+    is_valid_showing_failures_only = {
+        scope:recipient = { NOT = { has_character_modifier = lifedrained_modifier } }
+        trigger_if = {
+            limit = { scope:actor = { is_ai = yes } }
+            NOT = {
+                scope:actor = {
+                    OR = {
+                        is_spouse_of = scope:recipient
+                        is_consort_of = scope:recipient
+                    }
+                }
+            }
+            NOT = { scope:recipient = { is_child_of = scope:actor } }
+        }
+    }
 
     on_accept = {
         debug_log = "BloodMageInteraction: lifedrain_prisoner | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
@@ -51,7 +65,26 @@ lifedrain_courtier_event_interaction = {
             }
         }
     }
-    is_valid_showing_failures_only = { scope:recipient = { NOT = { has_character_modifier = recently_lifedrained_modifier } } }
+    is_valid_showing_failures_only = {
+        scope:recipient = { NOT = { has_character_modifier = recently_lifedrained_modifier } }
+        trigger_if = {
+            limit = { scope:actor = { is_ai = yes } }
+            NOT = {
+                scope:actor = {
+                    OR = {
+                        is_spouse_of = scope:recipient
+                        is_consort_of = scope:recipient
+                        is_close_family_of = scope:recipient
+                    }
+                }
+            }
+            NOT = { scope:recipient = { is_child_of = scope:actor } }
+            NOT = { scope:recipient = { is_knight_of = scope:actor } }
+            NOT = { scope:recipient = { is_councillor_of = scope:actor } }
+            NOT = { scope:recipient = { employed_as_court_position_of = scope:actor } }
+            NOT = { scope:recipient = { has_trait = blood_golem } }
+        }
+    }
 
     cost = { piety = lifedrain_piety_cost_minor }
     cooldown = { months = 3 }

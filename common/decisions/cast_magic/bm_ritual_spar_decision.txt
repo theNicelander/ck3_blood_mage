@@ -1,0 +1,121 @@
+﻿bm_ritual_spar_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_activity.dds" }
+	decision_group_type = bm_decision_group
+
+	desc = bm_ritual_spar_decision_desc
+	selection_tooltip = bm_ritual_spar_decision_tooltip
+
+	cooldown = { years = 1 }
+
+	is_shown = {
+		OR = {
+			has_trait = lifestyle_blood_mage
+			has_trait = lifestyle_blood_knight
+		}
+	}
+
+	is_valid = {
+		custom_description = {
+			text = bm_need_minor_lifeforce_spar_req
+			has_character_modifier = lifeforce_modifier_minor
+		}
+		custom_description = {
+			text = bm_no_blood_knights_available_req
+			any_knight = {
+				is_alive = yes
+				is_imprisoned = no
+				is_adult = yes
+				NOT = { has_trait = incapable }
+				has_trait = lifestyle_blood_knight
+			}
+		}
+	}
+
+	effect = {
+		remove_character_modifier = lifeforce_modifier_minor
+		hidden_effect = {
+			bm_recount_lifeforce_stacks_effect = yes
+		}
+		# Sample up to 3 candidates proportionally weighted by prowess
+		random_knight = {
+			limit = {
+				is_alive = yes
+				is_imprisoned = no
+				is_adult = yes
+				NOT = { has_trait = incapable }
+				has_trait = lifestyle_blood_knight
+			}
+			weight = {
+				base = 0
+				modifier = {
+					add = prowess
+					min = 1
+				}
+			}
+			save_scope_as = spar_partner_1
+		}
+		if = {
+			limit = { exists = scope:spar_partner_1 }
+			random_knight = {
+				limit = {
+					is_alive = yes
+					is_imprisoned = no
+					is_adult = yes
+					NOT = { has_trait = incapable }
+					has_trait = lifestyle_blood_knight
+					NOT = { this = scope:spar_partner_1 }
+				}
+				weight = {
+					base = 0
+					modifier = {
+						add = prowess
+						min = 1
+					}
+				}
+				save_scope_as = spar_partner_2
+			}
+		}
+		if = {
+			limit = { exists = scope:spar_partner_2 }
+			random_knight = {
+				limit = {
+					is_alive = yes
+					is_imprisoned = no
+					is_adult = yes
+					NOT = { has_trait = incapable }
+					has_trait = lifestyle_blood_knight
+					NOT = { this = scope:spar_partner_1 }
+					NOT = { this = scope:spar_partner_2 }
+				}
+				weight = {
+					base = 0
+					modifier = {
+						add = prowess
+						min = 1
+					}
+				}
+				save_scope_as = spar_partner_3
+			}
+		}
+		trigger_event = bm_ritual_spar_events.0001
+	}
+
+	ai_check_interval = 12
+	ai_potential = {
+		OR = {
+			has_trait = lifestyle_blood_mage
+			has_trait = lifestyle_blood_knight
+		}
+	}
+	ai_will_do = {
+		base = 40
+		modifier = {
+			factor = 1.5
+			has_trait = brave
+		}
+		modifier = {
+			factor = 0.5
+			has_trait = craven
+		}
+	}
+}

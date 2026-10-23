@@ -14,11 +14,6 @@ bm_has_major_ailment_trigger = {
 		has_trait = incapable
 		has_trait = pneumonic
 		has_trait = early_great_pox
-		has_trait = infirm
-		has_trait = withering_mind
-		has_trait = clouded_eyes
-		has_trait = fragile_bones
-		has_trait = faltering_heart
 		has_trait = maimed
 		has_trait = consumption
 		has_trait = typhus
@@ -30,6 +25,16 @@ bm_has_major_ailment_trigger = {
 		has_trait = possessed_1
 		has_trait = dull
 		has_trait = depressed_1
+	}
+}
+
+bm_has_old_age_ailment_trigger = {
+	OR = {
+		has_trait = infirm
+		has_trait = withering_mind
+		has_trait = clouded_eyes
+		has_trait = fragile_bones
+		has_trait = faltering_heart
 	}
 }
 
