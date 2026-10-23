@@ -1,0 +1,328 @@
+﻿namespace = bm_ritual_spar_events
+
+# 0001: Sparring Candidate Selection
+bm_ritual_spar_events.0001 = {
+	type = character_event
+	title = bm_ritual_spar_events.0001.t
+	desc = bm_ritual_spar_events.0001.desc
+	theme = war
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:spar_partner_1
+		animation = marshal
+	}
+
+	# Candidate 1
+	option = {
+		name = bm_ritual_spar_events.0001.opt_spar_1
+		trigger = {
+			exists = scope:spar_partner_1
+		}
+		scope:spar_partner_1 = {
+			save_scope_as = selected_partner
+		}
+		configure_start_single_combat_effect = {
+			SC_INITIATOR = root
+			SC_ATTACKER = root
+			SC_DEFENDER = scope:selected_partner
+			FATALITY = practice
+			FIXED = no
+			LOCALE = courtyard
+			OUTPUT_EVENT = bm_ritual_spar_events.0002
+			INVALIDATION_EVENT = bm_ritual_spar_events.0003
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	# Candidate 2
+	option = {
+		name = bm_ritual_spar_events.0001.opt_spar_2
+		trigger = {
+			exists = scope:spar_partner_2
+		}
+		scope:spar_partner_2 = {
+			save_scope_as = selected_partner
+		}
+		configure_start_single_combat_effect = {
+			SC_INITIATOR = root
+			SC_ATTACKER = root
+			SC_DEFENDER = scope:selected_partner
+			FATALITY = practice
+			FIXED = no
+			LOCALE = courtyard
+			OUTPUT_EVENT = bm_ritual_spar_events.0002
+			INVALIDATION_EVENT = bm_ritual_spar_events.0003
+		}
+		ai_chance = {
+			base = 30
+		}
+	}
+
+	# Candidate 3
+	option = {
+		name = bm_ritual_spar_events.0001.opt_spar_3
+		trigger = {
+			exists = scope:spar_partner_3
+		}
+		scope:spar_partner_3 = {
+			save_scope_as = selected_partner
+		}
+		configure_start_single_combat_effect = {
+			SC_INITIATOR = root
+			SC_ATTACKER = root
+			SC_DEFENDER = scope:selected_partner
+			FATALITY = practice
+			FIXED = no
+			LOCALE = courtyard
+			OUTPUT_EVENT = bm_ritual_spar_events.0002
+			INVALIDATION_EVENT = bm_ritual_spar_events.0003
+		}
+		ai_chance = {
+			base = 20
+		}
+	}
+
+	# Call off / Refund option
+	option = {
+		name = bm_ritual_spar_events.0001.opt_cancel
+		add_character_modifier = {
+			modifier = lifeforce_modifier_minor
+		}
+		hidden_effect = {
+			bm_recount_lifeforce_stacks_effect = yes
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+# 0002: Bout Conclusion & Rewards
+bm_ritual_spar_events.0002 = {
+	type = character_event
+	title = bm_ritual_spar_events.0002.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					this = scope:sc_victor
+				}
+				desc = bm_ritual_spar_events.0002.victor_desc
+			}
+			desc = bm_ritual_spar_events.0002.loser_desc
+		}
+	}
+	theme = war
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:sc_defender
+		animation = marshal
+	}
+
+	option = {
+		name = bm_ritual_spar_events.0002.opt
+		if = {
+			limit = { this = scope:sc_victor }
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_ritual_spar_victor_toast
+				left_icon = root
+				right_icon = scope:sc_defender
+				add_character_modifier = {
+					modifier = lifeforce_modifier_major
+				}
+				if = {
+					limit = { has_trait = lifestyle_blood_knight }
+					add_blood_knight_xp = {
+						TRACK = vanguard
+						XP = 3
+					}
+				}
+				else_if = {
+					limit = { has_trait = lifestyle_blood_mage }
+					add_blood_mage_xp = {
+						TRACK = hematurgy
+						XP = 3
+					}
+				}
+				if = {
+					limit = { has_trait = lifestyle_blademaster }
+					add_trait_xp = {
+						trait = lifestyle_blademaster
+						value = 20
+					}
+				}
+				else = {
+					add_trait = lifestyle_blademaster
+					add_trait_xp = {
+						trait = lifestyle_blademaster
+						value = 20
+					}
+				}
+				scope:sc_loser = {
+					if = {
+						limit = { has_trait = lifestyle_blood_knight }
+						add_blood_knight_xp = {
+							TRACK = vanguard
+							XP = 1
+						}
+					}
+					else_if = {
+						limit = { has_trait = lifestyle_blood_mage }
+						add_blood_mage_xp = {
+							TRACK = enlightenment
+							XP = 1
+						}
+					}
+					if = {
+						limit = { has_trait = lifestyle_blademaster }
+						add_trait_xp = {
+							trait = lifestyle_blademaster
+							value = 20
+						}
+					}
+					else = {
+						add_trait = lifestyle_blademaster
+						add_trait_xp = {
+							trait = lifestyle_blademaster
+							value = 20
+						}
+					}
+					add_opinion = {
+						target = root
+						modifier = magic_opinion_positive
+						opinion = 15
+					}
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+		}
+		else = {
+			send_interface_toast = {
+				type = event_toast_effect_bad
+				title = bm_ritual_spar_loser_toast
+				left_icon = root
+				right_icon = scope:sc_defender
+				if = {
+					limit = { has_trait = lifestyle_blood_knight }
+					add_blood_knight_xp = {
+						TRACK = vanguard
+						XP = 1
+					}
+				}
+				else_if = {
+					limit = { has_trait = lifestyle_blood_mage }
+					add_blood_mage_xp = {
+						TRACK = enlightenment
+						XP = 1
+					}
+				}
+				if = {
+					limit = { has_trait = lifestyle_blademaster }
+					add_trait_xp = {
+						trait = lifestyle_blademaster
+						value = 20
+					}
+				}
+				else = {
+					add_trait = lifestyle_blademaster
+					add_trait_xp = {
+						trait = lifestyle_blademaster
+						value = 20
+					}
+				}
+				scope:sc_victor = {
+					add_character_modifier = {
+						modifier = lifeforce_modifier_major
+					}
+					if = {
+						limit = { has_trait = lifestyle_blood_knight }
+						add_blood_knight_xp = {
+							TRACK = vanguard
+							XP = 3
+						}
+					}
+					else_if = {
+						limit = { has_trait = lifestyle_blood_mage }
+						add_blood_mage_xp = {
+							TRACK = hematurgy
+							XP = 3
+						}
+					}
+					if = {
+						limit = { has_trait = lifestyle_blademaster }
+						add_trait_xp = {
+							trait = lifestyle_blademaster
+							value = 20
+						}
+					}
+					else = {
+						add_trait = lifestyle_blademaster
+						add_trait_xp = {
+							trait = lifestyle_blademaster
+							value = 20
+						}
+					}
+					add_opinion = {
+						target = root
+						modifier = magic_opinion_positive
+						opinion = 15
+					}
+					hidden_effect = {
+						bm_recount_lifeforce_stacks_effect = yes
+					}
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+		}
+	}
+}
+
+# 0003: Bout Invalidation
+bm_ritual_spar_events.0003 = {
+	type = character_event
+	title = bm_ritual_spar_events.0003.t
+	desc = bm_ritual_spar_events.0003.desc
+	theme = war
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+
+	immediate = {
+		single_combat_clean_shirtlessness_effect = {
+			ATTACKER = root
+			DEFENDER = scope:sc_defender
+		}
+	}
+
+	option = {
+		name = bm_ritual_spar_events.0003.opt
+		send_interface_toast = {
+			type = event_toast_effect_neutral
+			title = bm_ritual_spar_invalidated_toast
+			left_icon = root
+			add_character_modifier = {
+				modifier = lifeforce_modifier_minor
+			}
+			hidden_effect = {
+				bm_recount_lifeforce_stacks_effect = yes
+			}
+		}
+	}
+}

@@ -58,10 +58,6 @@ heal_disease_major_cost = {
         add = cure_illness_cost_major
     }
     if = {
-        limit = { scope:recipient = { has_trait = infirm } }
-        add = cure_illness_cost_major
-    }
-    if = {
         limit = { scope:recipient = { has_trait = maimed } }
         add = cure_illness_cost_major
     }
@@ -91,22 +87,6 @@ heal_disease_major_cost = {
     }
     if = {
         limit = { scope:recipient = { has_trait = one_eyed } }
-        add = cure_illness_cost_major
-    }
-    if = {
-        limit = { scope:recipient = { has_trait = withering_mind } }
-        add = cure_illness_cost_major
-    }
-    if = {
-        limit = { scope:recipient = { has_trait = clouded_eyes } }
-        add = cure_illness_cost_major
-    }
-    if = {
-        limit = { scope:recipient = { has_trait = fragile_bones } }
-        add = cure_illness_cost_major
-    }
-    if = {
-        limit = { scope:recipient = { has_trait = faltering_heart } }
         add = cure_illness_cost_major
     }
     if = {

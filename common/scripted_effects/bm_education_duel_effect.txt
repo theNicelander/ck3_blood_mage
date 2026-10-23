@@ -25,8 +25,11 @@
             send_interface_toast = {
                 title = bm_education_enhancement.success
                 left_icon = root
+                if = {
+                    limit = { has_trait = education_$trait$_3 }
+                    add_piety_level = -1
+                }
                 level_up_trait_effect = {trait = education_$trait$}
-                add_piety_level = -1
             }
         }
         # Failure
@@ -53,7 +56,10 @@
             send_interface_toast = {
                 title = bm_education_enhancement.failure
                 left_icon = root
-                add_piety_level = -1
+                if = {
+                    limit = { has_trait = education_$trait$_3 }
+                    add_piety_level = -1
+                }
                 temporary_negative_lifeforce_effect_major = yes
             }
         }

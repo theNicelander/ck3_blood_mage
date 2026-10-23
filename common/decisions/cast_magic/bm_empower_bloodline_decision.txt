@@ -5,6 +5,8 @@
 	desc = bm_empower_bloodline_decision_desc
 	selection_tooltip = bm_empower_bloodline_decision_tooltip
 
+	cooldown = { years = 1 }
+
 	is_shown = {
 		OR = {
 			has_trait = lifestyle_blood_mage

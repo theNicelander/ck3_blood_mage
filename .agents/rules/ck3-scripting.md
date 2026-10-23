@@ -64,5 +64,13 @@ description: Core CK3 script rules, script values, and safe engine patterns (1.2
    - *Error*: `[jomini_script_system.cpp:304]: Script system error! Error: has_character_modifier trigger [ Invalid database object 'x' ]`.
    - *Cause*: Deleting a modifier from `common/modifiers/` while leaving lingering checks in scripted triggers (`bm_attunement_triggers.txt`), effects (`remove_character_modifier`), or customizable localization.
    - *Fix*: When deprecating or removing any database object (modifier, trait, flag, variable), grep the entire repository and cleanly purge all references across triggers, effects, custom loc, and localization in the same commit.
+8. **Trait Flags on Non-Genetic Traits (`Trait X is marked as good but is not a genetic trait` / `random creation chance, but is not genetic or inheritable`)**:
+   - *Error*: `[trait.cpp:405]: Trait X is marked as good but is not a genetic trait` and `[trait.cpp:409]: Trait X has random creation chance, but is not genetic or inheritable`.
+   - *Cause*: Declaring `good = yes` or `random_creation = 0.20` on lifestyle or other non-genetic/non-inheritable traits.
+   - *Fix*: Remove `good = yes` and `random_creation = ...` from non-genetic traits. In vanilla CK3, lifestyle traits use `random_creation_weight = 0` and are distributed via events, decisions, or scripted birth on_actions.
+9. **Clausewitz `ai_will_do` Modifier Ordering (`factor = 0` Veto Resurrections)**:
+   - *Error*: AI performing forbidden interactions (e.g. lifedraining spouse, children, councillors, or knights) despite explicit `factor = 0` vetoes.
+   - *Cause*: In CK3 Clausewitz script, `ai_will_do` evaluates entries in sequential order. `factor = 0` multiplies the running score to 0, but any subsequent additive modifier (`opinion_modifier`, `add = ...`) adds points back onto 0, resurrecting the score back into positive territory. Additionally, formulas like `(recipient_tier - actor_tier) * -100` evaluate to positive bonuses for unlanded courtiers.
+   - *Fix*: Always place additive modifiers, opinion scalers, and trait scores at the **TOP** of the `ai_will_do` block, and place all `factor = 0` absolute vetoes at the very **BOTTOM**. For absolute safety, add hard failure checks (`trigger_if = { limit = { scope:actor = { is_ai = yes } } NOT = { ... } }`) in `is_valid_showing_failures_only`.
 
 Mod architecture: see `docs-ai/architecture/README.md`.

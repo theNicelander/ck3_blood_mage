@@ -24,8 +24,8 @@
 
 | Trait | Hereditary Type | Single Parent Chance | Both Parents Chance | Baseline Birth Roll | Notes |
 | --- | --- | --- | --- | --- | --- |
-| `lifestyle_blood_mage` | Explicit Hereditary (`inheritable = yes`, non-genetic) | 25% | 100% | 0.20% | Audited by prevalence engine on birth. |
-| `lifestyle_blood_knight` | Explicit Hereditary (`inheritable = yes`, non-genetic) | 25% | 100% | 0.20% | Audited by prevalence engine on birth. |
+| `lifestyle_blood_mage` | Scripted Birth On-Action (`on_birth_child`, non-genetic) | Scaled by game rule (35%–60%) | 100% | Scaled by game rule (1%–10%) | Evaluated on birth by prevalence engine & game rules. |
+| `lifestyle_blood_knight` | Scripted Birth On-Action (`on_birth_child`, non-genetic) | Scaled by game rule (35%–60%) | 100% | Scaled by game rule (1%–10%) | Evaluated on birth by prevalence engine & game rules. |
 | `lifestyle_blood_power` | Non-Hereditary (`inheritable = no`, `genetic = no`) | 0% | 0% | 0% | Personal occult mastery. Granted automatically at 0 XP alongside Mage/Knight traits. |
 
 - **Lineage Enhancement & Trait Theft:** Blood Power `dynasty` track and house modifier `dynasty_blood_legacy_modifier` boost positive congenital transmission. Trait drain interaction (`trait_drain_prisoner_event_interaction`) siphons congenital traits into personal lineage without natural mating.
