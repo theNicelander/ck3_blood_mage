@@ -170,27 +170,35 @@
     }
     ai_potential = { always = yes }
     ai_targets = {
-        ai_recipients = dynasty
         ai_recipients = spouses
-        ai_recipients = family
         ai_recipients = children
-        ai_recipients = courtiers
         ai_recipients = councillors
+        ai_recipients = family
+        ai_recipients = dynasty
+        ai_recipients = courtiers
+        ai_recipients = vassals
     }
-    ai_frequency = 6
+    ai_frequency = 3
     ai_will_do = {
         base = 0
         ai_willingness_to_do_positive_magic = yes
-        bm_blood_knight_prevalence_ai_acquisition_modifier = yes
 
-        # Prioritisation hierarchy: spouse > children > knights > councillors > prowess > dynasty
+        # Prioritisation hierarchy: spouse > consort > primary heir > children > knights > prowess > councillors > dynasty
         modifier = {
             scope:recipient = { is_spouse_of = scope:actor }
-            add = 100
+            add = 1000
+        }
+        modifier = {
+            scope:recipient = { is_consort_of = scope:actor }
+            add = 500
+        }
+        modifier = {
+            scope:recipient = { is_primary_heir_of = scope:actor }
+            add = 800
         }
         modifier = {
             scope:recipient = { is_child_of = scope:actor }
-            add = 75
+            add = 100
         }
         modifier = {
             scope:recipient = { is_knight_of = scope:actor }
@@ -212,6 +220,8 @@
             }
             add = 25
         }
+
+        bm_blood_knight_prevalence_ai_acquisition_modifier = yes
     }
 }
 

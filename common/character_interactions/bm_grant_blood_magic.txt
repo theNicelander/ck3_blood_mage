@@ -171,7 +171,7 @@
 
     # AI
     ai_potential = { always = yes }
-    ai_frequency = 6
+    ai_frequency = 3
     ai_targets = {
         ai_recipients = spouses
         ai_recipients = children
@@ -180,19 +180,28 @@
         ai_recipients = family
         ai_recipients = dynasty
         ai_recipients = courtiers
+        ai_recipients = vassals
     }
     ai_will_do = {
         base = 0
         ai_willingness_to_do_positive_magic = yes
 
-        # Prioritisation hierarchy: spouse > children > liege > councillors > knights > dynasty
+        # Prioritisation hierarchy: spouse > consort > primary heir > children > liege > councillors > knights > dynasty
         modifier = {
             scope:recipient = { is_spouse_of = scope:actor }
-            add = 100
+            add = 1000
+        }
+        modifier = {
+            scope:recipient = { is_consort_of = scope:actor }
+            add = 500
+        }
+        modifier = {
+            scope:recipient = { is_primary_heir_of = scope:actor }
+            add = 800
         }
         modifier = {
             scope:recipient = { is_child_of = scope:actor }
-            add = 75
+            add = 100
         }
         modifier = {
             scope:recipient = { scope:actor.liege ?= this }

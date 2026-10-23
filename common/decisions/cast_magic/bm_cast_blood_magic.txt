@@ -344,6 +344,21 @@
 			health <= fine_health
 			add = -100
 		}
+		modifier = {
+			add = -80
+			OR = {
+				any_spouse = {
+					is_alive = yes
+					NOT = { has_trait = lifestyle_blood_mage }
+					NOT = { has_trait = lifestyle_blood_knight }
+				}
+				primary_heir ?= {
+					is_alive = yes
+					NOT = { has_trait = lifestyle_blood_mage }
+					NOT = { has_trait = lifestyle_blood_knight }
+				}
+			}
+		}
 	}
 }
 
@@ -779,6 +794,21 @@ bm_cast_blood_magic_major_decision = {
 			health <= fine_health
 			add = -100
 		}
+		modifier = {
+			add = -80
+			OR = {
+				any_spouse = {
+					is_alive = yes
+					NOT = { has_trait = lifestyle_blood_mage }
+					NOT = { has_trait = lifestyle_blood_knight }
+				}
+				primary_heir ?= {
+					is_alive = yes
+					NOT = { has_trait = lifestyle_blood_mage }
+					NOT = { has_trait = lifestyle_blood_knight }
+				}
+			}
+		}
 	}
 }
 
@@ -1083,6 +1113,21 @@ bm_cast_blood_magic_minor_decision = {
 		modifier = {
 			add = -100
 			health <= fine_health
+		}
+		modifier = {
+			add = -80
+			OR = {
+				any_spouse = {
+					is_alive = yes
+					NOT = { has_trait = lifestyle_blood_mage }
+					NOT = { has_trait = lifestyle_blood_knight }
+				}
+				primary_heir ?= {
+					is_alive = yes
+					NOT = { has_trait = lifestyle_blood_mage }
+					NOT = { has_trait = lifestyle_blood_knight }
+				}
+			}
 		}
 	}
 }

@@ -165,16 +165,6 @@ ai_willingness_to_use_hostile_magic = {
 }
 
 ai_willingness_to_do_positive_magic = {
-    # Absolute veto: Never help rivals or nemeses
-    modifier = {
-        factor = 0
-        NOT = { scope:actor = scope:recipient }
-        OR = {
-            scope:recipient = { has_relation_rival = scope:actor }
-            scope:recipient = { has_relation_nemesis = scope:actor }
-        }
-    }
-
     modifier = { # Prioritise myself
         scope:actor = scope:recipient
         add = 100
@@ -226,7 +216,7 @@ ai_willingness_to_do_positive_magic = {
                 is_consort_of = scope:recipient
             }
         }
-        add = 60
+        add = 200
     }
 
     # Lover / Soulmate priority
@@ -270,7 +260,7 @@ ai_willingness_to_do_positive_magic = {
     # Primary heir priority
     modifier = {
         scope:recipient = { is_primary_heir_of = scope:actor }
-        add = 30
+        add = 150
     }
 
     # Close family priority
@@ -312,6 +302,16 @@ ai_willingness_to_do_positive_magic = {
             value = scope:recipient.highest_held_title_tier
             subtract = scope:actor.highest_held_title_tier
             multiply = 20
+        }
+    }
+
+    # Absolute veto: Never help rivals or nemeses (placed at bottom to prevent resurrection by additive modifiers)
+    modifier = {
+        factor = 0
+        NOT = { scope:actor = scope:recipient }
+        OR = {
+            scope:recipient = { has_relation_rival = scope:actor }
+            scope:recipient = { has_relation_nemesis = scope:actor }
         }
     }
 }
