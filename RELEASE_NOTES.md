@@ -216,5 +216,10 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 - **Empower Dynasty Bloodline Tooltip**: Removed obsolete legacy un-suffixed modifier removal effects that caused Tier I covenant previews to falsely claim the house would lose an old modifier.
 - **Covenant Button Syntax Fix**: Corrected unescaped square brackets in dynamic covenant button labels that triggered the engine's data-binding parser and displayed `ERROR:[Minor]` or `ERROR:[Major]` in the Empower Dynasty Bloodline decision widget.
 - **Empower Dynasty Benediction XP**: Updated the Blood Power "Empower Dynasty" ritual option to grant +3 Benediction XP instead of Enlightenment XP, and harmonized Blood Knight house covenant gains to award Benediction XP.
-- **Education Enhancement & Mastery Option Filtering**: Fixed an issue in education improvement rituals where unowned education disciplines appeared grayed out and pushed valid options or other disciplines off-screen due to the fixed height of the character event window. Unowned education disciplines are now cleanly hidden so characters only see enhancement rites relevant to their education.
+- **Tiered Education Devotion Requirements & Selective Piety Level Costs**: Overhauled education advancement rites (`bm_major_improve_education` / `bm_education_enhancement.001` and `bm_superior_master_education` / `bm_education_master.001`) so Devotion Level requirements scale with trait rank:
+  - **1★ -> 2★**: Requires Devotion Level 1+ (Dutiful). No Devotion Level cost.
+  - **2★ -> 3★**: Requires Devotion Level 2+ (Faithful). No Devotion Level cost.
+  - **3★ -> 4★**: Requires Devotion Level 3+ (Servant of God). Advancing costs 1 Devotion Level on success or critical failure.
+  - **4★ -> 5★ (Mastery)**: Requires Devotion Level 4+ (Holy Person). Advancing costs 1 Devotion Level on success or critical failure.
+  - Possessed disciplines that lack the required Devotion Level are displayed grayed out with the exact unmet requirement, while unowned education disciplines remain hidden to prevent event window clipping.
 - **Repository Integrity**: Updated repo validation tools with strict multi-BOM and embedded BOM detection to prevent file encoding regressions.
