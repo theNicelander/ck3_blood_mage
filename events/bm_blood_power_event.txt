@@ -51,6 +51,37 @@ bm_blood_power_event.001 = {
 		ai_chance = { base = 100 }
 	}
 
+	# Blood Fury
+	option = {
+		name = bm_empower_fury
+		trigger = {
+			OR = {
+				NOT = { has_trait = lifestyle_blood_power }
+				has_trait_xp = {
+					trait = lifestyle_blood_power
+					track = fury
+					value < 100
+				}
+			}
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		add_piety = -150
+		blood_magic_used_major = yes
+		send_interface_toast = {
+			title = bm_blood_power_event.001.toast
+			left_icon = this
+			add_shared_bm_bk_xp = {
+				TRACK = enlightenment
+				XP = 1
+			}
+			add_blood_power_xp = { TRACK = fury }
+		}
+		custom_tooltip = bm_empower_fury_desc
+		ai_chance = { base = 100 }
+	}
+
 	# Blood Mastery
 	option = {
 		name = bm_empower_mastery
@@ -175,7 +206,7 @@ bm_blood_power_event.001 = {
 		ai_chance = { base = 100 }
 	}
 
-	# Versatility (Fallback when all 5 tracks are maxed)
+	# Versatility (Fallback when all 6 tracks are maxed)
 	option = {
 		name = bm_empower_versatility
 		trigger = {
@@ -183,6 +214,11 @@ bm_blood_power_event.001 = {
 			has_trait_xp = {
 				trait = lifestyle_blood_power
 				track = dynasty
+				value >= 100
+			}
+			has_trait_xp = {
+				trait = lifestyle_blood_power
+				track = fury
 				value >= 100
 			}
 			has_trait_xp = {
