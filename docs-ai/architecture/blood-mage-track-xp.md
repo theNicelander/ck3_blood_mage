@@ -115,12 +115,13 @@ Living technical specification for XP acquisition, Piety costs, Lifeforce sinks/
 
 ## 2. Lifestyle Blood Power (`lifestyle_blood_power`)
 
-Tracks: `dynasty`, `mastery`, `presence`, `prosperity`, `shadows` (5 tracks total).
+Tracks: `dynasty`, `fury`, `mastery`, `presence`, `prosperity`, `shadows` (6 tracks total).
 
 | XP Gain                                            | Cost                                                     | Action                                                                                               | Type              | Requirements                             | Cooldown |
 | -------------------------------------------------- | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ----------------- | ---------------------------------------- | -------- |
-| **+10 XP** in chosen track (+3 `enlightenment` XP) | 150 Piety + Major Lifeforce (`lifeforce_modifier_major`) | Channel Blood Power (`bm_cast_blood_magic_major.001` -> `bm_blood_power_event.001`) | Major Grimoire Option | `piety_level >= 1`, Major lifeforce held | None |
+| **+10 XP** in chosen track (+1 `enlightenment` XP) | 150 Piety + Major Lifeforce (`lifeforce_modifier_major`) | Channel Blood Power (`bm_cast_blood_magic_major.001` -> `bm_blood_power_event.001`) | Major Grimoire Option | `piety_level >= 1`, Major lifeforce held | None |
 | **0 XP** (strictly manual advancement) | None | Passive Growth | None | None | None |
+| **+15 to +150 XP/quarter** (+5 to +50/mo equiv) across Lifestyles | None | Quarterly Blood Power Pulse (`quarterly_playable_pulse`) | On-action (`blood_mage_yearly_events.005`) | Playable character, has `lifestyle_blood_power` with track XP | 3 months (Quarterly) |
 
 ---
 

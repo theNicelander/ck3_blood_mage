@@ -255,6 +255,8 @@ empower_blood_mage_interaction = {
         }
     }
 
+    send_options_exclusive = yes
+
     send_option = {
         flag = empower_major
         localization = empower_blood_mage_interaction.major
@@ -284,11 +286,6 @@ empower_blood_mage_interaction = {
                 has_character_modifier = lifeforce_modifier_minor
             }
         }
-    }
-
-    send_option = {
-        flag = empower_cancel
-        localization = empower_blood_mage_interaction.cancel
     }
 
     on_accept = {

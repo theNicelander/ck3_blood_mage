@@ -1,10 +1,16 @@
 ﻿bm_university_0 = {
-    # 3 years
-    construction_time = 1095
+    # 1 year
+    construction_time = 365
 
     can_construct_potential = {
         building_requirement_castle_city_church = { LEVEL = 01 }
-        scope:holder = { has_trait = lifestyle_blood_mage }
+        scope:holder = {
+            OR = {
+                has_trait = lifestyle_blood_mage
+                has_trait = lifestyle_blood_knight
+                faith = { religion = religion:blodtru_religion }
+            }
+        }
     }
 
     is_enabled = { county.duchy.holder = county.holder }
@@ -12,12 +18,12 @@
 
     cost = {
         gold = 250
-        piety = 250
     }
 
     character_modifier = {
         monthly_income = -0.1
-        monthly_piety = -0.1
+        monthly_piety = 0.5
+        monthly_piety_gain_mult = 0.05
         cultural_head_fascination_mult = 0.05
     }
 
@@ -45,13 +51,17 @@
 }
 
 bm_university_1 = {
-    # 5 years
-    construction_time = 1825
+    # 2 years
+    construction_time = 730
 
     can_construct_potential = {
         building_requirement_castle_city_church = { LEVEL = 01 }
         scope:holder = {
-            has_trait = lifestyle_blood_mage
+            OR = {
+                has_trait = lifestyle_blood_mage
+                has_trait = lifestyle_blood_knight
+                faith = { religion = religion:blodtru_religion }
+            }
         }
     }
 
@@ -62,12 +72,12 @@ bm_university_1 = {
 
     cost = {
         gold = 500
-        piety = 500
     }
 
     character_modifier = {
         monthly_income = -0.25
-        monthly_piety = -0.25
+        monthly_piety = 1.0
+        monthly_piety_gain_mult = 0.10
         cultural_head_fascination_mult = 0.1
         monthly_dynasty_prestige = 0.1
         monthly_lifestyle_xp_gain_mult = 0.03
@@ -97,13 +107,17 @@ bm_university_1 = {
 }
 
 bm_university_2 = {
-    # 10 years
-    construction_time = 3650
+    # 3 years
+    construction_time = 1095
 
     can_construct_potential = {
         building_requirement_castle_city_church = { LEVEL = 01 }
         scope:holder = {
-            has_trait = lifestyle_blood_mage
+            OR = {
+                has_trait = lifestyle_blood_mage
+                has_trait = lifestyle_blood_knight
+                faith = { religion = religion:blodtru_religion }
+            }
         }
     }
 
@@ -114,12 +128,12 @@ bm_university_2 = {
 
     cost = {
         gold = 750
-        piety = 750
     }
 
     character_modifier = {
         monthly_income = -0.5
-        monthly_piety = -0.5
+        monthly_piety = 1.75
+        monthly_piety_gain_mult = 0.15
         cultural_head_fascination_mult = 0.15
         monthly_dynasty_prestige = 0.2
         monthly_lifestyle_xp_gain_mult = 0.06
@@ -149,13 +163,17 @@ bm_university_2 = {
 }
 
 bm_university_3 = {
-    # 20 years
-    construction_time = 7300
+    # 5 years
+    construction_time = 1825
 
     can_construct_potential = {
         building_requirement_castle_city_church = { LEVEL = 01 }
         scope:holder = {
-            has_trait = lifestyle_blood_mage
+            OR = {
+                has_trait = lifestyle_blood_mage
+                has_trait = lifestyle_blood_knight
+                faith = { religion = religion:blodtru_religion }
+            }
         }
     }
 
@@ -166,12 +184,12 @@ bm_university_3 = {
 
     cost = {
         gold = 1000
-        piety = 1000
     }
 
     character_modifier = {
         monthly_income = -1
-        monthly_piety = -1
+        monthly_piety = 2.5
+        monthly_piety_gain_mult = 0.25
         cultural_head_fascination_mult = 0.25
         monthly_dynasty_prestige = 0.3
         monthly_lifestyle_xp_gain_mult = 0.1

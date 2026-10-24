@@ -252,6 +252,8 @@ empower_blood_knight_interaction = {
         }
     }
 
+    send_options_exclusive = yes
+
     send_option = {
         flag = empower_major
         localization = empower_blood_knight_interaction.major
@@ -281,11 +283,6 @@ empower_blood_knight_interaction = {
                 has_character_modifier = lifeforce_modifier_minor
             }
         }
-    }
-
-    send_option = {
-        flag = empower_cancel
-        localization = empower_blood_knight_interaction.cancel
     }
 
     on_accept = {

@@ -1,0 +1,75 @@
+﻿# Blood Power Quarterly Flat Lifestyle XP Values
+# Evaluates in character scope (root = character)
+# Every 10 XP in a track grants +5 flat monthly lifestyle XP (+15 per quarter)
+
+bm_blood_power_quarterly_dynasty_lifestyle_xp_value = {
+	value = 0
+	if = {
+		limit = { has_trait = lifestyle_blood_power }
+		add = "has_trait_xp(lifestyle_blood_power|dynasty)"
+		divide = 10
+		floor = yes
+		multiply = 15
+	}
+	min = 0
+}
+
+bm_blood_power_quarterly_fury_lifestyle_xp_value = {
+	value = 0
+	if = {
+		limit = { has_trait = lifestyle_blood_power }
+		add = "has_trait_xp(lifestyle_blood_power|fury)"
+		divide = 10
+		floor = yes
+		multiply = 15
+	}
+	min = 0
+}
+
+bm_blood_power_quarterly_mastery_lifestyle_xp_value = {
+	value = 0
+	if = {
+		limit = { has_trait = lifestyle_blood_power }
+		add = "has_trait_xp(lifestyle_blood_power|mastery)"
+		divide = 10
+		floor = yes
+		multiply = 15
+	}
+	min = 0
+}
+
+bm_blood_power_quarterly_presence_lifestyle_xp_value = {
+	value = 0
+	if = {
+		limit = { has_trait = lifestyle_blood_power }
+		add = "has_trait_xp(lifestyle_blood_power|presence)"
+		divide = 10
+		floor = yes
+		multiply = 15
+	}
+	min = 0
+}
+
+bm_blood_power_quarterly_prosperity_lifestyle_xp_value = {
+	value = 0
+	if = {
+		limit = { has_trait = lifestyle_blood_power }
+		add = "has_trait_xp(lifestyle_blood_power|prosperity)"
+		divide = 10
+		floor = yes
+		multiply = 15
+	}
+	min = 0
+}
+
+bm_blood_power_quarterly_shadows_lifestyle_xp_value = {
+	value = 0
+	if = {
+		limit = { has_trait = lifestyle_blood_power }
+		add = "has_trait_xp(lifestyle_blood_power|shadows)"
+		divide = 10
+		floor = yes
+		multiply = 15
+	}
+	min = 0
+}

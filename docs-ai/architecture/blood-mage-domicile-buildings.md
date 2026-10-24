@@ -13,21 +13,21 @@ Technical architecture for blood magic domicile structures in Adventurer Camps (
 
 | Tier | Building Key | Gold Cost | Build Time | Owner Cumulative Stats (`character_modifier`) | Court / Camp Follower Aura (`bm_blood_shrine_aura`) | Domicile Parameter |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **I** | `bm_domicile_blood_shrine_01` | 75 | 180 d | +0.2 Piety, +0.2 Health, +2 Lifespan, +5% Genetics | +0.2 Piety, +0.2 Health, +2 Lifespan, +5% Genetics | `bm_blood_shrine_tier_1` |
-| **II** | `bm_domicile_blood_shrine_02` | 150 | 240 d | +0.4 Piety, +0.4 Health, +4 Lifespan, +10% Genetics | +0.4 Piety, +0.4 Health, +4 Lifespan, +10% Genetics | `bm_blood_shrine_tier_2` |
-| **III** | `bm_domicile_blood_shrine_03` | 300 | 360 d | +0.6 Piety, +0.6 Health, +6 Lifespan, +15% Genetics | +0.6 Piety, +0.6 Health, +6 Lifespan, +15% Genetics | `bm_blood_shrine_tier_3` |
-| **IV** | `bm_domicile_blood_shrine_04` | 500 | 480 d | +0.8 Piety, +0.8 Health, +8 Lifespan, +20% Genetics | +0.8 Piety, +0.8 Health, +8 Lifespan, +20% Genetics | `bm_blood_shrine_tier_4` |
-| **V** | `bm_domicile_blood_shrine_05` | 800 | 600 d | +1.0 Piety, +1.0 Health, +10 Lifespan, +25% Genetics | +1.0 Piety, +1.0 Health, +10 Lifespan, +25% Genetics | `bm_blood_shrine_tier_5` |
+| **I** | `bm_domicile_blood_shrine_01` | 75 | 180 d | +0.5 Piety, +0.2 Health, +2 Lifespan, +5% Genetics | +0.25 Piety, +0.1 Health, +1 Lifespan, +2.5% Genetics | `bm_blood_shrine_tier_1` |
+| **II** | `bm_domicile_blood_shrine_02` | 150 | 240 d | +1.0 Piety, +0.4 Health, +4 Lifespan, +10% Genetics | +0.5 Piety, +0.2 Health, +2 Lifespan, +5% Genetics | `bm_blood_shrine_tier_2` |
+| **III** | `bm_domicile_blood_shrine_03` | 300 | 360 d | +1.5 Piety, +0.6 Health, +6 Lifespan, +15% Genetics | +0.75 Piety, +0.3 Health, +3 Lifespan, +7.5% Genetics | `bm_blood_shrine_tier_3` |
+| **IV** | `bm_domicile_blood_shrine_04` | 500 | 480 d | +2.0 Piety, +0.8 Health, +8 Lifespan, +20% Genetics | +1.0 Piety, +0.4 Health, +4 Lifespan, +10% Genetics | `bm_blood_shrine_tier_4` |
+| **V** | `bm_domicile_blood_shrine_05` | 800 | 600 d | +2.5 Piety, +1.0 Health, +10 Lifespan, +25% Genetics | +1.25 Piety, +0.5 Health, +5 Lifespan, +12.5% Genetics | `bm_blood_shrine_tier_5` |
 
-*Genetics bonuses: `positive_random_genetic_chance` and `positive_inactive_inheritance_chance` (+0.05 per tier).*
+*Genetics bonuses: `positive_random_genetic_chance` and `positive_inactive_inheritance_chance` (+0.05 per tier on owner, +0.025 on aura).*
 
 ---
 
 ## 2. Key Mechanics
 
-- **Owner Modifiers & Inheritance:** Domicile building tracks automatically inherit all `character_modifier` blocks from prior tiers. Each tier adds an incremental `+0.2` piety, `+0.2` health, `+2` lifespan, and `+0.05` genetic inheritance chances, accumulating to the exact tier maximum on the domicile owner.
+- **Owner Modifiers & Inheritance:** Domicile building tracks automatically inherit all `character_modifier` blocks from prior tiers. Each tier adds an incremental `+0.5` piety, `+0.2` health, `+2` lifespan, and `+0.05` genetic inheritance chances, accumulating to the exact tier maximum on the domicile owner.
 - **Camp & Court-Wide Aura:**
-  - Because CK3 domicile buildings natively support only owner and province modifiers, courtiers and camp followers receive the bonuses via companion character modifiers (`bm_blood_shrine_aura_tier_1..5`).
+  - Because CK3 domicile buildings natively support only owner and province modifiers, courtiers and camp followers receive half the building's cumulative bonuses (50% potency) via companion character modifiers (`bm_blood_shrine_aura_tier_1..5`).
   - Upon building completion (`on_complete`), `bm_update_blood_shrine_aura_effect` sweeps `every_courtier` (which covers camp followers for unlanded adventurers, and courtiers for landed/estate rulers).
   - When new courtiers or followers join, `on_join_court` checks `liege_or_court_owner` and immediately applies the active tier modifier.
   - Yearly maintenance pulse (`random_yearly_everyone_pulse`) refreshes active courtiers and prunes stale modifiers if the court owner loses or dismantles the font.

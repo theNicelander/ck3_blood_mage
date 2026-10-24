@@ -23,7 +23,7 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
   - **Hematurgy**: Streamlined onto a clean 10-step cadence granting up to +32 Hostile Scheme Success (8 standard steps of +4), -32 Enemy Hostile Scheme Success (4 medium steps of -8), +2 Intrigue per Piety Level (+1 at 50 & 100 XP), +2 Max Hostile Schemes (+1 at 50 & 100 XP), and Age Prowess Lock.
 
 - **Blood Knight Rites & Champion Sacrifices**:
-  - **Anoint Vanguard Champion**: Consecrate knights or Blood Knight courtiers with Minor Lifeforce to bestow +4 Prowess, +0.5 Health, and health penalty negation for 5 years (`bm_anointed_champion_modifier`).
+  - **Bless Blood — Blood of Iron**: Consecrate sworn knights, Blood Knight courtiers, or dynasty kin with Minor Lifeforce to bestow +2 Martial, +4 Prowess, +25% Knight Effectiveness, +1.0 Health, and +0.50 Health Penalty Negation for 10 years (`bm_blessed_blood_iron_modifier`).
   - **Crimson Sparring Ring (Yearly Decision)**: Convene sworn Blood Knights into the courtyard ring once per year (1 Minor Lifeforce, 1-year cooldown). Samples up to 3 candidates proportionally weighted by prowess ($w_i = \text{prowess}_i$) and initiates interactive practice duels via the Single Combat Engine (SCE). Victor condenses **1 Major Lifeforce** (+3 Vanguard/Hematurgy XP), loser earns +1 XP, and both combatants gain **+20 Blademaster trait XP** and +15 opinion.
   - **Cull Fallen Champion**: Offer critically broken followers or formidable captured warriors (Prowess 12+ or Blood Knights) upon the sacrificial altar for 1 Major Lifeforce and Slaughter/Hematurgy XP, rolling a prowess-scaled chance (up to 50%) to condense 1 Superior Lifeforce.
   - **Family & Kin Initiation**: Blood Knights can now initiate their spouse, children (any age), close family, extended family, and dynasty kin into `lifestyle_blood_knight` via `make_blood_knight_interaction` without requiring prior appointment as a combat knight. Major initiation awards **+5 Vanguard XP** (up from +4) when initiated into the dynasty, matching Blood Mage parity. Blood Knights can also empower family members and spouses via `empower_blood_knight_interaction` even if landed or outside their court.
@@ -47,12 +47,20 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 ## 🧬 Blood Power & Somatic Ascendancy
 
 - **Secondary Mastery Trait**: Blood Power is granted alongside Blood Mage or Blood Knight, representing the physical and metaphysical refinement of the caster's body and mind.
-- **Five Focused Specialization Tracks (10 / 20 / 50 / 100 Cadence)**:
-  - **Dynasty (Sanguine Eugenics & Kinship)**: Small steps grant positive inactive congenital inheritance (+40%) and trait upgrade chances (+40%); medium stepping stones at 20, 40, 60, and 80 XP add +5 Years of Fertility (+20 years total); milestones at 50 and 100 XP grant complete inbreeding immunity (-100%) and massive dynasty renown (+25%).
-  - **Mastery (World-Walker & Schemes)**: Small steps accelerate lifestyle XP gain (+40%); medium stepping stones grant personal scheme success (+20) and phase acceleration (-20 days); 50 and 100 XP milestones grant +1 Learning per Devotion level (+2 total, granting +2 Language Limit natively), +2 concurrent personal schemes, and immunity to negative culture opinion.
-  - **Presence (Mesmeric Majesty)**: Small steps command realm-wide loyalty (+24 general opinion) and calm stress (-40%); medium stepping stones boost Fame Impact (+20%); 50 and 100 XP milestones grant +1 Diplomacy per Devotion level (+2 total), stabilize succession with -20% short reign duration, and grant +20% long reign bonus.
-  - **Prosperity (Wealth & Architecture)**: Small steps multiply monthly realm income (+40%) and cut holding and domicile construction costs (-24% for both landed holdings and adventurer camps/noble estates); medium stepping stones reduce Men-at-Arms maintenance (-20%); 50 and 100 XP milestones grant +1 Stewardship per Devotion level (+2 total) and +2 domain limit (+1 at 50 XP, +2 total at 100 XP).
-  - **Shadows (Occult Warding & Intrigue)**: Small steps increase hostile scheme success (+40) and blunt enemy plot success against you (-40); medium stepping stones suppress enemy scheme maximum success caps (-20%); 50 and 100 XP milestones grant +1 Intrigue per Devotion level (+2 total), +2 concurrent hostile scheme slots, and +15% own hostile scheme maximum success cap.
+- **Flat Monthly Lifestyle XP Engine**: Every 10 XP in a track yields **+5 flat monthly Lifestyle XP** (paid out silently every 3 months via the quarterly playable pulse as **+15 XP per quarter**, up to **+50/mo = +150/quarter** at 100 XP):
+  - *Presence* grants flat Diplomacy Lifestyle XP.
+  - *Fury* grants flat Martial Lifestyle XP.
+  - *Prosperity* grants flat Stewardship Lifestyle XP.
+  - *Shadows* grants flat Intrigue Lifestyle XP.
+  - *Mastery* grants flat Learning Lifestyle XP.
+  - *Dynasty* grants flat Lifestyle XP to your currently active lifestyle focus (or a random core lifestyle if unfocused).
+- **Six Focused Specialization Tracks (10 / 20 / 50 / 100 Cadence)**:
+  - **Dynasty (Sanguine Eugenics & Kinship)**: Small steps grant positive inactive congenital inheritance (+40%) and trait upgrade chances (+40%); medium stepping stones add +5 Years of Fertility (+20 years total); milestones at 50 and 100 XP grant complete inbreeding immunity (-100%) and massive dynasty renown (+25%), plus flat Active Focus Lifestyle XP (+5 to +50/mo).
+  - **Fury (Warfare & Siege Command)**: Small steps grant +1 Advantage (+8 total) and -3% Army Maintenance (-24% total); medium stepping stones grant -5% Siege Phase Time (-20% total) and +1 Knight limit (+4 total); milestones at 50 and 100 XP grant +1 Martial and +1 Prowess per Devotion level (+2 each total), Age Prowess Lock, and flat Martial Lifestyle XP (+5 to +50/mo).
+  - **Mastery (World-Walker & Schemes)**: Small steps accelerate lifestyle XP gain (+40%); medium stepping stones grant personal scheme success (+20) and phase acceleration (-20 days); 50 and 100 XP milestones grant +1 Learning per Devotion level (+2 total, granting +2 Language Limit natively), +2 concurrent personal schemes, immunity to negative culture opinion, and flat Learning Lifestyle XP (+5 to +50/mo).
+  - **Presence (Mesmeric Majesty)**: Small steps command realm-wide loyalty (+24 general opinion) and calm stress (-40%); medium stepping stones boost Fame Impact (+20%); 50 and 100 XP milestones grant +1 Diplomacy per Devotion level (+2 total), stabilize succession with -20% short reign duration, grant +20% long reign bonus, and flat Diplomacy Lifestyle XP (+5 to +50/mo).
+  - **Prosperity (Wealth & Architecture)**: Small steps multiply monthly realm income (+40%) and cut holding and domicile construction costs (-24% for both landed holdings and adventurer camps/noble estates); medium stepping stones reduce Men-at-Arms maintenance (-20%); 50 and 100 XP milestones grant +1 Stewardship per Devotion level (+2 total), +2 domain limit (+1 at 50 XP, +2 total at 100 XP), and flat Stewardship Lifestyle XP (+5 to +50/mo).
+  - **Shadows (Occult Warding & Intrigue)**: Small steps increase hostile scheme success (+40) and blunt enemy plot success against you (-40); medium stepping stones suppress enemy scheme maximum success caps (-20%); 50 and 100 XP milestones grant +1 Intrigue per Devotion level (+2 total), +2 concurrent hostile scheme slots, +15% own hostile scheme maximum success cap, and flat Intrigue Lifestyle XP (+5 to +50/mo).
 - **De-cluttered Interface**: Streamlined track step tooltips and removed redundant universal vitality modifiers from Blood Power (already granted by Blood Mage and Blood Knight), keeping track progression comfortably visible on screen.
 - **Major Grimoire Integration**: Channeling Blood Power is housed directly within the Cast Major Blood Magic Grimoire, presenting detailed breakdowns of 10 XP steps, 20 XP stepping stones, 50 XP milestones, and 100 XP capstones with zero-cost backout navigation.
 
@@ -79,13 +87,10 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
   - **Superior Blood Magic**: Legendary rites including Blood Golem Creation, 5★ Master Educations, Secondary Educations, and Superior Capstone Runes.
   - _Attune Lifeforce_: Select your yearly lifestyle XP bonus with synchronized January 1st progression and clear interface toasts for both base Ancient progression and attunement gains.
   - _Empower Dynasty Bloodline_: Weave 7 Three-Tier House Covenants (Majesty, Warband, Prosperity, Shadow, Insight, Legacy, Mastery) across Minor, Major, and Superior tiers with live UI level tags and distinct House Modifier icons to permanently fortify your house (1-year cooldown), granting Bloodline XP to Blood Mages and Benediction XP to Blood Knights.
-- **32-Condition Ailment Healing & Situation Alerts**:
-  - Cure up to 32 physical, mental, and fatal ailments on yourself, your courtiers, family, or prisoners—ranging from illnesses and wounds to blindness, severed limbs, and melancholy.
-  - A persistent **"You Can Heal Someone"** notification appears in the Current Situation dropdown whenever an eligible courtier or family member falls sick or injured.
-- **Progressive Old Age Affliction Management (`bm_heal_old_age_trait`)**:
-  - Degenerative old age traits (`infirm`, `clouded_eyes`, `fragile_bones`, `withering_mind`, `faltering_heart`) are now decoupled from instant removal into a dedicated progressive rejuvenation interaction.
-  - Blood Mages and Blood Knights can manage elderly afflictions through tiered track XP reductions: **Minor Treatment** (-20 track XP for 1 Minor Lifeforce + 50 Piety) and **Major Treatment** (-50 track XP for 1 Major Lifeforce + 150 Piety).
-  - Complete trait purging (**Purge Affliction**) requires bringing track XP under 20 (1 Major Lifeforce + 150 Piety), visible and grayed out with detailed requirement tooltips until the affliction is sufficiently reversed.
+- **Unified Heal Affliction & Situation Alerts (`bm_heal_ailment`)**:
+  - Cure up to 32 physical, mental, and fatal ailments, purge all 11 stress coping vices (-50 Stress), or progressively treat 5 old-age degenerative traits (`infirm`, `clouded_eyes`, `fragile_bones`, `withering_mind`, `faltering_heart`) on yourself, your courtiers, family, or knights through a single unified **Heal Affliction** interaction.
+  - Elderly afflictions are managed through tiered track XP reductions (**Minor Treatment**: -20 track XP for 1 Minor Lifeforce + 50 Piety; **Major Treatment**: -50 track XP for 1 Major Lifeforce + 150 Piety), with complete trait removal unlocked once track XP is brought under 20.
+  - A persistent **"You Can Heal Someone"** notification appears in the Current Situation dropdown whenever an eligible courtier or family member is afflicted.
 - **Ex-Nihilo Congenital Manifestation**: Manifest or improve genetic beauty, intellect, and physique traits through ritual blood channeling, supporting progression up to Rank 5.
 - **Personality Reshaping**: Purge negative or conflicting personality traits from courtiers and imprint occult virtues through ritual blood manipulation.
 - **Master & Secondary Educations**: Elevate education traits to mythical 5★ rank, or study under an ancient blood mentor to acquire an entirely new secondary education trait.
@@ -103,7 +108,7 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 - **Superior Stave Capstones & Standalone Decision**: Reach Superior rune depth to unlock the standalone **Carve Galdrastafir Stave** decision (`bm_carve_galdrastafir_decision`), an inline option-list drawer displaying all 5 staves with dedicated icons and graying out your active stave, unlocking game-changing capstone powers (such as guaranteed double attunement XP, +20 gold per travel landmark POI, or terrifying battlefield debuffs).
 - **Rune Inscription on Followers**: Inscribe blood runes onto your sworn knights, champions, and family members to bolster their combat prowess and loyalty.
 - **Custom DDS Icons**: Every Galdrastafir stave features authentic, hand-crafted 120×120 visual iconography across modifiers, decisions, and menus.
-- **Blood Universities**: Construct Blood University holding improvements (Tiers 0–3) in your realm's duchy capital to train apprentices and accelerate rune research.
+- **Blood Universities Rework**: Construct 4 tiers of Duchy Blood University improvements (`bm_university_0..3`) in your duchy capital as a Blood Mage, Blood Knight, or Blóðtrú follower. Redesigned into dedicated landed Piety generators (+0.5 to +2.5 monthly Piety, +5% to +25% monthly Piety mult) with zero Piety construction costs or upkeep drains and streamlined build times (1 to 5 years), ensuring landed rulers enjoy full Piety parity with wanderers.
 
 ---
 
@@ -112,8 +117,8 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 - **Immortal Golem Champions**: Forge terrifying, albino, hairless flesh-constructs using Superior Lifeforce and high-stakes shaping duels.
 - **Cadet Branch Integration (`bm_house_golem`)**: Golems are formally integrated into your dynasty as loyal immortal defenders under their own dedicated cadet branch.
 - **Seven Supernatural House Modifiers**: Channel major blood rituals to permanently bless your dynasty's bloodline, unlocking stacking realm-wide bonuses to fertility, health, prowess, and domain administration.
-- **3-Way Bloodline Blessings (`bm_bless_bloodline_interaction`)**: Bless kin with specialized 10-year enhancements tailored to their role in the realm: **Blood of the Sovereign** (+2 Dip/Stew, +10 Vassal Opinion, -20% Short Reign), **Blood of Iron** (+2 Martial, +4 Prowess, +15% Knight Effectiveness), or **Sanguine Crucible** (+25% Fertility, +15% Positive Congenital Chance, -20% Stress Gain).
-- **Anoint Heir in Blood & Succession Legacy Transfer (`bm_anoint_heir_interaction`)**: Consecrate a chosen successor with Major Lifeforce for permanent stat, opinion, and short-reign bonuses. Upon the ruler's death, the anointed heir awakens the predecessor's blood class trait, inherits 1 stack of each held Lifeforce tier, and absorbs 25% of all active trait track XP across all tracks.
+- **4-Way Blood Blessings (`bm_bless_bloodline_interaction`)**: Bless children, dynasty kin, and sworn knights with specialized enhancements tailored to their role (automatically hiding once active): **Blood of the Sovereign** (+2 Dip/Stew, +10 Vassal Opinion, -25% Short Reign, +1.0 Health), **Blood of Iron** (+2 Martial, +4 Prowess, +25% Knight Effectiveness, +1.0 Health, +0.50 Health Penalty Negation), **Sanguine Crucible** (+25% Fertility, +25% Positive Congenital Chance, -25% Stress Gain, +1.0 Health) for 10 years, or **Feingur's Eternal Blessing** (permanent +25% Fertility, +20% Positive Genetic Chance, +0.50 Health, +5 Life Expectancy when holding Superior **Feingur**).
+- **Anoint Heir in Blood & Succession Legacy Transfer (`bm_anoint_heir_interaction`)**: Consecrate a chosen successor with Major Lifeforce for permanent stat, opinion, and short-reign bonuses (hiding once anointed). Upon the ruler's death, the anointed heir awakens the predecessor's blood class trait, inherits 1 stack of each held Lifeforce tier, and absorbs 25% of all active trait track XP across all tracks.
 - **House Head Blood Tithe (`bm_demand_blood_tithe_interaction`)**: House Heads can levy lifeforce from adult kin, yielding Major Lifeforce (from fellow practitioners) or Minor Lifeforce (from mundane relatives).
 - **Situation Roster Tracking**: Keep track of all active blood golems and sworn mages across your realm directly within the Blood Magic Situation panel.
 
@@ -137,7 +142,7 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 
 - **Five-Tier Blood Shrine**:
   - Landless adventurers (camps) and noble families (estates) can construct and upgrade a dedicated 5-tier Blood Shrine building line.
-  - Scales piety generation, health, fertility, and follower recovery speed while projecting a camp-wide occult aura.
+  - Scales piety generation (+0.5 per tier, up to +2.5 monthly piety at Tier V), health, lifespan, and genetic inheritance chances, while projecting a camp-wide occult aura at half potency (+0.25 piety, +0.1 health, +1 lifespan, +2.5% genetics per tier) to all followers and courtiers.
 - **Blood Universities**: Expand realm development and occult mastery with 4 tiers of university buildings built in realm capitals.
 
 ---
