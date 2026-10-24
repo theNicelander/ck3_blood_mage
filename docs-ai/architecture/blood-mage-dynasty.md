@@ -36,9 +36,17 @@ Modifiers apply to all living and future members of the caster's house (landless
 ## Heir Anointment & Succession Legacy
 
 - **Anoint Heir (`bm_anoint_heir_interaction`):**
-  - **Prerequisites:** Actor has `lifestyle_blood_mage` or `lifestyle_blood_knight`. Target is living `primary_heir` or `child`.
+  - **Prerequisites:** Actor has `lifestyle_blood_mage` or `lifestyle_blood_knight`. Target is living `primary_heir` or `child` and does not already have `bm_anointed_heir_modifier` (hidden once anointed).
   - **Cost:** 250 Piety + 1 Major Lifeforce (`blood_magic_used_major`).
-  - **Effect:** Strips `bm_anointed_heir_modifier` from any other child or previous heir. Applies permanent `bm_anointed_heir_modifier` (`+0.50` Health, `+15` Dynasty Opinion, `+15%` Monthly Lifestyle XP, `-25%` Short Reign Duration) to recipient, `+30` Opinion, and `+5` `bloodline` XP (Mage) / `+5` `vanguard` XP (Knight).
+  - **Effect:** Strips `bm_anointed_heir_modifier` from any other child or previous heir. Applies permanent `bm_anointed_heir_modifier` (`+1.0` Health, `+15` Dynasty Opinion, `+25%` Monthly Lifestyle XP, `-35%` Short Reign Duration) to recipient, `+30` Opinion, and `+2` `bloodline` XP (Mage) / `+2` `benediction` XP (Knight).
+- **Bless Blood (`bm_bless_bloodline_interaction`):**
+  - **Prerequisites:** Actor has `lifestyle_blood_mage` or `lifestyle_blood_knight`. Target is a `child`, `dynasty` member, sworn `knight`, or `lifestyle_blood_knight` courtier. Hidden once target has all applicable blessings.
+  - **Cost:** 35 Piety (50 Piety for Feingur) + 1 Minor Lifeforce (`bloodline_magic_cast_effect_minor`).
+  - **Options (`send_options_exclusive = yes`):**
+    1. **Blood of the Sovereign (`bm_blessed_blood_sovereign_modifier`):** 10 yrs, `+2` Diplomacy, `+2` Stewardship, `+10` Vassal Opinion, `-25%` Short Reign Duration, `+1.0` Health (children & dynasty).
+    2. **Blood of Iron (`bm_blessed_blood_iron_modifier`):** 10 yrs, `+2` Martial, `+4` Prowess, `+25%` Knight Effectiveness, `+1.0` Health, `+0.50` Health Penalty Negation (children, dynasty, sworn knights, and Blood Knight courtiers).
+    3. **Sanguine Crucible (`bm_blessed_blood_crucible_modifier`):** 10 yrs, `+25%` Fertility, `+25%` Positive Genetic Chance, `-25%` Stress Gain, `+1.0` Health (children & dynasty).
+    4. **Feingur's Eternal Blessing (`bm_feingur_blessed_blood_modifier`):** Permanent `+25%` Fertility, `+20%` Positive Genetic Chance, `+0.50` Health, `+5` Life Expectancy (children & dynasty when caster has Superior **Feingur** stave).
 - **Succession Legacy Awakening (`bm_transfer_anointed_heir_legacy_effect`):**
   - Triggered via `on_death` / `on_character_death` when a Blood Mage or Blood Knight ruler dies with an anointed heir:
     1. **Class Awakening:** If the heir lacks both `lifestyle_blood_mage` and `lifestyle_blood_knight`, awakens the parent's class trait via `bm_become_blood_mage_effect` or `bm_become_blood_knight_effect`.

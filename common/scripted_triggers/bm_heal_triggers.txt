@@ -55,39 +55,40 @@ bm_has_deadly_ailment_trigger = {
 	}
 }
 
+bm_has_non_old_age_ailment_trigger = {
+	OR = {
+		bm_has_minor_ailment_trigger = yes
+		bm_has_major_ailment_trigger = yes
+		bm_has_deadly_ailment_trigger = yes
+		bm_has_stress_coping_trait_trigger = yes
+	}
+}
+
 bm_has_any_ailment_trigger = {
 	OR = {
 		bm_has_minor_ailment_trigger = yes
 		bm_has_major_ailment_trigger = yes
 		bm_has_deadly_ailment_trigger = yes
+		bm_has_old_age_ailment_trigger = yes
+		bm_has_stress_coping_trait_trigger = yes
 	}
 }
 
 bm_can_heal_character_trigger = {
 	is_alive = yes
 	OR = {
-		AND = {
+		scope:actor = {
 			OR = {
-				scope:actor = { has_trait = lifestyle_blood_mage }
-				root = { has_trait = lifestyle_blood_mage }
+				has_trait = lifestyle_blood_mage
+				has_trait = lifestyle_blood_knight
 			}
-			bm_has_any_ailment_trigger = yes
 		}
-		AND = {
+		root = {
 			OR = {
-				scope:actor = {
-					has_trait = lifestyle_blood_knight
-					NOT = { has_trait = lifestyle_blood_mage }
-				}
-				root = {
-					has_trait = lifestyle_blood_knight
-					NOT = { has_trait = lifestyle_blood_mage }
-				}
-			}
-			OR = {
-				bm_has_minor_ailment_trigger = yes
-				bm_has_major_ailment_trigger = yes
+				has_trait = lifestyle_blood_mage
+				has_trait = lifestyle_blood_knight
 			}
 		}
 	}
+	bm_has_any_ailment_trigger = yes
 }

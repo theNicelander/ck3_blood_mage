@@ -896,6 +896,110 @@ bm_heal_ailment.0001 = {
 		}
 	}
 
+	# --- Stress Coping Vices ---
+	option = {
+		name = bm_heal_ailment.0001.purge_coping
+		trigger = {
+			OR = {
+				has_trait = lifestyle_blood_mage
+				has_trait = lifestyle_blood_knight
+			}
+			scope:recipient = { bm_has_stress_coping_trait_trigger = yes }
+			has_character_modifier = lifeforce_modifier_major
+			piety >= 250
+		}
+		show_as_unavailable = {
+			scope:recipient = { bm_has_stress_coping_trait_trigger = yes }
+		}
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_purge_coping_traits_interaction.toast
+			left_icon = root
+			right_icon = scope:recipient
+
+			add_piety = -250
+			blood_magic_used_major = yes
+			if = {
+				limit = { scope:recipient = root }
+				add_shared_bm_bk_xp = {
+					TRACK = enlightenment
+					XP = 4
+				}
+			}
+			else = {
+				add_shared_bm_bk_xp = {
+					TRACK = benediction
+					XP = 4
+				}
+			}
+			scope:recipient = {
+				if = { limit = { has_trait = drunkard } remove_trait = drunkard }
+				if = { limit = { has_trait = hashishiyah } remove_trait = hashishiyah }
+				if = { limit = { has_trait = rakish } remove_trait = rakish }
+				if = { limit = { has_trait = reclusive } remove_trait = reclusive }
+				if = { limit = { has_trait = irritable } remove_trait = irritable }
+				if = { limit = { has_trait = flagellant } remove_trait = flagellant }
+				if = { limit = { has_trait = profligate } remove_trait = profligate }
+				if = { limit = { has_trait = improvident } remove_trait = improvident }
+				if = { limit = { has_trait = contrite } remove_trait = contrite }
+				if = { limit = { has_trait = comfort_eater } remove_trait = comfort_eater }
+				if = { limit = { has_trait = inappetetic } remove_trait = inappetetic }
+				add_stress = -50
+				if = {
+					limit = { NOT = { this = root } }
+					add_opinion = {
+						target = root
+						modifier = magic_opinion_positive
+						opinion = 25
+					}
+				}
+			}
+			hidden_effect = {
+				bm_recount_lifeforce_stacks_effect = yes
+			}
+		}
+		ai_chance = {
+			base = 80
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# --- Old Age Afflictions Submenu ---
+	option = {
+		name = bm_heal_ailment.0001.open_old_age
+		trigger = {
+			OR = {
+				has_trait = lifestyle_blood_mage
+				has_trait = lifestyle_blood_knight
+			}
+			scope:recipient = { bm_has_old_age_ailment_trigger = yes }
+			OR = {
+				AND = {
+					has_character_modifier = lifeforce_modifier_minor
+					piety >= heal_old_age_cost_minor
+				}
+				AND = {
+					has_character_modifier = lifeforce_modifier_major
+					piety >= heal_old_age_cost_major
+				}
+			}
+		}
+		show_as_unavailable = {
+			scope:recipient = { bm_has_old_age_ailment_trigger = yes }
+		}
+		trigger_event = bm_heal_old_age.0001
+		ai_chance = {
+			base = 90
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
 	# --- CANCEL / DO NOTHING ---
 	option = {
 		name = bm_heal_ailment.0001.cancel
