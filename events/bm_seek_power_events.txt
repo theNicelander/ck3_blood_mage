@@ -32,7 +32,7 @@ seek_power.001 = {
             remove_variable = bm_seek_power_chose_traveler
             debug_log = "BloodHunt: rolling non-traveler wilderness encounters"
             duel = {
-                skills = { prowess learning }
+                skill = prowess
                 value = 0
                 35 = {
                     desc = seek_power.duel.animal
@@ -146,7 +146,7 @@ seek_power.003 = {
         animation = aggressive_sword
     }
 
-    # Create the traveler, and only spawn escort knight for Blood Knights
+    # Create the traveler and escort knight
     immediate = {
         debug_log = "BloodHunt: seek_power.003 reached"
         hidden_effect = {
@@ -164,17 +164,14 @@ seek_power.003 = {
                 culture = root.culture
                 faith = scope:local_faith
             }
-            if = {
-                limit = { has_trait = lifestyle_blood_knight }
-                create_character = {
-                    template = bm_escort_knight_character_template
-                    save_scope_as = escort_knight
-                    location = root.location
-                    culture = root.culture
-                    faith = scope:local_faith
-                }
-                debug_log = "BloodHunt: escort knight spawned for Blood Knight"
+            create_character = {
+                template = bm_escort_knight_character_template
+                save_scope_as = escort_knight
+                location = root.location
+                culture = root.culture
+                faith = scope:local_faith
             }
+            debug_log = "BloodHunt: escort knight spawned"
         }
     }
 
@@ -182,68 +179,103 @@ seek_power.003 = {
     option = {
         name = seek_power.003.knight
         trigger = {
-            has_trait = lifestyle_blood_knight
+            OR = {
+                has_trait = lifestyle_blood_knight
+                has_trait = lifestyle_blood_mage
+            }
         }
         ai_chance = { base = 50 }
         duel = {
             skill = prowess
             target = scope:recipient
-            17 = {
+            25 = {
                 desc = seek_power.duel.knight_crit_win
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = 0.32
-                    max = 16
+                    multiplier = 1.0
+                    min = -15
+                    max = 30
                 }
                 send_interface_toast = {
                     title = seek_power.toast.knight_crit_win
                     left_icon = this
                     right_icon = scope:recipient
                     add_character_modifier = { modifier = lifeforce_modifier_major }
-                    add_blood_knight_xp = { TRACK = slaughter XP = 3 }
+                    if = {
+                        limit = { has_trait = lifestyle_blood_knight }
+                        add_blood_knight_xp = { TRACK = slaughter XP = 3 }
+                    }
+                    if = {
+                        limit = { has_trait = lifestyle_blood_mage }
+                        add_blood_mage_xp = { TRACK = hematurgy XP = 3 }
+                    }
                     hidden_effect = {
                         bm_recount_lifeforce_stacks_effect = yes
                     }
                 }
             }
-            33 = {
+            35 = {
                 desc = seek_power.duel.knight_win
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = 0.68
-                    max = 30
+                    multiplier = 0.5
+                    min = -15
+                    max = 20
                 }
                 send_interface_toast = {
                     title = seek_power.toast.knight_win
                     left_icon = this
                     right_icon = scope:recipient
                     add_character_modifier = { modifier = lifeforce_modifier_minor }
-                    add_blood_knight_xp = { TRACK = slaughter XP = 2 }
+                    if = {
+                        limit = { has_trait = lifestyle_blood_knight }
+                        add_blood_knight_xp = { TRACK = slaughter XP = 2 }
+                    }
+                    if = {
+                        limit = { has_trait = lifestyle_blood_mage }
+                        add_blood_mage_xp = { TRACK = hematurgy XP = 2 }
+                    }
                     hidden_effect = {
                         bm_recount_lifeforce_stacks_effect = yes
                     }
                 }
             }
-            33 = {
+            25 = {
                 desc = seek_power.duel.knight_spar
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = -0.68
-                    min = -30
+                    multiplier = -1.0
+                    min = -20
+                    max = 20
                 }
                 send_interface_toast = {
                     title = seek_power.toast.knight_spar
                     left_icon = this
                     right_icon = scope:recipient
-                    add_blood_knight_xp = { TRACK = vanguard XP = 1 }
+                    if = {
+                        limit = { has_trait = lifestyle_blood_knight }
+                        if = {
+            limit = { has_trait = lifestyle_blood_knight }
+            add_blood_knight_xp = { TRACK = vanguard XP = 1 }
+        }
+        if = {
+            limit = { has_trait = lifestyle_blood_mage }
+            add_blood_mage_xp = { TRACK = ancient XP = 1 }
+        }
+                    }
+                    if = {
+                        limit = { has_trait = lifestyle_blood_mage }
+                        add_blood_mage_xp = { TRACK = hematurgy XP = 1 }
+                    }
                 }
             }
-            17 = {
+            15 = {
                 desc = seek_power.duel.escape
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = -0.32
-                    min = -16
+                    multiplier = -0.8
+                    min = -15
+                    max = 15
                 }
                 modifier = {
                     factor = 0
@@ -259,33 +291,58 @@ seek_power.003 = {
         }
     }
 
-    # Lifedrain (Blood Mage)
+    # Lifedrain (Blood Mage & Blood Knight)
     option = {
         name = seek_power.003.a
         trigger = {
-            has_trait = lifestyle_blood_mage
+            OR = {
+                has_trait = lifestyle_blood_mage
+                has_trait = lifestyle_blood_knight
+            }
         }
         ai_chance = { base = 50 }
         duel = {
-            skills = { intrigue prowess }
-            value = 0
+            skills = { prowess learning }
+            value = 20
 
-            10 = {
+            50 = {
                 desc = seek_power.duel.silent_harvest
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = 2
+                    multiplier = 2.0
+                    min = -35
+                    max = 40
                 }
                 send_interface_toast = {
                     title = seek_power.toast.silent_drain
                     left_icon = this
                     right_icon = scope:recipient
                     scope:recipient = { death = { death_reason = death_sacrificed_to_gods } }
-                    hematurgy_magic_cast_effect_major = yes
+                    if = {
+                        limit = { has_trait = lifestyle_blood_mage }
+                        hematurgy_magic_cast_effect_major = yes
+                    }
+                    if = {
+                        limit = {
+                            has_trait = lifestyle_blood_knight
+                            NOT = { has_trait = lifestyle_blood_mage }
+                        }
+                        add_character_modifier = { modifier = lifeforce_modifier_major }
+                        add_blood_knight_xp = { TRACK = slaughter XP = 3 }
+                        hidden_effect = {
+                            bm_recount_lifeforce_stacks_effect = yes
+                        }
+                    }
                 }
             }
-            20 = {
+            25 = {
                 desc = seek_power.duel.escape
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = -1.0
+                    min = -20
+                    max = 20
+                }
                 modifier = {
                     factor = 0
                     bm_has_superior_stave_trigger = { STAVE = vegvisir }
@@ -297,8 +354,14 @@ seek_power.003 = {
                     add_stress = 5
                 }
             }
-            20 = {
+            25 = {
                 desc = seek_power.duel.witnessed
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = -1.0
+                    min = -20
+                    max = 20
+                }
                 modifier = {
                     factor = 0
                     bm_has_superior_stave_trigger = { STAVE = vegvisir }
@@ -308,7 +371,21 @@ seek_power.003 = {
                     left_icon = this
                     right_icon = scope:recipient
                     scope:recipient = { death = { death_reason = death_sacrificed_to_gods } }
-                    hematurgy_magic_cast_effect_major = yes
+                    if = {
+                        limit = { has_trait = lifestyle_blood_mage }
+                        hematurgy_magic_cast_effect_major = yes
+                    }
+                    if = {
+                        limit = {
+                            has_trait = lifestyle_blood_knight
+                            NOT = { has_trait = lifestyle_blood_mage }
+                        }
+                        add_character_modifier = { modifier = lifeforce_modifier_major }
+                        add_blood_knight_xp = { TRACK = slaughter XP = 3 }
+                        hidden_effect = {
+                            bm_recount_lifeforce_stacks_effect = yes
+                        }
+                    }
                     add_stress = 10
                     add_dread = 5
                     if = {
@@ -344,7 +421,7 @@ seek_power.003 = {
         }
     }
 
-    # Blood Knight option 2: Full Battlefield Duel (Single Combat Engine, FATALITY = possible)
+    # Battlefield Duel (Single Combat Engine, FATALITY = possible)
     option = {
         name = {
             text = {
@@ -358,11 +435,17 @@ seek_power.003 = {
             }
         }
         trigger = {
-            has_trait = lifestyle_blood_knight
+            OR = {
+                has_trait = lifestyle_blood_knight
+                has_trait = lifestyle_blood_mage
+            }
             prowess >= 25
         }
         show_as_unavailable = {
-            has_trait = lifestyle_blood_knight
+            OR = {
+                has_trait = lifestyle_blood_knight
+                has_trait = lifestyle_blood_mage
+            }
             prowess < 25
         }
         ai_chance = {
@@ -477,30 +560,42 @@ seek_power.003 = {
         duel = {
             skill = prowess
             target = scope:escort_knight
-            33 = {
+            50 = {
                 desc = seek_power.duel.join_knight
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = 1.0
-                    max = 57
+                    multiplier = 2.0
+                    min = -45
+                    max = 45
                 }
                 send_interface_toast = {
                     title = seek_power.toast.join_knight
                     left_icon = this
                     right_icon = scope:escort_knight
                     add_courtier = scope:escort_knight
-                    add_blood_knight_xp = {
-                        TRACK = vanguard
-                        XP = 2
+                    if = {
+                        limit = { has_trait = lifestyle_blood_knight }
+                        add_blood_knight_xp = {
+                            TRACK = vanguard
+                            XP = 2
+                        }
+                    }
+                    if = {
+                        limit = { has_trait = lifestyle_blood_mage }
+                        add_blood_mage_xp = {
+                            TRACK = ancient
+                            XP = 2
+                        }
                     }
                 }
             }
-            67 = {
+            50 = {
                 desc = seek_power.duel.separate_knight
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = -1.0
-                    min = -57
+                    multiplier = -2.0
+                    min = -45
+                    max = 45
                 }
                 send_interface_toast = {
                     title = seek_power.toast.separate
@@ -564,15 +659,15 @@ seek_power.008 = {
         name = seek_power.008.a
         ai_chance = { base = 60 }
         duel = {
-            skill = prowess
-            value = 30
-            # 1. Success: Hard to get, Major Lifeforce, clean kill
-            20 = {
+            skills = { prowess martial }
+            value = 20
+            # 1. Success: Major Lifeforce, clean kill
+            35 = {
                 desc = seek_power.duel.beast_slain
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = 1.0
-                    min = -20
+                    multiplier = 1.5
+                    min = -30
                     max = 40
                 }
                 send_interface_toast = {
@@ -584,7 +679,8 @@ seek_power.008 = {
                         limit = { has_trait = lifestyle_blood_knight }
                         add_blood_knight_xp = { TRACK = slaughter XP = 2 }
                     }
-                    else = {
+                    if = {
+                        limit = { has_trait = lifestyle_blood_mage }
                         add_blood_mage_xp = { TRACK = hematurgy XP = 2 }
                     }
                     hidden_effect = {
@@ -592,8 +688,8 @@ seek_power.008 = {
                     }
                 }
             }
-            # 2. Mixed Success: Medium, Minor Lifeforce, Wounded
-            35 = {
+            # 2. Mixed Success: Minor Lifeforce, Wounded
+            25 = {
                 desc = seek_power.duel.beast_bloodied
                 compare_modifier = {
                     value = scope:duel_value
@@ -611,8 +707,9 @@ seek_power.008 = {
                         limit = { has_trait = lifestyle_blood_knight }
                         add_blood_knight_xp = { TRACK = vanguard XP = 1 }
                     }
-                    else = {
-                        add_shared_bm_bk_xp = { TRACK = ancient XP = 1 }
+                    if = {
+                        limit = { has_trait = lifestyle_blood_mage }
+                        add_blood_mage_xp = { TRACK = ancient XP = 1 }
                     }
                     hidden_effect = {
                         bm_recount_lifeforce_stacks_effect = yes
@@ -624,9 +721,9 @@ seek_power.008 = {
                 desc = seek_power.duel.beast_escaped
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = -0.75
-                    min = -20
-                    max = 20
+                    multiplier = -1.2
+                    min = -22
+                    max = 30
                 }
                 send_interface_toast = {
                     title = seek_power.toast.beast_escaped
@@ -635,12 +732,12 @@ seek_power.008 = {
                 }
             }
             # 4. Critical Fail: Mauled, Wounded, 0 Lifeforce
-            20 = {
+            15 = {
                 desc = seek_power.duel.beast_mauled
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = -1.0
-                    min = -20
+                    multiplier = -0.8
+                    min = -13
                     max = 20
                 }
                 send_interface_toast = {
@@ -687,15 +784,15 @@ seek_power.009 = {
         name = seek_power.009.a
         ai_chance = { base = 60 }
         duel = {
-            skills = { intrigue prowess }
-            value = 16
-            # 1. Success: Hard to get, Major Lifeforce, silent harvest
-            20 = {
+            skills = { prowess intrigue martial }
+            value = 20
+            # 1. Success: Major Lifeforce, silent harvest
+            35 = {
                 desc = seek_power.duel.homestead_silent
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = 1.0
-                    min = -20
+                    multiplier = 1.5
+                    min = -30
                     max = 40
                 }
                 send_interface_toast = {
@@ -706,7 +803,8 @@ seek_power.009 = {
                         limit = { has_trait = lifestyle_blood_knight }
                         add_blood_knight_xp = { TRACK = slaughter XP = 2 }
                     }
-                    else = {
+                    if = {
+                        limit = { has_trait = lifestyle_blood_mage }
                         add_blood_mage_xp = { TRACK = hematurgy XP = 2 }
                     }
                     hidden_effect = {
@@ -714,8 +812,8 @@ seek_power.009 = {
                     }
                 }
             }
-            # 2. Mixed Success: Medium, Minor Lifeforce, Wounded
-            35 = {
+            # 2. Mixed Success: Minor Lifeforce, Wounded
+            25 = {
                 desc = seek_power.duel.homestead_spotted
                 compare_modifier = {
                     value = scope:duel_value
@@ -730,6 +828,14 @@ seek_power.009 = {
                     increase_wounds_no_death_effect = { REASON = fight }
                     add_stress = 10
                     add_dread = 5
+                    if = {
+                        limit = { has_trait = lifestyle_blood_knight }
+                        add_blood_knight_xp = { TRACK = slaughter XP = 1 }
+                    }
+                    if = {
+                        limit = { has_trait = lifestyle_blood_mage }
+                        add_blood_mage_xp = { TRACK = hematurgy XP = 1 }
+                    }
                     hidden_effect = {
                         bm_recount_lifeforce_stacks_effect = yes
                     }
@@ -740,9 +846,9 @@ seek_power.009 = {
                 desc = seek_power.duel.homestead_escaped
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = -0.75
-                    min = -20
-                    max = 20
+                    multiplier = -1.2
+                    min = -22
+                    max = 30
                 }
                 send_interface_toast = {
                     title = seek_power.toast.homestead_escaped
@@ -751,12 +857,12 @@ seek_power.009 = {
                 }
             }
             # 4. Critical Fail: Cornered by defenders, Wounded, 0 Lifeforce
-            20 = {
+            15 = {
                 desc = seek_power.duel.homestead_cornered
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = -1.0
-                    min = -20
+                    multiplier = -0.8
+                    min = -13
                     max = 20
                 }
                 send_interface_toast = {
@@ -804,14 +910,14 @@ seek_power.010 = {
         ai_chance = { base = 60 }
         duel = {
             skills = { prowess martial }
-            value = 24
-            # 1. Success: Hard to get, Major Lifeforce + 25 Gold
-            20 = {
+            value = 20
+            # 1. Success: Major Lifeforce + 25 Gold
+            35 = {
                 desc = seek_power.duel.outlaw_slaughter
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = 1.0
-                    min = -20
+                    multiplier = 1.5
+                    min = -30
                     max = 40
                 }
                 send_interface_toast = {
@@ -823,7 +929,8 @@ seek_power.010 = {
                         limit = { has_trait = lifestyle_blood_knight }
                         add_blood_knight_xp = { TRACK = slaughter XP = 2 }
                     }
-                    else = {
+                    if = {
+                        limit = { has_trait = lifestyle_blood_mage }
                         add_blood_mage_xp = { TRACK = hematurgy XP = 2 }
                     }
                     hidden_effect = {
@@ -831,8 +938,8 @@ seek_power.010 = {
                     }
                 }
             }
-            # 2. Mixed Success: Medium, Minor Lifeforce + 10 Gold + Wounded
-            35 = {
+            # 2. Mixed Success: Minor Lifeforce + 10 Gold + Wounded
+            25 = {
                 desc = seek_power.duel.outlaw_skirmish
                 compare_modifier = {
                     value = scope:duel_value
@@ -851,7 +958,8 @@ seek_power.010 = {
                         limit = { has_trait = lifestyle_blood_knight }
                         add_blood_knight_xp = { TRACK = vanguard XP = 1 }
                     }
-                    else = {
+                    if = {
+                        limit = { has_trait = lifestyle_blood_mage }
                         add_blood_mage_xp = { TRACK = hematurgy XP = 1 }
                     }
                     hidden_effect = {
@@ -864,9 +972,9 @@ seek_power.010 = {
                 desc = seek_power.duel.outlaw_escaped
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = -0.75
-                    min = -20
-                    max = 20
+                    multiplier = -1.2
+                    min = -22
+                    max = 30
                 }
                 send_interface_toast = {
                     title = seek_power.toast.outlaw_escaped
@@ -875,12 +983,12 @@ seek_power.010 = {
                 }
             }
             # 4. Critical Fail: Overpowered, Wounded, robbed of 25 Gold
-            20 = {
+            15 = {
                 desc = seek_power.duel.outlaw_overpowered
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = -1.0
-                    min = -20
+                    multiplier = -0.8
+                    min = -13
                     max = 20
                 }
                 send_interface_toast = {
@@ -909,7 +1017,8 @@ seek_power.010 = {
                 limit = { has_trait = lifestyle_blood_knight }
                 add_blood_knight_xp = { TRACK = vanguard XP = 1 }
             }
-            else = {
+            if = {
+                limit = { has_trait = lifestyle_blood_mage }
                 add_blood_mage_xp = { TRACK = bloodline XP = 1 }
             }
             hidden_effect = {
@@ -937,14 +1046,14 @@ seek_power.011 = {
         ai_chance = { base = 60 }
         duel = {
             skills = { prowess learning }
-            value = 18
-            # 1. Success: Hard to get, Major Lifeforce, clean kill
-            20 = {
+            value = 20
+            # 1. Success: Major Lifeforce, clean kill
+            35 = {
                 desc = seek_power.duel.crimson_seize
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = 1.0
-                    min = -20
+                    multiplier = 1.5
+                    min = -30
                     max = 40
                 }
                 send_interface_toast = {
@@ -955,7 +1064,8 @@ seek_power.011 = {
                         limit = { has_trait = lifestyle_blood_knight }
                         add_blood_knight_xp = { TRACK = slaughter XP = 2 }
                     }
-                    else = {
+                    if = {
+                        limit = { has_trait = lifestyle_blood_mage }
                         add_blood_mage_xp = { TRACK = hematurgy XP = 2 }
                     }
                     hidden_effect = {
@@ -963,8 +1073,8 @@ seek_power.011 = {
                     }
                 }
             }
-            # 2. Mixed Success: Medium, Minor Lifeforce, Wounded
-            35 = {
+            # 2. Mixed Success: Minor Lifeforce, Wounded
+            25 = {
                 desc = seek_power.duel.crimson_backlash
                 compare_modifier = {
                     value = scope:duel_value
@@ -982,7 +1092,8 @@ seek_power.011 = {
                         limit = { has_trait = lifestyle_blood_knight }
                         add_blood_knight_xp = { TRACK = vanguard XP = 1 }
                     }
-                    else = {
+                    if = {
+                        limit = { has_trait = lifestyle_blood_mage }
                         add_blood_mage_xp = { TRACK = hematurgy XP = 1 }
                     }
                     hidden_effect = {
@@ -995,9 +1106,9 @@ seek_power.011 = {
                 desc = seek_power.duel.crimson_escaped
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = -0.75
-                    min = -20
-                    max = 20
+                    multiplier = -1.2
+                    min = -22
+                    max = 30
                 }
                 send_interface_toast = {
                     title = seek_power.toast.crimson_escaped
@@ -1006,12 +1117,12 @@ seek_power.011 = {
                 }
             }
             # 4. Critical Fail: Catastrophic hex, Wounded, -50 Piety, 0 Lifeforce
-            20 = {
+            15 = {
                 desc = seek_power.duel.crimson_cursed
                 compare_modifier = {
                     value = scope:duel_value
-                    multiplier = -1.0
-                    min = -20
+                    multiplier = -0.8
+                    min = -13
                     max = 20
                 }
                 send_interface_toast = {
@@ -1112,7 +1223,14 @@ seek_power.006 = {
             title = bm_duel_kill_blood_knight_toast
             left_icon = root
             right_icon = scope:duel_opponent
-            add_blood_knight_xp = { TRACK = slaughter XP = 5 }
+            if = {
+                limit = { has_trait = lifestyle_blood_knight }
+                add_blood_knight_xp = { TRACK = slaughter XP = 5 }
+            }
+            if = {
+                limit = { has_trait = lifestyle_blood_mage }
+                add_blood_mage_xp = { TRACK = hematurgy XP = 5 }
+            }
             add_character_modifier = { modifier = lifeforce_modifier_major }
             random = {
                 chance = 25
@@ -1139,7 +1257,14 @@ seek_power.006 = {
             left_icon = root
             right_icon = scope:duel_opponent
             add_courtier = scope:duel_opponent
-            add_blood_knight_xp = { TRACK = vanguard XP = 2 }
+            if = {
+                limit = { has_trait = lifestyle_blood_knight }
+                add_blood_knight_xp = { TRACK = vanguard XP = 2 }
+            }
+            if = {
+                limit = { has_trait = lifestyle_blood_mage }
+                add_blood_mage_xp = { TRACK = ancient XP = 2 }
+            }
             add_character_modifier = { modifier = lifeforce_modifier_minor }
             hidden_effect = {
                 bm_recount_lifeforce_stacks_effect = yes
@@ -1173,7 +1298,14 @@ seek_power.006 = {
         }
         ai_chance = { base = 100 }
         add_stress = 15
-        add_blood_knight_xp = { TRACK = vanguard XP = 1 }
+        if = {
+            limit = { has_trait = lifestyle_blood_knight }
+            add_blood_knight_xp = { TRACK = vanguard XP = 1 }
+        }
+        if = {
+            limit = { has_trait = lifestyle_blood_mage }
+            add_blood_mage_xp = { TRACK = ancient XP = 1 }
+        }
     }
 }
 

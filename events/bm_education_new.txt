@@ -15,7 +15,13 @@ bm_education_new.001 = {
     # Diplomacy
     option = {
         name = bm_education_new.001.diplomacy
-        trigger = { NOT = {has_trait = education_diplomacy} }
+        trigger = {
+            NOT = { has_trait = education_diplomacy }
+            piety_level >= 4
+        }
+        show_as_unavailable = {
+            NOT = { has_trait = education_diplomacy }
+        }
         bm_education_new_cost_effect = yes
         send_interface_toast = {
             type = event_toast_effect_good
@@ -36,7 +42,13 @@ bm_education_new.001 = {
     # Martial
     option = {
         name = bm_education_new.001.martial
-        trigger = { NOT = {has_trait = education_martial} }
+        trigger = {
+            NOT = { has_trait = education_martial }
+            piety_level >= 4
+        }
+        show_as_unavailable = {
+            NOT = { has_trait = education_martial }
+        }
         bm_education_new_cost_effect = yes
         send_interface_toast = {
             type = event_toast_effect_good
@@ -57,7 +69,13 @@ bm_education_new.001 = {
     # Stewardship
     option = {
         name = bm_education_new.001.stewardship
-        trigger = { NOT = {has_trait = education_stewardship} }
+        trigger = {
+            NOT = { has_trait = education_stewardship }
+            piety_level >= 4
+        }
+        show_as_unavailable = {
+            NOT = { has_trait = education_stewardship }
+        }
         bm_education_new_cost_effect = yes
         send_interface_toast = {
             type = event_toast_effect_good
@@ -78,7 +96,13 @@ bm_education_new.001 = {
     # Intrigue
     option = {
         name = bm_education_new.001.intrigue
-        trigger = { NOT = {has_trait = education_intrigue} }
+        trigger = {
+            NOT = { has_trait = education_intrigue }
+            piety_level >= 4
+        }
+        show_as_unavailable = {
+            NOT = { has_trait = education_intrigue }
+        }
         bm_education_new_cost_effect = yes
         send_interface_toast = {
             type = event_toast_effect_good
@@ -99,7 +123,13 @@ bm_education_new.001 = {
     # Learning
     option = {
         name = bm_education_new.001.learning
-        trigger = { NOT = {has_trait = education_learning} }
+        trigger = {
+            NOT = { has_trait = education_learning }
+            piety_level >= 4
+        }
+        show_as_unavailable = {
+            NOT = { has_trait = education_learning }
+        }
         bm_education_new_cost_effect = yes
         send_interface_toast = {
             type = event_toast_effect_good
