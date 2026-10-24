@@ -137,7 +137,7 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 
 - **Five-Tier Blood Shrine**:
   - Landless adventurers (camps) and noble families (estates) can construct and upgrade a dedicated 5-tier Blood Shrine building line.
-  - Scales piety generation, health, fertility, and follower recovery speed while projecting a camp-wide occult aura.
+  - Scales piety generation (+0.5 per tier, up to +2.5 monthly piety at Tier V), health, lifespan, and genetic inheritance chances while projecting a camp-wide occult aura.
 - **Blood Universities**: Expand realm development and occult mastery with 4 tiers of university buildings built in realm capitals.
 
 ---
