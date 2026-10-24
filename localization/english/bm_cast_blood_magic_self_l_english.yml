@@ -279,8 +279,8 @@
     bm_minor_condense_desc: "Transmute minor lifeforce into major lifeforce."
     bm_minor_condense_tooltip: "Spend #V 100#! Piety and transmute [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] into [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]."
     bm_minor_blood_rune: "Inscribe Minor Blood Rune"
-    bm_minor_blood_rune_desc: "Inscribe a permanent Minor Blood Rune upon your flesh."
-    bm_minor_blood_rune_tooltip: "Etch an enduring Minor Blood Rune into your flesh, granting passive stat enhancements.\n\nCosts [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] and #V 100#! [piety|E]."
+    bm_minor_blood_rune_desc: "Inscribe a permanent Minor Blood Rune upon your flesh to passively harvest [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] from the world around you."
+    bm_minor_blood_rune_tooltip: "Etch an enduring Minor Blood Rune into your flesh to passively harvest [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] from the world around you.\n\nCosts [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] and #V 100#! [piety|E]."
 
     # Minor Aliases
     bm_cast_blood_magic_minor.001.channel: "$bm_minor_channel$"
@@ -311,8 +311,8 @@
     bm_major_improve_education_desc: "Attempt to elevate your primary education trait to a higher tier."
     bm_major_improve_education_tooltip: "Elevate your primary education trait to a higher tier (up to 4 stars) through blood infusion.\n\nCosts [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and scaled [piety|E]. Requires Devotion Level based on rank (1★: Level 1+, 2★: Level 2+, 3★: Level 3+)."
     bm_major_blood_rune: "Inscribe Major Blood Rune"
-    bm_major_blood_rune_desc: "Upgrade your Minor Blood Rune to a Major Blood Rune."
-    bm_major_blood_rune_tooltip: "Upgrade your Minor Blood Rune to a Major Blood Rune, unlocking greater passive occult bonuses.\n\nCosts [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and #V 200#! [piety|E]."
+    bm_major_blood_rune_desc: "Upgrade your Minor Blood Rune to a Major Blood Rune to passively harvest greater Lifeforce from the world around you."
+    bm_major_blood_rune_tooltip: "Upgrade your Minor Blood Rune to a Major Blood Rune to passively harvest [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] and [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] from the world around you.\n\nCosts [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and #V 200#! [piety|E]."
 
     # Major Aliases
     bm_cast_blood_magic_major.001.power: "$bm_major_channel_power$"
@@ -352,8 +352,8 @@
     bm_superior_new_education_desc: "Forge neural pathways to adopt an additional education discipline."
     bm_superior_new_education_tooltip: "Forge neural pathways to adopt an additional education discipline using superior lifeforce.\n\nCosts [GetModifier('lifeforce_modifier_superior').GetNameWithTooltip] and #V 1000#! [piety|E]."
     bm_superior_blood_rune: "Inscribe Superior Blood Rune"
-    bm_superior_blood_rune_desc: "Upgrade your Major Blood Rune to the apex Superior Blood Rune."
-    bm_superior_blood_rune_tooltip: "Upgrade your Major Blood Rune to the apex Superior Blood Rune, unlocking massive passive boons and Galdrastafir attunement.\n\nCosts [GetModifier('lifeforce_modifier_superior').GetNameWithTooltip] and #V 400#! [piety|E]."
+    bm_superior_blood_rune_desc: "Upgrade your Major Blood Rune to the apex Superior Blood Rune to passively harvest apex Lifeforce from the world around you."
+    bm_superior_blood_rune_tooltip: "Upgrade your Major Blood Rune to the apex Superior Blood Rune to passively harvest [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] and [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] from the world around you, unlocking Galdrastafir attunement.\n\nCosts [GetModifier('lifeforce_modifier_superior').GetNameWithTooltip] and #V 400#! [piety|E]."
     bm_superior_manifest_traits: "Manifest Traits: Apex Perfection"
     bm_superior_manifest_traits_desc: "Transmute congenital traits up to apex rank 5."
     bm_superior_manifest_traits_tooltip: "Focus Superior Lifeforce into transmuting congenital traits (Intellect, Physique, Beauty) up to apex rank 5.\n\nCosts [GetModifier('lifeforce_modifier_superior').GetNameWithTooltip] and #V 200#! [piety|E]."
