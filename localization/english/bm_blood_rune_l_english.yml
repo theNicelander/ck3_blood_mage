@@ -1,29 +1,29 @@
 ﻿l_english:
   # Blood Rune Modifiers
   minor_blood_rune_modifier: "Minor Blood Rune"
-  minor_blood_rune_modifier_desc: "These rudimentary blood symbols rarely harvest [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] for your use. \n\nBlood-etched arcane symbols covering your heart area pulse faintly beneath your skin, drawing ambient lifeforce into your body like a slowly beating second heart."
+  minor_blood_rune_modifier_desc: "These rudimentary blood symbols have a chance each year to yield power.\n\nBlood-etched arcane symbols covering your heart area pulse faintly beneath your skin like a slowly beating second heart, allowing you to passively harvest [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] from the world around you."
 
   major_blood_rune_modifier: "Major Blood Rune"
-  major_blood_rune_modifier_desc: "These complex runes sometimes harvest [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] from your surroundings, with occasional bursts of [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]. Rarely, they may capture both types simultaneously. \n\nElaborate blood tattoos flow across your torso and arms like living veins, constantly harvesting the vital essence around you and channeling it into your magical reserves."
+  major_blood_rune_modifier_desc: "These complex runes yield larger and more frequent reserves each year.\n\nElaborate blood tattoos flow across your torso and arms like living veins, allowing you to passively harvest [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] and [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] from the world around you."
 
   superior_blood_rune_modifier: "Superior Blood Rune"
-  superior_blood_rune_modifier_desc: "These masterful blood inscriptions often draw [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] to you unbidden. They frequently capture [GetModifier('lifeforce_modifier_major').GetNameWithTooltip], and sometimes manifest both types of power at once. \n\nMasterful blood inscriptions cover your vital areas, sometimes shifting beneath your skin with a life of their own. Your body has become a constant conduit for lifeforce, drawing power from the very air you breathe."
+  superior_blood_rune_modifier_desc: "These masterful blood inscriptions yield apex yearly reserves and unlock Galdrastafir stave attunement.\n\nMasterful blood inscriptions cover your vital areas, shifting beneath your skin with a life of their own as you passively harvest [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] and [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] from the world around you."
 
   blood_runes_effects_list.effects_list: "Gain increasingly powerful Blood Runes (each tier replaces the previous):\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('minor_blood_rune_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('major_blood_rune_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('superior_blood_rune_modifier').GetNameWithTooltip]"
-  blood_runes_effects_list.minor: "Inscribe the [GetModifier('minor_blood_rune_modifier').GetNameWithTooltip] onto your flesh, granting a chance to passively harvest lifeforce each year."
-  blood_runes_effects_list.major: "Upgrade to the [GetModifier('major_blood_rune_modifier').GetNameWithTooltip], enhancing your yearly passive lifeforce harvests."
-  blood_runes_effects_list.superior: "Upgrade to the [GetModifier('superior_blood_rune_modifier').GetNameWithTooltip], transforming your body into a living grimoire and master conduit for ambient lifeforce."
+  blood_runes_effects_list.minor: "Inscribe the [GetModifier('minor_blood_rune_modifier').GetNameWithTooltip] onto your flesh to passively harvest [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] from the world around you."
+  blood_runes_effects_list.major: "Upgrade to the [GetModifier('major_blood_rune_modifier').GetNameWithTooltip] to passively harvest [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] and [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] from the world around you."
+  blood_runes_effects_list.superior: "Upgrade to the [GetModifier('superior_blood_rune_modifier').GetNameWithTooltip] to passively harvest [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] and [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] from the world around you, unlocking Galdrastafir stave attunement."
 
 
   # Blood Rune Event
   bm_blood_rune.001.title: "Inscribe the Blood Runes"
-  bm_blood_rune.001.desc: "You unfurl ancient scrolls depicting intricate patterns of power - blood runes that transform the mage's own body into a vessel for harvesting lifeforce. The ritual requires special needles forged in blood-quenched fire, inks mixed with your own essence, and the steady hand of one who understands that each line is not merely drawn but bound to your very being.\n\nThe pain will be excruciating, the commitment permanent. Yet with each drop of blood and ink merged into your flesh, your connection to the blood arts will deepen. Such markings are the sign of a blood mage who seeks true mastery - one who becomes not merely a wielder of blood magic, but a living embodiment of it."
+  bm_blood_rune.001.desc: "You unfurl ancient scrolls depicting intricate patterns of power - blood runes that allow you to passively harvest Lifeforce from the world around you. The ritual requires special needles forged in blood-quenched fire, inks mixed with your own essence, and the steady hand of one who understands that each line is not merely drawn but bound to your very being.\n\nThe pain will be excruciating, the commitment permanent. Yet with each drop of blood and ink merged into your flesh, your connection to the blood arts will deepen. Such markings are the sign of a blood mage who seeks true mastery - one who becomes not merely a wielder of blood magic, but a living embodiment of it."
 
   bm_blood_rune.001.minor: "The Minor Blood Rune - a pulsing sigil over my heart"
   bm_blood_rune.001.major: "The Major Blood Rune - a network of power flowing across my flesh"
   bm_blood_rune.001.superior: "The Superior Blood Rune - transform my skin into a living grimoire of blood magic"
   bm_blood_rune.001.z: "My current markings serve me well enough"
-  bm_blood_rune_yearly_event_popup.title: "Your Blood Rune granted you lifeforce"
+  bm_blood_rune_yearly_event_popup.title: "Your Blood Rune passively harvested Lifeforce from the world around you"
   bm_blood_rune_minor_toast: "Minor Blood Rune Inscribed"
   bm_blood_rune_major_toast: "Major Blood Rune Inscribed"
   bm_blood_rune_superior_toast: "Superior Blood Rune Inscribed"
@@ -31,7 +31,7 @@
   # Decision
   bm_blood_rune_decision: "Inscribe Blood Runes"
   bm_blood_rune_decision_confirm: "Begin the Blood Inscription"
-  bm_blood_rune_decision_desc: "Use ancient blood magic to inscribe your flesh with permanent runes that enhance your connection to lifeforce. These arcane tattoos will allow you to passively harvest ambient life energy, strengthening your powers over time."
-  bm_blood_rune_decision_tooltip: "Permanently mark your body with blood runes that generate lifeforce over time"
+  bm_blood_rune_decision_desc: "Use ancient blood magic to inscribe your flesh with permanent runes. These arcane markings allow you to passively harvest Lifeforce from the world around you over time."
+  bm_blood_rune_decision_tooltip: "Permanently mark your body with blood runes to passively harvest Lifeforce from the world around you"
   bm_blood_rune_decision_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('bm_blood_rune_minimum_xp')|0] Experience in Blood Magic"
   NOT_bm_blood_rune_decision_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('bm_blood_rune_minimum_xp')|0] Experience in Blood Magic"
