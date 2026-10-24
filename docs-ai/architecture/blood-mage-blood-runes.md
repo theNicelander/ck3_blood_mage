@@ -10,7 +10,7 @@ Living technical specification for body runes, Galdrastafir staves, and blood ar
 - **Self-Inscription (Ancient XP):** Inscribed sequentially via Cast Blood Magic Decision Widgets (`bm_cast_blood_magic_minor_decision`, `major_decision`, `superior_decision`). Requires Devotion Rank 2 / 3 / 4 (`piety_level >= 2 / 3 / 4`), sets a 5-year character cooldown flag (`bm_blood_rune_cooldown`), and awards `+4 / +5 / +10` `ancient` XP. Both **Blood Mages** and **Blood Knights** can self-inscribe up to Superior.
 - **Inscribe on Others (Benediction XP):** Character interaction `bm_inscribe_rune_other_interaction` available to both classes. Upgrades target depth in-place (does not inscribe staves; target must use the decision once reaching Superior). Sets a 5-year cooldown (`bm_blood_rune_other_cooldown`) and awards `+4 / +5 / +10` `benediction` XP to caster. Inscribing **Superior** runes on others is exclusive to `lifestyle_blood_mage`.
 - **Capstone Stave Selection & Swapping:** Handled via the standalone decision `bm_carve_galdrastafir_decision` (`common/decisions/cast_magic/bm_carve_galdrastafir_decision.txt`), shown only to characters holding `superior_blood_rune_modifier`. Costs **500 Piety** (`bm_carve_galdrastafir_piety_cost`) and **1 Major Lifeforce** (`blood_magic_used_major`), with a 5-year decision cooldown. All 5 staves are displayed; the currently worn stave is grayed out.
-- **University Buildings:** `bm_university_0` through `bm_university_3`. Duchy capital holdings built by rulers with `lifestyle_blood_mage`.
+- **University Buildings:** `bm_university_0` through `bm_university_3`. Duchy capital holdings built by rulers with `lifestyle_blood_mage`, `lifestyle_blood_knight`, or whose faith belongs to `blodtru_religion`.
 
 ## Tier Progression, Costs & XP Table
 
@@ -45,14 +45,14 @@ Living technical specification for body runes, Galdrastafir staves, and blood ar
 
 ## Blood Universities Table
 
-Duchy capital buildings constructible only if holder has `lifestyle_blood_mage`:
+Duchy capital buildings constructible by rulers with `lifestyle_blood_mage`, `lifestyle_blood_knight`, or a `blodtru_religion` faith:
 
-| Tier | Building ID | Cost | Time | Penalties | Province & Realm Bonuses |
+| Tier | Building ID | Cost | Time | Upkeep | Province & Realm Bonuses |
 | --- | --- | --- | --- | --- | --- |
-| **0** | `bm_university_0` | 250g, 250p | 3 yrs | -0.1 income, -0.1 piety | +0.1 dev growth, +5% cultural fascination |
-| **1** | `bm_university_1` | 500g, 500p | 5 yrs | -0.2 income, -0.2 piety | +0.2 dev growth, +10% cultural fascination |
-| **2** | `bm_university_2` | 750g, 750p | 7 yrs | -0.3 income, -0.3 piety | +0.3 dev growth, +15% cultural fascination |
-| **3** | `bm_university_3` | 1000g, 1000p | 10 yrs | -0.4 income, -0.4 piety | +0.4 dev growth, +20% cultural fascination |
+| **0** | `bm_university_0` | 250g | 1 yr | -0.1 income | +0.5 piety, +5% piety mult, +0.1 dev growth, +5% cultural fascination |
+| **1** | `bm_university_1` | 500g | 2 yrs | -0.25 income | +1.0 piety, +10% piety mult, +0.15 dev growth, +10% cultural fascination, +0.1 prestige, +3% lifestyle XP |
+| **2** | `bm_university_2` | 750g | 3 yrs | -0.5 income | +1.75 piety, +15% piety mult, +0.2 dev growth, +15% cultural fascination, +0.2 prestige, +6% lifestyle XP |
+| **3** | `bm_university_3` | 1000g | 5 yrs | -1.0 income | +2.5 piety, +25% piety mult, +0.3 dev growth, +25% cultural fascination, +0.3 prestige, +10% lifestyle XP |
 
 ## Where the Details Live
 

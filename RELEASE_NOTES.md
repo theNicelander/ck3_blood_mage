@@ -111,7 +111,7 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 - **Superior Stave Capstones & Standalone Decision**: Reach Superior rune depth to unlock the standalone **Carve Galdrastafir Stave** decision (`bm_carve_galdrastafir_decision`), an inline option-list drawer displaying all 5 staves with dedicated icons and graying out your active stave, unlocking game-changing capstone powers (such as guaranteed double attunement XP, +20 gold per travel landmark POI, or terrifying battlefield debuffs).
 - **Rune Inscription on Followers**: Inscribe blood runes onto your sworn knights, champions, and family members to bolster their combat prowess and loyalty.
 - **Custom DDS Icons**: Every Galdrastafir stave features authentic, hand-crafted 120×120 visual iconography across modifiers, decisions, and menus.
-- **Blood Universities**: Construct Blood University holding improvements (Tiers 0–3) in your realm's duchy capital to train apprentices and accelerate rune research.
+- **Blood Universities Rework**: Construct 4 tiers of Duchy Blood University improvements (`bm_university_0..3`) in your duchy capital as a Blood Mage, Blood Knight, or Blóðtrú follower. Redesigned into dedicated landed Piety generators (+0.5 to +2.5 monthly Piety, +5% to +25% monthly Piety mult) with zero Piety construction costs or upkeep drains and streamlined build times (1 to 5 years), ensuring landed rulers enjoy full Piety parity with wanderers.
 
 ---
 
