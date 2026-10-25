@@ -40,9 +40,8 @@ description: >-
 
 ## PR
 
-- Before create/update/merge: compare the doc with `git log origin/main..HEAD --oneline`; fix the doc if a feature is missing.
-- Title: short imperative outcome, player-facing (`Rework Blood Temples as duchy buildings`). No version prefix, theme lists, or file names. Docs/tooling-only branches may say so.
-- Body: the branch doc minus its `#` heading line.
-- `gh pr create --title "<Title>" --body-file <file>` / `gh pr edit <N> --title ... --body-file ...`.
-- Merge commit message: PR title plus the Changes bullets.
-- State validation only if actually performed.
+- Compare doc with `git log origin/main..HEAD --oneline` before PR.
+- Title: `<branch>: <outcome title>`. Player-facing, no file names.
+- Body: branch doc minus `#` title line.
+- Merge: `gh pr merge <PR> --squash --body-file <file> --delete-branch`. Never merge locally; omit `--subject` so GitHub preserves `(#<PR>)`.
+- Next branch: pull `main`, checkout sequential `v1.20.<N+1>`, push `-u origin <branch>`, archive old doc to `docs-ai/archive/`, init new branch doc.
