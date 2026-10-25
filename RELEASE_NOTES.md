@@ -108,7 +108,7 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 - **Superior Stave Capstones & Standalone Decision**: Reach Superior rune depth to unlock the standalone **Carve Galdrastafir Stave** decision (`bm_carve_galdrastafir_decision`), an inline option-list drawer displaying all 5 staves with dedicated icons and graying out your active stave, unlocking game-changing capstone powers (such as guaranteed double attunement XP, +20 gold per travel landmark POI, or terrifying battlefield debuffs).
 - **Rune Inscription on Followers**: Inscribe blood runes onto your sworn knights, champions, and family members to bolster their combat prowess and loyalty.
 - **Custom DDS Icons**: Every Galdrastafir stave features authentic, hand-crafted 120×120 visual iconography across modifiers, decisions, and menus.
-- **Blood Universities Rework**: Construct 4 tiers of Blood University improvements (`bm_university_0..3`) in any holding (castles, cities, temples, and tribal settlements) across your domain as a Blood Mage, Blood Knight, or Blóðtrú follower. Redesigned from duchy capital buildings into regular holding improvements, dedicated landed Piety generators (+0.5 to +2.5 monthly Piety, +5% to +25% monthly Piety mult), and county development engines (+0.1 to +0.4 flat development growth, +5% to +20% development growth factor, and +0.1 to +0.4 monthly county control growth, replacing cultural fascination and lifestyle XP gain multipliers) with zero Piety construction costs or upkeep drains and streamlined build times (1 to 5 years), ensuring landed rulers enjoy full Piety parity with wanderers.
+- **Seven-Tier Blood Temples (`bm_blood_temple_01..07`)**: Construct and upgrade a 7-tier regular **Blood Temple** building line (**Blood Altar** $\rightarrow$ **Blood Shrine** $\rightarrow$ **Blood Monument** $\rightarrow$ **Blood Temple** $\rightarrow$ **Great Blood Temple** $\rightarrow$ **Blood Pantheon** $\rightarrow$ **Blood Acropolis**) in any holding type (castles, cities, temples, and tribal settlements) as a Blood Mage, Blood Knight, or Blóðtrú follower. Gated progressively by Level of Devotion (`piety_level`) with zero gold or piety upkeep, each step awards **+0.2 Health** and **+2 Life Expectancy** (up to +1.4 Health and +14 Life Expectancy at Tier VII), scaling monthly Piety (+0.5 to +4.0 and +5% to +40% mult), Dynasty Prestige (+0.1 to +1.0), county Development Growth (+0.1 to +0.8 flat and +5% to +40% factor), and monthly County Control Growth (+0.1 to +0.8), culminating in Tier V–VII lineage genetics (+5% to +15%), Prowess (+2), Fort Level (+2), and Defender Advantage (+5) capstones.
 
 ---
 
@@ -143,7 +143,7 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 - **Five-Tier Blood Shrine**:
   - Landless adventurers (camps) and noble families (estates) can construct and upgrade a dedicated 5-tier Blood Shrine building line.
   - Scales piety generation (+0.5 per tier, up to +2.5 monthly piety at Tier V), health, lifespan, and genetic inheritance chances, while projecting a camp-wide occult aura at half potency (+0.25 piety, +0.1 health, +1 lifespan, +2.5% genetics per tier) to all followers and courtiers.
-- **Blood Universities**: Expand realm development and occult mastery with 4 tiers of university buildings built in realm capitals.
+- **Seven-Tier Blood Temples**: Expand county development, control, piety generation, and personal longevity with 7 tiers of Blood Temple regular buildings constructible in any holding type across your domain.
 
 ---
 
