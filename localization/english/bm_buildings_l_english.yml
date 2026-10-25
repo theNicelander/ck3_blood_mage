@@ -23,3 +23,7 @@
 
   building_bm_blood_temple_07: "Blood Acropolis"
   building_bm_blood_temple_07_desc: "A monumental, fortified hilltop citadel of scarlet spires and sanctums—the supreme seat of blood sorcery in the known world."
+
+  # Building Requirement Tooltips
+  bm_requires_blood_mage_or_blodtru_tt: "You must be a [GetTrait('lifestyle_blood_mage').GetName(GetPlayer)], a [GetTrait('lifestyle_blood_knight').GetName(GetPlayer)], or adhere to the [GetReligion('blodtru_religion').GetName] religion"
+  bm_requires_feudalized_realm_tt: "Requires a non-tribal government and a feudalized holding (Castle, City, or Temple)"

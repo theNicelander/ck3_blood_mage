@@ -1,41 +1,48 @@
 ---
 name: manage-pr
 description: >-
-  Create, update, or merge PRs and compose commit messages while verifying branch context documents.
+  Finish a change: write the branch doc, release note, commit, push, and create/update/merge the PR.
+  Use when writing docs-ai/branch-context/<branch>.md, a PR title/body, or a commit message.
 ---
 
-# Manage PR
+# Finish a change / manage PR
 
-Ensure pull requests, updates, and merge commit messages comprehensively reflect the full scope of work across the branch history without dropping parallel features.
+## Finish checklist (every task)
 
-## When to use
+1. Architecture doc for the touched subsystem (`docs-ai/architecture/README.md` index) matches the new current state.
+2. `docs-ai/branch-context/<branch>.md` reflects net branch state (format below). Create if missing.
+3. Player-facing change: one line in `RELEASE_NOTES.md` (skill `update-release-notes`).
+4. `python3 scripts/check_repo.py` (`--fix` only for BOM/newline) and `git diff --check`.
+5. Stage only files you changed (never `git add .`/`-A`/`-a`), commit, `git push origin <branch>`. Follow-up work = separate commit.
+6. Final summary: say what was not verified (runtime UI, AI behaviour). Check `error.log` when relevant.
 
-- Creating a new PR (`gh pr create`).
-- Updating an existing PR title or description (`gh pr edit`).
-- Merging a PR and authoring the merge commit message.
+## Branch doc = PR body
 
-## Procedure
+`docs-ai/branch-context/<branch>.md` is the PR description. Shape follows `.github/pull_request_template.md`:
 
-### 1. Audit Branch Context & Git History
-- Identify current branch: `git branch --show-current`.
-- Read the branch document: `docs-ai/branch-context/<branch>.md`.
-- Inspect git history against base branch: `git log origin/main..HEAD --oneline` and `git diff --stat origin/main..HEAD`.
-- Verify: Does `docs-ai/branch-context/<branch>.md` account for EVERY commit and feature introduced in this branch?
-- If the branch document is missing any changes, update `docs-ai/branch-context/<branch>.md` to reflect the complete net state before touching the PR.
+```md
+# <branch>: <outcome title>
 
-### 2. Formulate Comprehensive PR Title and Body
-- **Title**: High-level, high-impact summary covering all core gameplay themes of the branch (e.g., `v1.20.51: Empower Dynasty Bloodline Overhaul, Blood Knight Parity, 4-Tier Blood Hunts & Audit Fixes`). Do not focus on only a single commit if multiple areas were modified.
-  - **Gameplay Content Only (No Meta Fluff)**: Unless the branch is **EXCLUSIVELY** about documentation, AI rules, or dev tooling, PR titles and merge commit headers must focus strictly on **player-facing gameplay changes**. Never include PR workflow, branch verification, AI rule updates, or documentation meta in the title/heading (e.g. exclude "PR Workflow & Branch Verification" from headers). What matters in PR titles is gameplay content; meta changes belong strictly in bullet points within the body.
-- **Description / Body**:
-  - Pull directly from `docs-ai/branch-context/<branch>.md`.
-  - Group into clear structural sections (e.g., Summary & Motivation, Core Concepts & Changes by subsystem/theme, Key Decisions, Audit & Bug Fixes).
-  - Terse, dense presentation (`.agents/skills/caveman/SKILL.md`): all facts and mechanics kept, zero fluff.
-  - Never omit parallel commits, sub-features, or earlier work streams on the branch.
+## Motivation
 
-### 3. Creating or Updating PR
-- Create: `gh pr create --title "<Title>" --body "<Body>"`
-- Update: `gh pr edit <PR_NUMBER> --title "<Title>" --body "<Body>"`
+- 1–3 bullets: problem or goal.
 
-### 4. Authoring Merge Commit Messages
-- When merging to `main` (squash merge or merge commit), the commit message body must incorporate the synthesized branch summary from `docs-ai/branch-context/<branch>.md`.
-- Never allow GitHub or git CLI default truncated 1-line messages to wipe out branch context.
+## Changes
+
+- One sentence per bullet: behaviour, not files.
+```
+
+- Net state for a reviewer who has not seen the conversation; fold superseded work, drop reverts.
+- No mechanic numbers (they live in architecture docs), no file-by-file account, no extra sections.
+- Name files/identifiers only when they help locate the code.
+- Include material compatibility, migration, or limitation notes as a bullet.
+- Keep under ~2 KB; scale to complexity.
+
+## PR
+
+- Before create/update/merge: compare the doc with `git log origin/main..HEAD --oneline`; fix the doc if a feature is missing.
+- Title: short imperative outcome, player-facing (`Rework Blood Temples as duchy buildings`). No version prefix, theme lists, or file names. Docs/tooling-only branches may say so.
+- Body: the branch doc minus its `#` heading line.
+- `gh pr create --title "<Title>" --body-file <file>` / `gh pr edit <N> --title ... --body-file ...`.
+- Merge commit message: PR title plus the Changes bullets.
+- State validation only if actually performed.

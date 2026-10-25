@@ -1,16 +1,15 @@
 # Blood Runes, Galdrastafir and Blood Architecture
 
-Living technical specification for body runes, Galdrastafir staves, and blood architecture in the Blood Mage mod.
+Living technical specification for body runes, Galdrastafir staves, and Duchy Blood Temples.
 
-## Executive Summary
+## Overview
 
-- **What:** Decoupled rune architecture separating **Rune Depth** (`minor/major/superior_blood_rune_modifier`) from **Galdrastafir Stave Identity** (`bm_stave_<key>`).
-  - **Rune Depth (3 modifiers):** Sequential body runes (Minor -> Major -> Superior) that provide **no flat stat bonuses** themselves, solely governing the passive yearly Lifeforce pulse (`blood_mage_yearly_events.003`) and acting as the unlock gate for the capstone stave.
-  - **Capstone Staves (5 modifiers):** Granted exclusively at **Superior** rune depth via the standalone option-list decision `bm_carve_galdrastafir_decision`. Each stave grants flat static attributes and an active occult capstone mechanic.
-- **Self-Inscription (Ancient XP):** Inscribed sequentially via Cast Blood Magic Decision Widgets (`bm_cast_blood_magic_minor_decision`, `major_decision`, `superior_decision`). Requires Devotion Rank 2 / 3 / 4 (`piety_level >= 2 / 3 / 4`), sets a 5-year character cooldown flag (`bm_blood_rune_cooldown`), and awards `+4 / +5 / +10` `ancient` XP. Both **Blood Mages** and **Blood Knights** can self-inscribe up to Superior.
-- **Inscribe on Others (Benediction XP):** Character interaction `bm_inscribe_rune_other_interaction` available to both classes. Upgrades target depth in-place (does not inscribe staves; target must use the decision once reaching Superior). Sets a 5-year cooldown (`bm_blood_rune_other_cooldown`) and awards `+4 / +5 / +10` `benediction` XP to caster. Inscribing **Superior** runes on others is exclusive to `lifestyle_blood_mage`.
-- **Capstone Stave Selection & Swapping:** Handled via the standalone decision `bm_carve_galdrastafir_decision` (`common/decisions/cast_magic/bm_carve_galdrastafir_decision.txt`), shown only to characters holding `superior_blood_rune_modifier`. Costs **500 Piety** (`bm_carve_galdrastafir_piety_cost`) and **1 Major Lifeforce** (`blood_magic_used_major`), with a 5-year decision cooldown. All 5 staves are displayed; the currently worn stave is grayed out.
-- **Blood Temple Buildings:** `bm_blood_temple_01` through `bm_blood_temple_07`. Regular 7-tier building line constructible in any holding type (castles, cities, temples, tribal settlements) by rulers with `lifestyle_blood_mage`, `lifestyle_blood_knight`, or whose faith belongs to `blodtru_religion`, gated progressively by Devotion Level (`piety_level`).
+Decoupled architecture separating **Rune Depth** (`minor/major/superior_blood_rune_modifier`) from **Galdrastafir Stave Identity** (`bm_stave_<key>`).
+- **Rune Depth:** Sequential body runes (Minor -> Major -> Superior) governing the passive yearly Lifeforce pulse (`blood_mage_yearly_events.003`) and unlocking the capstone stave.
+- **Capstone Staves:** Granted at **Superior** depth via `bm_carve_galdrastafir_decision` (500 Piety, 1 Major LF, 5-yr CD). Grants static attributes and an active occult capstone mechanic.
+- **Self-Inscription (`ancient` XP):** Inscribed sequentially via Cast Blood Magic widgets (`minor/major/superior`). Requires Devotion Rank 2 / 3 / 4, 5-yr CD (`bm_blood_rune_cooldown`), awards `+4 / +5 / +10` `ancient` XP. Both Mages and Knights can self-inscribe up to Superior.
+- **Inscribe on Others (`benediction` XP):** Interaction `bm_inscribe_rune_other_interaction` upgrades target depth in-place. 5-yr CD (`bm_blood_rune_other_cooldown`), awards `+4 / +5 / +10` `benediction` XP. Superior on others is Mage exclusive.
+- **Duchy Blood Temples:** 7-tier Duchy Capital building line (`common/buildings/bm_duchy_buildings.txt`, `type = duchy_capital`), constructible in duchy capital slots by Blood Mages, Blood Knights, or Blóðtrú faithful. Tiers I–IV open to all governments (Tier IV tribal capstone); Tiers V–VII require non-tribal feudalized holdings.
 
 ## Tier Progression, Costs & XP Table
 
@@ -45,17 +44,17 @@ Living technical specification for body runes, Galdrastafir staves, and blood ar
 
 ## Blood Temples Table
 
-Regular buildings constructible in any holding (castles, cities, temples, and tribal holdings) by rulers with `lifestyle_blood_mage`, `lifestyle_blood_knight`, or a `blodtru_religion` faith:
+Duchy Capital buildings (`type = duchy_capital`) constructible in duchy capital holdings by rulers holding the duchy title. Always visible in the duchy building slot (shown grayed out with clear failure tooltips when requirements are not yet met). Constructible by characters with `lifestyle_blood_mage`, `lifestyle_blood_knight`, or a `blodtru_religion` faith. Tribal rulers can construct up to Tier IV (`Blood Temple`), while Tiers V–VII require a non-tribal government and a feudalized holding (Castle, City, or Temple):
 
-| Tier | Building ID | Name | Devotion Gate (`piety_level`) | Cost | Time | Holder Bonuses (`character_modifier`) | County & Holding Bonuses (`county_modifier` / `province_modifier`) |
+| Tier | Building ID | Name | Devotion Gate (`piety_level`) & Government | Cost | Time | Holder Bonuses (`character_modifier`) | County & Holding Bonuses (`duchy_capital_county_modifier` / `province_modifier`) |
 | :---: | :--- | :--- | :---: | :---: | :---: | :--- | :--- |
-| **I** | `bm_blood_temple_01` | **Blood Altar** | None | 150g | 1 yr | +0.5 piety, +5% piety mult, +0.2 health, +2 life expectancy | +0.1 dev growth, +5% dev factor, +0.1 control growth |
-| **II** | `bm_blood_temple_02` | **Blood Shrine** | 1+ | 250g | 1.5 yrs | +1.0 piety, +10% piety mult, +0.1 dynasty prestige, +0.4 health, +4 life expectancy | +0.2 dev growth, +10% dev factor, +0.2 control growth |
-| **III** | `bm_blood_temple_03` | **Blood Monument** | 2+ | 400g | 2 yrs | +1.5 piety, +15% piety mult, +0.2 dynasty prestige, +0.6 health, +6 life expectancy | +0.3 dev growth, +15% dev factor, +0.3 control growth |
-| **IV** | `bm_blood_temple_04` | **Blood Temple** | 3+ | 600g | 2.5 yrs | +2.0 piety, +20% piety mult, +0.3 dynasty prestige, +0.8 health, +8 life expectancy | +0.4 dev growth, +20% dev factor, +0.4 control growth |
-| **V** | `bm_blood_temple_05` | **Great Blood Temple** | 3+ | 850g | 3 yrs | +2.5 piety, +25% piety mult, +0.5 dynasty prestige, +1.0 health, +10 life expectancy, +5% genetic inheritance & random chance | +0.5 dev growth, +25% dev factor, +0.5 control growth |
-| **VI** | `bm_blood_temple_06` | **Blood Pantheon** | 4+ | 1200g | 4 yrs | +3.0 piety, +30% piety mult, +0.75 dynasty prestige, +1.2 health, +12 life expectancy, +10% genetic inheritance & random chance | +0.6 dev growth, +30% dev factor, +0.6 control growth |
-| **VII** | `bm_blood_temple_07` | **Blood Acropolis** | 5 | 1600g | 5 yrs | +4.0 piety, +40% piety mult, +1.0 dynasty prestige, +1.4 health, +14 life expectancy, +15% genetic inheritance & random chance, +2 prowess | +0.8 dev growth, +40% dev factor, +0.8 control growth, +2 fort level, +5 defender advantage |
+| **I** | `bm_blood_temple_01` | **Blood Altar** | None (All Govs) | 150g | 1 yr | +0.5 piety, +5% piety mult, +0.2 health, +2 life expectancy | +0.1 dev growth, +5% dev factor, +0.1 control growth |
+| **II** | `bm_blood_temple_02` | **Blood Shrine** | 1+ (All Govs) | 250g | 1.5 yrs | +1.0 piety, +10% piety mult, +0.1 dynasty prestige, +0.4 health, +4 life expectancy | +0.2 dev growth, +10% dev factor, +0.2 control growth |
+| **III** | `bm_blood_temple_03` | **Blood Monument** | 2+ (All Govs) | 400g | 2 yrs | +1.5 piety, +15% piety mult, +0.2 dynasty prestige, +0.6 health, +6 life expectancy | +0.3 dev growth, +15% dev factor, +0.3 control growth |
+| **IV** | `bm_blood_temple_04` | **Blood Temple** | 3+ (Tribal Capstone) | 600g | 2.5 yrs | +2.0 piety, +20% piety mult, +0.3 dynasty prestige, +0.8 health, +8 life expectancy | +0.4 dev growth, +20% dev factor, +0.4 control growth |
+| **V** | `bm_blood_temple_05` | **Great Blood Temple** | 3+ (Non-Tribal) | 850g | 3 yrs | +2.5 piety, +25% piety mult, +0.5 dynasty prestige, +1.0 health, +10 life expectancy, +5% genetic inheritance & random chance | +0.5 dev growth, +25% dev factor, +0.5 control growth |
+| **VI** | `bm_blood_temple_06` | **Blood Pantheon** | 4+ (Non-Tribal) | 1200g | 4 yrs | +3.0 piety, +30% piety mult, +0.75 dynasty prestige, +1.2 health, +12 life expectancy, +10% genetic inheritance & random chance | +0.6 dev growth, +30% dev factor, +0.6 control growth |
+| **VII** | `bm_blood_temple_07` | **Blood Acropolis** | 5 (Non-Tribal) | 1600g | 5 yrs | +4.0 piety, +40% piety mult, +1.0 dynasty prestige, +1.4 health, +14 life expectancy, +15% genetic inheritance & random chance, +2 prowess | +0.8 dev growth, +40% dev factor, +0.8 control growth, +2 fort level, +5 defender advantage |
 
 ## Where the Details Live
 
@@ -77,4 +76,4 @@ Regular buildings constructible in any holding (castles, cities, temples, and tr
 | Scheme murder Capstone hook (Hulinhjálmur) | `common/on_action/bm_scheme_on_actions.txt` |
 | Story custom localization | `common/customizable_localization/bm_blood_mage_story_custom_loc.txt` |
 | Localization | `localization/english/bm_blood_runes_l_english.yml`, `bm_modifiers_l_english.yml`, `bm_blood_mage_story_l_english.yml` |
-| Blood Temple buildings | `common/buildings/bm_buildings.txt`, `localization/english/bm_buildings_l_english.yml`, `gfx/interface/icons/building_types/bm_blood_temple.dds` |
+| Blood Temple buildings | `common/buildings/bm_duchy_buildings.txt`, `localization/english/bm_buildings_l_english.yml`, `gfx/interface/icons/building_types/bm_blood_temple.dds` |

@@ -15,7 +15,7 @@ Context: `docs-ai/architecture/blood-mage-religions.md`, [ck3-religions](../../r
 3. Holy sites: define in `holy_site_types/`. Use `county_holder_character_modifier` (local) and `faith_character_modifier` (eminent).
 4. Heritage conversion: hook into `common/scripted_effects/bm_religion_conversion_effects.txt`.
 5. English loc: `<faith>`, `_adj`, `_adherent`, `_adherent_plural`, `_desc`, god and afterlife keys.
-6. Update docs, `CHANGELOG.md`, branch context; validate.
+6. Finish via skill `manage-pr`.
 
 ## Verify
 
