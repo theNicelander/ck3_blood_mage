@@ -24,26 +24,49 @@
                 has_trait = lifestyle_blood_knight
             }
         }
-        NOT = { scope:actor = scope:recipient }
-        scope:recipient = {
-            OR = {
-                bm_is_valid_positive_magic_target_trigger = { ACTOR = scope:actor }
-                is_imprisoned_by = scope:actor
+        OR = {
+            AND = {
+                scope:actor = scope:recipient
+                scope:actor = { has_character_modifier = lifedrained_modifier }
+            }
+            AND = {
+                NOT = { scope:actor = scope:recipient }
+                scope:recipient = {
+                    OR = {
+                        has_character_modifier = lifedrained_modifier
+                        bm_is_valid_positive_magic_target_trigger = { ACTOR = scope:actor }
+                        is_imprisoned_by = scope:actor
+                    }
+                }
             }
         }
     }
     is_valid_showing_failures_only = {
-        custom_description = {
-            text = "grant_lifeforce_interaction_requirement"
-            scope:actor = {
-                OR = {
-                    AND = {
-                        has_character_modifier = lifeforce_modifier_minor
-                        piety >= lifedrain_piety_cost_minor
-                    }
-                    AND = {
-                        has_character_modifier = lifeforce_modifier_major
-                        piety >= lifedrain_piety_cost_minor
+        trigger_if = {
+            limit = {
+                scope:recipient = { has_character_modifier = lifedrained_modifier }
+            }
+            custom_description = {
+                text = "grant_lifeforce_reverse_lifedrain_requirement"
+                scope:actor = {
+                    has_character_modifier = lifeforce_modifier_major
+                    piety >= lifedrain_piety_cost_minor
+                }
+            }
+        }
+        trigger_else = {
+            custom_description = {
+                text = "grant_lifeforce_interaction_requirement"
+                scope:actor = {
+                    OR = {
+                        AND = {
+                            has_character_modifier = lifeforce_modifier_minor
+                            piety >= lifedrain_piety_cost_minor
+                        }
+                        AND = {
+                            has_character_modifier = lifeforce_modifier_major
+                            piety >= lifedrain_piety_cost_minor
+                        }
                     }
                 }
             }
@@ -55,7 +78,9 @@
     send_option = { # Give minor
         localization = grant_lifeforce_interaction.grant_minor
         flag = grant_minor
-        is_shown = { always = yes }
+        is_shown = {
+            NOT = { scope:actor = scope:recipient }
+        }
         is_valid = {
             scope:actor = {
                 has_character_modifier = lifeforce_modifier_minor
@@ -75,7 +100,9 @@
     send_option = { # Give major
         localization = grant_lifeforce_interaction.grant_major
         flag = grant_major
-        is_shown = { always = yes }
+        is_shown = {
+            NOT = { scope:actor = scope:recipient }
+        }
         is_valid = {
             scope:actor = {
                 has_character_modifier = lifeforce_modifier_major
@@ -132,10 +159,13 @@
                         remove_character_modifier = lifedrained_modifier
                         remove_character_modifier = recently_lifedrained_modifier
                         add_character_modifier = lifeforce_modifier_minor
-                        add_opinion = {
-                            target = scope:actor
-                            modifier = magic_opinion_positive
-                            opinion = 20
+                        trigger_if = {
+                            limit = { NOT = { this = scope:actor } }
+                            add_opinion = {
+                                target = scope:actor
+                                modifier = magic_opinion_positive
+                                opinion = 20
+                            }
                         }
                     }
                     remove_character_modifier = lifeforce_modifier_major
@@ -145,8 +175,11 @@
                     }
                     hidden_effect = {
                         bm_recount_lifeforce_stacks_effect = yes
-                        scope:recipient = {
-                            bm_recount_lifeforce_stacks_effect = yes
+                        trigger_if = {
+                            limit = { NOT = { scope:recipient = scope:actor } }
+                            scope:recipient = {
+                                bm_recount_lifeforce_stacks_effect = yes
+                            }
                         }
                     }
                 }
@@ -219,6 +252,7 @@
     }
     # AI restores lifedrained positive targets
     ai_targets = {
+        ai_recipients = self
         ai_recipients = dynasty
         ai_recipients = spouses
         ai_recipients = family
