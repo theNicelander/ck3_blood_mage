@@ -49,10 +49,10 @@ Duchy capital buildings constructible by rulers with `lifestyle_blood_mage`, `li
 
 | Tier | Building ID | Cost | Time | Upkeep | Province & Realm Bonuses |
 | --- | --- | --- | --- | --- | --- |
-| **0** | `bm_university_0` | 250g | 1 yr | -0.1 income | +0.5 piety, +5% piety mult, +0.1 dev growth, +5% dev growth factor |
-| **1** | `bm_university_1` | 500g | 2 yrs | -0.25 income | +1.0 piety, +10% piety mult, +0.2 dev growth, +10% dev growth factor, +0.1 prestige |
-| **2** | `bm_university_2` | 750g | 3 yrs | -0.5 income | +1.75 piety, +15% piety mult, +0.3 dev growth, +15% dev growth factor, +0.2 prestige |
-| **3** | `bm_university_3` | 1000g | 5 yrs | -1.0 income | +2.5 piety, +25% piety mult, +0.4 dev growth, +20% dev growth factor, +0.3 prestige |
+| **0** | `bm_university_0` | 250g | 1 yr | -0.1 income | +0.5 piety, +5% piety mult, +0.1 dev growth, +5% dev growth factor, +0.1 control growth |
+| **1** | `bm_university_1` | 500g | 2 yrs | -0.25 income | +1.0 piety, +10% piety mult, +0.2 dev growth, +10% dev growth factor, +0.2 control growth, +0.1 prestige |
+| **2** | `bm_university_2` | 750g | 3 yrs | -0.5 income | +1.75 piety, +15% piety mult, +0.3 dev growth, +15% dev growth factor, +0.3 control growth, +0.2 prestige |
+| **3** | `bm_university_3` | 1000g | 5 yrs | -1.0 income | +2.5 piety, +25% piety mult, +0.4 dev growth, +20% dev growth factor, +0.4 control growth, +0.3 prestige |
 
 ## Where the Details Live
 
