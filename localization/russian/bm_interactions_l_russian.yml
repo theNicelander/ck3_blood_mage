@@ -17,21 +17,21 @@
 
   # Grant Lifeforce
   grant_lifeforce_interaction:0 "Даровать жизненную силу"
-  grant_lifeforce_interaction_desc:0 "Передать вашу жизненную силу персонажу [recipient.GetShortUINameNoTooltip]."
+  grant_lifeforce_interaction_desc:0 "Передать жизненную силу персонажу [recipient.GetShortUINameNoTooltip] или восстановить её после недавнего вытягивания."
   grant_lifeforce_interaction.grant_minor:0 "Даровать малую жизненную силу"
   grant_lifeforce_interaction.grant_major:0 "Даровать большую жизненную силу"
   grant_lifeforce_interaction.toast:0 "Я передаю жизненную силу персонажу [recipient.GetShortUINameNoTooltip]"
-  grant_lifeforce_interaction_requirement:0 "Чтобы даровать жизненную силу, необходим один из запасов: [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] или [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]."
-  NOT_grant_lifeforce_interaction_requirement:0 "Чтобы даровать жизненную силу, необходим один из запасов: [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] или [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]."
+  grant_lifeforce_interaction_requirement:0 "Чтобы даровать жизненную силу, требуется [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] и 25 [piety|E] либо [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] и 25 [piety|E]."
+  NOT_grant_lifeforce_interaction_requirement:0 "Чтобы даровать жизненную силу, требуется [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] и 25 [piety|E] либо [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] и 25 [piety|E]."
 
 
   # Reverse lifedrained
   grant_lifeforce_interaction_reversed:0 "Обратить вытягивание жизненной силы"
-  grant_lifeforce_interaction_reversed_desc:0 "На персонаже [recipient.GetShortUINameNoTooltip] действует [GetModifier('lifedrained_modifier').GetNameWithTooltip], но я могу вернуть отнятую жизненную силу"
+  grant_lifeforce_interaction_reversed_desc:0 "Потратить [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] и 25 [piety|E], чтобы снять [GetModifier('lifedrained_modifier').GetNameWithTooltip] с персонажа [recipient.GetShortUINameNoTooltip] и даровать [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip]."
 
   # Cure illness
   bm_heal_ailment:0 "Исцелить недуг"
-  bm_heal_ailment_desc:0 "Провести ритуал крови: [recipient.GetShortUINameNoTooltip] избавится от выбранной раны, болезни или недуга."
+  bm_heal_ailment_desc:0 "Провести ритуал крови: [recipient.GetShortUINameNoTooltip] избавится от выбранной раны, болезни, старческого недуга или порока стресса."
   bm_heal_ailment_tooltip:0 "Провести исцеляющий ритуал магии крови."
   bm_heal_ailment_resource_requirement_tt:0 "У вас должно быть достаточно жизненной силы и благочестия, чтобы исцелить хотя бы один недуг персонажа [recipient.GetShortUINamePossessive]."
 
@@ -59,11 +59,11 @@
   bm_battle_victory_lifeforce_tt:0 "Из павших врагов на победном поле боя добыта [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip]"
 
   # Bless Kin
-  bm_bless_bloodline_interaction:0 "Благословить кровь родича"
-  bm_bless_bloodline_interaction_desc:0 "Наполнить ребёнка или родича вашего дома живительной магией крови, благословляя его тело и разум и совершенствуя ваше владение родословной."
+  bm_bless_bloodline_interaction:0 "Благословить кровь"
+  bm_bless_bloodline_interaction_desc:0 "Наполнить жизненной силой ребёнка, родича по династии или присягнувшего рыцаря, благословляя тело и разум."
   bm_recipient_already_blessed:0 "Кровь цели уже благословлена"
-  bm_bless_bloodline_toast:0 "Кровь родича благословлена"
-  bm_bless_bloodline_toast_tt:0 "Кровь персонажа [recipient.GetShortUINamePossessive] наполнена жизненной силой: дарована бодрость, а ваше владение родословной улучшено."
+  bm_bless_bloodline_toast:0 "Кровь благословлена"
+  bm_bless_bloodline_toast_tt:0 "Кровь персонажа [recipient.GetShortUINamePossessive] наполнена жизненной силой."
 
   # Childbirth Milestones
   bm_birth_blood_mage_child_toast:0 "Родился наследник — маг крови"
@@ -143,3 +143,6 @@
   interaction_category_bm_blood_magic:0 "Магия крови"
   BM_BLOOD_MAGIC_ACTIONS:0 "Магия крови"
   interaction_category_bm_blood_magic_filter_tag_desc:0 "Взаимодействия магии крови"
+  grant_lifeforce_interaction.reverse_lifedrain:0 "Обратить вытягивание жизненной силы"
+  grant_lifeforce_reverse_lifedrain_requirement:0 "Чтобы обратить вытягивание жизненной силы, требуется [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] и 25 [piety|E]."
+  NOT_grant_lifeforce_reverse_lifedrain_requirement:0 "Чтобы обратить вытягивание жизненной силы, требуется [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] и 25 [piety|E]."
