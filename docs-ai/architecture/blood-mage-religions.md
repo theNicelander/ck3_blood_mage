@@ -8,7 +8,7 @@ Living technical specification for the Blóðtrú religious family, cultural blo
 - **Soft Compatibility Doctrine:** Hidden doctrine `bm_blodtru_identity_doctrine` (group `bm_blodtru_identity_group`) exposes the doctrine parameter `blood_magic_cult_faith`, evaluated via `bm_is_blood_cult_faith_trigger`. Allows third-party or player-reformed faiths to integrate with blood cult mechanics without hardcoded faith tags.
 - **Shared Core Tenets & Doctrines:** All 3 faiths start with `unreformed_faith_doctrine` (can be reformed by players) and share the same 3 core tenets:
   1. **Ancestor Worship (`tenet_ancestor_worship`):** Close family opinion, dynasty prestige on birth/marriage, pilgrimage bonuses.
-  2. **Ritual Celebrations (`tenet_ritual_celebrations`):** Vassal/courtier opinion and feast piety/prestige synergy.
+  2. **Mendicant Preaching (`tenet_mendicant_preachers`):** Travel speed increase, proselytization/conversion mechanics, and humble virtue.
   3. **Literalism (`tenet_literalism`):** Learning skill scaling and scholarship virtues.
 
 ## Faith Structure, Mainline Rites & Holy Sites

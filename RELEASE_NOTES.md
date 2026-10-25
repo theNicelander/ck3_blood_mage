@@ -234,5 +234,5 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
   - **4★ -> 5★ (Mastery)**: Requires Devotion Level 4+ (Holy Person). Advancing costs 1 Devotion Level on success or critical failure (Superior magic).
   - **Embrace New Education**: Requires Devotion Level 4+ (Holy Person) and 1000 Piety + Superior Lifeforce without deducting a Devotion Level.
   - Possessed disciplines that lack the required Devotion Level are displayed grayed out with the exact unmet requirement, while unowned education disciplines remain hidden to prevent event window clipping.
-- **Blóðtrú Faith Virtues**: Added `lifestyle_blood_knight` as an explicit virtue alongside `lifestyle_blood_mage`.
+- **Blóðtrú Religion Tenets & Virtues**: Replaced the festival tenet (Ritual Celebrations) with Mendicant Preaching across all Blóðtrú faiths and mainline rites to improve travel speed, pilgrimage synergy, and local conversion; removed Blood Mage and Blood Knight as religion virtues to eliminate UI bloat and clutter in faith and trait displays.
 - **Repository Integrity**: Updated repo validation tools with strict multi-BOM and embedded BOM detection to prevent file encoding regressions.
