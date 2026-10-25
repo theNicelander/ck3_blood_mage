@@ -18,6 +18,7 @@ CK3 script fails silently. Follow patterns already in this repo and in vanilla 1
 - **Nothing hidden, but often unavailable (Always show grayed out)**: Spells, rites, and character options should remain visible and grayed out (`show_as_unavailable = { ... }`) whenever possible so players can always see what capabilities exist and what requirements (Lifeforce, Piety, Devotion, Cooldown) are needed to reach them. Only hide an option when its prerequisite stage has not been reached or when it has been permanently completed or superseded.
 - **Clarify before building**: When making plans, always ask multiple follow-up questions. User ideas are often rough, exploratory, or ungrounded; never run on unverified assumptions—clarify ambiguities and explicitly state assumptions before implementing.
 - **Commit and push planned work**: Plans must always conclude with committing and pushing the changes at the end. Since plans are well thought out, commit and push the finished implementation (`git push origin <branch>`); any subsequent adjustments, user feedback, or follow-up iterations belong in a separate commit and push. Commits must strictly include only relevant files modified in your conversation. Always push immediately after committing.
+- **Planner vs. Execution Engine (Gemini Argon)**: If the active model is Gemini Argon, it must **never** edit code, create or modify files, or execute implementation steps. Gemini Argon is strictly a planner and investigator—it can only inspect the codebase, investigate issues, ask clarifying questions, and design plans. It is never the execution engine.
 
 ## Context layers
 
@@ -84,11 +85,13 @@ See `.agents/rules/ck3-localization.md` (english only, sibling keys, loc documen
 - Blanket stage (`git add .`, `git add -A`, `git commit -a`) when uncommitted changes exist from other agents or tasks. Multiple AIs work in parallel on this repo: only stage, commit, and push files modified in your current conversation. "Commit ignoring other changes" means leave other modified files untouched and uncommitted, never create a separate branch.
 - Execute plans on unverified assumptions without asking clarifying follow-up questions first.
 - Create plans without a final commit and push step, or leave planned changes uncommitted or unpushed upon completion.
+- Edit code, modify files, or execute implementation changes if the active model is Gemini Argon. Gemini Argon is strictly a planner and investigator, never the execution engine.
 
 ## Workflow
 
 Multiple AIs work in parallel on this repo, so keep in mind that there maybe other changes in the branch. If that's the case, ingore them unless relevant to you. Don't commit files you didn't touch, unless asked to.
 
+0. **Model check (Gemini Argon)**: If running as Gemini Argon, NEVER edit code or modify files. You are strictly a planner and investigator: only inspect the codebase, answer questions, clarify requirements, and design execution plans. Stop before executing.
 1. `git branch --show-current`; read `docs-ai/branch-context/<branch>.md` (**create if missing**, see `pr-context.md`), matching rule(s), and matching `docs-ai/architecture/*.md` (start at its `README.md`).
 2. Plan & clarify: when making plans, always ask multiple follow-up questions. Probe ungrounded ideas, confirm assumptions, and clarify ambiguities before coding. Plans must always conclude with committing and pushing at the end. Smallest change that works. Check existing identifiers with `grep -rn`.
 3. Use the matching skill for the task (`add-blood-magic-decision`, `add-decision-option-widget`, `add-faith`, `add-trait-track`, `add-game-rule`, `update-release-notes`, `manage-pr`).
