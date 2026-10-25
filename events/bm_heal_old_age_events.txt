@@ -20,7 +20,32 @@ bm_heal_old_age.0001 = {
 
 	# --- Infirm ---
 	option = {
-		name = bm_heal_old_age.0001.infirm_minor
+		name = {
+			trigger = {
+				scope:recipient = {
+					has_trait_xp = {
+						trait = infirm
+						track = infirm
+						value <= 20
+					}
+				}
+			}
+			text = bm_heal_old_age.0001.infirm_minor_cure
+		}
+		name = {
+			trigger = {
+				scope:recipient = {
+					NOT = {
+						has_trait_xp = {
+							trait = infirm
+							track = infirm
+							value <= 20
+						}
+					}
+				}
+			}
+			text = bm_heal_old_age.0001.infirm_minor
+		}
 		trigger = {
 			scope:recipient = { has_trait = infirm }
 			has_character_modifier = lifeforce_modifier_minor
@@ -29,21 +54,46 @@ bm_heal_old_age.0001 = {
 		show_as_unavailable = {
 			scope:recipient = { has_trait = infirm }
 		}
-		send_interface_toast = {
-			type = event_toast_effect_good
-			title = bm_heal_old_age_toast_treatment_title
-			left_icon = root
-			right_icon = scope:recipient
-			scope:recipient = {
-				add_trait_xp = {
-					trait = infirm
-					track = infirm
-					value = -20
+		if = {
+			limit = {
+				scope:recipient = {
+					has_trait_xp = {
+						trait = infirm
+						track = infirm
+						value <= 20
+					}
 				}
 			}
-			bm_heal_old_age_minor_cost_effect = yes
-			bm_heal_minor_opinion_effect = yes
-			hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_heal_old_age_toast_cure_title
+				left_icon = root
+				right_icon = scope:recipient
+				scope:recipient = {
+					remove_trait = infirm
+				}
+				bm_heal_old_age_minor_cost_effect = yes
+				bm_heal_minor_opinion_effect = yes
+				hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+			}
+		}
+		else = {
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_heal_old_age_toast_treatment_title
+				left_icon = root
+				right_icon = scope:recipient
+				scope:recipient = {
+					add_trait_xp = {
+						trait = infirm
+						track = infirm
+						value = -20
+					}
+				}
+				bm_heal_old_age_minor_cost_effect = yes
+				bm_heal_minor_opinion_effect = yes
+				hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+			}
 		}
 		ai_chance = {
 			base = 60
@@ -55,7 +105,32 @@ bm_heal_old_age.0001 = {
 	}
 
 	option = {
-		name = bm_heal_old_age.0001.infirm_major
+		name = {
+			trigger = {
+				scope:recipient = {
+					has_trait_xp = {
+						trait = infirm
+						track = infirm
+						value <= 50
+					}
+				}
+			}
+			text = bm_heal_old_age.0001.infirm_major_cure
+		}
+		name = {
+			trigger = {
+				scope:recipient = {
+					NOT = {
+						has_trait_xp = {
+							trait = infirm
+							track = infirm
+							value <= 50
+						}
+					}
+				}
+			}
+			text = bm_heal_old_age.0001.infirm_major
+		}
 		trigger = {
 			scope:recipient = { has_trait = infirm }
 			has_character_modifier = lifeforce_modifier_major
@@ -64,62 +139,49 @@ bm_heal_old_age.0001 = {
 		show_as_unavailable = {
 			scope:recipient = { has_trait = infirm }
 		}
-		send_interface_toast = {
-			type = event_toast_effect_good
-			title = bm_heal_old_age_toast_treatment_title
-			left_icon = root
-			right_icon = scope:recipient
-			scope:recipient = {
-				add_trait_xp = {
-					trait = infirm
-					track = infirm
-					value = -50
+		if = {
+			limit = {
+				scope:recipient = {
+					has_trait_xp = {
+						trait = infirm
+						track = infirm
+						value <= 50
+					}
 				}
 			}
-			bm_heal_old_age_major_cost_effect = yes
-			bm_heal_major_opinion_effect = yes
-			hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_heal_old_age_toast_cure_title
+				left_icon = root
+				right_icon = scope:recipient
+				scope:recipient = {
+					remove_trait = infirm
+				}
+				bm_heal_old_age_major_cost_effect = yes
+				bm_heal_major_opinion_effect = yes
+				hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+			}
+		}
+		else = {
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_heal_old_age_toast_treatment_title
+				left_icon = root
+				right_icon = scope:recipient
+				scope:recipient = {
+					add_trait_xp = {
+						trait = infirm
+						track = infirm
+						value = -50
+					}
+				}
+				bm_heal_old_age_major_cost_effect = yes
+				bm_heal_major_opinion_effect = yes
+				hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+			}
 		}
 		ai_chance = {
 			base = 80
-			modifier = {
-				factor = 2
-				scope:recipient = root
-			}
-		}
-	}
-
-	option = {
-		name = bm_heal_old_age.0001.infirm_cure
-		trigger = {
-			scope:recipient = {
-				has_trait = infirm
-				has_trait_xp = {
-					trait = infirm
-					track = infirm
-					value < 20
-				}
-			}
-			has_character_modifier = lifeforce_modifier_major
-			piety >= heal_old_age_cost_major
-		}
-		show_as_unavailable = {
-			scope:recipient = { has_trait = infirm }
-		}
-		send_interface_toast = {
-			type = event_toast_effect_good
-			title = bm_heal_old_age_toast_cure_title
-			left_icon = root
-			right_icon = scope:recipient
-			scope:recipient = {
-				remove_trait = infirm
-			}
-			bm_heal_old_age_major_cost_effect = yes
-			bm_heal_major_opinion_effect = yes
-			hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
-		}
-		ai_chance = {
-			base = 100
 			modifier = {
 				factor = 2
 				scope:recipient = root
@@ -129,7 +191,32 @@ bm_heal_old_age.0001 = {
 
 	# --- Withering Mind ---
 	option = {
-		name = bm_heal_old_age.0001.withering_mind_minor
+		name = {
+			trigger = {
+				scope:recipient = {
+					has_trait_xp = {
+						trait = withering_mind
+						track = withering_mind
+						value <= 20
+					}
+				}
+			}
+			text = bm_heal_old_age.0001.withering_mind_minor_cure
+		}
+		name = {
+			trigger = {
+				scope:recipient = {
+					NOT = {
+						has_trait_xp = {
+							trait = withering_mind
+							track = withering_mind
+							value <= 20
+						}
+					}
+				}
+			}
+			text = bm_heal_old_age.0001.withering_mind_minor
+		}
 		trigger = {
 			scope:recipient = { has_trait = withering_mind }
 			has_character_modifier = lifeforce_modifier_minor
@@ -138,21 +225,46 @@ bm_heal_old_age.0001 = {
 		show_as_unavailable = {
 			scope:recipient = { has_trait = withering_mind }
 		}
-		send_interface_toast = {
-			type = event_toast_effect_good
-			title = bm_heal_old_age_toast_treatment_title
-			left_icon = root
-			right_icon = scope:recipient
-			scope:recipient = {
-				add_trait_xp = {
-					trait = withering_mind
-					track = withering_mind
-					value = -20
+		if = {
+			limit = {
+				scope:recipient = {
+					has_trait_xp = {
+						trait = withering_mind
+						track = withering_mind
+						value <= 20
+					}
 				}
 			}
-			bm_heal_old_age_minor_cost_effect = yes
-			bm_heal_minor_opinion_effect = yes
-			hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_heal_old_age_toast_cure_title
+				left_icon = root
+				right_icon = scope:recipient
+				scope:recipient = {
+					remove_trait = withering_mind
+				}
+				bm_heal_old_age_minor_cost_effect = yes
+				bm_heal_minor_opinion_effect = yes
+				hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+			}
+		}
+		else = {
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_heal_old_age_toast_treatment_title
+				left_icon = root
+				right_icon = scope:recipient
+				scope:recipient = {
+					add_trait_xp = {
+						trait = withering_mind
+						track = withering_mind
+						value = -20
+					}
+				}
+				bm_heal_old_age_minor_cost_effect = yes
+				bm_heal_minor_opinion_effect = yes
+				hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+			}
 		}
 		ai_chance = {
 			base = 60
@@ -164,7 +276,32 @@ bm_heal_old_age.0001 = {
 	}
 
 	option = {
-		name = bm_heal_old_age.0001.withering_mind_major
+		name = {
+			trigger = {
+				scope:recipient = {
+					has_trait_xp = {
+						trait = withering_mind
+						track = withering_mind
+						value <= 50
+					}
+				}
+			}
+			text = bm_heal_old_age.0001.withering_mind_major_cure
+		}
+		name = {
+			trigger = {
+				scope:recipient = {
+					NOT = {
+						has_trait_xp = {
+							trait = withering_mind
+							track = withering_mind
+							value <= 50
+						}
+					}
+				}
+			}
+			text = bm_heal_old_age.0001.withering_mind_major
+		}
 		trigger = {
 			scope:recipient = { has_trait = withering_mind }
 			has_character_modifier = lifeforce_modifier_major
@@ -173,62 +310,49 @@ bm_heal_old_age.0001 = {
 		show_as_unavailable = {
 			scope:recipient = { has_trait = withering_mind }
 		}
-		send_interface_toast = {
-			type = event_toast_effect_good
-			title = bm_heal_old_age_toast_treatment_title
-			left_icon = root
-			right_icon = scope:recipient
-			scope:recipient = {
-				add_trait_xp = {
-					trait = withering_mind
-					track = withering_mind
-					value = -50
+		if = {
+			limit = {
+				scope:recipient = {
+					has_trait_xp = {
+						trait = withering_mind
+						track = withering_mind
+						value <= 50
+					}
 				}
 			}
-			bm_heal_old_age_major_cost_effect = yes
-			bm_heal_major_opinion_effect = yes
-			hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_heal_old_age_toast_cure_title
+				left_icon = root
+				right_icon = scope:recipient
+				scope:recipient = {
+					remove_trait = withering_mind
+				}
+				bm_heal_old_age_major_cost_effect = yes
+				bm_heal_major_opinion_effect = yes
+				hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+			}
+		}
+		else = {
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_heal_old_age_toast_treatment_title
+				left_icon = root
+				right_icon = scope:recipient
+				scope:recipient = {
+					add_trait_xp = {
+						trait = withering_mind
+						track = withering_mind
+						value = -50
+					}
+				}
+				bm_heal_old_age_major_cost_effect = yes
+				bm_heal_major_opinion_effect = yes
+				hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+			}
 		}
 		ai_chance = {
 			base = 80
-			modifier = {
-				factor = 2
-				scope:recipient = root
-			}
-		}
-	}
-
-	option = {
-		name = bm_heal_old_age.0001.withering_mind_cure
-		trigger = {
-			scope:recipient = {
-				has_trait = withering_mind
-				has_trait_xp = {
-					trait = withering_mind
-					track = withering_mind
-					value < 20
-				}
-			}
-			has_character_modifier = lifeforce_modifier_major
-			piety >= heal_old_age_cost_major
-		}
-		show_as_unavailable = {
-			scope:recipient = { has_trait = withering_mind }
-		}
-		send_interface_toast = {
-			type = event_toast_effect_good
-			title = bm_heal_old_age_toast_cure_title
-			left_icon = root
-			right_icon = scope:recipient
-			scope:recipient = {
-				remove_trait = withering_mind
-			}
-			bm_heal_old_age_major_cost_effect = yes
-			bm_heal_major_opinion_effect = yes
-			hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
-		}
-		ai_chance = {
-			base = 100
 			modifier = {
 				factor = 2
 				scope:recipient = root
@@ -238,7 +362,32 @@ bm_heal_old_age.0001 = {
 
 	# --- Clouded Eyes ---
 	option = {
-		name = bm_heal_old_age.0001.clouded_eyes_minor
+		name = {
+			trigger = {
+				scope:recipient = {
+					has_trait_xp = {
+						trait = clouded_eyes
+						track = clouded_eyes
+						value <= 20
+					}
+				}
+			}
+			text = bm_heal_old_age.0001.clouded_eyes_minor_cure
+		}
+		name = {
+			trigger = {
+				scope:recipient = {
+					NOT = {
+						has_trait_xp = {
+							trait = clouded_eyes
+							track = clouded_eyes
+							value <= 20
+						}
+					}
+				}
+			}
+			text = bm_heal_old_age.0001.clouded_eyes_minor
+		}
 		trigger = {
 			scope:recipient = { has_trait = clouded_eyes }
 			has_character_modifier = lifeforce_modifier_minor
@@ -247,21 +396,46 @@ bm_heal_old_age.0001 = {
 		show_as_unavailable = {
 			scope:recipient = { has_trait = clouded_eyes }
 		}
-		send_interface_toast = {
-			type = event_toast_effect_good
-			title = bm_heal_old_age_toast_treatment_title
-			left_icon = root
-			right_icon = scope:recipient
-			scope:recipient = {
-				add_trait_xp = {
-					trait = clouded_eyes
-					track = clouded_eyes
-					value = -20
+		if = {
+			limit = {
+				scope:recipient = {
+					has_trait_xp = {
+						trait = clouded_eyes
+						track = clouded_eyes
+						value <= 20
+					}
 				}
 			}
-			bm_heal_old_age_minor_cost_effect = yes
-			bm_heal_minor_opinion_effect = yes
-			hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_heal_old_age_toast_cure_title
+				left_icon = root
+				right_icon = scope:recipient
+				scope:recipient = {
+					remove_trait = clouded_eyes
+				}
+				bm_heal_old_age_minor_cost_effect = yes
+				bm_heal_minor_opinion_effect = yes
+				hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+			}
+		}
+		else = {
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_heal_old_age_toast_treatment_title
+				left_icon = root
+				right_icon = scope:recipient
+				scope:recipient = {
+					add_trait_xp = {
+						trait = clouded_eyes
+						track = clouded_eyes
+						value = -20
+					}
+				}
+				bm_heal_old_age_minor_cost_effect = yes
+				bm_heal_minor_opinion_effect = yes
+				hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+			}
 		}
 		ai_chance = {
 			base = 60
@@ -273,7 +447,32 @@ bm_heal_old_age.0001 = {
 	}
 
 	option = {
-		name = bm_heal_old_age.0001.clouded_eyes_major
+		name = {
+			trigger = {
+				scope:recipient = {
+					has_trait_xp = {
+						trait = clouded_eyes
+						track = clouded_eyes
+						value <= 50
+					}
+				}
+			}
+			text = bm_heal_old_age.0001.clouded_eyes_major_cure
+		}
+		name = {
+			trigger = {
+				scope:recipient = {
+					NOT = {
+						has_trait_xp = {
+							trait = clouded_eyes
+							track = clouded_eyes
+							value <= 50
+						}
+					}
+				}
+			}
+			text = bm_heal_old_age.0001.clouded_eyes_major
+		}
 		trigger = {
 			scope:recipient = { has_trait = clouded_eyes }
 			has_character_modifier = lifeforce_modifier_major
@@ -282,62 +481,49 @@ bm_heal_old_age.0001 = {
 		show_as_unavailable = {
 			scope:recipient = { has_trait = clouded_eyes }
 		}
-		send_interface_toast = {
-			type = event_toast_effect_good
-			title = bm_heal_old_age_toast_treatment_title
-			left_icon = root
-			right_icon = scope:recipient
-			scope:recipient = {
-				add_trait_xp = {
-					trait = clouded_eyes
-					track = clouded_eyes
-					value = -50
+		if = {
+			limit = {
+				scope:recipient = {
+					has_trait_xp = {
+						trait = clouded_eyes
+						track = clouded_eyes
+						value <= 50
+					}
 				}
 			}
-			bm_heal_old_age_major_cost_effect = yes
-			bm_heal_major_opinion_effect = yes
-			hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_heal_old_age_toast_cure_title
+				left_icon = root
+				right_icon = scope:recipient
+				scope:recipient = {
+					remove_trait = clouded_eyes
+				}
+				bm_heal_old_age_major_cost_effect = yes
+				bm_heal_major_opinion_effect = yes
+				hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+			}
+		}
+		else = {
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_heal_old_age_toast_treatment_title
+				left_icon = root
+				right_icon = scope:recipient
+				scope:recipient = {
+					add_trait_xp = {
+						trait = clouded_eyes
+						track = clouded_eyes
+						value = -50
+					}
+				}
+				bm_heal_old_age_major_cost_effect = yes
+				bm_heal_major_opinion_effect = yes
+				hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+			}
 		}
 		ai_chance = {
 			base = 80
-			modifier = {
-				factor = 2
-				scope:recipient = root
-			}
-		}
-	}
-
-	option = {
-		name = bm_heal_old_age.0001.clouded_eyes_cure
-		trigger = {
-			scope:recipient = {
-				has_trait = clouded_eyes
-				has_trait_xp = {
-					trait = clouded_eyes
-					track = clouded_eyes
-					value < 20
-				}
-			}
-			has_character_modifier = lifeforce_modifier_major
-			piety >= heal_old_age_cost_major
-		}
-		show_as_unavailable = {
-			scope:recipient = { has_trait = clouded_eyes }
-		}
-		send_interface_toast = {
-			type = event_toast_effect_good
-			title = bm_heal_old_age_toast_cure_title
-			left_icon = root
-			right_icon = scope:recipient
-			scope:recipient = {
-				remove_trait = clouded_eyes
-			}
-			bm_heal_old_age_major_cost_effect = yes
-			bm_heal_major_opinion_effect = yes
-			hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
-		}
-		ai_chance = {
-			base = 100
 			modifier = {
 				factor = 2
 				scope:recipient = root
@@ -347,7 +533,32 @@ bm_heal_old_age.0001 = {
 
 	# --- Fragile Bones ---
 	option = {
-		name = bm_heal_old_age.0001.fragile_bones_minor
+		name = {
+			trigger = {
+				scope:recipient = {
+					has_trait_xp = {
+						trait = fragile_bones
+						track = fragile_bones
+						value <= 20
+					}
+				}
+			}
+			text = bm_heal_old_age.0001.fragile_bones_minor_cure
+		}
+		name = {
+			trigger = {
+				scope:recipient = {
+					NOT = {
+						has_trait_xp = {
+							trait = fragile_bones
+							track = fragile_bones
+							value <= 20
+						}
+					}
+				}
+			}
+			text = bm_heal_old_age.0001.fragile_bones_minor
+		}
 		trigger = {
 			scope:recipient = { has_trait = fragile_bones }
 			has_character_modifier = lifeforce_modifier_minor
@@ -356,21 +567,46 @@ bm_heal_old_age.0001 = {
 		show_as_unavailable = {
 			scope:recipient = { has_trait = fragile_bones }
 		}
-		send_interface_toast = {
-			type = event_toast_effect_good
-			title = bm_heal_old_age_toast_treatment_title
-			left_icon = root
-			right_icon = scope:recipient
-			scope:recipient = {
-				add_trait_xp = {
-					trait = fragile_bones
-					track = fragile_bones
-					value = -20
+		if = {
+			limit = {
+				scope:recipient = {
+					has_trait_xp = {
+						trait = fragile_bones
+						track = fragile_bones
+						value <= 20
+					}
 				}
 			}
-			bm_heal_old_age_minor_cost_effect = yes
-			bm_heal_minor_opinion_effect = yes
-			hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_heal_old_age_toast_cure_title
+				left_icon = root
+				right_icon = scope:recipient
+				scope:recipient = {
+					remove_trait = fragile_bones
+				}
+				bm_heal_old_age_minor_cost_effect = yes
+				bm_heal_minor_opinion_effect = yes
+				hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+			}
+		}
+		else = {
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_heal_old_age_toast_treatment_title
+				left_icon = root
+				right_icon = scope:recipient
+				scope:recipient = {
+					add_trait_xp = {
+						trait = fragile_bones
+						track = fragile_bones
+						value = -20
+					}
+				}
+				bm_heal_old_age_minor_cost_effect = yes
+				bm_heal_minor_opinion_effect = yes
+				hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+			}
 		}
 		ai_chance = {
 			base = 60
@@ -382,7 +618,32 @@ bm_heal_old_age.0001 = {
 	}
 
 	option = {
-		name = bm_heal_old_age.0001.fragile_bones_major
+		name = {
+			trigger = {
+				scope:recipient = {
+					has_trait_xp = {
+						trait = fragile_bones
+						track = fragile_bones
+						value <= 50
+					}
+				}
+			}
+			text = bm_heal_old_age.0001.fragile_bones_major_cure
+		}
+		name = {
+			trigger = {
+				scope:recipient = {
+					NOT = {
+						has_trait_xp = {
+							trait = fragile_bones
+							track = fragile_bones
+							value <= 50
+						}
+					}
+				}
+			}
+			text = bm_heal_old_age.0001.fragile_bones_major
+		}
 		trigger = {
 			scope:recipient = { has_trait = fragile_bones }
 			has_character_modifier = lifeforce_modifier_major
@@ -391,62 +652,49 @@ bm_heal_old_age.0001 = {
 		show_as_unavailable = {
 			scope:recipient = { has_trait = fragile_bones }
 		}
-		send_interface_toast = {
-			type = event_toast_effect_good
-			title = bm_heal_old_age_toast_treatment_title
-			left_icon = root
-			right_icon = scope:recipient
-			scope:recipient = {
-				add_trait_xp = {
-					trait = fragile_bones
-					track = fragile_bones
-					value = -50
+		if = {
+			limit = {
+				scope:recipient = {
+					has_trait_xp = {
+						trait = fragile_bones
+						track = fragile_bones
+						value <= 50
+					}
 				}
 			}
-			bm_heal_old_age_major_cost_effect = yes
-			bm_heal_major_opinion_effect = yes
-			hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_heal_old_age_toast_cure_title
+				left_icon = root
+				right_icon = scope:recipient
+				scope:recipient = {
+					remove_trait = fragile_bones
+				}
+				bm_heal_old_age_major_cost_effect = yes
+				bm_heal_major_opinion_effect = yes
+				hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+			}
+		}
+		else = {
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_heal_old_age_toast_treatment_title
+				left_icon = root
+				right_icon = scope:recipient
+				scope:recipient = {
+					add_trait_xp = {
+						trait = fragile_bones
+						track = fragile_bones
+						value = -50
+					}
+				}
+				bm_heal_old_age_major_cost_effect = yes
+				bm_heal_major_opinion_effect = yes
+				hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+			}
 		}
 		ai_chance = {
 			base = 80
-			modifier = {
-				factor = 2
-				scope:recipient = root
-			}
-		}
-	}
-
-	option = {
-		name = bm_heal_old_age.0001.fragile_bones_cure
-		trigger = {
-			scope:recipient = {
-				has_trait = fragile_bones
-				has_trait_xp = {
-					trait = fragile_bones
-					track = fragile_bones
-					value < 20
-				}
-			}
-			has_character_modifier = lifeforce_modifier_major
-			piety >= heal_old_age_cost_major
-		}
-		show_as_unavailable = {
-			scope:recipient = { has_trait = fragile_bones }
-		}
-		send_interface_toast = {
-			type = event_toast_effect_good
-			title = bm_heal_old_age_toast_cure_title
-			left_icon = root
-			right_icon = scope:recipient
-			scope:recipient = {
-				remove_trait = fragile_bones
-			}
-			bm_heal_old_age_major_cost_effect = yes
-			bm_heal_major_opinion_effect = yes
-			hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
-		}
-		ai_chance = {
-			base = 100
 			modifier = {
 				factor = 2
 				scope:recipient = root
@@ -456,7 +704,32 @@ bm_heal_old_age.0001 = {
 
 	# --- Faltering Heart ---
 	option = {
-		name = bm_heal_old_age.0001.faltering_heart_minor
+		name = {
+			trigger = {
+				scope:recipient = {
+					has_trait_xp = {
+						trait = faltering_heart
+						track = faltering_heart
+						value <= 20
+					}
+				}
+			}
+			text = bm_heal_old_age.0001.faltering_heart_minor_cure
+		}
+		name = {
+			trigger = {
+				scope:recipient = {
+					NOT = {
+						has_trait_xp = {
+							trait = faltering_heart
+							track = faltering_heart
+							value <= 20
+						}
+					}
+				}
+			}
+			text = bm_heal_old_age.0001.faltering_heart_minor
+		}
 		trigger = {
 			scope:recipient = { has_trait = faltering_heart }
 			has_character_modifier = lifeforce_modifier_minor
@@ -465,21 +738,46 @@ bm_heal_old_age.0001 = {
 		show_as_unavailable = {
 			scope:recipient = { has_trait = faltering_heart }
 		}
-		send_interface_toast = {
-			type = event_toast_effect_good
-			title = bm_heal_old_age_toast_treatment_title
-			left_icon = root
-			right_icon = scope:recipient
-			scope:recipient = {
-				add_trait_xp = {
-					trait = faltering_heart
-					track = faltering_heart
-					value = -20
+		if = {
+			limit = {
+				scope:recipient = {
+					has_trait_xp = {
+						trait = faltering_heart
+						track = faltering_heart
+						value <= 20
+					}
 				}
 			}
-			bm_heal_old_age_minor_cost_effect = yes
-			bm_heal_minor_opinion_effect = yes
-			hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_heal_old_age_toast_cure_title
+				left_icon = root
+				right_icon = scope:recipient
+				scope:recipient = {
+					remove_trait = faltering_heart
+				}
+				bm_heal_old_age_minor_cost_effect = yes
+				bm_heal_minor_opinion_effect = yes
+				hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+			}
+		}
+		else = {
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_heal_old_age_toast_treatment_title
+				left_icon = root
+				right_icon = scope:recipient
+				scope:recipient = {
+					add_trait_xp = {
+						trait = faltering_heart
+						track = faltering_heart
+						value = -20
+					}
+				}
+				bm_heal_old_age_minor_cost_effect = yes
+				bm_heal_minor_opinion_effect = yes
+				hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+			}
 		}
 		ai_chance = {
 			base = 60
@@ -491,7 +789,32 @@ bm_heal_old_age.0001 = {
 	}
 
 	option = {
-		name = bm_heal_old_age.0001.faltering_heart_major
+		name = {
+			trigger = {
+				scope:recipient = {
+					has_trait_xp = {
+						trait = faltering_heart
+						track = faltering_heart
+						value <= 50
+					}
+				}
+			}
+			text = bm_heal_old_age.0001.faltering_heart_major_cure
+		}
+		name = {
+			trigger = {
+				scope:recipient = {
+					NOT = {
+						has_trait_xp = {
+							trait = faltering_heart
+							track = faltering_heart
+							value <= 50
+						}
+					}
+				}
+			}
+			text = bm_heal_old_age.0001.faltering_heart_major
+		}
 		trigger = {
 			scope:recipient = { has_trait = faltering_heart }
 			has_character_modifier = lifeforce_modifier_major
@@ -500,62 +823,49 @@ bm_heal_old_age.0001 = {
 		show_as_unavailable = {
 			scope:recipient = { has_trait = faltering_heart }
 		}
-		send_interface_toast = {
-			type = event_toast_effect_good
-			title = bm_heal_old_age_toast_treatment_title
-			left_icon = root
-			right_icon = scope:recipient
-			scope:recipient = {
-				add_trait_xp = {
-					trait = faltering_heart
-					track = faltering_heart
-					value = -50
+		if = {
+			limit = {
+				scope:recipient = {
+					has_trait_xp = {
+						trait = faltering_heart
+						track = faltering_heart
+						value <= 50
+					}
 				}
 			}
-			bm_heal_old_age_major_cost_effect = yes
-			bm_heal_major_opinion_effect = yes
-			hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_heal_old_age_toast_cure_title
+				left_icon = root
+				right_icon = scope:recipient
+				scope:recipient = {
+					remove_trait = faltering_heart
+				}
+				bm_heal_old_age_major_cost_effect = yes
+				bm_heal_major_opinion_effect = yes
+				hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+			}
+		}
+		else = {
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_heal_old_age_toast_treatment_title
+				left_icon = root
+				right_icon = scope:recipient
+				scope:recipient = {
+					add_trait_xp = {
+						trait = faltering_heart
+						track = faltering_heart
+						value = -50
+					}
+				}
+				bm_heal_old_age_major_cost_effect = yes
+				bm_heal_major_opinion_effect = yes
+				hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
+			}
 		}
 		ai_chance = {
 			base = 80
-			modifier = {
-				factor = 2
-				scope:recipient = root
-			}
-		}
-	}
-
-	option = {
-		name = bm_heal_old_age.0001.faltering_heart_cure
-		trigger = {
-			scope:recipient = {
-				has_trait = faltering_heart
-				has_trait_xp = {
-					trait = faltering_heart
-					track = faltering_heart
-					value < 20
-				}
-			}
-			has_character_modifier = lifeforce_modifier_major
-			piety >= heal_old_age_cost_major
-		}
-		show_as_unavailable = {
-			scope:recipient = { has_trait = faltering_heart }
-		}
-		send_interface_toast = {
-			type = event_toast_effect_good
-			title = bm_heal_old_age_toast_cure_title
-			left_icon = root
-			right_icon = scope:recipient
-			scope:recipient = {
-				remove_trait = faltering_heart
-			}
-			bm_heal_old_age_major_cost_effect = yes
-			bm_heal_major_opinion_effect = yes
-			hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
-		}
-		ai_chance = {
-			base = 100
 			modifier = {
 				factor = 2
 				scope:recipient = root

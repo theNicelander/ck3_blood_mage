@@ -93,14 +93,14 @@ ai_willingness_to_lifedrain = {
     modifier = {
         factor = 0
         scope:recipient = {
-            employed_as_court_position_of = scope:actor
+            any_court_position_employer = { this = scope:actor }
         }
     }
 
     # Absolute veto: Never drain blood golems
     modifier = {
         factor = 0
-        scope:recipient = { has_trait = blood_golem }
+        scope:recipient = { house ?= house:bm_house_golem }
     }
 
     # Absolute veto: Never drain friends, best friends, soulmates, lovers, or wards
