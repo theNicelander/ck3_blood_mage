@@ -43,6 +43,7 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
     - *The Stag's Last Stand*: Run down a royal stag for Minor Lifeforce and Slaughter (Knight) / Hematurgy (Mage) XP.
     - *Blades on the Lonely Road*: Test wanderers in a 4-tier bout for blood, engage in Single Combat, drain traits, or recruit.
     - *The Cairn of Forgotten Carnage*: Rare ancient sacrificial cairn yielding clean Major Lifeforce, Enlightenment XP, and Ancient XP without exhaustion penalties.
+  - **Contextual Availability Restrictions**: 'Go on a Blood Hunt' remains visible but grayed out with clear requirement tooltips whenever a character is traveling (`is_travelling = no`), participating in another activity or planning one (`is_in_activity = no`), imprisoned (`is_imprisoned = no`), or incapable (`is_incapable = no`).
   - **Dynamic Visuals**: Replaced passive portraits with active hunting and weapon stances across all encounters.
 
 ---
