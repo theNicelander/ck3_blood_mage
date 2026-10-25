@@ -141,6 +141,10 @@ bm_ritual_spar_events.0002 = {
 				add_character_modifier = {
 					modifier = lifeforce_modifier_major
 				}
+				add_character_modifier = {
+					modifier = bm_spar_honed_modifier
+					years = 5
+				}
 				if = {
 					limit = { has_trait = lifestyle_blood_knight }
 					add_blood_knight_xp = {
@@ -203,6 +207,10 @@ bm_ritual_spar_events.0002 = {
 						modifier = magic_opinion_positive
 						opinion = 15
 					}
+					add_character_modifier = {
+						modifier = bm_spar_honed_modifier
+						years = 5
+					}
 				}
 				hidden_effect = {
 					bm_recount_lifeforce_stacks_effect = yes
@@ -243,9 +251,17 @@ bm_ritual_spar_events.0002 = {
 						value = 20
 					}
 				}
+				add_character_modifier = {
+					modifier = bm_spar_honed_modifier
+					years = 5
+				}
 				scope:sc_victor = {
 					add_character_modifier = {
 						modifier = lifeforce_modifier_major
+					}
+					add_character_modifier = {
+						modifier = bm_spar_honed_modifier
+						years = 5
 					}
 					if = {
 						limit = { has_trait = lifestyle_blood_knight }

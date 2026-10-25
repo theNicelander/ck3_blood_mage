@@ -72,5 +72,25 @@ description: Core CK3 script rules, script values, and safe engine patterns (1.2
    - *Error*: AI performing forbidden interactions (e.g. lifedraining spouse, children, councillors, or knights) despite explicit `factor = 0` vetoes.
    - *Cause*: In CK3 Clausewitz script, `ai_will_do` evaluates entries in sequential order. `factor = 0` multiplies the running score to 0, but any subsequent additive modifier (`opinion_modifier`, `add = ...`) adds points back onto 0, resurrecting the score back into positive territory. Additionally, formulas like `(recipient_tier - actor_tier) * -100` evaluate to positive bonuses for unlanded courtiers.
    - *Fix*: Always place additive modifiers, opinion scalers, and trait scores at the **TOP** of the `ai_will_do` block, and place all `factor = 0` absolute vetoes at the very **BOTTOM**. For absolute safety, add hard failure checks (`trigger_if = { limit = { scope:actor = { is_ai = yes } } NOT = { ... } }`) in `is_valid_showing_failures_only`.
+10. **`trigger_else_if` Requires Terminating `trigger_else` (`trigger_else_if with no trigger_else`)**:
+   - *Error*: `[jomini_script_system.cpp:304]: Script system error! Error: trigger_else_if trigger [ trigger_else_if with no trigger_else ]` and `[jomini_trigger.cpp:261]: PostValidate of trigger 'trigger_else_if' returned false`.
+   - *Cause*: Leaving a `trigger_if ... trigger_else_if` conditional chain without a final `trigger_else = { ... }` block.
+   - *Fix*: Always close the conditional chain with `trigger_else = { always = no }` (or `always = yes` / fallback condition).
+11. **`min` / `max` Math Operators Inside `modifier` Blocks (`Unknown trigger: min`)**:
+   - *Error*: `[pdx_persistent_reader.cpp:216]: Error: "Unknown trigger: min, near line: ..."` in `weight = { modifier = { ... } }` or `ai_will_do`.
+   - *Cause*: `min` and `max` are math operators valid in script values (`value = { value = ... min = 1 }`), but inside a `modifier = { ... }` block they are parsed as triggers.
+   - *Fix*: Use `base = 1` and `modifier = { add = prowess }` to ensure non-zero floors, or calculate values inside a centralized script value.
+12. **Court Position Checking (`Unknown trigger: employed_as_court_position_of`)**:
+   - *Error*: `[pdx_persistent_reader.cpp:216]: Error: "Unknown trigger: employed_as_court_position_of"`.
+   - *Cause*: Inventing custom triggers for court positions.
+   - *Fix*: Use vanilla trigger scope `any_court_position_employer = { this = scope:actor }` (or `has_court_position = <type>` / `has_any_court_position = yes`).
+13. **Checking Traits for House-Based Entities (`Cannot find blood_golem in trait database`)**:
+   - *Error*: `[jomini_script_system.cpp:304]: Script system error! Error: has_trait trigger [ Cannot find blood_golem in trait database ]`.
+   - *Cause*: Assuming custom entities (like Blood Golems) possess a trait by the same name when they are actually tracked by dynasty house (`house:bm_house_golem`).
+   - *Fix*: Always verify trait definitions in `common/traits/`. For golems, use `house ?= house:bm_house_golem`.
+14. **Unused Static Modifiers (`was not used by the script or code but exists in the database, this is a waste`)**:
+   - *Error*: `[static_modifier.cpp:210]: Modifier 'bm_spar_honed_modifier' was not used by the script or code but exists in the database, this is a waste`.
+   - *Cause*: Defining a modifier in `common/modifiers/` that is never referenced by `add_character_modifier`, `has_character_modifier`, etc. in script.
+   - *Fix*: Hook the modifier into its corresponding event/decision effects or purge the unused modifier and its localization cleanly across the repo.
 
 Mod architecture: see `docs-ai/architecture/README.md`.

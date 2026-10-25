@@ -46,10 +46,9 @@
 				has_trait = lifestyle_blood_knight
 			}
 			weight = {
-				base = 0
+				base = 1
 				modifier = {
 					add = prowess
-					min = 1
 				}
 			}
 			save_scope_as = spar_partner_1
@@ -66,10 +65,9 @@
 					NOT = { this = scope:spar_partner_1 }
 				}
 				weight = {
-					base = 0
+					base = 1
 					modifier = {
 						add = prowess
-						min = 1
 					}
 				}
 				save_scope_as = spar_partner_2
@@ -88,10 +86,9 @@
 					NOT = { this = scope:spar_partner_2 }
 				}
 				weight = {
-					base = 0
+					base = 1
 					modifier = {
 						add = prowess
-						min = 1
 					}
 				}
 				save_scope_as = spar_partner_3

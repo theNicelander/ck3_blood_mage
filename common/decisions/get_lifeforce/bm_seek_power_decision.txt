@@ -12,6 +12,14 @@
             has_trait = lifestyle_blood_knight
         }
     }
+
+    is_valid_showing_failures_only = {
+        is_travelling = no
+        is_in_activity = no
+        is_imprisoned = no
+        is_incapable = no
+    }
+
     cooldown = { days = bm_seek_power_cooldown_days }
     effect = {
         debug_log = "BloodMagicDecision: seek_power"
@@ -20,6 +28,13 @@
         hidden_effect = {
             trigger_event = { id = seek_power.001 }
         }
+    }
+
+    ai_potential = {
+        is_travelling = no
+        is_in_activity = no
+        is_imprisoned = no
+        is_incapable = no
     }
 
     ai_check_interval = 3

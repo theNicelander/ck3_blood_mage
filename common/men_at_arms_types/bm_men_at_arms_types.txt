@@ -1,0 +1,125 @@
+﻿### Blood Magic Men-at-Arms Regiments ###
+
+@provisions_cost_infantry_moderate = 7
+@cultural_maa_extra_ai_score = 60
+
+bm_blood_berserkers = {
+	type = heavy_infantry
+
+	damage = 68
+	toughness = 20
+	pursuit = 35
+	screen = 0
+	siege_value = 0.10
+
+	terrain_bonus = {
+		taiga = { damage = 12 pursuit = 8 }
+		forest = { damage = 12 pursuit = 8 }
+		mountains = { damage = 12 pursuit = 8 }
+		desert = { damage = -8 toughness = -4 }
+		floodplains = { damage = -8 toughness = -4 }
+	}
+
+	winter_bonus = {
+		normal_winter = { damage = 10 toughness = 5 }
+		harsh_winter = { damage = 10 toughness = 5 }
+	}
+
+	counters = {
+		pikemen = 1.5
+		skirmishers = 1
+		archers = 1
+	}
+
+	should_show_when_unavailable = {
+		OR = {
+			has_trait = lifestyle_blood_mage
+			has_trait = lifestyle_blood_knight
+		}
+	}
+
+	can_recruit = {
+		OR = {
+			has_trait = lifestyle_blood_mage
+			has_trait = lifestyle_blood_knight
+		}
+		piety_level >= 2
+	}
+
+	buy_cost = {
+		piety = 150
+	}
+	low_maintenance_cost = {
+		piety = 0.40
+	}
+	high_maintenance_cost = {
+		piety = 1.35
+	}
+	provision_cost = @provisions_cost_infantry_moderate
+
+	allowed_in_hired_troops = no
+
+	stack = 100
+	ai_quality = {
+		value = @cultural_maa_extra_ai_score
+	}
+	icon = varangian_veterans
+}
+
+bm_blood_behemoths = {
+	type = elephant_cavalry
+
+	damage = 210
+	toughness = 80
+	pursuit = 0
+	screen = 0
+	siege_value = 0.25
+
+	terrain_bonus = {
+		mountains = { toughness = 15 }
+		desert_mountains = { toughness = 15 }
+		hills = { toughness = 15 }
+		drylands = { toughness = 15 }
+		wetlands = { damage = -30 toughness = -15 }
+	}
+
+	counters = {
+		heavy_infantry = 2
+		pikemen = 2
+	}
+
+	should_show_when_unavailable = {
+		OR = {
+			has_trait = lifestyle_blood_mage
+			has_trait = lifestyle_blood_knight
+		}
+	}
+
+	can_recruit = {
+		OR = {
+			has_trait = lifestyle_blood_mage
+			has_trait = lifestyle_blood_knight
+		}
+		piety_level >= 4
+	}
+
+	buy_cost = {
+		piety = 400
+	}
+	low_maintenance_cost = {
+		piety = 0.50
+	}
+	high_maintenance_cost = {
+		piety = 1.50
+	}
+	provision_cost = 0
+
+	allowed_in_hired_troops = no
+
+	stack = 25
+	hired_stack_size = 10
+	ai_quality = {
+		value = @cultural_maa_extra_ai_score
+	}
+	icon = war_elephants
+}

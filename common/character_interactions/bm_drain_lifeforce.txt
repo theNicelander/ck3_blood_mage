@@ -107,8 +107,8 @@ lifedrain_courtier_event_interaction = {
             NOT = { scope:recipient = { is_child_of = scope:actor } }
             NOT = { scope:recipient = { is_knight_of = scope:actor } }
             NOT = { scope:recipient = { is_councillor_of = scope:actor } }
-            NOT = { scope:recipient = { employed_as_court_position_of = scope:actor } }
-            NOT = { scope:recipient = { has_trait = blood_golem } }
+            NOT = { scope:recipient = { any_court_position_employer = { this = scope:actor } } }
+            NOT = { scope:recipient = { house ?= house:bm_house_golem } }
         }
     }
 
