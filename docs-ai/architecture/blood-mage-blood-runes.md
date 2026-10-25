@@ -45,17 +45,17 @@ Living technical specification for body runes, Galdrastafir staves, and blood ar
 
 ## Blood Temples Table
 
-Regular buildings constructible in any holding (castles, cities, temples, and tribal holdings) by rulers with `lifestyle_blood_mage`, `lifestyle_blood_knight`, or a `blodtru_religion` faith:
+Duchy Capital buildings (`type = duchy_capital`) constructible in duchy capital holdings by rulers holding the duchy title. Always visible in the duchy building slot (shown grayed out with clear failure tooltips when requirements are not yet met). Constructible by characters with `lifestyle_blood_mage`, `lifestyle_blood_knight`, or a `blodtru_religion` faith. Tribal rulers can construct up to Tier IV (`Blood Temple`), while Tiers V–VII require a non-tribal government and a feudalized holding (Castle, City, or Temple):
 
-| Tier | Building ID | Name | Devotion Gate (`piety_level`) | Cost | Time | Holder Bonuses (`character_modifier`) | County & Holding Bonuses (`county_modifier` / `province_modifier`) |
+| Tier | Building ID | Name | Devotion Gate (`piety_level`) & Government | Cost | Time | Holder Bonuses (`character_modifier`) | County & Holding Bonuses (`duchy_capital_county_modifier` / `province_modifier`) |
 | :---: | :--- | :--- | :---: | :---: | :---: | :--- | :--- |
-| **I** | `bm_blood_temple_01` | **Blood Altar** | None | 150g | 1 yr | +0.5 piety, +5% piety mult, +0.2 health, +2 life expectancy | +0.1 dev growth, +5% dev factor, +0.1 control growth |
-| **II** | `bm_blood_temple_02` | **Blood Shrine** | 1+ | 250g | 1.5 yrs | +1.0 piety, +10% piety mult, +0.1 dynasty prestige, +0.4 health, +4 life expectancy | +0.2 dev growth, +10% dev factor, +0.2 control growth |
-| **III** | `bm_blood_temple_03` | **Blood Monument** | 2+ | 400g | 2 yrs | +1.5 piety, +15% piety mult, +0.2 dynasty prestige, +0.6 health, +6 life expectancy | +0.3 dev growth, +15% dev factor, +0.3 control growth |
-| **IV** | `bm_blood_temple_04` | **Blood Temple** | 3+ | 600g | 2.5 yrs | +2.0 piety, +20% piety mult, +0.3 dynasty prestige, +0.8 health, +8 life expectancy | +0.4 dev growth, +20% dev factor, +0.4 control growth |
-| **V** | `bm_blood_temple_05` | **Great Blood Temple** | 3+ | 850g | 3 yrs | +2.5 piety, +25% piety mult, +0.5 dynasty prestige, +1.0 health, +10 life expectancy, +5% genetic inheritance & random chance | +0.5 dev growth, +25% dev factor, +0.5 control growth |
-| **VI** | `bm_blood_temple_06` | **Blood Pantheon** | 4+ | 1200g | 4 yrs | +3.0 piety, +30% piety mult, +0.75 dynasty prestige, +1.2 health, +12 life expectancy, +10% genetic inheritance & random chance | +0.6 dev growth, +30% dev factor, +0.6 control growth |
-| **VII** | `bm_blood_temple_07` | **Blood Acropolis** | 5 | 1600g | 5 yrs | +4.0 piety, +40% piety mult, +1.0 dynasty prestige, +1.4 health, +14 life expectancy, +15% genetic inheritance & random chance, +2 prowess | +0.8 dev growth, +40% dev factor, +0.8 control growth, +2 fort level, +5 defender advantage |
+| **I** | `bm_blood_temple_01` | **Blood Altar** | None (All Govs) | 150g | 1 yr | +0.5 piety, +5% piety mult, +0.2 health, +2 life expectancy | +0.1 dev growth, +5% dev factor, +0.1 control growth |
+| **II** | `bm_blood_temple_02` | **Blood Shrine** | 1+ (All Govs) | 250g | 1.5 yrs | +1.0 piety, +10% piety mult, +0.1 dynasty prestige, +0.4 health, +4 life expectancy | +0.2 dev growth, +10% dev factor, +0.2 control growth |
+| **III** | `bm_blood_temple_03` | **Blood Monument** | 2+ (All Govs) | 400g | 2 yrs | +1.5 piety, +15% piety mult, +0.2 dynasty prestige, +0.6 health, +6 life expectancy | +0.3 dev growth, +15% dev factor, +0.3 control growth |
+| **IV** | `bm_blood_temple_04` | **Blood Temple** | 3+ (Tribal Capstone) | 600g | 2.5 yrs | +2.0 piety, +20% piety mult, +0.3 dynasty prestige, +0.8 health, +8 life expectancy | +0.4 dev growth, +20% dev factor, +0.4 control growth |
+| **V** | `bm_blood_temple_05` | **Great Blood Temple** | 3+ (Non-Tribal) | 850g | 3 yrs | +2.5 piety, +25% piety mult, +0.5 dynasty prestige, +1.0 health, +10 life expectancy, +5% genetic inheritance & random chance | +0.5 dev growth, +25% dev factor, +0.5 control growth |
+| **VI** | `bm_blood_temple_06` | **Blood Pantheon** | 4+ (Non-Tribal) | 1200g | 4 yrs | +3.0 piety, +30% piety mult, +0.75 dynasty prestige, +1.2 health, +12 life expectancy, +10% genetic inheritance & random chance | +0.6 dev growth, +30% dev factor, +0.6 control growth |
+| **VII** | `bm_blood_temple_07` | **Blood Acropolis** | 5 (Non-Tribal) | 1600g | 5 yrs | +4.0 piety, +40% piety mult, +1.0 dynasty prestige, +1.4 health, +14 life expectancy, +15% genetic inheritance & random chance, +2 prowess | +0.8 dev growth, +40% dev factor, +0.8 control growth, +2 fort level, +5 defender advantage |
 
 ## Where the Details Live
 
@@ -77,4 +77,4 @@ Regular buildings constructible in any holding (castles, cities, temples, and tr
 | Scheme murder Capstone hook (Hulinhjálmur) | `common/on_action/bm_scheme_on_actions.txt` |
 | Story custom localization | `common/customizable_localization/bm_blood_mage_story_custom_loc.txt` |
 | Localization | `localization/english/bm_blood_runes_l_english.yml`, `bm_modifiers_l_english.yml`, `bm_blood_mage_story_l_english.yml` |
-| Blood Temple buildings | `common/buildings/bm_buildings.txt`, `localization/english/bm_buildings_l_english.yml`, `gfx/interface/icons/building_types/bm_blood_temple.dds` |
+| Blood Temple buildings | `common/buildings/bm_duchy_buildings.txt`, `localization/english/bm_buildings_l_english.yml`, `gfx/interface/icons/building_types/bm_blood_temple.dds` |

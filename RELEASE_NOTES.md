@@ -147,7 +147,7 @@ Comprehensive release notes detailing all net additions, overhauls, and gameplay
 - **Five-Tier Blood Shrine**:
   - Landless adventurers (camps) and noble families (estates) can construct and upgrade a dedicated 5-tier Blood Shrine building line.
   - Scales piety generation (+0.5 per tier, up to +2.5 monthly piety at Tier V), health, lifespan, and genetic inheritance chances, while projecting a camp-wide occult aura at half potency (+0.25 piety, +0.1 health, +1 lifespan, +2.5% genetics per tier) to all followers and courtiers.
-- **Seven-Tier Blood Temples**: Expand county development, control, piety generation, and personal longevity with 7 tiers of Blood Temple regular buildings constructible in any holding type across your domain.
+- **Seven-Tier Duchy Blood Temples**: Expand county development, control, piety generation, and personal longevity with 7 tiers of Blood Temple Duchy Capital buildings (Altar, Shrine, Monument, Temple, Great Temple, Pantheon, Acropolis) constructible in any duchy capital (including tribal holdings, with tribal rulers progressing up to Tier IV and feudalized realms reaching Tier VII). Always visible in the duchy building slot with grayed-out requirement preview.
 
 ---
 
