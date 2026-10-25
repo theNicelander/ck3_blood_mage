@@ -117,15 +117,3 @@ Requires Superior Lifeforce (`lifeforce_modifier_superior`) and Devotion level >
 | **Heal Deadly Ailments** | Interaction (`bm_heal_ailment`) | 100 Piety + Minor & Major Lifeforce | Cures fatal ailments (`cancer`, `bubonic_plague`, `leper`, `disfigured`, `wounded_3`, etc.) on self or ally. | +8 Benediction |
 
 ---
-
-## Class Harvesting & Progression Differences
-
-| Dimension | Blood Mage (`lifestyle_blood_mage`) | Blood Knight (`lifestyle_blood_knight`) |
-| --- | --- | --- |
-| **Magic Casting** | Minor, Major, Superior | Minor, Major, Superior |
-| **Lifeforce Generation** | Active distillation, `seek_power_decision` blood hunts, childbirth (+1 Major), lethal prisoner execution (`lifedrain_prisoner_event_interaction`, `mass_lifedrain_prisoners_decision`), courtier siphoning, Murder schemes with Superior **Hulinhjálmur** (+1 Major), Blood Rune pulse | Single-combat duel kills (Major Lifeforce + 25% Superior chance on `prowess >= 20` or blood traits), `seek_power_decision` blood hunts, battle victories (`10%–100%` Minor, `0%–100%` Major scaled by troops), Murder schemes with Superior **Hulinhjálmur** (+1 Major), ambient yearly condensation (~33% Minor), Blood Rune pulse |
-| **Exclusive Tracks** | `bloodline` (Domain limit, dynasty gold, construction, dev)<br>`hematurgy` (Schemes, dread, tyranny reduction) | `vanguard` (Army advantage, martial, speed, martial/piety)<br>`slaughter` (Prowess, knight effectiveness, knight limit, prowess/piety) |
-| **Shared Tracks** | `ancient`, `benediction`, `enlightenment` (Level 8 Devotion capstones) | `ancient`, `benediction`, `enlightenment` (Level 8 Devotion capstones) |
-| **Secondary Lifestyle** | `lifestyle_blood_power` (all 5 tracks) | `lifestyle_blood_power` (all 5 tracks) |
-| **Exclusive Features** | `lifedrain_prisoner_event_interaction`, `bm_curse_blood_interaction`, inscribing **Superior** runes on others | `empower_blood_knight_interaction`, passive battlefield & duel Lifeforce harvesting, ~33% ambient yearly Minor Lifeforce roll |
-| **Initiation** | Initiates apprentices as Blood Mages (`100`p + Major OR `250`p + Minor) | Initiates squires/knights as Blood Knights (`100`p + Major OR `250`p + Minor) |

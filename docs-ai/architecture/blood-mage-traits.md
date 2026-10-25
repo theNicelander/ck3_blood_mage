@@ -1,80 +1,72 @@
-# Blood Mage Traits
+# Blood Mage Lifestyle Traits
 
-Living technical specification for the Blood Mage, Blood Knight, and Blood Power lifestyle traits subsystem.
+Living technical specification for `lifestyle_blood_mage`, `lifestyle_blood_knight`, and secondary `lifestyle_blood_power`.
 
-## Executive Summary
+## Archetypes & Class Comparison
 
-- **How to get it:** Acquired through `bm_become_blood_mage_effect` (or `bm_become_blood_knight_effect`) via self-initiation against Egill Skallagrímsson in Reykjavik or Tsushima (`bm_geyser_duel.0001`), mentoring from a friend/lover/liege (`ask_for_blood_magic_interaction`), initiation by an existing Blood Mage (`grant_blood_magic_interaction`) or Blood Knight (`make_blood_knight_interaction`), siphoning an imprisoned mage (`bm_get_blood_magic_from_prisoner_interaction`), witch conversion (`convert_to_blood_magic_from_witch`), or hereditary birth (`25%` single parent, `100%` both parents, `0.20%` spontaneous birth).
-- **What it does:** Marks the character as an occult **Blood Mage** (`lifestyle_blood_mage`) or martial **Blood Knight** (`lifestyle_blood_knight`), granting base `+10` Same Trait Opinion (`same_opinion = 10`), unlocking the Blood Magic Situation panel (`bm_blood_mage_story`), enabling Minor/Major/Superior Lifeforce spellcasting, and progressing across 5 lifestyle tracks (max 100 XP each).
-- **How to level it up:** Spending Lifeforce on spells, interactions, or combat hooks awards XP in the corresponding track (`add_xp_bm_dynamic`, `add_shared_bm_bk_xp`, `add_blood_knight_xp`, `add_blood_power_xp`). Passive yearly growth comes from the yearly pulse (`ancient`, plus `enlightenment` for Knights), active house blood modifiers (`bloodline`), and yearly attunements (guaranteed `+1` XP, doubled to `+2` XP by Superior **Hulinhjálmur**).
+| Lifestyle Trait | Archetype | Exclusive Tracks (2) | Shared Devotion Tracks (3) | Magic & Subsystem Access |
+| --- | --- | --- | --- | --- |
+| **Blood Mage** (`lifestyle_blood_mage`) | *Shepherd of the Faithful* — Occult scholar, dynasty architect, scheme master | `bloodline`, `hematurgy` | `ancient`, `enlightenment`, `benediction` | Minor, Major, Superior Blood Magic; builds Duchy Blood Temples (`bm_duchy_buildings.txt`); inscribes Superior Blood Runes on others. |
+| **Blood Knight** (`lifestyle_blood_knight`) | *Fire and Sword* — Martial warlord, battlefield harvester, champion | `vanguard`, `slaughter` | `ancient`, `enlightenment`, `benediction` | Minor, Major, Superior Blood Magic; harvests Lifeforce from battles, single combat, yearly pulse; recruits Blood Berserkers & Behemoths; empowers sworn knights. |
+| **Blood Power** (`lifestyle_blood_power`) | *Secondary Personal Mastery* — Granted alongside Mage or Knight (base 0 XP) | 6 tracks: `dynasty`, `fury`, `mastery`, `presence`, `prosperity`, `shadows` | — | Advanced via Major Magic (`bm_cast_blood_magic_major.001.power`). +5 monthly Lifestyle XP per 10 XP step, 50 XP milestones, 100 XP capstones including `no_prowess_loss_from_age = yes`. |
 
-### Master Cumulative Track Benefits (10 XP / 50 XP / 100 XP)
+- **Inheritance & Base:** Inheritable non-genetic (`25%` single parent, `50%` with Superior Feingur, `100%` both parents, `0.20%` birth), audited by `bm_blood_mage_prevalence` / `bm_blood_knight_prevalence` rules. Base: `same_opinion = 10`. Dual-wielding blocked (only Egill Skallagrímsson holds both).
+- **Track Structure:** 10 tiers (10–100 XP). Tiers 10–40 and 60–90 grant standard Vitality step (`+0.1` Health, `+2.5` Life Exp, `+1.25` Fertility Yr, `+1` Epidemic Res; 4× at 50 XP, 8× at 100 XP). Tier 50 = Devotion-scaling milestones (`<stat>_per_piety_level = 1`); Tier 100 = Devotion Apex (`+50%` Devotion Impact on `ancient`, `+2` stat on `enlightenment`/`benediction`) and universal age lock (`no_prowess_loss_from_age = yes`).
 
-Each track has 10 progression levels (10 to 100 XP). In CK3, each unlocked tier applies additively.
-*Vitality Baseline & Milestones:* In `lifestyle_blood_mage` and `lifestyle_blood_knight`, tiers 10–40 and 60–90 grant the standard **Vitality Step** (`+0.1` Health, `+2.5` Life Expectancy, `+1.25` Year Fertility, `+1` Epidemic Resistance; total 8 steps = `+0.8` Health, `+20` Life Exp, `+10` Fertility Yrs, `+8` Epidemic Res per track; across 5 tracks: `+4.0` Health, `+100` Life Exp, `+50` Fertility Yrs, `+40` Epidemic Res) alongside track-specific incremental benefits. (For `lifestyle_blood_power`, vitality step remains `+2` Life Exp / `+1` Fertility Yr).
-Tiers 50 and 100 contain **no incremental per-track bonuses**, functioning purely as milestones and capstones: Tier 50 focuses on Devotion-scaling powers (`<stat>_per_piety_level = 1`) or milestone abilities; Tier 100 provides the Devotion Apex (`character_max_piety_level_add = 1` for shared tracks) and universal age-lock (`no_prowess_loss_from_age = yes`).
+---
 
-#### 1. Blood Mage (`lifestyle_blood_mage`)
-Base: `same_opinion = 10`, `ruler_designer_cost = 100`.
+## Devotion Lifestyle Tracks
 
-| Track | 10 XP (1st Step) | 50 XP (Cumulative Milestone) | 100 XP (Cumulative Capstone) |
-| `ancient` *(shared)* | Vitality + `+0.10` Monthly Dynasty Prestige, `+4%` Lifestyle XP Gain Mult (`+1` Personal Tenet Slot at tiers 20, 40, 60, 80, 100) | 4× Vitality + `+0.4` Monthly Dynasty Prestige, `+16%` Lifestyle XP Gain Mult, `+17.5%` Devotion Impact (`piety_level_impact_mult = 0.175`), `+2` Personal Tenet Slots | 8× Vitality + `+0.8` Monthly Dynasty Prestige, `+32%` Lifestyle XP Gain Mult, `+17.5%` Devotion Impact, `character_max_piety_level_add = 1`, `no_prowess_loss_from_age = yes`, `+5` Personal Tenet Slots |
-| `enlightenment` *(shared)* | Vitality + `+0.175` Monthly Piety, `+4%` Monthly Piety Gain Mult | 4× Vitality + `+0.7` Monthly Piety, `+16%` Monthly Piety Gain Mult, `+1` Learning per Piety level | 8× Vitality + `+1.4` Monthly Piety, `+32%` Monthly Piety Gain Mult, `+1.5` Learning per Piety level, `character_max_piety_level_add = 1`, `no_prowess_loss_from_age = yes` |
-| `benediction` *(shared)* | Vitality + `+1.5` General Opinion, `+1` Vassal Opinion, `+0.175` Monthly Prestige, `+4%` Monthly Prestige Mult | 4× Vitality + `+6` General Opinion, `+4` Vassal Opinion, `+0.7` Monthly Prestige, `+16%` Monthly Prestige Mult, `+1` Diplomacy per Piety level | 8× Vitality + `+12` General Opinion, `+8` Vassal Opinion, `+1.4` Monthly Prestige, `+32%` Monthly Prestige Mult, `+1.5` Diplomacy per Piety level, `character_max_piety_level_add = 1`, `no_prowess_loss_from_age = yes` |
-| `bloodline` *(Mage only)* | Vitality + `+3%` Domain Tax | 4× Vitality + `+12%` Domain Tax, `+20%` Inactive Trait Inheritance Chance (tiers 20, 40), `+1` Stewardship per Piety level, `+25%` Dynasty Prestige Mult | 8× Vitality + `+24%` Domain Tax, `+40%` Inactive Trait Inheritance Chance (tiers 20, 40, 60, 80), `+2` Stewardship per Piety level, `+50%` Dynasty Prestige Mult, `no_prowess_loss_from_age = yes` |
-| `hematurgy` *(Mage only)* | Vitality + `+4` Hostile Scheme Success | 4× Vitality + `+16` Hostile Scheme Success, `-16` Enemy Hostile Scheme Success (tiers 20, 40), `+1` Intrigue per Piety level, `+1` Max Hostile Schemes | 8× Vitality + `+32` Hostile Scheme Success, `-32` Enemy Hostile Scheme Success (tiers 20, 40, 60, 80), `+2` Intrigue per Piety level, `+2` Max Hostile Schemes, `no_prowess_loss_from_age = yes` |
+Complete XP sources live in [`blood-mage-track-xp.md`](blood-mage-track-xp.md), [`blood-mage-track-xp-mage.md`](blood-mage-track-xp-mage.md), and [`blood-mage-track-xp-knight.md`](blood-mage-track-xp-knight.md).
 
-#### 2. Blood Knight (`lifestyle_blood_knight`)
-Base: `same_opinion = 10`, `ruler_designer_cost = 50`. Vitality baseline applied at tiers 10–40 and 60–90; skipped at 50 & 100 XP milestones.
+| Track | Class | 10 XP (1st Step) | 50 XP (Cumulative Milestone) | 100 XP (Cumulative Capstone) |
+| --- | --- | --- | --- | --- |
+| `ancient` | Shared | Vitality + `+0.10` Monthly Dynasty Prestige, `+4%` Lifestyle XP Mult (+1 Tenet Slot at 20, 40, 60, 80, 100) | 4× Vitality + `+0.4` Dynasty Prestige, `+16%` Lifestyle XP, `+17.5%` Devotion Impact, `+2` Tenet Slots | 8× Vitality + `+0.8` Dynasty Prestige, `+32%` Lifestyle XP, `+17.5%` Devotion Impact, `character_max_piety_level_add = 1`, `no_prowess_loss_from_age = yes`, `+5` Tenet Slots |
+| `enlightenment` | Shared | Vitality + `+0.175` Monthly Piety, `+4%` Monthly Piety Mult | 4× Vitality + `+0.7` Monthly Piety, `+16%` Piety Mult, `+1` Learning per Piety level | 8× Vitality + `+1.4` Monthly Piety, `+32%` Piety Mult, `+1.5` Learning per Piety level, `character_max_piety_level_add = 1`, `no_prowess_loss_from_age = yes` |
+| `benediction` | Shared | Vitality + `+1.5` General Opinion, `+1` Vassal Opinion, `+0.175` Monthly Prestige, `+4%` Prestige Mult | 4× Vitality + `+6` General Opinion, `+4` Vassal Opinion, `+0.7` Monthly Prestige, `+16%` Prestige Mult, `+1` Diplomacy per Piety level | 8× Vitality + `+12` General Opinion, `+8` Vassal Opinion, `+1.4` Monthly Prestige, `+32%` Prestige Mult, `+1.5` Diplomacy per Piety level, `character_max_piety_level_add = 1`, `no_prowess_loss_from_age = yes` |
+| `bloodline` | Mage | Vitality + `+3%` Domain Tax | 4× Vitality + `+12%` Domain Tax, `+20%` Inactive Inheritance (20, 40), `+1` Stewardship per Piety level, `+25%` Dynasty Prestige Mult | 8× Vitality + `+24%` Domain Tax, `+40%` Inactive Inheritance (20, 40, 60, 80), `+2` Stewardship per Piety level, `+50%` Dynasty Prestige Mult, `no_prowess_loss_from_age = yes` |
+| `hematurgy` | Mage | Vitality + `+4` Hostile Scheme Success | 4× Vitality + `+16` Hostile Scheme Success, `-16` Enemy Hostile Success, `-10%` Dread Decay, `+1` Intrigue per Piety level | 8× Vitality + `+32` Hostile Scheme Success, `-32` Enemy Hostile Success, `-20%` Dread Decay, `+2` Intrigue per Piety level, `no_prowess_loss_from_age = yes` |
+| `vanguard` | Knight | Vitality + `+1.75%` Army Speed (+1 Martial and +1 Advantage at 20, 40, 60, 80; +1 Adv at 30, 70, 90) | 4× Vitality + `+3` Advantage, `+7%` Army Speed, `+2` Martial, `+1` Martial per Piety Level, `+1` Prowess per Piety Level | 8× Vitality + `+7` Advantage, `+14%` Army Speed, `+4` Martial, `+1.5` Martial per Piety Level, `+1` Prowess per Piety Level, `no_prowess_loss_from_age = yes` |
+| `slaughter` | Knight | Vitality + `+1.5` Prowess, `+8.75%` Knight Effectiveness (+1 Knight Limit at 20–40, 60–90) | 4× Vitality + `+7` Prowess, `+3` Knight Limit, `+35%` Knight Effectiveness, `+1` Prowess per Piety Level | 8× Vitality + `+14` Prowess, `+7` Knight Limit, `+70%` Knight Effectiveness, `+2` Prowess per Piety Level, `no_prowess_loss_from_age = yes` |
 
-| Track | 10 XP (1st Step) | 50 XP (Cumulative Milestone) | 100 XP (Cumulative Capstone) |
-| --- | --- | --- | --- |
-| `vanguard` *(Knight only)* | Vitality + `+1.75%` Army Speed (`+1` Martial and `+1` Advantage at tiers 20, 40, 60, 80; `+1` Advantage at 30, 70, 90) | 4× Vitality + `+3` Advantage, `+7%` Army Speed, `+2` Martial, `+1` Martial per Piety Level, `+1` Prowess per Piety Level | 8× Vitality + `+7` Advantage, `+14%` Army Speed, `+4` Martial, `+1.5` Martial per Piety Level, `+1` Prowess per Piety Level, `no_prowess_loss_from_age = yes` |
-| `slaughter` *(Knight only)* | Vitality + `+1.5` Prowess, `+8.75%` Knight Effectiveness (`+1` Knight Limit at tiers 20–40, 60–90) | 4× Vitality + `+7` Prowess, `+3` Knight Limit, `+35%` Knight Effectiveness, `+1` Prowess per Piety Level | 8× Vitality + `+14` Prowess, `+7` Knight Limit, `+70%` Knight Effectiveness, `+2` Prowess per Piety Level, `no_prowess_loss_from_age = yes` |
-| `ancient` *(shared)* | Identical to Blood Mage `ancient` | Identical to Blood Mage `ancient` | Identical to Blood Mage `ancient` (`+50%` Devotion Impact, `no_prowess_loss_from_age = yes`) |
-| `enlightenment` *(shared)* | Identical to Blood Mage `enlightenment` | Identical to Blood Mage `enlightenment` | Identical to Blood Mage `enlightenment` (`+2` Learning per Piety Level, `no_prowess_loss_from_age = yes`) |
-| `benediction` *(shared)* | Identical to Blood Mage `benediction` | Identical to Blood Mage `benediction` | Identical to Blood Mage `benediction` (`+2` Diplomacy per Piety Level, `no_prowess_loss_from_age = yes`) |
+---
 
-#### 3. Blood Power (`lifestyle_blood_power`)
-Base: None. Automatically acquired alongside `lifestyle_blood_mage` or `lifestyle_blood_knight` with 0 XP across all tracks so both traits appear adjacent in the UI character sheet. Omits universal Vitality to keep tooltips concise (vitality is granted by primary traits). Every 10 XP in a track grants **+5 flat monthly Lifestyle XP** (+15 quarterly) to its corresponding lifestyle (or active focus for `dynasty`). 50 and 100 XP milestones provide signature power capstones.
+## Secondary Blood Power Tracks (`lifestyle_blood_power`)
+
+Base: none. Granted automatically with Mage or Knight at base 0 XP. Every 10 XP grants **+5 flat monthly Lifestyle XP** (+15 quarterly).
 
 | Track | 10 XP (1st Step) | 50 XP (Cumulative Milestone) | 100 XP (Cumulative Capstone) | Flat Lifestyle XP |
 | --- | --- | --- | --- | --- |
-| `dynasty` | `+5%` Pos. Inactive Inheritance, `+5%` Genetic Trait Strengthen Chance | `+20%` Inactive Inheritance, `+20%` Trait Strengthen, `+10` Years of Fertility, **`-50%` Inbreeding Chance**, **`+10%` Monthly Renown** | **`+40%` Inactive Inheritance**, **`+40%` Trait Strengthen**, **`+20` Years of Fertility**, **`-100%` Inbreeding Chance (Immunity)**, **`+25%` Monthly Renown**, `no_prowess_loss_from_age = yes` | `+5` to `+50`/mo Active Focus XP |
-| `fury` | `+1` Advantage, `-3%` Army Maintenance | `+4` Advantage, `-12%` Army Maintenance, `-10%` Siege Phase Time, `+2` Knights, **`+1` Martial per Devotion**, **`+1` Prowess per Devotion** | **`+8` Advantage**, **`-24%` Army Maintenance**, **`-20%` Siege Phase Time**, **`+4` Knights**, **`+2` Martial per Devotion**, **`+2` Prowess per Devotion**, `no_prowess_loss_from_age = yes` | `+5` to `+50`/mo Martial XP |
-| `mastery` | `+5%` Lifestyle XP Mult | `+20%` Lifestyle XP Mult, `+10` Personal Scheme Success, `-10` Days Scheme Phase, **`+1` Learning per Devotion**, **`+1` Max Personal Schemes** | **`+40%` Lifestyle XP Mult**, **`+20` Personal Scheme Success**, **`-20` Days Scheme Phase**, **`+2` Learning per Devotion**, **`+2` Max Personal Schemes**, **Ignore Negative Culture Opinion**, `no_prowess_loss_from_age = yes` | `+5` to `+50`/mo Learning XP |
-| `presence` | `+3` General Opinion, `-5%` Stress Gain | `+12` General Opinion, `-20%` Stress Gain, `+10%` Fame Impact, **`+1` Diplomacy per Devotion**, **`-10%` Short Reign Duration**, **`+10%` Long Reign Bonus** | **`+24` General Opinion**, **`-40%` Stress Gain**, **`+20%` Fame Impact**, **`+2` Diplomacy per Devotion**, **`-20%` Short Reign Duration**, **`+20%` Long Reign Bonus**, `no_prowess_loss_from_age = yes` | `+5` to `+50`/mo Diplomacy XP |
-| `prosperity` | `+5%` Monthly Income, `-3%` Build Cost | `+20%` Monthly Income, `-12%` Build Cost, `-10%` MaA Maintenance, **`+1` Stewardship per Devotion**, **`+1` Domain Limit** | **`+40%` Monthly Income**, **`-24%` Holding & Domicile Build Cost**, **`-20%` MaA Maintenance**, **`+2` Stewardship per Devotion**, **`+2` Domain Limit**, `no_prowess_loss_from_age = yes` | `+5` to `+50`/mo Stewardship XP |
-| `shadows` | `+5` Hostile Scheme Success, `-5` Enemy Hostile Scheme Success | `+20` Hostile Scheme Success, `-20` Enemy Hostile Scheme Success, `-10%` Enemy Hostile Scheme Max Success Cap, **`+1` Intrigue per Devotion**, **`+1` Max Hostile Schemes** | **`+40` Hostile Scheme Success**, **`-40` Enemy Hostile Scheme Success**, **`-20%` Enemy Hostile Scheme Max Success Cap**, **`+15%` Own Hostile Scheme Max Success Cap**, **`+2` Intrigue per Devotion**, **`+2` Max Hostile Schemes**, `no_prowess_loss_from_age = yes` | `+5` to `+50`/mo Intrigue XP |
+| `dynasty` | `+5%` Pos. Inactive Inheritance, `+5%` Trait Strengthen | `+20%` Inactive Inheritance, `+20%` Trait Strengthen, `+10` Yrs Fertility, **`-50%` Inbreeding Chance**, **`+10%` Renown** | **`+40%` Inactive Inheritance**, **`+40%` Trait Strengthen**, **`+20` Yrs Fertility**, **`-100%` Inbreeding Chance (Immunity)**, **`+25%` Renown**, `no_prowess_loss_from_age = yes` | `+5` to `+50`/mo Active Focus |
+| `fury` | `+1` Advantage, `-3%` Army Maintenance | `+4` Advantage, `-12%` Army Maint, `-10%` Siege Phase Time, `+2` Knights, **`+1` Martial/Prowess per Devotion** | **`+8` Advantage**, **`-24%` Army Maint**, **`-20%` Siege Phase Time**, **`+4` Knights**, **`+2` Martial/Prowess per Devotion**, `no_prowess_loss_from_age = yes` | `+5` to `+50`/mo Martial |
+| `mastery` | `+5%` Lifestyle XP Mult | `+20%` Lifestyle XP Mult, `+10` Scheme Success, `-10`d Scheme Phase, **`+1` Learning per Devotion**, **`+1` Max Personal Schemes** | **`+40%` Lifestyle XP Mult**, **`+20` Scheme Success**, **`-20`d Scheme Phase**, **`+2` Learning per Devotion**, **`+2` Max Personal Schemes**, **Ignore Culture Penalties**, `no_prowess_loss_from_age = yes` | `+5` to `+50`/mo Learning |
+| `presence` | `+3` General Opinion, `-5%` Stress Gain | `+12` General Opinion, `-20%` Stress Gain, `+10%` Fame Impact, **`+1` Diplomacy per Devotion**, **`-10%` Short Reign**, **`+10%` Long Reign** | **`+24` General Opinion**, **`-40%` Stress Gain**, **`+20%` Fame Impact**, **`+2` Diplomacy per Devotion**, **`-20%` Short Reign**, **`+20%` Long Reign**, `no_prowess_loss_from_age = yes` | `+5` to `+50`/mo Diplomacy |
+| `prosperity` | `+5%` Income, `-3%` Build Cost | `+20%` Income, `-12%` Build Cost, `-10%` MaA Maint, **`+1` Stewardship per Devotion**, **`+1` Domain Limit** | **`+40%` Income**, **`-24%` Holding & Domicile Build Cost**, **`-20%` MaA Maint**, **`+2` Stewardship per Devotion**, **`+2` Domain Limit**, `no_prowess_loss_from_age = yes` | `+5` to `+50`/mo Stewardship |
+| `shadows` | `+5` Scheme Success, `-5` Enemy Scheme Success | `+20` Scheme Success, `-20` Enemy Scheme Success, `-10%` Enemy Max Cap, **`+1` Intrigue per Devotion**, **`+1` Max Hostile Schemes** | **`+40` Scheme Success**, **`-40` Enemy Scheme Success**, **`-20%` Enemy Max Cap**, **`+15%` Own Max Cap**, **`+2` Intrigue per Devotion**, **`+2` Max Hostile Schemes**, `no_prowess_loss_from_age = yes` | `+5` to `+50`/mo Intrigue |
 
-## Core Concepts
+---
 
-### Mutual Exclusivity & Devotion Apex
-- **Permanent Class Choice:** `lifestyle_blood_mage` and `lifestyle_blood_knight` are mutually exclusive lifestyle paths (`bm_become_blood_mage_effect` and `bm_become_blood_knight_effect` block acquisition if the character already holds the counterpart trait; only historical Egill Skallagrímsson holds both). Both paths automatically grant base `lifestyle_blood_power` concurrently to position the icons adjacent in the character UI.
-- **Inheritable Non-Genetic Traits:** Both `lifestyle_blood_mage` and `lifestyle_blood_knight` use `inheritable = yes` (without `genetic = yes`) for deterministic `25%` single-parent (`50%` with Superior **Feingur**) and `100%` dual-parent inheritance, plus `0.20%` spontaneous birth/creation rolls audited by campaign prevalence rules.
-- **Devotion Apex Capstones:** Capstones at 100 XP in the 3 shared tracks (`ancient`, `enlightenment`, `benediction`) grant massive Devotion-scaling powers (`+50%` Devotion Impact on `ancient`, `+2` Learning per Devotion level on `enlightenment`, and `+2` Diplomacy per Devotion level on `benediction`) on both Blood Mage and Blood Knight.
-- **Prowess Age Lock:** Every track capstone at 100 XP across all 12 tracks grants `no_prowess_loss_from_age = yes`.
+## Acquisition Triggers
 
-### Acquisition Triggers
 All routes invoke `bm_become_blood_mage_effect` or `bm_become_blood_knight_effect`:
-- `bm_blood_cultist_become_blood_mage_decision`: Decision for Blóðtrú faithful; initiation duel against Egill Skallagrímsson (`bm_geyser_duel.0001`) in Reykjavik or Tsushima (`piety_level >= 2`, costs 1 Devotion level; Learning duel -> Blood Mage, Prowess duel -> Blood Knight).
-- `bm_enhance_blood_ritual_decision`: Decision for non-faithful with qualifying occult traits/stats; identical Geyser duel in Reykjavik or Tsushima (`piety_level >= 2`, costs 1 Devotion level).
-- `grant_blood_magic_interaction`: Blood Mage initiates courtier/kin (`100` Piety + Major Lifeforce OR `250` Piety + Minor Lifeforce; awards `+4`/`+5` or `+2` `bloodline` XP).
-- `make_blood_knight_interaction`: Blood Knight initiates kin/spouse/knight/courtier (`100` Piety + Major Lifeforce OR `250` Piety + Minor Lifeforce; awards `+4`/`+5` or `+2` `vanguard` XP).
-- `ask_for_blood_magic_interaction`: Non-mage asks friend/lover/soulmate/liege Blood Mage to teach them (actor pays `250` Piety; teacher consumes 1 Superior Lifeforce).
-- `bm_get_blood_magic_from_prisoner_interaction`: Non-mage forcibly steals `lifestyle_blood_mage` from an imprisoned Blood Mage (`100` Piety, skill duel).
-- `convert_to_blood_magic_from_witch`: Player witch swaps witch trait/secret for `lifestyle_blood_mage`.
-- **Birth Inheritance:** Rolled on newborn children via `on_birth_child` (`bm_blood_mage_prevalence_on_actions.txt`).
+- `bm_blood_cultist_become_blood_mage_decision`: Blóðtrú faithful initiation duel vs Egill Skallagrímsson (`bm_geyser_duel.0001`) in Reykjavik or Tsushima (`piety_level >= 2`, costs 1 Devotion level).
+- `bm_enhance_blood_ritual_decision`: Non-faithful with occult traits/stats; identical Geyser duel (`piety_level >= 2`, costs 1 Devotion level).
+- `grant_blood_magic_interaction`: Blood Mage initiates courtier/kin (`100` Piety + Major LF or `250` Piety + Minor LF).
+- `make_blood_knight_interaction`: Blood Knight initiates kin/spouse/knight/courtier (`100` Piety + Major LF or `250` Piety + Minor LF).
+- `ask_for_blood_magic_interaction`: Non-mage asks friend/lover/soulmate/liege Mage to teach them (`250` Piety; teacher consumes 1 Superior LF).
+- `bm_get_blood_magic_from_prisoner_interaction`: Non-mage steals `lifestyle_blood_mage` from imprisoned Mage (`100` Piety, skill duel).
+- `convert_to_blood_magic_from_witch`: Witch player swaps witch trait for `lifestyle_blood_mage`.
+- **Birth:** Rolled via `on_birth_child` (`bm_blood_mage_prevalence_on_actions.txt`).
+
+---
 
 ## Where the details live
 
-| Piece | File |
+| Component | File |
 | --- | --- |
-| Blood Mage trait | `common/traits/bm_blood_mage_trait.txt` |
-| Blood Knight trait | `common/traits/bm_blood_knight_trait.txt` |
-| Blood Power trait | `common/traits/bm_blood_power_trait.txt` |
+| Trait definitions | `common/traits/bm_blood_mage_trait.txt`, `bm_blood_knight_trait.txt`, `bm_blood_power_trait.txt` |
 | XP helpers (`add_xp_bm_dynamic`, `add_shared_bm_bk_xp`, `add_blood_knight_xp`, `add_blood_power_xp`) | `common/scripted_effects/bm_trait_track_xp_gain_effects.txt` |
 | Lifecycle & acquisition effects | `common/scripted_effects/bm_blood_mage_lifecycle_effects.txt` |
-| Total trait progression value | `common/script_values/bm_blood_mage_portrait_values.txt` |
+| Portrait progression values | `common/script_values/bm_blood_mage_portrait_values.txt` |
 | Geyser initiation duels | `events/bm_geyser_duel_events.txt` |
 | Blood Power event | `events/bm_blood_power_event.txt` |

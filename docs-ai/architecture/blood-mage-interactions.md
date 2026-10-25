@@ -1,14 +1,8 @@
 # Blood Mage Character Interactions
 
-Living technical specification for character interactions in the Blood Mage mod.
-
-## Executive Summary
-
-- **Category:** All 23 mod gameplay character interactions are grouped into the dedicated category `interaction_category_bm_blood_magic` ("Blood Magic", `index = 16`, crimson `{ 0.75 0.12 0.12 1 }`) defined in `common/character_interaction_categories/bm_character_interaction_categories.txt`.
-- **Rule:** Uses `ai_targets` to avoid global scans. AI vetoes prevent draining close family, spouses, friends, and council. Completed blessings (`bm_anoint_heir_interaction`, `bm_bless_bloodline_interaction`) and hostile rites hide on ineligible or close-family targets to keep the character interaction menu clean.
+Living technical specification for character interactions in `common/character_interactions/`. Grouped under `interaction_category_bm_blood_magic` ("Blood Magic", `index = 16`). AI uses `ai_targets` and hard vetoes on close family/spouses/council.
 
 ### Interactions Master Table
-
 | Interaction ID | Target | Cost & Requirements | XP Gain | Mechanical Effect |
 | --- | --- | --- | --- | --- |
 | `ask_for_blood_magic_interaction` | Friend, lover, soulmate, liege mage/knight | 250 Piety. Recipient requires Superior Lifeforce (consumed). Actor lacks Blood Mage and Blood Knight. | None | Requests blood magic. Recipient grants matching class (`bm_become_blood_mage_effect` or `bm_become_blood_knight_effect`). |

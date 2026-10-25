@@ -1,14 +1,8 @@
 # Blood Mage Decisions
 
-Living technical specification for decisions in the Blood Mage mod.
-
-## Executive Summary
-
-- **What:** Player-facing actions for blood mages and blood knights. Grouped under `bm_decision_group`.
-- **Visibility:** Visible in both the realm decisions list under `bm_decision_group` ("Blood Mage Decisions") and in the Blood Magic story panel (`bm_blood_mage_story`) in the Situation window.
+Living technical specification for decisions in `common/decisions/`. Visible in realm decisions under `bm_decision_group` and in the Blood Magic story panel (`bm_blood_mage_story`).
 
 ### Decisions Master Table
-
 | Decision ID | Panel Type | Cost & Cooldown | Requirements | XP Gain | Primary Effect |
 | --- | --- | --- | --- | --- | --- |
 | `bm_blood_cultist_become_blood_mage_decision` | Decisions | Decision free (both duel options cost 1 Devotion level). No cooldown. | Follows Blóðtrú faith, missing Blood Mage and Blood Knight, `piety_level >= 2`. Location: Reykjavik or Tsushima. | None | Initiates `bm_geyser_duel.0001` against Egill (Learning for `lifestyle_blood_mage`, Prowess for `lifestyle_blood_knight`). |

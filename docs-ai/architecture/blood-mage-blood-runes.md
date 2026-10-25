@@ -1,16 +1,15 @@
 # Blood Runes, Galdrastafir and Blood Architecture
 
-Living technical specification for body runes, Galdrastafir staves, and blood architecture in the Blood Mage mod.
+Living technical specification for body runes, Galdrastafir staves, and Duchy Blood Temples.
 
-## Executive Summary
+## Overview
 
-- **What:** Decoupled rune architecture separating **Rune Depth** (`minor/major/superior_blood_rune_modifier`) from **Galdrastafir Stave Identity** (`bm_stave_<key>`).
-  - **Rune Depth (3 modifiers):** Sequential body runes (Minor -> Major -> Superior) that provide **no flat stat bonuses** themselves, solely governing the passive yearly Lifeforce pulse (`blood_mage_yearly_events.003`) and acting as the unlock gate for the capstone stave.
-  - **Capstone Staves (5 modifiers):** Granted exclusively at **Superior** rune depth via the standalone option-list decision `bm_carve_galdrastafir_decision`. Each stave grants flat static attributes and an active occult capstone mechanic.
-- **Self-Inscription (Ancient XP):** Inscribed sequentially via Cast Blood Magic Decision Widgets (`bm_cast_blood_magic_minor_decision`, `major_decision`, `superior_decision`). Requires Devotion Rank 2 / 3 / 4 (`piety_level >= 2 / 3 / 4`), sets a 5-year character cooldown flag (`bm_blood_rune_cooldown`), and awards `+4 / +5 / +10` `ancient` XP. Both **Blood Mages** and **Blood Knights** can self-inscribe up to Superior.
-- **Inscribe on Others (Benediction XP):** Character interaction `bm_inscribe_rune_other_interaction` available to both classes. Upgrades target depth in-place (does not inscribe staves; target must use the decision once reaching Superior). Sets a 5-year cooldown (`bm_blood_rune_other_cooldown`) and awards `+4 / +5 / +10` `benediction` XP to caster. Inscribing **Superior** runes on others is exclusive to `lifestyle_blood_mage`.
-- **Capstone Stave Selection & Swapping:** Handled via the standalone decision `bm_carve_galdrastafir_decision` (`common/decisions/cast_magic/bm_carve_galdrastafir_decision.txt`), shown only to characters holding `superior_blood_rune_modifier`. Costs **500 Piety** (`bm_carve_galdrastafir_piety_cost`) and **1 Major Lifeforce** (`blood_magic_used_major`), with a 5-year decision cooldown. All 5 staves are displayed; the currently worn stave is grayed out.
-- **Blood Temple Buildings:** `bm_blood_temple_01` through `bm_blood_temple_07`. Regular 7-tier building line constructible in any holding type (castles, cities, temples, tribal settlements) by rulers with `lifestyle_blood_mage`, `lifestyle_blood_knight`, or whose faith belongs to `blodtru_religion`, gated progressively by Devotion Level (`piety_level`).
+Decoupled architecture separating **Rune Depth** (`minor/major/superior_blood_rune_modifier`) from **Galdrastafir Stave Identity** (`bm_stave_<key>`).
+- **Rune Depth:** Sequential body runes (Minor -> Major -> Superior) governing the passive yearly Lifeforce pulse (`blood_mage_yearly_events.003`) and unlocking the capstone stave.
+- **Capstone Staves:** Granted at **Superior** depth via `bm_carve_galdrastafir_decision` (500 Piety, 1 Major LF, 5-yr CD). Grants static attributes and an active occult capstone mechanic.
+- **Self-Inscription (`ancient` XP):** Inscribed sequentially via Cast Blood Magic widgets (`minor/major/superior`). Requires Devotion Rank 2 / 3 / 4, 5-yr CD (`bm_blood_rune_cooldown`), awards `+4 / +5 / +10` `ancient` XP. Both Mages and Knights can self-inscribe up to Superior.
+- **Inscribe on Others (`benediction` XP):** Interaction `bm_inscribe_rune_other_interaction` upgrades target depth in-place. 5-yr CD (`bm_blood_rune_other_cooldown`), awards `+4 / +5 / +10` `benediction` XP. Superior on others is Mage exclusive.
+- **Duchy Blood Temples:** 7-tier Duchy Capital building line (`common/buildings/bm_duchy_buildings.txt`, `type = duchy_capital`), constructible in duchy capital slots by Blood Mages, Blood Knights, or Blóðtrú faithful. Tiers I–IV open to all governments (Tier IV tribal capstone); Tiers V–VII require non-tribal feudalized holdings.
 
 ## Tier Progression, Costs & XP Table
 

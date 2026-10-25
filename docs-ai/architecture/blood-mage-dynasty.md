@@ -1,21 +1,12 @@
 # Blood Mage Dynasty
 
-Living technical specification for supernatural dynasty/house modifiers, covenants, surges, and the Blood Golem cadet house.
+Living technical specification for supernatural house modifiers, covenants, heir succession legacy, and Blood Golem dynasty mechanics.
 
-## Executive Summary
+## Overview
 
-- **What:** Decoupled, multi-tiered House Covenant system accessed via the standalone inline widget decision `bm_empower_bloodline_decision` ("Empower Dynasty Bloodline").
-- **7 House Covenants (3 Tiers Each):** Progresses across Tier I (Minor), Tier II (Major), and Tier III (Superior). Upgrading replaces the lower tier modifier on `house` to keep the character and house interface clean.
-  - **Tier I:** 150 Piety + 1 Minor Lifeforce (`blood_magic_used_minor`), Devotion $\ge 1$. Grants `+3` `bloodline` (Mages) / `benediction` (Knights) XP.
-  - **Tier II:** 350 Piety + 1 Major Lifeforce (`blood_magic_used_major`), Devotion $\ge 2$. Grants `+5` `bloodline` (Mages) / `benediction` (Knights) XP.
-  - **Tier III:** 750 Piety + 1 Superior Lifeforce (`blood_magic_used_superior`), Devotion $\ge 3$. Grants `+10` `bloodline` (Mages) / `benediction` (Knights) XP.
-- **Cooldown:** 1 year decision cooldown.
-- **Feedback Loop:** Yearly pulse event `blood_mage_yearly_events.002` grants `+1` `bloodline` XP (Blood Mages) or `+1` `benediction` XP (Blood Knights) based on active House Covenants:
-  - Each Tier I Covenant adds `+3%` chance.
-  - Each Tier II Covenant adds `+6%` chance.
-  - Each Tier III Covenant adds `+10%` chance (up to a `70%` annual cap with all 7 Covenants perfected).
-
----
+House Covenant system accessed via `bm_empower_bloodline_decision` ("Empower Dynasty Bloodline").
+- **7 House Covenants (3 Tiers Each):** Tier I (150 Piety + Minor LF, Devotion 1+, `+3` XP), Tier II (350 Piety + Major LF, Devotion 2+, `+5` XP), Tier III (750 Piety + Superior LF, Devotion 3+, `+10` XP). Awards `bloodline` (Mages) or `benediction` (Knights) XP. 1-year decision cooldown.
+- **Feedback Loop:** Yearly pulse `blood_mage_yearly_events.002` grants `+1` XP (`bloodline` for Mages, `benediction` for Knights) based on active covenants: Tier I adds `+3%`, Tier II adds `+6%`, Tier III adds `+10%` chance (up to 70% cap with all 7 covenants at Tier III).
 
 ## 7 Three-Tier House Covenants Table
 

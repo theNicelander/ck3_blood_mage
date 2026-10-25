@@ -2,13 +2,11 @@
 
 Living technical specification for contested skill duels, initiation trials, ex-nihilo congenital trait manifestation, prisoner trait theft, education mastery, and mass dungeon execution.
 
-## Executive Summary
+## Overview
 
-- **What:** Contested skill duel subsystems governing how characters awaken to blood magic, forge or steal congenital traits (up to Rank 5), ascend education traits (1★ to 5★ + secondary education), and harvest Lifeforce in single combat or mass executions.
-- **Shared Access:** All rites and duels below are accessible to both **Blood Mages** (`lifestyle_blood_mage`) and **Blood Knights** (`lifestyle_blood_knight`).
+Contested skill duel subsystems governing how characters awaken to blood magic, manifest or steal congenital traits (up to Rank 5), ascend education traits (1★ to 5★ + secondary education), and harvest Lifeforce. Accessible to both **Blood Mages** and **Blood Knights**.
 
 ### Duels & Self-Advancement Master Table
-
 | Ritual / Action | Interface / File | Cost & Cooldown | Requirements | Duel Skill & DC | Win Outcome | Failure Outcome |
 | --- | --- | --- | --- | --- | --- | --- |
 | **Geyser Initiation Duel** | `bm_blood_cultist_become_blood_mage_decision` / `bm_enhance_blood_ritual_decision` -> `bm_geyser_duel.0001` | **1 Devotion Level** (`add_piety_level = -1`) paid on duel choice. Free back-out; no CD. | Non-mage, non-knight, `piety_level >= 2`, located in Reykjavik (`b_reykjavik`) or Tsushima (`c_tsushima`). | vs. **Egill Skallagrímsson** (Learning 20 for Blood Mage; Prowess 30 for Blood Knight). | Bestows `lifestyle_blood_mage` (Learning) or `lifestyle_blood_knight` (Prowess). | Injury (strictly capped at `wounded_2`), stress, or trauma. Can retry without paying level again or back out. |
