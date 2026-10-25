@@ -24,15 +24,11 @@
         monthly_income = -0.1
         monthly_piety = 0.5
         monthly_piety_gain_mult = 0.05
-        cultural_head_fascination_mult = 0.05
     }
 
     duchy_capital_county_modifier = {
         development_growth = 0.1
-    }
-
-    province_modifier = {
-        development_growth = 0.1
+        development_growth_factor = 0.05
     }
 
     next_building = bm_university_1
@@ -78,17 +74,12 @@ bm_university_1 = {
         monthly_income = -0.25
         monthly_piety = 1.0
         monthly_piety_gain_mult = 0.10
-        cultural_head_fascination_mult = 0.1
         monthly_dynasty_prestige = 0.1
-        monthly_lifestyle_xp_gain_mult = 0.03
     }
 
     duchy_capital_county_modifier = {
-        development_growth = 0.15
-    }
-
-    province_modifier = {
-        development_growth = 0.15
+        development_growth = 0.2
+        development_growth_factor = 0.10
     }
 
     next_building = bm_university_2
@@ -134,17 +125,12 @@ bm_university_2 = {
         monthly_income = -0.5
         monthly_piety = 1.75
         monthly_piety_gain_mult = 0.15
-        cultural_head_fascination_mult = 0.15
         monthly_dynasty_prestige = 0.2
-        monthly_lifestyle_xp_gain_mult = 0.06
     }
 
     duchy_capital_county_modifier = {
-        development_growth = 0.2
-    }
-
-    province_modifier = {
-        development_growth = 0.2
+        development_growth = 0.3
+        development_growth_factor = 0.15
     }
 
     next_building = bm_university_3
@@ -190,17 +176,12 @@ bm_university_3 = {
         monthly_income = -1
         monthly_piety = 2.5
         monthly_piety_gain_mult = 0.25
-        cultural_head_fascination_mult = 0.25
         monthly_dynasty_prestige = 0.3
-        monthly_lifestyle_xp_gain_mult = 0.1
     }
 
     duchy_capital_county_modifier = {
-        development_growth = 0.3
-    }
-
-    province_modifier = {
-        development_growth = 0.3
+        development_growth = 0.4
+        development_growth_factor = 0.20
     }
 
     type_icon = "bm_university.dds"
