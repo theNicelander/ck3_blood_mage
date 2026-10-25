@@ -75,6 +75,17 @@ Living technical specification for the Blood Knight subsystem (`lifestyle_blood_
 
 ---
 
+## Blood Magic Men-at-Arms Regiments (`common/men_at_arms_types/bm_men_at_arms_types.txt`)
+
+Both **Blood Mages** (`lifestyle_blood_mage`) and **Blood Knights** (`lifestyle_blood_knight`) can recruit two dedicated Piety-maintained Men-at-Arms regiments. Both regiments remain visible (`should_show_when_unavailable`) to any Blood Mage or Blood Knight before reaching the required Devotion level, have no per-ruler regiment cap (`max_regiments` uncapped), and cannot appear in generic mercenary/hired troops (`allowed_in_hired_troops = no`).
+
+| Regiment | Key & Archetype | Stack | Stats (Dmg / Tough / Pur / Scr / Siege) | Counters | Terrain & Winter Modifiers | Costs & Requirements |
+| --- | --- | --- | --- | --- | --- | --- |
+| **Blood Berserkers** | `bm_blood_berserkers`<br>`heavy_infantry`<br>Icon: `varangian_veterans` | `100` | `68` / `20` / `35` / `0` / `0.10` | • Pikemen (`1.5`)<br>• Skirmishers (`1.0`)<br>• Archers (`1.0`) | • **Taiga / Forest / Mountains:** `+12` Dmg, `+8` Pur<br>• **Mild & Harsh Winter:** `+10` Dmg, `+5` Tough<br>• **Desert / Floodplains:** `-8` Dmg, `-4` Tough | • **Unlock:** Blood Mage or Blood Knight + **Devotion 2+** (`piety_level >= 2`)<br>• **Buy:** `150` Piety<br>• **Maint:** `1.35` / `0.40` Piety/mo (Raised / Unraised)<br>• **Provisions:** `7` (`@provisions_cost_infantry_moderate`) |
+| **Blood-Bound Behemoths** | `bm_blood_behemoths`<br>`elephant_cavalry`<br>Icon: `war_elephants` | `25`<br>*(Hired: 10)* | `210` / `80` / `0` / `0` / `0.25` | • Heavy Infantry (`2.0`)<br>• Pikemen (`2.0`) | • **Mountains / Desert Mountains / Hills / Drylands:** `+15` Tough<br>• **Winter / Desert:** No combat penalty (`0` drain)<br>• **Wetlands:** `-30` Dmg, `-15` Tough | • **Unlock:** Blood Mage or Blood Knight + **Devotion 4+** (`piety_level >= 4`)<br>• **Buy:** `400` Piety<br>• **Maint:** `1.50` / `0.50` Piety/mo (Raised / Unraised)<br>• **Provisions:** `0` |
+
+---
+
 ## Tracks Master Table (Cumulative Totals)
 
 Each track has 10 tiers (`10, 20, ..., 100` XP). Vitality step = `+0.1` Health, `+2.5` Life Expectancy, `+1.25` Year Fertility, `+1` Epidemic Resistance (applied at tiers 10–40 and 60–90; **4× Vitality** at 50 XP, **8× Vitality** at 100 XP).
@@ -101,3 +112,4 @@ Each track has 10 tiers (`10, 20, ..., 100` XP). Vitality step = `+0.1` Health, 
 | Battlefield victory/defeat & tournament hooks | `common/on_action/bm_combat_on_actions.txt`, `common/scripted_effects/bm_combat_effects.txt` |
 | Duel fatality & Superior harvest | `common/on_action/bm_duel_on_actions.txt` |
 | Yearly pulse | `events/bm_yearly_events.txt` (`blood_mage_yearly_events.004`) |
+| Blood Magic Men-at-Arms | `common/men_at_arms_types/bm_men_at_arms_types.txt`, `localization/english/bm_men_at_arms_l_english.yml` |
