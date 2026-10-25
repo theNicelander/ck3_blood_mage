@@ -1,105 +1,63 @@
 # AGENTS.md — Blood Mages (CK3 mod)
 
-CK3 script fails silently. Follow patterns already in this repo and in vanilla 1.20 rather than inventing syntax.
+CK3 script fails silently. Follow patterns in this repo and vanilla 1.20 (`/Users/clarabotet/Petur/ck3-full`); never invent syntax.
 
 ## What this is
 
 - CK3 mod for **1.20.\***. Pure script, localization, gfx. No build step.
-- Adds traits: `lifestyle_blood_mage` (tracks: ancient, enlightenment, bloodline, benediction, hematurgy), `lifestyle_blood_power` (tracks: dynasty, fury, mastery, presence, prosperity, shadows), and `lifestyle_blood_knight` (tracks: slaughter, vanguard, resilience). Track XP sources, costs, and gains catalog: `docs-ai/architecture/blood-mage-track-xp.md`.
-- Features: Lifeforce resource, spell decisions/interactions, blood golems, Blood Retinue, Blóðtrú religion family, Blood Runes & Blood Temples, and game rules.
-- `scripts/` holds repo validation and Steam Workshop helpers. Never touch `.env`, credentials or `*.vdf`.
+- Traits: `lifestyle_blood_mage` (tracks: ancient, enlightenment, bloodline, benediction, hematurgy), `lifestyle_blood_power` (dynasty, fury, mastery, presence, prosperity, shadows), `lifestyle_blood_knight` (slaughter, vanguard, resilience).
+- Features: Lifeforce resource, spell decisions/interactions, blood golems, Blood Retinue, Blóðtrú religions, Blood Runes & Temples, game rules.
+- `scripts/` holds validation and Steam Workshop helpers. Never touch `.env`, credentials or `*.vdf`.
 
-## Guiding principles
+## Principles
 
-- **Rule of cool**: Low-fantasy blood magic integrated seamlessly into CK3 systems.
-- **Zero vanilla overwrites**: Pure modular additions; strictly compatible with total conversions and other mods.
-- **Earned power over godmode**: Lifespan extension and physical/mental trait improvements (intellect, beauty, physique) require earned Lifeforce, piety, and ritual sacrifice, with tangible risks.
-- **Concise and direct over fluffy flavour**: UI text, tooltips, alerts, action descriptions, and mechanics must be concise and to the point. Always use concrete terms like "Lifeforce" rather than vague synonyms like "vitality" or "vital arts". Keep flavour text strictly confined to narrative descriptions in decisions and events.
-- **Nothing hidden, but often unavailable (Always show grayed out)**: Spells, rites, and character options should remain visible and grayed out (`show_as_unavailable = { ... }`) whenever possible so players can always see what capabilities exist and what requirements (Lifeforce, Piety, Devotion, Cooldown) are needed to reach them. Only hide an option when its prerequisite stage has not been reached or when it has been permanently completed or superseded.
-- **Clarify before building**: When making plans, always ask multiple follow-up questions. User ideas are often rough, exploratory, or ungrounded; never run on unverified assumptions—clarify ambiguities and explicitly state assumptions before implementing.
-- **Commit and push planned work**: Plans must always conclude with committing and pushing the changes at the end. Since plans are well thought out, commit and push the finished implementation (`git push origin <branch>`); any subsequent adjustments, user feedback, or follow-up iterations belong in a separate commit and push. Commits must strictly include only relevant files modified in your conversation. Always push immediately after committing.
-- **Planner vs. Execution Engine (Gemini Argon)**: If the active model is Gemini Argon, it must **never** edit code, create or modify files, or execute implementation steps. Gemini Argon is strictly a planner and investigator—it can only inspect the codebase, investigate issues, ask clarifying questions, and design plans. It is never the execution engine.
+- **Zero vanilla overwrites**: modular additions, compatible with total conversions. An unprefixed filename matching vanilla is an override; never do it by accident.
+- **Earned power**: lifespan and stat gains require Lifeforce, piety, ritual sacrifice, and tangible risk.
+- **Concise UI text**: say "Lifeforce", not "vitality". Flavour only in decision/event narrative descriptions.
+- **Nothing hidden, often unavailable**: keep spells, rites, options visible and greyed out (`show_as_unavailable`) with their requirements. Hide only when the prerequisite stage is not reached or the option is completed/superseded.
+- **Clarify before building**: ask follow-up questions on rough ideas; state assumptions. Plans end with commit and push.
+- **Planner model**: if the active model is Gemini Argon, never edit files; only investigate, ask, and plan.
 
-## Context layers
+## Layout & docs
 
-| Layer                                    | Answers                                                    | Scope                                                        |
-| ---------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------ |
-| Rules `.agents/rules/*.md`               | How do I write this kind of CK3 thing without breaking it? | Generic CK3 plus hard repo constraints. No `bm_` identifiers |
-| Skills `.agents/skills/<name>/SKILL.md`  | What are the steps for task X here?                        | Repeatable multi-file procedures                             |
-| Architecture `docs-ai/architecture/*.md` | How does this mod implement it?                            | Mod only. Start at its `README.md`                           |
+- `common/`, `events/`, `gui/`, `gfx/`, `localization/<language>/` mirror vanilla. Religion uses the 1.20 layout `common/religion/{religion_family_types,religion_types,faith_types,rite_types,holy_site_types,doctrine_group_types,doctrine_types}`; older branches may have `religions/`, `religion_families/`, `holy_sites/`. Check which one the branch has; never mix.
+- `.agents/rules/`: CK3 how-to (no `bm_` ids). `.agents/skills/`: task procedures.
+- `docs-ai/architecture/`: current-state spec per subsystem; start at its `README.md`, read the matching doc before changing that code, update it in the same change (rules: its `AGENTS.md`).
+- `docs-ai/branch-context/<branch>.md`: mandatory PR-style branch doc (skill `manage-pr`).
+- `RELEASE_NOTES.md`: player notes + version history (skill `update-release-notes`).
+- **Do not read unless asked**: `docs-ai/archive/` (old branch docs), `docs-ai/ideas/`, `docs-ai/base-game-lists/`, `.agents/cost.md`.
 
-Active rules: `ck3-scripting.md` (always on), `ck3-localization.md` (always on), `pr-context.md` (always on), `ck3-decisions.md`, `ck3-ai.md`, `ck3-events.md`, `ck3-traits.md`, `ck3-religions.md`, `single-combat.md`.
+| Rules (`.agents/rules/`) | When |
+| --- | --- |
+| `ck3-scripting.md`, `ck3-localization.md` | always |
+| `ck3-decisions.md` (incl. AI), `ck3-events.md`, `ck3-traits.md`, `ck3-religions.md`, `single-combat.md`, `ck3-error-catalog.md` | on demand |
 
-## Layout
+| Skills (`.agents/skills/`) | Task |
+| --- | --- |
+| `manage-pr` | finish change, branch doc, commit, push, PR |
+| `add-blood-magic-decision`, `add-decision-option-widget`, `add-faith`, `add-trait-track`, `add-game-rule`, `add-icon-asset` | add that thing |
+| `document-subsystem`, `update-release-notes`, `caveman` | docs / notes / terse voice |
 
-- `common/`, `events/`, `gui/`, `gfx/`, `localization/<language>/` mirror vanilla.
-- `.agents/rules`: generic CK3 notes. `.agents/skills`: task procedures.
-- `docs/`: images only. `docs-ai/`: written documentation for humans and agents.
-- `docs-ai/architecture/`: one doc per subsystem (e.g. `blood-mage-story.md`), always describing the **current state of the mod** and nothing else: no history, changelog or decision log. **Read the matching doc before changing that part of the codebase, and update it in the same change so it stays true.** Add a doc when you introduce a subsystem, and delete or rewrite text that is no longer true. High-density technical specs (costs, requirements, XP, benefits, tables; zero roleplay fluff). See `docs-ai/architecture/AGENTS.md`.
-- `docs-ai/ideas/`: brainstorms, proposals, and roadmaps. Speculative; do not treat as current game state.
-- `docs-ai/branch-context/`: branch and PR working state, trade-offs, and decision records. One mandatory `<branch>.md` per branch.
-- `CHANGELOG.md`: living changelog with one line per branch version matching the branch name (e.g. `* v1.20.40: <short description>`), caveman style, reverse chronological: latest changes at top.
-- `RELEASE_NOTES.md`: public-facing living release notes for players and Steam Workshop, summarizing net features and bugfixes since v1.15. Keep updated using skill `update-release-notes`.
-- Religion uses the 1.20 layout `common/religion/{religion_family_types,religion_types,faith_types,rite_types,holy_site_types,doctrine_group_types,doctrine_types}`. Branches based on older `main` may still have `religions/`, `religion_families/`, `holy_sites/` and a bare `add_trait = lifestyle_blood_mage`. **Check which layout the branch has. Never mix them.**
+## Naming & format (enforced by `scripts/check_repo.py`)
 
-## Naming
-
-- Prefix every new file and identifier with `bm_`. One file per feature: `bm_<feature>.txt`.
-- An unprefixed filename that matches vanilla is a deliberate override. Don't do it by accident.
-- Scripted effects/triggers end in `_effect` / `_trigger`. Game rule settings: `has_game_rule = bm_<rule>_<setting>`.
-
-## Format (enforced by `scripts/check_repo.py`)
-
-- `.txt`, `.gui`, `.yml`: UTF-8 **with BOM**, trailing newline, balanced braces.
-- Preserve each file's line endings (many are CRLF) and indentation (tabs/4 spaces mixed). Don't reformat unrelated lines.
-- Keep comments.
-- Use `scripts/read_ck3.py` (CLI or imported `read_ck3_file`, `find_block`, `search_files`) to read files, extract balanced `{ ... }` blocks, or inspect vanilla (`/Users/clarabotet/Petur/ck3-full`) transparently without encoding or BOM issues:
-  - CLI read: `python3 scripts/read_ck3.py read <file> [--lines start:end]`
-  - CLI extract block: `python3 scripts/read_ck3.py block <file> <block_name>` (e.g. `block <file> eminent_holy_sites`)
-  - CLI vanilla search: `python3 scripts/read_ck3.py search <pattern> --vanilla [--subpath common/religion]`
-  - Python import: `from scripts.read_ck3 import read_ck3_file, find_block, search_files`
-- Inspect game errors at `~/Documents/Paradox Interactive/Crusader Kings III/logs/error.log` (e.g. `tail -n 100 ~/Documents/"Paradox Interactive"/"Crusader Kings III"/logs/error.log`).
-
-## Localization
-
-See `.agents/rules/ck3-localization.md` (english only, sibling keys, loc documents the script, concise & direct wording, concrete "Lifeforce" term over fluffy "vitality", never include ($NUM$) in group labels).
-
-## DDS Icons & Assets
-
-- Basegame `.dds` source (copy vanilla icons from here): `/Users/clarabotet/Library/Application Support/Steam/steamapps/common/Crusader Kings III/game/gfx` (e.g. `interface/icons/traits/`, `interface/icons/modifiers/`). `/Users/clarabotet/Petur/ck3-full` has no DDS files. Put candidate shortlists for user review in the gitignored `local-assets/<topic>/`.
-- Vanilla DDS styles (by filename prefix): `modifiers/*` = flat one-colour shield glyph (green good, red bad), plain. `traits/*` = detailed illustrated art on a round or square background frame. `icon_*.dds` (e.g. `interface/icons/icon_gold.dds`) = clean, simple, standalone illustrations without a frame (like the bag of gold). Prefer `icon_*` for new rune/spell icons unless a framed look is wanted.
-- DDS files within a category are copy-paste identical:
-  - **Traits** (`gfx/interface/icons/traits/`): Distinctive icons: `bm_blood_mage.dds` (Blood Mage), `bm_blood_knight.dds` (Blood Knight), `bm_interactions.dds` (Blood Empowerment).
-  - **Interactions** (`gfx/interface/icons/character_interactions/`): All use identical copies of `bm_interactions.dds` (120×120 fiery blood drop).
-  - **Faiths** (`gfx/interface/icons/faith/`): Shared identical DDS icons across the religion family (copied from `bm_blodtru.dds`).
-  - **Trait Level Tracks** (`gfx/interface/icons/trait_level_tracks/`): Distinctive icons per track (`ancient` fiery blood drop from `bm_interactions.dds`, `benediction` physician, `enlightenment` saint/ancestor, `bloodline` augustus, `hematurgy` murderer, `vanguard` faith warrior, `slaughter` raider/reaver).
-- When adding a new interaction, copy `gfx/interface/icons/traits/bm_interactions.dds` to `<interaction_key>.dds`.
-- When removing or renaming interactions, always remove or rename the corresponding `.dds` file to prevent missing textures or orphan assets.
+- Prefix every new file and identifier `bm_`; one file per feature `bm_<feature>.txt`. Effects/triggers end `_effect`/`_trigger`. Rules: `has_game_rule = bm_<rule>_<setting>`.
+- `.txt`, `.gui`, `.yml`: UTF-8 **with BOM**, trailing newline, balanced braces. Keep each file's line endings (many CRLF) and indentation; don't reformat unrelated lines; keep comments.
+- Read files with `python3 scripts/read_ck3.py read <file> [--lines a:b]`, `block <file> <name>`, `search <pattern> --vanilla [--subpath common/religion]` (handles BOM/encoding).
+- Game errors: `tail -n 100 ~/Documents/"Paradox Interactive"/"Crusader Kings III"/logs/error.log`.
+- Localization: English only; see `ck3-localization.md`.
+- Icons/DDS: skill `add-icon-asset`.
 
 ## Never
 
 - Change `descriptor.mod` (`name`, `remote_file_id`, `version`) or add `replace_path`.
-- Delete third-party compat code (Blood of Numenor, AGOT checks) without asking. Never reference another mod's traits, faiths or titles directly; guard with `has_global_variable = AGOT_is_loaded` or doctrine parameters.
-- Invent effect, trigger or scope names. Find them in vanilla or `script_docs` output and cite where.
-- Switch branches or create new branches unless explicitly instructed by the user. Stay in the current branch. Never create separate branches to isolate work.
-- Blanket stage (`git add .`, `git add -A`, `git commit -a`) when uncommitted changes exist from other agents or tasks. Multiple AIs work in parallel on this repo: only stage, commit, and push files modified in your current conversation. "Commit ignoring other changes" means leave other modified files untouched and uncommitted, never create a separate branch.
-- Execute plans on unverified assumptions without asking clarifying follow-up questions first.
-- Create plans without a final commit and push step, or leave planned changes uncommitted or unpushed upon completion.
-- Edit code, modify files, or execute implementation changes if the active model is Gemini Argon. Gemini Argon is strictly a planner and investigator, never the execution engine.
+- Delete third-party compat code (Blood of Numenor, AGOT) without asking; never reference another mod's traits/faiths/titles directly (guard with `has_global_variable = AGOT_is_loaded` or doctrine parameters).
+- Invent effect, trigger or scope names; cite vanilla or `script_docs`.
+- Switch or create branches unless told. Stay on the current branch.
+- Blanket stage (`git add .`, `-A`, `commit -a`): other agents work in parallel; stage, commit and push only files you changed.
+- Execute plans on unverified assumptions.
 
 ## Workflow
 
-Multiple AIs work in parallel on this repo, so keep in mind that there maybe other changes in the branch. If that's the case, ingore them unless relevant to you. Don't commit files you didn't touch, unless asked to.
-
-0. **Model check (Gemini Argon)**: If running as Gemini Argon, NEVER edit code or modify files. You are strictly a planner and investigator: only inspect the codebase, answer questions, clarify requirements, and design execution plans. Stop before executing.
-1. `git branch --show-current`; read `docs-ai/branch-context/<branch>.md` (**create if missing**, see `pr-context.md`), matching rule(s), and matching `docs-ai/architecture/*.md` (start at its `README.md`).
-2. Plan & clarify: when making plans, always ask multiple follow-up questions. Probe ungrounded ideas, confirm assumptions, and clarify ambiguities before coding. Plans must always conclude with committing and pushing at the end. Smallest change that works. Check existing identifiers with `grep -rn`.
-3. Use the matching skill for the task (`add-blood-magic-decision`, `add-decision-option-widget`, `add-faith`, `add-trait-track`, `add-game-rule`, `update-release-notes`, `manage-pr`).
-4. Update matching architecture doc in `docs-ai/architecture/` in the same change so it stays true to current state.
-5. Update `CHANGELOG.md`: living document, prepend single-line short high-level description matching current branch name (e.g. `* v1.20.40: <short description>`), caveman style, net branch status only (fold superseded changes, drop reverts). Reverse chronological: latest changes at top.
-6. For player-facing additions or bugfixes, update `RELEASE_NOTES.md` per skill `update-release-notes`.
-7. **Always** update `docs-ai/branch-context/<branch>.md` to net branch state, however small the task.
-8. Run `python3 scripts/check_repo.py` (enforces 1 and 7). State in the final summary what you could not verify.
-9. **Commit and Push**: Stage and commit ONLY files modified in your active conversation, then push immediately to the remote branch (`git add <file1> <file2> && git commit -m "..." && git push origin <branch>`). Because plans are well thought out, commit and push the finished plan implementation at the end; subsequent feedback or modifications must be committed and pushed in separate commits. Always push whenever committing. Never blanket stage (`git add .`), as multiple agents operate concurrently.
-10. **Creating, Updating, and Merging PRs**: Whenever creating, updating, or merging a PR, always inspect `docs-ai/branch-context/<branch>.md` and check it against `git log origin/main..HEAD`. Ensure the branch context document is fully accurate and up to date before proceeding. Follow skill `manage-pr` (`.agents/skills/manage-pr/SKILL.md`). The PR title, description, and merge commit must comprehensively synthesize all changes and features across the branch's entire commit history, never omitting parallel work or truncating to only the latest commit. Unless the branch is EXCLUSIVELY documentation or AI rules, exclude all PR workflow, branch verification, and doc meta from PR titles and headings—focus strictly on player-facing gameplay content.
-11. **Living Common Errors Catalog**: Whenever you identify or resolve new runtime errors, parser warnings, or silent failures during log audits or playtests, update `.agents/rules/ck3-scripting.md` (`## Common Engine Errors & Pitfalls`) with the exact error signature, cause, and required fix pattern so future agents avoid repeating the mistake.
+1. `git branch --show-current`; read `docs-ai/branch-context/<branch>.md` (create if missing), matching rule(s) and architecture doc.
+2. Plan smallest change; grep existing identifiers; use the matching skill.
+3. Update the architecture doc, branch doc, and release notes as needed, run checks, commit, push: skill `manage-pr`.

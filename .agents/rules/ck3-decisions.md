@@ -1,34 +1,43 @@
 ---
 trigger: model_decision
-description: Decisions and character interactions (cost, is_shown, is_valid, cooldown, effects, tooltips).
+description: Decisions, character interactions and AI (cost, is_shown, is_valid, cooldown, effects, tooltips, ai_will_do, ai_check_interval, ai_targets).
 ---
 
-# Decisions and interactions
+# Decisions, interactions, AI
 
-Structure: copy neighboring file in `common/decisions/` or `common/character_interactions/`.
+Copy a neighbouring file in `common/decisions/` or `common/character_interactions/`. CK3 AI is hardcoded; script only shifts selection likelihood.
 
 ## Script traps
 
-- **Never deduct `cost` inside `effect`**. Engine charges declared `cost` automatically.
-- `is_shown` evaluates constantly. Put cheap exclusionary triggers first.
-- Reused costs: declare in `common/script_values/`.
-- Prefer native `cooldown = { ... }` over custom character flags.
-- Re-entrancy: effects must be safe if fired twice, targeting missing scopes, or run by AI.
-- Tooltips: `custom_tooltip = { text = key }` for non-obvious outcomes. Missing loc keys render raw in UI. Keep tooltips and confirm labels concise and direct; use concrete mechanics ("Lifeforce") rather than fluffy synonyms ("vitality"). Flavour belongs strictly in descriptions (`<id>_desc`).
-- **Interface Toasts (`send_interface_toast`)**: any decision outcome granting or modifying character/house modifiers (attunements, covenants, lifeforce stacks), traits, XP, or stats MUST be enclosed inside `send_interface_toast = { ... }`. Effects outside the toast do not appear in the completion popup. Avoid `custom_tooltip` inside toasts when native effects exist.
+- Never deduct `cost` inside `effect`; the engine charges the declared `cost`. Reused costs go in `common/script_values/`.
+- `is_shown` runs constantly: cheap exclusionary triggers first. Prefer native `cooldown = { ... }` over flags.
+- Effects must be safe if fired twice, on missing scopes, or by AI.
+- Put cost and affordability triggers in `is_valid`, not only `ai_will_do`. Never use `is_ai = yes` to skip validity or costs.
+- Tooltips: `custom_tooltip = { text = key }` for non-obvious outcomes; concise, concrete terms ("Lifeforce"). Flavour only in `<id>_desc`.
+- Outcomes that grant modifiers, traits, XP or stats go inside `send_interface_toast`; avoid `custom_tooltip` inside toasts.
+- Loc sibling keys: see `ck3-localization.md`.
 
-## AI constraints
+## AI control points
 
-- Player-only: set `ai_check_interval = 0` (decisions) or restrict `ai_potential` (interactions).
-- Tuning: do not raise `base` or shorten check interval without stated reason.
-- Put cost and affordability triggers in `is_valid`, not just `ai_will_do`.
-- Bound interactions with `ai_targets`.
-- See [ck3-ai.md](ck3-ai.md).
+| Context | Keys |
+| --- | --- |
+| Decision | `ai_check_interval` (months; `0` = player-only), `ai_will_do` (% chance per check), `ai_potential` (hard gate) |
+| Interaction | `ai_targets` (`self`, `dynasty`, `family`, `spouses`, `children`, `courtiers`, `councillors`, `liege`), `ai_frequency`, `ai_potential`, `ai_will_do`, `ai_accept` |
+| Event option | `ai_chance = { base = N modifier = { ... } }` (relative weights) |
+
+```ck3
+ai_will_do = {
+	base = -10
+	modifier = { add = 20 has_trait = ambitious }     # additive first
+	modifier = { factor = 0 has_trait = wounded_1 }   # vetoes last
+}
+```
+
+- `add` shifts the running score; `factor` multiplies it. Triggers inside `modifier` are ANDed; cheap first.
+- Personality: `ai_value_modifier = { ai_greed = 0.5 }` (`ai_boldness|compassion|energy|greed|honor|rationality|sociability|vengefulness|zeal`).
+- Balance is hand-tuned: do not raise `base` or shorten intervals without reason. AI must check health, Lifeforce, piety and target opinion before harmful actions; reuse scripted modifiers.
+- AI frequency cannot be verified statically; state it in the summary.
 
 ## Checklist
 
-1. Hidden from non-qualifying scopes (`is_shown`)?
-2. Grey-out conditions explained in `is_valid`?
-3. Cost declared once in cost block?
-4. `ai_*` explicitly defined?
-5. English loc defined for all sibling keys ([ck3-localization.md](ck3-localization.md))?
+`is_shown` hides non-qualifying scopes · grey-out reasons in `is_valid` · cost declared once · `ai_*` explicit · all loc sibling keys defined.
