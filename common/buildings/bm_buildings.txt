@@ -3,7 +3,7 @@
     construction_time = 365
 
     can_construct_potential = {
-        building_requirement_castle_city_church = { LEVEL = 01 }
+        building_requirement_castle_city_church_temple_citadel_tribe = { LEVEL = 01 }
         scope:holder = {
             OR = {
                 has_trait = lifestyle_blood_mage
@@ -12,9 +12,6 @@
             }
         }
     }
-
-    is_enabled = { county.duchy.holder = county.holder }
-    show_disabled = yes
 
     cost = {
         gold = 250
@@ -26,7 +23,7 @@
         monthly_piety_gain_mult = 0.05
     }
 
-    duchy_capital_county_modifier = {
+    county_modifier = {
         development_growth = 0.1
         development_growth_factor = 0.05
         monthly_county_control_growth_add = 0.1
@@ -36,7 +33,7 @@
 
     type_icon = "bm_university.dds"
 
-    type = duchy_capital
+    type = regular
 
     ai_value = {
         base = 100
@@ -52,7 +49,7 @@ bm_university_1 = {
     construction_time = 730
 
     can_construct_potential = {
-        building_requirement_castle_city_church = { LEVEL = 01 }
+        building_requirement_castle_city_church_temple_citadel_tribe = { LEVEL = 01 }
         scope:holder = {
             OR = {
                 has_trait = lifestyle_blood_mage
@@ -61,11 +58,6 @@ bm_university_1 = {
             }
         }
     }
-
-    is_enabled = {
-        county.duchy.holder = county.holder
-    }
-    show_disabled = yes
 
     cost = {
         gold = 500
@@ -78,7 +70,7 @@ bm_university_1 = {
         monthly_dynasty_prestige = 0.1
     }
 
-    duchy_capital_county_modifier = {
+    county_modifier = {
         development_growth = 0.2
         development_growth_factor = 0.10
         monthly_county_control_growth_add = 0.2
@@ -88,7 +80,7 @@ bm_university_1 = {
 
     type_icon = "bm_university.dds"
 
-    type = duchy_capital
+    type = regular
 
     ai_value = {
         base = 100
@@ -104,7 +96,7 @@ bm_university_2 = {
     construction_time = 1095
 
     can_construct_potential = {
-        building_requirement_castle_city_church = { LEVEL = 01 }
+        building_requirement_castle_city_church_temple_citadel_tribe = { LEVEL = 01 }
         scope:holder = {
             OR = {
                 has_trait = lifestyle_blood_mage
@@ -113,11 +105,6 @@ bm_university_2 = {
             }
         }
     }
-
-    is_enabled = {
-        county.duchy.holder = county.holder
-    }
-    show_disabled = yes
 
     cost = {
         gold = 750
@@ -130,7 +117,7 @@ bm_university_2 = {
         monthly_dynasty_prestige = 0.2
     }
 
-    duchy_capital_county_modifier = {
+    county_modifier = {
         development_growth = 0.3
         development_growth_factor = 0.15
         monthly_county_control_growth_add = 0.3
@@ -140,7 +127,7 @@ bm_university_2 = {
 
     type_icon = "bm_university.dds"
 
-    type = duchy_capital
+    type = regular
 
     ai_value = {
         base = 100
@@ -156,7 +143,7 @@ bm_university_3 = {
     construction_time = 1825
 
     can_construct_potential = {
-        building_requirement_castle_city_church = { LEVEL = 01 }
+        building_requirement_castle_city_church_temple_citadel_tribe = { LEVEL = 01 }
         scope:holder = {
             OR = {
                 has_trait = lifestyle_blood_mage
@@ -165,11 +152,6 @@ bm_university_3 = {
             }
         }
     }
-
-    is_enabled = {
-        county.duchy.holder = county.holder
-    }
-    show_disabled = yes
 
     cost = {
         gold = 1000
@@ -182,7 +164,7 @@ bm_university_3 = {
         monthly_dynasty_prestige = 0.3
     }
 
-    duchy_capital_county_modifier = {
+    county_modifier = {
         development_growth = 0.4
         development_growth_factor = 0.20
         monthly_county_control_growth_add = 0.4
@@ -190,7 +172,7 @@ bm_university_3 = {
 
     type_icon = "bm_university.dds"
 
-    type = duchy_capital
+    type = regular
 
     ai_value = {
         base = 100

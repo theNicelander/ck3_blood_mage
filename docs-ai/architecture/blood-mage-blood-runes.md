@@ -10,7 +10,7 @@ Living technical specification for body runes, Galdrastafir staves, and blood ar
 - **Self-Inscription (Ancient XP):** Inscribed sequentially via Cast Blood Magic Decision Widgets (`bm_cast_blood_magic_minor_decision`, `major_decision`, `superior_decision`). Requires Devotion Rank 2 / 3 / 4 (`piety_level >= 2 / 3 / 4`), sets a 5-year character cooldown flag (`bm_blood_rune_cooldown`), and awards `+4 / +5 / +10` `ancient` XP. Both **Blood Mages** and **Blood Knights** can self-inscribe up to Superior.
 - **Inscribe on Others (Benediction XP):** Character interaction `bm_inscribe_rune_other_interaction` available to both classes. Upgrades target depth in-place (does not inscribe staves; target must use the decision once reaching Superior). Sets a 5-year cooldown (`bm_blood_rune_other_cooldown`) and awards `+4 / +5 / +10` `benediction` XP to caster. Inscribing **Superior** runes on others is exclusive to `lifestyle_blood_mage`.
 - **Capstone Stave Selection & Swapping:** Handled via the standalone decision `bm_carve_galdrastafir_decision` (`common/decisions/cast_magic/bm_carve_galdrastafir_decision.txt`), shown only to characters holding `superior_blood_rune_modifier`. Costs **500 Piety** (`bm_carve_galdrastafir_piety_cost`) and **1 Major Lifeforce** (`blood_magic_used_major`), with a 5-year decision cooldown. All 5 staves are displayed; the currently worn stave is grayed out.
-- **University Buildings:** `bm_university_0` through `bm_university_3`. Duchy capital holdings built by rulers with `lifestyle_blood_mage`, `lifestyle_blood_knight`, or whose faith belongs to `blodtru_religion`.
+- **University Buildings:** `bm_university_0` through `bm_university_3`. Regular buildings built in any holding type (castles, cities, temples, tribal settlements) by rulers with `lifestyle_blood_mage`, `lifestyle_blood_knight`, or whose faith belongs to `blodtru_religion`.
 
 ## Tier Progression, Costs & XP Table
 
@@ -45,7 +45,7 @@ Living technical specification for body runes, Galdrastafir staves, and blood ar
 
 ## Blood Universities Table
 
-Duchy capital buildings constructible by rulers with `lifestyle_blood_mage`, `lifestyle_blood_knight`, or a `blodtru_religion` faith:
+Regular buildings constructible in any holding (castles, cities, temples, and tribal holdings) by rulers with `lifestyle_blood_mage`, `lifestyle_blood_knight`, or a `blodtru_religion` faith:
 
 | Tier | Building ID | Cost | Time | Upkeep | Province & Realm Bonuses |
 | --- | --- | --- | --- | --- | --- |
@@ -74,4 +74,4 @@ Duchy capital buildings constructible by rulers with `lifestyle_blood_mage`, `li
 | Scheme murder Capstone hook (Hulinhjálmur) | `common/on_action/bm_scheme_on_actions.txt` |
 | Story custom localization | `common/customizable_localization/bm_blood_mage_story_custom_loc.txt` |
 | Localization | `localization/english/bm_blood_runes_l_english.yml`, `bm_modifiers_l_english.yml`, `bm_blood_mage_story_l_english.yml` |
-| Duchy capital buildings | `common/buildings/bm_duchy_buildings.txt` |
+| University buildings | `common/buildings/bm_buildings.txt` |
