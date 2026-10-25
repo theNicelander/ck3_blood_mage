@@ -49,6 +49,28 @@
 						piety >= cure_illness_cost_benediction
 					}
 				}
+				AND = {
+					scope:recipient = { bm_has_old_age_ailment_trigger = yes }
+					scope:actor = {
+						OR = {
+							AND = {
+								has_character_modifier = lifeforce_modifier_minor
+								piety >= heal_old_age_cost_minor
+							}
+							AND = {
+								has_character_modifier = lifeforce_modifier_major
+								piety >= heal_old_age_cost_major
+							}
+						}
+					}
+				}
+				AND = {
+					scope:recipient = { bm_has_stress_coping_trait_trigger = yes }
+					scope:actor = {
+						has_character_modifier = lifeforce_modifier_major
+						piety >= 250
+					}
+				}
 			}
 		}
 	}
@@ -56,7 +78,18 @@
 	on_accept = {
 		debug_log = "BloodMageInteraction: bm_heal_ailment | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
 		scope:actor = {
-			trigger_event = bm_heal_ailment.0001
+			if = {
+				limit = {
+					scope:recipient = {
+						bm_has_old_age_ailment_trigger = yes
+						NOT = { bm_has_non_old_age_ailment_trigger = yes }
+					}
+				}
+				trigger_event = bm_heal_old_age.0001
+			}
+			else = {
+				trigger_event = bm_heal_ailment.0001
+			}
 		}
 	}
 

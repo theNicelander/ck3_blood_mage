@@ -4,6 +4,22 @@
     }
 }
 
+quarterly_playable_pulse = {
+    on_actions = {
+        bm_quarterly_blood_power_xp_pulse
+    }
+}
+
+bm_quarterly_blood_power_xp_pulse = {
+    trigger = {
+        has_trait = lifestyle_blood_power
+        bm_has_blood_power_xp_trigger = { VALUE = 10 }
+    }
+    effect = {
+        trigger_event = blood_mage_yearly_events.005
+    }
+}
+
 random_yearly_everyone_pulse = {
     on_actions = {
         bm_yearly_pulse_everyone

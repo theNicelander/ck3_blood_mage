@@ -1,110 +1,4 @@
-﻿bm_anoint_knight_interaction = {
-	category = interaction_category_bm_blood_magic
-	icon = bm_anoint_knight_interaction
-	auto_accept = yes
-	common_interaction = yes
-	desc = bm_anoint_knight_interaction_desc
-	interface_priority = 180
-
-	is_shown = {
-		scope:actor = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
-		}
-		NOT = { scope:actor = scope:recipient }
-		scope:recipient = {
-			is_alive = yes
-			OR = {
-				is_knight_of = scope:actor
-				AND = {
-					is_courtier_of = scope:actor
-					has_trait = lifestyle_blood_knight
-				}
-			}
-		}
-	}
-
-	cost = {
-		piety = 50
-	}
-
-	is_valid_showing_failures_only = {
-		scope:actor = {
-			has_character_modifier = lifeforce_modifier_minor
-		}
-		custom_description = {
-			text = bm_recipient_already_anointed
-			NOT = { scope:recipient = { has_character_modifier = bm_anointed_champion_modifier } }
-		}
-	}
-
-	on_accept = {
-		debug_log = "BloodMageInteraction: anoint_knight | Actor: [actor.GetShortUINameNoTooltip] -> Recipient: [recipient.GetShortUINameNoTooltip]"
-		scope:actor = {
-			send_interface_toast = {
-				type = event_toast_effect_good
-				title = bm_anoint_knight_toast
-				left_icon = scope:actor
-				right_icon = scope:recipient
-				blood_magic_used_minor = yes
-				scope:recipient = {
-					add_character_modifier = {
-						modifier = bm_anointed_champion_modifier
-						years = 5
-					}
-					add_opinion = {
-						target = scope:actor
-						modifier = magic_opinion_positive
-						opinion = 20
-					}
-				}
-				if = {
-					limit = { has_trait = lifestyle_blood_knight }
-					add_blood_knight_xp = {
-						TRACK = vanguard
-						XP = 2
-					}
-				}
-				if = {
-					limit = {
-						has_trait = lifestyle_blood_mage
-						NOT = { has_trait = lifestyle_blood_knight }
-					}
-					add_blood_mage_xp = {
-						TRACK = benediction
-						XP = 2
-					}
-				}
-				hidden_effect = {
-					bm_recount_lifeforce_stacks_effect = yes
-				}
-			}
-		}
-	}
-
-	ai_frequency = 12
-	ai_potential = {
-		OR = {
-			has_trait = lifestyle_blood_mage
-			has_trait = lifestyle_blood_knight
-		}
-	}
-	ai_targets = {
-		ai_recipients = courtiers
-		ai_recipients = vassals
-	}
-	ai_will_do = {
-		base = 25
-		modifier = {
-			factor = 0
-			NOT = { has_character_modifier = lifeforce_modifier_minor }
-		}
-	}
-}
-
-bm_cull_champion_interaction = {
+﻿bm_cull_champion_interaction = {
 	category = interaction_category_bm_blood_magic
 	icon = bm_cull_champion_interaction
 	auto_accept = yes
@@ -122,6 +16,22 @@ bm_cull_champion_interaction = {
 		NOT = { scope:actor = scope:recipient }
 		scope:recipient = {
 			is_alive = yes
+			trigger_if = {
+				limit = {
+					NOT = { is_imprisoned_by = scope:actor }
+					NOR = {
+						has_relation_rival = scope:actor
+						has_relation_nemesis = scope:actor
+					}
+				}
+				NOR = {
+					is_child_of = scope:actor
+					is_primary_heir_of = scope:actor
+					is_spouse_of = scope:actor
+					is_consort_of = scope:actor
+					has_relation_soulmate = scope:actor
+				}
+			}
 			OR = {
 				# Eligible prisoner
 				AND = {

@@ -512,3 +512,81 @@ blood_mage_yearly_events.004 = {
         }
     }
 }
+
+# Quarterly event - Add flat Lifestyle XP from Blood Power tracks (+15 XP/quarter per 10 track XP = +5 XP/month)
+blood_mage_yearly_events.005 = {
+    hidden = yes
+    trigger = {
+        has_trait = lifestyle_blood_power
+        bm_has_blood_power_xp_trigger = { VALUE = 10 }
+    }
+    immediate = {
+        # Presence -> Diplomacy Lifestyle XP
+        if = {
+            limit = { bm_blood_power_quarterly_presence_lifestyle_xp_value > 0 }
+            add_diplomacy_lifestyle_xp = bm_blood_power_quarterly_presence_lifestyle_xp_value
+        }
+
+        # Fury -> Martial Lifestyle XP
+        if = {
+            limit = { bm_blood_power_quarterly_fury_lifestyle_xp_value > 0 }
+            add_martial_lifestyle_xp = bm_blood_power_quarterly_fury_lifestyle_xp_value
+        }
+
+        # Prosperity -> Stewardship Lifestyle XP
+        if = {
+            limit = { bm_blood_power_quarterly_prosperity_lifestyle_xp_value > 0 }
+            add_stewardship_lifestyle_xp = bm_blood_power_quarterly_prosperity_lifestyle_xp_value
+        }
+
+        # Shadows -> Intrigue Lifestyle XP
+        if = {
+            limit = { bm_blood_power_quarterly_shadows_lifestyle_xp_value > 0 }
+            add_intrigue_lifestyle_xp = bm_blood_power_quarterly_shadows_lifestyle_xp_value
+        }
+
+        # Mastery -> Learning Lifestyle XP
+        if = {
+            limit = { bm_blood_power_quarterly_mastery_lifestyle_xp_value > 0 }
+            add_learning_lifestyle_xp = bm_blood_power_quarterly_mastery_lifestyle_xp_value
+        }
+
+        # Dynasty -> Currently Active Lifestyle Focus XP (fallback: random core lifestyle)
+        if = {
+            limit = { bm_blood_power_quarterly_dynasty_lifestyle_xp_value > 0 }
+            if = {
+                limit = { has_lifestyle = diplomacy_lifestyle }
+                add_diplomacy_lifestyle_xp = bm_blood_power_quarterly_dynasty_lifestyle_xp_value
+            }
+            else_if = {
+                limit = { has_lifestyle = martial_lifestyle }
+                add_martial_lifestyle_xp = bm_blood_power_quarterly_dynasty_lifestyle_xp_value
+            }
+            else_if = {
+                limit = { has_lifestyle = stewardship_lifestyle }
+                add_stewardship_lifestyle_xp = bm_blood_power_quarterly_dynasty_lifestyle_xp_value
+            }
+            else_if = {
+                limit = { has_lifestyle = intrigue_lifestyle }
+                add_intrigue_lifestyle_xp = bm_blood_power_quarterly_dynasty_lifestyle_xp_value
+            }
+            else_if = {
+                limit = { has_lifestyle = learning_lifestyle }
+                add_learning_lifestyle_xp = bm_blood_power_quarterly_dynasty_lifestyle_xp_value
+            }
+            else_if = {
+                limit = { has_lifestyle = wanderer_lifestyle }
+                add_wanderer_lifestyle_xp = bm_blood_power_quarterly_dynasty_lifestyle_xp_value
+            }
+            else = {
+                random_list = {
+                    10 = { add_diplomacy_lifestyle_xp = bm_blood_power_quarterly_dynasty_lifestyle_xp_value }
+                    10 = { add_martial_lifestyle_xp = bm_blood_power_quarterly_dynasty_lifestyle_xp_value }
+                    10 = { add_stewardship_lifestyle_xp = bm_blood_power_quarterly_dynasty_lifestyle_xp_value }
+                    10 = { add_intrigue_lifestyle_xp = bm_blood_power_quarterly_dynasty_lifestyle_xp_value }
+                    10 = { add_learning_lifestyle_xp = bm_blood_power_quarterly_dynasty_lifestyle_xp_value }
+                }
+            }
+        }
+    }
+}

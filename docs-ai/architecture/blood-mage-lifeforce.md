@@ -71,7 +71,7 @@ Triggered on `on_combat_end_winner` (`bm_on_combat_end_winner`) for surviving si
 | **Empower Blood Knight (`empower_blood_knight_interaction`)** | Knight only | 0 Piety + 1 Major or 1 Minor Lifeforce | Caster: **-1 Major** or **-1 Minor** | Caster: `+4`/`+2` `benediction`; Target: `+10`/`+5` `vanguard` & `slaughter` |
 | **Bless Bloodline (`bm_bless_bloodline_interaction`)** | Mage & Knight | 35 Piety + 1 Minor Lifeforce | **-1 Minor** | `+2` `bloodline` (Mage) / `+2` `vanguard` (Knight) |
 | **Cast Blood Curse (`bm_curse_blood_interaction`)** | Mage (>=10 Hematurgy) | 50 Piety + 1 Minor Lifeforce | **-1 Minor** (Crit success siphons **+1 Minor** back from victim) | `+2` (win) / `+4` (crit) / `+1` (fail) `hematurgy` |
-| **Grant / Restore Lifeforce (`grant_lifeforce_interaction*`)** | Mage & Knight | `25–50` Piety + Minor/Major Lifeforce | Transfers stack to target or clears `lifedrained_modifier` | `+1`/`+2` `enlightenment` or `+4` `benediction` |
+| **Grant / Restore Lifeforce (`grant_lifeforce_interaction*`)** | Mage & Knight | `25–50` Piety + Minor/Major Lifeforce | Transfers stack to target or clears `lifedrained_modifier` on self or any target | `+1`/`+2` `enlightenment` or `+4` `benediction` |
 | **Bleed Own Vein (`bm_bleed_own_vein_interaction`)** | Mage & Knight | Health/Stress toll, 1-yr CD | Minor: **+1 Minor** (wounded); Major: **+1 Major** (wounded_2, lifedrained_modifier, 25 stress) | Minor: `+2` `hematurgy` (Mage) / `+2` `slaughter` (Knight); Major: `+4` `hematurgy` (Mage) / `+4` `slaughter` (Knight) |
 | **Purge Stress Vices (`bm_purge_coping_traits_interaction`)** | Mage & Knight | 250 Piety + 1 Major Lifeforce | **-1 Major** | `+4` `enlightenment` (self) or `+4` `benediction` (other) |
 

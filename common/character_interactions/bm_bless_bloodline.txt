@@ -12,32 +12,56 @@
 	is_shown = {
 		scope:actor = {
 			OR = {
-			has_trait = lifestyle_blood_mage
-			has_trait = lifestyle_blood_knight
+				has_trait = lifestyle_blood_mage
+				has_trait = lifestyle_blood_knight
 			}
 		}
 		NOT = { scope:actor = scope:recipient }
 		scope:recipient = {
+			is_alive = yes
 			OR = {
-			is_child_of = scope:actor
-			dynasty ?= scope:actor.dynasty
+				is_child_of = scope:actor
+				dynasty ?= scope:actor.dynasty
+				is_knight_of = scope:actor
+				AND = {
+					is_courtier_of = scope:actor
+					has_trait = lifestyle_blood_knight
+				}
+			}
+			OR = {
+				NOR = {
+					has_character_modifier = bm_blessed_blood_modifier
+					has_character_modifier = bm_blessed_blood_sovereign_modifier
+					has_character_modifier = bm_blessed_blood_iron_modifier
+					has_character_modifier = bm_blessed_blood_crucible_modifier
+					has_character_modifier = bm_anointed_champion_modifier
+				}
+				AND = {
+					scope:actor = { bm_has_superior_stave_trigger = { STAVE = feingur } }
+					OR = {
+						is_child_of = scope:actor
+						dynasty ?= scope:actor.dynasty
+					}
+					NOT = { has_character_modifier = bm_feingur_blessed_blood_modifier }
+				}
 			}
 		}
 	}
 
-	cost = { piety = 35 }
+	cost = {
+		piety = {
+			if = {
+				limit = { scope:bless_feingur = yes }
+				value = 50
+			}
+			else = {
+				value = 35
+			}
+		}
+	}
 
 	is_valid_showing_failures_only = {
 		scope:actor = { has_character_modifier = lifeforce_modifier_minor }
-		custom_description = {
-			text = "bm_recipient_already_blessed"
-			NOR = {
-				scope:recipient = { has_character_modifier = bm_blessed_blood_modifier }
-				scope:recipient = { has_character_modifier = bm_blessed_blood_sovereign_modifier }
-				scope:recipient = { has_character_modifier = bm_blessed_blood_iron_modifier }
-				scope:recipient = { has_character_modifier = bm_blessed_blood_crucible_modifier }
-			}
-		}
 	}
 
 	send_options_exclusive = yes
@@ -46,12 +70,39 @@
 		flag = bless_sovereign
 		localization = bm_bless_bloodline_interaction.bless_sovereign
 		current_description = bm_bless_bloodline_interaction.bless_sovereign_desc
-		is_shown = { always = yes }
+		is_shown = {
+			scope:recipient = {
+				OR = {
+					is_child_of = scope:actor
+					dynasty ?= scope:actor.dynasty
+				}
+				NOR = {
+					has_character_modifier = bm_blessed_blood_modifier
+					has_character_modifier = bm_blessed_blood_sovereign_modifier
+					has_character_modifier = bm_blessed_blood_iron_modifier
+					has_character_modifier = bm_blessed_blood_crucible_modifier
+					has_character_modifier = bm_anointed_champion_modifier
+				}
+			}
+		}
 		is_valid = { always = yes }
 		starts_enabled = {
-			OR = {
-				scope:recipient = { is_primary_heir_of = scope:actor }
-				scope:recipient = { is_ruler = yes }
+			scope:recipient = {
+				OR = {
+					is_child_of = scope:actor
+					dynasty ?= scope:actor.dynasty
+				}
+				NOR = {
+					has_character_modifier = bm_blessed_blood_modifier
+					has_character_modifier = bm_blessed_blood_sovereign_modifier
+					has_character_modifier = bm_blessed_blood_iron_modifier
+					has_character_modifier = bm_blessed_blood_crucible_modifier
+					has_character_modifier = bm_anointed_champion_modifier
+				}
+				OR = {
+					is_primary_heir_of = scope:actor
+					is_ruler = yes
+				}
 			}
 		}
 	}
@@ -60,16 +111,43 @@
 		flag = bless_iron
 		localization = bm_bless_bloodline_interaction.bless_iron
 		current_description = bm_bless_bloodline_interaction.bless_iron_desc
-		is_shown = { always = yes }
+		is_shown = {
+			scope:recipient = {
+				NOR = {
+					has_character_modifier = bm_blessed_blood_modifier
+					has_character_modifier = bm_blessed_blood_sovereign_modifier
+					has_character_modifier = bm_blessed_blood_iron_modifier
+					has_character_modifier = bm_blessed_blood_crucible_modifier
+					has_character_modifier = bm_anointed_champion_modifier
+				}
+			}
+		}
 		is_valid = { always = yes }
 		starts_enabled = {
-			NOR = {
-				scope:recipient = { is_primary_heir_of = scope:actor }
-				scope:recipient = { is_ruler = yes }
-			}
-			OR = {
-				scope:recipient = { is_knight = yes }
-				scope:recipient = { martial >= 12 }
+			scope:recipient = {
+				NOR = {
+					has_character_modifier = bm_blessed_blood_modifier
+					has_character_modifier = bm_blessed_blood_sovereign_modifier
+					has_character_modifier = bm_blessed_blood_iron_modifier
+					has_character_modifier = bm_blessed_blood_crucible_modifier
+					has_character_modifier = bm_anointed_champion_modifier
+				}
+				OR = {
+					NOR = {
+						is_child_of = scope:actor
+						dynasty ?= scope:actor.dynasty
+					}
+					AND = {
+						NOR = {
+							is_primary_heir_of = scope:actor
+							is_ruler = yes
+						}
+						OR = {
+							is_knight = yes
+							martial >= 12
+						}
+					}
+				}
 			}
 		}
 	}
@@ -78,14 +156,73 @@
 		flag = bless_crucible
 		localization = bm_bless_bloodline_interaction.bless_crucible
 		current_description = bm_bless_bloodline_interaction.bless_crucible_desc
-		is_shown = { always = yes }
+		is_shown = {
+			scope:recipient = {
+				OR = {
+					is_child_of = scope:actor
+					dynasty ?= scope:actor.dynasty
+				}
+				NOR = {
+					has_character_modifier = bm_blessed_blood_modifier
+					has_character_modifier = bm_blessed_blood_sovereign_modifier
+					has_character_modifier = bm_blessed_blood_iron_modifier
+					has_character_modifier = bm_blessed_blood_crucible_modifier
+					has_character_modifier = bm_anointed_champion_modifier
+				}
+			}
+		}
 		is_valid = { always = yes }
 		starts_enabled = {
-			NOR = {
-				scope:recipient = { is_primary_heir_of = scope:actor }
-				scope:recipient = { is_ruler = yes }
-				scope:recipient = { is_knight = yes }
-				scope:recipient = { martial >= 12 }
+			scope:recipient = {
+				OR = {
+					is_child_of = scope:actor
+					dynasty ?= scope:actor.dynasty
+				}
+				NOR = {
+					has_character_modifier = bm_blessed_blood_modifier
+					has_character_modifier = bm_blessed_blood_sovereign_modifier
+					has_character_modifier = bm_blessed_blood_iron_modifier
+					has_character_modifier = bm_blessed_blood_crucible_modifier
+					has_character_modifier = bm_anointed_champion_modifier
+					is_primary_heir_of = scope:actor
+					is_ruler = yes
+					is_knight = yes
+					martial >= 12
+				}
+			}
+		}
+	}
+
+	send_option = {
+		flag = bless_feingur
+		localization = bm_bless_bloodline_interaction.bless_feingur
+		current_description = bm_bless_bloodline_interaction.bless_feingur_desc
+		is_shown = {
+			scope:actor = { bm_has_superior_stave_trigger = { STAVE = feingur } }
+			scope:recipient = {
+				OR = {
+					is_child_of = scope:actor
+					dynasty ?= scope:actor.dynasty
+				}
+				NOT = { has_character_modifier = bm_feingur_blessed_blood_modifier }
+			}
+		}
+		is_valid = { always = yes }
+		starts_enabled = {
+			scope:actor = { bm_has_superior_stave_trigger = { STAVE = feingur } }
+			scope:recipient = {
+				OR = {
+					is_child_of = scope:actor
+					dynasty ?= scope:actor.dynasty
+				}
+				NOT = { has_character_modifier = bm_feingur_blessed_blood_modifier }
+				OR = {
+					has_character_modifier = bm_blessed_blood_modifier
+					has_character_modifier = bm_blessed_blood_sovereign_modifier
+					has_character_modifier = bm_blessed_blood_iron_modifier
+					has_character_modifier = bm_blessed_blood_crucible_modifier
+					has_character_modifier = bm_anointed_champion_modifier
+				}
 			}
 		}
 	}
@@ -101,10 +238,26 @@
 				bloodline_magic_cast_effect_minor = yes
 				scope:recipient = {
 					if = {
+						limit = { scope:bless_feingur = yes }
+						add_character_modifier = {
+							modifier = bm_feingur_blessed_blood_modifier
+						}
+						add_opinion = {
+							target = scope:actor
+							modifier = magic_opinion_positive
+							opinion = 40
+						}
+					}
+					else_if = {
 						limit = { scope:bless_sovereign = yes }
 						add_character_modifier = {
 							modifier = bm_blessed_blood_sovereign_modifier
 							years = 10
+						}
+						add_opinion = {
+							target = scope:actor
+							modifier = magic_opinion_positive
+							opinion = 25
 						}
 					}
 					else_if = {
@@ -113,17 +266,22 @@
 							modifier = bm_blessed_blood_iron_modifier
 							years = 10
 						}
+						add_opinion = {
+							target = scope:actor
+							modifier = magic_opinion_positive
+							opinion = 25
+						}
 					}
 					else = {
 						add_character_modifier = {
 							modifier = bm_blessed_blood_crucible_modifier
 							years = 10
 						}
-					}
-					add_opinion = {
-						target = scope:actor
-						modifier = magic_opinion_positive
-						opinion = 25
+						add_opinion = {
+							target = scope:actor
+							modifier = magic_opinion_positive
+							opinion = 25
+						}
 					}
 				}
 				hidden_effect = {
@@ -136,6 +294,8 @@
 	ai_targets = {
 		ai_recipients = children
 		ai_recipients = dynasty
+		ai_recipients = courtiers
+		ai_recipients = vassals
 	}
 	ai_potential = { always = yes }
 	ai_frequency = 12
@@ -150,6 +310,10 @@
 		modifier = {
 			scope:recipient = { is_primary_heir_of = scope:actor }
 			add = 50
+		}
+		modifier = {
+			scope:recipient = { is_knight_of = scope:actor }
+			add = 25
 		}
 		modifier = {
 			scope:actor = {

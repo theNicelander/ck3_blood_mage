@@ -1197,6 +1197,7 @@ seek_power.006 = {
             limit = { has_variable = bm_seek_power_opponent }
             var:bm_seek_power_opponent = {
                 save_scope_as = duel_opponent
+                save_scope_as = escort_knight
             }
             remove_variable = bm_seek_power_opponent
         }
@@ -1204,6 +1205,7 @@ seek_power.006 = {
             limit = { exists = scope:sc_defender }
             scope:sc_defender = {
                 save_scope_as = duel_opponent
+                save_scope_as = escort_knight
             }
         }
     }
@@ -1242,7 +1244,7 @@ seek_power.006 = {
         }
     }
 
-    # Option 2 (Victor, opponent survived): Spare & recruit the defeated warrior to court
+    # Option 2 (Victor, opponent survived): Spare & recruit the defeated warrior to court (Prowess duel)
     option = {
         name = seek_power.006.spare
         trigger = {
@@ -1252,22 +1254,49 @@ seek_power.006 = {
             scope:duel_opponent = { is_alive = yes }
         }
         ai_chance = { base = 20 }
-        send_interface_toast = {
-            title = seek_power.006.spare
-            left_icon = root
-            right_icon = scope:duel_opponent
-            add_courtier = scope:duel_opponent
-            if = {
-                limit = { has_trait = lifestyle_blood_knight }
-                add_blood_knight_xp = { TRACK = vanguard XP = 2 }
+        duel = {
+            skill = prowess
+            target = scope:duel_opponent
+            50 = {
+                desc = seek_power.duel.join_knight
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 2.0
+                    min = -45
+                    max = 45
+                }
+                send_interface_toast = {
+                    title = seek_power.toast.spare_success
+                    left_icon = root
+                    right_icon = scope:duel_opponent
+                    add_courtier = scope:duel_opponent
+                    if = {
+                        limit = { has_trait = lifestyle_blood_knight }
+                        add_blood_knight_xp = { TRACK = vanguard XP = 2 }
+                    }
+                    if = {
+                        limit = { has_trait = lifestyle_blood_mage }
+                        add_blood_mage_xp = { TRACK = ancient XP = 2 }
+                    }
+                    add_character_modifier = { modifier = lifeforce_modifier_minor }
+                    hidden_effect = {
+                        bm_recount_lifeforce_stacks_effect = yes
+                    }
+                }
             }
-            if = {
-                limit = { has_trait = lifestyle_blood_mage }
-                add_blood_mage_xp = { TRACK = ancient XP = 2 }
-            }
-            add_character_modifier = { modifier = lifeforce_modifier_minor }
-            hidden_effect = {
-                bm_recount_lifeforce_stacks_effect = yes
+            50 = {
+                desc = seek_power.duel.separate_knight
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = -2.0
+                    min = -45
+                    max = 45
+                }
+                send_interface_toast = {
+                    title = seek_power.toast.spare_refuse
+                    left_icon = root
+                    right_icon = scope:duel_opponent
+                }
             }
         }
     }

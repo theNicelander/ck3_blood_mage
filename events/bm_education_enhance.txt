@@ -31,6 +31,9 @@ bm_education_enhancement.001 = {
                 limit = { has_trait = education_diplomacy_3 }
                 piety_level >= 3
             }
+            trigger_else = {
+                always = no
+            }
         }
         show_as_unavailable = {
             has_trait = education_diplomacy
@@ -59,6 +62,9 @@ bm_education_enhancement.001 = {
             trigger_else_if = {
                 limit = { has_trait = education_martial_3 }
                 piety_level >= 3
+            }
+            trigger_else = {
+                always = no
             }
         }
         show_as_unavailable = {
@@ -89,6 +95,9 @@ bm_education_enhancement.001 = {
                 limit = { has_trait = education_stewardship_3 }
                 piety_level >= 3
             }
+            trigger_else = {
+                always = no
+            }
         }
         show_as_unavailable = {
             has_trait = education_stewardship
@@ -118,6 +127,9 @@ bm_education_enhancement.001 = {
                 limit = { has_trait = education_intrigue_3 }
                 piety_level >= 3
             }
+            trigger_else = {
+                always = no
+            }
         }
         show_as_unavailable = {
             has_trait = education_intrigue
@@ -146,6 +158,9 @@ bm_education_enhancement.001 = {
             trigger_else_if = {
                 limit = { has_trait = education_learning_3 }
                 piety_level >= 3
+            }
+            trigger_else = {
+                always = no
             }
         }
         show_as_unavailable = {

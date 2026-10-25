@@ -20,6 +20,7 @@
 		NOT = { scope:actor = scope:recipient }
 		scope:recipient = {
 			is_alive = yes
+			NOT = { has_character_modifier = bm_anointed_heir_modifier }
 			OR = {
 				is_primary_heir_of = scope:actor
 				is_child_of = scope:actor
@@ -31,10 +32,6 @@
 
 	is_valid_showing_failures_only = {
 		scope:actor = { has_character_modifier = lifeforce_modifier_major }
-		custom_description = {
-			text = "bm_recipient_already_anointed_heir"
-			NOT = { scope:recipient = { has_character_modifier = bm_anointed_heir_modifier } }
-		}
 	}
 
 	on_accept = {

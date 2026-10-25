@@ -21,7 +21,7 @@ Living technical specification for the Blood Knight subsystem (`lifestyle_blood_
 - **Empower Blood Knight (`empower_blood_knight_interaction`):** Fellow Blood Knight empowers a Blood Knight spouse, child, family member, sworn knight, or courtier:
   - Major Lifeforce: `+10` XP to both `vanguard` and `slaughter` on target; `+4` `benediction` XP to caster.
   - Minor Lifeforce: `+5` XP to both `vanguard` and `slaughter` on target; `+2` `benediction` XP to caster.
-- **Go on a Blood Hunt (`seek_power_decision`):** Martial and occult wilderness expedition harvesting Lifeforce, martial, and discipline XP (`365`d cooldown landed, `1095`d unlanded/wanderer; halved by Superior **Vegvísir**). Available to both Blood Knights and Blood Mages, featuring a 20%–50% prowess-scaled chance (`bm_seek_power_traveler_chance_value`, equal to Prowess score clamped to min 20% max 50%) for the traveler encounter (`.003`), falling back to a 6-way pure Prowess encounter duel:
+- **Go on a Blood Hunt (`seek_power_decision`):** Martial and occult wilderness expedition harvesting Lifeforce, martial, and discipline XP (`365`d cooldown landed, `1095`d unlanded/wanderer; halved by Superior **Vegvísir**). Available to both Blood Knights and Blood Mages who are not travelling, not participating in another activity, not imprisoned, and not incapable. Features a 20%–50% prowess-scaled chance (`bm_seek_power_traveler_chance_value`, equal to Prowess score clamped to min 20% max 50%) for the traveler encounter (`.003`), falling back to a 6-way pure Prowess encounter duel:
   - **The Stag's Last Stand (`seek_power.002`):** Run down and slaughter a royal stag for **1 Minor Lifeforce** + `+1` `slaughter` XP (Knight) / `+1` `hematurgy` XP (Mage).
   - **The Beast's Lair (`seek_power.008`):** Slay a monstrous apex predator in its den via Prowess+Martial duel vs `20` benchmark (~60% total success at 20 skill, ~70% at 25, ~80% at 30):
     - *Success:* **1 Major Lifeforce**, `+25` Prestige, `+2` `slaughter`/`hematurgy` XP.
@@ -35,10 +35,10 @@ Living technical specification for the Blood Knight subsystem (`lifestyle_blood_
     - *Fail:* Barred doors, `0` Lifeforce, `+5` Stress.
     - *Critical Fail:* Cornered by defenders, Wounded, `0` Lifeforce, `+20` Stress, `-15` Prestige.
     - *Option B:* Orderly blood tithe for **1 Minor Lifeforce** + `+1` `benediction` XP.
-  - **Blades on the Lonely Road (`seek_power.003`):** Spawns a wandering warrior (`traveller_character_template`, Learning `10–18`, Prowess `8–18`, Martial `8–16`) accompanied by a sworn escort knight (`bm_escort_knight_character_template`, prowess `20–30`) for **both Blood Mages and Blood Knights**. Both spawn with player culture and county/player faith.
+  - **Blades on the Lonely Road (`seek_power.003`):** Spawns a wandering warrior (`traveller_character_template`, Learning `10–18`, Prowess `8–18`, Martial `8–16`) accompanied by a sworn escort knight (`bm_escort_knight_character_template`, prowess `10–15`) for **both Blood Mages and Blood Knights**. Both spawn with player culture and county/player faith.
     - *Bout for Blood (`seek_power.003.knight`):* Prowess skill duel against the traveler: Crit Win awards **1 Major Lifeforce** + `+3` `slaughter`/`hematurgy` XP; Win awards **1 Minor Lifeforce** + `+2` `slaughter`/`hematurgy` XP; Spar awards `+1` `vanguard`/`hematurgy` XP; Escape awards `0` Lifeforce.
     - *Lifedrain (`seek_power.003.a`):* Prowess+Learning duel vs `20` benchmark against the traveler: Silent harvest drains lifeblood and awards **1 Major Lifeforce** + `+3` `slaughter`/`hematurgy` XP.
-    - *Battlefield Single Combat Duel (`seek_power.003.battlefield_duel` -> `seek_power.006`):* Open to both classes (`prowess >= 25`, Single Combat Engine, `FATALITY = possible`, `LOCALE = battlefield`). Victory allows harvesting **1 Major Lifeforce**, `+5` `slaughter`/`hematurgy` XP, and a **25% chance of 1 Superior Lifeforce**—or sparing and recruiting the warrior (`+2` `vanguard`/`ancient` XP + **1 Minor Lifeforce**).
+    - *Battlefield Single Combat Duel (`seek_power.003.battlefield_duel` -> `seek_power.006`):* Open to both classes (`prowess >= 25`, Single Combat Engine, `FATALITY = possible`, `LOCALE = battlefield`). Victory allows harvesting **1 Major Lifeforce**, `+5` `slaughter`/`hematurgy` XP, and a **25% chance of 1 Superior Lifeforce**—or sparing and attempting to recruit the warrior via a Prowess duel (Win: recruit courtier, `+2` `vanguard`/`ancient` XP, **1 Minor Lifeforce**; Fail: warrior refuses fealty and departs with no rewards).
     - *Recruitment:* Persuade traveler via Learning duel (`+1` `enlightenment` XP) or recruit escort knight via Prowess duel (`+2` `vanguard`/`ancient` XP).
   - **Blood in the Embers (`seek_power.010`):** Ambush an outlaw camp via Prowess+Martial duel vs `20` benchmark:
     - *Success:* **1 Major Lifeforce**, `+25` Gold, `+2` `slaughter`/`hematurgy` XP.
@@ -60,12 +60,11 @@ Living technical specification for the Blood Knight subsystem (`lifestyle_blood_
 - **Hostile & Support Interactions:**
   - `lifedrain_courtier_event_interaction`: Prowess duel siphon (`25` Piety, 3-mo CD) -> 1 Minor Lifeforce + `+1` `slaughter` XP.
   - `trait_drain_prisoner_event_interaction`: Steal congenital traits up to Rank 5 from prisoners (`100–325` Piety + Major Lifeforce) -> `+2` `slaughter` XP.
-  - `bm_bless_bloodline_interaction`: Bless child/kin (`35` Piety + Minor Lifeforce, 10-yr buff) -> `+2` `vanguard` XP.
-  - `bm_anoint_knight_interaction`: Anoint sworn knight or Blood Knight courtier (`50` Piety + Minor Lifeforce) -> `bm_anointed_champion_modifier` (`+4` Prowess, `+0.5` Health, `+0.5` Negate Health Penalty for 5 yrs) and `+2` `vanguard` (Knight) / `+2` `benediction` (Mage) XP.
+  - `bm_bless_bloodline_interaction`: Bless child, dynasty kin, sworn knight, or Blood Knight courtier (`35` Piety + Minor Lifeforce, 10-yr buff; `50` Piety for permanent Feingur blessing) -> `+1` `benediction` XP. The **Blood of Iron** option (`bm_blessed_blood_iron_modifier`: `+2` Martial, `+4` Prowess, `+25%` Knight Effectiveness, `+1.0` Health, `+0.50` Negate Health Penalty for 10 yrs) serves as the unified champion blessing for sworn knights and Blood Knight courtiers.
   - `bm_ritual_spar_decision`: Annual courtyard ritual spar against sworn Blood Knights (1 Minor Lifeforce, 1-yr CD). Samples up to 3 candidates proportionally weighted by prowess ($w_i = \text{prowess}_i$) and initiates an interactive Single Combat Engine (SCE) practice duel (non-lethal). Victor claims **1 Major Lifeforce** + `+3` Vanguard/Hematurgy XP; Loser earns `+1` Vanguard/Enlightenment XP; Both gain `+20` Blademaster trait XP and `+15` opinion.
-  - `bm_cull_champion_interaction`: Blood sacrifice of prowess >= 12 prisoner / Blood Knight prisoner or critically broken follower (`50` Piety) -> Executes target (`death_lifedrain_reason`), yields **1 Major Lifeforce**, `+3` `slaughter` (Knight) / `+3` `hematurgy` (Mage) XP, and rolls `1 × prowess` chance (capped at 50%) for **1 Superior Lifeforce**.
+  - `bm_cull_champion_interaction`: Blood sacrifice of prowess >= 12 prisoner / Blood Knight prisoner or critically broken follower (`50` Piety; hidden on close family/spouses unless rival) -> Executes target (`death_lifedrain_reason`), yields **1 Major Lifeforce**, `+3` `slaughter` (Knight) / `+3` `hematurgy` (Mage) XP, and rolls `1 × prowess` chance (capped at 50%) for **1 Superior Lifeforce**.
   - `bm_inscribe_rune_other_interaction`: Carve Minor (`+4` `benediction` XP) or Major (`+5` `benediction` XP) Galdrastafir runes onto courtiers, kin, knights, or golems.
-  - `bm_heal_ailment`: Full healing access across Minor, Major, and Deadly ailments (`37` conditions) on self (`+2`/`+4` `enlightenment`, `+8` `benediction`) and comrades (`+1`/`+2` `vanguard` + `benediction`, `+8` `benediction`).
+  - `bm_heal_ailment`: Unified healing access across Minor, Major, and Deadly ailments (`32` conditions), progressive old-age trait rejuvenation (`5` traits), and stress coping vice purging (`11` traits) on self and comrades.
 - **Full Minor, Major & Superior Grimoire Access:**
   - Self-inscribe Minor (`+4` `ancient`), Major (`+5` `ancient`), and Superior (`+10` `ancient`) Galdrastafir Blood Runes.
   - Unlock and level all 5 `lifestyle_blood_power` tracks (`+3` `enlightenment` + `+10` Power XP).
@@ -73,6 +72,17 @@ Living technical specification for the Blood Knight subsystem (`lifestyle_blood_
   - Manifest Congenital Perfection Ranks 1–2 (`+4` `vanguard`) and Apex Ranks 3–5 (`+6` `vanguard`, `+2` `enlightenment`).
   - Empower Dynasty Bloodline (`+3`/`+5`/`+10` `benediction` XP) and Forge Blood Golem (`+5` `vanguard` XP).
   - Convert realm faith via `become_blood_cultist_decision` (`250` Piety + Major Lifeforce).
+
+---
+
+## Blood Magic Men-at-Arms Regiments (`common/men_at_arms_types/bm_men_at_arms_types.txt`)
+
+Both **Blood Mages** (`lifestyle_blood_mage`) and **Blood Knights** (`lifestyle_blood_knight`) can recruit two dedicated Piety-maintained Men-at-Arms regiments. Both regiments remain visible (`should_show_when_unavailable`) to any Blood Mage or Blood Knight before reaching the required Devotion level, have no per-ruler regiment cap (`max_regiments` uncapped), and cannot appear in generic mercenary/hired troops (`allowed_in_hired_troops = no`).
+
+| Regiment | Key & Archetype | Stack | Stats (Dmg / Tough / Pur / Scr / Siege) | Counters | Terrain & Winter Modifiers | Costs & Requirements |
+| --- | --- | --- | --- | --- | --- | --- |
+| **Blood Berserkers** | `bm_blood_berserkers`<br>`heavy_infantry`<br>Icon: `varangian_veterans` | `100` | `68` / `20` / `35` / `0` / `0.10` | • Pikemen (`1.5`)<br>• Skirmishers (`1.0`)<br>• Archers (`1.0`) | • **Taiga / Forest / Mountains:** `+12` Dmg, `+8` Pur<br>• **Mild & Harsh Winter:** `+10` Dmg, `+5` Tough<br>• **Desert / Floodplains:** `-8` Dmg, `-4` Tough | • **Unlock:** Blood Mage or Blood Knight + **Devotion 2+** (`piety_level >= 2`)<br>• **Buy:** `150` Piety<br>• **Maint:** `1.35` / `0.40` Piety/mo (Raised / Unraised)<br>• **Provisions:** `7` (`@provisions_cost_infantry_moderate`) |
+| **Blood-Bound Behemoths** | `bm_blood_behemoths`<br>`elephant_cavalry`<br>Icon: `war_elephants` | `25`<br>*(Hired: 10)* | `210` / `80` / `0` / `0` / `0.25` | • Heavy Infantry (`2.0`)<br>• Pikemen (`2.0`) | • **Mountains / Desert Mountains / Hills / Drylands:** `+15` Tough<br>• **Winter / Desert:** No combat penalty (`0` drain)<br>• **Wetlands:** `-30` Dmg, `-15` Tough | • **Unlock:** Blood Mage or Blood Knight + **Devotion 4+** (`piety_level >= 4`)<br>• **Buy:** `400` Piety<br>• **Maint:** `1.50` / `0.50` Piety/mo (Raised / Unraised)<br>• **Provisions:** `0` |
 
 ---
 
@@ -102,3 +112,4 @@ Each track has 10 tiers (`10, 20, ..., 100` XP). Vitality step = `+0.1` Health, 
 | Battlefield victory/defeat & tournament hooks | `common/on_action/bm_combat_on_actions.txt`, `common/scripted_effects/bm_combat_effects.txt` |
 | Duel fatality & Superior harvest | `common/on_action/bm_duel_on_actions.txt` |
 | Yearly pulse | `events/bm_yearly_events.txt` (`blood_mage_yearly_events.004`) |
+| Blood Magic Men-at-Arms | `common/men_at_arms_types/bm_men_at_arms_types.txt`, `localization/english/bm_men_at_arms_l_english.yml` |
