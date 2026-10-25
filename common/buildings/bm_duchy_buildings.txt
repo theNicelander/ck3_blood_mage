@@ -1,0 +1,429 @@
+﻿bm_blood_temple_01 = {
+	# 1 year
+	construction_time = 365
+
+	can_construct_showing_failures_only = {
+		scope:holder = {
+			custom_description = {
+				text = bm_requires_blood_mage_or_blodtru_tt
+				OR = {
+					has_trait = lifestyle_blood_mage
+					has_trait = lifestyle_blood_knight
+					faith = { religion = religion:blodtru_religion }
+				}
+			}
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost = {
+		gold = 150
+	}
+
+	character_modifier = {
+		monthly_piety = 0.5
+		monthly_piety_gain_mult = 0.05
+		health = 0.2
+		life_expectancy = 2
+	}
+
+	duchy_capital_county_modifier = {
+		development_growth = 0.1
+		development_growth_factor = 0.05
+		monthly_county_control_growth_add = 0.1
+	}
+
+	next_building = bm_blood_temple_02
+
+	type_icon = "bm_blood_temple.dds"
+
+	type = duchy_capital
+
+	flag = duchy_building
+
+	ai_value = {
+		base = 100
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+bm_blood_temple_02 = {
+	# 1.5 years
+	construction_time = 545
+
+	can_construct_showing_failures_only = {
+		scope:holder = {
+			custom_description = {
+				text = bm_requires_blood_mage_or_blodtru_tt
+				OR = {
+					has_trait = lifestyle_blood_mage
+					has_trait = lifestyle_blood_knight
+					faith = { religion = religion:blodtru_religion }
+				}
+			}
+			piety_level >= 1
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost = {
+		gold = 250
+	}
+
+	character_modifier = {
+		monthly_piety = 1.0
+		monthly_piety_gain_mult = 0.10
+		monthly_dynasty_prestige = 0.1
+		health = 0.4
+		life_expectancy = 4
+	}
+
+	duchy_capital_county_modifier = {
+		development_growth = 0.2
+		development_growth_factor = 0.10
+		monthly_county_control_growth_add = 0.2
+	}
+
+	next_building = bm_blood_temple_03
+
+	type_icon = "bm_blood_temple.dds"
+
+	type = duchy_capital
+
+	flag = duchy_building
+
+	ai_value = {
+		base = 100
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+bm_blood_temple_03 = {
+	# 2 years
+	construction_time = 730
+
+	can_construct_showing_failures_only = {
+		scope:holder = {
+			custom_description = {
+				text = bm_requires_blood_mage_or_blodtru_tt
+				OR = {
+					has_trait = lifestyle_blood_mage
+					has_trait = lifestyle_blood_knight
+					faith = { religion = religion:blodtru_religion }
+				}
+			}
+			piety_level >= 2
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost = {
+		gold = 400
+	}
+
+	character_modifier = {
+		monthly_piety = 1.5
+		monthly_piety_gain_mult = 0.15
+		monthly_dynasty_prestige = 0.2
+		health = 0.6
+		life_expectancy = 6
+	}
+
+	duchy_capital_county_modifier = {
+		development_growth = 0.3
+		development_growth_factor = 0.15
+		monthly_county_control_growth_add = 0.3
+	}
+
+	next_building = bm_blood_temple_04
+
+	type_icon = "bm_blood_temple.dds"
+
+	type = duchy_capital
+
+	flag = duchy_building
+
+	ai_value = {
+		base = 100
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+bm_blood_temple_04 = {
+	# 2.5 years
+	construction_time = 910
+
+	can_construct_showing_failures_only = {
+		scope:holder = {
+			custom_description = {
+				text = bm_requires_blood_mage_or_blodtru_tt
+				OR = {
+					has_trait = lifestyle_blood_mage
+					has_trait = lifestyle_blood_knight
+					faith = { religion = religion:blodtru_religion }
+				}
+			}
+			piety_level >= 3
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost = {
+		gold = 600
+	}
+
+	character_modifier = {
+		monthly_piety = 2.0
+		monthly_piety_gain_mult = 0.20
+		monthly_dynasty_prestige = 0.3
+		health = 0.8
+		life_expectancy = 8
+	}
+
+	duchy_capital_county_modifier = {
+		development_growth = 0.4
+		development_growth_factor = 0.20
+		monthly_county_control_growth_add = 0.4
+	}
+
+	next_building = bm_blood_temple_05
+
+	type_icon = "bm_blood_temple.dds"
+
+	type = duchy_capital
+
+	flag = duchy_building
+
+	ai_value = {
+		base = 100
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+bm_blood_temple_05 = {
+	# 3 years
+	construction_time = 1095
+
+	can_construct_showing_failures_only = {
+		scope:holder = {
+			custom_description = {
+				text = bm_requires_blood_mage_or_blodtru_tt
+				OR = {
+					has_trait = lifestyle_blood_mage
+					has_trait = lifestyle_blood_knight
+					faith = { religion = religion:blodtru_religion }
+				}
+			}
+			piety_level >= 3
+		}
+		custom_description = {
+			text = bm_requires_feudalized_realm_tt
+			building_requirement_tribal = no
+			holding_is_feudalized = yes
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost = {
+		gold = 850
+	}
+
+	character_modifier = {
+		monthly_piety = 2.5
+		monthly_piety_gain_mult = 0.25
+		monthly_dynasty_prestige = 0.5
+		health = 1.0
+		life_expectancy = 10
+		positive_inactive_inheritance_chance = 0.05
+		positive_random_genetic_chance = 0.05
+	}
+
+	duchy_capital_county_modifier = {
+		development_growth = 0.5
+		development_growth_factor = 0.25
+		monthly_county_control_growth_add = 0.5
+	}
+
+	next_building = bm_blood_temple_06
+
+	type_icon = "bm_blood_temple.dds"
+
+	type = duchy_capital
+
+	flag = duchy_building
+
+	ai_value = {
+		base = 100
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+bm_blood_temple_06 = {
+	# 4 years
+	construction_time = 1460
+
+	can_construct_showing_failures_only = {
+		scope:holder = {
+			custom_description = {
+				text = bm_requires_blood_mage_or_blodtru_tt
+				OR = {
+					has_trait = lifestyle_blood_mage
+					has_trait = lifestyle_blood_knight
+					faith = { religion = religion:blodtru_religion }
+				}
+			}
+			piety_level >= 4
+		}
+		custom_description = {
+			text = bm_requires_feudalized_realm_tt
+			building_requirement_tribal = no
+			holding_is_feudalized = yes
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost = {
+		gold = 1200
+	}
+
+	character_modifier = {
+		monthly_piety = 3.0
+		monthly_piety_gain_mult = 0.30
+		monthly_dynasty_prestige = 0.75
+		health = 1.2
+		life_expectancy = 12
+		positive_inactive_inheritance_chance = 0.10
+		positive_random_genetic_chance = 0.10
+	}
+
+	duchy_capital_county_modifier = {
+		development_growth = 0.6
+		development_growth_factor = 0.30
+		monthly_county_control_growth_add = 0.6
+	}
+
+	next_building = bm_blood_temple_07
+
+	type_icon = "bm_blood_temple.dds"
+
+	type = duchy_capital
+
+	flag = duchy_building
+
+	ai_value = {
+		base = 100
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+bm_blood_temple_07 = {
+	# 5 years
+	construction_time = 1825
+
+	can_construct_showing_failures_only = {
+		scope:holder = {
+			custom_description = {
+				text = bm_requires_blood_mage_or_blodtru_tt
+				OR = {
+					has_trait = lifestyle_blood_mage
+					has_trait = lifestyle_blood_knight
+					faith = { religion = religion:blodtru_religion }
+				}
+			}
+			piety_level >= 5
+		}
+		custom_description = {
+			text = bm_requires_feudalized_realm_tt
+			building_requirement_tribal = no
+			holding_is_feudalized = yes
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost = {
+		gold = 1600
+	}
+
+	character_modifier = {
+		monthly_piety = 4.0
+		monthly_piety_gain_mult = 0.40
+		monthly_dynasty_prestige = 1.0
+		health = 1.4
+		life_expectancy = 14
+		positive_inactive_inheritance_chance = 0.15
+		positive_random_genetic_chance = 0.15
+		prowess = 2
+	}
+
+	duchy_capital_county_modifier = {
+		development_growth = 0.8
+		development_growth_factor = 0.40
+		monthly_county_control_growth_add = 0.8
+	}
+
+	province_modifier = {
+		fort_level = 2
+		defender_holding_advantage = 5
+	}
+
+	type_icon = "bm_blood_temple.dds"
+
+	type = duchy_capital
+
+	flag = duchy_building
+	flag = fully_upgraded_duchy_capital_building
+
+	ai_value = {
+		base = 100
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}

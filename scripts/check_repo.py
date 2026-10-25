@@ -271,18 +271,23 @@ def _git(repo_root: Path, *args: str) -> "str | None":
 
 def check_branch_context(repo_root: Path) -> list[str]:
     """
-    Enforce the mandatory branch context file (AGENTS.md, .agents/rules/pr-context.md):
+    Enforce the mandatory branch context file (AGENTS.md, .agents/skills/manage-pr):
     - Every branch except main/master needs docs-ai/branch-context/<branch>.md.
-    - If the branch changes mod files or CHANGELOG.md versus main, that file must change too.
+    - If the branch changes mod files versus main, that file must change too.
     """
     branch = (_git(repo_root, "branch", "--show-current") or "").strip()
     if not branch or branch in {"main", "master"}:
         return []
 
     rel_ctx = (BRANCH_CONTEXT_DIR / f"{branch}.md").as_posix()
-    hint = "See .agents/rules/pr-context.md for the template."
+    hint = "Template: .agents/skills/manage-pr/SKILL.md."
     if not (repo_root / rel_ctx).is_file():
         return [f"Missing mandatory branch context file '{rel_ctx}'. Create it. {hint}"]
+
+    ctx_text = (repo_root / rel_ctx).read_text(encoding="utf-8-sig", errors="replace")
+    missing = [h for h in ("## Motivation", "## Changes") if h not in ctx_text]
+    if missing:
+        return [f"'{rel_ctx}' lacks heading(s) {', '.join(missing)}. {hint}"]
 
     base = None
     for candidate in BASE_BRANCHES:
@@ -298,7 +303,7 @@ def check_branch_context(repo_root: Path) -> list[str]:
         (_git(repo_root, "ls-files", "--others", "--exclude-standard") or "").splitlines()
     )
     touches_mod = any(
-        p == "CHANGELOG.md" or p.split("/", 1)[0] in GAME_DIRS for p in changed
+        p.split("/", 1)[0] in GAME_DIRS for p in changed
     )
     if touches_mod and rel_ctx not in changed:
         return [

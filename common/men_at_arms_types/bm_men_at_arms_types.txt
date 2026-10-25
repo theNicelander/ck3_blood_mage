@@ -6,9 +6,9 @@
 bm_blood_berserkers = {
 	type = heavy_infantry
 
-	damage = 68
+	damage = 60
 	toughness = 20
-	pursuit = 35
+	pursuit = 20
 	screen = 0
 	siege_value = 0.10
 
@@ -47,13 +47,13 @@ bm_blood_berserkers = {
 	}
 
 	buy_cost = {
-		piety = 150
+		piety = 250
 	}
 	low_maintenance_cost = {
-		piety = 0.40
+		piety = 0.50
 	}
 	high_maintenance_cost = {
-		piety = 1.35
+		piety = 1.50
 	}
 	provision_cost = @provisions_cost_infantry_moderate
 

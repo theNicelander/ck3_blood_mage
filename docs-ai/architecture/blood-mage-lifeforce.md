@@ -2,16 +2,15 @@
 
 Living technical specification for the Lifeforce resource economy, character modifiers, battlefield harvesting brackets, and spellcasting consumption.
 
-## Executive Summary
+## Overview
 
-- **What:** Core spellcasting resource of the mod. Stored as stacking character modifiers (`lifeforce_modifier_minor`, `lifeforce_modifier_major`, `lifeforce_modifier_superior`).
-- **Dual Function (Passive Vitality vs. Active Fuel):** Unspent Lifeforce stacks act as permanent vitality buffs (granting Health, Life Expectancy, Fertility Years, Epidemic Resistance, and Prowess). Spending Lifeforce on spells consumes 1 positive stack and applies a corresponding **temporary negative exhaustion modifier** (`lifeforce_modifier_negative_minor/major/superior`), creating a tactical trade-off between hoarding Lifeforce for immortality vs. burning it to advance tracks and cast rites.
-- **Class Harvesting Asymmetry:**
-  - **Blood Mages** primarily generate Lifeforce via childbirth (+1 Major per child born), wilderness blood hunts (`seek_power_decision`), prisoner execution (`lifedrain_prisoner_event_interaction`, `mass_lifedrain_prisoners_decision`), courtier siphoning, murder schemes with Superior **Hulinhjálmur**, and spiritual distillation (`bm_manifest_lifeforce_decision`, `bm_manifest_superior_lifeforce_decision`).
-  - **Blood Knights** generate Lifeforce primarily via wilderness blood hunts (`seek_power_decision`), battlefield harvesting (scaled by troop size), lethal single-combat kills (Major Lifeforce + 25% Superior chance against worthy foes), and a ~33% ambient yearly pulse (`blood_mage_yearly_events.004`).
+Core spellcasting resource stored as stacking character modifiers (`lifeforce_modifier_minor`, `lifeforce_modifier_major`, `lifeforce_modifier_superior`).
+- **Passive Vitality vs Fuel:** Unspent positive stacks grant permanent buffs (Health, Life Exp, Fertility, Epidemic Res, Prowess). Casting consumes 1 positive stack and applies temporary exhaustion (`lifeforce_modifier_negative_minor/major/superior`).
+- **Harvesting Asymmetry:**
+  - **Blood Mages:** Childbirth (+1 Major per child), wilderness blood hunts (`seek_power_decision`), prisoner execution (`lifedrain_prisoner_event_interaction`, `mass_lifedrain_prisoners_decision`), courtier siphoning, murder schemes with Superior **Hulinhjálmur**, and spiritual distillation (`bm_manifest_lifeforce_decision`).
+  - **Blood Knights:** Wilderness blood hunts (`seek_power_decision`), battlefield troop-bracket harvesting, lethal single combat kills (Major LF + 25% Superior chance vs worthy foes), and ambient yearly pulse (`blood_mage_yearly_events.004`).
 
 ### Lifeforce & Exhaustion Modifiers Table (`common/modifiers/bm_lifeforce.txt`)
-
 | Modifier Key | Role | Stacking | Duration | Mechanical Effects per Stack |
 | --- | --- | --- | --- | --- |
 | `lifeforce_modifier_minor` | Tier 1 Fuel | Yes | Permanent until spent | `+0.1` Health, `+1` Life Exp, `+1` Fertility Yr, `+1` Epidemic Res, `+0.1` Negate Health Penalty |

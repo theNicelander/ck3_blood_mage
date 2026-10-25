@@ -1,27 +1,23 @@
 # Blóðtrú and Blood Faiths
 
-Living technical specification for the Blóðtrú religious family, cultural blood faiths, holy site architecture, and conversion decisions.
+Living technical specification for `rf_blodtru` religion family, cultural blood faiths, holy sites, and conversion mechanics.
 
-## Executive Summary
+## Overview
 
-- **What:** Spiritual framework for blood magic in CK3 1.20 (`common/religion/`). Defines religious family `rf_blodtru` and religion `blodtru_religion` with 3 regional faiths (`blodtru_faith`, `ketsudo_faith`, `xuedao_faith`), each bound 1:1 to a mainline rite (`common/religion/rite_types/bm_rite_types.txt`).
-- **Soft Compatibility Doctrine:** Hidden doctrine `bm_blodtru_identity_doctrine` (group `bm_blodtru_identity_group`) exposes the doctrine parameter `blood_magic_cult_faith`, evaluated via `bm_is_blood_cult_faith_trigger`. Allows third-party or player-reformed faiths to integrate with blood cult mechanics without hardcoded faith tags.
-- **Shared Core Tenets & Doctrines:** All 3 faiths start with `unreformed_faith_doctrine` (can be reformed by players) and share the same 3 core tenets:
-  1. **Ancestor Worship (`tenet_ancestor_worship`):** Close family opinion, dynasty prestige on birth/marriage, pilgrimage bonuses.
-  2. **Ritual Celebrations (`tenet_ritual_celebrations`):** Vassal/courtier opinion and feast piety/prestige synergy.
-  3. **Literalism (`tenet_literalism`):** Learning skill scaling and scholarship virtues.
+Spiritual framework in `common/religion/`. Religious family `rf_blodtru` and religion `blodtru_religion` with 3 regional faiths (`blodtru_faith`, `ketsudo_faith`, `xuedao_faith`), bound 1:1 to mainline rites (`bm_rite_types.txt`).
+- **Identity Doctrine:** Hidden doctrine `bm_blodtru_identity_doctrine` sets parameter `blood_magic_cult_faith = yes`, checked by `bm_is_blood_cult_faith_trigger`. Allows third-party / reformed faiths to integrate with blood magic mechanics.
+- **Core Tenets:** `tenet_ancestor_worship` (family opinion, prestige on birth/marriage), `tenet_mendicant_preachers` (travel speed, conversion), `tenet_literalism` (learning skill, scholarship).
 
 ## Faith Structure, Mainline Rites & Holy Sites
 
 | Faith Key | Rite Key | Cultural Sphere (`bm_faith_conversion.0001`) | Eminent Holy Sites (`eminent_holy_sites`) | Regular Holy Sites (`holy_sites`) |
 | --- | --- | --- | --- | --- |
-| **Blóðtrú** (`blodtru_faith`) | `blodtru_faith` | Default / European / Atlantic / Global fallback | **13 Sites:** `talknafjordur` (+1 Prowess/piety lvl), `reykjavik` (+1 Learning/piety lvl), `london` (+1 Dip/piety lvl), `madrid` (+1 Stew/piety lvl), `oslo` (+1 Martial/piety lvl), `paris` (+1 Intrigue/piety lvl), `berlin`, `rome`, `constantinople`, `olympus`, `kiev`, `athens`, `tenerife` | **45 Regional Capitals & Landmarks:** European capitals, `stonehenge`, `isle_of_man`, `torshavn`, `madeira`, `mallorca`, etc. |
-| **Ketsudō** (`ketsudo_faith`) | `ketsudo_faith` | Japonic, Korean, Mongolic, Tungusic | **7 Sites:** `tsushima` (Eastern initiation site, +1 Prowess/piety lvl), `yamashiro`, `kamakura`, `mount_fuji`, `mount_aso`, `mount_osore`, `gyeongju` (scaling Prowess, Dread, Learning, & Health per piety level) | **20 Sites:** `edo`, `hakodate`, `mount_yotei`, `mount_hiei`, `mount_koya`, `ise`, `naniwa`, `dazaifu`, `mount_baekdu`, `gaegyeong`, `hanyang`, etc. |
-| **Xuédào** (`xuedao_faith`) | `xuedao_faith` | Chinese, Qiangic, Tai, Viet, Tibetan | **9 Sites:** `changan`, `luoyang`, `beijing`, `hangzhou`, `chengdu`, `guangzhou`, `taishan`, `gyeongju`, `dunhuang` (scaling Stewardship, Learning, & Health per piety level) | **23 Sites:** Sacred Five Mountains (`huashan`, `songshan`, `hengshan_north`, `hengshan_south`), Four Buddhist/Daoist Peaks (`mount_wutai`, `mount_emei`, `mount_jiuhua`, `mount_wudang`), `kaifeng`, `nanjing`, `lhasa`, etc. |
+| **Blóðtrú** (`blodtru_faith`) | `blodtru_faith` | Default / European / Atlantic / Global fallback | **58 Sites:** All European capitals and landmarks (`talknafjordur`, `reykjavik`, `london`, `madrid`, `oslo`, `paris`, `berlin`, `rome`, `constantinople`, `olympus`, `kiev`, `athens`, `tenerife`, `amsterdam`, `vienna`, `stonehenge`, `isle_of_man`, etc.) | None (all holy sites are eminent) |
+| **Ketsudō** (`ketsudo_faith`) | `ketsudo_faith` | Japonic, Korean, Mongolic, Tungusic | **27 Sites:** `tsushima`, `yamashiro`, `kamakura`, `mount_fuji`, `mount_aso`, `mount_osore`, `gyeongju`, `edo`, `hakodate`, `mount_baekdu`, `gaegyeong`, `hanyang`, etc. | None (all holy sites are eminent) |
+| **Xuédào** (`xuedao_faith`) | `xuedao_faith` | Chinese, Qiangic, Tai, Viet, Tibetan | **32 Sites:** `changan`, `luoyang`, `beijing`, `hangzhou`, `chengdu`, `guangzhou`, `taishan`, `gyeongju`, `dunhuang`, Sacred Five Mountains, Four Buddhist/Daoist Peaks, `nanjing`, `lhasa`, etc. | None (all holy sites are eminent) |
 
 ### Holy Site Modifier Architecture (CK3 1.20)
-- **Eminent Holy Sites (`eminent_holy_sites`):** Grant **both** a `faith_character_modifier` (applies to all followers of the faith when controlled) **and** a `county_holder_character_modifier` (applies directly to the county holder, stacking with the faith-wide bonus). Primarily grant `+1 [Skill/Prowess] per Piety Level`, synergizing with Blood Mage / Blood Knight Level 8 Devotion capstones.
-- **Regular Holy Sites (`holy_sites`):** Grant local `county_holder_character_modifier` bonuses (`+0.25` Health, `+1` Life Expectancy, or `+1` Epidemic Resistance) to the holder of the county.
+- **All Sites Eminent (`eminent_holy_sites_max = 80`):** Every holy site in Blóðtrú faiths is defined under `eminent_holy_sites`. Each site grants **both** a `faith_character_modifier` (applies to all followers of the faith when controlled) **and** a `county_holder_character_modifier` (applies directly to the county holder, stacking with the faith-wide bonus). Benefits are calibrated as smaller incremental bonuses (`+0.25` Health, `+1` Life Expectancy, `+1` Epidemic Resistance, or `+1 [Skill/Prowess] per Piety Level`) designed to reward wide geographic control and spread across multiple holy sites.
 - **Zero Vanilla Holy Site Overwrites:** Vanilla holy site keys (`luoyang`, `dunhuang`, `tenerife`, `rome`, `constantinople`, `kiev`, `athens`, `madrid`, `paris`) are referenced directly in the faith definitions without re-declaring their keys in `common/religion/holy_site_types/`. Custom regional holy sites lacking vanilla definitions (such as `hangzhou` and `quanzhou`) are declared directly in `common/religion/holy_site_types/bm_china_holy_sites.txt`.
 
 ## Identity Doctrine (`bm_blodtru_identity_doctrine`)
