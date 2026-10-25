@@ -78,7 +78,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 
 - Three faiths: **Blóðtrú** (Norse/Germanic), **Ketsudō** (Japanese), **Xuédào** (Chinese).
 - Ancestor Worship tenet earns piety, renown and defence; Mendicant Preaching replaces Ritual Celebrations.
-- Eminent holy sites across Iceland, Scandinavia, Ireland, Central Europe, China and Japan (Tsushima for Eastern initiation).
+- All 58 Blóðtrú, 27 Ketsudō and 32 Xuédào holy sites are now Eminent Holy Sites (up to 80 active), granting smaller stacked global faith bonuses alongside local county holder modifiers.
 - Reformation repair decision resolves holy-site locks when creating custom faiths.
 - Blood Mage and Blood Knight are no longer religion virtues.
 
