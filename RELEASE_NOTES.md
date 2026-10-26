@@ -91,7 +91,8 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 
 - **Blood Magic Situation panel**: discipline, track XP, Lifeforce, stave, and rosters of dynasty Blood Mages, Blood Knights and Golems.
 - All mod interactions grouped in a "Blood Magic" context-menu section; outcomes shown in interface toasts.
-- Current Situation alert when a kinsperson or courtier can be healed.
+- Current Situation alerts when a kinsperson or courtier can be healed, when dungeon prisoners can be lifedrained, or when an eligible 20+ Prowess prisoner or fallen champion can be culled.
+- Cull Fallen Champion requires 20+ Prowess across all targets (captives and fallen followers).
 - **Purge Stress Vices** burns away all 11 coping traits.
 - Hulinhjálmur conceals the caster from discovery penalties on failed siphons and curses.
 
@@ -125,7 +126,7 @@ Annual pulse (3-year cooldown) for player Blood Mages and Blood Knights:
 
 ## Version history
 
-- v1.20.60: Rebalance Ancient and Enlightenment XP; Condense Lifeforce grants Enlightenment XP; AI always selects initial Lifeforce attunement
+- v1.20.60: Rebalance Ancient and Enlightenment XP; Condense Lifeforce grants Enlightenment XP; AI always selects initial Lifeforce attunement; alerts for prisoner lifedrain and culling champions; require 20+ Prowess for Cull Champion
 - v1.20.59: Blood Temples become duchy-capital buildings in all duchies
 - v1.20.58: Add Blood Berserkers and Blood-Bound Behemoths regiments
 - v1.20.57: Merge blessing interactions into one Bless Blood; declutter menus
