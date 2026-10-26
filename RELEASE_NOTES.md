@@ -32,7 +32,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 ## Spellcasting & Decisions
 
 - Cast Blood Magic (Minor, Major, Superior) are inline option-list decisions; every spell stays visible, grayed out when unavailable.
-- **Minor**: Attunement, Minor Blood Runes, Cleansing, Condensation, Channel Minor Lifeforce (+5 monthly Lifestyle XP in chosen attribute).
+- **Minor**: Attunement, Minor Blood Runes, Cleansing, Condensation, Channel Minor Lifeforce (+10 monthly Lifestyle XP in chosen attribute; +5 monthly to active focus for Experience Gain).
 - **Major**: Channel Blood Power, Condense into Superior Lifeforce, Education Enhancement, Major Runes, Congenital Manifestation, House Blessing.
 - **Superior**: Blood Golem creation, 5★ Master Educations, Secondary Educations, Capstone Runes.
 - **Attune Lifeforce**: choose your yearly lifestyle XP bonus (applied January 1st).
