@@ -125,6 +125,7 @@ Annual pulse (3-year cooldown) for player Blood Mages and Blood Knights:
 
 ## Version history
 
+- v1.20.60: AI always selects initial Lifeforce attunement; quarterly check interval
 - v1.20.59: Blood Temples become duchy-capital buildings in all duchies
 - v1.20.58: Add Blood Berserkers and Blood-Bound Behemoths regiments
 - v1.20.57: Merge blessing interactions into one Bless Blood; declutter menus
