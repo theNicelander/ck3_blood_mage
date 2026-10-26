@@ -63,7 +63,7 @@ Requires Minor Lifeforce (`lifeforce_modifier_minor`). Accessible to both **Bloo
 | Action / Ritual | Interface | Cost / Prerequisite | Effect | XP Gain |
 | --- | --- | --- | --- | --- |
 | **Cast Minor Blood Magic** | Decision Widget (`bm_cast_blood_magic_minor_decision`) | Minor Lifeforce | Opens minor rituals option-list decision widget. | None |
-| **Channel Minor Lifeforce** | Decision Option | 75 Piety + Minor Lifeforce | Grants stat buff event chain (`bm_channel_lifeforce_enlightenment_minor.001`). | +1 Enlightenment |
+| **Channel Minor Lifeforce** | Decision Option | 75 Piety + Minor Lifeforce | Grants 5-year stat buff event chain (`bm_channel_lifeforce_enlightenment_minor.001`) with +5 monthly (+15 quarterly) Lifestyle XP in the chosen attribute's discipline. | +1 Enlightenment |
 | **Attune Lifeforce** | Decision (`bm_attune_lifeforce_decision`) | First free; changing: 100 Piety + Minor Lifeforce (3-yr CD) | Opens inline option-list widget to attune to 1 discipline; guarantees +1 XP/yr (+2 with Superior **Hulinhjálmur**) and passive blessings. | None (passive +1/yr XP) |
 | **Purge Bodily Impurities** | Decision Option | 50 Piety + Minor Lifeforce | Cleanses minor wounds, scars, illness, lovers pox, gout, and bad traits (`beauty_bad`, `intellect_bad`, `physique_bad`, `dull`, `weak`). | +2 Benediction/Bloodline (Mage)<br>+2 Enlightenment (Knight) |
 | **Condense Lifeforce** | Decision Option | 100 Piety + Minor Lifeforce | Converts 1 Minor Lifeforce into 1 Major Lifeforce (`lifeforce_modifier_major`). | +2 Ancient |
