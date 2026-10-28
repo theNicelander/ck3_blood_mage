@@ -2,6 +2,16 @@
 
 bm_manifest_upgrade_trait_step_effect = {
 	if = {
+		limit = {
+			OR = {
+				has_trait = $BRANCH$_good_2
+				has_trait_rank = { trait = $BRANCH$_good rank = 3 }
+				has_trait_rank = { trait = $BRANCH$_good rank = 4 }
+			}
+		}
+		add_piety_level = -1
+	}
+	if = {
 		limit = { has_trait = $BRANCH$_bad_1 }
 		remove_trait = $BRANCH$_bad_1
 	}
@@ -72,7 +82,10 @@ bm_manifest_intellect_duel_effect = {
 			send_interface_toast = {
 				title = bm_manifest_traits.failure_title
 				left_icon = root
-				temporary_negative_lifeforce_effect_major = yes
+				add_character_modifier = { modifier = lifeforce_modifier_minor }
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
 			}
 		}
 
@@ -86,7 +99,7 @@ bm_manifest_intellect_duel_effect = {
 				left_icon = root
 				increase_wounds_effect = { REASON = magic }
 				add_stress = 50
-				temporary_negative_lifeforce_effect_major = yes
+				temporary_negative_lifeforce_effect_minor = yes
 			}
 		}
 	}
@@ -138,7 +151,10 @@ bm_manifest_physique_duel_effect = {
 			send_interface_toast = {
 				title = bm_manifest_traits.failure_title
 				left_icon = root
-				temporary_negative_lifeforce_effect_major = yes
+				add_character_modifier = { modifier = lifeforce_modifier_minor }
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
 			}
 		}
 
@@ -152,7 +168,7 @@ bm_manifest_physique_duel_effect = {
 				left_icon = root
 				increase_wounds_effect = { REASON = magic }
 				add_stress = 50
-				temporary_negative_lifeforce_effect_major = yes
+				temporary_negative_lifeforce_effect_minor = yes
 			}
 		}
 	}
@@ -204,7 +220,10 @@ bm_manifest_beauty_duel_effect = {
 			send_interface_toast = {
 				title = bm_manifest_traits.failure_title
 				left_icon = root
-				temporary_negative_lifeforce_effect_major = yes
+				add_character_modifier = { modifier = lifeforce_modifier_minor }
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
 			}
 		}
 
@@ -218,7 +237,7 @@ bm_manifest_beauty_duel_effect = {
 				left_icon = root
 				increase_wounds_effect = { REASON = magic }
 				add_stress = 50
-				temporary_negative_lifeforce_effect_major = yes
+				temporary_negative_lifeforce_effect_minor = yes
 			}
 		}
 	}
@@ -270,7 +289,10 @@ bm_manifest_superior_intellect_duel_effect = {
 			send_interface_toast = {
 				title = bm_manifest_traits.failure_title
 				left_icon = root
-				temporary_negative_lifeforce_effect_superior = yes
+				add_character_modifier = { modifier = lifeforce_modifier_major }
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
 			}
 		}
 
@@ -284,7 +306,7 @@ bm_manifest_superior_intellect_duel_effect = {
 				left_icon = root
 				increase_wounds_effect = { REASON = magic }
 				add_stress = 50
-				temporary_negative_lifeforce_effect_superior = yes
+				temporary_negative_lifeforce_effect_major = yes
 			}
 		}
 	}
@@ -336,7 +358,10 @@ bm_manifest_superior_physique_duel_effect = {
 			send_interface_toast = {
 				title = bm_manifest_traits.failure_title
 				left_icon = root
-				temporary_negative_lifeforce_effect_superior = yes
+				add_character_modifier = { modifier = lifeforce_modifier_major }
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
 			}
 		}
 
@@ -350,7 +375,7 @@ bm_manifest_superior_physique_duel_effect = {
 				left_icon = root
 				increase_wounds_effect = { REASON = magic }
 				add_stress = 50
-				temporary_negative_lifeforce_effect_superior = yes
+				temporary_negative_lifeforce_effect_major = yes
 			}
 		}
 	}
@@ -402,7 +427,10 @@ bm_manifest_superior_beauty_duel_effect = {
 			send_interface_toast = {
 				title = bm_manifest_traits.failure_title
 				left_icon = root
-				temporary_negative_lifeforce_effect_superior = yes
+				add_character_modifier = { modifier = lifeforce_modifier_major }
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
 			}
 		}
 
@@ -416,7 +444,7 @@ bm_manifest_superior_beauty_duel_effect = {
 				left_icon = root
 				increase_wounds_effect = { REASON = magic }
 				add_stress = 50
-				temporary_negative_lifeforce_effect_superior = yes
+				temporary_negative_lifeforce_effect_major = yes
 			}
 		}
 	}
