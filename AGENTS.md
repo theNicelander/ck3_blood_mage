@@ -13,7 +13,7 @@ CK3 script fails silently. Follow patterns in this repo and vanilla 1.20 (`/User
 
 - **Zero vanilla overwrites**: modular additions, compatible with total conversions. An unprefixed filename matching vanilla is an override; never do it by accident.
 - **Earned power**: lifespan and stat gains require Lifeforce, piety, ritual sacrifice, and tangible risk.
-- **Concise UI text**: say "Lifeforce", not "vitality". Flavour only in decision/event narrative descriptions.
+- **Concise UI text**: say "Lifeforce", not "vitality". Flavour only in decision/event narrative descriptions. Back/cancel options always use "Back" (no flavour text).
 - **Nothing hidden, often unavailable**: keep spells, rites, options visible and greyed out (`show_as_unavailable`) with their requirements. Hide only when the prerequisite stage is not reached or the option is completed/superseded.
 - **Commit on task completion**: parallel agents run concurrently. Every task or implementation ends with commit and push (stage only your files). Never leave finished work uncommitted.
 - **Clarify before building**: ask follow-up questions on rough ideas; state assumptions. Plans end with commit and push.
