@@ -32,7 +32,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 ## Spellcasting & Decisions
 
 - Cast Blood Magic (Minor, Major, Superior) are inline option-list decisions; every spell stays visible, grayed out when unavailable.
-- **Minor**: Attunement, Minor Blood Runes, Cleansing, Condensation.
+- **Minor**: Attunement, Minor Blood Runes, Cleansing, Condensation, Channel Minor Lifeforce (+10 monthly Lifestyle XP in chosen attribute; +5 monthly to active focus for Experience Gain).
 - **Major**: Channel Blood Power, Condense into Superior Lifeforce, Education Enhancement, Major Runes, Congenital Manifestation, House Blessing.
 - **Superior**: Blood Golem creation, 5★ Master Educations, Secondary Educations, Capstone Runes.
 - **Attune Lifeforce**: choose your yearly lifestyle XP bonus (applied January 1st).
@@ -40,7 +40,9 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - Education advancement needs Devotion Level 1+/2+/3+/4+ for 1★→2★ … 4★→5★; only Superior magic (5★, Embrace New Education) costs Devotion or needs 1000 Piety plus Superior Lifeforce.
 - **Heal Ailment**: cures up to 32 ailments, purges all 11 stress vices (−50 Stress), and treats old-age traits (Minor: 1 Minor Lifeforce + 50 Piety; Major tier for deeper rejuvenation).
 - **Influence Personality**: Learning contest to swap a trait or culture (5-year cooldown on success, 1 year on failure).
-- Personality Reshaping and Congenital Manifestation (up to rank 5).
+- **Congenital Manifestation**: Transmute Intellect, Physique, and Beauty up to Rank 3 in Major Blood Magic (250/500/750 Piety, Piety Levels 2/3/4; Rank 3 costs 1 Devotion Level) and up to Ranks 4–5 in Superior Blood Magic (1000/1500 Piety, Piety Level 5; costs 1 Devotion Level). Standard failure refunds lower-tier Lifeforce; critical failure inflicts additional exhaustion.
+- **Bestow Blood Traits**: Spend 250 Piety and 1 Major Lifeforce to pass positive congenital (Intellect, Physique, Beauty) or physical traits (Fecund, Pure-Blooded, Giant, Strong, Shrewd) to your spouse or dynasty kin. Elevates target one tier per ritual; guaranteed if transferring a rank lower than your own, or resolved via a Learning duel with yourself (50% at 20 Learning, 90% cap at 50 Learning) if transferring a matching rank.
+- Personality Reshaping (Learning contest to swap traits).
 
 ## Blood Hunt
 
@@ -91,7 +93,11 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 
 - **Blood Magic Situation panel**: discipline, track XP, Lifeforce, stave, and rosters of dynasty Blood Mages, Blood Knights and Golems.
 - All mod interactions grouped in a "Blood Magic" context-menu section; outcomes shown in interface toasts.
-- Current Situation alert when a kinsperson or courtier can be healed.
+- Consolidated positive character interactions into unified modal window **Blood Blessing** (Empower Blood Mage/Knight, Grant Lifeforce, Bless Blood, Annoint Heir, Consecrate Union, Inscribe Blood Rune).
+- Consolidated hostile lifeforce extraction into unified modal window **Blood Drain** (Major Life drain, Minor Life drain, Drain Stored Lifeforce, Demand Blood Tithe).
+- **Blood Healing**: interaction is always clickable when an affliction is present to inspect requirements directly in the event; Deadly afflictions (leprosy, cancer, plague) now require Superior Lifeforce and 100 Piety (+3 Benediction XP).
+- Current Situation alerts when a kinsperson or courtier can be healed, when dungeon prisoners can be lifedrained, or when an eligible 20+ Prowess prisoner or fallen champion can be culled.
+- Cull Fallen Champion requires 20+ Prowess across all targets (captives and fallen followers).
 - **Purge Stress Vices** burns away all 11 coping traits.
 - Hulinhjálmur conceals the caster from discovery penalties on failed siphons and curses.
 
@@ -125,6 +131,8 @@ Annual pulse (3-year cooldown) for player Blood Mages and Blood Knights:
 
 ## Version history
 
+- v1.20.61: Restructure Manifest Congenital Traits (Ranks 1–3 in Major, Ranks 4–5 in Superior with 3/4/5/6/7/8 XP scaled by trait rank); unify positive interactions into Blood Blessing and hostile harvesting into Blood Drain; rename Heal Affliction to Heal Healing
+- v1.20.60: Rebalance Ancient and Enlightenment XP; Condense Lifeforce grants Enlightenment XP; AI always selects initial Lifeforce attunement; alerts for prisoner lifedrain and culling champions; require 20+ Prowess for Cull Champion
 - v1.20.59: Blood Temples become duchy-capital buildings in all duchies
 - v1.20.58: Add Blood Berserkers and Blood-Bound Behemoths regiments
 - v1.20.57: Merge blessing interactions into one Bless Blood; declutter menus

@@ -15,8 +15,12 @@ CK3 script fails silently. Follow patterns in this repo and vanilla 1.20 (`/User
 - **Earned power**: lifespan and stat gains require Lifeforce, piety, ritual sacrifice, and tangible risk.
 - **Concise UI text**: say "Lifeforce", not "vitality". Flavour only in decision/event narrative descriptions.
 - **Nothing hidden, often unavailable**: keep spells, rites, options visible and greyed out (`show_as_unavailable`) with their requirements. Hide only when the prerequisite stage is not reached or the option is completed/superseded.
+- **Commit on task completion**: parallel agents run concurrently. Every task or implementation ends with commit and push (stage only your files). Never leave finished work uncommitted.
 - **Clarify before building**: ask follow-up questions on rough ideas; state assumptions. Plans end with commit and push.
 - **Planner model**: if the active model is Gemini Argon, never edit files; only investigate, ask, and plan.
+- **Suggest skills for investigated systems**: if a game system was not well understood and had to be investigated in vanilla, suggest creating a skill for it (`.agents/skills/`).
+- **Single source of truth**: every rule, guideline, or procedure lives in exactly one place. Link or point; never duplicate text across files.
+- **Minimal instructions & token saving**: write tersely; AI skills use caveman style. Cut fluff, filler, and verbose explanations in docs, rules, and prompts. Keep only minimal text needed to execute.
 
 ## Layout & docs
 
@@ -35,7 +39,7 @@ CK3 script fails silently. Follow patterns in this repo and vanilla 1.20 (`/User
 | Skills (`.agents/skills/`) | Task |
 | --- | --- |
 | `manage-pr` | finish change, branch doc, commit, push, PR |
-| `add-blood-magic-decision`, `add-decision-option-widget`, `add-faith`, `add-trait-track`, `add-game-rule`, `add-icon-asset` | add that thing |
+| `add-blood-magic-decision`, `add-decision-option-widget`, `add-interaction-send-options`, `add-faith`, `add-trait-track`, `add-game-rule`, `add-icon-asset` | add that thing |
 | `document-subsystem`, `update-release-notes`, `caveman` | docs / notes / terse voice |
 
 ## Naming & format (enforced by `scripts/check_repo.py`)
@@ -54,10 +58,11 @@ CK3 script fails silently. Follow patterns in this repo and vanilla 1.20 (`/User
 - Invent effect, trigger or scope names; cite vanilla or `script_docs`.
 - Switch or create branches unless told. Stay on the current branch.
 - Blanket stage (`git add .`, `-A`, `commit -a`): other agents work in parallel; stage, commit and push only files you changed.
+- Leave completed work uncommitted in working tree: parallel agents need committed checkpoints.
 - Execute plans on unverified assumptions.
 
 ## Workflow
 
 1. `git branch --show-current`; read `docs-ai/branch-context/<branch>.md` (create if missing), matching rule(s) and architecture doc.
 2. Plan smallest change; grep existing identifiers; use the matching skill.
-3. Update the architecture doc, branch doc, and release notes as needed, run checks, commit, push: skill `manage-pr`.
+3. Docs, notes, check, commit, push: skill `manage-pr`. PR title `<branch>: <outcome title>`. Squash merge PR via GitHub (`gh pr merge --squash`), never locally; keeps `(#<PR>)`.

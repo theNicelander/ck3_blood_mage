@@ -285,7 +285,7 @@ bm_interpersonal_events.0002 = {
 			else_if = {
 				limit = { has_trait = lifestyle_blood_knight }
 				add_blood_knight_xp = {
-					TRACK = ancient
+					TRACK = enlightenment
 					XP = 1
 				}
 			}
@@ -315,7 +315,7 @@ bm_interpersonal_events.0002 = {
 					bm_become_blood_mage_effect = yes
 					add_trait_xp = {
 						trait = lifestyle_blood_mage
-						track = ancient
+						track = enlightenment
 						value = 10
 					}
 				}
@@ -323,7 +323,7 @@ bm_interpersonal_events.0002 = {
 					bm_become_blood_knight_effect = yes
 					add_trait_xp = {
 						trait = lifestyle_blood_knight
-						track = ancient
+						track = enlightenment
 						value = 10
 					}
 				}
@@ -338,7 +338,7 @@ bm_interpersonal_events.0002 = {
 			else_if = {
 				limit = { has_trait = lifestyle_blood_knight }
 				add_blood_knight_xp = {
-					TRACK = ancient
+					TRACK = enlightenment
 					XP = 1
 				}
 			}
@@ -573,7 +573,7 @@ bm_interpersonal_events.0004 = {
 			else_if = {
 				limit = { has_trait = lifestyle_blood_knight }
 				add_blood_knight_xp = {
-					TRACK = ancient
+					TRACK = enlightenment
 					XP = 1
 				}
 			}

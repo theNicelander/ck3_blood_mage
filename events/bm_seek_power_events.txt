@@ -260,7 +260,7 @@ seek_power.003 = {
         }
         if = {
             limit = { has_trait = lifestyle_blood_mage }
-            add_blood_mage_xp = { TRACK = ancient XP = 1 }
+            add_blood_mage_xp = { TRACK = enlightenment XP = 1 }
         }
                     }
                     if = {
@@ -583,7 +583,7 @@ seek_power.003 = {
                     if = {
                         limit = { has_trait = lifestyle_blood_mage }
                         add_blood_mage_xp = {
-                            TRACK = ancient
+                            TRACK = enlightenment
                             XP = 2
                         }
                     }
@@ -632,8 +632,7 @@ seek_power.004 = {
             title = seek_power.toast.ancient_lifeforce
             left_icon = this
             add_character_modifier = { modifier = lifeforce_modifier_major }
-            add_shared_bm_bk_xp = { TRACK = enlightenment XP = 2 }
-            add_shared_bm_bk_xp = { TRACK = ancient XP = 1 }
+            add_shared_bm_bk_xp = { TRACK = enlightenment XP = 3 }
             hidden_effect = {
                 bm_recount_lifeforce_stacks_effect = yes
             }
@@ -709,7 +708,7 @@ seek_power.008 = {
                     }
                     if = {
                         limit = { has_trait = lifestyle_blood_mage }
-                        add_blood_mage_xp = { TRACK = ancient XP = 1 }
+                        add_blood_mage_xp = { TRACK = enlightenment XP = 1 }
                     }
                     hidden_effect = {
                         bm_recount_lifeforce_stacks_effect = yes
@@ -759,7 +758,7 @@ seek_power.008 = {
             title = seek_power.toast.beast_carcass
             left_icon = this
             add_character_modifier = { modifier = lifeforce_modifier_minor }
-            add_shared_bm_bk_xp = { TRACK = ancient XP = 1 }
+            add_shared_bm_bk_xp = { TRACK = enlightenment XP = 1 }
             hidden_effect = {
                 bm_recount_lifeforce_stacks_effect = yes
             }
@@ -1276,7 +1275,7 @@ seek_power.006 = {
                     }
                     if = {
                         limit = { has_trait = lifestyle_blood_mage }
-                        add_blood_mage_xp = { TRACK = ancient XP = 2 }
+                        add_blood_mage_xp = { TRACK = enlightenment XP = 2 }
                     }
                     add_character_modifier = { modifier = lifeforce_modifier_minor }
                     hidden_effect = {
@@ -1333,7 +1332,7 @@ seek_power.006 = {
         }
         if = {
             limit = { has_trait = lifestyle_blood_mage }
-            add_blood_mage_xp = { TRACK = ancient XP = 1 }
+            add_blood_mage_xp = { TRACK = enlightenment XP = 1 }
         }
     }
 }

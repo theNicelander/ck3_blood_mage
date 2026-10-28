@@ -198,25 +198,25 @@
 				}
 				custom_tooltip = {
 					text = bm_manifest_apex_devotion_req
-					piety_level >= 3
+					piety_level >= 5
 				}
 				custom_tooltip = {
 					text = bm_manifest_apex_piety_req
-					piety >= 200
+					piety >= 1000
 				}
 				custom_tooltip = {
 					text = bm_manifest_apex_eligible_req
 					OR = {
 						AND = {
-							has_trait_rank = { trait = intellect_good rank >= 2 }
+							has_trait_rank = { trait = intellect_good rank >= 3 }
 							NOT = { has_trait_rank = { trait = intellect_good rank >= 5 } }
 						}
 						AND = {
-							has_trait_rank = { trait = physique_good rank >= 2 }
+							has_trait_rank = { trait = physique_good rank >= 3 }
 							NOT = { has_trait_rank = { trait = physique_good rank >= 5 } }
 						}
 						AND = {
-							has_trait_rank = { trait = beauty_good rank >= 2 }
+							has_trait_rank = { trait = beauty_good rank >= 3 }
 							NOT = { has_trait_rank = { trait = beauty_good rank >= 5 } }
 						}
 					}
@@ -577,7 +577,7 @@ bm_cast_blood_magic_major_decision = {
 			}
 		}
 
-		# Manifest Trait (Congenital Traits up to Rank 2)
+		# Manifest Trait (Congenital Traits up to Rank 3)
 		item = {
 			value = bm_major_manifest_traits
 			current_description = bm_major_manifest_traits
@@ -596,19 +596,19 @@ bm_cast_blood_magic_major_decision = {
 				}
 				custom_tooltip = {
 					text = bm_manifest_traits_devotion_req
-					piety_level >= 3
+					piety_level >= 2
 				}
 				custom_tooltip = {
 					text = bm_manifest_traits_piety_req
-					piety >= 200
+					piety >= 250
 				}
 				custom_tooltip = {
-					text = bm_manifest_traits_max_rank_2_tt
+					text = bm_manifest_traits_max_rank_3_tt
 					NOT = {
 						AND = {
-							has_trait_rank = { trait = intellect_good rank >= 2 }
-							has_trait_rank = { trait = physique_good rank >= 2 }
-							has_trait_rank = { trait = beauty_good rank >= 2 }
+							has_trait_rank = { trait = intellect_good rank >= 3 }
+							has_trait_rank = { trait = physique_good rank >= 3 }
+							has_trait_rank = { trait = beauty_good rank >= 3 }
 						}
 					}
 				}
@@ -659,7 +659,7 @@ bm_cast_blood_magic_major_decision = {
 						left_icon = root
 						add_character_modifier = { modifier = lifeforce_modifier_superior }
 						add_shared_bm_bk_xp = {
-							TRACK = ancient
+							TRACK = enlightenment
 							XP = 3
 						}
 						hidden_effect = {
@@ -683,7 +683,7 @@ bm_cast_blood_magic_major_decision = {
 						add_character_modifier = { modifier = lifeforce_modifier_superior }
 						temporary_negative_lifeforce_effect_major_1_year = yes
 						add_shared_bm_bk_xp = {
-							TRACK = ancient
+							TRACK = enlightenment
 							XP = 3
 						}
 						hidden_effect = {
@@ -707,7 +707,7 @@ bm_cast_blood_magic_major_decision = {
 						temporary_negative_lifeforce_effect_major = yes
 						add_character_modifier = { modifier = lifeforce_modifier_major }
 						add_shared_bm_bk_xp = {
-							TRACK = ancient
+							TRACK = enlightenment
 							XP = 1
 						}
 						hidden_effect = {
@@ -1049,13 +1049,13 @@ bm_cast_blood_magic_minor_decision = {
 				if = {
 					limit = { has_trait = lifestyle_blood_mage }
 					add_xp_bm_dynamic = {
-						TRACK = ancient
+						TRACK = enlightenment
 						XP = 2
 					}
 				}
 				else = {
 					add_blood_knight_xp = {
-						TRACK = ancient
+						TRACK = enlightenment
 						XP = 2
 					}
 				}

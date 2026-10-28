@@ -39,7 +39,7 @@
   grant_lifeforce_interaction_reversed_desc: "Consume [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and 25 [piety|E] to cleanse [GetModifier('lifedrained_modifier').GetNameWithTooltip] from [recipient.GetShortUINameNoTooltip] and bestow [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip]."
 
   # Cure illness
-  bm_heal_ailment: "Heal Affliction"
+  bm_heal_ailment: "Blood Healing"
   bm_heal_ailment_desc: "Perform a blood ritual to mend a specific wound, disease, old-age degeneration, or stress vice suffered by [recipient.GetShortUINameNoTooltip]."
   bm_heal_ailment_tooltip: "Perform a blood magic healing ritual."
   bm_heal_ailment_resource_requirement_tt: "You must possess sufficient Lifeforce and Piety to heal at least one of [recipient.GetShortUINamePossessive] afflictions."
@@ -114,13 +114,13 @@
 
   # Childbirth Milestones
   bm_birth_blood_mage_child_toast: "Blood Mage Heir Born"
-  bm_birth_blood_mage_child_tt: "A child awakens with the blood magic trait! You harvest Major Lifeforce and your bloodline mastery surges forward."
+  bm_birth_blood_mage_child_tt: "A child awakens with the blood magic trait! You harvest Major Lifeforce, while your bloodline and ancient masteries surge forward."
   bm_birth_child_bloodline_toast: "Child of the Line Born"
-  bm_birth_child_bloodline_tt: "A new child is born to your house, granting Major Lifeforce and Bloodline Experience."
+  bm_birth_child_bloodline_tt: "A new child is born to your house, granting Major Lifeforce, Bloodline Experience, and Ancient Experience."
   bm_birth_blood_knight_child_toast: "Blood Knight Heir Born"
-  bm_birth_blood_knight_child_tt: "A child awakens with blood in their veins! Your ancient mastery advances."
+  bm_birth_blood_knight_child_tt: "A child awakens with martial blood in their veins! Your vanguard and ancient masteries advance."
   bm_birth_child_vanguard_toast: "Child of the Line Born"
-  bm_birth_child_vanguard_tt: "A new child is born to your house, advancing your Ancient Experience."
+  bm_birth_child_vanguard_tt: "A new child is born to your house, advancing your Vanguard and Ancient Experience."
 
   # Tooltips
   IN_COURT_OR_IMPRISONED: "Can only heal yourself, your family, your liege, your courtiers, or your knights"
@@ -155,3 +155,39 @@
   interaction_category_bm_blood_magic: "Blood Magic"
   BM_BLOOD_MAGIC_ACTIONS: "Blood Magic"
   interaction_category_bm_blood_magic_filter_tag_desc: "Blood Magic Interactions"
+
+  # Unified Blood Blessing Interaction
+  bm_blood_blessing_interaction: "Blood Blessing"
+  bm_blood_blessing_interaction_desc: "Perform a sacred rite of blood upon [recipient.GetShortUINameNoTooltip] to empower, protect, or consecrate them."
+  bm_blood_blessing_interaction_tooltip: "Confer supernatural blessings, lifeforce, or arcane runes through blood magic."
+  bm_blood_blessing_interaction_requirement: "You must possess Lifeforce or Piety suitable for at least one blessing."
+  NOT_bm_blood_blessing_interaction_requirement: "You do not possess the required Lifeforce or Piety for this blessing."
+  bm_blood_blessing_toast: "Blood Blessing Bestowed"
+  bm_blood_blessing_option_empower: "Empower Blood Mage/Knight"
+  bm_blood_blessing_option_empower_desc: "Channel Lifeforce into [recipient.GetShortUINameNoTooltip] to advance their occult or martial lifestyle tracks."
+  bm_blood_blessing_option_grant_lifeforce: "Grant Lifeforce"
+  bm_blood_blessing_option_grant_lifeforce_desc: "Transfer condensed Lifeforce into [recipient.GetShortUINameNoTooltip] or restore their vitality if recently drained."
+  bm_blood_blessing_option_bless_blood: "Bless Blood"
+  bm_blood_blessing_option_bless_blood_desc: "Infuse a child, dynasty kin, or sworn knight with Lifeforce, blessing their attributes and fortitude."
+  bm_blood_blessing_option_anoint_heir: "Annoint Heir"
+  bm_blood_blessing_option_anoint_heir_desc: "Consecrate your chosen heir or child with a major condensation of Lifeforce, designating them as the inheritor of your blood legacy."
+  bm_blood_blessing_option_consecrate_union: "Consecrate Union"
+  bm_blood_blessing_option_consecrate_union_desc: "Perform a blood rite upon your spouse, consort, or lover to bind Lifeforce into the union, increasing fertility and congenital inheritance."
+  bm_blood_blessing_option_inscribe_rune: "Inscribe Blood Rune"
+  bm_blood_blessing_option_inscribe_rune_desc: "Carve or upgrade a permanent Blood Rune upon [recipient.GetShortUINameNoTooltip]."
+
+  # Unified Blood Drain Interaction
+  bm_blood_drain_interaction: "Blood Drain"
+  bm_blood_drain_interaction_desc: "Extract Lifeforce from [recipient.GetShortUINameNoTooltip] through forbidden rites of blood."
+  bm_blood_drain_interaction_tooltip: "Harvest vital essence from prisoners, subjects, kin, or rival mages."
+  bm_blood_drain_interaction_requirement: "You must be capable of extracting Lifeforce from this character."
+  NOT_bm_blood_drain_interaction_requirement: "You cannot extract Lifeforce from this character."
+  bm_blood_drain_toast: "Lifeforce Extracted"
+  bm_blood_drain_option_major: "Major Life drain"
+  bm_blood_drain_option_major_desc: "Conduct a lethal harvest upon an captive prisoner, ripping away their vitality to condense Major Lifeforce."
+  bm_blood_drain_option_minor: "Minor Life drain"
+  bm_blood_drain_option_minor_desc: "Drain a portion of lifeforce from a courtier or prisoner, leaving them weakened while granting you Minor Lifeforce."
+  bm_blood_drain_option_stored: "Drain Stored Lifeforce"
+  bm_blood_drain_option_stored_desc: "Extract condensed Lifeforce reserves directly from [recipient.GetShortUINameNoTooltip]'s blood, via subjugation or an occult duel."
+  bm_blood_drain_option_tithe: "Demand Blood Tithe"
+  bm_blood_drain_option_tithe_desc: "Exercise your authority as House Head to extract vital Lifeforce from an adult kin member."

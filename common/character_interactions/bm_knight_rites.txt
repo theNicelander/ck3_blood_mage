@@ -32,14 +32,11 @@
 					has_relation_soulmate = scope:actor
 				}
 			}
+			prowess >= 20
 			OR = {
 				# Eligible prisoner
 				AND = {
 					is_imprisoned_by = scope:actor
-					OR = {
-						prowess >= 12
-						has_trait = lifestyle_blood_knight
-					}
 				}
 				# Fallen or critically broken own follower
 				AND = {

@@ -322,24 +322,26 @@
 		}
 	}
 
-	ai_check_interval = 12
-	ai_will_do = {
-		base = 10
-		modifier = {
-			add = -100
-			health <= fine_health
+	ai_potential = {
+		OR = {
+			has_trait = lifestyle_blood_mage
+			has_trait = lifestyle_blood_knight
 		}
+	}
+
+	ai_check_interval = 3
+	ai_will_do = {
+		base = 0
 		modifier = {
 			add = 100
 			bm_has_any_attunement_trigger = no
 		}
 		modifier = {
-			add = -100
+			add = 10
 			bm_has_any_attunement_trigger = yes
-			OR = {
-				NOT = { has_character_modifier = lifeforce_modifier_minor }
-				piety < 100
-			}
+			has_character_modifier = lifeforce_modifier_minor
+			piety >= 100
+			health > fine_health
 		}
 	}
 }

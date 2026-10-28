@@ -590,3 +590,84 @@ blood_mage_yearly_events.005 = {
         }
     }
 }
+
+# Quarterly event - Add flat Lifestyle XP from Channel Skill modifiers (+30 XP/quarter = +10 XP/month; +15 XP/quarter = +5 XP/month for focus)
+blood_mage_yearly_events.006 = {
+    type = character_event
+    hidden = yes
+
+    trigger = {
+        OR = {
+            has_character_modifier = diplomacy_lifeforce_modifier
+            has_character_modifier = martial_lifeforce_modifier
+            has_character_modifier = stewardship_lifeforce_modifier
+            has_character_modifier = intrigue_lifeforce_modifier
+            has_character_modifier = learning_lifeforce_modifier
+            has_character_modifier = prowess_lifeforce_modifier
+            has_character_modifier = exp_lifeforce_modifier
+        }
+    }
+
+    immediate = {
+        if = {
+            limit = { has_character_modifier = diplomacy_lifeforce_modifier }
+            add_diplomacy_lifestyle_xp = bm_channel_skill_quarterly_lifestyle_xp_value
+        }
+        if = {
+            limit = { has_character_modifier = martial_lifeforce_modifier }
+            add_martial_lifestyle_xp = bm_channel_skill_quarterly_lifestyle_xp_value
+        }
+        if = {
+            limit = { has_character_modifier = stewardship_lifeforce_modifier }
+            add_stewardship_lifestyle_xp = bm_channel_skill_quarterly_lifestyle_xp_value
+        }
+        if = {
+            limit = { has_character_modifier = intrigue_lifeforce_modifier }
+            add_intrigue_lifestyle_xp = bm_channel_skill_quarterly_lifestyle_xp_value
+        }
+        if = {
+            limit = { has_character_modifier = learning_lifeforce_modifier }
+            add_learning_lifestyle_xp = bm_channel_skill_quarterly_lifestyle_xp_value
+        }
+        if = {
+            limit = { has_character_modifier = prowess_lifeforce_modifier }
+            add_martial_lifestyle_xp = bm_channel_skill_quarterly_lifestyle_xp_value
+        }
+        if = {
+            limit = { has_character_modifier = exp_lifeforce_modifier }
+            if = {
+                limit = { has_lifestyle = diplomacy_lifestyle }
+                add_diplomacy_lifestyle_xp = bm_channel_exp_quarterly_lifestyle_xp_value
+            }
+            else_if = {
+                limit = { has_lifestyle = martial_lifestyle }
+                add_martial_lifestyle_xp = bm_channel_exp_quarterly_lifestyle_xp_value
+            }
+            else_if = {
+                limit = { has_lifestyle = stewardship_lifestyle }
+                add_stewardship_lifestyle_xp = bm_channel_exp_quarterly_lifestyle_xp_value
+            }
+            else_if = {
+                limit = { has_lifestyle = intrigue_lifestyle }
+                add_intrigue_lifestyle_xp = bm_channel_exp_quarterly_lifestyle_xp_value
+            }
+            else_if = {
+                limit = { has_lifestyle = learning_lifestyle }
+                add_learning_lifestyle_xp = bm_channel_exp_quarterly_lifestyle_xp_value
+            }
+            else_if = {
+                limit = { has_lifestyle = wanderer_lifestyle }
+                add_wanderer_lifestyle_xp = bm_channel_exp_quarterly_lifestyle_xp_value
+            }
+            else = {
+                random_list = {
+                    10 = { add_diplomacy_lifestyle_xp = bm_channel_exp_quarterly_lifestyle_xp_value }
+                    10 = { add_martial_lifestyle_xp = bm_channel_exp_quarterly_lifestyle_xp_value }
+                    10 = { add_stewardship_lifestyle_xp = bm_channel_exp_quarterly_lifestyle_xp_value }
+                    10 = { add_intrigue_lifestyle_xp = bm_channel_exp_quarterly_lifestyle_xp_value }
+                    10 = { add_learning_lifestyle_xp = bm_channel_exp_quarterly_lifestyle_xp_value }
+                }
+            }
+        }
+    }
+}

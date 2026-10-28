@@ -42,18 +42,17 @@ Guaranteed, no cost, 1 year cooldown: **+1 XP** (**+2 XP** with Superior **Hulin
 | MK | +1 | None | Yearly Pulse | on-action `blood_mage_yearly_events.001` / `.004` | `lifestyle_blood_mage` or `lifestyle_blood_knight` | 1 year |
 | K | +1 | None (33% ambient roll Minor Lifeforce) | Yearly Survival Pulse | `blood_mage_yearly_events.004` | `lifestyle_blood_knight` | 1 year |
 | MK | grants `ancient_attuned` | Initial free; change: 100 Piety + Minor (`lifeforce_modifier_minor`) | Attune Lifeforce | decision `bm_attune_lifeforce_decision` | Change: Minor lifeforce, piety >= 100 | 3 years |
-| MK | +2 | 100 Piety + Minor; Grants Major | Condense Lifeforce | event option `bm_cast_blood_magic_minor.001` | Minor lifeforce | None |
-| MK | +3 (crit/success), +1 (fail) | 250 Piety + Minor & Major; Grants Superior | Condense Superior Lifeforce | event option `bm_cast_blood_magic_major.001` | `piety_level >= 3`, Minor + Major | 2 years |
 | MK | +4 | 0 Piety + Minor | Inscribe Minor Blood Rune (Self) | M: event option `bm_cast_blood_magic_minor.001`; K: decision widget `bm_cast_blood_magic_minor_decision` | `piety_level >= 2` | 5 years |
 | MK | +5 | 200 Piety + Major (`lifeforce_modifier_major`) | Inscribe Major Blood Rune (Self) | M: `bm_cast_blood_magic_major.001`; K: `bm_cast_blood_magic_major_decision` | `piety_level >= 3`, Minor rune | 5 years |
 | MK | +10 | 400 Piety + Superior (`lifeforce_modifier_superior`) | Inscribe Superior Blood Rune (Self) | M: `bm_cast_blood_magic_superior.001`; K: `bm_cast_blood_magic_superior_decision` | `piety_level >= 4`, Major rune | 5 years |
-| K | +1 (+2 if child inherits; +2/+3 with Feingur) | None | Childbirth Milestone | on-action `on_birth_child` -> `bm_on_birth_bloodline_xp` | Parent is blood knight | Per birth |
-| K | +1 to +5 targeted: `vanguard` Physique, `ancient` Beauty, `enlightenment` Intellect | see Manifest Trait (`enlightenment`) | Manifest Trait (Congenital 1-5) | see below | | |
+| MK | +2 (+5 if firstborn) | None | Childbirth Milestone | on-action `on_birth_child` -> `bm_on_birth_bloodline_xp` | Parent is blood mage or blood knight | Per birth |
 
 ## `enlightenment`
 
 | Who | XP | Cost | Action | Source | Req | CD |
 | --- | --- | --- | --- | --- | --- | --- |
+| MK | +2 | 100 Piety + Minor; Grants Major | Condense Lifeforce | event option `bm_cast_blood_magic_minor.001` / decision `bm_cast_blood_magic_minor_decision` | Minor lifeforce | None |
+| MK | +3 (crit/success), +1 (fail) | 250 Piety + Minor & Major; Grants Superior | Condense Superior Lifeforce | event option `bm_cast_blood_magic_major.001` / decision `bm_cast_blood_magic_major_decision` | `piety_level >= 3`, Minor + Major | 2 years |
 | MK | +1 / +1 / +2 / +2 | 100 / 250 / 500 / 1000 Piety (Learning duel for Minor, Major, Superior Lifeforce) | Manifest Lifeforce | decision `bm_manifest_lifeforce_decision` | `piety_level >= 2`, `piety >= 100` | 1 year |
 | M | +1 | 75 Piety + Minor | Channel Minor Lifeforce | `bm_cast_blood_magic_minor.001` | Minor lifeforce | None |
 | M | +1 | 25 Piety + Minor | Grant Lifeforce (Minor) | interaction `grant_lifeforce_interaction` | Minor lifeforce, courtier/prisoner | None |
@@ -63,7 +62,7 @@ Guaranteed, no cost, 1 year cooldown: **+1 XP** (**+2 XP** with Superior **Hulin
 | MK | +3 (+2 on duel win) | 350 Piety + Superior | Master Education (5★) | M: `bm_cast_blood_magic_superior.001`; K: `bm_cast_blood_magic_superior_decision` | `piety_level >= 3`, 4★ education | 2 years |
 | MK | +3 | 1000 Piety + Superior | New Education (2nd Trait) | M: `bm_cast_blood_magic_superior.001`; K: `bm_cast_blood_magic_superior_decision` | `piety_level >= 4`, 5★ education | 2 years |
 | MK | +4 (success) / +1 (failure) | 250 Piety + Major | Influence Personality | interaction `bm_reshape_personality_interaction` | `piety_level >= 3`, relationship target | 5 years (success) / 1 year (failure) |
-| K | +1 / +2 | 200–1500 Piety + Major/Superior | Manifest Intellect / Manifest Trait (Congenital 1-5; targeted XP, see `ancient`) | event option `bm_cast_blood_magic_major/superior.001`; decision `bm_cast_blood_magic_major/superior_decision` | `piety_level >= 2` | 5 years |
+| K | +3 to +8 | 250–1500 Piety + Major/Superior | Manifest Intellect / Manifest Trait (Congenital 1-5; targeted XP; scaled 3/4/5/6/7/8 based on trait rank) | event option `bm_cast_blood_magic_major/superior.001`; decision `bm_cast_blood_magic_major/superior_decision` | `piety_level >= 2` | 5 years |
 | M | +3 (Major) / +1 (Minor) | 0 Piety (recipient); caster consumes Lifeforce | Empower Blood Mage (Recipient; also `bloodline`) | interaction `empower_blood_mage_interaction` | Fellow Blood Mage empowers target | None |
 | MK | +1 | 150 Piety + Minor | Contest of the Red Art (Defeat) | interaction `bm_occult_mage_duel_interaction` | Blood Mage or Blood Knight | 3 years |
 | K | +1 to +3 `vanguard` + 0 to +2 `enlightenment` | None | Battle Defeat | see knight doc | | |
@@ -94,7 +93,7 @@ Heal Old Age rows: reduce old-age trait XP, or remove it if at or below threshol
 
 ## Blood Hunt (all tracks)
 
-**+1 to +5 XP** (`slaughter` / `vanguard` / `enlightenment` / `hematurgy` / `ancient` / `benediction`). Decision & event (`seek_power_decision`, `seek_power.002`–`.011`). Grants Minor, Major, or 25% Superior Lifeforce (single combat duel vs escort knight / 20+ prowess traveler, apex beasts, or cairn). Mage or Knight. CD 1–3 years (1 year landed, 3 years wanderer).
+**+1 to +5 XP** (`slaughter` / `vanguard` / `enlightenment` / `hematurgy` / `benediction`). Decision & event (`seek_power_decision`, `seek_power.002`–`.011`). Grants Minor, Major, or 25% Superior Lifeforce (single combat duel vs escort knight / 20+ prowess traveler, apex beasts, or cairn). Mage or Knight. CD 1–3 years (1 year landed, 3 years wanderer).
 
 ## Implementation Files
 

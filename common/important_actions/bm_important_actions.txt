@@ -128,3 +128,130 @@
 		}
 	}
 }
+
+bm_action_can_lifedrain_prisoner = {
+	combine_into_one = yes
+	priority = 340
+
+	check_create_action = {
+		if = {
+			limit = {
+				is_ai = no
+				OR = {
+					has_trait = lifestyle_blood_mage
+					has_trait = lifestyle_blood_knight
+				}
+			}
+			save_scope_as = actor
+
+			every_prisoner = {
+				limit = {
+					save_temporary_scope_as = prisoner_target
+					scope:actor = {
+						is_character_interaction_valid = {
+							interaction = bm_blood_drain_interaction
+							recipient = scope:prisoner_target
+						}
+					}
+				}
+				add_to_temporary_list = bm_lifedrain_candidates
+			}
+
+			every_in_list = {
+				list = bm_lifedrain_candidates
+				try_create_important_action = {
+					important_action_type = bm_action_can_lifedrain_prisoner
+					actor = scope:actor
+					recipient = this
+				}
+			}
+		}
+	}
+
+	effect = {
+		open_interaction_window = {
+			interaction = bm_blood_drain_interaction
+			actor = scope:actor
+			recipient = scope:recipient
+		}
+	}
+}
+
+bm_action_can_cull_champion = {
+	combine_into_one = yes
+	priority = 345
+
+	check_create_action = {
+		if = {
+			limit = {
+				is_ai = no
+				OR = {
+					has_trait = lifestyle_blood_mage
+					has_trait = lifestyle_blood_knight
+				}
+			}
+			save_scope_as = actor
+
+			# Check prisoners
+			every_prisoner = {
+				limit = {
+					save_temporary_scope_as = cull_target
+					scope:actor = {
+						is_character_interaction_valid = {
+							interaction = bm_cull_champion_interaction
+							recipient = scope:cull_target
+						}
+					}
+				}
+				add_to_temporary_list = bm_cull_candidates
+			}
+
+			# Check knights
+			every_knight = {
+				limit = {
+					NOT = { is_in_list = bm_cull_candidates }
+					save_temporary_scope_as = cull_target
+					scope:actor = {
+						is_character_interaction_valid = {
+							interaction = bm_cull_champion_interaction
+							recipient = scope:cull_target
+						}
+					}
+				}
+				add_to_temporary_list = bm_cull_candidates
+			}
+
+			# Check courtiers
+			every_courtier = {
+				limit = {
+					NOT = { is_in_list = bm_cull_candidates }
+					save_temporary_scope_as = cull_target
+					scope:actor = {
+						is_character_interaction_valid = {
+							interaction = bm_cull_champion_interaction
+							recipient = scope:cull_target
+						}
+					}
+				}
+				add_to_temporary_list = bm_cull_candidates
+			}
+
+			every_in_list = {
+				list = bm_cull_candidates
+				try_create_important_action = {
+					important_action_type = bm_action_can_cull_champion
+					actor = scope:actor
+					recipient = this
+				}
+			}
+		}
+	}
+
+	effect = {
+		open_interaction_window = {
+			interaction = bm_cull_champion_interaction
+			actor = scope:actor
+			recipient = scope:recipient
+		}
+	}
+}

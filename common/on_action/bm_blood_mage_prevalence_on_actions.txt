@@ -211,6 +211,20 @@ bm_on_birth_bloodline_xp = {
 					add_character_modifier = { modifier = lifeforce_modifier_major }
 				}
 				if = {
+					limit = {
+						NOR = {
+							any_child = {
+								even_if_dead = yes
+								this != root
+							}
+						}
+					}
+					add_shared_bm_bk_xp = { TRACK = ancient XP = 5 }
+				}
+				else = {
+					add_shared_bm_bk_xp = { TRACK = ancient XP = 2 }
+				}
+				if = {
 					limit = { bm_has_superior_stave_trigger = { STAVE = feingur } }
 					if = {
 						limit = { has_trait = lifestyle_blood_mage }
@@ -236,7 +250,7 @@ bm_on_birth_bloodline_xp = {
 					}
 					else_if = {
 						limit = { has_trait = lifestyle_blood_knight }
-						add_blood_knight_xp = { TRACK = ancient XP = 2 }
+						add_blood_knight_xp = { TRACK = vanguard XP = 4 }
 						if = {
 							limit = {
 								root = {
@@ -246,7 +260,7 @@ bm_on_birth_bloodline_xp = {
 									}
 								}
 							}
-							add_blood_knight_xp = { TRACK = ancient XP = 1 }
+							add_blood_knight_xp = { TRACK = vanguard XP = 4 }
 							send_interface_toast = {
 								type = event_toast_effect_good
 								title = bm_birth_blood_knight_child_toast
@@ -289,7 +303,7 @@ bm_on_birth_bloodline_xp = {
 					}
 					else_if = {
 						limit = { has_trait = lifestyle_blood_knight }
-						add_blood_knight_xp = { TRACK = ancient XP = 1 }
+						add_blood_knight_xp = { TRACK = vanguard XP = 2 }
 						if = {
 							limit = {
 								root = {
@@ -299,7 +313,7 @@ bm_on_birth_bloodline_xp = {
 									}
 								}
 							}
-							add_blood_knight_xp = { TRACK = ancient XP = 1 }
+							add_blood_knight_xp = { TRACK = vanguard XP = 2 }
 							send_interface_toast = {
 								type = event_toast_effect_good
 								title = bm_birth_blood_knight_child_toast
@@ -336,6 +350,20 @@ bm_on_birth_bloodline_xp = {
 					add_character_modifier = { modifier = lifeforce_modifier_major }
 				}
 				if = {
+					limit = {
+						NOR = {
+							any_child = {
+								even_if_dead = yes
+								this != root
+							}
+						}
+					}
+					add_shared_bm_bk_xp = { TRACK = ancient XP = 5 }
+				}
+				else = {
+					add_shared_bm_bk_xp = { TRACK = ancient XP = 2 }
+				}
+				if = {
 					limit = { bm_has_superior_stave_trigger = { STAVE = feingur } }
 					if = {
 						limit = { has_trait = lifestyle_blood_mage }
@@ -361,7 +389,7 @@ bm_on_birth_bloodline_xp = {
 					}
 					else_if = {
 						limit = { has_trait = lifestyle_blood_knight }
-						add_blood_knight_xp = { TRACK = ancient XP = 2 }
+						add_blood_knight_xp = { TRACK = vanguard XP = 4 }
 						if = {
 							limit = {
 								root = {
@@ -371,7 +399,7 @@ bm_on_birth_bloodline_xp = {
 									}
 								}
 							}
-							add_blood_knight_xp = { TRACK = ancient XP = 1 }
+							add_blood_knight_xp = { TRACK = vanguard XP = 4 }
 							send_interface_toast = {
 								type = event_toast_effect_good
 								title = bm_birth_blood_knight_child_toast
@@ -414,7 +442,7 @@ bm_on_birth_bloodline_xp = {
 					}
 					else_if = {
 						limit = { has_trait = lifestyle_blood_knight }
-						add_blood_knight_xp = { TRACK = ancient XP = 1 }
+						add_blood_knight_xp = { TRACK = vanguard XP = 2 }
 						if = {
 							limit = {
 								root = {
@@ -424,7 +452,7 @@ bm_on_birth_bloodline_xp = {
 									}
 								}
 							}
-							add_blood_knight_xp = { TRACK = ancient XP = 1 }
+							add_blood_knight_xp = { TRACK = vanguard XP = 2 }
 							send_interface_toast = {
 								type = event_toast_effect_good
 								title = bm_birth_blood_knight_child_toast

@@ -7,6 +7,7 @@
 quarterly_playable_pulse = {
     on_actions = {
         bm_quarterly_blood_power_xp_pulse
+        bm_quarterly_channel_skill_xp_pulse
     }
 }
 
@@ -17,6 +18,23 @@ bm_quarterly_blood_power_xp_pulse = {
     }
     effect = {
         trigger_event = blood_mage_yearly_events.005
+    }
+}
+
+bm_quarterly_channel_skill_xp_pulse = {
+    trigger = {
+        OR = {
+            has_character_modifier = diplomacy_lifeforce_modifier
+            has_character_modifier = martial_lifeforce_modifier
+            has_character_modifier = stewardship_lifeforce_modifier
+            has_character_modifier = intrigue_lifeforce_modifier
+            has_character_modifier = learning_lifeforce_modifier
+            has_character_modifier = prowess_lifeforce_modifier
+            has_character_modifier = exp_lifeforce_modifier
+        }
+    }
+    effect = {
+        trigger_event = blood_mage_yearly_events.006
     }
 }
 

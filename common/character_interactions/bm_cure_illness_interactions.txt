@@ -24,55 +24,6 @@
 				}
 			}
 		}
-		custom_tooltip = {
-			text = bm_heal_ailment_resource_requirement_tt
-			OR = {
-				AND = {
-					scope:recipient = { bm_has_minor_ailment_trigger = yes }
-					scope:actor = {
-						has_character_modifier = lifeforce_modifier_minor
-						piety >= cure_illness_cost_minor
-					}
-				}
-				AND = {
-					scope:recipient = { bm_has_major_ailment_trigger = yes }
-					scope:actor = {
-						has_character_modifier = lifeforce_modifier_major
-						piety >= cure_illness_cost_major
-					}
-				}
-				AND = {
-					scope:recipient = { bm_has_deadly_ailment_trigger = yes }
-					scope:actor = {
-						has_character_modifier = lifeforce_modifier_minor
-						has_character_modifier = lifeforce_modifier_major
-						piety >= cure_illness_cost_benediction
-					}
-				}
-				AND = {
-					scope:recipient = { bm_has_old_age_ailment_trigger = yes }
-					scope:actor = {
-						OR = {
-							AND = {
-								has_character_modifier = lifeforce_modifier_minor
-								piety >= heal_old_age_cost_minor
-							}
-							AND = {
-								has_character_modifier = lifeforce_modifier_major
-								piety >= heal_old_age_cost_major
-							}
-						}
-					}
-				}
-				AND = {
-					scope:recipient = { bm_has_stress_coping_trait_trigger = yes }
-					scope:actor = {
-						has_character_modifier = lifeforce_modifier_major
-						piety >= 250
-					}
-				}
-			}
-		}
 	}
 
 	on_accept = {
@@ -95,7 +46,53 @@
 
 	auto_accept = yes
 	ai_accept = { base = 100 }
-	ai_potential = { always = yes }
+	ai_potential = {
+		OR = {
+			AND = {
+				scope:recipient = { bm_has_minor_ailment_trigger = yes }
+				scope:actor = {
+					has_character_modifier = lifeforce_modifier_minor
+					piety >= cure_illness_cost_minor
+				}
+			}
+			AND = {
+				scope:recipient = { bm_has_major_ailment_trigger = yes }
+				scope:actor = {
+					has_character_modifier = lifeforce_modifier_major
+					piety >= cure_illness_cost_major
+				}
+			}
+			AND = {
+				scope:recipient = { bm_has_deadly_ailment_trigger = yes }
+				scope:actor = {
+					has_character_modifier = lifeforce_modifier_superior
+					piety >= cure_illness_cost_benediction
+				}
+			}
+			AND = {
+				scope:recipient = { bm_has_old_age_ailment_trigger = yes }
+				scope:actor = {
+					OR = {
+						AND = {
+							has_character_modifier = lifeforce_modifier_minor
+							piety >= heal_old_age_cost_minor
+						}
+						AND = {
+							has_character_modifier = lifeforce_modifier_major
+							piety >= heal_old_age_cost_major
+						}
+					}
+				}
+			}
+			AND = {
+				scope:recipient = { bm_has_stress_coping_trait_trigger = yes }
+				scope:actor = {
+					has_character_modifier = lifeforce_modifier_major
+					piety >= 250
+				}
+			}
+		}
+	}
 	ai_targets = {
 		ai_recipients = self
 		ai_recipients = dynasty

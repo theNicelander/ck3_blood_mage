@@ -1,0 +1,93 @@
+﻿bm_bestow_traits_interaction = {
+	category = interaction_category_bm_blood_magic
+	icon = bm_bestow_traits_interaction
+	desc = bm_bestow_traits_interaction_desc
+	common_interaction = yes
+	interface_priority = 204
+
+	cooldown_against_recipient = { years = 3 }
+
+	is_shown = {
+		scope:actor = {
+			OR = {
+				has_trait = lifestyle_blood_mage
+				has_trait = lifestyle_blood_knight
+			}
+		}
+		scope:recipient = {
+			is_alive = yes
+			NOT = { this = scope:actor }
+			OR = {
+				dynasty ?= scope:actor.dynasty
+				is_spouse_of = scope:actor
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			custom_tooltip = {
+				text = bm_bestow_traits_lifeforce_tt
+				has_character_modifier = lifeforce_modifier_major
+			}
+			custom_tooltip = {
+				text = bm_bestow_traits_can_bestow_tt
+				bm_actor_can_bestow_any_trait_to_recipient_trigger = yes
+			}
+		}
+	}
+
+	cost = {
+		piety = 250
+	}
+
+	on_accept = {
+		debug_log = "BloodMageInteraction: bm_bestow_traits | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
+		scope:actor = {
+			trigger_event = bm_bestow_traits.0001
+		}
+	}
+
+	auto_accept = yes
+	ai_accept = { base = 100 }
+	ai_potential = { always = yes }
+	ai_targets = {
+		ai_recipients = spouses
+		ai_recipients = family
+		ai_recipients = children
+	}
+	ai_frequency = 24
+	ai_will_do = {
+		base = 15
+		modifier = {
+			factor = 0
+			OR = {
+				has_relation_rival = scope:recipient
+				has_relation_nemesis = scope:recipient
+			}
+		}
+		modifier = {
+			factor = 0
+			opinion = {
+				target = scope:recipient
+				value < 20
+			}
+		}
+		modifier = {
+			factor = 0
+			piety < 500
+		}
+		modifier = {
+			add = 20
+			scope:recipient = { is_primary_heir_of = scope:actor }
+		}
+		modifier = {
+			add = 10
+			scope:recipient = { is_child_of = scope:actor }
+		}
+		modifier = {
+			add = 15
+			is_spouse_of = scope:recipient
+		}
+	}
+}
