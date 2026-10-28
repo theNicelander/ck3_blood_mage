@@ -17,6 +17,7 @@ CK3 script fails silently. Follow patterns in this repo and vanilla 1.20 (`/User
 - **Nothing hidden, often unavailable**: keep spells, rites, options visible and greyed out (`show_as_unavailable`) with their requirements. Hide only when the prerequisite stage is not reached or the option is completed/superseded.
 - **Clarify before building**: ask follow-up questions on rough ideas; state assumptions. Plans end with commit and push.
 - **Planner model**: if the active model is Gemini Argon, never edit files; only investigate, ask, and plan.
+- **Minimal instructions & token saving**: write tersely. Cut fluff, filler, and verbose explanations in docs, rules, and prompts. Keep only the minimal text needed to execute.
 
 ## Layout & docs
 
@@ -60,4 +61,4 @@ CK3 script fails silently. Follow patterns in this repo and vanilla 1.20 (`/User
 
 1. `git branch --show-current`; read `docs-ai/branch-context/<branch>.md` (create if missing), matching rule(s) and architecture doc.
 2. Plan smallest change; grep existing identifiers; use the matching skill.
-3. Update the architecture doc, branch doc, and release notes as needed, run checks, commit, push: skill `manage-pr`.
+3. Docs, notes, check, commit, push: skill `manage-pr`. PR title `<branch>: <outcome title>`. Squash merge PR via GitHub (`gh pr merge --squash`), never locally; keeps `(#<PR>)`.
