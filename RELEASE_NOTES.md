@@ -93,6 +93,9 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 
 - **Blood Magic Situation panel**: discipline, track XP, Lifeforce, stave, and rosters of dynasty Blood Mages, Blood Knights and Golems.
 - All mod interactions grouped in a "Blood Magic" context-menu section; outcomes shown in interface toasts.
+- Consolidated positive character interactions into unified modal window **Blood Blessing** (Empower Blood Mage/Knight, Grant Lifeforce, Bless Blood, Annoint Heir, Consecrate Union, Inscribe Blood Rune).
+- Consolidated hostile lifeforce extraction into unified modal window **Blood Drain** (Major Life drain, Minor Life drain, Drain Stored Lifeforce, Demand Blood Tithe).
+- Renamed Heal Affliction interaction to **Heal Healing**; preserved Make Them a Blood Mage and Make Blood Knight initiation rites as standalone interactions.
 - Current Situation alerts when a kinsperson or courtier can be healed, when dungeon prisoners can be lifedrained, or when an eligible 20+ Prowess prisoner or fallen champion can be culled.
 - Cull Fallen Champion requires 20+ Prowess across all targets (captives and fallen followers).
 - **Purge Stress Vices** burns away all 11 coping traits.
@@ -128,7 +131,7 @@ Annual pulse (3-year cooldown) for player Blood Mages and Blood Knights:
 
 ## Version history
 
-- v1.20.61: Restructure Manifest Congenital Traits (Ranks 1–3 in Major, Ranks 4–5 in Superior), Piety tiers (250–1500), Devotion level loss on Ranks 3–5, Lifeforce refunds on fail, and lower-tier recoil on crit fail
+- v1.20.61: Restructure Manifest Congenital Traits (Ranks 1–3 in Major, Ranks 4–5 in Superior with 3/4/5/6/7/8 XP scaled by trait rank); unify positive interactions into Blood Blessing and hostile harvesting into Blood Drain; rename Heal Affliction to Heal Healing
 - v1.20.60: Rebalance Ancient and Enlightenment XP; Condense Lifeforce grants Enlightenment XP; AI always selects initial Lifeforce attunement; alerts for prisoner lifedrain and culling champions; require 20+ Prowess for Cull Champion
 - v1.20.59: Blood Temples become duchy-capital buildings in all duchies
 - v1.20.58: Add Blood Berserkers and Blood-Bound Behemoths regiments

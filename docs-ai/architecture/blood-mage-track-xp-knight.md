@@ -12,7 +12,7 @@ Knight-only tracks `vanguard` and `slaughter`, plus Knight-specific rows. Shared
 | `vanguard` +1 / +2 (+2 if child/kin) | 100 Piety + Major | Make Blood Knight (Major) | interaction `make_blood_knight_interaction` | Blood Knight initiates kin, spouse, courtier, or knight | None |
 | `vanguard` +1 | 250 Piety + Minor | Make Blood Knight (Minor) | `make_blood_knight_interaction` | same | None |
 | `vanguard` +5 | 500 Piety + Superior | Forge Blood Golem | event option `bm_cast_blood_magic_superior.001` | `piety_level >= 3`, Superior lifeforce | 3 years |
-| `vanguard` +1 / +2 (targeted: Vanguard for Physique) | 200–1500 Piety + Major/Superior | Manifest Trait (Congenital 1-5) | event option `bm_cast_blood_magic_major/superior.001` | `piety_level >= 2` | 5 years |
+| +3 to +8 `vanguard` / `enlightenment` (targeted: Vanguard for Physique, Enlightenment for Intellect/Beauty; scaled 3/4/5/6/7/8 based on trait rank) | 250–1500 Piety + Major/Superior | Manifest Trait (Congenital 1-5) | event option `bm_cast_blood_magic_major/superior.001` | `piety_level >= 2` | 5 years |
 
 ## Battle
 
