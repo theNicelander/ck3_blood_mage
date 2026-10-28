@@ -569,8 +569,7 @@ bm_heal_ailment.0001 = {
 				has_trait = lifestyle_blood_knight
 			}
 			scope:recipient = { has_trait = wounded_3 }
-			has_character_modifier = lifeforce_modifier_minor
-			has_character_modifier = lifeforce_modifier_major
+			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
 		}
 		show_as_unavailable = {
@@ -597,8 +596,7 @@ bm_heal_ailment.0001 = {
 				has_trait = lifestyle_blood_knight
 			}
 			scope:recipient = { has_trait = sickly }
-			has_character_modifier = lifeforce_modifier_minor
-			has_character_modifier = lifeforce_modifier_major
+			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
 		}
 		show_as_unavailable = {
@@ -625,8 +623,7 @@ bm_heal_ailment.0001 = {
 				has_trait = lifestyle_blood_knight
 			}
 			scope:recipient = { has_trait = great_pox }
-			has_character_modifier = lifeforce_modifier_minor
-			has_character_modifier = lifeforce_modifier_major
+			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
 		}
 		show_as_unavailable = {
@@ -653,8 +650,7 @@ bm_heal_ailment.0001 = {
 				has_trait = lifestyle_blood_knight
 			}
 			scope:recipient = { has_trait = cancer }
-			has_character_modifier = lifeforce_modifier_minor
-			has_character_modifier = lifeforce_modifier_major
+			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
 		}
 		show_as_unavailable = {
@@ -681,8 +677,7 @@ bm_heal_ailment.0001 = {
 				has_trait = lifestyle_blood_knight
 			}
 			scope:recipient = { has_trait = bubonic_plague }
-			has_character_modifier = lifeforce_modifier_minor
-			has_character_modifier = lifeforce_modifier_major
+			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
 		}
 		show_as_unavailable = {
@@ -709,8 +704,7 @@ bm_heal_ailment.0001 = {
 				has_trait = lifestyle_blood_knight
 			}
 			scope:recipient = { has_trait = smallpox }
-			has_character_modifier = lifeforce_modifier_minor
-			has_character_modifier = lifeforce_modifier_major
+			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
 		}
 		show_as_unavailable = {
@@ -737,8 +731,7 @@ bm_heal_ailment.0001 = {
 				has_trait = lifestyle_blood_knight
 			}
 			scope:recipient = { has_trait = leper }
-			has_character_modifier = lifeforce_modifier_minor
-			has_character_modifier = lifeforce_modifier_major
+			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
 		}
 		show_as_unavailable = {
@@ -765,8 +758,7 @@ bm_heal_ailment.0001 = {
 				has_trait = lifestyle_blood_knight
 			}
 			scope:recipient = { has_trait = impotent }
-			has_character_modifier = lifeforce_modifier_minor
-			has_character_modifier = lifeforce_modifier_major
+			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
 		}
 		show_as_unavailable = {
@@ -793,8 +785,7 @@ bm_heal_ailment.0001 = {
 				has_trait = lifestyle_blood_knight
 			}
 			scope:recipient = { has_trait = dysentery }
-			has_character_modifier = lifeforce_modifier_minor
-			has_character_modifier = lifeforce_modifier_major
+			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
 		}
 		show_as_unavailable = {
@@ -821,8 +812,7 @@ bm_heal_ailment.0001 = {
 				has_trait = lifestyle_blood_knight
 			}
 			scope:recipient = { has_trait = ergotism }
-			has_character_modifier = lifeforce_modifier_minor
-			has_character_modifier = lifeforce_modifier_major
+			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
 		}
 		show_as_unavailable = {
@@ -849,8 +839,7 @@ bm_heal_ailment.0001 = {
 				has_trait = lifestyle_blood_knight
 			}
 			scope:recipient = { has_trait = disfigured }
-			has_character_modifier = lifeforce_modifier_minor
-			has_character_modifier = lifeforce_modifier_major
+			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
 		}
 		show_as_unavailable = {
@@ -877,8 +866,7 @@ bm_heal_ailment.0001 = {
 				has_trait = lifestyle_blood_knight
 			}
 			scope:recipient = { has_trait = one_legged }
-			has_character_modifier = lifeforce_modifier_minor
-			has_character_modifier = lifeforce_modifier_major
+			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
 		}
 		show_as_unavailable = {
@@ -976,16 +964,6 @@ bm_heal_ailment.0001 = {
 				has_trait = lifestyle_blood_knight
 			}
 			scope:recipient = { bm_has_old_age_ailment_trigger = yes }
-			OR = {
-				AND = {
-					has_character_modifier = lifeforce_modifier_minor
-					piety >= heal_old_age_cost_minor
-				}
-				AND = {
-					has_character_modifier = lifeforce_modifier_major
-					piety >= heal_old_age_cost_major
-				}
-			}
 		}
 		show_as_unavailable = {
 			scope:recipient = { bm_has_old_age_ailment_trigger = yes }

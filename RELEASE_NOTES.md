@@ -95,7 +95,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - All mod interactions grouped in a "Blood Magic" context-menu section; outcomes shown in interface toasts.
 - Consolidated positive character interactions into unified modal window **Blood Blessing** (Empower Blood Mage/Knight, Grant Lifeforce, Bless Blood, Annoint Heir, Consecrate Union, Inscribe Blood Rune).
 - Consolidated hostile lifeforce extraction into unified modal window **Blood Drain** (Major Life drain, Minor Life drain, Drain Stored Lifeforce, Demand Blood Tithe).
-- Renamed Heal Affliction interaction to **Heal Healing**; preserved Make Them a Blood Mage and Make Blood Knight initiation rites as standalone interactions.
+- **Blood Healing**: interaction is always clickable when an affliction is present to inspect requirements directly in the event; Deadly afflictions (leprosy, cancer, plague) now require Superior Lifeforce and 100 Piety (+3 Benediction XP).
 - Current Situation alerts when a kinsperson or courtier can be healed, when dungeon prisoners can be lifedrained, or when an eligible 20+ Prowess prisoner or fallen champion can be culled.
 - Cull Fallen Champion requires 20+ Prowess across all targets (captives and fallen followers).
 - **Purge Stress Vices** burns away all 11 coping traits.
