@@ -41,6 +41,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - **Heal Ailment**: cures up to 32 ailments, purges all 11 stress vices (−50 Stress), and treats old-age traits (Minor: 1 Minor Lifeforce + 50 Piety; Major tier for deeper rejuvenation).
 - **Influence Personality**: Learning contest to swap a trait or culture (5-year cooldown on success, 1 year on failure).
 - **Congenital Manifestation**: Transmute Intellect, Physique, and Beauty up to Rank 3 in Major Blood Magic (250/500/750 Piety, Piety Levels 2/3/4; Rank 3 costs 1 Devotion Level) and up to Ranks 4–5 in Superior Blood Magic (1000/1500 Piety, Piety Level 5; costs 1 Devotion Level). Standard failure refunds lower-tier Lifeforce; critical failure inflicts additional exhaustion.
+- **Bestow Blood Traits**: Spend 250 Piety and 1 Major Lifeforce to pass positive congenital (Intellect, Physique, Beauty) or physical traits (Fecund, Pure-Blooded, Giant, Strong, Shrewd) to your spouse or dynasty kin. Elevates target one tier per ritual; guaranteed if transferring a rank lower than your own, or resolved via a Learning duel with yourself (50% at 20 Learning, 90% cap at 50 Learning) if transferring a matching rank.
 - Personality Reshaping (Learning contest to swap traits).
 
 ## Blood Hunt

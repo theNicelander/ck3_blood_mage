@@ -1,0 +1,91 @@
+﻿# Scripted effects for Bestow Blood Traits
+
+bm_bestow_intellect_rank_up_effect = {
+	if = {
+		limit = { NOT = { has_trait = intellect_good } }
+		remove_trait = intellect_bad_1
+		remove_trait = intellect_bad_2
+		remove_trait = intellect_bad_3
+		remove_trait = dull
+		add_trait = intellect_good_1
+	}
+	else_if = {
+		limit = { has_trait = intellect_good_1 }
+		remove_trait = intellect_good_1
+		add_trait = intellect_good_2
+	}
+	else_if = {
+		limit = { has_trait = intellect_good_2 }
+		remove_trait = intellect_good_2
+		add_trait = intellect_good_3
+	}
+}
+
+bm_bestow_physique_rank_up_effect = {
+	if = {
+		limit = { NOT = { has_trait = physique_good } }
+		remove_trait = physique_bad_1
+		remove_trait = physique_bad_2
+		remove_trait = physique_bad_3
+		remove_trait = weak
+		add_trait = physique_good_1
+	}
+	else_if = {
+		limit = { has_trait = physique_good_1 }
+		remove_trait = physique_good_1
+		add_trait = physique_good_2
+	}
+	else_if = {
+		limit = { has_trait = physique_good_2 }
+		remove_trait = physique_good_2
+		add_trait = physique_good_3
+	}
+}
+
+bm_bestow_beauty_rank_up_effect = {
+	if = {
+		limit = { NOT = { has_trait = beauty_good } }
+		remove_trait = beauty_bad_1
+		remove_trait = beauty_bad_2
+		remove_trait = beauty_bad_3
+		add_trait = beauty_good_1
+	}
+	else_if = {
+		limit = { has_trait = beauty_good_1 }
+		remove_trait = beauty_good_1
+		add_trait = beauty_good_2
+	}
+	else_if = {
+		limit = { has_trait = beauty_good_2 }
+		remove_trait = beauty_good_2
+		add_trait = beauty_good_3
+	}
+}
+
+bm_bestow_traits_grant_xp_and_opinion_effect = {
+	if = {
+		limit = { has_trait = lifestyle_blood_mage }
+		add_trait_xp = {
+			trait = lifestyle_blood_mage
+			track = bloodline
+			value = 2
+		}
+	}
+	if = {
+		limit = {
+			has_trait = lifestyle_blood_knight
+			NOT = { has_trait = lifestyle_blood_mage }
+		}
+		add_blood_knight_xp = {
+			TRACK = benediction
+			XP = 2
+		}
+	}
+	scope:recipient = {
+		add_opinion = {
+			target = scope:actor
+			modifier = magic_opinion_positive
+			opinion = 25
+		}
+	}
+}
