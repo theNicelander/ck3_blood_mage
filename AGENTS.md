@@ -15,6 +15,7 @@ CK3 script fails silently. Follow patterns in this repo and vanilla 1.20 (`/User
 - **Earned power**: lifespan and stat gains require Lifeforce, piety, ritual sacrifice, and tangible risk.
 - **Concise UI text**: say "Lifeforce", not "vitality". Flavour only in decision/event narrative descriptions.
 - **Nothing hidden, often unavailable**: keep spells, rites, options visible and greyed out (`show_as_unavailable`) with their requirements. Hide only when the prerequisite stage is not reached or the option is completed/superseded.
+- **Commit on task completion**: parallel agents run concurrently. Every task or implementation ends with commit and push (stage only your files). Never leave finished work uncommitted.
 - **Clarify before building**: ask follow-up questions on rough ideas; state assumptions. Plans end with commit and push.
 - **Planner model**: if the active model is Gemini Argon, never edit files; only investigate, ask, and plan.
 - **Suggest skills for investigated systems**: if a game system was not well understood and had to be investigated in vanilla, suggest creating a skill for it (`.agents/skills/`).
@@ -57,6 +58,7 @@ CK3 script fails silently. Follow patterns in this repo and vanilla 1.20 (`/User
 - Invent effect, trigger or scope names; cite vanilla or `script_docs`.
 - Switch or create branches unless told. Stay on the current branch.
 - Blanket stage (`git add .`, `-A`, `commit -a`): other agents work in parallel; stage, commit and push only files you changed.
+- Leave completed work uncommitted in working tree: parallel agents need committed checkpoints.
 - Execute plans on unverified assumptions.
 
 ## Workflow
