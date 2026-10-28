@@ -1,0 +1,788 @@
+﻿bm_blood_blessing_interaction = {
+	category = interaction_category_bm_blood_magic
+	icon = bm_blood_blessing_interaction
+	auto_accept = yes
+	common_interaction = yes
+	desc = bm_blood_blessing_interaction_desc
+	interface_priority = 195
+
+	cost = {
+		piety = {
+			if = {
+				limit = { scope:blessing_anoint_heir = yes }
+				value = 250
+			}
+			else_if = {
+				limit = { scope:blessing_consecrate_union = yes }
+				value = 100
+			}
+			else_if = {
+				limit = {
+					scope:blessing_inscribe_rune = yes
+					scope:recipient = { has_character_modifier = major_blood_rune_modifier }
+				}
+				value = 400
+			}
+			else_if = {
+				limit = {
+					scope:blessing_inscribe_rune = yes
+					scope:recipient = { has_character_modifier = minor_blood_rune_modifier }
+				}
+				value = 200
+			}
+			else_if = {
+				limit = {
+					scope:blessing_grant_lifeforce = yes
+					scope:actor = { has_character_modifier = lifeforce_modifier_major }
+				}
+				value = lifedrain_piety_cost_major
+			}
+			else_if = {
+				limit = { scope:blessing_grant_lifeforce = yes }
+				value = lifedrain_piety_cost_minor
+			}
+			else = {
+				value = 0
+			}
+		}
+	}
+
+	is_shown = {
+		scope:actor = {
+			OR = {
+				has_trait = lifestyle_blood_mage
+				has_trait = lifestyle_blood_knight
+			}
+		}
+		scope:recipient = {
+			is_alive = yes
+			NOT = { this = scope:actor }
+			OR = {
+				bm_is_valid_positive_magic_target_trigger = { ACTOR = scope:actor }
+				is_imprisoned_by = scope:actor
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		custom_description = {
+			text = bm_blood_blessing_interaction_requirement
+			scope:actor = {
+				OR = {
+					has_character_modifier = lifeforce_modifier_minor
+					has_character_modifier = lifeforce_modifier_major
+					has_character_modifier = lifeforce_modifier_superior
+				}
+			}
+		}
+	}
+
+	send_options_exclusive = yes
+
+	# 1. Empower Blood Mage / Knight
+	send_option = {
+		flag = blessing_empower
+		localization = bm_blood_blessing_option_empower
+		current_description = bm_blood_blessing_option_empower_desc
+		is_shown = {
+			scope:recipient = {
+				OR = {
+					has_trait = lifestyle_blood_mage
+					has_trait = lifestyle_blood_knight
+				}
+			}
+		}
+		is_valid = {
+			scope:actor = {
+				OR = {
+					has_character_modifier = lifeforce_modifier_minor
+					has_character_modifier = lifeforce_modifier_major
+				}
+			}
+		}
+		starts_enabled = {
+			scope:recipient = {
+				OR = {
+					has_trait = lifestyle_blood_mage
+					has_trait = lifestyle_blood_knight
+				}
+			}
+		}
+	}
+
+	# 2. Grant Lifeforce
+	send_option = {
+		flag = blessing_grant_lifeforce
+		localization = bm_blood_blessing_option_grant_lifeforce
+		current_description = bm_blood_blessing_option_grant_lifeforce_desc
+		is_shown = { always = yes }
+		is_valid = {
+			scope:actor = {
+				OR = {
+					has_character_modifier = lifeforce_modifier_minor
+					has_character_modifier = lifeforce_modifier_major
+				}
+			}
+		}
+		starts_enabled = {
+			scope:recipient = { has_character_modifier = lifedrained_modifier }
+		}
+	}
+
+	# 3. Bless Blood
+	send_option = {
+		flag = blessing_bless_blood
+		localization = bm_blood_blessing_option_bless_blood
+		current_description = bm_blood_blessing_option_bless_blood_desc
+		is_shown = {
+			scope:recipient = {
+				OR = {
+					is_child_of = scope:actor
+					dynasty ?= scope:actor.dynasty
+					is_knight_of = scope:actor
+				}
+			}
+		}
+		is_valid = {
+			scope:actor = { has_character_modifier = lifeforce_modifier_minor }
+			scope:recipient = {
+				NOR = {
+					has_character_modifier = bm_blessed_blood_modifier
+					has_character_modifier = bm_blessed_blood_sovereign_modifier
+					has_character_modifier = bm_blessed_blood_iron_modifier
+					has_character_modifier = bm_blessed_blood_crucible_modifier
+					has_character_modifier = bm_feingur_blessed_blood_modifier
+				}
+			}
+		}
+		starts_enabled = {
+			scope:recipient = {
+				OR = {
+					is_child_of = scope:actor
+					dynasty ?= scope:actor.dynasty
+				}
+				NOR = {
+					has_character_modifier = bm_blessed_blood_modifier
+					has_character_modifier = bm_blessed_blood_sovereign_modifier
+					has_character_modifier = bm_blessed_blood_iron_modifier
+					has_character_modifier = bm_blessed_blood_crucible_modifier
+					has_character_modifier = bm_feingur_blessed_blood_modifier
+				}
+			}
+		}
+	}
+
+	# 4. Annoint Heir
+	send_option = {
+		flag = blessing_anoint_heir
+		localization = bm_blood_blessing_option_anoint_heir
+		current_description = bm_blood_blessing_option_anoint_heir_desc
+		is_shown = {
+			scope:recipient = {
+				OR = {
+					is_primary_heir_of = scope:actor
+					is_child_of = scope:actor
+				}
+			}
+		}
+		is_valid = {
+			scope:actor = {
+				has_character_modifier = lifeforce_modifier_major
+				piety >= 250
+			}
+			scope:recipient = {
+				NOT = { has_character_modifier = bm_anointed_heir_modifier }
+			}
+		}
+		starts_enabled = {
+			scope:recipient = {
+				is_primary_heir_of = scope:actor
+				NOT = { has_character_modifier = bm_anointed_heir_modifier }
+			}
+		}
+	}
+
+	# 5. Consecrate Union
+	send_option = {
+		flag = blessing_consecrate_union
+		localization = bm_blood_blessing_option_consecrate_union
+		current_description = bm_blood_blessing_option_consecrate_union_desc
+		is_shown = {
+			scope:recipient = {
+				OR = {
+					is_spouse_of = scope:actor
+					is_consort_of = scope:actor
+					has_relation_lover = scope:actor
+					has_relation_soulmate = scope:actor
+				}
+			}
+		}
+		is_valid = {
+			scope:actor = {
+				piety >= 100
+				OR = {
+					has_character_modifier = lifeforce_modifier_minor
+					has_character_modifier = lifeforce_modifier_major
+				}
+			}
+			scope:recipient = {
+				NOT = { has_character_modifier = bm_consecrated_union_modifier }
+			}
+		}
+		starts_enabled = {
+			scope:recipient = {
+				is_spouse_of = scope:actor
+				NOT = { has_character_modifier = bm_consecrated_union_modifier }
+			}
+		}
+	}
+
+	# 6. Inscribe Blood Rune
+	send_option = {
+		flag = blessing_inscribe_rune
+		localization = bm_blood_blessing_option_inscribe_rune
+		current_description = bm_blood_blessing_option_inscribe_rune_desc
+		is_shown = {
+			scope:recipient = {
+				NOT = { has_character_modifier = superior_blood_rune_modifier }
+				trigger_if = {
+					limit = {
+						scope:actor = {
+							NOT = { has_trait = lifestyle_blood_mage }
+							has_trait = lifestyle_blood_knight
+						}
+					}
+					NOT = { has_character_modifier = major_blood_rune_modifier }
+				}
+			}
+		}
+		is_valid = {
+			scope:recipient = {
+				is_adult = yes
+				is_imprisoned = no
+			}
+			scope:actor = {
+				NOT = { has_character_flag = bm_blood_rune_other_cooldown }
+				OR = {
+					# Tier 1: Target has no rune -> Minor
+					AND = {
+						scope:recipient = {
+							NOT = { has_character_modifier = minor_blood_rune_modifier }
+							NOT = { has_character_modifier = major_blood_rune_modifier }
+							NOT = { has_character_modifier = superior_blood_rune_modifier }
+						}
+						piety_level >= 2
+						OR = {
+							scope:actor.bm_total_blood_mage_xp >= 25
+							scope:actor.bm_total_blood_knight_xp >= 25
+						}
+						has_character_modifier = lifeforce_modifier_minor
+					}
+					# Tier 2: Target has Minor rune -> Major
+					AND = {
+						scope:recipient = {
+							has_character_modifier = minor_blood_rune_modifier
+							NOT = { has_character_modifier = major_blood_rune_modifier }
+							NOT = { has_character_modifier = superior_blood_rune_modifier }
+						}
+						piety_level >= 3
+						OR = {
+							scope:actor.bm_total_blood_mage_xp >= 50
+							scope:actor.bm_total_blood_knight_xp >= 50
+						}
+						piety >= 200
+						has_character_modifier = lifeforce_modifier_major
+					}
+					# Tier 3: Target has Major rune -> Superior (Blood Mage only)
+					AND = {
+						scope:recipient = {
+							has_character_modifier = major_blood_rune_modifier
+							NOT = { has_character_modifier = superior_blood_rune_modifier }
+						}
+						has_trait = lifestyle_blood_mage
+						piety_level >= 4
+						scope:actor.bm_total_blood_mage_xp >= 100
+						piety >= 400
+						has_character_modifier = lifeforce_modifier_superior
+					}
+				}
+			}
+		}
+		starts_enabled = {
+			scope:recipient = {
+				is_knight_of = scope:actor
+				NOT = { has_character_modifier = minor_blood_rune_modifier }
+			}
+		}
+	}
+
+	on_accept = {
+		debug_log = "BloodMageInteraction: bm_blood_blessing | Actor: [actor.GetShortUINameNoTooltip] -> Recipient: [recipient.GetShortUINameNoTooltip]"
+		if = {
+			limit = { scope:blessing_empower = yes }
+			scope:actor = {
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = bm_blood_blessing_toast
+					left_icon = scope:actor
+					right_icon = scope:recipient
+					if = {
+						limit = { scope:recipient = { has_trait = lifestyle_blood_mage } }
+						if = {
+							limit = { has_character_modifier = lifeforce_modifier_major }
+							blood_magic_used_major = yes
+							add_xp_bm_dynamic = { TRACK = benediction XP = 2 }
+							scope:recipient = {
+								add_xp_bm_dynamic = { TRACK = enlightenment XP = 2 }
+								add_xp_bm_dynamic = { TRACK = bloodline XP = 2 }
+								add_opinion = {
+									target = scope:actor
+									modifier = magic_opinion_positive
+									opinion = 30
+								}
+							}
+						}
+						else = {
+							blood_magic_used_minor = yes
+							add_xp_bm_dynamic = { TRACK = benediction XP = 1 }
+							scope:recipient = {
+								add_xp_bm_dynamic = { TRACK = enlightenment XP = 1 }
+								add_xp_bm_dynamic = { TRACK = bloodline XP = 1 }
+								add_opinion = {
+									target = scope:actor
+									modifier = magic_opinion_positive
+									opinion = 15
+								}
+							}
+						}
+					}
+					else = {
+						if = {
+							limit = { has_character_modifier = lifeforce_modifier_major }
+							blood_magic_used_major = yes
+							if = {
+								limit = { has_trait = lifestyle_blood_mage }
+								add_xp_bm_dynamic = { TRACK = benediction XP = 2 }
+							}
+							else = {
+								add_blood_knight_xp = { TRACK = benediction XP = 2 }
+							}
+							scope:recipient = {
+								add_blood_knight_xp = { TRACK = vanguard XP = 3 }
+								add_blood_knight_xp = { TRACK = slaughter XP = 3 }
+								add_opinion = {
+									target = scope:actor
+									modifier = magic_opinion_positive
+									opinion = 30
+								}
+							}
+						}
+						else = {
+							blood_magic_used_minor = yes
+							if = {
+								limit = { has_trait = lifestyle_blood_mage }
+								add_xp_bm_dynamic = { TRACK = benediction XP = 1 }
+							}
+							else = {
+								add_blood_knight_xp = { TRACK = benediction XP = 1 }
+							}
+							scope:recipient = {
+								add_blood_knight_xp = { TRACK = vanguard XP = 1 }
+								add_blood_knight_xp = { TRACK = slaughter XP = 1 }
+								add_opinion = {
+									target = scope:actor
+									modifier = magic_opinion_positive
+									opinion = 15
+								}
+							}
+						}
+					}
+					hidden_effect = {
+						bm_recount_lifeforce_stacks_effect = yes
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:blessing_grant_lifeforce = yes }
+			scope:actor = {
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = bm_blood_blessing_toast
+					left_icon = scope:actor
+					right_icon = scope:recipient
+					if = {
+						limit = {
+							scope:recipient = { has_character_modifier = lifedrained_modifier }
+							has_character_modifier = lifeforce_modifier_major
+						}
+						blood_magic_used_major = yes
+						scope:recipient = {
+							remove_character_modifier = lifedrained_modifier
+							add_character_modifier = { modifier = lifeforce_modifier_minor }
+							add_opinion = {
+								target = scope:actor
+								modifier = magic_opinion_positive
+								opinion = 25
+							}
+						}
+					}
+					else_if = {
+						limit = { has_character_modifier = lifeforce_modifier_major }
+						blood_magic_used_major = yes
+						scope:recipient = {
+							add_character_modifier = { modifier = lifeforce_modifier_major }
+							add_opinion = {
+								target = scope:actor
+								modifier = magic_opinion_positive
+								opinion = 30
+							}
+						}
+					}
+					else = {
+						blood_magic_used_minor = yes
+						scope:recipient = {
+							add_character_modifier = { modifier = lifeforce_modifier_minor }
+							add_opinion = {
+								target = scope:actor
+								modifier = magic_opinion_positive
+								opinion = 15
+							}
+						}
+					}
+					hidden_effect = {
+						bm_recount_lifeforce_stacks_effect = yes
+						scope:recipient = { bm_recount_lifeforce_stacks_effect = yes }
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:blessing_bless_blood = yes }
+			scope:actor = {
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = bm_blood_blessing_toast
+					left_icon = scope:actor
+					right_icon = scope:recipient
+					bloodline_magic_cast_effect_minor = yes
+					scope:recipient = {
+						if = {
+							limit = { scope:actor = { bm_has_superior_stave_trigger = { STAVE = feingur } } }
+							add_character_modifier = { modifier = bm_feingur_blessed_blood_modifier }
+							add_opinion = {
+								target = scope:actor
+								modifier = magic_opinion_positive
+								opinion = 40
+							}
+						}
+						else_if = {
+							limit = {
+								OR = {
+									is_knight = yes
+									martial >= 12
+								}
+							}
+							add_character_modifier = {
+								modifier = bm_blessed_blood_iron_modifier
+								years = 10
+							}
+							add_opinion = {
+								target = scope:actor
+								modifier = magic_opinion_positive
+								opinion = 25
+							}
+						}
+						else_if = {
+							limit = {
+								OR = {
+									is_ruler = yes
+									is_primary_heir_of = scope:actor
+								}
+							}
+							add_character_modifier = {
+								modifier = bm_blessed_blood_sovereign_modifier
+								years = 10
+							}
+							add_opinion = {
+								target = scope:actor
+								modifier = magic_opinion_positive
+								opinion = 25
+							}
+						}
+						else = {
+							add_character_modifier = {
+								modifier = bm_blessed_blood_crucible_modifier
+								years = 10
+							}
+							add_opinion = {
+								target = scope:actor
+								modifier = magic_opinion_positive
+								opinion = 25
+							}
+						}
+					}
+					hidden_effect = {
+						bm_recount_lifeforce_stacks_effect = yes
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:blessing_anoint_heir = yes }
+			scope:actor = {
+				if = {
+					limit = {
+						exists = var:bm_anointed_heir
+						var:bm_anointed_heir = {
+							is_alive = yes
+							has_character_modifier = bm_anointed_heir_modifier
+							NOT = { this = scope:recipient }
+						}
+					}
+					var:bm_anointed_heir = {
+						remove_character_modifier = bm_anointed_heir_modifier
+					}
+				}
+				every_child = {
+					limit = {
+						has_character_modifier = bm_anointed_heir_modifier
+						NOT = { this = scope:recipient }
+					}
+					remove_character_modifier = bm_anointed_heir_modifier
+				}
+				if = {
+					limit = {
+						exists = primary_heir
+						primary_heir = {
+							has_character_modifier = bm_anointed_heir_modifier
+							NOT = { this = scope:recipient }
+						}
+					}
+					primary_heir = {
+						remove_character_modifier = bm_anointed_heir_modifier
+					}
+				}
+				set_variable = {
+					name = bm_anointed_heir
+					value = scope:recipient
+				}
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = bm_blood_blessing_toast
+					left_icon = scope:actor
+					right_icon = scope:recipient
+					blood_magic_used_major = yes
+					if = {
+						limit = { has_trait = lifestyle_blood_mage }
+						add_trait_xp = {
+							trait = lifestyle_blood_mage
+							track = bloodline
+							value = 2
+						}
+					}
+					if = {
+						limit = {
+							has_trait = lifestyle_blood_knight
+							NOT = { has_trait = lifestyle_blood_mage }
+						}
+						add_blood_knight_xp = {
+							TRACK = benediction
+							XP = 2
+						}
+					}
+					scope:recipient = {
+						add_character_modifier = {
+							modifier = bm_anointed_heir_modifier
+						}
+						add_opinion = {
+							target = scope:actor
+							modifier = magic_opinion_positive
+							opinion = 30
+						}
+					}
+					hidden_effect = {
+						bm_recount_lifeforce_stacks_effect = yes
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:blessing_consecrate_union = yes }
+			scope:actor = {
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = bm_blood_blessing_toast
+					left_icon = scope:actor
+					right_icon = scope:recipient
+					if = {
+						limit = { has_character_modifier = lifeforce_modifier_major }
+						blood_magic_used_major = yes
+						add_character_modifier = {
+							modifier = bm_consecrated_union_modifier
+							years = 10
+						}
+						scope:recipient = {
+							add_character_modifier = {
+								modifier = bm_consecrated_union_modifier
+								years = 10
+							}
+							add_opinion = {
+								target = scope:actor
+								modifier = magic_opinion_positive
+								opinion = 30
+							}
+						}
+					}
+					else = {
+						blood_magic_used_minor = yes
+						add_character_modifier = {
+							modifier = bm_consecrated_union_modifier
+							years = 3
+						}
+						scope:recipient = {
+							add_character_modifier = {
+								modifier = bm_consecrated_union_modifier
+								years = 3
+							}
+							add_opinion = {
+								target = scope:actor
+								modifier = magic_opinion_positive
+								opinion = 15
+							}
+						}
+					}
+					if = {
+						limit = { has_trait = lifestyle_blood_mage }
+						add_xp_bm_dynamic = { TRACK = bloodline XP = 2 }
+					}
+					hidden_effect = {
+						bm_recount_lifeforce_stacks_effect = yes
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:blessing_inscribe_rune = yes }
+			scope:actor = {
+				add_character_flag = {
+					flag = bm_blood_rune_other_cooldown
+					years = 5
+				}
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = bm_blood_blessing_toast
+					left_icon = scope:actor
+					right_icon = scope:recipient
+					scope:recipient = {
+						add_opinion = {
+							target = scope:actor
+							modifier = magic_opinion_positive
+							opinion = 20
+						}
+					}
+					if = {
+						limit = {
+							scope:recipient = {
+								NOT = { has_character_modifier = minor_blood_rune_modifier }
+								NOT = { has_character_modifier = major_blood_rune_modifier }
+								NOT = { has_character_modifier = superior_blood_rune_modifier }
+							}
+						}
+						blood_magic_used_minor = yes
+						if = {
+							limit = { has_trait = lifestyle_blood_mage }
+							add_trait_xp = {
+								trait = lifestyle_blood_mage
+								track = benediction
+								value = 4
+							}
+						}
+						if = {
+							limit = {
+								has_trait = lifestyle_blood_knight
+								NOT = { has_trait = lifestyle_blood_mage }
+							}
+							add_blood_knight_xp = {
+								TRACK = benediction
+								XP = 4
+							}
+						}
+						scope:recipient = {
+							add_character_modifier = { modifier = minor_blood_rune_modifier }
+						}
+					}
+					else_if = {
+						limit = {
+							scope:recipient = {
+								has_character_modifier = minor_blood_rune_modifier
+								NOT = { has_character_modifier = major_blood_rune_modifier }
+								NOT = { has_character_modifier = superior_blood_rune_modifier }
+							}
+						}
+						blood_magic_used_major = yes
+						if = {
+							limit = { has_trait = lifestyle_blood_mage }
+							add_trait_xp = {
+								trait = lifestyle_blood_mage
+								track = benediction
+								value = 5
+							}
+						}
+						if = {
+							limit = {
+								has_trait = lifestyle_blood_knight
+								NOT = { has_trait = lifestyle_blood_mage }
+							}
+							add_blood_knight_xp = {
+								TRACK = benediction
+								XP = 5
+							}
+						}
+						scope:recipient = {
+							bm_upgrade_blood_rune_to_major_effect = yes
+						}
+					}
+					else_if = {
+						limit = {
+							scope:recipient = {
+								has_character_modifier = major_blood_rune_modifier
+								NOT = { has_character_modifier = superior_blood_rune_modifier }
+							}
+						}
+						blood_magic_used_superior = yes
+						add_trait_xp = {
+							trait = lifestyle_blood_mage
+							track = benediction
+							value = 10
+						}
+						scope:recipient = {
+							bm_upgrade_blood_rune_to_superior_effect = yes
+						}
+					}
+					hidden_effect = {
+						bm_recount_lifeforce_stacks_effect = yes
+					}
+				}
+			}
+		}
+	}
+
+	ai_potential = { always = yes }
+	ai_frequency = 12
+	ai_targets = {
+		ai_recipients = children
+		ai_recipients = dynasty
+		ai_recipients = spouses
+		ai_recipients = courtiers
+		ai_recipients = councillors
+	}
+	ai_will_do = {
+		base = 25
+		ai_willingness_to_do_positive_magic = yes
+		modifier = {
+			scope:recipient = { is_primary_heir_of = scope:actor }
+			add = 50
+		}
+	}
+}

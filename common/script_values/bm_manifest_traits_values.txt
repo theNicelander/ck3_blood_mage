@@ -4,7 +4,7 @@
 bm_manifest_traits_intellect_piety_cost = {
 	if = {
 		limit = { has_trait = intellect_bad_3 }
-		value = 200
+		value = 250
 	}
 	else_if = {
 		limit = { has_trait = intellect_bad_2 }
@@ -12,23 +12,23 @@ bm_manifest_traits_intellect_piety_cost = {
 	}
 	else_if = {
 		limit = { has_trait = intellect_bad_1 }
-		value = 300
+		value = 250
 	}
 	else_if = {
 		limit = { NOT = { has_trait = intellect_good } }
-		value = 450
+		value = 250
 	}
 	else_if = {
 		limit = { has_trait = intellect_good_1 }
-		value = 600
+		value = 500
 	}
 	else_if = {
 		limit = { has_trait = intellect_good_2 }
-		value = 1000
+		value = 750
 	}
 	else_if = {
 		limit = { has_trait_rank = { trait = intellect_good rank = 3 } }
-		value = 1250
+		value = 1000
 	}
 	else_if = {
 		limit = { has_trait_rank = { trait = intellect_good rank >= 4 } }
@@ -42,7 +42,7 @@ bm_manifest_traits_intellect_piety_cost = {
 bm_manifest_traits_physique_piety_cost = {
 	if = {
 		limit = { has_trait = physique_bad_3 }
-		value = 200
+		value = 250
 	}
 	else_if = {
 		limit = { has_trait = physique_bad_2 }
@@ -50,23 +50,23 @@ bm_manifest_traits_physique_piety_cost = {
 	}
 	else_if = {
 		limit = { has_trait = physique_bad_1 }
-		value = 300
+		value = 250
 	}
 	else_if = {
 		limit = { NOT = { has_trait = physique_good } }
-		value = 450
+		value = 250
 	}
 	else_if = {
 		limit = { has_trait = physique_good_1 }
-		value = 600
+		value = 500
 	}
 	else_if = {
 		limit = { has_trait = physique_good_2 }
-		value = 1000
+		value = 750
 	}
 	else_if = {
 		limit = { has_trait_rank = { trait = physique_good rank = 3 } }
-		value = 1250
+		value = 1000
 	}
 	else_if = {
 		limit = { has_trait_rank = { trait = physique_good rank >= 4 } }
@@ -80,7 +80,7 @@ bm_manifest_traits_physique_piety_cost = {
 bm_manifest_traits_beauty_piety_cost = {
 	if = {
 		limit = { has_trait = beauty_bad_3 }
-		value = 200
+		value = 250
 	}
 	else_if = {
 		limit = { has_trait = beauty_bad_2 }
@@ -88,23 +88,23 @@ bm_manifest_traits_beauty_piety_cost = {
 	}
 	else_if = {
 		limit = { has_trait = beauty_bad_1 }
-		value = 300
+		value = 250
 	}
 	else_if = {
 		limit = { NOT = { has_trait = beauty_good } }
-		value = 450
+		value = 250
 	}
 	else_if = {
 		limit = { has_trait = beauty_good_1 }
-		value = 600
+		value = 500
 	}
 	else_if = {
 		limit = { has_trait = beauty_good_2 }
-		value = 1000
+		value = 750
 	}
 	else_if = {
 		limit = { has_trait_rank = { trait = beauty_good rank = 3 } }
-		value = 1250
+		value = 1000
 	}
 	else_if = {
 		limit = { has_trait_rank = { trait = beauty_good rank >= 4 } }

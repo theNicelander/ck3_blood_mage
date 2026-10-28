@@ -147,23 +147,10 @@ bm_action_can_lifedrain_prisoner = {
 			every_prisoner = {
 				limit = {
 					save_temporary_scope_as = prisoner_target
-					trigger_if = {
-						limit = {
-							scope:actor = { has_trait = lifestyle_blood_mage }
-						}
-						scope:actor = {
-							is_character_interaction_valid = {
-								interaction = lifedrain_prisoner_event_interaction
-								recipient = scope:prisoner_target
-							}
-						}
-					}
-					trigger_else = {
-						scope:actor = {
-							is_character_interaction_valid = {
-								interaction = lifedrain_courtier_event_interaction
-								recipient = scope:prisoner_target
-							}
+					scope:actor = {
+						is_character_interaction_valid = {
+							interaction = bm_blood_drain_interaction
+							recipient = scope:prisoner_target
 						}
 					}
 				}
@@ -182,22 +169,10 @@ bm_action_can_lifedrain_prisoner = {
 	}
 
 	effect = {
-		if = {
-			limit = {
-				scope:actor = { has_trait = lifestyle_blood_mage }
-			}
-			open_interaction_window = {
-				interaction = lifedrain_prisoner_event_interaction
-				actor = scope:actor
-				recipient = scope:recipient
-			}
-		}
-		else = {
-			open_interaction_window = {
-				interaction = lifedrain_courtier_event_interaction
-				actor = scope:actor
-				recipient = scope:recipient
-			}
+		open_interaction_window = {
+			interaction = bm_blood_drain_interaction
+			actor = scope:actor
+			recipient = scope:recipient
 		}
 	}
 }

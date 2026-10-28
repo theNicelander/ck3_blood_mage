@@ -1,0 +1,59 @@
+﻿l_english:
+  bm_bestow_traits_interaction: "Bestow Blood Traits"
+  bm_bestow_traits_interaction_desc: "Spend Major Lifeforce and Piety to commune with [recipient.GetFirstName]'s blood, infusing your own genetic and physical gifts into their flesh and mind."
+  bm_bestow_traits_interaction_tooltip: "Impart one of your positive traits to [recipient.GetShortUINameNoTooltip]"
+  bm_bestow_traits_interaction_confirm: "Begin Transfusion"
+
+  bm_bestow_traits_lifeforce_tt: "Requires [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]"
+  bm_bestow_traits_can_bestow_tt: "You possess at least one positive trait that [recipient.GetShortUINameNoTooltip] can receive or advance in"
+
+  bm_bestow_traits.0001.intellect.cannot_advance_tt: "[recipient.GetShortUINameNoTooltip] already possesses an intellect trait at your level or higher"
+  bm_bestow_traits.0001.physique.cannot_advance_tt: "[recipient.GetShortUINameNoTooltip] already possesses a physique trait at your level or higher"
+  bm_bestow_traits.0001.beauty.cannot_advance_tt: "[recipient.GetShortUINameNoTooltip] already possesses a beauty trait at your level or higher"
+  bm_bestow_traits.0001.fecund.already_has_tt: "[recipient.GetShortUINameNoTooltip] already possesses the Fecund trait"
+  bm_bestow_traits.0001.pure_blooded.already_has_tt: "[recipient.GetShortUINameNoTooltip] already possesses the Pure-Blooded trait"
+  bm_bestow_traits.0001.giant.already_has_tt: "[recipient.GetShortUINameNoTooltip] already possesses the Giant trait"
+  bm_bestow_traits.0001.strong.already_has_tt: "[recipient.GetShortUINameNoTooltip] already possesses the Strong trait"
+  bm_bestow_traits.0001.shrewd.already_has_tt: "[recipient.GetShortUINameNoTooltip] already possesses the Shrewd trait"
+
+  bm_bestow_traits.0001.title: "Bestow Blood Traits: Commune with [recipient.GetFirstName]"
+  bm_bestow_traits.0001.desc: "Through the mastery of our sanguine arts and the expenditure of our Major Lifeforce, we reach deep into the pulsing veins of [recipient.GetUIName].\n\nOur shared lineage and sacred bond open a conduit between our spirits. We can weave our own innate strengths directly into their blood, elevating their constitution, intellect, or form.\n\nWhich gift of our blood shall we impart upon [recipient.GetFirstName]?"
+  bm_bestow_traits.0001.intellect: "Impart our Intellectual Gifts"
+  bm_bestow_traits.0001.physique: "Impart our Physical Might"
+  bm_bestow_traits.0001.beauty: "Impart our Sanguine Grace"
+  bm_bestow_traits.0001.fecund: "Impart our Fecund Fertility"
+  bm_bestow_traits.0001.pure_blooded: "Impart our Pure-Blooded Heritage"
+  bm_bestow_traits.0001.giant: "Impart our Colossal Stature"
+  bm_bestow_traits.0001.strong: "Impart our Unyielding Strength"
+  bm_bestow_traits.0001.shrewd: "Impart our Keen Insight"
+  bm_bestow_traits.0001.cancel: "Step back and abandon the ritual"
+
+  bm_bestow_traits.duel.success: "Impart your innate trait"
+  bm_bestow_traits.duel.failure: "Your essence fails to take hold"
+
+  bm_bestow_traits.toast.intellect.title: "Intellect Bestowed"
+  bm_bestow_traits.toast.intellect.desc: "[recipient.GetFirstName] has assimilated your intellectual essence, elevating their mind."
+
+  bm_bestow_traits.toast.physique.title: "Physique Bestowed"
+  bm_bestow_traits.toast.physique.desc: "[recipient.GetFirstName] has assimilated your physical essence, fortifying their body."
+
+  bm_bestow_traits.toast.beauty.title: "Grace Bestowed"
+  bm_bestow_traits.toast.beauty.desc: "[recipient.GetFirstName] has assimilated your grace, enhancing their visage."
+
+  bm_bestow_traits.toast.fecund.title: "Fecundity Bestowed"
+  bm_bestow_traits.toast.fecund.desc: "[recipient.GetFirstName] has received your fertile essence."
+
+  bm_bestow_traits.toast.pure_blooded.title: "Pure Blood Bestowed"
+  bm_bestow_traits.toast.pure_blooded.desc: "[recipient.GetFirstName] has received your untainted bloodline."
+
+  bm_bestow_traits.toast.giant.title: "Colossal Form Bestowed"
+  bm_bestow_traits.toast.giant.desc: "[recipient.GetFirstName] has received your giant stature."
+
+  bm_bestow_traits.toast.strong.title: "Strength Bestowed"
+  bm_bestow_traits.toast.strong.desc: "[recipient.GetFirstName] has received your unyielding strength."
+
+  bm_bestow_traits.toast.shrewd.title: "Insight Bestowed"
+  bm_bestow_traits.toast.shrewd.desc: "[recipient.GetFirstName] has received your shrewd insight."
+
+  bm_bestow_traits.toast.failure.title: "Transfusion Failed"
+  bm_bestow_traits.toast.failure.desc: "Your mental communion faltered, and [recipient.GetFirstName]'s blood could not assimilate your essence."

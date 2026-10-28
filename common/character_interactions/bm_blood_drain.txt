@@ -1,0 +1,471 @@
+﻿bm_blood_drain_interaction = {
+	category = interaction_category_bm_blood_magic
+	icon = bm_blood_drain_interaction
+	auto_accept = yes
+	common_interaction = yes
+	desc = bm_blood_drain_interaction_desc
+	interface_priority = 300
+
+	cost = {
+		piety = {
+			if = {
+				limit = { scope:drain_major = yes }
+				value = lifedrain_piety_cost_major
+			}
+			else_if = {
+				limit = { scope:drain_minor = yes }
+				value = lifedrain_piety_cost_minor
+			}
+			else_if = {
+				limit = { scope:drain_stored = yes }
+				value = 75
+			}
+			else_if = {
+				limit = { scope:drain_tithe = yes }
+				value = 50
+			}
+			else = {
+				value = 0
+			}
+		}
+	}
+
+	is_shown = {
+		scope:actor = {
+			OR = {
+				has_trait = lifestyle_blood_mage
+				has_trait = lifestyle_blood_knight
+			}
+		}
+		scope:recipient = {
+			is_alive = yes
+			NOT = { this = scope:actor }
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		custom_description = {
+			text = bm_blood_drain_interaction_requirement
+			scope:recipient = { is_alive = yes }
+		}
+	}
+
+	send_options_exclusive = yes
+
+	# 1. Major Life drain
+	send_option = {
+		flag = drain_major
+		localization = bm_blood_drain_option_major
+		current_description = bm_blood_drain_option_major_desc
+		is_shown = {
+			scope:actor = { has_trait = lifestyle_blood_mage }
+			scope:recipient = { is_imprisoned_by = scope:actor }
+		}
+		is_valid = {
+			scope:recipient = {
+				NOT = { has_character_modifier = lifedrained_modifier }
+			}
+		}
+		starts_enabled = {
+			scope:recipient = {
+				is_imprisoned_by = scope:actor
+				NOT = { has_character_modifier = lifedrained_modifier }
+			}
+		}
+	}
+
+	# 2. Minor Life drain
+	send_option = {
+		flag = drain_minor
+		localization = bm_blood_drain_option_minor
+		current_description = bm_blood_drain_option_minor_desc
+		is_shown = {
+			scope:recipient = {
+				OR = {
+					is_imprisoned_by = scope:actor
+					is_courtier_of = scope:actor
+				}
+			}
+		}
+		is_valid = {
+			scope:recipient = {
+				NOT = { has_character_modifier = recently_lifedrained_modifier }
+			}
+			scope:actor = {
+				NOT = { has_character_flag = bm_minor_lifedrain_cooldown }
+			}
+		}
+		starts_enabled = {
+			scope:recipient = {
+				is_courtier_of = scope:actor
+				NOT = { is_imprisoned_by = scope:actor }
+			}
+		}
+	}
+
+	# 3. Drain Stored Lifeforce (renamed from Siphon)
+	send_option = {
+		flag = drain_stored
+		localization = bm_blood_drain_option_stored
+		current_description = bm_blood_drain_option_stored_desc
+		is_shown = {
+			scope:recipient = {
+				OR = {
+					has_character_modifier = lifeforce_modifier_minor
+					has_character_modifier = lifeforce_modifier_major
+					has_character_modifier = lifeforce_modifier_superior
+				}
+			}
+		}
+		is_valid = {
+			scope:actor = {
+				NOT = { has_character_flag = bm_siphon_reserves_cooldown }
+			}
+		}
+		starts_enabled = {
+			scope:recipient = {
+				OR = {
+					has_character_modifier = lifeforce_modifier_minor
+					has_character_modifier = lifeforce_modifier_major
+					has_character_modifier = lifeforce_modifier_superior
+				}
+			}
+		}
+	}
+
+	# 4. Demand Blood Tithe
+	send_option = {
+		flag = drain_tithe
+		localization = bm_blood_drain_option_tithe
+		current_description = bm_blood_drain_option_tithe_desc
+		is_shown = {
+			scope:actor = {
+				exists = house
+				house.house_head = scope:actor
+			}
+			scope:recipient = {
+				is_adult = yes
+				house ?= scope:actor.house
+			}
+		}
+		is_valid = {
+			scope:recipient = {
+				NOT = { has_character_modifier = recently_lifedrained_modifier }
+			}
+			scope:actor = {
+				NOT = { has_character_flag = bm_demand_blood_tithe_cooldown }
+			}
+		}
+		starts_enabled = {
+			scope:actor = {
+				exists = house
+				house.house_head = scope:actor
+			}
+			scope:recipient = { house ?= scope:actor.house }
+		}
+	}
+
+	on_accept = {
+		debug_log = "BloodMageInteraction: bm_blood_drain | Actor: [actor.GetShortUINameNoTooltip] -> Recipient: [recipient.GetShortUINameNoTooltip]"
+		if = {
+			limit = { scope:drain_major = yes }
+			scope:actor = { hematurgy_magic_cast_effect_major = yes }
+			lifedrain_execution_effect = {
+				VICTIM = scope:recipient
+				EXECUTIONER = scope:actor
+			}
+		}
+		else_if = {
+			limit = { scope:drain_minor = yes }
+			scope:actor = {
+				add_character_flag = {
+					flag = bm_minor_lifedrain_cooldown
+					months = 3
+				}
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = bm_blood_drain_toast
+					left_icon = scope:actor
+					right_icon = scope:recipient
+					add_character_modifier = { modifier = lifeforce_modifier_minor }
+					if = {
+						limit = { has_trait = lifestyle_blood_mage }
+						add_trait_xp = {
+							trait = lifestyle_blood_mage
+							track = hematurgy
+							value = 1
+						}
+					}
+					if = {
+						limit = {
+							has_trait = lifestyle_blood_knight
+							NOT = { has_trait = lifestyle_blood_mage }
+						}
+						add_blood_knight_xp = {
+							TRACK = slaughter
+							XP = 1
+						}
+					}
+					scope:recipient = {
+						add_character_modifier = {
+							modifier = recently_lifedrained_modifier
+							years = 1
+						}
+						add_character_modifier = {
+							modifier = lifeforce_modifier_negative_minor
+							years = 1
+						}
+						if = {
+							limit = {
+								NOT = { bm_is_blood_cult_faith_trigger = yes }
+								NOT = { has_trait = loyal }
+							}
+							add_opinion = {
+								target = scope:actor
+								modifier = magic_opinion_negative
+								opinion = -25
+							}
+						}
+					}
+					hidden_effect = {
+						bm_recount_lifeforce_stacks_effect = yes
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:drain_stored = yes }
+			scope:actor = {
+				add_character_flag = {
+					flag = bm_siphon_reserves_cooldown
+					years = 1
+				}
+				if = {
+					limit = { scope:recipient = { is_imprisoned_by = scope:actor } }
+					send_interface_toast = {
+						type = event_toast_effect_good
+						title = bm_blood_drain_toast
+						left_icon = scope:actor
+						right_icon = scope:recipient
+						if = {
+							limit = { scope:recipient = { has_character_modifier = lifeforce_modifier_superior } }
+							scope:recipient = { remove_character_modifier = lifeforce_modifier_superior }
+							add_character_modifier = { modifier = lifeforce_modifier_superior }
+						}
+						else_if = {
+							limit = { scope:recipient = { has_character_modifier = lifeforce_modifier_major } }
+							scope:recipient = { remove_character_modifier = lifeforce_modifier_major }
+							add_character_modifier = { modifier = lifeforce_modifier_major }
+						}
+						else_if = {
+							limit = { scope:recipient = { has_character_modifier = lifeforce_modifier_minor } }
+							scope:recipient = { remove_character_modifier = lifeforce_modifier_minor }
+							add_character_modifier = { modifier = lifeforce_modifier_minor }
+						}
+						if = {
+							limit = { NOT = { scope:actor = { bm_has_superior_stave_trigger = { STAVE = hulinhjalmur } } } }
+							scope:recipient = {
+								add_opinion = {
+									target = scope:actor
+									modifier = lifedrained_me
+									opinion = -50
+								}
+							}
+						}
+						if = {
+							limit = { has_trait = lifestyle_blood_mage }
+							add_xp_bm_dynamic = { TRACK = hematurgy XP = 3 }
+						}
+						if = {
+							limit = { has_trait = lifestyle_blood_knight }
+							add_blood_knight_xp = { TRACK = slaughter XP = 3 }
+						}
+						hidden_effect = {
+							bm_recount_lifeforce_stacks_effect = yes
+							scope:recipient = { bm_recount_lifeforce_stacks_effect = yes }
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						scope:actor = {
+							has_trait = lifestyle_blood_knight
+							NOT = { has_trait = lifestyle_blood_mage }
+						}
+					}
+					duel = {
+						skill = prowess
+						target = scope:recipient
+						50 = {
+							compare_modifier = { value = scope:duel_value multiplier = 2 }
+							send_interface_toast = {
+								type = event_toast_effect_good
+								title = bm_blood_drain_toast
+								left_icon = scope:actor
+								right_icon = scope:recipient
+								if = {
+									limit = { scope:recipient = { has_character_modifier = lifeforce_modifier_superior } }
+									scope:recipient = { remove_character_modifier = lifeforce_modifier_superior }
+									add_character_modifier = { modifier = lifeforce_modifier_superior }
+								}
+								else_if = {
+									limit = { scope:recipient = { has_character_modifier = lifeforce_modifier_major } }
+									scope:recipient = { remove_character_modifier = lifeforce_modifier_major }
+									add_character_modifier = { modifier = lifeforce_modifier_major }
+								}
+								else_if = {
+									limit = { scope:recipient = { has_character_modifier = lifeforce_modifier_minor } }
+									scope:recipient = { remove_character_modifier = lifeforce_modifier_minor }
+									add_character_modifier = { modifier = lifeforce_modifier_minor }
+								}
+								add_blood_knight_xp = { TRACK = slaughter XP = 3 }
+								hidden_effect = {
+									bm_recount_lifeforce_stacks_effect = yes
+									scope:recipient = { bm_recount_lifeforce_stacks_effect = yes }
+								}
+							}
+						}
+						50 = {
+							compare_modifier = { value = scope:duel_value multiplier = -2 }
+							send_interface_toast = {
+								type = event_toast_effect_bad
+								title = bm_blood_drain_toast
+								left_icon = scope:actor
+								right_icon = scope:recipient
+								add_stress = 20
+							}
+						}
+					}
+				}
+				else = {
+					duel = {
+						skill = learning
+						target = scope:recipient
+						50 = {
+							compare_modifier = { value = scope:duel_value multiplier = 2 }
+							send_interface_toast = {
+								type = event_toast_effect_good
+								title = bm_blood_drain_toast
+								left_icon = scope:actor
+								right_icon = scope:recipient
+								if = {
+									limit = { scope:recipient = { has_character_modifier = lifeforce_modifier_superior } }
+									scope:recipient = { remove_character_modifier = lifeforce_modifier_superior }
+									add_character_modifier = { modifier = lifeforce_modifier_superior }
+								}
+								else_if = {
+									limit = { scope:recipient = { has_character_modifier = lifeforce_modifier_major } }
+									scope:recipient = { remove_character_modifier = lifeforce_modifier_major }
+									add_character_modifier = { modifier = lifeforce_modifier_major }
+								}
+								else_if = {
+									limit = { scope:recipient = { has_character_modifier = lifeforce_modifier_minor } }
+									scope:recipient = { remove_character_modifier = lifeforce_modifier_minor }
+									add_character_modifier = { modifier = lifeforce_modifier_minor }
+								}
+								add_xp_bm_dynamic = { TRACK = hematurgy XP = 3 }
+								hidden_effect = {
+									bm_recount_lifeforce_stacks_effect = yes
+									scope:recipient = { bm_recount_lifeforce_stacks_effect = yes }
+								}
+							}
+						}
+						50 = {
+							compare_modifier = { value = scope:duel_value multiplier = -2 }
+							send_interface_toast = {
+								type = event_toast_effect_bad
+								title = bm_blood_drain_toast
+								left_icon = scope:actor
+								right_icon = scope:recipient
+								add_stress = 20
+							}
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:drain_tithe = yes }
+			scope:actor = {
+				add_character_flag = {
+					flag = bm_demand_blood_tithe_cooldown
+					years = 2
+				}
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = bm_blood_drain_toast
+					left_icon = scope:actor
+					right_icon = scope:recipient
+					if = {
+						limit = {
+							scope:recipient = {
+								OR = {
+									has_trait = lifestyle_blood_mage
+									has_trait = lifestyle_blood_knight
+								}
+							}
+						}
+						add_character_modifier = { modifier = lifeforce_modifier_major }
+					}
+					else = {
+						add_character_modifier = { modifier = lifeforce_modifier_minor }
+					}
+					if = {
+						limit = { has_trait = lifestyle_blood_mage }
+						add_trait_xp = {
+							trait = lifestyle_blood_mage
+							track = bloodline
+							value = 1
+						}
+					}
+					if = {
+						limit = {
+							has_trait = lifestyle_blood_knight
+							NOT = { has_trait = lifestyle_blood_mage }
+						}
+						add_blood_knight_xp = {
+							TRACK = benediction
+							XP = 1
+						}
+					}
+					scope:recipient = {
+						add_character_modifier = {
+							modifier = recently_lifedrained_modifier
+							years = 1
+						}
+						add_character_modifier = {
+							modifier = lifeforce_modifier_negative_minor
+							years = 1
+						}
+						if = {
+							limit = {
+								NOT = { bm_is_blood_cult_faith_trigger = yes }
+								NOT = { has_trait = loyal }
+							}
+							add_opinion = {
+								target = scope:actor
+								modifier = magic_opinion_negative
+								opinion = -25
+							}
+						}
+					}
+					hidden_effect = {
+						bm_recount_lifeforce_stacks_effect = yes
+					}
+				}
+			}
+		}
+	}
+
+	ai_potential = { always = yes }
+	ai_frequency = 6
+	ai_targets = {
+		ai_recipients = prisoners
+		ai_recipients = courtiers
+		ai_recipients = dynasty
+	}
+	ai_will_do = {
+		base = 25
+		ai_willingness_to_lifedrain = yes
+	}
+}

@@ -1,32 +1,34 @@
 ﻿l_english:
   # Cast Blood Magic Major Option
   bm_major_manifest_traits: "Manifest Traits"
-  bm_major_manifest_traits_desc: "Focus Major Lifeforce into transmuting congenital traits up to rank 2."
-  bm_major_manifest_traits_tooltip: "Focus Major Lifeforce into transmuting congenital traits (Intellect, Physique, Beauty) up to rank 2.\n\nCosts [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and #V 200#! [piety|E]."
+  bm_major_manifest_traits_desc: "Focus Major Lifeforce into transmuting congenital traits up to rank 3."
+  bm_major_manifest_traits_tooltip: "Focus Major Lifeforce into transmuting congenital traits (Intellect, Physique, Beauty) up to rank 3.\n\nCosts [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and 250–750 [piety|E]."
   bm_cast_blood_magic_major.001.manifest_traits: "$bm_major_manifest_traits$"
   bm_cast_blood_magic_major.001.manifest_traits_tt: "$bm_major_manifest_traits_tooltip$"
   bm_manifest_traits_max_rank_2_tt: "Has not already manifested rank 2 in all congenital traits (Intellect, Physique, Beauty)"
   NOT_bm_manifest_traits_max_rank_2_tt: "Has not already manifested rank 2 in all congenital traits (Intellect, Physique, Beauty)"
+  bm_manifest_traits_max_rank_3_tt: "Has not already manifested rank 3 in all congenital traits (Intellect, Physique, Beauty)"
+  NOT_bm_manifest_traits_max_rank_3_tt: "Has not already manifested rank 3 in all congenital traits (Intellect, Physique, Beauty)"
 
-  # Ritual Event (Major - Ranks 1 to 2)
+  # Ritual Event (Major - Ranks 1 to 3)
   bm_channel_manifest_traits.001.title: "Ritual of Manifestation"
   bm_channel_manifest_traits.001.desc: "A torrential current of major lifeforce answers your call. The vital essence waits, pliable yet tempestuous, ready to rewrite your mortal mold. Which aspect of your being shall you forge anew in blood?"
-  bm_channel_manifest_traits.001.intellect: "Manifest Intellect (Rank 1–2)"
-  bm_channel_manifest_traits.001.physique: "Manifest Physique (Rank 1–2)"
-  bm_channel_manifest_traits.001.beauty: "Manifest Beauty (Rank 1–2)"
+  bm_channel_manifest_traits.001.intellect: "Manifest Intellect (Rank 1–3)"
+  bm_channel_manifest_traits.001.physique: "Manifest Physique (Rank 1–3)"
+  bm_channel_manifest_traits.001.beauty: "Manifest Beauty (Rank 1–3)"
   bm_channel_manifest_traits.001.cancel: "Step away from the ritual circle"
 
-  # Ritual Event (Superior - Ranks 3 to 5)
+  # Ritual Event (Superior - Ranks 4 to 5)
   bm_channel_manifest_traits.002.title: "Ritual of Apex Perfection"
   bm_channel_manifest_traits.002.desc: "Mortal minds and bodies crumble under the passage of time, yet superior lifeforce bends mortal biology to your absolute will. Having already attained promising mortal gifts, you stand ready to push beyond into genius, beauty, herculean might, and apex superhuman perfection."
-  bm_channel_manifest_traits.002.intellect: "Manifest Apex Intellect (Rank 3–5)"
-  bm_channel_manifest_traits.002.physique: "Manifest Apex Physique (Rank 3–5)"
-  bm_channel_manifest_traits.002.beauty: "Manifest Apex Beauty (Rank 3–5)"
+  bm_channel_manifest_traits.002.intellect: "Manifest Apex Intellect (Rank 4–5)"
+  bm_channel_manifest_traits.002.physique: "Manifest Apex Physique (Rank 4–5)"
+  bm_channel_manifest_traits.002.beauty: "Manifest Apex Beauty (Rank 4–5)"
 
   # Duel Outcomes
   bm_manifest_traits.duel_success_tt: "The blood yields to your will, permanently elevating your traits"
-  bm_manifest_traits.duel_failure_tt: "Your concentration breaks, wasting the lifeforce and incurring magical exhaustion"
-  bm_manifest_traits.duel_crit_failure_tt: "A violent backlash of lifeforce tears through your mortal vessel, inflicting wounds, severe stress, and magical exhaustion!"
+  bm_manifest_traits.duel_failure_tt: "Your concentration breaks, failing to manifest the trait but salvaging a portion of the expended Lifeforce"
+  bm_manifest_traits.duel_crit_failure_tt: "A violent backlash of lifeforce tears through your mortal vessel, inflicting wounds, severe stress, and additional magical exhaustion!"
 
   # Toasts
   bm_manifest_traits.intellect_success_title: "Intellect Manifested: The Mind Expands"

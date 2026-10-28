@@ -12,7 +12,7 @@ Mage-only tracks `bloodline` and `hematurgy`. Shared tracks (`ancient`, `enlight
 | +1 | 35 Piety + Minor (`lifeforce_modifier_minor`) | Bless Kin's Blood | interaction `bm_bless_bloodline_interaction` | Target child/dynasty kin | 10 years (target buff) |
 | +1 | 50 Piety + Minor | Bless Dynasty Bloodline (Feingur) | interaction `bm_feingur_bless_dynasty_interaction` | Superior Feingur stave; child or dynasty kin | Permanent |
 | +1 | 50 Piety + Minor | Purge Bodily Impurities (Congenital Flaw Cleansed) | event option `bm_cast_blood_magic_minor.001` | Has ugly/dull/weak | None |
-| +1 / +2 (on duel win) | 200–600 Piety + Major (`lifeforce_modifier_major`) | Manifest Trait (Congenital 1-5) | event option `bm_cast_blood_magic_major/superior.001` | `piety_level >= 2` | 5 years |
+| +3 to +8 (scaled 3/4/5/6/7/8 based on trait rank) | 250–1500 Piety + Major/Superior | Manifest Trait (Congenital 1-5) | event option `bm_cast_blood_magic_major/superior.001` | `piety_level >= 2` | 5 years |
 | +1 / +2 / +3 | 150 / 350 / 750 Piety + Minor/Major/Superior (`lifeforce_modifier_superior`) | Empower Bloodline (Tier I/II/III Covenant) | decision `bm_empower_bloodline_decision` | `exists = house`, `piety_level >= 1` / `>= 2` / `>= 3` | 1 year |
 | +5 | 500 Piety + Superior | Forge Blood Golem | event option `bm_cast_blood_magic_superior.001` | `piety_level >= 3`, Superior lifeforce | 3 years |
 | +3 (Major) / +1 (Minor) | 0 Piety (recipient); caster consumes Lifeforce | Empower Blood Mage (Recipient) | interaction `empower_blood_mage_interaction` | Fellow Blood Mage empowers target | None |

@@ -45,6 +45,15 @@ hematurgy_magic_cast_effect_minor = {
     }
 }
 
+benediction_magic_cast_effect_superior = {
+    remove_character_modifier = lifeforce_modifier_superior
+    temporary_negative_lifeforce_effect_superior = yes
+    add_shared_bm_bk_xp = {
+        TRACK = benediction
+        XP = 3
+    }
+}
+
 benediction_magic_cast_effect_major_minor = {
     remove_character_modifier = lifeforce_modifier_minor
     remove_character_modifier = lifeforce_modifier_major
