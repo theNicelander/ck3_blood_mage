@@ -40,7 +40,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - Education advancement needs Devotion Level 1+/2+/3+/4+ for 1★→2★ … 4★→5★; only Superior magic (5★, Embrace New Education) costs Devotion or needs 1000 Piety plus Superior Lifeforce.
 - **Heal Ailment**: cures up to 32 ailments, purges all 11 stress vices (−50 Stress), and treats old-age traits (Minor: 1 Minor Lifeforce + 50 Piety; Major tier for deeper rejuvenation).
 - **Influence Personality**: Learning contest to swap a trait or culture (5-year cooldown on success, 1 year on failure).
-- **Congenital Manifestation**: Transmute Intellect, Physique, and Beauty up to Rank 3 in Major Blood Magic (250/500/750 Piety, Piety Levels 2/3/4; Rank 3 costs 1 Devotion Level) and up to Ranks 4–5 in Superior Blood Magic (1000/1500 Piety, Piety Level 5; costs 1 Devotion Level). Standard failure refunds lower-tier Lifeforce; critical failure inflicts additional exhaustion.
+- **Congenital Manifestation**: Transmute Intellect, Physique, and Beauty up to Rank 3 in Major Blood Magic (250/500/750 Piety, Piety Levels 2/3/4; Rank 3 costs 1 Devotion Level) and up to Ranks 4–5 in Superior Blood Magic (1000/1500 Piety, Piety Level 5; costs 1 Devotion Level); 2-year cooldown. Standard failure refunds lower-tier Lifeforce; critical failure inflicts additional exhaustion.
 - **Bestow Blood Traits**: Spend 250 Piety and 1 Major Lifeforce to pass positive congenital (Intellect, Physique, Beauty) or physical traits (Fecund, Pure-Blooded, Giant, Strong, Shrewd) to your spouse or dynasty kin. Elevates target one tier per ritual; guaranteed if transferring a rank lower than your own, or resolved via a Learning duel with yourself (50% at 20 Learning, 90% cap at 50 Learning) if transferring a matching rank.
 - Personality Reshaping (Learning contest to swap traits).
 
@@ -64,7 +64,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 
 - Five Icelandic staves carved into the flesh, each with an ambient Lifeforce pulse: **Vegvísir** (travel), **Ægishjálmur** (terror, knights), **Feingur** (fertility), **Nábrókarstafur** (gold), **Hulinhjálmur** (schemes, concealment).
 - Superior rune depth unlocks the standalone **Carve Galdrastafir Stave** decision.
-- Inscribe blood runes on sworn knights, champions and family.
+- Inscribe blood runes on sworn knights, champions and family; 3-year cooldown on rune inscriptions and upgrades.
 - Custom icons for all staves, traits, tracks, interactions and faiths.
 
 ## Blood Golems & Dynasty
@@ -131,6 +131,7 @@ Annual pulse (3-year cooldown) for player Blood Mages and Blood Knights:
 
 ## Version history
 
+- v1.20.62: Standardize event exit options to "Back"; reduce manifest traits cooldown to 2 years and inscribe rune cooldown to 3 years
 - v1.20.61: Restructure Manifest Congenital Traits (Ranks 1–3 in Major, Ranks 4–5 in Superior with 3/4/5/6/7/8 XP scaled by trait rank); unify positive interactions into Blood Blessing and hostile harvesting into Blood Drain; rename Heal Affliction to Heal Healing
 - v1.20.60: Rebalance Ancient and Enlightenment XP; Condense Lifeforce grants Enlightenment XP; AI always selects initial Lifeforce attunement; alerts for prisoner lifedrain and culling champions; require 20+ Prowess for Cull Champion
 - v1.20.59: Blood Temples become duchy-capital buildings in all duchies

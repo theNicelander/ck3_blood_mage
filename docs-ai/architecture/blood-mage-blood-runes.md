@@ -7,17 +7,17 @@ Living technical specification for body runes, Galdrastafir staves, and Duchy Bl
 Decoupled architecture separating **Rune Depth** (`minor/major/superior_blood_rune_modifier`) from **Galdrastafir Stave Identity** (`bm_stave_<key>`).
 - **Rune Depth:** Sequential body runes (Minor -> Major -> Superior) governing the passive yearly Lifeforce pulse (`blood_mage_yearly_events.003`) and unlocking the capstone stave.
 - **Capstone Staves:** Granted at **Superior** depth via `bm_carve_galdrastafir_decision` (500 Piety, 1 Major LF, 5-yr CD). Grants static attributes and an active occult capstone mechanic.
-- **Self-Inscription (`ancient` XP):** Inscribed sequentially via Cast Blood Magic widgets (`minor/major/superior`). Requires Devotion Rank 2 / 3 / 4, 5-yr CD (`bm_blood_rune_cooldown`), awards `+4 / +5 / +10` `ancient` XP. Both Mages and Knights can self-inscribe up to Superior.
-- **Inscribe on Others (`benediction` XP):** Interaction `bm_inscribe_rune_other_interaction` upgrades target depth in-place. 5-yr CD (`bm_blood_rune_other_cooldown`), awards `+4 / +5 / +10` `benediction` XP. Superior on others is Mage exclusive.
+- **Self-Inscription (`ancient` XP):** Inscribed sequentially via Cast Blood Magic widgets (`minor/major/superior`). Requires Devotion Rank 2 / 3 / 4, 3-yr CD (`bm_blood_rune_cooldown`), awards `+4 / +5 / +10` `ancient` XP. Both Mages and Knights can self-inscribe up to Superior.
+- **Inscribe on Others (`benediction` XP):** Interaction `bm_inscribe_rune_other_interaction` upgrades target depth in-place. 3-yr CD (`bm_blood_rune_other_cooldown`), awards `+4 / +5 / +10` `benediction` XP. Superior on others is Mage exclusive.
 - **Duchy Blood Temples:** 7-tier Duchy Capital building line (`common/buildings/bm_duchy_buildings.txt`, `type = duchy_capital`), constructible in duchy capital slots by Blood Mages, Blood Knights, or Blóðtrú faithful. Tiers I–IV open to all governments (Tier IV tribal capstone); Tiers V–VII require non-tribal feudalized holdings.
 
 ## Tier Progression, Costs & XP Table
 
 | Rune Tier | Base Tracker | Self-Cast Gates (`minor/major/superior_decision`) | Cast-on-Other Gates (`bm_inscribe_rune_other_interaction`) | Cost (Self & Other) | Self-Cast XP | Cast on Other XP | Yearly Lifeforce Pulse (`blood_mage_yearly_events.003`) | Capstone Stave Access (`bm_carve_galdrastafir_decision`) |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| **Minor** | `minor_blood_rune_modifier` | Mage or Knight, Rank 2 (`piety_level >= 2`), 5-yr CD (`bm_blood_rune_cooldown`) | Mage or Knight, Rank 2 (`piety_level >= 2`), `>= 25` total XP, 5-yr CD (`bm_blood_rune_other_cooldown`) | 0 Piety + 1 Minor Lifeforce | `+4` `ancient` | `+4` `benediction` | 20% Minor | Locked |
-| **Major** | `major_blood_rune_modifier` | Mage or Knight, Rank 3 (`piety_level >= 3`), Minor Rune, 5-yr CD (`bm_blood_rune_cooldown`) | Mage or Knight, Rank 3 (`piety_level >= 3`), `>= 50` total XP, Minor Rune, 5-yr CD (`bm_blood_rune_other_cooldown`) | 200 Piety + 1 Major Lifeforce | `+5` `ancient` | `+5` `benediction` | 20% Minor, 10% Major, 5% Both | Locked |
-| **Superior** | `superior_blood_rune_modifier` | Mage or Knight, Rank 4 (`piety_level >= 4`), Major Rune, 5-yr CD (`bm_blood_rune_cooldown`) | **Mage only**, Rank 4 (`piety_level >= 4`), `>= 100` total XP, Major Rune, 5-yr CD (`bm_blood_rune_other_cooldown`) | 400 Piety + 1 Superior Lifeforce | `+10` `ancient` | `+10` `benediction` | 10% Minor, 20% Major, 10% Both | **Unlocked**: First pick free; 5-yr swap for 500 Piety + 1 Major Lifeforce in Major Grimoire |
+| **Minor** | `minor_blood_rune_modifier` | Mage or Knight, Rank 2 (`piety_level >= 2`), 3-yr CD (`bm_blood_rune_cooldown`) | Mage or Knight, Rank 2 (`piety_level >= 2`), `>= 25` total XP, 3-yr CD (`bm_blood_rune_other_cooldown`) | 0 Piety + 1 Minor Lifeforce | `+4` `ancient` | `+4` `benediction` | 20% Minor | Locked |
+| **Major** | `major_blood_rune_modifier` | Mage or Knight, Rank 3 (`piety_level >= 3`), Minor Rune, 3-yr CD (`bm_blood_rune_cooldown`) | Mage or Knight, Rank 3 (`piety_level >= 3`), `>= 50` total XP, Minor Rune, 3-yr CD (`bm_blood_rune_other_cooldown`) | 200 Piety + 1 Major Lifeforce | `+5` `ancient` | `+5` `benediction` | 20% Minor, 10% Major, 5% Both | Locked |
+| **Superior** | `superior_blood_rune_modifier` | Mage or Knight, Rank 4 (`piety_level >= 4`), Major Rune, 3-yr CD (`bm_blood_rune_cooldown`) | **Mage only**, Rank 4 (`piety_level >= 4`), `>= 100` total XP, Major Rune, 3-yr CD (`bm_blood_rune_other_cooldown`) | 400 Piety + 1 Superior Lifeforce | `+10` `ancient` | `+10` `benediction` | 10% Minor, 20% Major, 10% Both | **Unlocked**: First pick free; 5-yr swap for 500 Piety + 1 Major Lifeforce in Major Grimoire |
 
 *Yearly rolls handled by hidden pulse `blood_mage_yearly_events.003` (triggers on rune modifiers, no trait restriction).*
 
@@ -40,7 +40,7 @@ Decoupled architecture separating **Rune Depth** (`minor/major/superior_blood_ru
   - Target has Minor rune -> Upgrades depth to Major (`bm_upgrade_blood_rune_to_major_effect`).
   - Target has Major rune -> Upgrades depth to Superior (`bm_upgrade_blood_rune_to_superior_effect`; requires caster to have `lifestyle_blood_mage`).
 - **XP Yield:** Grants `benediction` track XP (`+4 / +5 / +10`) to the caster.
-- **Cooldown & Opinion:** Sets 5-year cooldown flag `bm_blood_rune_other_cooldown` on caster; adds `magic_opinion_positive` (`+20`) from recipient toward caster.
+- **Cooldown & Opinion:** Sets 3-year cooldown flag `bm_blood_rune_other_cooldown` on caster; adds `magic_opinion_positive` (`+20`) from recipient toward caster.
 
 ## Blood Temples Table
 
