@@ -41,12 +41,6 @@ bm_blood_knight_enlightenment_xp_value = {
 bm_seek_power_cooldown_days = {
 	value = 365
 	if = {
-		limit = {
-			is_landed = no
-		}
-		value = 1095
-	}
-	if = {
 		limit = { bm_has_superior_stave_trigger = { STAVE = vegvisir } }
 		multiply = 0.5
 	}
@@ -54,12 +48,6 @@ bm_seek_power_cooldown_days = {
 
 bm_seek_power_cooldown_years = {
 	value = 1
-	if = {
-		limit = {
-			is_landed = no
-		}
-		value = 3
-	}
 	if = {
 		limit = { bm_has_superior_stave_trigger = { STAVE = vegvisir } }
 		multiply = 0.5

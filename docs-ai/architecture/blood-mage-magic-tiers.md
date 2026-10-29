@@ -75,7 +75,7 @@ Requires Minor Lifeforce (`lifeforce_modifier_minor`). Accessible to both **Bloo
 | **Make Blood Knight (Minor)** | Interaction (`make_blood_knight_interaction`) | 250 Piety + Minor Lifeforce (Knight actor) | Bestows `lifestyle_blood_knight` on spouse, kin, knight, or courtier. | +2 Vanguard |
 | **Grant Blood Magic (Minor)** | Interaction (`grant_blood_magic_interaction`) | 250 Piety + Minor Lifeforce (Mage actor) | Bestows `lifestyle_blood_mage` on uninitiated courtier/kin. | +2 Bloodline |
 | **Minor Lifedrain** | Interaction (`lifedrain_courtier_event_interaction`) | 25 Piety, 3-mo CD | Siphons Minor Lifeforce from courtier/prisoner. Victim gets `lifedrained_modifier`. (Mage: Intrigue/Learning; Knight: Prowess duel). | Mage: +1 Hematurgy<br>Knight: +1 Slaughter |
-| **Go on a Blood Hunt** | Decision (`seek_power_decision`) | Cooldown (365d landed, 1095d wanderer; halved by Superior Vegvísir) | Wilderness expedition harvesting Lifeforce and discipline XP. Available to Blood Mages and Blood Knights. | Scaled Martial/Discipline XP |
+| **Go on a Blood Hunt** | Decision (`seek_power_decision`) | Cooldown (365d / 1 yr; halved to 182d / 6 months by Superior Vegvísir) | Wilderness expedition harvesting Lifeforce and discipline XP. Available to Blood Mages and Blood Knights. | Scaled Martial/Discipline XP |
 
 ---
 
