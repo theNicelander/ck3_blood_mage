@@ -19,6 +19,7 @@ description: Localization rules: English only, sibling keys, UTF-8 BOM format.
 - **Concise & direct style (Lifeforce over fluffy flavour)**:
   - Stop using fluffy flavour words like "vitality", "vital arts", "life essence", or vague synonyms when describing actions, alerts, tooltips, or costs. Always be concise, direct, and specify the concrete game term **Lifeforce** (e.g. "spend Lifeforce to heal them", not "channel your vitality").
   - Flavour text belongs strictly in narrative descriptions (e.g. `<decision>_desc` or `<event>.desc` story paragraphs). Outside those narrative bodies, all UI text, tooltips, action descriptions, and toasts must be to the point.
+  - **Cancel / Back options**: Always use `"Back"` when backing out or cancelling event/menu choices (e.g. `<event>.cancel: "Back"`). Never use flavour text (never `"Step back and abandon the ritual"` or `"Decide against healing for now"`).
 - **Current Situation & Important Actions**:
   - Never put `($NUM$)` or `(NUM)` in `_combined_group_label` (or any group label). The CK3 engine automatically appends the item count to grouped headers in the UI; adding `$NUM$` fails to interpolate and renders raw `(NUM)`.
   - Group and action descriptions must be actionable and concise (e.g. "Several important figures in your life or realm are currently wounded or afflicted by illness. You can spend Lifeforce to heal them.").

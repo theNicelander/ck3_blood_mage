@@ -27,7 +27,7 @@
   bm_reshape_personality.0001.option_4: "Dissolve [recipient.GetHerHis] [recipient_ptrait_4.GetNameNoTooltip( recipient )] nature"
   bm_reshape_personality.0001.culture: "Reshape [recipient.GetHerHis] mind to embrace [ROOT.Char.GetCulture.GetName] culture"
   bm_reshape_personality.0001.culture.already_culture_tt: "[recipient.GetShortUINameNoTooltip] does not already share your [ROOT.Char.GetCulture.GetName] culture"
-  bm_reshape_personality.0001.cancel: "Step back and abandon the ritual"
+  bm_reshape_personality.0001.cancel: "Back"
 
   bm_reshape_personality.0002.title: "Influence Personality: Imprint Essence"
   bm_reshape_personality.0002.desc: "The inner essence of [recipient.GetFirstName] lies exposed before our will. Now comes the battle of minds: we must pit our Learning and esoteric insight against their mental constitution to purge [recipient.GetHerHis] [trait_to_remove.GetNameNoTooltip( recipient )] trait and imprint our own nature.\n\nWhich facet of our spirit shall we force into [recipient.GetHerHis] mind?"
@@ -35,7 +35,7 @@
   bm_reshape_personality.0002.option_2: "Imprint our [actor_ptrait_2.GetNameNoTooltip( ROOT.Char )] nature"
   bm_reshape_personality.0002.option_3: "Imprint our [actor_ptrait_3.GetNameNoTooltip( ROOT.Char )] nature"
   bm_reshape_personality.0002.option_4: "Imprint our [actor_ptrait_4.GetNameNoTooltip( ROOT.Char )] nature"
-  bm_reshape_personality.0002.cancel: "Abort the ritual"
+  bm_reshape_personality.0002.cancel: "Back"
 
   bm_reshape_personality.toast.title: "Personality Influenced"
   bm_reshape_personality.toast.desc: "[recipient.GetFirstName] has abandoned [recipient.GetHerHis] [trait_to_remove.GetNameNoTooltip( recipient )] nature and embraced [trait_to_add.GetNameNoTooltip( ROOT.Char )]."
