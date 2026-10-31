@@ -20,100 +20,7 @@ bm_blood_power_event.001 = {
 		}
 	}
 
-	# Blood Dynasty
-	option = {
-		name = bm_empower_dynasty
-		trigger = {
-			OR = {
-				NOT = { has_trait = lifestyle_blood_power }
-				has_trait_xp = {
-					trait = lifestyle_blood_power
-					track = dynasty
-					value < 100
-				}
-			}
-		}
-		show_as_unavailable = {
-			always = yes
-		}
-		add_piety = -150
-		blood_magic_used_major = yes
-		send_interface_toast = {
-			title = bm_blood_power_event.001.toast
-			left_icon = this
-			add_shared_bm_bk_xp = {
-				TRACK = enlightenment
-				XP = 3
-			}
-			add_blood_power_xp = { TRACK = dynasty }
-		}
-		custom_tooltip = bm_empower_dynasty_desc
-		ai_chance = { base = 100 }
-	}
-
-	# Blood Warband
-	option = {
-		name = bm_empower_warband
-		trigger = {
-			OR = {
-				NOT = { has_trait = lifestyle_blood_power }
-				has_trait_xp = {
-					trait = lifestyle_blood_power
-					track = warband
-					value < 100
-				}
-			}
-		}
-		show_as_unavailable = {
-			always = yes
-		}
-		add_piety = -150
-		blood_magic_used_major = yes
-		send_interface_toast = {
-			title = bm_blood_power_event.001.toast
-			left_icon = this
-			add_shared_bm_bk_xp = {
-				TRACK = enlightenment
-				XP = 3
-			}
-			add_blood_power_xp = { TRACK = warband }
-		}
-		custom_tooltip = bm_empower_warband_desc
-		ai_chance = { base = 100 }
-	}
-
-	# Blood Mastery
-	option = {
-		name = bm_empower_mastery
-		trigger = {
-			OR = {
-				NOT = { has_trait = lifestyle_blood_power }
-				has_trait_xp = {
-					trait = lifestyle_blood_power
-					track = mastery
-					value < 100
-				}
-			}
-		}
-		show_as_unavailable = {
-			always = yes
-		}
-		add_piety = -150
-		blood_magic_used_major = yes
-		send_interface_toast = {
-			title = bm_blood_power_event.001.toast
-			left_icon = this
-			add_shared_bm_bk_xp = {
-				TRACK = enlightenment
-				XP = 3
-			}
-			add_blood_power_xp = { TRACK = mastery }
-		}
-		custom_tooltip = bm_empower_mastery_desc
-		ai_chance = { base = 100 }
-	}
-
-	# Blood Presence
+	# 1. Diplomacy: Blood Presence
 	option = {
 		name = bm_empower_presence
 		trigger = {
@@ -144,7 +51,38 @@ bm_blood_power_event.001 = {
 		ai_chance = { base = 100 }
 	}
 
-	# Blood Prosperity
+	# 2. Martial: Blood Warband
+	option = {
+		name = bm_empower_warband
+		trigger = {
+			OR = {
+				NOT = { has_trait = lifestyle_blood_power }
+				has_trait_xp = {
+					trait = lifestyle_blood_power
+					track = warband
+					value < 100
+				}
+			}
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		add_piety = -150
+		blood_magic_used_major = yes
+		send_interface_toast = {
+			title = bm_blood_power_event.001.toast
+			left_icon = this
+			add_shared_bm_bk_xp = {
+				TRACK = enlightenment
+				XP = 3
+			}
+			add_blood_power_xp = { TRACK = warband }
+		}
+		custom_tooltip = bm_empower_warband_desc
+		ai_chance = { base = 100 }
+	}
+
+	# 3. Stewardship: Blood Prosperity
 	option = {
 		name = bm_empower_prosperity
 		trigger = {
@@ -175,7 +113,7 @@ bm_blood_power_event.001 = {
 		ai_chance = { base = 100 }
 	}
 
-	# Blood Shadows
+	# 4. Intrigue: Blood Shadows
 	option = {
 		name = bm_empower_shadows
 		trigger = {
@@ -206,6 +144,68 @@ bm_blood_power_event.001 = {
 		ai_chance = { base = 100 }
 	}
 
+	# 5. Learning: Blood Mastery
+	option = {
+		name = bm_empower_mastery
+		trigger = {
+			OR = {
+				NOT = { has_trait = lifestyle_blood_power }
+				has_trait_xp = {
+					trait = lifestyle_blood_power
+					track = mastery
+					value < 100
+				}
+			}
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		add_piety = -150
+		blood_magic_used_major = yes
+		send_interface_toast = {
+			title = bm_blood_power_event.001.toast
+			left_icon = this
+			add_shared_bm_bk_xp = {
+				TRACK = enlightenment
+				XP = 3
+			}
+			add_blood_power_xp = { TRACK = mastery }
+		}
+		custom_tooltip = bm_empower_mastery_desc
+		ai_chance = { base = 100 }
+	}
+
+	# 6. Other: Blood Dynasty
+	option = {
+		name = bm_empower_dynasty
+		trigger = {
+			OR = {
+				NOT = { has_trait = lifestyle_blood_power }
+				has_trait_xp = {
+					trait = lifestyle_blood_power
+					track = dynasty
+					value < 100
+				}
+			}
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		add_piety = -150
+		blood_magic_used_major = yes
+		send_interface_toast = {
+			title = bm_blood_power_event.001.toast
+			left_icon = this
+			add_shared_bm_bk_xp = {
+				TRACK = enlightenment
+				XP = 3
+			}
+			add_blood_power_xp = { TRACK = dynasty }
+		}
+		custom_tooltip = bm_empower_dynasty_desc
+		ai_chance = { base = 100 }
+	}
+
 	# Versatility (Fallback when all 6 tracks are maxed)
 	option = {
 		name = bm_empower_versatility
@@ -213,22 +213,12 @@ bm_blood_power_event.001 = {
 			has_trait = lifestyle_blood_power
 			has_trait_xp = {
 				trait = lifestyle_blood_power
-				track = dynasty
+				track = presence
 				value >= 100
 			}
 			has_trait_xp = {
 				trait = lifestyle_blood_power
 				track = warband
-				value >= 100
-			}
-			has_trait_xp = {
-				trait = lifestyle_blood_power
-				track = mastery
-				value >= 100
-			}
-			has_trait_xp = {
-				trait = lifestyle_blood_power
-				track = presence
 				value >= 100
 			}
 			has_trait_xp = {
@@ -239,6 +229,16 @@ bm_blood_power_event.001 = {
 			has_trait_xp = {
 				trait = lifestyle_blood_power
 				track = shadows
+				value >= 100
+			}
+			has_trait_xp = {
+				trait = lifestyle_blood_power
+				track = mastery
+				value >= 100
+			}
+			has_trait_xp = {
+				trait = lifestyle_blood_power
+				track = dynasty
 				value >= 100
 			}
 		}
