@@ -8,12 +8,12 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 
 - Two permanent, mutually exclusive lifestyle paths chosen on awakening: **Blood Mage** (realm, dynasty, dread, domain) and **Blood Knight** (prowess, combat advantage, knights, army speed).
 - Awaken via bloodline, occult mentorship, witch conversion, Blood Knight mentorship (also from imprisoned Blood Knights), or by duelling the hermit **Egill Skallagrímsson** in Iceland or Tsushima.
-- Shared Devotion tracks (Ancient, Enlightenment, Benediction) scale to 100 XP: Ancient adds +1 personal tenet slot per 20 XP.
+- Shared Devotion tracks (Ancient, Enlightenment, Benediction) scale to 100 XP: Ancient adds +0.1 monthly legitimacy per 10 XP (+1.0/mo = +12/yr at 100 XP) alongside +1 personal tenet slot per 20 XP.
 - 50 XP milestones scale with Devotion Level; 100 XP capstones give +50% Devotion Impact, Age Prowess Lock and +2.0 skill per Devotion level.
-- Blood Mage tracks Bloodline and Hematurgy: 10-step cadence (taxes, trait inheritance, dynasty prestige, hostile scheme power and defence).
+- Blood Mage tracks Bloodline and Hematurgy: 10-step cadence (universal monthly income mult, trait inheritance, dynasty prestige, hostile scheme power and defence).
 - Blood Knight tracks Vanguard (army speed, advantage, supply, prowess) and Slaughter (prowess, knight limit and effectiveness).
 - Blood Knights can initiate spouse, children and kin (+5 Vanguard XP for dynasty), and empower family even if landed or outside their court.
-- **Blood Power** secondary trait with six tracks (Dynasty, Fury, Mastery, Presence, Prosperity, Shadows) on a 10/20/50/100 XP cadence; every 10 XP adds flat monthly lifestyle XP in the matching skill.
+- **Blood Power** secondary trait with six mirrored tracks (Dynasty, Warband, Mastery, Presence, Prosperity, Shadows) structured into five milestone tiers (10, 30, 50, 70, 100 XP) with scaling monthly Piety (+0.1 to +1.0), flat monthly lifestyle XP (+5 to +50/mo), shared 50 & 100 XP milestone bonuses (+10% monthly Piety mult, +5 life expectancy, +0.25 health, +0.02 monthly Piety per knight), and a tight suite of 3–4 high-impact personal modifiers delivering 2x–3x the power of House Covenants (including scaling legitimacy mult, stress composure, universal income mult, and inbreeding immunity), culminating in an Age Prowess Lock.
 - Track XP sources rebalanced: healing grants Benediction, family rites and childbirth grant Ancient/Benediction, congenital manifestation grants XP by attribute.
 - Regiments: **Blood Berserkers** (heavy shock infantry, Devotion 2+) and **Blood-Bound Behemoths** (siege-capable monsters, Devotion 4+), Piety-maintained.
 - Crimson Sworn-Guard court position and Crimson Warrior champions.
@@ -36,7 +36,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - **Major**: Channel Blood Power, Condense into Superior Lifeforce, Education Enhancement, Major Runes, Congenital Manifestation, House Blessing.
 - **Superior**: Blood Golem creation, 5★ Master Educations, Secondary Educations, Capstone Runes.
 - **Attune Lifeforce**: choose your yearly lifestyle XP bonus (applied January 1st).
-- **Empower Dynasty Bloodline**: seven three-tier House Covenants (Majesty, Warband, Prosperity, Shadow, Insight, Legacy, Mastery).
+- **Empower Dynasty Bloodline**: six three-tier House Covenants (Presence, Warband, Prosperity, Shadow, Mastery, Legacy) granting monthly Piety (+0.1/+0.3/+0.5), skill, and +1 attribute per Devotion at Tier 2 and Tier 3 alongside balanced house-wide bonuses (Men-at-Arms, army damage, speed, domain limit, opinion, legitimacy mult); active covenants roll annually to award +1 XP in the matching Blood Power track for living kin.
 - Education advancement needs Devotion Level 1+/2+/3+/4+ for 1★→2★ … 4★→5★; only Superior magic (5★, Embrace New Education) costs Devotion or needs 1000 Piety plus Superior Lifeforce.
 - **Heal Ailment**: cures up to 32 ailments, purges all 11 stress vices (−50 Stress), and treats old-age traits (Minor: 1 Minor Lifeforce + 50 Piety; Major tier for deeper rejuvenation).
 - **Influence Personality**: Learning contest to swap a trait or culture (5-year cooldown on success, 1 year on failure).
@@ -131,6 +131,7 @@ Annual pulse (3-year cooldown) for player Blood Mages and Blood Knights:
 
 ## Version history
 
+- v1.20.63: Align House Covenants (7 to 6) and Blood Power (6 tracks); universal monthly Piety and 1:1 Devotion attribute scaling; yearly covenant pulse feeds matching Blood Power tracks
 - v1.20.62: Standardize event exits to "Back"; reduce manifest/rune/hunt cooldowns; lower Blood Berserker provision cost
 - v1.20.61: Restructure Manifest Congenital Traits (Ranks 1–3 in Major, Ranks 4–5 in Superior with 3/4/5/6/7/8 XP scaled by trait rank); unify positive interactions into Blood Blessing and hostile harvesting into Blood Drain; rename Heal Affliction to Heal Healing
 - v1.20.60: Rebalance Ancient and Enlightenment XP; Condense Lifeforce grants Enlightenment XP; AI always selects initial Lifeforce attunement; alerts for prisoner lifedrain and culling champions; require 20+ Prowess for Cull Champion
@@ -160,6 +161,7 @@ Annual pulse (3-year cooldown) for player Blood Mages and Blood Knights:
 - v1.20.36: Blood Knight icon, domicile buildings, duel Lifeforce rewards
 - v1.20.35: Simplify magic tiers; scale battle XP and Lifeforce
 - v1.20.34: Blood Knight situation tab, prevalence rules, error fixes
+- v1.20.63: Align and streamline House Covenants and Blood Power across six mirrored tracks; cap Blood Power at 4 core personal modifiers per track, moving devotion and prestige scaling, domain limit, opinion, and Men-at-Arms bonuses into House Covenants
 - v1.20.32: Overhaul Bloodline and Hematurgy tracks
 - v1.20.31: Standalone Blood Knight trait with unified healing events
 - v1.20.30: Add Egill Skallagrímsson bookmark character

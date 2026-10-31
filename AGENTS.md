@@ -50,6 +50,7 @@ CK3 script fails silently. Follow patterns in this repo and vanilla 1.20 (`/User
 - Game errors: `tail -n 100 ~/Documents/"Paradox Interactive"/"Crusader Kings III"/logs/error.log`.
 - Localization: English only; see `ck3-localization.md`.
 - Icons/DDS: skill `add-icon-asset`.
+- Modifiers: only use modifiers from `scripts/modifiers_allowlist.json` (enforced by pre-commit). Add verified vanilla modifiers via `python3 scripts/check_modifiers.py --add <mod>`.
 
 ## Never
 
