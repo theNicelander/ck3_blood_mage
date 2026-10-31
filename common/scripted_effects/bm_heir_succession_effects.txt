@@ -187,11 +187,11 @@
 						}
 					}
 					if = {
-						limit = { bm_anointed_transfer_fury_xp_value > 0 }
+						limit = { bm_anointed_transfer_warband_xp_value > 0 }
 						add_trait_xp = {
 							trait = lifestyle_blood_power
-							track = fury
-							value = bm_anointed_transfer_fury_xp_value
+							track = warband
+							value = bm_anointed_transfer_warband_xp_value
 						}
 					}
 					if = {

@@ -14,11 +14,11 @@ bm_blood_power_quarterly_dynasty_lifestyle_xp_value = {
 	min = 0
 }
 
-bm_blood_power_quarterly_fury_lifestyle_xp_value = {
+bm_blood_power_quarterly_warband_lifestyle_xp_value = {
 	value = 0
 	if = {
 		limit = { has_trait = lifestyle_blood_power }
-		add = "has_trait_xp(lifestyle_blood_power|fury)"
+		add = "has_trait_xp(lifestyle_blood_power|warband)"
 		divide = 10
 		floor = yes
 		multiply = 15

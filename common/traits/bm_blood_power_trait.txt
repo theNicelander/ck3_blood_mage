@@ -7,299 +7,391 @@
     genetic = no
 
     tracks = {
+        # 1. Legacy (Dynasty)
         dynasty = {
             10 = {
+                monthly_piety = 0.1
+                positive_random_genetic_chance = 0.05
                 positive_inactive_inheritance_chance = 0.05
                 genetic_trait_strengthen_chance = 0.05
             }
             20 = {
+                monthly_piety = 0.1
+                positive_random_genetic_chance = 0.05
                 positive_inactive_inheritance_chance = 0.05
                 genetic_trait_strengthen_chance = 0.05
                 years_of_fertility = 5
             }
             30 = {
+                monthly_piety = 0.1
+                positive_random_genetic_chance = 0.05
                 positive_inactive_inheritance_chance = 0.05
                 genetic_trait_strengthen_chance = 0.05
             }
             40 = {
+                monthly_piety = 0.1
+                positive_random_genetic_chance = 0.05
                 positive_inactive_inheritance_chance = 0.05
                 genetic_trait_strengthen_chance = 0.05
                 years_of_fertility = 5
             }
             50 = {
+                monthly_piety = 0.1
+                prowess_per_piety_level = 1
                 inbreeding_chance = -0.50
-                monthly_dynasty_prestige_mult = 0.10
             }
             60 = {
+                monthly_piety = 0.1
+                positive_random_genetic_chance = 0.05
                 positive_inactive_inheritance_chance = 0.05
                 genetic_trait_strengthen_chance = 0.05
             }
             70 = {
+                monthly_piety = 0.1
+                positive_random_genetic_chance = 0.05
                 positive_inactive_inheritance_chance = 0.05
                 genetic_trait_strengthen_chance = 0.05
                 years_of_fertility = 5
             }
             80 = {
+                monthly_piety = 0.1
+                positive_random_genetic_chance = 0.05
                 positive_inactive_inheritance_chance = 0.05
                 genetic_trait_strengthen_chance = 0.05
                 years_of_fertility = 5
             }
             90 = {
+                monthly_piety = 0.1
+                positive_random_genetic_chance = 0.05
                 positive_inactive_inheritance_chance = 0.05
                 genetic_trait_strengthen_chance = 0.05
             }
             100 = {
+                monthly_piety = 0.1
+                prowess_per_piety_level = 1
                 inbreeding_chance = -0.50
-                monthly_dynasty_prestige_mult = 0.15
                 no_prowess_loss_from_age = yes
             }
         }
 
-        fury = {
+        # 2. Warband (Warband)
+        warband = {
             10 = {
-                advantage = 1
-                army_maintenance_mult = -0.03
+                monthly_piety = 0.1
+                dread_baseline_add = 2.5
+                knight_effectiveness_mult = 0.05
+                army_damage_mult = 0.02
             }
             20 = {
+                monthly_piety = 0.1
+                dread_baseline_add = 2.5
+                knight_effectiveness_mult = 0.05
+                army_damage_mult = 0.02
                 advantage = 1
-                army_maintenance_mult = -0.03
-                siege_phase_time = -0.05
-                knight_limit = 1
+                movement_speed = 0.03
             }
             30 = {
-                advantage = 1
-                army_maintenance_mult = -0.03
+                monthly_piety = 0.1
+                dread_baseline_add = 2.5
+                knight_effectiveness_mult = 0.05
+                army_damage_mult = 0.02
             }
             40 = {
+                monthly_piety = 0.1
+                dread_baseline_add = 2.5
+                knight_effectiveness_mult = 0.05
+                army_damage_mult = 0.02
                 advantage = 1
-                army_maintenance_mult = -0.03
-                siege_phase_time = -0.05
-                knight_limit = 1
+                movement_speed = 0.03
             }
             50 = {
+                monthly_piety = 0.1
+                dread_baseline_add = 2.5
                 martial_per_piety_level = 1
-                prowess_per_piety_level = 1
+                men_at_arms_cap = 1
             }
             60 = {
-                advantage = 1
-                army_maintenance_mult = -0.03
+                monthly_piety = 0.1
+                dread_baseline_add = 2.5
+                knight_effectiveness_mult = 0.05
+                army_damage_mult = 0.02
             }
             70 = {
+                monthly_piety = 0.1
+                dread_baseline_add = 2.5
+                knight_effectiveness_mult = 0.05
+                army_damage_mult = 0.02
                 advantage = 1
-                army_maintenance_mult = -0.03
-                siege_phase_time = -0.05
-                knight_limit = 1
+                movement_speed = 0.03
             }
             80 = {
+                monthly_piety = 0.1
+                dread_baseline_add = 2.5
+                knight_effectiveness_mult = 0.05
+                army_damage_mult = 0.02
                 advantage = 1
-                army_maintenance_mult = -0.03
-                siege_phase_time = -0.05
-                knight_limit = 1
+                movement_speed = 0.03
             }
             90 = {
-                advantage = 1
-                army_maintenance_mult = -0.03
+                monthly_piety = 0.1
+                dread_baseline_add = 2.5
+                knight_effectiveness_mult = 0.05
+                army_damage_mult = 0.02
             }
             100 = {
+                monthly_piety = 0.1
+                dread_baseline_add = 2.5
                 martial_per_piety_level = 1
-                prowess_per_piety_level = 1
+                men_at_arms_cap = 1
                 no_prowess_loss_from_age = yes
             }
         }
 
+        # 3. Mastery (Mastery)
         mastery = {
             10 = {
+                monthly_piety = 0.1
                 monthly_lifestyle_xp_gain_mult = 0.05
+                stress_gain_mult = -0.05
             }
             20 = {
+                monthly_piety = 0.1
                 monthly_lifestyle_xp_gain_mult = 0.05
-                owned_personal_scheme_success_chance_add = 5
-                personal_scheme_phase_duration_add = -5
+                stress_gain_mult = -0.05
+                monthly_piety_gain_mult = 0.05
+                learn_language_scheme_phase_duration_add = -5
             }
             30 = {
+                monthly_piety = 0.1
                 monthly_lifestyle_xp_gain_mult = 0.05
+                stress_gain_mult = -0.05
             }
             40 = {
+                monthly_piety = 0.1
                 monthly_lifestyle_xp_gain_mult = 0.05
-                owned_personal_scheme_success_chance_add = 5
-                personal_scheme_phase_duration_add = -5
+                stress_gain_mult = -0.05
+                monthly_piety_gain_mult = 0.05
+                learn_language_scheme_phase_duration_add = -5
             }
             50 = {
+                monthly_piety = 0.1
                 learning_per_piety_level = 1
-                max_personal_schemes_add = 1
+                max_learn_language_schemes_add = 1
             }
             60 = {
+                monthly_piety = 0.1
                 monthly_lifestyle_xp_gain_mult = 0.05
+                stress_gain_mult = -0.05
             }
             70 = {
+                monthly_piety = 0.1
                 monthly_lifestyle_xp_gain_mult = 0.05
-                owned_personal_scheme_success_chance_add = 5
-                personal_scheme_phase_duration_add = -5
+                stress_gain_mult = -0.05
+                monthly_piety_gain_mult = 0.05
+                learn_language_scheme_phase_duration_add = -5
             }
             80 = {
+                monthly_piety = 0.1
                 monthly_lifestyle_xp_gain_mult = 0.05
-                owned_personal_scheme_success_chance_add = 5
-                personal_scheme_phase_duration_add = -5
+                stress_gain_mult = -0.05
+                monthly_piety_gain_mult = 0.05
+                learn_language_scheme_phase_duration_add = -5
             }
             90 = {
+                monthly_piety = 0.1
                 monthly_lifestyle_xp_gain_mult = 0.05
+                stress_gain_mult = -0.05
             }
             100 = {
+                monthly_piety = 0.1
                 learning_per_piety_level = 1
-                max_personal_schemes_add = 1
+                max_learn_language_schemes_add = 1
                 ignore_negative_culture_opinion = yes
                 no_prowess_loss_from_age = yes
             }
         }
 
+        # 4. Majesty (Presence)
         presence = {
             10 = {
+                monthly_piety = 0.1
                 general_opinion = 3
-                stress_gain_mult = -0.05
             }
             20 = {
+                monthly_piety = 0.1
                 general_opinion = 3
-                stress_gain_mult = -0.05
                 prestige_level_impact_mult = 0.05
+                owned_personal_scheme_success_chance_add = 5
+                personal_scheme_phase_duration_add = -5
             }
             30 = {
+                monthly_piety = 0.1
                 general_opinion = 3
-                stress_gain_mult = -0.05
             }
             40 = {
+                monthly_piety = 0.1
                 general_opinion = 3
-                stress_gain_mult = -0.05
                 prestige_level_impact_mult = 0.05
+                owned_personal_scheme_success_chance_add = 5
+                personal_scheme_phase_duration_add = -5
             }
             50 = {
+                monthly_piety = 0.1
                 diplomacy_per_piety_level = 1
-                short_reign_duration_mult = -0.10
-                long_reign_bonus_mult = 0.10
+                max_personal_schemes_add = 1
+                monthly_dynasty_prestige_mult = 0.10
             }
             60 = {
+                monthly_piety = 0.1
                 general_opinion = 3
-                stress_gain_mult = -0.05
             }
             70 = {
+                monthly_piety = 0.1
                 general_opinion = 3
-                stress_gain_mult = -0.05
                 prestige_level_impact_mult = 0.05
+                owned_personal_scheme_success_chance_add = 5
+                personal_scheme_phase_duration_add = -5
             }
             80 = {
+                monthly_piety = 0.1
                 general_opinion = 3
-                stress_gain_mult = -0.05
                 prestige_level_impact_mult = 0.05
+                owned_personal_scheme_success_chance_add = 5
+                personal_scheme_phase_duration_add = -5
             }
             90 = {
+                monthly_piety = 0.1
                 general_opinion = 3
-                stress_gain_mult = -0.05
             }
             100 = {
+                monthly_piety = 0.1
                 diplomacy_per_piety_level = 1
-                short_reign_duration_mult = -0.10
-                long_reign_bonus_mult = 0.10
+                max_personal_schemes_add = 1
+                monthly_dynasty_prestige_mult = 0.15
                 no_prowess_loss_from_age = yes
             }
         }
 
+        # 5. Prosperity (Prosperity)
         prosperity = {
             10 = {
+                monthly_piety = 0.1
                 monthly_income_mult = 0.05
                 build_gold_cost = -0.03
                 domicile_build_gold_cost = -0.03
             }
             20 = {
+                monthly_piety = 0.1
                 monthly_income_mult = 0.05
                 build_gold_cost = -0.03
                 domicile_build_gold_cost = -0.03
                 men_at_arms_maintenance = -0.05
             }
             30 = {
+                monthly_piety = 0.1
                 monthly_income_mult = 0.05
                 build_gold_cost = -0.03
                 domicile_build_gold_cost = -0.03
             }
             40 = {
+                monthly_piety = 0.1
                 monthly_income_mult = 0.05
                 build_gold_cost = -0.03
                 domicile_build_gold_cost = -0.03
                 men_at_arms_maintenance = -0.05
             }
             50 = {
+                monthly_piety = 0.1
                 stewardship_per_piety_level = 1
                 domain_limit = 1
             }
             60 = {
+                monthly_piety = 0.1
                 monthly_income_mult = 0.05
                 build_gold_cost = -0.03
                 domicile_build_gold_cost = -0.03
             }
             70 = {
+                monthly_piety = 0.1
                 monthly_income_mult = 0.05
                 build_gold_cost = -0.03
                 domicile_build_gold_cost = -0.03
                 men_at_arms_maintenance = -0.05
             }
             80 = {
+                monthly_piety = 0.1
                 monthly_income_mult = 0.05
                 build_gold_cost = -0.03
                 domicile_build_gold_cost = -0.03
                 men_at_arms_maintenance = -0.05
             }
             90 = {
+                monthly_piety = 0.1
                 monthly_income_mult = 0.05
                 build_gold_cost = -0.03
                 domicile_build_gold_cost = -0.03
             }
             100 = {
+                monthly_piety = 0.1
                 stewardship_per_piety_level = 1
                 domain_limit = 1
                 no_prowess_loss_from_age = yes
             }
         }
 
+        # 6. Shadows (Shadows)
         shadows = {
             10 = {
+                monthly_piety = 0.1
                 owned_hostile_scheme_success_chance_add = 5
                 enemy_hostile_scheme_success_chance_add = -5
             }
             20 = {
+                monthly_piety = 0.1
                 owned_hostile_scheme_success_chance_add = 5
                 enemy_hostile_scheme_success_chance_add = -5
                 enemy_hostile_scheme_success_chance_max_add = -5
             }
             30 = {
+                monthly_piety = 0.1
                 owned_hostile_scheme_success_chance_add = 5
                 enemy_hostile_scheme_success_chance_add = -5
             }
             40 = {
+                monthly_piety = 0.1
                 owned_hostile_scheme_success_chance_add = 5
                 enemy_hostile_scheme_success_chance_add = -5
                 enemy_hostile_scheme_success_chance_max_add = -5
             }
             50 = {
+                monthly_piety = 0.1
                 intrigue_per_piety_level = 1
                 max_hostile_schemes_add = 1
             }
             60 = {
+                monthly_piety = 0.1
                 owned_hostile_scheme_success_chance_add = 5
                 enemy_hostile_scheme_success_chance_add = -5
             }
             70 = {
+                monthly_piety = 0.1
                 owned_hostile_scheme_success_chance_add = 5
                 enemy_hostile_scheme_success_chance_add = -5
                 enemy_hostile_scheme_success_chance_max_add = -5
             }
             80 = {
+                monthly_piety = 0.1
                 owned_hostile_scheme_success_chance_add = 5
                 enemy_hostile_scheme_success_chance_add = -5
                 enemy_hostile_scheme_success_chance_max_add = -5
             }
             90 = {
+                monthly_piety = 0.1
                 owned_hostile_scheme_success_chance_add = 5
                 enemy_hostile_scheme_success_chance_add = -5
             }
             100 = {
+                monthly_piety = 0.1
                 intrigue_per_piety_level = 1
                 max_hostile_schemes_add = 1
                 owned_hostile_scheme_success_chance_max_add = 15

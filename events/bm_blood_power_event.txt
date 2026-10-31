@@ -42,7 +42,7 @@ bm_blood_power_event.001 = {
 			title = bm_blood_power_event.001.toast
 			left_icon = this
 			add_shared_bm_bk_xp = {
-				TRACK = benediction
+				TRACK = enlightenment
 				XP = 3
 			}
 			add_blood_power_xp = { TRACK = dynasty }
@@ -51,15 +51,15 @@ bm_blood_power_event.001 = {
 		ai_chance = { base = 100 }
 	}
 
-	# Blood Fury
+	# Blood Warband
 	option = {
-		name = bm_empower_fury
+		name = bm_empower_warband
 		trigger = {
 			OR = {
 				NOT = { has_trait = lifestyle_blood_power }
 				has_trait_xp = {
 					trait = lifestyle_blood_power
-					track = fury
+					track = warband
 					value < 100
 				}
 			}
@@ -74,11 +74,11 @@ bm_blood_power_event.001 = {
 			left_icon = this
 			add_shared_bm_bk_xp = {
 				TRACK = enlightenment
-				XP = 1
+				XP = 3
 			}
-			add_blood_power_xp = { TRACK = fury }
+			add_blood_power_xp = { TRACK = warband }
 		}
-		custom_tooltip = bm_empower_fury_desc
+		custom_tooltip = bm_empower_warband_desc
 		ai_chance = { base = 100 }
 	}
 
@@ -105,7 +105,7 @@ bm_blood_power_event.001 = {
 			left_icon = this
 			add_shared_bm_bk_xp = {
 				TRACK = enlightenment
-				XP = 1
+				XP = 3
 			}
 			add_blood_power_xp = { TRACK = mastery }
 		}
@@ -136,7 +136,7 @@ bm_blood_power_event.001 = {
 			left_icon = this
 			add_shared_bm_bk_xp = {
 				TRACK = enlightenment
-				XP = 1
+				XP = 3
 			}
 			add_blood_power_xp = { TRACK = presence }
 		}
@@ -167,7 +167,7 @@ bm_blood_power_event.001 = {
 			left_icon = this
 			add_shared_bm_bk_xp = {
 				TRACK = enlightenment
-				XP = 1
+				XP = 3
 			}
 			add_blood_power_xp = { TRACK = prosperity }
 		}
@@ -198,7 +198,7 @@ bm_blood_power_event.001 = {
 			left_icon = this
 			add_shared_bm_bk_xp = {
 				TRACK = enlightenment
-				XP = 1
+				XP = 3
 			}
 			add_blood_power_xp = { TRACK = shadows }
 		}
@@ -218,7 +218,7 @@ bm_blood_power_event.001 = {
 			}
 			has_trait_xp = {
 				trait = lifestyle_blood_power
-				track = fury
+				track = warband
 				value >= 100
 			}
 			has_trait_xp = {
@@ -252,7 +252,7 @@ bm_blood_power_event.001 = {
 			left_icon = this
 			add_shared_bm_bk_xp = {
 				TRACK = enlightenment
-				XP = 1
+				XP = 3
 			}
 			add_character_modifier = {
 				modifier = temporary_buff_self
