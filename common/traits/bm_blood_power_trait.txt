@@ -29,7 +29,6 @@
             }
             50 = {
                 monthly_piety = 0.1
-                prowess_per_piety_level = 1
                 inbreeding_chance = -0.50
             }
             60 = {
@@ -52,7 +51,6 @@
             }
             100 = {
                 monthly_piety = 0.1
-                prowess_per_piety_level = 1
                 inbreeding_chance = -0.50
                 no_prowess_loss_from_age = yes
             }
@@ -62,61 +60,48 @@
         warband = {
             10 = {
                 monthly_piety = 0.1
-                dread_baseline_add = 2.5
                 knight_effectiveness_mult = 0.07
             }
             20 = {
                 monthly_piety = 0.1
-                dread_baseline_add = 2.5
                 knight_effectiveness_mult = 0.07
+                advantage = 1
             }
             30 = {
                 monthly_piety = 0.1
-                dread_baseline_add = 2.5
                 knight_effectiveness_mult = 0.07
                 knight_limit = 1
             }
             40 = {
                 monthly_piety = 0.1
-                dread_baseline_add = 2.5
                 knight_effectiveness_mult = 0.07
+                advantage = 1
             }
             50 = {
                 monthly_piety = 0.1
-                dread_baseline_add = 2.5
-                martial_per_piety_level = 1
-                men_at_arms_cap = 1
-                men_at_arms_limit = 1
             }
             60 = {
                 monthly_piety = 0.1
-                dread_baseline_add = 2.5
                 knight_effectiveness_mult = 0.07
                 knight_limit = 1
             }
             70 = {
                 monthly_piety = 0.1
-                dread_baseline_add = 2.5
                 knight_effectiveness_mult = 0.07
+                advantage = 1
             }
             80 = {
                 monthly_piety = 0.1
-                dread_baseline_add = 2.5
                 knight_effectiveness_mult = 0.07
+                advantage = 1
             }
             90 = {
                 monthly_piety = 0.1
-                dread_baseline_add = 2.5
                 knight_effectiveness_mult = 0.07
                 knight_limit = 1
             }
             100 = {
                 monthly_piety = 0.1
-                dread_baseline_add = 2.5
-                martial_per_piety_level = 1
-                men_at_arms_cap = 1
-                men_at_arms_limit = 1
-                dread_loss_mult = -0.5
                 no_prowess_loss_from_age = yes
             }
         }
@@ -133,7 +118,6 @@
                 monthly_lifestyle_xp_gain_mult = 0.05
                 stress_gain_mult = -0.05
                 monthly_piety_gain_mult = 0.05
-                stress_loss_mult = 0.05
             }
             30 = {
                 monthly_piety = 0.1
@@ -145,11 +129,9 @@
                 monthly_lifestyle_xp_gain_mult = 0.05
                 stress_gain_mult = -0.05
                 monthly_piety_gain_mult = 0.05
-                stress_loss_mult = 0.05
             }
             50 = {
                 monthly_piety = 0.1
-                learning_per_piety_level = 1
                 health = 0.25
             }
             60 = {
@@ -162,14 +144,12 @@
                 monthly_lifestyle_xp_gain_mult = 0.05
                 stress_gain_mult = -0.05
                 monthly_piety_gain_mult = 0.05
-                stress_loss_mult = 0.05
             }
             80 = {
                 monthly_piety = 0.1
                 monthly_lifestyle_xp_gain_mult = 0.05
                 stress_gain_mult = -0.05
                 monthly_piety_gain_mult = 0.05
-                stress_loss_mult = 0.05
             }
             90 = {
                 monthly_piety = 0.1
@@ -178,9 +158,7 @@
             }
             100 = {
                 monthly_piety = 0.1
-                learning_per_piety_level = 1
                 health = 0.25
-                ignore_negative_culture_opinion = yes
                 no_prowess_loss_from_age = yes
             }
         }
@@ -189,54 +167,43 @@
         presence = {
             10 = {
                 monthly_piety = 0.1
-                general_opinion = 3
             }
             20 = {
                 monthly_piety = 0.1
-                general_opinion = 3
                 owned_personal_scheme_success_chance_add = 5
                 personal_scheme_phase_duration_add = -5
             }
             30 = {
                 monthly_piety = 0.1
-                general_opinion = 3
             }
             40 = {
                 monthly_piety = 0.1
-                general_opinion = 3
                 owned_personal_scheme_success_chance_add = 5
                 personal_scheme_phase_duration_add = -5
             }
             50 = {
                 monthly_piety = 0.1
-                diplomacy_per_piety_level = 1
                 max_personal_schemes_add = 1
                 monthly_dynasty_prestige_mult = 0.15
             }
             60 = {
                 monthly_piety = 0.1
-                general_opinion = 3
             }
             70 = {
                 monthly_piety = 0.1
-                general_opinion = 3
                 owned_personal_scheme_success_chance_add = 5
                 personal_scheme_phase_duration_add = -5
             }
             80 = {
                 monthly_piety = 0.1
-                general_opinion = 3
                 owned_personal_scheme_success_chance_add = 5
                 personal_scheme_phase_duration_add = -5
             }
             90 = {
                 monthly_piety = 0.1
-                general_opinion = 3
             }
             100 = {
                 monthly_piety = 0.1
-                diplomacy_per_piety_level = 1
-                max_personal_schemes_add = 1
                 monthly_dynasty_prestige_mult = 0.20
                 no_prowess_loss_from_age = yes
             }
@@ -264,8 +231,6 @@
             }
             50 = {
                 monthly_piety = 0.1
-                stewardship_per_piety_level = 1
-                domain_limit = 1
                 monthly_income = 0.5
             }
             60 = {
@@ -288,8 +253,6 @@
             }
             100 = {
                 monthly_piety = 0.1
-                stewardship_per_piety_level = 1
-                domain_limit = 1
                 monthly_income = 0.5
                 no_prowess_loss_from_age = yes
             }
@@ -299,52 +262,52 @@
         shadows = {
             10 = {
                 monthly_piety = 0.1
+                dread_baseline_add = 2.5
                 owned_hostile_scheme_success_chance_add = 5
-                enemy_hostile_scheme_success_chance_add = -7
             }
             20 = {
                 monthly_piety = 0.1
+                dread_baseline_add = 2.5
                 owned_hostile_scheme_success_chance_add = 5
-                enemy_hostile_scheme_success_chance_add = -7
             }
             30 = {
                 monthly_piety = 0.1
+                dread_baseline_add = 2.5
                 owned_hostile_scheme_success_chance_add = 5
-                enemy_hostile_scheme_success_chance_add = -7
             }
             40 = {
                 monthly_piety = 0.1
+                dread_baseline_add = 2.5
                 owned_hostile_scheme_success_chance_add = 5
-                enemy_hostile_scheme_success_chance_add = -7
             }
             50 = {
                 monthly_piety = 0.1
-                intrigue_per_piety_level = 1
+                dread_baseline_add = 2.5
                 max_hostile_schemes_add = 1
             }
             60 = {
                 monthly_piety = 0.1
+                dread_baseline_add = 2.5
                 owned_hostile_scheme_success_chance_add = 5
-                enemy_hostile_scheme_success_chance_add = -7
             }
             70 = {
                 monthly_piety = 0.1
+                dread_baseline_add = 2.5
                 owned_hostile_scheme_success_chance_add = 5
-                enemy_hostile_scheme_success_chance_add = -7
             }
             80 = {
                 monthly_piety = 0.1
+                dread_baseline_add = 2.5
                 owned_hostile_scheme_success_chance_add = 5
-                enemy_hostile_scheme_success_chance_add = -7
             }
             90 = {
                 monthly_piety = 0.1
+                dread_baseline_add = 2.5
                 owned_hostile_scheme_success_chance_add = 5
-                enemy_hostile_scheme_success_chance_add = -7
             }
             100 = {
                 monthly_piety = 0.1
-                intrigue_per_piety_level = 1
+                dread_baseline_add = 2.5
                 max_hostile_schemes_add = 1
                 owned_hostile_scheme_success_chance_max_add = 15
                 no_prowess_loss_from_age = yes
