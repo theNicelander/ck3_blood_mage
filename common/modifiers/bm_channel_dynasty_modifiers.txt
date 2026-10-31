@@ -45,7 +45,7 @@ dynasty_blood_warband_modifier_1 = {
 	monthly_piety = 0.1
 	martial = 1
 	prowess = 1
-	knight_effectiveness_mult = 0.05
+	knight_effectiveness_mult = 0.1
 	dread_baseline_add = 5
 }
 
@@ -56,7 +56,7 @@ dynasty_blood_warband_modifier_2 = {
 	martial = 2
 	prowess = 2
 	knight_limit = 2
-	knight_effectiveness_mult = 0.10
+	knight_effectiveness_mult = 0.20
 	advantage = 2
 	dread_baseline_add = 10
 }
@@ -68,7 +68,7 @@ dynasty_blood_warband_modifier_3 = {
 	martial = 4
 	prowess = 4
 	knight_limit = 3
-	knight_effectiveness_mult = 0.20
+	knight_effectiveness_mult = 0.35
 	advantage = 4
 	dread_baseline_add = 15
 	martial_per_piety_level = 1
@@ -168,8 +168,8 @@ dynasty_blood_mastery_modifier_2 = {
 	learning = 2
 	monthly_lifestyle_xp_gain_mult = 0.10
 	stress_gain_mult = -0.10
+	stress_loss_mult = 0.1
 	monthly_piety_gain_mult = 0.10
-	max_learn_language_schemes_add = 2
 }
 
 dynasty_blood_mastery_modifier_3 = {
@@ -179,8 +179,9 @@ dynasty_blood_mastery_modifier_3 = {
 	learning = 4
 	monthly_lifestyle_xp_gain_mult = 0.20
 	stress_gain_mult = -0.20
+	stress_loss_mult = 0.2
 	monthly_piety_gain_mult = 0.20
-	max_learn_language_schemes_add = 3
+	max_learn_language_schemes_add = 1
 	learning_per_piety_level = 1
 	ignore_negative_culture_opinion = yes
 }
