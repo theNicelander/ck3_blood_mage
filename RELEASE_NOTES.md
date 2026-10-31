@@ -13,7 +13,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - Blood Mage tracks Bloodline and Hematurgy: 10-step cadence (taxes, trait inheritance, dynasty prestige, hostile scheme power and defence).
 - Blood Knight tracks Vanguard (army speed, advantage, supply, prowess) and Slaughter (prowess, knight limit and effectiveness).
 - Blood Knights can initiate spouse, children and kin (+5 Vanguard XP for dynasty), and empower family even if landed or outside their court.
-- **Blood Power** secondary trait with six mirrored tracks (Dynasty, Warband, Mastery, Presence, Prosperity, Shadows) on a 10/20/50/100 XP cadence; every 10 XP adds +0.1 monthly Piety and flat monthly lifestyle XP in the matching skill; streamlined to up to 4 core personal modifiers per track.
+- **Blood Power** secondary trait with six mirrored tracks (Dynasty, Warband, Mastery, Presence, Prosperity, Shadows) structured into five milestone tiers (10, 30, 50, 70, 100 XP) with scaling monthly Piety (+0.1 to +1.0), flat monthly lifestyle XP (+5 to +50/mo), and a tight suite of 3–4 core personal modifiers per track culminating in an Age Prowess Lock.
 - Track XP sources rebalanced: healing grants Benediction, family rites and childbirth grant Ancient/Benediction, congenital manifestation grants XP by attribute.
 - Regiments: **Blood Berserkers** (heavy shock infantry, Devotion 2+) and **Blood-Bound Behemoths** (siege-capable monsters, Devotion 4+), Piety-maintained.
 - Crimson Sworn-Guard court position and Crimson Warrior champions.

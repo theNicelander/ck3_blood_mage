@@ -5,9 +5,10 @@ Living technical specification for the Blood Power subsystem.
 ## Executive Summary
 
 - **What:** Secondary lifestyle trait `lifestyle_blood_power`. 6 progression tracks (`dynasty`, `warband`, `mastery`, `presence`, `prosperity`, `shadows`), max 100 XP each.
-- **Universal Piety Baseline:** Every track grants **+0.1 Monthly Piety** per 10 XP tier (10–100 XP), totaling **+1.0 Monthly Piety** per maxed track (up to **+6.0 Monthly Piety** across all 6 maxed tracks).
-- **1:1 Devotion Scaling:** Each track grants **+1 [Stat] per Devotion Level** at 50 XP and another **+1** at 100 XP (**+2 Total** per maxed track).
-- **Flat Monthly Lifestyle XP:** Every 10 XP in a track yields **+5 flat monthly Lifestyle XP** (paid silently every quarter via `quarterly_playable_pulse` as **+15 XP per quarter**, up to **+50/mo = +150/quarter** at 100 XP).
+- **5-Tier Progression Structure:** Each track consolidates into 5 distinct milestones at **10, 30, 50, 70, and 100 XP** (instead of 10 incremental steps), with maximum 3–4 thematic modifiers per discipline.
+- **Universal Piety Baseline:** Tracks grant scaling Monthly Piety at every tier: **+0.1** (10 XP), **+0.3** (30 XP), **+0.5** (50 XP), **+0.7** (70 XP), and **+1.0** (100 XP), totaling up to **+6.0 Monthly Piety** across all 6 maxed disciplines.
+- **Age Prowess Lock:** Every maxed track at 100 XP grants `no_prowess_loss_from_age = yes`.
+- **Flat Monthly Lifestyle XP:** Every 10 XP in a track yields **+5 flat monthly Lifestyle XP** (paid silently every quarter via `quarterly_playable_pulse` as **+15 XP per quarter**, scaling from **+5/mo** at 10 XP up to **+50/mo = +150/quarter** at 100 XP):
   - `presence` -> **Diplomacy** Lifestyle XP
   - `warband` -> **Martial** Lifestyle XP
   - `prosperity` -> **Stewardship** Lifestyle XP
@@ -18,21 +19,22 @@ Living technical specification for the Blood Power subsystem.
 - **Advancement:** Cast Major Blood Magic Grimoire (`bm_cast_blood_magic_major_decision` -> `bm_cast_blood_magic_major.001` -> `bm_blood_power_event.001`).
   - Cost: 150 Piety + consumes `lifeforce_modifier_major`. Req: `piety_level >= 1`. Cooldown: none. Zero-cost backout allows returning to Grimoire freely.
   - XP Gain: +3 `enlightenment` XP (Blood Mage & Blood Knight) + 10 XP in chosen power track (via `add_blood_power_xp`).
+  - Dynasty Synergy: Active House Covenants grant a yearly roll (50% / 67% / 100% chance based on covenant tier) to award +1 XP in the matching track.
   - Fallback: Once all 6 tracks reach 100 XP, unlocks `Versatility` option granting 10-year `temporary_buff_self` and rolls for permanent skill/prowess increases.
 
 ## Track Benefits Table
 
-Each track spans 10 levels (10 to 100 XP, +10 XP per channel). Modifiers stack additively. Universal Vitality is omitted to prevent tooltip clutter since `lifestyle_blood_mage` and `lifestyle_blood_knight` already grant vitality:
+Each track spans 5 distinct progression tiers (10, 30, 50, 70, 100 XP). In CK3 engine mechanics, each tier block defines the complete set of active modifiers for that rank:
 
-| Track | +10 (Per 10 XP Step) | +20 (Every 20 XP Step) | +50 (Milestone) | +100 (Cumulative Total) |
-| :--- | :--- | :--- | :--- | :--- |
-| **Presence** (`presence`) | `+0.1` Piety/mo, `+5` Diplomacy XP/mo | `+5` Personal Scheme Success, `-5d` Scheme Phase | `+1` Max Personal Schemes, `+15%` Monthly Renown | **`+1.0` Piety/mo**, **`+20` Personal Scheme Success**, **`-20d` Scheme Phase**, **`+1` Max Personal Schemes**, **`+35%` Monthly Renown**, **`+50` Diplomacy XP/mo**, `no_prowess_loss_from_age = yes` |
-| **Warband** (`warband`) | `+0.1` Piety/mo, `+7%` Knight Eff, `+5` Martial XP/mo | `+1` Advantage (20/40/70/80), `+1` Knight Limit (30/60/90) | (advancement steps) | **`+1.0` Piety/mo**, **`+56%` Knight Eff**, **`+3` Knight Limit**, **`+4` Advantage**, **`+50` Martial XP/mo**, `no_prowess_loss_from_age = yes` |
-| **Prosperity** (`prosperity`) | `+0.1` Piety/mo, `+8%` Income Mult, `+5` Stewardship XP/mo | `-5%` Men-at-Arms Maintenance | `+0.5` Gold/mo | **`+1.0` Piety/mo**, **`+64%` Income Mult**, **`+1.0` Gold/mo**, **`-20%` MaA Maintenance**, **`+50` Stewardship XP/mo**, `no_prowess_loss_from_age = yes` |
-| **Shadows** (`shadows`) | `+0.1` Piety/mo, `+2.5` Dread Baseline, `+5` Hostile Scheme Success, `+5` Intrigue XP/mo | (steady progression) | `+1` Max Hostile Schemes | **`+1.0` Piety/mo**, **`+25` Dread Baseline**, **`+40` Hostile Scheme Success**, **`+2` Max Hostile Schemes**, **`+15%` Own Max Cap**, **`+50` Intrigue XP/mo**, `no_prowess_loss_from_age = yes` |
-| **Mastery** (`mastery`) | `+0.1` Piety/mo, `+5%` Lifestyle XP Mult, `-5%` Stress Gain, `+5` Learning XP/mo | `+5%` Piety Mult | `+0.25` Health | **`+1.0` Piety/mo**, **`+40%` Lifestyle XP Mult**, **`+20%` Piety Mult**, **`-40%` Stress Gain**, **`+0.50` Health**, **`+50` Learning XP/mo**, `no_prowess_loss_from_age = yes` |
-| **Legacy** (`dynasty`) | `+0.1` Piety/mo, `+8%` Strengthen, `+5` Focus XP/mo | `+5` Years of Fertility | `-50%` Inbreeding Chance | **`+1.0` Piety/mo**, **`+64%` Strengthen**, **`+20` Years of Fertility**, **Inbreeding Immunity (`-100%`)**, **`+50` Focus XP/mo**, `no_prowess_loss_from_age = yes` |
-| *Versatility* | N/A | N/A | N/A | Granted when all 6 tracks are at 100 XP: 10-year buff `temporary_buff_self` (`+2` all stats, `+4` Prowess) + rolls for permanent stat/prowess increases |
+| Track | 10 XP (Starter) | 30 XP (Medium) | 50 XP (Milestone) | 70 XP (Major) | 100 XP (Capstone) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Presence** (`presence`) | `+0.1` Piety/mo, `+5` Scheme Success, `-5d` Scheme Phase | `+0.3` Piety/mo, `+10` Scheme Success, `-10d` Scheme Phase | `+0.5` Piety/mo, `+15` Scheme Success, `-15d` Scheme Phase, `+15%` Renown | `+0.7` Piety/mo, `+20` Scheme Success, `-20d` Scheme Phase, `+15%` Renown | **`+1.0` Piety/mo**, **`+25` Scheme Success**, **`-25d` Scheme Phase**, **`+35%` Renown**, **`+1` Max Personal Schemes**, `no_prowess_loss_from_age = yes` |
+| **Warband** (`warband`) | `+0.1` Piety/mo, `+15%` Knight Eff, `+1` Knight Limit | `+0.3` Piety/mo, `+30%` Knight Eff, `+2` Knight Limit | `+0.5` Piety/mo, `+45%` Knight Eff, `+2` Knight Limit, `+2` Advantage | `+0.7` Piety/mo, `+60%` Knight Eff, `+3` Knight Limit, `+2` Advantage | **`+1.0` Piety/mo**, **`+75%` Knight Eff**, **`+4` Knight Limit**, **`+5` Advantage**, `no_prowess_loss_from_age = yes` |
+| **Prosperity** (`prosperity`) | `+0.1` Piety/mo, `+15%` Income Mult, `-5%` MaA Maint | `+0.3` Piety/mo, `+30%` Income Mult, `-10%` MaA Maint | `+0.5` Piety/mo, `+45%` Income Mult, `-15%` MaA Maint, `+0.5` Gold/mo | `+0.7` Piety/mo, `+60%` Income Mult, `-20%` MaA Maint, `+0.5` Gold/mo | **`+1.0` Piety/mo**, **`+75%` Income Mult**, **`-25%` MaA Maint**, **`+1.5` Gold/mo**, `no_prowess_loss_from_age = yes` |
+| **Shadows** (`shadows`) | `+0.1` Piety/mo, `+8` Hostile Success, `+5` Dread Base | `+0.3` Piety/mo, `+16` Hostile Success, `+10` Dread Base | `+0.5` Piety/mo, `+24` Hostile Success, `+15` Dread Base, `+1` Max Hostile Schemes | `+0.7` Piety/mo, `+32` Hostile Success, `+20` Dread Base, `+1` Max Hostile Schemes | **`+1.0` Piety/mo**, **`+40` Hostile Success**, **`+25` Dread Base**, **`+2` Max Hostile Schemes**, **`+15` Own Max Cap**, `no_prowess_loss_from_age = yes` |
+| **Mastery** (`mastery`) | `+0.1` Piety/mo, `+8%` Lifestyle XP, `-8%` Stress Gain | `+0.3` Piety/mo, `+16%` Lifestyle XP, `-16%` Stress Gain | `+0.5` Piety/mo, `+24%` Lifestyle XP, `-24%` Stress Gain, `+0.25` Health | `+0.7` Piety/mo, `+32%` Lifestyle XP, `-32%` Stress Gain, `+0.25` Health | **`+1.0` Piety/mo**, **`+40%` Lifestyle XP**, **`-40%` Stress Gain**, **`+0.50` Health**, **`+20%` Piety Mult**, `no_prowess_loss_from_age = yes` |
+| **Legacy** (`dynasty`) | `+0.1` Piety/mo, `+15%` Strengthen, `+4` Fertile Yrs | `+0.3` Piety/mo, `+30%` Strengthen, `+8` Fertile Yrs | `+0.5` Piety/mo, `+45%` Strengthen, `+12` Fertile Yrs, `-50%` Inbreeding | `+0.7` Piety/mo, `+60%` Strengthen, `+16` Fertile Yrs, `-50%` Inbreeding | **`+1.0` Piety/mo**, **`+75%` Strengthen**, **`+20` Fertile Yrs**, **Inbreeding Immunity (`-100%`)**, `no_prowess_loss_from_age = yes` |
+| *Versatility* | N/A | N/A | N/A | N/A | Granted when all 6 tracks are at 100 XP: 10-year buff `temporary_buff_self` (`+2` all stats, `+4` Prowess) + rolls for permanent stat/prowess increases |
 
 ## Key Mechanics
 
