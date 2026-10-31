@@ -40,8 +40,6 @@ dynasty_blood_presence_modifier_3 = {
 	short_reign_duration_mult = -0.20
 	long_reign_bonus_mult = 0.20
 	diplomacy_per_piety_level = 1
-	diplomacy_per_prestige_level = 1
-	max_personal_schemes_add = 1
 }
 
 # 2. Covenant of Warband
@@ -51,8 +49,8 @@ dynasty_blood_warband_modifier_1 = {
 	monthly_piety = 0.1
 	martial = 1
 	prowess = 1
-	knight_limit = 1
 	knight_effectiveness_mult = 0.10
+	army_damage_mult = 0.03
 }
 
 dynasty_blood_warband_modifier_2 = {
@@ -61,8 +59,8 @@ dynasty_blood_warband_modifier_2 = {
 	monthly_piety = 0.3
 	martial = 2
 	prowess = 2
-	knight_limit = 3
 	knight_effectiveness_mult = 0.20
+	army_damage_mult = 0.06
 	movement_speed = 0.06
 	men_at_arms_cap = 1
 	men_at_arms_limit = 1
@@ -75,13 +73,12 @@ dynasty_blood_warband_modifier_3 = {
 	monthly_piety = 0.5
 	martial = 4
 	prowess = 4
-	knight_limit = 5
-	knight_effectiveness_mult = 0.20
-	movement_speed = 0.12
-	men_at_arms_cap = 2
-	men_at_arms_limit = 2
+	knight_effectiveness_mult = 0.25
+	army_damage_mult = 0.10
+	movement_speed = 0.10
+	men_at_arms_cap = 1
+	men_at_arms_limit = 1
 	martial_per_piety_level = 1
-	martial_per_prestige_level = 1
 }
 
 # 3. Covenant of Prosperity
@@ -105,9 +102,8 @@ dynasty_blood_prosperity_modifier_2 = {
 	monthly_income_mult = 0.06
 	build_gold_cost = -0.06
 	domicile_build_gold_cost = -0.06
-	men_at_arms_maintenance = -0.06
+	men_at_arms_maintenance = -0.05
 	development_growth_factor = 0.05
-	domain_limit = 1
 	stewardship_per_piety_level = 1
 }
 
@@ -120,11 +116,10 @@ dynasty_blood_prosperity_modifier_3 = {
 	monthly_income_mult = 0.12
 	build_gold_cost = -0.12
 	domicile_build_gold_cost = -0.12
-	men_at_arms_maintenance = -0.12
+	men_at_arms_maintenance = -0.10
 	development_growth_factor = 0.10
-	domain_limit = 2
+	domain_limit = 1
 	stewardship_per_piety_level = 1
-	stewardship_per_prestige_level = 1
 }
 
 # 4. Covenant of Shadow
@@ -143,8 +138,8 @@ dynasty_blood_shadows_modifier_2 = {
 	monthly_piety = 0.3
 	intrigue = 2
 	owned_hostile_scheme_success_chance_add = 6
-	enemy_hostile_scheme_success_chance_add = -15
-	owned_scheme_secrecy_add = 6
+	enemy_hostile_scheme_success_chance_add = -10
+	owned_scheme_secrecy_add = 5
 	enemy_hostile_scheme_success_chance_max_add = -5
 	intrigue_per_piety_level = 1
 }
@@ -155,12 +150,10 @@ dynasty_blood_shadows_modifier_3 = {
 	monthly_piety = 0.5
 	intrigue = 4
 	owned_hostile_scheme_success_chance_add = 12
-	enemy_hostile_scheme_success_chance_add = -30
-	owned_scheme_secrecy_add = 12
+	enemy_hostile_scheme_success_chance_add = -20
+	owned_scheme_secrecy_add = 10
 	enemy_hostile_scheme_success_chance_max_add = -10
 	intrigue_per_piety_level = 1
-	intrigue_per_prestige_level = 1
-	max_hostile_schemes_add = 1
 }
 
 # 5. Covenant of Mastery
@@ -180,9 +173,9 @@ dynasty_blood_mastery_modifier_2 = {
 	learning = 2
 	monthly_lifestyle_xp_gain_mult = 0.10
 	stress_gain_mult = -0.10
-	stress_loss_mult = 0.15
-	monthly_piety_gain_mult = 0.10
-	health = 0.2
+	stress_loss_mult = 0.10
+	monthly_piety_gain_mult = 0.05
+	health = 0.15
 	learning_per_piety_level = 1
 }
 
@@ -193,11 +186,10 @@ dynasty_blood_mastery_modifier_3 = {
 	learning = 4
 	monthly_lifestyle_xp_gain_mult = 0.20
 	stress_gain_mult = -0.20
-	stress_loss_mult = 0.30
-	monthly_piety_gain_mult = 0.20
-	health = 0.4
+	stress_loss_mult = 0.20
+	monthly_piety_gain_mult = 0.10
+	health = 0.3
 	learning_per_piety_level = 1
-	learning_per_prestige_level = 1
 	ignore_negative_culture_opinion = yes
 }
 
@@ -206,7 +198,7 @@ dynasty_blood_legacy_modifier_1 = {
 	icon = bm_covenant_legacy
 
 	monthly_piety = 0.1
-	health = 0.2
+	health = 0.15
 	life_expectancy = 2
 	years_of_fertility = 2
 	fertility = 0.05
@@ -216,14 +208,14 @@ dynasty_blood_legacy_modifier_2 = {
 	icon = bm_covenant_legacy
 
 	monthly_piety = 0.3
-	health = 0.4
-	life_expectancy = 5
-	years_of_fertility = 5
+	health = 0.3
+	life_expectancy = 4
+	years_of_fertility = 4
 	fertility = 0.10
 	positive_random_genetic_chance = 0.10
 	positive_inactive_inheritance_chance = 0.10
 	genetic_trait_strengthen_chance = 0.10
-	inbreeding_chance = -0.20
+	inbreeding_chance = -0.15
 	prowess_per_piety_level = 1
 }
 
@@ -231,14 +223,13 @@ dynasty_blood_legacy_modifier_3 = {
 	icon = bm_covenant_legacy
 
 	monthly_piety = 0.5
-	health = 0.8
-	life_expectancy = 10
-	years_of_fertility = 10
+	health = 0.5
+	life_expectancy = 8
+	years_of_fertility = 8
 	fertility = 0.20
 	positive_random_genetic_chance = 0.20
 	positive_inactive_inheritance_chance = 0.20
 	genetic_trait_strengthen_chance = 0.20
-	inbreeding_chance = -0.40
+	inbreeding_chance = -0.30
 	prowess_per_piety_level = 1
-	prowess_per_prestige_level = 1
 }

@@ -1,4 +1,9 @@
-﻿lifestyle_blood_power = {
+﻿@bm_power_50_100_piety_mult = 0.10
+@bm_power_50_100_life_expectancy = 3
+@bm_power_50_100_health = 0.25
+@bm_power_50_100_piety_per_knight = 0.02
+
+lifestyle_blood_power = {
     category = lifestyle
     flag = reweaving_lifestyle_trait
     icon = bm_interactions.dds
@@ -11,31 +16,45 @@
         presence = {
             10 = {
                 monthly_piety = 0.1
-                owned_personal_scheme_success_chance_add = 5
-                personal_scheme_phase_duration_add = -5
+                monthly_prestige = 0.2
+                monthly_prestige_gain_mult = 0.06
+                owned_personal_scheme_success_chance_add = 8
             }
             30 = {
                 monthly_piety = 0.2
-                owned_personal_scheme_success_chance_add = 5
-                personal_scheme_phase_duration_add = -5
+                monthly_prestige = 0.2
+                monthly_prestige_gain_mult = 0.06
+                owned_personal_scheme_success_chance_add = 8
             }
             50 = {
                 monthly_piety = 0.2
-                owned_personal_scheme_success_chance_add = 5
-                personal_scheme_phase_duration_add = -5
-                monthly_dynasty_prestige_mult = 0.15
+                monthly_prestige = 0.3
+                monthly_prestige_gain_mult = 0.06
+                owned_personal_scheme_success_chance_add = 8
+                max_personal_schemes_add = 1
+                # Common 50 Milestone
+                monthly_piety_gain_mult = @bm_power_50_100_piety_mult
+                life_expectancy = @bm_power_50_100_life_expectancy
+                health = @bm_power_50_100_health
+                monthly_piety_gain_per_knight_add = @bm_power_50_100_piety_per_knight
             }
             70 = {
                 monthly_piety = 0.2
-                owned_personal_scheme_success_chance_add = 5
-                personal_scheme_phase_duration_add = -5
+                monthly_prestige = 0.3
+                monthly_prestige_gain_mult = 0.06
+                owned_personal_scheme_success_chance_add = 8
             }
             100 = {
                 monthly_piety = 0.3
-                owned_personal_scheme_success_chance_add = 5
-                personal_scheme_phase_duration_add = -5
-                monthly_dynasty_prestige_mult = 0.20
+                monthly_prestige = 0.5
+                monthly_prestige_gain_mult = 0.06
+                owned_personal_scheme_success_chance_add = 8
                 max_personal_schemes_add = 1
+                # Common 100 Capstone
+                monthly_piety_gain_mult = @bm_power_50_100_piety_mult
+                life_expectancy = @bm_power_50_100_life_expectancy
+                health = @bm_power_50_100_health
+                monthly_piety_gain_per_knight_add = @bm_power_50_100_piety_per_knight
                 no_prowess_loss_from_age = yes
             }
         }
@@ -44,29 +63,48 @@
         warband = {
             10 = {
                 monthly_piety = 0.1
-                knight_effectiveness_mult = 0.15
                 knight_limit = 1
+                knight_effectiveness_mult = 0.15
+                advantage = 2
+                movement_speed = 0.05
             }
             30 = {
                 monthly_piety = 0.2
-                knight_effectiveness_mult = 0.15
                 knight_limit = 1
+                knight_effectiveness_mult = 0.15
+                advantage = 2
+                movement_speed = 0.05
             }
             50 = {
                 monthly_piety = 0.2
+                knight_limit = 2
                 knight_effectiveness_mult = 0.15
                 advantage = 2
+                movement_speed = 0.05
+                # Common 50 Milestone
+                monthly_piety_gain_mult = @bm_power_50_100_piety_mult
+                life_expectancy = @bm_power_50_100_life_expectancy
+                health = @bm_power_50_100_health
+                monthly_piety_gain_per_knight_add = @bm_power_50_100_piety_per_knight
             }
             70 = {
                 monthly_piety = 0.2
+                knight_limit = 2
                 knight_effectiveness_mult = 0.15
-                knight_limit = 1
+                advantage = 2
+                movement_speed = 0.05
             }
             100 = {
                 monthly_piety = 0.3
+                knight_limit = 2
                 knight_effectiveness_mult = 0.15
-                knight_limit = 1
-                advantage = 3
+                advantage = 2
+                movement_speed = 0.05
+                # Common 100 Capstone
+                monthly_piety_gain_mult = @bm_power_50_100_piety_mult
+                life_expectancy = @bm_power_50_100_life_expectancy
+                health = @bm_power_50_100_health
+                monthly_piety_gain_per_knight_add = @bm_power_50_100_piety_per_knight
                 no_prowess_loss_from_age = yes
             }
         }
@@ -75,30 +113,48 @@
         prosperity = {
             10 = {
                 monthly_piety = 0.1
-                monthly_income_mult = 0.15
-                men_at_arms_maintenance = -0.05
+                monthly_income = 0.3
+                men_at_arms_maintenance = -0.06
+                domain_tax_mult = 0.10
+                domicile_monthly_gold_mult = 0.15
             }
             30 = {
                 monthly_piety = 0.2
-                monthly_income_mult = 0.15
-                men_at_arms_maintenance = -0.05
+                monthly_income = 0.3
+                men_at_arms_maintenance = -0.06
+                domain_tax_mult = 0.10
+                domicile_monthly_gold_mult = 0.15
             }
             50 = {
                 monthly_piety = 0.2
-                monthly_income_mult = 0.15
-                men_at_arms_maintenance = -0.05
-                monthly_income = 0.5
+                monthly_income = 0.4
+                men_at_arms_maintenance = -0.06
+                domain_tax_mult = 0.10
+                domicile_monthly_gold_mult = 0.15
+                # Common 50 Milestone
+                monthly_piety_gain_mult = @bm_power_50_100_piety_mult
+                life_expectancy = @bm_power_50_100_life_expectancy
+                health = @bm_power_50_100_health
+                monthly_piety_gain_per_knight_add = @bm_power_50_100_piety_per_knight
             }
             70 = {
                 monthly_piety = 0.2
-                monthly_income_mult = 0.15
-                men_at_arms_maintenance = -0.05
+                monthly_income = 0.4
+                men_at_arms_maintenance = -0.06
+                domain_tax_mult = 0.10
+                domicile_monthly_gold_mult = 0.15
             }
             100 = {
                 monthly_piety = 0.3
-                monthly_income_mult = 0.15
-                men_at_arms_maintenance = -0.05
-                monthly_income = 1.0
+                monthly_income = 0.6
+                men_at_arms_maintenance = -0.06
+                domain_tax_mult = 0.10
+                domicile_monthly_gold_mult = 0.15
+                # Common 100 Capstone
+                monthly_piety_gain_mult = @bm_power_50_100_piety_mult
+                life_expectancy = @bm_power_50_100_life_expectancy
+                health = @bm_power_50_100_health
+                monthly_piety_gain_per_knight_add = @bm_power_50_100_piety_per_knight
                 no_prowess_loss_from_age = yes
             }
         }
@@ -108,30 +164,44 @@
             10 = {
                 monthly_piety = 0.1
                 owned_hostile_scheme_success_chance_add = 8
-                dread_baseline_add = 5
+                enemy_hostile_scheme_success_chance_add = -10
+                dread_baseline_add = 6
             }
             30 = {
                 monthly_piety = 0.2
                 owned_hostile_scheme_success_chance_add = 8
-                dread_baseline_add = 5
+                enemy_hostile_scheme_success_chance_add = -10
+                dread_baseline_add = 6
             }
             50 = {
                 monthly_piety = 0.2
                 owned_hostile_scheme_success_chance_add = 8
-                dread_baseline_add = 5
+                enemy_hostile_scheme_success_chance_add = -10
+                dread_baseline_add = 6
                 max_hostile_schemes_add = 1
+                # Common 50 Milestone
+                monthly_piety_gain_mult = @bm_power_50_100_piety_mult
+                life_expectancy = @bm_power_50_100_life_expectancy
+                health = @bm_power_50_100_health
+                monthly_piety_gain_per_knight_add = @bm_power_50_100_piety_per_knight
             }
             70 = {
                 monthly_piety = 0.2
                 owned_hostile_scheme_success_chance_add = 8
-                dread_baseline_add = 5
+                enemy_hostile_scheme_success_chance_add = -10
+                dread_baseline_add = 6
             }
             100 = {
                 monthly_piety = 0.3
                 owned_hostile_scheme_success_chance_add = 8
-                dread_baseline_add = 5
+                enemy_hostile_scheme_success_chance_add = -10
+                dread_baseline_add = 6
                 max_hostile_schemes_add = 1
-                owned_hostile_scheme_success_chance_max_add = 15
+                # Common 100 Capstone
+                monthly_piety_gain_mult = @bm_power_50_100_piety_mult
+                life_expectancy = @bm_power_50_100_life_expectancy
+                health = @bm_power_50_100_health
+                monthly_piety_gain_per_knight_add = @bm_power_50_100_piety_per_knight
                 no_prowess_loss_from_age = yes
             }
         }
@@ -140,31 +210,43 @@
         mastery = {
             10 = {
                 monthly_piety = 0.1
-                monthly_lifestyle_xp_gain_mult = 0.08
-                stress_gain_mult = -0.08
+                monthly_lifestyle_xp_gain_mult = 0.10
+                stress_gain_mult = -0.10
+                stress_loss_mult = 0.15
             }
             30 = {
                 monthly_piety = 0.2
-                monthly_lifestyle_xp_gain_mult = 0.08
-                stress_gain_mult = -0.08
+                monthly_lifestyle_xp_gain_mult = 0.10
+                stress_gain_mult = -0.10
+                stress_loss_mult = 0.15
             }
             50 = {
                 monthly_piety = 0.2
-                monthly_lifestyle_xp_gain_mult = 0.08
-                stress_gain_mult = -0.08
-                health = 0.25
+                monthly_lifestyle_xp_gain_mult = 0.10
+                stress_gain_mult = -0.10
+                stress_loss_mult = 0.15
+                # Common 50 Milestone
+                monthly_piety_gain_mult = @bm_power_50_100_piety_mult
+                life_expectancy = @bm_power_50_100_life_expectancy
+                health = @bm_power_50_100_health
+                monthly_piety_gain_per_knight_add = @bm_power_50_100_piety_per_knight
             }
             70 = {
                 monthly_piety = 0.2
-                monthly_lifestyle_xp_gain_mult = 0.08
-                stress_gain_mult = -0.08
+                monthly_lifestyle_xp_gain_mult = 0.10
+                stress_gain_mult = -0.10
+                stress_loss_mult = 0.15
             }
             100 = {
                 monthly_piety = 0.3
-                monthly_lifestyle_xp_gain_mult = 0.08
-                stress_gain_mult = -0.08
-                health = 0.25
-                monthly_piety_gain_mult = 0.20
+                monthly_lifestyle_xp_gain_mult = 0.10
+                stress_gain_mult = -0.10
+                stress_loss_mult = 0.15
+                # Common 100 Capstone
+                monthly_piety_gain_mult = @bm_power_50_100_piety_mult
+                life_expectancy = @bm_power_50_100_life_expectancy
+                health = @bm_power_50_100_health
+                monthly_piety_gain_per_knight_add = @bm_power_50_100_piety_per_knight
                 no_prowess_loss_from_age = yes
             }
         }
@@ -174,29 +256,39 @@
             10 = {
                 monthly_piety = 0.1
                 genetic_trait_strengthen_chance = 0.15
-                years_of_fertility = 4
+                years_of_fertility = 5
             }
             30 = {
                 monthly_piety = 0.2
                 genetic_trait_strengthen_chance = 0.15
-                years_of_fertility = 4
+                years_of_fertility = 5
             }
             50 = {
                 monthly_piety = 0.2
                 genetic_trait_strengthen_chance = 0.15
-                years_of_fertility = 4
+                years_of_fertility = 5
                 inbreeding_chance = -0.50
+                # Common 50 Milestone
+                monthly_piety_gain_mult = @bm_power_50_100_piety_mult
+                life_expectancy = @bm_power_50_100_life_expectancy
+                health = @bm_power_50_100_health
+                monthly_piety_gain_per_knight_add = @bm_power_50_100_piety_per_knight
             }
             70 = {
                 monthly_piety = 0.2
                 genetic_trait_strengthen_chance = 0.15
-                years_of_fertility = 4
+                years_of_fertility = 5
             }
             100 = {
                 monthly_piety = 0.3
                 genetic_trait_strengthen_chance = 0.15
-                years_of_fertility = 4
+                years_of_fertility = 5
                 inbreeding_chance = -0.50
+                # Common 100 Capstone
+                monthly_piety_gain_mult = @bm_power_50_100_piety_mult
+                life_expectancy = @bm_power_50_100_life_expectancy
+                health = @bm_power_50_100_health
+                monthly_piety_gain_per_knight_add = @bm_power_50_100_piety_per_knight
                 no_prowess_loss_from_age = yes
             }
         }

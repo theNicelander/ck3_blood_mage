@@ -13,7 +13,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - Blood Mage tracks Bloodline and Hematurgy: 10-step cadence (taxes, trait inheritance, dynasty prestige, hostile scheme power and defence).
 - Blood Knight tracks Vanguard (army speed, advantage, supply, prowess) and Slaughter (prowess, knight limit and effectiveness).
 - Blood Knights can initiate spouse, children and kin (+5 Vanguard XP for dynasty), and empower family even if landed or outside their court.
-- **Blood Power** secondary trait with six mirrored tracks (Dynasty, Warband, Mastery, Presence, Prosperity, Shadows) structured into five milestone tiers (10, 30, 50, 70, 100 XP) with scaling monthly Piety (+0.1 to +1.0), flat monthly lifestyle XP (+5 to +50/mo), and a tight suite of 3–4 core personal modifiers per track culminating in an Age Prowess Lock.
+- **Blood Power** secondary trait with six mirrored tracks (Dynasty, Warband, Mastery, Presence, Prosperity, Shadows) structured into five milestone tiers (10, 30, 50, 70, 100 XP) with scaling monthly Piety (+0.1 to +1.0), flat monthly lifestyle XP (+5 to +50/mo), shared 50 & 100 XP milestone bonuses (+10% monthly Piety mult, +3 life expectancy, +0.25 health, +0.02 monthly Piety per knight), and a tight suite of 3–4 high-impact personal modifiers delivering 2x–3x the power of House Covenants, culminating in an Age Prowess Lock.
 - Track XP sources rebalanced: healing grants Benediction, family rites and childbirth grant Ancient/Benediction, congenital manifestation grants XP by attribute.
 - Regiments: **Blood Berserkers** (heavy shock infantry, Devotion 2+) and **Blood-Bound Behemoths** (siege-capable monsters, Devotion 4+), Piety-maintained.
 - Crimson Sworn-Guard court position and Crimson Warrior champions.
@@ -36,7 +36,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - **Major**: Channel Blood Power, Condense into Superior Lifeforce, Education Enhancement, Major Runes, Congenital Manifestation, House Blessing.
 - **Superior**: Blood Golem creation, 5★ Master Educations, Secondary Educations, Capstone Runes.
 - **Attune Lifeforce**: choose your yearly lifestyle XP bonus (applied January 1st).
-- **Empower Dynasty Bloodline**: six three-tier House Covenants (Presence, Warband, Prosperity, Shadow, Mastery, Legacy) granting monthly Piety (+0.1/+0.3/+0.5), skill, +1 attribute per Devotion at Tier 2, and +1 attribute per Devotion & Prestige at Tier 3 alongside broad house-wide bonuses (Men-at-Arms, speed, domain limit, opinion); active covenants roll annually to award +1 XP in the matching Blood Power track for living kin.
+- **Empower Dynasty Bloodline**: six three-tier House Covenants (Presence, Warband, Prosperity, Shadow, Mastery, Legacy) granting monthly Piety (+0.1/+0.3/+0.5), skill, and +1 attribute per Devotion at Tier 2 and Tier 3 alongside balanced house-wide bonuses (Men-at-Arms, army damage, speed, domain limit, opinion); active covenants roll annually to award +1 XP in the matching Blood Power track for living kin.
 - Education advancement needs Devotion Level 1+/2+/3+/4+ for 1★→2★ … 4★→5★; only Superior magic (5★, Embrace New Education) costs Devotion or needs 1000 Piety plus Superior Lifeforce.
 - **Heal Ailment**: cures up to 32 ailments, purges all 11 stress vices (−50 Stress), and treats old-age traits (Minor: 1 Minor Lifeforce + 50 Piety; Major tier for deeper rejuvenation).
 - **Influence Personality**: Learning contest to swap a trait or culture (5-year cooldown on success, 1 year on failure).
