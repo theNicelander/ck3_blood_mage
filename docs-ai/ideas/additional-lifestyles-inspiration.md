@@ -2,7 +2,7 @@
 
 > [!NOTE]
 > Source: Steam Workshop Item `3433842378` (`Additional Lifestyles` for CK3 1.20).
-> Extracted for inspiration on lifestyle tracks, perk progression, character interactions, and potential rework ideas for the Blood Mage covenant system (notably Covenant of Mastery).
+> Extracted for inspiration on lifestyle tracks, perk progression, and character interactions.
 
 ---
 
@@ -151,16 +151,7 @@ Each lifestyle includes a linear 7-perk progression tree providing incremental c
 
 ## 4. Key Takeaways & Ideas for Blood Mages
 
-### 1. Ideas for Covenant of Mastery Rework
-The *Worldly* and *Founder* trees suggest much better directions than language schemes:
-* **"Worldly / Activity Mastery" Approach:**
-  * Grant boosts to all hobby and activity tracks (`Hunter`, `Blademaster`, `Physician`, `Traveler`) along with `+30%` Lifestyle XP.
-* **"Founder / Dynastic Supremacy" Approach:**
-  * Instead of languages, give dynasty bonuses: `+1.0` Monthly Renown, `+10` Dynasty Opinion, and enhanced heir training/succession retention.
-* **"Stat Mastery / Polymath" Approach (inspired by the 5th skill trees):**
-  * Flat bonus to all core stats (`+1` at T1, `+2` at T2, `+3` at T3) or stat gains scaling with Devotion/Fame.
-
-### 2. Ideas for Blood Mage Character Interactions
+### Ideas for Blood Mage Character Interactions
 * **Intimidate / Enthrall (from Homelander & Scoundrel):**
   * Blood Mages could use Lifeforce to intimidate claimants into renouncing claims, or mind-break prisoners into obedient thralls.
 * **Offer Blood / Siphon (from Worldly & Deceiver):**

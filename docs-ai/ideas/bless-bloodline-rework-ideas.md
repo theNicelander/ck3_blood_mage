@@ -1,59 +1,18 @@
-# Ideas: Bless Bloodline Rework
+# Ideas: Bless Bloodline Further Expansions
 
-Living brainstorm document exploring deeper, more thematic alternatives and expansions for the **Bless Kin's Blood** interaction (`bm_bless_bloodline_interaction`).
+Living brainstorm document exploring deeper, more thematic alternatives and expansions for the **Blood Blessing** rites (`bm_blood_blessing_interaction`).
 
 ---
 
 ## Context & Current State
 
-Currently, the interaction grants a flat character modifier to a child or dynasty kin:
-- **Cost:** 35 Piety + Minor Lifeforce (`lifeforce_modifier_minor`)
-- **Reward:** +2 Bloodline XP, +25 opinion
-- **Effect:** `bm_blessed_blood_modifier` (+1 all stats, +10% fertility, +0.25 health) for 10 years
+The initial modal rites (Blood of Iron, Blood of the Sovereign, Sanguine Crucible) and the Anoint Heir succession mechanics have been implemented in `bm_blood_blessing_interaction` and `bm_heir_succession_effects.txt`.
 
-### Problem Statement
-While functional, this effect acts as a generic clerical stat buff. It lacks the visceral flavor of occult lineage manipulation, provides no branching strategic utility (an heir, a champion, and a breeding consort receive the exact same buff), and does not leverage CK3's dynastic systems (congenital traits, succession crises, house renown, or reciprocal blood bonds).
+This document retains remaining unimplemented ideas for genetic manipulation, reciprocal blood conduits, and tier-based mastery scaling.
 
 ---
 
-## 1. Specialized Blood Rites (Modal Purpose-Driven Infusion)
-
-### Concept
-Transform the interaction from an automatic one-click buff into a modal rite where the caster selects an infusion tailored to the kin's station and destiny.
-
-### Mechanics & Options
-- **Blood of Iron (Champions & Knights):**
-  - *Target:* Knights, commanders, or martial scions.
-  - *Effects:* +4 Prowess, +2 Martial, +20% Knight Effectiveness, reduced duel fatality chance, and lowered probability of being captured or slain in battle.
-  - *Occult Flavor:* The blood surges thick in their limbs, hardening skin and accelerating clot formation in combat.
-- **Blood of the Sovereign (Heirs & Rulers):**
-  - *Target:* Landed dynasty members or primary heirs.
-  - *Effects:* +2 Stewardship, +2 Diplomacy, +1 Domain Limit, +10 Vassal Opinion, and -50% Short Reign penalty duration.
-  - *Occult Flavor:* The infusion exudes an aura of ancient majesty and command, bending lesser wills.
-- **Sanguine Crucible (Consorts & Breeders):**
-  - *Target:* Unlanded kin in matrilineal/patrilineal breeding arrangements.
-  - *Effects:* +35% Fertility, immunity to childbirth mortality, and **+50% inheritance chance for positive congenital traits** on their children.
-  - *Occult Flavor:* The seed and womb are purposed through blood alchemy to draw forth latent greatness.
-
----
-
-## 2. The Sanguine Heirloom (Anointed Succession & Heir Preparation)
-
-### Concept
-Differentiate between ordinary kin and the designated heir. Casting the rite on a **primary heir** enacts an *Anointment of Blood* that bridges power across generations and safeguards dynastic stability.
-
-### Mechanics
-- **Active Buff (Pre-Inheritance):**
-  - The heir receives enhanced health (+0.5), plague resistance, and +15 Dynasty Opinion.
-  - Vassals of Blóðtrú faith view the heir as divinely marked (+10 opinion).
-- **Inheritance Catalyst (On Death of the Blood Mage):**
-  - When the player character dies, the blessed heir inherits a stored reserve of **Major Lifeforce** (`lifeforce_modifier_major`) channeled during the rites of succession.
-  - If the heir is not yet a Blood Mage, they immediately gain the trait or receive **+10 starting Bloodline XP**.
-  - Short reign penalty is halved against all vassals sharing the caster's dynasty or faith.
-
----
-
-## 3. Sanguine Eugenics (Awakening Latent Genetics & Flaw Purging)
+## 1. Sanguine Eugenics (Awakening Latent Genetics & Flaw Purging)
 
 ### Concept
 CK3 gameplay centers heavily around the genetics meta. Blood magic is uniquely positioned to directly alter congenital traits and genetic expression.
@@ -71,7 +30,7 @@ CK3 gameplay centers heavily around the genetics meta. Blood magic is uniquely p
 
 ---
 
-## 4. Symbiotic Sanguine Tether (The Reciprocal Blood Conduit)
+## 2. Symbiotic Sanguine Tether (The Reciprocal Blood Conduit)
 
 ### Concept
 Blood magic is rarely pure charity. An occult tether links the caster and the blessed kin, creating a mutual feedback loop of protection and harvested vitality.
@@ -86,7 +45,7 @@ Blood magic is rarely pure charity. An occult tether links the caster and the bl
 
 ---
 
-## 5. Bloodline Mastery Scaling (Tier-Based Dynastic Flowering)
+## 3. Bloodline Mastery Scaling (Tier-Based Dynastic Flowering)
 
 ### Concept
 Scale the potency and scope of the blessing dynamically with the caster's **Bloodline Track** progress (Ranks 1 to 5).
@@ -107,9 +66,7 @@ Scale the potency and scope of the blessing dynamically with the caster's **Bloo
 
 ## Suggested Implementation Roadmap
 
-1. **Phase 1 (Quick Win / Modal Specialization):**
-   - Replace the single flat modifier with a 3-way modal selection in `bm_bless_bloodline_interaction` (Iron for warriors, Sovereign for heirs, Crucible for spouses/breeders).
-2. **Phase 2 (Genetic & Heir Hooks):**
-   - Integrate a congenital upgrade chance into the Crucible path and succession resilience into the Sovereign path.
-3. **Phase 3 (Tether & Feedback):**
+1. **Phase 1 (Genetic Hooks):**
+   - Integrate a congenital upgrade chance into the Crucible path.
+2. **Phase 2 (Tether & Feedback):**
    - Add on-actions for birth and combat survival to trigger feedback effects for the caster.

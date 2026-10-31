@@ -131,6 +131,7 @@ Annual pulse (3-year cooldown) for player Blood Mages and Blood Knights:
 
 ## Version history
 
+- v1.20.64: Add playable Icelandic culture with equal martial custom, saga name lists, and modular game start setup gated by campaign game rule (on by default)
 - v1.20.63: Align House Covenants (7 to 6) and Blood Power (6 tracks); universal monthly Piety and 1:1 Devotion attribute scaling; yearly covenant pulse feeds matching Blood Power tracks
 - v1.20.62: Standardize event exits to "Back"; reduce manifest/rune/hunt cooldowns; lower Blood Berserker provision cost
 - v1.20.61: Restructure Manifest Congenital Traits (Ranks 1–3 in Major, Ranks 4–5 in Superior with 3/4/5/6/7/8 XP scaled by trait rank); unify positive interactions into Blood Blessing and hostile harvesting into Blood Drain; rename Heal Affliction to Heal Healing

@@ -1,0 +1,47 @@
+﻿on_game_start = {
+	on_actions = {
+		bm_setup_icelandic_culture_on_start
+	}
+}
+
+bm_setup_icelandic_culture_on_start = {
+	trigger = {
+		has_game_rule = bm_icelandic_culture_enabled
+	}
+	effect = {
+		title:d_iceland = {
+			every_de_jure_county = {
+				set_county_culture = culture:bm_icelandic
+				holder = {
+					set_culture = culture:bm_icelandic
+					every_courtier_or_guest = {
+						set_culture = culture:bm_icelandic
+					}
+					every_close_or_extended_family_member = {
+						limit = {
+							OR = {
+								is_courtier_of = prev
+								is_pool_guest = yes
+								is_landed = no
+							}
+						}
+						set_culture = culture:bm_icelandic
+					}
+				}
+				every_county_province = {
+					barony = {
+						holder = {
+							if = {
+								limit = { exists = this }
+								set_culture = culture:bm_icelandic
+								every_courtier_or_guest = {
+									set_culture = culture:bm_icelandic
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
