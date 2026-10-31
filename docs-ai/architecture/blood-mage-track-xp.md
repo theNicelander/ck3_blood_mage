@@ -5,7 +5,7 @@ XP sources, Piety costs, Lifeforce sinks/sources, cooldowns for all lifestyle tr
 ## Shared Rules
 
 - **Engine cap**: 100 XP max per track (10 tiers at 10 XP steps). Overflow discarded.
-- **Traits/tracks**: `lifestyle_blood_mage` (`ancient`, `enlightenment`, `bloodline`, `benediction`, `hematurgy`); `lifestyle_blood_knight` (`vanguard`, `slaughter` + shared `ancient`, `benediction`, `enlightenment`); `lifestyle_blood_power` (`dynasty`, `fury`, `mastery`, `presence`, `prosperity`, `shadows`).
+- **Traits/tracks**: `lifestyle_blood_mage` (`ancient`, `enlightenment`, `bloodline`, `benediction`, `hematurgy`); `lifestyle_blood_knight` (`vanguard`, `slaughter` + shared `ancient`, `benediction`, `enlightenment`); `lifestyle_blood_power` (`dynasty`, `warband`, `mastery`, `presence`, `prosperity`, `shadows`).
 - **Vitality baseline**: Tiers 10–40 and 60–90 on `lifestyle_blood_mage` and `lifestyle_blood_knight` give `+0.1` Health, `+2.5` Life Expectancy, `+1.25` Year Fertility, `+1` Epidemic Resistance. Tiers 50 and 100 skip it (milestone/capstone). `lifestyle_blood_power` has no vitality baseline.
 - **Apex Devotion (Levels 6–8)**: 100 XP capstones of `ancient`, `enlightenment`, `benediction` each grant `character_max_piety_level_add = 1` (Mage and Knight).
 - **Age lock**: every track capstone at 100 XP grants `no_prowess_loss_from_age = yes`.

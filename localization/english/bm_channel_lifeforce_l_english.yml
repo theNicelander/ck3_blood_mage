@@ -23,15 +23,15 @@
   bm_covenant_status_major_to_superior: "#bold Current House Rank:#! #V Major (Tier II)#!  |  #bold Next Upgrade:#! #Y Superior (Tier III)#!"
 
   # Dynamic Button Labels
-  bm_covenant_charisma_button: "[GetPlayer.Custom('BM_COVENANT_CHARISMA_BUTTON_LABEL')]"
-  bm_covenant_charisma_label_none: "Covenant of Majesty (None)"
-  bm_covenant_charisma_label_minor: "Covenant of Majesty (Minor)"
-  bm_covenant_charisma_label_major: "Covenant of Majesty (Major)"
+  bm_covenant_majesty_button: "[GetPlayer.Custom('BM_COVENANT_MAJESTY_BUTTON_LABEL')]"
+  bm_covenant_majesty_label_none: "Covenant of Majesty (None)"
+  bm_covenant_majesty_label_minor: "Covenant of Majesty (Minor)"
+  bm_covenant_majesty_label_major: "Covenant of Majesty (Major)"
 
-  bm_covenant_fury_button: "[GetPlayer.Custom('BM_COVENANT_FURY_BUTTON_LABEL')]"
-  bm_covenant_fury_label_none: "Covenant of Warband (None)"
-  bm_covenant_fury_label_minor: "Covenant of Warband (Minor)"
-  bm_covenant_fury_label_major: "Covenant of Warband (Major)"
+  bm_covenant_warband_button: "[GetPlayer.Custom('BM_COVENANT_WARBAND_BUTTON_LABEL')]"
+  bm_covenant_warband_label_none: "Covenant of Warband (None)"
+  bm_covenant_warband_label_minor: "Covenant of Warband (Minor)"
+  bm_covenant_warband_label_major: "Covenant of Warband (Major)"
 
   bm_covenant_prosperity_button: "[GetPlayer.Custom('BM_COVENANT_PROSPERITY_BUTTON_LABEL')]"
   bm_covenant_prosperity_label_none: "Covenant of Prosperity (None)"
@@ -43,42 +43,34 @@
   bm_covenant_shadows_label_minor: "Covenant of Shadow (Minor)"
   bm_covenant_shadows_label_major: "Covenant of Shadow (Major)"
 
-  bm_covenant_insight_button: "[GetPlayer.Custom('BM_COVENANT_INSIGHT_BUTTON_LABEL')]"
-  bm_covenant_insight_label_none: "Covenant of Insight (None)"
-  bm_covenant_insight_label_minor: "Covenant of Insight (Minor)"
-  bm_covenant_insight_label_major: "Covenant of Insight (Major)"
+  bm_covenant_mastery_button: "[GetPlayer.Custom('BM_COVENANT_MASTERY_BUTTON_LABEL')]"
+  bm_covenant_mastery_label_none: "Covenant of Mastery (None)"
+  bm_covenant_mastery_label_minor: "Covenant of Mastery (Minor)"
+  bm_covenant_mastery_label_major: "Covenant of Mastery (Major)"
 
   bm_covenant_legacy_button: "[GetPlayer.Custom('BM_COVENANT_LEGACY_BUTTON_LABEL')]"
   bm_covenant_legacy_label_none: "Covenant of Legacy (None)"
   bm_covenant_legacy_label_minor: "Covenant of Legacy (Minor)"
   bm_covenant_legacy_label_major: "Covenant of Legacy (Major)"
 
-  bm_covenant_expertise_button: "[GetPlayer.Custom('BM_COVENANT_EXPERTISE_BUTTON_LABEL')]"
-  bm_covenant_expertise_label_none: "Covenant of Mastery (None)"
-  bm_covenant_expertise_label_minor: "Covenant of Mastery (Minor)"
-  bm_covenant_expertise_label_major: "Covenant of Mastery (Major)"
-
   # Covenant Options & Tooltips
-  bm_covenant_charisma: "Covenant of Majesty"
-  bm_covenant_charisma_tooltip: "[GetPlayer.Custom('BM_COVENANT_CHARISMA_STATUS_HEADER')]\n\nEnhances diplomacy, prestige, renown, attraction, and personal schemes across your entire house.\n\n#P Tier I (Minor):#! +1 Diplomacy, +5 General, Attraction & Dynasty Opinion, +0.25 Prestige/mo, +5% Renown, +5 Personal Scheme Success.\n#V Tier II (Major):#! +2 Diplomacy, +10 General, Attraction & Dynasty Opinion, +0.50 Prestige/mo, +10% Renown, +10 Personal Scheme Success, -5d Scheme Phase.\n#Y Tier III (Superior):#! +4 Diplomacy, +15 General & Dynasty Opinion, +20 Attraction Opinion, +1.0 Prestige/mo, +15% Renown, +15 Personal Scheme Success, -10d Scheme Phase, #bold +1 Max Personal Schemes#!."
+  bm_covenant_majesty: "Covenant of Majesty"
+  bm_covenant_majesty_tooltip: "[GetPlayer.Custom('BM_COVENANT_MAJESTY_STATUS_HEADER')]\n\nEnhances diplomacy, opinion, personal schemes, and dynastic prestige across your entire house.\n\n#P Tier I (Minor):#! +0.1 Piety/mo, +0.1 Prestige/mo, +1 Diplomacy, +2 General & Dynasty Opinion, +5 Personal Scheme Success.\n#V Tier II (Major):#! +0.3 Piety/mo, +0.3 Prestige/mo, +2 Diplomacy, +5 General & Dynasty Opinion, +10 Personal Scheme Success, -10% Short Reign Duration, +10% Long Reign Bonus.\n#Y Tier III (Superior):#! +0.5 Piety/mo, +0.5 Prestige/mo, +4 Diplomacy, +10 General & Dynasty Opinion, +20 Personal Scheme Success, -20% Short Reign Duration, +20% Long Reign Bonus, #bold +1 Diplomacy per Devotion Level#!, #bold +1 Max Personal Schemes#!."
 
-  bm_covenant_fury: "Covenant of Warband"
-  bm_covenant_fury_tooltip: "[GetPlayer.Custom('BM_COVENANT_FURY_STATUS_HEADER')]\n\nEmpowers warriors, knights, travel safety, speed, and army movement across your entire house.\n\n#P Tier I (Minor):#! +1 Martial, +2 Prowess, +10% Knight Effectiveness, +1 Knight Limit, +10% Travel Speed, +5 Travel Safety.\n#V Tier II (Major):#! +2 Martial, +4 Prowess, +20% Knight Effectiveness, +1 Knight Limit, +15% Travel Speed, +10 Travel Safety, +5% Movement Speed, +2 Advantage.\n#Y Tier III (Superior):#! +4 Martial, +6 Prowess, +30% Knight Effectiveness, +2 Knight Limit, +20% Travel Speed, +15 Travel Safety, +10% Movement Speed, +4 Advantage, #bold +1 Men-at-Arms Regiment Size#!."
+  bm_covenant_warband: "Covenant of Warband"
+  bm_covenant_warband_tooltip: "[GetPlayer.Custom('BM_COVENANT_WARBAND_STATUS_HEADER')]\n\nEmpowers martial prowess, knights, advantage, and dread across your entire house.\n\n#P Tier I (Minor):#! +0.1 Piety/mo, +1 Martial, +1 Prowess, +5% Knight Effectiveness, +5 Dread Baseline.\n#V Tier II (Major):#! +0.3 Piety/mo, +2 Martial, +2 Prowess, +2 Knight Limit, +10% Knight Effectiveness, +2 Advantage, +10 Dread Baseline.\n#Y Tier III (Superior):#! +0.5 Piety/mo, +4 Martial, +4 Prowess, +3 Knight Limit, +20% Knight Effectiveness, +4 Advantage, +15 Dread Baseline, #bold +1 Martial per Devotion Level#!, #bold +1 Men-at-Arms Regiments & Size#!."
 
   bm_covenant_prosperity: "Covenant of Prosperity"
-  bm_covenant_prosperity_tooltip: "[GetPlayer.Custom('BM_COVENANT_PROSPERITY_STATUS_HEADER')]\n\nDraws wealth, cheaper troop upkeep, reduced camp/estate/holding construction costs, and development across your house.\n\n#P Tier I (Minor):#! +1 Stewardship, +0.3 Gold/mo, +5% Income Mult, -5% MaA Upkeep, -5% Domicile & Holding Build Cost.\n#V Tier II (Major):#! +2 Stewardship, +0.6 Gold/mo, +10% Income Mult, -10% MaA Upkeep, -10% Domicile & Holding Build Cost & Speed, +10% Development Growth.\n#Y Tier III (Superior):#! +4 Stewardship, +1.2 Gold/mo, +15% Income Mult, -15% MaA Upkeep, -15% Domicile & Holding Build Cost & Speed, +20% Development Growth, #bold +1 Domain Limit#!."
+  bm_covenant_prosperity_tooltip: "[GetPlayer.Custom('BM_COVENANT_PROSPERITY_STATUS_HEADER')]\n\nDraws wealth, holding development, cheaper troop upkeep, and domain capacity across your house.\n\n#P Tier I (Minor):#! +0.1 Piety/mo, +0.1 Gold/mo, +1 Stewardship, +3% Income Mult, -3% Holding & Domicile Build Cost.\n#V Tier II (Major):#! +0.3 Piety/mo, +0.3 Gold/mo, +2 Stewardship, +6% Income Mult, -6% Holding & Domicile Build Cost, -6% MaA Maintenance, +5% Development Growth.\n#Y Tier III (Superior):#! +0.5 Piety/mo, +0.5 Gold/mo, +4 Stewardship, +12% Income Mult, -12% Holding & Domicile Build Cost, -12% MaA Maintenance, +10% Development Growth, #bold +1 Stewardship per Devotion Level#!, #bold +1 Domain Limit#!."
 
   bm_covenant_shadows: "Covenant of Shadow"
-  bm_covenant_shadows_tooltip: "[GetPlayer.Custom('BM_COVENANT_SHADOWS_STATUS_HEADER')]\n\nWeaves occult secrecy, dread, hostile scheme speed, and impenetrable plot warding across your house.\n\n#P Tier I (Minor):#! +1 Intrigue, +5 Hostile Scheme Success, -5d Scheme Phase, +5 Secrecy, -5 Enemy Scheme Success, +5d Enemy Scheme Phase, +5 Dread.\n#V Tier II (Major):#! +2 Intrigue, +10 Hostile Scheme Success, -10d Scheme Phase, +10 Secrecy, -10 Enemy Scheme Success, +10d Enemy Scheme Phase, -10% Enemy Max Scheme Success Cap, +10 Dread.\n#Y Tier III (Superior):#! +4 Intrigue, +15 Hostile Scheme Success, -15d Scheme Phase, +15 Secrecy, -15 Enemy Scheme Success, +15d Enemy Scheme Phase, -20% Enemy Max Scheme Success Cap, +15 Dread, #bold +1 Max Hostile Schemes#!."
+  bm_covenant_shadows_tooltip: "[GetPlayer.Custom('BM_COVENANT_SHADOWS_STATUS_HEADER')]\n\nWeaves occult secrecy, dread, hostile scheme success, and defensive warding across your house.\n\n#P Tier I (Minor):#! +0.1 Piety/mo, +1 Intrigue, +3 Hostile Scheme Success, -3 Enemy Hostile Scheme Success.\n#V Tier II (Major):#! +0.3 Piety/mo, +2 Intrigue, +6 Hostile Scheme Success, -6 Enemy Hostile Scheme Success, +6 Scheme Secrecy, +5 Dread Baseline, -5 Enemy Max Success Cap.\n#Y Tier III (Superior):#! +0.5 Piety/mo, +4 Intrigue, +12 Hostile Scheme Success, -12 Enemy Hostile Scheme Success, +12 Scheme Secrecy, +10 Dread Baseline, -10 Enemy Max Success Cap, #bold +1 Intrigue per Devotion Level#!, #bold +1 Max Hostile Schemes#!."
 
-  bm_covenant_insight: "Covenant of Insight"
-  bm_covenant_insight_tooltip: "[GetPlayer.Custom('BM_COVENANT_INSIGHT_STATUS_HEADER')]\n\nAccelerates learning, monthly piety, stress resilience, cultural acceptance, and devotion scaling across your house.\n\n#P Tier I (Minor):#! +1 Learning, +0.25 Piety/mo, +5% Piety Mult, -5% Stress Gain, +5% Stress Loss, +5% Cultural Acceptance.\n#V Tier II (Major):#! +2 Learning, +0.50 Piety/mo, +10% Piety Mult, -10% Stress Gain, +10% Stress Loss, +10% Cultural Acceptance, +10% Devotion Impact.\n#Y Tier III (Superior):#! +4 Learning, +1.0 Piety/mo, +20% Piety Mult, -15% Stress Gain, +15% Stress Loss, +15% Cultural Acceptance, +20% Devotion Impact, #bold +1 Learning per Devotion Level#!."
+  bm_covenant_mastery: "Covenant of Mastery"
+  bm_covenant_mastery_tooltip: "[GetPlayer.Custom('BM_COVENANT_MAJESTY_STATUS_HEADER')]\n\nAccelerates lifestyle experience, learning, languages, piety generation, and stress resilience across your house.\n\n#P Tier I (Minor):#! +0.1 Piety/mo, +1 Learning, +5% Lifestyle XP, -5% Stress Gain.\n#V Tier II (Major):#! +0.3 Piety/mo, +2 Learning, +10% Lifestyle XP, -10% Stress Gain, +10% Piety Mult, +2 Language Slots.\n#Y Tier III (Superior):#! +0.5 Piety/mo, +4 Learning, +20% Lifestyle XP, -20% Stress Gain, +20% Piety Mult, +3 Language Slots, #bold +1 Learning per Devotion Level#!, #bold Ignore Negative Culture Opinion#!."
 
   bm_covenant_legacy: "Covenant of Legacy"
-  bm_covenant_legacy_tooltip: "[GetPlayer.Custom('BM_COVENANT_LEGACY_STATUS_HEADER')]\n\nFortifies genetics, fertility, longevity, health, and disease resistance across all living and future generations of your house.\n\n#P Tier I (Minor):#! +0.25 Health, +3 Life Expectancy, +3 Fertile Years, +10% Fertility, +10% Positive Congenital Chance, +10% Inactive Inheritance, +10% Strengthen Congenital, -15% Inbreeding & Negative Traits, +3 Epidemic Resistance.\n#V Tier II (Major):#! +0.50 Health, +6 Life Expectancy, +6 Fertile Years, +20% Fertility, +20% Positive Congenital Chance, +20% Inactive Inheritance, +20% Strengthen Congenital, -30% Inbreeding & Negative Traits, +6 Epidemic Resistance.\n#Y Tier III (Superior):#! +1.0 Health, +12 Life Expectancy, +12 Fertile Years, +30% Fertility, +35% Positive Congenital Chance, +35% Inactive Inheritance, +35% Strengthen Congenital, #bold -50% Inbreeding & Negative Traits#!, +10 Epidemic Resistance."
-
-  bm_covenant_expertise: "Covenant of Mastery"
-  bm_covenant_expertise_tooltip: "[GetPlayer.Custom('BM_COVENANT_EXPERTISE_STATUS_HEADER')]\n\nAccelerates lifestyle experience, language learning, and imperial fame scaling across your house.\n\n#P Tier I (Minor):#! +10% Lifestyle XP, -10d Learn Language Phase, +1 Language Slot.\n#V Tier II (Major):#! +20% Lifestyle XP, -20d Learn Language Phase, +2 Language Slots, +10% Fame Impact.\n#Y Tier III (Superior):#! +30% Lifestyle XP, -30d Learn Language Phase, +3 Language Slots, +20% Fame Impact, #bold Ignore Negative Culture Opinion#!."
+  bm_covenant_legacy_tooltip: "[GetPlayer.Custom('BM_COVENANT_LEGACY_STATUS_HEADER')]\n\nFortifies genetics, fertility, longevity, health, and inbreeding resistance across your entire house.\n\n#P Tier I (Minor):#! +0.1 Piety/mo, +0.2 Health, +2 Life Expectancy, +2 Fertile Years, +5% Fertility.\n#V Tier II (Major):#! +0.3 Piety/mo, +0.4 Health, +5 Life Expectancy, +5 Fertile Years, +10% Fertility, +10% Positive Congenital & Strengthen, -20% Inbreeding Chance.\n#Y Tier III (Superior):#! +0.5 Piety/mo, +0.8 Health, +10 Life Expectancy, +10 Fertile Years, +20% Fertility, +20% Positive Congenital & Strengthen, -40% Inbreeding Chance, #bold +1 Prowess per Devotion Level#!."
 
   # Toasts
   bm_empower_bloodline_tier_1_toast: "Covenant Minor (Tier I)"
@@ -86,13 +78,13 @@
   bm_empower_bloodline_tier_3_toast: "Covenant Superior (Tier III)"
 
   # Tooltips on completion
-  bm_covenant_charisma_tier_1_tt: "Your house has woven the Minor Covenant of Majesty (Tier I)."
-  bm_covenant_charisma_tier_2_tt: "Your house has elevated the Major Covenant of Majesty (Tier II)."
-  bm_covenant_charisma_tier_3_tt: "Your house has perfected the Superior Covenant of Majesty (Tier III)!"
+  bm_covenant_majesty_tier_1_tt: "Your house has woven the Minor Covenant of Majesty (Tier I)."
+  bm_covenant_majesty_tier_2_tt: "Your house has elevated the Major Covenant of Majesty (Tier II)."
+  bm_covenant_majesty_tier_3_tt: "Your house has perfected the Superior Covenant of Majesty (Tier III)!"
 
-  bm_covenant_fury_tier_1_tt: "Your house has woven the Minor Covenant of Warband (Tier I)."
-  bm_covenant_fury_tier_2_tt: "Your house has elevated the Major Covenant of Warband (Tier II)."
-  bm_covenant_fury_tier_3_tt: "Your house has perfected the Superior Covenant of Warband (Tier III)!"
+  bm_covenant_warband_tier_1_tt: "Your house has woven the Minor Covenant of Warband (Tier I)."
+  bm_covenant_warband_tier_2_tt: "Your house has elevated the Major Covenant of Warband (Tier II)."
+  bm_covenant_warband_tier_3_tt: "Your house has perfected the Superior Covenant of Warband (Tier III)!"
 
   bm_covenant_prosperity_tier_1_tt: "Your house has woven the Minor Covenant of Prosperity (Tier I)."
   bm_covenant_prosperity_tier_2_tt: "Your house has elevated the Major Covenant of Prosperity (Tier II)."
@@ -102,17 +94,13 @@
   bm_covenant_shadows_tier_2_tt: "Your house has elevated the Major Covenant of Shadow (Tier II)."
   bm_covenant_shadows_tier_3_tt: "Your house has perfected the Superior Covenant of Shadow (Tier III)!"
 
-  bm_covenant_insight_tier_1_tt: "Your house has woven the Minor Covenant of Insight (Tier I)."
-  bm_covenant_insight_tier_2_tt: "Your house has elevated the Major Covenant of Insight (Tier II)."
-  bm_covenant_insight_tier_3_tt: "Your house has perfected the Superior Covenant of Insight (Tier III)!"
+  bm_covenant_mastery_tier_1_tt: "Your house has woven the Minor Covenant of Mastery (Tier I)."
+  bm_covenant_mastery_tier_2_tt: "Your house has elevated the Major Covenant of Mastery (Tier II)."
+  bm_covenant_mastery_tier_3_tt: "Your house has perfected the Superior Covenant of Mastery (Tier III)!"
 
   bm_covenant_legacy_tier_1_tt: "Your house has woven the Minor Covenant of Legacy (Tier I)."
   bm_covenant_legacy_tier_2_tt: "Your house has elevated the Major Covenant of Legacy (Tier II)."
   bm_covenant_legacy_tier_3_tt: "Your house has perfected the Superior Covenant of Legacy (Tier III)!"
-
-  bm_covenant_expertise_tier_1_tt: "Your house has woven the Minor Covenant of Mastery (Tier I)."
-  bm_covenant_expertise_tier_2_tt: "Your house has elevated the Major Covenant of Mastery (Tier II)."
-  bm_covenant_expertise_tier_3_tt: "Your house has perfected the Superior Covenant of Mastery (Tier III)!"
 
   # Yearly bloodline XP
   blood_mage_yearly_events.002.success: "Your house covenants granted you experience"
