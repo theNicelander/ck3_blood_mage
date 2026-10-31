@@ -1,5 +1,5 @@
 ﻿@bm_power_50_100_piety_mult = 0.10
-@bm_power_50_100_life_expectancy = 3
+@bm_power_50_100_life_expectancy = 5
 @bm_power_50_100_health = 0.25
 @bm_power_50_100_piety_per_knight = 0.02
 
@@ -16,18 +16,21 @@ lifestyle_blood_power = {
         presence = {
             10 = {
                 monthly_piety = 0.1
+                general_opinion = 5
                 monthly_prestige = 0.2
                 monthly_prestige_gain_mult = 0.06
                 owned_personal_scheme_success_chance_add = 8
             }
             30 = {
                 monthly_piety = 0.2
+                general_opinion = 5
                 monthly_prestige = 0.2
                 monthly_prestige_gain_mult = 0.06
                 owned_personal_scheme_success_chance_add = 8
             }
             50 = {
                 monthly_piety = 0.2
+                general_opinion = 5
                 monthly_prestige = 0.3
                 monthly_prestige_gain_mult = 0.06
                 owned_personal_scheme_success_chance_add = 8
@@ -40,12 +43,14 @@ lifestyle_blood_power = {
             }
             70 = {
                 monthly_piety = 0.2
+                general_opinion = 5
                 monthly_prestige = 0.3
                 monthly_prestige_gain_mult = 0.06
                 owned_personal_scheme_success_chance_add = 8
             }
             100 = {
                 monthly_piety = 0.3
+                general_opinion = 5
                 monthly_prestige = 0.5
                 monthly_prestige_gain_mult = 0.06
                 owned_personal_scheme_success_chance_add = 8
@@ -115,22 +120,22 @@ lifestyle_blood_power = {
                 monthly_piety = 0.1
                 monthly_income = 0.3
                 men_at_arms_maintenance = -0.06
-                domain_tax_mult = 0.10
-                domicile_monthly_gold_mult = 0.15
+                domain_tax_mult = 0.06
+                domicile_monthly_gold_mult = 0.06
             }
             30 = {
                 monthly_piety = 0.2
                 monthly_income = 0.3
                 men_at_arms_maintenance = -0.06
-                domain_tax_mult = 0.10
-                domicile_monthly_gold_mult = 0.15
+                domain_tax_mult = 0.06
+                domicile_monthly_gold_mult = 0.06
             }
             50 = {
                 monthly_piety = 0.2
                 monthly_income = 0.4
                 men_at_arms_maintenance = -0.06
-                domain_tax_mult = 0.10
-                domicile_monthly_gold_mult = 0.15
+                domain_tax_mult = 0.06
+                domicile_monthly_gold_mult = 0.06
                 # Common 50 Milestone
                 monthly_piety_gain_mult = @bm_power_50_100_piety_mult
                 life_expectancy = @bm_power_50_100_life_expectancy
@@ -141,15 +146,15 @@ lifestyle_blood_power = {
                 monthly_piety = 0.2
                 monthly_income = 0.4
                 men_at_arms_maintenance = -0.06
-                domain_tax_mult = 0.10
-                domicile_monthly_gold_mult = 0.15
+                domain_tax_mult = 0.06
+                domicile_monthly_gold_mult = 0.06
             }
             100 = {
                 monthly_piety = 0.3
                 monthly_income = 0.6
                 men_at_arms_maintenance = -0.06
-                domain_tax_mult = 0.10
-                domicile_monthly_gold_mult = 0.15
+                domain_tax_mult = 0.06
+                domicile_monthly_gold_mult = 0.06
                 # Common 100 Capstone
                 monthly_piety_gain_mult = @bm_power_50_100_piety_mult
                 life_expectancy = @bm_power_50_100_life_expectancy
@@ -212,19 +217,19 @@ lifestyle_blood_power = {
                 monthly_piety = 0.1
                 monthly_lifestyle_xp_gain_mult = 0.10
                 stress_gain_mult = -0.10
-                stress_loss_mult = 0.15
+                stress_loss_mult = 0.10
             }
             30 = {
                 monthly_piety = 0.2
                 monthly_lifestyle_xp_gain_mult = 0.10
                 stress_gain_mult = -0.10
-                stress_loss_mult = 0.15
+                stress_loss_mult = 0.10
             }
             50 = {
                 monthly_piety = 0.2
                 monthly_lifestyle_xp_gain_mult = 0.10
                 stress_gain_mult = -0.10
-                stress_loss_mult = 0.15
+                stress_loss_mult = 0.10
                 # Common 50 Milestone
                 monthly_piety_gain_mult = @bm_power_50_100_piety_mult
                 life_expectancy = @bm_power_50_100_life_expectancy
@@ -235,13 +240,13 @@ lifestyle_blood_power = {
                 monthly_piety = 0.2
                 monthly_lifestyle_xp_gain_mult = 0.10
                 stress_gain_mult = -0.10
-                stress_loss_mult = 0.15
+                stress_loss_mult = 0.10
             }
             100 = {
                 monthly_piety = 0.3
                 monthly_lifestyle_xp_gain_mult = 0.10
                 stress_gain_mult = -0.10
-                stress_loss_mult = 0.15
+                stress_loss_mult = 0.10
                 # Common 100 Capstone
                 monthly_piety_gain_mult = @bm_power_50_100_piety_mult
                 life_expectancy = @bm_power_50_100_life_expectancy
@@ -255,17 +260,17 @@ lifestyle_blood_power = {
         dynasty = {
             10 = {
                 monthly_piety = 0.1
-                genetic_trait_strengthen_chance = 0.15
+                genetic_trait_strengthen_chance = 0.10
                 years_of_fertility = 5
             }
             30 = {
                 monthly_piety = 0.2
-                genetic_trait_strengthen_chance = 0.15
+                genetic_trait_strengthen_chance = 0.10
                 years_of_fertility = 5
             }
             50 = {
                 monthly_piety = 0.2
-                genetic_trait_strengthen_chance = 0.15
+                genetic_trait_strengthen_chance = 0.10
                 years_of_fertility = 5
                 inbreeding_chance = -0.50
                 # Common 50 Milestone
@@ -276,12 +281,12 @@ lifestyle_blood_power = {
             }
             70 = {
                 monthly_piety = 0.2
-                genetic_trait_strengthen_chance = 0.15
+                genetic_trait_strengthen_chance = 0.10
                 years_of_fertility = 5
             }
             100 = {
                 monthly_piety = 0.3
-                genetic_trait_strengthen_chance = 0.15
+                genetic_trait_strengthen_chance = 0.10
                 years_of_fertility = 5
                 inbreeding_chance = -0.50
                 # Common 100 Capstone
