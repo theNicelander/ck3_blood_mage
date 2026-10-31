@@ -153,32 +153,32 @@ blood_mage_yearly_events.002 = {
             add_trait = lifestyle_blood_power
         }
 
-        # 1. Majesty (presence)
+        # 1. Presence (presence)
         if = {
             limit = {
-                house = { has_house_modifier = dynasty_blood_majesty_modifier_3 }
+                house = { has_house_modifier = dynasty_blood_presence_modifier_3 }
                 has_trait_xp = { trait = lifestyle_blood_power track = presence value < 100 }
             }
-            set_character_flag = bm_covenant_roll_majesty
+            set_character_flag = bm_covenant_roll_presence
         }
         else_if = {
             limit = {
-                house = { has_house_modifier = dynasty_blood_majesty_modifier_2 }
+                house = { has_house_modifier = dynasty_blood_presence_modifier_2 }
                 has_trait_xp = { trait = lifestyle_blood_power track = presence value < 100 }
             }
             random = {
                 chance = 67
-                set_character_flag = bm_covenant_roll_majesty
+                set_character_flag = bm_covenant_roll_presence
             }
         }
         else_if = {
             limit = {
-                house = { has_house_modifier = dynasty_blood_majesty_modifier_1 }
+                house = { has_house_modifier = dynasty_blood_presence_modifier_1 }
                 has_trait_xp = { trait = lifestyle_blood_power track = presence value < 100 }
             }
             random = {
                 chance = 50
-                set_character_flag = bm_covenant_roll_majesty
+                set_character_flag = bm_covenant_roll_presence
             }
         }
 
@@ -331,7 +331,7 @@ blood_mage_yearly_events.002 = {
         if = {
             limit = {
                 OR = {
-                    has_character_flag = bm_covenant_roll_majesty
+                    has_character_flag = bm_covenant_roll_presence
                     has_character_flag = bm_covenant_roll_warband
                     has_character_flag = bm_covenant_roll_prosperity
                     has_character_flag = bm_covenant_roll_shadows
@@ -343,13 +343,13 @@ blood_mage_yearly_events.002 = {
                 title = blood_mage_yearly_events.002.success
                 left_icon = root
                 if = {
-                    limit = { has_character_flag = bm_covenant_roll_majesty }
+                    limit = { has_character_flag = bm_covenant_roll_presence }
                     add_trait_xp = {
                         trait = lifestyle_blood_power
                         track = presence
                         value = 1
                     }
-                    remove_character_flag = bm_covenant_roll_majesty
+                    remove_character_flag = bm_covenant_roll_presence
                 }
                 if = {
                     limit = { has_character_flag = bm_covenant_roll_warband }

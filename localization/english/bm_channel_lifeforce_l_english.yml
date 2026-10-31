@@ -23,10 +23,10 @@
   bm_covenant_status_major_to_superior: "#bold Current House Rank:#! #V Major (Tier II)#!  |  #bold Next Upgrade:#! #Y Superior (Tier III)#!"
 
   # Dynamic Button Labels
-  bm_covenant_majesty_button: "[GetPlayer.Custom('BM_COVENANT_MAJESTY_BUTTON_LABEL')]"
-  bm_covenant_majesty_label_none: "Covenant of Majesty (None)"
-  bm_covenant_majesty_label_minor: "Covenant of Majesty (Minor)"
-  bm_covenant_majesty_label_major: "Covenant of Majesty (Major)"
+  bm_covenant_presence_button: "[GetPlayer.Custom('BM_COVENANT_PRESENCE_BUTTON_LABEL')]"
+  bm_covenant_presence_label_none: "Covenant of Presence (None)"
+  bm_covenant_presence_label_minor: "Covenant of Presence (Minor)"
+  bm_covenant_presence_label_major: "Covenant of Presence (Major)"
 
   bm_covenant_warband_button: "[GetPlayer.Custom('BM_COVENANT_WARBAND_BUTTON_LABEL')]"
   bm_covenant_warband_label_none: "Covenant of Warband (None)"
@@ -54,8 +54,8 @@
   bm_covenant_legacy_label_major: "Covenant of Legacy (Major)"
 
   # Covenant Options & Tooltips
-  bm_covenant_majesty: "Covenant of Majesty"
-  bm_covenant_majesty_tooltip: "[GetPlayer.Custom('BM_COVENANT_MAJESTY_STATUS_HEADER')]\n\nEnhances diplomacy, opinion, personal schemes, and dynastic prestige across your entire house.\n\n#P Tier I (Minor):#! +0.1 Piety/mo, +0.1 Prestige/mo, +1 Diplomacy, +5 General & Dynasty Opinion, +5 Personal Scheme Success.\n#V Tier II (Major):#! +0.3 Piety/mo, +0.3 Prestige/mo, +2 Diplomacy, +10 General & Dynasty Opinion, +10 Personal Scheme Success, -10% Short Reign Duration, +10% Long Reign Bonus, #bold +1 Diplomacy per Devotion Level#!.\n#Y Tier III (Superior):#! +0.5 Piety/mo, +0.5 Prestige/mo, +4 Diplomacy, +15 General & Dynasty Opinion, +20 Personal Scheme Success, -20% Short Reign Duration, +20% Long Reign Bonus, #bold +1 Diplomacy per Devotion & Prestige Level#!, #bold +1 Max Personal Schemes#!."
+  bm_covenant_presence: "Covenant of Presence"
+  bm_covenant_presence_tooltip: "[GetPlayer.Custom('BM_COVENANT_PRESENCE_STATUS_HEADER')]\n\nEnhances diplomacy, opinion, personal schemes, and dynastic prestige across your entire house.\n\n#P Tier I (Minor):#! +0.1 Piety/mo, +0.1 Prestige/mo, +1 Diplomacy, +5 General & Dynasty Opinion, +5 Personal Scheme Success.\n#V Tier II (Major):#! +0.3 Piety/mo, +0.3 Prestige/mo, +2 Diplomacy, +10 General & Dynasty Opinion, +10 Personal Scheme Success, -10% Short Reign Duration, +10% Long Reign Bonus, #bold +1 Diplomacy per Devotion Level#!.\n#Y Tier III (Superior):#! +0.5 Piety/mo, +0.5 Prestige/mo, +4 Diplomacy, +15 General & Dynasty Opinion, +20 Personal Scheme Success, -20% Short Reign Duration, +20% Long Reign Bonus, #bold +1 Diplomacy per Devotion & Prestige Level#!, #bold +1 Max Personal Schemes#!."
 
   bm_covenant_warband: "Covenant of Warband"
   bm_covenant_warband_tooltip: "[GetPlayer.Custom('BM_COVENANT_WARBAND_STATUS_HEADER')]\n\nEmpowers martial prowess, knights, Men-at-Arms regiments, and army speed across your entire house.\n\n#P Tier I (Minor):#! +0.1 Piety/mo, +1 Martial, +1 Prowess, +1 Knight Limit, +10% Knight Effectiveness.\n#V Tier II (Major):#! +0.3 Piety/mo, +2 Martial, +2 Prowess, +3 Knight Limit, +20% Knight Effectiveness, +6% Army Movement Speed, +1 Men-at-Arms Regiments & Size, #bold +1 Martial per Devotion Level#!.\n#Y Tier III (Superior):#! +0.5 Piety/mo, +4 Martial, +4 Prowess, +5 Knight Limit, +20% Knight Effectiveness, +12% Army Movement Speed, +2 Men-at-Arms Regiments & Size, #bold +1 Martial per Devotion & Prestige Level#!."
@@ -78,9 +78,9 @@
   bm_empower_bloodline_tier_3_toast: "Covenant Superior (Tier III)"
 
   # Tooltips on completion
-  bm_covenant_majesty_tier_1_tt: "Your house has woven the Minor Covenant of Majesty (Tier I)."
-  bm_covenant_majesty_tier_2_tt: "Your house has elevated the Major Covenant of Majesty (Tier II)."
-  bm_covenant_majesty_tier_3_tt: "Your house has perfected the Superior Covenant of Majesty (Tier III)!"
+  bm_covenant_presence_tier_1_tt: "Your house has woven the Minor Covenant of Presence (Tier I)."
+  bm_covenant_presence_tier_2_tt: "Your house has elevated the Major Covenant of Presence (Tier II)."
+  bm_covenant_presence_tier_3_tt: "Your house has perfected the Superior Covenant of Presence (Tier III)!"
 
   bm_covenant_warband_tier_1_tt: "Your house has woven the Minor Covenant of Warband (Tier I)."
   bm_covenant_warband_tier_2_tt: "Your house has elevated the Major Covenant of Warband (Tier II)."

@@ -25,23 +25,23 @@
 		decision_to_second_step_button = "BM_EMPOWER_BLOODLINE_DECISION_NEXT_STEP_BUTTON"
 		show_from_start = yes
 
-		# 1. Covenant of Majesty
+		# 1. Covenant of Presence
 		item = {
-			value = bm_covenant_majesty
-			current_description = bm_covenant_majesty
-			localization = bm_covenant_majesty_button
+			value = bm_covenant_presence
+			current_description = bm_covenant_presence
+			localization = bm_covenant_presence_button
 			icon = "gfx/interface/icons/trait_level_tracks/presence.dds"
 			is_shown = {
-				NOT = { house ?= { has_house_modifier = dynasty_blood_majesty_modifier_3 } }
+				NOT = { house ?= { has_house_modifier = dynasty_blood_presence_modifier_3 } }
 			}
 			is_valid = {
 				custom_tooltip = {
 					text = bm_covenant_already_maxed_req
-					NOT = { house ?= { has_house_modifier = dynasty_blood_majesty_modifier_3 } }
+					NOT = { house ?= { has_house_modifier = dynasty_blood_presence_modifier_3 } }
 				}
 				# Tier I -> Tier II
 				trigger_if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_majesty_modifier_1 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_presence_modifier_1 } }
 					custom_tooltip = {
 						text = bm_covenant_tier_2_req
 						piety_level >= 2
@@ -51,7 +51,7 @@
 				}
 				# Tier II -> Tier III
 				trigger_else_if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_majesty_modifier_2 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_presence_modifier_2 } }
 					custom_tooltip = {
 						text = bm_covenant_tier_3_req
 						piety_level >= 3
@@ -72,7 +72,7 @@
 			ai_chance = {
 				value = 20
 				if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_majesty_modifier_3 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_presence_modifier_3 } }
 					multiply = 0
 				}
 			}
@@ -346,8 +346,8 @@
 
 	effect = {
 		if = {
-			limit = { scope:bm_covenant_majesty = yes }
-			bm_upgrade_house_covenant_effect = { COVENANT = majesty }
+			limit = { scope:bm_covenant_presence = yes }
+			bm_upgrade_house_covenant_effect = { COVENANT = presence }
 		}
 		else_if = {
 			limit = { scope:bm_covenant_warband = yes }

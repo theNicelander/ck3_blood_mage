@@ -36,7 +36,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - **Major**: Channel Blood Power, Condense into Superior Lifeforce, Education Enhancement, Major Runes, Congenital Manifestation, House Blessing.
 - **Superior**: Blood Golem creation, 5★ Master Educations, Secondary Educations, Capstone Runes.
 - **Attune Lifeforce**: choose your yearly lifestyle XP bonus (applied January 1st).
-- **Empower Dynasty Bloodline**: six three-tier House Covenants (Majesty, Warband, Prosperity, Shadow, Mastery, Legacy) granting monthly Piety (+0.1/+0.3/+0.5), skill, +1 attribute per Devotion at Tier 2, and +1 attribute per Devotion & Prestige at Tier 3 alongside broad house-wide bonuses (Men-at-Arms, speed, domain limit, opinion); active covenants roll annually to award +1 XP in the matching Blood Power track for living kin.
+- **Empower Dynasty Bloodline**: six three-tier House Covenants (Presence, Warband, Prosperity, Shadow, Mastery, Legacy) granting monthly Piety (+0.1/+0.3/+0.5), skill, +1 attribute per Devotion at Tier 2, and +1 attribute per Devotion & Prestige at Tier 3 alongside broad house-wide bonuses (Men-at-Arms, speed, domain limit, opinion); active covenants roll annually to award +1 XP in the matching Blood Power track for living kin.
 - Education advancement needs Devotion Level 1+/2+/3+/4+ for 1★→2★ … 4★→5★; only Superior magic (5★, Embrace New Education) costs Devotion or needs 1000 Piety plus Superior Lifeforce.
 - **Heal Ailment**: cures up to 32 ailments, purges all 11 stress vices (−50 Stress), and treats old-age traits (Minor: 1 Minor Lifeforce + 50 Piety; Major tier for deeper rejuvenation).
 - **Influence Personality**: Learning contest to swap a trait or culture (5-year cooldown on success, 1 year on failure).

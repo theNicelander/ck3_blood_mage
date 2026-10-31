@@ -1,30 +1,30 @@
 ﻿# Dynamic UI Labels and Status Headers for Empower Dynasty Bloodline Covenants
 
-# 1. Covenant of Majesty
-BM_COVENANT_MAJESTY_BUTTON_LABEL = {
+# 1. Covenant of Presence
+BM_COVENANT_PRESENCE_BUTTON_LABEL = {
 	type = character
 	text = {
-		trigger = { house ?= { has_house_modifier = dynasty_blood_majesty_modifier_2 } }
-		localization_key = bm_covenant_majesty_label_major
+		trigger = { house ?= { has_house_modifier = dynasty_blood_presence_modifier_2 } }
+		localization_key = bm_covenant_presence_label_major
 	}
 	text = {
-		trigger = { house ?= { has_house_modifier = dynasty_blood_majesty_modifier_1 } }
-		localization_key = bm_covenant_majesty_label_minor
+		trigger = { house ?= { has_house_modifier = dynasty_blood_presence_modifier_1 } }
+		localization_key = bm_covenant_presence_label_minor
 	}
 	text = {
 		fallback = yes
-		localization_key = bm_covenant_majesty_label_none
+		localization_key = bm_covenant_presence_label_none
 	}
 }
 
-BM_COVENANT_MAJESTY_STATUS_HEADER = {
+BM_COVENANT_PRESENCE_STATUS_HEADER = {
 	type = character
 	text = {
-		trigger = { house ?= { has_house_modifier = dynasty_blood_majesty_modifier_2 } }
+		trigger = { house ?= { has_house_modifier = dynasty_blood_presence_modifier_2 } }
 		localization_key = bm_covenant_status_major_to_superior
 	}
 	text = {
-		trigger = { house ?= { has_house_modifier = dynasty_blood_majesty_modifier_1 } }
+		trigger = { house ?= { has_house_modifier = dynasty_blood_presence_modifier_1 } }
 		localization_key = bm_covenant_status_minor_to_major
 	}
 	text = {
