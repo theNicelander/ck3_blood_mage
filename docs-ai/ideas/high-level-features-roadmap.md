@@ -1,6 +1,6 @@
 # Ideas: High-Level Thematic Features & Expansion Roadmap
 
-Living brainstorm document outlining 10 deep, emergent, and high-flavor feature concepts for the Blood Mages mod, leveraging CK3 1.20 systems (activities, legends, travel, court positions, schemes, relics, epidemics, and adventurer camps).
+Living brainstorm document outlining 9 deep, emergent, and high-flavor feature concepts for the Blood Mages mod, leveraging CK3 1.20 systems (activities, legends, travel, court positions, schemes, relics, epidemics, and adventurer camps).
 
 ---
 
@@ -16,20 +16,7 @@ Living brainstorm document outlining 10 deep, emergent, and high-flavor feature 
 
 ---
 
-## 2. Dynastic Memory & Ancestral Reincarnation
-
-- **System Hook**: Dynastic Story Cycle / Death Event Hook (`events/`, `common/on_action/character_on_actions.txt`).
-- **Concept**: Ancient blood mages imprint their consciousness into the bloodline before physical death.
-- **Mechanics**:
-  - Aging patriarchs/matriarchs (age 60+ or terminally ill) cast a major ritual binding their soul to a chosen young scion or newborn.
-  - Upon succession, the heir triggers awakening childhood narrative events:
-    - Inheriting a portion of the ancestor's lifestyle perk XP, skill points, or blood magic tracks.
-    - Special dialogue options reacting to old enemies and court politics (*"I remember your grandfather's treachery..."*).
-- **Impact**: Alleviates succession anxiety and creates powerful emergent generational storytelling.
-
----
-
-## 3. Occult Court Position: The Royal Hemomancer / Court Leech
+## 2. Occult Court Position: The Royal Hemomancer / Court Leech
 
 - **System Hook**: Court Positions & Camp Officers (`common/court_positions/types/`).
 - **Concept**: An appointed position for an unlanded blood mage serving a landed lord or mercenary camp captain.
@@ -42,7 +29,7 @@ Living brainstorm document outlining 10 deep, emergent, and high-flavor feature 
 
 ---
 
-## 4. Interactive Legends: The Crimson Myth & Sanguine Saints
+## 3. Interactive Legends: The Crimson Myth & Sanguine Saints
 
 - **System Hook**: Legends of the Dead DLC engine (`common/legends/`).
 - **Concept**: Propagating tales of supernatural immortality, holy bloodlines, or dark benevolence across the map.
@@ -53,7 +40,7 @@ Living brainstorm document outlining 10 deep, emergent, and high-flavor feature 
 
 ---
 
-## 5. Hostile & Personal Scheme: Sanguine Thrall
+## 4. Hostile & Personal Scheme: Sanguine Thrall
 
 - **System Hook**: CK3 Scheme Engine (`common/schemes/`).
 - **Concept**: A dark occult scheme that binds an unsuspecting foreign ruler, powerful vassal, or key councilor into supernatural subjugation.
@@ -65,7 +52,7 @@ Living brainstorm document outlining 10 deep, emergent, and high-flavor feature 
 
 ---
 
-## 6. Relic Forging: Crystalline Vitae & Soul-Bound Blades
+## 5. Relic Forging: Crystalline Vitae & Soul-Bound Blades
 
 - **System Hook**: Artifacts & Inspirations (`common/artifacts/`).
 - **Concept**: Transforming the concentrated essence of executed kings, legendary knights, or master mages into physical relics.
@@ -76,7 +63,7 @@ Living brainstorm document outlining 10 deep, emergent, and high-flavor feature 
 
 ---
 
-## 7. Landless Adventurer Path: The Wandering Coven
+## 6. Landless Adventurer Path: The Wandering Coven
 
 - **System Hook**: Adventurer Contracts & Camp Purposes (`common/domiciles/`, `common/landless/contracts/`).
 - **Concept**: A specialized camp purpose for landless blood mages traveling across the known world.
@@ -88,7 +75,7 @@ Living brainstorm document outlining 10 deep, emergent, and high-flavor feature 
 
 ---
 
-## 8. Feudal & Clan Vassal Contract: The Blood Tithe
+## 7. Feudal & Clan Vassal Contract: The Blood Tithe
 
 - **System Hook**: Vassal Contract Obligations (`common/vassal_contracts/`).
 - **Concept**: A customized contract clause between a Blood Mage liege and their vassals.
@@ -98,7 +85,7 @@ Living brainstorm document outlining 10 deep, emergent, and high-flavor feature 
 
 ---
 
-## 9. Epidemic Manipulation: Red Plagues & Hemomantic Cleansing
+## 8. Epidemic Manipulation: Red Plagues & Hemomantic Cleansing
 
 - **System Hook**: Epidemic & Disease System (`common/epidemics/`).
 - **Concept**: Direct interaction with map plagues rather than passive suffering.
@@ -109,7 +96,7 @@ Living brainstorm document outlining 10 deep, emergent, and high-flavor feature 
 
 ---
 
-## 10. Mid/Late-Game Crisis: Awakening of the First Progenitor
+## 9. Mid/Late-Game Crisis: Awakening of the First Progenitor
 
 - **System Hook**: Dynamic Narrative Mini-Crisis / Historical Incursions (`events/`, `common/story_cycles/`).
 - **Concept**: An ancient, immortal progenitor of blood magic stirs beneath an ancient tomb after enough blood magic has been cast across Europe.
