@@ -1,4 +1,4 @@
-﻿# Dynasty Bloodline Covenants (3 Tiers: Tier I Minor, Tier II Major, Tier III Superior)
+# Dynasty Bloodline Covenants (3 Tiers: Tier I Minor, Tier II Major, Tier III Superior)
 # Replaces previous tier modifier upon upgrade.
 
 # 1. Covenant of Majesty
@@ -63,6 +63,7 @@ dynasty_blood_warband_modifier_2 = {
 	knight_effectiveness_mult = 0.20
 	advantage = 2
 	dread_baseline_add = 10
+	men_at_arms_cap = 1
 }
 
 dynasty_blood_warband_modifier_3 = {
@@ -72,11 +73,11 @@ dynasty_blood_warband_modifier_3 = {
 	martial = 4
 	prowess = 4
 	knight_limit = 3
-	knight_effectiveness_mult = 0.35
+	knight_effectiveness_mult = 0.20
 	advantage = 4
 	dread_baseline_add = 15
 	martial_per_piety_level = 1
-	men_at_arms_cap = 1
+	men_at_arms_limit = 1
 }
 
 # 3. Covenant of Prosperity
@@ -174,6 +175,7 @@ dynasty_blood_mastery_modifier_2 = {
 	stress_gain_mult = -0.10
 	stress_loss_mult = 0.1
 	monthly_piety_gain_mult = 0.10
+	max_learn_language_schemes_add = 1
 }
 
 dynasty_blood_mastery_modifier_3 = {
