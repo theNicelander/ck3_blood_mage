@@ -47,7 +47,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 ## Blood Hunt
 
 - *Seek Power* became **Go on a Blood Hunt**, open to Blood Mages and Blood Knights; grayed out while travelling, in an activity, imprisoned or incapable.
-- Cooldown: 1 year landed, 3 years wandering (halved with Superior Vegvísir).
+- Cooldown: 1 year (halved to 6 months with Superior Vegvísir).
 - Encounters scale with Prowess: Beast's Lair, Blood in the Embers, Edge of the Woods, Crimson Rite, Stag's Last Stand, Blades on the Lonely Road, Cairn of Forgotten Carnage.
 - Roughly 60% success at skill 20, 70% at 25, 80% at 30, 95% at 40+; peaceful options exist for most encounters.
 - Road encounter can include a sworn escort champion to duel (Prowess 25+).
@@ -131,7 +131,7 @@ Annual pulse (3-year cooldown) for player Blood Mages and Blood Knights:
 
 ## Version history
 
-- v1.20.62: Standardize event exit options to "Back"; reduce manifest traits cooldown to 2 years and inscribe rune cooldown to 3 years
+- v1.20.62: Standardize event exits to "Back"; reduce manifest/rune/hunt cooldowns; lower Blood Berserker provision cost
 - v1.20.61: Restructure Manifest Congenital Traits (Ranks 1–3 in Major, Ranks 4–5 in Superior with 3/4/5/6/7/8 XP scaled by trait rank); unify positive interactions into Blood Blessing and hostile harvesting into Blood Drain; rename Heal Affliction to Heal Healing
 - v1.20.60: Rebalance Ancient and Enlightenment XP; Condense Lifeforce grants Enlightenment XP; AI always selects initial Lifeforce attunement; alerts for prisoner lifedrain and culling champions; require 20+ Prowess for Cull Champion
 - v1.20.59: Blood Temples become duchy-capital buildings in all duchies
