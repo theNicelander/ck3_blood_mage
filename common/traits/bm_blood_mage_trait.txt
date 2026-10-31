@@ -36,6 +36,7 @@
 @bm_ancient_personal_tenet_slot = 1
 @bm_ancient_piety_impact_tier_50 = 0.2
 @bm_ancient_piety_impact_tier_100 = 0.4
+@bm_ancient_monthly_legitimacy = 0.1
 
 lifestyle_blood_mage = {
     category = lifestyle
@@ -479,6 +480,7 @@ lifestyle_blood_mage = {
                 # specific
                 monthly_dynasty_prestige = @bm_ancient_monthly_dynasty_prestige
                 monthly_lifestyle_xp_gain_mult = @bm_ancient_monthly_lifestyle_xp_mult
+                monthly_legitimacy_add = @bm_ancient_monthly_legitimacy
             }
             20 = {
                 # common
@@ -491,6 +493,7 @@ lifestyle_blood_mage = {
                 monthly_dynasty_prestige = @bm_ancient_monthly_dynasty_prestige
                 monthly_lifestyle_xp_gain_mult = @bm_ancient_monthly_lifestyle_xp_mult
                 personal_tenet_slot_add = @bm_ancient_personal_tenet_slot
+                monthly_legitimacy_add = @bm_ancient_monthly_legitimacy
             }
             30 = {
                 # common
@@ -502,6 +505,7 @@ lifestyle_blood_mage = {
                 # specific
                 monthly_dynasty_prestige = @bm_ancient_monthly_dynasty_prestige
                 monthly_lifestyle_xp_gain_mult = @bm_ancient_monthly_lifestyle_xp_mult
+                monthly_legitimacy_add = @bm_ancient_monthly_legitimacy
             }
             40 = {
                 # common
@@ -514,10 +518,12 @@ lifestyle_blood_mage = {
                 monthly_dynasty_prestige = @bm_ancient_monthly_dynasty_prestige
                 monthly_lifestyle_xp_gain_mult = @bm_ancient_monthly_lifestyle_xp_mult
                 personal_tenet_slot_add = @bm_ancient_personal_tenet_slot
+                monthly_legitimacy_add = @bm_ancient_monthly_legitimacy
             }
             50 = {
                 # specific
                 piety_level_impact_mult = @bm_ancient_piety_impact_tier_50
+                monthly_legitimacy_add = @bm_ancient_monthly_legitimacy
             }
             60 = {
                 # common
@@ -530,6 +536,7 @@ lifestyle_blood_mage = {
                 monthly_dynasty_prestige = @bm_ancient_monthly_dynasty_prestige
                 monthly_lifestyle_xp_gain_mult = @bm_ancient_monthly_lifestyle_xp_mult
                 personal_tenet_slot_add = @bm_ancient_personal_tenet_slot
+                monthly_legitimacy_add = @bm_ancient_monthly_legitimacy
             }
             70 = {
                 # common
@@ -541,6 +548,7 @@ lifestyle_blood_mage = {
                 # specific
                 monthly_dynasty_prestige = @bm_ancient_monthly_dynasty_prestige
                 monthly_lifestyle_xp_gain_mult = @bm_ancient_monthly_lifestyle_xp_mult
+                monthly_legitimacy_add = @bm_ancient_monthly_legitimacy
             }
             80 = {
                 # common
@@ -553,6 +561,7 @@ lifestyle_blood_mage = {
                 monthly_dynasty_prestige = @bm_ancient_monthly_dynasty_prestige
                 monthly_lifestyle_xp_gain_mult = @bm_ancient_monthly_lifestyle_xp_mult
                 personal_tenet_slot_add = @bm_ancient_personal_tenet_slot
+                monthly_legitimacy_add = @bm_ancient_monthly_legitimacy
             }
             90 = {
                 # common
@@ -564,12 +573,14 @@ lifestyle_blood_mage = {
                 # specific
                 monthly_dynasty_prestige = @bm_ancient_monthly_dynasty_prestige
                 monthly_lifestyle_xp_gain_mult = @bm_ancient_monthly_lifestyle_xp_mult
+                monthly_legitimacy_add = @bm_ancient_monthly_legitimacy
             }
             100 = {
                 # specific
                 piety_level_impact_mult = @bm_ancient_piety_impact_tier_100
                 no_prowess_loss_from_age = yes
                 personal_tenet_slot_add = @bm_ancient_personal_tenet_slot
+                monthly_legitimacy_add = @bm_ancient_monthly_legitimacy
             }
         }
     }

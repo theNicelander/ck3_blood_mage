@@ -10,8 +10,8 @@ dynasty_blood_presence_modifier_1 = {
 	monthly_prestige = 0.1
 	diplomacy = 1
 	general_opinion = 5
-	dynasty_opinion = 5
 	owned_personal_scheme_success_chance_add = 5
+	legitimacy_gain_mult = 0.05
 }
 
 dynasty_blood_presence_modifier_2 = {
@@ -21,11 +21,11 @@ dynasty_blood_presence_modifier_2 = {
 	monthly_prestige = 0.3
 	diplomacy = 2
 	general_opinion = 10
-	dynasty_opinion = 10
 	owned_personal_scheme_success_chance_add = 10
 	short_reign_duration_mult = -0.10
 	long_reign_bonus_mult = 0.10
 	diplomacy_per_piety_level = 1
+	legitimacy_gain_mult = 0.10
 }
 
 dynasty_blood_presence_modifier_3 = {
@@ -35,11 +35,12 @@ dynasty_blood_presence_modifier_3 = {
 	monthly_prestige = 0.5
 	diplomacy = 4
 	general_opinion = 15
-	dynasty_opinion = 15
 	owned_personal_scheme_success_chance_add = 20
 	short_reign_duration_mult = -0.20
 	long_reign_bonus_mult = 0.20
+	personal_tenet_slot_add = 1
 	diplomacy_per_piety_level = 1
+	legitimacy_gain_mult = 0.15
 }
 
 # 2. Covenant of Warband
@@ -49,8 +50,8 @@ dynasty_blood_warband_modifier_1 = {
 	monthly_piety = 0.1
 	martial = 1
 	prowess = 1
-	knight_effectiveness_mult = 0.10
-	army_damage_mult = 0.03
+	army_damage_mult = 0.05
+	movement_speed = 0.05
 }
 
 dynasty_blood_warband_modifier_2 = {
@@ -59,9 +60,8 @@ dynasty_blood_warband_modifier_2 = {
 	monthly_piety = 0.3
 	martial = 2
 	prowess = 2
-	knight_effectiveness_mult = 0.20
-	army_damage_mult = 0.06
-	movement_speed = 0.06
+	army_damage_mult = 0.10
+	movement_speed = 0.10
 	men_at_arms_cap = 1
 	men_at_arms_limit = 1
 	martial_per_piety_level = 1
@@ -73,9 +73,8 @@ dynasty_blood_warband_modifier_3 = {
 	monthly_piety = 0.5
 	martial = 4
 	prowess = 4
-	knight_effectiveness_mult = 0.25
-	army_damage_mult = 0.10
-	movement_speed = 0.10
+	army_damage_mult = 0.15
+	movement_speed = 0.15
 	men_at_arms_cap = 1
 	men_at_arms_limit = 1
 	martial_per_piety_level = 1
@@ -88,9 +87,11 @@ dynasty_blood_prosperity_modifier_1 = {
 	monthly_piety = 0.1
 	monthly_income = 0.1
 	stewardship = 1
-	monthly_income_mult = 0.03
-	build_gold_cost = -0.03
-	domicile_build_gold_cost = -0.03
+	monthly_income_mult = 0.05
+	build_gold_cost = -0.05
+	domicile_build_gold_cost = -0.05
+	men_at_arms_maintenance = -0.05
+	development_growth_factor = 0.05
 }
 
 dynasty_blood_prosperity_modifier_2 = {
@@ -99,11 +100,11 @@ dynasty_blood_prosperity_modifier_2 = {
 	monthly_piety = 0.3
 	monthly_income = 0.3
 	stewardship = 2
-	monthly_income_mult = 0.06
-	build_gold_cost = -0.06
-	domicile_build_gold_cost = -0.06
-	men_at_arms_maintenance = -0.05
-	development_growth_factor = 0.05
+	monthly_income_mult = 0.10
+	build_gold_cost = -0.10
+	domicile_build_gold_cost = -0.10
+	men_at_arms_maintenance = -0.10
+	development_growth_factor = 0.10
 	stewardship_per_piety_level = 1
 }
 
@@ -113,11 +114,11 @@ dynasty_blood_prosperity_modifier_3 = {
 	monthly_piety = 0.5
 	monthly_income = 0.5
 	stewardship = 4
-	monthly_income_mult = 0.12
-	build_gold_cost = -0.12
-	domicile_build_gold_cost = -0.12
-	men_at_arms_maintenance = -0.10
-	development_growth_factor = 0.10
+	monthly_income_mult = 0.15
+	build_gold_cost = -0.15
+	domicile_build_gold_cost = -0.15
+	men_at_arms_maintenance = -0.15
+	development_growth_factor = 0.15
 	domain_limit = 1
 	stewardship_per_piety_level = 1
 }
@@ -189,6 +190,7 @@ dynasty_blood_mastery_modifier_3 = {
 	stress_loss_mult = 0.20
 	monthly_piety_gain_mult = 0.10
 	health = 0.3
+	personal_tenet_slot_add = 1
 	learning_per_piety_level = 1
 	ignore_negative_culture_opinion = yes
 }
@@ -202,6 +204,9 @@ dynasty_blood_legacy_modifier_1 = {
 	life_expectancy = 2
 	years_of_fertility = 2
 	fertility = 0.05
+	positive_random_genetic_chance = 0.05
+	positive_inactive_inheritance_chance = 0.05
+	genetic_trait_strengthen_chance = 0.05
 }
 
 dynasty_blood_legacy_modifier_2 = {
@@ -211,10 +216,10 @@ dynasty_blood_legacy_modifier_2 = {
 	health = 0.3
 	life_expectancy = 4
 	years_of_fertility = 4
-	fertility = 0.10
-	positive_random_genetic_chance = 0.10
-	positive_inactive_inheritance_chance = 0.10
-	genetic_trait_strengthen_chance = 0.10
+	fertility = 0.15
+	positive_random_genetic_chance = 0.15
+	positive_inactive_inheritance_chance = 0.15
+	genetic_trait_strengthen_chance = 0.15
 	inbreeding_chance = -0.15
 	prowess_per_piety_level = 1
 }
@@ -226,10 +231,10 @@ dynasty_blood_legacy_modifier_3 = {
 	health = 0.5
 	life_expectancy = 8
 	years_of_fertility = 8
-	fertility = 0.20
-	positive_random_genetic_chance = 0.20
-	positive_inactive_inheritance_chance = 0.20
-	genetic_trait_strengthen_chance = 0.20
+	fertility = 0.25
+	positive_random_genetic_chance = 0.25
+	positive_inactive_inheritance_chance = 0.25
+	genetic_trait_strengthen_chance = 0.25
 	inbreeding_chance = -0.30
 	prowess_per_piety_level = 1
 }
