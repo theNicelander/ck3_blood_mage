@@ -1,0 +1,35 @@
+﻿on_game_start = {
+	on_actions = {
+		bm_setup_icelandic_culture_on_start
+	}
+}
+
+bm_setup_icelandic_culture_on_start = {
+	effect = {
+		title:d_iceland = {
+			every_de_jure_county = {
+				set_county_culture = culture:bm_icelandic
+				holder = {
+					if = {
+						limit = {
+							OR = {
+								culture = culture:norse
+								culture = culture:norwegian
+							}
+						}
+						set_culture = culture:bm_icelandic
+						every_courtier_or_guest = {
+							limit = {
+								OR = {
+									culture = culture:norse
+									culture = culture:norwegian
+								}
+							}
+							set_culture = culture:bm_icelandic
+						}
+					}
+				}
+			}
+		}
+	}
+}
