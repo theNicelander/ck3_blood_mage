@@ -8,9 +8,8 @@ description: Lifestyle traits, tracks, XP progression, and inheritance mechanics
 Reference: `common/traits/bm_blood_mage_trait.txt`, `bm_blood_knight_trait.txt`, `bm_blood_power_trait.txt`.
 
 - **Tracks**: Defined via `tracks = { <track> = { <xp> = { <modifiers> } } }`.
-  - **Tier Replacement, Not Stacking**: The CK3 engine does **NOT** accumulate or stack tier modifiers additively. Only the modifier block of the highest reached XP threshold is active.
-  - **Full Payload Per Block**: Any modifier intended to persist across multiple tiers (piety, stats, caps, health, advantage) must be explicitly re-declared at its full cumulative value in every subsequent tier block. Any modifier omitted at a higher tier is revoked when reaching that tier.
-  - Modifying a tier or adding an intermediate milestone requires updating all affected threshold blocks.
+  - **Additive Cumulative Stacking**: In CK3 trait tracks, **all reached thresholds add their modifiers together**. Reaching higher XP adds that tier's modifiers ON TOP OF all previous tiers (e.g. reaching 100 XP grants the sum of bonuses from 10, 30, 50, 70, and 100 XP).
+  - **Delta Payloads**: Each tier block must declare ONLY the incremental bonus (delta) granted at that milestone, never the full cumulative sum, otherwise modifiers will multiply/stack excessively.
 - **XP gain**: Add progression via `add_trait_xp = { trait = <trait> track = <track> value = <int> }`.
 - **Inheritance**:
   - `inherit_chance` and `both_parent_has_trait_inherit_chance`: explicit percentage values (`50` = 50%).

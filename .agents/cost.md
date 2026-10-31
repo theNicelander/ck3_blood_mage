@@ -3,9 +3,9 @@
 
 | Scope | Tokens |
 | --- | ---: |
-| **Total** | **11,822** |
+| **Total** | **11,935** |
 | Core | 1,563 |
-| Rules | 5,506 |
+| Rules | 5,619 |
 | Skills | 4,753 |
 
 ## Details per file
@@ -24,9 +24,9 @@
 | `.agents/rules/ck3-decisions.md` | Rules | 652 |
 | `.agents/skills/add-blood-magic-decision/SKILL.md` | Skills | 483 |
 | `.agents/skills/add-icon-asset/SKILL.md` | Skills | 404 |
+| `.agents/rules/ck3-traits.md` | Rules | 392 |
 | `.agents/rules/ck3-events.md` | Rules | 345 |
 | `.agents/skills/document-subsystem/SKILL.md` | Skills | 289 |
-| `.agents/rules/ck3-traits.md` | Rules | 279 |
 | `.agents/skills/add-trait-track/SKILL.md` | Skills | 270 |
 | `.agents/skills/add-faith/SKILL.md` | Skills | 242 |
 | `.agents/skills/caveman/SKILL.md` | Skills | 203 |

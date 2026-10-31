@@ -33,7 +33,7 @@ Complete XP sources live in [`blood-mage-track-xp.md`](blood-mage-track-xp.md), 
 
 ## Secondary Blood Power Tracks (`lifestyle_blood_power`)
 
-Base: none. Granted automatically with Mage or Knight at base 0 XP. Consolidated into 5 distinct milestones at 10, 30, 50, 70, and 100 XP. In CK3 engine mechanics, tier blocks do **not** stack additively; each threshold defines the complete active modifier payload for that rank. Every 10 XP grants **+5 flat monthly Lifestyle XP** (+15 quarterly) via `quarterly_playable_pulse`. Full breakdown in [`blood-mage-blood-power.md`](blood-mage-blood-power.md).
+Base: none. Granted automatically with Mage or Knight at base 0 XP. Consolidated into 5 distinct milestones at 10, 30, 50, 70, and 100 XP. In CK3 engine mechanics, trait track thresholds stack additively (all reached tiers add together); each script block defines the incremental delta granted at that milestone. Every 10 XP grants **+5 flat monthly Lifestyle XP** (+15 quarterly) via `quarterly_playable_pulse`. Full breakdown in [`blood-mage-blood-power.md`](blood-mage-blood-power.md).
 
 | Track | 10 XP (Starter) | 30 XP (Medium) | 50 XP (Milestone) | 70 XP (Major) | 100 XP (Capstone) | Flat Lifestyle XP |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |

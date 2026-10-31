@@ -24,7 +24,7 @@ Living technical specification for the Blood Power subsystem.
 
 ## Track Benefits Table
 
-Each track spans 5 distinct progression tiers (10, 30, 50, 70, 100 XP). In CK3 engine mechanics, each tier block defines the complete set of active modifiers for that rank:
+Each track spans 5 distinct progression tiers (10, 30, 50, 70, 100 XP). In CK3 engine mechanics, trait track thresholds stack additively (all reached tiers add together). The table below lists the cumulative total active benefits at each milestone:
 
 | Track | 10 XP (Starter) | 30 XP (Medium) | 50 XP (Milestone) | 70 XP (Major) | 100 XP (Capstone) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
