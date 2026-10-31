@@ -161,6 +161,7 @@ Annual pulse (3-year cooldown) for player Blood Mages and Blood Knights:
 - v1.20.36: Blood Knight icon, domicile buildings, duel Lifeforce rewards
 - v1.20.35: Simplify magic tiers; scale battle XP and Lifeforce
 - v1.20.34: Blood Knight situation tab, prevalence rules, error fixes
+- v1.20.63: Align and streamline House Covenants and Blood Power across six mirrored tracks; reduce Blood Power UI bloat and transfer army speed to Warband Covenant
 - v1.20.32: Overhaul Bloodline and Hematurgy tracks
 - v1.20.31: Standalone Blood Knight trait with unified healing events
 - v1.20.30: Add Egill Skallagrímsson bookmark character
