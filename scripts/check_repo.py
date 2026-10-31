@@ -344,6 +344,18 @@ if ! $CHECK_CMD --staged; then
     exit 1
 fi
 
+# 2b. Check modifier usage against allowlist
+if command -v uv > /dev/null 2>&1; then
+    MOD_CHECK_CMD="uv run scripts/check_modifiers.py"
+else
+    MOD_CHECK_CMD="python3 scripts/check_modifiers.py"
+fi
+
+if ! $MOD_CHECK_CMD --staged; then
+    echo "\\033[1;31m[PRE-COMMIT ERROR] Modifier allowlist check failed. Commit aborted.\\033[0m" >&2
+    exit 1
+fi
+
 # 3. Calculate agent rules and skills token costs (.agents/cost.md)
 if git diff --cached --name-only | grep -E '^(\.agents/(rules|skills)/|AGENTS\.md)' > /dev/null 2>&1; then
     if command -v uvx > /dev/null 2>&1; then
@@ -440,6 +452,18 @@ def main():
         print("\033[1;31m[ERROR]\033[0m branch context:")
         for err in ctx_errors:
             print(f"  - {err}")
+
+    # Check modifier allowlist integrity and usages
+    mod_checker = repo_root / "scripts" / "check_modifiers.py"
+    if mod_checker.is_file():
+        mod_cmd = [sys.executable, str(mod_checker)]
+        if args.staged:
+            mod_cmd.append("--staged")
+        elif args.files:
+            mod_cmd.extend(str(p) for p in target_files)
+        res = subprocess.run(mod_cmd, cwd=repo_root)
+        if res.returncode != 0:
+            total_errors += 1
 
     if total_errors > 0:
         print(
