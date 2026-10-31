@@ -281,7 +281,7 @@
 			add_piety = -400
 			add_character_flag = {
 				flag = bm_blood_rune_cooldown
-				years = 5
+				years = 3
 			}
 			send_interface_toast = {
 				type = event_toast_effect_good
@@ -746,7 +746,7 @@ bm_cast_blood_magic_major_decision = {
 			add_piety = -200
 			add_character_flag = {
 				flag = bm_blood_rune_cooldown
-				years = 5
+				years = 3
 			}
 			send_interface_toast = {
 				type = event_toast_effect_good
@@ -1068,7 +1068,7 @@ bm_cast_blood_magic_minor_decision = {
 			limit = { scope:bm_minor_blood_rune = yes }
 			add_character_flag = {
 				flag = bm_blood_rune_cooldown
-				years = 5
+				years = 3
 			}
 			send_interface_toast = {
 				type = event_toast_effect_good
