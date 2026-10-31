@@ -321,13 +321,13 @@ def install_pre_commit_hook(repo_root: Path) -> bool:
         return False
 
     hook_file = hook_dir / "pre-commit"
-    hook_content = """#!/bin/sh
+    hook_content = r"""#!/bin/sh
 # Blood Mages CK3 Mod - Pre-commit Hook
 # Runs git whitespace checks and file format validations on staged files.
 
 # 1. Check for conflict markers, whitespace issues, etc.
 if ! git diff --cached --check; then
-    echo "\\033[1;31m[PRE-COMMIT ERROR] Git whitespace or conflict marker check failed!\\033[0m" >&2
+    echo "\033[1;31m[PRE-COMMIT ERROR] Git whitespace or conflict marker check failed!\033[0m" >&2
     exit 1
 fi
 
@@ -339,8 +339,8 @@ else
 fi
 
 if ! $CHECK_CMD --staged; then
-    echo "\\033[1;31m[PRE-COMMIT ERROR] Game file integrity checks failed. Commit aborted.\\033[0m" >&2
-    echo "\\033[1;33mTip: Run '$CHECK_CMD --fix' to automatically resolve BOM and newline issues.\\033[0m" >&2
+    echo "\033[1;31m[PRE-COMMIT ERROR] Game file integrity checks failed. Commit aborted.\033[0m" >&2
+    echo "\033[1;33mTip: Run '$CHECK_CMD --fix' to automatically resolve BOM and newline issues.\033[0m" >&2
     exit 1
 fi
 
@@ -352,18 +352,18 @@ else
 fi
 
 if ! $MOD_CHECK_CMD --staged; then
-    echo "\\033[1;31m[PRE-COMMIT ERROR] Modifier allowlist check failed. Commit aborted.\\033[0m" >&2
+    echo "\033[1;31m[PRE-COMMIT ERROR] Modifier allowlist check failed. Commit aborted.\033[0m" >&2
     exit 1
 fi
 
 # 3. Calculate agent rules and skills token costs (.agents/cost.md)
 if git diff --cached --name-only | grep -E '^(\.agents/(rules|skills)/|AGENTS\.md)' > /dev/null 2>&1; then
     if command -v uvx > /dev/null 2>&1; then
-        uvx --with tiktoken python scripts/calculate_agent_cost.py
+        uvx --with tiktoken python scripts/calculate_tokens.py
     elif command -v uv > /dev/null 2>&1; then
-        uv run scripts/calculate_agent_cost.py
+        uv run scripts/calculate_tokens.py
     else
-        python3 scripts/calculate_agent_cost.py
+        python3 scripts/calculate_tokens.py
     fi
 fi
 
