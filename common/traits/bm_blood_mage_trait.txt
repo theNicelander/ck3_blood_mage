@@ -5,7 +5,7 @@
 @bm_common_epidemic_resistance = 1
 
 # bloodline
-@bm_bloodline_domain_tax_mult = 0.03
+@bm_bloodline_monthly_income_mult = 0.03
 @bm_bloodline_inactive_inheritance = 0.10
 @bm_bloodline_stewardship_per_piety = 1
 @bm_bloodline_dynasty_prestige_mult = 0.25
@@ -65,7 +65,7 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                domain_tax_mult = @bm_bloodline_domain_tax_mult
+                monthly_income_mult = @bm_bloodline_monthly_income_mult
             }
             20 = {
                 # common
@@ -75,7 +75,7 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                domain_tax_mult = @bm_bloodline_domain_tax_mult
+                monthly_income_mult = @bm_bloodline_monthly_income_mult
                 positive_inactive_inheritance_chance = @bm_bloodline_inactive_inheritance
             }
             30 = {
@@ -86,7 +86,7 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                domain_tax_mult = @bm_bloodline_domain_tax_mult
+                monthly_income_mult = @bm_bloodline_monthly_income_mult
             }
             40 = {
                 # common
@@ -96,7 +96,7 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                domain_tax_mult = @bm_bloodline_domain_tax_mult
+                monthly_income_mult = @bm_bloodline_monthly_income_mult
                 positive_inactive_inheritance_chance = @bm_bloodline_inactive_inheritance
             }
             50 = {
@@ -112,7 +112,7 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                domain_tax_mult = @bm_bloodline_domain_tax_mult
+                monthly_income_mult = @bm_bloodline_monthly_income_mult
                 positive_inactive_inheritance_chance = @bm_bloodline_inactive_inheritance
             }
             70 = {
@@ -123,7 +123,7 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                domain_tax_mult = @bm_bloodline_domain_tax_mult
+                monthly_income_mult = @bm_bloodline_monthly_income_mult
             }
             80 = {
                 # common
@@ -133,7 +133,7 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                domain_tax_mult = @bm_bloodline_domain_tax_mult
+                monthly_income_mult = @bm_bloodline_monthly_income_mult
                 positive_inactive_inheritance_chance = @bm_bloodline_inactive_inheritance
             }
             90 = {
@@ -144,7 +144,7 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                domain_tax_mult = @bm_bloodline_domain_tax_mult
+                monthly_income_mult = @bm_bloodline_monthly_income_mult
             }
             100 = {
                 # specific
