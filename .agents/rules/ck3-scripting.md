@@ -30,5 +30,8 @@ description: Core CK3 script rules, script values, and safe engine patterns (1.2
 11. **Option Visibility (`show_as_unavailable`)**:
    - Keep options visible and grayed out (`show_as_unavailable = { ... }`) whenever possible so players see what exists and what requirements (Lifeforce, Piety, Devotion, Cooldown) are needed to unlock them.
    - Only hide an option completely if its prerequisite tier/stage has not been reached or if it has been permanently completed or superseded.
+12. **Modifier Allowlist Enforcement**:
+   - Every modifier used in static modifiers, traits, holy sites, doctrines, buildings, and domiciles must be present in `scripts/modifiers_allowlist.json` (enforced by pre-commit).
+   - Never invent modifier names. To add a confirmed vanilla modifier, run `python3 scripts/check_modifiers.py --add <name>` (verifies against vanilla definition formats).
 
 Error signatures and fixes: `ck3-error-catalog.md` (read when auditing `error.log`). Mod architecture: `docs-ai/architecture/README.md`.
