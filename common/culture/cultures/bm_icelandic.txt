@@ -12,18 +12,18 @@
 	traditions = {
 		tradition_things
 		tradition_fishermen
-		tradition_hird
+		tradition_maritime_mercantilism
 	}
 
+	dlc_tradition = {
+		trait = tradition_fp1_coastal_warriors
+		requires_dlc_flag = the_northern_lords
+		fallback = tradition_hird
+	}
 	dlc_tradition = {
 		trait = tradition_fp1_northern_stories
 		requires_dlc_flag = the_northern_lords
 		fallback = tradition_runestones
-	}
-	dlc_tradition = {
-		trait = tradition_fp1_performative_honour
-		requires_dlc_flag = the_northern_lords
-		fallback = tradition_poetry
 	}
 
 	name_list = bm_name_list_icelandic
