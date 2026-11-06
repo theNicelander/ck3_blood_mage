@@ -36,7 +36,10 @@
 - **Patronymics:** `always_use_patronym = yes`, `dynnpat_suf_male = "dynnpat_suf_sson"`, `dynnpat_suf_female = "dynnpat_suf_sdottir"`, prefix `"dynnp_af"`.
 - **Name Naming Convention:** Uses engine-safe ASCII keys in script (`PE_tur`, `IngO_lfur`, `KonrA_D_`, `GuD_finnur`, `LA_ra`, `SigrU_n`) paired with explicit localized strings (**Pétur**, **Ingólfur**, **Konráð**, **Guðfinnur**, **Lára**, **Sigrún**).
 - **Epenthetic `-ur`:** Applied systematically across nominative masculine names (*Ingólfur, Ólafur, Sigurður, Haraldur, Guðmundur, Eiríkur, Hallur, Höskuldur, Börkur, Haukur, Glúmur, Eyvindur, Leifur, Kveldúlfur, Skallagrímur*).
-- **Dynasties:** Historical Icelandic clans (*Sturlungar, Oddaverjar, Haukdælir, Ásbirningar, Svínfellingar, Vatnsfirðingar*).
+- **Dynasties:**
+  - *Sturlungaöld (Age of the Sturlungs) Chieftains:* Sturlungar, Haukdælir, Oddaverjar, Ásbirningar, Svínfellingar, Vatnsfirðingar.
+  - *Heroic / Mythological:* Völsungar (Völsunga saga, Sigurður Fáfnisbani).
+  - *Saga Houses:* Hlíðarendi, Ormstunga, Eyfells, Kormákur, Eldjárn, Blöndal, Nordal, Haarde, Gnarr.
 
 ### 3. Campaign Game Rule & Day 1 Setup
 
