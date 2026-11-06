@@ -33,7 +33,7 @@
 
 ### 2. Name List & Patronymics (`bm_name_list_icelandic`)
 
-- **Patronymics:** `always_use_patronym = yes`, `dynnpat_suf_male = "dynnpat_suf_sson"`, `dynnpat_suf_female = "dynnpat_suf_sdottir"`, prefix `"dynnp_af"`.
+- **Patronymics:** `always_use_patronym = yes`, `dynnpat_suf_male = "dynnpat_suf_sson"` (`-sson`), `patronym_suffix_female = "bm_dynnpat_suf_sdottir"` (`-sdóttir`), prefix `"dynnp_af"`.
 - **Name Naming Convention:** Uses engine-safe ASCII keys in script (`PE_tur`, `IngO_lfur`, `KonrA_D_`, `GuD_finnur`, `LA_ra`, `SigrU_n`) paired with explicit localized strings (**Pétur**, **Ingólfur**, **Konráð**, **Guðfinnur**, **Lára**, **Sigrún**).
 - **Epenthetic `-ur`:** Applied systematically across nominative masculine names (*Ingólfur, Ólafur, Sigurður, Haraldur, Guðmundur, Eiríkur, Hallur, Höskuldur, Börkur, Haukur, Glúmur, Eyvindur, Leifur, Kveldúlfur, Skallagrímur*).
 - **Dynasties:**
