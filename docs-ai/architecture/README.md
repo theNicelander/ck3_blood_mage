@@ -25,6 +25,7 @@ Architecture specs for the **Blood Mages** mod (CK3 1.20.*). Living specs of cur
 | [`blood-mage-religions.md`](blood-mage-religions.md) | Blóðtrú religion family, rites, holy sites | `common/religion/` |
 | [`blood-mage-story.md`](blood-mage-story.md) | Blood Magic Situation panel & story cycles | `common/story_cycles/` |
 | [`blood-mage-prevalence-and-lifecycle.md`](blood-mage-prevalence-and-lifecycle.md) | Trait distribution, inheritance, pulses | `common/on_action/` |
+| [`blood-mage-culture.md`](blood-mage-culture.md) | Icelandic culture, traditions, saga names & Day 1 setup | `common/culture/`, `history/cultures/` |
 | [`blood-mage-game-rules.md`](blood-mage-game-rules.md) | Campaign game rules & settings | `common/game_rules/` |
 | [`blood-mage-events-overview.md`](blood-mage-events-overview.md) | Event mapping across all namespaces | `events/` |
 | [`blood-mage-shared-scripting.md`](blood-mage-shared-scripting.md) | Shared triggers, opinion modifiers, nicknames | `common/scripted_triggers/` |

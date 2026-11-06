@@ -1,13 +1,10 @@
 # Ideas: Expanding "Take a Walk" & "Seek Power" Events
 
-Living proposal for expanding, restructuring, and adding narrative depth to the **Seek Power / Take a Walk** blood mage decision chain.
+Living proposal for expanding, restructuring, and adding narrative depth to the **Seek Power / Take a Walk** blood magic decision chain (`bm_seek_power_decision.txt` / `bm_seek_power_events.txt`).
 
-Originally starting as "Take a Stroll / Walk Through Town" (`bm_stroll_through_town`) before being repurposed into "Seek Power in Nature's Domain" (`bm_seek_power_decision.txt` / `bm_seek_power_events.txt`), the current mechanic is a 2-year cooldown decision with a single prowess roll that splits into 3 outcomes:
-1. `seek_power.002`: Slaying a wild stag for minor lifeforce.
-2. `seek_power.003`: Meeting a lost traveler (drain, trait drain, recruit, or ignore).
-3. `seek_power.004`: Finding the ancient Bleeding Tree for major lifeforce.
+The wilderness event pool has already been expanded to include diverse encounters: the Stag (`.002`), Traveler (`.003`), Bleeding Tree (`.004`), Beast Lair (`.008`), Homestead (`.009`), Outlaw Camp (`.010`), and Crimson Rite (`.011`).
 
-This document collects expansion paths and event ideas inspired by vanilla CK3 event mechanics (hunt activities, travel danger, stress coping, lifestyle events, and witchcraft/mysticism).
+This document collects remaining expansion paths and event ideas inspired by vanilla CK3 event mechanics (hunt activities, travel danger, stress coping, lifestyle events, and witchcraft/mysticism).
 
 ---
 
@@ -15,13 +12,12 @@ This document collects expansion paths and event ideas inspired by vanilla CK3 e
 
 ### Current vs. Proposed Architecture
 - **Current Flow**:
-  Decision -> `seek_power.001` (prowess duel) -> Single immediate resolution (`.002`, `.003`, or `.004`).
+  Decision -> `seek_power.001` (prowess duel / traveler roll) -> Direct encounter resolution.
 - **Proposed Flow Options**:
   - **Option A: Dual Environment Decision**: Keep the quick entry point, but let the player choose *where* to wander:
     - *The Shadowed Settlement* (Urban / Castle Town stroll: alleyways, crypts, markets).
-    - *The Untamed Wilds* (Wilderness / Forest expedition: beasts, tainted groves, hermits).
+    - *The Untamed Wilds* (Wilderness / Forest expedition: tainted groves, hermits, ruins).
   - **Option B: Multi-Stage Scouting Chain**: The first event presents sensory cues (scent of blood, sound of steel, mystical hum), and the player's choice directs the resulting encounter and skill checks.
-  - **Option C: Expanded Event Pool**: Keep the wilderness framework, but expand the outcome pool from 3 to 8+ diverse encounters weighted by location, terrain, character traits, and blood mage track levels.
 
 ---
 
@@ -61,17 +57,9 @@ For landless adventurers in settlements or feudal rulers dwelling in castles, th
 
 *Inspired by vanilla hunt events, travel danger, and wild fauna interactions.*
 
-Expands the current wilderness pool beyond just the Stag, Traveler, and Bleeding Tree.
+Expands the current wilderness pool beyond the Stag, Traveler, Bleeding Tree, Beast Lair, Homestead, Outlaw Camp, and Crimson Rite.
 
-### Event Idea 2.1: The Alpha Predator's Kill
-- **Premise**: You come across an apex predator (a great wolf, bear, or big cat) feeding on fresh game in a clearing.
-- **Skill Checks / Tracks**: Prowess / Hematurgy.
-- **Options**:
-  - *Boil the beast's blood*: Use raw hemomancy to strike down both predator and prey simultaneously. Duel check rewarding major lifeforce and `hematurgy` XP.
-  - *Subjugate and bind*: Infuse the predator with a droplet of your own empowered lifeforce to tame it. Spend minor lifeforce to gain a hunting pet / court hound modifier or combat prowess modifier.
-  - *Yield the kill and observe*: Study the predator's natural vitality from afar (Stress reduction, minor Learning XP).
-
-### Event Idea 2.2: The Isolated Hermit of the Outskirts
+### Event Idea 2.1: The Isolated Hermit of the Outskirts
 - **Premise**: Deep in the forest, you stumble across a remote hut inhabited by an old hermit—either a hedge witch, a retired soldier, or an exiled mystic.
 - **Skill Checks / Tracks**: Diplomacy / Learning.
 - **Options**:
@@ -79,7 +67,7 @@ Expands the current wilderness pool beyond just the Stag, Traveler, and Bleeding
   - *Consume their gathered wisdom*: Harvest the hermit entirely. Gain lifeforce and track XP, but receive Dread and potential Stress.
   - *Offer them sanctuary*: Invite the hermit to court as an arcane scholar or herbalist.
 
-### Event Idea 2.3: The Blood-Tainted Spring
+### Event Idea 2.2: The Blood-Tainted Spring
 - **Premise**: In a secluded cavern or misty glen, water bubbles up thick and dark crimson from mineral veins or forgotten battlefields.
 - **Skill Checks / Tracks**: Learning / Health check.
 - **Options**:
@@ -87,21 +75,13 @@ Expands the current wilderness pool beyond just the Stag, Traveler, and Bleeding
   - *Bottle the tainted waters*: Collect vials for future rituals (gain a minor trinket artifact or consumable character modifier).
   - *Cleanse / Consecrate the ground*: Cast a ritual to channel the earth's energy into your demesne (increases county control or popular opinion).
 
-### Event Idea 2.4: The Bandit Ambush Turned Prey
-- **Premise**: A group of desperate outlaws ambushes you, unaware of what you truly are.
-- **Skill Checks / Tracks**: Prowess / Dread check.
-- **Options**:
-  - *Unleash crimson horror*: Slit your palm and slaughter them with blood spikes. Major Dread gain, `crimson_warrior` or `prowess` XP, harvest multiple minor lifeforce modifiers.
-  - *Break their minds and recruit*: Terrify the survivors into serving you as criminal levies or retinue recruits.
-  - *Merciful escape*: Use mist/shadow blood trickery to vanish, leaving them baffled.
-
 ---
 
 ## 4. Direction 3: Multi-Stage Choice Chain (The Scent of Life)
 
 Instead of jumping straight from decision to a random event, turn the stroll into an atmospheric 2-stage scouting trek:
 
-### Stage 1: Reading the Leylines (`seek_power.010`)
+### Stage 1: Reading the Leylines
 *Description*: You close your eyes, extend your senses into the surrounding lands, and taste the currents of life pulsing through the air. Three distinct resonances call out to you.
 - **Option A (The Scent of Iron & Conflict)**: "I sense steel, sweat, and racing pulses."
   - Leads to encounters with patrols, wounded knights, bandit camps, or dueling beasts. Tests **Prowess** and **Intrigue**.
@@ -136,6 +116,6 @@ If the character has specific conditions active:
 | Idea Concept | Primary Skills | Key Rewards | Risk / Downsides |
 | :--- | :--- | :--- | :--- |
 | **Urban Midnight Prowl** | Intrigue, Learning | Alchemical gold, secret hooks, subtle lifeforce | Crime exposure, clergy wrath, local unrest |
-| **Wilderness Expansion** | Prowess, Learning | Major lifeforce, beast familiars, rare traits | Physical injury, disease, lost travel safety |
+| **Wilderness Encounters (Hermit, Spring)** | Prowess, Learning | Major lifeforce, beast familiars, rare traits | Physical injury, disease, lost travel safety |
 | **The Scent of Life (2-Stage)** | Player Choice | Tailored rewards according to chosen focus | Longer chain, higher variance |
 | **Golem Field Trial** | Learning, Prowess | Golem combat buffs, unearthed runes | Construct disobedience, terrorizing locals |

@@ -96,7 +96,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - Consolidated positive character interactions into unified modal window **Blood Blessing** (Empower Blood Mage/Knight, Grant Lifeforce, Bless Blood, Annoint Heir, Consecrate Union, Inscribe Blood Rune).
 - Consolidated hostile lifeforce extraction into unified modal window **Blood Drain** (Major Life drain, Minor Life drain, Drain Stored Lifeforce, Demand Blood Tithe).
 - **Blood Healing**: interaction is always clickable when an affliction is present to inspect requirements directly in the event; Deadly afflictions (leprosy, cancer, plague) now require Superior Lifeforce and 100 Piety (+3 Benediction XP).
-- Current Situation alerts when a kinsperson or courtier can be healed, when dungeon prisoners can be lifedrained, or when an eligible 20+ Prowess prisoner or fallen champion can be culled.
+- Current Situation healing alert (`bm_action_can_heal`) monitors councillors, immediate and close family, court positions, and companions; styled green (`Can Heal`) when the corresponding Lifeforce is held, and gray (`Needs Lifeforce`) under unimportant actions when Lifeforce is lacking. Alerts also notify when prisoners can be lifedrained or 20+ Prowess champions culled.
 - Cull Fallen Champion requires 20+ Prowess across all targets (captives and fallen followers).
 - **Purge Stress Vices** burns away all 11 coping traits.
 - Hulinhjálmur conceals the caster from discovery penalties on failed siphons and curses.
@@ -131,6 +131,7 @@ Annual pulse (3-year cooldown) for player Blood Mages and Blood Knights:
 
 ## Version history
 
+- v1.20.64: Add playable Icelandic culture with equal martial custom, saga name lists, and modular game start setup gated by campaign game rule (on by default)
 - v1.20.63: Align House Covenants (7 to 6) and Blood Power (6 tracks); universal monthly Piety and 1:1 Devotion attribute scaling; yearly covenant pulse feeds matching Blood Power tracks
 - v1.20.62: Standardize event exits to "Back"; reduce manifest/rune/hunt cooldowns; lower Blood Berserker provision cost
 - v1.20.61: Restructure Manifest Congenital Traits (Ranks 1–3 in Major, Ranks 4–5 in Superior with 3/4/5/6/7/8 XP scaled by trait rank); unify positive interactions into Blood Blessing and hostile harvesting into Blood Drain; rename Heal Affliction to Heal Healing
