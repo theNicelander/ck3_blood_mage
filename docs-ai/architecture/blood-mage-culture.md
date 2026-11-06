@@ -35,12 +35,13 @@
 
 - **Patronymics:** `always_use_patronym = yes`, `dynnpat_suf_male = "dynnpat_suf_sson"` (`-sson`), `patronym_suffix_female = "bm_dynnpat_suf_sdottir"` (`-sdóttir`), prefix `"dynnp_af"`.
 - **Name Naming Convention:** Uses engine-safe ASCII keys in script (`PE_tur`, `IngO_lfur`, `KonrA_D_`, `GuD_finnur`, `LA_ra`, `SigrU_n`) paired with explicit localized strings (**Pétur**, **Ingólfur**, **Konráð**, **Guðfinnur**, **Lára**, **Sigrún**).
-- **Epenthetic `-ur`:** Applied systematically across nominative masculine names (*Ingólfur, Ólafur, Sigurður, Haraldur, Guðmundur, Eiríkur, Hallur, Höskuldur, Börkur, Haukur, Glúmur, Eyvindur, Leifur, Kveldúlfur, Skallagrímur*).
-- **Dynasties:**
+- **Curated Roster (124 Male, 73 Female):** Contains strictly curated saga, mythological, historical, and literary names. All unrequested baseline Old Norse names are purged.
+- **Epenthetic `-ur`:** Applied systematically across nominative masculine and feminine names (*Gunnhildur, Einar, Grímur, Þorbrandur, Ingólfur, Sigurður, Haraldur, Guðmundur, Eiríkur, Hallur, Haukur, Leifur, Kveldúlfur, Skallagrímur, Álfrhildur, Hólmfríður*).
+- **Dynasties (31 total):**
   - *Sturlungaöld (Age of the Sturlungs) Chieftains:* Sturlungar, Haukdælir, Oddaverjar, Ásbirningar, Svínfellingar, Vatnsfirðingar.
   - *Heroic / Legendary:* Völsungar, Loðbrók, Járnsíða, Beinlausi, Hárfagri, Bebbanburg, Ragnarsynir, Langsverð.
   - *Tolkien-Inspired Icelandic Houses:* Eikinskjaldi, Hringberi, Stígandi, Stríðsmaður, Róhansmenn.
-  - *Saga Houses:* Hlíðarendi, Ormstunga, Eyfells, Kormákur, Eldjárn, Blöndal, Nordal, Haarde, Gnarr.
+  - *Saga Houses:* Hlíðarendi, Ormstunga, Eyfells, Kormákur, Eldjárn, Blöndal, Nordal, Haarde, Gnarr, Goði, Gautur.
 
 ### 3. Campaign Game Rule & Day 1 Setup
 
