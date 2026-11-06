@@ -39,6 +39,7 @@
 - **Dynasties:**
   - *Sturlungaöld (Age of the Sturlungs) Chieftains:* Sturlungar, Haukdælir, Oddaverjar, Ásbirningar, Svínfellingar, Vatnsfirðingar.
   - *Heroic / Legendary:* Völsungar, Loðbrók, Járnsíða, Beinlausi, Hárfagri, Bebbanburg, Ragnarsynir, Langsverð.
+  - *Tolkien-Inspired Icelandic Houses:* Eikinskjaldi, Hringberi, Stígandi, Stríðsmaður, Róhansmenn.
   - *Saga Houses:* Hlíðarendi, Ormstunga, Eyfells, Kormákur, Eldjárn, Blöndal, Nordal, Haarde, Gnarr.
 
 ### 3. Campaign Game Rule & Day 1 Setup
