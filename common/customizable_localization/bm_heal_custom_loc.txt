@@ -1,0 +1,16 @@
+﻿bm_heal_lifeforce_status_current_situation = {
+	type = character
+
+	text = {
+		trigger = {
+			root = {
+				bm_actor_has_lifeforce_to_heal_target_trigger = { TARGET = scope:second }
+			}
+		}
+		localization_key = bm_heal_lifeforce_status_ready
+	}
+
+	text = {
+		localization_key = bm_heal_lifeforce_status_unready
+	}
+}

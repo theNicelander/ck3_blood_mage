@@ -1,12 +1,16 @@
 ﻿l_english:
  bm_action_can_heal: "@health_icon! You Can Heal Someone"
- bm_action_can_heal_label: "@health_icon! You can heal [recipient.GetShortUINameNoTooltip]"
+ bm_action_can_heal_label: "@health_icon! You can heal [recipient.GetShortUINameNoTooltip], [actor.Custom2('bm_heal_lifeforce_status_current_situation', recipient)]"
  bm_action_can_heal_desc: "[recipient.GetShortUIName] is currently suffering from illness or injury. You can spend Lifeforce to heal them."
  bm_action_can_heal_click: "#I Click to heal [recipient.GetShortUINameNoTooltip]#!"
- bm_action_can_heal_combined_label: "[actor.Custom2('RelationToMeShort', recipient)], [recipient.GetShortUINameNoTooltip]"
+ bm_action_can_heal_combined_label: "[actor.Custom2('RelationToMeShort', recipient)], [recipient.GetShortUINameNoTooltip], [actor.Custom2('bm_heal_lifeforce_status_current_situation', recipient)]"
  bm_action_can_heal_combined_group_label: "@health_icon! You Can Heal Someone"
  bm_action_can_heal_combined_group_name: "$bm_action_can_heal$"
  bm_action_can_heal_combined_group_description: "Several important figures in your life or realm are currently wounded or afflicted by illness. You can spend Lifeforce to heal them."
+ bm_action_can_heal_unimportant: "@warning_icon! #X You do not have enough Lifeforce to heal [recipient.GetHerHim]#!"
+ bm_action_can_heal_combined_unimportant: "@warning_icon! #X You do not have enough Lifeforce to heal any of them#!"
+ bm_heal_lifeforce_status_ready: "#P @health_icon! Can Heal#!"
+ bm_heal_lifeforce_status_unready: "#low @health_icon! Needs Lifeforce#!"
 
  bm_action_can_lifedrain_prisoner: "@bm_hematurgy_discipline_icon! You Can Lifedrain a Prisoner"
  bm_action_can_lifedrain_prisoner_label: "@bm_hematurgy_discipline_icon! You can lifedrain [recipient.GetShortUINameNoTooltip]"

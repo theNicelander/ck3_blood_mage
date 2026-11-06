@@ -39,7 +39,16 @@
 				add_to_temporary_list = bm_heal_candidates
 			}
 
-			# 4. Lovers and Soulmates
+			# 4. Close Family
+			every_close_family_member = {
+				limit = {
+					bm_can_heal_character_trigger = yes
+					NOT = { is_in_list = bm_heal_candidates }
+				}
+				add_to_temporary_list = bm_heal_candidates
+			}
+
+			# 5. Lovers and Soulmates
 			every_relation = {
 				type = lover
 				limit = {
@@ -90,7 +99,7 @@
 				}
 			}
 
-			# 7. Councillors
+			# 8. Councillors
 			every_councillor = {
 				limit = {
 					bm_can_heal_character_trigger = yes
@@ -99,7 +108,16 @@
 				add_to_temporary_list = bm_heal_candidates
 			}
 
-			# 8. Knights
+			# 9. Court Positions
+			every_court_position_holder = {
+				limit = {
+					bm_can_heal_character_trigger = yes
+					NOT = { is_in_list = bm_heal_candidates }
+				}
+				add_to_temporary_list = bm_heal_candidates
+			}
+
+			# 10. Knights
 			every_knight = {
 				limit = {
 					bm_can_heal_character_trigger = yes
@@ -116,6 +134,14 @@
 					actor = scope:actor
 					recipient = this
 				}
+			}
+		}
+	}
+
+	unimportant = {
+		NOT = {
+			root = {
+				bm_actor_has_lifeforce_to_heal_target_trigger = { TARGET = scope:recipient }
 			}
 		}
 	}
