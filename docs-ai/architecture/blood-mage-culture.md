@@ -38,7 +38,7 @@
 - **Epenthetic `-ur`:** Applied systematically across nominative masculine names (*Ingólfur, Ólafur, Sigurður, Haraldur, Guðmundur, Eiríkur, Hallur, Höskuldur, Börkur, Haukur, Glúmur, Eyvindur, Leifur, Kveldúlfur, Skallagrímur*).
 - **Dynasties:**
   - *Sturlungaöld (Age of the Sturlungs) Chieftains:* Sturlungar, Haukdælir, Oddaverjar, Ásbirningar, Svínfellingar, Vatnsfirðingar.
-  - *Heroic / Mythological:* Völsungar (Völsunga saga, Sigurður Fáfnisbani).
+  - *Heroic / Legendary:* Völsungar, Loðbrók, Járnsíða, Beinlausi, Hárfagri, Bebbanburg, Ragnarsynir, Langsverð.
   - *Saga Houses:* Hlíðarendi, Ormstunga, Eyfells, Kormákur, Eldjárn, Blöndal, Nordal, Haarde, Gnarr.
 
 ### 3. Campaign Game Rule & Day 1 Setup
