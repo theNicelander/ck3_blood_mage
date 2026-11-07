@@ -11,7 +11,7 @@
 | --- | --- | --- |
 | **Identifier** | `bm_icelandic` | Parent: `norse`; Era created: `867.1.1` |
 | **Color** | `{ 210 150 255 }` | Matches Norwegian pastel palette |
-| **Ethos** | `ethos_bellicose` | Standard North Germanic |
+| **Ethos** | `ethos_communal` | Emphasizes community solidarity and cultural acceptance |
 | **Heritage** | `heritage_north_germanic` | Enables North Germanic innovations and hybridizations |
 | **Language** | `language_norse` | Shares language with Norse and Norwegian |
 | **Martial Custom** | `martial_custom_equal` | Both men and women serve as knights and commanders |

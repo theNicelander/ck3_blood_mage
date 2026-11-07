@@ -131,7 +131,7 @@ Annual pulse (3-year cooldown) for player Blood Mages and Blood Knights:
 
 ## Version history
 
-- v1.20.65: Icelandic culture adopts Beacon of Learning (fallback Philosopher Culture) over Dexterous Fishermen; standardize Icelandic name list with epenthetic -ur endings and curated saga roster
+- v1.20.65: Icelandic culture adopts communal ethos and Beacon of Learning (fallback Philosopher Culture); standardize Icelandic name list with epenthetic -ur endings and curated saga roster
 - v1.20.64: Add playable Icelandic culture with equal martial custom, saga name lists, and modular game start setup gated by campaign game rule (on by default)
 - v1.20.63: Align House Covenants (7 to 6) and Blood Power (6 tracks); universal monthly Piety and 1:1 Devotion attribute scaling; yearly covenant pulse feeds matching Blood Power tracks
 - v1.20.62: Standardize event exits to "Back"; reduce manifest/rune/hunt cooldowns; lower Blood Berserker provision cost
