@@ -15,7 +15,7 @@
 | **Heritage** | `heritage_north_germanic` | Enables North Germanic innovations and hybridizations |
 | **Language** | `language_norse` | Shares language with Norse and Norwegian |
 | **Martial Custom** | `martial_custom_equal` | Both men and women serve as knights and commanders |
-| **Traditions** | 5 total | Ting-Meet, Dexterous Fishermen, Maritime Mercantilism, Coastal Warriors (fallback Hird), Northern Stories (fallback Runestones) |
+| **Traditions** | 5 total | Ting-Meet, Maritime Mercantilism, Beacon of Learning (fallback Philosopher Culture), Coastal Warriors (fallback Hird), Northern Stories (fallback Runestones) |
 | **Name List** | `bm_name_list_icelandic` | Saga names, epenthetic `-ur` endings, `-sson` / `-sdottir` patronymics |
 | **Innovations** | Baseline North Germanic | Defined for `867.1.1`, `950.1.1`, and `1066.1.1` |
 
@@ -26,8 +26,8 @@
 | Tradition ID | Name | DLC Required | Fallback |
 | --- | --- | --- | --- |
 | `tradition_things` | Ting-Meet | None | None |
-| `tradition_fishermen` | Dexterous Fishermen | None | None |
 | `tradition_maritime_mercantilism` | Maritime Mercantilism | None | None |
+| `tradition_fp3_beacon_of_learning` | Beacon of Learning | `legacy_of_persia` | `tradition_philosopher_culture` |
 | `tradition_fp1_coastal_warriors` | Coastal Warriors | `the_northern_lords` | `tradition_hird` |
 | `tradition_fp1_northern_stories` | Northern Stories | `the_northern_lords` | `tradition_runestones` |
 
