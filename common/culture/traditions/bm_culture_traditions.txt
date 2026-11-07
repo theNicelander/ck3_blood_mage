@@ -30,7 +30,6 @@
 
 	parameters = {
 		scandinavian_elective_enabled = yes
-		has_access_to_trials_by_combat = yes
 		trial_by_combat_enabled = yes
 	}
 
@@ -121,7 +120,8 @@ bm_tradition_verbudir = {
 		trade_ports_stationed_maa_bonus = yes
 		trade_ports_give_control_growth = yes
 		trade_ports_give_levies = yes
-		maritime_mercantilism_avaricious_bonus = yes
+		maritime_mercantilism_coastal_holdings = yes
+		can_travel_along_rivers = yes
 	}
 
 	character_modifier = {

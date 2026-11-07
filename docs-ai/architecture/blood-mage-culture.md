@@ -44,7 +44,8 @@
   - Monthly County Control Growth (+0.10 to +0.25) via native `trade_ports_give_control_growth = yes`.
   - Levies (+4% to +16%) via native `trade_ports_give_levies = yes`.
   - Cultural Fascination (+2% progress per level) via `trade_ports_give_fascination = yes`.
-  - Avaricious lifestyle bonus via `maritime_mercantilism_avaricious_bonus = yes`.
+  - Coastal Holdings tax bonus across castles, cities, and temples via `maritime_mercantilism_coastal_holdings = yes`.
+  - River sailing capability via `can_travel_along_rivers = yes`.
 - **Character Travel Modifiers (`character_modifier`):** `embarkation_cost_mult = -0.75` (-75% embarkation cost), `sea_travel_danger = medium_sea_danger_reduction`, and `coastal_sea_travel_danger = medium_sea_danger_reduction`.
 - **County Economy & Military (`county_modifier`):** `monthly_county_control_growth_add = 0.05` (+0.05/mo control growth), `tax_mult = 0.20` (+20% taxes), `levy_size = 0.20` (+20% levies), and `supply_limit_mult = 0.25` (+25% supply limit).
 
