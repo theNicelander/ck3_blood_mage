@@ -116,8 +116,11 @@ Annual pulse (3-year cooldown) for player Blood Mages and Blood Knights:
 - Playable **Icelandic** culture (`bm_icelandic`) featuring equal martial custom, North Germanic heritage, communal ethos, and 5 starting traditions.
 - Custom tradition **Alþingi Commonwealth** (`bm_tradition_althingi`) replaces Ting-Meet:
   - Unlocks Scandinavian Elective and Hólmganga (Trial by Combat).
-  - Integrates with Tradeport harbor tiers 1–8: grants scaling County Control Growth, Levies, and +2% Cultural Fascination Progress per tier.
-  - Grants +0.10 monthly development growth to the capital, +25% cultural head fascination, +0.05 county development growth, and +25% county development growth factor.
+  - Grants +0.10 monthly development growth to the capital, +25% cultural head fascination, +0.05 county development growth, +25% county development growth factor, and +0.10 monthly county control growth.
+- Custom tradition **Verbúðir** (`bm_tradition_verbudir`) replaces Maritime Mercantilism:
+  - Accessible to Tribal and Feudal cultures from 867; allows Tradeport construction 1 era earlier and enables Tradeports in Tribal holdings.
+  - Integrates with Tradeport harbor tiers 1–8: grants stationed Men-at-Arms toughness, scaling County Control Growth, Levies, and +2% Cultural Fascination Progress per tier alongside Avaricious bonuses.
+  - Grants -75% embarkation gold cost, reduced sea and coastal danger, +20% county taxes, +20% levies, +25% supply limit, and +0.05 monthly control growth.
 - Curated Icelandic saga name list with epenthetic `-ur` patronymics and 31 historical Sturlungaöld, heroic, and Tolkien-adapted houses.
 - Modular game-start conversion of `d_iceland` gated by the `bm_icelandic_culture` game rule.
 
@@ -142,7 +145,7 @@ Annual pulse (3-year cooldown) for player Blood Mages and Blood Knights:
 
 ## Version history
 
-- v1.20.65: Add custom Alþingi Commonwealth tradition to Icelandic culture; standardize Icelandic names and ethos; exempt Blood Knights from gender warfare restrictions to serve as knights and commanders
+- v1.20.65: Add custom Alþingi Commonwealth and Verbúðir traditions to Icelandic culture; standardize Icelandic names and ethos; exempt Blood Knights from gender warfare restrictions to serve as knights and commanders
 - v1.20.64: Add playable Icelandic culture with equal martial custom, saga name lists, and modular game start setup gated by campaign game rule (on by default)
 - v1.20.63: Align House Covenants (7 to 6) and Blood Power (6 tracks); universal monthly Piety and 1:1 Devotion attribute scaling; yearly covenant pulse feeds matching Blood Power tracks
 - v1.20.62: Standardize event exits to "Back"; reduce manifest/rune/hunt cooldowns; lower Blood Berserker provision cost

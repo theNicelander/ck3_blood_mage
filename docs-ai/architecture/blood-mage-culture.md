@@ -15,7 +15,7 @@
 | **Heritage** | `heritage_north_germanic` | Enables North Germanic innovations and hybridizations |
 | **Language** | `language_norse` | Shares language with Norse and Norwegian |
 | **Martial Custom** | `martial_custom_equal` | Both men and women serve as knights and commanders |
-| **Traditions** | 5 total | Alþingi Commonwealth, Maritime Mercantilism, Beacon of Learning (fallback Philosopher Culture), Coastal Warriors (fallback Hird), Northern Stories (fallback Runestones) |
+| **Traditions** | 5 total | Alþingi Commonwealth, Verbúðir, Beacon of Learning (fallback Philosopher Culture), Coastal Warriors (fallback Hird), Northern Stories (fallback Runestones) |
 | **Name List** | `bm_name_list_icelandic` | Saga names, epenthetic `-ur` endings, `-sson` / `-sdottir` patronymics |
 | **Innovations** | Baseline North Germanic | Defined for `867.1.1`, `950.1.1`, and `1066.1.1` |
 
@@ -26,7 +26,7 @@
 | Tradition ID | Name | DLC Required | Fallback |
 | --- | --- | --- | --- |
 | `bm_tradition_althingi` | Alþingi Commonwealth | None | None |
-| `tradition_maritime_mercantilism` | Maritime Mercantilism | None | None |
+| `bm_tradition_verbudir` | Verbúðir | None | None |
 | `tradition_fp3_beacon_of_learning` | Beacon of Learning | `legacy_of_persia` | `tradition_philosopher_culture` |
 | `tradition_fp1_coastal_warriors` | Coastal Warriors | `the_northern_lords` | `tradition_hird` |
 | `tradition_fp1_northern_stories` | Northern Stories | `the_northern_lords` | `tradition_runestones` |
@@ -34,12 +34,19 @@
 #### Alþingi Commonwealth (`bm_tradition_althingi`)
 - **Succession & Assembly:** Unlocks Scandinavian Elective (`scandinavian_elective_enabled = yes`). Preserves mutual exclusivity with `tradition_things`.
 - **Trial by Combat (Hólmganga):** Unlocks Hólmganga duel interaction via native `has_access_to_trials_by_combat = yes` and `trial_by_combat_enabled = yes`.
+- **Ruler & Capital Modifiers (`character_modifier`):** `character_capital_county_monthly_development_growth_add = 0.10`, `cultural_head_fascination_mult = 0.25`.
+- **County Development & Control (`county_modifier`):** `development_growth = 0.05` (+0.05/mo flat development growth), `development_growth_factor = 0.25` (+25% development growth factor), and `monthly_county_control_growth_add = 0.10` (+0.10/mo county control growth).
+
+#### Verbúðir (`bm_tradition_verbudir`)
+- **Tribal Maritime Powerhouse:** Replaces `tradition_maritime_mercantilism`. Fully pickable and functional for Tribal cultures from 867 (`trade_ports_enabled_for_tribals = yes`, `next_level_trade_ports = yes`). Mutually exclusive with `tradition_maritime_mercantilism` and `tradition_fishermen`.
 - **Tradeport Harbor Bonuses:** Hooks cleanly into Tradeport tiers 1–8:
+  - Stationed Men-at-Arms bonus via `trade_ports_stationed_maa_bonus = yes`.
   - Monthly County Control Growth (+0.10 to +0.25) via native `trade_ports_give_control_growth = yes`.
   - Levies (+4% to +16%) via native `trade_ports_give_levies = yes`.
   - Cultural Fascination (+2% progress per level) via `trade_ports_give_fascination = yes`.
-- **Ruler & Capital Modifiers (`character_modifier`):** `character_capital_county_monthly_development_growth_add = 0.10`, `cultural_head_fascination_mult = 0.25`.
-- **County Development Modifiers (`county_modifier`):** `development_growth = 0.05` (+0.05/mo flat development growth) and `development_growth_factor = 0.25` (+25% development growth factor).
+  - Avaricious lifestyle bonus via `maritime_mercantilism_avaricious_bonus = yes`.
+- **Character Travel Modifiers (`character_modifier`):** `embarkation_cost_mult = -0.75` (-75% embarkation cost), `sea_travel_danger = medium_sea_danger_reduction`, and `coastal_sea_travel_danger = medium_sea_danger_reduction`.
+- **County Economy & Military (`county_modifier`):** `monthly_county_control_growth_add = 0.05` (+0.05/mo control growth), `tax_mult = 0.20` (+20% taxes), `levy_size = 0.20` (+20% levies), and `supply_limit_mult = 0.25` (+25% supply limit).
 
 ### 2. Name List & Patronymics (`bm_name_list_icelandic`)
 
@@ -66,14 +73,14 @@
 | Concept | File Path |
 | --- | --- |
 | Culture definition & pillars | `common/culture/cultures/bm_icelandic.txt` |
-| Alþingi Commonwealth tradition | `common/culture/traditions/bm_althingi.txt` |
+| Culture traditions | `common/culture/traditions/bm_culture_traditions.txt` |
 | Name list & patronymics | `common/culture/name_lists/bm_name_list_icelandic.txt` |
 | Innovations history | `history/cultures/bm_icelandic.txt` |
 | Game start conversion on-action | `common/on_action/bm_icelandic_culture.txt` |
 | Game rule declaration | `common/game_rules/bm_game_rules.txt` |
 | Game rule localization | `localization/english/bm_game_rules_l_english.yml` |
 | Culture & name localization | `localization/english/culture/bm_icelandic_l_english.yml` |
-| Tradition localization | `localization/english/culture/bm_althingi_tradition_l_english.yml` |
+| Traditions localization | `localization/english/culture/bm_culture_traditions_l_english.yml` |
 
 ## Gotchas
 
