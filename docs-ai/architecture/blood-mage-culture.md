@@ -38,8 +38,7 @@
   - Monthly County Control Growth (+0.10 to +0.25) via native `trade_ports_give_control_growth = yes`.
   - Levies (+4% to +16%) via native `trade_ports_give_levies = yes`.
   - Cultural Fascination (+2% progress per level) via `trade_ports_give_fascination = yes`.
-- **Coastal Holding Speed:** Unlocks native coastal holding construction speed bonus via `coastal_holding_bonuses = yes`.
-- **Ruler & Construction Modifiers (`character_modifier`):** `character_capital_county_monthly_development_growth_add = 0.10`, `cultural_head_fascination_mult = 0.25`, `build_gold_cost = -0.10`, `holding_build_gold_cost = -0.10`, `build_speed = -0.10`, `holding_build_speed = -0.10`.
+- **Ruler & Capital Modifiers (`character_modifier`):** `character_capital_county_monthly_development_growth_add = 0.10`, `cultural_head_fascination_mult = 0.25`.
 - **County Development Modifiers (`county_modifier`):** `development_growth = 0.05` (+0.05/mo flat development growth) and `development_growth_factor = 0.25` (+25% development growth factor).
 
 ### 2. Name List & Patronymics (`bm_name_list_icelandic`)

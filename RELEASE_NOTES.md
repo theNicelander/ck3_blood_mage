@@ -117,7 +117,7 @@ Annual pulse (3-year cooldown) for player Blood Mages and Blood Knights:
 - Custom tradition **Alþingi Commonwealth** (`bm_tradition_althingi`) replaces Ting-Meet:
   - Unlocks Scandinavian Elective and Hólmganga (Trial by Combat).
   - Integrates with Tradeport harbor tiers 1–8: grants scaling County Control Growth, Levies, and +2% Cultural Fascination Progress per tier.
-  - Grants +0.10 monthly development growth to the capital, +25% cultural head fascination, +0.05 county development growth, +25% county development growth factor, and -10% holding/building gold cost and construction speed.
+  - Grants +0.10 monthly development growth to the capital, +25% cultural head fascination, +0.05 county development growth, and +25% county development growth factor.
 - Curated Icelandic saga name list with epenthetic `-ur` patronymics and 31 historical Sturlungaöld, heroic, and Tolkien-adapted houses.
 - Modular game-start conversion of `d_iceland` gated by the `bm_icelandic_culture` game rule.
 
