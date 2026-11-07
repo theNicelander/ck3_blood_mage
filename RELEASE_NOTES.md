@@ -13,6 +13,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - Blood Mage tracks Bloodline and Hematurgy: 10-step cadence (universal monthly income mult, trait inheritance, dynasty prestige, hostile scheme power and defence).
 - Blood Knight tracks Vanguard (army speed, advantage, supply, prowess) and Slaughter (prowess, knight limit and effectiveness).
 - Blood Knights can initiate spouse, children and kin (+5 Vanguard XP for dynasty), and empower family even if landed or outside their court.
+- Blood Knights automatically qualify to serve as knights and commanders across all cultures and faiths regardless of gender restrictions.
 - **Blood Power** secondary trait with six mirrored tracks (Dynasty, Warband, Mastery, Presence, Prosperity, Shadows) structured into five milestone tiers (10, 30, 50, 70, 100 XP) with scaling monthly Piety (+0.1 to +1.0), flat monthly lifestyle XP (+5 to +50/mo), shared 50 & 100 XP milestone bonuses (+10% monthly Piety mult, +5 life expectancy, +0.25 health, +0.02 monthly Piety per knight), and a tight suite of 3–4 high-impact personal modifiers delivering 2x–3x the power of House Covenants (including scaling legitimacy mult, stress composure, universal income mult, and inbreeding immunity), culminating in an Age Prowess Lock.
 - Track XP sources rebalanced: healing grants Benediction, family rites and childbirth grant Ancient/Benediction, congenital manifestation grants XP by attribute.
 - Regiments: **Blood Berserkers** (heavy shock infantry, Devotion 2+) and **Blood-Bound Behemoths** (siege-capable monsters, Devotion 4+), Piety-maintained.
@@ -131,7 +132,7 @@ Annual pulse (3-year cooldown) for player Blood Mages and Blood Knights:
 
 ## Version history
 
-- v1.20.65: Icelandic culture adopts communal ethos and Beacon of Learning (fallback Philosopher Culture); standardize Icelandic name list with epenthetic -ur endings and curated saga roster
+- v1.20.65: Standardize Icelandic names and traditions; exempt Blood Knights from gender warfare restrictions to serve as knights and commanders
 - v1.20.64: Add playable Icelandic culture with equal martial custom, saga name lists, and modular game start setup gated by campaign game rule (on by default)
 - v1.20.63: Align House Covenants (7 to 6) and Blood Power (6 tracks); universal monthly Piety and 1:1 Devotion attribute scaling; yearly covenant pulse feeds matching Blood Power tracks
 - v1.20.62: Standardize event exits to "Back"; reduce manifest/rune/hunt cooldowns; lower Blood Berserker provision cost
