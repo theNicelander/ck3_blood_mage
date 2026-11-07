@@ -1,0 +1,37 @@
+﻿l_russian:
+  # Blood Rune Modifiers
+  minor_blood_rune_modifier:0 "Малая руна крови"
+  minor_blood_rune_modifier_desc:0 "Эти простые символы крови каждый год имеют шанс принести силу.\n\nНачертанные кровью тайные символы вокруг сердца слабо пульсируют под кожей, словно медленно бьющееся второе сердце, позволяя пассивно собирать [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] из окружающего мира."
+
+  major_blood_rune_modifier:0 "Большая руна крови"
+  major_blood_rune_modifier_desc:0 "Эти сложные руны каждый год приносят более обильные и частые запасы.\n\nЗамысловатые багровые татуировки струятся по торсу и рукам, словно живые вены, позволяя пассивно собирать [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] и [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] из окружающего мира."
+
+  superior_blood_rune_modifier:0 "Высшая руна крови"
+  superior_blood_rune_modifier_desc:0 "Эти искусные письмена крови приносят наибольшие ежегодные запасы и открывают возможность связать руну с гальдраставом.\n\nИскусные письмена крови покрывают жизненно важные участки тела, двигаясь под кожей словно живые, пока вы пассивно собираете [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] и [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] из окружающего мира."
+
+  blood_runes_effects_list.effects_list:0 "Получить всё более мощные руны крови (каждая ступень заменяет предыдущую):\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('minor_blood_rune_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('major_blood_rune_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('superior_blood_rune_modifier').GetNameWithTooltip]"
+  blood_runes_effects_list.minor:0 "Начертать на плоти руну [GetModifier('minor_blood_rune_modifier').GetNameWithTooltip], чтобы пассивно собирать [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] из окружающего мира."
+  blood_runes_effects_list.major:0 "Улучшить руну до ступени [GetModifier('major_blood_rune_modifier').GetNameWithTooltip], чтобы пассивно собирать [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] и [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] из окружающего мира."
+  blood_runes_effects_list.superior:0 "Улучшить руну до ступени [GetModifier('superior_blood_rune_modifier').GetNameWithTooltip], чтобы пассивно собирать [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] и [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] из окружающего мира и открыть возможность связать руну с гальдраставом."
+
+
+  # Blood Rune Event
+  bm_blood_rune.001.title:0 "Начертать руны крови"
+  bm_blood_rune.001.desc:0 "Вы разворачиваете древние свитки со сложными узорами силы — рунами крови, позволяющими пассивно собирать жизненную силу из окружающего мира. Ритуал требует особых игл, выкованных в пламени, закалённом кровью, чернил с примесью вашей сущности и твёрдой руки того, кто понимает: каждая линия не просто рисуется, а связывается с самим вашим существом.\n\nБоль будет мучительной, а перемены — необратимыми. Но с каждой каплей крови и чернил, впитавшейся в плоть, ваша связь с багровыми искусствами будет крепнуть. Такие знаки отличают мага крови, стремящегося к истинному мастерству: не просто владеть магией крови, а стать её живым воплощением."
+
+  bm_blood_rune.001.minor:0 "Малая руна крови — пульсирующий знак над сердцем"
+  bm_blood_rune.001.major:0 "Большая руна крови — сеть силы, пронизывающая плоть"
+  bm_blood_rune.001.superior:0 "Высшая руна крови — превратить кожу в живой гримуар магии крови"
+  bm_blood_rune.001.z:0 "Нынешние знаки служат мне достаточно хорошо"
+  bm_blood_rune_yearly_event_popup.title:0 "Ваша руна крови пассивно собрала жизненную силу из окружающего мира"
+
+  # Decision
+  bm_blood_rune_decision:0 "Начертать руны крови"
+  bm_blood_rune_decision_confirm:0 "Начать начертание кровью"
+  bm_blood_rune_decision_desc:0 "Используйте древнюю магию крови, чтобы начертать на плоти постоянные руны. Эти тайные знаки позволят со временем пассивно собирать жизненную силу из окружающего мира."
+  bm_blood_rune_decision_tooltip:0 "Навсегда начертать на теле руны крови, чтобы пассивно собирать жизненную силу из окружающего мира"
+  bm_blood_rune_decision_xp_requirement:0 "Нужно не менее [GetPlayer.MakeScope.ScriptValue('bm_blood_rune_minimum_xp')|0] опыта в магии крови"
+  NOT_bm_blood_rune_decision_xp_requirement:0 "Нужно не менее [GetPlayer.MakeScope.ScriptValue('bm_blood_rune_minimum_xp')|0] опыта в магии крови"
+  bm_blood_rune_minor_toast:0 "Малая руна крови начертана"
+  bm_blood_rune_major_toast:0 "Большая руна крови начертана"
+  bm_blood_rune_superior_toast:0 "Высшая руна крови начертана"
