@@ -111,6 +111,16 @@ Annual pulse (3-year cooldown) for player Blood Mages and Blood Knights:
 - **Echoes in the Clay**: shield an heir, grant Blademaster, or siphon the golem.
 - **The Whispering Sanctum**: drain, bribe or disperse an intruding courtier.
 
+## Icelandic Culture & Traditions
+
+- Playable **Icelandic** culture (`bm_icelandic`) featuring equal martial custom, North Germanic heritage, communal ethos, and 5 starting traditions.
+- Custom tradition **Alþingi Commonwealth** (`bm_tradition_althingi`) replaces Ting-Meet:
+  - Unlocks Scandinavian Elective and Hólmganga (Trial by Combat).
+  - Integrates with Tradeport harbor tiers 1–8: grants scaling County Control Growth, Levies, and +2% Cultural Fascination Progress per tier.
+  - Grants +0.10 monthly development growth to the capital, +25% cultural head fascination, +0.05 county development growth, +25% coastal development growth factor, and -10% holding/building gold cost and construction speed in coastal baronies.
+- Curated Icelandic saga name list with epenthetic `-ur` patronymics and 31 historical Sturlungaöld, heroic, and Tolkien-adapted houses.
+- Modular game-start conversion of `d_iceland` gated by the `bm_icelandic_culture` game rule.
+
 ## Visuals & Game Rules
 
 - Eyes progress from red to crimson, pale and white; hair bleaches to white.
@@ -132,7 +142,7 @@ Annual pulse (3-year cooldown) for player Blood Mages and Blood Knights:
 
 ## Version history
 
-- v1.20.65: Standardize Icelandic names and traditions; exempt Blood Knights from gender warfare restrictions to serve as knights and commanders
+- v1.20.65: Add custom Alþingi Commonwealth tradition to Icelandic culture; standardize Icelandic names and ethos; exempt Blood Knights from gender warfare restrictions to serve as knights and commanders
 - v1.20.64: Add playable Icelandic culture with equal martial custom, saga name lists, and modular game start setup gated by campaign game rule (on by default)
 - v1.20.63: Align House Covenants (7 to 6) and Blood Power (6 tracks); universal monthly Piety and 1:1 Devotion attribute scaling; yearly covenant pulse feeds matching Blood Power tracks
 - v1.20.62: Standardize event exits to "Back"; reduce manifest/rune/hunt cooldowns; lower Blood Berserker provision cost

@@ -15,7 +15,7 @@
 | **Heritage** | `heritage_north_germanic` | Enables North Germanic innovations and hybridizations |
 | **Language** | `language_norse` | Shares language with Norse and Norwegian |
 | **Martial Custom** | `martial_custom_equal` | Both men and women serve as knights and commanders |
-| **Traditions** | 5 total | Ting-Meet, Maritime Mercantilism, Beacon of Learning (fallback Philosopher Culture), Coastal Warriors (fallback Hird), Northern Stories (fallback Runestones) |
+| **Traditions** | 5 total | Alþingi Commonwealth, Maritime Mercantilism, Beacon of Learning (fallback Philosopher Culture), Coastal Warriors (fallback Hird), Northern Stories (fallback Runestones) |
 | **Name List** | `bm_name_list_icelandic` | Saga names, epenthetic `-ur` endings, `-sson` / `-sdottir` patronymics |
 | **Innovations** | Baseline North Germanic | Defined for `867.1.1`, `950.1.1`, and `1066.1.1` |
 
@@ -25,11 +25,22 @@
 
 | Tradition ID | Name | DLC Required | Fallback |
 | --- | --- | --- | --- |
-| `tradition_things` | Ting-Meet | None | None |
+| `bm_tradition_althingi` | Alþingi Commonwealth | None | None |
 | `tradition_maritime_mercantilism` | Maritime Mercantilism | None | None |
 | `tradition_fp3_beacon_of_learning` | Beacon of Learning | `legacy_of_persia` | `tradition_philosopher_culture` |
 | `tradition_fp1_coastal_warriors` | Coastal Warriors | `the_northern_lords` | `tradition_hird` |
 | `tradition_fp1_northern_stories` | Northern Stories | `the_northern_lords` | `tradition_runestones` |
+
+#### Alþingi Commonwealth (`bm_tradition_althingi`)
+- **Succession & Assembly:** Unlocks Scandinavian Elective (`scandinavian_elective_enabled = yes`). Preserves mutual exclusivity with `tradition_things`.
+- **Trial by Combat (Hólmganga):** Unlocks Hólmganga duel interaction via native `has_access_to_trials_by_combat = yes` and `trial_by_combat_enabled = yes`.
+- **Tradeport Harbor Bonuses:** Hooks cleanly into Tradeport tiers 1–8:
+  - Monthly County Control Growth (+0.10 to +0.25) via native `trade_ports_give_control_growth = yes`.
+  - Levies (+4% to +16%) via native `trade_ports_give_levies = yes`.
+  - Cultural Fascination (+2% progress per level) via `trade_ports_give_fascination = yes`.
+  - Consolidated parameter tooltip via `bm_althingi_trade_ports = yes`.
+- **Ruler & Capital Modifiers:** `character_capital_county_monthly_development_growth_add = 0.10`, `cultural_head_fascination_mult = 0.25`.
+- **County & Coastal Holdings Modifiers:** `development_growth = 0.05` across all counties; +25% development growth factor, -10% holding/building gold cost, and -10% holding/building construction speed across coastal provinces (`province_modifier`).
 
 ### 2. Name List & Patronymics (`bm_name_list_icelandic`)
 
@@ -56,12 +67,14 @@
 | Concept | File Path |
 | --- | --- |
 | Culture definition & pillars | `common/culture/cultures/bm_icelandic.txt` |
+| Alþingi Commonwealth tradition | `common/culture/traditions/bm_althingi.txt` |
 | Name list & patronymics | `common/culture/name_lists/bm_name_list_icelandic.txt` |
 | Innovations history | `history/cultures/bm_icelandic.txt` |
 | Game start conversion on-action | `common/on_action/bm_icelandic_culture.txt` |
 | Game rule declaration | `common/game_rules/bm_game_rules.txt` |
 | Game rule localization | `localization/english/bm_game_rules_l_english.yml` |
 | Culture & name localization | `localization/english/culture/bm_icelandic_l_english.yml` |
+| Tradition localization | `localization/english/culture/bm_althingi_tradition_l_english.yml` |
 
 ## Gotchas
 

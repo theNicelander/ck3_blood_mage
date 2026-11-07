@@ -1,0 +1,91 @@
+﻿bm_tradition_althingi = {
+	category = realm
+
+	layers = {
+		0 = diplo
+		1 = western
+		4 = council.dds
+	}
+
+	is_shown = {
+		OR = {
+			has_cultural_pillar = heritage_north_germanic
+			culture_is_or_has_ancestor_trigger = { CULTURE = culture:norse }
+			this = culture:bm_icelandic
+		}
+	}
+
+	can_pick = {
+		custom_description = {
+			text = culture_on_coast_desc
+			any_culture_county = {
+				has_coastal_province = yes
+			}
+		}
+		custom_tooltip = {
+			text = cannot_have_tradition_things
+			NOT = { has_cultural_tradition = tradition_things }
+		}
+	}
+
+	parameters = {
+		scandinavian_elective_enabled = yes
+		has_access_to_trials_by_combat = yes
+		trial_by_combat_enabled = yes
+		trade_ports_give_fascination = yes
+		trade_ports_give_control_growth = yes
+		trade_ports_give_levies = yes
+		bm_althingi_trade_ports = yes
+	}
+
+	character_modifier = {
+		character_capital_county_monthly_development_growth_add = 0.10
+		cultural_head_fascination_mult = 0.25
+	}
+
+	county_modifier = {
+		development_growth = 0.05
+	}
+
+	province_modifier = {
+		development_growth_factor = 0.25
+		build_gold_cost = -0.10
+		holding_build_gold_cost = -0.10
+		build_speed = -0.10
+		holding_build_speed = -0.10
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_communal = { is_in_list = traits }
+						culture_pillar:ethos_bureaucratic = { is_in_list = traits }
+						culture_pillar:ethos_bellicose = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_bellicose_or_bureaucratic_desc
+				}
+			}
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+
+	ai_will_do = {
+		value = 100
+		if = {
+			limit = {
+				has_cultural_pillar = heritage_north_germanic
+			}
+			multiply = 2
+		}
+	}
+}
