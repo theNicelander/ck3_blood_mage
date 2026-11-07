@@ -35,24 +35,21 @@
 		trade_ports_give_fascination = yes
 		trade_ports_give_control_growth = yes
 		trade_ports_give_levies = yes
-		bm_althingi_trade_ports = yes
+		coastal_holding_bonuses = yes
 	}
 
 	character_modifier = {
 		character_capital_county_monthly_development_growth_add = 0.10
 		cultural_head_fascination_mult = 0.25
-	}
-
-	county_modifier = {
-		development_growth = 0.05
-	}
-
-	province_modifier = {
-		development_growth_factor = 0.25
 		build_gold_cost = -0.10
 		holding_build_gold_cost = -0.10
 		build_speed = -0.10
 		holding_build_speed = -0.10
+	}
+
+	county_modifier = {
+		development_growth = 0.05
+		development_growth_factor = 0.25
 	}
 
 	cost = {
