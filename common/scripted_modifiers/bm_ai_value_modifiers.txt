@@ -45,13 +45,14 @@ ai_willingness_to_lifedrain = {
         add = -150
     }
 
-    # Disinclined to drain house members
+    # Disinclined to drain house members (unless using Demand Blood Tithe)
     modifier = {
         scope:actor = {
             exists = house
             exists = scope:recipient.house
             house = scope:recipient.house
         }
+        NOT = { scope:drain_tithe = yes }
         add = -100
     }
 
@@ -71,6 +72,12 @@ ai_willingness_to_lifedrain = {
     modifier = {
         factor = 0
         scope:recipient = { is_child_of = scope:actor }
+    }
+
+    # Absolute veto: Never drain primary heir under any circumstances
+    modifier = {
+        factor = 0
+        scope:recipient = { is_primary_heir_of = scope:actor }
     }
 
     # Absolute veto: Never drain close family under any circumstances
@@ -130,7 +137,7 @@ ai_willingness_to_lifedrain = {
         }
     }
 
-    # Absolute veto: Never drain your dynasty members (unless rival/nemesis)
+    # Absolute veto: Never drain your dynasty members (unless rival/nemesis, or using Demand Blood Tithe)
     modifier = {
         factor = 0
         scope:actor = {
@@ -139,6 +146,7 @@ ai_willingness_to_lifedrain = {
             dynasty = scope:recipient.dynasty
         }
         NOR = {
+            scope:drain_tithe = yes
             scope:recipient = { has_relation_rival = scope:actor }
             scope:recipient = { has_relation_nemesis = scope:actor }
         }

@@ -68,3 +68,27 @@ bm_seek_power_traveler_chance_value = {
 	min = 20
 	max = 50
 }
+
+bm_transmute_ancient_xp_value = {
+	value = 0
+	if = {
+		limit = { exists = var:bm_transmute_ancient_xp }
+		add = var:bm_transmute_ancient_xp
+	}
+}
+
+bm_transmute_enlightenment_xp_value = {
+	value = 0
+	if = {
+		limit = { exists = var:bm_transmute_enlightenment_xp }
+		add = var:bm_transmute_enlightenment_xp
+	}
+}
+
+bm_transmute_benediction_xp_value = {
+	value = 0
+	if = {
+		limit = { exists = var:bm_transmute_benediction_xp }
+		add = var:bm_transmute_benediction_xp
+	}
+}

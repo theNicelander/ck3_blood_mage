@@ -129,3 +129,7 @@ References: mod `common/character_interactions/bm_blood_knight_interactions.txt`
 4. Set `starts_enabled` on the options so the most relevant/unlocked option is pre-selected when the window opens.
 5. In `cost`, guard variable costs with `if = { limit = { scope:<flag> = yes } value = ... }`.
 6. Enclose stat/modifier/Lifeforce gains in `send_interface_toast` with `hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }`.
+7. **Always set `can_invalidate_interaction = yes`** on each `send_option`.
+8. **AI must score modal options**: In `ai_will_do`, explicitly add weights for each option: `modifier = { scope:<flag> = yes add = N }`.
+9. **Absolute empty-set veto**: CK3 AI evaluates combinations of flags including empty `{}`. You MUST end `ai_will_do` with `factor = 0` when no modal option is selected (`modifier = { NOR = { scope:<opt_a> = yes scope:<opt_b> = yes } factor = 0 }`), otherwise the AI fires the interaction with no options selected (zero cost, zero effect).
+10. **Structured debug logging**: Output structured `debug_log` inside each `if / else_if` in `on_accept`, and add an `else` branch logging `(NO OPTION)` fallback. Include Actor, Recipient, Option, Relationship, Tag (`bm_debug_relation_tags`), and Opinion.

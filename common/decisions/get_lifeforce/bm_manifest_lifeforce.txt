@@ -18,7 +18,7 @@
 	}
 
 	effect = {
-		debug_log = "BloodMageDecision: manifest_lifeforce"
+		debug_log = "BloodMageDecision: manifest_lifeforce | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
 		debug_log_scopes = yes
 		open_interaction_window = {
 			interaction = bm_manifest_lifeforce_interaction

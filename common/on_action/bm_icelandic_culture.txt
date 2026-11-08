@@ -12,7 +12,7 @@ bm_setup_icelandic_culture_on_start = {
 		title:d_iceland = {
 			every_de_jure_county = {
 				set_county_culture = culture:bm_icelandic
-				holder = {
+				holder ?= {
 					set_culture = culture:bm_icelandic
 					every_courtier_or_guest = {
 						set_culture = culture:bm_icelandic
@@ -29,14 +29,11 @@ bm_setup_icelandic_culture_on_start = {
 					}
 				}
 				every_county_province = {
-					barony = {
-						holder = {
-							if = {
-								limit = { exists = this }
+					barony ?= {
+						holder ?= {
+							set_culture = culture:bm_icelandic
+							every_courtier_or_guest = {
 								set_culture = culture:bm_icelandic
-								every_courtier_or_guest = {
-									set_culture = culture:bm_icelandic
-								}
 							}
 						}
 					}

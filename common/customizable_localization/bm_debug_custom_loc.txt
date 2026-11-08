@@ -3,25 +3,9 @@
 
 	text = {
 		trigger = {
-			scope:second = { is_knight_of = root }
+			scope:second = { this = root }
 		}
-		localization_key = bm_debug_rel_knight
-	}
-	text = {
-		trigger = {
-			scope:second = {
-				exists = dynasty
-				exists = root.dynasty
-				dynasty = root.dynasty
-			}
-		}
-		localization_key = bm_debug_rel_dynasty
-	}
-	text = {
-		trigger = {
-			scope:second = { is_close_family_of = root }
-		}
-		localization_key = bm_debug_rel_close_family
+		localization_key = bm_debug_rel_self
 	}
 	text = {
 		trigger = {
@@ -33,6 +17,105 @@
 			}
 		}
 		localization_key = bm_debug_rel_spouse
+	}
+	text = {
+		trigger = {
+			scope:second = {
+				is_primary_heir_of = root
+			}
+		}
+		localization_key = bm_debug_rel_primary_heir
+	}
+	text = {
+		trigger = {
+			scope:second = {
+				is_child_of = root
+			}
+		}
+		localization_key = bm_debug_rel_child
+	}
+	text = {
+		trigger = {
+			scope:second = {
+				is_close_family_of = root
+			}
+		}
+		localization_key = bm_debug_rel_close_family
+	}
+	text = {
+		trigger = {
+			scope:second = {
+				is_councillor_of = root
+				has_council_position = councillor_chancellor
+			}
+		}
+		localization_key = bm_debug_rel_chancellor
+	}
+	text = {
+		trigger = {
+			scope:second = {
+				is_councillor_of = root
+				has_council_position = councillor_marshal
+			}
+		}
+		localization_key = bm_debug_rel_marshal
+	}
+	text = {
+		trigger = {
+			scope:second = {
+				is_councillor_of = root
+				has_council_position = councillor_steward
+			}
+		}
+		localization_key = bm_debug_rel_steward
+	}
+	text = {
+		trigger = {
+			scope:second = {
+				is_councillor_of = root
+				has_council_position = councillor_spymaster
+			}
+		}
+		localization_key = bm_debug_rel_spymaster
+	}
+	text = {
+		trigger = {
+			scope:second = {
+				is_councillor_of = root
+				has_council_position = councillor_court_chaplain
+			}
+		}
+		localization_key = bm_debug_rel_chaplain
+	}
+	text = {
+		trigger = {
+			scope:second = {
+				is_councillor_of = root
+			}
+		}
+		localization_key = bm_debug_rel_councillor
+	}
+	text = {
+		trigger = {
+			scope:second = {
+				any_court_position_employer = { this = root }
+			}
+		}
+		localization_key = bm_debug_rel_court_position
+	}
+	text = {
+		trigger = {
+			scope:second = {
+				house ?= house:bm_house_golem
+			}
+		}
+		localization_key = bm_debug_rel_golem
+	}
+	text = {
+		trigger = {
+			scope:second = { is_knight_of = root }
+		}
+		localization_key = bm_debug_rel_knight
 	}
 	text = {
 		trigger = {
@@ -70,9 +153,27 @@
 	}
 	text = {
 		trigger = {
-			scope:second = { is_councillor_of = root }
+			root = {
+				liege ?= scope:second
+			}
 		}
-		localization_key = bm_debug_rel_councillor
+		localization_key = bm_debug_rel_liege
+	}
+	text = {
+		trigger = {
+			scope:second = { is_imprisoned_by = root }
+		}
+		localization_key = bm_debug_rel_prisoner
+	}
+	text = {
+		trigger = {
+			scope:second = {
+				exists = dynasty
+				exists = root.dynasty
+				dynasty = root.dynasty
+			}
+		}
+		localization_key = bm_debug_rel_dynasty
 	}
 	text = {
 		trigger = {
@@ -85,12 +186,6 @@
 			scope:second = { is_courtier_of = root }
 		}
 		localization_key = bm_debug_rel_courtier
-	}
-	text = {
-		trigger = {
-			scope:second = { is_imprisoned_by = root }
-		}
-		localization_key = bm_debug_rel_prisoner
 	}
 	text = {
 		fallback = yes

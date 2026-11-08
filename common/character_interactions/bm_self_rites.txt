@@ -36,6 +36,7 @@
 		flag = minor_bleed
 		localization = bm_bleed_own_vein_interaction.minor_bleed
 		current_description = bm_bleed_own_vein_interaction.minor_bleed_desc
+		can_invalidate_interaction = yes
 		is_shown = {
 			always = yes
 		}
@@ -59,6 +60,7 @@
 		flag = major_bleed
 		localization = bm_bleed_own_vein_interaction.major_bleed
 		current_description = bm_bleed_own_vein_interaction.major_bleed_desc
+		can_invalidate_interaction = yes
 		is_shown = {
 			always = yes
 		}
@@ -80,10 +82,9 @@
 	}
 
 	on_accept = {
-		debug_log = "BloodMageSelfCast: bleed_own_vein | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
-
 		if = {
 			limit = { scope:minor_bleed = yes }
+			debug_log = "BloodMageSelfCast: bleed_own_vein (minor) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
 			scope:actor = {
 				send_interface_toast = {
 					type = event_toast_effect_neutral
@@ -126,8 +127,9 @@
 			}
 		}
 
-		if = {
+		else_if = {
 			limit = { scope:major_bleed = yes }
+			debug_log = "BloodMageSelfCast: bleed_own_vein (major) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
 			scope:actor = {
 				send_interface_toast = {
 					type = event_toast_effect_neutral
@@ -170,6 +172,9 @@
 				}
 			}
 		}
+		else = {
+			debug_log = "BloodMageSelfCast: bleed_own_vein (NO OPTION) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
+		}
 	}
 
 	ai_targets = {
@@ -179,14 +184,35 @@
 	ai_frequency = 24
 	ai_will_do = {
 		base = 0
+
+		# Score send options
+		modifier = {
+			scope:minor_bleed = yes
+			add = 20
+		}
+		modifier = {
+			scope:major_bleed = yes
+			scope:actor = { health >= 6 }
+			add = 10
+		}
+
 		modifier = {
 			scope:actor = {
 				NOT = { has_character_modifier = lifeforce_modifier_minor }
 				NOT = { has_character_modifier = lifeforce_modifier_major }
 				NOT = { has_character_modifier = lifeforce_modifier_superior }
-			health >= 4
+				health >= 4
 			}
 			add = 10
+		}
+
+		# Absolute veto: must select at least one valid send option
+		modifier = {
+			NOR = {
+				scope:minor_bleed = yes
+				scope:major_bleed = yes
+			}
+			factor = 0
 		}
 	}
 }
