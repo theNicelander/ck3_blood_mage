@@ -48,22 +48,14 @@ Walk the path of blood with progressive tiers of power that take decades and tho
 
 ### Blood Mage
 
-The mystic and scholarly path. Features five distinct tracks that gain experience as you use related abilities:
+The mystic and scholarly path. Features six distinct tracks that gain experience as you use related abilities:
 
 - **Ancient**: Age slower, gain piety, and retain prowess in your old age
 - **Enlightenment**: Gain XP by casting blood magic on yourself, boosting learning and lifestyle XP
 - **Bloodline**: Enhance your dynasty, domain limit, and realm development
 - **Benediction**: Gain XP by healing ailments and curing others, earning the love of your vassals
 - **Hematurgy**: Intrigue, dread, hostile schemes, and harvesting traits from victims
-
-### Blood Knight
-
-The martial path for commanders and battlefield champions. Shares the Ancient, Enlightenment, and Benediction tracks, plus two combat specialisations:
-
-- **Vanguard**: Battlefield advantage, martial prowess, and knight effectiveness
-- **Slaughter**: Single combat lethality, duel harvesting, and dread
-
-Blood Knights can cast Minor and Major blood magic, and can even attempt the dangerous ascension trial to become a full Blood Mage!
+- **Bloodlust**: Battlefield advantage, martial prowess, knight effectiveness, single combat lethality, duel harvesting, and dread
 
 ### Blood Empowerment
 
@@ -161,7 +153,7 @@ Tested and working with major overhaul mods:
 
 - [**Blood Mages — Vanilla Religions**](https://steamcommunity.com/sharedfiles/filedetails/?id=3774392244): Adds native blood cults for all 49 vanilla faiths, blending parent holy sites with Blóðtrú
 - [**Blood Mages — AGOT Religions**](https://steamcommunity.com/sharedfiles/filedetails/?id=3775630683): Blood cults tailored for Westerosi faiths (Faith of the Seven, Old Gods, Drowned God, R'hllor, etc.)
-- [**Dracul — Vampires & Blood Mages**](https://steamcommunity.com/sharedfiles/filedetails/?id=3765753769): Cross-mod interactions, mutual feeding, and vampire blood knight recruitment
+- [**Dracul — Vampires & Blood Mages**](https://steamcommunity.com/sharedfiles/filedetails/?id=3765753769): Cross-mod interactions, mutual feeding, and vampire recruitment
 
 ---
 

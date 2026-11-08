@@ -104,19 +104,19 @@
 						}
 					}
 					if = {
-						limit = { bm_anointed_transfer_bloodline_vanguard_xp_value > 0 }
+						limit = { bm_anointed_transfer_bloodline_xp_value > 0 }
 						add_trait_xp = {
 							trait = lifestyle_blood_mage
 							track = bloodline
-							value = bm_anointed_transfer_bloodline_vanguard_xp_value
+							value = bm_anointed_transfer_bloodline_xp_value
 						}
 					}
 					if = {
-						limit = { bm_anointed_transfer_hematurgy_slaughter_xp_value > 0 }
+						limit = { bm_anointed_transfer_hematurgy_xp_value > 0 }
 						add_trait_xp = {
 							trait = lifestyle_blood_mage
 							track = hematurgy
-							value = bm_anointed_transfer_hematurgy_slaughter_xp_value
+							value = bm_anointed_transfer_hematurgy_xp_value
 						}
 					}
 					if = {

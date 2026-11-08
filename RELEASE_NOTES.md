@@ -6,7 +6,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 
 ## Blood Mage & Bloodlust
 
-- Unified single lifestyle path: **Blood Mage** featuring six distinct progression tracks: Ancient, Enlightenment, Benediction, Bloodline, Hematurgy, and the new **Bloodlust** track (consolidating former Blood Knight prowess, martial, advantage, knight limit, and duel harvesting).
+- Unified single lifestyle path: **Blood Mage** featuring six distinct progression tracks: Ancient, Enlightenment, Benediction, Bloodline, Hematurgy, and the new **Bloodlust** track (prowess, martial, advantage, knight limit, dread, and duel harvesting).
 - Awaken via bloodline, occult mentorship, witch conversion, fellow Blood Mage mentorship, or by duelling the hermit **Egill Skallagrímsson** in Iceland or Tsushima.
 - All Blood Mages are recognized as **Worthy Commanders** (`ignores_gender_army_rules = yes`), allowing them to lead armies into battle regardless of faith or cultural gender rules.
 - Devotion tracks (Ancient, Enlightenment, Benediction) scale to 100 XP: Ancient adds +0.1 monthly legitimacy per 10 XP (+1.0/mo = +12/yr at 100 XP) alongside +1 personal tenet slot per 20 XP.
@@ -47,13 +47,13 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 
 ## Blood Hunt
 
-- *Seek Power* became **Go on a Blood Hunt**, open to Blood Mages and Blood Knights; grayed out while travelling, in an activity, imprisoned or incapable.
+- *Seek Power* became **Go on a Blood Hunt**, open to Blood Mages; grayed out while travelling, in an activity, imprisoned or incapable.
 - Cooldown: 1 year (halved to 6 months with Superior Vegvísir).
 - Encounters scale with Prowess: Beast's Lair, Blood in the Embers, Edge of the Woods, Crimson Rite, Stag's Last Stand, Blades on the Lonely Road, Cairn of Forgotten Carnage.
 - Roughly 60% success at skill 20, 70% at 25, 80% at 30, 95% at 40+; peaceful options exist for most encounters.
 - Road encounter can include a sworn escort champion to duel (Prowess 25+).
 
-## Blood Knight Rites
+## Blood Rites
 
 - **Bless Blood**: consecrate knights and kin (+2 Martial, +4 Prowess, +25% Knight Effectiveness for 10 years).
 - **Crimson Sparring Ring** (yearly, 1 Minor Lifeforce): practice duels; winner gains 1 Major Lifeforce, both gain Blademaster XP.
@@ -83,7 +83,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - Ancestor Worship tenet earns piety, renown and defence; Mendicant Preaching replaces Ritual Celebrations.
 - All 58 Blóðtrú, 27 Ketsudō and 32 Xuédào holy sites are now Eminent Holy Sites (up to 80 active), granting smaller stacked global faith bonuses alongside local county holder modifiers.
 - Reformation repair decision resolves holy-site locks when creating custom faiths.
-- Blood Mage and Blood Knight are no longer religion virtues.
+- Blood Mage is no longer a religion virtue.
 
 ## Buildings
 
@@ -92,9 +92,9 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 
 ## Interface & Interactions
 
-- **Blood Magic Situation panel**: discipline, track XP, Lifeforce, stave, and rosters of dynasty Blood Mages, Blood Knights and Golems.
+- **Blood Magic Situation panel**: discipline, track XP, Lifeforce, stave, and rosters of dynasty Blood Mages and Golems.
 - All mod interactions grouped in a "Blood Magic" context-menu section; outcomes shown in interface toasts.
-- Consolidated positive character interactions into unified modal window **Blood Blessing** (Empower Blood Mage/Knight, Grant Lifeforce, Bless Blood, Annoint Heir, Consecrate Union, Inscribe Blood Rune).
+- Consolidated positive character interactions into unified modal window **Blood Blessing** (Empower Blood Mage, Grant Lifeforce, Bless Blood, Annoint Heir, Consecrate Union, Inscribe Blood Rune).
 - Consolidated hostile lifeforce extraction into unified modal window **Blood Drain** (Major Life drain, Minor Life drain, Drain Stored Lifeforce, Demand Blood Tithe).
 - **Blood Healing**: interaction is always clickable when an affliction is present to inspect requirements directly in the event; Deadly afflictions (leprosy, cancer, plague) now require Superior Lifeforce and 100 Piety (+3 Benediction XP).
 - Current Situation healing alert (`bm_action_can_heal`) monitors councillors, immediate and close family, court positions, and companions; styled green (`Can Heal`) when the corresponding Lifeforce is held, and gray (`Needs Lifeforce`) under unimportant actions when Lifeforce is lacking. Alerts also notify when prisoners can be lifedrained or 20+ Prowess champions culled.
@@ -104,7 +104,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 
 ## Narrative Events
 
-Annual pulse (3-year cooldown) for player Blood Mages and Blood Knights:
+Annual pulse (3-year cooldown) for player Blood Mages:
 - **A Drop on the Lips**: bless a lover or spouse, or awaken them.
 - **The Fever of Awakening**: guide or hasten a child's (6–15) awakening.
 - **The Red Banquet After Battle**: feast, claim the harvest, or consecrate the field.
@@ -138,14 +138,13 @@ Annual pulse (3-year cooldown) for player Blood Mages and Blood Knights:
 - Fixed tooltip scoping errors in Consecrate Union and Siphon Stored Lifeforce.
 - Fixed golem rite option visibility and heirless-character crashes in rune interactions.
 - Empower Dynasty tooltip no longer claims a house loses an old modifier.
-- Removed passive yearly Enlightenment XP on Blood Knights.
 - Added missing toast and loc keys; removed dangling modifier references.
 
 ---
 
 ## Version history
 
-- v1.20.68: Consolidate Blood Knight into Blood Mage trait as the new 6th track 'Bloodlust' (prowess, martial, advantage, knight limit, and dread baseline); grant all Blood Mages Worthy Commander army gender exemption; unify battlefield and single combat XP gain; clean up UI and retire separate Blood Knight trait
+- v1.20.68: Consolidate Blood Knight into Blood Mage trait as the new 6th track 'Bloodlust' (prowess, martial, advantage, knight limit, and dread baseline); grant all Blood Mages Worthy Commander army gender exemption; unify battlefield and single combat XP gain; clean up UI and retire separate Blood Knight trait; old saves are not supported (breaking change)
 - v1.20.66: Blood Mages can initiate Blood Knights alongside Knights; add human-only Superior Magic class transmutation in Cast Superior Blood Magic (preserving Ancient, Enlightenment, and Benediction track XP); fix AI modal interaction execution and add comprehensive debug logging across all decisions and interactions
 - v1.20.65: Add custom Alþingi Commonwealth and Verbúðir traditions to Icelandic culture; standardize Icelandic names and ethos; exempt Blood Knights from gender warfare restrictions to serve as knights and commanders
 - v1.20.64: Add playable Icelandic culture with equal martial custom, saga name lists, and modular game start setup gated by campaign game rule (on by default)

@@ -36,7 +36,7 @@ Mage tracks `bloodline`, `hematurgy`, and `bloodlust`. Shared tracks (`ancient`,
 | XP | Cost | Action | Source | Req | CD |
 | --- | --- | --- | --- | --- | --- |
 | +1 to +3 | None | Battlefield Victory (Commander) | on-action `bm_combat_on_actions.txt` / `bm_combat_effects.txt` | Won battle as commander | Per battle |
-| +1 to +2 | None | Battlefield Victory (Knight) | on-action `bm_combat_on_actions.txt` / `bm_combat_effects.txt` | Won battle as knight | Per battle |
+| +1 to +2 | None | Battlefield Victory | on-action `bm_combat_on_actions.txt` / `bm_combat_effects.txt` | Won battle as commander or knight | Per battle |
 | +1 | None | Battlefield Defeat | on-action `bm_combat_on_actions.txt` / `bm_combat_effects.txt` | Survived lost battle | Per battle |
 | +3 | None | Single Combat Fatality (Duel Kill) | on-action `bm_duel_on_actions.txt` / `bm_combat_on_character_death_effect` | Slew opponent in single combat | Per fatal duel |
 | +2 | None | Tournament Completion | on-action `bm_duel_on_actions.txt` | Completed contest | Per contest |

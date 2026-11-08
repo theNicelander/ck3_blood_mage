@@ -46,7 +46,7 @@ The definitive blood magic lifestyle trait with six distinct tracks that gain ex
 - **Bloodline**: Enhance your dynasty, domain limit, and realm development
 - **Benediction**: Gain XP by healing ailments and curing others, earning the love of your vassals
 - **Hematurgy**: Intrigue, dread, hostile schemes, and harvesting traits from victims
-- **Bloodlust**: Battlefield prowess, martial mastery, combat advantage, and duel harvesting (consolidating former Blood Knight arts into a unified discipline)
+- **Bloodlust**: Battlefield prowess, martial mastery, combat advantage, and duel harvesting
 
 Blood Mages are also recognized as **Worthy Commanders**, ignoring realm gender laws to lead armies into battle personally.
 
@@ -131,7 +131,7 @@ Tested and working with major overhaul mods:
 ## Companion Submods
 - [**Blood Mages — Vanilla Religions**](https://steamcommunity.com/sharedfiles/filedetails/?id=3774392244): Adds native blood cults for all 49 vanilla faiths, blending parent holy sites with Blóðtrú
 - [**Blood Mages — AGOT Religions**](https://steamcommunity.com/sharedfiles/filedetails/?id=3775630683): Blood cults tailored for Westerosi faiths (Faith of the Seven, Old Gods, Drowned God, R'hllor, etc.)
-- [**Dracul — Vampires & Blood Mages**](https://steamcommunity.com/sharedfiles/filedetails/?id=3765753769): Cross-mod interactions, mutual feeding, and vampire blood knight recruitment
+- [**Dracul — Vampires & Blood Mages**](https://steamcommunity.com/sharedfiles/filedetails/?id=3765753769): Cross-mod interactions, mutual feeding, and vampire recruitment
 
 ---
 

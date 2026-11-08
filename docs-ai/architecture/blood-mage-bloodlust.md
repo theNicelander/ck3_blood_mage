@@ -4,7 +4,7 @@ Technical specification for the `bloodlust` lifestyle track on `lifestyle_blood_
 
 ## Overview & Philosophy
 
-The `bloodlust` track consolidates the martial, prowess, and battlefield mastery previously split across the separate `lifestyle_blood_knight` trait (the former `vanguard` and `slaughter` tracks). This change eliminates UI bloat, reduces parallel trait clutter, and establishes a unified foundation for the future linear Acolyte → Mage → Archmage progression.
+The `bloodlust` track is the martial, prowess, and battlefield mastery track of `lifestyle_blood_mage`.
 
 Every Blood Mage also natively gains the **Worthy Commander** perk (`ignores_gender_army_rules = yes`), allowing all blood mages to lead armies regardless of realm gender laws.
 
@@ -35,7 +35,7 @@ Martial XP gains are consolidated into single, balanced increments:
 
 1. **Battlefield Victories (`common/on_action/bm_combat_on_actions.txt`, `common/scripted_effects/bm_combat_effects.txt`):**
    - Army Commander victory: +1 to +3 Bloodlust XP (scaled by battle size: +1 for small, +2 for medium, +3 for decisive).
-   - Knight participation in victory: +1 to +2 Bloodlust XP.
+   - Sworn knight participation in victory: +1 to +2 Bloodlust XP.
    - Battle Defeat: +1 Bloodlust XP (survival against adversity).
 2. **Duels & Single Combat (`common/on_action/bm_duel_on_actions.txt`, `events/bm_geyser_duel_events.txt`, `events/bm_seek_power_events.txt`):**
    - Fatal Single Combat kill: +3 Bloodlust XP (via `bm_combat_on_character_death_effect` / `bm_on_character_death_duel`).
