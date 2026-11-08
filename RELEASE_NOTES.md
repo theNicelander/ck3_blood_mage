@@ -146,7 +146,7 @@ Annual pulse (3-year cooldown) for player Blood Mages and Blood Knights:
 
 ## Version history
 
-- v1.20.66: Blood Mages can initiate Blood Knights alongside Knights; add human-only Superior Magic class transmutation in Cast Superior Blood Magic (preserving Ancient, Enlightenment, and Benediction track XP)
+- v1.20.66: Blood Mages can initiate Blood Knights alongside Knights; add human-only Superior Magic class transmutation in Cast Superior Blood Magic (preserving Ancient, Enlightenment, and Benediction track XP); fix AI modal interaction execution and add comprehensive debug logging across all decisions and interactions
 - v1.20.65: Add custom Alþingi Commonwealth and Verbúðir traditions to Icelandic culture; standardize Icelandic names and ethos; exempt Blood Knights from gender warfare restrictions to serve as knights and commanders
 - v1.20.64: Add playable Icelandic culture with equal martial custom, saga name lists, and modular game start setup gated by campaign game rule (on by default)
 - v1.20.63: Align House Covenants (7 to 6) and Blood Power (6 tracks); universal monthly Piety and 1:1 Devotion attribute scaling; yearly covenant pulse feeds matching Blood Power tracks
