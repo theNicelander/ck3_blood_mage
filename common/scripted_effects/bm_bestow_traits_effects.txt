@@ -63,23 +63,10 @@ bm_bestow_beauty_rank_up_effect = {
 }
 
 bm_bestow_traits_grant_xp_and_opinion_effect = {
-	if = {
-		limit = { has_trait = lifestyle_blood_mage }
-		add_trait_xp = {
-			trait = lifestyle_blood_mage
-			track = bloodline
-			value = 2
-		}
-	}
-	if = {
-		limit = {
-			has_trait = lifestyle_blood_knight
-			NOT = { has_trait = lifestyle_blood_mage }
-		}
-		add_blood_knight_xp = {
-			TRACK = benediction
-			XP = 2
-		}
+	add_trait_xp = {
+		trait = lifestyle_blood_mage
+		track = bloodline
+		value = 2
 	}
 	scope:recipient = {
 		add_opinion = {

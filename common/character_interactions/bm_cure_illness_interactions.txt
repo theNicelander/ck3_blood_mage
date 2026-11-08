@@ -6,10 +6,7 @@
 
 	is_shown = {
 		scope:actor = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 		}
 		scope:recipient = { bm_has_any_ailment_trigger = yes }
 	}

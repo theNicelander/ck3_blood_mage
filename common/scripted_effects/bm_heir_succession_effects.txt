@@ -1,10 +1,7 @@
 ﻿bm_transfer_anointed_heir_legacy_effect = {
 	if = {
 		limit = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 		}
 		save_scope_as = dying_ruler
 		if = {
@@ -45,25 +42,15 @@
 			scope:anointed_heir = {
 				remove_character_modifier = bm_anointed_heir_modifier
 			}
-			# 1. Awaken class trait if heir lacks both
+			# 1. Awaken class trait if heir lacks it
 			if = {
 				limit = {
 					scope:anointed_heir = {
 						NOT = { has_trait = lifestyle_blood_mage }
-						NOT = { has_trait = lifestyle_blood_knight }
 					}
 				}
-				if = {
-					limit = { has_trait = lifestyle_blood_mage }
-					scope:anointed_heir = {
-						bm_become_blood_mage_effect = yes
-					}
-				}
-				else_if = {
-					limit = { has_trait = lifestyle_blood_knight }
-					scope:anointed_heir = {
-						bm_become_blood_knight_effect = yes
-					}
+				scope:anointed_heir = {
+					bm_become_blood_mage_effect = yes
 				}
 			}
 			# 2. Transfer 1 stack of each Lifeforce tier held by dying ruler
@@ -117,62 +104,27 @@
 						}
 					}
 					if = {
-						limit = { bm_anointed_transfer_bloodline_vanguard_xp_value > 0 }
+						limit = { bm_anointed_transfer_bloodline_xp_value > 0 }
 						add_trait_xp = {
 							trait = lifestyle_blood_mage
 							track = bloodline
-							value = bm_anointed_transfer_bloodline_vanguard_xp_value
+							value = bm_anointed_transfer_bloodline_xp_value
 						}
 					}
 					if = {
-						limit = { bm_anointed_transfer_hematurgy_slaughter_xp_value > 0 }
+						limit = { bm_anointed_transfer_hematurgy_xp_value > 0 }
 						add_trait_xp = {
 							trait = lifestyle_blood_mage
 							track = hematurgy
-							value = bm_anointed_transfer_hematurgy_slaughter_xp_value
-						}
-					}
-				}
-				if = {
-					limit = { has_trait = lifestyle_blood_knight }
-					if = {
-						limit = { bm_anointed_transfer_ancient_xp_value > 0 }
-						add_trait_xp = {
-							trait = lifestyle_blood_knight
-							track = ancient
-							value = bm_anointed_transfer_ancient_xp_value
+							value = bm_anointed_transfer_hematurgy_xp_value
 						}
 					}
 					if = {
-						limit = { bm_anointed_transfer_enlightenment_xp_value > 0 }
+						limit = { bm_anointed_transfer_bloodlust_xp_value > 0 }
 						add_trait_xp = {
-							trait = lifestyle_blood_knight
-							track = enlightenment
-							value = bm_anointed_transfer_enlightenment_xp_value
-						}
-					}
-					if = {
-						limit = { bm_anointed_transfer_benediction_xp_value > 0 }
-						add_trait_xp = {
-							trait = lifestyle_blood_knight
-							track = benediction
-							value = bm_anointed_transfer_benediction_xp_value
-						}
-					}
-					if = {
-						limit = { bm_anointed_transfer_bloodline_vanguard_xp_value > 0 }
-						add_trait_xp = {
-							trait = lifestyle_blood_knight
-							track = vanguard
-							value = bm_anointed_transfer_bloodline_vanguard_xp_value
-						}
-					}
-					if = {
-						limit = { bm_anointed_transfer_hematurgy_slaughter_xp_value > 0 }
-						add_trait_xp = {
-							trait = lifestyle_blood_knight
-							track = slaughter
-							value = bm_anointed_transfer_hematurgy_slaughter_xp_value
+							trait = lifestyle_blood_mage
+							track = bloodlust
+							value = bm_anointed_transfer_bloodlust_xp_value
 						}
 					}
 				}

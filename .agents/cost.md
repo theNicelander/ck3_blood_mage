@@ -3,8 +3,8 @@
 
 | Scope | Tokens |
 | --- | ---: |
-| **Total** | **13,126** |
-| Core | 1,588 |
+| **Total** | **13,113** |
+| Core | 1,575 |
 | Rules | 6,575 |
 | Skills | 4,963 |
 
@@ -12,7 +12,7 @@
 
 | File | Category | Tokens |
 | --- | --- | ---: |
-| `AGENTS.md` | Core | 1,588 |
+| `AGENTS.md` | Core | 1,575 |
 | `.agents/rules/ck3-decisions.md` | Rules | 1,373 |
 | `.agents/rules/single-combat.md` | Rules | 1,257 |
 | `.agents/skills/add-interaction-send-options/SKILL.md` | Skills | 1,226 |

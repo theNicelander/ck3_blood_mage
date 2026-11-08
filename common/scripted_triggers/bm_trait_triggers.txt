@@ -85,36 +85,6 @@ bm_has_blood_empowerment_xp_trigger = {
 	}
 }
 
-bm_has_blood_knight_xp_trigger = {
-	OR = {
-		has_trait_xp = {
-			trait = lifestyle_blood_knight
-			track = vanguard
-			value >= $VALUE$
-		}
-		has_trait_xp = {
-			trait = lifestyle_blood_knight
-			track = slaughter
-			value >= $VALUE$
-		}
-		has_trait_xp = {
-			trait = lifestyle_blood_knight
-			track = ancient
-			value >= $VALUE$
-		}
-		has_trait_xp = {
-			trait = lifestyle_blood_knight
-			track = benediction
-			value >= $VALUE$
-		}
-		has_trait_xp = {
-			trait = lifestyle_blood_knight
-			track = enlightenment
-			value >= $VALUE$
-		}
-	}
-}
-
 bm_has_blood_mage_xp_trigger = {
 	OR = {
 		has_trait_xp = {
@@ -140,6 +110,11 @@ bm_has_blood_mage_xp_trigger = {
 		has_trait_xp = {
 			trait = lifestyle_blood_mage
 			track = hematurgy
+			value >= $VALUE$
+		}
+		has_trait_xp = {
+			trait = lifestyle_blood_mage
+			track = bloodlust
 			value >= $VALUE$
 		}
 	}

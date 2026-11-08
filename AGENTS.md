@@ -5,7 +5,7 @@ CK3 script fails silently. Follow patterns in this repo and vanilla 1.20 (`/User
 ## What this is
 
 - CK3 mod for **1.20.\***. Pure script, localization, gfx. No build step.
-- Traits: `lifestyle_blood_mage` (tracks: ancient, enlightenment, bloodline, benediction, hematurgy), `lifestyle_blood_power` (dynasty, fury, mastery, presence, prosperity, shadows), `lifestyle_blood_knight` (slaughter, vanguard, resilience).
+- Traits: `lifestyle_blood_mage` (tracks: ancient, enlightenment, bloodline, benediction, hematurgy, bloodlust), `lifestyle_blood_power` (dynasty, warband, mastery, presence, prosperity, shadows).
 - Features: Lifeforce resource, spell decisions/interactions, blood golems, Blood Retinue, Blóðtrú religions, Blood Runes & Temples, game rules.
 - `scripts/` holds validation and Steam Workshop helpers. Never touch `.env`, credentials or `*.vdf`.
 

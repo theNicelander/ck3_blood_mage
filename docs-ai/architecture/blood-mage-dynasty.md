@@ -5,10 +5,10 @@ Living technical specification for supernatural house modifiers, covenants, heir
 ## Overview
 
 House Covenant system accessed via `bm_empower_bloodline_decision` ("Empower Dynasty Bloodline").
-- **6 House Covenants (3 Tiers Each):** Tier I (150 Piety + Minor LF, Devotion 1+, `+1` XP), Tier II (350 Piety + Major LF, Devotion 2+, `+2` XP), Tier III (750 Piety + Superior LF, Devotion 3+, `+3` XP). Awards `bloodline` (Mages) or `benediction` (Knights) XP. 1-year decision cooldown.
+- **6 House Covenants (3 Tiers Each):** Tier I (150 Piety + Minor LF, Devotion 1+, `+1` XP), Tier II (350 Piety + Major LF, Devotion 2+, `+2` XP), Tier III (750 Piety + Superior LF, Devotion 3+, `+3` XP). Awards `bloodline` XP. 1-year decision cooldown.
 - **Universal Piety Baseline:** Every Covenant grants **+0.1 / +0.3 / +0.5 Monthly Piety** across Tiers 1 / 2 / 3 (up to **+3.0 Monthly Piety** when all 6 Covenants are at Tier 3).
 - **1:1 Devotion Scaling:** Every Covenant grants **+1 [Stat] per Devotion Level** at Tier 3 (Superior).
-- **Feedback Loop:** Yearly pulse `blood_mage_yearly_events.002` rolls independently for each active covenant per living Blood Mage / Knight in the House to grant `+1` XP in the matching `lifestyle_blood_power` track (Tier I: 50%, Tier II: 67%, Tier III: 100%), capped at 100 XP.
+- **Feedback Loop:** Yearly pulse `blood_mage_yearly_events.002` rolls independently for each active covenant per living Blood Mage in the House to grant `+1` XP in the matching `lifestyle_blood_power` track (Tier I: 50%, Tier II: 67%, Tier III: 100%), capped at 100 XP.
 
 ## 6 Three-Tier House Covenants Table
 
@@ -28,32 +28,32 @@ Modifiers apply to all living and future members of the caster's house (landless
 ## Heir Anointment & Succession Legacy
 
 - **Anoint Heir (`bm_anoint_heir_interaction`):**
-  - **Prerequisites:** Actor has `lifestyle_blood_mage` or `lifestyle_blood_knight`. Target is living `primary_heir` or `child` and does not already have `bm_anointed_heir_modifier` (hidden once anointed).
+  - **Prerequisites:** Actor has `lifestyle_blood_mage`. Target is living `primary_heir` or `child` and does not already have `bm_anointed_heir_modifier` (hidden once anointed).
   - **Cost:** 250 Piety + 1 Major Lifeforce (`blood_magic_used_major`).
-  - **Effect:** Strips `bm_anointed_heir_modifier` from any other child or previous heir. Applies permanent `bm_anointed_heir_modifier` (`+1.0` Health, `+15` Dynasty Opinion, `+25%` Monthly Lifestyle XP, `-35%` Short Reign Duration) to recipient, `+30` Opinion, and `+2` `bloodline` XP (Mage) / `+2` `benediction` XP (Knight).
+  - **Effect:** Strips `bm_anointed_heir_modifier` from any other child or previous heir. Applies permanent `bm_anointed_heir_modifier` (`+1.0` Health, `+15` Dynasty Opinion, `+25%` Monthly Lifestyle XP, `-35%` Short Reign Duration) to recipient, `+30` Opinion, and `+2` `bloodline` XP.
 - **Bless Blood (`bm_bless_bloodline_interaction`):**
-  - **Prerequisites:** Actor has `lifestyle_blood_mage` or `lifestyle_blood_knight`. Target is a `child`, `dynasty` member, sworn `knight`, or `lifestyle_blood_knight` courtier. Hidden once target has all applicable blessings.
+  - **Prerequisites:** Actor has `lifestyle_blood_mage`. Target is a `child`, `dynasty` member, sworn `knight` or courtier. Hidden once target has all applicable blessings.
   - **Cost:** 35 Piety (50 Piety for Feingur) + 1 Minor Lifeforce (`bloodline_magic_cast_effect_minor`).
   - **Options (`send_options_exclusive = yes`):**
     1. **Blood of the Sovereign (`bm_blessed_blood_sovereign_modifier`):** 10 yrs, `+2` Diplomacy, `+2` Stewardship, `+10` Vassal Opinion, `-25%` Short Reign Duration, `+1.0` Health (children & dynasty).
-    2. **Blood of Iron (`bm_blessed_blood_iron_modifier`):** 10 yrs, `+2` Martial, `+4` Prowess, `+25%` Knight Effectiveness, `+1.0` Health, `+0.50` Health Penalty Negation (children, dynasty, sworn knights, and Blood Knight courtiers).
+    2. **Blood of Iron (`bm_blessed_blood_iron_modifier`):** 10 yrs, `+2` Martial, `+4` Prowess, `+25%` Knight Effectiveness, `+1.0` Health, `+0.50` Health Penalty Negation (children, dynasty, sworn knights, and Blood Mage courtiers).
     3. **Sanguine Crucible (`bm_blessed_blood_crucible_modifier`):** 10 yrs, `+25%` Fertility, `+25%` Positive Genetic Chance, `-25%` Stress Gain, `+1.0` Health (children & dynasty).
     4. **Feingur's Eternal Blessing (`bm_feingur_blessed_blood_modifier`):** Permanent `+25%` Fertility, `+20%` Positive Genetic Chance, `+0.50` Health, `+5` Life Expectancy (children & dynasty when caster has Superior **Feingur** stave).
 - **Succession Legacy Awakening (`bm_transfer_anointed_heir_legacy_effect`):**
-  - Triggered via `on_death` / `on_character_death` when a Blood Mage or Blood Knight ruler dies with an anointed heir:
-    1. **Class Awakening:** If the heir lacks both `lifestyle_blood_mage` and `lifestyle_blood_knight`, awakens the parent's class trait via `bm_become_blood_mage_effect` or `bm_become_blood_knight_effect`.
+  - Triggered via `on_death` / `on_character_death` when a Blood Mage ruler dies with an anointed heir:
+    1. **Awakening:** If the heir lacks `lifestyle_blood_mage`, awakens it via `bm_become_blood_mage_effect`.
     2. **Lifeforce Inheritance:** Inherits 1 stack of each Lifeforce tier held by the dying ruler at death (Minor $\rightarrow$ Minor, Major $\rightarrow$ Major, Superior $\rightarrow$ Superior), followed by recalculation.
-    3. **25% Track XP Transfer:** Heir inherits 25% of the dying ruler's XP across all active tracks: `ancient`, `enlightenment`, `benediction`, `bloodline` / `vanguard`, `hematurgy` / `slaughter`, and all six `lifestyle_blood_power` tracks (`dynasty`, `warband`, `mastery`, `presence`, `prosperity`, `shadows`).
+    3. **25% Track XP Transfer:** Heir inherits 25% of the dying ruler's XP across all active tracks: `ancient`, `enlightenment`, `benediction`, `bloodline`, `hematurgy`, `bloodlust`, and all six `lifestyle_blood_power` tracks (`dynasty`, `warband`, `mastery`, `presence`, `prosperity`, `shadows`).
 
 ---
 
 ## House Head Blood Tithe
 
 - **Interaction (`bm_demand_blood_tithe_interaction`):**
-  - **Prerequisites:** Actor is House Head with `lifestyle_blood_mage` or `lifestyle_blood_knight`. Target is an adult living house member (`house ?= scope:actor.house`, not actor, without `recently_lifedrained_modifier`).
+  - **Prerequisites:** Actor is House Head with `lifestyle_blood_mage`. Target is an adult living house member (`house ?= scope:actor.house`, not actor, without `recently_lifedrained_modifier`).
   - **Cost & Cooldown:** 50 Piety, 2-year interaction cooldown.
   - **Effect:**
-    - Caster gains **1 Major Lifeforce** (if target is a Blood Mage or Blood Knight) or **1 Minor Lifeforce** (if target is mundane kin), along with `+2` `bloodline` (Mage) / `+2` `vanguard` (Knight) XP.
+    - Caster gains **1 Major Lifeforce** (if target is a Blood Mage) or **1 Minor Lifeforce** (if target is mundane kin), along with `+2` `bloodline` XP.
     - Recipient receives `recently_lifedrained_modifier` and 1-year `lifeforce_modifier_negative_minor`.
     - Recipient suffers `-25` Opinion (`magic_opinion_negative`), which is waived if the recipient follows a Blood Cult faith (`bm_is_blood_cult_faith_trigger = yes`) or has the `loyal` trait.
 

@@ -77,24 +77,8 @@ bm_has_any_ailment_trigger = {
 bm_actor_can_heal_target_ailments_trigger = {
 	# TARGET = target character
 	# Evaluated in actor scope
-	OR = {
-		AND = {
-			has_trait = lifestyle_blood_mage
-			$TARGET$ = { bm_has_any_ailment_trigger = yes }
-		}
-		AND = {
-			NOT = { has_trait = lifestyle_blood_mage }
-			has_trait = lifestyle_blood_knight
-			$TARGET$ = {
-				OR = {
-					bm_has_minor_ailment_trigger = yes
-					bm_has_major_ailment_trigger = yes
-					bm_has_old_age_ailment_trigger = yes
-					bm_has_stress_coping_trait_trigger = yes
-				}
-			}
-		}
-	}
+	has_trait = lifestyle_blood_mage
+	$TARGET$ = { bm_has_any_ailment_trigger = yes }
 }
 
 bm_actor_has_lifeforce_to_heal_target_trigger = {

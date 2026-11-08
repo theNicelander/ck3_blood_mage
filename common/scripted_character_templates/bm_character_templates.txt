@@ -17,9 +17,8 @@ traveller_character_template = {
 	trait = lifestyle_traveler
 	random_traits_list = {
 		count = { 0 5 }
-		# Blood mage / knight
-		lifestyle_blood_mage = { weight = { base = 60 } }
-		lifestyle_blood_knight = { weight = { base = 30 } }
+		# Blood mage
+		lifestyle_blood_mage = { weight = { base = 90 } }
 
 		# Can be drained
 		intellect_good_1 = { weight = { base = 25 } }
@@ -132,8 +131,7 @@ bm_escort_knight_character_template = {
 		lifestyle_hunter = { weight = { base = 30 } }
 		scarred = { weight = { base = 40 } }
 		loyal = { weight = { base = 30 } }
-		lifestyle_blood_knight = { weight = { base = 40 } }
-		lifestyle_blood_mage = { weight = { base = 30 } }
+		lifestyle_blood_mage = { weight = { base = 70 } }
 	}
 	after_creation = {
 		if = {

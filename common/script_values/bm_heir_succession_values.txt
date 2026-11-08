@@ -5,10 +5,6 @@
 			limit = { has_trait = lifestyle_blood_mage }
 			add = "has_trait_xp(lifestyle_blood_mage|ancient)"
 		}
-		else_if = {
-			limit = { has_trait = lifestyle_blood_knight }
-			add = "has_trait_xp(lifestyle_blood_knight|ancient)"
-		}
 	}
 	multiply = 0.25
 	round = yes
@@ -21,10 +17,6 @@ bm_anointed_transfer_enlightenment_xp_value = {
 		if = {
 			limit = { has_trait = lifestyle_blood_mage }
 			add = "has_trait_xp(lifestyle_blood_mage|enlightenment)"
-		}
-		else_if = {
-			limit = { has_trait = lifestyle_blood_knight }
-			add = "has_trait_xp(lifestyle_blood_knight|enlightenment)"
 		}
 	}
 	multiply = 0.25
@@ -39,26 +31,31 @@ bm_anointed_transfer_benediction_xp_value = {
 			limit = { has_trait = lifestyle_blood_mage }
 			add = "has_trait_xp(lifestyle_blood_mage|benediction)"
 		}
-		else_if = {
-			limit = { has_trait = lifestyle_blood_knight }
-			add = "has_trait_xp(lifestyle_blood_knight|benediction)"
-		}
 	}
 	multiply = 0.25
 	round = yes
 	min = 0
 }
 
-bm_anointed_transfer_bloodline_vanguard_xp_value = {
+bm_anointed_transfer_bloodline_xp_value = {
 	value = 0
 	scope:dying_ruler = {
 		if = {
 			limit = { has_trait = lifestyle_blood_mage }
 			add = "has_trait_xp(lifestyle_blood_mage|bloodline)"
 		}
-		else_if = {
-			limit = { has_trait = lifestyle_blood_knight }
-			add = "has_trait_xp(lifestyle_blood_knight|vanguard)"
+	}
+	multiply = 0.25
+	round = yes
+	min = 0
+}
+
+bm_anointed_transfer_hematurgy_xp_value = {
+	value = 0
+	scope:dying_ruler = {
+		if = {
+			limit = { has_trait = lifestyle_blood_mage }
+			add = "has_trait_xp(lifestyle_blood_mage|hematurgy)"
 		}
 	}
 	multiply = 0.25
@@ -66,16 +63,12 @@ bm_anointed_transfer_bloodline_vanguard_xp_value = {
 	min = 0
 }
 
-bm_anointed_transfer_hematurgy_slaughter_xp_value = {
+bm_anointed_transfer_bloodlust_xp_value = {
 	value = 0
 	scope:dying_ruler = {
 		if = {
 			limit = { has_trait = lifestyle_blood_mage }
-			add = "has_trait_xp(lifestyle_blood_mage|hematurgy)"
-		}
-		else_if = {
-			limit = { has_trait = lifestyle_blood_knight }
-			add = "has_trait_xp(lifestyle_blood_knight|slaughter)"
+			add = "has_trait_xp(lifestyle_blood_mage|bloodlust)"
 		}
 	}
 	multiply = 0.25

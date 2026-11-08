@@ -8,10 +8,7 @@
 	cooldown = { years = 1 }
 
 	is_shown = {
-		OR = {
-			has_trait = lifestyle_blood_mage
-			has_trait = lifestyle_blood_knight
-		}
+		has_trait = lifestyle_blood_mage
 	}
 
 	is_valid = {
@@ -20,13 +17,12 @@
 			has_character_modifier = lifeforce_modifier_minor
 		}
 		custom_description = {
-			text = bm_no_blood_knights_available_req
+			text = bm_no_knights_available_req
 			any_knight = {
 				is_alive = yes
 				is_imprisoned = no
 				is_adult = yes
 				NOT = { has_trait = incapable }
-				has_trait = lifestyle_blood_knight
 			}
 		}
 	}
@@ -44,7 +40,6 @@
 				is_imprisoned = no
 				is_adult = yes
 				NOT = { has_trait = incapable }
-				has_trait = lifestyle_blood_knight
 			}
 			weight = {
 				base = 1
@@ -62,7 +57,6 @@
 					is_imprisoned = no
 					is_adult = yes
 					NOT = { has_trait = incapable }
-					has_trait = lifestyle_blood_knight
 					NOT = { this = scope:spar_partner_1 }
 				}
 				weight = {
@@ -82,7 +76,6 @@
 					is_imprisoned = no
 					is_adult = yes
 					NOT = { has_trait = incapable }
-					has_trait = lifestyle_blood_knight
 					NOT = { this = scope:spar_partner_1 }
 					NOT = { this = scope:spar_partner_2 }
 				}
@@ -100,10 +93,7 @@
 
 	ai_check_interval = 12
 	ai_potential = {
-		OR = {
-			has_trait = lifestyle_blood_mage
-			has_trait = lifestyle_blood_knight
-		}
+		has_trait = lifestyle_blood_mage
 	}
 	ai_will_do = {
 		base = 40

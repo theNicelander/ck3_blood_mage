@@ -18,24 +18,8 @@ bm_blood_mage_hematurgy_xp_value = {
 	value = "has_trait_xp(lifestyle_blood_mage|hematurgy)"
 }
 
-bm_blood_knight_ancient_xp_value = {
-	value = "has_trait_xp(lifestyle_blood_knight|ancient)"
-}
-
-bm_blood_knight_benediction_xp_value = {
-	value = "has_trait_xp(lifestyle_blood_knight|benediction)"
-}
-
-bm_blood_knight_slaughter_xp_value = {
-	value = "has_trait_xp(lifestyle_blood_knight|slaughter)"
-}
-
-bm_blood_knight_vanguard_xp_value = {
-	value = "has_trait_xp(lifestyle_blood_knight|vanguard)"
-}
-
-bm_blood_knight_enlightenment_xp_value = {
-	value = "has_trait_xp(lifestyle_blood_knight|enlightenment)"
+bm_blood_mage_bloodlust_xp_value = {
+	value = "has_trait_xp(lifestyle_blood_mage|bloodlust)"
 }
 
 bm_seek_power_cooldown_days = {
@@ -67,28 +51,4 @@ bm_seek_power_traveler_chance_value = {
 	value = prowess
 	min = 20
 	max = 50
-}
-
-bm_transmute_ancient_xp_value = {
-	value = 0
-	if = {
-		limit = { exists = var:bm_transmute_ancient_xp }
-		add = var:bm_transmute_ancient_xp
-	}
-}
-
-bm_transmute_enlightenment_xp_value = {
-	value = 0
-	if = {
-		limit = { exists = var:bm_transmute_enlightenment_xp }
-		add = var:bm_transmute_enlightenment_xp
-	}
-}
-
-bm_transmute_benediction_xp_value = {
-	value = 0
-	if = {
-		limit = { exists = var:bm_transmute_benediction_xp }
-		add = var:bm_transmute_benediction_xp
-	}
 }

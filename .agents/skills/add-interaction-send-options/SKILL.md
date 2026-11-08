@@ -7,7 +7,7 @@ description: >-
 # Add interaction send options
 
 Context: rules `ck3-decisions`, `ck3-scripting`; skill `add-blood-magic-decision`.
-References: mod `common/character_interactions/bm_blood_knight_interactions.txt` (`make_blood_knight_interaction`), `common/character_interactions/bm_blood_blessing.txt`; vanilla `00_diarch_interactions.txt`.
+References: mod `common/character_interactions/bm_blood_blessing.txt`; vanilla `00_diarch_interactions.txt`.
 
 `send_options_exclusive = yes` opens a modal choice window before sending the interaction, letting the actor pick one of several mutually exclusive radio options (`send_option`).
 

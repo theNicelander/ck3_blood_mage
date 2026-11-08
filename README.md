@@ -23,7 +23,7 @@ Managing **Lifeforce** therefore requires a careful balance between health and l
 
 ### Lifeforce comes in three levels
 All tiers provide increased lifespan, fertility, disease resistance, health and prowess:
-- **Minor Lifeforce**: Smaller bonuses, used for minor magic, attribute channeling, and knight empowerment
+- **Minor Lifeforce**: Smaller bonuses, used for minor magic, attribute channeling, and healing
 - **Major Lifeforce**: Significant bonuses, required for powerful rituals, education upgrades, and manifesting traits
 - **Superior Lifeforce**: Distilled essence, required for 5-star master education, superior body runes, and blood golems
 
@@ -37,22 +37,18 @@ All tiers provide increased lifespan, fertility, disease resistance, health and 
 ---
 
 ## Lifestyle Traits and Specialisations
-There are two main paths to walk, each with progressive tiers of power that take decades and thousands of piety to master:
+Walk the path of blood with progressive tiers of power that take decades and thousands of piety to master:
 
 ### Blood Mage
-The mystic and scholarly path. Features five distinct tracks that gain experience as you use related abilities:
+The definitive blood magic lifestyle trait with six distinct tracks that gain experience as you use related abilities:
 - **Ancient**: Age slower, gain piety, and retain prowess in your old age
 - **Enlightenment**: Gain XP by casting blood magic on yourself, boosting learning and lifestyle XP
 - **Bloodline**: Enhance your dynasty, domain limit, and realm development
 - **Benediction**: Gain XP by healing ailments and curing others, earning the love of your vassals
 - **Hematurgy**: Intrigue, dread, hostile schemes, and harvesting traits from victims
+- **Bloodlust**: Battlefield prowess, martial mastery, combat advantage, and duel harvesting
 
-### Blood Knight
-The martial path for commanders and battlefield champions. Shares the Ancient, Enlightenment, and Benediction tracks, plus two combat specialisations:
-- **Vanguard**: Battlefield advantage, martial prowess, and knight effectiveness
-- **Slaughter**: Single combat lethality, duel harvesting, and dread
-
-Blood Knights can cast Minor and Major blood magic, and can even attempt the dangerous ascension trial to become a full Blood Mage!
+Blood Mages are also recognized as **Worthy Commanders**, ignoring realm gender laws to lead armies into battle personally.
 
 ### Blood Empowerment
 Unlocked through Major Blood Magic as a secondary lifestyle trait. Every level grants passive health, life expectancy, fertility, and disease resistance, with five tracks to focus on:
@@ -101,9 +97,9 @@ Blood Mages can follow unique blood faiths tailored to different regions of the 
 ---
 
 ## Getting Started
-There are various ways to gain the Blood Mage or Blood Knight trait:
+There are various ways to gain the Blood Mage trait:
 - Select the trait directly in the Ruler Designer
-- Travel to Reykjavik or Tsushima and duel the legendary Egill Skallagrímsson (Learning duel for Mage, Prowess duel for Knight)
+- Travel to Reykjavik or Tsushima and duel the legendary Egill Skallagrímsson (Learning & Prowess duel)
 - Join a Blóðtrú faith and complete the transformation ritual
 - Ask a Blood Mage friend, lover, or soulmate to teach you
 - Convert from being a witch into a Blood Mage
@@ -114,7 +110,7 @@ There are various ways to gain the Blood Mage or Blood Knight trait:
 
 ## Game Rules
 The mod comes with flexible game rules to tailor the experience to your liking:
-- **Blood Mage & Knight Prevalence**: Choose how common mages and knights are in the world (from Player Only to widespread)
+- **Blood Mage Prevalence**: Choose how common mages are in the world (from Player Only to widespread)
 - **Starting Counties & Holders**: Optionally give historical rulers or counties in Iceland and Tsushima blood faiths and traits from game start
 - **Physical Appearance**: Choose your visual style (normal, blood-red eyes, or red eyes with white hair)
 - **Religion Settings**: Control whether AI characters can adopt Blóðtrú faiths
@@ -135,7 +131,7 @@ Tested and working with major overhaul mods:
 ## Companion Submods
 - [**Blood Mages — Vanilla Religions**](https://steamcommunity.com/sharedfiles/filedetails/?id=3774392244): Adds native blood cults for all 49 vanilla faiths, blending parent holy sites with Blóðtrú
 - [**Blood Mages — AGOT Religions**](https://steamcommunity.com/sharedfiles/filedetails/?id=3775630683): Blood cults tailored for Westerosi faiths (Faith of the Seven, Old Gods, Drowned God, R'hllor, etc.)
-- [**Dracul — Vampires & Blood Mages**](https://steamcommunity.com/sharedfiles/filedetails/?id=3765753769): Cross-mod interactions, mutual feeding, and vampire blood knight recruitment
+- [**Dracul — Vampires & Blood Mages**](https://steamcommunity.com/sharedfiles/filedetails/?id=3765753769): Cross-mod interactions, mutual feeding, and vampire recruitment
 
 ---
 
