@@ -8,10 +8,7 @@
 	cooldown = { years = 3 }
 
 	is_shown = {
-		OR = {
-			has_trait = lifestyle_blood_mage
-			has_trait = lifestyle_blood_knight
-		}
+		has_trait = lifestyle_blood_mage
 	}
 
 	is_valid = {
@@ -51,10 +48,7 @@
 			localization = bm_attune_ancient
 			icon = "gfx/interface/icons/trait_level_tracks/ancient.dds"
 			is_shown = {
-				OR = {
-					has_trait = lifestyle_blood_mage
-					has_trait = lifestyle_blood_knight
-				}
+				has_trait = lifestyle_blood_mage
 			}
 			is_valid = {
 				custom_tooltip = {
@@ -66,10 +60,7 @@
 				value = 20
 				if = {
 					limit = {
-						OR = {
-							has_trait_xp = { trait = lifestyle_blood_mage track = ancient value >= 100 }
-							has_trait_xp = { trait = lifestyle_blood_knight track = ancient value >= 100 }
-						}
+						has_trait_xp = { trait = lifestyle_blood_mage track = ancient value >= 100 }
 					}
 					multiply = 0
 				}
@@ -82,10 +73,7 @@
 			localization = bm_attune_enlightenment
 			icon = "gfx/interface/icons/trait_level_tracks/enlightenment.dds"
 			is_shown = {
-				OR = {
-					has_trait = lifestyle_blood_mage
-					has_trait = lifestyle_blood_knight
-				}
+				has_trait = lifestyle_blood_mage
 			}
 			is_valid = {
 				custom_tooltip = {
@@ -97,10 +85,7 @@
 				value = 20
 				if = {
 					limit = {
-						OR = {
-							has_trait_xp = { trait = lifestyle_blood_mage track = enlightenment value >= 100 }
-							has_trait_xp = { trait = lifestyle_blood_knight track = enlightenment value >= 100 }
-						}
+						has_trait_xp = { trait = lifestyle_blood_mage track = enlightenment value >= 100 }
 					}
 					multiply = 0
 				}
@@ -138,10 +123,7 @@
 			localization = bm_attune_benediction
 			icon = "gfx/interface/icons/trait_level_tracks/benediction.dds"
 			is_shown = {
-				OR = {
-					has_trait = lifestyle_blood_mage
-					has_trait = lifestyle_blood_knight
-				}
+				has_trait = lifestyle_blood_mage
 			}
 			is_valid = {
 				custom_tooltip = {
@@ -153,10 +135,7 @@
 				value = 50
 				if = {
 					limit = {
-						OR = {
-							has_trait_xp = { trait = lifestyle_blood_mage track = benediction value >= 100 }
-							has_trait_xp = { trait = lifestyle_blood_knight track = benediction value >= 100 }
-						}
+						has_trait_xp = { trait = lifestyle_blood_mage track = benediction value >= 100 }
 					}
 					multiply = 0
 				}
@@ -189,49 +168,24 @@
 		}
 
 		item = {
-			value = bm_attune_vanguard
-			current_description = bm_attune_vanguard
-			localization = bm_attune_vanguard
-			icon = "gfx/interface/icons/trait_level_tracks/vanguard.dds"
+			value = bm_attune_bloodlust
+			current_description = bm_attune_bloodlust
+			localization = bm_attune_bloodlust
+			icon = "gfx/interface/icons/trait_level_tracks/bloodlust.dds"
 			is_shown = {
-				has_trait = lifestyle_blood_knight
+				has_trait = lifestyle_blood_mage
 			}
 			is_valid = {
 				custom_tooltip = {
 					text = bm_attune_already_attuned_req
-					NOT = { has_character_modifier = vanguard_attuned }
+					NOT = { has_character_modifier = bloodlust_attuned }
 				}
 			}
 			ai_chance = {
 				value = 30
 				if = {
 					limit = {
-						has_trait_xp = { trait = lifestyle_blood_knight track = vanguard value >= 100 }
-					}
-					multiply = 0
-				}
-			}
-		}
-
-		item = {
-			value = bm_attune_slaughter
-			current_description = bm_attune_slaughter
-			localization = bm_attune_slaughter
-			icon = "gfx/interface/icons/trait_level_tracks/slaughter.dds"
-			is_shown = {
-				has_trait = lifestyle_blood_knight
-			}
-			is_valid = {
-				custom_tooltip = {
-					text = bm_attune_already_attuned_req
-					NOT = { has_character_modifier = slaughter_attuned }
-				}
-			}
-			ai_chance = {
-				value = 30
-				if = {
-					limit = {
-						has_trait_xp = { trait = lifestyle_blood_knight track = slaughter value >= 100 }
+						has_trait_xp = { trait = lifestyle_blood_mage track = bloodlust value >= 100 }
 					}
 					multiply = 0
 				}
@@ -301,23 +255,13 @@
 			}
 		}
 		else_if = {
-			limit = { scope:bm_attune_vanguard = yes }
-			debug_log = "BloodMageDecision: bm_attune_lifeforce_decision (vanguard) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+			limit = { scope:bm_attune_bloodlust = yes }
+			debug_log = "BloodMageDecision: bm_attune_lifeforce_decision (bloodlust) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_attune_lifeforce_decision
 				left_icon = root
-				add_character_modifier = { modifier = vanguard_attuned }
-			}
-		}
-		else_if = {
-			limit = { scope:bm_attune_slaughter = yes }
-			debug_log = "BloodMageDecision: bm_attune_lifeforce_decision (slaughter) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
-			send_interface_toast = {
-				type = event_toast_effect_good
-				title = bm_attune_lifeforce_decision
-				left_icon = root
-				add_character_modifier = { modifier = slaughter_attuned }
+				add_character_modifier = { modifier = bloodlust_attuned }
 			}
 		}
 		else = {
@@ -330,10 +274,7 @@
 	}
 
 	ai_potential = {
-		OR = {
-			has_trait = lifestyle_blood_mage
-			has_trait = lifestyle_blood_knight
-		}
+		has_trait = lifestyle_blood_mage
 	}
 
 	ai_check_interval = 3

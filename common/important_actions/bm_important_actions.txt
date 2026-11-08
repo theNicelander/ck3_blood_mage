@@ -6,10 +6,7 @@
 		if = {
 			limit = {
 				is_ai = no
-				OR = {
-					has_trait = lifestyle_blood_mage
-					has_trait = lifestyle_blood_knight
-				}
+				has_trait = lifestyle_blood_mage
 			}
 			save_scope_as = actor
 
@@ -163,10 +160,7 @@ bm_action_can_lifedrain_prisoner = {
 		if = {
 			limit = {
 				is_ai = no
-				OR = {
-					has_trait = lifestyle_blood_mage
-					has_trait = lifestyle_blood_knight
-				}
+				has_trait = lifestyle_blood_mage
 			}
 			save_scope_as = actor
 
@@ -211,10 +205,7 @@ bm_action_can_cull_champion = {
 		if = {
 			limit = {
 				is_ai = no
-				OR = {
-					has_trait = lifestyle_blood_mage
-					has_trait = lifestyle_blood_knight
-				}
+				has_trait = lifestyle_blood_mage
 			}
 			save_scope_as = actor
 

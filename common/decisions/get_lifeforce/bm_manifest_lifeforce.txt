@@ -3,10 +3,7 @@
 	decision_group_type = bm_decision_group
 
 	is_shown = {
-		OR = {
-			has_trait = lifestyle_blood_mage
-			has_trait = lifestyle_blood_knight
-		}
+		has_trait = lifestyle_blood_mage
 	}
 	is_valid = {
 		piety >= 100

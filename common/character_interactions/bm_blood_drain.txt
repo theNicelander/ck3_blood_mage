@@ -32,10 +32,7 @@
 
 	is_shown = {
 		scope:actor = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 		}
 		scope:recipient = {
 			is_alive = yes
@@ -193,23 +190,10 @@
 					left_icon = scope:actor
 					right_icon = scope:recipient
 					add_character_modifier = { modifier = lifeforce_modifier_minor }
-					if = {
-						limit = { has_trait = lifestyle_blood_mage }
-						add_trait_xp = {
-							trait = lifestyle_blood_mage
-							track = hematurgy
-							value = 1
-						}
-					}
-					if = {
-						limit = {
-							has_trait = lifestyle_blood_knight
-							NOT = { has_trait = lifestyle_blood_mage }
-						}
-						add_blood_knight_xp = {
-							TRACK = slaughter
-							XP = 1
-						}
+					add_trait_xp = {
+						trait = lifestyle_blood_mage
+						track = hematurgy
+						value = 1
 					}
 					scope:recipient = {
 						add_character_modifier = {
@@ -278,74 +262,16 @@
 								}
 							}
 						}
-						if = {
-							limit = { has_trait = lifestyle_blood_mage }
-							add_xp_bm_dynamic = { TRACK = hematurgy XP = 3 }
-						}
-						if = {
-							limit = { has_trait = lifestyle_blood_knight }
-							add_blood_knight_xp = { TRACK = slaughter XP = 3 }
-						}
+						add_xp_bm_dynamic = { TRACK = hematurgy XP = 3 }
 						hidden_effect = {
 							bm_recount_lifeforce_stacks_effect = yes
 							scope:recipient = { bm_recount_lifeforce_stacks_effect = yes }
 						}
 					}
 				}
-				else_if = {
-					limit = {
-						scope:actor = {
-							has_trait = lifestyle_blood_knight
-							NOT = { has_trait = lifestyle_blood_mage }
-						}
-					}
-					duel = {
-						skill = prowess
-						target = scope:recipient
-						50 = {
-							compare_modifier = { value = scope:duel_value multiplier = 2 }
-							send_interface_toast = {
-								type = event_toast_effect_good
-								title = bm_blood_drain_toast
-								left_icon = scope:actor
-								right_icon = scope:recipient
-								if = {
-									limit = { scope:recipient = { has_character_modifier = lifeforce_modifier_superior } }
-									scope:recipient = { remove_character_modifier = lifeforce_modifier_superior }
-									add_character_modifier = { modifier = lifeforce_modifier_superior }
-								}
-								else_if = {
-									limit = { scope:recipient = { has_character_modifier = lifeforce_modifier_major } }
-									scope:recipient = { remove_character_modifier = lifeforce_modifier_major }
-									add_character_modifier = { modifier = lifeforce_modifier_major }
-								}
-								else_if = {
-									limit = { scope:recipient = { has_character_modifier = lifeforce_modifier_minor } }
-									scope:recipient = { remove_character_modifier = lifeforce_modifier_minor }
-									add_character_modifier = { modifier = lifeforce_modifier_minor }
-								}
-								add_blood_knight_xp = { TRACK = slaughter XP = 3 }
-								hidden_effect = {
-									bm_recount_lifeforce_stacks_effect = yes
-									scope:recipient = { bm_recount_lifeforce_stacks_effect = yes }
-								}
-							}
-						}
-						50 = {
-							compare_modifier = { value = scope:duel_value multiplier = -2 }
-							send_interface_toast = {
-								type = event_toast_effect_bad
-								title = bm_blood_drain_toast
-								left_icon = scope:actor
-								right_icon = scope:recipient
-								add_stress = 20
-							}
-						}
-					}
-				}
 				else = {
 					duel = {
-						skill = learning
+						skills = { learning prowess }
 						target = scope:recipient
 						50 = {
 							compare_modifier = { value = scope:duel_value multiplier = 2 }
@@ -406,10 +332,7 @@
 					if = {
 						limit = {
 							scope:recipient = {
-								OR = {
-									has_trait = lifestyle_blood_mage
-									has_trait = lifestyle_blood_knight
-								}
+								has_trait = lifestyle_blood_mage
 							}
 						}
 						add_character_modifier = { modifier = lifeforce_modifier_major }
@@ -417,23 +340,10 @@
 					else = {
 						add_character_modifier = { modifier = lifeforce_modifier_minor }
 					}
-					if = {
-						limit = { has_trait = lifestyle_blood_mage }
-						add_trait_xp = {
-							trait = lifestyle_blood_mage
-							track = bloodline
-							value = 1
-						}
-					}
-					if = {
-						limit = {
-							has_trait = lifestyle_blood_knight
-							NOT = { has_trait = lifestyle_blood_mage }
-						}
-						add_blood_knight_xp = {
-							TRACK = benediction
-							XP = 1
-						}
+					add_trait_xp = {
+						trait = lifestyle_blood_mage
+						track = bloodline
+						value = 1
 					}
 					scope:recipient = {
 						add_character_modifier = {

@@ -28,7 +28,7 @@ Managing **Lifeforce** therefore requires a careful balance between health and l
 
 All tiers provide increased lifespan, fertility, disease resistance, health and prowess:
 
-- **Minor Lifeforce**: Smaller bonuses, used for minor magic, attribute channeling, and knight empowerment
+- **Minor Lifeforce**: Smaller bonuses, used for minor magic, attribute channeling, and healing
 - **Major Lifeforce**: Significant bonuses, required for powerful rituals, education upgrades, and manifesting traits
 - **Superior Lifeforce**: Distilled essence, required for 5-star master education, superior body runes, and blood golems
 
@@ -44,7 +44,7 @@ All tiers provide increased lifespan, fertility, disease resistance, health and 
 
 ## Lifestyle Traits and Specialisations
 
-There are two main paths to walk, each with progressive tiers of power that take decades and thousands of piety to master:
+Walk the path of blood with progressive tiers of power that take decades and thousands of piety to master:
 
 ### Blood Mage
 
@@ -121,10 +121,10 @@ Blood Mages can follow unique blood faiths tailored to different regions of the 
 
 ## Getting Started
 
-There are various ways to gain the Blood Mage or Blood Knight trait:
+There are various ways to gain the Blood Mage trait:
 
 - Select the trait directly in the Ruler Designer
-- Travel to Reykjavik or Tsushima and duel the legendary Egill Skallagrímsson (Learning duel for Mage, Prowess duel for Knight)
+- Travel to Reykjavik or Tsushima and duel the legendary Egill Skallagrímsson (Learning & Prowess duel)
 - Join a Blóðtrú faith and complete the transformation ritual
 - Ask a Blood Mage friend, lover, or soulmate to teach you
 - Convert from being a witch into a Blood Mage
@@ -137,7 +137,7 @@ There are various ways to gain the Blood Mage or Blood Knight trait:
 
 The mod comes with flexible game rules to tailor the experience to your liking:
 
-- **Blood Mage & Knight Prevalence**: Choose how common mages and knights are in the world (from Player Only to widespread)
+- **Blood Mage Prevalence**: Choose how common mages are in the world (from Player Only to widespread)
 - **Starting Counties & Holders**: Optionally give historical rulers or counties in Iceland and Tsushima blood faiths and traits from game start
 - **Physical Appearance**: Choose your visual style (normal, blood-red eyes, or red eyes with white hair)
 - **Religion Settings**: Control whether AI characters can adopt Blóðtrú faiths

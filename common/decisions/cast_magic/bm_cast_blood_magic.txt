@@ -6,10 +6,7 @@
 	selection_tooltip = bm_cast_blood_magic_superior_decision_tooltip
 
 	is_shown = {
-		OR = {
-			has_trait = lifestyle_blood_mage
-			has_trait = lifestyle_blood_knight
-		}
+		has_trait = lifestyle_blood_mage
 	}
 
 	is_valid_showing_failures_only = {
@@ -36,10 +33,7 @@
 			localization = bm_superior_master_education
 			icon = "gfx/interface/icons/trait_level_tracks/enlightenment.dds"
 			is_shown = {
-				OR = {
-					has_trait = lifestyle_blood_mage
-					has_trait = lifestyle_blood_knight
-				}
+				has_trait = lifestyle_blood_mage
 			}
 			is_valid = {
 				custom_tooltip = {
@@ -81,10 +75,7 @@
 			localization = bm_superior_new_education
 			icon = "gfx/interface/icons/trait_level_tracks/enlightenment.dds"
 			is_shown = {
-				OR = {
-					has_trait = lifestyle_blood_mage
-					has_trait = lifestyle_blood_knight
-				}
+				has_trait = lifestyle_blood_mage
 			}
 			is_valid = {
 				custom_tooltip = {
@@ -186,10 +177,7 @@
 			localization = bm_superior_manifest_traits
 			icon = "gfx/interface/icons/trait_level_tracks/bloodline.dds"
 			is_shown = {
-				OR = {
-					has_trait = lifestyle_blood_mage
-					has_trait = lifestyle_blood_knight
-				}
+				has_trait = lifestyle_blood_mage
 			}
 			is_valid = {
 				custom_tooltip = {
@@ -238,10 +226,7 @@
 			localization = bm_superior_create_blood_golem
 			icon = "gfx/interface/icons/traits/bm_blood_knight.dds"
 			is_shown = {
-				OR = {
-					has_trait = lifestyle_blood_mage
-					has_trait = lifestyle_blood_knight
-				}
+				has_trait = lifestyle_blood_mage
 			}
 			is_valid = {
 				custom_tooltip = {
@@ -263,48 +248,6 @@
 					limit = { health <= fine_health }
 					multiply = 0
 				}
-			}
-		}
-
-		# Path of the Blood Knight (Transmute Class)
-		item = {
-			value = bm_superior_transmute_to_knight
-			current_description = bm_superior_transmute_to_knight
-			localization = bm_superior_transmute_to_knight
-			icon = "gfx/interface/icons/traits/bm_blood_knight.dds"
-			is_shown = {
-				is_ai = no
-				has_trait = lifestyle_blood_mage
-			}
-			is_valid = {
-				custom_tooltip = {
-					text = bm_swap_class_cooldown_tt
-					NOT = { has_character_flag = bm_swap_class_cooldown }
-				}
-			}
-			ai_chance = {
-				value = 0
-			}
-		}
-
-		# Path of the Blood Mage (Transmute Class)
-		item = {
-			value = bm_superior_transmute_to_mage
-			current_description = bm_superior_transmute_to_mage
-			localization = bm_superior_transmute_to_mage
-			icon = "gfx/interface/icons/traits/bm_blood_mage.dds"
-			is_shown = {
-				is_ai = no
-				has_trait = lifestyle_blood_knight
-			}
-			is_valid = {
-				custom_tooltip = {
-					text = bm_swap_class_cooldown_tt
-					NOT = { has_character_flag = bm_swap_class_cooldown }
-				}
-			}
-			ai_chance = {
-				value = 0
 			}
 		}
 	}
@@ -359,40 +302,11 @@
 			}
 			blood_magic_used_superior = yes
 			bm_recount_lifeforce_stacks_effect = yes
-			if = {
-				limit = { has_trait = lifestyle_blood_knight }
-				add_blood_knight_xp = {
-					TRACK = vanguard
-					XP = 5
-				}
-			}
-			else = {
-				add_xp_bm_dynamic = {
-					TRACK = bloodline
-					XP = 5
-				}
+			add_xp_bm_dynamic = {
+				TRACK = bloodline
+				XP = 5
 			}
 			trigger_event = { id = blood_golem.001 }
-		}
-		else_if = {
-			limit = { scope:bm_superior_transmute_to_knight = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_superior_decision (transmute_to_knight) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
-			send_interface_toast = {
-				type = event_toast_effect_good
-				title = bm_superior_transmute_to_knight_toast
-				left_icon = root
-				bm_transmute_to_blood_knight_effect = yes
-			}
-		}
-		else_if = {
-			limit = { scope:bm_superior_transmute_to_mage = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_superior_decision (transmute_to_mage) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
-			send_interface_toast = {
-				type = event_toast_effect_good
-				title = bm_superior_transmute_to_mage_toast
-				left_icon = root
-				bm_transmute_to_blood_mage_effect = yes
-			}
 		}
 		else = {
 			custom_tooltip = bm_cast_blood_magic_superior_decision_tooltip
@@ -417,12 +331,10 @@
 				any_spouse = {
 					is_alive = yes
 					NOT = { has_trait = lifestyle_blood_mage }
-					NOT = { has_trait = lifestyle_blood_knight }
 				}
 				primary_heir ?= {
 					is_alive = yes
 					NOT = { has_trait = lifestyle_blood_mage }
-					NOT = { has_trait = lifestyle_blood_knight }
 				}
 			}
 		}
@@ -437,10 +349,7 @@ bm_cast_blood_magic_major_decision = {
 	selection_tooltip = bm_cast_blood_magic_major_decision_tooltip
 
 	is_shown = {
-		OR = {
-			has_trait = lifestyle_blood_mage
-			has_trait = lifestyle_blood_knight
-		}
+		has_trait = lifestyle_blood_mage
 	}
 
 	is_valid_showing_failures_only = {
@@ -471,10 +380,7 @@ bm_cast_blood_magic_major_decision = {
 			localization = bm_major_channel_power
 			icon = "gfx/interface/icons/traits/bm_interactions.dds"
 			is_shown = {
-				OR = {
-					has_trait = lifestyle_blood_mage
-					has_trait = lifestyle_blood_knight
-				}
+				has_trait = lifestyle_blood_mage
 			}
 			is_valid = {
 				custom_tooltip = {
@@ -502,10 +408,7 @@ bm_cast_blood_magic_major_decision = {
 			localization = bm_major_condense
 			icon = "gfx/interface/icons/traits/bm_interactions.dds"
 			is_shown = {
-				OR = {
-					has_trait = lifestyle_blood_mage
-					has_trait = lifestyle_blood_knight
-				}
+				has_trait = lifestyle_blood_mage
 			}
 			is_valid = {
 				custom_tooltip = {
@@ -552,10 +455,7 @@ bm_cast_blood_magic_major_decision = {
 			localization = bm_major_improve_education
 			icon = "gfx/interface/icons/trait_level_tracks/enlightenment.dds"
 			is_shown = {
-				OR = {
-					has_trait = lifestyle_blood_mage
-					has_trait = lifestyle_blood_knight
-				}
+				has_trait = lifestyle_blood_mage
 			}
 			is_valid = {
 				custom_tooltip = {
@@ -651,10 +551,7 @@ bm_cast_blood_magic_major_decision = {
 			localization = bm_major_manifest_traits
 			icon = "gfx/interface/icons/trait_level_tracks/bloodline.dds"
 			is_shown = {
-				OR = {
-					has_trait = lifestyle_blood_mage
-					has_trait = lifestyle_blood_knight
-				}
+				has_trait = lifestyle_blood_mage
 			}
 			is_valid = {
 				custom_tooltip = {
@@ -825,18 +722,9 @@ bm_cast_blood_magic_major_decision = {
 				left_icon = root
 				bm_upgrade_blood_rune_to_major_effect = yes
 				custom_tooltip = blood_runes_effects_list.major
-				if = {
-					limit = { has_trait = lifestyle_blood_mage }
-					add_xp_bm_dynamic = {
-						TRACK = ancient
-						XP = 5
-					}
-				}
-				else = {
-					add_blood_knight_xp = {
-						TRACK = ancient
-						XP = 5
-					}
+				add_xp_bm_dynamic = {
+					TRACK = ancient
+					XP = 5
 				}
 				blood_magic_used_major = yes
 				hidden_effect = {
@@ -872,12 +760,10 @@ bm_cast_blood_magic_major_decision = {
 				any_spouse = {
 					is_alive = yes
 					NOT = { has_trait = lifestyle_blood_mage }
-					NOT = { has_trait = lifestyle_blood_knight }
 				}
 				primary_heir ?= {
 					is_alive = yes
 					NOT = { has_trait = lifestyle_blood_mage }
-					NOT = { has_trait = lifestyle_blood_knight }
 				}
 			}
 		}
@@ -892,10 +778,7 @@ bm_cast_blood_magic_minor_decision = {
 	selection_tooltip = bm_cast_blood_magic_minor_decision_tooltip
 
 	is_shown = {
-		OR = {
-			has_trait = lifestyle_blood_mage
-			has_trait = lifestyle_blood_knight
-		}
+		has_trait = lifestyle_blood_mage
 	}
 
 	is_valid_showing_failures_only = {
@@ -918,10 +801,7 @@ bm_cast_blood_magic_minor_decision = {
 			localization = bm_minor_channel
 			icon = "gfx/interface/icons/trait_level_tracks/enlightenment.dds"
 			is_shown = {
-				OR = {
-					has_trait = lifestyle_blood_mage
-					has_trait = lifestyle_blood_knight
-				}
+				has_trait = lifestyle_blood_mage
 			}
 			is_valid = {
 				custom_tooltip = {
@@ -945,10 +825,7 @@ bm_cast_blood_magic_minor_decision = {
 			localization = bm_minor_purge
 			icon = "gfx/interface/icons/trait_level_tracks/benediction.dds"
 			is_shown = {
-				OR = {
-					has_trait = lifestyle_blood_mage
-					has_trait = lifestyle_blood_knight
-				}
+				has_trait = lifestyle_blood_mage
 			}
 			is_valid = {
 				custom_tooltip = {
@@ -993,10 +870,7 @@ bm_cast_blood_magic_minor_decision = {
 			localization = bm_minor_condense
 			icon = "gfx/interface/icons/traits/bm_interactions.dds"
 			is_shown = {
-				OR = {
-					has_trait = lifestyle_blood_mage
-					has_trait = lifestyle_blood_knight
-				}
+				has_trait = lifestyle_blood_mage
 			}
 			is_valid = {
 				custom_tooltip = {
@@ -1084,12 +958,6 @@ bm_cast_blood_magic_minor_decision = {
 						}
 					}
 				}
-				else = {
-					add_blood_knight_xp = {
-						TRACK = benediction
-						XP = 1
-					}
-				}
 				remove_trait = wounded_1
 				remove_trait = ill
 				remove_trait = lovers_pox
@@ -1121,18 +989,9 @@ bm_cast_blood_magic_minor_decision = {
 				left_icon = root
 				remove_character_modifier = lifeforce_modifier_minor
 				add_character_modifier = { modifier = lifeforce_modifier_major }
-				if = {
-					limit = { has_trait = lifestyle_blood_mage }
-					add_xp_bm_dynamic = {
-						TRACK = enlightenment
-						XP = 2
-					}
-				}
-				else = {
-					add_blood_knight_xp = {
-						TRACK = enlightenment
-						XP = 2
-					}
+				add_xp_bm_dynamic = {
+					TRACK = enlightenment
+					XP = 2
 				}
 				hidden_effect = {
 					bm_recount_lifeforce_stacks_effect = yes
@@ -1154,18 +1013,9 @@ bm_cast_blood_magic_minor_decision = {
 					modifier = minor_blood_rune_modifier
 				}
 				custom_tooltip = blood_runes_effects_list.minor
-				if = {
-					limit = { has_trait = lifestyle_blood_mage }
-					add_xp_bm_dynamic = {
-						TRACK = ancient
-						XP = 4
-					}
-				}
-				else = {
-					add_blood_knight_xp = {
-						TRACK = ancient
-						XP = 4
-					}
+				add_xp_bm_dynamic = {
+					TRACK = ancient
+					XP = 4
 				}
 				blood_magic_used_minor = yes
 				hidden_effect = {
@@ -1196,12 +1046,10 @@ bm_cast_blood_magic_minor_decision = {
 				any_spouse = {
 					is_alive = yes
 					NOT = { has_trait = lifestyle_blood_mage }
-					NOT = { has_trait = lifestyle_blood_knight }
 				}
 				primary_heir ?= {
 					is_alive = yes
 					NOT = { has_trait = lifestyle_blood_mage }
-					NOT = { has_trait = lifestyle_blood_knight }
 				}
 			}
 		}

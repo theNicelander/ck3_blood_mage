@@ -1,7 +1,6 @@
 ﻿on_game_start_after_lobby = {
 	on_actions = {
 		bm_initialize_blood_mage_prevalence
-		bm_initialize_blood_knight_prevalence
 		bm_initialize_blood_mage_stories
 		bm_initialize_starting_counties_and_holders
 	}
@@ -19,26 +18,11 @@ bm_initialize_blood_mage_prevalence = {
 	}
 }
 
-bm_initialize_blood_knight_prevalence = {
-	effect = {
-		every_living_character = {
-			limit = {
-				is_ai = yes
-				has_trait = lifestyle_blood_knight
-			}
-			bm_apply_blood_knight_prevalence_retention_effect = yes
-		}
-	}
-}
-
 bm_initialize_blood_mage_stories = {
 	effect = {
 		every_living_character = {
 			limit = {
-				OR = {
-					has_trait = lifestyle_blood_mage
-					has_trait = lifestyle_blood_knight
-				}
+				has_trait = lifestyle_blood_mage
 			}
 			bm_ensure_blood_mage_story_effect = yes
 		}

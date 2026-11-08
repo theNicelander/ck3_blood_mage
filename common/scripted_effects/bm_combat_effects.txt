@@ -12,7 +12,7 @@
 			type = event_toast_effect_good
 			title = bm_battle_victory_commander_toast
 			left_icon = this
-			add_blood_knight_xp = { TRACK = vanguard XP = 5 }
+			bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 3 }
 		}
 	}
 	else_if = {
@@ -28,7 +28,7 @@
 			type = event_toast_effect_good
 			title = bm_battle_victory_commander_toast
 			left_icon = this
-			add_blood_knight_xp = { TRACK = vanguard XP = 5 }
+			bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 3 }
 		}
 	}
 	else_if = {
@@ -44,7 +44,7 @@
 			type = event_toast_effect_good
 			title = bm_battle_victory_commander_toast
 			left_icon = this
-			add_blood_knight_xp = { TRACK = vanguard XP = 4 }
+			bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 2 }
 		}
 	}
 	else_if = {
@@ -60,7 +60,7 @@
 			type = event_toast_effect_good
 			title = bm_battle_victory_commander_toast
 			left_icon = this
-			add_blood_knight_xp = { TRACK = vanguard XP = 3 }
+			bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 2 }
 		}
 	}
 	else = {
@@ -68,7 +68,7 @@
 			type = event_toast_effect_good
 			title = bm_battle_victory_commander_toast
 			left_icon = this
-			add_blood_knight_xp = { TRACK = vanguard XP = 2 }
+			bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 1 }
 		}
 	}
 }
@@ -87,7 +87,7 @@ bm_combat_winner_knight_reward_effect = {
 			type = event_toast_effect_good
 			title = bm_battle_victory_knight_toast
 			left_icon = this
-			add_blood_knight_xp = { TRACK = vanguard XP = 5 }
+			bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 3 }
 		}
 	}
 	else_if = {
@@ -103,7 +103,7 @@ bm_combat_winner_knight_reward_effect = {
 			type = event_toast_effect_good
 			title = bm_battle_victory_knight_toast
 			left_icon = this
-			add_blood_knight_xp = { TRACK = vanguard XP = 4 }
+			bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 2 }
 		}
 	}
 	else_if = {
@@ -119,7 +119,7 @@ bm_combat_winner_knight_reward_effect = {
 			type = event_toast_effect_good
 			title = bm_battle_victory_knight_toast
 			left_icon = this
-			add_blood_knight_xp = { TRACK = vanguard XP = 3 }
+			bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 2 }
 		}
 	}
 	else_if = {
@@ -135,7 +135,7 @@ bm_combat_winner_knight_reward_effect = {
 			type = event_toast_effect_good
 			title = bm_battle_victory_knight_toast
 			left_icon = this
-			add_blood_knight_xp = { TRACK = vanguard XP = 2 }
+			bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 1 }
 		}
 	}
 	else = {
@@ -143,7 +143,7 @@ bm_combat_winner_knight_reward_effect = {
 			type = event_toast_effect_good
 			title = bm_battle_victory_knight_toast
 			left_icon = this
-			add_blood_knight_xp = { TRACK = vanguard XP = 1 }
+			bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 1 }
 		}
 	}
 }
@@ -162,8 +162,8 @@ bm_combat_loser_commander_reward_effect = {
 			type = event_toast_effect_good
 			title = bm_battle_defeat_commander_toast
 			left_icon = this
-			add_blood_knight_xp = { TRACK = vanguard XP = 3 }
-			add_blood_knight_xp = { TRACK = enlightenment XP = 2 }
+			bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 2 }
+			bm_add_blood_mage_xp_effect = { TRACK = enlightenment XP = 1 }
 		}
 	}
 	else_if = {
@@ -179,8 +179,8 @@ bm_combat_loser_commander_reward_effect = {
 			type = event_toast_effect_good
 			title = bm_battle_defeat_commander_toast
 			left_icon = this
-			add_blood_knight_xp = { TRACK = vanguard XP = 3 }
-			add_blood_knight_xp = { TRACK = enlightenment XP = 2 }
+			bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 2 }
+			bm_add_blood_mage_xp_effect = { TRACK = enlightenment XP = 1 }
 		}
 	}
 	else_if = {
@@ -196,8 +196,8 @@ bm_combat_loser_commander_reward_effect = {
 			type = event_toast_effect_good
 			title = bm_battle_defeat_commander_toast
 			left_icon = this
-			add_blood_knight_xp = { TRACK = vanguard XP = 2 }
-			add_blood_knight_xp = { TRACK = enlightenment XP = 2 }
+			bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 1 }
+			bm_add_blood_mage_xp_effect = { TRACK = enlightenment XP = 1 }
 		}
 	}
 	else_if = {
@@ -213,8 +213,8 @@ bm_combat_loser_commander_reward_effect = {
 			type = event_toast_effect_good
 			title = bm_battle_defeat_commander_toast
 			left_icon = this
-			add_blood_knight_xp = { TRACK = vanguard XP = 2 }
-			add_blood_knight_xp = { TRACK = enlightenment XP = 1 }
+			bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 1 }
+			bm_add_blood_mage_xp_effect = { TRACK = enlightenment XP = 1 }
 		}
 	}
 	else = {
@@ -222,8 +222,8 @@ bm_combat_loser_commander_reward_effect = {
 			type = event_toast_effect_good
 			title = bm_battle_defeat_commander_toast
 			left_icon = this
-			add_blood_knight_xp = { TRACK = vanguard XP = 1 }
-			add_blood_knight_xp = { TRACK = enlightenment XP = 1 }
+			bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 1 }
+			bm_add_blood_mage_xp_effect = { TRACK = enlightenment XP = 1 }
 		}
 	}
 }
@@ -242,8 +242,8 @@ bm_combat_loser_knight_reward_effect = {
 			type = event_toast_effect_good
 			title = bm_battle_defeat_knight_toast
 			left_icon = this
-			add_blood_knight_xp = { TRACK = vanguard XP = 3 }
-			add_blood_knight_xp = { TRACK = enlightenment XP = 2 }
+			bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 2 }
+			bm_add_blood_mage_xp_effect = { TRACK = enlightenment XP = 1 }
 		}
 	}
 	else_if = {
@@ -259,8 +259,8 @@ bm_combat_loser_knight_reward_effect = {
 			type = event_toast_effect_good
 			title = bm_battle_defeat_knight_toast
 			left_icon = this
-			add_blood_knight_xp = { TRACK = vanguard XP = 2 }
-			add_blood_knight_xp = { TRACK = enlightenment XP = 2 }
+			bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 1 }
+			bm_add_blood_mage_xp_effect = { TRACK = enlightenment XP = 1 }
 		}
 	}
 	else_if = {
@@ -276,8 +276,8 @@ bm_combat_loser_knight_reward_effect = {
 			type = event_toast_effect_good
 			title = bm_battle_defeat_knight_toast
 			left_icon = this
-			add_blood_knight_xp = { TRACK = vanguard XP = 2 }
-			add_blood_knight_xp = { TRACK = enlightenment XP = 1 }
+			bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 1 }
+			bm_add_blood_mage_xp_effect = { TRACK = enlightenment XP = 1 }
 		}
 	}
 	else_if = {
@@ -293,8 +293,8 @@ bm_combat_loser_knight_reward_effect = {
 			type = event_toast_effect_good
 			title = bm_battle_defeat_knight_toast
 			left_icon = this
-			add_blood_knight_xp = { TRACK = vanguard XP = 1 }
-			add_blood_knight_xp = { TRACK = enlightenment XP = 1 }
+			bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 1 }
+			bm_add_blood_mage_xp_effect = { TRACK = enlightenment XP = 1 }
 		}
 	}
 	else = {
@@ -302,7 +302,7 @@ bm_combat_loser_knight_reward_effect = {
 			type = event_toast_effect_good
 			title = bm_battle_defeat_knight_toast
 			left_icon = this
-			add_blood_knight_xp = { TRACK = vanguard XP = 1 }
+			bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 1 }
 		}
 	}
 }

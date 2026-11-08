@@ -8,10 +8,7 @@
 	cooldown = { years = 1 }
 
 	is_shown = {
-		OR = {
-			has_trait = lifestyle_blood_mage
-			has_trait = lifestyle_blood_knight
-		}
+		has_trait = lifestyle_blood_mage
 		exists = house
 	}
 

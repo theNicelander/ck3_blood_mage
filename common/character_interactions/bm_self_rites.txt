@@ -13,10 +13,7 @@
 	is_shown = {
 		scope:actor = scope:recipient
 		scope:actor = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 		}
 	}
 
@@ -102,23 +99,10 @@
 					add_character_modifier = {
 						modifier = lifeforce_modifier_minor
 					}
-					if = {
-						limit = { has_trait = lifestyle_blood_mage }
-						add_trait_xp = {
-							trait = lifestyle_blood_mage
-							track = hematurgy
-							value = 2
-						}
-					}
-					if = {
-						limit = {
-							has_trait = lifestyle_blood_knight
-							NOT = { has_trait = lifestyle_blood_mage }
-						}
-						add_blood_knight_xp = {
-							TRACK = slaughter
-							XP = 2
-						}
+					add_trait_xp = {
+						trait = lifestyle_blood_mage
+						track = hematurgy
+						value = 2
 					}
 					hidden_effect = {
 						bm_recount_lifeforce_stacks_effect = yes
@@ -148,23 +132,10 @@
 					add_character_modifier = {
 						modifier = lifeforce_modifier_major
 					}
-					if = {
-						limit = { has_trait = lifestyle_blood_mage }
-						add_trait_xp = {
-							trait = lifestyle_blood_mage
-							track = hematurgy
-							value = 4
-						}
-					}
-					if = {
-						limit = {
-							has_trait = lifestyle_blood_knight
-							NOT = { has_trait = lifestyle_blood_mage }
-						}
-						add_blood_knight_xp = {
-							TRACK = slaughter
-							XP = 4
-						}
+					add_trait_xp = {
+						trait = lifestyle_blood_mage
+						track = hematurgy
+						value = 4
 					}
 					hidden_effect = {
 						bm_recount_lifeforce_stacks_effect = yes

@@ -16,10 +16,6 @@
 		localization = bm_debug_option_make_blood_mage
 	}
 	send_option = {
-		flag = make_blood_knight
-		localization = bm_debug_option_make_blood_knight
-	}
-	send_option = {
 		flag = convert_to_blodtru
 		localization = bm_debug_option_convert_to_blodtru
 	}
@@ -29,12 +25,7 @@
 			switch = {
 				trigger = yes
 				scope:make_blood_mage = {
-					remove_trait = lifestyle_blood_knight
 					bm_become_blood_mage_effect = yes
-				}
-				scope:make_blood_knight = {
-					remove_trait = lifestyle_blood_mage
-					bm_become_blood_knight_effect = yes
 				}
 				scope:convert_to_blodtru = {
 					set_character_faith = faith:blodtru_faith

@@ -4,17 +4,16 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 
 ---
 
-## Blood Mage & Blood Knight
+## Blood Mage & Bloodlust
 
-- Two permanent, mutually exclusive lifestyle paths chosen on awakening: **Blood Mage** (realm, dynasty, dread, domain) and **Blood Knight** (prowess, combat advantage, knights, army speed).
-- Awaken via bloodline, occult mentorship, witch conversion, Blood Knight mentorship (also from imprisoned Blood Knights), or by duelling the hermit **Egill Skallagrímsson** in Iceland or Tsushima.
-- Shared Devotion tracks (Ancient, Enlightenment, Benediction) scale to 100 XP: Ancient adds +0.1 monthly legitimacy per 10 XP (+1.0/mo = +12/yr at 100 XP) alongside +1 personal tenet slot per 20 XP.
+- Unified single lifestyle path: **Blood Mage** featuring six distinct progression tracks: Ancient, Enlightenment, Benediction, Bloodline, Hematurgy, and the new **Bloodlust** track (consolidating former Blood Knight prowess, martial, advantage, knight limit, and duel harvesting).
+- Awaken via bloodline, occult mentorship, witch conversion, fellow Blood Mage mentorship, or by duelling the hermit **Egill Skallagrímsson** in Iceland or Tsushima.
+- All Blood Mages are recognized as **Worthy Commanders** (`ignores_gender_army_rules = yes`), allowing them to lead armies into battle regardless of faith or cultural gender rules.
+- Devotion tracks (Ancient, Enlightenment, Benediction) scale to 100 XP: Ancient adds +0.1 monthly legitimacy per 10 XP (+1.0/mo = +12/yr at 100 XP) alongside +1 personal tenet slot per 20 XP.
 - 50 XP milestones scale with Devotion Level; 100 XP capstones give +50% Devotion Impact, Age Prowess Lock and +2.0 skill per Devotion level.
-- Blood Mage tracks Bloodline and Hematurgy: 10-step cadence (universal monthly income mult, trait inheritance, dynasty prestige, hostile scheme power and defence).
-- Blood Knight tracks Vanguard (army speed, advantage, supply, prowess) and Slaughter (prowess, knight limit and effectiveness).
-- Blood Knights can initiate spouse, children and kin (+5 Vanguard XP for dynasty), and empower family even if landed or outside their court; Blood Mages can also initiate Blood Knights, earning Benediction XP.
-- Players can transmute between Blood Mage and Blood Knight via **Cast Superior Blood Magic** for 1 Superior Lifeforce, preserving shared Devotion tracks (Ancient, Enlightenment, Benediction) while resetting class-specific tracks (5-year cooldown).
-- Blood Knights automatically qualify to serve as knights and commanders across all cultures and faiths regardless of gender restrictions.
+- Bloodline and Hematurgy: 10-step cadence (universal monthly income mult, trait inheritance, dynasty prestige, hostile scheme power and defence).
+- **Bloodlust**: 10-step cadence granting scaling Prowess (+30 total), Martial (+4 total), Commander Advantage (+5), Knight Limit (+5), Dread Baseline (+15), and scaling Martial & Prowess per Piety Level (+1.5 Martial / +2 Prowess at 100 XP capstone), culminating in an Age Prowess Lock.
+- XP sources unified: battlefield victories (+1 to +3), combat survival (+1), lethal single combat (+3), and tournaments (+2) feed Bloodlust directly.
 - **Blood Power** secondary trait with six mirrored tracks (Dynasty, Warband, Mastery, Presence, Prosperity, Shadows) structured into five milestone tiers (10, 30, 50, 70, 100 XP) with scaling monthly Piety (+0.1 to +1.0), flat monthly lifestyle XP (+5 to +50/mo), shared 50 & 100 XP milestone bonuses (+10% monthly Piety mult, +5 life expectancy, +0.25 health, +0.02 monthly Piety per knight), and a tight suite of 3–4 high-impact personal modifiers delivering 2x–3x the power of House Covenants (including scaling legitimacy mult, stress composure, universal income mult, and inbreeding immunity), culminating in an Age Prowess Lock.
 - Track XP sources rebalanced: healing grants Benediction, family rites and childbirth grant Ancient/Benediction, congenital manifestation grants XP by attribute.
 - Regiments: **Blood Berserkers** (heavy shock infantry, Devotion 2+) and **Blood-Bound Behemoths** (siege-capable monsters, Devotion 4+), Piety-maintained.
@@ -24,11 +23,11 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 
 - Three tiers: **Minor** (health, disease resistance), **Major** (lifespan, body rituals), **Superior** (Blood Golems, capstone runes).
 - **Manifest Lifeforce**: four Piety tiers (250–1,500), no cooldown.
-- Blood Knights harvest Lifeforce from battles (by battle size) and lethal single combat.
-- Blood Mage and Blood Knight mothers yield Major Lifeforce on safe childbirth.
+- Blood Mages harvest Lifeforce from battles and lethal single combat duels.
+- Blood Mage mothers yield Major Lifeforce on safe childbirth.
 - **Bleed Own Veins**: self-interaction (1-year cooldown) for Minor or Major Lifeforce at the cost of wounds, stress and drain.
 - **Siphon Stored Lifeforce** takes Minor/Major/Superior reserves from other characters via a contest.
-- **Contest of the Red Art**: Learning + Prowess duel between Blood Mages and Blood Knights.
+- **Contest of the Red Art**: Learning + Prowess duel between fellow Blood Mages.
 - **House Head Blood Tithe** levies Lifeforce from adult kin.
 
 ## Spellcasting & Decisions
@@ -128,7 +127,7 @@ Annual pulse (3-year cooldown) for player Blood Mages and Blood Knights:
 ## Visuals & Game Rules
 
 - Eyes progress from red to crimson, pale and white; hair bleaches to white.
-- Rules: Appearance (Off / Gradual / On), Blood Mage and Blood Knight Prevalence, Blóðtrú Availability, Historical Starting Counties, Initiation Faith Requirements, Lore Integration (vanilla vs AGOT).
+- Rules: Appearance (Off / Gradual / On), Blood Mage Prevalence, Blóðtrú Availability, Historical Starting Counties, Initiation Faith Requirements, Lore Integration (vanilla vs AGOT).
 - Fully modular (`bm_` prefix), no vanilla overwrites; compatible with total conversions.
 
 ## Bugfixes
@@ -146,6 +145,7 @@ Annual pulse (3-year cooldown) for player Blood Mages and Blood Knights:
 
 ## Version history
 
+- v1.20.68: Consolidate Blood Knight into Blood Mage trait as the new 6th track 'Bloodlust' (prowess, martial, advantage, knight limit, and dread baseline); grant all Blood Mages Worthy Commander army gender exemption; unify battlefield and single combat XP gain; clean up UI and retire separate Blood Knight trait
 - v1.20.66: Blood Mages can initiate Blood Knights alongside Knights; add human-only Superior Magic class transmutation in Cast Superior Blood Magic (preserving Ancient, Enlightenment, and Benediction track XP); fix AI modal interaction execution and add comprehensive debug logging across all decisions and interactions
 - v1.20.65: Add custom Alþingi Commonwealth and Verbúðir traditions to Icelandic culture; standardize Icelandic names and ethos; exempt Blood Knights from gender warfare restrictions to serve as knights and commanders
 - v1.20.64: Add playable Icelandic culture with equal martial custom, saga name lists, and modular game start setup gated by campaign game rule (on by default)

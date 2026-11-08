@@ -7,10 +7,7 @@
     confirm_text = seek_power_decision_confirm
 
     is_shown = {
-        OR = {
-            has_trait = lifestyle_blood_mage
-            has_trait = lifestyle_blood_knight
-        }
+        has_trait = lifestyle_blood_mage
     }
 
     is_valid_showing_failures_only = {

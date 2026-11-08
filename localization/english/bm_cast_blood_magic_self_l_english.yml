@@ -39,15 +39,10 @@
     bm_attune_hematurgy_desc: "Applies [GetModifier('hematurgy_attuned').GetNameWithTooltip]."
     bm_attune_hematurgy_tooltip: "$bm_attune_hematurgy_desc$"
 
-    bm_attune_vanguard: "Vanguard"
-    bm_attune_vanguard_name: "$bm_attune_vanguard$"
-    bm_attune_vanguard_desc: "Applies [GetModifier('vanguard_attuned').GetNameWithTooltip]."
-    bm_attune_vanguard_tooltip: "$bm_attune_vanguard_desc$"
-
-    bm_attune_slaughter: "Slaughter"
-    bm_attune_slaughter_name: "$bm_attune_slaughter$"
-    bm_attune_slaughter_desc: "Applies [GetModifier('slaughter_attuned').GetNameWithTooltip]."
-    bm_attune_slaughter_tooltip: "$bm_attune_slaughter_desc$"
+    bm_attune_bloodlust: "Bloodlust"
+    bm_attune_bloodlust_name: "$bm_attune_bloodlust$"
+    bm_attune_bloodlust_desc: "Applies [GetModifier('bloodlust_attuned').GetNameWithTooltip]."
+    bm_attune_bloodlust_tooltip: "$bm_attune_bloodlust_desc$"
 
     # Channel lifeforce minor
     bm_channel_minor_lifeforce_decision: "Channel Minor Lifeforce"
@@ -366,18 +361,6 @@
     bm_superior_create_blood_golem_desc: "Animate an obedient Blood Golem champion bound by vital essence."
     bm_superior_create_blood_golem_tooltip: "Animate an obedient, monstrous Blood Golem champion bound by vital essence.\n\nCosts [GetModifier('lifeforce_modifier_superior').GetNameWithTooltip] and #V 500#! [piety|E]."
 
-    bm_superior_transmute_to_knight: "Path of the Blood Knight"
-    bm_superior_transmute_to_knight_desc: "Shed the occult robes of ritual scholarship and take up the savage mantle of the Blood Knight. Retain all experience in Ancient, Enlightenment, and Benediction, but reset class-specific tracks."
-    bm_superior_transmute_to_knight_tooltip: "Become a Blood Knight, resetting Bloodline and Hematurgy while preserving Ancient, Enlightenment, and Benediction experience.\n\nCosts [GetModifier('lifeforce_modifier_superior').GetNameWithTooltip]."
-    bm_superior_transmute_to_knight_toast: "Ascension of the Blood Knight"
-
-    bm_superior_transmute_to_mage: "Path of the Blood Mage"
-    bm_superior_transmute_to_mage_desc: "Shed the armor of blood-soaked warfare and embrace the deep occult mysteries of the Blood Mage. Retain all experience in Ancient, Enlightenment, and Benediction, but reset class-specific tracks."
-    bm_superior_transmute_to_mage_tooltip: "Become a Blood Mage, resetting Vanguard and Slaughter while preserving Ancient, Enlightenment, and Benediction experience.\n\nCosts [GetModifier('lifeforce_modifier_superior').GetNameWithTooltip]."
-    bm_superior_transmute_to_mage_toast: "Ascension of the Blood Mage"
-
-    bm_swap_class_cooldown_tt: "Have not changed blood magic class within the last 5 years"
-    NOT_bm_swap_class_cooldown_tt: "You have changed blood magic class too recently"
 
     # Superior Aliases
     bm_cast_blood_magic_superior.001.master_education: "$bm_superior_master_education$"
@@ -390,10 +373,6 @@
     bm_cast_blood_magic_superior.001.manifest_traits_tt: "$bm_superior_manifest_traits_tooltip$"
     bm_cast_blood_magic_superior.001.create_blood_golem: "$bm_superior_create_blood_golem$"
     bm_cast_blood_magic_superior.001.create_blood_golem_tt: "$bm_superior_create_blood_golem_tooltip$"
-    bm_cast_blood_magic_superior.001.transmute_to_knight: "$bm_superior_transmute_to_knight$"
-    bm_cast_blood_magic_superior.001.transmute_to_knight_tt: "$bm_superior_transmute_to_knight_tooltip$"
-    bm_cast_blood_magic_superior.001.transmute_to_mage: "$bm_superior_transmute_to_mage$"
-    bm_cast_blood_magic_superior.001.transmute_to_mage_tt: "$bm_superior_transmute_to_mage_tooltip$"
     bm_cast_blood_magic_superior.001.cancel: "Back"
 
     # Superior Compatibility Aliases (without .001)
@@ -407,10 +386,6 @@
     bm_cast_blood_magic_superior.manifest_traits_tt: "$bm_superior_manifest_traits_tooltip$"
     bm_cast_blood_magic_superior.create_blood_golem: "$bm_superior_create_blood_golem$"
     bm_cast_blood_magic_superior.create_blood_golem_tt: "$bm_superior_create_blood_golem_tooltip$"
-    bm_cast_blood_magic_superior.transmute_to_knight: "$bm_superior_transmute_to_knight$"
-    bm_cast_blood_magic_superior.transmute_to_knight_tt: "$bm_superior_transmute_to_knight_tooltip$"
-    bm_cast_blood_magic_superior.transmute_to_mage: "$bm_superior_transmute_to_mage$"
-    bm_cast_blood_magic_superior.transmute_to_mage_tt: "$bm_superior_transmute_to_mage_tooltip$"
 
     # Education Mastery
     bm_master_education_decision_desc: "Attempt to elevate your 4-star education into legendary 5-star mastery."

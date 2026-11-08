@@ -145,19 +145,9 @@ bm_ritual_spar_events.0002 = {
 					modifier = bm_spar_honed_modifier
 					years = 5
 				}
-				if = {
-					limit = { has_trait = lifestyle_blood_knight }
-					add_blood_knight_xp = {
-						TRACK = vanguard
-						XP = 3
-					}
-				}
-				else_if = {
-					limit = { has_trait = lifestyle_blood_mage }
-					add_blood_mage_xp = {
-						TRACK = hematurgy
-						XP = 3
-					}
+				bm_add_blood_mage_xp_effect = {
+					TRACK = bloodlust
+					XP = 3
 				}
 				if = {
 					limit = { has_trait = lifestyle_blademaster }
@@ -174,19 +164,9 @@ bm_ritual_spar_events.0002 = {
 					}
 				}
 				scope:sc_loser = {
-					if = {
-						limit = { has_trait = lifestyle_blood_knight }
-						add_blood_knight_xp = {
-							TRACK = vanguard
-							XP = 1
-						}
-					}
-					else_if = {
-						limit = { has_trait = lifestyle_blood_mage }
-						add_blood_mage_xp = {
-							TRACK = enlightenment
-							XP = 1
-						}
+					bm_add_blood_mage_xp_effect = {
+						TRACK = bloodlust
+						XP = 1
 					}
 					if = {
 						limit = { has_trait = lifestyle_blademaster }
@@ -223,19 +203,9 @@ bm_ritual_spar_events.0002 = {
 				title = bm_ritual_spar_loser_toast
 				left_icon = root
 				right_icon = scope:sc_defender
-				if = {
-					limit = { has_trait = lifestyle_blood_knight }
-					add_blood_knight_xp = {
-						TRACK = vanguard
-						XP = 1
-					}
-				}
-				else_if = {
-					limit = { has_trait = lifestyle_blood_mage }
-					add_blood_mage_xp = {
-						TRACK = enlightenment
-						XP = 1
-					}
+				bm_add_blood_mage_xp_effect = {
+					TRACK = bloodlust
+					XP = 1
 				}
 				if = {
 					limit = { has_trait = lifestyle_blademaster }
@@ -263,19 +233,9 @@ bm_ritual_spar_events.0002 = {
 						modifier = bm_spar_honed_modifier
 						years = 5
 					}
-					if = {
-						limit = { has_trait = lifestyle_blood_knight }
-						add_blood_knight_xp = {
-							TRACK = vanguard
-							XP = 3
-						}
-					}
-					else_if = {
-						limit = { has_trait = lifestyle_blood_mage }
-						add_blood_mage_xp = {
-							TRACK = hematurgy
-							XP = 3
-						}
+					bm_add_blood_mage_xp_effect = {
+						TRACK = bloodlust
+						XP = 3
 					}
 					if = {
 						limit = { has_trait = lifestyle_blademaster }

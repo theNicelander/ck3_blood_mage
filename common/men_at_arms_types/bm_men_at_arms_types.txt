@@ -32,17 +32,11 @@ bm_blood_berserkers = {
 	}
 
 	should_show_when_unavailable = {
-		OR = {
-			has_trait = lifestyle_blood_mage
-			has_trait = lifestyle_blood_knight
-		}
+		has_trait = lifestyle_blood_mage
 	}
 
 	can_recruit = {
-		OR = {
-			has_trait = lifestyle_blood_mage
-			has_trait = lifestyle_blood_knight
-		}
+		has_trait = lifestyle_blood_mage
 		piety_level >= 2
 	}
 
@@ -89,17 +83,11 @@ bm_blood_behemoths = {
 	}
 
 	should_show_when_unavailable = {
-		OR = {
-			has_trait = lifestyle_blood_mage
-			has_trait = lifestyle_blood_knight
-		}
+		has_trait = lifestyle_blood_mage
 	}
 
 	can_recruit = {
-		OR = {
-			has_trait = lifestyle_blood_mage
-			has_trait = lifestyle_blood_knight
-		}
+		has_trait = lifestyle_blood_mage
 		piety_level >= 4
 	}
 

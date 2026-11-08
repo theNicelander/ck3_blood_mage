@@ -78,7 +78,13 @@
 			ai_chance = {
 				value = 10
 				if = {
-					limit = { has_trait = lifestyle_blood_knight }
+					limit = {
+						has_trait_xp = {
+							trait = lifestyle_blood_mage
+							track = bloodlust
+							value >= 25
+						}
+					}
 					add = 25
 				}
 				if = {

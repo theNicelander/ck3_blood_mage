@@ -135,16 +135,37 @@ blood_mage_yearly_events.001 = {
                 }
             }
         }
+
+        # Bloodlust attunement check
+        if = {
+            limit = { has_character_modifier = bloodlust_attuned }
+            send_interface_toast = {
+                title = bm_yearly_attunement_bloodlust_toast
+                left_icon = root
+                if = {
+                    limit = { bm_has_superior_stave_trigger = { STAVE = hulinhjalmur } }
+                    add_trait_xp = {
+                        trait = lifestyle_blood_mage
+                        track = bloodlust
+                        value = 2
+                    }
+                }
+                else = {
+                    add_trait_xp = {
+                        trait = lifestyle_blood_mage
+                        track = bloodlust
+                        value = 1
+                    }
+                }
+            }
+        }
     }
 }
 
 blood_mage_yearly_events.002 = {
     hidden = yes
     trigger = {
-        OR = {
-            has_trait = lifestyle_blood_mage
-            has_trait = lifestyle_blood_knight
-        }
+        has_trait = lifestyle_blood_mage
         exists = house
     }
     immediate = {
@@ -482,158 +503,6 @@ blood_mage_yearly_events.003 = {
                         left_icon = root
                         add_character_modifier = { modifier = lifeforce_modifier_major }
                         add_character_modifier = { modifier = lifeforce_modifier_minor }
-                    }
-                }
-            }
-        }
-    }
-}
-
-# Yearly event - Add ancient XP & attunement to Blood Knights
-blood_mage_yearly_events.004 = {
-    hidden = yes
-    trigger = {
-        has_trait = lifestyle_blood_knight
-    }
-    immediate = {
-
-        # Base Ancient XP gain for Blood Knights
-        if = {
-            limit = { NOT = { has_trait = lifestyle_blood_mage } }
-            send_interface_toast = {
-                title = bm_yearly_ancient_toast
-                left_icon = root
-                add_blood_knight_xp = {
-                    TRACK = ancient
-                    XP = 1
-                }
-            }
-        }
-
-        # Ambient lifeforce generation (approx 1 in 3 chance per year)
-        random = {
-            chance = 33
-            send_interface_toast = {
-                title = bm_blood_knight_ambient_lifeforce_toast
-                left_icon = root
-                add_character_modifier = { modifier = lifeforce_modifier_minor }
-            }
-        }
-
-        # Ancient attunement check
-        if = {
-            limit = {
-                has_character_modifier = ancient_attuned
-                NOT = { has_trait = lifestyle_blood_mage }
-            }
-            send_interface_toast = {
-                title = bm_yearly_attunement_ancient_toast
-                left_icon = root
-                if = {
-                    limit = { bm_has_superior_stave_trigger = { STAVE = hulinhjalmur } }
-                    add_blood_knight_xp = {
-                        TRACK = ancient
-                        XP = 2
-                    }
-                }
-                else = {
-                    add_blood_knight_xp = {
-                        TRACK = ancient
-                        XP = 1
-                    }
-                }
-            }
-        }
-
-        # Benediction attunement check
-        if = {
-            limit = {
-                has_character_modifier = benediction_attuned
-                NOT = { has_trait = lifestyle_blood_mage }
-            }
-            send_interface_toast = {
-                title = bm_yearly_attunement_benediction_toast
-                left_icon = root
-                if = {
-                    limit = { bm_has_superior_stave_trigger = { STAVE = hulinhjalmur } }
-                    add_blood_knight_xp = {
-                        TRACK = benediction
-                        XP = 2
-                    }
-                }
-                else = {
-                    add_blood_knight_xp = {
-                        TRACK = benediction
-                        XP = 1
-                    }
-                }
-            }
-        }
-
-        # Vanguard attunement check
-        if = {
-            limit = { has_character_modifier = vanguard_attuned }
-            send_interface_toast = {
-                title = bm_yearly_attunement_vanguard_toast
-                left_icon = root
-                if = {
-                    limit = { bm_has_superior_stave_trigger = { STAVE = hulinhjalmur } }
-                    add_blood_knight_xp = {
-                        TRACK = vanguard
-                        XP = 2
-                    }
-                }
-                else = {
-                    add_blood_knight_xp = {
-                        TRACK = vanguard
-                        XP = 1
-                    }
-                }
-            }
-        }
-
-        # Slaughter attunement check
-        if = {
-            limit = { has_character_modifier = slaughter_attuned }
-            send_interface_toast = {
-                title = bm_yearly_attunement_slaughter_toast
-                left_icon = root
-                if = {
-                    limit = { bm_has_superior_stave_trigger = { STAVE = hulinhjalmur } }
-                    add_blood_knight_xp = {
-                        TRACK = slaughter
-                        XP = 2
-                    }
-                }
-                else = {
-                    add_blood_knight_xp = {
-                        TRACK = slaughter
-                        XP = 1
-                    }
-                }
-            }
-        }
-
-        # Enlightenment attunement check
-        if = {
-            limit = {
-                has_character_modifier = enlightenment_attuned
-                NOT = { has_trait = lifestyle_blood_mage }
-            }
-            send_interface_toast = {
-                title = bm_yearly_attunement_enlightenment_toast
-                left_icon = root
-                if = {
-                    limit = { bm_has_superior_stave_trigger = { STAVE = hulinhjalmur } }
-                    add_blood_knight_xp = {
-                        TRACK = enlightenment
-                        XP = 2
-                    }
-                }
-                else = {
-                    add_blood_knight_xp = {
-                        TRACK = enlightenment
-                        XP = 1
                     }
                 }
             }

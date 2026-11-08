@@ -101,13 +101,7 @@ seek_power.002 = {
             title = seek_power.toast.stag
             left_icon = this
             add_character_modifier = { modifier = lifeforce_modifier_minor }
-            if = {
-                limit = { has_trait = lifestyle_blood_knight }
-                add_blood_knight_xp = { TRACK = slaughter XP = 1 }
-            }
-            else = {
-                add_blood_mage_xp = { TRACK = hematurgy XP = 1 }
-            }
+            bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 1 }
             hidden_effect = {
                 bm_recount_lifeforce_stacks_effect = yes
             }
@@ -179,10 +173,7 @@ seek_power.003 = {
     option = {
         name = seek_power.003.knight
         trigger = {
-            OR = {
-                has_trait = lifestyle_blood_knight
-                has_trait = lifestyle_blood_mage
-            }
+            has_trait = lifestyle_blood_mage
         }
         ai_chance = { base = 50 }
         duel = {
@@ -201,14 +192,7 @@ seek_power.003 = {
                     left_icon = this
                     right_icon = scope:recipient
                     add_character_modifier = { modifier = lifeforce_modifier_major }
-                    if = {
-                        limit = { has_trait = lifestyle_blood_knight }
-                        add_blood_knight_xp = { TRACK = slaughter XP = 3 }
-                    }
-                    if = {
-                        limit = { has_trait = lifestyle_blood_mage }
-                        add_blood_mage_xp = { TRACK = hematurgy XP = 3 }
-                    }
+                    bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 3 }
                     hidden_effect = {
                         bm_recount_lifeforce_stacks_effect = yes
                     }
@@ -227,14 +211,7 @@ seek_power.003 = {
                     left_icon = this
                     right_icon = scope:recipient
                     add_character_modifier = { modifier = lifeforce_modifier_minor }
-                    if = {
-                        limit = { has_trait = lifestyle_blood_knight }
-                        add_blood_knight_xp = { TRACK = slaughter XP = 2 }
-                    }
-                    if = {
-                        limit = { has_trait = lifestyle_blood_mage }
-                        add_blood_mage_xp = { TRACK = hematurgy XP = 2 }
-                    }
+                    bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 2 }
                     hidden_effect = {
                         bm_recount_lifeforce_stacks_effect = yes
                     }
@@ -252,21 +229,7 @@ seek_power.003 = {
                     title = seek_power.toast.knight_spar
                     left_icon = this
                     right_icon = scope:recipient
-                    if = {
-                        limit = { has_trait = lifestyle_blood_knight }
-                        if = {
-            limit = { has_trait = lifestyle_blood_knight }
-            add_blood_knight_xp = { TRACK = vanguard XP = 1 }
-        }
-        if = {
-            limit = { has_trait = lifestyle_blood_mage }
-            add_blood_mage_xp = { TRACK = enlightenment XP = 1 }
-        }
-                    }
-                    if = {
-                        limit = { has_trait = lifestyle_blood_mage }
-                        add_blood_mage_xp = { TRACK = hematurgy XP = 1 }
-                    }
+                    bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 1 }
                 }
             }
             15 = {
@@ -291,14 +254,11 @@ seek_power.003 = {
         }
     }
 
-    # Lifedrain (Blood Mage & Blood Knight)
+    # Lifedrain
     option = {
         name = seek_power.003.a
         trigger = {
-            OR = {
-                has_trait = lifestyle_blood_mage
-                has_trait = lifestyle_blood_knight
-            }
+            has_trait = lifestyle_blood_mage
         }
         ai_chance = { base = 50 }
         duel = {
@@ -318,21 +278,7 @@ seek_power.003 = {
                     left_icon = this
                     right_icon = scope:recipient
                     scope:recipient = { death = { death_reason = death_sacrificed_to_gods } }
-                    if = {
-                        limit = { has_trait = lifestyle_blood_mage }
-                        hematurgy_magic_cast_effect_major = yes
-                    }
-                    if = {
-                        limit = {
-                            has_trait = lifestyle_blood_knight
-                            NOT = { has_trait = lifestyle_blood_mage }
-                        }
-                        add_character_modifier = { modifier = lifeforce_modifier_major }
-                        add_blood_knight_xp = { TRACK = slaughter XP = 3 }
-                        hidden_effect = {
-                            bm_recount_lifeforce_stacks_effect = yes
-                        }
-                    }
+                    hematurgy_magic_cast_effect_major = yes
                 }
             }
             25 = {
@@ -371,21 +317,7 @@ seek_power.003 = {
                     left_icon = this
                     right_icon = scope:recipient
                     scope:recipient = { death = { death_reason = death_sacrificed_to_gods } }
-                    if = {
-                        limit = { has_trait = lifestyle_blood_mage }
-                        hematurgy_magic_cast_effect_major = yes
-                    }
-                    if = {
-                        limit = {
-                            has_trait = lifestyle_blood_knight
-                            NOT = { has_trait = lifestyle_blood_mage }
-                        }
-                        add_character_modifier = { modifier = lifeforce_modifier_major }
-                        add_blood_knight_xp = { TRACK = slaughter XP = 3 }
-                        hidden_effect = {
-                            bm_recount_lifeforce_stacks_effect = yes
-                        }
-                    }
+                    hematurgy_magic_cast_effect_major = yes
                     add_stress = 10
                     add_dread = 5
                     if = {
@@ -409,10 +341,7 @@ seek_power.003 = {
         trigger_event = bm_trait_drain.001
         remove_character_modifier = lifeforce_modifier_major
         trigger = {
-            OR = {
-                has_trait = lifestyle_blood_mage
-                has_trait = lifestyle_blood_knight
-            }
+            has_trait = lifestyle_blood_mage
             has_character_modifier = lifeforce_modifier_major
             bm_can_drain_traits_from_target_trigger = yes
         }
@@ -435,17 +364,11 @@ seek_power.003 = {
             }
         }
         trigger = {
-            OR = {
-                has_trait = lifestyle_blood_knight
-                has_trait = lifestyle_blood_mage
-            }
+            has_trait = lifestyle_blood_mage
             prowess >= 25
         }
         show_as_unavailable = {
-            OR = {
-                has_trait = lifestyle_blood_knight
-                has_trait = lifestyle_blood_mage
-            }
+            has_trait = lifestyle_blood_mage
             prowess < 25
         }
         ai_chance = {
@@ -573,20 +496,7 @@ seek_power.003 = {
                     left_icon = this
                     right_icon = scope:escort_knight
                     add_courtier = scope:escort_knight
-                    if = {
-                        limit = { has_trait = lifestyle_blood_knight }
-                        add_blood_knight_xp = {
-                            TRACK = vanguard
-                            XP = 2
-                        }
-                    }
-                    if = {
-                        limit = { has_trait = lifestyle_blood_mage }
-                        add_blood_mage_xp = {
-                            TRACK = enlightenment
-                            XP = 2
-                        }
-                    }
+                    bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 2 }
                 }
             }
             50 = {
@@ -674,14 +584,7 @@ seek_power.008 = {
                     left_icon = this
                     add_character_modifier = { modifier = lifeforce_modifier_major }
                     add_prestige = 25
-                    if = {
-                        limit = { has_trait = lifestyle_blood_knight }
-                        add_blood_knight_xp = { TRACK = slaughter XP = 2 }
-                    }
-                    if = {
-                        limit = { has_trait = lifestyle_blood_mage }
-                        add_blood_mage_xp = { TRACK = hematurgy XP = 2 }
-                    }
+                    bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 2 }
                     hidden_effect = {
                         bm_recount_lifeforce_stacks_effect = yes
                     }
@@ -702,14 +605,7 @@ seek_power.008 = {
                     add_character_modifier = { modifier = lifeforce_modifier_minor }
                     increase_wounds_no_death_effect = { REASON = fight }
                     add_stress = 10
-                    if = {
-                        limit = { has_trait = lifestyle_blood_knight }
-                        add_blood_knight_xp = { TRACK = vanguard XP = 1 }
-                    }
-                    if = {
-                        limit = { has_trait = lifestyle_blood_mage }
-                        add_blood_mage_xp = { TRACK = enlightenment XP = 1 }
-                    }
+                    bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 1 }
                     hidden_effect = {
                         bm_recount_lifeforce_stacks_effect = yes
                     }
@@ -798,14 +694,7 @@ seek_power.009 = {
                     title = seek_power.toast.homestead_silent
                     left_icon = this
                     add_character_modifier = { modifier = lifeforce_modifier_major }
-                    if = {
-                        limit = { has_trait = lifestyle_blood_knight }
-                        add_blood_knight_xp = { TRACK = slaughter XP = 2 }
-                    }
-                    if = {
-                        limit = { has_trait = lifestyle_blood_mage }
-                        add_blood_mage_xp = { TRACK = hematurgy XP = 2 }
-                    }
+                    bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 2 }
                     hidden_effect = {
                         bm_recount_lifeforce_stacks_effect = yes
                     }
@@ -827,14 +716,7 @@ seek_power.009 = {
                     increase_wounds_no_death_effect = { REASON = fight }
                     add_stress = 10
                     add_dread = 5
-                    if = {
-                        limit = { has_trait = lifestyle_blood_knight }
-                        add_blood_knight_xp = { TRACK = slaughter XP = 1 }
-                    }
-                    if = {
-                        limit = { has_trait = lifestyle_blood_mage }
-                        add_blood_mage_xp = { TRACK = hematurgy XP = 1 }
-                    }
+                    bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 1 }
                     hidden_effect = {
                         bm_recount_lifeforce_stacks_effect = yes
                     }
@@ -924,14 +806,7 @@ seek_power.010 = {
                     left_icon = this
                     add_character_modifier = { modifier = lifeforce_modifier_major }
                     add_gold = 25
-                    if = {
-                        limit = { has_trait = lifestyle_blood_knight }
-                        add_blood_knight_xp = { TRACK = slaughter XP = 2 }
-                    }
-                    if = {
-                        limit = { has_trait = lifestyle_blood_mage }
-                        add_blood_mage_xp = { TRACK = hematurgy XP = 2 }
-                    }
+                    bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 2 }
                     hidden_effect = {
                         bm_recount_lifeforce_stacks_effect = yes
                     }
@@ -953,14 +828,7 @@ seek_power.010 = {
                     increase_wounds_no_death_effect = { REASON = fight }
                     add_gold = 10
                     add_stress = 10
-                    if = {
-                        limit = { has_trait = lifestyle_blood_knight }
-                        add_blood_knight_xp = { TRACK = vanguard XP = 1 }
-                    }
-                    if = {
-                        limit = { has_trait = lifestyle_blood_mage }
-                        add_blood_mage_xp = { TRACK = hematurgy XP = 1 }
-                    }
+                    bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 1 }
                     hidden_effect = {
                         bm_recount_lifeforce_stacks_effect = yes
                     }
@@ -1012,14 +880,7 @@ seek_power.010 = {
             add_character_modifier = { modifier = lifeforce_modifier_minor }
             add_gold = 15
             add_dread = 5
-            if = {
-                limit = { has_trait = lifestyle_blood_knight }
-                add_blood_knight_xp = { TRACK = vanguard XP = 1 }
-            }
-            if = {
-                limit = { has_trait = lifestyle_blood_mage }
-                add_blood_mage_xp = { TRACK = bloodline XP = 1 }
-            }
+            add_blood_mage_xp = { TRACK = bloodline XP = 1 }
             hidden_effect = {
                 bm_recount_lifeforce_stacks_effect = yes
             }
@@ -1059,14 +920,7 @@ seek_power.011 = {
                     title = seek_power.toast.crimson_seize
                     left_icon = this
                     add_character_modifier = { modifier = lifeforce_modifier_major }
-                    if = {
-                        limit = { has_trait = lifestyle_blood_knight }
-                        add_blood_knight_xp = { TRACK = slaughter XP = 2 }
-                    }
-                    if = {
-                        limit = { has_trait = lifestyle_blood_mage }
-                        add_blood_mage_xp = { TRACK = hematurgy XP = 2 }
-                    }
+                    bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 2 }
                     hidden_effect = {
                         bm_recount_lifeforce_stacks_effect = yes
                     }
@@ -1087,14 +941,7 @@ seek_power.011 = {
                     add_character_modifier = { modifier = lifeforce_modifier_minor }
                     increase_wounds_no_death_effect = { REASON = fight }
                     add_stress = 15
-                    if = {
-                        limit = { has_trait = lifestyle_blood_knight }
-                        add_blood_knight_xp = { TRACK = vanguard XP = 1 }
-                    }
-                    if = {
-                        limit = { has_trait = lifestyle_blood_mage }
-                        add_blood_mage_xp = { TRACK = hematurgy XP = 1 }
-                    }
+                    bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 1 }
                     hidden_effect = {
                         bm_recount_lifeforce_stacks_effect = yes
                     }
@@ -1221,17 +1068,10 @@ seek_power.006 = {
         ai_chance = { base = 80 }
         send_interface_toast = {
             type = event_toast_effect_good
-            title = bm_duel_kill_blood_knight_toast
+            title = bm_duel_kill_bloodlust_toast
             left_icon = root
             right_icon = scope:duel_opponent
-            if = {
-                limit = { has_trait = lifestyle_blood_knight }
-                add_blood_knight_xp = { TRACK = slaughter XP = 5 }
-            }
-            if = {
-                limit = { has_trait = lifestyle_blood_mage }
-                add_blood_mage_xp = { TRACK = hematurgy XP = 5 }
-            }
+            bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 3 }
             add_character_modifier = { modifier = lifeforce_modifier_major }
             random = {
                 chance = 25
@@ -1269,14 +1109,7 @@ seek_power.006 = {
                     left_icon = root
                     right_icon = scope:duel_opponent
                     add_courtier = scope:duel_opponent
-                    if = {
-                        limit = { has_trait = lifestyle_blood_knight }
-                        add_blood_knight_xp = { TRACK = vanguard XP = 2 }
-                    }
-                    if = {
-                        limit = { has_trait = lifestyle_blood_mage }
-                        add_blood_mage_xp = { TRACK = enlightenment XP = 2 }
-                    }
+                    bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 2 }
                     add_character_modifier = { modifier = lifeforce_modifier_minor }
                     hidden_effect = {
                         bm_recount_lifeforce_stacks_effect = yes
@@ -1326,14 +1159,7 @@ seek_power.006 = {
         }
         ai_chance = { base = 100 }
         add_stress = 15
-        if = {
-            limit = { has_trait = lifestyle_blood_knight }
-            add_blood_knight_xp = { TRACK = vanguard XP = 1 }
-        }
-        if = {
-            limit = { has_trait = lifestyle_blood_mage }
-            add_blood_mage_xp = { TRACK = enlightenment XP = 1 }
-        }
+        add_blood_mage_xp = { TRACK = enlightenment XP = 1 }
     }
 }
 

@@ -21,17 +21,6 @@ bm_total_blood_mage_xp = {
 		add = "has_trait_xp(lifestyle_blood_mage|bloodline)"
 		add = "has_trait_xp(lifestyle_blood_mage|benediction)"
 		add = "has_trait_xp(lifestyle_blood_mage|hematurgy)"
-	}
-}
-
-bm_total_blood_knight_xp = {
-	value = 0
-	if = {
-		limit = { has_trait = lifestyle_blood_knight }
-		add = "has_trait_xp(lifestyle_blood_knight|ancient)"
-		add = "has_trait_xp(lifestyle_blood_knight|enlightenment)"
-		add = "has_trait_xp(lifestyle_blood_knight|vanguard)"
-		add = "has_trait_xp(lifestyle_blood_knight|benediction)"
-		add = "has_trait_xp(lifestyle_blood_knight|slaughter)"
+		add = "has_trait_xp(lifestyle_blood_mage|bloodlust)"
 	}
 }
