@@ -51,8 +51,9 @@ Base: none. Granted automatically with Mage or Knight at base 0 XP. Consolidated
 All routes invoke `bm_become_blood_mage_effect` or `bm_become_blood_knight_effect`:
 - `bm_blood_cultist_become_blood_mage_decision`: Blóðtrú faithful initiation duel vs Egill Skallagrímsson (`bm_geyser_duel.0001`) in Reykjavik or Tsushima (`piety_level >= 2`, costs 1 Devotion level).
 - `bm_enhance_blood_ritual_decision`: Non-faithful with occult traits/stats; identical Geyser duel (`piety_level >= 2`, costs 1 Devotion level).
-- `grant_blood_magic_interaction`: Blood Mage initiates courtier/kin (`100` Piety + Major LF or `250` Piety + Minor LF).
-- `make_blood_knight_interaction`: Blood Knight initiates kin/spouse/knight/courtier (`100` Piety + Major LF or `250` Piety + Minor LF).
+- `grant_blood_magic_interaction`: Blood Mage initiates courtier/kin (`100` Piety + Major LF or `250` Piety + Minor LF). Exclusive to Blood Mages (only Mages create Mages).
+- `make_blood_knight_interaction`: Blood Knight or Blood Mage initiates kin/spouse/knight/courtier (`100` Piety + Major LF or `250` Piety + Minor LF).
+- `bm_cast_blood_magic_superior_decision` (Class Transmutation): Player option to swap between Blood Mage and Blood Knight for 1 Superior Lifeforce (`bm_transmute_to_blood_knight_effect`, `bm_transmute_to_blood_mage_effect`). Preserves `ancient`, `enlightenment`, and `benediction` XP 1:1; resets class-specific tracks (`bloodline`/`hematurgy` or `vanguard`/`slaughter`) to 0 XP. 5-year cooldown. Human player only.
 - `ask_for_blood_magic_interaction`: Non-mage asks friend/lover/soulmate/liege Mage to teach them (`250` Piety; teacher consumes 1 Superior LF).
 - `bm_get_blood_magic_from_prisoner_interaction`: Non-mage steals `lifestyle_blood_mage` from imprisoned Mage (`100` Piety, skill duel).
 - `convert_to_blood_magic_from_witch`: Witch player swaps witch trait for `lifestyle_blood_mage`.

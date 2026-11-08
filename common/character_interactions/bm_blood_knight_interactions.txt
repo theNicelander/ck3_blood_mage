@@ -20,7 +20,10 @@
 
     is_shown = {
         scope:actor = {
-            has_trait = lifestyle_blood_knight
+            OR = {
+                has_trait = lifestyle_blood_knight
+                has_trait = lifestyle_blood_mage
+            }
         }
         scope:recipient = {
             NOT = { this = scope:actor }
@@ -106,9 +109,19 @@
                     left_icon = scope:actor
                     right_icon = scope:recipient
                     remove_character_modifier = lifeforce_modifier_minor
-                    add_blood_knight_xp = {
-                        TRACK = vanguard
-                        XP = 1
+                    if = {
+                        limit = { has_trait = lifestyle_blood_knight }
+                        add_blood_knight_xp = {
+                            TRACK = vanguard
+                            XP = 1
+                        }
+                    }
+                    else_if = {
+                        limit = { has_trait = lifestyle_blood_mage }
+                        add_xp_bm_dynamic = {
+                            TRACK = benediction
+                            XP = 1
+                        }
                     }
                     scope:recipient = {
                         bm_become_blood_knight_effect = yes
@@ -134,23 +147,49 @@
                     right_icon = scope:recipient
                     remove_character_modifier = lifeforce_modifier_major
                     if = {
-                        limit = {
-                            scope:recipient = {
-                                OR = {
-                                    is_child_of = scope:actor
-                                    dynasty ?= scope:actor.dynasty
+                        limit = { has_trait = lifestyle_blood_knight }
+                        if = {
+                            limit = {
+                                scope:recipient = {
+                                    OR = {
+                                        is_child_of = scope:actor
+                                        dynasty ?= scope:actor.dynasty
+                                    }
                                 }
                             }
+                            add_blood_knight_xp = {
+                                TRACK = vanguard
+                                XP = 2
+                            }
                         }
-                        add_blood_knight_xp = {
-                            TRACK = vanguard
-                            XP = 2
+                        else = {
+                            add_blood_knight_xp = {
+                                TRACK = vanguard
+                                XP = 1
+                            }
                         }
                     }
-                    else = {
-                        add_blood_knight_xp = {
-                            TRACK = vanguard
-                            XP = 1
+                    else_if = {
+                        limit = { has_trait = lifestyle_blood_mage }
+                        if = {
+                            limit = {
+                                scope:recipient = {
+                                    OR = {
+                                        is_child_of = scope:actor
+                                        dynasty ?= scope:actor.dynasty
+                                    }
+                                }
+                            }
+                            add_xp_bm_dynamic = {
+                                TRACK = benediction
+                                XP = 2
+                            }
+                        }
+                        else = {
+                            add_xp_bm_dynamic = {
+                                TRACK = benediction
+                                XP = 1
+                            }
                         }
                     }
                     scope:recipient = {

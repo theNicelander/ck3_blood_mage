@@ -265,6 +265,48 @@
 				}
 			}
 		}
+
+		# Path of the Blood Knight (Transmute Class)
+		item = {
+			value = bm_superior_transmute_to_knight
+			current_description = bm_superior_transmute_to_knight
+			localization = bm_superior_transmute_to_knight
+			icon = "gfx/interface/icons/traits/bm_blood_knight.dds"
+			is_shown = {
+				is_ai = no
+				has_trait = lifestyle_blood_mage
+			}
+			is_valid = {
+				custom_tooltip = {
+					text = bm_swap_class_cooldown_tt
+					NOT = { has_character_flag = bm_swap_class_cooldown }
+				}
+			}
+			ai_chance = {
+				value = 0
+			}
+		}
+
+		# Path of the Blood Mage (Transmute Class)
+		item = {
+			value = bm_superior_transmute_to_mage
+			current_description = bm_superior_transmute_to_mage
+			localization = bm_superior_transmute_to_mage
+			icon = "gfx/interface/icons/traits/bm_blood_mage.dds"
+			is_shown = {
+				is_ai = no
+				has_trait = lifestyle_blood_knight
+			}
+			is_valid = {
+				custom_tooltip = {
+					text = bm_swap_class_cooldown_tt
+					NOT = { has_character_flag = bm_swap_class_cooldown }
+				}
+			}
+			ai_chance = {
+				value = 0
+			}
+		}
 	}
 
 	effect = {
@@ -326,6 +368,24 @@
 				}
 			}
 			trigger_event = { id = blood_golem.001 }
+		}
+		else_if = {
+			limit = { scope:bm_superior_transmute_to_knight = yes }
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_superior_transmute_to_knight_toast
+				left_icon = root
+				bm_transmute_to_blood_knight_effect = yes
+			}
+		}
+		else_if = {
+			limit = { scope:bm_superior_transmute_to_mage = yes }
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_superior_transmute_to_mage_toast
+				left_icon = root
+				bm_transmute_to_blood_mage_effect = yes
+			}
 		}
 		else = {
 			custom_tooltip = bm_cast_blood_magic_superior_decision_tooltip
