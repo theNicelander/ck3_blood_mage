@@ -1,0 +1,186 @@
+﻿bm_tradition_althingi = {
+	category = realm
+
+	layers = {
+		0 = diplo
+		1 = western
+		4 = council.dds
+	}
+
+	is_shown = {
+		OR = {
+			has_cultural_pillar = heritage_north_germanic
+			culture_is_or_has_ancestor_trigger = { CULTURE = culture:norse }
+			this = culture:bm_icelandic
+		}
+	}
+
+	can_pick = {
+		custom_description = {
+			text = culture_on_coast_desc
+			any_culture_county = {
+				has_coastal_province = yes
+			}
+		}
+		custom_tooltip = {
+			text = cannot_have_tradition_things
+			NOT = { has_cultural_tradition = tradition_things }
+		}
+	}
+
+	parameters = {
+		scandinavian_elective_enabled = yes
+		has_access_to_trials_by_combat = yes
+	}
+
+	character_modifier = {
+		character_capital_county_monthly_development_growth_add = 0.10
+		cultural_head_fascination_mult = 0.25
+	}
+
+	county_modifier = {
+		development_growth = 0.05
+		development_growth_factor = 0.25
+		monthly_county_control_growth_add = 0.10
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_communal = { is_in_list = traits }
+						culture_pillar:ethos_bureaucratic = { is_in_list = traits }
+						culture_pillar:ethos_bellicose = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_bellicose_or_bureaucratic_desc
+				}
+			}
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+
+	ai_will_do = {
+		value = 100
+		if = {
+			limit = {
+				has_cultural_pillar = heritage_north_germanic
+			}
+			multiply = 2
+		}
+	}
+}
+
+bm_tradition_verbudir = {
+	category = realm
+
+	layers = {
+		0 = steward
+		1 = western
+		4 = boat.dds
+	}
+
+	is_shown = {
+		OR = {
+			has_cultural_pillar = heritage_north_germanic
+			culture_is_or_has_ancestor_trigger = { CULTURE = culture:norse }
+			this = culture:bm_icelandic
+		}
+	}
+
+	can_pick = {
+		custom_description = {
+			text = culture_on_coast_desc
+			any_culture_county = {
+				has_coastal_province = yes
+			}
+		}
+		custom_tooltip = {
+			text = cannot_have_tradition_maritime_mercantilism
+			NOT = { has_cultural_tradition = tradition_maritime_mercantilism }
+		}
+		custom_tooltip = {
+			text = cannot_have_tradition_fishermen
+			NOT = { has_cultural_tradition = tradition_fishermen }
+		}
+	}
+
+	parameters = {
+		next_level_trade_ports = yes
+		trade_ports_enabled_for_tribals = yes
+		trade_ports_stationed_maa_bonus = yes
+		trade_ports_give_control_growth = yes
+		trade_ports_give_levies = yes
+		maritime_mercantilism_coastal_holdings = yes
+		can_travel_along_rivers = yes
+	}
+
+	character_modifier = {
+		embarkation_cost_mult = -0.75
+		sea_travel_danger = medium_sea_danger_reduction
+		coastal_sea_travel_danger = medium_sea_danger_reduction
+	}
+
+	county_modifier = {
+		monthly_county_control_growth_add = 0.05
+		tax_mult = 0.20
+		levy_size = 0.20
+		supply_limit_mult = 0.25
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_communal = { is_in_list = traits }
+						culture_pillar:ethos_stoic = { is_in_list = traits }
+						culture_pillar:ethos_bureaucratic = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_egalitarian_stoic_or_bureaucratic_desc
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_culture_county = {
+							percent >= 0.3
+							has_coastal_province = yes
+						}
+					}
+				}
+				add = {
+					value = tradition_unfulfilled_criteria_penalty
+					desc = coastal_percentage_desc
+				}
+			}
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+
+	ai_will_do = {
+		value = 100
+		if = {
+			limit = {
+				has_cultural_pillar = heritage_north_germanic
+			}
+			multiply = 2
+		}
+	}
+}

@@ -6,6 +6,7 @@ Living technical specification for the Blood Knight subsystem (`lifestyle_blood_
 
 Permanent, Devotion-anchored martial endgame peer (`lifestyle_blood_knight`) to `lifestyle_blood_mage` (*Fire and Sword* vs *Shepherd of the Faithful*).
 - **Traits & Base:** `gfx/interface/icons/traits/bm_blood_knight.dds`. Base: `same_opinion = 10`, `ruler_designer_cost = 50`. Inheritable (`25%` single parent, `100%` both, `0.20%` spontaneous birth), scaled by `bm_blood_knight_prevalence` rule. Mutually exclusive with `lifestyle_blood_mage` (dual-wielding reserved for Egill Skallagrímsson).
+  - **Knight & Commander Exemption:** Blood Knights automatically receive the vanilla character modifier `ignores_gender_army_rules` ("Worthy Commander"), enabling them to serve as both knights and army commanders across all cultures and faiths regardless of gender restrictions.
 - **Acquisition:**
   - `make_blood_knight_interaction`: Initiated by a fellow Blood Knight (`100` Piety + Major Lifeforce or `250` Piety + Minor Lifeforce) on spouse, child, kin, knight, or courtier. Awards `+4` Vanguard XP (`+5` for child or dynasty kin).
   - **Geyser Duel Initiation (`bm_geyser_duel.0001`):** Travel to Reykjavik or Tsushima via `bm_blood_cultist_become_blood_mage_decision` or `bm_enhance_blood_ritual_decision` (`piety_level >= 2`). Prowess duel costs 1 Devotion level (`add_piety_level = -1`) and grants `lifestyle_blood_knight` on win.
