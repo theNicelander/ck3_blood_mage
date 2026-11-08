@@ -263,47 +263,50 @@
 			}
 			scope:actor = {
 				NOT = { has_character_flag = bm_blood_rune_other_cooldown }
-				OR = {
-					# Tier 1: Target has no rune -> Minor
-					AND = {
-						scope:recipient = {
-							NOT = { has_character_modifier = minor_blood_rune_modifier }
-							NOT = { has_character_modifier = major_blood_rune_modifier }
-							NOT = { has_character_modifier = superior_blood_rune_modifier }
+				custom_description = {
+					text = bm_inscribe_rune_other_requirement_tt
+					OR = {
+						# Tier 1: Target has no rune -> Minor
+						AND = {
+							scope:recipient = {
+								NOT = { has_character_modifier = minor_blood_rune_modifier }
+								NOT = { has_character_modifier = major_blood_rune_modifier }
+								NOT = { has_character_modifier = superior_blood_rune_modifier }
+							}
+							piety_level >= 2
+							OR = {
+								scope:actor.bm_total_blood_mage_xp >= 25
+								scope:actor.bm_total_blood_knight_xp >= 25
+							}
+							has_character_modifier = lifeforce_modifier_minor
 						}
-						piety_level >= 2
-						OR = {
-							scope:actor.bm_total_blood_mage_xp >= 25
-							scope:actor.bm_total_blood_knight_xp >= 25
+						# Tier 2: Target has Minor rune -> Major
+						AND = {
+							scope:recipient = {
+								has_character_modifier = minor_blood_rune_modifier
+								NOT = { has_character_modifier = major_blood_rune_modifier }
+								NOT = { has_character_modifier = superior_blood_rune_modifier }
+							}
+							piety_level >= 3
+							OR = {
+								scope:actor.bm_total_blood_mage_xp >= 50
+								scope:actor.bm_total_blood_knight_xp >= 50
+							}
+							piety >= 200
+							has_character_modifier = lifeforce_modifier_major
 						}
-						has_character_modifier = lifeforce_modifier_minor
-					}
-					# Tier 2: Target has Minor rune -> Major
-					AND = {
-						scope:recipient = {
-							has_character_modifier = minor_blood_rune_modifier
-							NOT = { has_character_modifier = major_blood_rune_modifier }
-							NOT = { has_character_modifier = superior_blood_rune_modifier }
+						# Tier 3: Target has Major rune -> Superior (Blood Mage only)
+						AND = {
+							scope:recipient = {
+								has_character_modifier = major_blood_rune_modifier
+								NOT = { has_character_modifier = superior_blood_rune_modifier }
+							}
+							has_trait = lifestyle_blood_mage
+							piety_level >= 4
+							scope:actor.bm_total_blood_mage_xp >= 100
+							piety >= 400
+							has_character_modifier = lifeforce_modifier_superior
 						}
-						piety_level >= 3
-						OR = {
-							scope:actor.bm_total_blood_mage_xp >= 50
-							scope:actor.bm_total_blood_knight_xp >= 50
-						}
-						piety >= 200
-						has_character_modifier = lifeforce_modifier_major
-					}
-					# Tier 3: Target has Major rune -> Superior (Blood Mage only)
-					AND = {
-						scope:recipient = {
-							has_character_modifier = major_blood_rune_modifier
-							NOT = { has_character_modifier = superior_blood_rune_modifier }
-						}
-						has_trait = lifestyle_blood_mage
-						piety_level >= 4
-						scope:actor.bm_total_blood_mage_xp >= 100
-						piety >= 400
-						has_character_modifier = lifeforce_modifier_superior
 					}
 				}
 			}

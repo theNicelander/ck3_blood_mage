@@ -23,3 +23,9 @@ Living list: when you resolve a new error, add one line: signature → cause →
 | `Unknown trigger: employed_as_court_position_of` | Invented. Use `any_court_position_employer = { this = scope:actor }`, `has_court_position`, `has_any_court_position`. |
 | `Cannot find blood_golem in trait database` | Golems are `house ?= house:bm_house_golem`, not a trait. |
 | `Modifier 'x' was not used by the script or code but exists in the database` | Unused modifier in `common/modifiers/`. Hook it into an effect or delete it and its loc. |
+| `Unknown effect: set_character_flag` | CK2 syntax. In CK3 use `add_character_flag`. |
+| `Undefined event target 'recipient'` in `ai_potential` | `ai_potential` runs in actor scope before target selection. Move recipient checks to `is_valid_showing_failures_only` or `ai_will_do`. |
+| `missing localization 'character_named_script_value_greater_or_equal_first'` | Bare script value comparison in trigger tooltips lacks engine loc. Wrap in `custom_description = { text = ... }`. |
+| `remove_trait effect [ target: Not found in database 14CTraitDatabase ]` | Trait doesn't exist in vanilla `00_traits.txt`. (e.g. `infertile` instead of `sterile`). |
+| `Scoped object is not valid. Type: (no character)` in barony loop | Empty/unbuilt barony has no holder. Guard with `barony ?= { holder ?= { ... } }`. |
+| `Gfx culture X in Y doesn't match existing sequence` | Multi-entry `*_gfx` lists must match vanilla order or inherit a standard sequence (`norse`). |
