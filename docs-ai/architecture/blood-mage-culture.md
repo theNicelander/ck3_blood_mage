@@ -33,7 +33,7 @@
 
 #### Alþingi Commonwealth (`bm_tradition_althingi`)
 - **Succession & Assembly:** Unlocks Scandinavian Elective (`scandinavian_elective_enabled = yes`). Preserves mutual exclusivity with `tradition_things`.
-- **Trial by Combat (Hólmganga):** Unlocks Hólmganga duel interaction via native `has_access_to_trials_by_combat = yes` and `trial_by_combat_enabled = yes`.
+- **Trial by Combat (Hólmganga):** Unlocks Hólmganga duel interaction via native `has_access_to_trials_by_combat = yes`.
 - **Ruler & Capital Modifiers (`character_modifier`):** `character_capital_county_monthly_development_growth_add = 0.10`, `cultural_head_fascination_mult = 0.25`.
 - **County Development & Control (`county_modifier`):** `development_growth = 0.05` (+0.05/mo flat development growth), `development_growth_factor = 0.25` (+25% development growth factor), and `monthly_county_control_growth_add = 0.10` (+0.10/mo county control growth).
 
