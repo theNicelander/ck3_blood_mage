@@ -22,7 +22,7 @@
 
     cooldown = { days = bm_seek_power_cooldown_days }
     effect = {
-        debug_log = "BloodMagicDecision: seek_power"
+        debug_log = "BloodMageDecision: seek_power | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
         debug_log_scopes = yes
         custom_tooltip = seek_power_decision_effect_tooltip
         hidden_effect = {

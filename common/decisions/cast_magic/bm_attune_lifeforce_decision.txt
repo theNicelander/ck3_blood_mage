@@ -252,6 +252,7 @@
 		}
 		if = {
 			limit = { scope:bm_attune_ancient = yes }
+			debug_log = "BloodMageDecision: bm_attune_lifeforce_decision (ancient) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_attune_lifeforce_decision
@@ -261,6 +262,7 @@
 		}
 		else_if = {
 			limit = { scope:bm_attune_enlightenment = yes }
+			debug_log = "BloodMageDecision: bm_attune_lifeforce_decision (enlightenment) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_attune_lifeforce_decision
@@ -270,6 +272,7 @@
 		}
 		else_if = {
 			limit = { scope:bm_attune_bloodline = yes }
+			debug_log = "BloodMageDecision: bm_attune_lifeforce_decision (bloodline) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_attune_lifeforce_decision
@@ -279,6 +282,7 @@
 		}
 		else_if = {
 			limit = { scope:bm_attune_benediction = yes }
+			debug_log = "BloodMageDecision: bm_attune_lifeforce_decision (benediction) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_attune_lifeforce_decision
@@ -288,6 +292,7 @@
 		}
 		else_if = {
 			limit = { scope:bm_attune_hematurgy = yes }
+			debug_log = "BloodMageDecision: bm_attune_lifeforce_decision (hematurgy) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_attune_lifeforce_decision
@@ -297,6 +302,7 @@
 		}
 		else_if = {
 			limit = { scope:bm_attune_vanguard = yes }
+			debug_log = "BloodMageDecision: bm_attune_lifeforce_decision (vanguard) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_attune_lifeforce_decision
@@ -306,6 +312,7 @@
 		}
 		else_if = {
 			limit = { scope:bm_attune_slaughter = yes }
+			debug_log = "BloodMageDecision: bm_attune_lifeforce_decision (slaughter) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_attune_lifeforce_decision

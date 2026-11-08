@@ -57,6 +57,7 @@
 		flag = manifest_lifeforce_tier1
 		localization = bm_manifest_lifeforce_interaction.tier1
 		current_description = bm_manifest_lifeforce_interaction.tier1_desc
+		can_invalidate_interaction = yes
 		is_shown = {
 			always = yes
 		}
@@ -77,6 +78,7 @@
 		flag = manifest_lifeforce_tier2
 		localization = bm_manifest_lifeforce_interaction.tier2
 		current_description = bm_manifest_lifeforce_interaction.tier2_desc
+		can_invalidate_interaction = yes
 		is_shown = {
 			always = yes
 		}
@@ -97,6 +99,7 @@
 		flag = manifest_lifeforce_tier3
 		localization = bm_manifest_lifeforce_interaction.tier3
 		current_description = bm_manifest_lifeforce_interaction.tier3_desc
+		can_invalidate_interaction = yes
 		is_shown = {
 			always = yes
 		}
@@ -117,6 +120,7 @@
 		flag = manifest_lifeforce_tier4
 		localization = bm_manifest_lifeforce_interaction.tier4
 		current_description = bm_manifest_lifeforce_interaction.tier4_desc
+		can_invalidate_interaction = yes
 		is_shown = {
 			always = yes
 		}
@@ -133,7 +137,6 @@
 	}
 
 	on_accept = {
-		debug_log = "BloodMageInteraction: bm_manifest_lifeforce_interaction"
 		scope:actor = {
 			add_character_flag = {
 				flag = bm_manifest_lifeforce_cooldown
@@ -141,6 +144,7 @@
 			}
 			if = {
 				limit = { scope:manifest_lifeforce_tier1 = yes }
+				debug_log = "BloodMageInteraction: bm_manifest_lifeforce (tier_1) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
 				add_shared_bm_bk_xp = {
 					TRACK = enlightenment
 					XP = 1
@@ -229,6 +233,7 @@
 			}
 			else_if = {
 				limit = { scope:manifest_lifeforce_tier2 = yes }
+				debug_log = "BloodMageInteraction: bm_manifest_lifeforce (tier_2) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
 				add_shared_bm_bk_xp = {
 					TRACK = enlightenment
 					XP = 1
@@ -318,6 +323,7 @@
 			}
 			else_if = {
 				limit = { scope:manifest_lifeforce_tier3 = yes }
+				debug_log = "BloodMageInteraction: bm_manifest_lifeforce (tier_3) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
 				add_shared_bm_bk_xp = {
 					TRACK = enlightenment
 					XP = 2
@@ -394,6 +400,7 @@
 			}
 			else_if = {
 				limit = { scope:manifest_lifeforce_tier4 = yes }
+				debug_log = "BloodMageInteraction: bm_manifest_lifeforce (tier_4) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
 				add_shared_bm_bk_xp = {
 					TRACK = enlightenment
 					XP = 2
@@ -469,6 +476,9 @@
 					}
 				}
 			}
+			else = {
+				debug_log = "BloodMageInteraction: bm_manifest_lifeforce (NO OPTION) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
+			}
 		}
 	}
 
@@ -481,6 +491,28 @@
 	ai_frequency = 12
 	ai_will_do = {
 		base = 10
+
+		# Score send options
+		modifier = {
+			scope:manifest_lifeforce_tier1 = yes
+			add = 30
+		}
+		modifier = {
+			scope:manifest_lifeforce_tier2 = yes
+			piety >= 250
+			add = 40
+		}
+		modifier = {
+			scope:manifest_lifeforce_tier3 = yes
+			piety >= 500
+			add = 50
+		}
+		modifier = {
+			scope:manifest_lifeforce_tier4 = yes
+			piety >= 1000
+			add = 60
+		}
+
 		modifier = {
 			piety > 500
 			add = 50
@@ -492,6 +524,17 @@
 		modifier = {
 			NOT = { has_character_modifier = lifeforce_modifier_major }
 			add = 50
+		}
+
+		# Absolute veto: must select at least one valid send option
+		modifier = {
+			NOR = {
+				scope:manifest_lifeforce_tier1 = yes
+				scope:manifest_lifeforce_tier2 = yes
+				scope:manifest_lifeforce_tier3 = yes
+				scope:manifest_lifeforce_tier4 = yes
+			}
+			factor = 0
 		}
 	}
 }

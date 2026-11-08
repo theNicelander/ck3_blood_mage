@@ -53,6 +53,7 @@
         flag = mage_minor_initiation
         localization = grant_blood_magic_interaction.minor
         current_description = grant_blood_magic_interaction.minor_desc
+        can_invalidate_interaction = yes
         is_shown = {
             always = yes
         }
@@ -78,6 +79,7 @@
         flag = mage_major_initiation
         localization = grant_blood_magic_interaction.major
         current_description = grant_blood_magic_interaction.major_desc
+        can_invalidate_interaction = yes
         is_shown = {
             always = yes
         }
@@ -96,9 +98,9 @@
     }
 
     on_accept = {
-        debug_log = "BloodMageInteraction: grant_blood_magic | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
         if = {
             limit = { scope:mage_minor_initiation = yes }
+            debug_log = "BloodMageInteraction: grant_blood_magic (minor) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
             scope:actor = {
                 send_interface_toast = {
                     type = event_toast_effect_good
@@ -126,6 +128,7 @@
         }
         else_if = {
             limit = { scope:mage_major_initiation = yes }
+            debug_log = "BloodMageInteraction: grant_blood_magic (major) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
             scope:actor = {
                 send_interface_toast = {
                     type = event_toast_effect_good
@@ -167,6 +170,9 @@
                 }
             }
         }
+        else = {
+            debug_log = "BloodMageInteraction: grant_blood_magic (NO OPTION) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
+        }
     }
 
     # AI
@@ -184,7 +190,16 @@
     }
     ai_will_do = {
         base = 0
-        ai_willingness_to_do_positive_magic = yes
+
+        # Score send options
+        modifier = {
+            scope:mage_major_initiation = yes
+            add = 50
+        }
+        modifier = {
+            scope:mage_minor_initiation = yes
+            add = 25
+        }
 
         # Prioritisation hierarchy: spouse > consort > primary heir > children > liege > councillors > knights > dynasty
         modifier = {
@@ -225,5 +240,15 @@
         }
 
         bm_blood_mage_prevalence_ai_acquisition_modifier = yes
+        ai_willingness_to_do_positive_magic = yes
+
+        # Absolute veto: must select at least one valid send option
+        modifier = {
+            NOR = {
+                scope:mage_minor_initiation = yes
+                scope:mage_major_initiation = yes
+            }
+            factor = 0
+        }
     }
 }

@@ -32,6 +32,7 @@
 	}
 
 	effect = {
+		debug_log = "BloodMageDecision: bm_ritual_spar_decision | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
 		remove_character_modifier = lifeforce_modifier_minor
 		hidden_effect = {
 			bm_recount_lifeforce_stacks_effect = yes

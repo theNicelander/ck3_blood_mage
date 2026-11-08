@@ -110,6 +110,7 @@ lifedrain_execution_effect = {
 
     execute_opinion_effect = { VICTIM = scope:victim EXECUTIONER = scope:executioner }
     #If you have the Human Sacrifice tenet, give victim an appropriate death reason
+    debug_log = "BloodMageExecution: lifedrain | Executioner: [scope:executioner.GetShortUINameNoTooltip] (ID:[scope:executioner.GetID], [Select_CString(scope:executioner.IsPlayer, 'Player', 'AI')]) -> Victim: [scope:victim.GetShortUINameNoTooltip] (ID:[scope:victim.GetID], [Select_CString(scope:victim.IsPlayer, 'Player', 'AI')]) | Rel: [scope:executioner.Custom2('RelationToMeShort', scope:victim)] | Tag: [scope:executioner.Custom2('bm_debug_relation_tags', scope:victim)] | Opinion: [scope:executioner.GetOpinionOf( scope:victim )]"
     hidden_effect = {
         $VICTIM$ = {
             death = {
