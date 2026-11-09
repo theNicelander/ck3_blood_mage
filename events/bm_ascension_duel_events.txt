@@ -12,29 +12,44 @@ bm_ascension_duel.0001 = {
 	}
 
 	immediate = {
-		create_character = {
-			template = bm_blood_reflection_template
-			gender = root.gender
-			age = root.age
-			faith = root.faith
-			culture = root.culture
-			save_scope_as = bm_clone
+		if = {
+			limit = { root = { exists = house } }
+			create_character = {
+				template = bm_blood_reflection_template
+				location = root.location
+				gender = root
+				age = root.age
+				faith = root.faith
+				culture = root.culture
+				dynasty = generate
+				save_scope_as = bm_clone
+			}
+		}
+		else = {
+			create_character = {
+				template = bm_blood_reflection_template
+				location = root.location
+				gender = root
+				age = root.age
+				faith = root.faith
+				culture = root.culture
+				dynasty = none
+				save_scope_as = bm_clone
+			}
 		}
 		scope:bm_clone = {
 			copy_inheritable_appearance_from = root
-			set_variable = {
-				name = bm_target_prowess
-				value = root.prowess
-			}
-			change_variable = {
-				name = bm_target_prowess
-				subtract = prowess
-			}
+			change_first_name = { template_character = root }
 			if = {
-				limit = { var:bm_target_prowess > 0 }
-				add_prowess_skill = var:bm_target_prowess
+				limit = { root = { exists = house } }
+				house ?= {
+					set_house_name = bm_ghost_house_name
+				}
 			}
-			force_character_skill_recalculation = yes
+			bm_copy_character_personality_effect = yes
+			bm_copy_character_education_effect = yes
+			bm_copy_character_mirror_traits_effect = yes
+			bm_synchronize_character_skills_effect = yes
 		}
 	}
 
