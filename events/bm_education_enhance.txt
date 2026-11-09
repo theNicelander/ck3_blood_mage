@@ -29,6 +29,7 @@ bm_education_enhancement.001 = {
             }
             trigger_else_if = {
                 limit = { has_trait = education_diplomacy_3 }
+                is_blood_mage_tier_2_or_higher_trigger = yes
                 piety_level >= 3
             }
             trigger_else = {
@@ -61,6 +62,7 @@ bm_education_enhancement.001 = {
             }
             trigger_else_if = {
                 limit = { has_trait = education_martial_3 }
+                is_blood_mage_tier_2_or_higher_trigger = yes
                 piety_level >= 3
             }
             trigger_else = {
@@ -93,6 +95,7 @@ bm_education_enhancement.001 = {
             }
             trigger_else_if = {
                 limit = { has_trait = education_stewardship_3 }
+                is_blood_mage_tier_2_or_higher_trigger = yes
                 piety_level >= 3
             }
             trigger_else = {
@@ -125,6 +128,7 @@ bm_education_enhancement.001 = {
             }
             trigger_else_if = {
                 limit = { has_trait = education_intrigue_3 }
+                is_blood_mage_tier_2_or_higher_trigger = yes
                 piety_level >= 3
             }
             trigger_else = {
@@ -157,6 +161,7 @@ bm_education_enhancement.001 = {
             }
             trigger_else_if = {
                 limit = { has_trait = education_learning_3 }
+                is_blood_mage_tier_2_or_higher_trigger = yes
                 piety_level >= 3
             }
             trigger_else = {

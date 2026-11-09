@@ -6,7 +6,7 @@
 	selection_tooltip = bm_cast_blood_magic_superior_decision_tooltip
 
 	is_shown = {
-		has_trait = lifestyle_blood_mage
+		is_blood_mage_archmage_trigger = yes
 	}
 
 	is_valid_showing_failures_only = {
@@ -33,7 +33,7 @@
 			localization = bm_superior_master_education
 			icon = "gfx/interface/icons/trait_level_tracks/enlightenment.dds"
 			is_shown = {
-				has_trait = lifestyle_blood_mage
+				is_blood_mage_any_tier_trigger = yes
 			}
 			is_valid = {
 				custom_tooltip = {
@@ -75,7 +75,7 @@
 			localization = bm_superior_new_education
 			icon = "gfx/interface/icons/trait_level_tracks/enlightenment.dds"
 			is_shown = {
-				has_trait = lifestyle_blood_mage
+				is_blood_mage_any_tier_trigger = yes
 			}
 			is_valid = {
 				custom_tooltip = {
@@ -177,7 +177,7 @@
 			localization = bm_superior_manifest_traits
 			icon = "gfx/interface/icons/trait_level_tracks/bloodline.dds"
 			is_shown = {
-				has_trait = lifestyle_blood_mage
+				is_blood_mage_any_tier_trigger = yes
 			}
 			is_valid = {
 				custom_tooltip = {
@@ -226,7 +226,7 @@
 			localization = bm_superior_create_blood_golem
 			icon = "gfx/interface/icons/traits/bm_blood_mage.dds"
 			is_shown = {
-				has_trait = lifestyle_blood_mage
+				is_blood_mage_any_tier_trigger = yes
 			}
 			is_valid = {
 				custom_tooltip = {
@@ -330,11 +330,11 @@
 			OR = {
 				any_spouse = {
 					is_alive = yes
-					NOT = { has_trait = lifestyle_blood_mage }
+					NOT = { is_blood_mage_any_tier_trigger = yes }
 				}
 				primary_heir ?= {
 					is_alive = yes
-					NOT = { has_trait = lifestyle_blood_mage }
+					NOT = { is_blood_mage_any_tier_trigger = yes }
 				}
 			}
 		}
@@ -349,7 +349,7 @@ bm_cast_blood_magic_major_decision = {
 	selection_tooltip = bm_cast_blood_magic_major_decision_tooltip
 
 	is_shown = {
-		has_trait = lifestyle_blood_mage
+		is_blood_mage_any_tier_trigger = yes
 	}
 
 	is_valid_showing_failures_only = {
@@ -380,7 +380,7 @@ bm_cast_blood_magic_major_decision = {
 			localization = bm_major_channel_power
 			icon = "gfx/interface/icons/traits/bm_interactions.dds"
 			is_shown = {
-				has_trait = lifestyle_blood_mage
+				is_blood_mage_any_tier_trigger = yes
 			}
 			is_valid = {
 				custom_tooltip = {
@@ -408,7 +408,7 @@ bm_cast_blood_magic_major_decision = {
 			localization = bm_major_condense
 			icon = "gfx/interface/icons/traits/bm_interactions.dds"
 			is_shown = {
-				has_trait = lifestyle_blood_mage
+				is_blood_mage_tier_2_or_higher_trigger = yes
 			}
 			is_valid = {
 				custom_tooltip = {
@@ -455,7 +455,7 @@ bm_cast_blood_magic_major_decision = {
 			localization = bm_major_improve_education
 			icon = "gfx/interface/icons/trait_level_tracks/enlightenment.dds"
 			is_shown = {
-				has_trait = lifestyle_blood_mage
+				is_blood_mage_any_tier_trigger = yes
 			}
 			is_valid = {
 				custom_tooltip = {
@@ -551,7 +551,7 @@ bm_cast_blood_magic_major_decision = {
 			localization = bm_major_manifest_traits
 			icon = "gfx/interface/icons/trait_level_tracks/bloodline.dds"
 			is_shown = {
-				has_trait = lifestyle_blood_mage
+				is_blood_mage_any_tier_trigger = yes
 			}
 			is_valid = {
 				custom_tooltip = {
@@ -759,11 +759,11 @@ bm_cast_blood_magic_major_decision = {
 			OR = {
 				any_spouse = {
 					is_alive = yes
-					NOT = { has_trait = lifestyle_blood_mage }
+					NOT = { is_blood_mage_any_tier_trigger = yes }
 				}
 				primary_heir ?= {
 					is_alive = yes
-					NOT = { has_trait = lifestyle_blood_mage }
+					NOT = { is_blood_mage_any_tier_trigger = yes }
 				}
 			}
 		}
@@ -778,7 +778,7 @@ bm_cast_blood_magic_minor_decision = {
 	selection_tooltip = bm_cast_blood_magic_minor_decision_tooltip
 
 	is_shown = {
-		has_trait = lifestyle_blood_mage
+		is_blood_mage_any_tier_trigger = yes
 	}
 
 	is_valid_showing_failures_only = {
@@ -801,7 +801,7 @@ bm_cast_blood_magic_minor_decision = {
 			localization = bm_minor_channel
 			icon = "gfx/interface/icons/trait_level_tracks/enlightenment.dds"
 			is_shown = {
-				has_trait = lifestyle_blood_mage
+				is_blood_mage_any_tier_trigger = yes
 			}
 			is_valid = {
 				custom_tooltip = {
@@ -825,7 +825,7 @@ bm_cast_blood_magic_minor_decision = {
 			localization = bm_minor_purge
 			icon = "gfx/interface/icons/trait_level_tracks/benediction.dds"
 			is_shown = {
-				has_trait = lifestyle_blood_mage
+				is_blood_mage_any_tier_trigger = yes
 			}
 			is_valid = {
 				custom_tooltip = {
@@ -870,7 +870,7 @@ bm_cast_blood_magic_minor_decision = {
 			localization = bm_minor_condense
 			icon = "gfx/interface/icons/traits/bm_interactions.dds"
 			is_shown = {
-				has_trait = lifestyle_blood_mage
+				is_blood_mage_any_tier_trigger = yes
 			}
 			is_valid = {
 				custom_tooltip = {
@@ -935,7 +935,7 @@ bm_cast_blood_magic_minor_decision = {
 				left_icon = root
 				remove_character_modifier = lifeforce_modifier_minor
 				if = {
-					limit = { has_trait = lifestyle_blood_mage }
+					limit = { is_blood_mage_any_tier_trigger = yes }
 					if = {
 						limit = {
 							OR = {
@@ -1045,11 +1045,11 @@ bm_cast_blood_magic_minor_decision = {
 			OR = {
 				any_spouse = {
 					is_alive = yes
-					NOT = { has_trait = lifestyle_blood_mage }
+					NOT = { is_blood_mage_any_tier_trigger = yes }
 				}
 				primary_heir ?= {
 					is_alive = yes
-					NOT = { has_trait = lifestyle_blood_mage }
+					NOT = { is_blood_mage_any_tier_trigger = yes }
 				}
 			}
 		}

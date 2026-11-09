@@ -6,7 +6,7 @@
 
 	is_shown = {
 		scope:actor = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_any_tier_trigger = yes
 			has_trait_xp = {
 				trait = lifestyle_blood_mage
 				track = hematurgy
@@ -167,7 +167,7 @@
 		# Absolute veto: Don't curse fellow Blood Mages (unless rival/nemesis)
 		modifier = {
 			factor = 0
-			scope:recipient = { has_trait = lifestyle_blood_mage }
+			scope:recipient = { is_blood_mage_any_tier_trigger = yes }
 			NOR = {
 				scope:recipient = { has_relation_rival = scope:actor }
 				scope:recipient = { has_relation_nemesis = scope:actor }

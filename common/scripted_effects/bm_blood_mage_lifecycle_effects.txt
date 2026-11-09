@@ -1,33 +1,36 @@
 ﻿bm_ensure_blood_mage_story_effect = {
 	if = {
 		limit = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_any_tier_trigger = yes
 			NOT = { any_owned_story = { story_type = bm_blood_mage_story } }
 		}
 		create_story = bm_blood_mage_story
 	}
 	if = {
 		limit = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_any_tier_trigger = yes
 			NOT = { has_trait = lifestyle_blood_power }
 		}
 		add_trait = lifestyle_blood_power
 	}
 	if = {
 		limit = {
-			has_trait = lifestyle_blood_mage
+			OR = {
+				is_blood_mage_tier_2_or_higher_trigger = yes
+				bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE >= 20 }
+			}
 			NOT = { has_character_modifier = ignores_gender_army_rules }
 		}
 		add_character_modifier = ignores_gender_army_rules
 	}
 }
 
-bm_become_blood_mage_effect = {
+bm_become_blood_acolyte_effect = {
 	if = {
 		limit = {
-			NOT = { has_trait = lifestyle_blood_mage }
+			NOT = { is_blood_mage_any_tier_trigger = yes }
 		}
-		add_trait = lifestyle_blood_mage
+		add_trait = lifestyle_bm_acolyte
 		if = {
 			limit = { NOT = { has_trait = lifestyle_blood_power } }
 			add_trait = lifestyle_blood_power
@@ -35,32 +38,242 @@ bm_become_blood_mage_effect = {
 	}
 	bm_ensure_blood_mage_story_effect = yes
 	if = {
-		limit = { has_trait = lifestyle_blood_mage }
+		limit = { is_blood_mage_any_tier_trigger = yes }
 		add_character_flag = bm_blood_mage_prevalence_reviewed
+	}
+}
+
+bm_become_blood_mage_tier_2_effect = {
+	if = {
+		limit = { has_trait = lifestyle_bm_acolyte }
+		remove_trait = lifestyle_bm_acolyte
+	}
+	if = {
+		limit = { NOT = { has_trait = lifestyle_blood_mage } }
+		add_trait = lifestyle_blood_mage
+	}
+	if = {
+		limit = { NOT = { has_trait = lifestyle_blood_power } }
+		add_trait = lifestyle_blood_power
+	}
+	bm_ensure_blood_mage_story_effect = yes
+	add_character_flag = bm_blood_mage_prevalence_reviewed
+}
+
+bm_become_blood_archmage_effect = {
+	if = {
+		limit = { has_trait = lifestyle_blood_mage }
+		remove_trait = lifestyle_blood_mage
+	}
+	if = {
+		limit = { has_trait = lifestyle_bm_acolyte }
+		remove_trait = lifestyle_bm_acolyte
+	}
+	if = {
+		limit = { NOT = { has_trait = lifestyle_bm_archmage } }
+		add_trait = lifestyle_bm_archmage
+	}
+	if = {
+		limit = { NOT = { has_trait = lifestyle_blood_power } }
+		add_trait = lifestyle_blood_power
+	}
+	bm_ensure_blood_mage_story_effect = yes
+	add_character_flag = bm_blood_mage_prevalence_reviewed
+}
+
+bm_become_blood_mage_effect = {
+	bm_become_blood_acolyte_effect = yes
+}
+
+bm_elevate_tier_effect = {
+	if = {
+		limit = { has_trait = lifestyle_bm_acolyte }
+		# Calculate unspent XP stacks across 5 non-ancient tracks
+		set_temporary_variable = {
+			name = bm_elevation_overflow_stacks
+			value = 0
+		}
+		set_temporary_variable = {
+			name = bm_overflow_bloodlust
+			value = "has_trait_xp(lifestyle_bm_acolyte|bloodlust)"
+			divide = 20
+			floor = yes
+		}
+		change_temporary_variable = {
+			name = bm_elevation_overflow_stacks
+			add = var:bm_overflow_bloodlust
+		}
+		set_temporary_variable = {
+			name = bm_overflow_benediction
+			value = "has_trait_xp(lifestyle_bm_acolyte|benediction)"
+			divide = 20
+			floor = yes
+		}
+		change_temporary_variable = {
+			name = bm_elevation_overflow_stacks
+			add = var:bm_overflow_benediction
+		}
+		set_temporary_variable = {
+			name = bm_overflow_bloodline
+			value = "has_trait_xp(lifestyle_bm_acolyte|bloodline)"
+			divide = 20
+			floor = yes
+		}
+		change_temporary_variable = {
+			name = bm_elevation_overflow_stacks
+			add = var:bm_overflow_bloodline
+		}
+		set_temporary_variable = {
+			name = bm_overflow_hematurgy
+			value = "has_trait_xp(lifestyle_bm_acolyte|hematurgy)"
+			divide = 20
+			floor = yes
+		}
+		change_temporary_variable = {
+			name = bm_elevation_overflow_stacks
+			add = var:bm_overflow_hematurgy
+		}
+		set_temporary_variable = {
+			name = bm_overflow_enlightenment
+			value = "has_trait_xp(lifestyle_bm_acolyte|enlightenment)"
+			divide = 20
+			floor = yes
+		}
+		change_temporary_variable = {
+			name = bm_elevation_overflow_stacks
+			add = var:bm_overflow_enlightenment
+		}
+
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_elevate_blood_mage_tier_toast
+			left_icon = root
+			remove_trait = lifestyle_bm_acolyte
+			add_trait = lifestyle_blood_mage
+			while = {
+				count = {
+					value = 0
+					if = {
+						limit = { exists = var:bm_elevation_overflow_stacks }
+						add = var:bm_elevation_overflow_stacks
+					}
+				}
+				add_character_modifier = lifeforce_modifier_minor
+			}
+			hidden_effect = {
+				bm_ensure_blood_mage_story_effect = yes
+				bm_recount_lifeforce_stacks_effect = yes
+			}
+		}
+	}
+	else_if = {
+		limit = { has_trait = lifestyle_blood_mage }
+		set_temporary_variable = {
+			name = bm_elevation_overflow_stacks
+			value = 0
+		}
+		set_temporary_variable = {
+			name = bm_overflow_bloodlust
+			value = "has_trait_xp(lifestyle_blood_mage|bloodlust)"
+			divide = 20
+			floor = yes
+		}
+		change_temporary_variable = {
+			name = bm_elevation_overflow_stacks
+			add = var:bm_overflow_bloodlust
+		}
+		set_temporary_variable = {
+			name = bm_overflow_benediction
+			value = "has_trait_xp(lifestyle_blood_mage|benediction)"
+			divide = 20
+			floor = yes
+		}
+		change_temporary_variable = {
+			name = bm_elevation_overflow_stacks
+			add = var:bm_overflow_benediction
+		}
+		set_temporary_variable = {
+			name = bm_overflow_bloodline
+			value = "has_trait_xp(lifestyle_blood_mage|bloodline)"
+			divide = 20
+			floor = yes
+		}
+		change_temporary_variable = {
+			name = bm_elevation_overflow_stacks
+			add = var:bm_overflow_bloodline
+		}
+		set_temporary_variable = {
+			name = bm_overflow_hematurgy
+			value = "has_trait_xp(lifestyle_blood_mage|hematurgy)"
+			divide = 20
+			floor = yes
+		}
+		change_temporary_variable = {
+			name = bm_elevation_overflow_stacks
+			add = var:bm_overflow_hematurgy
+		}
+		set_temporary_variable = {
+			name = bm_overflow_enlightenment
+			value = "has_trait_xp(lifestyle_blood_mage|enlightenment)"
+			divide = 20
+			floor = yes
+		}
+		change_temporary_variable = {
+			name = bm_elevation_overflow_stacks
+			add = var:bm_overflow_enlightenment
+		}
+
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = bm_elevate_blood_archmage_tier_toast
+			left_icon = root
+			remove_trait = lifestyle_blood_mage
+			add_trait = lifestyle_bm_archmage
+			while = {
+				count = {
+					value = 0
+					if = {
+						limit = { exists = var:bm_elevation_overflow_stacks }
+						add = var:bm_elevation_overflow_stacks
+					}
+				}
+				add_character_modifier = lifeforce_modifier_major
+			}
+			hidden_effect = {
+				bm_ensure_blood_mage_story_effect = yes
+				bm_recount_lifeforce_stacks_effect = yes
+			}
+		}
 	}
 }
 
 bm_apply_blood_mage_prevalence_retention_effect = {
 	if = {
 		limit = { has_game_rule = bm_prevalence_player_only }
+		remove_trait = lifestyle_bm_acolyte
 		remove_trait = lifestyle_blood_mage
+		remove_trait = lifestyle_bm_archmage
 	}
 	else_if = {
 		limit = { has_game_rule = bm_prevalence_one_in_10000 }
 		random = {
 			chance = 95
+			remove_trait = lifestyle_bm_acolyte
 			remove_trait = lifestyle_blood_mage
+			remove_trait = lifestyle_bm_archmage
 		}
 	}
 	else_if = {
 		limit = { has_game_rule = bm_prevalence_one_in_1000 }
 		random = {
 			chance = 50
+			remove_trait = lifestyle_bm_acolyte
 			remove_trait = lifestyle_blood_mage
+			remove_trait = lifestyle_bm_archmage
 		}
 	}
 	if = {
-		limit = { has_trait = lifestyle_blood_mage }
+		limit = { is_blood_mage_any_tier_trigger = yes }
 		add_character_flag = bm_blood_mage_prevalence_reviewed
 		bm_ensure_blood_mage_story_effect = yes
 	}

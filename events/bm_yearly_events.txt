@@ -3,17 +3,16 @@
 # Yearly event - Add xp to Blood Mages
 blood_mage_yearly_events.001 = {
     hidden = yes
-    trigger = { has_trait = lifestyle_blood_mage }
+    trigger = { is_blood_mage_any_tier_trigger = yes }
     immediate = {
         # Base XP gain for all Blood Mages
         send_interface_toast = {
             title = bm_yearly_ancient_toast
             left_icon = root
-            add_trait_xp = {
-                trait = lifestyle_blood_mage
-                track = ancient
-                value = 1
-            }
+            bm_add_blood_mage_xp_effect = {
+				TRACK = ancient
+				XP = 1
+			}
         }
 
         # Ancient attunement check
@@ -24,18 +23,16 @@ blood_mage_yearly_events.001 = {
                 left_icon = root
                 if = {
                     limit = { bm_has_superior_stave_trigger = { STAVE = hulinhjalmur } }
-                    add_trait_xp = {
-                        trait = lifestyle_blood_mage
-                        track = ancient
-                        value = 2
-                    }
+                    bm_add_blood_mage_xp_effect = {
+				TRACK = ancient
+				XP = 2
+			}
                 }
                 else = {
-                    add_trait_xp = {
-                        trait = lifestyle_blood_mage
-                        track = ancient
-                        value = 1
-                    }
+                    bm_add_blood_mage_xp_effect = {
+				TRACK = ancient
+				XP = 1
+			}
                 }
             }
         }
@@ -48,18 +45,16 @@ blood_mage_yearly_events.001 = {
                 left_icon = root
                 if = {
                     limit = { bm_has_superior_stave_trigger = { STAVE = hulinhjalmur } }
-                    add_trait_xp = {
-                        trait = lifestyle_blood_mage
-                        track = enlightenment
-                        value = 2
-                    }
+                    bm_add_blood_mage_xp_effect = {
+				TRACK = enlightenment
+				XP = 2
+			}
                 }
                 else = {
-                    add_trait_xp = {
-                        trait = lifestyle_blood_mage
-                        track = enlightenment
-                        value = 1
-                    }
+                    bm_add_blood_mage_xp_effect = {
+				TRACK = enlightenment
+				XP = 1
+			}
                 }
             }
         }
@@ -72,18 +67,16 @@ blood_mage_yearly_events.001 = {
                 left_icon = root
                 if = {
                     limit = { bm_has_superior_stave_trigger = { STAVE = hulinhjalmur } }
-                    add_trait_xp = {
-                        trait = lifestyle_blood_mage
-                        track = bloodline
-                        value = 2
-                    }
+                    bm_add_blood_mage_xp_effect = {
+				TRACK = bloodline
+				XP = 2
+			}
                 }
                 else = {
-                    add_trait_xp = {
-                        trait = lifestyle_blood_mage
-                        track = bloodline
-                        value = 1
-                    }
+                    bm_add_blood_mage_xp_effect = {
+				TRACK = bloodline
+				XP = 1
+			}
                 }
             }
         }
@@ -96,18 +89,16 @@ blood_mage_yearly_events.001 = {
                 left_icon = root
                 if = {
                     limit = { bm_has_superior_stave_trigger = { STAVE = hulinhjalmur } }
-                    add_trait_xp = {
-                        trait = lifestyle_blood_mage
-                        track = benediction
-                        value = 2
-                    }
+                    bm_add_blood_mage_xp_effect = {
+				TRACK = benediction
+				XP = 2
+			}
                 }
                 else = {
-                    add_trait_xp = {
-                        trait = lifestyle_blood_mage
-                        track = benediction
-                        value = 1
-                    }
+                    bm_add_blood_mage_xp_effect = {
+				TRACK = benediction
+				XP = 1
+			}
                 }
             }
         }
@@ -120,18 +111,16 @@ blood_mage_yearly_events.001 = {
                 left_icon = root
                 if = {
                     limit = { bm_has_superior_stave_trigger = { STAVE = hulinhjalmur } }
-                    add_trait_xp = {
-                        trait = lifestyle_blood_mage
-                        track = hematurgy
-                        value = 2
-                    }
+                    bm_add_blood_mage_xp_effect = {
+				TRACK = hematurgy
+				XP = 2
+			}
                 }
                 else = {
-                    add_trait_xp = {
-                        trait = lifestyle_blood_mage
-                        track = hematurgy
-                        value = 1
-                    }
+                    bm_add_blood_mage_xp_effect = {
+				TRACK = hematurgy
+				XP = 1
+			}
                 }
             }
         }
@@ -144,18 +133,16 @@ blood_mage_yearly_events.001 = {
                 left_icon = root
                 if = {
                     limit = { bm_has_superior_stave_trigger = { STAVE = hulinhjalmur } }
-                    add_trait_xp = {
-                        trait = lifestyle_blood_mage
-                        track = bloodlust
-                        value = 2
-                    }
+                    bm_add_blood_mage_xp_effect = {
+				TRACK = bloodlust
+				XP = 2
+			}
                 }
                 else = {
-                    add_trait_xp = {
-                        trait = lifestyle_blood_mage
-                        track = bloodlust
-                        value = 1
-                    }
+                    bm_add_blood_mage_xp_effect = {
+				TRACK = bloodlust
+				XP = 1
+			}
                 }
             }
         }
@@ -165,7 +152,7 @@ blood_mage_yearly_events.001 = {
 blood_mage_yearly_events.002 = {
     hidden = yes
     trigger = {
-        has_trait = lifestyle_blood_mage
+        is_blood_mage_any_tier_trigger = yes
         exists = house
     }
     immediate = {

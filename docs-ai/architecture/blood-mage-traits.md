@@ -2,12 +2,14 @@
 
 Living technical specification for `lifestyle_blood_mage` and secondary `lifestyle_blood_power`.
 
-## Archetypes & Class Overview
+## Archetypes & Sequential 3-Tier Hierarchy
 
-| Lifestyle Trait | Archetype | Lifestyle Tracks (6) | Magic & Subsystem Access |
-| --- | --- | --- | --- |
-| **Blood Mage** (`lifestyle_blood_mage`) | *Master of the Blood Arts* — Occult scholar, dynasty architect, battlefield warlord | `ancient`, `enlightenment`, `benediction`, `bloodline`, `hematurgy`, `bloodlust` | Minor, Major, Superior Blood Magic; builds Duchy Blood Temples (`bm_duchy_buildings.txt`); inscribes Superior Blood Runes; recruits Blood Berserkers & Behemoths; commands armies regardless of gender laws (`ignores_gender_army_rules = yes`). |
-| **Blood Power** (`lifestyle_blood_power`) | *Secondary Personal Mastery* — Granted alongside Mage (base 0 XP) | 6 tracks: `dynasty`, `warband`, `mastery`, `presence`, `prosperity`, `shadows` | Advanced via Major Magic (`bm_cast_blood_magic_major.001.power`). +0.1 monthly Piety and +5 monthly Lifestyle XP per 10 XP step, 50 XP milestones, 100 XP capstones including `no_prowess_loss_from_age = yes`. |
+| Lifestyle Trait | Tier | Fuel | Lifestyle Tracks (6) | Magic & Subsystem Access |
+| --- | --- | --- | --- | --- |
+| **Blood Acolyte** (`lifestyle_bm_acolyte`) | Tier I | Minor Lifeforce | `ancient`, `enlightenment`, `benediction`, `bloodline`, `hematurgy`, `bloodlust` | Minor Blood Magic Grimoire; foundational Major rites (Rank 1 trait manifestation, up to 3★ education, Minor/Major Runes, Blood Power channeling). Standard 0.5x track scaling; age lock at 100 XP on any track. |
+| **Blood Mage** (`lifestyle_blood_mage`) | Tier II | Major Lifeforce | `ancient`, `enlightenment`, `benediction`, `bloodline`, `hematurgy`, `bloodlust` | Minor & Major Grimoire; congenital manifestation up to Rank 3, education up to 4★, prisoner trait theft, Tier II covenants, Major Blood Runes, Blood Berserkers. Base stat floor absorbs Tier I 50 XP milestones + age lock. |
+| **Blood Archmage** (`lifestyle_bm_archmage`) | Tier III | Superior Lifeforce | `ancient`, `enlightenment`, `benediction`, `bloodline`, `hematurgy`, `bloodlust` | Full Superior Grimoire; 5★ Master education, 2nd education, Rank 4–5 traits, Blood Golems, Galdrastafir, Tier III covenants, deadly ailment cure, Behemoths. Base stat floor absorbs Tier II 50 XP milestones + age lock. 1.5x–2.0x apex scaling. |
+| **Blood Power** (`lifestyle_blood_power`) | Secondary | — | 6 tracks: `dynasty`, `warband`, `mastery`, `presence`, `prosperity`, `shadows` | Retained alongside primary tier trait; never reset on tier elevation. +0.1 monthly Piety and +5 monthly Lifestyle XP per 10 XP step, 50 XP milestones, 100 XP capstones including `no_prowess_loss_from_age = yes`. |
 
 - **Inheritance & Base:** Inheritable non-genetic (`25%` single parent, `50%` with Superior Feingur, `100%` both parents, `0.20%` birth), audited by `bm_blood_mage_prevalence` rule. Base: `same_opinion = 10`, `ignores_gender_army_rules = yes`.
 - **Track Structure:** 10 tiers (10–100 XP). Tiers 10–40 and 60–90 grant standard Vitality step (`+0.1` Health, `+2.5` Life Exp, `+1.25` Fertility Yr, `+1` Epidemic Res; 4× at 50 XP, 8× at 100 XP). Tier 50 = Devotion-scaling milestones (`<stat>_per_piety_level = 1`); Tier 100 = Devotion Apex and universal age lock (`no_prowess_loss_from_age = yes`).

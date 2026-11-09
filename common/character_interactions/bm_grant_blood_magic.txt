@@ -22,9 +22,9 @@
 
     is_shown = {
         NOT = { scope:actor = scope:recipient }
-        scope:actor = { has_trait = lifestyle_blood_mage }
+        scope:actor = { is_blood_mage_any_tier_trigger = yes }
         scope:recipient = {
-            NOT = { has_trait = lifestyle_blood_mage }
+            NOT = { is_blood_mage_any_tier_trigger = yes }
             bm_is_valid_positive_magic_target_trigger = { ACTOR = scope:actor }
         }
     }
@@ -112,7 +112,7 @@
                         XP = 1
                     }
                     scope:recipient = {
-                        bm_become_blood_mage_effect = yes
+                        bm_become_blood_acolyte_effect = yes
                         add_opinion = {
                             target = scope:actor
                             modifier = magic_opinion_positive
@@ -156,7 +156,7 @@
                         }
                     }
                     scope:recipient = {
-                        bm_become_blood_mage_effect = yes
+                        bm_become_blood_acolyte_effect = yes
                         add_opinion = {
                             target = scope:actor
                             modifier = magic_opinion_positive

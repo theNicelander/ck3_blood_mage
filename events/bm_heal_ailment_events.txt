@@ -157,7 +157,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.wounded_2
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_tier_2_or_higher_trigger = yes
 			scope:recipient = { has_trait = wounded_2 }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
@@ -181,7 +181,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.incapable
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_tier_2_or_higher_trigger = yes
 			scope:recipient = { has_trait = incapable }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
@@ -205,7 +205,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.pneumonic
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_tier_2_or_higher_trigger = yes
 			scope:recipient = { has_trait = pneumonic }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
@@ -229,7 +229,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.early_great_pox
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_tier_2_or_higher_trigger = yes
 			scope:recipient = { has_trait = early_great_pox }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
@@ -253,7 +253,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.maimed
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_tier_2_or_higher_trigger = yes
 			scope:recipient = { has_trait = maimed }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
@@ -277,7 +277,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.consumption
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_tier_2_or_higher_trigger = yes
 			scope:recipient = { has_trait = consumption }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
@@ -301,7 +301,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.typhus
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_tier_2_or_higher_trigger = yes
 			scope:recipient = { has_trait = typhus }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
@@ -325,7 +325,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.measles
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_tier_2_or_higher_trigger = yes
 			scope:recipient = { has_trait = measles }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
@@ -349,7 +349,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.blind
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_tier_2_or_higher_trigger = yes
 			scope:recipient = { has_trait = blind }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
@@ -373,7 +373,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.one_eyed
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_tier_2_or_higher_trigger = yes
 			scope:recipient = { has_trait = one_eyed }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
@@ -397,7 +397,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.weak
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_tier_2_or_higher_trigger = yes
 			scope:recipient = { has_trait = weak }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
@@ -421,7 +421,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.lunatic_1
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_tier_2_or_higher_trigger = yes
 			scope:recipient = { has_trait = lunatic_1 }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
@@ -445,7 +445,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.possessed_1
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_tier_2_or_higher_trigger = yes
 			scope:recipient = { has_trait = possessed_1 }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
@@ -469,7 +469,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.dull
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_tier_2_or_higher_trigger = yes
 			scope:recipient = { has_trait = dull }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
@@ -493,7 +493,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.depressed_1
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_tier_2_or_higher_trigger = yes
 			scope:recipient = { has_trait = depressed_1 }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
@@ -519,7 +519,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.wounded_3
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_archmage_trigger = yes
 			scope:recipient = { has_trait = wounded_3 }
 			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
@@ -543,7 +543,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.sickly
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_archmage_trigger = yes
 			scope:recipient = { has_trait = sickly }
 			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
@@ -567,7 +567,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.great_pox
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_archmage_trigger = yes
 			scope:recipient = { has_trait = great_pox }
 			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
@@ -591,7 +591,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.cancer
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_archmage_trigger = yes
 			scope:recipient = { has_trait = cancer }
 			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
@@ -615,7 +615,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.bubonic_plague
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_archmage_trigger = yes
 			scope:recipient = { has_trait = bubonic_plague }
 			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
@@ -639,7 +639,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.smallpox
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_archmage_trigger = yes
 			scope:recipient = { has_trait = smallpox }
 			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
@@ -663,7 +663,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.leper
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_archmage_trigger = yes
 			scope:recipient = { has_trait = leper }
 			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
@@ -687,7 +687,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.impotent
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_archmage_trigger = yes
 			scope:recipient = { has_trait = impotent }
 			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
@@ -711,7 +711,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.dysentery
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_archmage_trigger = yes
 			scope:recipient = { has_trait = dysentery }
 			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
@@ -735,7 +735,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.ergotism
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_archmage_trigger = yes
 			scope:recipient = { has_trait = ergotism }
 			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
@@ -759,7 +759,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.disfigured
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_archmage_trigger = yes
 			scope:recipient = { has_trait = disfigured }
 			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
@@ -783,7 +783,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.one_legged
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_archmage_trigger = yes
 			scope:recipient = { has_trait = one_legged }
 			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
@@ -807,7 +807,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.purge_coping
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_archmage_trigger = yes
 			scope:recipient = { bm_has_stress_coping_trait_trigger = yes }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= 250
@@ -875,7 +875,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.open_old_age
 		trigger = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_any_tier_trigger = yes
 			scope:recipient = { bm_has_old_age_ailment_trigger = yes }
 		}
 		show_as_unavailable = {

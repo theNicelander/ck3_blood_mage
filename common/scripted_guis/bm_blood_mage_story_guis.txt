@@ -6,7 +6,7 @@
 
 		if = {
 			limit = {
-				has_trait = lifestyle_blood_mage
+				is_blood_mage_any_tier_trigger = yes
 			}
 			bm_refresh_blood_magic_rosters_effect = yes
 		}
@@ -22,14 +22,14 @@ bm_refresh_blood_magic_rosters_gui = {
 	}
 
 	is_valid = {
-		has_trait = lifestyle_blood_mage
+		is_blood_mage_any_tier_trigger = yes
 		scope:story = { story_type = bm_blood_mage_story }
 	}
 
 	effect = {
 		if = {
 			limit = {
-				has_trait = lifestyle_blood_mage
+				is_blood_mage_any_tier_trigger = yes
 				scope:story = { story_type = bm_blood_mage_story }
 			}
 			bm_refresh_blood_magic_rosters_effect = yes
@@ -49,7 +49,7 @@ bm_story_uses_refreshable_character_lists_gui = {
 	}
 
 	is_valid = {
-		has_trait = lifestyle_blood_mage
+		is_blood_mage_any_tier_trigger = yes
 		scope:story = { story_type = bm_blood_mage_story }
 	}
 }
@@ -63,14 +63,14 @@ bm_refresh_story_character_lists_gui = {
 	}
 
 	is_valid = {
-		has_trait = lifestyle_blood_mage
+		is_blood_mage_any_tier_trigger = yes
 		scope:story = { story_type = bm_blood_mage_story }
 	}
 
 	effect = {
 		if = {
 			limit = {
-				has_trait = lifestyle_blood_mage
+				is_blood_mage_any_tier_trigger = yes
 				scope:story = { story_type = bm_blood_mage_story }
 			}
 			bm_refresh_blood_magic_rosters_effect = yes
