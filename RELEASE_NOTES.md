@@ -6,13 +6,13 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 
 ## Blood Mage & Bloodlust
 
-- Unified single lifestyle path: **Blood Mage** featuring six distinct progression tracks: Ancient, Enlightenment, Benediction, Bloodline, Hematurgy, and the new **Bloodlust** track (prowess, martial, advantage, knight limit, dread, and duel harvesting).
+- Unified single lifestyle path: **Blood Mage** featuring six distinct progression tracks: Ancient, Enlightenment, Benediction, Bloodline, Hematurgy, and the new **Bloodlust** track (combat advantage, knight effectiveness, sworn knight limit, and duel harvesting).
 - Awaken via bloodline, occult mentorship, witch conversion, fellow Blood Mage mentorship, or by duelling the hermit **Egill Skallagrímsson** in Iceland or Tsushima.
 - All Blood Mages are recognized as **Worthy Commanders** (`ignores_gender_army_rules = yes`), allowing them to lead armies into battle regardless of faith or cultural gender rules.
 - Devotion tracks (Ancient, Enlightenment, Benediction) scale to 100 XP: Ancient adds +0.1 monthly legitimacy per 10 XP (+1.0/mo = +12/yr at 100 XP) alongside +1 personal tenet slot per 20 XP.
 - 50 XP milestones scale with Devotion Level; 100 XP capstones give +50% Devotion Impact and +2.0 skill per Devotion level (and age lock for Acolyte and Blood Power tracks).
-- Bloodline and Hematurgy: 10-step cadence (universal monthly income mult, trait inheritance, dynasty prestige, hostile scheme power and defence).
-- **Bloodlust**: 10-step cadence granting scaling Prowess (+30 total), Martial (+4 total), Commander Advantage (+5), Knight Limit (+5), Dread Baseline (+15), and scaling Martial & Prowess per Piety Level (+1.5 Martial / +2 Prowess at 100 XP capstone), culminating in an Age Prowess Lock.
+- Bloodline and Hematurgy: 10-step cadence (universal monthly income mult, trait inheritance, dynasty prestige, hostile scheme power and defence, natural dread baseline).
+- **Bloodlust**: 10-step cadence granting scaling Commander Advantage (+8 to +16 total), Knight Effectiveness (+40% to +120% total), Knight Limit (+4 to +8 total), and scaling Martial & Prowess per Piety Level (+1 to +2 per level at 50/100 XP milestones), culminating in an Age Prowess Lock for Acolytes.
 - Tier II (Mage) and Tier III (Archmage) base stats permanently include +1 and +2 Prowess per Devotion Level alongside their innate age prowess locks, preventing martial stat loss upon tier elevation.
 - XP sources unified: battlefield victories (+1 to +3), combat survival (+1), lethal single combat (+3), and tournaments (+2) feed Bloodlust directly.
 - **Blood Power** secondary trait with six mirrored tracks (Dynasty, Warband, Mastery, Presence, Prosperity, Shadows) structured into five milestone tiers (10, 30, 50, 70, 100 XP) with scaling monthly Piety (+0.1 to +1.0), flat monthly lifestyle XP (+5 to +50/mo), shared 50 & 100 XP milestone bonuses (+10% monthly Piety mult, +5 life expectancy, +0.25 health, +0.02 monthly Piety per knight), and a tight suite of 3–4 high-impact personal modifiers delivering 2x–3x the power of House Covenants (including scaling legitimacy mult, stress composure, universal income mult, and inbreeding immunity), culminating in an Age Prowess Lock.
@@ -145,7 +145,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 
 ## Version history
 
-- v1.20.70: Add devotion prowess to Mage (+1) and Archmage (+2) base stats; remove redundant age lock from higher tier tracks; allow Blood Acolytes and Archmages to take up the Blóðtrú faith.
+- v1.20.70: Rebalance Bloodlust track (replace flat Martial/Prowess with Advantage, Knight Effectiveness, and Knight Limit); move Dread Baseline to Hematurgy track; add devotion prowess to Mage (+1) and Archmage (+2) base stats; remove redundant age lock from higher tier tracks; allow Blood Acolytes and Archmages to take up the Blóðtrú faith.
 - v1.20.69: Sequential 3-Tier Hierarchy: Blood Acolyte (Tier I), Blood Mage (Tier II), Blood Archmage (Tier III) with standardized 6-track progression; blank-slate elevation with overflow Lifeforce extraction; anti-nerf base stat floors; Sanguine Distillation rite; Crimson Mirror non-lethal battlefield ascension duel vs self-clone.
 - v1.20.68: Consolidate Blood Knight into Blood Mage trait as the new 6th track 'Bloodlust' (prowess, martial, advantage, knight limit, and dread baseline); grant all Blood Mages Worthy Commander army gender exemption; unify battlefield and single combat XP gain; clean up UI and retire separate Blood Knight trait; old saves are not supported (breaking change)
 - v1.20.66: Blood Mages can initiate Blood Knights alongside Knights; add human-only Superior Magic class transmutation in Cast Superior Blood Magic (preserving Ancient, Enlightenment, and Benediction track XP); fix AI modal interaction execution and add comprehensive debug logging across all decisions and interactions

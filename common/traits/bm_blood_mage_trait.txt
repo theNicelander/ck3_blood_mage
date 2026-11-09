@@ -19,11 +19,9 @@
 @bm_archmage_common_epidemic_resistance = 2
 
 # bloodlust
-@bm_bloodlust_prowess = 1
-@bm_bloodlust_martial = 1
-@bm_bloodlust_advantage = 1
+@bm_bloodlust_advantage = 1.5
+@bm_bloodlust_knight_effectiveness_mult = 0.10
 @bm_bloodlust_knight_limit = 1
-@bm_bloodlust_dread_baseline = 5
 @bm_bloodlust_martial_per_piety_tier_50 = 1
 @bm_bloodlust_prowess_per_piety_tier_50 = 1
 @bm_bloodlust_martial_per_piety_tier_100 = 1
@@ -38,6 +36,7 @@
 # hematurgy
 @bm_hematurgy_scheme_success_chance = 4
 @bm_hematurgy_enemy_scheme_success = -8
+@bm_hematurgy_dread_baseline = 5
 @bm_hematurgy_intrigue_per_piety = 1
 @bm_hematurgy_max_hostile_schemes = 1
 
@@ -171,6 +170,7 @@ lifestyle_bm_acolyte = {
                 epidemic_resistance = @bm_acolyte_common_epidemic_resistance
                 owned_hostile_scheme_success_chance_add = 2
                 enemy_hostile_scheme_success_chance_add = -4
+                dread_baseline_add = 3
             }
             30 = {
                 health = @bm_acolyte_common_health
@@ -186,6 +186,7 @@ lifestyle_bm_acolyte = {
                 epidemic_resistance = @bm_acolyte_common_epidemic_resistance
                 owned_hostile_scheme_success_chance_add = 2
                 enemy_hostile_scheme_success_chance_add = -4
+                dread_baseline_add = 3
             }
             50 = {
                 intrigue_per_piety_level = 1
@@ -198,6 +199,7 @@ lifestyle_bm_acolyte = {
                 epidemic_resistance = @bm_acolyte_common_epidemic_resistance
                 owned_hostile_scheme_success_chance_add = 2
                 enemy_hostile_scheme_success_chance_add = -4
+                dread_baseline_add = 3
             }
             70 = {
                 health = @bm_acolyte_common_health
@@ -213,6 +215,7 @@ lifestyle_bm_acolyte = {
                 epidemic_resistance = @bm_acolyte_common_epidemic_resistance
                 owned_hostile_scheme_success_chance_add = 2
                 enemy_hostile_scheme_success_chance_add = -4
+                dread_baseline_add = 3
             }
             90 = {
                 health = @bm_acolyte_common_health
@@ -394,8 +397,8 @@ lifestyle_bm_acolyte = {
                 life_expectancy = @bm_acolyte_common_life_expectancy
                 years_of_fertility = @bm_acolyte_common_years_of_fertility
                 epidemic_resistance = @bm_acolyte_common_epidemic_resistance
-                prowess = 1
-                dread_baseline_add = 2
+                advantage = 1
+                knight_effectiveness_mult = 0.05
             }
             20 = {
                 health = @bm_acolyte_common_health
@@ -403,15 +406,16 @@ lifestyle_bm_acolyte = {
                 years_of_fertility = @bm_acolyte_common_years_of_fertility
                 epidemic_resistance = @bm_acolyte_common_epidemic_resistance
                 advantage = 1
-                martial = 1
+                knight_effectiveness_mult = 0.05
+                knight_limit = 1
             }
             30 = {
                 health = @bm_acolyte_common_health
                 life_expectancy = @bm_acolyte_common_life_expectancy
                 years_of_fertility = @bm_acolyte_common_years_of_fertility
                 epidemic_resistance = @bm_acolyte_common_epidemic_resistance
-                prowess = 1
-                knight_limit = 1
+                advantage = 1
+                knight_effectiveness_mult = 0.05
             }
             40 = {
                 health = @bm_acolyte_common_health
@@ -419,8 +423,8 @@ lifestyle_bm_acolyte = {
                 years_of_fertility = @bm_acolyte_common_years_of_fertility
                 epidemic_resistance = @bm_acolyte_common_epidemic_resistance
                 advantage = 1
-                martial = 1
-                dread_baseline_add = 2
+                knight_effectiveness_mult = 0.05
+                knight_limit = 1
             }
             50 = {
                 martial_per_piety_level = 1
@@ -431,7 +435,8 @@ lifestyle_bm_acolyte = {
                 life_expectancy = @bm_acolyte_common_life_expectancy
                 years_of_fertility = @bm_acolyte_common_years_of_fertility
                 epidemic_resistance = @bm_acolyte_common_epidemic_resistance
-                prowess = 1
+                advantage = 1
+                knight_effectiveness_mult = 0.05
                 knight_limit = 1
             }
             70 = {
@@ -440,15 +445,16 @@ lifestyle_bm_acolyte = {
                 years_of_fertility = @bm_acolyte_common_years_of_fertility
                 epidemic_resistance = @bm_acolyte_common_epidemic_resistance
                 advantage = 1
-                martial = 1
+                knight_effectiveness_mult = 0.05
             }
             80 = {
                 health = @bm_acolyte_common_health
                 life_expectancy = @bm_acolyte_common_life_expectancy
                 years_of_fertility = @bm_acolyte_common_years_of_fertility
                 epidemic_resistance = @bm_acolyte_common_epidemic_resistance
-                prowess = 1
-                dread_baseline_add = 2
+                advantage = 1
+                knight_effectiveness_mult = 0.05
+                knight_limit = 1
             }
             90 = {
                 health = @bm_acolyte_common_health
@@ -456,8 +462,7 @@ lifestyle_bm_acolyte = {
                 years_of_fertility = @bm_acolyte_common_years_of_fertility
                 epidemic_resistance = @bm_acolyte_common_epidemic_resistance
                 advantage = 1
-                martial = 1
-                knight_limit = 1
+                knight_effectiveness_mult = 0.05
             }
             100 = {
                 martial_per_piety_level = 1
@@ -714,6 +719,7 @@ lifestyle_blood_mage = {
                 # specific
                 owned_hostile_scheme_success_chance_add = @bm_hematurgy_scheme_success_chance
                 enemy_hostile_scheme_success_chance_add = @bm_hematurgy_enemy_scheme_success
+                dread_baseline_add = @bm_hematurgy_dread_baseline
             }
             30 = {
                 # common
@@ -735,6 +741,7 @@ lifestyle_blood_mage = {
                 # specific
                 owned_hostile_scheme_success_chance_add = @bm_hematurgy_scheme_success_chance
                 enemy_hostile_scheme_success_chance_add = @bm_hematurgy_enemy_scheme_success
+                dread_baseline_add = @bm_hematurgy_dread_baseline
             }
             50 = {
                 # specific
@@ -751,6 +758,7 @@ lifestyle_blood_mage = {
                 # specific
                 owned_hostile_scheme_success_chance_add = @bm_hematurgy_scheme_success_chance
                 enemy_hostile_scheme_success_chance_add = @bm_hematurgy_enemy_scheme_success
+                dread_baseline_add = @bm_hematurgy_dread_baseline
             }
             70 = {
                 # common
@@ -772,6 +780,7 @@ lifestyle_blood_mage = {
                 # specific
                 owned_hostile_scheme_success_chance_add = @bm_hematurgy_scheme_success_chance
                 enemy_hostile_scheme_success_chance_add = @bm_hematurgy_enemy_scheme_success
+                dread_baseline_add = @bm_hematurgy_dread_baseline
             }
             90 = {
                 # common
@@ -1013,8 +1022,8 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                prowess = @bm_bloodlust_prowess
-                dread_baseline_add = @bm_bloodlust_dread_baseline
+                advantage = @bm_bloodlust_advantage
+                knight_effectiveness_mult = @bm_bloodlust_knight_effectiveness_mult
             }
             20 = {
                 # common
@@ -1025,7 +1034,8 @@ lifestyle_blood_mage = {
 
                 # specific
                 advantage = @bm_bloodlust_advantage
-                martial = @bm_bloodlust_martial
+                knight_effectiveness_mult = @bm_bloodlust_knight_effectiveness_mult
+                knight_limit = @bm_bloodlust_knight_limit
             }
             30 = {
                 # common
@@ -1035,8 +1045,8 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                prowess = @bm_bloodlust_prowess
-                knight_limit = @bm_bloodlust_knight_limit
+                advantage = @bm_bloodlust_advantage
+                knight_effectiveness_mult = @bm_bloodlust_knight_effectiveness_mult
             }
             40 = {
                 # common
@@ -1047,8 +1057,8 @@ lifestyle_blood_mage = {
 
                 # specific
                 advantage = @bm_bloodlust_advantage
-                martial = @bm_bloodlust_martial
-                dread_baseline_add = @bm_bloodlust_dread_baseline
+                knight_effectiveness_mult = @bm_bloodlust_knight_effectiveness_mult
+                knight_limit = @bm_bloodlust_knight_limit
             }
             50 = {
                 # specific
@@ -1063,7 +1073,8 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                prowess = @bm_bloodlust_prowess
+                advantage = @bm_bloodlust_advantage
+                knight_effectiveness_mult = @bm_bloodlust_knight_effectiveness_mult
                 knight_limit = @bm_bloodlust_knight_limit
             }
             70 = {
@@ -1075,7 +1086,7 @@ lifestyle_blood_mage = {
 
                 # specific
                 advantage = @bm_bloodlust_advantage
-                martial = @bm_bloodlust_martial
+                knight_effectiveness_mult = @bm_bloodlust_knight_effectiveness_mult
             }
             80 = {
                 # common
@@ -1085,8 +1096,9 @@ lifestyle_blood_mage = {
                 epidemic_resistance = @bm_common_epidemic_resistance
 
                 # specific
-                prowess = @bm_bloodlust_prowess
-                dread_baseline_add = @bm_bloodlust_dread_baseline
+                advantage = @bm_bloodlust_advantage
+                knight_effectiveness_mult = @bm_bloodlust_knight_effectiveness_mult
+                knight_limit = @bm_bloodlust_knight_limit
             }
             90 = {
                 # common
@@ -1097,8 +1109,7 @@ lifestyle_blood_mage = {
 
                 # specific
                 advantage = @bm_bloodlust_advantage
-                martial = @bm_bloodlust_martial
-                knight_limit = @bm_bloodlust_knight_limit
+                knight_effectiveness_mult = @bm_bloodlust_knight_effectiveness_mult
             }
             100 = {
                 # specific
@@ -1354,6 +1365,7 @@ lifestyle_bm_archmage = {
                 epidemic_resistance = @bm_archmage_common_epidemic_resistance
                 owned_hostile_scheme_success_chance_add = 6
                 enemy_hostile_scheme_success_chance_add = -12
+                dread_baseline_add = 8
             }
             30 = {
                 health = @bm_archmage_common_health
@@ -1369,6 +1381,7 @@ lifestyle_bm_archmage = {
                 epidemic_resistance = @bm_archmage_common_epidemic_resistance
                 owned_hostile_scheme_success_chance_add = 6
                 enemy_hostile_scheme_success_chance_add = -12
+                dread_baseline_add = 8
             }
             50 = {
                 intrigue_per_piety_level = 2
@@ -1381,6 +1394,7 @@ lifestyle_bm_archmage = {
                 epidemic_resistance = @bm_archmage_common_epidemic_resistance
                 owned_hostile_scheme_success_chance_add = 6
                 enemy_hostile_scheme_success_chance_add = -12
+                dread_baseline_add = 8
             }
             70 = {
                 health = @bm_archmage_common_health
@@ -1396,6 +1410,7 @@ lifestyle_bm_archmage = {
                 epidemic_resistance = @bm_archmage_common_epidemic_resistance
                 owned_hostile_scheme_success_chance_add = 6
                 enemy_hostile_scheme_success_chance_add = -12
+                dread_baseline_add = 8
             }
             90 = {
                 health = @bm_archmage_common_health
@@ -1576,8 +1591,8 @@ lifestyle_bm_archmage = {
                 life_expectancy = @bm_archmage_common_life_expectancy
                 years_of_fertility = @bm_archmage_common_years_of_fertility
                 epidemic_resistance = @bm_archmage_common_epidemic_resistance
-                prowess = 2
-                dread_baseline_add = 10
+                advantage = 2
+                knight_effectiveness_mult = 0.15
             }
             20 = {
                 health = @bm_archmage_common_health
@@ -1585,15 +1600,16 @@ lifestyle_bm_archmage = {
                 years_of_fertility = @bm_archmage_common_years_of_fertility
                 epidemic_resistance = @bm_archmage_common_epidemic_resistance
                 advantage = 2
-                martial = 2
+                knight_effectiveness_mult = 0.15
+                knight_limit = 2
             }
             30 = {
                 health = @bm_archmage_common_health
                 life_expectancy = @bm_archmage_common_life_expectancy
                 years_of_fertility = @bm_archmage_common_years_of_fertility
                 epidemic_resistance = @bm_archmage_common_epidemic_resistance
-                prowess = 2
-                knight_limit = 2
+                advantage = 2
+                knight_effectiveness_mult = 0.15
             }
             40 = {
                 health = @bm_archmage_common_health
@@ -1601,11 +1617,11 @@ lifestyle_bm_archmage = {
                 years_of_fertility = @bm_archmage_common_years_of_fertility
                 epidemic_resistance = @bm_archmage_common_epidemic_resistance
                 advantage = 2
-                martial = 2
-                dread_baseline_add = 10
+                knight_effectiveness_mult = 0.15
+                knight_limit = 2
             }
             50 = {
-                martial_per_piety_level = 1
+                martial_per_piety_level = 2
                 prowess_per_piety_level = 2
             }
             60 = {
@@ -1613,7 +1629,8 @@ lifestyle_bm_archmage = {
                 life_expectancy = @bm_archmage_common_life_expectancy
                 years_of_fertility = @bm_archmage_common_years_of_fertility
                 epidemic_resistance = @bm_archmage_common_epidemic_resistance
-                prowess = 2
+                advantage = 2
+                knight_effectiveness_mult = 0.15
                 knight_limit = 2
             }
             70 = {
@@ -1622,15 +1639,16 @@ lifestyle_bm_archmage = {
                 years_of_fertility = @bm_archmage_common_years_of_fertility
                 epidemic_resistance = @bm_archmage_common_epidemic_resistance
                 advantage = 2
-                martial = 2
+                knight_effectiveness_mult = 0.15
             }
             80 = {
                 health = @bm_archmage_common_health
                 life_expectancy = @bm_archmage_common_life_expectancy
                 years_of_fertility = @bm_archmage_common_years_of_fertility
                 epidemic_resistance = @bm_archmage_common_epidemic_resistance
-                prowess = 2
-                dread_baseline_add = 10
+                advantage = 2
+                knight_effectiveness_mult = 0.15
+                knight_limit = 2
             }
             90 = {
                 health = @bm_archmage_common_health
@@ -1638,8 +1656,7 @@ lifestyle_bm_archmage = {
                 years_of_fertility = @bm_archmage_common_years_of_fertility
                 epidemic_resistance = @bm_archmage_common_epidemic_resistance
                 advantage = 2
-                martial = 2
-                knight_limit = 2
+                knight_effectiveness_mult = 0.15
             }
             100 = {
                 martial_per_piety_level = 2

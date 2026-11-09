@@ -46,7 +46,7 @@ The definitive blood magic lifestyle trait with six distinct tracks that gain ex
 - **Bloodline**: Enhance your dynasty, domain limit, and realm development
 - **Benediction**: Gain XP by healing ailments and curing others, earning the love of your vassals
 - **Hematurgy**: Intrigue, dread, hostile schemes, and harvesting traits from victims
-- **Bloodlust**: Battlefield prowess, martial mastery, combat advantage, and duel harvesting
+- **Bloodlust**: Combat advantage, knight effectiveness, sworn knight limit, and duel harvesting
 
 Blood Mages are also recognized as **Worthy Commanders**, ignoring realm gender laws to lead armies into battle personally.
 
