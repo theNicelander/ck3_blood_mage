@@ -25,10 +25,7 @@
 			limit = {
 				bm_has_any_attunement_trigger = yes
 			}
-			custom_tooltip = {
-				text = bm_attune_lifeforce_change_req
-				has_character_modifier = lifeforce_modifier_minor
-			}
+			has_character_modifier = lifeforce_modifier_minor
 		}
 	}
 
@@ -51,16 +48,13 @@
 				is_blood_mage_any_tier_trigger = yes
 			}
 			is_valid = {
-				custom_tooltip = {
-					text = bm_attune_already_attuned_req
-					NOT = { has_character_modifier = enlightenment_attuned }
-				}
+				NOT = { has_character_modifier = enlightenment_attuned }
 			}
 			ai_chance = {
 				value = 20
 				if = {
 					limit = {
-						bm_has_track_xp_any_tier_trigger = { TRACK = enlightenment VALUE >= 100 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = enlightenment VALUE = 100 }
 					}
 					multiply = 0
 				}
@@ -76,16 +70,13 @@
 				is_blood_mage_any_tier_trigger = yes
 			}
 			is_valid = {
-				custom_tooltip = {
-					text = bm_attune_already_attuned_req
-					NOT = { has_character_modifier = bloodline_attuned }
-				}
+				NOT = { has_character_modifier = bloodline_attuned }
 			}
 			ai_chance = {
 				value = 50
 				if = {
 					limit = {
-						bm_has_track_xp_any_tier_trigger = { TRACK = bloodline VALUE >= 100 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = bloodline VALUE = 100 }
 					}
 					multiply = 0
 				}
@@ -101,16 +92,13 @@
 				is_blood_mage_any_tier_trigger = yes
 			}
 			is_valid = {
-				custom_tooltip = {
-					text = bm_attune_already_attuned_req
-					NOT = { has_character_modifier = benediction_attuned }
-				}
+				NOT = { has_character_modifier = benediction_attuned }
 			}
 			ai_chance = {
 				value = 50
 				if = {
 					limit = {
-						bm_has_track_xp_any_tier_trigger = { TRACK = benediction VALUE >= 100 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = benediction VALUE = 100 }
 					}
 					multiply = 0
 				}
@@ -126,16 +114,13 @@
 				is_blood_mage_any_tier_trigger = yes
 			}
 			is_valid = {
-				custom_tooltip = {
-					text = bm_attune_already_attuned_req
-					NOT = { has_character_modifier = hematurgy_attuned }
-				}
+				NOT = { has_character_modifier = hematurgy_attuned }
 			}
 			ai_chance = {
 				value = 10
 				if = {
 					limit = {
-						bm_has_track_xp_any_tier_trigger = { TRACK = hematurgy VALUE >= 100 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = hematurgy VALUE = 100 }
 					}
 					multiply = 0
 				}
@@ -151,16 +136,13 @@
 				is_blood_mage_any_tier_trigger = yes
 			}
 			is_valid = {
-				custom_tooltip = {
-					text = bm_attune_already_attuned_req
-					NOT = { has_character_modifier = bloodlust_attuned }
-				}
+				NOT = { has_character_modifier = bloodlust_attuned }
 			}
 			ai_chance = {
 				value = 30
 				if = {
 					limit = {
-						bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE >= 100 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE = 100 }
 					}
 					multiply = 0
 				}

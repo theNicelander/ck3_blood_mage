@@ -1,32 +1,19 @@
 ﻿l_english:
-  # Add lifeforce
-  debug_add_lifeforce: "BLOOD MAGE: Add Lifeforce - Major"
-  debug_add_lifeforce_desc: "BLOOD MAGE: Add Lifeforce - Major"
-  debug_add_lifeforce_tooltip: "BLOOD MAGE: Add Lifeforce - Major"
-  debug_add_lifeforce_confirm: "BLOOD MAGE: Add Lifeforce - Major"
+  # Debug Decisions
+  debug_give_superior_blood_rune: "BLOOD MAGE: Give Superior Blood Rune"
+  debug_give_superior_blood_rune_desc: "Gain the Superior Blood Rune modifier, replacing any minor or major blood runes."
+  debug_give_superior_blood_rune_tooltip: "Inscribe the Superior Blood Rune on yourself."
+  debug_give_superior_blood_rune_confirm: "Inscribe Rune"
 
-  debug_add_lifeforce_minor: "BLOOD MAGE: Add Lifeforce - Minor"
-  debug_add_lifeforce_minor_desc: "BLOOD MAGE: Add Lifeforce - Minor"
-  debug_add_lifeforce_minor_tooltip: "BLOOD MAGE: Add Lifeforce - Minor"
-  debug_add_lifeforce_minor_confirm: "BLOOD MAGE: Add Lifeforce - Minor"
+  debug_manage_xp: "BLOOD MAGE: Manage Experience"
+  debug_manage_xp_desc: "Open the debug menu to grant experience to your Blood Mage traits and Blood Power."
+  debug_manage_xp_tooltip: "Open the experience management debug menu."
+  debug_manage_xp_confirm: "Open Menu"
 
-  # Add EXP
-  debug_add_exp_blood_mage_exp: "BLOOD MAGE: Add Experience - Blood Mage Trait"
-  debug_add_exp_blood_mage_exp_desc: "BLOOD MAGE: Add Experience - Blood Mage Trait"
-  debug_add_exp_blood_mage_exp_tooltip: "BLOOD MAGE: Add Experience - Blood Mage Trait"
-  debug_add_exp_blood_mage_exp_confirm: "BLOOD MAGE: Add Experience - Blood Mage Trait"
-
-  # Blood Power
-  debug_add_blood_power_exp: "BLOOD MAGE: Add Experience - Blood Power"
-  debug_add_blood_power_exp_desc: "BLOOD MAGE: Add Experience - Blood Power"
-  debug_add_blood_power_exp_tooltip: "BLOOD MAGE: Add Experience - Blood Power"
-  debug_add_blood_power_exp_confirm: "BLOOD MAGE: Add Experience - Blood Power"
-
-  # Legacy debug aliases
-  debug_add_blood_empowerment_exp: "$debug_add_blood_power_exp$"
-  debug_add_blood_empowerment_exp_desc: "$debug_add_blood_power_exp_desc$"
-  debug_add_blood_empowerment_exp_tooltip: "$debug_add_blood_power_exp_tooltip$"
-  debug_add_blood_empowerment_exp_confirm: "$debug_add_blood_power_exp_confirm$"
+  debug_manage_lifeforce: "BLOOD MAGE: Manage Lifeforce"
+  debug_manage_lifeforce_desc: "Open the debug menu to add or remove Lifeforce stacks."
+  debug_manage_lifeforce_tooltip: "Open the Lifeforce management debug menu."
+  debug_manage_lifeforce_confirm: "Open Menu"
 
   # Become blood mage
   debug_become_blood_mage: "BLOOD MAGE: Become Bloodmage"
@@ -34,17 +21,55 @@
   debug_become_blood_mage_tooltip: "BLOOD MAGE: Become Bloodmage"
   debug_become_blood_mage_confirm: "BLOOD MAGE: Become Bloodmage"
 
-  # Remove lifeforce
-  debug_remove_lifeforce: "BLOOD MAGE: Remove lifeforce"
-  debug_remove_lifeforce_desc: "BLOOD MAGE: Remove lifeforce"
-  debug_remove_lifeforce_tooltip: "BLOOD MAGE: Remove lifeforce"
-  debug_remove_lifeforce_confirm: "BLOOD MAGE: Remove lifeforce"
-
   # Upgrade all covenants
   debug_upgrade_all_covenants: "BLOOD MAGE: Upgrade All Covenants"
   debug_upgrade_all_covenants_desc: "Upgrade all 6 House Covenants (Presence, Warband, Prosperity, Shadows, Mastery, Legacy) to the next tier for your house."
   debug_upgrade_all_covenants_tooltip: "Step all 6 active House Covenants to the next tier (Minor -> Major -> Superior)."
   debug_upgrade_all_covenants_confirm: "Upgrade All Covenants"
+
+  # Debug Events
+  bm_debug.back: "Back"
+
+  bm_debug.0001.title: "Debug: Manage Experience"
+  bm_debug.0001.desc: "Select which experience track you wish to increase. Each selection will immediately apply and refresh this menu."
+  bm_debug.0001.trait_xp: "Trait (20 XP)"
+  bm_debug.0001.empowerment_xp: "Blood Empowerment (20 XP)"
+  bm_debug.0001.ancient_xp: "100 Ancient XP"
+  bm_debug.0001.toast: "Debug Experience Granted"
+
+  bm_debug.0002.title: "Debug: Manage Lifeforce"
+  bm_debug.0002.desc: "Select how to adjust your Lifeforce stacks. Each selection will immediately apply and refresh this menu."
+  bm_debug.0002.add_superior_5: "Add Superior x5"
+  bm_debug.0002.add_major_5: "Add Major x5"
+  bm_debug.0002.add_minor_5: "Add Minor x5"
+  bm_debug.0002.remove_all: "Remove All Lifeforce"
+  bm_debug.0002.toast: "Debug Lifeforce Adjusted"
+
+  # Legacy debug aliases (kept for compat)
+  debug_add_lifeforce: "$debug_manage_lifeforce$"
+  debug_add_lifeforce_desc: "$debug_manage_lifeforce_desc$"
+  debug_add_lifeforce_tooltip: "$debug_manage_lifeforce_tooltip$"
+  debug_add_lifeforce_confirm: "$debug_manage_lifeforce_confirm$"
+  debug_add_lifeforce_minor: "$debug_manage_lifeforce$"
+  debug_add_lifeforce_minor_desc: "$debug_manage_lifeforce_desc$"
+  debug_add_lifeforce_minor_tooltip: "$debug_manage_lifeforce_tooltip$"
+  debug_add_lifeforce_minor_confirm: "$debug_manage_lifeforce_confirm$"
+  debug_remove_lifeforce: "$debug_manage_lifeforce$"
+  debug_remove_lifeforce_desc: "$debug_manage_lifeforce_desc$"
+  debug_remove_lifeforce_tooltip: "$debug_manage_lifeforce_tooltip$"
+  debug_remove_lifeforce_confirm: "$debug_manage_lifeforce_confirm$"
+  debug_add_exp_blood_mage_exp: "$debug_manage_xp$"
+  debug_add_exp_blood_mage_exp_desc: "$debug_manage_xp_desc$"
+  debug_add_exp_blood_mage_exp_tooltip: "$debug_manage_xp_tooltip$"
+  debug_add_exp_blood_mage_exp_confirm: "$debug_manage_xp_confirm$"
+  debug_add_blood_power_exp: "$debug_manage_xp$"
+  debug_add_blood_power_exp_desc: "$debug_manage_xp_desc$"
+  debug_add_blood_power_exp_tooltip: "$debug_manage_xp_tooltip$"
+  debug_add_blood_power_exp_confirm: "$debug_manage_xp_confirm$"
+  debug_add_blood_empowerment_exp: "$debug_manage_xp$"
+  debug_add_blood_empowerment_exp_desc: "$debug_manage_xp_desc$"
+  debug_add_blood_empowerment_exp_tooltip: "$debug_manage_xp_tooltip$"
+  debug_add_blood_empowerment_exp_confirm: "$debug_manage_xp_confirm$"
 
   # Debug interactions
   bm_debug_character_interaction: "DEBUG: Blood Magic"

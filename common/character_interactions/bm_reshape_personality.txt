@@ -20,14 +20,8 @@
 
 	is_valid_showing_failures_only = {
 		scope:actor = {
-			custom_tooltip = {
-				text = bm_reshape_personality_piety_level_tt
-				piety_level >= 3
-			}
-			custom_tooltip = {
-				text = bm_reshape_personality_lifeforce_tt
-				has_character_modifier = lifeforce_modifier_major
-			}
+			piety_level >= 3
+			has_character_modifier = lifeforce_modifier_major
 		}
 		scope:recipient = {
 			custom_tooltip = {

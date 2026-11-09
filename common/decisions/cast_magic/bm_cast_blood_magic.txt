@@ -10,14 +10,8 @@
 	}
 
 	is_valid_showing_failures_only = {
-		custom_tooltip = {
-			text = bm_requires_superior_lifeforce_tt
-			has_character_modifier = lifeforce_modifier_superior
-		}
-		custom_tooltip = {
-			text = bm_cast_blood_magic_superior_devotion_req
-			piety_level >= 2
-		}
+		has_character_modifier = lifeforce_modifier_superior
+		piety_level >= 2
 	}
 
 	widget = {
@@ -40,14 +34,8 @@
 					text = bm_improve_education_cooldown_tt
 					NOT = { has_character_flag = bm_improve_education_cooldown }
 				}
-				custom_tooltip = {
-					text = bm_master_education_devotion_req
-					piety_level >= 4
-				}
-				custom_tooltip = {
-					text = bm_master_education_piety_req
-					piety >= scaled_education_enhancement_cost
-				}
+				piety_level >= 4
+				piety >= scaled_education_enhancement_cost
 				custom_tooltip = {
 					text = bm_master_education_trait_req
 					OR = {
@@ -82,14 +70,8 @@
 					text = bm_new_education_cooldown_tt
 					NOT = { has_character_flag = bm_new_education_cooldown }
 				}
-				custom_tooltip = {
-					text = bm_new_education_devotion_req
-					piety_level >= 4
-				}
-				custom_tooltip = {
-					text = bm_new_education_piety_cost_req
-					piety >= 1000
-				}
+				piety_level >= 4
+				piety >= 1000
 				custom_tooltip = {
 					text = bm_new_education_req_5_star
 					OR = {
@@ -152,14 +134,8 @@
 					text = bm_blood_rune_cooldown_tt
 					NOT = { has_character_flag = bm_blood_rune_cooldown }
 				}
-				custom_tooltip = {
-					text = bm_blood_rune_superior_devotion_req
-					piety_level >= 4
-				}
-				custom_tooltip = {
-					text = bm_blood_rune_superior_piety_cost_req
-					piety >= 400
-				}
+				piety_level >= 4
+				piety >= 400
 			}
 			ai_chance = {
 				value = 100
@@ -184,14 +160,8 @@
 					text = bm_manifest_traits_cooldown_tt
 					NOT = { has_character_flag = bm_manifest_traits_cooldown }
 				}
-				custom_tooltip = {
-					text = bm_manifest_apex_devotion_req
-					piety_level >= 5
-				}
-				custom_tooltip = {
-					text = bm_manifest_apex_piety_req
-					piety >= 1000
-				}
+				piety_level >= 5
+				piety >= 1000
 				custom_tooltip = {
 					text = bm_manifest_apex_eligible_req
 					OR = {
@@ -233,14 +203,8 @@
 					text = bm_blood_golem_cooldown_tt
 					NOT = { has_character_flag = bm_blood_golem_cooldown }
 				}
-				custom_tooltip = {
-					text = bm_create_blood_golem_devotion_req
-					piety_level >= 3
-				}
-				custom_tooltip = {
-					text = bm_create_blood_golem_piety_req
-					piety >= 500
-				}
+				piety_level >= 3
+				piety >= 500
 			}
 			ai_chance = {
 				value = 0
@@ -353,18 +317,9 @@ bm_cast_blood_magic_major_decision = {
 	}
 
 	is_valid_showing_failures_only = {
-		custom_tooltip = {
-			text = bm_requires_major_lifeforce_tt
-			has_character_modifier = lifeforce_modifier_major
-		}
-		custom_tooltip = {
-			text = bm_cast_blood_magic_major_devotion_req
-			piety_level >= 1
-		}
-		custom_tooltip = {
-			text = bm_cast_blood_magic_major_piety_req
-			piety >= 150
-		}
+		has_character_modifier = lifeforce_modifier_major
+		piety_level >= 1
+		piety >= 150
 	}
 
 	widget = {
@@ -383,14 +338,8 @@ bm_cast_blood_magic_major_decision = {
 				is_blood_mage_any_tier_trigger = yes
 			}
 			is_valid = {
-				custom_tooltip = {
-					text = bm_channel_power_devotion_req
-					piety_level >= 1
-				}
-				custom_tooltip = {
-					text = bm_channel_power_piety_req
-					piety >= 150
-				}
+				piety_level >= 1
+				piety >= 150
 			}
 			ai_chance = {
 				value = 100
@@ -415,18 +364,9 @@ bm_cast_blood_magic_major_decision = {
 					text = bm_manifest_superior_lifeforce_cooldown_tt
 					NOT = { has_character_flag = bm_manifest_superior_lifeforce_cooldown }
 				}
-				custom_tooltip = {
-					text = bm_condense_superior_devotion_req
-					piety_level >= 3
-				}
-				custom_tooltip = {
-					text = bm_condense_superior_piety_req
-					piety >= 250
-				}
-				custom_tooltip = {
-					text = bm_requires_minor_lifeforce_tt
-					has_character_modifier = lifeforce_modifier_minor
-				}
+				piety_level >= 3
+				piety >= 250
+				has_character_modifier = lifeforce_modifier_minor
 			}
 			ai_chance = {
 				value = 0
@@ -526,14 +466,8 @@ bm_cast_blood_magic_major_decision = {
 					text = bm_blood_rune_cooldown_tt
 					NOT = { has_character_flag = bm_blood_rune_cooldown }
 				}
-				custom_tooltip = {
-					text = bm_blood_rune_major_devotion_req
-					piety_level >= 3
-				}
-				custom_tooltip = {
-					text = bm_blood_rune_major_piety_cost_req
-					piety >= 200
-				}
+				piety_level >= 3
+				piety >= 200
 			}
 			ai_chance = {
 				value = 100
@@ -558,14 +492,8 @@ bm_cast_blood_magic_major_decision = {
 					text = bm_manifest_traits_cooldown_tt
 					NOT = { has_character_flag = bm_manifest_traits_cooldown }
 				}
-				custom_tooltip = {
-					text = bm_manifest_traits_devotion_req
-					piety_level >= 2
-				}
-				custom_tooltip = {
-					text = bm_manifest_traits_piety_req
-					piety >= 250
-				}
+				piety_level >= 2
+				piety >= 250
 				custom_tooltip = {
 					text = bm_manifest_traits_max_rank_3_tt
 					NOT = {
@@ -782,10 +710,7 @@ bm_cast_blood_magic_minor_decision = {
 	}
 
 	is_valid_showing_failures_only = {
-		custom_tooltip = {
-			text = bm_requires_minor_lifeforce_tt
-			has_character_modifier = lifeforce_modifier_minor
-		}
+		has_character_modifier = lifeforce_modifier_minor
 	}
 
 	widget = {
@@ -804,10 +729,7 @@ bm_cast_blood_magic_minor_decision = {
 				is_blood_mage_any_tier_trigger = yes
 			}
 			is_valid = {
-				custom_tooltip = {
-					text = bm_channel_minor_req_piety_tt
-					piety >= 75
-				}
+				piety >= 75
 			}
 			ai_chance = {
 				value = 10
@@ -828,10 +750,7 @@ bm_cast_blood_magic_minor_decision = {
 				is_blood_mage_any_tier_trigger = yes
 			}
 			is_valid = {
-				custom_tooltip = {
-					text = bm_purge_minor_req_piety_tt
-					piety >= 50
-				}
+				piety >= 50
 				custom_tooltip = {
 					text = bm_purge_minor_has_ailment_tt
 					OR = {
@@ -873,10 +792,7 @@ bm_cast_blood_magic_minor_decision = {
 				is_blood_mage_any_tier_trigger = yes
 			}
 			is_valid = {
-				custom_tooltip = {
-					text = bm_condense_minor_req_piety_tt
-					piety >= 100
-				}
+				piety >= 100
 			}
 			ai_chance = {
 				value = 50
@@ -901,10 +817,7 @@ bm_cast_blood_magic_minor_decision = {
 					text = bm_blood_rune_cooldown_tt
 					NOT = { has_character_flag = bm_blood_rune_cooldown }
 				}
-				custom_tooltip = {
-					text = bm_blood_rune_minor_devotion_req
-					piety_level >= 2
-				}
+				piety_level >= 2
 			}
 			ai_chance = {
 				value = 100

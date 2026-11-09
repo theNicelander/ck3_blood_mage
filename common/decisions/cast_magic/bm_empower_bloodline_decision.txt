@@ -32,40 +32,28 @@
 				NOT = { house ?= { has_house_modifier = dynasty_blood_presence_modifier_3 } }
 			}
 			is_valid = {
-				custom_tooltip = {
-					text = bm_covenant_already_maxed_req
-					NOT = { house ?= { has_house_modifier = dynasty_blood_presence_modifier_3 } }
-				}
+				NOT = { house ?= { has_house_modifier = dynasty_blood_presence_modifier_3 } }
 				# Tier I -> Tier II
 				trigger_if = {
 					limit = { house ?= { has_house_modifier = dynasty_blood_presence_modifier_1 } }
-					custom_tooltip = {
-						text = bm_covenant_tier_2_req
-						is_blood_mage_tier_2_or_higher_trigger = yes
-						piety_level >= 2
-						piety >= 350
-						has_character_modifier = lifeforce_modifier_major
-					}
+					is_blood_mage_tier_2_or_higher_trigger = yes
+					piety_level >= 2
+					piety >= 350
+					has_character_modifier = lifeforce_modifier_major
 				}
 				# Tier II -> Tier III
 				trigger_else_if = {
 					limit = { house ?= { has_house_modifier = dynasty_blood_presence_modifier_2 } }
-					custom_tooltip = {
-						text = bm_covenant_tier_3_req
-						is_blood_mage_archmage_trigger = yes
-						piety_level >= 3
-						piety >= 750
-						has_character_modifier = lifeforce_modifier_superior
-					}
+					is_blood_mage_archmage_trigger = yes
+					piety_level >= 3
+					piety >= 750
+					has_character_modifier = lifeforce_modifier_superior
 				}
 				# Base -> Tier I
 				trigger_else = {
-					custom_tooltip = {
-						text = bm_covenant_tier_1_req
-						piety_level >= 1
-						piety >= 150
-						has_character_modifier = lifeforce_modifier_minor
-					}
+					piety_level >= 1
+					piety >= 150
+					has_character_modifier = lifeforce_modifier_minor
 				}
 			}
 			ai_chance = {
@@ -87,40 +75,28 @@
 				NOT = { house ?= { has_house_modifier = dynasty_blood_warband_modifier_3 } }
 			}
 			is_valid = {
-				custom_tooltip = {
-					text = bm_covenant_already_maxed_req
-					NOT = { house ?= { has_house_modifier = dynasty_blood_warband_modifier_3 } }
-				}
+				NOT = { house ?= { has_house_modifier = dynasty_blood_warband_modifier_3 } }
 				# Tier I -> Tier II
 				trigger_if = {
 					limit = { house ?= { has_house_modifier = dynasty_blood_warband_modifier_1 } }
-					custom_tooltip = {
-						text = bm_covenant_tier_2_req
-						is_blood_mage_tier_2_or_higher_trigger = yes
-						piety_level >= 2
-						piety >= 350
-						has_character_modifier = lifeforce_modifier_major
-					}
+					is_blood_mage_tier_2_or_higher_trigger = yes
+					piety_level >= 2
+					piety >= 350
+					has_character_modifier = lifeforce_modifier_major
 				}
 				# Tier II -> Tier III
 				trigger_else_if = {
 					limit = { house ?= { has_house_modifier = dynasty_blood_warband_modifier_2 } }
-					custom_tooltip = {
-						text = bm_covenant_tier_3_req
-						is_blood_mage_archmage_trigger = yes
-						piety_level >= 3
-						piety >= 750
-						has_character_modifier = lifeforce_modifier_superior
-					}
+					is_blood_mage_archmage_trigger = yes
+					piety_level >= 3
+					piety >= 750
+					has_character_modifier = lifeforce_modifier_superior
 				}
 				# Base -> Tier I
 				trigger_else = {
-					custom_tooltip = {
-						text = bm_covenant_tier_1_req
-						piety_level >= 1
-						piety >= 150
-						has_character_modifier = lifeforce_modifier_minor
-					}
+					piety_level >= 1
+					piety >= 150
+					has_character_modifier = lifeforce_modifier_minor
 				}
 			}
 			ai_chance = {
@@ -142,40 +118,28 @@
 				NOT = { house ?= { has_house_modifier = dynasty_blood_prosperity_modifier_3 } }
 			}
 			is_valid = {
-				custom_tooltip = {
-					text = bm_covenant_already_maxed_req
-					NOT = { house ?= { has_house_modifier = dynasty_blood_prosperity_modifier_3 } }
-				}
+				NOT = { house ?= { has_house_modifier = dynasty_blood_prosperity_modifier_3 } }
 				# Tier I -> Tier II
 				trigger_if = {
 					limit = { house ?= { has_house_modifier = dynasty_blood_prosperity_modifier_1 } }
-					custom_tooltip = {
-						text = bm_covenant_tier_2_req
-						is_blood_mage_tier_2_or_higher_trigger = yes
-						piety_level >= 2
-						piety >= 350
-						has_character_modifier = lifeforce_modifier_major
-					}
+					is_blood_mage_tier_2_or_higher_trigger = yes
+					piety_level >= 2
+					piety >= 350
+					has_character_modifier = lifeforce_modifier_major
 				}
 				# Tier II -> Tier III
 				trigger_else_if = {
 					limit = { house ?= { has_house_modifier = dynasty_blood_prosperity_modifier_2 } }
-					custom_tooltip = {
-						text = bm_covenant_tier_3_req
-						is_blood_mage_archmage_trigger = yes
-						piety_level >= 3
-						piety >= 750
-						has_character_modifier = lifeforce_modifier_superior
-					}
+					is_blood_mage_archmage_trigger = yes
+					piety_level >= 3
+					piety >= 750
+					has_character_modifier = lifeforce_modifier_superior
 				}
 				# Base -> Tier I
 				trigger_else = {
-					custom_tooltip = {
-						text = bm_covenant_tier_1_req
-						piety_level >= 1
-						piety >= 150
-						has_character_modifier = lifeforce_modifier_minor
-					}
+					piety_level >= 1
+					piety >= 150
+					has_character_modifier = lifeforce_modifier_minor
 				}
 			}
 			ai_chance = {
@@ -197,40 +161,28 @@
 				NOT = { house ?= { has_house_modifier = dynasty_blood_shadows_modifier_3 } }
 			}
 			is_valid = {
-				custom_tooltip = {
-					text = bm_covenant_already_maxed_req
-					NOT = { house ?= { has_house_modifier = dynasty_blood_shadows_modifier_3 } }
-				}
+				NOT = { house ?= { has_house_modifier = dynasty_blood_shadows_modifier_3 } }
 				# Tier I -> Tier II
 				trigger_if = {
 					limit = { house ?= { has_house_modifier = dynasty_blood_shadows_modifier_1 } }
-					custom_tooltip = {
-						text = bm_covenant_tier_2_req
-						is_blood_mage_tier_2_or_higher_trigger = yes
-						piety_level >= 2
-						piety >= 350
-						has_character_modifier = lifeforce_modifier_major
-					}
+					is_blood_mage_tier_2_or_higher_trigger = yes
+					piety_level >= 2
+					piety >= 350
+					has_character_modifier = lifeforce_modifier_major
 				}
 				# Tier II -> Tier III
 				trigger_else_if = {
 					limit = { house ?= { has_house_modifier = dynasty_blood_shadows_modifier_2 } }
-					custom_tooltip = {
-						text = bm_covenant_tier_3_req
-						is_blood_mage_archmage_trigger = yes
-						piety_level >= 3
-						piety >= 750
-						has_character_modifier = lifeforce_modifier_superior
-					}
+					is_blood_mage_archmage_trigger = yes
+					piety_level >= 3
+					piety >= 750
+					has_character_modifier = lifeforce_modifier_superior
 				}
 				# Base -> Tier I
 				trigger_else = {
-					custom_tooltip = {
-						text = bm_covenant_tier_1_req
-						piety_level >= 1
-						piety >= 150
-						has_character_modifier = lifeforce_modifier_minor
-					}
+					piety_level >= 1
+					piety >= 150
+					has_character_modifier = lifeforce_modifier_minor
 				}
 			}
 			ai_chance = {
@@ -252,40 +204,28 @@
 				NOT = { house ?= { has_house_modifier = dynasty_blood_mastery_modifier_3 } }
 			}
 			is_valid = {
-				custom_tooltip = {
-					text = bm_covenant_already_maxed_req
-					NOT = { house ?= { has_house_modifier = dynasty_blood_mastery_modifier_3 } }
-				}
+				NOT = { house ?= { has_house_modifier = dynasty_blood_mastery_modifier_3 } }
 				# Tier I -> Tier II
 				trigger_if = {
 					limit = { house ?= { has_house_modifier = dynasty_blood_mastery_modifier_1 } }
-					custom_tooltip = {
-						text = bm_covenant_tier_2_req
-						is_blood_mage_tier_2_or_higher_trigger = yes
-						piety_level >= 2
-						piety >= 350
-						has_character_modifier = lifeforce_modifier_major
-					}
+					is_blood_mage_tier_2_or_higher_trigger = yes
+					piety_level >= 2
+					piety >= 350
+					has_character_modifier = lifeforce_modifier_major
 				}
 				# Tier II -> Tier III
 				trigger_else_if = {
 					limit = { house ?= { has_house_modifier = dynasty_blood_mastery_modifier_2 } }
-					custom_tooltip = {
-						text = bm_covenant_tier_3_req
-						is_blood_mage_archmage_trigger = yes
-						piety_level >= 3
-						piety >= 750
-						has_character_modifier = lifeforce_modifier_superior
-					}
+					is_blood_mage_archmage_trigger = yes
+					piety_level >= 3
+					piety >= 750
+					has_character_modifier = lifeforce_modifier_superior
 				}
 				# Base -> Tier I
 				trigger_else = {
-					custom_tooltip = {
-						text = bm_covenant_tier_1_req
-						piety_level >= 1
-						piety >= 150
-						has_character_modifier = lifeforce_modifier_minor
-					}
+					piety_level >= 1
+					piety >= 150
+					has_character_modifier = lifeforce_modifier_minor
 				}
 			}
 			ai_chance = {
@@ -307,40 +247,28 @@
 				NOT = { house ?= { has_house_modifier = dynasty_blood_legacy_modifier_3 } }
 			}
 			is_valid = {
-				custom_tooltip = {
-					text = bm_covenant_already_maxed_req
-					NOT = { house ?= { has_house_modifier = dynasty_blood_legacy_modifier_3 } }
-				}
+				NOT = { house ?= { has_house_modifier = dynasty_blood_legacy_modifier_3 } }
 				# Tier I -> Tier II
 				trigger_if = {
 					limit = { house ?= { has_house_modifier = dynasty_blood_legacy_modifier_1 } }
-					custom_tooltip = {
-						text = bm_covenant_tier_2_req
-						is_blood_mage_tier_2_or_higher_trigger = yes
-						piety_level >= 2
-						piety >= 350
-						has_character_modifier = lifeforce_modifier_major
-					}
+					is_blood_mage_tier_2_or_higher_trigger = yes
+					piety_level >= 2
+					piety >= 350
+					has_character_modifier = lifeforce_modifier_major
 				}
 				# Tier II -> Tier III
 				trigger_else_if = {
 					limit = { house ?= { has_house_modifier = dynasty_blood_legacy_modifier_2 } }
-					custom_tooltip = {
-						text = bm_covenant_tier_3_req
-						is_blood_mage_archmage_trigger = yes
-						piety_level >= 3
-						piety >= 750
-						has_character_modifier = lifeforce_modifier_superior
-					}
+					is_blood_mage_archmage_trigger = yes
+					piety_level >= 3
+					piety >= 750
+					has_character_modifier = lifeforce_modifier_superior
 				}
 				# Base -> Tier I
 				trigger_else = {
-					custom_tooltip = {
-						text = bm_covenant_tier_1_req
-						piety_level >= 1
-						piety >= 150
-						has_character_modifier = lifeforce_modifier_minor
-					}
+					piety_level >= 1
+					piety >= 150
+					has_character_modifier = lifeforce_modifier_minor
 				}
 			}
 			ai_chance = {
