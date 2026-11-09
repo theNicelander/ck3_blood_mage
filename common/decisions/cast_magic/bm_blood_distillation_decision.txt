@@ -1,9 +1,9 @@
-﻿bm_sanguine_distillation_decision = {
+﻿bm_blood_distillation_decision = {
 	picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
 	decision_group_type = bm_decision_group
 
-	desc = bm_sanguine_distillation_decision_desc
-	selection_tooltip = bm_sanguine_distillation_decision_tooltip
+	desc = bm_blood_distillation_decision_desc
+	selection_tooltip = bm_blood_distillation_decision_tooltip
 
 	is_shown = {
 		is_blood_mage_any_tier_trigger = yes
@@ -12,13 +12,10 @@
 
 	is_valid = {
 		custom_tooltip = {
-			text = bm_sanguine_distillation_ancient_not_maxed_req
+			text = bm_blood_distillation_ancient_not_maxed_req
 			NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = ancient VALUE = 100 } }
 		}
-		custom_tooltip = {
-			text = bm_sanguine_distillation_lifeforce_req
-			has_character_modifier = lifeforce_modifier_minor
-		}
+		has_character_modifier = lifeforce_modifier_minor
 		trigger_if = {
 			limit = { has_trait = lifestyle_bm_acolyte }
 			piety >= 50
@@ -44,7 +41,7 @@
 	widget = {
 		gui = "decision_view_widget_option_list_generic"
 		controller = decision_option_list_controller
-		decision_to_second_step_button = "BM_SANGUINE_DISTILLATION_DECISION_NEXT_STEP_BUTTON"
+		decision_to_second_step_button = "BM_BLOOD_DISTILLATION_DECISION_NEXT_STEP_BUTTON"
 		show_from_start = yes
 
 		item = {
@@ -173,10 +170,10 @@
 		remove_character_modifier = lifeforce_modifier_minor
 		if = {
 			limit = { scope:bm_distill_bloodlust = yes }
-			debug_log = "BloodMageDecision: bm_sanguine_distillation_decision (bloodlust) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+			debug_log = "BloodMageDecision: bm_blood_distillation_decision (bloodlust) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
 			send_interface_toast = {
 				type = event_toast_effect_good
-				title = bm_sanguine_distillation_decision
+				title = bm_blood_distillation_decision
 				left_icon = root
 				if = {
 					limit = { has_trait = lifestyle_bm_acolyte }
@@ -202,10 +199,10 @@
 		}
 		else_if = {
 			limit = { scope:bm_distill_benediction = yes }
-			debug_log = "BloodMageDecision: bm_sanguine_distillation_decision (benediction) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+			debug_log = "BloodMageDecision: bm_blood_distillation_decision (benediction) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
 			send_interface_toast = {
 				type = event_toast_effect_good
-				title = bm_sanguine_distillation_decision
+				title = bm_blood_distillation_decision
 				left_icon = root
 				if = {
 					limit = { has_trait = lifestyle_bm_acolyte }
@@ -231,10 +228,10 @@
 		}
 		else_if = {
 			limit = { scope:bm_distill_bloodline = yes }
-			debug_log = "BloodMageDecision: bm_sanguine_distillation_decision (bloodline) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+			debug_log = "BloodMageDecision: bm_blood_distillation_decision (bloodline) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
 			send_interface_toast = {
 				type = event_toast_effect_good
-				title = bm_sanguine_distillation_decision
+				title = bm_blood_distillation_decision
 				left_icon = root
 				if = {
 					limit = { has_trait = lifestyle_bm_acolyte }
@@ -260,10 +257,10 @@
 		}
 		else_if = {
 			limit = { scope:bm_distill_hematurgy = yes }
-			debug_log = "BloodMageDecision: bm_sanguine_distillation_decision (hematurgy) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+			debug_log = "BloodMageDecision: bm_blood_distillation_decision (hematurgy) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
 			send_interface_toast = {
 				type = event_toast_effect_good
-				title = bm_sanguine_distillation_decision
+				title = bm_blood_distillation_decision
 				left_icon = root
 				if = {
 					limit = { has_trait = lifestyle_bm_acolyte }
@@ -289,10 +286,10 @@
 		}
 		else_if = {
 			limit = { scope:bm_distill_enlightenment = yes }
-			debug_log = "BloodMageDecision: bm_sanguine_distillation_decision (enlightenment) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+			debug_log = "BloodMageDecision: bm_blood_distillation_decision (enlightenment) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
 			send_interface_toast = {
 				type = event_toast_effect_good
-				title = bm_sanguine_distillation_decision
+				title = bm_blood_distillation_decision
 				left_icon = root
 				if = {
 					limit = { has_trait = lifestyle_bm_acolyte }
@@ -317,7 +314,7 @@
 			}
 		}
 		else = {
-			custom_tooltip = bm_sanguine_distillation_decision_effect
+			custom_tooltip = bm_blood_distillation_decision_effect
 		}
 		close_view = {
 			view = decisions

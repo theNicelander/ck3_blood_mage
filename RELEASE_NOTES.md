@@ -50,14 +50,14 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 
 - *Seek Power* became **Go on a Blood Hunt**, open to Blood Mages; grayed out while travelling, in an activity, imprisoned or incapable.
 - Cooldown: 1 year (halved to 6 months with Superior Vegvísir).
-- Encounters scale with Prowess: Beast's Lair, Blood in the Embers, Edge of the Woods, Crimson Rite, Stag's Last Stand, Blades on the Lonely Road, Cairn of Forgotten Carnage.
+- Encounters scale with Prowess: Beast's Lair, Blood in the Embers, Edge of the Woods, Blood Rite, Stag's Last Stand, Blades on the Lonely Road, Cairn of Forgotten Carnage.
 - Roughly 60% success at skill 20, 70% at 25, 80% at 30, 95% at 40+; peaceful options exist for most encounters.
 - Road encounter can include a sworn escort champion to duel (Prowess 25+).
 
 ## Blood Rites
 
 - **Bless Blood**: consecrate knights and kin (+2 Martial, +4 Prowess, +25% Knight Effectiveness for 10 years).
-- **Crimson Sparring Ring** (yearly, 1 Minor Lifeforce): practice duels; winner gains 1 Major Lifeforce, both gain Blademaster XP.
+- **Blood Sparring Ring** (yearly, 1 Minor Lifeforce): practice duels; winner gains 1 Major Lifeforce, both gain Blademaster XP.
 - **Cull Fallen Champion**: sacrifice broken or captured warriors for Major Lifeforce, with a chance of Superior.
 - **Anoint Champion / Anoint Heir**: permanent bonuses; anointed heirs awaken with a Lifeforce transfer on succession.
 - Overlapping blessing interactions merged into one 4-option Bless Blood; options hide once active.
