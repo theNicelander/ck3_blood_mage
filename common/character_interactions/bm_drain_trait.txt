@@ -29,7 +29,7 @@ trait_drain_prisoner_event_interaction = {
 
     is_shown = {
         scope:actor = {
-            has_trait = lifestyle_blood_mage
+            is_blood_mage_tier_2_or_higher_trigger = yes
             bm_can_drain_traits_from_target_trigger = yes
         }
         scope:recipient = { is_imprisoned_by = scope:actor }

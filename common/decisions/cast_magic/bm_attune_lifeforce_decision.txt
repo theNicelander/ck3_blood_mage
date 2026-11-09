@@ -8,7 +8,7 @@
 	cooldown = { years = 3 }
 
 	is_shown = {
-		has_trait = lifestyle_blood_mage
+		is_blood_mage_any_tier_trigger = yes
 	}
 
 	is_valid = {
@@ -43,37 +43,12 @@
 		show_from_start = yes
 
 		item = {
-			value = bm_attune_ancient
-			current_description = bm_attune_ancient
-			localization = bm_attune_ancient
-			icon = "gfx/interface/icons/trait_level_tracks/ancient.dds"
-			is_shown = {
-				has_trait = lifestyle_blood_mage
-			}
-			is_valid = {
-				custom_tooltip = {
-					text = bm_attune_already_attuned_req
-					NOT = { has_character_modifier = ancient_attuned }
-				}
-			}
-			ai_chance = {
-				value = 20
-				if = {
-					limit = {
-						has_trait_xp = { trait = lifestyle_blood_mage track = ancient value >= 100 }
-					}
-					multiply = 0
-				}
-			}
-		}
-
-		item = {
 			value = bm_attune_enlightenment
 			current_description = bm_attune_enlightenment
 			localization = bm_attune_enlightenment
 			icon = "gfx/interface/icons/trait_level_tracks/enlightenment.dds"
 			is_shown = {
-				has_trait = lifestyle_blood_mage
+				is_blood_mage_any_tier_trigger = yes
 			}
 			is_valid = {
 				custom_tooltip = {
@@ -85,7 +60,7 @@
 				value = 20
 				if = {
 					limit = {
-						has_trait_xp = { trait = lifestyle_blood_mage track = enlightenment value >= 100 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = enlightenment VALUE >= 100 }
 					}
 					multiply = 0
 				}
@@ -98,7 +73,7 @@
 			localization = bm_attune_bloodline
 			icon = "gfx/interface/icons/trait_level_tracks/bloodline.dds"
 			is_shown = {
-				has_trait = lifestyle_blood_mage
+				is_blood_mage_any_tier_trigger = yes
 			}
 			is_valid = {
 				custom_tooltip = {
@@ -110,7 +85,7 @@
 				value = 50
 				if = {
 					limit = {
-						has_trait_xp = { trait = lifestyle_blood_mage track = bloodline value >= 100 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = bloodline VALUE >= 100 }
 					}
 					multiply = 0
 				}
@@ -123,7 +98,7 @@
 			localization = bm_attune_benediction
 			icon = "gfx/interface/icons/trait_level_tracks/benediction.dds"
 			is_shown = {
-				has_trait = lifestyle_blood_mage
+				is_blood_mage_any_tier_trigger = yes
 			}
 			is_valid = {
 				custom_tooltip = {
@@ -135,7 +110,7 @@
 				value = 50
 				if = {
 					limit = {
-						has_trait_xp = { trait = lifestyle_blood_mage track = benediction value >= 100 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = benediction VALUE >= 100 }
 					}
 					multiply = 0
 				}
@@ -148,7 +123,7 @@
 			localization = bm_attune_hematurgy
 			icon = "gfx/interface/icons/trait_level_tracks/hematurgy.dds"
 			is_shown = {
-				has_trait = lifestyle_blood_mage
+				is_blood_mage_any_tier_trigger = yes
 			}
 			is_valid = {
 				custom_tooltip = {
@@ -160,7 +135,7 @@
 				value = 10
 				if = {
 					limit = {
-						has_trait_xp = { trait = lifestyle_blood_mage track = hematurgy value >= 100 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = hematurgy VALUE >= 100 }
 					}
 					multiply = 0
 				}
@@ -173,7 +148,7 @@
 			localization = bm_attune_bloodlust
 			icon = "gfx/interface/icons/trait_level_tracks/bloodlust.dds"
 			is_shown = {
-				has_trait = lifestyle_blood_mage
+				is_blood_mage_any_tier_trigger = yes
 			}
 			is_valid = {
 				custom_tooltip = {
@@ -185,7 +160,7 @@
 				value = 30
 				if = {
 					limit = {
-						has_trait_xp = { trait = lifestyle_blood_mage track = bloodlust value >= 100 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE >= 100 }
 					}
 					multiply = 0
 				}
@@ -205,16 +180,6 @@
 			remove_all_attunement = yes
 		}
 		if = {
-			limit = { scope:bm_attune_ancient = yes }
-			debug_log = "BloodMageDecision: bm_attune_lifeforce_decision (ancient) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
-			send_interface_toast = {
-				type = event_toast_effect_good
-				title = bm_attune_lifeforce_decision
-				left_icon = root
-				add_character_modifier = { modifier = ancient_attuned }
-			}
-		}
-		else_if = {
 			limit = { scope:bm_attune_enlightenment = yes }
 			debug_log = "BloodMageDecision: bm_attune_lifeforce_decision (enlightenment) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
 			send_interface_toast = {
@@ -274,7 +239,7 @@
 	}
 
 	ai_potential = {
-		has_trait = lifestyle_blood_mage
+		is_blood_mage_any_tier_trigger = yes
 	}
 
 	ai_check_interval = 3

@@ -32,7 +32,7 @@
 
 	is_shown = {
 		scope:actor = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_any_tier_trigger = yes
 		}
 		scope:recipient = {
 			is_alive = yes
@@ -56,7 +56,7 @@
 		current_description = bm_blood_drain_option_major_desc
 		can_invalidate_interaction = yes
 		is_shown = {
-			scope:actor = { has_trait = lifestyle_blood_mage }
+			scope:actor = { is_blood_mage_any_tier_trigger = yes }
 			scope:recipient = { is_imprisoned_by = scope:actor }
 		}
 		is_valid = {
@@ -332,7 +332,7 @@
 					if = {
 						limit = {
 							scope:recipient = {
-								has_trait = lifestyle_blood_mage
+								is_blood_mage_any_tier_trigger = yes
 							}
 						}
 						add_character_modifier = { modifier = lifeforce_modifier_major }

@@ -49,7 +49,7 @@
 
 	is_shown = {
 		scope:actor = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_any_tier_trigger = yes
 		}
 		scope:recipient = {
 			is_alive = yes
@@ -84,7 +84,7 @@
 		can_invalidate_interaction = yes
 		is_shown = {
 			scope:recipient = {
-				has_trait = lifestyle_blood_mage
+				is_blood_mage_any_tier_trigger = yes
 			}
 		}
 		is_valid = {
@@ -97,7 +97,7 @@
 		}
 		starts_enabled = {
 			scope:recipient = {
-				has_trait = lifestyle_blood_mage
+				is_blood_mage_any_tier_trigger = yes
 			}
 		}
 	}
@@ -283,7 +283,7 @@
 								has_character_modifier = major_blood_rune_modifier
 								NOT = { has_character_modifier = superior_blood_rune_modifier }
 							}
-							has_trait = lifestyle_blood_mage
+							is_blood_mage_any_tier_trigger = yes
 							piety_level >= 4
 							scope:actor.bm_total_blood_mage_xp >= 100
 							piety >= 400
@@ -519,10 +519,9 @@
 					left_icon = scope:actor
 					right_icon = scope:recipient
 					blood_magic_used_major = yes
-					add_trait_xp = {
-						trait = lifestyle_blood_mage
-						track = bloodline
-						value = 2
+					bm_add_blood_mage_xp_effect = {
+						TRACK = bloodline
+						XP = 2
 					}
 					scope:recipient = {
 						add_character_modifier = {
@@ -587,7 +586,7 @@
 						}
 					}
 					if = {
-						limit = { has_trait = lifestyle_blood_mage }
+						limit = { is_blood_mage_any_tier_trigger = yes }
 						add_xp_bm_dynamic = { TRACK = bloodline XP = 2 }
 					}
 					hidden_effect = {
@@ -625,11 +624,10 @@
 							}
 						}
 						blood_magic_used_minor = yes
-						add_trait_xp = {
-							trait = lifestyle_blood_mage
-							track = benediction
-							value = 4
-						}
+						bm_add_blood_mage_xp_effect = {
+						TRACK = benediction
+						XP = 4
+					}
 						scope:recipient = {
 							add_character_modifier = { modifier = minor_blood_rune_modifier }
 						}
@@ -643,11 +641,10 @@
 							}
 						}
 						blood_magic_used_major = yes
-						add_trait_xp = {
-							trait = lifestyle_blood_mage
-							track = benediction
-							value = 5
-						}
+						bm_add_blood_mage_xp_effect = {
+						TRACK = benediction
+						XP = 5
+					}
 						scope:recipient = {
 							bm_upgrade_blood_rune_to_major_effect = yes
 						}
@@ -660,11 +657,10 @@
 							}
 						}
 						blood_magic_used_superior = yes
-						add_trait_xp = {
-							trait = lifestyle_blood_mage
-							track = benediction
-							value = 10
-						}
+						bm_add_blood_mage_xp_effect = {
+						TRACK = benediction
+						XP = 10
+					}
 						scope:recipient = {
 							bm_upgrade_blood_rune_to_superior_effect = yes
 						}

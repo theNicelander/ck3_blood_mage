@@ -13,11 +13,11 @@
 
     is_shown = {
         scope:actor = {
-            has_trait = lifestyle_blood_mage
+            is_blood_mage_any_tier_trigger = yes
         }
         scope:recipient = {
             NOT = { this = scope:actor }
-            has_trait = lifestyle_blood_mage
+            is_blood_mage_any_tier_trigger = yes
             trigger_if = {
                 limit = {
                     NOR = {

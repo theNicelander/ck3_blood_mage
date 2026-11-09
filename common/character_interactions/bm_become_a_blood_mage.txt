@@ -26,10 +26,10 @@
 
     is_shown = {
         scope:recipient = {
-            has_trait = lifestyle_blood_mage
+            is_blood_mage_any_tier_trigger = yes
         }
         scope:actor = {
-            NOT = { has_trait = lifestyle_blood_mage }
+            NOT = { is_blood_mage_any_tier_trigger = yes }
         }
     }
 
@@ -47,7 +47,7 @@
                         bm_recount_lifeforce_stacks_effect = yes
                     }
                 }
-                bm_become_blood_mage_effect = yes
+                bm_become_blood_acolyte_effect = yes
             }
         }
     }
@@ -84,11 +84,11 @@ bm_get_blood_magic_from_prisoner_interaction = {
 
     is_shown = {
         scope:actor = {
-            NOT = { has_trait = lifestyle_blood_mage }
+            NOT = { is_blood_mage_any_tier_trigger = yes }
         }
         scope:recipient = {
             is_imprisoned_by = scope:actor
-            has_trait = lifestyle_blood_mage
+            is_blood_mage_any_tier_trigger = yes
         }
     }
 
@@ -141,7 +141,7 @@ bm_get_blood_magic_from_prisoner_interaction = {
                         title = bm_get_blood_magic_from_prisoner_interaction.success
                         left_icon = scope:actor
                         right_icon = scope:recipient
-                        bm_become_blood_mage_effect = yes
+                        bm_become_blood_acolyte_effect = yes
                     }
                 }
                 65 = {

@@ -19,6 +19,11 @@ bm_channel_manifest_traits.001 = {
 			NOT = { has_trait_rank = { trait = intellect_good rank >= 3 } }
 			piety >= bm_manifest_traits_intellect_piety_cost
 			trigger_if = {
+				limit = { has_trait = lifestyle_bm_acolyte }
+				NOT = { has_trait = intellect_good }
+				piety_level >= 2
+			}
+			trigger_else_if = {
 				limit = { has_trait = intellect_good_2 }
 				piety_level >= 4
 			}
@@ -58,6 +63,11 @@ bm_channel_manifest_traits.001 = {
 			NOT = { has_trait_rank = { trait = physique_good rank >= 3 } }
 			piety >= bm_manifest_traits_physique_piety_cost
 			trigger_if = {
+				limit = { has_trait = lifestyle_bm_acolyte }
+				NOT = { has_trait = physique_good }
+				piety_level >= 2
+			}
+			trigger_else_if = {
 				limit = { has_trait = physique_good_2 }
 				piety_level >= 4
 			}
@@ -97,6 +107,11 @@ bm_channel_manifest_traits.001 = {
 			NOT = { has_trait_rank = { trait = beauty_good rank >= 3 } }
 			piety >= bm_manifest_traits_beauty_piety_cost
 			trigger_if = {
+				limit = { has_trait = lifestyle_bm_acolyte }
+				NOT = { has_trait = beauty_good }
+				piety_level >= 2
+			}
+			trigger_else_if = {
 				limit = { has_trait = beauty_good_2 }
 				piety_level >= 4
 			}
