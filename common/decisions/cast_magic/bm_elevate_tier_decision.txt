@@ -14,42 +14,22 @@
 	}
 
 	is_valid = {
-		custom_tooltip = {
-			text = bm_elevate_tier_ancient_req
-			bm_has_track_xp_any_tier_trigger = { TRACK = ancient VALUE >= 100 }
-		}
+		bm_has_track_xp_any_tier_trigger = { TRACK = ancient VALUE >= 100 }
+
 		trigger_if = {
 			limit = { has_trait = lifestyle_bm_acolyte }
-			custom_tooltip = {
-				text = bm_elevate_tier_devotion_acolyte_req
-				piety_level >= 2
-			}
-			custom_tooltip = {
-				text = bm_elevate_tier_rune_acolyte_req
-				bm_has_blood_rune_trigger = yes
-			}
-			custom_tooltip = {
-				text = bm_elevate_tier_lifeforce_acolyte_req
-				has_character_modifier = lifeforce_modifier_major
-			}
+			piety_level >= 2
+			bm_has_blood_rune_trigger = yes
+			has_character_modifier = lifeforce_modifier_major
 			piety >= 250
 		}
 		trigger_else = {
-			custom_tooltip = {
-				text = bm_elevate_tier_devotion_mage_req
-				piety_level >= 4
-			}
-			custom_tooltip = {
-				text = bm_elevate_tier_rune_mage_req
-				OR = {
+			piety_level >= 4
+			has_character_modifier = lifeforce_modifier_superior
+			OR = {
 					has_character_modifier = major_blood_rune_modifier
 					has_character_modifier = superior_blood_rune_modifier
 				}
-			}
-			custom_tooltip = {
-				text = bm_elevate_tier_lifeforce_mage_req
-				has_character_modifier = lifeforce_modifier_superior
-			}
 			piety >= 500
 		}
 	}
