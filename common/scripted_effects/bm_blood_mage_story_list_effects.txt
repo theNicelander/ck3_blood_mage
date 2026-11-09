@@ -99,7 +99,7 @@ bm_refresh_blood_magic_rosters_effect = {
 
 	every_knight = {
 		limit = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_any_tier_trigger = yes
 		}
 
 		scope:bm_blood_mage_story_scope = {
@@ -116,7 +116,7 @@ bm_refresh_blood_magic_rosters_effect = {
 			every_dynasty_member = {
 				limit = {
 					is_alive = yes
-					has_trait = lifestyle_blood_mage
+					is_blood_mage_any_tier_trigger = yes
 				}
 
 				save_scope_as = bm_dynasty_member

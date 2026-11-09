@@ -8,12 +8,12 @@ Character-bound story cycle powering the "Blood Magic" Situation panel (`window_
 
 | Component | Scope / Target | Content / Members | Update Trigger |
 | --- | --- | --- | --- |
-| **Living Dynasty Roster** | Story variable list | All living dynasty members with `lifestyle_blood_mage` | `bm_refresh_blood_magic_rosters_effect` |
-| **Blood Retinue** | Story variable list (`bm_blood_retinue`) | Sworn knights possessing `lifestyle_blood_mage` trait | Roster refresh effect (`bm_refresh_blood_magic_rosters_effect`) |
-| **Blood Golem Roster** | Story variable list | Courtiers possessing `lifestyle_blood_mage` trait belonging to the Golem house (`bm_house_golem`) | Creation, shaping, death, or roster refresh effect |
+| **Living Dynasty Roster** | Story variable list | All living dynasty members with any Blood Mage tier trait (`is_blood_mage_any_tier_trigger`) | `bm_refresh_blood_magic_rosters_effect` |
+| **Blood Retinue** | Story variable list (`bm_blood_retinue`) | Sworn knights possessing any Blood Mage tier trait (`is_blood_mage_any_tier_trigger`) | Roster refresh effect (`bm_refresh_blood_magic_rosters_effect`) |
+| **Blood Golem Roster** | Story variable list | Courtiers belonging to the Golem house (`bm_house_golem`) | Creation, shaping, death, or roster refresh effect |
 | **Lifeforce Counters** | Story variables | Cached counts of Minor, Major, and Superior Lifeforce modifiers (`bm_lifeforce_minor_stacks`, `bm_lifeforce_major_stacks`, `bm_lifeforce_superior_stacks`) | Roster refresh (strips and recount stacks) |
-| **Custom Status Display** | Customizable localization | Real-time readout of disciplines (mage disciplines), Lifeforce stacks, active Attunement, and inscribed Galdrastafir Blood Rune (`BM_BLOOD_MAGE_STAVE_DISPLAY`) | `BM_BLOOD_MAGE_INFORMATION_STRING` evaluated on view |
-| **Situation Decisions** | Shared decisions (visible in Situation and Decisions tab) | All Blood Mage rituals, manifestations, harvesting, blood hunts, and blood cult conversion actions | Story cycle decision list (`bm_cast_blood_magic_minor_decision`, `bm_cast_blood_magic_major_decision`, `bm_cast_blood_magic_superior_decision`, `bm_manifest_lifeforce_decision`, `bm_attune_lifeforce_decision`, `mass_lifedrain_prisoners_decision`, `seek_power_decision`, `become_blood_cultist_decision`) |
+| **Custom Status Display** | Customizable localization | Real-time readout of tier (`BM_BLOOD_MAGE_TIER_DISPLAY`), disciplines (mage disciplines), Lifeforce stacks, active Attunement, and inscribed Galdrastafir Blood Rune (`BM_BLOOD_MAGE_STAVE_DISPLAY`) | `BM_BLOOD_MAGE_INFORMATION_STRING` evaluated on view |
+| **Situation Decisions** | Shared decisions (visible in Situation and Decisions tab) | All Blood Mage rituals, manifestations, distillation, tier ascension, harvesting, blood hunts, and blood cult conversion actions | Story cycle decision list (`bm_cast_blood_magic_minor_decision`, `bm_cast_blood_magic_major_decision`, `bm_cast_blood_magic_superior_decision`, `bm_manifest_lifeforce_decision`, `bm_attune_lifeforce_decision`, `bm_sanguine_distillation_decision`, `bm_elevate_blood_mage_tier_decision`, `bm_empower_bloodline_decision`, `bm_ritual_spar_decision`, `mass_lifedrain_prisoners_decision`, `seek_power_decision`, `become_blood_cultist_decision`) |
 
 ## Lifecycle & Synchronization
 

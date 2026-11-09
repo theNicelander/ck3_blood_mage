@@ -1,4 +1,24 @@
-﻿BM_BLOOD_MAGIC_DISCIPLINE_GRID = {
+﻿BM_BLOOD_MAGE_TIER_DISPLAY = {
+	type = character
+	text = {
+		trigger = { has_trait = lifestyle_bm_archmage }
+		localization_key = bm_blood_mage_tier_archmage
+	}
+	text = {
+		trigger = { has_trait = lifestyle_blood_mage }
+		localization_key = bm_blood_mage_tier_mage
+	}
+	text = {
+		trigger = { has_trait = lifestyle_bm_acolyte }
+		localization_key = bm_blood_mage_tier_acolyte
+	}
+	text = {
+		fallback = yes
+		localization_key = bm_blood_mage_tier_none
+	}
+}
+
+BM_BLOOD_MAGIC_DISCIPLINE_GRID = {
 	type = character
 	text = {
 		fallback = yes
