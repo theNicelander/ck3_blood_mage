@@ -7,11 +7,8 @@
     is_shown = { has_trait = lifestyle_blood_mage }
     is_valid = {
         has_trait = lifestyle_blood_mage
-        custom_tooltip = {
-            text = mass_lifedrain_prisoners_decision.text
-            any_prisoner = {
-                count >= 1
-            }
+        any_prisoner = {
+            count >= 1
         }
     }
 

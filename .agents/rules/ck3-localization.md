@@ -24,4 +24,5 @@ description: Localization rules: English only, sibling keys, UTF-8 BOM format.
 - **Current Situation & Important Actions**:
   - Never put `($NUM$)` or `(NUM)` in `_combined_group_label` (or any group label). The CK3 engine automatically appends the item count to grouped headers in the UI; adding `$NUM$` fails to interpolate and renders raw `(NUM)`.
   - Group and action descriptions must be actionable and concise (e.g. "Several important figures in your life or realm are currently wounded or afflicted by illness. You can spend Lifeforce to heal them.").
+- **No Redundant Requirement Strings**: Do not create custom localization keys for requirements that CK3 formats natively (e.g., piety levels, modifiers, traits, gold, piety, prisoners). Rely on native engine strings so checks, crosses, and dynamic values are consistent.
 - Keep comments short; quote loc text directly for context.

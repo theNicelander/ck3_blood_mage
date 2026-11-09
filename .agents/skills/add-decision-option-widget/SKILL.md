@@ -20,7 +20,7 @@ References: mod `common/decisions/cast_magic/bm_attune_lifeforce_decision.txt`; 
 	desc = <desc_key>
 	selection_tooltip = <tooltip_key>
 	is_shown = { ... }
-	is_valid_showing_failures_only = { custom_tooltip = { text = <failure_tt> <condition> } }
+	is_valid_showing_failures_only = { <condition> }
 	cost = { piety = 25 }
 
 	widget = {
@@ -35,7 +35,7 @@ References: mod `common/decisions/cast_magic/bm_attune_lifeforce_decision.txt`; 
 			current_description = <option_scope_name>
 			icon = "gfx/interface/icons/<path>.dds"
 			is_shown = { ... }
-			is_valid = { custom_tooltip = { text = <req_tt> <validity_trigger> } }
+			is_valid = { <validity_trigger> }
 			ai_chance = { value = 50 if = { limit = { <condition> } multiply = 0 } }
 		}
 	}
@@ -56,7 +56,7 @@ References: mod `common/decisions/cast_magic/bm_attune_lifeforce_decision.txt`; 
 
 1. Selecting an item sets `scope:<value> = yes` in `effect`; name options by behaviour (`bm_attune_ancient`).
 2. Loc per item: `<option_key>` (button title) and `<option_key>_tooltip` (hover). Concise; "Lifeforce", not "vitality".
-3. Wrap item `is_valid` in `custom_tooltip`; define both `<req_tt>` and `NOT_<req_tt>` loc.
+3. Use native triggers directly in item `is_valid` (e.g. `NOT = { has_character_modifier = ... }`, `piety_level >= 2`). Use `custom_tooltip` ONLY if complex requirements cannot be communicated natively.
 4. Define `<NEXT_STEP_BUTTON_LOC_KEY>` (e.g. `BM_ATTUNE_LIFEFORCE_DECISION_NEXT_STEP_BUTTON`) and `<decision_name>_confirm: "$<KEY>$"`.
 5. `ai_chance` in an `item` is a **script value** (`value`, `if/add`, `multiply`, `min`). Event syntax (`base`, `modifier`) silently fails.
 6. Icons: 45×45 DDS (`gfx/interface/icons/trait_level_tracks/`, `court_position_types/`).

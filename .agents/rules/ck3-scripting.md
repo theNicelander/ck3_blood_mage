@@ -33,5 +33,9 @@ description: Core CK3 script rules, script values, and safe engine patterns (1.2
 12. **Modifier Allowlist Enforcement**:
    - Every modifier used in static modifiers, traits, holy sites, doctrines, buildings, and domiciles must be present in `scripts/modifiers_allowlist.json` (enforced by pre-commit).
    - Never invent modifier names. To add a confirmed vanilla modifier, run `python3 scripts/check_modifiers.py --add <name>` (verifies against vanilla definition formats).
+13. **Native Triggers vs custom_tooltip in Requirements**:
+   - CK3 natively formats standard triggers (`piety_level`, `piety`, `prestige`, `gold`, `has_trait`, `has_character_modifier`, `NOT = { has_character_modifier = ... }`, `has_cultural_tradition`, `is_adult`, `is_imprisoned`, `any_prisoner = { count >= 1 }`, etc.) with clean dynamic values and checkmarks/crosses.
+   - Never wrap standard triggers in `custom_tooltip = { text = ... }`.
+   - `custom_tooltip` should ONLY be used when complex scripted conditions cannot under normal circumstances be communicated natively to the user (e.g. unlocalized character flags, complex multi-target comparative triggers, or scripted progress values like `[GetPlayer.MakeScope.ScriptValue('bm_total_blood_mage_xp')|0]/250`).
 
 Error signatures and fixes: `ck3-error-catalog.md` (read when auditing `error.log`). Mod architecture: `docs-ai/architecture/README.md`.

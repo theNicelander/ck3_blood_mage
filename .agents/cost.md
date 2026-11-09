@@ -3,31 +3,31 @@
 
 | Scope | Tokens |
 | --- | ---: |
-| **Total** | **13,113** |
-| Core | 1,575 |
-| Rules | 6,575 |
-| Skills | 4,963 |
+| **Total** | **13,528** |
+| Core | 1,674 |
+| Rules | 6,948 |
+| Skills | 4,906 |
 
 ## Details per file
 
 | File | Category | Tokens |
 | --- | --- | ---: |
-| `AGENTS.md` | Core | 1,575 |
-| `.agents/rules/ck3-decisions.md` | Rules | 1,373 |
+| `AGENTS.md` | Core | 1,674 |
+| `.agents/rules/ck3-decisions.md` | Rules | 1,451 |
 | `.agents/rules/single-combat.md` | Rules | 1,257 |
-| `.agents/skills/add-interaction-send-options/SKILL.md` | Skills | 1,226 |
+| `.agents/skills/add-interaction-send-options/SKILL.md` | Skills | 1,200 |
+| `.agents/rules/ck3-scripting.md` | Rules | 1,030 |
 | `.agents/rules/ck3-error-catalog.md` | Rules | 970 |
-| `.agents/rules/ck3-scripting.md` | Rules | 838 |
-| `.agents/skills/add-decision-option-widget/SKILL.md` | Skills | 753 |
+| `.agents/rules/ck3-localization.md` | Rules | 814 |
+| `.agents/skills/add-decision-option-widget/SKILL.md` | Skills | 751 |
 | `.agents/skills/manage-pr/SKILL.md` | Skills | 712 |
 | `.agents/rules/ck3-religions.md` | Rules | 705 |
-| `.agents/rules/ck3-localization.md` | Rules | 702 |
 | `.agents/skills/add-blood-magic-decision/SKILL.md` | Skills | 483 |
-| `.agents/skills/add-icon-asset/SKILL.md` | Skills | 404 |
-| `.agents/rules/ck3-traits.md` | Rules | 385 |
+| `.agents/skills/add-icon-asset/SKILL.md` | Skills | 388 |
+| `.agents/rules/ck3-traits.md` | Rules | 376 |
 | `.agents/rules/ck3-events.md` | Rules | 345 |
 | `.agents/skills/document-subsystem/SKILL.md` | Skills | 289 |
-| `.agents/skills/add-trait-track/SKILL.md` | Skills | 270 |
+| `.agents/skills/add-trait-track/SKILL.md` | Skills | 257 |
 | `.agents/skills/add-faith/SKILL.md` | Skills | 242 |
 | `.agents/skills/caveman/SKILL.md` | Skills | 203 |
 | `.agents/skills/update-release-notes/SKILL.md` | Skills | 197 |
