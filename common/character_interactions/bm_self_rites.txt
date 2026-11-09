@@ -99,10 +99,9 @@
 					add_character_modifier = {
 						modifier = lifeforce_modifier_minor
 					}
-					add_trait_xp = {
-						trait = lifestyle_blood_mage
-						track = hematurgy
-						value = 2
+					bm_add_blood_mage_xp_effect = {
+						TRACK = hematurgy
+						XP = 2
 					}
 					hidden_effect = {
 						bm_recount_lifeforce_stacks_effect = yes
@@ -132,10 +131,9 @@
 					add_character_modifier = {
 						modifier = lifeforce_modifier_major
 					}
-					add_trait_xp = {
-						trait = lifestyle_blood_mage
-						track = hematurgy
-						value = 4
+					bm_add_blood_mage_xp_effect = {
+						TRACK = hematurgy
+						XP = 4
 					}
 					hidden_effect = {
 						bm_recount_lifeforce_stacks_effect = yes

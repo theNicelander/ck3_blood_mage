@@ -71,10 +71,9 @@
 				value = 10
 				if = {
 					limit = {
-						has_trait_xp = {
-							trait = lifestyle_blood_mage
-							track = bloodlust
-							value >= 25
+						bm_has_track_xp_any_tier_trigger = {
+							TRACK = bloodlust
+							VALUE = 25
 						}
 					}
 					add = 25
@@ -165,7 +164,7 @@
 	effect = {
 		if = {
 			limit = { scope:bm_carve_vegvisir = yes }
-			debug_log = "BloodMageDecision: bm_carve_galdrastafir_decision (vegvisir) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			debug_log = "BloodMageDecision: bm_carve_galdrastafir_decision (vegvisir) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_carve_galdrastafir_toast
@@ -176,7 +175,7 @@
 		}
 		else_if = {
 			limit = { scope:bm_carve_aegishjalmur = yes }
-			debug_log = "BloodMageDecision: bm_carve_galdrastafir_decision (aegishjalmur) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			debug_log = "BloodMageDecision: bm_carve_galdrastafir_decision (aegishjalmur) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_carve_galdrastafir_toast
@@ -187,7 +186,7 @@
 		}
 		else_if = {
 			limit = { scope:bm_carve_feingur = yes }
-			debug_log = "BloodMageDecision: bm_carve_galdrastafir_decision (feingur) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			debug_log = "BloodMageDecision: bm_carve_galdrastafir_decision (feingur) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_carve_galdrastafir_toast
@@ -198,7 +197,7 @@
 		}
 		else_if = {
 			limit = { scope:bm_carve_nabrokarstafur = yes }
-			debug_log = "BloodMageDecision: bm_carve_galdrastafir_decision (nabrokarstafur) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			debug_log = "BloodMageDecision: bm_carve_galdrastafir_decision (nabrokarstafur) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_carve_galdrastafir_toast
@@ -209,7 +208,7 @@
 		}
 		else_if = {
 			limit = { scope:bm_carve_hulinhjalmur = yes }
-			debug_log = "BloodMageDecision: bm_carve_galdrastafir_decision (hulinhjalmur) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			debug_log = "BloodMageDecision: bm_carve_galdrastafir_decision (hulinhjalmur) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_carve_galdrastafir_toast

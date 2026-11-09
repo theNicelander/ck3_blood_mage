@@ -10,7 +10,7 @@
     }
 
     effect = {
-        debug_log = "BloodMageDecision: convert_from_witch | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+        debug_log = "BloodMageDecision: convert_from_witch | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
         debug_log_scopes = yes
         send_interface_toast = {
             type = event_toast_effect_good

@@ -3,7 +3,7 @@
 	decision_group_type = bm_decision_group
 
 	is_shown = {
-		has_trait = lifestyle_blood_mage
+		is_blood_mage_any_tier_trigger = yes
 	}
 	is_valid = {
 		piety >= 100
@@ -15,7 +15,7 @@
 	}
 
 	effect = {
-		debug_log = "BloodMageDecision: manifest_lifeforce | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+		debug_log = "BloodMageDecision: manifest_lifeforce | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
 		debug_log_scopes = yes
 		open_interaction_window = {
 			interaction = bm_manifest_lifeforce_interaction
