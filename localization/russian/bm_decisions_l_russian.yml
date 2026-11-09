@@ -29,34 +29,40 @@
   bm_self_initiation_decision_desc:0 "Книги и свитки дают лишь обрывочные подсказки, но у меня нет ни наставника, ни подопытного. Единственный путь вперёд — самый опасный: провести ритуал посвящения на себе. Я стану и хирургом, и [Select_CString(ROOT.Char.IsFemale, 'пациенткой', 'пациентом')], и [Select_CString(ROOT.Char.IsFemale, 'чародейкой', 'чародеем')], и жертвой.\n\nМоя кровь станет средством, а разум — полем битвы, где мне предстоит покорить необузданную силу. Здесь нет догм, лишь опасное знание и сила моей воли. Успех даст мне власть над самой сущностью жизни. Неудача потребует платы разумом и телом."
   bm_self_initiation_decision_tooltip:0 "Использовать запретные знания, чтобы провести ритуал посвящения на себе. Без наставника риск огромен. Неудача может разрушить ваш разум или изувечить тело."
 
-  # Become blood mage / blood knight, from blood cultist
+  # Blóðtrú Initiation Decisions
+  bm_blodtru_become_blood_mage_decision: "Блодтру: пробудить магию крови"
+  bm_blodtru_become_blood_mage_decision_confirm: "Пробудить магию крови"
+  bm_blodtru_become_blood_mage_decision_tooltip: "Освятить свою кровь священным обрядом и обрести силу мага крови."
+  bm_blodtru_become_blood_mage_decision_desc: "Преданность священным традициям рода и общение с предками позволяют вам совершить обряды освящения и пробудить в себе магию крови. Для этого не придётся отправляться к далёким гейзерам."
+
+
+  # Become blood mage, from blood cultist
   bm_blood_cultist_become_blood_mage_decision:0 "Культист крови: испытание кровью"
   bm_blood_cultist_become_blood_mage_decision_confirm:0 "Бросить вызов древнему мастеру"
-  bm_blood_cultist_become_blood_mage_decision_tooltip:0 "Отправиться к священным гейзерам Рейкьявика или Цусимы, бросить вызов Эгилю и доказать готовность стать магом или рыцарем крови"
-  bm_blood_cultist_become_blood_mage_decision_desc:0 "Даже преданному последователю веры крови одной веры недостаточно, чтобы владеть искусствами крови или идти путём рыцаря крови. Древние предания рассказывают об Эгиле Скаллагримссоне — берсерке, поэте и мастере рун крови, живущем у кипящих геотермальных гейзеров Рейкьявика и вулканических источников Цусимы. У этих священных вод вы можете вызвать его на поединок учёности, чтобы пробудить магию крови, или на поединок доблести, чтобы стать рыцарем крови."
+  bm_blood_cultist_become_blood_mage_decision_tooltip:0 "Отправиться к священным гейзерам Рейкьявика или Цусимы, бросить вызов Эгилю и доказать, что вы готовы стать магом крови"
+  bm_blood_cultist_become_blood_mage_decision_desc:0 "Одной преданности вере крови недостаточно, чтобы овладеть её искусством. Древние предания рассказывают об Эгиле Скаллагримссоне — берсерке, поэте и мастере рун крови, живущем у кипящих гейзеров Рейкьявика и вулканических источников Цусимы. У этих священных вод вы можете бросить ему вызов, испытать свою учёность и доблесть и пробудить магию крови."
 
 
 
+  manifest_lifeforce_superior_success_tt:0 "Вы успешно воплотили высшую жизненную силу!"
+  manifest_lifeforce_double_major_success_tt:0 "Вы успешно воплотили 2 порции большой жизненной силы!"
   manifest_lifeforce_major_success_tt:0 "Вы успешно воплотили большую жизненную силу"
   manifest_lifeforce_minor_success_tt:0 "Вы успешно воплотили малую жизненную силу"
   manifest_lifeforce_major_failure_tt:0 "Вы испытали сильную отдачу при воплощении жизненной силы"
+  manifest_lifeforce_minor_failure_penalty_tt:0 "Вы испытали слабую отдачу при воплощении жизненной силы"
   manifest_lifeforce_minor_failure_tt:0 "Вам не удалось проявить жизненную силу"
+  manifest_lifeforce_nothing_extra_tt:0 "Вы воплотили исходный запас жизненной силы, но не извлекли из транса дополнительной мощи"
 
-  # Become blood mage / blood knight Decision
+  # Become blood mage Decision
   bm_enhance_blood_ritual_decision:0 "Испытание кровью"
   bm_enhance_blood_ritual_decision_confirm:0 "Бросить вызов древнему мастеру"
   bm_enhance_blood_ritual_decision_tooltip:0 "Отправиться к священным гейзерам Рейкьявика или Цусимы, чтобы вызвать Эгиля на поединок учёности или доблести."
   bm_enhance_blood_ritual_location_requirement_tt:0 "Вы должны находиться в Рейкьявике (Вестисланд) или на Цусиме"
+  NOT_bm_enhance_blood_ritual_location_requirement_tt:0 "Вы должны находиться в Рейкьявике (Вестисланд) или на Цусиме"
   bm_enhance_blood_ritual_decision.success_tt:0 "$bm_geyser_duel.success_tt$"
-  bm_enhance_blood_ritual_decision.blood_knight_success_tt:0 "$bm_geyser_duel.blood_knight_success_tt$"
   bm_enhance_blood_ritual_decision.mental_failure_tt:0 "$bm_geyser_duel.mental_failure_tt$"
   bm_enhance_blood_ritual_decision.physical_failure_tt:0 "$bm_geyser_duel.physical_failure_tt$"
   bm_enhance_blood_ritual_decision.injury_failure_tt:0 "$bm_geyser_duel.injury_failure_tt$"
   bm_enhance_blood_ritual_decision.failure_tt:0 "$bm_geyser_duel.failure_tt$"
 
-  bm_enhance_blood_ritual_decision_desc:0 "Долгие исследования искусств крови привели меня к этому рубежу. Древние предания рассказывают об Эгиле Скаллагримссоне — берсерке, поэте и мастере рун крови, охраняющем геотермальные гейзеры Рейкьявика и священные источники Цусимы. Встретившись с древним мастером, вы можете испытать учёность, чтобы пробудить магию крови, или доблесть, чтобы стать грозным рыцарем крови.\n\nПобеда пробудит вашу кровь; поражение неизбежно обернётся сломанным разумом или искалеченной плотью."
-  manifest_lifeforce_superior_success_tt:0 "Вы успешно воплотили высшую жизненную силу!"
-  manifest_lifeforce_double_major_success_tt:0 "Вы успешно воплотили 2 порции большой жизненной силы!"
-  manifest_lifeforce_minor_failure_penalty_tt:0 "Вы испытали слабую отдачу при воплощении жизненной силы"
-  manifest_lifeforce_nothing_extra_tt:0 "Вы воплотили исходный запас жизненной силы, но не извлекли из транса дополнительной мощи"
-  NOT_bm_enhance_blood_ritual_location_requirement_tt:0 "Вы должны находиться в Рейкьявике (Вестисланд) или на Цусиме"
+  bm_enhance_blood_ritual_decision_desc:0 "Долгие исследования магии крови привели меня к этому рубежу. Древние предания рассказывают об Эгиле Скаллагримссоне — берсерке, поэте и мастере рун крови, охраняющем гейзеры Рейкьявика и священные источники Цусимы. Встретившись с древним мастером, вы можете испытать свою учёность и доблесть в священном поединке крови.\n\nПобеда пробудит вашу кровь. Поражение неизбежно сломит ваш разум или искалечит тело."
