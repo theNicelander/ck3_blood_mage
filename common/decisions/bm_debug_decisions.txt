@@ -4,7 +4,7 @@
     picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
     is_shown = {
         debug_only = yes
-        not = { has_trait = lifestyle_blood_mage }
+        not = { is_blood_mage_any_tier_trigger = yes }
     }
     effect = {
         bm_become_blood_mage_effect = yes
@@ -45,35 +45,108 @@ debug_add_exp_blood_mage_exp = {
     picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
     is_shown = { debug_only = yes }
     effect = {
-        add_trait_xp = {
-            trait = lifestyle_blood_mage
-            track = ancient
-            value = 20
+        if = {
+            limit = { NOT = { is_blood_mage_any_tier_trigger = yes } }
+            bm_become_blood_acolyte_effect = yes
         }
-        add_trait_xp = {
-            trait = lifestyle_blood_mage
-            track = enlightenment
-            value = 20
+        if = {
+            limit = { has_trait = lifestyle_bm_acolyte }
+            add_trait_xp = {
+                trait = lifestyle_bm_acolyte
+                track = ancient
+                value = 20
+            }
+            add_trait_xp = {
+                trait = lifestyle_bm_acolyte
+                track = enlightenment
+                value = 20
+            }
+            add_trait_xp = {
+                trait = lifestyle_bm_acolyte
+                track = bloodline
+                value = 20
+            }
+            add_trait_xp = {
+                trait = lifestyle_bm_acolyte
+                track = benediction
+                value = 20
+            }
+            add_trait_xp = {
+                trait = lifestyle_bm_acolyte
+                track = hematurgy
+                value = 20
+            }
+            add_trait_xp = {
+                trait = lifestyle_bm_acolyte
+                track = bloodlust
+                value = 20
+            }
         }
-        add_trait_xp = {
-            trait = lifestyle_blood_mage
-            track = bloodline
-            value = 20
+        if = {
+            limit = { has_trait = lifestyle_blood_mage }
+            add_trait_xp = {
+                trait = lifestyle_blood_mage
+                track = ancient
+                value = 20
+            }
+            add_trait_xp = {
+                trait = lifestyle_blood_mage
+                track = enlightenment
+                value = 20
+            }
+            add_trait_xp = {
+                trait = lifestyle_blood_mage
+                track = bloodline
+                value = 20
+            }
+            add_trait_xp = {
+                trait = lifestyle_blood_mage
+                track = benediction
+                value = 20
+            }
+            add_trait_xp = {
+                trait = lifestyle_blood_mage
+                track = hematurgy
+                value = 20
+            }
+            add_trait_xp = {
+                trait = lifestyle_blood_mage
+                track = bloodlust
+                value = 20
+            }
         }
-        add_trait_xp = {
-            trait = lifestyle_blood_mage
-            track = benediction
-            value = 20
-        }
-        add_trait_xp = {
-            trait = lifestyle_blood_mage
-            track = hematurgy
-            value = 20
-        }
-        add_trait_xp = {
-            trait = lifestyle_blood_mage
-            track = bloodlust
-            value = 20
+        if = {
+            limit = { has_trait = lifestyle_bm_archmage }
+            add_trait_xp = {
+                trait = lifestyle_bm_archmage
+                track = ancient
+                value = 20
+            }
+            add_trait_xp = {
+                trait = lifestyle_bm_archmage
+                track = enlightenment
+                value = 20
+            }
+            add_trait_xp = {
+                trait = lifestyle_bm_archmage
+                track = bloodline
+                value = 20
+            }
+            add_trait_xp = {
+                trait = lifestyle_bm_archmage
+                track = benediction
+                value = 20
+            }
+            add_trait_xp = {
+                trait = lifestyle_bm_archmage
+                track = hematurgy
+                value = 20
+            }
+            add_trait_xp = {
+                trait = lifestyle_bm_archmage
+                track = bloodlust
+                value = 20
+            }
         }
     }
 }
