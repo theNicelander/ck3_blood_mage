@@ -14,7 +14,7 @@
 	}
 
 	is_valid = {
-		bm_has_track_xp_any_tier_trigger = { TRACK = ancient VALUE >= 100 }
+		bm_has_track_xp_any_tier_trigger = { TRACK = ancient VALUE = 100 }
 
 		trigger_if = {
 			limit = { has_trait = lifestyle_bm_acolyte }
