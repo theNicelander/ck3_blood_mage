@@ -19,7 +19,11 @@
 		trigger_if = {
 			limit = { has_trait = lifestyle_bm_acolyte }
 			piety_level >= 2
-			bm_has_blood_rune_trigger = yes
+			OR = {
+					has_character_modifier = minor_blood_rune_modifier
+					has_character_modifier = major_blood_rune_modifier
+					has_character_modifier = superior_blood_rune_modifier
+				}
 			has_character_modifier = lifeforce_modifier_major
 			piety >= 250
 		}
