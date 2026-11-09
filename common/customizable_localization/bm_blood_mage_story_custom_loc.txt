@@ -1,10 +1,6 @@
 ﻿BM_BLOOD_MAGIC_DISCIPLINE_GRID = {
 	type = character
 	text = {
-		trigger = { has_trait = lifestyle_blood_knight }
-		localization_key = BM_BLOOD_KNIGHT_DISCIPLINE_GRID
-	}
-	text = {
 		fallback = yes
 		localization_key = BM_BLOOD_MAGE_DISCIPLINE_GRID
 	}
@@ -41,12 +37,8 @@ BM_BLOOD_MAGE_ATTUNEMENT_DISPLAY = {
 		localization_key = bm_blood_mage_attunement_hematurgy
 	}
 	text = {
-		trigger = { has_character_modifier = vanguard_attuned }
-		localization_key = bm_blood_mage_attunement_vanguard
-	}
-	text = {
-		trigger = { has_character_modifier = slaughter_attuned }
-		localization_key = bm_blood_mage_attunement_slaughter
+		trigger = { has_character_modifier = bloodlust_attuned }
+		localization_key = bm_blood_mage_attunement_bloodlust
 	}
 	text = {
 		fallback = yes

@@ -52,6 +52,7 @@ bm_is_valid_positive_magic_target_trigger = {
 		has_relation_best_friend = $ACTOR$
 		is_knight_of = $ACTOR$
 		is_councillor_of = $ACTOR$
+		employer ?= $ACTOR$
 		has_relation_guardian = $ACTOR$
 		has_relation_ward = $ACTOR$
 		house ?= house:bm_house_golem

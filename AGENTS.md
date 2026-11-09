@@ -5,7 +5,7 @@ CK3 script fails silently. Follow patterns in this repo and vanilla 1.20 (`/User
 ## What this is
 
 - CK3 mod for **1.20.\***. Pure script, localization, gfx. No build step.
-- Traits: `lifestyle_blood_mage` (tracks: ancient, enlightenment, bloodline, benediction, hematurgy), `lifestyle_blood_power` (dynasty, fury, mastery, presence, prosperity, shadows), `lifestyle_blood_knight` (slaughter, vanguard, resilience).
+- Traits: `lifestyle_blood_mage` (tracks: ancient, enlightenment, bloodline, benediction, hematurgy, bloodlust), `lifestyle_blood_power` (dynasty, warband, mastery, presence, prosperity, shadows).
 - Features: Lifeforce resource, spell decisions/interactions, blood golems, Blood Retinue, Blóðtrú religions, Blood Runes & Temples, game rules.
 - `scripts/` holds validation and Steam Workshop helpers. Never touch `.env`, credentials or `*.vdf`.
 
@@ -17,7 +17,7 @@ CK3 script fails silently. Follow patterns in this repo and vanilla 1.20 (`/User
 - **Nothing hidden, often unavailable**: keep spells, rites, options visible and greyed out (`show_as_unavailable`) with their requirements. Hide only when the prerequisite stage is not reached or the option is completed/superseded.
 - **Commit on task completion**: parallel agents run concurrently. Every task or implementation ends with commit and push (stage only your files). Never leave finished work uncommitted.
 - **Clarify before building**: ask follow-up questions on rough ideas; state assumptions. Plans end with commit and push.
-- **Planner model**: if the active model is Gemini Argon, never edit files; only investigate, ask, and plan.
+- **Planner model**: if using or selected Gemini Argon, prompt user before starting any work: "You are using Argon, do you want to continue Yes/No". Never edit files on Argon; only investigate, ask, and plan.
 - **Suggest skills for investigated systems**: if a game system was not well understood and had to be investigated in vanilla, suggest creating a skill for it (`.agents/skills/`).
 - **Single source of truth**: every rule, guideline, or procedure lives in exactly one place. Link or point; never duplicate text across files.
 - **Minimal instructions & token saving**: write tersely; AI skills use caveman style. Cut fluff, filler, and verbose explanations in docs, rules, and prompts. Keep only minimal text needed to execute.

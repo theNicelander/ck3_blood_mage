@@ -12,12 +12,28 @@
   trait_track_benediction: "Benediction"
   trait_track_hematurgy: "Hematurgy"
   trait_track_ancient: "Ancient"
+  trait_track_bloodlust: "Bloodlust"
+
+  lifestyle_blood_mage_enlightenment: "Enlightenment"
+  lifestyle_blood_mage_bloodline: "Bloodline"
+  lifestyle_blood_mage_benediction: "Benediction"
+  lifestyle_blood_mage_hematurgy: "Hematurgy"
+  lifestyle_blood_mage_ancient: "Ancient"
+  lifestyle_blood_mage_bloodlust: "Bloodlust"
+
+  lifestyle_blood_mage_ancient_desc: "$trait_track_ancient_desc$"
+  lifestyle_blood_mage_enlightenment_desc: "$trait_track_enlightenment_desc$"
+  lifestyle_blood_mage_bloodline_desc: "$trait_track_bloodline_desc$"
+  lifestyle_blood_mage_benediction_desc: "$trait_track_benediction_desc$"
+  lifestyle_blood_mage_hematurgy_desc: "$trait_track_hematurgy_desc$"
+  lifestyle_blood_mage_bloodlust_desc: "$trait_track_bloodlust_desc$"
 
   trait_track_ancient_desc: "#help You gain experience in this track yearly.#!\n\nTime bows before those who command the essence of life itself, steadily increasing monthly legitimacy and unlocking an additional personal tenet slot every 20 XP."
   trait_track_enlightenment_desc: "#help You gain experience in this track by casting blood magic on yourself.#!\n\nThe path to mastery begins with the transformation of self."
   trait_track_bloodline_desc: "#help You gain experience in this track by enhancing your dynasty. Yearly chance to gain experience, based on the number of Blood Mage modifiers the dynasty has.#!\n\nBlood calls to blood across generations. Masters of the bloodline fortify their dynasty, expand their domain, and construct realms of enduring wealth and grandeur."
   trait_track_benediction_desc: "#help You gain experience in this track by healing ailments and granting powers to others.#!\n\nA blood mage's greatest gift is life itself, bestowed through blood sacrifice."
   trait_track_hematurgy_desc: "#help You gain experience in this track by draining lifeforce, casting blood curses, and harvesting traits from others.#!\n\nMasters of forbidden hemomancy manipulate the vital humors of others, speeding hostile schemes, ruling through terrifying dread, and striking down rivals from afar."
+  trait_track_bloodlust_desc: "#help You gain experience in this track by fighting in battles, winning single combat duels, and competing in tournaments.#!\n\nChanneling Lifeforce into martial supremacy, commanding devastating battlefield advantage, inspiring dread, and honing deadly prowess."
 
 
   # Blood Power
@@ -59,33 +75,4 @@
   bm_yearly_attunement_bloodline_toast: "Your Bloodline attunement granted you experience"
   bm_yearly_attunement_benediction_toast: "Your Benediction attunement granted you experience"
   bm_yearly_attunement_hematurgy_toast: "Your Hematurgy attunement granted you experience"
-  bm_yearly_attunement_vanguard_toast: "Your Vanguard attunement granted you experience"
-  bm_yearly_attunement_slaughter_toast: "Your Slaughter attunement granted you experience"
-  bm_blood_knight_ambient_lifeforce_toast: "Ambient vitality condenses within your veins, granting Minor Lifeforce"
-
-  # Blood Knight
-  trait_lifestyle_blood_knight: "Blood Knight"
-  trait_lifestyle_blood_knight_desc: "This warrior uses blood magic powered through combat, to enhance their martial prowess and extend their life through the use of lifeforce."
-  trait_lifestyle_blood_knight_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] has been infused with supernatural lifeforce, binding their body to martial sorcery as a Blood Knight."
-
-  lifestyle_blood_knight_vanguard: "Vanguard"
-  lifestyle_blood_knight_slaughter: "Slaughter"
-  lifestyle_blood_knight_enlightenment: "Enlightenment"
-  lifestyle_blood_knight_ancient: "Ancient"
-  lifestyle_blood_knight_benediction: "Benediction"
-  lifestyle_blood_knight_resilience: "Resilience"
-
-  lifestyle_blood_knight_vanguard_desc: "#help You gain experience in this track by fighting and winning battles in an army.#!\n\nMastery of warfare and front-line leadership, developing strategic brilliance and advantage."
-  lifestyle_blood_knight_slaughter_desc: "#help You gain experience in this track by winning single combat duels and tournament contests.#!\n\nDeadly martial instinct in single combat, honing personal prowess and renown."
-  lifestyle_blood_knight_enlightenment_desc: "#help You gain experience in this track by casting blood magic on yourself and manifesting lifeforce.#!\n\nThe path to mastery begins with the transformation of self."
-  lifestyle_blood_knight_ancient_desc: "#help You gain experience in this track yearly.#!\n\nTime bows before those who command the essence of life itself, unlocking an additional personal tenet slot every 20 XP."
-  lifestyle_blood_knight_benediction_desc: "#help You gain experience in this track by healing ailments and purging physical impurities.#!\n\nA warrior's gift of vitality, purging flaws and ailments through blood."
-  lifestyle_blood_knight_resilience_desc: "#help You gain experience in this track passively each year and by surviving lost battles.#!\n\nSomatic adaptation overcoming mortal fragility, extending longevity, health, and disease resistance."
-
-  trait_track_vanguard: "Vanguard"
-  trait_track_slaughter: "Slaughter"
-  trait_track_resilience: "Resilience"
-
-  trait_track_vanguard_desc: "#help You gain experience in this track by fighting and winning battles in an army.#!\n\nMastery of warfare and front-line leadership, developing strategic brilliance and advantage."
-  trait_track_slaughter_desc: "#help You gain experience in this track by winning single combat duels and tournament contests.#!\n\nDeadly martial instinct in single combat, honing personal prowess and renown."
-  trait_track_resilience_desc: "#help You gain experience in this track passively each year and by surviving lost battles.#!\n\nSomatic adaptation overcoming mortal fragility, extending longevity, health, and disease resistance."
+  bm_yearly_attunement_bloodlust_toast: "Your Bloodlust attunement granted you experience"

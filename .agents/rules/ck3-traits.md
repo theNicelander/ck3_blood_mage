@@ -5,7 +5,7 @@ description: Lifestyle traits, tracks, XP progression, and inheritance mechanics
 
 # Traits
 
-Reference: `common/traits/bm_blood_mage_trait.txt`, `bm_blood_knight_trait.txt`, `bm_blood_power_trait.txt`.
+Reference: `common/traits/bm_blood_mage_trait.txt`, `bm_blood_power_trait.txt`.
 
 - **Tracks**: Defined via `tracks = { <track> = { <xp> = { <modifiers> } } }`.
   - **Additive Cumulative Stacking**: In CK3 trait tracks, **all reached thresholds add their modifiers together**. Reaching higher XP adds that tier's modifiers ON TOP OF all previous tiers (e.g. reaching 100 XP grants the sum of bonuses from 10, 30, 50, 70, and 100 XP).

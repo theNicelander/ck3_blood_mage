@@ -1,13 +1,13 @@
 # Blood Mage Track XP: Mage (`lifestyle_blood_mage`)
 
-Mage-only tracks `bloodline` and `hematurgy`. Shared tracks (`ancient`, `enlightenment`, `benediction`), attunement pulses, rules: [hub](blood-mage-track-xp.md).
+Mage tracks `bloodline`, `hematurgy`, and `bloodlust`. Shared tracks (`ancient`, `enlightenment`, `benediction`), attunement pulses, rules: [hub](blood-mage-track-xp.md).
 
 ## `bloodline`
 
 | XP | Cost | Action | Source | Req | CD |
 | --- | --- | --- | --- | --- | --- |
-| +1 / +2 (+2 if child/kin) | 100 Piety + Major | Grant Blood Magic (Major) | interaction `grant_blood_magic_interaction` | Target non-mage, non-knight | None |
-| +1 | 250 Piety + Minor | Grant Blood Magic (Minor) | `grant_blood_magic_interaction` | Target non-mage, non-knight | None |
+| +1 / +2 (+2 if child/kin) | 100 Piety + Major | Grant Blood Magic (Major) | interaction `grant_blood_magic_interaction` | Target non-mage | None |
+| +1 | 250 Piety + Minor | Grant Blood Magic (Minor) | `grant_blood_magic_interaction` | Target non-mage | None |
 | +2 (+4 if child inherits; doubled to +4/+8 by Superior Feingur) | None; Grants +1 Major | Childbirth Milestone | on-action `on_birth_child` -> `bm_on_birth_bloodline_xp` | Parent is blood mage | Per birth |
 | +1 | 35 Piety + Minor (`lifeforce_modifier_minor`) | Bless Kin's Blood | interaction `bm_bless_bloodline_interaction` | Target child/dynasty kin | 10 years (target buff) |
 | +1 | 50 Piety + Minor | Bless Dynasty Bloodline (Feingur) | interaction `bm_feingur_bless_dynasty_interaction` | Superior Feingur stave; child or dynasty kin | Permanent |
@@ -26,7 +26,21 @@ Mage-only tracks `bloodline` and `hematurgy`. Shared tracks (`ancient`, `enlight
 | +2 | 50 Piety (`lifedrain_piety_cost_major`); Grants Major (executes victim) | Lifedrain Prisoner | interaction `lifedrain_prisoner_event_interaction` | Imprisoned target | None |
 | +1 | 25 Piety (`lifedrain_piety_cost_minor`); Grants Minor | Lifedrain Courtier | interaction `lifedrain_courtier_event_interaction` | Courtier/prisoner not recently drained | 3 months |
 | +3 | 75 Piety | Siphon Stored Lifeforce | interaction `bm_siphon_lifeforce_reserves_interaction` | Target possesses stored Lifeforce | 1 year |
-| +5 (crit), +3 (win) | 150 Piety + Minor | Contest of the Red Art | interaction `bm_occult_mage_duel_interaction` | Target is Blood Mage or Blood Knight | 3 years |
+| +5 (crit), +3 (win) | 150 Piety + Minor | Contest of the Red Art | interaction `bm_occult_mage_duel_interaction` | Target is Blood Mage | 3 years |
 | +2 (win), +4 (crit), +1 (fail) | 50 Piety + Minor (crit siphons Minor back) | Cast Blood Curse | interaction `bm_curse_blood_interaction` | >= 10 Hematurgy XP | 1 year |
 | +2 (on duel win) | 100–325 Piety + Major (executes victim) | Drain Prisoner Trait (Lvl 1–5) | interaction + event `bm_trait_drain.001` | Prisoner with congenital trait | 60 days |
 | +1 (+2 with Superior Hulinhjálmur) | None (guaranteed) | Hematurgy Attunement Pulse | `blood_mage_yearly_events.001` | Has `hematurgy_attuned` | 1 year |
+
+## `bloodlust`
+
+| XP | Cost | Action | Source | Req | CD |
+| --- | --- | --- | --- | --- | --- |
+| +1 to +3 | None | Battlefield Victory (Commander) | on-action `bm_combat_on_actions.txt` / `bm_combat_effects.txt` | Won battle as commander | Per battle |
+| +1 to +2 | None | Battlefield Victory | on-action `bm_combat_on_actions.txt` / `bm_combat_effects.txt` | Won battle as commander or knight | Per battle |
+| +1 | None | Battlefield Defeat | on-action `bm_combat_on_actions.txt` / `bm_combat_effects.txt` | Survived lost battle | Per battle |
+| +3 | None | Single Combat Fatality (Duel Kill) | on-action `bm_duel_on_actions.txt` / `bm_combat_on_character_death_effect` | Slew opponent in single combat | Per fatal duel |
+| +2 | None | Tournament Completion | on-action `bm_duel_on_actions.txt` | Completed contest | Per contest |
+| +2 (win) / +1 (loss) | None | Ritual Sparring | decision & event `bm_ritual_spar_decision.txt` | Sworn knight opponent | 1 year |
+| +2 (win) | None | Siphoning Duel | interaction `bm_siphoning_duel_interaction` | Target Blood Mage | 1 year |
+| +5 | 0 Piety (recipient); caster consumes Lifeforce | Empower Blood Mage (Recipient) | interaction `empower_blood_mage_interaction` | Fellow Blood Mage empowers target | None |
+| +1 (+2 with Superior Hulinhjálmur) | None (guaranteed) | Bloodlust Attunement Pulse | `blood_mage_yearly_events.001` | Has `bloodlust_attuned` | 1 year |

@@ -13,17 +13,11 @@
 
     is_shown = {
         scope:actor = {
-            OR = {
-                has_trait = lifestyle_blood_mage
-                has_trait = lifestyle_blood_knight
-            }
+            has_trait = lifestyle_blood_mage
         }
         scope:recipient = {
             NOT = { this = scope:actor }
-            OR = {
-                has_trait = lifestyle_blood_mage
-                has_trait = lifestyle_blood_knight
-            }
+            has_trait = lifestyle_blood_mage
             trigger_if = {
                 limit = {
                     NOR = {
@@ -59,7 +53,7 @@
     }
 
     on_accept = {
-        debug_log = "BloodMageInteraction: bm_occult_mage_duel | Actor: [actor.GetShortUINameNoTooltip] -> Recipient: [recipient.GetShortUINameNoTooltip]"
+        debug_log = "BloodMageInteraction: bm_occult_mage_duel | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
         scope:actor = {
             duel = {
                 skills = { learning prowess }
@@ -87,14 +81,7 @@
 
                         blood_magic_used_minor = yes
                         add_character_modifier = { modifier = lifeforce_modifier_major }
-                        if = {
-                            limit = { has_trait = lifestyle_blood_mage }
-                            add_xp_bm_dynamic = { TRACK = hematurgy XP = 5 }
-                        }
-                        if = {
-                            limit = { has_trait = lifestyle_blood_knight }
-                            add_blood_knight_xp = { TRACK = slaughter XP = 5 }
-                        }
+                        add_xp_bm_dynamic = { TRACK = hematurgy XP = 5 }
                         scope:recipient = {
                             add_character_modifier = {
                                 modifier = bm_blood_curse_modifier
@@ -144,14 +131,7 @@
                         right_icon = scope:recipient
 
                         blood_magic_used_minor = yes
-                        if = {
-                            limit = { has_trait = lifestyle_blood_mage }
-                            add_xp_bm_dynamic = { TRACK = hematurgy XP = 3 }
-                        }
-                        if = {
-                            limit = { has_trait = lifestyle_blood_knight }
-                            add_blood_knight_xp = { TRACK = slaughter XP = 3 }
-                        }
+                        add_xp_bm_dynamic = { TRACK = hematurgy XP = 3 }
                         scope:recipient = {
                             add_character_modifier = {
                                 modifier = lifeforce_modifier_negative_major
@@ -225,7 +205,6 @@
     }
     ai_will_do = {
         base = 10
-        ai_willingness_to_use_hostile_magic = yes
         modifier = {
             has_relation_rival = scope:recipient
             add = 40
@@ -234,5 +213,7 @@
             has_relation_nemesis = scope:recipient
             add = 60
         }
+        # Evaluated last so factor = 0 protective vetoes cannot be overridden by rivalry
+        ai_willingness_to_use_hostile_magic = yes
     }
 }

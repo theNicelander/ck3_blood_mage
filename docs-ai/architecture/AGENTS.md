@@ -12,7 +12,7 @@ One doc per subsystem of the mod. `README.md` is the index (doc → source path 
 
 ## Doc structure
 
-1. **Summary**: 1–3 lines on what it is and how it ties to Lifeforce, Devotion, tracks, Blood Mage vs Blood Knight.
+1. **Summary**: 1–3 lines on what it is and how it ties to Lifeforce, Devotion, tracks, bloodlust track.
 2. **Spec**: tables and short bullets.
 3. **Where**: concept → file paths.
 4. **Gotchas / not verified**: only when real.

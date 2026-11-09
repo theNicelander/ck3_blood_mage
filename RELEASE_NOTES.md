@@ -4,15 +4,16 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 
 ---
 
-## Blood Mage & Blood Knight
+## Blood Mage & Bloodlust
 
-- Two permanent, mutually exclusive lifestyle paths chosen on awakening: **Blood Mage** (realm, dynasty, dread, domain) and **Blood Knight** (prowess, combat advantage, knights, army speed).
-- Awaken via bloodline, occult mentorship, witch conversion, Blood Knight mentorship (also from imprisoned Blood Knights), or by duelling the hermit **Egill Skallagrímsson** in Iceland or Tsushima.
-- Shared Devotion tracks (Ancient, Enlightenment, Benediction) scale to 100 XP: Ancient adds +0.1 monthly legitimacy per 10 XP (+1.0/mo = +12/yr at 100 XP) alongside +1 personal tenet slot per 20 XP.
+- Unified single lifestyle path: **Blood Mage** featuring six distinct progression tracks: Ancient, Enlightenment, Benediction, Bloodline, Hematurgy, and the new **Bloodlust** track (prowess, martial, advantage, knight limit, dread, and duel harvesting).
+- Awaken via bloodline, occult mentorship, witch conversion, fellow Blood Mage mentorship, or by duelling the hermit **Egill Skallagrímsson** in Iceland or Tsushima.
+- All Blood Mages are recognized as **Worthy Commanders** (`ignores_gender_army_rules = yes`), allowing them to lead armies into battle regardless of faith or cultural gender rules.
+- Devotion tracks (Ancient, Enlightenment, Benediction) scale to 100 XP: Ancient adds +0.1 monthly legitimacy per 10 XP (+1.0/mo = +12/yr at 100 XP) alongside +1 personal tenet slot per 20 XP.
 - 50 XP milestones scale with Devotion Level; 100 XP capstones give +50% Devotion Impact, Age Prowess Lock and +2.0 skill per Devotion level.
-- Blood Mage tracks Bloodline and Hematurgy: 10-step cadence (universal monthly income mult, trait inheritance, dynasty prestige, hostile scheme power and defence).
-- Blood Knight tracks Vanguard (army speed, advantage, supply, prowess) and Slaughter (prowess, knight limit and effectiveness).
-- Blood Knights can initiate spouse, children and kin (+5 Vanguard XP for dynasty), and empower family even if landed or outside their court.
+- Bloodline and Hematurgy: 10-step cadence (universal monthly income mult, trait inheritance, dynasty prestige, hostile scheme power and defence).
+- **Bloodlust**: 10-step cadence granting scaling Prowess (+30 total), Martial (+4 total), Commander Advantage (+5), Knight Limit (+5), Dread Baseline (+15), and scaling Martial & Prowess per Piety Level (+1.5 Martial / +2 Prowess at 100 XP capstone), culminating in an Age Prowess Lock.
+- XP sources unified: battlefield victories (+1 to +3), combat survival (+1), lethal single combat (+3), and tournaments (+2) feed Bloodlust directly.
 - **Blood Power** secondary trait with six mirrored tracks (Dynasty, Warband, Mastery, Presence, Prosperity, Shadows) structured into five milestone tiers (10, 30, 50, 70, 100 XP) with scaling monthly Piety (+0.1 to +1.0), flat monthly lifestyle XP (+5 to +50/mo), shared 50 & 100 XP milestone bonuses (+10% monthly Piety mult, +5 life expectancy, +0.25 health, +0.02 monthly Piety per knight), and a tight suite of 3–4 high-impact personal modifiers delivering 2x–3x the power of House Covenants (including scaling legitimacy mult, stress composure, universal income mult, and inbreeding immunity), culminating in an Age Prowess Lock.
 - Track XP sources rebalanced: healing grants Benediction, family rites and childbirth grant Ancient/Benediction, congenital manifestation grants XP by attribute.
 - Regiments: **Blood Berserkers** (heavy shock infantry, Devotion 2+) and **Blood-Bound Behemoths** (siege-capable monsters, Devotion 4+), Piety-maintained.
@@ -22,11 +23,11 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 
 - Three tiers: **Minor** (health, disease resistance), **Major** (lifespan, body rituals), **Superior** (Blood Golems, capstone runes).
 - **Manifest Lifeforce**: four Piety tiers (250–1,500), no cooldown.
-- Blood Knights harvest Lifeforce from battles (by battle size) and lethal single combat.
-- Blood Mage and Blood Knight mothers yield Major Lifeforce on safe childbirth.
+- Blood Mages harvest Lifeforce from battles and lethal single combat duels.
+- Blood Mage mothers yield Major Lifeforce on safe childbirth.
 - **Bleed Own Veins**: self-interaction (1-year cooldown) for Minor or Major Lifeforce at the cost of wounds, stress and drain.
 - **Siphon Stored Lifeforce** takes Minor/Major/Superior reserves from other characters via a contest.
-- **Contest of the Red Art**: Learning + Prowess duel between Blood Mages and Blood Knights.
+- **Contest of the Red Art**: Learning + Prowess duel between fellow Blood Mages.
 - **House Head Blood Tithe** levies Lifeforce from adult kin.
 
 ## Spellcasting & Decisions
@@ -46,13 +47,13 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 
 ## Blood Hunt
 
-- *Seek Power* became **Go on a Blood Hunt**, open to Blood Mages and Blood Knights; grayed out while travelling, in an activity, imprisoned or incapable.
+- *Seek Power* became **Go on a Blood Hunt**, open to Blood Mages; grayed out while travelling, in an activity, imprisoned or incapable.
 - Cooldown: 1 year (halved to 6 months with Superior Vegvísir).
 - Encounters scale with Prowess: Beast's Lair, Blood in the Embers, Edge of the Woods, Crimson Rite, Stag's Last Stand, Blades on the Lonely Road, Cairn of Forgotten Carnage.
 - Roughly 60% success at skill 20, 70% at 25, 80% at 30, 95% at 40+; peaceful options exist for most encounters.
 - Road encounter can include a sworn escort champion to duel (Prowess 25+).
 
-## Blood Knight Rites
+## Blood Rites
 
 - **Bless Blood**: consecrate knights and kin (+2 Martial, +4 Prowess, +25% Knight Effectiveness for 10 years).
 - **Crimson Sparring Ring** (yearly, 1 Minor Lifeforce): practice duels; winner gains 1 Major Lifeforce, both gain Blademaster XP.
@@ -82,7 +83,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - Ancestor Worship tenet earns piety, renown and defence; Mendicant Preaching replaces Ritual Celebrations.
 - All 58 Blóðtrú, 27 Ketsudō and 32 Xuédào holy sites are now Eminent Holy Sites (up to 80 active), granting smaller stacked global faith bonuses alongside local county holder modifiers.
 - Reformation repair decision resolves holy-site locks when creating custom faiths.
-- Blood Mage and Blood Knight are no longer religion virtues.
+- Blood Mage is no longer a religion virtue.
 
 ## Buildings
 
@@ -91,29 +92,42 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 
 ## Interface & Interactions
 
-- **Blood Magic Situation panel**: discipline, track XP, Lifeforce, stave, and rosters of dynasty Blood Mages, Blood Knights and Golems.
+- **Blood Magic Situation panel**: discipline, track XP, Lifeforce, stave, and rosters of dynasty Blood Mages and Golems.
 - All mod interactions grouped in a "Blood Magic" context-menu section; outcomes shown in interface toasts.
-- Consolidated positive character interactions into unified modal window **Blood Blessing** (Empower Blood Mage/Knight, Grant Lifeforce, Bless Blood, Annoint Heir, Consecrate Union, Inscribe Blood Rune).
+- Consolidated positive character interactions into unified modal window **Blood Blessing** (Empower Blood Mage, Grant Lifeforce, Bless Blood, Annoint Heir, Consecrate Union, Inscribe Blood Rune).
 - Consolidated hostile lifeforce extraction into unified modal window **Blood Drain** (Major Life drain, Minor Life drain, Drain Stored Lifeforce, Demand Blood Tithe).
 - **Blood Healing**: interaction is always clickable when an affliction is present to inspect requirements directly in the event; Deadly afflictions (leprosy, cancer, plague) now require Superior Lifeforce and 100 Piety (+3 Benediction XP).
-- Current Situation alerts when a kinsperson or courtier can be healed, when dungeon prisoners can be lifedrained, or when an eligible 20+ Prowess prisoner or fallen champion can be culled.
+- Current Situation healing alert (`bm_action_can_heal`) monitors councillors, immediate and close family, court positions, and companions; styled green (`Can Heal`) when the corresponding Lifeforce is held, and gray (`Needs Lifeforce`) under unimportant actions when Lifeforce is lacking. Alerts also notify when prisoners can be lifedrained or 20+ Prowess champions culled.
 - Cull Fallen Champion requires 20+ Prowess across all targets (captives and fallen followers).
 - **Purge Stress Vices** burns away all 11 coping traits.
 - Hulinhjálmur conceals the caster from discovery penalties on failed siphons and curses.
 
 ## Narrative Events
 
-Annual pulse (3-year cooldown) for player Blood Mages and Blood Knights:
+Annual pulse (3-year cooldown) for player Blood Mages:
 - **A Drop on the Lips**: bless a lover or spouse, or awaken them.
 - **The Fever of Awakening**: guide or hasten a child's (6–15) awakening.
 - **The Red Banquet After Battle**: feast, claim the harvest, or consecrate the field.
 - **Echoes in the Clay**: shield an heir, grant Blademaster, or siphon the golem.
 - **The Whispering Sanctum**: drain, bribe or disperse an intruding courtier.
 
+## Icelandic Culture & Traditions
+
+- Playable **Icelandic** culture (`bm_icelandic`) featuring equal martial custom, North Germanic heritage, communal ethos, and 5 starting traditions.
+- Custom tradition **Alþingi Commonwealth** (`bm_tradition_althingi`) replaces Ting-Meet:
+  - Unlocks Scandinavian Elective and Hólmganga (Trial by Combat).
+  - Grants +0.10 monthly development growth to the capital, +25% cultural head fascination, +0.05 county development growth, +25% county development growth factor, and +0.10 monthly county control growth.
+- Custom tradition **Verbúðir** (`bm_tradition_verbudir`) replaces Maritime Mercantilism:
+  - Accessible to Tribal and Feudal cultures from 867; allows Tradeport construction 1 era earlier and enables Tradeports in Tribal holdings.
+  - Integrates with Tradeport harbor tiers 1–8: grants stationed Men-at-Arms toughness, scaling County Control Growth, Levies, and +2% Cultural Fascination Progress per tier alongside Avaricious bonuses.
+  - Grants -75% embarkation gold cost, reduced sea and coastal danger, +20% county taxes, +20% levies, +25% supply limit, and +0.05 monthly control growth.
+- Curated Icelandic saga name list with epenthetic `-ur` patronymics and 31 historical Sturlungaöld, heroic, and Tolkien-adapted houses.
+- Modular game-start conversion of `d_iceland` gated by the `bm_icelandic_culture` game rule.
+
 ## Visuals & Game Rules
 
 - Eyes progress from red to crimson, pale and white; hair bleaches to white.
-- Rules: Appearance (Off / Gradual / On), Blood Mage and Blood Knight Prevalence, Blóðtrú Availability, Historical Starting Counties, Initiation Faith Requirements, Lore Integration (vanilla vs AGOT).
+- Rules: Appearance (Off / Gradual / On), Blood Mage Prevalence, Blóðtrú Availability, Historical Starting Counties, Initiation Faith Requirements, Lore Integration (vanilla vs AGOT).
 - Fully modular (`bm_` prefix), no vanilla overwrites; compatible with total conversions.
 
 ## Bugfixes
@@ -124,13 +138,16 @@ Annual pulse (3-year cooldown) for player Blood Mages and Blood Knights:
 - Fixed tooltip scoping errors in Consecrate Union and Siphon Stored Lifeforce.
 - Fixed golem rite option visibility and heirless-character crashes in rune interactions.
 - Empower Dynasty tooltip no longer claims a house loses an old modifier.
-- Removed passive yearly Enlightenment XP on Blood Knights.
 - Added missing toast and loc keys; removed dangling modifier references.
 
 ---
 
 ## Version history
 
+- v1.20.68: Consolidate Blood Knight into Blood Mage trait as the new 6th track 'Bloodlust' (prowess, martial, advantage, knight limit, and dread baseline); grant all Blood Mages Worthy Commander army gender exemption; unify battlefield and single combat XP gain; clean up UI and retire separate Blood Knight trait; old saves are not supported (breaking change)
+- v1.20.66: Blood Mages can initiate Blood Knights alongside Knights; add human-only Superior Magic class transmutation in Cast Superior Blood Magic (preserving Ancient, Enlightenment, and Benediction track XP); fix AI modal interaction execution and add comprehensive debug logging across all decisions and interactions
+- v1.20.65: Add custom Alþingi Commonwealth and Verbúðir traditions to Icelandic culture; standardize Icelandic names and ethos; exempt Blood Knights from gender warfare restrictions to serve as knights and commanders
+- v1.20.64: Add playable Icelandic culture with equal martial custom, saga name lists, and modular game start setup gated by campaign game rule (on by default)
 - v1.20.63: Align House Covenants (7 to 6) and Blood Power (6 tracks); universal monthly Piety and 1:1 Devotion attribute scaling; yearly covenant pulse feeds matching Blood Power tracks
 - v1.20.62: Standardize event exits to "Back"; reduce manifest/rune/hunt cooldowns; lower Blood Berserker provision cost
 - v1.20.61: Restructure Manifest Congenital Traits (Ranks 1–3 in Major, Ranks 4–5 in Superior with 3/4/5/6/7/8 XP scaled by trait rank); unify positive interactions into Blood Blessing and hostile harvesting into Blood Drain; rename Heal Affliction to Heal Healing

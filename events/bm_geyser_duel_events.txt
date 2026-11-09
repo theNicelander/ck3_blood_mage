@@ -60,7 +60,6 @@ bm_geyser_duel.0001 = {
 						# Education & Lifestyles
 						trait = education_martial_4
 						trait = lifestyle_blood_mage
-						trait = lifestyle_blood_knight
 						trait = lifestyle_blood_power
 						trait = lifestyle_poet
 						trait = lifestyle_blademaster
@@ -102,7 +101,6 @@ bm_geyser_duel.0001 = {
 						# Education & Lifestyles
 						trait = education_martial_4
 						trait = lifestyle_blood_mage
-						trait = lifestyle_blood_knight
 						trait = lifestyle_blood_power
 						trait = lifestyle_poet
 						trait = lifestyle_blademaster
@@ -140,7 +138,6 @@ bm_geyser_duel.0001 = {
 						# Education & Lifestyles
 						trait = education_martial_4
 						trait = lifestyle_blood_mage
-						trait = lifestyle_blood_knight
 						trait = lifestyle_blood_power
 						trait = lifestyle_poet
 						trait = lifestyle_blademaster
@@ -192,29 +189,9 @@ bm_geyser_duel.0001 = {
 						value = 50
 					}
 					add_trait_xp = {
-						trait = lifestyle_blood_knight
-						track = ancient
-						value = 50
-					}
-					add_trait_xp = {
-						trait = lifestyle_blood_knight
-						track = enlightenment
-						value = 50
-					}
-					add_trait_xp = {
-						trait = lifestyle_blood_knight
-						track = benediction
-						value = 50
-					}
-					add_trait_xp = {
-						trait = lifestyle_blood_knight
-						track = vanguard
-						value = 50
-					}
-					add_trait_xp = {
-						trait = lifestyle_blood_knight
-						track = slaughter
-						value = 50
+						trait = lifestyle_blood_mage
+						track = bloodlust
+						value = 100
 					}
 					add_trait_xp = {
 						trait = lifestyle_blademaster
@@ -246,18 +223,17 @@ bm_geyser_duel.0001 = {
 			trigger = {
 				has_character_flag = bm_geyser_retried
 			}
-			text = bm_geyser_duel.0001.a_learning_retry
+			text = bm_geyser_duel.0001.a_retry
 		}
 		name = {
 			trigger = {
 				NOT = { has_character_flag = bm_geyser_retried }
 			}
-			text = bm_geyser_duel.0001.a_learning
+			text = bm_geyser_duel.0001.a
 		}
 
 		trigger = {
 			NOT = { has_trait = lifestyle_blood_mage }
-			NOT = { has_trait = lifestyle_blood_knight }
 			OR = {
 				has_character_flag = bm_geyser_paid_piety
 				piety_level >= 2
@@ -274,8 +250,8 @@ bm_geyser_duel.0001 = {
 		}
 
 		duel = {
-			skill = learning
-			value = 20
+			skills = { learning prowess }
+			value = 25
 			target = scope:bm_geyser_wise_one
 
 			# SUCCESS
@@ -284,7 +260,7 @@ bm_geyser_duel.0001 = {
 
 				compare_modifier = {
 					value = scope:duel_value
-					multiplier = 2.5
+					multiplier = 2.0
 					min = -40
 					max = 40
 				}
@@ -302,7 +278,7 @@ bm_geyser_duel.0001 = {
 
 				compare_modifier = {
 					value = scope:duel_value
-					multiplier = -2.5
+					multiplier = -2.0
 					min = -40
 					max = 40
 				}
@@ -394,172 +370,15 @@ bm_geyser_duel.0001 = {
 			base = 50
 			modifier = {
 				learning >= 20
-				add = 50
+				add = 25
+			}
+			modifier = {
+				prowess >= 25
+				add = 25
 			}
 			modifier = {
 				learning < 10
-				factor = 0.2
-			}
-		}
-	}
-
-	option = {
-		name = {
-			trigger = {
-				has_character_flag = bm_geyser_retried
-			}
-			text = bm_geyser_duel.0001.a_prowess_retry
-		}
-		name = {
-			trigger = {
-				NOT = { has_character_flag = bm_geyser_retried }
-			}
-			text = bm_geyser_duel.0001.a_prowess
-		}
-
-		trigger = {
-			NOT = { has_trait = lifestyle_blood_mage }
-			NOT = { has_trait = lifestyle_blood_knight }
-			OR = {
-				has_character_flag = bm_geyser_paid_piety
-				piety_level >= 2
-			}
-		}
-		show_as_unavailable = {
-			always = yes
-		}
-
-		if = {
-			limit = { NOT = { has_character_flag = bm_geyser_paid_piety } }
-			add_piety_level = -1
-			add_character_flag = bm_geyser_paid_piety
-		}
-
-		duel = {
-			skill = prowess
-			value = 30
-			target = scope:bm_geyser_wise_one
-
-			# SUCCESS
-			50 = {
-				desc = bm_geyser_duel.blood_knight_success_tt
-
-				compare_modifier = {
-					value = scope:duel_value
-					multiplier = 1.67
-					min = -40
-					max = 40
-				}
-
-				send_interface_toast = {
-					title = bm_geyser_duel.blood_knight_success_tt
-					left_icon = root
-					bm_become_blood_knight_effect = yes
-				}
-			}
-
-			# FAILURE
-			50 = {
-				desc = bm_geyser_duel.failure_tt
-
-				compare_modifier = {
-					value = scope:duel_value
-					multiplier = -1.67
-					min = -40
-					max = 40
-				}
-
-				random_list = {
-					# INJURY
-					50 = {
-						desc = bm_geyser_duel.injury_failure_tt
-						send_interface_toast = {
-							title = bm_geyser_duel.injury_failure_tt
-							left_icon = root
-							add_stress = 10
-
-							if = {
-								limit = { NOT = { has_trait = wounded } }
-								add_trait = wounded_1
-							}
-							else_if = {
-								limit = { has_trait = wounded_1 }
-								change_trait_rank = {
-									trait = wounded
-									rank = 1
-									max = 2
-								}
-							}
-						}
-					}
-
-					# PHYSICAL TRAUMA
-					25 = {
-						desc = bm_geyser_duel.physical_failure_tt
-						send_interface_toast = {
-							title = bm_geyser_duel.physical_failure_tt
-							left_icon = root
-							add_stress = 20
-							if = {
-								limit = { has_trait = blind }
-								add_piety_level = -1
-							}
-							if = {
-								limit = { has_trait = one_eyed }
-								add_trait = blind
-							}
-							if = {
-								limit = { has_trait = weak }
-								add_trait = one_eyed
-							}
-							add_trait = weak
-						}
-					}
-
-					# MENTAL COLLAPSE
-					10 = {
-						desc = bm_geyser_duel.mental_failure_tt
-						send_interface_toast = {
-							title = bm_geyser_duel.mental_failure_tt
-							left_icon = root
-							add_stress = 30
-
-							if = {
-								limit = { has_trait = lunatic_1 }
-								add_trait = dull
-							}
-							if = {
-								limit = { has_trait = depressed_1 }
-								add_trait = lunatic_1
-							}
-							if = {
-								limit = { has_trait = possessed_1 }
-								add_trait = depressed_1
-							}
-							add_trait = possessed_1
-						}
-					}
-				}
-
-				if = {
-					limit = { is_alive = yes }
-					hidden_effect = {
-						add_character_flag = bm_geyser_retrying
-						add_character_flag = bm_geyser_retried
-						trigger_event = { id = bm_geyser_duel.0001 }
-					}
-				}
-			}
-		}
-
-		ai_chance = {
-			base = 50
-			modifier = {
-				prowess >= 30
-				add = 50
-			}
-			modifier = {
-				prowess < 15
+				prowess < 10
 				factor = 0.2
 			}
 		}

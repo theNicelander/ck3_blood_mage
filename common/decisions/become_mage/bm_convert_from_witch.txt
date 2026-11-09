@@ -7,11 +7,10 @@
     is_shown = {
         has_trait = witch
         NOT = { has_trait = lifestyle_blood_mage }
-        NOT = { has_trait = lifestyle_blood_knight }
     }
 
     effect = {
-        debug_log = "BloodMageDecision: convert_from_witch"
+        debug_log = "BloodMageDecision: convert_from_witch | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
         debug_log_scopes = yes
         send_interface_toast = {
             type = event_toast_effect_good

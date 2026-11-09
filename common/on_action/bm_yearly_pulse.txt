@@ -42,7 +42,6 @@ random_yearly_everyone_pulse = {
     on_actions = {
         bm_yearly_pulse_everyone
         bm_review_unmarked_blood_mage_prevalence
-        bm_review_unmarked_blood_knight_prevalence
         bm_yearly_interpersonal_pulse
     }
 }
@@ -51,7 +50,6 @@ bm_yearly_pulse_playable = {
     trigger = {
         OR = {
             has_trait = lifestyle_blood_mage
-            has_trait = lifestyle_blood_knight
             bm_has_blood_rune_trigger = yes
         }
     }
@@ -59,7 +57,6 @@ bm_yearly_pulse_playable = {
         trigger_event = blood_mage_yearly_events.001
         trigger_event = blood_mage_yearly_events.002
         trigger_event = blood_mage_yearly_events.003
-        trigger_event = blood_mage_yearly_events.004
     }
 }
 
@@ -68,7 +65,6 @@ bm_yearly_pulse_everyone = {
         is_playable_character = no
         OR = {
             has_trait = lifestyle_blood_mage
-            has_trait = lifestyle_blood_knight
             bm_has_blood_rune_trigger = yes
         }
     }
@@ -76,7 +72,6 @@ bm_yearly_pulse_everyone = {
         trigger_event = blood_mage_yearly_events.001
         trigger_event = blood_mage_yearly_events.002
         trigger_event = blood_mage_yearly_events.003
-        trigger_event = blood_mage_yearly_events.004
     }
 }
 
@@ -97,29 +92,10 @@ bm_review_unmarked_blood_mage_prevalence = {
     }
 }
 
-bm_review_unmarked_blood_knight_prevalence = {
-    trigger = {
-        is_ai = yes
-        has_trait = lifestyle_blood_knight
-        NOT = { has_character_flag = bm_blood_knight_prevalence_reviewed }
-        OR = {
-            has_game_rule = bm_blood_knight_prevalence_player_only
-            has_game_rule = bm_blood_knight_prevalence_one_in_10000
-            has_game_rule = bm_blood_knight_prevalence_one_in_1000
-        }
-    }
-    effect = {
-        bm_apply_blood_knight_prevalence_retention_effect = yes
-    }
-}
-
 bm_yearly_interpersonal_pulse = {
     trigger = {
         is_ai = no
-        OR = {
-            has_trait = lifestyle_blood_mage
-            has_trait = lifestyle_blood_knight
-        }
+        has_trait = lifestyle_blood_mage
         NOT = { has_character_flag = bm_interpersonal_event_cooldown }
     }
     effect = {
@@ -168,7 +144,6 @@ bm_yearly_interpersonal_pulse = {
                         is_alive = yes
                         is_adult = yes
                         NOT = { has_trait = lifestyle_blood_mage }
-                        NOT = { has_trait = lifestyle_blood_knight }
                         NOT = { house ?= house:bm_house_golem }
                     }
                 }

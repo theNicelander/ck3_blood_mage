@@ -157,10 +157,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.wounded_2
 		trigger = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 			scope:recipient = { has_trait = wounded_2 }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
@@ -184,10 +181,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.incapable
 		trigger = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 			scope:recipient = { has_trait = incapable }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
@@ -211,10 +205,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.pneumonic
 		trigger = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 			scope:recipient = { has_trait = pneumonic }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
@@ -238,10 +229,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.early_great_pox
 		trigger = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 			scope:recipient = { has_trait = early_great_pox }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
@@ -265,10 +253,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.maimed
 		trigger = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 			scope:recipient = { has_trait = maimed }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
@@ -292,10 +277,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.consumption
 		trigger = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 			scope:recipient = { has_trait = consumption }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
@@ -319,10 +301,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.typhus
 		trigger = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 			scope:recipient = { has_trait = typhus }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
@@ -346,10 +325,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.measles
 		trigger = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 			scope:recipient = { has_trait = measles }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
@@ -373,10 +349,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.blind
 		trigger = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 			scope:recipient = { has_trait = blind }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
@@ -400,10 +373,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.one_eyed
 		trigger = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 			scope:recipient = { has_trait = one_eyed }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
@@ -427,10 +397,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.weak
 		trigger = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 			scope:recipient = { has_trait = weak }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
@@ -454,10 +421,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.lunatic_1
 		trigger = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 			scope:recipient = { has_trait = lunatic_1 }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
@@ -481,10 +445,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.possessed_1
 		trigger = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 			scope:recipient = { has_trait = possessed_1 }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
@@ -508,10 +469,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.dull
 		trigger = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 			scope:recipient = { has_trait = dull }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
@@ -535,10 +493,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.depressed_1
 		trigger = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 			scope:recipient = { has_trait = depressed_1 }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= cure_illness_cost_major
@@ -564,10 +519,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.wounded_3
 		trigger = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 			scope:recipient = { has_trait = wounded_3 }
 			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
@@ -591,10 +543,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.sickly
 		trigger = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 			scope:recipient = { has_trait = sickly }
 			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
@@ -618,10 +567,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.great_pox
 		trigger = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 			scope:recipient = { has_trait = great_pox }
 			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
@@ -645,10 +591,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.cancer
 		trigger = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 			scope:recipient = { has_trait = cancer }
 			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
@@ -672,10 +615,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.bubonic_plague
 		trigger = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 			scope:recipient = { has_trait = bubonic_plague }
 			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
@@ -699,10 +639,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.smallpox
 		trigger = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 			scope:recipient = { has_trait = smallpox }
 			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
@@ -726,10 +663,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.leper
 		trigger = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 			scope:recipient = { has_trait = leper }
 			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
@@ -753,10 +687,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.impotent
 		trigger = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 			scope:recipient = { has_trait = impotent }
 			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
@@ -780,10 +711,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.dysentery
 		trigger = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 			scope:recipient = { has_trait = dysentery }
 			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
@@ -807,10 +735,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.ergotism
 		trigger = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 			scope:recipient = { has_trait = ergotism }
 			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
@@ -834,10 +759,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.disfigured
 		trigger = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 			scope:recipient = { has_trait = disfigured }
 			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
@@ -861,10 +783,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.one_legged
 		trigger = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 			scope:recipient = { has_trait = one_legged }
 			has_character_modifier = lifeforce_modifier_superior
 			piety >= cure_illness_cost_benediction
@@ -888,10 +807,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.purge_coping
 		trigger = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 			scope:recipient = { bm_has_stress_coping_trait_trigger = yes }
 			has_character_modifier = lifeforce_modifier_major
 			piety >= 250
@@ -959,10 +875,7 @@ bm_heal_ailment.0001 = {
 	option = {
 		name = bm_heal_ailment.0001.open_old_age
 		trigger = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 			scope:recipient = { bm_has_old_age_ailment_trigger = yes }
 		}
 		show_as_unavailable = {

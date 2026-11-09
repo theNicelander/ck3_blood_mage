@@ -227,13 +227,6 @@ bm_trait_drain.001 = {
                         TRACK = hematurgy
                         XP = 2
                     }
-                    if = {
-                        limit = { has_trait = lifestyle_blood_knight }
-                        add_blood_knight_xp = {
-                            TRACK = slaughter
-                            XP = 2
-                        }
-                    }
                 }
 
                 # Prisoner dies
@@ -299,13 +292,6 @@ bm_trait_drain.001 = {
                     add_xp_bm_dynamic = {
                         TRACK = hematurgy
                         XP = 2
-                    }
-                    if = {
-                        limit = { has_trait = lifestyle_blood_knight }
-                        add_blood_knight_xp = {
-                            TRACK = slaughter
-                            XP = 2
-                        }
                     }
                 }
 
@@ -373,13 +359,6 @@ bm_trait_drain.001 = {
                     add_xp_bm_dynamic = {
                         TRACK = hematurgy
                         XP = 2
-                    }
-                    if = {
-                        limit = { has_trait = lifestyle_blood_knight }
-                        add_blood_knight_xp = {
-                            TRACK = slaughter
-                            XP = 2
-                        }
                     }
                 }
 

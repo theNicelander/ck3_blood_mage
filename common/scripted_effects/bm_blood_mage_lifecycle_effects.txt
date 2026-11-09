@@ -1,23 +1,24 @@
 ﻿bm_ensure_blood_mage_story_effect = {
 	if = {
 		limit = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 			NOT = { any_owned_story = { story_type = bm_blood_mage_story } }
 		}
 		create_story = bm_blood_mage_story
 	}
 	if = {
 		limit = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 			NOT = { has_trait = lifestyle_blood_power }
 		}
 		add_trait = lifestyle_blood_power
+	}
+	if = {
+		limit = {
+			has_trait = lifestyle_blood_mage
+			NOT = { has_character_modifier = ignores_gender_army_rules }
+		}
+		add_character_modifier = ignores_gender_army_rules
 	}
 }
 
@@ -25,7 +26,6 @@ bm_become_blood_mage_effect = {
 	if = {
 		limit = {
 			NOT = { has_trait = lifestyle_blood_mage }
-			NOT = { has_trait = lifestyle_blood_knight }
 		}
 		add_trait = lifestyle_blood_mage
 		if = {
@@ -67,64 +67,16 @@ bm_apply_blood_mage_prevalence_retention_effect = {
 	else = {
 		if = {
 			limit = {
-				NOT = { has_trait = lifestyle_blood_knight }
 				has_trait = lifestyle_blood_power
 			}
 			remove_trait = lifestyle_blood_power
 		}
-	}
-}
-
-bm_become_blood_knight_effect = {
-	if = {
-		limit = {
-			NOT = { has_trait = lifestyle_blood_knight }
-			NOT = { has_trait = lifestyle_blood_mage }
-		}
-		add_trait = lifestyle_blood_knight
-		if = {
-			limit = { NOT = { has_trait = lifestyle_blood_power } }
-			add_trait = lifestyle_blood_power
-		}
-	}
-	bm_ensure_blood_mage_story_effect = yes
-	if = {
-		limit = { has_trait = lifestyle_blood_knight }
-		add_character_flag = bm_blood_knight_prevalence_reviewed
-	}
-}
-
-bm_apply_blood_knight_prevalence_retention_effect = {
-	if = {
-		limit = { has_game_rule = bm_blood_knight_prevalence_player_only }
-		remove_trait = lifestyle_blood_knight
-	}
-	else_if = {
-		limit = { has_game_rule = bm_blood_knight_prevalence_one_in_10000 }
-		random = {
-			chance = 95
-			remove_trait = lifestyle_blood_knight
-		}
-	}
-	else_if = {
-		limit = { has_game_rule = bm_blood_knight_prevalence_one_in_1000 }
-		random = {
-			chance = 50
-			remove_trait = lifestyle_blood_knight
-		}
-	}
-	if = {
-		limit = { has_trait = lifestyle_blood_knight }
-		add_character_flag = bm_blood_knight_prevalence_reviewed
-		bm_ensure_blood_mage_story_effect = yes
-	}
-	else = {
 		if = {
 			limit = {
-				NOT = { has_trait = lifestyle_blood_mage }
-				has_trait = lifestyle_blood_power
+				NOT = { has_trait = shieldmaiden }
+				has_character_modifier = ignores_gender_army_rules
 			}
-			remove_trait = lifestyle_blood_power
+			remove_character_modifier = ignores_gender_army_rules
 		}
 	}
 }

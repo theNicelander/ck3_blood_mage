@@ -74,21 +74,55 @@ bm_has_any_ailment_trigger = {
 	}
 }
 
-bm_can_heal_character_trigger = {
-	is_alive = yes
+bm_actor_can_heal_target_ailments_trigger = {
+	# TARGET = target character
+	# Evaluated in actor scope
+	has_trait = lifestyle_blood_mage
+	$TARGET$ = { bm_has_any_ailment_trigger = yes }
+}
+
+bm_actor_has_lifeforce_to_heal_target_trigger = {
+	# TARGET = target character
+	# Evaluated in actor scope
 	OR = {
-		scope:actor = {
+		AND = {
+			$TARGET$ = { bm_has_minor_ailment_trigger = yes }
+			has_character_modifier = lifeforce_modifier_minor
+		}
+		AND = {
+			$TARGET$ = { bm_has_major_ailment_trigger = yes }
+			has_character_modifier = lifeforce_modifier_major
+		}
+		AND = {
+			has_trait = lifestyle_blood_mage
+			$TARGET$ = { bm_has_deadly_ailment_trigger = yes }
+			has_character_modifier = lifeforce_modifier_superior
+		}
+		AND = {
+			$TARGET$ = { bm_has_old_age_ailment_trigger = yes }
 			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
+				has_character_modifier = lifeforce_modifier_minor
+				has_character_modifier = lifeforce_modifier_major
 			}
 		}
-		root = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+		AND = {
+			$TARGET$ = { bm_has_stress_coping_trait_trigger = yes }
+			has_character_modifier = lifeforce_modifier_major
 		}
 	}
-	bm_has_any_ailment_trigger = yes
+}
+
+bm_can_heal_character_trigger = {
+	is_alive = yes
+	trigger_if = {
+		limit = { exists = scope:actor }
+		scope:actor = {
+			bm_actor_can_heal_target_ailments_trigger = { TARGET = prev }
+		}
+	}
+	trigger_else = {
+		root = {
+			bm_actor_can_heal_target_ailments_trigger = { TARGET = prev }
+		}
+	}
 }

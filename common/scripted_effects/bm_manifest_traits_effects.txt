@@ -5,36 +5,18 @@ bm_manifest_grant_scaled_xp_effect = {
 		limit = {
 			has_trait_rank = { trait = $BRANCH$_good rank >= 5 }
 		}
-		if = {
-			limit = { has_trait = lifestyle_blood_knight }
-			add_blood_knight_xp = {
-				TRACK = $KNIGHT_TRACK$
-				XP = 8
-			}
-		}
-		else = {
-			add_xp_bm_dynamic = {
-				TRACK = bloodline
-				XP = 8
-			}
+		add_xp_bm_dynamic = {
+			TRACK = bloodline
+			XP = 8
 		}
 	}
 	else_if = {
 		limit = {
 			has_trait_rank = { trait = $BRANCH$_good rank = 4 }
 		}
-		if = {
-			limit = { has_trait = lifestyle_blood_knight }
-			add_blood_knight_xp = {
-				TRACK = $KNIGHT_TRACK$
-				XP = 7
-			}
-		}
-		else = {
-			add_xp_bm_dynamic = {
-				TRACK = bloodline
-				XP = 7
-			}
+		add_xp_bm_dynamic = {
+			TRACK = bloodline
+			XP = 7
 		}
 	}
 	else_if = {
@@ -44,18 +26,9 @@ bm_manifest_grant_scaled_xp_effect = {
 				has_trait_rank = { trait = $BRANCH$_good rank = 3 }
 			}
 		}
-		if = {
-			limit = { has_trait = lifestyle_blood_knight }
-			add_blood_knight_xp = {
-				TRACK = $KNIGHT_TRACK$
-				XP = 6
-			}
-		}
-		else = {
-			add_xp_bm_dynamic = {
-				TRACK = bloodline
-				XP = 6
-			}
+		add_xp_bm_dynamic = {
+			TRACK = bloodline
+			XP = 6
 		}
 	}
 	else_if = {
@@ -65,18 +38,9 @@ bm_manifest_grant_scaled_xp_effect = {
 				has_trait_rank = { trait = $BRANCH$_good rank = 2 }
 			}
 		}
-		if = {
-			limit = { has_trait = lifestyle_blood_knight }
-			add_blood_knight_xp = {
-				TRACK = $KNIGHT_TRACK$
-				XP = 5
-			}
-		}
-		else = {
-			add_xp_bm_dynamic = {
-				TRACK = bloodline
-				XP = 5
-			}
+		add_xp_bm_dynamic = {
+			TRACK = bloodline
+			XP = 5
 		}
 	}
 	else_if = {
@@ -86,33 +50,15 @@ bm_manifest_grant_scaled_xp_effect = {
 				has_trait_rank = { trait = $BRANCH$_good rank = 1 }
 			}
 		}
-		if = {
-			limit = { has_trait = lifestyle_blood_knight }
-			add_blood_knight_xp = {
-				TRACK = $KNIGHT_TRACK$
-				XP = 4
-			}
-		}
-		else = {
-			add_xp_bm_dynamic = {
-				TRACK = bloodline
-				XP = 4
-			}
+		add_xp_bm_dynamic = {
+			TRACK = bloodline
+			XP = 4
 		}
 	}
 	else = {
-		if = {
-			limit = { has_trait = lifestyle_blood_knight }
-			add_blood_knight_xp = {
-				TRACK = $KNIGHT_TRACK$
-				XP = 3
-			}
-		}
-		else = {
-			add_xp_bm_dynamic = {
-				TRACK = bloodline
-				XP = 3
-			}
+		add_xp_bm_dynamic = {
+			TRACK = bloodline
+			XP = 3
 		}
 	}
 }
@@ -176,7 +122,6 @@ bm_manifest_intellect_duel_effect = {
 				bm_manifest_upgrade_trait_step_effect = { BRANCH = intellect }
 				bm_manifest_grant_scaled_xp_effect = {
 					BRANCH = intellect
-					KNIGHT_TRACK = enlightenment
 				}
 			}
 		}
@@ -236,7 +181,6 @@ bm_manifest_physique_duel_effect = {
 				bm_manifest_upgrade_trait_step_effect = { BRANCH = physique }
 				bm_manifest_grant_scaled_xp_effect = {
 					BRANCH = physique
-					KNIGHT_TRACK = vanguard
 				}
 			}
 		}
@@ -296,7 +240,6 @@ bm_manifest_beauty_duel_effect = {
 				bm_manifest_upgrade_trait_step_effect = { BRANCH = beauty }
 				bm_manifest_grant_scaled_xp_effect = {
 					BRANCH = beauty
-					KNIGHT_TRACK = enlightenment
 				}
 			}
 		}
@@ -356,7 +299,6 @@ bm_manifest_superior_intellect_duel_effect = {
 				bm_manifest_upgrade_trait_step_effect = { BRANCH = intellect }
 				bm_manifest_grant_scaled_xp_effect = {
 					BRANCH = intellect
-					KNIGHT_TRACK = enlightenment
 				}
 			}
 		}
@@ -416,7 +358,6 @@ bm_manifest_superior_physique_duel_effect = {
 				bm_manifest_upgrade_trait_step_effect = { BRANCH = physique }
 				bm_manifest_grant_scaled_xp_effect = {
 					BRANCH = physique
-					KNIGHT_TRACK = vanguard
 				}
 			}
 		}
@@ -476,7 +417,6 @@ bm_manifest_superior_beauty_duel_effect = {
 				bm_manifest_upgrade_trait_step_effect = { BRANCH = beauty }
 				bm_manifest_grant_scaled_xp_effect = {
 					BRANCH = beauty
-					KNIGHT_TRACK = enlightenment
 				}
 			}
 		}

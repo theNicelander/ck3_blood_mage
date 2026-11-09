@@ -8,10 +8,7 @@
 	cooldown = { years = 1 }
 
 	is_shown = {
-		OR = {
-			has_trait = lifestyle_blood_mage
-			has_trait = lifestyle_blood_knight
-		}
+		has_trait = lifestyle_blood_mage
 		exists = house
 	}
 
@@ -83,7 +80,7 @@
 			value = bm_covenant_warband
 			current_description = bm_covenant_warband
 			localization = bm_covenant_warband_button
-			icon = "gfx/interface/icons/trait_level_tracks/vanguard.dds"
+			icon = "gfx/interface/icons/trait_level_tracks/warband.dds"
 			is_shown = {
 				NOT = { house ?= { has_house_modifier = dynasty_blood_warband_modifier_3 } }
 			}
@@ -347,26 +344,32 @@
 	effect = {
 		if = {
 			limit = { scope:bm_covenant_presence = yes }
+			debug_log = "BloodMageDecision: bm_empower_bloodline_decision (presence) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
 			bm_upgrade_house_covenant_effect = { COVENANT = presence }
 		}
 		else_if = {
 			limit = { scope:bm_covenant_warband = yes }
+			debug_log = "BloodMageDecision: bm_empower_bloodline_decision (warband) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
 			bm_upgrade_house_covenant_effect = { COVENANT = warband }
 		}
 		else_if = {
 			limit = { scope:bm_covenant_prosperity = yes }
+			debug_log = "BloodMageDecision: bm_empower_bloodline_decision (prosperity) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
 			bm_upgrade_house_covenant_effect = { COVENANT = prosperity }
 		}
 		else_if = {
 			limit = { scope:bm_covenant_shadows = yes }
+			debug_log = "BloodMageDecision: bm_empower_bloodline_decision (shadows) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
 			bm_upgrade_house_covenant_effect = { COVENANT = shadows }
 		}
 		else_if = {
 			limit = { scope:bm_covenant_mastery = yes }
+			debug_log = "BloodMageDecision: bm_empower_bloodline_decision (mastery) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
 			bm_upgrade_house_covenant_effect = { COVENANT = mastery }
 		}
 		else_if = {
 			limit = { scope:bm_covenant_legacy = yes }
+			debug_log = "BloodMageDecision: bm_empower_bloodline_decision (legacy) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
 			bm_upgrade_house_covenant_effect = { COVENANT = legacy }
 		}
 		else = {

@@ -22,26 +22,12 @@ hematurgy_magic_cast_effect_major = {
         TRACK = hematurgy
         XP = 1
     }
-    if = {
-        limit = { has_trait = lifestyle_blood_knight }
-        add_blood_knight_xp = {
-            TRACK = slaughter
-            XP = 1
-        }
-    }
 }
 hematurgy_magic_cast_effect_minor = {
     add_character_modifier =  { modifier = lifeforce_modifier_minor }
     add_xp_bm_dynamic = {
         TRACK = hematurgy
         XP = 1
-    }
-    if = {
-        limit = { has_trait = lifestyle_blood_knight }
-        add_blood_knight_xp = {
-            TRACK = slaughter
-            XP = 1
-        }
     }
 }
 
@@ -83,26 +69,12 @@ bloodline_magic_cast_effect_minor = {
         TRACK = bloodline
         XP = 1
     }
-    if = {
-        limit = { has_trait = lifestyle_blood_knight }
-        add_blood_knight_xp = {
-            TRACK = benediction
-            XP = 1
-        }
-    }
 }
 bloodline_magic_cast_effect_major = {
     remove_character_modifier = lifeforce_modifier_major
     add_xp_bm_dynamic = {
         TRACK = bloodline
         XP = 1
-    }
-    if = {
-        limit = { has_trait = lifestyle_blood_knight }
-        add_blood_knight_xp = {
-            TRACK = benediction
-            XP = 1
-        }
     }
 }
 
@@ -128,11 +100,7 @@ remove_all_attunement = {
         remove_character_modifier = hematurgy_attuned
     }
     if = {
-        limit = { has_character_modifier = vanguard_attuned }
-        remove_character_modifier = vanguard_attuned
-    }
-    if = {
-        limit = { has_character_modifier = slaughter_attuned }
-        remove_character_modifier = slaughter_attuned
+        limit = { has_character_modifier = bloodlust_attuned }
+        remove_character_modifier = bloodlust_attuned
     }
 }

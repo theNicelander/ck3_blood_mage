@@ -29,10 +29,7 @@ trait_drain_prisoner_event_interaction = {
 
     is_shown = {
         scope:actor = {
-            OR = {
-                has_trait = lifestyle_blood_mage
-                has_trait = lifestyle_blood_knight
-            }
+            has_trait = lifestyle_blood_mage
             bm_can_drain_traits_from_target_trigger = yes
         }
         scope:recipient = { is_imprisoned_by = scope:actor }

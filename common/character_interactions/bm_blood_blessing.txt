@@ -49,10 +49,7 @@
 
 	is_shown = {
 		scope:actor = {
-			OR = {
-				has_trait = lifestyle_blood_mage
-				has_trait = lifestyle_blood_knight
-			}
+			has_trait = lifestyle_blood_mage
 		}
 		scope:recipient = {
 			is_alive = yes
@@ -79,17 +76,15 @@
 
 	send_options_exclusive = yes
 
-	# 1. Empower Blood Mage / Knight
+	# 1. Empower Blood Mage
 	send_option = {
 		flag = blessing_empower
 		localization = bm_blood_blessing_option_empower
 		current_description = bm_blood_blessing_option_empower_desc
+		can_invalidate_interaction = yes
 		is_shown = {
 			scope:recipient = {
-				OR = {
-					has_trait = lifestyle_blood_mage
-					has_trait = lifestyle_blood_knight
-				}
+				has_trait = lifestyle_blood_mage
 			}
 		}
 		is_valid = {
@@ -102,10 +97,7 @@
 		}
 		starts_enabled = {
 			scope:recipient = {
-				OR = {
-					has_trait = lifestyle_blood_mage
-					has_trait = lifestyle_blood_knight
-				}
+				has_trait = lifestyle_blood_mage
 			}
 		}
 	}
@@ -115,6 +107,7 @@
 		flag = blessing_grant_lifeforce
 		localization = bm_blood_blessing_option_grant_lifeforce
 		current_description = bm_blood_blessing_option_grant_lifeforce_desc
+		can_invalidate_interaction = yes
 		is_shown = { always = yes }
 		is_valid = {
 			scope:actor = {
@@ -134,6 +127,7 @@
 		flag = blessing_bless_blood
 		localization = bm_blood_blessing_option_bless_blood
 		current_description = bm_blood_blessing_option_bless_blood_desc
+		can_invalidate_interaction = yes
 		is_shown = {
 			scope:recipient = {
 				OR = {
@@ -177,6 +171,7 @@
 		flag = blessing_anoint_heir
 		localization = bm_blood_blessing_option_anoint_heir
 		current_description = bm_blood_blessing_option_anoint_heir_desc
+		can_invalidate_interaction = yes
 		is_shown = {
 			scope:recipient = {
 				OR = {
@@ -207,6 +202,7 @@
 		flag = blessing_consecrate_union
 		localization = bm_blood_blessing_option_consecrate_union
 		current_description = bm_blood_blessing_option_consecrate_union_desc
+		can_invalidate_interaction = yes
 		is_shown = {
 			scope:recipient = {
 				OR = {
@@ -242,18 +238,10 @@
 		flag = blessing_inscribe_rune
 		localization = bm_blood_blessing_option_inscribe_rune
 		current_description = bm_blood_blessing_option_inscribe_rune_desc
+		can_invalidate_interaction = yes
 		is_shown = {
 			scope:recipient = {
 				NOT = { has_character_modifier = superior_blood_rune_modifier }
-				trigger_if = {
-					limit = {
-						scope:actor = {
-							NOT = { has_trait = lifestyle_blood_mage }
-							has_trait = lifestyle_blood_knight
-						}
-					}
-					NOT = { has_character_modifier = major_blood_rune_modifier }
-				}
 			}
 		}
 		is_valid = {
@@ -263,47 +251,44 @@
 			}
 			scope:actor = {
 				NOT = { has_character_flag = bm_blood_rune_other_cooldown }
-				OR = {
-					# Tier 1: Target has no rune -> Minor
-					AND = {
-						scope:recipient = {
-							NOT = { has_character_modifier = minor_blood_rune_modifier }
-							NOT = { has_character_modifier = major_blood_rune_modifier }
-							NOT = { has_character_modifier = superior_blood_rune_modifier }
-						}
-						piety_level >= 2
-						OR = {
+				custom_description = {
+					text = bm_inscribe_rune_other_requirement_tt
+					OR = {
+						# Tier 1: Target has no rune -> Minor
+						AND = {
+							scope:recipient = {
+								NOT = { has_character_modifier = minor_blood_rune_modifier }
+								NOT = { has_character_modifier = major_blood_rune_modifier }
+								NOT = { has_character_modifier = superior_blood_rune_modifier }
+							}
+							piety_level >= 2
 							scope:actor.bm_total_blood_mage_xp >= 25
-							scope:actor.bm_total_blood_knight_xp >= 25
+							has_character_modifier = lifeforce_modifier_minor
 						}
-						has_character_modifier = lifeforce_modifier_minor
-					}
-					# Tier 2: Target has Minor rune -> Major
-					AND = {
-						scope:recipient = {
-							has_character_modifier = minor_blood_rune_modifier
-							NOT = { has_character_modifier = major_blood_rune_modifier }
-							NOT = { has_character_modifier = superior_blood_rune_modifier }
-						}
-						piety_level >= 3
-						OR = {
+						# Tier 2: Target has Minor rune -> Major
+						AND = {
+							scope:recipient = {
+								has_character_modifier = minor_blood_rune_modifier
+								NOT = { has_character_modifier = major_blood_rune_modifier }
+								NOT = { has_character_modifier = superior_blood_rune_modifier }
+							}
+							piety_level >= 3
 							scope:actor.bm_total_blood_mage_xp >= 50
-							scope:actor.bm_total_blood_knight_xp >= 50
+							piety >= 200
+							has_character_modifier = lifeforce_modifier_major
 						}
-						piety >= 200
-						has_character_modifier = lifeforce_modifier_major
-					}
-					# Tier 3: Target has Major rune -> Superior (Blood Mage only)
-					AND = {
-						scope:recipient = {
-							has_character_modifier = major_blood_rune_modifier
-							NOT = { has_character_modifier = superior_blood_rune_modifier }
+						# Tier 3: Target has Major rune -> Superior
+						AND = {
+							scope:recipient = {
+								has_character_modifier = major_blood_rune_modifier
+								NOT = { has_character_modifier = superior_blood_rune_modifier }
+							}
+							has_trait = lifestyle_blood_mage
+							piety_level >= 4
+							scope:actor.bm_total_blood_mage_xp >= 100
+							piety >= 400
+							has_character_modifier = lifeforce_modifier_superior
 						}
-						has_trait = lifestyle_blood_mage
-						piety_level >= 4
-						scope:actor.bm_total_blood_mage_xp >= 100
-						piety >= 400
-						has_character_modifier = lifeforce_modifier_superior
 					}
 				}
 			}
@@ -317,9 +302,9 @@
 	}
 
 	on_accept = {
-		debug_log = "BloodMageInteraction: bm_blood_blessing | Actor: [actor.GetShortUINameNoTooltip] -> Recipient: [recipient.GetShortUINameNoTooltip]"
 		if = {
 			limit = { scope:blessing_empower = yes }
+			debug_log = "BloodMageInteraction: bm_blood_blessing (empower) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
 			scope:actor = {
 				send_interface_toast = {
 					type = event_toast_effect_good
@@ -327,73 +312,31 @@
 					left_icon = scope:actor
 					right_icon = scope:recipient
 					if = {
-						limit = { scope:recipient = { has_trait = lifestyle_blood_mage } }
-						if = {
-							limit = { has_character_modifier = lifeforce_modifier_major }
-							blood_magic_used_major = yes
-							add_xp_bm_dynamic = { TRACK = benediction XP = 2 }
-							scope:recipient = {
-								add_xp_bm_dynamic = { TRACK = enlightenment XP = 2 }
-								add_xp_bm_dynamic = { TRACK = bloodline XP = 2 }
-								add_opinion = {
-									target = scope:actor
-									modifier = magic_opinion_positive
-									opinion = 30
-								}
-							}
-						}
-						else = {
-							blood_magic_used_minor = yes
-							add_xp_bm_dynamic = { TRACK = benediction XP = 1 }
-							scope:recipient = {
-								add_xp_bm_dynamic = { TRACK = enlightenment XP = 1 }
-								add_xp_bm_dynamic = { TRACK = bloodline XP = 1 }
-								add_opinion = {
-									target = scope:actor
-									modifier = magic_opinion_positive
-									opinion = 15
-								}
+						limit = { has_character_modifier = lifeforce_modifier_major }
+						blood_magic_used_major = yes
+						add_xp_bm_dynamic = { TRACK = benediction XP = 2 }
+						scope:recipient = {
+							add_xp_bm_dynamic = { TRACK = enlightenment XP = 2 }
+							add_xp_bm_dynamic = { TRACK = bloodline XP = 2 }
+							add_xp_bm_dynamic = { TRACK = bloodlust XP = 2 }
+							add_opinion = {
+								target = scope:actor
+								modifier = magic_opinion_positive
+								opinion = 30
 							}
 						}
 					}
 					else = {
-						if = {
-							limit = { has_character_modifier = lifeforce_modifier_major }
-							blood_magic_used_major = yes
-							if = {
-								limit = { has_trait = lifestyle_blood_mage }
-								add_xp_bm_dynamic = { TRACK = benediction XP = 2 }
-							}
-							else = {
-								add_blood_knight_xp = { TRACK = benediction XP = 2 }
-							}
-							scope:recipient = {
-								add_blood_knight_xp = { TRACK = vanguard XP = 3 }
-								add_blood_knight_xp = { TRACK = slaughter XP = 3 }
-								add_opinion = {
-									target = scope:actor
-									modifier = magic_opinion_positive
-									opinion = 30
-								}
-							}
-						}
-						else = {
-							blood_magic_used_minor = yes
-							if = {
-								limit = { has_trait = lifestyle_blood_mage }
-								add_xp_bm_dynamic = { TRACK = benediction XP = 1 }
-							}
-							else = {
-								add_blood_knight_xp = { TRACK = benediction XP = 1 }
-							}
-							scope:recipient = {
-								add_blood_knight_xp = { TRACK = vanguard XP = 1 }
-								add_blood_knight_xp = { TRACK = slaughter XP = 1 }
-								add_opinion = {
-									target = scope:actor
-									modifier = magic_opinion_positive
-									opinion = 15
-								}
+						blood_magic_used_minor = yes
+						add_xp_bm_dynamic = { TRACK = benediction XP = 1 }
+						scope:recipient = {
+							add_xp_bm_dynamic = { TRACK = enlightenment XP = 1 }
+							add_xp_bm_dynamic = { TRACK = bloodline XP = 1 }
+							add_xp_bm_dynamic = { TRACK = bloodlust XP = 1 }
+							add_opinion = {
+								target = scope:actor
+								modifier = magic_opinion_positive
+								opinion = 15
 							}
 						}
 					}
@@ -405,6 +348,7 @@
 		}
 		else_if = {
 			limit = { scope:blessing_grant_lifeforce = yes }
+			debug_log = "BloodMageInteraction: bm_blood_blessing (grant_lifeforce) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
 			scope:actor = {
 				send_interface_toast = {
 					type = event_toast_effect_good
@@ -459,6 +403,7 @@
 		}
 		else_if = {
 			limit = { scope:blessing_bless_blood = yes }
+			debug_log = "BloodMageInteraction: bm_blood_blessing (bless_blood) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
 			scope:actor = {
 				send_interface_toast = {
 					type = event_toast_effect_good
@@ -530,6 +475,7 @@
 		}
 		else_if = {
 			limit = { scope:blessing_anoint_heir = yes }
+			debug_log = "BloodMageInteraction: bm_blood_blessing (anoint_heir) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
 			scope:actor = {
 				if = {
 					limit = {
@@ -573,23 +519,10 @@
 					left_icon = scope:actor
 					right_icon = scope:recipient
 					blood_magic_used_major = yes
-					if = {
-						limit = { has_trait = lifestyle_blood_mage }
-						add_trait_xp = {
-							trait = lifestyle_blood_mage
-							track = bloodline
-							value = 2
-						}
-					}
-					if = {
-						limit = {
-							has_trait = lifestyle_blood_knight
-							NOT = { has_trait = lifestyle_blood_mage }
-						}
-						add_blood_knight_xp = {
-							TRACK = benediction
-							XP = 2
-						}
+					add_trait_xp = {
+						trait = lifestyle_blood_mage
+						track = bloodline
+						value = 2
 					}
 					scope:recipient = {
 						add_character_modifier = {
@@ -609,6 +542,7 @@
 		}
 		else_if = {
 			limit = { scope:blessing_consecrate_union = yes }
+			debug_log = "BloodMageInteraction: bm_blood_blessing (consecrate_union) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
 			scope:actor = {
 				send_interface_toast = {
 					type = event_toast_effect_good
@@ -664,6 +598,7 @@
 		}
 		else_if = {
 			limit = { scope:blessing_inscribe_rune = yes }
+			debug_log = "BloodMageInteraction: bm_blood_blessing (inscribe_rune) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
 			scope:actor = {
 				add_character_flag = {
 					flag = bm_blood_rune_other_cooldown
@@ -690,23 +625,10 @@
 							}
 						}
 						blood_magic_used_minor = yes
-						if = {
-							limit = { has_trait = lifestyle_blood_mage }
-							add_trait_xp = {
-								trait = lifestyle_blood_mage
-								track = benediction
-								value = 4
-							}
-						}
-						if = {
-							limit = {
-								has_trait = lifestyle_blood_knight
-								NOT = { has_trait = lifestyle_blood_mage }
-							}
-							add_blood_knight_xp = {
-								TRACK = benediction
-								XP = 4
-							}
+						add_trait_xp = {
+							trait = lifestyle_blood_mage
+							track = benediction
+							value = 4
 						}
 						scope:recipient = {
 							add_character_modifier = { modifier = minor_blood_rune_modifier }
@@ -721,23 +643,10 @@
 							}
 						}
 						blood_magic_used_major = yes
-						if = {
-							limit = { has_trait = lifestyle_blood_mage }
-							add_trait_xp = {
-								trait = lifestyle_blood_mage
-								track = benediction
-								value = 5
-							}
-						}
-						if = {
-							limit = {
-								has_trait = lifestyle_blood_knight
-								NOT = { has_trait = lifestyle_blood_mage }
-							}
-							add_blood_knight_xp = {
-								TRACK = benediction
-								XP = 5
-							}
+						add_trait_xp = {
+							trait = lifestyle_blood_mage
+							track = benediction
+							value = 5
 						}
 						scope:recipient = {
 							bm_upgrade_blood_rune_to_major_effect = yes
@@ -766,6 +675,9 @@
 				}
 			}
 		}
+		else = {
+			debug_log = "BloodMageInteraction: bm_blood_blessing (NO OPTION) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
+		}
 	}
 
 	ai_potential = { always = yes }
@@ -779,10 +691,68 @@
 	}
 	ai_will_do = {
 		base = 25
-		ai_willingness_to_do_positive_magic = yes
+
+		# Score send options
+		modifier = {
+			scope:blessing_anoint_heir = yes
+			add = 80
+		}
+		modifier = {
+			scope:blessing_consecrate_union = yes
+			add = 60
+		}
+		modifier = {
+			scope:blessing_inscribe_rune = yes
+			add = 40
+		}
+		modifier = {
+			scope:blessing_blood = yes
+			add = 35
+		}
+		modifier = {
+			scope:blessing_empower = yes
+			add = 30
+		}
+		modifier = {
+			scope:blessing_grant_lifeforce = yes
+			scope:recipient = {
+				OR = {
+					has_character_modifier = lifedrained_modifier
+					has_character_modifier = recently_lifedrained_modifier
+				}
+			}
+			add = 50
+		}
+		modifier = {
+			scope:blessing_grant_lifeforce = yes
+			scope:recipient = {
+				NOR = {
+					has_character_modifier = lifedrained_modifier
+					has_character_modifier = recently_lifedrained_modifier
+				}
+			}
+			add = -100
+		}
+
+		# Target prioritisation
 		modifier = {
 			scope:recipient = { is_primary_heir_of = scope:actor }
 			add = 50
+		}
+
+		ai_willingness_to_do_positive_magic = yes
+
+		# Absolute veto: must select at least one valid send option
+		modifier = {
+			NOR = {
+				scope:blessing_empower = yes
+				scope:blessing_grant_lifeforce = yes
+				scope:blessing_blood = yes
+				scope:blessing_anoint_heir = yes
+				scope:blessing_consecrate_union = yes
+				scope:blessing_inscribe_rune = yes
+			}
+			factor = 0
 		}
 	}
 }

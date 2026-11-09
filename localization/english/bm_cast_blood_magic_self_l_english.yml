@@ -39,15 +39,10 @@
     bm_attune_hematurgy_desc: "Applies [GetModifier('hematurgy_attuned').GetNameWithTooltip]."
     bm_attune_hematurgy_tooltip: "$bm_attune_hematurgy_desc$"
 
-    bm_attune_vanguard: "Vanguard"
-    bm_attune_vanguard_name: "$bm_attune_vanguard$"
-    bm_attune_vanguard_desc: "Applies [GetModifier('vanguard_attuned').GetNameWithTooltip]."
-    bm_attune_vanguard_tooltip: "$bm_attune_vanguard_desc$"
-
-    bm_attune_slaughter: "Slaughter"
-    bm_attune_slaughter_name: "$bm_attune_slaughter$"
-    bm_attune_slaughter_desc: "Applies [GetModifier('slaughter_attuned').GetNameWithTooltip]."
-    bm_attune_slaughter_tooltip: "$bm_attune_slaughter_desc$"
+    bm_attune_bloodlust: "Bloodlust"
+    bm_attune_bloodlust_name: "$bm_attune_bloodlust$"
+    bm_attune_bloodlust_desc: "Applies [GetModifier('bloodlust_attuned').GetNameWithTooltip]."
+    bm_attune_bloodlust_tooltip: "$bm_attune_bloodlust_desc$"
 
     # Channel lifeforce minor
     bm_channel_minor_lifeforce_decision: "Channel Minor Lifeforce"
@@ -365,6 +360,7 @@
     bm_superior_create_blood_golem: "Forge Blood Golem"
     bm_superior_create_blood_golem_desc: "Animate an obedient Blood Golem champion bound by vital essence."
     bm_superior_create_blood_golem_tooltip: "Animate an obedient, monstrous Blood Golem champion bound by vital essence.\n\nCosts [GetModifier('lifeforce_modifier_superior').GetNameWithTooltip] and #V 500#! [piety|E]."
+
 
     # Superior Aliases
     bm_cast_blood_magic_superior.001.master_education: "$bm_superior_master_education$"
