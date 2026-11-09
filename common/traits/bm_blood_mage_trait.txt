@@ -68,7 +68,7 @@ lifestyle_bm_acolyte = {
     flag = reweaving_lifestyle_trait
     icon = bm_blood_bronze_burnished.dds
     desc = trait_lifestyle_bm_acolyte_desc
-    ruler_designer_cost = 40
+    ruler_designer_cost = 50
     potential = {
         trigger_if = {
             limit = { exists = this }
@@ -82,17 +82,6 @@ lifestyle_bm_acolyte = {
         lifestyle_blood_mage
         lifestyle_bm_archmage
     }
-
-    # Base trait benefits (Tier I)
-    # Ancient
-    health = 0.25
-    life_expectancy = 5
-
-    # Learning
-    learning = 1
-
-    prowess = 2
-    same_opinion = 5
 
     tracks = {
         bloodline = {
@@ -585,9 +574,9 @@ lifestyle_blood_mage = {
     # Base trait benefits (Tier II - Anti-nerf absorbs Tier I 50 XP milestones & Tier I tracks)
     # Ancient
     health = 2
-    life_expectancy = 33
-    years_of_fertility = 33
-    epidemic_resistance = 33
+    life_expectancy = 30
+    years_of_fertility = 30
+    epidemic_resistance = 30
     no_prowess_loss_from_age = yes
 
     # Diplomacy
@@ -606,9 +595,7 @@ lifestyle_blood_mage = {
     # Learning
     learning_per_piety_level = 1
 
-    same_opinion = 10
-
-tracks = {
+    tracks = {
         bloodline = {
             10 = {
                 # common
@@ -1279,8 +1266,6 @@ lifestyle_bm_archmage = {
 
     # Learning
     learning_per_piety_level = 2
-
-    same_opinion = 15
 
     tracks = {
         bloodline = {
