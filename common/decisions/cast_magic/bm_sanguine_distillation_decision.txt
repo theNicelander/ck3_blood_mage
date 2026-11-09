@@ -15,7 +15,7 @@
 	is_valid = {
 		custom_tooltip = {
 			text = bm_sanguine_distillation_ancient_not_maxed_req
-			NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = ancient VALUE >= 100 } }
+			NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = ancient VALUE = 100 } }
 		}
 		custom_tooltip = {
 			text = bm_sanguine_distillation_lifeforce_req
@@ -62,10 +62,10 @@
 					text = bm_distill_bloodlust_xp_req
 					trigger_if = {
 						limit = { has_trait = lifestyle_bm_acolyte }
-						bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE >= 10 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE = 10 }
 					}
 					trigger_else = {
-						bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE >= 15 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE = 15 }
 					}
 				}
 			}
@@ -86,10 +86,10 @@
 					text = bm_distill_benediction_xp_req
 					trigger_if = {
 						limit = { has_trait = lifestyle_bm_acolyte }
-						bm_has_track_xp_any_tier_trigger = { TRACK = benediction VALUE >= 10 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = benediction VALUE = 10 }
 					}
 					trigger_else = {
-						bm_has_track_xp_any_tier_trigger = { TRACK = benediction VALUE >= 15 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = benediction VALUE = 15 }
 					}
 				}
 			}
@@ -110,10 +110,10 @@
 					text = bm_distill_bloodline_xp_req
 					trigger_if = {
 						limit = { has_trait = lifestyle_bm_acolyte }
-						bm_has_track_xp_any_tier_trigger = { TRACK = bloodline VALUE >= 10 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = bloodline VALUE = 10 }
 					}
 					trigger_else = {
-						bm_has_track_xp_any_tier_trigger = { TRACK = bloodline VALUE >= 15 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = bloodline VALUE = 15 }
 					}
 				}
 			}
@@ -134,10 +134,10 @@
 					text = bm_distill_hematurgy_xp_req
 					trigger_if = {
 						limit = { has_trait = lifestyle_bm_acolyte }
-						bm_has_track_xp_any_tier_trigger = { TRACK = hematurgy VALUE >= 10 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = hematurgy VALUE = 10 }
 					}
 					trigger_else = {
-						bm_has_track_xp_any_tier_trigger = { TRACK = hematurgy VALUE >= 15 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = hematurgy VALUE = 15 }
 					}
 				}
 			}
@@ -158,10 +158,10 @@
 					text = bm_distill_enlightenment_xp_req
 					trigger_if = {
 						limit = { has_trait = lifestyle_bm_acolyte }
-						bm_has_track_xp_any_tier_trigger = { TRACK = enlightenment VALUE >= 10 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = enlightenment VALUE = 10 }
 					}
 					trigger_else = {
-						bm_has_track_xp_any_tier_trigger = { TRACK = enlightenment VALUE >= 15 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = enlightenment VALUE = 15 }
 					}
 				}
 			}

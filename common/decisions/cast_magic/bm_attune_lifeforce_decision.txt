@@ -60,7 +60,7 @@
 				value = 20
 				if = {
 					limit = {
-						bm_has_track_xp_any_tier_trigger = { TRACK = enlightenment VALUE >= 100 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = enlightenment VALUE = 100 }
 					}
 					multiply = 0
 				}
@@ -85,7 +85,7 @@
 				value = 50
 				if = {
 					limit = {
-						bm_has_track_xp_any_tier_trigger = { TRACK = bloodline VALUE >= 100 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = bloodline VALUE = 100 }
 					}
 					multiply = 0
 				}
@@ -110,7 +110,7 @@
 				value = 50
 				if = {
 					limit = {
-						bm_has_track_xp_any_tier_trigger = { TRACK = benediction VALUE >= 100 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = benediction VALUE = 100 }
 					}
 					multiply = 0
 				}
@@ -135,7 +135,7 @@
 				value = 10
 				if = {
 					limit = {
-						bm_has_track_xp_any_tier_trigger = { TRACK = hematurgy VALUE >= 100 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = hematurgy VALUE = 100 }
 					}
 					multiply = 0
 				}
@@ -160,7 +160,7 @@
 				value = 30
 				if = {
 					limit = {
-						bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE >= 100 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE = 100 }
 					}
 					multiply = 0
 				}

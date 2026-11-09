@@ -109,18 +109,18 @@ bm_has_track_xp_any_tier_trigger = {
 	OR = {
 		has_trait_xp = {
 			trait = lifestyle_bm_acolyte
-			track = $
-			value >= $
+			track = $TRACK$
+			value >= $VALUE$
 		}
 		has_trait_xp = {
 			trait = lifestyle_blood_mage
-			track = $
-			value >= $
+			track = $TRACK$
+			value >= $VALUE$
 		}
 		has_trait_xp = {
 			trait = lifestyle_bm_archmage
-			track = $
-			value >= $
+			track = $TRACK$
+			value >= $VALUE$
 		}
 	}
 }

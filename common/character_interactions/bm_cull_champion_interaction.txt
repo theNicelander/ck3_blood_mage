@@ -10,8 +10,8 @@
 		scope:actor = {
 			is_blood_mage_any_tier_trigger = yes
 			OR = {
-				bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE >= 20 }
-				bm_has_track_xp_any_tier_trigger = { TRACK = hematurgy VALUE >= 20 }
+				bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE = 20 }
+				bm_has_track_xp_any_tier_trigger = { TRACK = hematurgy VALUE = 20 }
 			}
 		}
 		NOT = { scope:actor = scope:recipient }

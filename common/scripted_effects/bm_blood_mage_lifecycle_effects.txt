@@ -17,7 +17,7 @@
 		limit = {
 			OR = {
 				is_blood_mage_tier_2_or_higher_trigger = yes
-				bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE >= 20 }
+				bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE = 20 }
 			}
 			NOT = { has_character_modifier = ignores_gender_army_rules }
 		}
