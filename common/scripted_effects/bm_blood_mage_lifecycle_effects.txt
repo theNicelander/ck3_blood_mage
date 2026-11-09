@@ -89,57 +89,57 @@ bm_elevate_tier_effect = {
 	if = {
 		limit = { has_trait = lifestyle_bm_acolyte }
 		# Calculate unspent XP stacks across 5 non-ancient tracks
-		set_temporary_variable = {
+		set_variable = {
 			name = bm_elevation_overflow_stacks
 			value = 0
 		}
-		set_temporary_variable = {
+		set_variable = {
 			name = bm_overflow_bloodlust
 			value = "has_trait_xp(lifestyle_bm_acolyte|bloodlust)"
 			divide = 20
 			floor = yes
 		}
-		change_temporary_variable = {
+		change_variable = {
 			name = bm_elevation_overflow_stacks
 			add = var:bm_overflow_bloodlust
 		}
-		set_temporary_variable = {
+		set_variable = {
 			name = bm_overflow_benediction
 			value = "has_trait_xp(lifestyle_bm_acolyte|benediction)"
 			divide = 20
 			floor = yes
 		}
-		change_temporary_variable = {
+		change_variable = {
 			name = bm_elevation_overflow_stacks
 			add = var:bm_overflow_benediction
 		}
-		set_temporary_variable = {
+		set_variable = {
 			name = bm_overflow_bloodline
 			value = "has_trait_xp(lifestyle_bm_acolyte|bloodline)"
 			divide = 20
 			floor = yes
 		}
-		change_temporary_variable = {
+		change_variable = {
 			name = bm_elevation_overflow_stacks
 			add = var:bm_overflow_bloodline
 		}
-		set_temporary_variable = {
+		set_variable = {
 			name = bm_overflow_hematurgy
 			value = "has_trait_xp(lifestyle_bm_acolyte|hematurgy)"
 			divide = 20
 			floor = yes
 		}
-		change_temporary_variable = {
+		change_variable = {
 			name = bm_elevation_overflow_stacks
 			add = var:bm_overflow_hematurgy
 		}
-		set_temporary_variable = {
+		set_variable = {
 			name = bm_overflow_enlightenment
 			value = "has_trait_xp(lifestyle_bm_acolyte|enlightenment)"
 			divide = 20
 			floor = yes
 		}
-		change_temporary_variable = {
+		change_variable = {
 			name = bm_elevation_overflow_stacks
 			add = var:bm_overflow_enlightenment
 		}
@@ -163,62 +163,68 @@ bm_elevate_tier_effect = {
 			hidden_effect = {
 				bm_ensure_blood_mage_story_effect = yes
 				bm_recount_lifeforce_stacks_effect = yes
+				remove_variable = bm_elevation_overflow_stacks
+				remove_variable = bm_overflow_bloodlust
+				remove_variable = bm_overflow_benediction
+				remove_variable = bm_overflow_bloodline
+				remove_variable = bm_overflow_hematurgy
+				remove_variable = bm_overflow_enlightenment
 			}
 		}
 	}
 	else_if = {
 		limit = { has_trait = lifestyle_blood_mage }
-		set_temporary_variable = {
+		set_variable = {
 			name = bm_elevation_overflow_stacks
 			value = 0
 		}
-		set_temporary_variable = {
+		set_variable = {
 			name = bm_overflow_bloodlust
 			value = "has_trait_xp(lifestyle_blood_mage|bloodlust)"
 			divide = 20
 			floor = yes
 		}
-		change_temporary_variable = {
+		change_variable = {
 			name = bm_elevation_overflow_stacks
 			add = var:bm_overflow_bloodlust
 		}
-		set_temporary_variable = {
+		set_variable = {
 			name = bm_overflow_benediction
 			value = "has_trait_xp(lifestyle_blood_mage|benediction)"
 			divide = 20
 			floor = yes
 		}
-		change_temporary_variable = {
+		change_variable = {
 			name = bm_elevation_overflow_stacks
 			add = var:bm_overflow_benediction
 		}
-		set_temporary_variable = {
+		set_variable = {
 			name = bm_overflow_bloodline
 			value = "has_trait_xp(lifestyle_blood_mage|bloodline)"
 			divide = 20
 			floor = yes
 		}
-		change_temporary_variable = {
+		change_variable = {
 			name = bm_elevation_overflow_stacks
 			add = var:bm_overflow_bloodline
 		}
-		set_temporary_variable = {
+		set_variable = {
 			name = bm_overflow_hematurgy
 			value = "has_trait_xp(lifestyle_blood_mage|hematurgy)"
 			divide = 20
 			floor = yes
 		}
-		change_temporary_variable = {
+		change_variable = {
 			name = bm_elevation_overflow_stacks
 			add = var:bm_overflow_hematurgy
 		}
-		set_temporary_variable = {
+		set_variable = {
 			name = bm_overflow_enlightenment
 			value = "has_trait_xp(lifestyle_blood_mage|enlightenment)"
 			divide = 20
 			floor = yes
 		}
-		change_temporary_variable = {
+		change_variable = {
 			name = bm_elevation_overflow_stacks
 			add = var:bm_overflow_enlightenment
 		}
@@ -242,6 +248,12 @@ bm_elevate_tier_effect = {
 			hidden_effect = {
 				bm_ensure_blood_mage_story_effect = yes
 				bm_recount_lifeforce_stacks_effect = yes
+				remove_variable = bm_elevation_overflow_stacks
+				remove_variable = bm_overflow_bloodlust
+				remove_variable = bm_overflow_benediction
+				remove_variable = bm_overflow_bloodline
+				remove_variable = bm_overflow_hematurgy
+				remove_variable = bm_overflow_enlightenment
 			}
 		}
 	}
