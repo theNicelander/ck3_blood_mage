@@ -595,6 +595,7 @@ lifestyle_blood_mage = {
 
     # Martial
     martial_per_piety_level = 1
+    prowess_per_piety_level = 1
 
     # Stewardship
     stewardship_per_piety_level = 1
@@ -702,7 +703,6 @@ tracks = {
                 # specific
                 stewardship_per_piety_level = @bm_bloodline_stewardship_per_piety
                 monthly_dynasty_prestige_mult = @bm_bloodline_dynasty_prestige_mult
-                no_prowess_loss_from_age = yes
             }
         }
 
@@ -800,7 +800,6 @@ tracks = {
                 # specific
                 intrigue_per_piety_level = @bm_hematurgy_intrigue_per_piety
                 max_hostile_schemes_add = @bm_hematurgy_max_hostile_schemes
-                no_prowess_loss_from_age = yes
             }
         }
 
@@ -916,7 +915,6 @@ tracks = {
             100 = {
                 # specific
                 diplomacy_per_piety_level = @bm_benediction_diplomacy_per_piety_tier_100
-                no_prowess_loss_from_age = yes
             }
         }
 
@@ -1016,7 +1014,6 @@ tracks = {
             100 = {
                 # specific
                 learning_per_piety_level = @bm_enlightenment_learning_per_piety_tier_100
-                no_prowess_loss_from_age = yes
             }
         }
 
@@ -1120,7 +1117,6 @@ tracks = {
                 # specific
                 martial_per_piety_level = @bm_bloodlust_martial_per_piety_tier_100
                 prowess_per_piety_level = @bm_bloodlust_prowess_per_piety_tier_100
-                no_prowess_loss_from_age = yes
             }
         }
 
@@ -1233,7 +1229,6 @@ tracks = {
             100 = {
                 # specific
                 piety_level_impact_mult = @bm_ancient_piety_impact_tier_100
-                no_prowess_loss_from_age = yes
                 personal_tenet_slot_add = @bm_ancient_personal_tenet_slot
                 monthly_legitimacy_add = @bm_ancient_monthly_legitimacy
             }
@@ -1274,6 +1269,7 @@ lifestyle_bm_archmage = {
 
     # Martial
     martial_per_piety_level = 2
+    prowess_per_piety_level = 2
 
     # Stewardship
     stewardship_per_piety_level = 2
@@ -1355,7 +1351,6 @@ lifestyle_bm_archmage = {
             100 = {
                 stewardship_per_piety_level = 2
                 monthly_dynasty_prestige_mult = 0.50
-                no_prowess_loss_from_age = yes
             }
         }
 
@@ -1427,7 +1422,6 @@ lifestyle_bm_archmage = {
             100 = {
                 intrigue_per_piety_level = 2
                 max_hostile_schemes_add = 1
-                no_prowess_loss_from_age = yes
             }
         }
 
@@ -1515,7 +1509,6 @@ lifestyle_bm_archmage = {
             100 = {
                 diplomacy_per_piety_level = 2
                 monthly_prestige_gain_mult = 0.10
-                no_prowess_loss_from_age = yes
             }
         }
 
@@ -1589,7 +1582,6 @@ lifestyle_bm_archmage = {
             100 = {
                 learning_per_piety_level = 2
                 monthly_piety_gain_mult = 0.10
-                no_prowess_loss_from_age = yes
             }
         }
 
@@ -1667,7 +1659,6 @@ lifestyle_bm_archmage = {
             100 = {
                 martial_per_piety_level = 2
                 prowess_per_piety_level = 2
-                no_prowess_loss_from_age = yes
             }
         }
 
@@ -1748,7 +1739,6 @@ lifestyle_bm_archmage = {
             }
             100 = {
                 piety_level_impact_mult = 0.5
-                no_prowess_loss_from_age = yes
                 personal_tenet_slot_add = 2
                 monthly_legitimacy_add = 0.2
             }
