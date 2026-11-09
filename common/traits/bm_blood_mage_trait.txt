@@ -84,9 +84,13 @@ lifestyle_bm_acolyte = {
     }
 
     # Base trait benefits (Tier I)
-    learning = 1
+    # Ancient
     health = 0.25
     life_expectancy = 5
+
+    # Learning
+    learning = 1
+
     prowess = 2
     same_opinion = 5
 
@@ -579,19 +583,29 @@ lifestyle_blood_mage = {
     }
 
     # Base trait benefits (Tier II - Anti-nerf absorbs Tier I 50 XP milestones & Tier I tracks)
-    diplomacy_per_piety_level = 1
-    martial_per_piety_level = 1
-    stewardship_per_piety_level = 1
-    intrigue_per_piety_level = 1
-    learning_per_piety_level = 1
-    prowess_per_piety_level = 1
-    health = 1.4
-    life_expectancy = 28
-    years_of_fertility = 28
-    epidemic_resistance = 28
-    prowess = 2
-    same_opinion = 10
+    # Ancient
+    health = 2
+    life_expectancy = 33
+    years_of_fertility = 33
+    epidemic_resistance = 33
     no_prowess_loss_from_age = yes
+
+    # Diplomacy
+    diplomacy_per_piety_level = 1
+
+    # Martial
+    martial_per_piety_level = 1
+
+    # Stewardship
+    stewardship_per_piety_level = 1
+
+    # Intrigue
+    intrigue_per_piety_level = 1
+
+    # Learning
+    learning_per_piety_level = 1
+
+    same_opinion = 10
 
 tracks = {
         bloodline = {
@@ -1248,19 +1262,29 @@ lifestyle_bm_archmage = {
     }
 
     # Base trait benefits (Tier III - Anti-nerf absorbs Tier II 50 XP milestones & Tier II tracks)
-    diplomacy_per_piety_level = 2
-    martial_per_piety_level = 2
-    stewardship_per_piety_level = 2
-    intrigue_per_piety_level = 2
-    learning_per_piety_level = 2
-    prowess_per_piety_level = 2
-    health = 4.2
-    life_expectancy = 84
-    years_of_fertility = 56
-    epidemic_resistance = 56
-    prowess = 4
-    same_opinion = 15
+    # Ancient
+    health = 5
+    life_expectancy = 100
+    years_of_fertility = 50
+    epidemic_resistance = 50
     no_prowess_loss_from_age = yes
+
+    # Diplomacy
+    diplomacy_per_piety_level = 2
+
+    # Martial
+    martial_per_piety_level = 2
+
+    # Stewardship
+    stewardship_per_piety_level = 2
+
+    # Intrigue
+    intrigue_per_piety_level = 2
+
+    # Learning
+    learning_per_piety_level = 2
+
+    same_opinion = 15
 
     tracks = {
         bloodline = {
