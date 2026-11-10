@@ -50,6 +50,29 @@
 		}
 
 		set_variable = {
+			name = bm_lifeforce_mojo_stacks
+			value = 0
+		}
+		while = {
+			limit = { has_character_modifier = lifeforce_modifier_mojo }
+			remove_character_modifier = lifeforce_modifier_mojo
+			change_variable = {
+				name = bm_lifeforce_mojo_stacks
+				add = 1
+			}
+		}
+		while = {
+			count = {
+				value = 0
+				if = {
+					limit = { exists = var:bm_lifeforce_mojo_stacks }
+					add = var:bm_lifeforce_mojo_stacks
+				}
+			}
+			add_character_modifier = lifeforce_modifier_mojo
+		}
+
+		set_variable = {
 			name = bm_lifeforce_minor_stacks
 			value = 0
 		}
