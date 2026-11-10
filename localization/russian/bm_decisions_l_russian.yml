@@ -2,7 +2,6 @@
   # Decision group type
   decision_group_type_bm_decision_group:0 "Решения мага крови"
   convert_to_blood_magic_from_witch.tooltip:0 "Стать магом крови"
-  mass_lifedrain_prisoners_decision.text:0 "Есть хотя бы один пленник"
 
   # Convert to blood magic from witch
   convert_to_blood_magic_from_witch:0 "Стать магом крови"
@@ -66,3 +65,33 @@
   bm_enhance_blood_ritual_decision.failure_tt:0 "$bm_geyser_duel.failure_tt$"
 
   bm_enhance_blood_ritual_decision_desc:0 "Долгие исследования магии крови привели меня к этому рубежу. Древние предания рассказывают об Эгиле Скаллагримссоне — берсерке, поэте и мастере рун крови, охраняющем гейзеры Рейкьявика и священные источники Цусимы. Встретившись с древним мастером, вы можете испытать свою учёность и доблесть в священном поединке крови.\n\nПобеда пробудит вашу кровь. Поражение неизбежно сломит ваш разум или искалечит тело."
+
+  # Blood Distillation
+  bm_blood_distillation_decision: "Перегонка крови"
+  bm_blood_distillation_decision_desc: "Вы можете извлечь силу из освоенных направлений магии крови. Накопленный в них опыт укрепит ваше тело и приблизит вас к следующей ступени."
+  bm_blood_distillation_decision_tooltip: "Превратить опыт направлений в опыт Древности"
+  bm_blood_distillation_decision_confirm: "Начать перегонку"
+  BM_BLOOD_DISTILLATION_DECISION_NEXT_STEP_BUTTON: "Извлечь силу"
+  bm_blood_distillation_ancient_not_maxed_req: "Древность ещё не достигла предела (100 опыта)"
+  bm_blood_distillation_decision_effect: "Расходует опыт выбранного направления, чтобы повысить Древность."
+
+  bm_distill_bloodlust: "Перегнать опыт Кровожадности"
+  bm_distill_bloodlust_xp_req: "Требуется опыт выбранного направления (10 для адепта, 15 для мага)"
+  bm_distill_benediction: "Перегнать опыт Благословения"
+  bm_distill_benediction_xp_req: "Требуется опыт выбранного направления (10 для адепта, 15 для мага)"
+  bm_distill_bloodline: "Перегнать опыт Родословной"
+  bm_distill_bloodline_xp_req: "Требуется опыт выбранного направления (10 для адепта, 15 для мага)"
+  bm_distill_hematurgy: "Перегнать опыт Гематургии"
+  bm_distill_hematurgy_xp_req: "Требуется опыт выбранного направления (10 для адепта, 15 для мага)"
+  bm_distill_enlightenment: "Перегнать опыт Просветления"
+  bm_distill_enlightenment_xp_req: "Требуется опыт выбранного направления (10 для адепта, 15 для мага)"
+
+  # Tier Elevation
+  bm_elevate_blood_mage_tier_decision: "Взойти на следующую ступень магии крови"
+  bm_elevate_blood_mage_tier_decision_desc: "Ваше тело переполнено сгущённой силой. Встретьтесь со своим отражением в Зеркале крови, чтобы преодолеть пределы нынешней ступени."
+  bm_elevate_blood_mage_tier_decision_tooltip: "Перейти на следующую ступень магии крови"
+  bm_elevate_blood_mage_tier_decision_confirm: "Взглянуть в Зеркало крови"
+  bm_elevate_tier_ancient_req: "Древность должна достичь предела (100 опыта)"
+  bm_elevate_tier_total_xp_req: "Нужно не менее 250 опыта во всех направлениях магии крови суммарно ([GetPlayer.MakeScope.ScriptValue('bm_total_blood_mage_xp')|0]/250)"
+  bm_elevate_blood_mage_tier_toast: "Достигнута ступень мага крови!"
+  bm_elevate_blood_archmage_tier_toast: "Достигнута ступень архимага крови!"

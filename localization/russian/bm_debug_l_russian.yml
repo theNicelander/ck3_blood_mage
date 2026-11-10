@@ -1,32 +1,19 @@
 ﻿l_russian:
-  # Add lifeforce
-  debug_add_lifeforce:0 "МАГ КРОВИ: добавить большую жизненную силу"
-  debug_add_lifeforce_desc:0 "МАГ КРОВИ: добавить большую жизненную силу"
-  debug_add_lifeforce_tooltip:0 "МАГ КРОВИ: добавить большую жизненную силу"
-  debug_add_lifeforce_confirm:0 "МАГ КРОВИ: добавить большую жизненную силу"
+  # Debug Decisions
+  debug_give_superior_blood_rune: "МАГ КРОВИ: даровать высшую руну крови"
+  debug_give_superior_blood_rune_desc: "Получить модификатор высшей руны крови взамен малой или большой руны."
+  debug_give_superior_blood_rune_tooltip: "Начертать на себе высшую руну крови."
+  debug_give_superior_blood_rune_confirm: "Начертать руну"
 
-  debug_add_lifeforce_minor:0 "МАГ КРОВИ: добавить малую жизненную силу"
-  debug_add_lifeforce_minor_desc:0 "МАГ КРОВИ: добавить малую жизненную силу"
-  debug_add_lifeforce_minor_tooltip:0 "МАГ КРОВИ: добавить малую жизненную силу"
-  debug_add_lifeforce_minor_confirm:0 "МАГ КРОВИ: добавить малую жизненную силу"
+  debug_manage_xp: "МАГ КРОВИ: управление опытом"
+  debug_manage_xp_desc: "Открыть меню отладки, чтобы начислить опыт свойствам магии крови и «Могущество крови»."
+  debug_manage_xp_tooltip: "Открыть меню управления опытом."
+  debug_manage_xp_confirm: "Открыть меню"
 
-  # Add EXP
-  debug_add_exp_blood_mage_exp:0 "МАГ КРОВИ: добавить опыт свойства «Маг крови»"
-  debug_add_exp_blood_mage_exp_desc:0 "МАГ КРОВИ: добавить опыт свойства «Маг крови»"
-  debug_add_exp_blood_mage_exp_tooltip:0 "МАГ КРОВИ: добавить опыт свойства «Маг крови»"
-  debug_add_exp_blood_mage_exp_confirm:0 "МАГ КРОВИ: добавить опыт свойства «Маг крови»"
-
-  # Blood Power
-  debug_add_blood_power_exp:0 "МАГ КРОВИ: добавить опыт — Могущество крови"
-  debug_add_blood_power_exp_desc:0 "МАГ КРОВИ: добавить опыт — Могущество крови"
-  debug_add_blood_power_exp_tooltip:0 "МАГ КРОВИ: добавить опыт — Могущество крови"
-  debug_add_blood_power_exp_confirm:0 "МАГ КРОВИ: добавить опыт — Могущество крови"
-
-  # Legacy debug aliases
-  debug_add_blood_empowerment_exp:0 "$debug_add_blood_power_exp$"
-  debug_add_blood_empowerment_exp_desc:0 "$debug_add_blood_power_exp_desc$"
-  debug_add_blood_empowerment_exp_tooltip:0 "$debug_add_blood_power_exp_tooltip$"
-  debug_add_blood_empowerment_exp_confirm:0 "$debug_add_blood_power_exp_confirm$"
+  debug_manage_lifeforce: "МАГ КРОВИ: управление жизненной силой"
+  debug_manage_lifeforce_desc: "Открыть меню отладки, чтобы добавить или убрать заряды жизненной силы."
+  debug_manage_lifeforce_tooltip: "Открыть меню управления жизненной силой."
+  debug_manage_lifeforce_confirm: "Открыть меню"
 
   # Become blood mage
   debug_become_blood_mage:0 "МАГ КРОВИ: стать магом крови"
@@ -34,17 +21,55 @@
   debug_become_blood_mage_tooltip:0 "МАГ КРОВИ: стать магом крови"
   debug_become_blood_mage_confirm:0 "МАГ КРОВИ: стать магом крови"
 
-  # Remove lifeforce
-  debug_remove_lifeforce:0 "МАГ КРОВИ: убрать жизненную силу"
-  debug_remove_lifeforce_desc:0 "МАГ КРОВИ: убрать жизненную силу"
-  debug_remove_lifeforce_tooltip:0 "МАГ КРОВИ: убрать жизненную силу"
-  debug_remove_lifeforce_confirm:0 "МАГ КРОВИ: убрать жизненную силу"
-
   # Upgrade all covenants
   debug_upgrade_all_covenants:0 "МАГ КРОВИ: Улучшить все пакты"
   debug_upgrade_all_covenants_desc:0 "Улучшить все 6 пактов дома (влияния, боевой дружины, процветания, теней, мастерства и наследия) до следующей ступени."
   debug_upgrade_all_covenants_tooltip:0 "Поднять все 6 действующих пактов дома на следующую ступень (малая -> большая -> высшая)."
   debug_upgrade_all_covenants_confirm:0 "Улучшить все пакты"
+
+  # Debug Events
+  bm_debug.back: "Назад"
+
+  bm_debug.0001.title: "Отладка: управление опытом"
+  bm_debug.0001.desc: "Выберите, куда начислить опыт. Изменение применится сразу, и меню обновится."
+  bm_debug.0001.trait_xp: "Свойство магии крови (20 опыта)"
+  bm_debug.0001.empowerment_xp: "Могущество крови (20 опыта)"
+  bm_debug.0001.ancient_xp: "Древность (100 опыта)"
+  bm_debug.0001.toast: "Опыт начислен"
+
+  bm_debug.0002.title: "Отладка: управление жизненной силой"
+  bm_debug.0002.desc: "Выберите, как изменить запас жизненной силы. Изменение применится сразу, и меню обновится."
+  bm_debug.0002.add_superior_5: "Добавить высшую жизненную силу ×5"
+  bm_debug.0002.add_major_5: "Добавить большую жизненную силу ×5"
+  bm_debug.0002.add_minor_5: "Добавить малую жизненную силу ×5"
+  bm_debug.0002.remove_all: "Убрать всю жизненную силу"
+  bm_debug.0002.toast: "Запас жизненной силы изменён"
+
+  # Legacy debug aliases (kept for compat)
+  debug_add_lifeforce:0 "$debug_manage_lifeforce$"
+  debug_add_lifeforce_desc:0 "$debug_manage_lifeforce_desc$"
+  debug_add_lifeforce_tooltip:0 "$debug_manage_lifeforce_tooltip$"
+  debug_add_lifeforce_confirm:0 "$debug_manage_lifeforce_confirm$"
+  debug_add_lifeforce_minor:0 "$debug_manage_lifeforce$"
+  debug_add_lifeforce_minor_desc:0 "$debug_manage_lifeforce_desc$"
+  debug_add_lifeforce_minor_tooltip:0 "$debug_manage_lifeforce_tooltip$"
+  debug_add_lifeforce_minor_confirm:0 "$debug_manage_lifeforce_confirm$"
+  debug_remove_lifeforce:0 "$debug_manage_lifeforce$"
+  debug_remove_lifeforce_desc:0 "$debug_manage_lifeforce_desc$"
+  debug_remove_lifeforce_tooltip:0 "$debug_manage_lifeforce_tooltip$"
+  debug_remove_lifeforce_confirm:0 "$debug_manage_lifeforce_confirm$"
+  debug_add_exp_blood_mage_exp:0 "$debug_manage_xp$"
+  debug_add_exp_blood_mage_exp_desc:0 "$debug_manage_xp_desc$"
+  debug_add_exp_blood_mage_exp_tooltip:0 "$debug_manage_xp_tooltip$"
+  debug_add_exp_blood_mage_exp_confirm:0 "$debug_manage_xp_confirm$"
+  debug_add_blood_power_exp:0 "$debug_manage_xp$"
+  debug_add_blood_power_exp_desc:0 "$debug_manage_xp_desc$"
+  debug_add_blood_power_exp_tooltip:0 "$debug_manage_xp_tooltip$"
+  debug_add_blood_power_exp_confirm:0 "$debug_manage_xp_confirm$"
+  debug_add_blood_empowerment_exp:0 "$debug_manage_xp$"
+  debug_add_blood_empowerment_exp_desc:0 "$debug_manage_xp_desc$"
+  debug_add_blood_empowerment_exp_tooltip:0 "$debug_manage_xp_tooltip$"
+  debug_add_blood_empowerment_exp_confirm:0 "$debug_manage_xp_confirm$"
 
   # Debug interactions
   bm_debug_character_interaction:0 "ОТЛАДКА: магия крови"
