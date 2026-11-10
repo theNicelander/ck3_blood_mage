@@ -89,6 +89,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - All 58 Blóðtrú, 27 Ketsudō and 32 Xuédào holy sites are now Eminent Holy Sites (up to 80 active), granting smaller stacked global faith bonuses alongside local county holder modifiers.
 - Reformation repair decision resolves holy-site locks when creating custom faiths.
 - Blood Mage is no longer a religion virtue.
+- **Level of Devotion Cap**: Default Piety Level cap raised to 8 globally (`DEFAULT_PIETY_LEVEL_CAP = 8`), unlocking Level 6 (Divine), Level 7 (Demigod), and Level 8 (Godlike) for all rulers and governments.
 
 ## Buildings
 
@@ -188,6 +189,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 - v1.20.36: Blood Knight icon, domicile buildings, duel Lifeforce rewards
 - v1.20.35: Simplify magic tiers; scale battle XP and Lifeforce
 - v1.20.34: Blood Knight situation tab, prevalence rules, error fixes
+- v1.20.75: Raise default Level of Devotion cap to 8 (Divine, Demigod, Godlike accessible globally)
 - v1.20.73: Bidirectional Lifeforce transmutation (condense Minor/Major, split Superior/Major with 6-month cooldowns)
 - v1.20.63: Align and streamline House Covenants and Blood Power across six mirrored tracks; cap Blood Power at 4 core personal modifiers per track, moving devotion and prestige scaling, domain limit, opinion, and Men-at-Arms bonuses into House Covenants
 - v1.20.32: Overhaul Bloodline and Hematurgy tracks
