@@ -13,13 +13,13 @@ Core spellcasting resource stored as stacking character modifiers (`lifeforce_mo
 ### Lifeforce & Exhaustion Modifiers Table (`common/modifiers/bm_lifeforce.txt`)
 | Modifier Key | Role | Stacking | Duration | Mechanical Effects per Stack |
 | --- | --- | --- | --- | --- |
-| `lifeforce_modifier_minor` | Tier 1 Fuel | Yes | Permanent until spent | `+0.1` Health, `+1` Life Exp, `+1` Epidemic Res, `+0.1` Negate Health Penalty |
-| `lifeforce_modifier_major` | Tier 2 Fuel | Yes | Permanent until spent | `+0.3` Health, `+3` Life Exp, `+3` Epidemic Res, `+0.3` Negate Health Penalty |
-| `lifeforce_modifier_superior` | Tier 3 Fuel | Yes | Permanent until spent | `+0.6` Health, `+6` Life Exp, `+6` Epidemic Res, `+0.6` Negate Health Penalty, `+3` Prowess |
+| `lifeforce_modifier_minor` | Tier 1 Fuel | Yes | Permanent until spent | `+0.1` Health, `+1` Life Exp, `+2` Epidemic Res, `+0.1` Negate Health Penalty |
+| `lifeforce_modifier_major` | Tier 2 Fuel | Yes | Permanent until spent | `+0.3` Health, `+3` Life Exp, `+6` Epidemic Res, `+0.3` Negate Health Penalty |
+| `lifeforce_modifier_superior` | Tier 3 Fuel | Yes | Permanent until spent | `+0.6` Health, `+6` Life Exp, `+12` Epidemic Res, `+0.6` Negate Health Penalty, `+3` Prowess |
 | `lifeforce_modifier_mojo` | Lineage / Fertility Fuel | Yes | Permanent until spent | `+10%` Fertility, `+5` Fertility Yrs, `+5%` Inactive Inheritance Chance, `+5%` Genetic Trait Chance, `+5%` Strengthen Blood Chance, `+5` Attraction Opinion |
-| `lifeforce_modifier_negative_minor` | Minor Exhaustion | Yes | **1 Year** (`365` days) | `-0.1` Health, `-1` Life Exp, `-1` Epidemic Res, `-0.1` Negate Health Penalty, `-1` Prowess |
-| `lifeforce_modifier_negative_major` | Major Exhaustion | Yes | **3 Years** (`1095` days; `365`d on Flay/Distill) | `-0.3` Health, `-3` Life Exp, `-3` Epidemic Res, `-0.3` Negate Health Penalty, `-2` Prowess |
-| `lifeforce_modifier_negative_superior` | Superior Exhaustion | Yes | **3 Years** (`1095` days; `5` yrs on Flay) | `-0.6` Health, `-6` Life Exp, `-6` Epidemic Res, `-0.6` Negate Health Penalty, `-4` Prowess |
+| `lifeforce_modifier_negative_minor` | Minor Exhaustion | Yes | **1 Year** (`365` days) | `-0.1` Health, `-1` Life Exp, `-2` Epidemic Res, `-0.1` Negate Health Penalty, `-1` Prowess |
+| `lifeforce_modifier_negative_major` | Major Exhaustion | Yes | **3 Years** (`1095` days; `365`d on Flay/Distill) | `-0.3` Health, `-3` Life Exp, `-6` Epidemic Res, `-0.3` Negate Health Penalty, `-2` Prowess |
+| `lifeforce_modifier_negative_superior` | Superior Exhaustion | Yes | **3 Years** (`1095` days; `5` yrs on Flay) | `-0.6` Health, `-6` Life Exp, `-12` Epidemic Res, `-0.6` Negate Health Penalty, `-4` Prowess |
 | `lifedrained_modifier` | Victim Siphon Toll | Yes | Permanent (until restored) | `-0.5` Health, `-10` Life Exp, `-5` Epidemic Res, `-0.5` Negate Health Penalty, `-5` Prowess |
 | `recently_lifedrained_modifier` | Victim Cooldown | No | **1 Year** (`years = 1`) | Blocks repeat `lifedrain_courtier_event_interaction` on the same victim |
 
