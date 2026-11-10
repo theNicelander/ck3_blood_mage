@@ -17,7 +17,7 @@ Core spellcasting resource stored as stacking character modifiers (`lifeforce_mo
 | `lifeforce_modifier_major` | Tier 2 Fuel | Yes | Permanent until spent | `+0.3` Health, `+3` Life Exp, `+6` Epidemic Res, `+0.3` Negate Health Penalty |
 | `lifeforce_modifier_superior` | Tier 3 Fuel | Yes | Permanent until spent | `+0.6` Health, `+6` Life Exp, `+12` Epidemic Res, `+0.6` Negate Health Penalty |
 | `lifeforce_modifier_mojo` | Lineage / Fertility Reservoir | Yes | Permanent until spent | `+10%` Fertility, `+5` Fertility Yrs, `+5%` Inactive Inheritance Chance, `+5%` Genetic Trait Chance, `+5%` Strengthen Blood Chance, `+5` Attraction Opinion |
-| `lifeforce_modifier_fury` | Combat / Martial Reservoir | Yes | Permanent until spent | `+3` Prowess, `+1` Advantage, `+5%` Knight Effectiveness |
+| `lifeforce_modifier_fury` | Combat / Martial Reservoir | Yes | Permanent until spent | `+2` Prowess, `+10%` Knight Effectiveness, `+2%` Army Movement Speed, `+2` Travel Safety |
 | `lifeforce_modifier_focus` | Study / Intellectual Reservoir | Yes | Permanent until spent | `+1` Learning, `-10%` Stress Gain, `+5%` Monthly Lifestyle XP Gain |
 | `lifeforce_modifier_negative_minor` | Minor Exhaustion | Yes | **1 Year** (`365` days) | `-0.1` Health, `-1` Life Exp, `-2` Epidemic Res, `-0.1` Negate Health Penalty, `-1` Prowess |
 | `lifeforce_modifier_negative_major` | Major Exhaustion | Yes | **3 Years** (`1095` days; `365`d on Flay/Distill) | `-0.3` Health, `-3` Life Exp, `-6` Epidemic Res, `-0.3` Negate Health Penalty, `-2` Prowess |

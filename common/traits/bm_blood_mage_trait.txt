@@ -175,6 +175,7 @@ lifestyle_bm_acolyte = {
 				army_damage_mult = 0.03
 			}
 			50 = {
+				knight_limit = 1
 				martial_per_piety_level = 1
 				prowess_per_piety_level = 1
 			}
@@ -265,6 +266,7 @@ lifestyle_blood_mage = {
 	# Martial
 	martial_per_piety_level = 1
 	prowess_per_piety_level = 1
+	knight_limit = 3
 
 	# Stewardship
 	stewardship_per_piety_level = 1
@@ -421,6 +423,7 @@ lifestyle_blood_mage = {
 				army_damage_mult = 0.05
 			}
 			50 = {
+				knight_limit = 1
 				martial_per_piety_level = 1
 				prowess_per_piety_level = 1
 			}
@@ -510,6 +513,7 @@ lifestyle_bm_archmage = {
 	# Martial
 	martial_per_piety_level = 2
 	prowess_per_piety_level = 2
+	knight_limit = 6
 
 	# Stewardship
 	stewardship_per_piety_level = 2
@@ -656,29 +660,30 @@ lifestyle_bm_archmage = {
 			10 = {
 				health = @bm_archmage_common_health
 				life_expectancy = @bm_archmage_common_life_expectancy
-				knight_limit = 2
+				knight_limit = 1
 				army_damage_mult = 0.08
 			}
 			30 = {
 				health = @bm_archmage_common_health
 				life_expectancy = @bm_archmage_common_life_expectancy
-				knight_limit = 2
+				knight_limit = 1
 				army_damage_mult = 0.08
 			}
 			50 = {
+				knight_limit = 1
 				martial_per_piety_level = 2
 				prowess_per_piety_level = 2
 			}
 			70 = {
 				health = @bm_archmage_common_health
 				life_expectancy = @bm_archmage_common_life_expectancy
-				knight_limit = 2
+				knight_limit = 1
 				army_damage_mult = 0.08
 			}
 			100 = {
 				health = @bm_archmage_common_health
 				life_expectancy = @bm_archmage_common_life_expectancy
-				knight_limit = 2
+				knight_limit = 1
 				army_damage_mult = 0.08
 				martial_per_piety_level = 2
 				prowess_per_piety_level = 2
