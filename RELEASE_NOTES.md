@@ -25,6 +25,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 ## Lifeforce
 
 - Three tiers: **Minor** (health, disease resistance), **Major** (lifespan, body rituals), **Superior** (Blood Golems, capstone runes).
+- **Bidirectional Condensation & Splitting**: Transmute between Lifeforce tiers in Cast Blood Magic decisions: condense Minor to Major (150 Piety, 6-mo cooldown), condense Major to Superior (350 Piety, 6-mo cooldown), split Superior into 2 Major (350 Piety, 6-mo cooldown), or split Major into 2 Minor (150 Piety, 6-mo cooldown).
 - **Mojo Lifeforce Subsystem**: Dedicated lineage Lifeforce modifier granting +10% fertility, +5 fertility years, +5% inactive trait inheritance, +5% genetic trait chance, and +5% strengthen blood chance. Convert Minor (50 Piety) or Major (100 Piety -> 3 Mojo) to Mojo, reclaim to Minor (75 Piety), bestow Mojo upon spouses and kin, or burn Mojo during childbirth to quicken newborn awakening and bloodline mastery.
 - **Manifest Lifeforce**: four Piety tiers (250–1,500), no cooldown.
 - Blood Mages harvest Lifeforce from battles and lethal single combat duels.
@@ -187,6 +188,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 - v1.20.36: Blood Knight icon, domicile buildings, duel Lifeforce rewards
 - v1.20.35: Simplify magic tiers; scale battle XP and Lifeforce
 - v1.20.34: Blood Knight situation tab, prevalence rules, error fixes
+- v1.20.73: Bidirectional Lifeforce transmutation (condense Minor/Major, split Superior/Major with 6-month cooldowns)
 - v1.20.63: Align and streamline House Covenants and Blood Power across six mirrored tracks; cap Blood Power at 4 core personal modifiers per track, moving devotion and prestige scaling, domain limit, opinion, and Men-at-Arms bonuses into House Covenants
 - v1.20.32: Overhaul Bloodline and Hematurgy tracks
 - v1.20.31: Standalone Blood Knight trait with unified healing events
