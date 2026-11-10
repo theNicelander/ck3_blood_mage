@@ -147,7 +147,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 
 ## Version history
 
-- v1.20.71: Display ascension duel defeat effects natively in interface toast.
+- v1.20.71: Mirror player stats and traits in ascension duel; native toast polish; universal track XP progression.
 - v1.20.70: Rebalance Bloodlust track (replace flat Martial/Prowess with Advantage, Knight Effectiveness, and Knight Limit); move Dread Baseline to Hematurgy track; add devotion prowess to Mage (+1) and Archmage (+2) base stats; remove redundant age lock from higher tier tracks; allow Blood Acolytes and Archmages to take up the Blóðtrú faith.
 - v1.20.69: Sequential 3-Tier Hierarchy: Blood Acolyte (Tier I), Blood Mage (Tier II), Blood Archmage (Tier III) with standardized 6-track progression; blank-slate elevation with overflow Lifeforce extraction; anti-nerf base stat floors; Sanguine Distillation rite; Crimson Mirror non-lethal battlefield ascension duel vs self-clone.
 - v1.20.68: Consolidate Blood Knight into Blood Mage trait as the new 6th track 'Bloodlust' (prowess, martial, advantage, knight limit, and dread baseline); grant all Blood Mages Worthy Commander army gender exemption; unify battlefield and single combat XP gain; clean up UI and retire separate Blood Knight trait; old saves are not supported (breaking change)
