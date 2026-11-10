@@ -20,7 +20,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - Track XP sources rebalanced: healing grants Benediction, family rites and childbirth grant Ancient/Benediction, congenital manifestation grants XP by attribute.
 - Regiments: **Blood Berserkers** (heavy shock infantry, Devotion 2+) and **Blood-Bound Behemoths** (siege-capable monsters, Devotion 4+), Piety-maintained.
 - Crimson Sworn-Guard court position and Crimson Warrior champions.
-- **Track Tooltip Trim**: Streamlined all six lifestyle tracks down to 2–3 distinct bonuses per track, removing flat and percentage double-dipping and redundant opinion/scheme stats. Moved Domain Limit (+1 at 50/100) to Bloodline and Personal Tenet Slots (+1 at 50/100) to Ancient. Removed fertility years and plague resistance from generic track steps into dedicated Mojo Lifeforce and doubled Lifeforce disease resistance (+2 / +6 / +12).
+- **Track Tooltip Trim & 5-Milestone Consolidation**: Consolidated all six lifestyle tracks across Acolyte, Mage, and Archmage into 5 clean milestones (10, 30, 50, 70, 100 XP) matching Blood Power, removing tooltip bloat and eliminating overlap with specialized reservoirs. Ancient grants flat dynasty renown, legitimacy, devotion impact, and personal tenet slots (+1 at 50/100). Enlightenment provides flat and percentage monthly piety. Benediction adds general opinion, personal scheme max success chance, and +1 concurrent personal schemes at 50 XP. Bloodline boosts income, domain tax, capital county development growth, and domain limit (+1 at 50/100). Hematurgy raises hostile scheme max success, reduces enemy max success, and unlocks +1 concurrent hostile schemes at 50 XP. Bloodlust increases sworn knight limit and army damage percentage. Removed fertility years and plague resistance from generic track steps into dedicated Mojo Lifeforce and doubled Lifeforce disease resistance (+2 / +6 / +12).
 
 ## Lifeforce
 
@@ -190,6 +190,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 - v1.20.36: Blood Knight icon, domicile buildings, duel Lifeforce rewards
 - v1.20.35: Simplify magic tiers; scale battle XP and Lifeforce
 - v1.20.34: Blood Knight situation tab, prevalence rules, error fixes
+- v1.20.74: Specialized Lifeforce Reservoirs (Blood Fury & Focus) & 5-milestone core trait consolidation
 - v1.20.73: Bidirectional Lifeforce transmutation (condense Minor/Major, split Superior/Major with 6-month cooldowns)
 - v1.20.63: Align and streamline House Covenants and Blood Power across six mirrored tracks; cap Blood Power at 4 core personal modifiers per track, moving devotion and prestige scaling, domain limit, opinion, and Men-at-Arms bonuses into House Covenants
 - v1.20.32: Overhaul Bloodline and Hematurgy tracks

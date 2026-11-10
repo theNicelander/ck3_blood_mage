@@ -1,1126 +1,717 @@
-﻿# General stats - Tier II (Mage) baseline
-@bm_common_health = 0.1
-@bm_common_life_expectancy = 2
+﻿# General stats - Tier II (Mage) baseline vitality step (10, 30, 70, 100 XP)
+@bm_common_health = 0.2
+@bm_common_life_expectancy = 4
 
-# General stats - Tier I (Acolyte) 0.5x scaling
-@bm_acolyte_common_health = 0.05
-@bm_acolyte_common_life_expectancy = 1
-@bm_acolyte_bloodline_monthly_income_mult = 0.02
+# General stats - Tier I (Acolyte) 0.5x scaling vitality step (10, 30, 70, 100 XP)
+@bm_acolyte_common_health = 0.1
+@bm_acolyte_common_life_expectancy = 2
 
-# General stats - Tier III (Archmage) 1.5x scaling
-@bm_archmage_common_health = 0.15
-@bm_archmage_common_life_expectancy = 3
-
-# bloodlust
-@bm_bloodlust_knight_effectiveness_mult = 0.10
-@bm_bloodlust_knight_limit = 1
-@bm_bloodlust_martial_per_piety_tier_50 = 1
-@bm_bloodlust_prowess_per_piety_tier_50 = 1
-@bm_bloodlust_martial_per_piety_tier_100 = 1
-@bm_bloodlust_prowess_per_piety_tier_100 = 1
-
-# bloodline
-@bm_bloodline_monthly_income_mult = 0.03
-@bm_bloodline_stewardship_per_piety = 1
-@bm_bloodline_domain_limit = 1
-
-# hematurgy
-@bm_hematurgy_scheme_success_chance = 4
-@bm_hematurgy_enemy_scheme_success = -8
-@bm_hematurgy_intrigue_per_piety = 1
-@bm_hematurgy_max_hostile_schemes = 1
-
-# benediction
-@bm_benediction_general_opinion = 2
-@bm_benediction_monthly_prestige_mult = 0.05
-@bm_benediction_diplomacy_per_piety_tier_50 = 1
-@bm_benediction_diplomacy_per_piety_tier_100 = 1
-
-# enlightenment
-@bm_enlightenment_monthly_piety_mult = 0.05
-@bm_enlightenment_learning_per_piety_tier_50 = 1
-@bm_enlightenment_learning_per_piety_tier_100 = 1
-
-# ancient
-@bm_ancient_piety_impact_tier_50 = 0.2
-@bm_ancient_piety_impact_tier_100 = 0.4
-@bm_ancient_monthly_legitimacy_add = 0.1
-@bm_ancient_personal_tenet_slot = 1
+# General stats - Tier III (Archmage) 1.5x scaling vitality step (10, 30, 70, 100 XP)
+@bm_archmage_common_health = 0.3
+@bm_archmage_common_life_expectancy = 6
 
 lifestyle_bm_acolyte = {
-    category = lifestyle
-    flag = reweaving_lifestyle_trait
-    icon = bm_blood_bronze_burnished.dds
-    desc = trait_lifestyle_bm_acolyte_desc
-    ruler_designer_cost = 50
-    potential = {
-        trigger_if = {
-            limit = { exists = this }
-            OR = {
-                is_ai = no
-                NOT = { has_game_rule = bm_prevalence_player_only }
-            }
-        }
-    }
-    opposites = {
-        lifestyle_blood_mage
-        lifestyle_bm_archmage
-    }
+	category = lifestyle
+	flag = reweaving_lifestyle_trait
+	icon = bm_blood_bronze_burnished.dds
+	desc = trait_lifestyle_bm_acolyte_desc
+	ruler_designer_cost = 50
+	potential = {
+		trigger_if = {
+			limit = { exists = this }
+			OR = {
+				is_ai = no
+				NOT = { has_game_rule = bm_prevalence_player_only }
+			}
+		}
+	}
+	opposites = {
+		lifestyle_blood_mage
+		lifestyle_bm_archmage
+	}
 
-    tracks = {
-        bloodline = {
-            10 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                monthly_income_mult = @bm_acolyte_bloodline_monthly_income_mult
-            }
-            20 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                monthly_income_mult = @bm_acolyte_bloodline_monthly_income_mult
-            }
-            30 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                monthly_income_mult = @bm_acolyte_bloodline_monthly_income_mult
-            }
-            40 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                monthly_income_mult = @bm_acolyte_bloodline_monthly_income_mult
-            }
-            50 = {
-                stewardship_per_piety_level = 1
-                domain_limit = 1
-            }
-            60 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                monthly_income_mult = @bm_acolyte_bloodline_monthly_income_mult
-            }
-            70 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                monthly_income_mult = @bm_acolyte_bloodline_monthly_income_mult
-            }
-            80 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                monthly_income_mult = @bm_acolyte_bloodline_monthly_income_mult
-            }
-            90 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                monthly_income_mult = @bm_acolyte_bloodline_monthly_income_mult
-            }
-            100 = {
-                stewardship_per_piety_level = 1
-                domain_limit = 1
-            }
-        }
+	tracks = {
+		bloodline = {
+			10 = {
+				health = @bm_acolyte_common_health
+				life_expectancy = @bm_acolyte_common_life_expectancy
+				monthly_income_mult = 0.04
+				domain_tax_mult = 0.04
+			}
+			30 = {
+				health = @bm_acolyte_common_health
+				life_expectancy = @bm_acolyte_common_life_expectancy
+				monthly_income_mult = 0.04
+				domain_tax_mult = 0.04
+			}
+			50 = {
+				stewardship_per_piety_level = 1
+				domain_limit = 1
+				character_capital_county_monthly_development_growth_add = 0.1
+			}
+			70 = {
+				health = @bm_acolyte_common_health
+				life_expectancy = @bm_acolyte_common_life_expectancy
+				monthly_income_mult = 0.04
+				domain_tax_mult = 0.04
+			}
+			100 = {
+				health = @bm_acolyte_common_health
+				life_expectancy = @bm_acolyte_common_life_expectancy
+				monthly_income_mult = 0.04
+				domain_tax_mult = 0.04
+				stewardship_per_piety_level = 1
+				domain_limit = 1
+				character_capital_county_monthly_development_growth_add = 0.1
+			}
+		}
 
-        hematurgy = {
-            10 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                owned_hostile_scheme_success_chance_add = 2
-            }
-            20 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                owned_hostile_scheme_success_chance_add = 2
-                enemy_hostile_scheme_success_chance_add = -4
-            }
-            30 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                owned_hostile_scheme_success_chance_add = 2
-            }
-            40 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                owned_hostile_scheme_success_chance_add = 2
-                enemy_hostile_scheme_success_chance_add = -4
-            }
-            50 = {
-                intrigue_per_piety_level = 1
-            }
-            60 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                owned_hostile_scheme_success_chance_add = 2
-                enemy_hostile_scheme_success_chance_add = -4
-            }
-            70 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                owned_hostile_scheme_success_chance_add = 2
-            }
-            80 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                owned_hostile_scheme_success_chance_add = 2
-                enemy_hostile_scheme_success_chance_add = -4
-            }
-            90 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                owned_hostile_scheme_success_chance_add = 2
-            }
-            100 = {
-                intrigue_per_piety_level = 1
-                max_hostile_schemes_add = 1
-            }
-        }
+		hematurgy = {
+			10 = {
+				health = @bm_acolyte_common_health
+				life_expectancy = @bm_acolyte_common_life_expectancy
+				owned_hostile_scheme_success_chance_max_add = 3
+				enemy_hostile_scheme_success_chance_max_add = -4
+			}
+			30 = {
+				health = @bm_acolyte_common_health
+				life_expectancy = @bm_acolyte_common_life_expectancy
+				owned_hostile_scheme_success_chance_max_add = 3
+				enemy_hostile_scheme_success_chance_max_add = -4
+			}
+			50 = {
+				intrigue_per_piety_level = 1
+				max_hostile_schemes_add = 1
+			}
+			70 = {
+				health = @bm_acolyte_common_health
+				life_expectancy = @bm_acolyte_common_life_expectancy
+				owned_hostile_scheme_success_chance_max_add = 3
+				enemy_hostile_scheme_success_chance_max_add = -4
+			}
+			100 = {
+				health = @bm_acolyte_common_health
+				life_expectancy = @bm_acolyte_common_life_expectancy
+				owned_hostile_scheme_success_chance_max_add = 3
+				enemy_hostile_scheme_success_chance_max_add = -4
+				intrigue_per_piety_level = 1
+			}
+		}
 
-        benediction = {
-            10 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                general_opinion = 1
-            }
-            20 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                general_opinion = 1
-                monthly_prestige_gain_mult = 0.03
-            }
-            30 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                general_opinion = 1
-            }
-            40 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                general_opinion = 1
-                monthly_prestige_gain_mult = 0.03
-            }
-            50 = {
-                diplomacy_per_piety_level = 1
-            }
-            60 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                general_opinion = 1
-                monthly_prestige_gain_mult = 0.03
-            }
-            70 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                general_opinion = 1
-            }
-            80 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                general_opinion = 1
-                monthly_prestige_gain_mult = 0.03
-            }
-            90 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                general_opinion = 1
-            }
-            100 = {
-                diplomacy_per_piety_level = 1
-                monthly_prestige_gain_mult = 0.05
-            }
-        }
+		benediction = {
+			10 = {
+				health = @bm_acolyte_common_health
+				life_expectancy = @bm_acolyte_common_life_expectancy
+				general_opinion = 2
+				owned_personal_scheme_success_chance_max_add = 2
+			}
+			30 = {
+				health = @bm_acolyte_common_health
+				life_expectancy = @bm_acolyte_common_life_expectancy
+				general_opinion = 2
+				owned_personal_scheme_success_chance_max_add = 2
+			}
+			50 = {
+				diplomacy_per_piety_level = 1
+				max_personal_schemes_add = 1
+			}
+			70 = {
+				health = @bm_acolyte_common_health
+				life_expectancy = @bm_acolyte_common_life_expectancy
+				general_opinion = 2
+				owned_personal_scheme_success_chance_max_add = 2
+			}
+			100 = {
+				health = @bm_acolyte_common_health
+				life_expectancy = @bm_acolyte_common_life_expectancy
+				general_opinion = 2
+				owned_personal_scheme_success_chance_max_add = 2
+				diplomacy_per_piety_level = 1
+			}
+		}
 
-        enlightenment = {
-            10 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                monthly_piety_gain_mult = 0.03
-            }
-            20 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                monthly_piety_gain_mult = 0.03
-            }
-            30 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                monthly_piety_gain_mult = 0.03
-            }
-            40 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                monthly_piety_gain_mult = 0.03
-            }
-            50 = {
-                learning_per_piety_level = 1
-                monthly_lifestyle_xp_gain_mult = 0.05
-            }
-            60 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                monthly_piety_gain_mult = 0.03
-            }
-            70 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                monthly_piety_gain_mult = 0.03
-            }
-            80 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                monthly_piety_gain_mult = 0.03
-            }
-            90 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                monthly_piety_gain_mult = 0.03
-            }
-            100 = {
-                learning_per_piety_level = 1
-                monthly_lifestyle_xp_gain_mult = 0.10
-            }
-        }
+		enlightenment = {
+			10 = {
+				health = @bm_acolyte_common_health
+				life_expectancy = @bm_acolyte_common_life_expectancy
+				monthly_piety = 0.25
+				monthly_piety_gain_mult = 0.06
+			}
+			30 = {
+				health = @bm_acolyte_common_health
+				life_expectancy = @bm_acolyte_common_life_expectancy
+				monthly_piety = 0.25
+				monthly_piety_gain_mult = 0.06
+			}
+			50 = {
+				learning_per_piety_level = 1
+			}
+			70 = {
+				health = @bm_acolyte_common_health
+				life_expectancy = @bm_acolyte_common_life_expectancy
+				monthly_piety = 0.25
+				monthly_piety_gain_mult = 0.06
+			}
+			100 = {
+				health = @bm_acolyte_common_health
+				life_expectancy = @bm_acolyte_common_life_expectancy
+				monthly_piety = 0.25
+				monthly_piety_gain_mult = 0.06
+				learning_per_piety_level = 1
+			}
+		}
 
-        bloodlust = {
-            10 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                knight_effectiveness_mult = 0.05
-            }
-            20 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                knight_effectiveness_mult = 0.05
-                knight_limit = 1
-            }
-            30 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                knight_effectiveness_mult = 0.05
-            }
-            40 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                knight_effectiveness_mult = 0.05
-                knight_limit = 1
-            }
-            50 = {
-                martial_per_piety_level = 1
-                prowess_per_piety_level = 1
-            }
-            60 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                knight_effectiveness_mult = 0.05
-                knight_limit = 1
-            }
-            70 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                knight_effectiveness_mult = 0.05
-            }
-            80 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                knight_effectiveness_mult = 0.05
-                knight_limit = 1
-            }
-            90 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                knight_effectiveness_mult = 0.05
-            }
-            100 = {
-                martial_per_piety_level = 1
-                prowess_per_piety_level = 1
-            }
-        }
+		bloodlust = {
+			10 = {
+				health = @bm_acolyte_common_health
+				life_expectancy = @bm_acolyte_common_life_expectancy
+				knight_limit = 1
+				army_damage_mult = 0.03
+			}
+			30 = {
+				health = @bm_acolyte_common_health
+				life_expectancy = @bm_acolyte_common_life_expectancy
+				knight_limit = 1
+				army_damage_mult = 0.03
+			}
+			50 = {
+				martial_per_piety_level = 1
+				prowess_per_piety_level = 1
+			}
+			70 = {
+				health = @bm_acolyte_common_health
+				life_expectancy = @bm_acolyte_common_life_expectancy
+				knight_limit = 1
+				army_damage_mult = 0.03
+			}
+			100 = {
+				health = @bm_acolyte_common_health
+				life_expectancy = @bm_acolyte_common_life_expectancy
+				knight_limit = 1
+				army_damage_mult = 0.03
+				martial_per_piety_level = 1
+				prowess_per_piety_level = 1
+			}
+		}
 
-        ancient = {
-            10 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                monthly_dynasty_prestige_mult = 0.03
-            }
-            20 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                monthly_dynasty_prestige_mult = 0.03
-                monthly_legitimacy_add = 0.05
-            }
-            30 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                monthly_dynasty_prestige_mult = 0.03
-            }
-            40 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                monthly_dynasty_prestige_mult = 0.03
-                monthly_legitimacy_add = 0.05
-            }
-            50 = {
-                piety_level_impact_mult = 0.1
-                personal_tenet_slot_add = 1
-            }
-            60 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                monthly_dynasty_prestige_mult = 0.03
-                monthly_legitimacy_add = 0.05
-            }
-            70 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                monthly_dynasty_prestige_mult = 0.03
-            }
-            80 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                monthly_dynasty_prestige_mult = 0.03
-                monthly_legitimacy_add = 0.05
-            }
-            90 = {
-                health = @bm_acolyte_common_health
-                life_expectancy = @bm_acolyte_common_life_expectancy
-                monthly_dynasty_prestige_mult = 0.03
-            }
-            100 = {
-                piety_level_impact_mult = 0.2
-                personal_tenet_slot_add = 1
-                no_prowess_loss_from_age = yes
-            }
-        }
-    }
+		ancient = {
+			10 = {
+				health = @bm_acolyte_common_health
+				life_expectancy = @bm_acolyte_common_life_expectancy
+				monthly_dynasty_prestige = 0.25
+				monthly_legitimacy_add = 0.05
+			}
+			30 = {
+				health = @bm_acolyte_common_health
+				life_expectancy = @bm_acolyte_common_life_expectancy
+				monthly_dynasty_prestige = 0.25
+				monthly_legitimacy_add = 0.05
+			}
+			50 = {
+				piety_level_impact_mult = 0.1
+				personal_tenet_slot_add = 1
+			}
+			70 = {
+				health = @bm_acolyte_common_health
+				life_expectancy = @bm_acolyte_common_life_expectancy
+				monthly_dynasty_prestige = 0.25
+				monthly_legitimacy_add = 0.05
+			}
+			100 = {
+				health = @bm_acolyte_common_health
+				life_expectancy = @bm_acolyte_common_life_expectancy
+				monthly_dynasty_prestige = 0.25
+				monthly_legitimacy_add = 0.05
+				piety_level_impact_mult = 0.2
+				personal_tenet_slot_add = 1
+				no_prowess_loss_from_age = yes
+			}
+		}
+	}
 }
 
 lifestyle_blood_mage = {
-    category = lifestyle
-    flag = reweaving_lifestyle_trait
-    icon = bm_blood_mage_silver.dds
-    desc = trait_blood_mage_desc
-    ruler_designer_cost = 100
-    potential = {
-        trigger_if = {
-            limit = { exists = this }
-            OR = {
-                is_ai = no
-                NOT = { has_game_rule = bm_prevalence_player_only }
-            }
-        }
-    }
-    opposites = {
-        lifestyle_bm_acolyte
-        lifestyle_bm_archmage
-    }
+	category = lifestyle
+	flag = reweaving_lifestyle_trait
+	icon = bm_blood_mage_silver.dds
+	desc = trait_blood_mage_desc
+	ruler_designer_cost = 100
+	potential = {
+		trigger_if = {
+			limit = { exists = this }
+			OR = {
+				is_ai = no
+				NOT = { has_game_rule = bm_prevalence_player_only }
+			}
+		}
+	}
+	opposites = {
+		lifestyle_bm_acolyte
+		lifestyle_bm_archmage
+	}
 
-    # Base trait benefits (Tier II - Anti-nerf absorbs Tier I 50 XP milestones & Tier I tracks)
-    # Ancient
-    health = 2
-    life_expectancy = 30
-    personal_tenet_slot_add = 1
-    no_prowess_loss_from_age = yes
+	# Base trait benefits (Tier II - Anti-nerf absorbs Tier I 50 XP milestones & Tier I tracks)
+	# Ancient
+	health = 2
+	life_expectancy = 30
+	personal_tenet_slot_add = 1
+	no_prowess_loss_from_age = yes
 
-    # Diplomacy
-    diplomacy_per_piety_level = 1
+	# Diplomacy
+	diplomacy_per_piety_level = 1
 
-    # Martial
-    martial_per_piety_level = 1
-    prowess_per_piety_level = 1
+	# Martial
+	martial_per_piety_level = 1
+	prowess_per_piety_level = 1
 
-    # Stewardship
-    stewardship_per_piety_level = 1
-    domain_limit = 1
+	# Stewardship
+	stewardship_per_piety_level = 1
+	domain_limit = 1
 
-    # Intrigue
-    intrigue_per_piety_level = 1
+	# Intrigue
+	intrigue_per_piety_level = 1
 
-    # Learning
-    learning_per_piety_level = 1
+	# Learning
+	learning_per_piety_level = 1
 
-    tracks = {
-        bloodline = {
-            10 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                monthly_income_mult = @bm_bloodline_monthly_income_mult
-            }
-            20 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                monthly_income_mult = @bm_bloodline_monthly_income_mult
-            }
-            30 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                monthly_income_mult = @bm_bloodline_monthly_income_mult
-            }
-            40 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                monthly_income_mult = @bm_bloodline_monthly_income_mult
-            }
-            50 = {
-                stewardship_per_piety_level = @bm_bloodline_stewardship_per_piety
-                domain_limit = @bm_bloodline_domain_limit
-            }
-            60 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                monthly_income_mult = @bm_bloodline_monthly_income_mult
-            }
-            70 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                monthly_income_mult = @bm_bloodline_monthly_income_mult
-            }
-            80 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                monthly_income_mult = @bm_bloodline_monthly_income_mult
-            }
-            90 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                monthly_income_mult = @bm_bloodline_monthly_income_mult
-            }
-            100 = {
-                stewardship_per_piety_level = @bm_bloodline_stewardship_per_piety
-                domain_limit = @bm_bloodline_domain_limit
-            }
-        }
+	tracks = {
+		bloodline = {
+			10 = {
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_income_mult = 0.06
+				domain_tax_mult = 0.06
+			}
+			30 = {
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_income_mult = 0.06
+				domain_tax_mult = 0.06
+			}
+			50 = {
+				stewardship_per_piety_level = 1
+				domain_limit = 1
+				character_capital_county_monthly_development_growth_add = 0.2
+			}
+			70 = {
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_income_mult = 0.06
+				domain_tax_mult = 0.06
+			}
+			100 = {
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_income_mult = 0.06
+				domain_tax_mult = 0.06
+				stewardship_per_piety_level = 1
+				domain_limit = 1
+				character_capital_county_monthly_development_growth_add = 0.2
+			}
+		}
 
-        hematurgy = {
-            10 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                owned_hostile_scheme_success_chance_add = @bm_hematurgy_scheme_success_chance
-            }
-            20 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                owned_hostile_scheme_success_chance_add = @bm_hematurgy_scheme_success_chance
-                enemy_hostile_scheme_success_chance_add = @bm_hematurgy_enemy_scheme_success
-            }
-            30 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                owned_hostile_scheme_success_chance_add = @bm_hematurgy_scheme_success_chance
-            }
-            40 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                owned_hostile_scheme_success_chance_add = @bm_hematurgy_scheme_success_chance
-                enemy_hostile_scheme_success_chance_add = @bm_hematurgy_enemy_scheme_success
-            }
-            50 = {
-                intrigue_per_piety_level = @bm_hematurgy_intrigue_per_piety
-            }
-            60 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                owned_hostile_scheme_success_chance_add = @bm_hematurgy_scheme_success_chance
-                enemy_hostile_scheme_success_chance_add = @bm_hematurgy_enemy_scheme_success
-            }
-            70 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                owned_hostile_scheme_success_chance_add = @bm_hematurgy_scheme_success_chance
-            }
-            80 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                owned_hostile_scheme_success_chance_add = @bm_hematurgy_scheme_success_chance
-                enemy_hostile_scheme_success_chance_add = @bm_hematurgy_enemy_scheme_success
-            }
-            90 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                owned_hostile_scheme_success_chance_add = @bm_hematurgy_scheme_success_chance
-            }
-            100 = {
-                intrigue_per_piety_level = @bm_hematurgy_intrigue_per_piety
-                max_hostile_schemes_add = @bm_hematurgy_max_hostile_schemes
-            }
-        }
+		hematurgy = {
+			10 = {
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				owned_hostile_scheme_success_chance_max_add = 5
+				enemy_hostile_scheme_success_chance_max_add = -8
+			}
+			30 = {
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				owned_hostile_scheme_success_chance_max_add = 5
+				enemy_hostile_scheme_success_chance_max_add = -8
+			}
+			50 = {
+				intrigue_per_piety_level = 1
+				max_hostile_schemes_add = 1
+			}
+			70 = {
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				owned_hostile_scheme_success_chance_max_add = 5
+				enemy_hostile_scheme_success_chance_max_add = -8
+			}
+			100 = {
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				owned_hostile_scheme_success_chance_max_add = 5
+				enemy_hostile_scheme_success_chance_max_add = -8
+				intrigue_per_piety_level = 1
+			}
+		}
 
-        benediction = {
-            10 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                general_opinion = @bm_benediction_general_opinion
-            }
-            20 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                general_opinion = @bm_benediction_general_opinion
-                monthly_prestige_gain_mult = @bm_benediction_monthly_prestige_mult
-            }
-            30 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                general_opinion = @bm_benediction_general_opinion
-            }
-            40 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                general_opinion = @bm_benediction_general_opinion
-                monthly_prestige_gain_mult = @bm_benediction_monthly_prestige_mult
-            }
-            50 = {
-                diplomacy_per_piety_level = @bm_benediction_diplomacy_per_piety_tier_50
-            }
-            60 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                general_opinion = @bm_benediction_general_opinion
-                monthly_prestige_gain_mult = @bm_benediction_monthly_prestige_mult
-            }
-            70 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                general_opinion = @bm_benediction_general_opinion
-            }
-            80 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                general_opinion = @bm_benediction_general_opinion
-                monthly_prestige_gain_mult = @bm_benediction_monthly_prestige_mult
-            }
-            90 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                general_opinion = @bm_benediction_general_opinion
-            }
-            100 = {
-                diplomacy_per_piety_level = @bm_benediction_diplomacy_per_piety_tier_100
-                monthly_prestige_gain_mult = 0.10
-            }
-        }
+		benediction = {
+			10 = {
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				general_opinion = 4
+				owned_personal_scheme_success_chance_max_add = 4
+			}
+			30 = {
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				general_opinion = 4
+				owned_personal_scheme_success_chance_max_add = 4
+			}
+			50 = {
+				diplomacy_per_piety_level = 1
+				max_personal_schemes_add = 1
+			}
+			70 = {
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				general_opinion = 4
+				owned_personal_scheme_success_chance_max_add = 4
+			}
+			100 = {
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				general_opinion = 4
+				owned_personal_scheme_success_chance_max_add = 4
+				diplomacy_per_piety_level = 1
+			}
+		}
 
-        enlightenment = {
-            10 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                monthly_piety_gain_mult = @bm_enlightenment_monthly_piety_mult
-            }
-            20 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                monthly_piety_gain_mult = @bm_enlightenment_monthly_piety_mult
-            }
-            30 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                monthly_piety_gain_mult = @bm_enlightenment_monthly_piety_mult
-            }
-            40 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                monthly_piety_gain_mult = @bm_enlightenment_monthly_piety_mult
-            }
-            50 = {
-                learning_per_piety_level = @bm_enlightenment_learning_per_piety_tier_50
-                monthly_lifestyle_xp_gain_mult = 0.08
-            }
-            60 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                monthly_piety_gain_mult = @bm_enlightenment_monthly_piety_mult
-            }
-            70 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                monthly_piety_gain_mult = @bm_enlightenment_monthly_piety_mult
-            }
-            80 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                monthly_piety_gain_mult = @bm_enlightenment_monthly_piety_mult
-            }
-            90 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                monthly_piety_gain_mult = @bm_enlightenment_monthly_piety_mult
-            }
-            100 = {
-                learning_per_piety_level = @bm_enlightenment_learning_per_piety_tier_100
-                monthly_lifestyle_xp_gain_mult = 0.15
-            }
-        }
+		enlightenment = {
+			10 = {
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_piety = 0.50
+				monthly_piety_gain_mult = 0.10
+			}
+			30 = {
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_piety = 0.50
+				monthly_piety_gain_mult = 0.10
+			}
+			50 = {
+				learning_per_piety_level = 1
+			}
+			70 = {
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_piety = 0.50
+				monthly_piety_gain_mult = 0.10
+			}
+			100 = {
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_piety = 0.50
+				monthly_piety_gain_mult = 0.10
+				learning_per_piety_level = 1
+			}
+		}
 
-        bloodlust = {
-            10 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                knight_effectiveness_mult = @bm_bloodlust_knight_effectiveness_mult
-            }
-            20 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                knight_effectiveness_mult = @bm_bloodlust_knight_effectiveness_mult
-                knight_limit = @bm_bloodlust_knight_limit
-            }
-            30 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                knight_effectiveness_mult = @bm_bloodlust_knight_effectiveness_mult
-            }
-            40 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                knight_effectiveness_mult = @bm_bloodlust_knight_effectiveness_mult
-                knight_limit = @bm_bloodlust_knight_limit
-            }
-            50 = {
-                martial_per_piety_level = @bm_bloodlust_martial_per_piety_tier_50
-                prowess_per_piety_level = @bm_bloodlust_prowess_per_piety_tier_50
-            }
-            60 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                knight_effectiveness_mult = @bm_bloodlust_knight_effectiveness_mult
-                knight_limit = @bm_bloodlust_knight_limit
-            }
-            70 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                knight_effectiveness_mult = @bm_bloodlust_knight_effectiveness_mult
-            }
-            80 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                knight_effectiveness_mult = @bm_bloodlust_knight_effectiveness_mult
-                knight_limit = @bm_bloodlust_knight_limit
-            }
-            90 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                knight_effectiveness_mult = @bm_bloodlust_knight_effectiveness_mult
-            }
-            100 = {
-                martial_per_piety_level = @bm_bloodlust_martial_per_piety_tier_100
-                prowess_per_piety_level = @bm_bloodlust_prowess_per_piety_tier_100
-            }
-        }
+		bloodlust = {
+			10 = {
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				knight_limit = 1
+				army_damage_mult = 0.05
+			}
+			30 = {
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				knight_limit = 1
+				army_damage_mult = 0.05
+			}
+			50 = {
+				martial_per_piety_level = 1
+				prowess_per_piety_level = 1
+			}
+			70 = {
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				knight_limit = 1
+				army_damage_mult = 0.05
+			}
+			100 = {
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				knight_limit = 1
+				army_damage_mult = 0.05
+				martial_per_piety_level = 1
+				prowess_per_piety_level = 1
+			}
+		}
 
-        ancient = {
-            10 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                monthly_dynasty_prestige_mult = 0.05
-            }
-            20 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                monthly_dynasty_prestige_mult = 0.05
-                monthly_legitimacy_add = @bm_ancient_monthly_legitimacy_add
-            }
-            30 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                monthly_dynasty_prestige_mult = 0.05
-            }
-            40 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                monthly_dynasty_prestige_mult = 0.05
-                monthly_legitimacy_add = @bm_ancient_monthly_legitimacy_add
-            }
-            50 = {
-                piety_level_impact_mult = @bm_ancient_piety_impact_tier_50
-                personal_tenet_slot_add = @bm_ancient_personal_tenet_slot
-            }
-            60 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                monthly_dynasty_prestige_mult = 0.05
-                monthly_legitimacy_add = @bm_ancient_monthly_legitimacy_add
-            }
-            70 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                monthly_dynasty_prestige_mult = 0.05
-            }
-            80 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                monthly_dynasty_prestige_mult = 0.05
-                monthly_legitimacy_add = @bm_ancient_monthly_legitimacy_add
-            }
-            90 = {
-                health = @bm_common_health
-                life_expectancy = @bm_common_life_expectancy
-                monthly_dynasty_prestige_mult = 0.05
-            }
-            100 = {
-                piety_level_impact_mult = @bm_ancient_piety_impact_tier_100
-                personal_tenet_slot_add = @bm_ancient_personal_tenet_slot
-            }
-        }
-    }
+		ancient = {
+			10 = {
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_dynasty_prestige = 0.50
+				monthly_legitimacy_add = 0.10
+			}
+			30 = {
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_dynasty_prestige = 0.50
+				monthly_legitimacy_add = 0.10
+			}
+			50 = {
+				piety_level_impact_mult = 0.2
+				personal_tenet_slot_add = 1
+			}
+			70 = {
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_dynasty_prestige = 0.50
+				monthly_legitimacy_add = 0.10
+			}
+			100 = {
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_dynasty_prestige = 0.50
+				monthly_legitimacy_add = 0.10
+				piety_level_impact_mult = 0.4
+				personal_tenet_slot_add = 1
+			}
+		}
+	}
 }
 
 lifestyle_bm_archmage = {
-    category = lifestyle
-    flag = reweaving_lifestyle_trait
-    icon = bm_blood_archmage.dds
-    desc = trait_lifestyle_bm_archmage_desc
-    ruler_designer_cost = 250
-    potential = {
-        trigger_if = {
-            limit = { exists = this }
-            OR = {
-                is_ai = no
-                NOT = { has_game_rule = bm_prevalence_player_only }
-            }
-        }
-    }
-    opposites = {
-        lifestyle_bm_acolyte
-        lifestyle_blood_mage
-    }
+	category = lifestyle
+	flag = reweaving_lifestyle_trait
+	icon = bm_blood_archmage.dds
+	desc = trait_lifestyle_bm_archmage_desc
+	ruler_designer_cost = 250
+	potential = {
+		trigger_if = {
+			limit = { exists = this }
+			OR = {
+				is_ai = no
+				NOT = { has_game_rule = bm_prevalence_player_only }
+			}
+		}
+	}
+	opposites = {
+		lifestyle_bm_acolyte
+		lifestyle_blood_mage
+	}
 
-    # Base trait benefits (Tier III - Anti-nerf absorbs Tier II 50 XP milestones & Tier II tracks)
-    # Ancient
-    health = 5
-    life_expectancy = 100
-    personal_tenet_slot_add = 2
-    no_prowess_loss_from_age = yes
+	# Base trait benefits (Tier III - Anti-nerf absorbs Tier II 50 XP milestones & Tier II tracks)
+	# Ancient
+	health = 5
+	life_expectancy = 100
+	personal_tenet_slot_add = 2
+	no_prowess_loss_from_age = yes
 
-    # Diplomacy
-    diplomacy_per_piety_level = 2
+	# Diplomacy
+	diplomacy_per_piety_level = 2
 
-    # Martial
-    martial_per_piety_level = 2
-    prowess_per_piety_level = 2
+	# Martial
+	martial_per_piety_level = 2
+	prowess_per_piety_level = 2
 
-    # Stewardship
-    stewardship_per_piety_level = 2
-    domain_limit = 2
+	# Stewardship
+	stewardship_per_piety_level = 2
+	domain_limit = 2
 
-    # Intrigue
-    intrigue_per_piety_level = 2
+	# Intrigue
+	intrigue_per_piety_level = 2
 
-    # Learning
-    learning_per_piety_level = 2
+	# Learning
+	learning_per_piety_level = 2
 
-    tracks = {
-        bloodline = {
-            10 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                monthly_income_mult = 0.05
-            }
-            20 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                monthly_income_mult = 0.05
-            }
-            30 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                monthly_income_mult = 0.05
-            }
-            40 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                monthly_income_mult = 0.05
-            }
-            50 = {
-                stewardship_per_piety_level = 2
-                domain_limit = 1
-            }
-            60 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                monthly_income_mult = 0.05
-            }
-            70 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                monthly_income_mult = 0.05
-            }
-            80 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                monthly_income_mult = 0.05
-            }
-            90 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                monthly_income_mult = 0.05
-            }
-            100 = {
-                stewardship_per_piety_level = 2
-                domain_limit = 1
-            }
-        }
+	tracks = {
+		bloodline = {
+			10 = {
+				health = @bm_archmage_common_health
+				life_expectancy = @bm_archmage_common_life_expectancy
+				monthly_income_mult = 0.10
+				domain_tax_mult = 0.10
+			}
+			30 = {
+				health = @bm_archmage_common_health
+				life_expectancy = @bm_archmage_common_life_expectancy
+				monthly_income_mult = 0.10
+				domain_tax_mult = 0.10
+			}
+			50 = {
+				stewardship_per_piety_level = 2
+				domain_limit = 1
+				character_capital_county_monthly_development_growth_add = 0.3
+			}
+			70 = {
+				health = @bm_archmage_common_health
+				life_expectancy = @bm_archmage_common_life_expectancy
+				monthly_income_mult = 0.10
+				domain_tax_mult = 0.10
+			}
+			100 = {
+				health = @bm_archmage_common_health
+				life_expectancy = @bm_archmage_common_life_expectancy
+				monthly_income_mult = 0.10
+				domain_tax_mult = 0.10
+				stewardship_per_piety_level = 2
+				domain_limit = 1
+				character_capital_county_monthly_development_growth_add = 0.3
+			}
+		}
 
-        hematurgy = {
-            10 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                owned_hostile_scheme_success_chance_add = 6
-            }
-            20 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                owned_hostile_scheme_success_chance_add = 6
-                enemy_hostile_scheme_success_chance_add = -12
-            }
-            30 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                owned_hostile_scheme_success_chance_add = 6
-            }
-            40 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                owned_hostile_scheme_success_chance_add = 6
-                enemy_hostile_scheme_success_chance_add = -12
-            }
-            50 = {
-                intrigue_per_piety_level = 2
-            }
-            60 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                owned_hostile_scheme_success_chance_add = 6
-                enemy_hostile_scheme_success_chance_add = -12
-            }
-            70 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                owned_hostile_scheme_success_chance_add = 6
-            }
-            80 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                owned_hostile_scheme_success_chance_add = 6
-                enemy_hostile_scheme_success_chance_add = -12
-            }
-            90 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                owned_hostile_scheme_success_chance_add = 6
-            }
-            100 = {
-                intrigue_per_piety_level = 2
-                max_hostile_schemes_add = 1
-            }
-        }
+		hematurgy = {
+			10 = {
+				health = @bm_archmage_common_health
+				life_expectancy = @bm_archmage_common_life_expectancy
+				owned_hostile_scheme_success_chance_max_add = 8
+				enemy_hostile_scheme_success_chance_max_add = -12
+			}
+			30 = {
+				health = @bm_archmage_common_health
+				life_expectancy = @bm_archmage_common_life_expectancy
+				owned_hostile_scheme_success_chance_max_add = 8
+				enemy_hostile_scheme_success_chance_max_add = -12
+			}
+			50 = {
+				intrigue_per_piety_level = 2
+				max_hostile_schemes_add = 1
+			}
+			70 = {
+				health = @bm_archmage_common_health
+				life_expectancy = @bm_archmage_common_life_expectancy
+				owned_hostile_scheme_success_chance_max_add = 8
+				enemy_hostile_scheme_success_chance_max_add = -12
+			}
+			100 = {
+				health = @bm_archmage_common_health
+				life_expectancy = @bm_archmage_common_life_expectancy
+				owned_hostile_scheme_success_chance_max_add = 8
+				enemy_hostile_scheme_success_chance_max_add = -12
+				intrigue_per_piety_level = 2
+			}
+		}
 
-        benediction = {
-            10 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                general_opinion = 3
-            }
-            20 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                general_opinion = 3
-                monthly_prestige_gain_mult = 0.08
-            }
-            30 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                general_opinion = 3
-            }
-            40 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                general_opinion = 3
-                monthly_prestige_gain_mult = 0.08
-            }
-            50 = {
-                diplomacy_per_piety_level = 2
-            }
-            60 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                general_opinion = 3
-                monthly_prestige_gain_mult = 0.08
-            }
-            70 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                general_opinion = 3
-            }
-            80 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                general_opinion = 3
-                monthly_prestige_gain_mult = 0.08
-            }
-            90 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                general_opinion = 3
-            }
-            100 = {
-                diplomacy_per_piety_level = 2
-                monthly_prestige_gain_mult = 0.15
-            }
-        }
+		benediction = {
+			10 = {
+				health = @bm_archmage_common_health
+				life_expectancy = @bm_archmage_common_life_expectancy
+				general_opinion = 6
+				owned_personal_scheme_success_chance_max_add = 6
+			}
+			30 = {
+				health = @bm_archmage_common_health
+				life_expectancy = @bm_archmage_common_life_expectancy
+				general_opinion = 6
+				owned_personal_scheme_success_chance_max_add = 6
+			}
+			50 = {
+				diplomacy_per_piety_level = 2
+				max_personal_schemes_add = 1
+			}
+			70 = {
+				health = @bm_archmage_common_health
+				life_expectancy = @bm_archmage_common_life_expectancy
+				general_opinion = 6
+				owned_personal_scheme_success_chance_max_add = 6
+			}
+			100 = {
+				health = @bm_archmage_common_health
+				life_expectancy = @bm_archmage_common_life_expectancy
+				general_opinion = 6
+				owned_personal_scheme_success_chance_max_add = 6
+				diplomacy_per_piety_level = 2
+			}
+		}
 
-        enlightenment = {
-            10 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                monthly_piety_gain_mult = 0.08
-            }
-            20 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                monthly_piety_gain_mult = 0.08
-            }
-            30 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                monthly_piety_gain_mult = 0.08
-            }
-            40 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                monthly_piety_gain_mult = 0.08
-            }
-            50 = {
-                learning_per_piety_level = 2
-                monthly_lifestyle_xp_gain_mult = 0.12
-            }
-            60 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                monthly_piety_gain_mult = 0.08
-            }
-            70 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                monthly_piety_gain_mult = 0.08
-            }
-            80 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                monthly_piety_gain_mult = 0.08
-            }
-            90 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                monthly_piety_gain_mult = 0.08
-            }
-            100 = {
-                learning_per_piety_level = 2
-                monthly_lifestyle_xp_gain_mult = 0.20
-            }
-        }
+		enlightenment = {
+			10 = {
+				health = @bm_archmage_common_health
+				life_expectancy = @bm_archmage_common_life_expectancy
+				monthly_piety = 1.00
+				monthly_piety_gain_mult = 0.16
+			}
+			30 = {
+				health = @bm_archmage_common_health
+				life_expectancy = @bm_archmage_common_life_expectancy
+				monthly_piety = 1.00
+				monthly_piety_gain_mult = 0.16
+			}
+			50 = {
+				learning_per_piety_level = 2
+			}
+			70 = {
+				health = @bm_archmage_common_health
+				life_expectancy = @bm_archmage_common_life_expectancy
+				monthly_piety = 1.00
+				monthly_piety_gain_mult = 0.16
+			}
+			100 = {
+				health = @bm_archmage_common_health
+				life_expectancy = @bm_archmage_common_life_expectancy
+				monthly_piety = 1.00
+				monthly_piety_gain_mult = 0.16
+				learning_per_piety_level = 2
+			}
+		}
 
-        bloodlust = {
-            10 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                knight_effectiveness_mult = 0.15
-            }
-            20 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                knight_effectiveness_mult = 0.15
-                knight_limit = 2
-            }
-            30 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                knight_effectiveness_mult = 0.15
-            }
-            40 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                knight_effectiveness_mult = 0.15
-                knight_limit = 2
-            }
-            50 = {
-                martial_per_piety_level = 2
-                prowess_per_piety_level = 2
-            }
-            60 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                knight_effectiveness_mult = 0.15
-                knight_limit = 2
-            }
-            70 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                knight_effectiveness_mult = 0.15
-            }
-            80 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                knight_effectiveness_mult = 0.15
-                knight_limit = 2
-            }
-            90 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                knight_effectiveness_mult = 0.15
-            }
-            100 = {
-                martial_per_piety_level = 2
-                prowess_per_piety_level = 2
-            }
-        }
+		bloodlust = {
+			10 = {
+				health = @bm_archmage_common_health
+				life_expectancy = @bm_archmage_common_life_expectancy
+				knight_limit = 2
+				army_damage_mult = 0.08
+			}
+			30 = {
+				health = @bm_archmage_common_health
+				life_expectancy = @bm_archmage_common_life_expectancy
+				knight_limit = 2
+				army_damage_mult = 0.08
+			}
+			50 = {
+				martial_per_piety_level = 2
+				prowess_per_piety_level = 2
+			}
+			70 = {
+				health = @bm_archmage_common_health
+				life_expectancy = @bm_archmage_common_life_expectancy
+				knight_limit = 2
+				army_damage_mult = 0.08
+			}
+			100 = {
+				health = @bm_archmage_common_health
+				life_expectancy = @bm_archmage_common_life_expectancy
+				knight_limit = 2
+				army_damage_mult = 0.08
+				martial_per_piety_level = 2
+				prowess_per_piety_level = 2
+			}
+		}
 
-        ancient = {
-            10 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                monthly_dynasty_prestige_mult = 0.08
-            }
-            20 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                monthly_dynasty_prestige_mult = 0.08
-                monthly_legitimacy_add = 0.15
-            }
-            30 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                monthly_dynasty_prestige_mult = 0.08
-            }
-            40 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                monthly_dynasty_prestige_mult = 0.08
-                monthly_legitimacy_add = 0.15
-            }
-            50 = {
-                piety_level_impact_mult = 0.3
-                personal_tenet_slot_add = 1
-            }
-            60 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                monthly_dynasty_prestige_mult = 0.08
-                monthly_legitimacy_add = 0.15
-            }
-            70 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                monthly_dynasty_prestige_mult = 0.08
-            }
-            80 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                monthly_dynasty_prestige_mult = 0.08
-                monthly_legitimacy_add = 0.15
-            }
-            90 = {
-                health = @bm_archmage_common_health
-                life_expectancy = @bm_archmage_common_life_expectancy
-                monthly_dynasty_prestige_mult = 0.08
-            }
-            100 = {
-                piety_level_impact_mult = 0.5
-                personal_tenet_slot_add = 1
-            }
-        }
-    }
+		ancient = {
+			10 = {
+				health = @bm_archmage_common_health
+				life_expectancy = @bm_archmage_common_life_expectancy
+				monthly_dynasty_prestige = 1.00
+				monthly_legitimacy_add = 0.15
+			}
+			30 = {
+				health = @bm_archmage_common_health
+				life_expectancy = @bm_archmage_common_life_expectancy
+				monthly_dynasty_prestige = 1.00
+				monthly_legitimacy_add = 0.15
+			}
+			50 = {
+				piety_level_impact_mult = 0.3
+				personal_tenet_slot_add = 1
+			}
+			70 = {
+				health = @bm_archmage_common_health
+				life_expectancy = @bm_archmage_common_life_expectancy
+				monthly_dynasty_prestige = 1.00
+				monthly_legitimacy_add = 0.15
+			}
+			100 = {
+				health = @bm_archmage_common_health
+				life_expectancy = @bm_archmage_common_life_expectancy
+				monthly_dynasty_prestige = 1.00
+				monthly_legitimacy_add = 0.15
+				piety_level_impact_mult = 0.5
+				personal_tenet_slot_add = 1
+			}
+		}
+	}
 }
