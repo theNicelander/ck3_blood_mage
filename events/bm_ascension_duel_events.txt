@@ -12,39 +12,24 @@ bm_ascension_duel.0001 = {
 	}
 
 	immediate = {
-		if = {
-			limit = { root = { exists = house } }
-			create_character = {
-				template = bm_blood_reflection_template
-				location = root.location
-				gender = root
-				age = root.age
-				faith = root.faith
-				culture = root.culture
-				dynasty = generate
-				save_scope_as = bm_clone
-			}
-		}
-		else = {
-			create_character = {
-				template = bm_blood_reflection_template
-				location = root.location
-				gender = root
-				age = root.age
-				faith = root.faith
-				culture = root.culture
-				dynasty = none
-				save_scope_as = bm_clone
-			}
+		create_character = {
+			template = bm_blood_reflection_template
+			location = root.location
+			gender = root
+			age = root.age
+			faith = root.faith
+			culture = root.culture
+			dynasty = generate
+			save_scope_as = bm_clone
 		}
 		scope:bm_clone = {
 			copy_inheritable_appearance_from = root
 			change_first_name = { template_character = root }
-			if = {
-				limit = { root = { exists = house } }
-				house ?= {
-					set_house_name = bm_ghost_house_name
-				}
+			dynasty ?= {
+				set_dynasty_name = bm_blood_ghost_dynasty_name
+			}
+			house ?= {
+				set_house_name = bm_blood_ghost_dynasty_name
 			}
 			bm_copy_character_personality_effect = yes
 			bm_copy_character_education_effect = yes

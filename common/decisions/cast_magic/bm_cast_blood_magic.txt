@@ -494,6 +494,50 @@ bm_cast_blood_magic_major_decision = {
 			}
 		}
 
+		# Channel Major Lifeforce into Fury
+		item = {
+			value = bm_major_channel_fury
+			current_description = bm_major_channel_fury
+			localization = bm_major_channel_fury
+			icon = "gfx/interface/icons/trait_level_tracks/bloodlust.dds"
+			is_shown = {
+				is_blood_mage_tier_2_or_higher_trigger = yes
+			}
+			is_valid = {
+				piety >= 100
+				has_character_modifier = lifeforce_modifier_major
+			}
+			ai_chance = {
+				value = 25
+				if = {
+					limit = { NOT = { has_character_modifier = lifeforce_modifier_fury } }
+					add = 50
+				}
+			}
+		}
+
+		# Channel Major Lifeforce into Focus
+		item = {
+			value = bm_major_channel_focus
+			current_description = bm_major_channel_focus
+			localization = bm_major_channel_focus
+			icon = "gfx/interface/icons/trait_level_tracks/enlightenment.dds"
+			is_shown = {
+				is_blood_mage_tier_2_or_higher_trigger = yes
+			}
+			is_valid = {
+				piety >= 100
+				has_character_modifier = lifeforce_modifier_major
+			}
+			ai_chance = {
+				value = 25
+				if = {
+					limit = { NOT = { has_character_modifier = lifeforce_modifier_focus } }
+					add = 50
+				}
+			}
+		}
+
 		# Enhance Education
 		item = {
 			value = bm_major_improve_education
@@ -692,6 +736,48 @@ bm_cast_blood_magic_major_decision = {
 				add_character_modifier = { modifier = lifeforce_modifier_mojo }
 				add_xp_bm_dynamic = {
 					TRACK = bloodline
+					XP = 2
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:bm_major_channel_fury = yes }
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (channel_fury) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
+			add_piety = -100
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_channel_fury_major_toast
+				left_icon = root
+				remove_character_modifier = lifeforce_modifier_major
+				add_character_modifier = { modifier = lifeforce_modifier_fury }
+				add_character_modifier = { modifier = lifeforce_modifier_fury }
+				add_character_modifier = { modifier = lifeforce_modifier_fury }
+				add_xp_bm_dynamic = {
+					TRACK = bloodlust
+					XP = 2
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:bm_major_channel_focus = yes }
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (channel_focus) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
+			add_piety = -100
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_channel_focus_major_toast
+				left_icon = root
+				remove_character_modifier = lifeforce_modifier_major
+				add_character_modifier = { modifier = lifeforce_modifier_focus }
+				add_character_modifier = { modifier = lifeforce_modifier_focus }
+				add_character_modifier = { modifier = lifeforce_modifier_focus }
+				add_xp_bm_dynamic = {
+					TRACK = enlightenment
 					XP = 2
 				}
 				hidden_effect = {
@@ -929,6 +1015,94 @@ bm_cast_blood_magic_minor_decision = {
 			}
 		}
 
+		# Channel Minor Lifeforce into Fury
+		item = {
+			value = bm_minor_channel_fury
+			current_description = bm_minor_channel_fury
+			localization = bm_minor_channel_fury
+			icon = "gfx/interface/icons/trait_level_tracks/bloodlust.dds"
+			is_shown = {
+				is_blood_mage_any_tier_trigger = yes
+			}
+			is_valid = {
+				piety >= 50
+				has_character_modifier = lifeforce_modifier_minor
+			}
+			ai_chance = {
+				value = 25
+				if = {
+					limit = { NOT = { has_character_modifier = lifeforce_modifier_fury } }
+					add = 50
+				}
+			}
+		}
+
+		# Reclaim Minor Lifeforce from Fury
+		item = {
+			value = bm_minor_reclaim_fury
+			current_description = bm_minor_reclaim_fury
+			localization = bm_minor_reclaim_fury
+			icon = "gfx/interface/icons/trait_level_tracks/bloodlust.dds"
+			is_shown = {
+				is_blood_mage_any_tier_trigger = yes
+			}
+			is_valid = {
+				piety >= 75
+				has_character_modifier = lifeforce_modifier_fury
+			}
+			ai_chance = {
+				value = 25
+				if = {
+					limit = { NOT = { has_character_modifier = lifeforce_modifier_minor } }
+					add = 50
+				}
+			}
+		}
+
+		# Channel Minor Lifeforce into Focus
+		item = {
+			value = bm_minor_channel_focus
+			current_description = bm_minor_channel_focus
+			localization = bm_minor_channel_focus
+			icon = "gfx/interface/icons/trait_level_tracks/enlightenment.dds"
+			is_shown = {
+				is_blood_mage_any_tier_trigger = yes
+			}
+			is_valid = {
+				piety >= 50
+				has_character_modifier = lifeforce_modifier_minor
+			}
+			ai_chance = {
+				value = 25
+				if = {
+					limit = { NOT = { has_character_modifier = lifeforce_modifier_focus } }
+					add = 50
+				}
+			}
+		}
+
+		# Reclaim Minor Lifeforce from Focus
+		item = {
+			value = bm_minor_reclaim_focus
+			current_description = bm_minor_reclaim_focus
+			localization = bm_minor_reclaim_focus
+			icon = "gfx/interface/icons/trait_level_tracks/enlightenment.dds"
+			is_shown = {
+				is_blood_mage_any_tier_trigger = yes
+			}
+			is_valid = {
+				piety >= 75
+				has_character_modifier = lifeforce_modifier_focus
+			}
+			ai_chance = {
+				value = 25
+				if = {
+					limit = { NOT = { has_character_modifier = lifeforce_modifier_minor } }
+					add = 50
+				}
+			}
+		}
+
 		# Inscribe Minor Blood Rune
 		item = {
 			value = bm_minor_blood_rune
@@ -1073,6 +1247,82 @@ bm_cast_blood_magic_minor_decision = {
 				add_character_modifier = { modifier = lifeforce_modifier_minor }
 				add_xp_bm_dynamic = {
 					TRACK = bloodline
+					XP = 1
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:bm_minor_channel_fury = yes }
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (channel_fury) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
+			add_piety = -50
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_channel_fury_minor_toast
+				left_icon = root
+				remove_character_modifier = lifeforce_modifier_minor
+				add_character_modifier = { modifier = lifeforce_modifier_fury }
+				add_xp_bm_dynamic = {
+					TRACK = bloodlust
+					XP = 1
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:bm_minor_reclaim_fury = yes }
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (reclaim_fury) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
+			add_piety = -75
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_reclaim_fury_toast
+				left_icon = root
+				remove_character_modifier = lifeforce_modifier_fury
+				add_character_modifier = { modifier = lifeforce_modifier_minor }
+				add_xp_bm_dynamic = {
+					TRACK = bloodlust
+					XP = 1
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:bm_minor_channel_focus = yes }
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (channel_focus) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
+			add_piety = -50
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_channel_focus_minor_toast
+				left_icon = root
+				remove_character_modifier = lifeforce_modifier_minor
+				add_character_modifier = { modifier = lifeforce_modifier_focus }
+				add_xp_bm_dynamic = {
+					TRACK = enlightenment
+					XP = 1
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:bm_minor_reclaim_focus = yes }
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (reclaim_focus) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
+			add_piety = -75
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_reclaim_focus_toast
+				left_icon = root
+				remove_character_modifier = lifeforce_modifier_focus
+				add_character_modifier = { modifier = lifeforce_modifier_minor }
+				add_xp_bm_dynamic = {
+					TRACK = enlightenment
 					XP = 1
 				}
 				hidden_effect = {

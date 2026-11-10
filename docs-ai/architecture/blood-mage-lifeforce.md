@@ -15,8 +15,10 @@ Core spellcasting resource stored as stacking character modifiers (`lifeforce_mo
 | --- | --- | --- | --- | --- |
 | `lifeforce_modifier_minor` | Tier 1 Fuel | Yes | Permanent until spent | `+0.1` Health, `+1` Life Exp, `+2` Epidemic Res, `+0.1` Negate Health Penalty |
 | `lifeforce_modifier_major` | Tier 2 Fuel | Yes | Permanent until spent | `+0.3` Health, `+3` Life Exp, `+6` Epidemic Res, `+0.3` Negate Health Penalty |
-| `lifeforce_modifier_superior` | Tier 3 Fuel | Yes | Permanent until spent | `+0.6` Health, `+6` Life Exp, `+12` Epidemic Res, `+0.6` Negate Health Penalty, `+3` Prowess |
-| `lifeforce_modifier_mojo` | Lineage / Fertility Fuel | Yes | Permanent until spent | `+10%` Fertility, `+5` Fertility Yrs, `+5%` Inactive Inheritance Chance, `+5%` Genetic Trait Chance, `+5%` Strengthen Blood Chance, `+5` Attraction Opinion |
+| `lifeforce_modifier_superior` | Tier 3 Fuel | Yes | Permanent until spent | `+0.6` Health, `+6` Life Exp, `+12` Epidemic Res, `+0.6` Negate Health Penalty |
+| `lifeforce_modifier_mojo` | Lineage / Fertility Reservoir | Yes | Permanent until spent | `+10%` Fertility, `+5` Fertility Yrs, `+5%` Inactive Inheritance Chance, `+5%` Genetic Trait Chance, `+5%` Strengthen Blood Chance, `+5` Attraction Opinion |
+| `lifeforce_modifier_fury` | Combat / Martial Reservoir | Yes | Permanent until spent | `+2` Prowess, `+10%` Knight Effectiveness, `+2%` Army Movement Speed, `+2` Travel Safety |
+| `lifeforce_modifier_focus` | Study / Intellectual Reservoir | Yes | Permanent until spent | `+1` Learning, `-10%` Stress Gain, `+5%` Monthly Lifestyle XP Gain |
 | `lifeforce_modifier_negative_minor` | Minor Exhaustion | Yes | **1 Year** (`365` days) | `-0.1` Health, `-1` Life Exp, `-2` Epidemic Res, `-0.1` Negate Health Penalty, `-1` Prowess |
 | `lifeforce_modifier_negative_major` | Major Exhaustion | Yes | **3 Years** (`1095` days; `365`d on Flay/Distill) | `-0.3` Health, `-3` Life Exp, `-6` Epidemic Res, `-0.3` Negate Health Penalty, `-2` Prowess |
 | `lifeforce_modifier_negative_superior` | Superior Exhaustion | Yes | **3 Years** (`1095` days; `5` yrs on Flay) | `-0.6` Health, `-6` Life Exp, `-12` Epidemic Res, `-0.6` Negate Health Penalty, `-4` Prowess |
@@ -63,7 +65,13 @@ Triggered on `on_combat_end_winner` (`bm_on_combat_end_winner`) for surviving si
 | **Childbirth Milestone (`bm_on_birth_bloodline_xp`)** | Mage only | Child born to blood mage parent | **+1 Major** per child born; burns 1 Mojo per parent | `+2` (`+4` inheriting; doubled by Superior Feingur) `bloodline`; `+3` per Mojo burned |
 | **Channel Minor into Mojo (`bm_minor_channel_mojo`)** | Mage | 50 Piety + 1 Minor Lifeforce | **-1 Minor -> +1 Mojo** | `+1` `bloodline` |
 | **Channel Major into Mojo (`bm_major_channel_mojo`)** | Mage | 100 Piety + 1 Major Lifeforce | **-1 Major -> +3 Mojo** | `+2` `bloodline` |
-| **Reclaim Minor from Mojo (`bm_minor_reclaim_mojo`)** | Mage | 75 Piety + 1 Mojo Lifeforce | **-1 Mojo -> +1 Minor** | `+1` `ancient` |
+| **Reclaim Minor from Mojo (`bm_minor_reclaim_mojo`)** | Mage | 75 Piety + 1 Mojo Lifeforce | **-1 Mojo -> +1 Minor** | `+1` `bloodline` |
+| **Channel Minor into Fury (`bm_minor_channel_fury`)** | Mage | 50 Piety + 1 Minor Lifeforce | **-1 Minor -> +1 Fury** | `+1` `bloodlust` |
+| **Channel Major into Fury (`bm_major_channel_fury`)** | Mage | 100 Piety + 1 Major Lifeforce | **-1 Major -> +3 Fury** | `+2` `bloodlust` |
+| **Reclaim Minor from Fury (`bm_minor_reclaim_fury`)** | Mage | 75 Piety + 1 Fury Lifeforce | **-1 Fury -> +1 Minor** | `+1` `bloodlust` |
+| **Channel Minor into Focus (`bm_minor_channel_focus`)** | Mage | 50 Piety + 1 Minor Lifeforce | **-1 Minor -> +1 Focus** | `+1` `enlightenment` |
+| **Channel Major into Focus (`bm_major_channel_focus`)** | Mage | 100 Piety + 1 Major Lifeforce | **-1 Major -> +3 Focus** | `+2` `enlightenment` |
+| **Reclaim Minor from Focus (`bm_minor_reclaim_focus`)** | Mage | 75 Piety + 1 Focus Lifeforce | **-1 Focus -> +1 Minor** | `+1` `enlightenment` |
 | **Go on a Blood Hunt (`seek_power_decision`)** | Mage | Free, 1-yr CD (halved to 6 months by Superior Vegvísir) | **+1 Minor**, **+1 Major**, or **+1 Major + 25% +1 Superior** (Single Combat battlefield duel against escort knight or 20+ prowess traveler) | `+1` to `+5` `bloodlust` / `+1` to `+5` `hematurgy` / `+1` `bloodline` / `+2` `ancient` / `+1`–`+2` `enlightenment` / `+1` `benediction` |
 | **Cast Minor Blood Magic Rites (`bm_cast_blood_magic_minor_decision`)** | Mage | `0–75` Piety + 1 Minor Lifeforce | **-1 Minor** (+ 1-yr Minor exhaustion) | `+1` `enlightenment` / `+2` `bloodline` / `+4` `ancient` |
 | **Cast Major Blood Magic Rites (`bm_cast_blood_magic_major_decision`)** | Mage | `75–600` Piety + 1 Major Lifeforce | **-1 Major** (+ 3-yr Major exhaustion) | `+3` to `+5` track XP (`+10` Power XP) |
