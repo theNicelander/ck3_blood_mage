@@ -62,7 +62,7 @@
 	}
 
 	effect = {
-		debug_log = "BloodMageDecision: bm_elevate_blood_mage_tier_decision | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+		debug_log = "BloodMageDecision: bm_elevate_blood_mage_tier_decision | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
 		if = {
 			limit = { has_trait = lifestyle_bm_acolyte }
 			if = {

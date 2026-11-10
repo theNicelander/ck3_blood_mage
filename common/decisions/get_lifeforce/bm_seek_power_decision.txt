@@ -7,7 +7,7 @@
     confirm_text = seek_power_decision_confirm
 
     is_shown = {
-        has_trait = lifestyle_blood_mage
+        is_blood_mage_any_tier_trigger = yes
     }
 
     is_valid_showing_failures_only = {
@@ -19,7 +19,7 @@
 
     cooldown = { days = bm_seek_power_cooldown_days }
     effect = {
-        debug_log = "BloodMageDecision: seek_power | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+        debug_log = "BloodMageDecision: seek_power | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
         debug_log_scopes = yes
         custom_tooltip = seek_power_decision_effect_tooltip
         hidden_effect = {
@@ -28,6 +28,7 @@
     }
 
     ai_potential = {
+        is_blood_mage_any_tier_trigger = yes
         is_travelling = no
         is_in_activity = no
         is_imprisoned = no

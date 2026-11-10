@@ -4,16 +4,16 @@
     desc = mass_lifedrain_prisoners_decision_desc
     decision_group_type = bm_decision_group
 
-    is_shown = { has_trait = lifestyle_blood_mage }
+    is_shown = { is_blood_mage_any_tier_trigger = yes }
     is_valid = {
-        has_trait = lifestyle_blood_mage
+        is_blood_mage_any_tier_trigger = yes
         any_prisoner = {
             count >= 1
         }
     }
 
     effect = {
-        debug_log = "BloodMageDecision: mass_lifedrain_prisoners | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+        debug_log = "BloodMageDecision: mass_lifedrain_prisoners | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
         debug_log_scopes = yes
         custom_tooltip = mass_lifedrain_prisoners_decision_effect_message
         trigger_event = { id = bm_mass_lifedrain.001 }

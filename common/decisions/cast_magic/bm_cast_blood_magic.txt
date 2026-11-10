@@ -219,17 +219,17 @@
 	effect = {
 		if = {
 			limit = { scope:bm_superior_master_education = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_superior_decision (master_education) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_superior_decision (master_education) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
 			trigger_event = { id = bm_education_master.001 }
 		}
 		else_if = {
 			limit = { scope:bm_superior_new_education = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_superior_decision (new_education) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_superior_decision (new_education) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
 			trigger_event = { id = bm_education_new.001 }
 		}
 		else_if = {
 			limit = { scope:bm_superior_blood_rune = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_superior_decision (blood_rune) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_superior_decision (blood_rune) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
 			add_piety = -400
 			add_character_flag = {
 				flag = bm_blood_rune_cooldown
@@ -253,12 +253,12 @@
 		}
 		else_if = {
 			limit = { scope:bm_superior_manifest_traits = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_superior_decision (manifest_traits) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_superior_decision (manifest_traits) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
 			trigger_event = { id = bm_channel_manifest_traits.002 }
 		}
 		else_if = {
 			limit = { scope:bm_superior_create_blood_golem = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_superior_decision (create_blood_golem) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_superior_decision (create_blood_golem) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
 			add_piety = -500
 			add_character_flag = {
 				flag = bm_blood_golem_cooldown
@@ -518,7 +518,7 @@ bm_cast_blood_magic_major_decision = {
 	effect = {
 		if = {
 			limit = { scope:bm_major_channel_power = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (channel_power) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (channel_power) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
 			if = {
 				limit = { NOT = { has_trait = lifestyle_blood_power } }
 				add_trait = lifestyle_blood_power
@@ -527,7 +527,7 @@ bm_cast_blood_magic_major_decision = {
 		}
 		else_if = {
 			limit = { scope:bm_major_condense = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (condense) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (condense) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
 			add_piety = -250
 			add_character_flag = {
 				flag = bm_manifest_superior_lifeforce_cooldown
@@ -633,12 +633,12 @@ bm_cast_blood_magic_major_decision = {
 		}
 		else_if = {
 			limit = { scope:bm_major_improve_education = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (improve_education) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (improve_education) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
 			trigger_event = { id = bm_education_enhancement.001 }
 		}
 		else_if = {
 			limit = { scope:bm_major_blood_rune = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (blood_rune) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (blood_rune) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
 			add_piety = -200
 			add_character_flag = {
 				flag = bm_blood_rune_cooldown
@@ -662,7 +662,7 @@ bm_cast_blood_magic_major_decision = {
 		}
 		else_if = {
 			limit = { scope:bm_major_manifest_traits = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (manifest_traits) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (manifest_traits) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
 			trigger_event = { id = bm_channel_manifest_traits.001 }
 		}
 		else = {
@@ -832,7 +832,7 @@ bm_cast_blood_magic_minor_decision = {
 	effect = {
 		if = {
 			limit = { scope:bm_minor_channel = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (channel) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (channel) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
 			add_piety = -75
 			remove_character_modifier = lifeforce_modifier_minor
 			add_xp_enlightenment = yes
@@ -840,7 +840,7 @@ bm_cast_blood_magic_minor_decision = {
 		}
 		else_if = {
 			limit = { scope:bm_minor_purge = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (purge) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (purge) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
 			add_piety = -50
 			send_interface_toast = {
 				type = event_toast_effect_good
@@ -894,7 +894,7 @@ bm_cast_blood_magic_minor_decision = {
 		}
 		else_if = {
 			limit = { scope:bm_minor_condense = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (condense) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (condense) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
 			add_piety = -100
 			send_interface_toast = {
 				type = event_toast_effect_good
@@ -913,7 +913,7 @@ bm_cast_blood_magic_minor_decision = {
 		}
 		else_if = {
 			limit = { scope:bm_minor_blood_rune = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (blood_rune) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (blood_rune) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
 			add_character_flag = {
 				flag = bm_blood_rune_cooldown
 				years = 3

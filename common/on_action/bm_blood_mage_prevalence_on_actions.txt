@@ -49,12 +49,13 @@ bm_apply_blood_mage_prevalence_at_birth = {
 								scope:real_father ?= { has_trait = lifestyle_bm_archmage }
 							}
 						}
-						random = {
-							chance = 15
-							bm_become_blood_mage_tier_2_effect = yes
-						}
-						else = {
-							bm_become_blood_acolyte_effect = yes
+						random_list = {
+							15 = {
+								bm_become_blood_mage_tier_2_effect = yes
+							}
+							85 = {
+								bm_become_blood_acolyte_effect = yes
+							}
 						}
 					}
 					else = {
@@ -90,12 +91,13 @@ bm_apply_blood_mage_prevalence_at_birth = {
 								scope:real_father ?= { has_trait = lifestyle_bm_archmage }
 							}
 						}
-						random = {
-							chance = 15
-							bm_become_blood_mage_tier_2_effect = yes
-						}
-						else = {
-							bm_become_blood_acolyte_effect = yes
+						random_list = {
+							15 = {
+								bm_become_blood_mage_tier_2_effect = yes
+							}
+							85 = {
+								bm_become_blood_acolyte_effect = yes
+							}
 						}
 					}
 					else = {

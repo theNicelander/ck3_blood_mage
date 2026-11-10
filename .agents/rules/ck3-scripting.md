@@ -38,4 +38,4 @@ description: Core CK3 script rules, script values, and safe engine patterns (1.2
    - Never wrap standard triggers in `custom_tooltip = { text = ... }`.
    - `custom_tooltip` should ONLY be used when complex scripted conditions cannot under normal circumstances be communicated natively to the user (e.g. unlocalized character flags, complex multi-target comparative triggers, or scripted progress values like `[GetPlayer.MakeScope.ScriptValue('bm_total_blood_mage_xp')|0]/250`).
 
-Error signatures and fixes: `ck3-error-catalog.md` (read when auditing `error.log`). Mod architecture: `docs-ai/architecture/README.md`.
+Error signatures and fixes: `ck3-error-catalog.md` (read when auditing `error.log`). Mod architecture: `docs-ai/architecture/AGENTS.md`.

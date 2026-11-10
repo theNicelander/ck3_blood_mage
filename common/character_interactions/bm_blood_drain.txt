@@ -190,10 +190,9 @@
 					left_icon = scope:actor
 					right_icon = scope:recipient
 					add_character_modifier = { modifier = lifeforce_modifier_minor }
-					add_trait_xp = {
-						trait = lifestyle_blood_mage
-						track = hematurgy
-						value = 1
+					bm_add_blood_mage_xp_effect = {
+						TRACK = hematurgy
+						XP = 1
 					}
 					scope:recipient = {
 						add_character_modifier = {
@@ -340,10 +339,9 @@
 					else = {
 						add_character_modifier = { modifier = lifeforce_modifier_minor }
 					}
-					add_trait_xp = {
-						trait = lifestyle_blood_mage
-						track = bloodline
-						value = 1
+					bm_add_blood_mage_xp_effect = {
+						TRACK = bloodline
+						XP = 1
 					}
 					scope:recipient = {
 						add_character_modifier = {
