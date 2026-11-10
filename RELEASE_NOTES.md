@@ -14,7 +14,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - Bloodline and Hematurgy: 10-step cadence (universal monthly income mult, trait inheritance, dynasty prestige, hostile scheme power and defence, natural dread baseline).
 - **Bloodlust**: 10-step cadence granting scaling Commander Advantage (+8 to +16 total), Knight Effectiveness (+40% to +120% total), Knight Limit (+4 to +8 total), and scaling Martial & Prowess per Piety Level (+1 to +2 per level at 50/100 XP milestones), culminating in an Age Prowess Lock for Acolytes.
 - Tier II (Mage) and Tier III (Archmage) base stats permanently include +1 and +2 Prowess per Devotion Level alongside their innate age prowess locks, preventing martial stat loss upon tier elevation.
-- **Blood Mirror Ascension Duel**: In the tier elevation ritual, face an exact mirror reflection of your mortal vessel—sharing your given name, a ghost dynasty ("Ghost [House]"), mirrored personality, education, physical and combat traits, and synchronized attributes.
+- **Blood Mirror Ascension Duel**: In the tier elevation ritual, face an exact mirror reflection of your mortal vessel—sharing your given name, a ghost dynasty ("Ghost [House]"), mirrored personality, education, physical and combat traits, and synchronized attributes. Lifeforce is no longer required or consumed to attempt tier ascension.
 - XP sources unified: battlefield victories (+1 to +3), combat survival (+1), lethal single combat (+3), and tournaments (+2) feed Bloodlust directly.
 - **Blood Power** secondary trait with six mirrored tracks (Dynasty, Warband, Mastery, Presence, Prosperity, Shadows) structured into five milestone tiers (10, 30, 50, 70, 100 XP) with scaling monthly Piety (+0.1 to +1.0), flat monthly lifestyle XP (+5 to +50/mo), shared 50 & 100 XP milestone bonuses (+10% monthly Piety mult, +5 life expectancy, +0.25 health, +0.02 monthly Piety per knight), and a tight suite of 3–4 high-impact personal modifiers delivering 2x–3x the power of House Covenants (including scaling legitimacy mult, stress composure, universal income mult, and inbreeding immunity), culminating in an Age Prowess Lock.
 - Track XP sources rebalanced: healing grants Benediction, family rites and childbirth grant Ancient/Benediction, congenital manifestation grants XP by attribute.
@@ -150,7 +150,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 
 ## Version history
 
-- v1.20.74: Complete Specialized Lifeforce Reservoirs triad with Blood Fury (+3 prowess, +1 advantage, +5% knight effectiveness) and Blood Focus (+1 learning, -10% stress gain, +5% monthly lifestyle XP gain); add Minor/Major transmutation and reclaim decision loops; decouple prowess from Superior Lifeforce so core reserves strictly govern immortality and vitality; update story panel counters.
+- v1.20.74: Complete Specialized Lifeforce Reservoirs triad with Blood Fury (+3 prowess, +1 advantage, +5% knight effectiveness) and Blood Focus (+1 learning, -10% stress gain, +5% monthly lifestyle XP gain); add Minor/Major transmutation and reclaim decision loops; decouple prowess from Superior Lifeforce so core reserves strictly govern immortality and vitality; update story panel counters; remove Lifeforce requirements and consumption from Ascend Blood Magic Tier decision.
 - v1.20.73: Bidirectional Lifeforce Transmutation: condense Minor into Major and Major into Superior; split Superior into Major and Major into Minor.
 - v1.20.72: Trim Blood Mage trait track tooltips to 2–3 unique benefits; introduce stackable Mojo Lifeforce subsystem for active fertility and congenital inheritance; convert Minor/Major to Mojo and grant to kin or consume at childbirth; centralize Plague Resistance on Lifeforce reserves (+2 / +6 / +12); grant Domain Limit to Bloodline and Personal Tenet Slots to Ancient.
 - v1.20.71: Mirror player stats and traits in ascension duel; native toast polish; universal track XP progression.
@@ -190,7 +190,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 - v1.20.36: Blood Knight icon, domicile buildings, duel Lifeforce rewards
 - v1.20.35: Simplify magic tiers; scale battle XP and Lifeforce
 - v1.20.34: Blood Knight situation tab, prevalence rules, error fixes
-- v1.20.74: Specialized Lifeforce Reservoirs (Blood Fury & Focus) & 5-milestone core trait consolidation
+- v1.20.74: Specialized Lifeforce Reservoirs (Blood Fury & Focus), 5-milestone core trait consolidation, and tier ascension Lifeforce requirement removal
 - v1.20.73: Bidirectional Lifeforce transmutation (condense Minor/Major, split Superior/Major with 6-month cooldowns)
 - v1.20.63: Align and streamline House Covenants and Blood Power across six mirrored tracks; cap Blood Power at 4 core personal modifiers per track, moving devotion and prestige scaling, domain limit, opinion, and Men-at-Arms bonuses into House Covenants
 - v1.20.32: Overhaul Bloodline and Hematurgy tracks
