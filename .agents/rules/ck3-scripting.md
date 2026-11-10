@@ -37,5 +37,9 @@ description: Core CK3 script rules, script values, and safe engine patterns (1.2
    - CK3 natively formats standard triggers (`piety_level`, `piety`, `prestige`, `gold`, `has_trait`, `has_character_modifier`, `NOT = { has_character_modifier = ... }`, `has_cultural_tradition`, `is_adult`, `is_imprisoned`, `any_prisoner = { count >= 1 }`, etc.) with clean dynamic values and checkmarks/crosses.
    - Never wrap standard triggers in `custom_tooltip = { text = ... }`.
    - `custom_tooltip` should ONLY be used when complex scripted conditions cannot under normal circumstances be communicated natively to the user (e.g. unlocalized character flags, complex multi-target comparative triggers, or scripted progress values like `[GetPlayer.MakeScope.ScriptValue('bm_total_blood_mage_xp')|0]/250`).
+14. **No Multi-Stack Modifier Checks in Triggers**:
+   - CK3 script triggers (`has_character_modifier`) can ONLY check whether a modifier is present (`>= 1` stack). There is NO native engine trigger or syntax to query or enforce `>= 2` stacks of a stacking modifier.
+   - NEVER suggest, write, or attempt triggers checking for multiple stacks of the same modifier (e.g. Lifeforce).
+   - Gate repeatable conversions using distinct modifier tiers, piety costs, and timed cooldown flags (`add_character_flag = { flag = ... days = 180 }`) instead.
 
 Error signatures and fixes: `ck3-error-catalog.md` (read when auditing `error.log`). Mod architecture: `docs-ai/architecture/AGENTS.md`.
