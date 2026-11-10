@@ -2,8 +2,16 @@
 	value = 0
 	scope:dying_ruler = {
 		if = {
+			limit = { has_trait = lifestyle_bm_acolyte }
+			add = "has_trait_xp(lifestyle_bm_acolyte|ancient)"
+		}
+		else_if = {
 			limit = { has_trait = lifestyle_blood_mage }
 			add = "has_trait_xp(lifestyle_blood_mage|ancient)"
+		}
+		else_if = {
+			limit = { has_trait = lifestyle_bm_archmage }
+			add = "has_trait_xp(lifestyle_bm_archmage|ancient)"
 		}
 	}
 	multiply = 0.25
@@ -15,8 +23,16 @@ bm_anointed_transfer_enlightenment_xp_value = {
 	value = 0
 	scope:dying_ruler = {
 		if = {
+			limit = { has_trait = lifestyle_bm_acolyte }
+			add = "has_trait_xp(lifestyle_bm_acolyte|enlightenment)"
+		}
+		else_if = {
 			limit = { has_trait = lifestyle_blood_mage }
 			add = "has_trait_xp(lifestyle_blood_mage|enlightenment)"
+		}
+		else_if = {
+			limit = { has_trait = lifestyle_bm_archmage }
+			add = "has_trait_xp(lifestyle_bm_archmage|enlightenment)"
 		}
 	}
 	multiply = 0.25
@@ -28,8 +44,16 @@ bm_anointed_transfer_benediction_xp_value = {
 	value = 0
 	scope:dying_ruler = {
 		if = {
+			limit = { has_trait = lifestyle_bm_acolyte }
+			add = "has_trait_xp(lifestyle_bm_acolyte|benediction)"
+		}
+		else_if = {
 			limit = { has_trait = lifestyle_blood_mage }
 			add = "has_trait_xp(lifestyle_blood_mage|benediction)"
+		}
+		else_if = {
+			limit = { has_trait = lifestyle_bm_archmage }
+			add = "has_trait_xp(lifestyle_bm_archmage|benediction)"
 		}
 	}
 	multiply = 0.25
@@ -41,8 +65,16 @@ bm_anointed_transfer_bloodline_xp_value = {
 	value = 0
 	scope:dying_ruler = {
 		if = {
+			limit = { has_trait = lifestyle_bm_acolyte }
+			add = "has_trait_xp(lifestyle_bm_acolyte|bloodline)"
+		}
+		else_if = {
 			limit = { has_trait = lifestyle_blood_mage }
 			add = "has_trait_xp(lifestyle_blood_mage|bloodline)"
+		}
+		else_if = {
+			limit = { has_trait = lifestyle_bm_archmage }
+			add = "has_trait_xp(lifestyle_bm_archmage|bloodline)"
 		}
 	}
 	multiply = 0.25
@@ -54,8 +86,16 @@ bm_anointed_transfer_hematurgy_xp_value = {
 	value = 0
 	scope:dying_ruler = {
 		if = {
+			limit = { has_trait = lifestyle_bm_acolyte }
+			add = "has_trait_xp(lifestyle_bm_acolyte|hematurgy)"
+		}
+		else_if = {
 			limit = { has_trait = lifestyle_blood_mage }
 			add = "has_trait_xp(lifestyle_blood_mage|hematurgy)"
+		}
+		else_if = {
+			limit = { has_trait = lifestyle_bm_archmage }
+			add = "has_trait_xp(lifestyle_bm_archmage|hematurgy)"
 		}
 	}
 	multiply = 0.25
@@ -67,8 +107,16 @@ bm_anointed_transfer_bloodlust_xp_value = {
 	value = 0
 	scope:dying_ruler = {
 		if = {
+			limit = { has_trait = lifestyle_bm_acolyte }
+			add = "has_trait_xp(lifestyle_bm_acolyte|bloodlust)"
+		}
+		else_if = {
 			limit = { has_trait = lifestyle_blood_mage }
 			add = "has_trait_xp(lifestyle_blood_mage|bloodlust)"
+		}
+		else_if = {
+			limit = { has_trait = lifestyle_bm_archmage }
+			add = "has_trait_xp(lifestyle_bm_archmage|bloodlust)"
 		}
 	}
 	multiply = 0.25

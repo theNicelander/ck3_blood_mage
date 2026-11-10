@@ -9,7 +9,7 @@ description: >-
 
 ## Finish checklist
 
-1. Architecture doc (`docs-ai/architecture/README.md`) matches current state.
+1. Architecture doc (`docs-ai/architecture/AGENTS.md`) matches current state.
 2. `docs-ai/branch-context/<branch>.md` reflects net branch state (format below). Create if missing.
 3. Player-facing change: one line in `RELEASE_NOTES.md` (skill `update-release-notes`).
 4. `python3 scripts/check_repo.py` (`--fix` only for BOM/newline) and `git diff --check`.

@@ -11,12 +11,12 @@ bm_on_combat_end_winner = {
 			limit = {
 				is_alive = yes
 				OR = {
-					has_trait = lifestyle_blood_mage
+					is_blood_mage_any_tier_trigger = yes
 					bm_has_superior_stave_trigger = { STAVE = nabrokarstafur }
 				}
 			}
 			if = {
-				limit = { has_trait = lifestyle_blood_mage }
+				limit = { is_blood_mage_any_tier_trigger = yes }
 				bm_combat_winner_commander_reward_effect = yes
 				bm_battle_victory_lifeforce_harvest_effect = yes
 			}
@@ -35,13 +35,13 @@ bm_on_combat_end_winner = {
 			limit = {
 				is_alive = yes
 				OR = {
-					has_trait = lifestyle_blood_mage
+					is_blood_mage_any_tier_trigger = yes
 					bm_has_superior_stave_trigger = { STAVE = nabrokarstafur }
 				}
 				NOT = { this = scope:winning_side.side_commander }
 			}
 			if = {
-				limit = { has_trait = lifestyle_blood_mage }
+				limit = { is_blood_mage_any_tier_trigger = yes }
 				bm_combat_winner_knight_reward_effect = yes
 				bm_battle_victory_lifeforce_harvest_effect = yes
 			}
@@ -60,7 +60,7 @@ bm_on_combat_end_winner = {
 			limit = {
 				is_ai = no
 				is_alive = yes
-				has_trait = lifestyle_blood_mage
+				is_blood_mage_any_tier_trigger = yes
 				NOT = { has_character_flag = bm_interpersonal_event_cooldown }
 				any_knight = {
 					is_alive = yes
@@ -77,7 +77,7 @@ bm_on_combat_end_winner = {
 				is_ai = no
 				is_alive = yes
 				NOT = { this = scope:winning_side.side_commander }
-				has_trait = lifestyle_blood_mage
+				is_blood_mage_any_tier_trigger = yes
 				NOT = { has_character_flag = bm_interpersonal_event_cooldown }
 				any_knight = {
 					is_alive = yes
@@ -104,14 +104,14 @@ bm_on_combat_end_loser = {
 		every_side_commander = {
 			limit = {
 				is_alive = yes
-				has_trait = lifestyle_blood_mage
+				is_blood_mage_any_tier_trigger = yes
 			}
 			bm_combat_loser_commander_reward_effect = yes
 		}
 		every_side_knight = {
 			limit = {
 				is_alive = yes
-				has_trait = lifestyle_blood_mage
+				is_blood_mage_any_tier_trigger = yes
 				NOT = { this = scope:losing_side.side_commander }
 			}
 			bm_combat_loser_knight_reward_effect = yes
@@ -129,7 +129,7 @@ bm_on_travel_activity_complete_tournament = {
 	effect = {
 		if = {
 			limit = {
-				has_trait = lifestyle_blood_mage
+				is_blood_mage_any_tier_trigger = yes
 				involved_activity ?= { has_activity_type = activity_tournament }
 			}
 			bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 2 }

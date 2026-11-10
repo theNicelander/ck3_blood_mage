@@ -40,7 +40,7 @@ bm_has_valuable_genetic_trait_trigger = {
 		has_trait = giant
 		has_trait = fecund
 		has_trait = pure_blooded
-		has_trait = lifestyle_blood_mage
+		is_blood_mage_any_tier_trigger = yes
 	}
 }
 
@@ -87,36 +87,12 @@ bm_has_blood_empowerment_xp_trigger = {
 
 bm_has_blood_mage_xp_trigger = {
 	OR = {
-		has_trait_xp = {
-			trait = lifestyle_blood_mage
-			track = ancient
-			value >= $VALUE$
-		}
-		has_trait_xp = {
-			trait = lifestyle_blood_mage
-			track = enlightenment
-			value >= $VALUE$
-		}
-		has_trait_xp = {
-			trait = lifestyle_blood_mage
-			track = bloodline
-			value >= $VALUE$
-		}
-		has_trait_xp = {
-			trait = lifestyle_blood_mage
-			track = benediction
-			value >= $VALUE$
-		}
-		has_trait_xp = {
-			trait = lifestyle_blood_mage
-			track = hematurgy
-			value >= $VALUE$
-		}
-		has_trait_xp = {
-			trait = lifestyle_blood_mage
-			track = bloodlust
-			value >= $VALUE$
-		}
+		bm_has_track_xp_any_tier_trigger = { TRACK = ancient VALUE = $VALUE$ }
+		bm_has_track_xp_any_tier_trigger = { TRACK = enlightenment VALUE = $VALUE$ }
+		bm_has_track_xp_any_tier_trigger = { TRACK = bloodline VALUE = $VALUE$ }
+		bm_has_track_xp_any_tier_trigger = { TRACK = benediction VALUE = $VALUE$ }
+		bm_has_track_xp_any_tier_trigger = { TRACK = hematurgy VALUE = $VALUE$ }
+		bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE = $VALUE$ }
 	}
 }
 

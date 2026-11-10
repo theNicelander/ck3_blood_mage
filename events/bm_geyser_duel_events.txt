@@ -59,7 +59,7 @@ bm_geyser_duel.0001 = {
 
 						# Education & Lifestyles
 						trait = education_martial_4
-						trait = lifestyle_blood_mage
+						trait = lifestyle_bm_archmage
 						trait = lifestyle_blood_power
 						trait = lifestyle_poet
 						trait = lifestyle_blademaster
@@ -100,7 +100,7 @@ bm_geyser_duel.0001 = {
 
 						# Education & Lifestyles
 						trait = education_martial_4
-						trait = lifestyle_blood_mage
+						trait = lifestyle_bm_archmage
 						trait = lifestyle_blood_power
 						trait = lifestyle_poet
 						trait = lifestyle_blademaster
@@ -137,7 +137,7 @@ bm_geyser_duel.0001 = {
 
 						# Education & Lifestyles
 						trait = education_martial_4
-						trait = lifestyle_blood_mage
+						trait = lifestyle_bm_archmage
 						trait = lifestyle_blood_power
 						trait = lifestyle_poet
 						trait = lifestyle_blademaster
@@ -164,32 +164,32 @@ bm_geyser_duel.0001 = {
 
 				scope:bm_geyser_wise_one = {
 					add_trait_xp = {
-						trait = lifestyle_blood_mage
+						trait = lifestyle_bm_archmage
 						track = ancient
 						value = 50
 					}
 					add_trait_xp = {
-						trait = lifestyle_blood_mage
+						trait = lifestyle_bm_archmage
 						track = enlightenment
 						value = 50
 					}
 					add_trait_xp = {
-						trait = lifestyle_blood_mage
+						trait = lifestyle_bm_archmage
 						track = benediction
 						value = 50
 					}
 					add_trait_xp = {
-						trait = lifestyle_blood_mage
+						trait = lifestyle_bm_archmage
 						track = bloodline
 						value = 50
 					}
 					add_trait_xp = {
-						trait = lifestyle_blood_mage
+						trait = lifestyle_bm_archmage
 						track = hematurgy
 						value = 50
 					}
 					add_trait_xp = {
-						trait = lifestyle_blood_mage
+						trait = lifestyle_bm_archmage
 						track = bloodlust
 						value = 100
 					}
@@ -233,7 +233,7 @@ bm_geyser_duel.0001 = {
 		}
 
 		trigger = {
-			NOT = { has_trait = lifestyle_blood_mage }
+			NOT = { has_trait = lifestyle_bm_archmage }
 			OR = {
 				has_character_flag = bm_geyser_paid_piety
 				piety_level >= 2
@@ -268,7 +268,7 @@ bm_geyser_duel.0001 = {
 				send_interface_toast = {
 					title = bm_geyser_duel.success_tt
 					left_icon = root
-					bm_become_blood_mage_effect = yes
+					bm_become_blood_acolyte_effect = yes
 				}
 			}
 

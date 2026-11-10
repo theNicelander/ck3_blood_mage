@@ -10,14 +10,14 @@ bm_apply_blood_mage_prevalence_at_birth = {
 		if = {
 			limit = {
 				is_ai = yes
-				has_trait = lifestyle_blood_mage
+				is_blood_mage_any_tier_trigger = yes
 			}
 			bm_apply_blood_mage_prevalence_retention_effect = yes
 		}
 		else_if = {
 			limit = {
 				is_ai = no
-				has_trait = lifestyle_blood_mage
+				is_blood_mage_any_tier_trigger = yes
 			}
 			bm_ensure_blood_mage_story_effect = yes
 		}
@@ -26,7 +26,7 @@ bm_apply_blood_mage_prevalence_at_birth = {
 				is_ai = yes
 				has_game_rule = bm_prevalence_everyone
 			}
-			bm_become_blood_mage_effect = yes
+			bm_become_blood_acolyte_effect = yes
 		}
 		else_if = {
 			limit = {
@@ -36,19 +36,37 @@ bm_apply_blood_mage_prevalence_at_birth = {
 			if = {
 				limit = {
 					OR = {
-						scope:mother = { has_trait = lifestyle_blood_mage }
-						scope:real_father ?= { has_trait = lifestyle_blood_mage }
+						scope:mother = { is_blood_mage_any_tier_trigger = yes }
+						scope:real_father ?= { is_blood_mage_any_tier_trigger = yes }
 					}
 				}
 				random = {
 					chance = 60
-					bm_become_blood_mage_effect = yes
+					if = {
+						limit = {
+							OR = {
+								scope:mother = { has_trait = lifestyle_bm_archmage }
+								scope:real_father ?= { has_trait = lifestyle_bm_archmage }
+							}
+						}
+						random_list = {
+							15 = {
+								bm_become_blood_mage_tier_2_effect = yes
+							}
+							85 = {
+								bm_become_blood_acolyte_effect = yes
+							}
+						}
+					}
+					else = {
+						bm_become_blood_acolyte_effect = yes
+					}
 				}
 			}
 			else = {
 				random = {
 					chance = 10
-					bm_become_blood_mage_effect = yes
+					bm_become_blood_acolyte_effect = yes
 				}
 			}
 		}
@@ -60,19 +78,37 @@ bm_apply_blood_mage_prevalence_at_birth = {
 			if = {
 				limit = {
 					OR = {
-						scope:mother = { has_trait = lifestyle_blood_mage }
-						scope:real_father ?= { has_trait = lifestyle_blood_mage }
+						scope:mother = { is_blood_mage_any_tier_trigger = yes }
+						scope:real_father ?= { is_blood_mage_any_tier_trigger = yes }
 					}
 				}
 				random = {
 					chance = 35
-					bm_become_blood_mage_effect = yes
+					if = {
+						limit = {
+							OR = {
+								scope:mother = { has_trait = lifestyle_bm_archmage }
+								scope:real_father ?= { has_trait = lifestyle_bm_archmage }
+							}
+						}
+						random_list = {
+							15 = {
+								bm_become_blood_mage_tier_2_effect = yes
+							}
+							85 = {
+								bm_become_blood_acolyte_effect = yes
+							}
+						}
+					}
+					else = {
+						bm_become_blood_acolyte_effect = yes
+					}
 				}
 			}
 			else = {
 				random = {
 					chance = 1
-					bm_become_blood_mage_effect = yes
+					bm_become_blood_acolyte_effect = yes
 				}
 			}
 		}
@@ -84,19 +120,19 @@ bm_on_birth_bloodline_xp = {
 		# Feingur Superior: Awakened Seed single-parent inheritance boost (25% -> 50%)
 		if = {
 			limit = {
-				NOT = { has_trait = lifestyle_blood_mage }
+				NOT = { is_blood_mage_any_tier_trigger = yes }
 				OR = {
 					AND = {
 						scope:mother ?= {
-							has_trait = lifestyle_blood_mage
+							is_blood_mage_any_tier_trigger = yes
 						}
-						NOT = { scope:real_father ?= { has_trait = lifestyle_blood_mage } }
+						NOT = { scope:real_father ?= { is_blood_mage_any_tier_trigger = yes } }
 					}
 					AND = {
 						scope:real_father ?= {
-							has_trait = lifestyle_blood_mage
+							is_blood_mage_any_tier_trigger = yes
 						}
-						NOT = { scope:mother ?= { has_trait = lifestyle_blood_mage } }
+						NOT = { scope:mother ?= { is_blood_mage_any_tier_trigger = yes } }
 					}
 				}
 				OR = {
@@ -106,7 +142,7 @@ bm_on_birth_bloodline_xp = {
 			}
 			random = {
 				chance = 33
-				bm_become_blood_mage_effect = yes
+				bm_become_blood_acolyte_effect = yes
 			}
 		}
 
@@ -114,7 +150,7 @@ bm_on_birth_bloodline_xp = {
 		if = {
 			limit = {
 				scope:mother ?= {
-					has_trait = lifestyle_blood_mage
+					is_blood_mage_any_tier_trigger = yes
 				}
 			}
 			scope:mother = {
@@ -137,7 +173,7 @@ bm_on_birth_bloodline_xp = {
 					limit = { bm_has_superior_stave_trigger = { STAVE = feingur } }
 					add_xp_bm_dynamic = { TRACK = bloodline XP = 4 }
 					if = {
-						limit = { root = { has_trait = lifestyle_blood_mage } }
+						limit = { root = { is_blood_mage_any_tier_trigger = yes } }
 						add_xp_bm_dynamic = { TRACK = bloodline XP = 4 }
 						send_interface_toast = {
 							type = event_toast_effect_good
@@ -158,7 +194,7 @@ bm_on_birth_bloodline_xp = {
 				else = {
 					add_xp_bm_dynamic = { TRACK = bloodline XP = 2 }
 					if = {
-						limit = { root = { has_trait = lifestyle_blood_mage } }
+						limit = { root = { is_blood_mage_any_tier_trigger = yes } }
 						add_xp_bm_dynamic = { TRACK = bloodline XP = 2 }
 						send_interface_toast = {
 							type = event_toast_effect_good
@@ -183,7 +219,7 @@ bm_on_birth_bloodline_xp = {
 		if = {
 			limit = {
 				scope:real_father ?= {
-					has_trait = lifestyle_blood_mage
+					is_blood_mage_any_tier_trigger = yes
 				}
 			}
 			scope:real_father = {
@@ -206,7 +242,7 @@ bm_on_birth_bloodline_xp = {
 					limit = { bm_has_superior_stave_trigger = { STAVE = feingur } }
 					add_xp_bm_dynamic = { TRACK = bloodline XP = 4 }
 					if = {
-						limit = { root = { has_trait = lifestyle_blood_mage } }
+						limit = { root = { is_blood_mage_any_tier_trigger = yes } }
 						add_xp_bm_dynamic = { TRACK = bloodline XP = 4 }
 						send_interface_toast = {
 							type = event_toast_effect_good
@@ -227,7 +263,7 @@ bm_on_birth_bloodline_xp = {
 				else = {
 					add_xp_bm_dynamic = { TRACK = bloodline XP = 2 }
 					if = {
-						limit = { root = { has_trait = lifestyle_blood_mage } }
+						limit = { root = { is_blood_mage_any_tier_trigger = yes } }
 						add_xp_bm_dynamic = { TRACK = bloodline XP = 2 }
 						send_interface_toast = {
 							type = event_toast_effect_good

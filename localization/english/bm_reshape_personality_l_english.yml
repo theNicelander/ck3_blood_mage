@@ -4,8 +4,6 @@
   bm_reshape_personality_interaction_tooltip: "Attempt to influence the personality or culture of [recipient.GetShortUINameNoTooltip]"
   bm_reshape_personality_interaction_confirm: "Begin Ritual"
 
-  bm_reshape_personality_piety_level_tt: "Requires Level of Devotion 3 (Servant of Holy or higher)"
-  bm_reshape_personality_lifeforce_tt: "Requires [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]"
   bm_reshape_personality_can_influence_tt: "[recipient.GetShortUINameNoTooltip] must have a different culture, or personality traits that can be reshaped"
   bm_reshape_personality_recipient_no_traits_tt: "[recipient.GetShortUINameNoTooltip] must possess at least one personality trait"
   bm_reshape_personality_no_new_traits_tt: "You must possess at least one personality trait that [recipient.GetShortUINameNoTooltip] does not already have"
@@ -20,7 +18,7 @@
   bm_reshape_personality.duel.culture_failure: "[recipient.GetShortUIName] resists your mental communion"
 
   bm_reshape_personality.0001.title: "Influence Personality: Dissolve Nature"
-  bm_reshape_personality.0001.desc: "Through sacred mastery of the sanguine arts and the surrender of our vital Lifeforce, we reach deep into the pulsing spirit of [recipient.GetUIName].\n\nTheir heart rate quickens and their veins burn with cold fire as our consciousness mingles with theirs. To carve a new path into their character, an existing facet of their nature must first be challenged and washed away.\n\nWhich inclination of [recipient.GetFirstName] shall we attempt to replace?"
+  bm_reshape_personality.0001.desc: "Through sacred mastery of the blood magic and the surrender of our vital Lifeforce, we reach deep into the pulsing spirit of [recipient.GetUIName].\n\nTheir heart rate quickens and their veins burn with cold fire as our consciousness mingles with theirs. To carve a new path into their character, an existing facet of their nature must first be challenged and washed away.\n\nWhich inclination of [recipient.GetFirstName] shall we attempt to replace?"
   bm_reshape_personality.0001.option_1: "Dissolve [recipient.GetHerHis] [recipient_ptrait_1.GetNameNoTooltip( recipient )] nature"
   bm_reshape_personality.0001.option_2: "Dissolve [recipient.GetHerHis] [recipient_ptrait_2.GetNameNoTooltip( recipient )] nature"
   bm_reshape_personality.0001.option_3: "Dissolve [recipient.GetHerHis] [recipient_ptrait_3.GetNameNoTooltip( recipient )] nature"

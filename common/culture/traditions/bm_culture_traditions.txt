@@ -22,10 +22,7 @@
 				has_coastal_province = yes
 			}
 		}
-		custom_tooltip = {
-			text = cannot_have_tradition_things
-			NOT = { has_cultural_tradition = tradition_things }
-		}
+		NOT = { has_cultural_tradition = tradition_things }
 	}
 
 	parameters = {
@@ -103,14 +100,8 @@ bm_tradition_verbudir = {
 				has_coastal_province = yes
 			}
 		}
-		custom_tooltip = {
-			text = cannot_have_tradition_maritime_mercantilism
-			NOT = { has_cultural_tradition = tradition_maritime_mercantilism }
-		}
-		custom_tooltip = {
-			text = cannot_have_tradition_fishermen
-			NOT = { has_cultural_tradition = tradition_fishermen }
-		}
+		NOT = { has_cultural_tradition = tradition_maritime_mercantilism }
+		NOT = { has_cultural_tradition = tradition_fishermen }
 	}
 
 	parameters = {

@@ -1,0 +1,334 @@
+﻿bm_blood_distillation_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
+	decision_group_type = bm_decision_group
+
+	desc = bm_blood_distillation_decision_desc
+	selection_tooltip = bm_blood_distillation_decision_tooltip
+
+	is_shown = {
+		is_blood_mage_any_tier_trigger = yes
+		NOT = { has_trait = lifestyle_bm_archmage }
+	}
+
+	is_valid = {
+		custom_tooltip = {
+			text = bm_blood_distillation_ancient_not_maxed_req
+			NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = ancient VALUE = 100 } }
+		}
+		has_character_modifier = lifeforce_modifier_minor
+		trigger_if = {
+			limit = { has_trait = lifestyle_bm_acolyte }
+			piety >= 50
+		}
+		trigger_else = {
+			piety >= 100
+		}
+	}
+
+	cost = {
+		piety = {
+			value = 0
+			if = {
+				limit = { has_trait = lifestyle_bm_acolyte }
+				add = 50
+			}
+			else = {
+				add = 100
+			}
+		}
+	}
+
+	widget = {
+		gui = "decision_view_widget_option_list_generic"
+		controller = decision_option_list_controller
+		decision_to_second_step_button = "BM_BLOOD_DISTILLATION_DECISION_NEXT_STEP_BUTTON"
+		show_from_start = yes
+
+		item = {
+			value = bm_distill_bloodlust
+			current_description = bm_distill_bloodlust
+			localization = bm_distill_bloodlust
+			icon = "gfx/interface/icons/trait_level_tracks/bloodlust.dds"
+			is_shown = {
+				always = yes
+			}
+			is_valid = {
+				custom_tooltip = {
+					text = bm_distill_bloodlust_xp_req
+					trigger_if = {
+						limit = { has_trait = lifestyle_bm_acolyte }
+						bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE = 10 }
+					}
+					trigger_else = {
+						bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE = 15 }
+					}
+				}
+			}
+			ai_chance = {
+				value = 20
+			}
+		}
+		item = {
+			value = bm_distill_benediction
+			current_description = bm_distill_benediction
+			localization = bm_distill_benediction
+			icon = "gfx/interface/icons/trait_level_tracks/benediction.dds"
+			is_shown = {
+				always = yes
+			}
+			is_valid = {
+				custom_tooltip = {
+					text = bm_distill_benediction_xp_req
+					trigger_if = {
+						limit = { has_trait = lifestyle_bm_acolyte }
+						bm_has_track_xp_any_tier_trigger = { TRACK = benediction VALUE = 10 }
+					}
+					trigger_else = {
+						bm_has_track_xp_any_tier_trigger = { TRACK = benediction VALUE = 15 }
+					}
+				}
+			}
+			ai_chance = {
+				value = 20
+			}
+		}
+		item = {
+			value = bm_distill_bloodline
+			current_description = bm_distill_bloodline
+			localization = bm_distill_bloodline
+			icon = "gfx/interface/icons/trait_level_tracks/bloodline.dds"
+			is_shown = {
+				always = yes
+			}
+			is_valid = {
+				custom_tooltip = {
+					text = bm_distill_bloodline_xp_req
+					trigger_if = {
+						limit = { has_trait = lifestyle_bm_acolyte }
+						bm_has_track_xp_any_tier_trigger = { TRACK = bloodline VALUE = 10 }
+					}
+					trigger_else = {
+						bm_has_track_xp_any_tier_trigger = { TRACK = bloodline VALUE = 15 }
+					}
+				}
+			}
+			ai_chance = {
+				value = 20
+			}
+		}
+		item = {
+			value = bm_distill_hematurgy
+			current_description = bm_distill_hematurgy
+			localization = bm_distill_hematurgy
+			icon = "gfx/interface/icons/trait_level_tracks/hematurgy.dds"
+			is_shown = {
+				always = yes
+			}
+			is_valid = {
+				custom_tooltip = {
+					text = bm_distill_hematurgy_xp_req
+					trigger_if = {
+						limit = { has_trait = lifestyle_bm_acolyte }
+						bm_has_track_xp_any_tier_trigger = { TRACK = hematurgy VALUE = 10 }
+					}
+					trigger_else = {
+						bm_has_track_xp_any_tier_trigger = { TRACK = hematurgy VALUE = 15 }
+					}
+				}
+			}
+			ai_chance = {
+				value = 20
+			}
+		}
+		item = {
+			value = bm_distill_enlightenment
+			current_description = bm_distill_enlightenment
+			localization = bm_distill_enlightenment
+			icon = "gfx/interface/icons/trait_level_tracks/enlightenment.dds"
+			is_shown = {
+				always = yes
+			}
+			is_valid = {
+				custom_tooltip = {
+					text = bm_distill_enlightenment_xp_req
+					trigger_if = {
+						limit = { has_trait = lifestyle_bm_acolyte }
+						bm_has_track_xp_any_tier_trigger = { TRACK = enlightenment VALUE = 10 }
+					}
+					trigger_else = {
+						bm_has_track_xp_any_tier_trigger = { TRACK = enlightenment VALUE = 15 }
+					}
+				}
+			}
+			ai_chance = {
+				value = 20
+			}
+		}
+	}
+
+	effect = {
+		remove_character_modifier = lifeforce_modifier_minor
+		if = {
+			limit = { scope:bm_distill_bloodlust = yes }
+			debug_log = "BloodMageDecision: bm_blood_distillation_decision (bloodlust) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_blood_distillation_decision
+				left_icon = root
+				if = {
+					limit = { has_trait = lifestyle_bm_acolyte }
+					bm_add_blood_mage_xp_effect = {
+						TRACK = bloodlust
+						XP = -10
+					}
+				}
+				else = {
+					bm_add_blood_mage_xp_effect = {
+						TRACK = bloodlust
+						XP = -15
+					}
+				}
+				bm_add_blood_mage_xp_effect = {
+					TRACK = ancient
+					XP = 5
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:bm_distill_benediction = yes }
+			debug_log = "BloodMageDecision: bm_blood_distillation_decision (benediction) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_blood_distillation_decision
+				left_icon = root
+				if = {
+					limit = { has_trait = lifestyle_bm_acolyte }
+					bm_add_blood_mage_xp_effect = {
+						TRACK = benediction
+						XP = -10
+					}
+				}
+				else = {
+					bm_add_blood_mage_xp_effect = {
+						TRACK = benediction
+						XP = -15
+					}
+				}
+				bm_add_blood_mage_xp_effect = {
+					TRACK = ancient
+					XP = 5
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:bm_distill_bloodline = yes }
+			debug_log = "BloodMageDecision: bm_blood_distillation_decision (bloodline) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_blood_distillation_decision
+				left_icon = root
+				if = {
+					limit = { has_trait = lifestyle_bm_acolyte }
+					bm_add_blood_mage_xp_effect = {
+						TRACK = bloodline
+						XP = -10
+					}
+				}
+				else = {
+					bm_add_blood_mage_xp_effect = {
+						TRACK = bloodline
+						XP = -15
+					}
+				}
+				bm_add_blood_mage_xp_effect = {
+					TRACK = ancient
+					XP = 5
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:bm_distill_hematurgy = yes }
+			debug_log = "BloodMageDecision: bm_blood_distillation_decision (hematurgy) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_blood_distillation_decision
+				left_icon = root
+				if = {
+					limit = { has_trait = lifestyle_bm_acolyte }
+					bm_add_blood_mage_xp_effect = {
+						TRACK = hematurgy
+						XP = -10
+					}
+				}
+				else = {
+					bm_add_blood_mage_xp_effect = {
+						TRACK = hematurgy
+						XP = -15
+					}
+				}
+				bm_add_blood_mage_xp_effect = {
+					TRACK = ancient
+					XP = 5
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:bm_distill_enlightenment = yes }
+			debug_log = "BloodMageDecision: bm_blood_distillation_decision (enlightenment) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_blood_distillation_decision
+				left_icon = root
+				if = {
+					limit = { has_trait = lifestyle_bm_acolyte }
+					bm_add_blood_mage_xp_effect = {
+						TRACK = enlightenment
+						XP = -10
+					}
+				}
+				else = {
+					bm_add_blood_mage_xp_effect = {
+						TRACK = enlightenment
+						XP = -15
+					}
+				}
+				bm_add_blood_mage_xp_effect = {
+					TRACK = ancient
+					XP = 5
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+		}
+		else = {
+			custom_tooltip = bm_blood_distillation_decision_effect
+		}
+		close_view = {
+			view = decisions
+			player = root
+		}
+	}
+
+	ai_potential = {
+		is_blood_mage_any_tier_trigger = yes
+		NOT = { has_trait = lifestyle_bm_archmage }
+	}
+
+	ai_check_interval = 6
+	ai_will_do = {
+		base = 50
+	}
+}

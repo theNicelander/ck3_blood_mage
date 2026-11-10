@@ -48,11 +48,21 @@
 			exists = title:d_iceland
 		}
 		title:d_iceland = {
+			holder ?= {
+				if = {
+					limit = {
+						NOT = { is_blood_mage_tier_2_or_higher_trigger = yes }
+					}
+					bm_become_blood_mage_tier_2_effect = yes
+				}
+			}
 			every_de_jure_county = {
 				holder ?= {
 					if = {
-						limit = { NOT = { has_trait = lifestyle_blood_mage } }
-						bm_become_blood_mage_effect = yes
+						limit = {
+							NOT = { is_blood_mage_tier_2_or_higher_trigger = yes }
+						}
+						bm_become_blood_mage_tier_2_effect = yes
 					}
 				}
 			}
@@ -69,8 +79,10 @@
 		title:c_tsushima = {
 			holder ?= {
 				if = {
-					limit = { NOT = { has_trait = lifestyle_blood_mage } }
-					bm_become_blood_mage_effect = yes
+					limit = {
+						NOT = { is_blood_mage_tier_2_or_higher_trigger = yes }
+					}
+					bm_become_blood_mage_tier_2_effect = yes
 				}
 			}
 		}

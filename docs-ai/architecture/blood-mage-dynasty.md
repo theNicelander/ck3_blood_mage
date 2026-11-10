@@ -37,7 +37,7 @@ Modifiers apply to all living and future members of the caster's house (landless
   - **Options (`send_options_exclusive = yes`):**
     1. **Blood of the Sovereign (`bm_blessed_blood_sovereign_modifier`):** 10 yrs, `+2` Diplomacy, `+2` Stewardship, `+10` Vassal Opinion, `-25%` Short Reign Duration, `+1.0` Health (children & dynasty).
     2. **Blood of Iron (`bm_blessed_blood_iron_modifier`):** 10 yrs, `+2` Martial, `+4` Prowess, `+25%` Knight Effectiveness, `+1.0` Health, `+0.50` Health Penalty Negation (children, dynasty, sworn knights, and Blood Mage courtiers).
-    3. **Sanguine Crucible (`bm_blessed_blood_crucible_modifier`):** 10 yrs, `+25%` Fertility, `+25%` Positive Genetic Chance, `-25%` Stress Gain, `+1.0` Health (children & dynasty).
+    3. **Blood Crucible (`bm_blessed_blood_crucible_modifier`):** 10 yrs, `+25%` Fertility, `+25%` Positive Genetic Chance, `-25%` Stress Gain, `+1.0` Health (children & dynasty).
     4. **Feingur's Eternal Blessing (`bm_feingur_blessed_blood_modifier`):** Permanent `+25%` Fertility, `+20%` Positive Genetic Chance, `+0.50` Health, `+5` Life Expectancy (children & dynasty when caster has Superior **Feingur** stave).
 - **Succession Legacy Awakening (`bm_transfer_anointed_heir_legacy_effect`):**
   - Triggered via `on_death` / `on_character_death` when a Blood Mage ruler dies with an anointed heir:

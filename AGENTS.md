@@ -15,6 +15,7 @@ CK3 script fails silently. Follow patterns in this repo and vanilla 1.20 (`/User
 - **Earned power**: lifespan and stat gains require Lifeforce, piety, ritual sacrifice, and tangible risk.
 - **Concise UI text**: say "Lifeforce", not "vitality". Flavour only in decision/event narrative descriptions. Back/cancel options always use "Back" (no flavour text).
 - **Nothing hidden, often unavailable**: keep spells, rites, options visible and greyed out (`show_as_unavailable`) with their requirements. Hide only when the prerequisite stage is not reached or the option is completed/superseded.
+- **Native requirements over custom_tooltip**: rely on native CK3 trigger tooltips for requirements. Custom tooltips (`custom_tooltip = { text = ... }`) should ONLY be used when complex requirements cannot under normal circumstances be communicated natively. Never wrap standard triggers (`piety_level`, `piety`, `prestige`, `gold`, `has_trait`, `has_character_modifier`, `NOT = { has_character_modifier = ... }`, etc.) in `custom_tooltip`.
 - **Commit on task completion**: parallel agents run concurrently. Every task or implementation ends with commit and push (stage only your files). Never leave finished work uncommitted.
 - **Clarify before building**: ask follow-up questions on rough ideas; state assumptions. Plans end with commit and push.
 - **Planner model**: if using or selected Gemini Argon, prompt user before starting any work: "You are using Argon, do you want to continue Yes/No". Never edit files on Argon; only investigate, ask, and plan.
@@ -26,7 +27,7 @@ CK3 script fails silently. Follow patterns in this repo and vanilla 1.20 (`/User
 
 - `common/`, `events/`, `gui/`, `gfx/`, `localization/<language>/` mirror vanilla. Religion uses the 1.20 layout `common/religion/{religion_family_types,religion_types,faith_types,rite_types,holy_site_types,doctrine_group_types,doctrine_types}`; older branches may have `religions/`, `religion_families/`, `holy_sites/`. Check which one the branch has; never mix.
 - `.agents/rules/`: CK3 how-to (no `bm_` ids). `.agents/skills/`: task procedures.
-- `docs-ai/architecture/`: current-state spec per subsystem; start at its `README.md`, read the matching doc before changing that code, update it in the same change (rules: its `AGENTS.md`).
+- `docs-ai/architecture/`: current-state spec per subsystem and index (rules: its `AGENTS.md`); read the matching doc before changing that code, update it in the same change.
 - `docs-ai/branch-context/<branch>.md`: mandatory PR-style branch doc (skill `manage-pr`).
 - `RELEASE_NOTES.md`: player notes + version history (skill `update-release-notes`).
 - **Do not read unless asked**: `docs-ai/archive/` (old branch docs), `docs-ai/ideas/`, `docs-ai/base-game-lists/`, `.agents/cost.md`.

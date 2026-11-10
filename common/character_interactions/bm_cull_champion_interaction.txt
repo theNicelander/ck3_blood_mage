@@ -8,7 +8,11 @@
 
 	is_shown = {
 		scope:actor = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_any_tier_trigger = yes
+			OR = {
+				bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE = 20 }
+				bm_has_track_xp_any_tier_trigger = { TRACK = hematurgy VALUE = 20 }
+			}
 		}
 		NOT = { scope:actor = scope:recipient }
 		scope:recipient = {
@@ -71,6 +75,10 @@
 					TRACK = hematurgy
 					XP = 3
 				}
+				add_blood_mage_xp = {
+					TRACK = bloodlust
+					XP = 3
+				}
 				random = {
 					chance = bm_cull_champion_superior_chance_value
 					add_character_modifier = {
@@ -92,7 +100,7 @@
 
 	ai_frequency = 12
 	ai_potential = {
-		has_trait = lifestyle_blood_mage
+		is_blood_mage_any_tier_trigger = yes
 	}
 	ai_targets = {
 		ai_recipients = prisoners

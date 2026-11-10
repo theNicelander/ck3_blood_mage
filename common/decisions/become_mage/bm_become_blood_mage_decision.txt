@@ -8,7 +8,7 @@
 	is_shown = {
 		bm_meets_blood_mage_initiation_faith_requirement_trigger = yes
 		is_adult = yes
-		NOT = { has_trait = lifestyle_blood_mage }
+		NOT = { is_blood_mage_any_tier_trigger = yes }
 	}
 
 	is_valid = {
@@ -26,13 +26,13 @@
 	}
 
 	effect = {
-		debug_log = "BloodMageDecision: blodtru_become_blood_mage | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+		debug_log = "BloodMageDecision: blodtru_become_blood_mage | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
 		debug_log_scopes = yes
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_blodtru_become_blood_mage_decision
 			left_icon = root
-			bm_become_blood_mage_effect = yes
+			bm_become_blood_acolyte_effect = yes
 		}
 	}
 
@@ -54,7 +54,7 @@ bm_enhance_blood_ritual_decision = {
 
 	is_shown = {
 		is_adult = yes
-		NOT = { has_trait = lifestyle_blood_mage }
+		NOT = { is_blood_mage_any_tier_trigger = yes }
 	}
 
 	is_valid = {
@@ -88,7 +88,7 @@ bm_enhance_blood_ritual_decision = {
 	}
 
 	effect = {
-		debug_log = "BloodMageDecision: enhance_blood_ritual | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+		debug_log = "BloodMageDecision: enhance_blood_ritual | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
 		debug_log_scopes = yes
 		trigger_event = { id = bm_geyser_duel.0001 }
 	}

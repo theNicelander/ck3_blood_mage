@@ -43,9 +43,11 @@ flowchart TD
         S8["Heal Deadly Ailments"]
     end
 
-    BM["Blood Mage"] -->|Casts| T1
-    BM -->|Casts| T2
-    BM -->|Casts| T3
+    BA["Blood Acolyte (Tier I)"] -->|Primary| T1
+    BM["Blood Mage (Tier II)"] -->|Primary| T2
+    BMArch["Blood Archmage (Tier III)"] -->|Primary| T3
+    BA -->|Ascends via Blood Reflection| BM
+    BM -->|Ascends via Blood Reflection| BMArch
 ```
 
 ---

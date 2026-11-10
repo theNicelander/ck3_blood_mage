@@ -2,6 +2,24 @@
 	visible = yes
 
 	icon = {
+		trigger = {
+			story_owner = { has_trait = lifestyle_bm_archmage }
+		}
+		reference = "gfx/interface/icons/traits/bm_blood_archmage.dds"
+	}
+	icon = {
+		trigger = {
+			story_owner = { has_trait = lifestyle_blood_mage }
+		}
+		reference = "gfx/interface/icons/traits/bm_blood_mage_silver.dds"
+	}
+	icon = {
+		trigger = {
+			story_owner = { has_trait = lifestyle_bm_acolyte }
+		}
+		reference = "gfx/interface/icons/traits/bm_blood_bronze_burnished.dds"
+	}
+	icon = {
 		trigger = { always = yes }
 		reference = "gfx/interface/icons/traits/bm_blood_mage.dds"
 	}
@@ -29,6 +47,8 @@
 			bm_cast_blood_magic_superior_decision
 			bm_manifest_lifeforce_decision
 			bm_attune_lifeforce_decision
+			bm_blood_distillation_decision
+			bm_elevate_blood_mage_tier_decision
 			bm_empower_bloodline_decision
 			bm_ritual_spar_decision
 			mass_lifedrain_prisoners_decision

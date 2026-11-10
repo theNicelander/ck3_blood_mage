@@ -178,6 +178,28 @@ def check_yaml_syntax(text: str) -> list[str]:
     return issues
 
 
+def check_macro_parameters(text: str) -> list[tuple[int, str]]:
+    """
+    Check that script/gui files do not contain unmatched '$' characters outside comments.
+    Unmatched '$' characters break Jomini macro parameter replacement and cause silent script failure.
+    """
+    issues = []
+    in_string = False
+    for idx, line in enumerate(text.splitlines(), start=1):
+        clean_chars = []
+        for ch in line:
+            if ch == '"':
+                in_string = not in_string
+            elif ch == '#' and not in_string:
+                break
+            elif not in_string:
+                clean_chars.append(ch)
+        dollar_count = clean_chars.count('$')
+        if dollar_count % 2 != 0:
+            issues.append((idx, line.strip()))
+    return issues
+
+
 def check_file(path: Path, auto_fix: bool = False) -> list[str]:
     """Validate a single file and optionally fix BOM and trailing newline."""
     errors = []
@@ -231,6 +253,11 @@ def check_file(path: Path, auto_fix: bool = False) -> list[str]:
         if not balanced:
             errors.append(
                 f"Unbalanced braces: {opens} opening '{{' vs {closes} closing '}}'"
+            )
+        macro_issues = check_macro_parameters(text)
+        for line_num, line_text in macro_issues:
+            errors.append(
+                f"Line {line_num}: Unmatched '$' character in macro parameter ('{line_text}')"
             )
 
     # Check tiger-ignore justification

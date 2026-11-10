@@ -2,12 +2,32 @@
 bm_blood_mage_total_trait_xp_value = {
 	value = 0
 	if = {
+		limit = { has_trait = lifestyle_bm_acolyte }
+		add = "has_trait_xp(lifestyle_bm_acolyte|ancient)"
+		add = "has_trait_xp(lifestyle_bm_acolyte|enlightenment)"
+		add = "has_trait_xp(lifestyle_bm_acolyte|bloodline)"
+		add = "has_trait_xp(lifestyle_bm_acolyte|benediction)"
+		add = "has_trait_xp(lifestyle_bm_acolyte|hematurgy)"
+		add = "has_trait_xp(lifestyle_bm_acolyte|bloodlust)"
+	}
+	else_if = {
 		limit = { has_trait = lifestyle_blood_mage }
+		add = 200
 		add = "has_trait_xp(lifestyle_blood_mage|ancient)"
 		add = "has_trait_xp(lifestyle_blood_mage|enlightenment)"
 		add = "has_trait_xp(lifestyle_blood_mage|bloodline)"
 		add = "has_trait_xp(lifestyle_blood_mage|benediction)"
 		add = "has_trait_xp(lifestyle_blood_mage|hematurgy)"
 		add = "has_trait_xp(lifestyle_blood_mage|bloodlust)"
+	}
+	else_if = {
+		limit = { has_trait = lifestyle_bm_archmage }
+		add = 400
+		add = "has_trait_xp(lifestyle_bm_archmage|ancient)"
+		add = "has_trait_xp(lifestyle_bm_archmage|enlightenment)"
+		add = "has_trait_xp(lifestyle_bm_archmage|bloodline)"
+		add = "has_trait_xp(lifestyle_bm_archmage|benediction)"
+		add = "has_trait_xp(lifestyle_bm_archmage|hematurgy)"
+		add = "has_trait_xp(lifestyle_bm_archmage|bloodlust)"
 	}
 }

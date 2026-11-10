@@ -2,7 +2,6 @@
   # Decision group type
   decision_group_type_bm_decision_group: "Blood Mage Decisions"
   convert_to_blood_magic_from_witch.tooltip: "Become a Blood Mage"
-  mass_lifedrain_prisoners_decision.text: "Has someone imprisoned"
 
   # Convert to blood magic from witch
   convert_to_blood_magic_from_witch: "Become a Blood Mage"
@@ -66,3 +65,33 @@
   bm_enhance_blood_ritual_decision.failure_tt: "$bm_geyser_duel.failure_tt$"
 
   bm_enhance_blood_ritual_decision_desc: "My extensive research into the blood arts has brought me to this precipice. Ancient lore speaks of Egill Skallagrímsson—berserker, poet, and master of blood-runes guarding the geothermal geysers of Reykjavik and the sacred springs of Tsushima. By confronting this ancient master, you can test your Learning and Prowess in a sacred blood duel.\n\nVictory will awaken your blood; defeat guarantees a shattered mind or broken flesh."
+
+  # Blood Distillation
+  bm_blood_distillation_decision: "Blood Distillation"
+  bm_blood_distillation_decision_desc: "Distill the essence of your mortal disciplines, transmuting accumulated discipline experience into ancient vessel power."
+  bm_blood_distillation_decision_tooltip: "Transmute discipline XP into Ancient track XP"
+  bm_blood_distillation_decision_confirm: "Begin Distillation"
+  BM_BLOOD_DISTILLATION_DECISION_NEXT_STEP_BUTTON: "Distill Essence"
+  bm_blood_distillation_ancient_not_maxed_req: "Ancient vessel has not yet reached maximum capacity (100 XP)"
+  bm_blood_distillation_decision_effect: "Sacrifices discipline track XP to empower your Ancient elevation meter."
+
+  bm_distill_bloodlust: "Distill Bloodlust"
+  bm_distill_bloodlust_xp_req: "Requires at least discipline XP threshold (10 XP for Acolyte, 15 XP for Mage)"
+  bm_distill_benediction: "Distill Benediction"
+  bm_distill_benediction_xp_req: "Requires at least discipline XP threshold (10 XP for Acolyte, 15 XP for Mage)"
+  bm_distill_bloodline: "Distill Bloodline"
+  bm_distill_bloodline_xp_req: "Requires at least discipline XP threshold (10 XP for Acolyte, 15 XP for Mage)"
+  bm_distill_hematurgy: "Distill Hematurgy"
+  bm_distill_hematurgy_xp_req: "Requires at least discipline XP threshold (10 XP for Acolyte, 15 XP for Mage)"
+  bm_distill_enlightenment: "Distill Enlightenment"
+  bm_distill_enlightenment_xp_req: "Requires at least discipline XP threshold (10 XP for Acolyte, 15 XP for Mage)"
+
+  # Tier Elevation
+  bm_elevate_blood_mage_tier_decision: "Ascend Blood Magic Tier"
+  bm_elevate_blood_mage_tier_decision_desc: "Your ancient vessel is brimming with condensed power. Face your mortal reflection in the Blood Mirror to transcend your current tier."
+  bm_elevate_blood_mage_tier_decision_tooltip: "Advance to the next tier of Blood Magic"
+  bm_elevate_blood_mage_tier_decision_confirm: "Gaze into the Blood Mirror"
+  bm_elevate_tier_ancient_req: "Ancient track must be at maximum (100 XP)"
+  bm_elevate_tier_total_xp_req: "Total Blood Magic experience across all tracks must be at least 250 XP ([GetPlayer.MakeScope.ScriptValue('bm_total_blood_mage_xp')|0]/250)"
+  bm_elevate_blood_mage_tier_toast: "Ascended to Blood Mage!"
+  bm_elevate_blood_archmage_tier_toast: "Ascended to Blood Archmage!"

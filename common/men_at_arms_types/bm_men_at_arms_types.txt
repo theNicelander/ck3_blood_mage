@@ -32,12 +32,15 @@ bm_blood_berserkers = {
 	}
 
 	should_show_when_unavailable = {
-		has_trait = lifestyle_blood_mage
+		is_blood_mage_any_tier_trigger = yes
 	}
 
 	can_recruit = {
-		has_trait = lifestyle_blood_mage
 		piety_level >= 2
+		OR = {
+			is_blood_mage_tier_2_or_higher_trigger = yes
+			bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE = 50 }
+		}
 	}
 
 	buy_cost = {
@@ -83,12 +86,18 @@ bm_blood_behemoths = {
 	}
 
 	should_show_when_unavailable = {
-		has_trait = lifestyle_blood_mage
+		is_blood_mage_any_tier_trigger = yes
 	}
 
 	can_recruit = {
-		has_trait = lifestyle_blood_mage
 		piety_level >= 4
+		OR = {
+			is_blood_mage_archmage_trigger = yes
+			AND = {
+				is_blood_mage_tier_2_or_higher_trigger = yes
+				bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE = 80 }
+			}
+		}
 	}
 
 	buy_cost = {

@@ -1,0 +1,181 @@
+﻿namespace = bm_ascension_duel
+
+bm_ascension_duel.0001 = {
+	type = character_event
+	title = bm_ascension_duel.0001.t
+	desc = bm_ascension_duel.0001.desc
+	theme = war
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+
+	immediate = {
+		if = {
+			limit = { root = { exists = house } }
+			create_character = {
+				template = bm_blood_reflection_template
+				location = root.location
+				gender = root
+				age = root.age
+				faith = root.faith
+				culture = root.culture
+				dynasty = generate
+				save_scope_as = bm_clone
+			}
+		}
+		else = {
+			create_character = {
+				template = bm_blood_reflection_template
+				location = root.location
+				gender = root
+				age = root.age
+				faith = root.faith
+				culture = root.culture
+				dynasty = none
+				save_scope_as = bm_clone
+			}
+		}
+		scope:bm_clone = {
+			copy_inheritable_appearance_from = root
+			change_first_name = { template_character = root }
+			if = {
+				limit = { root = { exists = house } }
+				house ?= {
+					set_house_name = bm_ghost_house_name
+				}
+			}
+			bm_copy_character_personality_effect = yes
+			bm_copy_character_education_effect = yes
+			bm_copy_character_mirror_traits_effect = yes
+			bm_synchronize_character_skills_effect = yes
+		}
+	}
+
+	right_portrait = {
+		character = scope:bm_clone
+		animation = rage
+	}
+
+	option = {
+		name = bm_ascension_duel.0001.opt
+		configure_start_single_combat_effect = {
+			SC_INITIATOR = root
+			SC_ATTACKER = root
+			SC_DEFENDER = scope:bm_clone
+			FATALITY = practice
+			FIXED = no
+			LOCALE = battlefield
+			OUTPUT_EVENT = bm_ascension_duel.0002
+			INVALIDATION_EVENT = bm_ascension_duel.0003
+		}
+	}
+}
+
+bm_ascension_duel.0002 = {
+	type = character_event
+	title = bm_ascension_duel.0002.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					this = scope:sc_victor
+				}
+				desc = bm_ascension_duel.0002.victor_desc
+			}
+			desc = bm_ascension_duel.0002.loser_desc
+		}
+	}
+	theme = war
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:sc_defender
+		animation = martial
+	}
+
+	immediate = {
+		if = {
+			limit = { this = scope:sc_victor }
+			bm_elevate_tier_effect = yes
+		}
+		else = {
+			send_interface_toast = {
+				type = event_toast_effect_bad
+				title = bm_ascension_duel_loser_toast
+				left_icon = root
+				right_icon = scope:sc_defender
+				add_character_modifier = {
+					modifier = bm_casting_exhaustion_modifier
+					years = 1
+				}
+				if = {
+					limit = { NOT = { has_trait = wounded } }
+					add_trait = wounded_1
+				}
+				else_if = {
+					limit = { has_trait = wounded_1 }
+					remove_trait = wounded_1
+					add_trait = wounded_2
+				}
+				if = {
+					limit = { has_trait = lifestyle_bm_acolyte }
+					bm_add_blood_mage_xp_effect = {
+						TRACK = ancient
+						XP = -10
+					}
+				}
+				else_if = {
+					limit = { has_trait = lifestyle_blood_mage }
+					bm_add_blood_mage_xp_effect = {
+						TRACK = ancient
+						XP = -10
+					}
+				}
+			}
+		}
+		if = {
+			limit = { exists = scope:sc_defender }
+			scope:sc_defender = {
+				death = {
+					death_reason = death_vanished
+				}
+			}
+		}
+	}
+
+	option = {
+		name = bm_ascension_duel.0002.opt
+	}
+}
+
+bm_ascension_duel.0003 = {
+	type = character_event
+	title = bm_ascension_duel.0003.t
+	desc = bm_ascension_duel.0003.desc
+	theme = war
+
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+
+	immediate = {
+		if = {
+			limit = { exists = scope:bm_clone }
+			scope:bm_clone = {
+				death = {
+					death_reason = death_vanished
+				}
+			}
+		}
+	}
+
+	option = {
+		name = bm_ascension_duel.0003.opt
+	}
+}

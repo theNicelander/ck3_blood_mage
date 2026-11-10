@@ -11,7 +11,7 @@ bm_initialize_blood_mage_prevalence = {
 		every_living_character = {
 			limit = {
 				is_ai = yes
-				has_trait = lifestyle_blood_mage
+				is_blood_mage_any_tier_trigger = yes
 			}
 			bm_apply_blood_mage_prevalence_retention_effect = yes
 		}
@@ -22,7 +22,7 @@ bm_initialize_blood_mage_stories = {
 	effect = {
 		every_living_character = {
 			limit = {
-				has_trait = lifestyle_blood_mage
+				is_blood_mage_any_tier_trigger = yes
 			}
 			bm_ensure_blood_mage_story_effect = yes
 		}

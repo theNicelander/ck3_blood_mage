@@ -49,7 +49,7 @@ random_yearly_everyone_pulse = {
 bm_yearly_pulse_playable = {
     trigger = {
         OR = {
-            has_trait = lifestyle_blood_mage
+            is_blood_mage_any_tier_trigger = yes
             bm_has_blood_rune_trigger = yes
         }
     }
@@ -64,7 +64,7 @@ bm_yearly_pulse_everyone = {
     trigger = {
         is_playable_character = no
         OR = {
-            has_trait = lifestyle_blood_mage
+            is_blood_mage_any_tier_trigger = yes
             bm_has_blood_rune_trigger = yes
         }
     }
@@ -79,7 +79,7 @@ bm_yearly_pulse_everyone = {
 bm_review_unmarked_blood_mage_prevalence = {
     trigger = {
         is_ai = yes
-        has_trait = lifestyle_blood_mage
+        is_blood_mage_any_tier_trigger = yes
         NOT = { has_character_flag = bm_blood_mage_prevalence_reviewed }
         OR = {
             has_game_rule = bm_prevalence_player_only
@@ -95,7 +95,7 @@ bm_review_unmarked_blood_mage_prevalence = {
 bm_yearly_interpersonal_pulse = {
     trigger = {
         is_ai = no
-        has_trait = lifestyle_blood_mage
+        is_blood_mage_any_tier_trigger = yes
         NOT = { has_character_flag = bm_interpersonal_event_cooldown }
     }
     effect = {
@@ -143,7 +143,7 @@ bm_yearly_interpersonal_pulse = {
                     any_courtier = {
                         is_alive = yes
                         is_adult = yes
-                        NOT = { has_trait = lifestyle_blood_mage }
+                        NOT = { is_blood_mage_any_tier_trigger = yes }
                         NOT = { house ?= house:bm_house_golem }
                     }
                 }

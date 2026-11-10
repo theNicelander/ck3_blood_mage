@@ -12,20 +12,25 @@ Every Blood Mage also natively gains the **Worthy Commander** perk (`ignores_gen
 
 ## Track Progression & Stat Scaling
 
-The `bloodlust` track uses the standard 10-tier progression (10 to 100 XP in increments of 10):
+The `bloodlust` track uses the standard 10-tier progression (10 to 100 XP in increments of 10), providing combat command advantages and empowering sworn knights without flat attribute bloat:
 
-| Tier (XP) | Modifiers Added at Tier | Cumulative Total Highlights |
+| Tier (XP) | Modifiers Added at Tier (Tier II Blood Mage) | Cumulative Total Highlights |
 | :--- | :--- | :--- |
-| **10 XP** | Vitality Step, `prowess = 1.5` | +0.1 Health, +2.5 Life Exp, +1.5 Prowess |
-| **20 XP** | Vitality Step, `prowess = 1.5`, `martial = 1`, `knight_limit = 1` | +0.2 Health, +5 Life Exp, +3 Prowess, +1 Martial, +1 Knight Limit |
-| **30 XP** | Vitality Step, `prowess = 1.5`, `advantage = 1` | +0.3 Health, +7.5 Life Exp, +4.5 Prowess, +1 Martial, +1 Advantage, +1 Knight Limit |
-| **40 XP** | Vitality Step, `prowess = 1.5`, `martial = 1`, `knight_limit = 1` | +0.4 Health, +10 Life Exp, +6 Prowess, +2 Martial, +1 Advantage, +2 Knight Limit |
-| **50 XP (Milestone)** | 4× Vitality Step, `prowess = 7`, `advantage = 1`, `dread_baseline_add = 5`, `martial_per_piety_level = 1`, `prowess_per_piety_level = 1` | 4× Vitality, +13 Prowess, +2 Martial, +2 Advantage, +2 Knight Limit, +5 Dread Baseline, +1 Martial & Prowess per Piety Level |
-| **60 XP** | Vitality Step, `prowess = 1.5`, `martial = 1`, `knight_limit = 1` | Cumulative standard progression |
-| **70 XP** | Vitality Step, `prowess = 1.5`, `advantage = 1` | Cumulative standard progression |
-| **80 XP** | Vitality Step, `prowess = 1.5`, `martial = 1`, `knight_limit = 1` | Cumulative standard progression |
-| **90 XP** | Vitality Step, `prowess = 1.5`, `advantage = 1` | Cumulative standard progression |
-| **100 XP (Capstone)** | 8× Vitality Step, `prowess = 14`, `advantage = 1`, `knight_limit = 1`, `dread_baseline_add = 10`, `martial_per_piety_level = 1.5`, `prowess_per_piety_level = 2`, `no_prowess_loss_from_age = yes` | 8× Vitality, +30 Prowess, +4 Martial, +5 Advantage, +5 Knight Limit, +15 Dread Baseline, +1.5 Martial / +2 Prowess per Piety Level, Prowess Age-Lock |
+| **10 XP** | Vitality Step, `advantage = 1.5`, `knight_effectiveness_mult = 0.10` | +0.1 Health, +2.5 Life Exp, +1.5 Advantage, +10% Knight Eff |
+| **20 XP** | Vitality Step, `advantage = 1.5`, `knight_effectiveness_mult = 0.10`, `knight_limit = 1` | +0.2 Health, +5 Life Exp, +3 Advantage, +20% Knight Eff, +1 Knight Limit |
+| **30 XP** | Vitality Step, `advantage = 1.5`, `knight_effectiveness_mult = 0.10` | +0.3 Health, +7.5 Life Exp, +4.5 Advantage, +30% Knight Eff, +1 Knight Limit |
+| **40 XP** | Vitality Step, `advantage = 1.5`, `knight_effectiveness_mult = 0.10`, `knight_limit = 1` | +0.4 Health, +10 Life Exp, +6 Advantage, +40% Knight Eff, +2 Knight Limit |
+| **50 XP (Milestone)** | `martial_per_piety_level = 1`, `prowess_per_piety_level = 1` | 4× Vitality, +6 Advantage, +40% Knight Eff, +2 Knight Limit, +1 Martial & Prowess per Piety Level |
+| **60 XP** | Vitality Step, `advantage = 1.5`, `knight_effectiveness_mult = 0.10`, `knight_limit = 1` | +0.5 Health, +12.5 Life Exp, +7.5 Advantage, +50% Knight Eff, +3 Knight Limit |
+| **70 XP** | Vitality Step, `advantage = 1.5`, `knight_effectiveness_mult = 0.10` | +0.6 Health, +15 Life Exp, +9 Advantage, +60% Knight Eff, +3 Knight Limit |
+| **80 XP** | Vitality Step, `advantage = 1.5`, `knight_effectiveness_mult = 0.10`, `knight_limit = 1` | +0.7 Health, +17.5 Life Exp, +10.5 Advantage, +70% Knight Eff, +4 Knight Limit |
+| **90 XP** | Vitality Step, `advantage = 1.5`, `knight_effectiveness_mult = 0.10` | +0.8 Health, +20 Life Exp, +12 Advantage, +80% Knight Eff, +4 Knight Limit |
+| **100 XP (Capstone)** | `martial_per_piety_level = 1`, `prowess_per_piety_level = 1` | 8× Vitality, +12 Advantage, +80% Knight Eff, +4 Knight Limit, +2 Martial & Prowess per Piety Level |
+
+*Note: Scaling across tiers:*
+- **Tier I: Blood Acolyte (`lifestyle_bm_acolyte`)**: +1 Advantage & +5% Knight Effectiveness per step (+8 Adv, +40% Knight Eff total), +1 Knight Limit on even steps (+4 Knights), +1 Martial & Prowess per Piety Level at 50 XP and 100 XP (+2 each total), Age Prowess Lock at 100 XP.
+- **Tier II: Blood Mage (`lifestyle_blood_mage`)**: +1.5 Advantage & +10% Knight Effectiveness per step (+12 Adv, +80% Knight Eff total), +1 Knight Limit on even steps (+4 Knights), +1 Martial & Prowess per Piety Level at 50 XP and 100 XP (+2 each total, plus innate +1 base trait floor).
+- **Tier III: Blood Archmage (`lifestyle_bm_archmage`)**: +2 Advantage & +15% Knight Effectiveness per step (+16 Adv, +120% Knight Eff total), +2 Knight Limit on even steps (+8 Knights), +2 Martial & Prowess per Piety Level at 50 XP and 100 XP (+4 each total, plus innate +2 base trait floor).
 
 ---
 

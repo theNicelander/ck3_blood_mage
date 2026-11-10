@@ -82,3 +82,45 @@ bm_has_stress_coping_trait_trigger = {
 	}
 }
 
+is_blood_mage_any_tier_trigger = {
+	OR = {
+		has_trait = lifestyle_bm_acolyte
+		has_trait = lifestyle_blood_mage
+		has_trait = lifestyle_bm_archmage
+	}
+}
+
+is_blood_mage_tier_2_or_higher_trigger = {
+	OR = {
+		has_trait = lifestyle_blood_mage
+		has_trait = lifestyle_bm_archmage
+	}
+}
+
+is_blood_mage_archmage_trigger = {
+	has_trait = lifestyle_bm_archmage
+}
+
+is_blood_mage_acolyte_trigger = {
+	has_trait = lifestyle_bm_acolyte
+}
+
+bm_has_track_xp_any_tier_trigger = {
+	OR = {
+		has_trait_xp = {
+			trait = lifestyle_bm_acolyte
+			track = $TRACK$
+			value >= $VALUE$
+		}
+		has_trait_xp = {
+			trait = lifestyle_blood_mage
+			track = $TRACK$
+			value >= $VALUE$
+		}
+		has_trait_xp = {
+			trait = lifestyle_bm_archmage
+			track = $TRACK$
+			value >= $VALUE$
+		}
+	}
+}

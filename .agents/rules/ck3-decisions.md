@@ -13,7 +13,7 @@ Copy a neighbouring file in `common/decisions/` or `common/character_interaction
 - `is_shown` runs constantly: cheap exclusionary triggers first. Prefer native `cooldown = { ... }` over flags.
 - Effects must be safe if fired twice, on missing scopes, or by AI.
 - Put cost and affordability triggers in `is_valid`, not only `ai_will_do`. Never use `is_ai = yes` to skip validity or costs.
-- Tooltips: `custom_tooltip = { text = key }` for non-obvious outcomes; concise, concrete terms ("Lifeforce"). Flavour only in `<id>_desc`.
+- Tooltips: Use native triggers directly in `is_valid` / `is_valid_showing_failures_only` / widget items. Custom tooltips (`custom_tooltip = { text = key }`) should ONLY be used when complex requirements cannot under normal circumstances be communicated natively. Never wrap standard triggers (`piety_level`, `piety`, `has_trait`, `has_character_modifier`, `NOT = { has_character_modifier = ... }`, etc.) in `custom_tooltip`. Concise, concrete terms ("Lifeforce"). Flavour only in `<id>_desc`.
 - Outcomes that grant modifiers, traits, XP or stats go inside `send_interface_toast`; avoid `custom_tooltip` inside toasts.
 - Loc sibling keys: see `ck3-localization.md`.
 

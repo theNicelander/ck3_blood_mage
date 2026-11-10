@@ -4,122 +4,52 @@
     picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
     is_shown = {
         debug_only = yes
-        not = { has_trait = lifestyle_blood_mage }
+        not = { is_blood_mage_any_tier_trigger = yes }
     }
     effect = {
         bm_become_blood_mage_effect = yes
     }
 }
 
-debug_add_lifeforce = {
+debug_give_superior_blood_rune = {
     decision_group_type = debug
     ai_check_interval = 0
     picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
-    is_shown = { debug_only = yes }
-    effect = {
-        add_character_modifier = { modifier = lifeforce_modifier_major }
-        add_character_modifier = { modifier = lifeforce_modifier_major }
-        add_character_modifier = { modifier = lifeforce_modifier_major }
-        add_character_modifier = { modifier = lifeforce_modifier_major }
-        add_character_modifier = { modifier = lifeforce_modifier_major }
+    is_shown = {
+        debug_only = yes
     }
-}
-
-debug_add_lifeforce_minor = {
-    decision_group_type = debug
-    ai_check_interval = 0
-    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
-    is_shown = { debug_only = yes }
     effect = {
-        add_character_modifier = { modifier = lifeforce_modifier_minor }
-        add_character_modifier = { modifier = lifeforce_modifier_minor }
-        add_character_modifier = { modifier = lifeforce_modifier_minor }
-        add_character_modifier = { modifier = lifeforce_modifier_minor }
-        add_character_modifier = { modifier = lifeforce_modifier_minor }
-    }
-}
-
-debug_add_exp_blood_mage_exp = {
-    decision_group_type = debug
-    ai_check_interval = 0
-    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
-    is_shown = { debug_only = yes }
-    effect = {
-        add_trait_xp = {
-            trait = lifestyle_blood_mage
-            track = ancient
-            value = 20
-        }
-        add_trait_xp = {
-            trait = lifestyle_blood_mage
-            track = enlightenment
-            value = 20
-        }
-        add_trait_xp = {
-            trait = lifestyle_blood_mage
-            track = bloodline
-            value = 20
-        }
-        add_trait_xp = {
-            trait = lifestyle_blood_mage
-            track = benediction
-            value = 20
-        }
-        add_trait_xp = {
-            trait = lifestyle_blood_mage
-            track = hematurgy
-            value = 20
-        }
-        add_trait_xp = {
-            trait = lifestyle_blood_mage
-            track = bloodlust
-            value = 20
+        send_interface_toast = {
+            title = debug_give_superior_blood_rune
+            left_icon = root
+            remove_character_modifier = minor_blood_rune_modifier
+            remove_character_modifier = major_blood_rune_modifier
+            add_character_modifier = { modifier = superior_blood_rune_modifier }
         }
     }
 }
 
-
-debug_add_blood_power_exp = {
+debug_manage_xp = {
     decision_group_type = debug
     ai_check_interval = 0
     picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
-    is_shown = { debug_only = yes }
+    is_shown = {
+        debug_only = yes
+    }
     effect = {
-        if = {
-            limit = { NOT = { has_trait = lifestyle_blood_power } }
-            add_trait = lifestyle_blood_power
-        }
+        trigger_event = { id = bm_debug.0001 }
+    }
+}
 
-        add_trait_xp = {
-            trait = lifestyle_blood_power
-            track = dynasty
-            value = 20
-        }
-        add_trait_xp = {
-            trait = lifestyle_blood_power
-            track = warband
-            value = 20
-        }
-        add_trait_xp = {
-            trait = lifestyle_blood_power
-            track = mastery
-            value = 20
-        }
-        add_trait_xp = {
-            trait = lifestyle_blood_power
-            track = presence
-            value = 20
-        }
-        add_trait_xp = {
-            trait = lifestyle_blood_power
-            track = prosperity
-            value = 20
-        }
-        add_trait_xp = {
-            trait = lifestyle_blood_power
-            track = shadows
-            value = 20
-        }
+debug_manage_lifeforce = {
+    decision_group_type = debug
+    ai_check_interval = 0
+    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+    is_shown = {
+        debug_only = yes
+    }
+    effect = {
+        trigger_event = { id = bm_debug.0002 }
     }
 }
 
@@ -229,37 +159,5 @@ debug_upgrade_all_covenants = {
                 add_house_modifier = { modifier = dynasty_blood_legacy_modifier_1 }
             }
         }
-    }
-}
-
-
-
-debug_remove_lifeforce = {
-    decision_group_type = debug
-    ai_check_interval = 0
-    picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
-    is_shown = { debug_only = yes }
-    effect = {
-        remove_character_modifier = lifeforce_modifier_major
-        remove_character_modifier = lifeforce_modifier_major
-        remove_character_modifier = lifeforce_modifier_major
-        remove_character_modifier = lifeforce_modifier_major
-        remove_character_modifier = lifeforce_modifier_major
-        remove_character_modifier = lifeforce_modifier_major
-        remove_character_modifier = lifeforce_modifier_major
-        remove_character_modifier = lifeforce_modifier_major
-        remove_character_modifier = lifeforce_modifier_major
-        remove_character_modifier = lifeforce_modifier_major
-
-        remove_character_modifier = lifeforce_modifier_minor
-        remove_character_modifier = lifeforce_modifier_minor
-        remove_character_modifier = lifeforce_modifier_minor
-        remove_character_modifier = lifeforce_modifier_minor
-        remove_character_modifier = lifeforce_modifier_minor
-        remove_character_modifier = lifeforce_modifier_minor
-        remove_character_modifier = lifeforce_modifier_minor
-        remove_character_modifier = lifeforce_modifier_minor
-        remove_character_modifier = lifeforce_modifier_minor
-        remove_character_modifier = lifeforce_modifier_minor
     }
 }

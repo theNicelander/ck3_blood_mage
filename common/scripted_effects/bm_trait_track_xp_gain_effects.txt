@@ -1,54 +1,88 @@
 ﻿bm_add_blood_mage_xp_effect = {
-    if = {
-        limit = {
-            has_trait = lifestyle_blood_mage
-        }
-        add_trait_xp = {
-            trait = lifestyle_blood_mage
-            track = $TRACK$
-            value = $XP$
-        }
-    }
+	if = {
+		limit = {
+			has_trait = lifestyle_bm_acolyte
+		}
+		add_trait_xp = {
+			trait = lifestyle_bm_acolyte
+			track = $TRACK$
+			value = $XP$
+		}
+	}
+	else_if = {
+		limit = {
+			has_trait = lifestyle_blood_mage
+		}
+		add_trait_xp = {
+			trait = lifestyle_blood_mage
+			track = $TRACK$
+			value = $XP$
+		}
+	}
+	else_if = {
+		limit = {
+			has_trait = lifestyle_bm_archmage
+		}
+		add_trait_xp = {
+			trait = lifestyle_bm_archmage
+			track = $TRACK$
+			value = $XP$
+		}
+	}
 }
 
 bm_add_blood_power_xp_effect = {
-    if = {
-        limit = {
-            has_trait = lifestyle_blood_power
-        }
-        add_trait_xp = {
-            trait = lifestyle_blood_power
-            track = $TRACK$
-            value = $XP$
-        }
-    }
+	if = {
+		limit = {
+			has_trait = lifestyle_blood_power
+		}
+		add_trait_xp = {
+			trait = lifestyle_blood_power
+			track = $TRACK$
+			value = $XP$
+		}
+	}
 }
 
 bm_add_blood_empowerment_xp_effect = {
-    bm_add_blood_power_xp_effect = {
-        TRACK = $TRACK$
-        XP = $XP$
-    }
+	bm_add_blood_power_xp_effect = {
+		TRACK = $TRACK$
+		XP = $XP$
+	}
 }
 
-bm_add_crimson_empowerment_xp_effect = {
-    bm_add_blood_power_xp_effect = {
-        TRACK = $TRACK$
-        XP = $XP$
-    }
+# Dynamic & Legacy compatibility aliases
+add_xp_bm_dynamic = {
+	bm_add_blood_mage_xp_effect = {
+		TRACK = $TRACK$
+		XP = $XP$
+	}
 }
 
-# Legacy compatibility aliases
+add_blood_mage_xp = {
+	bm_add_blood_mage_xp_effect = {
+		TRACK = $TRACK$
+		XP = $XP$
+	}
+}
+
+add_blood_power_xp = {
+	bm_add_blood_power_xp_effect = {
+		TRACK = $TRACK$
+		XP = 10
+	}
+}
+
 add_xp_enlightenment = {
-    bm_add_blood_mage_xp_effect = {
-        TRACK = enlightenment
-        XP = 1
-    }
+	bm_add_blood_mage_xp_effect = {
+		TRACK = enlightenment
+		XP = 1
+	}
 }
 
 add_shared_bm_bk_xp = {
-    bm_add_blood_mage_xp_effect = {
-        TRACK = $TRACK$
-        XP = $XP$
-    }
+	bm_add_blood_mage_xp_effect = {
+		TRACK = $TRACK$
+		XP = $XP$
+	}
 }

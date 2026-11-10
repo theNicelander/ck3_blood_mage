@@ -63,7 +63,7 @@ seek_power.001 = {
                     trigger_event = { id = seek_power.010 }
                 }
                 10 = {
-                    desc = seek_power.duel.crimson_rite
+                    desc = seek_power.duel.blood_rite
                     compare_modifier = {
                         value = scope:duel_value
                         multiplier = 1.0
@@ -888,7 +888,7 @@ seek_power.010 = {
     }
 }
 
-# The Crimson Rite
+# The Blood Rite
 seek_power.011 = {
     type = character_event
     title = seek_power.011.title
@@ -909,7 +909,7 @@ seek_power.011 = {
             value = 20
             # 1. Success: Major Lifeforce, clean kill
             35 = {
-                desc = seek_power.duel.crimson_seize
+                desc = seek_power.duel.blood_seize
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = 1.5
@@ -917,7 +917,7 @@ seek_power.011 = {
                     max = 40
                 }
                 send_interface_toast = {
-                    title = seek_power.toast.crimson_seize
+                    title = seek_power.toast.blood_seize
                     left_icon = this
                     add_character_modifier = { modifier = lifeforce_modifier_major }
                     bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 2 }
@@ -928,7 +928,7 @@ seek_power.011 = {
             }
             # 2. Mixed Success: Minor Lifeforce, Wounded
             25 = {
-                desc = seek_power.duel.crimson_backlash
+                desc = seek_power.duel.blood_backlash
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = 0.5
@@ -936,7 +936,7 @@ seek_power.011 = {
                     max = 15
                 }
                 send_interface_toast = {
-                    title = seek_power.toast.crimson_backlash
+                    title = seek_power.toast.blood_backlash
                     left_icon = this
                     add_character_modifier = { modifier = lifeforce_modifier_minor }
                     increase_wounds_no_death_effect = { REASON = fight }
@@ -949,7 +949,7 @@ seek_power.011 = {
             }
             # 3. Fail: Occultist escapes, 0 Lifeforce
             25 = {
-                desc = seek_power.duel.crimson_escaped
+                desc = seek_power.duel.blood_escaped
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = -1.2
@@ -957,14 +957,14 @@ seek_power.011 = {
                     max = 30
                 }
                 send_interface_toast = {
-                    title = seek_power.toast.crimson_escaped
+                    title = seek_power.toast.blood_escaped
                     left_icon = this
                     add_stress = 5
                 }
             }
             # 4. Critical Fail: Catastrophic hex, Wounded, -50 Piety, 0 Lifeforce
             15 = {
-                desc = seek_power.duel.crimson_cursed
+                desc = seek_power.duel.blood_cursed
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = -0.8
@@ -972,7 +972,7 @@ seek_power.011 = {
                     max = 20
                 }
                 send_interface_toast = {
-                    title = seek_power.toast.crimson_cursed
+                    title = seek_power.toast.blood_cursed
                     left_icon = this
                     increase_wounds_no_death_effect = { REASON = fight }
                     add_piety = -50
@@ -987,7 +987,7 @@ seek_power.011 = {
         name = seek_power.011.b
         ai_chance = { base = 40 }
         send_interface_toast = {
-            title = seek_power.toast.crimson_communion
+            title = seek_power.toast.blood_communion
             left_icon = this
             add_character_modifier = { modifier = lifeforce_modifier_minor }
             add_piety = 50

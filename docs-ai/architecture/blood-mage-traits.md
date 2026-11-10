@@ -2,15 +2,17 @@
 
 Living technical specification for `lifestyle_blood_mage` and secondary `lifestyle_blood_power`.
 
-## Archetypes & Class Overview
+## Archetypes & Sequential 3-Tier Hierarchy
 
-| Lifestyle Trait | Archetype | Lifestyle Tracks (6) | Magic & Subsystem Access |
-| --- | --- | --- | --- |
-| **Blood Mage** (`lifestyle_blood_mage`) | *Master of the Blood Arts* — Occult scholar, dynasty architect, battlefield warlord | `ancient`, `enlightenment`, `benediction`, `bloodline`, `hematurgy`, `bloodlust` | Minor, Major, Superior Blood Magic; builds Duchy Blood Temples (`bm_duchy_buildings.txt`); inscribes Superior Blood Runes; recruits Blood Berserkers & Behemoths; commands armies regardless of gender laws (`ignores_gender_army_rules = yes`). |
-| **Blood Power** (`lifestyle_blood_power`) | *Secondary Personal Mastery* — Granted alongside Mage (base 0 XP) | 6 tracks: `dynasty`, `warband`, `mastery`, `presence`, `prosperity`, `shadows` | Advanced via Major Magic (`bm_cast_blood_magic_major.001.power`). +0.1 monthly Piety and +5 monthly Lifestyle XP per 10 XP step, 50 XP milestones, 100 XP capstones including `no_prowess_loss_from_age = yes`. |
+| Lifestyle Trait | Tier | Fuel | Lifestyle Tracks (6) | Magic & Subsystem Access |
+| --- | --- | --- | --- | --- |
+| **Blood Acolyte** (`lifestyle_bm_acolyte`) | Tier I | Minor Lifeforce | `bloodline`, `hematurgy`, `benediction`, `enlightenment`, `bloodlust`, `ancient` | Minor Blood Magic Grimoire; foundational Major rites (Rank 1 trait manifestation, up to 3★ education, Minor/Major Runes, Blood Power channeling). Standard 0.5x track scaling; age lock at 100 XP on any track. |
+| **Blood Mage** (`lifestyle_blood_mage`) | Tier II | Major Lifeforce | `bloodline`, `hematurgy`, `benediction`, `enlightenment`, `bloodlust`, `ancient` | Minor & Major Grimoire; congenital manifestation up to Rank 3, education up to 4★, prisoner trait theft, Tier II covenants, Major Blood Runes, Blood Berserkers. Base stat floor absorbs Tier I vitals (2.0 health, 33 life, 33 fertility, 33 plague res) + 50 XP milestones (+1 stats and prowess per piety level) + permanent age lock. |
+| **Blood Archmage** (`lifestyle_bm_archmage`) | Tier III | Superior Lifeforce | `bloodline`, `hematurgy`, `benediction`, `enlightenment`, `bloodlust`, `ancient` | Full Superior Grimoire; 5★ Master education, 2nd education, Rank 4–5 traits, Blood Golems, Galdrastafir, Tier III covenants, deadly ailment cure, Behemoths. Base stat floor absorbs Tier II vitals (5.0 health, 100 life, 50 fertility, 50 plague res) + 50 XP milestones (+2 stats and prowess per piety level) + permanent age lock. 1.5x–2.0x apex scaling. |
+| **Blood Power** (`lifestyle_blood_power`) | Secondary | — | 6 tracks: `dynasty`, `warband`, `mastery`, `presence`, `prosperity`, `shadows` | Retained alongside primary tier trait; never reset on tier elevation. +0.1 monthly Piety and +5 monthly Lifestyle XP per 10 XP step, 50 XP milestones, 100 XP capstones including `no_prowess_loss_from_age = yes`. |
 
 - **Inheritance & Base:** Inheritable non-genetic (`25%` single parent, `50%` with Superior Feingur, `100%` both parents, `0.20%` birth), audited by `bm_blood_mage_prevalence` rule. Base: `same_opinion = 10`, `ignores_gender_army_rules = yes`.
-- **Track Structure:** 10 tiers (10–100 XP). Tiers 10–40 and 60–90 grant standard Vitality step (`+0.1` Health, `+2.5` Life Exp, `+1.25` Fertility Yr, `+1` Epidemic Res; 4× at 50 XP, 8× at 100 XP). Tier 50 = Devotion-scaling milestones (`<stat>_per_piety_level = 1`); Tier 100 = Devotion Apex and universal age lock (`no_prowess_loss_from_age = yes`).
+- **Track Structure:** 10 tiers (10–100 XP). Tiers 10–40 and 60–90 grant standard Vitality step (`+0.1` Health, `+2.5` Life Exp, `+1.25` Fertility Yr, `+1` Epidemic Res; 4× at 50 XP, 8× at 100 XP). Tier 50 = Devotion-scaling milestones (`<stat>_per_piety_level = 1`); Tier 100 = Devotion Apex (and age lock for Acolyte / Blood Power; Mage and Archmage hold permanent age lock on their base trait).
 
 ---
 
@@ -24,8 +26,8 @@ Complete XP sources live in [`blood-mage-track-xp.md`](blood-mage-track-xp.md), 
 | `enlightenment` | Vitality + `+0.175` Monthly Piety, `+4%` Monthly Piety Mult | 4× Vitality + `+0.7` Monthly Piety, `+16%` Piety Mult, `+1` Learning per Piety level | 8× Vitality + `+1.4` Monthly Piety, `+32%` Piety Mult, `+1.5` Learning per Piety level, `character_max_piety_level_add = 1`, `no_prowess_loss_from_age = yes` |
 | `benediction` | Vitality + `+1.5` General Opinion, `+1` Vassal Opinion, `+0.175` Monthly Prestige, `+4%` Prestige Mult | 4× Vitality + `+6` General Opinion, `+4` Vassal Opinion, `+0.7` Monthly Prestige, `+16%` Prestige Mult, `+1` Diplomacy per Piety level | 8× Vitality + `+12` General Opinion, `+8` Vassal Opinion, `+1.4` Monthly Prestige, `+32%` Prestige Mult, `+1.5` Diplomacy per Piety level, `character_max_piety_level_add = 1`, `no_prowess_loss_from_age = yes` |
 | `bloodline` | Vitality + `+3%` Monthly Income Mult | 4× Vitality + `+12%` Monthly Income Mult, `+20%` Inactive Inheritance (20, 40), `+1` Stewardship per Piety level, `+25%` Dynasty Prestige Mult | 8× Vitality + `+24%` Monthly Income Mult, `+40%` Inactive Inheritance (20, 40, 60, 80), `+2` Stewardship per Piety level, `+50%` Dynasty Prestige Mult, `no_prowess_loss_from_age = yes` |
-| `hematurgy` | Vitality + `+4` Hostile Scheme Success | 4× Vitality + `+16` Hostile Scheme Success, `-16` Enemy Hostile Success, `-10%` Dread Decay, `+1` Intrigue per Piety level | 8× Vitality + `+32` Hostile Scheme Success, `-32` Enemy Hostile Success, `-20%` Dread Decay, `+2` Intrigue per Piety level, `no_prowess_loss_from_age = yes` |
-| `bloodlust` | Vitality + `+1.5` Prowess (+1 Martial & Knight Limit at 20, 40, 60, 80; +1 Adv at 30, 50, 70, 90, 100) | 4× Vitality + `+13` Prowess, `+2` Martial, `+2` Advantage, `+2` Knight Limit, `+5` Dread Baseline, `+1` Martial & Prowess per Piety level | 8× Vitality + `+30` Prowess, `+4` Martial, `+5` Advantage, `+5` Knight Limit, `+15` Dread Baseline, `+1.5` Martial & `+2` Prowess per Piety level, `no_prowess_loss_from_age = yes` |
+| `hematurgy` | Vitality + `+4` Hostile Scheme Success (`+5` Dread Baseline & `-8` Enemy Hostile Success at 20, 40, 60, 80) | 4× Vitality + `+16` Hostile Scheme Success, `-16` Enemy Hostile Success, `+10` Dread Baseline, `+1` Max Hostile Schemes, `+1` Intrigue per Piety level | 8× Vitality + `+32` Hostile Scheme Success, `-32` Enemy Hostile Success, `+20` Dread Baseline, `+2` Max Hostile Schemes, `+2` Intrigue per Piety level |
+| `bloodlust` | Vitality + `+1.5` Advantage, `+10%` Knight Effectiveness (`+1` Knight Limit at 20, 40, 60, 80) | 4× Vitality + `+6` Advantage, `+40%` Knight Effectiveness, `+2` Knight Limit, `+1` Martial & Prowess per Piety level | 8× Vitality + `+12` Advantage, `+80%` Knight Effectiveness, `+4` Knight Limit, `+2` Martial & Prowess per Piety level |
 
 ---
 

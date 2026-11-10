@@ -1,0 +1,100 @@
+﻿bm_elevate_blood_mage_tier_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/bm_decision_personal_religious.dds" }
+	decision_group_type = bm_decision_group
+
+	desc = bm_elevate_blood_mage_tier_decision_desc
+	selection_tooltip = bm_elevate_blood_mage_tier_decision_tooltip
+	confirm_text = bm_elevate_blood_mage_tier_decision_confirm
+
+	is_shown = {
+		OR = {
+			has_trait = lifestyle_bm_acolyte
+			has_trait = lifestyle_blood_mage
+		}
+	}
+
+	is_valid = {
+		custom_tooltip = {
+			text = bm_elevate_tier_ancient_req
+			bm_has_track_xp_any_tier_trigger = { TRACK = ancient VALUE = 100 }
+		}
+		custom_tooltip = {
+			text = bm_elevate_tier_total_xp_req
+			bm_total_blood_mage_xp >= 250
+		}
+
+		trigger_if = {
+			limit = { has_trait = lifestyle_bm_acolyte }
+			piety_level >= 2
+			OR = {
+				has_character_modifier = minor_blood_rune_modifier
+				has_character_modifier = major_blood_rune_modifier
+				has_character_modifier = superior_blood_rune_modifier
+			}
+			OR = {
+				has_character_modifier = lifeforce_modifier_major
+				has_character_modifier = lifeforce_modifier_superior
+			}
+			piety >= 250
+		}
+		trigger_else = {
+			piety_level >= 4
+			has_character_modifier = lifeforce_modifier_superior
+			OR = {
+				has_character_modifier = major_blood_rune_modifier
+				has_character_modifier = superior_blood_rune_modifier
+			}
+			piety >= 500
+		}
+	}
+
+	cost = {
+		piety = {
+			value = 0
+			if = {
+				limit = { has_trait = lifestyle_bm_acolyte }
+				add = 250
+			}
+			else = {
+				add = 500
+			}
+		}
+	}
+
+	effect = {
+		debug_log = "BloodMageDecision: bm_elevate_blood_mage_tier_decision | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
+		if = {
+			limit = { has_trait = lifestyle_bm_acolyte }
+			if = {
+				limit = { has_character_modifier = lifeforce_modifier_major }
+				remove_character_modifier = lifeforce_modifier_major
+			}
+			else = {
+				remove_character_modifier = lifeforce_modifier_superior
+			}
+		}
+		else = {
+			remove_character_modifier = lifeforce_modifier_superior
+		}
+		hidden_effect = {
+			bm_recount_lifeforce_stacks_effect = yes
+		}
+		trigger_event = { id = bm_ascension_duel.0001 }
+		close_view = {
+			view = decisions
+			player = root
+		}
+	}
+
+	ai_potential = {
+		OR = {
+			has_trait = lifestyle_bm_acolyte
+			has_trait = lifestyle_blood_mage
+		}
+	}
+
+	ai_check_interval = 6
+	ai_will_do = {
+		base = 100
+	}
+}
