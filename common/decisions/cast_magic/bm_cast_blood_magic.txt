@@ -388,6 +388,28 @@ bm_cast_blood_magic_major_decision = {
 			}
 		}
 
+		# Channel Major Lifeforce into Mojo
+		item = {
+			value = bm_major_channel_mojo
+			current_description = bm_major_channel_mojo
+			localization = bm_major_channel_mojo
+			icon = "gfx/interface/icons/traits/bm_interactions.dds"
+			is_shown = {
+				is_blood_mage_tier_2_or_higher_trigger = yes
+			}
+			is_valid = {
+				piety >= 100
+				has_character_modifier = lifeforce_modifier_major
+			}
+			ai_chance = {
+				value = 25
+				if = {
+					limit = { NOT = { has_character_modifier = lifeforce_modifier_mojo } }
+					add = 50
+				}
+			}
+		}
+
 		# Enhance Education
 		item = {
 			value = bm_major_improve_education
@@ -632,6 +654,27 @@ bm_cast_blood_magic_major_decision = {
 			}
 		}
 		else_if = {
+			limit = { scope:bm_major_channel_mojo = yes }
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (channel_mojo) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
+			add_piety = -100
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_channel_mojo_major_toast
+				left_icon = root
+				remove_character_modifier = lifeforce_modifier_major
+				add_character_modifier = { modifier = lifeforce_modifier_mojo }
+				add_character_modifier = { modifier = lifeforce_modifier_mojo }
+				add_character_modifier = { modifier = lifeforce_modifier_mojo }
+				add_xp_bm_dynamic = {
+					TRACK = bloodline
+					XP = 2
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+		}
+		else_if = {
 			limit = { scope:bm_major_improve_education = yes }
 			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (improve_education) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
 			trigger_event = { id = bm_education_enhancement.001 }
@@ -710,7 +753,10 @@ bm_cast_blood_magic_minor_decision = {
 	}
 
 	is_valid_showing_failures_only = {
-		has_character_modifier = lifeforce_modifier_minor
+		OR = {
+			has_character_modifier = lifeforce_modifier_minor
+			has_character_modifier = lifeforce_modifier_mojo
+		}
 	}
 
 	widget = {
@@ -730,6 +776,7 @@ bm_cast_blood_magic_minor_decision = {
 			}
 			is_valid = {
 				piety >= 75
+				has_character_modifier = lifeforce_modifier_minor
 			}
 			ai_chance = {
 				value = 10
@@ -751,6 +798,7 @@ bm_cast_blood_magic_minor_decision = {
 			}
 			is_valid = {
 				piety >= 50
+				has_character_modifier = lifeforce_modifier_minor
 				custom_tooltip = {
 					text = bm_purge_minor_has_ailment_tt
 					OR = {
@@ -793,11 +841,56 @@ bm_cast_blood_magic_minor_decision = {
 			}
 			is_valid = {
 				piety >= 100
+				has_character_modifier = lifeforce_modifier_minor
 			}
 			ai_chance = {
 				value = 50
 				if = {
 					limit = { NOT = { has_character_modifier = lifeforce_modifier_major } }
+					add = 50
+				}
+			}
+		}
+
+		# Channel Minor Lifeforce into Mojo
+		item = {
+			value = bm_minor_channel_mojo
+			current_description = bm_minor_channel_mojo
+			localization = bm_minor_channel_mojo
+			icon = "gfx/interface/icons/traits/bm_interactions.dds"
+			is_shown = {
+				is_blood_mage_any_tier_trigger = yes
+			}
+			is_valid = {
+				piety >= 50
+				has_character_modifier = lifeforce_modifier_minor
+			}
+			ai_chance = {
+				value = 25
+				if = {
+					limit = { NOT = { has_character_modifier = lifeforce_modifier_mojo } }
+					add = 50
+				}
+			}
+		}
+
+		# Reclaim Minor Lifeforce from Mojo
+		item = {
+			value = bm_minor_reclaim_mojo
+			current_description = bm_minor_reclaim_mojo
+			localization = bm_minor_reclaim_mojo
+			icon = "gfx/interface/icons/traits/bm_interactions.dds"
+			is_shown = {
+				is_blood_mage_any_tier_trigger = yes
+			}
+			is_valid = {
+				piety >= 75
+				has_character_modifier = lifeforce_modifier_mojo
+			}
+			ai_chance = {
+				value = 25
+				if = {
+					limit = { NOT = { has_character_modifier = lifeforce_modifier_minor } }
 					add = 50
 				}
 			}
@@ -813,6 +906,7 @@ bm_cast_blood_magic_minor_decision = {
 				NOT = { bm_has_blood_rune_trigger = yes }
 			}
 			is_valid = {
+				has_character_modifier = lifeforce_modifier_minor
 				custom_tooltip = {
 					text = bm_blood_rune_cooldown_tt
 					NOT = { has_character_flag = bm_blood_rune_cooldown }
@@ -905,6 +999,44 @@ bm_cast_blood_magic_minor_decision = {
 				add_xp_bm_dynamic = {
 					TRACK = enlightenment
 					XP = 2
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:bm_minor_channel_mojo = yes }
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (channel_mojo) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
+			add_piety = -50
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_channel_mojo_minor_toast
+				left_icon = root
+				remove_character_modifier = lifeforce_modifier_minor
+				add_character_modifier = { modifier = lifeforce_modifier_mojo }
+				add_xp_bm_dynamic = {
+					TRACK = bloodline
+					XP = 1
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:bm_minor_reclaim_mojo = yes }
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (reclaim_mojo) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
+			add_piety = -75
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_reclaim_mojo_toast
+				left_icon = root
+				remove_character_modifier = lifeforce_modifier_mojo
+				add_character_modifier = { modifier = lifeforce_modifier_minor }
+				add_xp_bm_dynamic = {
+					TRACK = bloodline
+					XP = 1
 				}
 				hidden_effect = {
 					bm_recount_lifeforce_stacks_effect = yes

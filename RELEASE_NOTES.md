@@ -20,10 +20,12 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - Track XP sources rebalanced: healing grants Benediction, family rites and childbirth grant Ancient/Benediction, congenital manifestation grants XP by attribute.
 - Regiments: **Blood Berserkers** (heavy shock infantry, Devotion 2+) and **Blood-Bound Behemoths** (siege-capable monsters, Devotion 4+), Piety-maintained.
 - Crimson Sworn-Guard court position and Crimson Warrior champions.
+- **Track Tooltip Trim**: Streamlined all six lifestyle tracks down to 2–3 distinct bonuses per track, removing flat and percentage double-dipping and redundant opinion/scheme stats. Moved Domain Limit (+1 at 50/100) to Bloodline and Personal Tenet Slots (+1 at 50/100) to Ancient. Removed fertility years and plague resistance from generic track steps into dedicated Mojo Lifeforce and doubled Lifeforce disease resistance (+2 / +6 / +12).
 
 ## Lifeforce
 
 - Three tiers: **Minor** (health, disease resistance), **Major** (lifespan, body rituals), **Superior** (Blood Golems, capstone runes).
+- **Mojo Lifeforce Subsystem**: Dedicated lineage Lifeforce modifier granting +10% fertility, +5 fertility years, +5% inactive trait inheritance, +5% genetic trait chance, and +5% strengthen blood chance. Convert Minor (50 Piety) or Major (100 Piety -> 3 Mojo) to Mojo, reclaim to Minor (75 Piety), bestow Mojo upon spouses and kin, or burn Mojo during childbirth to quicken newborn awakening and bloodline mastery.
 - **Manifest Lifeforce**: four Piety tiers (250–1,500), no cooldown.
 - Blood Mages harvest Lifeforce from battles and lethal single combat duels.
 - Blood Mage mothers yield Major Lifeforce on safe childbirth.
@@ -147,6 +149,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 
 ## Version history
 
+- v1.20.72: Trim Blood Mage trait track tooltips to 2–3 unique benefits; introduce stackable Mojo Lifeforce subsystem for active fertility and congenital inheritance; convert Minor/Major to Mojo and grant to kin or consume at childbirth; centralize Plague Resistance on Lifeforce reserves (+2 / +6 / +12); grant Domain Limit to Bloodline and Personal Tenet Slots to Ancient.
 - v1.20.71: Mirror player stats and traits in ascension duel; native toast polish; universal track XP progression.
 - v1.20.70: Rebalance Bloodlust track (replace flat Martial/Prowess with Advantage, Knight Effectiveness, and Knight Limit); move Dread Baseline to Hematurgy track; add devotion prowess to Mage (+1) and Archmage (+2) base stats; remove redundant age lock from higher tier tracks; allow Blood Acolytes and Archmages to take up the Blóðtrú faith.
 - v1.20.69: Sequential 3-Tier Hierarchy: Blood Acolyte (Tier I), Blood Mage (Tier II), Blood Archmage (Tier III) with standardized 6-track progression; blank-slate elevation with overflow Lifeforce extraction; anti-nerf base stat floors; Sanguine Distillation rite; Crimson Mirror non-lethal battlefield ascension duel vs self-clone.

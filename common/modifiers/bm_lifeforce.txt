@@ -4,9 +4,8 @@ lifeforce_modifier_superior = {
     stacking = yes
 
     health = 0.6
-    years_of_fertility = 6
     life_expectancy = 6
-    epidemic_resistance = 6
+    epidemic_resistance = 12
     negate_health_penalty_add = 0.6
     prowess = 3
 }
@@ -16,9 +15,8 @@ lifeforce_modifier_major = {
     stacking = yes
 
     health = 0.3
-    years_of_fertility = 3
     life_expectancy = 3
-    epidemic_resistance = 3
+    epidemic_resistance = 6
     negate_health_penalty_add = 0.3
 }
 
@@ -27,10 +25,21 @@ lifeforce_modifier_minor = {
     stacking = yes
 
     health = 0.1
-    years_of_fertility = 1
     life_expectancy = 1
-    epidemic_resistance = 1
+    epidemic_resistance = 2
     negate_health_penalty_add = 0.1
+}
+
+lifeforce_modifier_mojo = {
+    icon = magic_positive
+    stacking = yes
+
+    fertility = 0.10
+    years_of_fertility = 5
+    positive_inactive_inheritance_chance = 0.05
+    positive_random_genetic_chance = 0.05
+    genetic_trait_strengthen_chance = 0.05
+    attraction_opinion = 5
 }
 
 lifeforce_modifier_negative_superior = {
@@ -38,9 +47,8 @@ lifeforce_modifier_negative_superior = {
     stacking = yes
 
     health = -0.6
-    years_of_fertility = -6
     life_expectancy = -6
-    epidemic_resistance = -6
+    epidemic_resistance = -12
     negate_health_penalty_add = -0.6
     prowess = -4
 }
@@ -50,9 +58,8 @@ lifeforce_modifier_negative_major = {
     stacking = yes
 
     health = -0.3
-    years_of_fertility = -3
     life_expectancy = -3
-    epidemic_resistance = -3
+    epidemic_resistance = -6
     negate_health_penalty_add = -0.3
     prowess = -2
 }
@@ -62,9 +69,8 @@ lifeforce_modifier_negative_minor = {
     stacking = yes
 
     health = -0.1
-    years_of_fertility = -1
     life_expectancy = -1
-    epidemic_resistance = -1
+    epidemic_resistance = -2
     negate_health_penalty_add = -0.1
     prowess = -1
 }
@@ -74,7 +80,6 @@ lifedrained_modifier = {
     stacking = yes
 
     health = -0.5
-    years_of_fertility = -5
     life_expectancy = -10
     epidemic_resistance = -5
     negate_health_penalty_add = -0.5
@@ -85,7 +90,6 @@ recently_lifedrained_modifier = {
     icon = health_negative
 
     health = -0.5
-    years_of_fertility = -5
     life_expectancy = -10
     epidemic_resistance = -5
     negate_health_penalty_add = -0.5
