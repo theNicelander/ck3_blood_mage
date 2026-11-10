@@ -19,6 +19,7 @@ Cross-cutting infrastructure supporting Blood Mages. Houses shared scripted trig
 | **Decision Group** | `bm_decision_group` | `common/decision_group_types/bm_decision_group_types.txt` | Groups blood magic decisions into unified decision UI tab. |
 | **Text Icons** | `@bm_game_rule_icon!`, `@bm_blood_drop!` | `gui/bm_blood_magic_texticons.gui`, `gui/bm_game_rule_texticons.gui` | Registered inline font icons for decisions, game rules, and tooltips. |
 | **Religion Icons** | `@bm_blodtru_icon!`, `@bm_ketsudo_icon!` | `gui/shared/bm_texticons_religion.gui` | Inline icons for Blóðtrú family faiths. |
+| **Core Defines** | `DEFAULT_PIETY_LEVEL_CAP = 8` | `common/defines/bm_defines.txt` | Modular define overriding default Level of Devotion cap to 8 (Divine, Demigod, Godlike accessible globally). |
 
 ## Mod Conventions & Compatibility Rules
 
@@ -44,4 +45,5 @@ Cross-cutting infrastructure supporting Blood Mages. Houses shared scripted trig
 | Decision group definitions | `common/decision_group_types/bm_decision_group_types.txt` |
 | Blood magic font icons | `gui/bm_blood_magic_texticons.gui` |
 | Game rule font icons | `gui/bm_game_rule_texticons.gui` |
+| Game defines override | `common/defines/bm_defines.txt` |
 | Religion font icons | `gui/shared/bm_texticons_religion.gui` |
