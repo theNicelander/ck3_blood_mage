@@ -94,34 +94,16 @@ bm_blood_mage_bloodlust_xp_value = {
 	}
 }
 
-# Elevation unspent non-ancient track XP conversion: 20 XP in track = +1 LF stack
+# Elevation unspent non-ancient track XP conversion: 1 LF stack per 20 unspent discipline XP
 bm_elevation_overflow_lifeforce_stacks_value = {
 	value = 0
-	add = {
-		value = bm_blood_mage_bloodlust_xp_value
-		divide = 20
-		floor = yes
-	}
-	add = {
-		value = bm_blood_mage_benediction_xp_value
-		divide = 20
-		floor = yes
-	}
-	add = {
-		value = bm_blood_mage_bloodline_xp_value
-		divide = 20
-		floor = yes
-	}
-	add = {
-		value = bm_blood_mage_hematurgy_xp_value
-		divide = 20
-		floor = yes
-	}
-	add = {
-		value = bm_blood_mage_enlightenment_xp_value
-		divide = 20
-		floor = yes
-	}
+	add = bm_blood_mage_bloodlust_xp_value
+	add = bm_blood_mage_benediction_xp_value
+	add = bm_blood_mage_bloodline_xp_value
+	add = bm_blood_mage_hematurgy_xp_value
+	add = bm_blood_mage_enlightenment_xp_value
+	divide = 20
+	floor = yes
 }
 
 bm_seek_power_cooldown_days = {
