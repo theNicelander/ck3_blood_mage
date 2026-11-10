@@ -7,7 +7,6 @@ lifeforce_modifier_superior = {
     life_expectancy = 6
     epidemic_resistance = 12
     negate_health_penalty_add = 0.6
-    prowess = 3
 }
 
 lifeforce_modifier_major = {
@@ -40,6 +39,24 @@ lifeforce_modifier_mojo = {
     positive_random_genetic_chance = 0.05
     genetic_trait_strengthen_chance = 0.05
     attraction_opinion = 5
+}
+
+lifeforce_modifier_fury = {
+    icon = prowess_positive
+    stacking = yes
+
+    prowess = 3
+    advantage = 1
+    knight_effectiveness_mult = 0.05
+}
+
+lifeforce_modifier_focus = {
+    icon = learning_positive
+    stacking = yes
+
+    learning = 1
+    stress_gain_mult = -0.10
+    monthly_lifestyle_xp_gain_mult = 0.05
 }
 
 lifeforce_modifier_negative_superior = {

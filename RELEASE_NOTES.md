@@ -26,7 +26,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 
 - Three tiers: **Minor** (health, disease resistance), **Major** (lifespan, body rituals), **Superior** (Blood Golems, capstone runes).
 - **Bidirectional Condensation & Splitting**: Transmute between Lifeforce tiers in Cast Blood Magic decisions: condense Minor to Major (150 Piety, 6-mo cooldown), condense Major to Superior (350 Piety, 6-mo cooldown), split Superior into 2 Major (350 Piety, 6-mo cooldown), or split Major into 2 Minor (150 Piety, 6-mo cooldown).
-- **Mojo Lifeforce Subsystem**: Dedicated lineage Lifeforce modifier granting +10% fertility, +5 fertility years, +5% inactive trait inheritance, +5% genetic trait chance, and +5% strengthen blood chance. Convert Minor (50 Piety) or Major (100 Piety -> 3 Mojo) to Mojo, reclaim to Minor (75 Piety), bestow Mojo upon spouses and kin, or burn Mojo during childbirth to quicken newborn awakening and bloodline mastery.
+- **Specialized Lifeforce Reservoirs (Mojo, Fury, Focus)**: Dedicated permanent, stackable Lifeforce reservoirs transmutable from Minor/Major reserves. Blood Mojo governs fertility and congenital inheritance (+10% fertility, +5 years, +5% inheritance/strengthen chance); Blood Fury fuels martial lethality (+3 prowess, +1 advantage, +5% knight effectiveness); Blood Focus sharpens study and composure (+1 learning, -10% stress gain, +5% monthly lifestyle XP). Removed prowess from Superior Lifeforce, focusing core reserves strictly on Immortality and Vitality. Convert Minor (50 Piety) or Major (100 Piety -> 3 stacks) to specialized reservoirs, reclaim to Minor (75 Piety), bestow Mojo upon spouses and kin, or burn Mojo during childbirth to quicken newborn awakening.
 - **Manifest Lifeforce**: four Piety tiers (250–1,500), no cooldown.
 - Blood Mages harvest Lifeforce from battles and lethal single combat duels.
 - Blood Mage mothers yield Major Lifeforce on safe childbirth.
@@ -150,6 +150,8 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 
 ## Version history
 
+- v1.20.74: Complete Specialized Lifeforce Reservoirs triad with Blood Fury (+3 prowess, +1 advantage, +5% knight effectiveness) and Blood Focus (+1 learning, -10% stress gain, +5% monthly lifestyle XP gain); add Minor/Major transmutation and reclaim decision loops; decouple prowess from Superior Lifeforce so core reserves strictly govern immortality and vitality; update story panel counters.
+- v1.20.73: Bidirectional Lifeforce Transmutation: condense Minor into Major and Major into Superior; split Superior into Major and Major into Minor.
 - v1.20.72: Trim Blood Mage trait track tooltips to 2–3 unique benefits; introduce stackable Mojo Lifeforce subsystem for active fertility and congenital inheritance; convert Minor/Major to Mojo and grant to kin or consume at childbirth; centralize Plague Resistance on Lifeforce reserves (+2 / +6 / +12); grant Domain Limit to Bloodline and Personal Tenet Slots to Ancient.
 - v1.20.71: Mirror player stats and traits in ascension duel; native toast polish; universal track XP progression.
 - v1.20.70: Rebalance Bloodlust track (replace flat Martial/Prowess with Advantage, Knight Effectiveness, and Knight Limit); move Dread Baseline to Hematurgy track; add devotion prowess to Mage (+1) and Archmage (+2) base stats; remove redundant age lock from higher tier tracks; allow Blood Acolytes and Archmages to take up the Blóðtrú faith.
