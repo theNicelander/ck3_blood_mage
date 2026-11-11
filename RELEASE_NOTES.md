@@ -13,17 +13,20 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - 50 XP milestones scale with Devotion Level; 100 XP capstones give +50% Devotion Impact and +2.0 skill per Devotion level (and age lock for Acolyte and Blood Power tracks).
 - Bloodline and Hematurgy: 10-step cadence (universal monthly income mult, trait inheritance, dynasty prestige, hostile scheme power and defence, natural dread baseline).
 - **Bloodlust**: 10-step cadence granting scaling Commander Advantage (+8 to +16 total), Knight Effectiveness (+40% to +120% total), Knight Limit (+4 to +8 total), and scaling Martial & Prowess per Piety Level (+1 to +2 per level at 50/100 XP milestones), culminating in an Age Prowess Lock for Acolytes.
-- Tier II (Mage) and Tier III (Archmage) base stats permanently include +1 and +2 Prowess per Devotion Level alongside their innate age prowess locks, preventing martial stat loss upon tier elevation.
-- **Blood Mirror Ascension Duel**: In the tier elevation ritual, face an exact mirror reflection of your mortal vessel—sharing your given name, a ghost dynasty ("Ghost [House]"), mirrored personality, education, physical and combat traits, and synchronized attributes.
+- Tier II (Mage) and Tier III (Archmage) base stats permanently absorb all cumulative track milestone benefits up to 50 XP (and 100 XP for Ancient) alongside innate age prowess locks, preserving all scheme slots, success chances, opinion, army damage, income multipliers, and spiritual tenets upon tier elevation.
+- **Blood Mirror Ascension Duel**: In the tier elevation ritual, face an exact mirror reflection of your mortal vessel—sharing your given name, dynasty "Blood Ghost", mirrored personality, education, physical and combat traits, 20 across mental/governing attributes, and prowess matching your own. Lifeforce is no longer required or consumed to attempt tier ascension, and unspent discipline experience is extracted into Lifeforce at 1 stack per 20 XP upon victory.
 - XP sources unified: battlefield victories (+1 to +3), combat survival (+1), lethal single combat (+3), and tournaments (+2) feed Bloodlust directly.
 - **Blood Power** secondary trait with six mirrored tracks (Dynasty, Warband, Mastery, Presence, Prosperity, Shadows) structured into five milestone tiers (10, 30, 50, 70, 100 XP) with scaling monthly Piety (+0.1 to +1.0), flat monthly lifestyle XP (+5 to +50/mo), shared 50 & 100 XP milestone bonuses (+10% monthly Piety mult, +5 life expectancy, +0.25 health, +0.02 monthly Piety per knight), and a tight suite of 3–4 high-impact personal modifiers delivering 2x–3x the power of House Covenants (including scaling legitimacy mult, stress composure, universal income mult, and inbreeding immunity), culminating in an Age Prowess Lock.
 - Track XP sources rebalanced: healing grants Benediction, family rites and childbirth grant Ancient/Benediction, congenital manifestation grants XP by attribute.
 - Regiments: **Blood Berserkers** (heavy shock infantry, Devotion 2+) and **Blood-Bound Behemoths** (siege-capable monsters, Devotion 4+), Piety-maintained.
 - Crimson Sworn-Guard court position and Crimson Warrior champions.
+- **Track Tooltip Trim & 5-Milestone Consolidation**: Consolidated all six lifestyle tracks across Acolyte, Mage, and Archmage into 5 clean milestones (10, 30, 50, 70, 100 XP) matching Blood Power, removing tooltip bloat and eliminating overlap with specialized reservoirs. Ancient grants flat dynasty renown, legitimacy, devotion impact, personal tenet slots (+1 at 50/100), and max piety level (+1 at 100 XP, absorbed as +1 on Mage and +2 on Archmage base traits). Enlightenment provides flat and percentage monthly piety plus knight effectiveness per Learning (+0.5% to +1.0% per milestone, plus +0.5% / +1.0% base floors). Benediction adds general opinion, personal scheme max success chance, and +1 concurrent personal schemes at 50 XP. Bloodline boosts monthly income, cuts army maintenance costs, fosters capital county development growth, grants flat monthly income, and expands direct domain limit (+1 to +4 holdings). Hematurgy raises hostile scheme max success, reduces enemy max success, and unlocks +1 concurrent hostile schemes at 50 XP. Bloodlust increases sworn knight limit (+1 at every milestone 10/30/50/70/100; +3 base on Mage, +6 base on Archmage), army damage percentage, and knight effectiveness per Prowess (+0.5% to +1.0% per milestone, plus +0.5% / +1.0% base floors). Warband focuses on Men-at-Arms counter efficiency (+10% to +50%), regiment size (+1 to +4), and max regiments (+1 to +2). Removed fertility years and plague resistance from generic track steps into dedicated Mojo Lifeforce and doubled Lifeforce disease resistance (+2 / +6 / +12).
 
 ## Lifeforce
 
 - Three tiers: **Minor** (health, disease resistance), **Major** (lifespan, body rituals), **Superior** (Blood Golems, capstone runes).
+- **Bidirectional Condensation & Splitting**: Transmute between Lifeforce tiers in Cast Blood Magic decisions: condense Minor to Major (150 Piety, 6-mo cooldown), condense Major to Superior (350 Piety, 6-mo cooldown), split Superior into 2 Major (350 Piety, 6-mo cooldown), or split Major into 2 Minor (150 Piety, 6-mo cooldown).
+- **Specialized Lifeforce Reservoirs (Mojo, Fury, Focus)**: Dedicated permanent, stackable Lifeforce reservoirs transmutable from Minor/Major reserves. Blood Mojo governs fertility and congenital inheritance (+10% fertility, +5 years, +5% inheritance/strengthen chance); Blood Fury fuels martial lethality and swift deployment (+2 prowess, +10% knight effectiveness, +2% army movement speed, +2 travel safety); Blood Focus sharpens study and composure (+1 learning, -10% stress gain, +5% monthly lifestyle XP). Removed prowess from Superior Lifeforce, focusing core reserves strictly on Immortality and Vitality. Convert Minor (50 Piety) or Major (100 Piety -> 3 stacks) to specialized reservoirs, reclaim to Minor (75 Piety), bestow Mojo upon spouses and kin, or burn Mojo during childbirth to quicken newborn awakening.
 - **Manifest Lifeforce**: four Piety tiers (250–1,500), no cooldown.
 - Blood Mages harvest Lifeforce from battles and lethal single combat duels.
 - Blood Mage mothers yield Major Lifeforce on safe childbirth.
@@ -39,7 +42,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - **Major**: Channel Blood Power, Condense into Superior Lifeforce, Education Enhancement, Major Runes, Congenital Manifestation, House Blessing.
 - **Superior**: Blood Golem creation, 5★ Master Educations, Secondary Educations, Capstone Runes.
 - **Attune Lifeforce**: choose your yearly lifestyle XP bonus (applied January 1st).
-- **Empower Dynasty Bloodline**: six three-tier House Covenants (Presence, Warband, Prosperity, Shadow, Mastery, Legacy) granting monthly Piety (+0.1/+0.3/+0.5), skill, and +1 attribute per Devotion at Tier 2 and Tier 3 alongside balanced house-wide bonuses (Men-at-Arms, army damage, speed, domain limit, opinion, legitimacy mult); active covenants roll annually to award +1 XP in the matching Blood Power track for living kin.
+- **Empower Dynasty Bloodline**: six three-tier House Covenants (Presence, Warband, Prosperity, Shadow, Mastery, Legacy) granting monthly Piety (+0.1/+0.3/+0.5), skill, and +1 attribute per Devotion at Tier 2 and Tier 3 alongside balanced house-wide bonuses (Men-at-Arms, army damage, speed, domain limit, opinion, legitimacy mult, monthly Piety per knight, and knight effectiveness per Prowess/Learning on Warband and Mastery); active covenants roll annually to award +1 XP in the matching Blood Power track for living kin.
 - Education advancement needs Devotion Level 1+/2+/3+/4+ for 1★→2★ … 4★→5★; only Superior magic (5★, Embrace New Education) costs Devotion or needs 1000 Piety plus Superior Lifeforce.
 - **Heal Ailment**: cures up to 32 ailments, purges all 11 stress vices (−50 Stress), and treats old-age traits (Minor: 1 Minor Lifeforce + 50 Piety; Major tier for deeper rejuvenation).
 - **Influence Personality**: Learning contest to swap a trait or culture (5-year cooldown on success, 1 year on failure).
@@ -86,11 +89,12 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - All 58 Blóðtrú, 27 Ketsudō and 32 Xuédào holy sites are now Eminent Holy Sites (up to 80 active), granting smaller stacked global faith bonuses alongside local county holder modifiers.
 - Reformation repair decision resolves holy-site locks when creating custom faiths.
 - Blood Mage is no longer a religion virtue.
+- **Level of Devotion Cap**: Default Piety Level cap raised to 8 globally (`DEFAULT_PIETY_LEVEL_CAP = 8`), unlocking Level 6 (Divine), Level 7 (Demigod), and Level 8 (Godlike) for all rulers and governments.
 
 ## Buildings
 
-- **Blood Temples**: seven-tier duchy-capital buildings (Altar → … → Acropolis), available in all duchy capitals including tribal; tiers I–IV open to more holders.
-- **Blood Shrine**: five-tier line for camps and estates (up to +2.5 monthly piety at Tier V, plus health, lifespan and inheritance).
+- **Blood Temples**: seven-tier duchy-capital buildings (Altar → … → Acropolis), available in all duchy capitals including tribal; tiers I–IV open to more holders, granting scaling monthly Piety, Piety per sworn knight (+0.02 to +0.20 and +1% to +5% per knight), dynasty renown, health, lifespan, and genetics.
+- **Blood Shrine**: five-tier line for camps and estates (up to +2.5 monthly piety, +0.10 and +5% monthly piety per knight at Tier V, plus health, lifespan and inheritance).
 
 ## Interface & Interactions
 
@@ -147,6 +151,11 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 
 ## Version history
 
+- v1.20.77: Add knight effectiveness per Prowess/Learning and monthly Piety per knight across Bloodlust & Enlightenment tracks, Warband & Mastery house covenants, Duchy Blood Temples, and Domicile Blood Shrines.
+- v1.20.76: Replace non-functional monthly income per devotion level on Blood Mage bloodline track and base traits with flat monthly income (+0.5 to +4.5/mo) and direct domain limit expansion (+1 to +4 holdings); restore full cumulative track milestone benefits up to 50 XP (and 100 XP for Ancient) into base traits of Blood Mage and Blood Archmage to eliminate power loss on tier elevation.
+- v1.20.74: Complete Specialized Lifeforce Reservoirs triad with Blood Fury (+2 prowess, +10% knight effectiveness, +2% army movement speed, +2 travel safety) and Blood Focus (+1 learning, -10% stress gain, +5% monthly lifestyle XP gain); add Minor/Major transmutation and reclaim decision loops; decouple prowess from Superior Lifeforce so core reserves strictly govern immortality and vitality; update story panel counters; remove Lifeforce requirements and consumption from Ascend Blood Magic Tier decision; de-duplicate Bloodlust (+1 Knight Limit at 10/30/50/70/100, +3 base on Mage, +6 base on Archmage) and Warband (+10% to +50% Men-at-Arms counter efficiency, +1 to +4 regiment size, +1 to +2 regiments).
+- v1.20.73: Bidirectional Lifeforce Transmutation: condense Minor into Major and Major into Superior; split Superior into Major and Major into Minor.
+- v1.20.72: Trim Blood Mage trait track tooltips to 2–3 unique benefits; introduce stackable Mojo Lifeforce subsystem for active fertility and congenital inheritance; convert Minor/Major to Mojo and grant to kin or consume at childbirth; centralize Plague Resistance on Lifeforce reserves (+2 / +6 / +12); grant Domain Limit to Bloodline and Personal Tenet Slots to Ancient.
 - v1.20.71: Mirror player stats and traits in ascension duel; native toast polish; universal track XP progression.
 - v1.20.70: Rebalance Bloodlust track (replace flat Martial/Prowess with Advantage, Knight Effectiveness, and Knight Limit); move Dread Baseline to Hematurgy track; add devotion prowess to Mage (+1) and Archmage (+2) base stats; remove redundant age lock from higher tier tracks; allow Blood Acolytes and Archmages to take up the Blóðtrú faith.
 - v1.20.69: Sequential 3-Tier Hierarchy: Blood Acolyte (Tier I), Blood Mage (Tier II), Blood Archmage (Tier III) with standardized 6-track progression; blank-slate elevation with overflow Lifeforce extraction; anti-nerf base stat floors; Sanguine Distillation rite; Crimson Mirror non-lethal battlefield ascension duel vs self-clone.
@@ -184,6 +193,9 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 - v1.20.36: Blood Knight icon, domicile buildings, duel Lifeforce rewards
 - v1.20.35: Simplify magic tiers; scale battle XP and Lifeforce
 - v1.20.34: Blood Knight situation tab, prevalence rules, error fixes
+- v1.20.75: Raise default Level of Devotion cap to 8 (Divine, Demigod, Godlike accessible globally)
+- v1.20.74: Specialized Lifeforce Reservoirs (Blood Fury & Focus), 5-milestone core trait consolidation, and tier ascension Lifeforce requirement removal
+- v1.20.73: Bidirectional Lifeforce transmutation (condense Minor/Major, split Superior/Major with 6-month cooldowns)
 - v1.20.63: Align and streamline House Covenants and Blood Power across six mirrored tracks; cap Blood Power at 4 core personal modifiers per track, moving devotion and prestige scaling, domain limit, opinion, and Men-at-Arms bonuses into House Covenants
 - v1.20.32: Overhaul Bloodline and Hematurgy tracks
 - v1.20.31: Standalone Blood Knight trait with unified healing events

@@ -31,15 +31,10 @@
 				has_character_modifier = major_blood_rune_modifier
 				has_character_modifier = superior_blood_rune_modifier
 			}
-			OR = {
-				has_character_modifier = lifeforce_modifier_major
-				has_character_modifier = lifeforce_modifier_superior
-			}
 			piety >= 250
 		}
 		trigger_else = {
 			piety_level >= 4
-			has_character_modifier = lifeforce_modifier_superior
 			OR = {
 				has_character_modifier = major_blood_rune_modifier
 				has_character_modifier = superior_blood_rune_modifier
@@ -63,22 +58,6 @@
 
 	effect = {
 		debug_log = "BloodMageDecision: bm_elevate_blood_mage_tier_decision | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
-		if = {
-			limit = { has_trait = lifestyle_bm_acolyte }
-			if = {
-				limit = { has_character_modifier = lifeforce_modifier_major }
-				remove_character_modifier = lifeforce_modifier_major
-			}
-			else = {
-				remove_character_modifier = lifeforce_modifier_superior
-			}
-		}
-		else = {
-			remove_character_modifier = lifeforce_modifier_superior
-		}
-		hidden_effect = {
-			bm_recount_lifeforce_stacks_effect = yes
-		}
 		trigger_event = { id = bm_ascension_duel.0001 }
 		close_view = {
 			view = decisions

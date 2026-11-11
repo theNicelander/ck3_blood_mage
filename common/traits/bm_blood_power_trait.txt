@@ -68,24 +68,18 @@ lifestyle_blood_power = {
         warband = {
             10 = {
                 monthly_piety = 0.1
-                knight_limit = 1
-                knight_effectiveness_mult = 0.15
-                advantage = 2
-                movement_speed = 0.05
+                counter_efficiency = 0.10
             }
             30 = {
                 monthly_piety = 0.2
-                knight_limit = 1
-                knight_effectiveness_mult = 0.15
-                advantage = 2
-                movement_speed = 0.05
+                counter_efficiency = 0.10
+                men_at_arms_cap = 1
             }
             50 = {
                 monthly_piety = 0.2
-                knight_limit = 2
-                knight_effectiveness_mult = 0.15
-                advantage = 2
-                movement_speed = 0.05
+                counter_efficiency = 0.10
+                men_at_arms_cap = 1
+                men_at_arms_limit = 1
                 # Common 50 Milestone
                 monthly_piety_gain_mult = @bm_power_50_100_piety_mult
                 life_expectancy = @bm_power_50_100_life_expectancy
@@ -94,17 +88,14 @@ lifestyle_blood_power = {
             }
             70 = {
                 monthly_piety = 0.2
-                knight_limit = 2
-                knight_effectiveness_mult = 0.15
-                advantage = 2
-                movement_speed = 0.05
+                counter_efficiency = 0.10
+                men_at_arms_cap = 1
             }
             100 = {
                 monthly_piety = 0.3
-                knight_limit = 2
-                knight_effectiveness_mult = 0.15
-                advantage = 2
-                movement_speed = 0.05
+                counter_efficiency = 0.10
+                men_at_arms_cap = 1
+                men_at_arms_limit = 1
                 # Common 100 Capstone
                 monthly_piety_gain_mult = @bm_power_50_100_piety_mult
                 life_expectancy = @bm_power_50_100_life_expectancy
@@ -256,17 +247,14 @@ lifestyle_blood_power = {
             10 = {
                 monthly_piety = 0.1
                 genetic_trait_strengthen_chance = 0.10
-                years_of_fertility = 5
             }
             30 = {
                 monthly_piety = 0.2
                 genetic_trait_strengthen_chance = 0.10
-                years_of_fertility = 5
             }
             50 = {
                 monthly_piety = 0.2
                 genetic_trait_strengthen_chance = 0.10
-                years_of_fertility = 5
                 inbreeding_chance = -0.50
                 # Common 50 Milestone
                 monthly_piety_gain_mult = @bm_power_50_100_piety_mult
@@ -277,12 +265,10 @@ lifestyle_blood_power = {
             70 = {
                 monthly_piety = 0.2
                 genetic_trait_strengthen_chance = 0.10
-                years_of_fertility = 5
             }
             100 = {
                 monthly_piety = 0.3
                 genetic_trait_strengthen_chance = 0.10
-                years_of_fertility = 5
                 inbreeding_chance = -0.50
                 # Common 100 Capstone
                 monthly_piety_gain_mult = @bm_power_50_100_piety_mult
