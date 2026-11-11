@@ -96,6 +96,16 @@ bm_has_blood_mage_xp_trigger = {
 	}
 }
 
+bm_has_any_discipline_track_xp_trigger = {
+	OR = {
+		bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE = $VALUE$ }
+		bm_has_track_xp_any_tier_trigger = { TRACK = benediction VALUE = $VALUE$ }
+		bm_has_track_xp_any_tier_trigger = { TRACK = bloodline VALUE = $VALUE$ }
+		bm_has_track_xp_any_tier_trigger = { TRACK = hematurgy VALUE = $VALUE$ }
+		bm_has_track_xp_any_tier_trigger = { TRACK = enlightenment VALUE = $VALUE$ }
+	}
+}
+
 bm_is_at_blood_magic_initiation_site_trigger = {
 	OR = {
 		location.county ?= title:c_vestisland
