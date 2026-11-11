@@ -52,6 +52,8 @@ dynasty_blood_warband_modifier_1 = {
 	prowess = 1
 	army_damage_mult = 0.05
 	movement_speed = 0.05
+	monthly_piety_gain_per_knight_add = 0.02
+	knight_effectiveness_per_prowess = 0.002
 }
 
 dynasty_blood_warband_modifier_2 = {
@@ -65,6 +67,8 @@ dynasty_blood_warband_modifier_2 = {
 	men_at_arms_cap = 1
 	men_at_arms_limit = 1
 	martial_per_piety_level = 1
+	monthly_piety_gain_per_knight_add = 0.04
+	knight_effectiveness_per_prowess = 0.005
 }
 
 dynasty_blood_warband_modifier_3 = {
@@ -78,6 +82,8 @@ dynasty_blood_warband_modifier_3 = {
 	men_at_arms_cap = 1
 	men_at_arms_limit = 1
 	martial_per_piety_level = 1
+	monthly_piety_gain_per_knight_add = 0.06
+	knight_effectiveness_per_prowess = 0.01
 }
 
 # 3. Covenant of Prosperity
@@ -165,6 +171,8 @@ dynasty_blood_mastery_modifier_1 = {
 	learning = 1
 	monthly_lifestyle_xp_gain_mult = 0.05
 	stress_gain_mult = -0.05
+	monthly_piety_gain_per_knight_mult = 0.01
+	knight_effectiveness_per_learning = 0.002
 }
 
 dynasty_blood_mastery_modifier_2 = {
@@ -178,6 +186,8 @@ dynasty_blood_mastery_modifier_2 = {
 	monthly_piety_gain_mult = 0.05
 	health = 0.15
 	learning_per_piety_level = 1
+	monthly_piety_gain_per_knight_mult = 0.02
+	knight_effectiveness_per_learning = 0.005
 }
 
 dynasty_blood_mastery_modifier_3 = {
@@ -193,6 +203,8 @@ dynasty_blood_mastery_modifier_3 = {
 	personal_tenet_slot_add = 1
 	learning_per_piety_level = 1
 	ignore_negative_culture_opinion = yes
+	monthly_piety_gain_per_knight_mult = 0.03
+	knight_effectiveness_per_learning = 0.01
 }
 
 # 6. Covenant of Legacy
