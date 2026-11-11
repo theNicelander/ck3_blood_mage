@@ -38,7 +38,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 ## Spellcasting & Decisions
 
 - Cast Blood Magic (Minor, Major, Superior) are inline option-list decisions; every spell stays visible, grayed out when unavailable.
-- **Transmute Lifeforce**: Dedicated inline option-list decision consolidating all 9 specialized reservoir transmutations (Minor/Major into Mojo, Fury, Focus, and reservoir reclaims) into one place, accessible from both the Decisions view and the Blood Mage Situation tab.
+- **Transmute Lifeforce**: Dedicated decision and event chain consolidating all 9 specialized reservoir transmutations (Minor/Major into Mojo, Fury, Focus, and reservoir reclaims) without cooldowns, accessible from both the Decisions view and the Blood Mage Situation tab.
 - **Minor**: Minor Blood Runes, Cleansing Impurities, Condensation (Minor into Major), Channel Minor Lifeforce (+10 monthly Lifestyle XP in chosen attribute; +5 monthly to active focus for Experience Gain).
 - **Major**: Channel Blood Power, Condense into Superior Lifeforce, Split into 2 Minor, Education Enhancement, Major Runes, Congenital Manifestation, House Blessing.
 - **Superior**: Blood Golem creation, 5★ Master Educations, Secondary Educations, Split Superior into 2 Major, Capstone Runes.
@@ -154,7 +154,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 
 ## Version history
 
-- v1.20.80: Mainline blood faiths (Blóðtrú, Ketsudō, Xuédào) organized/reformed by default; introduce explicit unreformed variants (Old Blóðtrú, Old Ketsudō, Old Xuédào) with 1:1 mainline rites and conversion decision sub-options; dedicated Transmute Lifeforce decision consolidating all 9 specialized reservoir transmutations (Mojo, Fury, Focus) into a single option-list widget while keeping tier condensation and splitting in their respective main grimoires.
+- v1.20.80: Mainline blood faiths (Blóðtrú, Ketsudō, Xuédào) organized/reformed by default; introduce explicit unreformed variants (Old Blóðtrú, Old Ketsudō, Old Xuédào) with 1:1 mainline rites and conversion decision sub-options; dedicated Transmute Lifeforce decision and event tree consolidating all 9 specialized reservoir transmutations (Mojo, Fury, Focus) without cooldowns while keeping tier condensation and splitting in their respective main grimoires.
 - v1.20.79: Comprehensive Blood Mage lifestyle trait rebalance across all 3 tiers (Acolyte, Mage, Archmage) to standardized targets at 100 XP: Army Damage (15/30/50%), Army Maintenance (-15/-30/-50%), General Opinion (+10/+20/+30), Capital Development Growth (+0.25/+0.50/+1.00), Devotion Impact (+25/+50/+100%), Flat Piety (+2/+5/+10/mo), Piety % (+30/+60/+100%), Dynasty Renown (+1/+2/+3/mo), Life Expectancy (+50/+100/+200 years), Hostile/Personal Scheme Potential (15/30/50%), and removed Knight Effectiveness per Learning; apply supernatural hair and eye appearance game rules across all tiers.
 - v1.20.78: Fix error.log script issues: repair ascension duel mirror traits, restore Blood Crucible modifier to Blood Blessing, and fix decision debug logging.
 - v1.20.77: Add knight effectiveness per Prowess/Learning and monthly Piety per knight across Bloodlust & Enlightenment tracks, Warband & Mastery house covenants, Duchy Blood Temples, and Domicile Blood Shrines.

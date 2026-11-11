@@ -198,13 +198,39 @@
     bm_manifest_apex_eligible_req: "Has an eligible congenital trait (Rank 3–4)"
     NOT_bm_manifest_apex_eligible_req: "Has an eligible congenital trait (Rank 3–4)"
 
-    # Transmute Lifeforce
+    # Transmute Lifeforce Decision
     bm_transmute_lifeforce_decision: "Transmute Lifeforce"
-    bm_transmute_lifeforce_decision_desc: "Channel, condense, or divide your reserves of Lifeforce, shifting vital energy between raw power, combat fury, lineage fertility, and focused intellect."
-    bm_transmute_lifeforce_decision_tooltip: "Alter your Lifeforce reserves into specialized or higher-tier forms."
-    BM_TRANSMUTE_LIFEFORCE_DECISION_NEXT_STEP_BUTTON: "Transmute Lifeforce"
-    bm_transmute_lifeforce_decision_confirm: "$BM_TRANSMUTE_LIFEFORCE_DECISION_NEXT_STEP_BUTTON$"
-    bm_transmute_lifeforce_select_option_tt: "Select a Lifeforce transmutation from the list above."
+    bm_transmute_lifeforce_decision_desc: "Channel or reclaim your reserves of Lifeforce, shifting vital energy between raw power, combat fury, lineage fertility, and focused intellect."
+    bm_transmute_lifeforce_decision_tooltip: "Begin the ritual to transmute Lifeforce into specialized reservoirs or reclaim stored potency."
+    bm_transmute_lifeforce_decision_confirm: "Begin Transmutation"
+
+    # Transmute Lifeforce Events
+    bm_transmute_lifeforce.cancel: "Back"
+    bm_transmute_lifeforce.back: "Back"
+
+    bm_transmute_lifeforce.0001.t: "Transmute Lifeforce"
+    bm_transmute_lifeforce.0001.desc: "You prepare to reshape your reserves of Lifeforce, channeling raw vital power into specialized reservoirs or reclaiming vital energy back into raw Lifeforce."
+    bm_transmute_lifeforce.0001.major: "Major Lifeforce Transmutation"
+    bm_transmute_lifeforce.0001.minor: "Minor Lifeforce Transmutation"
+    bm_transmute_lifeforce.0001.reverse: "Reclaim Stored Lifeforce"
+
+    bm_transmute_lifeforce.0002.t: "Major Lifeforce Transmutation"
+    bm_transmute_lifeforce.0002.desc: "Channel 1 Major Lifeforce into 3 stacks of a specialized reservoir."
+    bm_transmute_lifeforce.0002.mojo: "Channel into Blood Mojo"
+    bm_transmute_lifeforce.0002.fury: "Channel into Blood Fury"
+    bm_transmute_lifeforce.0002.focus: "Channel into Blood Focus"
+
+    bm_transmute_lifeforce.0003.t: "Minor Lifeforce Transmutation"
+    bm_transmute_lifeforce.0003.desc: "Channel 1 Minor Lifeforce into 1 stack of a specialized reservoir."
+    bm_transmute_lifeforce.0003.mojo: "Channel into Blood Mojo"
+    bm_transmute_lifeforce.0003.fury: "Channel into Blood Fury"
+    bm_transmute_lifeforce.0003.focus: "Channel into Blood Focus"
+
+    bm_transmute_lifeforce.0004.t: "Reclaim Stored Lifeforce"
+    bm_transmute_lifeforce.0004.desc: "Dissolve 1 stack of a specialized reservoir back into 1 Minor Lifeforce."
+    bm_transmute_lifeforce.0004.mojo: "Reclaim from Blood Mojo"
+    bm_transmute_lifeforce.0004.fury: "Reclaim from Blood Fury"
+    bm_transmute_lifeforce.0004.focus: "Reclaim from Blood Focus"
 
     # Cast Blood Magic Minor
     bm_cast_blood_magic_minor_decision: "Cast Minor Blood Magic"
