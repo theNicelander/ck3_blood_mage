@@ -138,6 +138,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 
 ## Bugfixes
 
+- Fixed supernatural appearance game rule (white hair and white eyes) not applying to Blood Acolytes or Blood Archmages.
 - Ascension duel defeat effects (exhaustion, wounds, XP penalty) display natively in toast notification.
 - Reverse Lifedrain: self-targeting works for characters drained by Bleed Own Veins.
 - Fixed decision dialogs not opening and "Inscribe Blood Rune" missing from menus (duplicate BOM).
@@ -152,6 +153,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 
 ## Version history
 
+- v1.20.79: Comprehensive Blood Mage lifestyle trait rebalance across all 3 tiers (Acolyte, Mage, Archmage) to standardized targets at 100 XP: Army Damage (15/30/50%), Army Maintenance (-15/-30/-50%), General Opinion (+10/+20/+30), Capital Development Growth (+0.25/+0.50/+1.00), Devotion Impact (+25/+50/+100%), Flat Piety (+2/+5/+10/mo), Piety % (+30/+60/+100%), Dynasty Renown (+1/+2/+3/mo), Life Expectancy (+50/+100/+200 years), Hostile/Personal Scheme Potential (15/30/50%), and removed Knight Effectiveness per Learning; apply supernatural hair and eye appearance game rules across all tiers.
 - v1.20.78: Fix error.log script issues: repair ascension duel mirror traits, restore Blood Crucible modifier to Blood Blessing, and fix decision debug logging.
 - v1.20.77: Add knight effectiveness per Prowess/Learning and monthly Piety per knight across Bloodlust & Enlightenment tracks, Warband & Mastery house covenants, Duchy Blood Temples, and Domicile Blood Shrines.
 - v1.20.76: Replace non-functional monthly income per devotion level on Blood Mage bloodline track and base traits with flat monthly income (+0.5 to +4.5/mo) and direct domain limit expansion (+1 to +4 holdings); restore full cumulative track milestone benefits up to 50 XP (and 100 XP for Ancient) into base traits of Blood Mage and Blood Archmage to eliminate power loss on tier elevation.

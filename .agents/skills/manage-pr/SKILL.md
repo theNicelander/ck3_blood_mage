@@ -56,5 +56,6 @@ description: >-
 - Body: branch doc minus `#` title line.
 - Create: `gh pr create --title "<branch>: <outcome title>" --body-file docs-ai/branch-context/<branch>.md`
 - Edit: `gh pr edit <PR> --title ... --body-file docs-ai/branch-context/<branch>.md`
-- Merge: `gh pr merge <PR> --squash --body-file <file> --delete-branch`. Never merge locally; omit `--subject` so GitHub preserves `(#<PR>)`.
-- Next branch: pull `main`, checkout sequential `v1.20.<N+1>`, push `-u origin <branch>`, archive old doc to `docs-ai/archive/`, init new branch doc.
+- Stop here: Never merge the PR automatically. Present the PR link to the user and await explicit review/approval.
+- Merge (ONLY on explicit user instruction): `gh pr merge <PR> --squash --body-file <file> --delete-branch`. Never merge locally; omit `--subject` so GitHub preserves `(#<PR>)`.
+- Next branch (after user-confirmed merge): pull `main`, checkout sequential `v1.20.<N+1>`, push `-u origin <branch>`, archive old doc to `docs-ai/archive/`, init new branch doc.
