@@ -153,7 +153,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 
 ## Version history
 
-- v1.20.79: Apply supernatural hair and eye appearance game rules across all Blood Mage tiers (Acolyte, Mage, Archmage).
+- v1.20.79: Standardize Scheme Potential (Hostile, Personal, Enemy Hostile) and Army Damage scaling across Blood Mage tracks to 15% (Acolyte), 30% (Mage), and 50% (Archmage) at 100 XP with clean 5-threshold progression and anti-nerf base trait floor updates; apply supernatural hair and eye appearance game rules across all Blood Mage tiers (Acolyte, Mage, Archmage).
 - v1.20.78: Fix error.log script issues: repair ascension duel mirror traits, restore Blood Crucible modifier to Blood Blessing, and fix decision debug logging.
 - v1.20.77: Add knight effectiveness per Prowess/Learning and monthly Piety per knight across Bloodlust & Enlightenment tracks, Warband & Mastery house covenants, Duchy Blood Temples, and Domicile Blood Shrines.
 - v1.20.76: Replace non-functional monthly income per devotion level on Blood Mage bloodline track and base traits with flat monthly income (+0.5 to +4.5/mo) and direct domain limit expansion (+1 to +4 holdings); restore full cumulative track milestone benefits up to 50 XP (and 100 XP for Ancient) into base traits of Blood Mage and Blood Archmage to eliminate power loss on tier elevation.
