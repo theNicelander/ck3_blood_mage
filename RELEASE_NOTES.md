@@ -146,11 +146,13 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 - Fixed golem rite option visibility and heirless-character crashes in rune interactions.
 - Empower Dynasty tooltip no longer claims a house loses an old modifier.
 - Added missing toast and loc keys; removed dangling modifier references.
+- Resolved startup trait errors in ascension duel mirroring, restored Blood Crucible blessing to Blood Blessing interaction, and fixed decision debug logging.
 
 ---
 
 ## Version history
 
+- v1.20.78: Fix error.log script issues: repair ascension duel mirror traits, restore Blood Crucible modifier to Blood Blessing, and fix decision debug logging.
 - v1.20.77: Add knight effectiveness per Prowess/Learning and monthly Piety per knight across Bloodlust & Enlightenment tracks, Warband & Mastery house covenants, Duchy Blood Temples, and Domicile Blood Shrines.
 - v1.20.76: Replace non-functional monthly income per devotion level on Blood Mage bloodline track and base traits with flat monthly income (+0.5 to +4.5/mo) and direct domain limit expansion (+1 to +4 holdings); restore full cumulative track milestone benefits up to 50 XP (and 100 XP for Ancient) into base traits of Blood Mage and Blood Archmage to eliminate power loss on tier elevation.
 - v1.20.74: Complete Specialized Lifeforce Reservoirs triad with Blood Fury (+2 prowess, +10% knight effectiveness, +2% army movement speed, +2 travel safety) and Blood Focus (+1 learning, -10% stress gain, +5% monthly lifestyle XP gain); add Minor/Major transmutation and reclaim decision loops; decouple prowess from Superior Lifeforce so core reserves strictly govern immortality and vitality; update story panel counters; remove Lifeforce requirements and consumption from Ascend Blood Magic Tier decision; de-duplicate Bloodlust (+1 Knight Limit at 10/30/50/70/100, +3 base on Mage, +6 base on Archmage) and Warband (+10% to +50% Men-at-Arms counter efficiency, +1 to +4 regiment size, +1 to +2 regiments).

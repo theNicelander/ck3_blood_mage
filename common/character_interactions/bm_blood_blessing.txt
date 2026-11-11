@@ -180,6 +180,7 @@
 					has_character_modifier = bm_blessed_blood_modifier
 					has_character_modifier = bm_blessed_blood_sovereign_modifier
 					has_character_modifier = bm_blessed_blood_iron_modifier
+					has_character_modifier = bm_blessed_blood_crucible_modifier
 					has_character_modifier = bm_feingur_blessed_blood_modifier
 				}
 			}
@@ -194,6 +195,7 @@
 					has_character_modifier = bm_blessed_blood_modifier
 					has_character_modifier = bm_blessed_blood_sovereign_modifier
 					has_character_modifier = bm_blessed_blood_iron_modifier
+					has_character_modifier = bm_blessed_blood_crucible_modifier
 					has_character_modifier = bm_feingur_blessed_blood_modifier
 				}
 			}
@@ -525,7 +527,10 @@
 							}
 						}
 						else = {
-							add_character_modifier = { modifier = lifeforce_modifier_mojo }
+							add_character_modifier = {
+								modifier = bm_blessed_blood_crucible_modifier
+								years = 10
+							}
 							add_opinion = {
 								target = scope:actor
 								modifier = magic_opinion_positive
