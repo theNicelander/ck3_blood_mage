@@ -10,12 +10,38 @@
 	}
 
 	doctrines = {
-		unreformed_faith_doctrine
 	}
 }
 
 ketsudo_faith = {
 	faith = ketsudo_faith
+
+	color = { 0.6 0.0 0.0 }
+
+	tenets = {
+		tenet_ancestor_worship
+		tenet_mendicant_preachers
+		tenet_literalism
+	}
+
+	doctrines = {
+	}
+}
+
+xuedao_faith = {
+	faith = xuedao_faith
+	color = { 0.75 0.12 0.12 }
+	tenets = {
+		tenet_ancestor_worship
+		tenet_mendicant_preachers
+		tenet_literalism
+	}
+	doctrines = {
+	}
+}
+
+old_blodtru_faith = {
+	faith = old_blodtru_faith
 
 	color = { 0.0 0.0 0.0 }
 
@@ -30,9 +56,25 @@ ketsudo_faith = {
 	}
 }
 
-xuedao_faith = {
-	faith = xuedao_faith
-	color = { 0.0 0.0 0.0 }
+old_ketsudo_faith = {
+	faith = old_ketsudo_faith
+
+	color = { 0.6 0.0 0.0 }
+
+	tenets = {
+		tenet_ancestor_worship
+		tenet_mendicant_preachers
+		tenet_literalism
+	}
+
+	doctrines = {
+		unreformed_faith_doctrine
+	}
+}
+
+old_xuedao_faith = {
+	faith = old_xuedao_faith
+	color = { 0.75 0.12 0.12 }
 	tenets = {
 		tenet_ancestor_worship
 		tenet_mendicant_preachers

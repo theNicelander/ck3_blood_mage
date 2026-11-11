@@ -84,10 +84,76 @@ bm_faith_conversion.0001 = {
 		}
 	}
 
-	# Option 4: Back out
+	# Option 4: Seek the ancient, unreformed traditions
+	option = {
+		name = bm_faith_conversion.0001.unreformed
+		trigger_event = bm_faith_conversion.0002
+
+		ai_chance = {
+			base = 0
+		}
+	}
+
+	# Option 5: Back out
 	option = {
 		name = bm_faith_conversion.0001.d
 		remove_decision_cooldown = become_blood_cultist_decision
+
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+# Sub-event fired from bm_faith_conversion.0001 to choose an ancient unreformed blood faith
+bm_faith_conversion.0002 = {
+	type = character_event
+	title = bm_faith_conversion.0002.t
+	desc = bm_faith_conversion.0002.desc
+	theme = faith
+
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+
+	# Option 1: Old Blóðtrú
+	option = {
+		name = bm_faith_conversion.0002.a
+		blood_magic_used_major = yes
+		set_character_faith = faith:old_blodtru_faith
+
+		ai_chance = {
+			base = 0
+		}
+	}
+
+	# Option 2: Old Ketsudō
+	option = {
+		name = bm_faith_conversion.0002.b
+		blood_magic_used_major = yes
+		set_character_faith = faith:old_ketsudo_faith
+
+		ai_chance = {
+			base = 0
+		}
+	}
+
+	# Option 3: Old Xuédào
+	option = {
+		name = bm_faith_conversion.0002.c
+		blood_magic_used_major = yes
+		set_character_faith = faith:old_xuedao_faith
+
+		ai_chance = {
+			base = 0
+		}
+	}
+
+	# Option 4: Back
+	option = {
+		name = bm_faith_conversion.0002.d
+		trigger_event = bm_faith_conversion.0001
 
 		ai_chance = {
 			base = 0

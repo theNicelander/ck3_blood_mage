@@ -4,17 +4,22 @@ Living technical specification for `rf_blodtru` religion family, cultural blood 
 
 ## Overview
 
-Spiritual framework in `common/religion/`. Religious family `rf_blodtru` and religion `blodtru_religion` with 3 regional faiths (`blodtru_faith`, `ketsudo_faith`, `xuedao_faith`), bound 1:1 to mainline rites (`bm_rite_types.txt`).
+Spiritual framework in `common/religion/`. Religious family `rf_blodtru` and religion `blodtru_religion` with 3 regional reformed faiths (`blodtru_faith`, `ketsudo_faith`, `xuedao_faith`) and 3 ancestral unreformed variants (`old_blodtru_faith`, `old_ketsudo_faith`, `old_xuedao_faith`), bound 1:1 to mainline rites (`bm_rite_types.txt`).
 - **Identity Doctrine:** Hidden doctrine `bm_blodtru_identity_doctrine` sets parameter `blood_magic_cult_faith = yes`, checked by `bm_is_blood_cult_faith_trigger`. Allows third-party / reformed faiths to integrate with blood magic mechanics.
 - **Core Tenets:** `tenet_ancestor_worship` (family opinion, prestige on birth/marriage), `tenet_mendicant_preachers` (travel speed, conversion), `tenet_literalism` (learning skill, scholarship).
+- **Reformed Mainline Status:** Mainline faiths are Organized/Reformed by default, removing the `-20` Feudal/Clan vassal penalty and unlocking Holy Wars. The Old variants retain `unreformed_faith_doctrine` for tribal raiding, pagan defensive attrition, and manual reformation roleplay.
 
 ## Faith Structure, Mainline Rites & Holy Sites
 
-| Faith Key | Rite Key | Cultural Sphere (`bm_faith_conversion.0001`) | Eminent Holy Sites (`eminent_holy_sites`) | Regular Holy Sites (`holy_sites`) |
-| --- | --- | --- | --- | --- |
-| **Blóðtrú** (`blodtru_faith`) | `blodtru_faith` | Default / European / Atlantic / Global fallback | **58 Sites:** All European capitals and landmarks (`talknafjordur`, `reykjavik`, `london`, `madrid`, `oslo`, `paris`, `berlin`, `rome`, `constantinople`, `olympus`, `kiev`, `athens`, `tenerife`, `amsterdam`, `vienna`, `stonehenge`, `isle_of_man`, etc.) | None (all holy sites are eminent) |
-| **Ketsudō** (`ketsudo_faith`) | `ketsudo_faith` | Japonic, Korean, Mongolic, Tungusic | **27 Sites:** `tsushima`, `yamashiro`, `kamakura`, `mount_fuji`, `mount_aso`, `mount_osore`, `gyeongju`, `edo`, `hakodate`, `mount_baekdu`, `gaegyeong`, `hanyang`, etc. | None (all holy sites are eminent) |
-| **Xuédào** (`xuedao_faith`) | `xuedao_faith` | Chinese, Qiangic, Tai, Viet, Tibetan | **32 Sites:** `changan`, `luoyang`, `beijing`, `hangzhou`, `chengdu`, `guangzhou`, `taishan`, `gyeongju`, `dunhuang`, Sacred Five Mountains, Four Buddhist/Daoist Peaks, `nanjing`, `lhasa`, etc. | None (all holy sites are eminent) |
+| Faith Key | Status | Rite Key | Cultural Sphere (`bm_faith_conversion.0001` / `.0002`) | Eminent Holy Sites (`eminent_holy_sites`) | Regular Holy Sites (`holy_sites`) |
+| --- | --- | --- | --- | --- | --- |
+| **Blóðtrú** (`blodtru_faith`) | Reformed | `blodtru_faith` | Default / European / Atlantic / Global fallback | **58 Sites:** All European capitals and landmarks (`talknafjordur`, `reykjavik`, `london`, `madrid`, `oslo`, `paris`, `berlin`, `rome`, `constantinople`, `olympus`, `kiev`, `athens`, `tenerife`, `amsterdam`, `vienna`, `stonehenge`, `isle_of_man`, etc.) | None (all holy sites are eminent) |
+| **Old Blóðtrú** (`old_blodtru_faith`) | Unreformed | `old_blodtru_faith` | Ancestral European / Tribal raider variant | **58 Sites:** Identical to Blóðtrú | None (all holy sites are eminent) |
+| **Ketsudō** (`ketsudo_faith`) | Reformed | `ketsudo_faith` | Japonic, Korean, Mongolic, Tungusic | **27 Sites:** `tsushima`, `yamashiro`, `kamakura`, `mount_fuji`, `mount_aso`, `mount_osore`, `gyeongju`, `edo`, `hakodate`, `mount_baekdu`, `gaegyeong`, `hanyang`, etc. | None (all holy sites are eminent) |
+| **Old Ketsudō** (`old_ketsudo_faith`) | Unreformed | `old_ketsudo_faith` | Ancestral Japonic/Korean variant | **27 Sites:** Identical to Ketsudō | None (all holy sites are eminent) |
+| **Xuédào** (`xuedao_faith`) | Reformed | `xuedao_faith` | Chinese, Qiangic, Tai, Viet, Tibetan | **32 Sites:** `changan`, `luoyang`, `beijing`, `hangzhou`, `chengdu`, `guangzhou`, `taishan`, `gyeongju`, `dunhuang`, Sacred Five Mountains, Four Buddhist/Daoist Peaks, `nanjing`, `lhasa`, etc. | None (all holy sites are eminent) |
+| **Old Xuédào** (`old_xuedao_faith`) | Unreformed | `old_xuedao_faith` | Ancestral Sinitic/Tibetan variant | **32 Sites:** Identical to Xuédào | None (all holy sites are eminent) |
+
 
 ### Holy Site Modifier Architecture (CK3 1.20)
 - **All Sites Eminent (`eminent_holy_sites_max = 80`):** Every holy site in Blóðtrú faiths is defined under `eminent_holy_sites`. Each site grants **both** a `faith_character_modifier` (applies to all followers of the faith when controlled) **and** a `county_holder_character_modifier` (applies directly to the county holder, stacking with the faith-wide bonus). Benefits are calibrated as smaller incremental bonuses (`+0.25` Health, `+1` Life Expectancy, `+1` Epidemic Resistance, or `+1 [Skill/Prowess] per Piety Level`) designed to reward wide geographic control and spread across multiple holy sites.
