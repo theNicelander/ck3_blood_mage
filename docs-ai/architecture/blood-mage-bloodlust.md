@@ -18,14 +18,14 @@ The `bloodlust` track uses a 5-milestone progression (10, 30, 50, 70, 100 XP), p
 | :--- | :--- | :--- |
 | **10 XP** | Vitality Step (`+0.2` Health, `+4` Life Exp), `knight_limit = 1`, `army_damage_mult = 0.05` | +0.2 Health, +4 Life Exp, +1 Knight Limit, +5% Army Damage |
 | **30 XP** | Vitality Step (`+0.2` Health, `+4` Life Exp), `knight_limit = 1`, `army_damage_mult = 0.05` | +0.4 Health, +8 Life Exp, +2 Knight Limit, +10% Army Damage |
-| **50 XP (Milestone)** | `knight_limit = 1`, `martial_per_piety_level = 1`, `prowess_per_piety_level = 1` | 2× Vitality, +3 Knight Limit, +10% Army Damage, +1 Martial & Prowess per Piety Level |
-| **70 XP** | Vitality Step (`+0.2` Health, `+4` Life Exp), `knight_limit = 1`, `army_damage_mult = 0.05` | +0.6 Health, +12 Life Exp, +4 Knight Limit, +15% Army Damage, +1 Martial & Prowess per Piety Level |
-| **100 XP (Capstone)** | Vitality Step (`+0.2` Health, `+4` Life Exp), `knight_limit = 1`, `army_damage_mult = 0.05`, `martial_per_piety_level = 1`, `prowess_per_piety_level = 1` | 4× Vitality (+0.8 Health, +16 Life Exp), +5 Knight Limit, +20% Army Damage, +2 Martial & Prowess per Piety Level |
+| **50 XP (Milestone)** | `knight_limit = 1`, `martial_per_piety_level = 1`, `prowess_per_piety_level = 1`, `knight_effectiveness_per_prowess = 0.005` | 2× Vitality, +3 Knight Limit, +10% Army Damage, +1 Martial & Prowess per Piety Level, +0.5% Knight Eff per Prowess |
+| **70 XP** | Vitality Step (`+0.2` Health, `+4` Life Exp), `knight_limit = 1`, `army_damage_mult = 0.05` | +0.6 Health, +12 Life Exp, +4 Knight Limit, +15% Army Damage, +1 Martial & Prowess per Piety Level, +0.5% Knight Eff per Prowess |
+| **100 XP (Capstone)** | Vitality Step (`+0.2` Health, `+4` Life Exp), `knight_limit = 1`, `army_damage_mult = 0.05`, `martial_per_piety_level = 1`, `prowess_per_piety_level = 1`, `knight_effectiveness_per_prowess = 0.005` | 4× Vitality (+0.8 Health, +16 Life Exp), +5 Knight Limit, +20% Army Damage, +2 Martial & Prowess per Piety Level, +1.0% Knight Eff per Prowess |
 
 *Note: Scaling across tiers:*
-- **Tier I: Blood Acolyte (`lifestyle_bm_acolyte`)**: +1 Knight Limit at all 5 milestones (+5 Knights total), +3% Army Damage per step (+12% total), +1 Martial & Prowess per Piety Level at 50 XP and 100 XP (+2 each total), Age Prowess Lock at 100 XP.
-- **Tier II: Blood Mage (`lifestyle_blood_mage`)**: Base trait includes +3 Knight Limit; +1 Knight Limit at all 5 milestones (+5 Knights, +8 combined total), +5% Army Damage per step (+20% total), +1 Martial & Prowess per Piety Level at 50 XP and 100 XP (+2 each total, plus innate +1 base trait floor).
-- **Tier III: Blood Archmage (`lifestyle_bm_archmage`)**: Base trait includes +6 Knight Limit; +1 Knight Limit at all 5 milestones (+5 Knights, +11 combined total), +8% Army Damage per step (+32% total), +2 Martial & Prowess per Piety Level at 50 XP and 100 XP (+4 each total, plus innate +2 base trait floor).
+- **Tier I: Blood Acolyte (`lifestyle_bm_acolyte`)**: +1 Knight Limit at all 5 milestones (+5 Knights total), +3% Army Damage per step (+12% total), +1 Martial & Prowess per Piety Level and +0.5% Knight Effectiveness per Prowess at 50 XP and 100 XP (+2 each / +1.0% total), Age Prowess Lock at 100 XP.
+- **Tier II: Blood Mage (`lifestyle_blood_mage`)**: Base trait includes +3 Knight Limit and +0.5% Knight Effectiveness per Prowess; +1 Knight Limit at all 5 milestones (+5 Knights, +8 combined total), +5% Army Damage per step (+20% total), +1 Martial & Prowess per Piety Level and +0.5% Knight Effectiveness per Prowess at 50 XP and 100 XP (+2 each / +1.0% track total, plus innate +1 / +0.5% base trait floor = +1.5% combined).
+- **Tier III: Blood Archmage (`lifestyle_bm_archmage`)**: Base trait includes +6 Knight Limit and +1.0% Knight Effectiveness per Prowess; +1 Knight Limit at all 5 milestones (+5 Knights, +11 combined total), +8% Army Damage per step (+32% total), +2 Martial & Prowess per Piety Level and +1.0% Knight Effectiveness per Prowess at 50 XP and 100 XP (+4 each / +2.0% track total, plus innate +2 / +1.0% base trait floor = +3.0% combined).
 
 ---
 

@@ -147,6 +147,7 @@ lifestyle_bm_acolyte = {
 			}
 			50 = {
 				learning_per_piety_level = 1
+				knight_effectiveness_per_learning = 0.005
 			}
 			70 = {
 				health = @bm_acolyte_common_health
@@ -160,6 +161,7 @@ lifestyle_bm_acolyte = {
 				monthly_piety = 0.25
 				monthly_piety_gain_mult = 0.06
 				learning_per_piety_level = 1
+				knight_effectiveness_per_learning = 0.005
 			}
 		}
 
@@ -180,6 +182,7 @@ lifestyle_bm_acolyte = {
 				knight_limit = 1
 				martial_per_piety_level = 1
 				prowess_per_piety_level = 1
+				knight_effectiveness_per_prowess = 0.005
 			}
 			70 = {
 				health = @bm_acolyte_common_health
@@ -194,6 +197,7 @@ lifestyle_bm_acolyte = {
 				army_damage_mult = 0.03
 				martial_per_piety_level = 1
 				prowess_per_piety_level = 1
+				knight_effectiveness_per_prowess = 0.005
 			}
 		}
 
@@ -276,6 +280,7 @@ lifestyle_blood_mage = {
 	prowess_per_piety_level = 1
 	knight_limit = 3
 	army_damage_mult = 0.06
+	knight_effectiveness_per_prowess = 0.005
 
 	# Stewardship
 	stewardship_per_piety_level = 1
@@ -295,6 +300,7 @@ lifestyle_blood_mage = {
 	learning_per_piety_level = 1
 	monthly_piety = 0.50
 	monthly_piety_gain_mult = 0.12
+	knight_effectiveness_per_learning = 0.005
 
 	tracks = {
 		bloodline = {
@@ -413,6 +419,7 @@ lifestyle_blood_mage = {
 			}
 			50 = {
 				learning_per_piety_level = 1
+				knight_effectiveness_per_learning = 0.005
 			}
 			70 = {
 				health = @bm_common_health
@@ -426,6 +433,7 @@ lifestyle_blood_mage = {
 				monthly_piety = 0.50
 				monthly_piety_gain_mult = 0.10
 				learning_per_piety_level = 1
+				knight_effectiveness_per_learning = 0.005
 			}
 		}
 
@@ -446,6 +454,7 @@ lifestyle_blood_mage = {
 				knight_limit = 1
 				martial_per_piety_level = 1
 				prowess_per_piety_level = 1
+				knight_effectiveness_per_prowess = 0.005
 			}
 			70 = {
 				health = @bm_common_health
@@ -460,6 +469,7 @@ lifestyle_blood_mage = {
 				army_damage_mult = 0.05
 				martial_per_piety_level = 1
 				prowess_per_piety_level = 1
+				knight_effectiveness_per_prowess = 0.005
 			}
 		}
 
@@ -541,6 +551,7 @@ lifestyle_bm_archmage = {
 	prowess_per_piety_level = 2
 	knight_limit = 6
 	army_damage_mult = 0.16
+	knight_effectiveness_per_prowess = 0.01
 
 	# Stewardship
 	stewardship_per_piety_level = 2
@@ -560,6 +571,7 @@ lifestyle_bm_archmage = {
 	learning_per_piety_level = 2
 	monthly_piety = 1.50
 	monthly_piety_gain_mult = 0.32
+	knight_effectiveness_per_learning = 0.01
 
 	tracks = {
 		bloodline = {
@@ -678,6 +690,7 @@ lifestyle_bm_archmage = {
 			}
 			50 = {
 				learning_per_piety_level = 2
+				knight_effectiveness_per_learning = 0.01
 			}
 			70 = {
 				health = @bm_archmage_common_health
@@ -691,6 +704,7 @@ lifestyle_bm_archmage = {
 				monthly_piety = 1.00
 				monthly_piety_gain_mult = 0.16
 				learning_per_piety_level = 2
+				knight_effectiveness_per_learning = 0.01
 			}
 		}
 
@@ -711,6 +725,7 @@ lifestyle_bm_archmage = {
 				knight_limit = 1
 				martial_per_piety_level = 2
 				prowess_per_piety_level = 2
+				knight_effectiveness_per_prowess = 0.01
 			}
 			70 = {
 				health = @bm_archmage_common_health
@@ -725,6 +740,7 @@ lifestyle_bm_archmage = {
 				army_damage_mult = 0.08
 				martial_per_piety_level = 2
 				prowess_per_piety_level = 2
+				knight_effectiveness_per_prowess = 0.01
 			}
 		}
 
