@@ -170,7 +170,7 @@
 		remove_character_modifier = lifeforce_modifier_minor
 		if = {
 			limit = { scope:bm_distill_bloodlust = yes }
-			debug_log = "BloodMageDecision: bm_blood_distillation_decision (bloodlust) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
+			debug_log = "BloodMageDecision: bm_blood_distillation_decision (bloodlust) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_blood_distillation_decision
@@ -199,7 +199,7 @@
 		}
 		else_if = {
 			limit = { scope:bm_distill_benediction = yes }
-			debug_log = "BloodMageDecision: bm_blood_distillation_decision (benediction) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
+			debug_log = "BloodMageDecision: bm_blood_distillation_decision (benediction) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_blood_distillation_decision
@@ -228,7 +228,7 @@
 		}
 		else_if = {
 			limit = { scope:bm_distill_bloodline = yes }
-			debug_log = "BloodMageDecision: bm_blood_distillation_decision (bloodline) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
+			debug_log = "BloodMageDecision: bm_blood_distillation_decision (bloodline) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_blood_distillation_decision
@@ -257,7 +257,7 @@
 		}
 		else_if = {
 			limit = { scope:bm_distill_hematurgy = yes }
-			debug_log = "BloodMageDecision: bm_blood_distillation_decision (hematurgy) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
+			debug_log = "BloodMageDecision: bm_blood_distillation_decision (hematurgy) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_blood_distillation_decision
@@ -286,7 +286,7 @@
 		}
 		else_if = {
 			limit = { scope:bm_distill_enlightenment = yes }
-			debug_log = "BloodMageDecision: bm_blood_distillation_decision (enlightenment) | Actor: [ROOT.Char.GetShortUINameNoTooltip] (ID:[ROOT.Char.GetID])"
+			debug_log = "BloodMageDecision: bm_blood_distillation_decision (enlightenment) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_blood_distillation_decision
