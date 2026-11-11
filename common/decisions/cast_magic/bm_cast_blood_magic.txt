@@ -218,6 +218,36 @@
 			}
 		}
 
+		# Split Superior Lifeforce into 2 Major Lifeforce
+		item = {
+			value = bm_superior_split
+			current_description = bm_superior_split
+			localization = bm_superior_split
+			icon = "gfx/interface/icons/traits/bm_interactions.dds"
+			is_shown = {
+				is_blood_mage_any_tier_trigger = yes
+			}
+			is_valid = {
+				custom_tooltip = {
+					text = bm_split_superior_lifeforce_cooldown_tt
+					NOT = { has_character_flag = bm_split_superior_lifeforce_cooldown }
+				}
+				piety_level >= 2
+				piety >= 350
+				has_character_modifier = lifeforce_modifier_superior
+			}
+			ai_chance = {
+				value = 0
+				if = {
+					limit = {
+						NOT = { has_character_modifier = lifeforce_modifier_major }
+						has_character_modifier = lifeforce_modifier_superior
+						piety > 600
+					}
+					add = 25
+				}
+			}
+		}
 	}
 
 	effect = {
@@ -275,6 +305,30 @@
 				XP = 5
 			}
 			trigger_event = { id = blood_golem.001 }
+		}
+		else_if = {
+			limit = { scope:bm_superior_split = yes }
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_superior_decision (split) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			add_piety = -350
+			add_character_flag = {
+				flag = bm_split_superior_lifeforce_cooldown
+				days = 180
+			}
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_split_superior_lifeforce_toast
+				left_icon = root
+				remove_character_modifier = lifeforce_modifier_superior
+				add_character_modifier = { modifier = lifeforce_modifier_major }
+				add_character_modifier = { modifier = lifeforce_modifier_major }
+				add_xp_bm_dynamic = {
+					TRACK = ancient
+					XP = 3
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
 		}
 		else = {
 			custom_tooltip = bm_cast_blood_magic_superior_decision_tooltip
@@ -350,6 +404,70 @@ bm_cast_blood_magic_major_decision = {
 				if = {
 					limit = { health <= fine_health }
 					multiply = 0
+				}
+			}
+		}
+
+		# Condense Major Lifeforce into Superior Lifeforce
+		item = {
+			value = bm_major_condense
+			current_description = bm_major_condense
+			localization = bm_major_condense
+			icon = "gfx/interface/icons/traits/bm_interactions.dds"
+			is_shown = {
+				is_blood_mage_tier_2_or_higher_trigger = yes
+			}
+			is_valid = {
+				custom_tooltip = {
+					text = bm_condense_major_lifeforce_cooldown_tt
+					NOT = { has_character_flag = bm_condense_major_lifeforce_cooldown }
+				}
+				piety_level >= 2
+				piety >= 350
+				has_character_modifier = lifeforce_modifier_major
+			}
+			ai_chance = {
+				value = 25
+				if = {
+					limit = {
+						NOT = { has_character_modifier = lifeforce_modifier_superior }
+						piety > 600
+					}
+					add = 50
+				}
+				if = {
+					limit = { piety < 500 }
+					multiply = 0
+				}
+			}
+		}
+
+		# Split Major Lifeforce into 2 Minor Lifeforce
+		item = {
+			value = bm_major_split
+			current_description = bm_major_split
+			localization = bm_major_split
+			icon = "gfx/interface/icons/traits/bm_interactions.dds"
+			is_shown = {
+				is_blood_mage_any_tier_trigger = yes
+			}
+			is_valid = {
+				custom_tooltip = {
+					text = bm_split_major_lifeforce_cooldown_tt
+					NOT = { has_character_flag = bm_split_major_lifeforce_cooldown }
+				}
+				piety >= 150
+				has_character_modifier = lifeforce_modifier_major
+			}
+			ai_chance = {
+				value = 0
+				if = {
+					limit = {
+						NOT = { has_character_modifier = lifeforce_modifier_minor }
+						has_character_modifier = lifeforce_modifier_major
+						piety > 300
+					}
+					add = 25
 				}
 			}
 		}
@@ -490,6 +608,53 @@ bm_cast_blood_magic_major_decision = {
 				add_trait = lifestyle_blood_power
 			}
 			trigger_event = { id = bm_blood_power_event.001 }
+		}
+		else_if = {
+			limit = { scope:bm_major_condense = yes }
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (condense) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			add_piety = -350
+			add_character_flag = {
+				flag = bm_condense_major_lifeforce_cooldown
+				days = 180
+			}
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_condense_superior_lifeforce_toast
+				left_icon = root
+				remove_character_modifier = lifeforce_modifier_major
+				add_character_modifier = { modifier = lifeforce_modifier_superior }
+				add_xp_bm_dynamic = {
+					TRACK = ancient
+					XP = 3
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:bm_major_split = yes }
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (split) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			add_piety = -150
+			add_character_flag = {
+				flag = bm_split_major_lifeforce_cooldown
+				days = 180
+			}
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_split_major_lifeforce_toast
+				left_icon = root
+				remove_character_modifier = lifeforce_modifier_major
+				add_character_modifier = { modifier = lifeforce_modifier_minor }
+				add_character_modifier = { modifier = lifeforce_modifier_minor }
+				add_xp_bm_dynamic = {
+					TRACK = ancient
+					XP = 2
+				}
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
 		}
 		else_if = {
 			limit = { scope:bm_major_improve_education = yes }
@@ -644,6 +809,36 @@ bm_cast_blood_magic_minor_decision = {
 			}
 		}
 
+		# Condense Lifeforce
+		item = {
+			value = bm_minor_condense
+			current_description = bm_minor_condense
+			localization = bm_minor_condense
+			icon = "gfx/interface/icons/traits/bm_interactions.dds"
+			is_shown = {
+				is_blood_mage_any_tier_trigger = yes
+			}
+			is_valid = {
+				custom_tooltip = {
+					text = bm_condense_minor_lifeforce_cooldown_tt
+					NOT = { has_character_flag = bm_condense_minor_lifeforce_cooldown }
+				}
+				piety >= 150
+				has_character_modifier = lifeforce_modifier_minor
+			}
+			ai_chance = {
+				value = 25
+				if = {
+					limit = { NOT = { has_character_modifier = lifeforce_modifier_major } }
+					add = 50
+				}
+				if = {
+					limit = { piety < 300 }
+					multiply = 0
+				}
+			}
+		}
+
 		# Inscribe Minor Blood Rune
 		item = {
 			value = bm_minor_blood_rune
@@ -729,6 +924,29 @@ bm_cast_blood_magic_minor_decision = {
 				remove_trait = physique_bad_2
 				remove_trait = physique_bad_3
 				remove_trait = weak
+				hidden_effect = {
+					bm_recount_lifeforce_stacks_effect = yes
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:bm_minor_condense = yes }
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (condense) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			add_piety = -150
+			add_character_flag = {
+				flag = bm_condense_minor_lifeforce_cooldown
+				days = 180
+			}
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = bm_condense_lifeforce_toast
+				left_icon = root
+				remove_character_modifier = lifeforce_modifier_minor
+				add_character_modifier = { modifier = lifeforce_modifier_major }
+				add_xp_bm_dynamic = {
+					TRACK = ancient
+					XP = 2
+				}
 				hidden_effect = {
 					bm_recount_lifeforce_stacks_effect = yes
 				}
