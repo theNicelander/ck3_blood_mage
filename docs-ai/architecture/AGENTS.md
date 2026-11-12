@@ -28,6 +28,7 @@ Architecture specs for the **Blood Mages** mod (CK3 1.20.*). Living specs of cur
 | [`blood-mage-game-rules.md`](blood-mage-game-rules.md) | Campaign game rules & settings | `common/game_rules/` |
 | [`blood-mage-events-overview.md`](blood-mage-events-overview.md) | Event mapping across all namespaces | `events/` |
 | [`blood-mage-shared-scripting.md`](blood-mage-shared-scripting.md) | Shared triggers, opinion modifiers, nicknames | `common/scripted_triggers/` |
+| [`blood-mage-character-modifiers.md`](blood-mage-character-modifiers.md) | Character modifiers, dynamic scaling & scope rules | `common/modifier_definition_formats/` |
 
 ## Writing rules
 
