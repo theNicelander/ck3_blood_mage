@@ -2,7 +2,7 @@
 
 ## Motivation
 
-- Make Blood Mages v1.20.79 fully available in Russian.
+- Make Blood Mages v1.20.80 fully available in Russian.
 
 ## Changes
 
