@@ -25,10 +25,10 @@ bm_transmute_lifeforce.0001 = {
 		}
 		trigger_event = { id = bm_transmute_lifeforce.0002 }
 		ai_chance = {
-			value = 50
-			if = {
-				limit = { NOT = { has_character_modifier = lifeforce_modifier_major } }
-				multiply = 0
+			base = 50
+			modifier = {
+				factor = 0
+				NOT = { has_character_modifier = lifeforce_modifier_major }
 			}
 		}
 	}
@@ -44,10 +44,10 @@ bm_transmute_lifeforce.0001 = {
 		}
 		trigger_event = { id = bm_transmute_lifeforce.0003 }
 		ai_chance = {
-			value = 50
-			if = {
-				limit = { NOT = { has_character_modifier = lifeforce_modifier_minor } }
-				multiply = 0
+			base = 50
+			modifier = {
+				factor = 0
+				NOT = { has_character_modifier = lifeforce_modifier_minor }
 			}
 		}
 	}
@@ -63,14 +63,12 @@ bm_transmute_lifeforce.0001 = {
 		}
 		trigger_event = { id = bm_transmute_lifeforce.0004 }
 		ai_chance = {
-			value = 50
-			if = {
-				limit = {
-					NOT = { has_character_modifier = lifeforce_modifier_mojo }
-					NOT = { has_character_modifier = lifeforce_modifier_fury }
-					NOT = { has_character_modifier = lifeforce_modifier_focus }
-				}
-				multiply = 0
+			base = 50
+			modifier = {
+				factor = 0
+				NOT = { has_character_modifier = lifeforce_modifier_mojo }
+				NOT = { has_character_modifier = lifeforce_modifier_fury }
+				NOT = { has_character_modifier = lifeforce_modifier_focus }
 			}
 		}
 	}
@@ -78,8 +76,11 @@ bm_transmute_lifeforce.0001 = {
 	# 4. Back
 	option = {
 		name = bm_transmute_lifeforce.cancel
+		trigger = {
+			always = yes
+		}
 		ai_chance = {
-			value = 0
+			base = 0
 		}
 	}
 }
@@ -124,10 +125,10 @@ bm_transmute_lifeforce.0002 = {
 			}
 		}
 		ai_chance = {
-			value = 50
-			if = {
-				limit = { NOT = { has_character_modifier = lifeforce_modifier_mojo } }
+			base = 50
+			modifier = {
 				add = 50
+				NOT = { has_character_modifier = lifeforce_modifier_mojo }
 			}
 		}
 	}
@@ -160,10 +161,10 @@ bm_transmute_lifeforce.0002 = {
 			}
 		}
 		ai_chance = {
-			value = 50
-			if = {
-				limit = { NOT = { has_character_modifier = lifeforce_modifier_fury } }
+			base = 50
+			modifier = {
 				add = 50
+				NOT = { has_character_modifier = lifeforce_modifier_fury }
 			}
 		}
 	}
@@ -196,10 +197,10 @@ bm_transmute_lifeforce.0002 = {
 			}
 		}
 		ai_chance = {
-			value = 50
-			if = {
-				limit = { NOT = { has_character_modifier = lifeforce_modifier_focus } }
+			base = 50
+			modifier = {
 				add = 50
+				NOT = { has_character_modifier = lifeforce_modifier_focus }
 			}
 		}
 	}
@@ -207,9 +208,12 @@ bm_transmute_lifeforce.0002 = {
 	# Back
 	option = {
 		name = bm_transmute_lifeforce.back
+		trigger = {
+			always = yes
+		}
 		trigger_event = { id = bm_transmute_lifeforce.0001 }
 		ai_chance = {
-			value = 0
+			base = 0
 		}
 	}
 }
@@ -252,10 +256,10 @@ bm_transmute_lifeforce.0003 = {
 			}
 		}
 		ai_chance = {
-			value = 50
-			if = {
-				limit = { NOT = { has_character_modifier = lifeforce_modifier_mojo } }
+			base = 50
+			modifier = {
 				add = 50
+				NOT = { has_character_modifier = lifeforce_modifier_mojo }
 			}
 		}
 	}
@@ -286,10 +290,10 @@ bm_transmute_lifeforce.0003 = {
 			}
 		}
 		ai_chance = {
-			value = 50
-			if = {
-				limit = { NOT = { has_character_modifier = lifeforce_modifier_fury } }
+			base = 50
+			modifier = {
 				add = 50
+				NOT = { has_character_modifier = lifeforce_modifier_fury }
 			}
 		}
 	}
@@ -320,10 +324,10 @@ bm_transmute_lifeforce.0003 = {
 			}
 		}
 		ai_chance = {
-			value = 50
-			if = {
-				limit = { NOT = { has_character_modifier = lifeforce_modifier_focus } }
+			base = 50
+			modifier = {
 				add = 50
+				NOT = { has_character_modifier = lifeforce_modifier_focus }
 			}
 		}
 	}
@@ -331,9 +335,12 @@ bm_transmute_lifeforce.0003 = {
 	# Back
 	option = {
 		name = bm_transmute_lifeforce.back
+		trigger = {
+			always = yes
+		}
 		trigger_event = { id = bm_transmute_lifeforce.0001 }
 		ai_chance = {
-			value = 0
+			base = 0
 		}
 	}
 }
@@ -376,10 +383,10 @@ bm_transmute_lifeforce.0004 = {
 			}
 		}
 		ai_chance = {
-			value = 50
-			if = {
-				limit = { NOT = { has_character_modifier = lifeforce_modifier_minor } }
+			base = 50
+			modifier = {
 				add = 50
+				NOT = { has_character_modifier = lifeforce_modifier_minor }
 			}
 		}
 	}
@@ -410,10 +417,10 @@ bm_transmute_lifeforce.0004 = {
 			}
 		}
 		ai_chance = {
-			value = 50
-			if = {
-				limit = { NOT = { has_character_modifier = lifeforce_modifier_minor } }
+			base = 50
+			modifier = {
 				add = 50
+				NOT = { has_character_modifier = lifeforce_modifier_minor }
 			}
 		}
 	}
@@ -444,10 +451,10 @@ bm_transmute_lifeforce.0004 = {
 			}
 		}
 		ai_chance = {
-			value = 50
-			if = {
-				limit = { NOT = { has_character_modifier = lifeforce_modifier_minor } }
+			base = 50
+			modifier = {
 				add = 50
+				NOT = { has_character_modifier = lifeforce_modifier_minor }
 			}
 		}
 	}
@@ -455,9 +462,12 @@ bm_transmute_lifeforce.0004 = {
 	# Back
 	option = {
 		name = bm_transmute_lifeforce.back
+		trigger = {
+			always = yes
+		}
 		trigger_event = { id = bm_transmute_lifeforce.0001 }
 		ai_chance = {
-			value = 0
+			base = 0
 		}
 	}
 }
