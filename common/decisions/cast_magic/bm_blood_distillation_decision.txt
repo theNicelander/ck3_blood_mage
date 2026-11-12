@@ -15,6 +15,16 @@
 			text = bm_blood_distillation_ancient_not_maxed_req
 			NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = ancient VALUE = 100 } }
 		}
+		custom_tooltip = {
+			text = bm_blood_distillation_min_discipline_xp_req
+			trigger_if = {
+				limit = { has_trait = lifestyle_bm_acolyte }
+				bm_has_any_discipline_track_xp_trigger = { VALUE = 10 }
+			}
+			trigger_else = {
+				bm_has_any_discipline_track_xp_trigger = { VALUE = 15 }
+			}
+		}
 		has_character_modifier = lifeforce_modifier_minor
 		trigger_if = {
 			limit = { has_trait = lifestyle_bm_acolyte }

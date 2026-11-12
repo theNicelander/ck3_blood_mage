@@ -1,0 +1,48 @@
+﻿bm_transmute_lifeforce_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
+	decision_group_type = bm_decision_group
+
+	desc = bm_transmute_lifeforce_decision_desc
+	selection_tooltip = bm_transmute_lifeforce_decision_tooltip
+
+	is_shown = {
+		is_blood_mage_any_tier_trigger = yes
+	}
+
+	is_valid_showing_failures_only = {
+		OR = {
+			has_character_modifier = lifeforce_modifier_minor
+			has_character_modifier = lifeforce_modifier_major
+			has_character_modifier = lifeforce_modifier_mojo
+			has_character_modifier = lifeforce_modifier_fury
+			has_character_modifier = lifeforce_modifier_focus
+		}
+	}
+
+	effect = {
+		debug_log = "BloodMageDecision: bm_transmute_lifeforce_decision | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+		trigger_event = { id = bm_transmute_lifeforce.0001 }
+	}
+
+	ai_check_interval = 12
+	ai_will_do = {
+		base = 50
+		modifier = {
+			health <= fine_health
+			add = -50
+		}
+		modifier = {
+			add = -40
+			OR = {
+				any_spouse = {
+					is_alive = yes
+					NOT = { is_blood_mage_any_tier_trigger = yes }
+				}
+				primary_heir ?= {
+					is_alive = yes
+					NOT = { is_blood_mage_any_tier_trigger = yes }
+				}
+			}
+		}
+	}
+}
