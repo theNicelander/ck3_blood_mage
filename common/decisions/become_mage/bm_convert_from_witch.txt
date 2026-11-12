@@ -6,7 +6,7 @@
 
     is_shown = {
         has_trait = witch
-        NOT = { has_trait = lifestyle_blood_mage }
+        NOT = { is_blood_mage_any_tier_trigger = yes }
     }
 
     effect = {

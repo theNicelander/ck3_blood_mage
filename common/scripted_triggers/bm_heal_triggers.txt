@@ -77,7 +77,7 @@ bm_has_any_ailment_trigger = {
 bm_actor_can_heal_target_ailments_trigger = {
 	# TARGET = target character
 	# Evaluated in actor scope
-	has_trait = lifestyle_blood_mage
+	is_blood_mage_any_tier_trigger = yes
 	$TARGET$ = { bm_has_any_ailment_trigger = yes }
 }
 
@@ -94,7 +94,7 @@ bm_actor_has_lifeforce_to_heal_target_trigger = {
 			has_character_modifier = lifeforce_modifier_major
 		}
 		AND = {
-			has_trait = lifestyle_blood_mage
+			is_blood_mage_tier_2_or_higher_trigger = yes
 			$TARGET$ = { bm_has_deadly_ailment_trigger = yes }
 			has_character_modifier = lifeforce_modifier_superior
 		}

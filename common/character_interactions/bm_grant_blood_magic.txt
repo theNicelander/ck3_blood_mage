@@ -109,7 +109,7 @@
                     remove_character_modifier = lifeforce_modifier_minor
                     add_xp_bm_dynamic = {
                         TRACK = bloodline
-                        XP = 1
+                        XP = 2
                     }
                     scope:recipient = {
                         bm_become_blood_acolyte_effect = yes
@@ -146,13 +146,13 @@
                         }
                         add_xp_bm_dynamic = {
                             TRACK = bloodline
-                            XP = 2
+                            XP = 4
                         }
                     }
                     else = {
                         add_xp_bm_dynamic = {
                             TRACK = bloodline
-                            XP = 1
+                            XP = 3
                         }
                     }
                     scope:recipient = {

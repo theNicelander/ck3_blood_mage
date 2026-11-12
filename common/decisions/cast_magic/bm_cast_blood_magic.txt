@@ -277,7 +277,7 @@
 				custom_tooltip = blood_runes_effects_list.superior
 				add_shared_bm_bk_xp = {
 					TRACK = ancient
-					XP = 10
+					XP = 15
 				}
 				blood_magic_used_superior = yes
 				hidden_effect = {
@@ -302,7 +302,7 @@
 			bm_recount_lifeforce_stacks_effect = yes
 			add_xp_bm_dynamic = {
 				TRACK = bloodline
-				XP = 5
+				XP = 8
 			}
 			trigger_event = { id = blood_golem.001 }
 		}
@@ -323,7 +323,7 @@
 				add_character_modifier = { modifier = lifeforce_modifier_major }
 				add_xp_bm_dynamic = {
 					TRACK = ancient
-					XP = 3
+					XP = 2
 				}
 				hidden_effect = {
 					bm_recount_lifeforce_stacks_effect = yes
@@ -625,7 +625,7 @@ bm_cast_blood_magic_major_decision = {
 				add_character_modifier = { modifier = lifeforce_modifier_superior }
 				add_xp_bm_dynamic = {
 					TRACK = ancient
-					XP = 3
+					XP = 2
 				}
 				hidden_effect = {
 					bm_recount_lifeforce_stacks_effect = yes
@@ -649,7 +649,7 @@ bm_cast_blood_magic_major_decision = {
 				add_character_modifier = { modifier = lifeforce_modifier_minor }
 				add_xp_bm_dynamic = {
 					TRACK = ancient
-					XP = 2
+					XP = 1
 				}
 				hidden_effect = {
 					bm_recount_lifeforce_stacks_effect = yes
@@ -677,7 +677,7 @@ bm_cast_blood_magic_major_decision = {
 				custom_tooltip = blood_runes_effects_list.major
 				add_xp_bm_dynamic = {
 					TRACK = ancient
-					XP = 5
+					XP = 10
 				}
 				blood_magic_used_major = yes
 				hidden_effect = {
@@ -898,13 +898,13 @@ bm_cast_blood_magic_minor_decision = {
 						}
 						add_xp_bm_dynamic = {
 							TRACK = bloodline
-							XP = 1
+							XP = 2
 						}
 					}
 					else = {
 						add_xp_bm_dynamic = {
 							TRACK = benediction
-							XP = 1
+							XP = 2
 						}
 					}
 				}
@@ -945,7 +945,7 @@ bm_cast_blood_magic_minor_decision = {
 				add_character_modifier = { modifier = lifeforce_modifier_major }
 				add_xp_bm_dynamic = {
 					TRACK = ancient
-					XP = 2
+					XP = 1
 				}
 				hidden_effect = {
 					bm_recount_lifeforce_stacks_effect = yes
@@ -969,7 +969,7 @@ bm_cast_blood_magic_minor_decision = {
 				custom_tooltip = blood_runes_effects_list.minor
 				add_xp_bm_dynamic = {
 					TRACK = ancient
-					XP = 4
+					XP = 6
 				}
 				blood_magic_used_minor = yes
 				hidden_effect = {

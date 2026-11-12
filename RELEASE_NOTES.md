@@ -192,7 +192,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 - v1.20.43: Staves moved to standalone Carve Galdrastafir decision
 - v1.20.42: Attune widget, rebalanced Manifest and Condense duels
 - v1.20.41: Manifest Lifeforce Piety popup; childbirth Major Lifeforce
-- v1.20.81: Blood Sparring Ring mage knight gate, simplified plain-text covenant tooltips, and Covenant of Warband knight limit (+1/+2/+3)
+- v1.20.81: Blood Sparring Ring mage knight gate, simplified plain-text covenant tooltips, Covenant of Warband knight limit (+1/+2/+3); recalibrate lifestyle track XP across all subsystems to pace Blood Archmage ascension around ~100 years (scaled Minor/Major/Superior spellcraft, healing, and drains; tuned Blood Distillation to +7 Ancient XP for -10/-12 Discipline XP; rebalanced Lifeforce condensation and splitting: Minor Condense 1 XP, Major Split 1 XP, Major Condense 2 XP, Superior Split 2 XP; repaired legacy Tier II checks locking Acolytes and Archmages out of encounters, interpersonal events, and alerts).
 - v1.20.40: Add Blood Runes and five Galdrastafir staves
 - v1.20.39: Blood Knight becomes full peer lifestyle to Blood Mage
 - v1.20.38: Healing alerts in Current Situation

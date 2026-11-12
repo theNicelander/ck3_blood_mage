@@ -22,7 +22,7 @@
 				bm_has_any_discipline_track_xp_trigger = { VALUE = 10 }
 			}
 			trigger_else = {
-				bm_has_any_discipline_track_xp_trigger = { VALUE = 15 }
+				bm_has_any_discipline_track_xp_trigger = { VALUE = 12 }
 			}
 		}
 		has_character_modifier = lifeforce_modifier_minor
@@ -70,7 +70,7 @@
 						bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE = 10 }
 					}
 					trigger_else = {
-						bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE = 15 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE = 12 }
 					}
 				}
 			}
@@ -94,7 +94,7 @@
 						bm_has_track_xp_any_tier_trigger = { TRACK = benediction VALUE = 10 }
 					}
 					trigger_else = {
-						bm_has_track_xp_any_tier_trigger = { TRACK = benediction VALUE = 15 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = benediction VALUE = 12 }
 					}
 				}
 			}
@@ -118,7 +118,7 @@
 						bm_has_track_xp_any_tier_trigger = { TRACK = bloodline VALUE = 10 }
 					}
 					trigger_else = {
-						bm_has_track_xp_any_tier_trigger = { TRACK = bloodline VALUE = 15 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = bloodline VALUE = 12 }
 					}
 				}
 			}
@@ -142,7 +142,7 @@
 						bm_has_track_xp_any_tier_trigger = { TRACK = hematurgy VALUE = 10 }
 					}
 					trigger_else = {
-						bm_has_track_xp_any_tier_trigger = { TRACK = hematurgy VALUE = 15 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = hematurgy VALUE = 12 }
 					}
 				}
 			}
@@ -166,7 +166,7 @@
 						bm_has_track_xp_any_tier_trigger = { TRACK = enlightenment VALUE = 10 }
 					}
 					trigger_else = {
-						bm_has_track_xp_any_tier_trigger = { TRACK = enlightenment VALUE = 15 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = enlightenment VALUE = 12 }
 					}
 				}
 			}
@@ -195,12 +195,12 @@
 				else = {
 					bm_add_blood_mage_xp_effect = {
 						TRACK = bloodlust
-						XP = -15
+						XP = -12
 					}
 				}
 				bm_add_blood_mage_xp_effect = {
 					TRACK = ancient
-					XP = 5
+					XP = 7
 				}
 				hidden_effect = {
 					bm_recount_lifeforce_stacks_effect = yes
@@ -224,12 +224,12 @@
 				else = {
 					bm_add_blood_mage_xp_effect = {
 						TRACK = benediction
-						XP = -15
+						XP = -12
 					}
 				}
 				bm_add_blood_mage_xp_effect = {
 					TRACK = ancient
-					XP = 5
+					XP = 7
 				}
 				hidden_effect = {
 					bm_recount_lifeforce_stacks_effect = yes
@@ -253,12 +253,12 @@
 				else = {
 					bm_add_blood_mage_xp_effect = {
 						TRACK = bloodline
-						XP = -15
+						XP = -12
 					}
 				}
 				bm_add_blood_mage_xp_effect = {
 					TRACK = ancient
-					XP = 5
+					XP = 7
 				}
 				hidden_effect = {
 					bm_recount_lifeforce_stacks_effect = yes
@@ -282,12 +282,12 @@
 				else = {
 					bm_add_blood_mage_xp_effect = {
 						TRACK = hematurgy
-						XP = -15
+						XP = -12
 					}
 				}
 				bm_add_blood_mage_xp_effect = {
 					TRACK = ancient
-					XP = 5
+					XP = 7
 				}
 				hidden_effect = {
 					bm_recount_lifeforce_stacks_effect = yes
@@ -311,12 +311,12 @@
 				else = {
 					bm_add_blood_mage_xp_effect = {
 						TRACK = enlightenment
-						XP = -15
+						XP = -12
 					}
 				}
 				bm_add_blood_mage_xp_effect = {
 					TRACK = ancient
-					XP = 5
+					XP = 7
 				}
 				hidden_effect = {
 					bm_recount_lifeforce_stacks_effect = yes
