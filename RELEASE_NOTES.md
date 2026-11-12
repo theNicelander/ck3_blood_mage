@@ -85,7 +85,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 
 ## Blóðtrú Religion
 
-- Three reformed mainline faiths: **Blóðtrú** (European), **Ketsudō** (Japanese), and **Xuédào** (Chinese), organized by default to remove Feudal/Clan vassal penalties and enable Holy Wars. Three unreformed ancestral counterparts (**Old Blóðtrú**, **Old Ketsudō**, **Old Xuédào**) available at character creation or via conversion decision for tribal raiders and manual reformation roleplay.
+- Three regional blood faiths: **Blóðtrú** (European), **Ketsudō** (Japanese), and **Xuédào** (Chinese), organized by default to remove Feudal/Clan vassal penalties and enable Holy Wars. Each faith cleanly nests its organized mainline rite alongside its ancestral unreformed variant rite (**Old Blóðtrú**, **Old Ketsudō**, **Old Xuédào**) in a hierarchical rite tree modeled on Catholicism, available via conversion decision for tribal raiders and manual reformation roleplay.
 - Ancestor Worship tenet earns piety, renown and defence; Mendicant Preaching replaces Ritual Celebrations.
 - All 58 Blóðtrú, 27 Ketsudō and 32 Xuédào holy sites are now Eminent Holy Sites (up to 80 active), granting smaller stacked global faith bonuses alongside local county holder modifiers.
 - Reformation repair decision resolves holy-site locks when creating custom faiths.
@@ -153,6 +153,8 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 ---
 
 ## Version history
+
+- v1.20.81: Reorganize Blóðtrú faiths into a hierarchical Catholicism-style tree: 3 regional faiths (Blóðtrú, Ketsudō, Xuédào) each nesting their organized mainline rite and unreformed ancestral rite; Blood Sparring Ring Blood Mage knight requirement; simplified Empower Dynasty Bloodline plain-text tooltips; replace Warband covenant army movement speed with knight limit (+1/2/3); fix Blades on Lonely Road requirement tooltips; recalibrate Blood Mage XP progression toward ~100-year Archmage target; Blood Power track milestone symmetry.
 
 - v1.20.80: Mainline blood faiths (Blóðtrú, Ketsudō, Xuédào) organized/reformed by default; introduce explicit unreformed variants (Old Blóðtrú, Old Ketsudō, Old Xuédào) with 1:1 mainline rites and conversion decision sub-options; dedicated Transmute Lifeforce decision and event tree consolidating all 9 specialized reservoir transmutations (Mojo, Fury, Focus: 25 Piety Minor, 50 Piety Major, 25 Piety reclaim) without cooldowns while keeping tier condensation and splitting in their respective main grimoires.
 - v1.20.79: Comprehensive Blood Mage lifestyle trait rebalance across all 3 tiers (Acolyte, Mage, Archmage) to standardized targets at 100 XP: Army Damage (15/30/50%), Army Maintenance (-15/-30/-50%), General Opinion (+10/+20/+30), Capital Development Growth (+0.25/+0.50/+1.00), Devotion Impact (+25/+50/+100%), Flat Piety (+2/+5/+10/mo), Piety % (+30/+60/+100%), Dynasty Renown (+1/+2/+3/mo), Life Expectancy (+50/+100/+200 years), Hostile/Personal Scheme Potential (15/30/50%), and removed Knight Effectiveness per Learning; apply supernatural hair and eye appearance game rules across all tiers.

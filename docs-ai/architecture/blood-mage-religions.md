@@ -4,21 +4,18 @@ Living technical specification for `rf_blodtru` religion family, cultural blood 
 
 ## Overview
 
-Spiritual framework in `common/religion/`. Religious family `rf_blodtru` and religion `blodtru_religion` with 3 regional reformed faiths (`blodtru_faith`, `ketsudo_faith`, `xuedao_faith`) and 3 ancestral unreformed variants (`old_blodtru_faith`, `old_ketsudo_faith`, `old_xuedao_faith`), bound 1:1 to mainline rites (`bm_rite_types.txt`).
+Spiritual framework in `common/religion/`. Religious family `rf_blodtru` and religion `blodtru_religion` with 3 regional faiths (`blodtru_faith`, `ketsudo_faith`, `xuedao_faith`). Each faith nests two rites in `common/religion/rite_types/bm_rite_types.txt`: a mainline organized rite (`<faith>`) and an ancestral unreformed rite (`old_<faith>`), mirroring the hierarchical structure of Catholicism's rites.
 - **Identity Doctrine:** Hidden doctrine `bm_blodtru_identity_doctrine` sets parameter `blood_magic_cult_faith = yes`, checked by `bm_is_blood_cult_faith_trigger`. Allows third-party / reformed faiths to integrate with blood magic mechanics.
 - **Core Tenets:** `tenet_ancestor_worship` (family opinion, prestige on birth/marriage), `tenet_mendicant_preachers` (travel speed, conversion), `tenet_literalism` (learning skill, scholarship).
-- **Reformed Mainline Status:** Mainline faiths are Organized/Reformed by default, removing the `-20` Feudal/Clan vassal penalty and unlocking Holy Wars. The Old variants retain `unreformed_faith_doctrine` for tribal raiding, pagan defensive attrition, and manual reformation roleplay.
+- **Reformed Mainline Status:** Mainline rites are Organized/Reformed by default, removing the `-20` Feudal/Clan vassal penalty and unlocking Holy Wars. The Old rite variants retain `unreformed_faith_doctrine` for tribal raiding, pagan defensive attrition, and manual reformation roleplay.
 
-## Faith Structure, Mainline Rites & Holy Sites
+## Faith Structure, Rites & Holy Sites
 
-| Faith Key | Status | Rite Key | Cultural Sphere (`bm_faith_conversion.0001` / `.0002`) | Eminent Holy Sites (`eminent_holy_sites`) | Regular Holy Sites (`holy_sites`) |
+| Faith Key | Status | Rites Nested Under Faith | Cultural Sphere (`bm_faith_conversion.0001` / `.0002`) | Eminent Holy Sites (`eminent_holy_sites`) | Regular Holy Sites (`holy_sites`) |
 | --- | --- | --- | --- | --- | --- |
-| **Blóðtrú** (`blodtru_faith`) | Reformed | `blodtru_faith` | Default / European / Atlantic / Global fallback | **58 Sites:** All European capitals and landmarks (`talknafjordur`, `reykjavik`, `london`, `madrid`, `oslo`, `paris`, `berlin`, `rome`, `constantinople`, `olympus`, `kiev`, `athens`, `tenerife`, `amsterdam`, `vienna`, `stonehenge`, `isle_of_man`, etc.) | None (all holy sites are eminent) |
-| **Old Blóðtrú** (`old_blodtru_faith`) | Unreformed | `old_blodtru_faith` | Ancestral European / Tribal raider variant | **58 Sites:** Identical to Blóðtrú | None (all holy sites are eminent) |
-| **Ketsudō** (`ketsudo_faith`) | Reformed | `ketsudo_faith` | Japonic, Korean, Mongolic, Tungusic | **27 Sites:** `tsushima`, `yamashiro`, `kamakura`, `mount_fuji`, `mount_aso`, `mount_osore`, `gyeongju`, `edo`, `hakodate`, `mount_baekdu`, `gaegyeong`, `hanyang`, etc. | None (all holy sites are eminent) |
-| **Old Ketsudō** (`old_ketsudo_faith`) | Unreformed | `old_ketsudo_faith` | Ancestral Japonic/Korean variant | **27 Sites:** Identical to Ketsudō | None (all holy sites are eminent) |
-| **Xuédào** (`xuedao_faith`) | Reformed | `xuedao_faith` | Chinese, Qiangic, Tai, Viet, Tibetan | **32 Sites:** `changan`, `luoyang`, `beijing`, `hangzhou`, `chengdu`, `guangzhou`, `taishan`, `gyeongju`, `dunhuang`, Sacred Five Mountains, Four Buddhist/Daoist Peaks, `nanjing`, `lhasa`, etc. | None (all holy sites are eminent) |
-| **Old Xuédào** (`old_xuedao_faith`) | Unreformed | `old_xuedao_faith` | Ancestral Sinitic/Tibetan variant | **32 Sites:** Identical to Xuédào | None (all holy sites are eminent) |
+| **Blóðtrú** (`blodtru_faith`) | Reformed (Main) | `blodtru_faith` (Reformed mainline)<br>`old_blodtru_faith` (Unreformed ancestral) | Default / European / Atlantic / Global fallback | **58 Sites:** All European capitals and landmarks (`talknafjordur`, `reykjavik`, `london`, `madrid`, `oslo`, `paris`, `berlin`, `rome`, `constantinople`, `olympus`, `kiev`, `athens`, `tenerife`, `amsterdam`, `vienna`, `stonehenge`, `isle_of_man`, etc.) | None (all holy sites are eminent) |
+| **Ketsudō** (`ketsudo_faith`) | Reformed (Main) | `ketsudo_faith` (Reformed mainline)<br>`old_ketsudo_faith` (Unreformed ancestral) | Japonic, Korean, Mongolic, Tungusic | **27 Sites:** `tsushima`, `yamashiro`, `kamakura`, `mount_fuji`, `mount_aso`, `mount_osore`, `gyeongju`, `edo`, `hakodate`, `mount_baekdu`, `gaegyeong`, `hanyang`, etc. | None (all holy sites are eminent) |
+| **Xuédào** (`xuedao_faith`) | Reformed (Main) | `xuedao_faith` (Reformed mainline)<br>`old_xuedao_faith` (Unreformed ancestral) | Chinese, Qiangic, Tai, Viet, Tibetan | **32 Sites:** `changan`, `luoyang`, `beijing`, `hangzhou`, `chengdu`, `guangzhou`, `taishan`, `gyeongju`, `dunhuang`, Sacred Five Mountains, Four Buddhist/Daoist Peaks, `nanjing`, `lhasa`, etc. | None (all holy sites are eminent) |
 
 
 ### Holy Site Modifier Architecture (CK3 1.20)
