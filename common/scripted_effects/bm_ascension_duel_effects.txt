@@ -105,17 +105,12 @@ bm_copy_character_mirror_traits_effect = {
 	if = { limit = { root = { has_trait = pure_blooded } } add_trait = pure_blooded }
 	if = { limit = { root = { has_trait = clubfooted } } add_trait = clubfooted }
 	if = { limit = { root = { has_trait = hunchbacked } } add_trait = hunchbacked }
-	if = { limit = { root = { has_trait = harelip } } add_trait = harelip }
 	if = { limit = { root = { has_trait = stuttering } } add_trait = stuttering }
-	if = { limit = { root = { has_trait = lisp } } add_trait = lisp }
+	if = { limit = { root = { has_trait = lisping } } add_trait = lisping }
 
 	# Combat / Prowess lifestyle traits
-	if = { limit = { root = { has_trait = blademaster_1 } } add_trait = blademaster_1 }
-	if = { limit = { root = { has_trait = blademaster_2 } } add_trait = blademaster_2 }
-	if = { limit = { root = { has_trait = blademaster_3 } } add_trait = blademaster_3 }
-	if = { limit = { root = { has_trait = hunter_1 } } add_trait = hunter_1 }
-	if = { limit = { root = { has_trait = hunter_2 } } add_trait = hunter_2 }
-	if = { limit = { root = { has_trait = hunter_3 } } add_trait = hunter_3 }
+	if = { limit = { root = { has_trait = lifestyle_blademaster } } add_trait = lifestyle_blademaster }
+	if = { limit = { root = { has_trait = lifestyle_hunter } } add_trait = lifestyle_hunter }
 	if = { limit = { root = { has_trait = berserker } } add_trait = berserker }
 	if = { limit = { root = { has_trait = viking } } add_trait = viking }
 	if = { limit = { root = { has_trait = varangian } } add_trait = varangian }

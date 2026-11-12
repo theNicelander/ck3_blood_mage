@@ -29,3 +29,5 @@ Living list: when you resolve a new error, add one line: signature → cause →
 | `remove_trait effect [ target: Not found in database 14CTraitDatabase ]` | Trait doesn't exist in vanilla `00_traits.txt`. (e.g. `infertile` instead of `sterile`). |
 | `Scoped object is not valid. Type: (no character)` in barony loop | Empty/unbuilt barony has no holder. Guard with `barony ?= { holder ?= { ... } }`. |
 | `Gfx culture X in Y doesn't match existing sequence` | Multi-entry `*_gfx` lists must match vanilla order or inherit a standard sequence (`norse`). |
+| `Data error in loc string ... [ROOT.Char...]` in decision `debug_log` | In decision effect scope, `ROOT` is already a Character. Property `.Char` fails; use `[root.GetShortUINameNoTooltip] (ID:[root.GetID])`. |
+| `Cannot find harelip/lisp/blademaster_1/hunter_1 in trait database` | CK3 vanilla naming: `lisping` (not `lisp`), `harelip` does not exist, and blademaster/hunter are tracked traits (`lifestyle_blademaster`, `lifestyle_hunter`). |

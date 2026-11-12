@@ -61,10 +61,11 @@ CK3 script fails silently. Follow patterns in this repo and vanilla 1.20 (`/User
 - Switch or create branches unless told. Stay on the current branch.
 - Blanket stage (`git add .`, `-A`, `commit -a`): other agents work in parallel; stage, commit and push only files you changed.
 - Leave completed work uncommitted in working tree: parallel agents need committed checkpoints.
+- Merge a PR unless explicitly asked by the user. Stop after PR creation; merging requires explicit user instruction.
 - Execute plans on unverified assumptions.
 
 ## Workflow
 
 1. `git branch --show-current`; read `docs-ai/branch-context/<branch>.md` (create if missing), matching rule(s) and architecture doc.
 2. Plan smallest change; grep existing identifiers; use the matching skill.
-3. Docs, notes, check, commit, push: skill `manage-pr`. PR title `<branch>: <outcome title>`. Squash merge PR via GitHub (`gh pr merge --squash`), never locally; keeps `(#<PR>)`.
+3. Docs, notes, check, commit, push, create PR: skill `manage-pr`. PR title `<branch>: <outcome title>`. Stop after PR creation; when the user explicitly instructs to merge, squash merge PR via GitHub (`gh pr merge --squash`), never locally; keeps `(#<PR>)`.
