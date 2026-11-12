@@ -101,13 +101,13 @@ bm_transmute_lifeforce.0002 = {
 	option = {
 		name = bm_transmute_lifeforce.0002.mojo
 		trigger = {
-			piety >= 100
+			piety >= 50
 			has_character_modifier = lifeforce_modifier_major
 		}
 		show_as_unavailable = {
 			always = yes
 		}
-		add_piety = -100
+		add_piety = -50
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_channel_mojo_major_toast
@@ -137,13 +137,13 @@ bm_transmute_lifeforce.0002 = {
 	option = {
 		name = bm_transmute_lifeforce.0002.fury
 		trigger = {
-			piety >= 100
+			piety >= 50
 			has_character_modifier = lifeforce_modifier_major
 		}
 		show_as_unavailable = {
 			always = yes
 		}
-		add_piety = -100
+		add_piety = -50
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_channel_fury_major_toast
@@ -173,13 +173,13 @@ bm_transmute_lifeforce.0002 = {
 	option = {
 		name = bm_transmute_lifeforce.0002.focus
 		trigger = {
-			piety >= 100
+			piety >= 50
 			has_character_modifier = lifeforce_modifier_major
 		}
 		show_as_unavailable = {
 			always = yes
 		}
-		add_piety = -100
+		add_piety = -50
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_channel_focus_major_toast
@@ -234,13 +234,13 @@ bm_transmute_lifeforce.0003 = {
 	option = {
 		name = bm_transmute_lifeforce.0003.mojo
 		trigger = {
-			piety >= 50
+			piety >= 25
 			has_character_modifier = lifeforce_modifier_minor
 		}
 		show_as_unavailable = {
 			always = yes
 		}
-		add_piety = -50
+		add_piety = -25
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_channel_mojo_minor_toast
@@ -268,13 +268,13 @@ bm_transmute_lifeforce.0003 = {
 	option = {
 		name = bm_transmute_lifeforce.0003.fury
 		trigger = {
-			piety >= 50
+			piety >= 25
 			has_character_modifier = lifeforce_modifier_minor
 		}
 		show_as_unavailable = {
 			always = yes
 		}
-		add_piety = -50
+		add_piety = -25
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_channel_fury_minor_toast
@@ -302,13 +302,13 @@ bm_transmute_lifeforce.0003 = {
 	option = {
 		name = bm_transmute_lifeforce.0003.focus
 		trigger = {
-			piety >= 50
+			piety >= 25
 			has_character_modifier = lifeforce_modifier_minor
 		}
 		show_as_unavailable = {
 			always = yes
 		}
-		add_piety = -50
+		add_piety = -25
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_channel_focus_minor_toast
@@ -361,13 +361,13 @@ bm_transmute_lifeforce.0004 = {
 	option = {
 		name = bm_transmute_lifeforce.0004.mojo
 		trigger = {
-			piety >= 75
+			piety >= 25
 			has_character_modifier = lifeforce_modifier_mojo
 		}
 		show_as_unavailable = {
 			always = yes
 		}
-		add_piety = -75
+		add_piety = -25
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_reclaim_mojo_toast
@@ -395,13 +395,13 @@ bm_transmute_lifeforce.0004 = {
 	option = {
 		name = bm_transmute_lifeforce.0004.fury
 		trigger = {
-			piety >= 75
+			piety >= 25
 			has_character_modifier = lifeforce_modifier_fury
 		}
 		show_as_unavailable = {
 			always = yes
 		}
-		add_piety = -75
+		add_piety = -25
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_reclaim_fury_toast
@@ -429,13 +429,13 @@ bm_transmute_lifeforce.0004 = {
 	option = {
 		name = bm_transmute_lifeforce.0004.focus
 		trigger = {
-			piety >= 75
+			piety >= 25
 			has_character_modifier = lifeforce_modifier_focus
 		}
 		show_as_unavailable = {
 			always = yes
 		}
-		add_piety = -75
+		add_piety = -25
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_reclaim_focus_toast

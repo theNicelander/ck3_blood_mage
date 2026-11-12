@@ -63,15 +63,15 @@ Triggered on `on_combat_end_winner` (`bm_on_combat_end_winner`) for surviving si
 | **Split Superior Lifeforce (`bm_superior_split`)** | Mage (`bm_cast_blood_magic_superior_decision`) | 350 Piety + 1 Superior Lifeforce, `piety_level >= 2`, 6-mo CD | **-1 Superior -> +2 Major** (no exhaustion debuff) | `+3` `ancient` |
 | **Split Major Lifeforce (`bm_major_split`)** | Mage (`bm_cast_blood_magic_major_decision`) | 150 Piety + 1 Major Lifeforce, 6-mo CD | **-1 Major -> +2 Minor** (no exhaustion debuff) | `+2` `ancient` |
 | **Childbirth Milestone (`bm_on_birth_bloodline_xp`)** | Mage only | Child born to blood mage parent | **+1 Major** per child born; burns 1 Mojo per parent | `+2` (`+4` inheriting; doubled by Superior Feingur) `bloodline`; `+3` per Mojo burned |
-| **Channel Minor into Mojo (`bm_minor_channel_mojo`)** | Mage (`bm_transmute_lifeforce_decision`) | 50 Piety + 1 Minor Lifeforce | **-1 Minor -> +1 Mojo** | `+1` `bloodline` |
-| **Channel Major into Mojo (`bm_major_channel_mojo`)** | Mage (`bm_transmute_lifeforce_decision`) | 100 Piety + 1 Major Lifeforce | **-1 Major -> +3 Mojo** | `+2` `bloodline` |
-| **Reclaim Minor from Mojo (`bm_minor_reclaim_mojo`)** | Mage (`bm_transmute_lifeforce_decision`) | 75 Piety + 1 Mojo Lifeforce | **-1 Mojo -> +1 Minor** | `+1` `bloodline` |
-| **Channel Minor into Fury (`bm_minor_channel_fury`)** | Mage (`bm_transmute_lifeforce_decision`) | 50 Piety + 1 Minor Lifeforce | **-1 Minor -> +1 Fury** | `+1` `bloodlust` |
-| **Channel Major into Fury (`bm_major_channel_fury`)** | Mage (`bm_transmute_lifeforce_decision`) | 100 Piety + 1 Major Lifeforce | **-1 Major -> +3 Fury** | `+2` `bloodlust` |
-| **Reclaim Minor from Fury (`bm_minor_reclaim_fury`)** | Mage (`bm_transmute_lifeforce_decision`) | 75 Piety + 1 Fury Lifeforce | **-1 Fury -> +1 Minor** | `+1` `bloodlust` |
-| **Channel Minor into Focus (`bm_minor_channel_focus`)** | Mage (`bm_transmute_lifeforce_decision`) | 50 Piety + 1 Minor Lifeforce | **-1 Minor -> +1 Focus** | `+1` `enlightenment` |
-| **Channel Major into Focus (`bm_major_channel_focus`)** | Mage (`bm_transmute_lifeforce_decision`) | 100 Piety + 1 Major Lifeforce | **-1 Major -> +3 Focus** | `+2` `enlightenment` |
-| **Reclaim Minor from Focus (`bm_minor_reclaim_focus`)** | Mage (`bm_transmute_lifeforce_decision`) | 75 Piety + 1 Focus Lifeforce | **-1 Focus -> +1 Minor** | `+1` `enlightenment` |
+| **Channel Minor into Mojo (`bm_minor_channel_mojo`)** | Mage (`bm_transmute_lifeforce_decision`) | 25 Piety + 1 Minor Lifeforce | **-1 Minor -> +1 Mojo** | `+1` `bloodline` |
+| **Channel Major into Mojo (`bm_major_channel_mojo`)** | Mage (`bm_transmute_lifeforce_decision`) | 50 Piety + 1 Major Lifeforce | **-1 Major -> +3 Mojo** | `+2` `bloodline` |
+| **Reclaim Minor from Mojo (`bm_minor_reclaim_mojo`)** | Mage (`bm_transmute_lifeforce_decision`) | 25 Piety + 1 Mojo Lifeforce | **-1 Mojo -> +1 Minor** | `+1` `bloodline` |
+| **Channel Minor into Fury (`bm_minor_channel_fury`)** | Mage (`bm_transmute_lifeforce_decision`) | 25 Piety + 1 Minor Lifeforce | **-1 Minor -> +1 Fury** | `+1` `bloodlust` |
+| **Channel Major into Fury (`bm_major_channel_fury`)** | Mage (`bm_transmute_lifeforce_decision`) | 50 Piety + 1 Major Lifeforce | **-1 Major -> +3 Fury** | `+2` `bloodlust` |
+| **Reclaim Minor from Fury (`bm_minor_reclaim_fury`)** | Mage (`bm_transmute_lifeforce_decision`) | 25 Piety + 1 Fury Lifeforce | **-1 Fury -> +1 Minor** | `+1` `bloodlust` |
+| **Channel Minor into Focus (`bm_minor_channel_focus`)** | Mage (`bm_transmute_lifeforce_decision`) | 25 Piety + 1 Minor Lifeforce | **-1 Minor -> +1 Focus** | `+1` `enlightenment` |
+| **Channel Major into Focus (`bm_major_channel_focus`)** | Mage (`bm_transmute_lifeforce_decision`) | 50 Piety + 1 Major Lifeforce | **-1 Major -> +3 Focus** | `+2` `enlightenment` |
+| **Reclaim Minor from Focus (`bm_minor_reclaim_focus`)** | Mage (`bm_transmute_lifeforce_decision`) | 25 Piety + 1 Focus Lifeforce | **-1 Focus -> +1 Minor** | `+1` `enlightenment` |
 | **Go on a Blood Hunt (`seek_power_decision`)** | Mage | Free, 1-yr CD (halved to 6 months by Superior Vegvísir) | **+1 Minor**, **+1 Major**, or **+1 Major + 25% +1 Superior** (Single Combat battlefield duel against escort knight or 20+ prowess traveler) | `+1` to `+5` `bloodlust` / `+1` to `+5` `hematurgy` / `+1` `bloodline` / `+2` `ancient` / `+1`–`+2` `enlightenment` / `+1` `benediction` |
 | **Cast Minor Blood Magic Rites (`bm_cast_blood_magic_minor_decision`)** | Mage | `0–75` Piety + 1 Minor Lifeforce | **-1 Minor** (+ 1-yr Minor exhaustion) | `+1` `enlightenment` / `+2` `bloodline` / `+4` `ancient` |
 | **Cast Major Blood Magic Rites (`bm_cast_blood_magic_major_decision`)** | Mage | `75–600` Piety + 1 Major Lifeforce | **-1 Major** (+ 3-yr Major exhaustion) | `+3` to `+5` track XP (`+10` Power XP) |
