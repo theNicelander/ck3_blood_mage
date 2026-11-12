@@ -94,9 +94,6 @@ bm_ritual_spar_events.0001 = {
 		add_character_modifier = {
 			modifier = lifeforce_modifier_minor
 		}
-		hidden_effect = {
-			bm_recount_lifeforce_stacks_effect = yes
-		}
 		ai_chance = {
 			base = 0
 		}
@@ -192,9 +189,6 @@ bm_ritual_spar_events.0002 = {
 						years = 5
 					}
 				}
-				hidden_effect = {
-					bm_recount_lifeforce_stacks_effect = yes
-				}
 			}
 		}
 		else = {
@@ -256,12 +250,6 @@ bm_ritual_spar_events.0002 = {
 						modifier = magic_opinion_positive
 						opinion = 15
 					}
-					hidden_effect = {
-						bm_recount_lifeforce_stacks_effect = yes
-					}
-				}
-				hidden_effect = {
-					bm_recount_lifeforce_stacks_effect = yes
 				}
 			}
 		}
@@ -295,9 +283,6 @@ bm_ritual_spar_events.0003 = {
 			left_icon = root
 			add_character_modifier = {
 				modifier = lifeforce_modifier_minor
-			}
-			hidden_effect = {
-				bm_recount_lifeforce_stacks_effect = yes
 			}
 		}
 	}

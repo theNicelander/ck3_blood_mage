@@ -369,9 +369,6 @@
 							}
 						}
 					}
-					hidden_effect = {
-						bm_recount_lifeforce_stacks_effect = yes
-					}
 				}
 			}
 		}
@@ -468,10 +465,6 @@
 							}
 						}
 					}
-					hidden_effect = {
-						bm_recount_lifeforce_stacks_effect = yes
-						scope:recipient = { bm_recount_lifeforce_stacks_effect = yes }
-					}
 				}
 			}
 		}
@@ -541,9 +534,6 @@
 							}
 						}
 					}
-					hidden_effect = {
-						bm_recount_lifeforce_stacks_effect = yes
-					}
 				}
 			}
 		}
@@ -607,9 +597,6 @@
 							opinion = 30
 						}
 					}
-					hidden_effect = {
-						bm_recount_lifeforce_stacks_effect = yes
-					}
 				}
 			}
 		}
@@ -662,9 +649,6 @@
 					if = {
 						limit = { is_blood_mage_any_tier_trigger = yes }
 						add_xp_bm_dynamic = { TRACK = bloodline XP = 2 }
-					}
-					hidden_effect = {
-						bm_recount_lifeforce_stacks_effect = yes
 					}
 				}
 			}
@@ -738,9 +722,6 @@
 						scope:recipient = {
 							bm_upgrade_blood_rune_to_superior_effect = yes
 						}
-					}
-					hidden_effect = {
-						bm_recount_lifeforce_stacks_effect = yes
 					}
 				}
 			}

@@ -22,9 +22,6 @@ bm_upgrade_house_covenant_effect = {
 				TRACK = bloodline
 				XP = 5
 			}
-			hidden_effect = {
-				bm_recount_lifeforce_stacks_effect = yes
-			}
 		}
 	}
 	# Tier II -> Tier III
@@ -46,9 +43,6 @@ bm_upgrade_house_covenant_effect = {
 				TRACK = bloodline
 				XP = 8
 			}
-			hidden_effect = {
-				bm_recount_lifeforce_stacks_effect = yes
-			}
 		}
 	}
 	# Base -> Tier I
@@ -65,9 +59,6 @@ bm_upgrade_house_covenant_effect = {
 			add_xp_bm_dynamic = {
 				TRACK = bloodline
 				XP = 3
-			}
-			hidden_effect = {
-				bm_recount_lifeforce_stacks_effect = yes
 			}
 		}
 	}

@@ -31,9 +31,6 @@
 	effect = {
 		debug_log = "BloodMageDecision: bm_ritual_spar_decision | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
 		remove_character_modifier = lifeforce_modifier_minor
-		hidden_effect = {
-			bm_recount_lifeforce_stacks_effect = yes
-		}
 		# Sample up to 3 candidates proportionally weighted by prowess
 		random_knight = {
 			limit = {

@@ -75,9 +75,6 @@ bm_interpersonal_events.0001 = {
 				TRACK = benediction
 				XP = 1
 			}
-			hidden_effect = {
-				bm_recount_lifeforce_stacks_effect = yes
-			}
 		}
 	}
 
@@ -104,9 +101,6 @@ bm_interpersonal_events.0001 = {
 			add_blood_mage_xp = {
 				TRACK = hematurgy
 				XP = 1
-			}
-			hidden_effect = {
-				bm_recount_lifeforce_stacks_effect = yes
 			}
 		}
 	}
@@ -135,9 +129,6 @@ bm_interpersonal_events.0001 = {
 			add_blood_mage_xp = {
 				TRACK = bloodline
 				XP = 1
-			}
-			hidden_effect = {
-				bm_recount_lifeforce_stacks_effect = yes
 			}
 		}
 	}
@@ -235,9 +226,6 @@ bm_interpersonal_events.0002 = {
 				TRACK = bloodline
 				XP = 1
 			}
-			hidden_effect = {
-				bm_recount_lifeforce_stacks_effect = yes
-			}
 		}
 	}
 
@@ -265,9 +253,6 @@ bm_interpersonal_events.0002 = {
 			add_blood_mage_xp = {
 				TRACK = bloodline
 				XP = 2
-			}
-			hidden_effect = {
-				bm_recount_lifeforce_stacks_effect = yes
 			}
 		}
 	}
@@ -342,12 +327,6 @@ bm_interpersonal_events.0003 = {
 				TRACK = bloodlust
 				XP = 1
 			}
-			hidden_effect = {
-				bm_recount_lifeforce_stacks_effect = yes
-				scope:knight = {
-					bm_recount_lifeforce_stacks_effect = yes
-				}
-			}
 		}
 	}
 
@@ -369,9 +348,6 @@ bm_interpersonal_events.0003 = {
 					modifier = magic_opinion_negative
 					opinion = -15
 				}
-			}
-			hidden_effect = {
-				bm_recount_lifeforce_stacks_effect = yes
 			}
 		}
 	}
@@ -509,9 +485,6 @@ bm_interpersonal_events.0004 = {
 					years = 5
 				}
 			}
-			hidden_effect = {
-				bm_recount_lifeforce_stacks_effect = yes
-			}
 		}
 	}
 }
@@ -576,12 +549,6 @@ bm_interpersonal_events.0005 = {
 						TRACK = hematurgy
 						XP = 1
 					}
-					scope:courtier = {
-						add_character_modifier = { modifier = lifedrained_modifier }
-					}
-					hidden_effect = {
-						bm_recount_lifeforce_stacks_effect = yes
-					}
 				}
 			}
 			50 = {
@@ -636,12 +603,6 @@ bm_interpersonal_events.0005 = {
 			add_blood_mage_xp = {
 				TRACK = benediction
 				XP = 1
-			}
-			hidden_effect = {
-				bm_recount_lifeforce_stacks_effect = yes
-				scope:courtier = {
-					bm_recount_lifeforce_stacks_effect = yes
-				}
 			}
 		}
 	}

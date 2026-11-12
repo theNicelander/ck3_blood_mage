@@ -100,7 +100,6 @@ bm_reshape_personality.0001 = {
 			always = yes
 		}
 		remove_character_modifier = lifeforce_modifier_major
-		hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
 		duel = {
 			skill = learning
 			target = scope:recipient
@@ -239,7 +238,6 @@ bm_reshape_personality.0002 = {
 		trigger = { exists = scope:actor_ptrait_1 }
 		scope:actor_ptrait_1 = { save_scope_as = trait_to_add }
 		remove_character_modifier = lifeforce_modifier_major
-		hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
 		duel = {
 			skill = learning
 			target = scope:recipient
@@ -311,7 +309,6 @@ bm_reshape_personality.0002 = {
 		trigger = { exists = scope:actor_ptrait_2 }
 		scope:actor_ptrait_2 = { save_scope_as = trait_to_add }
 		remove_character_modifier = lifeforce_modifier_major
-		hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
 		duel = {
 			skill = learning
 			target = scope:recipient
@@ -383,7 +380,6 @@ bm_reshape_personality.0002 = {
 		trigger = { exists = scope:actor_ptrait_3 }
 		scope:actor_ptrait_3 = { save_scope_as = trait_to_add }
 		remove_character_modifier = lifeforce_modifier_major
-		hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
 		duel = {
 			skill = learning
 			target = scope:recipient
@@ -455,7 +451,6 @@ bm_reshape_personality.0002 = {
 		trigger = { exists = scope:actor_ptrait_4 }
 		scope:actor_ptrait_4 = { save_scope_as = trait_to_add }
 		remove_character_modifier = lifeforce_modifier_major
-		hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }
 		duel = {
 			skill = learning
 			target = scope:recipient

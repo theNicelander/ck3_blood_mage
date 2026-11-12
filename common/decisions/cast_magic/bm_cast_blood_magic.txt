@@ -280,9 +280,6 @@
 					XP = 15
 				}
 				blood_magic_used_superior = yes
-				hidden_effect = {
-					bm_recount_lifeforce_stacks_effect = yes
-				}
 			}
 		}
 		else_if = {
@@ -299,7 +296,6 @@
 				years = 3
 			}
 			blood_magic_used_superior = yes
-			bm_recount_lifeforce_stacks_effect = yes
 			add_xp_bm_dynamic = {
 				TRACK = bloodline
 				XP = 8
@@ -324,9 +320,6 @@
 				add_xp_bm_dynamic = {
 					TRACK = ancient
 					XP = 2
-				}
-				hidden_effect = {
-					bm_recount_lifeforce_stacks_effect = yes
 				}
 			}
 		}
@@ -627,9 +620,6 @@ bm_cast_blood_magic_major_decision = {
 					TRACK = ancient
 					XP = 2
 				}
-				hidden_effect = {
-					bm_recount_lifeforce_stacks_effect = yes
-				}
 			}
 		}
 		else_if = {
@@ -650,9 +640,6 @@ bm_cast_blood_magic_major_decision = {
 				add_xp_bm_dynamic = {
 					TRACK = ancient
 					XP = 1
-				}
-				hidden_effect = {
-					bm_recount_lifeforce_stacks_effect = yes
 				}
 			}
 		}
@@ -680,9 +667,6 @@ bm_cast_blood_magic_major_decision = {
 					XP = 10
 				}
 				blood_magic_used_major = yes
-				hidden_effect = {
-					bm_recount_lifeforce_stacks_effect = yes
-				}
 			}
 		}
 		else_if = {
@@ -924,9 +908,6 @@ bm_cast_blood_magic_minor_decision = {
 				remove_trait = physique_bad_2
 				remove_trait = physique_bad_3
 				remove_trait = weak
-				hidden_effect = {
-					bm_recount_lifeforce_stacks_effect = yes
-				}
 			}
 		}
 		else_if = {
@@ -946,9 +927,6 @@ bm_cast_blood_magic_minor_decision = {
 				add_xp_bm_dynamic = {
 					TRACK = ancient
 					XP = 1
-				}
-				hidden_effect = {
-					bm_recount_lifeforce_stacks_effect = yes
 				}
 			}
 		}
@@ -972,9 +950,6 @@ bm_cast_blood_magic_minor_decision = {
 					XP = 6
 				}
 				blood_magic_used_minor = yes
-				hidden_effect = {
-					bm_recount_lifeforce_stacks_effect = yes
-				}
 			}
 		}
 		else = {
