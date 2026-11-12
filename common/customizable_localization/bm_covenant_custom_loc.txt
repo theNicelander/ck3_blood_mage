@@ -1,4 +1,4 @@
-﻿# Dynamic UI Labels and Status Headers for Empower Dynasty Bloodline Covenants
+﻿# Dynamic UI Labels and Next-Tier Tooltips for Empower Dynasty Bloodline Covenants
 
 # 1. Covenant of Presence
 BM_COVENANT_PRESENCE_BUTTON_LABEL = {
@@ -17,19 +17,19 @@ BM_COVENANT_PRESENCE_BUTTON_LABEL = {
 	}
 }
 
-BM_COVENANT_PRESENCE_STATUS_HEADER = {
+BM_COVENANT_PRESENCE_TOOLTIP = {
 	type = character
 	text = {
 		trigger = { house ?= { has_house_modifier = dynasty_blood_presence_modifier_2 } }
-		localization_key = bm_covenant_status_major_to_superior
+		localization_key = bm_covenant_presence_next_tier_3
 	}
 	text = {
 		trigger = { house ?= { has_house_modifier = dynasty_blood_presence_modifier_1 } }
-		localization_key = bm_covenant_status_minor_to_major
+		localization_key = bm_covenant_presence_next_tier_2
 	}
 	text = {
 		fallback = yes
-		localization_key = bm_covenant_status_none_to_minor
+		localization_key = bm_covenant_presence_next_tier_1
 	}
 }
 
@@ -50,19 +50,19 @@ BM_COVENANT_WARBAND_BUTTON_LABEL = {
 	}
 }
 
-BM_COVENANT_WARBAND_STATUS_HEADER = {
+BM_COVENANT_WARBAND_TOOLTIP = {
 	type = character
 	text = {
 		trigger = { house ?= { has_house_modifier = dynasty_blood_warband_modifier_2 } }
-		localization_key = bm_covenant_status_major_to_superior
+		localization_key = bm_covenant_warband_next_tier_3
 	}
 	text = {
 		trigger = { house ?= { has_house_modifier = dynasty_blood_warband_modifier_1 } }
-		localization_key = bm_covenant_status_minor_to_major
+		localization_key = bm_covenant_warband_next_tier_2
 	}
 	text = {
 		fallback = yes
-		localization_key = bm_covenant_status_none_to_minor
+		localization_key = bm_covenant_warband_next_tier_1
 	}
 }
 
@@ -83,19 +83,19 @@ BM_COVENANT_PROSPERITY_BUTTON_LABEL = {
 	}
 }
 
-BM_COVENANT_PROSPERITY_STATUS_HEADER = {
+BM_COVENANT_PROSPERITY_TOOLTIP = {
 	type = character
 	text = {
 		trigger = { house ?= { has_house_modifier = dynasty_blood_prosperity_modifier_2 } }
-		localization_key = bm_covenant_status_major_to_superior
+		localization_key = bm_covenant_prosperity_next_tier_3
 	}
 	text = {
 		trigger = { house ?= { has_house_modifier = dynasty_blood_prosperity_modifier_1 } }
-		localization_key = bm_covenant_status_minor_to_major
+		localization_key = bm_covenant_prosperity_next_tier_2
 	}
 	text = {
 		fallback = yes
-		localization_key = bm_covenant_status_none_to_minor
+		localization_key = bm_covenant_prosperity_next_tier_1
 	}
 }
 
@@ -116,19 +116,19 @@ BM_COVENANT_SHADOWS_BUTTON_LABEL = {
 	}
 }
 
-BM_COVENANT_SHADOWS_STATUS_HEADER = {
+BM_COVENANT_SHADOWS_TOOLTIP = {
 	type = character
 	text = {
 		trigger = { house ?= { has_house_modifier = dynasty_blood_shadows_modifier_2 } }
-		localization_key = bm_covenant_status_major_to_superior
+		localization_key = bm_covenant_shadows_next_tier_3
 	}
 	text = {
 		trigger = { house ?= { has_house_modifier = dynasty_blood_shadows_modifier_1 } }
-		localization_key = bm_covenant_status_minor_to_major
+		localization_key = bm_covenant_shadows_next_tier_2
 	}
 	text = {
 		fallback = yes
-		localization_key = bm_covenant_status_none_to_minor
+		localization_key = bm_covenant_shadows_next_tier_1
 	}
 }
 
@@ -149,19 +149,19 @@ BM_COVENANT_MASTERY_BUTTON_LABEL = {
 	}
 }
 
-BM_COVENANT_MASTERY_STATUS_HEADER = {
+BM_COVENANT_MASTERY_TOOLTIP = {
 	type = character
 	text = {
 		trigger = { house ?= { has_house_modifier = dynasty_blood_mastery_modifier_2 } }
-		localization_key = bm_covenant_status_major_to_superior
+		localization_key = bm_covenant_mastery_next_tier_3
 	}
 	text = {
 		trigger = { house ?= { has_house_modifier = dynasty_blood_mastery_modifier_1 } }
-		localization_key = bm_covenant_status_minor_to_major
+		localization_key = bm_covenant_mastery_next_tier_2
 	}
 	text = {
 		fallback = yes
-		localization_key = bm_covenant_status_none_to_minor
+		localization_key = bm_covenant_mastery_next_tier_1
 	}
 }
 
@@ -182,18 +182,18 @@ BM_COVENANT_LEGACY_BUTTON_LABEL = {
 	}
 }
 
-BM_COVENANT_LEGACY_STATUS_HEADER = {
+BM_COVENANT_LEGACY_TOOLTIP = {
 	type = character
 	text = {
 		trigger = { house ?= { has_house_modifier = dynasty_blood_legacy_modifier_2 } }
-		localization_key = bm_covenant_status_major_to_superior
+		localization_key = bm_covenant_legacy_next_tier_3
 	}
 	text = {
 		trigger = { house ?= { has_house_modifier = dynasty_blood_legacy_modifier_1 } }
-		localization_key = bm_covenant_status_minor_to_major
+		localization_key = bm_covenant_legacy_next_tier_2
 	}
 	text = {
 		fallback = yes
-		localization_key = bm_covenant_status_none_to_minor
+		localization_key = bm_covenant_legacy_next_tier_1
 	}
 }

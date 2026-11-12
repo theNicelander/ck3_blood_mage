@@ -422,6 +422,7 @@ seek_power.003 = {
         trigger = {
             custom_description = {
                 text = seek_power.003.c.learning_trigger_tt
+                subject = scope:recipient
                 learning > scope:recipient.learning
             }
         }
@@ -473,6 +474,7 @@ seek_power.003 = {
             exists = scope:escort_knight
             custom_description = {
                 text = seek_power.003.recruit_knight.prowess_trigger_tt
+                subject = scope:escort_knight
                 prowess > scope:escort_knight.prowess
             }
         }

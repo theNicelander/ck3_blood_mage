@@ -3,6 +3,7 @@
 bm_can_drain_traits_from_target_trigger = {
 	custom_description = {
 		text = bm_can_drain_traits_from_target_trigger_tt
+		subject = scope:recipient
 		OR = {
 			AND = {
 				NOT = { has_trait_rank = { trait = intellect_good rank >= 5 } }

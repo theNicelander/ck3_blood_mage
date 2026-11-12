@@ -62,7 +62,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 ## Blood Rites
 
 - **Bless Blood**: consecrate knights and kin (+2 Martial, +4 Prowess, +25% Knight Effectiveness for 10 years).
-- **Blood Sparring Ring** (yearly, 1 Minor Lifeforce): practice duels; winner gains 1 Major Lifeforce, both gain Blademaster XP.
+- **Blood Sparring Ring** (yearly, 1 Minor Lifeforce): practice duels against sworn Blood Mage knights; winner gains 1 Major Lifeforce, both gain Blademaster and Bloodlust XP.
 - **Cull Fallen Champion**: sacrifice broken or captured warriors for Major Lifeforce, with a chance of Superior.
 - **Anoint Champion / Anoint Heir**: permanent bonuses; anointed heirs awaken with a Lifeforce transfer on succession.
 - Overlapping blessing interactions merged into one 4-option Bless Blood; options hide once active.
@@ -192,6 +192,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 - v1.20.43: Staves moved to standalone Carve Galdrastafir decision
 - v1.20.42: Attune widget, rebalanced Manifest and Condense duels
 - v1.20.41: Manifest Lifeforce Piety popup; childbirth Major Lifeforce
+- v1.20.81: Blood Sparring Ring mage knight gate, simplified plain-text covenant tooltips, and Covenant of Warband knight limit (+1/+2/+3)
 - v1.20.40: Add Blood Runes and five Galdrastafir staves
 - v1.20.39: Blood Knight becomes full peer lifestyle to Blood Mage
 - v1.20.38: Healing alerts in Current Situation
