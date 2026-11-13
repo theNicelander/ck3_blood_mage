@@ -101,10 +101,7 @@ seek_power.002 = {
             title = seek_power.toast.stag
             left_icon = this
             add_character_modifier = { modifier = lifeforce_modifier_minor }
-            bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 1 }
-            hidden_effect = {
-                bm_recount_lifeforce_stacks_effect = yes
-            }
+            bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 2 }
         }
         ai_chance = { base = 50 }
     }
@@ -173,7 +170,7 @@ seek_power.003 = {
     option = {
         name = seek_power.003.knight
         trigger = {
-            has_trait = lifestyle_blood_mage
+            is_blood_mage_any_tier_trigger = yes
         }
         ai_chance = { base = 50 }
         duel = {
@@ -193,9 +190,6 @@ seek_power.003 = {
                     right_icon = scope:recipient
                     add_character_modifier = { modifier = lifeforce_modifier_major }
                     bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 3 }
-                    hidden_effect = {
-                        bm_recount_lifeforce_stacks_effect = yes
-                    }
                 }
             }
             35 = {
@@ -212,9 +206,6 @@ seek_power.003 = {
                     right_icon = scope:recipient
                     add_character_modifier = { modifier = lifeforce_modifier_minor }
                     bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 2 }
-                    hidden_effect = {
-                        bm_recount_lifeforce_stacks_effect = yes
-                    }
                 }
             }
             25 = {
@@ -258,7 +249,7 @@ seek_power.003 = {
     option = {
         name = seek_power.003.a
         trigger = {
-            has_trait = lifestyle_blood_mage
+            is_blood_mage_any_tier_trigger = yes
         }
         ai_chance = { base = 50 }
         duel = {
@@ -341,7 +332,7 @@ seek_power.003 = {
         trigger_event = bm_trait_drain.001
         remove_character_modifier = lifeforce_modifier_major
         trigger = {
-            has_trait = lifestyle_blood_mage
+            is_blood_mage_any_tier_trigger = yes
             has_character_modifier = lifeforce_modifier_major
             bm_can_drain_traits_from_target_trigger = yes
         }
@@ -364,11 +355,11 @@ seek_power.003 = {
             }
         }
         trigger = {
-            has_trait = lifestyle_blood_mage
+            is_blood_mage_any_tier_trigger = yes
             prowess >= 25
         }
         show_as_unavailable = {
-            has_trait = lifestyle_blood_mage
+            is_blood_mage_any_tier_trigger = yes
             prowess < 25
         }
         ai_chance = {
@@ -422,6 +413,7 @@ seek_power.003 = {
         trigger = {
             custom_description = {
                 text = seek_power.003.c.learning_trigger_tt
+                subject = scope:recipient
                 learning > scope:recipient.learning
             }
         }
@@ -473,6 +465,7 @@ seek_power.003 = {
             exists = scope:escort_knight
             custom_description = {
                 text = seek_power.003.recruit_knight.prowess_trigger_tt
+                subject = scope:escort_knight
                 prowess > scope:escort_knight.prowess
             }
         }
@@ -543,9 +536,6 @@ seek_power.004 = {
             left_icon = this
             add_character_modifier = { modifier = lifeforce_modifier_major }
             add_shared_bm_bk_xp = { TRACK = enlightenment XP = 3 }
-            hidden_effect = {
-                bm_recount_lifeforce_stacks_effect = yes
-            }
         }
         ai_chance = { base = 50 }
     }
@@ -584,10 +574,7 @@ seek_power.008 = {
                     left_icon = this
                     add_character_modifier = { modifier = lifeforce_modifier_major }
                     add_prestige = 25
-                    bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 2 }
-                    hidden_effect = {
-                        bm_recount_lifeforce_stacks_effect = yes
-                    }
+                    bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 3 }
                 }
             }
             # 2. Mixed Success: Minor Lifeforce, Wounded
@@ -605,10 +592,7 @@ seek_power.008 = {
                     add_character_modifier = { modifier = lifeforce_modifier_minor }
                     increase_wounds_no_death_effect = { REASON = fight }
                     add_stress = 10
-                    bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 1 }
-                    hidden_effect = {
-                        bm_recount_lifeforce_stacks_effect = yes
-                    }
+                    bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 2 }
                 }
             }
             # 3. Fail: Beast escapes, 0 Lifeforce
@@ -654,10 +638,7 @@ seek_power.008 = {
             title = seek_power.toast.beast_carcass
             left_icon = this
             add_character_modifier = { modifier = lifeforce_modifier_minor }
-            add_shared_bm_bk_xp = { TRACK = enlightenment XP = 1 }
-            hidden_effect = {
-                bm_recount_lifeforce_stacks_effect = yes
-            }
+            add_shared_bm_bk_xp = { TRACK = enlightenment XP = 2 }
         }
     }
 }
@@ -694,10 +675,7 @@ seek_power.009 = {
                     title = seek_power.toast.homestead_silent
                     left_icon = this
                     add_character_modifier = { modifier = lifeforce_modifier_major }
-                    bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 2 }
-                    hidden_effect = {
-                        bm_recount_lifeforce_stacks_effect = yes
-                    }
+                    bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 3 }
                 }
             }
             # 2. Mixed Success: Minor Lifeforce, Wounded
@@ -716,10 +694,7 @@ seek_power.009 = {
                     increase_wounds_no_death_effect = { REASON = fight }
                     add_stress = 10
                     add_dread = 5
-                    bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 1 }
-                    hidden_effect = {
-                        bm_recount_lifeforce_stacks_effect = yes
-                    }
+                    bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 2 }
                 }
             }
             # 3. Fail: Barred doors and alarms, 0 Lifeforce
@@ -765,10 +740,7 @@ seek_power.009 = {
             title = seek_power.toast.homestead_tithe
             left_icon = this
             add_character_modifier = { modifier = lifeforce_modifier_minor }
-            add_shared_bm_bk_xp = { TRACK = benediction XP = 1 }
-            hidden_effect = {
-                bm_recount_lifeforce_stacks_effect = yes
-            }
+            add_shared_bm_bk_xp = { TRACK = benediction XP = 2 }
         }
     }
 }
@@ -806,10 +778,7 @@ seek_power.010 = {
                     left_icon = this
                     add_character_modifier = { modifier = lifeforce_modifier_major }
                     add_gold = 25
-                    bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 2 }
-                    hidden_effect = {
-                        bm_recount_lifeforce_stacks_effect = yes
-                    }
+                    bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 3 }
                 }
             }
             # 2. Mixed Success: Minor Lifeforce + 10 Gold + Wounded
@@ -828,10 +797,7 @@ seek_power.010 = {
                     increase_wounds_no_death_effect = { REASON = fight }
                     add_gold = 10
                     add_stress = 10
-                    bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 1 }
-                    hidden_effect = {
-                        bm_recount_lifeforce_stacks_effect = yes
-                    }
+                    bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 2 }
                 }
             }
             # 3. Fail: Outlaws scatter, 0 Lifeforce, 0 Gold
@@ -880,10 +846,7 @@ seek_power.010 = {
             add_character_modifier = { modifier = lifeforce_modifier_minor }
             add_gold = 15
             add_dread = 5
-            add_blood_mage_xp = { TRACK = bloodline XP = 1 }
-            hidden_effect = {
-                bm_recount_lifeforce_stacks_effect = yes
-            }
+            add_blood_mage_xp = { TRACK = bloodline XP = 2 }
         }
     }
 }
@@ -920,10 +883,7 @@ seek_power.011 = {
                     title = seek_power.toast.blood_seize
                     left_icon = this
                     add_character_modifier = { modifier = lifeforce_modifier_major }
-                    bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 2 }
-                    hidden_effect = {
-                        bm_recount_lifeforce_stacks_effect = yes
-                    }
+                    bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 3 }
                 }
             }
             # 2. Mixed Success: Minor Lifeforce, Wounded
@@ -941,10 +901,7 @@ seek_power.011 = {
                     add_character_modifier = { modifier = lifeforce_modifier_minor }
                     increase_wounds_no_death_effect = { REASON = fight }
                     add_stress = 15
-                    bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 1 }
-                    hidden_effect = {
-                        bm_recount_lifeforce_stacks_effect = yes
-                    }
+                    bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 2 }
                 }
             }
             # 3. Fail: Occultist escapes, 0 Lifeforce
@@ -991,10 +948,7 @@ seek_power.011 = {
             left_icon = this
             add_character_modifier = { modifier = lifeforce_modifier_minor }
             add_piety = 50
-            add_shared_bm_bk_xp = { TRACK = enlightenment XP = 2 }
-            hidden_effect = {
-                bm_recount_lifeforce_stacks_effect = yes
-            }
+            add_shared_bm_bk_xp = { TRACK = enlightenment XP = 3 }
         }
     }
 }
@@ -1077,9 +1031,6 @@ seek_power.006 = {
                 chance = 25
                 add_character_modifier = { modifier = lifeforce_modifier_superior }
             }
-            hidden_effect = {
-                bm_recount_lifeforce_stacks_effect = yes
-            }
         }
     }
 
@@ -1111,9 +1062,6 @@ seek_power.006 = {
                     add_courtier = scope:duel_opponent
                     bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 2 }
                     add_character_modifier = { modifier = lifeforce_modifier_minor }
-                    hidden_effect = {
-                        bm_recount_lifeforce_stacks_effect = yes
-                    }
                 }
             }
             50 = {

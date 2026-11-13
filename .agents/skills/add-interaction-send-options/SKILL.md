@@ -86,9 +86,6 @@ References: mod `common/character_interactions/bm_blood_blessing.txt`; vanilla `
 					left_icon = scope:actor
 					right_icon = scope:recipient
 					<effect_a>
-					hidden_effect = {
-						bm_recount_lifeforce_stacks_effect = yes
-					}
 				}
 			}
 		}
@@ -101,9 +98,6 @@ References: mod `common/character_interactions/bm_blood_blessing.txt`; vanilla `
 					left_icon = scope:actor
 					right_icon = scope:recipient
 					<effect_b>
-					hidden_effect = {
-						bm_recount_lifeforce_stacks_effect = yes
-					}
 				}
 			}
 		}
@@ -128,7 +122,7 @@ References: mod `common/character_interactions/bm_blood_blessing.txt`; vanilla `
 3. Keep options visible and greyed out (`show_as_unavailable` / `is_valid`) per mod principle. Only hide via `is_shown` when completely inapplicable.
 4. Set `starts_enabled` on the options so the most relevant/unlocked option is pre-selected when the window opens.
 5. In `cost`, guard variable costs with `if = { limit = { scope:<flag> = yes } value = ... }`.
-6. Enclose stat/modifier/Lifeforce gains in `send_interface_toast` with `hidden_effect = { bm_recount_lifeforce_stacks_effect = yes }`.
+6. Enclose stat/modifier/Lifeforce gains in `send_interface_toast`.
 7. **Always set `can_invalidate_interaction = yes`** on each `send_option`.
 8. **AI must score modal options**: In `ai_will_do`, explicitly add weights for each option: `modifier = { scope:<flag> = yes add = N }`.
 9. **Absolute empty-set veto**: CK3 AI evaluates combinations of flags including empty `{}`. You MUST end `ai_will_do` with `factor = 0` when no modal option is selected (`modifier = { NOR = { scope:<opt_a> = yes scope:<opt_b> = yes } factor = 0 }`), otherwise the AI fires the interaction with no options selected (zero cost, zero effect).

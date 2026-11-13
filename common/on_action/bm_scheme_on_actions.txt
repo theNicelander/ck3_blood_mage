@@ -16,9 +16,6 @@ bm_on_murder_success_hulinhjalmur = {
 			}
 			scope:owner = {
 				add_character_modifier = { modifier = lifeforce_modifier_major }
-				hidden_effect = {
-					bm_recount_lifeforce_stacks_effect = yes
-				}
 				send_interface_toast = {
 					type = event_toast_effect_good
 					title = bm_hulinhjalmur_murder_lifeforce_toast

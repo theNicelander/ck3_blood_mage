@@ -29,14 +29,14 @@ hematurgy_magic_cast_effect_major = {
     add_character_modifier =  { modifier = lifeforce_modifier_major }
     add_xp_bm_dynamic = {
         TRACK = hematurgy
-        XP = 1
+        XP = 3
     }
 }
 hematurgy_magic_cast_effect_minor = {
     add_character_modifier =  { modifier = lifeforce_modifier_minor }
     add_xp_bm_dynamic = {
         TRACK = hematurgy
-        XP = 1
+        XP = 2
     }
 }
 
@@ -45,7 +45,7 @@ benediction_magic_cast_effect_superior = {
     temporary_negative_lifeforce_effect_superior = yes
     add_shared_bm_bk_xp = {
         TRACK = benediction
-        XP = 3
+        XP = 6
     }
 }
 
@@ -55,35 +55,35 @@ benediction_magic_cast_effect_major_minor = {
     temporary_negative_lifeforce_effect_major = yes
     add_shared_bm_bk_xp = {
         TRACK = benediction
-        XP = 2
+        XP = 4
     }
 }
 benediction_magic_cast_effect_major = {
     remove_character_modifier = lifeforce_modifier_major
     add_shared_bm_bk_xp = {
         TRACK = benediction
-        XP = 2
+        XP = 4
     }
 }
 benediction_magic_cast_effect_minor = {
     remove_character_modifier = lifeforce_modifier_minor
     add_shared_bm_bk_xp = {
         TRACK = benediction
-        XP = 1
+        XP = 2
     }
 }
 bloodline_magic_cast_effect_minor = {
     remove_character_modifier = lifeforce_modifier_minor
     add_xp_bm_dynamic = {
         TRACK = bloodline
-        XP = 1
+        XP = 2
     }
 }
 bloodline_magic_cast_effect_major = {
     remove_character_modifier = lifeforce_modifier_major
     add_xp_bm_dynamic = {
         TRACK = bloodline
-        XP = 1
+        XP = 4
     }
 }
 

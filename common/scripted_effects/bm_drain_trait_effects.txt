@@ -15,7 +15,7 @@
 bm_drain_leveled_trait_effect = {
     add_xp_bm_dynamic = {
         TRACK = hematurgy
-        XP = 2
+        XP = 3
     }
     if = { limit = { has_trait = $TRAIT$_good_2 } add_piety_level = -1 }
     if = {

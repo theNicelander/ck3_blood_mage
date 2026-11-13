@@ -343,11 +343,11 @@
 					if = {
 						limit = { has_character_modifier = lifeforce_modifier_major }
 						blood_magic_used_major = yes
-						add_xp_bm_dynamic = { TRACK = benediction XP = 2 }
+						add_xp_bm_dynamic = { TRACK = benediction XP = 4 }
 						scope:recipient = {
-							add_xp_bm_dynamic = { TRACK = enlightenment XP = 2 }
-							add_xp_bm_dynamic = { TRACK = bloodline XP = 2 }
-							add_xp_bm_dynamic = { TRACK = bloodlust XP = 2 }
+							add_xp_bm_dynamic = { TRACK = enlightenment XP = 3 }
+							add_xp_bm_dynamic = { TRACK = bloodline XP = 3 }
+							add_xp_bm_dynamic = { TRACK = bloodlust XP = 3 }
 							add_opinion = {
 								target = scope:actor
 								modifier = magic_opinion_positive
@@ -357,20 +357,17 @@
 					}
 					else = {
 						blood_magic_used_minor = yes
-						add_xp_bm_dynamic = { TRACK = benediction XP = 1 }
+						add_xp_bm_dynamic = { TRACK = benediction XP = 2 }
 						scope:recipient = {
-							add_xp_bm_dynamic = { TRACK = enlightenment XP = 1 }
-							add_xp_bm_dynamic = { TRACK = bloodline XP = 1 }
-							add_xp_bm_dynamic = { TRACK = bloodlust XP = 1 }
+							add_xp_bm_dynamic = { TRACK = enlightenment XP = 2 }
+							add_xp_bm_dynamic = { TRACK = bloodline XP = 2 }
+							add_xp_bm_dynamic = { TRACK = bloodlust XP = 2 }
 							add_opinion = {
 								target = scope:actor
 								modifier = magic_opinion_positive
 								opinion = 15
 							}
 						}
-					}
-					hidden_effect = {
-						bm_recount_lifeforce_stacks_effect = yes
 					}
 				}
 			}
@@ -403,7 +400,7 @@
 							has_character_modifier = lifeforce_modifier_mojo
 						}
 						blood_magic_used_mojo = yes
-						add_xp_bm_dynamic = { TRACK = bloodline XP = 1 }
+						add_xp_bm_dynamic = { TRACK = bloodline XP = 2 }
 						scope:recipient = {
 							add_character_modifier = { modifier = lifeforce_modifier_mojo }
 							add_opinion = {
@@ -419,6 +416,7 @@
 							has_character_modifier = lifeforce_modifier_major
 						}
 						blood_magic_used_major = yes
+						add_xp_bm_dynamic = { TRACK = benediction XP = 2 }
 						scope:recipient = {
 							remove_character_modifier = lifedrained_modifier
 							add_character_modifier = { modifier = lifeforce_modifier_minor }
@@ -432,6 +430,7 @@
 					else_if = {
 						limit = { has_character_modifier = lifeforce_modifier_major }
 						blood_magic_used_major = yes
+						add_xp_bm_dynamic = { TRACK = benediction XP = 2 }
 						scope:recipient = {
 							add_character_modifier = { modifier = lifeforce_modifier_major }
 							add_opinion = {
@@ -444,6 +443,7 @@
 					else_if = {
 						limit = { has_character_modifier = lifeforce_modifier_minor }
 						blood_magic_used_minor = yes
+						add_xp_bm_dynamic = { TRACK = benediction XP = 1 }
 						scope:recipient = {
 							add_character_modifier = { modifier = lifeforce_modifier_minor }
 							add_opinion = {
@@ -455,7 +455,7 @@
 					}
 					else = {
 						blood_magic_used_mojo = yes
-						add_xp_bm_dynamic = { TRACK = bloodline XP = 1 }
+						add_xp_bm_dynamic = { TRACK = bloodline XP = 2 }
 						scope:recipient = {
 							add_character_modifier = { modifier = lifeforce_modifier_mojo }
 							add_opinion = {
@@ -464,10 +464,6 @@
 								opinion = 25
 							}
 						}
-					}
-					hidden_effect = {
-						bm_recount_lifeforce_stacks_effect = yes
-						scope:recipient = { bm_recount_lifeforce_stacks_effect = yes }
 					}
 				}
 			}
@@ -538,9 +534,6 @@
 							}
 						}
 					}
-					hidden_effect = {
-						bm_recount_lifeforce_stacks_effect = yes
-					}
 				}
 			}
 		}
@@ -592,7 +585,7 @@
 					blood_magic_used_major = yes
 					bm_add_blood_mage_xp_effect = {
 						TRACK = bloodline
-						XP = 2
+						XP = 4
 					}
 					scope:recipient = {
 						add_character_modifier = {
@@ -603,9 +596,6 @@
 							modifier = magic_opinion_positive
 							opinion = 30
 						}
-					}
-					hidden_effect = {
-						bm_recount_lifeforce_stacks_effect = yes
 					}
 				}
 			}
@@ -659,9 +649,6 @@
 					if = {
 						limit = { is_blood_mage_any_tier_trigger = yes }
 						add_xp_bm_dynamic = { TRACK = bloodline XP = 2 }
-					}
-					hidden_effect = {
-						bm_recount_lifeforce_stacks_effect = yes
 					}
 				}
 			}
@@ -735,9 +722,6 @@
 						scope:recipient = {
 							bm_upgrade_blood_rune_to_superior_effect = yes
 						}
-					}
-					hidden_effect = {
-						bm_recount_lifeforce_stacks_effect = yes
 					}
 				}
 			}

@@ -16,7 +16,7 @@ bm_interpersonal_events.0001 = {
 	}
 
 	trigger = {
-		has_trait = lifestyle_blood_mage
+		is_blood_mage_any_tier_trigger = yes
 		OR = {
 			any_relation = { type = soulmate is_alive = yes }
 			any_relation = { type = lover is_alive = yes }
@@ -75,9 +75,6 @@ bm_interpersonal_events.0001 = {
 				TRACK = benediction
 				XP = 1
 			}
-			hidden_effect = {
-				bm_recount_lifeforce_stacks_effect = yes
-			}
 		}
 	}
 
@@ -105,9 +102,6 @@ bm_interpersonal_events.0001 = {
 				TRACK = hematurgy
 				XP = 1
 			}
-			hidden_effect = {
-				bm_recount_lifeforce_stacks_effect = yes
-			}
 		}
 	}
 
@@ -116,13 +110,13 @@ bm_interpersonal_events.0001 = {
 		name = bm_interpersonal_events.0001.c
 		trigger = {
 			scope:partner = {
-				NOT = { has_trait = lifestyle_blood_mage }
+				NOT = { is_blood_mage_any_tier_trigger = yes }
 			}
 			has_character_modifier = lifeforce_modifier_major
 		}
 		show_as_unavailable = {
 			scope:partner = {
-				NOT = { has_trait = lifestyle_blood_mage }
+				NOT = { is_blood_mage_any_tier_trigger = yes }
 			}
 		}
 		send_interface_toast = {
@@ -135,9 +129,6 @@ bm_interpersonal_events.0001 = {
 			add_blood_mage_xp = {
 				TRACK = bloodline
 				XP = 1
-			}
-			hidden_effect = {
-				bm_recount_lifeforce_stacks_effect = yes
 			}
 		}
 	}
@@ -159,7 +150,7 @@ bm_interpersonal_events.0002 = {
 	}
 
 	trigger = {
-		has_trait = lifestyle_blood_mage
+		is_blood_mage_any_tier_trigger = yes
 		OR = {
 			any_child = {
 				is_alive = yes
@@ -235,9 +226,6 @@ bm_interpersonal_events.0002 = {
 				TRACK = bloodline
 				XP = 1
 			}
-			hidden_effect = {
-				bm_recount_lifeforce_stacks_effect = yes
-			}
 		}
 	}
 
@@ -257,18 +245,14 @@ bm_interpersonal_events.0002 = {
 			blood_magic_used_major = yes
 			scope:child = {
 				bm_become_blood_mage_effect = yes
-				add_trait_xp = {
-					trait = lifestyle_blood_mage
-					track = enlightenment
-					value = 10
+				bm_add_blood_mage_xp_effect = {
+					TRACK = enlightenment
+					XP = 10
 				}
 			}
 			add_blood_mage_xp = {
 				TRACK = bloodline
-				XP = 1
-			}
-			hidden_effect = {
-				bm_recount_lifeforce_stacks_effect = yes
+				XP = 2
 			}
 		}
 	}
@@ -305,7 +289,7 @@ bm_interpersonal_events.0003 = {
 	}
 
 	trigger = {
-		has_trait = lifestyle_blood_mage
+		is_blood_mage_any_tier_trigger = yes
 		any_knight = {
 			is_alive = yes
 			NOT = { this = root }
@@ -343,12 +327,6 @@ bm_interpersonal_events.0003 = {
 				TRACK = bloodlust
 				XP = 1
 			}
-			hidden_effect = {
-				bm_recount_lifeforce_stacks_effect = yes
-				scope:knight = {
-					bm_recount_lifeforce_stacks_effect = yes
-				}
-			}
 		}
 	}
 
@@ -370,9 +348,6 @@ bm_interpersonal_events.0003 = {
 					modifier = magic_opinion_negative
 					opinion = -15
 				}
-			}
-			hidden_effect = {
-				bm_recount_lifeforce_stacks_effect = yes
 			}
 		}
 	}
@@ -409,7 +384,7 @@ bm_interpersonal_events.0004 = {
 	}
 
 	trigger = {
-		has_trait = lifestyle_blood_mage
+		is_blood_mage_any_tier_trigger = yes
 		any_courtier = {
 			is_alive = yes
 			house ?= house:bm_house_golem
@@ -510,9 +485,6 @@ bm_interpersonal_events.0004 = {
 					years = 5
 				}
 			}
-			hidden_effect = {
-				bm_recount_lifeforce_stacks_effect = yes
-			}
 		}
 	}
 }
@@ -533,11 +505,11 @@ bm_interpersonal_events.0005 = {
 	}
 
 	trigger = {
-		has_trait = lifestyle_blood_mage
+		is_blood_mage_any_tier_trigger = yes
 		any_courtier = {
 			is_alive = yes
 			is_adult = yes
-			NOT = { has_trait = lifestyle_blood_mage }
+			NOT = { is_blood_mage_any_tier_trigger = yes }
 			NOT = { house ?= house:bm_house_golem }
 		}
 	}
@@ -548,7 +520,7 @@ bm_interpersonal_events.0005 = {
 			limit = {
 				is_alive = yes
 				is_adult = yes
-				NOT = { has_trait = lifestyle_blood_mage }
+				NOT = { is_blood_mage_any_tier_trigger = yes }
 				NOT = { house ?= house:bm_house_golem }
 			}
 			save_scope_as = courtier
@@ -576,12 +548,6 @@ bm_interpersonal_events.0005 = {
 					add_blood_mage_xp = {
 						TRACK = hematurgy
 						XP = 1
-					}
-					scope:courtier = {
-						add_character_modifier = { modifier = lifedrained_modifier }
-					}
-					hidden_effect = {
-						bm_recount_lifeforce_stacks_effect = yes
 					}
 				}
 			}
@@ -637,12 +603,6 @@ bm_interpersonal_events.0005 = {
 			add_blood_mage_xp = {
 				TRACK = benediction
 				XP = 1
-			}
-			hidden_effect = {
-				bm_recount_lifeforce_stacks_effect = yes
-				scope:courtier = {
-					bm_recount_lifeforce_stacks_effect = yes
-				}
 			}
 		}
 	}

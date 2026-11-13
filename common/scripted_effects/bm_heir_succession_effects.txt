@@ -80,9 +80,6 @@
 					add_character_modifier = { modifier = lifeforce_modifier_superior }
 				}
 			}
-			scope:anointed_heir = {
-				bm_recount_lifeforce_stacks_effect = yes
-			}
 			# 3. Transfer 25% of trait track XP across active tracks
 			scope:anointed_heir = {
 				if = {

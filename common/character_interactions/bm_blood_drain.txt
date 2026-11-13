@@ -215,9 +215,6 @@
 							}
 						}
 					}
-					hidden_effect = {
-						bm_recount_lifeforce_stacks_effect = yes
-					}
 				}
 			}
 		}
@@ -262,10 +259,6 @@
 							}
 						}
 						add_xp_bm_dynamic = { TRACK = hematurgy XP = 3 }
-						hidden_effect = {
-							bm_recount_lifeforce_stacks_effect = yes
-							scope:recipient = { bm_recount_lifeforce_stacks_effect = yes }
-						}
 					}
 				}
 				else = {
@@ -295,10 +288,6 @@
 									add_character_modifier = { modifier = lifeforce_modifier_minor }
 								}
 								add_xp_bm_dynamic = { TRACK = hematurgy XP = 3 }
-								hidden_effect = {
-									bm_recount_lifeforce_stacks_effect = yes
-									scope:recipient = { bm_recount_lifeforce_stacks_effect = yes }
-								}
 							}
 						}
 						50 = {
@@ -341,7 +330,7 @@
 					}
 					bm_add_blood_mage_xp_effect = {
 						TRACK = bloodline
-						XP = 1
+						XP = 2
 					}
 					scope:recipient = {
 						add_character_modifier = {
@@ -363,9 +352,6 @@
 								opinion = -25
 							}
 						}
-					}
-					hidden_effect = {
-						bm_recount_lifeforce_stacks_effect = yes
 					}
 				}
 			}
