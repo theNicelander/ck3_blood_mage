@@ -38,7 +38,7 @@ Guaranteed, no cost, 1 year cooldown: **+1 XP** (**+2 XP** with Superior **Hulin
 | +1 | None | Yearly Pulse | on-action `blood_mage_yearly_events.001` | `lifestyle_blood_mage` | 1 year |
 | grants `ancient_attuned` | Initial free; change: 100 Piety + Minor (`lifeforce_modifier_minor`) | Attune Lifeforce | decision `bm_attune_lifeforce_decision` | Change: Minor lifeforce, piety >= 100 | 3 years |
 | +4 | 0 Piety + Minor | Inscribe Minor Blood Rune (Self) | event option `bm_cast_blood_magic_minor.001` | `piety_level >= 2` | 5 years |
-| +5 | 50/100 Piety + Minor + 10/15 Discipline XP | Distill Blood (Discipline to Ancient) | decision `bm_blood_distillation_decision` | Ancient < 100 XP, Minor lifeforce, >= 10 XP in any discipline track (15 XP for Mage) | None |
+| +5 | 50/100 Piety + Minor + 10 Discipline XP | Distill Blood (Discipline to Ancient) | decision `bm_blood_distillation_decision` | Ancient < 100 XP, Minor lifeforce, >= 10 XP in any discipline track | None |
 | +5 | 200 Piety + Major (`lifeforce_modifier_major`) | Inscribe Major Blood Rune (Self) | `bm_cast_blood_magic_major.001` | `piety_level >= 3`, Minor rune | 5 years |
 | +10 | 400 Piety + Superior (`lifeforce_modifier_superior`) | Inscribe Superior Blood Rune (Self) | `bm_cast_blood_magic_superior.001` | `piety_level >= 4`, Major rune | 5 years |
 | +2 (+5 if firstborn) | None | Childbirth Milestone | on-action `on_birth_child` -> `bm_on_birth_bloodline_xp` | Parent is blood mage | Per birth |
