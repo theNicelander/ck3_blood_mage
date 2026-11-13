@@ -16,15 +16,15 @@ The `bloodlust` track uses a 5-milestone progression (10, 30, 50, 70, 100 XP), p
 
 | Tier (XP) | Modifiers Added at Tier (Tier II Blood Mage) | Cumulative Total Highlights |
 | :--- | :--- | :--- |
-| **10 XP** | Vitality Step (`+0.2` Health, `+3` Life Exp), `martial = 1` | +0.2 Health, +3 Life Exp, +1 Martial |
-| **30 XP** | Vitality Step (`+0.2` Health, `+3` Life Exp), `martial = 1`, `martial_per_piety_level = 1` | +0.4 Health, +6 Life Exp, +2 Martial, +1 Martial per Piety Level |
-| **50 XP (Milestone)** | Vitality Step (`+0.2` Health, `+3` Life Exp), `martial = 1`, `monthly_piety_gain_per_knight_add = 0.02` | +0.6 Health, +9 Life Exp, +3 Martial, +1 Martial per Piety Level, +0.02 Monthly Piety per Knight |
-| **70 XP** | Vitality Step (`+0.2` Health, `+3` Life Exp), `martial = 1`, `martial_per_piety_level = 1` | +0.8 Health, +12 Life Exp, +4 Martial, +2 Martial per Piety Level, +0.02 Monthly Piety per Knight |
-| **100 XP (Capstone)** | Vitality Step (`+0.2` Health, `+3` Life Exp), `martial = 1`, `monthly_piety_gain_per_knight_add = 0.02` | 5× Vitality (+1.0 Health, +15 Life Exp), +5 Martial, +2 Martial per Piety Level, +0.04 Monthly Piety per Knight |
+| **10 XP** | Vitality Step (`+0.2` Health, `+3` Life Exp), `martial = 1`, `monthly_piety_gain_per_knight_add = 0.01` | +0.2 Health, +3 Life Exp, +1 Martial, +0.01 Monthly Piety per Knight |
+| **30 XP** | Vitality Step (`+0.2` Health, `+3` Life Exp), `martial = 1`, `martial_per_piety_level = 1`, `monthly_piety_gain_per_knight_add = 0.01` | +0.4 Health, +6 Life Exp, +2 Martial, +1 Martial per Piety Level, +0.02 Monthly Piety per Knight |
+| **50 XP (Milestone)** | Vitality Step (`+0.2` Health, `+3` Life Exp), `martial = 1`, `monthly_piety_gain_per_knight_add = 0.01` | +0.6 Health, +9 Life Exp, +3 Martial, +1 Martial per Piety Level, +0.03 Monthly Piety per Knight |
+| **70 XP** | Vitality Step (`+0.2` Health, `+3` Life Exp), `martial = 1`, `martial_per_piety_level = 1`, `monthly_piety_gain_per_knight_add = 0.01` | +0.8 Health, +12 Life Exp, +4 Martial, +2 Martial per Piety Level, +0.04 Monthly Piety per Knight |
+| **100 XP (Capstone)** | Vitality Step (`+0.2` Health, `+3` Life Exp), `martial = 1`, `monthly_piety_gain_per_knight_add = 0.01` | 5× Vitality (+1.0 Health, +15 Life Exp), +5 Martial, +2 Martial per Piety Level, +0.05 Monthly Piety per Knight |
 
 *Note: Scaling across tiers:*
-- All three ranks (`lifestyle_bm_acolyte`, `lifestyle_blood_mage`, `lifestyle_bm_archmage`) share identical Bloodlust attribute, per-piety, health, and piety-per-knight milestones (`+5` Martial, `+2` Martial per Piety Level, `+0.04` Monthly Piety per Knight, `+1.0` Health at 100 XP); Life Expectancy scales per tier (`+2` Acolyte, `+3` Mage, `+4` Archmage per step).
-- **Tier II (`lifestyle_blood_mage`)** base floor adds `+3` Martial, `+1` Martial per Piety Level, and `+0.02` Monthly Piety per Knight; **Tier III (`lifestyle_bm_archmage`)** base floor adds `+6` Martial, `+2` Martial per Piety Level, and `+0.04` Monthly Piety per Knight.
+- All three ranks (`lifestyle_bm_acolyte`, `lifestyle_blood_mage`, `lifestyle_bm_archmage`) share identical Bloodlust attribute, per-piety, health, and piety-per-knight milestones (`+5` Martial, `+2` Martial per Piety Level, `+0.05` Monthly Piety per Knight, `+1.0` Health at 100 XP); Life Expectancy scales per tier (`+2` Acolyte, `+3` Mage, `+4` Archmage per step).
+- **Tier II (`lifestyle_blood_mage`)** base floor adds `+3` Martial, `+1` Martial per Piety Level, and `+0.05` Monthly Piety per Knight; **Tier III (`lifestyle_bm_archmage`)** base floor adds `+6` Martial, `+2` Martial per Piety Level, and `+0.10` Monthly Piety per Knight.
 
 ---
 
