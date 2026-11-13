@@ -16,16 +16,15 @@ The `bloodlust` track uses a 5-milestone progression (10, 30, 50, 70, 100 XP), p
 
 | Tier (XP) | Modifiers Added at Tier (Tier II Blood Mage) | Cumulative Total Highlights |
 | :--- | :--- | :--- |
-| **10 XP** | Vitality Step (`+0.2` Health, `+4` Life Exp), `knight_limit = 1`, `army_damage_mult = 0.06` | +0.2 Health, +4 Life Exp, +1 Knight Limit, +6% Army Damage |
-| **30 XP** | Vitality Step (`+0.2` Health, `+4` Life Exp), `knight_limit = 1`, `army_damage_mult = 0.06` | +0.4 Health, +8 Life Exp, +2 Knight Limit, +12% Army Damage |
-| **50 XP (Milestone)** | `knight_limit = 1`, `army_damage_mult = 0.06`, `martial_per_piety_level = 1`, `prowess_per_piety_level = 1`, `knight_effectiveness_per_prowess = 0.005` | 2× Vitality, +3 Knight Limit, +18% Army Damage, +1 Martial & Prowess per Piety Level, +0.5% Knight Eff per Prowess |
-| **70 XP** | Vitality Step (`+0.2` Health, `+4` Life Exp), `knight_limit = 1`, `army_damage_mult = 0.06` | +0.6 Health, +12 Life Exp, +4 Knight Limit, +24% Army Damage, +1 Martial & Prowess per Piety Level, +0.5% Knight Eff per Prowess |
-| **100 XP (Capstone)** | Vitality Step (`+0.2` Health, `+4` Life Exp), `knight_limit = 1`, `army_damage_mult = 0.06`, `martial_per_piety_level = 1`, `prowess_per_piety_level = 1`, `knight_effectiveness_per_prowess = 0.005` | 4× Vitality (+0.8 Health, +16 Life Exp), +5 Knight Limit, +30% Army Damage, +2 Martial & Prowess per Piety Level, +1.0% Knight Eff per Prowess |
+| **10 XP** | Vitality Step (`+0.2` Health, `+4` Life Exp), `martial = 1` | +0.2 Health, +4 Life Exp, +1 Martial |
+| **30 XP** | Vitality Step (`+0.2` Health, `+4` Life Exp), `martial = 1`, `martial_per_piety_level = 1` | +0.4 Health, +8 Life Exp, +2 Martial, +1 Martial per Piety Level |
+| **50 XP (Milestone)** | `martial = 1`, `monthly_piety_gain_per_knight_add = 0.02` | +0.4 Health, +8 Life Exp, +3 Martial, +1 Martial per Piety Level, +0.02 Monthly Piety per Knight |
+| **70 XP** | Vitality Step (`+0.2` Health, `+4` Life Exp), `martial = 1`, `martial_per_piety_level = 1` | +0.6 Health, +12 Life Exp, +4 Martial, +2 Martial per Piety Level, +0.02 Monthly Piety per Knight |
+| **100 XP (Capstone)** | Vitality Step (`+0.2` Health, `+4` Life Exp), `martial = 1`, `monthly_piety_gain_per_knight_add = 0.02` | 4× Vitality (+0.8 Health, +16 Life Exp), +5 Martial, +2 Martial per Piety Level, +0.04 Monthly Piety per Knight |
 
 *Note: Scaling across tiers:*
-- **Tier I: Blood Acolyte (`lifestyle_bm_acolyte`)**: +1 Knight Limit at all 5 milestones (+5 Knights total), +3% Army Damage per step (+15% total across 5 thresholds), +1 Martial & Prowess per Piety Level and +0.5% Knight Effectiveness per Prowess at 50 XP and 100 XP (+2 each / +1.0% total), Age Prowess Lock at 100 XP.
-- **Tier II: Blood Mage (`lifestyle_blood_mage`)**: Base trait includes +3 Knight Limit, +9% Army Damage, and +0.5% Knight Effectiveness per Prowess; +1 Knight Limit and +6% Army Damage at all 5 milestones (+5 Knights, +8 combined total; +30% track total, +39% combined total), +1 Martial & Prowess per Piety Level and +0.5% Knight Effectiveness per Prowess at 50 XP and 100 XP (+2 each / +1.0% track total, plus innate +1 / +0.5% base trait floor = +1.5% combined).
-- **Tier III: Blood Archmage (`lifestyle_bm_archmage`)**: Base trait includes +6 Knight Limit, +27% Army Damage, and +1.0% Knight Effectiveness per Prowess; +1 Knight Limit and +10% Army Damage at all 5 milestones (+5 Knights, +11 combined total; +50% track total, +77% combined total), +2 Martial & Prowess per Piety Level and +1.0% Knight Effectiveness per Prowess at 50 XP and 100 XP (+4 each / +2.0% track total, plus innate +2 / +1.0% base trait floor = +3.0% combined).
+- All three ranks (`lifestyle_bm_acolyte`, `lifestyle_blood_mage`, `lifestyle_bm_archmage`) share identical Bloodlust track milestones (`+5` Martial, `+2` Martial per Piety Level, `+0.04` Monthly Piety per Knight, `+0.8` Health, `+16` Life Expectancy at 100 XP).
+- **Tier II (`lifestyle_blood_mage`)** base floor adds `+3` Martial, `+1` Martial per Piety Level, and `+0.02` Monthly Piety per Knight; **Tier III (`lifestyle_bm_archmage`)** base floor adds `+6` Martial, `+2` Martial per Piety Level, and `+0.04` Monthly Piety per Knight.
 
 ---
 

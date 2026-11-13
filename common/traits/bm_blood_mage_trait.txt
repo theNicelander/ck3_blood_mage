@@ -1,14 +1,6 @@
-﻿# General stats - Tier II (Mage) baseline vitality step (10, 30, 70, 100 XP)
+﻿# General stats - baseline vitality step (10, 30, 70, 100 XP)
 @bm_common_health = 0.2
 @bm_common_life_expectancy = 4
-
-# General stats - Tier I (Acolyte) 0.5x scaling vitality step (10, 30, 70, 100 XP)
-@bm_acolyte_common_health = 0.1
-@bm_acolyte_common_life_expectancy = 2
-
-# General stats - Tier III (Archmage) 1.5x scaling vitality step (10, 30, 70, 100 XP)
-@bm_archmage_common_health = 0.3
-@bm_archmage_common_life_expectancy = 8
 
 lifestyle_bm_acolyte = {
 	category = lifestyle
@@ -33,215 +25,186 @@ lifestyle_bm_acolyte = {
 	tracks = {
 		bloodline = {
 			10 = {
-				health = @bm_acolyte_common_health
-				life_expectancy = @bm_acolyte_common_life_expectancy
-				monthly_income_mult = 0.04
-				army_maintenance_mult = -0.03
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				stewardship = 1
 			}
 			30 = {
-				health = @bm_acolyte_common_health
-				life_expectancy = @bm_acolyte_common_life_expectancy
-				monthly_income_mult = 0.04
-				army_maintenance_mult = -0.03
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				stewardship = 1
+				stewardship_per_piety_level = 1
 			}
 			50 = {
-				army_maintenance_mult = -0.03
-				stewardship_per_piety_level = 1
-				monthly_income = 0.5
-				domain_limit = 1
-				character_capital_county_monthly_development_growth_add = 0.10
+				stewardship = 1
+				monthly_income_mult = 0.10
 			}
 			70 = {
-				health = @bm_acolyte_common_health
-				life_expectancy = @bm_acolyte_common_life_expectancy
-				monthly_income_mult = 0.04
-				army_maintenance_mult = -0.03
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				stewardship = 1
+				stewardship_per_piety_level = 1
 			}
 			100 = {
-				health = @bm_acolyte_common_health
-				life_expectancy = @bm_acolyte_common_life_expectancy
-				monthly_income_mult = 0.04
-				army_maintenance_mult = -0.03
-				stewardship_per_piety_level = 1
-				monthly_income = 0.5
-				domain_limit = 1
-				character_capital_county_monthly_development_growth_add = 0.15
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				stewardship = 1
+				monthly_income_mult = 0.10
 			}
 		}
 
 		hematurgy = {
 			10 = {
-				health = @bm_acolyte_common_health
-				life_expectancy = @bm_acolyte_common_life_expectancy
-				owned_hostile_scheme_success_chance_max_add = 3
-				enemy_hostile_scheme_success_chance_max_add = -3
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				intrigue = 1
 			}
 			30 = {
-				health = @bm_acolyte_common_health
-				life_expectancy = @bm_acolyte_common_life_expectancy
-				owned_hostile_scheme_success_chance_max_add = 3
-				enemy_hostile_scheme_success_chance_max_add = -3
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				intrigue = 1
+				intrigue_per_piety_level = 1
 			}
 			50 = {
-				intrigue_per_piety_level = 1
-				owned_hostile_scheme_success_chance_max_add = 3
-				enemy_hostile_scheme_success_chance_max_add = -3
+				intrigue = 1
 				max_hostile_schemes_add = 1
 			}
 			70 = {
-				health = @bm_acolyte_common_health
-				life_expectancy = @bm_acolyte_common_life_expectancy
-				owned_hostile_scheme_success_chance_max_add = 3
-				enemy_hostile_scheme_success_chance_max_add = -3
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				intrigue = 1
+				intrigue_per_piety_level = 1
 			}
 			100 = {
-				health = @bm_acolyte_common_health
-				life_expectancy = @bm_acolyte_common_life_expectancy
-				owned_hostile_scheme_success_chance_max_add = 3
-				enemy_hostile_scheme_success_chance_max_add = -3
-				intrigue_per_piety_level = 1
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				intrigue = 1
+				max_hostile_schemes_add = 1
 			}
 		}
 
 		benediction = {
 			10 = {
-				health = @bm_acolyte_common_health
-				life_expectancy = @bm_acolyte_common_life_expectancy
-				general_opinion = 2
-				owned_personal_scheme_success_chance_max_add = 3
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				diplomacy = 1
 			}
 			30 = {
-				health = @bm_acolyte_common_health
-				life_expectancy = @bm_acolyte_common_life_expectancy
-				general_opinion = 2
-				owned_personal_scheme_success_chance_max_add = 3
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				diplomacy = 1
+				diplomacy_per_piety_level = 1
 			}
 			50 = {
-				general_opinion = 2
-				diplomacy_per_piety_level = 1
-				owned_personal_scheme_success_chance_max_add = 3
+				diplomacy = 1
 				max_personal_schemes_add = 1
 			}
 			70 = {
-				health = @bm_acolyte_common_health
-				life_expectancy = @bm_acolyte_common_life_expectancy
-				general_opinion = 2
-				owned_personal_scheme_success_chance_max_add = 3
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				diplomacy = 1
+				diplomacy_per_piety_level = 1
 			}
 			100 = {
-				health = @bm_acolyte_common_health
-				life_expectancy = @bm_acolyte_common_life_expectancy
-				general_opinion = 2
-				owned_personal_scheme_success_chance_max_add = 3
-				diplomacy_per_piety_level = 1
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				diplomacy = 1
+				max_personal_schemes_add = 1
 			}
 		}
 
 		enlightenment = {
 			10 = {
-				health = @bm_acolyte_common_health
-				life_expectancy = @bm_acolyte_common_life_expectancy
-				monthly_piety = 0.40
-				monthly_piety_gain_mult = 0.06
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				learning = 1
 			}
 			30 = {
-				health = @bm_acolyte_common_health
-				life_expectancy = @bm_acolyte_common_life_expectancy
-				monthly_piety = 0.40
-				monthly_piety_gain_mult = 0.06
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				learning = 1
+				learning_per_piety_level = 1
 			}
 			50 = {
-				monthly_piety = 0.40
-				monthly_piety_gain_mult = 0.06
-				learning_per_piety_level = 1
+				learning = 1
+				personal_tenet_slot_add = 1
 			}
 			70 = {
-				health = @bm_acolyte_common_health
-				life_expectancy = @bm_acolyte_common_life_expectancy
-				monthly_piety = 0.40
-				monthly_piety_gain_mult = 0.06
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				learning = 1
+				learning_per_piety_level = 1
 			}
 			100 = {
-				health = @bm_acolyte_common_health
-				life_expectancy = @bm_acolyte_common_life_expectancy
-				monthly_piety = 0.40
-				monthly_piety_gain_mult = 0.06
-				learning_per_piety_level = 1
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				learning = 1
+				personal_tenet_slot_add = 1
 			}
 		}
 
 		bloodlust = {
 			10 = {
-				health = @bm_acolyte_common_health
-				life_expectancy = @bm_acolyte_common_life_expectancy
-				knight_limit = 1
-				army_damage_mult = 0.03
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				martial = 1
 			}
 			30 = {
-				health = @bm_acolyte_common_health
-				life_expectancy = @bm_acolyte_common_life_expectancy
-				knight_limit = 1
-				army_damage_mult = 0.03
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				martial = 1
+				martial_per_piety_level = 1
 			}
 			50 = {
-				knight_limit = 1
-				army_damage_mult = 0.03
-				martial_per_piety_level = 1
-				prowess_per_piety_level = 1
-				knight_effectiveness_per_prowess = 0.005
+				martial = 1
+				monthly_piety_gain_per_knight_add = 0.02
 			}
 			70 = {
-				health = @bm_acolyte_common_health
-				life_expectancy = @bm_acolyte_common_life_expectancy
-				knight_limit = 1
-				army_damage_mult = 0.03
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				martial = 1
+				martial_per_piety_level = 1
 			}
 			100 = {
-				health = @bm_acolyte_common_health
-				life_expectancy = @bm_acolyte_common_life_expectancy
-				knight_limit = 1
-				army_damage_mult = 0.03
-				martial_per_piety_level = 1
-				prowess_per_piety_level = 1
-				knight_effectiveness_per_prowess = 0.005
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				martial = 1
+				monthly_piety_gain_per_knight_add = 0.02
 			}
 		}
 
 		ancient = {
 			10 = {
-				health = @bm_acolyte_common_health
-				life_expectancy = @bm_acolyte_common_life_expectancy
-				monthly_dynasty_prestige = 0.20
-				monthly_legitimacy_add = 0.04
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_piety = 0.50
+				monthly_dynasty_prestige = 0.40
 			}
 			30 = {
-				health = @bm_acolyte_common_health
-				life_expectancy = @bm_acolyte_common_life_expectancy
-				monthly_dynasty_prestige = 0.20
-				monthly_legitimacy_add = 0.04
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_piety = 0.50
+				monthly_dynasty_prestige = 0.40
+				knight_effectiveness_per_learning = 0.005
 			}
 			50 = {
-				monthly_dynasty_prestige = 0.20
-				monthly_legitimacy_add = 0.04
-				life_expectancy = 2
-				piety_level_impact_mult = 0.10
-				personal_tenet_slot_add = 1
+				life_expectancy = @bm_common_life_expectancy
+				monthly_piety = 0.50
+				monthly_dynasty_prestige = 0.40
 			}
 			70 = {
-				health = @bm_acolyte_common_health
-				life_expectancy = @bm_acolyte_common_life_expectancy
-				monthly_dynasty_prestige = 0.20
-				monthly_legitimacy_add = 0.04
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_piety = 0.50
+				monthly_dynasty_prestige = 0.40
+				knight_effectiveness_per_learning = 0.005
 			}
 			100 = {
-				health = @bm_acolyte_common_health
-				life_expectancy = @bm_acolyte_common_life_expectancy
-				monthly_dynasty_prestige = 0.20
-				monthly_legitimacy_add = 0.04
-				piety_level_impact_mult = 0.15
-				personal_tenet_slot_add = 1
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_piety = 0.50
+				monthly_dynasty_prestige = 0.40
 				character_max_piety_level_add = 1
-				no_prowess_loss_from_age = yes
 			}
 		}
 	}
@@ -267,85 +230,63 @@ lifestyle_blood_mage = {
 		lifestyle_bm_archmage
 	}
 
-	# Base trait benefits (Tier II - Anti-nerf absorbs Tier I tracks up to 50 XP & Ancient up to 100 XP)
-	# Ancient
+	# Base trait benefits (Tier II - Promotion floor)
+	# Ancient & Lifeforce
 	health = 2
 	life_expectancy = 26
 	monthly_dynasty_prestige = 0.60
-	monthly_legitimacy_add = 0.12
-	piety_level_impact_mult = 0.10
-	personal_tenet_slot_add = 2
+	monthly_piety = 1.50
+	personal_tenet_slot_add = 1
 	character_max_piety_level_add = 1
+	knight_effectiveness_per_learning = 0.005
 	no_prowess_loss_from_age = yes
 
-	# Diplomacy
+	# Attributes & Piety Scaling
+	diplomacy = 3
+	martial = 3
+	stewardship = 3
+	intrigue = 3
+	learning = 3
 	diplomacy_per_piety_level = 1
-	general_opinion = 6
-	owned_personal_scheme_success_chance_max_add = 9
-	max_personal_schemes_add = 1
-
-	# Martial
 	martial_per_piety_level = 1
-	prowess_per_piety_level = 1
-	knight_limit = 3
-	army_damage_mult = 0.09
-	knight_effectiveness_per_prowess = 0.005
-
-	# Stewardship
 	stewardship_per_piety_level = 1
-	monthly_income = 0.5
-	domain_limit = 1
-	monthly_income_mult = 0.08
-	army_maintenance_mult = -0.09
-	character_capital_county_monthly_development_growth_add = 0.10
-
-	# Intrigue
 	intrigue_per_piety_level = 1
-	owned_hostile_scheme_success_chance_max_add = 9
-	enemy_hostile_scheme_success_chance_max_add = -9
-	max_hostile_schemes_add = 1
-
-	# Learning
 	learning_per_piety_level = 1
-	monthly_piety = 1.20
-	monthly_piety_gain_mult = 0.18
+
+	# Track Extras Baseline
+	monthly_income_mult = 0.10
+	max_personal_schemes_add = 1
+	max_hostile_schemes_add = 1
+	monthly_piety_gain_per_knight_add = 0.02
 
 	tracks = {
 		bloodline = {
 			10 = {
 				health = @bm_common_health
 				life_expectancy = @bm_common_life_expectancy
-				monthly_income_mult = 0.06
-				army_maintenance_mult = -0.06
+				stewardship = 1
 			}
 			30 = {
 				health = @bm_common_health
 				life_expectancy = @bm_common_life_expectancy
-				monthly_income_mult = 0.06
-				army_maintenance_mult = -0.06
+				stewardship = 1
+				stewardship_per_piety_level = 1
 			}
 			50 = {
-				army_maintenance_mult = -0.06
-				stewardship_per_piety_level = 1
-				monthly_income = 1.0
-				domain_limit = 1
-				character_capital_county_monthly_development_growth_add = 0.20
+				stewardship = 1
+				monthly_income_mult = 0.10
 			}
 			70 = {
 				health = @bm_common_health
 				life_expectancy = @bm_common_life_expectancy
-				monthly_income_mult = 0.06
-				army_maintenance_mult = -0.06
+				stewardship = 1
+				stewardship_per_piety_level = 1
 			}
 			100 = {
 				health = @bm_common_health
 				life_expectancy = @bm_common_life_expectancy
-				monthly_income_mult = 0.06
-				army_maintenance_mult = -0.06
-				stewardship_per_piety_level = 1
-				monthly_income = 1.0
-				domain_limit = 1
-				character_capital_county_monthly_development_growth_add = 0.30
+				stewardship = 1
+				monthly_income_mult = 0.10
 			}
 		}
 
@@ -353,33 +294,29 @@ lifestyle_blood_mage = {
 			10 = {
 				health = @bm_common_health
 				life_expectancy = @bm_common_life_expectancy
-				owned_hostile_scheme_success_chance_max_add = 6
-				enemy_hostile_scheme_success_chance_max_add = -6
+				intrigue = 1
 			}
 			30 = {
 				health = @bm_common_health
 				life_expectancy = @bm_common_life_expectancy
-				owned_hostile_scheme_success_chance_max_add = 6
-				enemy_hostile_scheme_success_chance_max_add = -6
+				intrigue = 1
+				intrigue_per_piety_level = 1
 			}
 			50 = {
-				intrigue_per_piety_level = 1
-				owned_hostile_scheme_success_chance_max_add = 6
-				enemy_hostile_scheme_success_chance_max_add = -6
+				intrigue = 1
 				max_hostile_schemes_add = 1
 			}
 			70 = {
 				health = @bm_common_health
 				life_expectancy = @bm_common_life_expectancy
-				owned_hostile_scheme_success_chance_max_add = 6
-				enemy_hostile_scheme_success_chance_max_add = -6
+				intrigue = 1
+				intrigue_per_piety_level = 1
 			}
 			100 = {
 				health = @bm_common_health
 				life_expectancy = @bm_common_life_expectancy
-				owned_hostile_scheme_success_chance_max_add = 6
-				enemy_hostile_scheme_success_chance_max_add = -6
-				intrigue_per_piety_level = 1
+				intrigue = 1
+				max_hostile_schemes_add = 1
 			}
 		}
 
@@ -387,33 +324,29 @@ lifestyle_blood_mage = {
 			10 = {
 				health = @bm_common_health
 				life_expectancy = @bm_common_life_expectancy
-				general_opinion = 4
-				owned_personal_scheme_success_chance_max_add = 6
+				diplomacy = 1
 			}
 			30 = {
 				health = @bm_common_health
 				life_expectancy = @bm_common_life_expectancy
-				general_opinion = 4
-				owned_personal_scheme_success_chance_max_add = 6
+				diplomacy = 1
+				diplomacy_per_piety_level = 1
 			}
 			50 = {
-				general_opinion = 4
-				diplomacy_per_piety_level = 1
-				owned_personal_scheme_success_chance_max_add = 6
+				diplomacy = 1
 				max_personal_schemes_add = 1
 			}
 			70 = {
 				health = @bm_common_health
 				life_expectancy = @bm_common_life_expectancy
-				general_opinion = 4
-				owned_personal_scheme_success_chance_max_add = 6
+				diplomacy = 1
+				diplomacy_per_piety_level = 1
 			}
 			100 = {
 				health = @bm_common_health
 				life_expectancy = @bm_common_life_expectancy
-				general_opinion = 4
-				owned_personal_scheme_success_chance_max_add = 6
-				diplomacy_per_piety_level = 1
+				diplomacy = 1
+				max_personal_schemes_add = 1
 			}
 		}
 
@@ -421,32 +354,29 @@ lifestyle_blood_mage = {
 			10 = {
 				health = @bm_common_health
 				life_expectancy = @bm_common_life_expectancy
-				monthly_piety = 1.00
-				monthly_piety_gain_mult = 0.12
+				learning = 1
 			}
 			30 = {
 				health = @bm_common_health
 				life_expectancy = @bm_common_life_expectancy
-				monthly_piety = 1.00
-				monthly_piety_gain_mult = 0.12
+				learning = 1
+				learning_per_piety_level = 1
 			}
 			50 = {
-				monthly_piety = 1.00
-				monthly_piety_gain_mult = 0.12
-				learning_per_piety_level = 1
+				learning = 1
+				personal_tenet_slot_add = 1
 			}
 			70 = {
 				health = @bm_common_health
 				life_expectancy = @bm_common_life_expectancy
-				monthly_piety = 1.00
-				monthly_piety_gain_mult = 0.12
+				learning = 1
+				learning_per_piety_level = 1
 			}
 			100 = {
 				health = @bm_common_health
 				life_expectancy = @bm_common_life_expectancy
-				monthly_piety = 1.00
-				monthly_piety_gain_mult = 0.12
-				learning_per_piety_level = 1
+				learning = 1
+				personal_tenet_slot_add = 1
 			}
 		}
 
@@ -454,36 +384,29 @@ lifestyle_blood_mage = {
 			10 = {
 				health = @bm_common_health
 				life_expectancy = @bm_common_life_expectancy
-				knight_limit = 1
-				army_damage_mult = 0.06
+				martial = 1
 			}
 			30 = {
 				health = @bm_common_health
 				life_expectancy = @bm_common_life_expectancy
-				knight_limit = 1
-				army_damage_mult = 0.06
+				martial = 1
+				martial_per_piety_level = 1
 			}
 			50 = {
-				knight_limit = 1
-				army_damage_mult = 0.06
-				martial_per_piety_level = 1
-				prowess_per_piety_level = 1
-				knight_effectiveness_per_prowess = 0.005
+				martial = 1
+				monthly_piety_gain_per_knight_add = 0.02
 			}
 			70 = {
 				health = @bm_common_health
 				life_expectancy = @bm_common_life_expectancy
-				knight_limit = 1
-				army_damage_mult = 0.06
+				martial = 1
+				martial_per_piety_level = 1
 			}
 			100 = {
 				health = @bm_common_health
 				life_expectancy = @bm_common_life_expectancy
-				knight_limit = 1
-				army_damage_mult = 0.06
-				martial_per_piety_level = 1
-				prowess_per_piety_level = 1
-				knight_effectiveness_per_prowess = 0.005
+				martial = 1
+				monthly_piety_gain_per_knight_add = 0.02
 			}
 		}
 
@@ -491,35 +414,33 @@ lifestyle_blood_mage = {
 			10 = {
 				health = @bm_common_health
 				life_expectancy = @bm_common_life_expectancy
+				monthly_piety = 0.50
 				monthly_dynasty_prestige = 0.40
-				monthly_legitimacy_add = 0.08
 			}
 			30 = {
 				health = @bm_common_health
 				life_expectancy = @bm_common_life_expectancy
+				monthly_piety = 0.50
 				monthly_dynasty_prestige = 0.40
-				monthly_legitimacy_add = 0.08
+				knight_effectiveness_per_learning = 0.005
 			}
 			50 = {
+				life_expectancy = @bm_common_life_expectancy
+				monthly_piety = 0.50
 				monthly_dynasty_prestige = 0.40
-				monthly_legitimacy_add = 0.08
-				life_expectancy = 4
-				piety_level_impact_mult = 0.20
-				personal_tenet_slot_add = 1
 			}
 			70 = {
 				health = @bm_common_health
 				life_expectancy = @bm_common_life_expectancy
+				monthly_piety = 0.50
 				monthly_dynasty_prestige = 0.40
-				monthly_legitimacy_add = 0.08
+				knight_effectiveness_per_learning = 0.005
 			}
 			100 = {
 				health = @bm_common_health
 				life_expectancy = @bm_common_life_expectancy
+				monthly_piety = 0.50
 				monthly_dynasty_prestige = 0.40
-				monthly_legitimacy_add = 0.08
-				piety_level_impact_mult = 0.30
-				personal_tenet_slot_add = 1
 				character_max_piety_level_add = 1
 			}
 		}
@@ -546,259 +467,217 @@ lifestyle_bm_archmage = {
 		lifestyle_blood_mage
 	}
 
-	# Base trait benefits (Tier III - Anti-nerf absorbs Tier I + Tier II tracks up to 50 XP & Ancient up to 100 XP)
-	# Ancient
+	# Base trait benefits (Tier III - Promotion floor)
+	# Ancient & Lifeforce
 	health = 5
 	life_expectancy = 78
 	monthly_dynasty_prestige = 1.80
-	monthly_legitimacy_add = 0.36
-	piety_level_impact_mult = 0.30
-	personal_tenet_slot_add = 4
+	monthly_piety = 3.00
+	personal_tenet_slot_add = 2
 	character_max_piety_level_add = 2
+	knight_effectiveness_per_learning = 0.01
 	no_prowess_loss_from_age = yes
 
-	# Diplomacy
+	# Attributes & Piety Scaling
+	diplomacy = 6
+	martial = 6
+	stewardship = 6
+	intrigue = 6
+	learning = 6
 	diplomacy_per_piety_level = 2
-	general_opinion = 18
-	owned_personal_scheme_success_chance_max_add = 27
-	max_personal_schemes_add = 2
-
-	# Martial
 	martial_per_piety_level = 2
-	prowess_per_piety_level = 2
-	knight_limit = 6
-	army_damage_mult = 0.27
-	knight_effectiveness_per_prowess = 0.01
-
-	# Stewardship
 	stewardship_per_piety_level = 2
-	monthly_income = 1.5
-	domain_limit = 2
-	monthly_income_mult = 0.20
-	army_maintenance_mult = -0.27
-	character_capital_county_monthly_development_growth_add = 0.30
-
-	# Intrigue
 	intrigue_per_piety_level = 2
-	owned_hostile_scheme_success_chance_max_add = 27
-	enemy_hostile_scheme_success_chance_max_add = -27
-	max_hostile_schemes_add = 2
-
-	# Learning
 	learning_per_piety_level = 2
-	monthly_piety = 4.20
-	monthly_piety_gain_mult = 0.54
+
+	# Track Extras Baseline
+	monthly_income_mult = 0.20
+	max_personal_schemes_add = 2
+	max_hostile_schemes_add = 2
+	monthly_piety_gain_per_knight_add = 0.04
 
 	tracks = {
 		bloodline = {
 			10 = {
-				health = @bm_archmage_common_health
-				life_expectancy = @bm_archmage_common_life_expectancy
-				monthly_income_mult = 0.10
-				army_maintenance_mult = -0.10
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				stewardship = 1
 			}
 			30 = {
-				health = @bm_archmage_common_health
-				life_expectancy = @bm_archmage_common_life_expectancy
-				monthly_income_mult = 0.10
-				army_maintenance_mult = -0.10
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				stewardship = 1
+				stewardship_per_piety_level = 1
 			}
 			50 = {
-				army_maintenance_mult = -0.10
-				stewardship_per_piety_level = 2
-				monthly_income = 1.5
-				domain_limit = 1
-				character_capital_county_monthly_development_growth_add = 0.40
+				stewardship = 1
+				monthly_income_mult = 0.10
 			}
 			70 = {
-				health = @bm_archmage_common_health
-				life_expectancy = @bm_archmage_common_life_expectancy
-				monthly_income_mult = 0.10
-				army_maintenance_mult = -0.10
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				stewardship = 1
+				stewardship_per_piety_level = 1
 			}
 			100 = {
-				health = @bm_archmage_common_health
-				life_expectancy = @bm_archmage_common_life_expectancy
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				stewardship = 1
 				monthly_income_mult = 0.10
-				army_maintenance_mult = -0.10
-				stewardship_per_piety_level = 2
-				monthly_income = 1.5
-				domain_limit = 1
-				character_capital_county_monthly_development_growth_add = 0.60
 			}
 		}
 
 		hematurgy = {
 			10 = {
-				health = @bm_archmage_common_health
-				life_expectancy = @bm_archmage_common_life_expectancy
-				owned_hostile_scheme_success_chance_max_add = 10
-				enemy_hostile_scheme_success_chance_max_add = -10
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				intrigue = 1
 			}
 			30 = {
-				health = @bm_archmage_common_health
-				life_expectancy = @bm_archmage_common_life_expectancy
-				owned_hostile_scheme_success_chance_max_add = 10
-				enemy_hostile_scheme_success_chance_max_add = -10
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				intrigue = 1
+				intrigue_per_piety_level = 1
 			}
 			50 = {
-				intrigue_per_piety_level = 2
-				owned_hostile_scheme_success_chance_max_add = 10
-				enemy_hostile_scheme_success_chance_max_add = -10
+				intrigue = 1
 				max_hostile_schemes_add = 1
 			}
 			70 = {
-				health = @bm_archmage_common_health
-				life_expectancy = @bm_archmage_common_life_expectancy
-				owned_hostile_scheme_success_chance_max_add = 10
-				enemy_hostile_scheme_success_chance_max_add = -10
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				intrigue = 1
+				intrigue_per_piety_level = 1
 			}
 			100 = {
-				health = @bm_archmage_common_health
-				life_expectancy = @bm_archmage_common_life_expectancy
-				owned_hostile_scheme_success_chance_max_add = 10
-				enemy_hostile_scheme_success_chance_max_add = -10
-				intrigue_per_piety_level = 2
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				intrigue = 1
+				max_hostile_schemes_add = 1
 			}
 		}
 
 		benediction = {
 			10 = {
-				health = @bm_archmage_common_health
-				life_expectancy = @bm_archmage_common_life_expectancy
-				general_opinion = 6
-				owned_personal_scheme_success_chance_max_add = 10
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				diplomacy = 1
 			}
 			30 = {
-				health = @bm_archmage_common_health
-				life_expectancy = @bm_archmage_common_life_expectancy
-				general_opinion = 6
-				owned_personal_scheme_success_chance_max_add = 10
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				diplomacy = 1
+				diplomacy_per_piety_level = 1
 			}
 			50 = {
-				general_opinion = 6
-				diplomacy_per_piety_level = 2
-				owned_personal_scheme_success_chance_max_add = 10
+				diplomacy = 1
 				max_personal_schemes_add = 1
 			}
 			70 = {
-				health = @bm_archmage_common_health
-				life_expectancy = @bm_archmage_common_life_expectancy
-				general_opinion = 6
-				owned_personal_scheme_success_chance_max_add = 10
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				diplomacy = 1
+				diplomacy_per_piety_level = 1
 			}
 			100 = {
-				health = @bm_archmage_common_health
-				life_expectancy = @bm_archmage_common_life_expectancy
-				general_opinion = 6
-				owned_personal_scheme_success_chance_max_add = 10
-				diplomacy_per_piety_level = 2
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				diplomacy = 1
+				max_personal_schemes_add = 1
 			}
 		}
 
 		enlightenment = {
 			10 = {
-				health = @bm_archmage_common_health
-				life_expectancy = @bm_archmage_common_life_expectancy
-				monthly_piety = 2.00
-				monthly_piety_gain_mult = 0.20
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				learning = 1
 			}
 			30 = {
-				health = @bm_archmage_common_health
-				life_expectancy = @bm_archmage_common_life_expectancy
-				monthly_piety = 2.00
-				monthly_piety_gain_mult = 0.20
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				learning = 1
+				learning_per_piety_level = 1
 			}
 			50 = {
-				monthly_piety = 2.00
-				monthly_piety_gain_mult = 0.20
-				learning_per_piety_level = 2
+				learning = 1
+				personal_tenet_slot_add = 1
 			}
 			70 = {
-				health = @bm_archmage_common_health
-				life_expectancy = @bm_archmage_common_life_expectancy
-				monthly_piety = 2.00
-				monthly_piety_gain_mult = 0.20
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				learning = 1
+				learning_per_piety_level = 1
 			}
 			100 = {
-				health = @bm_archmage_common_health
-				life_expectancy = @bm_archmage_common_life_expectancy
-				monthly_piety = 2.00
-				monthly_piety_gain_mult = 0.20
-				learning_per_piety_level = 2
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				learning = 1
+				personal_tenet_slot_add = 1
 			}
 		}
 
 		bloodlust = {
 			10 = {
-				health = @bm_archmage_common_health
-				life_expectancy = @bm_archmage_common_life_expectancy
-				knight_limit = 1
-				army_damage_mult = 0.10
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				martial = 1
 			}
 			30 = {
-				health = @bm_archmage_common_health
-				life_expectancy = @bm_archmage_common_life_expectancy
-				knight_limit = 1
-				army_damage_mult = 0.10
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				martial = 1
+				martial_per_piety_level = 1
 			}
 			50 = {
-				knight_limit = 1
-				army_damage_mult = 0.10
-				martial_per_piety_level = 2
-				prowess_per_piety_level = 2
-				knight_effectiveness_per_prowess = 0.01
+				martial = 1
+				monthly_piety_gain_per_knight_add = 0.02
 			}
 			70 = {
-				health = @bm_archmage_common_health
-				life_expectancy = @bm_archmage_common_life_expectancy
-				knight_limit = 1
-				army_damage_mult = 0.10
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				martial = 1
+				martial_per_piety_level = 1
 			}
 			100 = {
-				health = @bm_archmage_common_health
-				life_expectancy = @bm_archmage_common_life_expectancy
-				knight_limit = 1
-				army_damage_mult = 0.10
-				martial_per_piety_level = 2
-				prowess_per_piety_level = 2
-				knight_effectiveness_per_prowess = 0.01
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				martial = 1
+				monthly_piety_gain_per_knight_add = 0.02
 			}
 		}
 
 		ancient = {
 			10 = {
-				health = @bm_archmage_common_health
-				life_expectancy = @bm_archmage_common_life_expectancy
-				monthly_dynasty_prestige = 0.60
-				monthly_legitimacy_add = 0.12
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_piety = 0.50
+				monthly_dynasty_prestige = 0.40
 			}
 			30 = {
-				health = @bm_archmage_common_health
-				life_expectancy = @bm_archmage_common_life_expectancy
-				monthly_dynasty_prestige = 0.60
-				monthly_legitimacy_add = 0.12
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_piety = 0.50
+				monthly_dynasty_prestige = 0.40
+				knight_effectiveness_per_learning = 0.005
 			}
 			50 = {
-				monthly_dynasty_prestige = 0.60
-				monthly_legitimacy_add = 0.12
-				life_expectancy = 8
-				piety_level_impact_mult = 0.40
-				personal_tenet_slot_add = 1
+				life_expectancy = @bm_common_life_expectancy
+				monthly_piety = 0.50
+				monthly_dynasty_prestige = 0.40
 			}
 			70 = {
-				health = @bm_archmage_common_health
-				life_expectancy = @bm_archmage_common_life_expectancy
-				monthly_dynasty_prestige = 0.60
-				monthly_legitimacy_add = 0.12
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_piety = 0.50
+				monthly_dynasty_prestige = 0.40
+				knight_effectiveness_per_learning = 0.005
 			}
 			100 = {
-				health = @bm_archmage_common_health
-				life_expectancy = @bm_archmage_common_life_expectancy
-				monthly_dynasty_prestige = 0.60
-				monthly_legitimacy_add = 0.12
-				piety_level_impact_mult = 0.60
-				personal_tenet_slot_add = 1
+				health = @bm_common_health
+				life_expectancy = @bm_common_life_expectancy
+				monthly_piety = 0.50
+				monthly_dynasty_prestige = 0.40
 				character_max_piety_level_add = 1
 			}
 		}
