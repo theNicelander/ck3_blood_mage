@@ -188,9 +188,6 @@ bm_on_birth_bloodline_xp = {
 							}
 						}
 					}
-					hidden_effect = {
-						bm_recount_lifeforce_stacks_effect = yes
-					}
 					send_interface_toast = {
 						type = event_toast_effect_good
 						title = bm_birth_mojo_consumed_toast
@@ -285,9 +282,6 @@ bm_on_birth_bloodline_xp = {
 								value = 1
 							}
 						}
-					}
-					hidden_effect = {
-						bm_recount_lifeforce_stacks_effect = yes
 					}
 					send_interface_toast = {
 						type = event_toast_effect_good

@@ -96,9 +96,6 @@ bm_debug.0002 = {
 			add_character_modifier = { modifier = lifeforce_modifier_superior }
 			add_character_modifier = { modifier = lifeforce_modifier_superior }
 			add_character_modifier = { modifier = lifeforce_modifier_superior }
-			hidden_effect = {
-				bm_recount_lifeforce_stacks_effect = yes
-			}
 		}
 		trigger_event = { id = bm_debug.0002 }
 	}
@@ -114,9 +111,6 @@ bm_debug.0002 = {
 			add_character_modifier = { modifier = lifeforce_modifier_major }
 			add_character_modifier = { modifier = lifeforce_modifier_major }
 			add_character_modifier = { modifier = lifeforce_modifier_major }
-			hidden_effect = {
-				bm_recount_lifeforce_stacks_effect = yes
-			}
 		}
 		trigger_event = { id = bm_debug.0002 }
 	}
@@ -132,9 +126,6 @@ bm_debug.0002 = {
 			add_character_modifier = { modifier = lifeforce_modifier_minor }
 			add_character_modifier = { modifier = lifeforce_modifier_minor }
 			add_character_modifier = { modifier = lifeforce_modifier_minor }
-			hidden_effect = {
-				bm_recount_lifeforce_stacks_effect = yes
-			}
 		}
 		trigger_event = { id = bm_debug.0002 }
 	}
@@ -156,9 +147,6 @@ bm_debug.0002 = {
 			while = {
 				limit = { has_character_modifier = lifeforce_modifier_minor }
 				remove_character_modifier = lifeforce_modifier_minor
-			}
-			hidden_effect = {
-				bm_recount_lifeforce_stacks_effect = yes
 			}
 		}
 		trigger_event = { id = bm_debug.0002 }

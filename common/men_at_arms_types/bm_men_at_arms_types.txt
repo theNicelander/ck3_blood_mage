@@ -36,11 +36,8 @@ bm_blood_berserkers = {
 	}
 
 	can_recruit = {
+		is_blood_mage_any_tier_trigger = yes
 		piety_level >= 2
-		OR = {
-			is_blood_mage_tier_2_or_higher_trigger = yes
-			bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE = 50 }
-		}
 	}
 
 	buy_cost = {
@@ -90,14 +87,8 @@ bm_blood_behemoths = {
 	}
 
 	can_recruit = {
+		is_blood_mage_any_tier_trigger = yes
 		piety_level >= 4
-		OR = {
-			is_blood_mage_archmage_trigger = yes
-			AND = {
-				is_blood_mage_tier_2_or_higher_trigger = yes
-				bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE = 80 }
-			}
-		}
 	}
 
 	buy_cost = {
