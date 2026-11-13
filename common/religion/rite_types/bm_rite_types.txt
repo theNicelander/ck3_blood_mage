@@ -1,7 +1,10 @@
 ﻿blodtru_faith = {
+	name = blodtru_faith
+	desc = blodtru_faith_desc
 	faith = blodtru_faith
 
 	color = { 0.0 0.0 0.0 }
+	icon = blodtru_faith_reformed
 
 	tenets = {
 		tenet_ancestor_worship
@@ -9,41 +12,17 @@
 		tenet_literalism
 	}
 
-	doctrines = {
-	}
-}
-
-ketsudo_faith = {
-	faith = ketsudo_faith
-
-	color = { 0.0 0.0 0.0 }
-
-	tenets = {
-		tenet_ancestor_worship
-		tenet_mendicant_preachers
-		tenet_literalism
-	}
-
-	doctrines = {
-	}
-}
-
-xuedao_faith = {
-	faith = xuedao_faith
-	color = { 0.0 0.0 0.0 }
-	tenets = {
-		tenet_ancestor_worship
-		tenet_mendicant_preachers
-		tenet_literalism
-	}
 	doctrines = {
 	}
 }
 
 old_blodtru_faith = {
-	faith = old_blodtru_faith
+	name = old_blodtru_faith
+	desc = old_blodtru_faith_desc
+	faith = blodtru_faith
 
 	color = { 0.0 0.0 0.0 }
+	icon = blodtru_faith
 
 	tenets = {
 		tenet_ancestor_worship
@@ -53,13 +32,34 @@ old_blodtru_faith = {
 
 	doctrines = {
 		unreformed_faith_doctrine
+	}
+}
+
+ketsudo_faith = {
+	name = ketsudo_faith
+	desc = ketsudo_faith_desc
+	faith = ketsudo_faith
+
+	color = { 0.0 0.0 0.0 }
+	icon = ketsudo_faith_reformed
+
+	tenets = {
+		tenet_ancestor_worship
+		tenet_mendicant_preachers
+		tenet_literalism
+	}
+
+	doctrines = {
 	}
 }
 
 old_ketsudo_faith = {
-	faith = old_ketsudo_faith
+	name = old_ketsudo_faith
+	desc = old_ketsudo_faith_desc
+	faith = ketsudo_faith
 
 	color = { 0.0 0.0 0.0 }
+	icon = ketsudo_faith
 
 	tenets = {
 		tenet_ancestor_worship
@@ -72,14 +72,38 @@ old_ketsudo_faith = {
 	}
 }
 
-old_xuedao_faith = {
-	faith = old_xuedao_faith
+xuedao_faith = {
+	name = xuedao_faith
+	desc = xuedao_faith_desc
+	faith = xuedao_faith
+
 	color = { 0.0 0.0 0.0 }
+	icon = ketsudo_faith_reformed
+
 	tenets = {
 		tenet_ancestor_worship
 		tenet_mendicant_preachers
 		tenet_literalism
 	}
+
+	doctrines = {
+	}
+}
+
+old_xuedao_faith = {
+	name = old_xuedao_faith
+	desc = old_xuedao_faith_desc
+	faith = xuedao_faith
+
+	color = { 0.0 0.0 0.0 }
+	icon = ketsudo_faith
+
+	tenets = {
+		tenet_ancestor_worship
+		tenet_mendicant_preachers
+		tenet_literalism
+	}
+
 	doctrines = {
 		unreformed_faith_doctrine
 	}

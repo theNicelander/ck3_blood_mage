@@ -15,17 +15,17 @@ lifestyle_blood_power = {
         # 1. Diplomacy: Presence (Presence)
         presence = {
             10 = {
-                monthly_piety = 0.1
+                monthly_piety = 0.2
                 general_opinion = 5
-                monthly_prestige = 0.2
-                legitimacy_gain_mult = 0.05
+                monthly_prestige = 0.3
+                legitimacy_gain_mult = 0.06
                 owned_personal_scheme_success_chance_add = 8
             }
             30 = {
                 monthly_piety = 0.2
                 general_opinion = 5
-                monthly_prestige = 0.2
-                legitimacy_gain_mult = 0.05
+                monthly_prestige = 0.3
+                legitimacy_gain_mult = 0.06
                 owned_personal_scheme_success_chance_add = 8
             }
             50 = {
@@ -45,14 +45,14 @@ lifestyle_blood_power = {
                 monthly_piety = 0.2
                 general_opinion = 5
                 monthly_prestige = 0.3
-                legitimacy_gain_mult = 0.07
+                legitimacy_gain_mult = 0.06
                 owned_personal_scheme_success_chance_add = 8
             }
             100 = {
-                monthly_piety = 0.3
+                monthly_piety = 0.2
                 general_opinion = 5
-                monthly_prestige = 0.5
-                legitimacy_gain_mult = 0.07
+                monthly_prestige = 0.3
+                legitimacy_gain_mult = 0.06
                 owned_personal_scheme_success_chance_add = 8
                 max_personal_schemes_add = 1
                 # Common 100 Capstone
@@ -67,13 +67,12 @@ lifestyle_blood_power = {
         # 2. Martial: Warband (Warband)
         warband = {
             10 = {
-                monthly_piety = 0.1
+                monthly_piety = 0.2
                 counter_efficiency = 0.10
             }
             30 = {
                 monthly_piety = 0.2
                 counter_efficiency = 0.10
-                men_at_arms_cap = 1
             }
             50 = {
                 monthly_piety = 0.2
@@ -89,10 +88,9 @@ lifestyle_blood_power = {
             70 = {
                 monthly_piety = 0.2
                 counter_efficiency = 0.10
-                men_at_arms_cap = 1
             }
             100 = {
-                monthly_piety = 0.3
+                monthly_piety = 0.2
                 counter_efficiency = 0.10
                 men_at_arms_cap = 1
                 men_at_arms_limit = 1
@@ -108,14 +106,14 @@ lifestyle_blood_power = {
         # 3. Stewardship: Prosperity (Prosperity)
         prosperity = {
             10 = {
-                monthly_piety = 0.1
-                monthly_income = 0.3
+                monthly_piety = 0.2
+                monthly_income = 0.4
                 monthly_income_mult = 0.06
                 men_at_arms_maintenance = -0.06
             }
             30 = {
                 monthly_piety = 0.2
-                monthly_income = 0.3
+                monthly_income = 0.4
                 monthly_income_mult = 0.06
                 men_at_arms_maintenance = -0.06
             }
@@ -137,8 +135,8 @@ lifestyle_blood_power = {
                 men_at_arms_maintenance = -0.06
             }
             100 = {
-                monthly_piety = 0.3
-                monthly_income = 0.6
+                monthly_piety = 0.2
+                monthly_income = 0.4
                 monthly_income_mult = 0.06
                 men_at_arms_maintenance = -0.06
                 # Common 100 Capstone
@@ -153,7 +151,7 @@ lifestyle_blood_power = {
         # 4. Intrigue: Shadows (Shadows)
         shadows = {
             10 = {
-                monthly_piety = 0.1
+                monthly_piety = 0.2
                 owned_hostile_scheme_success_chance_add = 8
                 enemy_hostile_scheme_success_chance_add = -10
                 dread_baseline_add = 6
@@ -183,7 +181,7 @@ lifestyle_blood_power = {
                 dread_baseline_add = 6
             }
             100 = {
-                monthly_piety = 0.3
+                monthly_piety = 0.2
                 owned_hostile_scheme_success_chance_add = 8
                 enemy_hostile_scheme_success_chance_add = -10
                 dread_baseline_add = 6
@@ -200,7 +198,7 @@ lifestyle_blood_power = {
         # 5. Learning: Mastery (Mastery)
         mastery = {
             10 = {
-                monthly_piety = 0.1
+                monthly_piety = 0.2
                 monthly_lifestyle_xp_gain_mult = 0.10
                 stress_gain_mult = -0.10
                 stress_loss_mult = 0.10
@@ -229,7 +227,7 @@ lifestyle_blood_power = {
                 stress_loss_mult = 0.10
             }
             100 = {
-                monthly_piety = 0.3
+                monthly_piety = 0.2
                 monthly_lifestyle_xp_gain_mult = 0.10
                 stress_gain_mult = -0.10
                 stress_loss_mult = 0.10
@@ -245,7 +243,7 @@ lifestyle_blood_power = {
         # 6. Other: Legacy (Dynasty)
         dynasty = {
             10 = {
-                monthly_piety = 0.1
+                monthly_piety = 0.2
                 genetic_trait_strengthen_chance = 0.10
             }
             30 = {
@@ -267,7 +265,7 @@ lifestyle_blood_power = {
                 genetic_trait_strengthen_chance = 0.10
             }
             100 = {
-                monthly_piety = 0.3
+                monthly_piety = 0.2
                 genetic_trait_strengthen_chance = 0.10
                 inbreeding_chance = -0.50
                 # Common 100 Capstone

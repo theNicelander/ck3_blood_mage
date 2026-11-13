@@ -96,9 +96,6 @@ bm_on_character_death_duel = {
 						add_character_modifier = { modifier = lifeforce_modifier_superior }
 					}
 				}
-				hidden_effect = {
-					bm_recount_lifeforce_stacks_effect = yes
-				}
 				send_interface_toast = {
 					type = event_toast_effect_good
 					title = bm_duel_kill_bloodlust_toast
