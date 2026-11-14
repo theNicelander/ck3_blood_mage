@@ -29,3 +29,17 @@
  bm_action_can_cull_champion_combined_group_label: "@bm_bloodlust_discipline_icon! You Can Cull a Champion"
  bm_action_can_cull_champion_combined_group_name: "$bm_action_can_cull_champion$"
  bm_action_can_cull_champion_combined_group_description: "Several fallen followers or formidable prisoners (20+ Prowess) are available to be culled on the altar of blood for Lifeforce."
+
+ bm_action_can_attune_lifeforce: "@bm_ancient_discipline_icon! You Can Attune to Lifeforce"
+ bm_action_can_attune_lifeforce_label: "@bm_ancient_discipline_icon! You can attune to Lifeforce"
+ bm_action_can_attune_lifeforce_desc: "You are not currently attuned to any Blood Magic discipline. Attuning directs passive Lifeforce experience toward your chosen discipline."
+ bm_action_can_attune_lifeforce_click: "#I Click to open the Attune to Lifeforce decision#!"
+
+ bm_action_can_trait_drain_prisoner: "@bm_bloodline_discipline_icon! You Can Trait Drain a Prisoner"
+ bm_action_can_trait_drain_prisoner_label: "@bm_bloodline_discipline_icon! You can trait drain [recipient.GetShortUINameNoTooltip]"
+ bm_action_can_trait_drain_prisoner_desc: "[recipient.GetShortUIName] is held in your dungeon and possesses a beneficial inheritable trait you can drain."
+ bm_action_can_trait_drain_prisoner_click: "#I Click to trait drain [recipient.GetShortUINameNoTooltip]#!"
+ bm_action_can_trait_drain_prisoner_combined_label: "[actor.Custom2('RelationToMeShort', recipient)], [recipient.GetShortUINameNoTooltip]"
+ bm_action_can_trait_drain_prisoner_combined_group_label: "@bm_bloodline_discipline_icon! You Can Trait Drain a Prisoner"
+ bm_action_can_trait_drain_prisoner_combined_group_name: "$bm_action_can_trait_drain_prisoner$"
+ bm_action_can_trait_drain_prisoner_combined_group_description: "Several prisoners held in your dungeon possess beneficial inheritable traits you can drain."

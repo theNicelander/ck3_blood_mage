@@ -7,12 +7,10 @@ Architecture specs for the **Blood Mages** mod (CK3 1.20.*). Living specs of cur
 | Document | Topic | Key Files |
 | --- | --- | --- |
 | [`blood-mage-magic-tiers.md`](blood-mage-magic-tiers.md) | Minor, Major, Superior Blood Magic tiers | `common/decisions/cast_magic/` |
-| [`blood-mage-traits.md`](blood-mage-traits.md) | Lifestyle traits: Mage, Power | `common/traits/bm_*_trait.txt` |
+| [`blood-mage-traits.md`](blood-mage-traits.md) | Lifestyle traits: Acolyte, Mage, Archmage | `common/traits/bm_blood_mage_trait.txt` |
 | [`blood-mage-bloodlust.md`](blood-mage-bloodlust.md) | Bloodlust track mechanics, martial & duels | `common/traits/bm_blood_mage_trait.txt` |
-| [`blood-mage-blood-power.md`](blood-mage-blood-power.md) | Secondary Power trait, 6 progression tracks | `common/traits/bm_power_trait.txt` |
 | [`blood-mage-track-xp.md`](blood-mage-track-xp.md) | XP master hub & shared tracks (`ancient`, `enlightenment`, `benediction`) | `common/scripted_effects/bm_trait_track_xp_gain_effects.txt` |
 | [`blood-mage-track-xp-mage.md`](blood-mage-track-xp-mage.md) | Blood Mage XP tracks (`bloodline`, `hematurgy`, `bloodlust`) | `common/scripted_effects/bm_trait_track_xp_gain_effects.txt` |
-| [`blood-mage-track-xp-power.md`](blood-mage-track-xp-power.md) | Blood Power XP tracks (6 secondary tracks) | `common/scripted_effects/bm_trait_track_xp_gain_effects.txt` |
 | [`blood-mage-lifeforce.md`](blood-mage-lifeforce.md) | Lifeforce resource, modifiers, sinks & sources | `common/modifiers/bm_lifeforce.txt` |
 | [`blood-mage-blood-runes.md`](blood-mage-blood-runes.md) | 5 Galdrastafir staves, capstones, Duchy Temples | `common/modifiers/bm_blood_runes_modifiers.txt`, `common/buildings/` |
 | [`blood-mage-decisions.md`](blood-mage-decisions.md) | Decisions catalog, costs, requirements | `common/decisions/` |

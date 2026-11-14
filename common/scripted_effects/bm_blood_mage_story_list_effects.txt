@@ -50,6 +50,75 @@
 		}
 
 		set_variable = {
+			name = bm_lifeforce_presence_stacks
+			value = 0
+		}
+		while = {
+			limit = { has_character_modifier = lifeforce_modifier_presence }
+			remove_character_modifier = lifeforce_modifier_presence
+			change_variable = {
+				name = bm_lifeforce_presence_stacks
+				add = 1
+			}
+		}
+		while = {
+			count = {
+				value = 0
+				if = {
+					limit = { exists = var:bm_lifeforce_presence_stacks }
+					add = var:bm_lifeforce_presence_stacks
+				}
+			}
+			add_character_modifier = lifeforce_modifier_presence
+		}
+
+		set_variable = {
+			name = bm_lifeforce_prosperity_stacks
+			value = 0
+		}
+		while = {
+			limit = { has_character_modifier = lifeforce_modifier_prosperity }
+			remove_character_modifier = lifeforce_modifier_prosperity
+			change_variable = {
+				name = bm_lifeforce_prosperity_stacks
+				add = 1
+			}
+		}
+		while = {
+			count = {
+				value = 0
+				if = {
+					limit = { exists = var:bm_lifeforce_prosperity_stacks }
+					add = var:bm_lifeforce_prosperity_stacks
+				}
+			}
+			add_character_modifier = lifeforce_modifier_prosperity
+		}
+
+		set_variable = {
+			name = bm_lifeforce_shadows_stacks
+			value = 0
+		}
+		while = {
+			limit = { has_character_modifier = lifeforce_modifier_shadows }
+			remove_character_modifier = lifeforce_modifier_shadows
+			change_variable = {
+				name = bm_lifeforce_shadows_stacks
+				add = 1
+			}
+		}
+		while = {
+			count = {
+				value = 0
+				if = {
+					limit = { exists = var:bm_lifeforce_shadows_stacks }
+					add = var:bm_lifeforce_shadows_stacks
+				}
+			}
+			add_character_modifier = lifeforce_modifier_shadows
+		}
+
+		set_variable = {
 			name = bm_lifeforce_mojo_stacks
 			value = 0
 		}

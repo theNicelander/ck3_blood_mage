@@ -32,26 +32,6 @@ bm_debug.0001 = {
 		trigger_event = { id = bm_debug.0001 }
 	}
 
-	# Blood empowerment (20xp at a time)
-	option = {
-		name = bm_debug.0001.empowerment_xp
-		send_interface_toast = {
-			title = bm_debug.0001.toast
-			left_icon = root
-			if = {
-				limit = { NOT = { has_trait = lifestyle_blood_power } }
-				add_trait = lifestyle_blood_power
-			}
-			bm_add_blood_power_xp_effect = { TRACK = dynasty XP = 20 }
-			bm_add_blood_power_xp_effect = { TRACK = warband XP = 20 }
-			bm_add_blood_power_xp_effect = { TRACK = mastery XP = 20 }
-			bm_add_blood_power_xp_effect = { TRACK = presence XP = 20 }
-			bm_add_blood_power_xp_effect = { TRACK = prosperity XP = 20 }
-			bm_add_blood_power_xp_effect = { TRACK = shadows XP = 20 }
-		}
-		trigger_event = { id = bm_debug.0001 }
-	}
-
 	# 100 Ancient XP
 	option = {
 		name = bm_debug.0001.ancient_xp
@@ -147,6 +127,30 @@ bm_debug.0002 = {
 			while = {
 				limit = { has_character_modifier = lifeforce_modifier_minor }
 				remove_character_modifier = lifeforce_modifier_minor
+			}
+			while = {
+				limit = { has_character_modifier = lifeforce_modifier_presence }
+				remove_character_modifier = lifeforce_modifier_presence
+			}
+			while = {
+				limit = { has_character_modifier = lifeforce_modifier_fury }
+				remove_character_modifier = lifeforce_modifier_fury
+			}
+			while = {
+				limit = { has_character_modifier = lifeforce_modifier_prosperity }
+				remove_character_modifier = lifeforce_modifier_prosperity
+			}
+			while = {
+				limit = { has_character_modifier = lifeforce_modifier_shadows }
+				remove_character_modifier = lifeforce_modifier_shadows
+			}
+			while = {
+				limit = { has_character_modifier = lifeforce_modifier_focus }
+				remove_character_modifier = lifeforce_modifier_focus
+			}
+			while = {
+				limit = { has_character_modifier = lifeforce_modifier_mojo }
+				remove_character_modifier = lifeforce_modifier_mojo
 			}
 		}
 		trigger_event = { id = bm_debug.0002 }

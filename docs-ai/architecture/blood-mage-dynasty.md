@@ -43,7 +43,7 @@ Modifiers apply to all living and future members of the caster's house (landless
   - Triggered via `on_death` / `on_character_death` when a Blood Mage ruler dies with an anointed heir:
     1. **Awakening:** If the heir lacks `lifestyle_blood_mage`, awakens it via `bm_become_blood_mage_effect`.
     2. **Lifeforce Inheritance:** Inherits 1 stack of each Lifeforce tier held by the dying ruler at death (Minor $\rightarrow$ Minor, Major $\rightarrow$ Major, Superior $\rightarrow$ Superior), followed by recalculation.
-    3. **25% Track XP Transfer:** Heir inherits 25% of the dying ruler's XP across all active tracks: `ancient`, `enlightenment`, `benediction`, `bloodline`, `hematurgy`, `bloodlust`, and all six `lifestyle_blood_power` tracks (`dynasty`, `warband`, `mastery`, `presence`, `prosperity`, `shadows`).
+    3. **25% Track XP Transfer:** Heir inherits 25% of the dying ruler's XP across all active tracks: `ancient`, `enlightenment`, `benediction`, `bloodline`, `hematurgy`, `bloodlust`.
 
 ---
 

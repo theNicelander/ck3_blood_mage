@@ -10,7 +10,7 @@
 | Event File | Namespace | Triggered By | Subsystem & Function |
 | --- | --- | --- | --- |
 | `events/bm_cast_blood_magic_minor_events.txt` | `bm_cast_blood_magic_minor` | Decision `bm_cast_blood_magic_minor_decision` | Grimoire event (`.001`) offering Minor Lifeforce rites: Channel Minor, Condense into Major, Purge Impurities, Inscribe Minor Blood Rune. |
-| `events/bm_cast_blood_magic_major_events.txt` | `bm_cast_blood_magic_major` | Decision `bm_cast_blood_magic_major_decision` | Grimoire event (`.001`) offering Major Lifeforce rites: Channel Blood Power, Improve Education (1★–4★), Inscribe Major Blood Rune, Empower Bloodline, and Manifest Trait (Congenital Ranks 1–2). |
+| `events/bm_cast_blood_magic_major_events.txt` | `bm_cast_blood_magic_major` | Decision `bm_cast_blood_magic_major_decision` | Grimoire event (`.001`) offering Major Lifeforce rites: Improve Education (1★–4★), Inscribe Major Blood Rune, Empower Bloodline, and Manifest Trait (Congenital Ranks 1–2). |
 | `events/bm_cast_blood_magic_superior_events.txt` | `bm_cast_blood_magic_superior` | Decision `bm_cast_blood_magic_superior_decision` | Grimoire event (`.001`) offering Superior Lifeforce rites: Master Education (5★), Embrace New Education (2nd trait), Inscribe Superior Blood Rune, Manifest Apex Perfection (Congenital Ranks 3–5), and Forge Blood Golem. |
 | `events/bm_blood_golem_events.txt` | `blood_golem` | Event option `bm_cast_blood_magic_superior.001.create_blood_golem` | Golem crafting outcome (`.001`) and repeatable trait-shaping Learning duels (`.002`). |
 | `events/bm_channel_lifeforce_bloodline_events.txt` | `bm_channel_lifeforce_bloodline` | Event `bm_cast_blood_magic_major.001` | Bestows permanent supernatural house modifiers. |
@@ -29,7 +29,7 @@
 | `events/bm_reformation_repair_events.txt` | `bm_reformation_repair` | Decision `bm_repair_blodtru_reformation_decision` | Clears bugged/corrupted temporal head title. |
 | `events/bm_seek_power_events.txt` | `seek_power` | Decision `seek_power_decision` | Blood Hunt event chain (`.001` fallback dispatcher, `.002` Stag's Last Stand, `.008` Beast's Lair, `.009` Edge of the Woods homestead, `.003` Blades on Lonely Road, `.010` Blood in Embers outlaw camp, `.011` Blood Rite, `.004` Cairn of Forgotten Carnage, Single Combat output `.006`, invalidation `.007`). Traveler and escort knight champion appear for Blood Mages. |
 | `events/bm_trait_drain_events.txt` | `bm_trait_drain` | Interaction `trait_drain_prisoner_event_interaction` | Siphons positive congenital traits from prisoners via duel. |
-| `events/bm_yearly_events.txt` | `blood_mage_yearly_events` | Yearly pulse on-action & quarterly pulse | .001: +1 ancient & guaranteed attunement XP (+2 with Superior **Hulinhjálmur**). .002: bloodline dynasty rolls. .003: rune lifeforce rolls. .005: quarterly silent Blood Power flat lifestyle XP payout (+15/qtr per 10 track XP). |
+| `events/bm_yearly_events.txt` | `blood_mage_yearly_events` | Yearly pulse on-action | .001: +1 ancient & guaranteed attunement XP (+2 with Superior **Hulinhjálmur**). .002: bloodline dynasty rolls. .003: rune lifeforce rolls. |
 | `events/bm_interpersonal_events.txt` | `bm_interpersonal_events` | Yearly interpersonal pulse & battle victory on-action | 5 narrative & interpersonal events (.0001 lover/spouse sharing or initiation, .0002 child/ward awakening fever, .0003 post-battle victory Red Banquet with knights, .0004 blood golem aegis/honing/siphoning, .0005 snooping courtier duel/bribe). |
 
 ## Key Mechanics

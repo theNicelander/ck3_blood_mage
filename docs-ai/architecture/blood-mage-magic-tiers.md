@@ -23,7 +23,6 @@ flowchart TD
 
     subgraph T2 ["Major Blood Magic (Major Lifeforce)"]
         J1["Cast Major Blood Magic Grimoire"]
-        J2["Blood Power Trait"]
         J3["Improve Education (1★ to 4★)"]
         J4["Inscribe Major Blood Rune"]
         J5["Empower Bloodline"]
@@ -81,7 +80,6 @@ Requires Major Lifeforce (`lifeforce_modifier_major`) and Devotion level >= 1. A
 | Action / Ritual | Interface | Cost / Prerequisite | Effect | XP Gain |
 | --- | --- | --- | --- | --- |
 | **Cast Major Blood Magic** | Decision Widget (`bm_cast_blood_magic_major_decision`) | Major Lifeforce, Piety level >= 1, Piety >= 150 | Opens major rituals option-list decision widget. | None |
-| **Channel Blood Power** | Decision Option (`bm_blood_power_event.001`) | 150 Piety + Major Lifeforce, Piety level >= 1 | Unlocks/advances secondary lifestyle trait `lifestyle_blood_power` (+10 XP in chosen track) via Grimoire event modal. | +3 Enlightenment (+10 Power) |
 | **Condense Lifeforce (Superior)** | Decision Option | 250 Piety + 1 Minor & 1 Major Lifeforce, Piety level >= 3, 2-yr CD | Distills Minor and Major lifeforce into Superior Lifeforce via Learning duel. | +2 Ancient |
 | **Improve Education (1★–4★)** | Decision Option | 75–200 Piety + Major Lifeforce, Piety level >= 3, 2-yr CD | Upgrades education trait star tier (up to tier 4) via mental duel. | +4 Enlightenment |
 | **Inscribe Major Blood Rune (Self)** | Decision Option | 200 Piety + Major Lifeforce, Minor Rune active, Piety level >= 3, 3-yr CD | Upgrades `minor_blood_rune_modifier` to `major_blood_rune_modifier` (improves yearly Lifeforce pulse). | +10 Ancient |

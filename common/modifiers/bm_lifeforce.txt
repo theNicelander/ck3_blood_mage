@@ -29,35 +29,78 @@ lifeforce_modifier_minor = {
     negate_health_penalty_add = 0.1
 }
 
-lifeforce_modifier_mojo = {
-    icon = magic_positive
+lifeforce_modifier_presence = {
+    icon = diplomacy_positive
     stacking = yes
 
-    fertility = 0.10
-    years_of_fertility = 5
-    positive_inactive_inheritance_chance = 0.05
-    positive_random_genetic_chance = 0.05
-    genetic_trait_strengthen_chance = 0.05
-    attraction_opinion = 5
+    monthly_piety = 0.1
+    general_opinion = 3
+    monthly_prestige = 0.2
+    legitimacy_gain_mult = 0.03
+    owned_personal_scheme_success_chance_add = 4
+    monthly_diplomacy_lifestyle_xp_gain_add = 5
 }
 
 lifeforce_modifier_fury = {
     icon = prowess_positive
     stacking = yes
 
+    monthly_piety = 0.1
     prowess = 2
     knight_effectiveness_mult = 0.10
+    counter_efficiency = 0.05
     movement_speed = 0.02
     character_travel_safety = 2
+    monthly_martial_lifestyle_xp_gain_add = 5
+}
+
+lifeforce_modifier_prosperity = {
+    icon = stewardship_positive
+    stacking = yes
+
+    monthly_piety = 0.1
+    monthly_income = 0.2
+    monthly_income_mult = 0.03
+    men_at_arms_maintenance = -0.03
+    monthly_stewardship_lifestyle_xp_gain_add = 5
+}
+
+lifeforce_modifier_shadows = {
+    icon = intrigue_positive
+    stacking = yes
+
+    monthly_piety = 0.1
+    owned_hostile_scheme_success_chance_add = 4
+    enemy_hostile_scheme_success_chance_add = -5
+    dread_baseline_add = 3
+    monthly_intrigue_lifestyle_xp_gain_add = 5
 }
 
 lifeforce_modifier_focus = {
     icon = learning_positive
     stacking = yes
 
+    monthly_piety = 0.1
     learning = 1
-    stress_gain_mult = -0.10
     monthly_lifestyle_xp_gain_mult = 0.05
+    stress_gain_mult = -0.05
+    stress_loss_mult = 0.05
+    monthly_learning_lifestyle_xp_gain_add = 5
+}
+
+lifeforce_modifier_mojo = {
+    icon = magic_positive
+    stacking = yes
+
+    monthly_piety = 0.1
+    fertility = 0.10
+    years_of_fertility = 5
+    positive_inactive_inheritance_chance = 0.05
+    positive_random_genetic_chance = 0.05
+    genetic_trait_strengthen_chance = 0.05
+    inbreeding_chance = -0.10
+    attraction_opinion = 5
+    monthly_lifestyle_xp_gain_add = 5
 }
 
 lifeforce_modifier_negative_superior = {
