@@ -1,0 +1,115 @@
+﻿l_russian:
+  # Standalone Decision: Empower Dynasty Bloodline
+  bm_empower_bloodline_decision: "Усилить родословную династии"
+  bm_empower_bloodline_decision_desc: "Заключите древние пакты крови, чтобы усилить свой дом."
+  bm_empower_bloodline_decision_tooltip: "Выбрать пакт дома для улучшения"
+  BM_EMPOWER_BLOODLINE_DECISION_NEXT_STEP_BUTTON: "Сплести родословную"
+  bm_empower_bloodline_decision_confirm: "$BM_EMPOWER_BLOODLINE_DECISION_NEXT_STEP_BUTTON$"
+  bm_empower_bloodline_decision_effect: "Вы вплетёте жизненную магию крови в родословную своего дома."
+
+  # Dynamic Button Labels
+  bm_covenant_presence_button: "[GetPlayer.Custom('BM_COVENANT_PRESENCE_BUTTON_LABEL')]"
+  bm_covenant_presence_label_none: "Пакт влияния (нет)"
+  bm_covenant_presence_label_minor: "Пакт влияния (малый)"
+  bm_covenant_presence_label_major: "Пакт влияния (большой)"
+
+  bm_covenant_warband_button: "[GetPlayer.Custom('BM_COVENANT_WARBAND_BUTTON_LABEL')]"
+  bm_covenant_warband_label_none: "Пакт боевой дружины (нет)"
+  bm_covenant_warband_label_minor: "Пакт боевой дружины (малый)"
+  bm_covenant_warband_label_major: "Пакт боевой дружины (большой)"
+
+  bm_covenant_prosperity_button: "[GetPlayer.Custom('BM_COVENANT_PROSPERITY_BUTTON_LABEL')]"
+  bm_covenant_prosperity_label_none: "Пакт процветания (нет)"
+  bm_covenant_prosperity_label_minor: "Пакт процветания (малый)"
+  bm_covenant_prosperity_label_major: "Пакт процветания (большой)"
+
+  bm_covenant_shadows_button: "[GetPlayer.Custom('BM_COVENANT_SHADOWS_BUTTON_LABEL')]"
+  bm_covenant_shadows_label_none: "Пакт теней (нет)"
+  bm_covenant_shadows_label_minor: "Пакт теней (малый)"
+  bm_covenant_shadows_label_major: "Пакт теней (большой)"
+
+  bm_covenant_mastery_button: "[GetPlayer.Custom('BM_COVENANT_MASTERY_BUTTON_LABEL')]"
+  bm_covenant_mastery_label_none: "Пакт мастерства (нет)"
+  bm_covenant_mastery_label_minor: "Пакт мастерства (малый)"
+  bm_covenant_mastery_label_major: "Пакт мастерства (большой)"
+
+  bm_covenant_legacy_button: "[GetPlayer.Custom('BM_COVENANT_LEGACY_BUTTON_LABEL')]"
+  bm_covenant_legacy_label_none: "Пакт наследия (нет)"
+  bm_covenant_legacy_label_minor: "Пакт наследия (малый)"
+  bm_covenant_legacy_label_major: "Пакт наследия (большой)"
+
+  # Covenant Options & Tooltips
+  bm_covenant_presence: "Пакт влияния"
+  bm_covenant_presence_tooltip: "[GetPlayer.Custom('BM_COVENANT_PRESENCE_TOOLTIP')]"
+  bm_covenant_presence_next_tier_1: "Ступень I (малая): +0.1 благочестия в месяц, +0.1 престижа в месяц, +1 дипломатии, +5 общего мнения, +5 к успеху личных происков, +5% прироста легитимности."
+  bm_covenant_presence_next_tier_2: "Ступень II (большая): +0.3 благочестия в месяц, +0.3 престижа в месяц, +2 дипломатии, +10 общего мнения, +10 к успеху личных происков, -10% длительности короткого правления, +10% бонуса долгого правления, +10% прироста легитимности, +1 дипломатии за уровень набожности."
+  bm_covenant_presence_next_tier_3: "Ступень III (высшая): +0.5 благочестия в месяц, +0.5 престижа в месяц, +4 дипломатии, +15 общего мнения, +20 к успеху личных происков, -20% длительности короткого правления, +20% бонуса долгого правления, +15% прироста легитимности, +1 место для личного догмата, +1 дипломатии за уровень набожности."
+
+  bm_covenant_warband: "Пакт боевой дружины"
+  bm_covenant_warband_tooltip: "[GetPlayer.Custom('BM_COVENANT_WARBAND_TOOLTIP')]"
+  bm_covenant_warband_next_tier_1: "Ступень I (малая): +0,1 благочестия в месяц, +1 к военному делу, +1 к доблести, +1 к пределу рыцарей, +5% урона армии, +0,02 благочестия за рыцаря, +0,2% эффективности рыцарей за единицу доблести."
+  bm_covenant_warband_next_tier_2: "Ступень II (большая): +0,3 благочестия в месяц, +2 к военному делу, +2 к доблести, +2 к пределу рыцарей, +10% урона армии, +1 к числу и размеру профессиональных полков, +0,04 благочестия за рыцаря, +0,5% эффективности рыцарей за единицу доблести, +1 к военному делу за уровень набожности."
+  bm_covenant_warband_next_tier_3: "Ступень III (высшая): +0,5 благочестия в месяц, +4 к военному делу, +4 к доблести, +3 к пределу рыцарей, +15% урона армии, +1 к числу и размеру профессиональных полков, +0,06 благочестия за рыцаря, +1,0% эффективности рыцарей за единицу доблести, +1 к военному делу за уровень набожности."
+
+  bm_covenant_prosperity: "Пакт процветания"
+  bm_covenant_prosperity_tooltip: "[GetPlayer.Custom('BM_COVENANT_PROSPERITY_TOOLTIP')]"
+  bm_covenant_prosperity_next_tier_1: "Ступень I (малая): +0.1 благочестия в месяц, +0.1 золота в месяц, +1 управления, +5% дохода, -5% стоимости строительства владений и резиденций, -5% содержания профессиональных полков, +5% роста развития."
+  bm_covenant_prosperity_next_tier_2: "Ступень II (большая): +0.3 благочестия в месяц, +0.3 золота в месяц, +2 управления, +10% дохода, -10% стоимости строительства владений и резиденций, -10% содержания профессиональных полков, +10% роста развития, +1 управления за уровень набожности."
+  bm_covenant_prosperity_next_tier_3: "Ступень III (высшая): +0.5 благочестия в месяц, +0.5 золота в месяц, +4 управления, +15% дохода, -15% стоимости строительства владений и резиденций, -15% содержания профессиональных полков, +15% роста развития, +1 к пределу домена, +1 управления за уровень набожности."
+
+  bm_covenant_shadows: "Пакт теней"
+  bm_covenant_shadows_tooltip: "[GetPlayer.Custom('BM_COVENANT_SHADOWS_TOOLTIP')]"
+  bm_covenant_shadows_next_tier_1: "Ступень I (малая): +0.1 благочестия в месяц, +1 интриг, +3 к успеху враждебных происков, -5 к успеху враждебных происков противника."
+  bm_covenant_shadows_next_tier_2: "Ступень II (большая): +0.3 благочестия в месяц, +2 интриг, +6 к успеху враждебных происков, -10 к успеху враждебных происков противника, +5 скрытности происков, -5 к предельному успеху вражеских происков, +1 интриг за уровень набожности."
+  bm_covenant_shadows_next_tier_3: "Ступень III (высшая): +0.5 благочестия в месяц, +4 интриг, +12 к успеху враждебных происков, -20 к успеху враждебных происков противника, +10 скрытности происков, -10 к предельному успеху вражеских происков, +1 интриг за уровень набожности."
+
+  bm_covenant_mastery: "Пакт мастерства"
+  bm_covenant_mastery_tooltip: "[GetPlayer.Custom('BM_COVENANT_MASTERY_TOOLTIP')]"
+  bm_covenant_mastery_next_tier_1: "Ступень I (малая): +0,1 благочестия в месяц, +1 к учёности, +5% опыта образа жизни, -5% прироста стресса, +1% к ежемесячному благочестию за рыцаря, +0,2% эффективности рыцарей за единицу учёности."
+  bm_covenant_mastery_next_tier_2: "Ступень II (большая): +0,3 благочестия в месяц, +2 к учёности, +10% опыта образа жизни, -10% прироста стресса, +10% потери стресса, +5% благочестия, +0,15 к здоровью, +2% к ежемесячному благочестию за рыцаря, +0,5% эффективности рыцарей за единицу учёности, +1 к учёности за уровень набожности."
+  bm_covenant_mastery_next_tier_3: "Ступень III (высшая): +0,5 благочестия в месяц, +4 к учёности, +20% опыта образа жизни, -20% прироста стресса, +20% потери стресса, +10% благочестия, +0,3 к здоровью, +3% к ежемесячному благочестию за рыцаря, +1,0% эффективности рыцарей за единицу учёности, +1 место для личного догмата, +1 к учёности за уровень набожности, игнорирование штрафа к мнению из-за культуры."
+
+  bm_covenant_legacy: "Пакт наследия"
+  bm_covenant_legacy_tooltip: "[GetPlayer.Custom('BM_COVENANT_LEGACY_TOOLTIP')]"
+  bm_covenant_legacy_next_tier_1: "Ступень I (малая): +0.1 благочестия в месяц, +0.15 здоровья, +2 к продолжительности жизни, +2 лет детородного возраста, +5% плодовитости, +5% шанса положительной наследственности и усиления свойств."
+  bm_covenant_legacy_next_tier_2: "Ступень II (большая): +0.3 благочестия в месяц, +0.3 здоровья, +4 к продолжительности жизни, +4 лет детородного возраста, +15% плодовитости, +15% шанса положительной наследственности и усиления свойств, -15% шанса близкородственного скрещивания, +1 доблести за уровень набожности."
+  bm_covenant_legacy_next_tier_3: "Ступень III (высшая): +0.5 благочестия в месяц, +0.5 здоровья, +8 к продолжительности жизни, +8 лет детородного возраста, +25% плодовитости, +25% шанса положительной наследственности и усиления свойств, -30% шанса близкородственного скрещивания, +1 доблести за уровень набожности."
+
+  # Toasts
+  bm_empower_bloodline_tier_1_toast: "Пакт: Малый (ступень I)"
+  bm_empower_bloodline_tier_2_toast: "Пакт: Большой (ступень II)"
+  bm_empower_bloodline_tier_3_toast: "Пакт: Высший (ступень III)"
+
+  # Tooltips on completion
+  bm_covenant_presence_tier_1_tt: "Ваш дом заключил малый пакт влияния (ступень I)."
+  bm_covenant_presence_tier_2_tt: "Ваш дом возвысил большой пакт влияния (ступень II)."
+  bm_covenant_presence_tier_3_tt: "Ваш дом усовершенствовал высший пакт влияния (ступень III)!"
+
+  bm_covenant_warband_tier_1_tt: "Ваш дом заключил малый пакт боевой дружины (ступень I)."
+  bm_covenant_warband_tier_2_tt: "Ваш дом возвысил большой пакт боевой дружины (ступень II)."
+  bm_covenant_warband_tier_3_tt: "Ваш дом усовершенствовал высший пакт боевой дружины (ступень III)!"
+
+  bm_covenant_prosperity_tier_1_tt: "Ваш дом заключил малый пакт процветания (ступень I)."
+  bm_covenant_prosperity_tier_2_tt: "Ваш дом возвысил большой пакт процветания (ступень II)."
+  bm_covenant_prosperity_tier_3_tt: "Ваш дом довёл до совершенства высший пакт процветания (ступень III)!"
+
+  bm_covenant_shadows_tier_1_tt: "Ваш дом заключил малый пакт теней (ступень I)."
+  bm_covenant_shadows_tier_2_tt: "Ваш дом возвысил большой пакт теней (ступень II)."
+  bm_covenant_shadows_tier_3_tt: "Ваш дом довёл до совершенства высший пакт теней (ступень III)!"
+
+  bm_covenant_mastery_tier_1_tt: "Ваш дом заключил малый пакт мастерства (ступень I)."
+  bm_covenant_mastery_tier_2_tt: "Ваш дом возвысил большой пакт мастерства (ступень II)."
+  bm_covenant_mastery_tier_3_tt: "Ваш дом усовершенствовал высший пакт мастерства (ступень III)!"
+
+  bm_covenant_legacy_tier_1_tt: "Ваш дом заключил малый пакт наследия (ступень I)."
+  bm_covenant_legacy_tier_2_tt: "Ваш дом возвысил большой пакт наследия (ступень II)."
+  bm_covenant_legacy_tier_3_tt: "Ваш дом довёл до совершенства высший пакт наследия (ступень III)!"
+
+  # Yearly bloodline XP
+  blood_mage_yearly_events.002.success: "Пакты вашего дома принесли вам опыт"
+
+  # Legacy Keys preserved
+  channel_lifeforce_bloodline: "$bm_empower_bloodline_decision$"
+  channel_lifeforce_bloodline_confirm: "$BM_EMPOWER_BLOODLINE_DECISION_NEXT_STEP_BUTTON$"
+  channel_lifeforce_bloodline_tooltip: "$bm_empower_bloodline_decision_tooltip$"
+  channel_lifeforce_bloodline_desc: "$bm_empower_bloodline_decision_desc$"

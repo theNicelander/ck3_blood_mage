@@ -1,0 +1,106 @@
+﻿l_russian:
+  # Debug Decisions
+  debug_give_superior_blood_rune: "МАГ КРОВИ: даровать высшую руну крови"
+  debug_give_superior_blood_rune_desc: "Получить модификатор высшей руны крови взамен малой или большой руны."
+  debug_give_superior_blood_rune_tooltip: "Начертать на себе высшую руну крови."
+  debug_give_superior_blood_rune_confirm: "Начертать руну"
+
+  debug_manage_xp: "МАГ КРОВИ: управление опытом"
+  debug_manage_xp_desc: "Открыть меню отладки, чтобы начислить опыт свойствам магии крови и «Могущество крови»."
+  debug_manage_xp_tooltip: "Открыть меню управления опытом."
+  debug_manage_xp_confirm: "Открыть меню"
+
+  debug_manage_lifeforce: "МАГ КРОВИ: управление жизненной силой"
+  debug_manage_lifeforce_desc: "Открыть меню отладки, чтобы добавить или убрать заряды жизненной силы."
+  debug_manage_lifeforce_tooltip: "Открыть меню управления жизненной силой."
+  debug_manage_lifeforce_confirm: "Открыть меню"
+
+  # Become blood mage
+  debug_become_blood_mage: "МАГ КРОВИ: стать магом крови"
+  debug_become_blood_mage_desc: "МАГ КРОВИ: стать магом крови"
+  debug_become_blood_mage_tooltip: "МАГ КРОВИ: стать магом крови"
+  debug_become_blood_mage_confirm: "МАГ КРОВИ: стать магом крови"
+
+  # Upgrade all covenants
+  debug_upgrade_all_covenants: "МАГ КРОВИ: Улучшить все пакты"
+  debug_upgrade_all_covenants_desc: "Улучшить все 6 пактов дома (влияния, боевой дружины, процветания, теней, мастерства и наследия) до следующей ступени."
+  debug_upgrade_all_covenants_tooltip: "Поднять все 6 действующих пактов дома на следующую ступень (малая -> большая -> высшая)."
+  debug_upgrade_all_covenants_confirm: "Улучшить все пакты"
+
+  # Debug Events
+  bm_debug.back: "Назад"
+
+  bm_debug.0001.title: "Отладка: управление опытом"
+  bm_debug.0001.desc: "Выберите, куда начислить опыт. Изменение применится сразу, и меню обновится."
+  bm_debug.0001.trait_xp: "Свойство магии крови (20 опыта)"
+  bm_debug.0001.empowerment_xp: "Могущество крови (20 опыта)"
+  bm_debug.0001.ancient_xp: "Древность (100 опыта)"
+  bm_debug.0001.toast: "Опыт начислен"
+
+  bm_debug.0002.title: "Отладка: управление жизненной силой"
+  bm_debug.0002.desc: "Выберите, как изменить запас жизненной силы. Изменение применится сразу, и меню обновится."
+  bm_debug.0002.add_superior_5: "Добавить высшую жизненную силу ×5"
+  bm_debug.0002.add_major_5: "Добавить большую жизненную силу ×5"
+  bm_debug.0002.add_minor_5: "Добавить малую жизненную силу ×5"
+  bm_debug.0002.remove_all: "Убрать всю жизненную силу"
+  bm_debug.0002.toast: "Запас жизненной силы изменён"
+
+  # Legacy debug aliases (kept for compat)
+  debug_add_lifeforce: "$debug_manage_lifeforce$"
+  debug_add_lifeforce_desc: "$debug_manage_lifeforce_desc$"
+  debug_add_lifeforce_tooltip: "$debug_manage_lifeforce_tooltip$"
+  debug_add_lifeforce_confirm: "$debug_manage_lifeforce_confirm$"
+  debug_add_lifeforce_minor: "$debug_manage_lifeforce$"
+  debug_add_lifeforce_minor_desc: "$debug_manage_lifeforce_desc$"
+  debug_add_lifeforce_minor_tooltip: "$debug_manage_lifeforce_tooltip$"
+  debug_add_lifeforce_minor_confirm: "$debug_manage_lifeforce_confirm$"
+  debug_remove_lifeforce: "$debug_manage_lifeforce$"
+  debug_remove_lifeforce_desc: "$debug_manage_lifeforce_desc$"
+  debug_remove_lifeforce_tooltip: "$debug_manage_lifeforce_tooltip$"
+  debug_remove_lifeforce_confirm: "$debug_manage_lifeforce_confirm$"
+  debug_add_exp_blood_mage_exp: "$debug_manage_xp$"
+  debug_add_exp_blood_mage_exp_desc: "$debug_manage_xp_desc$"
+  debug_add_exp_blood_mage_exp_tooltip: "$debug_manage_xp_tooltip$"
+  debug_add_exp_blood_mage_exp_confirm: "$debug_manage_xp_confirm$"
+  debug_add_blood_power_exp: "$debug_manage_xp$"
+  debug_add_blood_power_exp_desc: "$debug_manage_xp_desc$"
+  debug_add_blood_power_exp_tooltip: "$debug_manage_xp_tooltip$"
+  debug_add_blood_power_exp_confirm: "$debug_manage_xp_confirm$"
+  debug_add_blood_empowerment_exp: "$debug_manage_xp$"
+  debug_add_blood_empowerment_exp_desc: "$debug_manage_xp_desc$"
+  debug_add_blood_empowerment_exp_tooltip: "$debug_manage_xp_tooltip$"
+  debug_add_blood_empowerment_exp_confirm: "$debug_manage_xp_confirm$"
+
+  # Debug interactions
+  bm_debug_character_interaction: "ОТЛАДКА: магия крови"
+  bm_debug_character_interaction_desc: "Выполнить отладочные действия магии крови над персонажем [recipient.GetShortUINameNoTooltip]."
+  bm_debug_option_make_blood_mage: "Сделать магом крови"
+  bm_debug_option_convert_to_blodtru: "Обратить в Блодтру"
+
+  # Debug logging
+  debug_log.blood_mage_log: "BLOOD_MAGE_DEBUG::: Применена магия крови"
+
+  # Debug relationship tags
+  bm_debug_rel_self: "Ваш персонаж"
+  bm_debug_rel_spouse: "Супруг/наложник"
+  bm_debug_rel_primary_heir: "Основной наследник"
+  bm_debug_rel_child: "Ребёнок"
+  bm_debug_rel_close_family: "Близкая семья"
+  bm_debug_rel_chancellor: "Канцлер"
+  bm_debug_rel_marshal: "Маршал"
+  bm_debug_rel_steward: "Управляющий"
+  bm_debug_rel_spymaster: "Тайный советник"
+  bm_debug_rel_chaplain: "Придворный священник"
+  bm_debug_rel_councillor: "Советник"
+  bm_debug_rel_court_position: "Придворная должность"
+  bm_debug_rel_golem: "Голем"
+  bm_debug_rel_knight: "Рыцарь"
+  bm_debug_rel_lover: "Любовник/родственная душа"
+  bm_debug_rel_friend: "Друг"
+  bm_debug_rel_rival: "Соперник/смертельный враг"
+  bm_debug_rel_liege: "Сюзерен"
+  bm_debug_rel_prisoner: "Узник"
+  bm_debug_rel_dynasty: "Династия"
+  bm_debug_rel_vassal: "Вассал"
+  bm_debug_rel_courtier: "Придворный"
+  bm_debug_rel_none: "Прочее"

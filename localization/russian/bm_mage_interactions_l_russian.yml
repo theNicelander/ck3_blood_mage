@@ -1,0 +1,31 @@
+﻿l_russian:
+  # Empower Blood Mage
+  empower_blood_mage_interaction: "Усилить мага крови"
+  empower_blood_mage_interaction_desc: "[recipient.GetShortUINameNoTooltip] получит сверхъестественную жизненную силу для развития Просветления и Родословной."
+  empower_blood_mage_interaction.major: "Большая жизненная сила (+10 опыта Просветления и Родословной)"
+  empower_blood_mage_interaction.minor: "Малая жизненная сила (+5 опыта Просветления и Родословной)"
+  empower_blood_mage_interaction.cancel: "Отменить обряд"
+  empower_blood_mage_interaction_requirement: "Вам нужна либо [GetModifier('lifeforce_modifier_major').GetNameWithTooltip], либо [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip]."
+  NOT_empower_blood_mage_interaction_requirement: "Вам нужна либо [GetModifier('lifeforce_modifier_major').GetNameWithTooltip], либо [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip]."
+
+  # Siphon Stored Lifeforce
+  bm_siphon_lifeforce_reserves_interaction: "Вытянуть запасённую жизненную силу"
+  bm_siphon_lifeforce_reserves_interaction_desc: "Подчинить и извлечь сгущённые запасы жизненной силы прямо из крови персонажа [recipient.GetShortUINameNoTooltip]."
+  bm_recipient_has_lifeforce_reserves: "[CHARACTER.GetShortUINameNoTooltip] обладает запасённой жизненной силой"
+  NOT_bm_recipient_has_lifeforce_reserves: "[CHARACTER.GetShortUINameNoTooltip] обладает запасённой жизненной силой"
+  bm_siphon_lifeforce_reserves.toast_success: "Запасы жизненной силы вытянуты"
+  bm_siphon_lifeforce_reserves.toast_failure: "Ритуал вытягивания не удался"
+  bm_siphon_lifeforce_reserves.success_desc: "Подавить чужой дух и вырвать запасённую жизненную силу"
+  bm_siphon_lifeforce_reserves.failure_desc: "Ритуал оборачивается против вас и истощает вашу жизненную силу"
+
+  # Contest of the Red Art
+  bm_occult_mage_duel_interaction: "Состязание кровавого искусства"
+  bm_occult_mage_duel_interaction_desc: "Вызвать персонажа [recipient.GetShortUINameNoTooltip] на оккультный поединок искусств крови, чтобы испытать магическое мастерство и вырвать жизненную сущность."
+  bm_requires_minor_lifeforce: "Вам требуется [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip]"
+  NOT_bm_requires_minor_lifeforce: "Вам требуется [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip]"
+  bm_occult_mage_duel.critical_success_title: "Сокрушительный оккультный триумф"
+  bm_occult_mage_duel.critical_success_desc: "Полностью сокрушить персонажа [recipient.GetShortUINameNoTooltip], получив большую жизненную силу и прокляв его кровь"
+  bm_occult_mage_duel.success_title: "Состязание выиграно"
+  bm_occult_mage_duel.success_desc: "Одолеть персонажа [recipient.GetShortUINameNoTooltip] оккультным мастерством, вызвав сильное истощение крови"
+  bm_occult_mage_duel.defeat_title: "Поражение в оккультном поединке"
+  bm_occult_mage_duel.defeat_desc: "Искусства крови персонажа [recipient.GetShortUINameNoTooltip] одолевают вас, вызывая отдачу жизненной силы"

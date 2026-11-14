@@ -1,0 +1,47 @@
+﻿l_russian:
+  # Cast Blood Magic Major Option
+  bm_major_manifest_traits: "Воплотить свойства"
+  bm_major_manifest_traits_desc: "Направить большую жизненную силу на преобразование врождённых свойств до 3-го уровня."
+  bm_major_manifest_traits_tooltip: "Направить большую жизненную силу на преобразование врождённых свойств (интеллект, телосложение, красота) до 3-го уровня.\n\nСтоимость: [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] и 250–750 [piety|E]."
+  bm_cast_blood_magic_major.001.manifest_traits: "$bm_major_manifest_traits$"
+  bm_cast_blood_magic_major.001.manifest_traits_tt: "$bm_major_manifest_traits_tooltip$"
+  bm_manifest_traits_max_rank_2_tt: "Ещё не достигнут 2-й уровень всех врождённых свойств (интеллект, телосложение, красота)"
+  NOT_bm_manifest_traits_max_rank_2_tt: "Ещё не достигнут 2-й уровень всех врождённых свойств (интеллект, телосложение, красота)"
+  bm_manifest_traits_max_rank_3_tt: "Ещё не воплощён 3-й уровень всех врождённых свойств (интеллект, телосложение, красота)"
+  NOT_bm_manifest_traits_max_rank_3_tt: "Ещё не воплощён 3-й уровень всех врождённых свойств (интеллект, телосложение, красота)"
+
+  # Ritual Event (Major - Ranks 1 to 3)
+  bm_channel_manifest_traits.001.title: "Ритуал воплощения"
+  bm_channel_manifest_traits.001.desc: "Бурный поток большой жизненной силы отвечает на ваш зов. Жизненная сущность ждёт — податливая, но необузданная, готовая изменить вашу смертную оболочку. Какую грань своего существа вы заново выкуете в крови?"
+  bm_channel_manifest_traits.001.intellect: "Воплотить интеллект (уровень 1–3)"
+  bm_channel_manifest_traits.001.physique: "Воплотить силу тела (уровень 1–3)"
+  bm_channel_manifest_traits.001.beauty: "Воплотить красоту (уровень 1–3)"
+  bm_channel_manifest_traits.001.cancel: "Назад"
+
+  # Ritual Event (Superior - Ranks 4 to 5)
+  bm_channel_manifest_traits.002.title: "Ритуал высшего совершенства"
+  bm_channel_manifest_traits.002.desc: "Время разрушает смертные умы и тела, но высшая жизненная сила подчиняет природу человека вашей абсолютной воле. Уже обретя многообещающие дары смертных, вы готовы пойти дальше — к гениальности, красоте, геркулесовой мощи и высшему сверхчеловеческому совершенству."
+  bm_channel_manifest_traits.002.intellect: "Воплотить высший интеллект (уровень 4–5)"
+  bm_channel_manifest_traits.002.physique: "Воплотить высшую силу тела (уровень 4–5)"
+  bm_channel_manifest_traits.002.beauty: "Воплотить высшую красоту (уровень 4–5)"
+
+  # Duel Outcomes
+  bm_manifest_traits.duel_success_tt: "Кровь подчиняется вашей воле, навсегда улучшая ваши свойства"
+  bm_manifest_traits.duel_failure_tt: "Сосредоточение нарушено: свойство не воплощено, но часть потраченной жизненной силы сохранена"
+  bm_manifest_traits.duel_crit_failure_tt: "Мощная отдача жизненной силы разрывает вашу смертную оболочку, причиняя ранения, сильный стресс и дополнительное магическое истощение!"
+
+  # Toasts
+  bm_manifest_traits.intellect_success_title: "Интеллект воплощён: разум расширяется"
+  bm_manifest_traits.physique_success_title: "Сила тела воплощена: плоть крепнет"
+  bm_manifest_traits.beauty_success_title: "Красота воплощена: облик преображается"
+  bm_manifest_traits.intellect_superior_success_title: "Запредельный интеллект: пределы смертных преодолены"
+  bm_manifest_traits.physique_superior_success_title: "Запредельная сила тела: плоть возвышается"
+  bm_manifest_traits.beauty_superior_success_title: "Запредельная красота: божественное сияние"
+  bm_manifest_traits.failure_title: "Воплощение не удалось: сущность утрачена"
+  bm_manifest_traits.crit_failure_title: "Отдача воплощения: плоть разорвана"
+
+  # Cooldown
+  bm_manifest_traits_cooldown: "Недавно воплощено совершенство"
+  bm_manifest_traits_cooldown_desc: "Вы недавно изменили тело и разум, воплотив врождённое совершенство. Прежде чем продолжать преобразования, нужно восстановиться."
+  bm_manifest_traits_cooldown_tt: "За последние 2 года врождённое совершенство не воплощалось"
+  NOT_bm_manifest_traits_cooldown_tt: "За последние 2 года врождённое совершенство не воплощалось"
