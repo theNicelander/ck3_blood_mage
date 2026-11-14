@@ -42,6 +42,7 @@ Guaranteed, no cost, 1 year cooldown: **+1 XP** (**+2 XP** with Superior **Hulin
 | +5 | 200 Piety + Major (`lifeforce_modifier_major`) | Inscribe Major Blood Rune (Self) | `bm_cast_blood_magic_major.001` | `piety_level >= 3`, Minor rune | 5 years |
 | +10 | 400 Piety + Superior (`lifeforce_modifier_superior`) | Inscribe Superior Blood Rune (Self) | `bm_cast_blood_magic_superior.001` | `piety_level >= 4`, Major rune | 5 years |
 | +2 (+5 if firstborn) | None | Childbirth Milestone | on-action `on_birth_child` -> `bm_on_birth_bloodline_xp` | Parent is blood mage | Per birth |
+| +1 (25% / 50% / 100% chance for Tier I/II/III Covenant of the Ancient) | None | Yearly Covenant Pulse | on-action `blood_mage_yearly_events.002` | Has house, house covenant | 1 year |
 
 ## `enlightenment`
 
@@ -53,6 +54,7 @@ Guaranteed, no cost, 1 year cooldown: **+1 XP** (**+2 XP** with Superior **Hulin
 | +1 | 200 Piety | Study Arcane Secrets | decision | Learning lifestyle | 3 years |
 | +1 | 75 Piety | Siphon Stored Lifeforce | interaction `bm_siphon_lifeforce_reserves_interaction` | Target has stored Lifeforce | 1 year |
 | +5 (crit), +3 (win) | 150 Piety + Minor | Contest of the Red Art | interaction `bm_occult_mage_duel_interaction` | Target Blood Mage | 3 years |
+| +1 (25% / 50% / 100% chance for Tier I/II/III Covenant of Enlightenment) | None | Yearly Covenant Pulse | on-action `blood_mage_yearly_events.002` | Has house, house covenant | 1 year |
 
 ## `benediction`
 
@@ -68,6 +70,7 @@ Guaranteed, no cost, 1 year cooldown: **+1 XP** (**+2 XP** with Superior **Hulin
 | +4 (caster) | 0 Piety + Minor | Inscribe Minor Rune on Other | interaction `bm_inscribe_rune_other_interaction` | `piety_level >= 2` | 5 years |
 | +5 (caster) | 200 Piety + Major | Upgrade Major Rune on Other | `bm_inscribe_rune_other_interaction` | `piety_level >= 3` | 5 years |
 | +10 (caster) | 400 Piety + Superior | Upgrade Superior Rune on Other | `bm_inscribe_rune_other_interaction` | `piety_level >= 4` | 5 years |
+| +1 (25% / 50% / 100% chance for Tier I/II/III Covenant of Benediction) | None | Yearly Covenant Pulse | on-action `blood_mage_yearly_events.002` | Has house, house covenant | 1 year |
 
 ## Blood Hunt (all tracks)
 

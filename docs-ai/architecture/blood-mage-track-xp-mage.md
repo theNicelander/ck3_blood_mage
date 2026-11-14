@@ -16,7 +16,7 @@ Mage tracks `bloodline`, `hematurgy`, and `bloodlust`. Shared tracks (`ancient`,
 | +3 / +5 / +8 | 150 / 350 / 750 Piety + Minor/Major/Superior (`lifeforce_modifier_superior`) | Empower Bloodline (Tier I/II/III Covenant) | decision `bm_empower_bloodline_decision` | `exists = house`, `piety_level >= 1` / `>= 2` / `>= 3` | 1 year |
 | +8 | 500 Piety + Superior | Forge Blood Golem | event option `bm_cast_blood_magic_superior.001` | `piety_level >= 3`, Superior lifeforce | 3 years |
 | +3 (Major) / +2 (Minor) | 0 Piety (recipient); caster consumes Lifeforce | Empower Blood Mage (Recipient) | interaction `empower_blood_mage_interaction` | Fellow Blood Mage empowers target | None |
-| +1 (+3% / +6% / +10% chance per Tier I/II/III Covenant, up to 70%) | None | Yearly Dynasty Modifiers Pulse | on-action `blood_mage_yearly_events.002` | Has house, house covenants | 1 year |
+| +1 (25% / 50% / 100% chance for Tier I/II/III Covenant of Bloodline) | None | Yearly Covenant Pulse | on-action `blood_mage_yearly_events.002` | Has house, house covenant | 1 year |
 | +1 (+2 with Superior Hulinhjálmur) | None (guaranteed) | Bloodline Attunement Pulse | `blood_mage_yearly_events.001` | Has `bloodline_attuned` | 1 year |
 
 ## `hematurgy`
@@ -29,6 +29,7 @@ Mage tracks `bloodline`, `hematurgy`, and `bloodlust`. Shared tracks (`ancient`,
 | +5 (crit), +3 (win) | 150 Piety + Minor | Contest of the Red Art | interaction `bm_occult_mage_duel_interaction` | Target is Blood Mage | 3 years |
 | +2 (win), +4 (crit), +1 (fail) | 50 Piety + Minor (crit siphons Minor back) | Cast Blood Curse | interaction `bm_curse_blood_interaction` | >= 10 Hematurgy XP | 1 year |
 | +3 (on duel win, +5 for rare) | 100–325 Piety + Major (executes victim) | Drain Prisoner Trait (Lvl 1–5 / Rare) | interaction + event `bm_trait_drain.001` | Prisoner with congenital trait | 60 days |
+| +1 (25% / 50% / 100% chance for Tier I/II/III Covenant of Hematurgy) | None | Yearly Covenant Pulse | on-action `blood_mage_yearly_events.002` | Has house, house covenant | 1 year |
 | +1 (+2 with Superior Hulinhjálmur) | None (guaranteed) | Hematurgy Attunement Pulse | `blood_mage_yearly_events.001` | Has `hematurgy_attuned` | 1 year |
 
 ## `bloodlust`
@@ -43,4 +44,5 @@ Mage tracks `bloodline`, `hematurgy`, and `bloodlust`. Shared tracks (`ancient`,
 | +2 (win) / +1 (loss) | None | Ritual Sparring | decision & event `bm_ritual_spar_decision.txt` | Sworn knight opponent | 1 year |
 | +2 (win) | None | Siphoning Duel | interaction `bm_siphoning_duel_interaction` | Target Blood Mage | 1 year |
 | +5 | 0 Piety (recipient); caster consumes Lifeforce | Empower Blood Mage (Recipient) | interaction `empower_blood_mage_interaction` | Fellow Blood Mage empowers target | None |
+| +1 (25% / 50% / 100% chance for Tier I/II/III Covenant of Bloodlust) | None | Yearly Covenant Pulse | on-action `blood_mage_yearly_events.002` | Has house, house covenant | 1 year |
 | +1 (+2 with Superior Hulinhjálmur) | None (guaranteed) | Bloodlust Attunement Pulse | `blood_mage_yearly_events.001` | Has `bloodlust_attuned` | 1 year |

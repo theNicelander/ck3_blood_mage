@@ -1,9 +1,9 @@
 ﻿# Dynasty Bloodline Covenants (3 Tiers: Tier I Minor, Tier II Major, Tier III Superior)
 # Replaces previous tier modifier upon upgrade.
-# Each tier grants a passive chance to gain XP in lifestyle_blood_power
+# Each tier grants a passive yearly chance to gain XP in the matching lifestyle_blood_mage track (25% / 50% / 100%).
 
-# 1. Covenant of Presence
-dynasty_blood_presence_modifier_1 = {
+# 1. Covenant of Benediction
+dynasty_blood_benediction_modifier_1 = {
 	icon = bm_covenant_presence
 
 	monthly_piety = 0.1
@@ -14,7 +14,7 @@ dynasty_blood_presence_modifier_1 = {
 	legitimacy_gain_mult = 0.05
 }
 
-dynasty_blood_presence_modifier_2 = {
+dynasty_blood_benediction_modifier_2 = {
 	icon = bm_covenant_presence
 
 	monthly_piety = 0.3
@@ -28,7 +28,7 @@ dynasty_blood_presence_modifier_2 = {
 	legitimacy_gain_mult = 0.10
 }
 
-dynasty_blood_presence_modifier_3 = {
+dynasty_blood_benediction_modifier_3 = {
 	icon = bm_covenant_presence
 
 	monthly_piety = 0.5
@@ -43,8 +43,8 @@ dynasty_blood_presence_modifier_3 = {
 	legitimacy_gain_mult = 0.15
 }
 
-# 2. Covenant of Warband
-dynasty_blood_warband_modifier_1 = {
+# 2. Covenant of Bloodlust
+dynasty_blood_bloodlust_modifier_1 = {
 	icon = bm_covenant_warband
 
 	monthly_piety = 0.1
@@ -56,7 +56,7 @@ dynasty_blood_warband_modifier_1 = {
 	knight_effectiveness_per_prowess = 0.002
 }
 
-dynasty_blood_warband_modifier_2 = {
+dynasty_blood_bloodlust_modifier_2 = {
 	icon = bm_covenant_warband
 
 	monthly_piety = 0.3
@@ -71,7 +71,7 @@ dynasty_blood_warband_modifier_2 = {
 	knight_effectiveness_per_prowess = 0.005
 }
 
-dynasty_blood_warband_modifier_3 = {
+dynasty_blood_bloodlust_modifier_3 = {
 	icon = bm_covenant_warband
 
 	monthly_piety = 0.5
@@ -86,8 +86,8 @@ dynasty_blood_warband_modifier_3 = {
 	knight_effectiveness_per_prowess = 0.01
 }
 
-# 3. Covenant of Prosperity
-dynasty_blood_prosperity_modifier_1 = {
+# 3. Covenant of Bloodline
+dynasty_blood_bloodline_modifier_1 = {
 	icon = bm_covenant_prosperity
 
 	monthly_piety = 0.1
@@ -100,7 +100,7 @@ dynasty_blood_prosperity_modifier_1 = {
 	development_growth_factor = 0.05
 }
 
-dynasty_blood_prosperity_modifier_2 = {
+dynasty_blood_bloodline_modifier_2 = {
 	icon = bm_covenant_prosperity
 
 	monthly_piety = 0.3
@@ -114,7 +114,7 @@ dynasty_blood_prosperity_modifier_2 = {
 	stewardship_per_piety_level = 1
 }
 
-dynasty_blood_prosperity_modifier_3 = {
+dynasty_blood_bloodline_modifier_3 = {
 	icon = bm_covenant_prosperity
 
 	monthly_piety = 0.5
@@ -129,8 +129,8 @@ dynasty_blood_prosperity_modifier_3 = {
 	stewardship_per_piety_level = 1
 }
 
-# 4. Covenant of Shadow
-dynasty_blood_shadows_modifier_1 = {
+# 4. Covenant of Hematurgy
+dynasty_blood_hematurgy_modifier_1 = {
 	icon = bm_covenant_shadow
 
 	monthly_piety = 0.1
@@ -139,7 +139,7 @@ dynasty_blood_shadows_modifier_1 = {
 	enemy_hostile_scheme_success_chance_add = -5
 }
 
-dynasty_blood_shadows_modifier_2 = {
+dynasty_blood_hematurgy_modifier_2 = {
 	icon = bm_covenant_shadow
 
 	monthly_piety = 0.3
@@ -151,7 +151,7 @@ dynasty_blood_shadows_modifier_2 = {
 	intrigue_per_piety_level = 1
 }
 
-dynasty_blood_shadows_modifier_3 = {
+dynasty_blood_hematurgy_modifier_3 = {
 	icon = bm_covenant_shadow
 
 	monthly_piety = 0.5
@@ -163,8 +163,8 @@ dynasty_blood_shadows_modifier_3 = {
 	intrigue_per_piety_level = 1
 }
 
-# 5. Covenant of Mastery
-dynasty_blood_mastery_modifier_1 = {
+# 5. Covenant of Enlightenment
+dynasty_blood_enlightenment_modifier_1 = {
 	icon = bm_covenant_mastery
 
 	monthly_piety = 0.1
@@ -175,7 +175,7 @@ dynasty_blood_mastery_modifier_1 = {
 	knight_effectiveness_per_learning = 0.002
 }
 
-dynasty_blood_mastery_modifier_2 = {
+dynasty_blood_enlightenment_modifier_2 = {
 	icon = bm_covenant_mastery
 
 	monthly_piety = 0.3
@@ -190,7 +190,7 @@ dynasty_blood_mastery_modifier_2 = {
 	knight_effectiveness_per_learning = 0.005
 }
 
-dynasty_blood_mastery_modifier_3 = {
+dynasty_blood_enlightenment_modifier_3 = {
 	icon = bm_covenant_mastery
 
 	monthly_piety = 0.5
@@ -207,8 +207,8 @@ dynasty_blood_mastery_modifier_3 = {
 	knight_effectiveness_per_learning = 0.01
 }
 
-# 6. Covenant of Legacy
-dynasty_blood_legacy_modifier_1 = {
+# 6. Covenant of the Ancient
+dynasty_blood_ancient_modifier_1 = {
 	icon = bm_covenant_legacy
 
 	monthly_piety = 0.1
@@ -221,7 +221,7 @@ dynasty_blood_legacy_modifier_1 = {
 	genetic_trait_strengthen_chance = 0.05
 }
 
-dynasty_blood_legacy_modifier_2 = {
+dynasty_blood_ancient_modifier_2 = {
 	icon = bm_covenant_legacy
 
 	monthly_piety = 0.3
@@ -236,7 +236,7 @@ dynasty_blood_legacy_modifier_2 = {
 	prowess_per_piety_level = 1
 }
 
-dynasty_blood_legacy_modifier_3 = {
+dynasty_blood_ancient_modifier_3 = {
 	icon = bm_covenant_legacy
 
 	monthly_piety = 0.5

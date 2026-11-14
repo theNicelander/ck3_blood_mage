@@ -156,182 +156,177 @@ blood_mage_yearly_events.002 = {
         exists = house
     }
     immediate = {
-        if = {
-            limit = { NOT = { has_trait = lifestyle_blood_power } }
-            add_trait = lifestyle_blood_power
-        }
-
-        # 1. Presence (presence)
+        # 1. Benediction (benediction)
         if = {
             limit = {
-                house = { has_house_modifier = dynasty_blood_presence_modifier_3 }
-                has_trait_xp = { trait = lifestyle_blood_power track = presence value < 100 }
+                house = { has_house_modifier = dynasty_blood_benediction_modifier_3 }
+                NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = benediction VALUE = 100 } }
             }
-            add_character_flag = bm_covenant_roll_presence
+            add_character_flag = bm_covenant_roll_benediction
         }
         else_if = {
             limit = {
-                house = { has_house_modifier = dynasty_blood_presence_modifier_2 }
-                has_trait_xp = { trait = lifestyle_blood_power track = presence value < 100 }
-            }
-            random = {
-                chance = 67
-                add_character_flag = bm_covenant_roll_presence
-            }
-        }
-        else_if = {
-            limit = {
-                house = { has_house_modifier = dynasty_blood_presence_modifier_1 }
-                has_trait_xp = { trait = lifestyle_blood_power track = presence value < 100 }
+                house = { has_house_modifier = dynasty_blood_benediction_modifier_2 }
+                NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = benediction VALUE = 100 } }
             }
             random = {
                 chance = 50
-                add_character_flag = bm_covenant_roll_presence
+                add_character_flag = bm_covenant_roll_benediction
+            }
+        }
+        else_if = {
+            limit = {
+                house = { has_house_modifier = dynasty_blood_benediction_modifier_1 }
+                NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = benediction VALUE = 100 } }
+            }
+            random = {
+                chance = 25
+                add_character_flag = bm_covenant_roll_benediction
             }
         }
 
-        # 2. Warband (warband)
+        # 2. Bloodlust (bloodlust)
         if = {
             limit = {
-                house = { has_house_modifier = dynasty_blood_warband_modifier_3 }
-                has_trait_xp = { trait = lifestyle_blood_power track = warband value < 100 }
+                house = { has_house_modifier = dynasty_blood_bloodlust_modifier_3 }
+                NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE = 100 } }
             }
-            add_character_flag = bm_covenant_roll_warband
+            add_character_flag = bm_covenant_roll_bloodlust
         }
         else_if = {
             limit = {
-                house = { has_house_modifier = dynasty_blood_warband_modifier_2 }
-                has_trait_xp = { trait = lifestyle_blood_power track = warband value < 100 }
-            }
-            random = {
-                chance = 67
-                add_character_flag = bm_covenant_roll_warband
-            }
-        }
-        else_if = {
-            limit = {
-                house = { has_house_modifier = dynasty_blood_warband_modifier_1 }
-                has_trait_xp = { trait = lifestyle_blood_power track = warband value < 100 }
+                house = { has_house_modifier = dynasty_blood_bloodlust_modifier_2 }
+                NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE = 100 } }
             }
             random = {
                 chance = 50
-                add_character_flag = bm_covenant_roll_warband
+                add_character_flag = bm_covenant_roll_bloodlust
+            }
+        }
+        else_if = {
+            limit = {
+                house = { has_house_modifier = dynasty_blood_bloodlust_modifier_1 }
+                NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE = 100 } }
+            }
+            random = {
+                chance = 25
+                add_character_flag = bm_covenant_roll_bloodlust
             }
         }
 
-        # 3. Prosperity (prosperity)
+        # 3. Bloodline (bloodline)
         if = {
             limit = {
-                house = { has_house_modifier = dynasty_blood_prosperity_modifier_3 }
-                has_trait_xp = { trait = lifestyle_blood_power track = prosperity value < 100 }
+                house = { has_house_modifier = dynasty_blood_bloodline_modifier_3 }
+                NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = bloodline VALUE = 100 } }
             }
-            add_character_flag = bm_covenant_roll_prosperity
+            add_character_flag = bm_covenant_roll_bloodline
         }
         else_if = {
             limit = {
-                house = { has_house_modifier = dynasty_blood_prosperity_modifier_2 }
-                has_trait_xp = { trait = lifestyle_blood_power track = prosperity value < 100 }
-            }
-            random = {
-                chance = 67
-                add_character_flag = bm_covenant_roll_prosperity
-            }
-        }
-        else_if = {
-            limit = {
-                house = { has_house_modifier = dynasty_blood_prosperity_modifier_1 }
-                has_trait_xp = { trait = lifestyle_blood_power track = prosperity value < 100 }
+                house = { has_house_modifier = dynasty_blood_bloodline_modifier_2 }
+                NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = bloodline VALUE = 100 } }
             }
             random = {
                 chance = 50
-                add_character_flag = bm_covenant_roll_prosperity
+                add_character_flag = bm_covenant_roll_bloodline
+            }
+        }
+        else_if = {
+            limit = {
+                house = { has_house_modifier = dynasty_blood_bloodline_modifier_1 }
+                NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = bloodline VALUE = 100 } }
+            }
+            random = {
+                chance = 25
+                add_character_flag = bm_covenant_roll_bloodline
             }
         }
 
-        # 4. Shadows (shadows)
+        # 4. Hematurgy (hematurgy)
         if = {
             limit = {
-                house = { has_house_modifier = dynasty_blood_shadows_modifier_3 }
-                has_trait_xp = { trait = lifestyle_blood_power track = shadows value < 100 }
+                house = { has_house_modifier = dynasty_blood_hematurgy_modifier_3 }
+                NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = hematurgy VALUE = 100 } }
             }
-            add_character_flag = bm_covenant_roll_shadows
+            add_character_flag = bm_covenant_roll_hematurgy
         }
         else_if = {
             limit = {
-                house = { has_house_modifier = dynasty_blood_shadows_modifier_2 }
-                has_trait_xp = { trait = lifestyle_blood_power track = shadows value < 100 }
-            }
-            random = {
-                chance = 67
-                add_character_flag = bm_covenant_roll_shadows
-            }
-        }
-        else_if = {
-            limit = {
-                house = { has_house_modifier = dynasty_blood_shadows_modifier_1 }
-                has_trait_xp = { trait = lifestyle_blood_power track = shadows value < 100 }
+                house = { has_house_modifier = dynasty_blood_hematurgy_modifier_2 }
+                NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = hematurgy VALUE = 100 } }
             }
             random = {
                 chance = 50
-                add_character_flag = bm_covenant_roll_shadows
+                add_character_flag = bm_covenant_roll_hematurgy
+            }
+        }
+        else_if = {
+            limit = {
+                house = { has_house_modifier = dynasty_blood_hematurgy_modifier_1 }
+                NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = hematurgy VALUE = 100 } }
+            }
+            random = {
+                chance = 25
+                add_character_flag = bm_covenant_roll_hematurgy
             }
         }
 
-        # 5. Mastery (mastery)
+        # 5. Enlightenment (enlightenment)
         if = {
             limit = {
-                house = { has_house_modifier = dynasty_blood_mastery_modifier_3 }
-                has_trait_xp = { trait = lifestyle_blood_power track = mastery value < 100 }
+                house = { has_house_modifier = dynasty_blood_enlightenment_modifier_3 }
+                NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = enlightenment VALUE = 100 } }
             }
-            add_character_flag = bm_covenant_roll_mastery
+            add_character_flag = bm_covenant_roll_enlightenment
         }
         else_if = {
             limit = {
-                house = { has_house_modifier = dynasty_blood_mastery_modifier_2 }
-                has_trait_xp = { trait = lifestyle_blood_power track = mastery value < 100 }
-            }
-            random = {
-                chance = 67
-                add_character_flag = bm_covenant_roll_mastery
-            }
-        }
-        else_if = {
-            limit = {
-                house = { has_house_modifier = dynasty_blood_mastery_modifier_1 }
-                has_trait_xp = { trait = lifestyle_blood_power track = mastery value < 100 }
+                house = { has_house_modifier = dynasty_blood_enlightenment_modifier_2 }
+                NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = enlightenment VALUE = 100 } }
             }
             random = {
                 chance = 50
-                add_character_flag = bm_covenant_roll_mastery
+                add_character_flag = bm_covenant_roll_enlightenment
+            }
+        }
+        else_if = {
+            limit = {
+                house = { has_house_modifier = dynasty_blood_enlightenment_modifier_1 }
+                NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = enlightenment VALUE = 100 } }
+            }
+            random = {
+                chance = 25
+                add_character_flag = bm_covenant_roll_enlightenment
             }
         }
 
-        # 6. Legacy (dynasty)
+        # 6. Ancient (ancient)
         if = {
             limit = {
-                house = { has_house_modifier = dynasty_blood_legacy_modifier_3 }
-                has_trait_xp = { trait = lifestyle_blood_power track = dynasty value < 100 }
+                house = { has_house_modifier = dynasty_blood_ancient_modifier_3 }
+                NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = ancient VALUE = 100 } }
             }
-            add_character_flag = bm_covenant_roll_legacy
+            add_character_flag = bm_covenant_roll_ancient
         }
         else_if = {
             limit = {
-                house = { has_house_modifier = dynasty_blood_legacy_modifier_2 }
-                has_trait_xp = { trait = lifestyle_blood_power track = dynasty value < 100 }
-            }
-            random = {
-                chance = 67
-                add_character_flag = bm_covenant_roll_legacy
-            }
-        }
-        else_if = {
-            limit = {
-                house = { has_house_modifier = dynasty_blood_legacy_modifier_1 }
-                has_trait_xp = { trait = lifestyle_blood_power track = dynasty value < 100 }
+                house = { has_house_modifier = dynasty_blood_ancient_modifier_2 }
+                NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = ancient VALUE = 100 } }
             }
             random = {
                 chance = 50
-                add_character_flag = bm_covenant_roll_legacy
+                add_character_flag = bm_covenant_roll_ancient
+            }
+        }
+        else_if = {
+            limit = {
+                house = { has_house_modifier = dynasty_blood_ancient_modifier_1 }
+                NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = ancient VALUE = 100 } }
+            }
+            random = {
+                chance = 25
+                add_character_flag = bm_covenant_roll_ancient
             }
         }
 
@@ -339,70 +334,64 @@ blood_mage_yearly_events.002 = {
         if = {
             limit = {
                 OR = {
-                    has_character_flag = bm_covenant_roll_presence
-                    has_character_flag = bm_covenant_roll_warband
-                    has_character_flag = bm_covenant_roll_prosperity
-                    has_character_flag = bm_covenant_roll_shadows
-                    has_character_flag = bm_covenant_roll_mastery
-                    has_character_flag = bm_covenant_roll_legacy
+                    has_character_flag = bm_covenant_roll_benediction
+                    has_character_flag = bm_covenant_roll_bloodlust
+                    has_character_flag = bm_covenant_roll_bloodline
+                    has_character_flag = bm_covenant_roll_hematurgy
+                    has_character_flag = bm_covenant_roll_enlightenment
+                    has_character_flag = bm_covenant_roll_ancient
                 }
             }
             send_interface_toast = {
                 title = blood_mage_yearly_events.002.success
                 left_icon = root
                 if = {
-                    limit = { has_character_flag = bm_covenant_roll_presence }
-                    add_trait_xp = {
-                        trait = lifestyle_blood_power
-                        track = presence
-                        value = 1
+                    limit = { has_character_flag = bm_covenant_roll_benediction }
+                    bm_add_blood_mage_xp_effect = {
+                        TRACK = benediction
+                        XP = 1
                     }
-                    remove_character_flag = bm_covenant_roll_presence
+                    remove_character_flag = bm_covenant_roll_benediction
                 }
                 if = {
-                    limit = { has_character_flag = bm_covenant_roll_warband }
-                    add_trait_xp = {
-                        trait = lifestyle_blood_power
-                        track = warband
-                        value = 1
+                    limit = { has_character_flag = bm_covenant_roll_bloodlust }
+                    bm_add_blood_mage_xp_effect = {
+                        TRACK = bloodlust
+                        XP = 1
                     }
-                    remove_character_flag = bm_covenant_roll_warband
+                    remove_character_flag = bm_covenant_roll_bloodlust
                 }
                 if = {
-                    limit = { has_character_flag = bm_covenant_roll_prosperity }
-                    add_trait_xp = {
-                        trait = lifestyle_blood_power
-                        track = prosperity
-                        value = 1
+                    limit = { has_character_flag = bm_covenant_roll_bloodline }
+                    bm_add_blood_mage_xp_effect = {
+                        TRACK = bloodline
+                        XP = 1
                     }
-                    remove_character_flag = bm_covenant_roll_prosperity
+                    remove_character_flag = bm_covenant_roll_bloodline
                 }
                 if = {
-                    limit = { has_character_flag = bm_covenant_roll_shadows }
-                    add_trait_xp = {
-                        trait = lifestyle_blood_power
-                        track = shadows
-                        value = 1
+                    limit = { has_character_flag = bm_covenant_roll_hematurgy }
+                    bm_add_blood_mage_xp_effect = {
+                        TRACK = hematurgy
+                        XP = 1
                     }
-                    remove_character_flag = bm_covenant_roll_shadows
+                    remove_character_flag = bm_covenant_roll_hematurgy
                 }
                 if = {
-                    limit = { has_character_flag = bm_covenant_roll_mastery }
-                    add_trait_xp = {
-                        trait = lifestyle_blood_power
-                        track = mastery
-                        value = 1
+                    limit = { has_character_flag = bm_covenant_roll_enlightenment }
+                    bm_add_blood_mage_xp_effect = {
+                        TRACK = enlightenment
+                        XP = 1
                     }
-                    remove_character_flag = bm_covenant_roll_mastery
+                    remove_character_flag = bm_covenant_roll_enlightenment
                 }
                 if = {
-                    limit = { has_character_flag = bm_covenant_roll_legacy }
-                    add_trait_xp = {
-                        trait = lifestyle_blood_power
-                        track = dynasty
-                        value = 1
+                    limit = { has_character_flag = bm_covenant_roll_ancient }
+                    bm_add_blood_mage_xp_effect = {
+                        TRACK = ancient
+                        XP = 1
                     }
-                    remove_character_flag = bm_covenant_roll_legacy
+                    remove_character_flag = bm_covenant_roll_ancient
                 }
             }
         }
