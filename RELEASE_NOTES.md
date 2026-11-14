@@ -40,7 +40,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - **Major**: Channel Blood Power, Condense into Superior Lifeforce, Split into 2 Minor, Education Enhancement, Major Runes, Congenital Manifestation, House Blessing.
 - **Superior**: Blood Golem creation, 5★ Master Educations, Secondary Educations, Split Superior into 2 Major, Capstone Runes.
 - **Attune Lifeforce**: choose your yearly lifestyle XP bonus (applied January 1st).
-- **Empower Dynasty Bloodline**: six three-tier House Covenants (Presence, Warband, Prosperity, Shadow, Mastery, Legacy) granting monthly Piety (+0.1/+0.3/+0.5), skill, and +1 attribute per Devotion at Tier 2 and Tier 3 alongside balanced house-wide bonuses (Men-at-Arms, army damage, speed, domain limit, opinion, legitimacy mult, monthly Piety per knight, and knight effectiveness per Prowess/Learning on Warband and Mastery); active covenants roll annually to award +1 XP in the matching Blood Power track for living kin.
+- **Empower Dynasty Bloodline**: six three-tier House Covenants (Benediction, Bloodlust, Bloodline, Hematurgy, Enlightenment, the Ancient) granting monthly Piety (+0.1/+0.3/+0.5), skill, and +1 attribute per Devotion at Tier 2 and Tier 3 alongside balanced house-wide bonuses (Men-at-Arms, army damage, speed, domain limit, opinion, legitimacy mult, monthly Piety per knight, and knight effectiveness per Prowess/Learning); active covenants roll annually (25%/50%/100% by tier) to award +1 XP in the matching Blood Mage track for living kin.
 - Education advancement needs Devotion Level 1+/2+/3+/4+ for 1★→2★ … 4★→5★; only Superior magic (5★, Embrace New Education) costs Devotion or needs 1000 Piety plus Superior Lifeforce.
 - **Heal Ailment**: cures up to 32 ailments, purges all 11 stress vices (−50 Stress), and treats old-age traits (Minor: 1 Minor Lifeforce + 50 Piety; Major tier for deeper rejuvenation).
 - **Influence Personality**: Learning contest to swap a trait or culture (5-year cooldown on success, 1 year on failure).
@@ -197,6 +197,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 - v1.20.40: Add Blood Runes and five Galdrastafir staves
 - v1.20.39: Blood Knight becomes full peer lifestyle to Blood Mage
 - v1.20.38: Healing alerts in Current Situation
+- main: Rework House Covenants to Blood Mage tracks (Benediction, Bloodlust, Bloodline, Hematurgy, Enlightenment, the Ancient) with 25/50/100% yearly XP
 - v1.20.37: Situation decisions mirrored in Decisions tab
 - v1.20.36: Blood Knight icon, domicile buildings, duel Lifeforce rewards
 - v1.20.35: Simplify magic tiers; scale battle XP and Lifeforce

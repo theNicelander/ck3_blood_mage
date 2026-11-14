@@ -46,6 +46,7 @@ CK3 script fails silently. Follow patterns in this repo and vanilla 1.20 (`/User
 ## Naming & format (enforced by `scripts/check_repo.py`)
 
 - Prefix every new file and identifier `bm_`; one file per feature `bm_<feature>.txt`. Effects/triggers end `_effect`/`_trigger`. Rules: `has_game_rule = bm_<rule>_<setting>`.
+- Always rename internal IDs to match reworked features unless explicitly told to keep them.
 - `.txt`, `.gui`, `.yml`: UTF-8 **with BOM**, trailing newline, balanced braces. Keep each file's line endings (many CRLF) and indentation; don't reformat unrelated lines; keep comments.
 - Read files with `python3 scripts/read_ck3.py read <file> [--lines a:b]`, `block <file> <name>`, `search <pattern> --vanilla [--subpath common/religion]` (handles BOM/encoding).
 - Game errors: `tail -n 100 ~/Documents/"Paradox Interactive"/"Crusader Kings III"/logs/error.log`.

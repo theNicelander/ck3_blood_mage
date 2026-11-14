@@ -63,100 +63,100 @@ debug_upgrade_all_covenants = {
     }
     effect = {
         house = {
-            # Presence
+            # Benediction
             if = {
-                limit = { has_house_modifier = dynasty_blood_presence_modifier_2 }
-                remove_house_modifier = dynasty_blood_presence_modifier_2
-                add_house_modifier = { modifier = dynasty_blood_presence_modifier_3 }
+                limit = { has_house_modifier = dynasty_blood_benediction_modifier_2 }
+                remove_house_modifier = dynasty_blood_benediction_modifier_2
+                add_house_modifier = { modifier = dynasty_blood_benediction_modifier_3 }
             }
             else_if = {
-                limit = { has_house_modifier = dynasty_blood_presence_modifier_1 }
-                remove_house_modifier = dynasty_blood_presence_modifier_1
-                add_house_modifier = { modifier = dynasty_blood_presence_modifier_2 }
+                limit = { has_house_modifier = dynasty_blood_benediction_modifier_1 }
+                remove_house_modifier = dynasty_blood_benediction_modifier_1
+                add_house_modifier = { modifier = dynasty_blood_benediction_modifier_2 }
             }
             else_if = {
-                limit = { NOT = { has_house_modifier = dynasty_blood_presence_modifier_3 } }
-                add_house_modifier = { modifier = dynasty_blood_presence_modifier_1 }
+                limit = { NOT = { has_house_modifier = dynasty_blood_benediction_modifier_3 } }
+                add_house_modifier = { modifier = dynasty_blood_benediction_modifier_1 }
             }
 
-            # Warband
+            # Bloodlust
             if = {
-                limit = { has_house_modifier = dynasty_blood_warband_modifier_2 }
-                remove_house_modifier = dynasty_blood_warband_modifier_2
-                add_house_modifier = { modifier = dynasty_blood_warband_modifier_3 }
+                limit = { has_house_modifier = dynasty_blood_bloodlust_modifier_2 }
+                remove_house_modifier = dynasty_blood_bloodlust_modifier_2
+                add_house_modifier = { modifier = dynasty_blood_bloodlust_modifier_3 }
             }
             else_if = {
-                limit = { has_house_modifier = dynasty_blood_warband_modifier_1 }
-                remove_house_modifier = dynasty_blood_warband_modifier_1
-                add_house_modifier = { modifier = dynasty_blood_warband_modifier_2 }
+                limit = { has_house_modifier = dynasty_blood_bloodlust_modifier_1 }
+                remove_house_modifier = dynasty_blood_bloodlust_modifier_1
+                add_house_modifier = { modifier = dynasty_blood_bloodlust_modifier_2 }
             }
             else_if = {
-                limit = { NOT = { has_house_modifier = dynasty_blood_warband_modifier_3 } }
-                add_house_modifier = { modifier = dynasty_blood_warband_modifier_1 }
+                limit = { NOT = { has_house_modifier = dynasty_blood_bloodlust_modifier_3 } }
+                add_house_modifier = { modifier = dynasty_blood_bloodlust_modifier_1 }
             }
 
-            # Prosperity
+            # Bloodline
             if = {
-                limit = { has_house_modifier = dynasty_blood_prosperity_modifier_2 }
-                remove_house_modifier = dynasty_blood_prosperity_modifier_2
-                add_house_modifier = { modifier = dynasty_blood_prosperity_modifier_3 }
+                limit = { has_house_modifier = dynasty_blood_bloodline_modifier_2 }
+                remove_house_modifier = dynasty_blood_bloodline_modifier_2
+                add_house_modifier = { modifier = dynasty_blood_bloodline_modifier_3 }
             }
             else_if = {
-                limit = { has_house_modifier = dynasty_blood_prosperity_modifier_1 }
-                remove_house_modifier = dynasty_blood_prosperity_modifier_1
-                add_house_modifier = { modifier = dynasty_blood_prosperity_modifier_2 }
+                limit = { has_house_modifier = dynasty_blood_bloodline_modifier_1 }
+                remove_house_modifier = dynasty_blood_bloodline_modifier_1
+                add_house_modifier = { modifier = dynasty_blood_bloodline_modifier_2 }
             }
             else_if = {
-                limit = { NOT = { has_house_modifier = dynasty_blood_prosperity_modifier_3 } }
-                add_house_modifier = { modifier = dynasty_blood_prosperity_modifier_1 }
+                limit = { NOT = { has_house_modifier = dynasty_blood_bloodline_modifier_3 } }
+                add_house_modifier = { modifier = dynasty_blood_bloodline_modifier_1 }
             }
 
-            # Shadows
+            # Hematurgy
             if = {
-                limit = { has_house_modifier = dynasty_blood_shadows_modifier_2 }
-                remove_house_modifier = dynasty_blood_shadows_modifier_2
-                add_house_modifier = { modifier = dynasty_blood_shadows_modifier_3 }
+                limit = { has_house_modifier = dynasty_blood_hematurgy_modifier_2 }
+                remove_house_modifier = dynasty_blood_hematurgy_modifier_2
+                add_house_modifier = { modifier = dynasty_blood_hematurgy_modifier_3 }
             }
             else_if = {
-                limit = { has_house_modifier = dynasty_blood_shadows_modifier_1 }
-                remove_house_modifier = dynasty_blood_shadows_modifier_1
-                add_house_modifier = { modifier = dynasty_blood_shadows_modifier_2 }
+                limit = { has_house_modifier = dynasty_blood_hematurgy_modifier_1 }
+                remove_house_modifier = dynasty_blood_hematurgy_modifier_1
+                add_house_modifier = { modifier = dynasty_blood_hematurgy_modifier_2 }
             }
             else_if = {
-                limit = { NOT = { has_house_modifier = dynasty_blood_shadows_modifier_3 } }
-                add_house_modifier = { modifier = dynasty_blood_shadows_modifier_1 }
+                limit = { NOT = { has_house_modifier = dynasty_blood_hematurgy_modifier_3 } }
+                add_house_modifier = { modifier = dynasty_blood_hematurgy_modifier_1 }
             }
 
-            # Mastery
+            # Enlightenment
             if = {
-                limit = { has_house_modifier = dynasty_blood_mastery_modifier_2 }
-                remove_house_modifier = dynasty_blood_mastery_modifier_2
-                add_house_modifier = { modifier = dynasty_blood_mastery_modifier_3 }
+                limit = { has_house_modifier = dynasty_blood_enlightenment_modifier_2 }
+                remove_house_modifier = dynasty_blood_enlightenment_modifier_2
+                add_house_modifier = { modifier = dynasty_blood_enlightenment_modifier_3 }
             }
             else_if = {
-                limit = { has_house_modifier = dynasty_blood_mastery_modifier_1 }
-                remove_house_modifier = dynasty_blood_mastery_modifier_1
-                add_house_modifier = { modifier = dynasty_blood_mastery_modifier_2 }
+                limit = { has_house_modifier = dynasty_blood_enlightenment_modifier_1 }
+                remove_house_modifier = dynasty_blood_enlightenment_modifier_1
+                add_house_modifier = { modifier = dynasty_blood_enlightenment_modifier_2 }
             }
             else_if = {
-                limit = { NOT = { has_house_modifier = dynasty_blood_mastery_modifier_3 } }
-                add_house_modifier = { modifier = dynasty_blood_mastery_modifier_1 }
+                limit = { NOT = { has_house_modifier = dynasty_blood_enlightenment_modifier_3 } }
+                add_house_modifier = { modifier = dynasty_blood_enlightenment_modifier_1 }
             }
 
-            # Legacy
+            # Ancient
             if = {
-                limit = { has_house_modifier = dynasty_blood_legacy_modifier_2 }
-                remove_house_modifier = dynasty_blood_legacy_modifier_2
-                add_house_modifier = { modifier = dynasty_blood_legacy_modifier_3 }
+                limit = { has_house_modifier = dynasty_blood_ancient_modifier_2 }
+                remove_house_modifier = dynasty_blood_ancient_modifier_2
+                add_house_modifier = { modifier = dynasty_blood_ancient_modifier_3 }
             }
             else_if = {
-                limit = { has_house_modifier = dynasty_blood_legacy_modifier_1 }
-                remove_house_modifier = dynasty_blood_legacy_modifier_1
-                add_house_modifier = { modifier = dynasty_blood_legacy_modifier_2 }
+                limit = { has_house_modifier = dynasty_blood_ancient_modifier_1 }
+                remove_house_modifier = dynasty_blood_ancient_modifier_1
+                add_house_modifier = { modifier = dynasty_blood_ancient_modifier_2 }
             }
             else_if = {
-                limit = { NOT = { has_house_modifier = dynasty_blood_legacy_modifier_3 } }
-                add_house_modifier = { modifier = dynasty_blood_legacy_modifier_1 }
+                limit = { NOT = { has_house_modifier = dynasty_blood_ancient_modifier_3 } }
+                add_house_modifier = { modifier = dynasty_blood_ancient_modifier_1 }
             }
         }
     }
