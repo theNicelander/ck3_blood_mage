@@ -34,7 +34,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 ## Spellcasting & Decisions
 
 - Cast Blood Magic (Minor, Major, Superior) are inline option-list decisions; every spell stays visible, grayed out when unavailable.
-- **Transmute Lifeforce**: Dedicated decision and event chain converting 1:1 between Major Lifeforce and the 6 specialized reservoirs (Radiant, Furious, Fortunate, Cunning, Wise, and Ancient Blood) at 50 Piety without cooldowns, granting `+4` matching track XP (`+2` `ancient` XP for Ancient Blood) on channeling and reclaiming back to Major Lifeforce without XP.
+- **Transmute Lifeforce**: Dedicated decision and event chain converting 1:1 between Major Lifeforce and the 6 specialized reservoirs (Radiant, Furious, Fortunate, Cunning, Wise, and Ancient Blood) at 50 Piety without cooldowns, granting `+2` matching track XP (`+1` `ancient` XP for Ancient Blood) on channeling and reclaiming back to Major Lifeforce without XP.
 - **Minor**: Minor Blood Runes, Cleansing Impurities, Condensation (Minor into Major), Channel Minor Lifeforce (+10 native monthly Lifestyle XP in chosen attribute; +5 monthly to active focus for Experience Gain).
 - **Major**: Condense into Superior Lifeforce, Split into 2 Minor, Education Enhancement, Major Runes, Congenital Manifestation, House Blessing.
 - **Superior**: Blood Golem creation, 5★ Master Educations, Secondary Educations, Split Superior into 2 Major, Capstone Runes.
