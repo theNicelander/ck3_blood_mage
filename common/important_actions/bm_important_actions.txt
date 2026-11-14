@@ -272,3 +272,75 @@ bm_action_can_cull_champion = {
 		}
 	}
 }
+
+bm_action_can_attune_lifeforce = {
+	priority = 360
+
+	check_create_action = {
+		if = {
+			limit = {
+				is_ai = no
+				is_blood_mage_any_tier_trigger = yes
+				bm_has_any_attunement_trigger = no
+				can_execute_decision = bm_attune_lifeforce_decision
+			}
+			try_create_important_action = {
+				important_action_type = bm_action_can_attune_lifeforce
+				actor = root
+			}
+		}
+	}
+
+	effect = {
+		open_view_data = {
+			view = decision_detail
+			data = decision:bm_attune_lifeforce_decision
+			player = scope:actor
+		}
+	}
+}
+
+bm_action_can_trait_drain_prisoner = {
+	combine_into_one = yes
+	priority = 335
+
+	check_create_action = {
+		if = {
+			limit = {
+				is_ai = no
+				is_blood_mage_tier_2_or_higher_trigger = yes
+			}
+			save_scope_as = actor
+
+			every_prisoner = {
+				limit = {
+					save_temporary_scope_as = prisoner_target
+					scope:actor = {
+						is_character_interaction_valid = {
+							interaction = trait_drain_prisoner_event_interaction
+							recipient = scope:prisoner_target
+						}
+					}
+				}
+				add_to_temporary_list = bm_trait_drain_candidates
+			}
+
+			every_in_list = {
+				list = bm_trait_drain_candidates
+				try_create_important_action = {
+					important_action_type = bm_action_can_trait_drain_prisoner
+					actor = scope:actor
+					recipient = this
+				}
+			}
+		}
+	}
+
+	effect = {
+		open_interaction_window = {
+			interaction = trait_drain_prisoner_event_interaction
+			actor = scope:actor
+			recipient = scope:recipient
+		}
+	}
+}
