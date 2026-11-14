@@ -88,59 +88,41 @@ bm_become_blood_mage_effect = {
 bm_elevate_tier_effect = {
 	if = {
 		limit = { has_trait = lifestyle_bm_acolyte }
-		set_variable = {
-			name = bm_elevation_overflow_stacks
-			value = bm_elevation_overflow_lifeforce_stacks_value
-		}
-
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_elevate_blood_mage_tier_toast
 			left_icon = root
+			if = {
+				limit = { bm_elevation_overflow_lifeforce_stacks_value > 0 }
+				while = {
+					count = bm_elevation_overflow_lifeforce_stacks_value
+					add_character_modifier = lifeforce_modifier_minor
+				}
+			}
 			remove_trait = lifestyle_bm_acolyte
 			add_trait = lifestyle_blood_mage
-			while = {
-				count = {
-					value = 0
-					if = {
-						limit = { exists = var:bm_elevation_overflow_stacks }
-						add = var:bm_elevation_overflow_stacks
-					}
-				}
-				add_character_modifier = lifeforce_modifier_minor
-			}
 			hidden_effect = {
 				bm_ensure_blood_mage_story_effect = yes
-				remove_variable = bm_elevation_overflow_stacks
 			}
 		}
 	}
 	else_if = {
 		limit = { has_trait = lifestyle_blood_mage }
-		set_variable = {
-			name = bm_elevation_overflow_stacks
-			value = bm_elevation_overflow_lifeforce_stacks_value
-		}
-
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_elevate_blood_archmage_tier_toast
 			left_icon = root
+			if = {
+				limit = { bm_elevation_overflow_lifeforce_stacks_value > 0 }
+				while = {
+					count = bm_elevation_overflow_lifeforce_stacks_value
+					add_character_modifier = lifeforce_modifier_major
+				}
+			}
 			remove_trait = lifestyle_blood_mage
 			add_trait = lifestyle_bm_archmage
-			while = {
-				count = {
-					value = 0
-					if = {
-						limit = { exists = var:bm_elevation_overflow_stacks }
-						add = var:bm_elevation_overflow_stacks
-					}
-				}
-				add_character_modifier = lifeforce_modifier_major
-			}
 			hidden_effect = {
 				bm_ensure_blood_mage_story_effect = yes
-				remove_variable = bm_elevation_overflow_stacks
 			}
 		}
 	}
