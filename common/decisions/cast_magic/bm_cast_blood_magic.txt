@@ -379,28 +379,6 @@ bm_cast_blood_magic_major_decision = {
 		decision_to_second_step_button = "BM_CAST_BLOOD_MAGIC_NEXT_STEP_BUTTON"
 		show_from_start = yes
 
-		# Channel Blood Power
-		item = {
-			value = bm_major_channel_power
-			current_description = bm_major_channel_power
-			localization = bm_major_channel_power
-			icon = "gfx/interface/icons/traits/bm_interactions.dds"
-			is_shown = {
-				is_blood_mage_any_tier_trigger = yes
-			}
-			is_valid = {
-				piety_level >= 1
-				piety >= 150
-			}
-			ai_chance = {
-				value = 100
-				if = {
-					limit = { health <= fine_health }
-					multiply = 0
-				}
-			}
-		}
-
 		# Condense Major Lifeforce into Superior Lifeforce
 		item = {
 			value = bm_major_condense
@@ -594,15 +572,6 @@ bm_cast_blood_magic_major_decision = {
 
 	effect = {
 		if = {
-			limit = { scope:bm_major_channel_power = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (channel_power) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
-			if = {
-				limit = { NOT = { has_trait = lifestyle_blood_power } }
-				add_trait = lifestyle_blood_power
-			}
-			trigger_event = { id = bm_blood_power_event.001 }
-		}
-		else_if = {
 			limit = { scope:bm_major_condense = yes }
 			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (condense) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
 			add_piety = -350

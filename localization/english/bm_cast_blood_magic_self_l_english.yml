@@ -65,8 +65,6 @@
     bm_improve_education_decision_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to attempt to improve one of your Education traits."
     bm_improve_education_decision_tooltip: "Attempt to elevate your primary education trait to a higher tier"
     bm_improve_education_decision_confirm: "Infuse Mind"
-    bm_improve_education_decision_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_improve_education')|0] Experience in [GetTrait('lifestyle_blood_power').GetName( GetNullCharacter )]"
-    NOT_bm_improve_education_decision_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_improve_education')|0] Experience in [GetTrait('lifestyle_blood_power').GetName( GetNullCharacter )]"
     bm_improve_education_cooldown: "Recently Enhanced Education"
     bm_improve_education_cooldown_desc: "You have recently enhanced or mastered an education trait through blood magic and must allow your neural pathways to stabilize."
     bm_improve_education_cooldown_tt: "Has not attempted to enhance or master education in the last 2 years"
@@ -88,8 +86,6 @@
     bm_new_education_decision_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] to attempt to improve one of your Education traits"
     bm_new_education_decision_tooltip: "Unlock a second education discipline using blood magic"
     bm_new_education_decision_confirm: "Forge New Pathways"
-    bm_new_education_decision_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_new_education')|0] Experience in [GetTrait('lifestyle_blood_power').GetName( GetNullCharacter )]"
-    NOT_bm_new_education_decision_xp_requirement: "Need at least [GetPlayer.MakeScope.ScriptValue('required_xp_new_education')|0] Experience in [GetTrait('lifestyle_blood_power').GetName( GetNullCharacter )]"
     bm_new_education_cooldown: "Recently Embraced New Education"
     bm_new_education_cooldown_desc: "You have recently forged new neural pathways for an additional education discipline and must allow your mind to stabilize."
     bm_new_education_cooldown_tt: "Has not unlocked a new education discipline in the last 2 years"
@@ -104,67 +100,6 @@
     bm_education_new.001.intrigue: "Gain new intrigue education"
     bm_education_new.001.learning: "Gain new learning education"
     bm_education_new.001.back: "Back"
-
-    # Channel Blood Power
-    bm_channel_blood_empowerment_decision: "Channel Blood Power"
-    bm_channel_blood_empowerment_decision_desc: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and #V 150#! [piety|E] to improve [GetTrait('lifestyle_blood_power').GetName( GetPlayer )].\n\nTier progression at #V 10#!, #V 30#!, #V 50#!, #V 70#!, and #V 100#! XP."
-    bm_channel_blood_empowerment_decision_tooltip: "Spend Major Lifeforce to permanently advance a chosen Blood Power track"
-    BM_CHANNEL_BLOOD_EMPOWERMENT_DECISION_NEXT_STEP_BUTTON: "Awaken Power"
-    bm_channel_blood_empowerment_decision_confirm: "$BM_CHANNEL_BLOOD_EMPOWERMENT_DECISION_NEXT_STEP_BUTTON$"
-    bm_channel_blood_empowerment_decision_effect: "You channel Major Lifeforce, permanently advancing your chosen Blood Power discipline."
-    bm_channel_blood_empowerment_major_lifeforce_req: "Requires [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]"
-    NOT_bm_channel_blood_empowerment_major_lifeforce_req: "Requires [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]"
-    bm_empower_track_already_mastered_req: "This discipline has already reached its maximum rank (100 XP)"
-    NOT_bm_empower_track_already_mastered_req: "This discipline has already reached its maximum rank (100 XP)"
-
-    bm_empower_dynasty: "Dynasty — Eugenics & Kinship"
-    bm_empower_dynasty_name: "$bm_empower_dynasty$"
-    bm_empower_dynasty_desc: "Channels Lifeforce into generational perfection and congenital inheritance.\n\n#V Capstone Effects (50 & 100 XP):#! -50% Inbreeding Chance (-100% Immunity at 100 XP), Piety, Vitality, and Age Prowess Lock."
-    bm_empower_dynasty_tooltip: "$bm_empower_dynasty_desc$"
-
-    bm_empower_warband: "Warband — Men-at-Arms Mastery"
-    bm_empower_warband_name: "$bm_empower_warband$"
-    bm_empower_warband_desc: "Channels Lifeforce into elite Men-at-Arms regiments, expanding counter efficiency.\n\n#V Capstone Effects (50 & 100 XP):#! +1 Men-at-Arms Max Size, +1 Men-at-Arms Regiments (+2 total on both at 100 XP), Piety, Vitality, and Age Prowess Lock."
-    bm_empower_warband_tooltip: "$bm_empower_warband_desc$"
-
-    bm_empower_mastery: "Mastery — Scholarship & Composure"
-    bm_empower_mastery_name: "$bm_empower_mastery$"
-    bm_empower_mastery_desc: "Accelerates lifestyle learning, stress composure, and spiritual devotion.\n\n#V Capstone Effects (50 & 100 XP):#! Piety, Vitality, and Age Prowess Lock."
-    bm_empower_mastery_tooltip: "$bm_empower_mastery_desc$"
-
-    bm_empower_presence: "Presence — Mesmeric Aura"
-    bm_empower_presence_name: "$bm_empower_presence$"
-    bm_empower_presence_desc: "Projects supernatural presence, commanding opinion, prestige, legitimacy, and personal schemes.\n\n#V Capstone Effects (50 & 100 XP):#! +1 Max Personal Schemes (+2 total at 100 XP), Piety, Vitality, and Age Prowess Lock."
-    bm_empower_presence_tooltip: "$bm_empower_presence_desc$"
-
-    bm_empower_prosperity: "Prosperity — Wealth & Domain"
-    bm_empower_prosperity_name: "$bm_empower_prosperity$"
-    bm_empower_prosperity_desc: "Draws enduring wealth into your treasury, sustaining armies and amplifying monthly income.\n\n#V Capstone Effects (50 & 100 XP):#! Piety, Vitality, and Age Prowess Lock."
-    bm_empower_prosperity_tooltip: "$bm_empower_prosperity_desc$"
-
-    bm_empower_shadows: "Shadows — Occult Warding & Intrigue"
-    bm_empower_shadows_name: "$bm_empower_shadows$"
-    bm_empower_shadows_desc: "Weaves a shroud of blood around your plots, radiating dread while thwarting hostile schemes against you.\n\n#V Capstone Effects (50 & 100 XP):#! +1 Max Hostile Schemes (+2 total at 100 XP), Piety, Vitality, and Age Prowess Lock."
-    bm_empower_shadows_tooltip: "$bm_empower_shadows_desc$"
-
-    bm_empower_versatility: "Versatility — Transcendent Perfection"
-    bm_empower_versatility_name: "$bm_empower_versatility$"
-    bm_empower_versatility_desc: "Available once all 6 disciplines have reached mastery (100 XP). Channels concentrated Major Lifeforce into a 10-year universal surge of all attributes, with a chance to permanently raise your skills and prowess."
-    bm_empower_versatility_tooltip: "$bm_empower_versatility_desc$"
-
-    # Blood Power events
-    bm_blood_power_event.001.title: "Channel Blood Power"
-    bm_blood_power_event.001.desc: "The blood magic roars within me like a caged beast, desperate for expression. I can feel it straining against my flesh, eager to reshape my very essence according to my desires. Which aspect shall I allow it to transform today?"
-    bm_blood_power_event.001.toast: "Blood Power"
-
-    # Legacy Blood Empowerment keys preserved
-    bm_blood_empowerment_decision: "$bm_channel_blood_empowerment_decision$"
-    bm_blood_empowerment_decision_desc: "$bm_channel_blood_empowerment_decision_desc$"
-    bm_blood_empowerment_decision_tooltip: "$bm_channel_blood_empowerment_decision_tooltip$"
-    bm_blood_empowerment_decision_confirm: "$bm_channel_blood_empowerment_decision_confirm$"
-    bm_blood_empowerment_event.001.title: "$bm_blood_power_event.001.title$"
-    bm_blood_empowerment_event.001.desc: "$bm_blood_power_event.001.desc$"
-    bm_blood_empowerment_event.001.toast: "$bm_blood_power_event.001.toast$"
 
     # Manifest Lifeforce
     bm_manifest_lifeforce_decision: "Manifest Lifeforce"
@@ -200,7 +135,7 @@
 
     # Transmute Lifeforce Decision
     bm_transmute_lifeforce_decision: "Transmute Lifeforce"
-    bm_transmute_lifeforce_decision_desc: "Channel or reclaim your reserves of Lifeforce, shifting vital energy between raw power, combat fury, lineage fertility, and focused intellect."
+    bm_transmute_lifeforce_decision_desc: "Channel or reclaim your reserves of Lifeforce, shifting vital energy between raw power and specialized reservoirs."
     bm_transmute_lifeforce_decision_tooltip: "Begin the ritual to transmute Lifeforce into specialized reservoirs or reclaim stored potency."
     bm_transmute_lifeforce_decision_confirm: "Begin Transmutation"
 
@@ -216,21 +151,30 @@
 
     bm_transmute_lifeforce.0002.t: "Major Lifeforce Transmutation"
     bm_transmute_lifeforce.0002.desc: "Channel 1 Major Lifeforce into 3 stacks of a specialized reservoir."
-    bm_transmute_lifeforce.0002.mojo: "Channel into Blood Mojo"
+    bm_transmute_lifeforce.0002.presence: "Channel into Blood Presence"
     bm_transmute_lifeforce.0002.fury: "Channel into Blood Fury"
+    bm_transmute_lifeforce.0002.prosperity: "Channel into Blood Prosperity"
+    bm_transmute_lifeforce.0002.shadows: "Channel into Blood Shadows"
     bm_transmute_lifeforce.0002.focus: "Channel into Blood Focus"
+    bm_transmute_lifeforce.0002.mojo: "Channel into Blood Mojo"
 
     bm_transmute_lifeforce.0003.t: "Minor Lifeforce Transmutation"
     bm_transmute_lifeforce.0003.desc: "Channel 1 Minor Lifeforce into 1 stack of a specialized reservoir."
-    bm_transmute_lifeforce.0003.mojo: "Channel into Blood Mojo"
+    bm_transmute_lifeforce.0003.presence: "Channel into Blood Presence"
     bm_transmute_lifeforce.0003.fury: "Channel into Blood Fury"
+    bm_transmute_lifeforce.0003.prosperity: "Channel into Blood Prosperity"
+    bm_transmute_lifeforce.0003.shadows: "Channel into Blood Shadows"
     bm_transmute_lifeforce.0003.focus: "Channel into Blood Focus"
+    bm_transmute_lifeforce.0003.mojo: "Channel into Blood Mojo"
 
     bm_transmute_lifeforce.0004.t: "Reclaim Stored Lifeforce"
     bm_transmute_lifeforce.0004.desc: "Dissolve 1 stack of a specialized reservoir back into 1 Minor Lifeforce."
-    bm_transmute_lifeforce.0004.mojo: "Reclaim from Blood Mojo"
+    bm_transmute_lifeforce.0004.presence: "Reclaim from Blood Presence"
     bm_transmute_lifeforce.0004.fury: "Reclaim from Blood Fury"
+    bm_transmute_lifeforce.0004.prosperity: "Reclaim from Blood Prosperity"
+    bm_transmute_lifeforce.0004.shadows: "Reclaim from Blood Shadows"
     bm_transmute_lifeforce.0004.focus: "Reclaim from Blood Focus"
+    bm_transmute_lifeforce.0004.mojo: "Reclaim from Blood Mojo"
 
     # Cast Blood Magic Minor
     bm_cast_blood_magic_minor_decision: "Cast Minor Blood Magic"
@@ -253,6 +197,12 @@
     bm_minor_channel_mojo: "Channel Minor Lifeforce into Mojo"
     bm_minor_channel_mojo_desc: "Transmute 1 Minor Lifeforce into 1 Mojo Lifeforce."
     bm_minor_channel_mojo_tooltip: "Spend #V 25#! [piety|E] and transmute [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] into [GetModifier('lifeforce_modifier_mojo').GetNameWithTooltip] to bolster lineage fertility and congenital inheritance."
+    bm_channel_presence_minor_toast: "Blood Presence Channeled"
+    bm_reclaim_presence_toast: "Minor Lifeforce Reclaimed"
+    bm_channel_prosperity_minor_toast: "Blood Prosperity Channeled"
+    bm_reclaim_prosperity_toast: "Minor Lifeforce Reclaimed"
+    bm_channel_shadows_minor_toast: "Blood Shadows Channeled"
+    bm_reclaim_shadows_toast: "Minor Lifeforce Reclaimed"
     bm_channel_mojo_minor_toast: "Mojo Lifeforce Channeled"
     bm_minor_channel_mojo_toast: "Mojo Lifeforce Channeled"
     bm_minor_reclaim_mojo: "Reclaim Minor Lifeforce from Mojo"
@@ -303,9 +253,6 @@
     bm_cast_blood_magic_major_decision_confirm: "$BM_CAST_BLOOD_MAGIC_NEXT_STEP_BUTTON$"
 
     # Major Options
-    bm_major_channel_power: "Channel Blood Power"
-    bm_major_channel_power_desc: "Spend Major Lifeforce to permanently advance a chosen Blood Power track."
-    bm_major_channel_power_tooltip: "Spend [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] and #V 150#! [piety|E] to permanently advance a chosen Blood Power track (Dynasty, Mastery, Presence, Prosperity, or Shadows).\n\nMilestones at #V 50#! and #V 100#! XP."
     bm_major_condense: "Condense Lifeforce"
     bm_major_condense_desc: "Transmute Major Lifeforce into Superior Lifeforce."
     bm_major_condense_tooltip: "Spend #V 350#! [piety|E] and transmute [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] into [GetModifier('lifeforce_modifier_superior').GetNameWithTooltip]."
@@ -329,6 +276,9 @@
     bm_major_channel_mojo: "Channel Major Lifeforce into Mojo"
     bm_major_channel_mojo_desc: "Transmute 1 Major Lifeforce into 3 Mojo Lifeforce."
     bm_major_channel_mojo_tooltip: "Spend #V 50#! [piety|E] and transmute [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] into 3 stacks of [GetModifier('lifeforce_modifier_mojo').GetNameWithTooltip]."
+    bm_channel_presence_major_toast: "Blood Presence Channeled"
+    bm_channel_prosperity_major_toast: "Blood Prosperity Channeled"
+    bm_channel_shadows_major_toast: "Blood Shadows Channeled"
     bm_channel_mojo_major_toast: "Mojo Lifeforce Channeled"
     bm_major_channel_mojo_toast: "Mojo Lifeforce Channeled"
     bm_major_channel_fury: "Channel Major Lifeforce into Fury"
@@ -343,10 +293,6 @@
     bm_major_channel_focus_toast: "Blood Focus Channeled"
 
     # Major Aliases
-    bm_cast_blood_magic_major.001.power: "$bm_major_channel_power$"
-    bm_cast_blood_magic_major.001.power_tt: "$bm_major_channel_power_tooltip$"
-    bm_cast_blood_magic_major.001.empowerment: "$bm_major_channel_power$"
-    bm_cast_blood_magic_major.001.empowerment_tt: "$bm_major_channel_power_tooltip$"
     bm_cast_blood_magic_major.001.condense: "$bm_major_condense$"
     bm_cast_blood_magic_major.001.condense.tt: "$bm_major_condense_tooltip$"
     bm_cast_blood_magic_major.001.split: "$bm_major_split$"

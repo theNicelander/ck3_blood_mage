@@ -127,57 +127,6 @@
 						}
 					}
 				}
-				if = {
-					limit = { has_trait = lifestyle_blood_power }
-					if = {
-						limit = { bm_anointed_transfer_dynasty_xp_value > 0 }
-						add_trait_xp = {
-							trait = lifestyle_blood_power
-							track = dynasty
-							value = bm_anointed_transfer_dynasty_xp_value
-						}
-					}
-					if = {
-						limit = { bm_anointed_transfer_warband_xp_value > 0 }
-						add_trait_xp = {
-							trait = lifestyle_blood_power
-							track = warband
-							value = bm_anointed_transfer_warband_xp_value
-						}
-					}
-					if = {
-						limit = { bm_anointed_transfer_mastery_xp_value > 0 }
-						add_trait_xp = {
-							trait = lifestyle_blood_power
-							track = mastery
-							value = bm_anointed_transfer_mastery_xp_value
-						}
-					}
-					if = {
-						limit = { bm_anointed_transfer_presence_xp_value > 0 }
-						add_trait_xp = {
-							trait = lifestyle_blood_power
-							track = presence
-							value = bm_anointed_transfer_presence_xp_value
-						}
-					}
-					if = {
-						limit = { bm_anointed_transfer_prosperity_xp_value > 0 }
-						add_trait_xp = {
-							trait = lifestyle_blood_power
-							track = prosperity
-							value = bm_anointed_transfer_prosperity_xp_value
-						}
-					}
-					if = {
-						limit = { bm_anointed_transfer_shadows_xp_value > 0 }
-						add_trait_xp = {
-							trait = lifestyle_blood_power
-							track = shadows
-							value = bm_anointed_transfer_shadows_xp_value
-						}
-					}
-				}
 			}
 		}
 	}

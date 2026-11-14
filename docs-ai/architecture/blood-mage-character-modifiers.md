@@ -117,7 +117,6 @@ When designing traits or character modifiers, holding/province modifiers fail si
 | Stationed Men-at-Arms unit definitions | `/Users/clarabotet/Petur/ck3-full/common/modifier_definition_formats/00_unit_definitions.txt` |
 | Allowlist validation | `scripts/modifiers_allowlist.json` |
 | Trait milestone usage (`lifestyle_blood_mage`) | `common/traits/bm_blood_mage_trait.txt` |
-| Trait milestone usage (`lifestyle_blood_power`) | `common/traits/bm_power_trait.txt` |
 | Dynasty channel modifiers | `common/modifiers/bm_channel_dynasty_modifiers.txt` |
 
 ---

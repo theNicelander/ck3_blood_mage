@@ -31,26 +31,6 @@
 	}
 }
 
-bm_add_blood_power_xp_effect = {
-	if = {
-		limit = {
-			has_trait = lifestyle_blood_power
-		}
-		add_trait_xp = {
-			trait = lifestyle_blood_power
-			track = $TRACK$
-			value = $XP$
-		}
-	}
-}
-
-bm_add_blood_empowerment_xp_effect = {
-	bm_add_blood_power_xp_effect = {
-		TRACK = $TRACK$
-		XP = $XP$
-	}
-}
-
 # Dynamic & Legacy compatibility aliases
 add_xp_bm_dynamic = {
 	bm_add_blood_mage_xp_effect = {
@@ -63,13 +43,6 @@ add_blood_mage_xp = {
 	bm_add_blood_mage_xp_effect = {
 		TRACK = $TRACK$
 		XP = $XP$
-	}
-}
-
-add_blood_power_xp = {
-	bm_add_blood_power_xp_effect = {
-		TRACK = $TRACK$
-		XP = 10
 	}
 }
 

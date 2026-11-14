@@ -1,12 +1,12 @@
 # Blood Mage Track XP & Costs (Hub)
 
-XP sources, Piety costs, Lifeforce sinks/sources, cooldowns for all lifestyle track progression. Per-trait detail: [mage](blood-mage-track-xp-mage.md) (`bloodline`, `hematurgy`, `bloodlust`), [power](blood-mage-track-xp-power.md) (`lifestyle_blood_power`). This file: shared rules and the devotion tracks on Blood Mage (`ancient`, `enlightenment`, `benediction`).
+XP sources, Piety costs, Lifeforce sinks/sources, cooldowns for all lifestyle track progression. Per-trait detail: [mage](blood-mage-track-xp-mage.md) (`bloodline`, `hematurgy`, `bloodlust`). This file: shared rules and the devotion tracks on Blood Mage (`ancient`, `enlightenment`, `benediction`).
 
 ## Shared Rules
 
 - **Engine cap**: 100 XP max per track (10 tiers at 10 XP steps). Overflow discarded.
-- **Traits/tracks**: `lifestyle_blood_mage` (`ancient`, `enlightenment`, `bloodline`, `benediction`, `hematurgy`, `bloodlust`); `lifestyle_blood_power` (`dynasty`, `warband`, `mastery`, `presence`, `prosperity`, `shadows`).
-- **Vitality baseline**: Tiers 10–40 and 60–90 on `lifestyle_blood_mage` give `+0.1` Health, `+2.5` Life Expectancy, `+1.25` Year Fertility, `+1` Epidemic Resistance. Tiers 50 and 100 award 4× and 8× vitality milestones. `lifestyle_blood_power` has no vitality baseline.
+- **Traits/tracks**: `lifestyle_blood_mage` (`ancient`, `enlightenment`, `bloodline`, `benediction`, `hematurgy`, `bloodlust`).
+- **Vitality baseline**: Tiers 10–40 and 60–90 on `lifestyle_blood_mage` give `+0.1` Health, `+2.5` Life Expectancy, `+1.25` Year Fertility, `+1` Epidemic Resistance. Tiers 50 and 100 award 4× and 8× vitality milestones.
 - **Apex Devotion (Levels 6–8)**: 100 XP capstones of `ancient`, `enlightenment`, `benediction` each grant `character_max_piety_level_add = 1`.
 - **Age lock**: every track capstone at 100 XP grants `no_prowess_loss_from_age = yes`.
 - **Cost types**: Piety, Lifeforce (`lifeforce_modifier_minor` / `lifeforce_modifier_major` / `lifeforce_modifier_superior`), Piety Levels (`piety_level`), cooldowns. "Grants" = action yields Lifeforce.
@@ -88,6 +88,5 @@ Guaranteed, no cost, 1 year cooldown: **+1 XP** (**+2 XP** with Superior **Hulin
 | Trait drain | `common/character_interactions/bm_drain_trait.txt`, `events/bm_trait_drain_events.txt`, `common/scripted_effects/bm_drain_trait_effects.txt` |
 | Education | `common/script_values/bm_education_enhancement_piety_cost.txt` |
 | Congenital manifestation | `common/scripted_effects/bm_manifest_traits_effects.txt` |
-| Blood Power events | `events/bm_blood_power_event.txt` |
 | Combat & duel hooks | `common/on_action/bm_combat_on_actions.txt`, `common/on_action/bm_duel_on_actions.txt` |
 | Yearly pulse, attunement, birth | `events/bm_yearly_events.txt`, `common/decisions/cast_magic/bm_attune_lifeforce_decision.txt`, `common/on_action/bm_blood_mage_prevalence_on_actions.txt` |

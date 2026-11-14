@@ -2,30 +2,37 @@
 diplomacy_lifeforce_modifier = {
     icon = diplomacy_positive
     diplomacy = 4
+    monthly_diplomacy_lifestyle_xp_gain_add = 10
 }
 martial_lifeforce_modifier = {
     icon = martial_positive
     martial = 4
+    monthly_martial_lifestyle_xp_gain_add = 10
 }
 stewardship_lifeforce_modifier = {
     icon = stewardship_positive
     stewardship = 4
+    monthly_stewardship_lifestyle_xp_gain_add = 10
 }
 intrigue_lifeforce_modifier = {
     icon = intrigue_positive
     intrigue = 4
+    monthly_intrigue_lifestyle_xp_gain_add = 10
 }
 learning_lifeforce_modifier = {
     icon = learning_positive
     learning = 4
+    monthly_learning_lifestyle_xp_gain_add = 10
 }
 prowess_lifeforce_modifier = {
     icon = prowess_positive
     prowess = 6
+    monthly_martial_lifestyle_xp_gain_add = 10
 }
 exp_lifeforce_modifier = {
     icon = magic_positive
     monthly_lifestyle_xp_gain_mult = 0.2
+    monthly_lifestyle_xp_gain_add = 5
 }
 
 drained_beggar_holding = {
@@ -74,18 +81,6 @@ trait_drain_attempted = {
     epidemic_resistance = -2
     negate_health_penalty_add = -0.2
     prowess = -1
-}
-
-bm_empower_versatility_modifier = {
-    icon = blood_magic
-    stacking = yes
-
-    diplomacy = 2
-    martial = 2
-    intrigue = 2
-    stewardship = 2
-    learning = 2
-    prowess = 4
 }
 
 bm_blessed_blood_modifier = {

@@ -8,13 +8,6 @@
 	}
 	if = {
 		limit = {
-			is_blood_mage_any_tier_trigger = yes
-			NOT = { has_trait = lifestyle_blood_power }
-		}
-		add_trait = lifestyle_blood_power
-	}
-	if = {
-		limit = {
 			OR = {
 				is_blood_mage_tier_2_or_higher_trigger = yes
 				bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE = 20 }
@@ -31,10 +24,6 @@ bm_become_blood_acolyte_effect = {
 			NOT = { is_blood_mage_any_tier_trigger = yes }
 		}
 		add_trait = lifestyle_bm_acolyte
-		if = {
-			limit = { NOT = { has_trait = lifestyle_blood_power } }
-			add_trait = lifestyle_blood_power
-		}
 	}
 	bm_ensure_blood_mage_story_effect = yes
 	if = {
@@ -52,10 +41,6 @@ bm_become_blood_mage_tier_2_effect = {
 		limit = { NOT = { has_trait = lifestyle_blood_mage } }
 		add_trait = lifestyle_blood_mage
 	}
-	if = {
-		limit = { NOT = { has_trait = lifestyle_blood_power } }
-		add_trait = lifestyle_blood_power
-	}
 	bm_ensure_blood_mage_story_effect = yes
 	add_character_flag = bm_blood_mage_prevalence_reviewed
 }
@@ -72,10 +57,6 @@ bm_become_blood_archmage_effect = {
 	if = {
 		limit = { NOT = { has_trait = lifestyle_bm_archmage } }
 		add_trait = lifestyle_bm_archmage
-	}
-	if = {
-		limit = { NOT = { has_trait = lifestyle_blood_power } }
-		add_trait = lifestyle_blood_power
 	}
 	bm_ensure_blood_mage_story_effect = yes
 	add_character_flag = bm_blood_mage_prevalence_reviewed
@@ -159,12 +140,6 @@ bm_apply_blood_mage_prevalence_retention_effect = {
 		bm_ensure_blood_mage_story_effect = yes
 	}
 	else = {
-		if = {
-			limit = {
-				has_trait = lifestyle_blood_power
-			}
-			remove_trait = lifestyle_blood_power
-		}
 		if = {
 			limit = {
 				NOT = { has_trait = shieldmaiden }

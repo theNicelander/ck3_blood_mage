@@ -1,15 +1,14 @@
 # Blood Mage Lifestyle Traits
 
-Living technical specification for `lifestyle_blood_mage` and secondary `lifestyle_blood_power`.
+Living technical specification for `lifestyle_bm_acolyte`, `lifestyle_blood_mage`, and `lifestyle_bm_archmage`.
 
 ## Archetypes & Sequential 3-Tier Hierarchy
 
 | Lifestyle Trait | Tier | Fuel | Lifestyle Tracks (6) | Magic & Subsystem Access |
 | --- | --- | --- | --- | --- |
-| **Blood Acolyte** (`lifestyle_bm_acolyte`) | Tier I | Minor Lifeforce | `bloodline`, `hematurgy`, `benediction`, `enlightenment`, `bloodlust`, `ancient` | Minor Blood Magic Grimoire; foundational Major rites (Rank 1 trait manifestation, up to 3★ education, Minor/Major Runes, Blood Power channeling). Track steps grant `+2` life expectancy per milestone (`60` max). |
+| **Blood Acolyte** (`lifestyle_bm_acolyte`) | Tier I | Minor Lifeforce | `bloodline`, `hematurgy`, `benediction`, `enlightenment`, `bloodlust`, `ancient` | Minor Blood Magic Grimoire; foundational Major rites (Rank 1 trait manifestation, up to 3★ education, Minor/Major Runes). Track steps grant `+2` life expectancy per milestone (`60` max). |
 | **Blood Mage** (`lifestyle_blood_mage`) | Tier II | Major Lifeforce | `bloodline`, `hematurgy`, `benediction`, `enlightenment`, `bloodlust`, `ancient` | Minor & Major Grimoire; congenital manifestation up to Rank 3, education up to 4★, prisoner trait theft, Tier II covenants, Major Blood Runes, Blood Berserkers. Base stat floor: `2.0` health, `40` life expectancy (`130` max with `+3`/milestone), `+1.00` renown, `+3.00` piety, `+1` personal tenet slot, `+1` max piety level, `+1.0%` knight effectiveness per learning, permanent age lock, `+3` to all 5 main attributes, `+1` to all 5 main attributes per piety level, `+10%` income mult, `+1` max personal & hostile schemes, `+0.05` monthly piety per knight, and `+10%` monthly lifestyle XP gain. |
 | **Blood Archmage** (`lifestyle_bm_archmage`) | Tier III | Superior Lifeforce | `bloodline`, `hematurgy`, `benediction`, `enlightenment`, `bloodlust`, `ancient` | Full Superior Grimoire; 5★ Master education, 2nd education, Rank 4–5 traits, Blood Golems, Galdrastafir, Tier III covenants, deadly ailment cure, Behemoths. Base stat floor: `5.0` health, `100` life expectancy (`220` max with `+4`/milestone), `+2.00` renown, `+6.00` piety, `+2` personal tenet slots, `+2` max piety levels, `+2.0%` knight effectiveness per learning, permanent age lock, `+6` to all 5 main attributes, `+2` to all 5 main attributes per piety level, `+20%` income mult, `+2` max personal & hostile schemes, `+0.10` monthly piety per knight, and `+20%` monthly lifestyle XP gain. |
-| **Blood Power** (`lifestyle_blood_power`) | Secondary | — | 6 tracks: `dynasty`, `warband`, `mastery`, `presence`, `prosperity`, `shadows` | Retained alongside primary tier trait; never reset on tier elevation. +0.1 monthly Piety and +5 monthly Lifestyle XP per 10 XP step, 50 XP milestones, 100 XP capstones including `no_prowess_loss_from_age = yes`. |
 
 - **Inheritance & Base:** Inheritable non-genetic (`25%` single parent, `50%` with Superior Feingur, `100%` both parents, `0.20%` birth), audited by `bm_blood_mage_prevalence` rule.
 - **Track Structure:** 5 milestones (10, 30, 50, 70, 100 XP). All 5 milestones grant `+0.2` Health (`+1.0` per track) and tier-scaled Life Expectancy (`+2` Acolyte, `+3` Mage, `+4` Archmage per step). Attribute tracks grant `+1` attribute at every milestone (`+5` total) and `+1` attribute per piety level at 30/70 (`+2` total), plus track-specific extras (50/100 for most; all 5 steps for Bloodlust `+0.2%` knight eff/learning and Ancient `+0.01`/knight).
@@ -31,21 +30,6 @@ Complete XP sources live in [`blood-mage-track-xp.md`](blood-mage-track-xp.md), 
 
 ---
 
-## Secondary Blood Power Tracks (`lifestyle_blood_power`)
-
-Base: none. Granted automatically with Mage at base 0 XP. Consolidated into 5 distinct milestones at 10, 30, 50, 70, and 100 XP. In CK3 engine mechanics, trait track thresholds stack additively (all reached tiers add together); each script block defines the incremental delta granted at that milestone. Every 10 XP grants **+5 flat monthly Lifestyle XP** (+15 quarterly) via `quarterly_playable_pulse`. Shared 50 and 100 milestones award `+10%` Monthly Piety Mult, `+5` Life Expectancy, `+0.25` Health, and `+0.02` Monthly Piety per sworn knight (`+20%`, `+10`, `+0.50`, `+0.04` total per track). Full breakdown in [`blood-mage-blood-power.md`](blood-mage-blood-power.md).
-
-| Track | 10 XP (Starter) | 30 XP (Medium) | 50 XP (Milestone) | 70 XP (Major) | 100 XP (Capstone) | Flat Lifestyle XP |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `presence` | `+0.2` Piety, `+5` Opinion, `+0.3` Prestige, `+6%` Legitimacy, `+8` Scheme | `+0.4` Piety, `+10` Opinion, `+0.6` Prestige, `+12%` Legitimacy, `+16` Scheme | `+0.6` Piety, `+15` Opinion, `+0.9` Prestige, `+18%` Legitimacy, `+24` Scheme, `+1` Max Schemes | `+0.8` Piety, `+20` Opinion, `+1.2` Prestige, `+24%` Legitimacy, `+32` Scheme, `+1` Max Schemes | **`+1.0` Piety**, **`+25` Opinion**, **`+1.5` Prestige**, **`+30%` Legitimacy**, **`+40` Scheme**, **`+2` Max Schemes**, Age Lock | `+5` to `+50`/mo Diplomacy |
-| `warband` | `+0.2` Piety, `+10%` Counter Eff | `+0.4` Piety, `+20%` Counter Eff | `+0.6` Piety, `+30%` Counter Eff, `+1` MaA Size, `+1` MaA Regiments | `+0.8` Piety, `+40%` Counter Eff, `+1` MaA Size, `+1` MaA Regiments | **`+1.0` Piety**, **`+50%` Counter Eff**, **`+2` MaA Size**, **`+2` MaA Regiments**, Age Lock | `+5` to `+50`/mo Martial |
-| `prosperity` | `+0.2` Piety, `+0.4` Gold, `+6%` Income Mult, `-6%` MaA Maint | `+0.4` Piety, `+0.8` Gold, `+12%` Income Mult, `-12%` MaA Maint | `+0.6` Piety, `+1.2` Gold, `+18%` Income Mult, `-18%` MaA Maint | `+0.8` Piety, `+1.6` Gold, `+24%` Income Mult, `-24%` MaA Maint | **`+1.0` Piety**, **`+2.0` Gold**, **`+30%` Income Mult**, **`-30%` MaA Maint**, Age Lock | `+5` to `+50`/mo Stewardship |
-| `shadows` | `+0.2` Piety, `+8` Hostile, `-10` Enemy, `+6` Dread | `+0.4` Piety, `+16` Hostile, `-20` Enemy, `+12` Dread | `+0.6` Piety, `+24` Hostile, `-30` Enemy, `+18` Dread, `+1` Max Schemes | `+0.8` Piety, `+32` Hostile, `-40` Enemy, `+24` Dread, `+1` Max Schemes | **`+1.0` Piety**, **`+40` Hostile**, **`-50` Enemy**, **`+30` Dread**, **`+2` Max Schemes**, Age Lock | `+5` to `+50`/mo Intrigue |
-| `mastery` | `+0.2` Piety, `+10%` XP, `-10%` Stress Gain, `+10%` Stress Loss | `+0.4` Piety, `+20%` XP, `-20%` Stress Gain, `+20%` Stress Loss | `+0.6` Piety, `+30%` XP, `-30%` Stress Gain, `+30%` Stress Loss | `+0.8` Piety, `+40%` XP, `-40%` Stress Gain, `+40%` Stress Loss | **`+1.0` Piety**, **`+50%` XP**, **`-50%` Stress Gain**, **`+50%` Stress Loss**, Age Lock | `+5` to `+50`/mo Learning |
-| `dynasty` | `+0.2` Piety, `+10%` Strengthen | `+0.4` Piety, `+20%` Strengthen | `+0.6` Piety, `+30%` Strengthen, `-50%` Inbreed | `+0.8` Piety, `+40%` Strengthen, `-50%` Inbreed | **`+1.0` Piety**, **`+50%` Strengthen**, **Immunity (`-100%`)**, Age Lock | `+5` to `+50`/mo Active Focus |
-
----
-
 ## Acquisition Triggers
 
 All routes invoke `bm_become_blood_mage_effect`:
@@ -63,9 +47,8 @@ All routes invoke `bm_become_blood_mage_effect`:
 
 | Component | File |
 | --- | --- |
-| Trait definitions | `common/traits/bm_blood_mage_trait.txt`, `bm_blood_power_trait.txt` |
-| XP helpers (`add_xp_bm_dynamic`, `add_shared_bm_bk_xp`, `add_blood_power_xp`) | `common/scripted_effects/bm_trait_track_xp_gain_effects.txt` |
+| Trait definitions | `common/traits/bm_blood_mage_trait.txt` |
+| XP helpers (`add_xp_bm_dynamic`, `add_shared_bm_bk_xp`) | `common/scripted_effects/bm_trait_track_xp_gain_effects.txt` |
 | Lifecycle & acquisition effects | `common/scripted_effects/bm_blood_mage_lifecycle_effects.txt` |
 | Portrait progression values | `common/script_values/bm_blood_mage_portrait_values.txt` |
 | Geyser initiation duels | `events/bm_geyser_duel_events.txt` |
-| Blood Power event | `events/bm_blood_power_event.txt` |
