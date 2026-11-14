@@ -197,7 +197,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 - v1.20.40: Add Blood Runes and five Galdrastafir staves
 - v1.20.39: Blood Knight becomes full peer lifestyle to Blood Mage
 - v1.20.38: Healing alerts in Current Situation
-- main: Rework House Covenants to Blood Mage tracks (Benediction, Bloodlust, Bloodline, Hematurgy, Enlightenment, the Ancient) with 25/50/100% yearly XP
+- v1.20.84: Rework House Covenants to Blood Mage tracks (Benediction, Bloodlust, Bloodline, Hematurgy, Enlightenment, the Ancient) with 25/50/100% yearly XP
 - v1.20.37: Situation decisions mirrored in Decisions tab
 - v1.20.36: Blood Knight icon, domicile buildings, duel Lifeforce rewards
 - v1.20.35: Simplify magic tiers; scale battle XP and Lifeforce

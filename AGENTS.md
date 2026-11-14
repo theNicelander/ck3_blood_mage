@@ -59,7 +59,7 @@ CK3 script fails silently. Follow patterns in this repo and vanilla 1.20 (`/User
 - Change `descriptor.mod` (`name`, `remote_file_id`, `version`) or add `replace_path`.
 - Delete third-party compat code (Blood of Numenor, AGOT) without asking; never reference another mod's traits/faiths/titles directly (guard with `has_global_variable = AGOT_is_loaded` or doctrine parameters).
 - Invent effect, trigger or scope names; cite vanilla or `script_docs`.
-- Switch or create branches unless told. Stay on the current branch.
+- Commit or push directly to `main`. If on `main`, create a sequential `v1.20.<N+1>` branch from `main` first; otherwise stay on the current feature branch.
 - Blanket stage (`git add .`, `-A`, `commit -a`): other agents work in parallel; stage, commit and push only files you changed.
 - Leave completed work uncommitted in working tree: parallel agents need committed checkpoints.
 - Merge a PR unless explicitly asked by the user. Stop after PR creation; merging requires explicit user instruction.
