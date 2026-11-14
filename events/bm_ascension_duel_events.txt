@@ -12,29 +12,31 @@ bm_ascension_duel.0001 = {
 	}
 
 	immediate = {
-		create_character = {
-			template = bm_blood_reflection_template
-			location = root.location
-			gender = root
-			age = root.age
-			faith = root.faith
-			culture = root.culture
-			dynasty = generate
-			save_scope_as = bm_clone
-		}
-		scope:bm_clone = {
-			copy_inheritable_appearance_from = root
-			change_first_name = { template_character = root }
-			dynasty ?= {
-				set_dynasty_name = bm_blood_ghost_dynasty_name
+		hidden_effect = {
+			create_character = {
+				template = bm_blood_reflection_template
+				location = root.location
+				gender = root
+				age = root.age
+				faith = root.faith
+				culture = root.culture
+				dynasty = generate
+				save_scope_as = bm_clone
 			}
-			house ?= {
-				set_house_name = bm_blood_ghost_dynasty_name
+			scope:bm_clone = {
+				copy_inheritable_appearance_from = root
+				change_first_name = { template_character = root }
+				dynasty ?= {
+					set_dynasty_name = bm_blood_ghost_dynasty_name
+				}
+				house ?= {
+					set_house_name = bm_blood_ghost_dynasty_name
+				}
+				bm_copy_character_personality_effect = yes
+				bm_copy_character_education_effect = yes
+				bm_copy_character_mirror_traits_effect = yes
+				bm_synchronize_character_skills_effect = yes
 			}
-			bm_copy_character_personality_effect = yes
-			bm_copy_character_education_effect = yes
-			bm_copy_character_mirror_traits_effect = yes
-			bm_synchronize_character_skills_effect = yes
 		}
 	}
 
@@ -45,6 +47,7 @@ bm_ascension_duel.0001 = {
 
 	option = {
 		name = bm_ascension_duel.0001.opt
+		custom_tooltip = bm_ascension_duel.0001.opt.tt
 		configure_start_single_combat_effect = {
 			SC_INITIATOR = root
 			SC_ATTACKER = root
@@ -83,7 +86,8 @@ bm_ascension_duel.0002 = {
 		animation = martial
 	}
 
-	immediate = {
+	option = {
+		name = bm_ascension_duel.0002.opt
 		if = {
 			limit = { this = scope:sc_victor }
 			bm_elevate_tier_effect = yes
@@ -123,18 +127,19 @@ bm_ascension_duel.0002 = {
 				}
 			}
 		}
-		if = {
-			limit = { exists = scope:sc_defender }
-			scope:sc_defender = {
-				death = {
-					death_reason = death_vanished
+	}
+
+	after = {
+		hidden_effect = {
+			if = {
+				limit = { exists = scope:sc_defender }
+				scope:sc_defender = {
+					death = {
+						death_reason = death_vanished
+					}
 				}
 			}
 		}
-	}
-
-	option = {
-		name = bm_ascension_duel.0002.opt
 	}
 }
 
