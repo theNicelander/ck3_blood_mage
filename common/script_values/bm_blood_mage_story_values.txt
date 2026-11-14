@@ -14,94 +14,94 @@
 	}
 }
 
-bm_blood_mage_enlightenment_xp_value = {
+bm_blood_mage_wisdom_xp_value = {
 	value = 0
 	if = {
 		limit = { has_trait = lifestyle_bm_acolyte }
-		add = "has_trait_xp(lifestyle_bm_acolyte|enlightenment)"
+		add = "has_trait_xp(lifestyle_bm_acolyte|wisdom)"
 	}
 	else_if = {
 		limit = { has_trait = lifestyle_blood_mage }
-		add = "has_trait_xp(lifestyle_blood_mage|enlightenment)"
+		add = "has_trait_xp(lifestyle_blood_mage|wisdom)"
 	}
 	else_if = {
 		limit = { has_trait = lifestyle_bm_archmage }
-		add = "has_trait_xp(lifestyle_bm_archmage|enlightenment)"
+		add = "has_trait_xp(lifestyle_bm_archmage|wisdom)"
 	}
 }
 
-bm_blood_mage_bloodline_xp_value = {
+bm_blood_mage_fortune_xp_value = {
 	value = 0
 	if = {
 		limit = { has_trait = lifestyle_bm_acolyte }
-		add = "has_trait_xp(lifestyle_bm_acolyte|bloodline)"
+		add = "has_trait_xp(lifestyle_bm_acolyte|fortune)"
 	}
 	else_if = {
 		limit = { has_trait = lifestyle_blood_mage }
-		add = "has_trait_xp(lifestyle_blood_mage|bloodline)"
+		add = "has_trait_xp(lifestyle_blood_mage|fortune)"
 	}
 	else_if = {
 		limit = { has_trait = lifestyle_bm_archmage }
-		add = "has_trait_xp(lifestyle_bm_archmage|bloodline)"
+		add = "has_trait_xp(lifestyle_bm_archmage|fortune)"
 	}
 }
 
-bm_blood_mage_benediction_xp_value = {
+bm_blood_mage_radiance_xp_value = {
 	value = 0
 	if = {
 		limit = { has_trait = lifestyle_bm_acolyte }
-		add = "has_trait_xp(lifestyle_bm_acolyte|benediction)"
+		add = "has_trait_xp(lifestyle_bm_acolyte|radiance)"
 	}
 	else_if = {
 		limit = { has_trait = lifestyle_blood_mage }
-		add = "has_trait_xp(lifestyle_blood_mage|benediction)"
+		add = "has_trait_xp(lifestyle_blood_mage|radiance)"
 	}
 	else_if = {
 		limit = { has_trait = lifestyle_bm_archmage }
-		add = "has_trait_xp(lifestyle_bm_archmage|benediction)"
+		add = "has_trait_xp(lifestyle_bm_archmage|radiance)"
 	}
 }
 
-bm_blood_mage_hematurgy_xp_value = {
+bm_blood_mage_cunning_xp_value = {
 	value = 0
 	if = {
 		limit = { has_trait = lifestyle_bm_acolyte }
-		add = "has_trait_xp(lifestyle_bm_acolyte|hematurgy)"
+		add = "has_trait_xp(lifestyle_bm_acolyte|cunning)"
 	}
 	else_if = {
 		limit = { has_trait = lifestyle_blood_mage }
-		add = "has_trait_xp(lifestyle_blood_mage|hematurgy)"
+		add = "has_trait_xp(lifestyle_blood_mage|cunning)"
 	}
 	else_if = {
 		limit = { has_trait = lifestyle_bm_archmage }
-		add = "has_trait_xp(lifestyle_bm_archmage|hematurgy)"
+		add = "has_trait_xp(lifestyle_bm_archmage|cunning)"
 	}
 }
 
-bm_blood_mage_bloodlust_xp_value = {
+bm_blood_mage_fury_xp_value = {
 	value = 0
 	if = {
 		limit = { has_trait = lifestyle_bm_acolyte }
-		add = "has_trait_xp(lifestyle_bm_acolyte|bloodlust)"
+		add = "has_trait_xp(lifestyle_bm_acolyte|fury)"
 	}
 	else_if = {
 		limit = { has_trait = lifestyle_blood_mage }
-		add = "has_trait_xp(lifestyle_blood_mage|bloodlust)"
+		add = "has_trait_xp(lifestyle_blood_mage|fury)"
 	}
 	else_if = {
 		limit = { has_trait = lifestyle_bm_archmage }
-		add = "has_trait_xp(lifestyle_bm_archmage|bloodlust)"
+		add = "has_trait_xp(lifestyle_bm_archmage|fury)"
 	}
 }
 
 # Elevation unspent non-ancient track XP conversion: 1 LF stack per 20 unspent discipline XP
 bm_elevation_overflow_lifeforce_stacks_value = {
 	value = 0
-	add = bm_blood_mage_bloodlust_xp_value
-	add = bm_blood_mage_benediction_xp_value
-	add = bm_blood_mage_bloodline_xp_value
-	add = bm_blood_mage_hematurgy_xp_value
-	add = bm_blood_mage_enlightenment_xp_value
+	add = bm_blood_mage_fury_xp_value
+	add = bm_blood_mage_radiance_xp_value
+	add = bm_blood_mage_fortune_xp_value
+	add = bm_blood_mage_cunning_xp_value
+	add = bm_blood_mage_wisdom_xp_value
 	divide = 20
 	floor = yes
 }

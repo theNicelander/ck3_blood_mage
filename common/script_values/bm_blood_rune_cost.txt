@@ -17,28 +17,28 @@ bm_total_blood_mage_xp = {
 	if = {
 		limit = { has_trait = lifestyle_bm_acolyte }
 		add = "has_trait_xp(lifestyle_bm_acolyte|ancient)"
-		add = "has_trait_xp(lifestyle_bm_acolyte|enlightenment)"
-		add = "has_trait_xp(lifestyle_bm_acolyte|bloodline)"
-		add = "has_trait_xp(lifestyle_bm_acolyte|benediction)"
-		add = "has_trait_xp(lifestyle_bm_acolyte|hematurgy)"
-		add = "has_trait_xp(lifestyle_bm_acolyte|bloodlust)"
+		add = "has_trait_xp(lifestyle_bm_acolyte|wisdom)"
+		add = "has_trait_xp(lifestyle_bm_acolyte|fortune)"
+		add = "has_trait_xp(lifestyle_bm_acolyte|radiance)"
+		add = "has_trait_xp(lifestyle_bm_acolyte|cunning)"
+		add = "has_trait_xp(lifestyle_bm_acolyte|fury)"
 	}
 	else_if = {
 		limit = { has_trait = lifestyle_blood_mage }
 		add = "has_trait_xp(lifestyle_blood_mage|ancient)"
-		add = "has_trait_xp(lifestyle_blood_mage|enlightenment)"
-		add = "has_trait_xp(lifestyle_blood_mage|bloodline)"
-		add = "has_trait_xp(lifestyle_blood_mage|benediction)"
-		add = "has_trait_xp(lifestyle_blood_mage|hematurgy)"
-		add = "has_trait_xp(lifestyle_blood_mage|bloodlust)"
+		add = "has_trait_xp(lifestyle_blood_mage|wisdom)"
+		add = "has_trait_xp(lifestyle_blood_mage|fortune)"
+		add = "has_trait_xp(lifestyle_blood_mage|radiance)"
+		add = "has_trait_xp(lifestyle_blood_mage|cunning)"
+		add = "has_trait_xp(lifestyle_blood_mage|fury)"
 	}
 	else_if = {
 		limit = { has_trait = lifestyle_bm_archmage }
 		add = "has_trait_xp(lifestyle_bm_archmage|ancient)"
-		add = "has_trait_xp(lifestyle_bm_archmage|enlightenment)"
-		add = "has_trait_xp(lifestyle_bm_archmage|bloodline)"
-		add = "has_trait_xp(lifestyle_bm_archmage|benediction)"
-		add = "has_trait_xp(lifestyle_bm_archmage|hematurgy)"
-		add = "has_trait_xp(lifestyle_bm_archmage|bloodlust)"
+		add = "has_trait_xp(lifestyle_bm_archmage|wisdom)"
+		add = "has_trait_xp(lifestyle_bm_archmage|fortune)"
+		add = "has_trait_xp(lifestyle_bm_archmage|radiance)"
+		add = "has_trait_xp(lifestyle_bm_archmage|cunning)"
+		add = "has_trait_xp(lifestyle_bm_archmage|fury)"
 	}
 }

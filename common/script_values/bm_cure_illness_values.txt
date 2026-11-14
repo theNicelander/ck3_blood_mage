@@ -5,7 +5,7 @@ cure_illness_cost_minor = {
 cure_illness_cost_major = {
 	value = 35
 }
-cure_illness_cost_benediction = {
+cure_illness_cost_radiance = {
 	value = 100
 }
 
@@ -15,7 +15,7 @@ cure_illness_cost_minor_neg = {
 cure_illness_cost_major_neg = {
 	value = -35
 }
-cure_illness_cost_benediction_neg = {
+cure_illness_cost_radiance_neg = {
 	value = -100
 }
 
@@ -107,54 +107,54 @@ heal_disease_major_cost = {
     }
 }
 
-heal_disease_benediction_cost = {
+heal_disease_radiance_cost = {
     value = 0
     if = {
         limit = { scope:recipient = { has_trait = wounded_3 } }
-        add = cure_illness_cost_benediction
+        add = cure_illness_cost_radiance
     }
     if = {
         limit = { scope:recipient = { has_trait = one_legged } }
-        add = cure_illness_cost_benediction
+        add = cure_illness_cost_radiance
     }
     if = {
         limit = { scope:recipient = { has_trait = disfigured } }
-        add = cure_illness_cost_benediction
+        add = cure_illness_cost_radiance
     }
     if = {
         limit = { scope:recipient = { has_trait = sickly } }
-        add = cure_illness_cost_benediction
+        add = cure_illness_cost_radiance
     }
     if = {
         limit = { scope:recipient = { has_trait = great_pox } }
-        add = cure_illness_cost_benediction
+        add = cure_illness_cost_radiance
     }
     if = {
         limit = { scope:recipient = { has_trait = cancer } }
-        add = cure_illness_cost_benediction
+        add = cure_illness_cost_radiance
     }
     if = {
         limit = { scope:recipient = { has_trait = bubonic_plague } }
-        add = cure_illness_cost_benediction
+        add = cure_illness_cost_radiance
     }
     if = {
         limit = { scope:recipient = { has_trait = smallpox } }
-        add = cure_illness_cost_benediction
+        add = cure_illness_cost_radiance
     }
     if = {
         limit = { scope:recipient = { has_trait = leper } }
-        add = cure_illness_cost_benediction
+        add = cure_illness_cost_radiance
     }
     if = {
         limit = { scope:recipient = { has_trait = impotent } }
-        add = cure_illness_cost_benediction
+        add = cure_illness_cost_radiance
     }
     if = {
         limit = { scope:recipient = { has_trait = dysentery } }
-        add = cure_illness_cost_benediction
+        add = cure_illness_cost_radiance
     }
     if = {
         limit = { scope:recipient = { has_trait = ergotism } }
-        add = cure_illness_cost_benediction
+        add = cure_illness_cost_radiance
     }
 }

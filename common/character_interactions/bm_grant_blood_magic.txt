@@ -108,7 +108,7 @@
                     right_icon = scope:recipient
                     remove_character_modifier = lifeforce_modifier_minor
                     add_xp_bm_dynamic = {
-                        TRACK = bloodline
+                        TRACK = fortune
                         XP = 2
                     }
                     scope:recipient = {
@@ -142,13 +142,13 @@
                             }
                         }
                         add_xp_bm_dynamic = {
-                            TRACK = bloodline
+                            TRACK = fortune
                             XP = 4
                         }
                     }
                     else = {
                         add_xp_bm_dynamic = {
-                            TRACK = bloodline
+                            TRACK = fortune
                             XP = 3
                         }
                     }

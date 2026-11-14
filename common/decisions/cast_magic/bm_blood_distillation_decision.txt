@@ -49,17 +49,17 @@
 		show_from_start = yes
 
 		item = {
-			value = bm_distill_bloodlust
-			current_description = bm_distill_bloodlust
-			localization = bm_distill_bloodlust
-			icon = "gfx/interface/icons/trait_level_tracks/bloodlust.dds"
+			value = bm_distill_fury
+			current_description = bm_distill_fury
+			localization = bm_distill_fury
+			icon = "gfx/interface/icons/trait_level_tracks/fury.dds"
 			is_shown = {
 				always = yes
 			}
 			is_valid = {
 				custom_tooltip = {
-					text = bm_distill_bloodlust_xp_req
-					bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE = 10 }
+					text = bm_distill_fury_xp_req
+					bm_has_track_xp_any_tier_trigger = { TRACK = fury VALUE = 10 }
 				}
 			}
 			ai_chance = {
@@ -67,17 +67,17 @@
 			}
 		}
 		item = {
-			value = bm_distill_benediction
-			current_description = bm_distill_benediction
-			localization = bm_distill_benediction
-			icon = "gfx/interface/icons/trait_level_tracks/benediction.dds"
+			value = bm_distill_radiance
+			current_description = bm_distill_radiance
+			localization = bm_distill_radiance
+			icon = "gfx/interface/icons/trait_level_tracks/radiance.dds"
 			is_shown = {
 				always = yes
 			}
 			is_valid = {
 				custom_tooltip = {
-					text = bm_distill_benediction_xp_req
-					bm_has_track_xp_any_tier_trigger = { TRACK = benediction VALUE = 10 }
+					text = bm_distill_radiance_xp_req
+					bm_has_track_xp_any_tier_trigger = { TRACK = radiance VALUE = 10 }
 				}
 			}
 			ai_chance = {
@@ -85,17 +85,17 @@
 			}
 		}
 		item = {
-			value = bm_distill_bloodline
-			current_description = bm_distill_bloodline
-			localization = bm_distill_bloodline
-			icon = "gfx/interface/icons/trait_level_tracks/bloodline.dds"
+			value = bm_distill_fortune
+			current_description = bm_distill_fortune
+			localization = bm_distill_fortune
+			icon = "gfx/interface/icons/trait_level_tracks/fortune.dds"
 			is_shown = {
 				always = yes
 			}
 			is_valid = {
 				custom_tooltip = {
-					text = bm_distill_bloodline_xp_req
-					bm_has_track_xp_any_tier_trigger = { TRACK = bloodline VALUE = 10 }
+					text = bm_distill_fortune_xp_req
+					bm_has_track_xp_any_tier_trigger = { TRACK = fortune VALUE = 10 }
 				}
 			}
 			ai_chance = {
@@ -103,17 +103,17 @@
 			}
 		}
 		item = {
-			value = bm_distill_hematurgy
-			current_description = bm_distill_hematurgy
-			localization = bm_distill_hematurgy
-			icon = "gfx/interface/icons/trait_level_tracks/hematurgy.dds"
+			value = bm_distill_cunning
+			current_description = bm_distill_cunning
+			localization = bm_distill_cunning
+			icon = "gfx/interface/icons/trait_level_tracks/cunning.dds"
 			is_shown = {
 				always = yes
 			}
 			is_valid = {
 				custom_tooltip = {
-					text = bm_distill_hematurgy_xp_req
-					bm_has_track_xp_any_tier_trigger = { TRACK = hematurgy VALUE = 10 }
+					text = bm_distill_cunning_xp_req
+					bm_has_track_xp_any_tier_trigger = { TRACK = cunning VALUE = 10 }
 				}
 			}
 			ai_chance = {
@@ -121,17 +121,17 @@
 			}
 		}
 		item = {
-			value = bm_distill_enlightenment
-			current_description = bm_distill_enlightenment
-			localization = bm_distill_enlightenment
-			icon = "gfx/interface/icons/trait_level_tracks/enlightenment.dds"
+			value = bm_distill_wisdom
+			current_description = bm_distill_wisdom
+			localization = bm_distill_wisdom
+			icon = "gfx/interface/icons/trait_level_tracks/wisdom.dds"
 			is_shown = {
 				always = yes
 			}
 			is_valid = {
 				custom_tooltip = {
-					text = bm_distill_enlightenment_xp_req
-					bm_has_track_xp_any_tier_trigger = { TRACK = enlightenment VALUE = 10 }
+					text = bm_distill_wisdom_xp_req
+					bm_has_track_xp_any_tier_trigger = { TRACK = wisdom VALUE = 10 }
 				}
 			}
 			ai_chance = {
@@ -143,14 +143,14 @@
 	effect = {
 		remove_character_modifier = lifeforce_modifier_minor
 		if = {
-			limit = { scope:bm_distill_bloodlust = yes }
-			debug_log = "BloodMageDecision: bm_blood_distillation_decision (bloodlust) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			limit = { scope:bm_distill_fury = yes }
+			debug_log = "BloodMageDecision: bm_blood_distillation_decision (fury) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_blood_distillation_decision
 				left_icon = root
 				bm_add_blood_mage_xp_effect = {
-					TRACK = bloodlust
+					TRACK = fury
 					XP = -10
 				}
 				bm_add_blood_mage_xp_effect = {
@@ -160,14 +160,14 @@
 			}
 		}
 		else_if = {
-			limit = { scope:bm_distill_benediction = yes }
-			debug_log = "BloodMageDecision: bm_blood_distillation_decision (benediction) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			limit = { scope:bm_distill_radiance = yes }
+			debug_log = "BloodMageDecision: bm_blood_distillation_decision (radiance) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_blood_distillation_decision
 				left_icon = root
 				bm_add_blood_mage_xp_effect = {
-					TRACK = benediction
+					TRACK = radiance
 					XP = -10
 				}
 				bm_add_blood_mage_xp_effect = {
@@ -177,14 +177,14 @@
 			}
 		}
 		else_if = {
-			limit = { scope:bm_distill_bloodline = yes }
-			debug_log = "BloodMageDecision: bm_blood_distillation_decision (bloodline) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			limit = { scope:bm_distill_fortune = yes }
+			debug_log = "BloodMageDecision: bm_blood_distillation_decision (fortune) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_blood_distillation_decision
 				left_icon = root
 				bm_add_blood_mage_xp_effect = {
-					TRACK = bloodline
+					TRACK = fortune
 					XP = -10
 				}
 				bm_add_blood_mage_xp_effect = {
@@ -194,14 +194,14 @@
 			}
 		}
 		else_if = {
-			limit = { scope:bm_distill_hematurgy = yes }
-			debug_log = "BloodMageDecision: bm_blood_distillation_decision (hematurgy) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			limit = { scope:bm_distill_cunning = yes }
+			debug_log = "BloodMageDecision: bm_blood_distillation_decision (cunning) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_blood_distillation_decision
 				left_icon = root
 				bm_add_blood_mage_xp_effect = {
-					TRACK = hematurgy
+					TRACK = cunning
 					XP = -10
 				}
 				bm_add_blood_mage_xp_effect = {
@@ -211,14 +211,14 @@
 			}
 		}
 		else_if = {
-			limit = { scope:bm_distill_enlightenment = yes }
-			debug_log = "BloodMageDecision: bm_blood_distillation_decision (enlightenment) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			limit = { scope:bm_distill_wisdom = yes }
+			debug_log = "BloodMageDecision: bm_blood_distillation_decision (wisdom) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_blood_distillation_decision
 				left_icon = root
 				bm_add_blood_mage_xp_effect = {
-					TRACK = enlightenment
+					TRACK = wisdom
 					XP = -10
 				}
 				bm_add_blood_mage_xp_effect = {

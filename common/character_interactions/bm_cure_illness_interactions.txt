@@ -55,7 +55,7 @@
 			}
 			AND = {
 				has_character_modifier = lifeforce_modifier_superior
-				piety >= cure_illness_cost_benediction
+				piety >= cure_illness_cost_radiance
 			}
 		}
 	}
@@ -104,7 +104,7 @@
 					scope:recipient = { bm_has_deadly_ailment_trigger = yes }
 					scope:actor = {
 						has_character_modifier = lifeforce_modifier_superior
-						piety >= cure_illness_cost_benediction
+						piety >= cure_illness_cost_radiance
 					}
 				}
 				AND = {

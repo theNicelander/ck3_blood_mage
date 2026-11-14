@@ -42,11 +42,11 @@ Walk the path of blood with progressive tiers of power that take decades and tho
 ### Blood Mage
 The definitive blood magic lifestyle trait with six distinct tracks that gain experience as you use related abilities:
 - **Ancient**: Age slower, gain piety, and retain prowess in your old age
-- **Enlightenment**: Gain XP by casting blood magic on yourself, boosting learning and lifestyle XP
+- **Wisdom**: Gain XP by casting blood magic on yourself, boosting learning and lifestyle XP
 - **Bloodline**: Enhance your dynasty, domain limit, and realm development
-- **Benediction**: Gain XP by healing ailments and curing others, earning the love of your vassals
-- **Hematurgy**: Intrigue, dread, hostile schemes, and harvesting traits from victims
-- **Bloodlust**: Combat advantage, knight effectiveness, sworn knight limit, and duel harvesting
+- **Radiance**: Gain XP by healing ailments and curing others, earning the love of your vassals
+- **Cunning**: Intrigue, dread, hostile schemes, and harvesting traits from victims
+- **Fury**: Combat advantage, knight effectiveness, sworn knight limit, and duel harvesting
 
 Blood Mages are also recognized as **Worthy Commanders**, ignoring realm gender laws to lead armies into battle personally.
 

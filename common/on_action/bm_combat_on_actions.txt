@@ -132,7 +132,7 @@ bm_on_travel_activity_complete_tournament = {
 				is_blood_mage_any_tier_trigger = yes
 				involved_activity ?= { has_activity_type = activity_tournament }
 			}
-			bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 2 }
+			bm_add_blood_mage_xp_effect = { TRACK = fury XP = 2 }
 		}
 	}
 }

@@ -5,7 +5,7 @@ Living technical specification for supernatural house modifiers, covenants, heir
 ## Overview
 
 House Covenant system accessed via `bm_empower_bloodline_decision` ("Empower Dynasty Bloodline").
-- **6 House Covenants (3 Tiers Each):** Tier I (150 Piety + Minor LF, Devotion 1+, `+1` XP), Tier II (350 Piety + Major LF, Devotion 2+, `+2` XP), Tier III (750 Piety + Superior LF, Devotion 3+, `+3` XP). Awards `bloodline` XP. 1-year decision cooldown.
+- **6 House Covenants (3 Tiers Each):** Tier I (150 Piety + Minor LF, Devotion 1+, `+1` XP), Tier II (350 Piety + Major LF, Devotion 2+, `+2` XP), Tier III (750 Piety + Superior LF, Devotion 3+, `+3` XP). Awards `fortune` XP. 1-year decision cooldown.
 - **Universal Piety Baseline:** Every Covenant grants **+0.1 / +0.3 / +0.5 Monthly Piety** across Tiers 1 / 2 / 3 (up to **+3.0 Monthly Piety** when all 6 Covenants are at Tier 3).
 - **1:1 Devotion Scaling:** Every Covenant grants **+1 [Stat] per Devotion Level** at Tier 3 (Superior).
 - **Feedback Loop:** Yearly pulse `blood_mage_yearly_events.002` rolls independently for each active covenant per living Blood Mage in the House to grant `+1` XP in the matching `lifestyle_blood_mage` track (Tier I: 25%, Tier II: 50%, Tier III: 100%), capped at 100 XP.
@@ -16,11 +16,11 @@ Modifiers apply to all living and future members of the caster's house (landless
 
 | Track | Minor (Tier I) | Major (Tier II) | Superior (Tier III) |
 | :--- | :--- | :--- | :--- |
-| **Benediction** | `+0.1` Piety/mo, `+0.1` Prestige/mo, `+1` Diplomacy, `+5` Gen Opinion, `+5` Personal Scheme Success, `+5%` Legitimacy Mult | `+0.3` Piety/mo, `+0.3` Prestige/mo, `+2` Diplomacy, `+10` Gen Opinion, `+10` Personal Scheme Success, `+10%` Legitimacy Mult, `-10%` Short Reign, `+10%` Long Reign, **`+1` Diplomacy per Devotion** | `+0.5` Piety/mo, `+0.5` Prestige/mo, `+4` Diplomacy, `+15` Gen Opinion, `+20` Personal Scheme Success, `+15%` Legitimacy Mult, `-20%` Short Reign, `+20%` Long Reign, **`+1` Personal Tenet Slot**, **`+1` Diplomacy per Devotion** |
-| **Bloodlust** | `+0.1` Piety/mo, `+1` Martial, `+1` Prowess, `+1` Knight, `+5%` Army Damage, `+0.02` Piety/Knight, `+0.2%` Knight Eff per Prowess | `+0.3` Piety/mo, `+2` Martial, `+2` Prowess, `+2` Knights, `+10%` Army Damage, `+1` MaA Regiments & Size, `+0.04` Piety/Knight, `+0.5%` Knight Eff per Prowess, **`+1` Martial per Devotion** | `+0.5` Piety/mo, `+4` Martial, `+4` Prowess, `+3` Knights, `+15%` Army Damage, `+1` MaA Regiments & Size, `+0.06` Piety/Knight, `+1.0%` Knight Eff per Prowess, **`+1` Martial per Devotion** |
+| **Radiance** | `+0.1` Piety/mo, `+0.1` Prestige/mo, `+1` Diplomacy, `+5` Gen Opinion, `+5` Personal Scheme Success, `+5%` Legitimacy Mult | `+0.3` Piety/mo, `+0.3` Prestige/mo, `+2` Diplomacy, `+10` Gen Opinion, `+10` Personal Scheme Success, `+10%` Legitimacy Mult, `-10%` Short Reign, `+10%` Long Reign, **`+1` Diplomacy per Devotion** | `+0.5` Piety/mo, `+0.5` Prestige/mo, `+4` Diplomacy, `+15` Gen Opinion, `+20` Personal Scheme Success, `+15%` Legitimacy Mult, `-20%` Short Reign, `+20%` Long Reign, **`+1` Personal Tenet Slot**, **`+1` Diplomacy per Devotion** |
+| **Fury** | `+0.1` Piety/mo, `+1` Martial, `+1` Prowess, `+1` Knight, `+5%` Army Damage, `+0.02` Piety/Knight, `+0.2%` Knight Eff per Prowess | `+0.3` Piety/mo, `+2` Martial, `+2` Prowess, `+2` Knights, `+10%` Army Damage, `+1` MaA Regiments & Size, `+0.04` Piety/Knight, `+0.5%` Knight Eff per Prowess, **`+1` Martial per Devotion** | `+0.5` Piety/mo, `+4` Martial, `+4` Prowess, `+3` Knights, `+15%` Army Damage, `+1` MaA Regiments & Size, `+0.06` Piety/Knight, `+1.0%` Knight Eff per Prowess, **`+1` Martial per Devotion** |
 | **Bloodline** | `+0.1` Piety/mo, `+0.1` Gold/mo, `+1` Stewardship, `+5%` Income Mult, `-5%` Domicile & Holding Build Cost, `-5%` MaA Upkeep, `+5%` Dev Growth | `+0.3` Piety/mo, `+0.3` Gold/mo, `+2` Stewardship, `+10%` Income Mult, `-10%` Domicile & Holding Build Cost, `-10%` MaA Upkeep, `+10%` Dev Growth, **`+1` Stewardship per Devotion** | `+0.5` Piety/mo, `+0.5` Gold/mo, `+4` Stewardship, `+15%` Income Mult, `-15%` Domicile & Holding Build Cost, `-15%` MaA Upkeep, `+15%` Dev Growth, **`+1` Domain Limit**, **`+1` Stewardship per Devotion** |
-| **Hematurgy** | `+0.1` Piety/mo, `+1` Intrigue, `+3` Hostile Scheme Success, `-5` Enemy Hostile Success | `+0.3` Piety/mo, `+2` Intrigue, `+6` Hostile Scheme Success, `-10` Enemy Hostile Scheme Success, `+5` Scheme Secrecy, `-5` Enemy Max Success Cap, **`+1` Intrigue per Devotion** | `+0.5` Piety/mo, `+4` Intrigue, `+12` Hostile Scheme Success, `-20` Enemy Hostile Success, `+10` Scheme Secrecy, `-10` Enemy Max Success Cap, **`+1` Intrigue per Devotion** |
-| **Enlightenment** | `+0.1` Piety/mo, `+1` Learning, `+5%` Lifestyle XP, `-5%` Stress Gain, `+1%` Piety/Knight Mult, `+0.2%` Knight Eff per Learning | `+0.3` Piety/mo, `+2` Learning, `+10%` Lifestyle XP, `-10%` Stress Gain, `+10%` Stress Loss, `+5%` Piety Mult, `+0.15` Health, `+2%` Piety/Knight Mult, `+0.5%` Knight Eff per Learning, **`+1` Learning per Devotion** | `+0.5` Piety/mo, `+4` Learning, `+20%` Lifestyle XP, `-20%` Stress Gain, `+20%` Stress Loss, `+10%` Piety Mult, `+0.3` Health, `+3%` Piety/Knight Mult, `+1.0%` Knight Eff per Learning, **`+1` Personal Tenet Slot**, **`+1` Learning per Devotion**, **Ignore Negative Culture Opinion** |
+| **Cunning** | `+0.1` Piety/mo, `+1` Intrigue, `+3` Hostile Scheme Success, `-5` Enemy Hostile Success | `+0.3` Piety/mo, `+2` Intrigue, `+6` Hostile Scheme Success, `-10` Enemy Hostile Scheme Success, `+5` Scheme Secrecy, `-5` Enemy Max Success Cap, **`+1` Intrigue per Devotion** | `+0.5` Piety/mo, `+4` Intrigue, `+12` Hostile Scheme Success, `-20` Enemy Hostile Success, `+10` Scheme Secrecy, `-10` Enemy Max Success Cap, **`+1` Intrigue per Devotion** |
+| **Wisdom** | `+0.1` Piety/mo, `+1` Learning, `+5%` Lifestyle XP, `-5%` Stress Gain, `+1%` Piety/Knight Mult, `+0.2%` Knight Eff per Learning | `+0.3` Piety/mo, `+2` Learning, `+10%` Lifestyle XP, `-10%` Stress Gain, `+10%` Stress Loss, `+5%` Piety Mult, `+0.15` Health, `+2%` Piety/Knight Mult, `+0.5%` Knight Eff per Learning, **`+1` Learning per Devotion** | `+0.5` Piety/mo, `+4` Learning, `+20%` Lifestyle XP, `-20%` Stress Gain, `+20%` Stress Loss, `+10%` Piety Mult, `+0.3` Health, `+3%` Piety/Knight Mult, `+1.0%` Knight Eff per Learning, **`+1` Personal Tenet Slot**, **`+1` Learning per Devotion**, **Ignore Negative Culture Opinion** |
 | **Ancient** | `+0.1` Piety/mo, `+0.15` Health, `+2` Life Exp, `+2` Fertile Yrs, `+5%` Fertility, `+5%` Pos Congenital & Strengthen | `+0.3` Piety/mo, `+0.3` Health, `+4` Life Exp, `+4` Fertile Yrs, `+15%` Fertility, `+15%` Pos Congenital & Strengthen, `-15%` Inbreeding Chance, **`+1` Prowess per Devotion** | `+0.5` Piety/mo, `+0.5` Health, `+8` Life Exp, `+8` Fertile Yrs, `+25%` Fertility, `+25%` Pos Congenital & Strengthen, **`-30%` Inbreeding Chance**, **`+1` Prowess per Devotion** |
 
 ---
@@ -30,10 +30,10 @@ Modifiers apply to all living and future members of the caster's house (landless
 - **Anoint Heir (`bm_anoint_heir_interaction`):**
   - **Prerequisites:** Actor has `lifestyle_blood_mage`. Target is living `primary_heir` or `child` and does not already have `bm_anointed_heir_modifier` (hidden once anointed).
   - **Cost:** 250 Piety + 1 Major Lifeforce (`blood_magic_used_major`).
-  - **Effect:** Strips `bm_anointed_heir_modifier` from any other child or previous heir. Applies permanent `bm_anointed_heir_modifier` (`+1.0` Health, `+15` Dynasty Opinion, `+25%` Monthly Lifestyle XP, `-35%` Short Reign Duration) to recipient, `+30` Opinion, and `+2` `bloodline` XP.
+  - **Effect:** Strips `bm_anointed_heir_modifier` from any other child or previous heir. Applies permanent `bm_anointed_heir_modifier` (`+1.0` Health, `+15` Dynasty Opinion, `+25%` Monthly Lifestyle XP, `-35%` Short Reign Duration) to recipient, `+30` Opinion, and `+2` `fortune` XP.
 - **Bless Blood (`bm_bless_bloodline_interaction`):**
   - **Prerequisites:** Actor has `lifestyle_blood_mage`. Target is a `child`, `dynasty` member, sworn `knight` or courtier. Hidden once target has all applicable blessings.
-  - **Cost:** 35 Piety (50 Piety for Feingur) + 1 Minor Lifeforce (`bloodline_magic_cast_effect_minor`).
+  - **Cost:** 35 Piety (50 Piety for Feingur) + 1 Minor Lifeforce (`fortune_magic_cast_effect_minor`).
   - **Options (`send_options_exclusive = yes`):**
     1. **Blood of the Sovereign (`bm_blessed_blood_sovereign_modifier`):** 10 yrs, `+2` Diplomacy, `+2` Stewardship, `+10` Vassal Opinion, `-25%` Short Reign Duration, `+1.0` Health (children & dynasty).
     2. **Blood of Iron (`bm_blessed_blood_iron_modifier`):** 10 yrs, `+2` Martial, `+4` Prowess, `+25%` Knight Effectiveness, `+1.0` Health, `+0.50` Health Penalty Negation (children, dynasty, sworn knights, and Blood Mage courtiers).
@@ -43,7 +43,7 @@ Modifiers apply to all living and future members of the caster's house (landless
   - Triggered via `on_death` / `on_character_death` when a Blood Mage ruler dies with an anointed heir:
     1. **Awakening:** If the heir lacks `lifestyle_blood_mage`, awakens it via `bm_become_blood_mage_effect`.
     2. **Lifeforce Inheritance:** Inherits 1 stack of each Lifeforce tier held by the dying ruler at death (Minor $\rightarrow$ Minor, Major $\rightarrow$ Major, Superior $\rightarrow$ Superior), followed by recalculation.
-    3. **25% Track XP Transfer:** Heir inherits 25% of the dying ruler's XP across all active tracks: `ancient`, `enlightenment`, `benediction`, `bloodline`, `hematurgy`, `bloodlust`.
+    3. **25% Track XP Transfer:** Heir inherits 25% of the dying ruler's XP across all active tracks: `ancient`, `wisdom`, `radiance`, `fortune`, `cunning`, `fury`.
 
 ---
 
@@ -53,7 +53,7 @@ Modifiers apply to all living and future members of the caster's house (landless
   - **Prerequisites:** Actor is House Head with `lifestyle_blood_mage`. Target is an adult living house member (`house ?= scope:actor.house`, not actor, without `recently_lifedrained_modifier`).
   - **Cost & Cooldown:** 50 Piety, 2-year interaction cooldown.
   - **Effect:**
-    - Caster gains **1 Major Lifeforce** (if target is a Blood Mage) or **1 Minor Lifeforce** (if target is mundane kin), along with `+2` `bloodline` XP.
+    - Caster gains **1 Major Lifeforce** (if target is a Blood Mage) or **1 Minor Lifeforce** (if target is mundane kin), along with `+2` `fortune` XP.
     - Recipient receives `recently_lifedrained_modifier` and 1-year `lifeforce_modifier_negative_minor`.
     - Recipient suffers `-25` Opinion (`magic_opinion_negative`), which is waived if the recipient follows a Blood Cult faith (`bm_is_blood_cult_faith_trigger = yes`) or has the `loyal` trait.
 
