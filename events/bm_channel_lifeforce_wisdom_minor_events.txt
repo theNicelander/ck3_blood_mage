@@ -1,18 +1,18 @@
 ﻿# Spend Lifeforce event
-namespace = bm_channel_lifeforce_enlightenment_minor
+namespace = bm_channel_lifeforce_wisdom_minor
 
-bm_channel_lifeforce_enlightenment_minor.001 = {
+bm_channel_lifeforce_wisdom_minor.001 = {
     type = character_event
-    title = bm_channel_lifeforce_enlightenment_minor.001.title
-    desc = bm_channel_lifeforce_enlightenment_minor.001.desc
+    title = bm_channel_lifeforce_wisdom_minor.001.title
+    desc = bm_channel_lifeforce_wisdom_minor.001.desc
     theme = witchcraft
 
     # Diplomacy boost
     option = {
-        name = bm_channel_lifeforce_enlightenment_minor.001.a
+        name = bm_channel_lifeforce_wisdom_minor.001.a
         send_interface_toast = {
             type = event_toast_effect_good
-            title = bm_channel_lifeforce_enlightenment_minor.001.title
+            title = bm_channel_lifeforce_wisdom_minor.001.title
             left_icon = root
             add_character_modifier = {
                 modifier = diplomacy_lifeforce_modifier
@@ -28,10 +28,10 @@ bm_channel_lifeforce_enlightenment_minor.001 = {
 
     # Martial boost
     option = {
-        name = bm_channel_lifeforce_enlightenment_minor.001.b
+        name = bm_channel_lifeforce_wisdom_minor.001.b
         send_interface_toast = {
             type = event_toast_effect_good
-            title = bm_channel_lifeforce_enlightenment_minor.001.title
+            title = bm_channel_lifeforce_wisdom_minor.001.title
             left_icon = root
             add_character_modifier = {
                 modifier = martial_lifeforce_modifier
@@ -47,10 +47,10 @@ bm_channel_lifeforce_enlightenment_minor.001 = {
 
     # Stewardship boost
     option = {
-        name = bm_channel_lifeforce_enlightenment_minor.001.c
+        name = bm_channel_lifeforce_wisdom_minor.001.c
         send_interface_toast = {
             type = event_toast_effect_good
-            title = bm_channel_lifeforce_enlightenment_minor.001.title
+            title = bm_channel_lifeforce_wisdom_minor.001.title
             left_icon = root
             add_character_modifier = {
                 modifier = stewardship_lifeforce_modifier
@@ -66,10 +66,10 @@ bm_channel_lifeforce_enlightenment_minor.001 = {
 
     # Intrigue boost
     option = {
-        name = bm_channel_lifeforce_enlightenment_minor.001.d
+        name = bm_channel_lifeforce_wisdom_minor.001.d
         send_interface_toast = {
             type = event_toast_effect_good
-            title = bm_channel_lifeforce_enlightenment_minor.001.title
+            title = bm_channel_lifeforce_wisdom_minor.001.title
             left_icon = root
             add_character_modifier = {
                 modifier = intrigue_lifeforce_modifier
@@ -85,10 +85,10 @@ bm_channel_lifeforce_enlightenment_minor.001 = {
 
     # Learning boost
     option = {
-        name = bm_channel_lifeforce_enlightenment_minor.001.e
+        name = bm_channel_lifeforce_wisdom_minor.001.e
         send_interface_toast = {
             type = event_toast_effect_good
-            title = bm_channel_lifeforce_enlightenment_minor.001.title
+            title = bm_channel_lifeforce_wisdom_minor.001.title
             left_icon = root
             add_character_modifier = {
                 modifier = learning_lifeforce_modifier
@@ -104,10 +104,10 @@ bm_channel_lifeforce_enlightenment_minor.001 = {
 
     # Experience gain boost
     option = {
-        name = bm_channel_lifeforce_enlightenment_minor.001.g
+        name = bm_channel_lifeforce_wisdom_minor.001.g
         send_interface_toast = {
             type = event_toast_effect_good
-            title = bm_channel_lifeforce_enlightenment_minor.001.title
+            title = bm_channel_lifeforce_wisdom_minor.001.title
             left_icon = root
             add_character_modifier = {
                 modifier = exp_lifeforce_modifier
@@ -123,10 +123,10 @@ bm_channel_lifeforce_enlightenment_minor.001 = {
 
     # Prowess boost
     option = {
-        name = bm_channel_lifeforce_enlightenment_minor.001.h
+        name = bm_channel_lifeforce_wisdom_minor.001.h
         send_interface_toast = {
             type = event_toast_effect_good
-            title = bm_channel_lifeforce_enlightenment_minor.001.title
+            title = bm_channel_lifeforce_wisdom_minor.001.title
             left_icon = root
             add_character_modifier = {
                 modifier = prowess_lifeforce_modifier

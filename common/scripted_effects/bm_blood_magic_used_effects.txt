@@ -16,109 +16,109 @@ blood_magic_used_minor = {
     temporary_negative_lifeforce_effect_minor = yes
 }
 blood_magic_used_presence = {
-    remove_character_modifier = lifeforce_modifier_presence
+    remove_character_modifier = lifeforce_modifier_radiant
 }
 blood_magic_used_fury = {
-    remove_character_modifier = lifeforce_modifier_fury
+    remove_character_modifier = lifeforce_modifier_furious
 }
 blood_magic_used_prosperity = {
-    remove_character_modifier = lifeforce_modifier_prosperity
+    remove_character_modifier = lifeforce_modifier_fortunate
 }
 blood_magic_used_shadows = {
-    remove_character_modifier = lifeforce_modifier_shadows
+    remove_character_modifier = lifeforce_modifier_cunning
 }
 blood_magic_used_focus = {
-    remove_character_modifier = lifeforce_modifier_focus
+    remove_character_modifier = lifeforce_modifier_wise
 }
 blood_magic_used_mojo = {
-    remove_character_modifier = lifeforce_modifier_mojo
+    remove_character_modifier = lifeforce_modifier_ancient
 }
 
-hematurgy_magic_cast_effect_major = {
+cunning_magic_cast_effect_major = {
     add_character_modifier =  { modifier = lifeforce_modifier_major }
     add_xp_bm_dynamic = {
-        TRACK = hematurgy
+        TRACK = cunning
         XP = 3
     }
 }
-hematurgy_magic_cast_effect_minor = {
+cunning_magic_cast_effect_minor = {
     add_character_modifier =  { modifier = lifeforce_modifier_minor }
     add_xp_bm_dynamic = {
-        TRACK = hematurgy
+        TRACK = cunning
         XP = 2
     }
 }
 
-benediction_magic_cast_effect_superior = {
+radiance_magic_cast_effect_superior = {
     remove_character_modifier = lifeforce_modifier_superior
     temporary_negative_lifeforce_effect_superior = yes
     add_shared_bm_bk_xp = {
-        TRACK = benediction
+        TRACK = radiance
         XP = 6
     }
 }
 
-benediction_magic_cast_effect_major_minor = {
+radiance_magic_cast_effect_major_minor = {
     remove_character_modifier = lifeforce_modifier_minor
     remove_character_modifier = lifeforce_modifier_major
     temporary_negative_lifeforce_effect_major = yes
     add_shared_bm_bk_xp = {
-        TRACK = benediction
+        TRACK = radiance
         XP = 4
     }
 }
-benediction_magic_cast_effect_major = {
+radiance_magic_cast_effect_major = {
     remove_character_modifier = lifeforce_modifier_major
     add_shared_bm_bk_xp = {
-        TRACK = benediction
+        TRACK = radiance
         XP = 4
     }
 }
-benediction_magic_cast_effect_minor = {
+radiance_magic_cast_effect_minor = {
     remove_character_modifier = lifeforce_modifier_minor
     add_shared_bm_bk_xp = {
-        TRACK = benediction
+        TRACK = radiance
         XP = 2
     }
 }
-bloodline_magic_cast_effect_minor = {
+fortune_magic_cast_effect_minor = {
     remove_character_modifier = lifeforce_modifier_minor
     add_xp_bm_dynamic = {
-        TRACK = bloodline
+        TRACK = fortune
         XP = 2
     }
 }
-bloodline_magic_cast_effect_major = {
+fortune_magic_cast_effect_major = {
     remove_character_modifier = lifeforce_modifier_major
     add_xp_bm_dynamic = {
-        TRACK = bloodline
+        TRACK = fortune
         XP = 4
     }
 }
 
 remove_all_attunement = {
     if = {
-        limit = { has_character_modifier = bloodline_attuned }
-        remove_character_modifier = bloodline_attuned
+        limit = { has_character_modifier = fortune_attuned }
+        remove_character_modifier = fortune_attuned
     }
     if = {
         limit = { has_character_modifier = ancient_attuned }
         remove_character_modifier = ancient_attuned
     }
     if = {
-        limit = { has_character_modifier = enlightenment_attuned }
-        remove_character_modifier = enlightenment_attuned
+        limit = { has_character_modifier = wisdom_attuned }
+        remove_character_modifier = wisdom_attuned
     }
     if = {
-        limit = { has_character_modifier = benediction_attuned }
-        remove_character_modifier = benediction_attuned
+        limit = { has_character_modifier = radiance_attuned }
+        remove_character_modifier = radiance_attuned
     }
     if = {
-        limit = { has_character_modifier = hematurgy_attuned }
-        remove_character_modifier = hematurgy_attuned
+        limit = { has_character_modifier = cunning_attuned }
+        remove_character_modifier = cunning_attuned
     }
     if = {
-        limit = { has_character_modifier = bloodlust_attuned }
-        remove_character_modifier = bloodlust_attuned
+        limit = { has_character_modifier = fury_attuned }
+        remove_character_modifier = fury_attuned
     }
 }

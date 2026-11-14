@@ -8,7 +8,7 @@
 		scope:actor = {
 			is_blood_mage_any_tier_trigger = yes
 			bm_has_track_xp_any_tier_trigger = {
-				TRACK = hematurgy
+				TRACK = cunning
 				VALUE = 10
 			}
 		}
@@ -74,7 +74,7 @@
 							right_icon = scope:recipient
 							add_character_modifier = { modifier = lifeforce_modifier_minor }
 							add_xp_bm_dynamic = {
-								TRACK = hematurgy
+								TRACK = cunning
 								XP = 4
 							}
 							scope:recipient = {
@@ -100,7 +100,7 @@
 							left_icon = scope:actor
 							right_icon = scope:recipient
 							add_xp_bm_dynamic = {
-								TRACK = hematurgy
+								TRACK = cunning
 								XP = 2
 							}
 							scope:recipient = {
@@ -125,7 +125,7 @@
 							left_icon = scope:actor
 							right_icon = scope:recipient
 							add_xp_bm_dynamic = {
-								TRACK = hematurgy
+								TRACK = cunning
 								XP = 1
 							}
 							add_stress = 15

@@ -40,21 +40,21 @@
 		show_from_start = yes
 
 		item = {
-			value = bm_attune_enlightenment
-			current_description = bm_attune_enlightenment
-			localization = bm_attune_enlightenment
-			icon = "gfx/interface/icons/trait_level_tracks/enlightenment.dds"
+			value = bm_attune_wisdom
+			current_description = bm_attune_wisdom
+			localization = bm_attune_wisdom
+			icon = "gfx/interface/icons/trait_level_tracks/wisdom.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
 			is_valid = {
-				NOT = { has_character_modifier = enlightenment_attuned }
+				NOT = { has_character_modifier = wisdom_attuned }
 			}
 			ai_chance = {
 				value = 20
 				if = {
 					limit = {
-						bm_has_track_xp_any_tier_trigger = { TRACK = enlightenment VALUE = 100 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = wisdom VALUE = 100 }
 					}
 					multiply = 0
 				}
@@ -62,21 +62,21 @@
 		}
 
 		item = {
-			value = bm_attune_bloodline
-			current_description = bm_attune_bloodline
-			localization = bm_attune_bloodline
-			icon = "gfx/interface/icons/trait_level_tracks/bloodline.dds"
+			value = bm_attune_fortune
+			current_description = bm_attune_fortune
+			localization = bm_attune_fortune
+			icon = "gfx/interface/icons/trait_level_tracks/fortune.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
 			is_valid = {
-				NOT = { has_character_modifier = bloodline_attuned }
+				NOT = { has_character_modifier = fortune_attuned }
 			}
 			ai_chance = {
 				value = 50
 				if = {
 					limit = {
-						bm_has_track_xp_any_tier_trigger = { TRACK = bloodline VALUE = 100 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = fortune VALUE = 100 }
 					}
 					multiply = 0
 				}
@@ -84,21 +84,21 @@
 		}
 
 		item = {
-			value = bm_attune_benediction
-			current_description = bm_attune_benediction
-			localization = bm_attune_benediction
-			icon = "gfx/interface/icons/trait_level_tracks/benediction.dds"
+			value = bm_attune_radiance
+			current_description = bm_attune_radiance
+			localization = bm_attune_radiance
+			icon = "gfx/interface/icons/trait_level_tracks/radiance.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
 			is_valid = {
-				NOT = { has_character_modifier = benediction_attuned }
+				NOT = { has_character_modifier = radiance_attuned }
 			}
 			ai_chance = {
 				value = 50
 				if = {
 					limit = {
-						bm_has_track_xp_any_tier_trigger = { TRACK = benediction VALUE = 100 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = radiance VALUE = 100 }
 					}
 					multiply = 0
 				}
@@ -106,21 +106,21 @@
 		}
 
 		item = {
-			value = bm_attune_hematurgy
-			current_description = bm_attune_hematurgy
-			localization = bm_attune_hematurgy
-			icon = "gfx/interface/icons/trait_level_tracks/hematurgy.dds"
+			value = bm_attune_cunning
+			current_description = bm_attune_cunning
+			localization = bm_attune_cunning
+			icon = "gfx/interface/icons/trait_level_tracks/cunning.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
 			is_valid = {
-				NOT = { has_character_modifier = hematurgy_attuned }
+				NOT = { has_character_modifier = cunning_attuned }
 			}
 			ai_chance = {
 				value = 10
 				if = {
 					limit = {
-						bm_has_track_xp_any_tier_trigger = { TRACK = hematurgy VALUE = 100 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = cunning VALUE = 100 }
 					}
 					multiply = 0
 				}
@@ -128,21 +128,21 @@
 		}
 
 		item = {
-			value = bm_attune_bloodlust
-			current_description = bm_attune_bloodlust
-			localization = bm_attune_bloodlust
-			icon = "gfx/interface/icons/trait_level_tracks/bloodlust.dds"
+			value = bm_attune_fury
+			current_description = bm_attune_fury
+			localization = bm_attune_fury
+			icon = "gfx/interface/icons/trait_level_tracks/fury.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
 			is_valid = {
-				NOT = { has_character_modifier = bloodlust_attuned }
+				NOT = { has_character_modifier = fury_attuned }
 			}
 			ai_chance = {
 				value = 30
 				if = {
 					limit = {
-						bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE = 100 }
+						bm_has_track_xp_any_tier_trigger = { TRACK = fury VALUE = 100 }
 					}
 					multiply = 0
 				}
@@ -161,53 +161,53 @@
 			remove_all_attunement = yes
 		}
 		if = {
-			limit = { scope:bm_attune_enlightenment = yes }
-			debug_log = "BloodMageDecision: bm_attune_lifeforce_decision (enlightenment) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			limit = { scope:bm_attune_wisdom = yes }
+			debug_log = "BloodMageDecision: bm_attune_lifeforce_decision (wisdom) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_attune_lifeforce_decision
 				left_icon = root
-				add_character_modifier = { modifier = enlightenment_attuned }
+				add_character_modifier = { modifier = wisdom_attuned }
 			}
 		}
 		else_if = {
-			limit = { scope:bm_attune_bloodline = yes }
-			debug_log = "BloodMageDecision: bm_attune_lifeforce_decision (bloodline) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			limit = { scope:bm_attune_fortune = yes }
+			debug_log = "BloodMageDecision: bm_attune_lifeforce_decision (fortune) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_attune_lifeforce_decision
 				left_icon = root
-				add_character_modifier = { modifier = bloodline_attuned }
+				add_character_modifier = { modifier = fortune_attuned }
 			}
 		}
 		else_if = {
-			limit = { scope:bm_attune_benediction = yes }
-			debug_log = "BloodMageDecision: bm_attune_lifeforce_decision (benediction) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			limit = { scope:bm_attune_radiance = yes }
+			debug_log = "BloodMageDecision: bm_attune_lifeforce_decision (radiance) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_attune_lifeforce_decision
 				left_icon = root
-				add_character_modifier = { modifier = benediction_attuned }
+				add_character_modifier = { modifier = radiance_attuned }
 			}
 		}
 		else_if = {
-			limit = { scope:bm_attune_hematurgy = yes }
-			debug_log = "BloodMageDecision: bm_attune_lifeforce_decision (hematurgy) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			limit = { scope:bm_attune_cunning = yes }
+			debug_log = "BloodMageDecision: bm_attune_lifeforce_decision (cunning) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_attune_lifeforce_decision
 				left_icon = root
-				add_character_modifier = { modifier = hematurgy_attuned }
+				add_character_modifier = { modifier = cunning_attuned }
 			}
 		}
 		else_if = {
-			limit = { scope:bm_attune_bloodlust = yes }
-			debug_log = "BloodMageDecision: bm_attune_lifeforce_decision (bloodlust) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			limit = { scope:bm_attune_fury = yes }
+			debug_log = "BloodMageDecision: bm_attune_lifeforce_decision (fury) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
 			send_interface_toast = {
 				type = event_toast_effect_good
 				title = bm_attune_lifeforce_decision
 				left_icon = root
-				add_character_modifier = { modifier = bloodlust_attuned }
+				add_character_modifier = { modifier = fury_attuned }
 			}
 		}
 		else = {

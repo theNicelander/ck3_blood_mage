@@ -5,7 +5,7 @@ CK3 script fails silently. Follow patterns in this repo and vanilla 1.20 (`/User
 ## What this is
 
 - CK3 mod for **1.20.\***. Pure script, localization, gfx. No build step.
-- Traits: `lifestyle_blood_mage` (tracks: ancient, enlightenment, bloodline, benediction, hematurgy, bloodlust).
+- Traits: `lifestyle_blood_mage` (tracks: ancient, wisdom, bloodline, radiance, cunning, fury).
 - Features: Lifeforce resource, spell decisions/interactions, blood golems, Blood Retinue, Blóðtrú religions, Blood Runes & Temples, game rules.
 - `scripts/` holds validation and Steam Workshop helpers. Never touch `.env`, credentials or `*.vdf`.
 
@@ -52,7 +52,7 @@ CK3 script fails silently. Follow patterns in this repo and vanilla 1.20 (`/User
 - Game errors: `tail -n 100 ~/Documents/"Paradox Interactive"/"Crusader Kings III"/logs/error.log`.
 - Localization: English only; see `ck3-localization.md`.
 - Icons/DDS: skill `add-icon-asset`.
-- Modifiers: only use modifiers from `scripts/modifiers_allowlist.json` (enforced by pre-commit). Add verified vanilla modifiers via `python3 scripts/check_modifiers.py --add <mod>`.
+- Modifiers: only use modifiers from `scripts/modifiers_{character,county,domicile}_allowlist.json` (enforced by pre-commit). Add verified vanilla modifiers via `python3 scripts/check_modifiers.py --add <mod> --scope <character|county|domicile>`.
 
 ## Never
 

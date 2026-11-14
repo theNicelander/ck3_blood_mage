@@ -15,7 +15,7 @@
 | `events/bm_blood_golem_events.txt` | `blood_golem` | Event option `bm_cast_blood_magic_superior.001.create_blood_golem` | Golem crafting outcome (`.001`) and repeatable trait-shaping Learning duels (`.002`). |
 | `events/bm_channel_lifeforce_bloodline_events.txt` | `bm_channel_lifeforce_bloodline` | Event `bm_cast_blood_magic_major.001` | Bestows permanent supernatural house modifiers. |
 | `events/bm_channel_manifest_traits_events.txt` | `bm_channel_manifest_traits` | Event `bm_cast_blood_magic_major.001` (`.001`) / `bm_cast_blood_magic_superior.001` (`.002`) | Learning self-duel to cleanse flaws and manifest/upgrade congenital traits (Ranks 1–2 in `.001` vs. Apex Ranks 3–5 in `.002`). |
-| `events/bm_channel_lifeforce_enlightenment_minor_events.txt` | `bm_channel_lifeforce_enlightenment_minor` | Event `bm_cast_blood_magic_minor.001` | Converts minor lifeforce into temporary attribute boost. |
+| `events/bm_channel_lifeforce_wisdom_minor_events.txt` | `bm_channel_lifeforce_wisdom_minor` | Event `bm_cast_blood_magic_minor.001` | Converts minor lifeforce into temporary attribute boost. |
 | `events/bm_blood_power_event.txt` | `bm_blood_power_event` | Event `bm_cast_blood_magic_major.001` | Advances chosen Blood Power track (+10 XP) or fallback Versatility. |
 | `events/bm_education_enhance.txt` | `bm_education_enhancement` | Event `bm_cast_blood_magic_major.001` | Learning duel to advance education star level (up to 4-star). |
 | `events/bm_education_master_events.txt` | `bm_education_master` | Event `bm_cast_blood_magic_superior.001` | Discipline duel to advance 4-star education to legendary 5-star mastery. |

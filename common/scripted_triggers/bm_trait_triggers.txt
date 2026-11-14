@@ -48,21 +48,21 @@ bm_has_valuable_genetic_trait_trigger = {
 bm_has_blood_mage_xp_trigger = {
 	OR = {
 		bm_has_track_xp_any_tier_trigger = { TRACK = ancient VALUE = $VALUE$ }
-		bm_has_track_xp_any_tier_trigger = { TRACK = enlightenment VALUE = $VALUE$ }
-		bm_has_track_xp_any_tier_trigger = { TRACK = bloodline VALUE = $VALUE$ }
-		bm_has_track_xp_any_tier_trigger = { TRACK = benediction VALUE = $VALUE$ }
-		bm_has_track_xp_any_tier_trigger = { TRACK = hematurgy VALUE = $VALUE$ }
-		bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE = $VALUE$ }
+		bm_has_track_xp_any_tier_trigger = { TRACK = wisdom VALUE = $VALUE$ }
+		bm_has_track_xp_any_tier_trigger = { TRACK = fortune VALUE = $VALUE$ }
+		bm_has_track_xp_any_tier_trigger = { TRACK = radiance VALUE = $VALUE$ }
+		bm_has_track_xp_any_tier_trigger = { TRACK = cunning VALUE = $VALUE$ }
+		bm_has_track_xp_any_tier_trigger = { TRACK = fury VALUE = $VALUE$ }
 	}
 }
 
 bm_has_any_discipline_track_xp_trigger = {
 	OR = {
-		bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE = $VALUE$ }
-		bm_has_track_xp_any_tier_trigger = { TRACK = benediction VALUE = $VALUE$ }
-		bm_has_track_xp_any_tier_trigger = { TRACK = bloodline VALUE = $VALUE$ }
-		bm_has_track_xp_any_tier_trigger = { TRACK = hematurgy VALUE = $VALUE$ }
-		bm_has_track_xp_any_tier_trigger = { TRACK = enlightenment VALUE = $VALUE$ }
+		bm_has_track_xp_any_tier_trigger = { TRACK = fury VALUE = $VALUE$ }
+		bm_has_track_xp_any_tier_trigger = { TRACK = radiance VALUE = $VALUE$ }
+		bm_has_track_xp_any_tier_trigger = { TRACK = fortune VALUE = $VALUE$ }
+		bm_has_track_xp_any_tier_trigger = { TRACK = cunning VALUE = $VALUE$ }
+		bm_has_track_xp_any_tier_trigger = { TRACK = wisdom VALUE = $VALUE$ }
 	}
 }
 

@@ -513,7 +513,7 @@ bm_heal_ailment.0001 = {
 		}
 	}
 
-	# --- DEADLY / BENEDICTION AILMENTS ---
+	# --- DEADLY / RADIANCE AILMENTS ---
 
 	# Wounded 3
 	option = {
@@ -522,7 +522,7 @@ bm_heal_ailment.0001 = {
 			is_blood_mage_archmage_trigger = yes
 			scope:recipient = { has_trait = wounded_3 }
 			has_character_modifier = lifeforce_modifier_superior
-			piety >= cure_illness_cost_benediction
+			piety >= cure_illness_cost_radiance
 		}
 		show_as_unavailable = {
 			scope:recipient = { has_trait = wounded_3 }
@@ -546,7 +546,7 @@ bm_heal_ailment.0001 = {
 			is_blood_mage_archmage_trigger = yes
 			scope:recipient = { has_trait = sickly }
 			has_character_modifier = lifeforce_modifier_superior
-			piety >= cure_illness_cost_benediction
+			piety >= cure_illness_cost_radiance
 		}
 		show_as_unavailable = {
 			scope:recipient = { has_trait = sickly }
@@ -570,7 +570,7 @@ bm_heal_ailment.0001 = {
 			is_blood_mage_archmage_trigger = yes
 			scope:recipient = { has_trait = great_pox }
 			has_character_modifier = lifeforce_modifier_superior
-			piety >= cure_illness_cost_benediction
+			piety >= cure_illness_cost_radiance
 		}
 		show_as_unavailable = {
 			scope:recipient = { has_trait = great_pox }
@@ -594,7 +594,7 @@ bm_heal_ailment.0001 = {
 			is_blood_mage_archmage_trigger = yes
 			scope:recipient = { has_trait = cancer }
 			has_character_modifier = lifeforce_modifier_superior
-			piety >= cure_illness_cost_benediction
+			piety >= cure_illness_cost_radiance
 		}
 		show_as_unavailable = {
 			scope:recipient = { has_trait = cancer }
@@ -618,7 +618,7 @@ bm_heal_ailment.0001 = {
 			is_blood_mage_archmage_trigger = yes
 			scope:recipient = { has_trait = bubonic_plague }
 			has_character_modifier = lifeforce_modifier_superior
-			piety >= cure_illness_cost_benediction
+			piety >= cure_illness_cost_radiance
 		}
 		show_as_unavailable = {
 			scope:recipient = { has_trait = bubonic_plague }
@@ -642,7 +642,7 @@ bm_heal_ailment.0001 = {
 			is_blood_mage_archmage_trigger = yes
 			scope:recipient = { has_trait = smallpox }
 			has_character_modifier = lifeforce_modifier_superior
-			piety >= cure_illness_cost_benediction
+			piety >= cure_illness_cost_radiance
 		}
 		show_as_unavailable = {
 			scope:recipient = { has_trait = smallpox }
@@ -666,7 +666,7 @@ bm_heal_ailment.0001 = {
 			is_blood_mage_archmage_trigger = yes
 			scope:recipient = { has_trait = leper }
 			has_character_modifier = lifeforce_modifier_superior
-			piety >= cure_illness_cost_benediction
+			piety >= cure_illness_cost_radiance
 		}
 		show_as_unavailable = {
 			scope:recipient = { has_trait = leper }
@@ -690,7 +690,7 @@ bm_heal_ailment.0001 = {
 			is_blood_mage_archmage_trigger = yes
 			scope:recipient = { has_trait = impotent }
 			has_character_modifier = lifeforce_modifier_superior
-			piety >= cure_illness_cost_benediction
+			piety >= cure_illness_cost_radiance
 		}
 		show_as_unavailable = {
 			scope:recipient = { has_trait = impotent }
@@ -714,7 +714,7 @@ bm_heal_ailment.0001 = {
 			is_blood_mage_archmage_trigger = yes
 			scope:recipient = { has_trait = dysentery }
 			has_character_modifier = lifeforce_modifier_superior
-			piety >= cure_illness_cost_benediction
+			piety >= cure_illness_cost_radiance
 		}
 		show_as_unavailable = {
 			scope:recipient = { has_trait = dysentery }
@@ -738,7 +738,7 @@ bm_heal_ailment.0001 = {
 			is_blood_mage_archmage_trigger = yes
 			scope:recipient = { has_trait = ergotism }
 			has_character_modifier = lifeforce_modifier_superior
-			piety >= cure_illness_cost_benediction
+			piety >= cure_illness_cost_radiance
 		}
 		show_as_unavailable = {
 			scope:recipient = { has_trait = ergotism }
@@ -762,7 +762,7 @@ bm_heal_ailment.0001 = {
 			is_blood_mage_archmage_trigger = yes
 			scope:recipient = { has_trait = disfigured }
 			has_character_modifier = lifeforce_modifier_superior
-			piety >= cure_illness_cost_benediction
+			piety >= cure_illness_cost_radiance
 		}
 		show_as_unavailable = {
 			scope:recipient = { has_trait = disfigured }
@@ -786,7 +786,7 @@ bm_heal_ailment.0001 = {
 			is_blood_mage_archmage_trigger = yes
 			scope:recipient = { has_trait = one_legged }
 			has_character_modifier = lifeforce_modifier_superior
-			piety >= cure_illness_cost_benediction
+			piety >= cure_illness_cost_radiance
 		}
 		show_as_unavailable = {
 			scope:recipient = { has_trait = one_legged }
@@ -826,13 +826,13 @@ bm_heal_ailment.0001 = {
 			if = {
 				limit = { scope:recipient = root }
 				add_shared_bm_bk_xp = {
-					TRACK = enlightenment
+					TRACK = wisdom
 					XP = 4
 				}
 			}
 			else = {
 				add_shared_bm_bk_xp = {
-					TRACK = benediction
+					TRACK = radiance
 					XP = 4
 				}
 			}

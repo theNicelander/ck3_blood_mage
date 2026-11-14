@@ -8,9 +8,9 @@ Architecture specs for the **Blood Mages** mod (CK3 1.20.*). Living specs of cur
 | --- | --- | --- |
 | [`blood-mage-magic-tiers.md`](blood-mage-magic-tiers.md) | Minor, Major, Superior Blood Magic tiers | `common/decisions/cast_magic/` |
 | [`blood-mage-traits.md`](blood-mage-traits.md) | Lifestyle traits: Acolyte, Mage, Archmage | `common/traits/bm_blood_mage_trait.txt` |
-| [`blood-mage-bloodlust.md`](blood-mage-bloodlust.md) | Bloodlust track mechanics, martial & duels | `common/traits/bm_blood_mage_trait.txt` |
-| [`blood-mage-track-xp.md`](blood-mage-track-xp.md) | XP master hub & shared tracks (`ancient`, `enlightenment`, `benediction`) | `common/scripted_effects/bm_trait_track_xp_gain_effects.txt` |
-| [`blood-mage-track-xp-mage.md`](blood-mage-track-xp-mage.md) | Blood Mage XP tracks (`bloodline`, `hematurgy`, `bloodlust`) | `common/scripted_effects/bm_trait_track_xp_gain_effects.txt` |
+| [`blood-mage-fury.md`](blood-mage-fury.md) | Fury track mechanics, martial & duels | `common/traits/bm_blood_mage_trait.txt` |
+| [`blood-mage-track-xp.md`](blood-mage-track-xp.md) | XP master hub & shared tracks (`ancient`, `wisdom`, `radiance`) | `common/scripted_effects/bm_trait_track_xp_gain_effects.txt` |
+| [`blood-mage-track-xp-mage.md`](blood-mage-track-xp-mage.md) | Blood Mage XP tracks (`fortune`, `cunning`, `fury`) | `common/scripted_effects/bm_trait_track_xp_gain_effects.txt` |
 | [`blood-mage-lifeforce.md`](blood-mage-lifeforce.md) | Lifeforce resource, modifiers, sinks & sources | `common/modifiers/bm_lifeforce.txt` |
 | [`blood-mage-blood-runes.md`](blood-mage-blood-runes.md) | 5 Galdrastafir staves, capstones, Duchy Temples | `common/modifiers/bm_blood_runes_modifiers.txt`, `common/buildings/` |
 | [`blood-mage-decisions.md`](blood-mage-decisions.md) | Decisions catalog, costs, requirements | `common/decisions/` |
@@ -38,7 +38,7 @@ Architecture specs for the **Blood Mages** mod (CK3 1.20.*). Living specs of cur
 
 ## Doc structure
 
-1. **Summary**: 1–3 lines on what it is and how it ties to Lifeforce, Devotion, tracks, bloodlust track.
+1. **Summary**: 1–3 lines on what it is and how it ties to Lifeforce, Devotion, tracks, fury track.
 2. **Spec**: tables and short bullets.
 3. **Where**: concept → file paths.
 4. **Gotchas / not verified**: only when real.

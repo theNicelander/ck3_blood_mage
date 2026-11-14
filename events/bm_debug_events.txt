@@ -23,11 +23,11 @@ bm_debug.0001 = {
 				bm_become_blood_acolyte_effect = yes
 			}
 			bm_add_blood_mage_xp_effect = { TRACK = ancient XP = 20 }
-			bm_add_blood_mage_xp_effect = { TRACK = enlightenment XP = 20 }
-			bm_add_blood_mage_xp_effect = { TRACK = bloodline XP = 20 }
-			bm_add_blood_mage_xp_effect = { TRACK = benediction XP = 20 }
-			bm_add_blood_mage_xp_effect = { TRACK = hematurgy XP = 20 }
-			bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 20 }
+			bm_add_blood_mage_xp_effect = { TRACK = wisdom XP = 20 }
+			bm_add_blood_mage_xp_effect = { TRACK = fortune XP = 20 }
+			bm_add_blood_mage_xp_effect = { TRACK = radiance XP = 20 }
+			bm_add_blood_mage_xp_effect = { TRACK = cunning XP = 20 }
+			bm_add_blood_mage_xp_effect = { TRACK = fury XP = 20 }
 		}
 		trigger_event = { id = bm_debug.0001 }
 	}
@@ -129,28 +129,28 @@ bm_debug.0002 = {
 				remove_character_modifier = lifeforce_modifier_minor
 			}
 			while = {
-				limit = { has_character_modifier = lifeforce_modifier_presence }
-				remove_character_modifier = lifeforce_modifier_presence
+				limit = { has_character_modifier = lifeforce_modifier_radiant }
+				remove_character_modifier = lifeforce_modifier_radiant
 			}
 			while = {
-				limit = { has_character_modifier = lifeforce_modifier_fury }
-				remove_character_modifier = lifeforce_modifier_fury
+				limit = { has_character_modifier = lifeforce_modifier_furious }
+				remove_character_modifier = lifeforce_modifier_furious
 			}
 			while = {
-				limit = { has_character_modifier = lifeforce_modifier_prosperity }
-				remove_character_modifier = lifeforce_modifier_prosperity
+				limit = { has_character_modifier = lifeforce_modifier_fortunate }
+				remove_character_modifier = lifeforce_modifier_fortunate
 			}
 			while = {
-				limit = { has_character_modifier = lifeforce_modifier_shadows }
-				remove_character_modifier = lifeforce_modifier_shadows
+				limit = { has_character_modifier = lifeforce_modifier_cunning }
+				remove_character_modifier = lifeforce_modifier_cunning
 			}
 			while = {
-				limit = { has_character_modifier = lifeforce_modifier_focus }
-				remove_character_modifier = lifeforce_modifier_focus
+				limit = { has_character_modifier = lifeforce_modifier_wise }
+				remove_character_modifier = lifeforce_modifier_wise
 			}
 			while = {
-				limit = { has_character_modifier = lifeforce_modifier_mojo }
-				remove_character_modifier = lifeforce_modifier_mojo
+				limit = { has_character_modifier = lifeforce_modifier_ancient }
+				remove_character_modifier = lifeforce_modifier_ancient
 			}
 		}
 		trigger_event = { id = bm_debug.0002 }

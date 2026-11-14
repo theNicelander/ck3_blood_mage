@@ -92,38 +92,38 @@
 						}
 					}
 					if = {
-						limit = { bm_anointed_transfer_enlightenment_xp_value > 0 }
+						limit = { bm_anointed_transfer_wisdom_xp_value > 0 }
 						bm_add_blood_mage_xp_effect = {
-							TRACK = enlightenment
-							XP = bm_anointed_transfer_enlightenment_xp_value
+							TRACK = wisdom
+							XP = bm_anointed_transfer_wisdom_xp_value
 						}
 					}
 					if = {
-						limit = { bm_anointed_transfer_benediction_xp_value > 0 }
+						limit = { bm_anointed_transfer_radiance_xp_value > 0 }
 						bm_add_blood_mage_xp_effect = {
-							TRACK = benediction
-							XP = bm_anointed_transfer_benediction_xp_value
+							TRACK = radiance
+							XP = bm_anointed_transfer_radiance_xp_value
 						}
 					}
 					if = {
-						limit = { bm_anointed_transfer_bloodline_xp_value > 0 }
+						limit = { bm_anointed_transfer_fortune_xp_value > 0 }
 						bm_add_blood_mage_xp_effect = {
-							TRACK = bloodline
-							XP = bm_anointed_transfer_bloodline_xp_value
+							TRACK = fortune
+							XP = bm_anointed_transfer_fortune_xp_value
 						}
 					}
 					if = {
-						limit = { bm_anointed_transfer_hematurgy_xp_value > 0 }
+						limit = { bm_anointed_transfer_cunning_xp_value > 0 }
 						bm_add_blood_mage_xp_effect = {
-							TRACK = hematurgy
-							XP = bm_anointed_transfer_hematurgy_xp_value
+							TRACK = cunning
+							XP = bm_anointed_transfer_cunning_xp_value
 						}
 					}
 					if = {
-						limit = { bm_anointed_transfer_bloodlust_xp_value > 0 }
+						limit = { bm_anointed_transfer_fury_xp_value > 0 }
 						bm_add_blood_mage_xp_effect = {
-							TRACK = bloodlust
-							XP = bm_anointed_transfer_bloodlust_xp_value
+							TRACK = fury
+							XP = bm_anointed_transfer_fury_xp_value
 						}
 					}
 				}

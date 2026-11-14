@@ -143,7 +143,7 @@
 				limit = { scope:manifest_lifeforce_tier1 = yes }
 				debug_log = "BloodMageInteraction: bm_manifest_lifeforce (tier_1) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
 				add_shared_bm_bk_xp = {
-					TRACK = enlightenment
+					TRACK = wisdom
 					XP = 2
 				}
 				duel = {
@@ -226,7 +226,7 @@
 				limit = { scope:manifest_lifeforce_tier2 = yes }
 				debug_log = "BloodMageInteraction: bm_manifest_lifeforce (tier_2) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
 				add_shared_bm_bk_xp = {
-					TRACK = enlightenment
+					TRACK = wisdom
 					XP = 3
 				}
 				duel = {
@@ -310,7 +310,7 @@
 				limit = { scope:manifest_lifeforce_tier3 = yes }
 				debug_log = "BloodMageInteraction: bm_manifest_lifeforce (tier_3) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
 				add_shared_bm_bk_xp = {
-					TRACK = enlightenment
+					TRACK = wisdom
 					XP = 5
 				}
 				add_character_modifier = { modifier = lifeforce_modifier_minor }
@@ -378,7 +378,7 @@
 				limit = { scope:manifest_lifeforce_tier4 = yes }
 				debug_log = "BloodMageInteraction: bm_manifest_lifeforce (tier_4) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
 				add_shared_bm_bk_xp = {
-					TRACK = enlightenment
+					TRACK = wisdom
 					XP = 7
 				}
 				add_character_modifier = { modifier = lifeforce_modifier_minor }

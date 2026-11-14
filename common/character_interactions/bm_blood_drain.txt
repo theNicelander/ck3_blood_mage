@@ -170,7 +170,7 @@
 		if = {
 			limit = { scope:drain_major = yes }
 			debug_log = "BloodMageInteraction: bm_blood_drain (major) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
-			scope:actor = { hematurgy_magic_cast_effect_major = yes }
+			scope:actor = { cunning_magic_cast_effect_major = yes }
 			lifedrain_execution_effect = {
 				VICTIM = scope:recipient
 				EXECUTIONER = scope:actor
@@ -191,7 +191,7 @@
 					right_icon = scope:recipient
 					add_character_modifier = { modifier = lifeforce_modifier_minor }
 					bm_add_blood_mage_xp_effect = {
-						TRACK = hematurgy
+						TRACK = cunning
 						XP = 1
 					}
 					scope:recipient = {
@@ -258,7 +258,7 @@
 								}
 							}
 						}
-						add_xp_bm_dynamic = { TRACK = hematurgy XP = 3 }
+						add_xp_bm_dynamic = { TRACK = cunning XP = 3 }
 					}
 				}
 				else = {
@@ -287,7 +287,7 @@
 									scope:recipient = { remove_character_modifier = lifeforce_modifier_minor }
 									add_character_modifier = { modifier = lifeforce_modifier_minor }
 								}
-								add_xp_bm_dynamic = { TRACK = hematurgy XP = 3 }
+								add_xp_bm_dynamic = { TRACK = cunning XP = 3 }
 							}
 						}
 						50 = {
@@ -329,7 +329,7 @@
 						add_character_modifier = { modifier = lifeforce_modifier_minor }
 					}
 					bm_add_blood_mage_xp_effect = {
-						TRACK = bloodline
+						TRACK = fortune
 						XP = 2
 					}
 					scope:recipient = {

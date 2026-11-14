@@ -10,8 +10,8 @@
 		scope:actor = {
 			is_blood_mage_any_tier_trigger = yes
 			OR = {
-				bm_has_track_xp_any_tier_trigger = { TRACK = bloodlust VALUE = 20 }
-				bm_has_track_xp_any_tier_trigger = { TRACK = hematurgy VALUE = 20 }
+				bm_has_track_xp_any_tier_trigger = { TRACK = fury VALUE = 20 }
+				bm_has_track_xp_any_tier_trigger = { TRACK = cunning VALUE = 20 }
 			}
 		}
 		NOT = { scope:actor = scope:recipient }
@@ -72,11 +72,11 @@
 					modifier = lifeforce_modifier_major
 				}
 				add_blood_mage_xp = {
-					TRACK = hematurgy
+					TRACK = cunning
 					XP = 3
 				}
 				add_blood_mage_xp = {
-					TRACK = bloodlust
+					TRACK = fury
 					XP = 3
 				}
 				random = {

@@ -28,7 +28,7 @@
 			value = bm_superior_master_education
 			current_description = bm_superior_master_education
 			localization = bm_superior_master_education
-			icon = "gfx/interface/icons/trait_level_tracks/enlightenment.dds"
+			icon = "gfx/interface/icons/trait_level_tracks/wisdom.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
@@ -64,7 +64,7 @@
 			value = bm_superior_new_education
 			current_description = bm_superior_new_education
 			localization = bm_superior_new_education
-			icon = "gfx/interface/icons/trait_level_tracks/enlightenment.dds"
+			icon = "gfx/interface/icons/trait_level_tracks/wisdom.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
@@ -154,7 +154,7 @@
 			value = bm_superior_manifest_traits
 			current_description = bm_superior_manifest_traits
 			localization = bm_superior_manifest_traits
-			icon = "gfx/interface/icons/trait_level_tracks/bloodline.dds"
+			icon = "gfx/interface/icons/trait_level_tracks/fortune.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
@@ -297,7 +297,7 @@
 			}
 			blood_magic_used_superior = yes
 			add_xp_bm_dynamic = {
-				TRACK = bloodline
+				TRACK = fortune
 				XP = 8
 			}
 			trigger_event = { id = blood_golem.001 }
@@ -448,7 +448,7 @@ bm_cast_blood_magic_major_decision = {
 			value = bm_major_improve_education
 			current_description = bm_major_improve_education
 			localization = bm_major_improve_education
-			icon = "gfx/interface/icons/trait_level_tracks/enlightenment.dds"
+			icon = "gfx/interface/icons/trait_level_tracks/wisdom.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
@@ -538,7 +538,7 @@ bm_cast_blood_magic_major_decision = {
 			value = bm_major_manifest_traits
 			current_description = bm_major_manifest_traits
 			localization = bm_major_manifest_traits
-			icon = "gfx/interface/icons/trait_level_tracks/bloodline.dds"
+			icon = "gfx/interface/icons/trait_level_tracks/fortune.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
@@ -702,7 +702,7 @@ bm_cast_blood_magic_minor_decision = {
 			value = bm_minor_channel
 			current_description = bm_minor_channel
 			localization = bm_minor_channel
-			icon = "gfx/interface/icons/trait_level_tracks/enlightenment.dds"
+			icon = "gfx/interface/icons/trait_level_tracks/wisdom.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
@@ -724,7 +724,7 @@ bm_cast_blood_magic_minor_decision = {
 			value = bm_minor_purge
 			current_description = bm_minor_purge
 			localization = bm_minor_purge
-			icon = "gfx/interface/icons/trait_level_tracks/benediction.dds"
+			icon = "gfx/interface/icons/trait_level_tracks/radiance.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
@@ -825,8 +825,8 @@ bm_cast_blood_magic_minor_decision = {
 			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (channel) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
 			add_piety = -75
 			remove_character_modifier = lifeforce_modifier_minor
-			add_xp_enlightenment = yes
-			trigger_event = { id = bm_channel_lifeforce_enlightenment_minor.001 }
+			add_xp_wisdom = yes
+			trigger_event = { id = bm_channel_lifeforce_wisdom_minor.001 }
 		}
 		else_if = {
 			limit = { scope:bm_minor_purge = yes }
@@ -850,13 +850,13 @@ bm_cast_blood_magic_minor_decision = {
 							}
 						}
 						add_xp_bm_dynamic = {
-							TRACK = bloodline
+							TRACK = fortune
 							XP = 2
 						}
 					}
 					else = {
 						add_xp_bm_dynamic = {
-							TRACK = benediction
+							TRACK = radiance
 							XP = 2
 						}
 					}
