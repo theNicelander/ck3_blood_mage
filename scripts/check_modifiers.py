@@ -7,10 +7,13 @@
 CK3 Blood Mage Mod - Modifier Usage & Allowlist Validator
 Enforces that:
 1. All modifiers used across the mod (in modifiers, traits, holy sites, doctrines,
-   buildings, and domiciles) belong to the approved allowlist in scripts/modifiers_allowlist.json.
-2. No modifier can be added to the allowlist unless verified to exist in vanilla CK3 1.20
+   buildings, and domiciles) belong to the scope-appropriate allowlist:
+   - scripts/modifiers_character_allowlist.json
+   - scripts/modifiers_county_allowlist.json (includes county & province/holding)
+   - scripts/modifiers_domicile_allowlist.json
+2. No modifier can be added to an allowlist unless verified to exist in vanilla CK3 1.20
    definition formats (common/modifier_definition_formats/ + C++ custom code overwrites).
-3. Provides --add <modifier> to safely confirm and append new modifiers to the allowlist.
+3. Provides --add <modifier> --scope <scope> to safely confirm and append new modifiers.
 """
 
 from __future__ import annotations
@@ -27,20 +30,32 @@ from pathlib import Path
 DEFAULT_VANILLA_PATH = Path("/Users/clarabotet/Petur/ck3-full")
 SCRIPT_DIR = Path(__file__).resolve().parent
 REPO_ROOT = SCRIPT_DIR.parent
-ALLOWLIST_FILE = SCRIPT_DIR / "modifiers_allowlist.json"
+ALLOWLIST_FILES = {
+    "character": SCRIPT_DIR / "modifiers_character_allowlist.json",
+    "county": SCRIPT_DIR / "modifiers_county_allowlist.json",
+    "domicile": SCRIPT_DIR / "modifiers_domicile_allowlist.json",
+}
+ALLOWLIST_DESCRIPTIONS = {
+    "character": "Allowlist of vanilla CK3 character-scoped modifiers permitted in ck3_blood_mage.",
+    "county": "Allowlist of vanilla CK3 county/province/holding-scoped modifiers permitted in ck3_blood_mage.",
+    "domicile": "Allowlist of vanilla CK3 domicile-scoped modifiers permitted in ck3_blood_mage.",
+}
 VANILLA_DEFS_FALLBACK = SCRIPT_DIR / "vanilla_all_definitions.json"
 
-MODIFIER_BLOCK_NAMES = {
-    "character_modifier",
-    "county_modifier",
-    "province_modifier",
-    "duchy_capital_county_modifier",
-    "domicile_modifier",
-    "doctrine_character_modifier",
-    "clergy_modifier",
-    "holder_modifier",
-    "owner_modifier",
+MODIFIER_BLOCK_SCOPES = {
+    "character_modifier": "character",
+    "doctrine_character_modifier": "character",
+    "clergy_modifier": "character",
+    "holder_modifier": "character",
+    "owner_modifier": "character",
+    "county_modifier": "county",
+    "duchy_capital_county_modifier": "county",
+    "province_modifier": "county",
+    "domicile_modifier": "domicile",
+    "domicile_temperament_high_modifier": "domicile",
+    "domicile_temperament_low_modifier": "domicile",
 }
+MODIFIER_BLOCK_NAMES = set(MODIFIER_BLOCK_SCOPES.keys())
 
 MODIFIER_FILE_METADATA = {
     "icon",
@@ -127,43 +142,78 @@ def load_vanilla_definitions(vanilla_root: Path | None = None) -> dict[str, str]
     return defs
 
 
-def load_allowlist() -> dict[str, dict]:
-    """Load the approved modifiers allowlist."""
-    if not ALLOWLIST_FILE.is_file():
-        return {}
-    try:
-        with open(ALLOWLIST_FILE, "r", encoding="utf-8") as fp:
-            data = json.load(fp)
-            return data.get("modifiers", {})
-    except (OSError, json.JSONDecodeError) as e:
-        print(f"[ERROR] Failed to read allowlist at {ALLOWLIST_FILE}: {e}", file=sys.stderr)
-        return {}
+def load_allowlists() -> dict[str, dict[str, dict]]:
+    """Load all scope-specific modifier allowlists."""
+    allowlists: dict[str, dict[str, dict]] = {}
+    for scope, path in ALLOWLIST_FILES.items():
+        if not path.is_file():
+            allowlists[scope] = {}
+            continue
+        try:
+            with open(path, "r", encoding="utf-8") as fp:
+                data = json.load(fp)
+                allowlists[scope] = data.get("modifiers", {})
+        except (OSError, json.JSONDecodeError) as e:
+            print(f"[ERROR] Failed to read allowlist at {path}: {e}", file=sys.stderr)
+            allowlists[scope] = {}
+    return allowlists
 
 
-def save_allowlist(modifiers: dict[str, dict]) -> None:
-    """Save sorted modifiers to allowlist."""
+def save_allowlist(scope: str, modifiers: dict[str, dict]) -> None:
+    """Save sorted modifiers to the scope-specific allowlist."""
+    path = ALLOWLIST_FILES[scope]
     data = {
         "version": "1.20",
-        "description": "Allowlist of vanilla CK3 modifiers currently permitted in ck3_blood_mage.",
+        "scope": scope,
+        "description": ALLOWLIST_DESCRIPTIONS[scope],
         "modifiers": dict(sorted(modifiers.items())),
     }
-    with open(ALLOWLIST_FILE, "w", encoding="utf-8") as fp:
+    with open(path, "w", encoding="utf-8") as fp:
         json.dump(data, fp, indent=2)
         fp.write("\n")
 
 
-def check_allowlist_integrity(vanilla_defs: dict[str, str], allowlist: dict[str, dict]) -> list[str]:
-    """Ensure every modifier in the allowlist is confirmed to exist in vanilla."""
+def check_allowlist_integrity(
+    vanilla_defs: dict[str, str], allowlists: dict[str, dict[str, dict]]
+) -> list[str]:
+    """Ensure every modifier in all allowlists is confirmed to exist in vanilla."""
     errors = []
-    for mod_key in allowlist:
-        if mod_key not in vanilla_defs:
-            errors.append(f"Modifier '{mod_key}' in allowlist is not a valid vanilla 1.20 modifier definition.")
+    for scope, allowlist in allowlists.items():
+        for mod_key in allowlist:
+            if mod_key not in vanilla_defs:
+                errors.append(
+                    f"[{scope}] Modifier '{mod_key}' in allowlist is not a valid vanilla 1.20 modifier definition."
+                )
     return errors
 
 
-def parse_file_modifiers(file_path: Path) -> list[tuple[int, str, str, str]]:
+def get_static_modifier_scopes(repo_root: Path) -> dict[str, str]:
+    """Detect static modifiers in common/modifiers/ that are applied as county/province modifiers."""
+    scopes: dict[str, str] = {}
+    pattern = re.compile(
+        r"\b(add_county_modifier|add_province_modifier)\s*=\s*(?:\{\s*modifier\s*=\s*)?([a-zA-Z0-9_]+)"
+    )
+    for d in ("common", "events"):
+        target_dir = repo_root / d
+        if not target_dir.is_dir():
+            continue
+        for p in target_dir.rglob("*.txt"):
+            if "common/modifiers" in p.as_posix():
+                continue
+            try:
+                text = p.read_text(encoding="utf-8-sig", errors="ignore")
+            except OSError:
+                continue
+            for m in pattern.finditer(text):
+                scopes[m.group(2)] = "county"
+    return scopes
+
+
+def parse_file_modifiers(
+    file_path: Path, static_mod_scopes: dict[str, str] | None = None
+) -> list[tuple[int, str, str, str, str]]:
     """
-    Parse a CK3 script file and return list of (line_num, key, value, scope_stack)
+    Parse a CK3 script file and return list of (line_num, key, value, scope_stack, target_scope)
     for items located inside modifier contexts.
     """
     try:
@@ -210,18 +260,25 @@ def parse_file_modifiers(file_path: Path) -> list[tuple[int, str, str, str]]:
     is_modifier_file = "common/modifiers" in rel_path_str
     is_trait_file = "common/traits" in rel_path_str
 
+    static_scopes = static_mod_scopes or {}
     extracted = []
     for ev_type, st, key, val, line_num in events:
         if ev_type != "kv":
             continue
 
         in_modifier_context = False
+        target_scope = "character"
         if is_modifier_file and len(st) >= 1:
             if key in MODIFIER_FILE_METADATA:
                 continue
             in_modifier_context = True
+            target_scope = static_scopes.get(st[0], "character")
         elif any(s in MODIFIER_BLOCK_NAMES for s in st):
             in_modifier_context = True
+            for s in reversed(st):
+                if s in MODIFIER_BLOCK_SCOPES:
+                    target_scope = MODIFIER_BLOCK_SCOPES[s]
+                    break
         elif is_trait_file and any(s.isdigit() for s in st):
             in_modifier_context = True
         elif is_trait_file and len(st) == 1 and st[0].startswith("lifestyle_"):
@@ -230,7 +287,7 @@ def parse_file_modifiers(file_path: Path) -> list[tuple[int, str, str, str]]:
             in_modifier_context = True
 
         if in_modifier_context:
-            extracted.append((line_num, key, val, "/".join(st)))
+            extracted.append((line_num, key, val, "/".join(st), target_scope))
 
     return extracted
 
@@ -273,22 +330,37 @@ def get_all_game_txt_files(repo_root: Path) -> list[Path]:
     return files
 
 
-def handle_add_modifier(mod_name: str, vanilla_defs: dict[str, str], allowlist: dict[str, dict]) -> int:
-    """Validate existence in vanilla and add to allowlist."""
+def handle_add_modifier(
+    mod_name: str,
+    scope: str | None,
+    vanilla_defs: dict[str, str],
+    allowlists: dict[str, dict[str, dict]],
+) -> int:
+    """Validate existence in vanilla and add to the target scope allowlist."""
     mod_name = mod_name.strip()
     if not mod_name:
         print("[ERROR] No modifier name provided to --add.", file=sys.stderr)
         return 1
 
+    if not scope or scope not in ALLOWLIST_FILES:
+        print(
+            "[ERROR] --scope is required with --add (choose from: character, county, domicile).",
+            file=sys.stderr,
+        )
+        return 1
+
+    allowlist = allowlists[scope]
     if mod_name in allowlist:
-        print(f"Modifier '{mod_name}' is already in the allowlist ({allowlist[mod_name].get('vanilla_definition')}).")
+        print(
+            f"Modifier '{mod_name}' is already in the '{scope}' allowlist ({allowlist[mod_name].get('vanilla_definition')})."
+        )
         return 0
 
     if mod_name not in vanilla_defs:
         print(f"[ERROR] Modifier '{mod_name}' does not exist in vanilla CK3 1.20 definitions!", file=sys.stderr)
         close_matches = difflib.get_close_matches(mod_name, vanilla_defs.keys(), n=5, cutoff=0.6)
         if close_matches:
-            print(f"Did you mean one of these vanilla modifiers?", file=sys.stderr)
+            print("Did you mean one of these vanilla modifiers?", file=sys.stderr)
             for match in close_matches:
                 print(f"  - {match} ({vanilla_defs[match]})", file=sys.stderr)
         return 1
@@ -298,8 +370,10 @@ def handle_add_modifier(mod_name: str, vanilla_defs: dict[str, str], allowlist: 
         "category": "Added",
         "vanilla_definition": src_file,
     }
-    save_allowlist(allowlist)
-    print(f"SUCCESS: Confirmed existence in vanilla '{src_file}' and added '{mod_name}' to {ALLOWLIST_FILE.name}.")
+    save_allowlist(scope, allowlist)
+    print(
+        f"SUCCESS: Confirmed existence in vanilla '{src_file}' and added '{mod_name}' to {ALLOWLIST_FILES[scope].name}."
+    )
     return 0
 
 
@@ -307,6 +381,11 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="CK3 Blood Mage Modifier Allowlist & Usage Checker")
     parser.add_argument("--staged", action="store_true", help="Only inspect git staged files in common/ and events/")
     parser.add_argument("--add", metavar="MODIFIER", help="Confirm existence in vanilla 1.20 and add to allowlist")
+    parser.add_argument(
+        "--scope",
+        choices=sorted(ALLOWLIST_FILES.keys()),
+        help="Target modifier scope allowlist for --add (character, county, domicile)",
+    )
     parser.add_argument("--check-allowlist", action="store_true", help="Only verify that allowlist entries exist in vanilla")
     parser.add_argument("--vanilla-path", type=Path, default=DEFAULT_VANILLA_PATH, help="Path to vanilla CK3 game directory")
     parser.add_argument("files", nargs="*", type=Path, help="Specific files to check")
@@ -314,14 +393,14 @@ def main() -> int:
     args = parser.parse_args()
 
     vanilla_defs = load_vanilla_definitions(args.vanilla_path)
-    allowlist = load_allowlist()
+    allowlists = load_allowlists()
 
     # Handle adding a new modifier
     if args.add:
-        return handle_add_modifier(args.add, vanilla_defs, allowlist)
+        return handle_add_modifier(args.add, args.scope, vanilla_defs, allowlists)
 
-    # Validate the allowlist itself first
-    allowlist_errors = check_allowlist_integrity(vanilla_defs, allowlist)
+    # Validate all allowlists first
+    allowlist_errors = check_allowlist_integrity(vanilla_defs, allowlists)
     if allowlist_errors:
         print("=" * 70, file=sys.stderr)
         print("[ERROR] Allowlist integrity check failed!", file=sys.stderr)
@@ -330,8 +409,10 @@ def main() -> int:
             print(f"  - {err}", file=sys.stderr)
         return 1
 
+    total_entries = sum(len(a) for a in allowlists.values())
     if args.check_allowlist:
-        print(f"PASS: All {len(allowlist)} allowlist modifiers confirmed in vanilla definitions.")
+        counts = ", ".join(f"{s}={len(allowlists[s])}" for s in sorted(allowlists))
+        print(f"PASS: All allowlist modifiers confirmed in vanilla definitions ({counts}).")
         return 0
 
     # Determine files to scan
@@ -345,23 +426,36 @@ def main() -> int:
     if not files_to_check:
         return 0
 
+    static_mod_scopes = get_static_modifier_scopes(REPO_ROOT)
     violations = []
     for f in files_to_check:
-        items = parse_file_modifiers(f)
-        for line_num, key, val, stack in items:
-            if key not in allowlist:
-                violations.append((f, line_num, key, val, stack))
+        items = parse_file_modifiers(f, static_mod_scopes)
+        for line_num, key, val, stack, target_scope in items:
+            if key not in allowlists.get(target_scope, {}):
+                violations.append((f, line_num, key, val, stack, target_scope))
 
     if violations:
         print("=" * 70, file=sys.stderr)
         print(f"[FAIL] Found {len(violations)} unallowed modifier usage(s) in mod files!", file=sys.stderr)
         print("=" * 70, file=sys.stderr)
-        for f, line_num, key, val, stack in violations:
+        for f, line_num, key, val, stack, target_scope in violations:
             rel = f.relative_to(REPO_ROOT) if f.is_relative_to(REPO_ROOT) else f
-            print(f"  {rel}:{line_num} -> '{key} = {val}' (inside {stack})", file=sys.stderr)
+            print(
+                f"  {rel}:{line_num} -> '{key} = {val}' (inside {stack}, scope: {target_scope})",
+                file=sys.stderr,
+            )
+            other_scopes = [s for s, a in sorted(allowlists.items()) if s != target_scope and key in a]
+            if other_scopes:
+                print(
+                    f"      [NOTE] '{key}' is permitted in [{', '.join(other_scopes)}], not '{target_scope}'.",
+                    file=sys.stderr,
+                )
             if key in vanilla_defs:
                 print(f"      [NOTE] '{key}' is a valid vanilla modifier ({vanilla_defs[key]}).", file=sys.stderr)
-                print(f"      To permit it, run: python3 scripts/check_modifiers.py --add {key}", file=sys.stderr)
+                print(
+                    f"      To permit it, run: python3 scripts/check_modifiers.py --add {key} --scope {target_scope}",
+                    file=sys.stderr,
+                )
             else:
                 close = difflib.get_close_matches(key, vanilla_defs.keys(), n=3, cutoff=0.6)
                 if close:
@@ -369,7 +463,10 @@ def main() -> int:
         return 1
 
     if not args.staged:
-        print(f"PASS: All {len(allowlist)} allowlist entries verified; 0 unallowed modifiers in {len(files_to_check)} files.")
+        counts = ", ".join(f"{s}={len(allowlists[s])}" for s in sorted(allowlists))
+        print(
+            f"PASS: All allowlists verified ({counts}); 0 unallowed modifiers in {len(files_to_check)} files (total entries: {total_entries})."
+        )
     return 0
 
 

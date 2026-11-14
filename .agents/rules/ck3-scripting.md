@@ -31,8 +31,8 @@ description: Core CK3 script rules, script values, and safe engine patterns (1.2
    - Keep options visible and grayed out (`show_as_unavailable = { ... }`) whenever possible so players see what exists and what requirements (Lifeforce, Piety, Devotion, Cooldown) are needed to unlock them.
    - Only hide an option completely if its prerequisite tier/stage has not been reached or if it has been permanently completed or superseded.
 12. **Modifier Allowlist Enforcement**:
-   - Every modifier used in static modifiers, traits, holy sites, doctrines, buildings, and domiciles must be present in `scripts/modifiers_allowlist.json` (enforced by pre-commit).
-   - Never invent modifier names. To add a confirmed vanilla modifier, run `python3 scripts/check_modifiers.py --add <name>` (verifies against vanilla definition formats).
+   - Every modifier used in static modifiers, traits, holy sites, doctrines, buildings, and domiciles must be present in its scope-specific allowlist (`scripts/modifiers_{character,county,domicile}_allowlist.json`, enforced by pre-commit; `county` also covers `province_modifier`).
+   - Never invent modifier names. To add a confirmed vanilla modifier, run `python3 scripts/check_modifiers.py --add <name> --scope <character|county|domicile>` (verifies against vanilla definition formats).
 13. **Native Triggers vs custom_tooltip in Requirements**:
    - CK3 natively formats standard triggers (`piety_level`, `piety`, `prestige`, `gold`, `has_trait`, `has_character_modifier`, `NOT = { has_character_modifier = ... }`, `has_cultural_tradition`, `is_adult`, `is_imprisoned`, `any_prisoner = { count >= 1 }`, etc.) with clean dynamic values and checkmarks/crosses.
    - Never wrap standard triggers in `custom_tooltip = { text = ... }`.
