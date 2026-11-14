@@ -5,14 +5,10 @@ blood_mage_yearly_events.001 = {
     hidden = yes
     trigger = { is_blood_mage_any_tier_trigger = yes }
     immediate = {
-        # Base XP gain for all Blood Mages
-        send_interface_toast = {
-            title = bm_yearly_ancient_toast
-            left_icon = root
-            bm_add_blood_mage_xp_effect = {
-				TRACK = ancient
-				XP = 1
-			}
+        # Base XP gain for all Blood Mages (silent, no toast)
+        bm_add_blood_mage_xp_effect = {
+            TRACK = ancient
+            XP = 1
         }
 
         # Ancient attunement check
