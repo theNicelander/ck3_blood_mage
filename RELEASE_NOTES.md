@@ -136,6 +136,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 
 ## Bugfixes
 
+- Fixed Blood Mirror ascension duel tooltips, deferred tier elevation/defeat effects to the conclusion button, and scaled the reflection's stats to match the player (+5/+10 Prowess).
 - Fixed supernatural appearance game rule (white hair and white eyes) not applying to Blood Acolytes or Blood Archmages.
 - Ascension duel defeat effects (exhaustion, wounds, XP penalty) display natively in toast notification.
 - Reverse Lifedrain: self-targeting works for characters drained by Bleed Own Veins.
@@ -151,6 +152,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 
 ## Version history
 
+- v1.20.83: Fix Blood Mirror ascension duel tooltips, move elevation/defeat effects to the conclusion button, and match player stats (+5/+10 Prowess).
 - v1.20.81: Reorganize Blóðtrú faiths into a hierarchical Catholicism-style tree: 3 regional faiths (Blóðtrú, Ketsudō, Xuédào) each nesting their organized mainline rite and unreformed ancestral rite; Blood Sparring Ring Blood Mage knight requirement; simplified Empower Dynasty Bloodline plain-text tooltips; replace Warband covenant army movement speed with knight limit (+1/2/3); fix Blades on Lonely Road requirement tooltips; recalibrate Blood Mage XP progression toward ~100-year Archmage target; Blood Power track milestone symmetry.
 
 - v1.20.80: Mainline blood faiths (Blóðtrú, Ketsudō, Xuédào) organized/reformed by default; introduce explicit unreformed variants (Old Blóðtrú, Old Ketsudō, Old Xuédào) with 1:1 mainline rites and conversion decision sub-options; dedicated Transmute Lifeforce decision and event tree consolidating all 9 specialized reservoir transmutations (Mojo, Fury, Focus: 25 Piety Minor, 50 Piety Major, 25 Piety reclaim) without cooldowns while keeping tier condensation and splitting in their respective main grimoires.
