@@ -41,7 +41,7 @@ Acquisition (Decision / Event / Birth)
   │     └─► bm_apply_blood_mage_prevalence_retention_effect (strips mage + power if AI under restricted rules)
 ```
 
-- **Childbirth Milestone:** When a child is born (`on_birth_child` -> `bm_on_birth_bloodline_xp`), any blood mage parent receives **+1 Major Lifeforce** (`lifeforce_modifier_major`) and +2 `bloodline` XP (+4 `bloodline` XP if the newborn inherits the trait; doubled by Superior Feingur).
+- **Childbirth Milestone:** When a child is born (`on_birth_child` -> `bm_on_birth_fortune_xp`), any blood mage parent receives **+1 Major Lifeforce** (`lifeforce_modifier_major`) and +2 `fortune` XP (+4 `fortune` XP if the newborn inherits the trait; doubled by Superior Feingur).
 
 ## Where the details live
 

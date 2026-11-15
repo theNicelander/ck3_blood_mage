@@ -11,11 +11,13 @@
 
 	is_valid_showing_failures_only = {
 		OR = {
-			has_character_modifier = lifeforce_modifier_minor
 			has_character_modifier = lifeforce_modifier_major
-			has_character_modifier = lifeforce_modifier_mojo
-			has_character_modifier = lifeforce_modifier_fury
-			has_character_modifier = lifeforce_modifier_focus
+			has_character_modifier = lifeforce_modifier_radiant
+			has_character_modifier = lifeforce_modifier_furious
+			has_character_modifier = lifeforce_modifier_fortunate
+			has_character_modifier = lifeforce_modifier_cunning
+			has_character_modifier = lifeforce_modifier_wise
+			has_character_modifier = lifeforce_modifier_ancient
 		}
 	}
 

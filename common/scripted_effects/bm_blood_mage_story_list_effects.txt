@@ -50,14 +50,14 @@
 		}
 
 		set_variable = {
-			name = bm_lifeforce_mojo_stacks
+			name = bm_lifeforce_radiant_stacks
 			value = 0
 		}
 		while = {
-			limit = { has_character_modifier = lifeforce_modifier_mojo }
-			remove_character_modifier = lifeforce_modifier_mojo
+			limit = { has_character_modifier = lifeforce_modifier_radiant }
+			remove_character_modifier = lifeforce_modifier_radiant
 			change_variable = {
-				name = bm_lifeforce_mojo_stacks
+				name = bm_lifeforce_radiant_stacks
 				add = 1
 			}
 		}
@@ -65,22 +65,22 @@
 			count = {
 				value = 0
 				if = {
-					limit = { exists = var:bm_lifeforce_mojo_stacks }
-					add = var:bm_lifeforce_mojo_stacks
+					limit = { exists = var:bm_lifeforce_radiant_stacks }
+					add = var:bm_lifeforce_radiant_stacks
 				}
 			}
-			add_character_modifier = lifeforce_modifier_mojo
+			add_character_modifier = lifeforce_modifier_radiant
 		}
 
 		set_variable = {
-			name = bm_lifeforce_fury_stacks
+			name = bm_lifeforce_fortunate_stacks
 			value = 0
 		}
 		while = {
-			limit = { has_character_modifier = lifeforce_modifier_fury }
-			remove_character_modifier = lifeforce_modifier_fury
+			limit = { has_character_modifier = lifeforce_modifier_fortunate }
+			remove_character_modifier = lifeforce_modifier_fortunate
 			change_variable = {
-				name = bm_lifeforce_fury_stacks
+				name = bm_lifeforce_fortunate_stacks
 				add = 1
 			}
 		}
@@ -88,22 +88,22 @@
 			count = {
 				value = 0
 				if = {
-					limit = { exists = var:bm_lifeforce_fury_stacks }
-					add = var:bm_lifeforce_fury_stacks
+					limit = { exists = var:bm_lifeforce_fortunate_stacks }
+					add = var:bm_lifeforce_fortunate_stacks
 				}
 			}
-			add_character_modifier = lifeforce_modifier_fury
+			add_character_modifier = lifeforce_modifier_fortunate
 		}
 
 		set_variable = {
-			name = bm_lifeforce_focus_stacks
+			name = bm_lifeforce_cunning_stacks
 			value = 0
 		}
 		while = {
-			limit = { has_character_modifier = lifeforce_modifier_focus }
-			remove_character_modifier = lifeforce_modifier_focus
+			limit = { has_character_modifier = lifeforce_modifier_cunning }
+			remove_character_modifier = lifeforce_modifier_cunning
 			change_variable = {
-				name = bm_lifeforce_focus_stacks
+				name = bm_lifeforce_cunning_stacks
 				add = 1
 			}
 		}
@@ -111,11 +111,80 @@
 			count = {
 				value = 0
 				if = {
-					limit = { exists = var:bm_lifeforce_focus_stacks }
-					add = var:bm_lifeforce_focus_stacks
+					limit = { exists = var:bm_lifeforce_cunning_stacks }
+					add = var:bm_lifeforce_cunning_stacks
 				}
 			}
-			add_character_modifier = lifeforce_modifier_focus
+			add_character_modifier = lifeforce_modifier_cunning
+		}
+
+		set_variable = {
+			name = bm_lifeforce_ancient_stacks
+			value = 0
+		}
+		while = {
+			limit = { has_character_modifier = lifeforce_modifier_ancient }
+			remove_character_modifier = lifeforce_modifier_ancient
+			change_variable = {
+				name = bm_lifeforce_ancient_stacks
+				add = 1
+			}
+		}
+		while = {
+			count = {
+				value = 0
+				if = {
+					limit = { exists = var:bm_lifeforce_ancient_stacks }
+					add = var:bm_lifeforce_ancient_stacks
+				}
+			}
+			add_character_modifier = lifeforce_modifier_ancient
+		}
+
+		set_variable = {
+			name = bm_lifeforce_furious_stacks
+			value = 0
+		}
+		while = {
+			limit = { has_character_modifier = lifeforce_modifier_furious }
+			remove_character_modifier = lifeforce_modifier_furious
+			change_variable = {
+				name = bm_lifeforce_furious_stacks
+				add = 1
+			}
+		}
+		while = {
+			count = {
+				value = 0
+				if = {
+					limit = { exists = var:bm_lifeforce_furious_stacks }
+					add = var:bm_lifeforce_furious_stacks
+				}
+			}
+			add_character_modifier = lifeforce_modifier_furious
+		}
+
+		set_variable = {
+			name = bm_lifeforce_wise_stacks
+			value = 0
+		}
+		while = {
+			limit = { has_character_modifier = lifeforce_modifier_wise }
+			remove_character_modifier = lifeforce_modifier_wise
+			change_variable = {
+				name = bm_lifeforce_wise_stacks
+				add = 1
+			}
+		}
+		while = {
+			count = {
+				value = 0
+				if = {
+					limit = { exists = var:bm_lifeforce_wise_stacks }
+					add = var:bm_lifeforce_wise_stacks
+				}
+			}
+			add_character_modifier = lifeforce_modifier_wise
 		}
 
 		set_variable = {

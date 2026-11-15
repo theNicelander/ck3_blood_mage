@@ -1,6 +1,7 @@
 {
   "version": "1.20",
-  "description": "Allowlist of vanilla CK3 modifiers currently permitted in ck3_blood_mage.",
+  "scope": "character",
+  "description": "Allowlist of vanilla CK3 character-scoped modifiers permitted in ck3_blood_mage.",
   "modifiers": {
     "advantage": {
       "category": "Military & Combat",
@@ -50,10 +51,6 @@
       "category": "Added",
       "vanilla_definition": "00_definitions.txt"
     },
-    "county_opinion_add": {
-      "category": "Opinions & Dread",
-      "vanilla_definition": "00_definitions.txt"
-    },
     "cultural_head_acceptance_gain_mult": {
       "category": "Realm & Holdings",
       "vanilla_definition": "00_definitions.txt"
@@ -62,20 +59,12 @@
       "category": "Added",
       "vanilla_definition": "00_definitions.txt"
     },
-    "defender_holding_advantage": {
-      "category": "Military & Combat",
-      "vanilla_definition": "00_definitions.txt"
-    },
-    "development_growth": {
-      "category": "Realm & Holdings",
-      "vanilla_definition": "00_definitions.txt"
-    },
     "development_growth_factor": {
       "category": "Realm & Holdings",
       "vanilla_definition": "00_definitions.txt"
     },
     "different_faith_county_opinion_mult": {
-      "category": "Opinions & Dread",
+      "category": "Added",
       "vanilla_definition": "00_definitions.txt"
     },
     "different_faith_liege_opinion": {
@@ -160,10 +149,6 @@
     },
     "fertility": {
       "category": "Health & Genetics",
-      "vanilla_definition": "00_definitions.txt"
-    },
-    "fort_level": {
-      "category": "Military & Combat",
       "vanilla_definition": "00_definitions.txt"
     },
     "general_opinion": {
@@ -294,9 +279,9 @@
       "category": "Military & Combat",
       "vanilla_definition": "00_definitions.txt"
     },
-    "monthly_county_control_growth_add": {
-      "category": "Realm & Holdings",
-      "vanilla_definition": "00_definitions.txt"
+    "monthly_diplomacy_lifestyle_xp_gain_add": {
+      "category": "Added",
+      "vanilla_definition": "00_lifestyle_definitions.txt"
     },
     "monthly_dynasty_prestige": {
       "category": "Income & Resources",
@@ -314,17 +299,29 @@
       "category": "Income & Resources",
       "vanilla_definition": "00_definitions.txt"
     },
-    "monthly_income_per_piety_level": {
+    "monthly_intrigue_lifestyle_xp_gain_add": {
       "category": "Added",
-      "vanilla_definition": "00_definitions.txt"
+      "vanilla_definition": "00_lifestyle_definitions.txt"
+    },
+    "monthly_learning_lifestyle_xp_gain_add": {
+      "category": "Added",
+      "vanilla_definition": "00_lifestyle_definitions.txt"
     },
     "monthly_legitimacy_add": {
       "category": "Added",
       "vanilla_definition": "00_definitions.txt"
     },
+    "monthly_lifestyle_xp_gain_add": {
+      "category": "Added",
+      "vanilla_definition": "00_lifestyle_definitions.txt"
+    },
     "monthly_lifestyle_xp_gain_mult": {
       "category": "Income & Resources",
       "vanilla_definition": "00_definitions.txt"
+    },
+    "monthly_martial_lifestyle_xp_gain_add": {
+      "category": "Added",
+      "vanilla_definition": "00_lifestyle_definitions.txt"
     },
     "monthly_piety": {
       "category": "Income & Resources",
@@ -349,6 +346,10 @@
     "monthly_prestige_gain_mult": {
       "category": "Income & Resources",
       "vanilla_definition": "00_definitions.txt"
+    },
+    "monthly_stewardship_lifestyle_xp_gain_add": {
+      "category": "Added",
+      "vanilla_definition": "00_lifestyle_definitions.txt"
     },
     "movement_speed": {
       "category": "Military & Combat",
@@ -426,6 +427,10 @@
       "category": "Added",
       "vanilla_definition": "00_definitions.txt"
     },
+    "scheme_discovery_chance_mult": {
+      "category": "Added",
+      "vanilla_definition": "00_definitions.txt"
+    },
     "sea_travel_danger": {
       "category": "Added",
       "vanilla_definition": "00_travel_definitions.txt"
@@ -456,10 +461,6 @@
     },
     "stress_loss_mult": {
       "category": "Stress & Travel",
-      "vanilla_definition": "00_definitions.txt"
-    },
-    "supply_limit_mult": {
-      "category": "Added",
       "vanilla_definition": "00_definitions.txt"
     },
     "tax_mult": {

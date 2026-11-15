@@ -29,20 +29,20 @@
 		decision_to_second_step_button = "BM_EMPOWER_BLOODLINE_DECISION_NEXT_STEP_BUTTON"
 		show_from_start = yes
 
-		# 1. Covenant of Presence
+		# 1. Covenant of Radiance
 		item = {
-			value = bm_covenant_presence
-			current_description = bm_covenant_presence
-			localization = bm_covenant_presence_button
-			icon = "gfx/interface/icons/trait_level_tracks/presence.dds"
+			value = bm_covenant_radiance
+			current_description = bm_covenant_radiance
+			localization = bm_covenant_radiance_button
+			icon = "gfx/interface/icons/trait_level_tracks/radiance.dds"
 			is_shown = {
-				NOT = { house ?= { has_house_modifier = dynasty_blood_presence_modifier_3 } }
+				NOT = { house ?= { has_house_modifier = dynasty_blood_radiance_modifier_3 } }
 			}
 			is_valid = {
-				NOT = { house ?= { has_house_modifier = dynasty_blood_presence_modifier_3 } }
+				NOT = { house ?= { has_house_modifier = dynasty_blood_radiance_modifier_3 } }
 				# Tier I -> Tier II
 				trigger_if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_presence_modifier_1 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_radiance_modifier_1 } }
 					is_blood_mage_tier_2_or_higher_trigger = yes
 					piety_level >= 2
 					piety >= 350
@@ -50,7 +50,7 @@
 				}
 				# Tier II -> Tier III
 				trigger_else_if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_presence_modifier_2 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_radiance_modifier_2 } }
 					is_blood_mage_archmage_trigger = yes
 					piety_level >= 3
 					piety >= 750
@@ -66,26 +66,26 @@
 			ai_chance = {
 				value = 20
 				if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_presence_modifier_3 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_radiance_modifier_3 } }
 					multiply = 0
 				}
 			}
 		}
 
-		# 2. Covenant of Warband
+		# 2. Covenant of Fury
 		item = {
-			value = bm_covenant_warband
-			current_description = bm_covenant_warband
-			localization = bm_covenant_warband_button
-			icon = "gfx/interface/icons/trait_level_tracks/warband.dds"
+			value = bm_covenant_fury
+			current_description = bm_covenant_fury
+			localization = bm_covenant_fury_button
+			icon = "gfx/interface/icons/trait_level_tracks/fury.dds"
 			is_shown = {
-				NOT = { house ?= { has_house_modifier = dynasty_blood_warband_modifier_3 } }
+				NOT = { house ?= { has_house_modifier = dynasty_blood_fury_modifier_3 } }
 			}
 			is_valid = {
-				NOT = { house ?= { has_house_modifier = dynasty_blood_warband_modifier_3 } }
+				NOT = { house ?= { has_house_modifier = dynasty_blood_fury_modifier_3 } }
 				# Tier I -> Tier II
 				trigger_if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_warband_modifier_1 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_fury_modifier_1 } }
 					is_blood_mage_tier_2_or_higher_trigger = yes
 					piety_level >= 2
 					piety >= 350
@@ -93,7 +93,7 @@
 				}
 				# Tier II -> Tier III
 				trigger_else_if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_warband_modifier_2 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_fury_modifier_2 } }
 					is_blood_mage_archmage_trigger = yes
 					piety_level >= 3
 					piety >= 750
@@ -109,26 +109,26 @@
 			ai_chance = {
 				value = 20
 				if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_warband_modifier_3 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_fury_modifier_3 } }
 					multiply = 0
 				}
 			}
 		}
 
-		# 3. Covenant of Prosperity
+		# 3. Covenant of Fortune
 		item = {
-			value = bm_covenant_prosperity
-			current_description = bm_covenant_prosperity
-			localization = bm_covenant_prosperity_button
-			icon = "gfx/interface/icons/trait_level_tracks/prosperity.dds"
+			value = bm_covenant_fortune
+			current_description = bm_covenant_fortune
+			localization = bm_covenant_fortune_button
+			icon = "gfx/interface/icons/trait_level_tracks/fortune.dds"
 			is_shown = {
-				NOT = { house ?= { has_house_modifier = dynasty_blood_prosperity_modifier_3 } }
+				NOT = { house ?= { has_house_modifier = dynasty_blood_fortune_modifier_3 } }
 			}
 			is_valid = {
-				NOT = { house ?= { has_house_modifier = dynasty_blood_prosperity_modifier_3 } }
+				NOT = { house ?= { has_house_modifier = dynasty_blood_fortune_modifier_3 } }
 				# Tier I -> Tier II
 				trigger_if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_prosperity_modifier_1 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_fortune_modifier_1 } }
 					is_blood_mage_tier_2_or_higher_trigger = yes
 					piety_level >= 2
 					piety >= 350
@@ -136,7 +136,7 @@
 				}
 				# Tier II -> Tier III
 				trigger_else_if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_prosperity_modifier_2 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_fortune_modifier_2 } }
 					is_blood_mage_archmage_trigger = yes
 					piety_level >= 3
 					piety >= 750
@@ -152,26 +152,26 @@
 			ai_chance = {
 				value = 20
 				if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_prosperity_modifier_3 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_fortune_modifier_3 } }
 					multiply = 0
 				}
 			}
 		}
 
-		# 4. Covenant of Shadow
+		# 4. Covenant of Cunning
 		item = {
-			value = bm_covenant_shadows
-			current_description = bm_covenant_shadows
-			localization = bm_covenant_shadows_button
-			icon = "gfx/interface/icons/trait_level_tracks/shadows.dds"
+			value = bm_covenant_cunning
+			current_description = bm_covenant_cunning
+			localization = bm_covenant_cunning_button
+			icon = "gfx/interface/icons/trait_level_tracks/cunning.dds"
 			is_shown = {
-				NOT = { house ?= { has_house_modifier = dynasty_blood_shadows_modifier_3 } }
+				NOT = { house ?= { has_house_modifier = dynasty_blood_cunning_modifier_3 } }
 			}
 			is_valid = {
-				NOT = { house ?= { has_house_modifier = dynasty_blood_shadows_modifier_3 } }
+				NOT = { house ?= { has_house_modifier = dynasty_blood_cunning_modifier_3 } }
 				# Tier I -> Tier II
 				trigger_if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_shadows_modifier_1 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_cunning_modifier_1 } }
 					is_blood_mage_tier_2_or_higher_trigger = yes
 					piety_level >= 2
 					piety >= 350
@@ -179,7 +179,7 @@
 				}
 				# Tier II -> Tier III
 				trigger_else_if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_shadows_modifier_2 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_cunning_modifier_2 } }
 					is_blood_mage_archmage_trigger = yes
 					piety_level >= 3
 					piety >= 750
@@ -195,26 +195,26 @@
 			ai_chance = {
 				value = 20
 				if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_shadows_modifier_3 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_cunning_modifier_3 } }
 					multiply = 0
 				}
 			}
 		}
 
-		# 5. Covenant of Mastery
+		# 5. Covenant of Wisdom
 		item = {
-			value = bm_covenant_mastery
-			current_description = bm_covenant_mastery
-			localization = bm_covenant_mastery_button
-			icon = "gfx/interface/icons/trait_level_tracks/mastery.dds"
+			value = bm_covenant_wisdom
+			current_description = bm_covenant_wisdom
+			localization = bm_covenant_wisdom_button
+			icon = "gfx/interface/icons/trait_level_tracks/wisdom.dds"
 			is_shown = {
-				NOT = { house ?= { has_house_modifier = dynasty_blood_mastery_modifier_3 } }
+				NOT = { house ?= { has_house_modifier = dynasty_blood_wisdom_modifier_3 } }
 			}
 			is_valid = {
-				NOT = { house ?= { has_house_modifier = dynasty_blood_mastery_modifier_3 } }
+				NOT = { house ?= { has_house_modifier = dynasty_blood_wisdom_modifier_3 } }
 				# Tier I -> Tier II
 				trigger_if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_mastery_modifier_1 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_wisdom_modifier_1 } }
 					is_blood_mage_tier_2_or_higher_trigger = yes
 					piety_level >= 2
 					piety >= 350
@@ -222,7 +222,7 @@
 				}
 				# Tier II -> Tier III
 				trigger_else_if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_mastery_modifier_2 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_wisdom_modifier_2 } }
 					is_blood_mage_archmage_trigger = yes
 					piety_level >= 3
 					piety >= 750
@@ -238,26 +238,26 @@
 			ai_chance = {
 				value = 20
 				if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_mastery_modifier_3 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_wisdom_modifier_3 } }
 					multiply = 0
 				}
 			}
 		}
 
-		# 6. Covenant of Legacy
+		# 6. Covenant of the Ancient
 		item = {
-			value = bm_covenant_legacy
-			current_description = bm_covenant_legacy
-			localization = bm_covenant_legacy_button
-			icon = "gfx/interface/icons/trait_level_tracks/dynasty.dds"
+			value = bm_covenant_ancient
+			current_description = bm_covenant_ancient
+			localization = bm_covenant_ancient_button
+			icon = "gfx/interface/icons/trait_level_tracks/ancient.dds"
 			is_shown = {
-				NOT = { house ?= { has_house_modifier = dynasty_blood_legacy_modifier_3 } }
+				NOT = { house ?= { has_house_modifier = dynasty_blood_ancient_modifier_3 } }
 			}
 			is_valid = {
-				NOT = { house ?= { has_house_modifier = dynasty_blood_legacy_modifier_3 } }
+				NOT = { house ?= { has_house_modifier = dynasty_blood_ancient_modifier_3 } }
 				# Tier I -> Tier II
 				trigger_if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_legacy_modifier_1 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_ancient_modifier_1 } }
 					is_blood_mage_tier_2_or_higher_trigger = yes
 					piety_level >= 2
 					piety >= 350
@@ -265,7 +265,7 @@
 				}
 				# Tier II -> Tier III
 				trigger_else_if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_legacy_modifier_2 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_ancient_modifier_2 } }
 					is_blood_mage_archmage_trigger = yes
 					piety_level >= 3
 					piety >= 750
@@ -281,43 +281,69 @@
 			ai_chance = {
 				value = 25
 				if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_legacy_modifier_3 } }
+					limit = { house ?= { has_house_modifier = dynasty_blood_ancient_modifier_3 } }
 					multiply = 0
 				}
+			}
+		}
+
+		# 7. Covenant of Initiation (One-off)
+		item = {
+			value = bm_covenant_acolyte
+			current_description = bm_covenant_acolyte
+			localization = bm_covenant_acolyte_button
+			icon = "gfx/interface/icons/modifiers/bm_covenant_ancient.dds"
+			is_shown = {
+				NOT = { house ?= { has_house_modifier = dynasty_blood_acolyte_modifier } }
+			}
+			is_valid = {
+				NOT = { house ?= { has_house_modifier = dynasty_blood_acolyte_modifier } }
+				is_blood_mage_tier_2_or_higher_trigger = yes
+				piety_level >= 5
+				piety >= 350
+				has_character_modifier = lifeforce_modifier_major
+			}
+			ai_chance = {
+				value = 25
 			}
 		}
 	}
 
 	effect = {
 		if = {
-			limit = { scope:bm_covenant_presence = yes }
-			debug_log = "BloodMageDecision: bm_empower_bloodline_decision (presence) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
-			bm_upgrade_house_covenant_effect = { COVENANT = presence }
+			limit = { scope:bm_covenant_radiance = yes }
+			debug_log = "BloodMageDecision: bm_empower_bloodline_decision (radiance) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			bm_upgrade_house_covenant_effect = { COVENANT = radiance }
 		}
 		else_if = {
-			limit = { scope:bm_covenant_warband = yes }
-			debug_log = "BloodMageDecision: bm_empower_bloodline_decision (warband) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
-			bm_upgrade_house_covenant_effect = { COVENANT = warband }
+			limit = { scope:bm_covenant_fury = yes }
+			debug_log = "BloodMageDecision: bm_empower_bloodline_decision (fury) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			bm_upgrade_house_covenant_effect = { COVENANT = fury }
 		}
 		else_if = {
-			limit = { scope:bm_covenant_prosperity = yes }
-			debug_log = "BloodMageDecision: bm_empower_bloodline_decision (prosperity) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
-			bm_upgrade_house_covenant_effect = { COVENANT = prosperity }
+			limit = { scope:bm_covenant_fortune = yes }
+			debug_log = "BloodMageDecision: bm_empower_bloodline_decision (fortune) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			bm_upgrade_house_covenant_effect = { COVENANT = fortune }
 		}
 		else_if = {
-			limit = { scope:bm_covenant_shadows = yes }
-			debug_log = "BloodMageDecision: bm_empower_bloodline_decision (shadows) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
-			bm_upgrade_house_covenant_effect = { COVENANT = shadows }
+			limit = { scope:bm_covenant_cunning = yes }
+			debug_log = "BloodMageDecision: bm_empower_bloodline_decision (cunning) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			bm_upgrade_house_covenant_effect = { COVENANT = cunning }
 		}
 		else_if = {
-			limit = { scope:bm_covenant_mastery = yes }
-			debug_log = "BloodMageDecision: bm_empower_bloodline_decision (mastery) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
-			bm_upgrade_house_covenant_effect = { COVENANT = mastery }
+			limit = { scope:bm_covenant_wisdom = yes }
+			debug_log = "BloodMageDecision: bm_empower_bloodline_decision (wisdom) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			bm_upgrade_house_covenant_effect = { COVENANT = wisdom }
 		}
 		else_if = {
-			limit = { scope:bm_covenant_legacy = yes }
-			debug_log = "BloodMageDecision: bm_empower_bloodline_decision (legacy) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
-			bm_upgrade_house_covenant_effect = { COVENANT = legacy }
+			limit = { scope:bm_covenant_ancient = yes }
+			debug_log = "BloodMageDecision: bm_empower_bloodline_decision (ancient) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			bm_upgrade_house_covenant_effect = { COVENANT = ancient }
+		}
+		else_if = {
+			limit = { scope:bm_covenant_acolyte = yes }
+			debug_log = "BloodMageDecision: bm_empower_bloodline_decision (acolyte) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			bm_grant_acolyte_covenant_effect = yes
 		}
 		else = {
 			custom_tooltip = bm_empower_bloodline_decision_effect
@@ -328,12 +354,12 @@
 		}
 	}
 
-	ai_check_interval = 12
+	ai_check_interval = 6
+	ai_potential = {
+		is_blood_mage_any_tier_trigger = yes
+		exists = house
+	}
 	ai_will_do = {
-		base = 50
-		modifier = {
-			health <= fine_health
-			add = -100
-		}
+		base = 100
 	}
 }

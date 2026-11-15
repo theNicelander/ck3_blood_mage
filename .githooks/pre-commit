@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+branch="$(git symbolic-ref --short HEAD 2>/dev/null || true)"
+if [ "$branch" = "main" ]; then
+    echo "ERROR: Direct commits to 'main' are forbidden." >&2
+    echo "Create a sequential feature branch first (e.g. git checkout -b v1.20.<N+1>)." >&2
+    exit 1
+fi

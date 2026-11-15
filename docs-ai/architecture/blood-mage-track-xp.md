@@ -1,13 +1,13 @@
 # Blood Mage Track XP & Costs (Hub)
 
-XP sources, Piety costs, Lifeforce sinks/sources, cooldowns for all lifestyle track progression. Per-trait detail: [mage](blood-mage-track-xp-mage.md) (`bloodline`, `hematurgy`, `bloodlust`), [power](blood-mage-track-xp-power.md) (`lifestyle_blood_power`). This file: shared rules and the devotion tracks on Blood Mage (`ancient`, `enlightenment`, `benediction`).
+XP sources, Piety costs, Lifeforce sinks/sources, cooldowns for all lifestyle track progression. Per-trait detail: [mage](blood-mage-track-xp-mage.md) (`fortune`, `cunning`, `fury`). This file: shared rules and the devotion tracks on Blood Mage (`ancient`, `wisdom`, `radiance`).
 
 ## Shared Rules
 
 - **Engine cap**: 100 XP max per track (10 tiers at 10 XP steps). Overflow discarded.
-- **Traits/tracks**: `lifestyle_blood_mage` (`ancient`, `enlightenment`, `bloodline`, `benediction`, `hematurgy`, `bloodlust`); `lifestyle_blood_power` (`dynasty`, `warband`, `mastery`, `presence`, `prosperity`, `shadows`).
-- **Vitality baseline**: Tiers 10–40 and 60–90 on `lifestyle_blood_mage` give `+0.1` Health, `+2.5` Life Expectancy, `+1.25` Year Fertility, `+1` Epidemic Resistance. Tiers 50 and 100 award 4× and 8× vitality milestones. `lifestyle_blood_power` has no vitality baseline.
-- **Apex Devotion (Levels 6–8)**: 100 XP capstones of `ancient`, `enlightenment`, `benediction` each grant `character_max_piety_level_add = 1`.
+- **Traits/tracks**: `lifestyle_blood_mage` (`ancient`, `wisdom`, `fortune`, `radiance`, `cunning`, `fury`).
+- **Vitality baseline**: Tiers 10–40 and 60–90 on `lifestyle_blood_mage` give `+0.1` Health, `+2.5` Life Expectancy, `+1.25` Year Fertility, `+1` Epidemic Resistance. Tiers 50 and 100 award 4× and 8× vitality milestones.
+- **Apex Devotion (Levels 6–8)**: 100 XP capstones of `ancient`, `wisdom`, `radiance` each grant `character_max_piety_level_add = 1`.
 - **Age lock**: every track capstone at 100 XP grants `no_prowess_loss_from_age = yes`.
 - **Cost types**: Piety, Lifeforce (`lifeforce_modifier_minor` / `lifeforce_modifier_major` / `lifeforce_modifier_superior`), Piety Levels (`piety_level`), cooldowns. "Grants" = action yields Lifeforce.
 
@@ -16,34 +16,35 @@ XP sources, Piety costs, Lifeforce sinks/sources, cooldowns for all lifestyle tr
 | Trait | Track | XP per action | Cost range |
 | --- | --- | --- | --- |
 | Mage | `ancient` | +1 to +10 | 0 (pulse) / 25–400 Piety + Minor/Major/Superior |
-| Mage | `enlightenment` | +1 to +5 | 75 – 1000 Piety + Minor/Major/Superior |
-| Mage | `benediction` | +1 to +4 | 15 – 100 Piety + Minor/Major |
-| Mage | `bloodline` | +1 to +3 | 0 – 500 Piety + Minor/Major/Superior |
-| Mage | `hematurgy` | +1 | 25 – 250 Piety (grants Minor/Major) |
-| Mage | `bloodlust` | +1 to +5 | 0 Piety (battle / single combat / duels) |
+| Mage | `wisdom` | +1 to +5 | 75 – 1000 Piety + Minor/Major/Superior |
+| Mage | `radiance` | +1 to +4 | 15 – 100 Piety + Minor/Major |
+| Mage | `fortune` | +1 to +3 | 0 – 500 Piety + Minor/Major/Superior |
+| Mage | `cunning` | +1 | 25 – 250 Piety (grants Minor/Major) |
+| Mage | `fury` | +1 to +5 | 0 Piety (battle / single combat / duels) |
 | Power | chosen track | +10 | 150 Piety + Major |
 
 ## Attunement Pulses (all tracks)
 
-Guaranteed, no cost, 1 year cooldown: **+1 XP** (**+2 XP** with Superior **Hulinhjálmur**) when holder has `<track>_attuned` (e.g. `ancient_attuned`, `enlightenment_attuned`, `benediction_attuned`, `bloodline_attuned`, `hematurgy_attuned`, `bloodlust_attuned`).
+Guaranteed, no cost, 1 year cooldown: **+1 XP** (**+2 XP** with Superior **Hulinhjálmur**) when holder has `<track>_attuned` (e.g. `ancient_attuned`, `wisdom_attuned`, `radiance_attuned`, `fortune_attuned`, `cunning_attuned`, `fury_attuned`).
 
 | Track | Event |
 | --- | --- |
-| `ancient`, `enlightenment`, `benediction`, `bloodline`, `hematurgy`, `bloodlust` | `blood_mage_yearly_events.001` |
+| `ancient`, `wisdom`, `radiance`, `fortune`, `cunning`, `fury` | `blood_mage_yearly_events.001` |
 
 ## `ancient`
 
 | XP | Cost | Action | Source | Req | CD |
 | --- | --- | --- | --- | --- | --- |
 | +1 | None | Yearly Pulse | on-action `blood_mage_yearly_events.001` | `lifestyle_blood_mage` | 1 year |
-| grants `ancient_attuned` | Initial free; change: 100 Piety + Minor (`lifeforce_modifier_minor`) | Attune Lifeforce | decision `bm_attune_lifeforce_decision` | Change: Minor lifeforce, piety >= 100 | 3 years |
+| grants `*_attuned` | 50 Piety + Minor (`lifeforce_modifier_minor`) | Attune Lifeforce | decision `bm_cast_blood_magic_minor_decision` -> `bm_attune_lifeforce.001` | Minor lifeforce, piety >= 50 | 1 year |
 | +4 | 0 Piety + Minor | Inscribe Minor Blood Rune (Self) | event option `bm_cast_blood_magic_minor.001` | `piety_level >= 2` | 5 years |
 | +5 | 50/100 Piety + Minor + 10 Discipline XP | Distill Blood (Discipline to Ancient) | decision `bm_blood_distillation_decision` | Ancient < 100 XP, Minor lifeforce, >= 10 XP in any discipline track | None |
 | +5 | 200 Piety + Major (`lifeforce_modifier_major`) | Inscribe Major Blood Rune (Self) | `bm_cast_blood_magic_major.001` | `piety_level >= 3`, Minor rune | 5 years |
 | +10 | 400 Piety + Superior (`lifeforce_modifier_superior`) | Inscribe Superior Blood Rune (Self) | `bm_cast_blood_magic_superior.001` | `piety_level >= 4`, Major rune | 5 years |
-| +2 (+5 if firstborn) | None | Childbirth Milestone | on-action `on_birth_child` -> `bm_on_birth_bloodline_xp` | Parent is blood mage | Per birth |
+| +2 (+5 if firstborn) | None | Childbirth Milestone | on-action `on_birth_child` -> `bm_on_birth_fortune_xp` | Parent is blood mage | Per birth |
+| +1 (25% / 50% / 100% chance for Tier I/II/III Covenant of the Ancient) | None | Yearly Covenant Pulse | on-action `blood_mage_yearly_events.002` | Has house, house covenant | 1 year |
 
-## `enlightenment`
+## `wisdom`
 
 | XP | Cost | Action | Source | Req | CD |
 | --- | --- | --- | --- | --- | --- |
@@ -53,8 +54,9 @@ Guaranteed, no cost, 1 year cooldown: **+1 XP** (**+2 XP** with Superior **Hulin
 | +1 | 200 Piety | Study Arcane Secrets | decision | Learning lifestyle | 3 years |
 | +1 | 75 Piety | Siphon Stored Lifeforce | interaction `bm_siphon_lifeforce_reserves_interaction` | Target has stored Lifeforce | 1 year |
 | +5 (crit), +3 (win) | 150 Piety + Minor | Contest of the Red Art | interaction `bm_occult_mage_duel_interaction` | Target Blood Mage | 3 years |
+| +1 (25% / 50% / 100% chance for Tier I/II/III Covenant of Wisdom) | None | Yearly Covenant Pulse | on-action `blood_mage_yearly_events.002` | Has house, house covenant | 1 year |
 
-## `benediction`
+## `radiance`
 
 | XP | Cost | Action | Source | Req | CD |
 | --- | --- | --- | --- | --- | --- |
@@ -68,10 +70,11 @@ Guaranteed, no cost, 1 year cooldown: **+1 XP** (**+2 XP** with Superior **Hulin
 | +4 (caster) | 0 Piety + Minor | Inscribe Minor Rune on Other | interaction `bm_inscribe_rune_other_interaction` | `piety_level >= 2` | 5 years |
 | +5 (caster) | 200 Piety + Major | Upgrade Major Rune on Other | `bm_inscribe_rune_other_interaction` | `piety_level >= 3` | 5 years |
 | +10 (caster) | 400 Piety + Superior | Upgrade Superior Rune on Other | `bm_inscribe_rune_other_interaction` | `piety_level >= 4` | 5 years |
+| +1 (25% / 50% / 100% chance for Tier I/II/III Covenant of Radiance) | None | Yearly Covenant Pulse | on-action `blood_mage_yearly_events.002` | Has house, house covenant | 1 year |
 
 ## Blood Hunt (all tracks)
 
-**+1 to +5 XP** (`bloodlust` / `enlightenment` / `hematurgy` / `benediction`). Decision & event (`seek_power_decision`, `seek_power.002`–`.011`). Grants Minor, Major, or 25% Superior Lifeforce (single combat duel vs escort knight / 20+ prowess traveler, apex beasts, or cairn). CD 1–3 years (1 year landed, 3 years wanderer).
+**+1 to +5 XP** (`fury` / `wisdom` / `cunning` / `radiance`). Decision & event (`seek_power_decision`, `seek_power.002`–`.011`). Grants Minor, Major, or 25% Superior Lifeforce (single combat duel vs escort knight / 20+ prowess traveler, apex beasts, or cairn). CD 1–3 years (1 year landed, 3 years wanderer).
 
 ## Implementation Files
 
@@ -85,6 +88,5 @@ Guaranteed, no cost, 1 year cooldown: **+1 XP** (**+2 XP** with Superior **Hulin
 | Trait drain | `common/character_interactions/bm_drain_trait.txt`, `events/bm_trait_drain_events.txt`, `common/scripted_effects/bm_drain_trait_effects.txt` |
 | Education | `common/script_values/bm_education_enhancement_piety_cost.txt` |
 | Congenital manifestation | `common/scripted_effects/bm_manifest_traits_effects.txt` |
-| Blood Power events | `events/bm_blood_power_event.txt` |
 | Combat & duel hooks | `common/on_action/bm_combat_on_actions.txt`, `common/on_action/bm_duel_on_actions.txt` |
-| Yearly pulse, attunement, birth | `events/bm_yearly_events.txt`, `common/decisions/cast_magic/bm_attune_lifeforce_decision.txt`, `common/on_action/bm_blood_mage_prevalence_on_actions.txt` |
+| Yearly pulse, attunement, birth | `events/bm_yearly_events.txt`, `events/bm_attune_lifeforce_events.txt`, `common/decisions/cast_magic/bm_cast_blood_magic.txt`, `common/on_action/bm_blood_mage_prevalence_on_actions.txt` |

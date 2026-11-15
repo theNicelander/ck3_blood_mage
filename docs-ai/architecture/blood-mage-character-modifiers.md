@@ -115,9 +115,8 @@ When designing traits or character modifiers, holding/province modifiers fail si
 | :--- | :--- |
 | Attribute & stress scaling definitions | `/Users/clarabotet/Petur/ck3-full/common/modifier_definition_formats/00_definitions.txt` |
 | Stationed Men-at-Arms unit definitions | `/Users/clarabotet/Petur/ck3-full/common/modifier_definition_formats/00_unit_definitions.txt` |
-| Allowlist validation | `scripts/modifiers_allowlist.json` |
+| Allowlist validation | `scripts/modifiers_character_allowlist.json`, `scripts/modifiers_county_allowlist.json`, `scripts/modifiers_domicile_allowlist.json` |
 | Trait milestone usage (`lifestyle_blood_mage`) | `common/traits/bm_blood_mage_trait.txt` |
-| Trait milestone usage (`lifestyle_blood_power`) | `common/traits/bm_power_trait.txt` |
 | Dynasty channel modifiers | `common/modifiers/bm_channel_dynasty_modifiers.txt` |
 
 ---
@@ -126,7 +125,7 @@ When designing traits or character modifiers, holding/province modifiers fail si
 
 - **Silent Zero Evaluation:** Applying `monthly_income_per_piety_level` or `tax_per_piety_level` to a character trait does not crash or log an error in `error.log`. The engine simply resolves holding base income to zero, awarding no gold.
 - **Prestige vs Piety Asymmetry:** The engine implements `tax_per_piety_level` and `monthly_income_per_piety_level` because temples and religious holdings tie into the clergy tax system. Prestige has no holding-level equivalents.
-- **Allowlist Gate:** Every modifier used in mod traits, modifiers, and buildings must exist in `scripts/modifiers_allowlist.json`. If adding an allowed vanilla modifier, verify with `python3 scripts/check_modifiers.py --add <mod>`.
+- **Allowlist Gate:** Every modifier used in mod traits, modifiers, buildings, and domiciles must exist in its scope-specific allowlist (`scripts/modifiers_{character,county,domicile}_allowlist.json`). If adding an allowed vanilla modifier, verify with `python3 scripts/check_modifiers.py --add <mod> --scope <character|county|domicile>`.
 
 ---
 

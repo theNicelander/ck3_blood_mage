@@ -16,9 +16,12 @@ Core spellcasting resource stored as stacking character modifiers (`lifeforce_mo
 | `lifeforce_modifier_minor` | Tier 1 Fuel | Yes | Permanent until spent | `+0.1` Health, `+1` Life Exp, `+2` Epidemic Res, `+0.1` Negate Health Penalty |
 | `lifeforce_modifier_major` | Tier 2 Fuel | Yes | Permanent until spent | `+0.3` Health, `+3` Life Exp, `+6` Epidemic Res, `+0.3` Negate Health Penalty |
 | `lifeforce_modifier_superior` | Tier 3 Fuel | Yes | Permanent until spent | `+0.6` Health, `+6` Life Exp, `+12` Epidemic Res, `+0.6` Negate Health Penalty |
-| `lifeforce_modifier_mojo` | Lineage / Fertility Reservoir | Yes | Permanent until spent | `+10%` Fertility, `+5` Fertility Yrs, `+5%` Inactive Inheritance Chance, `+5%` Genetic Trait Chance, `+5%` Strengthen Blood Chance, `+5` Attraction Opinion |
-| `lifeforce_modifier_fury` | Combat / Martial Reservoir | Yes | Permanent until spent | `+2` Prowess, `+10%` Knight Effectiveness, `+2%` Army Movement Speed, `+2` Travel Safety |
-| `lifeforce_modifier_focus` | Study / Intellectual Reservoir | Yes | Permanent until spent | `+1` Learning, `-10%` Stress Gain, `+5%` Monthly Lifestyle XP Gain |
+| `lifeforce_modifier_radiant` | Diplomacy / Radiance Reservoir | Yes | Permanent until spent | `-5%` Short Reign, `+5%` Long Reign, `+5%` Legitimacy Gain, `+5%` Monthly Prestige Mult, `+5%` Fame Impact, `-5d` Personal Scheme Phase, `+3%` Personal Scheme Success, `+3%` Max Personal Scheme Cap, `+3` Vassal Opinion, `+3` Monthly Diplomacy Lifestyle XP |
+| `lifeforce_modifier_furious` | Martial / Fury Reservoir | Yes | Permanent until spent | `+1` Prowess, `+5%` Army Movement Speed, `+5%` Army Damage, `-5%` Siege Phase Time, `+0.1%` Knight Eff per Prowess, `+0.01` Piety/Knight, `+5%` Counter Efficiency, `+3` Monthly Martial Lifestyle XP |
+| `lifeforce_modifier_fortunate` | Stewardship / Fortune Reservoir | Yes | Permanent until spent | `+2%` Domain Tax Mult, `-3%` Building/Holding/Domicile Gold Cost, `-3%` Building/Holding/Domicile Time, `+3%` Dev Growth, `-3%` MaA Maintenance, `+3` Monthly Stewardship Lifestyle XP |
+| `lifeforce_modifier_cunning` | Intrigue / Cunning Reservoir | Yes | Permanent until spent | `-3%` Max Enemy Hostile Scheme Cap, `-5d` Hostile Scheme Phase, `+3%` Scheme Secrecy, `+3%` Hostile Scheme Success, `+3%` Max Hostile Scheme Cap, `+5%` Scheme Discovery Chance, `+3` Dread Baseline, `+3` Monthly Intrigue Lifestyle XP |
+| `lifeforce_modifier_wise` | Learning / Wisdom Reservoir | Yes | Permanent until spent | `+5%` Monthly Piety Mult, `+5%` Devotion Impact, `+3%` Monthly Lifestyle XP Mult, `-5%` Stress Gain, `+5%` Stress Loss, `+0.1%` Knight Eff per Learning, `-5d` Learn Language Phase, `+3` Monthly Learning Lifestyle XP |
+| `lifeforce_modifier_ancient` | Lineage / Ancient Reservoir | Yes | Permanent until spent | `+5%` Fertility, `+5` Fertility Yrs, `+5%` Inactive Inheritance Chance, `+5%` Genetic Trait Chance, `+5%` Strengthen Blood Chance, `+5%` Monthly Renown Mult, `+3` Dynasty Opinion, `-5%` Inbreeding Chance, `+3` Attraction Opinion, `+3` Monthly Active Lifestyle XP |
 | `lifeforce_modifier_negative_minor` | Minor Exhaustion | Yes | **1 Year** (`365` days) | `-0.1` Health, `-1` Life Exp, `-2` Epidemic Res, `-0.1` Negate Health Penalty, `-1` Prowess |
 | `lifeforce_modifier_negative_major` | Major Exhaustion | Yes | **3 Years** (`1095` days; `365`d on Flay/Distill) | `-0.3` Health, `-3` Life Exp, `-6` Epidemic Res, `-0.3` Negate Health Penalty, `-2` Prowess |
 | `lifeforce_modifier_negative_superior` | Superior Exhaustion | Yes | **3 Years** (`1095` days; `5` yrs on Flay) | `-0.6` Health, `-6` Life Exp, `-12` Epidemic Res, `-0.6` Negate Health Penalty, `-4` Prowess |
@@ -31,7 +34,7 @@ Core spellcasting resource stored as stacking character modifiers (`lifeforce_mo
 
 Triggered on `on_combat_end_winner` (`bm_on_combat_end_winner`) for surviving side commanders and knights who have `lifestyle_blood_mage`:
 
-| Battle Size (`num_total_troops` OR `num_enemies_killed`) | Minor Lifeforce Chance | Major Lifeforce Chance | Commander `bloodlust` XP | Knight `bloodlust` XP |
+| Battle Size (`num_total_troops` OR `num_enemies_killed`) | Minor Lifeforce Chance | Major Lifeforce Chance | Commander `fury` XP | Knight `fury` XP |
 | --- | --- | --- | --- | --- |
 | **10,000+ troops** (or 5,000+ killed) | **100%** (Guaranteed) | **100%** (Guaranteed) | `+5` XP | `+5` XP |
 | **8,000 – 9,999 troops** (or 4,000+ killed) | **100%** (Guaranteed) | **90%** | `+5` XP | `+5` XP |
@@ -43,7 +46,7 @@ Triggered on `on_combat_end_winner` (`bm_on_combat_end_winner`) for surviving si
 | **100 – 499 troops** (or 50+ killed) | **25%** | 0% | `+2` XP | `+1` XP |
 | **< 100 troops** (< 50 killed) | **10%** | 0% | `+2` XP | `+1` XP |
 
-*Note: Surviving a battle defeat (`bm_on_combat_end_loser`) grants `+1` to `+3` `bloodlust` XP and `0` to `+2` `enlightenment` XP based on battle size, with no Lifeforce harvest.*
+*Note: Surviving a battle defeat (`bm_on_combat_end_loser`) grants `+1` to `+3` `fury` XP and `0` to `+2` `wisdom` XP based on battle size, with no Lifeforce harvest.*
 
 ---
 
@@ -51,41 +54,34 @@ Triggered on `on_combat_end_winner` (`bm_on_combat_end_winner`) for surviving si
 
 | Action / Hook | Class Access | Cost / Requirements | Lifeforce Delta | Track XP Gain |
 | --- | --- | --- | --- | --- |
-| **Execute Prisoner (`lifedrain_prisoner_event_interaction`)** | Mage | 50 Piety (`lifedrain_piety_cost_major`), un-drained prisoner | **+1 Major** (executes victim) | `+2` `hematurgy` |
-| **Mass Lifedrain (`mass_lifedrain_prisoners_decision`)** | Mage | Piety per prisoner, dungeon prisoners | **+Minor / +Major** per prisoner executed | Scaled `hematurgy` |
-| **Siphon Courtier/Prisoner (`lifedrain_courtier_event_interaction`)** | Mage | 25 Piety (`lifedrain_piety_cost_minor`), 3-mo CD | **+1 Minor** (victim gets `lifedrained_modifier`) | `+1` `hematurgy` |
-| **Single Combat Lethal Kill (`bm_on_character_death_duel`)** | Mage | Slay opponent in single combat | **+1 Major** (+ **25% chance +1 Superior** if victim `prowess >= 20` or blood mage) | `+5` `bloodlust` |
-| **Battlefield Victory (`bm_on_combat_end_winner`)** | Mage | Win battle as commander or knight | **10%–100% Minor** & **0%–100% Major** (scales by troop bracket) | `+1` to `+5` `bloodlust` |
+| **Execute Prisoner (`lifedrain_prisoner_event_interaction`)** | Mage | 50 Piety (`lifedrain_piety_cost_major`), un-drained prisoner | **+1 Major** (executes victim) | `+2` `cunning` |
+| **Mass Lifedrain (`mass_lifedrain_prisoners_decision`)** | Mage | Piety per prisoner, dungeon prisoners | **+Minor / +Major** per prisoner executed | Scaled `cunning` |
+| **Siphon Courtier/Prisoner (`lifedrain_courtier_event_interaction`)** | Mage | 25 Piety (`lifedrain_piety_cost_minor`), 3-mo CD | **+1 Minor** (victim gets `lifedrained_modifier`) | `+1` `cunning` |
+| **Single Combat Lethal Kill (`bm_on_character_death_duel`)** | Mage | Slay opponent in single combat | **+1 Major** (+ **25% chance +1 Superior** if victim `prowess >= 20` or blood mage) | `+5` `fury` |
+| **Battlefield Victory (`bm_on_combat_end_winner`)** | Mage | Win battle as commander or knight | **10%–100% Minor** & **0%–100% Major** (scales by troop bracket) | `+1` to `+5` `fury` |
 | **Murder Scheme Execution (`bm_on_murder_success_hulinhjalmur`)** | Superior Hulinhjálmur | Execute successful Murder scheme | **+1 Major** | None |
-| **Manifest Lifeforce (`bm_manifest_lifeforce_decision`)** | Mage | 100–1000 Piety, `piety_level >= 2`, 1-yr CD | Interaction modal popup (`bm_manifest_lifeforce_interaction`): 100p (+1 XP, 50% fail -> 4% floor, Minor/Major success), 250p (+3 XP, 25% fail -> 3% floor, 1x/2x Major success), 500p (+5 XP, guaranteed Minor upfront, 1x/2x Major or Minor consolation, zero fail), 1000p (+7 XP, guaranteed Minor & 1 Major upfront, 1x/2x Major or Superior, zero fail) | `+1` / `+3` / `+5` / `+7` `enlightenment` |
+| **Manifest Lifeforce (`bm_manifest_lifeforce_decision`)** | Mage | 100–1000 Piety, `piety_level >= 2`, 1-yr CD | Interaction modal popup (`bm_manifest_lifeforce_interaction`): 100p (+1 XP, 50% fail -> 4% floor, Minor/Major success), 250p (+3 XP, 25% fail -> 3% floor, 1x/2x Major success), 500p (+5 XP, guaranteed Minor upfront, 1x/2x Major or Minor consolation, zero fail), 1000p (+7 XP, guaranteed Minor & 1 Major upfront, 1x/2x Major or Superior, zero fail) | `+1` / `+3` / `+5` / `+7` `wisdom` |
 | **Condense Minor Lifeforce (`bm_minor_condense`)** | Mage (`bm_cast_blood_magic_minor_decision`) | 150 Piety + 1 Minor Lifeforce, 6-mo CD | **-1 Minor -> +1 Major** (no exhaustion debuff) | `+2` `ancient` |
 | **Condense Major Lifeforce (`bm_major_condense`)** | Mage (`bm_cast_blood_magic_major_decision`) | 350 Piety + 1 Major Lifeforce, `piety_level >= 2`, 6-mo CD | **-1 Major -> +1 Superior** (no exhaustion debuff) | `+3` `ancient` |
 | **Split Superior Lifeforce (`bm_superior_split`)** | Mage (`bm_cast_blood_magic_superior_decision`) | 350 Piety + 1 Superior Lifeforce, `piety_level >= 2`, 6-mo CD | **-1 Superior -> +2 Major** (no exhaustion debuff) | `+3` `ancient` |
 | **Split Major Lifeforce (`bm_major_split`)** | Mage (`bm_cast_blood_magic_major_decision`) | 150 Piety + 1 Major Lifeforce, 6-mo CD | **-1 Major -> +2 Minor** (no exhaustion debuff) | `+2` `ancient` |
-| **Childbirth Milestone (`bm_on_birth_bloodline_xp`)** | Mage only | Child born to blood mage parent | **+1 Major** per child born; burns 1 Mojo per parent | `+2` (`+4` inheriting; doubled by Superior Feingur) `bloodline`; `+3` per Mojo burned |
-| **Channel Minor into Mojo (`bm_minor_channel_mojo`)** | Mage (`bm_transmute_lifeforce_decision`) | 25 Piety + 1 Minor Lifeforce | **-1 Minor -> +1 Mojo** | `+1` `bloodline` |
-| **Channel Major into Mojo (`bm_major_channel_mojo`)** | Mage (`bm_transmute_lifeforce_decision`) | 50 Piety + 1 Major Lifeforce | **-1 Major -> +3 Mojo** | `+2` `bloodline` |
-| **Reclaim Minor from Mojo (`bm_minor_reclaim_mojo`)** | Mage (`bm_transmute_lifeforce_decision`) | 25 Piety + 1 Mojo Lifeforce | **-1 Mojo -> +1 Minor** | `+1` `bloodline` |
-| **Channel Minor into Fury (`bm_minor_channel_fury`)** | Mage (`bm_transmute_lifeforce_decision`) | 25 Piety + 1 Minor Lifeforce | **-1 Minor -> +1 Fury** | `+1` `bloodlust` |
-| **Channel Major into Fury (`bm_major_channel_fury`)** | Mage (`bm_transmute_lifeforce_decision`) | 50 Piety + 1 Major Lifeforce | **-1 Major -> +3 Fury** | `+2` `bloodlust` |
-| **Reclaim Minor from Fury (`bm_minor_reclaim_fury`)** | Mage (`bm_transmute_lifeforce_decision`) | 25 Piety + 1 Fury Lifeforce | **-1 Fury -> +1 Minor** | `+1` `bloodlust` |
-| **Channel Minor into Focus (`bm_minor_channel_focus`)** | Mage (`bm_transmute_lifeforce_decision`) | 25 Piety + 1 Minor Lifeforce | **-1 Minor -> +1 Focus** | `+1` `enlightenment` |
-| **Channel Major into Focus (`bm_major_channel_focus`)** | Mage (`bm_transmute_lifeforce_decision`) | 50 Piety + 1 Major Lifeforce | **-1 Major -> +3 Focus** | `+2` `enlightenment` |
-| **Reclaim Minor from Focus (`bm_minor_reclaim_focus`)** | Mage (`bm_transmute_lifeforce_decision`) | 25 Piety + 1 Focus Lifeforce | **-1 Focus -> +1 Minor** | `+1` `enlightenment` |
-| **Go on a Blood Hunt (`seek_power_decision`)** | Mage | Free, 1-yr CD (halved to 6 months by Superior Vegvísir) | **+1 Minor**, **+1 Major**, or **+1 Major + 25% +1 Superior** (Single Combat battlefield duel against escort knight or 20+ prowess traveler) | `+1` to `+5` `bloodlust` / `+1` to `+5` `hematurgy` / `+1` `bloodline` / `+2` `ancient` / `+1`–`+2` `enlightenment` / `+1` `benediction` |
-| **Cast Minor Blood Magic Rites (`bm_cast_blood_magic_minor_decision`)** | Mage | `0–75` Piety + 1 Minor Lifeforce | **-1 Minor** (+ 1-yr Minor exhaustion) | `+1` `enlightenment` / `+2` `bloodline` / `+4` `ancient` |
-| **Cast Major Blood Magic Rites (`bm_cast_blood_magic_major_decision`)** | Mage | `75–600` Piety + 1 Major Lifeforce | **-1 Major** (+ 3-yr Major exhaustion) | `+3` to `+5` track XP (`+10` Power XP) |
+| **Childbirth Milestone (`bm_on_birth_fortune_xp`)** | Mage only | Child born to blood mage parent | **+1 Major** per child born; burns 1 Mojo per parent | `+2` (`+4` inheriting; doubled by Superior Feingur) `fortune`; `+3` per Mojo burned |
+| **Transmute Major -> Reservoir (`bm_transmute_lifeforce.0002`)** | Mage (`bm_transmute_lifeforce_decision`) | 50 Piety + 1 Major Lifeforce | **-1 Major -> +1 Reservoir** (`radiant`, `furious`, `fortunate`, `cunning`, `wise`, `ancient`) | `+1` `ancient` (Ancient Blood) / `+2` matching track (others) |
+| **Reclaim Major from Reservoir (`bm_transmute_lifeforce.0004`)** | Mage (`bm_transmute_lifeforce_decision`) | 50 Piety + 1 Reservoir stack | **-1 Reservoir -> +1 Major** (`radiant`, `furious`, `fortunate`, `cunning`, `wise`, `ancient`) | None |
+| **Go on a Blood Hunt (`seek_power_decision`)** | Mage | Free, 1-yr CD (halved to 6 months by Superior Vegvísir) | **+1 Minor**, **+1 Major**, or **+1 Major + 25% +1 Superior** (Single Combat battlefield duel against escort knight or 20+ prowess traveler) | `+1` to `+5` `fury` / `+1` to `+5` `cunning` / `+1` `fortune` / `+2` `ancient` / `+1`–`+2` `wisdom` / `+1` `radiance` |
+| **Cast Minor Blood Magic Rites (`bm_cast_blood_magic_minor_decision`)** | Mage | `0–75` Piety + 1 Minor Lifeforce | **-1 Minor** (+ 1-yr Minor exhaustion) | `+1` `wisdom` / `+2` `fortune` / `+4` `ancient` |
+| **Cast Major Blood Magic Rites (`bm_cast_blood_magic_major_decision`)** | Mage | `75–600` Piety + 1 Major Lifeforce | **-1 Major** (+ 3-yr Major exhaustion) | `+3` to `+5` track XP |
 | **Cast Superior Blood Magic Rites (`bm_cast_blood_magic_superior_decision`)** | Mage | `350–1500` Piety + 1 Superior Lifeforce | **-1 Superior** (+ 3-yr Superior exhaustion) | `+5` to `+20` track XP |
-| **Heal Ailments (`bm_heal_ailment`)** | Mage | `15 / 35 / 100` Piety (halved by Superior Drepsóttarstafur) | Minor: **-1 Minor**; Major: **-1 Major**; Deadly: **-1 Minor & -1 Major** | `+2` / `+4` / `+8` `benediction` |
-| **Heal Old Age (`bm_heal_old_age_trait`)** | Mage | `50 / 150` Piety | Minor (-20 XP): **-1 Minor**; Major (-50 XP / Cure): **-1 Major** | `+1` / `+2` `benediction` |
-| **Inscribe Rune on Other (`bm_inscribe_rune_other_interaction`)** | Mage | `0 / 200 / 400` Piety + Minor/Major/Superior Lifeforce, 5-yr CD | **-1 Minor / Major / Superior** | `+4` / `+5` / `+10` `benediction` |
-| **Initiate Mage (`grant_blood_magic`)** | Mage | `100`p + Major OR `250`p + Minor Lifeforce | **-1 Major** or **-1 Minor** | `+4` (`+5` kin) or `+2` `bloodline` |
+| **Heal Ailments (`bm_heal_ailment`)** | Mage | `15 / 35 / 100` Piety (halved by Superior Drepsóttarstafur) | Minor: **-1 Minor**; Major: **-1 Major**; Deadly: **-1 Minor & -1 Major** | `+2` / `+4` / `+8` `radiance` |
+| **Heal Old Age (`bm_heal_old_age_trait`)** | Mage | `50 / 150` Piety | Minor (-20 XP): **-1 Minor**; Major (-50 XP / Cure): **-1 Major** | `+1` / `+2` `radiance` |
+| **Inscribe Rune on Other (`bm_inscribe_rune_other_interaction`)** | Mage | `0 / 200 / 400` Piety + Minor/Major/Superior Lifeforce, 5-yr CD | **-1 Minor / Major / Superior** | `+4` / `+5` / `+10` `radiance` |
+| **Initiate Mage (`grant_blood_magic`)** | Mage | `100`p + Major OR `250`p + Minor Lifeforce | **-1 Major** or **-1 Minor** | `+4` (`+5` kin) or `+2` `fortune` |
 | **Ask for Blood Magic (`ask_for_blood_magic_interaction`)** | Non-Mage Actor | Actor pays `250` Piety; Teacher holds Superior Lifeforce | Teacher: **-1 Superior** | None |
-| **Bless Bloodline (`bm_bless_bloodline_interaction`)** | Mage | 35 Piety + 1 Minor Lifeforce | **-1 Minor** | `+2` `bloodline` |
-| **Cast Blood Curse (`bm_curse_blood_interaction`)** | Mage (>=10 Hematurgy) | 50 Piety + 1 Minor Lifeforce | **-1 Minor** (Crit success siphons **+1 Minor** back from victim) | `+2` (win) / `+4` (crit) / `+1` (fail) `hematurgy` |
-| **Grant / Restore Lifeforce (`grant_lifeforce_interaction*`)** | Mage | `25–50` Piety + Minor/Major Lifeforce | Transfers stack to target or clears `lifedrained_modifier` on self or any target | `+1`/`+2` `enlightenment` or `+4` `benediction` |
-| **Bleed Own Vein (`bm_bleed_own_vein_interaction`)** | Mage | Health/Stress toll, 1-yr CD | Minor: **+1 Minor** (wounded); Major: **+1 Major** (wounded_2, lifedrained_modifier, 25 stress) | Minor: `+2` `hematurgy`; Major: `+4` `hematurgy` |
-| **Purge Stress Vices (`bm_purge_coping_traits_interaction`)** | Mage | 250 Piety + 1 Major Lifeforce | **-1 Major** | `+4` `enlightenment` (self) or `+4` `benediction` (other) |
+| **Bless Bloodline (`bm_bless_bloodline_interaction`)** | Mage | 35 Piety + 1 Minor Lifeforce | **-1 Minor** | `+2` `fortune` |
+| **Cast Blood Curse (`bm_curse_blood_interaction`)** | Mage (>=10 Cunning) | 50 Piety + 1 Minor Lifeforce | **-1 Minor** (Crit success siphons **+1 Minor** back from victim) | `+2` (win) / `+4` (crit) / `+1` (fail) `cunning` |
+| **Grant / Restore Lifeforce (`grant_lifeforce_interaction*`)** | Mage | `25–50` Piety + Minor/Major Lifeforce | Transfers stack to target or clears `lifedrained_modifier` on self or any target | `+1`/`+2` `wisdom` or `+4` `radiance` |
+| **Bleed Own Vein (`bm_bleed_own_vein_interaction`)** | Mage | Health/Stress toll, 1-yr CD | Minor: **+1 Minor** (wounded); Major: **+1 Major** (wounded_2, lifedrained_modifier, 25 stress) | Minor: `+2` `cunning`; Major: `+4` `cunning` |
+| **Purge Stress Vices (`bm_purge_coping_traits_interaction`)** | Mage | 250 Piety + 1 Major Lifeforce | **-1 Major** | `+4` `wisdom` (self) or `+4` `radiance` (other) |
 
 ## Where the details live
 
@@ -106,5 +102,5 @@ Triggered on `on_combat_end_winner` (`bm_on_combat_end_winner`) for surviving si
 ## Gotchas
 
 - **Permanent Positive Stacks:** Positive Lifeforce modifiers never expire on their own; they are only removed when consumed by `blood_magic_used_minor/major/superior` or `bm_recount_lifeforce_stacks_effect`.
-- **Recounting Stacks:** Because CK3 script cannot directly query dynamic modifier stack counts, `bm_recount_lifeforce_stacks_effect` strips and re-adds positive Lifeforce modifiers in a `while` loop to update the Story Panel variables (`bm_lifeforce_minor/major/superior_stacks`, plus `mojo/fury/focus`). It is called on-demand by `bm_refresh_blood_magic_rosters_effect` when opening or refreshing the Story Panel, so individual Lifeforce add/remove sites do not need to call it.
+- **Recounting Stacks:** Because CK3 script cannot directly query dynamic modifier stack counts, `bm_recount_lifeforce_stacks_effect` strips and re-adds positive Lifeforce modifiers in a `while` loop to update the Story Panel variables (`bm_lifeforce_minor/major/superior_stacks`, plus `presence/fury/prosperity/shadows/focus/mojo`). It is called on-demand by `bm_refresh_blood_magic_rosters_effect` when opening or refreshing the Story Panel, so individual Lifeforce add/remove sites do not need to call it.
 - **No Multi-Stack Triggers:** CK3 script triggers (`has_character_modifier`) can ONLY check whether a modifier exists (`>= 1` stack). There is NO native engine trigger to check for `>= 2` stacks of a stacking modifier. Never attempt or suggest triggers checking for multiple stacks of the same modifier (e.g. Lifeforce). Lifeforce transmutation loops are balanced via piety costs and timed cooldown flags (`days = 180`).

@@ -1,10 +1,10 @@
-# Bloodlust Track (`lifestyle_blood_mage`)
+# Fury Track (`lifestyle_blood_mage`)
 
-Technical specification for the `bloodlust` lifestyle track on `lifestyle_blood_mage`.
+Technical specification for the `fury` lifestyle track on `lifestyle_blood_mage`.
 
 ## Overview & Philosophy
 
-The `bloodlust` track is the martial, prowess, and battlefield mastery track of `lifestyle_blood_mage`.
+The `fury` track is the martial, prowess, and battlefield mastery track of `lifestyle_blood_mage`.
 
 Every Blood Mage also natively gains the **Worthy Commander** perk (`ignores_gender_army_rules = yes`), allowing all blood mages to lead armies regardless of realm gender laws.
 
@@ -12,7 +12,7 @@ Every Blood Mage also natively gains the **Worthy Commander** perk (`ignores_gen
 
 ## Track Progression & Stat Scaling
 
-The `bloodlust` track uses a 5-milestone progression (10, 30, 50, 70, 100 XP), providing combat command advantages and empowering sworn knights without flat attribute bloat:
+The `fury` track uses a 5-milestone progression (10, 30, 50, 70, 100 XP), providing combat command advantages and empowering sworn knights without flat attribute bloat:
 
 | Tier (XP) | Modifiers Added at Tier (Tier II Blood Mage) | Cumulative Total Highlights |
 | :--- | :--- | :--- |
@@ -23,7 +23,7 @@ The `bloodlust` track uses a 5-milestone progression (10, 30, 50, 70, 100 XP), p
 | **100 XP (Capstone)** | Vitality Step (`+0.2` Health, `+3` Life Exp), `martial = 1`, `knight_effectiveness_per_learning = 0.002` | 5× Vitality (+1.0 Health, +15 Life Exp), +5 Martial, +2 Martial per Piety Level, +1.0% Knight Eff / Learning |
 
 *Note: Scaling across tiers:*
-- All three ranks (`lifestyle_bm_acolyte`, `lifestyle_blood_mage`, `lifestyle_bm_archmage`) share identical Bloodlust attribute, per-piety, health, and knight-effectiveness-per-learning milestones (`+5` Martial, `+2` Martial per Piety Level, `+1.0%` Knight Eff per Learning, `+1.0` Health at 100 XP); Life Expectancy scales per tier (`+2` Acolyte, `+3` Mage, `+4` Archmage per step).
+- All three ranks (`lifestyle_bm_acolyte`, `lifestyle_blood_mage`, `lifestyle_bm_archmage`) share identical Fury attribute, per-piety, health, and knight-effectiveness-per-learning milestones (`+5` Martial, `+2` Martial per Piety Level, `+1.0%` Knight Eff per Learning, `+1.0` Health at 100 XP); Life Expectancy scales per tier (`+2` Acolyte, `+3` Mage, `+4` Archmage per step).
 - **Tier II (`lifestyle_blood_mage`)** base floor adds `+3` Martial, `+1` Martial per Piety Level, and `+1.0%` Knight Eff per Learning; **Tier III (`lifestyle_bm_archmage`)** base floor adds `+6` Martial, `+2` Martial per Piety Level, and `+2.0%` Knight Eff per Learning.
 
 ---
@@ -33,14 +33,14 @@ The `bloodlust` track uses a 5-milestone progression (10, 30, 50, 70, 100 XP), p
 Martial XP gains are consolidated into single, balanced increments:
 
 1. **Battlefield Victories (`common/on_action/bm_combat_on_actions.txt`, `common/scripted_effects/bm_combat_effects.txt`):**
-   - Army Commander victory: +1 to +3 Bloodlust XP (scaled by battle size: +1 for small, +2 for medium, +3 for decisive).
-   - Sworn knight participation in victory: +1 to +2 Bloodlust XP.
-   - Battle Defeat: +1 Bloodlust XP (survival against adversity).
+   - Army Commander victory: +1 to +3 Fury XP (scaled by battle size: +1 for small, +2 for medium, +3 for decisive).
+   - Sworn knight participation in victory: +1 to +2 Fury XP.
+   - Battle Defeat: +1 Fury XP (survival against adversity).
 2. **Duels & Single Combat (`common/on_action/bm_duel_on_actions.txt`, `events/bm_geyser_duel_events.txt`, `events/bm_seek_power_events.txt`):**
-   - Fatal Single Combat kill: +3 Bloodlust XP (via `bm_combat_on_character_death_effect` / `bm_on_character_death_duel`).
-   - Siphoning Duel victory: +2 Bloodlust XP.
-   - Ritual Sparring victory: +2 Bloodlust XP (loss: +1 XP).
+   - Fatal Single Combat kill: +3 Fury XP (via `bm_combat_on_character_death_effect` / `bm_on_character_death_duel`).
+   - Siphoning Duel victory: +2 Fury XP.
+   - Ritual Sparring victory: +2 Fury XP (loss: +1 XP).
 3. **Tournaments (`common/on_action/bm_duel_on_actions.txt`):**
-   - Completing tournament contest: +2 Bloodlust XP.
+   - Completing tournament contest: +2 Fury XP.
 4. **Targeted Blessings (`common/character_interactions/bm_blood_blessing.txt`):**
-   - `blessing_empower` awards +5 Bloodlust XP to recipient blood mages alongside enlightenment and bloodline.
+   - `blessing_empower` awards +5 Fury XP to recipient blood mages alongside wisdom and bloodline.

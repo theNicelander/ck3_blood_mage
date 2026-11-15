@@ -8,7 +8,7 @@ Living technical specification for the Blood Golem construct subsystem.
 - **How to create:** Superior Grimoire option (`bm_cast_blood_magic_superior.001`) accessed via `bm_cast_blood_magic_superior_decision`.
   - **Requirements:** `lifestyle_blood_mage`, Devotion Rank 3 (`piety_level >= 3`), `lifeforce_modifier_superior`.
   - **Cost & Cooldown:** 500 Piety + 1 Superior Lifeforce (inflicts 3-year Superior exhaustion). Cooldown: 3 years (`bm_blood_golem_cooldown`).
-  - **XP Gain:** `+5` `bloodline` XP.
+  - **XP Gain:** `+5` `fortune` XP.
 - **How to shape:** Event `blood_golem.002` loops repeatedly after creation (`blood_golem.001`), letting the creator spend Piety in contested Learning duels (`golem_duel_effect` / `golem_duel_effect_level`) to mold combat and physical traits onto the golem until the creator chooses to complete the ritual.
 
 ### Golem Lifecycle & Base Template (`blood_golem_template`)

@@ -23,7 +23,7 @@ repos:
         name: Check CK3 modifier usage against allowlist
         entry: python3 scripts/check_modifiers.py --staged
         language: system
-        files: '^(common|events)/.*\.txt$|scripts/modifiers_allowlist\.json$'
+        files: '^(common|events)/.*\.txt$|scripts/modifiers_.*_allowlist\.json$'
         pass_filenames: false
       - id: calculate-tokens
         name: Calculate token cost for agent rules and skills (.agents/cost.md)

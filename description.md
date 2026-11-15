@@ -51,11 +51,11 @@ Walk the path of blood with progressive tiers of power that take decades and tho
 The mystic and scholarly path. Features six distinct tracks that gain experience as you use related abilities:
 
 - **Ancient**: Age slower, gain piety, and retain prowess in your old age
-- **Enlightenment**: Gain XP by casting blood magic on yourself, boosting learning and lifestyle XP
+- **Wisdom**: Gain XP by casting blood magic on yourself, boosting learning and lifestyle XP
 - **Bloodline**: Enhance your dynasty, domain limit, and realm development
-- **Benediction**: Gain XP by healing ailments and curing others, earning the love of your vassals
-- **Hematurgy**: Intrigue, dread, hostile schemes, and harvesting traits from victims
-- **Bloodlust**: Battlefield advantage, martial prowess, knight effectiveness, single combat lethality, duel harvesting, and dread
+- **Radiance**: Gain XP by healing ailments and curing others, earning the love of your vassals
+- **Cunning**: Intrigue, dread, hostile schemes, and harvesting traits from victims
+- **Fury**: Battlefield advantage, martial prowess, knight effectiveness, single combat lethality, duel harvesting, and dread
 
 ### Blood Empowerment
 

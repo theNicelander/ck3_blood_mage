@@ -47,9 +47,9 @@
 							has_character_modifier = recently_lifedrained_modifier
 						}
 					}
-					scope:actor = { has_character_modifier = lifeforce_modifier_mojo }
+					scope:actor = { has_character_modifier = lifeforce_modifier_ancient }
 				}
-				value = 25
+				value = lifedrain_piety_cost_major
 			}
 			else_if = {
 				limit = {
@@ -90,7 +90,7 @@
 					has_character_modifier = lifeforce_modifier_minor
 					has_character_modifier = lifeforce_modifier_major
 					has_character_modifier = lifeforce_modifier_superior
-					has_character_modifier = lifeforce_modifier_mojo
+					has_character_modifier = lifeforce_modifier_ancient
 				}
 			}
 		}
@@ -136,7 +136,7 @@
 				OR = {
 					has_character_modifier = lifeforce_modifier_minor
 					has_character_modifier = lifeforce_modifier_major
-					has_character_modifier = lifeforce_modifier_mojo
+					has_character_modifier = lifeforce_modifier_ancient
 				}
 			}
 		}
@@ -144,7 +144,7 @@
 			OR = {
 				scope:recipient = { has_character_modifier = lifedrained_modifier }
 				AND = {
-					scope:actor = { has_character_modifier = lifeforce_modifier_mojo }
+					scope:actor = { has_character_modifier = lifeforce_modifier_ancient }
 					scope:recipient = {
 						OR = {
 							is_spouse_of = scope:actor
@@ -343,11 +343,11 @@
 					if = {
 						limit = { has_character_modifier = lifeforce_modifier_major }
 						blood_magic_used_major = yes
-						add_xp_bm_dynamic = { TRACK = benediction XP = 4 }
+						add_xp_bm_dynamic = { TRACK = radiance XP = 4 }
 						scope:recipient = {
-							add_xp_bm_dynamic = { TRACK = enlightenment XP = 3 }
-							add_xp_bm_dynamic = { TRACK = bloodline XP = 3 }
-							add_xp_bm_dynamic = { TRACK = bloodlust XP = 3 }
+							add_xp_bm_dynamic = { TRACK = wisdom XP = 3 }
+							add_xp_bm_dynamic = { TRACK = fortune XP = 3 }
+							add_xp_bm_dynamic = { TRACK = fury XP = 3 }
 							add_opinion = {
 								target = scope:actor
 								modifier = magic_opinion_positive
@@ -357,11 +357,11 @@
 					}
 					else = {
 						blood_magic_used_minor = yes
-						add_xp_bm_dynamic = { TRACK = benediction XP = 2 }
+						add_xp_bm_dynamic = { TRACK = radiance XP = 2 }
 						scope:recipient = {
-							add_xp_bm_dynamic = { TRACK = enlightenment XP = 2 }
-							add_xp_bm_dynamic = { TRACK = bloodline XP = 2 }
-							add_xp_bm_dynamic = { TRACK = bloodlust XP = 2 }
+							add_xp_bm_dynamic = { TRACK = wisdom XP = 2 }
+							add_xp_bm_dynamic = { TRACK = fortune XP = 2 }
+							add_xp_bm_dynamic = { TRACK = fury XP = 2 }
 							add_opinion = {
 								target = scope:actor
 								modifier = magic_opinion_positive
@@ -397,12 +397,12 @@
 									has_character_modifier = recently_lifedrained_modifier
 								}
 							}
-							has_character_modifier = lifeforce_modifier_mojo
+							has_character_modifier = lifeforce_modifier_ancient
 						}
 						blood_magic_used_mojo = yes
-						add_xp_bm_dynamic = { TRACK = bloodline XP = 2 }
+						add_xp_bm_dynamic = { TRACK = fortune XP = 2 }
 						scope:recipient = {
-							add_character_modifier = { modifier = lifeforce_modifier_mojo }
+							add_character_modifier = { modifier = lifeforce_modifier_ancient }
 							add_opinion = {
 								target = scope:actor
 								modifier = magic_opinion_positive
@@ -416,7 +416,7 @@
 							has_character_modifier = lifeforce_modifier_major
 						}
 						blood_magic_used_major = yes
-						add_xp_bm_dynamic = { TRACK = benediction XP = 2 }
+						add_xp_bm_dynamic = { TRACK = radiance XP = 2 }
 						scope:recipient = {
 							remove_character_modifier = lifedrained_modifier
 							add_character_modifier = { modifier = lifeforce_modifier_minor }
@@ -430,7 +430,7 @@
 					else_if = {
 						limit = { has_character_modifier = lifeforce_modifier_major }
 						blood_magic_used_major = yes
-						add_xp_bm_dynamic = { TRACK = benediction XP = 2 }
+						add_xp_bm_dynamic = { TRACK = radiance XP = 2 }
 						scope:recipient = {
 							add_character_modifier = { modifier = lifeforce_modifier_major }
 							add_opinion = {
@@ -443,7 +443,7 @@
 					else_if = {
 						limit = { has_character_modifier = lifeforce_modifier_minor }
 						blood_magic_used_minor = yes
-						add_xp_bm_dynamic = { TRACK = benediction XP = 1 }
+						add_xp_bm_dynamic = { TRACK = radiance XP = 1 }
 						scope:recipient = {
 							add_character_modifier = { modifier = lifeforce_modifier_minor }
 							add_opinion = {
@@ -455,9 +455,9 @@
 					}
 					else = {
 						blood_magic_used_mojo = yes
-						add_xp_bm_dynamic = { TRACK = bloodline XP = 2 }
+						add_xp_bm_dynamic = { TRACK = fortune XP = 2 }
 						scope:recipient = {
-							add_character_modifier = { modifier = lifeforce_modifier_mojo }
+							add_character_modifier = { modifier = lifeforce_modifier_ancient }
 							add_opinion = {
 								target = scope:actor
 								modifier = magic_opinion_positive
@@ -477,7 +477,7 @@
 					title = bm_blood_blessing_toast
 					left_icon = scope:actor
 					right_icon = scope:recipient
-					bloodline_magic_cast_effect_minor = yes
+					fortune_magic_cast_effect_minor = yes
 					scope:recipient = {
 						if = {
 							limit = { scope:actor = { bm_has_superior_stave_trigger = { STAVE = feingur } } }
@@ -584,7 +584,7 @@
 					right_icon = scope:recipient
 					blood_magic_used_major = yes
 					bm_add_blood_mage_xp_effect = {
-						TRACK = bloodline
+						TRACK = fortune
 						XP = 4
 					}
 					scope:recipient = {
@@ -648,7 +648,7 @@
 					}
 					if = {
 						limit = { is_blood_mage_any_tier_trigger = yes }
-						add_xp_bm_dynamic = { TRACK = bloodline XP = 2 }
+						add_xp_bm_dynamic = { TRACK = fortune XP = 2 }
 					}
 				}
 			}
@@ -683,7 +683,7 @@
 						}
 						blood_magic_used_minor = yes
 						bm_add_blood_mage_xp_effect = {
-						TRACK = benediction
+						TRACK = radiance
 						XP = 4
 					}
 						scope:recipient = {
@@ -700,7 +700,7 @@
 						}
 						blood_magic_used_major = yes
 						bm_add_blood_mage_xp_effect = {
-						TRACK = benediction
+						TRACK = radiance
 						XP = 5
 					}
 						scope:recipient = {
@@ -716,7 +716,7 @@
 						}
 						blood_magic_used_superior = yes
 						bm_add_blood_mage_xp_effect = {
-						TRACK = benediction
+						TRACK = radiance
 						XP = 10
 					}
 						scope:recipient = {
@@ -776,7 +776,7 @@
 		}
 		modifier = {
 			scope:blessing_grant_lifeforce = yes
-			scope:actor = { has_character_modifier = lifeforce_modifier_mojo }
+			scope:actor = { has_character_modifier = lifeforce_modifier_ancient }
 			scope:recipient = {
 				OR = {
 					is_spouse_of = scope:actor
@@ -796,7 +796,7 @@
 			}
 			NOT = {
 				AND = {
-					scope:actor = { has_character_modifier = lifeforce_modifier_mojo }
+					scope:actor = { has_character_modifier = lifeforce_modifier_ancient }
 					scope:recipient = {
 						OR = {
 							is_spouse_of = scope:actor

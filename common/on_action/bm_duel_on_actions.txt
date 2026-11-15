@@ -79,7 +79,7 @@ bm_on_character_death_duel = {
 				has_variable = engaged_in_single_combat
 			}
 			scope:killer = {
-				bm_add_blood_mage_xp_effect = { TRACK = bloodlust XP = 5 }
+				bm_add_blood_mage_xp_effect = { TRACK = fury XP = 5 }
 				add_character_modifier = { modifier = lifeforce_modifier_major }
 				if = {
 					limit = {
@@ -98,10 +98,10 @@ bm_on_character_death_duel = {
 				}
 				send_interface_toast = {
 					type = event_toast_effect_good
-					title = bm_duel_kill_bloodlust_toast
+					title = bm_duel_kill_fury_toast
 					left_icon = scope:killer
 					right_icon = root
-					custom_tooltip = bm_duel_kill_bloodlust_tt
+					custom_tooltip = bm_duel_kill_fury_tt
 				}
 			}
 		}
