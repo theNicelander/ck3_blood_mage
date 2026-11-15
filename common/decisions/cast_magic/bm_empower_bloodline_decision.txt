@@ -286,6 +286,27 @@
 				}
 			}
 		}
+
+		# 7. Covenant of Initiation (One-off)
+		item = {
+			value = bm_covenant_acolyte
+			current_description = bm_covenant_acolyte
+			localization = bm_covenant_acolyte_button
+			icon = "gfx/interface/icons/modifiers/bm_covenant_ancient.dds"
+			is_shown = {
+				NOT = { house ?= { has_house_modifier = dynasty_blood_acolyte_modifier } }
+			}
+			is_valid = {
+				NOT = { house ?= { has_house_modifier = dynasty_blood_acolyte_modifier } }
+				is_blood_mage_tier_2_or_higher_trigger = yes
+				piety_level >= 5
+				piety >= 350
+				has_character_modifier = lifeforce_modifier_major
+			}
+			ai_chance = {
+				value = 25
+			}
+		}
 	}
 
 	effect = {
@@ -319,6 +340,11 @@
 			debug_log = "BloodMageDecision: bm_empower_bloodline_decision (ancient) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
 			bm_upgrade_house_covenant_effect = { COVENANT = ancient }
 		}
+		else_if = {
+			limit = { scope:bm_covenant_acolyte = yes }
+			debug_log = "BloodMageDecision: bm_empower_bloodline_decision (acolyte) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			bm_grant_acolyte_covenant_effect = yes
+		}
 		else = {
 			custom_tooltip = bm_empower_bloodline_decision_effect
 		}
@@ -328,12 +354,12 @@
 		}
 	}
 
-	ai_check_interval = 12
+	ai_check_interval = 6
+	ai_potential = {
+		is_blood_mage_any_tier_trigger = yes
+		exists = house
+	}
 	ai_will_do = {
-		base = 50
-		modifier = {
-			health <= fine_health
-			add = -100
-		}
+		base = 100
 	}
 }
