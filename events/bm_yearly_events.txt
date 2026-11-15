@@ -150,167 +150,197 @@ blood_mage_yearly_events.002 = {
     trigger = {
         is_blood_mage_any_tier_trigger = yes
         exists = house
-        OR = {
-            AND = {
-                NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = radiance VALUE = 100 } }
-                house = {
-                    OR = {
-                        has_house_modifier = dynasty_blood_radiance_modifier_1
-                        has_house_modifier = dynasty_blood_radiance_modifier_2
-                        has_house_modifier = dynasty_blood_radiance_modifier_3
-                    }
-                }
-            }
-            AND = {
-                NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = fury VALUE = 100 } }
-                house = {
-                    OR = {
-                        has_house_modifier = dynasty_blood_fury_modifier_1
-                        has_house_modifier = dynasty_blood_fury_modifier_2
-                        has_house_modifier = dynasty_blood_fury_modifier_3
-                    }
-                }
-            }
-            AND = {
-                NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = fortune VALUE = 100 } }
-                house = {
-                    OR = {
-                        has_house_modifier = dynasty_blood_fortune_modifier_1
-                        has_house_modifier = dynasty_blood_fortune_modifier_2
-                        has_house_modifier = dynasty_blood_fortune_modifier_3
-                    }
-                }
-            }
-            AND = {
-                NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = cunning VALUE = 100 } }
-                house = {
-                    OR = {
-                        has_house_modifier = dynasty_blood_cunning_modifier_1
-                        has_house_modifier = dynasty_blood_cunning_modifier_2
-                        has_house_modifier = dynasty_blood_cunning_modifier_3
-                    }
-                }
-            }
-            AND = {
-                NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = wisdom VALUE = 100 } }
-                house = {
-                    OR = {
-                        has_house_modifier = dynasty_blood_wisdom_modifier_1
-                        has_house_modifier = dynasty_blood_wisdom_modifier_2
-                        has_house_modifier = dynasty_blood_wisdom_modifier_3
-                    }
-                }
-            }
-            AND = {
-                NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = ancient VALUE = 100 } }
-                house = {
-                    OR = {
-                        has_house_modifier = dynasty_blood_ancient_modifier_1
-                        has_house_modifier = dynasty_blood_ancient_modifier_2
-                        has_house_modifier = dynasty_blood_ancient_modifier_3
-                    }
-                }
-            }
-        }
     }
     immediate = {
-        send_interface_toast = {
-            title = blood_mage_yearly_events.002.success
-            left_icon = root
-            # 1. Radiance
+        # Tier I: 50% chance +1 (0.5/yr), Tier II: 100% +1 (1/yr), Tier III: 100% +1 & 50% +1 (1.5/yr)
+        # 1. Radiance
+        if = {
+            limit = { NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = radiance VALUE = 100 } } }
             if = {
-                limit = { NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = radiance VALUE = 100 } } }
-                if = {
-                    limit = { house = { has_house_modifier = dynasty_blood_radiance_modifier_3 } }
-                    bm_add_blood_mage_xp_effect = { TRACK = radiance XP = 3 }
-                }
-                else_if = {
-                    limit = { house = { has_house_modifier = dynasty_blood_radiance_modifier_2 } }
-                    bm_add_blood_mage_xp_effect = { TRACK = radiance XP = 2 }
-                }
-                else_if = {
-                    limit = { house = { has_house_modifier = dynasty_blood_radiance_modifier_1 } }
-                    bm_add_blood_mage_xp_effect = { TRACK = radiance XP = 1 }
+                limit = { house = { has_house_modifier = dynasty_blood_radiance_modifier_3 } }
+                add_character_flag = bm_covenant_roll_radiance
+                random = { chance = 50 add_character_flag = bm_covenant_roll_radiance_bonus }
+            }
+            else_if = {
+                limit = { house = { has_house_modifier = dynasty_blood_radiance_modifier_2 } }
+                add_character_flag = bm_covenant_roll_radiance
+            }
+            else_if = {
+                limit = { house = { has_house_modifier = dynasty_blood_radiance_modifier_1 } }
+                random = { chance = 50 add_character_flag = bm_covenant_roll_radiance }
+            }
+        }
+        # 2. Fury
+        if = {
+            limit = { NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = fury VALUE = 100 } } }
+            if = {
+                limit = { house = { has_house_modifier = dynasty_blood_fury_modifier_3 } }
+                add_character_flag = bm_covenant_roll_fury
+                random = { chance = 50 add_character_flag = bm_covenant_roll_fury_bonus }
+            }
+            else_if = {
+                limit = { house = { has_house_modifier = dynasty_blood_fury_modifier_2 } }
+                add_character_flag = bm_covenant_roll_fury
+            }
+            else_if = {
+                limit = { house = { has_house_modifier = dynasty_blood_fury_modifier_1 } }
+                random = { chance = 50 add_character_flag = bm_covenant_roll_fury }
+            }
+        }
+        # 3. Fortune
+        if = {
+            limit = { NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = fortune VALUE = 100 } } }
+            if = {
+                limit = { house = { has_house_modifier = dynasty_blood_fortune_modifier_3 } }
+                add_character_flag = bm_covenant_roll_bloodline
+                random = { chance = 50 add_character_flag = bm_covenant_roll_bloodline_bonus }
+            }
+            else_if = {
+                limit = { house = { has_house_modifier = dynasty_blood_fortune_modifier_2 } }
+                add_character_flag = bm_covenant_roll_bloodline
+            }
+            else_if = {
+                limit = { house = { has_house_modifier = dynasty_blood_fortune_modifier_1 } }
+                random = { chance = 50 add_character_flag = bm_covenant_roll_bloodline }
+            }
+        }
+        # 4. Cunning
+        if = {
+            limit = { NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = cunning VALUE = 100 } } }
+            if = {
+                limit = { house = { has_house_modifier = dynasty_blood_cunning_modifier_3 } }
+                add_character_flag = bm_covenant_roll_cunning
+                random = { chance = 50 add_character_flag = bm_covenant_roll_cunning_bonus }
+            }
+            else_if = {
+                limit = { house = { has_house_modifier = dynasty_blood_cunning_modifier_2 } }
+                add_character_flag = bm_covenant_roll_cunning
+            }
+            else_if = {
+                limit = { house = { has_house_modifier = dynasty_blood_cunning_modifier_1 } }
+                random = { chance = 50 add_character_flag = bm_covenant_roll_cunning }
+            }
+        }
+        # 5. Wisdom
+        if = {
+            limit = { NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = wisdom VALUE = 100 } } }
+            if = {
+                limit = { house = { has_house_modifier = dynasty_blood_wisdom_modifier_3 } }
+                add_character_flag = bm_covenant_roll_wisdom
+                random = { chance = 50 add_character_flag = bm_covenant_roll_wisdom_bonus }
+            }
+            else_if = {
+                limit = { house = { has_house_modifier = dynasty_blood_wisdom_modifier_2 } }
+                add_character_flag = bm_covenant_roll_wisdom
+            }
+            else_if = {
+                limit = { house = { has_house_modifier = dynasty_blood_wisdom_modifier_1 } }
+                random = { chance = 50 add_character_flag = bm_covenant_roll_wisdom }
+            }
+        }
+        # 6. Ancient
+        if = {
+            limit = { NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = ancient VALUE = 100 } } }
+            if = {
+                limit = { house = { has_house_modifier = dynasty_blood_ancient_modifier_3 } }
+                add_character_flag = bm_covenant_roll_ancient
+                random = { chance = 50 add_character_flag = bm_covenant_roll_ancient_bonus }
+            }
+            else_if = {
+                limit = { house = { has_house_modifier = dynasty_blood_ancient_modifier_2 } }
+                add_character_flag = bm_covenant_roll_ancient
+            }
+            else_if = {
+                limit = { house = { has_house_modifier = dynasty_blood_ancient_modifier_1 } }
+                random = { chance = 50 add_character_flag = bm_covenant_roll_ancient }
+            }
+        }
+
+        if = {
+            limit = {
+                OR = {
+                    has_character_flag = bm_covenant_roll_radiance
+                    has_character_flag = bm_covenant_roll_fury
+                    has_character_flag = bm_covenant_roll_bloodline
+                    has_character_flag = bm_covenant_roll_cunning
+                    has_character_flag = bm_covenant_roll_wisdom
+                    has_character_flag = bm_covenant_roll_ancient
                 }
             }
-            # 2. Fury
-            if = {
-                limit = { NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = fury VALUE = 100 } } }
+            send_interface_toast = {
+                title = blood_mage_yearly_events.002.success
+                left_icon = root
                 if = {
-                    limit = { house = { has_house_modifier = dynasty_blood_fury_modifier_3 } }
-                    bm_add_blood_mage_xp_effect = { TRACK = fury XP = 3 }
+                    limit = { has_character_flag = bm_covenant_roll_radiance }
+                    if = {
+                        limit = { has_character_flag = bm_covenant_roll_radiance_bonus }
+                        bm_add_blood_mage_xp_effect = { TRACK = radiance XP = 2 }
+                        remove_character_flag = bm_covenant_roll_radiance_bonus
+                    }
+                    else = {
+                        bm_add_blood_mage_xp_effect = { TRACK = radiance XP = 1 }
+                    }
+                    remove_character_flag = bm_covenant_roll_radiance
                 }
-                else_if = {
-                    limit = { house = { has_house_modifier = dynasty_blood_fury_modifier_2 } }
-                    bm_add_blood_mage_xp_effect = { TRACK = fury XP = 2 }
-                }
-                else_if = {
-                    limit = { house = { has_house_modifier = dynasty_blood_fury_modifier_1 } }
-                    bm_add_blood_mage_xp_effect = { TRACK = fury XP = 1 }
-                }
-            }
-            # 3. Fortune
-            if = {
-                limit = { NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = fortune VALUE = 100 } } }
                 if = {
-                    limit = { house = { has_house_modifier = dynasty_blood_fortune_modifier_3 } }
-                    bm_add_blood_mage_xp_effect = { TRACK = fortune XP = 3 }
+                    limit = { has_character_flag = bm_covenant_roll_fury }
+                    if = {
+                        limit = { has_character_flag = bm_covenant_roll_fury_bonus }
+                        bm_add_blood_mage_xp_effect = { TRACK = fury XP = 2 }
+                        remove_character_flag = bm_covenant_roll_fury_bonus
+                    }
+                    else = {
+                        bm_add_blood_mage_xp_effect = { TRACK = fury XP = 1 }
+                    }
+                    remove_character_flag = bm_covenant_roll_fury
                 }
-                else_if = {
-                    limit = { house = { has_house_modifier = dynasty_blood_fortune_modifier_2 } }
-                    bm_add_blood_mage_xp_effect = { TRACK = fortune XP = 2 }
-                }
-                else_if = {
-                    limit = { house = { has_house_modifier = dynasty_blood_fortune_modifier_1 } }
-                    bm_add_blood_mage_xp_effect = { TRACK = fortune XP = 1 }
-                }
-            }
-            # 4. Cunning
-            if = {
-                limit = { NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = cunning VALUE = 100 } } }
                 if = {
-                    limit = { house = { has_house_modifier = dynasty_blood_cunning_modifier_3 } }
-                    bm_add_blood_mage_xp_effect = { TRACK = cunning XP = 3 }
+                    limit = { has_character_flag = bm_covenant_roll_bloodline }
+                    if = {
+                        limit = { has_character_flag = bm_covenant_roll_bloodline_bonus }
+                        bm_add_blood_mage_xp_effect = { TRACK = fortune XP = 2 }
+                        remove_character_flag = bm_covenant_roll_bloodline_bonus
+                    }
+                    else = {
+                        bm_add_blood_mage_xp_effect = { TRACK = fortune XP = 1 }
+                    }
+                    remove_character_flag = bm_covenant_roll_bloodline
                 }
-                else_if = {
-                    limit = { house = { has_house_modifier = dynasty_blood_cunning_modifier_2 } }
-                    bm_add_blood_mage_xp_effect = { TRACK = cunning XP = 2 }
-                }
-                else_if = {
-                    limit = { house = { has_house_modifier = dynasty_blood_cunning_modifier_1 } }
-                    bm_add_blood_mage_xp_effect = { TRACK = cunning XP = 1 }
-                }
-            }
-            # 5. Wisdom
-            if = {
-                limit = { NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = wisdom VALUE = 100 } } }
                 if = {
-                    limit = { house = { has_house_modifier = dynasty_blood_wisdom_modifier_3 } }
-                    bm_add_blood_mage_xp_effect = { TRACK = wisdom XP = 3 }
+                    limit = { has_character_flag = bm_covenant_roll_cunning }
+                    if = {
+                        limit = { has_character_flag = bm_covenant_roll_cunning_bonus }
+                        bm_add_blood_mage_xp_effect = { TRACK = cunning XP = 2 }
+                        remove_character_flag = bm_covenant_roll_cunning_bonus
+                    }
+                    else = {
+                        bm_add_blood_mage_xp_effect = { TRACK = cunning XP = 1 }
+                    }
+                    remove_character_flag = bm_covenant_roll_cunning
                 }
-                else_if = {
-                    limit = { house = { has_house_modifier = dynasty_blood_wisdom_modifier_2 } }
-                    bm_add_blood_mage_xp_effect = { TRACK = wisdom XP = 2 }
-                }
-                else_if = {
-                    limit = { house = { has_house_modifier = dynasty_blood_wisdom_modifier_1 } }
-                    bm_add_blood_mage_xp_effect = { TRACK = wisdom XP = 1 }
-                }
-            }
-            # 6. Ancient
-            if = {
-                limit = { NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = ancient VALUE = 100 } } }
                 if = {
-                    limit = { house = { has_house_modifier = dynasty_blood_ancient_modifier_3 } }
-                    bm_add_blood_mage_xp_effect = { TRACK = ancient XP = 3 }
+                    limit = { has_character_flag = bm_covenant_roll_wisdom }
+                    if = {
+                        limit = { has_character_flag = bm_covenant_roll_wisdom_bonus }
+                        bm_add_blood_mage_xp_effect = { TRACK = wisdom XP = 2 }
+                        remove_character_flag = bm_covenant_roll_wisdom_bonus
+                    }
+                    else = {
+                        bm_add_blood_mage_xp_effect = { TRACK = wisdom XP = 1 }
+                    }
+                    remove_character_flag = bm_covenant_roll_wisdom
                 }
-                else_if = {
-                    limit = { house = { has_house_modifier = dynasty_blood_ancient_modifier_2 } }
-                    bm_add_blood_mage_xp_effect = { TRACK = ancient XP = 2 }
-                }
-                else_if = {
-                    limit = { house = { has_house_modifier = dynasty_blood_ancient_modifier_1 } }
-                    bm_add_blood_mage_xp_effect = { TRACK = ancient XP = 1 }
+                if = {
+                    limit = { has_character_flag = bm_covenant_roll_ancient }
+                    if = {
+                        limit = { has_character_flag = bm_covenant_roll_ancient_bonus }
+                        bm_add_blood_mage_xp_effect = { TRACK = ancient XP = 2 }
+                        remove_character_flag = bm_covenant_roll_ancient_bonus
+                    }
+                    else = {
+                        bm_add_blood_mage_xp_effect = { TRACK = ancient XP = 1 }
+                    }
+                    remove_character_flag = bm_covenant_roll_ancient
                 }
             }
         }

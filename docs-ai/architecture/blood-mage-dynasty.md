@@ -11,7 +11,7 @@ House Covenant system accessed via `bm_empower_bloodline_decision` ("Empower Dyn
 - **Universal Piety & Lifespan Baseline:** Every tiered Covenant grants **+0.1 / +0.3 / +0.5 Monthly Piety** across Tiers 1 / 2 / 3 (up to **+3.0 Monthly Piety** when all 6 Covenants are at Tier 3) and **+2 / +4 / +6 Life Expectancy** (`+2 / +4 / +8` for Ancient).
 - **Monthly Lifestyle XP:** Each tiered Covenant grants `+2 / +4 / +6` monthly lifestyle XP in its matching vanilla lifestyle (`+1 / +2 / +4` all-lifestyle XP for Ancient).
 - **1:1 Devotion Scaling:** Every Covenant grants **+1 [Stat] per Devotion Level** at Tier 3 (Superior).
-- **Feedback Loop:** Yearly pulse `blood_mage_yearly_events.002` deterministically grants `+1 / +2 / +3` XP (Tier I / II / III) in the matching `lifestyle_blood_mage` track for each active covenant, capped at 100 XP.
+- **Feedback Loop:** Yearly pulse `blood_mage_yearly_events.002` grants yearly XP in the matching `lifestyle_blood_mage` track for each active covenant (Tier I: 50% `+1` [0.5/yr], Tier II: 100% `+1` [1/yr], Tier III: 100% `+1` + 50% `+1` [1.5/yr]), capped at 100 XP.
 
 ## 6 Three-Tier House Covenants Table
 
