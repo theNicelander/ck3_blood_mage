@@ -34,11 +34,15 @@ lifeforce_modifier_radiant = {
     stacking = yes
 
     monthly_piety = 0.1
-    general_opinion = 3
-    monthly_prestige = 0.2
-    legitimacy_gain_mult = 0.03
-    owned_personal_scheme_success_chance_add = 4
-    monthly_diplomacy_lifestyle_xp_gain_add = 5
+    short_reign_duration_mult = -0.03
+    long_reign_bonus_mult = 0.03
+    legitimacy_gain_mult = 0.02
+    monthly_prestige_gain_mult = 0.02
+    prestige_level_impact_mult = 0.02
+    personal_scheme_phase_duration_add = -3
+    owned_personal_scheme_success_chance_max_add = 2
+    vassal_opinion = 2
+    monthly_diplomacy_lifestyle_xp_gain_add = 3
 }
 
 lifeforce_modifier_furious = {
@@ -46,12 +50,14 @@ lifeforce_modifier_furious = {
     stacking = yes
 
     monthly_piety = 0.1
-    prowess = 2
-    knight_effectiveness_mult = 0.10
-    counter_efficiency = 0.05
+    prowess = 1
     movement_speed = 0.02
-    character_travel_safety = 2
-    monthly_martial_lifestyle_xp_gain_add = 5
+    army_damage_mult = 0.02
+    siege_phase_time = -0.02
+    knight_effectiveness_per_prowess = 0.001
+    monthly_piety_gain_per_knight_add = 0.003
+    counter_efficiency = 0.03
+    monthly_martial_lifestyle_xp_gain_add = 3
 }
 
 lifeforce_modifier_fortunate = {
@@ -59,10 +65,15 @@ lifeforce_modifier_fortunate = {
     stacking = yes
 
     monthly_piety = 0.1
-    monthly_income = 0.2
-    monthly_income_mult = 0.03
-    men_at_arms_maintenance = -0.03
-    monthly_stewardship_lifestyle_xp_gain_add = 5
+    build_gold_cost = -0.02
+    holding_build_gold_cost = -0.02
+    domicile_build_gold_cost = -0.02
+    build_speed = -0.02
+    holding_build_speed = -0.02
+    domicile_build_speed = -0.02
+    development_growth_factor = 0.02
+    men_at_arms_maintenance = -0.02
+    monthly_stewardship_lifestyle_xp_gain_add = 3
 }
 
 lifeforce_modifier_cunning = {
@@ -70,10 +81,13 @@ lifeforce_modifier_cunning = {
     stacking = yes
 
     monthly_piety = 0.1
-    owned_hostile_scheme_success_chance_add = 4
-    enemy_hostile_scheme_success_chance_add = -5
-    dread_baseline_add = 3
-    monthly_intrigue_lifestyle_xp_gain_add = 5
+    enemy_hostile_scheme_success_chance_max_add = -2
+    hostile_scheme_phase_duration_add = -3
+    owned_scheme_secrecy_add = 2
+    owned_hostile_scheme_success_chance_max_add = 2
+    scheme_discovery_chance_mult = 0.03
+    dread_baseline_add = 2
+    monthly_intrigue_lifestyle_xp_gain_add = 3
 }
 
 lifeforce_modifier_wise = {
@@ -81,11 +95,14 @@ lifeforce_modifier_wise = {
     stacking = yes
 
     monthly_piety = 0.1
-    learning = 1
-    monthly_lifestyle_xp_gain_mult = 0.05
-    stress_gain_mult = -0.05
-    stress_loss_mult = 0.05
-    monthly_learning_lifestyle_xp_gain_add = 5
+    monthly_piety_gain_mult = 0.02
+    piety_level_impact_mult = 0.02
+    monthly_lifestyle_xp_gain_mult = 0.03
+    stress_gain_mult = -0.03
+    stress_loss_mult = 0.03
+    knight_effectiveness_per_learning = 0.001
+    learn_language_scheme_phase_duration_add = -3
+    monthly_learning_lifestyle_xp_gain_add = 3
 }
 
 lifeforce_modifier_ancient = {
@@ -93,14 +110,16 @@ lifeforce_modifier_ancient = {
     stacking = yes
 
     monthly_piety = 0.1
-    fertility = 0.10
-    years_of_fertility = 5
-    positive_inactive_inheritance_chance = 0.05
-    positive_random_genetic_chance = 0.05
-    genetic_trait_strengthen_chance = 0.05
-    inbreeding_chance = -0.10
-    attraction_opinion = 5
-    monthly_lifestyle_xp_gain_add = 5
+    fertility = 0.05
+    years_of_fertility = 3
+    positive_inactive_inheritance_chance = 0.03
+    positive_random_genetic_chance = 0.03
+    genetic_trait_strengthen_chance = 0.03
+    monthly_dynasty_prestige_mult = 0.02
+    dynasty_opinion = 2
+    inbreeding_chance = -0.05
+    attraction_opinion = 3
+    monthly_lifestyle_xp_gain_add = 3
 }
 
 lifeforce_modifier_negative_superior = {
