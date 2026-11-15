@@ -33,26 +33,7 @@ bm_transmute_lifeforce.0001 = {
 		}
 	}
 
-	# 2. Minor Transmutations
-	option = {
-		name = bm_transmute_lifeforce.0001.minor
-		trigger = {
-			is_blood_mage_any_tier_trigger = yes
-		}
-		show_as_unavailable = {
-			always = yes
-		}
-		trigger_event = { id = bm_transmute_lifeforce.0003 }
-		ai_chance = {
-			base = 50
-			modifier = {
-				factor = 0
-				NOT = { has_character_modifier = lifeforce_modifier_minor }
-			}
-		}
-	}
-
-	# 3. Reverse (Reclaim Stored Lifeforce)
+	# 2. Reverse (Reclaim Stored Lifeforce)
 	option = {
 		name = bm_transmute_lifeforce.0001.reverse
 		trigger = {
@@ -117,11 +98,9 @@ bm_transmute_lifeforce.0002 = {
 			left_icon = root
 			remove_character_modifier = lifeforce_modifier_major
 			add_character_modifier = { modifier = lifeforce_modifier_radiant }
-			add_character_modifier = { modifier = lifeforce_modifier_radiant }
-			add_character_modifier = { modifier = lifeforce_modifier_radiant }
 			add_xp_bm_dynamic = {
 				TRACK = radiance
-				XP = 4
+				XP = 2
 			}
 		}
 		ai_chance = {
@@ -150,11 +129,9 @@ bm_transmute_lifeforce.0002 = {
 			left_icon = root
 			remove_character_modifier = lifeforce_modifier_major
 			add_character_modifier = { modifier = lifeforce_modifier_furious }
-			add_character_modifier = { modifier = lifeforce_modifier_furious }
-			add_character_modifier = { modifier = lifeforce_modifier_furious }
 			add_xp_bm_dynamic = {
 				TRACK = fury
-				XP = 4
+				XP = 2
 			}
 		}
 		ai_chance = {
@@ -183,11 +160,9 @@ bm_transmute_lifeforce.0002 = {
 			left_icon = root
 			remove_character_modifier = lifeforce_modifier_major
 			add_character_modifier = { modifier = lifeforce_modifier_fortunate }
-			add_character_modifier = { modifier = lifeforce_modifier_fortunate }
-			add_character_modifier = { modifier = lifeforce_modifier_fortunate }
 			add_xp_bm_dynamic = {
 				TRACK = fortune
-				XP = 4
+				XP = 2
 			}
 		}
 		ai_chance = {
@@ -216,11 +191,9 @@ bm_transmute_lifeforce.0002 = {
 			left_icon = root
 			remove_character_modifier = lifeforce_modifier_major
 			add_character_modifier = { modifier = lifeforce_modifier_cunning }
-			add_character_modifier = { modifier = lifeforce_modifier_cunning }
-			add_character_modifier = { modifier = lifeforce_modifier_cunning }
 			add_xp_bm_dynamic = {
 				TRACK = cunning
-				XP = 4
+				XP = 2
 			}
 		}
 		ai_chance = {
@@ -249,11 +222,9 @@ bm_transmute_lifeforce.0002 = {
 			left_icon = root
 			remove_character_modifier = lifeforce_modifier_major
 			add_character_modifier = { modifier = lifeforce_modifier_wise }
-			add_character_modifier = { modifier = lifeforce_modifier_wise }
-			add_character_modifier = { modifier = lifeforce_modifier_wise }
 			add_xp_bm_dynamic = {
 				TRACK = wisdom
-				XP = 4
+				XP = 2
 			}
 		}
 		ai_chance = {
@@ -281,219 +252,6 @@ bm_transmute_lifeforce.0002 = {
 			title = bm_channel_ancient_major_toast
 			left_icon = root
 			remove_character_modifier = lifeforce_modifier_major
-			add_character_modifier = { modifier = lifeforce_modifier_ancient }
-			add_character_modifier = { modifier = lifeforce_modifier_ancient }
-			add_character_modifier = { modifier = lifeforce_modifier_ancient }
-			add_xp_bm_dynamic = {
-				TRACK = ancient
-				XP = 2
-			}
-		}
-		ai_chance = {
-			base = 50
-			modifier = {
-				add = 50
-				NOT = { has_character_modifier = lifeforce_modifier_ancient }
-			}
-		}
-	}
-
-	# Back
-	option = {
-		name = bm_transmute_lifeforce.back
-		trigger = {
-			always = yes
-		}
-		trigger_event = { id = bm_transmute_lifeforce.0001 }
-		ai_chance = {
-			base = 0
-		}
-	}
-}
-
-# Minor Transmutations Event: Presence / Fury / Prosperity / Shadows / Focus / Mojo / Back
-bm_transmute_lifeforce.0003 = {
-	type = character_event
-	title = bm_transmute_lifeforce.0003.t
-	desc = bm_transmute_lifeforce.0003.desc
-	theme = witchcraft
-
-	left_portrait = {
-		character = root
-		animation = personality_rational
-	}
-
-	# Presence (Diplomacy)
-	option = {
-		name = bm_transmute_lifeforce.0003.radiant
-		trigger = {
-			piety >= 25
-			has_character_modifier = lifeforce_modifier_minor
-		}
-		show_as_unavailable = {
-			always = yes
-		}
-		add_piety = -25
-		send_interface_toast = {
-			type = event_toast_effect_good
-			title = bm_channel_radiant_minor_toast
-			left_icon = root
-			remove_character_modifier = lifeforce_modifier_minor
-			add_character_modifier = { modifier = lifeforce_modifier_radiant }
-			add_xp_bm_dynamic = {
-				TRACK = radiance
-				XP = 2
-			}
-		}
-		ai_chance = {
-			base = 50
-			modifier = {
-				add = 50
-				NOT = { has_character_modifier = lifeforce_modifier_radiant }
-			}
-		}
-	}
-
-	# Fury (Martial)
-	option = {
-		name = bm_transmute_lifeforce.0003.furious
-		trigger = {
-			piety >= 25
-			has_character_modifier = lifeforce_modifier_minor
-		}
-		show_as_unavailable = {
-			always = yes
-		}
-		add_piety = -25
-		send_interface_toast = {
-			type = event_toast_effect_good
-			title = bm_channel_furious_minor_toast
-			left_icon = root
-			remove_character_modifier = lifeforce_modifier_minor
-			add_character_modifier = { modifier = lifeforce_modifier_furious }
-			add_xp_bm_dynamic = {
-				TRACK = fury
-				XP = 2
-			}
-		}
-		ai_chance = {
-			base = 50
-			modifier = {
-				add = 50
-				NOT = { has_character_modifier = lifeforce_modifier_furious }
-			}
-		}
-	}
-
-	# Prosperity (Stewardship)
-	option = {
-		name = bm_transmute_lifeforce.0003.fortunate
-		trigger = {
-			piety >= 25
-			has_character_modifier = lifeforce_modifier_minor
-		}
-		show_as_unavailable = {
-			always = yes
-		}
-		add_piety = -25
-		send_interface_toast = {
-			type = event_toast_effect_good
-			title = bm_channel_fortunate_minor_toast
-			left_icon = root
-			remove_character_modifier = lifeforce_modifier_minor
-			add_character_modifier = { modifier = lifeforce_modifier_fortunate }
-			add_xp_bm_dynamic = {
-				TRACK = fortune
-				XP = 2
-			}
-		}
-		ai_chance = {
-			base = 50
-			modifier = {
-				add = 50
-				NOT = { has_character_modifier = lifeforce_modifier_fortunate }
-			}
-		}
-	}
-
-	# Shadows (Intrigue)
-	option = {
-		name = bm_transmute_lifeforce.0003.cunning
-		trigger = {
-			piety >= 25
-			has_character_modifier = lifeforce_modifier_minor
-		}
-		show_as_unavailable = {
-			always = yes
-		}
-		add_piety = -25
-		send_interface_toast = {
-			type = event_toast_effect_good
-			title = bm_channel_cunning_minor_toast
-			left_icon = root
-			remove_character_modifier = lifeforce_modifier_minor
-			add_character_modifier = { modifier = lifeforce_modifier_cunning }
-			add_xp_bm_dynamic = {
-				TRACK = cunning
-				XP = 2
-			}
-		}
-		ai_chance = {
-			base = 50
-			modifier = {
-				add = 50
-				NOT = { has_character_modifier = lifeforce_modifier_cunning }
-			}
-		}
-	}
-
-	# Focus (Learning)
-	option = {
-		name = bm_transmute_lifeforce.0003.wise
-		trigger = {
-			piety >= 25
-			has_character_modifier = lifeforce_modifier_minor
-		}
-		show_as_unavailable = {
-			always = yes
-		}
-		add_piety = -25
-		send_interface_toast = {
-			type = event_toast_effect_good
-			title = bm_channel_wise_minor_toast
-			left_icon = root
-			remove_character_modifier = lifeforce_modifier_minor
-			add_character_modifier = { modifier = lifeforce_modifier_wise }
-			add_xp_bm_dynamic = {
-				TRACK = wisdom
-				XP = 2
-			}
-		}
-		ai_chance = {
-			base = 50
-			modifier = {
-				add = 50
-				NOT = { has_character_modifier = lifeforce_modifier_wise }
-			}
-		}
-	}
-
-	# Mojo (Lineage / Active Focus)
-	option = {
-		name = bm_transmute_lifeforce.0003.ancient
-		trigger = {
-			piety >= 25
-			has_character_modifier = lifeforce_modifier_minor
-		}
-		show_as_unavailable = {
-			always = yes
-		}
-		add_piety = -25
-		send_interface_toast = {
-			type = event_toast_effect_good
-			title = bm_channel_ancient_minor_toast
-			left_icon = root
-			remove_character_modifier = lifeforce_modifier_minor
 			add_character_modifier = { modifier = lifeforce_modifier_ancient }
 			add_xp_bm_dynamic = {
 				TRACK = ancient
@@ -538,29 +296,25 @@ bm_transmute_lifeforce.0004 = {
 	option = {
 		name = bm_transmute_lifeforce.0004.radiant
 		trigger = {
-			piety >= 25
+			piety >= 50
 			has_character_modifier = lifeforce_modifier_radiant
 		}
 		show_as_unavailable = {
 			always = yes
 		}
-		add_piety = -25
+		add_piety = -50
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_reclaim_radiant_toast
 			left_icon = root
 			remove_character_modifier = lifeforce_modifier_radiant
-			add_character_modifier = { modifier = lifeforce_modifier_minor }
-			add_xp_bm_dynamic = {
-				TRACK = radiance
-				XP = 2
-			}
+			add_character_modifier = { modifier = lifeforce_modifier_major }
 		}
 		ai_chance = {
 			base = 50
 			modifier = {
 				add = 50
-				NOT = { has_character_modifier = lifeforce_modifier_minor }
+				NOT = { has_character_modifier = lifeforce_modifier_major }
 			}
 		}
 	}
@@ -569,29 +323,25 @@ bm_transmute_lifeforce.0004 = {
 	option = {
 		name = bm_transmute_lifeforce.0004.furious
 		trigger = {
-			piety >= 25
+			piety >= 50
 			has_character_modifier = lifeforce_modifier_furious
 		}
 		show_as_unavailable = {
 			always = yes
 		}
-		add_piety = -25
+		add_piety = -50
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_reclaim_furious_toast
 			left_icon = root
 			remove_character_modifier = lifeforce_modifier_furious
-			add_character_modifier = { modifier = lifeforce_modifier_minor }
-			add_xp_bm_dynamic = {
-				TRACK = fury
-				XP = 2
-			}
+			add_character_modifier = { modifier = lifeforce_modifier_major }
 		}
 		ai_chance = {
 			base = 50
 			modifier = {
 				add = 50
-				NOT = { has_character_modifier = lifeforce_modifier_minor }
+				NOT = { has_character_modifier = lifeforce_modifier_major }
 			}
 		}
 	}
@@ -600,29 +350,25 @@ bm_transmute_lifeforce.0004 = {
 	option = {
 		name = bm_transmute_lifeforce.0004.fortunate
 		trigger = {
-			piety >= 25
+			piety >= 50
 			has_character_modifier = lifeforce_modifier_fortunate
 		}
 		show_as_unavailable = {
 			always = yes
 		}
-		add_piety = -25
+		add_piety = -50
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_reclaim_fortunate_toast
 			left_icon = root
 			remove_character_modifier = lifeforce_modifier_fortunate
-			add_character_modifier = { modifier = lifeforce_modifier_minor }
-			add_xp_bm_dynamic = {
-				TRACK = fortune
-				XP = 2
-			}
+			add_character_modifier = { modifier = lifeforce_modifier_major }
 		}
 		ai_chance = {
 			base = 50
 			modifier = {
 				add = 50
-				NOT = { has_character_modifier = lifeforce_modifier_minor }
+				NOT = { has_character_modifier = lifeforce_modifier_major }
 			}
 		}
 	}
@@ -631,29 +377,25 @@ bm_transmute_lifeforce.0004 = {
 	option = {
 		name = bm_transmute_lifeforce.0004.cunning
 		trigger = {
-			piety >= 25
+			piety >= 50
 			has_character_modifier = lifeforce_modifier_cunning
 		}
 		show_as_unavailable = {
 			always = yes
 		}
-		add_piety = -25
+		add_piety = -50
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_reclaim_cunning_toast
 			left_icon = root
 			remove_character_modifier = lifeforce_modifier_cunning
-			add_character_modifier = { modifier = lifeforce_modifier_minor }
-			add_xp_bm_dynamic = {
-				TRACK = cunning
-				XP = 2
-			}
+			add_character_modifier = { modifier = lifeforce_modifier_major }
 		}
 		ai_chance = {
 			base = 50
 			modifier = {
 				add = 50
-				NOT = { has_character_modifier = lifeforce_modifier_minor }
+				NOT = { has_character_modifier = lifeforce_modifier_major }
 			}
 		}
 	}
@@ -662,29 +404,25 @@ bm_transmute_lifeforce.0004 = {
 	option = {
 		name = bm_transmute_lifeforce.0004.wise
 		trigger = {
-			piety >= 25
+			piety >= 50
 			has_character_modifier = lifeforce_modifier_wise
 		}
 		show_as_unavailable = {
 			always = yes
 		}
-		add_piety = -25
+		add_piety = -50
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_reclaim_wise_toast
 			left_icon = root
 			remove_character_modifier = lifeforce_modifier_wise
-			add_character_modifier = { modifier = lifeforce_modifier_minor }
-			add_xp_bm_dynamic = {
-				TRACK = wisdom
-				XP = 2
-			}
+			add_character_modifier = { modifier = lifeforce_modifier_major }
 		}
 		ai_chance = {
 			base = 50
 			modifier = {
 				add = 50
-				NOT = { has_character_modifier = lifeforce_modifier_minor }
+				NOT = { has_character_modifier = lifeforce_modifier_major }
 			}
 		}
 	}
@@ -693,29 +431,25 @@ bm_transmute_lifeforce.0004 = {
 	option = {
 		name = bm_transmute_lifeforce.0004.ancient
 		trigger = {
-			piety >= 25
+			piety >= 50
 			has_character_modifier = lifeforce_modifier_ancient
 		}
 		show_as_unavailable = {
 			always = yes
 		}
-		add_piety = -25
+		add_piety = -50
 		send_interface_toast = {
 			type = event_toast_effect_good
 			title = bm_reclaim_ancient_toast
 			left_icon = root
 			remove_character_modifier = lifeforce_modifier_ancient
-			add_character_modifier = { modifier = lifeforce_modifier_minor }
-			add_xp_bm_dynamic = {
-				TRACK = ancient
-				XP = 1
-			}
+			add_character_modifier = { modifier = lifeforce_modifier_major }
 		}
 		ai_chance = {
 			base = 50
 			modifier = {
 				add = 50
-				NOT = { has_character_modifier = lifeforce_modifier_minor }
+				NOT = { has_character_modifier = lifeforce_modifier_major }
 			}
 		}
 	}
