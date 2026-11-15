@@ -817,6 +817,36 @@ bm_cast_blood_magic_minor_decision = {
 				}
 			}
 		}
+
+		# Lifeforce Attunement
+		item = {
+			value = bm_minor_attune
+			current_description = bm_minor_attune
+			localization = bm_minor_attune
+			icon = "gfx/interface/icons/trait_level_tracks/ancient.dds"
+			is_shown = {
+				is_blood_mage_any_tier_trigger = yes
+			}
+			is_valid = {
+				custom_tooltip = {
+					text = bm_attune_lifeforce_cooldown_tt
+					NOT = { has_character_flag = bm_attune_lifeforce_cooldown }
+				}
+				piety >= 50
+				has_character_modifier = lifeforce_modifier_minor
+			}
+			ai_chance = {
+				value = 10
+				if = {
+					limit = { bm_has_any_attunement_trigger = no }
+					add = 90
+				}
+				if = {
+					limit = { health <= fine_health }
+					multiply = 0
+				}
+			}
+		}
 	}
 
 	effect = {
@@ -920,6 +950,11 @@ bm_cast_blood_magic_minor_decision = {
 				}
 				blood_magic_used_minor = yes
 			}
+		}
+		else_if = {
+			limit = { scope:bm_minor_attune = yes }
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (attune) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			trigger_event = { id = bm_attune_lifeforce.001 }
 		}
 		else = {
 			custom_tooltip = bm_cast_blood_magic_minor_decision_tooltip

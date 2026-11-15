@@ -282,7 +282,10 @@ bm_action_can_attune_lifeforce = {
 				is_ai = no
 				is_blood_mage_any_tier_trigger = yes
 				bm_has_any_attunement_trigger = no
-				can_execute_decision = bm_attune_lifeforce_decision
+				has_character_modifier = lifeforce_modifier_minor
+				piety >= 50
+				NOT = { has_character_flag = bm_attune_lifeforce_cooldown }
+				can_execute_decision = bm_cast_blood_magic_minor_decision
 			}
 			try_create_important_action = {
 				important_action_type = bm_action_can_attune_lifeforce
@@ -294,7 +297,7 @@ bm_action_can_attune_lifeforce = {
 	effect = {
 		open_view_data = {
 			view = decision_detail
-			data = decision:bm_attune_lifeforce_decision
+			data = decision:bm_cast_blood_magic_minor_decision
 			player = scope:actor
 		}
 	}
