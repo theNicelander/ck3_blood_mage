@@ -36,7 +36,7 @@ Guaranteed, no cost, 1 year cooldown: **+1 XP** (**+2 XP** with Superior **Hulin
 | XP | Cost | Action | Source | Req | CD |
 | --- | --- | --- | --- | --- | --- |
 | +1 | None | Yearly Pulse | on-action `blood_mage_yearly_events.001` | `lifestyle_blood_mage` | 1 year |
-| grants `ancient_attuned` | Initial free; change: 100 Piety + Minor (`lifeforce_modifier_minor`) | Attune Lifeforce | decision `bm_attune_lifeforce_decision` | Change: Minor lifeforce, piety >= 100 | 3 years |
+| grants `*_attuned` | 50 Piety + Minor (`lifeforce_modifier_minor`) | Attune Lifeforce | decision `bm_cast_blood_magic_minor_decision` -> `bm_attune_lifeforce.001` | Minor lifeforce, piety >= 50 | 1 year |
 | +4 | 0 Piety + Minor | Inscribe Minor Blood Rune (Self) | event option `bm_cast_blood_magic_minor.001` | `piety_level >= 2` | 5 years |
 | +5 | 50/100 Piety + Minor + 10 Discipline XP | Distill Blood (Discipline to Ancient) | decision `bm_blood_distillation_decision` | Ancient < 100 XP, Minor lifeforce, >= 10 XP in any discipline track | None |
 | +5 | 200 Piety + Major (`lifeforce_modifier_major`) | Inscribe Major Blood Rune (Self) | `bm_cast_blood_magic_major.001` | `piety_level >= 3`, Minor rune | 5 years |
@@ -89,4 +89,4 @@ Guaranteed, no cost, 1 year cooldown: **+1 XP** (**+2 XP** with Superior **Hulin
 | Education | `common/script_values/bm_education_enhancement_piety_cost.txt` |
 | Congenital manifestation | `common/scripted_effects/bm_manifest_traits_effects.txt` |
 | Combat & duel hooks | `common/on_action/bm_combat_on_actions.txt`, `common/on_action/bm_duel_on_actions.txt` |
-| Yearly pulse, attunement, birth | `events/bm_yearly_events.txt`, `common/decisions/cast_magic/bm_attune_lifeforce_decision.txt`, `common/on_action/bm_blood_mage_prevalence_on_actions.txt` |
+| Yearly pulse, attunement, birth | `events/bm_yearly_events.txt`, `events/bm_attune_lifeforce_events.txt`, `common/decisions/cast_magic/bm_cast_blood_magic.txt`, `common/on_action/bm_blood_mage_prevalence_on_actions.txt` |

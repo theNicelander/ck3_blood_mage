@@ -63,3 +63,21 @@ bm_upgrade_house_covenant_effect = {
 		}
 	}
 }
+
+# Grant one-off Covenant of Initiation
+bm_grant_acolyte_covenant_effect = {
+	add_piety = -350
+	blood_magic_used_major = yes
+	send_interface_toast = {
+		type = event_toast_effect_good
+		title = bm_empower_bloodline_acolyte_toast
+		left_icon = root
+		house = {
+			add_house_modifier = { modifier = dynasty_blood_acolyte_modifier }
+		}
+		add_xp_bm_dynamic = {
+			TRACK = fortune
+			XP = 5
+		}
+	}
+}
