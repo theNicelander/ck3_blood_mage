@@ -26,15 +26,28 @@ bm_debug.0001 = {
 		trigger_event = { id = bm_debug.0001 }
 	}
 
-	# 2. Give Superior Blood Rune
+	# 2. Increase Rune Level
 	option = {
-		name = bm_debug.0001.superior_rune
+		name = bm_debug.0001.increase_rune
+		trigger = {
+			NOT = { has_character_modifier = superior_blood_rune_modifier }
+		}
 		send_interface_toast = {
-			title = bm_debug.0001.superior_rune_toast
+			title = bm_debug.0001.increase_rune_toast
 			left_icon = root
-			remove_character_modifier = minor_blood_rune_modifier
-			remove_character_modifier = major_blood_rune_modifier
-			add_character_modifier = { modifier = superior_blood_rune_modifier }
+			if = {
+				limit = { has_character_modifier = major_blood_rune_modifier }
+				remove_character_modifier = major_blood_rune_modifier
+				add_character_modifier = { modifier = superior_blood_rune_modifier }
+			}
+			else_if = {
+				limit = { has_character_modifier = minor_blood_rune_modifier }
+				remove_character_modifier = minor_blood_rune_modifier
+				add_character_modifier = { modifier = major_blood_rune_modifier }
+			}
+			else = {
+				add_character_modifier = { modifier = minor_blood_rune_modifier }
+			}
 		}
 		trigger_event = { id = bm_debug.0001 }
 	}
@@ -152,73 +165,59 @@ bm_debug.0001 = {
 	# 4. Trait (20 XP)
 	option = {
 		name = bm_debug.0001.trait_xp
-		send_interface_toast = {
-			title = bm_debug.0001.xp_toast
-			left_icon = root
-			if = {
-				limit = { NOT = { is_blood_mage_any_tier_trigger = yes } }
-				bm_become_blood_acolyte_effect = yes
-			}
-			bm_add_blood_mage_xp_effect = { TRACK = ancient XP = 20 }
-			bm_add_blood_mage_xp_effect = { TRACK = wisdom XP = 20 }
-			bm_add_blood_mage_xp_effect = { TRACK = fortune XP = 20 }
-			bm_add_blood_mage_xp_effect = { TRACK = radiance XP = 20 }
-			bm_add_blood_mage_xp_effect = { TRACK = cunning XP = 20 }
-			bm_add_blood_mage_xp_effect = { TRACK = fury XP = 20 }
+		if = {
+			limit = { NOT = { is_blood_mage_any_tier_trigger = yes } }
+			bm_become_blood_acolyte_effect = yes
 		}
+		bm_add_blood_mage_xp_effect = { TRACK = ancient XP = 20 }
+		bm_add_blood_mage_xp_effect = { TRACK = wisdom XP = 20 }
+		bm_add_blood_mage_xp_effect = { TRACK = fortune XP = 20 }
+		bm_add_blood_mage_xp_effect = { TRACK = radiance XP = 20 }
+		bm_add_blood_mage_xp_effect = { TRACK = cunning XP = 20 }
+		bm_add_blood_mage_xp_effect = { TRACK = fury XP = 20 }
 		trigger_event = { id = bm_debug.0001 }
 	}
 
 	# 5. 100 Ancient XP
 	option = {
 		name = bm_debug.0001.ancient_xp
-		send_interface_toast = {
-			title = bm_debug.0001.xp_toast
-			left_icon = root
-			if = {
-				limit = { NOT = { is_blood_mage_any_tier_trigger = yes } }
-				bm_become_blood_acolyte_effect = yes
-			}
-			bm_add_blood_mage_xp_effect = { TRACK = ancient XP = 100 }
+		if = {
+			limit = { NOT = { is_blood_mage_any_tier_trigger = yes } }
+			bm_become_blood_acolyte_effect = yes
 		}
+		bm_add_blood_mage_xp_effect = { TRACK = ancient XP = 100 }
 		trigger_event = { id = bm_debug.0001 }
 	}
 
-	# 6. Add Superior x5
+	# 6. Lifeforce Sub-Menu
 	option = {
-		name = bm_debug.0001.add_superior_5
-		send_interface_toast = {
-			title = bm_debug.0001.lifeforce_toast
-			left_icon = root
-			add_character_modifier = { modifier = lifeforce_modifier_superior }
-			add_character_modifier = { modifier = lifeforce_modifier_superior }
-			add_character_modifier = { modifier = lifeforce_modifier_superior }
-			add_character_modifier = { modifier = lifeforce_modifier_superior }
-			add_character_modifier = { modifier = lifeforce_modifier_superior }
-		}
-		trigger_event = { id = bm_debug.0001 }
+		name = bm_debug.0001.lifeforce_menu
+		trigger_event = { id = bm_debug.0002 }
 	}
 
-	# 7. Add Major x5
+	# Back
 	option = {
-		name = bm_debug.0001.add_major_5
-		send_interface_toast = {
-			title = bm_debug.0001.lifeforce_toast
-			left_icon = root
-			add_character_modifier = { modifier = lifeforce_modifier_major }
-			add_character_modifier = { modifier = lifeforce_modifier_major }
-			add_character_modifier = { modifier = lifeforce_modifier_major }
-			add_character_modifier = { modifier = lifeforce_modifier_major }
-			add_character_modifier = { modifier = lifeforce_modifier_major }
-		}
-		trigger_event = { id = bm_debug.0001 }
+		name = bm_debug.back
+	}
+}
+
+# Debug Lifeforce Sub-Menu (add x5 of any Lifeforce type, or remove all)
+bm_debug.0002 = {
+	type = character_event
+	title = bm_debug.0002.title
+	desc = bm_debug.0002.desc
+	theme = witchcraft
+
+	left_portrait = {
+		character = root
+		animation = personality_rational
 	}
 
-	# 8. Add Minor x5
+	# 1. Add Minor Lifeforce x5
 	option = {
-		name = bm_debug.0001.add_minor_5
+		name = bm_debug.0002.add_minor_5
 		send_interface_toast = {
-			title = bm_debug.0001.lifeforce_toast
+			title = bm_debug.0002.lifeforce_toast
 			left_icon = root
 			add_character_modifier = { modifier = lifeforce_modifier_minor }
 			add_character_modifier = { modifier = lifeforce_modifier_minor }
@@ -226,14 +225,134 @@ bm_debug.0001 = {
 			add_character_modifier = { modifier = lifeforce_modifier_minor }
 			add_character_modifier = { modifier = lifeforce_modifier_minor }
 		}
-		trigger_event = { id = bm_debug.0001 }
+		trigger_event = { id = bm_debug.0002 }
 	}
 
-	# 9. Remove All Lifeforce
+	# 2. Add Major Lifeforce x5
 	option = {
-		name = bm_debug.0001.remove_all_lifeforce
+		name = bm_debug.0002.add_major_5
 		send_interface_toast = {
-			title = bm_debug.0001.lifeforce_toast
+			title = bm_debug.0002.lifeforce_toast
+			left_icon = root
+			add_character_modifier = { modifier = lifeforce_modifier_major }
+			add_character_modifier = { modifier = lifeforce_modifier_major }
+			add_character_modifier = { modifier = lifeforce_modifier_major }
+			add_character_modifier = { modifier = lifeforce_modifier_major }
+			add_character_modifier = { modifier = lifeforce_modifier_major }
+		}
+		trigger_event = { id = bm_debug.0002 }
+	}
+
+	# 3. Add Superior Lifeforce x5
+	option = {
+		name = bm_debug.0002.add_superior_5
+		send_interface_toast = {
+			title = bm_debug.0002.lifeforce_toast
+			left_icon = root
+			add_character_modifier = { modifier = lifeforce_modifier_superior }
+			add_character_modifier = { modifier = lifeforce_modifier_superior }
+			add_character_modifier = { modifier = lifeforce_modifier_superior }
+			add_character_modifier = { modifier = lifeforce_modifier_superior }
+			add_character_modifier = { modifier = lifeforce_modifier_superior }
+		}
+		trigger_event = { id = bm_debug.0002 }
+	}
+
+	# 4. Add Radiant Blood x5
+	option = {
+		name = bm_debug.0002.add_radiant_5
+		send_interface_toast = {
+			title = bm_debug.0002.lifeforce_toast
+			left_icon = root
+			add_character_modifier = { modifier = lifeforce_modifier_radiant }
+			add_character_modifier = { modifier = lifeforce_modifier_radiant }
+			add_character_modifier = { modifier = lifeforce_modifier_radiant }
+			add_character_modifier = { modifier = lifeforce_modifier_radiant }
+			add_character_modifier = { modifier = lifeforce_modifier_radiant }
+		}
+		trigger_event = { id = bm_debug.0002 }
+	}
+
+	# 5. Add Furious Blood x5
+	option = {
+		name = bm_debug.0002.add_furious_5
+		send_interface_toast = {
+			title = bm_debug.0002.lifeforce_toast
+			left_icon = root
+			add_character_modifier = { modifier = lifeforce_modifier_furious }
+			add_character_modifier = { modifier = lifeforce_modifier_furious }
+			add_character_modifier = { modifier = lifeforce_modifier_furious }
+			add_character_modifier = { modifier = lifeforce_modifier_furious }
+			add_character_modifier = { modifier = lifeforce_modifier_furious }
+		}
+		trigger_event = { id = bm_debug.0002 }
+	}
+
+	# 6. Add Fortunate Blood x5
+	option = {
+		name = bm_debug.0002.add_fortunate_5
+		send_interface_toast = {
+			title = bm_debug.0002.lifeforce_toast
+			left_icon = root
+			add_character_modifier = { modifier = lifeforce_modifier_fortunate }
+			add_character_modifier = { modifier = lifeforce_modifier_fortunate }
+			add_character_modifier = { modifier = lifeforce_modifier_fortunate }
+			add_character_modifier = { modifier = lifeforce_modifier_fortunate }
+			add_character_modifier = { modifier = lifeforce_modifier_fortunate }
+		}
+		trigger_event = { id = bm_debug.0002 }
+	}
+
+	# 7. Add Cunning Blood x5
+	option = {
+		name = bm_debug.0002.add_cunning_5
+		send_interface_toast = {
+			title = bm_debug.0002.lifeforce_toast
+			left_icon = root
+			add_character_modifier = { modifier = lifeforce_modifier_cunning }
+			add_character_modifier = { modifier = lifeforce_modifier_cunning }
+			add_character_modifier = { modifier = lifeforce_modifier_cunning }
+			add_character_modifier = { modifier = lifeforce_modifier_cunning }
+			add_character_modifier = { modifier = lifeforce_modifier_cunning }
+		}
+		trigger_event = { id = bm_debug.0002 }
+	}
+
+	# 8. Add Wise Blood x5
+	option = {
+		name = bm_debug.0002.add_wise_5
+		send_interface_toast = {
+			title = bm_debug.0002.lifeforce_toast
+			left_icon = root
+			add_character_modifier = { modifier = lifeforce_modifier_wise }
+			add_character_modifier = { modifier = lifeforce_modifier_wise }
+			add_character_modifier = { modifier = lifeforce_modifier_wise }
+			add_character_modifier = { modifier = lifeforce_modifier_wise }
+			add_character_modifier = { modifier = lifeforce_modifier_wise }
+		}
+		trigger_event = { id = bm_debug.0002 }
+	}
+
+	# 9. Add Ancient Blood x5
+	option = {
+		name = bm_debug.0002.add_ancient_5
+		send_interface_toast = {
+			title = bm_debug.0002.lifeforce_toast
+			left_icon = root
+			add_character_modifier = { modifier = lifeforce_modifier_ancient }
+			add_character_modifier = { modifier = lifeforce_modifier_ancient }
+			add_character_modifier = { modifier = lifeforce_modifier_ancient }
+			add_character_modifier = { modifier = lifeforce_modifier_ancient }
+			add_character_modifier = { modifier = lifeforce_modifier_ancient }
+		}
+		trigger_event = { id = bm_debug.0002 }
+	}
+
+	# 10. Remove All Lifeforce
+	option = {
+		name = bm_debug.0002.remove_all_lifeforce
+		send_interface_toast = {
+			title = bm_debug.0002.lifeforce_toast
 			left_icon = root
 			while = {
 				limit = { has_character_modifier = lifeforce_modifier_superior }
@@ -272,11 +391,12 @@ bm_debug.0001 = {
 				remove_character_modifier = lifeforce_modifier_ancient
 			}
 		}
-		trigger_event = { id = bm_debug.0001 }
+		trigger_event = { id = bm_debug.0002 }
 	}
 
 	# Back
 	option = {
 		name = bm_debug.back
+		trigger_event = { id = bm_debug.0001 }
 	}
 }
