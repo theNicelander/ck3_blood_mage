@@ -12,7 +12,7 @@ bm_debug.0001 = {
 		animation = personality_rational
 	}
 
-	# 1. Become Blood Mage
+	# 1. Become Blood Mage / Ascend Blood Mage Tier
 	option = {
 		name = bm_debug.0001.become_blood_mage
 		trigger = {
@@ -22,6 +22,32 @@ bm_debug.0001 = {
 			title = bm_debug.0001.become_blood_mage_toast
 			left_icon = root
 			bm_become_blood_mage_effect = yes
+		}
+		trigger_event = { id = bm_debug.0001 }
+	}
+
+	option = {
+		name = bm_debug.0001.become_mage
+		trigger = {
+			has_trait = lifestyle_bm_acolyte
+		}
+		send_interface_toast = {
+			title = bm_debug.0001.become_mage_toast
+			left_icon = root
+			bm_become_blood_mage_tier_2_effect = yes
+		}
+		trigger_event = { id = bm_debug.0001 }
+	}
+
+	option = {
+		name = bm_debug.0001.become_archmage
+		trigger = {
+			has_trait = lifestyle_blood_mage
+		}
+		send_interface_toast = {
+			title = bm_debug.0001.become_archmage_toast
+			left_icon = root
+			bm_become_blood_archmage_effect = yes
 		}
 		trigger_event = { id = bm_debug.0001 }
 	}
