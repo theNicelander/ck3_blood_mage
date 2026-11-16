@@ -151,6 +151,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 
 ## Version history
 
+- v1.20.89: Allow Blood Acolytes and higher tiers to channel Major Lifeforce into specialized reservoirs in Transmute Lifeforce.
 - v1.20.87: Simplify Transmute Lifeforce to 1:1 Major Lifeforce conversion and reclaim across all 6 specialized reservoirs, and remove Track XP from reclaiming.
 - v1.20.86: Unify and rename all 6 Blood Mage tracks (`radiance`, `cunning`, `wisdom`, `fury`, `ancient`, `fortune`), 6 specialized Lifeforce reservoirs (`Radiant Blood`, `Cunning Blood`, `Wise Blood`, `Furious Blood`, `Ancient Blood`, `Fortunate Blood`), and 6 Dynasty House Covenants (`Covenant of Radiance`, `Covenant of Cunning`, `Covenant of Wisdom`, `Covenant of Fury`, `Covenant of the Ancient`, `Covenant of Fortune`), including all internal script IDs, story variables, icons, and localization keys.
 - v1.20.85: Remove `lifestyle_blood_power` trait, Channel Blood Power Major Grimoire option, and `quarterly_playable_pulse`; expand Transmute Lifeforce to 6 specialized reservoirs (`presence`, `fury`, `prosperity`, `shadows`, `focus`, `mojo`) with scaled Blood Power bonuses and `+5` native monthly Lifestyle XP per stack; move Channel Skill/Exp modifiers onto native `monthly_*_lifestyle_xp_gain_add`; add `+2%` per step (`+10%` total) monthly Lifestyle XP to Ancient track and promotion floors (`+10%`/`+20%`) to Mage/Archmage; add Current Situation actions for Attune Lifeforce and Trait Drain Prisoner.
