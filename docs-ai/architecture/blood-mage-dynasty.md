@@ -75,7 +75,7 @@ Modifiers apply to all living and future members of the caster's house (landless
 | Golem dynasty | `common/dynasties/bm_dynasties.txt` |
 | Golem house coat of arms | `common/coat_of_arms/coat_of_arms/bm_coat_of_arms.txt` |
 | Bloodline house modifiers (Tiers 1–3) | `common/modifiers/bm_channel_dynasty_modifiers.txt` |
-| Dynasty rites & heir modifiers | `common/modifiers/bm_dynasty_rites_modifiers.txt` |
+| Blood Blessing & heir modifiers | `common/modifiers/bm_blood_blessing_modifiers.txt` |
 | Standalone widget decision | `common/decisions/cast_magic/bm_empower_bloodline_decision.txt` |
 | Covenant upgrade scripted effects | `common/scripted_effects/bm_empower_bloodline_effects.txt` |
 | Heir succession transfer effect | `common/scripted_effects/bm_heir_succession_effects.txt` |
