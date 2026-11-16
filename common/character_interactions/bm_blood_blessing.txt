@@ -74,8 +74,8 @@
 		}
 		scope:recipient = {
 			is_alive = yes
-			NOT = { this = scope:actor }
 			OR = {
+				this = scope:actor
 				bm_is_valid_positive_magic_target_trigger = { ACTOR = scope:actor }
 				is_imprisoned_by = scope:actor
 			}
@@ -105,6 +105,7 @@
 		current_description = bm_blood_blessing_option_empower_desc
 		can_invalidate_interaction = yes
 		is_shown = {
+			NOT = { scope:recipient = scope:actor }
 			scope:recipient = {
 				is_blood_mage_any_tier_trigger = yes
 			}
@@ -130,7 +131,9 @@
 		localization = bm_blood_blessing_option_grant_lifeforce
 		current_description = bm_blood_blessing_option_grant_lifeforce_desc
 		can_invalidate_interaction = yes
-		is_shown = { always = yes }
+		is_shown = {
+			NOT = { scope:recipient = scope:actor }
+		}
 		is_valid = {
 			scope:actor = {
 				OR = {
@@ -166,39 +169,23 @@
 		can_invalidate_interaction = yes
 		is_shown = {
 			scope:recipient = {
-				OR = {
-					is_child_of = scope:actor
-					dynasty ?= scope:actor.dynasty
-					is_knight_of = scope:actor
-				}
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
 			}
 		}
 		is_valid = {
-			scope:actor = { has_character_modifier = lifeforce_modifier_minor }
 			scope:recipient = {
-				NOR = {
-					has_character_modifier = bm_blessed_blood_modifier
-					has_character_modifier = bm_blessed_blood_sovereign_modifier
-					has_character_modifier = bm_blessed_blood_iron_modifier
-					has_character_modifier = bm_blessed_blood_crucible_modifier
-					has_character_modifier = bm_feingur_blessed_blood_modifier
+				custom_tooltip = {
+					text = bm_blessing_cooldown_tt
+					NOT = { has_character_flag = bm_blessing_cooldown }
 				}
 			}
+			bm_has_any_upgradeable_blessing_trigger = { CASTER = scope:actor TARGET = scope:recipient }
 		}
 		starts_enabled = {
 			scope:recipient = {
-				OR = {
-					is_child_of = scope:actor
-					dynasty ?= scope:actor.dynasty
-				}
-				NOR = {
-					has_character_modifier = bm_blessed_blood_modifier
-					has_character_modifier = bm_blessed_blood_sovereign_modifier
-					has_character_modifier = bm_blessed_blood_iron_modifier
-					has_character_modifier = bm_blessed_blood_crucible_modifier
-					has_character_modifier = bm_feingur_blessed_blood_modifier
-				}
+				NOT = { has_character_flag = bm_blessing_cooldown }
 			}
+			bm_has_any_upgradeable_blessing_trigger = { CASTER = scope:actor TARGET = scope:recipient }
 		}
 	}
 
@@ -209,6 +196,7 @@
 		current_description = bm_blood_blessing_option_anoint_heir_desc
 		can_invalidate_interaction = yes
 		is_shown = {
+			NOT = { scope:recipient = scope:actor }
 			scope:recipient = {
 				OR = {
 					is_primary_heir_of = scope:actor
@@ -269,6 +257,7 @@
 		current_description = bm_blood_blessing_option_inscribe_rune_desc
 		can_invalidate_interaction = yes
 		is_shown = {
+			NOT = { scope:recipient = scope:actor }
 			scope:recipient = {
 				NOT = { has_character_modifier = superior_blood_rune_modifier }
 			}
@@ -471,70 +460,11 @@
 		else_if = {
 			limit = { scope:blessing_bless_blood = yes }
 			debug_log = "BloodMageInteraction: bm_blood_blessing (bless_blood) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
+			scope:recipient = {
+				save_scope_as = blessing_target
+			}
 			scope:actor = {
-				send_interface_toast = {
-					type = event_toast_effect_good
-					title = bm_blood_blessing_toast
-					left_icon = scope:actor
-					right_icon = scope:recipient
-					fortune_magic_cast_effect_minor = yes
-					scope:recipient = {
-						if = {
-							limit = { scope:actor = { bm_has_superior_stave_trigger = { STAVE = feingur } } }
-							add_character_modifier = { modifier = bm_feingur_blessed_blood_modifier }
-							add_opinion = {
-								target = scope:actor
-								modifier = magic_opinion_positive
-								opinion = 40
-							}
-						}
-						else_if = {
-							limit = {
-								OR = {
-									is_knight = yes
-									martial >= 12
-								}
-							}
-							add_character_modifier = {
-								modifier = bm_blessed_blood_iron_modifier
-								years = 10
-							}
-							add_opinion = {
-								target = scope:actor
-								modifier = magic_opinion_positive
-								opinion = 25
-							}
-						}
-						else_if = {
-							limit = {
-								OR = {
-									is_ruler = yes
-									is_primary_heir_of = scope:actor
-								}
-							}
-							add_character_modifier = {
-								modifier = bm_blessed_blood_sovereign_modifier
-								years = 10
-							}
-							add_opinion = {
-								target = scope:actor
-								modifier = magic_opinion_positive
-								opinion = 25
-							}
-						}
-						else = {
-							add_character_modifier = {
-								modifier = bm_blessed_blood_crucible_modifier
-								years = 10
-							}
-							add_opinion = {
-								target = scope:actor
-								modifier = magic_opinion_positive
-								opinion = 25
-							}
-						}
-					}
-				}
+				trigger_event = bm_blood_blessing.001
 			}
 		}
 		else_if = {

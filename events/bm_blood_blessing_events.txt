@@ -1,0 +1,144 @@
+﻿namespace = bm_blood_blessing
+
+# Choose which Blood Blessing line to cast/upgrade on scope:blessing_target
+bm_blood_blessing.001 = {
+	type = character_event
+	title = bm_blood_blessing.001.title
+	desc = bm_blood_blessing.001.desc
+	theme = witchcraft
+
+	right_portrait = {
+		character = scope:blessing_target
+		animation = personality_content
+	}
+
+	# 1. Blessing of Radiance (Diplomacy)
+	option = {
+		name = bm_blood_blessing.001.radiance
+		trigger = {
+			bm_can_upgrade_blessing_line_trigger = { LINE = radiance CASTER = root TARGET = scope:blessing_target }
+		}
+		show_as_unavailable = {
+			NOT = { scope:blessing_target = { has_character_modifier = bm_blessing_radiance_superior_modifier } }
+		}
+		bm_apply_blessing_effect = { LINE = radiance CASTER = root TARGET = scope:blessing_target }
+		ai_chance = {
+			base = 20
+			modifier = {
+				scope:blessing_target = { diplomacy >= 12 }
+				add = 20
+			}
+		}
+	}
+
+	# 2. Blessing of Fortune (Stewardship)
+	option = {
+		name = bm_blood_blessing.001.fortune
+		trigger = {
+			bm_can_upgrade_blessing_line_trigger = { LINE = fortune CASTER = root TARGET = scope:blessing_target }
+		}
+		show_as_unavailable = {
+			NOT = { scope:blessing_target = { has_character_modifier = bm_blessing_fortune_superior_modifier } }
+		}
+		bm_apply_blessing_effect = { LINE = fortune CASTER = root TARGET = scope:blessing_target }
+		ai_chance = {
+			base = 20
+			modifier = {
+				scope:blessing_target = { stewardship >= 12 }
+				add = 20
+			}
+		}
+	}
+
+	# 3. Blessing of Fury (Martial)
+	option = {
+		name = bm_blood_blessing.001.fury
+		trigger = {
+			bm_can_upgrade_blessing_line_trigger = { LINE = fury CASTER = root TARGET = scope:blessing_target }
+		}
+		show_as_unavailable = {
+			NOT = { scope:blessing_target = { has_character_modifier = bm_blessing_fury_superior_modifier } }
+		}
+		bm_apply_blessing_effect = { LINE = fury CASTER = root TARGET = scope:blessing_target }
+		ai_chance = {
+			base = 20
+			modifier = {
+				scope:blessing_target = {
+					OR = {
+						is_knight = yes
+						martial >= 12
+					}
+				}
+				add = 25
+			}
+		}
+	}
+
+	# 4. Blessing of Cunning (Intrigue)
+	option = {
+		name = bm_blood_blessing.001.cunning
+		trigger = {
+			bm_can_upgrade_blessing_line_trigger = { LINE = cunning CASTER = root TARGET = scope:blessing_target }
+		}
+		show_as_unavailable = {
+			NOT = { scope:blessing_target = { has_character_modifier = bm_blessing_cunning_superior_modifier } }
+		}
+		bm_apply_blessing_effect = { LINE = cunning CASTER = root TARGET = scope:blessing_target }
+		ai_chance = {
+			base = 15
+			modifier = {
+				scope:blessing_target = { intrigue >= 12 }
+				add = 20
+			}
+		}
+	}
+
+	# 5. Blessing of Wisdom (Learning)
+	option = {
+		name = bm_blood_blessing.001.wisdom
+		trigger = {
+			bm_can_upgrade_blessing_line_trigger = { LINE = wisdom CASTER = root TARGET = scope:blessing_target }
+		}
+		show_as_unavailable = {
+			NOT = { scope:blessing_target = { has_character_modifier = bm_blessing_wisdom_superior_modifier } }
+		}
+		bm_apply_blessing_effect = { LINE = wisdom CASTER = root TARGET = scope:blessing_target }
+		ai_chance = {
+			base = 20
+			modifier = {
+				scope:blessing_target = { learning >= 12 }
+				add = 20
+			}
+		}
+	}
+
+	# 6. Blessing of Ancient (All-Lifestyle XP & Fertility)
+	option = {
+		name = bm_blood_blessing.001.ancient
+		trigger = {
+			bm_can_upgrade_blessing_line_trigger = { LINE = ancient CASTER = root TARGET = scope:blessing_target }
+		}
+		show_as_unavailable = {
+			NOT = { scope:blessing_target = { has_character_modifier = bm_blessing_ancient_superior_modifier } }
+		}
+		bm_apply_blessing_effect = { LINE = ancient CASTER = root TARGET = scope:blessing_target }
+		ai_chance = {
+			base = 15
+			modifier = {
+				scope:blessing_target = {
+					OR = {
+						is_spouse_of = root
+						is_consort_of = root
+					}
+					fertility > 0
+				}
+				add = 35
+			}
+		}
+	}
+
+	option = {
+		name = bm_blood_blessing.001.cancel
+		ai_chance = { base = 0 }
+	}
+}
