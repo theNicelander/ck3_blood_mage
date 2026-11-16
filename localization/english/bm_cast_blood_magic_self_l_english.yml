@@ -41,27 +41,6 @@
     bm_attune_fury_desc: "Applies [GetModifier('fury_attuned').GetNameWithTooltip]."
     bm_attune_fury_tooltip: "$bm_attune_fury_desc$"
 
-    # Channel lifeforce minor
-    bm_channel_minor_lifeforce_decision: "Channel Minor Lifeforce"
-    bm_channel_minor_lifeforce_decision_desc: "Spend [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] for a small temporary boost."
-    bm_channel_minor_lifeforce_decision_tooltip: "Spend minor lifeforce to temporarily enhance one attribute"
-    bm_channel_minor_lifeforce_decision_confirm: "Channel the Blood"
-
-    bm_cast_blood_magic_self_channel_minor_lifeforce: "Channel Minor Lifeforce"
-    bm_cast_blood_magic_self_channel_minor_lifeforce_desc: "Spend [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] for a small temporary boost."
-    channel_lifeforce_wisdom_minor.effects_list: "Channel minor blood magic to temporarily enhance one attribute:\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('diplomacy_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('martial_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('stewardship_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('intrigue_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('learning_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('prowess_lifeforce_modifier').GetNameWithTooltip]\n#indent_newline: $EFFECT_LIST_BULLET$ [GetModifier('exp_lifeforce_modifier').GetNameWithTooltip]"
-
-    bm_channel_lifeforce_wisdom_minor.001.title: "Subtle Blood Awakening"
-    bm_channel_lifeforce_wisdom_minor.001.desc: "A whisper of power stirs within my veins, not the roar of a full ritual but enough to grant me some advantage. With careful focus, I can direct this modest blood current to temporarily enhance a single facet of my being."
-    bm_channel_lifeforce_wisdom_minor.001.a: "Diplomacy - A drop of blood on my tongue loosens secrets"
-    bm_channel_lifeforce_wisdom_minor.001.b: "Martial - My blade thirsts for a taste of battle"
-    bm_channel_lifeforce_wisdom_minor.001.c: "Stewardship - Blood-tinged vision reveals hidden values"
-    bm_channel_lifeforce_wisdom_minor.001.d: "Intrigue - Shadows part before my blood gaze"
-    bm_channel_lifeforce_wisdom_minor.001.e: "Learning - Knowledge pulses with each heartbeat"
-    bm_channel_lifeforce_wisdom_minor.001.f: "Fertility - May our offspring flourish"
-    bm_channel_lifeforce_wisdom_minor.001.g: "Experience - Blood remembers the paths to power"
-    bm_channel_lifeforce_wisdom_minor.001.h: "Prowess - The blade shall be quenched in blood"
-
 ############### MAJOR ###############
     # Education improvement
     bm_improve_education_decision: "Enhance Education"
@@ -147,18 +126,18 @@
     bm_transmute_lifeforce.back: "Back"
 
     bm_transmute_lifeforce.0001.t: "Transmute Lifeforce"
-    bm_transmute_lifeforce.0001.desc: "You prepare to reshape your reserves of Lifeforce, channeling Major Lifeforce into specialized reservoirs or reclaiming them back into Major Lifeforce."
-    bm_transmute_lifeforce.0001.major: "Channel Major Lifeforce"
+    bm_transmute_lifeforce.0001.desc: "You prepare to reshape your reserves of Lifeforce, transmuting Major Lifeforce into specialized reservoirs or reclaiming them back into Major Lifeforce."
+    bm_transmute_lifeforce.0001.major: "Transmute Major Lifeforce"
     bm_transmute_lifeforce.0001.reverse: "Reclaim Stored Lifeforce"
 
-    bm_transmute_lifeforce.0002.t: "Channel Major Lifeforce"
-    bm_transmute_lifeforce.0002.desc: "Channel 1 Major Lifeforce into 1 stack of a specialized reservoir."
-    bm_transmute_lifeforce.0002.radiant: "Channel into Radiant Blood"
-    bm_transmute_lifeforce.0002.furious: "Channel into Furious Blood"
-    bm_transmute_lifeforce.0002.fortunate: "Channel into Fortunate Blood"
-    bm_transmute_lifeforce.0002.cunning: "Channel into Cunning Blood"
-    bm_transmute_lifeforce.0002.wise: "Channel into Wise Blood"
-    bm_transmute_lifeforce.0002.ancient: "Channel into Ancient Blood"
+    bm_transmute_lifeforce.0002.t: "Transmute Major Lifeforce"
+    bm_transmute_lifeforce.0002.desc: "Transmute 1 Major Lifeforce into 1 stack of a specialized reservoir."
+    bm_transmute_lifeforce.0002.radiant: "Transmute into Radiant Blood"
+    bm_transmute_lifeforce.0002.furious: "Transmute into Furious Blood"
+    bm_transmute_lifeforce.0002.fortunate: "Transmute into Fortunate Blood"
+    bm_transmute_lifeforce.0002.cunning: "Transmute into Cunning Blood"
+    bm_transmute_lifeforce.0002.wise: "Transmute into Wise Blood"
+    bm_transmute_lifeforce.0002.ancient: "Transmute into Ancient Blood"
 
     bm_transmute_lifeforce.0004.t: "Reclaim Stored Lifeforce"
     bm_transmute_lifeforce.0004.desc: "Dissolve 1 stack of a specialized reservoir back into 1 Major Lifeforce."
@@ -176,9 +155,6 @@
     bm_cast_blood_magic_minor_decision_confirm: "$BM_CAST_BLOOD_MAGIC_NEXT_STEP_BUTTON$"
 
     # Minor Options
-    bm_minor_channel: "Channel Minor Lifeforce"
-    bm_minor_channel_desc: "Direct minor lifeforce to temporarily boost a chosen attribute."
-    bm_minor_channel_tooltip: "Direct minor lifeforce to temporarily boost a chosen attribute.\n\nCosts [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] and #V 75#! [piety|E]."
     bm_minor_purge: "Purge Impurities and Infirmities"
     bm_minor_purge_desc: "Purge physical wounds, illnesses, or negative traits using minor lifeforce."
     bm_minor_purge_tooltip: "Purge physical wounds, illnesses, or negative traits using minor lifeforce.\n\nCosts [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] and #V 50#! [piety|E]."
@@ -203,7 +179,6 @@
     NOT_bm_attune_lifeforce_cooldown_tt: "Has not attuned Lifeforce in the last 1 year"
 
     # Minor Aliases
-    bm_cast_blood_magic_minor.001.channel: "$bm_minor_channel$"
     bm_cast_blood_magic_minor.001.purge: "$bm_minor_purge$"
     bm_cast_blood_magic_minor.001.purge.tt: "$bm_minor_purge_tooltip$"
     bm_purge_impurities_toast: "Purged Blood Impurities"

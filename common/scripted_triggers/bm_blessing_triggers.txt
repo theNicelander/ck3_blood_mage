@@ -1,0 +1,61 @@
+﻿# Triggers for permanent tiered Blood Blessings (Blessing of X)
+
+bm_can_upgrade_blessing_line_trigger = {
+	$TARGET$ = {
+		NOT = { has_character_modifier = bm_blessing_$LINE$_superior_modifier }
+	}
+	trigger_if = {
+		limit = {
+			$TARGET$ = { has_character_modifier = bm_blessing_$LINE$_major_modifier }
+		}
+		$CASTER$ = {
+			piety >= 250
+			piety_level >= 5
+			has_character_modifier = lifeforce_modifier_superior
+		}
+	}
+	trigger_else_if = {
+		limit = {
+			$TARGET$ = { has_character_modifier = bm_blessing_$LINE$_minor_modifier }
+		}
+		$CASTER$ = {
+			piety >= 150
+			piety_level >= 3
+			has_character_modifier = lifeforce_modifier_major
+		}
+	}
+	trigger_else = {
+		$CASTER$ = {
+			piety >= 50
+			piety_level >= 1
+			has_character_modifier = lifeforce_modifier_minor
+		}
+	}
+}
+
+bm_has_any_upgradeable_blessing_trigger = {
+	OR = {
+		bm_can_upgrade_blessing_line_trigger = { LINE = radiance CASTER = $CASTER$ TARGET = $TARGET$ }
+		bm_can_upgrade_blessing_line_trigger = { LINE = fortune CASTER = $CASTER$ TARGET = $TARGET$ }
+		bm_can_upgrade_blessing_line_trigger = { LINE = fury CASTER = $CASTER$ TARGET = $TARGET$ }
+		bm_can_upgrade_blessing_line_trigger = { LINE = cunning CASTER = $CASTER$ TARGET = $TARGET$ }
+		bm_can_upgrade_blessing_line_trigger = { LINE = wisdom CASTER = $CASTER$ TARGET = $TARGET$ }
+		bm_can_upgrade_blessing_line_trigger = { LINE = ancient CASTER = $CASTER$ TARGET = $TARGET$ }
+	}
+}
+
+bm_is_valid_blessing_recipient_trigger = {
+	OR = {
+		this = $ACTOR$
+		is_child_of = $ACTOR$
+		dynasty ?= $ACTOR$.dynasty
+		is_knight_of = $ACTOR$
+		is_councillor_of = $ACTOR$
+		is_spouse_of = $ACTOR$
+		is_consort_of = $ACTOR$
+		$ACTOR$ = {
+			is_independent_ruler = no
+			liege ?= prev
+		}
+	}
+}

@@ -697,28 +697,6 @@ bm_cast_blood_magic_minor_decision = {
 		decision_to_second_step_button = "BM_CAST_BLOOD_MAGIC_NEXT_STEP_BUTTON"
 		show_from_start = yes
 
-		# Channel Minor Lifeforce
-		item = {
-			value = bm_minor_channel
-			current_description = bm_minor_channel
-			localization = bm_minor_channel
-			icon = "gfx/interface/icons/trait_level_tracks/wisdom.dds"
-			is_shown = {
-				is_blood_mage_any_tier_trigger = yes
-			}
-			is_valid = {
-				piety >= 75
-				has_character_modifier = lifeforce_modifier_minor
-			}
-			ai_chance = {
-				value = 10
-				if = {
-					limit = { health <= fine_health }
-					multiply = 0
-				}
-			}
-		}
-
 		# Purge Bodily Impurities
 		item = {
 			value = bm_minor_purge
@@ -851,14 +829,6 @@ bm_cast_blood_magic_minor_decision = {
 
 	effect = {
 		if = {
-			limit = { scope:bm_minor_channel = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (channel) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
-			add_piety = -75
-			remove_character_modifier = lifeforce_modifier_minor
-			add_xp_wisdom = yes
-			trigger_event = { id = bm_channel_lifeforce_wisdom_minor.001 }
-		}
-		else_if = {
 			limit = { scope:bm_minor_purge = yes }
 			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (purge) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
 			add_piety = -50

@@ -1,23 +1,96 @@
 ﻿l_english:
   # Modifiers
-  bm_blessed_blood_sovereign_modifier: "Blood of the Sovereign"
-  bm_blessed_blood_sovereign_modifier_desc: "This ruler's blood has been consecrated for dominion and governance, steadying their realm."
-  bm_blessed_blood_iron_modifier: "Blood of Iron"
-  bm_blessed_blood_iron_modifier_desc: "This warrior's blood surges with martial fury, hardening their body and emboldening their knights."
-  bm_blessed_blood_crucible_modifier: "Blood Crucible"
-  bm_blessed_blood_crucible_modifier_desc: "Infused with pure vitality, their lineage quickens with resilient constitution and potent hereditary traits."
+  bm_blessing_radiance_minor_modifier: "Minor Blessing of Radiance"
+  bm_blessing_radiance_minor_modifier_desc: "Permanent blood blessing that sharpens diplomacy and accelerates Diplomacy lifestyle mastery."
+  bm_blessing_radiance_major_modifier: "Major Blessing of Radiance"
+  bm_blessing_radiance_major_modifier_desc: "Permanent blood blessing that deepens diplomacy and accelerates Diplomacy lifestyle mastery."
+  bm_blessing_radiance_superior_modifier: "Superior Blessing of Radiance"
+  bm_blessing_radiance_superior_modifier_desc: "Permanent blood blessing that grants commanding diplomacy and rapid Diplomacy lifestyle mastery."
+
+  bm_blessing_fortune_minor_modifier: "Minor Blessing of Fortune"
+  bm_blessing_fortune_minor_modifier_desc: "Permanent blood blessing that sharpens stewardship and accelerates Stewardship lifestyle mastery."
+  bm_blessing_fortune_major_modifier: "Major Blessing of Fortune"
+  bm_blessing_fortune_major_modifier_desc: "Permanent blood blessing that deepens stewardship and accelerates Stewardship lifestyle mastery."
+  bm_blessing_fortune_superior_modifier: "Superior Blessing of Fortune"
+  bm_blessing_fortune_superior_modifier_desc: "Permanent blood blessing that grants commanding stewardship and rapid Stewardship lifestyle mastery."
+
+  bm_blessing_fury_minor_modifier: "Minor Blessing of Fury"
+  bm_blessing_fury_minor_modifier_desc: "Permanent blood blessing that sharpens martial skill and accelerates Martial lifestyle mastery."
+  bm_blessing_fury_major_modifier: "Major Blessing of Fury"
+  bm_blessing_fury_major_modifier_desc: "Permanent blood blessing that deepens martial skill and accelerates Martial lifestyle mastery."
+  bm_blessing_fury_superior_modifier: "Superior Blessing of Fury"
+  bm_blessing_fury_superior_modifier_desc: "Permanent blood blessing that grants commanding martial skill and rapid Martial lifestyle mastery."
+
+  bm_blessing_cunning_minor_modifier: "Minor Blessing of Cunning"
+  bm_blessing_cunning_minor_modifier_desc: "Permanent blood blessing that sharpens intrigue and accelerates Intrigue lifestyle mastery."
+  bm_blessing_cunning_major_modifier: "Major Blessing of Cunning"
+  bm_blessing_cunning_major_modifier_desc: "Permanent blood blessing that deepens intrigue and accelerates Intrigue lifestyle mastery."
+  bm_blessing_cunning_superior_modifier: "Superior Blessing of Cunning"
+  bm_blessing_cunning_superior_modifier_desc: "Permanent blood blessing that grants commanding intrigue and rapid Intrigue lifestyle mastery."
+
+  bm_blessing_wisdom_minor_modifier: "Minor Blessing of Wisdom"
+  bm_blessing_wisdom_minor_modifier_desc: "Permanent blood blessing that sharpens learning and accelerates Learning lifestyle mastery."
+  bm_blessing_wisdom_major_modifier: "Major Blessing of Wisdom"
+  bm_blessing_wisdom_major_modifier_desc: "Permanent blood blessing that deepens learning and accelerates Learning lifestyle mastery."
+  bm_blessing_wisdom_superior_modifier: "Superior Blessing of Wisdom"
+  bm_blessing_wisdom_superior_modifier_desc: "Permanent blood blessing that grants commanding learning and rapid Learning lifestyle mastery."
+
+  bm_blessing_ancient_minor_modifier: "Minor Blessing of Ancient"
+  bm_blessing_ancient_minor_modifier_desc: "Permanent blood blessing that accelerates all lifestyle mastery and boosts fertility."
+  bm_blessing_ancient_major_modifier: "Major Blessing of Ancient"
+  bm_blessing_ancient_major_modifier_desc: "Permanent blood blessing that further accelerates all lifestyle mastery and boosts fertility."
+  bm_blessing_ancient_superior_modifier: "Superior Blessing of Ancient"
+  bm_blessing_ancient_superior_modifier_desc: "Permanent blood blessing that greatly accelerates all lifestyle mastery and fertility."
+
   bm_anointed_heir_modifier: "Anointed in Blood"
   bm_anointed_heir_modifier_desc: "Chosen as the sacred successor of a blood lineage. Upon their predecessor's death, they inherit their arcane legacy and condensed lifeforce."
 
-  # Bless Bloodline Options
-  bm_bless_bloodline_interaction.bless_sovereign: "Blood of the Sovereign"
-  bm_bless_bloodline_interaction.bless_sovereign_desc: "Grants #P +2#! Diplomacy, #P +2#! Stewardship, #P +10#! Vassal Opinion, #P -25%#! Short Reign Duration, and #P +1.0#! Health for 10 years."
-  bm_bless_bloodline_interaction.bless_iron: "Blood of Iron"
-  bm_bless_bloodline_interaction.bless_iron_desc: "Grants #P +2#! Martial, #P +4#! Prowess, #P +25%#! Knight Effectiveness, #P +1.0#! Health, and #P +0.50#! Health Penalty Negation for 10 years."
-  bm_bless_bloodline_interaction.bless_crucible: "Blood Crucible"
-  bm_bless_bloodline_interaction.bless_crucible_desc: "Grants #P +25%#! Positive Genetic Chance, #P -25%#! Stress Gain, and #P +1.0#! Health for 10 years."
-  bm_bless_bloodline_interaction.bless_feingur: "Feingur's Eternal Blessing"
-  bm_bless_bloodline_interaction.bless_feingur_desc: "Invoke your Superior Feingur stave to carve a permanent blessing granting #P +25%#! Fertility, #P +20%#! Positive Genetic Chance, #P +0.50#! Health, and #P +5#! Years Life Expectancy."
+  # Cooldown
+  bm_blessing_cooldown_tt: "Has not received a Blood Blessing in the last 1 year"
+  NOT_bm_blessing_cooldown_tt: "Has not received a Blood Blessing in the last 1 year"
+
+  # Self-Cast Blood Blessing Decision
+  bm_self_blessing_decision: "Cast Blood Blessing"
+  bm_self_blessing_decision_desc: "Channel Lifeforce into yourself to permanently awaken or upgrade a Blood Blessing."
+  bm_self_blessing_decision_tooltip: "Bestow or upgrade a permanent Blood Blessing on yourself."
+  BM_SELF_BLESSING_DECISION_NEXT_STEP_BUTTON: "Bestow Blessing"
+  bm_self_blessing_decision_confirm: "$BM_SELF_BLESSING_DECISION_NEXT_STEP_BUTTON$"
+  bm_self_blessing_preview_tt: "Select a Blood Blessing line to bestow or upgrade."
+
+  bm_self_blessing_radiance: "Blessing of Radiance"
+  bm_self_blessing_radiance_desc: "Permanent Diplomacy and Diplomacy Lifestyle XP blessing (Minor: +1 / +5 / +5%, Major: +3 / +10 / +10%, Superior: +5 / +15 / +20%)."
+  bm_self_blessing_radiance_tooltip: "$bm_self_blessing_radiance_desc$\n\nMinor: 50 [piety|E], Devotion 1, Minor Lifeforce.\nMajor: 150 [piety|E], Devotion 3, Major Lifeforce.\nSuperior: 250 [piety|E], Devotion 5, Superior Lifeforce."
+
+  bm_self_blessing_fortune: "Blessing of Fortune"
+  bm_self_blessing_fortune_desc: "Permanent Stewardship and Stewardship Lifestyle XP blessing (Minor: +1 / +5 / +5%, Major: +3 / +10 / +10%, Superior: +5 / +15 / +20%)."
+  bm_self_blessing_fortune_tooltip: "$bm_self_blessing_fortune_desc$\n\nMinor: 50 [piety|E], Devotion 1, Minor Lifeforce.\nMajor: 150 [piety|E], Devotion 3, Major Lifeforce.\nSuperior: 250 [piety|E], Devotion 5, Superior Lifeforce."
+
+  bm_self_blessing_fury: "Blessing of Fury"
+  bm_self_blessing_fury_desc: "Permanent Martial and Martial Lifestyle XP blessing (Minor: +1 / +5 / +5%, Major: +3 / +10 / +10%, Superior: +5 / +15 / +20%)."
+  bm_self_blessing_fury_tooltip: "$bm_self_blessing_fury_desc$\n\nMinor: 50 [piety|E], Devotion 1, Minor Lifeforce.\nMajor: 150 [piety|E], Devotion 3, Major Lifeforce.\nSuperior: 250 [piety|E], Devotion 5, Superior Lifeforce."
+
+  bm_self_blessing_cunning: "Blessing of Cunning"
+  bm_self_blessing_cunning_desc: "Permanent Intrigue and Intrigue Lifestyle XP blessing (Minor: +1 / +5 / +5%, Major: +3 / +10 / +10%, Superior: +5 / +15 / +20%)."
+  bm_self_blessing_cunning_tooltip: "$bm_self_blessing_cunning_desc$\n\nMinor: 50 [piety|E], Devotion 1, Minor Lifeforce.\nMajor: 150 [piety|E], Devotion 3, Major Lifeforce.\nSuperior: 250 [piety|E], Devotion 5, Superior Lifeforce."
+
+  bm_self_blessing_wisdom: "Blessing of Wisdom"
+  bm_self_blessing_wisdom_desc: "Permanent Learning and Learning Lifestyle XP blessing (Minor: +1 / +5 / +5%, Major: +3 / +10 / +10%, Superior: +5 / +15 / +20%)."
+  bm_self_blessing_wisdom_tooltip: "$bm_self_blessing_wisdom_desc$\n\nMinor: 50 [piety|E], Devotion 1, Minor Lifeforce.\nMajor: 150 [piety|E], Devotion 3, Major Lifeforce.\nSuperior: 250 [piety|E], Devotion 5, Superior Lifeforce."
+
+  bm_self_blessing_ancient: "Blessing of Ancient"
+  bm_self_blessing_ancient_desc: "Permanent all-lifestyle XP and fertility blessing (Minor: +5 / +5% / +5% Fertility / +2 Yrs, Major: +10 / +10% / +15% / +4 Yrs, Superior: +15 / +20% / +25% / +8 Yrs)."
+  bm_self_blessing_ancient_tooltip: "$bm_self_blessing_ancient_desc$\n\nMinor: 50 [piety|E], Devotion 1, Minor Lifeforce.\nMajor: 150 [piety|E], Devotion 3, Major Lifeforce.\nSuperior: 250 [piety|E], Devotion 5, Superior Lifeforce."
+
+  # Blood Blessing Line Picker Event
+  bm_blood_blessing.001.title: "Bestow Blood Blessing"
+  bm_blood_blessing.001.desc: "Select which permanent Blood Blessing to bestow or upgrade upon [blessing_target.GetShortUINameNoTooltip]. Minor costs 50 [piety|E] and Minor Lifeforce (Devotion 1); Major costs 150 [piety|E] and Major Lifeforce (Devotion 3); Superior costs 250 [piety|E] and Superior Lifeforce (Devotion 5)."
+  bm_blood_blessing.001.radiance: "$bm_self_blessing_radiance$"
+  bm_blood_blessing.001.fortune: "$bm_self_blessing_fortune$"
+  bm_blood_blessing.001.fury: "$bm_self_blessing_fury$"
+  bm_blood_blessing.001.cunning: "$bm_self_blessing_cunning$"
+  bm_blood_blessing.001.wisdom: "$bm_self_blessing_wisdom$"
+  bm_blood_blessing.001.ancient: "$bm_self_blessing_ancient$"
+  bm_blood_blessing.001.cancel: "Back"
 
   # Anoint Heir Interaction
   bm_anoint_heir_interaction: "Anoint Heir in Blood"

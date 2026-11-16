@@ -34,14 +34,19 @@ Modifiers apply to all living and future members of the caster's house (landless
   - **Prerequisites:** Actor has `lifestyle_blood_mage`. Target is living `primary_heir` or `child` and does not already have `bm_anointed_heir_modifier` (hidden once anointed).
   - **Cost:** 250 Piety + 1 Major Lifeforce (`blood_magic_used_major`).
   - **Effect:** Strips `bm_anointed_heir_modifier` from any other child or previous heir. Applies permanent `bm_anointed_heir_modifier` (`+1.0` Health, `+15` Dynasty Opinion, `+25%` Monthly Lifestyle XP, `-35%` Short Reign Duration) to recipient, `+30` Opinion, and `+2` `fortune` XP.
-- **Bless Blood (`bm_bless_bloodline_interaction`):**
-  - **Prerequisites:** Actor has `lifestyle_blood_mage`. Target is a `child`, `dynasty` member, sworn `knight` or courtier. Hidden once target has all applicable blessings.
-  - **Cost:** 35 Piety (50 Piety for Feingur) + 1 Minor Lifeforce (`fortune_magic_cast_effect_minor`).
-  - **Options (`send_options_exclusive = yes`):**
-    1. **Blood of the Sovereign (`bm_blessed_blood_sovereign_modifier`):** 10 yrs, `+2` Diplomacy, `+2` Stewardship, `+10` Vassal Opinion, `-25%` Short Reign Duration, `+1.0` Health (children & dynasty).
-    2. **Blood of Iron (`bm_blessed_blood_iron_modifier`):** 10 yrs, `+2` Martial, `+4` Prowess, `+25%` Knight Effectiveness, `+1.0` Health, `+0.50` Health Penalty Negation (children, dynasty, sworn knights, and Blood Mage courtiers).
-    3. **Blood Crucible (`bm_blessed_blood_crucible_modifier`):** 10 yrs, `+25%` Fertility, `+25%` Positive Genetic Chance, `-25%` Stress Gain, `+1.0` Health (children & dynasty).
-    4. **Feingur's Eternal Blessing (`bm_feingur_blessed_blood_modifier`):** Permanent `+25%` Fertility, `+20%` Positive Genetic Chance, `+0.50` Health, `+5` Life Expectancy (children & dynasty when caster has Superior **Feingur** stave).
+- **Permanent Tiered Blood Blessings (`bm_blood_blessing_interaction` & `bm_self_blessing_decision`):**
+  - **Prerequisites:** Actor has `lifestyle_blood_mage` (any tier). Target is self, `child`, `dynasty` member, `spouse`/`consort`, sworn `knight`, `councillor`, or `liege`, and does not have the 1-year `bm_blessing_cooldown` flag.
+  - **Tiers & Costs:**
+    - **Minor:** `50` Piety + Devotion 1 + `1` Minor Lifeforce (`blood_magic_used_minor`), `+2` `wisdom` (self) / `radiance` (others) XP.
+    - **Major:** Requires Minor blessing of that line, `150` Piety + Devotion 3 + `1` Major Lifeforce (`blood_magic_used_major`), `+4` XP. Replaces Minor.
+    - **Superior:** Requires Major blessing of that line, `250` Piety + Devotion 5 + `1` Superior Lifeforce (`blood_magic_used_superior`), `+6` XP. Replaces Major.
+  - **6 Lines (all stackable; max 1 tier per line, permanent, +25 Opinion on others):**
+    1. **Blessing of Radiance (`bm_blessing_radiance_<tier>_modifier`):** `+1/+3/+5` Diplomacy, `+5/+10/+15` monthly Diplomacy Lifestyle XP, `+5%/+10%/+20%` monthly Lifestyle XP.
+    2. **Blessing of Fortune (`bm_blessing_fortune_<tier>_modifier`):** `+1/+3/+5` Stewardship, `+5/+10/+15` monthly Stewardship Lifestyle XP, `+5%/+10%/+20%` monthly Lifestyle XP.
+    3. **Blessing of Fury (`bm_blessing_fury_<tier>_modifier`):** `+1/+3/+5` Martial, `+5/+10/+15` monthly Martial Lifestyle XP, `+5%/+10%/+20%` monthly Lifestyle XP.
+    4. **Blessing of Cunning (`bm_blessing_cunning_<tier>_modifier`):** `+1/+3/+5` Intrigue, `+5/+10/+15` monthly Intrigue Lifestyle XP, `+5%/+10%/+20%` monthly Lifestyle XP.
+    5. **Blessing of Wisdom (`bm_blessing_wisdom_<tier>_modifier`):** `+1/+3/+5` Learning, `+5/+10/+15` monthly Learning Lifestyle XP, `+5%/+10%/+20%` monthly Lifestyle XP.
+    6. **Blessing of Ancient (`bm_blessing_ancient_<tier>_modifier`):** `+5/+10/+15` all-lifestyle monthly XP, `+5%/+10%/+20%` monthly Lifestyle XP, `+5%/+15%/+25%` Fertility, `+2/+4/+8` Years of Fertility.
 - **Succession Legacy Awakening (`bm_transfer_anointed_heir_legacy_effect`):**
   - Triggered via `on_death` / `on_character_death` when a Blood Mage ruler dies with an anointed heir:
     1. **Awakening:** If the heir lacks `lifestyle_blood_mage`, awakens it via `bm_become_blood_mage_effect`.
@@ -70,7 +75,7 @@ Modifiers apply to all living and future members of the caster's house (landless
 | Golem dynasty | `common/dynasties/bm_dynasties.txt` |
 | Golem house coat of arms | `common/coat_of_arms/coat_of_arms/bm_coat_of_arms.txt` |
 | Bloodline house modifiers (Tiers 1–3) | `common/modifiers/bm_channel_dynasty_modifiers.txt` |
-| Dynasty rites & heir modifiers | `common/modifiers/bm_dynasty_rites_modifiers.txt` |
+| Blood Blessing & heir modifiers | `common/modifiers/bm_blood_blessing_modifiers.txt` |
 | Standalone widget decision | `common/decisions/cast_magic/bm_empower_bloodline_decision.txt` |
 | Covenant upgrade scripted effects | `common/scripted_effects/bm_empower_bloodline_effects.txt` |
 | Heir succession transfer effect | `common/scripted_effects/bm_heir_succession_effects.txt` |
