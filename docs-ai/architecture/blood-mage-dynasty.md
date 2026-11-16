@@ -34,7 +34,7 @@ Modifiers apply to all living and future members of the caster's house (landless
   - **Prerequisites:** Actor has `lifestyle_blood_mage`. Target is living `primary_heir` or `child` and does not already have `bm_anointed_heir_modifier` (hidden once anointed).
   - **Cost:** 250 Piety + 1 Major Lifeforce (`blood_magic_used_major`).
   - **Effect:** Strips `bm_anointed_heir_modifier` from any other child or previous heir. Applies permanent `bm_anointed_heir_modifier` (`+1.0` Health, `+15` Dynasty Opinion, `+25%` Monthly Lifestyle XP, `-35%` Short Reign Duration) to recipient, `+30` Opinion, and `+2` `fortune` XP.
-- **Permanent Tiered Blood Blessings (`bm_blood_blessing_interaction` & `bm_self_blessing_decision`):**
+- **Permanent Tiered Blood Blessings (`bm_cast_blood_blessing_interaction` & `bm_cast_blood_magic_minor_decision`):**
   - **Prerequisites:** Actor has `lifestyle_blood_mage` (any tier). Target is self, `child`, `dynasty` member, `spouse`/`consort`, sworn `knight`, `councillor`, or `liege`, and does not have the 1-year `bm_blessing_cooldown` flag.
   - **Tiers & Costs:**
     - **Minor:** `50` Piety + Devotion 1 + `1` Minor Lifeforce (`blood_magic_used_minor`), `+2` `wisdom` (self) / `radiance` (others) XP.

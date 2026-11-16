@@ -161,35 +161,7 @@
 		}
 	}
 
-	# 3. Bless Blood
-	send_option = {
-		flag = blessing_bless_blood
-		localization = bm_blood_blessing_option_bless_blood
-		current_description = bm_blood_blessing_option_bless_blood_desc
-		can_invalidate_interaction = yes
-		is_shown = {
-			scope:recipient = {
-				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
-			}
-		}
-		is_valid = {
-			scope:recipient = {
-				custom_tooltip = {
-					text = bm_blessing_cooldown_tt
-					NOT = { has_character_flag = bm_blessing_cooldown }
-				}
-			}
-			bm_has_any_upgradeable_blessing_trigger = { CASTER = scope:actor TARGET = scope:recipient }
-		}
-		starts_enabled = {
-			scope:recipient = {
-				NOT = { has_character_flag = bm_blessing_cooldown }
-			}
-			bm_has_any_upgradeable_blessing_trigger = { CASTER = scope:actor TARGET = scope:recipient }
-		}
-	}
-
-	# 4. Annoint Heir
+	# 3. Annoint Heir
 	send_option = {
 		flag = blessing_anoint_heir
 		localization = bm_blood_blessing_option_anoint_heir
@@ -458,16 +430,6 @@
 			}
 		}
 		else_if = {
-			limit = { scope:blessing_bless_blood = yes }
-			debug_log = "BloodMageInteraction: bm_blood_blessing (bless_blood) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
-			scope:recipient = {
-				save_scope_as = blessing_target
-			}
-			scope:actor = {
-				trigger_event = bm_blood_blessing.001
-			}
-		}
-		else_if = {
 			limit = { scope:blessing_anoint_heir = yes }
 			debug_log = "BloodMageInteraction: bm_blood_blessing (anoint_heir) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
 			scope:actor = {
@@ -687,10 +649,6 @@
 			add = 40
 		}
 		modifier = {
-			scope:blessing_bless_blood = yes
-			add = 35
-		}
-		modifier = {
 			scope:blessing_empower = yes
 			add = 30
 		}
@@ -751,7 +709,6 @@
 			NOR = {
 				scope:blessing_empower = yes
 				scope:blessing_grant_lifeforce = yes
-				scope:blessing_bless_blood = yes
 				scope:blessing_anoint_heir = yes
 				scope:blessing_consecrate_union = yes
 				scope:blessing_inscribe_rune = yes
