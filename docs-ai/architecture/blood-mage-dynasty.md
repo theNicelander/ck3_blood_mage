@@ -41,12 +41,12 @@ Modifiers apply to all living and future members of the caster's house (landless
     - **Major:** Requires Minor blessing of that line, `150` Piety + Devotion 3 + `1` Major Lifeforce (`blood_magic_used_major`), `+4` XP. Replaces Minor.
     - **Superior:** Requires Major blessing of that line, `250` Piety + Devotion 5 + `1` Superior Lifeforce (`blood_magic_used_superior`), `+6` XP. Replaces Major.
   - **6 Lines (all stackable; max 1 tier per line, permanent, +25 Opinion on others):**
-    1. **Blessing of Radiance (`bm_blessing_radiance_<tier>_modifier`):** `+1/+3/+5` Diplomacy, `+3/+8/+15` monthly Diplomacy Lifestyle XP, `+5%/+10%/+20%` monthly Lifestyle XP.
-    2. **Blessing of Fortune (`bm_blessing_fortune_<tier>_modifier`):** `+1/+3/+5` Stewardship, `+3/+8/+15` monthly Stewardship Lifestyle XP, `+5%/+10%/+20%` monthly Lifestyle XP.
-    3. **Blessing of Fury (`bm_blessing_fury_<tier>_modifier`):** `+1/+3/+5` Martial, `+3/+8/+15` monthly Martial Lifestyle XP, `+5%/+10%/+20%` monthly Lifestyle XP.
-    4. **Blessing of Cunning (`bm_blessing_cunning_<tier>_modifier`):** `+1/+3/+5` Intrigue, `+3/+8/+15` monthly Intrigue Lifestyle XP, `+5%/+10%/+20%` monthly Lifestyle XP.
-    5. **Blessing of Wisdom (`bm_blessing_wisdom_<tier>_modifier`):** `+1/+3/+5` Learning, `+3/+8/+15` monthly Learning Lifestyle XP, `+5%/+10%/+20%` monthly Lifestyle XP.
-    6. **Blessing of Ancient (`bm_blessing_ancient_<tier>_modifier`):** `+3/+8/+15` all-lifestyle monthly XP, `+5%/+10%/+20%` monthly Lifestyle XP, `+5%/+15%/+25%` Fertility, `+2/+4/+8` Years of Fertility.
+    1. **Blessing of Radiance (`bm_blessing_radiance_<tier>_modifier`):** `+1/+3/+5` Diplomacy, `+5/+10/+15` monthly Diplomacy Lifestyle XP, `+5%/+10%/+20%` monthly Lifestyle XP.
+    2. **Blessing of Fortune (`bm_blessing_fortune_<tier>_modifier`):** `+1/+3/+5` Stewardship, `+5/+10/+15` monthly Stewardship Lifestyle XP, `+5%/+10%/+20%` monthly Lifestyle XP.
+    3. **Blessing of Fury (`bm_blessing_fury_<tier>_modifier`):** `+1/+3/+5` Martial, `+5/+10/+15` monthly Martial Lifestyle XP, `+5%/+10%/+20%` monthly Lifestyle XP.
+    4. **Blessing of Cunning (`bm_blessing_cunning_<tier>_modifier`):** `+1/+3/+5` Intrigue, `+5/+10/+15` monthly Intrigue Lifestyle XP, `+5%/+10%/+20%` monthly Lifestyle XP.
+    5. **Blessing of Wisdom (`bm_blessing_wisdom_<tier>_modifier`):** `+1/+3/+5` Learning, `+5/+10/+15` monthly Learning Lifestyle XP, `+5%/+10%/+20%` monthly Lifestyle XP.
+    6. **Blessing of Ancient (`bm_blessing_ancient_<tier>_modifier`):** `+5/+10/+15` all-lifestyle monthly XP, `+5%/+10%/+20%` monthly Lifestyle XP, `+5%/+15%/+25%` Fertility, `+2/+4/+8` Years of Fertility.
 - **Succession Legacy Awakening (`bm_transfer_anointed_heir_legacy_effect`):**
   - Triggered via `on_death` / `on_character_death` when a Blood Mage ruler dies with an anointed heir:
     1. **Awakening:** If the heir lacks `lifestyle_blood_mage`, awakens it via `bm_become_blood_mage_effect`.
