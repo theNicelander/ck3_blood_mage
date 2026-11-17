@@ -1,0 +1,36 @@
+﻿# Scripted triggers for Empower Dynasty Bloodline House Covenants.
+
+bm_can_upgrade_covenant_trigger = {
+	$ACTOR$ = {
+		NOT = { house ?= { has_house_modifier = dynasty_blood_$COVENANT$_modifier_3 } }
+		trigger_if = {
+			limit = { house ?= { has_house_modifier = dynasty_blood_$COVENANT$_modifier_1 } }
+			is_blood_mage_tier_2_or_higher_trigger = yes
+			piety_level >= 2
+			piety >= 350
+			has_character_modifier = lifeforce_modifier_major
+		}
+		trigger_else_if = {
+			limit = { house ?= { has_house_modifier = dynasty_blood_$COVENANT$_modifier_2 } }
+			is_blood_mage_archmage_trigger = yes
+			piety_level >= 3
+			piety >= 750
+			has_character_modifier = lifeforce_modifier_superior
+		}
+		trigger_else = {
+			piety_level >= 1
+			piety >= 150
+			has_character_modifier = lifeforce_modifier_minor
+		}
+	}
+}
+
+bm_can_grant_acolyte_covenant_trigger = {
+	$ACTOR$ = {
+		NOT = { house ?= { has_house_modifier = dynasty_blood_acolyte_modifier } }
+		is_blood_mage_tier_2_or_higher_trigger = yes
+		piety_level >= 5
+		piety >= 350
+		has_character_modifier = lifeforce_modifier_major
+	}
+}

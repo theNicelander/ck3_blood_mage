@@ -132,37 +132,16 @@
 	send_option = {
 		flag = bm_covenant_radiance
 		localization = bm_covenant_radiance_button
-		current_description = bm_covenant_radiance_desc
+		current_description = bm_covenant_radiance_tooltip
 		can_invalidate_interaction = yes
 		is_shown = {
 			NOT = { scope:actor.house ?= { has_house_modifier = dynasty_blood_radiance_modifier_3 } }
 		}
 		is_valid = {
-			scope:actor = {
-				NOT = { house ?= { has_house_modifier = dynasty_blood_radiance_modifier_3 } }
-				trigger_if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_radiance_modifier_1 } }
-					is_blood_mage_tier_2_or_higher_trigger = yes
-					piety_level >= 2
-					piety >= 350
-					has_character_modifier = lifeforce_modifier_major
-				}
-				trigger_else_if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_radiance_modifier_2 } }
-					is_blood_mage_archmage_trigger = yes
-					piety_level >= 3
-					piety >= 750
-					has_character_modifier = lifeforce_modifier_superior
-				}
-				trigger_else = {
-					piety_level >= 1
-					piety >= 150
-					has_character_modifier = lifeforce_modifier_minor
-				}
-			}
+			bm_can_upgrade_covenant_trigger = { COVENANT = radiance ACTOR = scope:actor }
 		}
 		starts_enabled = {
-			NOT = { scope:actor.house ?= { has_house_modifier = dynasty_blood_radiance_modifier_3 } }
+			bm_can_upgrade_covenant_trigger = { COVENANT = radiance ACTOR = scope:actor }
 		}
 	}
 
@@ -170,38 +149,17 @@
 	send_option = {
 		flag = bm_covenant_fury
 		localization = bm_covenant_fury_button
-		current_description = bm_covenant_fury_desc
+		current_description = bm_covenant_fury_tooltip
 		can_invalidate_interaction = yes
 		is_shown = {
 			NOT = { scope:actor.house ?= { has_house_modifier = dynasty_blood_fury_modifier_3 } }
 		}
 		is_valid = {
-			scope:actor = {
-				NOT = { house ?= { has_house_modifier = dynasty_blood_fury_modifier_3 } }
-				trigger_if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_fury_modifier_1 } }
-					is_blood_mage_tier_2_or_higher_trigger = yes
-					piety_level >= 2
-					piety >= 350
-					has_character_modifier = lifeforce_modifier_major
-				}
-				trigger_else_if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_fury_modifier_2 } }
-					is_blood_mage_archmage_trigger = yes
-					piety_level >= 3
-					piety >= 750
-					has_character_modifier = lifeforce_modifier_superior
-				}
-				trigger_else = {
-					piety_level >= 1
-					piety >= 150
-					has_character_modifier = lifeforce_modifier_minor
-				}
-			}
+			bm_can_upgrade_covenant_trigger = { COVENANT = fury ACTOR = scope:actor }
 		}
 		starts_enabled = {
-			scope:actor.house ?= { has_house_modifier = dynasty_blood_radiance_modifier_3 }
-			NOT = { scope:actor.house ?= { has_house_modifier = dynasty_blood_fury_modifier_3 } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = radiance ACTOR = scope:actor } }
+			bm_can_upgrade_covenant_trigger = { COVENANT = fury ACTOR = scope:actor }
 		}
 	}
 
@@ -209,41 +167,18 @@
 	send_option = {
 		flag = bm_covenant_fortune
 		localization = bm_covenant_fortune_button
-		current_description = bm_covenant_fortune_desc
+		current_description = bm_covenant_fortune_tooltip
 		can_invalidate_interaction = yes
 		is_shown = {
 			NOT = { scope:actor.house ?= { has_house_modifier = dynasty_blood_fortune_modifier_3 } }
 		}
 		is_valid = {
-			scope:actor = {
-				NOT = { house ?= { has_house_modifier = dynasty_blood_fortune_modifier_3 } }
-				trigger_if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_fortune_modifier_1 } }
-					is_blood_mage_tier_2_or_higher_trigger = yes
-					piety_level >= 2
-					piety >= 350
-					has_character_modifier = lifeforce_modifier_major
-				}
-				trigger_else_if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_fortune_modifier_2 } }
-					is_blood_mage_archmage_trigger = yes
-					piety_level >= 3
-					piety >= 750
-					has_character_modifier = lifeforce_modifier_superior
-				}
-				trigger_else = {
-					piety_level >= 1
-					piety >= 150
-					has_character_modifier = lifeforce_modifier_minor
-				}
-			}
+			bm_can_upgrade_covenant_trigger = { COVENANT = fortune ACTOR = scope:actor }
 		}
 		starts_enabled = {
-			scope:actor.house ?= {
-				has_house_modifier = dynasty_blood_radiance_modifier_3
-				has_house_modifier = dynasty_blood_fury_modifier_3
-			}
-			NOT = { scope:actor.house ?= { has_house_modifier = dynasty_blood_fortune_modifier_3 } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = radiance ACTOR = scope:actor } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = fury ACTOR = scope:actor } }
+			bm_can_upgrade_covenant_trigger = { COVENANT = fortune ACTOR = scope:actor }
 		}
 	}
 
@@ -251,42 +186,19 @@
 	send_option = {
 		flag = bm_covenant_cunning
 		localization = bm_covenant_cunning_button
-		current_description = bm_covenant_cunning_desc
+		current_description = bm_covenant_cunning_tooltip
 		can_invalidate_interaction = yes
 		is_shown = {
 			NOT = { scope:actor.house ?= { has_house_modifier = dynasty_blood_cunning_modifier_3 } }
 		}
 		is_valid = {
-			scope:actor = {
-				NOT = { house ?= { has_house_modifier = dynasty_blood_cunning_modifier_3 } }
-				trigger_if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_cunning_modifier_1 } }
-					is_blood_mage_tier_2_or_higher_trigger = yes
-					piety_level >= 2
-					piety >= 350
-					has_character_modifier = lifeforce_modifier_major
-				}
-				trigger_else_if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_cunning_modifier_2 } }
-					is_blood_mage_archmage_trigger = yes
-					piety_level >= 3
-					piety >= 750
-					has_character_modifier = lifeforce_modifier_superior
-				}
-				trigger_else = {
-					piety_level >= 1
-					piety >= 150
-					has_character_modifier = lifeforce_modifier_minor
-				}
-			}
+			bm_can_upgrade_covenant_trigger = { COVENANT = cunning ACTOR = scope:actor }
 		}
 		starts_enabled = {
-			scope:actor.house ?= {
-				has_house_modifier = dynasty_blood_radiance_modifier_3
-				has_house_modifier = dynasty_blood_fury_modifier_3
-				has_house_modifier = dynasty_blood_fortune_modifier_3
-			}
-			NOT = { scope:actor.house ?= { has_house_modifier = dynasty_blood_cunning_modifier_3 } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = radiance ACTOR = scope:actor } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = fury ACTOR = scope:actor } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = fortune ACTOR = scope:actor } }
+			bm_can_upgrade_covenant_trigger = { COVENANT = cunning ACTOR = scope:actor }
 		}
 	}
 
@@ -294,43 +206,20 @@
 	send_option = {
 		flag = bm_covenant_wisdom
 		localization = bm_covenant_wisdom_button
-		current_description = bm_covenant_wisdom_desc
+		current_description = bm_covenant_wisdom_tooltip
 		can_invalidate_interaction = yes
 		is_shown = {
 			NOT = { scope:actor.house ?= { has_house_modifier = dynasty_blood_wisdom_modifier_3 } }
 		}
 		is_valid = {
-			scope:actor = {
-				NOT = { house ?= { has_house_modifier = dynasty_blood_wisdom_modifier_3 } }
-				trigger_if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_wisdom_modifier_1 } }
-					is_blood_mage_tier_2_or_higher_trigger = yes
-					piety_level >= 2
-					piety >= 350
-					has_character_modifier = lifeforce_modifier_major
-				}
-				trigger_else_if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_wisdom_modifier_2 } }
-					is_blood_mage_archmage_trigger = yes
-					piety_level >= 3
-					piety >= 750
-					has_character_modifier = lifeforce_modifier_superior
-				}
-				trigger_else = {
-					piety_level >= 1
-					piety >= 150
-					has_character_modifier = lifeforce_modifier_minor
-				}
-			}
+			bm_can_upgrade_covenant_trigger = { COVENANT = wisdom ACTOR = scope:actor }
 		}
 		starts_enabled = {
-			scope:actor.house ?= {
-				has_house_modifier = dynasty_blood_radiance_modifier_3
-				has_house_modifier = dynasty_blood_fury_modifier_3
-				has_house_modifier = dynasty_blood_fortune_modifier_3
-				has_house_modifier = dynasty_blood_cunning_modifier_3
-			}
-			NOT = { scope:actor.house ?= { has_house_modifier = dynasty_blood_wisdom_modifier_3 } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = radiance ACTOR = scope:actor } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = fury ACTOR = scope:actor } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = fortune ACTOR = scope:actor } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = cunning ACTOR = scope:actor } }
+			bm_can_upgrade_covenant_trigger = { COVENANT = wisdom ACTOR = scope:actor }
 		}
 	}
 
@@ -338,44 +227,21 @@
 	send_option = {
 		flag = bm_covenant_ancient
 		localization = bm_covenant_ancient_button
-		current_description = bm_covenant_ancient_desc
+		current_description = bm_covenant_ancient_tooltip
 		can_invalidate_interaction = yes
 		is_shown = {
 			NOT = { scope:actor.house ?= { has_house_modifier = dynasty_blood_ancient_modifier_3 } }
 		}
 		is_valid = {
-			scope:actor = {
-				NOT = { house ?= { has_house_modifier = dynasty_blood_ancient_modifier_3 } }
-				trigger_if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_ancient_modifier_1 } }
-					is_blood_mage_tier_2_or_higher_trigger = yes
-					piety_level >= 2
-					piety >= 350
-					has_character_modifier = lifeforce_modifier_major
-				}
-				trigger_else_if = {
-					limit = { house ?= { has_house_modifier = dynasty_blood_ancient_modifier_2 } }
-					is_blood_mage_archmage_trigger = yes
-					piety_level >= 3
-					piety >= 750
-					has_character_modifier = lifeforce_modifier_superior
-				}
-				trigger_else = {
-					piety_level >= 1
-					piety >= 150
-					has_character_modifier = lifeforce_modifier_minor
-				}
-			}
+			bm_can_upgrade_covenant_trigger = { COVENANT = ancient ACTOR = scope:actor }
 		}
 		starts_enabled = {
-			scope:actor.house ?= {
-				has_house_modifier = dynasty_blood_radiance_modifier_3
-				has_house_modifier = dynasty_blood_fury_modifier_3
-				has_house_modifier = dynasty_blood_fortune_modifier_3
-				has_house_modifier = dynasty_blood_cunning_modifier_3
-				has_house_modifier = dynasty_blood_wisdom_modifier_3
-			}
-			NOT = { scope:actor.house ?= { has_house_modifier = dynasty_blood_ancient_modifier_3 } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = radiance ACTOR = scope:actor } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = fury ACTOR = scope:actor } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = fortune ACTOR = scope:actor } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = cunning ACTOR = scope:actor } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = wisdom ACTOR = scope:actor } }
+			bm_can_upgrade_covenant_trigger = { COVENANT = ancient ACTOR = scope:actor }
 		}
 	}
 
@@ -383,30 +249,22 @@
 	send_option = {
 		flag = bm_covenant_acolyte
 		localization = bm_covenant_acolyte_button
-		current_description = bm_covenant_acolyte_desc
+		current_description = bm_covenant_acolyte_tooltip
 		can_invalidate_interaction = yes
 		is_shown = {
 			NOT = { scope:actor.house ?= { has_house_modifier = dynasty_blood_acolyte_modifier } }
 		}
 		is_valid = {
-			scope:actor = {
-				NOT = { house ?= { has_house_modifier = dynasty_blood_acolyte_modifier } }
-				is_blood_mage_tier_2_or_higher_trigger = yes
-				piety_level >= 5
-				piety >= 350
-				has_character_modifier = lifeforce_modifier_major
-			}
+			bm_can_grant_acolyte_covenant_trigger = { ACTOR = scope:actor }
 		}
 		starts_enabled = {
-			scope:actor.house ?= {
-				has_house_modifier = dynasty_blood_radiance_modifier_3
-				has_house_modifier = dynasty_blood_fury_modifier_3
-				has_house_modifier = dynasty_blood_fortune_modifier_3
-				has_house_modifier = dynasty_blood_cunning_modifier_3
-				has_house_modifier = dynasty_blood_wisdom_modifier_3
-				has_house_modifier = dynasty_blood_ancient_modifier_3
-			}
-			NOT = { scope:actor.house ?= { has_house_modifier = dynasty_blood_acolyte_modifier } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = radiance ACTOR = scope:actor } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = fury ACTOR = scope:actor } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = fortune ACTOR = scope:actor } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = cunning ACTOR = scope:actor } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = wisdom ACTOR = scope:actor } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = ancient ACTOR = scope:actor } }
+			bm_can_grant_acolyte_covenant_trigger = { ACTOR = scope:actor }
 		}
 	}
 

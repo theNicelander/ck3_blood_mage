@@ -98,6 +98,7 @@
 			scope:recipient = {
 				is_courtier_of = scope:actor
 				NOT = { is_imprisoned_by = scope:actor }
+				NOT = { has_character_flag = bm_minor_lifedrain_cooldown }
 			}
 		}
 	}
@@ -123,6 +124,9 @@
 			}
 		}
 		starts_enabled = {
+			scope:actor = {
+				NOT = { has_character_flag = bm_siphon_reserves_cooldown }
+			}
 			scope:recipient = {
 				OR = {
 					has_character_modifier = lifeforce_modifier_minor
@@ -161,8 +165,12 @@
 			scope:actor = {
 				exists = house
 				house.house_head = scope:actor
+				NOT = { has_character_flag = bm_demand_blood_tithe_cooldown }
 			}
-			scope:recipient = { house ?= scope:actor.house }
+			scope:recipient = {
+				house ?= scope:actor.house
+				NOT = { has_character_modifier = recently_lifedrained_modifier }
+			}
 		}
 	}
 

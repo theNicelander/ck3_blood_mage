@@ -1,0 +1,301 @@
+﻿bm_blood_distillation_interaction = {
+	hidden = yes
+	category = interaction_category_bm_blood_magic
+	icon = bm_blood_blessing_interaction
+	auto_accept = yes
+	desc = bm_blood_distillation_decision_desc
+
+	cost = {
+		piety = {
+			if = {
+				limit = { scope:actor = { has_trait = lifestyle_bm_acolyte } }
+				value = 50
+			}
+			else = {
+				value = 100
+			}
+		}
+	}
+
+	is_shown = {
+		scope:actor = scope:recipient
+		scope:actor = {
+			is_blood_mage_any_tier_trigger = yes
+			NOT = { has_trait = lifestyle_bm_archmage }
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			custom_tooltip = {
+				text = bm_blood_distillation_ancient_not_maxed_req
+				NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = ancient VALUE = 100 } }
+			}
+			custom_tooltip = {
+				text = bm_blood_distillation_min_discipline_xp_req
+				bm_has_any_discipline_track_xp_trigger = { VALUE = 10 }
+			}
+			has_character_modifier = lifeforce_modifier_minor
+			trigger_if = {
+				limit = { has_trait = lifestyle_bm_acolyte }
+				piety >= 50
+			}
+			trigger_else = {
+				piety >= 100
+			}
+		}
+	}
+
+	send_options_exclusive = yes
+
+	# 1. Distill Fury
+	send_option = {
+		flag = bm_distill_fury
+		localization = bm_distill_fury
+		current_description = bm_distill_fury_desc
+		can_invalidate_interaction = yes
+		is_shown = {
+			always = yes
+		}
+		is_valid = {
+			scope:actor = {
+				custom_tooltip = {
+					text = bm_distill_fury_xp_req
+					bm_has_track_xp_any_tier_trigger = { TRACK = fury VALUE = 10 }
+				}
+			}
+		}
+		starts_enabled = {
+			scope:actor = {
+				bm_has_track_xp_any_tier_trigger = { TRACK = fury VALUE = 10 }
+			}
+		}
+	}
+
+	# 2. Distill Radiance
+	send_option = {
+		flag = bm_distill_radiance
+		localization = bm_distill_radiance
+		current_description = bm_distill_radiance_desc
+		can_invalidate_interaction = yes
+		is_shown = {
+			always = yes
+		}
+		is_valid = {
+			scope:actor = {
+				custom_tooltip = {
+					text = bm_distill_radiance_xp_req
+					bm_has_track_xp_any_tier_trigger = { TRACK = radiance VALUE = 10 }
+				}
+			}
+		}
+		starts_enabled = {
+			scope:actor = {
+				NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = fury VALUE = 10 } }
+				bm_has_track_xp_any_tier_trigger = { TRACK = radiance VALUE = 10 }
+			}
+		}
+	}
+
+	# 3. Distill Bloodline
+	send_option = {
+		flag = bm_distill_fortune
+		localization = bm_distill_fortune
+		current_description = bm_distill_fortune_desc
+		can_invalidate_interaction = yes
+		is_shown = {
+			always = yes
+		}
+		is_valid = {
+			scope:actor = {
+				custom_tooltip = {
+					text = bm_distill_fortune_xp_req
+					bm_has_track_xp_any_tier_trigger = { TRACK = fortune VALUE = 10 }
+				}
+			}
+		}
+		starts_enabled = {
+			scope:actor = {
+				NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = fury VALUE = 10 } }
+				NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = radiance VALUE = 10 } }
+				bm_has_track_xp_any_tier_trigger = { TRACK = fortune VALUE = 10 }
+			}
+		}
+	}
+
+	# 4. Distill Cunning
+	send_option = {
+		flag = bm_distill_cunning
+		localization = bm_distill_cunning
+		current_description = bm_distill_cunning_desc
+		can_invalidate_interaction = yes
+		is_shown = {
+			always = yes
+		}
+		is_valid = {
+			scope:actor = {
+				custom_tooltip = {
+					text = bm_distill_cunning_xp_req
+					bm_has_track_xp_any_tier_trigger = { TRACK = cunning VALUE = 10 }
+				}
+			}
+		}
+		starts_enabled = {
+			scope:actor = {
+				NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = fury VALUE = 10 } }
+				NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = radiance VALUE = 10 } }
+				NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = fortune VALUE = 10 } }
+				bm_has_track_xp_any_tier_trigger = { TRACK = cunning VALUE = 10 }
+			}
+		}
+	}
+
+	# 5. Distill Wisdom
+	send_option = {
+		flag = bm_distill_wisdom
+		localization = bm_distill_wisdom
+		current_description = bm_distill_wisdom_desc
+		can_invalidate_interaction = yes
+		is_shown = {
+			always = yes
+		}
+		is_valid = {
+			scope:actor = {
+				custom_tooltip = {
+					text = bm_distill_wisdom_xp_req
+					bm_has_track_xp_any_tier_trigger = { TRACK = wisdom VALUE = 10 }
+				}
+			}
+		}
+		starts_enabled = {
+			scope:actor = {
+				NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = fury VALUE = 10 } }
+				NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = radiance VALUE = 10 } }
+				NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = fortune VALUE = 10 } }
+				NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = cunning VALUE = 10 } }
+				bm_has_track_xp_any_tier_trigger = { TRACK = wisdom VALUE = 10 }
+			}
+		}
+	}
+
+	on_accept = {
+		if = {
+			limit = { scope:bm_distill_fury = yes }
+			debug_log = "BloodMageInteraction: bm_blood_distillation (fury) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
+			scope:actor = {
+				remove_character_modifier = lifeforce_modifier_minor
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = bm_blood_distillation_decision
+					left_icon = scope:actor
+					bm_add_blood_mage_xp_effect = { TRACK = fury XP = -10 }
+					bm_add_blood_mage_xp_effect = { TRACK = ancient XP = 5 }
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:bm_distill_radiance = yes }
+			debug_log = "BloodMageInteraction: bm_blood_distillation (radiance) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
+			scope:actor = {
+				remove_character_modifier = lifeforce_modifier_minor
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = bm_blood_distillation_decision
+					left_icon = scope:actor
+					bm_add_blood_mage_xp_effect = { TRACK = radiance XP = -10 }
+					bm_add_blood_mage_xp_effect = { TRACK = ancient XP = 5 }
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:bm_distill_fortune = yes }
+			debug_log = "BloodMageInteraction: bm_blood_distillation (fortune) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
+			scope:actor = {
+				remove_character_modifier = lifeforce_modifier_minor
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = bm_blood_distillation_decision
+					left_icon = scope:actor
+					bm_add_blood_mage_xp_effect = { TRACK = fortune XP = -10 }
+					bm_add_blood_mage_xp_effect = { TRACK = ancient XP = 5 }
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:bm_distill_cunning = yes }
+			debug_log = "BloodMageInteraction: bm_blood_distillation (cunning) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
+			scope:actor = {
+				remove_character_modifier = lifeforce_modifier_minor
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = bm_blood_distillation_decision
+					left_icon = scope:actor
+					bm_add_blood_mage_xp_effect = { TRACK = cunning XP = -10 }
+					bm_add_blood_mage_xp_effect = { TRACK = ancient XP = 5 }
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:bm_distill_wisdom = yes }
+			debug_log = "BloodMageInteraction: bm_blood_distillation (wisdom) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
+			scope:actor = {
+				remove_character_modifier = lifeforce_modifier_minor
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = bm_blood_distillation_decision
+					left_icon = scope:actor
+					bm_add_blood_mage_xp_effect = { TRACK = wisdom XP = -10 }
+					bm_add_blood_mage_xp_effect = { TRACK = ancient XP = 5 }
+				}
+			}
+		}
+		else = {
+			debug_log = "BloodMageInteraction: bm_blood_distillation (NO OPTION) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
+		}
+	}
+
+	ai_potential = {
+		is_blood_mage_any_tier_trigger = yes
+		NOT = { has_trait = lifestyle_bm_archmage }
+	}
+	ai_frequency = 6
+	ai_targets = {
+		ai_recipients = self
+	}
+	ai_will_do = {
+		base = 50
+
+		modifier = {
+			scope:bm_distill_fury = yes
+			add = 10
+		}
+		modifier = {
+			scope:bm_distill_radiance = yes
+			add = 10
+		}
+		modifier = {
+			scope:bm_distill_fortune = yes
+			add = 10
+		}
+		modifier = {
+			scope:bm_distill_cunning = yes
+			add = 10
+		}
+		modifier = {
+			scope:bm_distill_wisdom = yes
+			add = 10
+		}
+
+		# Absolute veto: must select at least one valid send option
+		modifier = {
+			NOR = {
+				scope:bm_distill_fury = yes
+				scope:bm_distill_radiance = yes
+				scope:bm_distill_fortune = yes
+				scope:bm_distill_cunning = yes
+				scope:bm_distill_wisdom = yes
+			}
+			factor = 0
+		}
+	}
+}

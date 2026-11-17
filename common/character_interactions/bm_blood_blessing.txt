@@ -13,10 +13,6 @@
 				value = 250
 			}
 			else_if = {
-				limit = { scope:blessing_consecrate_union = yes }
-				value = 100
-			}
-			else_if = {
 				limit = {
 					scope:blessing_inscribe_rune = yes
 					scope:recipient = { has_character_modifier = major_blood_rune_modifier }
@@ -74,8 +70,8 @@
 		}
 		scope:recipient = {
 			is_alive = yes
+			NOT = { this = scope:actor }
 			OR = {
-				this = scope:actor
 				bm_is_valid_positive_magic_target_trigger = { ACTOR = scope:actor }
 				is_imprisoned_by = scope:actor
 			}
@@ -105,7 +101,6 @@
 		current_description = bm_blood_blessing_option_empower_desc
 		can_invalidate_interaction = yes
 		is_shown = {
-			NOT = { scope:recipient = scope:actor }
 			scope:recipient = {
 				is_blood_mage_any_tier_trigger = yes
 			}
@@ -132,7 +127,7 @@
 		current_description = bm_blood_blessing_option_grant_lifeforce_desc
 		can_invalidate_interaction = yes
 		is_shown = {
-			NOT = { scope:recipient = scope:actor }
+			always = yes
 		}
 		is_valid = {
 			scope:actor = {
@@ -161,14 +156,13 @@
 		}
 	}
 
-	# 3. Annoint Heir
+	# 3. Anoint Heir
 	send_option = {
 		flag = blessing_anoint_heir
 		localization = bm_blood_blessing_option_anoint_heir
 		current_description = bm_blood_blessing_option_anoint_heir_desc
 		can_invalidate_interaction = yes
 		is_shown = {
-			NOT = { scope:recipient = scope:actor }
 			scope:recipient = {
 				OR = {
 					is_primary_heir_of = scope:actor
@@ -189,35 +183,6 @@
 			scope:recipient = {
 				is_primary_heir_of = scope:actor
 				NOT = { has_character_modifier = bm_anointed_heir_modifier }
-			}
-		}
-	}
-
-	# 5. Consecrate Union (Deprecated in favor of Mojo)
-	send_option = {
-		flag = blessing_consecrate_union
-		localization = bm_blood_blessing_option_consecrate_union
-		current_description = bm_blood_blessing_option_consecrate_union_desc
-		can_invalidate_interaction = yes
-		is_shown = {
-			always = no
-		}
-		is_valid = {
-			scope:actor = {
-				piety >= 100
-				OR = {
-					has_character_modifier = lifeforce_modifier_minor
-					has_character_modifier = lifeforce_modifier_major
-				}
-			}
-			scope:recipient = {
-				NOT = { has_character_modifier = bm_consecrated_union_modifier }
-			}
-		}
-		starts_enabled = {
-			scope:recipient = {
-				is_spouse_of = scope:actor
-				NOT = { has_character_modifier = bm_consecrated_union_modifier }
 			}
 		}
 	}
@@ -493,59 +458,6 @@
 			}
 		}
 		else_if = {
-			limit = { scope:blessing_consecrate_union = yes }
-			debug_log = "BloodMageInteraction: bm_blood_blessing (consecrate_union) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
-			scope:actor = {
-				send_interface_toast = {
-					type = event_toast_effect_good
-					title = bm_blood_blessing_toast
-					left_icon = scope:actor
-					right_icon = scope:recipient
-					if = {
-						limit = { has_character_modifier = lifeforce_modifier_major }
-						blood_magic_used_major = yes
-						add_character_modifier = {
-							modifier = bm_consecrated_union_modifier
-							years = 10
-						}
-						scope:recipient = {
-							add_character_modifier = {
-								modifier = bm_consecrated_union_modifier
-								years = 10
-							}
-							add_opinion = {
-								target = scope:actor
-								modifier = magic_opinion_positive
-								opinion = 30
-							}
-						}
-					}
-					else = {
-						blood_magic_used_minor = yes
-						add_character_modifier = {
-							modifier = bm_consecrated_union_modifier
-							years = 3
-						}
-						scope:recipient = {
-							add_character_modifier = {
-								modifier = bm_consecrated_union_modifier
-								years = 3
-							}
-							add_opinion = {
-								target = scope:actor
-								modifier = magic_opinion_positive
-								opinion = 15
-							}
-						}
-					}
-					if = {
-						limit = { is_blood_mage_any_tier_trigger = yes }
-						add_xp_bm_dynamic = { TRACK = fortune XP = 2 }
-					}
-				}
-			}
-		}
-		else_if = {
 			limit = { scope:blessing_inscribe_rune = yes }
 			debug_log = "BloodMageInteraction: bm_blood_blessing (inscribe_rune) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
 			scope:actor = {
@@ -641,10 +553,6 @@
 			add = 80
 		}
 		modifier = {
-			scope:blessing_consecrate_union = yes
-			add = 60
-		}
-		modifier = {
 			scope:blessing_inscribe_rune = yes
 			add = 40
 		}
@@ -710,7 +618,6 @@
 				scope:blessing_empower = yes
 				scope:blessing_grant_lifeforce = yes
 				scope:blessing_anoint_heir = yes
-				scope:blessing_consecrate_union = yes
 				scope:blessing_inscribe_rune = yes
 			}
 			factor = 0

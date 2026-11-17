@@ -1,14 +1,8 @@
 ﻿l_english:
 ############### MINOR ###############
     # Attune lifeforce
-    bm_attune_lifeforce.001.title: "Lifeforce Attunement"
-    bm_attune_lifeforce.001.desc: "Attune your Blood Magic toward a chosen discipline to gain #P +1#! experience each year (#P +2#! with Superior Hulinhjálmur) and unlock its passive modifier."
-    bm_attune_lifeforce.001.wisdom: "$bm_attune_wisdom$"
-    bm_attune_lifeforce.001.fortune: "$bm_attune_fortune$"
-    bm_attune_lifeforce.001.radiance: "$bm_attune_radiance$"
-    bm_attune_lifeforce.001.cunning: "$bm_attune_cunning$"
-    bm_attune_lifeforce.001.fury: "$bm_attune_fury$"
-    bm_attune_lifeforce.001.cancel: "Back"
+    bm_attune_lifeforce_interaction: "Lifeforce Attunement"
+    bm_attune_lifeforce_interaction_desc: "Attune your Blood Magic toward a chosen discipline to gain #P +1#! experience each year (#P +2#! with Superior Hulinhjálmur) and unlock its passive modifier."
     bm_attune_lifeforce_toast: "Lifeforce Attuned"
 
     bm_attune_ancient: "Ancient"
@@ -101,8 +95,6 @@
 
     bm_improve_education_devotion_req: "Devotion Level meets education rank requirement (1★: Level 1+, 2★: Level 2+, 3★: Level 3+)"
     NOT_bm_improve_education_devotion_req: "Devotion Level meets education rank requirement (1★: Level 1+, 2★: Level 2+, 3★: Level 3+)"
-    bm_improve_education_piety_req: "Has required [piety|E] ([GetPlayer.MakeScope.ScriptValue('scaled_education_enhancement_cost')|0])"
-    NOT_bm_improve_education_piety_req: "Has required [piety|E] ([GetPlayer.MakeScope.ScriptValue('scaled_education_enhancement_cost')|0])"
     bm_improve_education_trait_req: "Has an education trait below rank 4"
     NOT_bm_improve_education_trait_req: "Has an education trait below rank 4"
 
@@ -180,6 +172,12 @@
     bm_minor_blood_blessing: "Cast Blood Blessing"
     bm_minor_blood_blessing_desc: "Bestow or upgrade a permanent Blood Blessing on yourself."
     bm_minor_blood_blessing_tooltip: "Opens the Cast Blood Blessing interaction to bestow or upgrade a permanent Blood Blessing on yourself.\n\nMinor: 50 [piety|E], Devotion 1, Minor Lifeforce.\nMajor: 150 [piety|E], Devotion 3, Major Lifeforce.\nSuperior: 250 [piety|E], Devotion 5, Superior Lifeforce."
+    bm_major_blood_blessing: "$bm_minor_blood_blessing$"
+    bm_major_blood_blessing_desc: "$bm_minor_blood_blessing_desc$"
+    bm_major_blood_blessing_tooltip: "$bm_minor_blood_blessing_tooltip$"
+    bm_superior_blood_blessing: "$bm_minor_blood_blessing$"
+    bm_superior_blood_blessing_desc: "$bm_minor_blood_blessing_desc$"
+    bm_superior_blood_blessing_tooltip: "$bm_minor_blood_blessing_tooltip$"
 
     # Minor Aliases
     bm_cast_blood_magic_minor.001.purge: "$bm_minor_purge$"
