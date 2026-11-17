@@ -88,10 +88,10 @@
 		}
 		is_valid = {
 			scope:recipient = {
-				NOT = { has_character_modifier = recently_lifedrained_modifier }
-			}
-			scope:actor = {
-				NOT = { has_character_flag = bm_minor_lifedrain_cooldown }
+				custom_tooltip = {
+					text = bm_minor_lifedrain_victim_cooldown_tt
+					NOT = { has_character_flag = bm_minor_lifedrain_cooldown }
+				}
 			}
 		}
 		starts_enabled = {
@@ -180,10 +180,6 @@
 			limit = { scope:drain_minor = yes }
 			debug_log = "BloodMageInteraction: bm_blood_drain (minor) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
 			scope:actor = {
-				add_character_flag = {
-					flag = bm_minor_lifedrain_cooldown
-					months = 3
-				}
 				send_interface_toast = {
 					type = event_toast_effect_good
 					title = bm_blood_drain_toast
@@ -195,14 +191,11 @@
 						XP = 1
 					}
 					scope:recipient = {
-						add_character_modifier = {
-							modifier = recently_lifedrained_modifier
-							years = 1
+						add_character_flag = {
+							flag = bm_minor_lifedrain_cooldown
+							months = 3
 						}
-						add_character_modifier = {
-							modifier = lifeforce_modifier_negative_minor
-							years = 1
-						}
+						increase_wounds_effect = { REASON = lifedrain_reason }
 						if = {
 							limit = {
 								NOT = { bm_is_blood_cult_faith_trigger = yes }
