@@ -1,6 +1,6 @@
 # Character Modifiers & Dynamic Scaling
 
-Living technical specification for character-scoped dynamic modifiers in CK3 1.20, their scaling targets, and engine scope boundaries (Character vs Province/Holding/Domicile).
+Living technical specification for character-scoped dynamic modifiers in CK3 1.21, their scaling targets, engine scope boundaries (Character vs Province/Holding/Domicile), and the 1.20 $\rightarrow$ 1.21 modifier migration reference.
 
 ## Executive Summary
 
@@ -23,8 +23,8 @@ Modifiers that scale based on the character's current Level of Devotion (`piety_
 | `stress_loss_per_piety_level` | Character | **Yes** | Increases stress loss multiplier per Level of Devotion |
 | `character_max_piety_level_add` | Character | **Yes** | Raises maximum Level of Devotion cap beyond baseline 5 |
 | `piety_level_impact_mult` | Character | **Yes** | Multiplies the opinion and grandeur benefits of Level of Devotion |
-| `monthly_income_per_piety_level` | Holding / Domicile | **No** (Fails silently) | Scales holding base gold income by ruler's devotion level |
-| `tax_per_piety_level` | Holding / County | **No** (Fails silently) | Scales settlement base holding tax by ruler's devotion level |
+| `monthly_income_per_piety_level` | *(Removed in 1.21)* | **No** (Removed) | Replaced in 1.21 by `generic_tax_per_piety_level` and `<category>_tax_per_piety_level` |
+| `generic_tax_per_piety_level` / `<category>_tax_per_piety_level` | Holding / County | **No** (Fails silently) | Scales settlement base holding tax by ruler's devotion level |
 | `stationed_maa_damage_mult_per_piety_level` | Holding | **No** (Fails silently) | Increases damage % of MaA regiments stationed in that holding |
 | `stationed_maa_toughness_mult_per_piety_level` | Holding | **No** (Fails silently) | Increases toughness % of MaA regiments stationed in that holding |
 
@@ -102,10 +102,32 @@ When designing traits or character modifiers, holding/province modifiers fail si
 
 | Invalid on Characters / Traits | Why It Fails | Character-Safe Alternative |
 | :--- | :--- | :--- |
-| `monthly_income_per_piety_level` | Holding economy calculation; requires barony settlement scope | `monthly_income = X` (flat gold allowance)<br>`domain_limit = X` (extra demesne holdings)<br>`monthly_income_mult = X` (% income boost) |
-| `tax_per_piety_level` | Holding base tax property; requires settlement scope | `domain_tax_mult = X` (% domain holding taxes)<br>`vassal_tax_mult = X` (% vassal tax contributions) |
+| `monthly_income_per_piety_level` (1.20) / `generic_tax_per_piety_level` (1.21) | Holding economy calculation; requires barony settlement scope | `monthly_income = X` (flat gold allowance)<br>`domain_limit = X` (extra demesne holdings)<br>`monthly_income_mult = X` (% income boost) |
+| `tax_per_piety_level` (1.20) / `<category>_tax_per_piety_level` (1.21) | Holding base tax property; requires settlement scope | `domain_tax_mult = X` (% domain holding taxes)<br>`vassal_tax_mult = X` (% vassal tax contributions) |
 | `stationed_maa_damage_mult_per_piety_level` | Men-at-Arms stationing slot; requires barony holding scope | `army_damage_mult = X` (all army regiments)<br>`men_at_arms_damage = X` |
 | `stationed_maa_toughness_mult_per_piety_level` | Men-at-Arms stationing slot; requires barony holding scope | `army_toughness_mult = X`<br>`men_at_arms_toughness = X` |
+
+---
+
+## 7. CK3 1.21 Modifier Migration Reference (`1.20 -> 1.21`)
+
+CK3 1.21 expanded `common/modifier_definition_formats/` from `1,985` to `2,853` definitions (`69` removed, `937` added across `00_definitions.txt`, `00_district_definitions.txt`, `00_gdp_definitions.txt`, `00_trade_definitions.txt`, `00_region_definitions.txt`, and `00_terrain_definitions.txt`).
+
+| 1.20 Modifier (Removed) | 1.21 Replacement | Notes / Vanilla Usage |
+| :--- | :--- | :--- |
+| `development_growth` | `prosperity_growth` | Monthly flat Prosperity growth |
+| `development_growth_factor` | `prosperity_growth_factor` | Percentage Prosperity growth |
+| `development_decline` / `_factor` | `prosperity_decline` / `_factor` | Monthly Prosperity decline |
+| `character_capital_county_monthly_development_growth_add` | `character_capital_county_monthly_prosperity_growth_add` | Capital county monthly Prosperity growth |
+| `<terrain/region>_development_growth` (`_factor`) | `<terrain/region>_prosperity_growth` (`_factor`) | Terrain & region Prosperity growth |
+| `monthly_county_control_growth_add` | `monthly_control_change_when_below_baseline_add` / `monthly_control_change` | `[control\|E] Growth` (below baseline) or `[control\|E] Monthly Change`; paired with `control_baseline_add` |
+| `monthly_county_control_growth_factor` | `monthly_control_change_when_below_baseline_mult` / `monthly_control_change_mult` | Percentage Control growth / change |
+| `character_capital_county_monthly_control_add` | `character_capital_county_monthly_control_change_add` | Capital county monthly Control change (and `_control_baseline_add`) |
+| `county_opinion_add` (`_even_if_baron`) | `popular_opinion_add` (`_even_if_baron`) | `[popular_opinion\|E] Baseline`; also `monthly_popular_opinion_change` (`_factor`) |
+| `different_faith_county_opinion_mult` (`_even_if_baron`) | `different_faith_popular_opinion_mult` (`_even_if_baron`) | Different-faith Popular Opinion multiplier |
+| `same_rite_county_opinion_add` / `same_faith_different_rite_county_opinion_add` | `same_rite_popular_opinion_add` / `same_faith_different_rite_popular_opinion_add` | Rite Popular Opinion |
+| `tax_mult` | `all_tax_mult` / `generic_tax_mult` / `<category>_tax_mult` | Categories: `agricultural`, `artisan`, `civic`, `commerce`, `maritime`, `mining`, `religious`, `tribal`, `urban`, `woodland` |
+| `tax_per_piety_level` / `monthly_income_per_piety_level` | `generic_tax_per_piety_level` / `<category>_tax_per_piety_level` | `[tax\|E] per [piety_level\|E]` (holding/county scope) |
 
 ---
 
@@ -124,7 +146,7 @@ When designing traits or character modifiers, holding/province modifiers fail si
 ## Gotchas
 
 - **Silent Zero Evaluation:** Applying `monthly_income_per_piety_level` or `tax_per_piety_level` to a character trait does not crash or log an error in `error.log`. The engine simply resolves holding base income to zero, awarding no gold.
-- **Prestige vs Piety Asymmetry:** The engine implements `tax_per_piety_level` and `monthly_income_per_piety_level` because temples and religious holdings tie into the clergy tax system. Prestige has no holding-level equivalents.
+- **Prestige vs Piety Asymmetry:** The engine implements `generic_tax_per_piety_level` (formerly `tax_per_piety_level` / `monthly_income_per_piety_level` in 1.20) because temples and religious holdings tie into the clergy tax system. Prestige has no holding-level equivalents.
 - **Allowlist Gate:** Every modifier used in mod traits, modifiers, buildings, and domiciles must exist in its scope-specific allowlist (`scripts/modifiers_{character,county,domicile}_allowlist.json`). If adding an allowed vanilla modifier, verify with `python3 scripts/check_modifiers.py --add <mod> --scope <character|county|domicile>`.
 
 ---
