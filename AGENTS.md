@@ -1,10 +1,10 @@
 # AGENTS.md — Blood Mages (CK3 mod)
 
-CK3 script fails silently. Follow patterns in this repo and vanilla 1.20 (`/Users/clarabotet/Petur/ck3-full`); never invent syntax.
+CK3 script fails silently. Follow patterns in this repo and vanilla 1.21 (`/Users/clarabotet/Petur/ck3-full`); never invent syntax.
 
 ## What this is
 
-- CK3 mod for **1.20.\***. Pure script, localization, gfx. No build step.
+- CK3 mod for **1.21.\***. Pure script, localization, gfx. No build step.
 - Traits: `lifestyle_blood_mage` (tracks: ancient, wisdom, bloodline, radiance, cunning, fury).
 - Features: Lifeforce resource, spell decisions/interactions, blood golems, Blood Retinue, Blóðtrú religions, Blood Runes & Temples, game rules.
 - `scripts/` holds validation and Steam Workshop helpers. Never touch `.env`, credentials or `*.vdf`.
@@ -25,7 +25,7 @@ CK3 script fails silently. Follow patterns in this repo and vanilla 1.20 (`/User
 
 ## Layout & docs
 
-- `common/`, `events/`, `gui/`, `gfx/`, `localization/<language>/` mirror vanilla. Religion uses the 1.20 layout `common/religion/{religion_family_types,religion_types,faith_types,rite_types,holy_site_types,doctrine_group_types,doctrine_types}`; older branches may have `religions/`, `religion_families/`, `holy_sites/`. Check which one the branch has; never mix.
+- `common/`, `events/`, `gui/`, `gfx/`, `localization/<language>/` mirror vanilla. Religion uses the 1.20+ layout `common/religion/{religion_family_types,religion_types,faith_types,rite_types,holy_site_types,doctrine_group_types,doctrine_types}`; older branches may have `religions/`, `religion_families/`, `holy_sites/`. Check which one the branch has; never mix.
 - `.agents/rules/`: CK3 how-to (no `bm_` ids). `.agents/skills/`: task procedures.
 - `docs-ai/architecture/`: current-state spec per subsystem and index (rules: its `AGENTS.md`); read the matching doc before changing that code, update it in the same change.
 - `docs-ai/branch-context/<branch>.md`: mandatory PR-style branch doc (skill `manage-pr`).
@@ -59,7 +59,7 @@ CK3 script fails silently. Follow patterns in this repo and vanilla 1.20 (`/User
 - Change `descriptor.mod` (`name`, `remote_file_id`, `version`) or add `replace_path`.
 - Delete third-party compat code (Blood of Numenor, AGOT) without asking; never reference another mod's traits/faiths/titles directly (guard with `has_global_variable = AGOT_is_loaded` or doctrine parameters).
 - Invent effect, trigger or scope names; cite vanilla or `script_docs`.
-- Commit or push directly to `main`. If on `main`, create a sequential `v1.20.<N+1>` branch from `main` first; otherwise stay on the current feature branch.
+- Commit or push directly to `main`. If on `main`, create a sequential `v1.21.<N+1>` branch from `main` first; otherwise stay on the current feature branch.
 - Blanket stage (`git add .`, `-A`, `commit -a`): other agents work in parallel; stage, commit and push only files you changed.
 - Leave completed work uncommitted in working tree: parallel agents need committed checkpoints.
 - Merge a PR unless explicitly asked by the user. Stop after PR creation; merging requires explicit user instruction.
