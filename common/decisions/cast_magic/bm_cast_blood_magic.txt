@@ -248,6 +248,27 @@
 				}
 			}
 		}
+
+		# Cast Blood Blessing
+		item = {
+			value = bm_superior_blood_blessing
+			current_description = bm_superior_blood_blessing
+			localization = bm_superior_blood_blessing
+			icon = "gfx/interface/icons/trait_level_tracks/wisdom.dds"
+			is_shown = {
+				is_blood_mage_any_tier_trigger = yes
+			}
+			is_valid = {
+				custom_tooltip = {
+					text = bm_blessing_cooldown_tt
+					NOT = { has_character_flag = bm_blessing_cooldown }
+				}
+				bm_has_any_upgradeable_blessing_trigger = { CASTER = root TARGET = root }
+			}
+			ai_chance = {
+				value = 0
+			}
+		}
 	}
 
 	effect = {
@@ -321,6 +342,15 @@
 					TRACK = ancient
 					XP = 2
 				}
+			}
+		}
+		else_if = {
+			limit = { scope:bm_superior_blood_blessing = yes }
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_superior_decision (blood_blessing) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			open_interaction_window = {
+				interaction = bm_cast_blood_blessing_interaction
+				actor = root
+				recipient = root
 			}
 		}
 		else = {
@@ -461,10 +491,7 @@ bm_cast_blood_magic_major_decision = {
 					text = bm_improve_education_devotion_req
 					bm_can_enhance_education_devotion_trigger = yes
 				}
-				custom_tooltip = {
-					text = bm_improve_education_piety_req
-					piety >= scaled_education_enhancement_cost
-				}
+				piety >= scaled_education_enhancement_cost
 				custom_tooltip = {
 					text = bm_improve_education_trait_req
 					OR = {
@@ -568,6 +595,27 @@ bm_cast_blood_magic_major_decision = {
 				}
 			}
 		}
+
+		# Cast Blood Blessing
+		item = {
+			value = bm_major_blood_blessing
+			current_description = bm_major_blood_blessing
+			localization = bm_major_blood_blessing
+			icon = "gfx/interface/icons/trait_level_tracks/wisdom.dds"
+			is_shown = {
+				is_blood_mage_any_tier_trigger = yes
+			}
+			is_valid = {
+				custom_tooltip = {
+					text = bm_blessing_cooldown_tt
+					NOT = { has_character_flag = bm_blessing_cooldown }
+				}
+				bm_has_any_upgradeable_blessing_trigger = { CASTER = root TARGET = root }
+			}
+			ai_chance = {
+				value = 0
+			}
+		}
 	}
 
 	effect = {
@@ -642,6 +690,15 @@ bm_cast_blood_magic_major_decision = {
 			limit = { scope:bm_major_manifest_traits = yes }
 			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (manifest_traits) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
 			trigger_event = { id = bm_channel_manifest_traits.001 }
+		}
+		else_if = {
+			limit = { scope:bm_major_blood_blessing = yes }
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (blood_blessing) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			open_interaction_window = {
+				interaction = bm_cast_blood_blessing_interaction
+				actor = root
+				recipient = root
+			}
 		}
 		else = {
 			custom_tooltip = bm_cast_blood_magic_major_decision_tooltip
@@ -814,15 +871,28 @@ bm_cast_blood_magic_minor_decision = {
 				has_character_modifier = lifeforce_modifier_minor
 			}
 			ai_chance = {
-				value = 10
-				if = {
-					limit = { bm_has_any_attunement_trigger = no }
-					add = 90
+				value = 0
+			}
+		}
+
+		# Cast Blood Blessing
+		item = {
+			value = bm_minor_blood_blessing
+			current_description = bm_minor_blood_blessing
+			localization = bm_minor_blood_blessing
+			icon = "gfx/interface/icons/trait_level_tracks/wisdom.dds"
+			is_shown = {
+				is_blood_mage_any_tier_trigger = yes
+			}
+			is_valid = {
+				custom_tooltip = {
+					text = bm_blessing_cooldown_tt
+					NOT = { has_character_flag = bm_blessing_cooldown }
 				}
-				if = {
-					limit = { health <= fine_health }
-					multiply = 0
-				}
+				bm_has_any_upgradeable_blessing_trigger = { CASTER = root TARGET = root }
+			}
+			ai_chance = {
+				value = 0
 			}
 		}
 	}
@@ -924,7 +994,20 @@ bm_cast_blood_magic_minor_decision = {
 		else_if = {
 			limit = { scope:bm_minor_attune = yes }
 			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (attune) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
-			trigger_event = { id = bm_attune_lifeforce.001 }
+			open_interaction_window = {
+				interaction = bm_attune_lifeforce_interaction
+				actor = root
+				recipient = root
+			}
+		}
+		else_if = {
+			limit = { scope:bm_minor_blood_blessing = yes }
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (blood_blessing) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			open_interaction_window = {
+				interaction = bm_cast_blood_blessing_interaction
+				actor = root
+				recipient = root
+			}
 		}
 		else = {
 			custom_tooltip = bm_cast_blood_magic_minor_decision_tooltip

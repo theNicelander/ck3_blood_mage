@@ -1,0 +1,289 @@
+﻿bm_carve_galdrastafir_interaction = {
+	hidden = yes
+	category = interaction_category_bm_blood_magic
+	icon = bm_stave_vegvisir
+	auto_accept = yes
+	desc = bm_carve_galdrastafir_decision_desc
+
+	cost = {
+		piety = bm_carve_galdrastafir_piety_cost
+	}
+
+	is_shown = {
+		scope:actor = scope:recipient
+		scope:actor = {
+			is_blood_mage_archmage_trigger = yes
+			has_character_modifier = superior_blood_rune_modifier
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			custom_tooltip = {
+				text = bm_carve_galdrastafir_cooldown_tt
+				NOT = { has_character_flag = bm_carve_galdrastafir_cooldown }
+			}
+			has_character_modifier = lifeforce_modifier_major
+			piety >= bm_carve_galdrastafir_piety_cost
+		}
+	}
+
+	send_options_exclusive = yes
+
+	# 1. Vegvísir — The Wayfinder
+	send_option = {
+		flag = bm_carve_vegvisir
+		localization = bm_carve_vegvisir
+		current_description = bm_carve_vegvisir_tooltip
+		can_invalidate_interaction = yes
+		is_shown = {
+			always = yes
+		}
+		is_valid = {
+			scope:actor = {
+				NOT = { has_character_modifier = bm_stave_vegvisir }
+			}
+		}
+		starts_enabled = {
+			scope:actor = {
+				NOT = { has_character_modifier = bm_stave_vegvisir }
+			}
+		}
+	}
+
+	# 2. Ægishjálmur — The Helm of Awe
+	send_option = {
+		flag = bm_carve_aegishjalmur
+		localization = bm_carve_aegishjalmur
+		current_description = bm_carve_aegishjalmur_tooltip
+		can_invalidate_interaction = yes
+		is_shown = {
+			always = yes
+		}
+		is_valid = {
+			scope:actor = {
+				NOT = { has_character_modifier = bm_stave_aegishjalmur }
+			}
+		}
+		starts_enabled = {
+			scope:actor = {
+				has_character_modifier = bm_stave_vegvisir
+				NOT = { has_character_modifier = bm_stave_aegishjalmur }
+			}
+		}
+	}
+
+	# 3. Feingur — The Awakened Seed
+	send_option = {
+		flag = bm_carve_feingur
+		localization = bm_carve_feingur
+		current_description = bm_carve_feingur_tooltip
+		can_invalidate_interaction = yes
+		is_shown = {
+			always = yes
+		}
+		is_valid = {
+			scope:actor = {
+				NOT = { has_character_modifier = bm_stave_feingur }
+			}
+		}
+		starts_enabled = {
+			scope:actor = {
+				has_character_modifier = bm_stave_vegvisir
+				has_character_modifier = bm_stave_aegishjalmur
+				NOT = { has_character_modifier = bm_stave_feingur }
+			}
+		}
+	}
+
+	# 4. Nábrókarstafur — The Flayed Tithe
+	send_option = {
+		flag = bm_carve_nabrokarstafur
+		localization = bm_carve_nabrokarstafur
+		current_description = bm_carve_nabrokarstafur_tooltip
+		can_invalidate_interaction = yes
+		is_shown = {
+			always = yes
+		}
+		is_valid = {
+			scope:actor = {
+				NOT = { has_character_modifier = bm_stave_nabrokarstafur }
+			}
+		}
+		starts_enabled = {
+			scope:actor = {
+				has_character_modifier = bm_stave_vegvisir
+				has_character_modifier = bm_stave_aegishjalmur
+				has_character_modifier = bm_stave_feingur
+				NOT = { has_character_modifier = bm_stave_nabrokarstafur }
+			}
+		}
+	}
+
+	# 5. Hulinhjálmur — The Unseen Shroud
+	send_option = {
+		flag = bm_carve_hulinhjalmur
+		localization = bm_carve_hulinhjalmur
+		current_description = bm_carve_hulinhjalmur_tooltip
+		can_invalidate_interaction = yes
+		is_shown = {
+			always = yes
+		}
+		is_valid = {
+			scope:actor = {
+				NOT = { has_character_modifier = bm_stave_hulinhjalmur }
+			}
+		}
+		starts_enabled = {
+			scope:actor = {
+				has_character_modifier = bm_stave_vegvisir
+				has_character_modifier = bm_stave_aegishjalmur
+				has_character_modifier = bm_stave_feingur
+				has_character_modifier = bm_stave_nabrokarstafur
+				NOT = { has_character_modifier = bm_stave_hulinhjalmur }
+			}
+		}
+	}
+
+	on_accept = {
+		if = {
+			limit = { scope:bm_carve_vegvisir = yes }
+			debug_log = "BloodMageInteraction: bm_carve_galdrastafir (vegvisir) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
+			scope:actor = {
+				add_character_flag = { flag = bm_carve_galdrastafir_cooldown years = 5 }
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = bm_carve_galdrastafir_toast
+					left_icon = scope:actor
+					blood_magic_used_major = yes
+					bm_set_capstone_stave_effect = { STAVE = vegvisir }
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:bm_carve_aegishjalmur = yes }
+			debug_log = "BloodMageInteraction: bm_carve_galdrastafir (aegishjalmur) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
+			scope:actor = {
+				add_character_flag = { flag = bm_carve_galdrastafir_cooldown years = 5 }
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = bm_carve_galdrastafir_toast
+					left_icon = scope:actor
+					blood_magic_used_major = yes
+					bm_set_capstone_stave_effect = { STAVE = aegishjalmur }
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:bm_carve_feingur = yes }
+			debug_log = "BloodMageInteraction: bm_carve_galdrastafir (feingur) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
+			scope:actor = {
+				add_character_flag = { flag = bm_carve_galdrastafir_cooldown years = 5 }
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = bm_carve_galdrastafir_toast
+					left_icon = scope:actor
+					blood_magic_used_major = yes
+					bm_set_capstone_stave_effect = { STAVE = feingur }
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:bm_carve_nabrokarstafur = yes }
+			debug_log = "BloodMageInteraction: bm_carve_galdrastafir (nabrokarstafur) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
+			scope:actor = {
+				add_character_flag = { flag = bm_carve_galdrastafir_cooldown years = 5 }
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = bm_carve_galdrastafir_toast
+					left_icon = scope:actor
+					blood_magic_used_major = yes
+					bm_set_capstone_stave_effect = { STAVE = nabrokarstafur }
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:bm_carve_hulinhjalmur = yes }
+			debug_log = "BloodMageInteraction: bm_carve_galdrastafir (hulinhjalmur) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
+			scope:actor = {
+				add_character_flag = { flag = bm_carve_galdrastafir_cooldown years = 5 }
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = bm_carve_galdrastafir_toast
+					left_icon = scope:actor
+					blood_magic_used_major = yes
+					bm_set_capstone_stave_effect = { STAVE = hulinhjalmur }
+				}
+			}
+		}
+		else = {
+			debug_log = "BloodMageInteraction: bm_carve_galdrastafir (NO OPTION) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
+		}
+	}
+
+	ai_potential = {
+		is_blood_mage_archmage_trigger = yes
+		has_character_modifier = superior_blood_rune_modifier
+	}
+	ai_frequency = 12
+	ai_targets = {
+		ai_recipients = self
+	}
+	ai_will_do = {
+		base = 10
+
+		modifier = {
+			scope:actor = { bm_has_any_stave_trigger = no }
+			add = 100
+		}
+		modifier = {
+			scope:actor = { health <= fine_health }
+			add = -100
+		}
+		modifier = {
+			scope:bm_carve_vegvisir = yes
+			scope:actor = { has_trait = lifestyle_traveler }
+			add = 20
+		}
+		modifier = {
+			scope:bm_carve_aegishjalmur = yes
+			scope:actor = {
+				bm_has_track_xp_any_tier_trigger = { TRACK = fury VALUE = 25 }
+			}
+			add = 25
+		}
+		modifier = {
+			scope:bm_carve_feingur = yes
+			scope:actor = { NOT = { any_child = { count >= 2 } } }
+			add = 25
+		}
+		modifier = {
+			scope:bm_carve_nabrokarstafur = yes
+			scope:actor = { gold < 100 }
+			add = 20
+		}
+		modifier = {
+			scope:bm_carve_hulinhjalmur = yes
+			scope:actor = { has_lifestyle = intrigue_lifestyle }
+			add = 20
+		}
+
+		# Do not swap once a stave is carved
+		modifier = {
+			scope:actor = { bm_has_any_stave_trigger = yes }
+			factor = 0
+		}
+
+		# Absolute veto: must select at least one valid send option
+		modifier = {
+			NOR = {
+				scope:bm_carve_vegvisir = yes
+				scope:bm_carve_aegishjalmur = yes
+				scope:bm_carve_feingur = yes
+				scope:bm_carve_nabrokarstafur = yes
+				scope:bm_carve_hulinhjalmur = yes
+			}
+			factor = 0
+		}
+	}
+}

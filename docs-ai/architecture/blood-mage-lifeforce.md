@@ -26,7 +26,7 @@ Core spellcasting resource stored as stacking character modifiers (`lifeforce_mo
 | `lifeforce_modifier_negative_major` | Major Exhaustion | Yes | **3 Years** (`1095` days; `365`d on Flay/Distill) | `-0.3` Health, `-3` Life Exp, `-6` Epidemic Res, `-0.3` Negate Health Penalty, `-2` Prowess |
 | `lifeforce_modifier_negative_superior` | Superior Exhaustion | Yes | **3 Years** (`1095` days; `5` yrs on Flay) | `-0.6` Health, `-6` Life Exp, `-12` Epidemic Res, `-0.6` Negate Health Penalty, `-4` Prowess |
 | `lifedrained_modifier` | Victim Siphon Toll | Yes | Permanent (until restored) | `-0.5` Health, `-10` Life Exp, `-5` Epidemic Res, `-0.5` Negate Health Penalty, `-5` Prowess |
-| `recently_lifedrained_modifier` | Victim Cooldown | No | **1 Year** (`years = 1`) | Blocks repeat `lifedrain_courtier_event_interaction` on the same victim |
+| `recently_lifedrained_modifier` | Victim Cooldown | No | **1 Year** (`years = 1`) | Blocks repeat `drain_tithe` (Demand Blood Tithe) on the same victim (`drain_minor` uses 3-month `bm_minor_lifedrain_cooldown` on victim + escalating wounds) |
 
 ---
 

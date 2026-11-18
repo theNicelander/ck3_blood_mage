@@ -6,6 +6,10 @@
   BM_EMPOWER_BLOODLINE_DECISION_NEXT_STEP_BUTTON: "Weave Bloodline"
   bm_empower_bloodline_decision_confirm: "$BM_EMPOWER_BLOODLINE_DECISION_NEXT_STEP_BUTTON$"
   bm_empower_bloodline_decision_effect: "You weave vital blood magic into your house's lineage."
+  bm_empower_bloodline_interaction: "$bm_empower_bloodline_decision$"
+  bm_empower_bloodline_interaction_desc: "$bm_empower_bloodline_decision_desc$"
+  bm_empower_bloodline_cooldown_tt: "Has not empowered the dynasty bloodline in the last 1 year"
+  NOT_bm_empower_bloodline_cooldown_tt: "Has not empowered the dynasty bloodline in the last 1 year"
 
   # Dynamic Button Labels
   bm_covenant_radiance_button: "[GetPlayer.Custom('BM_COVENANT_RADIANCE_BUTTON_LABEL')]"
@@ -117,9 +121,3 @@
 
   # Yearly fortune XP
   blood_mage_yearly_events.002.success: "Your house covenants granted you experience"
-
-  # Legacy Keys preserved
-  channel_lifeforce_bloodline: "$bm_empower_bloodline_decision$"
-  channel_lifeforce_bloodline_confirm: "$BM_EMPOWER_BLOODLINE_DECISION_NEXT_STEP_BUTTON$"
-  channel_lifeforce_bloodline_tooltip: "$bm_empower_bloodline_decision_tooltip$"
-  channel_lifeforce_bloodline_desc: "$bm_empower_bloodline_decision_desc$"
