@@ -90,7 +90,16 @@ bm_actor_has_lifeforce_to_heal_target_trigger = {
 			has_character_modifier = lifeforce_modifier_minor
 		}
 		AND = {
+			$TARGET$ = { has_trait = wounded_2 }
+			has_character_modifier = lifeforce_modifier_minor
+		}
+		AND = {
 			$TARGET$ = { bm_has_major_ailment_trigger = yes }
+			has_character_modifier = lifeforce_modifier_major
+		}
+		AND = {
+			is_blood_mage_tier_2_or_higher_trigger = yes
+			$TARGET$ = { has_trait = wounded_3 }
 			has_character_modifier = lifeforce_modifier_major
 		}
 		AND = {
