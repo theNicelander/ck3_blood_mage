@@ -8,6 +8,7 @@ tags={
 	"Events"
 	"Schemes"
 	"Religion"
+	"1.19 'Scribe'"
 	"1.20 'Crozier'"
 	"1.21 'Florin'"
 }
