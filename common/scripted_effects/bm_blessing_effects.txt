@@ -13,13 +13,7 @@ bm_apply_blessing_effect = {
 					$TARGET$ = { has_character_modifier = bm_blessing_$LINE$_major_modifier }
 				}
 				blood_magic_used_superior = yes
-				if = {
-					limit = { $TARGET$ = { this = $CASTER$ } }
-					bm_add_blood_mage_xp_effect = { TRACK = wisdom XP = 6 }
-				}
-				else = {
-					bm_add_blood_mage_xp_effect = { TRACK = radiance XP = 6 }
-				}
+				bm_add_blood_mage_xp_effect = { TRACK = $LINE$ XP = 6 }
 				$TARGET$ = {
 					remove_character_modifier = bm_blessing_$LINE$_major_modifier
 					add_character_modifier = { modifier = bm_blessing_$LINE$_superior_modifier }
@@ -30,13 +24,7 @@ bm_apply_blessing_effect = {
 					$TARGET$ = { has_character_modifier = bm_blessing_$LINE$_minor_modifier }
 				}
 				blood_magic_used_major = yes
-				if = {
-					limit = { $TARGET$ = { this = $CASTER$ } }
-					bm_add_blood_mage_xp_effect = { TRACK = wisdom XP = 4 }
-				}
-				else = {
-					bm_add_blood_mage_xp_effect = { TRACK = radiance XP = 4 }
-				}
+				bm_add_blood_mage_xp_effect = { TRACK = $LINE$ XP = 4 }
 				$TARGET$ = {
 					remove_character_modifier = bm_blessing_$LINE$_minor_modifier
 					add_character_modifier = { modifier = bm_blessing_$LINE$_major_modifier }
@@ -44,13 +32,7 @@ bm_apply_blessing_effect = {
 			}
 			else = {
 				blood_magic_used_minor = yes
-				if = {
-					limit = { $TARGET$ = { this = $CASTER$ } }
-					bm_add_blood_mage_xp_effect = { TRACK = wisdom XP = 2 }
-				}
-				else = {
-					bm_add_blood_mage_xp_effect = { TRACK = radiance XP = 2 }
-				}
+				bm_add_blood_mage_xp_effect = { TRACK = $LINE$ XP = 2 }
 				$TARGET$ = {
 					add_character_modifier = { modifier = bm_blessing_$LINE$_minor_modifier }
 				}

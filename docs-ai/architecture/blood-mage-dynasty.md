@@ -37,9 +37,9 @@ Modifiers apply to all living and future members of the caster's house (landless
 - **Permanent Tiered Blood Blessings (`bm_cast_blood_blessing_interaction` & `bm_cast_blood_magic_minor_decision`):**
   - **Prerequisites:** Actor has `lifestyle_blood_mage` (any tier). Target is self, `child`, `dynasty` member, `spouse`/`consort`, sworn `knight`, `councillor`, or `liege`, and does not have the 1-year `bm_blessing_cooldown` flag.
   - **Tiers & Costs:**
-    - **Minor:** `50` Piety + Devotion 1 + `1` Minor Lifeforce (`blood_magic_used_minor`), `+2` `wisdom` (self) / `radiance` (others) XP.
-    - **Major:** Requires Minor blessing of that line, `150` Piety + Devotion 3 + `1` Major Lifeforce (`blood_magic_used_major`), `+4` XP. Replaces Minor.
-    - **Superior:** Requires Major blessing of that line, `250` Piety + Devotion 5 + `1` Superior Lifeforce (`blood_magic_used_superior`), `+6` XP. Replaces Major.
+    - **Minor:** `50` Piety + Devotion 1 + `1` Minor Lifeforce (`blood_magic_used_minor`), `+2` matching track XP (`radiance`/`fortune`/`fury`/`cunning`/`wisdom`/`ancient`).
+    - **Major:** Requires Minor blessing of that line, `150` Piety + Devotion 3 + `1` Major Lifeforce (`blood_magic_used_major`), `+4` matching track XP. Replaces Minor.
+    - **Superior:** Requires Major blessing of that line, `250` Piety + Devotion 5 + `1` Superior Lifeforce (`blood_magic_used_superior`), `+6` matching track XP. Replaces Major.
   - **6 Lines (all stackable; max 1 tier per line, permanent, +25 Opinion on others):**
     1. **Blessing of Radiance (`bm_blessing_radiance_<tier>_modifier`):** `+1/+3/+5` Diplomacy, `+5/+10/+15` monthly Diplomacy Lifestyle XP, `+5%/+10%/+20%` monthly Lifestyle XP.
     2. **Blessing of Fortune (`bm_blessing_fortune_<tier>_modifier`):** `+1/+3/+5` Stewardship, `+5/+10/+15` monthly Stewardship Lifestyle XP, `+5%/+10%/+20%` monthly Lifestyle XP, `+5%/+10%/+20%` Trade Capacity, `+1` Trade Goods on Route (Major/Superior).
