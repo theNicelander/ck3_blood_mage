@@ -1,6 +1,4 @@
 {
-  "version": "1.20",
-  "scope": "domicile",
   "description": "Allowlist of vanilla CK3 domicile-scoped modifiers permitted in ck3_blood_mage.",
   "modifiers": {
     "domicile_build_gold_cost": {
@@ -18,10 +16,8 @@
     "domicile_monthly_piety_add": {
       "category": "Income & Resources",
       "vanilla_definition": "00_definitions.txt"
-    },
-    "monthly_income_per_piety_level": {
-      "category": "Added",
-      "vanilla_definition": "00_definitions.txt"
     }
-  }
+  },
+  "scope": "domicile",
+  "version": "1.20"
 }

@@ -1,6 +1,4 @@
 {
-  "version": "1.20",
-  "scope": "county",
   "description": "Allowlist of vanilla CK3 county/province/holding-scoped modifiers permitted in ck3_blood_mage.",
   "modifiers": {
     "build_gold_cost": {
@@ -11,24 +9,8 @@
       "category": "Realm & Holdings",
       "vanilla_definition": "00_definitions.txt"
     },
-    "county_opinion_add": {
-      "category": "Opinions & Dread",
-      "vanilla_definition": "00_definitions.txt"
-    },
     "defender_holding_advantage": {
       "category": "Military & Combat",
-      "vanilla_definition": "00_definitions.txt"
-    },
-    "development_growth": {
-      "category": "Realm & Holdings",
-      "vanilla_definition": "00_definitions.txt"
-    },
-    "development_growth_factor": {
-      "category": "Realm & Holdings",
-      "vanilla_definition": "00_definitions.txt"
-    },
-    "different_faith_county_opinion_mult": {
-      "category": "Opinions & Dread",
       "vanilla_definition": "00_definitions.txt"
     },
     "fort_level": {
@@ -47,21 +29,27 @@
       "category": "Added",
       "vanilla_definition": "00_definitions.txt"
     },
-    "monthly_county_control_growth_add": {
-      "category": "Realm & Holdings",
+    "monthly_control_change": {
+      "category": "Added",
       "vanilla_definition": "00_definitions.txt"
     },
-    "monthly_income_per_piety_level": {
+    "popular_opinion_add": {
+      "category": "Added",
+      "vanilla_definition": "00_definitions.txt"
+    },
+    "prosperity_growth": {
+      "category": "Added",
+      "vanilla_definition": "00_definitions.txt"
+    },
+    "prosperity_growth_factor": {
       "category": "Added",
       "vanilla_definition": "00_definitions.txt"
     },
     "supply_limit_mult": {
       "category": "Added",
       "vanilla_definition": "00_definitions.txt"
-    },
-    "tax_mult": {
-      "category": "Added",
-      "vanilla_definition": "00_definitions.txt"
     }
-  }
+  },
+  "scope": "county",
+  "version": "1.20"
 }
