@@ -152,7 +152,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 
 ## Version history
 
-- v1.21.1: Update modifiers, duchy districts, port parameters, Monaco holy site barony (`c_savona` / `b_ventimiglia`), and Icelandic innovations for CK3 1.21 compatibility.
+- v1.21.1: Update modifiers, duchy districts, port parameters, Monaco holy site barony (`c_savona` / `b_ventimiglia`), Icelandic innovations, and add Merchant/trade support for CK3 1.21.
 - v1.20.90: Move Blood Blessings into dedicated `Cast Blood Blessing` interaction modal (6 exclusive options) and fold self-casting into Minor Blood Magic Grimoire; convert `Empower Dynasty Bloodline` decision to open a hidden interaction popup (`bm_empower_bloodline_interaction`); Minor Life drain now uses a 3-month per-victim cooldown and inflicts escalating wounds instead of `recently_lifedrained_modifier`.
 - v1.20.89: Open Transmute Lifeforce channeling to Blood Acolytes and add +5% Raid Speed to Furious Blood.
 - v1.20.87: Simplify Transmute Lifeforce to 1:1 Major Lifeforce conversion and reclaim across all 6 specialized reservoirs, and remove Track XP from reclaiming.
