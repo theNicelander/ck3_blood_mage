@@ -16,13 +16,15 @@
 	}
 
 	can_pick = {
-		custom_description = {
-			text = culture_on_coast_desc
-			any_culture_county = {
-				has_coastal_province = yes
+		trigger_if = {
+			limit = {
+				OR = {
+					NOT = { exists = scope:replacing }
+					NOT = { scope:replacing = culture_tradition:tradition_things }
+				}
 			}
+			NOT = { has_cultural_tradition = tradition_things }
 		}
-		NOT = { has_cultural_tradition = tradition_things }
 	}
 
 	parameters = {
@@ -31,15 +33,13 @@
 	}
 
 	character_modifier = {
-		character_capital_county_monthly_prosperity_growth_add = 0.05
 		cultural_head_fascination_mult = 0.15
 	}
 
 	county_modifier = {
-		prosperity_growth = 0.05
 		prosperity_growth_factor = 0.2
 		control_baseline_add = 5
-		monthly_control_change_when_below_baseline_add = 0.10
+		monthly_control_change_when_below_baseline_add = 0.20
 	}
 
 	cost = {
@@ -59,7 +59,7 @@
 				}
 				add = {
 					value = tradition_incompatible_ethos_penalty
-					desc = not_bellicose_or_bureaucratic_desc
+					desc = bm_not_communal_bureaucratic_or_bellicose_desc
 				}
 			}
 			multiply = tradition_replacement_cost_if_relevant
@@ -101,16 +101,29 @@ bm_tradition_verbudir = {
 				has_coastal_province = yes
 			}
 		}
-		NOT = { has_cultural_tradition = tradition_maritime_mercantilism }
-		NOT = { has_cultural_tradition = tradition_fishermen }
+		trigger_if = {
+			limit = {
+				OR = {
+					NOT = { exists = scope:replacing }
+					NOT = { scope:replacing = culture_tradition:tradition_maritime_mercantilism }
+				}
+			}
+			NOT = { has_cultural_tradition = tradition_maritime_mercantilism }
+		}
+		trigger_if = {
+			limit = {
+				OR = {
+					NOT = { exists = scope:replacing }
+					NOT = { scope:replacing = culture_tradition:tradition_fishermen }
+				}
+			}
+			NOT = { has_cultural_tradition = tradition_fishermen }
+		}
 	}
 
 	parameters = {
 		next_level_port_districts = yes
 		port_district_enabled_for_tribals = yes
-		port_district_stationed_maa_bonus = yes
-		seafarers_port_building_slot = yes
-		seafarers_port_maa_control = yes
 		maritime_mercantilism_coastal_districts = yes
 		can_travel_along_rivers = yes
 		fishermen_productivity_bonus = yes
@@ -119,8 +132,7 @@ bm_tradition_verbudir = {
 	character_modifier = {
 		embarkation_cost_mult = -0.5
 		sea_travel_danger = medium_sea_danger_reduction
-		coastal_sea_travel_danger = medium_sea_danger_reduction
-		max_trade_goods_on_route = 1
+		coastal_sea_travel_danger = low_sea_danger_reduction
 		trade_capacity_mult = 0.1
 		trade_route_length_add = 3
 		trade_category_meat_xp_gain_mult = 0.2
@@ -130,7 +142,6 @@ bm_tradition_verbudir = {
 	county_modifier = {
 		trade_good_fish_production_mult = 0.2
 	}
-
 
 	cost = {
 		prestige = {
@@ -149,7 +160,7 @@ bm_tradition_verbudir = {
 				}
 				add = {
 					value = tradition_incompatible_ethos_penalty
-					desc = not_egalitarian_stoic_or_bureaucratic_desc
+					desc = not_communal_bureaucratic_or_stoic_desc
 				}
 			}
 			if = {
