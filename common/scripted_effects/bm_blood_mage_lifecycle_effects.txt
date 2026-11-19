@@ -70,7 +70,7 @@ bm_elevate_tier_effect = {
 	if = {
 		limit = { has_trait = lifestyle_bm_acolyte }
 		send_interface_toast = {
-			type = event_toast_effect_good
+			type = bm_event_toast_effect_good
 			title = bm_elevate_blood_mage_tier_toast
 			left_icon = root
 			if = {
@@ -90,7 +90,7 @@ bm_elevate_tier_effect = {
 	else_if = {
 		limit = { has_trait = lifestyle_blood_mage }
 		send_interface_toast = {
-			type = event_toast_effect_good
+			type = bm_event_toast_effect_good
 			title = bm_elevate_blood_archmage_tier_toast
 			left_icon = root
 			if = {

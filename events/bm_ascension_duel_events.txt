@@ -5,6 +5,9 @@ bm_ascension_duel.0001 = {
 	title = bm_ascension_duel.0001.t
 	desc = bm_ascension_duel.0001.desc
 	theme = war
+	override_icon = {
+		reference = "gfx/interface/icons/trait_level_tracks/ancient.dds"
+	}
 
 	left_portrait = {
 		character = root
@@ -76,6 +79,9 @@ bm_ascension_duel.0002 = {
 		}
 	}
 	theme = war
+	override_icon = {
+		reference = "gfx/interface/icons/trait_level_tracks/ancient.dds"
+	}
 
 	left_portrait = {
 		character = root
@@ -94,7 +100,7 @@ bm_ascension_duel.0002 = {
 		}
 		else = {
 			send_interface_toast = {
-				type = event_toast_effect_bad
+				type = bm_event_toast_effect_bad
 				title = bm_ascension_duel_loser_toast
 				left_icon = root
 				right_icon = scope:sc_defender
@@ -148,6 +154,9 @@ bm_ascension_duel.0003 = {
 	title = bm_ascension_duel.0003.t
 	desc = bm_ascension_duel.0003.desc
 	theme = war
+	override_icon = {
+		reference = "gfx/interface/icons/trait_level_tracks/ancient.dds"
+	}
 
 	left_portrait = {
 		character = root

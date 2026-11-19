@@ -84,7 +84,7 @@
 			debug_log = "BloodMageSelfCast: bleed_own_vein (minor) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
 			scope:actor = {
 				send_interface_toast = {
-					type = event_toast_effect_neutral
+					type = bm_event_toast_effect_neutral
 					title = bm_bleed_own_vein_interaction.minor_bleed.toast
 					left_icon = scope:actor
 
@@ -112,7 +112,7 @@
 			debug_log = "BloodMageSelfCast: bleed_own_vein (major) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
 			scope:actor = {
 				send_interface_toast = {
-					type = event_toast_effect_neutral
+					type = bm_event_toast_effect_neutral
 					title = bm_bleed_own_vein_interaction.major_bleed.toast
 					left_icon = scope:actor
 

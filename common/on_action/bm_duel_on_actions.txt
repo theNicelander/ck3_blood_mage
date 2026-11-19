@@ -97,7 +97,7 @@ bm_on_character_death_duel = {
 					}
 				}
 				send_interface_toast = {
-					type = event_toast_effect_good
+					type = bm_event_toast_effect_good
 					title = bm_duel_kill_fury_toast
 					left_icon = scope:killer
 					right_icon = root

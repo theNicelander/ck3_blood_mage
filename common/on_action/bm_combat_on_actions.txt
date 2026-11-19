@@ -24,7 +24,7 @@ bm_on_combat_end_winner = {
 				limit = { bm_has_superior_stave_trigger = { STAVE = nabrokarstafur } }
 				add_gold = bm_nabrokarstafur_battle_gold_value
 				send_interface_toast = {
-					type = event_toast_effect_good
+					type = bm_event_toast_effect_good
 					title = bm_nabrokarstafur_battle_gold_toast
 					left_icon = this
 					custom_tooltip = bm_nabrokarstafur_battle_gold_tt
@@ -49,7 +49,7 @@ bm_on_combat_end_winner = {
 				limit = { bm_has_superior_stave_trigger = { STAVE = nabrokarstafur } }
 				add_gold = bm_nabrokarstafur_battle_gold_value
 				send_interface_toast = {
-					type = event_toast_effect_good
+					type = bm_event_toast_effect_good
 					title = bm_nabrokarstafur_battle_gold_toast
 					left_icon = this
 					custom_tooltip = bm_nabrokarstafur_battle_gold_tt

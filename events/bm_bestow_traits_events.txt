@@ -5,6 +5,9 @@ bm_bestow_traits.0001 = {
 	title = bm_bestow_traits.0001.title
 	desc = bm_bestow_traits.0001.desc
 	theme = witchcraft
+	override_icon = {
+		reference = "gfx/interface/icons/trait_level_tracks/ancient.dds"
+	}
 
 	left_portrait = {
 		character = root
@@ -57,7 +60,7 @@ bm_bestow_traits.0001 = {
 						max = 40
 					}
 					send_interface_toast = {
-						type = event_toast_effect_good
+						type = bm_event_toast_effect_good
 						title = bm_bestow_traits.toast.intellect.title
 						desc = bm_bestow_traits.toast.intellect.desc
 						left_icon = root
@@ -88,7 +91,7 @@ bm_bestow_traits.0001 = {
 		}
 		else = {
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_bestow_traits.toast.intellect.title
 				desc = bm_bestow_traits.toast.intellect.desc
 				left_icon = root
@@ -144,7 +147,7 @@ bm_bestow_traits.0001 = {
 						max = 40
 					}
 					send_interface_toast = {
-						type = event_toast_effect_good
+						type = bm_event_toast_effect_good
 						title = bm_bestow_traits.toast.physique.title
 						desc = bm_bestow_traits.toast.physique.desc
 						left_icon = root
@@ -175,7 +178,7 @@ bm_bestow_traits.0001 = {
 		}
 		else = {
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_bestow_traits.toast.physique.title
 				desc = bm_bestow_traits.toast.physique.desc
 				left_icon = root
@@ -231,7 +234,7 @@ bm_bestow_traits.0001 = {
 						max = 40
 					}
 					send_interface_toast = {
-						type = event_toast_effect_good
+						type = bm_event_toast_effect_good
 						title = bm_bestow_traits.toast.beauty.title
 						desc = bm_bestow_traits.toast.beauty.desc
 						left_icon = root
@@ -262,7 +265,7 @@ bm_bestow_traits.0001 = {
 		}
 		else = {
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_bestow_traits.toast.beauty.title
 				desc = bm_bestow_traits.toast.beauty.desc
 				left_icon = root
@@ -301,7 +304,7 @@ bm_bestow_traits.0001 = {
 					max = 40
 				}
 				send_interface_toast = {
-					type = event_toast_effect_good
+					type = bm_event_toast_effect_good
 					title = bm_bestow_traits.toast.fecund.title
 					desc = bm_bestow_traits.toast.fecund.desc
 					left_icon = root
@@ -358,7 +361,7 @@ bm_bestow_traits.0001 = {
 					max = 40
 				}
 				send_interface_toast = {
-					type = event_toast_effect_good
+					type = bm_event_toast_effect_good
 					title = bm_bestow_traits.toast.pure_blooded.title
 					desc = bm_bestow_traits.toast.pure_blooded.desc
 					left_icon = root
@@ -414,7 +417,7 @@ bm_bestow_traits.0001 = {
 					max = 40
 				}
 				send_interface_toast = {
-					type = event_toast_effect_good
+					type = bm_event_toast_effect_good
 					title = bm_bestow_traits.toast.giant.title
 					desc = bm_bestow_traits.toast.giant.desc
 					left_icon = root
@@ -471,7 +474,7 @@ bm_bestow_traits.0001 = {
 					max = 40
 				}
 				send_interface_toast = {
-					type = event_toast_effect_good
+					type = bm_event_toast_effect_good
 					title = bm_bestow_traits.toast.strong.title
 					desc = bm_bestow_traits.toast.strong.desc
 					left_icon = root
@@ -528,7 +531,7 @@ bm_bestow_traits.0001 = {
 					max = 40
 				}
 				send_interface_toast = {
-					type = event_toast_effect_good
+					type = bm_event_toast_effect_good
 					title = bm_bestow_traits.toast.shrewd.title
 					desc = bm_bestow_traits.toast.shrewd.desc
 					left_icon = root

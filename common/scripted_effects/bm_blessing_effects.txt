@@ -4,7 +4,7 @@
 bm_apply_blessing_effect = {
 	$CASTER$ = {
 		send_interface_toast = {
-			type = event_toast_effect_good
+			type = bm_event_toast_effect_good
 			title = bm_blood_blessing_toast
 			left_icon = $CASTER$
 			right_icon = $TARGET$

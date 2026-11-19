@@ -5,6 +5,9 @@ bm_heal_old_age.0001 = {
 	title = bm_heal_old_age.0001.title
 	desc = bm_heal_old_age.0001.desc
 	theme = physical_health
+	override_icon = {
+		reference = "gfx/interface/icons/trait_level_tracks/ancient.dds"
+	}
 
 	left_portrait = {
 		character = root
@@ -65,7 +68,7 @@ bm_heal_old_age.0001 = {
 				}
 			}
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_heal_old_age_toast_cure_title
 				left_icon = root
 				right_icon = scope:recipient
@@ -78,7 +81,7 @@ bm_heal_old_age.0001 = {
 		}
 		else = {
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_heal_old_age_toast_treatment_title
 				left_icon = root
 				right_icon = scope:recipient
@@ -148,7 +151,7 @@ bm_heal_old_age.0001 = {
 				}
 			}
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_heal_old_age_toast_cure_title
 				left_icon = root
 				right_icon = scope:recipient
@@ -161,7 +164,7 @@ bm_heal_old_age.0001 = {
 		}
 		else = {
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_heal_old_age_toast_treatment_title
 				left_icon = root
 				right_icon = scope:recipient
@@ -232,7 +235,7 @@ bm_heal_old_age.0001 = {
 				}
 			}
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_heal_old_age_toast_cure_title
 				left_icon = root
 				right_icon = scope:recipient
@@ -245,7 +248,7 @@ bm_heal_old_age.0001 = {
 		}
 		else = {
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_heal_old_age_toast_treatment_title
 				left_icon = root
 				right_icon = scope:recipient
@@ -315,7 +318,7 @@ bm_heal_old_age.0001 = {
 				}
 			}
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_heal_old_age_toast_cure_title
 				left_icon = root
 				right_icon = scope:recipient
@@ -328,7 +331,7 @@ bm_heal_old_age.0001 = {
 		}
 		else = {
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_heal_old_age_toast_treatment_title
 				left_icon = root
 				right_icon = scope:recipient
@@ -399,7 +402,7 @@ bm_heal_old_age.0001 = {
 				}
 			}
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_heal_old_age_toast_cure_title
 				left_icon = root
 				right_icon = scope:recipient
@@ -412,7 +415,7 @@ bm_heal_old_age.0001 = {
 		}
 		else = {
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_heal_old_age_toast_treatment_title
 				left_icon = root
 				right_icon = scope:recipient
@@ -482,7 +485,7 @@ bm_heal_old_age.0001 = {
 				}
 			}
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_heal_old_age_toast_cure_title
 				left_icon = root
 				right_icon = scope:recipient
@@ -495,7 +498,7 @@ bm_heal_old_age.0001 = {
 		}
 		else = {
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_heal_old_age_toast_treatment_title
 				left_icon = root
 				right_icon = scope:recipient
@@ -566,7 +569,7 @@ bm_heal_old_age.0001 = {
 				}
 			}
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_heal_old_age_toast_cure_title
 				left_icon = root
 				right_icon = scope:recipient
@@ -579,7 +582,7 @@ bm_heal_old_age.0001 = {
 		}
 		else = {
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_heal_old_age_toast_treatment_title
 				left_icon = root
 				right_icon = scope:recipient
@@ -649,7 +652,7 @@ bm_heal_old_age.0001 = {
 				}
 			}
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_heal_old_age_toast_cure_title
 				left_icon = root
 				right_icon = scope:recipient
@@ -662,7 +665,7 @@ bm_heal_old_age.0001 = {
 		}
 		else = {
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_heal_old_age_toast_treatment_title
 				left_icon = root
 				right_icon = scope:recipient
@@ -733,7 +736,7 @@ bm_heal_old_age.0001 = {
 				}
 			}
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_heal_old_age_toast_cure_title
 				left_icon = root
 				right_icon = scope:recipient
@@ -746,7 +749,7 @@ bm_heal_old_age.0001 = {
 		}
 		else = {
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_heal_old_age_toast_treatment_title
 				left_icon = root
 				right_icon = scope:recipient
@@ -816,7 +819,7 @@ bm_heal_old_age.0001 = {
 				}
 			}
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_heal_old_age_toast_cure_title
 				left_icon = root
 				right_icon = scope:recipient
@@ -829,7 +832,7 @@ bm_heal_old_age.0001 = {
 		}
 		else = {
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_heal_old_age_toast_treatment_title
 				left_icon = root
 				right_icon = scope:recipient

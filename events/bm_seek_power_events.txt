@@ -89,6 +89,9 @@ seek_power.002 = {
     title = seek_power.002.title
     desc = seek_power.002.desc
     theme = hunt_activity
+    override_icon = {
+        reference = "gfx/interface/icons/trait_level_tracks/ancient.dds"
+    }
 
     left_portrait = {
         character = root
@@ -120,6 +123,9 @@ seek_power.003 = {
         }
     }
     theme = hunt_activity
+    override_icon = {
+        reference = "gfx/interface/icons/trait_level_tracks/ancient.dds"
+    }
 
     left_portrait = {
         character = root
@@ -330,7 +336,6 @@ seek_power.003 = {
         name = seek_power.003.b
         ai_chance = { base = 500 }
         trigger_event = bm_trait_drain.001
-        remove_character_modifier = lifeforce_modifier_major
         trigger = {
             is_blood_mage_any_tier_trigger = yes
             has_character_modifier = lifeforce_modifier_major
@@ -523,6 +528,9 @@ seek_power.004 = {
     title = seek_power.004.title
     desc = seek_power.004.desc
     theme = hunt_activity
+    override_icon = {
+        reference = "gfx/interface/icons/trait_level_tracks/ancient.dds"
+    }
 
     left_portrait = {
         character = root
@@ -547,6 +555,9 @@ seek_power.008 = {
     title = seek_power.008.title
     desc = seek_power.008.desc
     theme = hunt_activity
+    override_icon = {
+        reference = "gfx/interface/icons/trait_level_tracks/ancient.dds"
+    }
 
     left_portrait = {
         character = root
@@ -649,6 +660,9 @@ seek_power.009 = {
     title = seek_power.009.title
     desc = seek_power.009.desc
     theme = hunt_activity
+    override_icon = {
+        reference = "gfx/interface/icons/trait_level_tracks/ancient.dds"
+    }
 
     left_portrait = {
         character = root
@@ -751,6 +765,9 @@ seek_power.010 = {
     title = seek_power.010.title
     desc = seek_power.010.desc
     theme = hunt_activity
+    override_icon = {
+        reference = "gfx/interface/icons/trait_level_tracks/ancient.dds"
+    }
 
     left_portrait = {
         character = root
@@ -857,6 +874,9 @@ seek_power.011 = {
     title = seek_power.011.title
     desc = seek_power.011.desc
     theme = hunt_activity
+    override_icon = {
+        reference = "gfx/interface/icons/trait_level_tracks/ancient.dds"
+    }
 
     left_portrait = {
         character = root
@@ -979,6 +999,9 @@ seek_power.006 = {
         }
     }
     theme = battle
+    override_icon = {
+        reference = "gfx/interface/icons/trait_level_tracks/ancient.dds"
+    }
 
     left_portrait = {
         character = root
@@ -1021,7 +1044,7 @@ seek_power.006 = {
         }
         ai_chance = { base = 80 }
         send_interface_toast = {
-            type = event_toast_effect_good
+            type = bm_event_toast_effect_good
             title = bm_duel_kill_fury_toast
             left_icon = root
             right_icon = scope:duel_opponent

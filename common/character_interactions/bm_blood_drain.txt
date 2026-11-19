@@ -230,7 +230,7 @@
 			scope:actor = { bm_can_drain_traits_from_target_trigger = yes }
 		}
 		is_valid = {
-			scope:actor = { is_blood_mage_tier_2_or_higher_trigger = yes }
+			scope:actor = { bm_can_drain_traits_from_target_tier_valid_trigger = yes }
 			scope:recipient = { is_imprisoned_by = scope:actor }
 			scope:actor = {
 				has_character_modifier = lifeforce_modifier_major
@@ -360,7 +360,7 @@
 				if = {
 					limit = { scope:recipient = { is_imprisoned_by = scope:actor } }
 					send_interface_toast = {
-						type = event_toast_effect_good
+						type = bm_event_toast_effect_good
 						title = bm_blood_drain_toast
 						left_icon = scope:actor
 						right_icon = scope:recipient
@@ -405,7 +405,7 @@
 								max = 45
 							}
 							send_interface_toast = {
-								type = event_toast_effect_good
+								type = bm_event_toast_effect_good
 								title = bm_blood_drain_toast
 								left_icon = scope:actor
 								right_icon = scope:recipient
@@ -436,7 +436,7 @@
 								max = 45
 							}
 							send_interface_toast = {
-								type = event_toast_effect_bad
+								type = bm_event_toast_effect_bad
 								title = bm_blood_drain_stored_fail_toast
 								left_icon = scope:actor
 								right_icon = scope:recipient
@@ -493,18 +493,7 @@
 			limit = { scope:drain_trait = yes }
 			debug_log = "BloodMageInteraction: bm_blood_drain (trait) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
 			scope:actor = {
-				remove_character_modifier = lifeforce_modifier_major
-				add_character_flag = {
-					flag = bm_trait_drain_cooldown
-					days = 60
-				}
 				trigger_event = bm_trait_drain.001
-			}
-			scope:recipient = {
-				add_character_flag = {
-					flag = bm_trait_drain_victim_cooldown
-					days = 180
-				}
 			}
 		}
 		else = {

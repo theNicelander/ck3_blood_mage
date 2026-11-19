@@ -58,3 +58,17 @@ beauty_drain_trait_effects = {
 drain_trait_failed_effects = {
     temporary_negative_lifeforce_effect_major = yes
 }
+
+bm_trait_drain_commit_cost_and_cooldown_effect = {
+    remove_character_modifier = lifeforce_modifier_major
+    add_character_flag = {
+        flag = bm_trait_drain_cooldown
+        days = 60
+    }
+    scope:recipient = {
+        add_character_flag = {
+            flag = bm_trait_drain_victim_cooldown
+            days = 180
+        }
+    }
+}

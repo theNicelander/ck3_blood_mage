@@ -197,7 +197,7 @@
 			value = bm_superior_create_blood_golem
 			current_description = bm_superior_create_blood_golem
 			localization = bm_superior_create_blood_golem
-			icon = "gfx/interface/icons/traits/bm_blood_mage.dds"
+			icon = "gfx/interface/icons/trait_level_tracks/ancient.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
@@ -223,7 +223,7 @@
 			value = bm_superior_split
 			current_description = bm_superior_split
 			localization = bm_superior_split
-			icon = "gfx/interface/icons/traits/bm_interactions.dds"
+			icon = "gfx/interface/icons/trait_level_tracks/ancient.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
@@ -291,7 +291,7 @@
 				years = 3
 			}
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_blood_rune_superior_toast
 				left_icon = root
 				bm_upgrade_blood_rune_to_superior_effect = yes
@@ -332,7 +332,7 @@
 				days = 180
 			}
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_split_superior_lifeforce_toast
 				left_icon = root
 				remove_character_modifier = lifeforce_modifier_superior
@@ -414,7 +414,7 @@ bm_cast_blood_magic_major_decision = {
 			value = bm_major_condense
 			current_description = bm_major_condense
 			localization = bm_major_condense
-			icon = "gfx/interface/icons/traits/bm_interactions.dds"
+			icon = "gfx/interface/icons/trait_level_tracks/ancient.dds"
 			is_shown = {
 				is_blood_mage_tier_2_or_higher_trigger = yes
 			}
@@ -448,7 +448,7 @@ bm_cast_blood_magic_major_decision = {
 			value = bm_major_split
 			current_description = bm_major_split
 			localization = bm_major_split
-			icon = "gfx/interface/icons/traits/bm_interactions.dds"
+			icon = "gfx/interface/icons/trait_level_tracks/ancient.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
@@ -628,7 +628,7 @@ bm_cast_blood_magic_major_decision = {
 				days = 180
 			}
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_condense_superior_lifeforce_toast
 				left_icon = root
 				remove_character_modifier = lifeforce_modifier_major
@@ -648,7 +648,7 @@ bm_cast_blood_magic_major_decision = {
 				days = 180
 			}
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_split_major_lifeforce_toast
 				left_icon = root
 				remove_character_modifier = lifeforce_modifier_major
@@ -674,7 +674,7 @@ bm_cast_blood_magic_major_decision = {
 				years = 3
 			}
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_blood_rune_major_toast
 				left_icon = root
 				bm_upgrade_blood_rune_to_major_effect = yes
@@ -802,7 +802,7 @@ bm_cast_blood_magic_minor_decision = {
 			value = bm_minor_condense
 			current_description = bm_minor_condense
 			localization = bm_minor_condense
-			icon = "gfx/interface/icons/traits/bm_interactions.dds"
+			icon = "gfx/interface/icons/trait_level_tracks/ancient.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
@@ -903,7 +903,7 @@ bm_cast_blood_magic_minor_decision = {
 			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (purge)"
 			add_piety = -50
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_purge_impurities_toast
 				left_icon = root
 				remove_character_modifier = lifeforce_modifier_minor
@@ -958,7 +958,7 @@ bm_cast_blood_magic_minor_decision = {
 				days = 180
 			}
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_condense_lifeforce_toast
 				left_icon = root
 				remove_character_modifier = lifeforce_modifier_minor
@@ -977,7 +977,7 @@ bm_cast_blood_magic_minor_decision = {
 				years = 3
 			}
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_blood_rune_minor_toast
 				left_icon = root
 				add_character_modifier = {

@@ -5,6 +5,9 @@ bm_heal_ailment.0001 = {
 	title = bm_heal_ailment.0001.title
 	desc = bm_heal_ailment.0001.desc
 	theme = witchcraft
+	override_icon = {
+		reference = "gfx/interface/icons/trait_level_tracks/ancient.dds"
+	}
 
 	left_portrait = {
 		character = root
@@ -816,7 +819,7 @@ bm_heal_ailment.0001 = {
 			scope:recipient = { bm_has_stress_coping_trait_trigger = yes }
 		}
 		send_interface_toast = {
-			type = event_toast_effect_good
+			type = bm_event_toast_effect_good
 			title = bm_purge_coping_traits_interaction.toast
 			left_icon = root
 			right_icon = scope:recipient

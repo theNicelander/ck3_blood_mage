@@ -17,7 +17,7 @@ bm_on_murder_success_hulinhjalmur = {
 			scope:owner = {
 				add_character_modifier = { modifier = lifeforce_modifier_major }
 				send_interface_toast = {
-					type = event_toast_effect_good
+					type = bm_event_toast_effect_good
 					title = bm_hulinhjalmur_murder_lifeforce_toast
 					left_icon = scope:owner
 					right_icon = scope:target

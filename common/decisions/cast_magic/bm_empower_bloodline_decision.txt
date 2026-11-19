@@ -12,10 +12,11 @@
 
 	is_valid = {
 		exists = house
-		custom_description = {
-			text = bm_empower_bloodline_cooldown_tt
-			NOT = { has_character_flag = bm_empower_bloodline_cooldown }
-		}
+		# TEMP TEST: cooldown disabled
+		# custom_description = {
+		# 	text = bm_empower_bloodline_cooldown_tt
+		# 	NOT = { has_character_flag = bm_empower_bloodline_cooldown }
+		# }
 		piety >= 150
 		piety_level >= 1
 		OR = {
