@@ -25,9 +25,9 @@
 	}
 
 	effect = {
-		debug_log = "BloodMageDecision: bm_covenant_acolyte_decision | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+		debug_log = "BloodMageDecision: bm_covenant_acolyte_decision"
 		send_interface_toast = {
-			type = event_toast_effect_good
+			type = bm_event_toast_effect_good
 			title = bm_covenant_acolyte_decision
 			left_icon = root
 			bm_become_blood_acolyte_effect = yes

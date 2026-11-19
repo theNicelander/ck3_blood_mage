@@ -357,6 +357,7 @@ rsync -a \
   --exclude '/.gitignore' \
   --exclude '/.env*' \
   --exclude '/.agents/' \
+  --exclude 'AGENTS.md' \
   --exclude '/.codex/' \
   --exclude '/scripts/' \
   --exclude '/docs/' \
@@ -364,6 +365,8 @@ rsync -a \
   --exclude '/WORKSHOP_DESCRIPTION.txt' \
   --exclude '/thumbnail-source.png' \
   --exclude '/ck3-tiger.conf' \
+  --exclude '/local-assets/' \
+  --exclude '*.log' \
   --exclude '.DS_Store' \
   --exclude '._*' \
   --exclude '*.tmp' \

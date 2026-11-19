@@ -6,7 +6,7 @@
 		debug_only = yes
 	}
 	effect = {
-		debug_log = "BloodMageDecision: bm_debug_menu | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID], [Select_CString(root.IsPlayer, 'Player', 'AI')])"
+		debug_log = "BloodMageDecision: bm_debug_menu"
 		trigger_event = { id = bm_debug.0001 }
 	}
 }

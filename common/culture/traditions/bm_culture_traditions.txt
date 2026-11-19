@@ -113,12 +113,22 @@ bm_tradition_verbudir = {
 		seafarers_port_maa_control = yes
 		maritime_mercantilism_coastal_districts = yes
 		can_travel_along_rivers = yes
+		fishermen_productivity_bonus = yes
 	}
 
 	character_modifier = {
 		embarkation_cost_mult = -0.5
 		sea_travel_danger = medium_sea_danger_reduction
 		coastal_sea_travel_danger = medium_sea_danger_reduction
+		max_trade_goods_on_route = 1
+		trade_capacity_mult = 0.1
+		trade_route_length_add = 3
+		trade_category_meat_xp_gain_mult = 0.2
+		trade_good_fish_sell_price_mult = 0.02
+	}
+
+	county_modifier = {
+		trade_good_fish_production_mult = 0.2
 	}
 
 

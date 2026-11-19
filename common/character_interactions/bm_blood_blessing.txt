@@ -262,7 +262,7 @@
 			debug_log = "BloodMageInteraction: bm_blood_blessing (empower) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
 			scope:actor = {
 				send_interface_toast = {
-					type = event_toast_effect_good
+					type = bm_event_toast_effect_good
 					title = bm_blood_blessing_toast
 					left_icon = scope:actor
 					right_icon = scope:recipient
@@ -303,7 +303,7 @@
 			debug_log = "BloodMageInteraction: bm_blood_blessing (grant_lifeforce) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
 			scope:actor = {
 				send_interface_toast = {
-					type = event_toast_effect_good
+					type = bm_event_toast_effect_good
 					title = bm_blood_blessing_toast
 					left_icon = scope:actor
 					right_icon = scope:recipient
@@ -435,7 +435,7 @@
 					value = scope:recipient
 				}
 				send_interface_toast = {
-					type = event_toast_effect_good
+					type = bm_event_toast_effect_good
 					title = bm_blood_blessing_toast
 					left_icon = scope:actor
 					right_icon = scope:recipient
@@ -466,7 +466,7 @@
 					years = 3
 				}
 				send_interface_toast = {
-					type = event_toast_effect_good
+					type = bm_event_toast_effect_good
 					title = bm_blood_blessing_toast
 					left_icon = scope:actor
 					right_icon = scope:recipient

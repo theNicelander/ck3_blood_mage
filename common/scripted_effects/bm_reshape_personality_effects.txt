@@ -1,0 +1,31 @@
+﻿bm_reshape_personality_failure_effect = {
+	remove_interaction_cooldown_against = {
+		interaction = bm_reshape_personality_interaction
+		target = scope:recipient
+	}
+	scope:recipient = {
+		set_variable = {
+			name = bm_influence_personality_failed_actor
+			value = root
+			years = 1
+		}
+	}
+	send_interface_toast = {
+		type = bm_event_toast_effect_bad
+		title = $TITLE$
+		desc = $DESC$
+		left_icon = root
+		right_icon = scope:recipient
+		scope:recipient = {
+			add_opinion = {
+				target = root
+				modifier = magic_opinion_negative
+				opinion = -25
+			}
+		}
+		add_shared_bm_bk_xp = {
+			TRACK = wisdom
+			XP = 1
+		}
+	}
+}

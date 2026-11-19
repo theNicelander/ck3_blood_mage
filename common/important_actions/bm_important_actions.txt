@@ -1,4 +1,5 @@
 ﻿bm_action_can_heal = {
+	icon = bm_blood_magic
 	combine_into_one = yes
 	priority = 350
 
@@ -153,6 +154,7 @@
 }
 
 bm_action_can_lifedrain_prisoner = {
+	icon = bm_blood_magic
 	combine_into_one = yes
 	priority = 340
 
@@ -198,6 +200,7 @@ bm_action_can_lifedrain_prisoner = {
 }
 
 bm_action_can_cull_champion = {
+	icon = bm_blood_magic
 	combine_into_one = yes
 	priority = 345
 
@@ -274,6 +277,7 @@ bm_action_can_cull_champion = {
 }
 
 bm_action_can_attune_lifeforce = {
+	icon = bm_blood_magic
 	priority = 360
 
 	check_create_action = {
@@ -302,6 +306,7 @@ bm_action_can_attune_lifeforce = {
 }
 
 bm_action_can_trait_drain_prisoner = {
+	icon = bm_blood_magic
 	combine_into_one = yes
 	priority = 335
 
@@ -309,18 +314,15 @@ bm_action_can_trait_drain_prisoner = {
 		if = {
 			limit = {
 				is_ai = no
-				is_blood_mage_tier_2_or_higher_trigger = yes
+				is_blood_mage_any_tier_trigger = yes
 			}
 			save_scope_as = actor
 
 			every_prisoner = {
 				limit = {
-					save_temporary_scope_as = prisoner_target
+					save_temporary_scope_as = recipient
 					scope:actor = {
-						is_character_interaction_valid = {
-							interaction = trait_drain_prisoner_event_interaction
-							recipient = scope:prisoner_target
-						}
+						bm_can_drain_traits_from_target_trigger = yes
 					}
 				}
 				add_to_temporary_list = bm_trait_drain_candidates
@@ -337,9 +339,18 @@ bm_action_can_trait_drain_prisoner = {
 		}
 	}
 
+	unimportant = {
+		OR = {
+			NOT = { scope:actor = { bm_can_drain_traits_from_target_tier_valid_trigger = yes } }
+			NOT = { scope:actor = { has_character_modifier = lifeforce_modifier_major } }
+			scope:actor = { has_character_flag = bm_trait_drain_cooldown }
+			scope:recipient = { has_character_flag = bm_trait_drain_victim_cooldown }
+		}
+	}
+
 	effect = {
 		open_interaction_window = {
-			interaction = trait_drain_prisoner_event_interaction
+			interaction = bm_blood_drain_interaction
 			actor = scope:actor
 			recipient = scope:recipient
 		}

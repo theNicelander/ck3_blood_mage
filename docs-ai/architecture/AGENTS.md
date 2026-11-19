@@ -1,6 +1,6 @@
 # Architecture docs & subsystem index
 
-Architecture specs for the **Blood Mages** mod (CK3 1.21.*). Living specs of current state only. Generic CK3 guidance lives in `.agents/rules/`, not here.
+Architecture specs for **Blood Mages** (CK3 1.20+). Living current state only. Generic CK3 rules live in localized `AGENTS.md` / `.agents/rules/`, not here.
 
 ## Subsystem directory
 
@@ -33,8 +33,8 @@ Architecture specs for the **Blood Mages** mod (CK3 1.21.*). Living specs of cur
 - **Current state only.** No history, changelog, "previously"/"now". Rewrite text so it is true today. History belongs in the PR/branch doc.
 - **Specs, not prose.** Compact tables of identifiers, `Cost`, `Cooldown`, `Req`, `XP`, `Benefit`. No roleplay or adjectives. Complete mechanical numbers stay (costs, brackets, XP, cooldowns, duel math).
 - **Collapse repeats.** Multi-tier tracks: state the repeating step once, list milestones (10/50/100 XP), not identical rows.
-- **Link, don't duplicate.** Point to the owning doc or `.agents/rules/`.
-- Identifiers exactly as in script; grep to confirm they exist. Backticks for files and identifiers. English only; plain markdown (no BOM).
+- **Link, don't duplicate.** Point to owning doc, localized `AGENTS.md`, or `.agents/rules/`.
+- Identifiers exact as in script (`grep -rn "<id>" common/ events/ gui/ localization/english/`). Backticks for files/IDs. English only; plain markdown (no BOM).
 
 ## Doc structure
 

@@ -44,7 +44,8 @@
   - Extra Port building slot & MaA control via `seafarers_port_building_slot = yes` and `seafarers_port_maa_control = yes`.
   - Coastal District tax bonus across castles, cities, and temples via `maritime_mercantilism_coastal_districts = yes`.
   - River sailing capability via `can_travel_along_rivers = yes`.
-- **Character Travel Modifiers (`character_modifier`):** `embarkation_cost_mult = -0.5` (-50% embarkation cost), `sea_travel_danger = medium_sea_danger_reduction`, and `coastal_sea_travel_danger = medium_sea_danger_reduction`.
+- **Character Travel & Trade Modifiers (`character_modifier`):** `embarkation_cost_mult = -0.5` (-50% embarkation cost), `sea_travel_danger = medium_sea_danger_reduction`, `coastal_sea_travel_danger = medium_sea_danger_reduction`, `max_trade_goods_on_route = 1`, `trade_capacity_mult = 0.10`, `trade_route_length_add = 3`, `trade_category_meat_xp_gain_mult = 0.20`, and `trade_good_fish_sell_price_mult = 0.02`.
+- **County Economy & Military (`county_modifier`):** `trade_good_fish_production_mult = 0.20` (+20% fish production), plus `fishermen_productivity_bonus = yes` parameter.
 
 ### 2. Name List & Patronymics (`bm_name_list_icelandic`)
 

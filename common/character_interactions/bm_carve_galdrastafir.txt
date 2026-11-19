@@ -1,7 +1,7 @@
 ﻿bm_carve_galdrastafir_interaction = {
 	hidden = yes
 	category = interaction_category_bm_blood_magic
-	icon = bm_stave_vegvisir
+	icon = bm_carve_galdrastafir_interaction
 	auto_accept = yes
 	desc = bm_carve_galdrastafir_decision_desc
 
@@ -152,7 +152,7 @@
 			scope:actor = {
 				add_character_flag = { flag = bm_carve_galdrastafir_cooldown years = 5 }
 				send_interface_toast = {
-					type = event_toast_effect_good
+					type = bm_event_toast_effect_good
 					title = bm_carve_galdrastafir_toast
 					left_icon = scope:actor
 					blood_magic_used_major = yes
@@ -166,7 +166,7 @@
 			scope:actor = {
 				add_character_flag = { flag = bm_carve_galdrastafir_cooldown years = 5 }
 				send_interface_toast = {
-					type = event_toast_effect_good
+					type = bm_event_toast_effect_good
 					title = bm_carve_galdrastafir_toast
 					left_icon = scope:actor
 					blood_magic_used_major = yes
@@ -180,7 +180,7 @@
 			scope:actor = {
 				add_character_flag = { flag = bm_carve_galdrastafir_cooldown years = 5 }
 				send_interface_toast = {
-					type = event_toast_effect_good
+					type = bm_event_toast_effect_good
 					title = bm_carve_galdrastafir_toast
 					left_icon = scope:actor
 					blood_magic_used_major = yes
@@ -194,7 +194,7 @@
 			scope:actor = {
 				add_character_flag = { flag = bm_carve_galdrastafir_cooldown years = 5 }
 				send_interface_toast = {
-					type = event_toast_effect_good
+					type = bm_event_toast_effect_good
 					title = bm_carve_galdrastafir_toast
 					left_icon = scope:actor
 					blood_magic_used_major = yes
@@ -208,7 +208,7 @@
 			scope:actor = {
 				add_character_flag = { flag = bm_carve_galdrastafir_cooldown years = 5 }
 				send_interface_toast = {
-					type = event_toast_effect_good
+					type = bm_event_toast_effect_good
 					title = bm_carve_galdrastafir_toast
 					left_icon = scope:actor
 					blood_magic_used_major = yes

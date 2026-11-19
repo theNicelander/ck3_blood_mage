@@ -8,6 +8,9 @@ bm_transmute_lifeforce.0001 = {
 	title = bm_transmute_lifeforce.0001.t
 	desc = bm_transmute_lifeforce.0001.desc
 	theme = witchcraft
+	override_icon = {
+		reference = "gfx/interface/icons/bm_blood_magic_icon.dds"
+	}
 
 	left_portrait = {
 		character = root
@@ -75,6 +78,9 @@ bm_transmute_lifeforce.0002 = {
 	title = bm_transmute_lifeforce.0002.t
 	desc = bm_transmute_lifeforce.0002.desc
 	theme = witchcraft
+	override_icon = {
+		reference = "gfx/interface/icons/bm_blood_magic_icon.dds"
+	}
 
 	left_portrait = {
 		character = root
@@ -93,7 +99,7 @@ bm_transmute_lifeforce.0002 = {
 		}
 		add_piety = -50
 		send_interface_toast = {
-			type = event_toast_effect_good
+			type = bm_event_toast_effect_good
 			title = bm_channel_radiant_major_toast
 			left_icon = root
 			remove_character_modifier = lifeforce_modifier_major
@@ -124,7 +130,7 @@ bm_transmute_lifeforce.0002 = {
 		}
 		add_piety = -50
 		send_interface_toast = {
-			type = event_toast_effect_good
+			type = bm_event_toast_effect_good
 			title = bm_channel_furious_major_toast
 			left_icon = root
 			remove_character_modifier = lifeforce_modifier_major
@@ -155,7 +161,7 @@ bm_transmute_lifeforce.0002 = {
 		}
 		add_piety = -50
 		send_interface_toast = {
-			type = event_toast_effect_good
+			type = bm_event_toast_effect_good
 			title = bm_channel_fortunate_major_toast
 			left_icon = root
 			remove_character_modifier = lifeforce_modifier_major
@@ -186,7 +192,7 @@ bm_transmute_lifeforce.0002 = {
 		}
 		add_piety = -50
 		send_interface_toast = {
-			type = event_toast_effect_good
+			type = bm_event_toast_effect_good
 			title = bm_channel_cunning_major_toast
 			left_icon = root
 			remove_character_modifier = lifeforce_modifier_major
@@ -217,7 +223,7 @@ bm_transmute_lifeforce.0002 = {
 		}
 		add_piety = -50
 		send_interface_toast = {
-			type = event_toast_effect_good
+			type = bm_event_toast_effect_good
 			title = bm_channel_wise_major_toast
 			left_icon = root
 			remove_character_modifier = lifeforce_modifier_major
@@ -248,7 +254,7 @@ bm_transmute_lifeforce.0002 = {
 		}
 		add_piety = -50
 		send_interface_toast = {
-			type = event_toast_effect_good
+			type = bm_event_toast_effect_good
 			title = bm_channel_ancient_major_toast
 			left_icon = root
 			remove_character_modifier = lifeforce_modifier_major
@@ -286,6 +292,9 @@ bm_transmute_lifeforce.0004 = {
 	title = bm_transmute_lifeforce.0004.t
 	desc = bm_transmute_lifeforce.0004.desc
 	theme = witchcraft
+	override_icon = {
+		reference = "gfx/interface/icons/bm_blood_magic_icon.dds"
+	}
 
 	left_portrait = {
 		character = root
@@ -304,7 +313,7 @@ bm_transmute_lifeforce.0004 = {
 		}
 		add_piety = -50
 		send_interface_toast = {
-			type = event_toast_effect_good
+			type = bm_event_toast_effect_good
 			title = bm_reclaim_radiant_toast
 			left_icon = root
 			remove_character_modifier = lifeforce_modifier_radiant
@@ -331,7 +340,7 @@ bm_transmute_lifeforce.0004 = {
 		}
 		add_piety = -50
 		send_interface_toast = {
-			type = event_toast_effect_good
+			type = bm_event_toast_effect_good
 			title = bm_reclaim_furious_toast
 			left_icon = root
 			remove_character_modifier = lifeforce_modifier_furious
@@ -358,7 +367,7 @@ bm_transmute_lifeforce.0004 = {
 		}
 		add_piety = -50
 		send_interface_toast = {
-			type = event_toast_effect_good
+			type = bm_event_toast_effect_good
 			title = bm_reclaim_fortunate_toast
 			left_icon = root
 			remove_character_modifier = lifeforce_modifier_fortunate
@@ -385,7 +394,7 @@ bm_transmute_lifeforce.0004 = {
 		}
 		add_piety = -50
 		send_interface_toast = {
-			type = event_toast_effect_good
+			type = bm_event_toast_effect_good
 			title = bm_reclaim_cunning_toast
 			left_icon = root
 			remove_character_modifier = lifeforce_modifier_cunning
@@ -412,7 +421,7 @@ bm_transmute_lifeforce.0004 = {
 		}
 		add_piety = -50
 		send_interface_toast = {
-			type = event_toast_effect_good
+			type = bm_event_toast_effect_good
 			title = bm_reclaim_wise_toast
 			left_icon = root
 			remove_character_modifier = lifeforce_modifier_wise
@@ -439,7 +448,7 @@ bm_transmute_lifeforce.0004 = {
 		}
 		add_piety = -50
 		send_interface_toast = {
-			type = event_toast_effect_good
+			type = bm_event_toast_effect_good
 			title = bm_reclaim_ancient_toast
 			left_icon = root
 			remove_character_modifier = lifeforce_modifier_ancient

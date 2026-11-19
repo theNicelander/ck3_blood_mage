@@ -189,7 +189,7 @@ bm_on_birth_fortune_xp = {
 						}
 					}
 					send_interface_toast = {
-						type = event_toast_effect_good
+						type = bm_event_toast_effect_good
 						title = bm_birth_mojo_consumed_toast
 						left_icon = root
 						custom_tooltip = bm_birth_mojo_consumed_tt
@@ -202,7 +202,7 @@ bm_on_birth_fortune_xp = {
 						limit = { root = { is_blood_mage_any_tier_trigger = yes } }
 						add_xp_bm_dynamic = { TRACK = fortune XP = 4 }
 						send_interface_toast = {
-							type = event_toast_effect_good
+							type = bm_event_toast_effect_good
 							title = bm_birth_blood_mage_child_toast
 							left_icon = root
 							custom_tooltip = bm_birth_blood_mage_child_tt
@@ -210,7 +210,7 @@ bm_on_birth_fortune_xp = {
 					}
 					else = {
 						send_interface_toast = {
-							type = event_toast_effect_good
+							type = bm_event_toast_effect_good
 							title = bm_birth_child_fortune_toast
 							left_icon = root
 							custom_tooltip = bm_birth_child_fortune_tt
@@ -223,7 +223,7 @@ bm_on_birth_fortune_xp = {
 						limit = { root = { is_blood_mage_any_tier_trigger = yes } }
 						add_xp_bm_dynamic = { TRACK = fortune XP = 2 }
 						send_interface_toast = {
-							type = event_toast_effect_good
+							type = bm_event_toast_effect_good
 							title = bm_birth_blood_mage_child_toast
 							left_icon = root
 							custom_tooltip = bm_birth_blood_mage_child_tt
@@ -231,7 +231,7 @@ bm_on_birth_fortune_xp = {
 					}
 					else = {
 						send_interface_toast = {
-							type = event_toast_effect_good
+							type = bm_event_toast_effect_good
 							title = bm_birth_child_fortune_toast
 							left_icon = root
 							custom_tooltip = bm_birth_child_fortune_tt
@@ -284,7 +284,7 @@ bm_on_birth_fortune_xp = {
 						}
 					}
 					send_interface_toast = {
-						type = event_toast_effect_good
+						type = bm_event_toast_effect_good
 						title = bm_birth_mojo_consumed_toast
 						left_icon = root
 						custom_tooltip = bm_birth_mojo_consumed_tt
@@ -297,7 +297,7 @@ bm_on_birth_fortune_xp = {
 						limit = { root = { is_blood_mage_any_tier_trigger = yes } }
 						add_xp_bm_dynamic = { TRACK = fortune XP = 4 }
 						send_interface_toast = {
-							type = event_toast_effect_good
+							type = bm_event_toast_effect_good
 							title = bm_birth_blood_mage_child_toast
 							left_icon = root
 							custom_tooltip = bm_birth_blood_mage_child_tt
@@ -305,7 +305,7 @@ bm_on_birth_fortune_xp = {
 					}
 					else = {
 						send_interface_toast = {
-							type = event_toast_effect_good
+							type = bm_event_toast_effect_good
 							title = bm_birth_child_fortune_toast
 							left_icon = root
 							custom_tooltip = bm_birth_child_fortune_tt
@@ -318,7 +318,7 @@ bm_on_birth_fortune_xp = {
 						limit = { root = { is_blood_mage_any_tier_trigger = yes } }
 						add_xp_bm_dynamic = { TRACK = fortune XP = 2 }
 						send_interface_toast = {
-							type = event_toast_effect_good
+							type = bm_event_toast_effect_good
 							title = bm_birth_blood_mage_child_toast
 							left_icon = root
 							custom_tooltip = bm_birth_blood_mage_child_tt
@@ -326,7 +326,7 @@ bm_on_birth_fortune_xp = {
 					}
 					else = {
 						send_interface_toast = {
-							type = event_toast_effect_good
+							type = bm_event_toast_effect_good
 							title = bm_birth_child_fortune_toast
 							left_icon = root
 							custom_tooltip = bm_birth_child_fortune_tt

@@ -112,10 +112,11 @@
 	is_valid_showing_failures_only = {
 		scope:actor = {
 			exists = house
-			custom_tooltip = {
-				text = bm_empower_bloodline_cooldown_tt
-				NOT = { has_character_flag = bm_empower_bloodline_cooldown }
-			}
+			# TEMP TEST: cooldown disabled
+			# custom_tooltip = {
+			# 	text = bm_empower_bloodline_cooldown_tt
+			# 	NOT = { has_character_flag = bm_empower_bloodline_cooldown }
+			# }
 			piety >= 150
 			piety_level >= 1
 			OR = {

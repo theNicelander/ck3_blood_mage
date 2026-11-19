@@ -160,7 +160,7 @@
 						}
 						scope:actor = {
 							send_interface_toast = {
-								type = event_toast_effect_good
+								type = bm_event_toast_effect_good
 								title = manifest_lifeforce_major_success_tt
 								left_icon = scope:actor
 								add_character_modifier = { modifier = lifeforce_modifier_major }
@@ -178,7 +178,7 @@
 						}
 						scope:actor = {
 							send_interface_toast = {
-								type = event_toast_effect_good
+								type = bm_event_toast_effect_good
 								title = manifest_lifeforce_minor_success_tt
 								left_icon = scope:actor
 								add_character_modifier = { modifier = lifeforce_modifier_minor }
@@ -196,7 +196,7 @@
 						}
 						scope:actor = {
 							send_interface_toast = {
-								type = event_toast_effect_neutral
+								type = bm_event_toast_effect_neutral
 								title = manifest_lifeforce_minor_failure_tt
 								left_icon = scope:actor
 							}
@@ -213,7 +213,7 @@
 						}
 						scope:actor = {
 							send_interface_toast = {
-								type = event_toast_effect_bad
+								type = bm_event_toast_effect_bad
 								title = manifest_lifeforce_major_failure_tt
 								left_icon = scope:actor
 								temporary_negative_lifeforce_effect_major = yes
@@ -229,6 +229,7 @@
 					TRACK = wisdom
 					XP = 3
 				}
+				add_character_modifier = { modifier = lifeforce_modifier_minor }
 				duel = {
 					skill = learning
 					value = 0
@@ -243,7 +244,7 @@
 						}
 						scope:actor = {
 							send_interface_toast = {
-								type = event_toast_effect_good
+								type = bm_event_toast_effect_good
 								title = manifest_lifeforce_double_major_success_tt
 								left_icon = scope:actor
 								add_character_modifier = { modifier = lifeforce_modifier_major }
@@ -262,7 +263,7 @@
 						}
 						scope:actor = {
 							send_interface_toast = {
-								type = event_toast_effect_good
+								type = bm_event_toast_effect_good
 								title = manifest_lifeforce_major_success_tt
 								left_icon = scope:actor
 								add_character_modifier = { modifier = lifeforce_modifier_major }
@@ -280,7 +281,7 @@
 						}
 						scope:actor = {
 							send_interface_toast = {
-								type = event_toast_effect_neutral
+								type = bm_event_toast_effect_neutral
 								title = manifest_lifeforce_minor_failure_tt
 								left_icon = scope:actor
 							}
@@ -297,7 +298,7 @@
 						}
 						scope:actor = {
 							send_interface_toast = {
-								type = event_toast_effect_bad
+								type = bm_event_toast_effect_bad
 								title = manifest_lifeforce_minor_failure_penalty_tt
 								left_icon = scope:actor
 								temporary_negative_lifeforce_effect_minor = yes
@@ -313,7 +314,7 @@
 					TRACK = wisdom
 					XP = 5
 				}
-				add_character_modifier = { modifier = lifeforce_modifier_minor }
+				add_character_modifier = { modifier = lifeforce_modifier_major }
 				duel = {
 					skill = learning
 					value = 0
@@ -328,7 +329,7 @@
 						}
 						scope:actor = {
 							send_interface_toast = {
-								type = event_toast_effect_good
+								type = bm_event_toast_effect_good
 								title = manifest_lifeforce_double_major_success_tt
 								left_icon = scope:actor
 								add_character_modifier = { modifier = lifeforce_modifier_major }
@@ -347,7 +348,7 @@
 						}
 						scope:actor = {
 							send_interface_toast = {
-								type = event_toast_effect_good
+								type = bm_event_toast_effect_good
 								title = manifest_lifeforce_major_success_tt
 								left_icon = scope:actor
 								add_character_modifier = { modifier = lifeforce_modifier_major }
@@ -365,7 +366,7 @@
 						}
 						scope:actor = {
 							send_interface_toast = {
-								type = event_toast_effect_good
+								type = bm_event_toast_effect_good
 								title = manifest_lifeforce_minor_success_tt
 								left_icon = scope:actor
 								add_character_modifier = { modifier = lifeforce_modifier_minor }
@@ -397,7 +398,7 @@
 						}
 						scope:actor = {
 							send_interface_toast = {
-								type = event_toast_effect_good
+								type = bm_event_toast_effect_good
 								title = manifest_lifeforce_superior_success_tt
 								left_icon = scope:actor
 								add_character_modifier = { modifier = lifeforce_modifier_superior }
@@ -415,7 +416,7 @@
 						}
 						scope:actor = {
 							send_interface_toast = {
-								type = event_toast_effect_good
+								type = bm_event_toast_effect_good
 								title = manifest_lifeforce_double_major_success_tt
 								left_icon = scope:actor
 								add_character_modifier = { modifier = lifeforce_modifier_major }
@@ -434,7 +435,7 @@
 						}
 						scope:actor = {
 							send_interface_toast = {
-								type = event_toast_effect_good
+								type = bm_event_toast_effect_good
 								title = manifest_lifeforce_major_success_tt
 								left_icon = scope:actor
 								add_character_modifier = { modifier = lifeforce_modifier_major }
