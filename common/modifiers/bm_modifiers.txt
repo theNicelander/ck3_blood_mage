@@ -1,42 +1,42 @@
 ﻿drained_beggar_holding = {
-    icon = magic_negative
+    icon = bm_blood_magic_negative
     popular_opinion_add = -10
     stacking = yes
 }
 
 # XP attunement
 ancient_attuned = {
-    icon = blood_magic
+    icon = bm_blood_magic
     monthly_piety = 0.5
     monthly_piety_gain_mult = 0.1
 }
 wisdom_attuned = {
-    icon = blood_magic
+    icon = bm_blood_magic
     monthly_lifestyle_xp_gain_mult = 0.1
 }
 fortune_attuned = {
-    icon = blood_magic
+    icon = bm_blood_magic
     monthly_dynasty_prestige = 0.2
 }
 radiance_attuned = {
-    icon = blood_magic
+    icon = bm_blood_magic
     general_opinion = 5
     monthly_prestige = 0.5
     monthly_prestige_gain_mult = 0.1
 }
 cunning_attuned = {
-    icon = blood_magic
+    icon = bm_blood_magic
     enemy_hostile_scheme_success_chance_add = -10
 }
 fury_attuned = {
-    icon = blood_magic
+    icon = bm_blood_magic
     advantage = 2
     prowess = 2
 }
 
 # Attempted lifedrain
 trait_drain_attempted = {
-    icon = magic_negative
+    icon = bm_blood_magic_negative
     stacking = yes
 
     health = -0.2
@@ -47,7 +47,7 @@ trait_drain_attempted = {
 }
 
 bm_blessed_blood_modifier = {
-    icon = blood_magic
+    icon = bm_blood_magic
     diplomacy = 1
     martial = 1
     stewardship = 1
@@ -58,7 +58,7 @@ bm_blessed_blood_modifier = {
 }
 
 bm_blood_curse_modifier = {
-    icon = magic_negative
+    icon = bm_blood_magic_negative
     diplomacy = -2
     martial = -2
     stewardship = -2
@@ -70,7 +70,7 @@ bm_blood_curse_modifier = {
 }
 
 bm_casting_exhaustion_modifier = {
-    icon = magic_negative
+    icon = bm_blood_magic_negative
     monthly_lifestyle_xp_gain_mult = -0.2
     learning = -2
     prowess = -2

@@ -127,7 +127,7 @@
 			value = bm_superior_blood_rune
 			current_description = bm_superior_blood_rune
 			localization = bm_superior_blood_rune
-			icon = "gfx/interface/icons/trait_level_tracks/ancient.dds"
+			icon = "gfx/interface/icons/bm_blood_magic_icon.dds"
 			is_shown = {
 				has_character_modifier = major_blood_rune_modifier
 				NOT = { has_character_modifier = superior_blood_rune_modifier }
@@ -197,7 +197,7 @@
 			value = bm_superior_create_blood_golem
 			current_description = bm_superior_create_blood_golem
 			localization = bm_superior_create_blood_golem
-			icon = "gfx/interface/icons/trait_level_tracks/ancient.dds"
+			icon = "gfx/interface/icons/bm_blood_magic_icon.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
@@ -223,7 +223,7 @@
 			value = bm_superior_split
 			current_description = bm_superior_split
 			localization = bm_superior_split
-			icon = "gfx/interface/icons/trait_level_tracks/ancient.dds"
+			icon = "gfx/interface/icons/bm_blood_magic_icon.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
@@ -414,7 +414,7 @@ bm_cast_blood_magic_major_decision = {
 			value = bm_major_condense
 			current_description = bm_major_condense
 			localization = bm_major_condense
-			icon = "gfx/interface/icons/trait_level_tracks/ancient.dds"
+			icon = "gfx/interface/icons/bm_blood_magic_icon.dds"
 			is_shown = {
 				is_blood_mage_tier_2_or_higher_trigger = yes
 			}
@@ -448,7 +448,7 @@ bm_cast_blood_magic_major_decision = {
 			value = bm_major_split
 			current_description = bm_major_split
 			localization = bm_major_split
-			icon = "gfx/interface/icons/trait_level_tracks/ancient.dds"
+			icon = "gfx/interface/icons/bm_blood_magic_icon.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
@@ -537,7 +537,7 @@ bm_cast_blood_magic_major_decision = {
 			value = bm_major_blood_rune
 			current_description = bm_major_blood_rune
 			localization = bm_major_blood_rune
-			icon = "gfx/interface/icons/trait_level_tracks/ancient.dds"
+			icon = "gfx/interface/icons/bm_blood_magic_icon.dds"
 			is_shown = {
 				has_character_modifier = minor_blood_rune_modifier
 				NOT = { has_character_modifier = major_blood_rune_modifier }
@@ -802,7 +802,7 @@ bm_cast_blood_magic_minor_decision = {
 			value = bm_minor_condense
 			current_description = bm_minor_condense
 			localization = bm_minor_condense
-			icon = "gfx/interface/icons/trait_level_tracks/ancient.dds"
+			icon = "gfx/interface/icons/bm_blood_magic_icon.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
@@ -832,7 +832,7 @@ bm_cast_blood_magic_minor_decision = {
 			value = bm_minor_blood_rune
 			current_description = bm_minor_blood_rune
 			localization = bm_minor_blood_rune
-			icon = "gfx/interface/icons/trait_level_tracks/ancient.dds"
+			icon = "gfx/interface/icons/bm_blood_magic_icon.dds"
 			is_shown = {
 				NOT = { bm_has_blood_rune_trigger = yes }
 			}
@@ -858,7 +858,7 @@ bm_cast_blood_magic_minor_decision = {
 			value = bm_minor_attune
 			current_description = bm_minor_attune
 			localization = bm_minor_attune
-			icon = "gfx/interface/icons/trait_level_tracks/ancient.dds"
+			icon = "gfx/interface/icons/bm_blood_magic_icon.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
