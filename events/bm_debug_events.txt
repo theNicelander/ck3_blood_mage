@@ -18,11 +18,7 @@ bm_debug.0001 = {
 		trigger = {
 			NOT = { is_blood_mage_any_tier_trigger = yes }
 		}
-		send_interface_toast = {
-			title = bm_debug.0001.become_blood_mage_toast
-			left_icon = root
-			bm_become_blood_mage_effect = yes
-		}
+		bm_become_blood_mage_effect = yes
 		trigger_event = { id = bm_debug.0001 }
 	}
 
@@ -31,11 +27,7 @@ bm_debug.0001 = {
 		trigger = {
 			has_trait = lifestyle_bm_acolyte
 		}
-		send_interface_toast = {
-			title = bm_debug.0001.become_mage_toast
-			left_icon = root
-			bm_become_blood_mage_tier_2_effect = yes
-		}
+		bm_become_blood_mage_tier_2_effect = yes
 		trigger_event = { id = bm_debug.0001 }
 	}
 
@@ -44,11 +36,7 @@ bm_debug.0001 = {
 		trigger = {
 			has_trait = lifestyle_blood_mage
 		}
-		send_interface_toast = {
-			title = bm_debug.0001.become_archmage_toast
-			left_icon = root
-			bm_become_blood_archmage_effect = yes
-		}
+		bm_become_blood_archmage_effect = yes
 		trigger_event = { id = bm_debug.0001 }
 	}
 
@@ -58,22 +46,18 @@ bm_debug.0001 = {
 		trigger = {
 			NOT = { has_character_modifier = superior_blood_rune_modifier }
 		}
-		send_interface_toast = {
-			title = bm_debug.0001.increase_rune_toast
-			left_icon = root
-			if = {
-				limit = { has_character_modifier = major_blood_rune_modifier }
-				remove_character_modifier = major_blood_rune_modifier
-				add_character_modifier = { modifier = superior_blood_rune_modifier }
-			}
-			else_if = {
-				limit = { has_character_modifier = minor_blood_rune_modifier }
-				remove_character_modifier = minor_blood_rune_modifier
-				add_character_modifier = { modifier = major_blood_rune_modifier }
-			}
-			else = {
-				add_character_modifier = { modifier = minor_blood_rune_modifier }
-			}
+		if = {
+			limit = { has_character_modifier = major_blood_rune_modifier }
+			remove_character_modifier = major_blood_rune_modifier
+			add_character_modifier = { modifier = superior_blood_rune_modifier }
+		}
+		else_if = {
+			limit = { has_character_modifier = minor_blood_rune_modifier }
+			remove_character_modifier = minor_blood_rune_modifier
+			add_character_modifier = { modifier = major_blood_rune_modifier }
+		}
+		else = {
+			add_character_modifier = { modifier = minor_blood_rune_modifier }
 		}
 		trigger_event = { id = bm_debug.0001 }
 	}
@@ -84,105 +68,101 @@ bm_debug.0001 = {
 		trigger = {
 			exists = house
 		}
-		send_interface_toast = {
-			title = bm_debug.0001.upgrade_covenants_toast
-			left_icon = root
-			house = {
-				# Radiance
-				if = {
-					limit = { has_house_modifier = dynasty_blood_radiance_modifier_2 }
-					remove_house_modifier = dynasty_blood_radiance_modifier_2
-					add_house_modifier = { modifier = dynasty_blood_radiance_modifier_3 }
-				}
-				else_if = {
-					limit = { has_house_modifier = dynasty_blood_radiance_modifier_1 }
-					remove_house_modifier = dynasty_blood_radiance_modifier_1
-					add_house_modifier = { modifier = dynasty_blood_radiance_modifier_2 }
-				}
-				else_if = {
-					limit = { NOT = { has_house_modifier = dynasty_blood_radiance_modifier_3 } }
-					add_house_modifier = { modifier = dynasty_blood_radiance_modifier_1 }
-				}
+		house = {
+			# Radiance
+			if = {
+				limit = { has_house_modifier = dynasty_blood_radiance_modifier_2 }
+				remove_house_modifier = dynasty_blood_radiance_modifier_2
+				add_house_modifier = { modifier = dynasty_blood_radiance_modifier_3 }
+			}
+			else_if = {
+				limit = { has_house_modifier = dynasty_blood_radiance_modifier_1 }
+				remove_house_modifier = dynasty_blood_radiance_modifier_1
+				add_house_modifier = { modifier = dynasty_blood_radiance_modifier_2 }
+			}
+			else_if = {
+				limit = { NOT = { has_house_modifier = dynasty_blood_radiance_modifier_3 } }
+				add_house_modifier = { modifier = dynasty_blood_radiance_modifier_1 }
+			}
 
-				# Fury
-				if = {
-					limit = { has_house_modifier = dynasty_blood_fury_modifier_2 }
-					remove_house_modifier = dynasty_blood_fury_modifier_2
-					add_house_modifier = { modifier = dynasty_blood_fury_modifier_3 }
-				}
-				else_if = {
-					limit = { has_house_modifier = dynasty_blood_fury_modifier_1 }
-					remove_house_modifier = dynasty_blood_fury_modifier_1
-					add_house_modifier = { modifier = dynasty_blood_fury_modifier_2 }
-				}
-				else_if = {
-					limit = { NOT = { has_house_modifier = dynasty_blood_fury_modifier_3 } }
-					add_house_modifier = { modifier = dynasty_blood_fury_modifier_1 }
-				}
+			# Fury
+			if = {
+				limit = { has_house_modifier = dynasty_blood_fury_modifier_2 }
+				remove_house_modifier = dynasty_blood_fury_modifier_2
+				add_house_modifier = { modifier = dynasty_blood_fury_modifier_3 }
+			}
+			else_if = {
+				limit = { has_house_modifier = dynasty_blood_fury_modifier_1 }
+				remove_house_modifier = dynasty_blood_fury_modifier_1
+				add_house_modifier = { modifier = dynasty_blood_fury_modifier_2 }
+			}
+			else_if = {
+				limit = { NOT = { has_house_modifier = dynasty_blood_fury_modifier_3 } }
+				add_house_modifier = { modifier = dynasty_blood_fury_modifier_1 }
+			}
 
-				# Bloodline
-				if = {
-					limit = { has_house_modifier = dynasty_blood_fortune_modifier_2 }
-					remove_house_modifier = dynasty_blood_fortune_modifier_2
-					add_house_modifier = { modifier = dynasty_blood_fortune_modifier_3 }
-				}
-				else_if = {
-					limit = { has_house_modifier = dynasty_blood_fortune_modifier_1 }
-					remove_house_modifier = dynasty_blood_fortune_modifier_1
-					add_house_modifier = { modifier = dynasty_blood_fortune_modifier_2 }
-				}
-				else_if = {
-					limit = { NOT = { has_house_modifier = dynasty_blood_fortune_modifier_3 } }
-					add_house_modifier = { modifier = dynasty_blood_fortune_modifier_1 }
-				}
+			# Bloodline
+			if = {
+				limit = { has_house_modifier = dynasty_blood_fortune_modifier_2 }
+				remove_house_modifier = dynasty_blood_fortune_modifier_2
+				add_house_modifier = { modifier = dynasty_blood_fortune_modifier_3 }
+			}
+			else_if = {
+				limit = { has_house_modifier = dynasty_blood_fortune_modifier_1 }
+				remove_house_modifier = dynasty_blood_fortune_modifier_1
+				add_house_modifier = { modifier = dynasty_blood_fortune_modifier_2 }
+			}
+			else_if = {
+				limit = { NOT = { has_house_modifier = dynasty_blood_fortune_modifier_3 } }
+				add_house_modifier = { modifier = dynasty_blood_fortune_modifier_1 }
+			}
 
-				# Cunning
-				if = {
-					limit = { has_house_modifier = dynasty_blood_cunning_modifier_2 }
-					remove_house_modifier = dynasty_blood_cunning_modifier_2
-					add_house_modifier = { modifier = dynasty_blood_cunning_modifier_3 }
-				}
-				else_if = {
-					limit = { has_house_modifier = dynasty_blood_cunning_modifier_1 }
-					remove_house_modifier = dynasty_blood_cunning_modifier_1
-					add_house_modifier = { modifier = dynasty_blood_cunning_modifier_2 }
-				}
-				else_if = {
-					limit = { NOT = { has_house_modifier = dynasty_blood_cunning_modifier_3 } }
-					add_house_modifier = { modifier = dynasty_blood_cunning_modifier_1 }
-				}
+			# Cunning
+			if = {
+				limit = { has_house_modifier = dynasty_blood_cunning_modifier_2 }
+				remove_house_modifier = dynasty_blood_cunning_modifier_2
+				add_house_modifier = { modifier = dynasty_blood_cunning_modifier_3 }
+			}
+			else_if = {
+				limit = { has_house_modifier = dynasty_blood_cunning_modifier_1 }
+				remove_house_modifier = dynasty_blood_cunning_modifier_1
+				add_house_modifier = { modifier = dynasty_blood_cunning_modifier_2 }
+			}
+			else_if = {
+				limit = { NOT = { has_house_modifier = dynasty_blood_cunning_modifier_3 } }
+				add_house_modifier = { modifier = dynasty_blood_cunning_modifier_1 }
+			}
 
-				# Wisdom
-				if = {
-					limit = { has_house_modifier = dynasty_blood_wisdom_modifier_2 }
-					remove_house_modifier = dynasty_blood_wisdom_modifier_2
-					add_house_modifier = { modifier = dynasty_blood_wisdom_modifier_3 }
-				}
-				else_if = {
-					limit = { has_house_modifier = dynasty_blood_wisdom_modifier_1 }
-					remove_house_modifier = dynasty_blood_wisdom_modifier_1
-					add_house_modifier = { modifier = dynasty_blood_wisdom_modifier_2 }
-				}
-				else_if = {
-					limit = { NOT = { has_house_modifier = dynasty_blood_wisdom_modifier_3 } }
-					add_house_modifier = { modifier = dynasty_blood_wisdom_modifier_1 }
-				}
+			# Wisdom
+			if = {
+				limit = { has_house_modifier = dynasty_blood_wisdom_modifier_2 }
+				remove_house_modifier = dynasty_blood_wisdom_modifier_2
+				add_house_modifier = { modifier = dynasty_blood_wisdom_modifier_3 }
+			}
+			else_if = {
+				limit = { has_house_modifier = dynasty_blood_wisdom_modifier_1 }
+				remove_house_modifier = dynasty_blood_wisdom_modifier_1
+				add_house_modifier = { modifier = dynasty_blood_wisdom_modifier_2 }
+			}
+			else_if = {
+				limit = { NOT = { has_house_modifier = dynasty_blood_wisdom_modifier_3 } }
+				add_house_modifier = { modifier = dynasty_blood_wisdom_modifier_1 }
+			}
 
-				# Ancient
-				if = {
-					limit = { has_house_modifier = dynasty_blood_ancient_modifier_2 }
-					remove_house_modifier = dynasty_blood_ancient_modifier_2
-					add_house_modifier = { modifier = dynasty_blood_ancient_modifier_3 }
-				}
-				else_if = {
-					limit = { has_house_modifier = dynasty_blood_ancient_modifier_1 }
-					remove_house_modifier = dynasty_blood_ancient_modifier_1
-					add_house_modifier = { modifier = dynasty_blood_ancient_modifier_2 }
-				}
-				else_if = {
-					limit = { NOT = { has_house_modifier = dynasty_blood_ancient_modifier_3 } }
-					add_house_modifier = { modifier = dynasty_blood_ancient_modifier_1 }
-				}
+			# Ancient
+			if = {
+				limit = { has_house_modifier = dynasty_blood_ancient_modifier_2 }
+				remove_house_modifier = dynasty_blood_ancient_modifier_2
+				add_house_modifier = { modifier = dynasty_blood_ancient_modifier_3 }
+			}
+			else_if = {
+				limit = { has_house_modifier = dynasty_blood_ancient_modifier_1 }
+				remove_house_modifier = dynasty_blood_ancient_modifier_1
+				add_house_modifier = { modifier = dynasty_blood_ancient_modifier_2 }
+			}
+			else_if = {
+				limit = { NOT = { has_house_modifier = dynasty_blood_ancient_modifier_3 } }
+				add_house_modifier = { modifier = dynasty_blood_ancient_modifier_1 }
 			}
 		}
 		trigger_event = { id = bm_debug.0001 }
@@ -242,180 +222,140 @@ bm_debug.0002 = {
 	# 1. Add Minor Lifeforce x5
 	option = {
 		name = bm_debug.0002.add_minor_5
-		send_interface_toast = {
-			title = bm_debug.0002.lifeforce_toast
-			left_icon = root
-			add_character_modifier = { modifier = lifeforce_modifier_minor }
-			add_character_modifier = { modifier = lifeforce_modifier_minor }
-			add_character_modifier = { modifier = lifeforce_modifier_minor }
-			add_character_modifier = { modifier = lifeforce_modifier_minor }
-			add_character_modifier = { modifier = lifeforce_modifier_minor }
-		}
+		add_character_modifier = { modifier = lifeforce_modifier_minor }
+		add_character_modifier = { modifier = lifeforce_modifier_minor }
+		add_character_modifier = { modifier = lifeforce_modifier_minor }
+		add_character_modifier = { modifier = lifeforce_modifier_minor }
+		add_character_modifier = { modifier = lifeforce_modifier_minor }
 		trigger_event = { id = bm_debug.0002 }
 	}
 
 	# 2. Add Major Lifeforce x5
 	option = {
 		name = bm_debug.0002.add_major_5
-		send_interface_toast = {
-			title = bm_debug.0002.lifeforce_toast
-			left_icon = root
-			add_character_modifier = { modifier = lifeforce_modifier_major }
-			add_character_modifier = { modifier = lifeforce_modifier_major }
-			add_character_modifier = { modifier = lifeforce_modifier_major }
-			add_character_modifier = { modifier = lifeforce_modifier_major }
-			add_character_modifier = { modifier = lifeforce_modifier_major }
-		}
+		add_character_modifier = { modifier = lifeforce_modifier_major }
+		add_character_modifier = { modifier = lifeforce_modifier_major }
+		add_character_modifier = { modifier = lifeforce_modifier_major }
+		add_character_modifier = { modifier = lifeforce_modifier_major }
+		add_character_modifier = { modifier = lifeforce_modifier_major }
 		trigger_event = { id = bm_debug.0002 }
 	}
 
 	# 3. Add Superior Lifeforce x5
 	option = {
 		name = bm_debug.0002.add_superior_5
-		send_interface_toast = {
-			title = bm_debug.0002.lifeforce_toast
-			left_icon = root
-			add_character_modifier = { modifier = lifeforce_modifier_superior }
-			add_character_modifier = { modifier = lifeforce_modifier_superior }
-			add_character_modifier = { modifier = lifeforce_modifier_superior }
-			add_character_modifier = { modifier = lifeforce_modifier_superior }
-			add_character_modifier = { modifier = lifeforce_modifier_superior }
-		}
+		add_character_modifier = { modifier = lifeforce_modifier_superior }
+		add_character_modifier = { modifier = lifeforce_modifier_superior }
+		add_character_modifier = { modifier = lifeforce_modifier_superior }
+		add_character_modifier = { modifier = lifeforce_modifier_superior }
+		add_character_modifier = { modifier = lifeforce_modifier_superior }
 		trigger_event = { id = bm_debug.0002 }
 	}
 
 	# 4. Add Radiant Blood x5
 	option = {
 		name = bm_debug.0002.add_radiant_5
-		send_interface_toast = {
-			title = bm_debug.0002.lifeforce_toast
-			left_icon = root
-			add_character_modifier = { modifier = lifeforce_modifier_radiant }
-			add_character_modifier = { modifier = lifeforce_modifier_radiant }
-			add_character_modifier = { modifier = lifeforce_modifier_radiant }
-			add_character_modifier = { modifier = lifeforce_modifier_radiant }
-			add_character_modifier = { modifier = lifeforce_modifier_radiant }
-		}
+		add_character_modifier = { modifier = lifeforce_modifier_radiant }
+		add_character_modifier = { modifier = lifeforce_modifier_radiant }
+		add_character_modifier = { modifier = lifeforce_modifier_radiant }
+		add_character_modifier = { modifier = lifeforce_modifier_radiant }
+		add_character_modifier = { modifier = lifeforce_modifier_radiant }
 		trigger_event = { id = bm_debug.0002 }
 	}
 
 	# 5. Add Furious Blood x5
 	option = {
 		name = bm_debug.0002.add_furious_5
-		send_interface_toast = {
-			title = bm_debug.0002.lifeforce_toast
-			left_icon = root
-			add_character_modifier = { modifier = lifeforce_modifier_furious }
-			add_character_modifier = { modifier = lifeforce_modifier_furious }
-			add_character_modifier = { modifier = lifeforce_modifier_furious }
-			add_character_modifier = { modifier = lifeforce_modifier_furious }
-			add_character_modifier = { modifier = lifeforce_modifier_furious }
-		}
+		add_character_modifier = { modifier = lifeforce_modifier_furious }
+		add_character_modifier = { modifier = lifeforce_modifier_furious }
+		add_character_modifier = { modifier = lifeforce_modifier_furious }
+		add_character_modifier = { modifier = lifeforce_modifier_furious }
+		add_character_modifier = { modifier = lifeforce_modifier_furious }
 		trigger_event = { id = bm_debug.0002 }
 	}
 
 	# 6. Add Fortunate Blood x5
 	option = {
 		name = bm_debug.0002.add_fortunate_5
-		send_interface_toast = {
-			title = bm_debug.0002.lifeforce_toast
-			left_icon = root
-			add_character_modifier = { modifier = lifeforce_modifier_fortunate }
-			add_character_modifier = { modifier = lifeforce_modifier_fortunate }
-			add_character_modifier = { modifier = lifeforce_modifier_fortunate }
-			add_character_modifier = { modifier = lifeforce_modifier_fortunate }
-			add_character_modifier = { modifier = lifeforce_modifier_fortunate }
-		}
+		add_character_modifier = { modifier = lifeforce_modifier_fortunate }
+		add_character_modifier = { modifier = lifeforce_modifier_fortunate }
+		add_character_modifier = { modifier = lifeforce_modifier_fortunate }
+		add_character_modifier = { modifier = lifeforce_modifier_fortunate }
+		add_character_modifier = { modifier = lifeforce_modifier_fortunate }
 		trigger_event = { id = bm_debug.0002 }
 	}
 
 	# 7. Add Cunning Blood x5
 	option = {
 		name = bm_debug.0002.add_cunning_5
-		send_interface_toast = {
-			title = bm_debug.0002.lifeforce_toast
-			left_icon = root
-			add_character_modifier = { modifier = lifeforce_modifier_cunning }
-			add_character_modifier = { modifier = lifeforce_modifier_cunning }
-			add_character_modifier = { modifier = lifeforce_modifier_cunning }
-			add_character_modifier = { modifier = lifeforce_modifier_cunning }
-			add_character_modifier = { modifier = lifeforce_modifier_cunning }
-		}
+		add_character_modifier = { modifier = lifeforce_modifier_cunning }
+		add_character_modifier = { modifier = lifeforce_modifier_cunning }
+		add_character_modifier = { modifier = lifeforce_modifier_cunning }
+		add_character_modifier = { modifier = lifeforce_modifier_cunning }
+		add_character_modifier = { modifier = lifeforce_modifier_cunning }
 		trigger_event = { id = bm_debug.0002 }
 	}
 
 	# 8. Add Wise Blood x5
 	option = {
 		name = bm_debug.0002.add_wise_5
-		send_interface_toast = {
-			title = bm_debug.0002.lifeforce_toast
-			left_icon = root
-			add_character_modifier = { modifier = lifeforce_modifier_wise }
-			add_character_modifier = { modifier = lifeforce_modifier_wise }
-			add_character_modifier = { modifier = lifeforce_modifier_wise }
-			add_character_modifier = { modifier = lifeforce_modifier_wise }
-			add_character_modifier = { modifier = lifeforce_modifier_wise }
-		}
+		add_character_modifier = { modifier = lifeforce_modifier_wise }
+		add_character_modifier = { modifier = lifeforce_modifier_wise }
+		add_character_modifier = { modifier = lifeforce_modifier_wise }
+		add_character_modifier = { modifier = lifeforce_modifier_wise }
+		add_character_modifier = { modifier = lifeforce_modifier_wise }
 		trigger_event = { id = bm_debug.0002 }
 	}
 
 	# 9. Add Ancient Blood x5
 	option = {
 		name = bm_debug.0002.add_ancient_5
-		send_interface_toast = {
-			title = bm_debug.0002.lifeforce_toast
-			left_icon = root
-			add_character_modifier = { modifier = lifeforce_modifier_ancient }
-			add_character_modifier = { modifier = lifeforce_modifier_ancient }
-			add_character_modifier = { modifier = lifeforce_modifier_ancient }
-			add_character_modifier = { modifier = lifeforce_modifier_ancient }
-			add_character_modifier = { modifier = lifeforce_modifier_ancient }
-		}
+		add_character_modifier = { modifier = lifeforce_modifier_ancient }
+		add_character_modifier = { modifier = lifeforce_modifier_ancient }
+		add_character_modifier = { modifier = lifeforce_modifier_ancient }
+		add_character_modifier = { modifier = lifeforce_modifier_ancient }
+		add_character_modifier = { modifier = lifeforce_modifier_ancient }
 		trigger_event = { id = bm_debug.0002 }
 	}
 
 	# 10. Remove All Lifeforce
 	option = {
 		name = bm_debug.0002.remove_all_lifeforce
-		send_interface_toast = {
-			title = bm_debug.0002.lifeforce_toast
-			left_icon = root
-			while = {
-				limit = { has_character_modifier = lifeforce_modifier_superior }
-				remove_character_modifier = lifeforce_modifier_superior
-			}
-			while = {
-				limit = { has_character_modifier = lifeforce_modifier_major }
-				remove_character_modifier = lifeforce_modifier_major
-			}
-			while = {
-				limit = { has_character_modifier = lifeforce_modifier_minor }
-				remove_character_modifier = lifeforce_modifier_minor
-			}
-			while = {
-				limit = { has_character_modifier = lifeforce_modifier_radiant }
-				remove_character_modifier = lifeforce_modifier_radiant
-			}
-			while = {
-				limit = { has_character_modifier = lifeforce_modifier_furious }
-				remove_character_modifier = lifeforce_modifier_furious
-			}
-			while = {
-				limit = { has_character_modifier = lifeforce_modifier_fortunate }
-				remove_character_modifier = lifeforce_modifier_fortunate
-			}
-			while = {
-				limit = { has_character_modifier = lifeforce_modifier_cunning }
-				remove_character_modifier = lifeforce_modifier_cunning
-			}
-			while = {
-				limit = { has_character_modifier = lifeforce_modifier_wise }
-				remove_character_modifier = lifeforce_modifier_wise
-			}
-			while = {
-				limit = { has_character_modifier = lifeforce_modifier_ancient }
-				remove_character_modifier = lifeforce_modifier_ancient
-			}
+		while = {
+			limit = { has_character_modifier = lifeforce_modifier_superior }
+			remove_character_modifier = lifeforce_modifier_superior
+		}
+		while = {
+			limit = { has_character_modifier = lifeforce_modifier_major }
+			remove_character_modifier = lifeforce_modifier_major
+		}
+		while = {
+			limit = { has_character_modifier = lifeforce_modifier_minor }
+			remove_character_modifier = lifeforce_modifier_minor
+		}
+		while = {
+			limit = { has_character_modifier = lifeforce_modifier_radiant }
+			remove_character_modifier = lifeforce_modifier_radiant
+		}
+		while = {
+			limit = { has_character_modifier = lifeforce_modifier_furious }
+			remove_character_modifier = lifeforce_modifier_furious
+		}
+		while = {
+			limit = { has_character_modifier = lifeforce_modifier_fortunate }
+			remove_character_modifier = lifeforce_modifier_fortunate
+		}
+		while = {
+			limit = { has_character_modifier = lifeforce_modifier_cunning }
+			remove_character_modifier = lifeforce_modifier_cunning
+		}
+		while = {
+			limit = { has_character_modifier = lifeforce_modifier_wise }
+			remove_character_modifier = lifeforce_modifier_wise
+		}
+		while = {
+			limit = { has_character_modifier = lifeforce_modifier_ancient }
+			remove_character_modifier = lifeforce_modifier_ancient
 		}
 		trigger_event = { id = bm_debug.0002 }
 	}
