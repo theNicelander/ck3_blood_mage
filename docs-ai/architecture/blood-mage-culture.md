@@ -35,7 +35,7 @@
 - **Succession & Assembly:** Unlocks Scandinavian Elective (`scandinavian_elective_enabled = yes`). Preserves mutual exclusivity with `tradition_things`.
 - **Trial by Combat (Hólmganga):** Unlocks Hólmganga duel interaction via native `has_access_to_trials_by_combat = yes`.
 - **Ruler & Capital Modifiers (`character_modifier`):** `character_capital_county_monthly_prosperity_growth_add = 0.05`, `cultural_head_fascination_mult = 0.25`.
-- **County Prosperity & Control (`county_modifier`):** `prosperity_growth = 0.05` (+0.05/mo flat prosperity growth), `prosperity_growth_factor = 0.2` (+20% prosperity growth factor), and `monthly_control_change_when_below_baseline_add = 0.10` (+0.10/mo county control growth).
+- **County Prosperity & Control (`county_modifier`):** `prosperity_growth = 0.05` (+0.05/mo flat prosperity growth), `prosperity_growth_factor = 0.2` (+20% prosperity growth factor), `control_baseline_add = 5` (+5 control baseline), and `monthly_control_change_when_below_baseline_add = 0.10` (+0.10/mo county control growth).
 
 #### Verbúðir (`bm_tradition_verbudir`)
 - **Tribal Maritime Powerhouse:** Replaces `tradition_maritime_mercantilism`. Fully pickable and functional for Tribal cultures from 867 (`port_district_enabled_for_tribals = yes`, `next_level_port_districts = yes`). Mutually exclusive with `tradition_maritime_mercantilism` and `tradition_fishermen`.
