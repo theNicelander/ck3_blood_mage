@@ -30,7 +30,7 @@ Living list: on new error, add 1 row (`signature → cause → fix`).
 | Signature | Cause → Fix |
 | --- | --- |
 | `Failed to find type 'recipient'` (trigger loc) | Not root type in trigger loc → pass `subject = scope:recipient` in `custom_description`; use `[CHARACTER.GetShortUIName]` (`object` → `[TARGET_CHARACTER...]`). |
-| `Failed to find type 'recipient'` (`send_option` loc) | `send_option` `localization` evaluates in `CharacterInteractionConfirmationWindow` GUI context → use `[CharacterInteractionConfirmationWindow.GetRecipient.Custom('...')]` (or `[GetPlayer.Custom('...')]` for self-only). |
+| `Failed to find type 'recipient'` / `does not contain a 'CharacterInteractionConfirmationWindow' data context` (`send_option` loc) | `send_option` `localization` has no `recipient` or GUI window context → use `[GetPlayer.Custom('...')]` for self-only, or `is_shown`-gated `send_option`s with static loc keys for targeted interactions. |
 | `Unknown trigger: show_as_unavailable` | Nested in `trigger` → make sibling of `trigger` directly in `option`. |
 | `Theme key X ... does not exist` | Invented theme → use vanilla `00_event_themes.txt` (`love`, `family`, `war`, `faith`, `dread`, `witchcraft`, `medicine`, ...). |
 | `Event target link 'primary_heir' returned an unset scope` | Heirless actor → use `is_primary_heir_of = scope:actor` or `scope:actor ?= { primary_heir ?= { ... } }`. |
