@@ -122,3 +122,26 @@ remove_all_attunement = {
         remove_character_modifier = fury_attuned
     }
 }
+
+bm_apply_attunement_effect = {
+    add_character_flag = { flag = bm_attune_lifeforce_cooldown years = 1 }
+    if = {
+        limit = { bm_has_any_attunement_trigger = yes }
+        hidden_effect = { remove_all_attunement = yes }
+        send_interface_toast = {
+            type = event_toast_effect_good
+            title = bm_attune_lifeforce_toast
+            left_icon = scope:actor
+            remove_character_modifier = lifeforce_modifier_minor
+            add_character_modifier = { modifier = $MODIFIER$ }
+        }
+    }
+    else = {
+        send_interface_toast = {
+            type = event_toast_effect_good
+            title = bm_attune_lifeforce_toast
+            left_icon = scope:actor
+            add_character_modifier = { modifier = $MODIFIER$ }
+        }
+    }
+}

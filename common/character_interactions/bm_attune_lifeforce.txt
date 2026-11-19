@@ -6,7 +6,15 @@
 	desc = bm_attune_lifeforce_interaction_desc
 
 	cost = {
-		piety = 50
+		piety = {
+			value = 0
+			if = {
+				limit = {
+					scope:actor = { bm_has_any_attunement_trigger = yes }
+				}
+				add = 50
+			}
+		}
 	}
 
 	is_shown = {
@@ -22,8 +30,11 @@
 				text = bm_attune_lifeforce_cooldown_tt
 				NOT = { has_character_flag = bm_attune_lifeforce_cooldown }
 			}
-			piety >= 50
-			has_character_modifier = lifeforce_modifier_minor
+			trigger_if = {
+				limit = { bm_has_any_attunement_trigger = yes }
+				piety >= 50
+				has_character_modifier = lifeforce_modifier_minor
+			}
 		}
 	}
 
@@ -148,77 +159,27 @@
 		if = {
 			limit = { scope:attune_wisdom = yes }
 			debug_log = "BloodMageInteraction: bm_attune_lifeforce (wisdom) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
-			scope:actor = {
-				add_character_flag = { flag = bm_attune_lifeforce_cooldown years = 1 }
-				hidden_effect = { remove_all_attunement = yes }
-				send_interface_toast = {
-					type = event_toast_effect_good
-					title = bm_attune_lifeforce_toast
-					left_icon = scope:actor
-					remove_character_modifier = lifeforce_modifier_minor
-					add_character_modifier = { modifier = wisdom_attuned }
-				}
-			}
+			scope:actor = { bm_apply_attunement_effect = { MODIFIER = wisdom_attuned } }
 		}
 		else_if = {
 			limit = { scope:attune_fortune = yes }
 			debug_log = "BloodMageInteraction: bm_attune_lifeforce (fortune) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
-			scope:actor = {
-				add_character_flag = { flag = bm_attune_lifeforce_cooldown years = 1 }
-				hidden_effect = { remove_all_attunement = yes }
-				send_interface_toast = {
-					type = event_toast_effect_good
-					title = bm_attune_lifeforce_toast
-					left_icon = scope:actor
-					remove_character_modifier = lifeforce_modifier_minor
-					add_character_modifier = { modifier = fortune_attuned }
-				}
-			}
+			scope:actor = { bm_apply_attunement_effect = { MODIFIER = fortune_attuned } }
 		}
 		else_if = {
 			limit = { scope:attune_radiance = yes }
 			debug_log = "BloodMageInteraction: bm_attune_lifeforce (radiance) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
-			scope:actor = {
-				add_character_flag = { flag = bm_attune_lifeforce_cooldown years = 1 }
-				hidden_effect = { remove_all_attunement = yes }
-				send_interface_toast = {
-					type = event_toast_effect_good
-					title = bm_attune_lifeforce_toast
-					left_icon = scope:actor
-					remove_character_modifier = lifeforce_modifier_minor
-					add_character_modifier = { modifier = radiance_attuned }
-				}
-			}
+			scope:actor = { bm_apply_attunement_effect = { MODIFIER = radiance_attuned } }
 		}
 		else_if = {
 			limit = { scope:attune_cunning = yes }
 			debug_log = "BloodMageInteraction: bm_attune_lifeforce (cunning) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
-			scope:actor = {
-				add_character_flag = { flag = bm_attune_lifeforce_cooldown years = 1 }
-				hidden_effect = { remove_all_attunement = yes }
-				send_interface_toast = {
-					type = event_toast_effect_good
-					title = bm_attune_lifeforce_toast
-					left_icon = scope:actor
-					remove_character_modifier = lifeforce_modifier_minor
-					add_character_modifier = { modifier = cunning_attuned }
-				}
-			}
+			scope:actor = { bm_apply_attunement_effect = { MODIFIER = cunning_attuned } }
 		}
 		else_if = {
 			limit = { scope:attune_fury = yes }
 			debug_log = "BloodMageInteraction: bm_attune_lifeforce (fury) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
-			scope:actor = {
-				add_character_flag = { flag = bm_attune_lifeforce_cooldown years = 1 }
-				hidden_effect = { remove_all_attunement = yes }
-				send_interface_toast = {
-					type = event_toast_effect_good
-					title = bm_attune_lifeforce_toast
-					left_icon = scope:actor
-					remove_character_modifier = lifeforce_modifier_minor
-					add_character_modifier = { modifier = fury_attuned }
-				}
-			}
+			scope:actor = { bm_apply_attunement_effect = { MODIFIER = fury_attuned } }
 		}
 		else = {
 			debug_log = "BloodMageInteraction: bm_attune_lifeforce (NO OPTION) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"

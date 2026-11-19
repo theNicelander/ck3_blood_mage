@@ -57,9 +57,9 @@ Requires Minor Lifeforce (`lifeforce_modifier_minor`). Accessible to **Blood Mag
 
 | Action / Ritual | Interface | Cost / Prerequisite | Effect | XP Gain |
 | --- | --- | --- | --- | --- |
-| **Cast Minor Blood Magic** | Decision Widget (`bm_cast_blood_magic_minor_decision`) | Minor Lifeforce | Opens minor rituals option-list decision widget. | None |
+| **Cast Minor Blood Magic** | Decision Widget (`bm_cast_blood_magic_minor_decision`) | Minor Lifeforce (or unattuned) | Opens minor rituals option-list decision widget. | None |
 | **Channel Minor Lifeforce** | Decision Option | 75 Piety + Minor Lifeforce | Grants 5-year stat buff event chain (`bm_channel_lifeforce_wisdom_minor.001`) with +10 monthly (+30 quarterly) Lifestyle XP in the chosen attribute's discipline (or +5 monthly to active focus for Experience Gain). | +3 Wisdom |
-| **Attune Lifeforce** | Decision Option (`bm_minor_attune` -> `bm_attune_lifeforce.001`) | 50 Piety + Minor Lifeforce (1-yr CD) | Opens discipline-selection event (with `Back` option) to attune to 1 discipline; guarantees +1 XP/yr (+2 with Superior **Hulinhjálmur**) and passive blessings. | None (passive +1/yr XP) |
+| **Attune Lifeforce** | Decision Option (`bm_minor_attune` -> `bm_attune_lifeforce_interaction`) | Free first time; 50 Piety + Minor Lifeforce thereafter (1-yr CD) | Opens discipline-selection modal to attune to 1 discipline; guarantees +1 XP/yr (+2 with Superior **Hulinhjálmur**) and passive blessings. | None (passive +1/yr XP) |
 | **Purge Bodily Impurities** | Decision Option | 50 Piety + Minor Lifeforce | Cleanses minor wounds, scars, illness, lovers pox, gout, and bad traits (`beauty_bad`, `intellect_bad`, `physique_bad`, `dull`, `weak`). | +2 Radiance/Bloodline |
 | **Condense Lifeforce** | Decision Option (`bm_cast_blood_magic_minor_decision`) | 150 Piety + Minor Lifeforce, 6-mo CD | Converts 1 Minor Lifeforce into 1 Major Lifeforce (`lifeforce_modifier_major`). | +1 Ancient |
 | **Inscribe Minor Blood Rune (Self)** | Decision Option | Minor Lifeforce, Piety level >= 2, 3-yr CD | Inscribes `minor_blood_rune_modifier` for ambient yearly Lifeforce pulse. | +6 Ancient |
