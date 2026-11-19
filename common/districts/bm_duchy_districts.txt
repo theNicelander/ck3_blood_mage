@@ -1,0 +1,26 @@
+﻿bm_blood_temple_district = {
+	primary_building = bm_blood_temple_01
+
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/ep2_holysite_western.dds"
+	}
+
+	type = duchy_capital
+
+	can_be_replaced = yes
+
+	is_enabled = {
+		can_have_duchy_capital_building_trigger = yes
+	}
+
+	can_construct_potential = {
+		scope:holder = {
+			OR = {
+				is_blood_mage_any_tier_trigger = yes
+				faith = { religion = religion:blodtru_religion }
+			}
+		}
+	}
+
+	show_disabled = yes
+}

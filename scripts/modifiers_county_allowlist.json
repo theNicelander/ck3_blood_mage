@@ -1,5 +1,5 @@
 {
-  "version": "1.20",
+  "version": "1.21",
   "scope": "county",
   "description": "Allowlist of vanilla CK3 county/province/holding-scoped modifiers permitted in ck3_blood_mage.",
   "modifiers": {
@@ -11,8 +11,16 @@
       "category": "Realm & Holdings",
       "vanilla_definition": "00_definitions.txt"
     },
+    "control_baseline_add": {
+      "category": "Added",
+      "vanilla_definition": "00_definitions.txt"
+    },
     "defender_holding_advantage": {
       "category": "Military & Combat",
+      "vanilla_definition": "00_definitions.txt"
+    },
+    "different_faith_popular_opinion_mult": {
+      "category": "Opinions & Dread",
       "vanilla_definition": "00_definitions.txt"
     },
     "fort_level": {
@@ -31,20 +39,20 @@
       "category": "Added",
       "vanilla_definition": "00_definitions.txt"
     },
-    "monthly_control_change": {
-      "category": "Added",
+    "monthly_control_change_when_below_baseline_add": {
+      "category": "Realm & Holdings",
       "vanilla_definition": "00_definitions.txt"
     },
     "popular_opinion_add": {
-      "category": "Added",
+      "category": "Opinions & Dread",
       "vanilla_definition": "00_definitions.txt"
     },
     "prosperity_growth": {
-      "category": "Added",
+      "category": "Realm & Holdings",
       "vanilla_definition": "00_definitions.txt"
     },
     "prosperity_growth_factor": {
-      "category": "Added",
+      "category": "Realm & Holdings",
       "vanilla_definition": "00_definitions.txt"
     },
     "supply_limit_mult": {

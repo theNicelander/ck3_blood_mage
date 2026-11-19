@@ -35,14 +35,13 @@
 	duchy_capital_county_modifier = {
 		prosperity_growth = 0.1
 		prosperity_growth_factor = 0.05
-		monthly_control_change = 0.1
+		control_baseline_add = 2
+		monthly_control_change_when_below_baseline_add = 0.1
 	}
 
 	next_building = bm_blood_temple_02
 
 	type_icon = "bm_blood_temple.dds"
-
-	type = duchy_capital
 
 	flag = duchy_building
 
@@ -94,14 +93,13 @@ bm_blood_temple_02 = {
 	duchy_capital_county_modifier = {
 		prosperity_growth = 0.2
 		prosperity_growth_factor = 0.10
-		monthly_control_change = 0.2
+		control_baseline_add = 4
+		monthly_control_change_when_below_baseline_add = 0.2
 	}
 
 	next_building = bm_blood_temple_03
 
 	type_icon = "bm_blood_temple.dds"
-
-	type = duchy_capital
 
 	flag = duchy_building
 
@@ -153,14 +151,13 @@ bm_blood_temple_03 = {
 	duchy_capital_county_modifier = {
 		prosperity_growth = 0.3
 		prosperity_growth_factor = 0.15
-		monthly_control_change = 0.3
+		control_baseline_add = 6
+		monthly_control_change_when_below_baseline_add = 0.3
 	}
 
 	next_building = bm_blood_temple_04
 
 	type_icon = "bm_blood_temple.dds"
-
-	type = duchy_capital
 
 	flag = duchy_building
 
@@ -212,14 +209,13 @@ bm_blood_temple_04 = {
 	duchy_capital_county_modifier = {
 		prosperity_growth = 0.4
 		prosperity_growth_factor = 0.20
-		monthly_control_change = 0.4
+		control_baseline_add = 8
+		monthly_control_change_when_below_baseline_add = 0.4
 	}
 
 	next_building = bm_blood_temple_05
 
 	type_icon = "bm_blood_temple.dds"
-
-	type = duchy_capital
 
 	flag = duchy_building
 
@@ -278,14 +274,13 @@ bm_blood_temple_05 = {
 	duchy_capital_county_modifier = {
 		prosperity_growth = 0.5
 		prosperity_growth_factor = 0.25
-		monthly_control_change = 0.5
+		control_baseline_add = 10
+		monthly_control_change_when_below_baseline_add = 0.5
 	}
 
 	next_building = bm_blood_temple_06
 
 	type_icon = "bm_blood_temple.dds"
-
-	type = duchy_capital
 
 	flag = duchy_building
 
@@ -344,14 +339,13 @@ bm_blood_temple_06 = {
 	duchy_capital_county_modifier = {
 		prosperity_growth = 0.6
 		prosperity_growth_factor = 0.30
-		monthly_control_change = 0.6
+		control_baseline_add = 12
+		monthly_control_change_when_below_baseline_add = 0.6
 	}
 
 	next_building = bm_blood_temple_07
 
 	type_icon = "bm_blood_temple.dds"
-
-	type = duchy_capital
 
 	flag = duchy_building
 
@@ -411,7 +405,8 @@ bm_blood_temple_07 = {
 	duchy_capital_county_modifier = {
 		prosperity_growth = 0.8
 		prosperity_growth_factor = 0.40
-		monthly_control_change = 0.8
+		control_baseline_add = 15
+		monthly_control_change_when_below_baseline_add = 0.8
 	}
 
 	province_modifier = {
@@ -420,8 +415,6 @@ bm_blood_temple_07 = {
 	}
 
 	type_icon = "bm_blood_temple.dds"
-
-	type = duchy_capital
 
 	flag = duchy_building
 	flag = fully_upgraded_duchy_capital_building

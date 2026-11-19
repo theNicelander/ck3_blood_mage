@@ -745,7 +745,10 @@ bm_cast_blood_magic_minor_decision = {
 	}
 
 	is_valid_showing_failures_only = {
-		has_character_modifier = lifeforce_modifier_minor
+		OR = {
+			has_character_modifier = lifeforce_modifier_minor
+			bm_has_any_attunement_trigger = no
+		}
 	}
 
 	widget = {
@@ -867,8 +870,11 @@ bm_cast_blood_magic_minor_decision = {
 					text = bm_attune_lifeforce_cooldown_tt
 					NOT = { has_character_flag = bm_attune_lifeforce_cooldown }
 				}
-				piety >= 50
-				has_character_modifier = lifeforce_modifier_minor
+				trigger_if = {
+					limit = { bm_has_any_attunement_trigger = yes }
+					piety >= 50
+					has_character_modifier = lifeforce_modifier_minor
+				}
 			}
 			ai_chance = {
 				value = 0
