@@ -26,12 +26,13 @@ Pure script, loc, gfx; no build. Vanilla ref: `/Users/clarabotet/Petur/ck3-full`
 - Edit `descriptor.mod` (`name`, `remote_file_id`, `version`), `.env`, `*.vdf`, or add `replace_path`.
 - Delete third-party compat code (AGOT, Blood of Numenor) unasked, or reference other-mod keys unguarded (`has_global_variable = AGOT_is_loaded` or doctrine params).
 - Commit/push to `main` (if on `main`, branch `v1.21.<N+1>` first).
-- Blanket stage (`git add .`, `-A`, `commit -a`) — parallel agents share tree; stage/commit/push only your files on task completion.
+- Blanket stage (`git add .`, `-A`, `commit -a`) — parallel agents share tree.
 - Merge PR unless user explicitly asks (squash via `gh pr merge --squash`, never locally).
 - Read `docs-ai/archive/`, `docs-ai/ideas/`, `docs-ai/base-game-lists/`, `.agents/cost.md` unless asked.
 
 ## Workflow & agent guards
 
+- **Commit every turn (MANDATORY)**: parallel agents share this working tree. Before ending ANY turn that edited files, explicitly `git add <only your files>`, commit, and push to `<branch>`. Never leave uncommitted edits waiting for follow-up.
 - **Argon planner**: if using Gemini Argon, ask `"You are using Argon, do you want to continue Yes/No"` first; never edit files on Argon (investigate/ask/plan only).
 - **Clarify first**: ask on rough ideas; never execute on unverified assumptions. Suggest a skill for newly investigated vanilla systems.
 - **Flow**: `git branch --show-current` → read `docs-ai/branch-context/<branch>.md` + matching `docs-ai/architecture/` doc → edit → finish via skill `manage-pr`.
