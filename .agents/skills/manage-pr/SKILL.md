@@ -7,56 +7,37 @@ description: >-
 
 # Finish change / manage PR
 
-## Finish checklist
+## Checklist
 
-1. Architecture doc (`docs-ai/architecture/AGENTS.md`) matches current state.
-2. `docs-ai/branch-context/<branch>.md` reflects net branch state (format below). Create if missing.
-3. Player-facing change: one line in `RELEASE_NOTES.md` (skill `update-release-notes`).
-4. `python3 scripts/check_repo.py` (`--fix` only for BOM/newline) and `git diff --check`.
-5. Stage only changed files (never `git add .`/`-A`/`-a`), commit, push to `<branch>`. Commit immediately when task done. Follow-ups = separate commit.
-6. Ensure PR exists on push: if `docs-ai/branch-context/<branch>.md` lacks a `PR:` flag, create/find PR and record `PR: #<N>` in the branch doc (later agents assume PR exists). If commit changes something fundamental (e.g. implements a plan), update PR body (`gh pr edit`).
-7. Summary: state unverified runtime UI/AI behavior. Audit `error.log`.
+1. Sync matching `docs-ai/architecture/` doc to current state.
+2. Update `docs-ai/branch-context/<branch>.md` (create if missing) to net branch state.
+3. Player-facing change → update `RELEASE_NOTES.md` (skill `update-release-notes`).
+4. Run `python3 scripts/check_repo.py` (`--fix` only for BOM/newline) and `git diff --check`.
+5. Stage only your files (never `git add .`/`-A`/`-a`), commit, push `<branch>`. Follow-ups = new commit.
+6. Ensure PR exists: if branch doc lacks `PR: #<N>`, create/find PR and record it. Update PR body (`gh pr edit`) on fundamental changes.
+7. Summary: flag unverified runtime UI/AI behavior; audit `error.log`.
 
-## Branch doc = PR body
-
-`docs-ai/branch-context/<branch>.md` is PR description. Shape follows `.github/pull_request_template.md`:
+## Branch doc = PR body (`.github/pull_request_template.md`)
 
 ```md
 # <branch>: <outcome title>
-
+PR: #<N>
 ## Motivation
-
-- 1–3 bullets: problem, balance issue, engine limit, overhaul constraint.
-  - Nested: mechanical impact, in-game example. No script details here.
-
+- 1-3 bullets: problem/balance/constraint (nested: mechanical impact, no script details).
 ## Changes
-
 ### Key changes
-
-- Top-level bullet per gameplay/system outcome (traits, XP, Lifeforce, decisions, interactions, events, faiths).
-  - Nested: costs, cooldowns, math, XP yields, AI weights. Name `bm_*` ids only to locate code.
-  - Never list unchanged mechanics.
-
+- Bullet per gameplay/system outcome (nested: costs, cooldowns, math, XP, AI; `bm_*` IDs only to locate code; omit unchanged).
 ### Other changes
-
-- Supporting work: `docs-ai/architecture/` syncs, icon/GUI, refactors, script renames.
-- Omit section if no supporting changes.
-- Never mention localization (always expected). Skip incidental formatting/BOM cleanup.
+- Docs sync, icons/GUI, refactors, renames. Omit if none. Never list loc or incidental BOM cleanup.
 ```
 
-## Rules & style
+- **Style**: diff first; net state for fresh reviewer (fold superseded work); bullets only, <2 KB; player-facing title `<branch>: <outcome title>` (no raw filenames/PDXscript); no extra sections, test plans, or changelogs.
 
-- **Diff first**: review final diff before writing; describe net state for fresh reviewer; fold superseded work.
-- **Bullets only**: short lines, nested details. Scale detail to complexity. Keep under ~2 KB.
-- **Title**: `<branch>: <outcome title>`. Player-facing imperative/noun phrase. No raw script filenames or low-level PDXscript.
-- **Avoid**: extra sections, test plans, changelogs, file-by-file accounts, conversational history.
+## PR commands
 
-## PR lifecycle
-
-- Audit: `git log origin/main..HEAD --oneline` vs doc before PR.
-- Body: branch doc minus `#` title line.
+- Audit: `git log origin/main..HEAD --oneline` vs doc.
 - Create: `gh pr create --title "<branch>: <outcome title>" --body-file docs-ai/branch-context/<branch>.md`
 - Edit: `gh pr edit <PR> --title ... --body-file docs-ai/branch-context/<branch>.md`
-- Stop here: Never merge the PR automatically. Present the PR link to the user and await explicit review/approval.
-- Merge (ONLY on explicit user instruction): `gh pr merge <PR> --squash --body-file <file> --delete-branch`. Never merge locally; omit `--subject` so GitHub preserves `(#<PR>)`.
-- Next branch (after user-confirmed merge): pull `main`, checkout sequential `v1.20.<N+1>`, push `-u origin <branch>`, archive old doc to `docs-ai/archive/`, init new branch doc.
+- **Stop after PR**: never auto-merge; show PR link and wait for explicit user approval.
+- Merge (ONLY on user ask): `gh pr merge <PR> --squash --body-file <file> --delete-branch` (never local; omit `--subject` to keep `(#<PR>)`).
+- Next branch: pull `main`, checkout `v1.21.<N+1>`, `git push -u origin <branch>`, archive old doc to `docs-ai/archive/`, init new branch doc.

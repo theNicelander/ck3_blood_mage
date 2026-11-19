@@ -357,6 +357,7 @@ rsync -a \
   --exclude '/.gitignore' \
   --exclude '/.env*' \
   --exclude '/.agents/' \
+  --exclude 'AGENTS.md' \
   --exclude '/.codex/' \
   --exclude '/scripts/' \
   --exclude '/docs/' \
