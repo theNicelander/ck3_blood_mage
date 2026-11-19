@@ -1,0 +1,103 @@
+﻿# Dynamic UI Labels for Cast Blood Blessing Options
+
+# 1. Blessing of Radiance
+BM_BLESSING_RADIANCE_BUTTON_LABEL = {
+	type = character
+	text = {
+		trigger = { has_character_modifier = bm_blessing_radiance_major_modifier }
+		localization_key = bm_blessing_radiance_label_superior
+	}
+	text = {
+		trigger = { has_character_modifier = bm_blessing_radiance_minor_modifier }
+		localization_key = bm_blessing_radiance_label_major
+	}
+	text = {
+		fallback = yes
+		localization_key = bm_blessing_radiance_label_minor
+	}
+}
+
+# 2. Blessing of Fortune
+BM_BLESSING_FORTUNE_BUTTON_LABEL = {
+	type = character
+	text = {
+		trigger = { has_character_modifier = bm_blessing_fortune_major_modifier }
+		localization_key = bm_blessing_fortune_label_superior
+	}
+	text = {
+		trigger = { has_character_modifier = bm_blessing_fortune_minor_modifier }
+		localization_key = bm_blessing_fortune_label_major
+	}
+	text = {
+		fallback = yes
+		localization_key = bm_blessing_fortune_label_minor
+	}
+}
+
+# 3. Blessing of Fury
+BM_BLESSING_FURY_BUTTON_LABEL = {
+	type = character
+	text = {
+		trigger = { has_character_modifier = bm_blessing_fury_major_modifier }
+		localization_key = bm_blessing_fury_label_superior
+	}
+	text = {
+		trigger = { has_character_modifier = bm_blessing_fury_minor_modifier }
+		localization_key = bm_blessing_fury_label_major
+	}
+	text = {
+		fallback = yes
+		localization_key = bm_blessing_fury_label_minor
+	}
+}
+
+# 4. Blessing of Cunning
+BM_BLESSING_CUNNING_BUTTON_LABEL = {
+	type = character
+	text = {
+		trigger = { has_character_modifier = bm_blessing_cunning_major_modifier }
+		localization_key = bm_blessing_cunning_label_superior
+	}
+	text = {
+		trigger = { has_character_modifier = bm_blessing_cunning_minor_modifier }
+		localization_key = bm_blessing_cunning_label_major
+	}
+	text = {
+		fallback = yes
+		localization_key = bm_blessing_cunning_label_minor
+	}
+}
+
+# 5. Blessing of Wisdom
+BM_BLESSING_WISDOM_BUTTON_LABEL = {
+	type = character
+	text = {
+		trigger = { has_character_modifier = bm_blessing_wisdom_major_modifier }
+		localization_key = bm_blessing_wisdom_label_superior
+	}
+	text = {
+		trigger = { has_character_modifier = bm_blessing_wisdom_minor_modifier }
+		localization_key = bm_blessing_wisdom_label_major
+	}
+	text = {
+		fallback = yes
+		localization_key = bm_blessing_wisdom_label_minor
+	}
+}
+
+# 6. Blessing of Ancient
+BM_BLESSING_ANCIENT_BUTTON_LABEL = {
+	type = character
+	text = {
+		trigger = { has_character_modifier = bm_blessing_ancient_major_modifier }
+		localization_key = bm_blessing_ancient_label_superior
+	}
+	text = {
+		trigger = { has_character_modifier = bm_blessing_ancient_minor_modifier }
+		localization_key = bm_blessing_ancient_label_major
+	}
+	text = {
+		fallback = yes
+		localization_key = bm_blessing_ancient_label_minor
+	}
+}
