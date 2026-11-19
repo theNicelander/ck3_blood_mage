@@ -220,6 +220,35 @@
 		}
 	}
 
+	# 5. Drain Positive Traits
+	send_option = {
+		flag = drain_trait
+		localization = bm_blood_drain_option_trait
+		current_description = bm_blood_drain_option_trait_desc
+		can_invalidate_interaction = yes
+		is_shown = {
+			scope:actor = { bm_can_drain_traits_from_target_trigger = yes }
+		}
+		is_valid = {
+			scope:actor = { is_blood_mage_tier_2_or_higher_trigger = yes }
+			scope:recipient = { is_imprisoned_by = scope:actor }
+			scope:actor = {
+				has_character_modifier = lifeforce_modifier_major
+				custom_tooltip = {
+					text = bm_trait_drain_caster_cooldown_tt
+					NOT = { has_character_flag = bm_trait_drain_cooldown }
+				}
+			}
+			scope:recipient = {
+				custom_tooltip = {
+					text = bm_trait_drain_victim_cooldown_tt
+					NOT = { has_character_flag = bm_trait_drain_victim_cooldown }
+				}
+			}
+		}
+		starts_enabled = { always = no }
+	}
+
 	on_accept = {
 		if = {
 			limit = { scope:drain_major = yes }
@@ -460,6 +489,24 @@
 				}
 			}
 		}
+		else_if = {
+			limit = { scope:drain_trait = yes }
+			debug_log = "BloodMageInteraction: bm_blood_drain (trait) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
+			scope:actor = {
+				remove_character_modifier = lifeforce_modifier_major
+				add_character_flag = {
+					flag = bm_trait_drain_cooldown
+					days = 60
+				}
+				trigger_event = bm_trait_drain.001
+			}
+			scope:recipient = {
+				add_character_flag = {
+					flag = bm_trait_drain_victim_cooldown
+					days = 180
+				}
+			}
+		}
 		else = {
 			debug_log = "BloodMageInteraction: bm_blood_drain (NO OPTION) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
 		}
@@ -502,6 +549,23 @@
 			scope:drain_tithe = yes
 			add = 15
 		}
+		modifier = {
+			scope:drain_trait = yes
+			add = 20
+		}
+		modifier = {
+			scope:drain_trait = yes
+			OR = {
+				scope:actor = {
+					OR = {
+						is_spouse_of = scope:recipient
+						is_consort_of = scope:recipient
+					}
+				}
+				scope:recipient = { is_child_of = scope:actor }
+			}
+			factor = 0
+		}
 
 		# Personality, relationship, and protective vetoes (evaluated last)
 		ai_willingness_to_lifedrain = yes
@@ -514,6 +578,7 @@
 				scope:drain_minor_empowered = yes
 				scope:drain_stored = yes
 				scope:drain_tithe = yes
+				scope:drain_trait = yes
 			}
 			factor = 0
 		}

@@ -312,17 +312,17 @@ bm_action_can_trait_drain_prisoner = {
 			limit = {
 				is_ai = no
 				is_blood_mage_tier_2_or_higher_trigger = yes
+				has_character_modifier = lifeforce_modifier_major
+				NOT = { has_character_flag = bm_trait_drain_cooldown }
 			}
 			save_scope_as = actor
 
 			every_prisoner = {
 				limit = {
-					save_temporary_scope_as = prisoner_target
+					NOT = { has_character_flag = bm_trait_drain_victim_cooldown }
+					save_temporary_scope_as = recipient
 					scope:actor = {
-						is_character_interaction_valid = {
-							interaction = trait_drain_prisoner_event_interaction
-							recipient = scope:prisoner_target
-						}
+						bm_can_drain_traits_from_target_trigger = yes
 					}
 				}
 				add_to_temporary_list = bm_trait_drain_candidates
@@ -341,7 +341,7 @@ bm_action_can_trait_drain_prisoner = {
 
 	effect = {
 		open_interaction_window = {
-			interaction = trait_drain_prisoner_event_interaction
+			interaction = bm_blood_drain_interaction
 			actor = scope:actor
 			recipient = scope:recipient
 		}
