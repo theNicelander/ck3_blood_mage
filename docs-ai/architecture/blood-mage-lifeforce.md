@@ -56,7 +56,7 @@ Triggered on `on_combat_end_winner` (`bm_on_combat_end_winner`) for surviving si
 | --- | --- | --- | --- | --- |
 | **Execute Prisoner (`lifedrain_prisoner_event_interaction`)** | Mage | 50 Piety (`lifedrain_piety_cost_major`), un-drained prisoner | **+1 Major** (executes victim) | `+2` `cunning` |
 | **Mass Lifedrain (`mass_lifedrain_prisoners_decision`)** | Mage | Piety per prisoner, dungeon prisoners | **+Minor / +Major** per prisoner executed | Scaled `cunning` |
-| **Siphon Courtier/Prisoner (`lifedrain_courtier_event_interaction`)** | Mage | 25 Piety (`lifedrain_piety_cost_minor`), 3-mo CD | **+1 Minor** (victim gets `lifedrained_modifier`) | `+1` `cunning` |
+| **Siphon Target (`bm_blood_drain_interaction`: Minor / Empowered Minor)** | Mage | `20` Piety (Minor) or `100` Piety (Empowered Minor, non-prisoner only), 3-mo victim CD | **+1 Minor** (prisoners auto-succeed; non-prisoners contest Intrigue + Learning duel, `50%` / `80%` base at 0 diff, `~90%` at `+30`, `-20` weight outside court; fail: 3-mo CD, `-25` opinion, `+20` Stress) | `+1` `cunning` |
 | **Single Combat Lethal Kill (`bm_on_character_death_duel`)** | Mage | Slay opponent in single combat | **+1 Major** (+ **25% chance +1 Superior** if victim `prowess >= 20` or blood mage) | `+5` `fury` |
 | **Battlefield Victory (`bm_on_combat_end_winner`)** | Mage | Win battle as commander or knight | **10%–100% Minor** & **0%–100% Major** (scales by troop bracket) | `+1` to `+5` `fury` |
 | **Murder Scheme Execution (`bm_on_murder_success_hulinhjalmur`)** | Superior Hulinhjálmur | Execute successful Murder scheme | **+1 Major** | None |

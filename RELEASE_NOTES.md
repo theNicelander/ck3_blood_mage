@@ -27,9 +27,10 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - Blood Mages harvest Lifeforce from battles and lethal single combat duels.
 - Blood Mage mothers yield Major Lifeforce on safe childbirth.
 - **Bleed Own Veins**: self-interaction (1-year cooldown) for Minor or Major Lifeforce at the cost of wounds, stress and drain.
-- **Siphon Stored Lifeforce** takes Minor/Major/Superior reserves from other characters via a contest.
+- **Blood Drain (Minor, Empowered Minor, Stored, Blood Tithe)**: Prisoners auto-succeed, while non-prisoners (courtiers, vassals, liege, adult kin, rival mages) now resist via a contested **Intrigue + Learning** duel (~50% at equal stats, ~90% at +30 combined advantage, ~10% at −30, with an extra penalty for vassals/liege outside your court). **Minor Life drain** costs 20 Piety; **Empowered Minor Life drain** (100 Piety) boosts base success to 80% at equal stats.
+- **Siphon Stored Lifeforce** takes Minor/Major/Superior reserves from other characters via an Intrigue + Learning contest (or auto-succeeds on prisoners).
 - **Contest of the Red Art**: Learning + Prowess duel between fellow Blood Mages.
-- **House Head Blood Tithe** levies Lifeforce from adult kin.
+- **House Head Blood Tithe** levies Lifeforce from adult kin (auto-succeeds on prisoners; Intrigue + Learning duel otherwise).
 
 ## Spellcasting & Decisions
 
