@@ -282,8 +282,6 @@ bm_action_can_attune_lifeforce = {
 				is_ai = no
 				is_blood_mage_any_tier_trigger = yes
 				bm_has_any_attunement_trigger = no
-				has_character_modifier = lifeforce_modifier_minor
-				piety >= 50
 				NOT = { has_character_flag = bm_attune_lifeforce_cooldown }
 				can_execute_decision = bm_cast_blood_magic_minor_decision
 			}

@@ -11,7 +11,7 @@ Enforces that:
    - scripts/modifiers_character_allowlist.json
    - scripts/modifiers_county_allowlist.json (includes county & province/holding)
    - scripts/modifiers_domicile_allowlist.json
-2. No modifier can be added to an allowlist unless verified to exist in vanilla CK3 1.20
+2. No modifier can be added to an allowlist unless verified to exist in vanilla CK3 1.21
    definition formats (common/modifier_definition_formats/ + C++ custom code overwrites).
 3. Provides --add <modifier> --scope <scope> to safely confirm and append new modifiers.
 """
@@ -48,6 +48,8 @@ MODIFIER_BLOCK_SCOPES = {
     "clergy_modifier": "character",
     "holder_modifier": "character",
     "owner_modifier": "character",
+    "county_holder_character_modifier": "character",
+    "faith_character_modifier": "character",
     "county_modifier": "county",
     "duchy_capital_county_modifier": "county",
     "province_modifier": "county",
@@ -163,7 +165,7 @@ def save_allowlist(scope: str, modifiers: dict[str, dict]) -> None:
     """Save sorted modifiers to the scope-specific allowlist."""
     path = ALLOWLIST_FILES[scope]
     data = {
-        "version": "1.20",
+        "version": "1.21",
         "scope": scope,
         "description": ALLOWLIST_DESCRIPTIONS[scope],
         "modifiers": dict(sorted(modifiers.items())),
@@ -182,7 +184,7 @@ def check_allowlist_integrity(
         for mod_key in allowlist:
             if mod_key not in vanilla_defs:
                 errors.append(
-                    f"[{scope}] Modifier '{mod_key}' in allowlist is not a valid vanilla 1.20 modifier definition."
+                    f"[{scope}] Modifier '{mod_key}' in allowlist is not a valid vanilla 1.21 modifier definition."
                 )
     return errors
 
@@ -357,7 +359,7 @@ def handle_add_modifier(
         return 0
 
     if mod_name not in vanilla_defs:
-        print(f"[ERROR] Modifier '{mod_name}' does not exist in vanilla CK3 1.20 definitions!", file=sys.stderr)
+        print(f"[ERROR] Modifier '{mod_name}' does not exist in vanilla CK3 1.21 definitions!", file=sys.stderr)
         close_matches = difflib.get_close_matches(mod_name, vanilla_defs.keys(), n=5, cutoff=0.6)
         if close_matches:
             print("Did you mean one of these vanilla modifiers?", file=sys.stderr)
@@ -380,7 +382,7 @@ def handle_add_modifier(
 def main() -> int:
     parser = argparse.ArgumentParser(description="CK3 Blood Mage Modifier Allowlist & Usage Checker")
     parser.add_argument("--staged", action="store_true", help="Only inspect git staged files in common/ and events/")
-    parser.add_argument("--add", metavar="MODIFIER", help="Confirm existence in vanilla 1.20 and add to allowlist")
+    parser.add_argument("--add", metavar="MODIFIER", help="Confirm existence in vanilla 1.21 and add to allowlist")
     parser.add_argument(
         "--scope",
         choices=sorted(ALLOWLIST_FILES.keys()),

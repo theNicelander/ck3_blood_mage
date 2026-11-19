@@ -58,4 +58,4 @@ description: >-
 - Edit: `gh pr edit <PR> --title ... --body-file docs-ai/branch-context/<branch>.md`
 - Stop here: Never merge the PR automatically. Present the PR link to the user and await explicit review/approval.
 - Merge (ONLY on explicit user instruction): `gh pr merge <PR> --squash --body-file <file> --delete-branch`. Never merge locally; omit `--subject` so GitHub preserves `(#<PR>)`.
-- Next branch (after user-confirmed merge): pull `main`, checkout sequential `v1.20.<N+1>`, push `-u origin <branch>`, archive old doc to `docs-ai/archive/`, init new branch doc.
+- Next branch (after user-confirmed merge): pull `main`, checkout sequential `v1.21.<N+1>`, push `-u origin <branch>`, archive old doc to `docs-ai/archive/`, init new branch doc.

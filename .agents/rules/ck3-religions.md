@@ -1,12 +1,12 @@
 ---
 trigger: model_decision
-description: Religion, faith, rite, doctrine, and holy site architecture (CK3 1.20).
+description: Religion, faith, rite, doctrine, and holy site architecture (CK3 1.21).
 ---
 
-# Religions, Faiths and Rites (CK3 1.20)
+# Religions, Faiths and Rites (CK3 1.21)
 
 Vanilla reference: `/Users/clarabotet/Petur/ck3-full/common/religion`.
-1.20 uses split top-level database types. Never nest faiths in religion blocks.
+1.20+ uses split top-level database types. Never nest faiths in religion blocks.
 
 ## Directory structure (`common/religion/`)
 
@@ -14,7 +14,7 @@ Vanilla reference: `/Users/clarabotet/Petur/ck3-full/common/religion`.
 - `religion_types/`: Religions (`blodtru_religion`). Requires `religion_details` (`family`, `graphical_faith`, `piety_icon_group`), holy site limits (`main_holy_site`, `eminent_holy_sites_max`, `holy_sites_max`), doctrines, traits. **No `faiths = { ... }` blocks.**
 - `faith_types/`: Faiths (`blodtru_faith`). Defines `faith_details` (`religion`, `color`, `icon`), `main_rite`, `eminent_holy_sites`, `holy_sites`, `tenets`, `doctrines`.
 - `rite_types/`: Rites. Every scripted faith requires 1:1 mainline rite (`faith = <key>`, `color`, `tenets`, `doctrines`) to prevent unlocalized `dynamic_rite_%i` generation.
-- `holy_site_types/`: Sites. Must use `county_holder_character_modifier` (holder) and `faith_character_modifier` (eminent). Legacy `character_modifier` invalid in 1.20.
+- `holy_site_types/`: Sites. Must use `county_holder_character_modifier` (holder) and `faith_character_modifier` (eminent). Legacy `character_modifier` invalid in 1.20+.
 - `doctrine_group_types/`: Groups (`category = special`, `doctrine_lock = religion|faith|rite|none`). No nested doctrine lists.
 - `doctrine_types/`: Doctrines. Mandatory `doctrine_group_type = <group_key>`. Flags go in `parameters = { <flag> }` (checked via `has_doctrine_parameter`).
 - `tenet_types/`: Tenets. Use vanilla tenets unless adding custom mechanics.

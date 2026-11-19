@@ -1,6 +1,6 @@
 # Character Modifiers & Dynamic Scaling
 
-Living technical specification for character-scoped dynamic modifiers in CK3 1.20, their scaling targets, and engine scope boundaries (Character vs Province/Holding/Domicile).
+Living technical specification for character-scoped dynamic modifiers in CK3 1.21, their scaling targets, and engine scope boundaries (Character vs Province/Holding/Domicile).
 
 ## Executive Summary
 
@@ -23,8 +23,7 @@ Modifiers that scale based on the character's current Level of Devotion (`piety_
 | `stress_loss_per_piety_level` | Character | **Yes** | Increases stress loss multiplier per Level of Devotion |
 | `character_max_piety_level_add` | Character | **Yes** | Raises maximum Level of Devotion cap beyond baseline 5 |
 | `piety_level_impact_mult` | Character | **Yes** | Multiplies the opinion and grandeur benefits of Level of Devotion |
-| `monthly_income_per_piety_level` | Holding / Domicile | **No** (Fails silently) | Scales holding base gold income by ruler's devotion level |
-| `tax_per_piety_level` | Holding / County | **No** (Fails silently) | Scales settlement base holding tax by ruler's devotion level |
+| `generic_tax_per_piety_level` / `<category>_tax_per_piety_level` | Holding / County | **No** (Fails silently) | Scales settlement base holding tax by ruler's devotion level |
 | `stationed_maa_damage_mult_per_piety_level` | Holding | **No** (Fails silently) | Increases damage % of MaA regiments stationed in that holding |
 | `stationed_maa_toughness_mult_per_piety_level` | Holding | **No** (Fails silently) | Increases toughness % of MaA regiments stationed in that holding |
 
@@ -102,8 +101,7 @@ When designing traits or character modifiers, holding/province modifiers fail si
 
 | Invalid on Characters / Traits | Why It Fails | Character-Safe Alternative |
 | :--- | :--- | :--- |
-| `monthly_income_per_piety_level` | Holding economy calculation; requires barony settlement scope | `monthly_income = X` (flat gold allowance)<br>`domain_limit = X` (extra demesne holdings)<br>`monthly_income_mult = X` (% income boost) |
-| `tax_per_piety_level` | Holding base tax property; requires settlement scope | `domain_tax_mult = X` (% domain holding taxes)<br>`vassal_tax_mult = X` (% vassal tax contributions) |
+| `generic_tax_per_piety_level` / `<category>_tax_per_piety_level` | Holding base tax property; requires settlement scope | `domain_tax_mult = X` (% domain holding taxes)<br>`vassal_tax_mult = X` (% vassal tax contributions) |
 | `stationed_maa_damage_mult_per_piety_level` | Men-at-Arms stationing slot; requires barony holding scope | `army_damage_mult = X` (all army regiments)<br>`men_at_arms_damage = X` |
 | `stationed_maa_toughness_mult_per_piety_level` | Men-at-Arms stationing slot; requires barony holding scope | `army_toughness_mult = X`<br>`men_at_arms_toughness = X` |
 
@@ -123,8 +121,8 @@ When designing traits or character modifiers, holding/province modifiers fail si
 
 ## Gotchas
 
-- **Silent Zero Evaluation:** Applying `monthly_income_per_piety_level` or `tax_per_piety_level` to a character trait does not crash or log an error in `error.log`. The engine simply resolves holding base income to zero, awarding no gold.
-- **Prestige vs Piety Asymmetry:** The engine implements `tax_per_piety_level` and `monthly_income_per_piety_level` because temples and religious holdings tie into the clergy tax system. Prestige has no holding-level equivalents.
+- **Silent Zero Evaluation:** Applying `generic_tax_per_piety_level` or `<category>_tax_per_piety_level` to a character trait does not crash or log an error in `error.log`. The engine simply resolves holding base income to zero, awarding no gold.
+- **Prestige vs Piety Asymmetry:** The engine implements `generic_tax_per_piety_level` and `<category>_tax_per_piety_level` because temples and religious holdings tie into the clergy tax system. Prestige has no holding-level equivalents.
 - **Allowlist Gate:** Every modifier used in mod traits, modifiers, buildings, and domiciles must exist in its scope-specific allowlist (`scripts/modifiers_{character,county,domicile}_allowlist.json`). If adding an allowed vanilla modifier, verify with `python3 scripts/check_modifiers.py --add <mod> --scope <character|county|domicile>`.
 
 ---
