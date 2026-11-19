@@ -5,21 +5,21 @@
 | --- | ---: |
 | **Always-On (every turn)** | **819** |
 | ↳ Core (`AGENTS.md`) | 819 |
-| **On-Demand** | **7,601** |
+| **On-Demand** | **7,851** |
 | ↳ Localized (`**/AGENTS.md`) | 3,781 |
-| ↳ Rules (`model_decision`) | 1,745 |
-| ↳ Skills (`.agents/skills/`) | 2,075 |
-| **Total** | **8,420** |
+| ↳ Rules (`model_decision`) | 772 |
+| ↳ Skills (`.agents/skills/`) | 3,298 |
+| **Total** | **8,670** |
 
 ## Details per file
 
 | File | Load | Category | Tokens |
 | --- | --- | --- | ---: |
 | `docs-ai/architecture/AGENTS.md` | On-Demand | Localized | 1,271 |
-| `.agents/rules/ck3-error-catalog.md` | On-Demand | Rules | 973 |
+| `.agents/skills/debug-ck3-logs/SKILL.md` | On-Demand | Skills | 1,216 |
 | `AGENTS.md` | Always-On | Core | 819 |
 | `.agents/rules/single-combat.md` | On-Demand | Rules | 772 |
-| `.agents/skills/manage-pr/SKILL.md` | On-Demand | Skills | 627 |
+| `.agents/skills/manage-pr/SKILL.md` | On-Demand | Skills | 634 |
 | `common/religion/AGENTS.md` | On-Demand | Localized | 558 |
 | `common/character_interactions/AGENTS.md` | On-Demand | Localized | 476 |
 | `.agents/skills/add-decision-option-widget/SKILL.md` | On-Demand | Skills | 405 |

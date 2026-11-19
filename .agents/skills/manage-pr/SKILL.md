@@ -15,7 +15,7 @@ description: >-
 4. Run `python3 scripts/check_repo.py` (`--fix` only for BOM/newline) and `git diff --check`.
 5. Stage only your files (never `git add .`/`-A`/`-a`), commit, push `<branch>`. Follow-ups = new commit.
 6. Ensure PR exists: if branch doc lacks `PR: #<N>`, create/find PR and record it. Update PR body (`gh pr edit`) on fundamental changes.
-7. Summary: flag unverified runtime UI/AI behavior; audit `error.log`.
+7. Summary: flag unverified runtime UI/AI behavior; audit logs via skill `debug-ck3-logs`.
 
 ## Branch doc = PR body (`.github/pull_request_template.md`)
 

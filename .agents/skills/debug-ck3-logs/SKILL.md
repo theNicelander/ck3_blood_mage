@@ -1,9 +1,29 @@
 ---
-trigger: model_decision
-description: Known CK3 engine errors and fixes. Read when auditing error.log or debugging silent script failures.
+name: debug-ck3-logs
+description: >-
+  Snapshot and audit CK3 error.log and debug.log, and look up known engine error signatures and fixes.
+  Use first whenever inspecting logs, debugging silent script failures, or tracing BloodMage* debug_log output.
 ---
 
-# Engine error catalog
+# Debug CK3 Logs & Error Catalog
+
+## 1. Snapshot FIRST (mandatory)
+
+CK3 overwrites `error.log` and `debug.log` on every game launch. **Before any analysis**, snapshot both into gitignored `local-assets/logs/<timestamp>/` and read/grep the snapshot:
+
+```bash
+TS=$(date +%Y%m%d-%H%M%S)
+mkdir -p "local-assets/logs/$TS"
+cp ~/Documents/"Paradox Interactive"/"Crusader Kings III"/logs/error.log "local-assets/logs/$TS/error.log"
+cp ~/Documents/"Paradox Interactive"/"Crusader Kings III"/logs/debug.log "local-assets/logs/$TS/debug.log"
+```
+
+## 2. Audit
+
+- `error.log`: grep mod prefixes (`bm_`, `blodtru`, mod filenames) + `tail -n 100`.
+- `debug.log`: grep `BloodMageInteraction:|BloodMageSelfCast:|BloodMageDecision:|BloodMageExecution:`.
+
+## 3. Engine error catalog
 
 Living list: on new error, add 1 row (`signature → cause → fix`).
 
