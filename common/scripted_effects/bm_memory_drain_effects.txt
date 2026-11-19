@@ -1,0 +1,189 @@
+﻿# Scripted effects for Drain Blood Memory
+
+bm_memory_drain_commit_cost_and_cooldown_effect = {
+	add_piety = bm_memory_drain_piety_cost_negative
+	remove_character_modifier = lifeforce_modifier_major
+	add_stress = bm_memory_drain_stress_cost
+	add_character_flag = {
+		flag = bm_memory_drain_cooldown
+		days = 60
+	}
+}
+
+bm_memory_drain_apply_victim_toll_effect = {
+	scope:recipient = {
+		add_character_modifier = { modifier = lifedrained_modifier }
+	}
+	if = {
+		limit = {
+			NOT = { bm_has_superior_stave_trigger = { STAVE = hulinhjalmur } }
+		}
+		scope:recipient = {
+			add_opinion = {
+				target = root
+				modifier = lifedrained_me
+				opinion = -50
+			}
+		}
+	}
+}
+
+bm_memory_drain_fail_effect = {
+	temporary_negative_lifeforce_effect_major = yes
+	scope:recipient = {
+		add_character_flag = {
+			flag = bm_memory_drain_victim_cooldown
+			days = 180
+		}
+	}
+}
+
+bm_memory_drain_execute_no_track_effect = {
+	bm_memory_drain_commit_cost_and_cooldown_effect = yes
+	duel = {
+		skill = learning
+		target = scope:recipient
+		50 = {
+			desc = bm_memory_drain.success
+			compare_modifier = {
+				value = scope:duel_value
+				multiplier = 5
+				min = -40
+			}
+			modifier = { add = bm_memory_drain_duel_modifier }
+			send_interface_toast = {
+				type = bm_event_toast_effect_good
+				title = bm_memory_drain.success
+				left_icon = root
+				right_icon = scope:recipient
+				add_trait = $TRAIT$
+				add_xp_bm_dynamic = {
+					TRACK = cunning
+					XP = 3
+				}
+			}
+			bm_memory_drain_apply_victim_toll_effect = yes
+		}
+		50 = {
+			desc = bm_memory_drain.fail
+			send_interface_toast = {
+				type = bm_event_toast_effect_bad
+				title = bm_memory_drain.fail
+				left_icon = root
+				right_icon = scope:recipient
+				bm_memory_drain_fail_effect = yes
+			}
+		}
+	}
+}
+
+bm_memory_drain_execute_single_track_effect = {
+	bm_memory_drain_commit_cost_and_cooldown_effect = yes
+	duel = {
+		skill = learning
+		target = scope:recipient
+		50 = {
+			desc = bm_memory_drain.success
+			compare_modifier = {
+				value = scope:duel_value
+				multiplier = 5
+				min = -40
+			}
+			modifier = { add = bm_memory_drain_duel_modifier }
+			send_interface_toast = {
+				type = bm_event_toast_effect_good
+				title = bm_memory_drain.success
+				left_icon = root
+				right_icon = scope:recipient
+				if = {
+					limit = { NOT = { has_trait = $TRAIT$ } }
+					add_trait = $TRAIT$
+				}
+				else = {
+					add_trait_xp = {
+						trait = $TRAIT$
+						value = 20
+					}
+				}
+				add_xp_bm_dynamic = {
+					TRACK = cunning
+					XP = 3
+				}
+			}
+			bm_memory_drain_apply_victim_toll_effect = yes
+		}
+		50 = {
+			desc = bm_memory_drain.fail
+			send_interface_toast = {
+				type = bm_event_toast_effect_bad
+				title = bm_memory_drain.fail
+				left_icon = root
+				right_icon = scope:recipient
+				bm_memory_drain_fail_effect = yes
+			}
+		}
+	}
+}
+
+bm_memory_drain_execute_multi_track_effect = {
+	bm_memory_drain_commit_cost_and_cooldown_effect = yes
+	duel = {
+		skill = learning
+		target = scope:recipient
+		50 = {
+			desc = bm_memory_drain.success
+			compare_modifier = {
+				value = scope:duel_value
+				multiplier = 5
+				min = -40
+			}
+			modifier = { add = bm_memory_drain_duel_modifier }
+			send_interface_toast = {
+				type = bm_event_toast_effect_good
+				title = bm_memory_drain.success
+				left_icon = root
+				right_icon = scope:recipient
+				if = {
+					limit = { NOT = { has_trait = $TRAIT$ } }
+					add_trait = $TRAIT$
+				}
+				else_if = {
+					limit = {
+						has_trait_xp = {
+							trait = $TRAIT$
+							track = $TRACK_A$
+							value <= "has_trait_xp($TRAIT$|$TRACK_B$)"
+						}
+					}
+					add_trait_xp = {
+						trait = $TRAIT$
+						track = $TRACK_A$
+						value = 20
+					}
+				}
+				else = {
+					add_trait_xp = {
+						trait = $TRAIT$
+						track = $TRACK_B$
+						value = 20
+					}
+				}
+				add_xp_bm_dynamic = {
+					TRACK = cunning
+					XP = 3
+				}
+			}
+			bm_memory_drain_apply_victim_toll_effect = yes
+		}
+		50 = {
+			desc = bm_memory_drain.fail
+			send_interface_toast = {
+				type = bm_event_toast_effect_bad
+				title = bm_memory_drain.fail
+				left_icon = root
+				right_icon = scope:recipient
+				bm_memory_drain_fail_effect = yes
+			}
+		}
+	}
+}

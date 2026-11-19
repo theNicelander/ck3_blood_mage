@@ -1,0 +1,99 @@
+﻿# Scripted triggers for Drain Blood Memory (curated lifestyle, commander, and martial fame traits)
+
+bm_can_drain_memory_no_track_trigger = {
+	scope:recipient = { has_trait = $TRAIT$ }
+	NOT = { has_trait = $TRAIT$ }
+}
+
+bm_can_drain_memory_single_track_trigger = {
+	scope:recipient = { has_trait = $TRAIT$ }
+	OR = {
+		NOT = { has_trait = $TRAIT$ }
+		has_trait_xp = {
+			trait = $TRAIT$
+			value < 100
+		}
+	}
+}
+
+bm_can_drain_memory_multi_track_trigger = {
+	scope:recipient = { has_trait = $TRAIT$ }
+	OR = {
+		NOT = { has_trait = $TRAIT$ }
+		has_trait_xp = {
+			trait = $TRAIT$
+			track = $TRACK_A$
+			value < 100
+		}
+		has_trait_xp = {
+			trait = $TRAIT$
+			track = $TRACK_B$
+			value < 100
+		}
+	}
+}
+
+bm_can_drain_memory_lifestyle_trigger = {
+	OR = {
+		bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_blademaster }
+		bm_can_drain_memory_multi_track_trigger = { TRAIT = lifestyle_hunter TRACK_A = hunter TRACK_B = falconer }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_poet }
+		bm_can_drain_memory_no_track_trigger = { TRAIT = lifestyle_gardener }
+		bm_can_drain_memory_no_track_trigger = { TRAIT = lifestyle_herbalist }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_physician }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_mystic }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_reveler }
+		bm_can_drain_memory_multi_track_trigger = { TRAIT = lifestyle_traveler TRACK_A = travel TRACK_B = danger }
+	}
+}
+
+bm_can_drain_memory_commander_trigger = {
+	OR = {
+		bm_can_drain_memory_single_track_trigger = { TRAIT = logistician }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = military_engineer }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = aggressive_attacker }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = unyielding_defender }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = forder }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = flexible_leader }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = desert_warrior }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = jungle_stalker }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = reaver }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = reckless }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = holy_warrior }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = open_terrain_expert }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = rough_terrain_expert }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = forest_fighter }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = cautious_leader }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = organizer }
+	}
+}
+
+bm_can_drain_memory_fame_trigger = {
+	OR = {
+		bm_can_drain_memory_no_track_trigger = { TRAIT = berserker }
+		bm_can_drain_memory_no_track_trigger = { TRAIT = viking }
+		bm_can_drain_memory_no_track_trigger = { TRAIT = shieldmaiden }
+		bm_can_drain_memory_no_track_trigger = { TRAIT = athletic }
+	}
+}
+
+bm_can_drain_memory_from_target_trigger = {
+	custom_description = {
+		text = bm_can_drain_memory_from_target_trigger_tt
+		subject = scope:recipient
+		OR = {
+			bm_can_drain_memory_lifestyle_trigger = yes
+			bm_can_drain_memory_commander_trigger = yes
+			bm_can_drain_memory_fame_trigger = yes
+		}
+	}
+}
+
+bm_has_multiple_memory_drain_categories_trigger = {
+	calc_true_if = {
+		amount >= 2
+		bm_can_drain_memory_lifestyle_trigger = yes
+		bm_can_drain_memory_commander_trigger = yes
+		bm_can_drain_memory_fame_trigger = yes
+	}
+}
