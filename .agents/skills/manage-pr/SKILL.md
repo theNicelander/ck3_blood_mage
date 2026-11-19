@@ -14,7 +14,8 @@ description: >-
 3. Player-facing change: one line in `RELEASE_NOTES.md` (skill `update-release-notes`).
 4. `python3 scripts/check_repo.py` (`--fix` only for BOM/newline) and `git diff --check`.
 5. Stage only changed files (never `git add .`/`-A`/`-a`), commit, push to `<branch>`. Commit immediately when task done. Follow-ups = separate commit.
-6. Summary: state unverified runtime UI/AI behavior. Audit `error.log`.
+6. Ensure PR exists on push: if `docs-ai/branch-context/<branch>.md` lacks a `PR:` flag, create/find PR and record `PR: #<N>` in the branch doc (later agents assume PR exists). If commit changes something fundamental (e.g. implements a plan), update PR body (`gh pr edit`).
+7. Summary: state unverified runtime UI/AI behavior. Audit `error.log`.
 
 ## Branch doc = PR body
 

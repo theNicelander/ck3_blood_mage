@@ -69,4 +69,4 @@ CK3 script fails silently. Follow patterns in this repo and vanilla 1.20 (`/User
 
 1. `git branch --show-current`; read `docs-ai/branch-context/<branch>.md` (create if missing), matching rule(s) and architecture doc.
 2. Plan smallest change; grep existing identifiers; use the matching skill.
-3. Docs, notes, check, commit, push, create PR: skill `manage-pr`. PR title `<branch>: <outcome title>`. Stop after PR creation; when the user explicitly instructs to merge, squash merge PR via GitHub (`gh pr merge --squash`), never locally; keeps `(#<PR>)`.
+3. Docs, notes, check, commit, push, ensure/update PR: skill `manage-pr`. PR title `<branch>: <outcome title>`. Stop after PR creation; when the user explicitly instructs to merge, squash merge PR via GitHub (`gh pr merge --squash`), never locally; keeps `(#<PR>)`.
