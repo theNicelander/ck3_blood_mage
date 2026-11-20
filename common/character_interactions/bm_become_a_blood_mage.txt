@@ -45,6 +45,11 @@
                     remove_character_modifier = lifeforce_modifier_superior
                 }
                 bm_become_blood_acolyte_effect = yes
+                add_opinion = {
+                    target = scope:recipient
+                    modifier = made_me_a_blood_mage
+                    opinion = 30
+                }
             }
         }
     }

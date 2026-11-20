@@ -1,5 +1,5 @@
 ﻿# Shared effect to cast or upgrade a permanent tiered Blood Blessing.
-# Parameters: LINE (radiance|fortune|fury|cunning|wisdom|ancient), CASTER, TARGET
+# Parameters: LINE (radiance|fortune|fury|cunning|wisdom|ancient), XP_TRACK (radiance|fortune|fury|cunning|wisdom), CASTER, TARGET
 
 bm_apply_blessing_effect = {
 	$CASTER$ = {
@@ -13,7 +13,7 @@ bm_apply_blessing_effect = {
 					$TARGET$ = { has_character_modifier = bm_blessing_$LINE$_major_modifier }
 				}
 				blood_magic_used_superior = yes
-				bm_add_blood_mage_xp_effect = { TRACK = $LINE$ XP = 6 }
+				bm_add_blood_mage_xp_effect = { TRACK = $XP_TRACK$ XP = 6 }
 				$TARGET$ = {
 					remove_character_modifier = bm_blessing_$LINE$_major_modifier
 					add_character_modifier = { modifier = bm_blessing_$LINE$_superior_modifier }
@@ -24,7 +24,7 @@ bm_apply_blessing_effect = {
 					$TARGET$ = { has_character_modifier = bm_blessing_$LINE$_minor_modifier }
 				}
 				blood_magic_used_major = yes
-				bm_add_blood_mage_xp_effect = { TRACK = $LINE$ XP = 4 }
+				bm_add_blood_mage_xp_effect = { TRACK = $XP_TRACK$ XP = 4 }
 				$TARGET$ = {
 					remove_character_modifier = bm_blessing_$LINE$_minor_modifier
 					add_character_modifier = { modifier = bm_blessing_$LINE$_major_modifier }
@@ -32,7 +32,7 @@ bm_apply_blessing_effect = {
 			}
 			else = {
 				blood_magic_used_minor = yes
-				bm_add_blood_mage_xp_effect = { TRACK = $LINE$ XP = 2 }
+				bm_add_blood_mage_xp_effect = { TRACK = $XP_TRACK$ XP = 2 }
 				$TARGET$ = {
 					add_character_modifier = { modifier = bm_blessing_$LINE$_minor_modifier }
 				}

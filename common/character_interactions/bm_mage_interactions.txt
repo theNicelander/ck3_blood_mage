@@ -81,7 +81,8 @@
 
                         blood_magic_used_minor = yes
                         add_character_modifier = { modifier = lifeforce_modifier_major }
-                        add_xp_bm_dynamic = { TRACK = cunning XP = 5 }
+                        add_xp_bm_dynamic = { TRACK = fury XP = 3 }
+                        add_xp_bm_dynamic = { TRACK = wisdom XP = 3 }
                         scope:recipient = {
                             add_character_modifier = {
                                 modifier = bm_blood_curse_modifier
@@ -128,7 +129,8 @@
                         right_icon = scope:recipient
 
                         blood_magic_used_minor = yes
-                        add_xp_bm_dynamic = { TRACK = cunning XP = 3 }
+                        add_xp_bm_dynamic = { TRACK = fury XP = 2 }
+                        add_xp_bm_dynamic = { TRACK = wisdom XP = 2 }
                         scope:recipient = {
                             add_character_modifier = {
                                 modifier = lifeforce_modifier_negative_major
