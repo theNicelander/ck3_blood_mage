@@ -6,6 +6,9 @@ bm_education_new.001 = {
     title = bm_education_new.001.title
     desc = bm_education_new.001.desc
     theme = witchcraft
+    override_icon = {
+        reference = "gfx/interface/icons/bm_blood_magic_icon.dds"
+    }
 
     left_portrait = {
         character = root
@@ -24,7 +27,7 @@ bm_education_new.001 = {
         }
         bm_education_new_cost_effect = yes
         send_interface_toast = {
-            type = event_toast_effect_good
+            type = bm_event_toast_effect_good
             title = bm_education_new.001.title
             left_icon = root
             add_trait = education_diplomacy_1
@@ -48,7 +51,7 @@ bm_education_new.001 = {
         }
         bm_education_new_cost_effect = yes
         send_interface_toast = {
-            type = event_toast_effect_good
+            type = bm_event_toast_effect_good
             title = bm_education_new.001.title
             left_icon = root
             add_trait = education_martial_1
@@ -72,7 +75,7 @@ bm_education_new.001 = {
         }
         bm_education_new_cost_effect = yes
         send_interface_toast = {
-            type = event_toast_effect_good
+            type = bm_event_toast_effect_good
             title = bm_education_new.001.title
             left_icon = root
             add_trait = education_stewardship_1
@@ -96,7 +99,7 @@ bm_education_new.001 = {
         }
         bm_education_new_cost_effect = yes
         send_interface_toast = {
-            type = event_toast_effect_good
+            type = bm_event_toast_effect_good
             title = bm_education_new.001.title
             left_icon = root
             add_trait = education_intrigue_1
@@ -120,7 +123,7 @@ bm_education_new.001 = {
         }
         bm_education_new_cost_effect = yes
         send_interface_toast = {
-            type = event_toast_effect_good
+            type = bm_event_toast_effect_good
             title = bm_education_new.001.title
             left_icon = root
             add_trait = education_learning_1

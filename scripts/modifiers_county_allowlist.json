@@ -1,5 +1,5 @@
 {
-  "version": "1.20",
+  "version": "1.21",
   "scope": "county",
   "description": "Allowlist of vanilla CK3 county/province/holding-scoped modifiers permitted in ck3_blood_mage.",
   "modifiers": {
@@ -11,23 +11,15 @@
       "category": "Realm & Holdings",
       "vanilla_definition": "00_definitions.txt"
     },
-    "county_opinion_add": {
-      "category": "Opinions & Dread",
+    "control_baseline_add": {
+      "category": "Added",
       "vanilla_definition": "00_definitions.txt"
     },
     "defender_holding_advantage": {
       "category": "Military & Combat",
       "vanilla_definition": "00_definitions.txt"
     },
-    "development_growth": {
-      "category": "Realm & Holdings",
-      "vanilla_definition": "00_definitions.txt"
-    },
-    "development_growth_factor": {
-      "category": "Realm & Holdings",
-      "vanilla_definition": "00_definitions.txt"
-    },
-    "different_faith_county_opinion_mult": {
+    "different_faith_popular_opinion_mult": {
       "category": "Opinions & Dread",
       "vanilla_definition": "00_definitions.txt"
     },
@@ -47,21 +39,29 @@
       "category": "Added",
       "vanilla_definition": "00_definitions.txt"
     },
-    "monthly_county_control_growth_add": {
+    "monthly_control_change_when_below_baseline_add": {
       "category": "Realm & Holdings",
       "vanilla_definition": "00_definitions.txt"
     },
-    "monthly_income_per_piety_level": {
-      "category": "Added",
+    "popular_opinion_add": {
+      "category": "Opinions & Dread",
+      "vanilla_definition": "00_definitions.txt"
+    },
+    "prosperity_growth": {
+      "category": "Realm & Holdings",
+      "vanilla_definition": "00_definitions.txt"
+    },
+    "prosperity_growth_factor": {
+      "category": "Realm & Holdings",
       "vanilla_definition": "00_definitions.txt"
     },
     "supply_limit_mult": {
       "category": "Added",
       "vanilla_definition": "00_definitions.txt"
     },
-    "tax_mult": {
+    "trade_good_fish_production_mult": {
       "category": "Added",
-      "vanilla_definition": "00_definitions.txt"
+      "vanilla_definition": "00_gdp_definitions.txt"
     }
   }
 }

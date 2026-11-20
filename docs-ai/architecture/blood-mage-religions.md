@@ -18,7 +18,7 @@ Spiritual framework in `common/religion/`. Religious family `rf_blodtru` and rel
 | **Xuédào** (`xuedao_faith`) | Reformed (Main) | `xuedao_faith` (Reformed mainline)<br>`old_xuedao_faith` (Unreformed ancestral) | Chinese, Qiangic, Tai, Viet, Tibetan | **32 Sites:** `changan`, `luoyang`, `beijing`, `hangzhou`, `chengdu`, `guangzhou`, `taishan`, `gyeongju`, `dunhuang`, Sacred Five Mountains, Four Buddhist/Daoist Peaks, `nanjing`, `lhasa`, etc. | None (all holy sites are eminent) |
 
 
-### Holy Site Modifier Architecture (CK3 1.20)
+### Holy Site Modifier Architecture (CK3 1.21)
 - **All Sites Eminent (`eminent_holy_sites_max = 80`):** Every holy site in Blóðtrú faiths is defined under `eminent_holy_sites`. Each site grants **both** a `faith_character_modifier` (applies to all followers of the faith when controlled) **and** a `county_holder_character_modifier` (applies directly to the county holder, stacking with the faith-wide bonus). Benefits are calibrated as smaller incremental bonuses (`+0.25` Health, `+1` Life Expectancy, `+1` Epidemic Resistance, or `+1 [Skill/Prowess] per Piety Level`) designed to reward wide geographic control and spread across multiple holy sites.
 - **Zero Vanilla Holy Site Overwrites:** Vanilla holy site keys (`luoyang`, `dunhuang`, `tenerife`, `rome`, `constantinople`, `kiev`, `athens`, `madrid`, `paris`) are referenced directly in the faith definitions without re-declaring their keys in `common/religion/holy_site_types/`. Custom regional holy sites lacking vanilla definitions (such as `hangzhou` and `quanzhou`) are declared directly in `common/religion/holy_site_types/bm_china_holy_sites.txt`.
 
@@ -28,7 +28,7 @@ Spiritual framework in `common/religion/`. Religious family `rf_blodtru` and rel
 - **Passive Faith Modifiers:**
   - `different_faith_opinion = 15`
   - `different_faith_liege_opinion = 10`
-  - `different_faith_county_opinion_mult = -0.25`
+  - `different_faith_popular_opinion_mult = -0.25`
 - **Doctrine Parameter:** `blood_magic_cult_faith = yes`. Checked by `bm_is_blood_cult_faith_trigger` (`has_doctrine_parameter = blood_magic_cult_faith` OR `religion = { is_in_family = rf_blodtru }`).
 
 ## Religious & Initiation Decisions

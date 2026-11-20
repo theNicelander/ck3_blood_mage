@@ -14,7 +14,11 @@
 			}
 			else_if = {
 				limit = { scope:drain_minor = yes }
-				value = lifedrain_piety_cost_minor
+				value = bm_drain_minor_piety_cost
+			}
+			else_if = {
+				limit = { scope:drain_minor_empowered = yes }
+				value = bm_drain_minor_empowered_piety_cost
 			}
 			else_if = {
 				limit = { scope:drain_stored = yes }
@@ -83,23 +87,66 @@
 				OR = {
 					is_imprisoned_by = scope:actor
 					is_courtier_of = scope:actor
+					is_vassal_of = scope:actor
+					AND = {
+						exists = scope:actor.liege
+						this = scope:actor.liege
+					}
 				}
 			}
 		}
 		is_valid = {
 			scope:recipient = {
-				NOT = { has_character_modifier = recently_lifedrained_modifier }
-			}
-			scope:actor = {
-				NOT = { has_character_flag = bm_minor_lifedrain_cooldown }
+				custom_tooltip = {
+					text = bm_minor_lifedrain_victim_cooldown_tt
+					NOT = { has_character_flag = bm_minor_lifedrain_cooldown }
+				}
 			}
 		}
 		starts_enabled = {
 			scope:recipient = {
-				is_courtier_of = scope:actor
+				OR = {
+					is_courtier_of = scope:actor
+					is_vassal_of = scope:actor
+					AND = {
+						exists = scope:actor.liege
+						this = scope:actor.liege
+					}
+				}
 				NOT = { is_imprisoned_by = scope:actor }
+				NOT = { has_character_flag = bm_minor_lifedrain_cooldown }
 			}
 		}
+	}
+
+	# 2b. Empowered Minor Life drain (100 Piety, 80% base chance)
+	send_option = {
+		flag = drain_minor_empowered
+		localization = bm_blood_drain_option_minor_empowered
+		current_description = bm_blood_drain_option_minor_empowered_desc
+		can_invalidate_interaction = yes
+		is_shown = {
+			scope:recipient = {
+				NOT = { is_imprisoned_by = scope:actor }
+				OR = {
+					is_courtier_of = scope:actor
+					is_vassal_of = scope:actor
+					AND = {
+						exists = scope:actor.liege
+						this = scope:actor.liege
+					}
+				}
+			}
+		}
+		is_valid = {
+			scope:recipient = {
+				custom_tooltip = {
+					text = bm_minor_lifedrain_victim_cooldown_tt
+					NOT = { has_character_flag = bm_minor_lifedrain_cooldown }
+				}
+			}
+		}
+		starts_enabled = { always = no }
 	}
 
 	# 3. Drain Stored Lifeforce (renamed from Siphon)
@@ -123,6 +170,9 @@
 			}
 		}
 		starts_enabled = {
+			scope:actor = {
+				NOT = { has_character_flag = bm_siphon_reserves_cooldown }
+			}
 			scope:recipient = {
 				OR = {
 					has_character_modifier = lifeforce_modifier_minor
@@ -161,9 +211,42 @@
 			scope:actor = {
 				exists = house
 				house.house_head = scope:actor
+				NOT = { has_character_flag = bm_demand_blood_tithe_cooldown }
 			}
-			scope:recipient = { house ?= scope:actor.house }
+			scope:recipient = {
+				house ?= scope:actor.house
+				NOT = { has_character_modifier = recently_lifedrained_modifier }
+			}
 		}
+	}
+
+	# 5. Drain Positive Traits
+	send_option = {
+		flag = drain_trait
+		localization = bm_blood_drain_option_trait
+		current_description = bm_blood_drain_option_trait_desc
+		can_invalidate_interaction = yes
+		is_shown = {
+			scope:actor = { bm_can_drain_traits_from_target_trigger = yes }
+		}
+		is_valid = {
+			scope:actor = { bm_can_drain_traits_from_target_tier_valid_trigger = yes }
+			scope:recipient = { is_imprisoned_by = scope:actor }
+			scope:actor = {
+				has_character_modifier = lifeforce_modifier_major
+				custom_tooltip = {
+					text = bm_trait_drain_caster_cooldown_tt
+					NOT = { has_character_flag = bm_trait_drain_cooldown }
+				}
+			}
+			scope:recipient = {
+				custom_tooltip = {
+					text = bm_trait_drain_victim_cooldown_tt
+					NOT = { has_character_flag = bm_trait_drain_victim_cooldown }
+				}
+			}
+		}
+		starts_enabled = { always = no }
 	}
 
 	on_accept = {
@@ -179,41 +262,89 @@
 		else_if = {
 			limit = { scope:drain_minor = yes }
 			debug_log = "BloodMageInteraction: bm_blood_drain (minor) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
-			scope:actor = {
-				add_character_flag = {
-					flag = bm_minor_lifedrain_cooldown
-					months = 3
-				}
-				send_interface_toast = {
-					type = event_toast_effect_good
-					title = bm_blood_drain_toast
-					left_icon = scope:actor
-					right_icon = scope:recipient
-					add_character_modifier = { modifier = lifeforce_modifier_minor }
-					bm_add_blood_mage_xp_effect = {
-						TRACK = cunning
-						XP = 1
+			if = {
+				limit = { scope:recipient = { is_imprisoned_by = scope:actor } }
+				bm_minor_lifedrain_success_effect = yes
+			}
+			else = {
+				scope:actor = {
+					duel = {
+						skills = { intrigue learning }
+						target = scope:recipient
+						50 = {
+							desc = bm_blood_drain_minor_success_tt
+							compare_modifier = {
+								value = scope:duel_value
+								multiplier = 2.67
+								min = -45
+								max = 45
+							}
+							modifier = {
+								add = -20
+								scope:recipient = {
+									NOT = { is_courtier_of = scope:actor }
+								}
+							}
+							bm_minor_lifedrain_success_effect = yes
+						}
+						50 = {
+							desc = bm_blood_drain_minor_fail_tt
+							compare_modifier = {
+								value = scope:duel_value
+								multiplier = -2.67
+								min = -45
+								max = 45
+							}
+							modifier = {
+								add = 20
+								scope:recipient = {
+									NOT = { is_courtier_of = scope:actor }
+								}
+							}
+							bm_minor_lifedrain_fail_effect = yes
+						}
 					}
-					scope:recipient = {
-						add_character_modifier = {
-							modifier = recently_lifedrained_modifier
-							years = 1
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:drain_minor_empowered = yes }
+			debug_log = "BloodMageInteraction: bm_blood_drain (minor_empowered) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
+			scope:actor = {
+				duel = {
+					skills = { intrigue learning }
+					target = scope:recipient
+					80 = {
+						desc = bm_blood_drain_minor_success_tt
+						compare_modifier = {
+							value = scope:duel_value
+							multiplier = 2.67
+							min = -70
+							max = 15
 						}
-						add_character_modifier = {
-							modifier = lifeforce_modifier_negative_minor
-							years = 1
-						}
-						if = {
-							limit = {
-								NOT = { bm_is_blood_cult_faith_trigger = yes }
-								NOT = { has_trait = loyal }
+						modifier = {
+							add = -20
+							scope:recipient = {
+								NOT = { is_courtier_of = scope:actor }
 							}
-							add_opinion = {
-								target = scope:actor
-								modifier = magic_opinion_negative
-								opinion = -25
+						}
+						bm_minor_lifedrain_success_effect = yes
+					}
+					20 = {
+						desc = bm_blood_drain_minor_fail_tt
+						compare_modifier = {
+							value = scope:duel_value
+							multiplier = -2.67
+							min = -15
+							max = 70
+						}
+						modifier = {
+							add = 20
+							scope:recipient = {
+								NOT = { is_courtier_of = scope:actor }
 							}
 						}
+						bm_minor_lifedrain_fail_effect = yes
 					}
 				}
 			}
@@ -229,7 +360,7 @@
 				if = {
 					limit = { scope:recipient = { is_imprisoned_by = scope:actor } }
 					send_interface_toast = {
-						type = event_toast_effect_good
+						type = bm_event_toast_effect_good
 						title = bm_blood_drain_toast
 						left_icon = scope:actor
 						right_icon = scope:recipient
@@ -263,12 +394,18 @@
 				}
 				else = {
 					duel = {
-						skills = { learning prowess }
+						skills = { intrigue learning }
 						target = scope:recipient
 						50 = {
-							compare_modifier = { value = scope:duel_value multiplier = 2 }
+							desc = bm_blood_drain_stored_success_tt
+							compare_modifier = {
+								value = scope:duel_value
+								multiplier = 2.67
+								min = -45
+								max = 45
+							}
 							send_interface_toast = {
-								type = event_toast_effect_good
+								type = bm_event_toast_effect_good
 								title = bm_blood_drain_toast
 								left_icon = scope:actor
 								right_icon = scope:recipient
@@ -291,10 +428,16 @@
 							}
 						}
 						50 = {
-							compare_modifier = { value = scope:duel_value multiplier = -2 }
+							desc = bm_blood_drain_stored_fail_tt
+							compare_modifier = {
+								value = scope:duel_value
+								multiplier = -2.67
+								min = -45
+								max = 45
+							}
 							send_interface_toast = {
-								type = event_toast_effect_bad
-								title = bm_blood_drain_toast
+								type = bm_event_toast_effect_bad
+								title = bm_blood_drain_stored_fail_toast
 								left_icon = scope:actor
 								right_icon = scope:recipient
 								add_stress = 20
@@ -312,48 +455,45 @@
 					flag = bm_demand_blood_tithe_cooldown
 					years = 2
 				}
-				send_interface_toast = {
-					type = event_toast_effect_good
-					title = bm_blood_drain_toast
-					left_icon = scope:actor
-					right_icon = scope:recipient
-					if = {
-						limit = {
-							scope:recipient = {
-								is_blood_mage_any_tier_trigger = yes
+			}
+			if = {
+				limit = { scope:recipient = { is_imprisoned_by = scope:actor } }
+				bm_tithe_lifedrain_success_effect = yes
+			}
+			else = {
+				scope:actor = {
+					duel = {
+						skills = { intrigue learning }
+						target = scope:recipient
+						50 = {
+							desc = bm_blood_drain_tithe_success_tt
+							compare_modifier = {
+								value = scope:duel_value
+								multiplier = 2.67
+								min = -45
+								max = 45
 							}
+							bm_tithe_lifedrain_success_effect = yes
 						}
-						add_character_modifier = { modifier = lifeforce_modifier_major }
-					}
-					else = {
-						add_character_modifier = { modifier = lifeforce_modifier_minor }
-					}
-					bm_add_blood_mage_xp_effect = {
-						TRACK = fortune
-						XP = 2
-					}
-					scope:recipient = {
-						add_character_modifier = {
-							modifier = recently_lifedrained_modifier
-							years = 1
-						}
-						add_character_modifier = {
-							modifier = lifeforce_modifier_negative_minor
-							years = 1
-						}
-						if = {
-							limit = {
-								NOT = { bm_is_blood_cult_faith_trigger = yes }
-								NOT = { has_trait = loyal }
+						50 = {
+							desc = bm_blood_drain_tithe_fail_tt
+							compare_modifier = {
+								value = scope:duel_value
+								multiplier = -2.67
+								min = -45
+								max = 45
 							}
-							add_opinion = {
-								target = scope:actor
-								modifier = magic_opinion_negative
-								opinion = -25
-							}
+							bm_tithe_lifedrain_fail_effect = yes
 						}
 					}
 				}
+			}
+		}
+		else_if = {
+			limit = { scope:drain_trait = yes }
+			debug_log = "BloodMageInteraction: bm_blood_drain (trait) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
+			scope:actor = {
+				trigger_event = bm_trait_drain.001
 			}
 		}
 		else = {
@@ -385,8 +525,35 @@
 			add = 25
 		}
 		modifier = {
+			scope:drain_minor_empowered = yes
+			scope:actor = { piety >= 200 }
+			add = 10
+		}
+		modifier = {
+			scope:drain_minor_empowered = yes
+			scope:actor = { piety < 200 }
+			factor = 0
+		}
+		modifier = {
 			scope:drain_tithe = yes
 			add = 15
+		}
+		modifier = {
+			scope:drain_trait = yes
+			add = 20
+		}
+		modifier = {
+			scope:drain_trait = yes
+			OR = {
+				scope:actor = {
+					OR = {
+						is_spouse_of = scope:recipient
+						is_consort_of = scope:recipient
+					}
+				}
+				scope:recipient = { is_child_of = scope:actor }
+			}
+			factor = 0
 		}
 
 		# Personality, relationship, and protective vetoes (evaluated last)
@@ -397,8 +564,10 @@
 			NOR = {
 				scope:drain_major = yes
 				scope:drain_minor = yes
+				scope:drain_minor_empowered = yes
 				scope:drain_stored = yes
 				scope:drain_tithe = yes
+				scope:drain_trait = yes
 			}
 			factor = 0
 		}

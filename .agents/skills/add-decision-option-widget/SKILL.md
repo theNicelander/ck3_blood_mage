@@ -6,58 +6,28 @@ description: >-
 
 # Add decision option-list widget
 
-Context: rules `ck3-decisions`, `ck3-scripting`; skill `add-blood-magic-decision`.
-References: mod `common/decisions/cast_magic/bm_attune_lifeforce_decision.txt`; vanilla `10_religious_decisions.txt` (`invite_religious_exiles_decision`), `90_minor_decisions.txt` (`hire_physician_decision`).
+Canonical mod ref: `common/decisions/cast_magic/bm_attune_lifeforce_decision.txt` (vanilla: `invite_religious_exiles_decision`, `hire_physician_decision`).
 
-`show_from_start = yes` renders the option list immediately in the Decision Detail panel (picture, description, scrollable `DecisionOptionItem` list with 45×45 icons, cost, confirm). `no` hides it behind a "Select Action" step.
+`show_from_start = yes` renders scrollable `DecisionOptionItem` list (45×45 icons) immediately in Decision Detail; `no` hides behind "Select Action".
 
-## Syntax
-
-```pdx
-<decision_name> = {
-	picture = { reference = "gfx/interface/illustrations/decisions/<pic>.dds" }
-	decision_group_type = <group>
-	desc = <desc_key>
-	selection_tooltip = <tooltip_key>
-	is_shown = { ... }
-	is_valid_showing_failures_only = { <condition> }
-	cost = { piety = 25 }
-
-	widget = {
-		gui = "decision_view_widget_option_list_generic"
-		controller = decision_option_list_controller
-		decision_to_second_step_button = "<NEXT_STEP_BUTTON_LOC_KEY>"
-		show_from_start = yes
-
-		item = {
-			value = <option_scope_name>
-			localization = <option_scope_name>
-			current_description = <option_scope_name>
-			icon = "gfx/interface/icons/<path>.dds"
-			is_shown = { ... }
-			is_valid = { <validity_trigger> }
-			ai_chance = { value = 50 if = { limit = { <condition> } multiply = 0 } }
-		}
+```ck3
+widget = {
+	gui = "decision_view_widget_option_list_generic"
+	controller = decision_option_list_controller
+	decision_to_second_step_button = "<NEXT_STEP_LOC_KEY>"
+	show_from_start = yes
+	item = {
+		value = <opt_scope>  localization = <opt_scope>  current_description = <opt_scope>
+		icon = "gfx/interface/icons/<path>.dds"  # 45x45 DDS
+		is_shown = { ... }  is_valid = { ... }
+		ai_chance = { value = 50 if = { limit = { ... } multiply = 0 } }  # SCRIPT VALUE syntax!
 	}
-
-	effect = {
-		if = { limit = { scope:<option_a> = yes } <effect_a> }
-		else_if = { limit = { scope:<option_b> = yes } <effect_b> }
-		else = { custom_tooltip = <preview_tt> }   # preview before a click
-		close_view = { view = decisions player = root }
-	}
-
-	ai_check_interval = 12
-	ai_will_do = { ... }
 }
 ```
 
 ## Rules
 
-1. Selecting an item sets `scope:<value> = yes` in `effect`; name options by behaviour (`bm_attune_ancient`).
-2. Loc per item: `<option_key>` (button title) and `<option_key>_tooltip` (hover). Concise; "Lifeforce", not "vitality".
-3. Use native triggers directly in item `is_valid` (e.g. `NOT = { has_character_modifier = ... }`, `piety_level >= 2`). Use `custom_tooltip` ONLY if complex requirements cannot be communicated natively.
-4. Define `<NEXT_STEP_BUTTON_LOC_KEY>` (e.g. `BM_ATTUNE_LIFEFORCE_DECISION_NEXT_STEP_BUTTON`) and `<decision_name>_confirm: "$<KEY>$"`.
-5. `ai_chance` in an `item` is a **script value** (`value`, `if/add`, `multiply`, `min`). Event syntax (`base`, `modifier`) silently fails.
-6. Icons: 45×45 DDS (`gfx/interface/icons/trait_level_tracks/`, `court_position_types/`).
-7. Always `close_view` at the end of `effect`.
+- Selecting item sets `scope:<value> = yes` in `effect`; add `else = { custom_tooltip = <preview_tt> }` for pre-click preview.
+- End `effect` with `close_view = { view = decisions player = root }`.
+- Loc: `<opt_key>`, `<opt_key>_tooltip`, `<NEXT_STEP_LOC_KEY>`, `<decision>_confirm: "$<NEXT_STEP_LOC_KEY>$"`.
+- **`ai_chance` trap**: in `item`, `ai_chance` is a **script value** (`value`, `if/add`, `multiply`, `min`). Event `base`/`modifier` syntax silently fails.

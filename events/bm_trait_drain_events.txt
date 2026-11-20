@@ -5,13 +5,15 @@ bm_trait_drain.001 = {
     title = bm_trait_drain.001.title
     desc = bm_trait_drain.001.desc
     theme = witchcraft
+    override_icon = {
+        reference = "gfx/interface/icons/bm_blood_magic_icon.dds"
+    }
 
     # Intellect drain -- Gain quick / intelligent / genius
     option = {
         name = bm_trait_drain.001.b
         trigger = {
-            scope:recipient = { has_trait = intellect_good }
-            NOT = { has_trait_rank = { trait = intellect_good rank >= 5 } }
+            bm_can_drain_leveled_trait_from_target_trigger = { TRAIT = intellect_good }
         }
         show_as_unavailable = {
             scope:recipient = { has_trait = intellect_good }
@@ -19,6 +21,7 @@ bm_trait_drain.001 = {
 
         # Cost
         add_piety = trait_drain_intellect_cost
+        bm_trait_drain_commit_cost_and_cooldown_effect = yes
         temporary_trait_drain_attempted = yes
 
         # Carry out logic
@@ -38,7 +41,7 @@ bm_trait_drain.001 = {
 
                 # Success! Level up trait!
                 send_interface_toast = {
-                    type = event_toast_effect_good
+                    type = bm_event_toast_effect_good
                     title = bm_trait_drain.001.success
                     left_icon = root
                     right_icon = scope:recipient
@@ -69,8 +72,7 @@ bm_trait_drain.001 = {
     option = {
         name = bm_trait_drain.001.c
         trigger = {
-            scope:recipient = { has_trait = physique_good }
-            NOT = { has_trait_rank = { trait = physique_good rank >= 5 } }
+            bm_can_drain_leveled_trait_from_target_trigger = { TRAIT = physique_good }
         }
         show_as_unavailable = {
             scope:recipient = { has_trait = physique_good }
@@ -78,6 +80,7 @@ bm_trait_drain.001 = {
 
         # Cost
         add_piety = trait_drain_physique_cost
+        bm_trait_drain_commit_cost_and_cooldown_effect = yes
         temporary_trait_drain_attempted = yes
 
         # Carry out logic
@@ -97,7 +100,7 @@ bm_trait_drain.001 = {
 
                 # Success! Level up trait!
                 send_interface_toast = {
-                    type = event_toast_effect_good
+                    type = bm_event_toast_effect_good
                     title = bm_trait_drain.001.success
                     left_icon = root
                     right_icon = scope:recipient
@@ -128,8 +131,7 @@ bm_trait_drain.001 = {
     option = {
         name = bm_trait_drain.001.d
         trigger = {
-            scope:recipient = { has_trait = beauty_good }
-            NOT = { has_trait_rank = { trait = beauty_good rank >= 5 } }
+            bm_can_drain_leveled_trait_from_target_trigger = { TRAIT = beauty_good }
         }
         show_as_unavailable = {
             scope:recipient = { has_trait = beauty_good }
@@ -137,6 +139,7 @@ bm_trait_drain.001 = {
 
         # Cost
         add_piety = trait_drain_beauty_cost
+        bm_trait_drain_commit_cost_and_cooldown_effect = yes
         temporary_trait_drain_attempted = yes
 
         # Carry out logic
@@ -156,7 +159,7 @@ bm_trait_drain.001 = {
 
                 # Success! Level up trait!
                 send_interface_toast = {
-                    type = event_toast_effect_good
+                    type = bm_event_toast_effect_good
                     title = bm_trait_drain.001.success
                     left_icon = root
                     right_icon = scope:recipient
@@ -187,10 +190,9 @@ bm_trait_drain.001 = {
     option = {
         name = bm_trait_drain.001.e
         trigger = {
-            AND = {
-                scope:recipient = { has_trait = fecund }
-                NOT = { has_trait = fecund }
-            }
+            is_blood_mage_tier_2_or_higher_trigger = yes
+            scope:recipient = { has_trait = fecund }
+            NOT = { has_trait = fecund }
         }
         show_as_unavailable = {
             scope:recipient = { has_trait = fecund }
@@ -198,6 +200,7 @@ bm_trait_drain.001 = {
 
         # Cost
         add_piety = trait_drain_base_piety_cost
+        bm_trait_drain_commit_cost_and_cooldown_effect = yes
         temporary_trait_drain_attempted = yes
 
 
@@ -218,7 +221,7 @@ bm_trait_drain.001 = {
 
                 # Success!
                 send_interface_toast = {
-                    type = event_toast_effect_good
+                    type = bm_event_toast_effect_good
                     title = bm_trait_drain.001.success
                     left_icon = root
                     right_icon = scope:recipient
@@ -254,10 +257,9 @@ bm_trait_drain.001 = {
     option = {
         name = bm_trait_drain.001.f
         trigger = {
-            AND = {
-                scope:recipient = { has_trait = giant }
-                NOT = { has_trait = giant }
-            }
+            is_blood_mage_tier_2_or_higher_trigger = yes
+            scope:recipient = { has_trait = giant }
+            NOT = { has_trait = giant }
         }
         show_as_unavailable = {
             scope:recipient = { has_trait = giant }
@@ -265,6 +267,7 @@ bm_trait_drain.001 = {
 
         # Cost
         add_piety = trait_drain_base_piety_cost
+        bm_trait_drain_commit_cost_and_cooldown_effect = yes
         temporary_trait_drain_attempted = yes
 
 
@@ -284,7 +287,7 @@ bm_trait_drain.001 = {
 
                 # Success!
                 send_interface_toast = {
-                    type = event_toast_effect_good
+                    type = bm_event_toast_effect_good
                     title = bm_trait_drain.001.success
                     left_icon = root
                     right_icon = scope:recipient
@@ -320,10 +323,9 @@ bm_trait_drain.001 = {
     option = {
         name = bm_trait_drain.001.g
         trigger = {
-            AND = {
-                scope:recipient = { has_trait = pure_blooded }
-                NOT = { has_trait = pure_blooded }
-            }
+            is_blood_mage_tier_2_or_higher_trigger = yes
+            scope:recipient = { has_trait = pure_blooded }
+            NOT = { has_trait = pure_blooded }
         }
         show_as_unavailable = {
             scope:recipient = { has_trait = pure_blooded }
@@ -331,6 +333,7 @@ bm_trait_drain.001 = {
 
         # Cost
         add_piety = trait_drain_base_piety_cost
+        bm_trait_drain_commit_cost_and_cooldown_effect = yes
         temporary_trait_drain_attempted = yes
 
 
@@ -351,7 +354,7 @@ bm_trait_drain.001 = {
 
                 # Success!
                 send_interface_toast = {
-                    type = event_toast_effect_good
+                    type = bm_event_toast_effect_good
                     title = bm_trait_drain.001.success
                     left_icon = root
                     right_icon = scope:recipient
@@ -387,12 +390,6 @@ bm_trait_drain.001 = {
     option = {
         name = bm_trait_drain.001.z
         ai_chance = { base = 5 }
-        send_interface_toast = {
-            type = event_toast_effect_neutral
-            title = bm_trait_drain.001.z
-            left_icon = root
-            add_character_modifier = { modifier = lifeforce_modifier_major }
-        }
     }
 
     # Portraits

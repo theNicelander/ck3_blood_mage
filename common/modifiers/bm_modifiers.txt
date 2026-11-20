@@ -1,79 +1,42 @@
-﻿# Spend minor lifeforce modfiers
-diplomacy_lifeforce_modifier = {
-    icon = diplomacy_positive
-    diplomacy = 4
-    monthly_diplomacy_lifestyle_xp_gain_add = 10
-}
-martial_lifeforce_modifier = {
-    icon = martial_positive
-    martial = 4
-    monthly_martial_lifestyle_xp_gain_add = 10
-}
-stewardship_lifeforce_modifier = {
-    icon = stewardship_positive
-    stewardship = 4
-    monthly_stewardship_lifestyle_xp_gain_add = 10
-}
-intrigue_lifeforce_modifier = {
-    icon = intrigue_positive
-    intrigue = 4
-    monthly_intrigue_lifestyle_xp_gain_add = 10
-}
-learning_lifeforce_modifier = {
-    icon = learning_positive
-    learning = 4
-    monthly_learning_lifestyle_xp_gain_add = 10
-}
-prowess_lifeforce_modifier = {
-    icon = prowess_positive
-    prowess = 6
-    monthly_martial_lifestyle_xp_gain_add = 10
-}
-exp_lifeforce_modifier = {
-    icon = magic_positive
-    monthly_lifestyle_xp_gain_mult = 0.2
-    monthly_lifestyle_xp_gain_add = 5
-}
-
-drained_beggar_holding = {
-    icon = magic_negative
-    county_opinion_add = -10
+﻿drained_beggar_holding = {
+    icon = bm_blood_magic_negative
+    popular_opinion_add = -10
     stacking = yes
 }
 
 # XP attunement
 ancient_attuned = {
-    icon = blood_magic
+    icon = bm_blood_magic
     monthly_piety = 0.5
     monthly_piety_gain_mult = 0.1
 }
 wisdom_attuned = {
-    icon = blood_magic
+    icon = bm_blood_magic
     monthly_lifestyle_xp_gain_mult = 0.1
 }
 fortune_attuned = {
-    icon = blood_magic
+    icon = bm_blood_magic
     monthly_dynasty_prestige = 0.2
 }
 radiance_attuned = {
-    icon = blood_magic
+    icon = bm_blood_magic
     general_opinion = 5
     monthly_prestige = 0.5
     monthly_prestige_gain_mult = 0.1
 }
 cunning_attuned = {
-    icon = blood_magic
+    icon = bm_blood_magic
     enemy_hostile_scheme_success_chance_add = -10
 }
 fury_attuned = {
-    icon = blood_magic
+    icon = bm_blood_magic
     advantage = 2
     prowess = 2
 }
 
 # Attempted lifedrain
 trait_drain_attempted = {
-    icon = magic_negative
+    icon = bm_blood_magic_negative
     stacking = yes
 
     health = -0.2
@@ -84,7 +47,7 @@ trait_drain_attempted = {
 }
 
 bm_blessed_blood_modifier = {
-    icon = blood_magic
+    icon = bm_blood_magic
     diplomacy = 1
     martial = 1
     stewardship = 1
@@ -95,7 +58,7 @@ bm_blessed_blood_modifier = {
 }
 
 bm_blood_curse_modifier = {
-    icon = magic_negative
+    icon = bm_blood_magic_negative
     diplomacy = -2
     martial = -2
     stewardship = -2
@@ -107,7 +70,7 @@ bm_blood_curse_modifier = {
 }
 
 bm_casting_exhaustion_modifier = {
-    icon = magic_negative
+    icon = bm_blood_magic_negative
     monthly_lifestyle_xp_gain_mult = -0.2
     learning = -2
     prowess = -2

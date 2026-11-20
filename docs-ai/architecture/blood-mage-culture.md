@@ -34,19 +34,18 @@
 #### Alþingi Commonwealth (`bm_tradition_althingi`)
 - **Succession & Assembly:** Unlocks Scandinavian Elective (`scandinavian_elective_enabled = yes`). Preserves mutual exclusivity with `tradition_things`.
 - **Trial by Combat (Hólmganga):** Unlocks Hólmganga duel interaction via native `has_access_to_trials_by_combat = yes`.
-- **Ruler & Capital Modifiers (`character_modifier`):** `character_capital_county_monthly_development_growth_add = 0.10`, `cultural_head_fascination_mult = 0.25`.
-- **County Development & Control (`county_modifier`):** `development_growth = 0.05` (+0.05/mo flat development growth), `development_growth_factor = 0.25` (+25% development growth factor), and `monthly_county_control_growth_add = 0.10` (+0.10/mo county control growth).
+- **Ruler & Capital Modifiers (`character_modifier`):** `character_capital_county_monthly_prosperity_growth_add = 0.05`, `cultural_head_fascination_mult = 0.25`.
+- **County Prosperity & Control (`county_modifier`):** `prosperity_growth = 0.05` (+0.05/mo flat prosperity growth), `prosperity_growth_factor = 0.2` (+20% prosperity growth factor), `control_baseline_add = 5` (+5 control baseline), and `monthly_control_change_when_below_baseline_add = 0.10` (+0.10/mo county control growth).
 
 #### Verbúðir (`bm_tradition_verbudir`)
-- **Tribal Maritime Powerhouse:** Replaces `tradition_maritime_mercantilism`. Fully pickable and functional for Tribal cultures from 867 (`trade_ports_enabled_for_tribals = yes`, `next_level_trade_ports = yes`). Mutually exclusive with `tradition_maritime_mercantilism` and `tradition_fishermen`.
-- **Tradeport Harbor Bonuses:** Hooks cleanly into Tradeport tiers 1–8:
-  - Stationed Men-at-Arms bonus via `trade_ports_stationed_maa_bonus = yes`.
-  - Monthly County Control Growth (+0.10 to +0.25) via native `trade_ports_give_control_growth = yes`.
-  - Levies (+4% to +16%) via native `trade_ports_give_levies = yes`.
-  - Coastal Holdings tax bonus across castles, cities, and temples via `maritime_mercantilism_coastal_holdings = yes`.
+- **Tribal Maritime Powerhouse:** Replaces `tradition_maritime_mercantilism`. Fully pickable and functional for Tribal cultures from 867 (`port_district_enabled_for_tribals = yes`, `next_level_port_districts = yes`). Mutually exclusive with `tradition_maritime_mercantilism` and `tradition_fishermen`.
+- **Port District Harbor Bonuses:** Hooks cleanly into Port Districts (`pb_port_01`–`04`):
+  - Stationed Men-at-Arms bonus via `port_district_stationed_maa_bonus = yes`.
+  - Extra Port building slot & MaA control via `seafarers_port_building_slot = yes` and `seafarers_port_maa_control = yes`.
+  - Coastal District tax bonus across castles, cities, and temples via `maritime_mercantilism_coastal_districts = yes`.
   - River sailing capability via `can_travel_along_rivers = yes`.
-- **Character Travel Modifiers (`character_modifier`):** `embarkation_cost_mult = -0.75` (-75% embarkation cost), `sea_travel_danger = medium_sea_danger_reduction`, and `coastal_sea_travel_danger = medium_sea_danger_reduction`.
-- **County Economy & Military (`county_modifier`):** `monthly_county_control_growth_add = 0.05` (+0.05/mo control growth), `tax_mult = 0.20` (+20% taxes), `levy_size = 0.20` (+20% levies), and `supply_limit_mult = 0.25` (+25% supply limit).
+- **Character Travel & Trade Modifiers (`character_modifier`):** `embarkation_cost_mult = -0.5` (-50% embarkation cost), `sea_travel_danger = medium_sea_danger_reduction`, `coastal_sea_travel_danger = medium_sea_danger_reduction`, `max_trade_goods_on_route = 1`, `trade_capacity_mult = 0.10`, `trade_route_length_add = 3`, `trade_category_meat_xp_gain_mult = 0.20`, and `trade_good_fish_sell_price_mult = 0.02`.
+- **County Economy & Military (`county_modifier`):** `trade_good_fish_production_mult = 0.20` (+20% fish production), plus `fishermen_productivity_bonus = yes` parameter.
 
 ### 2. Name List & Patronymics (`bm_name_list_icelandic`)
 

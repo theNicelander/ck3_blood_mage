@@ -1,6 +1,6 @@
 ﻿# Personal Modifier
 lifeforce_modifier_superior = {
-    icon = health_positive
+    icon = bm_blood_magic_positive
     stacking = yes
 
     health = 0.6
@@ -10,7 +10,7 @@ lifeforce_modifier_superior = {
 }
 
 lifeforce_modifier_major = {
-    icon = health_positive
+    icon = bm_blood_magic_positive
     stacking = yes
 
     health = 0.3
@@ -20,7 +20,7 @@ lifeforce_modifier_major = {
 }
 
 lifeforce_modifier_minor = {
-    icon = health_positive
+    icon = bm_blood_magic_positive
     stacking = yes
 
     health = 0.1
@@ -30,10 +30,9 @@ lifeforce_modifier_minor = {
 }
 
 lifeforce_modifier_radiant = {
-    icon = diplomacy_positive
+    icon = bm_blood_magic_positive
     stacking = yes
 
-    short_reign_duration_mult = -0.05
     long_reign_bonus_mult = 0.05
     legitimacy_gain_mult = 0.05
     monthly_prestige_gain_mult = 0.05
@@ -46,11 +45,12 @@ lifeforce_modifier_radiant = {
 }
 
 lifeforce_modifier_furious = {
-    icon = prowess_positive
+    icon = bm_blood_magic_positive
     stacking = yes
 
     prowess = 1
     movement_speed = 0.05
+    raid_speed = 0.05
     army_damage_mult = 0.05
     siege_phase_time = -0.05
     knight_effectiveness_per_prowess = 0.001
@@ -60,23 +60,27 @@ lifeforce_modifier_furious = {
 }
 
 lifeforce_modifier_fortunate = {
-    icon = stewardship_positive
+    icon = bm_blood_magic_positive
     stacking = yes
 
     domain_tax_mult = 0.02
     build_gold_cost = -0.03
     holding_build_gold_cost = -0.03
     domicile_build_gold_cost = -0.03
+    district_build_gold_cost = -0.03
     build_speed = -0.03
     holding_build_speed = -0.03
     domicile_build_speed = -0.03
-    development_growth_factor = 0.03
+    district_build_speed = -0.03
+    prosperity_growth_factor = 0.03
+    trade_competitiveness_mult = 0.03
+    trade_capacity_mult = 0.03
     men_at_arms_maintenance = -0.03
     monthly_stewardship_lifestyle_xp_gain_add = 3
 }
 
 lifeforce_modifier_cunning = {
-    icon = intrigue_positive
+    icon = bm_blood_magic_positive
     stacking = yes
 
     enemy_hostile_scheme_success_chance_max_add = -3
@@ -90,7 +94,7 @@ lifeforce_modifier_cunning = {
 }
 
 lifeforce_modifier_wise = {
-    icon = learning_positive
+    icon = bm_blood_magic_positive
     stacking = yes
 
     monthly_piety_gain_mult = 0.05
@@ -104,7 +108,7 @@ lifeforce_modifier_wise = {
 }
 
 lifeforce_modifier_ancient = {
-    icon = magic_positive
+    icon = bm_blood_magic_positive
     stacking = yes
 
     fertility = 0.05
@@ -120,7 +124,7 @@ lifeforce_modifier_ancient = {
 }
 
 lifeforce_modifier_negative_superior = {
-    icon = health_negative
+    icon = bm_blood_magic_negative
     stacking = yes
 
     health = -0.6
@@ -131,7 +135,7 @@ lifeforce_modifier_negative_superior = {
 }
 
 lifeforce_modifier_negative_major = {
-    icon = health_negative
+    icon = bm_blood_magic_negative
     stacking = yes
 
     health = -0.3
@@ -142,7 +146,7 @@ lifeforce_modifier_negative_major = {
 }
 
 lifeforce_modifier_negative_minor = {
-    icon = health_negative
+    icon = bm_blood_magic_negative
     stacking = yes
 
     health = -0.1
@@ -153,7 +157,7 @@ lifeforce_modifier_negative_minor = {
 }
 
 lifedrained_modifier = {
-    icon = health_negative
+    icon = bm_blood_magic_negative
     stacking = yes
 
     health = -0.5
@@ -164,7 +168,7 @@ lifedrained_modifier = {
 }
 
 recently_lifedrained_modifier = {
-    icon = health_negative
+    icon = bm_blood_magic_negative
 
     health = -0.5
     life_expectancy = -10
@@ -174,7 +178,7 @@ recently_lifedrained_modifier = {
 }
 
 trait_drained_attempted_modifier = {
-    icon = health_negative
+    icon = bm_blood_magic_negative
     stacking = yes
 
     health = -0.5

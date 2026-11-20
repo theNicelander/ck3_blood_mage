@@ -127,7 +127,7 @@
 			value = bm_superior_blood_rune
 			current_description = bm_superior_blood_rune
 			localization = bm_superior_blood_rune
-			icon = "gfx/interface/icons/trait_level_tracks/ancient.dds"
+			icon = "gfx/interface/icons/bm_blood_magic_icon.dds"
 			is_shown = {
 				has_character_modifier = major_blood_rune_modifier
 				NOT = { has_character_modifier = superior_blood_rune_modifier }
@@ -197,7 +197,7 @@
 			value = bm_superior_create_blood_golem
 			current_description = bm_superior_create_blood_golem
 			localization = bm_superior_create_blood_golem
-			icon = "gfx/interface/icons/traits/bm_blood_mage.dds"
+			icon = "gfx/interface/icons/bm_blood_magic_icon.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
@@ -223,7 +223,7 @@
 			value = bm_superior_split
 			current_description = bm_superior_split
 			localization = bm_superior_split
-			icon = "gfx/interface/icons/traits/bm_interactions.dds"
+			icon = "gfx/interface/icons/bm_blood_magic_icon.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
@@ -248,29 +248,50 @@
 				}
 			}
 		}
+
+		# Cast Blood Blessing
+		item = {
+			value = bm_superior_blood_blessing
+			current_description = bm_superior_blood_blessing
+			localization = bm_superior_blood_blessing
+			icon = "gfx/interface/icons/trait_level_tracks/wisdom.dds"
+			is_shown = {
+				is_blood_mage_any_tier_trigger = yes
+			}
+			is_valid = {
+				custom_tooltip = {
+					text = bm_blessing_cooldown_tt
+					NOT = { has_character_flag = bm_blessing_cooldown }
+				}
+				bm_has_any_upgradeable_blessing_trigger = { CASTER = root TARGET = root }
+			}
+			ai_chance = {
+				value = 0
+			}
+		}
 	}
 
 	effect = {
 		if = {
 			limit = { scope:bm_superior_master_education = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_superior_decision (master_education) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_superior_decision (master_education)"
 			trigger_event = { id = bm_education_master.001 }
 		}
 		else_if = {
 			limit = { scope:bm_superior_new_education = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_superior_decision (new_education) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_superior_decision (new_education)"
 			trigger_event = { id = bm_education_new.001 }
 		}
 		else_if = {
 			limit = { scope:bm_superior_blood_rune = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_superior_decision (blood_rune) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_superior_decision (blood_rune)"
 			add_piety = -400
 			add_character_flag = {
 				flag = bm_blood_rune_cooldown
 				years = 3
 			}
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_blood_rune_superior_toast
 				left_icon = root
 				bm_upgrade_blood_rune_to_superior_effect = yes
@@ -284,12 +305,12 @@
 		}
 		else_if = {
 			limit = { scope:bm_superior_manifest_traits = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_superior_decision (manifest_traits) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_superior_decision (manifest_traits)"
 			trigger_event = { id = bm_channel_manifest_traits.002 }
 		}
 		else_if = {
 			limit = { scope:bm_superior_create_blood_golem = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_superior_decision (create_blood_golem) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_superior_decision (create_blood_golem)"
 			add_piety = -500
 			add_character_flag = {
 				flag = bm_blood_golem_cooldown
@@ -304,14 +325,14 @@
 		}
 		else_if = {
 			limit = { scope:bm_superior_split = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_superior_decision (split) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_superior_decision (split)"
 			add_piety = -350
 			add_character_flag = {
 				flag = bm_split_superior_lifeforce_cooldown
 				days = 180
 			}
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_split_superior_lifeforce_toast
 				left_icon = root
 				remove_character_modifier = lifeforce_modifier_superior
@@ -321,6 +342,15 @@
 					TRACK = ancient
 					XP = 2
 				}
+			}
+		}
+		else_if = {
+			limit = { scope:bm_superior_blood_blessing = yes }
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_superior_decision (blood_blessing)"
+			open_interaction_window = {
+				interaction = bm_cast_blood_blessing_interaction
+				actor = root
+				recipient = root
 			}
 		}
 		else = {
@@ -384,7 +414,7 @@ bm_cast_blood_magic_major_decision = {
 			value = bm_major_condense
 			current_description = bm_major_condense
 			localization = bm_major_condense
-			icon = "gfx/interface/icons/traits/bm_interactions.dds"
+			icon = "gfx/interface/icons/bm_blood_magic_icon.dds"
 			is_shown = {
 				is_blood_mage_tier_2_or_higher_trigger = yes
 			}
@@ -418,7 +448,7 @@ bm_cast_blood_magic_major_decision = {
 			value = bm_major_split
 			current_description = bm_major_split
 			localization = bm_major_split
-			icon = "gfx/interface/icons/traits/bm_interactions.dds"
+			icon = "gfx/interface/icons/bm_blood_magic_icon.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
@@ -461,10 +491,7 @@ bm_cast_blood_magic_major_decision = {
 					text = bm_improve_education_devotion_req
 					bm_can_enhance_education_devotion_trigger = yes
 				}
-				custom_tooltip = {
-					text = bm_improve_education_piety_req
-					piety >= scaled_education_enhancement_cost
-				}
+				piety >= scaled_education_enhancement_cost
 				custom_tooltip = {
 					text = bm_improve_education_trait_req
 					OR = {
@@ -510,7 +537,7 @@ bm_cast_blood_magic_major_decision = {
 			value = bm_major_blood_rune
 			current_description = bm_major_blood_rune
 			localization = bm_major_blood_rune
-			icon = "gfx/interface/icons/trait_level_tracks/ancient.dds"
+			icon = "gfx/interface/icons/bm_blood_magic_icon.dds"
 			is_shown = {
 				has_character_modifier = minor_blood_rune_modifier
 				NOT = { has_character_modifier = major_blood_rune_modifier }
@@ -568,19 +595,40 @@ bm_cast_blood_magic_major_decision = {
 				}
 			}
 		}
+
+		# Cast Blood Blessing
+		item = {
+			value = bm_major_blood_blessing
+			current_description = bm_major_blood_blessing
+			localization = bm_major_blood_blessing
+			icon = "gfx/interface/icons/trait_level_tracks/wisdom.dds"
+			is_shown = {
+				is_blood_mage_any_tier_trigger = yes
+			}
+			is_valid = {
+				custom_tooltip = {
+					text = bm_blessing_cooldown_tt
+					NOT = { has_character_flag = bm_blessing_cooldown }
+				}
+				bm_has_any_upgradeable_blessing_trigger = { CASTER = root TARGET = root }
+			}
+			ai_chance = {
+				value = 0
+			}
+		}
 	}
 
 	effect = {
 		if = {
 			limit = { scope:bm_major_condense = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (condense) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (condense)"
 			add_piety = -350
 			add_character_flag = {
 				flag = bm_condense_major_lifeforce_cooldown
 				days = 180
 			}
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_condense_superior_lifeforce_toast
 				left_icon = root
 				remove_character_modifier = lifeforce_modifier_major
@@ -593,14 +641,14 @@ bm_cast_blood_magic_major_decision = {
 		}
 		else_if = {
 			limit = { scope:bm_major_split = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (split) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (split)"
 			add_piety = -150
 			add_character_flag = {
 				flag = bm_split_major_lifeforce_cooldown
 				days = 180
 			}
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_split_major_lifeforce_toast
 				left_icon = root
 				remove_character_modifier = lifeforce_modifier_major
@@ -614,19 +662,19 @@ bm_cast_blood_magic_major_decision = {
 		}
 		else_if = {
 			limit = { scope:bm_major_improve_education = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (improve_education) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (improve_education)"
 			trigger_event = { id = bm_education_enhancement.001 }
 		}
 		else_if = {
 			limit = { scope:bm_major_blood_rune = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (blood_rune) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (blood_rune)"
 			add_piety = -200
 			add_character_flag = {
 				flag = bm_blood_rune_cooldown
 				years = 3
 			}
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_blood_rune_major_toast
 				left_icon = root
 				bm_upgrade_blood_rune_to_major_effect = yes
@@ -640,8 +688,17 @@ bm_cast_blood_magic_major_decision = {
 		}
 		else_if = {
 			limit = { scope:bm_major_manifest_traits = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (manifest_traits) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (manifest_traits)"
 			trigger_event = { id = bm_channel_manifest_traits.001 }
+		}
+		else_if = {
+			limit = { scope:bm_major_blood_blessing = yes }
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (blood_blessing)"
+			open_interaction_window = {
+				interaction = bm_cast_blood_blessing_interaction
+				actor = root
+				recipient = root
+			}
 		}
 		else = {
 			custom_tooltip = bm_cast_blood_magic_major_decision_tooltip
@@ -688,7 +745,10 @@ bm_cast_blood_magic_minor_decision = {
 	}
 
 	is_valid_showing_failures_only = {
-		has_character_modifier = lifeforce_modifier_minor
+		OR = {
+			has_character_modifier = lifeforce_modifier_minor
+			bm_has_any_attunement_trigger = no
+		}
 	}
 
 	widget = {
@@ -696,28 +756,6 @@ bm_cast_blood_magic_minor_decision = {
 		controller = decision_option_list_controller
 		decision_to_second_step_button = "BM_CAST_BLOOD_MAGIC_NEXT_STEP_BUTTON"
 		show_from_start = yes
-
-		# Channel Minor Lifeforce
-		item = {
-			value = bm_minor_channel
-			current_description = bm_minor_channel
-			localization = bm_minor_channel
-			icon = "gfx/interface/icons/trait_level_tracks/wisdom.dds"
-			is_shown = {
-				is_blood_mage_any_tier_trigger = yes
-			}
-			is_valid = {
-				piety >= 75
-				has_character_modifier = lifeforce_modifier_minor
-			}
-			ai_chance = {
-				value = 10
-				if = {
-					limit = { health <= fine_health }
-					multiply = 0
-				}
-			}
-		}
 
 		# Purge Bodily Impurities
 		item = {
@@ -767,7 +805,7 @@ bm_cast_blood_magic_minor_decision = {
 			value = bm_minor_condense
 			current_description = bm_minor_condense
 			localization = bm_minor_condense
-			icon = "gfx/interface/icons/traits/bm_interactions.dds"
+			icon = "gfx/interface/icons/bm_blood_magic_icon.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
@@ -797,7 +835,7 @@ bm_cast_blood_magic_minor_decision = {
 			value = bm_minor_blood_rune
 			current_description = bm_minor_blood_rune
 			localization = bm_minor_blood_rune
-			icon = "gfx/interface/icons/trait_level_tracks/ancient.dds"
+			icon = "gfx/interface/icons/bm_blood_magic_icon.dds"
 			is_shown = {
 				NOT = { bm_has_blood_rune_trigger = yes }
 			}
@@ -823,7 +861,7 @@ bm_cast_blood_magic_minor_decision = {
 			value = bm_minor_attune
 			current_description = bm_minor_attune
 			localization = bm_minor_attune
-			icon = "gfx/interface/icons/trait_level_tracks/ancient.dds"
+			icon = "gfx/interface/icons/bm_blood_magic_icon.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
@@ -832,38 +870,46 @@ bm_cast_blood_magic_minor_decision = {
 					text = bm_attune_lifeforce_cooldown_tt
 					NOT = { has_character_flag = bm_attune_lifeforce_cooldown }
 				}
-				piety >= 50
-				has_character_modifier = lifeforce_modifier_minor
+				trigger_if = {
+					limit = { bm_has_any_attunement_trigger = yes }
+					piety >= 50
+					has_character_modifier = lifeforce_modifier_minor
+				}
 			}
 			ai_chance = {
-				value = 10
-				if = {
-					limit = { bm_has_any_attunement_trigger = no }
-					add = 90
+				value = 0
+			}
+		}
+
+		# Cast Blood Blessing
+		item = {
+			value = bm_minor_blood_blessing
+			current_description = bm_minor_blood_blessing
+			localization = bm_minor_blood_blessing
+			icon = "gfx/interface/icons/trait_level_tracks/wisdom.dds"
+			is_shown = {
+				is_blood_mage_any_tier_trigger = yes
+			}
+			is_valid = {
+				custom_tooltip = {
+					text = bm_blessing_cooldown_tt
+					NOT = { has_character_flag = bm_blessing_cooldown }
 				}
-				if = {
-					limit = { health <= fine_health }
-					multiply = 0
-				}
+				bm_has_any_upgradeable_blessing_trigger = { CASTER = root TARGET = root }
+			}
+			ai_chance = {
+				value = 0
 			}
 		}
 	}
 
 	effect = {
 		if = {
-			limit = { scope:bm_minor_channel = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (channel) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
-			add_piety = -75
-			remove_character_modifier = lifeforce_modifier_minor
-			add_xp_wisdom = yes
-			trigger_event = { id = bm_channel_lifeforce_wisdom_minor.001 }
-		}
-		else_if = {
 			limit = { scope:bm_minor_purge = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (purge) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (purge)"
 			add_piety = -50
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_purge_impurities_toast
 				left_icon = root
 				remove_character_modifier = lifeforce_modifier_minor
@@ -911,14 +957,14 @@ bm_cast_blood_magic_minor_decision = {
 		}
 		else_if = {
 			limit = { scope:bm_minor_condense = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (condense) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (condense)"
 			add_piety = -150
 			add_character_flag = {
 				flag = bm_condense_minor_lifeforce_cooldown
 				days = 180
 			}
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_condense_lifeforce_toast
 				left_icon = root
 				remove_character_modifier = lifeforce_modifier_minor
@@ -931,13 +977,13 @@ bm_cast_blood_magic_minor_decision = {
 		}
 		else_if = {
 			limit = { scope:bm_minor_blood_rune = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (blood_rune) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (blood_rune)"
 			add_character_flag = {
 				flag = bm_blood_rune_cooldown
 				years = 3
 			}
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_blood_rune_minor_toast
 				left_icon = root
 				add_character_modifier = {
@@ -953,8 +999,21 @@ bm_cast_blood_magic_minor_decision = {
 		}
 		else_if = {
 			limit = { scope:bm_minor_attune = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (attune) | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
-			trigger_event = { id = bm_attune_lifeforce.001 }
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (attune)"
+			open_interaction_window = {
+				interaction = bm_attune_lifeforce_interaction
+				actor = root
+				recipient = root
+			}
+		}
+		else_if = {
+			limit = { scope:bm_minor_blood_blessing = yes }
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (blood_blessing)"
+			open_interaction_window = {
+				interaction = bm_cast_blood_blessing_interaction
+				actor = root
+				recipient = root
+			}
 		}
 		else = {
 			custom_tooltip = bm_cast_blood_magic_minor_decision_tooltip

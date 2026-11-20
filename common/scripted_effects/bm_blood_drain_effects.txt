@@ -1,0 +1,138 @@
+﻿bm_minor_lifedrain_success_effect = {
+	scope:actor = {
+		send_interface_toast = {
+			type = bm_event_toast_effect_good
+			title = bm_blood_drain_toast
+			left_icon = scope:actor
+			right_icon = scope:recipient
+			add_character_modifier = { modifier = lifeforce_modifier_minor }
+			bm_add_blood_mage_xp_effect = {
+				TRACK = cunning
+				XP = 1
+			}
+			scope:recipient = {
+				add_character_flag = {
+					flag = bm_minor_lifedrain_cooldown
+					months = 3
+				}
+				increase_wounds_effect = { REASON = lifedrain_reason }
+				if = {
+					limit = {
+						NOT = { bm_is_blood_cult_faith_trigger = yes }
+						NOT = { has_trait = loyal }
+					}
+					add_opinion = {
+						target = scope:actor
+						modifier = magic_opinion_negative
+						opinion = -25
+					}
+				}
+			}
+		}
+	}
+}
+
+bm_minor_lifedrain_fail_effect = {
+	scope:actor = {
+		send_interface_toast = {
+			type = bm_event_toast_effect_bad
+			title = bm_blood_drain_minor_fail_toast
+			left_icon = scope:actor
+			right_icon = scope:recipient
+			add_stress = 20
+			scope:recipient = {
+				add_character_flag = {
+					flag = bm_minor_lifedrain_cooldown
+					months = 3
+				}
+				if = {
+					limit = {
+						NOT = { bm_is_blood_cult_faith_trigger = yes }
+						NOT = { has_trait = loyal }
+					}
+					add_opinion = {
+						target = scope:actor
+						modifier = magic_opinion_negative
+						opinion = -25
+					}
+				}
+			}
+		}
+	}
+}
+
+bm_tithe_lifedrain_success_effect = {
+	scope:actor = {
+		send_interface_toast = {
+			type = bm_event_toast_effect_good
+			title = bm_blood_drain_toast
+			left_icon = scope:actor
+			right_icon = scope:recipient
+			if = {
+				limit = {
+					scope:recipient = {
+						is_blood_mage_any_tier_trigger = yes
+					}
+				}
+				add_character_modifier = { modifier = lifeforce_modifier_major }
+			}
+			else = {
+				add_character_modifier = { modifier = lifeforce_modifier_minor }
+			}
+			bm_add_blood_mage_xp_effect = {
+				TRACK = fortune
+				XP = 2
+			}
+			scope:recipient = {
+				add_character_modifier = {
+					modifier = recently_lifedrained_modifier
+					years = 1
+				}
+				add_character_modifier = {
+					modifier = lifeforce_modifier_negative_minor
+					years = 1
+				}
+				if = {
+					limit = {
+						NOT = { bm_is_blood_cult_faith_trigger = yes }
+						NOT = { has_trait = loyal }
+					}
+					add_opinion = {
+						target = scope:actor
+						modifier = magic_opinion_negative
+						opinion = -25
+					}
+				}
+			}
+		}
+	}
+}
+
+bm_tithe_lifedrain_fail_effect = {
+	scope:actor = {
+		send_interface_toast = {
+			type = bm_event_toast_effect_bad
+			title = bm_blood_drain_tithe_fail_toast
+			left_icon = scope:actor
+			right_icon = scope:recipient
+			add_stress = 20
+			scope:recipient = {
+				add_character_modifier = {
+					modifier = recently_lifedrained_modifier
+					years = 1
+				}
+				if = {
+					limit = {
+						NOT = { bm_is_blood_cult_faith_trigger = yes }
+						NOT = { has_trait = loyal }
+					}
+					add_opinion = {
+						target = scope:actor
+						modifier = magic_opinion_negative
+						opinion = -25
+					}
+				}
+			}
+		}
+	}
+}

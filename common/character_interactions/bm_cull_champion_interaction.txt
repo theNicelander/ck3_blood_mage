@@ -64,7 +64,7 @@
 		debug_log = "BloodMageInteraction: bm_cull_champion | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
 		scope:actor = {
 			send_interface_toast = {
-				type = event_toast_effect_good
+				type = bm_event_toast_effect_good
 				title = bm_cull_champion_toast
 				left_icon = scope:actor
 				right_icon = scope:recipient

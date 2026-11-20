@@ -1,0 +1,170 @@
+﻿# Permanent Tiered Blood Blessings (Minor / Major / Superior)
+
+@bm_blessing_stat_minor = 1
+@bm_blessing_stat_major = 3
+@bm_blessing_stat_superior = 5
+
+@bm_blessing_xp_add_minor = 5
+@bm_blessing_xp_add_major = 10
+@bm_blessing_xp_add_superior = 15
+
+@bm_blessing_xp_mult_minor = 0.05
+@bm_blessing_xp_mult_major = 0.10
+@bm_blessing_xp_mult_superior = 0.20
+
+@bm_blessing_fertility_minor = 0.05
+@bm_blessing_fertility_major = 0.15
+@bm_blessing_fertility_superior = 0.25
+
+@bm_blessing_fertile_years_minor = 2
+@bm_blessing_fertile_years_major = 4
+@bm_blessing_fertile_years_superior = 8
+
+# 1. Blessing of Radiance (Diplomacy)
+bm_blessing_radiance_minor_modifier = {
+	icon = bm_covenant_radiance
+	diplomacy = @bm_blessing_stat_minor
+	monthly_diplomacy_lifestyle_xp_gain_add = @bm_blessing_xp_add_minor
+	monthly_lifestyle_xp_gain_mult = @bm_blessing_xp_mult_minor
+}
+
+bm_blessing_radiance_major_modifier = {
+	icon = bm_covenant_radiance
+	diplomacy = @bm_blessing_stat_major
+	monthly_diplomacy_lifestyle_xp_gain_add = @bm_blessing_xp_add_major
+	monthly_lifestyle_xp_gain_mult = @bm_blessing_xp_mult_major
+}
+
+bm_blessing_radiance_superior_modifier = {
+	icon = bm_covenant_radiance
+	diplomacy = @bm_blessing_stat_superior
+	monthly_diplomacy_lifestyle_xp_gain_add = @bm_blessing_xp_add_superior
+	monthly_lifestyle_xp_gain_mult = @bm_blessing_xp_mult_superior
+}
+
+# 2. Blessing of Fortune (Stewardship)
+bm_blessing_fortune_minor_modifier = {
+	icon = bm_covenant_fortune
+	stewardship = @bm_blessing_stat_minor
+	monthly_stewardship_lifestyle_xp_gain_add = @bm_blessing_xp_add_minor
+	monthly_lifestyle_xp_gain_mult = @bm_blessing_xp_mult_minor
+	trade_capacity_mult = 0.05
+}
+
+bm_blessing_fortune_major_modifier = {
+	icon = bm_covenant_fortune
+	stewardship = @bm_blessing_stat_major
+	monthly_stewardship_lifestyle_xp_gain_add = @bm_blessing_xp_add_major
+	monthly_lifestyle_xp_gain_mult = @bm_blessing_xp_mult_major
+	trade_capacity_mult = 0.10
+	max_trade_goods_on_route = 1
+}
+
+bm_blessing_fortune_superior_modifier = {
+	icon = bm_covenant_fortune
+	stewardship = @bm_blessing_stat_superior
+	monthly_stewardship_lifestyle_xp_gain_add = @bm_blessing_xp_add_superior
+	monthly_lifestyle_xp_gain_mult = @bm_blessing_xp_mult_superior
+	trade_capacity_mult = 0.20
+	max_trade_goods_on_route = 1
+}
+
+# 3. Blessing of Fury (Martial)
+bm_blessing_fury_minor_modifier = {
+	icon = bm_covenant_fury
+	martial = @bm_blessing_stat_minor
+	monthly_martial_lifestyle_xp_gain_add = @bm_blessing_xp_add_minor
+	monthly_lifestyle_xp_gain_mult = @bm_blessing_xp_mult_minor
+}
+
+bm_blessing_fury_major_modifier = {
+	icon = bm_covenant_fury
+	martial = @bm_blessing_stat_major
+	monthly_martial_lifestyle_xp_gain_add = @bm_blessing_xp_add_major
+	monthly_lifestyle_xp_gain_mult = @bm_blessing_xp_mult_major
+}
+
+bm_blessing_fury_superior_modifier = {
+	icon = bm_covenant_fury
+	martial = @bm_blessing_stat_superior
+	monthly_martial_lifestyle_xp_gain_add = @bm_blessing_xp_add_superior
+	monthly_lifestyle_xp_gain_mult = @bm_blessing_xp_mult_superior
+}
+
+# 4. Blessing of Cunning (Intrigue)
+bm_blessing_cunning_minor_modifier = {
+	icon = bm_covenant_cunning
+	intrigue = @bm_blessing_stat_minor
+	monthly_intrigue_lifestyle_xp_gain_add = @bm_blessing_xp_add_minor
+	monthly_lifestyle_xp_gain_mult = @bm_blessing_xp_mult_minor
+}
+
+bm_blessing_cunning_major_modifier = {
+	icon = bm_covenant_cunning
+	intrigue = @bm_blessing_stat_major
+	monthly_intrigue_lifestyle_xp_gain_add = @bm_blessing_xp_add_major
+	monthly_lifestyle_xp_gain_mult = @bm_blessing_xp_mult_major
+}
+
+bm_blessing_cunning_superior_modifier = {
+	icon = bm_covenant_cunning
+	intrigue = @bm_blessing_stat_superior
+	monthly_intrigue_lifestyle_xp_gain_add = @bm_blessing_xp_add_superior
+	monthly_lifestyle_xp_gain_mult = @bm_blessing_xp_mult_superior
+}
+
+# 5. Blessing of Wisdom (Learning)
+bm_blessing_wisdom_minor_modifier = {
+	icon = bm_covenant_wisdom
+	learning = @bm_blessing_stat_minor
+	monthly_learning_lifestyle_xp_gain_add = @bm_blessing_xp_add_minor
+	monthly_lifestyle_xp_gain_mult = @bm_blessing_xp_mult_minor
+}
+
+bm_blessing_wisdom_major_modifier = {
+	icon = bm_covenant_wisdom
+	learning = @bm_blessing_stat_major
+	monthly_learning_lifestyle_xp_gain_add = @bm_blessing_xp_add_major
+	monthly_lifestyle_xp_gain_mult = @bm_blessing_xp_mult_major
+}
+
+bm_blessing_wisdom_superior_modifier = {
+	icon = bm_covenant_wisdom
+	learning = @bm_blessing_stat_superior
+	monthly_learning_lifestyle_xp_gain_add = @bm_blessing_xp_add_superior
+	monthly_lifestyle_xp_gain_mult = @bm_blessing_xp_mult_superior
+}
+
+# 6. Blessing of Ancient (All-Lifestyle XP & Fertility)
+bm_blessing_ancient_minor_modifier = {
+	icon = bm_covenant_ancient
+	monthly_lifestyle_xp_gain_add = @bm_blessing_xp_add_minor
+	monthly_lifestyle_xp_gain_mult = @bm_blessing_xp_mult_minor
+	fertility = @bm_blessing_fertility_minor
+	years_of_fertility = @bm_blessing_fertile_years_minor
+}
+
+bm_blessing_ancient_major_modifier = {
+	icon = bm_covenant_ancient
+	monthly_lifestyle_xp_gain_add = @bm_blessing_xp_add_major
+	monthly_lifestyle_xp_gain_mult = @bm_blessing_xp_mult_major
+	fertility = @bm_blessing_fertility_major
+	years_of_fertility = @bm_blessing_fertile_years_major
+}
+
+bm_blessing_ancient_superior_modifier = {
+	icon = bm_covenant_ancient
+	monthly_lifestyle_xp_gain_add = @bm_blessing_xp_add_superior
+	monthly_lifestyle_xp_gain_mult = @bm_blessing_xp_mult_superior
+	fertility = @bm_blessing_fertility_superior
+	years_of_fertility = @bm_blessing_fertile_years_superior
+}
+
+# Heir Anointment (Permanent until succession)
+bm_anointed_heir_modifier = {
+	icon = bm_blood_magic
+	health = 1
+	dynasty_opinion = 15
+	monthly_lifestyle_xp_gain_mult = 0.25
+	short_reign_duration_mult = -0.35
+}

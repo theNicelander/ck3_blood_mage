@@ -29,7 +29,7 @@
 	}
 
 	effect = {
-		debug_log = "BloodMageDecision: bm_ritual_spar_decision | Actor: [root.GetShortUINameNoTooltip] (ID:[root.GetID])"
+		debug_log = "BloodMageDecision: bm_ritual_spar_decision"
 		remove_character_modifier = lifeforce_modifier_minor
 		# Sample up to 3 candidates proportionally weighted by prowess
 		random_knight = {

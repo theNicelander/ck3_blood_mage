@@ -5,6 +5,9 @@ bm_reshape_personality.0001 = {
 	title = bm_reshape_personality.0001.title
 	desc = bm_reshape_personality.0001.desc
 	theme = witchcraft
+	override_icon = {
+		reference = "gfx/interface/icons/bm_blood_magic_icon.dds"
+	}
 
 	left_portrait = {
 		character = root
@@ -133,26 +136,9 @@ bm_reshape_personality.0001 = {
 					min = -45
 					max = 45
 				}
-				remove_interaction_cooldown_against = {
-					interaction = bm_reshape_personality_interaction
-					target = scope:recipient
-				}
-				scope:recipient = {
-					set_variable = {
-						name = bm_influence_personality_failed_actor
-						value = root
-						years = 1
-					}
-				}
-				send_interface_toast = {
-					title = bm_reshape_personality.toast.culture_failure.title
-					desc = bm_reshape_personality.toast.culture_failure.desc
-					left_icon = root
-					right_icon = scope:recipient
-					add_shared_bm_bk_xp = {
-						TRACK = wisdom
-						XP = 1
-					}
+				bm_reshape_personality_failure_effect = {
+					TITLE = bm_reshape_personality.toast.culture_failure.title
+					DESC = bm_reshape_personality.toast.culture_failure.desc
 				}
 			}
 		}
@@ -181,6 +167,9 @@ bm_reshape_personality.0002 = {
 	title = bm_reshape_personality.0002.title
 	desc = bm_reshape_personality.0002.desc
 	theme = witchcraft
+	override_icon = {
+		reference = "gfx/interface/icons/bm_blood_magic_icon.dds"
+	}
 
 	left_portrait = {
 		character = root
@@ -278,26 +267,9 @@ bm_reshape_personality.0002 = {
 					min = -45
 					max = 45
 				}
-				remove_interaction_cooldown_against = {
-					interaction = bm_reshape_personality_interaction
-					target = scope:recipient
-				}
-				scope:recipient = {
-					set_variable = {
-						name = bm_influence_personality_failed_actor
-						value = root
-						years = 1
-					}
-				}
-				send_interface_toast = {
-					title = bm_reshape_personality.toast.failure.title
-					desc = bm_reshape_personality.toast.failure.desc
-					left_icon = root
-					right_icon = scope:recipient
-					add_shared_bm_bk_xp = {
-						TRACK = wisdom
-						XP = 1
-					}
+				bm_reshape_personality_failure_effect = {
+					TITLE = bm_reshape_personality.toast.failure.title
+					DESC = bm_reshape_personality.toast.failure.desc
 				}
 			}
 		}
@@ -349,26 +321,9 @@ bm_reshape_personality.0002 = {
 					min = -45
 					max = 45
 				}
-				remove_interaction_cooldown_against = {
-					interaction = bm_reshape_personality_interaction
-					target = scope:recipient
-				}
-				scope:recipient = {
-					set_variable = {
-						name = bm_influence_personality_failed_actor
-						value = root
-						years = 1
-					}
-				}
-				send_interface_toast = {
-					title = bm_reshape_personality.toast.failure.title
-					desc = bm_reshape_personality.toast.failure.desc
-					left_icon = root
-					right_icon = scope:recipient
-					add_shared_bm_bk_xp = {
-						TRACK = wisdom
-						XP = 1
-					}
+				bm_reshape_personality_failure_effect = {
+					TITLE = bm_reshape_personality.toast.failure.title
+					DESC = bm_reshape_personality.toast.failure.desc
 				}
 			}
 		}
@@ -420,26 +375,9 @@ bm_reshape_personality.0002 = {
 					min = -45
 					max = 45
 				}
-				remove_interaction_cooldown_against = {
-					interaction = bm_reshape_personality_interaction
-					target = scope:recipient
-				}
-				scope:recipient = {
-					set_variable = {
-						name = bm_influence_personality_failed_actor
-						value = root
-						years = 1
-					}
-				}
-				send_interface_toast = {
-					title = bm_reshape_personality.toast.failure.title
-					desc = bm_reshape_personality.toast.failure.desc
-					left_icon = root
-					right_icon = scope:recipient
-					add_shared_bm_bk_xp = {
-						TRACK = wisdom
-						XP = 1
-					}
+				bm_reshape_personality_failure_effect = {
+					TITLE = bm_reshape_personality.toast.failure.title
+					DESC = bm_reshape_personality.toast.failure.desc
 				}
 			}
 		}
@@ -491,26 +429,9 @@ bm_reshape_personality.0002 = {
 					min = -45
 					max = 45
 				}
-				remove_interaction_cooldown_against = {
-					interaction = bm_reshape_personality_interaction
-					target = scope:recipient
-				}
-				scope:recipient = {
-					set_variable = {
-						name = bm_influence_personality_failed_actor
-						value = root
-						years = 1
-					}
-				}
-				send_interface_toast = {
-					title = bm_reshape_personality.toast.failure.title
-					desc = bm_reshape_personality.toast.failure.desc
-					left_icon = root
-					right_icon = scope:recipient
-					add_shared_bm_bk_xp = {
-						TRACK = wisdom
-						XP = 1
-					}
+				bm_reshape_personality_failure_effect = {
+					TITLE = bm_reshape_personality.toast.failure.title
+					DESC = bm_reshape_personality.toast.failure.desc
 				}
 			}
 		}

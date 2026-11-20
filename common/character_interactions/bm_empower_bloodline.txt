@@ -1,0 +1,388 @@
+﻿bm_empower_bloodline_interaction = {
+	hidden = yes
+	category = interaction_category_bm_blood_magic
+	icon = bm_empower_bloodline_interaction
+	auto_accept = yes
+	desc = bm_empower_bloodline_interaction_desc
+
+	cost = {
+		piety = {
+			if = {
+				limit = { scope:bm_covenant_radiance = yes }
+				if = {
+					limit = { scope:actor.house ?= { has_house_modifier = dynasty_blood_radiance_modifier_2 } }
+					value = 750
+				}
+				else_if = {
+					limit = { scope:actor.house ?= { has_house_modifier = dynasty_blood_radiance_modifier_1 } }
+					value = 350
+				}
+				else = {
+					value = 150
+				}
+			}
+			else_if = {
+				limit = { scope:bm_covenant_fury = yes }
+				if = {
+					limit = { scope:actor.house ?= { has_house_modifier = dynasty_blood_fury_modifier_2 } }
+					value = 750
+				}
+				else_if = {
+					limit = { scope:actor.house ?= { has_house_modifier = dynasty_blood_fury_modifier_1 } }
+					value = 350
+				}
+				else = {
+					value = 150
+				}
+			}
+			else_if = {
+				limit = { scope:bm_covenant_fortune = yes }
+				if = {
+					limit = { scope:actor.house ?= { has_house_modifier = dynasty_blood_fortune_modifier_2 } }
+					value = 750
+				}
+				else_if = {
+					limit = { scope:actor.house ?= { has_house_modifier = dynasty_blood_fortune_modifier_1 } }
+					value = 350
+				}
+				else = {
+					value = 150
+				}
+			}
+			else_if = {
+				limit = { scope:bm_covenant_cunning = yes }
+				if = {
+					limit = { scope:actor.house ?= { has_house_modifier = dynasty_blood_cunning_modifier_2 } }
+					value = 750
+				}
+				else_if = {
+					limit = { scope:actor.house ?= { has_house_modifier = dynasty_blood_cunning_modifier_1 } }
+					value = 350
+				}
+				else = {
+					value = 150
+				}
+			}
+			else_if = {
+				limit = { scope:bm_covenant_wisdom = yes }
+				if = {
+					limit = { scope:actor.house ?= { has_house_modifier = dynasty_blood_wisdom_modifier_2 } }
+					value = 750
+				}
+				else_if = {
+					limit = { scope:actor.house ?= { has_house_modifier = dynasty_blood_wisdom_modifier_1 } }
+					value = 350
+				}
+				else = {
+					value = 150
+				}
+			}
+			else_if = {
+				limit = { scope:bm_covenant_ancient = yes }
+				if = {
+					limit = { scope:actor.house ?= { has_house_modifier = dynasty_blood_ancient_modifier_2 } }
+					value = 750
+				}
+				else_if = {
+					limit = { scope:actor.house ?= { has_house_modifier = dynasty_blood_ancient_modifier_1 } }
+					value = 350
+				}
+				else = {
+					value = 150
+				}
+			}
+			else_if = {
+				limit = { scope:bm_covenant_acolyte = yes }
+				value = 350
+			}
+			else = {
+				value = 0
+			}
+		}
+	}
+
+	is_shown = {
+		scope:actor = scope:recipient
+		scope:actor = {
+			is_blood_mage_any_tier_trigger = yes
+			exists = house
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			exists = house
+			# TEMP TEST: cooldown disabled
+			# custom_tooltip = {
+			# 	text = bm_empower_bloodline_cooldown_tt
+			# 	NOT = { has_character_flag = bm_empower_bloodline_cooldown }
+			# }
+			piety >= 150
+			piety_level >= 1
+			OR = {
+				has_character_modifier = lifeforce_modifier_minor
+				has_character_modifier = lifeforce_modifier_major
+				has_character_modifier = lifeforce_modifier_superior
+			}
+		}
+	}
+
+	send_options_exclusive = yes
+
+	# 1. Covenant of Radiance
+	send_option = {
+		flag = bm_covenant_radiance
+		localization = bm_covenant_radiance_button
+		current_description = bm_covenant_radiance_tooltip
+		can_invalidate_interaction = yes
+		is_shown = {
+			NOT = { scope:actor.house ?= { has_house_modifier = dynasty_blood_radiance_modifier_3 } }
+		}
+		is_valid = {
+			bm_can_upgrade_covenant_trigger = { COVENANT = radiance ACTOR = scope:actor }
+		}
+		starts_enabled = {
+			bm_can_upgrade_covenant_trigger = { COVENANT = radiance ACTOR = scope:actor }
+		}
+	}
+
+	# 2. Covenant of Fury
+	send_option = {
+		flag = bm_covenant_fury
+		localization = bm_covenant_fury_button
+		current_description = bm_covenant_fury_tooltip
+		can_invalidate_interaction = yes
+		is_shown = {
+			NOT = { scope:actor.house ?= { has_house_modifier = dynasty_blood_fury_modifier_3 } }
+		}
+		is_valid = {
+			bm_can_upgrade_covenant_trigger = { COVENANT = fury ACTOR = scope:actor }
+		}
+		starts_enabled = {
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = radiance ACTOR = scope:actor } }
+			bm_can_upgrade_covenant_trigger = { COVENANT = fury ACTOR = scope:actor }
+		}
+	}
+
+	# 3. Covenant of Fortune
+	send_option = {
+		flag = bm_covenant_fortune
+		localization = bm_covenant_fortune_button
+		current_description = bm_covenant_fortune_tooltip
+		can_invalidate_interaction = yes
+		is_shown = {
+			NOT = { scope:actor.house ?= { has_house_modifier = dynasty_blood_fortune_modifier_3 } }
+		}
+		is_valid = {
+			bm_can_upgrade_covenant_trigger = { COVENANT = fortune ACTOR = scope:actor }
+		}
+		starts_enabled = {
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = radiance ACTOR = scope:actor } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = fury ACTOR = scope:actor } }
+			bm_can_upgrade_covenant_trigger = { COVENANT = fortune ACTOR = scope:actor }
+		}
+	}
+
+	# 4. Covenant of Cunning
+	send_option = {
+		flag = bm_covenant_cunning
+		localization = bm_covenant_cunning_button
+		current_description = bm_covenant_cunning_tooltip
+		can_invalidate_interaction = yes
+		is_shown = {
+			NOT = { scope:actor.house ?= { has_house_modifier = dynasty_blood_cunning_modifier_3 } }
+		}
+		is_valid = {
+			bm_can_upgrade_covenant_trigger = { COVENANT = cunning ACTOR = scope:actor }
+		}
+		starts_enabled = {
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = radiance ACTOR = scope:actor } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = fury ACTOR = scope:actor } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = fortune ACTOR = scope:actor } }
+			bm_can_upgrade_covenant_trigger = { COVENANT = cunning ACTOR = scope:actor }
+		}
+	}
+
+	# 5. Covenant of Wisdom
+	send_option = {
+		flag = bm_covenant_wisdom
+		localization = bm_covenant_wisdom_button
+		current_description = bm_covenant_wisdom_tooltip
+		can_invalidate_interaction = yes
+		is_shown = {
+			NOT = { scope:actor.house ?= { has_house_modifier = dynasty_blood_wisdom_modifier_3 } }
+		}
+		is_valid = {
+			bm_can_upgrade_covenant_trigger = { COVENANT = wisdom ACTOR = scope:actor }
+		}
+		starts_enabled = {
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = radiance ACTOR = scope:actor } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = fury ACTOR = scope:actor } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = fortune ACTOR = scope:actor } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = cunning ACTOR = scope:actor } }
+			bm_can_upgrade_covenant_trigger = { COVENANT = wisdom ACTOR = scope:actor }
+		}
+	}
+
+	# 6. Covenant of the Ancient
+	send_option = {
+		flag = bm_covenant_ancient
+		localization = bm_covenant_ancient_button
+		current_description = bm_covenant_ancient_tooltip
+		can_invalidate_interaction = yes
+		is_shown = {
+			NOT = { scope:actor.house ?= { has_house_modifier = dynasty_blood_ancient_modifier_3 } }
+		}
+		is_valid = {
+			bm_can_upgrade_covenant_trigger = { COVENANT = ancient ACTOR = scope:actor }
+		}
+		starts_enabled = {
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = radiance ACTOR = scope:actor } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = fury ACTOR = scope:actor } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = fortune ACTOR = scope:actor } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = cunning ACTOR = scope:actor } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = wisdom ACTOR = scope:actor } }
+			bm_can_upgrade_covenant_trigger = { COVENANT = ancient ACTOR = scope:actor }
+		}
+	}
+
+	# 7. Covenant of Initiation (One-off)
+	send_option = {
+		flag = bm_covenant_acolyte
+		localization = bm_covenant_acolyte_button
+		current_description = bm_covenant_acolyte_tooltip
+		can_invalidate_interaction = yes
+		is_shown = {
+			NOT = { scope:actor.house ?= { has_house_modifier = dynasty_blood_acolyte_modifier } }
+		}
+		is_valid = {
+			bm_can_grant_acolyte_covenant_trigger = { ACTOR = scope:actor }
+		}
+		starts_enabled = {
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = radiance ACTOR = scope:actor } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = fury ACTOR = scope:actor } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = fortune ACTOR = scope:actor } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = cunning ACTOR = scope:actor } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = wisdom ACTOR = scope:actor } }
+			NOT = { bm_can_upgrade_covenant_trigger = { COVENANT = ancient ACTOR = scope:actor } }
+			bm_can_grant_acolyte_covenant_trigger = { ACTOR = scope:actor }
+		}
+	}
+
+	on_accept = {
+		if = {
+			limit = { scope:bm_covenant_radiance = yes }
+			debug_log = "BloodMageInteraction: bm_empower_bloodline (radiance) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
+			scope:actor = {
+				bm_upgrade_house_covenant_effect = { COVENANT = radiance }
+				add_character_flag = { flag = bm_empower_bloodline_cooldown years = 1 }
+			}
+		}
+		else_if = {
+			limit = { scope:bm_covenant_fury = yes }
+			debug_log = "BloodMageInteraction: bm_empower_bloodline (fury) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
+			scope:actor = {
+				bm_upgrade_house_covenant_effect = { COVENANT = fury }
+				add_character_flag = { flag = bm_empower_bloodline_cooldown years = 1 }
+			}
+		}
+		else_if = {
+			limit = { scope:bm_covenant_fortune = yes }
+			debug_log = "BloodMageInteraction: bm_empower_bloodline (fortune) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
+			scope:actor = {
+				bm_upgrade_house_covenant_effect = { COVENANT = fortune }
+				add_character_flag = { flag = bm_empower_bloodline_cooldown years = 1 }
+			}
+		}
+		else_if = {
+			limit = { scope:bm_covenant_cunning = yes }
+			debug_log = "BloodMageInteraction: bm_empower_bloodline (cunning) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
+			scope:actor = {
+				bm_upgrade_house_covenant_effect = { COVENANT = cunning }
+				add_character_flag = { flag = bm_empower_bloodline_cooldown years = 1 }
+			}
+		}
+		else_if = {
+			limit = { scope:bm_covenant_wisdom = yes }
+			debug_log = "BloodMageInteraction: bm_empower_bloodline (wisdom) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
+			scope:actor = {
+				bm_upgrade_house_covenant_effect = { COVENANT = wisdom }
+				add_character_flag = { flag = bm_empower_bloodline_cooldown years = 1 }
+			}
+		}
+		else_if = {
+			limit = { scope:bm_covenant_ancient = yes }
+			debug_log = "BloodMageInteraction: bm_empower_bloodline (ancient) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
+			scope:actor = {
+				bm_upgrade_house_covenant_effect = { COVENANT = ancient }
+				add_character_flag = { flag = bm_empower_bloodline_cooldown years = 1 }
+			}
+		}
+		else_if = {
+			limit = { scope:bm_covenant_acolyte = yes }
+			debug_log = "BloodMageInteraction: bm_empower_bloodline (acolyte) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
+			scope:actor = {
+				bm_grant_acolyte_covenant_effect = yes
+				add_character_flag = { flag = bm_empower_bloodline_cooldown years = 1 }
+			}
+		}
+		else = {
+			debug_log = "BloodMageInteraction: bm_empower_bloodline (NO OPTION) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
+		}
+	}
+
+	ai_potential = {
+		is_blood_mage_any_tier_trigger = yes
+		exists = house
+	}
+	ai_frequency = 6
+	ai_targets = {
+		ai_recipients = self
+	}
+	ai_will_do = {
+		base = 25
+
+		modifier = {
+			scope:bm_covenant_radiance = yes
+			add = 20
+		}
+		modifier = {
+			scope:bm_covenant_fury = yes
+			add = 20
+		}
+		modifier = {
+			scope:bm_covenant_fortune = yes
+			add = 20
+		}
+		modifier = {
+			scope:bm_covenant_cunning = yes
+			add = 20
+		}
+		modifier = {
+			scope:bm_covenant_wisdom = yes
+			add = 20
+		}
+		modifier = {
+			scope:bm_covenant_ancient = yes
+			add = 25
+		}
+		modifier = {
+			scope:bm_covenant_acolyte = yes
+			add = 25
+		}
+
+		# Absolute veto: must select at least one valid send option
+		modifier = {
+			NOR = {
+				scope:bm_covenant_radiance = yes
+				scope:bm_covenant_fury = yes
+				scope:bm_covenant_fortune = yes
+				scope:bm_covenant_cunning = yes
+				scope:bm_covenant_wisdom = yes
+				scope:bm_covenant_ancient = yes
+				scope:bm_covenant_acolyte = yes
+			}
+			factor = 0
+		}
+	}
+}

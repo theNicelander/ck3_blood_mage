@@ -1,15 +1,15 @@
 ﻿minor_blood_rune_modifier = {
-	icon = blood_magic
+	icon = bm_blood_magic
 	stacking = no
 }
 
 major_blood_rune_modifier = {
-	icon = blood_magic
+	icon = bm_blood_magic
 	stacking = no
 }
 
 superior_blood_rune_modifier = {
-	icon = blood_magic
+	icon = bm_blood_magic
 	stacking = no
 }
 
@@ -32,7 +32,7 @@ bm_stave_aegishjalmur = {
 }
 
 bm_aegishjalmur_terror_modifier = {
-	icon = magic_negative
+	icon = bm_blood_magic_negative
 	stacking = no
 	prowess = -5
 	health = -0.5
@@ -49,25 +49,13 @@ bm_stave_feingur = {
 	epidemic_resistance = 10
 }
 
-bm_feingur_blessed_blood_modifier = {
-	icon = blood_magic
-	stacking = no
-	diplomacy = 1
-	martial = 1
-	stewardship = 1
-	intrigue = 1
-	learning = 1
-	prowess = 2
-	fertility = 0.15
-	health = 0.35
-	positive_random_genetic_chance = 0.15
-}
-
 # 4. Nabrokarstafur (Flayed Tithe)
 bm_stave_nabrokarstafur = {
 	icon = bm_stave_nabrokarstafur
 	stacking = no
 	monthly_income_mult = 0.10
+	monthly_income_from_trade_mult = 0.10
+	trade_competitiveness_mult = 0.10
 	men_at_arms_maintenance = -0.10
 	general_opinion = -10
 }

@@ -1,0 +1,56 @@
+﻿# Shared effect to cast or upgrade a permanent tiered Blood Blessing.
+# Parameters: LINE (radiance|fortune|fury|cunning|wisdom|ancient), CASTER, TARGET
+
+bm_apply_blessing_effect = {
+	$CASTER$ = {
+		send_interface_toast = {
+			type = bm_event_toast_effect_good
+			title = bm_blood_blessing_toast
+			left_icon = $CASTER$
+			right_icon = $TARGET$
+			if = {
+				limit = {
+					$TARGET$ = { has_character_modifier = bm_blessing_$LINE$_major_modifier }
+				}
+				blood_magic_used_superior = yes
+				bm_add_blood_mage_xp_effect = { TRACK = $LINE$ XP = 6 }
+				$TARGET$ = {
+					remove_character_modifier = bm_blessing_$LINE$_major_modifier
+					add_character_modifier = { modifier = bm_blessing_$LINE$_superior_modifier }
+				}
+			}
+			else_if = {
+				limit = {
+					$TARGET$ = { has_character_modifier = bm_blessing_$LINE$_minor_modifier }
+				}
+				blood_magic_used_major = yes
+				bm_add_blood_mage_xp_effect = { TRACK = $LINE$ XP = 4 }
+				$TARGET$ = {
+					remove_character_modifier = bm_blessing_$LINE$_minor_modifier
+					add_character_modifier = { modifier = bm_blessing_$LINE$_major_modifier }
+				}
+			}
+			else = {
+				blood_magic_used_minor = yes
+				bm_add_blood_mage_xp_effect = { TRACK = $LINE$ XP = 2 }
+				$TARGET$ = {
+					add_character_modifier = { modifier = bm_blessing_$LINE$_minor_modifier }
+				}
+			}
+			$TARGET$ = {
+				add_character_flag = {
+					flag = bm_blessing_cooldown
+					years = 1
+				}
+				if = {
+					limit = { NOT = { this = $CASTER$ } }
+					add_opinion = {
+						target = $CASTER$
+						modifier = magic_opinion_positive
+						opinion = 25
+					}
+				}
+			}
+		}
+	}
+}

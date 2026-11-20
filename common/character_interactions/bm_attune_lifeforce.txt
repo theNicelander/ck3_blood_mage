@@ -1,0 +1,255 @@
+﻿bm_attune_lifeforce_interaction = {
+	hidden = yes
+	category = interaction_category_bm_blood_magic
+	icon = bm_cast_blood_blessing_interaction
+	auto_accept = yes
+	desc = bm_attune_lifeforce_interaction_desc
+
+	cost = {
+		piety = {
+			value = 0
+			if = {
+				limit = {
+					scope:actor = { bm_has_any_attunement_trigger = yes }
+				}
+				add = 50
+			}
+		}
+	}
+
+	is_shown = {
+		scope:actor = scope:recipient
+		scope:actor = {
+			is_blood_mage_any_tier_trigger = yes
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			custom_tooltip = {
+				text = bm_attune_lifeforce_cooldown_tt
+				NOT = { has_character_flag = bm_attune_lifeforce_cooldown }
+			}
+			trigger_if = {
+				limit = { bm_has_any_attunement_trigger = yes }
+				piety >= 50
+				has_character_modifier = lifeforce_modifier_minor
+			}
+		}
+	}
+
+	send_options_exclusive = yes
+
+	# 1. Wisdom
+	send_option = {
+		flag = attune_wisdom
+		localization = bm_attune_wisdom
+		current_description = bm_attune_wisdom_desc
+		can_invalidate_interaction = yes
+		is_shown = {
+			always = yes
+		}
+		is_valid = {
+			scope:actor = {
+				NOT = { has_character_modifier = wisdom_attuned }
+			}
+		}
+		starts_enabled = {
+			scope:actor = {
+				NOT = { has_character_modifier = wisdom_attuned }
+			}
+		}
+	}
+
+	# 2. Fortune
+	send_option = {
+		flag = attune_fortune
+		localization = bm_attune_fortune
+		current_description = bm_attune_fortune_desc
+		can_invalidate_interaction = yes
+		is_shown = {
+			always = yes
+		}
+		is_valid = {
+			scope:actor = {
+				NOT = { has_character_modifier = fortune_attuned }
+			}
+		}
+		starts_enabled = {
+			scope:actor = {
+				has_character_modifier = wisdom_attuned
+				NOT = { has_character_modifier = fortune_attuned }
+			}
+		}
+	}
+
+	# 3. Radiance
+	send_option = {
+		flag = attune_radiance
+		localization = bm_attune_radiance
+		current_description = bm_attune_radiance_desc
+		can_invalidate_interaction = yes
+		is_shown = {
+			always = yes
+		}
+		is_valid = {
+			scope:actor = {
+				NOT = { has_character_modifier = radiance_attuned }
+			}
+		}
+		starts_enabled = {
+			scope:actor = {
+				has_character_modifier = wisdom_attuned
+				has_character_modifier = fortune_attuned
+				NOT = { has_character_modifier = radiance_attuned }
+			}
+		}
+	}
+
+	# 4. Cunning
+	send_option = {
+		flag = attune_cunning
+		localization = bm_attune_cunning
+		current_description = bm_attune_cunning_desc
+		can_invalidate_interaction = yes
+		is_shown = {
+			always = yes
+		}
+		is_valid = {
+			scope:actor = {
+				NOT = { has_character_modifier = cunning_attuned }
+			}
+		}
+		starts_enabled = {
+			scope:actor = {
+				has_character_modifier = wisdom_attuned
+				has_character_modifier = fortune_attuned
+				has_character_modifier = radiance_attuned
+				NOT = { has_character_modifier = cunning_attuned }
+			}
+		}
+	}
+
+	# 5. Fury
+	send_option = {
+		flag = attune_fury
+		localization = bm_attune_fury
+		current_description = bm_attune_fury_desc
+		can_invalidate_interaction = yes
+		is_shown = {
+			always = yes
+		}
+		is_valid = {
+			scope:actor = {
+				NOT = { has_character_modifier = fury_attuned }
+			}
+		}
+		starts_enabled = {
+			scope:actor = {
+				has_character_modifier = wisdom_attuned
+				has_character_modifier = fortune_attuned
+				has_character_modifier = radiance_attuned
+				has_character_modifier = cunning_attuned
+				NOT = { has_character_modifier = fury_attuned }
+			}
+		}
+	}
+
+	on_accept = {
+		if = {
+			limit = { scope:attune_wisdom = yes }
+			debug_log = "BloodMageInteraction: bm_attune_lifeforce (wisdom) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
+			scope:actor = { bm_apply_attunement_effect = { MODIFIER = wisdom_attuned } }
+		}
+		else_if = {
+			limit = { scope:attune_fortune = yes }
+			debug_log = "BloodMageInteraction: bm_attune_lifeforce (fortune) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
+			scope:actor = { bm_apply_attunement_effect = { MODIFIER = fortune_attuned } }
+		}
+		else_if = {
+			limit = { scope:attune_radiance = yes }
+			debug_log = "BloodMageInteraction: bm_attune_lifeforce (radiance) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
+			scope:actor = { bm_apply_attunement_effect = { MODIFIER = radiance_attuned } }
+		}
+		else_if = {
+			limit = { scope:attune_cunning = yes }
+			debug_log = "BloodMageInteraction: bm_attune_lifeforce (cunning) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
+			scope:actor = { bm_apply_attunement_effect = { MODIFIER = cunning_attuned } }
+		}
+		else_if = {
+			limit = { scope:attune_fury = yes }
+			debug_log = "BloodMageInteraction: bm_attune_lifeforce (fury) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
+			scope:actor = { bm_apply_attunement_effect = { MODIFIER = fury_attuned } }
+		}
+		else = {
+			debug_log = "BloodMageInteraction: bm_attune_lifeforce (NO OPTION) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
+		}
+	}
+
+	ai_potential = {
+		is_blood_mage_any_tier_trigger = yes
+	}
+	ai_frequency = 12
+	ai_targets = {
+		ai_recipients = self
+	}
+	ai_will_do = {
+		base = 10
+
+		modifier = {
+			scope:actor = { bm_has_any_attunement_trigger = no }
+			add = 90
+		}
+		modifier = {
+			scope:actor = { health <= fine_health }
+			factor = 0
+		}
+		modifier = {
+			scope:attune_wisdom = yes
+			scope:actor = {
+				NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = wisdom VALUE = 100 } }
+			}
+			add = 20
+		}
+		modifier = {
+			scope:attune_fortune = yes
+			scope:actor = {
+				NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = fortune VALUE = 100 } }
+			}
+			add = 50
+		}
+		modifier = {
+			scope:attune_radiance = yes
+			scope:actor = {
+				NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = radiance VALUE = 100 } }
+			}
+			add = 50
+		}
+		modifier = {
+			scope:attune_cunning = yes
+			scope:actor = {
+				NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = cunning VALUE = 100 } }
+			}
+			add = 10
+		}
+		modifier = {
+			scope:attune_fury = yes
+			scope:actor = {
+				NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = fury VALUE = 100 } }
+			}
+			add = 30
+		}
+
+		# Absolute veto: must select at least one valid send option
+		modifier = {
+			NOR = {
+				scope:attune_wisdom = yes
+				scope:attune_fortune = yes
+				scope:attune_radiance = yes
+				scope:attune_cunning = yes
+				scope:attune_fury = yes
+			}
+			factor = 0
+		}
+	}
+}

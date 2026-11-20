@@ -3,40 +3,44 @@
   bm_empower_bloodline_decision: "Empower Dynasty Bloodline"
   bm_empower_bloodline_decision_desc: "Perform ancient blood covenants to empower the blood of your house."
   bm_empower_bloodline_decision_tooltip: "Select a House Covenant to upgrade"
-  BM_EMPOWER_BLOODLINE_DECISION_NEXT_STEP_BUTTON: "Weave Bloodline"
+  BM_EMPOWER_BLOODLINE_DECISION_NEXT_STEP_BUTTON: "Empower Dynasty Bloodline"
   bm_empower_bloodline_decision_confirm: "$BM_EMPOWER_BLOODLINE_DECISION_NEXT_STEP_BUTTON$"
   bm_empower_bloodline_decision_effect: "You weave vital blood magic into your house's lineage."
+  bm_empower_bloodline_interaction: "$bm_empower_bloodline_decision$"
+  bm_empower_bloodline_interaction_desc: "$bm_empower_bloodline_decision_desc$"
+  bm_empower_bloodline_cooldown_tt: "Has not empowered the dynasty bloodline in the last 1 year"
+  NOT_bm_empower_bloodline_cooldown_tt: "Has not empowered the dynasty bloodline in the last 1 year"
 
   # Dynamic Button Labels
   bm_covenant_radiance_button: "[GetPlayer.Custom('BM_COVENANT_RADIANCE_BUTTON_LABEL')]"
-  bm_covenant_radiance_label_none: "Covenant of Radiance (None)"
   bm_covenant_radiance_label_minor: "Covenant of Radiance (Minor)"
   bm_covenant_radiance_label_major: "Covenant of Radiance (Major)"
+  bm_covenant_radiance_label_superior: "Covenant of Radiance (Superior)"
 
   bm_covenant_fury_button: "[GetPlayer.Custom('BM_COVENANT_FURY_BUTTON_LABEL')]"
-  bm_covenant_fury_label_none: "Covenant of Fury (None)"
   bm_covenant_fury_label_minor: "Covenant of Fury (Minor)"
   bm_covenant_fury_label_major: "Covenant of Fury (Major)"
+  bm_covenant_fury_label_superior: "Covenant of Fury (Superior)"
 
   bm_covenant_fortune_button: "[GetPlayer.Custom('BM_COVENANT_FORTUNE_BUTTON_LABEL')]"
-  bm_covenant_fortune_label_none: "Covenant of Fortune (None)"
   bm_covenant_fortune_label_minor: "Covenant of Fortune (Minor)"
   bm_covenant_fortune_label_major: "Covenant of Fortune (Major)"
+  bm_covenant_fortune_label_superior: "Covenant of Fortune (Superior)"
 
   bm_covenant_cunning_button: "[GetPlayer.Custom('BM_COVENANT_CUNNING_BUTTON_LABEL')]"
-  bm_covenant_cunning_label_none: "Covenant of Cunning (None)"
   bm_covenant_cunning_label_minor: "Covenant of Cunning (Minor)"
   bm_covenant_cunning_label_major: "Covenant of Cunning (Major)"
+  bm_covenant_cunning_label_superior: "Covenant of Cunning (Superior)"
 
   bm_covenant_wisdom_button: "[GetPlayer.Custom('BM_COVENANT_WISDOM_BUTTON_LABEL')]"
-  bm_covenant_wisdom_label_none: "Covenant of Wisdom (None)"
   bm_covenant_wisdom_label_minor: "Covenant of Wisdom (Minor)"
   bm_covenant_wisdom_label_major: "Covenant of Wisdom (Major)"
+  bm_covenant_wisdom_label_superior: "Covenant of Wisdom (Superior)"
 
   bm_covenant_ancient_button: "[GetPlayer.Custom('BM_COVENANT_ANCIENT_BUTTON_LABEL')]"
-  bm_covenant_ancient_label_none: "Covenant of the Ancient (None)"
   bm_covenant_ancient_label_minor: "Covenant of the Ancient (Minor)"
   bm_covenant_ancient_label_major: "Covenant of the Ancient (Major)"
+  bm_covenant_ancient_label_superior: "Covenant of the Ancient (Superior)"
 
   # Covenant Options & Tooltips
   bm_covenant_radiance: "Covenant of Radiance"
@@ -53,9 +57,9 @@
 
   bm_covenant_fortune: "Covenant of Fortune"
   bm_covenant_fortune_tooltip: "[GetPlayer.Custom('BM_COVENANT_FORTUNE_TOOLTIP')]"
-  bm_covenant_fortune_next_tier_1: "Tier I (Minor): +0.1 Piety/mo, +0.1 Gold/mo, +2 Stewardship XP/mo, +2 Life Expectancy, +1 Stewardship, +5% Income Mult, -5% Holding & Domicile Build Cost, -5% MaA Maintenance, +5% Development Growth."
-  bm_covenant_fortune_next_tier_2: "Tier II (Major): +0.3 Piety/mo, +0.3 Gold/mo, +4 Stewardship XP/mo, +4 Life Expectancy, +2 Stewardship, +10% Income Mult, -10% Holding & Domicile Build Cost, -10% MaA Maintenance, +10% Development Growth, +1 Stewardship per Devotion Level."
-  bm_covenant_fortune_next_tier_3: "Tier III (Superior): +0.5 Piety/mo, +0.5 Gold/mo, +6 Stewardship XP/mo, +6 Life Expectancy, +4 Stewardship, +15% Income Mult, -15% Holding & Domicile Build Cost, -15% MaA Maintenance, +15% Development Growth, +1 Domain Limit, +1 Stewardship per Devotion Level."
+  bm_covenant_fortune_next_tier_1: "Tier I (Minor): +0.1 Piety/mo, +0.1 Gold/mo, +2 Stewardship XP/mo, +2 Life Expectancy, +1 Stewardship, +5% Income Mult, -5% Holding & Domicile Build Cost, -5% MaA Maintenance, +5% Prosperity Growth."
+  bm_covenant_fortune_next_tier_2: "Tier II (Major): +0.3 Piety/mo, +0.3 Gold/mo, +4 Stewardship XP/mo, +4 Life Expectancy, +2 Stewardship, +10% Income Mult, -10% Holding & Domicile Build Cost, -10% MaA Maintenance, +10% Prosperity Growth, +1 Stewardship per Devotion Level."
+  bm_covenant_fortune_next_tier_3: "Tier III (Superior): +0.5 Piety/mo, +0.5 Gold/mo, +6 Stewardship XP/mo, +6 Life Expectancy, +4 Stewardship, +15% Income Mult, -15% Holding & Domicile Build Cost, -15% MaA Maintenance, +15% Prosperity Growth, +1 Domain Limit, +1 Stewardship per Devotion Level."
 
   bm_covenant_cunning: "Covenant of Cunning"
   bm_covenant_cunning_tooltip: "[GetPlayer.Custom('BM_COVENANT_CUNNING_TOOLTIP')]"
@@ -80,12 +84,12 @@
   bm_covenant_acolyte_tooltip: "One-off Covenant: +1 Piety/mo across your house and unlocks a decision for house members of Devotion Level 3 or higher to become Blood Mage Acolytes for 250 Piety."
 
   # Toasts
-  bm_empower_bloodline_tier_1_toast: "Covenant Minor (Tier I)"
-  bm_empower_bloodline_tier_2_toast: "Covenant Major (Tier II)"
-  bm_empower_bloodline_tier_3_toast: "Covenant Superior (Tier III)"
-  bm_empower_bloodline_acolyte_toast: "Covenant of Initiation"
+  bm_empower_bloodline_tier_1_toast: "@bm_ancient_discipline_icon! Covenant Minor (Tier I)"
+  bm_empower_bloodline_tier_2_toast: "@bm_ancient_discipline_icon! Covenant Major (Tier II)"
+  bm_empower_bloodline_tier_3_toast: "@bm_ancient_discipline_icon! Covenant Superior (Tier III)"
+  bm_empower_bloodline_acolyte_toast: "@bm_ancient_discipline_icon! Covenant of Initiation"
 
-  bm_covenant_acolyte_decision: "Embrace the House Covenant"
+  bm_covenant_acolyte_decision: "@bm_ancient_discipline_icon! Embrace the House Covenant"
   bm_covenant_acolyte_decision_desc: "Your house has bound itself to the Covenant of Initiation. Spend Piety to awaken as a Blood Mage Acolyte."
   bm_covenant_acolyte_decision_tooltip: "Become a Blood Mage Acolyte through your house's Covenant of Initiation"
   bm_covenant_acolyte_decision_confirm: "Become a Blood Mage Acolyte"
@@ -116,10 +120,4 @@
   bm_covenant_ancient_tier_3_tt: "Your house has perfected the Superior Covenant of the Ancient (Tier III)!"
 
   # Yearly fortune XP
-  blood_mage_yearly_events.002.success: "Your house covenants granted you experience"
-
-  # Legacy Keys preserved
-  channel_lifeforce_bloodline: "$bm_empower_bloodline_decision$"
-  channel_lifeforce_bloodline_confirm: "$BM_EMPOWER_BLOODLINE_DECISION_NEXT_STEP_BUTTON$"
-  channel_lifeforce_bloodline_tooltip: "$bm_empower_bloodline_decision_tooltip$"
-  channel_lifeforce_bloodline_desc: "$bm_empower_bloodline_decision_desc$"
+  blood_mage_yearly_events.002.success: "@bm_ancient_discipline_icon! Your house covenants granted you experience"

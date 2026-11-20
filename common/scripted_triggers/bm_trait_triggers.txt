@@ -33,6 +33,47 @@ bm_can_drain_traits_from_target_trigger = {
 	}
 }
 
+bm_can_drain_leveled_trait_from_target_trigger = {
+	scope:recipient = { has_trait = $TRAIT$ }
+	if = {
+		limit = { is_blood_mage_tier_2_or_higher_trigger = yes }
+		NOT = { has_trait_rank = { trait = $TRAIT$ rank >= 5 } }
+	}
+	else = {
+		NOT = { has_trait = $TRAIT$ }
+		scope:recipient = { has_trait = $TRAIT$_1 }
+	}
+}
+
+bm_can_drain_traits_from_target_tier_valid_trigger = {
+	custom_description = {
+		text = bm_can_drain_traits_from_target_tier_valid_trigger_tt
+		subject = scope:recipient
+		OR = {
+			bm_can_drain_leveled_trait_from_target_trigger = { TRAIT = intellect_good }
+			bm_can_drain_leveled_trait_from_target_trigger = { TRAIT = physique_good }
+			bm_can_drain_leveled_trait_from_target_trigger = { TRAIT = beauty_good }
+			AND = {
+				is_blood_mage_tier_2_or_higher_trigger = yes
+				OR = {
+					AND = {
+						NOT = { has_trait = fecund }
+						scope:recipient = { has_trait = fecund }
+					}
+					AND = {
+						NOT = { has_trait = giant }
+						scope:recipient = { has_trait = giant }
+					}
+					AND = {
+						NOT = { has_trait = pure_blooded }
+						scope:recipient = { has_trait = pure_blooded }
+					}
+				}
+			}
+		}
+	}
+}
+
 bm_has_valuable_genetic_trait_trigger = {
 	OR = {
 		has_trait = intellect_good

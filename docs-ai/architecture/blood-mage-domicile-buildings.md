@@ -1,6 +1,6 @@
 # Blood Mage Domicile Buildings
 
-Technical architecture for blood magic domicile structures in Adventurer Camps (`camp`), Noble Family Estates (`estate`), and related domiciles.
+Technical architecture for blood magic domicile structures across Adventurer Camps (`camp`), Noble Family Estates (`estate`), East Asian Estates (`east_asian_estate`), Nomadic Yurts (`yurt`), Ecclesiastical Domiciles (`ecclesiastical_domicile`), Japanese Manors (`japanese_manor`), and Merchant Companies (`merchant_company`).
 
 ---
 

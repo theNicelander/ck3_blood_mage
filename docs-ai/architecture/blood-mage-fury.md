@@ -16,14 +16,14 @@ The `fury` track uses a 5-milestone progression (10, 30, 50, 70, 100 XP), provid
 
 | Tier (XP) | Modifiers Added at Tier (Tier II Blood Mage) | Cumulative Total Highlights |
 | :--- | :--- | :--- |
-| **10 XP** | Vitality Step (`+0.2` Health, `+3` Life Exp), `martial = 1`, `knight_effectiveness_per_learning = 0.002` | +0.2 Health, +3 Life Exp, +1 Martial, +0.2% Knight Eff / Learning |
-| **30 XP** | Vitality Step (`+0.2` Health, `+3` Life Exp), `martial = 1`, `martial_per_piety_level = 1`, `knight_effectiveness_per_learning = 0.002` | +0.4 Health, +6 Life Exp, +2 Martial, +1 Martial per Piety Level, +0.4% Knight Eff / Learning |
-| **50 XP (Milestone)** | Vitality Step (`+0.2` Health, `+3` Life Exp), `martial = 1`, `knight_effectiveness_per_learning = 0.002` | +0.6 Health, +9 Life Exp, +3 Martial, +1 Martial per Piety Level, +0.6% Knight Eff / Learning |
-| **70 XP** | Vitality Step (`+0.2` Health, `+3` Life Exp), `martial = 1`, `martial_per_piety_level = 1`, `knight_effectiveness_per_learning = 0.002` | +0.8 Health, +12 Life Exp, +4 Martial, +2 Martial per Piety Level, +0.8% Knight Eff / Learning |
-| **100 XP (Capstone)** | Vitality Step (`+0.2` Health, `+3` Life Exp), `martial = 1`, `knight_effectiveness_per_learning = 0.002` | 5× Vitality (+1.0 Health, +15 Life Exp), +5 Martial, +2 Martial per Piety Level, +1.0% Knight Eff / Learning |
+| **10 XP** | Vitality Step (`+0.2` Health, `+3` Life Exp), `monthly_piety = 0.1`, `martial = 1` | +0.2 Health, +3 Life Exp, +0.1 Piety, +1 Martial |
+| **30 XP** | Vitality Step (`+0.2` Health, `+3` Life Exp), `monthly_piety = 0.1`, `martial = 1`, `martial_per_piety_level = 1` | +0.4 Health, +6 Life Exp, +0.2 Piety, +2 Martial, +1 Martial per Piety Level |
+| **50 XP (Milestone)** | Vitality Step (`+0.2` Health, `+3` Life Exp), `monthly_piety = 0.1`, `martial = 1`, `knight_effectiveness_per_learning = 0.01` | +0.6 Health, +9 Life Exp, +0.3 Piety, +3 Martial, +1 Martial per Piety Level, +1.0% Knight Eff / Learning |
+| **70 XP** | Vitality Step (`+0.2` Health, `+3` Life Exp), `monthly_piety = 0.1`, `martial = 1`, `martial_per_piety_level = 1` | +0.8 Health, +12 Life Exp, +0.4 Piety, +4 Martial, +2 Martial per Piety Level, +1.0% Knight Eff / Learning |
+| **100 XP (Capstone)** | Vitality Step (`+0.2` Health, `+3` Life Exp), `monthly_piety = 0.1`, `martial = 1`, `knight_effectiveness_per_learning = 0.01` | 5× Vitality (+1.0 Health, +15 Life Exp), +0.5 Piety, +5 Martial, +2 Martial per Piety Level, +2.0% Knight Eff / Learning |
 
 *Note: Scaling across tiers:*
-- All three ranks (`lifestyle_bm_acolyte`, `lifestyle_blood_mage`, `lifestyle_bm_archmage`) share identical Fury attribute, per-piety, health, and knight-effectiveness-per-learning milestones (`+5` Martial, `+2` Martial per Piety Level, `+1.0%` Knight Eff per Learning, `+1.0` Health at 100 XP); Life Expectancy scales per tier (`+2` Acolyte, `+3` Mage, `+4` Archmage per step).
+- All three ranks (`lifestyle_bm_acolyte`, `lifestyle_blood_mage`, `lifestyle_bm_archmage`) share identical Fury attribute, per-piety, piety, health, and knight-effectiveness-per-learning milestones (`+0.5` Piety, `+5` Martial, `+2` Martial per Piety Level, `+2.0%` Knight Eff per Learning, `+1.0` Health at 100 XP); Life Expectancy scales per tier (`+2` Acolyte, `+3` Mage, `+4` Archmage per step).
 - **Tier II (`lifestyle_blood_mage`)** base floor adds `+3` Martial, `+1` Martial per Piety Level, and `+1.0%` Knight Eff per Learning; **Tier III (`lifestyle_bm_archmage`)** base floor adds `+6` Martial, `+2` Martial per Piety Level, and `+2.0%` Knight Eff per Learning.
 
 ---

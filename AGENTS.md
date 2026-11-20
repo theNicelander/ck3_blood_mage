@@ -1,72 +1,38 @@
-# AGENTS.md — Blood Mages (CK3 mod)
+# AGENTS.md — Blood Mages (CK3 1.20+)
 
-CK3 script fails silently. Follow patterns in this repo and vanilla 1.20 (`/Users/clarabotet/Petur/ck3-full`); never invent syntax.
-
-## What this is
-
-- CK3 mod for **1.20.\***. Pure script, localization, gfx. No build step.
-- Traits: `lifestyle_blood_mage` (tracks: ancient, wisdom, bloodline, radiance, cunning, fury).
-- Features: Lifeforce resource, spell decisions/interactions, blood golems, Blood Retinue, Blóðtrú religions, Blood Runes & Temples, game rules.
-- `scripts/` holds validation and Steam Workshop helpers. Never touch `.env`, credentials or `*.vdf`.
+Pure script, loc, gfx; no build. Vanilla ref: `/Users/clarabotet/Petur/ck3-full`. CK3 fails silently — never invent syntax; verify in vanilla or `script_docs`.
 
 ## Principles
 
-- **Zero vanilla overwrites**: modular additions, compatible with total conversions. An unprefixed filename matching vanilla is an override; never do it by accident.
-- **Earned power**: lifespan and stat gains require Lifeforce, piety, ritual sacrifice, and tangible risk.
-- **Concise UI text**: say "Lifeforce", not "vitality". Flavour only in decision/event narrative descriptions. Back/cancel options always use "Back" (no flavour text).
-- **Nothing hidden, often unavailable**: keep spells, rites, options visible and greyed out (`show_as_unavailable`) with their requirements. Hide only when the prerequisite stage is not reached or the option is completed/superseded.
-- **Native requirements over custom_tooltip**: rely on native CK3 trigger tooltips for requirements. Custom tooltips (`custom_tooltip = { text = ... }`) should ONLY be used when complex requirements cannot under normal circumstances be communicated natively. Never wrap standard triggers (`piety_level`, `piety`, `prestige`, `gold`, `has_trait`, `has_character_modifier`, `NOT = { has_character_modifier = ... }`, etc.) in `custom_tooltip`.
-- **Commit on task completion**: parallel agents run concurrently. Every task or implementation ends with commit and push (stage only your files). Never leave finished work uncommitted.
-- **Clarify before building**: ask follow-up questions on rough ideas; state assumptions. Plans end with commit and push.
-- **Planner model**: if using or selected Gemini Argon, prompt user before starting any work: "You are using Argon, do you want to continue Yes/No". Never edit files on Argon; only investigate, ask, and plan.
-- **Suggest skills for investigated systems**: if a game system was not well understood and had to be investigated in vanilla, suggest creating a skill for it (`.agents/skills/`).
-- **Single source of truth**: every rule, guideline, or procedure lives in exactly one place. Link or point; never duplicate text across files.
-- **Minimal instructions & token saving**: write tersely; AI skills use caveman style. Cut fluff, filler, and verbose explanations in docs, rules, and prompts. Keep only minimal text needed to execute.
+- **Zero vanilla overwrites**: modular only. Unprefixed vanilla filename = override; never do by accident.
+- **Earned power**: stats/lifespan cost Lifeforce, piety, sacrifice, risk.
+- **Concise UI**: say "Lifeforce" (not "vitality"), "blood" (not crimson/sanguine), `"Back"` for cancel. Flavour only in narrative `_desc`.
+- **Notification icon**: all `bm_action_*` notifications use `@bm_ancient_discipline_icon!` (Blood Mage signature icon).
+- **Nothing hidden, often unavailable**: keep options visible + greyed (`show_as_unavailable`); hide only if prerequisite unreached or permanently completed/superseded.
+- **Native triggers over `custom_tooltip`**: never wrap standard triggers (`piety`, `piety_level`, `gold`, `has_trait`, `has_character_modifier`, etc.) in `custom_tooltip`.
+- **Toasts**: wrap player-facing modifier, trait, XP, stat grants in `send_interface_toast`.
+- **Single source of truth & caveman AI docs**: one place per rule (link, never duplicate); terse caveman prose in rules/skills/`AGENTS.md`.
 
-## Layout & docs
+## Naming, format & tools
 
-- `common/`, `events/`, `gui/`, `gfx/`, `localization/<language>/` mirror vanilla. Religion uses the 1.20 layout `common/religion/{religion_family_types,religion_types,faith_types,rite_types,holy_site_types,doctrine_group_types,doctrine_types}`; older branches may have `religions/`, `religion_families/`, `holy_sites/`. Check which one the branch has; never mix.
-- `.agents/rules/`: CK3 how-to (no `bm_` ids). `.agents/skills/`: task procedures.
-- `docs-ai/architecture/`: current-state spec per subsystem and index (rules: its `AGENTS.md`); read the matching doc before changing that code, update it in the same change.
-- `docs-ai/branch-context/<branch>.md`: mandatory PR-style branch doc (skill `manage-pr`).
-- `RELEASE_NOTES.md`: player notes + version history (skill `update-release-notes`).
-- **Do not read unless asked**: `docs-ai/archive/` (old branch docs), `docs-ai/ideas/`, `docs-ai/base-game-lists/`, `.agents/cost.md`.
-
-| Rules (`.agents/rules/`) | When |
-| --- | --- |
-| `ck3-scripting.md`, `ck3-localization.md` | always |
-| `ck3-decisions.md` (incl. AI), `ck3-events.md`, `ck3-traits.md`, `ck3-religions.md`, `single-combat.md`, `ck3-error-catalog.md` | on demand |
-
-| Skills (`.agents/skills/`) | Task |
-| --- | --- |
-| `manage-pr` | finish change, branch doc, commit, push, PR |
-| `add-blood-magic-decision`, `add-decision-option-widget`, `add-interaction-send-options`, `add-faith`, `add-trait-track`, `add-game-rule`, `add-icon-asset` | add that thing |
-| `document-subsystem`, `update-release-notes`, `caveman` | docs / notes / terse voice |
-
-## Naming & format (enforced by `scripts/check_repo.py`)
-
-- Prefix every new file and identifier `bm_`; one file per feature `bm_<feature>.txt`. Effects/triggers end `_effect`/`_trigger`. Rules: `has_game_rule = bm_<rule>_<setting>`.
-- Always rename internal IDs to match reworked features unless explicitly told to keep them.
-- `.txt`, `.gui`, `.yml`: UTF-8 **with BOM**, trailing newline, balanced braces. Keep each file's line endings (many CRLF) and indentation; don't reformat unrelated lines; keep comments.
-- Read files with `python3 scripts/read_ck3.py read <file> [--lines a:b]`, `block <file> <name>`, `search <pattern> --vanilla [--subpath common/religion]` (handles BOM/encoding).
-- Game errors: `tail -n 100 ~/Documents/"Paradox Interactive"/"Crusader Kings III"/logs/error.log`.
-- Localization: English only; see `ck3-localization.md`.
-- Icons/DDS: skill `add-icon-asset`.
-- Modifiers: only use modifiers from `scripts/modifiers_{character,county,domicile}_allowlist.json` (enforced by pre-commit). Add verified vanilla modifiers via `python3 scripts/check_modifiers.py --add <mod> --scope <character|county|domicile>`.
+- Prefix new files/IDs `bm_` (`bm_<feature>.txt`, `_effect`/`_trigger`, `has_game_rule = bm_<rule>_<setting>`). Rename IDs on rework unless told otherwise.
+- `.txt`/`.gui`/`.yml`: UTF-8 **with BOM**, trailing newline, balanced braces; preserve CRLF/indentation/comments.
+- Inspect: `python3 scripts/read_ck3.py {read|block|search}` (handles BOM).
+- Modifiers: allowlist-only (`scripts/modifiers_{character,county,domicile}_allowlist.json`); add verified vanilla via `python3 scripts/check_modifiers.py --add <mod> --scope <character|county|domicile>`.
+- Validate: `python3 scripts/check_repo.py`. Logs/errors: skill `debug-ck3-logs` (always snapshot `error.log`/`debug.log` first).
 
 ## Never
 
-- Change `descriptor.mod` (`name`, `remote_file_id`, `version`) or add `replace_path`.
-- Delete third-party compat code (Blood of Numenor, AGOT) without asking; never reference another mod's traits/faiths/titles directly (guard with `has_global_variable = AGOT_is_loaded` or doctrine parameters).
-- Invent effect, trigger or scope names; cite vanilla or `script_docs`.
-- Commit or push directly to `main`. If on `main`, create a sequential `v1.20.<N+1>` branch from `main` first; otherwise stay on the current feature branch.
-- Blanket stage (`git add .`, `-A`, `commit -a`): other agents work in parallel; stage, commit and push only files you changed.
-- Leave completed work uncommitted in working tree: parallel agents need committed checkpoints.
-- Merge a PR unless explicitly asked by the user. Stop after PR creation; merging requires explicit user instruction.
-- Execute plans on unverified assumptions.
+- Edit `descriptor.mod` (`name`, `remote_file_id`, `version`), `.env`, `*.vdf`, or add `replace_path`.
+- Delete third-party compat code (AGOT, Blood of Numenor) unasked, or reference other-mod keys unguarded (`has_global_variable = AGOT_is_loaded` or doctrine params).
+- Commit/push to `main` (if on `main`, branch `v1.21.<N+1>` first).
+- Blanket stage (`git add .`, `-A`, `commit -a`) — parallel agents share tree.
+- Merge PR unless user explicitly asks (squash via `gh pr merge --squash`, never locally).
+- Read `docs-ai/archive/`, `docs-ai/ideas/`, `docs-ai/base-game-lists/`, `.agents/cost.md` unless asked.
 
-## Workflow
+## Workflow & agent guards
 
-1. `git branch --show-current`; read `docs-ai/branch-context/<branch>.md` (create if missing), matching rule(s) and architecture doc.
-2. Plan smallest change; grep existing identifiers; use the matching skill.
-3. Docs, notes, check, commit, push, create PR: skill `manage-pr`. PR title `<branch>: <outcome title>`. Stop after PR creation; when the user explicitly instructs to merge, squash merge PR via GitHub (`gh pr merge --squash`), never locally; keeps `(#<PR>)`.
+- **Commit every turn (MANDATORY)**: parallel agents share this working tree. Before ending ANY turn that edited files, explicitly `git add <only your files>`, commit, and push to `<branch>`. Never leave uncommitted edits waiting for follow-up.
+- **Argon planner**: if using Gemini Argon, ask `"You are using Argon, do you want to continue Yes/No"` first; never edit files on Argon (investigate/ask/plan only).
+- **Clarify first**: ask on rough ideas; never execute on unverified assumptions. Suggest a skill for newly investigated vanilla systems.
+- **Flow**: `git branch --show-current` → read `docs-ai/branch-context/<branch>.md` + matching `docs-ai/architecture/` doc → edit → finish via skill `manage-pr`.
