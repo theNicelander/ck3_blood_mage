@@ -33,8 +33,8 @@ bm_blood_sanctuary_01 = {
 	}
 
 	character_modifier = {
-		health = 0.2
-		life_expectancy = 2
+		health = 0.5
+		life_expectancy = 4
 	}
 
 	duchy_capital_county_modifier = {
@@ -82,8 +82,8 @@ bm_blood_sanctuary_02 = {
 	}
 
 	character_modifier = {
-		health = 0.4
-		life_expectancy = 4
+		health = 1.0
+		life_expectancy = 8
 	}
 
 	duchy_capital_county_modifier = {
@@ -131,8 +131,8 @@ bm_blood_sanctuary_03 = {
 	}
 
 	character_modifier = {
-		health = 0.6
-		life_expectancy = 6
+		health = 1.5
+		life_expectancy = 12
 	}
 
 	duchy_capital_county_modifier = {
@@ -180,8 +180,8 @@ bm_blood_sanctuary_04 = {
 	}
 
 	character_modifier = {
-		health = 0.8
-		life_expectancy = 8
+		health = 2.0
+		life_expectancy = 16
 	}
 
 	duchy_capital_county_modifier = {
@@ -232,6 +232,8 @@ bm_bloodline_vault_01 = {
 	character_modifier = {
 		positive_inactive_inheritance_chance = 0.04
 		positive_random_genetic_chance = 0.04
+		genetic_trait_strengthen_chance = 0.04
+		inbreeding_chance = -0.05
 	}
 
 	next_building = bm_bloodline_vault_02
@@ -277,6 +279,8 @@ bm_bloodline_vault_02 = {
 	character_modifier = {
 		positive_inactive_inheritance_chance = 0.08
 		positive_random_genetic_chance = 0.08
+		genetic_trait_strengthen_chance = 0.08
+		inbreeding_chance = -0.10
 	}
 
 	next_building = bm_bloodline_vault_03
@@ -322,6 +326,8 @@ bm_bloodline_vault_03 = {
 	character_modifier = {
 		positive_inactive_inheritance_chance = 0.12
 		positive_random_genetic_chance = 0.12
+		genetic_trait_strengthen_chance = 0.12
+		inbreeding_chance = -0.15
 	}
 
 	next_building = bm_bloodline_vault_04
@@ -367,6 +373,8 @@ bm_bloodline_vault_04 = {
 	character_modifier = {
 		positive_inactive_inheritance_chance = 0.16
 		positive_random_genetic_chance = 0.16
+		genetic_trait_strengthen_chance = 0.16
+		inbreeding_chance = -0.20
 	}
 
 	type_icon = "regular_buildings/family_lineage_archive.dds"
@@ -412,7 +420,8 @@ bm_blood_academy_01 = {
 
 	character_modifier = {
 		learning = 1
-		monthly_learning_lifestyle_xp_gain_mult = 0.05
+		monthly_lifestyle_xp_gain_mult = 0.04
+		monthly_lifestyle_xp_gain_add = 2
 		cultural_head_fascination_mult = 0.05
 	}
 
@@ -458,7 +467,8 @@ bm_blood_academy_02 = {
 
 	character_modifier = {
 		learning = 2
-		monthly_learning_lifestyle_xp_gain_mult = 0.10
+		monthly_lifestyle_xp_gain_mult = 0.08
+		monthly_lifestyle_xp_gain_add = 4
 		cultural_head_fascination_mult = 0.10
 	}
 
@@ -504,7 +514,9 @@ bm_blood_academy_03 = {
 
 	character_modifier = {
 		learning = 3
-		monthly_learning_lifestyle_xp_gain_mult = 0.15
+		learning_per_piety_level = 1
+		monthly_lifestyle_xp_gain_mult = 0.12
+		monthly_lifestyle_xp_gain_add = 7
 		cultural_head_fascination_mult = 0.15
 	}
 
@@ -550,7 +562,9 @@ bm_blood_academy_04 = {
 
 	character_modifier = {
 		learning = 4
-		monthly_learning_lifestyle_xp_gain_mult = 0.20
+		learning_per_piety_level = 2
+		monthly_lifestyle_xp_gain_mult = 0.16
+		monthly_lifestyle_xp_gain_add = 10
 		cultural_head_fascination_mult = 0.20
 	}
 
@@ -596,8 +610,8 @@ bm_blood_ancestors_hall_01 = {
 	}
 
 	character_modifier = {
-		monthly_dynasty_prestige = 0.2
-		monthly_dynasty_prestige_mult = 0.02
+		monthly_dynasty_prestige = 0.25
+		monthly_dynasty_prestige_mult = 0.05
 		legitimacy_gain_mult = 0.05
 	}
 
@@ -642,8 +656,8 @@ bm_blood_ancestors_hall_02 = {
 	}
 
 	character_modifier = {
-		monthly_dynasty_prestige = 0.4
-		monthly_dynasty_prestige_mult = 0.04
+		monthly_dynasty_prestige = 0.50
+		monthly_dynasty_prestige_mult = 0.10
 		legitimacy_gain_mult = 0.10
 	}
 
@@ -688,8 +702,8 @@ bm_blood_ancestors_hall_03 = {
 	}
 
 	character_modifier = {
-		monthly_dynasty_prestige = 0.7
-		monthly_dynasty_prestige_mult = 0.06
+		monthly_dynasty_prestige = 0.75
+		monthly_dynasty_prestige_mult = 0.15
 		legitimacy_gain_mult = 0.15
 	}
 
@@ -735,7 +749,7 @@ bm_blood_ancestors_hall_04 = {
 
 	character_modifier = {
 		monthly_dynasty_prestige = 1.0
-		monthly_dynasty_prestige_mult = 0.08
+		monthly_dynasty_prestige_mult = 0.20
 		legitimacy_gain_mult = 0.20
 	}
 
