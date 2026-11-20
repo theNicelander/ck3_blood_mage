@@ -48,12 +48,12 @@ Duchy Capital district (`bm_blood_temple_district` in `common/districts/bm_duchy
 
 ### Primary Building (`bm_blood_temple_01..04`)
 
-| Tier | Building ID | Name | Devotion & Gov | Cost | Time | Province (`building_slots_for_host_district`) | Holder (`character_modifier`) | Duchy County (`duchy_capital_county_modifier`) |
+| Tier | Building ID | Name | Devotion & Gov | Cost | Time | Province (`province_modifier`) | Holder (`character_modifier`) | Duchy County (`duchy_capital_county_modifier`) |
 | :---: | :--- | :--- | :---: | :---: | :---: | :--- | :--- | :--- |
-| **I** | `bm_blood_temple_01` | **Blood Altar** | None (All) | 200g | 1 yr | 1 slot | +0.5 piety, +5% piety mult | +0.05 prosperity growth, +2 control baseline, +5% levy size |
-| **II** | `bm_blood_temple_02` | **Blood Shrine** | 1+ (All) | 400g | 1.5 yrs | 2 slots | +1.0 piety, +10% piety mult | +0.10 prosperity growth, +4 control baseline, +10% levy size |
-| **III** | `bm_blood_temple_03` | **Blood Temple** | 2+ (Feudalized) | 700g | 2 yrs | 3 slots | +1.5 piety, +15% piety mult | +0.15 prosperity growth, +6 control baseline, +15% levy size |
-| **IV** | `bm_blood_temple_04` | **Blood Acropolis** | 3+ (Feudalized) | 1100g | 3 yrs | 4 slots, +2 fort level, +5 defender advantage | +2.0 piety, +20% piety mult | +0.20 prosperity growth, +8 control baseline, +20% levy size |
+| **I** | `bm_blood_temple_01` | **Blood Altar** | None (All) | 200g | 1 yr | 1 slot, +10 settlement size baseline | +0.5 piety, +5% piety mult | +0.05 prosperity growth, +5% levy size |
+| **II** | `bm_blood_temple_02` | **Blood Shrine** | 1+ (All) | 400g | 1.5 yrs | 2 slots, +30 settlement size baseline | +1.0 piety, +10% piety mult | +0.10 prosperity growth, +10% levy size |
+| **III** | `bm_blood_temple_03` | **Blood Temple** | 2+ (Feudalized) | 700g | 2 yrs | 3 slots, +50 settlement size baseline | +1.5 piety, +15% piety mult | +0.15 prosperity growth, +15% levy size |
+| **IV** | `bm_blood_temple_04` | **Blood Acropolis** | 3+ (Feudalized) | 1100g | 3 yrs | 4 slots, +80 settlement size baseline, +2 fort level, +5 defender advantage | +2.0 piety, +20% piety mult | +0.20 prosperity growth, +20% levy size |
 
 ### Sub-Buildings (`bm_duchy_district_buildings.txt`, 250 / 450 / 750 / 1100g, 365 / 545 / 730 / 910d, `district_level_requirement = 2..4` on T2–T4)
 
