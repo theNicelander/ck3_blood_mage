@@ -152,7 +152,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 
 ## Version history
 
-- v1.21.5: Merge Cast Blood Curse into Blood Drain, unify Blood Blessing into Cast Blood Blessing, remove Anoint Heir, and update Adopt into Dynasty icon.
+- v1.21.5: Merge Cast Blood Curse into Blood Drain, unify Blood Blessing into Cast Blood Blessing (with separate Minor/Major/Superior/Ancient Grant Lifeforce options), remove Anoint Heir, add permanent +30 opinion when making someone a Blood Mage, and update Adopt into Dynasty icon.
 - v1.21.4: Overhaul Blood Temple into 4-tier duchy district (6 sub-buildings), add Adopt into Dynasty, rebalance Fortune.
 - v1.21.2: Rebalance Fury knight effectiveness per Learning to 50/100 XP (+1% each) and distribute monthly Piety across all Blood Mage tracks (+0.1/step skill, +0.2/step Ancient).
 - v1.21.1: Update modifiers, duchy districts, port parameters, Monaco holy site barony (`c_savona` / `b_ventimiglia`), Icelandic innovations, and add Merchant/trade support for CK3 1.21.
