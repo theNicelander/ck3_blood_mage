@@ -358,7 +358,7 @@
 			debug_log = "BloodMageInteraction: bm_blood_drain (minor) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
 			if = {
 				limit = { scope:recipient = { is_imprisoned_by = scope:actor } }
-				bm_minor_lifedrain_success_effect = yes
+				bm_minor_lifedrain_success_effect = { XP = 1 }
 			}
 			else = {
 				scope:actor = {
@@ -379,7 +379,7 @@
 									NOT = { is_courtier_of = scope:actor }
 								}
 							}
-							bm_minor_lifedrain_secret_success_effect = yes
+							bm_minor_lifedrain_secret_success_effect = { XP = 1 }
 						}
 						40 = {
 							desc = bm_blood_drain_minor_success_tt
@@ -395,7 +395,7 @@
 									NOT = { is_courtier_of = scope:actor }
 								}
 							}
-							bm_minor_lifedrain_success_effect = yes
+							bm_minor_lifedrain_success_effect = { XP = 1 }
 						}
 						40 = {
 							desc = bm_blood_drain_minor_fail_tt
@@ -438,7 +438,7 @@
 								NOT = { is_courtier_of = scope:actor }
 							}
 						}
-						bm_minor_lifedrain_secret_success_effect = yes
+						bm_minor_lifedrain_secret_success_effect = { XP = 2 }
 					}
 					40 = {
 						desc = bm_blood_drain_minor_success_tt
@@ -454,7 +454,7 @@
 								NOT = { is_courtier_of = scope:actor }
 							}
 						}
-						bm_minor_lifedrain_success_effect = yes
+						bm_minor_lifedrain_success_effect = { XP = 2 }
 					}
 					20 = {
 						desc = bm_blood_drain_minor_fail_tt

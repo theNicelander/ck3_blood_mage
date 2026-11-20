@@ -868,7 +868,7 @@
 				}
 			}
 			debug_log = "BloodMageInteraction: bm_cast_blood_blessing (radiance) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
-			bm_apply_blessing_effect = { LINE = radiance CASTER = scope:actor TARGET = scope:recipient }
+			bm_apply_blessing_effect = { LINE = radiance XP_TRACK = radiance CASTER = scope:actor TARGET = scope:recipient }
 		}
 		else_if = {
 			limit = {
@@ -879,7 +879,7 @@
 				}
 			}
 			debug_log = "BloodMageInteraction: bm_cast_blood_blessing (fortune) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
-			bm_apply_blessing_effect = { LINE = fortune CASTER = scope:actor TARGET = scope:recipient }
+			bm_apply_blessing_effect = { LINE = fortune XP_TRACK = fortune CASTER = scope:actor TARGET = scope:recipient }
 		}
 		else_if = {
 			limit = {
@@ -890,7 +890,7 @@
 				}
 			}
 			debug_log = "BloodMageInteraction: bm_cast_blood_blessing (fury) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
-			bm_apply_blessing_effect = { LINE = fury CASTER = scope:actor TARGET = scope:recipient }
+			bm_apply_blessing_effect = { LINE = fury XP_TRACK = fury CASTER = scope:actor TARGET = scope:recipient }
 		}
 		else_if = {
 			limit = {
@@ -901,7 +901,7 @@
 				}
 			}
 			debug_log = "BloodMageInteraction: bm_cast_blood_blessing (cunning) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
-			bm_apply_blessing_effect = { LINE = cunning CASTER = scope:actor TARGET = scope:recipient }
+			bm_apply_blessing_effect = { LINE = cunning XP_TRACK = cunning CASTER = scope:actor TARGET = scope:recipient }
 		}
 		else_if = {
 			limit = {
@@ -912,7 +912,7 @@
 				}
 			}
 			debug_log = "BloodMageInteraction: bm_cast_blood_blessing (wisdom) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
-			bm_apply_blessing_effect = { LINE = wisdom CASTER = scope:actor TARGET = scope:recipient }
+			bm_apply_blessing_effect = { LINE = wisdom XP_TRACK = wisdom CASTER = scope:actor TARGET = scope:recipient }
 		}
 		else_if = {
 			limit = {
@@ -923,7 +923,7 @@
 				}
 			}
 			debug_log = "BloodMageInteraction: bm_cast_blood_blessing (ancient) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
-			bm_apply_blessing_effect = { LINE = ancient CASTER = scope:actor TARGET = scope:recipient }
+			bm_apply_blessing_effect = { LINE = ancient XP_TRACK = wisdom CASTER = scope:actor TARGET = scope:recipient }
 		}
 		else_if = {
 			limit = { scope:blessing_empower = yes }
@@ -976,7 +976,7 @@
 					left_icon = scope:actor
 					right_icon = scope:recipient
 					blood_magic_used_minor = yes
-					add_xp_bm_dynamic = { TRACK = radiance XP = 1 }
+					add_xp_bm_dynamic = { TRACK = radiance XP = 2 }
 					scope:recipient = {
 						add_character_modifier = { modifier = lifeforce_modifier_minor }
 						add_opinion = {
@@ -998,7 +998,7 @@
 					left_icon = scope:actor
 					right_icon = scope:recipient
 					blood_magic_used_major = yes
-					add_xp_bm_dynamic = { TRACK = radiance XP = 2 }
+					add_xp_bm_dynamic = { TRACK = radiance XP = 4 }
 					if = {
 						limit = { scope:recipient = { has_character_modifier = lifedrained_modifier } }
 						scope:recipient = {
@@ -1034,7 +1034,7 @@
 					left_icon = scope:actor
 					right_icon = scope:recipient
 					blood_magic_used_superior = yes
-					add_xp_bm_dynamic = { TRACK = radiance XP = 3 }
+					add_xp_bm_dynamic = { TRACK = radiance XP = 6 }
 					scope:recipient = {
 						add_character_modifier = { modifier = lifeforce_modifier_superior }
 						add_opinion = {
@@ -1056,7 +1056,7 @@
 					left_icon = scope:actor
 					right_icon = scope:recipient
 					blood_magic_used_mojo = yes
-					add_xp_bm_dynamic = { TRACK = fortune XP = 2 }
+					add_xp_bm_dynamic = { TRACK = fortune XP = 4 }
 					scope:recipient = {
 						add_character_modifier = { modifier = lifeforce_modifier_ancient }
 						add_opinion = {
@@ -1099,7 +1099,7 @@
 						blood_magic_used_minor = yes
 						bm_add_blood_mage_xp_effect = {
 							TRACK = radiance
-							XP = 4
+							XP = 2
 						}
 						scope:recipient = {
 							add_character_modifier = { modifier = minor_blood_rune_modifier }
@@ -1116,7 +1116,7 @@
 						blood_magic_used_major = yes
 						bm_add_blood_mage_xp_effect = {
 							TRACK = radiance
-							XP = 5
+							XP = 4
 						}
 						scope:recipient = {
 							bm_upgrade_blood_rune_to_major_effect = yes
@@ -1132,7 +1132,7 @@
 						blood_magic_used_superior = yes
 						bm_add_blood_mage_xp_effect = {
 							TRACK = radiance
-							XP = 10
+							XP = 6
 						}
 						scope:recipient = {
 							bm_upgrade_blood_rune_to_superior_effect = yes

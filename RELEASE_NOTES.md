@@ -14,7 +14,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - **Tier Promotion Floors**: Mage and Archmage base traits preserve promotion floors (`40`/`100` life expectancy, `+3.00`/`+6.00` Piety, `+1.00`/`+2.00` Renown, `+1.0%`/`+2.0%` knight effectiveness per Learning, `+0.05`/`+0.10` Piety per knight, `+10%`/`+20%` monthly Lifestyle XP, `+3`/`+6` to all 5 main attributes, `+1`/`+2` per Piety Level, `+10%`/`+20%` income mult, and scaled track extras) alongside base health and age prowess lock.
 - **Blood Mirror Ascension Duel**: In the tier elevation ritual, face an exact mirror reflection of your mortal vessel—sharing your given name, dynasty "Blood Ghost", mirrored personality, education, physical and combat traits, 20 across mental/governing attributes, and prowess matching your own. Lifeforce is no longer required or consumed to attempt tier ascension, and unspent discipline experience is extracted into Lifeforce at 1 stack per 20 XP upon victory.
 - XP sources unified: battlefield victories (+1 to +3), combat survival (+1), lethal single combat (+3), and tournaments (+2) feed **Fury** directly.
-- Track XP sources rebalanced: healing grants **Radiance**, family rites and childbirth grant **Ancient**/**Fortune**, congenital manifestation grants XP by attribute.
+- Track XP sources rebalanced across character interactions: **Ancient** XP is removed from Ancient Blood Blessings (now grants **Wisdom**); **Bleed Own Veins**, **Cull Champion**, and **Contest of the Red Art** now feed **Fury** (and **Wisdom** on duels); **Drain Blood Memory** feeds **Wisdom**; **Adopt into Dynasty** feeds **Fortune**; and Grant Lifeforce, Inscribe Rune, Empowered Drain, Blood Tithe, Bestow Traits, and Influence Personality payouts are equalised.
 - Regiments: **Blood Berserkers** (heavy shock infantry, Devotion 2+, 250 Piety) and **Blood-Bound Behemoths** (siege-capable monsters, Devotion 4+, 400 Piety), Piety-maintained; recruitment requirements are now explicitly displayed in unit descriptions.
 - Crimson Sworn-Guard court position and Crimson Warrior champions.
 
@@ -152,7 +152,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 
 ## Version history
 
-- v1.21.5: Merge Cast Blood Curse into Blood Drain, unify Blood Blessing into Cast Blood Blessing (with separate Minor/Major/Superior/Ancient Grant Lifeforce options), remove Anoint Heir, add permanent +30 opinion when making someone a Blood Mage, and update Adopt into Dynasty icon.
+- v1.21.5: Consolidate Blood Drain & Cast Blood Blessing, remove Anoint Heir, equalise interaction XP (seal Ancient leak, lift Fury & Wisdom).
 - v1.21.4: Overhaul Blood Temple into 4-tier duchy district (6 sub-buildings), add Adopt into Dynasty, rebalance Fortune.
 - v1.21.2: Rebalance Fury knight effectiveness per Learning to 50/100 XP (+1% each) and distribute monthly Piety across all Blood Mage tracks (+0.1/step skill, +0.2/step Ancient).
 - v1.21.1: Update modifiers, duchy districts, port parameters, Monaco holy site barony (`c_savona` / `b_ventimiglia`), Icelandic innovations, and add Merchant/trade support for CK3 1.21.

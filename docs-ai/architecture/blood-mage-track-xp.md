@@ -48,28 +48,32 @@ Guaranteed, no cost, 1 year cooldown: **+1 XP** (**+2 XP** with Superior **Hulin
 
 | XP | Cost | Action | Source | Req | CD |
 | --- | --- | --- | --- | --- | --- |
+| +2 / +4 / +6 | 50 / 150 / 250 Piety + Minor/Major/Superior | Cast Blood Blessing (Wisdom or Ancient) | interaction `bm_cast_blood_blessing_interaction` (`bm_apply_blessing_effect`) | Devotion 1/3/5 | 1 year (target) |
+| +2 / +3 / +5 / +7 | 100 / 250 / 500 / 1000 Piety | Manifest Lifeforce | interaction `bm_manifest_lifeforce_interaction` | Devotion >= 2 | 1 year |
+| +5 (win) / +1 (fail) | 250 Piety + Major | Influence Personality | interaction `bm_reshape_personality_interaction` | Devotion >= 3 | 5 yrs win / 1 yr fail |
+| +4 | 150+50N Piety + Major | Drain Blood Memory | interaction `bm_blood_drain_interaction` (`drain_memory`) | Target with eligible trait | None |
+| +4 | 250 Piety + Major | Purge Stress Vices (Self) | interaction `bm_heal_ailment` | Self has stress coping vice | None |
+| +3 (crit), +2 (win), +1 (defeat) | 150 Piety + Minor | Contest of the Red Art | interaction `bm_occult_mage_duel_interaction` | Target Blood Mage | 3 years |
 | +2 | 100 Piety + Minor; Grants Major | Purify Lifeforce (Minor to Major) | decision `bm_purify_lifeforce_decision` | Minor lifeforce, `piety_level >= 1` | 3 years |
 | +3 | 250 Piety + Major; Grants Superior | Distill Lifeforce (Major to Superior) | decision `bm_distill_lifeforce_decision` | Major lifeforce, `piety_level >= 2` | 5 years |
 | +2 | 100–300 Piety | Enhance Ward/Child Education (Lvl 1–5) | interaction `bm_enhance_education_interaction` | Ward/child age 6–15 | 3 years |
 | +1 | 200 Piety | Study Arcane Secrets | decision | Learning lifestyle | 3 years |
-| +1 | 75 Piety | Siphon Stored Lifeforce | interaction `bm_siphon_lifeforce_reserves_interaction` | Target has stored Lifeforce | 1 year |
-| +5 (crit), +3 (win) | 150 Piety + Minor | Contest of the Red Art | interaction `bm_occult_mage_duel_interaction` | Target Blood Mage | 3 years |
 | +1 (25% / 50% / 100% chance for Tier I/II/III Covenant of Wisdom) | None | Yearly Covenant Pulse | on-action `blood_mage_yearly_events.002` | Has house, house covenant | 1 year |
 
 ## `radiance`
 
 | XP | Cost | Action | Source | Req | CD |
 | --- | --- | --- | --- | --- | --- |
-| +1 | 15 Piety + Minor | Heal Affliction: Minor | interaction & event | Target with minor ailment | None |
-| +2 | 35 Piety + Major | Heal Affliction: Major | interaction & event | Target with severe ailment | None |
-| +3 | 60 Piety + Minor & Major | Heal Affliction: Deadly | interaction & event | Target with deadly disease | None |
-| +1 | 50 Piety + Minor | Heal Old Age: Minor | interaction & event (`bm_heal_old_age.0001`) | Target with old age trait | None |
-| +2 | 150 Piety + Major | Heal Old Age: Major | `bm_heal_old_age.0001` | Target with old age trait | None |
-| +2 (Major) / +1 (Minor) | 0 Piety + Major/Minor | Empower Blood Mage (Caster) | `empower_blood_mage_interaction` | Target Blood Mage | None |
-| +1 / +2 / +3 | 150 / 350 / 750 Piety + Minor/Major/Superior | Empower Bloodline (Covenants) | decision `bm_empower_bloodline_decision` | House head, Devotion 1/2/3 | 1 year |
-| +4 (caster) | 0 Piety + Minor | Inscribe Minor Rune on Other | interaction `bm_inscribe_rune_other_interaction` | `piety_level >= 2` | 5 years |
-| +5 (caster) | 200 Piety + Major | Upgrade Major Rune on Other | `bm_inscribe_rune_other_interaction` | `piety_level >= 3` | 5 years |
-| +10 (caster) | 400 Piety + Superior | Upgrade Superior Rune on Other | `bm_inscribe_rune_other_interaction` | `piety_level >= 4` | 5 years |
+| +2 / +4 / +6 | 50 / 150 / 250 Piety + Minor/Major/Superior | Cast Blood Blessing (Radiance) | interaction `bm_cast_blood_blessing_interaction` | Devotion 1/3/5 | 1 year (target) |
+| +2 | 15 Piety + Minor | Heal Affliction: Minor | interaction & event | Target with minor ailment | None |
+| +4 | 35 Piety + Major | Heal Affliction: Major | interaction & event | Target with severe ailment | None |
+| +6 | 100 Piety + Superior | Heal Affliction: Deadly | interaction & event | Target with deadly disease | None |
+| +2 | 50 Piety + Minor | Heal Old Age: Minor | interaction & event (`bm_heal_old_age.0001`) | Target with old age trait | None |
+| +4 | 150 Piety + Major | Heal Old Age: Major | `bm_heal_old_age.0001` | Target with old age trait | None |
+| +4 | 250 Piety + Major | Purge Stress Vices (Other) | interaction `bm_heal_ailment` | Target has stress coping vice | None |
+| +4 (Major) / +2 (Minor) | 0 Piety + Major/Minor | Empower Blood Mage (Caster) | `bm_cast_blood_blessing_interaction` (`blessing_empower`) | Target Blood Mage | None |
+| +2 / +4 / +6 | 25 / 50 / 100 Piety + Minor/Major/Superior | Grant Lifeforce (Minor/Major/Superior) | `bm_cast_blood_blessing_interaction` | Target non-self | None |
+| +2 / +4 / +6 (caster) | 0 / 200 / 400 Piety + Minor/Major/Superior | Inscribe / Upgrade Blood Rune on Other | `bm_cast_blood_blessing_interaction` (`blessing_inscribe_rune`) | Devotion 2/3/4 | 3 years |
 | +1 (25% / 50% / 100% chance for Tier I/II/III Covenant of Radiance) | None | Yearly Covenant Pulse | on-action `blood_mage_yearly_events.002` | Has house, house covenant | 1 year |
 
 ## Blood Hunt (all tracks)

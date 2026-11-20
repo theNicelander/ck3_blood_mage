@@ -8,7 +8,7 @@
 			add_character_modifier = { modifier = lifeforce_modifier_minor }
 			bm_add_blood_mage_xp_effect = {
 				TRACK = cunning
-				XP = 1
+				XP = $XP$
 			}
 			scope:recipient = {
 				add_character_flag = {
@@ -24,12 +24,14 @@
 bm_minor_lifedrain_secret_success_effect = {
 	bm_minor_lifedrain_success_base_effect = {
 		TOAST_TITLE = bm_blood_drain_secret_toast
+		XP = $XP$
 	}
 }
 
 bm_minor_lifedrain_success_effect = {
 	bm_minor_lifedrain_success_base_effect = {
 		TOAST_TITLE = bm_blood_drain_toast
+		XP = $XP$
 	}
 	scope:recipient = {
 		if = {
@@ -95,7 +97,7 @@ bm_tithe_lifedrain_success_effect = {
 			}
 			bm_add_blood_mage_xp_effect = {
 				TRACK = fortune
-				XP = 2
+				XP = 3
 			}
 			scope:recipient = {
 				increase_wounds_effect = { REASON = lifedrain_reason }
