@@ -149,10 +149,27 @@ bm_memory_drain_execute_multi_track_effect = {
 				}
 				else_if = {
 					limit = {
-						has_trait_xp = {
-							trait = $TRAIT$
-							track = $TRACK_A$
-							value <= "has_trait_xp($TRAIT$|$TRACK_B$)"
+						OR = {
+							AND = {
+								has_trait_xp = { trait = $TRAIT$ track = $TRACK_A$ value < 20 }
+								has_trait_xp = { trait = $TRAIT$ track = $TRACK_B$ value >= 20 }
+							}
+							AND = {
+								has_trait_xp = { trait = $TRAIT$ track = $TRACK_A$ value < 40 }
+								has_trait_xp = { trait = $TRAIT$ track = $TRACK_B$ value >= 40 }
+							}
+							AND = {
+								has_trait_xp = { trait = $TRAIT$ track = $TRACK_A$ value < 60 }
+								has_trait_xp = { trait = $TRAIT$ track = $TRACK_B$ value >= 60 }
+							}
+							AND = {
+								has_trait_xp = { trait = $TRAIT$ track = $TRACK_A$ value < 80 }
+								has_trait_xp = { trait = $TRAIT$ track = $TRACK_B$ value >= 80 }
+							}
+							AND = {
+								has_trait_xp = { trait = $TRAIT$ track = $TRACK_A$ value < 100 }
+								has_trait_xp = { trait = $TRAIT$ track = $TRACK_B$ value >= 100 }
+							}
 						}
 					}
 					add_trait_xp = {
