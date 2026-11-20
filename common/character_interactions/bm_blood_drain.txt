@@ -365,29 +365,45 @@
 					duel = {
 						skills = { intrigue learning }
 						target = scope:recipient
-						50 = {
+						20 = {
+							desc = bm_blood_drain_minor_secret_success_tt
+							compare_modifier = {
+								value = scope:duel_value
+								multiplier = 1.5
+								min = -15
+								max = 30
+							}
+							modifier = {
+								add = -10
+								scope:recipient = {
+									NOT = { is_courtier_of = scope:actor }
+								}
+							}
+							bm_minor_lifedrain_secret_success_effect = yes
+						}
+						40 = {
 							desc = bm_blood_drain_minor_success_tt
 							compare_modifier = {
 								value = scope:duel_value
-								multiplier = 2.67
-								min = -45
-								max = 45
+								multiplier = 1.5
+								min = -25
+								max = 25
 							}
 							modifier = {
-								add = -20
+								add = -10
 								scope:recipient = {
 									NOT = { is_courtier_of = scope:actor }
 								}
 							}
 							bm_minor_lifedrain_success_effect = yes
 						}
-						50 = {
+						40 = {
 							desc = bm_blood_drain_minor_fail_tt
 							compare_modifier = {
 								value = scope:duel_value
 								multiplier = -2.67
-								min = -45
-								max = 45
+								min = -35
+								max = 35
 							}
 							modifier = {
 								add = 20
@@ -408,16 +424,32 @@
 				duel = {
 					skills = { intrigue learning }
 					target = scope:recipient
-					80 = {
+					40 = {
+						desc = bm_blood_drain_minor_secret_success_tt
+						compare_modifier = {
+							value = scope:duel_value
+							multiplier = 2.0
+							min = -30
+							max = 30
+						}
+						modifier = {
+							add = -10
+							scope:recipient = {
+								NOT = { is_courtier_of = scope:actor }
+							}
+						}
+						bm_minor_lifedrain_secret_success_effect = yes
+					}
+					40 = {
 						desc = bm_blood_drain_minor_success_tt
 						compare_modifier = {
 							value = scope:duel_value
-							multiplier = 2.67
-							min = -70
+							multiplier = 1.0
+							min = -25
 							max = 15
 						}
 						modifier = {
-							add = -20
+							add = -10
 							scope:recipient = {
 								NOT = { is_courtier_of = scope:actor }
 							}
@@ -430,7 +462,7 @@
 							value = scope:duel_value
 							multiplier = -2.67
 							min = -15
-							max = 70
+							max = 60
 						}
 						modifier = {
 							add = 20
@@ -550,38 +582,7 @@
 					years = 2
 				}
 			}
-			if = {
-				limit = { scope:recipient = { is_imprisoned_by = scope:actor } }
-				bm_tithe_lifedrain_success_effect = yes
-			}
-			else = {
-				scope:actor = {
-					duel = {
-						skills = { intrigue learning }
-						target = scope:recipient
-						50 = {
-							desc = bm_blood_drain_tithe_success_tt
-							compare_modifier = {
-								value = scope:duel_value
-								multiplier = 2.67
-								min = -45
-								max = 45
-							}
-							bm_tithe_lifedrain_success_effect = yes
-						}
-						50 = {
-							desc = bm_blood_drain_tithe_fail_tt
-							compare_modifier = {
-								value = scope:duel_value
-								multiplier = -2.67
-								min = -45
-								max = 45
-							}
-							bm_tithe_lifedrain_fail_effect = yes
-						}
-					}
-				}
-			}
+			bm_tithe_lifedrain_success_effect = yes
 		}
 		else_if = {
 			limit = { scope:drain_trait = yes }
