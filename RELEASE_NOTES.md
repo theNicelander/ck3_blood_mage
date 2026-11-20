@@ -92,7 +92,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 
 ## Buildings
 
-- **Blood Temples**: seven-tier duchy-capital buildings (Altar → … → Acropolis), available in all duchy capitals including tribal; tiers I–IV open to more holders, granting scaling monthly Piety, Piety per sworn knight (+0.02 to +0.20 and +1% to +5% per knight), dynasty renown, health, lifespan, and genetics.
+- **Blood Temple District**: four-tier duchy-capital district (Blood Altar → Blood Shrine → Blood Temple → Blood Acropolis) unlocking 1–4 sub-building slots and 6 specialized four-tier Blood Mage sub-buildings (**Blood Sanctuary**, **Bloodline Vault**, **Blood Academy**, **Hall of Blood Ancestors**, **Blood Basin**, **Ritual Vaults**) covering lifespan, congenital traits, Learning & cultural fascination, dynasty prestige, duchy prosperity & control, and piety/dread.
 - **Blood Shrine**: five-tier line for camps and estates (up to +2.5 monthly piety, +0.10 and +5% monthly piety per knight at Tier V, plus health, lifespan and inheritance).
 
 ## Interface & Interactions
@@ -153,6 +153,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 
 ## Version history
 
+- v1.21.4: Overhaul Blood Temple into a 4-tier CK3 1.21 duchy district with 6 specialized Blood Mage sub-buildings.
 - v1.21.2: Rebalance Fury knight effectiveness per Learning to 50/100 XP (+1% each) and distribute monthly Piety across all Blood Mage tracks (+0.1/step skill, +0.2/step Ancient).
 - v1.21.1: Update modifiers, duchy districts, port parameters, Monaco holy site barony (`c_savona` / `b_ventimiglia`), Icelandic innovations, and add Merchant/trade support for CK3 1.21.
 - v1.20.90: Move Blood Blessings into dedicated `Cast Blood Blessing` interaction modal (6 exclusive options) and fold self-casting into Minor Blood Magic Grimoire; convert `Empower Dynasty Bloodline` decision to open a hidden interaction popup (`bm_empower_bloodline_interaction`); Minor Life drain now uses a 3-month per-victim cooldown and inflicts escalating wounds instead of `recently_lifedrained_modifier`.

@@ -9,7 +9,7 @@ Decoupled architecture separating **Rune Depth** (`minor/major/superior_blood_ru
 - **Capstone Staves:** Granted at **Superior** depth via `bm_carve_galdrastafir_decision` (500 Piety, 1 Major LF, 5-yr CD). Grants static attributes and an active occult capstone mechanic.
 - **Self-Inscription (`ancient` XP):** Inscribed sequentially via Cast Blood Magic widgets (`minor/major/superior`). Requires Devotion Rank 2 / 3 / 4, 3-yr CD (`bm_blood_rune_cooldown`), awards `+4 / +5 / +10` `ancient` XP. Blood Mages can self-inscribe up to Superior.
 - **Inscribe on Others (`radiance` XP):** Interaction `bm_inscribe_rune_other_interaction` upgrades target depth in-place. 3-yr CD (`bm_blood_rune_other_cooldown`), awards `+4 / +5 / +10` `radiance` XP. Superior on others is Mage exclusive.
-- **Duchy Blood Temples:** 7-tier Duchy Capital building line (`common/buildings/bm_duchy_buildings.txt`, registered in `common/districts/bm_duchy_districts.txt` as `bm_blood_temple_district` with `type = duchy_capital`), constructible in duchy capital slots by Blood Mages or Blóðtrú faithful. Tiers I–IV open to all governments (Tier IV tribal capstone); Tiers V–VII require non-tribal feudalized holdings.
+- **Duchy Blood Temple District:** 4-tier Duchy Capital district (`bm_blood_temple_district` in `common/districts/bm_duchy_districts.txt`, `type = duchy_capital`) with primary Blood Temple (`bm_blood_temple_01..04`, unlocking 1–4 sub-building slots) and 6 specialized 4-tier Blood Mage sub-buildings (`common/buildings/bm_duchy_district_buildings.txt`), constructible in duchy capital slots by Blood Mages or Blóðtrú faithful. Tiers I–II open to all governments; Tiers III–IV require non-tribal feudalized holdings.
 
 ## Tier Progression, Costs & XP Table
 
@@ -42,19 +42,29 @@ Decoupled architecture separating **Rune Depth** (`minor/major/superior_blood_ru
 - **XP Yield:** Grants `radiance` track XP (`+4 / +5 / +10`) to the caster.
 - **Cooldown & Opinion:** Sets 3-year cooldown flag `bm_blood_rune_other_cooldown` on caster; adds `magic_opinion_positive` (`+20`) from recipient toward caster.
 
-## Blood Temples Table
+## Blood Temple District Tables
 
-Duchy Capital district (`bm_blood_temple_district` in `common/districts/bm_duchy_districts.txt`, `type = duchy_capital`) housing the 7-tier Blood Temple line (`bm_blood_temple_01..07`) in duchy capital holdings by rulers holding the duchy title. Always visible in the duchy building slot (shown grayed out with clear failure tooltips when requirements are not yet met). Constructible by characters with `lifestyle_blood_mage`, or a `blodtru_religion` faith. Tribal rulers can construct up to Tier IV (`Blood Temple`), while Tiers V–VII require a non-tribal government and a feudalized holding (Castle, City, or Temple):
+Duchy Capital district (`bm_blood_temple_district` in `common/districts/bm_duchy_districts.txt`, `type = duchy_capital`) housing the 4-tier primary Blood Temple (`bm_blood_temple_01..04`) and 6 specialized 4-tier Blood Mage sub-buildings (`common/buildings/bm_duchy_district_buildings.txt`, max 4 slots per duchy). Constructible by rulers holding the duchy title with `lifestyle_blood_mage` or a `blodtru_religion` faith. Tiers I–II are open to all governments; Tiers III–IV require a non-tribal government and feudalized holding.
 
-| Tier | Building ID | Name | Devotion Gate (`piety_level`) & Government | Cost | Time | Holder Bonuses (`character_modifier`) | County & Holding Bonuses (`duchy_capital_county_modifier` / `province_modifier`) |
-| :---: | :--- | :--- | :---: | :---: | :---: | :--- | :--- |
-| **I** | `bm_blood_temple_01` | **Blood Altar** | None (All Govs) | 150g | 1 yr | +0.5 piety, +5% piety mult, +0.02 piety/knight, +1% piety/knight mult, +0.2 health, +2 life expectancy | +0.1 prosperity growth, +5% prosperity factor, +2 control baseline, +0.1 control growth |
-| **II** | `bm_blood_temple_02` | **Blood Shrine** | 1+ (All Govs) | 250g | 1.5 yrs | +1.0 piety, +10% piety mult, +0.04 piety/knight, +1% piety/knight mult, +0.1 dynasty prestige, +0.4 health, +4 life expectancy | +0.2 prosperity growth, +10% prosperity factor, +4 control baseline, +0.2 control growth |
-| **III** | `bm_blood_temple_03` | **Blood Monument** | 2+ (All Govs) | 400g | 2 yrs | +1.5 piety, +15% piety mult, +0.06 piety/knight, +2% piety/knight mult, +0.2 dynasty prestige, +0.6 health, +6 life expectancy | +0.3 prosperity growth, +15% prosperity factor, +6 control baseline, +0.3 control growth |
-| **IV** | `bm_blood_temple_04` | **Blood Temple** | 3+ (Tribal Capstone) | 600g | 2.5 yrs | +2.0 piety, +20% piety mult, +0.08 piety/knight, +2% piety/knight mult, +0.3 dynasty prestige, +0.8 health, +8 life expectancy | +0.4 prosperity growth, +20% prosperity factor, +8 control baseline, +0.4 control growth |
-| **V** | `bm_blood_temple_05` | **Great Blood Temple** | 3+ (Non-Tribal) | 850g | 3 yrs | +2.5 piety, +25% piety mult, +0.10 piety/knight, +3% piety/knight mult, +0.5 dynasty prestige, +1.0 health, +10 life expectancy, +5% genetic inheritance & random chance | +0.5 prosperity growth, +25% prosperity factor, +10 control baseline, +0.5 control growth |
-| **VI** | `bm_blood_temple_06` | **Blood Pantheon** | 4+ (Non-Tribal) | 1200g | 4 yrs | +3.0 piety, +30% piety mult, +0.15 piety/knight, +4% piety/knight mult, +0.75 dynasty prestige, +1.2 health, +12 life expectancy, +10% genetic inheritance & random chance | +0.6 prosperity growth, +30% prosperity factor, +12 control baseline, +0.6 control growth |
-| **VII** | `bm_blood_temple_07` | **Blood Acropolis** | 5 (Non-Tribal) | 1600g | 5 yrs | +4.0 piety, +40% piety mult, +0.20 piety/knight, +5% piety/knight mult, +1.0 dynasty prestige, +1.4 health, +14 life expectancy, +15% genetic inheritance & random chance, +2 prowess | +0.8 prosperity growth, +40% prosperity factor, +15 control baseline, +0.8 control growth, +2 fort level, +5 defender advantage |
+### Primary Building (`bm_blood_temple_01..04`)
+
+| Tier | Building ID | Name | Devotion & Gov | Cost | Time | Province (`building_slots_for_host_district`) | Holder (`character_modifier`) | Duchy County (`duchy_capital_county_modifier`) |
+| :---: | :--- | :--- | :---: | :---: | :---: | :--- | :--- | :--- |
+| **I** | `bm_blood_temple_01` | **Blood Altar** | None (All) | 200g | 1 yr | 1 slot | +0.5 piety, +5% piety mult | +0.05 prosperity growth |
+| **II** | `bm_blood_temple_02` | **Blood Shrine** | 1+ (All) | 400g | 1.5 yrs | 2 slots | +1.0 piety, +10% piety mult | +0.10 prosperity growth |
+| **III** | `bm_blood_temple_03` | **Blood Temple** | 2+ (Feudalized) | 700g | 2 yrs | 3 slots | +1.5 piety, +15% piety mult | +0.15 prosperity growth |
+| **IV** | `bm_blood_temple_04` | **Blood Acropolis** | 3+ (Feudalized) | 1100g | 3 yrs | 4 slots, +2 fort level, +5 defender advantage | +2.0 piety, +20% piety mult | +0.20 prosperity growth |
+
+### Sub-Buildings (`bm_duchy_district_buildings.txt`, 250 / 450 / 750 / 1100g, 365 / 545 / 730 / 910d, `district_level_requirement = 2..4` on T2–T4)
+
+| Sub-Building | Keys (`01..04`) | Tier I → IV Bonuses |
+| :--- | :--- | :--- |
+| **Blood Sanctuary** | `bm_blood_sanctuary_01..04` | Health +0.2/+0.4/+0.6/+0.8, Life Expectancy +2/+4/+6/+8, Duchy Epidemic Resistance +5/+10/+15/+20 |
+| **Bloodline Vault** | `bm_bloodline_vault_01..04` | Positive Inactive Inheritance & Random Genetic Chance +4%/+8%/+12%/+16% each |
+| **Blood Academy** | `bm_blood_academy_01..04` | Learning +1/+2/+3/+4, Learning Lifestyle XP +5%/+10%/+15%/+20%, Cultural Fascination +5%/+10%/+15%/+20% |
+| **Hall of Blood Ancestors** | `bm_blood_ancestors_hall_01..04` | Dynasty Prestige +0.2/+0.4/+0.7/+1.0 & +2%/+4%/+6%/+8% mult, Legitimacy Gain +5%/+10%/+15%/+20% |
+| **Blood Basin** | `bm_blood_basin_01..04` | Duchy Prosperity Growth +0.15/+0.30/+0.50/+0.75 & +5%/+10%/+15%/+25% factor, Control Baseline +3/+6/+10/+15, Control Growth +0.15/+0.30/+0.50/+0.75 |
+| **Ritual Vaults** | `bm_ritual_vaults_01..04` | Monthly Piety +0.5/+1.0/+1.5/+2.0 & +5%/+10%/+15%/+25% mult, Piety/Knight +0.04/+0.08/+0.12/+0.18, Dread Baseline +5/+10/+15/+20 |
 
 ## Where the Details Live
 
@@ -76,4 +86,4 @@ Duchy Capital district (`bm_blood_temple_district` in `common/districts/bm_duchy
 | Scheme murder Capstone hook (Hulinhjálmur) | `common/on_action/bm_scheme_on_actions.txt` |
 | Story custom localization | `common/customizable_localization/bm_blood_mage_story_custom_loc.txt` |
 | Localization | `localization/english/bm_blood_runes_l_english.yml`, `bm_modifiers_l_english.yml`, `bm_blood_mage_story_l_english.yml` |
-| Blood Temple buildings & district | `common/buildings/bm_duchy_buildings.txt`, `common/districts/bm_duchy_districts.txt`, `localization/english/bm_buildings_l_english.yml`, `gfx/interface/icons/building_types/bm_blood_temple.dds` |
+| Blood Temple district & buildings | `common/districts/bm_duchy_districts.txt`, `common/buildings/bm_duchy_buildings.txt`, `common/buildings/bm_duchy_district_buildings.txt`, `localization/english/bm_buildings_l_english.yml`, `gfx/interface/icons/building_types/bm_blood_temple.dds` |

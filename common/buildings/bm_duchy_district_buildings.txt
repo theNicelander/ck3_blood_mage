@@ -1,0 +1,1131 @@
+﻿##########
+# Blood Temple District Sub-Buildings (CK3 1.21)
+# 6 specialized Blood Mage sub-building lines (4 tiers each),
+# buildable inside bm_blood_temple_district (max 4 slots at T4).
+##########
+
+#######################
+### BLOOD SANCTUARY ###
+#######################
+
+bm_blood_sanctuary_01 = {
+	construction_time = 365
+
+	can_construct_showing_failures_only = {
+		scope:holder = {
+			custom_description = {
+				text = bm_requires_blood_mage_or_blodtru_tt
+				OR = {
+					is_blood_mage_any_tier_trigger = yes
+					faith = { religion = religion:blodtru_religion }
+				}
+			}
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost = {
+		gold = 250
+	}
+
+	character_modifier = {
+		health = 0.2
+		life_expectancy = 2
+	}
+
+	duchy_capital_county_modifier = {
+		epidemic_resistance = 5
+	}
+
+	next_building = bm_blood_sanctuary_02
+
+	type_icon = "regular_buildings/hospice.dds"
+
+	flag = duchy_building
+
+	ai_value = {
+		base = 80
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+bm_blood_sanctuary_02 = {
+	construction_time = 545
+	district_level_requirement = 2
+
+	can_construct_showing_failures_only = {
+		scope:holder = {
+			custom_description = {
+				text = bm_requires_blood_mage_or_blodtru_tt
+				OR = {
+					is_blood_mage_any_tier_trigger = yes
+					faith = { religion = religion:blodtru_religion }
+				}
+			}
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost = {
+		gold = 450
+	}
+
+	character_modifier = {
+		health = 0.4
+		life_expectancy = 4
+	}
+
+	duchy_capital_county_modifier = {
+		epidemic_resistance = 10
+	}
+
+	next_building = bm_blood_sanctuary_03
+
+	type_icon = "regular_buildings/hospice.dds"
+
+	flag = duchy_building
+
+	ai_value = {
+		base = 80
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+bm_blood_sanctuary_03 = {
+	construction_time = 730
+	district_level_requirement = 3
+
+	can_construct_showing_failures_only = {
+		scope:holder = {
+			custom_description = {
+				text = bm_requires_blood_mage_or_blodtru_tt
+				OR = {
+					is_blood_mage_any_tier_trigger = yes
+					faith = { religion = religion:blodtru_religion }
+				}
+			}
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost = {
+		gold = 750
+	}
+
+	character_modifier = {
+		health = 0.6
+		life_expectancy = 6
+	}
+
+	duchy_capital_county_modifier = {
+		epidemic_resistance = 15
+	}
+
+	next_building = bm_blood_sanctuary_04
+
+	type_icon = "regular_buildings/hospice.dds"
+
+	flag = duchy_building
+
+	ai_value = {
+		base = 80
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+bm_blood_sanctuary_04 = {
+	construction_time = 910
+	district_level_requirement = 4
+
+	can_construct_showing_failures_only = {
+		scope:holder = {
+			custom_description = {
+				text = bm_requires_blood_mage_or_blodtru_tt
+				OR = {
+					is_blood_mage_any_tier_trigger = yes
+					faith = { religion = religion:blodtru_religion }
+				}
+			}
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost = {
+		gold = 1100
+	}
+
+	character_modifier = {
+		health = 0.8
+		life_expectancy = 8
+	}
+
+	duchy_capital_county_modifier = {
+		epidemic_resistance = 20
+	}
+
+	type_icon = "regular_buildings/hospice.dds"
+
+	flag = duchy_building
+
+	ai_value = {
+		base = 80
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+#######################
+### BLOODLINE VAULT ###
+#######################
+
+bm_bloodline_vault_01 = {
+	construction_time = 365
+
+	can_construct_showing_failures_only = {
+		scope:holder = {
+			custom_description = {
+				text = bm_requires_blood_mage_or_blodtru_tt
+				OR = {
+					is_blood_mage_any_tier_trigger = yes
+					faith = { religion = religion:blodtru_religion }
+				}
+			}
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost = {
+		gold = 250
+	}
+
+	character_modifier = {
+		positive_inactive_inheritance_chance = 0.04
+		positive_random_genetic_chance = 0.04
+	}
+
+	next_building = bm_bloodline_vault_02
+
+	type_icon = "regular_buildings/family_lineage_archive.dds"
+
+	flag = duchy_building
+
+	ai_value = {
+		base = 75
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+bm_bloodline_vault_02 = {
+	construction_time = 545
+	district_level_requirement = 2
+
+	can_construct_showing_failures_only = {
+		scope:holder = {
+			custom_description = {
+				text = bm_requires_blood_mage_or_blodtru_tt
+				OR = {
+					is_blood_mage_any_tier_trigger = yes
+					faith = { religion = religion:blodtru_religion }
+				}
+			}
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost = {
+		gold = 450
+	}
+
+	character_modifier = {
+		positive_inactive_inheritance_chance = 0.08
+		positive_random_genetic_chance = 0.08
+	}
+
+	next_building = bm_bloodline_vault_03
+
+	type_icon = "regular_buildings/family_lineage_archive.dds"
+
+	flag = duchy_building
+
+	ai_value = {
+		base = 75
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+bm_bloodline_vault_03 = {
+	construction_time = 730
+	district_level_requirement = 3
+
+	can_construct_showing_failures_only = {
+		scope:holder = {
+			custom_description = {
+				text = bm_requires_blood_mage_or_blodtru_tt
+				OR = {
+					is_blood_mage_any_tier_trigger = yes
+					faith = { religion = religion:blodtru_religion }
+				}
+			}
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost = {
+		gold = 750
+	}
+
+	character_modifier = {
+		positive_inactive_inheritance_chance = 0.12
+		positive_random_genetic_chance = 0.12
+	}
+
+	next_building = bm_bloodline_vault_04
+
+	type_icon = "regular_buildings/family_lineage_archive.dds"
+
+	flag = duchy_building
+
+	ai_value = {
+		base = 75
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+bm_bloodline_vault_04 = {
+	construction_time = 910
+	district_level_requirement = 4
+
+	can_construct_showing_failures_only = {
+		scope:holder = {
+			custom_description = {
+				text = bm_requires_blood_mage_or_blodtru_tt
+				OR = {
+					is_blood_mage_any_tier_trigger = yes
+					faith = { religion = religion:blodtru_religion }
+				}
+			}
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost = {
+		gold = 1100
+	}
+
+	character_modifier = {
+		positive_inactive_inheritance_chance = 0.16
+		positive_random_genetic_chance = 0.16
+	}
+
+	type_icon = "regular_buildings/family_lineage_archive.dds"
+
+	flag = duchy_building
+
+	ai_value = {
+		base = 75
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+#####################
+### BLOOD ACADEMY ###
+#####################
+
+bm_blood_academy_01 = {
+	construction_time = 365
+
+	can_construct_showing_failures_only = {
+		scope:holder = {
+			custom_description = {
+				text = bm_requires_blood_mage_or_blodtru_tt
+				OR = {
+					is_blood_mage_any_tier_trigger = yes
+					faith = { religion = religion:blodtru_religion }
+				}
+			}
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost = {
+		gold = 250
+	}
+
+	character_modifier = {
+		learning = 1
+		monthly_learning_lifestyle_xp_gain_mult = 0.05
+		cultural_head_fascination_mult = 0.05
+	}
+
+	next_building = bm_blood_academy_02
+
+	type_icon = "duchy_buildings/examination_hall.dds"
+
+	flag = duchy_building
+
+	ai_value = {
+		base = 80
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+bm_blood_academy_02 = {
+	construction_time = 545
+	district_level_requirement = 2
+
+	can_construct_showing_failures_only = {
+		scope:holder = {
+			custom_description = {
+				text = bm_requires_blood_mage_or_blodtru_tt
+				OR = {
+					is_blood_mage_any_tier_trigger = yes
+					faith = { religion = religion:blodtru_religion }
+				}
+			}
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost = {
+		gold = 450
+	}
+
+	character_modifier = {
+		learning = 2
+		monthly_learning_lifestyle_xp_gain_mult = 0.10
+		cultural_head_fascination_mult = 0.10
+	}
+
+	next_building = bm_blood_academy_03
+
+	type_icon = "duchy_buildings/examination_hall.dds"
+
+	flag = duchy_building
+
+	ai_value = {
+		base = 80
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+bm_blood_academy_03 = {
+	construction_time = 730
+	district_level_requirement = 3
+
+	can_construct_showing_failures_only = {
+		scope:holder = {
+			custom_description = {
+				text = bm_requires_blood_mage_or_blodtru_tt
+				OR = {
+					is_blood_mage_any_tier_trigger = yes
+					faith = { religion = religion:blodtru_religion }
+				}
+			}
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost = {
+		gold = 750
+	}
+
+	character_modifier = {
+		learning = 3
+		monthly_learning_lifestyle_xp_gain_mult = 0.15
+		cultural_head_fascination_mult = 0.15
+	}
+
+	next_building = bm_blood_academy_04
+
+	type_icon = "duchy_buildings/examination_hall.dds"
+
+	flag = duchy_building
+
+	ai_value = {
+		base = 80
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+bm_blood_academy_04 = {
+	construction_time = 910
+	district_level_requirement = 4
+
+	can_construct_showing_failures_only = {
+		scope:holder = {
+			custom_description = {
+				text = bm_requires_blood_mage_or_blodtru_tt
+				OR = {
+					is_blood_mage_any_tier_trigger = yes
+					faith = { religion = religion:blodtru_religion }
+				}
+			}
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost = {
+		gold = 1100
+	}
+
+	character_modifier = {
+		learning = 4
+		monthly_learning_lifestyle_xp_gain_mult = 0.20
+		cultural_head_fascination_mult = 0.20
+	}
+
+	type_icon = "duchy_buildings/examination_hall.dds"
+
+	flag = duchy_building
+
+	ai_value = {
+		base = 80
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+###############################
+### HALL OF BLOOD ANCESTORS ###
+###############################
+
+bm_blood_ancestors_hall_01 = {
+	construction_time = 365
+
+	can_construct_showing_failures_only = {
+		scope:holder = {
+			custom_description = {
+				text = bm_requires_blood_mage_or_blodtru_tt
+				OR = {
+					is_blood_mage_any_tier_trigger = yes
+					faith = { religion = religion:blodtru_religion }
+				}
+			}
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost = {
+		gold = 250
+	}
+
+	character_modifier = {
+		monthly_dynasty_prestige = 0.2
+		monthly_dynasty_prestige_mult = 0.02
+		legitimacy_gain_mult = 0.05
+	}
+
+	next_building = bm_blood_ancestors_hall_02
+
+	type_icon = "regular_buildings/funerary_complexes.dds"
+
+	flag = duchy_building
+
+	ai_value = {
+		base = 75
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+bm_blood_ancestors_hall_02 = {
+	construction_time = 545
+	district_level_requirement = 2
+
+	can_construct_showing_failures_only = {
+		scope:holder = {
+			custom_description = {
+				text = bm_requires_blood_mage_or_blodtru_tt
+				OR = {
+					is_blood_mage_any_tier_trigger = yes
+					faith = { religion = religion:blodtru_religion }
+				}
+			}
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost = {
+		gold = 450
+	}
+
+	character_modifier = {
+		monthly_dynasty_prestige = 0.4
+		monthly_dynasty_prestige_mult = 0.04
+		legitimacy_gain_mult = 0.10
+	}
+
+	next_building = bm_blood_ancestors_hall_03
+
+	type_icon = "regular_buildings/funerary_complexes.dds"
+
+	flag = duchy_building
+
+	ai_value = {
+		base = 75
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+bm_blood_ancestors_hall_03 = {
+	construction_time = 730
+	district_level_requirement = 3
+
+	can_construct_showing_failures_only = {
+		scope:holder = {
+			custom_description = {
+				text = bm_requires_blood_mage_or_blodtru_tt
+				OR = {
+					is_blood_mage_any_tier_trigger = yes
+					faith = { religion = religion:blodtru_religion }
+				}
+			}
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost = {
+		gold = 750
+	}
+
+	character_modifier = {
+		monthly_dynasty_prestige = 0.7
+		monthly_dynasty_prestige_mult = 0.06
+		legitimacy_gain_mult = 0.15
+	}
+
+	next_building = bm_blood_ancestors_hall_04
+
+	type_icon = "regular_buildings/funerary_complexes.dds"
+
+	flag = duchy_building
+
+	ai_value = {
+		base = 75
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+bm_blood_ancestors_hall_04 = {
+	construction_time = 910
+	district_level_requirement = 4
+
+	can_construct_showing_failures_only = {
+		scope:holder = {
+			custom_description = {
+				text = bm_requires_blood_mage_or_blodtru_tt
+				OR = {
+					is_blood_mage_any_tier_trigger = yes
+					faith = { religion = religion:blodtru_religion }
+				}
+			}
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost = {
+		gold = 1100
+	}
+
+	character_modifier = {
+		monthly_dynasty_prestige = 1.0
+		monthly_dynasty_prestige_mult = 0.08
+		legitimacy_gain_mult = 0.20
+	}
+
+	type_icon = "regular_buildings/funerary_complexes.dds"
+
+	flag = duchy_building
+
+	ai_value = {
+		base = 75
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+###################
+### BLOOD BASIN ###
+###################
+
+bm_blood_basin_01 = {
+	construction_time = 365
+
+	can_construct_showing_failures_only = {
+		scope:holder = {
+			custom_description = {
+				text = bm_requires_blood_mage_or_blodtru_tt
+				OR = {
+					is_blood_mage_any_tier_trigger = yes
+					faith = { religion = religion:blodtru_religion }
+				}
+			}
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost = {
+		gold = 250
+	}
+
+	duchy_capital_county_modifier = {
+		prosperity_growth = 0.15
+		prosperity_growth_factor = 0.05
+		control_baseline_add = 3
+		monthly_control_change_when_below_baseline_add = 0.15
+	}
+
+	next_building = bm_blood_basin_02
+
+	type_icon = "duchy_buildings/megalith.dds"
+
+	flag = duchy_building
+
+	ai_value = {
+		base = 80
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+bm_blood_basin_02 = {
+	construction_time = 545
+	district_level_requirement = 2
+
+	can_construct_showing_failures_only = {
+		scope:holder = {
+			custom_description = {
+				text = bm_requires_blood_mage_or_blodtru_tt
+				OR = {
+					is_blood_mage_any_tier_trigger = yes
+					faith = { religion = religion:blodtru_religion }
+				}
+			}
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost = {
+		gold = 450
+	}
+
+	duchy_capital_county_modifier = {
+		prosperity_growth = 0.30
+		prosperity_growth_factor = 0.10
+		control_baseline_add = 6
+		monthly_control_change_when_below_baseline_add = 0.30
+	}
+
+	next_building = bm_blood_basin_03
+
+	type_icon = "duchy_buildings/megalith.dds"
+
+	flag = duchy_building
+
+	ai_value = {
+		base = 80
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+bm_blood_basin_03 = {
+	construction_time = 730
+	district_level_requirement = 3
+
+	can_construct_showing_failures_only = {
+		scope:holder = {
+			custom_description = {
+				text = bm_requires_blood_mage_or_blodtru_tt
+				OR = {
+					is_blood_mage_any_tier_trigger = yes
+					faith = { religion = religion:blodtru_religion }
+				}
+			}
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost = {
+		gold = 750
+	}
+
+	duchy_capital_county_modifier = {
+		prosperity_growth = 0.50
+		prosperity_growth_factor = 0.15
+		control_baseline_add = 10
+		monthly_control_change_when_below_baseline_add = 0.50
+	}
+
+	next_building = bm_blood_basin_04
+
+	type_icon = "duchy_buildings/megalith.dds"
+
+	flag = duchy_building
+
+	ai_value = {
+		base = 80
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+bm_blood_basin_04 = {
+	construction_time = 910
+	district_level_requirement = 4
+
+	can_construct_showing_failures_only = {
+		scope:holder = {
+			custom_description = {
+				text = bm_requires_blood_mage_or_blodtru_tt
+				OR = {
+					is_blood_mage_any_tier_trigger = yes
+					faith = { religion = religion:blodtru_religion }
+				}
+			}
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost = {
+		gold = 1100
+	}
+
+	duchy_capital_county_modifier = {
+		prosperity_growth = 0.75
+		prosperity_growth_factor = 0.25
+		control_baseline_add = 15
+		monthly_control_change_when_below_baseline_add = 0.75
+	}
+
+	type_icon = "duchy_buildings/megalith.dds"
+
+	flag = duchy_building
+
+	ai_value = {
+		base = 80
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+#####################
+### RITUAL VAULTS ###
+#####################
+
+bm_ritual_vaults_01 = {
+	construction_time = 365
+
+	can_construct_showing_failures_only = {
+		scope:holder = {
+			custom_description = {
+				text = bm_requires_blood_mage_or_blodtru_tt
+				OR = {
+					is_blood_mage_any_tier_trigger = yes
+					faith = { religion = religion:blodtru_religion }
+				}
+			}
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost = {
+		gold = 250
+	}
+
+	character_modifier = {
+		monthly_piety = 0.5
+		monthly_piety_gain_mult = 0.05
+		monthly_piety_gain_per_knight_add = 0.04
+		dread_baseline_add = 5
+	}
+
+	next_building = bm_ritual_vaults_02
+
+	type_icon = "regular_buildings/execution_site.dds"
+
+	flag = duchy_building
+
+	ai_value = {
+		base = 75
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+bm_ritual_vaults_02 = {
+	construction_time = 545
+	district_level_requirement = 2
+
+	can_construct_showing_failures_only = {
+		scope:holder = {
+			custom_description = {
+				text = bm_requires_blood_mage_or_blodtru_tt
+				OR = {
+					is_blood_mage_any_tier_trigger = yes
+					faith = { religion = religion:blodtru_religion }
+				}
+			}
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost = {
+		gold = 450
+	}
+
+	character_modifier = {
+		monthly_piety = 1.0
+		monthly_piety_gain_mult = 0.10
+		monthly_piety_gain_per_knight_add = 0.08
+		dread_baseline_add = 10
+	}
+
+	next_building = bm_ritual_vaults_03
+
+	type_icon = "regular_buildings/execution_site.dds"
+
+	flag = duchy_building
+
+	ai_value = {
+		base = 75
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+bm_ritual_vaults_03 = {
+	construction_time = 730
+	district_level_requirement = 3
+
+	can_construct_showing_failures_only = {
+		scope:holder = {
+			custom_description = {
+				text = bm_requires_blood_mage_or_blodtru_tt
+				OR = {
+					is_blood_mage_any_tier_trigger = yes
+					faith = { religion = religion:blodtru_religion }
+				}
+			}
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost = {
+		gold = 750
+	}
+
+	character_modifier = {
+		monthly_piety = 1.5
+		monthly_piety_gain_mult = 0.15
+		monthly_piety_gain_per_knight_add = 0.12
+		dread_baseline_add = 15
+	}
+
+	next_building = bm_ritual_vaults_04
+
+	type_icon = "regular_buildings/execution_site.dds"
+
+	flag = duchy_building
+
+	ai_value = {
+		base = 75
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+bm_ritual_vaults_04 = {
+	construction_time = 910
+	district_level_requirement = 4
+
+	can_construct_showing_failures_only = {
+		scope:holder = {
+			custom_description = {
+				text = bm_requires_blood_mage_or_blodtru_tt
+				OR = {
+					is_blood_mage_any_tier_trigger = yes
+					faith = { religion = religion:blodtru_religion }
+				}
+			}
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost = {
+		gold = 1100
+	}
+
+	character_modifier = {
+		monthly_piety = 2.0
+		monthly_piety_gain_mult = 0.25
+		monthly_piety_gain_per_knight_add = 0.18
+		dread_baseline_add = 20
+	}
+
+	type_icon = "regular_buildings/execution_site.dds"
+
+	flag = duchy_building
+
+	ai_value = {
+		base = 75
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
