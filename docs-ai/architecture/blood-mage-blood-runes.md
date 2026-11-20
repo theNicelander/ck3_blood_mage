@@ -44,7 +44,7 @@ Decoupled architecture separating **Rune Depth** (`minor/major/superior_blood_ru
 
 ## Blood Temple District Tables
 
-Duchy Capital district (`bm_blood_temple_district` in `common/districts/bm_duchy_districts.txt`, `type = duchy_capital`) housing the 4-tier primary Blood Temple (`bm_blood_temple_01..04`), 6 specialized 4-tier Blood Mage sub-buildings (`common/buildings/bm_duchy_district_buildings.txt`), and shared vanilla religious/burial sub-buildings (`consistory_01`, `almonry_general_01`, `pilgrimage_office_01`, `burial_site_01`, `charnel_grounds_01`, `great_megalith_01`, `tower_of_silence_01`; max 4 slots per duchy). Constructible by rulers holding the duchy title with `lifestyle_blood_mage` or a `blodtru_religion` faith. Tiers I–II are open to all governments; Tiers III–IV require a non-tribal government and feudalized holding.
+Duchy Capital district (`bm_blood_temple_district` in `common/districts/bm_duchy_districts.txt`, `type = duchy_capital`) housing the 4-tier primary Blood Temple (`bm_blood_temple_01..04`), 6 specialized 4-tier Blood Mage sub-buildings (`common/buildings/bm_duchy_district_buildings.txt`), and shared vanilla sub-buildings (`consistory_01`, `almonry_general_01`, `pilgrimage_office_01`, `burial_site_01`, `charnel_grounds_01`, `great_megalith_01`, `tower_of_silence_01`, `military_academy_01`, `leisure_palace_01`, `royal_forest_01`, `royal_garden_01`, `ducal_chase_01`, `reckoning_school_01`, `examination_hall_01`; max 4 slots per duchy). Constructible by rulers holding the duchy title with `lifestyle_blood_mage` or a `blodtru_religion` faith. Tiers I–II are open to all governments; Tiers III–IV require a non-tribal government and feudalized holding.
 
 ### Primary Building (`bm_blood_temple_01..04`)
 
