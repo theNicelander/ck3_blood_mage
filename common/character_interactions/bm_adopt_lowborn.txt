@@ -1,0 +1,217 @@
+﻿bm_adopt_lowborn_interaction = {
+	category = interaction_category_bm_blood_magic
+	icon = icon_adopt_house_member
+	desc = bm_adopt_lowborn_interaction_desc
+	common_interaction = yes
+	interface_priority = 203
+
+	cooldown_against_recipient = { years = 1 }
+
+	is_shown = {
+		scope:actor = {
+			is_blood_mage_any_tier_trigger = yes
+			exists = house
+		}
+		scope:recipient = {
+			is_alive = yes
+			NOT = { this = scope:actor }
+			is_lowborn = yes
+			is_courtier_of = scope:actor
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			piety_level >= 3
+			has_character_modifier = lifeforce_modifier_major
+		}
+		scope:recipient = {
+			is_imprisoned = no
+		}
+	}
+
+	cost = {
+		piety = 250
+	}
+
+	send_option = {
+		is_valid = {
+			scope:actor = { has_usable_hook = scope:recipient }
+		}
+		flag = hook
+		localization = GENERIC_SPEND_A_HOOK
+	}
+
+	should_use_extra_icon = {
+		scope:actor = { has_usable_hook = scope:recipient }
+	}
+	extra_icon = "gfx/interface/icons/character_interactions/hook_icon.dds"
+
+	send_options_exclusive = no
+
+	on_accept = {
+		debug_log = "BloodMageInteraction: bm_adopt_lowborn | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
+		scope:actor = {
+			remove_character_modifier = lifeforce_modifier_major
+			if = {
+				limit = {
+					scope:hook = yes
+					has_usable_hook = scope:recipient
+				}
+				use_hook = scope:recipient
+			}
+			send_interface_toast = {
+				type = bm_event_toast_effect_good
+				title = bm_adopt_lowborn.toast.title
+				desc = bm_adopt_lowborn.toast.desc
+				left_icon = scope:actor
+				right_icon = scope:recipient
+				bm_adopt_lowborn_into_house_effect = {
+					ADOPTER = scope:actor
+					TARGET = scope:recipient
+				}
+				add_shared_bm_bk_xp = {
+					TRACK = bloodline
+					XP = 4
+				}
+			}
+		}
+	}
+
+	on_decline = {
+		scope:actor = {
+			add_piety = 250
+			send_interface_toast = {
+				type = bm_event_toast_effect_bad
+				title = bm_adopt_lowborn.toast.decline_title
+				desc = bm_adopt_lowborn.toast.decline_desc
+				left_icon = scope:recipient
+				right_icon = scope:actor
+			}
+		}
+	}
+
+	auto_accept = no
+
+	ai_accept = {
+		base = -15
+		opinion_modifier = {
+			who = scope:recipient
+			opinion_target = scope:actor
+			multiplier = 0.75
+			desc = AI_OPINION_REASON
+		}
+		modifier = {
+			add = -50
+			desc = bm_adopt_lowborn_deep_hostility_reason
+			opinion = {
+				target = scope:actor
+				value <= -50
+			}
+		}
+		modifier = {
+			add = 25
+			desc = bm_adopt_lowborn_blood_mage_reason
+			is_blood_mage_any_tier_trigger = yes
+		}
+		modifier = {
+			add = -30
+			desc = bm_adopt_lowborn_zealous_faith_reason
+			has_trait = zealous
+			NOT = { is_blood_mage_any_tier_trigger = yes }
+			NOT = { faith = scope:actor.faith }
+		}
+		modifier = {
+			add = 20
+			desc = bm_adopt_lowborn_friend_reason
+			has_relation_friend = scope:actor
+			NOT = { has_relation_best_friend = scope:actor }
+		}
+		modifier = {
+			add = 35
+			desc = bm_adopt_lowborn_best_friend_reason
+			has_relation_best_friend = scope:actor
+		}
+		modifier = {
+			add = 25
+			desc = bm_adopt_lowborn_lover_reason
+			OR = {
+				has_relation_lover = scope:actor
+				is_spouse_of = scope:actor
+				is_consort_of = scope:actor
+			}
+			NOT = { has_relation_soulmate = scope:actor }
+		}
+		modifier = {
+			add = 40
+			desc = bm_adopt_lowborn_soulmate_reason
+			has_relation_soulmate = scope:actor
+		}
+		modifier = {
+			add = -50
+			desc = bm_adopt_lowborn_rival_reason
+			has_relation_rival = scope:actor
+			NOT = { has_relation_nemesis = scope:actor }
+		}
+		modifier = {
+			add = -100
+			desc = bm_adopt_lowborn_nemesis_reason
+			has_relation_nemesis = scope:actor
+		}
+		modifier = {
+			add = 20
+			desc = bm_adopt_lowborn_ambitious_reason
+			has_trait = ambitious
+		}
+		modifier = {
+			add = 10
+			desc = bm_adopt_lowborn_humble_reason
+			has_trait = humble
+		}
+		modifier = {
+			add = -15
+			desc = bm_adopt_lowborn_content_reason
+			has_trait = content
+		}
+		modifier = {
+			add = -15
+			desc = bm_adopt_lowborn_arrogant_reason
+			has_trait = arrogant
+		}
+		modifier = {
+			add = 15
+			desc = INTIMIDATED_REASON
+			has_dread_level_towards = {
+				target = scope:actor
+				level = 1
+			}
+		}
+		modifier = {
+			add = 35
+			desc = COWED_REASON
+			has_dread_level_towards = {
+				target = scope:actor
+				level = 2
+			}
+		}
+		modifier = {
+			add = 40
+			desc = SCHEME_WEAK_HOOK_USED
+			scope:hook = yes
+			scope:actor = {
+				has_hook = scope:recipient
+				NOT = { has_strong_hook = scope:recipient }
+			}
+		}
+		modifier = {
+			add = 100
+			desc = SCHEME_STRONG_HOOK_USED
+			scope:hook = yes
+			scope:actor = {
+				has_strong_hook = scope:recipient
+			}
+		}
+	}
+
+	ai_potential = { always = no }
+}
