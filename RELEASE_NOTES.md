@@ -105,6 +105,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - Current Situation healing alert (`bm_action_can_heal`) monitors councillors, immediate and close family, court positions, and companions; styled green (`Can Heal`) when the corresponding Lifeforce is held, and gray (`Needs Lifeforce`) under unimportant actions when Lifeforce is lacking. Alerts also notify when prisoners can be lifedrained or 20+ Prowess champions culled.
 - Cull Fallen Champion requires 20+ Prowess across all targets (captives and fallen followers).
 - **Purge Stress Vices** burns away all 11 coping traits.
+- **Adopt into Dynasty**: Blood Mages (Devotion 3+, 250 Piety, Major Lifeforce) can bind a lowborn courtier and their living lowborn descendants into their house.
 - Hulinhjálmur conceals the caster from discovery penalties on failed siphons and curses.
 
 ## Narrative Events
@@ -153,7 +154,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 
 ## Version history
 
-- v1.21.4: Overhaul Blood Temple into a 4-tier CK3 1.21 duchy district with 6 specialized Blood Mage sub-buildings.
+- v1.21.4: Overhaul Blood Temple into 4-tier duchy district (6 sub-buildings), add Adopt into Dynasty, rebalance Fortune.
 - v1.21.2: Rebalance Fury knight effectiveness per Learning to 50/100 XP (+1% each) and distribute monthly Piety across all Blood Mage tracks (+0.1/step skill, +0.2/step Ancient).
 - v1.21.1: Update modifiers, duchy districts, port parameters, Monaco holy site barony (`c_savona` / `b_ventimiglia`), Icelandic innovations, and add Merchant/trade support for CK3 1.21.
 - v1.20.90: Move Blood Blessings into dedicated `Cast Blood Blessing` interaction modal (6 exclusive options) and fold self-casting into Minor Blood Magic Grimoire; convert `Empower Dynasty Bloodline` decision to open a hidden interaction popup (`bm_empower_bloodline_interaction`); Minor Life drain now uses a 3-month per-victim cooldown and inflicts escalating wounds instead of `recently_lifedrained_modifier`.
