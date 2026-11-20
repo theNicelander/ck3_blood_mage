@@ -115,11 +115,6 @@
                         bm_become_blood_acolyte_effect = yes
                         add_opinion = {
                             target = scope:actor
-                            modifier = magic_opinion_positive
-                            opinion = 50
-                        }
-                        add_opinion = {
-                            target = scope:actor
                             modifier = made_me_a_blood_mage
                             opinion = 30
                         }
@@ -159,11 +154,6 @@
                     }
                     scope:recipient = {
                         bm_become_blood_acolyte_effect = yes
-                        add_opinion = {
-                            target = scope:actor
-                            modifier = magic_opinion_positive
-                            opinion = 50
-                        }
                         add_opinion = {
                             target = scope:actor
                             modifier = made_me_a_blood_mage
