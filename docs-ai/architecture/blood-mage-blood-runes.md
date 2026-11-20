@@ -86,4 +86,4 @@ Duchy Capital district (`bm_blood_temple_district` in `common/districts/bm_duchy
 | Scheme murder Capstone hook (Hulinhjálmur) | `common/on_action/bm_scheme_on_actions.txt` |
 | Story custom localization | `common/customizable_localization/bm_blood_mage_story_custom_loc.txt` |
 | Localization | `localization/english/bm_blood_runes_l_english.yml`, `bm_modifiers_l_english.yml`, `bm_blood_mage_story_l_english.yml` |
-| Blood Temple district & buildings | `common/districts/bm_duchy_districts.txt`, `common/buildings/bm_duchy_buildings.txt`, `common/buildings/bm_duchy_district_buildings.txt`, `localization/english/bm_buildings_l_english.yml`, `gfx/interface/icons/building_types/bm_blood_temple.dds` |
+| Blood Temple district & buildings | `common/districts/bm_duchy_districts.txt`, `common/buildings/bm_duchy_buildings.txt`, `common/buildings/bm_duchy_district_buildings.txt`, `localization/english/bm_buildings_l_english.yml`, `gfx/interface/icons/building_types/bm_blood_temple.dds`, `bm_blood_academy.dds` |
