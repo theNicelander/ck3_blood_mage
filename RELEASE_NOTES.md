@@ -27,7 +27,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - Blood Mages harvest Lifeforce from battles and lethal single combat duels.
 - Blood Mage mothers yield Major Lifeforce on safe childbirth.
 - **Bleed Own Veins**: self-interaction (1-year cooldown) for Minor or Major Lifeforce at the cost of wounds, stress and drain.
-- **Blood Drain (Minor, Empowered Minor, Stored, Blood Tithe, Drain Positive Traits)**: Prisoners auto-succeed, while non-prisoners (courtiers, vassals, liege, adult kin, rival mages) now resist via a contested **Intrigue + Learning** duel (~50% at equal stats, ~90% at +30 combined advantage, ~10% at −30, with an extra penalty for vassals/liege outside your court). **Minor Life drain** costs 20 Piety; **Empowered Minor Life drain** (100 Piety) boosts base success to 80% at equal stats. **Drain Positive Traits** is now integrated into the same Blood Drain menu (hidden only when the target has no drainable traits, and grayed out if you're below Tier 2, missing Major Lifeforce, on cooldown, or the target is not imprisoned).
+- **Blood Drain (Major, Minor, Empowered Minor, Stored, Blood Tithe, Drain Positive Traits, Drain Blood Memory, Cast Blood Curse)**: Prisoners auto-succeed, while non-prisoners (courtiers, vassals, liege, adult kin, rival mages) resist via a contested **Intrigue + Learning** duel (~50% at equal stats, ~90% at +30 combined advantage, ~10% at −30, with an extra penalty for vassals/liege outside your court). **Minor Life drain** costs 20 Piety; **Empowered Minor Life drain** (100 Piety) boosts base success to 80% at equal stats. **Drain Positive Traits**, **Drain Blood Memory**, and **Cast Blood Curse** (50 Piety + Minor Lifeforce, requires 10+ Cunning XP, 1-year cooldown) are all integrated into the Blood Drain modal.
 - **Siphon Stored Lifeforce** takes Minor/Major/Superior reserves from other characters via an Intrigue + Learning contest (or auto-succeeds on prisoners).
 - **Contest of the Red Art**: Learning + Prowess duel between fellow Blood Mages.
 - **House Head Blood Tithe** levies Lifeforce from adult kin (auto-succeeds on prisoners; Intrigue + Learning duel otherwise).
@@ -37,7 +37,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - Cast Blood Magic (Minor, Major, Superior) are inline option-list decisions; every spell stays visible, grayed out when unavailable.
 - **Transmute Lifeforce**: Dedicated decision and event chain converting 1:1 between Major Lifeforce and the 6 specialized reservoirs (Radiant, Furious, Fortunate, Cunning, Wise, and Ancient Blood) at 50 Piety without cooldowns, granting `+2` matching track XP (`+1` `ancient` XP for Ancient Blood) on channeling and reclaiming back to Major Lifeforce without XP.
 - **Minor**: Minor Blood Runes, Cleansing Impurities, Condensation (Minor into Major), and **Lifeforce Attunement** (first attunement is free; changing attunement costs 50 Piety + 1 Minor Lifeforce, 1-year cooldown; choose your yearly lifestyle XP bonus applied January 1st).
-- **Permanent Tiered Blood Blessings (`Blessing of X`)**: Replaced temporary Bless Blood and Channel Minor Lifeforce with 6 stackable, permanent 3-tier blessings (**Radiance**, **Fortune**, **Fury**, **Cunning**, **Wisdom**, **Ancient**) castable on self (via **Cast Blood Blessing** decision or **Blood Blessing** interaction) and on kin, spouses, knights, councillors, or liege (Minor: 50 Piety + Devotion 1 + Minor Lifeforce; Major: 150 Piety + Devotion 3 + Major Lifeforce; Superior: 250 Piety + Devotion 5 + Superior Lifeforce; 1-year per-target cooldown), with option labels showing the incoming `(Minor)`, `(Major)`, or `(Superior)` rank. Grants `+1/+3/+5` stat, `+5/+10/+15` matching monthly lifestyle XP, and `+5%/+10%/+20%` lifestyle XP gain (**Ancient** grants all-lifestyle XP plus `+5%/+15%/+25%` Fertility and `+2/+4/+8` Fertile Years; **Fortune** also grants `+5%/+10%/+20%` Trade Capacity, `+5%/+10%/+20%` Trade Expertise Growth, and `+0.5%/+1%/+2%` Trade Goods Sell Price).
+- **Permanent Tiered Blood Blessings (`Blessing of X`)**: Replaced temporary Bless Blood and Channel Minor Lifeforce with 6 stackable, permanent 3-tier blessings (**Radiance**, **Fortune**, **Fury**, **Cunning**, **Wisdom**, **Ancient**) castable on self (via **Cast Blood Blessing** decision or interaction) and on kin, spouses, knights, councillors, or liege (Minor: 50 Piety + Devotion 1 + Minor Lifeforce; Major: 150 Piety + Devotion 3 + Major Lifeforce; Superior: 250 Piety + Devotion 5 + Superior Lifeforce; 1-year per-target cooldown), with option labels showing the incoming `(Minor)`, `(Major)`, or `(Superior)` rank. Grants `+1/+3/+5` stat, `+5/+10/+15` matching monthly lifestyle XP, and `+5%/+10%/+20%` lifestyle XP gain (**Ancient** grants all-lifestyle XP plus `+5%/+15%/+25%` Fertility and `+2/+4/+8` Fertile Years; **Fortune** also grants `+5%/+10%/+20%` Trade Capacity, `+5%/+10%/+20%` Trade Expertise Growth, and `+0.5%/+1%/+2%` Trade Goods Sell Price). **Empower Blood Mage**, **Grant Lifeforce**, and **Inscribe Blood Rune** are unified into **Cast Blood Blessing** for non-self targets.
 - **Major**: Condense into Superior Lifeforce, Split into 2 Minor, Education Enhancement, Major Runes, Congenital Manifestation, House Blessing.
 - **Superior**: Blood Golem creation, 5★ Master Educations, Secondary Educations, Split Superior into 2 Major, Capstone Runes.
 - **Current Situation Tips**: Added Current Situation notifications for **You Can Attune to Lifeforce** (opens Cast Minor Blood Magic when unattuned) and **You Can Trait Drain a Prisoner** (opens Trait Drain when holding an eligible prisoner with drainable inheritable traits).
@@ -62,8 +62,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - **Bless Blood**: consecrate knights and kin (+2 Martial, +4 Prowess, +25% Knight Effectiveness for 10 years).
 - **Blood Sparring Ring** (yearly, 1 Minor Lifeforce): practice duels against sworn Blood Mage knights; winner gains 1 Major Lifeforce, both gain Blademaster and Bloodlust XP.
 - **Cull Fallen Champion**: sacrifice broken or captured warriors for Major Lifeforce, with a chance of Superior.
-- **Anoint Champion / Anoint Heir**: permanent bonuses; anointed heirs awaken with a Lifeforce transfer on succession.
-- Overlapping blessing interactions merged into one 4-option Bless Blood; options hide once active.
+- Overlapping blessing interactions merged into one Cast Blood Blessing modal.
 
 ## Galdrastafir & Blood Runes
 
@@ -77,7 +76,6 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - Forge immortal albino golems with Superior Lifeforce and a shaping duel; they join the dynasty as cadet house `bm_house_golem`.
 - Seven house modifiers stack realm-wide bonuses to fertility, health, prowess and administration.
 - **Bless Bloodline** (children, kin, knights) with role-specific blessings.
-- **Anoint Heir in Blood**: permanent stats, opinion and short-reign bonuses.
 - **Consecrate Union**: spouse/lover/consort gain +50% fertility and better genetic inheritance (Minor 3 years, Major 10 years).
 - **Empower Blood Mage**: peer interaction advancing Enlightenment and Bloodline tracks.
 
@@ -154,6 +152,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 
 ## Version history
 
+- v1.21.5: Merge Cast Blood Curse into Blood Drain, unify Blood Blessing into Cast Blood Blessing, remove Anoint Heir, and update Adopt into Dynasty icon.
 - v1.21.4: Overhaul Blood Temple into 4-tier duchy district (6 sub-buildings), add Adopt into Dynasty, rebalance Fortune.
 - v1.21.2: Rebalance Fury knight effectiveness per Learning to 50/100 XP (+1% each) and distribute monthly Piety across all Blood Mage tracks (+0.1/step skill, +0.2/step Ancient).
 - v1.21.1: Update modifiers, duchy districts, port parameters, Monaco holy site barony (`c_savona` / `b_ventimiglia`), Icelandic innovations, and add Merchant/trade support for CK3 1.21.
