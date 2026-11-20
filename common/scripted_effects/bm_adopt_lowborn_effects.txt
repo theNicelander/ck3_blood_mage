@@ -1,0 +1,27 @@
+﻿bm_adopt_lowborn_into_house_effect = {
+	$TARGET$ = {
+		set_house = $ADOPTER$.house
+		if = {
+			limit = { any_child = { is_lowborn = yes } }
+			custom_tooltip = {
+				text = bm_adopt_lowborn_descendants_tt
+				every_child = {
+					limit = { is_lowborn = yes }
+					set_house = $ADOPTER$.house
+					every_child = {
+						limit = { is_lowborn = yes }
+						set_house = $ADOPTER$.house
+						every_child = {
+							limit = { is_lowborn = yes }
+							set_house = $ADOPTER$.house
+							every_child = {
+								limit = { is_lowborn = yes }
+								set_house = $ADOPTER$.house
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
