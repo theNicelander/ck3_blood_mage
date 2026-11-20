@@ -4,10 +4,6 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 
 ---
 
-## Localization
-
-- Complete Russian translation, updated for CK3 1.21 with Blood Blessings, Lifeforce drains, and prosperity.
-
 ## Blood Mage & Fury
 
 - Unified single lifestyle path: **Blood Mage** featuring six distinct progression tracks: **Ancient**, **Wisdom**, **Radiance**, **Fortune**, **Cunning**, and **Fury** (combat advantage, knight effectiveness, sworn knight limit, and duel harvesting).
