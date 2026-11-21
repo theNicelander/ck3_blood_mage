@@ -1,0 +1,26 @@
+﻿l_russian:
+  bm_adopt_lowborn_interaction: "Принять в династию"
+  bm_adopt_lowborn_interaction_desc: "Потратьте большую жизненную силу и благочестие, чтобы принять персонажа [recipient.GetFirstName] и всех [recipient.GetHerHis] живых потомков незнатного происхождения в дом [actor.GetHouse.GetNameNoTooltip]."
+  bm_adopt_lowborn_interaction_tooltip: "Предложить персонажу [recipient.GetShortUINameNoTooltip] вступить в дом [actor.GetHouse.GetNameNoTooltip]"
+  bm_adopt_lowborn_interaction_confirm: "Предложить пакт крови"
+
+  bm_adopt_lowborn_descendants_tt: "Живые потомки незнатного происхождения персонажа [recipient.GetShortUINamePossessive] также вступят в дом [actor.GetHouse.GetNameNoTooltip]"
+
+  bm_adopt_lowborn_deep_hostility_reason: "Глубокая неприязнь к вам: $VALUE|=+0$"
+  bm_adopt_lowborn_blood_mage_reason: "Обладает даром магии крови: $VALUE|=+0$"
+  bm_adopt_lowborn_zealous_faith_reason: "Ревностное недоверие к чужим обрядам крови: $VALUE|=+0$"
+  bm_adopt_lowborn_friend_reason: "Друг: $VALUE|=+0$"
+  bm_adopt_lowborn_best_friend_reason: "Лучший друг: $VALUE|=+0$"
+  bm_adopt_lowborn_lover_reason: "Тесная любовная связь: $VALUE|=+0$"
+  bm_adopt_lowborn_soulmate_reason: "Родственная душа: $VALUE|=+0$"
+  bm_adopt_lowborn_rival_reason: "Соперник: $VALUE|=+0$"
+  bm_adopt_lowborn_nemesis_reason: "Заклятый враг: $VALUE|=+0$"
+  bm_adopt_lowborn_ambitious_reason: "Стремление к знатности: $VALUE|=+0$"
+  bm_adopt_lowborn_humble_reason: "Смиренное почтение: $VALUE|=+0$"
+  bm_adopt_lowborn_content_reason: "Довольство нынешним положением: $VALUE|=+0$"
+  bm_adopt_lowborn_arrogant_reason: "Высокомерная гордость: $VALUE|=+0$"
+
+  bm_adopt_lowborn.toast.title: "@bm_ancient_discipline_icon! Принятие в дом"
+  bm_adopt_lowborn.toast.desc: "[recipient.GetFirstName] принимает пакт крови и вступает в дом [actor.GetHouse.GetNameNoTooltip]."
+  bm_adopt_lowborn.toast.decline_title: "Пакт крови отвергнут"
+  bm_adopt_lowborn.toast.decline_desc: "[recipient.GetFirstName] отказывается вступить в дом [actor.GetHouse.GetNameNoTooltip]. Потраченное благочестие возвращено."
