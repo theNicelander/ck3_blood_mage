@@ -343,6 +343,24 @@
 		}
 	}
 
+	# 8. Major Life drain (Overdrained)
+	send_option = {
+		flag = drain_major_overdrained
+		localization = bm_blood_drain_option_major_overdrained
+		current_description = bm_blood_drain_option_major_overdrained_desc
+		can_invalidate_interaction = yes
+		is_shown = {
+			scope:actor = { is_blood_mage_any_tier_trigger = yes }
+			scope:recipient = { is_imprisoned_by = scope:actor }
+		}
+		is_valid = {
+			scope:recipient = {
+				NOT = { has_character_modifier = lifedrained_modifier }
+			}
+		}
+		starts_enabled = { always = no }
+	}
+
 	on_accept = {
 		if = {
 			limit = { scope:drain_major = yes }
@@ -711,6 +729,39 @@
 				}
 			}
 		}
+		else_if = {
+			limit = { scope:drain_major_overdrained = yes }
+			debug_log = "BloodMageInteraction: bm_blood_drain (major_overdrained) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
+			scope:actor = {
+				send_interface_toast = {
+					type = bm_event_toast_effect_neutral
+					title = bm_blood_drain_toast
+					left_icon = scope:actor
+					right_icon = scope:recipient
+					cunning_magic_cast_effect_major = yes
+					add_character_modifier = {
+						modifier = bm_overdrained_modifier
+						years = 2
+					}
+					add_stress = 20
+					if = {
+						limit = {
+							NOR = {
+								has_trait = wounded_1
+								has_trait = wounded_2
+								has_trait = wounded_3
+								has_trait = maimed
+							}
+						}
+						add_trait = wounded_1
+					}
+				}
+			}
+			lifedrain_execution_effect = {
+				VICTIM = scope:recipient
+				EXECUTIONER = scope:actor
+			}
+		}
 		else = {
 			debug_log = "BloodMageInteraction: bm_blood_drain (NO OPTION) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
 		}
@@ -802,6 +853,10 @@
 			}
 			factor = 0
 		}
+		modifier = {
+			scope:drain_major_overdrained = yes
+			factor = 0
+		}
 
 		# Personality, relationship, and protective vetoes (evaluated last)
 		ai_willingness_to_lifedrain = yes
@@ -817,6 +872,7 @@
 				scope:drain_trait = yes
 				scope:drain_memory = yes
 				scope:drain_curse = yes
+				scope:drain_major_overdrained = yes
 			}
 			factor = 0
 		}
