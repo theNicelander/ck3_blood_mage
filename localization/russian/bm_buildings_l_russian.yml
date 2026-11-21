@@ -1,32 +1,121 @@
 ﻿l_russian:
-  # Blood Temples
+  # Blood Temple District (CK3 1.21)
+  bm_blood_temple_district: "Храмовый район крови"
+  bm_blood_temple_district_desc: "$DISTRICT_FOCUS_HEADING$$BULLET_WITH_TAB$[piety_i][piety|E]\n$BULLET_WITH_TAB$[health_i][health|E]\n$BULLET_WITH_TAB$[learning_i][learning|E]\n$BULLET_WITH_TAB$[prosperity_i][prosperity|E]\n$BULLET_WITH_TAB$[dynasty_prestige_i][dynasty_prestige|E]"
+  bm_blood_temple_district_desc_flavor: "Священный квартал с каменными храмами крови и жертвенными алтарями, где подношения жизненной силы освящают землю и укрепляют верующих."
+
+  # Primary Building: Blood Temple (4 Tiers)
   building_type_bm_blood_temple_01: "Храм крови"
   building_type_bm_blood_temple_01_desc: "Священный комплекс из кровавого камня и жертвенных алтарей, где подношения жизненной силы освящают землю и укрепляют верующих."
 
   building_bm_blood_temple_01: "Алтарь крови"
-  building_bm_blood_temple_01_desc: "Грубо отёсанный жертвенный камень с желобами для сбора живительных подношений верующих."
+  building_bm_blood_temple_01_desc: "Грубо отёсанный жертвенный камень с желобами для сбора подношений жизненной силы верующих."
 
   building_bm_blood_temple_02: "Святилище крови"
-  building_bm_blood_temple_02_desc: "Уединённая ниша при свете свечей, где священные сосуды хранят собранную жизненную силу благочестивых."
+  building_bm_blood_temple_02_desc: "Уединённое святилище при свете свечей, где священные сосуды хранят собранную жизненную силу благочестивых."
 
-  building_bm_blood_temple_03: "Монумент крови"
-  building_bm_blood_temple_03_desc: "Высокий рунический обелиск, потемневший от многовековых подношений и излучающий оккультную жизненную силу на окрестные земли."
+  building_bm_blood_temple_03: "Храм крови"
+  building_bm_blood_temple_03_desc: "Торжественный зал из кровавого камня, где посвящённые собираются, чтобы петь, проливать кровь и общаться с древними."
 
-  building_bm_blood_temple_04: "Храм крови"
-  building_bm_blood_temple_04_desc: "Торжественный зал из кровавого камня, где посвящённые собираются, чтобы петь, проливать кровь и общаться с древними."
+  building_bm_blood_temple_04: "Акрополь крови"
+  building_bm_blood_temple_04_desc: "Монументальная укреплённая цитадель на вершине холма со шпилями и святилищами из кровавого камня — высшая обитель магии крови в державе."
 
-  building_bm_blood_temple_05: "Великий храм крови"
-  building_bm_blood_temple_05_desc: "Величественный собор владычества над жизнью, чьи подземные хранилища и ритуальные покои служат опорой могущества целого рода."
+  # Sub-Building: Blood Sanctuary (Lifespan, Health, Epidemic Resistance)
+  building_type_bm_blood_sanctuary_01: "Лечебница крови"
+  building_type_bm_blood_sanctuary_01_desc: "Целебное крыло, где маги крови извлекают жизненную силу для защиты от чумы и продления смертной жизни."
 
-  building_bm_blood_temple_06: "Пантеон крови"
-  building_bm_blood_temple_06_desc: "Величественная царственная ротонда в честь бессмертных, достигших возвышения, где жизненная кровь державы перегоняется в вечную молодость."
+  building_bm_blood_sanctuary_01: "Палаты крови"
+  building_bm_blood_sanctuary_01_desc: "Тихие каменные палаты, где кровавые тоники и рунические припарки поддерживают слабеющие сердца."
 
-  building_bm_blood_temple_07: "Акрополь крови"
-  building_bm_blood_temple_07_desc: "Монументальная укреплённая цитадель на вершине холма, увенчанная алыми шпилями и святилищами, — высшая обитель колдовства крови в известном мире."
+  building_bm_blood_sanctuary_02: "Лазарет крови"
+  building_bm_blood_sanctuary_02_desc: "Сводчатый зал целителей крови, чьи снадобья укрепляют тело перед болезнями и старостью."
+
+  building_bm_blood_sanctuary_03: "Лечебница крови"
+  building_bm_blood_sanctuary_03_desc: "Безмятежная обитель с очищающими чашами и курильницами жизненной силы защищает герцогство от болезней."
+
+  building_bm_blood_sanctuary_04: "Великая лечебница крови"
+  building_bm_blood_sanctuary_04_desc: "Величественный оплот исцеления кровью, где болезни отступают у ворот, а правители живут десятилетиями."
+
+  # Sub-Building: Bloodline Vault (Biological / Congenital Traits)
+  building_type_bm_bloodline_vault_01: "Хранилище родословной"
+  building_type_bm_bloodline_vault_01_desc: "Запечатанный архив родословных и реликвий крови, служащий сохранению и совершенствованию одарённых родов."
+
+  building_bm_bloodline_vault_01: "Палата родословной"
+  building_bm_bloodline_vault_01_desc: "Охраняемая палата со свитками родословных и запечатанными сосудами, хранящими сведения о наследственных достоинствах дома."
+
+  building_bm_bloodline_vault_02: "Архив родословной"
+  building_bm_bloodline_vault_02_desc: "Ряды сохранённых образцов крови и записей о рождениях помогают благословлять каждое новое поколение."
+
+  building_bm_bloodline_vault_03: "Хранилище родословной"
+  building_bm_bloodline_vault_03_desc: "Подземное святилище, где ритуальные узы крови укрепляют лучшие свойства династии."
+
+  building_bm_bloodline_vault_04: "Великое хранилище родословной"
+  building_bm_bloodline_vault_04_desc: "Непревзойдённая сокровищница сущности предков, сохраняющая ум, красоту и силу на века."
+
+  # Sub-Building: Blood Academy (Learning, Learning XP, Cultural Fascination)
+  building_type_bm_blood_academy_01: "Академия крови"
+  building_type_bm_blood_academy_01_desc: "Обитель кровавой учёности, где адепты изучают жизненную силу, медицину и скрытые законы природы."
+
+  building_bm_blood_academy_01: "Кабинет крови"
+  building_bm_blood_academy_01_desc: "Скромная читальня, полки которой заставлены анатомическими трактатами и руническими гримуарами крови."
+
+  building_bm_blood_academy_02: "Коллегия крови"
+  building_bm_blood_academy_02_desc: "Залы, где маги крови обучают учеников научным изысканиям и ритуальному искусству."
+
+  building_bm_blood_academy_03: "Академия крови"
+  building_bm_blood_academy_03_desc: "Прославленное учреждение, привлекающее учёных со всей державы ради развития искусства крови и культурных открытий."
+
+  building_bm_blood_academy_04: "Великая академия крови"
+  building_bm_blood_academy_04_desc: "Высокая цитадель учёности, чьи мастера задают темп нововведениям целой культуры."
+
+  # Sub-Building: Hall of Blood Ancestors (Dynasty Prestige & Legitimacy)
+  building_type_bm_blood_ancestors_hall_01: "Зал предков крови"
+  building_type_bm_blood_ancestors_hall_01_desc: "Торжественный памятник магам крови рода, укрепляющий великолепие династии и законность её власти."
+
+  building_bm_blood_ancestors_hall_01: "Мемориал крови"
+  building_bm_blood_ancestors_hall_01_desc: "Резные плиты из кровавого камня с именами и деяниями предков династии."
+
+  building_bm_blood_ancestors_hall_02: "Склеп крови"
+  building_bm_blood_ancestors_hall_02_desc: "Освещённый фонарями погребальный комплекс, где реликвии предков укрепляют авторитет правителя."
+
+  building_bm_blood_ancestors_hall_03: "Зал предков крови"
+  building_bm_blood_ancestors_hall_03_desc: "Галерея с колоннами, статуями и освящёнными урнами, прославляющая древнее право крови династии."
+
+  building_bm_blood_ancestors_hall_04: "Пантеон предков крови"
+  building_bm_blood_ancestors_hall_04_desc: "Величественная купольная ротонда в честь бессмертного рода, внушающая благоговение за пределами державы."
+
+  # Sub-Building: Blood Basin (Duchy Prosperity & Control)
+  building_type_bm_blood_basin_01: "Бассейн крови"
+  building_type_bm_blood_basin_01_desc: "Освящённые каменные резервуары, ритуалы жизненной силы в которых обогащают земли герцогства и укрепляют порядок."
+
+  building_bm_blood_basin_01: "Колодец крови"
+  building_bm_blood_basin_01_desc: "Резной ритуальный колодец в центре района, где сезонные подношения благословляют окрестные поля."
+
+  building_bm_blood_basin_02: "Цистерна крови"
+  building_bm_blood_basin_02_desc: "Подземные каналы распределяют освящённую жизненную силу по столице и поддерживают местный порядок."
+
+  building_bm_blood_basin_03: "Бассейн крови"
+  building_bm_blood_basin_03_desc: "Широкий террасный бассейн из тёмного камня, чьи обряды способствуют торговле, урожаям и незыблемой власти герцога."
+
+  building_bm_blood_basin_04: "Великий бассейн крови"
+  building_bm_blood_basin_04_desc: "Монументальный акведук и ритуальный бассейн, превращающие герцогство в процветающий край под твёрдой властью."
+
+  # Sub-Building: Ritual Vaults (Piety, Piety per Knight, Dread)
+  building_type_bm_ritual_vaults_01: "Ритуальные подземелья"
+  building_type_bm_ritual_vaults_01_desc: "Глубокие жертвенные палаты, где обряды крови питают неугасимую преданность и внушают страх мятежникам."
+
+  building_bm_ritual_vaults_01: "Жертвенный погреб"
+  building_bm_ritual_vaults_01_desc: "Освещённый факелами погреб под алтарём, предназначенный для клятв крови и торжественных подношений."
+
+  building_bm_ritual_vaults_02: "Ритуальная палата"
+  building_bm_ritual_vaults_02_desc: "Палата за железными вратами, где рыцари и жрецы освящают клинки кровью перед каждым походом."
+
+  building_bm_ritual_vaults_03: "Ритуальные подземелья"
+  building_bm_ritual_vaults_03_desc: "Соединённые подземные святилища, чьи мрачные церемонии внушают глубокое благочестие и покорность из страха."
+
+  building_bm_ritual_vaults_04: "Великие ритуальные подземелья"
+  building_bm_ritual_vaults_04_desc: "Обширные катакомбы с освящёнными алтарями, где кровь врагов и обеты рыцарей порождают трепетный ужас."
 
   # Building Requirement Tooltips
   bm_requires_blood_mage_or_blodtru_tt: "Требуется свойство «[GetTrait('lifestyle_blood_mage').GetName(GetPlayer)]» либо исповедание религии «$blodtru_religion_adj$»"
   bm_requires_feudalized_realm_tt: "Требуется неплеменная форма правления и феодализированное владение (замок, город или храм)"
- bm_blood_temple_district: "Храмовый район крови"
- bm_blood_temple_district_desc: "$DISTRICT_FOCUS_HEADING$$BULLET_WITH_TAB$[piety_i][piety|E]\n$BULLET_WITH_TAB$[prosperity_i][prosperity|E]\n$BULLET_WITH_TAB$[control_i][control|E]\n$BULLET_WITH_TAB$[health_i][health|E]"
- bm_blood_temple_district_desc_flavor: "Священный квартал с каменными храмами крови и жертвенными алтарями, где подношения жизненной силы освящают землю и укрепляют верующих."

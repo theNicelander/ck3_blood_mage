@@ -1,0 +1,69 @@
+﻿# Script values for Drain Blood Memory (non-lethal lifestyle, commander, and martial fame trait siphoning)
+
+bm_actor_memory_trait_count = {
+	value = 0
+
+	# Lifestyle & Craft (9)
+	if = { limit = { has_trait = lifestyle_blademaster } add = 1 }
+	if = { limit = { has_trait = lifestyle_hunter } add = 1 }
+	if = { limit = { has_trait = lifestyle_poet } add = 1 }
+	if = { limit = { has_trait = lifestyle_gardener } add = 1 }
+	if = { limit = { has_trait = lifestyle_herbalist } add = 1 }
+	if = { limit = { has_trait = lifestyle_physician } add = 1 }
+	if = { limit = { has_trait = lifestyle_mystic } add = 1 }
+	if = { limit = { has_trait = lifestyle_reveler } add = 1 }
+	if = { limit = { has_trait = lifestyle_traveler } add = 1 }
+
+	# Commander Tactics (16)
+	if = { limit = { has_trait = logistician } add = 1 }
+	if = { limit = { has_trait = military_engineer } add = 1 }
+	if = { limit = { has_trait = aggressive_attacker } add = 1 }
+	if = { limit = { has_trait = unyielding_defender } add = 1 }
+	if = { limit = { has_trait = forder } add = 1 }
+	if = { limit = { has_trait = flexible_leader } add = 1 }
+	if = { limit = { has_trait = desert_warrior } add = 1 }
+	if = { limit = { has_trait = jungle_stalker } add = 1 }
+	if = { limit = { has_trait = reaver } add = 1 }
+	if = { limit = { has_trait = reckless } add = 1 }
+	if = { limit = { has_trait = holy_warrior } add = 1 }
+	if = { limit = { has_trait = open_terrain_expert } add = 1 }
+	if = { limit = { has_trait = rough_terrain_expert } add = 1 }
+	if = { limit = { has_trait = forest_fighter } add = 1 }
+	if = { limit = { has_trait = cautious_leader } add = 1 }
+	if = { limit = { has_trait = organizer } add = 1 }
+
+	# Martial Fame (4)
+	if = { limit = { has_trait = berserker } add = 1 }
+	if = { limit = { has_trait = viking } add = 1 }
+	if = { limit = { has_trait = shieldmaiden } add = 1 }
+	if = { limit = { has_trait = athletic } add = 1 }
+}
+
+bm_memory_drain_piety_cost = {
+	value = 150
+	add = {
+		value = bm_actor_memory_trait_count
+		multiply = 50
+	}
+}
+
+bm_memory_drain_piety_cost_negative = {
+	value = bm_memory_drain_piety_cost
+	multiply = -1
+}
+
+bm_memory_drain_stress_cost = {
+	value = 25
+	add = {
+		value = bm_actor_memory_trait_count
+		multiply = 15
+	}
+}
+
+bm_memory_drain_duel_modifier = {
+	value = bm_blood_mage_total_trait_xp_value
+	subtract = {
+		value = bm_actor_memory_trait_count
+		multiply = 12
+	}
+}

@@ -1,0 +1,325 @@
+﻿namespace = bm_memory_drain
+
+# Category Hub (opened when prisoner has drainable traits in 2+ categories)
+bm_memory_drain.0001 = {
+	type = character_event
+	title = bm_memory_drain.0001.title
+	desc = bm_memory_drain.0001.desc
+	theme = witchcraft
+	override_icon = {
+		reference = "gfx/interface/icons/bm_blood_magic_icon.dds"
+	}
+
+	left_portrait = {
+		character = root
+		animation = scheme
+	}
+	right_portrait = {
+		character = scope:recipient
+		animation = beg
+	}
+
+	option = {
+		name = bm_memory_drain.0001.lifestyle
+		trigger = { bm_can_drain_memory_lifestyle_trigger = yes }
+		trigger_event = bm_memory_drain.0002
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.0001.commander
+		trigger = { bm_can_drain_memory_commander_trigger = yes }
+		trigger_event = bm_memory_drain.0003
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.0001.fame
+		trigger = { bm_can_drain_memory_fame_trigger = yes }
+		trigger_event = bm_memory_drain.0004
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.back
+		ai_chance = { base = 0 }
+	}
+}
+
+# Lifestyle & Craft Picker
+bm_memory_drain.0002 = {
+	type = character_event
+	title = bm_memory_drain.0002.title
+	desc = bm_memory_drain.0002.desc
+	theme = witchcraft
+	override_icon = {
+		reference = "gfx/interface/icons/bm_blood_magic_icon.dds"
+	}
+
+	left_portrait = {
+		character = root
+		animation = scheme
+	}
+	right_portrait = {
+		character = scope:recipient
+		animation = beg
+	}
+
+	option = {
+		name = bm_memory_drain.trait.lifestyle_blademaster
+		trigger = { bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_blademaster } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = lifestyle_blademaster }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.trait.lifestyle_hunter
+		trigger = { bm_can_drain_memory_multi_track_trigger = { TRAIT = lifestyle_hunter TRACK_A = hunter TRACK_B = falconer } }
+		bm_memory_drain_execute_multi_track_effect = { TRAIT = lifestyle_hunter TRACK_A = hunter TRACK_B = falconer }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.trait.lifestyle_poet
+		trigger = { bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_poet } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = lifestyle_poet }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.trait.lifestyle_gardener
+		trigger = { bm_can_drain_memory_no_track_trigger = { TRAIT = lifestyle_gardener } }
+		bm_memory_drain_execute_no_track_effect = { TRAIT = lifestyle_gardener }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.trait.lifestyle_herbalist
+		trigger = { bm_can_drain_memory_no_track_trigger = { TRAIT = lifestyle_herbalist } }
+		bm_memory_drain_execute_no_track_effect = { TRAIT = lifestyle_herbalist }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.trait.lifestyle_physician
+		trigger = { bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_physician } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = lifestyle_physician }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.trait.lifestyle_mystic
+		trigger = { bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_mystic } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = lifestyle_mystic }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.trait.lifestyle_reveler
+		trigger = { bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_reveler } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = lifestyle_reveler }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.trait.lifestyle_traveler
+		trigger = { bm_can_drain_memory_multi_track_trigger = { TRAIT = lifestyle_traveler TRACK_A = travel TRACK_B = danger } }
+		bm_memory_drain_execute_multi_track_effect = { TRAIT = lifestyle_traveler TRACK_A = travel TRACK_B = danger }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.back
+		ai_chance = { base = 0 }
+	}
+}
+
+# Commander Tactics Picker
+bm_memory_drain.0003 = {
+	type = character_event
+	title = bm_memory_drain.0003.title
+	desc = bm_memory_drain.0003.desc
+	theme = witchcraft
+	override_icon = {
+		reference = "gfx/interface/icons/bm_blood_magic_icon.dds"
+	}
+
+	left_portrait = {
+		character = root
+		animation = scheme
+	}
+	right_portrait = {
+		character = scope:recipient
+		animation = beg
+	}
+
+	option = {
+		name = bm_memory_drain.trait.logistician
+		trigger = { bm_can_drain_memory_single_track_trigger = { TRAIT = logistician } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = logistician }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.trait.military_engineer
+		trigger = { bm_can_drain_memory_single_track_trigger = { TRAIT = military_engineer } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = military_engineer }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.trait.aggressive_attacker
+		trigger = { bm_can_drain_memory_single_track_trigger = { TRAIT = aggressive_attacker } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = aggressive_attacker }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.trait.unyielding_defender
+		trigger = { bm_can_drain_memory_single_track_trigger = { TRAIT = unyielding_defender } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = unyielding_defender }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.trait.forder
+		trigger = { bm_can_drain_memory_single_track_trigger = { TRAIT = forder } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = forder }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.trait.flexible_leader
+		trigger = { bm_can_drain_memory_single_track_trigger = { TRAIT = flexible_leader } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = flexible_leader }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.trait.desert_warrior
+		trigger = { bm_can_drain_memory_single_track_trigger = { TRAIT = desert_warrior } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = desert_warrior }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.trait.jungle_stalker
+		trigger = { bm_can_drain_memory_single_track_trigger = { TRAIT = jungle_stalker } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = jungle_stalker }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.trait.reaver
+		trigger = { bm_can_drain_memory_single_track_trigger = { TRAIT = reaver } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = reaver }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.trait.reckless
+		trigger = { bm_can_drain_memory_single_track_trigger = { TRAIT = reckless } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = reckless }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.trait.holy_warrior
+		trigger = { bm_can_drain_memory_single_track_trigger = { TRAIT = holy_warrior } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = holy_warrior }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.trait.open_terrain_expert
+		trigger = { bm_can_drain_memory_single_track_trigger = { TRAIT = open_terrain_expert } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = open_terrain_expert }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.trait.rough_terrain_expert
+		trigger = { bm_can_drain_memory_single_track_trigger = { TRAIT = rough_terrain_expert } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = rough_terrain_expert }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.trait.forest_fighter
+		trigger = { bm_can_drain_memory_single_track_trigger = { TRAIT = forest_fighter } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = forest_fighter }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.trait.cautious_leader
+		trigger = { bm_can_drain_memory_single_track_trigger = { TRAIT = cautious_leader } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = cautious_leader }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.trait.organizer
+		trigger = { bm_can_drain_memory_single_track_trigger = { TRAIT = organizer } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = organizer }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.back
+		ai_chance = { base = 0 }
+	}
+}
+
+# Martial Fame Picker
+bm_memory_drain.0004 = {
+	type = character_event
+	title = bm_memory_drain.0004.title
+	desc = bm_memory_drain.0004.desc
+	theme = witchcraft
+	override_icon = {
+		reference = "gfx/interface/icons/bm_blood_magic_icon.dds"
+	}
+
+	left_portrait = {
+		character = root
+		animation = scheme
+	}
+	right_portrait = {
+		character = scope:recipient
+		animation = beg
+	}
+
+	option = {
+		name = bm_memory_drain.trait.berserker
+		trigger = { bm_can_drain_memory_no_track_trigger = { TRAIT = berserker } }
+		bm_memory_drain_execute_no_track_effect = { TRAIT = berserker }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.trait.viking
+		trigger = { bm_can_drain_memory_no_track_trigger = { TRAIT = viking } }
+		bm_memory_drain_execute_no_track_effect = { TRAIT = viking }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.trait.shieldmaiden
+		trigger = { bm_can_drain_memory_no_track_trigger = { TRAIT = shieldmaiden } }
+		bm_memory_drain_execute_no_track_effect = { TRAIT = shieldmaiden }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.trait.athletic
+		trigger = { bm_can_drain_memory_no_track_trigger = { TRAIT = athletic } }
+		bm_memory_drain_execute_no_track_effect = { TRAIT = athletic }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.back
+		ai_chance = { base = 0 }
+	}
+}

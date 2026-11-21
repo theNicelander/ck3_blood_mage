@@ -40,10 +40,10 @@
 
   # Cure illness
   bm_heal_ailment: "Blood Healing"
-  bm_heal_ailment_desc: "Perform a blood ritual to mend a specific wound, disease, old-age degeneration, or stress vice suffered by [recipient.GetShortUINameNoTooltip]."
+  bm_heal_ailment_desc: "Perform a blood ritual to heal a specific health trait, old-age trait, or coping trait suffered by [recipient.GetShortUINameNoTooltip]."
   bm_heal_ailment_tooltip: "Perform a blood magic healing ritual."
-  bm_heal_ailment_resource_requirement_tt: "You must possess sufficient Lifeforce and Piety to heal at least one of [recipient.GetShortUINamePossessive] afflictions."
-  NOT_bm_heal_ailment_resource_requirement_tt: "You must possess sufficient Lifeforce and Piety to heal at least one of [recipient.GetShortUINamePossessive] afflictions."
+  bm_heal_ailment_resource_requirement_tt: "You must possess sufficient Lifeforce and Piety to heal at least one of [recipient.GetShortUINamePossessive] health traits."
+  NOT_bm_heal_ailment_resource_requirement_tt: "You must possess sufficient Lifeforce and Piety to heal at least one of [recipient.GetShortUINamePossessive] health traits."
 
 
   bm_duel_kill_fury_toast: "@bm_ancient_discipline_icon! Fury Duel Harvest"
@@ -198,3 +198,9 @@
   NOT_bm_trait_drain_caster_cooldown_tt: "You have not drained positive traits in the last 60 days"
   bm_trait_drain_victim_cooldown_tt: "Has not been trait drained in the last 180 days"
   NOT_bm_trait_drain_victim_cooldown_tt: "Has not been trait drained in the last 180 days"
+  bm_blood_drain_option_memory: "Drain Blood Memory"
+  bm_blood_drain_option_memory_desc: "Spend 1 Major Lifeforce and Piety (150+, scaling with your learned traits) to siphon a lifestyle, commander, or martial fame trait (or +20 trait XP if already held) from an un-drained prisoner via a Learning duel. Inflicts Lifedrained on the target and increasing Stress on you (60-day cooldown)."
+  bm_memory_drain_caster_cooldown_tt: "You have not drained blood memory in the last 60 days"
+  NOT_bm_memory_drain_caster_cooldown_tt: "You have not drained blood memory in the last 60 days"
+  bm_memory_drain_victim_cooldown_tt: "Has not resisted a blood memory drain in the last 180 days"
+  NOT_bm_memory_drain_victim_cooldown_tt: "Has not resisted a blood memory drain in the last 180 days"

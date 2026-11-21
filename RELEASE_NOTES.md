@@ -37,7 +37,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - Cast Blood Magic (Minor, Major, Superior) are inline option-list decisions; every spell stays visible, grayed out when unavailable.
 - **Transmute Lifeforce**: Dedicated decision and event chain converting 1:1 between Major Lifeforce and the 6 specialized reservoirs (Radiant, Furious, Fortunate, Cunning, Wise, and Ancient Blood) at 50 Piety without cooldowns, granting `+2` matching track XP (`+1` `ancient` XP for Ancient Blood) on channeling and reclaiming back to Major Lifeforce without XP.
 - **Minor**: Minor Blood Runes, Cleansing Impurities, Condensation (Minor into Major), and **Lifeforce Attunement** (first attunement is free; changing attunement costs 50 Piety + 1 Minor Lifeforce, 1-year cooldown; choose your yearly lifestyle XP bonus applied January 1st).
-- **Permanent Tiered Blood Blessings (`Blessing of X`)**: Replaced temporary Bless Blood and Channel Minor Lifeforce with 6 stackable, permanent 3-tier blessings (**Radiance**, **Fortune**, **Fury**, **Cunning**, **Wisdom**, **Ancient**) castable on self (via **Cast Blood Blessing** decision or **Blood Blessing** interaction) and on kin, spouses, knights, councillors, or liege (Minor: 50 Piety + Devotion 1 + Minor Lifeforce; Major: 150 Piety + Devotion 3 + Major Lifeforce; Superior: 250 Piety + Devotion 5 + Superior Lifeforce; 1-year per-target cooldown), with option labels showing the incoming `(Minor)`, `(Major)`, or `(Superior)` rank. Grants `+1/+3/+5` stat, `+5/+10/+15` matching monthly lifestyle XP, and `+5%/+10%/+20%` lifestyle XP gain (**Ancient** grants all-lifestyle XP plus `+5%/+15%/+25%` Fertility and `+2/+4/+8` Fertile Years; **Fortune** also grants `+5%/+10%/+20%` Trade Capacity and `+1` Good Type on Route at Major/Superior).
+- **Permanent Tiered Blood Blessings (`Blessing of X`)**: Replaced temporary Bless Blood and Channel Minor Lifeforce with 6 stackable, permanent 3-tier blessings (**Radiance**, **Fortune**, **Fury**, **Cunning**, **Wisdom**, **Ancient**) castable on self (via **Cast Blood Blessing** decision or **Blood Blessing** interaction) and on kin, spouses, knights, councillors, or liege (Minor: 50 Piety + Devotion 1 + Minor Lifeforce; Major: 150 Piety + Devotion 3 + Major Lifeforce; Superior: 250 Piety + Devotion 5 + Superior Lifeforce; 1-year per-target cooldown), with option labels showing the incoming `(Minor)`, `(Major)`, or `(Superior)` rank. Grants `+1/+3/+5` stat, `+5/+10/+15` matching monthly lifestyle XP, and `+5%/+10%/+20%` lifestyle XP gain (**Ancient** grants all-lifestyle XP plus `+5%/+15%/+25%` Fertility and `+2/+4/+8` Fertile Years; **Fortune** also grants `+5%/+10%/+20%` Trade Capacity, `+5%/+10%/+20%` Trade Expertise Growth, and `+0.5%/+1%/+2%` Trade Goods Sell Price).
 - **Major**: Condense into Superior Lifeforce, Split into 2 Minor, Education Enhancement, Major Runes, Congenital Manifestation, House Blessing.
 - **Superior**: Blood Golem creation, 5★ Master Educations, Secondary Educations, Split Superior into 2 Major, Capstone Runes.
 - **Current Situation Tips**: Added Current Situation notifications for **You Can Attune to Lifeforce** (opens Cast Minor Blood Magic when unattuned) and **You Can Trait Drain a Prisoner** (opens Trait Drain when holding an eligible prisoner with drainable inheritable traits).
@@ -92,7 +92,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 
 ## Buildings
 
-- **Blood Temples**: seven-tier duchy-capital buildings (Altar → … → Acropolis), available in all duchy capitals including tribal; tiers I–IV open to more holders, granting scaling monthly Piety, Piety per sworn knight (+0.02 to +0.20 and +1% to +5% per knight), dynasty renown, health, lifespan, and genetics.
+- **Blood Temple District**: four-tier duchy-capital district (Blood Altar → Blood Shrine → Blood Temple → Blood Acropolis) unlocking 1–4 sub-building slots and 6 specialized four-tier Blood Mage sub-buildings (**Blood Sanctuary**, **Bloodline Vault**, **Blood Academy**, **Hall of Blood Ancestors**, **Blood Basin**, **Ritual Vaults**) covering lifespan, congenital traits, Learning & cultural fascination, dynasty prestige, duchy prosperity & control, and piety/dread.
 - **Blood Shrine**: five-tier line for camps and estates (up to +2.5 monthly piety, +0.10 and +5% monthly piety per knight at Tier V, plus health, lifespan and inheritance).
 
 ## Interface & Interactions
@@ -105,6 +105,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - Current Situation healing alert (`bm_action_can_heal`) monitors councillors, immediate and close family, court positions, and companions; styled green (`Can Heal`) when the corresponding Lifeforce is held, and gray (`Needs Lifeforce`) under unimportant actions when Lifeforce is lacking. Alerts also notify when prisoners can be lifedrained or 20+ Prowess champions culled.
 - Cull Fallen Champion requires 20+ Prowess across all targets (captives and fallen followers).
 - **Purge Stress Vices** burns away all 11 coping traits.
+- **Adopt into Dynasty**: Blood Mages (Devotion 3+, 250 Piety, Major Lifeforce) can bind a lowborn courtier and their living lowborn descendants into their house.
 - Hulinhjálmur conceals the caster from discovery penalties on failed siphons and curses.
 
 ## Narrative Events
@@ -153,6 +154,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 
 ## Version history
 
+- v1.21.4: Overhaul Blood Temple into 4-tier duchy district (6 sub-buildings), add Adopt into Dynasty, rebalance Fortune.
 - v1.21.2: Rebalance Fury knight effectiveness per Learning to 50/100 XP (+1% each) and distribute monthly Piety across all Blood Mage tracks (+0.1/step skill, +0.2/step Ancient).
 - v1.21.1: Update modifiers, duchy districts, port parameters, Monaco holy site barony (`c_savona` / `b_ventimiglia`), Icelandic innovations, and add Merchant/trade support for CK3 1.21.
 - v1.20.90: Move Blood Blessings into dedicated `Cast Blood Blessing` interaction modal (6 exclusive options) and fold self-casting into Minor Blood Magic Grimoire; convert `Empower Dynasty Bloodline` decision to open a hidden interaction popup (`bm_empower_bloodline_interaction`); Minor Life drain now uses a 3-month per-victim cooldown and inflicts escalating wounds instead of `recently_lifedrained_modifier`.

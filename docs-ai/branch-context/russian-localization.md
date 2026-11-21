@@ -1,5 +1,4 @@
-# russian-localization: Add complete Russian localization for v1.21.2
-PR: #111
+# russian-localization: Add complete Russian localization for v1.21.4
 
 ## Motivation
 
@@ -9,12 +8,10 @@ PR: #111
 
 ### Key changes
 
-- Cover all 2,402 current English keys with consistent Russian terminology.
-- Translate permanent Blood Blessings, Lifeforce Attunement, the Blood Temple District, and expanded drain interactions.
-- Update manifestation guarantees, cooldowns, trait-drain requirements, prosperity bonuses, and notification icons.
-- Remove 105 obsolete keys; preserve CK3 expressions, aliases, formatting, and gender-aware wording.
+- Cover all 2,538 English localization keys with consistent Russian terminology.
+- Translate the redesigned Blood Temple District, Drain Blood Memory, Adopt into Dynasty, and updated Blood Healing.
+- Update tooltips and remove obsolete keys.
 
 ### Other changes
 
-- Merge upstream main at bc4705e into the existing PR branch; retain upstream gameplay unchanged.
 - Static repository and localization checks pass; in-game validation remains pending.

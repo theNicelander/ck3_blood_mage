@@ -94,8 +94,23 @@
 					}
 				}
 				AND = {
+					scope:recipient = { has_trait = wounded_2 }
+					scope:actor = {
+						has_character_modifier = lifeforce_modifier_minor
+						piety >= cure_illness_cost_minor
+					}
+				}
+				AND = {
 					scope:recipient = { bm_has_major_ailment_trigger = yes }
 					scope:actor = {
+						has_character_modifier = lifeforce_modifier_major
+						piety >= cure_illness_cost_major
+					}
+				}
+				AND = {
+					scope:recipient = { has_trait = wounded_3 }
+					scope:actor = {
+						is_blood_mage_tier_2_or_higher_trigger = yes
 						has_character_modifier = lifeforce_modifier_major
 						piety >= cure_illness_cost_major
 					}
