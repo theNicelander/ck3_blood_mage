@@ -116,7 +116,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 
 ## Icelandic Culture & Traditions
 
-- Playable **Icelandic** culture (`bm_icelandic`) featuring equal martial custom, North Germanic heritage, communal ethos, and 5 starting traditions.
+- Playable **Icelander** culture (`bm_icelandic`, localized as **Icelander** / **Icelanders** to distinguish from vanilla's **Icelandic**) featuring equal martial custom, North Germanic heritage, communal ethos, and 5 starting traditions.
 - Custom tradition **Alþingi Commonwealth** (`bm_tradition_althingi`) replaces Ting-Meet:
   - Unlocks Scandinavian Elective and Hólmganga (Trial by Combat).
   - Grants +0.05 monthly prosperity growth to the capital, +25% cultural head fascination, +0.05 county prosperity growth, +20% county prosperity growth factor, and +0.10 monthly county control growth.

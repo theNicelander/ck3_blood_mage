@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-- **What:** Playable `bm_icelandic` culture under `heritage_north_germanic` featuring equal gender martial rights, 5 traditions, an Icelandic saga name list with epenthetic `-ur` patronymics, and Day 1 conversion of Iceland.
+- **What:** Playable `bm_icelandic` culture (localized as **Icelander** / **Icelanders**) under `heritage_north_germanic` featuring equal gender martial rights, 5 traditions, an Icelandic saga name list with epenthetic `-ur` patronymics, and Day 1 conversion of Iceland.
 - **Acquisition / Selection:** Selectable in Ruler Designer; initialized on all counties and courts in `d_iceland` on game start via campaign game rule.
 
 ### Culture Specification
@@ -84,6 +84,7 @@
 ## Gotchas
 
 - **Vanilla history preservation:** Never overwrite `history/provinces/k_norway.txt` or `history/characters/norse.txt`; the modular `on_game_start` on-action cleanly overwrites county/character culture dynamically without file conflicts.
+- **Vanilla 1.21 `icelandic` culture:** Vanilla CK3 1.21 added a basegame `icelandic` culture (`00_north_germanic.txt`, `created = 930.1.1`) localized as `"Icelandic"` / `"Icelanders"` with `name_list_icelandic: "Icelandic"`. Keep `bm_icelandic` and `bm_name_list_icelandic` localized as `"Icelander"` so both cultures remain distinct in Ruler Designer and culture lists while preserving `bm_icelandic` IDs for save compatibility.
 - **Engine name token collisions:** When adding modern/saga names with special characters (accented vowels, thorn, eth), script tokens must use Paradox ASCII substitutions (`A_`, `E_`, `I_`, `O_`, `U_`, `T_`, `D_`) with corresponding sibling keys in `bm_icelandic_l_english.yml` to prevent parsing breaks.
 
 ## Not verified
