@@ -15,13 +15,14 @@ Create or update the GitHub PR for the current branch using `docs-ai/branch-cont
 2. **Check PR status**: run `gh pr view --json number,url,title,state` (or `gh pr list --head <branch> --state open --json number,url`).
 3. **If PR exists**:
    - Read `docs-ai/branch-context/<branch>.md`. If missing, stop and tell the user.
+   - Ensure nested-bullet format per skill `manage-pr` (short top-level headlines + 2-space nested sub-bullets for sub-changes/costs/math/XP; split any dense multi-sentence bullets).
    - Extract title from line 1 (`# <branch>: <outcome title>` → strip `# `).
-   - Ensure `PR: #<N>` is on line 2 if missing; if edited, `git add docs-ai/branch-context/<branch>.md`, commit, and push.
+   - Ensure `PR: #<N>` is on line 2 if missing; if the branch doc was edited, `git add docs-ai/branch-context/<branch>.md`, commit, and push.
    - Run `gh pr edit <N> --title "<title>" --body-file docs-ai/branch-context/<branch>.md`.
 4. **If no PR exists**:
    - Ensure branch is pushed (`git push -u origin <branch>` if needed).
-   - Read `docs-ai/branch-context/<branch>.md`; if missing, create it from `git log origin/main..HEAD --oneline` and `git diff origin/main...HEAD` following `.github/pull_request_template.md` (`<2 KB`, bullets only, net branch state).
+   - Read `docs-ai/branch-context/<branch>.md`; if missing, create it from `git log origin/main..HEAD --oneline` and `git diff origin/main...HEAD` following `.github/pull_request_template.md` and skill `manage-pr` (nested bullets, net branch state). If present, ensure nested-bullet format.
    - Extract title from line 1 (`# <branch>: <outcome title>` → strip `# `).
    - Run `gh pr create --base main --title "<title>" --body-file docs-ai/branch-context/<branch>.md`.
-   - Record `PR: #<N>` on line 2 of `docs-ai/branch-context/<branch>.md` if missing, then `git add docs-ai/branch-context/<branch>.md`, commit, and push.
+   - Record `PR: #<N>` on line 2 of `docs-ai/branch-context/<branch>.md` if missing; if edited/created, `git add docs-ai/branch-context/<branch>.md`, commit, and push.
 5. **Finish**: output the PR URL. Never auto-merge.
