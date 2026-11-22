@@ -47,6 +47,36 @@
 				}
 				value = 50
 			}
+			else_if = {
+				limit = {
+					scope:blessing_inscribe_rune = yes
+					scope:recipient = { has_character_modifier = major_blood_rune_modifier }
+				}
+				value = 400
+			}
+			else_if = {
+				limit = {
+					scope:blessing_inscribe_rune = yes
+					scope:recipient = { has_character_modifier = minor_blood_rune_modifier }
+				}
+				value = 200
+			}
+			else_if = {
+				limit = { scope:blessing_grant_lifeforce_minor = yes }
+				value = lifedrain_piety_cost_minor
+			}
+			else_if = {
+				limit = { scope:blessing_grant_lifeforce_major = yes }
+				value = lifedrain_piety_cost_major
+			}
+			else_if = {
+				limit = { scope:blessing_grant_lifeforce_superior = yes }
+				value = 100
+			}
+			else_if = {
+				limit = { scope:blessing_grant_lifeforce_ancient = yes }
+				value = lifedrain_piety_cost_major
+			}
 			else = {
 				value = 0
 			}
@@ -59,17 +89,15 @@
 		}
 		scope:recipient = {
 			is_alive = yes
-			bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
+			OR = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
+				bm_is_valid_positive_magic_target_trigger = { ACTOR = scope:actor }
+				is_imprisoned_by = scope:actor
+			}
 		}
 	}
 
 	is_valid_showing_failures_only = {
-		scope:recipient = {
-			custom_tooltip = {
-				text = bm_blessing_cooldown_tt
-				NOT = { has_character_flag = bm_blessing_cooldown }
-			}
-		}
 		custom_description = {
 			text = bm_cast_blood_blessing_interaction_requirement
 			scope:actor = {
@@ -77,6 +105,7 @@
 					has_character_modifier = lifeforce_modifier_minor
 					has_character_modifier = lifeforce_modifier_major
 					has_character_modifier = lifeforce_modifier_superior
+					has_character_modifier = lifeforce_modifier_ancient
 				}
 			}
 		}
@@ -92,15 +121,26 @@
 		can_invalidate_interaction = yes
 		is_shown = {
 			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
 				NOT = { has_character_modifier = bm_blessing_radiance_minor_modifier }
 				NOT = { has_character_modifier = bm_blessing_radiance_major_modifier }
 				NOT = { has_character_modifier = bm_blessing_radiance_superior_modifier }
 			}
 		}
 		is_valid = {
+			scope:recipient = {
+				custom_tooltip = {
+					text = bm_blessing_cooldown_tt
+					NOT = { has_character_flag = bm_blessing_cooldown }
+				}
+			}
 			bm_can_upgrade_blessing_line_trigger = { LINE = radiance CASTER = scope:actor TARGET = scope:recipient }
 		}
 		starts_enabled = {
+			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
+				NOT = { has_character_flag = bm_blessing_cooldown }
+			}
 			bm_can_upgrade_blessing_line_trigger = { LINE = radiance CASTER = scope:actor TARGET = scope:recipient }
 		}
 	}
@@ -111,13 +151,24 @@
 		can_invalidate_interaction = yes
 		is_shown = {
 			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
 				has_character_modifier = bm_blessing_radiance_minor_modifier
 			}
 		}
 		is_valid = {
+			scope:recipient = {
+				custom_tooltip = {
+					text = bm_blessing_cooldown_tt
+					NOT = { has_character_flag = bm_blessing_cooldown }
+				}
+			}
 			bm_can_upgrade_blessing_line_trigger = { LINE = radiance CASTER = scope:actor TARGET = scope:recipient }
 		}
 		starts_enabled = {
+			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
+				NOT = { has_character_flag = bm_blessing_cooldown }
+			}
 			bm_can_upgrade_blessing_line_trigger = { LINE = radiance CASTER = scope:actor TARGET = scope:recipient }
 		}
 	}
@@ -128,13 +179,24 @@
 		can_invalidate_interaction = yes
 		is_shown = {
 			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
 				has_character_modifier = bm_blessing_radiance_major_modifier
 			}
 		}
 		is_valid = {
+			scope:recipient = {
+				custom_tooltip = {
+					text = bm_blessing_cooldown_tt
+					NOT = { has_character_flag = bm_blessing_cooldown }
+				}
+			}
 			bm_can_upgrade_blessing_line_trigger = { LINE = radiance CASTER = scope:actor TARGET = scope:recipient }
 		}
 		starts_enabled = {
+			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
+				NOT = { has_character_flag = bm_blessing_cooldown }
+			}
 			bm_can_upgrade_blessing_line_trigger = { LINE = radiance CASTER = scope:actor TARGET = scope:recipient }
 		}
 	}
@@ -147,15 +209,26 @@
 		can_invalidate_interaction = yes
 		is_shown = {
 			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
 				NOT = { has_character_modifier = bm_blessing_fortune_minor_modifier }
 				NOT = { has_character_modifier = bm_blessing_fortune_major_modifier }
 				NOT = { has_character_modifier = bm_blessing_fortune_superior_modifier }
 			}
 		}
 		is_valid = {
+			scope:recipient = {
+				custom_tooltip = {
+					text = bm_blessing_cooldown_tt
+					NOT = { has_character_flag = bm_blessing_cooldown }
+				}
+			}
 			bm_can_upgrade_blessing_line_trigger = { LINE = fortune CASTER = scope:actor TARGET = scope:recipient }
 		}
 		starts_enabled = {
+			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
+				NOT = { has_character_flag = bm_blessing_cooldown }
+			}
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = radiance CASTER = scope:actor TARGET = scope:recipient } }
 			bm_can_upgrade_blessing_line_trigger = { LINE = fortune CASTER = scope:actor TARGET = scope:recipient }
 		}
@@ -167,13 +240,24 @@
 		can_invalidate_interaction = yes
 		is_shown = {
 			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
 				has_character_modifier = bm_blessing_fortune_minor_modifier
 			}
 		}
 		is_valid = {
+			scope:recipient = {
+				custom_tooltip = {
+					text = bm_blessing_cooldown_tt
+					NOT = { has_character_flag = bm_blessing_cooldown }
+				}
+			}
 			bm_can_upgrade_blessing_line_trigger = { LINE = fortune CASTER = scope:actor TARGET = scope:recipient }
 		}
 		starts_enabled = {
+			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
+				NOT = { has_character_flag = bm_blessing_cooldown }
+			}
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = radiance CASTER = scope:actor TARGET = scope:recipient } }
 			bm_can_upgrade_blessing_line_trigger = { LINE = fortune CASTER = scope:actor TARGET = scope:recipient }
 		}
@@ -185,13 +269,24 @@
 		can_invalidate_interaction = yes
 		is_shown = {
 			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
 				has_character_modifier = bm_blessing_fortune_major_modifier
 			}
 		}
 		is_valid = {
+			scope:recipient = {
+				custom_tooltip = {
+					text = bm_blessing_cooldown_tt
+					NOT = { has_character_flag = bm_blessing_cooldown }
+				}
+			}
 			bm_can_upgrade_blessing_line_trigger = { LINE = fortune CASTER = scope:actor TARGET = scope:recipient }
 		}
 		starts_enabled = {
+			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
+				NOT = { has_character_flag = bm_blessing_cooldown }
+			}
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = radiance CASTER = scope:actor TARGET = scope:recipient } }
 			bm_can_upgrade_blessing_line_trigger = { LINE = fortune CASTER = scope:actor TARGET = scope:recipient }
 		}
@@ -205,15 +300,26 @@
 		can_invalidate_interaction = yes
 		is_shown = {
 			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
 				NOT = { has_character_modifier = bm_blessing_fury_minor_modifier }
 				NOT = { has_character_modifier = bm_blessing_fury_major_modifier }
 				NOT = { has_character_modifier = bm_blessing_fury_superior_modifier }
 			}
 		}
 		is_valid = {
+			scope:recipient = {
+				custom_tooltip = {
+					text = bm_blessing_cooldown_tt
+					NOT = { has_character_flag = bm_blessing_cooldown }
+				}
+			}
 			bm_can_upgrade_blessing_line_trigger = { LINE = fury CASTER = scope:actor TARGET = scope:recipient }
 		}
 		starts_enabled = {
+			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
+				NOT = { has_character_flag = bm_blessing_cooldown }
+			}
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = radiance CASTER = scope:actor TARGET = scope:recipient } }
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = fortune CASTER = scope:actor TARGET = scope:recipient } }
 			bm_can_upgrade_blessing_line_trigger = { LINE = fury CASTER = scope:actor TARGET = scope:recipient }
@@ -226,13 +332,24 @@
 		can_invalidate_interaction = yes
 		is_shown = {
 			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
 				has_character_modifier = bm_blessing_fury_minor_modifier
 			}
 		}
 		is_valid = {
+			scope:recipient = {
+				custom_tooltip = {
+					text = bm_blessing_cooldown_tt
+					NOT = { has_character_flag = bm_blessing_cooldown }
+				}
+			}
 			bm_can_upgrade_blessing_line_trigger = { LINE = fury CASTER = scope:actor TARGET = scope:recipient }
 		}
 		starts_enabled = {
+			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
+				NOT = { has_character_flag = bm_blessing_cooldown }
+			}
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = radiance CASTER = scope:actor TARGET = scope:recipient } }
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = fortune CASTER = scope:actor TARGET = scope:recipient } }
 			bm_can_upgrade_blessing_line_trigger = { LINE = fury CASTER = scope:actor TARGET = scope:recipient }
@@ -245,13 +362,24 @@
 		can_invalidate_interaction = yes
 		is_shown = {
 			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
 				has_character_modifier = bm_blessing_fury_major_modifier
 			}
 		}
 		is_valid = {
+			scope:recipient = {
+				custom_tooltip = {
+					text = bm_blessing_cooldown_tt
+					NOT = { has_character_flag = bm_blessing_cooldown }
+				}
+			}
 			bm_can_upgrade_blessing_line_trigger = { LINE = fury CASTER = scope:actor TARGET = scope:recipient }
 		}
 		starts_enabled = {
+			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
+				NOT = { has_character_flag = bm_blessing_cooldown }
+			}
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = radiance CASTER = scope:actor TARGET = scope:recipient } }
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = fortune CASTER = scope:actor TARGET = scope:recipient } }
 			bm_can_upgrade_blessing_line_trigger = { LINE = fury CASTER = scope:actor TARGET = scope:recipient }
@@ -266,15 +394,26 @@
 		can_invalidate_interaction = yes
 		is_shown = {
 			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
 				NOT = { has_character_modifier = bm_blessing_cunning_minor_modifier }
 				NOT = { has_character_modifier = bm_blessing_cunning_major_modifier }
 				NOT = { has_character_modifier = bm_blessing_cunning_superior_modifier }
 			}
 		}
 		is_valid = {
+			scope:recipient = {
+				custom_tooltip = {
+					text = bm_blessing_cooldown_tt
+					NOT = { has_character_flag = bm_blessing_cooldown }
+				}
+			}
 			bm_can_upgrade_blessing_line_trigger = { LINE = cunning CASTER = scope:actor TARGET = scope:recipient }
 		}
 		starts_enabled = {
+			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
+				NOT = { has_character_flag = bm_blessing_cooldown }
+			}
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = radiance CASTER = scope:actor TARGET = scope:recipient } }
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = fortune CASTER = scope:actor TARGET = scope:recipient } }
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = fury CASTER = scope:actor TARGET = scope:recipient } }
@@ -288,13 +427,24 @@
 		can_invalidate_interaction = yes
 		is_shown = {
 			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
 				has_character_modifier = bm_blessing_cunning_minor_modifier
 			}
 		}
 		is_valid = {
+			scope:recipient = {
+				custom_tooltip = {
+					text = bm_blessing_cooldown_tt
+					NOT = { has_character_flag = bm_blessing_cooldown }
+				}
+			}
 			bm_can_upgrade_blessing_line_trigger = { LINE = cunning CASTER = scope:actor TARGET = scope:recipient }
 		}
 		starts_enabled = {
+			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
+				NOT = { has_character_flag = bm_blessing_cooldown }
+			}
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = radiance CASTER = scope:actor TARGET = scope:recipient } }
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = fortune CASTER = scope:actor TARGET = scope:recipient } }
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = fury CASTER = scope:actor TARGET = scope:recipient } }
@@ -308,13 +458,24 @@
 		can_invalidate_interaction = yes
 		is_shown = {
 			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
 				has_character_modifier = bm_blessing_cunning_major_modifier
 			}
 		}
 		is_valid = {
+			scope:recipient = {
+				custom_tooltip = {
+					text = bm_blessing_cooldown_tt
+					NOT = { has_character_flag = bm_blessing_cooldown }
+				}
+			}
 			bm_can_upgrade_blessing_line_trigger = { LINE = cunning CASTER = scope:actor TARGET = scope:recipient }
 		}
 		starts_enabled = {
+			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
+				NOT = { has_character_flag = bm_blessing_cooldown }
+			}
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = radiance CASTER = scope:actor TARGET = scope:recipient } }
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = fortune CASTER = scope:actor TARGET = scope:recipient } }
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = fury CASTER = scope:actor TARGET = scope:recipient } }
@@ -330,15 +491,26 @@
 		can_invalidate_interaction = yes
 		is_shown = {
 			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
 				NOT = { has_character_modifier = bm_blessing_wisdom_minor_modifier }
 				NOT = { has_character_modifier = bm_blessing_wisdom_major_modifier }
 				NOT = { has_character_modifier = bm_blessing_wisdom_superior_modifier }
 			}
 		}
 		is_valid = {
+			scope:recipient = {
+				custom_tooltip = {
+					text = bm_blessing_cooldown_tt
+					NOT = { has_character_flag = bm_blessing_cooldown }
+				}
+			}
 			bm_can_upgrade_blessing_line_trigger = { LINE = wisdom CASTER = scope:actor TARGET = scope:recipient }
 		}
 		starts_enabled = {
+			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
+				NOT = { has_character_flag = bm_blessing_cooldown }
+			}
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = radiance CASTER = scope:actor TARGET = scope:recipient } }
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = fortune CASTER = scope:actor TARGET = scope:recipient } }
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = fury CASTER = scope:actor TARGET = scope:recipient } }
@@ -353,13 +525,24 @@
 		can_invalidate_interaction = yes
 		is_shown = {
 			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
 				has_character_modifier = bm_blessing_wisdom_minor_modifier
 			}
 		}
 		is_valid = {
+			scope:recipient = {
+				custom_tooltip = {
+					text = bm_blessing_cooldown_tt
+					NOT = { has_character_flag = bm_blessing_cooldown }
+				}
+			}
 			bm_can_upgrade_blessing_line_trigger = { LINE = wisdom CASTER = scope:actor TARGET = scope:recipient }
 		}
 		starts_enabled = {
+			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
+				NOT = { has_character_flag = bm_blessing_cooldown }
+			}
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = radiance CASTER = scope:actor TARGET = scope:recipient } }
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = fortune CASTER = scope:actor TARGET = scope:recipient } }
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = fury CASTER = scope:actor TARGET = scope:recipient } }
@@ -374,13 +557,24 @@
 		can_invalidate_interaction = yes
 		is_shown = {
 			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
 				has_character_modifier = bm_blessing_wisdom_major_modifier
 			}
 		}
 		is_valid = {
+			scope:recipient = {
+				custom_tooltip = {
+					text = bm_blessing_cooldown_tt
+					NOT = { has_character_flag = bm_blessing_cooldown }
+				}
+			}
 			bm_can_upgrade_blessing_line_trigger = { LINE = wisdom CASTER = scope:actor TARGET = scope:recipient }
 		}
 		starts_enabled = {
+			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
+				NOT = { has_character_flag = bm_blessing_cooldown }
+			}
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = radiance CASTER = scope:actor TARGET = scope:recipient } }
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = fortune CASTER = scope:actor TARGET = scope:recipient } }
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = fury CASTER = scope:actor TARGET = scope:recipient } }
@@ -397,15 +591,26 @@
 		can_invalidate_interaction = yes
 		is_shown = {
 			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
 				NOT = { has_character_modifier = bm_blessing_ancient_minor_modifier }
 				NOT = { has_character_modifier = bm_blessing_ancient_major_modifier }
 				NOT = { has_character_modifier = bm_blessing_ancient_superior_modifier }
 			}
 		}
 		is_valid = {
+			scope:recipient = {
+				custom_tooltip = {
+					text = bm_blessing_cooldown_tt
+					NOT = { has_character_flag = bm_blessing_cooldown }
+				}
+			}
 			bm_can_upgrade_blessing_line_trigger = { LINE = ancient CASTER = scope:actor TARGET = scope:recipient }
 		}
 		starts_enabled = {
+			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
+				NOT = { has_character_flag = bm_blessing_cooldown }
+			}
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = radiance CASTER = scope:actor TARGET = scope:recipient } }
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = fortune CASTER = scope:actor TARGET = scope:recipient } }
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = fury CASTER = scope:actor TARGET = scope:recipient } }
@@ -421,13 +626,24 @@
 		can_invalidate_interaction = yes
 		is_shown = {
 			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
 				has_character_modifier = bm_blessing_ancient_minor_modifier
 			}
 		}
 		is_valid = {
+			scope:recipient = {
+				custom_tooltip = {
+					text = bm_blessing_cooldown_tt
+					NOT = { has_character_flag = bm_blessing_cooldown }
+				}
+			}
 			bm_can_upgrade_blessing_line_trigger = { LINE = ancient CASTER = scope:actor TARGET = scope:recipient }
 		}
 		starts_enabled = {
+			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
+				NOT = { has_character_flag = bm_blessing_cooldown }
+			}
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = radiance CASTER = scope:actor TARGET = scope:recipient } }
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = fortune CASTER = scope:actor TARGET = scope:recipient } }
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = fury CASTER = scope:actor TARGET = scope:recipient } }
@@ -443,13 +659,24 @@
 		can_invalidate_interaction = yes
 		is_shown = {
 			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
 				has_character_modifier = bm_blessing_ancient_major_modifier
 			}
 		}
 		is_valid = {
+			scope:recipient = {
+				custom_tooltip = {
+					text = bm_blessing_cooldown_tt
+					NOT = { has_character_flag = bm_blessing_cooldown }
+				}
+			}
 			bm_can_upgrade_blessing_line_trigger = { LINE = ancient CASTER = scope:actor TARGET = scope:recipient }
 		}
 		starts_enabled = {
+			scope:recipient = {
+				bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor }
+				NOT = { has_character_flag = bm_blessing_cooldown }
+			}
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = radiance CASTER = scope:actor TARGET = scope:recipient } }
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = fortune CASTER = scope:actor TARGET = scope:recipient } }
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = fury CASTER = scope:actor TARGET = scope:recipient } }
@@ -457,6 +684,178 @@
 			NOT = { bm_can_upgrade_blessing_line_trigger = { LINE = wisdom CASTER = scope:actor TARGET = scope:recipient } }
 			bm_can_upgrade_blessing_line_trigger = { LINE = ancient CASTER = scope:actor TARGET = scope:recipient }
 		}
+	}
+
+	# 7. Empower Blood Mage
+	send_option = {
+		flag = blessing_empower
+		localization = bm_blood_blessing_option_empower
+		current_description = bm_blood_blessing_option_empower_desc
+		can_invalidate_interaction = yes
+		is_shown = {
+			NOT = { scope:recipient = scope:actor }
+			scope:recipient = {
+				is_blood_mage_any_tier_trigger = yes
+			}
+		}
+		is_valid = {
+			scope:actor = {
+				OR = {
+					has_character_modifier = lifeforce_modifier_minor
+					has_character_modifier = lifeforce_modifier_major
+				}
+			}
+		}
+		starts_enabled = {
+			NOT = { scope:recipient = scope:actor }
+			NOT = { scope:recipient = { bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor } } }
+			scope:recipient = {
+				is_blood_mage_any_tier_trigger = yes
+			}
+		}
+	}
+
+	# 8. Grant Lifeforce (Minor / Major / Superior / Ancient)
+	send_option = {
+		flag = blessing_grant_lifeforce_minor
+		localization = bm_blood_blessing_option_grant_lifeforce_minor
+		current_description = bm_blood_blessing_option_grant_lifeforce_minor_desc
+		can_invalidate_interaction = yes
+		is_shown = {
+			NOT = { scope:recipient = scope:actor }
+		}
+		is_valid = {
+			scope:actor = { has_character_modifier = lifeforce_modifier_minor }
+		}
+		starts_enabled = {
+			NOT = { scope:recipient = scope:actor }
+			scope:actor = { has_character_modifier = lifeforce_modifier_minor }
+			NOT = { scope:recipient = { has_character_modifier = lifedrained_modifier } }
+			NOT = { scope:recipient = { bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor } } }
+			NOT = { scope:recipient = { is_blood_mage_any_tier_trigger = yes } }
+		}
+	}
+	send_option = {
+		flag = blessing_grant_lifeforce_major
+		localization = bm_blood_blessing_option_grant_lifeforce_major
+		current_description = bm_blood_blessing_option_grant_lifeforce_major_desc
+		can_invalidate_interaction = yes
+		is_shown = {
+			NOT = { scope:recipient = scope:actor }
+		}
+		is_valid = {
+			scope:actor = { has_character_modifier = lifeforce_modifier_major }
+		}
+		starts_enabled = {
+			NOT = { scope:recipient = scope:actor }
+			scope:actor = { has_character_modifier = lifeforce_modifier_major }
+			scope:recipient = { has_character_modifier = lifedrained_modifier }
+		}
+	}
+	send_option = {
+		flag = blessing_grant_lifeforce_superior
+		localization = bm_blood_blessing_option_grant_lifeforce_superior
+		current_description = bm_blood_blessing_option_grant_lifeforce_superior_desc
+		can_invalidate_interaction = yes
+		is_shown = {
+			NOT = { scope:recipient = scope:actor }
+		}
+		is_valid = {
+			scope:actor = { has_character_modifier = lifeforce_modifier_superior }
+		}
+		starts_enabled = { always = no }
+	}
+	send_option = {
+		flag = blessing_grant_lifeforce_ancient
+		localization = bm_blood_blessing_option_grant_lifeforce_ancient
+		current_description = bm_blood_blessing_option_grant_lifeforce_ancient_desc
+		can_invalidate_interaction = yes
+		is_shown = {
+			NOT = { scope:recipient = scope:actor }
+			scope:actor = { has_character_modifier = lifeforce_modifier_ancient }
+			scope:recipient = {
+				OR = {
+					is_spouse_of = scope:actor
+					is_consort_of = scope:actor
+					has_relation_lover = scope:actor
+					has_relation_soulmate = scope:actor
+					is_child_of = scope:actor
+					dynasty ?= scope:actor.dynasty
+				}
+				NOR = {
+					has_character_modifier = lifedrained_modifier
+					has_character_modifier = recently_lifedrained_modifier
+				}
+			}
+		}
+		is_valid = {
+			scope:actor = { has_character_modifier = lifeforce_modifier_ancient }
+		}
+		starts_enabled = { always = no }
+	}
+
+	# 9. Inscribe Blood Rune
+	send_option = {
+		flag = blessing_inscribe_rune
+		localization = bm_blood_blessing_option_inscribe_rune
+		current_description = bm_blood_blessing_option_inscribe_rune_desc
+		can_invalidate_interaction = yes
+		is_shown = {
+			NOT = { scope:recipient = scope:actor }
+			scope:recipient = {
+				NOT = { has_character_modifier = superior_blood_rune_modifier }
+			}
+		}
+		is_valid = {
+			scope:recipient = {
+				is_adult = yes
+				is_imprisoned = no
+			}
+			scope:actor = {
+				NOT = { has_character_flag = bm_blood_rune_other_cooldown }
+				custom_description = {
+					text = bm_inscribe_rune_other_requirement_tt
+					OR = {
+						# Tier 1: Target has no rune -> Minor
+						AND = {
+							scope:recipient = {
+								NOT = { has_character_modifier = minor_blood_rune_modifier }
+								NOT = { has_character_modifier = major_blood_rune_modifier }
+								NOT = { has_character_modifier = superior_blood_rune_modifier }
+							}
+							piety_level >= 2
+							scope:actor.bm_total_blood_mage_xp >= 25
+							has_character_modifier = lifeforce_modifier_minor
+						}
+						# Tier 2: Target has Minor rune -> Major
+						AND = {
+							scope:recipient = {
+								has_character_modifier = minor_blood_rune_modifier
+								NOT = { has_character_modifier = major_blood_rune_modifier }
+								NOT = { has_character_modifier = superior_blood_rune_modifier }
+							}
+							piety_level >= 3
+							scope:actor.bm_total_blood_mage_xp >= 50
+							piety >= 200
+							has_character_modifier = lifeforce_modifier_major
+						}
+						# Tier 3: Target has Major rune -> Superior
+						AND = {
+							scope:recipient = {
+								has_character_modifier = major_blood_rune_modifier
+								NOT = { has_character_modifier = superior_blood_rune_modifier }
+							}
+							is_blood_mage_any_tier_trigger = yes
+							piety_level >= 4
+							scope:actor.bm_total_blood_mage_xp >= 100
+							piety >= 400
+							has_character_modifier = lifeforce_modifier_superior
+						}
+					}
+				}
+			}
+		}
+		starts_enabled = { always = no }
 	}
 
 	on_accept = {
@@ -469,7 +868,7 @@
 				}
 			}
 			debug_log = "BloodMageInteraction: bm_cast_blood_blessing (radiance) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
-			bm_apply_blessing_effect = { LINE = radiance CASTER = scope:actor TARGET = scope:recipient }
+			bm_apply_blessing_effect = { LINE = radiance XP_TRACK = radiance CASTER = scope:actor TARGET = scope:recipient }
 		}
 		else_if = {
 			limit = {
@@ -480,7 +879,7 @@
 				}
 			}
 			debug_log = "BloodMageInteraction: bm_cast_blood_blessing (fortune) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
-			bm_apply_blessing_effect = { LINE = fortune CASTER = scope:actor TARGET = scope:recipient }
+			bm_apply_blessing_effect = { LINE = fortune XP_TRACK = fortune CASTER = scope:actor TARGET = scope:recipient }
 		}
 		else_if = {
 			limit = {
@@ -491,7 +890,7 @@
 				}
 			}
 			debug_log = "BloodMageInteraction: bm_cast_blood_blessing (fury) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
-			bm_apply_blessing_effect = { LINE = fury CASTER = scope:actor TARGET = scope:recipient }
+			bm_apply_blessing_effect = { LINE = fury XP_TRACK = fury CASTER = scope:actor TARGET = scope:recipient }
 		}
 		else_if = {
 			limit = {
@@ -502,7 +901,7 @@
 				}
 			}
 			debug_log = "BloodMageInteraction: bm_cast_blood_blessing (cunning) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
-			bm_apply_blessing_effect = { LINE = cunning CASTER = scope:actor TARGET = scope:recipient }
+			bm_apply_blessing_effect = { LINE = cunning XP_TRACK = cunning CASTER = scope:actor TARGET = scope:recipient }
 		}
 		else_if = {
 			limit = {
@@ -513,7 +912,7 @@
 				}
 			}
 			debug_log = "BloodMageInteraction: bm_cast_blood_blessing (wisdom) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
-			bm_apply_blessing_effect = { LINE = wisdom CASTER = scope:actor TARGET = scope:recipient }
+			bm_apply_blessing_effect = { LINE = wisdom XP_TRACK = wisdom CASTER = scope:actor TARGET = scope:recipient }
 		}
 		else_if = {
 			limit = {
@@ -524,7 +923,223 @@
 				}
 			}
 			debug_log = "BloodMageInteraction: bm_cast_blood_blessing (ancient) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
-			bm_apply_blessing_effect = { LINE = ancient CASTER = scope:actor TARGET = scope:recipient }
+			bm_apply_blessing_effect = { LINE = ancient XP_TRACK = wisdom CASTER = scope:actor TARGET = scope:recipient }
+		}
+		else_if = {
+			limit = { scope:blessing_empower = yes }
+			debug_log = "BloodMageInteraction: bm_cast_blood_blessing (empower) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
+			scope:actor = {
+				send_interface_toast = {
+					type = bm_event_toast_effect_good
+					title = bm_blood_blessing_toast
+					left_icon = scope:actor
+					right_icon = scope:recipient
+					if = {
+						limit = { has_character_modifier = lifeforce_modifier_major }
+						blood_magic_used_major = yes
+						add_xp_bm_dynamic = { TRACK = radiance XP = 4 }
+						scope:recipient = {
+							add_xp_bm_dynamic = { TRACK = wisdom XP = 3 }
+							add_xp_bm_dynamic = { TRACK = fortune XP = 3 }
+							add_xp_bm_dynamic = { TRACK = fury XP = 3 }
+							add_opinion = {
+								target = scope:actor
+								modifier = magic_opinion_positive
+								opinion = 30
+							}
+						}
+					}
+					else = {
+						blood_magic_used_minor = yes
+						add_xp_bm_dynamic = { TRACK = radiance XP = 2 }
+						scope:recipient = {
+							add_xp_bm_dynamic = { TRACK = wisdom XP = 2 }
+							add_xp_bm_dynamic = { TRACK = fortune XP = 2 }
+							add_xp_bm_dynamic = { TRACK = fury XP = 2 }
+							add_opinion = {
+								target = scope:actor
+								modifier = magic_opinion_positive
+								opinion = 15
+							}
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:blessing_grant_lifeforce_minor = yes }
+			debug_log = "BloodMageInteraction: bm_cast_blood_blessing (grant_lifeforce_minor) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
+			scope:actor = {
+				send_interface_toast = {
+					type = bm_event_toast_effect_good
+					title = bm_blood_blessing_toast
+					left_icon = scope:actor
+					right_icon = scope:recipient
+					blood_magic_used_minor = yes
+					add_xp_bm_dynamic = { TRACK = radiance XP = 2 }
+					scope:recipient = {
+						add_character_modifier = { modifier = lifeforce_modifier_minor }
+						add_opinion = {
+							target = scope:actor
+							modifier = magic_opinion_positive
+							opinion = 15
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:blessing_grant_lifeforce_major = yes }
+			debug_log = "BloodMageInteraction: bm_cast_blood_blessing (grant_lifeforce_major) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
+			scope:actor = {
+				send_interface_toast = {
+					type = bm_event_toast_effect_good
+					title = bm_blood_blessing_toast
+					left_icon = scope:actor
+					right_icon = scope:recipient
+					blood_magic_used_major = yes
+					add_xp_bm_dynamic = { TRACK = radiance XP = 4 }
+					if = {
+						limit = { scope:recipient = { has_character_modifier = lifedrained_modifier } }
+						scope:recipient = {
+							remove_character_modifier = lifedrained_modifier
+							add_character_modifier = { modifier = lifeforce_modifier_minor }
+							add_opinion = {
+								target = scope:actor
+								modifier = magic_opinion_positive
+								opinion = 25
+							}
+						}
+					}
+					else = {
+						scope:recipient = {
+							add_character_modifier = { modifier = lifeforce_modifier_major }
+							add_opinion = {
+								target = scope:actor
+								modifier = magic_opinion_positive
+								opinion = 30
+							}
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:blessing_grant_lifeforce_superior = yes }
+			debug_log = "BloodMageInteraction: bm_cast_blood_blessing (grant_lifeforce_superior) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
+			scope:actor = {
+				send_interface_toast = {
+					type = bm_event_toast_effect_good
+					title = bm_blood_blessing_toast
+					left_icon = scope:actor
+					right_icon = scope:recipient
+					blood_magic_used_superior = yes
+					add_xp_bm_dynamic = { TRACK = radiance XP = 6 }
+					scope:recipient = {
+						add_character_modifier = { modifier = lifeforce_modifier_superior }
+						add_opinion = {
+							target = scope:actor
+							modifier = magic_opinion_positive
+							opinion = 45
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:blessing_grant_lifeforce_ancient = yes }
+			debug_log = "BloodMageInteraction: bm_cast_blood_blessing (grant_lifeforce_ancient) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
+			scope:actor = {
+				send_interface_toast = {
+					type = bm_event_toast_effect_good
+					title = bm_blood_blessing_toast
+					left_icon = scope:actor
+					right_icon = scope:recipient
+					blood_magic_used_mojo = yes
+					add_xp_bm_dynamic = { TRACK = fortune XP = 4 }
+					scope:recipient = {
+						add_character_modifier = { modifier = lifeforce_modifier_ancient }
+						add_opinion = {
+							target = scope:actor
+							modifier = magic_opinion_positive
+							opinion = 25
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:blessing_inscribe_rune = yes }
+			debug_log = "BloodMageInteraction: bm_cast_blood_blessing (inscribe_rune) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
+			scope:actor = {
+				add_character_flag = {
+					flag = bm_blood_rune_other_cooldown
+					years = 3
+				}
+				send_interface_toast = {
+					type = bm_event_toast_effect_good
+					title = bm_blood_blessing_toast
+					left_icon = scope:actor
+					right_icon = scope:recipient
+					scope:recipient = {
+						add_opinion = {
+							target = scope:actor
+							modifier = magic_opinion_positive
+							opinion = 20
+						}
+					}
+					if = {
+						limit = {
+							scope:recipient = {
+								NOT = { has_character_modifier = minor_blood_rune_modifier }
+								NOT = { has_character_modifier = major_blood_rune_modifier }
+								NOT = { has_character_modifier = superior_blood_rune_modifier }
+							}
+						}
+						blood_magic_used_minor = yes
+						bm_add_blood_mage_xp_effect = {
+							TRACK = radiance
+							XP = 2
+						}
+						scope:recipient = {
+							add_character_modifier = { modifier = minor_blood_rune_modifier }
+						}
+					}
+					else_if = {
+						limit = {
+							scope:recipient = {
+								has_character_modifier = minor_blood_rune_modifier
+								NOT = { has_character_modifier = major_blood_rune_modifier }
+								NOT = { has_character_modifier = superior_blood_rune_modifier }
+							}
+						}
+						blood_magic_used_major = yes
+						bm_add_blood_mage_xp_effect = {
+							TRACK = radiance
+							XP = 4
+						}
+						scope:recipient = {
+							bm_upgrade_blood_rune_to_major_effect = yes
+						}
+					}
+					else_if = {
+						limit = {
+							scope:recipient = {
+								has_character_modifier = major_blood_rune_modifier
+								NOT = { has_character_modifier = superior_blood_rune_modifier }
+							}
+						}
+						blood_magic_used_superior = yes
+						bm_add_blood_mage_xp_effect = {
+							TRACK = radiance
+							XP = 6
+						}
+						scope:recipient = {
+							bm_upgrade_blood_rune_to_superior_effect = yes
+						}
+					}
+				}
+			}
 		}
 		else = {
 			debug_log = "BloodMageInteraction: bm_cast_blood_blessing (NO OPTION) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
@@ -659,6 +1274,60 @@
 		}
 
 		modifier = {
+			scope:blessing_inscribe_rune = yes
+			add = 40
+		}
+		modifier = {
+			scope:blessing_empower = yes
+			add = 30
+		}
+		modifier = {
+			scope:blessing_grant_lifeforce_major = yes
+			scope:recipient = {
+				OR = {
+					has_character_modifier = lifedrained_modifier
+					has_character_modifier = recently_lifedrained_modifier
+				}
+			}
+			add = 50
+		}
+		modifier = {
+			scope:blessing_grant_lifeforce_minor = yes
+			scope:recipient = {
+				OR = {
+					has_character_modifier = lifedrained_modifier
+					has_character_modifier = recently_lifedrained_modifier
+				}
+			}
+			add = 35
+		}
+		modifier = {
+			scope:blessing_grant_lifeforce_ancient = yes
+			scope:recipient = {
+				OR = {
+					is_spouse_of = scope:actor
+					is_consort_of = scope:actor
+				}
+				fertility > 0
+			}
+			add = 70
+		}
+		modifier = {
+			OR = {
+				scope:blessing_grant_lifeforce_minor = yes
+				scope:blessing_grant_lifeforce_major = yes
+				scope:blessing_grant_lifeforce_superior = yes
+			}
+			scope:recipient = {
+				NOR = {
+					has_character_modifier = lifedrained_modifier
+					has_character_modifier = recently_lifedrained_modifier
+				}
+			}
+			add = -100
+		}
+
+		modifier = {
 			scope:recipient = { this = scope:actor }
 			add = 30
 		}
@@ -690,6 +1359,12 @@
 				scope:blessing_ancient_minor = yes
 				scope:blessing_ancient_major = yes
 				scope:blessing_ancient_superior = yes
+				scope:blessing_empower = yes
+				scope:blessing_grant_lifeforce_minor = yes
+				scope:blessing_grant_lifeforce_major = yes
+				scope:blessing_grant_lifeforce_superior = yes
+				scope:blessing_grant_lifeforce_ancient = yes
+				scope:blessing_inscribe_rune = yes
 			}
 			factor = 0
 		}

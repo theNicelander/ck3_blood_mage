@@ -3,13 +3,13 @@
 
 | Scope | Tokens |
 | --- | ---: |
-| **Always-On (every turn)** | **893** |
-| ↳ Core (`AGENTS.md`) | 893 |
-| **On-Demand** | **8,117** |
+| **Always-On (every turn)** | **947** |
+| ↳ Core (`AGENTS.md`) | 947 |
+| **On-Demand** | **8,581** |
 | ↳ Localized (`**/AGENTS.md`) | 3,781 |
 | ↳ Rules (`model_decision`) | 772 |
-| ↳ Skills (`.agents/skills/`) | 3,564 |
-| **Total** | **9,010** |
+| ↳ Skills (`.agents/skills/`) | 4,028 |
+| **Total** | **9,528** |
 
 ## Details per file
 
@@ -17,12 +17,13 @@
 | --- | --- | --- | ---: |
 | `.agents/skills/debug-ck3-logs/SKILL.md` | On-Demand | Skills | 1,301 |
 | `docs-ai/architecture/AGENTS.md` | On-Demand | Localized | 1,271 |
-| `AGENTS.md` | Always-On | Core | 893 |
+| `AGENTS.md` | Always-On | Core | 947 |
 | `.agents/rules/single-combat.md` | On-Demand | Rules | 772 |
 | `.agents/skills/manage-pr/SKILL.md` | On-Demand | Skills | 655 |
 | `common/religion/AGENTS.md` | On-Demand | Localized | 558 |
 | `.agents/skills/add-icon-asset/SKILL.md` | On-Demand | Skills | 485 |
 | `common/character_interactions/AGENTS.md` | On-Demand | Localized | 476 |
+| `.agents/skills/nice-pr/SKILL.md` | On-Demand | Skills | 464 |
 | `.agents/skills/add-decision-option-widget/SKILL.md` | On-Demand | Skills | 405 |
 | `.agents/skills/add-interaction-send-options/SKILL.md` | On-Demand | Skills | 359 |
 | `common/decisions/AGENTS.md` | On-Demand | Localized | 348 |

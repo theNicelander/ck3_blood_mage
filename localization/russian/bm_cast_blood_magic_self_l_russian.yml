@@ -1,6 +1,8 @@
 ﻿l_russian:
 ############### MINOR ###############
     # Attune lifeforce
+    bm_attune_lifeforce_interaction: "Настройка жизненной силы"
+    bm_attune_lifeforce_interaction_desc: "Настроить магию крови на выбранное направление, чтобы ежегодно получать #P +1#! опыта (#P +2#! с высшим Хулинхьяльмом) и открыть его постоянный модификатор."
     bm_attune_lifeforce_toast: "@bm_ancient_discipline_icon! Жизненная сила настроена"
 
     bm_attune_ancient: "Древность"
@@ -32,10 +34,6 @@
     bm_attune_fury_name: "$bm_attune_fury$"
     bm_attune_fury_desc: "Накладывает модификатор [GetModifier('fury_attuned').GetNameWithTooltip]."
     bm_attune_fury_tooltip: "$bm_attune_fury_desc$"
-
-    # Channel lifeforce minor
-
-
 
 ############### MAJOR ###############
     # Education improvement
@@ -171,6 +169,15 @@
     bm_minor_attune_tooltip: "Настроить магию крови на направление, чтобы ежегодно получать опыт и постоянный бонус.\n\nПервая настройка бесплатна. Смена направления стоит [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip] и #V 50#! [piety|E]."
     bm_attune_lifeforce_cooldown_tt: "Жизненная сила не настраивалась за последний 1 год"
     NOT_bm_attune_lifeforce_cooldown_tt: "Жизненная сила не настраивалась за последний 1 год"
+    bm_minor_blood_blessing: "Благословение крови"
+    bm_minor_blood_blessing_desc: "Даровать себе постоянное благословение крови или усилить его."
+    bm_minor_blood_blessing_tooltip: "Открывает взаимодействие «Благословение крови», чтобы даровать себе постоянное благословение крови или усилить его.\n\nМалое: 50 [piety|E], набожность 1, малая жизненная сила.\nБольшое: 150 [piety|E], набожность 3, большая жизненная сила.\nВысшее: 250 [piety|E], набожность 5, высшая жизненная сила."
+    bm_major_blood_blessing: "$bm_minor_blood_blessing$"
+    bm_major_blood_blessing_desc: "$bm_minor_blood_blessing_desc$"
+    bm_major_blood_blessing_tooltip: "$bm_minor_blood_blessing_tooltip$"
+    bm_superior_blood_blessing: "$bm_minor_blood_blessing$"
+    bm_superior_blood_blessing_desc: "$bm_minor_blood_blessing_desc$"
+    bm_superior_blood_blessing_tooltip: "$bm_minor_blood_blessing_tooltip$"
 
     # Minor Aliases
     bm_cast_blood_magic_minor.001.purge: "$bm_minor_purge$"
@@ -199,7 +206,7 @@
     bm_condense_superior_lifeforce_toast_desc: "Вы потратили благочестие и преобразовали запас: [GetModifier('lifeforce_modifier_major').GetNameWithTooltip] превратилась в [GetModifier('lifeforce_modifier_superior').GetNameWithTooltip]."
     bm_major_split: "Разделить жизненную силу"
     bm_major_split_desc: "Разделить большую жизненную силу на две порции малой."
-    bm_major_split_tooltip: "Потратить #V 150#! [piety|E] и разделить запас «[GetModifier('lifeforce_modifier_major').GetNameWithTooltip]» на две порции запаса «[GetModifier('lifeforce_modifier_minor').GetNameWithTooltip]»."
+    bm_major_split_tooltip: "Потратить #V 50#! [piety|E] и разделить запас «[GetModifier('lifeforce_modifier_major').GetNameWithTooltip]» на две порции запаса «[GetModifier('lifeforce_modifier_minor').GetNameWithTooltip]»."
     bm_split_major_lifeforce_cooldown_tt: "Большая жизненная сила не разделялась последние 6 месяцев"
     NOT_bm_split_major_lifeforce_cooldown_tt: "Большая жизненная сила не разделялась последние 6 месяцев"
     bm_split_major_lifeforce_toast: "@bm_ancient_discipline_icon! Большая жизненная сила разделена"
@@ -323,14 +330,3 @@
     bm_education_master.001.learning: "Достичь легендарного мастерства в учёности"
     bm_education_master.001.back: "Назад"
     bm_education_master.success: "@bm_ancient_discipline_icon! Легендарное мастерство достигнуто"
- bm_attune_lifeforce_interaction: "Настройка жизненной силы"
- bm_attune_lifeforce_interaction_desc: "Настроить магию крови на выбранное направление, чтобы ежегодно получать #P +1#! опыта (#P +2#! с высшим Хулинхьяльмом) и открыть его постоянный модификатор."
- bm_minor_blood_blessing: "Наложить благословение крови"
- bm_minor_blood_blessing_desc: "Даровать себе постоянное благословение крови или усилить его."
- bm_minor_blood_blessing_tooltip: "Открывает взаимодействие «Наложить благословение крови», чтобы даровать себе постоянное благословение крови или усилить его.\n\nМалое: 50 [piety|E], набожность 1, малая жизненная сила.\nБольшое: 150 [piety|E], набожность 3, большая жизненная сила.\nВысшее: 250 [piety|E], набожность 5, высшая жизненная сила."
- bm_major_blood_blessing: "$bm_minor_blood_blessing$"
- bm_major_blood_blessing_desc: "$bm_minor_blood_blessing_desc$"
- bm_major_blood_blessing_tooltip: "$bm_minor_blood_blessing_tooltip$"
- bm_superior_blood_blessing: "$bm_minor_blood_blessing$"
- bm_superior_blood_blessing_desc: "$bm_minor_blood_blessing_desc$"
- bm_superior_blood_blessing_tooltip: "$bm_minor_blood_blessing_tooltip$"

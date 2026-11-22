@@ -25,6 +25,7 @@ Core spellcasting resource stored as stacking character modifiers (`lifeforce_mo
 | `lifeforce_modifier_negative_minor` | Minor Exhaustion | Yes | **1 Year** (`365` days) | `-0.1` Health, `-1` Life Exp, `-2` Epidemic Res, `-0.1` Negate Health Penalty, `-1` Prowess |
 | `lifeforce_modifier_negative_major` | Major Exhaustion | Yes | **3 Years** (`1095` days; `365`d on Flay/Distill) | `-0.3` Health, `-3` Life Exp, `-6` Epidemic Res, `-0.3` Negate Health Penalty, `-2` Prowess |
 | `lifeforce_modifier_negative_superior` | Superior Exhaustion | Yes | **3 Years** (`1095` days; `5` yrs on Flay) | `-0.6` Health, `-6` Life Exp, `-12` Epidemic Res, `-0.6` Negate Health Penalty, `-4` Prowess |
+| `bm_overdrained_modifier` | Emergency Drain Strain | Yes | **2 Years** (`years = 2`) | `-0.3` Health, `-1.0` Monthly Piety, `-5%` Monthly Piety |
 | `lifedrained_modifier` | Victim Siphon Toll | Yes | Permanent (until restored) | `-0.5` Health, `-10` Life Exp, `-5` Epidemic Res, `-0.5` Negate Health Penalty, `-5` Prowess |
 | `recently_lifedrained_modifier` | Victim Cooldown | No | **1 Year** (`years = 1`) | Blocks repeat `drain_tithe` (Demand Blood Tithe) on the same victim (`drain_minor` uses 3-month `bm_minor_lifedrain_cooldown` on victim + escalating wounds) |
 
@@ -54,7 +55,7 @@ Triggered on `on_combat_end_winner` (`bm_on_combat_end_winner`) for surviving si
 
 | Action / Hook | Class Access | Cost / Requirements | Lifeforce Delta | Track XP Gain |
 | --- | --- | --- | --- | --- |
-| **Execute Prisoner (`lifedrain_prisoner_event_interaction`)** | Mage | 50 Piety (`lifedrain_piety_cost_major`), un-drained prisoner | **+1 Major** (executes victim) | `+2` `cunning` |
+| **Execute Prisoner (`bm_blood_drain_interaction`: Major / Major Overdrained)** | Mage | 50 Piety (`lifedrain_piety_cost_major`) OR 0 Piety (`drain_major_overdrained`: 2-yr stackable `bm_overdrained_modifier`, `+20` Stress, `wounded_1` if uninjured), un-drained prisoner | **+1 Major** (executes victim) | `+3` `cunning` |
 | **Mass Lifedrain (`mass_lifedrain_prisoners_decision`)** | Mage | Piety per prisoner, dungeon prisoners | **+Minor / +Major** per prisoner executed | Scaled `cunning` |
 | **Siphon Target (`bm_blood_drain_interaction`: Minor / Empowered Minor)** | Mage | `20` Piety (Minor) or `100` Piety (Empowered Minor, non-prisoner only), 3-mo victim CD | **+1 Minor** (prisoners auto-succeed; non-prisoners contest Intrigue + Learning duel, `50%` / `80%` base at 0 diff, `~90%` at `+30`, `-20` weight outside court; fail: 3-mo CD, `-25` opinion, `+20` Stress) | `+1` `cunning` |
 | **Single Combat Lethal Kill (`bm_on_character_death_duel`)** | Mage | Slay opponent in single combat | **+1 Major** (+ **25% chance +1 Superior** if victim `prowess >= 20` or blood mage) | `+5` `fury` |
@@ -64,7 +65,7 @@ Triggered on `on_combat_end_winner` (`bm_on_combat_end_winner`) for surviving si
 | **Condense Minor Lifeforce (`bm_minor_condense`)** | Mage (`bm_cast_blood_magic_minor_decision`) | 150 Piety + 1 Minor Lifeforce, 6-mo CD | **-1 Minor -> +1 Major** (no exhaustion debuff) | `+2` `ancient` |
 | **Condense Major Lifeforce (`bm_major_condense`)** | Mage (`bm_cast_blood_magic_major_decision`) | 350 Piety + 1 Major Lifeforce, `piety_level >= 2`, 6-mo CD | **-1 Major -> +1 Superior** (no exhaustion debuff) | `+3` `ancient` |
 | **Split Superior Lifeforce (`bm_superior_split`)** | Mage (`bm_cast_blood_magic_superior_decision`) | 350 Piety + 1 Superior Lifeforce, `piety_level >= 2`, 6-mo CD | **-1 Superior -> +2 Major** (no exhaustion debuff) | `+3` `ancient` |
-| **Split Major Lifeforce (`bm_major_split`)** | Mage (`bm_cast_blood_magic_major_decision`) | 150 Piety + 1 Major Lifeforce, 6-mo CD | **-1 Major -> +2 Minor** (no exhaustion debuff) | `+2` `ancient` |
+| **Split Major Lifeforce (`bm_major_split`)** | Mage (`bm_cast_blood_magic_major_decision`) | 50 Piety + 1 Major Lifeforce, 6-mo CD | **-1 Major -> +2 Minor** (no exhaustion debuff) | `+2` `ancient` |
 | **Childbirth Milestone (`bm_on_birth_fortune_xp`)** | Mage only | Child born to blood mage parent | **+1 Major** per child born; burns 1 Mojo per parent | `+2` (`+4` inheriting; doubled by Superior Feingur) `fortune`; `+3` per Mojo burned |
 | **Transmute Major -> Reservoir (`bm_transmute_lifeforce.0002`)** | Mage (`bm_transmute_lifeforce_decision`) | 50 Piety + 1 Major Lifeforce | **-1 Major -> +1 Reservoir** (`radiant`, `furious`, `fortunate`, `cunning`, `wise`, `ancient`) | `+1` `ancient` (Ancient Blood) / `+2` matching track (others) |
 | **Reclaim Major from Reservoir (`bm_transmute_lifeforce.0004`)** | Mage (`bm_transmute_lifeforce_decision`) | 50 Piety + 1 Reservoir stack | **-1 Reservoir -> +1 Major** (`radiant`, `furious`, `fortunate`, `cunning`, `wise`, `ancient`) | None |

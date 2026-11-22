@@ -219,7 +219,7 @@ bm_refresh_blood_magic_rosters_effect = {
 	random_owned_story = {
 		type = bm_blood_mage_story
 		clear_variable_list = bm_dynasty_blood_mages
-		clear_variable_list = bm_blood_retinue
+		clear_variable_list = bm_court_blood_mages
 		clear_variable_list = bm_owned_blood_golems
 		save_scope_as = bm_blood_mage_story_scope
 	}
@@ -235,14 +235,15 @@ bm_refresh_blood_magic_rosters_effect = {
 		}
 	}
 
-	every_knight = {
+	every_courtier = {
 		limit = {
 			is_blood_mage_any_tier_trigger = yes
+			NOT = { house ?= house:bm_house_golem }
 		}
 
 		scope:bm_blood_mage_story_scope = {
 			add_to_variable_list = {
-				name = bm_blood_retinue
+				name = bm_court_blood_mages
 				target = prev
 			}
 		}

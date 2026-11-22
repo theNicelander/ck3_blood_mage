@@ -457,7 +457,7 @@ bm_cast_blood_magic_major_decision = {
 					text = bm_split_major_lifeforce_cooldown_tt
 					NOT = { has_character_flag = bm_split_major_lifeforce_cooldown }
 				}
-				piety >= 150
+				piety >= 50
 				has_character_modifier = lifeforce_modifier_major
 			}
 			ai_chance = {
@@ -466,7 +466,7 @@ bm_cast_blood_magic_major_decision = {
 					limit = {
 						NOT = { has_character_modifier = lifeforce_modifier_minor }
 						has_character_modifier = lifeforce_modifier_major
-						piety > 300
+						piety > 150
 					}
 					add = 25
 				}
@@ -642,7 +642,7 @@ bm_cast_blood_magic_major_decision = {
 		else_if = {
 			limit = { scope:bm_major_split = yes }
 			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (split)"
-			add_piety = -150
+			add_piety = -50
 			add_character_flag = {
 				flag = bm_split_major_lifeforce_cooldown
 				days = 180

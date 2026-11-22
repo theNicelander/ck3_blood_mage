@@ -2,14 +2,14 @@
 
 ## Executive Summary
 
-Character-bound story cycle powering the "Blood Magic" Situation panel (`window_situation_list.gui`) for Blood Mage rulers. Provides dedicated management interface for living dynasty blood mages, blood golems, and the Blood Retinue (sworn Blood Mage knights), alongside blood magic decisions shared with the realm Decisions tab.
+Character-bound story cycle powering the "Blood Magic" Situation panel (`window_situation_list.gui`) for Blood Mage rulers. Provides dedicated management interface for living dynasty blood mages, court blood mages, and blood golems, alongside blood magic decisions shared with the realm Decisions tab.
 
 ## Story Architecture & Rosters
 
 | Component | Scope / Target | Content / Members | Update Trigger |
 | --- | --- | --- | --- |
 | **Living Dynasty Roster** | Story variable list | All living dynasty members with any Blood Mage tier trait (`is_blood_mage_any_tier_trigger`) | `bm_refresh_blood_magic_rosters_effect` |
-| **Blood Retinue** | Story variable list (`bm_blood_retinue`) | Sworn knights possessing any Blood Mage tier trait (`is_blood_mage_any_tier_trigger`) | Roster refresh effect (`bm_refresh_blood_magic_rosters_effect`) |
+| **Court Blood Mages** | Story variable list (`bm_court_blood_mages`) | Courtiers possessing any Blood Mage tier trait (`is_blood_mage_any_tier_trigger`), excluding Blood Golems | Roster refresh effect (`bm_refresh_blood_magic_rosters_effect`) |
 | **Blood Golem Roster** | Story variable list | Courtiers belonging to the Golem house (`bm_house_golem`) | Creation, shaping, death, or roster refresh effect |
 | **Lifeforce Counters** | Story variables | Cached counts of Minor, Major, and Superior Lifeforce modifiers (`bm_lifeforce_minor_stacks`, `bm_lifeforce_major_stacks`, `bm_lifeforce_superior_stacks`) | Roster refresh (strips and recount stacks) |
 | **Custom Status Display** | Customizable localization | Real-time readout of tier (`BM_BLOOD_MAGE_TIER_DISPLAY`), disciplines (mage disciplines), Lifeforce stacks, active Attunement, and inscribed Galdrastafir Blood Rune (`BM_BLOOD_MAGE_STAVE_DISPLAY`) | `BM_BLOOD_MAGE_INFORMATION_STRING` evaluated on view |
@@ -20,7 +20,7 @@ Character-bound story cycle powering the "Blood Magic" Situation panel (`window_
 - **Creation:** Initiated once per character via `bm_ensure_blood_mage_story_effect` upon acquiring `lifestyle_blood_mage`.
 - **Hooks:** Hooked on game start (`bm_blood_mage_story_on_actions.txt`), birth on-actions (`bm_blood_mage_prevalence_on_actions.txt`), and yearly pulse (`bm_yearly_pulse.txt`), which also drives the interpersonal narrative event pulse (`bm_interpersonal_events`).
 - **Destruction:** Ends on character death; reinitialized on successor if they are a blood mage.
-- **Roster Snapshot Rule:** Golem and knight lists are static snapshots. Must invoke `bm_refresh_blood_magic_rosters_effect` whenever golems/knights are created, recruited, or killed.
+- **Roster Snapshot Rule:** Golem and courtier lists are static snapshots. Must invoke `bm_refresh_blood_magic_rosters_effect` whenever golems or court blood mages are created, recruited, or killed.
 - **Lifeforce Recount Rule:** Because CK3 script cannot query dynamic modifier stack counts, the refresh effect temporarily removes and re-adds Lifeforce modifiers to recount exact totals. Refresh effects must have zero side effects triggered by modifier changes.
 - **Icon Branching Rule:** Story cycle `icon.trigger` blocks evaluate in the `story` scope; any character trait checks (`has_trait`) must explicitly scope into `story_owner = { ... }`.
 
