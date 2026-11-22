@@ -23,15 +23,17 @@ description: >-
 # <branch>: <outcome title>
 PR: #<N>
 ## Motivation
-- 1-3 bullets: problem/balance/constraint (nested: mechanical impact, no script details).
+- 1-3 bullets: problem/balance/constraint
+  - Nest mechanical impact (no script details).
 ## Changes
 ### Key changes
-- Bullet per gameplay/system outcome (nested: costs, cooldowns, math, XP, AI; `bm_*` IDs only to locate code; omit unchanged).
+- **Feature / system** (`bm_id` only to locate code): 1-line summary
+  - Nest each distinct sub-change, option, cost, cooldown, math, XP, or AI rule (use 2-space indent; omit unchanged).
 ### Other changes
-- Docs sync, icons/GUI, refactors, renames. Omit if none. Never list loc or incidental BOM cleanup.
+- Group supporting work (docs sync, icons/GUI, refactors, renames); nest items when >1. Omit if none. Never list loc or incidental BOM cleanup.
 ```
 
-- **Style**: diff first; net state for fresh reviewer (fold superseded work); bullets only, <2 KB; player-facing title `<branch>: <outcome title>` (no raw filenames/PDXscript); no extra sections, test plans, or changelogs.
+- **Style**: diff first; net state for fresh reviewer (fold superseded work); **nested bullets only** — break multi-part items into short top-level headlines + indented sub-bullets (1–2 lines/bullet, no wall-of-text bullets); concise; player-facing title `<branch>: <outcome title>` (no raw filenames/PDXscript); no extra sections, test plans, or changelogs.
 
 ## PR commands
 

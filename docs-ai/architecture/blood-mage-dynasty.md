@@ -28,12 +28,8 @@ Modifiers apply to all living and future members of the caster's house (landless
 
 ---
 
-## Heir Anointment & Succession Legacy
+## Permanent Tiered Blood Blessings
 
-- **Anoint Heir (`bm_anoint_heir_interaction`):**
-  - **Prerequisites:** Actor has `lifestyle_blood_mage`. Target is living `primary_heir` or `child` and does not already have `bm_anointed_heir_modifier` (hidden once anointed).
-  - **Cost:** 250 Piety + 1 Major Lifeforce (`blood_magic_used_major`).
-  - **Effect:** Strips `bm_anointed_heir_modifier` from any other child or previous heir. Applies permanent `bm_anointed_heir_modifier` (`+1.0` Health, `+15` Dynasty Opinion, `+25%` Monthly Lifestyle XP, `-35%` Short Reign Duration) to recipient, `+30` Opinion, and `+2` `fortune` XP.
 - **Permanent Tiered Blood Blessings (`bm_cast_blood_blessing_interaction` & `bm_cast_blood_magic_minor_decision`):**
   - **Prerequisites:** Actor has `lifestyle_blood_mage` (any tier). Target is self, `child`, `dynasty` member, `spouse`/`consort`, sworn `knight`, `councillor`, or `liege`, and does not have the 1-year `bm_blessing_cooldown` flag.
   - **Tiers & Costs:**
@@ -47,11 +43,6 @@ Modifiers apply to all living and future members of the caster's house (landless
     4. **Blessing of Cunning (`bm_blessing_cunning_<tier>_modifier`):** `+1/+3/+5` Intrigue, `+5/+10/+15` monthly Intrigue Lifestyle XP, `+5%/+10%/+20%` monthly Lifestyle XP.
     5. **Blessing of Wisdom (`bm_blessing_wisdom_<tier>_modifier`):** `+1/+3/+5` Learning, `+5/+10/+15` monthly Learning Lifestyle XP, `+5%/+10%/+20%` monthly Lifestyle XP.
     6. **Blessing of Ancient (`bm_blessing_ancient_<tier>_modifier`):** `+5/+10/+15` all-lifestyle monthly XP, `+5%/+10%/+20%` monthly Lifestyle XP, `+5%/+15%/+25%` Fertility, `+2/+4/+8` Years of Fertility.
-- **Succession Legacy Awakening (`bm_transfer_anointed_heir_legacy_effect`):**
-  - Triggered via `on_death` / `on_character_death` when a Blood Mage ruler dies with an anointed heir:
-    1. **Awakening:** If the heir lacks `lifestyle_blood_mage`, awakens it via `bm_become_blood_mage_effect`.
-    2. **Lifeforce Inheritance:** Inherits 1 stack of each Lifeforce tier held by the dying ruler at death (Minor $\rightarrow$ Minor, Major $\rightarrow$ Major, Superior $\rightarrow$ Superior), followed by recalculation.
-    3. **25% Track XP Transfer:** Heir inherits 25% of the dying ruler's XP across all active tracks: `ancient`, `wisdom`, `radiance`, `fortune`, `cunning`, `fury`.
 
 ---
 
