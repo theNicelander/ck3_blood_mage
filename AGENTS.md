@@ -34,5 +34,11 @@ Pure script, loc, gfx; no build. Vanilla ref: `/Users/clarabotet/Petur/ck3-full`
 
 - **Commit every turn (MANDATORY)**: parallel agents share this working tree. Before ending ANY turn that edited files, re-check `git branch --show-current` (if on `main` or detached `HEAD`, branch `v1.21.<N+1>` first), then explicitly `git add <only your files>`, commit, and push to `<branch>`. Never leave uncommitted edits waiting for follow-up.
 - **Argon planner**: if using Gemini Argon, ask `"You are using Argon, do you want to continue Yes/No"` first; never edit files on Argon (investigate/ask/plan only).
-- **Clarify first**: ask on rough ideas; never execute on unverified assumptions. Suggest a skill for newly investigated vanilla systems.
+- **Clarify first**: ask on rough ideas; never execute on unverified assumptions.
+- **Capture discoveries (no double work)**: if you verified non-obvious syntax/behavior in vanilla or `script_docs`, hit a silent CK3 failure / new `error.log` signature, or traced a non-obvious mod coupling, persist it in the same commit (terse bullets, single source of truth):
+  - Folder-specific CK3 rule (`common/decisions/`, `events/`, `localization/`, etc.) → localized `AGENTS.md` in that folder.
+  - Mod subsystem gotcha / coupling → `docs-ai/architecture/blood-mage-<subsystem>.md` (`Gotchas`).
+  - Cross-cutting CK3 engine quirk → `.agents/rules/<topic>.md` (with `description:` frontmatter so it loads conditionally).
+  - New `error.log` signature → `.agents/skills/debug-ck3-logs/SKILL.md`.
+  - Repeatable multi-step recipe → update matching `.agents/skills/*/SKILL.md`, or propose a new skill if none fits.
 - **Flow**: `git branch --show-current` → read `docs-ai/branch-context/<branch>.md` + matching `docs-ai/architecture/` doc → edit → finish via skill `manage-pr`.
