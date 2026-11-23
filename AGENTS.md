@@ -23,6 +23,7 @@ Pure script, loc, gfx; no build. Vanilla ref: `/Users/clarabotet/Petur/ck3-full`
 
 ## Never
 
+- Use em-dashes (`U+2014`) in any tracked file (`scripts/check_em_dashes.py` blocks commits; use commas, colons, semicolons, parentheses, or ` - `).
 - Edit `descriptor.mod` (`name`, `remote_file_id`, `version`), `.env`, `*.vdf`, or add `replace_path`.
 - Delete third-party compat code (AGOT, Blood of Numenor) unasked, or reference other-mod keys unguarded (`has_global_variable = AGOT_is_loaded` or doctrine params).
 - Commit/push to `main` (always run `git branch --show-current` right before committing/pushing; if on `main` or detached `HEAD`, branch `v1.21.<N+1>` first).
