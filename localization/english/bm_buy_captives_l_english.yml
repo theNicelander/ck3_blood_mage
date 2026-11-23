@@ -21,12 +21,12 @@
  bm_buy_captives.0002.e:0 "Back"
 
  bm_buy_captives.0003.t:0 "Negotiating for [selected_captive.GetFirstNameNoTooltip]"
- bm_buy_captives.0003.desc:0 "The broker steps aside so you can size up [selected_captive.GetTitledFirstName]. The asking price is [selected_captive.MakeScope.ScriptValue('bm_captive_price_value')|0]@gold_icon! — pay it outright for a clean handover, or press your luck at the table and accept whatever terms fall."
+ bm_buy_captives.0003.desc:0 "The broker steps aside so you can size up [selected_captive.GetTitledFirstName]. The asking price is [selected_captive.MakeScope.ScriptValue('bm_captive_price_value')|0]@gold_icon!. Pay it or haggle."
  bm_buy_captives.0003.a:0 "Pay the full price ([selected_captive.MakeScope.ScriptValue('bm_captive_price_value')|0]@gold_icon!)"
  bm_buy_captives.0003.b:0 "Haggle over the price"
  bm_buy_captives.0003.c:0 "Back"
 
- bm_buy_captives_haggle_success_tt:0 "You talk the broker down — buy [selected_captive.GetFirstNameNoTooltip] at a reduced price ([selected_captive.MakeScope.ScriptValue('bm_captive_discounted_price_value')|0]@gold_icon!)"
- bm_buy_captives_haggle_fail_tt:0 "The broker outplays you — buy [selected_captive.GetFirstNameNoTooltip] at an increased price ([selected_captive.MakeScope.ScriptValue('bm_captive_markup_price_value')|0]@gold_icon!)"
- bm_buy_captives_haggle_refused_tt:0 "The broker walks away — [selected_captive.GetFirstNameNoTooltip] is pulled from the offer"
+ bm_buy_captives_haggle_success_tt:0 "You talk the broker down! Buy [selected_captive.GetFirstNameNoTooltip] at a reduced price ([selected_captive.MakeScope.ScriptValue('bm_captive_discounted_price_value')|0]@gold_icon!)"
+ bm_buy_captives_haggle_fail_tt:0 "The broker outplays you... buy [selected_captive.GetFirstNameNoTooltip] at an increased price ([selected_captive.MakeScope.ScriptValue('bm_captive_markup_price_value')|0]@gold_icon!)"
+ bm_buy_captives_haggle_refused_tt:0 "The broker walks away... [selected_captive.GetFirstNameNoTooltip] is pulled from the offer"
  bm_buy_captives_haggle_refused_effect_tt:0 "[selected_captive.GetTitledFirstName] is no longer available to buy"
