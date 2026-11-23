@@ -9,3 +9,4 @@
 - **Trigger loc scoping**: `custom_description` cannot resolve bare `[recipient.GetShortUIName]`. Pass `subject = scope:recipient` + `[CHARACTER.GetShortUIName]` (`object` → `[TARGET_CHARACTER.GetShortUIName]`).
 - **Important actions**: never put `($NUM$)` or `(NUM)` in `_combined_group_label` (engine appends count; `$NUM$` renders raw).
 - **No redundant requirement strings**: let CK3 format native triggers (`piety_level`, `has_trait`, `has_character_modifier`, `gold`, etc.).
+- **Vanilla trait & healing terms**: use exact vanilla/CK3 wiki trait names (`Wounded`, `Severely Injured`, `Brutally Mauled` — never `Wounded I/II/III`) and category names (`health traits`, `coping traits`, `old-age traits` — never `ailments` or `afflictions`). Use plain `Heal` in UI/options instead of `Mend`, `Purge`, `Cleanse`, `Cure`, `Eradicate`, or `Dispel`.
