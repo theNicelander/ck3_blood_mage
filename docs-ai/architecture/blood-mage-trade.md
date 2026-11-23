@@ -1,8 +1,3 @@
----
-trigger: model_decision
-description: CK3 1.21 trade system caps, modifier formatting/scaling, and Blood Mages trade budget.
----
-
 # CK3 1.21 Trade Modifiers & Mod Budget
 
 ## Vanilla 1.21 Baselines (`common/defines/00_defines.txt`, `NTrade`)

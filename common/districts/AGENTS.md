@@ -1,8 +1,3 @@
----
-trigger: model_decision
-description: CK3 1.21 districts, duchy capital building slots, district_level_requirement, and sharing vanilla sub-buildings safely.
----
-
 # CK3 1.21 Districts & Buildings
 
 - **District-first slots**: Holdings place districts (`common/districts/`), not bare buildings (`type = regular|special|duchy_capital|holding|great_district|trade_post|entrepot`). Never put `type = duchy_capital` directly on building definitions.

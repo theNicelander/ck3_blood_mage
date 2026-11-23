@@ -36,9 +36,10 @@ Pure script, loc, gfx; no build. Vanilla ref: `/Users/clarabotet/Petur/ck3-full`
 - **Argon planner**: if using Gemini Argon, ask `"You are using Argon, do you want to continue Yes/No"` first; never edit files on Argon (investigate/ask/plan only).
 - **Clarify first**: ask on rough ideas; never execute on unverified assumptions.
 - **Capture discoveries (no double work)**: if you verified non-obvious syntax/behavior in vanilla or `script_docs`, hit a silent CK3 failure / new `error.log` signature, or traced a non-obvious mod coupling, persist it in the same commit (terse bullets, single source of truth):
-  - Folder-specific CK3 rule (`common/decisions/`, `events/`, `localization/`, etc.) → localized `AGENTS.md` in that folder.
-  - Mod subsystem gotcha / coupling → `docs-ai/architecture/blood-mage-<subsystem>.md` (`Gotchas`).
-  - Cross-cutting CK3 engine quirk → `.agents/rules/<topic>.md` (with `description:` frontmatter so it loads conditionally).
+  - Prefer **localized `AGENTS.md`** > **`docs-ai/architecture/`** > **`.agents/skills/`** over `.agents/rules/` (never add niche/subsystem-specific topics to `.agents/rules/`).
+  - Folder-specific CK3 rule (`common/decisions/`, `common/districts/`, `events/`, `localization/`, etc.) → localized `AGENTS.md` in that folder (plus a 1-line pointer in a sibling folder's `AGENTS.md` if needed).
+  - Mod subsystem gotcha, budget, or coupling → `docs-ai/architecture/blood-mage-<subsystem>.md` (`Gotchas`).
   - New `error.log` signature → `.agents/skills/debug-ck3-logs/SKILL.md`.
-  - Repeatable multi-step recipe → update matching `.agents/skills/*/SKILL.md`, or propose a new skill if none fits.
+  - Cross-folder CK3 engine reference or repeatable multi-step recipe → `.agents/skills/<topic>/SKILL.md` (update existing or add new).
+  - `.agents/rules/` → reserved only for broad, repo-wide guardrails that apply across most tasks.
 - **Flow**: `git branch --show-current` → read `docs-ai/branch-context/<branch>.md` + matching `docs-ai/architecture/` doc → edit → finish via skill `manage-pr`.

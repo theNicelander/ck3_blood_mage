@@ -3,33 +3,36 @@
 
 | Scope | Tokens |
 | --- | ---: |
-| **Always-On (every turn)** | **947** |
-| ↳ Core (`AGENTS.md`) | 947 |
-| **On-Demand** | **8,581** |
-| ↳ Localized (`**/AGENTS.md`) | 3,781 |
-| ↳ Rules (`model_decision`) | 772 |
-| ↳ Skills (`.agents/skills/`) | 4,028 |
-| **Total** | **9,528** |
+| **Always-On (every turn)** | **1,169** |
+| ↳ Core (`AGENTS.md`) | 1,169 |
+| **On-Demand** | **10,981** |
+| ↳ Localized (`**/AGENTS.md`) | 4,387 |
+| ↳ Rules (`model_decision`) | 1,929 |
+| ↳ Skills (`.agents/skills/`) | 4,665 |
+| **Total** | **12,150** |
 
 ## Details per file
 
 | File | Load | Category | Tokens |
 | --- | --- | --- | ---: |
-| `.agents/skills/debug-ck3-logs/SKILL.md` | On-Demand | Skills | 1,301 |
+| `.agents/skills/debug-ck3-logs/SKILL.md` | On-Demand | Skills | 1,562 |
 | `docs-ai/architecture/AGENTS.md` | On-Demand | Localized | 1,271 |
-| `AGENTS.md` | Always-On | Core | 947 |
+| `AGENTS.md` | Always-On | Core | 1,169 |
+| `.agents/skills/manage-pr/SKILL.md` | On-Demand | Skills | 813 |
 | `.agents/rules/single-combat.md` | On-Demand | Rules | 772 |
-| `.agents/skills/manage-pr/SKILL.md` | On-Demand | Skills | 655 |
+| `.agents/skills/add-icon-asset/SKILL.md` | On-Demand | Skills | 638 |
+| `.agents/rules/districts-and-buildings.md` | On-Demand | Rules | 601 |
 | `common/religion/AGENTS.md` | On-Demand | Localized | 558 |
-| `.agents/skills/add-icon-asset/SKILL.md` | On-Demand | Skills | 485 |
-| `common/character_interactions/AGENTS.md` | On-Demand | Localized | 476 |
-| `.agents/skills/nice-pr/SKILL.md` | On-Demand | Skills | 464 |
+| `.agents/rules/trade-modifiers.md` | On-Demand | Rules | 556 |
+| `.agents/skills/nice-pr/SKILL.md` | On-Demand | Skills | 529 |
+| `common/character_interactions/AGENTS.md` | On-Demand | Localized | 507 |
+| `common/culture/AGENTS.md` | On-Demand | Localized | 440 |
 | `.agents/skills/add-decision-option-widget/SKILL.md` | On-Demand | Skills | 405 |
+| `localization/AGENTS.md` | On-Demand | Localized | 397 |
 | `.agents/skills/add-interaction-send-options/SKILL.md` | On-Demand | Skills | 359 |
 | `common/decisions/AGENTS.md` | On-Demand | Localized | 348 |
 | `common/AGENTS.md` | On-Demand | Localized | 295 |
 | `common/traits/AGENTS.md` | On-Demand | Localized | 281 |
-| `localization/AGENTS.md` | On-Demand | Localized | 262 |
 | `.agents/skills/caveman/SKILL.md` | On-Demand | Skills | 190 |
 | `.agents/skills/update-release-notes/SKILL.md` | On-Demand | Skills | 169 |
 | `events/AGENTS.md` | On-Demand | Localized | 165 |
