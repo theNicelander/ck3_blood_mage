@@ -11,7 +11,7 @@ Pure script, loc, gfx; no build. Vanilla ref: `/Users/clarabotet/Petur/ck3-full`
 - **Nothing hidden, often unavailable**: keep options visible + greyed (`show_as_unavailable`); hide only if prerequisite unreached or permanently completed/superseded.
 - **Native triggers over `custom_tooltip`**: never wrap standard triggers (`piety`, `piety_level`, `gold`, `has_trait`, `has_character_modifier`, etc.) in `custom_tooltip`.
 - **Toasts**: wrap player-facing modifier, trait, XP, stat grants in `send_interface_toast`.
-- **Single source of truth & caveman AI docs**: one place per rule (link, never duplicate); terse caveman prose in rules/skills/`AGENTS.md`.
+- **Single source of truth & minimal AI docs**: one place per rule (link, never duplicate). Keep rules, skills, and `AGENTS.md` as short as possible to save tokens — undershoot rather than overshoot; cut anything superfluous (terse caveman prose).
 
 ## Naming, format & tools
 

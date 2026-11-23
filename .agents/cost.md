@@ -3,13 +3,13 @@
 
 | Scope | Tokens |
 | --- | ---: |
-| **Always-On (every turn)** | **1,169** |
-| ↳ Core (`AGENTS.md`) | 1,169 |
-| **On-Demand** | **10,981** |
-| ↳ Localized (`**/AGENTS.md`) | 4,387 |
-| ↳ Rules (`model_decision`) | 1,929 |
-| ↳ Skills (`.agents/skills/`) | 4,665 |
-| **Total** | **12,150** |
+| **Always-On (every turn)** | **1,246** |
+| ↳ Core (`AGENTS.md`) | 1,246 |
+| **On-Demand** | **10,484** |
+| ↳ Localized (`**/AGENTS.md`) | 5,031 |
+| ↳ Rules (`model_decision`) | 0 |
+| ↳ Skills (`.agents/skills/`) | 5,453 |
+| **Total** | **11,730** |
 
 ## Details per file
 
@@ -17,13 +17,12 @@
 | --- | --- | --- | ---: |
 | `.agents/skills/debug-ck3-logs/SKILL.md` | On-Demand | Skills | 1,562 |
 | `docs-ai/architecture/AGENTS.md` | On-Demand | Localized | 1,271 |
-| `AGENTS.md` | Always-On | Core | 1,169 |
+| `AGENTS.md` | Always-On | Core | 1,246 |
 | `.agents/skills/manage-pr/SKILL.md` | On-Demand | Skills | 813 |
-| `.agents/rules/single-combat.md` | On-Demand | Rules | 772 |
+| `.agents/skills/single-combat/SKILL.md` | On-Demand | Skills | 788 |
 | `.agents/skills/add-icon-asset/SKILL.md` | On-Demand | Skills | 638 |
-| `.agents/rules/districts-and-buildings.md` | On-Demand | Rules | 601 |
+| `common/districts/AGENTS.md` | On-Demand | Localized | 565 |
 | `common/religion/AGENTS.md` | On-Demand | Localized | 558 |
-| `.agents/rules/trade-modifiers.md` | On-Demand | Rules | 556 |
 | `.agents/skills/nice-pr/SKILL.md` | On-Demand | Skills | 529 |
 | `common/character_interactions/AGENTS.md` | On-Demand | Localized | 507 |
 | `common/culture/AGENTS.md` | On-Demand | Localized | 440 |
@@ -37,3 +36,5 @@
 | `.agents/skills/update-release-notes/SKILL.md` | On-Demand | Skills | 169 |
 | `events/AGENTS.md` | On-Demand | Localized | 165 |
 | `common/game_rules/AGENTS.md` | On-Demand | Localized | 125 |
+| `common/buildings/AGENTS.md` | On-Demand | Localized | 40 |
+| `common/modifiers/AGENTS.md` | On-Demand | Localized | 39 |
