@@ -1,4 +1,4 @@
-# PR #94 (`pr/94`) vs `main` — Review Notes
+# PR #94 (`pr/94`) vs `main` - Review Notes
 
 Branch `pr/94`: 39 commits, 158 files, +7,074 / −3,056.
 

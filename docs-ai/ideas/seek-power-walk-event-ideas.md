@@ -60,7 +60,7 @@ For landless adventurers in settlements or feudal rulers dwelling in castles, th
 Expands the current wilderness pool beyond the Stag, Traveler, Bleeding Tree, Beast Lair, Homestead, Outlaw Camp, and Crimson Rite.
 
 ### Event Idea 2.1: The Isolated Hermit of the Outskirts
-- **Premise**: Deep in the forest, you stumble across a remote hut inhabited by an old hermit—either a hedge witch, a retired soldier, or an exiled mystic.
+- **Premise**: Deep in the forest, you stumble across a remote hut inhabited by an old hermit: either a hedge witch, a retired soldier, or an exiled mystic.
 - **Skill Checks / Tracks**: Diplomacy / Learning.
 - **Options**:
   - *Trade secrets and lore*: Exchange occult knowledge. Gain `enlightenment` track XP and friendly opinion.
@@ -71,7 +71,7 @@ Expands the current wilderness pool beyond the Stag, Traveler, Bleeding Tree, Be
 - **Premise**: In a secluded cavern or misty glen, water bubbles up thick and dark crimson from mineral veins or forgotten battlefields.
 - **Skill Checks / Tracks**: Learning / Health check.
 - **Options**:
-  - *Drink deeply of the spring*: Risky gambit—chance of temporary illness vs. granting high lifeforce or the `ancient_attuned` modifier.
+  - *Drink deeply of the spring*: Risky gambit: chance of temporary illness vs. granting high lifeforce or the `ancient_attuned` modifier.
   - *Bottle the tainted waters*: Collect vials for future rituals (gain a minor trinket artifact or consumable character modifier).
   - *Cleanse / Consecrate the ground*: Cast a ritual to channel the earth's energy into your demesne (increases county control or popular opinion).
 

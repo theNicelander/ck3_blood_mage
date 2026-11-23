@@ -1,6 +1,6 @@
-# AGENTS.md — Blood Mages (CK3 1.20+)
+# AGENTS.md - Blood Mages (CK3 1.20+)
 
-Pure script, loc, gfx; no build. Vanilla ref: `/Users/clarabotet/Petur/ck3-full` (`common/` at root, no `game/` dir). CK3 fails silently — never invent syntax; verify in vanilla or `script_docs`.
+Pure script, loc, gfx; no build. Vanilla ref: `/Users/clarabotet/Petur/ck3-full` (`common/` at root, no `game/` dir). CK3 fails silently; never invent syntax; verify in vanilla or `script_docs`.
 
 ## Principles
 
@@ -11,7 +11,7 @@ Pure script, loc, gfx; no build. Vanilla ref: `/Users/clarabotet/Petur/ck3-full`
 - **Nothing hidden, often unavailable**: keep options visible + greyed (`show_as_unavailable`); hide only if prerequisite unreached or permanently completed/superseded.
 - **Native triggers over `custom_tooltip`**: never wrap standard triggers (`piety`, `piety_level`, `gold`, `has_trait`, `has_character_modifier`, etc.) in `custom_tooltip`.
 - **Toasts**: wrap player-facing modifier, trait, XP, stat grants in `send_interface_toast`.
-- **Single source of truth & minimal AI docs**: one place per rule (link, never duplicate). Keep rules, skills, and `AGENTS.md` as short as possible to save tokens — undershoot rather than overshoot; cut anything superfluous (terse caveman prose).
+- **Single source of truth & minimal AI docs**: one place per rule (link, never duplicate). Keep rules, skills, and `AGENTS.md` as short as possible to save tokens: undershoot rather than overshoot; cut anything superfluous (terse caveman prose).
 
 ## Naming, format & tools
 
@@ -26,7 +26,7 @@ Pure script, loc, gfx; no build. Vanilla ref: `/Users/clarabotet/Petur/ck3-full`
 - Edit `descriptor.mod` (`name`, `remote_file_id`, `version`), `.env`, `*.vdf`, or add `replace_path`.
 - Delete third-party compat code (AGOT, Blood of Numenor) unasked, or reference other-mod keys unguarded (`has_global_variable = AGOT_is_loaded` or doctrine params).
 - Commit/push to `main` (always run `git branch --show-current` right before committing/pushing; if on `main` or detached `HEAD`, branch `v1.21.<N+1>` first).
-- Blanket stage (`git add .`, `-A`, `commit -a`) — parallel agents share tree.
+- Blanket stage (`git add .`, `-A`, `commit -a`): parallel agents share tree.
 - Merge PR unless user explicitly asks (squash via `gh pr merge --squash`, never locally).
 - Read `docs-ai/archive/`, `docs-ai/ideas/`, `docs-ai/base-game-lists/`, `.agents/cost.md` unless asked.
 

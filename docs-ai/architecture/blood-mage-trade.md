@@ -19,6 +19,6 @@
 
 ## Formatting & Allowlist Gotchas (`00_gdp_definitions.txt`, `00_trade_definitions.txt`)
 
-- `trade_category_all_{sell,buy}_price_mult`: `decimals = 2` (`0.005` displays `+0.50%`). Keep values tiny (`0.005`–`0.02`; vanilla max ~`0.03`) — margins compound fast.
+- `trade_category_all_{sell,buy}_price_mult`: `decimals = 2` (`0.005` displays `+0.50%`). Keep values tiny (`0.005`–`0.02`; vanilla max ~`0.03`), as margins compound fast.
 - `trade_expertise_growth_mult`: `decimals = 1` (%). `trade_post_limit_add`: `decimals = 0`.
 - Register any new vanilla trade modifier via `python3 scripts/check_modifiers.py --add <mod> --scope <character|county|domicile>`.

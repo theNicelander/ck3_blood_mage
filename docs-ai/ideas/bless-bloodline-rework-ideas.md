@@ -39,7 +39,7 @@ Blood magic is rarely pure charity. An occult tether links the caster and the bl
 - **Guardian Aegis:**
   - If the blessed kin suffers a mortal injury or deadly disease, the tether triggers an event: the kin survives, and the caster loses Lifeforce or takes a temporary wound/stress penalty to preserve them.
 - **Vital Echo (Feedback to Caster):**
-  - Whenever the blessed kin achieves a dynastic milestone—giving birth to a healthy child, winning a war, or becoming landed—the caster receives an event toast granting **+1 Lifeforce** or bonus Bloodline XP.
+  - Whenever the blessed kin achieves a dynastic milestone (giving birth to a healthy child, winning a war, or becoming landed), the caster receives an event toast granting **+1 Lifeforce** or bonus Bloodline XP.
 - **Bloodbound Allegiance:**
   - The recipient is bound by blood: they cannot join factions against the caster, gain +50 opinion, and the caster holds a permanent weak blood hook on them.
 

@@ -7,7 +7,7 @@ Living brainstorm document outlining narrative event chains, yearly pulse events
 ## 1. "The Whispering Fountain" (Court & Lifestyle Pulse Event)
 
 - **Vanilla Inspiration:** Learning lifestyle events (*Strange Flora*, *The Celestial Sphere*, *Wandering Mystic*) and court intrigue/weirdness pulses (*Strange Odors*, *Cat in the Court*).
-- **Narrative Hook:** Courtiers and servants notice bizarre occurrences around the ruler's private sanctum—wine left out coagulates into dark viscous residue, or palace birds drop from the parapets drained dry without puncture marks. Whispers of sorcery spread through the halls.
+- **Narrative Hook:** Courtiers and servants notice bizarre occurrences around the ruler's private sanctum: wine left out coagulates into dark viscous residue, or palace birds drop from the parapets drained dry without puncture marks. Whispers of sorcery spread through the halls.
 - **CK3 Systems & Hooks:**
   - **Trigger:** Yearly pulse or court pulse for characters with `has_trait = lifestyle_blood_mage`.
   - **Option A (*Cover it up / Hematurgy*):** Spend minor Lifeforce / perform a cleansing ritual (intrigue + hematurgy check). Keeps it hidden, gains Hematurgy XP, but adds stress.
@@ -19,7 +19,7 @@ Living brainstorm document outlining narrative event chains, yearly pulse events
 ## 2. "The Price of Perfection" (Family & Ward Education Event)
 
 - **Vanilla Inspiration:** Ward education pulses (*Child studying late*, *Child exhibits unnatural cruelty / genius*, *Meet Peers*).
-- **Narrative Hook:** Watching your young child or ward struggle with martial drills, illness, or complex scholarship, you feel the instinctual hum of Lifeforce in your veins. You could secretly weave your vitality into their marrow—or force their awakening.
+- **Narrative Hook:** Watching your young child or ward struggle with martial drills, illness, or complex scholarship, you feel the instinctual hum of Lifeforce in your veins. You could secretly weave your vitality into their marrow, or force their awakening.
 - **CK3 Systems & Hooks:**
   - **Trigger:** Education pulse when ward has a blood mage guardian, or guardian is landed blood mage with child courtier.
   - **Option A (*Infuse them / Benediction*):** Consume a Minor Lifeforce modifier to grant the ward a positive modifier (`bm_blood_blessed_child`: health & stat growth boost, higher chance of positive congenital or education outcomes upon reaching adulthood).
@@ -57,7 +57,7 @@ Living brainstorm document outlining narrative event chains, yearly pulse events
 ## 5. "Blood Oath of the Golem" (Golem Subsystem Event)
 
 - **Vanilla Inspiration:** Court artifact creation events, court weapon master pulses, and royal pet/champion bonding events (hound defending the lord, sworn bodyguard oaths).
-- **Narrative Hook:** A created Blood Golem standing silent vigil in your solar begins demonstrating eerie mannerisms reminiscent of the donor whose life was expended to shape it—reaching protectively toward your heir, or glaring menacingly at your spymaster.
+- **Narrative Hook:** A created Blood Golem standing silent vigil in your solar begins demonstrating eerie mannerisms reminiscent of the donor whose life was expended to shape it, reaching protectively toward your heir, or glaring menacingly at your spymaster.
 - **CK3 Systems & Hooks:**
   - **Trigger:** Pulse event for landed rulers who have active golem characters/modifiers in court.
   - **Option A (*Attune it as a dedicated House Guardian*):** Tie its essence directly to the Dynasty Head. The Golem gains a permanent modifier granting personal scheme defense and guardian prowess for your lineage.

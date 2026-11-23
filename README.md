@@ -129,9 +129,9 @@ Tested and working with major overhaul mods:
 ---
 
 ## Companion Submods
-- [**Blood Mages — Vanilla Religions**](https://steamcommunity.com/sharedfiles/filedetails/?id=3774392244): Adds native blood cults for all 49 vanilla faiths, blending parent holy sites with Blóðtrú
-- [**Blood Mages — AGOT Religions**](https://steamcommunity.com/sharedfiles/filedetails/?id=3775630683): Blood cults tailored for Westerosi faiths (Faith of the Seven, Old Gods, Drowned God, R'hllor, etc.)
-- [**Dracul — Vampires & Blood Mages**](https://steamcommunity.com/sharedfiles/filedetails/?id=3765753769): Cross-mod interactions, mutual feeding, and vampire recruitment
+- [**Blood Mages - Vanilla Religions**](https://steamcommunity.com/sharedfiles/filedetails/?id=3774392244): Adds native blood cults for all 49 vanilla faiths, blending parent holy sites with Blóðtrú
+- [**Blood Mages - AGOT Religions**](https://steamcommunity.com/sharedfiles/filedetails/?id=3775630683): Blood cults tailored for Westerosi faiths (Faith of the Seven, Old Gods, Drowned God, R'hllor, etc.)
+- [**Dracul - Vampires & Blood Mages**](https://steamcommunity.com/sharedfiles/filedetails/?id=3765753769): Cross-mod interactions, mutual feeding, and vampire recruitment
 
 ---
 
