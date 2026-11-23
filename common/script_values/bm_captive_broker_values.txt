@@ -1,5 +1,99 @@
-﻿bm_captive_price_value = {
-	value = 50
+﻿bm_captive_count_1_weight = {
+	if = {
+		limit = { stewardship <= 10 }
+		value = 80
+		subtract = {
+			value = stewardship
+			multiply = 2
+		}
+	}
+	else_if = {
+		limit = { stewardship <= 20 }
+		value = 100
+		subtract = {
+			value = stewardship
+			multiply = 4
+		}
+	}
+	else_if = {
+		limit = { stewardship < 30 }
+		value = 60
+		subtract = {
+			value = stewardship
+			multiply = 2
+		}
+	}
+	else = {
+		value = 0
+	}
+	min = 0
+}
+
+bm_captive_count_2_weight = {
+	if = {
+		limit = { stewardship <= 10 }
+		value = 10
+		add = stewardship
+	}
+	else_if = {
+		limit = { stewardship <= 20 }
+		value = stewardship
+		subtract = 10
+		multiply = 4
+		add = 20
+	}
+	else_if = {
+		limit = { stewardship <= 30 }
+		value = 80
+		subtract = stewardship
+	}
+	else_if = {
+		limit = { stewardship < 50 }
+		value = 50
+		subtract = {
+			value = stewardship
+			subtract = 30
+			multiply = 2.5
+		}
+	}
+	else = {
+		value = 0
+	}
+	min = 0
+}
+
+bm_captive_count_3_weight = {
+	if = {
+		limit = { stewardship <= 10 }
+		value = 10
+		add = stewardship
+	}
+	else_if = {
+		limit = { stewardship <= 20 }
+		value = 20
+	}
+	else_if = {
+		limit = { stewardship <= 30 }
+		value = stewardship
+		subtract = 20
+		multiply = 3
+		add = 20
+	}
+	else_if = {
+		limit = { stewardship < 50 }
+		value = stewardship
+		subtract = 30
+		multiply = 2.5
+		add = 50
+	}
+	else = {
+		value = 100
+	}
+	min = 0
+}
+
+bm_captive_price_value = {
+	value = 30
 	add = {
 		value = prowess
 		multiply = 5
@@ -8,39 +102,185 @@
 		limit = { prowess >= 20 }
 		add = 50
 	}
+
+	# Tiered congenital traits (drainable via Drain Traits): +50 / +100 / +150 each
 	if = {
-		limit = {
-			OR = {
-				has_trait = physique_good_1
-				has_trait = beauty_good_1
-				has_trait = intellect_good_1
-				has_trait = strong
-			}
-		}
-		add = 75
+		limit = { has_trait = physique_good_1 }
+		add = 50
 	}
-	if = {
-		limit = {
-			OR = {
-				has_trait = physique_good_2
-				has_trait = beauty_good_2
-				has_trait = intellect_good_2
-				has_trait = giant
-				has_trait = lifestyle_blademaster
-			}
-		}
+	else_if = {
+		limit = { has_trait = physique_good_2 }
+		add = 100
+	}
+	else_if = {
+		limit = { has_trait = physique_good_3 }
 		add = 150
 	}
 	if = {
-		limit = {
-			OR = {
-				has_trait = physique_good_3
-				has_trait = beauty_good_3
-				has_trait = intellect_good_3
-				has_trait = lifestyle_blood_mage
-			}
-		}
-		add = 300
+		limit = { has_trait = beauty_good_1 }
+		add = 50
+	}
+	else_if = {
+		limit = { has_trait = beauty_good_2 }
+		add = 100
+	}
+	else_if = {
+		limit = { has_trait = beauty_good_3 }
+		add = 150
+	}
+	if = {
+		limit = { has_trait = intellect_good_1 }
+		add = 50
+	}
+	else_if = {
+		limit = { has_trait = intellect_good_2 }
+		add = 100
+	}
+	else_if = {
+		limit = { has_trait = intellect_good_3 }
+		add = 150
+	}
+
+	# Non-tiered genetic traits (drainable via Drain Traits): +75 each
+	if = {
+		limit = { has_trait = fecund }
+		add = 75
+	}
+	if = {
+		limit = { has_trait = giant }
+		add = 75
+	}
+	if = {
+		limit = { has_trait = pure_blooded }
+		add = 75
+	}
+
+	# Blood Mage (stored Lifeforce / duel value): +150
+	if = {
+		limit = { is_blood_mage_any_tier_trigger = yes }
+		add = 150
+	}
+
+	# Lifestyle traits (drainable via Drain Blood Memory): +25 each
+	if = {
+		limit = { has_trait = lifestyle_blademaster }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = lifestyle_hunter }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = lifestyle_poet }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = lifestyle_gardener }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = lifestyle_herbalist }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = lifestyle_physician }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = lifestyle_mystic }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = lifestyle_reveler }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = lifestyle_traveler }
+		add = 25
+	}
+
+	# Commander traits (drainable via Drain Blood Memory): +25 each
+	if = {
+		limit = { has_trait = logistician }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = military_engineer }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = aggressive_attacker }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = unyielding_defender }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = forder }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = flexible_leader }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = desert_warrior }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = jungle_stalker }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = reaver }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = reckless }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = holy_warrior }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = open_terrain_expert }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = rough_terrain_expert }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = forest_fighter }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = cautious_leader }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = organizer }
+		add = 25
+	}
+
+	# Martial fame traits (drainable via Drain Blood Memory): +25 each
+	if = {
+		limit = { has_trait = berserker }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = viking }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = shieldmaiden }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = athletic }
+		add = 25
 	}
 }
 

@@ -151,7 +151,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 
 ## Version history
 
-- v1.21.6: Replace Cull Champion with Prisoner Blood Pit Duel in Blood Drain (uncapped Prowess% Superior Lifeforce on win).
+- v1.21.6: Replace Cull Champion with Prisoner Blood Pit Duel in Blood Drain (uncapped Prowess% Superior Lifeforce on win) and add Seek Captive Brokers decision (Stewardship-scaled 1–3 captives with Prowess and drainable-trait pricing).
 - v1.21.5: Consolidate Blood Drain & Cast Blood Blessing, remove Anoint Heir, equalise interaction XP (seal Ancient leak, lift Fury & Wisdom).
 - v1.21.4: Overhaul Blood Temple into 4-tier duchy district (6 sub-buildings), add Adopt into Dynasty, rebalance Fortune.
 - v1.21.2: Rebalance Fury knight effectiveness per Learning to 50/100 XP (+1% each) and distribute monthly Piety across all Blood Mage tracks (+0.1/step skill, +0.2/step Ancient).

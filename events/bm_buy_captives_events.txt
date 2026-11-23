@@ -1,16 +1,24 @@
 ﻿namespace = bm_buy_captives
 
-# Hidden setup event: spawns 1-3 random captives and opens the broker showcase
+# Hidden setup event: spawns 1-3 random captives (scaled by Stewardship) and opens the broker showcase
 bm_buy_captives.0001 = {
 	hidden = yes
 
 	immediate = {
-		bm_spawn_broker_captive_effect = { SAVE_AS = captive_1 }
-		random = {
-			chance = 65
-			bm_spawn_broker_captive_effect = { SAVE_AS = captive_2 }
-			random = {
-				chance = 50
+		random_list = {
+			0 = {
+				modifier = { add = bm_captive_count_1_weight }
+				bm_spawn_broker_captive_effect = { SAVE_AS = captive_1 }
+			}
+			0 = {
+				modifier = { add = bm_captive_count_2_weight }
+				bm_spawn_broker_captive_effect = { SAVE_AS = captive_1 }
+				bm_spawn_broker_captive_effect = { SAVE_AS = captive_2 }
+			}
+			0 = {
+				modifier = { add = bm_captive_count_3_weight }
+				bm_spawn_broker_captive_effect = { SAVE_AS = captive_1 }
+				bm_spawn_broker_captive_effect = { SAVE_AS = captive_2 }
 				bm_spawn_broker_captive_effect = { SAVE_AS = captive_3 }
 			}
 		}
