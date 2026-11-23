@@ -15,7 +15,7 @@ description: >-
 4. Player-facing change → update `RELEASE_NOTES.md` (skill `update-release-notes`).
 5. Run `python3 scripts/check_repo.py` (`--fix` only for BOM/newline) and `git diff --check`.
 6. **Commit & push every turn**: stage only your files (never `git add .`/`-A`/`-a`), commit, and push `<branch>` before ending any turn that edited files (parallel agents share tree; follow-ups = new commit).
-7. Ensure PR exists: if branch doc lacks `PR: #<N>`, create/find PR and record it. Update PR body (`gh pr edit`) on fundamental changes.
+7. Ensure PR exists: if branch doc lacks `PR: #<N>`, create/find PR and record it. Before creating/editing PR, audit `git log origin/main..HEAD --oneline` + branch doc so PR **title and body** cover *all* commits on the branch (including parallel agents' work).
 8. Summary: flag unverified runtime UI/AI behavior; audit logs via skill `debug-ck3-logs`.
 
 ## Branch doc = PR body (`.github/pull_request_template.md`)
