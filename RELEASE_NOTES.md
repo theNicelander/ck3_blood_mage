@@ -152,6 +152,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 
 ## Version history
 
+- v1.21.7: Unify single combat duel victory Lifeforce rewards (+1 Major + opponent's Prowess% chance for +1 Superior) across Prisoner Blood Pit Duel, Blood Hunt duels, and lethal single combat kills (Blood Sparring Ring remains Major-only).
 - v1.21.6: Replace Cull Champion with Prisoner Blood Pit Duel in Blood Drain (uncapped Prowess% Superior Lifeforce on win) and add Seek Captive Brokers decision (Stewardship-scaled 1–3 captives with Prowess and drainable-trait pricing).
 - v1.21.5: Consolidate Blood Drain & Cast Blood Blessing, remove Anoint Heir, equalise interaction XP (seal Ancient leak, lift Fury & Wisdom).
 - v1.21.4: Overhaul Blood Temple into 4-tier duchy district (6 sub-buildings), add Adopt into Dynasty, rebalance Fortune.

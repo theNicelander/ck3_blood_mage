@@ -1,0 +1,17 @@
+﻿# =============================================================================
+# Blood Mage Single Combat / Duel Scripted Effects
+# =============================================================================
+
+# Unified Lifeforce reward for winning a real single combat duel (excludes Blood Sparring Ring):
+# Always grants +1 Major Lifeforce, plus opponent's Prowess% chance for +1 Superior Lifeforce.
+bm_duel_victory_lifeforce_effect = {
+	add_character_modifier = {
+		modifier = lifeforce_modifier_major
+	}
+	random = {
+		chance = $OPPONENT$.bm_duel_superior_chance_value
+		add_character_modifier = {
+			modifier = lifeforce_modifier_superior
+		}
+	}
+}
