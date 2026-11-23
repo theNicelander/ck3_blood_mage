@@ -1,6 +1,6 @@
 # AGENTS.md — Blood Mages (CK3 1.20+)
 
-Pure script, loc, gfx; no build. Vanilla ref: `/Users/clarabotet/Petur/ck3-full`. CK3 fails silently — never invent syntax; verify in vanilla or `script_docs`.
+Pure script, loc, gfx; no build. Vanilla ref: `/Users/clarabotet/Petur/ck3-full` (`common/` at root, no `game/` dir). CK3 fails silently — never invent syntax; verify in vanilla or `script_docs`.
 
 ## Principles
 
@@ -11,7 +11,7 @@ Pure script, loc, gfx; no build. Vanilla ref: `/Users/clarabotet/Petur/ck3-full`
 - **Nothing hidden, often unavailable**: keep options visible + greyed (`show_as_unavailable`); hide only if prerequisite unreached or permanently completed/superseded.
 - **Native triggers over `custom_tooltip`**: never wrap standard triggers (`piety`, `piety_level`, `gold`, `has_trait`, `has_character_modifier`, etc.) in `custom_tooltip`.
 - **Toasts**: wrap player-facing modifier, trait, XP, stat grants in `send_interface_toast`.
-- **Single source of truth & caveman AI docs**: one place per rule (link, never duplicate); terse caveman prose in rules/skills/`AGENTS.md`.
+- **Single source of truth & minimal AI docs**: one place per rule (link, never duplicate). Keep rules, skills, and `AGENTS.md` as short as possible to save tokens — undershoot rather than overshoot; cut anything superfluous (terse caveman prose).
 
 ## Naming, format & tools
 
@@ -34,5 +34,12 @@ Pure script, loc, gfx; no build. Vanilla ref: `/Users/clarabotet/Petur/ck3-full`
 
 - **Commit every turn (MANDATORY)**: parallel agents share this working tree. Before ending ANY turn that edited files, re-check `git branch --show-current` (if on `main` or detached `HEAD`, branch `v1.21.<N+1>` first), then explicitly `git add <only your files>`, commit, and push to `<branch>`. Never leave uncommitted edits waiting for follow-up.
 - **Argon planner**: if using Gemini Argon, ask `"You are using Argon, do you want to continue Yes/No"` first; never edit files on Argon (investigate/ask/plan only).
-- **Clarify first**: ask on rough ideas; never execute on unverified assumptions. Suggest a skill for newly investigated vanilla systems.
+- **Clarify first**: ask on rough ideas; never execute on unverified assumptions.
+- **Capture discoveries (no double work)**: if you verified non-obvious syntax/behavior in vanilla or `script_docs`, hit a silent CK3 failure / new `error.log` signature, or traced a non-obvious mod coupling, persist it in the same commit (terse bullets, single source of truth):
+  - Prefer **localized `AGENTS.md`** > **`docs-ai/architecture/`** > **`.agents/skills/`** over `.agents/rules/` (never add niche/subsystem-specific topics to `.agents/rules/`).
+  - Folder-specific CK3 rule (`common/decisions/`, `common/districts/`, `events/`, `localization/`, etc.) → localized `AGENTS.md` in that folder (plus a 1-line pointer in a sibling folder's `AGENTS.md` if needed).
+  - Mod subsystem gotcha, budget, or coupling → `docs-ai/architecture/blood-mage-<subsystem>.md` (`Gotchas`).
+  - New `error.log` signature → `.agents/skills/debug-ck3-logs/SKILL.md`.
+  - Cross-folder CK3 engine reference or repeatable multi-step recipe → `.agents/skills/<topic>/SKILL.md` (update existing or add new).
+  - `.agents/rules/` → reserved only for broad, repo-wide guardrails that apply across most tasks.
 - **Flow**: `git branch --show-current` → read `docs-ai/branch-context/<branch>.md` + matching `docs-ai/architecture/` doc → edit → finish via skill `manage-pr`.

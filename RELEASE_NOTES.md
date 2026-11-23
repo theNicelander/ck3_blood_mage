@@ -31,6 +31,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - **Siphon Stored Lifeforce** takes Minor/Major/Superior reserves from other characters via an Intrigue + Learning contest (or auto-succeeds on prisoners).
 - **Contest of the Red Art**: Learning + Prowess duel between fellow Blood Mages.
 - **House Head Blood Tithe** levies Lifeforce from adult kin with guaranteed success (no duel), wounding the target and incurring −30 opinion (2-year cooldown).
+- **Seek Captive Brokers**: Spend Gold to inspect and buy 1–3 random captives into your dungeon (1-year cooldown after buying, 90-day walk-away cooldown; `+2` Fortune XP per purchase). Captive count scales with Stewardship (up to guaranteed 3 at 50 Stewardship), and price scales from 30 Gold with Prowess and stacking surcharges for every drainable genetic, commander, lifestyle, martial fame, or Blood Mage trait. For each candidate, either pay the full price or commit to a Stewardship haggle gamble (immediately pay 70%, immediately pay 125%, or lose the candidate).
 
 ## Spellcasting & Decisions
 
@@ -61,7 +62,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 
 - **Bless Blood**: consecrate knights and kin (+2 Martial, +4 Prowess, +25% Knight Effectiveness for 10 years).
 - **Blood Sparring Ring** (yearly, 1 Minor Lifeforce): practice duels against sworn Blood Mage knights; winner gains 1 Major Lifeforce, both gain Blademaster and Bloodlust XP.
-- **Cull Fallen Champion**: sacrifice broken or captured warriors for Major Lifeforce, with a chance of Superior.
+- **Blood Pit Duel**: challenge formidable (20+ Prowess) prisoners inside Blood Drain for an uncapped Prowess% chance at Superior Lifeforce (or Major); defeat wounds you, adds 20 Stress, grants Minor Lifeforce, and lets the prisoner escape.
 - Overlapping blessing interactions merged into one Cast Blood Blessing modal.
 
 ## Galdrastafir & Blood Runes
@@ -100,8 +101,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - Consolidated positive character interactions into unified modal window **Blood Blessing** (Empower Blood Mage, Grant Lifeforce, Bless Blood, Annoint Heir, Consecrate Union, Inscribe Blood Rune).
 - Consolidated hostile lifeforce extraction into unified modal window **Blood Drain** (Major Life drain, Minor Life drain, Drain Stored Lifeforce, Demand Blood Tithe).
 - **Blood Healing**: interaction is always clickable when an affliction is present to inspect requirements directly in the event; Deadly afflictions (leprosy, cancer, plague) now require Superior Lifeforce and 100 Piety (+3 Benediction XP).
-- Current Situation healing alert (`bm_action_can_heal`) monitors councillors, immediate and close family, court positions, and companions; styled green (`Can Heal`) when the corresponding Lifeforce is held, and gray (`Needs Lifeforce`) under unimportant actions when Lifeforce is lacking. Alerts also notify when prisoners can be lifedrained or 20+ Prowess champions culled.
-- Cull Fallen Champion requires 20+ Prowess across all targets (captives and fallen followers).
+- Current Situation healing alert (`bm_action_can_heal`) monitors councillors, immediate and close family, court positions, and companions; styled green (`Can Heal`) when the corresponding Lifeforce is held, and gray (`Needs Lifeforce`) under unimportant actions when Lifeforce is lacking. Alerts also notify when prisoners can be lifedrained or 20+ Prowess prisoners can be challenged to a Blood Pit Duel.
 - **Purge Stress Vices** burns away all 11 coping traits.
 - **Adopt into Dynasty**: Blood Mages (Devotion 3+, 250 Piety, Major Lifeforce) can bind a lowborn courtier and their living lowborn descendants into their house.
 - Hulinhjálmur conceals the caster from discovery penalties on failed siphons and curses.
@@ -117,7 +117,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 
 ## Icelandic Culture & Traditions
 
-- Playable **Icelandic** culture (`bm_icelandic`) featuring equal martial custom, North Germanic heritage, communal ethos, and 5 starting traditions.
+- Playable **Icelander** culture (`bm_icelandic`, localized as **Icelander** / **Icelanders** to distinguish from vanilla's **Icelandic**) featuring equal martial custom, North Germanic heritage, communal ethos, and 5 starting traditions.
 - Custom tradition **Alþingi Commonwealth** (`bm_tradition_althingi`) replaces Ting-Meet:
   - Unlocks Scandinavian Elective and Hólmganga (Trial by Combat).
   - Grants +0.05 monthly prosperity growth to the capital, +25% cultural head fascination, +0.05 county prosperity growth, +20% county prosperity growth factor, and +0.10 monthly county control growth.
@@ -152,6 +152,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 
 ## Version history
 
+- v1.21.6: Replace Cull Champion with Prisoner Blood Pit Duel in Blood Drain (uncapped Prowess% Superior Lifeforce on win) and add Seek Captive Brokers decision (Stewardship-scaled 1–3 captives with Prowess and drainable-trait pricing).
 - v1.21.5: Consolidate Blood Drain & Cast Blood Blessing, remove Anoint Heir, equalise interaction XP (seal Ancient leak, lift Fury & Wisdom).
 - v1.21.4: Overhaul Blood Temple into 4-tier duchy district (6 sub-buildings), add Adopt into Dynasty, rebalance Fortune.
 - v1.21.2: Rebalance Fury knight effectiveness per Learning to 50/100 XP (+1% each) and distribute monthly Piety across all Blood Mage tracks (+0.1/step skill, +0.2/step Ancient).

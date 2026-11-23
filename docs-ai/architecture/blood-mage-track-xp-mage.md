@@ -41,7 +41,7 @@ Mage tracks `fortune`, `cunning`, and `fury`. Shared tracks (`ancient`, `wisdom`
 | XP | Cost | Action | Source | Req | CD |
 | --- | --- | --- | --- | --- | --- |
 | +2 / +4 / +6 | 50 / 150 / 250 Piety + Minor/Major/Superior | Cast Blood Blessing (Fury) | interaction `bm_cast_blood_blessing_interaction` | Devotion 1/3/5 | 1 year (target) |
-| +4 | 50 Piety; Grants Major (+ % Superior) | Cull Champion | interaction `bm_cull_champion_interaction` | 20+ prowess prisoner or broken follower | None |
+| +4 (win) / +1 (loss) | 50 Piety; Win: Superior (`Prowess%`) or Major; Loss: Minor + wound + 20 Stress + escape | Blood Pit Duel | interaction `bm_blood_drain_interaction` (`drain_blood_duel`) + `bm_prisoner_blood_duel.0001` | 20+ prowess prisoner | None |
 | +3 (crit), +2 (win) | 150 Piety + Minor | Contest of the Red Art | interaction `bm_occult_mage_duel_interaction` | Target Blood Mage | 3 years |
 | +2 (Minor) / +4 (Major) | Health / Stress toll; Grants Minor/Major | Bleed Own Vein | interaction `bm_bleed_own_vein_interaction` | Self | 1 year |
 | +2 to +4 | None | Battlefield Victory (Commander/Knight) | on-action `bm_combat_on_actions.txt` / `bm_combat_effects.txt` | Won battle | Per battle |

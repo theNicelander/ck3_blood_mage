@@ -1,8 +1,8 @@
 ---
 name: debug-ck3-logs
 description: >-
-  Snapshot and audit CK3 error.log and debug.log, and look up known engine error signatures and fixes.
-  Use first whenever inspecting logs, debugging silent script failures, or tracing BloodMage* debug_log output.
+  Snapshot and audit CK3 error.log, debug.log, and crash dumps (exception.txt/meta.yml), and look up known engine error signatures.
+  Use first whenever inspecting logs, diagnosing CTDs/startup crashes, debugging silent script failures, or tracing BloodMage* debug_log output.
 ---
 
 # Debug CK3 Logs & Error Catalog
@@ -22,6 +22,13 @@ cp ~/Documents/"Paradox Interactive"/"Crusader Kings III"/logs/debug.log "local-
 
 - `error.log`: grep mod prefixes (`bm_`, `blodtru`, mod filenames) + `tail -n 100`.
 - `debug.log`: grep `BloodMageInteraction:|BloodMageSelfCast:|BloodMageDecision:|BloodMageExecution:`.
+
+## 2b. Crash dumps (CTDs)
+
+On startup or runtime crash, inspect the latest folder in `~/Documents/Paradox Interactive/Crusader Kings III/crashes/` (`ls -lt` needs `BypassSandbox: true`; `read_file` reads the files directly):
+
+- `exception.txt`: demangled stack trace (pinpoints engine subsystem — e.g. `NPdxMesh::CMeshType::AddMeshToEntity` / `NAssetFactory::LoadAssetsWithProgress` = 3D `.mesh`/`.asset` crash).
+- `meta.yml`: exact CK3 version + full active mod list (`Mod_1..N`). Cross-reference the last `error.log` lines against active mods to separate Blood Mages from third-party playset mods.
 
 ## 3. Engine error catalog
 
@@ -52,3 +59,4 @@ Living list: on new error, add 1 row (`signature → cause → fix`).
 | `Gfx culture X in Y doesn't match existing sequence` | Multi-entry `*_gfx` order mismatch → match vanilla order or inherit standard (`norse`). |
 | `Data error in loc string ... [ROOT.Char...]` / `[root...]` (decision `debug_log`) | Loc promotes on `root` fail in decision `debug_log` → plain string + `debug_log_scopes = yes` in `hidden_effect`. |
 | `Cannot find harelip/lisp/blademaster_1/hunter_1` | Vanilla names: `lisping` (no `harelip`), tracked traits `lifestyle_blademaster`/`lifestyle_hunter`. |
+| `free_small_botch` / `NPdxMesh::CMeshType::AddMeshToEntity` (`exception.txt`) | Corrupt/outdated 3D `.mesh`/`.asset` mod on new CK3 patch → check last `pdxassetutil.cpp` lines in `error.log` + `meta.yml` mod list (not Blood Mages; BM ships no 3D meshes). |

@@ -32,6 +32,10 @@
 				limit = { scope:drain_curse = yes }
 				value = 50
 			}
+			else_if = {
+				limit = { scope:drain_blood_duel = yes }
+				value = 50
+			}
 			else = {
 				value = 0
 			}
@@ -356,6 +360,31 @@
 		is_valid = {
 			scope:recipient = {
 				NOT = { has_character_modifier = lifedrained_modifier }
+			}
+		}
+		starts_enabled = { always = no }
+	}
+
+	# 9. Blood Pit Duel (20+ Prowess Prisoner)
+	send_option = {
+		flag = drain_blood_duel
+		localization = bm_blood_drain_option_blood_duel
+		current_description = bm_blood_drain_option_blood_duel_desc
+		can_invalidate_interaction = yes
+		is_shown = {
+			scope:actor = { is_blood_mage_any_tier_trigger = yes }
+			scope:recipient = {
+				is_imprisoned_by = scope:actor
+				prowess >= 20
+			}
+		}
+		is_valid = {
+			scope:actor = {
+				is_imprisoned = no
+				can_start_single_combat_trigger = yes
+			}
+			scope:recipient = {
+				can_start_single_combat_trigger = yes
 			}
 		}
 		starts_enabled = { always = no }
@@ -762,6 +791,20 @@
 				EXECUTIONER = scope:actor
 			}
 		}
+		else_if = {
+			limit = { scope:drain_blood_duel = yes }
+			debug_log = "BloodMageInteraction: bm_blood_drain (blood_duel) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
+			configure_start_single_combat_effect = {
+				SC_INITIATOR = scope:actor
+				SC_ATTACKER = scope:actor
+				SC_DEFENDER = scope:recipient
+				FATALITY = practice
+				FIXED = no
+				LOCALE = courtyard
+				OUTPUT_EVENT = bm_prisoner_blood_duel.0001
+				INVALIDATION_EVENT = bm_prisoner_blood_duel.0002
+			}
+		}
 		else = {
 			debug_log = "BloodMageInteraction: bm_blood_drain (NO OPTION) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
 		}
@@ -857,6 +900,15 @@
 			scope:drain_major_overdrained = yes
 			factor = 0
 		}
+		modifier = {
+			scope:drain_blood_duel = yes
+			add = 15
+		}
+		modifier = {
+			scope:drain_blood_duel = yes
+			scope:actor.prowess < scope:recipient.prowess
+			factor = 0
+		}
 
 		# Personality, relationship, and protective vetoes (evaluated last)
 		ai_willingness_to_lifedrain = yes
@@ -873,6 +925,7 @@
 				scope:drain_memory = yes
 				scope:drain_curse = yes
 				scope:drain_major_overdrained = yes
+				scope:drain_blood_duel = yes
 			}
 			factor = 0
 		}

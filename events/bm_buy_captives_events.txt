@@ -1,0 +1,288 @@
+﻿namespace = bm_buy_captives
+
+# Hidden setup event: spawns 1-3 random captives (scaled by Stewardship) and opens the broker showcase
+bm_buy_captives.0001 = {
+	hidden = yes
+
+	immediate = {
+		random_list = {
+			0 = {
+				modifier = { add = bm_captive_count_1_weight }
+				bm_spawn_broker_captive_effect = { SAVE_AS = captive_1 }
+			}
+			0 = {
+				modifier = { add = bm_captive_count_2_weight }
+				bm_spawn_broker_captive_effect = { SAVE_AS = captive_1 }
+				bm_spawn_broker_captive_effect = { SAVE_AS = captive_2 }
+			}
+			0 = {
+				modifier = { add = bm_captive_count_3_weight }
+				bm_spawn_broker_captive_effect = { SAVE_AS = captive_1 }
+				bm_spawn_broker_captive_effect = { SAVE_AS = captive_2 }
+				bm_spawn_broker_captive_effect = { SAVE_AS = captive_3 }
+			}
+		}
+		trigger_event = bm_buy_captives.0002
+	}
+}
+
+# Broker showcase event: inspect individual captives, buy all remaining, or leave
+bm_buy_captives.0002 = {
+	type = character_event
+	title = bm_buy_captives.0002.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { bm_has_any_available_captive_trigger = yes }
+				desc = bm_buy_captives.0002.desc
+			}
+			desc = bm_buy_captives.0002.desc_empty
+		}
+	}
+	theme = intrigue
+
+	left_portrait = {
+		trigger = {
+			exists = scope:captive_1
+			scope:captive_1 = { bm_captive_available_trigger = yes }
+		}
+		character = scope:captive_1
+		animation = prison_dungeon
+	}
+	center_portrait = {
+		trigger = {
+			exists = scope:captive_2
+			scope:captive_2 = { bm_captive_available_trigger = yes }
+		}
+		character = scope:captive_2
+		animation = prison_dungeon
+	}
+	right_portrait = {
+		trigger = {
+			exists = scope:captive_3
+			scope:captive_3 = { bm_captive_available_trigger = yes }
+		}
+		character = scope:captive_3
+		animation = prison_dungeon
+	}
+
+	# Inspect Captive 1
+	option = {
+		name = bm_buy_captives.0002.a
+		trigger = {
+			exists = scope:captive_1
+			scope:captive_1 = { bm_captive_available_trigger = yes }
+		}
+		scope:captive_1 = { save_scope_as = selected_captive }
+		trigger_event = bm_buy_captives.0003
+	}
+
+	# Inspect Captive 2
+	option = {
+		name = bm_buy_captives.0002.b
+		trigger = {
+			exists = scope:captive_2
+			scope:captive_2 = { bm_captive_available_trigger = yes }
+		}
+		scope:captive_2 = { save_scope_as = selected_captive }
+		trigger_event = bm_buy_captives.0003
+	}
+
+	# Inspect Captive 3
+	option = {
+		name = bm_buy_captives.0002.c
+		trigger = {
+			exists = scope:captive_3
+			scope:captive_3 = { bm_captive_available_trigger = yes }
+		}
+		scope:captive_3 = { save_scope_as = selected_captive }
+		trigger_event = bm_buy_captives.0003
+	}
+
+	# Buy All Remaining (shown when >= 2 available captives remain)
+	option = {
+		name = bm_buy_captives.0002.d
+		trigger = {
+			calc_true_if = {
+				amount >= 2
+				AND = {
+					exists = scope:captive_1
+					scope:captive_1 = { bm_captive_available_trigger = yes }
+				}
+				AND = {
+					exists = scope:captive_2
+					scope:captive_2 = { bm_captive_available_trigger = yes }
+				}
+				AND = {
+					exists = scope:captive_3
+					scope:captive_3 = { bm_captive_available_trigger = yes }
+				}
+			}
+			short_term_gold >= bm_captive_all_remaining_price_value
+		}
+		show_as_unavailable = {
+			calc_true_if = {
+				amount >= 2
+				AND = {
+					exists = scope:captive_1
+					scope:captive_1 = { bm_captive_available_trigger = yes }
+				}
+				AND = {
+					exists = scope:captive_2
+					scope:captive_2 = { bm_captive_available_trigger = yes }
+				}
+				AND = {
+					exists = scope:captive_3
+					scope:captive_3 = { bm_captive_available_trigger = yes }
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = scope:captive_1
+				scope:captive_1 = { bm_captive_available_trigger = yes }
+			}
+			bm_purchase_broker_captive_effect = {
+				TARGET = scope:captive_1
+				PRICE = bm_captive_price_value
+				TOAST_TYPE = bm_event_toast_effect_good
+				TOAST_TITLE = bm_buy_captives_toast_title
+			}
+		}
+		if = {
+			limit = {
+				exists = scope:captive_2
+				scope:captive_2 = { bm_captive_available_trigger = yes }
+			}
+			bm_purchase_broker_captive_effect = {
+				TARGET = scope:captive_2
+				PRICE = bm_captive_price_value
+				TOAST_TYPE = bm_event_toast_effect_good
+				TOAST_TITLE = bm_buy_captives_toast_title
+			}
+		}
+		if = {
+			limit = {
+				exists = scope:captive_3
+				scope:captive_3 = { bm_captive_available_trigger = yes }
+			}
+			bm_purchase_broker_captive_effect = {
+				TARGET = scope:captive_3
+				PRICE = bm_captive_price_value
+				TOAST_TYPE = bm_event_toast_effect_good
+				TOAST_TITLE = bm_buy_captives_toast_title
+			}
+		}
+		bm_cleanup_unbought_captives_effect = yes
+		bm_finalize_captive_broker_cooldown_effect = yes
+	}
+
+	# Back / Leave
+	option = {
+		name = bm_buy_captives.0002.e
+		bm_cleanup_unbought_captives_effect = yes
+		bm_finalize_captive_broker_cooldown_effect = yes
+	}
+}
+
+# Candidate negotiation event: pay full price, gamble on Stewardship haggle, or go back
+bm_buy_captives.0003 = {
+	type = character_event
+	title = bm_buy_captives.0003.t
+	desc = bm_buy_captives.0003.desc
+	theme = intrigue
+
+	left_portrait = {
+		character = root
+		animation = personality_greedy
+	}
+	right_portrait = {
+		character = scope:selected_captive
+		animation = prison_dungeon
+	}
+
+	# Pay full asking price
+	option = {
+		name = bm_buy_captives.0003.a
+		trigger = {
+			short_term_gold >= scope:selected_captive.bm_captive_price_value
+		}
+		show_as_unavailable = { always = yes }
+		bm_purchase_broker_captive_effect = {
+			TARGET = scope:selected_captive
+			PRICE = bm_captive_price_value
+			TOAST_TYPE = bm_event_toast_effect_good
+			TOAST_TITLE = bm_buy_captives_toast_title
+		}
+		trigger_event = bm_buy_captives.0002
+	}
+
+	# Gamble: attempt to haggle (Stewardship duel — no backing out)
+	option = {
+		name = bm_buy_captives.0003.b
+		skill = stewardship
+		trigger = {
+			short_term_gold >= scope:selected_captive.bm_captive_price_value
+		}
+		show_as_unavailable = { always = yes }
+		duel = {
+			skill = stewardship
+			value = 15
+			# Success: buy immediately at reduced price (-30%)
+			45 = {
+				desc = bm_buy_captives_haggle_success_tt
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3
+					min = -35
+				}
+				bm_purchase_broker_captive_effect = {
+					TARGET = scope:selected_captive
+					PRICE = bm_captive_discounted_price_value
+					TOAST_TYPE = bm_event_toast_effect_good
+					TOAST_TITLE = bm_buy_captives_haggle_success_toast
+				}
+			}
+			# Failure: buy immediately at increased price (+25%)
+			35 = {
+				desc = bm_buy_captives_haggle_fail_tt
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -1.5
+					min = -25
+				}
+				bm_purchase_broker_captive_effect = {
+					TARGET = scope:selected_captive
+					PRICE = bm_captive_markup_price_value
+					TOAST_TYPE = bm_event_toast_effect_bad
+					TOAST_TITLE = bm_buy_captives_haggle_fail_toast
+				}
+			}
+			# Critical Failure: broker withdraws captive — cannot buy
+			20 = {
+				desc = bm_buy_captives_haggle_refused_tt
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -1.5
+					min = -19
+				}
+				scope:selected_captive = {
+					add_character_flag = bm_captive_refused
+				}
+				send_interface_toast = {
+					type = bm_event_toast_effect_bad
+					title = bm_buy_captives_haggle_refused_toast
+					left_icon = scope:selected_captive
+					custom_tooltip = bm_buy_captives_haggle_refused_effect_tt
+				}
+			}
+		}
+		trigger_event = bm_buy_captives.0002
+	}
+
+	# Back to broker roster
+	option = {
+		name = bm_buy_captives.0003.c
+		trigger_event = bm_buy_captives.0002
+	}
+}
