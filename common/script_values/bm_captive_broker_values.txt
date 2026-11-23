@@ -284,35 +284,40 @@ bm_captive_price_value = {
 	}
 }
 
+bm_captive_discounted_price_value = {
+	value = bm_captive_price_value
+	multiply = 0.7
+	round = yes
+	min = 1
+}
+
+bm_captive_markup_price_value = {
+	value = bm_captive_price_value
+	multiply = 1.25
+	round = yes
+	min = 1
+}
+
 bm_captive_all_remaining_price_value = {
 	value = 0
 	if = {
 		limit = {
 			exists = scope:captive_1
-			scope:captive_1 = {
-				is_alive = yes
-				is_imprisoned = no
-			}
+			scope:captive_1 = { bm_captive_available_trigger = yes }
 		}
 		add = scope:captive_1.bm_captive_price_value
 	}
 	if = {
 		limit = {
 			exists = scope:captive_2
-			scope:captive_2 = {
-				is_alive = yes
-				is_imprisoned = no
-			}
+			scope:captive_2 = { bm_captive_available_trigger = yes }
 		}
 		add = scope:captive_2.bm_captive_price_value
 	}
 	if = {
 		limit = {
 			exists = scope:captive_3
-			scope:captive_3 = {
-				is_alive = yes
-				is_imprisoned = no
-			}
+			scope:captive_3 = { bm_captive_available_trigger = yes }
 		}
 		add = scope:captive_3.bm_captive_price_value
 	}

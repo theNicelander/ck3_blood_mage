@@ -114,13 +114,14 @@ bm_spawn_broker_captive_effect = {
 }
 
 bm_purchase_broker_captive_effect = {
-	remove_short_term_gold = $TARGET$.bm_captive_price_value
+	remove_short_term_gold = $TARGET$.$PRICE$
 	imprison = {
 		target = $TARGET$
 		type = dungeon
 	}
 	send_interface_toast = {
-		title = bm_buy_captives_toast_title
+		type = $TOAST_TYPE$
+		title = $TOAST_TITLE$
 		left_icon = $TARGET$
 		add_trait_xp = {
 			trait = lifestyle_blood_mage

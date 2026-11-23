@@ -31,6 +31,7 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 - **Siphon Stored Lifeforce** takes Minor/Major/Superior reserves from other characters via an Intrigue + Learning contest (or auto-succeeds on prisoners).
 - **Contest of the Red Art**: Learning + Prowess duel between fellow Blood Mages.
 - **House Head Blood Tithe** levies Lifeforce from adult kin with guaranteed success (no duel), wounding the target and incurring −30 opinion (2-year cooldown).
+- **Seek Captive Brokers**: Spend Gold to inspect and buy 1–3 random captives into your dungeon (1-year cooldown after buying, 90-day walk-away cooldown; `+2` Fortune XP per purchase). Captive count scales with Stewardship (up to guaranteed 3 at 50 Stewardship), and price scales from 30 Gold with Prowess and stacking surcharges for every drainable genetic, commander, lifestyle, martial fame, or Blood Mage trait. For each candidate, either pay the full price or commit to a Stewardship haggle gamble (immediately pay 70%, immediately pay 125%, or lose the candidate).
 
 ## Spellcasting & Decisions
 
