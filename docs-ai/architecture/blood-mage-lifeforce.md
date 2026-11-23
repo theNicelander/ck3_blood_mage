@@ -83,6 +83,7 @@ Triggered on `on_combat_end_winner` (`bm_on_combat_end_winner`) for surviving si
 | **Cast Blood Curse (`bm_curse_blood_interaction`)** | Mage (>=10 Cunning) | 50 Piety + 1 Minor Lifeforce | **-1 Minor** (Crit success siphons **+1 Minor** back from victim) | `+2` (win) / `+4` (crit) / `+1` (fail) `cunning` |
 | **Grant / Restore Lifeforce (`grant_lifeforce_interaction*`)** | Mage | `25–50` Piety + Minor/Major Lifeforce | Transfers stack to target or clears `lifedrained_modifier` on self or any target | `+1`/`+2` `wisdom` or `+4` `radiance` |
 | **Bleed Own Vein (`bm_bleed_own_vein_interaction`)** | Mage | Health/Stress toll, 1-yr CD | Minor: **+1 Minor** (wounded); Major: **+1 Major** (wounded_2, lifedrained_modifier, 25 stress) | Minor: `+2` `cunning`; Major: `+4` `cunning` |
+| **Seek Captive Brokers (`bm_buy_captives_decision`)** | Mage | Gold (`50 + 5*Prowess + 50` if `20+` Prowess + rare trait surcharges), 1-yr CD (90-day walk-away CD) | Spawns `1–3` random captives (`bm_buy_captives.0001`/`.0002`) purchasable individually or all at once into dungeon (feeds Blood Drain / Blood Pit Duel) | `+2` `fortune` per captive |
 | **Purge Stress Vices (`bm_purge_coping_traits_interaction`)** | Mage | 250 Piety + 1 Major Lifeforce | **-1 Major** | `+4` `wisdom` (self) or `+4` `radiance` (other) |
 
 ## Where the details live
