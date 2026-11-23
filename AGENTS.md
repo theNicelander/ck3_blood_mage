@@ -1,6 +1,6 @@
 # AGENTS.md — Blood Mages (CK3 1.20+)
 
-Pure script, loc, gfx; no build. Vanilla ref: `/Users/clarabotet/Petur/ck3-full`. CK3 fails silently — never invent syntax; verify in vanilla or `script_docs`.
+Pure script, loc, gfx; no build. Vanilla ref: `/Users/clarabotet/Petur/ck3-full` (`common/` at root, no `game/` dir). CK3 fails silently — never invent syntax; verify in vanilla or `script_docs`.
 
 ## Principles
 
