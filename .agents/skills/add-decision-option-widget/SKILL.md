@@ -29,5 +29,5 @@ widget = {
 
 - Selecting item sets `scope:<value> = yes` in `effect`; add `else = { custom_tooltip = <preview_tt> }` for pre-click preview.
 - End `effect` with `close_view = { view = decisions player = root }`.
-- Loc: `<opt_key>`, `<opt_key>_tooltip`, `<NEXT_STEP_LOC_KEY>`, `<decision>_confirm: "$<NEXT_STEP_LOC_KEY>$"`.
+- Loc: `<opt_key>`, `<opt_key>_tooltip` (concise 1-liner; see `localization/AGENTS.md`), `<NEXT_STEP_LOC_KEY>`, `<decision>_confirm: "$<NEXT_STEP_LOC_KEY>$"`.
 - **`ai_chance` trap**: in `item`, `ai_chance` is a **script value** (`value`, `if/add`, `multiply`, `min`). Event `base`/`modifier` syntax silently fails.
