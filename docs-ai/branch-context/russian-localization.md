@@ -1,4 +1,4 @@
-# russian-localization: Add complete Russian localization for v1.21.5
+# russian-localization: Add complete Russian localization for v1.21.7
 
 ## Motivation
 
@@ -8,8 +8,8 @@
 
 ### Key changes
 
-- Cover all 2,540 English localization keys with consistent Russian terminology.
-- Translate the consolidated Blood Blessing and Blood Drain interactions, updated court roster, and renamed Blood Temple buildings.
+- Cover all 2,559 English localization keys with consistent Russian terminology.
+- Translate Blood Pit Duel and captive broker events; update Blood Blessings, Lifeforce costs, and dynasty covenants.
 - Update tooltips and remove obsolete keys.
 
 ### Other changes

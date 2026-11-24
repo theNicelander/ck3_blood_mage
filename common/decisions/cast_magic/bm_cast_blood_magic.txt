@@ -424,7 +424,7 @@ bm_cast_blood_magic_major_decision = {
 					NOT = { has_character_flag = bm_condense_major_lifeforce_cooldown }
 				}
 				piety_level >= 2
-				piety >= 350
+				piety >= 250
 				has_character_modifier = lifeforce_modifier_major
 			}
 			ai_chance = {
@@ -432,12 +432,12 @@ bm_cast_blood_magic_major_decision = {
 				if = {
 					limit = {
 						NOT = { has_character_modifier = lifeforce_modifier_superior }
-						piety > 600
+						piety > 500
 					}
 					add = 50
 				}
 				if = {
-					limit = { piety < 500 }
+					limit = { piety < 400 }
 					multiply = 0
 				}
 			}
@@ -622,7 +622,7 @@ bm_cast_blood_magic_major_decision = {
 		if = {
 			limit = { scope:bm_major_condense = yes }
 			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (condense)"
-			add_piety = -350
+			add_piety = -250
 			add_character_flag = {
 				flag = bm_condense_major_lifeforce_cooldown
 				days = 180
@@ -814,7 +814,7 @@ bm_cast_blood_magic_minor_decision = {
 					text = bm_condense_minor_lifeforce_cooldown_tt
 					NOT = { has_character_flag = bm_condense_minor_lifeforce_cooldown }
 				}
-				piety >= 150
+				piety >= 100
 				has_character_modifier = lifeforce_modifier_minor
 			}
 			ai_chance = {
@@ -824,7 +824,7 @@ bm_cast_blood_magic_minor_decision = {
 					add = 50
 				}
 				if = {
-					limit = { piety < 300 }
+					limit = { piety < 250 }
 					multiply = 0
 				}
 			}
@@ -958,7 +958,7 @@ bm_cast_blood_magic_minor_decision = {
 		else_if = {
 			limit = { scope:bm_minor_condense = yes }
 			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (condense)"
-			add_piety = -150
+			add_piety = -100
 			add_character_flag = {
 				flag = bm_condense_minor_lifeforce_cooldown
 				days = 180

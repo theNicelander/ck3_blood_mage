@@ -1,11 +1,11 @@
 ---
-trigger: model_decision
-description: Single Combat Engine (SCE) vs skill duels, fatality hooks, variables, duel weighting.
+name: single-combat
+description: Single Combat Engine (SCE) vs skill duels (duel = {}), fatality on_death hooks, runtime variables, and 100-weight duel scaling in CK3.
 ---
 
 # Single Combat & Duels
 
-Two systems: **Skill duel (`duel = {}`)** (1-tick stat check, no rounds/fatalities) vs **SCE** (`00_single_combat_effects.txt`, `single_combat_events.txt` — rounds, wounds, death).
+Two systems: **Skill duel (`duel = {}`)** (1-tick stat check, no rounds/fatalities) vs **SCE** (`00_single_combat_effects.txt`, `single_combat_events.txt`: rounds, wounds, death).
 
 ## SCE (`configure_start_single_combat_effect`)
 

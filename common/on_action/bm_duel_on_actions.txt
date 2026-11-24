@@ -79,29 +79,15 @@ bm_on_character_death_duel = {
 				has_variable = engaged_in_single_combat
 			}
 			scope:killer = {
-				bm_add_blood_mage_xp_effect = { TRACK = fury XP = 5 }
-				add_character_modifier = { modifier = lifeforce_modifier_major }
-				if = {
-					limit = {
-						root = {
-							OR = {
-								prowess >= 20
-								has_variable = bm_is_seek_power_duel_target
-								is_blood_mage_any_tier_trigger = yes
-							}
-						}
-					}
-					random = {
-						chance = 25
-						add_character_modifier = { modifier = lifeforce_modifier_superior }
-					}
-				}
 				send_interface_toast = {
 					type = bm_event_toast_effect_good
 					title = bm_duel_kill_fury_toast
 					left_icon = scope:killer
 					right_icon = root
-					custom_tooltip = bm_duel_kill_fury_tt
+					bm_duel_victory_lifeforce_effect = {
+						OPPONENT = root
+					}
+					bm_add_blood_mage_xp_effect = { TRACK = fury XP = 5 }
 				}
 			}
 		}

@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-- **What:** Playable `bm_icelandic` culture under `heritage_north_germanic` featuring equal gender martial rights, 5 traditions, an Icelandic saga name list with epenthetic `-ur` patronymics, and Day 1 conversion of Iceland.
+- **What:** Playable `bm_icelandic` culture (localized as **Icelander** / **Icelanders**) under `heritage_north_germanic` featuring equal gender martial rights, 5 traditions, an Icelandic saga name list with epenthetic `-ur` patronymics, and Day 1 conversion of Iceland.
 - **Acquisition / Selection:** Selectable in Ruler Designer; initialized on all counties and courts in `d_iceland` on game start via campaign game rule.
 
 ### Culture Specification
@@ -32,20 +32,16 @@
 | `tradition_fp1_northern_stories` | Northern Stories | `the_northern_lords` | `tradition_runestones` |
 
 #### Alþingi Commonwealth (`bm_tradition_althingi`)
-- **Succession & Assembly:** Unlocks Scandinavian Elective (`scandinavian_elective_enabled = yes`). Preserves mutual exclusivity with `tradition_things`.
+- **Succession & Assembly:** Unlocks Scandinavian Elective (`scandinavian_elective_enabled = yes`). Mutually exclusive with `tradition_things` (with `scope:replacing` guard); no coastal requirement.
 - **Trial by Combat (Hólmganga):** Unlocks Hólmganga duel interaction via native `has_access_to_trials_by_combat = yes`.
-- **Ruler & Capital Modifiers (`character_modifier`):** `character_capital_county_monthly_prosperity_growth_add = 0.05`, `cultural_head_fascination_mult = 0.25`.
-- **County Prosperity & Control (`county_modifier`):** `prosperity_growth = 0.05` (+0.05/mo flat prosperity growth), `prosperity_growth_factor = 0.2` (+20% prosperity growth factor), `control_baseline_add = 5` (+5 control baseline), and `monthly_control_change_when_below_baseline_add = 0.10` (+0.10/mo county control growth).
+- **Ruler & Capital Modifiers (`character_modifier`):** `character_capital_county_monthly_prosperity_growth_add = 0.05`, `cultural_head_fascination_mult = 0.15`.
+- **County Prosperity & Control (`county_modifier`):** `prosperity_growth_factor = 0.2` (+20% prosperity growth factor), `control_baseline_add = 5` (+5 control baseline), and `monthly_control_change_when_below_baseline_add = 0.20` (+0.20/mo county control growth).
 
 #### Verbúðir (`bm_tradition_verbudir`)
-- **Tribal Maritime Powerhouse:** Replaces `tradition_maritime_mercantilism`. Fully pickable and functional for Tribal cultures from 867 (`port_district_enabled_for_tribals = yes`, `next_level_port_districts = yes`). Mutually exclusive with `tradition_maritime_mercantilism` and `tradition_fishermen`.
-- **Port District Harbor Bonuses:** Hooks cleanly into Port Districts (`pb_port_01`–`04`):
-  - Stationed Men-at-Arms bonus via `port_district_stationed_maa_bonus = yes`.
-  - Extra Port building slot & MaA control via `seafarers_port_building_slot = yes` and `seafarers_port_maa_control = yes`.
-  - Coastal District tax bonus across castles, cities, and temples via `maritime_mercantilism_coastal_districts = yes`.
-  - River sailing capability via `can_travel_along_rivers = yes`.
-- **Character Travel & Trade Modifiers (`character_modifier`):** `embarkation_cost_mult = -0.5` (-50% embarkation cost), `sea_travel_danger = medium_sea_danger_reduction`, `coastal_sea_travel_danger = medium_sea_danger_reduction`, `max_trade_goods_on_route = 1`, `trade_capacity_mult = 0.10`, `trade_route_length_add = 3`, `trade_category_meat_xp_gain_mult = 0.20`, and `trade_good_fish_sell_price_mult = 0.02`.
-- **County Economy & Military (`county_modifier`):** `trade_good_fish_production_mult = 0.20` (+20% fish production), plus `fishermen_productivity_bonus = yes` parameter.
+- **Tribal Maritime Powerhouse:** Replaces `tradition_maritime_mercantilism` / `tradition_fishermen` (with `scope:replacing` guards). Fully pickable and functional for Tribal cultures from 867 (`port_district_enabled_for_tribals = yes`, `next_level_port_districts = yes`).
+- **Port & Coastal Parameters:** `next_level_port_districts`, `port_district_enabled_for_tribals`, `maritime_mercantilism_coastal_districts`, `can_travel_along_rivers`, and `fishermen_productivity_bonus`. (Stationed port MAA toughness bonus comes from `tradition_fp1_coastal_warriors`.)
+- **Character Travel & Trade Modifiers (`character_modifier`):** `embarkation_cost_mult = -0.5`, `sea_travel_danger = medium_sea_danger_reduction`, `coastal_sea_travel_danger = low_sea_danger_reduction`, `max_trade_goods_on_route = 1`, `trade_capacity_mult = 0.1`, `trade_route_length_add = 3`, `trade_category_meat_xp_gain_mult = 0.2`, and `trade_good_fish_sell_price_mult = 0.03`.
+- **County Economy (`county_modifier`):** `trade_good_fish_production_mult = 0.25` (+25% fish production).
 
 ### 2. Name List & Patronymics (`bm_name_list_icelandic`)
 
@@ -84,7 +80,9 @@
 ## Gotchas
 
 - **Vanilla history preservation:** Never overwrite `history/provinces/k_norway.txt` or `history/characters/norse.txt`; the modular `on_game_start` on-action cleanly overwrites county/character culture dynamically without file conflicts.
+- **Vanilla 1.21 `icelandic` culture:** Vanilla CK3 1.21 added a basegame `icelandic` culture (`00_north_germanic.txt`, `created = 930.1.1`) localized as `"Icelandic"` / `"Icelanders"` with `name_list_icelandic: "Icelandic"`. Keep `bm_icelandic` and `bm_name_list_icelandic` localized as `"Icelander"` so both cultures remain distinct in Ruler Designer and culture lists while preserving `bm_icelandic` IDs for save compatibility.
 - **Engine name token collisions:** When adding modern/saga names with special characters (accented vowels, thorn, eth), script tokens must use Paradox ASCII substitutions (`A_`, `E_`, `I_`, `O_`, `U_`, `T_`, `D_`) with corresponding sibling keys in `bm_icelandic_l_english.yml` to prevent parsing breaks.
+- **Intentional Icelandic power budget:** `bm_tradition_althingi` and `bm_tradition_verbudir` are intentionally strong in their signature niches (capital prosperity growth, tribal/early ports, fishing production/sales, and `+1` trade goods on route). Do not nerf those signature modifiers back to strict vanilla parity unless asked.
 
 ## Not verified
 

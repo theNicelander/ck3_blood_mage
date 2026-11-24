@@ -1,0 +1,192 @@
+﻿# =============================================================================
+# Blood Mage Captive Broker Scripted Effects
+# =============================================================================
+
+bm_spawn_broker_captive_effect = {
+	create_character = {
+		location = root.location
+		culture = root.location.culture
+		faith = root.location.faith
+		gender_female_chance = 50
+		age = { 18 40 }
+		random_traits = yes
+		save_scope_as = $SAVE_AS$
+	}
+	scope:$SAVE_AS$ = {
+		# Set randomized prowess (mostly ordinary, rare Blood Pit Duel candidates)
+		random_list = {
+			65 = {
+				add_prowess_skill = {
+					value = { 4 14 }
+					subtract = prowess
+				}
+			}
+			25 = {
+				add_prowess_skill = {
+					value = { 15 19 }
+					subtract = prowess
+				}
+			}
+			10 = {
+				add_prowess_skill = {
+					value = { 20 28 }
+					subtract = prowess
+				}
+			}
+		}
+		# Low chance of drainable genetic / blood mage traits
+		random_list = {
+			85 = { }
+			8 = {
+				random_list = {
+					33 = { add_trait = physique_good_1 }
+					33 = { add_trait = beauty_good_1 }
+					34 = { add_trait = intellect_good_1 }
+				}
+			}
+			4 = {
+				random_list = {
+					20 = { add_trait = physique_good_2 }
+					20 = { add_trait = beauty_good_2 }
+					20 = { add_trait = intellect_good_2 }
+					20 = { add_trait = giant }
+					20 = { add_trait = fecund }
+				}
+			}
+			2 = {
+				random_list = {
+					25 = { add_trait = physique_good_3 }
+					25 = { add_trait = beauty_good_3 }
+					25 = { add_trait = intellect_good_3 }
+					25 = { add_trait = pure_blooded }
+				}
+			}
+			1 = {
+				add_trait = lifestyle_blood_mage
+			}
+		}
+		# Small chance of drainable commander, lifestyle, or martial fame trait
+		random_list = {
+			80 = { }
+			10 = {
+				random_list = {
+					1 = { add_trait = logistician }
+					1 = { add_trait = military_engineer }
+					1 = { add_trait = aggressive_attacker }
+					1 = { add_trait = unyielding_defender }
+					1 = { add_trait = forder }
+					1 = { add_trait = flexible_leader }
+					1 = { add_trait = desert_warrior }
+					1 = { add_trait = jungle_stalker }
+					1 = { add_trait = reaver }
+					1 = { add_trait = reckless }
+					1 = { add_trait = holy_warrior }
+					1 = { add_trait = open_terrain_expert }
+					1 = { add_trait = rough_terrain_expert }
+					1 = { add_trait = forest_fighter }
+					1 = { add_trait = cautious_leader }
+					1 = { add_trait = organizer }
+				}
+			}
+			7 = {
+				random_list = {
+					1 = { add_trait = lifestyle_blademaster }
+					1 = { add_trait = lifestyle_hunter }
+					1 = { add_trait = lifestyle_poet }
+					1 = { add_trait = lifestyle_gardener }
+					1 = { add_trait = lifestyle_herbalist }
+					1 = { add_trait = lifestyle_physician }
+					1 = { add_trait = lifestyle_mystic }
+					1 = { add_trait = lifestyle_reveler }
+					1 = { add_trait = lifestyle_traveler }
+				}
+			}
+			3 = {
+				random_list = {
+					1 = { add_trait = berserker }
+					1 = { add_trait = viking }
+					1 = { add_trait = shieldmaiden }
+					1 = { add_trait = athletic }
+				}
+			}
+		}
+	}
+}
+
+bm_purchase_broker_captive_effect = {
+	remove_short_term_gold = $TARGET$.$PRICE$
+	imprison = {
+		target = $TARGET$
+		type = dungeon
+	}
+	send_interface_toast = {
+		type = $TOAST_TYPE$
+		title = $TOAST_TITLE$
+		left_icon = $TARGET$
+		add_trait_xp = {
+			trait = lifestyle_blood_mage
+			track = fortune
+			value = 2
+		}
+	}
+	hidden_effect = {
+		add_character_flag = {
+			flag = bm_bought_captive_session
+			days = 30
+		}
+	}
+}
+
+bm_cleanup_unbought_captives_effect = {
+	hidden_effect = {
+		if = {
+			limit = {
+				exists = scope:captive_1
+				scope:captive_1 = {
+					is_alive = yes
+					is_imprisoned = no
+				}
+			}
+			scope:captive_1 = { silent_disappearance_effect = yes }
+		}
+		if = {
+			limit = {
+				exists = scope:captive_2
+				scope:captive_2 = {
+					is_alive = yes
+					is_imprisoned = no
+				}
+			}
+			scope:captive_2 = { silent_disappearance_effect = yes }
+		}
+		if = {
+			limit = {
+				exists = scope:captive_3
+				scope:captive_3 = {
+					is_alive = yes
+					is_imprisoned = no
+				}
+			}
+			scope:captive_3 = { silent_disappearance_effect = yes }
+		}
+	}
+}
+
+bm_finalize_captive_broker_cooldown_effect = {
+	hidden_effect = {
+		if = {
+			limit = { has_character_flag = bm_bought_captive_session }
+			remove_character_flag = bm_bought_captive_session
+			add_character_flag = {
+				flag = bm_buy_captives_cooldown
+				years = 1
+			}
+		}
+		else = {
+			add_character_flag = {
+				flag = bm_buy_captives_cooldown
+				days = 90
+			}
+		}
+	}
+}

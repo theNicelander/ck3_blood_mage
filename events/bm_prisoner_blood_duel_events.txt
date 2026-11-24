@@ -1,0 +1,118 @@
+﻿namespace = bm_prisoner_blood_duel
+
+# 0001: Prisoner Blood Duel Conclusion
+bm_prisoner_blood_duel.0001 = {
+	type = character_event
+	title = bm_prisoner_blood_duel.0001.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					this = scope:sc_victor
+				}
+				desc = bm_prisoner_blood_duel.0001.victor_desc
+			}
+			desc = bm_prisoner_blood_duel.0001.loser_desc
+		}
+	}
+	theme = war
+	override_icon = {
+		reference = "gfx/interface/icons/bm_blood_magic_icon.dds"
+	}
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:sc_defender
+		animation = marshal
+	}
+
+	option = {
+		name = {
+			text = {
+				first_valid = {
+					triggered_desc = {
+						trigger = { this = scope:sc_victor }
+						desc = bm_prisoner_blood_duel.0001.opt_victory
+					}
+					desc = bm_prisoner_blood_duel.0001.opt_defeat
+				}
+			}
+		}
+		if = {
+			limit = { this = scope:sc_victor }
+			send_interface_toast = {
+				type = bm_event_toast_effect_good
+				title = bm_prisoner_blood_duel_victor_toast
+				left_icon = root
+				right_icon = scope:sc_defender
+				bm_duel_victory_lifeforce_effect = {
+					OPPONENT = scope:sc_defender
+				}
+				bm_add_blood_mage_xp_effect = {
+					TRACK = fury
+					XP = 4
+				}
+			}
+			lifedrain_execution_effect = {
+				VICTIM = scope:sc_defender
+				EXECUTIONER = root
+			}
+		}
+		else = {
+			send_interface_toast = {
+				type = bm_event_toast_effect_bad
+				title = bm_prisoner_blood_duel_loser_toast
+				left_icon = root
+				right_icon = scope:sc_defender
+				increase_wounds_no_death_effect = { REASON = fight }
+				add_stress = 20
+				add_character_modifier = {
+					modifier = lifeforce_modifier_minor
+				}
+				bm_add_blood_mage_xp_effect = {
+					TRACK = fury
+					XP = 1
+				}
+				scope:sc_defender = {
+					release_from_prison = yes
+				}
+			}
+		}
+	}
+}
+
+# 0002: Prisoner Blood Duel Invalidated
+bm_prisoner_blood_duel.0002 = {
+	type = character_event
+	title = bm_prisoner_blood_duel.0002.t
+	desc = bm_prisoner_blood_duel.0002.desc
+	theme = war
+	override_icon = {
+		reference = "gfx/interface/icons/bm_blood_magic_icon.dds"
+	}
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+
+	immediate = {
+		single_combat_clean_shirtlessness_effect = {
+			ATTACKER = root
+			DEFENDER = scope:sc_defender
+		}
+	}
+
+	option = {
+		name = bm_prisoner_blood_duel.0002.opt
+		send_interface_toast = {
+			type = bm_event_toast_effect_neutral
+			title = bm_prisoner_blood_duel_invalidated_toast
+			left_icon = root
+			add_piety = 50
+		}
+	}
+}

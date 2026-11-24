@@ -1,4 +1,4 @@
-# Archive: Blood Knight (`lifestyle_blood_knight`) — Deprecated in v1.20.68
+# Archive: Blood Knight (`lifestyle_blood_knight`) - Deprecated in v1.20.68
 
 > [!NOTE] Historical Archive
 > This document preserves the architectural specification of the `lifestyle_blood_knight` trait, its tracks (`vanguard`, `slaughter`), and related systems as they existed prior to consolidation in release **v1.20.68**. In v1.20.68, all Blood Knight mechanics and XP sources were unified into the single `lifestyle_blood_mage` trait under the new **Bloodlust** (`bloodlust`) track, preparing the path for a linear Acolyte -> Mage -> Archmage tier system.

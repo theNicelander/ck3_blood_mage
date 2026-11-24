@@ -1,0 +1,26 @@
+﻿# =============================================================================
+# Blood Mage Captive Broker Scripted Triggers
+# =============================================================================
+
+bm_captive_available_trigger = {
+	is_alive = yes
+	is_imprisoned = no
+	NOT = { has_character_flag = bm_captive_refused }
+}
+
+bm_has_any_available_captive_trigger = {
+	OR = {
+		AND = {
+			exists = scope:captive_1
+			scope:captive_1 = { bm_captive_available_trigger = yes }
+		}
+		AND = {
+			exists = scope:captive_2
+			scope:captive_2 = { bm_captive_available_trigger = yes }
+		}
+		AND = {
+			exists = scope:captive_3
+			scope:captive_3 = { bm_captive_available_trigger = yes }
+		}
+	}
+}

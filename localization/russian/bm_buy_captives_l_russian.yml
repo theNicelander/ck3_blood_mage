@@ -1,0 +1,32 @@
+﻿l_russian:
+ bm_buy_captives_decision: "Найти торговцев пленниками"
+ bm_buy_captives_decision_desc: "Слухи быстро распространяются по тайным торговым путям и портовым тавернам. За достойную плату скрытные посредники доставят должников, изгнанников и побеждённых воинов прямо в вашу темницу."
+ bm_buy_captives_decision_tooltip: "Осмотреть 1–3 случайных пленников, выставленных на продажу"
+ bm_buy_captives_decision_confirm: "Встретиться с торговцами"
+ bm_buy_captives_decision_effect_tooltip: "Посредник предлагает 1–3 случайных пленников (больше при высоком показателе [stewardship|E])."
+ bm_buy_captives_cooldown_tt: "Недавно не было встречи с торговцами пленниками"
+
+ bm_buy_captives_toast_title: "Пленник куплен"
+ bm_buy_captives_haggle_success_toast: "Пленник куплен со скидкой"
+ bm_buy_captives_haggle_fail_toast: "Неудачный торг: цена повышена"
+ bm_buy_captives_haggle_refused_toast: "Посредник отозвал предложение"
+
+ bm_buy_captives.0002.t: "Торговец пленниками"
+ bm_buy_captives.0002.desc: "Посредник в капюшоне приводит пленников в тихий подвал, где при свете фонарей поблёскивают железные кандалы. Здесь не спрашивают имён и не отвечают на вопросы. Осмотрите любого пленника, чтобы заплатить назначенную цену или поторговаться, купите всех сразу либо уйдите."
+ bm_buy_captives.0002.desc_empty: "Подвал опустел, последние кандалы убраны с пола. Посредник закрывает книгу учёта и ждёт, когда вы уйдёте."
+ bm_buy_captives.0002.a: "Осмотреть: [captive_1.GetFirstNameNoTooltip]"
+ bm_buy_captives.0002.b: "Осмотреть: [captive_2.GetFirstNameNoTooltip]"
+ bm_buy_captives.0002.c: "Осмотреть: [captive_3.GetFirstNameNoTooltip]"
+ bm_buy_captives.0002.d: "Купить всех оставшихся пленников"
+ bm_buy_captives.0002.e: "Назад"
+
+ bm_buy_captives.0003.t: "Торг за пленника: [selected_captive.GetFirstNameNoTooltip]"
+ bm_buy_captives.0003.desc: "Посредник отступает в сторону, позволяя вам осмотреть персонажа [selected_captive.GetTitledFirstName]. Назначенная цена — [selected_captive.MakeScope.ScriptValue('bm_captive_price_value')|0]@gold_icon!. Заплатите или поторгуйтесь."
+ bm_buy_captives.0003.a: "Заплатить полную цену ([selected_captive.MakeScope.ScriptValue('bm_captive_price_value')|0]@gold_icon!)"
+ bm_buy_captives.0003.b: "Поторговаться"
+ bm_buy_captives.0003.c: "Назад"
+
+ bm_buy_captives_haggle_success_tt: "Вам удалось сбить цену! Купить персонажа [selected_captive.GetFirstNameNoTooltip] по сниженной цене ([selected_captive.MakeScope.ScriptValue('bm_captive_discounted_price_value')|0]@gold_icon!)"
+ bm_buy_captives_haggle_fail_tt: "Посредник перехитрил вас... купить персонажа [selected_captive.GetFirstNameNoTooltip] по повышенной цене ([selected_captive.MakeScope.ScriptValue('bm_captive_markup_price_value')|0]@gold_icon!)"
+ bm_buy_captives_haggle_refused_tt: "Посредник уходит... персонаж [selected_captive.GetFirstNameNoTooltip] снят с продажи"
+ bm_buy_captives_haggle_refused_effect_tt: "Персонаж [selected_captive.GetTitledFirstName] больше недоступен для покупки"
