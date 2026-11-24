@@ -156,6 +156,13 @@
 					title = bm_carve_galdrastafir_toast
 					left_icon = scope:actor
 					blood_magic_used_major = yes
+					if = {
+						limit = { bm_has_any_stave_trigger = no }
+						add_xp_bm_dynamic = { TRACK = ancient XP = 5 }
+					}
+					else = {
+						add_xp_bm_dynamic = { TRACK = wisdom XP = 5 }
+					}
 					bm_set_capstone_stave_effect = { STAVE = vegvisir }
 				}
 			}
@@ -170,6 +177,13 @@
 					title = bm_carve_galdrastafir_toast
 					left_icon = scope:actor
 					blood_magic_used_major = yes
+					if = {
+						limit = { bm_has_any_stave_trigger = no }
+						add_xp_bm_dynamic = { TRACK = ancient XP = 5 }
+					}
+					else = {
+						add_xp_bm_dynamic = { TRACK = wisdom XP = 5 }
+					}
 					bm_set_capstone_stave_effect = { STAVE = aegishjalmur }
 				}
 			}
@@ -184,6 +198,13 @@
 					title = bm_carve_galdrastafir_toast
 					left_icon = scope:actor
 					blood_magic_used_major = yes
+					if = {
+						limit = { bm_has_any_stave_trigger = no }
+						add_xp_bm_dynamic = { TRACK = ancient XP = 5 }
+					}
+					else = {
+						add_xp_bm_dynamic = { TRACK = wisdom XP = 5 }
+					}
 					bm_set_capstone_stave_effect = { STAVE = feingur }
 				}
 			}
@@ -198,6 +219,13 @@
 					title = bm_carve_galdrastafir_toast
 					left_icon = scope:actor
 					blood_magic_used_major = yes
+					if = {
+						limit = { bm_has_any_stave_trigger = no }
+						add_xp_bm_dynamic = { TRACK = ancient XP = 5 }
+					}
+					else = {
+						add_xp_bm_dynamic = { TRACK = wisdom XP = 5 }
+					}
 					bm_set_capstone_stave_effect = { STAVE = nabrokarstafur }
 				}
 			}
@@ -212,6 +240,13 @@
 					title = bm_carve_galdrastafir_toast
 					left_icon = scope:actor
 					blood_magic_used_major = yes
+					if = {
+						limit = { bm_has_any_stave_trigger = no }
+						add_xp_bm_dynamic = { TRACK = ancient XP = 5 }
+					}
+					else = {
+						add_xp_bm_dynamic = { TRACK = wisdom XP = 5 }
+					}
 					bm_set_capstone_stave_effect = { STAVE = hulinhjalmur }
 				}
 			}

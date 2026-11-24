@@ -156,20 +156,6 @@ bm_on_birth_fortune_xp = {
 			scope:mother = {
 				add_character_modifier = { modifier = lifeforce_modifier_major }
 				if = {
-					limit = {
-						NOR = {
-							any_child = {
-								even_if_dead = yes
-								this != root
-							}
-						}
-					}
-					add_shared_bm_bk_xp = { TRACK = ancient XP = 5 }
-				}
-				else = {
-					add_shared_bm_bk_xp = { TRACK = ancient XP = 2 }
-				}
-				if = {
 					limit = { has_character_modifier = lifeforce_modifier_ancient }
 					remove_character_modifier = lifeforce_modifier_ancient
 					add_xp_bm_dynamic = { TRACK = fortune XP = 3 }
@@ -197,10 +183,10 @@ bm_on_birth_fortune_xp = {
 				}
 				if = {
 					limit = { bm_has_superior_stave_trigger = { STAVE = feingur } }
-					add_xp_bm_dynamic = { TRACK = fortune XP = 4 }
+					add_xp_bm_dynamic = { TRACK = ancient XP = 4 }
 					if = {
 						limit = { root = { is_blood_mage_any_tier_trigger = yes } }
-						add_xp_bm_dynamic = { TRACK = fortune XP = 4 }
+						add_xp_bm_dynamic = { TRACK = ancient XP = 4 }
 						send_interface_toast = {
 							type = bm_event_toast_effect_good
 							title = bm_birth_blood_mage_child_toast
@@ -218,10 +204,10 @@ bm_on_birth_fortune_xp = {
 					}
 				}
 				else = {
-					add_xp_bm_dynamic = { TRACK = fortune XP = 2 }
+					add_xp_bm_dynamic = { TRACK = ancient XP = 2 }
 					if = {
 						limit = { root = { is_blood_mage_any_tier_trigger = yes } }
-						add_xp_bm_dynamic = { TRACK = fortune XP = 2 }
+						add_xp_bm_dynamic = { TRACK = ancient XP = 2 }
 						send_interface_toast = {
 							type = bm_event_toast_effect_good
 							title = bm_birth_blood_mage_child_toast
@@ -251,20 +237,6 @@ bm_on_birth_fortune_xp = {
 			scope:real_father = {
 				add_character_modifier = { modifier = lifeforce_modifier_major }
 				if = {
-					limit = {
-						NOR = {
-							any_child = {
-								even_if_dead = yes
-								this != root
-							}
-						}
-					}
-					add_shared_bm_bk_xp = { TRACK = ancient XP = 5 }
-				}
-				else = {
-					add_shared_bm_bk_xp = { TRACK = ancient XP = 2 }
-				}
-				if = {
 					limit = { has_character_modifier = lifeforce_modifier_ancient }
 					remove_character_modifier = lifeforce_modifier_ancient
 					add_xp_bm_dynamic = { TRACK = fortune XP = 3 }
@@ -292,10 +264,10 @@ bm_on_birth_fortune_xp = {
 				}
 				if = {
 					limit = { bm_has_superior_stave_trigger = { STAVE = feingur } }
-					add_xp_bm_dynamic = { TRACK = fortune XP = 4 }
+					add_xp_bm_dynamic = { TRACK = ancient XP = 4 }
 					if = {
 						limit = { root = { is_blood_mage_any_tier_trigger = yes } }
-						add_xp_bm_dynamic = { TRACK = fortune XP = 4 }
+						add_xp_bm_dynamic = { TRACK = ancient XP = 4 }
 						send_interface_toast = {
 							type = bm_event_toast_effect_good
 							title = bm_birth_blood_mage_child_toast
@@ -313,10 +285,10 @@ bm_on_birth_fortune_xp = {
 					}
 				}
 				else = {
-					add_xp_bm_dynamic = { TRACK = fortune XP = 2 }
+					add_xp_bm_dynamic = { TRACK = ancient XP = 2 }
 					if = {
 						limit = { root = { is_blood_mage_any_tier_trigger = yes } }
-						add_xp_bm_dynamic = { TRACK = fortune XP = 2 }
+						add_xp_bm_dynamic = { TRACK = ancient XP = 2 }
 						send_interface_toast = {
 							type = bm_event_toast_effect_good
 							title = bm_birth_blood_mage_child_toast

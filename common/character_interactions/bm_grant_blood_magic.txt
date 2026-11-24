@@ -109,7 +109,7 @@
                     remove_character_modifier = lifeforce_modifier_minor
                     add_xp_bm_dynamic = {
                         TRACK = fortune
-                        XP = 2
+                        XP = 3
                     }
                     scope:recipient = {
                         bm_become_blood_acolyte_effect = yes
@@ -132,25 +132,9 @@
                     left_icon = scope:actor
                     right_icon = scope:recipient
                     remove_character_modifier = lifeforce_modifier_major
-                    if = {
-                        limit = {
-                            scope:recipient = {
-                                OR = {
-                                    is_child_of = scope:actor
-                                    dynasty ?= scope:actor.dynasty
-                                }
-                            }
-                        }
-                        add_xp_bm_dynamic = {
-                            TRACK = fortune
-                            XP = 4
-                        }
-                    }
-                    else = {
-                        add_xp_bm_dynamic = {
-                            TRACK = fortune
-                            XP = 3
-                        }
+                    add_xp_bm_dynamic = {
+                        TRACK = fortune
+                        XP = 3
                     }
                     scope:recipient = {
                         bm_become_blood_acolyte_effect = yes

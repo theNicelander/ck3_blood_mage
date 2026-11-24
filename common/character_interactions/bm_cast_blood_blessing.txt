@@ -62,6 +62,17 @@
 				value = 200
 			}
 			else_if = {
+				limit = {
+					scope:blessing_inscribe_rune = yes
+					scope:recipient = {
+						NOT = { has_character_modifier = minor_blood_rune_modifier }
+						NOT = { has_character_modifier = major_blood_rune_modifier }
+						NOT = { has_character_modifier = superior_blood_rune_modifier }
+					}
+				}
+				value = 100
+			}
+			else_if = {
 				limit = { scope:blessing_grant_lifeforce_minor = yes }
 				value = lifedrain_piety_cost_minor
 			}
@@ -686,36 +697,7 @@
 		}
 	}
 
-	# 7. Empower Blood Mage
-	send_option = {
-		flag = blessing_empower
-		localization = bm_blood_blessing_option_empower
-		current_description = bm_blood_blessing_option_empower_desc
-		can_invalidate_interaction = yes
-		is_shown = {
-			NOT = { scope:recipient = scope:actor }
-			scope:recipient = {
-				is_blood_mage_any_tier_trigger = yes
-			}
-		}
-		is_valid = {
-			scope:actor = {
-				OR = {
-					has_character_modifier = lifeforce_modifier_minor
-					has_character_modifier = lifeforce_modifier_major
-				}
-			}
-		}
-		starts_enabled = {
-			NOT = { scope:recipient = scope:actor }
-			NOT = { scope:recipient = { bm_is_valid_blessing_recipient_trigger = { ACTOR = scope:actor } } }
-			scope:recipient = {
-				is_blood_mage_any_tier_trigger = yes
-			}
-		}
-	}
-
-	# 8. Grant Lifeforce (Minor / Major / Superior / Ancient)
+	# 7. Grant Lifeforce (Minor / Major / Superior / Ancient)
 	send_option = {
 		flag = blessing_grant_lifeforce_minor
 		localization = bm_blood_blessing_option_grant_lifeforce_minor
@@ -825,6 +807,7 @@
 							}
 							piety_level >= 2
 							scope:actor.bm_total_blood_mage_xp >= 25
+							piety >= 100
 							has_character_modifier = lifeforce_modifier_minor
 						}
 						# Tier 2: Target has Minor rune -> Major
@@ -924,47 +907,6 @@
 			}
 			debug_log = "BloodMageInteraction: bm_cast_blood_blessing (ancient) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
 			bm_apply_blessing_effect = { LINE = ancient XP_TRACK = wisdom CASTER = scope:actor TARGET = scope:recipient }
-		}
-		else_if = {
-			limit = { scope:blessing_empower = yes }
-			debug_log = "BloodMageInteraction: bm_cast_blood_blessing (empower) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
-			scope:actor = {
-				send_interface_toast = {
-					type = bm_event_toast_effect_good
-					title = bm_blood_blessing_toast
-					left_icon = scope:actor
-					right_icon = scope:recipient
-					if = {
-						limit = { has_character_modifier = lifeforce_modifier_major }
-						blood_magic_used_major = yes
-						add_xp_bm_dynamic = { TRACK = radiance XP = 4 }
-						scope:recipient = {
-							add_xp_bm_dynamic = { TRACK = wisdom XP = 3 }
-							add_xp_bm_dynamic = { TRACK = fortune XP = 3 }
-							add_xp_bm_dynamic = { TRACK = fury XP = 3 }
-							add_opinion = {
-								target = scope:actor
-								modifier = magic_opinion_positive
-								opinion = 30
-							}
-						}
-					}
-					else = {
-						blood_magic_used_minor = yes
-						add_xp_bm_dynamic = { TRACK = radiance XP = 2 }
-						scope:recipient = {
-							add_xp_bm_dynamic = { TRACK = wisdom XP = 2 }
-							add_xp_bm_dynamic = { TRACK = fortune XP = 2 }
-							add_xp_bm_dynamic = { TRACK = fury XP = 2 }
-							add_opinion = {
-								target = scope:actor
-								modifier = magic_opinion_positive
-								opinion = 15
-							}
-						}
-					}
-				}
-			}
 		}
 		else_if = {
 			limit = { scope:blessing_grant_lifeforce_minor = yes }
@@ -1278,10 +1220,6 @@
 			add = 40
 		}
 		modifier = {
-			scope:blessing_empower = yes
-			add = 30
-		}
-		modifier = {
 			scope:blessing_grant_lifeforce_major = yes
 			scope:recipient = {
 				OR = {
@@ -1359,7 +1297,6 @@
 				scope:blessing_ancient_minor = yes
 				scope:blessing_ancient_major = yes
 				scope:blessing_ancient_superior = yes
-				scope:blessing_empower = yes
 				scope:blessing_grant_lifeforce_minor = yes
 				scope:blessing_grant_lifeforce_major = yes
 				scope:blessing_grant_lifeforce_superior = yes

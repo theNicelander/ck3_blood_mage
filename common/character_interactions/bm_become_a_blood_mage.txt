@@ -10,7 +10,6 @@
 
     is_valid_showing_failures_only = {
         scope:actor = { piety_level >= 2 }
-        scope:recipient = { has_character_modifier = lifeforce_modifier_superior }
         custom_description = {
             text = "ask_for_blood_magic_interaction_requirement"
             scope:recipient = {
@@ -41,9 +40,6 @@
                 title = ask_for_blood_magic_interaction
                 left_icon = scope:actor
                 right_icon = scope:recipient
-                scope:recipient = {
-                    remove_character_modifier = lifeforce_modifier_superior
-                }
                 bm_become_blood_acolyte_effect = yes
                 add_opinion = {
                     target = scope:recipient
