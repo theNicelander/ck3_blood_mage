@@ -21,6 +21,7 @@
 		custom_description = {
 			text = bm_bleed_own_vein_interaction_requirement_tt
 			scope:actor = {
+				NOT = { has_trait = wounded_2 }
 				NOT = { has_trait = wounded_3 }
 				NOT = { has_trait = maimed }
 			}
@@ -63,16 +64,13 @@
 		}
 		is_valid = {
 			scope:actor = {
+				NOT = { has_trait = wounded_2 }
 				NOT = { has_trait = wounded_3 }
 				NOT = { has_trait = maimed }
 			}
 		}
 		starts_enabled = {
-			scope:actor = {
-				has_trait = wounded_2
-				NOT = { has_trait = wounded_3 }
-				NOT = { has_trait = maimed }
-			}
+			always = no
 		}
 	}
 
@@ -117,8 +115,11 @@
 					if = {
 						limit = { has_trait = wounded_1 }
 						remove_trait = wounded_1
+						add_trait = wounded_3
 					}
-					add_trait = wounded_2
+					else = {
+						add_trait = wounded_2
+					}
 					add_stress = 25
 					add_character_modifier = {
 						modifier = lifeforce_modifier_major
