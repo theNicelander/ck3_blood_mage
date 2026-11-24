@@ -10,11 +10,11 @@
 			if = {
 				limit = { scope:bm_covenant_radiance = yes }
 				if = {
-					limit = { scope:actor.house ?= { has_house_modifier = dynasty_blood_radiance_modifier_2 } }
+					limit = { scope:actor.house ?= { has_house_modifier = bm_covenant_radiance_major_modifier } }
 					value = 750
 				}
 				else_if = {
-					limit = { scope:actor.house ?= { has_house_modifier = dynasty_blood_radiance_modifier_1 } }
+					limit = { scope:actor.house ?= { has_house_modifier = bm_covenant_radiance_minor_modifier } }
 					value = 350
 				}
 				else = {
@@ -24,11 +24,11 @@
 			else_if = {
 				limit = { scope:bm_covenant_fury = yes }
 				if = {
-					limit = { scope:actor.house ?= { has_house_modifier = dynasty_blood_fury_modifier_2 } }
+					limit = { scope:actor.house ?= { has_house_modifier = bm_covenant_fury_major_modifier } }
 					value = 750
 				}
 				else_if = {
-					limit = { scope:actor.house ?= { has_house_modifier = dynasty_blood_fury_modifier_1 } }
+					limit = { scope:actor.house ?= { has_house_modifier = bm_covenant_fury_minor_modifier } }
 					value = 350
 				}
 				else = {
@@ -38,11 +38,11 @@
 			else_if = {
 				limit = { scope:bm_covenant_fortune = yes }
 				if = {
-					limit = { scope:actor.house ?= { has_house_modifier = dynasty_blood_fortune_modifier_2 } }
+					limit = { scope:actor.house ?= { has_house_modifier = bm_covenant_fortune_major_modifier } }
 					value = 750
 				}
 				else_if = {
-					limit = { scope:actor.house ?= { has_house_modifier = dynasty_blood_fortune_modifier_1 } }
+					limit = { scope:actor.house ?= { has_house_modifier = bm_covenant_fortune_minor_modifier } }
 					value = 350
 				}
 				else = {
@@ -52,11 +52,11 @@
 			else_if = {
 				limit = { scope:bm_covenant_cunning = yes }
 				if = {
-					limit = { scope:actor.house ?= { has_house_modifier = dynasty_blood_cunning_modifier_2 } }
+					limit = { scope:actor.house ?= { has_house_modifier = bm_covenant_cunning_major_modifier } }
 					value = 750
 				}
 				else_if = {
-					limit = { scope:actor.house ?= { has_house_modifier = dynasty_blood_cunning_modifier_1 } }
+					limit = { scope:actor.house ?= { has_house_modifier = bm_covenant_cunning_minor_modifier } }
 					value = 350
 				}
 				else = {
@@ -66,11 +66,11 @@
 			else_if = {
 				limit = { scope:bm_covenant_wisdom = yes }
 				if = {
-					limit = { scope:actor.house ?= { has_house_modifier = dynasty_blood_wisdom_modifier_2 } }
+					limit = { scope:actor.house ?= { has_house_modifier = bm_covenant_wisdom_major_modifier } }
 					value = 750
 				}
 				else_if = {
-					limit = { scope:actor.house ?= { has_house_modifier = dynasty_blood_wisdom_modifier_1 } }
+					limit = { scope:actor.house ?= { has_house_modifier = bm_covenant_wisdom_minor_modifier } }
 					value = 350
 				}
 				else = {
@@ -80,11 +80,11 @@
 			else_if = {
 				limit = { scope:bm_covenant_ancient = yes }
 				if = {
-					limit = { scope:actor.house ?= { has_house_modifier = dynasty_blood_ancient_modifier_2 } }
+					limit = { scope:actor.house ?= { has_house_modifier = bm_covenant_ancient_major_modifier } }
 					value = 750
 				}
 				else_if = {
-					limit = { scope:actor.house ?= { has_house_modifier = dynasty_blood_ancient_modifier_1 } }
+					limit = { scope:actor.house ?= { has_house_modifier = bm_covenant_ancient_minor_modifier } }
 					value = 350
 				}
 				else = {
@@ -135,7 +135,7 @@
 		current_description = bm_covenant_radiance_tooltip
 		can_invalidate_interaction = yes
 		is_shown = {
-			NOT = { scope:actor.house ?= { has_house_modifier = dynasty_blood_radiance_modifier_3 } }
+			NOT = { scope:actor.house ?= { has_house_modifier = bm_covenant_radiance_superior_modifier } }
 		}
 		is_valid = {
 			bm_can_upgrade_covenant_trigger = { COVENANT = radiance ACTOR = scope:actor }
@@ -152,7 +152,7 @@
 		current_description = bm_covenant_fury_tooltip
 		can_invalidate_interaction = yes
 		is_shown = {
-			NOT = { scope:actor.house ?= { has_house_modifier = dynasty_blood_fury_modifier_3 } }
+			NOT = { scope:actor.house ?= { has_house_modifier = bm_covenant_fury_superior_modifier } }
 		}
 		is_valid = {
 			bm_can_upgrade_covenant_trigger = { COVENANT = fury ACTOR = scope:actor }
@@ -170,7 +170,7 @@
 		current_description = bm_covenant_fortune_tooltip
 		can_invalidate_interaction = yes
 		is_shown = {
-			NOT = { scope:actor.house ?= { has_house_modifier = dynasty_blood_fortune_modifier_3 } }
+			NOT = { scope:actor.house ?= { has_house_modifier = bm_covenant_fortune_superior_modifier } }
 		}
 		is_valid = {
 			bm_can_upgrade_covenant_trigger = { COVENANT = fortune ACTOR = scope:actor }
@@ -189,7 +189,7 @@
 		current_description = bm_covenant_cunning_tooltip
 		can_invalidate_interaction = yes
 		is_shown = {
-			NOT = { scope:actor.house ?= { has_house_modifier = dynasty_blood_cunning_modifier_3 } }
+			NOT = { scope:actor.house ?= { has_house_modifier = bm_covenant_cunning_superior_modifier } }
 		}
 		is_valid = {
 			bm_can_upgrade_covenant_trigger = { COVENANT = cunning ACTOR = scope:actor }
@@ -209,7 +209,7 @@
 		current_description = bm_covenant_wisdom_tooltip
 		can_invalidate_interaction = yes
 		is_shown = {
-			NOT = { scope:actor.house ?= { has_house_modifier = dynasty_blood_wisdom_modifier_3 } }
+			NOT = { scope:actor.house ?= { has_house_modifier = bm_covenant_wisdom_superior_modifier } }
 		}
 		is_valid = {
 			bm_can_upgrade_covenant_trigger = { COVENANT = wisdom ACTOR = scope:actor }
@@ -230,7 +230,7 @@
 		current_description = bm_covenant_ancient_tooltip
 		can_invalidate_interaction = yes
 		is_shown = {
-			NOT = { scope:actor.house ?= { has_house_modifier = dynasty_blood_ancient_modifier_3 } }
+			NOT = { scope:actor.house ?= { has_house_modifier = bm_covenant_ancient_superior_modifier } }
 		}
 		is_valid = {
 			bm_can_upgrade_covenant_trigger = { COVENANT = ancient ACTOR = scope:actor }
@@ -252,7 +252,7 @@
 		current_description = bm_covenant_acolyte_tooltip
 		can_invalidate_interaction = yes
 		is_shown = {
-			NOT = { scope:actor.house ?= { has_house_modifier = dynasty_blood_acolyte_modifier } }
+			NOT = { scope:actor.house ?= { has_house_modifier = bm_covenant_acolyte_modifier } }
 		}
 		is_valid = {
 			bm_can_grant_acolyte_covenant_trigger = { ACTOR = scope:actor }

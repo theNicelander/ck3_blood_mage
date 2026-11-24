@@ -74,98 +74,98 @@ bm_debug.0001 = {
 		house = {
 			# Radiance
 			if = {
-				limit = { has_house_modifier = dynasty_blood_radiance_modifier_2 }
-				remove_house_modifier = dynasty_blood_radiance_modifier_2
-				add_house_modifier = { modifier = dynasty_blood_radiance_modifier_3 }
+				limit = { has_house_modifier = bm_covenant_radiance_major_modifier }
+				remove_house_modifier = bm_covenant_radiance_major_modifier
+				add_house_modifier = { modifier = bm_covenant_radiance_superior_modifier }
 			}
 			else_if = {
-				limit = { has_house_modifier = dynasty_blood_radiance_modifier_1 }
-				remove_house_modifier = dynasty_blood_radiance_modifier_1
-				add_house_modifier = { modifier = dynasty_blood_radiance_modifier_2 }
+				limit = { has_house_modifier = bm_covenant_radiance_minor_modifier }
+				remove_house_modifier = bm_covenant_radiance_minor_modifier
+				add_house_modifier = { modifier = bm_covenant_radiance_major_modifier }
 			}
 			else_if = {
-				limit = { NOT = { has_house_modifier = dynasty_blood_radiance_modifier_3 } }
-				add_house_modifier = { modifier = dynasty_blood_radiance_modifier_1 }
+				limit = { NOT = { has_house_modifier = bm_covenant_radiance_superior_modifier } }
+				add_house_modifier = { modifier = bm_covenant_radiance_minor_modifier }
 			}
 
 			# Fury
 			if = {
-				limit = { has_house_modifier = dynasty_blood_fury_modifier_2 }
-				remove_house_modifier = dynasty_blood_fury_modifier_2
-				add_house_modifier = { modifier = dynasty_blood_fury_modifier_3 }
+				limit = { has_house_modifier = bm_covenant_fury_major_modifier }
+				remove_house_modifier = bm_covenant_fury_major_modifier
+				add_house_modifier = { modifier = bm_covenant_fury_superior_modifier }
 			}
 			else_if = {
-				limit = { has_house_modifier = dynasty_blood_fury_modifier_1 }
-				remove_house_modifier = dynasty_blood_fury_modifier_1
-				add_house_modifier = { modifier = dynasty_blood_fury_modifier_2 }
+				limit = { has_house_modifier = bm_covenant_fury_minor_modifier }
+				remove_house_modifier = bm_covenant_fury_minor_modifier
+				add_house_modifier = { modifier = bm_covenant_fury_major_modifier }
 			}
 			else_if = {
-				limit = { NOT = { has_house_modifier = dynasty_blood_fury_modifier_3 } }
-				add_house_modifier = { modifier = dynasty_blood_fury_modifier_1 }
+				limit = { NOT = { has_house_modifier = bm_covenant_fury_superior_modifier } }
+				add_house_modifier = { modifier = bm_covenant_fury_minor_modifier }
 			}
 
 			# Bloodline
 			if = {
-				limit = { has_house_modifier = dynasty_blood_fortune_modifier_2 }
-				remove_house_modifier = dynasty_blood_fortune_modifier_2
-				add_house_modifier = { modifier = dynasty_blood_fortune_modifier_3 }
+				limit = { has_house_modifier = bm_covenant_fortune_major_modifier }
+				remove_house_modifier = bm_covenant_fortune_major_modifier
+				add_house_modifier = { modifier = bm_covenant_fortune_superior_modifier }
 			}
 			else_if = {
-				limit = { has_house_modifier = dynasty_blood_fortune_modifier_1 }
-				remove_house_modifier = dynasty_blood_fortune_modifier_1
-				add_house_modifier = { modifier = dynasty_blood_fortune_modifier_2 }
+				limit = { has_house_modifier = bm_covenant_fortune_minor_modifier }
+				remove_house_modifier = bm_covenant_fortune_minor_modifier
+				add_house_modifier = { modifier = bm_covenant_fortune_major_modifier }
 			}
 			else_if = {
-				limit = { NOT = { has_house_modifier = dynasty_blood_fortune_modifier_3 } }
-				add_house_modifier = { modifier = dynasty_blood_fortune_modifier_1 }
+				limit = { NOT = { has_house_modifier = bm_covenant_fortune_superior_modifier } }
+				add_house_modifier = { modifier = bm_covenant_fortune_minor_modifier }
 			}
 
 			# Cunning
 			if = {
-				limit = { has_house_modifier = dynasty_blood_cunning_modifier_2 }
-				remove_house_modifier = dynasty_blood_cunning_modifier_2
-				add_house_modifier = { modifier = dynasty_blood_cunning_modifier_3 }
+				limit = { has_house_modifier = bm_covenant_cunning_major_modifier }
+				remove_house_modifier = bm_covenant_cunning_major_modifier
+				add_house_modifier = { modifier = bm_covenant_cunning_superior_modifier }
 			}
 			else_if = {
-				limit = { has_house_modifier = dynasty_blood_cunning_modifier_1 }
-				remove_house_modifier = dynasty_blood_cunning_modifier_1
-				add_house_modifier = { modifier = dynasty_blood_cunning_modifier_2 }
+				limit = { has_house_modifier = bm_covenant_cunning_minor_modifier }
+				remove_house_modifier = bm_covenant_cunning_minor_modifier
+				add_house_modifier = { modifier = bm_covenant_cunning_major_modifier }
 			}
 			else_if = {
-				limit = { NOT = { has_house_modifier = dynasty_blood_cunning_modifier_3 } }
-				add_house_modifier = { modifier = dynasty_blood_cunning_modifier_1 }
+				limit = { NOT = { has_house_modifier = bm_covenant_cunning_superior_modifier } }
+				add_house_modifier = { modifier = bm_covenant_cunning_minor_modifier }
 			}
 
 			# Wisdom
 			if = {
-				limit = { has_house_modifier = dynasty_blood_wisdom_modifier_2 }
-				remove_house_modifier = dynasty_blood_wisdom_modifier_2
-				add_house_modifier = { modifier = dynasty_blood_wisdom_modifier_3 }
+				limit = { has_house_modifier = bm_covenant_wisdom_major_modifier }
+				remove_house_modifier = bm_covenant_wisdom_major_modifier
+				add_house_modifier = { modifier = bm_covenant_wisdom_superior_modifier }
 			}
 			else_if = {
-				limit = { has_house_modifier = dynasty_blood_wisdom_modifier_1 }
-				remove_house_modifier = dynasty_blood_wisdom_modifier_1
-				add_house_modifier = { modifier = dynasty_blood_wisdom_modifier_2 }
+				limit = { has_house_modifier = bm_covenant_wisdom_minor_modifier }
+				remove_house_modifier = bm_covenant_wisdom_minor_modifier
+				add_house_modifier = { modifier = bm_covenant_wisdom_major_modifier }
 			}
 			else_if = {
-				limit = { NOT = { has_house_modifier = dynasty_blood_wisdom_modifier_3 } }
-				add_house_modifier = { modifier = dynasty_blood_wisdom_modifier_1 }
+				limit = { NOT = { has_house_modifier = bm_covenant_wisdom_superior_modifier } }
+				add_house_modifier = { modifier = bm_covenant_wisdom_minor_modifier }
 			}
 
 			# Ancient
 			if = {
-				limit = { has_house_modifier = dynasty_blood_ancient_modifier_2 }
-				remove_house_modifier = dynasty_blood_ancient_modifier_2
-				add_house_modifier = { modifier = dynasty_blood_ancient_modifier_3 }
+				limit = { has_house_modifier = bm_covenant_ancient_major_modifier }
+				remove_house_modifier = bm_covenant_ancient_major_modifier
+				add_house_modifier = { modifier = bm_covenant_ancient_superior_modifier }
 			}
 			else_if = {
-				limit = { has_house_modifier = dynasty_blood_ancient_modifier_1 }
-				remove_house_modifier = dynasty_blood_ancient_modifier_1
-				add_house_modifier = { modifier = dynasty_blood_ancient_modifier_2 }
+				limit = { has_house_modifier = bm_covenant_ancient_minor_modifier }
+				remove_house_modifier = bm_covenant_ancient_minor_modifier
+				add_house_modifier = { modifier = bm_covenant_ancient_major_modifier }
 			}
 			else_if = {
-				limit = { NOT = { has_house_modifier = dynasty_blood_ancient_modifier_3 } }
-				add_house_modifier = { modifier = dynasty_blood_ancient_modifier_1 }
+				limit = { NOT = { has_house_modifier = bm_covenant_ancient_superior_modifier } }
+				add_house_modifier = { modifier = bm_covenant_ancient_minor_modifier }
 			}
 		}
 		trigger_event = { id = bm_debug.0001 }
