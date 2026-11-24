@@ -157,4 +157,12 @@ heal_disease_radiance_cost = {
         limit = { scope:recipient = { has_trait = ergotism } }
         add = cure_illness_cost_radiance
     }
+    if = {
+        limit = { scope:recipient = { has_trait = eunuch_1 } }
+        add = cure_illness_cost_radiance
+    }
+    if = {
+        limit = { scope:recipient = { has_trait = beardless_eunuch } }
+        add = cure_illness_cost_radiance
+    }
 }
