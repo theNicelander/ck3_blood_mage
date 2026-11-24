@@ -34,7 +34,7 @@ PR: #<N>
 - Group supporting work (docs sync, icons/GUI, refactors, renames); nest items when >1. Omit if none. Never list loc or incidental BOM cleanup.
 ```
 
-- **Style**: diff first; net state for fresh reviewer (fold superseded work); **nested bullets only** — break multi-part items into short top-level headlines + indented sub-bullets (1–2 lines/bullet, no wall-of-text bullets); concise; player-facing title `<branch>: <outcome title>` (no raw filenames/PDXscript); no extra sections, test plans, or changelogs.
+- **Style**: diff first; net state for fresh reviewer (fold superseded work); **nested bullets only**: break multi-part items into short top-level headlines + indented sub-bullets (1–2 lines/bullet, no wall-of-text bullets); concise; player-facing title `<branch>: <outcome title>` (no raw filenames/PDXscript); no extra sections, test plans, or changelogs.
 
 ## PR commands
 

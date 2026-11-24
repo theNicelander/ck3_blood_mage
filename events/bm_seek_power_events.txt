@@ -930,7 +930,7 @@ seek_power.011 = {
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = -1.2
-                    min = -22
+                    min = -25
                     max = 30
                 }
                 send_interface_toast = {
@@ -945,7 +945,7 @@ seek_power.011 = {
                 compare_modifier = {
                     value = scope:duel_value
                     multiplier = -0.8
-                    min = -13
+                    min = -15
                     max = 20
                 }
                 send_interface_toast = {
@@ -1033,7 +1033,7 @@ seek_power.006 = {
         }
     }
 
-    # Option 1 (Victor, opponent survived FATALITY = possible): Harvest their vital lifeforce (Major + 25% Superior + 3 Fury XP)
+    # Option 1 (Victor, opponent survived FATALITY = possible): Harvest their vital lifeforce (Major + opponent Prowess% Superior + 3 Fury XP)
     option = {
         name = seek_power.006.a
         trigger = {
@@ -1048,12 +1048,10 @@ seek_power.006 = {
             title = bm_duel_kill_fury_toast
             left_icon = root
             right_icon = scope:duel_opponent
-            bm_add_blood_mage_xp_effect = { TRACK = fury XP = 3 }
-            add_character_modifier = { modifier = lifeforce_modifier_major }
-            random = {
-                chance = 25
-                add_character_modifier = { modifier = lifeforce_modifier_superior }
+            bm_duel_victory_lifeforce_effect = {
+                OPPONENT = scope:duel_opponent
             }
+            bm_add_blood_mage_xp_effect = { TRACK = fury XP = 3 }
         }
     }
 

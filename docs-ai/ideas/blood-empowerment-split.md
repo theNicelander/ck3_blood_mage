@@ -3,8 +3,8 @@
 > **Status:** Speculative / Future Roadmap. The core 6 disciplines (`presence`, `warband`, `prosperity`, `shadows`, `mastery`, `dynasty`) have been consolidated and implemented directly onto `lifestyle_blood_power` in the active codebase. This document preserves the architectural proposal and route-specific track specifications for a future expansion into specialized branch traits (`lifestyle_blood_transcendence` vs. `lifestyle_blood_sovereignty`).
 
 Living proposal for overhauling Blood Power by splitting it into two mutually exclusive sister traits:
-1. **`lifestyle_blood_transcendence`** (The Inner Vessel — Self / Adventurer / Personal Mastery)
-2. **`lifestyle_blood_sovereignty`** (The Outer Dominion — Landed Overlord / Realm Projection)
+1. **`lifestyle_blood_transcendence`** (The Inner Vessel: Self / Adventurer / Personal Mastery)
+2. **`lifestyle_blood_sovereignty`** (The Outer Dominion: Landed Overlord / Realm Projection)
 
 Characters may only possess **one** of these two traits (`opposites = { ... }`), chosen upon first casting the major empowerment ritual. Both traits share the baseline progression and contribute seamlessly toward high-tier spell unlocks (Education Enhancement, Blood Runes).
 

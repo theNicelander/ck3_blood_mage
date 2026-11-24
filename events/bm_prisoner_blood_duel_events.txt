@@ -48,25 +48,8 @@ bm_prisoner_blood_duel.0001 = {
 				title = bm_prisoner_blood_duel_victor_toast
 				left_icon = root
 				right_icon = scope:sc_defender
-				random_list = {
-					0 = {
-						modifier = {
-							add = bm_prisoner_blood_duel_superior_chance_value
-						}
-						desc = bm_prisoner_blood_duel.0001.superior_tt
-						add_character_modifier = {
-							modifier = lifeforce_modifier_superior
-						}
-					}
-					0 = {
-						modifier = {
-							add = bm_prisoner_blood_duel_major_chance_value
-						}
-						desc = bm_prisoner_blood_duel.0001.major_tt
-						add_character_modifier = {
-							modifier = lifeforce_modifier_major
-						}
-					}
+				bm_duel_victory_lifeforce_effect = {
+					OPPONENT = scope:sc_defender
 				}
 				bm_add_blood_mage_xp_effect = {
 					TRACK = fury

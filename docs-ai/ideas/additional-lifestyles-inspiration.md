@@ -1,4 +1,4 @@
-# Additional Lifestyles — Custom Tracks & Mechanic Ideas
+# Additional Lifestyles - Custom Tracks & Mechanic Ideas
 
 > [!NOTE]
 > Source: Steam Workshop Item `3433842378` (`Additional Lifestyles` for CK3 1.20).

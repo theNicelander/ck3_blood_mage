@@ -1,13 +1,6 @@
-﻿# Superior Lifeforce weight on Prisoner Blood Duel victory (victim prowess %, uncapped)
-bm_prisoner_blood_duel_superior_chance_value = {
-	value = scope:sc_defender.prowess
+﻿# Independent Superior Lifeforce chance (%) on real duel victory (opponent prowess %, 0-100)
+bm_duel_superior_chance_value = {
+	value = prowess
 	min = 0
 	max = 100
-}
-
-# Major Lifeforce weight on Prisoner Blood Duel victory (remainder of 100%)
-bm_prisoner_blood_duel_major_chance_value = {
-	value = 100
-	subtract = bm_prisoner_blood_duel_superior_chance_value
-	min = 0
 }

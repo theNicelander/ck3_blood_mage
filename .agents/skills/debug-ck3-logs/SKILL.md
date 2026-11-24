@@ -27,7 +27,7 @@ cp ~/Documents/"Paradox Interactive"/"Crusader Kings III"/logs/debug.log "local-
 
 On startup or runtime crash, inspect the latest folder in `~/Documents/Paradox Interactive/Crusader Kings III/crashes/` (`ls -lt` needs `BypassSandbox: true`; `read_file` reads the files directly):
 
-- `exception.txt`: demangled stack trace (pinpoints engine subsystem — e.g. `NPdxMesh::CMeshType::AddMeshToEntity` / `NAssetFactory::LoadAssetsWithProgress` = 3D `.mesh`/`.asset` crash).
+- `exception.txt`: demangled stack trace (pinpoints engine subsystem, e.g. `NPdxMesh::CMeshType::AddMeshToEntity` / `NAssetFactory::LoadAssetsWithProgress` = 3D `.mesh`/`.asset` crash).
 - `meta.yml`: exact CK3 version + full active mod list (`Mod_1..N`). Cross-reference the last `error.log` lines against active mods to separate Blood Mages from third-party playset mods.
 
 ## 3. Engine error catalog

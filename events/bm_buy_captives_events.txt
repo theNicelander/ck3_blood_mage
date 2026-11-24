@@ -217,7 +217,7 @@ bm_buy_captives.0003 = {
 		trigger_event = bm_buy_captives.0002
 	}
 
-	# Gamble: attempt to haggle (Stewardship duel — no backing out)
+	# Gamble: attempt to haggle (Stewardship duel, no backing out)
 	option = {
 		name = bm_buy_captives.0003.b
 		skill = stewardship
@@ -258,7 +258,7 @@ bm_buy_captives.0003 = {
 					TOAST_TITLE = bm_buy_captives_haggle_fail_toast
 				}
 			}
-			# Critical Failure: broker withdraws captive — cannot buy
+			# Critical Failure: broker withdraws captive; cannot buy
 			20 = {
 				desc = bm_buy_captives_haggle_refused_tt
 				compare_modifier = {
