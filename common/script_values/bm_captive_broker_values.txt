@@ -92,8 +92,10 @@ bm_captive_count_3_weight = {
 	min = 0
 }
 
+bm_captive_base_price_value = 30
+
 bm_captive_price_value = {
-	value = 30
+	value = bm_captive_base_price_value
 	add = {
 		value = prowess
 		multiply = 5

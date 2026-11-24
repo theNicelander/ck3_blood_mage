@@ -1,7 +1,7 @@
 ﻿# Scripted effects for Empower Dynasty Bloodline covenants and surges
 
 # Upgrade House Covenant to next tier
-# Parameter: COVENANT (radiance, fury, bloodline, cunning, wisdom, ancient)
+# Parameter: COVENANT (radiance, fury, fortune, cunning, wisdom, ancient)
 bm_upgrade_house_covenant_effect = {
 	# Tier I -> Tier II
 	if = {
@@ -18,7 +18,7 @@ bm_upgrade_house_covenant_effect = {
 				add_house_modifier = { modifier = dynasty_blood_$COVENANT$_modifier_2 }
 			}
 			add_xp_bm_dynamic = {
-				TRACK = fortune
+				TRACK = $COVENANT$
 				XP = 5
 			}
 		}
@@ -38,7 +38,7 @@ bm_upgrade_house_covenant_effect = {
 				add_house_modifier = { modifier = dynasty_blood_$COVENANT$_modifier_3 }
 			}
 			add_xp_bm_dynamic = {
-				TRACK = fortune
+				TRACK = $COVENANT$
 				XP = 8
 			}
 		}
@@ -54,7 +54,7 @@ bm_upgrade_house_covenant_effect = {
 				add_house_modifier = { modifier = dynasty_blood_$COVENANT$_modifier_1 }
 			}
 			add_xp_bm_dynamic = {
-				TRACK = fortune
+				TRACK = $COVENANT$
 				XP = 3
 			}
 		}
@@ -69,7 +69,7 @@ bm_grant_acolyte_covenant_effect = {
 		title = bm_empower_bloodline_acolyte_toast
 		left_icon = root
 		house = {
-			add_house_modifier = { modifier = dynasty_blood_acolyte_modifier }
+			add_house_modifier = { modifier = bm_covenant_acolyte_modifier }
 		}
 		add_xp_bm_dynamic = {
 			TRACK = fortune

@@ -104,10 +104,6 @@ bm_transmute_lifeforce.0002 = {
 			left_icon = root
 			remove_character_modifier = lifeforce_modifier_major
 			add_character_modifier = { modifier = lifeforce_modifier_radiant }
-			add_xp_bm_dynamic = {
-				TRACK = radiance
-				XP = 2
-			}
 		}
 		ai_chance = {
 			base = 50
@@ -135,10 +131,6 @@ bm_transmute_lifeforce.0002 = {
 			left_icon = root
 			remove_character_modifier = lifeforce_modifier_major
 			add_character_modifier = { modifier = lifeforce_modifier_furious }
-			add_xp_bm_dynamic = {
-				TRACK = fury
-				XP = 2
-			}
 		}
 		ai_chance = {
 			base = 50
@@ -166,10 +158,6 @@ bm_transmute_lifeforce.0002 = {
 			left_icon = root
 			remove_character_modifier = lifeforce_modifier_major
 			add_character_modifier = { modifier = lifeforce_modifier_fortunate }
-			add_xp_bm_dynamic = {
-				TRACK = fortune
-				XP = 2
-			}
 		}
 		ai_chance = {
 			base = 50
@@ -197,10 +185,6 @@ bm_transmute_lifeforce.0002 = {
 			left_icon = root
 			remove_character_modifier = lifeforce_modifier_major
 			add_character_modifier = { modifier = lifeforce_modifier_cunning }
-			add_xp_bm_dynamic = {
-				TRACK = cunning
-				XP = 2
-			}
 		}
 		ai_chance = {
 			base = 50
@@ -228,10 +212,6 @@ bm_transmute_lifeforce.0002 = {
 			left_icon = root
 			remove_character_modifier = lifeforce_modifier_major
 			add_character_modifier = { modifier = lifeforce_modifier_wise }
-			add_xp_bm_dynamic = {
-				TRACK = wisdom
-				XP = 2
-			}
 		}
 		ai_chance = {
 			base = 50
@@ -259,10 +239,6 @@ bm_transmute_lifeforce.0002 = {
 			left_icon = root
 			remove_character_modifier = lifeforce_modifier_major
 			add_character_modifier = { modifier = lifeforce_modifier_ancient }
-			add_xp_bm_dynamic = {
-				TRACK = ancient
-				XP = 1
-			}
 		}
 		ai_chance = {
 			base = 50
