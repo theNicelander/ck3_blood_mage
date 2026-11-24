@@ -15,7 +15,7 @@ Reference table of all actions that consume Minor, Major, or Superior Lifeforce,
 | Split Superior Lifeforce (into 2 Major) | 350 | +2 ancient |
 | Superior Blood Blessing of X | 250 | +6 matching track (wisdom for Ancient) |
 | Grant Superior Lifeforce | 100 | +6 radiance |
-| Covenant of X (Tier III) | 750 | +8 fortune |
+| Covenant of X (Tier III) | 750 | +8 matching track |
 | Heal Deadly Ailment | 100 (50 w/ Superior Drepsottarstafur) | +6 radiance |
 | Ask for Blood Magic (Teacher's Stack) | 250 (paid by non-mage actor) | None |
 
@@ -32,7 +32,7 @@ Reference table of all actions that consume Minor, Major, or Superior Lifeforce,
 | Major Blood Blessing of X | 150 | +4 matching track (wisdom for Ancient) |
 | Empower Blood Mage (Major) | 0 | +4 radiance (caster), +3 wisdom/fortune/fury (target) |
 | Grant Major Lifeforce / Cure Lifedrained | 50 | +4 radiance |
-| Covenant of X (Tier II) | 350 | +5 fortune |
+| Covenant of X (Tier II) | 350 | +5 matching track |
 | Covenant of Initiation | 350 | +5 fortune |
 | Carve Galdrastafir (Stave of X) | 500 | None |
 | Transmute Major Lifeforce (Channel into X Pool) | 50 | +2 matching track (+1 ancient for Ancient Blood) |
@@ -59,7 +59,7 @@ Reference table of all actions that consume Minor, Major, or Superior Lifeforce,
 | Minor Blood Blessing of X | 50 | +2 matching track (wisdom for Ancient) |
 | Empower Blood Mage (Minor) | 0 | +2 radiance (caster), +2 wisdom/fortune/fury (target) |
 | Grant Minor Lifeforce | 25 | +2 radiance |
-| Covenant of X (Tier I) | 150 | +3 fortune |
+| Covenant of X (Tier I) | 150 | +3 matching track |
 | Heal Minor Ailment | 15 (7 w/ Superior Drepsottarstafur) | +2 radiance |
 | Heal Old Age (Minor: -20 XP) | 50 | +2 radiance |
 | Initiate Blood Mage (Minor) | 250 | +1 fortune |
