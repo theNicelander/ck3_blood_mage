@@ -16,7 +16,7 @@ Pure script, loc, gfx; no build. Vanilla ref: `/Users/clarabotet/Petur/ck3-full`
 
 ## Naming, format & tools
 
-- Prefix new files/IDs `bm_` (`bm_<feature>.txt`, `_effect`/`_trigger`, `has_game_rule = bm_<rule>_<setting>`). Rename IDs on rework unless told otherwise.
+- Prefix new files/IDs `bm_` (`bm_<feature>.txt`, `_effect`/`_trigger`, `has_game_rule = bm_<rule>_<setting>`). Mod is in development (no backwards compatibility needed; file names never affect saves, only modifier/script IDs do), but always ASK before renaming existing modifier or file names.
 - `.txt`/`.gui`/`.yml`: UTF-8 **with BOM**, trailing newline, balanced braces; preserve CRLF/indentation/comments.
 - Inspect: `python3 scripts/read_ck3.py {read|block|search}` (handles BOM).
 - Modifiers: allowlist-only (`scripts/modifiers_{character,county,domicile}_allowlist.json`); add verified vanilla via `python3 scripts/check_modifiers.py --add <mod> --scope <character|county|domicile>`.
