@@ -53,7 +53,7 @@ Reference table of all actions that consume Minor, Major, or Superior Lifeforce,
 | --- | --- | --- |
 | Purge Bodily Impurities | 50 | +2 fortune (bad congenital) or +2 radiance (ailment) |
 | Condense Minor Lifeforce (into Major) | 100 | +1 ancient |
-| Inscribe Minor Blood Rune (Self) | 0 | +6 ancient |
+| Inscribe Minor Blood Rune (Self) | 0 | +5 ancient |
 | Inscribe Minor Blood Rune (Other) | 0 | +2 radiance |
 | Lifeforce Attunement (Re-attune; first is free) | 50 | None (grants +1/yr passive on attuned track) |
 | Minor Blood Blessing of X | 50 | +2 matching track (wisdom for Ancient) |
