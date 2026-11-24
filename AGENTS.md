@@ -7,7 +7,7 @@ Pure script, loc, gfx; no build. Vanilla ref: `/Users/clarabotet/Petur/ck3-full`
 - **Zero vanilla overwrites**: modular only. Unprefixed vanilla filename = override; never do by accident.
 - **Earned power**: stats/lifespan cost Lifeforce, piety, sacrifice, risk.
 - **Modifier priority**: 1) All playstyles (attributes, lifestyle XP, fertility/health, traits, stress, army/MaA); 2) Landed rulers (domain limit, prosperity, fascination, building/district cost, taxes); 3) Niche playstyles (adventurers, merchants/trade, domiciles) - secondary, light touch only.
-- **Concise UI**: say "Lifeforce" (not "vitality"), "blood" (not crimson/sanguine), `"Back"` for cancel. Flavour only in narrative `_desc`.
+- **Concise UI**: say "Lifeforce" (not "vitality"), "blood" (not crimson/sanguine), `"Back"` for cancel. Flavour only in narrative `_desc`. Never overexplain self-explanatory effects/costs in hover text (see `localization/AGENTS.md`).
 - **Notification icon**: all `bm_action_*` notifications use `@bm_ancient_discipline_icon!` (Blood Mage signature icon).
 - **Nothing hidden, often unavailable**: keep options visible + greyed (`show_as_unavailable`); hide only if prerequisite unreached or permanently completed/superseded.
 - **Native triggers over `custom_tooltip`**: never wrap standard triggers (`piety`, `piety_level`, `gold`, `has_trait`, `has_character_modifier`, etc.) in `custom_tooltip`.
