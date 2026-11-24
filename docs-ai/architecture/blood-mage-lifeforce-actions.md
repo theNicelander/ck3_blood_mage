@@ -17,6 +17,7 @@ Reference table of all actions that consume Minor, Major, or Superior Lifeforce,
 | Grant Superior Lifeforce | 100 | +6 radiance |
 | Covenant of X (Tier III) | 750 | +8 matching track |
 | Heal Deadly Ailment | 100 (50 w/ Superior Drepsottarstafur) | +6 radiance |
+| Burn Superior Lifeforce | 0 (+300 Piety; 180d CD, Superior exhaustion) | None |
 
 ## major lifeforce
 
@@ -44,6 +45,7 @@ Reference table of all actions that consume Minor, Major, or Superior Lifeforce,
 | Drain Positive Traits | 100 (rank 1/special) / 175 (rank 2, +1 Devotion) / 250 (rank 3) | +3 cunning (+5 rare/special) |
 | Drain Blood Memory | 150 + 50 per existing memory trait | +4 wisdom |
 | Become Blood Cultist | 0 (requires Devotion >= 3) | None |
+| Burn Major Lifeforce | 0 (+150 Piety; 180d CD, Major exhaustion) | None |
 
 ## minor lifeforce
 
@@ -64,3 +66,4 @@ Reference table of all actions that consume Minor, Major, or Superior Lifeforce,
 | Occult Mage Duel | 150 | +3 fury & +3 wisdom (crit) / +2 each (win) / +1 wisdom (loss) |
 | Cast Blood Curse | 50 | +4 cunning (crit) / +2 cunning (win) / +1 cunning (fail) |
 | Blood Distillation (10 X XP -> +5 Ancient) | 50 (Acolyte) / 100 (Mage) | -10 chosen track -> +5 ancient |
+| Burn Minor Lifeforce | 0 (+50 Piety; 180d CD, Minor exhaustion) | None |

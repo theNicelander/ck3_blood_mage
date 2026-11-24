@@ -269,6 +269,27 @@
 				value = 0
 			}
 		}
+
+		# Burn Superior Lifeforce for Piety
+		item = {
+			value = bm_superior_burn_lifeforce
+			current_description = bm_superior_burn_lifeforce
+			localization = bm_superior_burn_lifeforce
+			icon = "gfx/interface/icons/trait_level_tracks/wisdom.dds"
+			is_shown = {
+				is_blood_mage_any_tier_trigger = yes
+			}
+			is_valid = {
+				custom_tooltip = {
+					text = bm_burn_superior_lifeforce_cooldown_tt
+					NOT = { has_character_flag = bm_burn_superior_lifeforce_cooldown }
+				}
+				has_character_modifier = lifeforce_modifier_superior
+			}
+			ai_chance = {
+				value = 0
+			}
+		}
 	}
 
 	effect = {
@@ -353,6 +374,21 @@
 				recipient = root
 			}
 		}
+		else_if = {
+			limit = { scope:bm_superior_burn_lifeforce = yes }
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_superior_decision (burn_lifeforce)"
+			add_character_flag = {
+				flag = bm_burn_superior_lifeforce_cooldown
+				days = 180
+			}
+			send_interface_toast = {
+				type = bm_event_toast_effect_good
+				title = bm_burn_lifeforce_superior_toast
+				left_icon = root
+				blood_magic_used_superior = yes
+				add_piety = 300
+			}
+		}
 		else = {
 			custom_tooltip = bm_cast_blood_magic_superior_decision_tooltip
 		}
@@ -400,7 +436,6 @@ bm_cast_blood_magic_major_decision = {
 	is_valid_showing_failures_only = {
 		has_character_modifier = lifeforce_modifier_major
 		piety_level >= 1
-		piety >= 50
 	}
 
 	widget = {
@@ -616,6 +651,27 @@ bm_cast_blood_magic_major_decision = {
 				value = 0
 			}
 		}
+
+		# Burn Major Lifeforce for Piety
+		item = {
+			value = bm_major_burn_lifeforce
+			current_description = bm_major_burn_lifeforce
+			localization = bm_major_burn_lifeforce
+			icon = "gfx/interface/icons/trait_level_tracks/wisdom.dds"
+			is_shown = {
+				is_blood_mage_any_tier_trigger = yes
+			}
+			is_valid = {
+				custom_tooltip = {
+					text = bm_burn_major_lifeforce_cooldown_tt
+					NOT = { has_character_flag = bm_burn_major_lifeforce_cooldown }
+				}
+				has_character_modifier = lifeforce_modifier_major
+			}
+			ai_chance = {
+				value = 0
+			}
+		}
 	}
 
 	effect = {
@@ -698,6 +754,21 @@ bm_cast_blood_magic_major_decision = {
 				interaction = bm_cast_blood_blessing_interaction
 				actor = root
 				recipient = root
+			}
+		}
+		else_if = {
+			limit = { scope:bm_major_burn_lifeforce = yes }
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (burn_lifeforce)"
+			add_character_flag = {
+				flag = bm_burn_major_lifeforce_cooldown
+				days = 180
+			}
+			send_interface_toast = {
+				type = bm_event_toast_effect_good
+				title = bm_burn_lifeforce_major_toast
+				left_icon = root
+				blood_magic_used_major = yes
+				add_piety = 150
 			}
 		}
 		else = {
@@ -902,6 +973,27 @@ bm_cast_blood_magic_minor_decision = {
 				value = 0
 			}
 		}
+
+		# Burn Minor Lifeforce for Piety
+		item = {
+			value = bm_minor_burn_lifeforce
+			current_description = bm_minor_burn_lifeforce
+			localization = bm_minor_burn_lifeforce
+			icon = "gfx/interface/icons/trait_level_tracks/wisdom.dds"
+			is_shown = {
+				is_blood_mage_any_tier_trigger = yes
+			}
+			is_valid = {
+				custom_tooltip = {
+					text = bm_burn_minor_lifeforce_cooldown_tt
+					NOT = { has_character_flag = bm_burn_minor_lifeforce_cooldown }
+				}
+				has_character_modifier = lifeforce_modifier_minor
+			}
+			ai_chance = {
+				value = 0
+			}
+		}
 	}
 
 	effect = {
@@ -1015,6 +1107,21 @@ bm_cast_blood_magic_minor_decision = {
 				interaction = bm_cast_blood_blessing_interaction
 				actor = root
 				recipient = root
+			}
+		}
+		else_if = {
+			limit = { scope:bm_minor_burn_lifeforce = yes }
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (burn_lifeforce)"
+			add_character_flag = {
+				flag = bm_burn_minor_lifeforce_cooldown
+				days = 180
+			}
+			send_interface_toast = {
+				type = bm_event_toast_effect_good
+				title = bm_burn_lifeforce_minor_toast
+				left_icon = root
+				blood_magic_used_minor = yes
+				add_piety = 50
 			}
 		}
 		else = {
