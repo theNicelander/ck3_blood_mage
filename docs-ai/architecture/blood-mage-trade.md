@@ -8,14 +8,10 @@
 
 ## Blood Mages Trade Budget
 
-- **Do not stack route/goods caps across mod systems**:
-  - `max_trade_goods_on_route = 1`: **1 source only** (`bm_tradition_verbudir`, mirrors vanilla Monsoon tradition).
-  - `max_trade_routes = 1`: **1 source only** (`dynasty_blood_fortune_modifier_3`, mirrors T5 merchant legacy).
-- Give each system a distinct trade lever instead of duplicating caps:
-  - Dynasty/network: `trade_post_limit_add`, `max_trade_markets_on_route`, `monthly_income_from_trade_mult`.
-  - Personal mastery: `trade_expertise_growth_mult`, small `trade_category_all_sell_price_mult` / `trade_category_all_buy_price_mult`, `trade_capacity_add`/`mult`.
-  - Travel/navigation: `trade_route_length_add`/`mult`, `road_construction_speed`.
-  - Martial/escort: `trade_competitiveness_per_knight_add`/`mult`.
+- **Do not stack route/goods caps or scatter trade bloat across core Blood Mage modifiers** (follow root `AGENTS.md` modifier priority: all playstyles > landed rulers > niche playstyles):
+  - `max_trade_goods_on_route = 1`: **1 source only** (`bm_tradition_verbudir`, mirrors vanilla Monsoon tradition; holds the mod's maritime/fishing trade modifiers).
+  - `max_trade_routes = 1`: **1 source only** (`dynasty_blood_fortune_modifier_3`, mirrors T5 merchant legacy; single trade nod on Covenant of Fortune).
+- Keep Blessing of Fortune, Fortunate Lifeforce, and Nábrókarstafur focused on all-playstyle and landed economy rather than merchant/trade modifiers.
 
 ## Formatting & Allowlist Gotchas (`00_gdp_definitions.txt`, `00_trade_definitions.txt`)
 
