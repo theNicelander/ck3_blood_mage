@@ -105,6 +105,18 @@ heal_disease_major_cost = {
         limit = { scope:recipient = { has_trait = depressed_1 } }
         add = cure_illness_cost_major
     }
+    if = {
+        limit = { scope:recipient = { has_trait = lunatic_genetic } }
+        add = cure_illness_cost_major
+    }
+    if = {
+        limit = { scope:recipient = { has_trait = possessed_genetic } }
+        add = cure_illness_cost_major
+    }
+    if = {
+        limit = { scope:recipient = { has_trait = depressed_genetic } }
+        add = cure_illness_cost_major
+    }
 }
 
 heal_disease_radiance_cost = {
@@ -163,6 +175,18 @@ heal_disease_radiance_cost = {
     }
     if = {
         limit = { scope:recipient = { has_trait = beardless_eunuch } }
+        add = cure_illness_cost_radiance
+    }
+    if = {
+        limit = { scope:recipient = { has_trait = bleeder } }
+        add = cure_illness_cost_radiance
+    }
+    if = {
+        limit = { scope:recipient = { has_trait = inbred } }
+        add = cure_illness_cost_radiance
+    }
+    if = {
+        limit = { scope:recipient = { has_trait = infertile } }
         add = cure_illness_cost_radiance
     }
 }

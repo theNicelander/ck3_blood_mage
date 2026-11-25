@@ -23,7 +23,7 @@
 | `events/bm_education_new.txt` | `bm_education_new` | Event `bm_cast_blood_magic_superior.001` | Grants an additional secondary education trait. |
 | `events/bm_faith_conversion_events.txt` | `bm_faith_conversion` | Decision `become_blood_cultist_decision` | Faith conversion grimoire (.0001) converting character and realm to cultural Blóðtrú faith. |
 | `events/bm_geyser_duel_events.txt` | `bm_geyser_duel` | Decision `bm_blood_cultist_become_blood_mage_decision` or `bm_enhance_blood_ritual_decision` | Initiation duel (.0001) against Egill Skallagrímsson in Reykjavik or Tsushima. |
-| `events/bm_heal_ailment_events.txt` | `bm_heal_ailment` | Interaction `bm_heal_ailment` | Individual ailment curing grimoire (.0001) with options across 34 afflictions. |
+| `events/bm_heal_ailment_events.txt` | `bm_heal_ailment` | Interaction `bm_heal_ailment` | Individual ailment curing grimoire (.0001) with options across 40 afflictions. |
 | `events/bm_heal_old_age_events.txt` | `bm_heal_old_age` | Interaction `bm_heal_old_age_trait` | Rejuvenation event (.0001) for 5 degenerative traits (`infirm`, `clouded_eyes`, `fragile_bones`, `withering_mind`, `faltering_heart`), auto-curing traits at <= 20 XP (Minor) or <= 50 XP (Major) and reducing track XP otherwise. |
 | `events/bm_mass_lifedrain.txt` | `bm_mass_lifedrain` | Decision `mass_lifedrain_prisoners_decision` | Mass execution of dungeon prisoners for Lifeforce. |
 | `events/bm_transmute_lifeforce_events.txt` | `bm_transmute_lifeforce` | Decision `bm_transmute_lifeforce_decision` | Transmute Lifeforce event tree (.0001 root -> .0002 Channel Major, .0004 Reclaim Major) converting 1:1 between Major Lifeforce and the 6 specialized reservoirs (`radiant`, `furious`, `fortunate`, `cunning`, `wise`, `ancient`). |
