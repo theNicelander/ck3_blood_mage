@@ -136,12 +136,58 @@ bm_apply_attunement_effect = {
             add_character_modifier = { modifier = $MODIFIER$ }
         }
     }
-    else = {
+        else = {
         send_interface_toast = {
             type = bm_event_toast_effect_good
             title = bm_attune_lifeforce_toast
             left_icon = scope:actor
             add_character_modifier = { modifier = $MODIFIER$ }
+        }
+    }
+}
+
+bm_remove_channel_focus_modifiers_effect = {
+    if = {
+        limit = { has_character_modifier = bm_channel_focus_radiance }
+        remove_character_modifier = bm_channel_focus_radiance
+    }
+    if = {
+        limit = { has_character_modifier = bm_channel_focus_fury }
+        remove_character_modifier = bm_channel_focus_fury
+    }
+    if = {
+        limit = { has_character_modifier = bm_channel_focus_fortune }
+        remove_character_modifier = bm_channel_focus_fortune
+    }
+    if = {
+        limit = { has_character_modifier = bm_channel_focus_cunning }
+        remove_character_modifier = bm_channel_focus_cunning
+    }
+    if = {
+        limit = { has_character_modifier = bm_channel_focus_wisdom }
+        remove_character_modifier = bm_channel_focus_wisdom
+    }
+    if = {
+        limit = { has_character_modifier = bm_channel_focus_ancient }
+        remove_character_modifier = bm_channel_focus_ancient
+    }
+}
+
+bm_apply_channel_focus_effect = {
+    add_character_flag = { flag = bm_channel_focus_cooldown years = 3 }
+    hidden_effect = { bm_remove_channel_focus_modifiers_effect = yes }
+    send_interface_toast = {
+        type = bm_event_toast_effect_good
+        title = bm_channel_focus_toast
+        left_icon = scope:actor
+        blood_magic_used_minor = yes
+        add_character_modifier = {
+            modifier = $MODIFIER$
+            years = 5
+        }
+        bm_add_blood_mage_xp_effect = {
+            TRACK = $TRACK$
+            XP = 2
         }
     }
 }

@@ -893,6 +893,28 @@ bm_cast_blood_magic_minor_decision = {
 			}
 		}
 
+		# Channel Minor Lifeforce (5-year Blood Focus)
+		item = {
+			value = bm_minor_channel_focus
+			current_description = bm_minor_channel_focus
+			localization = bm_minor_channel_focus
+			icon = "gfx/interface/icons/trait_level_tracks/wisdom.dds"
+			is_shown = {
+				is_blood_mage_any_tier_trigger = yes
+			}
+			is_valid = {
+				custom_tooltip = {
+					text = bm_channel_focus_cooldown_tt
+					NOT = { has_character_flag = bm_channel_focus_cooldown }
+				}
+				piety >= 50
+				has_character_modifier = lifeforce_modifier_minor
+			}
+			ai_chance = {
+				value = 0
+			}
+		}
+
 		# Cast Blood Blessing
 		item = {
 			value = bm_minor_blood_blessing
@@ -1036,6 +1058,15 @@ bm_cast_blood_magic_minor_decision = {
 			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (attune)"
 			open_interaction_window = {
 				interaction = bm_attune_lifeforce_interaction
+				actor = root
+				recipient = root
+			}
+		}
+		else_if = {
+			limit = { scope:bm_minor_channel_focus = yes }
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (channel_focus)"
+			open_interaction_window = {
+				interaction = bm_channel_focus_interaction
 				actor = root
 				recipient = root
 			}
