@@ -3,32 +3,32 @@
 
 | Scope | Tokens |
 | --- | ---: |
-| **Always-On (every turn)** | **1,312** |
-| ↳ Core (`AGENTS.md`) | 1,312 |
-| **On-Demand** | **10,362** |
-| ↳ Localized (`**/AGENTS.md`) | 4,910 |
+| **Always-On (every turn)** | **1,490** |
+| ↳ Core (`AGENTS.md`) | 1,490 |
+| **On-Demand** | **10,459** |
+| ↳ Localized (`**/AGENTS.md`) | 4,951 |
 | ↳ Rules (`model_decision`) | 0 |
-| ↳ Skills (`.agents/skills/`) | 5,452 |
-| **Total** | **11,674** |
+| ↳ Skills (`.agents/skills/`) | 5,508 |
+| **Total** | **11,949** |
 
 ## Details per file
 
 | File | Load | Category | Tokens |
 | --- | --- | --- | ---: |
 | `.agents/skills/debug-ck3-logs/SKILL.md` | On-Demand | Skills | 1,562 |
-| `AGENTS.md` | Always-On | Core | 1,312 |
+| `AGENTS.md` | Always-On | Core | 1,490 |
 | `docs-ai/architecture/AGENTS.md` | On-Demand | Localized | 1,271 |
 | `.agents/skills/manage-pr/SKILL.md` | On-Demand | Skills | 813 |
 | `.agents/skills/single-combat/SKILL.md` | On-Demand | Skills | 787 |
 | `.agents/skills/add-icon-asset/SKILL.md` | On-Demand | Skills | 638 |
 | `common/religion/AGENTS.md` | On-Demand | Localized | 558 |
-| `.agents/skills/nice-pr/SKILL.md` | On-Demand | Skills | 529 |
+| `.agents/skills/nice-pr/SKILL.md` | On-Demand | Skills | 550 |
 | `common/character_interactions/AGENTS.md` | On-Demand | Localized | 507 |
 | `common/districts/AGENTS.md` | On-Demand | Localized | 446 |
 | `common/culture/AGENTS.md` | On-Demand | Localized | 440 |
-| `.agents/skills/add-decision-option-widget/SKILL.md` | On-Demand | Skills | 405 |
-| `localization/AGENTS.md` | On-Demand | Localized | 395 |
-| `.agents/skills/add-interaction-send-options/SKILL.md` | On-Demand | Skills | 359 |
+| `localization/AGENTS.md` | On-Demand | Localized | 436 |
+| `.agents/skills/add-decision-option-widget/SKILL.md` | On-Demand | Skills | 423 |
+| `.agents/skills/add-interaction-send-options/SKILL.md` | On-Demand | Skills | 376 |
 | `common/decisions/AGENTS.md` | On-Demand | Localized | 348 |
 | `common/AGENTS.md` | On-Demand | Localized | 295 |
 | `common/traits/AGENTS.md` | On-Demand | Localized | 281 |
