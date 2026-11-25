@@ -9,6 +9,7 @@ Pure script, loc, gfx; no build. Vanilla ref: `/Users/clarabotet/Petur/ck3-full`
 - **Modifier priority**: 1) All playstyles (attributes, lifestyle XP, fertility/health, traits, stress, army/MaA); 2) Landed rulers (domain limit, prosperity, fascination, building/district cost, taxes); 3) Niche playstyles (adventurers, merchants/trade, domiciles) - secondary, light touch only.
 - **Concise UI**: say "Lifeforce" (not "vitality"), "blood" (not crimson/sanguine), `"Back"` for cancel. Flavour only in narrative `_desc`. Never overexplain self-explanatory effects/costs in hover text (see `localization/AGENTS.md`).
 - **Notification icon**: all `bm_action_*` notifications use `@bm_ancient_discipline_icon!` (Blood Mage signature icon).
+- **Default Blood Mage icon**: use `gfx/interface/icons/bm_blood_magic_icon.dds` (shared fiery blood icon) as the default for Blood Mage decisions, events, and interactions when no specific trait/track icon applies.
 - **Nothing hidden, often unavailable**: keep options visible + greyed (`show_as_unavailable`); hide only if prerequisite unreached or permanently completed/superseded.
 - **Native triggers over `custom_tooltip`**: never wrap standard triggers (`piety`, `piety_level`, `gold`, `has_trait`, `has_character_modifier`, etc.) in `custom_tooltip`.
 - **Toasts**: wrap player-facing modifier, trait, XP, stat grants in `send_interface_toast`.

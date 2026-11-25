@@ -154,7 +154,7 @@
 			value = bm_superior_manifest_traits
 			current_description = bm_superior_manifest_traits
 			localization = bm_superior_manifest_traits
-			icon = "gfx/interface/icons/trait_level_tracks/fortune.dds"
+			icon = "gfx/interface/icons/traits/intellect_good_2.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
@@ -197,7 +197,7 @@
 			value = bm_superior_create_blood_golem
 			current_description = bm_superior_create_blood_golem
 			localization = bm_superior_create_blood_golem
-			icon = "gfx/interface/icons/bm_blood_magic_icon.dds"
+			icon = "gfx/interface/icons/trait_level_tracks/fortune.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
@@ -249,33 +249,12 @@
 			}
 		}
 
-		# Cast Blood Blessing
-		item = {
-			value = bm_superior_blood_blessing
-			current_description = bm_superior_blood_blessing
-			localization = bm_superior_blood_blessing
-			icon = "gfx/interface/icons/trait_level_tracks/wisdom.dds"
-			is_shown = {
-				is_blood_mage_any_tier_trigger = yes
-			}
-			is_valid = {
-				custom_tooltip = {
-					text = bm_blessing_cooldown_tt
-					NOT = { has_character_flag = bm_blessing_cooldown }
-				}
-				bm_has_any_upgradeable_blessing_trigger = { CASTER = root TARGET = root }
-			}
-			ai_chance = {
-				value = 0
-			}
-		}
-
 		# Burn Superior Lifeforce for Piety
 		item = {
 			value = bm_superior_burn_lifeforce
 			current_description = bm_superior_burn_lifeforce
 			localization = bm_superior_burn_lifeforce
-			icon = "gfx/interface/icons/trait_level_tracks/wisdom.dds"
+			icon = "gfx/interface/icons/bm_blood_magic_icon.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
@@ -363,15 +342,6 @@
 					TRACK = wisdom
 					XP = 2
 				}
-			}
-		}
-		else_if = {
-			limit = { scope:bm_superior_blood_blessing = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_superior_decision (blood_blessing)"
-			open_interaction_window = {
-				interaction = bm_cast_blood_blessing_interaction
-				actor = root
-				recipient = root
 			}
 		}
 		else_if = {
@@ -600,7 +570,7 @@ bm_cast_blood_magic_major_decision = {
 			value = bm_major_manifest_traits
 			current_description = bm_major_manifest_traits
 			localization = bm_major_manifest_traits
-			icon = "gfx/interface/icons/trait_level_tracks/fortune.dds"
+			icon = "gfx/interface/icons/traits/intellect_good_2.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
@@ -631,33 +601,12 @@ bm_cast_blood_magic_major_decision = {
 			}
 		}
 
-		# Cast Blood Blessing
-		item = {
-			value = bm_major_blood_blessing
-			current_description = bm_major_blood_blessing
-			localization = bm_major_blood_blessing
-			icon = "gfx/interface/icons/trait_level_tracks/wisdom.dds"
-			is_shown = {
-				is_blood_mage_any_tier_trigger = yes
-			}
-			is_valid = {
-				custom_tooltip = {
-					text = bm_blessing_cooldown_tt
-					NOT = { has_character_flag = bm_blessing_cooldown }
-				}
-				bm_has_any_upgradeable_blessing_trigger = { CASTER = root TARGET = root }
-			}
-			ai_chance = {
-				value = 0
-			}
-		}
-
 		# Burn Major Lifeforce for Piety
 		item = {
 			value = bm_major_burn_lifeforce
 			current_description = bm_major_burn_lifeforce
 			localization = bm_major_burn_lifeforce
-			icon = "gfx/interface/icons/trait_level_tracks/wisdom.dds"
+			icon = "gfx/interface/icons/bm_blood_magic_icon.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
@@ -746,15 +695,6 @@ bm_cast_blood_magic_major_decision = {
 			limit = { scope:bm_major_manifest_traits = yes }
 			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (manifest_traits)"
 			trigger_event = { id = bm_channel_manifest_traits.001 }
-		}
-		else_if = {
-			limit = { scope:bm_major_blood_blessing = yes }
-			debug_log = "BloodMageDecision: bm_cast_blood_magic_major_decision (blood_blessing)"
-			open_interaction_window = {
-				interaction = bm_cast_blood_blessing_interaction
-				actor = root
-				recipient = root
-			}
 		}
 		else_if = {
 			limit = { scope:bm_major_burn_lifeforce = yes }
@@ -953,12 +893,34 @@ bm_cast_blood_magic_minor_decision = {
 			}
 		}
 
+		# Channel Minor Lifeforce (5-year Blood Focus)
+		item = {
+			value = bm_minor_channel_focus
+			current_description = bm_minor_channel_focus
+			localization = bm_minor_channel_focus
+			icon = "gfx/interface/icons/trait_level_tracks/wisdom.dds"
+			is_shown = {
+				is_blood_mage_any_tier_trigger = yes
+			}
+			is_valid = {
+				custom_tooltip = {
+					text = bm_channel_focus_cooldown_tt
+					NOT = { has_character_flag = bm_channel_focus_cooldown }
+				}
+				piety >= 50
+				has_character_modifier = lifeforce_modifier_minor
+			}
+			ai_chance = {
+				value = 0
+			}
+		}
+
 		# Cast Blood Blessing
 		item = {
 			value = bm_minor_blood_blessing
 			current_description = bm_minor_blood_blessing
 			localization = bm_minor_blood_blessing
-			icon = "gfx/interface/icons/trait_level_tracks/wisdom.dds"
+			icon = "gfx/interface/icons/trait_level_tracks/radiance.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
@@ -979,7 +941,7 @@ bm_cast_blood_magic_minor_decision = {
 			value = bm_minor_burn_lifeforce
 			current_description = bm_minor_burn_lifeforce
 			localization = bm_minor_burn_lifeforce
-			icon = "gfx/interface/icons/trait_level_tracks/wisdom.dds"
+			icon = "gfx/interface/icons/bm_blood_magic_icon.dds"
 			is_shown = {
 				is_blood_mage_any_tier_trigger = yes
 			}
@@ -1005,7 +967,7 @@ bm_cast_blood_magic_minor_decision = {
 				type = bm_event_toast_effect_good
 				title = bm_purge_impurities_toast
 				left_icon = root
-				remove_character_modifier = lifeforce_modifier_minor
+				blood_magic_used_minor = yes
 				if = {
 					limit = { is_blood_mage_any_tier_trigger = yes }
 					if = {
@@ -1096,6 +1058,15 @@ bm_cast_blood_magic_minor_decision = {
 			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (attune)"
 			open_interaction_window = {
 				interaction = bm_attune_lifeforce_interaction
+				actor = root
+				recipient = root
+			}
+		}
+		else_if = {
+			limit = { scope:bm_minor_channel_focus = yes }
+			debug_log = "BloodMageDecision: bm_cast_blood_magic_minor_decision (channel_focus)"
+			open_interaction_window = {
+				interaction = bm_channel_focus_interaction
 				actor = root
 				recipient = root
 			}

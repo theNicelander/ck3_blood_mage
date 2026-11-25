@@ -7,7 +7,7 @@
   mass_lifedrain_prisoners_decision_desc: "The dungeons are filled with prisoners whose lifeforce pulses like ripe fruit ready to be plucked. Their combined energy could fuel powerful blood magic."
   mass_lifedrain_prisoners_decision_confirm: "Begin the Harvest"
   mass_lifedrain_prisoners_decision_tooltip: "Select which prisoners to drain, converting their life essence into magical power for your own use."
-  mass_lifedrain_prisoners_decision_effect_message: "Begin a blood ritual to harvest the lifeforce of your prisoners and either\n$EFFECT_LIST_BULLET$Drain all prisoners for maximum lifeforce gain\n$EFFECT_LIST_BULLET$Spare those with valuable traits for potential future use"
+  mass_lifedrain_prisoners_decision_effect_message: "Begin a blood ritual to harvest the lifeforce of your prisoners and either\n$EFFECT_LIST_BULLET$Drain all prisoners for maximum lifeforce gain\n$EFFECT_LIST_BULLET$Spare valuable prisoners (family, genetic traits, formidable fighters, Blood Mages, and landed nobles)\n$EFFECT_LIST_BULLET$Non-lethally siphon Minor Lifeforce from eligible prisoners"
 
   # Mass Lifedrain
   bm_mass_lifedrain.001: "The Dungeon Harvest"
@@ -19,7 +19,11 @@
   bm_mass_lifedrain_custom_tooltip_a: "All prisoners will be drained and you gain lifeforce from each prisoner and blood magic experience, but may incur tyranny for unjustified executions."
 
   bm_mass_lifedrain.001.b: "Spare the valuable ones. The rest are fodder."
-  bm_mass_lifedrain_custom_tooltip_b: "Prisoners with valuable traits and close family members will be spared. All others will be drained of their lifeforce."
+  bm_mass_lifedrain_custom_tooltip_b: "Close family, prisoners with valuable genetic traits, formidable warriors (20+ Prowess), Blood Mages, and landed prisoners will be spared. All others will be drained of their lifeforce."
+
+  bm_mass_lifedrain.001.c: "Siphon them lightly and leave them breathing."
+  bm_mass_lifedrain_custom_tooltip_c: "Non-lethally drains Minor Lifeforce from eligible non-family prisoners (20 Piety each), wounding them and setting a 3-month cooldown."
+  bm_mass_minor_siphon_toast: "@bm_ancient_discipline_icon! Prisoners Siphoned"
 
   bm_mass_lifedrain.001.z: "Perhaps another time..."
   bm_mass_lifedrain_custom_tooltip_z: "Cancel the ritual. No prisoners will be harmed, and no lifeforce will be gained."

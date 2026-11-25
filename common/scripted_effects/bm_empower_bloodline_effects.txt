@@ -6,7 +6,7 @@ bm_upgrade_house_covenant_effect = {
 	# Tier I -> Tier II
 	if = {
 		limit = {
-			house = { has_house_modifier = dynasty_blood_$COVENANT$_modifier_1 }
+			house = { has_house_modifier = bm_covenant_$COVENANT$_minor_modifier }
 		}
 		blood_magic_used_major = yes
 		send_interface_toast = {
@@ -14,8 +14,8 @@ bm_upgrade_house_covenant_effect = {
 			title = bm_empower_bloodline_tier_2_toast
 			left_icon = root
 			house = {
-				remove_house_modifier = dynasty_blood_$COVENANT$_modifier_1
-				add_house_modifier = { modifier = dynasty_blood_$COVENANT$_modifier_2 }
+				remove_house_modifier = bm_covenant_$COVENANT$_minor_modifier
+				add_house_modifier = { modifier = bm_covenant_$COVENANT$_major_modifier }
 			}
 			add_xp_bm_dynamic = {
 				TRACK = $COVENANT$
@@ -26,7 +26,7 @@ bm_upgrade_house_covenant_effect = {
 	# Tier II -> Tier III
 	else_if = {
 		limit = {
-			house = { has_house_modifier = dynasty_blood_$COVENANT$_modifier_2 }
+			house = { has_house_modifier = bm_covenant_$COVENANT$_major_modifier }
 		}
 		blood_magic_used_superior = yes
 		send_interface_toast = {
@@ -34,8 +34,8 @@ bm_upgrade_house_covenant_effect = {
 			title = bm_empower_bloodline_tier_3_toast
 			left_icon = root
 			house = {
-				remove_house_modifier = dynasty_blood_$COVENANT$_modifier_2
-				add_house_modifier = { modifier = dynasty_blood_$COVENANT$_modifier_3 }
+				remove_house_modifier = bm_covenant_$COVENANT$_major_modifier
+				add_house_modifier = { modifier = bm_covenant_$COVENANT$_superior_modifier }
 			}
 			add_xp_bm_dynamic = {
 				TRACK = $COVENANT$
@@ -51,7 +51,7 @@ bm_upgrade_house_covenant_effect = {
 			title = bm_empower_bloodline_tier_1_toast
 			left_icon = root
 			house = {
-				add_house_modifier = { modifier = dynasty_blood_$COVENANT$_modifier_1 }
+				add_house_modifier = { modifier = bm_covenant_$COVENANT$_minor_modifier }
 			}
 			add_xp_bm_dynamic = {
 				TRACK = $COVENANT$

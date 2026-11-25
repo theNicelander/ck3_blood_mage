@@ -37,11 +37,12 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 
 - Cast Blood Magic (Minor, Major, Superior) are inline option-list decisions; every spell stays visible, grayed out when unavailable.
 - **Transmute Lifeforce**: Dedicated decision and event chain converting 1:1 between Major Lifeforce and the 6 specialized reservoirs (Radiant, Furious, Fortunate, Cunning, Wise, and Ancient Blood) at 50 Piety without cooldowns.
-- **Minor**: Minor Blood Runes, Cleansing Impurities, Condensation (Minor into Major), and **Lifeforce Attunement** (first attunement is free; changing attunement costs 50 Piety + 1 Minor Lifeforce, 1-year cooldown; choose your yearly lifestyle XP bonus applied January 1st).
+- **Minor**: Minor Blood Runes, Cleansing Impurities (applies Minor exhaustion), Condensation (Minor into Major), **Channel Blood Focus** (1 Minor Lifeforce + 50 Piety, 3-year cooldown; choose a 5-year situational buff in Radiance, Fury, Fortune, Cunning, Wisdom, or Ancient), and **Lifeforce Attunement** (first attunement is free; changing attunement costs 50 Piety + 1 Minor Lifeforce, 1-year cooldown; choose your yearly lifestyle XP bonus applied January 1st).
+- **Mass Lifedrain Prisoners**: Drain all non-family prisoners, spare valuable captives (family, genetic traits, 20+ Prowess warriors, Blood Mages, and landed nobles), or non-lethally siphon Minor Lifeforce from eligible prisoners.
 - **Permanent Tiered Blood Blessings (`Blessing of X`)**: Replaced temporary Bless Blood and Channel Minor Lifeforce with 6 stackable, permanent 3-tier blessings (**Radiance**, **Fortune**, **Fury**, **Cunning**, **Wisdom**, **Ancient**) castable on self (via **Cast Blood Blessing** decision or interaction) and on kin, spouses, knights, councillors, or liege (Minor: 50 Piety + Devotion 1 + Minor Lifeforce; Major: 150 Piety + Devotion 3 + Major Lifeforce; Superior: 250 Piety + Devotion 5 + Superior Lifeforce; 1-year per-target cooldown), with option labels showing the incoming `(Minor)`, `(Major)`, or `(Superior)` rank. Grants `+1/+3/+5` stat, `+5/+10/+15` matching monthly lifestyle XP, and `+5%/+10%/+20%` lifestyle XP gain (**Ancient** grants all-lifestyle XP plus `+5%/+15%/+25%` Fertility and `+2/+4/+8` Fertile Years). **Grant Lifeforce** and **Inscribe Blood Rune** are unified into **Cast Blood Blessing** for non-self targets.
 - **Major**: Condense into Superior Lifeforce, Split into 2 Minor, Education Enhancement, Major Runes, Congenital Manifestation, House Blessing.
 - **Superior**: Blood Golem creation, 5★ Master Educations, Secondary Educations, Split Superior into 2 Major, Capstone Runes.
-- **Current Situation Tips**: Added Current Situation notifications for **You Can Attune to Lifeforce** (opens Cast Minor Blood Magic when unattuned) and **You Can Trait Drain a Prisoner** (opens Trait Drain when holding an eligible prisoner with drainable inheritable traits).
+- **Current Situation Tips**: Added Current Situation notifications for **You Can Attune to Lifeforce**, **You Can Trait Drain a Prisoner**, **You Can Ascend Blood Magic Tier**, and **You Can Carve a Galdrastafir Stave**.
 - **Empower Dynasty Bloodline**: six three-tier House Covenants (Radiance, Fury, Fortune, Cunning, Wisdom, the Ancient) with option labels showing the incoming `(Minor)`, `(Major)`, or `(Superior)` rank, granting monthly Piety (+0.1/+0.3/+0.5), Life Expectancy (+2/+4/+6; +2/+4/+8 for Ancient), monthly Lifestyle XP (+2/+4/+6 in matching tree, +1/+2/+4 all-lifestyle for Ancient), skill, and +1 attribute per Devotion at Tier 2 and Tier 3 alongside balanced house-wide bonuses (Men-at-Arms, army damage, speed, domain limit, opinion, legitimacy mult, monthly Piety per knight, and knight effectiveness per Prowess/Learning); active covenants grant 0.5/1.0/1.5 avg XP per year (Tier I: 50% +1; Tier II: 100% +1; Tier III: 100% +1 & 50% +1) in the matching Blood Mage track for living kin. Includes the one-off **Covenant of Initiation** (350 Piety + Major Lifeforce, Devotion 5+, Blood Mage/Archmage), granting +1 monthly Piety and allowing adult house members of Devotion 3+ to become Blood Mage Acolytes for 250 Piety.
 - Education advancement needs Devotion Level 1+/2+/3+/4+ for 1★→2★ … 4★→5★; only Superior magic (5★, Embrace New Education) costs Devotion or needs 1000 Piety plus Superior Lifeforce.
 - **Heal Ailment**: cures up to 32 ailments, purges all 11 stress vices (−50 Stress), and treats old-age traits (Minor: 1 Minor Lifeforce + 50 Piety; Major tier for deeper rejuvenation).
@@ -54,7 +55,8 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 
 - *Seek Power* became **Go on a Blood Hunt**, open to Blood Mages; grayed out while travelling, in an activity, imprisoned or incapable.
 - Cooldown: 1 year (halved to 6 months with Superior Vegvísir).
-- Encounters scale with Prowess: Beast's Lair, Blood in the Embers, Edge of the Woods, Blood Rite, Stag's Last Stand, Blades on the Lonely Road, Cairn of Forgotten Carnage.
+- Encounters scale with Prowess (Beast's Lair, Blood in the Embers, Edge of the Woods, Blood Rite, Stag's Last Stand, Blades on the Lonely Road, Cairn of Forgotten Carnage) plus non-martial encounters for Learning, Intrigue, Diplomacy, and Stewardship builds (Sunken Blood Shrine, Plague-Touched Hermit, Rival Coven's Cache).
+- Emergent interpersonal, overdrain backlash, rival mage, golem maintenance, and acolyte mentorship events pulse during play, alongside one-time Age 85 (+5 XP) and Age 100 (+10 XP) track mastery milestones.
 - Roughly 60% success at skill 20, 70% at 25, 80% at 30, 95% at 40+; peaceful options exist for most encounters.
 - Road encounter can include a sworn escort champion to duel (Prowess 25+).
 
@@ -137,6 +139,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 ## Bugfixes
 
 - Fixed Blood Mirror ascension duel tooltips, deferred tier elevation/defeat effects to the conclusion button, and scaled the reflection's stats to match the player (+5/+10 Prowess).
+- Fixed Empower Dynasty House Covenants failing to grant house modifiers due to outdated modifier IDs.
 - Fixed supernatural appearance game rule (white hair and white eyes) not applying to Blood Acolytes or Blood Archmages.
 - Ascension duel defeat effects (exhaustion, wounds, XP penalty) display natively in toast notification.
 - Reverse Lifedrain: self-targeting works for characters drained by Bleed Own Veins.
@@ -152,6 +155,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 
 ## Version history
 
+- v1.21.9: Fix Empower Dynasty house covenants, add Channel Focus, Age 85/100 milestones, 4 events, 3 hunts, alerts, and 6 heals.
 - v1.21.7: Unify single combat duel victory Lifeforce rewards (+1 Major + opponent's Prowess% chance for +1 Superior) across Prisoner Blood Pit Duel, Blood Hunt duels, and lethal single combat kills (Blood Sparring Ring remains Major-only); trim 1.21 trade bloat from Blessing of Fortune, Covenant of Fortune (keeping +1 Max Trade Routes at Tier III), Fortunate Lifeforce, and Nábrókarstafur.
 - v1.21.6: Replace Cull Champion with Prisoner Blood Pit Duel in Blood Drain (uncapped Prowess% Superior Lifeforce on win) and add Seek Captive Brokers decision (Stewardship-scaled 1–3 captives with Prowess and drainable-trait pricing).
 - v1.21.5: Consolidate Blood Drain & Cast Blood Blessing, remove Anoint Heir, equalise interaction XP (seal Ancient leak, lift Fury & Wisdom).

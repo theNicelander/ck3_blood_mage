@@ -2,16 +2,16 @@
 
 bm_can_upgrade_covenant_trigger = {
 	$ACTOR$ = {
-		NOT = { house ?= { has_house_modifier = dynasty_blood_$COVENANT$_modifier_3 } }
+		NOT = { house ?= { has_house_modifier = bm_covenant_$COVENANT$_superior_modifier } }
 		trigger_if = {
-			limit = { house ?= { has_house_modifier = dynasty_blood_$COVENANT$_modifier_1 } }
+			limit = { house ?= { has_house_modifier = bm_covenant_$COVENANT$_minor_modifier } }
 			is_blood_mage_tier_2_or_higher_trigger = yes
 			piety_level >= 2
 			piety >= 350
 			has_character_modifier = lifeforce_modifier_major
 		}
 		trigger_else_if = {
-			limit = { house ?= { has_house_modifier = dynasty_blood_$COVENANT$_modifier_2 } }
+			limit = { house ?= { has_house_modifier = bm_covenant_$COVENANT$_major_modifier } }
 			is_blood_mage_archmage_trigger = yes
 			piety_level >= 3
 			piety >= 750

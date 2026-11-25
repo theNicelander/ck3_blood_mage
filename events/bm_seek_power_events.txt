@@ -78,6 +78,18 @@ seek_power.001 = {
                     }
                     trigger_event = { id = seek_power.004 }
                 }
+                15 = {
+                    desc = seek_power.duel.sunken_shrine
+                    trigger_event = { id = seek_power.012 }
+                }
+                15 = {
+                    desc = seek_power.duel.plague_hermit
+                    trigger_event = { id = seek_power.013 }
+                }
+                15 = {
+                    desc = seek_power.duel.coven_cache
+                    trigger_event = { id = seek_power.014 }
+                }
             }
         }
     }
@@ -969,6 +981,299 @@ seek_power.011 = {
             add_character_modifier = { modifier = lifeforce_modifier_minor }
             add_piety = 50
             add_shared_bm_bk_xp = { TRACK = wisdom XP = 3 }
+        }
+    }
+}
+
+# The Sunken Blood Shrine (Learning Encounter)
+seek_power.012 = {
+    type = character_event
+    title = seek_power.012.title
+    desc = seek_power.012.desc
+    theme = hunt_activity
+    override_icon = {
+        reference = "gfx/interface/icons/bm_blood_magic_icon.dds"
+    }
+
+    left_portrait = {
+        character = root
+        animation = personality_rational
+    }
+
+    # Option A: Decipher the carved blood-runes
+    option = {
+        name = seek_power.012.a
+        ai_chance = { base = 60 }
+        duel = {
+            skill = learning
+            value = 20
+            35 = {
+                desc = seek_power.duel.shrine_decipher
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 1.5
+                    min = -30
+                    max = 40
+                }
+                send_interface_toast = {
+                    type = bm_event_toast_effect_good
+                    title = seek_power.toast.shrine_decipher
+                    left_icon = this
+                    add_character_modifier = { modifier = lifeforce_modifier_major }
+                    bm_add_blood_mage_xp_effect = { TRACK = ancient XP = 2 }
+                    bm_add_blood_mage_xp_effect = { TRACK = wisdom XP = 2 }
+                }
+            }
+            25 = {
+                desc = seek_power.duel.shrine_fragment
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 0.5
+                    min = -15
+                    max = 15
+                }
+                send_interface_toast = {
+                    title = seek_power.toast.shrine_fragment
+                    left_icon = this
+                    add_character_modifier = { modifier = lifeforce_modifier_minor }
+                    add_stress = 15
+                    bm_add_blood_mage_xp_effect = { TRACK = wisdom XP = 2 }
+                }
+            }
+            25 = {
+                desc = seek_power.duel.shrine_fail
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = -1.2
+                    min = -25
+                    max = 30
+                }
+                send_interface_toast = {
+                    title = seek_power.toast.shrine_fail
+                    left_icon = this
+                    add_stress = 10
+                }
+            }
+            15 = {
+                desc = seek_power.duel.shrine_backlash
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = -0.8
+                    min = -15
+                    max = 20
+                }
+                send_interface_toast = {
+                    type = bm_event_toast_effect_bad
+                    title = seek_power.toast.shrine_backlash
+                    left_icon = this
+                    temporary_negative_lifeforce_effect_minor = yes
+                    add_stress = 20
+                }
+            }
+        }
+    }
+
+    # Option B: Gather residual ichor from the font
+    option = {
+        name = seek_power.012.b
+        ai_chance = { base = 40 }
+        send_interface_toast = {
+            title = seek_power.toast.shrine_font
+            left_icon = this
+            add_character_modifier = { modifier = lifeforce_modifier_minor }
+            bm_add_blood_mage_xp_effect = { TRACK = ancient XP = 1 }
+        }
+    }
+}
+
+# The Plague-Touched Hermit (Learning/Diplomacy vs Intrigue/Learning Encounter)
+seek_power.013 = {
+    type = character_event
+    title = seek_power.013.title
+    desc = seek_power.013.desc
+    theme = hunt_activity
+    override_icon = {
+        reference = "gfx/interface/icons/bm_blood_magic_icon.dds"
+    }
+
+    left_portrait = {
+        character = root
+        animation = personality_compassionate
+    }
+
+    # Option A: Ease their fever and glean lore
+    option = {
+        name = seek_power.013.a
+        ai_chance = { base = 55 }
+        duel = {
+            skills = { learning diplomacy }
+            value = 20
+            60 = {
+                desc = seek_power.duel.hermit_heal_win
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 1.5
+                    min = -35
+                    max = 35
+                }
+                send_interface_toast = {
+                    type = bm_event_toast_effect_good
+                    title = seek_power.toast.hermit_heal_win
+                    left_icon = this
+                    add_character_modifier = { modifier = lifeforce_modifier_minor }
+                    add_piety = 50
+                    bm_add_blood_mage_xp_effect = { TRACK = radiance XP = 3 }
+                }
+            }
+            40 = {
+                desc = seek_power.duel.hermit_heal_fail
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = -1.5
+                    min = -35
+                    max = 35
+                }
+                send_interface_toast = {
+                    title = seek_power.toast.hermit_heal_fail
+                    left_icon = this
+                    add_stress = 15
+                    bm_add_blood_mage_xp_effect = { TRACK = radiance XP = 1 }
+                }
+            }
+        }
+    }
+
+    # Option B: Siphon their lingering vitality by force
+    option = {
+        name = seek_power.013.b
+        ai_chance = { base = 45 }
+        duel = {
+            skills = { intrigue learning }
+            value = 20
+            55 = {
+                desc = seek_power.duel.hermit_siphon_win
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 1.5
+                    min = -35
+                    max = 35
+                }
+                send_interface_toast = {
+                    type = bm_event_toast_effect_good
+                    title = seek_power.toast.hermit_siphon_win
+                    left_icon = this
+                    add_character_modifier = { modifier = lifeforce_modifier_major }
+                    bm_add_blood_mage_xp_effect = { TRACK = cunning XP = 3 }
+                }
+            }
+            45 = {
+                desc = seek_power.duel.hermit_siphon_fail
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = -1.5
+                    min = -35
+                    max = 35
+                }
+                send_interface_toast = {
+                    type = bm_event_toast_effect_bad
+                    title = seek_power.toast.hermit_siphon_fail
+                    left_icon = this
+                    if = {
+                        limit = { NOT = { has_trait = ill } }
+                        add_trait = ill
+                    }
+                    add_stress = 15
+                    bm_add_blood_mage_xp_effect = { TRACK = cunning XP = 1 }
+                }
+            }
+        }
+    }
+}
+
+# Rival Coven's Cache (Intrigue/Stewardship Encounter)
+seek_power.014 = {
+    type = character_event
+    title = seek_power.014.title
+    desc = seek_power.014.desc
+    theme = hunt_activity
+    override_icon = {
+        reference = "gfx/interface/icons/bm_blood_magic_icon.dds"
+    }
+
+    left_portrait = {
+        character = root
+        animation = scheme
+    }
+
+    # Option A: Crack the blood-wards and loot the cache
+    option = {
+        name = seek_power.014.a
+        ai_chance = { base = 60 }
+        duel = {
+            skills = { intrigue stewardship }
+            value = 20
+            45 = {
+                desc = seek_power.duel.cache_loot_win
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 1.5
+                    min = -30
+                    max = 40
+                }
+                send_interface_toast = {
+                    type = bm_event_toast_effect_good
+                    title = seek_power.toast.cache_loot_win
+                    left_icon = this
+                    add_character_modifier = { modifier = lifeforce_modifier_major }
+                    add_gold = 40
+                    bm_add_blood_mage_xp_effect = { TRACK = cunning XP = 3 }
+                }
+            }
+            25 = {
+                desc = seek_power.duel.cache_loot_mixed
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 0.5
+                    min = -15
+                    max = 15
+                }
+                send_interface_toast = {
+                    title = seek_power.toast.cache_loot_mixed
+                    left_icon = this
+                    add_character_modifier = { modifier = lifeforce_modifier_minor }
+                    add_gold = 15
+                    increase_wounds_no_death_effect = { REASON = fight }
+                    bm_add_blood_mage_xp_effect = { TRACK = fortune XP = 2 }
+                }
+            }
+            30 = {
+                desc = seek_power.duel.cache_loot_fail
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = -1.5
+                    min = -30
+                    max = 35
+                }
+                send_interface_toast = {
+                    type = bm_event_toast_effect_bad
+                    title = seek_power.toast.cache_loot_fail
+                    left_icon = this
+                    increase_wounds_no_death_effect = { REASON = fight }
+                    add_stress = 20
+                }
+            }
+        }
+    }
+
+    # Option B: Pocket only the unwarded coin
+    option = {
+        name = seek_power.014.b
+        ai_chance = { base = 40 }
+        send_interface_toast = {
+            title = seek_power.toast.cache_coin
+            left_icon = this
+            add_gold = 25
+            bm_add_blood_mage_xp_effect = { TRACK = fortune XP = 2 }
         }
     }
 }
