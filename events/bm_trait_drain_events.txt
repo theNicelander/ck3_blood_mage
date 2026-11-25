@@ -190,7 +190,6 @@ bm_trait_drain.001 = {
     option = {
         name = bm_trait_drain.001.e
         trigger = {
-            is_blood_mage_tier_2_or_higher_trigger = yes
             scope:recipient = { has_trait = fecund }
             NOT = { has_trait = fecund }
         }
@@ -257,7 +256,6 @@ bm_trait_drain.001 = {
     option = {
         name = bm_trait_drain.001.f
         trigger = {
-            is_blood_mage_tier_2_or_higher_trigger = yes
             scope:recipient = { has_trait = giant }
             NOT = { has_trait = giant }
         }
@@ -323,7 +321,6 @@ bm_trait_drain.001 = {
     option = {
         name = bm_trait_drain.001.g
         trigger = {
-            is_blood_mage_tier_2_or_higher_trigger = yes
             scope:recipient = { has_trait = pure_blooded }
             NOT = { has_trait = pure_blooded }
         }
