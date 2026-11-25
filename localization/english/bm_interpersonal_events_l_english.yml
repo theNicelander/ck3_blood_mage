@@ -6,10 +6,6 @@
  bm_golem_aegis_modifier_desc: "A blood golem stands as a tireless guardian, deflecting hostile blades and foiling schemes."
  bm_siphoned_golem_modifier: "Siphoned Golem Core"
  bm_siphoned_golem_modifier_desc: "Excess ichor was drawn from the golem's core to empower its master, temporarily diminishing its physical force."
- bm_detached_centuries_modifier: "Detached Across Centuries"
- bm_detached_centuries_modifier_desc: "Long outliving mortal generations dulls daily anxieties while creating cold distance at court."
- bm_grief_fury_modifier: "Grief Forged to Fury"
- bm_grief_fury_modifier_desc: "Mortal sorrow burns cleanly into lethal combat intensity."
  bm_reinforced_golem_modifier: "Reinforced Golem Bindings"
  bm_reinforced_golem_modifier_desc: "Fresh blood runes mend fractures in the construct's frame, sharpening its force and stability."
 
@@ -79,15 +75,16 @@
  bm_interpersonal_events.0006.c: "Burn Minor Lifeforce to steady your veins"
  bm_interpersonal_events.0006.c.toast: "@bm_ancient_discipline_icon! Stabilized Overdrained Vessels"
 
- # Event 7: The Weight of Centuries
- bm_interpersonal_events.0007.t: "The Weight of Centuries"
- bm_interpersonal_events.0007.desc: "Candlelight catches the silver in the mirror, yet my limbs still move with unnatural grace. Decades stack behind me like headstones; faces of lovers and children I buried long ago blur together into quiet ash."
- bm_interpersonal_events.0007.a: "Accept the quiet distance of age"
- bm_interpersonal_events.0007.a.toast: "@bm_ancient_discipline_icon! Embraced Detachment"
- bm_interpersonal_events.0007.b: "Anchor yourself to [anchor.GetFirstName]"
- bm_interpersonal_events.0007.b.toast: "@bm_ancient_discipline_icon! Renewed Mortal Bonds with [anchor.GetFirstName]"
- bm_interpersonal_events.0007.c: "Pour old grief into martial fury"
- bm_interpersonal_events.0007.c.toast: "@bm_ancient_discipline_icon! Forged Grief into Fury"
+ # Event 7: Weight of Eighty-Five Winters (Age 85+ Milestone)
+ bm_interpersonal_events.0007.t: "Eighty-Five Winters in the Blood"
+ bm_interpersonal_events.0007.desc: "Eighty-five winters have passed without breaking your stride. Decades of practiced rites and quiet mastery now settle into deliberate focus, ready to deepen whichever Blood Magic discipline you choose."
+ bm_interpersonal_events.0007.a: "Deepen Ancient mastery (+5 Ancient XP)"
+ bm_interpersonal_events.0007.b: "Deepen Wisdom (+5 Wisdom XP)"
+ bm_interpersonal_events.0007.c: "Deepen Fortune (+5 Fortune XP)"
+ bm_interpersonal_events.0007.d: "Deepen Radiance (+5 Radiance XP)"
+ bm_interpersonal_events.0007.e: "Deepen Cunning (+5 Cunning XP)"
+ bm_interpersonal_events.0007.f: "Deepen Fury (+5 Fury XP)"
+ bm_interpersonal_events.0007.toast: "@bm_ancient_discipline_icon! Eighty-Five Winters Mastered"
 
  # Event 8: A Challenger in Crimson
  bm_interpersonal_events.0008.t: "A Challenger in Crimson"
@@ -126,3 +123,14 @@
  bm_interpersonal_events.0010.b.toast: "@bm_ancient_discipline_icon! Tutored [acolyte.GetFirstName]"
  bm_interpersonal_events.0010.c: "Infuse their blood with Major Lifeforce"
  bm_interpersonal_events.0010.c.toast: "@bm_ancient_discipline_icon! Accelerated [acolyte.GetFirstName]'s Mastery"
+
+ # Event 11: A Century in Crimson (Age 100+ Milestone)
+ bm_interpersonal_events.0011.t: "A Century in Crimson"
+ bm_interpersonal_events.0011.desc: "A full century has passed beneath your reign while mortal contemporaries turned to dust. Standing beyond ordinary age, you gather a century of hard-won blood lore and pour it into one chosen discipline."
+ bm_interpersonal_events.0011.a: "Master Ancient lore (+10 Ancient XP)"
+ bm_interpersonal_events.0011.b: "Master Wisdom (+10 Wisdom XP)"
+ bm_interpersonal_events.0011.c: "Master Fortune (+10 Fortune XP)"
+ bm_interpersonal_events.0011.d: "Master Radiance (+10 Radiance XP)"
+ bm_interpersonal_events.0011.e: "Master Cunning (+10 Cunning XP)"
+ bm_interpersonal_events.0011.f: "Master Fury (+10 Fury XP)"
+ bm_interpersonal_events.0011.toast: "@bm_ancient_discipline_icon! A Century Mastered"

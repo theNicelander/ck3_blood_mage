@@ -11,7 +11,6 @@
 | --- | --- | --- | --- |
 | `events/bm_ascension_duel_events.txt` | `bm_ascension_duel` | Decision `bm_elevate_blood_mage_tier_decision` | Non-lethal Blood Mirror duel against self-reflection to ascend Blood Mage tier. |
 | `events/bm_bestow_traits_events.txt` | `bm_bestow_traits` | Interaction `bm_bestow_traits_interaction` | Bestows congenital/physical traits to spouse or dynasty kin. |
-| `events/bm_blood_conclave_events.txt` | `bm_blood_conclave` | Decision `bm_blood_conclave_decision` | Convene a Blood Conclave event (`.0001`) resolving shared study, Lifeforce pooling, or communion with 15% disruption duel. |
 | `events/bm_blood_golem_events.txt` | `blood_golem` | Decision option `bm_superior_create_blood_golem` (`bm_cast_blood_magic_superior_decision`) | Golem crafting outcome (`.001`) and repeatable trait-shaping Learning duels (`.002`). |
 | `events/bm_buy_captives_events.txt` | `bm_buy_captives` | Decision `bm_buy_captives_decision` | Captive broker purchase and haggle events (`.0001`–`.0003`). |
 | `events/bm_channel_manifest_traits_events.txt` | `bm_channel_manifest_traits` | Decision options `bm_major_manifest_traits` / `bm_superior_manifest_traits` (`bm_cast_blood_magic.txt`) | Learning self-duel to manifest/upgrade congenital traits (Ranks 1–3 in `.001` vs. Apex Ranks 4–5 in `.002`). |
@@ -30,8 +29,9 @@
 | `events/bm_ritual_spar_events.txt` | `bm_ritual_spar_events` | Decision `bm_ritual_spar_decision` | Blood Sparring Ring partner selection and SCE bout outcome. |
 | `events/bm_seek_power_events.txt` | `seek_power` | Decision `seek_power_decision` | Blood Hunt event chain (`.001` dispatcher, martial encounters `.002`–`.011`, non-martial encounters `.012` Sunken Blood Shrine, `.013` Plague-Touched Hermit, `.014` Rival Coven's Cache, Single Combat output `.006`, invalidation `.007`). |
 | `events/bm_trait_drain_events.txt` | `bm_trait_drain` | Interaction `bm_blood_drain_interaction` (`drain_traits`) | Siphons positive congenital traits from prisoners via duel. |
+| `events/bm_transmute_lifeforce_events.txt` | `bm_transmute_lifeforce` | Decision `bm_transmute_lifeforce_decision` | Transmute Lifeforce event tree (.0001 root -> .0002 Channel Major, .0004 Reclaim Major) converting 1:1 between Major Lifeforce and the 6 specialized reservoirs (`radiant`, `furious`, `fortunate`, `cunning`, `wise`, `ancient`). |
 | `events/bm_yearly_events.txt` | `blood_mage_yearly_events` | Yearly pulse on-action | .001: +1 ancient & guaranteed attunement XP (+2 with Superior **Hulinhjálmur**). .002: bloodline dynasty rolls. .003: rune lifeforce rolls. |
-| `events/bm_interpersonal_events.txt` | `bm_interpersonal_events` | Yearly interpersonal pulse & battle victory on-action | 10 narrative & earned-risk events (`.0001` lover/spouse, `.0002` child/ward fever, `.0003` post-battle Red Banquet, `.0004` golem aegis/honing/siphoning, `.0005` snooping courtier, `.0006` Red Thirst overdrain/exhaustion, `.0007` Weight of Centuries 85+, `.0008` Challenger in Crimson, `.0009` Fractured Clay golem maintenance, `.0010` Eager Acolyte mentorship). |
+| `events/bm_interpersonal_events.txt` | `bm_interpersonal_events` | Yearly pulses & battle victory on-action | 11 narrative, milestone & earned-risk events (`.0001` lover/spouse, `.0002` child/ward fever, `.0003` post-battle Red Banquet, `.0004` golem aegis/honing/siphoning, `.0005` snooping courtier, `.0006` Red Thirst overdrain/exhaustion, `.0007` Age 85+ +5 XP milestone, `.0008` Challenger in Crimson, `.0009` Fractured Clay golem maintenance, `.0010` Eager Acolyte mentorship, `.0011` Age 100+ +10 XP milestone). |
 
 ## Key Mechanics
 

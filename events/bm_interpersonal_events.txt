@@ -723,9 +723,6 @@ bm_interpersonal_events.0006 = {
 						TRACK = cunning
 						XP = 2
 					}
-					scope:prey = {
-						add_character_modifier = { modifier = lifedrained_modifier }
-					}
 				}
 			}
 			40 = {
@@ -779,150 +776,101 @@ bm_interpersonal_events.0006 = {
 	}
 }
 
-# Event 7: The Weight of Centuries (Elder Blood Mage 85+)
+# Event 7: Weight of Eighty-Five Winters (Age 85+ Track Milestone)
 bm_interpersonal_events.0007 = {
 	type = character_event
 	title = bm_interpersonal_events.0007.t
 	desc = bm_interpersonal_events.0007.desc
-	theme = family
+	theme = learning
 	override_icon = {
 		reference = "gfx/interface/icons/bm_blood_magic_icon.dds"
 	}
 	left_portrait = {
 		character = root
-		animation = sadness
-	}
-	right_portrait = {
-		trigger = { exists = scope:anchor }
-		character = scope:anchor
-		animation = admiration
+		animation = personality_rational
 	}
 
 	trigger = {
+		is_ai = no
 		is_blood_mage_any_tier_trigger = yes
 		age >= 85
-		OR = {
-			any_child = {
-				even_if_dead = yes
-				is_alive = no
-			}
-			any_spouse = {
-				even_if_dead = yes
-				is_alive = no
-			}
-		}
+		NOT = { has_character_flag = bm_age_85_milestone_done }
 	}
 
 	immediate = {
-		add_character_flag = { flag = bm_interpersonal_event_cooldown years = 3 }
-		if = {
-			limit = {
-				exists = primary_heir
-				primary_heir = {
-					is_alive = yes
-					NOT = { this = root }
-				}
-			}
-			primary_heir = { save_scope_as = anchor }
-		}
-		else_if = {
-			limit = {
-				any_relation = {
-					type = lover
-					is_alive = yes
-				}
-			}
-			random_relation = {
-				type = lover
-				limit = { is_alive = yes }
-				save_scope_as = anchor
-			}
-		}
-		else_if = {
-			limit = {
-				any_spouse = { is_alive = yes }
-			}
-			random_spouse = {
-				limit = { is_alive = yes }
-				save_scope_as = anchor
-			}
-		}
-		else_if = {
-			limit = {
-				any_child = { is_alive = yes }
-			}
-			random_child = {
-				limit = { is_alive = yes }
-				save_scope_as = anchor
-			}
-		}
+		add_character_flag = bm_age_85_milestone_done
 	}
 
-	# Option A: Embrace cold detachment
+	# Option A: Ancient
 	option = {
 		name = bm_interpersonal_events.0007.a
 		send_interface_toast = {
-			title = bm_interpersonal_events.0007.a.toast
+			type = bm_event_toast_effect_good
+			title = bm_interpersonal_events.0007.toast
 			left_icon = root
-			bm_add_blood_mage_xp_effect = {
-				TRACK = ancient
-				XP = 4
-			}
-			add_stress = -20
-			add_character_modifier = {
-				modifier = bm_detached_centuries_modifier
-				years = 3
-			}
+			bm_add_blood_mage_xp_effect = { TRACK = ancient XP = 5 }
 		}
-		ai_chance = { base = 35 }
+		ai_chance = { base = 20 }
 	}
 
-	# Option B: Anchor to a living heir or loved one
+	# Option B: Wisdom
 	option = {
 		name = bm_interpersonal_events.0007.b
-		trigger = {
-			exists = scope:anchor
-		}
-		show_as_unavailable = {
-			always = yes
-		}
 		send_interface_toast = {
-			title = bm_interpersonal_events.0007.b.toast
+			type = bm_event_toast_effect_good
+			title = bm_interpersonal_events.0007.toast
 			left_icon = root
-			right_icon = scope:anchor
-			scope:anchor = {
-				add_opinion = {
-					target = root
-					modifier = magic_opinion_positive
-					opinion = 30
-				}
-			}
-			bm_add_blood_mage_xp_effect = {
-				TRACK = radiance
-				XP = 2
-			}
-			add_stress = -15
+			bm_add_blood_mage_xp_effect = { TRACK = wisdom XP = 5 }
 		}
-		ai_chance = { base = 40 }
+		ai_chance = { base = 20 }
 	}
 
-	# Option C: Pour grief into fury
+	# Option C: Fortune
 	option = {
 		name = bm_interpersonal_events.0007.c
 		send_interface_toast = {
-			title = bm_interpersonal_events.0007.c.toast
+			type = bm_event_toast_effect_good
+			title = bm_interpersonal_events.0007.toast
 			left_icon = root
-			bm_add_blood_mage_xp_effect = {
-				TRACK = fury
-				XP = 3
-			}
-			add_stress = 15
-			add_character_modifier = {
-				modifier = bm_grief_fury_modifier
-				years = 3
-			}
+			bm_add_blood_mage_xp_effect = { TRACK = fortune XP = 5 }
 		}
-		ai_chance = { base = 25 }
+		ai_chance = { base = 15 }
+	}
+
+	# Option D: Radiance
+	option = {
+		name = bm_interpersonal_events.0007.d
+		send_interface_toast = {
+			type = bm_event_toast_effect_good
+			title = bm_interpersonal_events.0007.toast
+			left_icon = root
+			bm_add_blood_mage_xp_effect = { TRACK = radiance XP = 5 }
+		}
+		ai_chance = { base = 15 }
+	}
+
+	# Option E: Cunning
+	option = {
+		name = bm_interpersonal_events.0007.e
+		send_interface_toast = {
+			type = bm_event_toast_effect_good
+			title = bm_interpersonal_events.0007.toast
+			left_icon = root
+			bm_add_blood_mage_xp_effect = { TRACK = cunning XP = 5 }
+		}
+		ai_chance = { base = 15 }
+	}
+
+	# Option F: Fury
+	option = {
+		name = bm_interpersonal_events.0007.f
+		send_interface_toast = {
+			type = bm_event_toast_effect_good
+			title = bm_interpersonal_events.0007.toast
+			left_icon = root
+			bm_add_blood_mage_xp_effect = { TRACK = fury XP = 5 }
+		}
+		ai_chance = { base = 15 }
 	}
 }
 
@@ -1354,5 +1302,103 @@ bm_interpersonal_events.0010 = {
 			}
 		}
 		ai_chance = { base = 25 }
+	}
+}
+
+# Event 11: A Century in Crimson (Age 100+ Track Milestone)
+bm_interpersonal_events.0011 = {
+	type = character_event
+	title = bm_interpersonal_events.0011.t
+	desc = bm_interpersonal_events.0011.desc
+	theme = learning
+	override_icon = {
+		reference = "gfx/interface/icons/bm_blood_magic_icon.dds"
+	}
+	left_portrait = {
+		character = root
+		animation = personality_mystical
+	}
+
+	trigger = {
+		is_ai = no
+		is_blood_mage_any_tier_trigger = yes
+		age >= 100
+		NOT = { has_character_flag = bm_age_100_milestone_done }
+	}
+
+	immediate = {
+		add_character_flag = bm_age_100_milestone_done
+	}
+
+	# Option A: Ancient
+	option = {
+		name = bm_interpersonal_events.0011.a
+		send_interface_toast = {
+			type = bm_event_toast_effect_good
+			title = bm_interpersonal_events.0011.toast
+			left_icon = root
+			bm_add_blood_mage_xp_effect = { TRACK = ancient XP = 10 }
+		}
+		ai_chance = { base = 20 }
+	}
+
+	# Option B: Wisdom
+	option = {
+		name = bm_interpersonal_events.0011.b
+		send_interface_toast = {
+			type = bm_event_toast_effect_good
+			title = bm_interpersonal_events.0011.toast
+			left_icon = root
+			bm_add_blood_mage_xp_effect = { TRACK = wisdom XP = 10 }
+		}
+		ai_chance = { base = 20 }
+	}
+
+	# Option C: Fortune
+	option = {
+		name = bm_interpersonal_events.0011.c
+		send_interface_toast = {
+			type = bm_event_toast_effect_good
+			title = bm_interpersonal_events.0011.toast
+			left_icon = root
+			bm_add_blood_mage_xp_effect = { TRACK = fortune XP = 10 }
+		}
+		ai_chance = { base = 15 }
+	}
+
+	# Option D: Radiance
+	option = {
+		name = bm_interpersonal_events.0011.d
+		send_interface_toast = {
+			type = bm_event_toast_effect_good
+			title = bm_interpersonal_events.0011.toast
+			left_icon = root
+			bm_add_blood_mage_xp_effect = { TRACK = radiance XP = 10 }
+		}
+		ai_chance = { base = 15 }
+	}
+
+	# Option E: Cunning
+	option = {
+		name = bm_interpersonal_events.0011.e
+		send_interface_toast = {
+			type = bm_event_toast_effect_good
+			title = bm_interpersonal_events.0011.toast
+			left_icon = root
+			bm_add_blood_mage_xp_effect = { TRACK = cunning XP = 10 }
+		}
+		ai_chance = { base = 15 }
+	}
+
+	# Option F: Fury
+	option = {
+		name = bm_interpersonal_events.0011.f
+		send_interface_toast = {
+			type = bm_event_toast_effect_good
+			title = bm_interpersonal_events.0011.toast
+			left_icon = root
+			bm_add_blood_mage_xp_effect = { TRACK = fury XP = 10 }
+		}
+		ai_chance = { base = 15 }
 	}
 }
