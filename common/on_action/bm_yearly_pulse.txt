@@ -115,6 +115,72 @@ bm_yearly_interpersonal_pulse = {
                 }
                 trigger_event = bm_interpersonal_events.0005
             }
+            100 = {
+                trigger = {
+                    OR = {
+                        has_character_modifier = bm_overdrained_modifier
+                        has_character_modifier = lifeforce_modifier_negative_minor
+                        has_character_modifier = lifeforce_modifier_negative_major
+                        has_character_modifier = lifeforce_modifier_negative_superior
+                    }
+                    any_courtier = {
+                        is_alive = yes
+                        is_adult = yes
+                        NOT = { is_close_family_of = root }
+                        NOT = { house ?= house:bm_house_golem }
+                    }
+                }
+                modifier = {
+                    add = 50
+                    has_character_modifier = bm_overdrained_modifier
+                }
+                trigger_event = bm_interpersonal_events.0006
+            }
+            100 = {
+                trigger = {
+                    age >= 85
+                    OR = {
+                        any_child = {
+                            even_if_dead = yes
+                            is_alive = no
+                        }
+                        any_spouse = {
+                            even_if_dead = yes
+                            is_alive = no
+                        }
+                    }
+                }
+                trigger_event = bm_interpersonal_events.0007
+            }
+            100 = {
+                trigger = {
+                    is_blood_mage_tier_2_or_higher_trigger = yes
+                    is_imprisoned = no
+                    is_incapable = no
+                }
+                trigger_event = bm_interpersonal_events.0008
+            }
+            100 = {
+                trigger = {
+                    any_courtier = {
+                        is_alive = yes
+                        house ?= house:bm_house_golem
+                    }
+                }
+                trigger_event = bm_interpersonal_events.0009
+            }
+            100 = {
+                trigger = {
+                    is_blood_mage_tier_2_or_higher_trigger = yes
+                    any_courtier = {
+                        is_alive = yes
+                        age >= 12
+                        has_trait = lifestyle_bm_acolyte
+                        NOT = { this = root }
+                    }
+                }
+                trigger_event = bm_interpersonal_events.0010
+            }
         }
     }
 }

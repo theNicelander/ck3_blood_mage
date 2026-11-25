@@ -636,3 +636,723 @@ bm_interpersonal_events.0005 = {
 		}
 	}
 }
+
+# Event 6: The Red Thirst (Overdrain / Exhaustion Consequence)
+bm_interpersonal_events.0006 = {
+	type = character_event
+	title = bm_interpersonal_events.0006.t
+	desc = bm_interpersonal_events.0006.desc
+	theme = health
+	override_icon = {
+		reference = "gfx/interface/icons/bm_blood_magic_icon.dds"
+	}
+	left_portrait = {
+		character = root
+		animation = pain
+	}
+	right_portrait = {
+		character = scope:prey
+		animation = idle
+	}
+
+	trigger = {
+		is_blood_mage_any_tier_trigger = yes
+		OR = {
+			has_character_modifier = bm_overdrained_modifier
+			has_character_modifier = lifeforce_modifier_negative_minor
+			has_character_modifier = lifeforce_modifier_negative_major
+			has_character_modifier = lifeforce_modifier_negative_superior
+		}
+		any_courtier = {
+			is_alive = yes
+			is_adult = yes
+			NOT = { is_close_family_of = root }
+			NOT = { house ?= house:bm_house_golem }
+		}
+	}
+
+	immediate = {
+		add_character_flag = { flag = bm_interpersonal_event_cooldown years = 3 }
+		random_courtier = {
+			limit = {
+				is_alive = yes
+				is_adult = yes
+				NOT = { is_close_family_of = root }
+				NOT = { house ?= house:bm_house_golem }
+			}
+			save_scope_as = prey
+		}
+	}
+
+	# Option A: Endure the fever
+	option = {
+		name = bm_interpersonal_events.0006.a
+		send_interface_toast = {
+			title = bm_interpersonal_events.0006.a.toast
+			left_icon = root
+			add_stress = 30
+			bm_add_blood_mage_xp_effect = {
+				TRACK = wisdom
+				XP = 2
+			}
+		}
+		ai_chance = { base = 40 }
+	}
+
+	# Option B: Feed secretly on a courtier
+	option = {
+		name = bm_interpersonal_events.0006.b
+		duel = {
+			skill = intrigue
+			target = scope:prey
+			60 = {
+				desc = bm_interpersonal_events.0006.b.win
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 2.0
+					min = -35
+					max = 35
+				}
+				send_interface_toast = {
+					type = bm_event_toast_effect_good
+					title = bm_interpersonal_events.0006.b.win.toast
+					left_icon = root
+					right_icon = scope:prey
+					add_character_modifier = { modifier = lifeforce_modifier_minor }
+					bm_add_blood_mage_xp_effect = {
+						TRACK = cunning
+						XP = 2
+					}
+					scope:prey = {
+						add_character_modifier = { modifier = lifedrained_modifier }
+					}
+				}
+			}
+			40 = {
+				desc = bm_interpersonal_events.0006.b.lose
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -2.0
+					min = -35
+					max = 35
+				}
+				send_interface_toast = {
+					type = bm_event_toast_effect_bad
+					title = bm_interpersonal_events.0006.b.lose.toast
+					left_icon = root
+					right_icon = scope:prey
+					add_stress = 20
+					scope:prey = {
+						add_opinion = {
+							target = root
+							modifier = magic_opinion_negative
+							opinion = -30
+						}
+					}
+				}
+			}
+		}
+		ai_chance = { base = 30 }
+	}
+
+	# Option C: Steady yourself by burning 1 Minor Lifeforce
+	option = {
+		name = bm_interpersonal_events.0006.c
+		trigger = {
+			has_character_modifier = lifeforce_modifier_minor
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		send_interface_toast = {
+			type = bm_event_toast_effect_good
+			title = bm_interpersonal_events.0006.c.toast
+			left_icon = root
+			remove_character_modifier = lifeforce_modifier_minor
+			if = {
+				limit = { has_character_modifier = bm_overdrained_modifier }
+				remove_character_modifier = bm_overdrained_modifier
+			}
+			add_stress = -15
+		}
+		ai_chance = { base = 30 }
+	}
+}
+
+# Event 7: The Weight of Centuries (Elder Blood Mage 85+)
+bm_interpersonal_events.0007 = {
+	type = character_event
+	title = bm_interpersonal_events.0007.t
+	desc = bm_interpersonal_events.0007.desc
+	theme = family
+	override_icon = {
+		reference = "gfx/interface/icons/bm_blood_magic_icon.dds"
+	}
+	left_portrait = {
+		character = root
+		animation = sadness
+	}
+	right_portrait = {
+		trigger = { exists = scope:anchor }
+		character = scope:anchor
+		animation = admiration
+	}
+
+	trigger = {
+		is_blood_mage_any_tier_trigger = yes
+		age >= 85
+		OR = {
+			any_child = {
+				even_if_dead = yes
+				is_alive = no
+			}
+			any_spouse = {
+				even_if_dead = yes
+				is_alive = no
+			}
+		}
+	}
+
+	immediate = {
+		add_character_flag = { flag = bm_interpersonal_event_cooldown years = 3 }
+		if = {
+			limit = {
+				exists = primary_heir
+				primary_heir = {
+					is_alive = yes
+					NOT = { this = root }
+				}
+			}
+			primary_heir = { save_scope_as = anchor }
+		}
+		else_if = {
+			limit = {
+				any_relation = {
+					type = lover
+					is_alive = yes
+				}
+			}
+			random_relation = {
+				type = lover
+				limit = { is_alive = yes }
+				save_scope_as = anchor
+			}
+		}
+		else_if = {
+			limit = {
+				any_spouse = { is_alive = yes }
+			}
+			random_spouse = {
+				limit = { is_alive = yes }
+				save_scope_as = anchor
+			}
+		}
+		else_if = {
+			limit = {
+				any_child = { is_alive = yes }
+			}
+			random_child = {
+				limit = { is_alive = yes }
+				save_scope_as = anchor
+			}
+		}
+	}
+
+	# Option A: Embrace cold detachment
+	option = {
+		name = bm_interpersonal_events.0007.a
+		send_interface_toast = {
+			title = bm_interpersonal_events.0007.a.toast
+			left_icon = root
+			bm_add_blood_mage_xp_effect = {
+				TRACK = ancient
+				XP = 4
+			}
+			add_stress = -20
+			add_character_modifier = {
+				modifier = bm_detached_centuries_modifier
+				years = 3
+			}
+		}
+		ai_chance = { base = 35 }
+	}
+
+	# Option B: Anchor to a living heir or loved one
+	option = {
+		name = bm_interpersonal_events.0007.b
+		trigger = {
+			exists = scope:anchor
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		send_interface_toast = {
+			title = bm_interpersonal_events.0007.b.toast
+			left_icon = root
+			right_icon = scope:anchor
+			scope:anchor = {
+				add_opinion = {
+					target = root
+					modifier = magic_opinion_positive
+					opinion = 30
+				}
+			}
+			bm_add_blood_mage_xp_effect = {
+				TRACK = radiance
+				XP = 2
+			}
+			add_stress = -15
+		}
+		ai_chance = { base = 40 }
+	}
+
+	# Option C: Pour grief into fury
+	option = {
+		name = bm_interpersonal_events.0007.c
+		send_interface_toast = {
+			title = bm_interpersonal_events.0007.c.toast
+			left_icon = root
+			bm_add_blood_mage_xp_effect = {
+				TRACK = fury
+				XP = 3
+			}
+			add_stress = 15
+			add_character_modifier = {
+				modifier = bm_grief_fury_modifier
+				years = 3
+			}
+		}
+		ai_chance = { base = 25 }
+	}
+}
+
+# Event 8: A Challenger in Crimson (Wandering Rival Mage)
+bm_interpersonal_events.0008 = {
+	type = character_event
+	title = bm_interpersonal_events.0008.t
+	desc = bm_interpersonal_events.0008.desc
+	theme = martial
+	override_icon = {
+		reference = "gfx/interface/icons/bm_blood_magic_icon.dds"
+	}
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:challenger
+		animation = aggressive_sword
+	}
+
+	trigger = {
+		is_blood_mage_tier_2_or_higher_trigger = yes
+		is_imprisoned = no
+		is_incapable = no
+	}
+
+	immediate = {
+		add_character_flag = { flag = bm_interpersonal_event_cooldown years = 3 }
+		hidden_effect = {
+			create_character = {
+				template = traveller_character_template
+				save_scope_as = challenger
+				location = root.location
+				culture = root.culture
+				faith = root.faith
+			}
+			scope:challenger = {
+				bm_become_blood_mage_tier_2_effect = yes
+			}
+		}
+	}
+
+	# Option A: Accept an Occult Duel
+	option = {
+		name = bm_interpersonal_events.0008.a
+		duel = {
+			skills = { learning prowess }
+			target = scope:challenger
+			55 = {
+				desc = bm_interpersonal_events.0008.a.win
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 2.0
+					min = -35
+					max = 35
+				}
+				send_interface_toast = {
+					type = bm_event_toast_effect_good
+					title = bm_interpersonal_events.0008.a.win.toast
+					left_icon = root
+					right_icon = scope:challenger
+					add_character_modifier = { modifier = lifeforce_modifier_major }
+					bm_add_blood_mage_xp_effect = {
+						TRACK = fury
+						XP = 4
+					}
+					bm_add_blood_mage_xp_effect = {
+						TRACK = wisdom
+						XP = 2
+					}
+				}
+			}
+			45 = {
+				desc = bm_interpersonal_events.0008.a.lose
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -2.0
+					min = -35
+					max = 35
+				}
+				send_interface_toast = {
+					type = bm_event_toast_effect_bad
+					title = bm_interpersonal_events.0008.a.lose.toast
+					left_icon = root
+					right_icon = scope:challenger
+					increase_wounds_no_death_effect = { REASON = fight }
+					temporary_negative_lifeforce_effect_minor = yes
+				}
+			}
+		}
+		ai_chance = { base = 45 }
+	}
+
+	# Option B: Invite the challenger into your court
+	option = {
+		name = bm_interpersonal_events.0008.b
+		duel = {
+			skills = { diplomacy learning }
+			target = scope:challenger
+			55 = {
+				desc = bm_interpersonal_events.0008.b.win
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 2.0
+					min = -35
+					max = 35
+				}
+				send_interface_toast = {
+					type = bm_event_toast_effect_good
+					title = bm_interpersonal_events.0008.b.win.toast
+					left_icon = root
+					right_icon = scope:challenger
+					add_courtier = scope:challenger
+					scope:challenger = {
+						add_opinion = {
+							target = root
+							modifier = magic_opinion_positive
+							opinion = 25
+						}
+					}
+					bm_add_blood_mage_xp_effect = {
+						TRACK = radiance
+						XP = 2
+					}
+					hidden_effect = {
+						bm_refresh_blood_magic_rosters_effect = yes
+					}
+				}
+			}
+			45 = {
+				desc = bm_interpersonal_events.0008.b.lose
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -2.0
+					min = -35
+					max = 35
+				}
+				send_interface_toast = {
+					type = bm_event_toast_effect_bad
+					title = bm_interpersonal_events.0008.b.lose.toast
+					left_icon = root
+					right_icon = scope:challenger
+					add_stress = 15
+					add_prestige = -25
+				}
+			}
+		}
+		ai_chance = { base = 40 }
+	}
+
+	# Option C: Turn them away at the gate
+	option = {
+		name = bm_interpersonal_events.0008.c
+		add_prestige = -50
+		ai_chance = { base = 15 }
+	}
+}
+
+# Event 9: Fractured Clay (Blood Golem Maintenance)
+bm_interpersonal_events.0009 = {
+	type = character_event
+	title = bm_interpersonal_events.0009.t
+	desc = bm_interpersonal_events.0009.desc
+	theme = witchcraft
+	override_icon = {
+		reference = "gfx/interface/icons/bm_blood_magic_icon.dds"
+	}
+	left_portrait = {
+		character = root
+		animation = personality_mystical
+	}
+	right_portrait = {
+		character = scope:golem
+		animation = pain
+	}
+
+	trigger = {
+		is_blood_mage_any_tier_trigger = yes
+		any_courtier = {
+			is_alive = yes
+			house ?= house:bm_house_golem
+		}
+	}
+
+	immediate = {
+		add_character_flag = { flag = bm_interpersonal_event_cooldown years = 3 }
+		random_courtier = {
+			limit = {
+				is_alive = yes
+				house ?= house:bm_house_golem
+			}
+			save_scope_as = golem
+		}
+	}
+
+	# Option A: Feed Minor Lifeforce into its bindings
+	option = {
+		name = bm_interpersonal_events.0009.a
+		trigger = {
+			has_character_modifier = lifeforce_modifier_minor
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		send_interface_toast = {
+			type = bm_event_toast_effect_good
+			title = bm_interpersonal_events.0009.a.toast
+			left_icon = root
+			right_icon = scope:golem
+			blood_magic_used_minor = yes
+			scope:golem = {
+				add_character_modifier = {
+					modifier = bm_reinforced_golem_modifier
+					years = 5
+				}
+			}
+			bm_add_blood_mage_xp_effect = {
+				TRACK = fortune
+				XP = 2
+			}
+		}
+		ai_chance = { base = 45 }
+	}
+
+	# Option B: Reinforce the runes by will alone (Learning check)
+	option = {
+		name = bm_interpersonal_events.0009.b
+		duel = {
+			skill = learning
+			value = 18
+			60 = {
+				desc = bm_interpersonal_events.0009.b.win
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 2.0
+					min = -35
+					max = 35
+				}
+				send_interface_toast = {
+					type = bm_event_toast_effect_good
+					title = bm_interpersonal_events.0009.b.win.toast
+					left_icon = root
+					right_icon = scope:golem
+					bm_add_blood_mage_xp_effect = {
+						TRACK = wisdom
+						XP = 2
+					}
+					scope:golem = {
+						add_character_modifier = {
+							modifier = bm_reinforced_golem_modifier
+							years = 3
+						}
+					}
+				}
+			}
+			40 = {
+				desc = bm_interpersonal_events.0009.b.lose
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -2.0
+					min = -35
+					max = 35
+				}
+				send_interface_toast = {
+					type = bm_event_toast_effect_bad
+					title = bm_interpersonal_events.0009.b.lose.toast
+					left_icon = root
+					right_icon = scope:golem
+					increase_wounds_no_death_effect = { REASON = lifedrain_reason }
+					scope:golem = {
+						add_character_modifier = {
+							modifier = bm_siphoned_golem_modifier
+							years = 3
+						}
+					}
+				}
+			}
+		}
+		ai_chance = { base = 40 }
+	}
+
+	# Option C: Let the construct weaken
+	option = {
+		name = bm_interpersonal_events.0009.c
+		send_interface_toast = {
+			title = bm_interpersonal_events.0009.c.toast
+			left_icon = root
+			right_icon = scope:golem
+			scope:golem = {
+				add_character_modifier = {
+					modifier = bm_siphoned_golem_modifier
+					years = 3
+				}
+			}
+		}
+		ai_chance = { base = 15 }
+	}
+}
+
+# Event 10: The Eager Acolyte (Court / Dynasty Mentorship)
+bm_interpersonal_events.0010 = {
+	type = character_event
+	title = bm_interpersonal_events.0010.t
+	desc = bm_interpersonal_events.0010.desc
+	theme = learning
+	override_icon = {
+		reference = "gfx/interface/icons/bm_blood_magic_icon.dds"
+	}
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = scope:acolyte
+		animation = admiration
+	}
+
+	trigger = {
+		is_blood_mage_tier_2_or_higher_trigger = yes
+		any_courtier = {
+			is_alive = yes
+			age >= 12
+			has_trait = lifestyle_bm_acolyte
+			NOT = { this = root }
+		}
+	}
+
+	immediate = {
+		add_character_flag = { flag = bm_interpersonal_event_cooldown years = 3 }
+		random_courtier = {
+			limit = {
+				is_alive = yes
+				age >= 12
+				has_trait = lifestyle_bm_acolyte
+				NOT = { this = root }
+			}
+			save_scope_as = acolyte
+		}
+	}
+
+	# Option A: Drill them in steel and fury
+	option = {
+		name = bm_interpersonal_events.0010.a
+		send_interface_toast = {
+			title = bm_interpersonal_events.0010.a.toast
+			left_icon = root
+			right_icon = scope:acolyte
+			bm_add_blood_mage_xp_effect = {
+				TRACK = fury
+				XP = 3
+			}
+			scope:acolyte = {
+				bm_add_blood_mage_xp_effect = {
+					TRACK = fury
+					XP = 3
+				}
+				random = {
+					chance = 25
+					increase_wounds_no_death_effect = { REASON = fight }
+				}
+			}
+		}
+		ai_chance = { base = 35 }
+	}
+
+	# Option B: Share quiet arcane study
+	option = {
+		name = bm_interpersonal_events.0010.b
+		trigger = {
+			piety >= 50
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		add_piety = -50
+		send_interface_toast = {
+			title = bm_interpersonal_events.0010.b.toast
+			left_icon = root
+			right_icon = scope:acolyte
+			bm_add_blood_mage_xp_effect = {
+				TRACK = wisdom
+				XP = 3
+			}
+			scope:acolyte = {
+				bm_add_blood_mage_xp_effect = {
+					TRACK = wisdom
+					XP = 3
+				}
+				add_opinion = {
+					target = root
+					modifier = magic_opinion_positive
+					opinion = 15
+				}
+			}
+		}
+		ai_chance = { base = 40 }
+	}
+
+	# Option C: Infuse them with a drop of Major Lifeforce
+	option = {
+		name = bm_interpersonal_events.0010.c
+		trigger = {
+			has_character_modifier = lifeforce_modifier_major
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		send_interface_toast = {
+			type = bm_event_toast_effect_good
+			title = bm_interpersonal_events.0010.c.toast
+			left_icon = root
+			right_icon = scope:acolyte
+			blood_magic_used_major = yes
+			bm_add_blood_mage_xp_effect = {
+				TRACK = fortune
+				XP = 5
+			}
+			scope:acolyte = {
+				bm_add_blood_mage_xp_effect = {
+					TRACK = ancient
+					XP = 15
+				}
+				add_opinion = {
+					target = root
+					modifier = magic_opinion_positive
+					opinion = 30
+				}
+			}
+		}
+		ai_chance = { base = 25 }
+	}
+}

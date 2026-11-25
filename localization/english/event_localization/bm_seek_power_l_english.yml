@@ -29,6 +29,9 @@
   seek_power.009.title: "The Edge of the Woods"
   seek_power.010.title: "Blood in the Embers"
   seek_power.011.title: "The Blood Rite"
+  seek_power.012.title: "The Sunken Blood Shrine"
+  seek_power.013.title: "The Plague-Touched Hermit"
+  seek_power.014.title: "Rival Coven's Cache"
 
   # Event Descriptions
   seek_power.001.desc: "You ride into the wild fringes of your lands, following the scent of fresh blood."
@@ -43,6 +46,9 @@
   seek_power.009.desc: "As dusk settles over the forest, your hunt brings you to an isolated woodcutter's homestead at the treeline. The faint scent of mortal blood and warm hearthsmoke drifts into the evening air."
   seek_power.010.desc: "Following woodsmoke into a secluded hollow, you stumble upon a crude encampment of armed outlaws and poachers dividing their plunder around a dying campfire."
   seek_power.011.desc: "Deep within a moonlit glade, a lone occultist chants over a stone basin brimming with freshly harvested blood. They are so consumed by their dark incantation that they have not yet sensed your approach."
+  seek_power.012.desc: "Roots choke a half-flooded stone shrine whose walls bear ancient runic wards etched in dried crimson. Faint resonance still pulses beneath the dark water."
+  seek_power.013.desc: "Beside a collapsed milestone huddles an infirm hermit, coughing weakly yet gripping an inscribed phylactery that hums with strained Lifeforce."
+  seek_power.014.desc: "Hidden beneath a split boulder lies an ironbound coffer sealed with a rival coven's blood-ward, packed with stoppered phials and silver."
 
   # Options
   seek_power.001.a: "Begin the hunt"
@@ -73,6 +79,12 @@
   seek_power.010.b: "Step into the firelight and demand their plunder"
   seek_power.011.a: "Strike them down and seize their ritual offering"
   seek_power.011.b: "Step into the circle and share the chalice"
+  seek_power.012.a: "Decipher the blood-runes on the altar"
+  seek_power.012.b: "Gather the residual ichor from the font"
+  seek_power.013.a: "Ease their fever and glean their lore"
+  seek_power.013.b: "Siphon their lingering vitality by force"
+  seek_power.014.a: "Crack the blood-wards and loot the cache"
+  seek_power.014.b: "Pocket only the unwarded silver and slip away"
 
   # Duel Result Text
   seek_power.duel.animal: "Run down a great stag"
@@ -82,6 +94,9 @@
   seek_power.duel.outlaw_camp: "Ambush an outlaw camp"
   seek_power.duel.blood_rite: "Interrupt a rival blood rite"
   seek_power.duel.legendary: "Uncover an ancient sacrificial cairn"
+  seek_power.duel.sunken_shrine: "Discover a sunken blood shrine"
+  seek_power.duel.plague_hermit: "Cross paths with a plague-touched hermit"
+  seek_power.duel.coven_cache: "Locate a rival coven's hidden cache"
 
   seek_power.duel.silent_harvest: "Silent Harvest"
   seek_power.duel.escape: "They escape"
@@ -109,6 +124,17 @@
   seek_power.duel.blood_backlash: "Occult Backlash"
   seek_power.duel.blood_escaped: "Occultist Escapes"
   seek_power.duel.blood_cursed: "Catastrophic Hex"
+  seek_power.duel.shrine_decipher: "Shrine Runes Deciphered"
+  seek_power.duel.shrine_fragment: "Partial Extraction"
+  seek_power.duel.shrine_fail: "Dormant Stone"
+  seek_power.duel.shrine_backlash: "Ward Backlash"
+  seek_power.duel.hermit_heal_win: "Fever Soothed"
+  seek_power.duel.hermit_heal_fail: "Bitter Rejection"
+  seek_power.duel.hermit_siphon_win: "Clean Extraction"
+  seek_power.duel.hermit_siphon_fail: "Contagion Caught"
+  seek_power.duel.cache_loot_win: "Cache Plundered"
+  seek_power.duel.cache_loot_mixed: "Triggered Trap"
+  seek_power.duel.cache_loot_fail: "Wards Detonated"
 
   # Toast Messages
   seek_power.toast.stag: "@bm_ancient_discipline_icon! Slaughtered the Great Stag"
@@ -144,6 +170,19 @@
   seek_power.toast.blood_escaped: "@bm_ancient_discipline_icon! The occultist vanished into red mist, destroying the offering"
   seek_power.toast.blood_cursed: "@bm_ancient_discipline_icon! A catastrophic dying curse corrupted your veins and shattered your focus"
   seek_power.toast.blood_communion: "@bm_ancient_discipline_icon! Shared the ritual chalice and traded ancient lore"
+  seek_power.toast.shrine_decipher: "@bm_ancient_discipline_icon! Deciphered the Sunken Blood Shrine"
+  seek_power.toast.shrine_fragment: "@bm_ancient_discipline_icon! Extracted Minor Lifeforce from the Shrine"
+  seek_power.toast.shrine_fail: "@bm_ancient_discipline_icon! The Shrine's Runes Remained Silent"
+  seek_power.toast.shrine_backlash: "@bm_ancient_discipline_icon! Suffered Runic Backlash at the Shrine"
+  seek_power.toast.shrine_font: "@bm_ancient_discipline_icon! Gathered Residual Ichor from the Shrine"
+  seek_power.toast.hermit_heal_win: "@bm_ancient_discipline_icon! Eased the Hermit's Fever and Gleaned Lore"
+  seek_power.toast.hermit_heal_fail: "@bm_ancient_discipline_icon! The Suspicious Hermit Fled"
+  seek_power.toast.hermit_siphon_win: "@bm_ancient_discipline_icon! Siphoned Major Lifeforce from the Hermit"
+  seek_power.toast.hermit_siphon_fail: "@bm_ancient_discipline_icon! Contracted Sickness During the Siphon"
+  seek_power.toast.cache_loot_win: "@bm_ancient_discipline_icon! Plundered the Rival Coven's Cache"
+  seek_power.toast.cache_loot_mixed: "@bm_ancient_discipline_icon! Looted the Cache Despite a Sprung Trap"
+  seek_power.toast.cache_loot_fail: "@bm_ancient_discipline_icon! Wounded by the Coven's Blood-Wards"
+  seek_power.toast.cache_coin: "@bm_ancient_discipline_icon! Pocketed Unwarded Silver from the Cache"
 
   # Trigger Concept Fallback
   NOT_learning_concept: "[learning|E]"
