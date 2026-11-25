@@ -25,4 +25,4 @@ Create or update the GitHub PR for the current branch using `docs-ai/branch-cont
    - Extract title from line 1 (`# <branch>: <outcome title>` → strip `# `).
    - Run `gh pr create --base main --title "<title>" --body-file docs-ai/branch-context/<branch>.md`.
    - Record `PR: #<N>` on line 2 of `docs-ai/branch-context/<branch>.md` if missing; if edited/created, `git add docs-ai/branch-context/<branch>.md`, commit, and push.
-5. **Finish**: output the PR URL. Never auto-merge.
+5. **Finish**: always output the clickable PR link (`https://github.com/.../pull/<N>`) at the end of your final reply. Never auto-merge.

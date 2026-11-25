@@ -7,8 +7,9 @@ Pure script, loc, gfx; no build. Vanilla ref: `/Users/clarabotet/Petur/ck3-full`
 - **Zero vanilla overwrites**: modular only. Unprefixed vanilla filename = override; never do by accident.
 - **Earned power**: stats/lifespan cost Lifeforce, piety, sacrifice, risk.
 - **Modifier priority**: 1) All playstyles (attributes, lifestyle XP, fertility/health, traits, stress, army/MaA); 2) Landed rulers (domain limit, prosperity, fascination, building/district cost, taxes); 3) Niche playstyles (adventurers, merchants/trade, domiciles) - secondary, light touch only.
-- **Concise UI**: say "Lifeforce" (not "vitality"), "blood" (not crimson/sanguine), `"Back"` for cancel. Flavour only in narrative `_desc`.
+- **Concise UI**: say "Lifeforce" (not "vitality"), "blood" (not crimson/sanguine), `"Back"` for cancel. Flavour only in narrative `_desc`. Never overexplain self-explanatory effects/costs in hover text (see `localization/AGENTS.md`).
 - **Notification icon**: all `bm_action_*` notifications use `@bm_ancient_discipline_icon!` (Blood Mage signature icon).
+- **Default Blood Mage icon**: use `gfx/interface/icons/bm_blood_magic_icon.dds` (shared fiery blood icon) as the default for Blood Mage decisions, events, and interactions when no specific trait/track icon applies.
 - **Nothing hidden, often unavailable**: keep options visible + greyed (`show_as_unavailable`); hide only if prerequisite unreached or permanently completed/superseded.
 - **Native triggers over `custom_tooltip`**: never wrap standard triggers (`piety`, `piety_level`, `gold`, `has_trait`, `has_character_modifier`, etc.) in `custom_tooltip`.
 - **Toasts**: wrap player-facing modifier, trait, XP, stat grants in `send_interface_toast`.
@@ -16,7 +17,7 @@ Pure script, loc, gfx; no build. Vanilla ref: `/Users/clarabotet/Petur/ck3-full`
 
 ## Naming, format & tools
 
-- Prefix new files/IDs `bm_` (`bm_<feature>.txt`, `_effect`/`_trigger`, `has_game_rule = bm_<rule>_<setting>`). Rename IDs on rework unless told otherwise.
+- Prefix new files/IDs `bm_` (`bm_<feature>.txt`, `_effect`/`_trigger`, `has_game_rule = bm_<rule>_<setting>`). Mod is in development (no backwards compatibility needed; file names never affect saves, only modifier/script IDs do), but always ASK before renaming existing modifier or file names.
 - `.txt`/`.gui`/`.yml`: UTF-8 **with BOM**, trailing newline, balanced braces; preserve CRLF/indentation/comments.
 - Inspect: `python3 scripts/read_ck3.py {read|block|search}` (handles BOM).
 - Modifiers: allowlist-only (`scripts/modifiers_{character,county,domicile}_allowlist.json`); add verified vanilla via `python3 scripts/check_modifiers.py --add <mod> --scope <character|county|domicile>`.

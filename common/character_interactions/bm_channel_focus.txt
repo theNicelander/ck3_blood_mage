@@ -1,0 +1,272 @@
+﻿bm_channel_focus_interaction = {
+	hidden = yes
+	category = interaction_category_bm_blood_magic
+	icon = bm_channel_focus_interaction
+	auto_accept = yes
+	desc = bm_channel_focus_interaction_desc
+
+	cost = {
+		piety = 50
+	}
+
+	is_shown = {
+		scope:actor = scope:recipient
+		scope:actor = {
+			is_blood_mage_any_tier_trigger = yes
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			custom_tooltip = {
+				text = bm_channel_focus_cooldown_tt
+				NOT = { has_character_flag = bm_channel_focus_cooldown }
+			}
+			piety >= 50
+			has_character_modifier = lifeforce_modifier_minor
+		}
+	}
+
+	send_options_exclusive = yes
+
+	# 1. Radiance
+	send_option = {
+		flag = channel_radiance
+		localization = bm_channel_focus_radiance_opt
+		current_description = bm_channel_focus_radiance_opt_desc
+		can_invalidate_interaction = yes
+		is_shown = {
+			always = yes
+		}
+		is_valid = {
+			scope:actor = {
+				NOT = { has_character_modifier = bm_channel_focus_radiance }
+			}
+		}
+		starts_enabled = {
+			scope:actor = {
+				NOT = { has_character_modifier = bm_channel_focus_radiance }
+			}
+		}
+	}
+
+	# 2. Fury
+	send_option = {
+		flag = channel_fury
+		localization = bm_channel_focus_fury_opt
+		current_description = bm_channel_focus_fury_opt_desc
+		can_invalidate_interaction = yes
+		is_shown = {
+			always = yes
+		}
+		is_valid = {
+			scope:actor = {
+				NOT = { has_character_modifier = bm_channel_focus_fury }
+			}
+		}
+		starts_enabled = {
+			scope:actor = {
+				has_character_modifier = bm_channel_focus_radiance
+				NOT = { has_character_modifier = bm_channel_focus_fury }
+			}
+		}
+	}
+
+	# 3. Fortune
+	send_option = {
+		flag = channel_fortune
+		localization = bm_channel_focus_fortune_opt
+		current_description = bm_channel_focus_fortune_opt_desc
+		can_invalidate_interaction = yes
+		is_shown = {
+			always = yes
+		}
+		is_valid = {
+			scope:actor = {
+				NOT = { has_character_modifier = bm_channel_focus_fortune }
+			}
+		}
+		starts_enabled = {
+			scope:actor = {
+				has_character_modifier = bm_channel_focus_radiance
+				has_character_modifier = bm_channel_focus_fury
+				NOT = { has_character_modifier = bm_channel_focus_fortune }
+			}
+		}
+	}
+
+	# 4. Cunning
+	send_option = {
+		flag = channel_cunning
+		localization = bm_channel_focus_cunning_opt
+		current_description = bm_channel_focus_cunning_opt_desc
+		can_invalidate_interaction = yes
+		is_shown = {
+			always = yes
+		}
+		is_valid = {
+			scope:actor = {
+				NOT = { has_character_modifier = bm_channel_focus_cunning }
+			}
+		}
+		starts_enabled = {
+			scope:actor = {
+				has_character_modifier = bm_channel_focus_radiance
+				has_character_modifier = bm_channel_focus_fury
+				has_character_modifier = bm_channel_focus_fortune
+				NOT = { has_character_modifier = bm_channel_focus_cunning }
+			}
+		}
+	}
+
+	# 5. Wisdom
+	send_option = {
+		flag = channel_wisdom
+		localization = bm_channel_focus_wisdom_opt
+		current_description = bm_channel_focus_wisdom_opt_desc
+		can_invalidate_interaction = yes
+		is_shown = {
+			always = yes
+		}
+		is_valid = {
+			scope:actor = {
+				NOT = { has_character_modifier = bm_channel_focus_wisdom }
+			}
+		}
+		starts_enabled = {
+			scope:actor = {
+				has_character_modifier = bm_channel_focus_radiance
+				has_character_modifier = bm_channel_focus_fury
+				has_character_modifier = bm_channel_focus_fortune
+				has_character_modifier = bm_channel_focus_cunning
+				NOT = { has_character_modifier = bm_channel_focus_wisdom }
+			}
+		}
+	}
+
+	# 6. Ancient
+	send_option = {
+		flag = channel_ancient
+		localization = bm_channel_focus_ancient_opt
+		current_description = bm_channel_focus_ancient_opt_desc
+		can_invalidate_interaction = yes
+		is_shown = {
+			always = yes
+		}
+		is_valid = {
+			scope:actor = {
+				NOT = { has_character_modifier = bm_channel_focus_ancient }
+			}
+		}
+		starts_enabled = {
+			scope:actor = {
+				has_character_modifier = bm_channel_focus_radiance
+				has_character_modifier = bm_channel_focus_fury
+				has_character_modifier = bm_channel_focus_fortune
+				has_character_modifier = bm_channel_focus_cunning
+				has_character_modifier = bm_channel_focus_wisdom
+				NOT = { has_character_modifier = bm_channel_focus_ancient }
+			}
+		}
+	}
+
+	on_accept = {
+		if = {
+			limit = { scope:channel_radiance = yes }
+			debug_log = "BloodMageSelfCast: bm_channel_focus (radiance) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
+			scope:actor = { bm_apply_channel_focus_effect = { MODIFIER = bm_channel_focus_radiance TRACK = radiance } }
+		}
+		else_if = {
+			limit = { scope:channel_fury = yes }
+			debug_log = "BloodMageSelfCast: bm_channel_focus (fury) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
+			scope:actor = { bm_apply_channel_focus_effect = { MODIFIER = bm_channel_focus_fury TRACK = fury } }
+		}
+		else_if = {
+			limit = { scope:channel_fortune = yes }
+			debug_log = "BloodMageSelfCast: bm_channel_focus (fortune) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
+			scope:actor = { bm_apply_channel_focus_effect = { MODIFIER = bm_channel_focus_fortune TRACK = fortune } }
+		}
+		else_if = {
+			limit = { scope:channel_cunning = yes }
+			debug_log = "BloodMageSelfCast: bm_channel_focus (cunning) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
+			scope:actor = { bm_apply_channel_focus_effect = { MODIFIER = bm_channel_focus_cunning TRACK = cunning } }
+		}
+		else_if = {
+			limit = { scope:channel_wisdom = yes }
+			debug_log = "BloodMageSelfCast: bm_channel_focus (wisdom) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
+			scope:actor = { bm_apply_channel_focus_effect = { MODIFIER = bm_channel_focus_wisdom TRACK = wisdom } }
+		}
+		else_if = {
+			limit = { scope:channel_ancient = yes }
+			debug_log = "BloodMageSelfCast: bm_channel_focus (ancient) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
+			scope:actor = { bm_apply_channel_focus_effect = { MODIFIER = bm_channel_focus_ancient TRACK = ancient } }
+		}
+		else = {
+			debug_log = "BloodMageSelfCast: bm_channel_focus (NO OPTION) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
+		}
+	}
+
+	ai_potential = {
+		is_blood_mage_any_tier_trigger = yes
+	}
+	ai_frequency = 12
+	ai_targets = {
+		ai_recipients = self
+	}
+	ai_will_do = {
+		base = 10
+
+		modifier = {
+			scope:channel_radiance = yes
+			scope:actor = { has_lifestyle = diplomacy_lifestyle }
+			add = 30
+		}
+		modifier = {
+			scope:channel_fury = yes
+			scope:actor = {
+				OR = {
+					has_lifestyle = martial_lifestyle
+					is_at_war = yes
+				}
+			}
+			add = 30
+		}
+		modifier = {
+			scope:channel_fortune = yes
+			scope:actor = { has_lifestyle = stewardship_lifestyle }
+			add = 30
+		}
+		modifier = {
+			scope:channel_cunning = yes
+			scope:actor = { has_lifestyle = intrigue_lifestyle }
+			add = 30
+		}
+		modifier = {
+			scope:channel_wisdom = yes
+			scope:actor = { has_lifestyle = learning_lifestyle }
+			add = 30
+		}
+		modifier = {
+			scope:channel_ancient = yes
+			add = 15
+		}
+
+		modifier = {
+			scope:actor = { health <= fine_health }
+			factor = 0
+		}
+
+		# Absolute veto: must select at least one valid send option
+		modifier = {
+			NOR = {
+				scope:channel_radiance = yes
+				scope:channel_fury = yes
+				scope:channel_fortune = yes
+				scope:channel_cunning = yes
+				scope:channel_wisdom = yes
+				scope:channel_ancient = yes
+			}
+			factor = 0
+		}
+	}
+}

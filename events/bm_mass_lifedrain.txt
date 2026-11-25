@@ -44,13 +44,14 @@ bm_mass_lifedrain.001 = {
         custom_tooltip = bm_mass_lifedrain_custom_tooltip_b
         ai_chance = { base = 5 }
 
-        # Execute everyone
+        # Execute expendable prisoners only
         every_prisoner = {
             limit = {
-                # Not with good traits
-                NOT = { bm_has_valuable_genetic_trait_trigger = yes }
-                # Not of your dynasty
                 NOT = { is_close_family_of = root }
+                NOT = { bm_has_valuable_genetic_trait_trigger = yes }
+                prowess < 20
+                NOT = { is_blood_mage_any_tier_trigger = yes }
+                is_landed = no
             }
             save_scope_as = executed
             # Get lifeforce
@@ -63,6 +64,64 @@ bm_mass_lifedrain.001 = {
             lifedrain_execution_effect = {
                 VICTIM = scope:executed
                 EXECUTIONER = root
+            }
+        }
+    }
+
+    # Mass Minor Siphon (non-lethal)
+    option = {
+        name = bm_mass_lifedrain.001.c
+        custom_tooltip = bm_mass_lifedrain_custom_tooltip_c
+        trigger = {
+            piety >= bm_drain_minor_piety_cost
+            any_prisoner = {
+                NOT = { is_close_family_of = root }
+                NOT = { has_character_flag = bm_minor_lifedrain_cooldown }
+            }
+        }
+        show_as_unavailable = {
+            always = yes
+        }
+        ai_chance = { base = 0 }
+
+        send_interface_toast = {
+            type = bm_event_toast_effect_good
+            title = bm_mass_minor_siphon_toast
+            left_icon = root
+            every_prisoner = {
+                limit = {
+                    NOT = { is_close_family_of = root }
+                    NOT = { has_character_flag = bm_minor_lifedrain_cooldown }
+                }
+                if = {
+                    limit = {
+                        root = { piety >= bm_drain_minor_piety_cost }
+                    }
+                    root = {
+                        add_piety = -20
+                        add_character_modifier = { modifier = lifeforce_modifier_minor }
+                        bm_add_blood_mage_xp_effect = {
+                            TRACK = cunning
+                            XP = 1
+                        }
+                    }
+                    add_character_flag = {
+                        flag = bm_minor_lifedrain_cooldown
+                        months = 3
+                    }
+                    increase_wounds_no_death_effect = { REASON = lifedrain_reason }
+                    if = {
+                        limit = {
+                            NOT = { bm_is_blood_cult_faith_trigger = yes }
+                            NOT = { has_trait = loyal }
+                        }
+                        add_opinion = {
+                            target = root
+                            modifier = magic_opinion_negative
+                            opinion = -30
+                        }
+                    }
+                }
             }
         }
     }

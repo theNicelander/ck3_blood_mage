@@ -542,6 +542,78 @@ bm_heal_ailment.0001 = {
 		}
 	}
 
+	# Lunatic (Genetic)
+	option = {
+		name = bm_heal_ailment.0001.lunatic_genetic
+		trigger = {
+			is_blood_mage_tier_2_or_higher_trigger = yes
+			scope:recipient = { has_trait = lunatic_genetic }
+			has_character_modifier = lifeforce_modifier_major
+			piety >= cure_illness_cost_major
+		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = lunatic_genetic }
+		}
+		scope:recipient = { remove_trait = lunatic_genetic }
+		bm_heal_major_cost_and_xp_effect = yes
+		bm_heal_major_opinion_effect = yes
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Possessed (Genetic)
+	option = {
+		name = bm_heal_ailment.0001.possessed_genetic
+		trigger = {
+			is_blood_mage_tier_2_or_higher_trigger = yes
+			scope:recipient = { has_trait = possessed_genetic }
+			has_character_modifier = lifeforce_modifier_major
+			piety >= cure_illness_cost_major
+		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = possessed_genetic }
+		}
+		scope:recipient = { remove_trait = possessed_genetic }
+		bm_heal_major_cost_and_xp_effect = yes
+		bm_heal_major_opinion_effect = yes
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Depressed (Genetic)
+	option = {
+		name = bm_heal_ailment.0001.depressed_genetic
+		trigger = {
+			is_blood_mage_tier_2_or_higher_trigger = yes
+			scope:recipient = { has_trait = depressed_genetic }
+			has_character_modifier = lifeforce_modifier_major
+			piety >= cure_illness_cost_major
+		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = depressed_genetic }
+		}
+		scope:recipient = { remove_trait = depressed_genetic }
+		bm_heal_major_cost_and_xp_effect = yes
+		bm_heal_major_opinion_effect = yes
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
 	# --- DEADLY / RADIANCE AILMENTS ---
 
 	# Wounded 3
@@ -848,6 +920,126 @@ bm_heal_ailment.0001 = {
 			scope:recipient = { has_trait = one_legged }
 		}
 		scope:recipient = { remove_trait = one_legged }
+		bm_heal_deadly_cost_and_xp_effect = yes
+		bm_heal_deadly_opinion_effect = yes
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Eunuch
+	option = {
+		name = bm_heal_ailment.0001.eunuch_1
+		trigger = {
+			is_blood_mage_archmage_trigger = yes
+			scope:recipient = { has_trait = eunuch_1 }
+			has_character_modifier = lifeforce_modifier_superior
+			piety >= cure_illness_cost_radiance
+		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = eunuch_1 }
+		}
+		scope:recipient = { remove_trait = eunuch_1 }
+		bm_heal_deadly_cost_and_xp_effect = yes
+		bm_heal_deadly_opinion_effect = yes
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Beardless Eunuch
+	option = {
+		name = bm_heal_ailment.0001.beardless_eunuch
+		trigger = {
+			is_blood_mage_archmage_trigger = yes
+			scope:recipient = { has_trait = beardless_eunuch }
+			has_character_modifier = lifeforce_modifier_superior
+			piety >= cure_illness_cost_radiance
+		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = beardless_eunuch }
+		}
+		scope:recipient = { remove_trait = beardless_eunuch }
+		bm_heal_deadly_cost_and_xp_effect = yes
+		bm_heal_deadly_opinion_effect = yes
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Bleeder
+	option = {
+		name = bm_heal_ailment.0001.bleeder
+		trigger = {
+			is_blood_mage_archmage_trigger = yes
+			scope:recipient = { has_trait = bleeder }
+			has_character_modifier = lifeforce_modifier_superior
+			piety >= cure_illness_cost_radiance
+		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = bleeder }
+		}
+		scope:recipient = { remove_trait = bleeder }
+		bm_heal_deadly_cost_and_xp_effect = yes
+		bm_heal_deadly_opinion_effect = yes
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Inbred
+	option = {
+		name = bm_heal_ailment.0001.inbred
+		trigger = {
+			is_blood_mage_archmage_trigger = yes
+			scope:recipient = { has_trait = inbred }
+			has_character_modifier = lifeforce_modifier_superior
+			piety >= cure_illness_cost_radiance
+		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = inbred }
+		}
+		scope:recipient = { remove_trait = inbred }
+		bm_heal_deadly_cost_and_xp_effect = yes
+		bm_heal_deadly_opinion_effect = yes
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 2
+				scope:recipient = root
+			}
+		}
+	}
+
+	# Infertile
+	option = {
+		name = bm_heal_ailment.0001.infertile
+		trigger = {
+			is_blood_mage_archmage_trigger = yes
+			scope:recipient = { has_trait = infertile }
+			has_character_modifier = lifeforce_modifier_superior
+			piety >= cure_illness_cost_radiance
+		}
+		show_as_unavailable = {
+			scope:recipient = { has_trait = infertile }
+		}
+		scope:recipient = { remove_trait = infertile }
 		bm_heal_deadly_cost_and_xp_effect = yes
 		bm_heal_deadly_opinion_effect = yes
 		ai_chance = {

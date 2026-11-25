@@ -12,6 +12,7 @@
   seek_power_decision_wanderer_confirm: "Начать охоту"
   seek_power_decision_wanderer_tooltip: "Отправиться на кровавую охоту, чтобы добыть жизненную силу и развить направления."
 
+
   bm_cooldown_active_tt: "В последнее время кровавая охота не проводилась"
   bm_cooldown_active_tt_first: "В последнее время кровавая охота не проводилась"
 
@@ -28,6 +29,9 @@
   seek_power.009.title: "На опушке леса"
   seek_power.010.title: "Кровь в углях"
   seek_power.011.title: "Обряд крови"
+  seek_power.012.title: "Затонувшее святилище крови"
+  seek_power.013.title: "Отшельник, поражённый чумой"
+  seek_power.014.title: "Тайник соперничающего ковена"
 
   # Event Descriptions
   seek_power.001.desc: "Вы едете к диким окраинам своих земель, следуя запаху свежей крови."
@@ -42,6 +46,9 @@
   seek_power.009.desc: "Когда над лесом сгущаются сумерки, охота приводит вас к уединённому дому дровосека на опушке. В вечернем воздухе слабо пахнет смертной кровью и тёплым дымом очага."
   seek_power.010.desc: "Следуя за дымом в укромную ложбину, вы натыкаетесь на грубый лагерь вооружённых разбойников и браконьеров, делящих добычу у догорающего костра."
   seek_power.011.desc: "В глубине залитой лунным светом поляны одинокий оккультист поёт над каменной чашей, полной свежедобытой крови. Тёмное заклинание поглотило его настолько, что он ещё не заметил вашего приближения."
+  seek_power.012.desc: "Корни оплетают полузатопленное каменное святилище, стены которого покрыты древними защитными рунами из засохшей крови. Под тёмной водой всё ещё ощущается слабый отголосок силы."
+  seek_power.013.desc: "У поваленного межевого камня съёжился больной отшельник, слабо кашляющий, но крепко сжимающий филактерию с письменами, гудящую от напряжённой жизненной силы."
+  seek_power.014.desc: "Под расколотым валуном скрывается окованный железом ларец, запечатанный рунами крови соперничающего ковена, полный закупоренных склянок и серебра."
 
   # Options
   seek_power.001.a: "Начать охоту"
@@ -72,6 +79,12 @@
   seek_power.010.b: "Выйти к костру и потребовать добычу"
   seek_power.011.a: "Убить оккультиста и забрать ритуальную жертву"
   seek_power.011.b: "Вступить в круг и разделить чашу"
+  seek_power.012.a: "Расшифровать руны крови на алтаре"
+  seek_power.012.b: "Собрать остатки сукровицы из чаши"
+  seek_power.013.a: "Облегчить лихорадку и узнать тайны отшельника"
+  seek_power.013.b: "Силой вытянуть остатки жизненной силы"
+  seek_power.014.a: "Взломать защиту крови и ограбить тайник"
+  seek_power.014.b: "Забрать лишь незащищённое серебро и скрыться"
 
   # Duel Result Text
   seek_power.duel.animal: "Загнать великого оленя"
@@ -81,6 +94,9 @@
   seek_power.duel.outlaw_camp: "Напасть на лагерь разбойников"
   seek_power.duel.blood_rite: "Прервать чужой обряд крови"
   seek_power.duel.legendary: "Обнаружить древний жертвенный каирн"
+  seek_power.duel.sunken_shrine: "Обнаружить затонувшее святилище крови"
+  seek_power.duel.plague_hermit: "Встретить поражённого чумой отшельника"
+  seek_power.duel.coven_cache: "Найти скрытый тайник соперничающего ковена"
 
   seek_power.duel.silent_harvest: "Тихий сбор"
   seek_power.duel.escape: "Жертва сбегает"
@@ -108,6 +124,17 @@
   seek_power.duel.blood_backlash: "Оккультная отдача"
   seek_power.duel.blood_escaped: "Оккультист ускользает"
   seek_power.duel.blood_cursed: "Гибельная порча"
+  seek_power.duel.shrine_decipher: "Руны святилища расшифрованы"
+  seek_power.duel.shrine_fragment: "Частичное извлечение"
+  seek_power.duel.shrine_fail: "Безмолвный камень"
+  seek_power.duel.shrine_backlash: "Отдача защитных рун"
+  seek_power.duel.hermit_heal_win: "Лихорадка утихла"
+  seek_power.duel.hermit_heal_fail: "Резкий отказ"
+  seek_power.duel.hermit_siphon_win: "Успешное извлечение"
+  seek_power.duel.hermit_siphon_fail: "Заражение болезнью"
+  seek_power.duel.cache_loot_win: "Тайник разграблен"
+  seek_power.duel.cache_loot_mixed: "Ловушка сработала"
+  seek_power.duel.cache_loot_fail: "Защитные руны взорвались"
 
   # Toast Messages
   seek_power.toast.stag: "@bm_ancient_discipline_icon! Великий олень зарезан"
@@ -143,6 +170,19 @@
   seek_power.toast.blood_escaped: "@bm_ancient_discipline_icon! Оккультист исчез в красном тумане, уничтожив жертву"
   seek_power.toast.blood_cursed: "@bm_ancient_discipline_icon! Гибельное предсмертное проклятие осквернило ваши вены и нарушило сосредоточение"
   seek_power.toast.blood_communion: "@bm_ancient_discipline_icon! Ритуальная чаша разделена, древние знания обменены"
+  seek_power.toast.shrine_decipher: "@bm_ancient_discipline_icon! Затонувшее святилище крови расшифровано"
+  seek_power.toast.shrine_fragment: "@bm_ancient_discipline_icon! Малая жизненная сила извлечена из святилища"
+  seek_power.toast.shrine_fail: "@bm_ancient_discipline_icon! Руны святилища остались безмолвными"
+  seek_power.toast.shrine_backlash: "@bm_ancient_discipline_icon! Отдача рун в святилище"
+  seek_power.toast.shrine_font: "@bm_ancient_discipline_icon! Остатки сукровицы собраны из святилища"
+  seek_power.toast.hermit_heal_win: "@bm_ancient_discipline_icon! Лихорадка отшельника облегчена, получены знания"
+  seek_power.toast.hermit_heal_fail: "@bm_ancient_discipline_icon! Подозрительный отшельник сбежал"
+  seek_power.toast.hermit_siphon_win: "@bm_ancient_discipline_icon! Большая жизненная сила вытянута из отшельника"
+  seek_power.toast.hermit_siphon_fail: "@bm_ancient_discipline_icon! Заражение болезнью при вытягивании"
+  seek_power.toast.cache_loot_win: "@bm_ancient_discipline_icon! Тайник соперничающего ковена разграблен"
+  seek_power.toast.cache_loot_mixed: "@bm_ancient_discipline_icon! Тайник разграблен, несмотря на ловушку"
+  seek_power.toast.cache_loot_fail: "@bm_ancient_discipline_icon! Ранение от защитных рун ковена"
+  seek_power.toast.cache_coin: "@bm_ancient_discipline_icon! Незащищённое серебро из тайника присвоено"
 
   # Trigger Concept Fallback
   NOT_learning_concept: "[learning|E]"

@@ -10,6 +10,10 @@
 		is_blood_mage_any_tier_trigger = yes
 	}
 
+	is_valid = {
+		short_term_gold >= bm_captive_base_price_value
+	}
+
 	is_valid_showing_failures_only = {
 		is_in_activity = no
 		is_travelling = no
