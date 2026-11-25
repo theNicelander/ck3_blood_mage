@@ -1,6 +1,6 @@
 # Decisions (`common/decisions/`)
 
-Copy neighbor. For inline multi-choice option-list widgets, use skill `add-decision-option-widget`.
+Copy neighbor. For inline multi-choice option-list widgets, use skill `add-decision-option-widget` (prefer event chains instead when a decision splits into distinct multi-option modes, e.g. Transmute Channel vs Reclaim).
 
 - **Cost & validity**: declare `cost` once in `common/script_values/`; never deduct in `effect`. Cheap checks first in `is_shown`. Prefer native `cooldown`. Put affordability in `is_valid`; never skip with `is_ai = yes`. Effects must be idempotent/null-safe.
 - **Mod hooks**: use shared XP/trait scripted effects (`common/scripted_effects/`), never bare `add_trait`. Register in `common/story_cycles/bm_blood_mage_story.txt` for panel display.
