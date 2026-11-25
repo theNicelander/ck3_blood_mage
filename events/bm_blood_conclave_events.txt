@@ -1,0 +1,171 @@
+﻿namespace = bm_blood_conclave
+
+# Convene a Blood Conclave
+bm_blood_conclave.0001 = {
+	type = character_event
+	title = bm_blood_conclave.0001.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { has_character_flag = bm_conclave_disrupted }
+				desc = bm_blood_conclave.0001.desc_disrupted
+			}
+			desc = bm_blood_conclave.0001.desc
+		}
+	}
+	theme = witchcraft
+	override_icon = {
+		reference = "gfx/interface/icons/bm_blood_magic_icon.dds"
+	}
+
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = scope:conclave_guest
+		animation = personality_bold
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				NOR = {
+					has_character_flag = bm_conclave_focus_study
+					has_character_flag = bm_conclave_focus_resonance
+					has_character_flag = bm_conclave_focus_communion
+				}
+			}
+			add_character_flag = bm_conclave_focus_study
+		}
+
+		ordered_courtier = {
+			limit = {
+				is_alive = yes
+				is_adult = yes
+				is_imprisoned = no
+				NOT = { has_trait = incapable }
+				is_blood_mage_any_tier_trigger = yes
+				NOT = { house ?= house:bm_house_golem }
+				NOT = { this = root }
+			}
+			order_by = learning
+			max = 4
+			add_to_list = conclave_attendees
+		}
+
+		ordered_in_list = {
+			list = conclave_attendees
+			order_by = {
+				value = 0
+				if = {
+					limit = {
+						OR = {
+							has_relation_rival = root
+							has_trait = ambitious
+							has_trait = arrogant
+							has_trait = deceitful
+						}
+					}
+					add = 50
+				}
+				add = intrigue
+			}
+			max = 1
+			save_scope_as = conclave_guest
+		}
+
+		if = {
+			limit = { exists = scope:conclave_guest }
+			random = {
+				chance = 15
+				add_character_flag = bm_conclave_disrupted
+			}
+		}
+	}
+
+	# Undisrupted completion
+	option = {
+		name = bm_blood_conclave.0001.a
+		trigger = {
+			NOT = { has_character_flag = bm_conclave_disrupted }
+		}
+		bm_apply_blood_conclave_outcome_effect = yes
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	# Disrupted: steady the circle via Learning / Diplomacy duel
+	option = {
+		name = bm_blood_conclave.0001.b
+		trigger = {
+			has_character_flag = bm_conclave_disrupted
+			exists = scope:conclave_guest
+		}
+		duel = {
+			skills = { learning diplomacy }
+			target = scope:conclave_guest
+			65 = {
+				desc = bm_blood_conclave.0001.b.win
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 2.0
+					min = -35
+					max = 30
+				}
+				bm_apply_blood_conclave_outcome_effect = yes
+				bm_add_blood_mage_xp_effect = {
+					TRACK = wisdom
+					XP = 2
+				}
+			}
+			35 = {
+				desc = bm_blood_conclave.0001.b.lose
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -2.0
+					min = -30
+					max = 35
+				}
+				send_interface_toast = {
+					type = bm_event_toast_effect_bad
+					title = bm_blood_conclave_fail_toast
+					left_icon = root
+					right_icon = scope:conclave_guest
+					add_stress = 20
+					scope:conclave_guest = {
+						add_opinion = {
+							target = root
+							modifier = magic_opinion_negative
+							opinion = -15
+						}
+					}
+				}
+			}
+		}
+		ai_chance = {
+			base = 80
+		}
+	}
+
+	# Disrupted: halt early
+	option = {
+		name = bm_blood_conclave.0001.c
+		trigger = {
+			has_character_flag = bm_conclave_disrupted
+		}
+		add_stress = 10
+		add_piety = 50
+		ai_chance = {
+			base = 20
+		}
+	}
+
+	after = {
+		remove_character_flag = bm_conclave_focus_study
+		remove_character_flag = bm_conclave_focus_resonance
+		remove_character_flag = bm_conclave_focus_communion
+		remove_character_flag = bm_conclave_disrupted
+	}
+}
