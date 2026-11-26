@@ -15,3 +15,141 @@ bm_duel_victory_lifeforce_effect = {
 		}
 	}
 }
+
+# Friendly SCE sparring relation protection:
+# Vanilla single_combat.0031 calls progress_towards_rival_effect even for FATALITY = practice,
+# which can create a grudge/potential_rival/rival and break friendships via opposites.
+# Snapshot pre-spar relations on PARTNER before the bout, then restore/cleanup in OUTPUT_EVENT.
+bm_spar_snapshot_relations_effect = {
+	$PARTNER$ = {
+		if = {
+			limit = { has_relation_grudge = root }
+			add_character_flag = {
+				flag = bm_spar_had_grudge
+				days = 60
+			}
+		}
+		if = {
+			limit = { has_relation_rival = root }
+			add_character_flag = {
+				flag = bm_spar_had_rival
+				days = 60
+			}
+		}
+		if = {
+			limit = { has_relation_potential_rival = root }
+			add_character_flag = {
+				flag = bm_spar_had_potential_rival
+				days = 60
+			}
+		}
+		if = {
+			limit = { has_relation_best_friend = root }
+			add_character_flag = {
+				flag = bm_spar_had_best_friend
+				days = 60
+			}
+		}
+		else_if = {
+			limit = { has_relation_friend = root }
+			add_character_flag = {
+				flag = bm_spar_had_friend
+				days = 60
+			}
+		}
+		else_if = {
+			limit = { has_relation_potential_friend = root }
+			add_character_flag = {
+				flag = bm_spar_had_potential_friend
+				days = 60
+			}
+		}
+	}
+}
+
+bm_spar_clear_relation_flags_effect = {
+	$PARTNER$ = {
+		if = {
+			limit = { has_character_flag = bm_spar_had_grudge }
+			remove_character_flag = bm_spar_had_grudge
+		}
+		if = {
+			limit = { has_character_flag = bm_spar_had_rival }
+			remove_character_flag = bm_spar_had_rival
+		}
+		if = {
+			limit = { has_character_flag = bm_spar_had_potential_rival }
+			remove_character_flag = bm_spar_had_potential_rival
+		}
+		if = {
+			limit = { has_character_flag = bm_spar_had_best_friend }
+			remove_character_flag = bm_spar_had_best_friend
+		}
+		if = {
+			limit = { has_character_flag = bm_spar_had_friend }
+			remove_character_flag = bm_spar_had_friend
+		}
+		if = {
+			limit = { has_character_flag = bm_spar_had_potential_friend }
+			remove_character_flag = bm_spar_had_potential_friend
+		}
+	}
+}
+
+bm_spar_restore_relations_effect = {
+	$PARTNER$ = {
+		if = {
+			limit = {
+				has_relation_grudge = root
+				NOT = { has_character_flag = bm_spar_had_grudge }
+			}
+			remove_relation_grudge = root
+		}
+		if = {
+			limit = {
+				has_relation_rival = root
+				NOT = { has_character_flag = bm_spar_had_rival }
+			}
+			remove_relation_rival = root
+			if = {
+				limit = { has_character_flag = bm_spar_had_potential_rival }
+				set_relation_potential_rival = root
+			}
+		}
+		if = {
+			limit = {
+				has_relation_potential_rival = root
+				NOT = { has_character_flag = bm_spar_had_potential_rival }
+			}
+			remove_relation_potential_rival = root
+		}
+		if = {
+			limit = {
+				has_character_flag = bm_spar_had_best_friend
+				NOT = { has_relation_best_friend = root }
+			}
+			set_relation_best_friend = {
+				target = root
+				reason = friend_generic_history
+			}
+		}
+		else_if = {
+			limit = {
+				has_character_flag = bm_spar_had_friend
+				NOT = { has_relation_friend = root }
+			}
+			set_relation_friend = {
+				target = root
+				reason = friend_generic_history
+			}
+		}
+		else_if = {
+			limit = {
+				has_character_flag = bm_spar_had_potential_friend
+				NOT = { has_relation_potential_friend = root }
+			}
+			set_relation_potential_friend = root
+		}
+	}
+	bm_spar_clear_relation_flags_effect = { PARTNER = $PARTNER$ }
+}
