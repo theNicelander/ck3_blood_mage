@@ -11,7 +11,9 @@
 
 	is_valid_showing_failures_only = {
 		OR = {
+			has_character_modifier = lifeforce_modifier_minor
 			has_character_modifier = lifeforce_modifier_major
+			has_character_modifier = lifeforce_modifier_superior
 			has_character_modifier = lifeforce_modifier_radiant
 			has_character_modifier = lifeforce_modifier_furious
 			has_character_modifier = lifeforce_modifier_fortunate
@@ -29,6 +31,18 @@
 	ai_check_interval = 12
 	ai_will_do = {
 		base = 50
+		modifier = {
+			factor = 0
+			NOR = {
+				has_character_modifier = lifeforce_modifier_major
+				has_character_modifier = lifeforce_modifier_radiant
+				has_character_modifier = lifeforce_modifier_furious
+				has_character_modifier = lifeforce_modifier_fortunate
+				has_character_modifier = lifeforce_modifier_cunning
+				has_character_modifier = lifeforce_modifier_wise
+				has_character_modifier = lifeforce_modifier_ancient
+			}
+		}
 		modifier = {
 			health <= fine_health
 			add = -50
