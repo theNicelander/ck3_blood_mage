@@ -272,7 +272,7 @@
 			}
 			scope:actor = {
 				has_character_modifier = lifeforce_modifier_major
-				piety >= bm_memory_drain_piety_cost
+				piety >= bm_memory_drain_min_piety_cost
 				custom_tooltip = {
 					text = bm_memory_drain_caster_cooldown_tt
 					NOT = { has_character_flag = bm_memory_drain_cooldown }
