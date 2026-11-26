@@ -33,9 +33,10 @@ The `fury` track uses a 5-milestone progression (10, 30, 50, 70, 100 XP), provid
 Martial XP gains are consolidated into single, balanced increments:
 
 1. **Battlefield Victories (`common/on_action/bm_combat_on_actions.txt`, `common/scripted_effects/bm_combat_effects.txt`):**
-   - Army Commander victory: +1 to +3 Fury XP (scaled by battle size: +1 for small, +2 for medium, +3 for decisive).
-   - Sworn knight participation in victory: +1 to +2 Fury XP.
-   - Battle Defeat: +1 Fury XP (survival against adversity).
+   - Scaled by **enemy army size** (`enemy_side.side_max_army_size`), with a **0 XP skirmish floor** (`< 500` enemy troops) and **diminishing returns at 50+ Fury XP**:
+   - Army Commander victory: `+1` (500-2,499 enemy) / `+2` (2,500-7,499) / `+3` (7,500+); at 50+ Fury XP: `0` / `+1` / `+2`.
+   - Sworn knight participation in victory: `+1` (500-7,499 enemy) / `+2` (7,500+); at 50+ Fury XP: `0` (500-2,499) / `+1` (2,500+).
+   - Battle Defeat: `+1` Fury XP (+1 Wisdom) only when both sides have `>= 1,000` troops (`>= 2,500` at 50+ Fury XP).
 2. **Duels & Single Combat (`common/on_action/bm_duel_on_actions.txt`, `events/bm_geyser_duel_events.txt`, `events/bm_seek_power_events.txt`):**
    - Fatal Single Combat kill: +3 Fury XP (via `bm_combat_on_character_death_effect` / `bm_on_character_death_duel`).
    - Siphoning Duel victory: +2 Fury XP.
