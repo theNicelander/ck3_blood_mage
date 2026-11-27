@@ -5,11 +5,11 @@
 | --- | ---: |
 | **Always-On (every turn)** | **1,528** |
 | ↳ Core (`AGENTS.md`) | 1,528 |
-| **On-Demand** | **12,357** |
-| ↳ Localized (`**/AGENTS.md`) | 5,316 |
+| **On-Demand** | **12,459** |
+| ↳ Localized (`**/AGENTS.md`) | 5,375 |
 | ↳ Rules (`model_decision`) | 0 |
-| ↳ Skills (`.agents/skills/`) | 7,041 |
-| **Total** | **13,885** |
+| ↳ Skills (`.agents/skills/`) | 7,084 |
+| **Total** | **13,987** |
 
 ## Details per file
 
@@ -17,7 +17,7 @@
 | --- | --- | --- | ---: |
 | `.agents/skills/debug-ck3-logs/SKILL.md` | On-Demand | Skills | 1,642 |
 | `AGENTS.md` | Always-On | Core | 1,528 |
-| `.agents/skills/add-overhaul-compat/SKILL.md` | On-Demand | Skills | 1,318 |
+| `.agents/skills/add-overhaul-compat/SKILL.md` | On-Demand | Skills | 1,361 |
 | `docs-ai/architecture/AGENTS.md` | On-Demand | Localized | 1,271 |
 | `.agents/skills/single-combat/SKILL.md` | On-Demand | Skills | 916 |
 | `.agents/skills/manage-pr/SKILL.md` | On-Demand | Skills | 819 |
@@ -31,7 +31,7 @@
 | `.agents/skills/add-decision-option-widget/SKILL.md` | On-Demand | Skills | 423 |
 | `.agents/skills/add-interaction-send-options/SKILL.md` | On-Demand | Skills | 376 |
 | `common/decisions/AGENTS.md` | On-Demand | Localized | 373 |
-| `common/AGENTS.md` | On-Demand | Localized | 295 |
+| `common/AGENTS.md` | On-Demand | Localized | 354 |
 | `common/traits/AGENTS.md` | On-Demand | Localized | 281 |
 | `common/artifacts/AGENTS.md` | On-Demand | Localized | 278 |
 | `.agents/skills/caveman/SKILL.md` | On-Demand | Skills | 190 |
