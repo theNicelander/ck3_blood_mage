@@ -383,6 +383,16 @@ bm_trait_drain.001 = {
         ai_chance = { base = 100 }
     }
 
+    # Overhaul-specific blood & trait drain hub (AGOT / LotR / EK2)
+    option = {
+        name = bm_trait_drain.001.compat_hub
+        trigger = {
+            bm_compat_can_drain_traits_from_target_trigger = yes
+        }
+        bm_compat_open_trait_drain_event_effect = yes
+        ai_chance = { base = 100 }
+    }
+
     # Do nothing
     option = {
         name = bm_trait_drain.001.z

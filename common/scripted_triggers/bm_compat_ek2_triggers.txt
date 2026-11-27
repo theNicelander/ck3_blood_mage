@@ -1,0 +1,83 @@
+﻿# Elder Kings 2 (2887120253) Trait Drain Compatibility Triggers
+# All EK2-only references are isolated here and gated behind bm_is_ek2_loaded_trigger.
+
+bm_compat_ek2_can_drain_arcana_trigger = {
+	bm_is_ek2_loaded_trigger = yes
+	NOT = { has_trait_rank = { trait = arcana_good rank >= 3 } }
+	scope:recipient = { has_trait = arcana_good }
+}
+
+bm_compat_ek2_can_drain_magickal_trigger = {
+	bm_is_ek2_loaded_trigger = yes
+	NOR = {
+		has_trait = magickal
+		has_trait = arcana_bad
+	}
+	scope:recipient = { has_trait = magickal }
+}
+
+bm_compat_ek2_can_drain_lifespan_trigger = {
+	bm_is_ek2_loaded_trigger = yes
+	NOT = { has_trait_rank = { trait = lifespan rank >= 4 } }
+	NOR = {
+		has_trait = lifespan_6
+		has_trait = lifespan_magic_6
+		has_trait = vampire_character
+		has_trait = lich_character
+	}
+	scope:recipient = { has_trait = lifespan }
+}
+
+bm_compat_ek2_can_drain_dragonborn_trigger = {
+	bm_is_ek2_loaded_trigger = yes
+	NOT = { has_trait = dragonborn }
+	scope:recipient = { has_trait = dragonborn }
+}
+
+bm_compat_ek2_can_drain_vampire_trigger = {
+	bm_is_ek2_loaded_trigger = yes
+	NOR = {
+		has_trait = vampire_character
+		has_trait = lycan_character
+		has_trait = lich_character
+		has_trait = briarheart
+		has_trait = hagraven
+		has_trait = reclusive_vampire
+	}
+	scope:recipient = { has_trait = vampire_character }
+}
+
+bm_compat_ek2_can_drain_lycan_trigger = {
+	bm_is_ek2_loaded_trigger = yes
+	NOR = {
+		has_trait = lycan_character
+		has_trait = vampire_character
+		has_trait = lich_character
+		has_trait = briarheart
+		has_trait = hagraven
+		has_trait = irritable_lycan
+	}
+	scope:recipient = { has_trait = lycan_character }
+}
+
+bm_compat_ek2_can_drain_necromancer_trigger = {
+	bm_is_ek2_loaded_trigger = yes
+	NOR = {
+		has_trait = necromancer
+		has_trait = experimentalist_necromancer
+	}
+	scope:recipient = { has_trait = necromancer }
+}
+
+bm_compat_ek2_can_drain_traits_from_target_trigger = {
+	bm_is_ek2_loaded_trigger = yes
+	OR = {
+		bm_compat_ek2_can_drain_arcana_trigger = yes
+		bm_compat_ek2_can_drain_magickal_trigger = yes
+		bm_compat_ek2_can_drain_lifespan_trigger = yes
+		bm_compat_ek2_can_drain_dragonborn_trigger = yes
+		bm_compat_ek2_can_drain_vampire_trigger = yes
+		bm_compat_ek2_can_drain_lycan_trigger = yes
+		bm_compat_ek2_can_drain_necromancer_trigger = yes
+	}
+}

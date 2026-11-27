@@ -1,0 +1,36 @@
+﻿# LotR: Realms in Exile (2291024373) Trait Drain Compatibility Triggers
+# All LotR-only references are isolated here and gated behind bm_is_lotr_loaded_trigger.
+
+bm_compat_lotr_can_drain_numenor_trigger = {
+	bm_is_lotr_loaded_trigger = yes
+	NOT = { has_trait_rank = { trait = blood_of_numenor rank >= 10 } }
+	scope:recipient = { has_trait = blood_of_numenor }
+}
+
+bm_compat_lotr_can_drain_skinchanger_trigger = {
+	bm_is_lotr_loaded_trigger = yes
+	NOT = { has_trait = skinchanger }
+	scope:recipient = { has_trait = skinchanger }
+}
+
+bm_compat_lotr_can_drain_sorcerer_trigger = {
+	bm_is_lotr_loaded_trigger = yes
+	NOT = { has_trait_rank = { trait = sorcerer rank >= 3 } }
+	scope:recipient = { has_trait = sorcerer }
+}
+
+bm_compat_lotr_can_drain_twotrees_trigger = {
+	bm_is_lotr_loaded_trigger = yes
+	NOT = { has_trait = twotreeslight }
+	scope:recipient = { has_trait = twotreeslight }
+}
+
+bm_compat_lotr_can_drain_traits_from_target_trigger = {
+	bm_is_lotr_loaded_trigger = yes
+	OR = {
+		bm_compat_lotr_can_drain_numenor_trigger = yes
+		bm_compat_lotr_can_drain_skinchanger_trigger = yes
+		bm_compat_lotr_can_drain_sorcerer_trigger = yes
+		bm_compat_lotr_can_drain_twotrees_trigger = yes
+	}
+}

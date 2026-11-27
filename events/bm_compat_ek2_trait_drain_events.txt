@@ -1,0 +1,538 @@
+﻿namespace = bm_compat_ek2_trait_drain
+
+# Elder Kings 2 - Tamrielic Blood & Arcane Harvest
+bm_compat_ek2_trait_drain.0001 = {
+	type = character_event
+	title = bm_compat_ek2_trait_drain.0001.title
+	desc = bm_compat_ek2_trait_drain.0001.desc
+	theme = witchcraft
+	override_icon = {
+		reference = "gfx/interface/icons/bm_blood_magic_icon.dds"
+	}
+
+	# 1. Drain Arcana (tiers 1-3, purges arcana_bad first)
+	option = {
+		name = bm_compat_ek2_trait_drain.0001.arcana
+		trigger = {
+			bm_compat_ek2_can_drain_arcana_trigger = yes
+			trigger_if = {
+				limit = { has_trait = arcana_good_2 }
+				piety >= 250
+			}
+			trigger_else_if = {
+				limit = { has_trait = arcana_good_1 }
+				piety >= 175
+			}
+			trigger_else = {
+				piety >= 100
+			}
+		}
+		show_as_unavailable = {
+			bm_compat_ek2_can_drain_arcana_trigger = yes
+		}
+
+		if = {
+			limit = { has_trait = arcana_good_2 }
+			add_piety = -250
+		}
+		else_if = {
+			limit = { has_trait = arcana_good_1 }
+			add_piety = -175
+		}
+		else = {
+			add_piety = -100
+		}
+		bm_trait_drain_commit_cost_and_cooldown_effect = yes
+		temporary_trait_drain_attempted = yes
+
+		duel = {
+			skill = learning
+			target = scope:recipient
+			50 = {
+				desc = bm_trait_drain.001.success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 5
+					min = -40
+				}
+				modifier = { add = trait_drain_modifier }
+
+				send_interface_toast = {
+					type = bm_event_toast_effect_good
+					title = bm_trait_drain.001.success
+					left_icon = root
+					right_icon = scope:recipient
+					if = {
+						limit = { has_trait = arcana_bad_1 }
+						remove_trait = arcana_bad_1
+					}
+					else_if = {
+						limit = { has_trait = arcana_bad }
+						change_trait_rank = {
+							trait = arcana_bad
+							rank = -1
+							max = 3
+						}
+					}
+					else_if = {
+						limit = { NOT = { has_trait = arcana_good } }
+						add_trait = arcana_good_1
+					}
+					else = {
+						change_trait_rank = {
+							trait = arcana_good
+							rank = 1
+							max = 3
+						}
+					}
+					add_xp_bm_dynamic = {
+						TRACK = cunning
+						XP = 3
+					}
+				}
+
+				sacrifice_prisoner_effect = {
+					VICTIM = scope:recipient
+					EXECUTIONER = root
+				}
+			}
+			50 = {
+				scope:recipient = { temporary_negative_recently_trait_drained = yes }
+				modifier = { add = recipient_trait_drain_modifier_per_trait }
+				send_interface_toast = {
+					title = bm_trait_drain.001.fail
+					drain_trait_failed_effects = yes
+					left_icon = root
+					right_icon = scope:recipient
+				}
+			}
+		}
+		ai_chance = { base = 100 }
+	}
+
+	# 2. Drain Magickal
+	option = {
+		name = bm_compat_ek2_trait_drain.0001.magickal
+		trigger = {
+			bm_compat_ek2_can_drain_magickal_trigger = yes
+			piety >= 150
+		}
+		show_as_unavailable = {
+			bm_compat_ek2_can_drain_magickal_trigger = yes
+		}
+
+		add_piety = -150
+		bm_trait_drain_commit_cost_and_cooldown_effect = yes
+		temporary_trait_drain_attempted = yes
+
+		duel = {
+			skill = learning
+			target = scope:recipient
+			50 = {
+				desc = bm_trait_drain.001.success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 5
+					min = -40
+				}
+				modifier = { add = trait_drain_modifier }
+				modifier = { add = -30 }
+
+				send_interface_toast = {
+					type = bm_event_toast_effect_good
+					title = bm_trait_drain.001.success
+					left_icon = root
+					right_icon = scope:recipient
+					add_trait = magickal
+					add_xp_bm_dynamic = {
+						TRACK = cunning
+						XP = 4
+					}
+				}
+
+				sacrifice_prisoner_effect = {
+					VICTIM = scope:recipient
+					EXECUTIONER = root
+				}
+			}
+			50 = {
+				scope:recipient = { temporary_negative_recently_trait_drained = yes }
+				modifier = { add = recipient_trait_drain_modifier_per_trait }
+				send_interface_toast = {
+					title = bm_trait_drain.001.fail
+					drain_trait_failed_effects = yes
+					left_icon = root
+					right_icon = scope:recipient
+				}
+			}
+		}
+		ai_chance = { base = 100 }
+	}
+
+	# 3. Drain Lifespan (tiers 1-4)
+	option = {
+		name = bm_compat_ek2_trait_drain.0001.lifespan
+		trigger = {
+			bm_compat_ek2_can_drain_lifespan_trigger = yes
+			trigger_if = {
+				limit = { has_trait_rank = { trait = lifespan rank >= 3 } }
+				piety >= 500
+				piety_level >= 2
+			}
+			trigger_else_if = {
+				limit = { has_trait_rank = { trait = lifespan rank >= 2 } }
+				piety >= 350
+			}
+			trigger_else = {
+				piety >= 200
+			}
+		}
+		show_as_unavailable = {
+			bm_compat_ek2_can_drain_lifespan_trigger = yes
+		}
+
+		if = {
+			limit = { has_trait_rank = { trait = lifespan rank >= 3 } }
+			add_piety = -500
+		}
+		else_if = {
+			limit = { has_trait_rank = { trait = lifespan rank >= 2 } }
+			add_piety = -350
+		}
+		else = {
+			add_piety = -200
+		}
+		bm_trait_drain_commit_cost_and_cooldown_effect = yes
+		temporary_trait_drain_attempted = yes
+
+		duel = {
+			skill = learning
+			target = scope:recipient
+			50 = {
+				desc = bm_trait_drain.001.success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 5
+					min = -40
+				}
+				modifier = { add = trait_drain_modifier }
+				modifier = {
+					add = -40
+					NOT = { has_trait_rank = { trait = lifespan rank >= 3 } }
+				}
+				modifier = {
+					add = -70
+					has_trait_rank = { trait = lifespan rank >= 3 }
+				}
+
+				send_interface_toast = {
+					type = bm_event_toast_effect_good
+					title = bm_trait_drain.001.success
+					left_icon = root
+					right_icon = scope:recipient
+					if = {
+						limit = { NOT = { has_trait = lifespan } }
+						add_trait = lifespan_1
+					}
+					else = {
+						change_trait_rank = {
+							trait = lifespan
+							rank = 1
+							max = 4
+						}
+					}
+					add_xp_bm_dynamic = {
+						TRACK = cunning
+						XP = 4
+					}
+					add_xp_bm_dynamic = {
+						TRACK = ancient
+						XP = 3
+					}
+				}
+
+				sacrifice_prisoner_effect = {
+					VICTIM = scope:recipient
+					EXECUTIONER = root
+				}
+			}
+			50 = {
+				scope:recipient = { temporary_negative_recently_trait_drained = yes }
+				modifier = { add = recipient_trait_drain_modifier_per_trait }
+				send_interface_toast = {
+					title = bm_trait_drain.001.fail
+					drain_trait_failed_effects = yes
+					left_icon = root
+					right_icon = scope:recipient
+				}
+			}
+		}
+		ai_chance = { base = 100 }
+	}
+
+	# 4. Drain Dragonborn
+	option = {
+		name = bm_compat_ek2_trait_drain.0001.dragonborn
+		trigger = {
+			bm_compat_ek2_can_drain_dragonborn_trigger = yes
+			piety >= 750
+			piety_level >= 3
+		}
+		show_as_unavailable = {
+			bm_compat_ek2_can_drain_dragonborn_trigger = yes
+		}
+
+		add_piety = -750
+		bm_trait_drain_commit_cost_and_cooldown_effect = yes
+		temporary_trait_drain_attempted = yes
+
+		duel = {
+			skill = learning
+			target = scope:recipient
+			50 = {
+				desc = bm_trait_drain.001.success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 5
+					min = -40
+				}
+				modifier = { add = trait_drain_modifier }
+				modifier = { add = -100 }
+
+				send_interface_toast = {
+					type = bm_event_toast_effect_good
+					title = bm_trait_drain.001.success
+					left_icon = root
+					right_icon = scope:recipient
+					add_trait = dragonborn
+					add_xp_bm_dynamic = {
+						TRACK = cunning
+						XP = 5
+					}
+					add_xp_bm_dynamic = {
+						TRACK = ancient
+						XP = 5
+					}
+				}
+
+				sacrifice_prisoner_effect = {
+					VICTIM = scope:recipient
+					EXECUTIONER = root
+				}
+			}
+			50 = {
+				scope:recipient = { temporary_negative_recently_trait_drained = yes }
+				modifier = { add = recipient_trait_drain_modifier_per_trait }
+				send_interface_toast = {
+					title = bm_trait_drain.001.fail
+					drain_trait_failed_effects = yes
+					left_icon = root
+					right_icon = scope:recipient
+				}
+			}
+		}
+		ai_chance = { base = 100 }
+	}
+
+	# 5. Drain Vampirism
+	option = {
+		name = bm_compat_ek2_trait_drain.0001.vampire
+		trigger = {
+			bm_compat_ek2_can_drain_vampire_trigger = yes
+			piety >= 400
+			piety_level >= 2
+		}
+		show_as_unavailable = {
+			bm_compat_ek2_can_drain_vampire_trigger = yes
+		}
+
+		add_piety = -400
+		bm_trait_drain_commit_cost_and_cooldown_effect = yes
+		temporary_trait_drain_attempted = yes
+
+		duel = {
+			skill = learning
+			target = scope:recipient
+			50 = {
+				desc = bm_trait_drain.001.success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 5
+					min = -40
+				}
+				modifier = { add = trait_drain_modifier }
+				modifier = { add = -60 }
+
+				send_interface_toast = {
+					type = bm_event_toast_effect_good
+					title = bm_trait_drain.001.success
+					left_icon = root
+					right_icon = scope:recipient
+					add_trait = vampire_character
+					add_xp_bm_dynamic = {
+						TRACK = cunning
+						XP = 5
+					}
+				}
+
+				sacrifice_prisoner_effect = {
+					VICTIM = scope:recipient
+					EXECUTIONER = root
+				}
+			}
+			50 = {
+				scope:recipient = { temporary_negative_recently_trait_drained = yes }
+				modifier = { add = recipient_trait_drain_modifier_per_trait }
+				send_interface_toast = {
+					title = bm_trait_drain.001.fail
+					drain_trait_failed_effects = yes
+					left_icon = root
+					right_icon = scope:recipient
+				}
+			}
+		}
+		ai_chance = { base = 50 }
+	}
+
+	# 6. Drain Lycanthropy
+	option = {
+		name = bm_compat_ek2_trait_drain.0001.lycan
+		trigger = {
+			bm_compat_ek2_can_drain_lycan_trigger = yes
+			piety >= 350
+			piety_level >= 2
+		}
+		show_as_unavailable = {
+			bm_compat_ek2_can_drain_lycan_trigger = yes
+		}
+
+		add_piety = -350
+		bm_trait_drain_commit_cost_and_cooldown_effect = yes
+		temporary_trait_drain_attempted = yes
+
+		duel = {
+			skill = learning
+			target = scope:recipient
+			50 = {
+				desc = bm_trait_drain.001.success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 5
+					min = -40
+				}
+				modifier = { add = trait_drain_modifier }
+				modifier = { add = -50 }
+
+				send_interface_toast = {
+					type = bm_event_toast_effect_good
+					title = bm_trait_drain.001.success
+					left_icon = root
+					right_icon = scope:recipient
+					add_trait = lycan_character
+					add_xp_bm_dynamic = {
+						TRACK = cunning
+						XP = 5
+					}
+				}
+
+				sacrifice_prisoner_effect = {
+					VICTIM = scope:recipient
+					EXECUTIONER = root
+				}
+			}
+			50 = {
+				scope:recipient = { temporary_negative_recently_trait_drained = yes }
+				modifier = { add = recipient_trait_drain_modifier_per_trait }
+				send_interface_toast = {
+					title = bm_trait_drain.001.fail
+					drain_trait_failed_effects = yes
+					left_icon = root
+					right_icon = scope:recipient
+				}
+			}
+		}
+		ai_chance = { base = 50 }
+	}
+
+	# 7. Drain Necromancy
+	option = {
+		name = bm_compat_ek2_trait_drain.0001.necromancer
+		trigger = {
+			bm_compat_ek2_can_drain_necromancer_trigger = yes
+			piety >= 200
+		}
+		show_as_unavailable = {
+			bm_compat_ek2_can_drain_necromancer_trigger = yes
+		}
+
+		add_piety = -200
+		bm_trait_drain_commit_cost_and_cooldown_effect = yes
+		temporary_trait_drain_attempted = yes
+
+		duel = {
+			skill = learning
+			target = scope:recipient
+			50 = {
+				desc = bm_trait_drain.001.success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 5
+					min = -40
+				}
+				modifier = { add = trait_drain_modifier }
+				modifier = { add = -40 }
+
+				send_interface_toast = {
+					type = bm_event_toast_effect_good
+					title = bm_trait_drain.001.success
+					left_icon = root
+					right_icon = scope:recipient
+					add_trait = necromancer
+					add_xp_bm_dynamic = {
+						TRACK = cunning
+						XP = 4
+					}
+					add_xp_bm_dynamic = {
+						TRACK = wisdom
+						XP = 2
+					}
+				}
+
+				sacrifice_prisoner_effect = {
+					VICTIM = scope:recipient
+					EXECUTIONER = root
+				}
+			}
+			50 = {
+				scope:recipient = { temporary_negative_recently_trait_drained = yes }
+				modifier = { add = recipient_trait_drain_modifier_per_trait }
+				send_interface_toast = {
+					title = bm_trait_drain.001.fail
+					drain_trait_failed_effects = yes
+					left_icon = root
+					right_icon = scope:recipient
+				}
+			}
+		}
+		ai_chance = { base = 80 }
+	}
+
+	# Back
+	option = {
+		name = bm_compat_ek2_trait_drain.0001.back
+		if = {
+			limit = { bm_can_drain_vanilla_traits_from_target_trigger = yes }
+			trigger_event = bm_trait_drain.001
+		}
+		ai_chance = { base = 5 }
+	}
+
+	left_portrait = {
+		character = root
+		animation = rage
+	}
+	right_portrait = {
+		character = scope:recipient
+		animation = beg
+	}
+}
