@@ -168,7 +168,7 @@ bm_ritual_spar_events.0002 = {
 				}
 				bm_add_blood_mage_xp_effect = {
 					TRACK = fury
-					XP = 3
+					XP = 1
 				}
 				if = {
 					limit = { has_trait = lifestyle_blademaster }
@@ -185,10 +185,6 @@ bm_ritual_spar_events.0002 = {
 					}
 				}
 				scope:sc_loser = {
-					bm_add_blood_mage_xp_effect = {
-						TRACK = fury
-						XP = 1
-					}
 					if = {
 						limit = { has_trait = lifestyle_blademaster }
 						add_trait_xp = {
@@ -221,10 +217,6 @@ bm_ritual_spar_events.0002 = {
 				title = bm_ritual_spar_loser_toast
 				left_icon = root
 				right_icon = scope:sc_defender
-				bm_add_blood_mage_xp_effect = {
-					TRACK = fury
-					XP = 1
-				}
 				if = {
 					limit = { has_trait = lifestyle_blademaster }
 					add_trait_xp = {
@@ -253,7 +245,7 @@ bm_ritual_spar_events.0002 = {
 					}
 					bm_add_blood_mage_xp_effect = {
 						TRACK = fury
-						XP = 3
+						XP = 1
 					}
 					if = {
 						limit = { has_trait = lifestyle_blademaster }
