@@ -10,12 +10,14 @@ description: >-
 ## Principles
 
 - **Built-in, zero submods**: Keep overhaul compat inside `ck3_blood_mage` in isolated `bm_compat_<overhaul>_*` files gated by Day-1 `on_game_start` global variables. Benign parse-time `error.log` warnings in vanilla are acceptable when isolated and documented in `debug-ck3-logs`.
+- **Popular/major mods only**: Only add built-in compat for major overhauls (AGOT, LotR, EK2, PoD) or widely used mods (e.g. Commander+ 1.21, Inheritable Traits++). Skip niche/uncommon trait packs (unguarded trait keys add startup `error.log` noise and name-collision risk for few users).
 - **Verify in workshop files first**: Never guess trait IDs, `opposites`, or startup globals. Inspect `/Users/clarabotet/Library/Application Support/Steam/steamapps/workshop/content/1158310/<id>/` (needs `BypassSandbox: true`).
 - **Installed overhauls & guards**:
   - AGOT (`2962333032`): `bm_is_agot_loaded_trigger` (`AGOT_is_loaded`)
   - LotR: Realms in Exile (`2291024373`): `bm_is_lotr_loaded_trigger` (`tedjin_reactionaries_triggered` / `sauron_destroyed`)
   - Elder Kings 2 (`2887120253`): `bm_is_ek2_loaded_trigger` (`morrowind_high_councilor` / `almsivi_*_power`)
   - Inheritable Traits++ (`3714256909`): warning-free via vanilla trait groups + `has_trait_rank`/`change_trait_rank` (`max = 5`)
+  - Commander+ 1.21 (`3716251917`): unguarded 29 single-track commander traits in `bm_compat_memory_*` (watch generic keys like `zealot`/`patriot`/`navigator`/`mapper`)
 
 ## Recipe: Add a New Overhaul Module (`<mod>`, e.g. `pod`)
 
@@ -28,6 +30,7 @@ description: >-
 4. **Wire router (2 lines)**:
    - Add `bm_compat_<mod>_can_drain_traits_from_target_trigger = yes` to `bm_compat_can_drain_traits_from_target_trigger` (`common/scripted_triggers/bm_trait_triggers.txt`) - automatically enables both `bm_blood_drain_interaction` and `bm_action_can_trait_drain_prisoner`.
    - Add `else_if` branch in `bm_compat_open_trait_drain_event_effect` (`common/scripted_effects/bm_drain_trait_effects.txt`).
+   - **Blood Memory Drain (lifestyles/commanders/fame)**: Add triggers to `common/scripted_triggers/bm_compat_memory_triggers.txt` (including `bm_compat_has_xp_drainable_memory_trait_trigger` for tracked traits; use `quad_track` helpers for 4-track traits), a picker event in `events/bm_compat_memory_drain_events.txt`, and an `else_if` branch in `bm_compat_open_memory_drain_event_effect` (`common/scripted_effects/bm_memory_drain_effects.txt`).
 5. **Docs & validate**: Add benign parse warning signatures to `.agents/skills/debug-ck3-logs/SKILL.md`, update `docs-ai/architecture/blood-mage-interactions.md`, run `python3 scripts/check_repo.py --fix`.
 
 ## CK3 Cross-Mod Gotchas
