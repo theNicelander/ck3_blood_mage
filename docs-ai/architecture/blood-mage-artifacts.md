@@ -17,7 +17,11 @@ Living technical specification for forged Blood Artifacts and Egill Skallagrimss
 | --- | --- |
 | Artifact template | `common/artifacts/templates/bm_artifact_templates.txt` |
 | Slot, discipline & tempered modifiers | `common/modifiers/bm_artifact_modifiers.txt` |
-| Creation, tempering & Egill spawn effects | `common/scripted_effects/bm_blood_artifact_effects.txt` |
+| Creation & tempering effects | `common/scripted_effects/bm_blood_artifact_effects.txt` |
+| Shared Egill build (`bm_create_egill_effect`, `bm_vanish_egill_effect`) | `common/scripted_effects/bm_egill_effects.txt` |
 | Forge & temper decisions | `common/decisions/cast_magic/bm_blood_artifact_decisions.txt` |
 | Forging & duel events | `events/bm_blood_artifact_events.txt` |
 | Localization | `localization/english/bm_blood_artifacts_l_english.yml` |
+
+## Gotchas
+- Event scopes do not persist across decisions, so `exists = scope:` guards for spawned NPCs never hit. Egill is created per chain by `bm_create_egill_effect` (shared by geyser + tempering duels) and removed by `bm_vanish_egill_effect`; SCE duel keeps him via flag `bm_temper_sce_pending` until `.0012`/`.0013`.
