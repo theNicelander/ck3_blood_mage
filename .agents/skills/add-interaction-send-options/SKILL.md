@@ -1,7 +1,7 @@
 ---
 name: add-interaction-send-options
 description: >-
-  Add or refactor character interaction with exclusive modal send_option choices in CK3 1.20.
+  Add or refactor character interaction with exclusive modal send_option choices in CK3 1.21.
 ---
 
 # Add interaction send options

@@ -1,7 +1,7 @@
 ---
 name: add-decision-option-widget
 description: >-
-  Add decision with inline multi-choice option-list widget in CK3 1.20.
+  Add decision with inline multi-choice option-list widget in CK3 1.21.
 ---
 
 # Add decision option-list widget
