@@ -107,7 +107,7 @@ ai_willingness_to_lifedrain = {
     # Absolute veto: Never drain blood golems
     modifier = {
         factor = 0
-        scope:recipient = { house ?= house:bm_house_golem }
+        scope:recipient = { bm_is_blood_golem_trigger = yes }
     }
 
     # Absolute veto: Never drain friends, best friends, soulmates, lovers, or wards

@@ -130,7 +130,7 @@ bm_yearly_interpersonal_pulse = {
                 trigger = {
                     any_courtier = {
                         is_alive = yes
-                        house ?= house:bm_house_golem
+                        bm_is_blood_golem_trigger = yes
                     }
                 }
                 trigger_event = bm_interpersonal_events.0004
@@ -141,7 +141,7 @@ bm_yearly_interpersonal_pulse = {
                         is_alive = yes
                         is_adult = yes
                         NOT = { is_blood_mage_any_tier_trigger = yes }
-                        NOT = { house ?= house:bm_house_golem }
+                        NOT = { bm_is_blood_golem_trigger = yes }
                     }
                 }
                 trigger_event = bm_interpersonal_events.0005
@@ -158,7 +158,7 @@ bm_yearly_interpersonal_pulse = {
                         is_alive = yes
                         is_adult = yes
                         NOT = { is_close_family_of = root }
-                        NOT = { house ?= house:bm_house_golem }
+                        NOT = { bm_is_blood_golem_trigger = yes }
                     }
                 }
                 modifier = {
@@ -179,7 +179,7 @@ bm_yearly_interpersonal_pulse = {
                 trigger = {
                     any_courtier = {
                         is_alive = yes
-                        house ?= house:bm_house_golem
+                        bm_is_blood_golem_trigger = yes
                     }
                 }
                 trigger_event = bm_interpersonal_events.0009

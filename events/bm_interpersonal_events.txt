@@ -399,7 +399,7 @@ bm_interpersonal_events.0004 = {
 		is_blood_mage_any_tier_trigger = yes
 		any_courtier = {
 			is_alive = yes
-			house ?= house:bm_house_golem
+			bm_is_blood_golem_trigger = yes
 		}
 	}
 
@@ -408,7 +408,7 @@ bm_interpersonal_events.0004 = {
 		random_courtier = {
 			limit = {
 				is_alive = yes
-				house ?= house:bm_house_golem
+				bm_is_blood_golem_trigger = yes
 			}
 			save_scope_as = golem
 		}
@@ -525,7 +525,7 @@ bm_interpersonal_events.0005 = {
 			is_alive = yes
 			is_adult = yes
 			NOT = { is_blood_mage_any_tier_trigger = yes }
-			NOT = { house ?= house:bm_house_golem }
+			NOT = { bm_is_blood_golem_trigger = yes }
 		}
 	}
 
@@ -536,7 +536,7 @@ bm_interpersonal_events.0005 = {
 				is_alive = yes
 				is_adult = yes
 				NOT = { is_blood_mage_any_tier_trigger = yes }
-				NOT = { house ?= house:bm_house_golem }
+				NOT = { bm_is_blood_golem_trigger = yes }
 			}
 			save_scope_as = courtier
 		}
@@ -667,7 +667,7 @@ bm_interpersonal_events.0006 = {
 			is_alive = yes
 			is_adult = yes
 			NOT = { is_close_family_of = root }
-			NOT = { house ?= house:bm_house_golem }
+			NOT = { bm_is_blood_golem_trigger = yes }
 		}
 	}
 
@@ -678,7 +678,7 @@ bm_interpersonal_events.0006 = {
 				is_alive = yes
 				is_adult = yes
 				NOT = { is_close_family_of = root }
-				NOT = { house ?= house:bm_house_golem }
+				NOT = { bm_is_blood_golem_trigger = yes }
 			}
 			save_scope_as = prey
 		}
@@ -1052,7 +1052,7 @@ bm_interpersonal_events.0009 = {
 		is_blood_mage_any_tier_trigger = yes
 		any_courtier = {
 			is_alive = yes
-			house ?= house:bm_house_golem
+			bm_is_blood_golem_trigger = yes
 		}
 	}
 
@@ -1061,7 +1061,7 @@ bm_interpersonal_events.0009 = {
 		random_courtier = {
 			limit = {
 				is_alive = yes
-				house ?= house:bm_house_golem
+				bm_is_blood_golem_trigger = yes
 			}
 			save_scope_as = golem
 		}
