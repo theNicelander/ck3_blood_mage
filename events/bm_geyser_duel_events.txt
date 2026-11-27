@@ -25,196 +25,13 @@ bm_geyser_duel.0001 = {
 		animation = personality_bold
 	}
 	right_portrait = {
-		character = scope:bm_geyser_wise_one
+		character = scope:bm_egill
 		animation = personality_bold
 	}
 
 	immediate = {
 		hidden_effect = {
-			if = {
-				limit = {
-					OR = {
-						NOT = { exists = scope:bm_geyser_wise_one }
-						scope:bm_geyser_wise_one = { is_alive = no }
-					}
-				}
-				if = {
-					limit = { exists = title:b_olafsvik }
-					title:b_olafsvik = { save_scope_as = birth_location }
-				}
-				else = {
-					root.location.county = { save_scope_as = birth_location }
-				}
-				if = {
-					limit = {
-						exists = house:house_skallagrimsson
-					}
-					create_character = {
-						age = 100
-						name = "Egill"
-						dynasty_house = house:house_skallagrimsson
-						gender_female_chance = 0
-						random_traits = no
-						location = scope:birth_location.title_province
-						faith = scope:birth_location.title_province.faith
-						rite = scope:birth_location.title_province.rite
-						culture = scope:birth_location.title_province.culture
-
-						# Education & Lifestyles
-						trait = education_martial_4
-						trait = lifestyle_bm_archmage
-						trait = lifestyle_poet
-						trait = lifestyle_blademaster
-						trait = lifestyle_hunter
-
-						# Personality & Physical Traits
-						trait = berserker
-						trait = wrathful
-						trait = greedy
-						trait = brave
-						trait = physique_good_3       # Herculean / Amazonian
-						trait = beauty_bad_2          # Ugly (famously grotesque in the sagas)
-
-						# Low Diplomacy, High Intrigue, Learning 20
-						diplomacy = 4
-						intrigue = 18
-						learning = 20
-						martial = 18
-						prowess = 30
-
-						save_scope_as = bm_geyser_wise_one
-					}
-				}
-				else_if = {
-					limit = {
-						exists = dynasty:dynasty_myramenn
-					}
-					create_character = {
-						age = 100
-						name = "Egill"
-						dynasty = dynasty_myramenn
-						gender_female_chance = 0
-						random_traits = no
-						location = scope:birth_location.title_province
-						faith = scope:birth_location.title_province.faith
-						rite = scope:birth_location.title_province.rite
-						culture = scope:birth_location.title_province.culture
-
-						# Education & Lifestyles
-						trait = education_martial_4
-						trait = lifestyle_bm_archmage
-						trait = lifestyle_poet
-						trait = lifestyle_blademaster
-						trait = lifestyle_hunter
-
-						# Personality & Physical Traits
-						trait = berserker
-						trait = wrathful
-						trait = greedy
-						trait = brave
-						trait = physique_good_3       # Herculean / Amazonian
-						trait = beauty_bad_2          # Ugly (famously grotesque in the sagas)
-
-						# Low Diplomacy, High Intrigue, Learning 20
-						diplomacy = 4
-						intrigue = 18
-						learning = 20
-						martial = 18
-						prowess = 30
-
-						save_scope_as = bm_geyser_wise_one
-					}
-				}
-				else = {
-					create_character = {
-						age = 100
-						name = "Egill Skallagrimsson"
-						gender_female_chance = 0
-						random_traits = no
-						location = scope:birth_location.title_province
-						faith = scope:birth_location.title_province.faith
-						rite = scope:birth_location.title_province.rite
-						culture = scope:birth_location.title_province.culture
-
-						# Education & Lifestyles
-						trait = education_martial_4
-						trait = lifestyle_bm_archmage
-						trait = lifestyle_poet
-						trait = lifestyle_blademaster
-						trait = lifestyle_hunter
-
-						# Personality & Physical Traits
-						trait = berserker
-						trait = wrathful
-						trait = greedy
-						trait = brave
-						trait = physique_good_3       # Herculean / Amazonian
-						trait = beauty_bad_2          # Ugly (famously grotesque in the sagas)
-
-						# Low Diplomacy, High Intrigue, Learning 20
-						diplomacy = 4
-						intrigue = 18
-						learning = 20
-						martial = 18
-						prowess = 30
-
-						save_scope_as = bm_geyser_wise_one
-					}
-				}
-
-				scope:bm_geyser_wise_one = {
-					add_trait_xp = {
-						trait = lifestyle_bm_archmage
-						track = ancient
-						value = 50
-					}
-					add_trait_xp = {
-						trait = lifestyle_bm_archmage
-						track = wisdom
-						value = 50
-					}
-					add_trait_xp = {
-						trait = lifestyle_bm_archmage
-						track = radiance
-						value = 50
-					}
-					add_trait_xp = {
-						trait = lifestyle_bm_archmage
-						track = fortune
-						value = 50
-					}
-					add_trait_xp = {
-						trait = lifestyle_bm_archmage
-						track = cunning
-						value = 50
-					}
-					add_trait_xp = {
-						trait = lifestyle_bm_archmage
-						track = fury
-						value = 100
-					}
-					add_trait_xp = {
-						trait = lifestyle_blademaster
-						value = 100
-					}
-					add_trait_xp = {
-						trait = lifestyle_hunter
-						track = hunter
-						value = 100
-					}
-
-					add_character_modifier = { modifier = lifeforce_modifier_minor }
-					add_character_modifier = { modifier = lifeforce_modifier_minor }
-					add_character_modifier = { modifier = lifeforce_modifier_minor }
-					add_character_modifier = { modifier = lifeforce_modifier_minor }
-					add_character_modifier = { modifier = lifeforce_modifier_minor }
-					add_character_modifier = { modifier = lifeforce_modifier_minor }
-					add_character_modifier = { modifier = lifeforce_modifier_minor }
-					add_character_modifier = { modifier = lifeforce_modifier_minor }
-					add_character_modifier = { modifier = lifeforce_modifier_minor }
-					add_character_modifier = { modifier = lifeforce_modifier_minor }
-				}
-			}
+			bm_create_egill_effect = yes
 		}
 	}
 
@@ -252,7 +69,7 @@ bm_geyser_duel.0001 = {
 		duel = {
 			skills = { learning prowess }
 			value = 25
-			target = scope:bm_geyser_wise_one
+			target = scope:bm_egill
 
 			# SUCCESS
 			50 = {
@@ -409,8 +226,8 @@ bm_geyser_duel.0001 = {
 				remove_character_flag = bm_geyser_retried
 				remove_character_flag = bm_geyser_paid_piety
 				if = {
-					limit = { exists = scope:bm_geyser_wise_one }
-					scope:bm_geyser_wise_one = {
+					limit = { exists = scope:bm_egill }
+					scope:bm_egill = {
 						death = { death_reason = death_vanished }
 					}
 				}

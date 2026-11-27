@@ -168,7 +168,7 @@ bm_blood_artifact.0010 = {
 
 	immediate = {
 		hidden_effect = {
-			bm_spawn_egill_for_artifact_duel_effect = yes
+			bm_create_egill_effect = yes
 			every_character_artifact = {
 				limit = {
 					has_variable = bm_is_forged_blood_artifact
@@ -214,6 +214,7 @@ bm_blood_artifact.0010 = {
 	option = {
 		name = bm_blood_artifact.back
 		add_piety_no_experience = 250
+		hidden_effect = { bm_vanish_egill_effect = yes }
 	}
 }
 
@@ -249,6 +250,7 @@ bm_blood_artifact.0011 = {
 			flag = bm_temper_artifact_cooldown
 			years = 5
 		}
+		add_character_flag = bm_temper_sce_pending
 		configure_start_single_combat_effect = {
 			SC_INITIATOR = root
 			SC_ATTACKER = root
@@ -313,6 +315,16 @@ bm_blood_artifact.0011 = {
 		name = bm_blood_artifact.back
 		add_piety_no_experience = 250
 	}
+
+	# Egill stays alive only while the SCE duel is pending
+	after = {
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_character_flag = bm_temper_sce_pending } }
+				bm_vanish_egill_effect = yes
+			}
+		}
+	}
 }
 
 # SCE Duel Output Event
@@ -342,6 +354,8 @@ bm_blood_artifact.0012 = {
 				add_stress = 25
 			}
 		}
+		remove_character_flag = bm_temper_sce_pending
+		hidden_effect = { bm_vanish_egill_effect = yes }
 	}
 }
 
@@ -354,5 +368,7 @@ bm_blood_artifact.0013 = {
 		add_character_modifier = { modifier = lifeforce_modifier_superior }
 		add_piety_no_experience = 250
 		remove_character_flag = bm_temper_artifact_cooldown
+		remove_character_flag = bm_temper_sce_pending
+		hidden_effect = { bm_vanish_egill_effect = yes }
 	}
 }
