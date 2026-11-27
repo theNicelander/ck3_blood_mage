@@ -5,17 +5,17 @@
 | --- | ---: |
 | **Always-On (every turn)** | **1,490** |
 | ↳ Core (`AGENTS.md`) | 1,490 |
-| **On-Demand** | **11,830** |
+| **On-Demand** | **11,821** |
 | ↳ Localized (`**/AGENTS.md`) | 5,038 |
 | ↳ Rules (`model_decision`) | 0 |
-| ↳ Skills (`.agents/skills/`) | 6,792 |
-| **Total** | **13,320** |
+| ↳ Skills (`.agents/skills/`) | 6,783 |
+| **Total** | **13,311** |
 
 ## Details per file
 
 | File | Load | Category | Tokens |
 | --- | --- | --- | ---: |
-| `.agents/skills/debug-ck3-logs/SKILL.md` | On-Demand | Skills | 1,651 |
+| `.agents/skills/debug-ck3-logs/SKILL.md` | On-Demand | Skills | 1,642 |
 | `AGENTS.md` | Always-On | Core | 1,490 |
 | `docs-ai/architecture/AGENTS.md` | On-Demand | Localized | 1,271 |
 | `.agents/skills/add-overhaul-compat/SKILL.md` | On-Demand | Skills | 1,066 |
