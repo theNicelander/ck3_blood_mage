@@ -1,0 +1,181 @@
+﻿# Blood Magic Artifact Creation & Egill Tempering Helpers
+
+bm_forge_blood_artifact_effect = {
+	# Expects flag:bm_forge_slot_weapon/regalia/armor/crown/trinket saved in var:bm_forge_slot
+	# and $DISCIPLINE$ = radiance | fury | fortune | cunning | wisdom | ancient
+	blood_magic_used_major = yes
+	add_character_flag = {
+		flag = bm_forge_artifact_cooldown
+		years = 3
+	}
+	add_xp_bm_dynamic = {
+		TRACK = wisdom
+		XP = 3
+	}
+
+	if = {
+		limit = { var:bm_forge_slot ?= flag:weapon }
+		create_artifact = {
+			name = bm_blood_artifact_weapon_$DISCIPLINE$_name
+			description = bm_blood_artifact_weapon_$DISCIPLINE$_desc
+			type = sword
+			visuals = sword
+			wealth = 40
+			quality = 40
+			template = bm_blood_artifact_template
+			modifier = bm_artifact_slot_weapon_modifier
+			modifier = bm_artifact_disc_$DISCIPLINE$_modifier
+			save_scope_as = newly_created_artifact
+		}
+	}
+	else_if = {
+		limit = { var:bm_forge_slot ?= flag:regalia }
+		create_artifact = {
+			name = bm_blood_artifact_regalia_$DISCIPLINE$_name
+			description = bm_blood_artifact_regalia_$DISCIPLINE$_desc
+			type = regalia_simple
+			visuals = regalia
+			wealth = 40
+			quality = 40
+			template = bm_blood_artifact_template
+			modifier = bm_artifact_slot_regalia_modifier
+			modifier = bm_artifact_disc_$DISCIPLINE$_modifier
+			save_scope_as = newly_created_artifact
+		}
+	}
+	else_if = {
+		limit = { var:bm_forge_slot ?= flag:armor }
+		create_artifact = {
+			name = bm_blood_artifact_armor_$DISCIPLINE$_name
+			description = bm_blood_artifact_armor_$DISCIPLINE$_desc
+			type = armor_plate
+			visuals = armor
+			wealth = 40
+			quality = 40
+			template = bm_blood_artifact_template
+			modifier = bm_artifact_slot_armor_modifier
+			modifier = bm_artifact_disc_$DISCIPLINE$_modifier
+			save_scope_as = newly_created_artifact
+		}
+	}
+	else_if = {
+		limit = { var:bm_forge_slot ?= flag:crown }
+		create_artifact = {
+			name = bm_blood_artifact_crown_$DISCIPLINE$_name
+			description = bm_blood_artifact_crown_$DISCIPLINE$_desc
+			type = helmet_simple
+			visuals = crown
+			wealth = 40
+			quality = 40
+			template = bm_blood_artifact_template
+			modifier = bm_artifact_slot_crown_modifier
+			modifier = bm_artifact_disc_$DISCIPLINE$_modifier
+			save_scope_as = newly_created_artifact
+		}
+	}
+	else = {
+		create_artifact = {
+			name = bm_blood_artifact_trinket_$DISCIPLINE$_name
+			description = bm_blood_artifact_trinket_$DISCIPLINE$_desc
+			type = miscellaneous
+			visuals = ring
+			wealth = 40
+			quality = 40
+			template = bm_blood_artifact_template
+			modifier = bm_artifact_slot_trinket_modifier
+			modifier = bm_artifact_disc_$DISCIPLINE$_modifier
+			save_scope_as = newly_created_artifact
+		}
+	}
+
+	scope:newly_created_artifact = {
+		set_artifact_rarity = masterwork
+		set_variable = {
+			name = bm_is_forged_blood_artifact
+			value = yes
+		}
+		set_variable = {
+			name = bm_blood_artifact_discipline
+			value = flag:$DISCIPLINE$
+		}
+	}
+	remove_variable = bm_forge_slot
+}
+
+bm_temper_blood_artifact_effect = {
+	$ARTIFACT$ = {
+		set_artifact_rarity = illustrious
+		set_variable = {
+			name = bm_artifact_tempered
+			value = yes
+		}
+		if = {
+			limit = { var:bm_blood_artifact_discipline ?= flag:radiance }
+			add_artifact_modifier = bm_artifact_tempered_radiance_modifier
+		}
+		else_if = {
+			limit = { var:bm_blood_artifact_discipline ?= flag:fury }
+			add_artifact_modifier = bm_artifact_tempered_fury_modifier
+		}
+		else_if = {
+			limit = { var:bm_blood_artifact_discipline ?= flag:fortune }
+			add_artifact_modifier = bm_artifact_tempered_fortune_modifier
+		}
+		else_if = {
+			limit = { var:bm_blood_artifact_discipline ?= flag:cunning }
+			add_artifact_modifier = bm_artifact_tempered_cunning_modifier
+		}
+		else_if = {
+			limit = { var:bm_blood_artifact_discipline ?= flag:wisdom }
+			add_artifact_modifier = bm_artifact_tempered_wisdom_modifier
+		}
+		else = {
+			add_artifact_modifier = bm_artifact_tempered_ancient_modifier
+		}
+	}
+}
+
+bm_spawn_egill_for_artifact_duel_effect = {
+	if = {
+		limit = {
+			OR = {
+				NOT = { exists = scope:bm_egill }
+				scope:bm_egill = { is_alive = no }
+			}
+		}
+		if = {
+			limit = { exists = title:b_olafsvik }
+			title:b_olafsvik = { save_scope_as = bm_egill_loc }
+		}
+		else = {
+			root.location.county = { save_scope_as = bm_egill_loc }
+		}
+		create_character = {
+			age = 100
+			name = "Egill"
+			gender_female_chance = 0
+			random_traits = no
+			location = scope:bm_egill_loc.title_province
+			faith = scope:bm_egill_loc.title_province.faith
+			rite = scope:bm_egill_loc.title_province.rite
+			culture = scope:bm_egill_loc.title_province.culture
+			trait = education_martial_4
+			trait = lifestyle_bm_archmage
+			trait = lifestyle_poet
+			trait = lifestyle_blademaster
+			trait = lifestyle_hunter
+			trait = berserker
+			trait = wrathful
+			trait = greedy
+			trait = brave
+			trait = physique_good_3
+			trait = beauty_bad_2
+			diplomacy = 4
+			intrigue = 18
+			learning = 20
+			martial = 18
+			prowess = 30
+			save_scope_as = bm_egill
+		}
+	}
+}

@@ -1087,6 +1087,13 @@ bm_interpersonal_events.0009 = {
 					modifier = bm_reinforced_golem_modifier
 					years = 5
 				}
+				if = {
+					limit = { has_trait = bm_blood_golem }
+					add_trait_xp = {
+						trait = bm_blood_golem
+						value = 25
+					}
+				}
 			}
 			bm_add_blood_mage_xp_effect = {
 				TRACK = fortune
@@ -1123,6 +1130,13 @@ bm_interpersonal_events.0009 = {
 						add_character_modifier = {
 							modifier = bm_reinforced_golem_modifier
 							years = 3
+						}
+						if = {
+							limit = { has_trait = bm_blood_golem }
+							add_trait_xp = {
+								trait = bm_blood_golem
+								value = 15
+							}
 						}
 					}
 				}

@@ -1,0 +1,358 @@
+﻿namespace = bm_blood_artifact
+
+# Step 1: Choose Blood Artifact Slot
+bm_blood_artifact.0001 = {
+	type = character_event
+	title = bm_blood_artifact.0001.title
+	desc = bm_blood_artifact.0001.desc
+	theme = witchcraft
+	override_icon = {
+		reference = "gfx/interface/icons/bm_blood_magic_icon.dds"
+	}
+
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+
+	option = {
+		name = bm_blood_artifact.0001.weapon
+		set_variable = { name = bm_forge_slot value = flag:weapon }
+		trigger_event = { id = bm_blood_artifact.0002 }
+		ai_chance = { base = 25 }
+	}
+
+	option = {
+		name = bm_blood_artifact.0001.regalia
+		set_variable = { name = bm_forge_slot value = flag:regalia }
+		trigger_event = { id = bm_blood_artifact.0002 }
+		ai_chance = { base = 20 }
+	}
+
+	option = {
+		name = bm_blood_artifact.0001.armor
+		set_variable = { name = bm_forge_slot value = flag:armor }
+		trigger_event = { id = bm_blood_artifact.0002 }
+		ai_chance = { base = 20 }
+	}
+
+	option = {
+		name = bm_blood_artifact.0001.crown
+		set_variable = { name = bm_forge_slot value = flag:crown }
+		trigger_event = { id = bm_blood_artifact.0002 }
+		ai_chance = { base = 15 }
+	}
+
+	option = {
+		name = bm_blood_artifact.0001.trinket
+		set_variable = { name = bm_forge_slot value = flag:trinket }
+		trigger_event = { id = bm_blood_artifact.0002 }
+		ai_chance = { base = 20 }
+	}
+
+	option = {
+		name = bm_blood_artifact.back
+		add_piety_no_experience = 250
+		add_gold = 100
+		ai_chance = { base = 0 }
+	}
+}
+
+# Step 2: Choose Blood Discipline
+bm_blood_artifact.0002 = {
+	type = character_event
+	title = bm_blood_artifact.0002.title
+	desc = bm_blood_artifact.0002.desc
+	theme = witchcraft
+	override_icon = {
+		reference = "gfx/interface/icons/bm_blood_magic_icon.dds"
+	}
+
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+
+	option = {
+		name = bm_blood_artifact.0002.radiance
+		send_interface_toast = {
+			type = bm_event_toast_effect_good
+			title = bm_blood_artifact_forged_toast
+			left_icon = root
+			bm_forge_blood_artifact_effect = { DISCIPLINE = radiance }
+		}
+		ai_chance = { base = 15 }
+	}
+
+	option = {
+		name = bm_blood_artifact.0002.fury
+		send_interface_toast = {
+			type = bm_event_toast_effect_good
+			title = bm_blood_artifact_forged_toast
+			left_icon = root
+			bm_forge_blood_artifact_effect = { DISCIPLINE = fury }
+		}
+		ai_chance = { base = 20 }
+	}
+
+	option = {
+		name = bm_blood_artifact.0002.fortune
+		send_interface_toast = {
+			type = bm_event_toast_effect_good
+			title = bm_blood_artifact_forged_toast
+			left_icon = root
+			bm_forge_blood_artifact_effect = { DISCIPLINE = fortune }
+		}
+		ai_chance = { base = 15 }
+	}
+
+	option = {
+		name = bm_blood_artifact.0002.cunning
+		send_interface_toast = {
+			type = bm_event_toast_effect_good
+			title = bm_blood_artifact_forged_toast
+			left_icon = root
+			bm_forge_blood_artifact_effect = { DISCIPLINE = cunning }
+		}
+		ai_chance = { base = 15 }
+	}
+
+	option = {
+		name = bm_blood_artifact.0002.wisdom
+		send_interface_toast = {
+			type = bm_event_toast_effect_good
+			title = bm_blood_artifact_forged_toast
+			left_icon = root
+			bm_forge_blood_artifact_effect = { DISCIPLINE = wisdom }
+		}
+		ai_chance = { base = 20 }
+	}
+
+	option = {
+		name = bm_blood_artifact.0002.ancient
+		send_interface_toast = {
+			type = bm_event_toast_effect_good
+			title = bm_blood_artifact_forged_toast
+			left_icon = root
+			bm_forge_blood_artifact_effect = { DISCIPLINE = ancient }
+		}
+		ai_chance = { base = 15 }
+	}
+
+	option = {
+		name = bm_blood_artifact.back
+		remove_variable = bm_forge_slot
+		trigger_event = { id = bm_blood_artifact.0001 }
+		ai_chance = { base = 0 }
+	}
+}
+
+# Step 3: Select Untempered Forged Blood Artifact to Temper with Egill
+bm_blood_artifact.0010 = {
+	type = character_event
+	title = bm_blood_artifact.0010.title
+	desc = bm_blood_artifact.0010.desc
+	theme = learning
+	override_icon = {
+		reference = "gfx/interface/icons/bm_blood_magic_icon.dds"
+	}
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:bm_egill
+		animation = personality_bold
+	}
+
+	immediate = {
+		hidden_effect = {
+			bm_spawn_egill_for_artifact_duel_effect = yes
+			every_character_artifact = {
+				limit = {
+					has_variable = bm_is_forged_blood_artifact
+					NOT = { has_variable = bm_artifact_tempered }
+				}
+				if = {
+					limit = { NOT = { exists = scope:bm_art_opt_1 } }
+					save_scope_as = bm_art_opt_1
+				}
+				else_if = {
+					limit = { NOT = { exists = scope:bm_art_opt_2 } }
+					save_scope_as = bm_art_opt_2
+				}
+				else_if = {
+					limit = { NOT = { exists = scope:bm_art_opt_3 } }
+					save_scope_as = bm_art_opt_3
+				}
+			}
+		}
+	}
+
+	option = {
+		name = bm_blood_artifact.0010.opt1
+		trigger = { exists = scope:bm_art_opt_1 }
+		scope:bm_art_opt_1 = { save_scope_as = bm_temper_target }
+		trigger_event = { id = bm_blood_artifact.0011 }
+	}
+
+	option = {
+		name = bm_blood_artifact.0010.opt2
+		trigger = { exists = scope:bm_art_opt_2 }
+		scope:bm_art_opt_2 = { save_scope_as = bm_temper_target }
+		trigger_event = { id = bm_blood_artifact.0011 }
+	}
+
+	option = {
+		name = bm_blood_artifact.0010.opt3
+		trigger = { exists = scope:bm_art_opt_3 }
+		scope:bm_art_opt_3 = { save_scope_as = bm_temper_target }
+		trigger_event = { id = bm_blood_artifact.0011 }
+	}
+
+	option = {
+		name = bm_blood_artifact.back
+		add_piety_no_experience = 250
+	}
+}
+
+# Step 4: Choose Prowess (SCE) or Learning Duel vs Egill
+bm_blood_artifact.0011 = {
+	type = character_event
+	title = bm_blood_artifact.0011.title
+	desc = bm_blood_artifact.0011.desc
+	theme = martial
+	override_icon = {
+		reference = "gfx/interface/icons/bm_blood_magic_icon.dds"
+	}
+
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	right_portrait = {
+		character = scope:bm_egill
+		animation = rage
+	}
+
+	# Option A: Single Combat Engine (Prowess) Duel
+	option = {
+		name = bm_blood_artifact.0011.prowess
+		trigger = {
+			can_start_single_combat_trigger = yes
+			scope:bm_egill = { can_start_single_combat_trigger = yes }
+		}
+		show_as_unavailable = { always = yes }
+		blood_magic_used_superior = yes
+		add_character_flag = {
+			flag = bm_temper_artifact_cooldown
+			years = 5
+		}
+		configure_start_single_combat_effect = {
+			SC_INITIATOR = root
+			SC_ATTACKER = root
+			SC_DEFENDER = scope:bm_egill
+			FATALITY = practice
+			FIXED = no
+			LOCALE = wilderness
+			OUTPUT_EVENT = bm_blood_artifact.0012
+			INVALIDATION_EVENT = bm_blood_artifact.0013
+		}
+	}
+
+	# Option B: Arcane Contest (Learning) Duel
+	option = {
+		name = bm_blood_artifact.0011.learning
+		blood_magic_used_superior = yes
+		add_character_flag = {
+			flag = bm_temper_artifact_cooldown
+			years = 5
+		}
+		duel = {
+			skill = learning
+			target = scope:bm_egill
+			50 = {
+				desc = bm_blood_artifact.0011.learning_win
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 2.5
+					min = -40
+					max = 40
+				}
+				send_interface_toast = {
+					type = bm_event_toast_effect_good
+					title = bm_blood_artifact_tempered_toast
+					left_icon = root
+					right_icon = scope:bm_egill
+					bm_temper_blood_artifact_effect = { ARTIFACT = scope:bm_temper_target }
+					add_xp_bm_dynamic = { TRACK = wisdom XP = 5 }
+				}
+			}
+			50 = {
+				desc = bm_blood_artifact.0011.learning_loss
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -2.5
+					min = -40
+					max = 40
+				}
+				send_interface_toast = {
+					type = bm_event_toast_effect_bad
+					title = bm_blood_artifact_temper_failed_toast
+					left_icon = root
+					right_icon = scope:bm_egill
+					increase_wounds_no_death_effect = { REASON = fight }
+					add_stress = 25
+				}
+			}
+		}
+	}
+
+	option = {
+		name = bm_blood_artifact.back
+		add_piety_no_experience = 250
+	}
+}
+
+# SCE Duel Output Event
+bm_blood_artifact.0012 = {
+	type = character_event
+	hidden = yes
+
+	immediate = {
+		if = {
+			limit = { scope:sc_victor = root }
+			send_interface_toast = {
+				type = bm_event_toast_effect_good
+				title = bm_blood_artifact_tempered_toast
+				left_icon = root
+				right_icon = scope:bm_egill
+				bm_temper_blood_artifact_effect = { ARTIFACT = scope:bm_temper_target }
+				add_xp_bm_dynamic = { TRACK = fury XP = 5 }
+			}
+		}
+		else = {
+			send_interface_toast = {
+				type = bm_event_toast_effect_bad
+				title = bm_blood_artifact_temper_failed_toast
+				left_icon = root
+				right_icon = scope:bm_egill
+				increase_wounds_no_death_effect = { REASON = fight }
+				add_stress = 25
+			}
+		}
+	}
+}
+
+# SCE Duel Invalidation Refund
+bm_blood_artifact.0013 = {
+	type = character_event
+	hidden = yes
+
+	immediate = {
+		add_character_modifier = { modifier = lifeforce_modifier_superior }
+		add_piety_no_experience = 250
+		remove_character_flag = bm_temper_artifact_cooldown
+	}
+}

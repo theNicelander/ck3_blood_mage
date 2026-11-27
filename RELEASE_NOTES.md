@@ -77,7 +77,8 @@ Net player-facing changes since v1.15 (2025 baseline), grouped by feature area. 
 
 ## Blood Golems & Dynasty
 
-- Forge immortal albino golems with Superior Lifeforce and a shaping duel; they join the dynasty as cadet house `bm_house_golem`.
+- Forge albino golems with Superior Lifeforce and a shaping duel; they join the dynasty as cadet house `bm_house_golem` with the decaying leveled **Blood Golem** trait (starts at 100 XP, decays `-2` XP/year across 10 steps of Life Expectancy, Prowess, and Health; refuelable by granting Lifeforce or through golem maintenance events).
+- **Blood Magic Artifacts**: **Forge Blood Artifact** decision (250 Piety, 100 Gold, 1 Major Lifeforce; 3-year cooldown) creates a Masterwork Blood Artifact in any of 5 inventory slots (Weapon, Regalia, Armor, Crown, Trinket) attuned to any of the 6 Blood Disciplines. Blood Mages carrying an untempered Blood Artifact and Superior Lifeforce can travel to Reykjavik or Tsushima to **Challenge Egill to Temper Blood Artifact** in a Prowess or Learning duel, upgrading it to Illustrious with an added Tempered discipline modifier.
 - Seven house modifiers stack realm-wide bonuses to fertility, health, prowess and administration.
 - **Bless Bloodline** (children, kin, knights) with role-specific blessings.
 - **Consecrate Union**: spouse/lover/consort gain +50% fertility and better genetic inheritance (Minor 3 years, Major 10 years).
@@ -156,6 +157,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 
 ## Version history
 
+- v1.21.13: Add decaying leveled Blood Golem trait with Lifeforce refueling, Blood Mage Lifeforce Shield & tier-scaled drain harvest, Forge Blood Artifact decision (5 slots x 6 disciplines) + Egill tempering duel at Reykjavik/Tsushima, remove `witch` from Blóðtrú sins, and stop AI from draining `giant`.
 - v1.21.11: Rebalance battle Lifeforce (linear total-combatant chances, separate 90d CDs), battle Fury XP (60d CD, victory-only), and duel/sparring XP.
 - v1.21.9: Fix Empower Dynasty house covenants, add Channel Focus, Age 85/100 milestones, 4 events, 3 hunts, alerts, and 6 heals.
 - v1.21.7: Unify single combat duel victory Lifeforce rewards (+1 Major + opponent's Prowess% chance for +1 Superior) across Prisoner Blood Pit Duel, Blood Hunt duels, and lethal single combat kills (Blood Sparring Ring remains Major-only); trim 1.21 trade bloat from Blessing of Fortune, Covenant of Fortune (keeping +1 Max Trade Routes at Tier III), Fortunate Lifeforce, and Nábrókarstafur.

@@ -19,7 +19,7 @@ Living technical specification for the Blood Golem construct subsystem.
 | **Age & Gender** | Male, spawned at age 18–30 in creator's capital (`culture = root.culture`, `faith = root.faith`) |
 | **Base Skills** | **15 Prowess**, 1 Diplomacy, 1 Martial, 1 Stewardship, 1 Intrigue, 1 Learning |
 | **Innate Personality** | `content`, `brave`, `trusting`, `loyal` (+100 loyalty/opinion synergy, never schemes against creator) |
-| **Innate Physical / Status** | `beardless_eunuch` (blocks marriage, reproduction, and succession), `giant`, `albino`, `education_martial_1` |
+| **Innate Physical / Status** | `beardless_eunuch` (blocks marriage, reproduction, and succession), `giant`, `albino`, `education_martial_1`, `bm_blood_golem` (starts at `100` XP, decays `-2` XP/yr via `bm_blood_golem_yearly_decay`, 10 steps at every 10 XP granting `+10` Life Exp, `+1` Prowess, `+0.2` Health each; refuelable via Cast Blood Blessing Grant Lifeforce `+20/+50/+100` XP and `bm_interpersonal_events.0009` `+25/+15` XP) |
 | **Rune Synergy** | Eligible target for `bm_inscribe_rune_other_interaction` (e.g. carving **Ægishjálmur** onto a golem) |
 
 ### Golem Shaping Options & Dynamic Piety Cost (`blood_golem.002`)

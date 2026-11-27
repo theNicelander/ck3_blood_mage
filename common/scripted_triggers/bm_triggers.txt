@@ -117,6 +117,15 @@ is_blood_mage_archmage_trigger = {
 	has_trait = lifestyle_bm_archmage
 }
 
+bm_has_lifeforce_shield_trigger = {
+	is_blood_mage_any_tier_trigger = yes
+	OR = {
+		has_character_modifier = lifeforce_modifier_superior
+		has_character_modifier = lifeforce_modifier_major
+		has_character_modifier = lifeforce_modifier_minor
+	}
+}
+
 is_blood_mage_acolyte_trigger = {
 	has_trait = lifestyle_bm_acolyte
 }
