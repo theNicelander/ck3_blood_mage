@@ -40,13 +40,6 @@ bm_compat_memory_drain.0001 = {
 	}
 
 	option = {
-		name = bm_compat_memory_drain.0001.subrosa_councillor
-		trigger = { bm_compat_subrosa_councillor_can_drain_memory_trigger = yes }
-		trigger_event = bm_compat_memory_drain.0006
-		ai_chance = { base = 100 }
-	}
-
-	option = {
 		name = bm_memory_drain.back
 		ai_chance = { base = 0 }
 	}
@@ -451,125 +444,6 @@ bm_compat_memory_drain.0005 = {
 		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = knights_specialist } }
 		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = knights_specialist } }
 		bm_memory_drain_execute_single_track_effect = { TRAIT = knights_specialist }
-		ai_chance = { base = 100 }
-	}
-
-	option = {
-		name = bm_memory_drain.back
-		ai_chance = { base = 0 }
-	}
-}
-
-# Sub Rosa & Councillor's Experience Picker
-bm_compat_memory_drain.0006 = {
-	type = character_event
-	title = bm_compat_memory_drain.0006.title
-	desc = bm_compat_memory_drain.0006.desc
-	theme = witchcraft
-	override_icon = { reference = "gfx/interface/icons/bm_blood_magic_icon.dds" }
-
-	left_portrait = { character = root animation = scheme }
-	right_portrait = { character = scope:recipient animation = beg }
-
-	# Sub Rosa
-	option = {
-		name = bm_compat_memory_drain.trait.sbr_kidnap_artist
-		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = sbr_kidnap_artist } }
-		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_kidnap_artist } }
-		bm_memory_drain_execute_single_track_effect = { TRAIT = sbr_kidnap_artist }
-		ai_chance = { base = 100 }
-	}
-	option = {
-		name = bm_compat_memory_drain.trait.sbr_dark_passenger
-		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = sbr_dark_passenger } }
-		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_dark_passenger } }
-		bm_memory_drain_execute_single_track_effect = { TRAIT = sbr_dark_passenger }
-		ai_chance = { base = 100 }
-	}
-	option = {
-		name = bm_compat_memory_drain.trait.sbr_convincing_liar
-		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = sbr_convincing_liar } }
-		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_convincing_liar } }
-		bm_memory_drain_execute_single_track_effect = { TRAIT = sbr_convincing_liar }
-		ai_chance = { base = 100 }
-	}
-	option = {
-		name = bm_compat_memory_drain.trait.sbr_bee_in_bloom
-		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = sbr_bee_in_bloom } }
-		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_bee_in_bloom } }
-		bm_memory_drain_execute_single_track_effect = { TRAIT = sbr_bee_in_bloom }
-		ai_chance = { base = 100 }
-	}
-	option = {
-		name = bm_compat_memory_drain.trait.sbr_deadly_charmer
-		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = sbr_deadly_charmer } }
-		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_deadly_charmer } }
-		bm_memory_drain_execute_single_track_effect = { TRAIT = sbr_deadly_charmer }
-		ai_chance = { base = 100 }
-	}
-	option = {
-		name = bm_compat_memory_drain.trait.sbr_third_shadow
-		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = sbr_third_shadow } }
-		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_third_shadow } }
-		bm_memory_drain_execute_single_track_effect = { TRAIT = sbr_third_shadow }
-		ai_chance = { base = 100 }
-	}
-	option = {
-		name = bm_compat_memory_drain.trait.sbr_heartbinder
-		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = sbr_heartbinder } }
-		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_heartbinder } }
-		bm_memory_drain_execute_single_track_effect = { TRAIT = sbr_heartbinder }
-		ai_chance = { base = 100 }
-	}
-	option = {
-		name = bm_compat_memory_drain.trait.sbr_two_faced
-		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = sbr_two_faced } }
-		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_two_faced } }
-		bm_memory_drain_execute_single_track_effect = { TRAIT = sbr_two_faced }
-		ai_chance = { base = 100 }
-	}
-	option = {
-		name = bm_compat_memory_drain.trait.sbr_cautious_schemer
-		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = sbr_cautious_schemer } }
-		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_cautious_schemer } }
-		bm_memory_drain_execute_single_track_effect = { TRAIT = sbr_cautious_schemer }
-		ai_chance = { base = 100 }
-	}
-
-	# Councillor's Experience
-	option = {
-		name = bm_compat_memory_drain.trait.lifestyle_chancellor
-		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = lifestyle_chancellor } }
-		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_chancellor } }
-		bm_memory_drain_execute_single_track_effect = { TRAIT = lifestyle_chancellor }
-		ai_chance = { base = 100 }
-	}
-	option = {
-		name = bm_compat_memory_drain.trait.lifestyle_marshal
-		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = lifestyle_marshal } }
-		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_marshal } }
-		bm_memory_drain_execute_single_track_effect = { TRAIT = lifestyle_marshal }
-		ai_chance = { base = 100 }
-	}
-	option = {
-		name = bm_compat_memory_drain.trait.lifestyle_steward
-		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = lifestyle_steward } }
-		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_steward } }
-		bm_memory_drain_execute_single_track_effect = { TRAIT = lifestyle_steward }
-		ai_chance = { base = 100 }
-	}
-	option = {
-		name = bm_compat_memory_drain.trait.lifestyle_spymaster
-		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = lifestyle_spymaster } }
-		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_spymaster } }
-		bm_memory_drain_execute_single_track_effect = { TRAIT = lifestyle_spymaster }
-		ai_chance = { base = 100 }
-	}
-	option = {
-		name = bm_compat_memory_drain.trait.lifestyle_chaplain
-		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = lifestyle_chaplain } }
-		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_chaplain } }
-		bm_memory_drain_execute_single_track_effect = { TRAIT = lifestyle_chaplain }
 		ai_chance = { base = 100 }
 	}
 

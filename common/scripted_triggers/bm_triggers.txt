@@ -71,7 +71,7 @@ bm_is_valid_positive_magic_target_trigger = {
 		employer ?= $ACTOR$
 		has_relation_guardian = $ACTOR$
 		has_relation_ward = $ACTOR$
-		house ?= house:bm_house_golem
+		bm_is_blood_golem_trigger = yes
 		trigger_if = {
 			limit = { exists = $ACTOR$.liege }
 			OR = {
@@ -115,6 +115,22 @@ is_blood_mage_tier_2_or_higher_trigger = {
 
 is_blood_mage_archmage_trigger = {
 	has_trait = lifestyle_bm_archmage
+}
+
+bm_is_blood_golem_trigger = {
+	OR = {
+		has_trait = bm_blood_golem
+		house ?= house:bm_house_golem
+	}
+}
+
+bm_has_lifeforce_shield_trigger = {
+	is_blood_mage_any_tier_trigger = yes
+	OR = {
+		has_character_modifier = lifeforce_modifier_superior
+		has_character_modifier = lifeforce_modifier_major
+		has_character_modifier = lifeforce_modifier_minor
+	}
 }
 
 is_blood_mage_acolyte_trigger = {

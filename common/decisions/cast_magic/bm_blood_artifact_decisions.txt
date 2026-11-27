@@ -1,0 +1,103 @@
+﻿# Forge Blood Artifact & Temper Blood Artifact with Egill Skallagrimsson
+
+bm_forge_blood_artifact_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_smith.dds" }
+	desc = bm_forge_blood_artifact_decision_desc
+	selection_tooltip = bm_forge_blood_artifact_decision_tooltip
+	confirm_text = bm_forge_blood_artifact_decision_confirm
+	decision_group_type = bm_decision_group
+
+	is_shown = {
+		is_blood_mage_any_tier_trigger = yes
+	}
+
+	is_valid = {
+		has_character_modifier = lifeforce_modifier_major
+		custom_tooltip = {
+			text = NOT_bm_forge_artifact_cooldown_tt
+			NOT = { has_character_flag = bm_forge_artifact_cooldown }
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_incapable = no
+	}
+
+	cost = {
+		piety = 250
+		gold = 100
+	}
+
+	effect = {
+		debug_log = "BloodMageDecision: bm_forge_blood_artifact"
+		debug_log_scopes = yes
+		custom_tooltip = bm_forge_blood_artifact_decision_effect_tt
+		trigger_event = { id = bm_blood_artifact.0001 }
+	}
+
+	ai_check_interval = 24
+	ai_potential = {
+		is_blood_mage_any_tier_trigger = yes
+		has_character_modifier = lifeforce_modifier_major
+		gold >= 300
+		piety >= 500
+	}
+	ai_will_do = {
+		base = 10
+		modifier = {
+			factor = 0
+			any_character_artifact = {
+				count >= 2
+				has_variable = bm_is_forged_blood_artifact
+			}
+		}
+	}
+}
+
+bm_temper_blood_artifact_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" }
+	desc = bm_temper_blood_artifact_decision_desc
+	selection_tooltip = bm_temper_blood_artifact_decision_tooltip
+	confirm_text = bm_temper_blood_artifact_decision_confirm
+	decision_group_type = bm_decision_group
+
+	is_shown = {
+		is_blood_mage_any_tier_trigger = yes
+		any_character_artifact = {
+			has_variable = bm_is_forged_blood_artifact
+			NOT = { has_variable = bm_artifact_tempered }
+		}
+	}
+
+	is_valid = {
+		has_character_modifier = lifeforce_modifier_superior
+		custom_tooltip = {
+			text = NOT_bm_temper_artifact_cooldown_tt
+			NOT = { has_character_flag = bm_temper_artifact_cooldown }
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_incapable = no
+		custom_tooltip = {
+			text = bm_enhance_blood_ritual_location_requirement_tt
+			bm_is_at_blood_magic_initiation_site_trigger = yes
+		}
+	}
+
+	cost = {
+		piety = 250
+	}
+
+	effect = {
+		debug_log = "BloodMageDecision: bm_temper_blood_artifact"
+		debug_log_scopes = yes
+		custom_tooltip = bm_temper_blood_artifact_decision_effect_tt
+		trigger_event = { id = bm_blood_artifact.0010 }
+	}
+
+	ai_check_interval = 0
+	ai_will_do = { base = 0 }
+}

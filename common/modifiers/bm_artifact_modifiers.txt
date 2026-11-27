@@ -1,0 +1,104 @@
+﻿# Blood Magic Artifact Modifiers (Slot Base, Discipline, and Egill Tempered)
+
+# --- Slot Base Modifiers ---
+bm_artifact_slot_weapon_modifier = {
+	prowess = 4
+	knight_effectiveness_mult = 0.10
+}
+
+bm_artifact_slot_regalia_modifier = {
+	monthly_piety = 0.5
+	monthly_prestige_gain_mult = 0.10
+}
+
+bm_artifact_slot_armor_modifier = {
+	prowess = 3
+	health = 0.25
+	epidemic_resistance = 5
+}
+
+bm_artifact_slot_crown_modifier = {
+	diplomacy = 1
+	learning = 1
+	legitimacy_gain_mult = 0.05
+}
+
+bm_artifact_slot_trinket_modifier = {
+	monthly_piety = 0.25
+	monthly_lifestyle_xp_gain_mult = 0.05
+}
+
+# --- Discipline Base Modifiers (Masterwork Forge) ---
+bm_artifact_disc_radiance_modifier = {
+	diplomacy = 2
+	general_opinion = 5
+	monthly_diplomacy_lifestyle_xp_gain_add = 5
+}
+
+bm_artifact_disc_fury_modifier = {
+	martial = 2
+	prowess = 3
+	monthly_martial_lifestyle_xp_gain_add = 5
+}
+
+bm_artifact_disc_fortune_modifier = {
+	stewardship = 2
+	domain_tax_mult = 0.05
+	monthly_stewardship_lifestyle_xp_gain_add = 5
+}
+
+bm_artifact_disc_cunning_modifier = {
+	intrigue = 2
+	owned_hostile_scheme_success_chance_add = 10
+	monthly_intrigue_lifestyle_xp_gain_add = 5
+}
+
+bm_artifact_disc_wisdom_modifier = {
+	learning = 2
+	monthly_piety_gain_mult = 0.10
+	monthly_learning_lifestyle_xp_gain_add = 5
+}
+
+bm_artifact_disc_ancient_modifier = {
+	health = 0.3
+	life_expectancy = 5
+	fertility = 0.10
+	monthly_lifestyle_xp_gain_add = 5
+}
+
+# --- Egill Tempered Discipline Modifiers (Illustrious Upgrade) ---
+bm_artifact_tempered_radiance_modifier = {
+	diplomacy = 3
+	diplomacy_per_piety_level = 1
+	legitimacy_gain_mult = 0.10
+}
+
+bm_artifact_tempered_fury_modifier = {
+	martial = 3
+	prowess = 6
+	knight_effectiveness_mult = 0.15
+}
+
+bm_artifact_tempered_fortune_modifier = {
+	stewardship = 3
+	domain_tax_mult = 0.10
+	build_gold_cost = -0.10
+}
+
+bm_artifact_tempered_cunning_modifier = {
+	intrigue = 3
+	owned_scheme_secrecy_add = 15
+	dread_baseline_add = 15
+}
+
+bm_artifact_tempered_wisdom_modifier = {
+	learning = 3
+	monthly_piety_gain_mult = 0.15
+	stress_gain_mult = -0.15
+}
+
+bm_artifact_tempered_ancient_modifier = {
+	health = 0.5
+	life_expectancy = 15
+	monthly_dynasty_prestige_mult = 0.15
+}

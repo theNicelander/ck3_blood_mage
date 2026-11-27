@@ -1,4 +1,4 @@
-# AGENTS.md - Blood Mages (CK3 1.20+)
+# AGENTS.md - Blood Mages (CK3 1.21+)
 
 Pure script, loc, gfx; no build. Vanilla ref: `/Users/clarabotet/Petur/ck3-full` (`common/` at root, no `game/` dir). CK3 fails silently; never invent syntax; verify in vanilla or `script_docs`.
 
@@ -28,7 +28,7 @@ Pure script, loc, gfx; no build. Vanilla ref: `/Users/clarabotet/Petur/ck3-full`
 - Use em-dashes (`U+2014`) in any tracked file (`scripts/check_em_dashes.py` blocks commits; use commas, colons, semicolons, parentheses, or ` - `).
 - Edit `descriptor.mod` (`name`, `remote_file_id`, `version`), `.env`, `*.vdf`, or add `replace_path`.
 - Delete third-party compat code (AGOT, Blood of Numenor) unasked, or reference other-mod keys unguarded (`has_global_variable = AGOT_is_loaded` or doctrine params).
-- Commit/push to `main` (always run `git branch --show-current` right before committing/pushing; if on `main` or detached `HEAD`, branch `v1.21.<N+1>` first).
+- Commit/push to `main` (always run `git branch --show-current` right before committing/pushing; if on `main` or detached `HEAD`, fetch and branch off `origin/main`: `git fetch origin main && git checkout -b v1.21.<N+1> origin/main`).
 - Blanket stage (`git add .`, `-A`, `commit -a`): parallel agents share tree.
 - Merge PR unless user explicitly asks (squash via `gh pr merge --squash`, never locally).
 - Read `docs-ai/archive/`, `docs-ai/ideas/`, `docs-ai/base-game-lists/`, `.agents/cost.md` unless asked.
@@ -37,7 +37,7 @@ Pure script, loc, gfx; no build. Vanilla ref: `/Users/clarabotet/Petur/ck3-full`
 
 - **Commit every turn (MANDATORY)**: parallel agents share this working tree. Before ending ANY turn that edited files, re-check `git branch --show-current` (if on `main` or detached `HEAD`, branch `v1.21.<N+1>` first), then explicitly `git add <only your files>`, commit, and push to `<branch>`. Never leave uncommitted edits waiting for follow-up.
 - **Argon planner**: if using Gemini Argon, ask `"You are using Argon, do you want to continue Yes/No"` first; never edit files on Argon (investigate/ask/plan only).
-- **Clarify first**: ask on rough ideas; never execute on unverified assumptions.
+- **Clarify first**: ask on rough ideas; never execute on unverified assumptions; never bundle subjective gameplay/AI tweaks into bug-fix options (keep each distinct behavior change separate).
 - **Capture discoveries (no double work)**: if you verified non-obvious syntax/behavior in vanilla or `script_docs`, hit a silent CK3 failure / new `error.log` signature, or traced a non-obvious mod coupling, persist it in the same commit (terse bullets, single source of truth):
   - Prefer **localized `AGENTS.md`** > **`docs-ai/architecture/`** > **`.agents/skills/`** over `.agents/rules/` (never add niche/subsystem-specific topics to `.agents/rules/`).
   - Folder-specific CK3 rule (`common/decisions/`, `common/districts/`, `events/`, `localization/`, etc.) → localized `AGENTS.md` in that folder (plus a 1-line pointer in a sibling folder's `AGENTS.md` if needed).

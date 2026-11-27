@@ -107,7 +107,7 @@ ai_willingness_to_lifedrain = {
     # Absolute veto: Never drain blood golems
     modifier = {
         factor = 0
-        scope:recipient = { house ?= house:bm_house_golem }
+        scope:recipient = { bm_is_blood_golem_trigger = yes }
     }
 
     # Absolute veto: Never drain friends, best friends, soulmates, lovers, or wards
@@ -374,4 +374,35 @@ ai_chance_scale_based_on_xp_in_track = {
 
 ai_chance_scale_based_on_xp_in_shared_track = {
     ai_chance_scale_based_on_xp_in_track = { TRACK = $TRACK$ }
+}
+
+# Trait Draining AI Guards & Personality Scaling
+bm_ai_trait_drain_safety_modifier = {
+    modifier = {
+        factor = 0
+        OR = {
+            health <= fine_health
+            has_character_modifier = lifeforce_modifier_negative_major
+        }
+    }
+}
+
+bm_ai_trait_drain_decline_modifier = {
+    modifier = {
+        OR = {
+            has_trait = ambitious
+            has_trait = callous
+            has_trait = sadistic
+            has_trait = deceitful
+        }
+        add = -30
+    }
+    modifier = {
+        OR = {
+            has_trait = compassionate
+            has_trait = content
+            has_trait = just
+        }
+        add = 100
+    }
 }

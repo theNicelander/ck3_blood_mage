@@ -346,7 +346,34 @@ seek_power.003 = {
     # Trait drain, if they have traits that I don't have
     option = {
         name = seek_power.003.b
-        ai_chance = { base = 500 }
+        ai_chance = {
+            base = 50
+            modifier = {
+                OR = {
+                    has_trait = ambitious
+                    has_trait = callous
+                    has_trait = sadistic
+                    has_trait = deceitful
+                }
+                add = 25
+            }
+            modifier = {
+                OR = {
+                    has_trait = compassionate
+                    has_trait = content
+                    has_trait = just
+                }
+                add = -25
+            }
+            modifier = {
+                factor = 0
+                OR = {
+                    piety < 100
+                    health <= fine_health
+                    has_character_modifier = lifeforce_modifier_negative_major
+                }
+            }
+        }
         trigger_event = bm_trait_drain.001
         trigger = {
             is_blood_mage_any_tier_trigger = yes

@@ -66,7 +66,10 @@ bm_compat_agot_trait_drain.0001 = {
 				}
 			}
 		}
-		ai_chance = { base = 100 }
+		ai_chance = {
+			base = 45
+			bm_ai_trait_drain_safety_modifier = yes
+		}
 	}
 
 	# 2. Drain Greensight
@@ -125,7 +128,10 @@ bm_compat_agot_trait_drain.0001 = {
 				}
 			}
 		}
-		ai_chance = { base = 100 }
+		ai_chance = {
+			base = 45
+			bm_ai_trait_drain_safety_modifier = yes
+		}
 	}
 
 	# 3. Infuse Dragonblood Heritage
@@ -195,17 +201,26 @@ bm_compat_agot_trait_drain.0001 = {
 				}
 			}
 		}
-		ai_chance = { base = 100 }
+		ai_chance = {
+			base = 50
+			bm_ai_trait_drain_safety_modifier = yes
+		}
 	}
 
 	# Back
 	option = {
 		name = bm_compat_agot_trait_drain.0001.back
 		if = {
-			limit = { bm_can_drain_vanilla_traits_from_target_trigger = yes }
+			limit = {
+				is_ai = no
+				bm_can_drain_vanilla_traits_from_target_trigger = yes
+			}
 			trigger_event = bm_trait_drain.001
 		}
-		ai_chance = { base = 5 }
+		ai_chance = {
+			base = 60
+			bm_ai_trait_drain_decline_modifier = yes
+		}
 	}
 
 	left_portrait = {

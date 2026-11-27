@@ -43,4 +43,4 @@ PR: #<N>
 - Edit: `gh pr edit <PR> --title ... --body-file docs-ai/branch-context/<branch>.md`
 - **Stop after PR**: never auto-merge; show PR link and wait for explicit user approval.
 - Merge (ONLY on user ask): `gh pr merge <PR> --squash --body-file <file> --delete-branch` (never local; omit `--subject` to keep `(#<PR>)`).
-- Next branch: pull `main`, checkout `v1.21.<N+1>`, `git push -u origin <branch>`, archive old doc to `docs-ai/archive/`, init new branch doc.
+- Next branch: `git fetch origin main && git checkout -b v1.21.<N+1> origin/main`, `git push -u origin <branch>`, archive old doc to `docs-ai/archive/`, init new branch doc.

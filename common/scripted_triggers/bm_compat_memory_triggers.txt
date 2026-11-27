@@ -1,5 +1,5 @@
 ﻿# Overhaul & Workshop Mod Blood Memory Drain Compatibility Triggers
-# Isolated external trait references for AGOT, LotR, EK2, Commander+ 1.21, Sub Rosa, and Councillor's Experience.
+# Isolated external trait references for AGOT, LotR, EK2, and Commander+ 1.21.
 
 bm_compat_agot_can_drain_memory_trigger = {
 	bm_is_agot_loaded_trigger = yes
@@ -70,34 +70,12 @@ bm_compat_commander_plus_can_drain_memory_trigger = {
 	}
 }
 
-bm_compat_subrosa_councillor_can_drain_memory_trigger = {
-	OR = {
-		# Sub Rosa (3769960376)
-		bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_kidnap_artist }
-		bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_dark_passenger }
-		bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_convincing_liar }
-		bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_bee_in_bloom }
-		bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_deadly_charmer }
-		bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_third_shadow }
-		bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_heartbinder }
-		bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_two_faced }
-		bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_cautious_schemer }
-		# Councillor's Experience (2721974781)
-		bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_chancellor }
-		bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_marshal }
-		bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_steward }
-		bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_spymaster }
-		bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_chaplain }
-	}
-}
-
 bm_compat_can_drain_memory_from_target_trigger = {
 	OR = {
 		bm_compat_agot_can_drain_memory_trigger = yes
 		bm_compat_lotr_can_drain_memory_trigger = yes
 		bm_compat_ek2_can_drain_memory_trigger = yes
 		bm_compat_commander_plus_can_drain_memory_trigger = yes
-		bm_compat_subrosa_councillor_can_drain_memory_trigger = yes
 	}
 }
 
@@ -108,7 +86,6 @@ bm_compat_has_multiple_memory_buckets_trigger = {
 		bm_compat_lotr_can_drain_memory_trigger = yes
 		bm_compat_ek2_can_drain_memory_trigger = yes
 		bm_compat_commander_plus_can_drain_memory_trigger = yes
-		bm_compat_subrosa_councillor_can_drain_memory_trigger = yes
 	}
 }
 
@@ -162,21 +139,5 @@ bm_compat_has_xp_drainable_memory_trait_trigger = {
 		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = archer_cav_specialist }
 		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = pikemen_specialist }
 		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = knights_specialist }
-		# Sub Rosa
-		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = sbr_kidnap_artist }
-		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = sbr_dark_passenger }
-		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = sbr_convincing_liar }
-		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = sbr_bee_in_bloom }
-		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = sbr_deadly_charmer }
-		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = sbr_third_shadow }
-		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = sbr_heartbinder }
-		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = sbr_two_faced }
-		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = sbr_cautious_schemer }
-		# Councillor's Experience
-		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = lifestyle_chancellor }
-		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = lifestyle_marshal }
-		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = lifestyle_steward }
-		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = lifestyle_spymaster }
-		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = lifestyle_chaplain }
 	}
 }

@@ -1,0 +1,13 @@
+﻿bm_blood_artifact_template = {
+	can_equip = {
+		always = yes
+	}
+
+	can_benefit = {
+		is_blood_mage_any_tier_trigger = yes
+	}
+
+	fallback = {
+		monthly_prestige = 0.1
+	}
+}
