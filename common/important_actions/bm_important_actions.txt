@@ -309,7 +309,6 @@ bm_action_can_trait_drain_prisoner = {
 
 	unimportant = {
 		OR = {
-			NOT = { scope:actor = { bm_can_drain_traits_from_target_tier_valid_trigger = yes } }
 			NOT = { scope:actor = { has_character_modifier = lifeforce_modifier_major } }
 			scope:actor = { has_character_flag = bm_trait_drain_cooldown }
 			scope:recipient = { has_character_flag = bm_trait_drain_victim_cooldown }

@@ -109,8 +109,8 @@
 
     # Transmute Lifeforce Decision
     bm_transmute_lifeforce_decision: "Transmute Lifeforce"
-    bm_transmute_lifeforce_decision_desc: "Channel or reclaim your reserves of Lifeforce, shifting vital energy between raw power and specialized reservoirs."
-    bm_transmute_lifeforce_decision_tooltip: "Begin the ritual to transmute Lifeforce into specialized reservoirs or reclaim stored potency."
+    bm_transmute_lifeforce_decision_desc: "Channel, reclaim, or burn your reserves of Lifeforce, shifting vital energy between raw power, specialized reservoirs, and spendable Piety."
+    bm_transmute_lifeforce_decision_tooltip: "Transmute Lifeforce into specialized reservoirs, reclaim stored potency, or burn Lifeforce into raw Piety."
     bm_transmute_lifeforce_decision_confirm: "Begin Transmutation"
 
     # Transmute Lifeforce Events
@@ -118,9 +118,19 @@
     bm_transmute_lifeforce.back: "Back"
 
     bm_transmute_lifeforce.0001.t: "Transmute Lifeforce"
-    bm_transmute_lifeforce.0001.desc: "You prepare to reshape your reserves of Lifeforce, transmuting Major Lifeforce into specialized reservoirs or reclaiming them back into Major Lifeforce."
+    bm_transmute_lifeforce.0001.desc: "You prepare to reshape your reserves of Lifeforce, transmuting Major Lifeforce into specialized reservoirs, reclaiming stored potency, or burning raw Lifeforce into spendable Piety."
     bm_transmute_lifeforce.0001.major: "Transmute Major Lifeforce"
     bm_transmute_lifeforce.0001.reverse: "Reclaim Stored Lifeforce"
+    bm_transmute_lifeforce.0001.burn: "Burn Lifeforce"
+
+    bm_transmute_lifeforce.0005.t: "Burn Lifeforce"
+    bm_transmute_lifeforce.0005.desc: "Consume raw Lifeforce to generate spendable Piety at the cost of exhaustion and stress."
+    bm_transmute_lifeforce.0005.minor: "Burn Minor Lifeforce"
+    bm_transmute_lifeforce.0005.major: "Burn Major Lifeforce"
+    bm_transmute_lifeforce.0005.superior: "Burn Superior Lifeforce"
+    bm_burn_lifeforce_minor_toast: "@bm_ancient_discipline_icon! Minor Lifeforce Burned"
+    bm_burn_lifeforce_major_toast: "@bm_ancient_discipline_icon! Major Lifeforce Burned"
+    bm_burn_lifeforce_superior_toast: "@bm_ancient_discipline_icon! Superior Lifeforce Burned"
 
     bm_transmute_lifeforce.0002.t: "Transmute Major Lifeforce"
     bm_transmute_lifeforce.0002.desc: "Transmute 1 Major Lifeforce into 1 stack of a specialized reservoir."
@@ -195,12 +205,6 @@
     bm_minor_blood_blessing: "Blood Blessing"
     bm_minor_blood_blessing_desc: "Bestow or upgrade a permanent Blood Blessing on yourself."
     bm_minor_blood_blessing_tooltip: "Opens the Blood Blessing interaction to bestow or upgrade a permanent Blood Blessing on yourself."
-    bm_minor_burn_lifeforce: "Burn Lifeforce"
-    bm_minor_burn_lifeforce_desc: "Burn Minor Lifeforce into raw Piety."
-    bm_minor_burn_lifeforce_tooltip: "Burn Minor Lifeforce into raw Piety."
-    bm_burn_minor_lifeforce_cooldown_tt: "Has not burned Minor Lifeforce in the last 6 months"
-    NOT_bm_burn_minor_lifeforce_cooldown_tt: "Has not burned Minor Lifeforce in the last 6 months"
-    bm_burn_lifeforce_minor_toast: "@bm_ancient_discipline_icon! Minor Lifeforce Burned"
 
     # Minor Aliases
     bm_cast_blood_magic_minor.001.purge: "$bm_minor_purge$"
@@ -234,12 +238,6 @@
     NOT_bm_split_major_lifeforce_cooldown_tt: "Has not split Major Lifeforce in the last 6 months"
     bm_split_major_lifeforce_toast: "@bm_ancient_discipline_icon! Major Lifeforce Split"
     bm_split_major_lifeforce_toast_desc: "You carefully partitioned a Major Lifeforce into two Minor reservoirs of vital energy."
-    bm_major_burn_lifeforce: "Burn Lifeforce"
-    bm_major_burn_lifeforce_desc: "Burn Major Lifeforce into raw Piety."
-    bm_major_burn_lifeforce_tooltip: "Burn Major Lifeforce into raw Piety."
-    bm_burn_major_lifeforce_cooldown_tt: "Has not burned Major Lifeforce in the last 6 months"
-    NOT_bm_burn_major_lifeforce_cooldown_tt: "Has not burned Major Lifeforce in the last 6 months"
-    bm_burn_lifeforce_major_toast: "@bm_ancient_discipline_icon! Major Lifeforce Burned"
     bm_major_improve_education: "Enhance Education"
     bm_major_improve_education_desc: "Attempt to elevate your primary education trait to a higher tier."
     bm_major_improve_education_tooltip: "Elevate your primary education trait up to 4 stars."
@@ -318,12 +316,6 @@
     NOT_bm_split_superior_lifeforce_cooldown_tt: "Has not split Superior Lifeforce in the last 6 months"
     bm_split_superior_lifeforce_toast: "@bm_ancient_discipline_icon! Superior Lifeforce Split"
     bm_split_superior_lifeforce_toast_desc: "You carefully partitioned a Superior Lifeforce into two Major reservoirs of vital energy."
-    bm_superior_burn_lifeforce: "Burn Lifeforce"
-    bm_superior_burn_lifeforce_desc: "Burn Superior Lifeforce into raw Piety."
-    bm_superior_burn_lifeforce_tooltip: "Burn Superior Lifeforce into raw Piety."
-    bm_burn_superior_lifeforce_cooldown_tt: "Has not burned Superior Lifeforce in the last 6 months"
-    NOT_bm_burn_superior_lifeforce_cooldown_tt: "Has not burned Superior Lifeforce in the last 6 months"
-    bm_burn_lifeforce_superior_toast: "@bm_ancient_discipline_icon! Superior Lifeforce Burned"
 
     # Superior Aliases
     bm_cast_blood_magic_superior.001.split: "$bm_superior_split$"

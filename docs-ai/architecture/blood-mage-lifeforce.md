@@ -33,21 +33,19 @@ Core spellcasting resource stored as stacking character modifiers (`lifeforce_mo
 
 ## Battlefield Lifeforce & XP Scaling (`common/scripted_effects/bm_combat_effects.txt`)
 
-Triggered on `on_combat_end_winner` (`bm_on_combat_end_winner`) for surviving side commanders and knights who have `lifestyle_blood_mage`:
+Trigger on `on_combat_end_winner` (`bm_on_combat_end_winner`) for surviving side commanders and knights who have any Blood Mage tier (`is_blood_mage_any_tier_trigger`), scaled by **enemy army size** (`enemy_side.side_max_army_size`, or `num_enemies_killed` for Lifeforce):
 
-| Battle Size (`num_total_troops` OR `num_enemies_killed`) | Minor Lifeforce Chance | Major Lifeforce Chance | Commander `fury` XP | Knight `fury` XP |
+| Enemy Army Size (`enemy_side.side_max_army_size`) | Minor Lifeforce | Major Lifeforce | Commander `fury` XP (<50 / 50+) | Knight `fury` XP (<50 / 50+) |
 | --- | --- | --- | --- | --- |
-| **10,000+ troops** (or 5,000+ killed) | **100%** (Guaranteed) | **100%** (Guaranteed) | `+5` XP | `+5` XP |
-| **8,000 – 9,999 troops** (or 4,000+ killed) | **100%** (Guaranteed) | **90%** | `+5` XP | `+5` XP |
-| **6,000 – 7,999 troops** (or 3,000+ killed) | **100%** (Guaranteed) | **75%** | `+5` XP | `+4` XP |
-| **4,000 – 5,999 troops** (or 2,000+ killed) | **100%** (Guaranteed) | **50%** | `+5` XP | `+4` XP |
-| **2,000 – 3,999 troops** (or 1,000+ killed) | **85%** | **25%** | `+4` XP | `+3` XP |
-| **1,000 – 1,999 troops** (or 500+ killed) | **75%** | **10%** | `+4` XP | `+3` XP |
-| **500 – 999 troops** (or 200+ killed) | **50%** | 0% | `+3` XP | `+2` XP |
-| **100 – 499 troops** (or 50+ killed) | **25%** | 0% | `+2` XP | `+1` XP |
-| **< 100 troops** (< 50 killed) | **10%** | 0% | `+2` XP | `+1` XP |
+| **8,000+ enemy** (or 4,000+ killed) | **100%** | **100%** | `+3` / `+2` | `+2` / `+1` |
+| **7,500 - 7,999 enemy** | **100%** | **75%** | `+3` / `+2` | `+2` / `+1` |
+| **5,000 - 7,499 enemy** (or 2,500+ killed) | **100%** | **75%** | `+2` / `+1` | `+1` / `+1` |
+| **2,500 - 4,999 enemy** (or 1,250+ killed) | **100%** | **50%** | `+2` / `+1` | `+1` / `+1` |
+| **1,000 - 2,499 enemy** (or 500+ killed) | **75%** | **20%** | `+1` / `0` | `+1` / `0` |
+| **500 - 999 enemy** (or 250+ killed) | **50%** | 0% | `+1` / `0` | `+1` / `0` |
+| **< 500 enemy** (< 250 killed) | 0% | 0% | `0` / `0` | `0` / `0` |
 
-*Note: Surviving a battle defeat (`bm_on_combat_end_loser`) grants `+1` to `+3` `fury` XP and `0` to `+2` `wisdom` XP based on battle size, with no Lifeforce harvest.*
+*Note: Surviving a battle defeat (`bm_on_combat_end_loser`) grants `+1` `fury` XP and `+1` `wisdom` XP only when both sides had `>= 1,000` troops (`>= 2,500` at 50+ Fury XP), with no Lifeforce harvest.*
 
 ---
 
@@ -60,14 +58,14 @@ Triggered on `on_combat_end_winner` (`bm_on_combat_end_winner`) for surviving si
 | **Mass Lifedrain (`mass_lifedrain_prisoners_decision`)** | Mage | Piety per prisoner, dungeon prisoners | **+Minor / +Major** per prisoner executed | Scaled `cunning` |
 | **Siphon Target (`bm_blood_drain_interaction`: Minor / Empowered Minor)** | Mage | `20` Piety (Minor) or `100` Piety (Empowered Minor, non-prisoner only), 3-mo victim CD | **+1 Minor** (prisoners auto-succeed; non-prisoners contest Intrigue + Learning duel, `50%` / `80%` base at 0 diff, `~90%` at `+30`, `-20` weight outside court; fail: 3-mo CD, `-25` opinion, `+20` Stress) | `+1` `cunning` |
 | **Single Combat Lethal Kill (`bm_on_character_death_duel`)** | Mage | Slay opponent in single combat | **+1 Major** + **`Prowess%` chance +1 Superior** (`bm_duel_victory_lifeforce_effect`) | `+5` `fury` |
-| **Battlefield Victory (`bm_on_combat_end_winner`)** | Mage | Win battle as commander or knight | **10%–100% Minor** & **0%–100% Major** (scales by troop bracket) | `+1` to `+5` `fury` |
+| **Battlefield Victory (`bm_on_combat_end_winner`)** | Mage | Win battle vs `>= 500` enemy troops as commander or knight | **50%-100% Minor** & **0%-100% Major** (scales by enemy army size; `< 500` yields none) | `+1` to `+3` `fury` (diminishes at 50+ Fury) |
 | **Murder Scheme Execution (`bm_on_murder_success_hulinhjalmur`)** | Superior Hulinhjálmur | Execute successful Murder scheme | **+1 Major** | None |
 | **Manifest Lifeforce (`bm_manifest_lifeforce_decision`)** | Mage | 100–1000 Piety, `piety_level >= 2`, 1-yr CD | Interaction modal popup (`bm_manifest_lifeforce_interaction`): 100p (+2 XP, nothing guaranteed, 50% fail -> 4% floor, Minor/Major success), 250p (+3 XP, guaranteed Minor upfront, 25% fail -> 3% floor, 1x/2x Major success), 500p (+5 XP, guaranteed Major upfront, 1x/2x Major or Minor, zero fail), 1000p (+7 XP, guaranteed Minor & 1 Major upfront, 1x/2x Major or Superior, zero fail) | `+2` / `+3` / `+5` / `+7` `wisdom` |
 | **Condense Minor Lifeforce (`bm_minor_condense`)** | Mage (`bm_cast_blood_magic_minor_decision`) | 100 Piety + 1 Minor Lifeforce, 6-mo CD | **-1 Minor -> +1 Major** (no exhaustion debuff) | `+2` `ancient` |
 | **Condense Major Lifeforce (`bm_major_condense`)** | Mage (`bm_cast_blood_magic_major_decision`) | 250 Piety + 1 Major Lifeforce, `piety_level >= 2`, 6-mo CD | **-1 Major -> +1 Superior** (no exhaustion debuff) | `+3` `ancient` |
 | **Split Superior Lifeforce (`bm_superior_split`)** | Mage (`bm_cast_blood_magic_superior_decision`) | 350 Piety + 1 Superior Lifeforce, `piety_level >= 2`, 6-mo CD | **-1 Superior -> +2 Major** (no exhaustion debuff) | `+3` `ancient` |
 | **Split Major Lifeforce (`bm_major_split`)** | Mage (`bm_cast_blood_magic_major_decision`) | 50 Piety + 1 Major Lifeforce, 6-mo CD | **-1 Major -> +2 Minor** (no exhaustion debuff) | `+2` `ancient` |
-| **Burn Lifeforce (`bm_minor/major/superior_burn_lifeforce`)** | Mage (`bm_cast_blood_magic_*_decision`) | 1 Minor / Major / Superior Lifeforce, 180d per-tier CD | **-1 Minor / Major / Superior -> +50 / +150 / +300 Piety** (+ standard tier exhaustion) | None |
+| **Burn Lifeforce (`bm_transmute_lifeforce.0005`)** | Mage (`bm_transmute_lifeforce_decision`) | 1 Minor / Major / Superior Lifeforce, `+15 / +35 / +60` Stress, no CD | **-1 Minor / Major / Superior -> +50 / +150 / +300 spendable Piety** (`add_piety_no_experience`, no Devotion XP, + standard tier exhaustion) | None |
 | **Childbirth Milestone (`bm_on_birth_fortune_xp`)** | Mage only | Child born to blood mage parent | **+1 Major** per child born; burns 1 Mojo per parent | `+2` (`+4` inheriting; doubled by Superior Feingur) `fortune`; `+3` per Mojo burned |
 | **Transmute Major -> Reservoir (`bm_transmute_lifeforce.0002`)** | Mage (`bm_transmute_lifeforce_decision`) | 50 Piety + 1 Major Lifeforce | **-1 Major -> +1 Reservoir** (`radiant`, `furious`, `fortunate`, `cunning`, `wise`, `ancient`) | `+1` `ancient` (Ancient Blood) / `+2` matching track (others) |
 | **Reclaim Major from Reservoir (`bm_transmute_lifeforce.0004`)** | Mage (`bm_transmute_lifeforce_decision`) | 50 Piety + 1 Reservoir stack | **-1 Reservoir -> +1 Major** (`radiant`, `furious`, `fortunate`, `cunning`, `wise`, `ancient`) | None |

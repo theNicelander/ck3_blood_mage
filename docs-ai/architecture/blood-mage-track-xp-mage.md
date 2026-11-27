@@ -44,8 +44,8 @@ Mage tracks `fortune`, `cunning`, and `fury`. Shared tracks (`ancient`, `wisdom`
 | +4 (win) / +1 (loss) | 50 Piety; Win: Superior (`Prowess%`) or Major; Loss: Minor + wound + 20 Stress + escape | Blood Pit Duel | interaction `bm_blood_drain_interaction` (`drain_blood_duel`) + `bm_prisoner_blood_duel.0001` | 20+ prowess prisoner | None |
 | +3 (crit), +2 (win) | 150 Piety + Minor | Contest of the Red Art | interaction `bm_occult_mage_duel_interaction` | Target Blood Mage | 3 years |
 | +2 (Minor) / +4 (Major) | Health / Stress toll; Grants Minor/Major | Bleed Own Vein | interaction `bm_bleed_own_vein_interaction` | Self | 1 year |
-| +2 to +4 | None | Battlefield Victory (Commander/Knight) | on-action `bm_combat_on_actions.txt` / `bm_combat_effects.txt` | Won battle | Per battle |
-| +1 to +2 | None | Battlefield Defeat | on-action `bm_combat_on_actions.txt` / `bm_combat_effects.txt` | Survived lost battle | Per battle |
+| +1 to +3 (commander; 0/+1/+2 at 50+ Fury) / +1 to +2 (knight; 0/+1 at 50+ Fury) | None | Battlefield Victory (Commander/Knight) | on-action `bm_combat_on_actions.txt` / `bm_combat_effects.txt` | Won battle vs >= 500 enemy troops (>= 2,500 at 50+ Fury) | Per battle |
+| +1 (+1 Wisdom) | None | Battlefield Defeat | on-action `bm_combat_on_actions.txt` / `bm_combat_effects.txt` | Survived lost battle with both sides >= 1,000 (>= 2,500 at 50+ Fury) | Per battle |
 | +3 | None | Single Combat Fatality (Duel Kill) | on-action `bm_duel_on_actions.txt` / `bm_combat_on_character_death_effect` | Slew opponent in single combat | Per fatal duel |
 | +2 | None | Tournament Completion | on-action `bm_duel_on_actions.txt` | Completed contest | Per contest |
 | +2 (win) / +1 (loss) | None | Ritual Sparring | decision & event `bm_ritual_spar_decision.txt` | Sworn knight opponent | 1 year |

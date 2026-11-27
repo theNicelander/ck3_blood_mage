@@ -1,7 +1,7 @@
 ﻿# Scripted effects for Drain Blood Memory
 
 bm_memory_drain_commit_cost_and_cooldown_effect = {
-	add_piety = bm_memory_drain_piety_cost_negative
+	add_piety = $PIETY_COST$
 	remove_character_modifier = lifeforce_modifier_major
 	add_stress = bm_memory_drain_stress_cost
 	add_character_flag = {
@@ -39,7 +39,7 @@ bm_memory_drain_fail_effect = {
 }
 
 bm_memory_drain_execute_no_track_effect = {
-	bm_memory_drain_commit_cost_and_cooldown_effect = yes
+	bm_memory_drain_commit_cost_and_cooldown_effect = { PIETY_COST = bm_memory_drain_piety_cost_negative }
 	duel = {
 		skill = learning
 		target = scope:recipient
@@ -78,7 +78,13 @@ bm_memory_drain_execute_no_track_effect = {
 }
 
 bm_memory_drain_execute_single_track_effect = {
-	bm_memory_drain_commit_cost_and_cooldown_effect = yes
+	if = {
+		limit = { has_trait = $TRAIT$ }
+		bm_memory_drain_commit_cost_and_cooldown_effect = { PIETY_COST = bm_memory_drain_xp_piety_cost_negative }
+	}
+	else = {
+		bm_memory_drain_commit_cost_and_cooldown_effect = { PIETY_COST = bm_memory_drain_piety_cost_negative }
+	}
 	duel = {
 		skill = learning
 		target = scope:recipient
@@ -126,7 +132,13 @@ bm_memory_drain_execute_single_track_effect = {
 }
 
 bm_memory_drain_execute_multi_track_effect = {
-	bm_memory_drain_commit_cost_and_cooldown_effect = yes
+	if = {
+		limit = { has_trait = $TRAIT$ }
+		bm_memory_drain_commit_cost_and_cooldown_effect = { PIETY_COST = bm_memory_drain_xp_piety_cost_negative }
+	}
+	else = {
+		bm_memory_drain_commit_cost_and_cooldown_effect = { PIETY_COST = bm_memory_drain_piety_cost_negative }
+	}
 	duel = {
 		skill = learning
 		target = scope:recipient

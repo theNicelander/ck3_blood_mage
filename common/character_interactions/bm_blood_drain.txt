@@ -238,7 +238,6 @@
 			scope:actor = { bm_can_drain_traits_from_target_trigger = yes }
 		}
 		is_valid = {
-			scope:actor = { bm_can_drain_traits_from_target_tier_valid_trigger = yes }
 			scope:recipient = { is_imprisoned_by = scope:actor }
 			scope:actor = {
 				has_character_modifier = lifeforce_modifier_major
@@ -273,7 +272,7 @@
 			}
 			scope:actor = {
 				has_character_modifier = lifeforce_modifier_major
-				piety >= bm_memory_drain_piety_cost
+				piety >= bm_memory_drain_min_piety_cost
 				custom_tooltip = {
 					text = bm_memory_drain_caster_cooldown_tt
 					NOT = { has_character_flag = bm_memory_drain_cooldown }

@@ -60,6 +60,21 @@ bm_transmute_lifeforce.0001 = {
 		}
 	}
 
+	# 3. Burn Lifeforce for Piety
+	option = {
+		name = bm_transmute_lifeforce.0001.burn
+		trigger = {
+			is_blood_mage_any_tier_trigger = yes
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		trigger_event = { id = bm_transmute_lifeforce.0005 }
+		ai_chance = {
+			base = 0
+		}
+	}
+
 	# 4. Back
 	option = {
 		name = bm_transmute_lifeforce.cancel
@@ -436,6 +451,100 @@ bm_transmute_lifeforce.0004 = {
 				add = 50
 				NOT = { has_character_modifier = lifeforce_modifier_major }
 			}
+		}
+	}
+
+	# Back
+	option = {
+		name = bm_transmute_lifeforce.back
+		trigger = {
+			always = yes
+		}
+		trigger_event = { id = bm_transmute_lifeforce.0001 }
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+# Burn Lifeforce Event: Minor / Major / Superior / Back
+bm_transmute_lifeforce.0005 = {
+	type = character_event
+	title = bm_transmute_lifeforce.0005.t
+	desc = bm_transmute_lifeforce.0005.desc
+	theme = witchcraft
+	override_icon = {
+		reference = "gfx/interface/icons/bm_blood_magic_icon.dds"
+	}
+
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+
+	# Burn Minor Lifeforce
+	option = {
+		name = bm_transmute_lifeforce.0005.minor
+		trigger = {
+			has_character_modifier = lifeforce_modifier_minor
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		send_interface_toast = {
+			type = bm_event_toast_effect_good
+			title = bm_burn_lifeforce_minor_toast
+			left_icon = root
+			blood_magic_used_minor = yes
+			add_piety_no_experience = 50
+			add_stress = 15
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+
+	# Burn Major Lifeforce
+	option = {
+		name = bm_transmute_lifeforce.0005.major
+		trigger = {
+			has_character_modifier = lifeforce_modifier_major
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		send_interface_toast = {
+			type = bm_event_toast_effect_good
+			title = bm_burn_lifeforce_major_toast
+			left_icon = root
+			blood_magic_used_major = yes
+			add_piety_no_experience = 150
+			add_stress = 35
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+
+	# Burn Superior Lifeforce
+	option = {
+		name = bm_transmute_lifeforce.0005.superior
+		trigger = {
+			has_character_modifier = lifeforce_modifier_superior
+		}
+		show_as_unavailable = {
+			always = yes
+		}
+		send_interface_toast = {
+			type = bm_event_toast_effect_good
+			title = bm_burn_lifeforce_superior_toast
+			left_icon = root
+			blood_magic_used_superior = yes
+			add_piety_no_experience = 300
+			add_stress = 60
+		}
+		ai_chance = {
+			base = 0
 		}
 	}
 

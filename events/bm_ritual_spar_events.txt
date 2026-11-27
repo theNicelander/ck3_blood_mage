@@ -28,6 +28,9 @@ bm_ritual_spar_events.0001 = {
 		scope:spar_partner_1 = {
 			save_scope_as = selected_partner
 		}
+		hidden_effect = {
+			bm_spar_snapshot_relations_effect = { PARTNER = scope:selected_partner }
+		}
 		configure_start_single_combat_effect = {
 			SC_INITIATOR = root
 			SC_ATTACKER = root
@@ -52,6 +55,9 @@ bm_ritual_spar_events.0001 = {
 		scope:spar_partner_2 = {
 			save_scope_as = selected_partner
 		}
+		hidden_effect = {
+			bm_spar_snapshot_relations_effect = { PARTNER = scope:selected_partner }
+		}
 		configure_start_single_combat_effect = {
 			SC_INITIATOR = root
 			SC_ATTACKER = root
@@ -75,6 +81,9 @@ bm_ritual_spar_events.0001 = {
 		}
 		scope:spar_partner_3 = {
 			save_scope_as = selected_partner
+		}
+		hidden_effect = {
+			bm_spar_snapshot_relations_effect = { PARTNER = scope:selected_partner }
 		}
 		configure_start_single_combat_effect = {
 			SC_INITIATOR = root
@@ -130,6 +139,15 @@ bm_ritual_spar_events.0002 = {
 	right_portrait = {
 		character = scope:sc_defender
 		animation = marshal
+	}
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { exists = scope:sc_defender }
+				bm_spar_restore_relations_effect = { PARTNER = scope:sc_defender }
+			}
+		}
 	}
 
 	option = {
@@ -281,6 +299,12 @@ bm_ritual_spar_events.0003 = {
 		single_combat_clean_shirtlessness_effect = {
 			ATTACKER = root
 			DEFENDER = scope:sc_defender
+		}
+		hidden_effect = {
+			if = {
+				limit = { exists = scope:sc_defender }
+				bm_spar_clear_relation_flags_effect = { PARTNER = scope:sc_defender }
+			}
 		}
 	}
 
