@@ -41,6 +41,13 @@ bm_memory_drain.0001 = {
 	}
 
 	option = {
+		name = bm_memory_drain.0001.compat
+		trigger = { bm_compat_can_drain_memory_from_target_trigger = yes }
+		bm_compat_open_memory_drain_event_effect = yes
+		ai_chance = { base = 100 }
+	}
+
+	option = {
 		name = bm_memory_drain.back
 		ai_chance = { base = 0 }
 	}
@@ -134,6 +141,14 @@ bm_memory_drain.0002 = {
 		trigger = { bm_can_afford_memory_drain_multi_track_trigger = { TRAIT = lifestyle_traveler TRACK_A = travel TRACK_B = danger } }
 		show_as_unavailable = { bm_can_drain_memory_multi_track_trigger = { TRAIT = lifestyle_traveler TRACK_A = travel TRACK_B = danger } }
 		bm_memory_drain_execute_multi_track_effect = { TRAIT = lifestyle_traveler TRACK_A = travel TRACK_B = danger }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.trait.tourney_participant
+		trigger = { bm_can_afford_memory_drain_quad_track_trigger = { TRAIT = tourney_participant TRACK_A = foot TRACK_B = bow TRACK_C = horse TRACK_D = wit } }
+		show_as_unavailable = { bm_can_drain_memory_quad_track_trigger = { TRAIT = tourney_participant TRACK_A = foot TRACK_B = bow TRACK_C = horse TRACK_D = wit } }
+		bm_memory_drain_execute_quad_track_effect = { TRAIT = tourney_participant TRACK_A = foot TRACK_B = bow TRACK_C = horse TRACK_D = wit }
 		ai_chance = { base = 100 }
 	}
 
@@ -344,6 +359,14 @@ bm_memory_drain.0004 = {
 		trigger = { bm_can_afford_memory_drain_no_track_trigger = { TRAIT = athletic } }
 		show_as_unavailable = { bm_can_drain_memory_no_track_trigger = { TRAIT = athletic } }
 		bm_memory_drain_execute_no_track_effect = { TRAIT = athletic }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.trait.varangian
+		trigger = { bm_can_afford_memory_drain_no_track_trigger = { TRAIT = varangian } }
+		show_as_unavailable = { bm_can_drain_memory_no_track_trigger = { TRAIT = varangian } }
+		bm_memory_drain_execute_no_track_effect = { TRAIT = varangian }
 		ai_chance = { base = 100 }
 	}
 

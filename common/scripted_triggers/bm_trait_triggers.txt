@@ -26,6 +26,20 @@ bm_can_drain_vanilla_traits_from_target_trigger = {
 			NOT = { has_trait = pure_blooded }
 			scope:recipient = { has_trait = pure_blooded }
 		}
+		AND = {
+			NOR = {
+				has_trait = strong
+				has_trait = physique_bad
+			}
+			scope:recipient = { has_trait = strong }
+		}
+		AND = {
+			NOR = {
+				has_trait = shrewd
+				has_trait = intellect_bad
+			}
+			scope:recipient = { has_trait = shrewd }
+		}
 	}
 }
 

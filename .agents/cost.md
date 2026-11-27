@@ -5,19 +5,20 @@
 | --- | ---: |
 | **Always-On (every turn)** | **1,490** |
 | ↳ Core (`AGENTS.md`) | 1,490 |
-| **On-Demand** | **10,812** |
+| **On-Demand** | **11,830** |
 | ↳ Localized (`**/AGENTS.md`) | 5,038 |
 | ↳ Rules (`model_decision`) | 0 |
-| ↳ Skills (`.agents/skills/`) | 5,774 |
-| **Total** | **12,302** |
+| ↳ Skills (`.agents/skills/`) | 6,792 |
+| **Total** | **13,320** |
 
 ## Details per file
 
 | File | Load | Category | Tokens |
 | --- | --- | --- | ---: |
-| `.agents/skills/debug-ck3-logs/SKILL.md` | On-Demand | Skills | 1,699 |
+| `.agents/skills/debug-ck3-logs/SKILL.md` | On-Demand | Skills | 1,651 |
 | `AGENTS.md` | Always-On | Core | 1,490 |
 | `docs-ai/architecture/AGENTS.md` | On-Demand | Localized | 1,271 |
+| `.agents/skills/add-overhaul-compat/SKILL.md` | On-Demand | Skills | 1,066 |
 | `.agents/skills/single-combat/SKILL.md` | On-Demand | Skills | 916 |
 | `.agents/skills/manage-pr/SKILL.md` | On-Demand | Skills | 813 |
 | `.agents/skills/add-icon-asset/SKILL.md` | On-Demand | Skills | 638 |
