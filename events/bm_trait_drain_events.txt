@@ -65,7 +65,31 @@ bm_trait_drain.001 = {
                 }
             }
         }
-        ai_chance = { base = 100 }
+        ai_chance = {
+            base = 45
+            modifier = {
+                OR = {
+                    learning >= 12
+                    has_trait = scholar
+                }
+                add = 15
+            }
+            bm_ai_trait_drain_safety_modifier = yes
+            modifier = {
+                factor = 0
+                OR = {
+                    piety < 100
+                    AND = {
+                        has_trait = intellect_good_2
+                        piety < 175
+                    }
+                    AND = {
+                        has_trait = intellect_good_3
+                        piety < 250
+                    }
+                }
+            }
+        }
     }
 
     # Strength drain -- Gain hale / robust / (amazonian or herculean)
@@ -124,7 +148,32 @@ bm_trait_drain.001 = {
                 }
             }
         }
-        ai_chance = { base = 100 }
+        ai_chance = {
+            base = 40
+            modifier = {
+                OR = {
+                    martial >= 12
+                    prowess >= 12
+                    has_trait = brave
+                }
+                add = 15
+            }
+            bm_ai_trait_drain_safety_modifier = yes
+            modifier = {
+                factor = 0
+                OR = {
+                    piety < 100
+                    AND = {
+                        has_trait = physique_good_2
+                        piety < 175
+                    }
+                    AND = {
+                        has_trait = physique_good_3
+                        piety < 250
+                    }
+                }
+            }
+        }
     }
 
     # Beauty drain -- Gain comely / (pretty or handsome) / beautiful
@@ -183,7 +232,38 @@ bm_trait_drain.001 = {
                 }
             }
         }
-        ai_chance = { base = 100 }
+        ai_chance = {
+            base = 30
+            modifier = {
+                OR = {
+                    diplomacy >= 12
+                    has_trait = lustful
+                }
+                add = 15
+            }
+            modifier = {
+                OR = {
+                    has_trait = chaste
+                    has_trait = celibate
+                }
+                add = -15
+            }
+            bm_ai_trait_drain_safety_modifier = yes
+            modifier = {
+                factor = 0
+                OR = {
+                    piety < 100
+                    AND = {
+                        has_trait = beauty_good_2
+                        piety < 175
+                    }
+                    AND = {
+                        has_trait = beauty_good_3
+                        piety < 250
+                    }
+                }
+            }
+        }
     }
 
     # Fecund drain
@@ -249,7 +329,28 @@ bm_trait_drain.001 = {
             }
         }
 
-        ai_chance = { base = 100 }
+        ai_chance = {
+            base = 20
+            modifier = {
+                age < 35
+                any_child = { count < 2 }
+                add = 15
+            }
+            bm_ai_trait_drain_safety_modifier = yes
+            modifier = {
+                factor = 0
+                OR = {
+                    piety < 100
+                    fertility <= 0.1
+                    has_trait = celibate
+                    is_eunuch_trigger = yes
+                    AND = {
+                        is_female = yes
+                        age >= 45
+                    }
+                }
+            }
+        }
     }
 
     # Giant drain
@@ -314,7 +415,29 @@ bm_trait_drain.001 = {
             }
         }
 
-        ai_chance = { base = 100 }
+        ai_chance = {
+            base = 5
+            modifier = {
+                OR = {
+                    martial >= 14
+                    prowess >= 14
+                    has_trait = wrathful
+                    has_trait = brave
+                }
+                add = 15
+            }
+            bm_ai_trait_drain_safety_modifier = yes
+            modifier = {
+                factor = 0
+                OR = {
+                    piety < 100
+                    health <= good_health
+                    has_trait = craven
+                    has_trait = weak
+                    has_trait = physique_bad
+                }
+            }
+        }
     }
 
     # Pure Blood drain
@@ -380,7 +503,18 @@ bm_trait_drain.001 = {
             }
         }
 
-        ai_chance = { base = 100 }
+        ai_chance = {
+            base = 40
+            modifier = {
+                is_ruler = yes
+                add = 10
+            }
+            bm_ai_trait_drain_safety_modifier = yes
+            modifier = {
+                factor = 0
+                piety < 100
+            }
+        }
     }
 
     # Strong drain
@@ -446,7 +580,21 @@ bm_trait_drain.001 = {
             }
         }
 
-        ai_chance = { base = 100 }
+        ai_chance = {
+            base = 40
+            modifier = {
+                OR = {
+                    martial >= 12
+                    prowess >= 12
+                }
+                add = 10
+            }
+            bm_ai_trait_drain_safety_modifier = yes
+            modifier = {
+                factor = 0
+                piety < 100
+            }
+        }
     }
 
     # Shrewd drain
@@ -512,7 +660,21 @@ bm_trait_drain.001 = {
             }
         }
 
-        ai_chance = { base = 100 }
+        ai_chance = {
+            base = 40
+            modifier = {
+                OR = {
+                    learning >= 12
+                    intrigue >= 12
+                }
+                add = 10
+            }
+            bm_ai_trait_drain_safety_modifier = yes
+            modifier = {
+                factor = 0
+                piety < 100
+            }
+        }
     }
 
     # Overhaul-specific blood & trait drain hub (AGOT / LotR / EK2)
@@ -522,13 +684,23 @@ bm_trait_drain.001 = {
             bm_compat_can_drain_traits_from_target_trigger = yes
         }
         bm_compat_open_trait_drain_event_effect = yes
-        ai_chance = { base = 100 }
+        ai_chance = {
+            base = 40
+            bm_ai_trait_drain_safety_modifier = yes
+            modifier = {
+                factor = 0
+                piety < 100
+            }
+        }
     }
 
     # Do nothing
     option = {
         name = bm_trait_drain.001.z
-        ai_chance = { base = 5 }
+        ai_chance = {
+            base = 60
+            bm_ai_trait_drain_decline_modifier = yes
+        }
     }
 
     # Portraits

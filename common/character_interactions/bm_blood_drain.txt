@@ -859,13 +859,39 @@
 		}
 		modifier = {
 			scope:drain_trait = yes
-			add = 20
+			add = 10
+		}
+		modifier = {
+			scope:drain_trait = yes
+			scope:actor = {
+				OR = {
+					has_trait = ambitious
+					has_trait = callous
+					has_trait = sadistic
+					has_trait = deceitful
+				}
+			}
+			add = 15
+		}
+		modifier = {
+			scope:drain_trait = yes
+			scope:actor = {
+				OR = {
+					has_trait = compassionate
+					has_trait = content
+					has_trait = just
+				}
+			}
+			add = -15
 		}
 		modifier = {
 			scope:drain_trait = yes
 			OR = {
 				scope:actor = {
 					OR = {
+						piety < 100
+						health <= fine_health
+						has_character_modifier = lifeforce_modifier_negative_major
 						is_spouse_of = scope:recipient
 						is_consort_of = scope:recipient
 					}
