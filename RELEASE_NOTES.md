@@ -157,7 +157,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 
 ## Version history
 
-- v1.21.13: Add decaying leveled Blood Golem trait with Lifeforce refueling, Blood Mage Lifeforce Shield & tier-scaled drain harvest, Forge Blood Artifact decision (5 slots x 6 disciplines) + Egill tempering duel at Reykjavik/Tsushima, remove `witch` from Blóðtrú sins, and stop AI from draining `giant`.
+- v1.21.13: Add decaying leveled Blood Golem trait with Lifeforce refueling, Blood Mage Lifeforce Shield & tier-scaled drain harvest, Forge Blood Artifact decision (5 slots x 6 disciplines) + Egill tempering duel at Reykjavik/Tsushima, and remove `witch` from Blóðtrú sins.
 - v1.21.11: Rebalance battle Lifeforce (linear total-combatant chances, separate 90d CDs), battle Fury XP (60d CD, victory-only), and duel/sparring XP.
 - v1.21.9: Fix Empower Dynasty house covenants, add Channel Focus, Age 85/100 milestones, 4 events, 3 hunts, alerts, and 6 heals.
 - v1.21.7: Unify single combat duel victory Lifeforce rewards (+1 Major + opponent's Prowess% chance for +1 Superior) across Prisoner Blood Pit Duel, Blood Hunt duels, and lethal single combat kills (Blood Sparring Ring remains Major-only); trim 1.21 trade bloat from Blessing of Fortune, Covenant of Fortune (keeping +1 Max Trade Routes at Tier III), Fortunate Lifeforce, and Nábrókarstafur.
