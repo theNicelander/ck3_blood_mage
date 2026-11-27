@@ -39,9 +39,10 @@ Triggered on `on_combat_end_winner` (`bm_on_combat_end_winner`) for surviving si
 | --- | --- | --- | --- | --- | --- |
 | **`< 500`** | 0% | 0% | 0% | `0` | `0` |
 | **`500 - 4,999`** | `total / 100` (5%-49%) | 0% | 0% | `+2` | `+1` |
-| **`5,000 - 10,000`** | `total / 100` (50%-100%) | `total / 1000` (5%-10%) | 0% | `+2` | `+1` |
-| **`10,001 - 99,999`** | **100%** | `total / 1000` (10%-99%) | 0% | `+3` | `+2` |
-| **`100,000 - 1,000,000+`** | **100%** | **100%** | `1%` at 100k -> `100%` at 1M | `+3` | `+2` |
+| **`5,000 - 9,999`** | `total / 100` (50%-99%) | `total / 1000` (5%-9%) | 0% | `+2` | `+1` |
+| **`10,000`** | **100%** | **10%** | **1%** | `+2` | `+1` |
+| **`10,001 - 109,999`** | **100%** | `total / 1000` (10%-100%) | `1%` at 10k -> `100%` at 110k | `+3` | `+2` |
+| **`110,000+`** | **100%** | **100%** | **100%** | `+3` | `+2` |
 
 ---
 
@@ -54,7 +55,7 @@ Triggered on `on_combat_end_winner` (`bm_on_combat_end_winner`) for surviving si
 | **Mass Lifedrain (`mass_lifedrain_prisoners_decision`)** | Mage | Piety per prisoner, dungeon prisoners | **+Minor / +Major** per prisoner executed | Scaled `cunning` |
 | **Siphon Target (`bm_blood_drain_interaction`: Minor / Empowered Minor)** | Mage | `20` Piety (Minor) or `100` Piety (Empowered Minor, non-prisoner only), 3-mo victim CD | **+1 Minor** (prisoners auto-succeed; non-prisoners contest Intrigue + Learning duel, `50%` / `80%` base at 0 diff, `~90%` at `+30`, `-20` weight outside court; fail: 3-mo CD, `-25` opinion, `+20` Stress) | `+1` `cunning` |
 | **Single Combat Lethal Kill (`bm_on_character_death_duel`)** | Mage | Slay opponent in single combat | **+1 Major** + **`Prowess%` chance +1 Superior** (`bm_duel_victory_lifeforce_effect`) | `+2` `fury` |
-| **Battlefield Victory (`bm_on_combat_end_winner`)** | Mage | Win battle (`>= 500` total combatants) as commander or knight | Independent rolls: Minor `10%/1k` (500+), Major `1%/1k` (5k+), Superior `1%` at 100k to `100%` at 1M; separate 90d on-harvest CDs | `+1` base, `+1` commander, `+1` if `> 10k` total (60d CD; 0 on defeat) |
+| **Battlefield Victory (`bm_on_combat_end_winner`)** | Mage | Win battle (`>= 500` total combatants) as commander or knight | Independent rolls: Minor `10%/1k` (500+), Major `1%/1k` (5k+), Superior `1%` at 10k to `100%` at 110k; separate 90d on-harvest CDs | `+1` base, `+1` commander, `+1` if `> 10k` total (60d CD; 0 on defeat) |
 | **Murder Scheme Execution (`bm_on_murder_success_hulinhjalmur`)** | Superior Hulinhjálmur | Execute successful Murder scheme | **+1 Major** | None |
 | **Manifest Lifeforce (`bm_manifest_lifeforce_decision`)** | Mage | 100–1000 Piety, `piety_level >= 2`, 1-yr CD | Interaction modal popup (`bm_manifest_lifeforce_interaction`): 100p (+2 XP, nothing guaranteed, 50% fail -> 4% floor, Minor/Major success), 250p (+3 XP, guaranteed Minor upfront, 25% fail -> 3% floor, 1x/2x Major success), 500p (+5 XP, guaranteed Major upfront, 1x/2x Major or Minor, zero fail), 1000p (+7 XP, guaranteed Minor & 1 Major upfront, 1x/2x Major or Superior, zero fail) | `+2` / `+3` / `+5` / `+7` `wisdom` |
 | **Condense Minor Lifeforce (`bm_minor_condense`)** | Mage (`bm_cast_blood_magic_minor_decision`) | 100 Piety + 1 Minor Lifeforce, 6-mo CD | **-1 Minor -> +1 Major** (no exhaustion debuff) | `+2` `ancient` |

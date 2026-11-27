@@ -20,11 +20,11 @@ bm_battle_major_lifeforce_chance_value = {
 	max = 100
 }
 
-# 1% at 100,000 total combatants scaling linearly to 100% at 1,000,000 (divides first to avoid fixed-point overflow)
+# 1% at 10,000 total combatants scaling linearly to 100% at 110,000 (divides first to avoid fixed-point overflow)
 bm_battle_superior_lifeforce_chance_value = {
 	value = bm_battle_total_combatants_value
-	subtract = 100000
-	divide = 9090
+	subtract = 10000
+	divide = 1010
 	add = 1
 	min = 1
 	max = 100

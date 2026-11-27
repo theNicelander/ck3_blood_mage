@@ -87,11 +87,11 @@ bm_battle_victory_lifeforce_harvest_effect = {
 			}
 		}
 	}
-	# Superior Lifeforce: 1% at 100k scaling to 100% at 1M total combatants, 90d cooldown on harvest
+	# Superior Lifeforce: 1% at 10k scaling to 100% at 110k total combatants, 90d cooldown on harvest
 	if = {
 		limit = {
 			NOT = { has_character_flag = bm_battle_lifeforce_superior_cooldown }
-			bm_battle_total_combatants_value >= 100000
+			bm_battle_total_combatants_value >= 10000
 		}
 		random = {
 			chance = bm_battle_superior_lifeforce_chance_value
