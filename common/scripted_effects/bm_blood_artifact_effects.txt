@@ -1,105 +1,70 @@
 ﻿# Blood Magic Artifact Creation & Egill Tempering Helpers
 
+bm_create_forged_blood_artifact_effect = {
+	create_artifact = {
+		name = bm_blood_artifact_$SLOT$_$DISCIPLINE$_name
+		description = bm_blood_artifact_$SLOT$_$DISCIPLINE$_desc
+		type = $TYPE$
+		visuals = $VISUALS$
+		wealth = 40
+		quality = 40
+		template = bm_blood_artifact_template
+		modifier = bm_artifact_slot_$SLOT$_modifier
+		modifier = bm_artifact_disc_$DISCIPLINE$_modifier
+		save_scope_as = newly_created_artifact
+	}
+}
+
 bm_forge_blood_artifact_effect = {
-	# Expects flag:bm_forge_slot_weapon/regalia/armor/crown/trinket saved in var:bm_forge_slot
+	# Expects flag:weapon/regalia/armor/crown/trinket saved in var:bm_forge_slot
 	# and $DISCIPLINE$ = radiance | fury | fortune | cunning | wisdom | ancient
-	blood_magic_used_major = yes
-	add_character_flag = {
-		flag = bm_forge_artifact_cooldown
-		years = 3
-	}
-	add_xp_bm_dynamic = {
-		TRACK = wisdom
-		XP = 3
-	}
+	send_interface_toast = {
+		type = bm_event_toast_effect_good
+		title = bm_blood_artifact_forged_toast
+		left_icon = root
+		blood_magic_used_major = yes
+		add_character_flag = {
+			flag = bm_forge_artifact_cooldown
+			years = 3
+		}
+		add_xp_bm_dynamic = {
+			TRACK = wisdom
+			XP = 3
+		}
 
-	if = {
-		limit = { var:bm_forge_slot ?= flag:weapon }
-		create_artifact = {
-			name = bm_blood_artifact_weapon_$DISCIPLINE$_name
-			description = bm_blood_artifact_weapon_$DISCIPLINE$_desc
-			type = sword
-			visuals = sword
-			wealth = 40
-			quality = 40
-			template = bm_blood_artifact_template
-			modifier = bm_artifact_slot_weapon_modifier
-			modifier = bm_artifact_disc_$DISCIPLINE$_modifier
-			save_scope_as = newly_created_artifact
+		if = {
+			limit = { var:bm_forge_slot ?= flag:weapon }
+			bm_create_forged_blood_artifact_effect = { SLOT = weapon TYPE = sword VISUALS = sword DISCIPLINE = $DISCIPLINE$ }
 		}
-	}
-	else_if = {
-		limit = { var:bm_forge_slot ?= flag:regalia }
-		create_artifact = {
-			name = bm_blood_artifact_regalia_$DISCIPLINE$_name
-			description = bm_blood_artifact_regalia_$DISCIPLINE$_desc
-			type = regalia_simple
-			visuals = regalia
-			wealth = 40
-			quality = 40
-			template = bm_blood_artifact_template
-			modifier = bm_artifact_slot_regalia_modifier
-			modifier = bm_artifact_disc_$DISCIPLINE$_modifier
-			save_scope_as = newly_created_artifact
+		else_if = {
+			limit = { var:bm_forge_slot ?= flag:regalia }
+			bm_create_forged_blood_artifact_effect = { SLOT = regalia TYPE = regalia_simple VISUALS = regalia DISCIPLINE = $DISCIPLINE$ }
 		}
-	}
-	else_if = {
-		limit = { var:bm_forge_slot ?= flag:armor }
-		create_artifact = {
-			name = bm_blood_artifact_armor_$DISCIPLINE$_name
-			description = bm_blood_artifact_armor_$DISCIPLINE$_desc
-			type = armor_plate
-			visuals = armor
-			wealth = 40
-			quality = 40
-			template = bm_blood_artifact_template
-			modifier = bm_artifact_slot_armor_modifier
-			modifier = bm_artifact_disc_$DISCIPLINE$_modifier
-			save_scope_as = newly_created_artifact
+		else_if = {
+			limit = { var:bm_forge_slot ?= flag:armor }
+			bm_create_forged_blood_artifact_effect = { SLOT = armor TYPE = armor_plate VISUALS = armor DISCIPLINE = $DISCIPLINE$ }
 		}
-	}
-	else_if = {
-		limit = { var:bm_forge_slot ?= flag:crown }
-		create_artifact = {
-			name = bm_blood_artifact_crown_$DISCIPLINE$_name
-			description = bm_blood_artifact_crown_$DISCIPLINE$_desc
-			type = helmet_simple
-			visuals = crown
-			wealth = 40
-			quality = 40
-			template = bm_blood_artifact_template
-			modifier = bm_artifact_slot_crown_modifier
-			modifier = bm_artifact_disc_$DISCIPLINE$_modifier
-			save_scope_as = newly_created_artifact
+		else_if = {
+			limit = { var:bm_forge_slot ?= flag:crown }
+			bm_create_forged_blood_artifact_effect = { SLOT = crown TYPE = helmet_simple VISUALS = crown DISCIPLINE = $DISCIPLINE$ }
 		}
-	}
-	else = {
-		create_artifact = {
-			name = bm_blood_artifact_trinket_$DISCIPLINE$_name
-			description = bm_blood_artifact_trinket_$DISCIPLINE$_desc
-			type = miscellaneous
-			visuals = ring
-			wealth = 40
-			quality = 40
-			template = bm_blood_artifact_template
-			modifier = bm_artifact_slot_trinket_modifier
-			modifier = bm_artifact_disc_$DISCIPLINE$_modifier
-			save_scope_as = newly_created_artifact
+		else = {
+			bm_create_forged_blood_artifact_effect = { SLOT = trinket TYPE = miscellaneous VISUALS = ring DISCIPLINE = $DISCIPLINE$ }
 		}
-	}
 
-	scope:newly_created_artifact = {
-		set_artifact_rarity = masterwork
-		set_variable = {
-			name = bm_is_forged_blood_artifact
-			value = yes
+		scope:newly_created_artifact = {
+			set_artifact_rarity = masterwork
+			set_variable = {
+				name = bm_is_forged_blood_artifact
+				value = yes
+			}
+			set_variable = {
+				name = bm_blood_artifact_discipline
+				value = flag:$DISCIPLINE$
+			}
 		}
-		set_variable = {
-			name = bm_blood_artifact_discipline
-			value = flag:$DISCIPLINE$
-		}
+		remove_variable = bm_forge_slot
 	}
-	remove_variable = bm_forge_slot
 }
 
 bm_temper_blood_artifact_effect = {
@@ -132,5 +97,27 @@ bm_temper_blood_artifact_effect = {
 		else = {
 			add_artifact_modifier = bm_artifact_tempered_ancient_modifier
 		}
+	}
+}
+
+bm_temper_duel_win_effect = {
+	send_interface_toast = {
+		type = bm_event_toast_effect_good
+		title = bm_blood_artifact_tempered_toast
+		left_icon = root
+		right_icon = scope:bm_egill
+		bm_temper_blood_artifact_effect = { ARTIFACT = scope:bm_temper_target }
+		add_xp_bm_dynamic = { TRACK = $TRACK$ XP = 5 }
+	}
+}
+
+bm_temper_duel_fail_effect = {
+	send_interface_toast = {
+		type = bm_event_toast_effect_bad
+		title = bm_blood_artifact_temper_failed_toast
+		left_icon = root
+		right_icon = scope:bm_egill
+		increase_wounds_no_death_effect = { REASON = fight }
+		add_stress = 25
 	}
 }

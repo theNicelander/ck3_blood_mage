@@ -921,13 +921,7 @@
 					add_xp_bm_dynamic = { TRACK = radiance XP = 2 }
 					scope:recipient = {
 						add_character_modifier = { modifier = lifeforce_modifier_minor }
-						if = {
-							limit = { has_trait = bm_blood_golem }
-							add_trait_xp = {
-								trait = bm_blood_golem
-								value = 20
-							}
-						}
+						bm_refuel_blood_golem_effect = { XP = 20 }
 						add_opinion = {
 							target = scope:actor
 							modifier = magic_opinion_positive
@@ -963,13 +957,7 @@
 					else = {
 						scope:recipient = {
 							add_character_modifier = { modifier = lifeforce_modifier_major }
-							if = {
-								limit = { has_trait = bm_blood_golem }
-								add_trait_xp = {
-									trait = bm_blood_golem
-									value = 50
-								}
-							}
+							bm_refuel_blood_golem_effect = { XP = 50 }
 							add_opinion = {
 								target = scope:actor
 								modifier = magic_opinion_positive
@@ -993,13 +981,7 @@
 					add_xp_bm_dynamic = { TRACK = radiance XP = 6 }
 					scope:recipient = {
 						add_character_modifier = { modifier = lifeforce_modifier_superior }
-						if = {
-							limit = { has_trait = bm_blood_golem }
-							add_trait_xp = {
-								trait = bm_blood_golem
-								value = 100
-							}
-						}
+						bm_refuel_blood_golem_effect = { XP = 100 }
 						add_opinion = {
 							target = scope:actor
 							modifier = magic_opinion_positive

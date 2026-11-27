@@ -21,50 +21,12 @@ bm_compat_agot_trait_drain.0001 = {
 			bm_compat_agot_can_drain_dragon_dreams_trigger = yes
 		}
 
-		add_piety = -250
-		bm_trait_drain_commit_cost_and_cooldown_effect = yes
-		temporary_trait_drain_attempted = yes
-
-		duel = {
-			skill = learning
-			target = scope:recipient
-			50 = {
-				desc = bm_trait_drain.001.success
-				compare_modifier = {
-					value = scope:duel_value
-					multiplier = 5
-					min = -40
-				}
-				modifier = { add = trait_drain_modifier }
-				modifier = { add = -50 }
-
-				send_interface_toast = {
-					type = bm_event_toast_effect_good
-					title = bm_trait_drain.001.success
-					left_icon = root
-					right_icon = scope:recipient
-					add_trait = dragon_dreams
-					add_xp_bm_dynamic = {
-						TRACK = cunning
-						XP = 5
-					}
-				}
-
-				sacrifice_prisoner_effect = {
-					VICTIM = scope:recipient
-					EXECUTIONER = root
-				}
-			}
-			50 = {
-				scope:recipient = { temporary_negative_recently_trait_drained = yes }
-				modifier = { add = recipient_trait_drain_modifier_per_trait }
-				send_interface_toast = {
-					title = bm_trait_drain.001.fail
-					drain_trait_failed_effects = yes
-					left_icon = root
-					right_icon = scope:recipient
-				}
-			}
+		bm_trait_drain_execute_single_effect = {
+			TRAIT = dragon_dreams
+			PIETY_COST = -250
+			DUEL_PENALTY = -50
+			XP_CUNNING = 5
+			SUCCESS_DESC = bm_trait_drain.001.success
 		}
 		ai_chance = {
 			base = 45
@@ -83,50 +45,12 @@ bm_compat_agot_trait_drain.0001 = {
 			bm_compat_agot_can_drain_greensight_trigger = yes
 		}
 
-		add_piety = -250
-		bm_trait_drain_commit_cost_and_cooldown_effect = yes
-		temporary_trait_drain_attempted = yes
-
-		duel = {
-			skill = learning
-			target = scope:recipient
-			50 = {
-				desc = bm_trait_drain.001.success
-				compare_modifier = {
-					value = scope:duel_value
-					multiplier = 5
-					min = -40
-				}
-				modifier = { add = trait_drain_modifier }
-				modifier = { add = -50 }
-
-				send_interface_toast = {
-					type = bm_event_toast_effect_good
-					title = bm_trait_drain.001.success
-					left_icon = root
-					right_icon = scope:recipient
-					add_trait = greensight
-					add_xp_bm_dynamic = {
-						TRACK = cunning
-						XP = 5
-					}
-				}
-
-				sacrifice_prisoner_effect = {
-					VICTIM = scope:recipient
-					EXECUTIONER = root
-				}
-			}
-			50 = {
-				scope:recipient = { temporary_negative_recently_trait_drained = yes }
-				modifier = { add = recipient_trait_drain_modifier_per_trait }
-				send_interface_toast = {
-					title = bm_trait_drain.001.fail
-					drain_trait_failed_effects = yes
-					left_icon = root
-					right_icon = scope:recipient
-				}
-			}
+		bm_trait_drain_execute_single_effect = {
+			TRAIT = greensight
+			PIETY_COST = -250
+			DUEL_PENALTY = -50
+			XP_CUNNING = 5
+			SUCCESS_DESC = bm_trait_drain.001.success
 		}
 		ai_chance = {
 			base = 45
@@ -191,14 +115,8 @@ bm_compat_agot_trait_drain.0001 = {
 				}
 			}
 			50 = {
-				scope:recipient = { temporary_negative_recently_trait_drained = yes }
 				modifier = { add = recipient_trait_drain_modifier_per_trait }
-				send_interface_toast = {
-					title = bm_trait_drain.001.fail
-					drain_trait_failed_effects = yes
-					left_icon = root
-					right_icon = scope:recipient
-				}
+				bm_trait_drain_duel_fail_effects = yes
 			}
 		}
 		ai_chance = {

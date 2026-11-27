@@ -75,67 +75,37 @@ bm_blood_artifact.0002 = {
 
 	option = {
 		name = bm_blood_artifact.0002.radiance
-		send_interface_toast = {
-			type = bm_event_toast_effect_good
-			title = bm_blood_artifact_forged_toast
-			left_icon = root
-			bm_forge_blood_artifact_effect = { DISCIPLINE = radiance }
-		}
+		bm_forge_blood_artifact_effect = { DISCIPLINE = radiance }
 		ai_chance = { base = 15 }
 	}
 
 	option = {
 		name = bm_blood_artifact.0002.fury
-		send_interface_toast = {
-			type = bm_event_toast_effect_good
-			title = bm_blood_artifact_forged_toast
-			left_icon = root
-			bm_forge_blood_artifact_effect = { DISCIPLINE = fury }
-		}
+		bm_forge_blood_artifact_effect = { DISCIPLINE = fury }
 		ai_chance = { base = 20 }
 	}
 
 	option = {
 		name = bm_blood_artifact.0002.fortune
-		send_interface_toast = {
-			type = bm_event_toast_effect_good
-			title = bm_blood_artifact_forged_toast
-			left_icon = root
-			bm_forge_blood_artifact_effect = { DISCIPLINE = fortune }
-		}
+		bm_forge_blood_artifact_effect = { DISCIPLINE = fortune }
 		ai_chance = { base = 15 }
 	}
 
 	option = {
 		name = bm_blood_artifact.0002.cunning
-		send_interface_toast = {
-			type = bm_event_toast_effect_good
-			title = bm_blood_artifact_forged_toast
-			left_icon = root
-			bm_forge_blood_artifact_effect = { DISCIPLINE = cunning }
-		}
+		bm_forge_blood_artifact_effect = { DISCIPLINE = cunning }
 		ai_chance = { base = 15 }
 	}
 
 	option = {
 		name = bm_blood_artifact.0002.wisdom
-		send_interface_toast = {
-			type = bm_event_toast_effect_good
-			title = bm_blood_artifact_forged_toast
-			left_icon = root
-			bm_forge_blood_artifact_effect = { DISCIPLINE = wisdom }
-		}
+		bm_forge_blood_artifact_effect = { DISCIPLINE = wisdom }
 		ai_chance = { base = 20 }
 	}
 
 	option = {
 		name = bm_blood_artifact.0002.ancient
-		send_interface_toast = {
-			type = bm_event_toast_effect_good
-			title = bm_blood_artifact_forged_toast
-			left_icon = root
-			bm_forge_blood_artifact_effect = { DISCIPLINE = ancient }
-		}
+		bm_forge_blood_artifact_effect = { DISCIPLINE = ancient }
 		ai_chance = { base = 15 }
 	}
 
@@ -282,14 +252,7 @@ bm_blood_artifact.0011 = {
 					min = -40
 					max = 40
 				}
-				send_interface_toast = {
-					type = bm_event_toast_effect_good
-					title = bm_blood_artifact_tempered_toast
-					left_icon = root
-					right_icon = scope:bm_egill
-					bm_temper_blood_artifact_effect = { ARTIFACT = scope:bm_temper_target }
-					add_xp_bm_dynamic = { TRACK = wisdom XP = 5 }
-				}
+				bm_temper_duel_win_effect = { TRACK = wisdom }
 			}
 			50 = {
 				desc = bm_blood_artifact.0011.learning_loss
@@ -299,14 +262,7 @@ bm_blood_artifact.0011 = {
 					min = -40
 					max = 40
 				}
-				send_interface_toast = {
-					type = bm_event_toast_effect_bad
-					title = bm_blood_artifact_temper_failed_toast
-					left_icon = root
-					right_icon = scope:bm_egill
-					increase_wounds_no_death_effect = { REASON = fight }
-					add_stress = 25
-				}
+				bm_temper_duel_fail_effect = yes
 			}
 		}
 	}
@@ -335,24 +291,10 @@ bm_blood_artifact.0012 = {
 	immediate = {
 		if = {
 			limit = { scope:sc_victor = root }
-			send_interface_toast = {
-				type = bm_event_toast_effect_good
-				title = bm_blood_artifact_tempered_toast
-				left_icon = root
-				right_icon = scope:bm_egill
-				bm_temper_blood_artifact_effect = { ARTIFACT = scope:bm_temper_target }
-				add_xp_bm_dynamic = { TRACK = fury XP = 5 }
-			}
+			bm_temper_duel_win_effect = { TRACK = fury }
 		}
 		else = {
-			send_interface_toast = {
-				type = bm_event_toast_effect_bad
-				title = bm_blood_artifact_temper_failed_toast
-				left_icon = root
-				right_icon = scope:bm_egill
-				increase_wounds_no_death_effect = { REASON = fight }
-				add_stress = 25
-			}
+			bm_temper_duel_fail_effect = yes
 		}
 		remove_character_flag = bm_temper_sce_pending
 		hidden_effect = { bm_vanish_egill_effect = yes }
