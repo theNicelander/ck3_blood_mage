@@ -32,15 +32,12 @@ The `fury` track uses a 5-milestone progression (10, 30, 50, 70, 100 XP), provid
 
 Martial XP gains are consolidated into single, balanced increments:
 
-1. **Battlefield Victories (`common/on_action/bm_combat_on_actions.txt`, `common/scripted_effects/bm_combat_effects.txt`):**
-   - Scaled by **enemy army size** (`enemy_side.side_max_army_size`), with a **0 XP skirmish floor** (`< 500` enemy troops) and **diminishing returns at 50+ Fury XP**:
-   - Army Commander victory: `+1` (500-2,499 enemy) / `+2` (2,500-7,499) / `+3` (7,500+); at 50+ Fury XP: `0` / `+1` / `+2`.
-   - Sworn knight participation in victory: `+1` (500-7,499 enemy) / `+2` (7,500+); at 50+ Fury XP: `0` (500-2,499) / `+1` (2,500+).
-   - Battle Defeat: `+1` Fury XP (+1 Wisdom) only when both sides have `>= 1,000` troops (`>= 2,500` at 50+ Fury XP).
-2. **Duels & Single Combat (`common/on_action/bm_duel_on_actions.txt`, `events/bm_geyser_duel_events.txt`, `events/bm_seek_power_events.txt`):**
-   - Fatal Single Combat kill: +3 Fury XP (via `bm_combat_on_character_death_effect` / `bm_on_character_death_duel`).
-   - Siphoning Duel victory: +2 Fury XP.
-   - Ritual Sparring victory: +2 Fury XP (loss: +1 XP).
+1. **Battlefield Victories (`common/on_action/bm_combat_on_actions.txt`, `common/scripted_effects/bm_combat_effects.txt`, `common/script_values/bm_combat_values.txt`):**
+   - Victory-only with a **60-day cooldown** (`bm_battle_fury_xp_cooldown`) and a **0 XP skirmish floor** (`< 500` total combatants). Battle defeats yield 0 XP.
+   - Base `+1` Fury XP for participating knights, `+1` extra for commanders, and `+1` extra when total combatants exceed `10,000` (Commander: `+2` for `500-10,000`, `+3` for `> 10,000`; Knight: `+1` for `500-10,000`, `+2` for `> 10,000`).
+2. **Duels & Single Combat (`common/on_action/bm_duel_on_actions.txt`, `events/bm_prisoner_blood_duel_events.txt`, `events/bm_seek_power_events.txt`, `events/bm_ritual_spar_events.txt`):**
+   - Standard duels (Fatal Single Combat kill, Prisoner Blood Pit Duel, Blood Hunt single combat): `+2` Fury XP on victory, `+1` Fury XP on defeat.
+   - Blood Sparring Ring (`bm_ritual_spar_events.0002`): `+1` Fury XP on victory, `0` on defeat.
 3. **Tournaments (`common/on_action/bm_duel_on_actions.txt`):**
    - Completing tournament contest: +2 Fury XP.
 4. **Targeted Blessings (`common/character_interactions/bm_blood_blessing.txt`):**

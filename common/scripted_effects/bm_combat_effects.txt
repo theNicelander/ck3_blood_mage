@@ -1,18 +1,12 @@
 ﻿bm_combat_winner_commander_reward_effect = {
 	if = {
 		limit = {
-			scope:winning_side.enemy_side.side_max_army_size >= 7500
+			NOT = { has_character_flag = bm_battle_fury_xp_cooldown }
+			bm_battle_total_combatants_value >= 500
 		}
+		add_character_flag = { flag = bm_battle_fury_xp_cooldown days = 60 }
 		if = {
-			limit = { bm_has_track_xp_any_tier_trigger = { TRACK = fury VALUE = 50 } }
-			send_interface_toast = {
-				type = bm_event_toast_effect_good
-				title = bm_battle_victory_commander_toast
-				left_icon = this
-				bm_add_blood_mage_xp_effect = { TRACK = fury XP = 2 }
-			}
-		}
-		else = {
+			limit = { bm_battle_total_combatants_value > 10000 }
 			send_interface_toast = {
 				type = bm_event_toast_effect_good
 				title = bm_battle_victory_commander_toast
@@ -20,20 +14,6 @@
 				bm_add_blood_mage_xp_effect = { TRACK = fury XP = 3 }
 			}
 		}
-	}
-	else_if = {
-		limit = {
-			scope:winning_side.enemy_side.side_max_army_size >= 2500
-		}
-		if = {
-			limit = { bm_has_track_xp_any_tier_trigger = { TRACK = fury VALUE = 50 } }
-			send_interface_toast = {
-				type = bm_event_toast_effect_good
-				title = bm_battle_victory_commander_toast
-				left_icon = this
-				bm_add_blood_mage_xp_effect = { TRACK = fury XP = 1 }
-			}
-		}
 		else = {
 			send_interface_toast = {
 				type = bm_event_toast_effect_good
@@ -41,18 +21,6 @@
 				left_icon = this
 				bm_add_blood_mage_xp_effect = { TRACK = fury XP = 2 }
 			}
-		}
-	}
-	else_if = {
-		limit = {
-			scope:winning_side.enemy_side.side_max_army_size >= 500
-			NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = fury VALUE = 50 } }
-		}
-		send_interface_toast = {
-			type = bm_event_toast_effect_good
-			title = bm_battle_victory_commander_toast
-			left_icon = this
-			bm_add_blood_mage_xp_effect = { TRACK = fury XP = 1 }
 		}
 	}
 }
@@ -60,18 +28,12 @@
 bm_combat_winner_knight_reward_effect = {
 	if = {
 		limit = {
-			scope:winning_side.enemy_side.side_max_army_size >= 7500
+			NOT = { has_character_flag = bm_battle_fury_xp_cooldown }
+			bm_battle_total_combatants_value >= 500
 		}
+		add_character_flag = { flag = bm_battle_fury_xp_cooldown days = 60 }
 		if = {
-			limit = { bm_has_track_xp_any_tier_trigger = { TRACK = fury VALUE = 50 } }
-			send_interface_toast = {
-				type = bm_event_toast_effect_good
-				title = bm_battle_victory_fury_toast
-				left_icon = this
-				bm_add_blood_mage_xp_effect = { TRACK = fury XP = 1 }
-			}
-		}
-		else = {
+			limit = { bm_battle_total_combatants_value > 10000 }
 			send_interface_toast = {
 				type = bm_event_toast_effect_good
 				title = bm_battle_victory_fury_toast
@@ -79,169 +41,27 @@ bm_combat_winner_knight_reward_effect = {
 				bm_add_blood_mage_xp_effect = { TRACK = fury XP = 2 }
 			}
 		}
-	}
-	else_if = {
-		limit = {
-			scope:winning_side.enemy_side.side_max_army_size >= 2500
-		}
-		send_interface_toast = {
-			type = bm_event_toast_effect_good
-			title = bm_battle_victory_fury_toast
-			left_icon = this
-			bm_add_blood_mage_xp_effect = { TRACK = fury XP = 1 }
-		}
-	}
-	else_if = {
-		limit = {
-			scope:winning_side.enemy_side.side_max_army_size >= 500
-			NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = fury VALUE = 50 } }
-		}
-		send_interface_toast = {
-			type = bm_event_toast_effect_good
-			title = bm_battle_victory_fury_toast
-			left_icon = this
-			bm_add_blood_mage_xp_effect = { TRACK = fury XP = 1 }
-		}
-	}
-}
-
-bm_combat_loser_commander_reward_effect = {
-	if = {
-		limit = {
-			bm_has_track_xp_any_tier_trigger = { TRACK = fury VALUE = 50 }
-			scope:losing_side.side_max_army_size >= 2500
-			scope:losing_side.enemy_side.side_max_army_size >= 2500
-		}
-		send_interface_toast = {
-			type = bm_event_toast_effect_good
-			title = bm_battle_defeat_commander_toast
-			left_icon = this
-			bm_add_blood_mage_xp_effect = { TRACK = fury XP = 1 }
-			bm_add_blood_mage_xp_effect = { TRACK = wisdom XP = 1 }
-		}
-	}
-	else_if = {
-		limit = {
-			NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = fury VALUE = 50 } }
-			scope:losing_side.side_max_army_size >= 1000
-			scope:losing_side.enemy_side.side_max_army_size >= 1000
-		}
-		send_interface_toast = {
-			type = bm_event_toast_effect_good
-			title = bm_battle_defeat_commander_toast
-			left_icon = this
-			bm_add_blood_mage_xp_effect = { TRACK = fury XP = 1 }
-			bm_add_blood_mage_xp_effect = { TRACK = wisdom XP = 1 }
-		}
-	}
-}
-
-bm_combat_loser_knight_reward_effect = {
-	if = {
-		limit = {
-			bm_has_track_xp_any_tier_trigger = { TRACK = fury VALUE = 50 }
-			scope:losing_side.side_max_army_size >= 2500
-			scope:losing_side.enemy_side.side_max_army_size >= 2500
-		}
-		send_interface_toast = {
-			type = bm_event_toast_effect_good
-			title = bm_battle_defeat_fury_toast
-			left_icon = this
-			bm_add_blood_mage_xp_effect = { TRACK = fury XP = 1 }
-			bm_add_blood_mage_xp_effect = { TRACK = wisdom XP = 1 }
-		}
-	}
-	else_if = {
-		limit = {
-			NOT = { bm_has_track_xp_any_tier_trigger = { TRACK = fury VALUE = 50 } }
-			scope:losing_side.side_max_army_size >= 1000
-			scope:losing_side.enemy_side.side_max_army_size >= 1000
-		}
-		send_interface_toast = {
-			type = bm_event_toast_effect_good
-			title = bm_battle_defeat_fury_toast
-			left_icon = this
-			bm_add_blood_mage_xp_effect = { TRACK = fury XP = 1 }
-			bm_add_blood_mage_xp_effect = { TRACK = wisdom XP = 1 }
+		else = {
+			send_interface_toast = {
+				type = bm_event_toast_effect_good
+				title = bm_battle_victory_fury_toast
+				left_icon = this
+				bm_add_blood_mage_xp_effect = { TRACK = fury XP = 1 }
+			}
 		}
 	}
 }
 
 bm_battle_victory_lifeforce_harvest_effect = {
-	# 8,000+ enemy troops (or 4,000+ killed) -> 100% Minor, 100% Major
+	# Minor Lifeforce: 10% per 1k total combatants (500+ floor), 90d cooldown on harvest
 	if = {
 		limit = {
-			OR = {
-				scope:winning_side.enemy_side.side_max_army_size >= 8000
-				scope:winning_side = { num_enemies_killed >= 4000 }
-			}
-		}
-		send_interface_toast = {
-			type = bm_event_toast_effect_good
-			title = bm_battle_victory_both_lifeforce_toast
-			left_icon = this
-			add_character_modifier = { modifier = lifeforce_modifier_minor }
-			add_character_modifier = { modifier = lifeforce_modifier_major }
-		}
-	}
-	# 5,000 - 7,999 enemy troops (or 2,500+ killed) -> 100% Minor, 75% Major
-	else_if = {
-		limit = {
-			OR = {
-				scope:winning_side.enemy_side.side_max_army_size >= 5000
-				scope:winning_side = { num_enemies_killed >= 2500 }
-			}
-		}
-		send_interface_toast = {
-			type = bm_event_toast_effect_good
-			title = bm_battle_victory_lifeforce_toast
-			left_icon = this
-			add_character_modifier = { modifier = lifeforce_modifier_minor }
+			NOT = { has_character_flag = bm_battle_lifeforce_minor_cooldown }
+			bm_battle_total_combatants_value >= 500
 		}
 		random = {
-			chance = 75
-			send_interface_toast = {
-				type = bm_event_toast_effect_good
-				title = bm_battle_victory_major_lifeforce_toast
-				left_icon = this
-				add_character_modifier = { modifier = lifeforce_modifier_major }
-			}
-		}
-	}
-	# 2,500 - 4,999 enemy troops (or 1,250+ killed) -> 100% Minor, 50% Major
-	else_if = {
-		limit = {
-			OR = {
-				scope:winning_side.enemy_side.side_max_army_size >= 2500
-				scope:winning_side = { num_enemies_killed >= 1250 }
-			}
-		}
-		send_interface_toast = {
-			type = bm_event_toast_effect_good
-			title = bm_battle_victory_lifeforce_toast
-			left_icon = this
-			add_character_modifier = { modifier = lifeforce_modifier_minor }
-		}
-		random = {
-			chance = 50
-			send_interface_toast = {
-				type = bm_event_toast_effect_good
-				title = bm_battle_victory_major_lifeforce_toast
-				left_icon = this
-				add_character_modifier = { modifier = lifeforce_modifier_major }
-			}
-		}
-	}
-	# 1,000 - 2,499 enemy troops (or 500+ killed) -> 75% Minor, 20% Major
-	else_if = {
-		limit = {
-			OR = {
-				scope:winning_side.enemy_side.side_max_army_size >= 1000
-				scope:winning_side = { num_enemies_killed >= 500 }
-			}
-		}
-		random = {
-			chance = 75
+			chance = bm_battle_minor_lifeforce_chance_value
+			add_character_flag = { flag = bm_battle_lifeforce_minor_cooldown days = 90 }
 			send_interface_toast = {
 				type = bm_event_toast_effect_good
 				title = bm_battle_victory_lifeforce_toast
@@ -249,8 +69,16 @@ bm_battle_victory_lifeforce_harvest_effect = {
 				add_character_modifier = { modifier = lifeforce_modifier_minor }
 			}
 		}
+	}
+	# Major Lifeforce: 1% per 1k total combatants (5,000+ total), 90d cooldown on harvest
+	if = {
+		limit = {
+			NOT = { has_character_flag = bm_battle_lifeforce_major_cooldown }
+			bm_battle_total_combatants_value >= 5000
+		}
 		random = {
-			chance = 20
+			chance = bm_battle_major_lifeforce_chance_value
+			add_character_flag = { flag = bm_battle_lifeforce_major_cooldown days = 90 }
 			send_interface_toast = {
 				type = bm_event_toast_effect_good
 				title = bm_battle_victory_major_lifeforce_toast
@@ -259,21 +87,20 @@ bm_battle_victory_lifeforce_harvest_effect = {
 			}
 		}
 	}
-	# 500 - 999 enemy troops (or 250+ killed) -> 50% Minor
-	else_if = {
+	# Superior Lifeforce: 1% at 100k scaling to 100% at 1M total combatants, 90d cooldown on harvest
+	if = {
 		limit = {
-			OR = {
-				scope:winning_side.enemy_side.side_max_army_size >= 500
-				scope:winning_side = { num_enemies_killed >= 250 }
-			}
+			NOT = { has_character_flag = bm_battle_lifeforce_superior_cooldown }
+			bm_battle_total_combatants_value >= 100000
 		}
 		random = {
-			chance = 50
+			chance = bm_battle_superior_lifeforce_chance_value
+			add_character_flag = { flag = bm_battle_lifeforce_superior_cooldown days = 90 }
 			send_interface_toast = {
 				type = bm_event_toast_effect_good
-				title = bm_battle_victory_lifeforce_toast
+				title = bm_battle_victory_superior_lifeforce_toast
 				left_icon = this
-				add_character_modifier = { modifier = lifeforce_modifier_minor }
+				add_character_modifier = { modifier = lifeforce_modifier_superior }
 			}
 		}
 	}

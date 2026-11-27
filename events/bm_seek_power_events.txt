@@ -1338,7 +1338,7 @@ seek_power.006 = {
         }
     }
 
-    # Option 1 (Victor, opponent survived FATALITY = possible): Harvest their vital lifeforce (Major + opponent Prowess% Superior + 3 Fury XP)
+    # Option 1 (Victor, opponent survived FATALITY = possible): Harvest their vital lifeforce (Major + opponent Prowess% Superior + 2 Fury XP)
     option = {
         name = seek_power.006.a
         trigger = {
@@ -1356,7 +1356,7 @@ seek_power.006 = {
             bm_duel_victory_lifeforce_effect = {
                 OPPONENT = scope:duel_opponent
             }
-            bm_add_blood_mage_xp_effect = { TRACK = fury XP = 3 }
+            bm_add_blood_mage_xp_effect = { TRACK = fury XP = 2 }
         }
     }
 
@@ -1433,6 +1433,7 @@ seek_power.006 = {
         }
         ai_chance = { base = 100 }
         add_stress = 15
+        bm_add_blood_mage_xp_effect = { TRACK = fury XP = 1 }
         add_blood_mage_xp = { TRACK = wisdom XP = 1 }
     }
 }
