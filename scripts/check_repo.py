@@ -386,11 +386,11 @@ fi
 # 3. Calculate agent rules and skills token costs (.agents/cost.md)
 if git diff --cached --name-only | grep -E '^(\.agents/(rules|skills)/|(.*/)?AGENTS\.md$)' > /dev/null 2>&1; then
     if command -v uvx > /dev/null 2>&1; then
-        uvx --with tiktoken python scripts/calculate_tokens.py
+        uvx --with tiktoken python scripts/calculate_tokens.py && git add .agents/cost.md
     elif command -v uv > /dev/null 2>&1; then
-        uv run scripts/calculate_tokens.py
+        uv run scripts/calculate_tokens.py && git add .agents/cost.md
     else
-        python3 scripts/calculate_tokens.py
+        python3 scripts/calculate_tokens.py && git add .agents/cost.md
     fi
 fi
 
