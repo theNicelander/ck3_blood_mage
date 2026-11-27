@@ -383,6 +383,148 @@ bm_trait_drain.001 = {
         ai_chance = { base = 100 }
     }
 
+    # Strong drain
+    option = {
+        name = bm_trait_drain.001.h
+        trigger = {
+            scope:recipient = { has_trait = strong }
+            NOR = {
+                has_trait = strong
+                has_trait = physique_bad
+            }
+        }
+        show_as_unavailable = {
+            scope:recipient = { has_trait = strong }
+        }
+
+        add_piety = trait_drain_base_piety_cost
+        bm_trait_drain_commit_cost_and_cooldown_effect = yes
+        temporary_trait_drain_attempted = yes
+
+        duel = {
+            skill = learning
+            target = scope:recipient
+            50 = {
+                desc = bm_trait_drain.001.success
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 5
+                    min = -40
+                }
+                modifier = { add = trait_drain_modifier }
+
+                send_interface_toast = {
+                    type = bm_event_toast_effect_good
+                    title = bm_trait_drain.001.success
+                    left_icon = root
+                    right_icon = scope:recipient
+                    if = {
+                        limit = { has_trait = weak }
+                        remove_trait = weak
+                    }
+                    add_trait = strong
+                    add_xp_bm_dynamic = {
+                        TRACK = cunning
+                        XP = 5
+                    }
+                }
+
+                sacrifice_prisoner_effect = {
+                    VICTIM = scope:recipient
+                    EXECUTIONER = root
+                }
+            }
+            50 = {
+                scope:recipient = { temporary_negative_recently_trait_drained = yes }
+                modifier = { add = recipient_trait_drain_modifier_per_trait }
+                send_interface_toast = {
+                    title = bm_trait_drain.001.fail
+                    drain_trait_failed_effects = yes
+                    left_icon = root
+                    right_icon = scope:recipient
+                }
+            }
+        }
+
+        ai_chance = { base = 100 }
+    }
+
+    # Shrewd drain
+    option = {
+        name = bm_trait_drain.001.i
+        trigger = {
+            scope:recipient = { has_trait = shrewd }
+            NOR = {
+                has_trait = shrewd
+                has_trait = intellect_bad
+            }
+        }
+        show_as_unavailable = {
+            scope:recipient = { has_trait = shrewd }
+        }
+
+        add_piety = trait_drain_base_piety_cost
+        bm_trait_drain_commit_cost_and_cooldown_effect = yes
+        temporary_trait_drain_attempted = yes
+
+        duel = {
+            skill = learning
+            target = scope:recipient
+            50 = {
+                desc = bm_trait_drain.001.success
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 5
+                    min = -40
+                }
+                modifier = { add = trait_drain_modifier }
+
+                send_interface_toast = {
+                    type = bm_event_toast_effect_good
+                    title = bm_trait_drain.001.success
+                    left_icon = root
+                    right_icon = scope:recipient
+                    if = {
+                        limit = { has_trait = dull }
+                        remove_trait = dull
+                    }
+                    add_trait = shrewd
+                    add_xp_bm_dynamic = {
+                        TRACK = cunning
+                        XP = 5
+                    }
+                }
+
+                sacrifice_prisoner_effect = {
+                    VICTIM = scope:recipient
+                    EXECUTIONER = root
+                }
+            }
+            50 = {
+                scope:recipient = { temporary_negative_recently_trait_drained = yes }
+                modifier = { add = recipient_trait_drain_modifier_per_trait }
+                send_interface_toast = {
+                    title = bm_trait_drain.001.fail
+                    drain_trait_failed_effects = yes
+                    left_icon = root
+                    right_icon = scope:recipient
+                }
+            }
+        }
+
+        ai_chance = { base = 100 }
+    }
+
+    # Overhaul-specific blood & trait drain hub (AGOT / LotR / EK2)
+    option = {
+        name = bm_trait_drain.001.compat_hub
+        trigger = {
+            bm_compat_can_drain_traits_from_target_trigger = yes
+        }
+        bm_compat_open_trait_drain_event_effect = yes
+        ai_chance = { base = 100 }
+    }
+
     # Do nothing
     option = {
         name = bm_trait_drain.001.z

@@ -1,0 +1,580 @@
+﻿namespace = bm_compat_memory_drain
+
+# Compat Blood Memory Hub (shown when prisoner has 2+ compat memory buckets)
+bm_compat_memory_drain.0001 = {
+	type = character_event
+	title = bm_compat_memory_drain.0001.title
+	desc = bm_compat_memory_drain.0001.desc
+	theme = witchcraft
+	override_icon = { reference = "gfx/interface/icons/bm_blood_magic_icon.dds" }
+
+	left_portrait = { character = root animation = scheme }
+	right_portrait = { character = scope:recipient animation = beg }
+
+	option = {
+		name = bm_compat_memory_drain.0001.agot
+		trigger = { bm_compat_agot_can_drain_memory_trigger = yes }
+		trigger_event = bm_compat_memory_drain.0002
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_compat_memory_drain.0001.lotr
+		trigger = { bm_compat_lotr_can_drain_memory_trigger = yes }
+		trigger_event = bm_compat_memory_drain.0003
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_compat_memory_drain.0001.ek2
+		trigger = { bm_compat_ek2_can_drain_memory_trigger = yes }
+		trigger_event = bm_compat_memory_drain.0004
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_compat_memory_drain.0001.commander_plus
+		trigger = { bm_compat_commander_plus_can_drain_memory_trigger = yes }
+		trigger_event = bm_compat_memory_drain.0005
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_compat_memory_drain.0001.subrosa_councillor
+		trigger = { bm_compat_subrosa_councillor_can_drain_memory_trigger = yes }
+		trigger_event = bm_compat_memory_drain.0006
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.back
+		ai_chance = { base = 0 }
+	}
+}
+
+# AGOT Blood Memory Picker
+bm_compat_memory_drain.0002 = {
+	type = character_event
+	title = bm_compat_memory_drain.0002.title
+	desc = bm_compat_memory_drain.0002.desc
+	theme = witchcraft
+	override_icon = { reference = "gfx/interface/icons/bm_blood_magic_icon.dds" }
+
+	left_portrait = { character = root animation = scheme }
+	right_portrait = { character = scope:recipient animation = beg }
+
+	option = {
+		name = bm_compat_memory_drain.trait.lifestyle_mariner
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = lifestyle_mariner } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_mariner } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = lifestyle_mariner }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_compat_memory_drain.trait.fire_obsessed
+		trigger = { bm_can_afford_memory_drain_no_track_trigger = { TRAIT = fire_obsessed } }
+		show_as_unavailable = { bm_can_drain_memory_no_track_trigger = { TRAIT = fire_obsessed } }
+		bm_memory_drain_execute_no_track_effect = { TRAIT = fire_obsessed }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.back
+		ai_chance = { base = 0 }
+	}
+}
+
+# LotR Blood Memory Picker
+bm_compat_memory_drain.0003 = {
+	type = character_event
+	title = bm_compat_memory_drain.0003.title
+	desc = bm_compat_memory_drain.0003.desc
+	theme = witchcraft
+	override_icon = { reference = "gfx/interface/icons/bm_blood_magic_icon.dds" }
+
+	left_portrait = { character = root animation = scheme }
+	right_portrait = { character = scope:recipient animation = beg }
+
+	option = {
+		name = bm_compat_memory_drain.trait.lifestyle_mariner
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = lifestyle_mariner } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_mariner } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = lifestyle_mariner }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_compat_memory_drain.trait.lifestyle_archivist
+		trigger = { bm_can_afford_memory_drain_multi_track_trigger = { TRAIT = lifestyle_archivist TRACK_A = historian TRACK_B = propagandist } }
+		show_as_unavailable = { bm_can_drain_memory_multi_track_trigger = { TRAIT = lifestyle_archivist TRACK_A = historian TRACK_B = propagandist } }
+		bm_memory_drain_execute_multi_track_effect = { TRAIT = lifestyle_archivist TRACK_A = historian TRACK_B = propagandist }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_compat_memory_drain.trait.lifestyle_miner
+		trigger = { bm_can_afford_memory_drain_multi_track_trigger = { TRAIT = lifestyle_miner TRACK_A = hewer TRACK_B = prospector } }
+		show_as_unavailable = { bm_can_drain_memory_multi_track_trigger = { TRAIT = lifestyle_miner TRACK_A = hewer TRACK_B = prospector } }
+		bm_memory_drain_execute_multi_track_effect = { TRAIT = lifestyle_miner TRACK_A = hewer TRACK_B = prospector }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_compat_memory_drain.trait.lifestyle_artifact_crafting
+		trigger = { bm_can_afford_memory_drain_quad_track_trigger = { TRAIT = lifestyle_artifact_crafting TRACK_A = weapon_smith TRACK_B = armour_smith TRACK_C = jewel_smith TRACK_D = enchanting_smith } }
+		show_as_unavailable = { bm_can_drain_memory_quad_track_trigger = { TRAIT = lifestyle_artifact_crafting TRACK_A = weapon_smith TRACK_B = armour_smith TRACK_C = jewel_smith TRACK_D = enchanting_smith } }
+		bm_memory_drain_execute_quad_track_effect = { TRAIT = lifestyle_artifact_crafting TRACK_A = weapon_smith TRACK_B = armour_smith TRACK_C = jewel_smith TRACK_D = enchanting_smith }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_compat_memory_drain.trait.artificer
+		trigger = { bm_can_afford_memory_drain_no_track_trigger = { TRAIT = artificer } }
+		show_as_unavailable = { bm_can_drain_memory_no_track_trigger = { TRAIT = artificer } }
+		bm_memory_drain_execute_no_track_effect = { TRAIT = artificer }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_compat_memory_drain.trait.enchanter
+		trigger = { bm_can_afford_memory_drain_no_track_trigger = { TRAIT = enchanter } }
+		show_as_unavailable = { bm_can_drain_memory_no_track_trigger = { TRAIT = enchanter } }
+		bm_memory_drain_execute_no_track_effect = { TRAIT = enchanter }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_compat_memory_drain.trait.excavator
+		trigger = { bm_can_afford_memory_drain_no_track_trigger = { TRAIT = excavator } }
+		show_as_unavailable = { bm_can_drain_memory_no_track_trigger = { TRAIT = excavator } }
+		bm_memory_drain_execute_no_track_effect = { TRAIT = excavator }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_compat_memory_drain.trait.cavern_commander
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = cavern_commander } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = cavern_commander } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = cavern_commander }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_compat_memory_drain.trait.cavalry_leader
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = cavalry_leader } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = cavalry_leader } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = cavalry_leader }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_compat_memory_drain.trait.banner_orc
+		trigger = { bm_can_afford_memory_drain_no_track_trigger = { TRAIT = banner_orc } }
+		show_as_unavailable = { bm_can_drain_memory_no_track_trigger = { TRAIT = banner_orc } }
+		bm_memory_drain_execute_no_track_effect = { TRAIT = banner_orc }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_compat_memory_drain.trait.whip_master
+		trigger = { bm_can_afford_memory_drain_no_track_trigger = { TRAIT = whip_master } }
+		show_as_unavailable = { bm_can_drain_memory_no_track_trigger = { TRAIT = whip_master } }
+		bm_memory_drain_execute_no_track_effect = { TRAIT = whip_master }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_compat_memory_drain.trait.explosive_engineer
+		trigger = { bm_can_afford_memory_drain_no_track_trigger = { TRAIT = explosive_engineer } }
+		show_as_unavailable = { bm_can_drain_memory_no_track_trigger = { TRAIT = explosive_engineer } }
+		bm_memory_drain_execute_no_track_effect = { TRAIT = explosive_engineer }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.back
+		ai_chance = { base = 0 }
+	}
+}
+
+# EK2 Blood Memory Picker
+bm_compat_memory_drain.0004 = {
+	type = character_event
+	title = bm_compat_memory_drain.0004.title
+	desc = bm_compat_memory_drain.0004.desc
+	theme = witchcraft
+	override_icon = { reference = "gfx/interface/icons/bm_blood_magic_icon.dds" }
+
+	left_portrait = { character = root animation = scheme }
+	right_portrait = { character = scope:recipient animation = beg }
+
+	option = {
+		name = bm_compat_memory_drain.trait.battlemage
+		trigger = { bm_can_afford_memory_drain_no_track_trigger = { TRAIT = battlemage } }
+		show_as_unavailable = { bm_can_drain_memory_no_track_trigger = { TRAIT = battlemage } }
+		bm_memory_drain_execute_no_track_effect = { TRAIT = battlemage }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_compat_memory_drain.trait.plunderer
+		trigger = { bm_can_afford_memory_drain_no_track_trigger = { TRAIT = plunderer } }
+		show_as_unavailable = { bm_can_drain_memory_no_track_trigger = { TRAIT = plunderer } }
+		bm_memory_drain_execute_no_track_effect = { TRAIT = plunderer }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_compat_memory_drain.trait.crimeboss
+		trigger = { bm_can_afford_memory_drain_no_track_trigger = { TRAIT = crimeboss } }
+		show_as_unavailable = { bm_can_drain_memory_no_track_trigger = { TRAIT = crimeboss } }
+		bm_memory_drain_execute_no_track_effect = { TRAIT = crimeboss }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.back
+		ai_chance = { base = 0 }
+	}
+}
+
+# Commander+ 1.21 Tactics Picker
+bm_compat_memory_drain.0005 = {
+	type = character_event
+	title = bm_compat_memory_drain.0005.title
+	desc = bm_compat_memory_drain.0005.desc
+	theme = witchcraft
+	override_icon = { reference = "gfx/interface/icons/bm_blood_magic_icon.dds" }
+
+	left_portrait = { character = root animation = scheme }
+	right_portrait = { character = scope:recipient animation = beg }
+
+	option = {
+		name = bm_compat_memory_drain.trait.mapper
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = mapper } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = mapper } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = mapper }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.observant_pathfinder
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = observant_pathfinder } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = observant_pathfinder } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = observant_pathfinder }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.respected_leader
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = respected_leader } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = respected_leader } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = respected_leader }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.sea_raider
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = sea_raider } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = sea_raider } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = sea_raider }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.seasoned_rover
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = seasoned_rover } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = seasoned_rover } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = seasoned_rover }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.resolute_localist
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = resolute_localist } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = resolute_localist } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = resolute_localist }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.relentless_pursuer
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = relentless_pursuer } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = relentless_pursuer } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = relentless_pursuer }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.infiltration_specialist
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = infiltration_specialist } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = infiltration_specialist } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = infiltration_specialist }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.battlefield_medic
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = battlefield_medic } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = battlefield_medic } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = battlefield_medic }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.dauntless_leader
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = dauntless_leader } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = dauntless_leader } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = dauntless_leader }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.crafty_commander
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = crafty_commander } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = crafty_commander } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = crafty_commander }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.cautious_planner
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = cautious_planner } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = cautious_planner } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = cautious_planner }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.bannerlord
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = bannerlord } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = bannerlord } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = bannerlord }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.focus_specialist
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = focus_specialist } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = focus_specialist } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = focus_specialist }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.master_ambusher
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = master_ambusher } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = master_ambusher } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = master_ambusher }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.navigator
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = navigator } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = navigator } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = navigator }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.zealot
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = zealot } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = zealot } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = zealot }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.patriot
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = patriot } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = patriot } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = patriot }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.military_savior
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = military_savior } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = military_savior } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = military_savior }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.combined_arms
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = combined_arms } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = combined_arms } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = combined_arms }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.levies_specialist
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = levies_specialist } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = levies_specialist } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = levies_specialist }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.skirmishers_specialist
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = skirmishers_specialist } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = skirmishers_specialist } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = skirmishers_specialist }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.archers_specialist
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = archers_specialist } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = archers_specialist } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = archers_specialist }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.heavy_cav_specialist
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = heavy_cav_specialist } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = heavy_cav_specialist } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = heavy_cav_specialist }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.light_cav_specialist
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = light_cav_specialist } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = light_cav_specialist } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = light_cav_specialist }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.heavy_infantry_specialist
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = heavy_infantry_specialist } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = heavy_infantry_specialist } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = heavy_infantry_specialist }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.archer_cav_specialist
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = archer_cav_specialist } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = archer_cav_specialist } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = archer_cav_specialist }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.pikemen_specialist
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = pikemen_specialist } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = pikemen_specialist } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = pikemen_specialist }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.knights_specialist
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = knights_specialist } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = knights_specialist } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = knights_specialist }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.back
+		ai_chance = { base = 0 }
+	}
+}
+
+# Sub Rosa & Councillor's Experience Picker
+bm_compat_memory_drain.0006 = {
+	type = character_event
+	title = bm_compat_memory_drain.0006.title
+	desc = bm_compat_memory_drain.0006.desc
+	theme = witchcraft
+	override_icon = { reference = "gfx/interface/icons/bm_blood_magic_icon.dds" }
+
+	left_portrait = { character = root animation = scheme }
+	right_portrait = { character = scope:recipient animation = beg }
+
+	# Sub Rosa
+	option = {
+		name = bm_compat_memory_drain.trait.sbr_kidnap_artist
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = sbr_kidnap_artist } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_kidnap_artist } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = sbr_kidnap_artist }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.sbr_dark_passenger
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = sbr_dark_passenger } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_dark_passenger } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = sbr_dark_passenger }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.sbr_convincing_liar
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = sbr_convincing_liar } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_convincing_liar } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = sbr_convincing_liar }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.sbr_bee_in_bloom
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = sbr_bee_in_bloom } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_bee_in_bloom } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = sbr_bee_in_bloom }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.sbr_deadly_charmer
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = sbr_deadly_charmer } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_deadly_charmer } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = sbr_deadly_charmer }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.sbr_third_shadow
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = sbr_third_shadow } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_third_shadow } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = sbr_third_shadow }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.sbr_heartbinder
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = sbr_heartbinder } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_heartbinder } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = sbr_heartbinder }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.sbr_two_faced
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = sbr_two_faced } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_two_faced } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = sbr_two_faced }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.sbr_cautious_schemer
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = sbr_cautious_schemer } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_cautious_schemer } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = sbr_cautious_schemer }
+		ai_chance = { base = 100 }
+	}
+
+	# Councillor's Experience
+	option = {
+		name = bm_compat_memory_drain.trait.lifestyle_chancellor
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = lifestyle_chancellor } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_chancellor } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = lifestyle_chancellor }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.lifestyle_marshal
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = lifestyle_marshal } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_marshal } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = lifestyle_marshal }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.lifestyle_steward
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = lifestyle_steward } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_steward } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = lifestyle_steward }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.lifestyle_spymaster
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = lifestyle_spymaster } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_spymaster } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = lifestyle_spymaster }
+		ai_chance = { base = 100 }
+	}
+	option = {
+		name = bm_compat_memory_drain.trait.lifestyle_chaplain
+		trigger = { bm_can_afford_memory_drain_single_track_trigger = { TRAIT = lifestyle_chaplain } }
+		show_as_unavailable = { bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_chaplain } }
+		bm_memory_drain_execute_single_track_effect = { TRAIT = lifestyle_chaplain }
+		ai_chance = { base = 100 }
+	}
+
+	option = {
+		name = bm_memory_drain.back
+		ai_chance = { base = 0 }
+	}
+}

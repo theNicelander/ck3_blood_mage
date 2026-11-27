@@ -5,21 +5,22 @@
 | --- | ---: |
 | **Always-On (every turn)** | **1,490** |
 | ↳ Core (`AGENTS.md`) | 1,490 |
-| **On-Demand** | **10,459** |
-| ↳ Localized (`**/AGENTS.md`) | 4,951 |
+| **On-Demand** | **11,830** |
+| ↳ Localized (`**/AGENTS.md`) | 5,038 |
 | ↳ Rules (`model_decision`) | 0 |
-| ↳ Skills (`.agents/skills/`) | 5,508 |
-| **Total** | **11,949** |
+| ↳ Skills (`.agents/skills/`) | 6,792 |
+| **Total** | **13,320** |
 
 ## Details per file
 
 | File | Load | Category | Tokens |
 | --- | --- | --- | ---: |
-| `.agents/skills/debug-ck3-logs/SKILL.md` | On-Demand | Skills | 1,562 |
+| `.agents/skills/debug-ck3-logs/SKILL.md` | On-Demand | Skills | 1,651 |
 | `AGENTS.md` | Always-On | Core | 1,490 |
 | `docs-ai/architecture/AGENTS.md` | On-Demand | Localized | 1,271 |
+| `.agents/skills/add-overhaul-compat/SKILL.md` | On-Demand | Skills | 1,066 |
+| `.agents/skills/single-combat/SKILL.md` | On-Demand | Skills | 916 |
 | `.agents/skills/manage-pr/SKILL.md` | On-Demand | Skills | 813 |
-| `.agents/skills/single-combat/SKILL.md` | On-Demand | Skills | 787 |
 | `.agents/skills/add-icon-asset/SKILL.md` | On-Demand | Skills | 638 |
 | `common/religion/AGENTS.md` | On-Demand | Localized | 558 |
 | `.agents/skills/nice-pr/SKILL.md` | On-Demand | Skills | 550 |
@@ -29,12 +30,12 @@
 | `localization/AGENTS.md` | On-Demand | Localized | 436 |
 | `.agents/skills/add-decision-option-widget/SKILL.md` | On-Demand | Skills | 423 |
 | `.agents/skills/add-interaction-send-options/SKILL.md` | On-Demand | Skills | 376 |
-| `common/decisions/AGENTS.md` | On-Demand | Localized | 348 |
+| `common/decisions/AGENTS.md` | On-Demand | Localized | 373 |
 | `common/AGENTS.md` | On-Demand | Localized | 295 |
 | `common/traits/AGENTS.md` | On-Demand | Localized | 281 |
 | `.agents/skills/caveman/SKILL.md` | On-Demand | Skills | 190 |
 | `.agents/skills/update-release-notes/SKILL.md` | On-Demand | Skills | 169 |
 | `events/AGENTS.md` | On-Demand | Localized | 165 |
 | `common/game_rules/AGENTS.md` | On-Demand | Localized | 125 |
+| `common/modifiers/AGENTS.md` | On-Demand | Localized | 101 |
 | `common/buildings/AGENTS.md` | On-Demand | Localized | 40 |
-| `common/modifiers/AGENTS.md` | On-Demand | Localized | 39 |

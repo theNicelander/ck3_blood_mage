@@ -1,0 +1,219 @@
+﻿namespace = bm_compat_agot_trait_drain
+
+# AGOT (A Game of Thrones) - Westerosi Blood & Sight Harvest
+bm_compat_agot_trait_drain.0001 = {
+	type = character_event
+	title = bm_compat_agot_trait_drain.0001.title
+	desc = bm_compat_agot_trait_drain.0001.desc
+	theme = witchcraft
+	override_icon = {
+		reference = "gfx/interface/icons/bm_blood_magic_icon.dds"
+	}
+
+	# 1. Drain Dragon Dreams
+	option = {
+		name = bm_compat_agot_trait_drain.0001.dragon_dreams
+		trigger = {
+			bm_compat_agot_can_drain_dragon_dreams_trigger = yes
+			piety >= 250
+		}
+		show_as_unavailable = {
+			bm_compat_agot_can_drain_dragon_dreams_trigger = yes
+		}
+
+		add_piety = -250
+		bm_trait_drain_commit_cost_and_cooldown_effect = yes
+		temporary_trait_drain_attempted = yes
+
+		duel = {
+			skill = learning
+			target = scope:recipient
+			50 = {
+				desc = bm_trait_drain.001.success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 5
+					min = -40
+				}
+				modifier = { add = trait_drain_modifier }
+				modifier = { add = -50 }
+
+				send_interface_toast = {
+					type = bm_event_toast_effect_good
+					title = bm_trait_drain.001.success
+					left_icon = root
+					right_icon = scope:recipient
+					add_trait = dragon_dreams
+					add_xp_bm_dynamic = {
+						TRACK = cunning
+						XP = 5
+					}
+				}
+
+				sacrifice_prisoner_effect = {
+					VICTIM = scope:recipient
+					EXECUTIONER = root
+				}
+			}
+			50 = {
+				scope:recipient = { temporary_negative_recently_trait_drained = yes }
+				modifier = { add = recipient_trait_drain_modifier_per_trait }
+				send_interface_toast = {
+					title = bm_trait_drain.001.fail
+					drain_trait_failed_effects = yes
+					left_icon = root
+					right_icon = scope:recipient
+				}
+			}
+		}
+		ai_chance = { base = 100 }
+	}
+
+	# 2. Drain Greensight
+	option = {
+		name = bm_compat_agot_trait_drain.0001.greensight
+		trigger = {
+			bm_compat_agot_can_drain_greensight_trigger = yes
+			piety >= 250
+		}
+		show_as_unavailable = {
+			bm_compat_agot_can_drain_greensight_trigger = yes
+		}
+
+		add_piety = -250
+		bm_trait_drain_commit_cost_and_cooldown_effect = yes
+		temporary_trait_drain_attempted = yes
+
+		duel = {
+			skill = learning
+			target = scope:recipient
+			50 = {
+				desc = bm_trait_drain.001.success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 5
+					min = -40
+				}
+				modifier = { add = trait_drain_modifier }
+				modifier = { add = -50 }
+
+				send_interface_toast = {
+					type = bm_event_toast_effect_good
+					title = bm_trait_drain.001.success
+					left_icon = root
+					right_icon = scope:recipient
+					add_trait = greensight
+					add_xp_bm_dynamic = {
+						TRACK = cunning
+						XP = 5
+					}
+				}
+
+				sacrifice_prisoner_effect = {
+					VICTIM = scope:recipient
+					EXECUTIONER = root
+				}
+			}
+			50 = {
+				scope:recipient = { temporary_negative_recently_trait_drained = yes }
+				modifier = { add = recipient_trait_drain_modifier_per_trait }
+				send_interface_toast = {
+					title = bm_trait_drain.001.fail
+					drain_trait_failed_effects = yes
+					left_icon = root
+					right_icon = scope:recipient
+				}
+			}
+		}
+		ai_chance = { base = 100 }
+	}
+
+	# 3. Infuse Dragonblood Heritage
+	option = {
+		name = bm_compat_agot_trait_drain.0001.dragonblood
+		trigger = {
+			bm_compat_agot_can_drain_dragonblood_trigger = yes
+			piety >= 500
+			piety_level >= 2
+		}
+		show_as_unavailable = {
+			bm_compat_agot_can_drain_dragonblood_trigger = yes
+		}
+
+		add_piety = -500
+		bm_trait_drain_commit_cost_and_cooldown_effect = yes
+		temporary_trait_drain_attempted = yes
+
+		duel = {
+			skill = learning
+			target = scope:recipient
+			50 = {
+				desc = bm_compat_agot_trait_drain.0001.dragonblood_success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 5
+					min = -40
+				}
+				modifier = { add = trait_drain_modifier }
+				modifier = { add = -60 }
+
+				send_interface_toast = {
+					type = bm_event_toast_effect_good
+					title = bm_compat_agot_trait_drain.0001.dragonblood_success
+					left_icon = root
+					right_icon = scope:recipient
+					custom_tooltip = bm_compat_agot_gain_dragonblood_tt
+					hidden_effect = {
+						add_to_global_variable_list = {
+							name = historical_dragonseed
+							target = root
+						}
+					}
+					add_xp_bm_dynamic = {
+						TRACK = cunning
+						XP = 5
+					}
+					add_xp_bm_dynamic = {
+						TRACK = ancient
+						XP = 5
+					}
+				}
+
+				sacrifice_prisoner_effect = {
+					VICTIM = scope:recipient
+					EXECUTIONER = root
+				}
+			}
+			50 = {
+				scope:recipient = { temporary_negative_recently_trait_drained = yes }
+				modifier = { add = recipient_trait_drain_modifier_per_trait }
+				send_interface_toast = {
+					title = bm_trait_drain.001.fail
+					drain_trait_failed_effects = yes
+					left_icon = root
+					right_icon = scope:recipient
+				}
+			}
+		}
+		ai_chance = { base = 100 }
+	}
+
+	# Back
+	option = {
+		name = bm_compat_agot_trait_drain.0001.back
+		if = {
+			limit = { bm_can_drain_vanilla_traits_from_target_trigger = yes }
+			trigger_event = bm_trait_drain.001
+		}
+		ai_chance = { base = 5 }
+	}
+
+	left_portrait = {
+		character = root
+		animation = rage
+	}
+	right_portrait = {
+		character = scope:recipient
+		animation = beg
+	}
+}

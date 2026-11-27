@@ -1,0 +1,182 @@
+﻿# Overhaul & Workshop Mod Blood Memory Drain Compatibility Triggers
+# Isolated external trait references for AGOT, LotR, EK2, Commander+ 1.21, Sub Rosa, and Councillor's Experience.
+
+bm_compat_agot_can_drain_memory_trigger = {
+	bm_is_agot_loaded_trigger = yes
+	OR = {
+		bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_mariner }
+		bm_can_drain_memory_no_track_trigger = { TRAIT = fire_obsessed }
+	}
+}
+
+bm_compat_lotr_can_drain_memory_trigger = {
+	bm_is_lotr_loaded_trigger = yes
+	OR = {
+		bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_mariner }
+		bm_can_drain_memory_multi_track_trigger = { TRAIT = lifestyle_archivist TRACK_A = historian TRACK_B = propagandist }
+		bm_can_drain_memory_multi_track_trigger = { TRAIT = lifestyle_miner TRACK_A = hewer TRACK_B = prospector }
+		bm_can_drain_memory_quad_track_trigger = { TRAIT = lifestyle_artifact_crafting TRACK_A = weapon_smith TRACK_B = armour_smith TRACK_C = jewel_smith TRACK_D = enchanting_smith }
+		bm_can_drain_memory_no_track_trigger = { TRAIT = artificer }
+		bm_can_drain_memory_no_track_trigger = { TRAIT = enchanter }
+		bm_can_drain_memory_no_track_trigger = { TRAIT = excavator }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = cavern_commander }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = cavalry_leader }
+		bm_can_drain_memory_no_track_trigger = { TRAIT = banner_orc }
+		bm_can_drain_memory_no_track_trigger = { TRAIT = whip_master }
+		bm_can_drain_memory_no_track_trigger = { TRAIT = explosive_engineer }
+	}
+}
+
+bm_compat_ek2_can_drain_memory_trigger = {
+	bm_is_ek2_loaded_trigger = yes
+	OR = {
+		bm_can_drain_memory_no_track_trigger = { TRAIT = battlemage }
+		bm_can_drain_memory_no_track_trigger = { TRAIT = plunderer }
+		bm_can_drain_memory_no_track_trigger = { TRAIT = crimeboss }
+	}
+}
+
+bm_compat_commander_plus_can_drain_memory_trigger = {
+	OR = {
+		bm_can_drain_memory_single_track_trigger = { TRAIT = mapper }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = observant_pathfinder }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = respected_leader }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = sea_raider }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = seasoned_rover }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = resolute_localist }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = relentless_pursuer }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = infiltration_specialist }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = battlefield_medic }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = dauntless_leader }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = crafty_commander }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = cautious_planner }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = bannerlord }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = focus_specialist }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = master_ambusher }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = navigator }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = zealot }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = patriot }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = military_savior }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = combined_arms }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = levies_specialist }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = skirmishers_specialist }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = archers_specialist }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = heavy_cav_specialist }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = light_cav_specialist }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = heavy_infantry_specialist }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = archer_cav_specialist }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = pikemen_specialist }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = knights_specialist }
+	}
+}
+
+bm_compat_subrosa_councillor_can_drain_memory_trigger = {
+	OR = {
+		# Sub Rosa (3769960376)
+		bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_kidnap_artist }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_dark_passenger }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_convincing_liar }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_bee_in_bloom }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_deadly_charmer }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_third_shadow }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_heartbinder }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_two_faced }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = sbr_cautious_schemer }
+		# Councillor's Experience (2721974781)
+		bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_chancellor }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_marshal }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_steward }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_spymaster }
+		bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_chaplain }
+	}
+}
+
+bm_compat_can_drain_memory_from_target_trigger = {
+	OR = {
+		bm_compat_agot_can_drain_memory_trigger = yes
+		bm_compat_lotr_can_drain_memory_trigger = yes
+		bm_compat_ek2_can_drain_memory_trigger = yes
+		bm_compat_commander_plus_can_drain_memory_trigger = yes
+		bm_compat_subrosa_councillor_can_drain_memory_trigger = yes
+	}
+}
+
+bm_compat_has_multiple_memory_buckets_trigger = {
+	calc_true_if = {
+		amount >= 2
+		bm_compat_agot_can_drain_memory_trigger = yes
+		bm_compat_lotr_can_drain_memory_trigger = yes
+		bm_compat_ek2_can_drain_memory_trigger = yes
+		bm_compat_commander_plus_can_drain_memory_trigger = yes
+		bm_compat_subrosa_councillor_can_drain_memory_trigger = yes
+	}
+}
+
+bm_compat_has_xp_drainable_memory_trait_trigger = {
+	OR = {
+		# AGOT & LotR tracked traits
+		AND = {
+			OR = {
+				bm_is_agot_loaded_trigger = yes
+				bm_is_lotr_loaded_trigger = yes
+			}
+			bm_can_drain_memory_single_track_xp_trigger = { TRAIT = lifestyle_mariner }
+		}
+		AND = {
+			bm_is_lotr_loaded_trigger = yes
+			OR = {
+				bm_can_drain_memory_multi_track_xp_trigger = { TRAIT = lifestyle_archivist TRACK_A = historian TRACK_B = propagandist }
+				bm_can_drain_memory_multi_track_xp_trigger = { TRAIT = lifestyle_miner TRACK_A = hewer TRACK_B = prospector }
+				bm_can_drain_memory_quad_track_xp_trigger = { TRAIT = lifestyle_artifact_crafting TRACK_A = weapon_smith TRACK_B = armour_smith TRACK_C = jewel_smith TRACK_D = enchanting_smith }
+				bm_can_drain_memory_single_track_xp_trigger = { TRAIT = cavern_commander }
+				bm_can_drain_memory_single_track_xp_trigger = { TRAIT = cavalry_leader }
+			}
+		}
+		# Commander+ 1.21
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = mapper }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = observant_pathfinder }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = respected_leader }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = sea_raider }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = seasoned_rover }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = resolute_localist }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = relentless_pursuer }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = infiltration_specialist }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = battlefield_medic }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = dauntless_leader }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = crafty_commander }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = cautious_planner }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = bannerlord }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = focus_specialist }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = master_ambusher }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = navigator }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = zealot }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = patriot }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = military_savior }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = combined_arms }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = levies_specialist }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = skirmishers_specialist }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = archers_specialist }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = heavy_cav_specialist }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = light_cav_specialist }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = heavy_infantry_specialist }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = archer_cav_specialist }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = pikemen_specialist }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = knights_specialist }
+		# Sub Rosa
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = sbr_kidnap_artist }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = sbr_dark_passenger }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = sbr_convincing_liar }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = sbr_bee_in_bloom }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = sbr_deadly_charmer }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = sbr_third_shadow }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = sbr_heartbinder }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = sbr_two_faced }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = sbr_cautious_schemer }
+		# Councillor's Experience
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = lifestyle_chancellor }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = lifestyle_marshal }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = lifestyle_steward }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = lifestyle_spymaster }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = lifestyle_chaplain }
+	}
+}
