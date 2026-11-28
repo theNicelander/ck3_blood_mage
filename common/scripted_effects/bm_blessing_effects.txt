@@ -54,3 +54,13 @@ bm_apply_blessing_effect = {
 		}
 	}
 }
+
+bm_refuel_blood_golem_effect = {
+	if = {
+		limit = { has_trait = bm_blood_golem }
+		add_trait_xp = {
+			trait = bm_blood_golem
+			value = $XP$
+		}
+	}
+}

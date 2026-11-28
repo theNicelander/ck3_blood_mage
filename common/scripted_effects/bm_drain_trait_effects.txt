@@ -43,18 +43,6 @@ bm_drain_leveled_trait_effect = {
     }
 }
 
-intellect_drain_trait_effects = {
-    bm_drain_leveled_trait_effect = { TRAIT = intellect }
-}
-
-physique_drain_trait_effects = {
-    bm_drain_leveled_trait_effect = { TRAIT = physique }
-}
-
-beauty_drain_trait_effects = {
-    bm_drain_leveled_trait_effect = { TRAIT = beauty }
-}
-
 drain_trait_failed_effects = {
     temporary_negative_lifeforce_effect_major = yes
 }
@@ -69,6 +57,310 @@ bm_trait_drain_commit_cost_and_cooldown_effect = {
         add_character_flag = {
             flag = bm_trait_drain_victim_cooldown
             days = 180
+        }
+    }
+}
+
+bm_trait_drain_duel_fail_effects = {
+    scope:recipient = { temporary_negative_recently_trait_drained = yes }
+    send_interface_toast = {
+        title = bm_trait_drain.001.fail
+        drain_trait_failed_effects = yes
+        left_icon = root
+        right_icon = scope:recipient
+    }
+}
+
+bm_trait_drain_execute_vanilla_leveled_effect = {
+    add_piety = $PIETY_COST$
+    bm_trait_drain_commit_cost_and_cooldown_effect = yes
+    temporary_trait_drain_attempted = yes
+    duel = {
+        skill = learning
+        target = scope:recipient
+        50 = {
+            desc = bm_trait_drain.001.success
+            compare_modifier = {
+                value = scope:duel_value
+                multiplier = 5
+                min = -40
+            }
+            modifier = { add = trait_drain_modifier }
+            send_interface_toast = {
+                type = bm_event_toast_effect_good
+                title = bm_trait_drain.001.success
+                left_icon = root
+                right_icon = scope:recipient
+                bm_drain_leveled_trait_effect = { TRAIT = $TRAIT$ }
+            }
+            sacrifice_prisoner_effect = {
+                VICTIM = scope:recipient
+                EXECUTIONER = root
+            }
+        }
+        50 = {
+            modifier = { add = recipient_trait_drain_modifier_per_trait }
+            bm_trait_drain_duel_fail_effects = yes
+        }
+    }
+}
+
+bm_trait_drain_execute_single_effect = {
+    add_piety = $PIETY_COST$
+    bm_trait_drain_commit_cost_and_cooldown_effect = yes
+    temporary_trait_drain_attempted = yes
+    duel = {
+        skill = learning
+        target = scope:recipient
+        50 = {
+            desc = $SUCCESS_DESC$
+            compare_modifier = {
+                value = scope:duel_value
+                multiplier = 5
+                min = -40
+            }
+            modifier = { add = trait_drain_modifier }
+            modifier = { add = $DUEL_PENALTY$ }
+            send_interface_toast = {
+                type = bm_event_toast_effect_good
+                title = bm_trait_drain.001.success
+                left_icon = root
+                right_icon = scope:recipient
+                add_trait = $TRAIT$
+                add_xp_bm_dynamic = {
+                    TRACK = cunning
+                    XP = $XP_CUNNING$
+                }
+            }
+            sacrifice_prisoner_effect = {
+                VICTIM = scope:recipient
+                EXECUTIONER = root
+            }
+        }
+        50 = {
+            modifier = { add = recipient_trait_drain_modifier_per_trait }
+            bm_trait_drain_duel_fail_effects = yes
+        }
+    }
+}
+
+bm_trait_drain_execute_single_dual_xp_effect = {
+    add_piety = $PIETY_COST$
+    bm_trait_drain_commit_cost_and_cooldown_effect = yes
+    temporary_trait_drain_attempted = yes
+    duel = {
+        skill = learning
+        target = scope:recipient
+        50 = {
+            desc = bm_trait_drain.001.success
+            compare_modifier = {
+                value = scope:duel_value
+                multiplier = 5
+                min = -40
+            }
+            modifier = { add = trait_drain_modifier }
+            modifier = { add = $DUEL_PENALTY$ }
+            send_interface_toast = {
+                type = bm_event_toast_effect_good
+                title = bm_trait_drain.001.success
+                left_icon = root
+                right_icon = scope:recipient
+                add_trait = $TRAIT$
+                add_xp_bm_dynamic = {
+                    TRACK = cunning
+                    XP = $XP_CUNNING$
+                }
+                add_xp_bm_dynamic = {
+                    TRACK = $EXTRA_TRACK$
+                    XP = $EXTRA_XP$
+                }
+            }
+            sacrifice_prisoner_effect = {
+                VICTIM = scope:recipient
+                EXECUTIONER = root
+            }
+        }
+        50 = {
+            modifier = { add = recipient_trait_drain_modifier_per_trait }
+            bm_trait_drain_duel_fail_effects = yes
+        }
+    }
+}
+
+bm_trait_drain_execute_single_purge_effect = {
+    add_piety = $PIETY_COST$
+    bm_trait_drain_commit_cost_and_cooldown_effect = yes
+    temporary_trait_drain_attempted = yes
+    duel = {
+        skill = learning
+        target = scope:recipient
+        50 = {
+            desc = bm_trait_drain.001.success
+            compare_modifier = {
+                value = scope:duel_value
+                multiplier = 5
+                min = -40
+            }
+            modifier = { add = trait_drain_modifier }
+            send_interface_toast = {
+                type = bm_event_toast_effect_good
+                title = bm_trait_drain.001.success
+                left_icon = root
+                right_icon = scope:recipient
+                if = {
+                    limit = { has_trait = $PURGE_TRAIT$ }
+                    remove_trait = $PURGE_TRAIT$
+                }
+                add_trait = $TRAIT$
+                add_xp_bm_dynamic = {
+                    TRACK = cunning
+                    XP = $XP_CUNNING$
+                }
+            }
+            sacrifice_prisoner_effect = {
+                VICTIM = scope:recipient
+                EXECUTIONER = root
+            }
+        }
+        50 = {
+            modifier = { add = recipient_trait_drain_modifier_per_trait }
+            bm_trait_drain_duel_fail_effects = yes
+        }
+    }
+}
+
+bm_trait_drain_execute_tier4_effect = {
+    if = {
+        limit = { has_trait_rank = { trait = $TRAIT$ rank >= 3 } }
+        add_piety = -500
+    }
+    else_if = {
+        limit = { has_trait_rank = { trait = $TRAIT$ rank >= 2 } }
+        add_piety = -350
+    }
+    else = {
+        add_piety = -200
+    }
+    bm_trait_drain_commit_cost_and_cooldown_effect = yes
+    temporary_trait_drain_attempted = yes
+    duel = {
+        skill = learning
+        target = scope:recipient
+        50 = {
+            desc = bm_trait_drain.001.success
+            compare_modifier = {
+                value = scope:duel_value
+                multiplier = 5
+                min = -40
+            }
+            modifier = { add = trait_drain_modifier }
+            modifier = {
+                add = -40
+                NOT = { has_trait_rank = { trait = $TRAIT$ rank >= 3 } }
+            }
+            modifier = {
+                add = -70
+                has_trait_rank = { trait = $TRAIT$ rank >= 3 }
+            }
+            send_interface_toast = {
+                type = bm_event_toast_effect_good
+                title = bm_trait_drain.001.success
+                left_icon = root
+                right_icon = scope:recipient
+                if = {
+                    limit = { NOT = { has_trait = $TRAIT$ } }
+                    add_trait = $TRAIT$_1
+                }
+                else = {
+                    change_trait_rank = {
+                        trait = $TRAIT$
+                        rank = 1
+                        max = 4
+                    }
+                }
+                add_xp_bm_dynamic = {
+                    TRACK = cunning
+                    XP = 4
+                }
+                add_xp_bm_dynamic = {
+                    TRACK = ancient
+                    XP = 3
+                }
+            }
+            sacrifice_prisoner_effect = {
+                VICTIM = scope:recipient
+                EXECUTIONER = root
+            }
+        }
+        50 = {
+            modifier = { add = recipient_trait_drain_modifier_per_trait }
+            bm_trait_drain_duel_fail_effects = yes
+        }
+    }
+}
+
+bm_trait_drain_execute_tier3_hist_effect = {
+    if = {
+        limit = { has_trait_rank = { trait = $TRAIT$ rank >= 2 } }
+        add_piety = -350
+    }
+    else_if = {
+        limit = { has_trait = $TRAIT$ }
+        add_piety = -250
+    }
+    else = {
+        add_piety = -150
+    }
+    bm_trait_drain_commit_cost_and_cooldown_effect = yes
+    temporary_trait_drain_attempted = yes
+    duel = {
+        skill = learning
+        target = scope:recipient
+        50 = {
+            desc = bm_trait_drain.001.success
+            compare_modifier = {
+                value = scope:duel_value
+                multiplier = 5
+                min = -40
+            }
+            modifier = { add = trait_drain_modifier }
+            modifier = {
+                add = -30
+                NOT = { has_trait_rank = { trait = $TRAIT$ rank >= 2 } }
+            }
+            modifier = {
+                add = -60
+                has_trait_rank = { trait = $TRAIT$ rank >= 2 }
+            }
+            send_interface_toast = {
+                type = bm_event_toast_effect_good
+                title = bm_trait_drain.001.success
+                left_icon = root
+                right_icon = scope:recipient
+                if = {
+                    limit = { NOT = { has_trait = $TRAIT$ } }
+                    add_trait = $TRAIT$_1
+                }
+                else = {
+                    change_trait_rank = {
+                        trait = $TRAIT$
+                        rank = 1
+                        max = 3
+                    }
+                }
+                add_xp_bm_dynamic = {
+                    TRACK = cunning
+                    XP = 4
+                }
+            }
+            sacrifice_prisoner_effect = {
+                VICTIM = scope:recipient
+                EXECUTIONER = root
+            }
+        }
+        50 = {
+            modifier = { add = recipient_trait_drain_modifier_per_trait }
+            bm_trait_drain_duel_fail_effects = yes
         }
     }
 }

@@ -365,13 +365,10 @@ seek_power.003 = {
                 }
                 add = -25
             }
+            bm_ai_trait_drain_safety_modifier = yes
             modifier = {
                 factor = 0
-                OR = {
-                    piety < 100
-                    health <= fine_health
-                    has_character_modifier = lifeforce_modifier_negative_major
-                }
+                piety < 100
             }
         }
         trigger_event = bm_trait_drain.001

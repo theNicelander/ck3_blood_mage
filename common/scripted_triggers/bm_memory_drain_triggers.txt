@@ -204,8 +204,7 @@ bm_can_afford_memory_drain_no_track_trigger = {
 	piety >= bm_memory_drain_piety_cost
 }
 
-bm_can_afford_memory_drain_single_track_trigger = {
-	bm_can_drain_memory_single_track_trigger = { TRAIT = $TRAIT$ }
+bm_can_afford_memory_drain_tracked_piety_trigger = {
 	OR = {
 		AND = {
 			has_trait = $TRAIT$
@@ -213,26 +212,19 @@ bm_can_afford_memory_drain_single_track_trigger = {
 		}
 		piety >= bm_memory_drain_piety_cost
 	}
+}
+
+bm_can_afford_memory_drain_single_track_trigger = {
+	bm_can_drain_memory_single_track_trigger = { TRAIT = $TRAIT$ }
+	bm_can_afford_memory_drain_tracked_piety_trigger = { TRAIT = $TRAIT$ }
 }
 
 bm_can_afford_memory_drain_multi_track_trigger = {
 	bm_can_drain_memory_multi_track_trigger = { TRAIT = $TRAIT$ TRACK_A = $TRACK_A$ TRACK_B = $TRACK_B$ }
-	OR = {
-		AND = {
-			has_trait = $TRAIT$
-			piety >= bm_memory_drain_xp_piety_cost
-		}
-		piety >= bm_memory_drain_piety_cost
-	}
+	bm_can_afford_memory_drain_tracked_piety_trigger = { TRAIT = $TRAIT$ }
 }
 
 bm_can_afford_memory_drain_quad_track_trigger = {
 	bm_can_drain_memory_quad_track_trigger = { TRAIT = $TRAIT$ TRACK_A = $TRACK_A$ TRACK_B = $TRACK_B$ TRACK_C = $TRACK_C$ TRACK_D = $TRACK_D$ }
-	OR = {
-		AND = {
-			has_trait = $TRAIT$
-			piety >= bm_memory_drain_xp_piety_cost
-		}
-		piety >= bm_memory_drain_piety_cost
-	}
+	bm_can_afford_memory_drain_tracked_piety_trigger = { TRAIT = $TRAIT$ }
 }
