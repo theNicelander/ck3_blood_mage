@@ -889,6 +889,7 @@
 			OR = {
 				scope:actor = {
 					OR = {
+						bm_ai_allowed_trait_drain_trigger = no
 						piety < 100
 						health <= fine_health
 						has_character_modifier = lifeforce_modifier_negative_major
@@ -907,6 +908,7 @@
 		modifier = {
 			scope:drain_memory = yes
 			OR = {
+				scope:actor = { bm_ai_allowed_memory_drain_trigger = no }
 				scope:actor = { stress >= 150 }
 				scope:actor = {
 					OR = {
@@ -943,6 +945,28 @@
 			scope:drain_blood_duel = yes
 			scope:actor.prowess < scope:recipient.prowess
 			factor = 0
+		}
+
+		# Prisoner preference: Trait Drain > Memory Drain > Minor Lifedrain > Major Lifedrain
+		modifier = {
+			scope:drain_trait = yes
+			scope:recipient = { is_imprisoned_by = scope:actor }
+			add = 90
+		}
+		modifier = {
+			scope:drain_memory = yes
+			scope:recipient = { is_imprisoned_by = scope:actor }
+			add = 60
+		}
+		modifier = {
+			scope:drain_minor = yes
+			scope:recipient = { is_imprisoned_by = scope:actor }
+			add = 20
+		}
+		modifier = {
+			scope:drain_major = yes
+			scope:recipient = { is_imprisoned_by = scope:actor }
+			add = -20
 		}
 
 		# Personality, relationship, and protective vetoes (evaluated last)

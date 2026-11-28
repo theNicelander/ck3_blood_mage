@@ -225,12 +225,7 @@ bm_geyser_duel.0001 = {
 			else = {
 				remove_character_flag = bm_geyser_retried
 				remove_character_flag = bm_geyser_paid_piety
-				if = {
-					limit = { exists = scope:bm_egill }
-					scope:bm_egill = {
-						death = { death_reason = death_vanished }
-					}
-				}
+				bm_vanish_egill_effect = yes
 			}
 		}
 	}

@@ -1,4 +1,4 @@
-# Character Interactions (`common/character_interactions/`)
+﻿# Character Interactions (`common/character_interactions/`)
 
 Copy neighbor. For exclusive modal options (`send_options_exclusive = yes`), use skill `add-interaction-send-options`.
 
@@ -13,3 +13,6 @@ debug_log = "BloodMageInteraction: <name> (<opt>) | Actor: [actor.GetShortUIName
 debug_log = "BloodMageSelfCast: <name> (<opt>) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')])"
 # Execution (lifedrain_execution_effect): same as target using scope:executioner -> scope:victim, prefix "BloodMageExecution: lifedrain"
 ```
+- **AI tuning**: ratios come from weights (engine scores every actor/recipient/option combo), not dice. Role match: `scope:actor.cp:councillor_steward ?= scope:recipient` (also `_chancellor`, `_marshal`, `_spymaster`, `_court_chaplain`). AI-only option veto = `factor = 0` in `ai_will_do`. Check ratios: `python3 scripts/tally_ai_actions.py <debug.log>`.
+- **Scripted edits**: files mix CRLF/LF; match the exact bytes of the target region (check with `od -c`), never blanket-normalise.
+- **Git**: sandbox blocks `.git/index.lock`; run only `git add/commit/push` with `BypassSandbox: true`.

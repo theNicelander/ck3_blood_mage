@@ -135,7 +135,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 ## Visuals & Game Rules
 
 - Eyes progress from red to crimson, pale and white; hair bleaches to white.
-- Rules: Appearance (Off / Gradual / On), Blood Mage Prevalence, Blóðtrú Availability, Historical Starting Counties, Initiation Faith Requirements, Lore Integration (vanilla vs AGOT).
+- Rules: Appearance (Off / Gradual / On), Blood Mage Prevalence, Blóðtrú Availability, Historical Starting Counties, Initiation Faith Requirements, Lore Integration (vanilla vs AGOT), and AI action toggles for Trait Drain, Memory Drain, and Grant Blood Mage (Yes / Landed Rulers Only / No).
 - Fully modular (`bm_` prefix), no vanilla overwrites; compatible with total conversions.
 
 ## Bugfixes
@@ -157,6 +157,7 @@ Annual pulse (3-year cooldown) for player Blood Mages:
 
 ## Version history
 
+- v1.21.15: Add AI game rules for Trait Drain, Memory Drain, and Grant Blood Mage (Yes / Landed Rulers Only / No); AI blesses itself first, favours skilled councillors, never grants Lifeforce, prefers Trait > Memory > Life drain on prisoners, and uses self buffs less often.
 - v1.21.13: Add decaying leveled Blood Golem trait with Lifeforce refueling, Blood Mage Lifeforce Shield & tier-scaled drain harvest, Forge Blood Artifact decision (5 slots x 6 disciplines) + Egill tempering duel at Reykjavik/Tsushima, and remove `witch` from Blóðtrú sins.
 - v1.21.11: Rebalance battle Lifeforce (linear total-combatant chances, separate 90d CDs), battle Fury XP (60d CD, victory-only), and duel/sparring XP.
 - v1.21.9: Fix Empower Dynasty house covenants, add Channel Focus, Age 85/100 milestones, 4 events, 3 hunts, alerts, and 6 heals.

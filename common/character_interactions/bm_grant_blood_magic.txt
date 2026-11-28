@@ -153,7 +153,9 @@
     }
 
     # AI
-    ai_potential = { always = yes }
+    ai_potential = {
+        bm_ai_allowed_grant_blood_mage_trigger = yes
+    }
     ai_frequency = 3
     ai_targets = {
         ai_recipients = spouses

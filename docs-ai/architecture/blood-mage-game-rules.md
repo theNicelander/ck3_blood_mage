@@ -17,6 +17,9 @@
 | `bm_icelandic_culture` | `bm_icelandic_culture_enabled`<br>`bm_icelandic_culture_disabled` | `bm_icelandic_culture_enabled` | Configures whether all counties, resident rulers, courtiers, and barony holders in Iceland convert to Icelander culture at game start. |
 | `bm_initiation_faith_requirement` | `bm_initiation_dedicated_cult`<br>`bm_initiation_cult_or_witchcraft_accepted` | `bm_initiation_dedicated_cult` | Gates self-initiation decision: requires dedicated Blóðtrú faith vs allows any faith accepting witchcraft. |
 | `bm_lore` | `bm_lore_historical`<br>`bm_lore_agot` | `bm_lore_historical` | Historical campaign vs AGOT lore integration flavor. |
+| `bm_ai_trait_drain` | `bm_ai_trait_drain_yes`<br>`bm_ai_trait_drain_landed_only`<br>`bm_ai_trait_drain_no` | `bm_ai_trait_drain_yes` | Controls whether AI Blood Mages may use Trait Drain (`drain_trait` in `bm_blood_drain`): all AI, landed rulers only (`is_landed = yes`), or no AI. |
+| `bm_ai_memory_drain` | `bm_ai_memory_drain_yes`<br>`bm_ai_memory_drain_landed_only`<br>`bm_ai_memory_drain_no` | `bm_ai_memory_drain_yes` | Controls whether AI Blood Mages may use Blood Memory Drain (`drain_memory` in `bm_blood_drain`): all AI, landed rulers only (`is_landed = yes`), or no AI. |
+| `bm_ai_grant_blood_mage` | `bm_ai_grant_blood_mage_yes`<br>`bm_ai_grant_blood_mage_landed_only`<br>`bm_ai_grant_blood_mage_no` | `bm_ai_grant_blood_mage_yes` | Controls whether AI Blood Mages may use `grant_blood_magic_interaction`: all AI, landed rulers only (`is_landed = yes`), or no AI. |
 
 ## Where the details live
 
@@ -25,6 +28,7 @@
 | Game rule definitions | `common/game_rules/bm_game_rules.txt` |
 | Text icons | `gui/bm_game_rule_texticons.gui` |
 | Localization | `localization/english/bm_game_rules_l_english.yml` |
+| AI action rule triggers | `common/scripted_triggers/bm_triggers.txt` |
 | AI prevalence modifiers | `common/scripted_modifiers/bm_blood_mage_prevalence_modifiers.txt` |
 | Starting counties & holders effects | `common/scripted_effects/bm_starting_counties_effects.txt` |
 | Yearly retention audits | `common/scripted_effects/bm_blood_mage_lifecycle_effects.txt` |

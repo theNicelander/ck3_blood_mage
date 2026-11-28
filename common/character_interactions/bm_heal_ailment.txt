@@ -80,6 +80,45 @@
 			scope:recipient = { is_close_family_of = scope:actor }
 			add = 50
 		}
+		# Councillors scale with their key skill
+		modifier = {
+			scope:recipient = {
+				is_councillor_of = scope:actor
+				OR = {
+					AND = { scope:actor.cp:councillor_steward ?= this stewardship >= 12 }
+					AND = { scope:actor.cp:councillor_chancellor ?= this diplomacy >= 12 }
+					AND = { scope:actor.cp:councillor_marshal ?= this martial >= 12 }
+					AND = { scope:actor.cp:councillor_spymaster ?= this intrigue >= 12 }
+					AND = { scope:actor.cp:councillor_court_chaplain ?= this learning >= 12 }
+				}
+			}
+			add = 40
+		}
+		modifier = {
+			scope:recipient = {
+				is_councillor_of = scope:actor
+				OR = {
+					AND = { scope:actor.cp:councillor_steward ?= this stewardship >= 16 }
+					AND = { scope:actor.cp:councillor_chancellor ?= this diplomacy >= 16 }
+					AND = { scope:actor.cp:councillor_marshal ?= this martial >= 16 }
+					AND = { scope:actor.cp:councillor_spymaster ?= this intrigue >= 16 }
+					AND = { scope:actor.cp:councillor_court_chaplain ?= this learning >= 16 }
+				}
+			}
+			add = 20
+		}
+		# Rarely heal low-level knights and courtiers unless seriously ill
+		modifier = {
+			scope:recipient = {
+				NOT = { is_councillor_of = scope:actor }
+				NOT = { is_close_family_of = scope:actor }
+				NOT = { this = scope:actor }
+				bm_has_minor_ailment_trigger = yes
+				bm_has_major_ailment_trigger = no
+				bm_has_deadly_ailment_trigger = no
+			}
+			add = -60
+		}
 		ai_willingness_to_do_positive_magic = yes
 
 		# Veto if actor cannot afford the cure for recipient's ailment
