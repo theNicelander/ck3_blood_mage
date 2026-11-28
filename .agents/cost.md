@@ -5,11 +5,11 @@
 | --- | ---: |
 | **Always-On (every turn)** | **1,528** |
 | ↳ Core (`AGENTS.md`) | 1,528 |
-| **On-Demand** | **12,459** |
-| ↳ Localized (`**/AGENTS.md`) | 5,375 |
+| **On-Demand** | **12,625** |
+| ↳ Localized (`**/AGENTS.md`) | 5,541 |
 | ↳ Rules (`model_decision`) | 0 |
 | ↳ Skills (`.agents/skills/`) | 7,084 |
-| **Total** | **13,987** |
+| **Total** | **14,153** |
 
 ## Details per file
 
@@ -21,10 +21,10 @@
 | `docs-ai/architecture/AGENTS.md` | On-Demand | Localized | 1,271 |
 | `.agents/skills/single-combat/SKILL.md` | On-Demand | Skills | 916 |
 | `.agents/skills/manage-pr/SKILL.md` | On-Demand | Skills | 819 |
+| `common/character_interactions/AGENTS.md` | On-Demand | Localized | 673 |
 | `.agents/skills/add-icon-asset/SKILL.md` | On-Demand | Skills | 638 |
 | `common/religion/AGENTS.md` | On-Demand | Localized | 558 |
 | `.agents/skills/nice-pr/SKILL.md` | On-Demand | Skills | 550 |
-| `common/character_interactions/AGENTS.md` | On-Demand | Localized | 507 |
 | `common/districts/AGENTS.md` | On-Demand | Localized | 446 |
 | `common/culture/AGENTS.md` | On-Demand | Localized | 440 |
 | `localization/AGENTS.md` | On-Demand | Localized | 436 |
