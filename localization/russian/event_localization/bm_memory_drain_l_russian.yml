@@ -1,0 +1,62 @@
+﻿l_russian:
+  bm_memory_drain.0001.title: "Сбор памяти крови"
+  bm_memory_drain.0001.desc: "Скованный железом и рунами крови персонаж [recipient.GetShortUINameNoTooltip] хранит в венах опыт всей жизни: мышечную память, боевые инстинкты и отточенные навыки, запечатлённые в самом пульсе.\n\nВ отличие от плоти, эту память не нужно уничтожать, чтобы завладеть ею. Вы можете вобрать накопленное мастерство, но каждое умение, которое вы вливаете в собственную кровь, всё тяжелее давит на ваш разум."
+
+  bm_memory_drain.0001.lifestyle: "Поглотить опыт образа жизни и ремесла"
+  bm_memory_drain.0001.commander: "Поглотить тактику командира"
+  bm_memory_drain.0001.fame: "Поглотить воинскую славу"
+  bm_memory_drain.0001.compat: "Поглотить знания иных миров и модификаций"
+
+  bm_memory_drain.0002.title: "Память крови: образ жизни и ремесло"
+  bm_memory_drain.0002.desc: "Вы различаете незримые следы освоенных персонажем [recipient.GetShortUINameNoTooltip] искусств: каждый шрам с тренировочного двора, долгие часы над травами и стихами, странствия по диким тропам. Выберите ремесло, которое извлечёте из крови."
+
+  bm_memory_drain.0003.title: "Память крови: тактика командира"
+  bm_memory_drain.0003.desc: "В ровном пульсе персонажа [recipient.GetShortUINameNoTooltip] слышатся долгие марши, прорывы флангов и покорённые земли. Выберите тактический инстинкт, который извлечёте из крови."
+
+  bm_memory_drain.0004.title: "Память крови: воинская слава"
+  bm_memory_drain.0004.desc: "Неукротимая ярость и заслуженная слава пылают в венах персонажа [recipient.GetShortUINameNoTooltip]. Выберите воинское отличие, которое извлечёте из крови."
+
+  bm_memory_drain.back: "Назад"
+
+  bm_memory_drain.success: "@bm_ancient_discipline_icon! Память крови поглощена"
+  bm_memory_drain.fail: "@bm_ancient_discipline_icon! Поглощению памяти крови оказано сопротивление"
+
+  bm_can_drain_memory_from_target_trigger_tt: "У персонажа [CHARACTER.GetShortUINameNoTooltip] есть свойства образа жизни, командира или воинской славы, которые можно поглотить"
+  NOT_bm_can_drain_memory_from_target_trigger_tt: "У персонажа [CHARACTER.GetShortUINameNoTooltip] #bold нет#! свойств образа жизни, командира или воинской славы, которые можно поглотить"
+
+  # Lifestyle & Craft traits
+  bm_memory_drain.trait.lifestyle_blademaster: "Поглотить свойство «Мастер клинка»"
+  bm_memory_drain.trait.lifestyle_hunter: "Поглотить свойство «Охотник»"
+  bm_memory_drain.trait.lifestyle_poet: "Поглотить свойство «Поэт»"
+  bm_memory_drain.trait.lifestyle_gardener: "Поглотить свойство «Садовник»"
+  bm_memory_drain.trait.lifestyle_herbalist: "Поглотить свойство «Травник»"
+  bm_memory_drain.trait.lifestyle_physician: "Поглотить свойство «Лекарь»"
+  bm_memory_drain.trait.lifestyle_mystic: "Поглотить свойство «Мистик»"
+  bm_memory_drain.trait.lifestyle_reveler: "Поглотить свойство «Гуляка»"
+  bm_memory_drain.trait.lifestyle_traveler: "Поглотить свойство «Путешественник»"
+  bm_memory_drain.trait.tourney_participant: "Поглотить свойство «Участник турниров»"
+
+  # Commander traits
+  bm_memory_drain.trait.logistician: "Поглотить свойство «Логист»"
+  bm_memory_drain.trait.military_engineer: "Поглотить свойство «Военный инженер»"
+  bm_memory_drain.trait.aggressive_attacker: "Поглотить свойство «Агрессивный атакующий»"
+  bm_memory_drain.trait.unyielding_defender: "Поглотить свойство «Несгибаемый защитник»"
+  bm_memory_drain.trait.forder: "Поглотить свойство «Переправщик»"
+  bm_memory_drain.trait.flexible_leader: "Поглотить свойство «Гибкий командир»"
+  bm_memory_drain.trait.desert_warrior: "Поглотить свойство «Воин пустыни»"
+  bm_memory_drain.trait.jungle_stalker: "Поглотить свойство «Охотник в джунглях»"
+  bm_memory_drain.trait.reaver: "Поглотить свойство «Налётчик»"
+  bm_memory_drain.trait.reckless: "Поглотить свойство «Безрассудный»"
+  bm_memory_drain.trait.holy_warrior: "Поглотить свойство «Священный воин»"
+  bm_memory_drain.trait.open_terrain_expert: "Поглотить свойство «Знаток открытой местности»"
+  bm_memory_drain.trait.rough_terrain_expert: "Поглотить свойство «Знаток пересечённой местности»"
+  bm_memory_drain.trait.forest_fighter: "Поглотить свойство «Лесной боец»"
+  bm_memory_drain.trait.cautious_leader: "Поглотить свойство «Осторожный командир»"
+  bm_memory_drain.trait.organizer: "Поглотить свойство «Организатор»"
+
+  # Martial Fame traits
+  bm_memory_drain.trait.berserker: "Поглотить свойство «Берсерк»"
+  bm_memory_drain.trait.viking: "Поглотить свойство «Викинг»"
+  bm_memory_drain.trait.shieldmaiden: "Поглотить свойство «Дева щита»"
+  bm_memory_drain.trait.athletic: "Поглотить свойство «Атлет»"
+  bm_memory_drain.trait.varangian: "Поглотить свойство «Варяг»"
