@@ -2,18 +2,9 @@
 
 bm_can_drain_vanilla_traits_from_target_trigger = {
 	OR = {
-		AND = {
-			NOT = { has_trait_rank = { trait = intellect_good rank >= 5 } }
-			scope:recipient = { has_trait = intellect_good }
-		}
-		AND = {
-			NOT = { has_trait_rank = { trait = physique_good rank >= 5 } }
-			scope:recipient = { has_trait = physique_good }
-		}
-		AND = {
-			NOT = { has_trait_rank = { trait = beauty_good rank >= 5 } }
-			scope:recipient = { has_trait = beauty_good }
-		}
+		bm_can_drain_leveled_trait_from_target_trigger = { TRAIT = intellect_good }
+		bm_can_drain_leveled_trait_from_target_trigger = { TRAIT = physique_good }
+		bm_can_drain_leveled_trait_from_target_trigger = { TRAIT = beauty_good }
 		AND = {
 			NOT = { has_trait = fecund }
 			scope:recipient = { has_trait = fecund }

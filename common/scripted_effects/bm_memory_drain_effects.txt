@@ -38,6 +38,26 @@ bm_memory_drain_fail_effect = {
 	}
 }
 
+bm_memory_drain_commit_leveled_cost_effect = {
+	if = {
+		limit = { has_trait = $TRAIT$ }
+		bm_memory_drain_commit_cost_and_cooldown_effect = { PIETY_COST = bm_memory_drain_xp_piety_cost_negative }
+	}
+	else = {
+		bm_memory_drain_commit_cost_and_cooldown_effect = { PIETY_COST = bm_memory_drain_piety_cost_negative }
+	}
+}
+
+bm_memory_drain_fail_toast_effect = {
+	send_interface_toast = {
+		type = bm_event_toast_effect_bad
+		title = bm_memory_drain.fail
+		left_icon = root
+		right_icon = scope:recipient
+		bm_memory_drain_fail_effect = yes
+	}
+}
+
 bm_memory_drain_execute_no_track_effect = {
 	bm_memory_drain_commit_cost_and_cooldown_effect = { PIETY_COST = bm_memory_drain_piety_cost_negative }
 	duel = {
@@ -66,25 +86,13 @@ bm_memory_drain_execute_no_track_effect = {
 		}
 		50 = {
 			desc = bm_memory_drain.fail
-			send_interface_toast = {
-				type = bm_event_toast_effect_bad
-				title = bm_memory_drain.fail
-				left_icon = root
-				right_icon = scope:recipient
-				bm_memory_drain_fail_effect = yes
-			}
+			bm_memory_drain_fail_toast_effect = yes
 		}
 	}
 }
 
 bm_memory_drain_execute_single_track_effect = {
-	if = {
-		limit = { has_trait = $TRAIT$ }
-		bm_memory_drain_commit_cost_and_cooldown_effect = { PIETY_COST = bm_memory_drain_xp_piety_cost_negative }
-	}
-	else = {
-		bm_memory_drain_commit_cost_and_cooldown_effect = { PIETY_COST = bm_memory_drain_piety_cost_negative }
-	}
+	bm_memory_drain_commit_leveled_cost_effect = { TRAIT = $TRAIT$ }
 	duel = {
 		skill = learning
 		target = scope:recipient
@@ -120,25 +128,13 @@ bm_memory_drain_execute_single_track_effect = {
 		}
 		50 = {
 			desc = bm_memory_drain.fail
-			send_interface_toast = {
-				type = bm_event_toast_effect_bad
-				title = bm_memory_drain.fail
-				left_icon = root
-				right_icon = scope:recipient
-				bm_memory_drain_fail_effect = yes
-			}
+			bm_memory_drain_fail_toast_effect = yes
 		}
 	}
 }
 
 bm_memory_drain_execute_multi_track_effect = {
-	if = {
-		limit = { has_trait = $TRAIT$ }
-		bm_memory_drain_commit_cost_and_cooldown_effect = { PIETY_COST = bm_memory_drain_xp_piety_cost_negative }
-	}
-	else = {
-		bm_memory_drain_commit_cost_and_cooldown_effect = { PIETY_COST = bm_memory_drain_piety_cost_negative }
-	}
+	bm_memory_drain_commit_leveled_cost_effect = { TRAIT = $TRAIT$ }
 	duel = {
 		skill = learning
 		target = scope:recipient
@@ -206,25 +202,13 @@ bm_memory_drain_execute_multi_track_effect = {
 		}
 		50 = {
 			desc = bm_memory_drain.fail
-			send_interface_toast = {
-				type = bm_event_toast_effect_bad
-				title = bm_memory_drain.fail
-				left_icon = root
-				right_icon = scope:recipient
-				bm_memory_drain_fail_effect = yes
-			}
+			bm_memory_drain_fail_toast_effect = yes
 		}
 	}
 }
 
 bm_memory_drain_execute_quad_track_effect = {
-	if = {
-		limit = { has_trait = $TRAIT$ }
-		bm_memory_drain_commit_cost_and_cooldown_effect = { PIETY_COST = bm_memory_drain_xp_piety_cost_negative }
-	}
-	else = {
-		bm_memory_drain_commit_cost_and_cooldown_effect = { PIETY_COST = bm_memory_drain_piety_cost_negative }
-	}
+	bm_memory_drain_commit_leveled_cost_effect = { TRAIT = $TRAIT$ }
 	duel = {
 		skill = learning
 		target = scope:recipient
@@ -269,13 +253,7 @@ bm_memory_drain_execute_quad_track_effect = {
 		}
 		50 = {
 			desc = bm_memory_drain.fail
-			send_interface_toast = {
-				type = bm_event_toast_effect_bad
-				title = bm_memory_drain.fail
-				left_icon = root
-				right_icon = scope:recipient
-				bm_memory_drain_fail_effect = yes
-			}
+			bm_memory_drain_fail_toast_effect = yes
 		}
 	}
 }

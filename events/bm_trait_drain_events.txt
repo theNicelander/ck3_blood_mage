@@ -19,51 +19,9 @@ bm_trait_drain.001 = {
             scope:recipient = { has_trait = intellect_good }
         }
 
-        # Cost
-        add_piety = trait_drain_intellect_cost
-        bm_trait_drain_commit_cost_and_cooldown_effect = yes
-        temporary_trait_drain_attempted = yes
-
-        # Carry out logic
-        duel = {
-            skill = learning
-            target = scope:recipient
-            50 = {
-                desc = bm_trait_drain.001.success
-
-                # Difficulty
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 5
-                    min = -40
-                }
-                modifier = { add = trait_drain_modifier }
-
-                # Success! Level up trait!
-                send_interface_toast = {
-                    type = bm_event_toast_effect_good
-                    title = bm_trait_drain.001.success
-                    left_icon = root
-                    right_icon = scope:recipient
-                    intellect_drain_trait_effects = yes
-                }
-
-                # Prisoner dies
-                sacrifice_prisoner_effect = {
-                    VICTIM = scope:recipient
-                    EXECUTIONER = root
-                }
-            }
-            50 = {
-                scope:recipient = { temporary_negative_recently_trait_drained = yes }
-                modifier = { add = recipient_trait_drain_modifier_per_trait }
-                send_interface_toast = {
-                    title = bm_trait_drain.001.fail
-                    drain_trait_failed_effects = yes
-                    left_icon = root
-                    right_icon = scope:recipient
-                }
-            }
+        bm_trait_drain_execute_vanilla_leveled_effect = {
+            TRAIT = intellect
+            PIETY_COST = trait_drain_intellect_cost
         }
         ai_chance = {
             base = 45
@@ -102,51 +60,9 @@ bm_trait_drain.001 = {
             scope:recipient = { has_trait = physique_good }
         }
 
-        # Cost
-        add_piety = trait_drain_physique_cost
-        bm_trait_drain_commit_cost_and_cooldown_effect = yes
-        temporary_trait_drain_attempted = yes
-
-        # Carry out logic
-        duel = {
-            skill = learning
-            target = scope:recipient
-            50 = {
-                desc = bm_trait_drain.001.success
-
-                # Difficulty
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 5
-                    min = -40
-                }
-                modifier = { add = trait_drain_modifier }
-
-                # Success! Level up trait!
-                send_interface_toast = {
-                    type = bm_event_toast_effect_good
-                    title = bm_trait_drain.001.success
-                    left_icon = root
-                    right_icon = scope:recipient
-                    physique_drain_trait_effects = yes
-                }
-
-                # Prisoner dies
-                sacrifice_prisoner_effect = {
-                    VICTIM = scope:recipient
-                    EXECUTIONER = root
-                }
-            }
-            50 = {
-                scope:recipient = { temporary_negative_recently_trait_drained = yes }
-                modifier = { add = recipient_trait_drain_modifier_per_trait }
-                send_interface_toast = {
-                    title = bm_trait_drain.001.fail
-                    drain_trait_failed_effects = yes
-                    left_icon = root
-                    right_icon = scope:recipient
-                }
-            }
+        bm_trait_drain_execute_vanilla_leveled_effect = {
+            TRAIT = physique
+            PIETY_COST = trait_drain_physique_cost
         }
         ai_chance = {
             base = 40
@@ -186,51 +102,9 @@ bm_trait_drain.001 = {
             scope:recipient = { has_trait = beauty_good }
         }
 
-        # Cost
-        add_piety = trait_drain_beauty_cost
-        bm_trait_drain_commit_cost_and_cooldown_effect = yes
-        temporary_trait_drain_attempted = yes
-
-        # Carry out logic
-        duel = {
-            skill = learning
-            target = scope:recipient
-            50 = {
-                desc = bm_trait_drain.001.success
-
-                # Difficulty
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 5
-                    min = -40
-                }
-                modifier = { add = trait_drain_modifier }
-
-                # Success! Level up trait!
-                send_interface_toast = {
-                    type = bm_event_toast_effect_good
-                    title = bm_trait_drain.001.success
-                    left_icon = root
-                    right_icon = scope:recipient
-                    beauty_drain_trait_effects = yes
-                }
-
-                # Prisoner dies
-                sacrifice_prisoner_effect = {
-                    VICTIM = scope:recipient
-                    EXECUTIONER = root
-                }
-            }
-            50 = {
-                scope:recipient = { temporary_negative_recently_trait_drained = yes }
-                modifier = { add = recipient_trait_drain_modifier_per_trait }
-                send_interface_toast = {
-                    title = bm_trait_drain.001.fail
-                    drain_trait_failed_effects = yes
-                    left_icon = root
-                    right_icon = scope:recipient
-                }
-            }
+        bm_trait_drain_execute_vanilla_leveled_effect = {
+            TRAIT = beauty
+            PIETY_COST = trait_drain_beauty_cost
         }
         ai_chance = {
             base = 30
@@ -277,56 +151,12 @@ bm_trait_drain.001 = {
             scope:recipient = { has_trait = fecund }
         }
 
-        # Cost
-        add_piety = trait_drain_base_piety_cost
-        bm_trait_drain_commit_cost_and_cooldown_effect = yes
-        temporary_trait_drain_attempted = yes
-
-
-        # Carry out logic
-        duel = {
-            skill = learning
-            target = scope:recipient
-            50 = {
-                desc = bm_trait_drain.001.nice
-
-                # Difficulty
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 5
-                    min = -40
-                }
-                modifier = { add = trait_drain_modifier }
-
-                # Success!
-                send_interface_toast = {
-                    type = bm_event_toast_effect_good
-                    title = bm_trait_drain.001.success
-                    left_icon = root
-                    right_icon = scope:recipient
-                    add_trait = fecund
-                    add_xp_bm_dynamic = {
-                        TRACK = cunning
-                        XP = 5
-                    }
-                }
-
-                # Prisoner dies
-                sacrifice_prisoner_effect = {
-                    VICTIM = scope:recipient
-                    EXECUTIONER = root
-                }
-            }
-            50 = {
-                scope:recipient = { temporary_negative_recently_trait_drained = yes }
-                modifier = { add = recipient_trait_drain_modifier_per_trait }
-                send_interface_toast = {
-                    title = bm_trait_drain.001.fail
-                    drain_trait_failed_effects = yes
-                    left_icon = root
-                    right_icon = scope:recipient
-                }
-            }
+        bm_trait_drain_execute_single_effect = {
+            TRAIT = fecund
+            PIETY_COST = trait_drain_base_piety_cost
+            DUEL_PENALTY = 0
+            XP_CUNNING = 5
+            SUCCESS_DESC = bm_trait_drain.001.nice
         }
 
         ai_chance = {
@@ -364,55 +194,12 @@ bm_trait_drain.001 = {
             scope:recipient = { has_trait = giant }
         }
 
-        # Cost
-        add_piety = trait_drain_base_piety_cost
-        bm_trait_drain_commit_cost_and_cooldown_effect = yes
-        temporary_trait_drain_attempted = yes
-
-
-        # Carry out logic
-        duel = {
-            skill = learning
-            target = scope:recipient
-            50 = {
-                desc = bm_trait_drain.001.success
-                 # Difficulty
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 5
-                    min = -40
-                }
-                modifier = { add = trait_drain_modifier }
-
-                # Success!
-                send_interface_toast = {
-                    type = bm_event_toast_effect_good
-                    title = bm_trait_drain.001.success
-                    left_icon = root
-                    right_icon = scope:recipient
-                    add_trait = giant
-                    add_xp_bm_dynamic = {
-                        TRACK = cunning
-                        XP = 5
-                    }
-                }
-
-                # Prisoner dies
-                sacrifice_prisoner_effect = {
-                    VICTIM = scope:recipient
-                    EXECUTIONER = root
-                }
-            }
-            50 = {
-                scope:recipient = { temporary_negative_recently_trait_drained = yes }
-                modifier = { add = recipient_trait_drain_modifier_per_trait }
-                send_interface_toast = {
-                    title = bm_trait_drain.001.fail
-                    drain_trait_failed_effects = yes
-                    left_icon = root
-                    right_icon = scope:recipient
-                }
-            }
+        bm_trait_drain_execute_single_effect = {
+            TRAIT = giant
+            PIETY_COST = trait_drain_base_piety_cost
+            DUEL_PENALTY = 0
+            XP_CUNNING = 5
+            SUCCESS_DESC = bm_trait_drain.001.success
         }
 
         ai_chance = {
@@ -451,56 +238,12 @@ bm_trait_drain.001 = {
             scope:recipient = { has_trait = pure_blooded }
         }
 
-        # Cost
-        add_piety = trait_drain_base_piety_cost
-        bm_trait_drain_commit_cost_and_cooldown_effect = yes
-        temporary_trait_drain_attempted = yes
-
-
-        # Carry out logic
-        duel = {
-            skill = learning
-            target = scope:recipient
-            50 = {
-                desc = bm_trait_drain.001.success
-
-                # Difficulty
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 5
-                    min = -40
-                }
-                modifier = { add = trait_drain_modifier }
-
-                # Success!
-                send_interface_toast = {
-                    type = bm_event_toast_effect_good
-                    title = bm_trait_drain.001.success
-                    left_icon = root
-                    right_icon = scope:recipient
-                    add_trait = pure_blooded
-                    add_xp_bm_dynamic = {
-                        TRACK = cunning
-                        XP = 5
-                    }
-                }
-
-                # Prisoner dies
-                sacrifice_prisoner_effect = {
-                    VICTIM = scope:recipient
-                    EXECUTIONER = root
-                }
-            }
-            50 = {
-                scope:recipient = { temporary_negative_recently_trait_drained = yes }
-                modifier = { add = recipient_trait_drain_modifier_per_trait }
-                send_interface_toast = {
-                    title = bm_trait_drain.001.fail
-                    drain_trait_failed_effects = yes
-                    left_icon = root
-                    right_icon = scope:recipient
-                }
-            }
+        bm_trait_drain_execute_single_effect = {
+            TRAIT = pure_blooded
+            PIETY_COST = trait_drain_base_piety_cost
+            DUEL_PENALTY = 0
+            XP_CUNNING = 5
+            SUCCESS_DESC = bm_trait_drain.001.success
         }
 
         ai_chance = {
@@ -531,53 +274,11 @@ bm_trait_drain.001 = {
             scope:recipient = { has_trait = strong }
         }
 
-        add_piety = trait_drain_base_piety_cost
-        bm_trait_drain_commit_cost_and_cooldown_effect = yes
-        temporary_trait_drain_attempted = yes
-
-        duel = {
-            skill = learning
-            target = scope:recipient
-            50 = {
-                desc = bm_trait_drain.001.success
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 5
-                    min = -40
-                }
-                modifier = { add = trait_drain_modifier }
-
-                send_interface_toast = {
-                    type = bm_event_toast_effect_good
-                    title = bm_trait_drain.001.success
-                    left_icon = root
-                    right_icon = scope:recipient
-                    if = {
-                        limit = { has_trait = weak }
-                        remove_trait = weak
-                    }
-                    add_trait = strong
-                    add_xp_bm_dynamic = {
-                        TRACK = cunning
-                        XP = 5
-                    }
-                }
-
-                sacrifice_prisoner_effect = {
-                    VICTIM = scope:recipient
-                    EXECUTIONER = root
-                }
-            }
-            50 = {
-                scope:recipient = { temporary_negative_recently_trait_drained = yes }
-                modifier = { add = recipient_trait_drain_modifier_per_trait }
-                send_interface_toast = {
-                    title = bm_trait_drain.001.fail
-                    drain_trait_failed_effects = yes
-                    left_icon = root
-                    right_icon = scope:recipient
-                }
-            }
+        bm_trait_drain_execute_single_purge_effect = {
+            TRAIT = strong
+            PURGE_TRAIT = weak
+            PIETY_COST = trait_drain_base_piety_cost
+            XP_CUNNING = 5
         }
 
         ai_chance = {
@@ -611,53 +312,11 @@ bm_trait_drain.001 = {
             scope:recipient = { has_trait = shrewd }
         }
 
-        add_piety = trait_drain_base_piety_cost
-        bm_trait_drain_commit_cost_and_cooldown_effect = yes
-        temporary_trait_drain_attempted = yes
-
-        duel = {
-            skill = learning
-            target = scope:recipient
-            50 = {
-                desc = bm_trait_drain.001.success
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 5
-                    min = -40
-                }
-                modifier = { add = trait_drain_modifier }
-
-                send_interface_toast = {
-                    type = bm_event_toast_effect_good
-                    title = bm_trait_drain.001.success
-                    left_icon = root
-                    right_icon = scope:recipient
-                    if = {
-                        limit = { has_trait = dull }
-                        remove_trait = dull
-                    }
-                    add_trait = shrewd
-                    add_xp_bm_dynamic = {
-                        TRACK = cunning
-                        XP = 5
-                    }
-                }
-
-                sacrifice_prisoner_effect = {
-                    VICTIM = scope:recipient
-                    EXECUTIONER = root
-                }
-            }
-            50 = {
-                scope:recipient = { temporary_negative_recently_trait_drained = yes }
-                modifier = { add = recipient_trait_drain_modifier_per_trait }
-                send_interface_toast = {
-                    title = bm_trait_drain.001.fail
-                    drain_trait_failed_effects = yes
-                    left_icon = root
-                    right_icon = scope:recipient
-                }
-            }
+        bm_trait_drain_execute_single_purge_effect = {
+            TRAIT = shrewd
+            PURGE_TRAIT = dull
+            PIETY_COST = trait_drain_base_piety_cost
+            XP_CUNNING = 5
         }
 
         ai_chance = {

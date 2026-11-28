@@ -7,3 +7,4 @@
 - **Script values** (`common/script_values/`): centralize numbers used 2+ places; comment caller scope; keep UI values cheap (`save_temporary_value_as`, no iterators/triggers); never use random ranges in costs (re-evaluated per tick); loc `[GetPlayer.MakeScope.ScriptValue('x')|0]`.
 - **Toasts**: omit `custom_tooltip` inside `send_interface_toast` when native effects exist (overrides auto-format).
 - **No multi-stack modifier triggers**: `has_character_modifier` only checks presence (`>= 1`). Never write `>= 2` stack checks; gate repeatables with modifier tiers, piety, and timed flags (`add_character_flag = { flag = ... days = 180 }`).
+- **Scripted effect macros**: `duel` weight `modifier = { ... }` blocks cannot live inside a `scripted_effect` (only effects can); never invent boolean params (`always = $PARAM$` has no vanilla precedent) - split distinct shapes into focused effects.
