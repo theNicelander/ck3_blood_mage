@@ -156,3 +156,33 @@ bm_has_track_xp_any_tier_trigger = {
 		}
 	}
 }
+
+bm_ai_allowed_trait_drain_trigger = {
+	OR = {
+		has_game_rule = bm_ai_trait_drain_yes
+		AND = {
+			has_game_rule = bm_ai_trait_drain_landed_only
+			is_landed = yes
+		}
+	}
+}
+
+bm_ai_allowed_memory_drain_trigger = {
+	OR = {
+		has_game_rule = bm_ai_memory_drain_yes
+		AND = {
+			has_game_rule = bm_ai_memory_drain_landed_only
+			is_landed = yes
+		}
+	}
+}
+
+bm_ai_allowed_grant_blood_mage_trigger = {
+	OR = {
+		has_game_rule = bm_ai_grant_blood_mage_yes
+		AND = {
+			has_game_rule = bm_ai_grant_blood_mage_landed_only
+			is_landed = yes
+		}
+	}
+}
