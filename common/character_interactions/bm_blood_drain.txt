@@ -947,6 +947,28 @@
 			factor = 0
 		}
 
+		# Prisoner preference: Trait Drain > Memory Drain > Minor Lifedrain > Major Lifedrain
+		modifier = {
+			scope:drain_trait = yes
+			scope:recipient = { is_imprisoned_by = scope:actor }
+			add = 90
+		}
+		modifier = {
+			scope:drain_memory = yes
+			scope:recipient = { is_imprisoned_by = scope:actor }
+			add = 60
+		}
+		modifier = {
+			scope:drain_minor = yes
+			scope:recipient = { is_imprisoned_by = scope:actor }
+			add = 20
+		}
+		modifier = {
+			scope:drain_major = yes
+			scope:recipient = { is_imprisoned_by = scope:actor }
+			add = -20
+		}
+
 		# Personality, relationship, and protective vetoes (evaluated last)
 		ai_willingness_to_lifedrain = yes
 
