@@ -238,7 +238,6 @@
 			scope:actor = { bm_can_drain_traits_from_target_trigger = yes }
 		}
 		is_valid = {
-			scope:actor = { bm_can_drain_traits_from_target_tier_valid_trigger = yes }
 			scope:recipient = { is_imprisoned_by = scope:actor }
 			scope:actor = {
 				has_character_modifier = lifeforce_modifier_major
@@ -273,7 +272,7 @@
 			}
 			scope:actor = {
 				has_character_modifier = lifeforce_modifier_major
-				piety >= bm_memory_drain_piety_cost
+				piety >= bm_memory_drain_min_piety_cost
 				custom_tooltip = {
 					text = bm_memory_drain_caster_cooldown_tt
 					NOT = { has_character_flag = bm_memory_drain_cooldown }
@@ -394,10 +393,9 @@
 		if = {
 			limit = { scope:drain_major = yes }
 			debug_log = "BloodMageInteraction: bm_blood_drain (major) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
-			scope:actor = { cunning_magic_cast_effect_major = yes }
-			lifedrain_execution_effect = {
+			bm_major_lifedrain_execute_or_shield_effect = {
+				ACTOR = scope:actor
 				VICTIM = scope:recipient
-				EXECUTIONER = scope:actor
 			}
 		}
 		else_if = {
@@ -635,7 +633,14 @@
 			limit = { scope:drain_trait = yes }
 			debug_log = "BloodMageInteraction: bm_blood_drain (trait) | Actor: [actor.GetShortUINameNoTooltip] (ID:[actor.GetID], [Select_CString(actor.IsPlayer, 'Player', 'AI')]) -> Recipient: [recipient.GetShortUINameNoTooltip] (ID:[recipient.GetID], [Select_CString(recipient.IsPlayer, 'Player', 'AI')]) | Rel: [actor.Custom2('RelationToMeShort', recipient)] | Tag: [actor.Custom2('bm_debug_relation_tags', recipient)] | Opinion: [actor.GetOpinionOf( recipient )]"
 			scope:actor = {
-				trigger_event = bm_trait_drain.001
+				if = {
+					limit = { bm_can_drain_vanilla_traits_from_target_trigger = yes }
+					trigger_event = bm_trait_drain.001
+				}
+				else_if = {
+					limit = { bm_compat_can_drain_traits_from_target_trigger = yes }
+					bm_compat_open_trait_drain_event_effect = yes
+				}
 			}
 		}
 		else_if = {
@@ -654,8 +659,13 @@
 					limit = { bm_can_drain_memory_commander_trigger = yes }
 					trigger_event = bm_memory_drain.0003
 				}
-				else = {
+				else_if = {
+					limit = { bm_can_drain_memory_fame_trigger = yes }
 					trigger_event = bm_memory_drain.0004
+				}
+				else_if = {
+					limit = { bm_compat_can_drain_memory_from_target_trigger = yes }
+					bm_compat_open_memory_drain_event_effect = yes
 				}
 			}
 		}
@@ -767,7 +777,6 @@
 					title = bm_blood_drain_toast
 					left_icon = scope:actor
 					right_icon = scope:recipient
-					cunning_magic_cast_effect_major = yes
 					add_character_modifier = {
 						modifier = bm_overdrained_modifier
 						years = 2
@@ -786,9 +795,9 @@
 					}
 				}
 			}
-			lifedrain_execution_effect = {
+			bm_major_lifedrain_execute_or_shield_effect = {
+				ACTOR = scope:actor
 				VICTIM = scope:recipient
-				EXECUTIONER = scope:actor
 			}
 		}
 		else_if = {
@@ -850,13 +859,39 @@
 		}
 		modifier = {
 			scope:drain_trait = yes
-			add = 20
+			add = 10
+		}
+		modifier = {
+			scope:drain_trait = yes
+			scope:actor = {
+				OR = {
+					has_trait = ambitious
+					has_trait = callous
+					has_trait = sadistic
+					has_trait = deceitful
+				}
+			}
+			add = 15
+		}
+		modifier = {
+			scope:drain_trait = yes
+			scope:actor = {
+				OR = {
+					has_trait = compassionate
+					has_trait = content
+					has_trait = just
+				}
+			}
+			add = -15
 		}
 		modifier = {
 			scope:drain_trait = yes
 			OR = {
 				scope:actor = {
 					OR = {
+						piety < 100
+						health <= fine_health
+						has_character_modifier = lifeforce_modifier_negative_major
 						is_spouse_of = scope:recipient
 						is_consort_of = scope:recipient
 					}

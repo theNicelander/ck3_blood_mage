@@ -1,4 +1,4 @@
-# Religion (`common/religion/`, CK3 1.20+)
+# Religion (`common/religion/`, CK3 1.21+)
 
 Vanilla ref: `/Users/clarabotet/Petur/ck3-full/common/religion`. Spec: `docs-ai/architecture/blood-mage-religions.md`.
 1.20 uses split top-level folders; never nest `faiths = {}` in religion blocks.

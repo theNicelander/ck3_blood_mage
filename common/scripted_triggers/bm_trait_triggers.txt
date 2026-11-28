@@ -1,80 +1,70 @@
 ﻿# Scripted triggers for Blood Mage trait and location requirements
 
+bm_can_drain_vanilla_traits_from_target_trigger = {
+	OR = {
+		AND = {
+			NOT = { has_trait_rank = { trait = intellect_good rank >= 5 } }
+			scope:recipient = { has_trait = intellect_good }
+		}
+		AND = {
+			NOT = { has_trait_rank = { trait = physique_good rank >= 5 } }
+			scope:recipient = { has_trait = physique_good }
+		}
+		AND = {
+			NOT = { has_trait_rank = { trait = beauty_good rank >= 5 } }
+			scope:recipient = { has_trait = beauty_good }
+		}
+		AND = {
+			NOT = { has_trait = fecund }
+			scope:recipient = { has_trait = fecund }
+		}
+		AND = {
+			NOT = { has_trait = giant }
+			scope:recipient = { has_trait = giant }
+		}
+		AND = {
+			NOT = { has_trait = pure_blooded }
+			scope:recipient = { has_trait = pure_blooded }
+		}
+		AND = {
+			NOR = {
+				has_trait = strong
+				has_trait = physique_bad
+			}
+			scope:recipient = { has_trait = strong }
+		}
+		AND = {
+			NOR = {
+				has_trait = shrewd
+				has_trait = intellect_bad
+			}
+			scope:recipient = { has_trait = shrewd }
+		}
+	}
+}
+
+bm_compat_can_drain_traits_from_target_trigger = {
+	OR = {
+		bm_compat_agot_can_drain_traits_from_target_trigger = yes
+		bm_compat_lotr_can_drain_traits_from_target_trigger = yes
+		bm_compat_ek2_can_drain_traits_from_target_trigger = yes
+	}
+}
+
 bm_can_drain_traits_from_target_trigger = {
 	custom_description = {
 		text = bm_can_drain_traits_from_target_trigger_tt
 		subject = scope:recipient
 		OR = {
-			AND = {
-				NOT = { has_trait_rank = { trait = intellect_good rank >= 5 } }
-				scope:recipient = { has_trait = intellect_good }
-			}
-			AND = {
-				NOT = { has_trait_rank = { trait = physique_good rank >= 5 } }
-				scope:recipient = { has_trait = physique_good }
-			}
-			AND = {
-				NOT = { has_trait_rank = { trait = beauty_good rank >= 5 } }
-				scope:recipient = { has_trait = beauty_good }
-			}
-			AND = {
-				NOT = { has_trait = fecund }
-				scope:recipient = { has_trait = fecund }
-			}
-			AND = {
-				NOT = { has_trait = giant }
-				scope:recipient = { has_trait = giant }
-			}
-			AND = {
-				NOT = { has_trait = pure_blooded }
-				scope:recipient = { has_trait = pure_blooded }
-			}
+			bm_can_drain_vanilla_traits_from_target_trigger = yes
+			bm_compat_can_drain_traits_from_target_trigger = yes
 		}
 	}
 }
 
 bm_can_drain_leveled_trait_from_target_trigger = {
 	scope:recipient = { has_trait = $TRAIT$ }
-	OR = {
-		AND = {
-			is_blood_mage_tier_2_or_higher_trigger = yes
-			NOT = { has_trait_rank = { trait = $TRAIT$ rank >= 5 } }
-		}
-		AND = {
-			NOT = { is_blood_mage_tier_2_or_higher_trigger = yes }
-			NOT = { has_trait = $TRAIT$ }
-			scope:recipient = { has_trait = $TRAIT$_1 }
-		}
-	}
-}
-
-bm_can_drain_traits_from_target_tier_valid_trigger = {
-	custom_description = {
-		text = bm_can_drain_traits_from_target_tier_valid_trigger_tt
-		subject = scope:recipient
-		OR = {
-			bm_can_drain_leveled_trait_from_target_trigger = { TRAIT = intellect_good }
-			bm_can_drain_leveled_trait_from_target_trigger = { TRAIT = physique_good }
-			bm_can_drain_leveled_trait_from_target_trigger = { TRAIT = beauty_good }
-			AND = {
-				is_blood_mage_tier_2_or_higher_trigger = yes
-				OR = {
-					AND = {
-						NOT = { has_trait = fecund }
-						scope:recipient = { has_trait = fecund }
-					}
-					AND = {
-						NOT = { has_trait = giant }
-						scope:recipient = { has_trait = giant }
-					}
-					AND = {
-						NOT = { has_trait = pure_blooded }
-						scope:recipient = { has_trait = pure_blooded }
-					}
-				}
-			}
-		}
-	}
+	NOT = { has_trait_rank = { trait = $TRAIT$ rank >= 5 } }
 }
 
 bm_has_valuable_genetic_trait_trigger = {

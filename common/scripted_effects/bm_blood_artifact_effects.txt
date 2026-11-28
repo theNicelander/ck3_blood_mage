@@ -1,0 +1,136 @@
+﻿# Blood Magic Artifact Creation & Egill Tempering Helpers
+
+bm_forge_blood_artifact_effect = {
+	# Expects flag:bm_forge_slot_weapon/regalia/armor/crown/trinket saved in var:bm_forge_slot
+	# and $DISCIPLINE$ = radiance | fury | fortune | cunning | wisdom | ancient
+	blood_magic_used_major = yes
+	add_character_flag = {
+		flag = bm_forge_artifact_cooldown
+		years = 3
+	}
+	add_xp_bm_dynamic = {
+		TRACK = wisdom
+		XP = 3
+	}
+
+	if = {
+		limit = { var:bm_forge_slot ?= flag:weapon }
+		create_artifact = {
+			name = bm_blood_artifact_weapon_$DISCIPLINE$_name
+			description = bm_blood_artifact_weapon_$DISCIPLINE$_desc
+			type = sword
+			visuals = sword
+			wealth = 40
+			quality = 40
+			template = bm_blood_artifact_template
+			modifier = bm_artifact_slot_weapon_modifier
+			modifier = bm_artifact_disc_$DISCIPLINE$_modifier
+			save_scope_as = newly_created_artifact
+		}
+	}
+	else_if = {
+		limit = { var:bm_forge_slot ?= flag:regalia }
+		create_artifact = {
+			name = bm_blood_artifact_regalia_$DISCIPLINE$_name
+			description = bm_blood_artifact_regalia_$DISCIPLINE$_desc
+			type = regalia_simple
+			visuals = regalia
+			wealth = 40
+			quality = 40
+			template = bm_blood_artifact_template
+			modifier = bm_artifact_slot_regalia_modifier
+			modifier = bm_artifact_disc_$DISCIPLINE$_modifier
+			save_scope_as = newly_created_artifact
+		}
+	}
+	else_if = {
+		limit = { var:bm_forge_slot ?= flag:armor }
+		create_artifact = {
+			name = bm_blood_artifact_armor_$DISCIPLINE$_name
+			description = bm_blood_artifact_armor_$DISCIPLINE$_desc
+			type = armor_plate
+			visuals = armor
+			wealth = 40
+			quality = 40
+			template = bm_blood_artifact_template
+			modifier = bm_artifact_slot_armor_modifier
+			modifier = bm_artifact_disc_$DISCIPLINE$_modifier
+			save_scope_as = newly_created_artifact
+		}
+	}
+	else_if = {
+		limit = { var:bm_forge_slot ?= flag:crown }
+		create_artifact = {
+			name = bm_blood_artifact_crown_$DISCIPLINE$_name
+			description = bm_blood_artifact_crown_$DISCIPLINE$_desc
+			type = helmet_simple
+			visuals = crown
+			wealth = 40
+			quality = 40
+			template = bm_blood_artifact_template
+			modifier = bm_artifact_slot_crown_modifier
+			modifier = bm_artifact_disc_$DISCIPLINE$_modifier
+			save_scope_as = newly_created_artifact
+		}
+	}
+	else = {
+		create_artifact = {
+			name = bm_blood_artifact_trinket_$DISCIPLINE$_name
+			description = bm_blood_artifact_trinket_$DISCIPLINE$_desc
+			type = miscellaneous
+			visuals = ring
+			wealth = 40
+			quality = 40
+			template = bm_blood_artifact_template
+			modifier = bm_artifact_slot_trinket_modifier
+			modifier = bm_artifact_disc_$DISCIPLINE$_modifier
+			save_scope_as = newly_created_artifact
+		}
+	}
+
+	scope:newly_created_artifact = {
+		set_artifact_rarity = masterwork
+		set_variable = {
+			name = bm_is_forged_blood_artifact
+			value = yes
+		}
+		set_variable = {
+			name = bm_blood_artifact_discipline
+			value = flag:$DISCIPLINE$
+		}
+	}
+	remove_variable = bm_forge_slot
+}
+
+bm_temper_blood_artifact_effect = {
+	$ARTIFACT$ = {
+		set_artifact_rarity = illustrious
+		set_variable = {
+			name = bm_artifact_tempered
+			value = yes
+		}
+		if = {
+			limit = { var:bm_blood_artifact_discipline ?= flag:radiance }
+			add_artifact_modifier = bm_artifact_tempered_radiance_modifier
+		}
+		else_if = {
+			limit = { var:bm_blood_artifact_discipline ?= flag:fury }
+			add_artifact_modifier = bm_artifact_tempered_fury_modifier
+		}
+		else_if = {
+			limit = { var:bm_blood_artifact_discipline ?= flag:fortune }
+			add_artifact_modifier = bm_artifact_tempered_fortune_modifier
+		}
+		else_if = {
+			limit = { var:bm_blood_artifact_discipline ?= flag:cunning }
+			add_artifact_modifier = bm_artifact_tempered_cunning_modifier
+		}
+		else_if = {
+			limit = { var:bm_blood_artifact_discipline ?= flag:wisdom }
+			add_artifact_modifier = bm_artifact_tempered_wisdom_modifier
+		}
+		else = {
+			add_artifact_modifier = bm_artifact_tempered_ancient_modifier
+		}
+	}
+}

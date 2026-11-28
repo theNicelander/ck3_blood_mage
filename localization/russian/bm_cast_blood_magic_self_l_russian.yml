@@ -109,8 +109,8 @@
 
     # Transmute Lifeforce Decision
     bm_transmute_lifeforce_decision: "Преобразовать жизненную силу"
-    bm_transmute_lifeforce_decision_desc: "Преобразуйте жизненную силу в особые запасы или извлеките её из них."
-    bm_transmute_lifeforce_decision_tooltip: "Начать обряд преобразования или возврата жизненной силы."
+    bm_transmute_lifeforce_decision_desc: "Направляйте, возвращайте или сжигайте запасы жизненной силы, преобразуя жизненную энергию между чистой силой, специализированными запасами и благочестием."
+    bm_transmute_lifeforce_decision_tooltip: "Преобразовать жизненную силу в специализированные запасы, вернуть накопленную силу или сжечь жизненную силу ради благочестия."
     bm_transmute_lifeforce_decision_confirm: "Начать преобразование"
 
     # Transmute Lifeforce Events
@@ -118,9 +118,19 @@
     bm_transmute_lifeforce.back: "Назад"
 
     bm_transmute_lifeforce.0001.t: "Преобразование жизненной силы"
-    bm_transmute_lifeforce.0001.desc: "Вы готовитесь перераспределить запасы жизненной силы, преобразуя большую жизненную силу в особые запасы или извлекая её обратно в виде большой жизненной силы."
+    bm_transmute_lifeforce.0001.desc: "Вы готовитесь преобразовать запасы жизненной силы: превратить большую жизненную силу в специализированные запасы, вернуть накопленную силу или сжечь чистую жизненную силу ради благочестия."
     bm_transmute_lifeforce.0001.major: "Преобразовать большую жизненную силу"
     bm_transmute_lifeforce.0001.reverse: "Вернуть жизненную силу из запасов"
+    bm_transmute_lifeforce.0001.burn: "Сжечь жизненную силу"
+
+    bm_transmute_lifeforce.0005.t: "Сжечь жизненную силу"
+    bm_transmute_lifeforce.0005.desc: "Поглотить чистую жизненную силу ради благочестия ценой истощения и стресса."
+    bm_transmute_lifeforce.0005.minor: "Сжечь малую жизненную силу"
+    bm_transmute_lifeforce.0005.major: "Сжечь большую жизненную силу"
+    bm_transmute_lifeforce.0005.superior: "Сжечь высшую жизненную силу"
+    bm_burn_lifeforce_minor_toast: "@bm_ancient_discipline_icon! Малая жизненная сила сожжена"
+    bm_burn_lifeforce_major_toast: "@bm_ancient_discipline_icon! Большая жизненная сила сожжена"
+    bm_burn_lifeforce_superior_toast: "@bm_ancient_discipline_icon! Высшая жизненная сила сожжена"
 
     bm_transmute_lifeforce.0002.t: "Преобразование большой жизненной силы"
     bm_transmute_lifeforce.0002.desc: "Преобразовать 1 порцию большой жизненной силы в 1 заряд выбранного запаса."
@@ -195,12 +205,6 @@
     bm_minor_blood_blessing: "Благословение крови"
     bm_minor_blood_blessing_desc: "Даровать себе постоянное благословение крови или усилить его."
     bm_minor_blood_blessing_tooltip: "Открывает взаимодействие «Благословение крови», чтобы даровать себе постоянное благословение крови или усилить его."
-    bm_minor_burn_lifeforce: "Сжечь жизненную силу"
-    bm_minor_burn_lifeforce_desc: "Превратить малую жизненную силу в благочестие."
-    bm_minor_burn_lifeforce_tooltip: "Превратить малую жизненную силу в благочестие."
-    bm_burn_minor_lifeforce_cooldown_tt: "Не сжигалась малая жизненная сила в последние 6 месяцев"
-    NOT_bm_burn_minor_lifeforce_cooldown_tt: "Не сжигалась малая жизненная сила в последние 6 месяцев"
-    bm_burn_lifeforce_minor_toast: "@bm_ancient_discipline_icon! Малая жизненная сила сожжена"
 
     # Minor Aliases
     bm_cast_blood_magic_minor.001.purge: "$bm_minor_purge$"
@@ -234,12 +238,6 @@
     NOT_bm_split_major_lifeforce_cooldown_tt: "Большая жизненная сила не разделялась последние 6 месяцев"
     bm_split_major_lifeforce_toast: "@bm_ancient_discipline_icon! Большая жизненная сила разделена"
     bm_split_major_lifeforce_toast_desc: "Вы разделили большую жизненную силу на две порции малой."
-    bm_major_burn_lifeforce: "Сжечь жизненную силу"
-    bm_major_burn_lifeforce_desc: "Превратить большую жизненную силу в благочестие."
-    bm_major_burn_lifeforce_tooltip: "Превратить большую жизненную силу в благочестие."
-    bm_burn_major_lifeforce_cooldown_tt: "Не сжигалась большая жизненная сила в последние 6 месяцев"
-    NOT_bm_burn_major_lifeforce_cooldown_tt: "Не сжигалась большая жизненная сила в последние 6 месяцев"
-    bm_burn_lifeforce_major_toast: "@bm_ancient_discipline_icon! Большая жизненная сила сожжена"
     bm_major_improve_education: "Улучшить образование"
     bm_major_improve_education_desc: "Попытаться повысить уровень основного свойства образования."
     bm_major_improve_education_tooltip: "Повысить основное свойство образования до 4 звёзд."
@@ -318,12 +316,6 @@
     NOT_bm_split_superior_lifeforce_cooldown_tt: "Высшая жизненная сила не разделялась последние 6 месяцев"
     bm_split_superior_lifeforce_toast: "@bm_ancient_discipline_icon! Высшая жизненная сила разделена"
     bm_split_superior_lifeforce_toast_desc: "Вы разделили высшую жизненную силу на две порции большой."
-    bm_superior_burn_lifeforce: "Сжечь жизненную силу"
-    bm_superior_burn_lifeforce_desc: "Превратить высшую жизненную силу в благочестие."
-    bm_superior_burn_lifeforce_tooltip: "Превратить высшую жизненную силу в благочестие."
-    bm_burn_superior_lifeforce_cooldown_tt: "Не сжигалась высшая жизненная сила в последние 6 месяцев"
-    NOT_bm_burn_superior_lifeforce_cooldown_tt: "Не сжигалась высшая жизненная сила в последние 6 месяцев"
-    bm_burn_lifeforce_superior_toast: "@bm_ancient_discipline_icon! Высшая жизненная сила сожжена"
 
     # Superior Aliases
     bm_cast_blood_magic_superior.001.split: "$bm_superior_split$"

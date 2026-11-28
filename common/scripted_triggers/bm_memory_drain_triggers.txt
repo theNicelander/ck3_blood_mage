@@ -33,6 +33,33 @@ bm_can_drain_memory_multi_track_trigger = {
 	}
 }
 
+bm_can_drain_memory_quad_track_trigger = {
+	scope:recipient = { has_trait = $TRAIT$ }
+	OR = {
+		NOT = { has_trait = $TRAIT$ }
+		has_trait_xp = {
+			trait = $TRAIT$
+			track = $TRACK_A$
+			value < 100
+		}
+		has_trait_xp = {
+			trait = $TRAIT$
+			track = $TRACK_B$
+			value < 100
+		}
+		has_trait_xp = {
+			trait = $TRAIT$
+			track = $TRACK_C$
+			value < 100
+		}
+		has_trait_xp = {
+			trait = $TRAIT$
+			track = $TRACK_D$
+			value < 100
+		}
+	}
+}
+
 bm_can_drain_memory_lifestyle_trigger = {
 	OR = {
 		bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_blademaster }
@@ -44,6 +71,7 @@ bm_can_drain_memory_lifestyle_trigger = {
 		bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_mystic }
 		bm_can_drain_memory_single_track_trigger = { TRAIT = lifestyle_reveler }
 		bm_can_drain_memory_multi_track_trigger = { TRAIT = lifestyle_traveler TRACK_A = travel TRACK_B = danger }
+		bm_can_drain_memory_quad_track_trigger = { TRAIT = tourney_participant TRACK_A = foot TRACK_B = bow TRACK_C = horse TRACK_D = wit }
 	}
 }
 
@@ -74,6 +102,7 @@ bm_can_drain_memory_fame_trigger = {
 		bm_can_drain_memory_no_track_trigger = { TRAIT = viking }
 		bm_can_drain_memory_no_track_trigger = { TRAIT = shieldmaiden }
 		bm_can_drain_memory_no_track_trigger = { TRAIT = athletic }
+		bm_can_drain_memory_no_track_trigger = { TRAIT = varangian }
 	}
 }
 
@@ -85,6 +114,7 @@ bm_can_drain_memory_from_target_trigger = {
 			bm_can_drain_memory_lifestyle_trigger = yes
 			bm_can_drain_memory_commander_trigger = yes
 			bm_can_drain_memory_fame_trigger = yes
+			bm_compat_can_drain_memory_from_target_trigger = yes
 		}
 	}
 }
@@ -95,5 +125,114 @@ bm_has_multiple_memory_drain_categories_trigger = {
 		bm_can_drain_memory_lifestyle_trigger = yes
 		bm_can_drain_memory_commander_trigger = yes
 		bm_can_drain_memory_fame_trigger = yes
+		bm_compat_can_drain_memory_from_target_trigger = yes
+	}
+}
+
+bm_can_drain_memory_single_track_xp_trigger = {
+	scope:recipient = { has_trait = $TRAIT$ }
+	has_trait = $TRAIT$
+	has_trait_xp = {
+		trait = $TRAIT$
+		value < 100
+	}
+}
+
+bm_can_drain_memory_multi_track_xp_trigger = {
+	scope:recipient = { has_trait = $TRAIT$ }
+	has_trait = $TRAIT$
+	OR = {
+		has_trait_xp = {
+			trait = $TRAIT$
+			track = $TRACK_A$
+			value < 100
+		}
+		has_trait_xp = {
+			trait = $TRAIT$
+			track = $TRACK_B$
+			value < 100
+		}
+	}
+}
+
+bm_can_drain_memory_quad_track_xp_trigger = {
+	scope:recipient = { has_trait = $TRAIT$ }
+	has_trait = $TRAIT$
+	OR = {
+		has_trait_xp = { trait = $TRAIT$ track = $TRACK_A$ value < 100 }
+		has_trait_xp = { trait = $TRAIT$ track = $TRACK_B$ value < 100 }
+		has_trait_xp = { trait = $TRAIT$ track = $TRACK_C$ value < 100 }
+		has_trait_xp = { trait = $TRAIT$ track = $TRACK_D$ value < 100 }
+	}
+}
+
+bm_has_xp_drainable_memory_trait_trigger = {
+	OR = {
+		# Lifestyle & Craft
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = lifestyle_blademaster }
+		bm_can_drain_memory_multi_track_xp_trigger = { TRAIT = lifestyle_hunter TRACK_A = hunter TRACK_B = falconer }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = lifestyle_poet }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = lifestyle_physician }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = lifestyle_mystic }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = lifestyle_reveler }
+		bm_can_drain_memory_multi_track_xp_trigger = { TRAIT = lifestyle_traveler TRACK_A = travel TRACK_B = danger }
+		bm_can_drain_memory_quad_track_xp_trigger = { TRAIT = tourney_participant TRACK_A = foot TRACK_B = bow TRACK_C = horse TRACK_D = wit }
+		# Commander Tactics
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = logistician }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = military_engineer }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = aggressive_attacker }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = unyielding_defender }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = forder }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = flexible_leader }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = desert_warrior }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = jungle_stalker }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = reaver }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = reckless }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = holy_warrior }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = open_terrain_expert }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = rough_terrain_expert }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = forest_fighter }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = cautious_leader }
+		bm_can_drain_memory_single_track_xp_trigger = { TRAIT = organizer }
+		# Overhaul & Modded Compat
+		bm_compat_has_xp_drainable_memory_trait_trigger = yes
+	}
+}
+
+bm_can_afford_memory_drain_no_track_trigger = {
+	bm_can_drain_memory_no_track_trigger = { TRAIT = $TRAIT$ }
+	piety >= bm_memory_drain_piety_cost
+}
+
+bm_can_afford_memory_drain_single_track_trigger = {
+	bm_can_drain_memory_single_track_trigger = { TRAIT = $TRAIT$ }
+	OR = {
+		AND = {
+			has_trait = $TRAIT$
+			piety >= bm_memory_drain_xp_piety_cost
+		}
+		piety >= bm_memory_drain_piety_cost
+	}
+}
+
+bm_can_afford_memory_drain_multi_track_trigger = {
+	bm_can_drain_memory_multi_track_trigger = { TRAIT = $TRAIT$ TRACK_A = $TRACK_A$ TRACK_B = $TRACK_B$ }
+	OR = {
+		AND = {
+			has_trait = $TRAIT$
+			piety >= bm_memory_drain_xp_piety_cost
+		}
+		piety >= bm_memory_drain_piety_cost
+	}
+}
+
+bm_can_afford_memory_drain_quad_track_trigger = {
+	bm_can_drain_memory_quad_track_trigger = { TRAIT = $TRAIT$ TRACK_A = $TRACK_A$ TRACK_B = $TRACK_B$ TRACK_C = $TRACK_C$ TRACK_D = $TRACK_D$ }
+	OR = {
+		AND = {
+			has_trait = $TRAIT$
+			piety >= bm_memory_drain_xp_piety_cost
+		}
+		piety >= bm_memory_drain_piety_cost
 	}
 }

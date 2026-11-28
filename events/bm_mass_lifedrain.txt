@@ -23,17 +23,14 @@ bm_mass_lifedrain.001 = {
                 # Not of your dynasty
                 NOT = { is_close_family_of = root }
             }
-            # Get lifeforce
+            # Lifedrain execution (respects Blood Mage Lifeforce Shield & Tier Harvest)
+            save_scope_as = executed
             root = {
                 add_piety = lifedrain_piety_cost_major_neg
-                cunning_magic_cast_effect_major = yes
             }
-
-            # Lifedrain execution
-            save_scope_as = executed
-            lifedrain_execution_effect = {
+            bm_major_lifedrain_execute_or_shield_effect = {
+                ACTOR = root
                 VICTIM = scope:executed
-                EXECUTIONER = root
             }
         }
     }

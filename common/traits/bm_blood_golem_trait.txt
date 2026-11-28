@@ -1,0 +1,95 @@
+﻿bm_blood_golem = {
+	category = fame
+	icon = bm_blood_mage_silver.dds
+	shown_in_ruler_designer = no
+	physical = yes
+	inherit_chance = 0
+	can_have_children = no
+	flag = can_not_marry
+	inheritance_blocker = all
+	claim_inheritance_blocker = all
+
+	opposites = {
+		dwarf
+	}
+
+	prowess = 2
+	stress_gain_mult = -1.0
+	dread_baseline_add = 15
+	general_opinion = -10
+	attraction_opinion = -15
+	same_opinion = 20
+
+	ai_boldness = 50
+	ai_honor = 50
+	ai_greed = -100
+	ai_vengefulness = -50
+
+	no_prowess_loss_from_age = yes
+	epidemic_resistance = 15
+
+	track = {
+		10 = {
+			life_expectancy = 10
+			prowess = 1
+			health = 0.2
+		}
+		20 = {
+			life_expectancy = 10
+			prowess = 1
+			health = 0.2
+		}
+		30 = {
+			life_expectancy = 10
+			prowess = 1
+			health = 0.2
+		}
+		40 = {
+			life_expectancy = 10
+			prowess = 1
+			health = 0.2
+		}
+		50 = {
+			life_expectancy = 10
+			prowess = 1
+			health = 0.2
+		}
+		60 = {
+			life_expectancy = 10
+			prowess = 1
+			health = 0.2
+		}
+		70 = {
+			life_expectancy = 10
+			prowess = 1
+			health = 0.2
+		}
+		80 = {
+			life_expectancy = 10
+			prowess = 1
+			health = 0.2
+		}
+		90 = {
+			life_expectancy = 10
+			prowess = 1
+			health = 0.2
+		}
+		100 = {
+			life_expectancy = 10
+			prowess = 1
+			health = 0.2
+		}
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_bm_blood_golem_desc
+			}
+			desc = trait_bm_blood_golem_character_desc
+		}
+	}
+}

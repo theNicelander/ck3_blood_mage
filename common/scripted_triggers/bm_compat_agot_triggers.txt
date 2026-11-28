@@ -1,0 +1,29 @@
+﻿# AGOT (A Game of Thrones, 2962333032) Trait Drain Compatibility Triggers
+# All AGOT-only references are isolated here and gated behind bm_is_agot_loaded_trigger.
+
+bm_compat_agot_can_drain_dragon_dreams_trigger = {
+	bm_is_agot_loaded_trigger = yes
+	NOT = { has_trait = dragon_dreams }
+	scope:recipient = { has_trait = dragon_dreams }
+}
+
+bm_compat_agot_can_drain_greensight_trigger = {
+	bm_is_agot_loaded_trigger = yes
+	NOT = { has_trait = greensight }
+	scope:recipient = { has_trait = greensight }
+}
+
+bm_compat_agot_can_drain_dragonblood_trigger = {
+	bm_is_agot_loaded_trigger = yes
+	NOT = { agot_is_dragonblood_character = yes }
+	scope:recipient = { agot_has_dragonblood_heritage = yes }
+}
+
+bm_compat_agot_can_drain_traits_from_target_trigger = {
+	bm_is_agot_loaded_trigger = yes
+	OR = {
+		bm_compat_agot_can_drain_dragon_dreams_trigger = yes
+		bm_compat_agot_can_drain_greensight_trigger = yes
+		bm_compat_agot_can_drain_dragonblood_trigger = yes
+	}
+}

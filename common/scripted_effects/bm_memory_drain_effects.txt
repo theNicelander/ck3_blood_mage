@@ -1,7 +1,7 @@
 ﻿# Scripted effects for Drain Blood Memory
 
 bm_memory_drain_commit_cost_and_cooldown_effect = {
-	add_piety = bm_memory_drain_piety_cost_negative
+	add_piety = $PIETY_COST$
 	remove_character_modifier = lifeforce_modifier_major
 	add_stress = bm_memory_drain_stress_cost
 	add_character_flag = {
@@ -39,7 +39,7 @@ bm_memory_drain_fail_effect = {
 }
 
 bm_memory_drain_execute_no_track_effect = {
-	bm_memory_drain_commit_cost_and_cooldown_effect = yes
+	bm_memory_drain_commit_cost_and_cooldown_effect = { PIETY_COST = bm_memory_drain_piety_cost_negative }
 	duel = {
 		skill = learning
 		target = scope:recipient
@@ -78,7 +78,13 @@ bm_memory_drain_execute_no_track_effect = {
 }
 
 bm_memory_drain_execute_single_track_effect = {
-	bm_memory_drain_commit_cost_and_cooldown_effect = yes
+	if = {
+		limit = { has_trait = $TRAIT$ }
+		bm_memory_drain_commit_cost_and_cooldown_effect = { PIETY_COST = bm_memory_drain_xp_piety_cost_negative }
+	}
+	else = {
+		bm_memory_drain_commit_cost_and_cooldown_effect = { PIETY_COST = bm_memory_drain_piety_cost_negative }
+	}
 	duel = {
 		skill = learning
 		target = scope:recipient
@@ -126,7 +132,13 @@ bm_memory_drain_execute_single_track_effect = {
 }
 
 bm_memory_drain_execute_multi_track_effect = {
-	bm_memory_drain_commit_cost_and_cooldown_effect = yes
+	if = {
+		limit = { has_trait = $TRAIT$ }
+		bm_memory_drain_commit_cost_and_cooldown_effect = { PIETY_COST = bm_memory_drain_xp_piety_cost_negative }
+	}
+	else = {
+		bm_memory_drain_commit_cost_and_cooldown_effect = { PIETY_COST = bm_memory_drain_piety_cost_negative }
+	}
 	duel = {
 		skill = learning
 		target = scope:recipient
@@ -202,5 +214,91 @@ bm_memory_drain_execute_multi_track_effect = {
 				bm_memory_drain_fail_effect = yes
 			}
 		}
+	}
+}
+
+bm_memory_drain_execute_quad_track_effect = {
+	if = {
+		limit = { has_trait = $TRAIT$ }
+		bm_memory_drain_commit_cost_and_cooldown_effect = { PIETY_COST = bm_memory_drain_xp_piety_cost_negative }
+	}
+	else = {
+		bm_memory_drain_commit_cost_and_cooldown_effect = { PIETY_COST = bm_memory_drain_piety_cost_negative }
+	}
+	duel = {
+		skill = learning
+		target = scope:recipient
+		50 = {
+			desc = bm_memory_drain.success
+			compare_modifier = {
+				value = scope:duel_value
+				multiplier = 5
+				min = -40
+			}
+			modifier = { add = bm_memory_drain_duel_modifier }
+			send_interface_toast = {
+				type = bm_event_toast_effect_good
+				title = bm_memory_drain.success
+				left_icon = root
+				right_icon = scope:recipient
+				if = {
+					limit = { NOT = { has_trait = $TRAIT$ } }
+					add_trait = $TRAIT$
+				}
+				else_if = {
+					limit = { has_trait_xp = { trait = $TRAIT$ track = $TRACK_A$ value < 100 } }
+					add_trait_xp = { trait = $TRAIT$ track = $TRACK_A$ value = 20 }
+				}
+				else_if = {
+					limit = { has_trait_xp = { trait = $TRAIT$ track = $TRACK_B$ value < 100 } }
+					add_trait_xp = { trait = $TRAIT$ track = $TRACK_B$ value = 20 }
+				}
+				else_if = {
+					limit = { has_trait_xp = { trait = $TRAIT$ track = $TRACK_C$ value < 100 } }
+					add_trait_xp = { trait = $TRAIT$ track = $TRACK_C$ value = 20 }
+				}
+				else = {
+					add_trait_xp = { trait = $TRAIT$ track = $TRACK_D$ value = 20 }
+				}
+				add_xp_bm_dynamic = {
+					TRACK = wisdom
+					XP = 4
+				}
+			}
+			bm_memory_drain_apply_victim_toll_effect = yes
+		}
+		50 = {
+			desc = bm_memory_drain.fail
+			send_interface_toast = {
+				type = bm_event_toast_effect_bad
+				title = bm_memory_drain.fail
+				left_icon = root
+				right_icon = scope:recipient
+				bm_memory_drain_fail_effect = yes
+			}
+		}
+	}
+}
+
+bm_compat_open_memory_drain_event_effect = {
+	if = {
+		limit = { bm_compat_has_multiple_memory_buckets_trigger = yes }
+		trigger_event = bm_compat_memory_drain.0001
+	}
+	else_if = {
+		limit = { bm_compat_agot_can_drain_memory_trigger = yes }
+		trigger_event = bm_compat_memory_drain.0002
+	}
+	else_if = {
+		limit = { bm_compat_lotr_can_drain_memory_trigger = yes }
+		trigger_event = bm_compat_memory_drain.0003
+	}
+	else_if = {
+		limit = { bm_compat_ek2_can_drain_memory_trigger = yes }
+		trigger_event = bm_compat_memory_drain.0004
+	}
+	else_if = {
+		limit = { bm_compat_commander_plus_can_drain_memory_trigger = yes }
+		trigger_event = bm_compat_memory_drain.0005
 	}
 }

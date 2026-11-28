@@ -47,14 +47,13 @@
 
 
   bm_duel_kill_fury_toast: "@bm_ancient_discipline_icon! Ярость: добыча поединка"
-  bm_duel_kill_fury_tt: "За победу в поединке получено #P +3#! опыта направления #V «Ярость»#! и добыта [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]"
+  bm_duel_kill_fury_tt: "За победу в поединке получено #P +2#! опыта направления #V «Ярость»#! и добыта [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]"
 
   bm_battle_victory_lifeforce_toast: "@bm_ancient_discipline_icon! Жатва крови на поле боя"
   bm_battle_victory_lifeforce_tt: "Из павших врагов на победном поле боя добыта [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip]"
   bm_battle_victory_major_lifeforce_toast: "@bm_ancient_discipline_icon! Великая жатва крови на поле боя"
   bm_battle_victory_major_lifeforce_tt: "Из кровавой бойни на победном поле боя добыта [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]"
-  bm_battle_victory_both_lifeforce_toast: "@bm_ancient_discipline_icon! Эпическая жатва крови на поле боя"
-  bm_battle_victory_both_lifeforce_tt: "Из чудовищной бойни на победном поле боя добыты и [GetModifier('lifeforce_modifier_minor').GetNameWithTooltip], и [GetModifier('lifeforce_modifier_major').GetNameWithTooltip]!"
+  bm_battle_victory_superior_lifeforce_toast: "@bm_ancient_discipline_icon! Высшая жизненная сила с поля боя"
 
   # Battle XP Toasts
   bm_battle_victory_commander_toast: "@bm_ancient_discipline_icon! Ярость: победа полководца"
@@ -70,20 +69,6 @@
   bm_battle_victory_fury_t3_tt: "Крупную битву удалось выиграть кровью и сталью.\nПолучено #P +3#! опыта направления #V «Ярость»#! свойства [GetTrait('lifestyle_blood_mage').GetName(GetNullCharacter)]"
   bm_battle_victory_fury_t4_tt: "Великая битва завершилась победой на залитых кровью рубежах.\nПолучено #P +3#! опыта направления #V «Ярость»#! свойства [GetTrait('lifestyle_blood_mage').GetName(GetNullCharacter)]"
   bm_battle_victory_fury_t5_tt: "В этой грандиозной бойне из крови рождаются легенды!\nПолучено #P +3#! опыта направления #V «Ярость»#! свойства [GetTrait('lifestyle_blood_mage').GetName(GetNullCharacter)]"
-
-  bm_battle_defeat_commander_toast: "@bm_ancient_discipline_icon! Ярость: закалка поражением"
-  bm_battle_defeat_commander_t1_tt: "Стычка проиграна, но поле боя преподало ценные уроки.\nПолучено #P +1#! опыта направления #V «Ярость»#! свойства [GetTrait('lifestyle_blood_mage').GetName(GetNullCharacter)]"
-  bm_battle_defeat_commander_t2_tt: "Ожесточённая схватка проиграна, но командование в трудную минуту укрепляет вашу решимость.\nПолучено #P +1#! опыта направления #V «Ярость»#! свойства [GetTrait('lifestyle_blood_mage').GetName(GetNullCharacter)]"
-  bm_battle_defeat_commander_t3_tt: "Крупная битва проиграна. Тот, кто выживает в такой бойне, постигает тактику на собственном опыте.\nПолучено #P +1#! опыта направления #V «Ярость»#! свойства [GetTrait('lifestyle_blood_mage').GetName(GetNullCharacter)]"
-  bm_battle_defeat_commander_t4_tt: "Огромная армия разбита на поле боя. Ваша кровь и разум закаляются в огне поражения.\nПолучено #P +1#! опыта направления #V «Ярость»#! свойства [GetTrait('lifestyle_blood_mage').GetName(GetNullCharacter)]"
-  bm_battle_defeat_commander_t5_tt: "Вам удалось пережить страшный разгром! Ваш дух восстаёт из пепла несломленным.\nПолучено #P +1#! опыта направления #V «Ярость»#! свойства [GetTrait('lifestyle_blood_mage').GetName(GetNullCharacter)]"
-
-  bm_battle_defeat_fury_toast: "@bm_ancient_discipline_icon! Ярость: закалка поражением"
-  bm_battle_defeat_fury_t1_tt: "Небольшая стычка проиграна, но ваши боевые инстинкты обострились.\nПолучено #P +1#! опыта направления #V «Ярость»#! свойства [GetTrait('lifestyle_blood_mage').GetName(GetNullCharacter)]"
-  bm_battle_defeat_fury_t2_tt: "Ожесточённая схватка проиграна. Боль закаляет ваше тело и открывает внутренний взор.\nПолучено #P +1#! опыта направления #V «Ярость»#! свойства [GetTrait('lifestyle_blood_mage').GetName(GetNullCharacter)]"
-  bm_battle_defeat_fury_t3_tt: "Удача отвернулась от вас в крупной битве, но стойкость в этой бойне закалила вас.\nПолучено #P +1#! опыта направления #V «Ярость»#! свойства [GetTrait('lifestyle_blood_mage').GetName(GetNullCharacter)]"
-  bm_battle_defeat_fury_t4_tt: "Сокрушительное поражение. Кровь, пролитая на поле боя, закаляет тело и дух.\nПолучено #P +1#! опыта направления #V «Ярость»#! свойства [GetTrait('lifestyle_blood_mage').GetName(GetNullCharacter)]"
-  bm_battle_defeat_fury_t5_tt: "Вам удалось пережить страшный разгром! Лишь истинные маги крови выживают в такой бойне и навсегда меняются после неё.\nПолучено #P +1#! опыта направления #V «Ярость»#! свойства [GetTrait('lifestyle_blood_mage').GetName(GetNullCharacter)]"
 
   # Bless Kin
   bm_bless_bloodline_interaction: "Благословить кровь"

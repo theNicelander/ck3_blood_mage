@@ -225,7 +225,7 @@ bm_refresh_blood_magic_rosters_effect = {
 	}
 
 	every_courtier = {
-		limit = { house = house:bm_house_golem }
+		limit = { bm_is_blood_golem_trigger = yes }
 
 		scope:bm_blood_mage_story_scope = {
 			add_to_variable_list = {
@@ -238,7 +238,7 @@ bm_refresh_blood_magic_rosters_effect = {
 	every_courtier = {
 		limit = {
 			is_blood_mage_any_tier_trigger = yes
-			NOT = { house ?= house:bm_house_golem }
+			NOT = { bm_is_blood_golem_trigger = yes }
 		}
 
 		scope:bm_blood_mage_story_scope = {

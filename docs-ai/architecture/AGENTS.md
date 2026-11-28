@@ -1,6 +1,6 @@
 # Architecture docs & subsystem index
 
-Architecture specs for **Blood Mages** (CK3 1.20+). Living current state only. Generic CK3 rules live in localized `AGENTS.md` / `.agents/rules/`, not here.
+Architecture specs for **Blood Mages** (CK3 1.21+). Living current state only. Generic CK3 rules live in localized `AGENTS.md` / `.agents/rules/`, not here.
 
 ## Subsystem directory
 

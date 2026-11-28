@@ -28,6 +28,9 @@ bm_ritual_spar_events.0001 = {
 		scope:spar_partner_1 = {
 			save_scope_as = selected_partner
 		}
+		hidden_effect = {
+			bm_spar_snapshot_relations_effect = { PARTNER = scope:selected_partner }
+		}
 		configure_start_single_combat_effect = {
 			SC_INITIATOR = root
 			SC_ATTACKER = root
@@ -52,6 +55,9 @@ bm_ritual_spar_events.0001 = {
 		scope:spar_partner_2 = {
 			save_scope_as = selected_partner
 		}
+		hidden_effect = {
+			bm_spar_snapshot_relations_effect = { PARTNER = scope:selected_partner }
+		}
 		configure_start_single_combat_effect = {
 			SC_INITIATOR = root
 			SC_ATTACKER = root
@@ -75,6 +81,9 @@ bm_ritual_spar_events.0001 = {
 		}
 		scope:spar_partner_3 = {
 			save_scope_as = selected_partner
+		}
+		hidden_effect = {
+			bm_spar_snapshot_relations_effect = { PARTNER = scope:selected_partner }
 		}
 		configure_start_single_combat_effect = {
 			SC_INITIATOR = root
@@ -132,6 +141,15 @@ bm_ritual_spar_events.0002 = {
 		animation = marshal
 	}
 
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { exists = scope:sc_defender }
+				bm_spar_restore_relations_effect = { PARTNER = scope:sc_defender }
+			}
+		}
+	}
+
 	option = {
 		name = bm_ritual_spar_events.0002.opt
 		if = {
@@ -150,7 +168,7 @@ bm_ritual_spar_events.0002 = {
 				}
 				bm_add_blood_mage_xp_effect = {
 					TRACK = fury
-					XP = 3
+					XP = 1
 				}
 				if = {
 					limit = { has_trait = lifestyle_blademaster }
@@ -167,10 +185,6 @@ bm_ritual_spar_events.0002 = {
 					}
 				}
 				scope:sc_loser = {
-					bm_add_blood_mage_xp_effect = {
-						TRACK = fury
-						XP = 1
-					}
 					if = {
 						limit = { has_trait = lifestyle_blademaster }
 						add_trait_xp = {
@@ -203,10 +217,6 @@ bm_ritual_spar_events.0002 = {
 				title = bm_ritual_spar_loser_toast
 				left_icon = root
 				right_icon = scope:sc_defender
-				bm_add_blood_mage_xp_effect = {
-					TRACK = fury
-					XP = 1
-				}
 				if = {
 					limit = { has_trait = lifestyle_blademaster }
 					add_trait_xp = {
@@ -235,7 +245,7 @@ bm_ritual_spar_events.0002 = {
 					}
 					bm_add_blood_mage_xp_effect = {
 						TRACK = fury
-						XP = 3
+						XP = 1
 					}
 					if = {
 						limit = { has_trait = lifestyle_blademaster }
@@ -281,6 +291,12 @@ bm_ritual_spar_events.0003 = {
 		single_combat_clean_shirtlessness_effect = {
 			ATTACKER = root
 			DEFENDER = scope:sc_defender
+		}
+		hidden_effect = {
+			if = {
+				limit = { exists = scope:sc_defender }
+				bm_spar_clear_relation_flags_effect = { PARTNER = scope:sc_defender }
+			}
 		}
 	}
 

@@ -92,33 +92,6 @@ bm_on_combat_end_winner = {
 	}
 }
 
-on_combat_end_loser = {
-	on_actions = {
-		bm_on_combat_end_loser
-	}
-}
-
-bm_on_combat_end_loser = {
-	effect = {
-		save_scope_as = losing_side
-		every_side_commander = {
-			limit = {
-				is_alive = yes
-				is_blood_mage_any_tier_trigger = yes
-			}
-			bm_combat_loser_commander_reward_effect = yes
-		}
-		every_side_knight = {
-			limit = {
-				is_alive = yes
-				is_blood_mage_any_tier_trigger = yes
-				NOT = { this = scope:losing_side.side_commander }
-			}
-			bm_combat_loser_knight_reward_effect = yes
-		}
-	}
-}
-
 on_travel_activity_complete = {
 	on_actions = {
 		bm_on_travel_activity_complete_tournament

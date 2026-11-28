@@ -1,0 +1,117 @@
+﻿# Blood Mage Lifeforce Shield & Tier-Scaled Harvest on Major Life Drain
+bm_major_lifedrain_execute_or_shield_effect = {
+	if = {
+		limit = {
+			$VICTIM$ = { bm_has_lifeforce_shield_trigger = yes }
+		}
+		# Lifeforce Shield absorbs the lethal drain, transferring 1 stack of highest Lifeforce
+		$ACTOR$ = {
+			send_interface_toast = {
+				type = bm_event_toast_effect_neutral
+				title = bm_blood_drain_shield_toast
+				left_icon = $ACTOR$
+				right_icon = $VICTIM$
+				add_xp_bm_dynamic = {
+					TRACK = cunning
+					XP = 3
+				}
+				if = {
+					limit = { $VICTIM$ = { has_character_modifier = lifeforce_modifier_superior } }
+					$VICTIM$ = { remove_character_modifier = lifeforce_modifier_superior }
+					add_character_modifier = { modifier = lifeforce_modifier_superior }
+				}
+				else_if = {
+					limit = { $VICTIM$ = { has_character_modifier = lifeforce_modifier_major } }
+					$VICTIM$ = { remove_character_modifier = lifeforce_modifier_major }
+					add_character_modifier = { modifier = lifeforce_modifier_major }
+				}
+				else = {
+					$VICTIM$ = { remove_character_modifier = lifeforce_modifier_minor }
+					add_character_modifier = { modifier = lifeforce_modifier_minor }
+				}
+				# Backlash if draining a higher-tier Blood Mage
+				if = {
+					limit = {
+						OR = {
+							AND = {
+								has_trait = lifestyle_bm_acolyte
+								$VICTIM$ = { is_blood_mage_tier_2_or_higher_trigger = yes }
+							}
+							AND = {
+								has_trait = lifestyle_blood_mage
+								$VICTIM$ = { is_blood_mage_archmage_trigger = yes }
+							}
+						}
+					}
+					add_stress = 15
+					add_character_modifier = {
+						modifier = lifeforce_modifier_negative_minor
+						years = 1
+					}
+				}
+			}
+		}
+		$VICTIM$ = {
+			increase_wounds_no_death_effect = { REASON = lifedrain_reason }
+			add_opinion = {
+				target = $ACTOR$
+				modifier = lifedrained_me
+				opinion = -40
+			}
+		}
+	}
+	else = {
+		# Standard lethal lifedrain execution
+		$ACTOR$ = { cunning_magic_cast_effect_major = yes }
+		# Tier-scaled bonus harvest when executing a dry Blood Mage
+		if = {
+			limit = {
+				$VICTIM$ = { is_blood_mage_any_tier_trigger = yes }
+			}
+			$ACTOR$ = {
+				send_interface_toast = {
+					type = bm_event_toast_effect_good
+					title = bm_blood_drain_mage_harvest_toast
+					left_icon = $ACTOR$
+					right_icon = $VICTIM$
+					if = {
+						limit = { $VICTIM$ = { is_blood_mage_archmage_trigger = yes } }
+						add_character_modifier = { modifier = lifeforce_modifier_superior }
+						add_xp_bm_dynamic = { TRACK = ancient XP = 8 }
+						add_xp_bm_dynamic = { TRACK = wisdom XP = 4 }
+						if = {
+							limit = { NOT = { is_blood_mage_archmage_trigger = yes } }
+							add_stress = 20
+							add_character_modifier = {
+								modifier = lifeforce_modifier_negative_minor
+								years = 1
+							}
+						}
+					}
+					else_if = {
+						limit = { $VICTIM$ = { has_trait = lifestyle_blood_mage } }
+						add_character_modifier = { modifier = lifeforce_modifier_major }
+						add_xp_bm_dynamic = { TRACK = ancient XP = 4 }
+						if = {
+							limit = { has_trait = lifestyle_bm_acolyte }
+							add_xp_bm_dynamic = { TRACK = wisdom XP = 2 }
+							add_stress = 15
+							add_character_modifier = {
+								modifier = lifeforce_modifier_negative_minor
+								years = 1
+							}
+						}
+					}
+					else = {
+						add_character_modifier = { modifier = lifeforce_modifier_minor }
+						add_xp_bm_dynamic = { TRACK = ancient XP = 2 }
+					}
+				}
+			}
+		}
+		lifedrain_execution_effect = {
+			VICTIM = $VICTIM$
+			EXECUTIONER = $ACTOR$
+		}
+	}
+}

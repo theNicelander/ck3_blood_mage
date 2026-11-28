@@ -40,7 +40,7 @@ bm_actor_memory_trait_count = {
 }
 
 bm_memory_drain_piety_cost = {
-	value = 150
+	value = 100
 	add = {
 		value = bm_actor_memory_trait_count
 		multiply = 50
@@ -50,6 +50,25 @@ bm_memory_drain_piety_cost = {
 bm_memory_drain_piety_cost_negative = {
 	value = bm_memory_drain_piety_cost
 	multiply = -1
+}
+
+bm_memory_drain_xp_piety_cost = {
+	value = 100
+}
+
+bm_memory_drain_xp_piety_cost_negative = {
+	value = bm_memory_drain_xp_piety_cost
+	multiply = -1
+}
+
+bm_memory_drain_min_piety_cost = {
+	if = {
+		limit = { bm_has_xp_drainable_memory_trait_trigger = yes }
+		value = bm_memory_drain_xp_piety_cost
+	}
+	else = {
+		value = bm_memory_drain_piety_cost
+	}
 }
 
 bm_memory_drain_stress_cost = {

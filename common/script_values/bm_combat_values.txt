@@ -1,0 +1,31 @@
+﻿bm_battle_total_combatants_value = {
+	value = 0
+	add = scope:winning_side.side_max_army_size
+	add = scope:winning_side.enemy_side.side_max_army_size
+}
+
+# 10% per 1,000 total combatants (5% at 500, 10% at 1k, 50% at 5k, 100% at 10k+)
+bm_battle_minor_lifeforce_chance_value = {
+	value = bm_battle_total_combatants_value
+	divide = 100
+	min = 0
+	max = 100
+}
+
+# 1% per 1,000 total combatants (gated to >= 5,000 total -> 5% at 5k, 10% at 10k, 100% at 100k+)
+bm_battle_major_lifeforce_chance_value = {
+	value = bm_battle_total_combatants_value
+	divide = 1000
+	min = 0
+	max = 100
+}
+
+# 1% at 10,000 total combatants scaling linearly to 100% at 110,000 (divides first to avoid fixed-point overflow)
+bm_battle_superior_lifeforce_chance_value = {
+	value = bm_battle_total_combatants_value
+	subtract = 10000
+	divide = 1010
+	add = 1
+	min = 1
+	max = 100
+}

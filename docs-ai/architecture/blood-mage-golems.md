@@ -19,7 +19,8 @@ Living technical specification for the Blood Golem construct subsystem.
 | **Age & Gender** | Male, spawned at age 18–30 in creator's capital (`culture = root.culture`, `faith = root.faith`) |
 | **Base Skills** | **15 Prowess**, 1 Diplomacy, 1 Martial, 1 Stewardship, 1 Intrigue, 1 Learning |
 | **Innate Personality** | `content`, `brave`, `trusting`, `loyal` (+100 loyalty/opinion synergy, never schemes against creator) |
-| **Innate Physical / Status** | `beardless_eunuch` (blocks marriage, reproduction, and succession), `giant`, `albino`, `education_martial_1` |
+| **Innate Physical / Status** | `education_martial_1`, `bm_blood_golem` (blocks marriage, children, and inheritance via `can_not_marry`, `can_have_children = no`, `inheritance_blocker = all`, `claim_inheritance_blocker = all`; base `+2` Prowess, `-100%` Stress Gain, `+15` Dread, `-10` General Opinion, `-15` Attraction Opinion, `+20` Same Opinion, `no_prowess_loss_from_age = yes`, `+15` Epidemic Res; starts at `100` XP, decays `-2` XP/yr via `bm_blood_golem_yearly_decay`, 10 steps at every 10 XP granting `+10` Life Exp, `+1` Prowess, `+0.2` Health each; refuelable via Cast Blood Blessing Grant Lifeforce `+20/+50/+100` XP and `bm_interpersonal_events.0009` `+25/+15` XP) |
+| **Portrait Model** | `bm_blood_golem_physique` & `bm_blood_golem_appearance` in `gfx/portraits/trait_portrait_modifiers/bm_trait_modifiers.txt` (giant stature, pale scaly skin, vivid blood-red eyes, completely bald/hairless/beardless; gated by `NOT = { has_game_rule = bm_physical_alteration_off }`, independent of XP) |
 | **Rune Synergy** | Eligible target for `bm_inscribe_rune_other_interaction` (e.g. carving **Ægishjálmur** onto a golem) |
 
 ### Golem Shaping Options & Dynamic Piety Cost (`blood_golem.002`)
@@ -60,6 +61,6 @@ Every shaping attempt in `blood_golem.002` charges a dynamic Piety cost (`golem_
 
 ## Gotchas & Not Verified
 
-- **House Membership Identification:** The Blood Magic Situation panel tracks golems strictly by courtier membership in `house:bm_house_golem`. Never assign non-golem characters to this house or move golems out of it.
-- **Sterility & Succession:** `beardless_eunuch` on `blood_golem_template` blocks marriage, fertility, and title inheritance.
+- **Unified Identification (`bm_is_blood_golem_trigger`):** Rosters, interpersonal events, AI hostile-magic vetoes, and rune targeting check `bm_is_blood_golem_trigger` (`has_trait = bm_blood_golem` or `house ?= house:bm_house_golem` fallback for older saves).
+- **Sterility & Succession:** Handled directly by `bm_blood_golem` (`can_not_marry`, `can_have_children = no`, `inheritance_blocker = all`, `claim_inheritance_blocker = all`), replacing legacy `beardless_eunuch`, `giant`, and `albino` template traits.
 - **Not Verified:** AI willingness to chain multiple shaping rounds in `blood_golem.002` at low health thresholds.
